@@ -1,0 +1,23 @@
+{
+  "name": "cors-proxy",
+  "version": "1.0.0",
+  "description": "Private cors proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/dimaslanjaka.github.io.git"
+  },
+  "keywords": [
+    "cors",
+    "proxy"
+  ],
+  "author": "dimas lanjaka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/dimaslanjaka.github.io/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/dimaslanjaka.github.io#readme"
+}
