@@ -14,6 +14,9 @@
     "cors",
     "proxy"
   ],
+  "dependencies": {
+    "cors-anywhere": "./cors-anywhere"
+  },
   "author": "dimas lanjaka",
   "license": "ISC",
   "bugs": {
