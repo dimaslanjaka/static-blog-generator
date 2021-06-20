@@ -2,7 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/google-scraper" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/proxy-finder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/google-scraper" vcs="" />
+    <mapping directory="$PROJECT_DIR$/proxy-finder" vcs="" />
   </component>
 </project>

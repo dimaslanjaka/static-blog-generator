@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix package-lock.json">
-      <change afterPath="$PROJECT_DIR$/nodemon-electron.json" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Integrate with electron">
+      <change afterPath="$PROJECT_DIR$/src/__test__/transformPostTest.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/spawner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/spawner.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/express/types/request.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/express/types/request.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node/filemanager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/filemanager.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/electron/Brauser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/proxy" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -174,7 +174,9 @@
       <workItem from="1623524258196" duration="166000" />
       <workItem from="1623527510394" duration="3808000" />
       <workItem from="1623536338886" duration="10423000" />
-      <workItem from="1623551651900" duration="11862000" />
+      <workItem from="1623551651900" duration="25752000" />
+      <workItem from="1623616006783" duration="2784000" />
+      <workItem from="1623951129180" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -351,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623539846220</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Integrate with electron">
+      <created>1623566530810</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1623566530810</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +393,8 @@
     <MESSAGE value="Fix" />
     <MESSAGE value="Prepare transformation" />
     <MESSAGE value="Fix package-lock.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix package-lock.json" />
+    <MESSAGE value="Integrate with electron" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate with electron" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

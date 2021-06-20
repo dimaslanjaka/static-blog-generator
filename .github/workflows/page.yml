@@ -3,7 +3,7 @@ name: github-pages
 on:
   push:
     branches:
-      - master # run when this brach pushed
+      - compiler # run when this brach pushed
 
 jobs:
   pages:
@@ -31,5 +31,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages # The branch the action should deploy to.
+          branch: master # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.

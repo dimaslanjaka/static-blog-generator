@@ -5,3 +5,10 @@ export interface URLParameter extends Request {
    */
   url: string;
 }
+
+export interface PostDataTranslated extends Request, Object {
+  html: string;
+  path: string;
+  tl: string;
+  sl: string;
+}

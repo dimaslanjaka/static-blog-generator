@@ -25,7 +25,7 @@ module.exports = {
       "warn",
       {
         destructuring: "any",
-        ignoreReadBeforeAssign: false,
+        ignoreReadBeforeAssign: true,
       },
     ],
     "require-jsdoc": 0,
