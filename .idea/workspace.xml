@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update IDEA Config">
-      <change afterPath="$PROJECT_DIR$/docs/CNAME" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="try Publish" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,7 +194,7 @@
       <workItem from="1625561813644" duration="591000" />
       <workItem from="1627211184139" duration="1800000" />
       <workItem from="1627561758819" duration="1860000" />
-      <workItem from="1627680602536" duration="2892000" />
+      <workItem from="1627680602536" duration="3356000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -395,7 +392,21 @@
       <option name="project" value="LOCAL" />
       <updated>1627683046969</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="try Publish">
+      <created>1627683673000</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1627683673000</updated>
+    </task>
+    <task id="LOCAL-00030" summary="try Publish">
+      <created>1627683971961</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1627683971961</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +442,8 @@
     <MESSAGE value="Integrate with electron" />
     <MESSAGE value="Direct publish" />
     <MESSAGE value="Update IDEA Config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update IDEA Config" />
+    <MESSAGE value="try Publish" />
+    <option name="LAST_COMMIT_MESSAGE" value="try Publish" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
