@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "mkdir docs && echo git.webmanajemen.com > docs/CNAME && hexo generate",
     "clean": "hexo clean && echo git.webmanajemen.com > docs/CNAME",
     "deploy": "hexo deploy",
     "server": "hexo server",

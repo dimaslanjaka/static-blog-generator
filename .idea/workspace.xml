@@ -1,111 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Integrate with electron">
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/proxy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/.prettierrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/Assets/Images/icon32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/Renderer/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/Renderer/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/Renderer/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/Renderer/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/circle.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/src/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/src/scrape.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/google-scraper/yarn.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/runner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/getHtml.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/kill.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/preload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/runner.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/src/window.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/tsconfig.eslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/electron-browser/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/traffic-generator/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Artifact/Archaic Petra.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Character/Klee.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Domain/Cecilia Garden.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__test__/electron-browser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__test__/workspaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update IDEA Config">
+      <change afterPath="$PROJECT_DIR$/docs/CNAME" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/prettier.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/proxy.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/.prettierrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/Assets/Images/icon32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/Renderer/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/Renderer/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/Renderer/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/circle.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/src/config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/src/scrape.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/test/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/google-scraper/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/src/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/src/getHtml.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/src/kill.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/src/menu.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/src/window.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/tsconfig.eslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/proxy/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Genshin Impact/Location/Starconch.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/spawner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/spawner.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +197,7 @@
       <workItem from="1625561813644" duration="591000" />
       <workItem from="1627211184139" duration="1800000" />
       <workItem from="1627561758819" duration="1860000" />
-      <workItem from="1627680602536" duration="2319000" />
+      <workItem from="1627680602536" duration="2892000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -483,7 +381,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623566530810</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Direct publish">
+      <created>1627683020385</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1627683020385</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update IDEA Config">
+      <created>1627683046969</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1627683046969</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +429,9 @@
     <MESSAGE value="Prepare transformation" />
     <MESSAGE value="Fix package-lock.json" />
     <MESSAGE value="Integrate with electron" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate with electron" />
+    <MESSAGE value="Direct publish" />
+    <MESSAGE value="Update IDEA Config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update IDEA Config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
