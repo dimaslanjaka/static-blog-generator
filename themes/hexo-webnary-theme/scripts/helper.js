@@ -400,8 +400,8 @@ hexo.extend.helper.register("str_replace", function (replacements, string) {
 
 hexo.extend.helper.register("trim_whitespace", function (str, replacement) {
   if (!replacement) replacement = "";
- if (str) return str.replace(/\s+/g, replacement);
- return str
+  if (str) return str.replace(/\s+/g, replacement);
+  return str;
 });
 
 hexo.extend.helper.register("escape_double_quotes", function (str, replacement) {

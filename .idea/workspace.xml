@@ -1,137 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="try Publish with different config #3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/CNAME" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/archives/2020/06/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/archives/2020/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/archives/2021/06/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/archives/2021/07/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/archives/2021/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/archives/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/apple-icon-152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/chrome-192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/chrome-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/chrome-mask-192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/chrome-mask-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/guide-maskable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/guide-monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/icon/ms-icon-144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/img/css.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/img/html.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/img/javascript.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/img/jquery.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/img/phpjs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/img/phpjs.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/lunr/202020.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/lunr/212021.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/lunr/all.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/atom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/categories/Genshin-Impact/Games/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/categories/Genshin-Impact/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/category/games/feed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/category/games/rss.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/category/genshin impact/feed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/category/genshin impact/rss.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/contact/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/feed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/fonts/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/fonts/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/fonts/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/fonts/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/github-card-lib/githubcard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/Examples.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/hello-world-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/guide/hello-world.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-192x192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-256x256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-36x36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-384x384.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-48x48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-512x512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-72x72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/android-chrome-96x96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-1024x1024.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-114x114.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-120x120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-152x152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-167x167.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-180x180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-57x57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-60x60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-72x72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-76x76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/browserconfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/favicon-48x48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/mstile-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/mstile-150x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/mstile-310x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/mstile-310x310.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/mstile-70x70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/quotes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/common/animation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/common/pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/common/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/layout/back-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/layout/header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/layout/loading.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/layout/post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/libs/axios.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/libs/lunr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/md5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/page/post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/page/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/about-me.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/bot-detect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/cookies.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/redirect.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/safelink-aes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/safelink.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/test-cors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/page/unblock.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/rss.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/base/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/about.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/archive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/category.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/contact.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/error.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/post.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/scss/views/page/tag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/search.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/search/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/sitemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Artifact/Archaic Petra.html" beforeDir="false" afterPath="$PROJECT_DIR$/userscripts/custom-domain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Character/Klee.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Domain/Cecilia Garden.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Location/Starconch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tag/games/feed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tag/games/rss.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tag/genshin impact/feed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tag/genshin impact/rss.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tags/games/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tags/genshin-impact/index.html" beforeDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add https config" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,7 +194,7 @@
       <workItem from="1625561813644" duration="591000" />
       <workItem from="1627211184139" duration="1800000" />
       <workItem from="1627561758819" duration="1860000" />
-      <workItem from="1627680602536" duration="4516000" />
+      <workItem from="1627680602536" duration="5135000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -557,7 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1627684949017</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Try publish with different config #4">
+      <created>1627685217733</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1627685217733</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add https config">
+      <created>1627685784483</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1627685784483</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +481,9 @@
     <MESSAGE value="try Publish with different config" />
     <MESSAGE value="try Publish with different config #2" />
     <MESSAGE value="try Publish with different config #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="try Publish with different config #3" />
+    <MESSAGE value="Try publish with different config #4" />
+    <MESSAGE value="Add https config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add https config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
