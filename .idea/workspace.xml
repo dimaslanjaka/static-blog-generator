@@ -1,7 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="try Publish" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="try Publish with different config #2">
+      <change afterPath="$PROJECT_DIR$/docs/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/about/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/archives/2020/06/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/archives/2020/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/archives/2021/06/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/archives/2021/07/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/archives/2021/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/archives/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/apple-icon-152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/chrome-192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/chrome-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/chrome-mask-192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/chrome-mask-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/guide-maskable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/guide-monochrome.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/icon/ms-icon-144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/img/css.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/img/html.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/img/javascript.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/img/jquery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/img/phpjs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/img/phpjs.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/lunr/202020.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/lunr/212021.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/assets/lunr/all.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/atom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/categories/Genshin-Impact/Games/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/categories/Genshin-Impact/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/category/games/feed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/category/games/rss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/category/genshin impact/feed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/category/genshin impact/rss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/contact/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/feed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fonts/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fonts/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fonts/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/fonts/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/github-card-lib/githubcard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/Examples.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/hello-world-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guide/hello-world.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-256x256.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-36x36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-384x384.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-48x48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/android-chrome-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-1024x1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-114x114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-120x120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-167x167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-180x180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-57x57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-60x60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-76x76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon-precomposed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/browserconfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/favicon-48x48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/mstile-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/mstile-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/mstile-310x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/mstile-310x310.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/mstile-70x70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/quotes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/common/animation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/common/pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/common/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/layout/back-top.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/layout/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/layout/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/layout/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/libs/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/libs/lunr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/md5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/page/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/js/page/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/about-me.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/bot-detect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/cookies.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/redirect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/safelink-aes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/safelink.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/test-cors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/page/unblock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/rss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/base/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/about.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/archive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/category.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/contact.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/post.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/scss/views/page/tag.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/search/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/sitemap.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Artifact/Archaic Petra.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Character/Klee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Domain/Cecilia Garden.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Location/Starconch.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/src-posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tag/games/feed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tag/games/rss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tag/genshin impact/feed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tag/genshin impact/rss.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tags/games/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/tags/genshin-impact/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/helper.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,14 +202,14 @@
       <recent name="D:\Repositories\gh-pages\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\userscripts" />
       <recent name="D:\Repositories\gh-pages\src\electron\boilerplate" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Update" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Location" />
       <recent name="D:\Repositories\gh-pages\src\express" />
-      <recent name="D:\Repositories\gh-pages\src\node" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server">
+  <component name="RunManager" selected="npm.build">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -99,11 +230,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -142,18 +273,18 @@
     <list>
       <item itemvalue="Node.js.ts-node" />
       <item itemvalue="npm.dev:electron" />
-      <item itemvalue="npm.dev" />
       <item itemvalue="npm.wsl-install" />
       <item itemvalue="Gulp.js.article:copy" />
       <item itemvalue="npm.server" />
+      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.server" />
         <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +325,7 @@
       <workItem from="1625561813644" duration="591000" />
       <workItem from="1627211184139" duration="1800000" />
       <workItem from="1627561758819" duration="1860000" />
-      <workItem from="1627680602536" duration="3356000" />
+      <workItem from="1627680602536" duration="4246000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -406,7 +537,21 @@
       <option name="project" value="LOCAL" />
       <updated>1627683971961</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="try Publish with different config">
+      <created>1627684100817</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1627684100817</updated>
+    </task>
+    <task id="LOCAL-00032" summary="try Publish with different config #2">
+      <created>1627684337188</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1627684337188</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +588,9 @@
     <MESSAGE value="Direct publish" />
     <MESSAGE value="Update IDEA Config" />
     <MESSAGE value="try Publish" />
-    <option name="LAST_COMMIT_MESSAGE" value="try Publish" />
+    <MESSAGE value="try Publish with different config" />
+    <MESSAGE value="try Publish with different config #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="try Publish with different config #2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

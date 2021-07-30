@@ -69,6 +69,10 @@
         </div>
         {% endif %}
 
+        {% if config.adsense && config.adsense.enable && config.adsense.ads1 %}
+        {{ config.adsense.ads1 }}
+        {% endif %}
+
         <div class="post__prevs">
             <div class="post__prev">
                 {% if page.next %}
