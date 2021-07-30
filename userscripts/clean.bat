@@ -11,14 +11,14 @@ rem remove the old files
 rem git gc --aggressive --prune=all
 
 rem ----------------------------------
-set /p commitmsg="Enter Commit Messages: "
+set /p commits="Enter Commit Messages: "
 rem -- Remove the history from
 rm -rf .git
 
 rem -- recreate the repos from the current content only
 git init
 git add .
-git commit -m "%commitmsg%"
+git commit -m "%commits%"
 
 rem -- push to the github remote repos ensuring you overwrite history
 git remote add origin https://github.com/dimaslanjaka/dimaslanjaka.github.io.git
