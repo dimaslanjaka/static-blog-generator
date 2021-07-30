@@ -75,5 +75,13 @@
     {% endblock %}
 
     {% include './_partial/common/math.swig' %}
+
+    {% if config.https && config.https.enable %}
+    <script>
+    if (location.protocol !== 'https:') {
+        location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
+    </script>
+    {% endif %}
 </body>
 </html>
