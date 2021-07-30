@@ -2,6 +2,7 @@ import contextMenu from "electron-context-menu";
 import { BrowserWindow, shell } from "electron";
 
 export default function () {
+  //console.log("context menu show");
   return contextMenu({
     prepend: (defaultActions, parameters, browserWindow) => [
       {

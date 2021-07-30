@@ -13,7 +13,8 @@
     "dev:express": "nodemon --config nodemon.json",
     "dev:electron": "nodemon --config nodemon-electron.json -L",
     "intaller": "npm install --save hexo-autoprefixer hexo-filter-cleanup hexo-generator-feed hexo-generator-sitemap hexo-renderer-sass hexo-renderer-swig mamboer/lunr.js moment node-sass object-assign",
-    "fix-sharp": "rm node_modules/sharp -rf && npm install --ignore-scripts=false --verbose sharp"
+    "fix-sharp": "rm node_modules/sharp -rf && npm install --ignore-scripts=false --verbose sharp",
+    "wsl-install": "rm -r node_modules && npm install --platform=win32"
   },
   "hexo": {
     "version": "5.4.0"
@@ -65,6 +66,7 @@
     "node-sass": "^6.0.0",
     "nodemon": "^2.0.7",
     "object-assign": "^4.1.1",
+    "rimraf": "^3.0.2",
     "sharp": "^0.28.1",
     "showdown": "^1.9.1",
     "yaml": "^1.10.2"
@@ -87,6 +89,7 @@
     "@types/node": "^15.12.2",
     "@types/nodemon": "^1.19.0",
     "@types/pako": "^1.0.1",
+    "@types/rimraf": "^3.0.1",
     "@types/serve-index": "^1.7.30",
     "@types/serve-static": "^1.13.9",
     "@types/showdown": "^1.9.3",

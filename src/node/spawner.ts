@@ -63,10 +63,12 @@ class spawner {
     console.log("killing", spawner.children.length, spawner.children.length > 1 ? "child processes" : "child process");
 
     for (let i = 0; i < spawner.children.length; i++) {
-      let child = spawner.children[i];
-      child.kill();
-      console.log(`Child ${child.pid} killed ${child.killed}`);
-      delete spawner.children[i];
+      const child = spawner.children[i];
+      if (typeof child != "undefined") {
+        child.kill();
+        console.log(`Child ${child.pid} killed ${child.killed}`);
+        delete spawner.children[i];
+      }
     }
   }
 }

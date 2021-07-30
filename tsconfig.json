@@ -17,7 +17,7 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "lib": ["DOM", "ES7", "DOM.Iterable", "ES2015", "ESNext", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020"],
-    "rootDir": "./src",
+    "rootDir": "./",
     "outDir": "./build",
     "noLib": false,
     "esModuleInterop": true,

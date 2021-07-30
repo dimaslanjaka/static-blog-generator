@@ -187,3 +187,7 @@ adsense:
   enable: true
   pub: ca-pub-1165447249910969
   ads1: 2485594086
+
+tagmanager:
+  enable: true
+  id: GTM-NJNNXSR

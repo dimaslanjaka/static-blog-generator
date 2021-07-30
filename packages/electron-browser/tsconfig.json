@@ -23,8 +23,12 @@
     "esModuleInterop": true,
     "importHelpers": true
   },
+  "typeAcquisition": {
+    "enable": true,
+    "include": ["electron"]
+  },
   "buildOnSave": true,
   "compileOnSave": true,
   "exclude": ["./plugins/**/*", "./typings/**/*", "./node_modules/**/*", "./libs/compiler/**/*"],
-  "include": ["src/express/app.ts", "./src/**/*"]
+  "include": ["./src/**/*"]
 }

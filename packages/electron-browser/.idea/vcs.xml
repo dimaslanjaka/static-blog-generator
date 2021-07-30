@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/google-scraper" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/proxy-finder" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/bootstrap-4" vcs="" />
