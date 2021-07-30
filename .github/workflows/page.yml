@@ -24,10 +24,9 @@ jobs:
       - name: Install Dependencies
         run: npm i -g hexo-cli && npm install
       - name: Build Custom Domain
-        run: |
-          mkdir docs
-          echo git.webmanajemen.com > docs/CNAME
-          npm run build
+        run: mkdir docs && echo git.webmanajemen.com > docs/CNAME
+      - name: Build Hexo
+        run: npm run build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

@@ -3,21 +3,48 @@
   "to-destroy": [],
   "to-publish": [
     {
-      "title": "Update Genshin Impact 1.6.1 Manual",
-      "permalink": "https://git.webmanajemen.com/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html",
+      "title": "",
+      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Artifact/Archaic%20Petra.html",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "",
+      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Character/Klee.html",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "",
+      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Domain/Cecilia%20Garden.html",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "Starconch Location",
+      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Location/Starconch.html",
       "hexoPublished": true,
       "tags": [
-        "hello",
-        "vuepress"
+        "genshin impact",
+        "games"
       ]
     },
     {
       "title": "Update Genshin Impact 1.6.0 Manual",
-      "permalink": "https://git.webmanajemen.com/2020/6/7/update-genshin-impact-1.5.1-1.6.0.html",
+      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html",
       "hexoPublished": true,
       "tags": [
-        "hello",
-        "vuepress"
+        "genshin impact",
+        "games"
+      ]
+    },
+    {
+      "title": "Update Genshin Impact 1.6.1 Manual",
+      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html",
+      "hexoPublished": true,
+      "tags": [
+        "genshin impact",
+        "games"
       ]
     },
     {

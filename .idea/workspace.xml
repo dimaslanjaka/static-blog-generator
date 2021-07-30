@@ -81,7 +81,7 @@
       <recent name="D:\Repositories\gh-pages\src\node" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.wsl-install">
+  <component name="RunManager" selected="npm.server">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -122,11 +122,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="dev:express" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev:express" />
+        <script value="server" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -144,19 +144,19 @@
     </configuration>
     <list>
       <item itemvalue="Node.js.ts-node" />
-      <item itemvalue="npm.dev:express" />
       <item itemvalue="npm.dev:electron" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.wsl-install" />
       <item itemvalue="Gulp.js.article:copy" />
+      <item itemvalue="npm.server" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.server" />
         <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.dev:express" />
       </list>
     </recent_temporary>
   </component>
