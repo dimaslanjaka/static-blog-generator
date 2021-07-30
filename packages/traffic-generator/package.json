@@ -1,0 +1,14 @@
+{
+  "name": "traffic-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimas Lanjaka",
+  "license": "ISC",
+  "dependencies": {
+    "electron-browser": "file:../electron-browser"
+  }
+}
