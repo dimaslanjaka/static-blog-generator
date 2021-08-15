@@ -1,7 +1,7 @@
 ---
-title: Starconch Location
+title: Cooking Recipes
 
-subtitle: "Where to find starconch in genshin impact"
+subtitle: "Cooking recipes in the legend of neverland game android ios"
 
 lang: en
 
@@ -21,7 +21,7 @@ category:
   - Genshin Impact
   - Games
 
-cover: "https://i.im.ge/2021/08/15/603TF.png"
+cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"
 location: Indonesia
 ---
 

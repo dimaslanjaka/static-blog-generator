@@ -101,13 +101,16 @@ gulp.task("article:dist", function (done) {
   done();
 });
 
-// just copy from source posts (src-posts) to production posts (src/__posts)
+// just copy from source posts (src-posts) to production posts (source/__posts)
 gulp.task("article:copy", function (done) {
   emptyDir(prodPostDir);
   const srcDir = path.join(__dirname, "src-posts");
 
   // To copy a folder or file
   copyFolderRecursiveSync(srcDir, prodPostDir);
+
+  const folderExists = fs.existsSync(prodPostDir) ? "Folder Exists" : "Folder Not Found";
+  console.log(folderExists);
   done();
 });
 
