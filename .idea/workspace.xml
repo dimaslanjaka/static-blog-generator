@@ -4,14 +4,6 @@
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fixed single banner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Artifact/Archaic Petra.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Character/Klee.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Domain/Cecilia Garden.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Location/Starconch.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/The Legend Of Neverland/Recipes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Recipes.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Recipes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +201,7 @@
       <workItem from="1628419985869" duration="87000" />
       <workItem from="1628420148425" duration="471000" />
       <workItem from="1629037641193" duration="4687000" />
-      <workItem from="1629045006065" duration="1709000" />
+      <workItem from="1629045006065" duration="2617000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -540,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629045113004</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Fixed single banner">
+      <created>1629047754837</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1629047754837</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

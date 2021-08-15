@@ -110,7 +110,8 @@ gulp.task("article:copy", function (done) {
   copyFolderRecursiveSync(srcDir, prodPostDir);
 
   const folderExists = fs.existsSync(prodPostDir) ? "Folder Exists" : "Folder Not Found";
-  console.log(folderExists);
+  const length = fs.readdirSync(prodPostDir).length;
+  console.log(folderExists, length);
   done();
 });
 
