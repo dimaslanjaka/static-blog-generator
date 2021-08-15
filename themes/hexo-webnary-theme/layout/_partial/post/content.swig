@@ -70,9 +70,9 @@
         {% endif %}
 
         {% if config.adsense && config.adsense.enable && config.adsense.ads1 %}
+        <!-- adsense single banner [auto square] -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969"
              crossorigin="anonymous"></script>
-        <!-- Auto Square -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="{{ config.adsense.pub }}"
