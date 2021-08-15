@@ -101,7 +101,7 @@ gulp.task("article:dist", function (done) {
   done();
 });
 
-// just copy from source posts to production posts
+// just copy from source posts (src-posts) to production posts (src/__posts)
 gulp.task("article:copy", function (done) {
   emptyDir(prodPostDir);
   const srcDir = path.join(__dirname, "src-posts");

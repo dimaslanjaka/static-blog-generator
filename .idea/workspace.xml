@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fixed single banner" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fixed single banner">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,11 +151,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.server" />
         <item itemvalue="npm.dev:electron" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Gulp.js.article:copy" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +199,7 @@
       <workItem from="1627680602536" duration="6252000" />
       <workItem from="1628419985869" duration="87000" />
       <workItem from="1628420148425" duration="471000" />
-      <workItem from="1629037641193" duration="2963000" />
+      <workItem from="1629037641193" duration="4687000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -507,7 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629041803479</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Fixed single banner">
+      <created>1629042277395</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1629042277395</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Fixed single banner">
+      <created>1629042678627</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1629042678627</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
