@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Try test auto square adsense banner !1">
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fixed single banner" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +197,7 @@
       <workItem from="1627680602536" duration="6252000" />
       <workItem from="1628419985869" duration="87000" />
       <workItem from="1628420148425" duration="471000" />
-      <workItem from="1629037641193" duration="2127000" />
+      <workItem from="1629037641193" duration="2550000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -488,7 +486,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629041047420</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Fixed single banner">
+      <created>1629041356284</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1629041356284</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Fixed single banner">
+      <created>1629041601338</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1629041601338</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +545,8 @@
     <MESSAGE value="Add single banner adsense" />
     <MESSAGE value="Add The Legend Of Neverland Topics" />
     <MESSAGE value="Try test auto square adsense banner !1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try test auto square adsense banner !1" />
+    <MESSAGE value="Fixed single banner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed single banner" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
