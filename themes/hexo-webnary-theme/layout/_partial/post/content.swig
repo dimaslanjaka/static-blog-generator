@@ -77,17 +77,12 @@
             @media(min-width: 800px) { .adsense_responsive_1 { width: 728px; height: 90px; } }
             </style>
             <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969"
-                 crossorigin="anonymous"></script>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script>
             <ins class="adsbygoogle adsense_responsive_1"
                  style="display:inline-block"
                  data-ad-client="{{ config.adsense.pub }}"
-                 data-ad-slot="{{ config.adsense.ads1 }}"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+                 data-ad-slot="{{ config.adsense.ads1 }}"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
         {% endif %}
 
