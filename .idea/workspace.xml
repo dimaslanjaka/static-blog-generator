@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add https config" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add single banner adsense">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +62,7 @@
     <property name="nodejs_package_manager_path" value="/usr/lib/node_modules/npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Repositories\gh-pages\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Repositories\gh-pages\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -140,20 +143,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.ts-node" />
-      <item itemvalue="npm.dev:electron" />
-      <item itemvalue="npm.wsl-install" />
       <item itemvalue="Gulp.js.article:copy" />
-      <item itemvalue="npm.server" />
+      <item itemvalue="Node.js.ts-node" />
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.dev:electron" />
+      <item itemvalue="npm.server" />
+      <item itemvalue="npm.wsl-install" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.server" />
-        <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.wsl-install" />
+        <item itemvalue="npm.server" />
         <item itemvalue="npm.dev:electron" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="Gulp.js.article:copy" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +197,9 @@
       <workItem from="1625561813644" duration="591000" />
       <workItem from="1627211184139" duration="1800000" />
       <workItem from="1627561758819" duration="1860000" />
-      <workItem from="1627680602536" duration="5135000" />
+      <workItem from="1627680602536" duration="6252000" />
+      <workItem from="1628419985869" duration="87000" />
+      <workItem from="1628420148425" duration="471000" />
     </task>
     <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
       <created>1623409706290</created>
@@ -441,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627685784483</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add single banner adsense">
+      <created>1627685973615</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1627685973615</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +495,8 @@
     <MESSAGE value="try Publish with different config #3" />
     <MESSAGE value="Try publish with different config #4" />
     <MESSAGE value="Add https config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add https config" />
+    <MESSAGE value="Add single banner adsense" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add single banner adsense" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

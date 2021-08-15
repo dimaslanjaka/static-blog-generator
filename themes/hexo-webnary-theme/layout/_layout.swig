@@ -78,7 +78,7 @@
 
     {% if config.https && config.https.enable %}
     <script>
-    if (location.protocol !== 'https:') {
+    if (location.protocol && location.protocol !== 'https:') {
         location.replace(`https:${location.href.substring(location.protocol.length)}`);
     }
     </script>
