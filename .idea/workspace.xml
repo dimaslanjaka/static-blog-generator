@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Quiz TLON">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +201,7 @@
       <workItem from="1628420148425" duration="471000" />
       <workItem from="1629037641193" duration="4687000" />
       <workItem from="1629045006065" duration="2695000" />
-      <workItem from="1629090703955" duration="3836000" />
-    </task>
-    <task id="LOCAL-00004" summary="Add adsense &amp; fix article schema">
-      <created>1623411052495</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1623411052495</updated>
+      <workItem from="1629090703955" duration="4764000" />
     </task>
     <task id="LOCAL-00005" summary="Fix article schema">
       <created>1623411170183</created>
@@ -547,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629101669219</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Quiz TLON">
+      <created>1629108816782</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1629108816782</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
