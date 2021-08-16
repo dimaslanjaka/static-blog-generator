@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fixed single banner">
-      <change afterPath="$PROJECT_DIR$/source/_posts/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Quiz TLON">
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Recipes.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Recipes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,14 +202,7 @@
       <workItem from="1628420148425" duration="471000" />
       <workItem from="1629037641193" duration="4687000" />
       <workItem from="1629045006065" duration="2695000" />
-      <workItem from="1629090703955" duration="2486000" />
-    </task>
-    <task id="LOCAL-00001" summary="Add adsense &amp; fix article schema">
-      <created>1623409706290</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1623409706290</updated>
+      <workItem from="1629090703955" duration="2887000" />
     </task>
     <task id="LOCAL-00002" summary="Add adsense &amp; fix article schema">
       <created>1623409970988</created>
@@ -548,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629048537703</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Quiz TLON">
+      <created>1629100979937</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1629100979937</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +593,8 @@
     <MESSAGE value="Add The Legend Of Neverland Topics" />
     <MESSAGE value="Try test auto square adsense banner !1" />
     <MESSAGE value="Fixed single banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed single banner" />
+    <MESSAGE value="Quiz TLON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quiz TLON" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

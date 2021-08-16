@@ -18,7 +18,7 @@ author:
   link: "<Your Profile Link Here>"
 
 category:
-  - Genshin Impact
+  - The Legend Of Neverland
   - Games
 
 cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"

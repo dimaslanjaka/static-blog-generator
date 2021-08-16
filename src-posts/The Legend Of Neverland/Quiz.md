@@ -1,3 +1,30 @@
+---
+title: Quiz The Legend Of Neverland
+
+subtitle: "Quiz questions and the answers. The Legend Of Neverland Event."
+
+lang: en
+
+date: 2021-8-16
+
+type: post
+
+tags:
+- the legend of neverland
+- games
+
+author:
+nick: "Maulinda Agustina"
+link: "<Your Profile Link Here>"
+
+category:
+- The Legend Of Neverland
+- Games
+
+cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"
+location: Indonesia
+---
+
 <div class="container">
   <label for="search-questions"></label>
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control">
