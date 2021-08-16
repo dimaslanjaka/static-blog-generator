@@ -111,11 +111,12 @@ function articleCopy(done) {
   setTimeout(function () {
     const folderExists = fs.existsSync(prodPostDir) ? "Folder Exists" : "Folder Not Found";
     const length = fs.readdirSync(prodPostDir).length;
-    //console.log(folderExists, length);
+
     if (length == 0) {
-      console.error("retrying...");
+      console.error("Retrying...");
       return articleCopy(done);
     }
+    console.log(folderExists, length, "Done");
     done();
   }, 3000);
 }

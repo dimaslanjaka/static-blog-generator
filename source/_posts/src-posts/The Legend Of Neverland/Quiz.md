@@ -21,7 +21,7 @@ category:
 - The Legend Of Neverland
 - Games
 
-cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"
+cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg"
 location: Indonesia
 ---
 
