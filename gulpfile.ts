@@ -101,18 +101,28 @@ gulp.task("article:dist", function (done) {
   done();
 });
 
-// just copy from source posts (src-posts) to production posts (source/__posts)
-gulp.task("article:copy", function (done) {
+function articleCopy(done) {
   emptyDir(prodPostDir);
   const srcDir = path.join(__dirname, "src-posts");
 
   // To copy a folder or file
   copyFolderRecursiveSync(srcDir, prodPostDir);
 
-  const folderExists = fs.existsSync(prodPostDir) ? "Folder Exists" : "Folder Not Found";
-  const length = fs.readdirSync(prodPostDir).length;
-  console.log(folderExists, length);
-  done();
+  setTimeout(function () {
+    const folderExists = fs.existsSync(prodPostDir) ? "Folder Exists" : "Folder Not Found";
+    const length = fs.readdirSync(prodPostDir).length;
+    //console.log(folderExists, length);
+    if (length == 0) {
+      console.error("retrying...");
+      return articleCopy(done);
+    }
+    done();
+  }, 3000);
+}
+
+// just copy from source posts (src-posts) to production posts (source/__posts)
+gulp.task("article:copy", function (done) {
+  articleCopy(done);
 });
 
 gulp.task("default", gulp.series("article:dev", "article:dist"));
