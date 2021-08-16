@@ -10,20 +10,35 @@ date: 2021-8-16
 type: post
 
 tags:
-- the legend of neverland
-- games
+  - the legend of neverland
+  - games
 
 author:
-nick: "Maulinda Agustina"
-link: "<Your Profile Link Here>"
+  nick: "Maulinda Agustina"
+  link: "<Your Profile Link Here>"
 
 category:
-- The Legend Of Neverland
-- Games
+  - The Legend Of Neverland
+  - Games
 
 cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg"
 location: Indonesia
 ---
+
+<style>
+[id*="questions-filter"] li:not([data-id]) {
+  display: none;
+}
+
+[id*="questions"] li {
+  display: block;
+  text-transform: lowercase;
+}
+
+[id*="questions"] li:first-letter {
+  text-transform: uppercase;
+}
+</style>
 
 <div class="container">
   <label for="search-questions"></label>
@@ -31,6 +46,7 @@ location: Indonesia
 </div>
 
 <ul id="questions">
+  <li>the photocopier will produce carbon dioxide while photocopying (X)</li>
   <li>Monet is an impressionist painter (O)</li>
   <li>In walking races beyond 20km, there is a food supply station every 3km (X)</li>
   <li>The country that held the most Olympic Summer Games is USA (X)</li>

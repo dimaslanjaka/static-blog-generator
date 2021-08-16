@@ -25,12 +25,28 @@ cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.
 location: Indonesia
 ---
 
+<style>
+[id*="questions-filter"] li:not([data-id]) {
+  display: none;
+}
+
+[id*="questions"] li {
+  display: block;
+  text-transform: lowercase;
+}
+
+[id*="questions"] li:first-letter {
+  text-transform: uppercase;
+}
+</style>
+
 <div class="container">
   <label for="search-questions"></label>
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control">
 </div>
 
 <ul id="questions">
+  <li>the photocopier will produce carbon dioxide while photocopying (X)</li>
   <li>Monet is an impressionist painter (O)</li>
   <li>In walking races beyond 20km, there is a food supply station every 3km (X)</li>
   <li>The country that held the most Olympic Summer Games is USA (X)</li>

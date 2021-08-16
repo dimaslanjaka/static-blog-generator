@@ -20,7 +20,6 @@
     "version": "5.4.0"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
     "chokidar": "^2.1.8",
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
@@ -47,7 +46,7 @@
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-markdown-it-plus": "^1.0.4",
-    "hexo-renderer-marked": "^4.0.0",
+    "hexo-renderer-marked": "^4.1.0",
     "hexo-renderer-pug": "^1.0.0",
     "hexo-renderer-sass": "^0.4.0",
     "hexo-renderer-stylus": "^2.0.1",
@@ -81,7 +80,7 @@
     "@types/electron": "^1.6.10",
     "@types/express": "^4.17.12",
     "@types/express-session": "^1.17.3",
-    "@types/gulp": "^4.0.8",
+    "@types/gulp": "^4.0.9",
     "@types/hexo": "^3.8.5",
     "@types/jest": "^26.0.23",
     "@types/jquery": "^3.5.5",
@@ -136,8 +135,8 @@
     "response-time": "^2.3.2",
     "serve-index": "^1.9.1",
     "serve-static": "^1.14.1",
-    "ts-node": "^10.0.0",
-    "tslib": "^2.2.0",
-    "typescript": "^4.3.2"
+    "ts-node": "^10.2.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
   }
 }

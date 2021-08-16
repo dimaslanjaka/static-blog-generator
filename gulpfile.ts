@@ -1,11 +1,26 @@
 // noinspection ES6PreferShortImport
-
 import * as gulp from "gulp";
 import * as path from "path";
-import * as fse from "fs-extra";
 import transformPosts, { transformPostBody } from "./src/markdown/transformPosts";
 import * as fs from "fs";
+import * as fse from "fs-extra";
 import rimraf from "rimraf";
+
+/**
+ * slash alternative
+ * @url {@link https://github.com/sindresorhus/slash}
+ * @param path
+ */
+function slash(path) {
+  const isExtendedLengthPath = /^\\\\\?\\/.test(path);
+  const hasNonAscii = /[^\u0000-\u0080]+/.test(path); // eslint-disable-line no-control-regex
+
+  if (isExtendedLengthPath || hasNonAscii) {
+    return path;
+  }
+
+  return path.replace(/\\/g, "/");
+}
 
 /**
  * Production article.
@@ -42,53 +57,6 @@ function emptyDir(directory) {
     });
 }
 
-/**
- * @see {@link https://stackoverflow.com/a/26038979}
- * @param source
- * @param target
- */
-function copyFileSync(source, target) {
-  let targetFile = target;
-
-  // If target is a directory, a new file with the same name will be created
-  if (fs.existsSync(target)) {
-    if (fs.lstatSync(target).isDirectory()) {
-      targetFile = path.join(target, path.basename(source));
-    }
-  }
-
-  fs.writeFileSync(targetFile, fs.readFileSync(source));
-}
-
-/**
- * @see {@link https://stackoverflow.com/a/26038979}
- * @param source
- * @param target
- */
-// eslint-disable-next-line no-unused-vars
-function copyFolderRecursiveSync(source, target) {
-  let files = [];
-
-  // Check if folder needs to be created or integrated
-  const targetFolder = path.join(target, path.basename(source));
-  if (!fs.existsSync(targetFolder)) {
-    fs.mkdirSync(targetFolder);
-  }
-
-  // Copy
-  if (fs.lstatSync(source).isDirectory()) {
-    files = fs.readdirSync(source);
-    files.forEach(function (file) {
-      const curSource = path.join(source, file);
-      if (fs.lstatSync(curSource).isDirectory()) {
-        copyFolderRecursiveSync(curSource, targetFolder);
-      } else {
-        copyFileSync(curSource, targetFolder);
-      }
-    });
-  }
-}
-
 gulp.task("article:dev", function (done) {
   emptyDir(devPostDir);
   transformPostBody("build/_posts");
@@ -101,24 +69,26 @@ gulp.task("article:dist", function (done) {
   done();
 });
 
+/**
+ * Copy source post directly into production posts without transform to multiple languages
+ * @param done
+ */
 function articleCopy(done) {
   emptyDir(prodPostDir);
-  const srcDir = path.join(__dirname, "src-posts");
+  const srcDir = slash(path.join(__dirname, "src-posts"));
+  const destDir = slash(prodPostDir);
 
-  // To copy a folder or file
-  copyFolderRecursiveSync(srcDir, prodPostDir);
-
-  setTimeout(function () {
-    const folderExists = fs.existsSync(prodPostDir) ? "Folder Exists" : "Folder Not Found";
-    const length = fs.readdirSync(prodPostDir).length;
-
-    if (length == 0) {
-      console.error("Retrying...");
-      return articleCopy(done);
+  // To copy a folder
+  fse.copy(srcDir, destDir, function (err) {
+    if (err) {
+      console.error(err);
+      console.error("error");
+    } else {
+      console.log("success!");
     }
-    console.log(folderExists, length, "Done");
-    done();
-  }, 3000);
+  });
+
+  done();
 }
 
 // just copy from source posts (src-posts) to production posts (source/__posts)
@@ -126,4 +96,5 @@ gulp.task("article:copy", function (done) {
   articleCopy(done);
 });
 
-gulp.task("default", gulp.series("article:dev", "article:dist"));
+//gulp.task("default", gulp.series("article:dev", "article:dist"));
+gulp.task("default", gulp.series("article:copy"));
