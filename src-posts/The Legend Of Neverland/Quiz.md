@@ -10,16 +10,16 @@ date: 2021-8-16
 type: post
 
 tags:
-- the legend of neverland
-- games
+  - the legend of neverland
+  - games
 
 author:
-nick: "Maulinda Agustina"
-link: "<Your Profile Link Here>"
+  nick: "Maulinda Agustina"
+  link: "<Your Profile Link Here>"
 
 category:
-- The Legend Of Neverland
-- Games
+  - The Legend Of Neverland
+  - Games
 
 cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg"
 location: Indonesia
