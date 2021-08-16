@@ -16,6 +16,13 @@
 
 <link rel="icon" type="image/png" href="{{ get_setting('favicon_ico') }}" sizes="32x32">
 
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ config.subtitle|default(theme.subtitle) }}">
+<meta property="og:description" content="{% if page.subtitle %}{{ page.subtitle }}{% endif %} {% if page.title %}{{ page.title }}{% endif %}">
+<meta property="og:image" content="{{ page.cover|default(get_setting('default_cover')) }}">
+
 {% if config.google_site_verification %}
   <meta name="google-site-verification" content="{{ config.google_site_verification }}" />
 {% endif %}
