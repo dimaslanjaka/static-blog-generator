@@ -24,6 +24,7 @@
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
     "hexo": "git+https://github.com/hexojs/hexo.git",
+    "hexo-asset-link": "^2.1.0",
     "hexo-autoprefixer": "^2.0.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-clean-css": "^2.0.0",
