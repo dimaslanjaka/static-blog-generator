@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="test inline images folder">
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="test assets images folder" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,11 +78,11 @@
       <recent name="D:\Repositories\gh-pages\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\Expel Incident" />
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\TLON\Expel Quest Standard Rewards" />
       <recent name="D:\Repositories\gh-pages\userscripts" />
       <recent name="D:\Repositories\gh-pages\src\electron\boilerplate" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Update" />
-      <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Location" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.article:copy">
@@ -215,21 +213,7 @@
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
-      <workItem from="1629182202902" duration="3084000" />
-    </task>
-    <task id="LOCAL-00030" summary="try Publish">
-      <created>1627683971961</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1627683971961</updated>
-    </task>
-    <task id="LOCAL-00031" summary="try Publish with different config">
-      <created>1627684100817</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1627684100817</updated>
+      <workItem from="1629182202902" duration="3385000" />
     </task>
     <task id="LOCAL-00032" summary="try Publish with different config #2">
       <created>1627684337188</created>
@@ -560,7 +544,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629185366753</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="test inline images folder">
+      <created>1629185741566</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185741566</updated>
+    </task>
+    <task id="LOCAL-00080" summary="test assets images folder">
+      <created>1629185753091</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185753092</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +580,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update dependencies" />
     <MESSAGE value="Fix" />
     <MESSAGE value="Prepare transformation" />
     <MESSAGE value="Fix package-lock.json" />
@@ -607,7 +604,8 @@
     <MESSAGE value="Fix copy gulp task" />
     <MESSAGE value="Fix disqus comments" />
     <MESSAGE value="test inline images folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="test inline images folder" />
+    <MESSAGE value="test assets images folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="test assets images folder" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
