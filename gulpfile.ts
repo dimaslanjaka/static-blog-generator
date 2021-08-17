@@ -85,9 +85,6 @@ function articleCopy(done) {
       if (err) {
         console.error(err);
         console.error("error");
-        if (err.path) {
-          fs.mkdirSync(err.path, { recursive: true });
-        }
         if (tryCount == 0) {
           tryCount++;
           return articleCopy(done);
