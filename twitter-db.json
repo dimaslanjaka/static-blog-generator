@@ -3,26 +3,35 @@
   "to-destroy": [],
   "to-publish": [
     {
-      "title": "",
-      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Artifact/Archaic%20Petra.html",
+      "title": "Expel Incident Highest Exp",
+      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html",
       "hexoPublished": true,
-      "tags": []
+      "tags": [
+        "games",
+        "the legend of neverland"
+      ]
     },
     {
-      "title": "",
-      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Character/Klee.html",
+      "title": "Quiz The Legend Of Neverland",
+      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html",
       "hexoPublished": true,
-      "tags": []
+      "tags": [
+        "games",
+        "the legend of neverland"
+      ]
     },
     {
-      "title": "",
-      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Domain/Cecilia%20Garden.html",
+      "title": "Cooking Recipes",
+      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Recipes.html",
       "hexoPublished": true,
-      "tags": []
+      "tags": [
+        "games",
+        "the legend of neverland"
+      ]
     },
     {
-      "title": "Starconch Location",
-      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Location/Starconch.html",
+      "title": "Update Genshin Impact 1.6.1 Manual",
+      "permalink": "https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html",
       "hexoPublished": true,
       "tags": [
         "genshin impact",
@@ -31,7 +40,7 @@
     },
     {
       "title": "Update Genshin Impact 1.6.0 Manual",
-      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html",
+      "permalink": "https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html",
       "hexoPublished": true,
       "tags": [
         "genshin impact",
@@ -39,8 +48,8 @@
       ]
     },
     {
-      "title": "Update Genshin Impact 1.6.1 Manual",
-      "permalink": "https://git.webmanajemen.com/src-posts/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html",
+      "title": "Starconch Location",
+      "permalink": "https://git.webmanajemen.com/Genshin%20Impact/Location/Starconch.html",
       "hexoPublished": true,
       "tags": [
         "genshin impact",

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="test assets images folder" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="test assets images folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_data/favicons.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/_data/favicons.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,21 +220,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="1681000" />
-    </task>
-    <task id="LOCAL-00037" summary="Add single banner adsense">
-      <created>1629039974292</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1629039974292</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Add single banner adsense">
-      <created>1629040033885</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1629040033885</updated>
+      <workItem from="1629186644514" duration="3086000" />
     </task>
     <task id="LOCAL-00039" summary="Add single banner adsense">
       <created>1629040040546</created>
@@ -559,7 +551,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629188030801</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="test assets images folder">
+      <created>1629188371848</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1629188371848</updated>
+    </task>
+    <task id="LOCAL-00087" summary="test assets images folder">
+      <created>1629188519967</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1629188519967</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
