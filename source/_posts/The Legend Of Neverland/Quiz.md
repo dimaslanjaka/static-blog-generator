@@ -32,7 +32,7 @@ location: Indonesia
 
 [id*="questions"] li {
   display: block;
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
 }
 
 [id*="questions"] li:first-letter {
@@ -41,8 +41,8 @@ location: Indonesia
 </style>
 
 <div class="container">
-  <label for="search-questions"></label>
-  <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control">
+  <label for="search-questions">Filter</label>
+  <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
 </div>
 
 <ul id="questions">
