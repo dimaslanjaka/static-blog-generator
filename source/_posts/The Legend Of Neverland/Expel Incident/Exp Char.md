@@ -27,6 +27,9 @@ cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
 location: Indonesia
 ---
 
+## Expel Incident The Legend Of NeverLand
+In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, or those who have more Exp rewards for fairies and crystals. The following is the Expel Incident with the most CHARACTER EXP.
+
 ## Kagmaw Grassland F3
 ![](./Exp%20Char/Kagmaw%20Grassland%20F3.png)
 
