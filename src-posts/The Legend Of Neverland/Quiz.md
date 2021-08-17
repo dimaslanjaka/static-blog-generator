@@ -40,6 +40,23 @@ location: Indonesia
 [id*="questions"] li:first-letter {
   text-transform: uppercase;
 }
+
+input[type="text"] {
+  width: 90%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
 </style>
 
 <div class="container">

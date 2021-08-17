@@ -69,6 +69,7 @@ gulp.task("article:dist", function (done) {
   done();
 });
 
+let tryCount = 0;
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done
@@ -78,20 +79,26 @@ function articleCopy(done) {
   const srcDir = slash(path.join(__dirname, "src-posts"));
   const destDir = slash(prodPostDir);
 
-  // To copy a folder
-  fse.copy(srcDir, destDir, function (err) {
-    if (err) {
-      console.error(err);
-      console.error("error");
-      if (err.path) {
-        console.log(err.path);
+  setTimeout(function () {
+    // To copy a folder
+    fse.copy(srcDir, destDir, function (err) {
+      if (err) {
+        console.error(err);
+        console.error("error");
+        if (err.path) {
+          fs.mkdirSync(err.path, { recursive: true });
+        }
+        if (tryCount == 0) {
+          tryCount++;
+          return articleCopy(done);
+        }
+      } else {
+        console.log("success!");
       }
-    } else {
-      console.log("success!");
-    }
-  });
+    });
 
-  done();
+    done();
+  }, 1000);
 }
 
 // just copy from source posts (src-posts) to production posts (source/__posts)
