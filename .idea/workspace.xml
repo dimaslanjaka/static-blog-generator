@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="test assets images folder">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_data/favicons.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/_data/favicons.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix https (exclude from localhost)">
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char/Screenshot_20210803-112251.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char/Kagmaw Grassland F1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,14 +217,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="3086000" />
-    </task>
-    <task id="LOCAL-00039" summary="Add single banner adsense">
-      <created>1629040040546</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1629040040546</updated>
+      <workItem from="1629186644514" duration="3375000" />
     </task>
     <task id="LOCAL-00040" summary="Add The Legend Of Neverland Topics">
       <created>1629040851381</created>
@@ -565,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629188519967</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Fix https (exclude from localhost)">
+      <created>1629192440110</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1629192440110</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +584,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix" />
     <MESSAGE value="Prepare transformation" />
     <MESSAGE value="Fix package-lock.json" />
     <MESSAGE value="Integrate with electron" />
@@ -612,7 +608,8 @@
     <MESSAGE value="Fix disqus comments" />
     <MESSAGE value="test inline images folder" />
     <MESSAGE value="test assets images folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="test assets images folder" />
+    <MESSAGE value="Fix https (exclude from localhost)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix https (exclude from localhost)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
