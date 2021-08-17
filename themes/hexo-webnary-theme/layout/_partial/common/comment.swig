@@ -22,8 +22,6 @@
 
 <!--{ if page.comments && config.disqus_shortname }-->
 {% if config.disqus_shortname %}
-    <span>Page Comments : {{ page.comments }}</span>
-    <script src="//{{ config.disqus_shortname }}.disqus.com/count.js" async></script>
     <script id="dsq-count-scr">
         var disqus_config = function () {
             this.page.url = '{{ config.url }}/{{ page.path }}';
@@ -34,6 +32,7 @@
         (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
         s.src = 'https://{{ config.disqus_shortname }}.disqus.com/{% if page.comments %}embed.js{% else %}count.js{% endif %}';
+        s.async = true;
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
         })();

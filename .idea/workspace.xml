@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix disqus comments" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix disqus comments">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/comment.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/comment.swig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,28 +216,7 @@
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
-      <workItem from="1629182202902" duration="1117000" />
-    </task>
-    <task id="LOCAL-00021" summary="Prepare transformation">
-      <created>1623494010534</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1623494010534</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Prepare transformation">
-      <created>1623494077009</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1623494077009</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Prepare transformation">
-      <created>1623494175865</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1623494175865</updated>
+      <workItem from="1629182202902" duration="1543000" />
     </task>
     <task id="LOCAL-00024" summary="Fix package-lock.json">
       <created>1623531409383</created>
@@ -558,7 +540,28 @@
       <option name="project" value="LOCAL" />
       <updated>1629183308335</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Fix disqus comments">
+      <created>1629183465453</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1629183465453</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Fix disqus comments">
+      <created>1629183527607</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1629183527607</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Fix disqus comments">
+      <created>1629183611332</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1629183611332</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
