@@ -10,16 +10,16 @@ lang: en
 type: post
 
 tags:
-  - genshin impact
-  - games
+  - Games
+  - Genshin Impact
 
 author:
   nick: "Dimas Lanjaka"
   link: "<Your Profile Link Here>"
 
 category:
-  - Genshin Impact
   - Games
+  - Genshin Impact
 
 cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg"
 location: Indonesia

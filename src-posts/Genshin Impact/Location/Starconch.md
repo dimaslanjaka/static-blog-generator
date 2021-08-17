@@ -10,16 +10,16 @@ date: 2020-6-12
 type: post
 
 tags:
-  - genshin impact
-  - games
+  - Games
+  - Genshin Impact
 
 author:
   nick: "Dimas Lanjaka"
   link: "<Your Profile Link Here>"
 
 category:
-  - Genshin Impact
   - Games
+  - Genshin Impact
 
 cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/4/46/Item_Starconch.png/revision/latest"
 location: Indonesia
