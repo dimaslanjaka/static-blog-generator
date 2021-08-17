@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Opengraph metadata">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix path">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gh-pages.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gh-pages.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Artifact/Archaic Petra.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Character/Klee.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Domain/Cecilia Garden.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Location/Starconch.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/src-posts/The Legend Of Neverland/Recipes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/Genshin Impact/Artifact/Archaic Petra.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/Genshin Impact/Character/Klee.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/Genshin Impact/Domain/Cecilia Garden.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +27,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/electron/menu.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/markdown/transformPosts.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/gulpfile.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/post.swig" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/translator/index.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
@@ -68,7 +61,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/electron-browser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/exclude/dimaslanjaka.github.io" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -221,14 +214,7 @@
       <workItem from="1629126815407" duration="1197000" />
       <workItem from="1629128377279" duration="424000" />
       <workItem from="1629130750212" duration="1888000" />
-      <workItem from="1629133473750" duration="1008000" />
-    </task>
-    <task id="LOCAL-00008" summary="Add .idea folder">
-      <created>1623412286981</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1623412286981</updated>
+      <workItem from="1629133473750" duration="2187000" />
     </task>
     <task id="LOCAL-00009" summary="Add .idea folder">
       <created>1623412346023</created>
@@ -566,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629118156612</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Fix path">
+      <created>1629136329629</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1629136329631</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +581,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix article schema" />
     <MESSAGE value="Fix article schema escaping" />
     <MESSAGE value="Add .idea folder" />
     <MESSAGE value="Add run template for typescript. just open ts-file then run ts-node (select run/debug)" />
@@ -613,7 +605,8 @@
     <MESSAGE value="Fixed single banner" />
     <MESSAGE value="Quiz TLON" />
     <MESSAGE value="Add Opengraph metadata" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Opengraph metadata" />
+    <MESSAGE value="Fix path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix path" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
