@@ -70,7 +70,7 @@
         {% endif %}
 
         {% if config.adsense && config.adsense.enable && config.adsense.ads1 %}
-        <div>
+        <div id="ads-bottom">
             <style>
             .adsense_responsive_1 { width: 320px; height: 100px; }
             @media(min-width: 500px) { .adsense_responsive_1 { width: 468px; height: 60px; } }
