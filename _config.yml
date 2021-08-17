@@ -57,7 +57,7 @@ marked:
   breaks: true
   smartLists: true
   smartypants: true
-  quotes: '“”‘’'
+  quotes: "“”‘’"
   modifyAnchors: 0
   anchorAlias: false
   autolink: true
@@ -214,10 +214,12 @@ schema:
       width: 1944 # <= 600
       height: 2592 # >= 60
 
+# adsense
 adsense:
   enable: true
   pub: ca-pub-1165447249910969
   ads1: 3325057139
+  ads-sidebar: 3325057139
 
 adblock: true
 

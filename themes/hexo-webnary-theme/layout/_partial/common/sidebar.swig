@@ -23,7 +23,7 @@
         <h3 class="block__title">{{ __('aside.categorie') }}</h3>
         {{ list_categories({ order: -1, class: 'block' }) }}
     </div>
-    
+
     <div class="sidebar__block">
         <h3 class="block__title">{{ __('aside.latest_post') }}</h3>
         {{ latest_post(4) }}
@@ -32,6 +32,23 @@
     <div class="sidebar__block">
         <h3 class="block__title">{{ __('aside.tag') }}</h3>
         {{ tags({ order: -1 }) }}
+    </div>
+
+
+    <div class="sidebar__block">
+        <h3 class="block__title">{{ __('ads') }}</h3>
+        <style>
+        /*.adsense_responsive_sidebar { width: 320px; height: 100px; }
+        @media(min-width: 500px) { .adsense_responsive_sidebar { width: 468px; height: 60px; } }
+        @media(min-width: 800px) { .adsense_responsive_sidebar { width: 728px; height: 90px; } }*/
+        </style>
+        <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle adsense_responsive_sidebar"
+                style="display:inline-block"
+                data-ad-client="{{ config.adsense.pub }}"
+                data-ad-slot="{{ config.adsense.ads-sidebar }}"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <!-- <div class="sidebar__block">
