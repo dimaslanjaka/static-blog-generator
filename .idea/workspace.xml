@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add AdBlock">
-      <change afterPath="$PROJECT_DIR$/source/_posts/Test.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/assets/scss/inline-image.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/Test.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add AdBlock" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,11 +78,11 @@
       <recent name="D:\Repositories\gh-pages\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\themes\hexo-webnary-theme\source\scss" />
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\Expel Incident" />
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland" />
       <recent name="D:\Repositories\gh-pages\source\assets\img" />
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\TLON" />
-      <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\TLON\Expel Quest Standard Rewards" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.article:copy:dev">
@@ -221,14 +215,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="9222000" />
-    </task>
-    <task id="LOCAL-00048" summary="Fixed single banner">
-      <created>1629047754837</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1629047754837</updated>
+      <workItem from="1629186644514" duration="9684000" />
     </task>
     <task id="LOCAL-00049" summary="Fixed single banner">
       <created>1629048537703</created>
@@ -566,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629197534576</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Add AdBlock">
+      <created>1629199006055</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1629199006055</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
