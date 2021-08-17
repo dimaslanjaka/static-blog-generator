@@ -21,32 +21,12 @@ category:
 
 comments: true
 
-cover: "https://suaraborneo.co.id/wp-content/uploads/2020/05/783px-Test-Logo.svg_.png"
+cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
 location: Indonesia
 ---
 
-<style>
-.container-box {
-  /*border: 3px solid blue;
-  padding: 20px 40px 40px;*/
-  /*max-width: 640px;*/
-}
-.container-box-image {
-  display: inline-block;
-  vertical-align: top;
-  width: 46%;
-  margin: 20px 30px 0 0;
-}
-.container-box-text {
-  display: inline-block;
-  width: 46%;
-}
-@media (max-width: 620px) {
-  .container-box-text {
-    width: 100%;
-  }
-}
-</style>
+<!--suppress HtmlUnknownTarget -->
+<link rel="stylesheet" href="/scss/inline-image.css" media="all" />
 
 <div class="container-box">
   <img class="container-box-image" src="https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428" alt="x">
