@@ -215,21 +215,7 @@
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
-      <workItem from="1629182202902" duration="2704000" />
-    </task>
-    <task id="LOCAL-00028" summary="Update IDEA Config">
-      <created>1627683046969</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1627683046969</updated>
-    </task>
-    <task id="LOCAL-00029" summary="try Publish">
-      <created>1627683673000</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1627683673000</updated>
+      <workItem from="1629182202902" duration="3084000" />
     </task>
     <task id="LOCAL-00030" summary="try Publish">
       <created>1627683971961</created>
@@ -560,7 +546,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629185172161</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="test inline images folder">
+      <created>1629185262673</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185262673</updated>
+    </task>
+    <task id="LOCAL-00078" summary="test inline images folder">
+      <created>1629185366753</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185366753</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

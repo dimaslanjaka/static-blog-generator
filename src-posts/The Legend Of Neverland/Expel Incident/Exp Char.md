@@ -28,4 +28,4 @@ location: Indonesia
 ---
 
 ## Kagmaw Grassland F3
-[![603TF.png](../TLON/Expel%20Quest%20Exp%20Char/Kagmaw%20Grassland%20F3.png)](../TLON/Expel%20Quest%20Exp%20Char/Kagmaw%20Grassland%20F3.png)
+![](Expel%20Quest%20Exp%20Char/Kagmaw%20Grassland%20F3.png)
