@@ -85,5 +85,10 @@
     }
     </script>
     {% endif %}
+
+    {% if config.adblock %}
+    <link rel="stylesheet" href="js/adblock.css" media="all" />
+    <script type="text/javascript" src="js/adblock.js"></script>
+    {% endif %}
 </body>
 </html>
