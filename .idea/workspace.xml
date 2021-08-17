@@ -85,7 +85,7 @@
       <recent name="D:\Repositories\gh-pages\src\express" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.ts-node">
+  <component name="RunManager" selected="Gulp.js.article:copy">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -213,14 +213,7 @@
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
-      <workItem from="1629182202902" duration="776000" />
-    </task>
-    <task id="LOCAL-00020" summary="Prepare transformation">
-      <created>1623492917972</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1623492917972</updated>
+      <workItem from="1629182202902" duration="1117000" />
     </task>
     <task id="LOCAL-00021" summary="Prepare transformation">
       <created>1623494010534</created>
@@ -558,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629182973978</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Fix disqus comments">
+      <created>1629183308335</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1629183308335</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

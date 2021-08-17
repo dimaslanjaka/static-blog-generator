@@ -22,6 +22,7 @@
 
 <!--{ if page.comments && config.disqus_shortname }-->
 {% if config.disqus_shortname %}
+    <script id="dsq-count-scr" src="//{{ config.disqus_shortname }}.disqus.com/count.js" async></script>
     <script>
         var disqus_config = function () {
             this.page.url = '{{ config.url }}/{{ page.path }}';
