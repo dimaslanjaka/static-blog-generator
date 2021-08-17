@@ -83,6 +83,9 @@ function articleCopy(done) {
     if (err) {
       console.error(err);
       console.error("error");
+      if (err.path) {
+        console.log(err.path);
+      }
     } else {
       console.log("success!");
     }
