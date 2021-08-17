@@ -17,8 +17,8 @@ author:
   link: "<Your Profile Link Here>"
 
 category:
-  - The Legend Of Neverland
   - Games
+  - The Legend Of Neverland
 
 cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"
 location: Indonesia

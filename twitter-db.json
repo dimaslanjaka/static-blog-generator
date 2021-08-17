@@ -3,21 +3,27 @@
   "to-destroy": [],
   "to-publish": [
     {
-      "title": "Expel Incident Highest Exp",
+      "title": "Expel Incident Highest Exp Character",
       "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html",
       "hexoPublished": true,
       "tags": [
-        "games",
-        "the legend of neverland"
+        "Expel Incident"
       ]
     },
     {
-      "title": "Expel Incident Highest Exp",
+      "title": "Expel Incident Highest Fairies Exp And Crystals",
       "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html",
       "hexoPublished": true,
       "tags": [
-        "games",
-        "the legend of neverland"
+        "Expel Incident"
+      ]
+    },
+    {
+      "title": "Expel Incident Standard Rewards",
+      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html",
+      "hexoPublished": true,
+      "tags": [
+        "Expel Incident"
       ]
     },
     {
@@ -25,8 +31,8 @@
       "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html",
       "hexoPublished": true,
       "tags": [
-        "games",
-        "the legend of neverland"
+        "Quiz",
+        "Event"
       ]
     },
     {
@@ -34,8 +40,7 @@
       "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Recipes.html",
       "hexoPublished": true,
       "tags": [
-        "games",
-        "the legend of neverland"
+        "Life Skill"
       ]
     },
     {
@@ -165,15 +170,6 @@
       "permalink": "https://git.webmanajemen.com/page/safelink-aes.html",
       "hexoPublished": true,
       "tags": []
-    },
-    {
-      "title": "Expel Incident Standard Rewards",
-      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html",
-      "hexoPublished": true,
-      "tags": [
-        "games",
-        "the legend of neverland"
-      ]
     }
   ]
 }

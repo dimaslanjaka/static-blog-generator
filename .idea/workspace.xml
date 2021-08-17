@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Modify Article Expel Incident">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Modify TLON Articles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Standard Rewards/Screenshot_20210808-111818.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Standard Rewards/Screenshot_20210808-111818.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Standard Rewards/Screenshot_20210816-100551.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Standard Rewards/Screenshot_20210816-100551.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,14 +218,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="4697000" />
-    </task>
-    <task id="LOCAL-00044" summary="Fixed single banner">
-      <created>1629041803479</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1629041803479</updated>
+      <workItem from="1629186644514" duration="5569000" />
     </task>
     <task id="LOCAL-00045" summary="Fixed single banner">
       <created>1629042277395</created>
@@ -565,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629193720399</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Modify TLON Articles">
+      <created>1629194430677</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1629194430677</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +585,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Integrate with electron" />
     <MESSAGE value="Direct publish" />
     <MESSAGE value="Update IDEA Config" />
     <MESSAGE value="try Publish" />
@@ -612,7 +609,8 @@
     <MESSAGE value="Fix https (exclude from localhost)" />
     <MESSAGE value="Rename Expel Incident" />
     <MESSAGE value="Modify Article Expel Incident" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify Article Expel Incident" />
+    <MESSAGE value="Modify TLON Articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify TLON Articles" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
