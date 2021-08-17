@@ -77,6 +77,7 @@
     {% include './_partial/common/math.swig' %}
 
     {% if config.https && config.https.enable %}
+    <!-- force https -->
     <script>
     if (location.protocol && location.protocol !== 'https:') {
         location.replace(`https:${location.href.substring(location.protocol.length)}`);

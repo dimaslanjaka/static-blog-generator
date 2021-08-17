@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Comments System" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Comments System">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,14 +215,7 @@
       <workItem from="1629130750212" duration="1888000" />
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
-      <workItem from="1629174019038" duration="500000" />
-    </task>
-    <task id="LOCAL-00012" summary="Add cors proxy">
-      <created>1623459764947</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1623459764947</updated>
+      <workItem from="1629174019038" duration="1362000" />
     </task>
     <task id="LOCAL-00013" summary="Update dependencies">
       <created>1623488620317</created>
@@ -557,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629174524392</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Add Comments System">
+      <created>1629174943372</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1629174943372</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
