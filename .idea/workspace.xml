@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add AdBlock" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Inline Image.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Test/Inline Image.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,14 +85,14 @@
       <recent name="D:\Repositories\gh-pages\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\src-posts\Test" />
       <recent name="D:\Repositories\gh-pages\themes\hexo-webnary-theme\source\scss" />
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\Expel Incident" />
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland" />
       <recent name="D:\Repositories\gh-pages\source\assets\img" />
-      <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\TLON" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.article:copy:dev">
+  <component name="RunManager" selected="Gulp.js.article:copy">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -157,9 +164,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:copy:dev" />
-        <item itemvalue="npm.server" />
         <item itemvalue="Gulp.js.article:copy" />
+        <item itemvalue="npm.server" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
       </list>
@@ -215,14 +222,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="9684000" />
-    </task>
-    <task id="LOCAL-00049" summary="Fixed single banner">
-      <created>1629048537703</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1629048537703</updated>
+      <workItem from="1629186644514" duration="11723000" />
     </task>
     <task id="LOCAL-00050" summary="Quiz TLON">
       <created>1629100979937</created>
@@ -560,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629199006055</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Test">
+      <created>1629199466081</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1629199466081</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +589,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="try Publish" />
     <MESSAGE value="try Publish with different config" />
     <MESSAGE value="try Publish with different config #2" />
     <MESSAGE value="try Publish with different config #3" />
@@ -607,7 +613,8 @@
     <MESSAGE value="Modify TLON Articles" />
     <MESSAGE value="Modify GI Articles" />
     <MESSAGE value="Add AdBlock" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AdBlock" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -189,10 +189,11 @@ about:
 
 # live reload
 # https://github.com/hexojs/hexo-livereload
-livereload:
-  port: 35729
+# https://github.com/hexojs/hexo-livereload/issues/7
+#livereload:
+#  port: 35729
 
-# hexo-browsersync
+# https://github.com/hexojs/hexo-browsersync
 browsersync:
   logLevel: "warn"
   ghostMode:

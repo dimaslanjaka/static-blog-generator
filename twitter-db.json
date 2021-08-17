@@ -27,6 +27,14 @@
       ]
     },
     {
+      "title": "Test",
+      "permalink": "https://git.webmanajemen.com/Test/Inline%20Image.html",
+      "hexoPublished": true,
+      "tags": [
+        "Expel Incident"
+      ]
+    },
+    {
       "title": "Quiz The Legend Of Neverland",
       "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html",
       "hexoPublished": true,
@@ -168,12 +176,6 @@
     {
       "title": "",
       "permalink": "https://git.webmanajemen.com/page/safelink-aes.html",
-      "hexoPublished": true,
-      "tags": []
-    },
-    {
-      "title": "",
-      "permalink": "https://git.webmanajemen.com/assets/scss/inline-image.css",
       "hexoPublished": true,
       "tags": []
     }

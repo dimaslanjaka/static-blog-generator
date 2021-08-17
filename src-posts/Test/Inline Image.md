@@ -1,7 +1,7 @@
 ---
 title: Test
 
-subtitle: "Expel Incident With The Highest Exp Character Rewards."
+subtitle: "Test Inline Image"
 
 lang: en
 
@@ -10,15 +10,14 @@ date: 2021-8-17
 type: post
 
 tags:
-  - Expel Incident
+- Test
 
 author:
-  nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+nick: "Dimas Lanjaka"
+link: "<Your Profile Link Here>"
 
 category:
-  - Games
-  - The Legend Of Neverland
+- Test
 
 comments: true
 
@@ -26,11 +25,31 @@ cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
 location: Indonesia
 ---
 
-<!--suppress HtmlUnknownTarget -->
-<link rel="stylesheet" href="scss/inline-image.css" media="all" />
+<style>
+.container-box {
+  /*border: 3px solid blue;
+  padding: 20px 40px 40px;*/
+  /*max-width: 640px;*/
+}
+.container-box-image {
+  display: inline-block;
+  vertical-align: top;
+  width: 46%;
+  margin: 20px 30px 0 0;
+}
+.container-box-text {
+  display: inline-block;
+  width: 46%;
+}
+@media (max-width: 620px) {
+  .container-box-text {
+    width: 100%;
+  }
+}
+</style>
 
 <div class="container-box">
-  <img class="container-box-image" src="https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428">
+  <img class="container-box-image" src="https://mtdata.ru/u7/photo53A0/20946911428-0/original.jpg#20946911428" alt="x">
   <div class="container-box-text">
     <h2>Why Do Cats Like Boxes?</h2>
     <p>"Cats like boxes because they are cryptic animals; they like to hide," Stephen Zawistowski, science adviser for the American Society for the Prevention of Cruelty to Animals, told Business Insider. "And a box gives them a place of safety and security."</p>
