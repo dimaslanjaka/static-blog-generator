@@ -21,7 +21,7 @@ category:
 
 comments: true
 
-cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
+cover: "https://suaraborneo.co.id/wp-content/uploads/2020/05/783px-Test-Logo.svg_.png"
 location: Indonesia
 ---
 

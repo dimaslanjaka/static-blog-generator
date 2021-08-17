@@ -92,7 +92,7 @@
       <recent name="D:\Repositories\gh-pages\source\assets\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.article:copy">
+  <component name="RunManager" selected="npm.server">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -164,8 +164,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.server" />
+        <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
