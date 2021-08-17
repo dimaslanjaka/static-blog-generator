@@ -90,7 +90,7 @@
       <recent name="D:\Repositories\gh-pages\source\assets\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.article:copy:dev">
+  <component name="RunManager" selected="npm.server">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -163,8 +163,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.server" />
-        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="Gulp.js.article:copy" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
       </list>
@@ -220,14 +220,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="12860000" />
-    </task>
-    <task id="LOCAL-00053" summary="Quiz TLON">
-      <created>1629108816782</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1629108816782</updated>
+      <workItem from="1629186644514" duration="13617000" />
     </task>
     <task id="LOCAL-00054" summary="Quiz TLON">
       <created>1629115860337</created>
@@ -565,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629201875911</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Test">
+      <created>1629203748021</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1629203748021</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
