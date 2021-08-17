@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix disqus comments">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="test inline images folder">
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +80,11 @@
       <recent name="D:\Repositories\gh-pages\source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\TLON\Expel Quest Standard Rewards" />
       <recent name="D:\Repositories\gh-pages\userscripts" />
       <recent name="D:\Repositories\gh-pages\src\electron\boilerplate" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Update" />
       <recent name="D:\Repositories\gh-pages\src-posts\Genshin Impact\Location" />
-      <recent name="D:\Repositories\gh-pages\src\express" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.article:copy">
@@ -215,28 +215,7 @@
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
-      <workItem from="1629182202902" duration="2223000" />
-    </task>
-    <task id="LOCAL-00025" summary="Fix package-lock.json">
-      <created>1623539846220</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1623539846220</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Integrate with electron">
-      <created>1623566530810</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1623566530810</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Direct publish">
-      <created>1627683020385</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1627683020385</updated>
+      <workItem from="1629182202902" duration="2704000" />
     </task>
     <task id="LOCAL-00028" summary="Update IDEA Config">
       <created>1627683046969</created>
@@ -560,7 +539,28 @@
       <option name="project" value="LOCAL" />
       <updated>1629183767919</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="test inline images folder">
+      <created>1629185079767</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185079767</updated>
+    </task>
+    <task id="LOCAL-00075" summary="test inline images folder">
+      <created>1629185153002</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185153002</updated>
+    </task>
+    <task id="LOCAL-00076" summary="test inline images folder">
+      <created>1629185172161</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1629185172161</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +582,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add cors proxy" />
     <MESSAGE value="Update dependencies" />
     <MESSAGE value="Fix" />
     <MESSAGE value="Prepare transformation" />
@@ -607,7 +606,8 @@
     <MESSAGE value="Add Comments System" />
     <MESSAGE value="Fix copy gulp task" />
     <MESSAGE value="Fix disqus comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix disqus comments" />
+    <MESSAGE value="test inline images folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="test inline images folder" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
