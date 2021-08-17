@@ -23,6 +23,7 @@ category:
 
 cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"
 location: Indonesia
+comments: false
 ---
 
 [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF)

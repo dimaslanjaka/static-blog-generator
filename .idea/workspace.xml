@@ -66,7 +66,7 @@
     <property name="nodejs_package_manager_path" value="/usr/lib/node_modules/npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Repositories\gh-pages\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Repositories\gh-pages\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -213,21 +213,7 @@
       <workItem from="1629133473750" duration="2187000" />
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
-      <workItem from="1629182202902" duration="358000" />
-    </task>
-    <task id="LOCAL-00018" summary="Prepare transformation">
-      <created>1623492670239</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1623492670239</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Prepare transformation">
-      <created>1623492763536</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1623492763536</updated>
+      <workItem from="1629182202902" duration="776000" />
     </task>
     <task id="LOCAL-00020" summary="Prepare transformation">
       <created>1623492917972</created>
@@ -558,7 +544,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629182532934</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Fix disqus comments">
+      <created>1629182716356</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1629182716356</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Fix disqus comments">
+      <created>1629182973978</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1629182973978</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

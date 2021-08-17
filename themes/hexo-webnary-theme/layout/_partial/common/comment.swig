@@ -23,7 +23,6 @@
 <!--{ if page.comments && config.disqus_shortname }-->
 {% if config.disqus_shortname %}
     <script>
-        var disqus_shortname = '{{ config.disqus_shortname }}';
         var disqus_config = function () {
             this.page.url = '{{ config.url }}/{{ page.path }}';
             this.page.identifier = '/{{ page.path }}';
@@ -32,7 +31,7 @@
 
         (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        s.src = 'https://' + disqus_shortname + '.disqus.com/{% if page.comments %}embed.js{% else %}count.js{% endif %}';
+        s.src = 'https://{{ config.disqus_shortname }}.disqus.com/{% if page.comments %}embed.js{% else %}count.js{% endif %}';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
         })();
