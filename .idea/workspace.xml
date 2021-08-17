@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Rename Expel Incident">
-      <change afterPath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232107.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232226.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232339.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/TLON/Expel Quest Kristal/Screenshot_20210812-232107.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/TLON/Expel Quest Kristal/Screenshot_20210812-232226.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/TLON/Expel Quest Kristal/Screenshot_20210812-232339.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Exp Char.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Expel Quest Kristal/Screenshot_20210812-232107.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232107.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Expel Quest Kristal/Screenshot_20210812-232226.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232226.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Expel Quest Kristal/Screenshot_20210812-232339.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232339.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Modify Article Expel Incident">
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232107.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Skala Desert 3F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232226.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Gaya Snow Mountain 2F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232339.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Gaya Snow Mountain 3F.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +219,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="4044000" />
-    </task>
-    <task id="LOCAL-00041" summary="Try test auto square adsense banner !1">
-      <created>1629041047420</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1629041047420</updated>
+      <workItem from="1629186644514" duration="4340000" />
     </task>
     <task id="LOCAL-00042" summary="Fixed single banner">
       <created>1629041356284</created>
@@ -576,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629192817389</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Modify Article Expel Incident">
+      <created>1629193444928</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1629193444928</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +586,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix package-lock.json" />
     <MESSAGE value="Integrate with electron" />
     <MESSAGE value="Direct publish" />
     <MESSAGE value="Update IDEA Config" />
@@ -623,7 +610,8 @@
     <MESSAGE value="test assets images folder" />
     <MESSAGE value="Fix https (exclude from localhost)" />
     <MESSAGE value="Rename Expel Incident" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename Expel Incident" />
+    <MESSAGE value="Modify Article Expel Incident" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify Article Expel Incident" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
