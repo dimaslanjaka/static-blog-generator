@@ -10,8 +10,7 @@ date: 2021-8-15
 type: post
 
 tags:
-  - the legend of neverland
-  - games
+  - Life Skill
 
 author:
   nick: "Maulinda Agustina"

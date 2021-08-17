@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Modify Article Expel Incident">
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232107.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Skala Desert 3F.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232226.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Gaya Snow Mountain 2F.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Screenshot_20210812-232339.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Gaya Snow Mountain 3F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Standard Rewards/Screenshot_20210808-111818.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Standard Rewards/Screenshot_20210808-111818.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/TLON/Standard Rewards/Screenshot_20210816-100551.png" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Expel Incident/Standard Rewards/Screenshot_20210816-100551.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland\TLON\Expel Quest Standard Rewards" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.article:copy">
+  <component name="RunManager" selected="Gulp.js.article:copy:dev">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -111,13 +111,14 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
+    <configuration name="article:copy:dev" type="js.build_tools.gulp" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r ts-node/register</node-options>
+      <gulpfile>$PROJECT_DIR$/gulpfile.ts</gulpfile>
+      <tasks>
+        <task>article:copy:dev</task>
+      </tasks>
+      <arguments />
       <envs />
       <method v="2" />
     </configuration>
@@ -154,18 +155,18 @@
     <list>
       <item itemvalue="Gulp.js.article:copy" />
       <item itemvalue="Node.js.ts-node" />
-      <item itemvalue="npm.build" />
       <item itemvalue="npm.dev:electron" />
       <item itemvalue="npm.server" />
       <item itemvalue="npm.wsl-install" />
+      <item itemvalue="Gulp.js.article:copy:dev" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:copy" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.server" />
+        <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
-        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -219,21 +220,7 @@
       <workItem from="1629170140418" duration="800000" />
       <workItem from="1629174019038" duration="2886000" />
       <workItem from="1629182202902" duration="3713000" />
-      <workItem from="1629186644514" duration="4340000" />
-    </task>
-    <task id="LOCAL-00042" summary="Fixed single banner">
-      <created>1629041356284</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1629041356284</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Fixed single banner">
-      <created>1629041601338</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1629041601338</updated>
+      <workItem from="1629186644514" duration="4697000" />
     </task>
     <task id="LOCAL-00044" summary="Fixed single banner">
       <created>1629041803479</created>
@@ -564,7 +551,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629193444928</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Modify Article Expel Incident">
+      <created>1629193706080</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1629193706080</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Modify Article Expel Incident">
+      <created>1629193720399</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1629193720399</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

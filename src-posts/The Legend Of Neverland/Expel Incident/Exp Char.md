@@ -1,5 +1,5 @@
 ---
-title: Expel Incident Highest Exp
+title: Expel Incident Highest Exp Character
 
 subtitle: "Expel Incident With The Highest Exp Character Rewards."
 
@@ -10,8 +10,7 @@ date: 2021-8-17
 type: post
 
 tags:
-  - the legend of neverland
-  - games
+  - Expel Incident
 
 author:
   nick: "Maulinda Agustina"
@@ -28,7 +27,7 @@ location: Indonesia
 ---
 
 ## Expel Incident The Legend Of NeverLand
-In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, or those who have more Exp rewards for fairies and crystals. The following is the Expel Incident with the most CHARACTER EXP.
+In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most CHARACTER EXP.
 
 ## Kagmaw Grassland F3
 ![](./Exp%20Char/Kagmaw%20Grassland%20F3.png)

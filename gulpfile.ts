@@ -93,9 +93,9 @@ function articleCopy(done, clean = false) {
       } else {
         console.log("success!");
       }
-    });
 
-    done();
+      done();
+    });
   }, 1000);
 }
 

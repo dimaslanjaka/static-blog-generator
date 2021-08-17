@@ -1,7 +1,7 @@
 ---
-title: Expel Incident Highest Exp
+title: Expel Incident Highest Fairies Exp And Crystals
 
-subtitle: "Expel Incident With The Highest Exp Character Rewards."
+subtitle: "Expel Incident With The Highest Fairies Exp And Crystals Rewards."
 
 lang: en
 
@@ -9,9 +9,8 @@ date: 2021-8-17
 
 type: post
 
-tags:
-  - the legend of neverland
-  - games
+tags: 
+  - Expel Incident
 
 author:
   nick: "Maulinda Agustina"
@@ -28,7 +27,7 @@ location: Indonesia
 ---
 
 ## Expel Incident The Legend Of NeverLand
-In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, or those who have more Exp rewards for fairies and crystals. The following is the Expel Incident with the most FAIRY EXP AND CRYSTALS.
+In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most FAIRY EXP AND CRYSTALS.
 
 ## Gaya Snow Mountain 2F
 ![](Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%202F.png)

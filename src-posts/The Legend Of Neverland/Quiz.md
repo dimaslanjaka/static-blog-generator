@@ -10,8 +10,8 @@ date: 2021-8-16
 type: post
 
 tags:
-  - the legend of neverland
-  - games
+  - Quiz
+  - Event
 
 author:
   nick: "Maulinda Agustina"
