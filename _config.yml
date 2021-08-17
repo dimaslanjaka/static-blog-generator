@@ -101,6 +101,9 @@ include:
 exclude:
 ignore:
 
+# Comments
+disqus_shortname: dimaslanjaka
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
