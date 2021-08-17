@@ -23,7 +23,7 @@ category:
 
 comments: true
 
-cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg"
+cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
 location: Indonesia
 ---
 
