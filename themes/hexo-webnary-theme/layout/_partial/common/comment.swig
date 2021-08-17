@@ -20,7 +20,8 @@
     </script>
 {% endif %}
 
-{% if page.comments && config.disqus_shortname %}
+<!--{ if page.comments && config.disqus_shortname }-->
+{% if config.disqus_shortname %}
     <script>
         var disqus_shortname = '{{ config.disqus_shortname }}';
         var disqus_config = function () {
