@@ -31,7 +31,7 @@ location: Indonesia
 ![](./Exp%20Char/Kagmaw%20Grassland%20F3.png)
 
 ## Kagmaw Grassland F1
-![](Exp%20Char/Screenshot_20210803-112251.png)
+![](../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Screenshot_20210803-112251.png)
 
 ## Skala Desert F1
 ![](Exp%20Char/Screenshot_20210808-112105.png)
