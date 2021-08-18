@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
+    "start": "npx hexo server",
     "build": "hexo generate",
     "clean": "hexo clean && echo git.webmanajemen.com > docs/CNAME",
     "deploy": "hexo deploy",

@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Skip Checkout">
-      <change afterPath="$PROJECT_DIR$/scripts/www/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/www/tlon/quiz.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Backend Processed">
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_data/favicons.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/_data/favicons.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,14 +225,7 @@
       <workItem from="1629186644514" duration="14751000" />
       <workItem from="1629256777546" duration="1112000" />
       <workItem from="1629263445572" duration="2220000" />
-      <workItem from="1629269445731" duration="1982000" />
-    </task>
-    <task id="LOCAL-00056" summary="Add Opengraph metadata">
-      <created>1629118156612</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1629118156612</updated>
+      <workItem from="1629269445731" duration="2221000" />
     </task>
     <task id="LOCAL-00057" summary="Fix path">
       <created>1629136329629</created>
@@ -580,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629257772781</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Add Backend Processed">
+      <created>1629273551190</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1629273551190</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +592,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="try Publish with different config #2" />
     <MESSAGE value="try Publish with different config #3" />
     <MESSAGE value="Try publish with different config #4" />
     <MESSAGE value="Add https config" />
@@ -627,7 +616,8 @@
     <MESSAGE value="Add AdBlock" />
     <MESSAGE value="Test" />
     <MESSAGE value="Add New Quiz TLON" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add New Quiz TLON" />
+    <MESSAGE value="Add Backend Processed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Backend Processed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
