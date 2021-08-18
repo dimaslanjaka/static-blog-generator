@@ -10,18 +10,18 @@ date: 2021-8-17
 type: post
 
 tags:
-- Test
+  - Test
 
 author:
-nick: "Dimas Lanjaka"
-link: "<Your Profile Link Here>"
+  nick: "Dimas Lanjaka"
+  link: "<Your Profile Link Here>"
 
 category:
-- Test
+  - Test
 
 comments: true
 
-cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
+cover: "https://suaraborneo.co.id/wp-content/uploads/2020/05/783px-Test-Logo.svg_.png"
 location: Indonesia
 ---
 

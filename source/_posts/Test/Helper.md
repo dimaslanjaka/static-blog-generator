@@ -1,0 +1,28 @@
+---
+title: Test
+
+subtitle: "Test Inline Image"
+
+lang: en
+
+date: 2021-8-17
+
+type: post
+
+tags:
+  - Test
+
+author:
+  nick: "Dimas Lanjaka"
+  link: "<Your Profile Link Here>"
+
+category:
+  - Test
+
+comments: true
+
+cover: "https://suaraborneo.co.id/wp-content/uploads/2020/05/783px-Test-Logo.svg_.png"
+location: Indonesia
+---
+
+<%- gravatar('a@abc.com' {s: 40, d: 'https://via.placeholder.com/150'}) %>
