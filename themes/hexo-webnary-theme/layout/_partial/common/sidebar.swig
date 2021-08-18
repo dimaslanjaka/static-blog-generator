@@ -38,7 +38,8 @@
     <div class="sidebar__block">
         <h3 class="block__title">{{ __('ads') }}</h3>
         <style>
-        /*.adsense_responsive_sidebar { width: 320px; height: 100px; }
+        .adsense_responsive_sidebar { width: 300px; height: 300px; }
+        /*
         @media(min-width: 500px) { .adsense_responsive_sidebar { width: 468px; height: 60px; } }
         @media(min-width: 800px) { .adsense_responsive_sidebar { width: 728px; height: 90px; } }*/
         </style>
