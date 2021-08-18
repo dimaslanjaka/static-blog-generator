@@ -5,6 +5,7 @@ const Path = require("path"),
   _ = require("lodash");
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const fs = require("hexo-fs");
 
 const publicDir = hexo.public_dir,
   sourceDir = hexo.source_dir;
@@ -415,4 +416,21 @@ hexo.extend.helper.register("escape_with_json", function (str) {
     return json;
   }
   return str;
+});
+
+// transform each line as <li/>
+hexo.extend.helper.register("list_from_file", function (file) {
+  if (fs.existsSync(file)) {
+    // eslint-disable-next-line prefer-const
+    let read = fs.readFileSync(file);
+    if (read) {
+      // eslint-disable-next-line prefer-const
+      let splitNewLine = read.toString().split("\n");
+      splitNewLine.map(function (str) {
+        return `<li>${str}</li>`;
+      });
+      return splitNewLine.join("\n");
+    }
+  }
+  return file;
 });
