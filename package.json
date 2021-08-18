@@ -2,6 +2,7 @@
   "name": "gh-pages",
   "version": "1.0.1",
   "private": true,
+  "main": "main.js",
   "scripts": {
     "start": "npx hexo server",
     "build": "hexo generate",
