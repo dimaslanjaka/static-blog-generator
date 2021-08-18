@@ -20,6 +20,9 @@
   "hexo": {
     "version": "5.4.0"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "dependencies": {
     "chokidar": "^2.1.8",
     "crypto-js": "^4.0.0",
