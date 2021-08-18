@@ -30,14 +30,16 @@ function lightBox(data) {
   return data;
 }
 
-function MDReadFile(data, hexo) {
-  hexo.log.d("Post asset folder path:", chalk.magenta(data.asset_dir));
-  // Split by path delimiter, filter out empty string, last one is asset folder's name.
-  let asset_dir_name = data.asset_dir
-    .split(/[\/\\]/)
-    .filter((i) => i)
-    .pop();
-  hexo.log.d("Post asset folder name:", chalk.magenta(asset_dir_name));
+function MDReadFile(data) {
+  if (data.asset_dir) {
+    hexo.log.d("Post asset folder path:", chalk.magenta(data.asset_dir));
+    // Split by path delimiter, filter out empty string, last one is asset folder's name.
+    let asset_dir_name = data.asset_dir
+      .split(/[\/\\]/)
+      .filter((i) => i)
+      .pop();
+    hexo.log.d("Post asset folder name:", chalk.magenta(asset_dir_name));
+  }
 
   // TODO: parse readfile tag inside markdown page/post
   let readfile = data.content.match(/\<\!\-\-\s+?readfile\s+?.+?\s+?\-\-\>/gm);
@@ -51,5 +53,5 @@ function MDReadFile(data, hexo) {
 
 hexo.extend.filter.register("after_post_render", (data) => {
   lightBox(data);
-  MDReadFile(data, hexo);
+  MDReadFile(data);
 });
