@@ -53,6 +53,8 @@ function MDReadFile(data) {
     hexo.log.i("Readfile match:", match[1]);
     fs.writeFileSync(path.join(rootFolder, "docs/log/Readfile.json"), JSON.stringify(match, null, 2));
   }
+
+  fs.writeFileSync(path.join(rootFolder, "docs/log/data.json"), JSON.stringify(data, null, 2));
 }
 
 hexo.extend.filter.register("after_post_render", (data) => {
