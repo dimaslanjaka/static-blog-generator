@@ -1,6 +1,9 @@
 "use strict";
 
 const chalk = require("chalk");
+const fs = require("hexo-fs");
+const path = require("path");
+const rootFolder = process.cwd();
 
 function lightBox(data) {
   const regex_img = /<img .*?>/gi;
@@ -47,7 +50,11 @@ function MDReadFile(data) {
     // if readfile tag found
     hexo.log.d("Readfile:", readfile);
     let match = readfile[0].match(/\<\!\-\-\s+?readfile\s+?(.+?)\s+?\-\-\>/);
-    hexo.log.d("match:", match[1]);
+    hexo.log.i("Readfile match:", match[1]);
+    fs.writeFileSync(
+      path.join(rootFolder, "docs/log/" + arguments.callee.name + ".json"),
+      JSON.stringify(match, null, 2)
+    );
   }
 }
 
