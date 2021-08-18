@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test Static Files">
-      <change afterPath="$PROJECT_DIR$/src-posts/Test/Helper.md" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test Custom Helper Inside Markdowns">
+      <change afterPath="$PROJECT_DIR$/source/_posts/Test/Helper/readfile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src-posts/Test/Helper/readfile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/before_render.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/assets/tlon/quiz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz/quiz.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/Test/Inline Image.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Test/Inline Image.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Helper.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Test/Helper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/Test/Helper.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Test/Helper.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,9 +173,9 @@
       <list>
         <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.server" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
-        <item itemvalue="Gulp.js.article:copy:dev" />
       </list>
     </recent_temporary>
   </component>
@@ -232,13 +233,7 @@
       <workItem from="1629256777546" duration="1112000" />
       <workItem from="1629263445572" duration="2220000" />
       <workItem from="1629269445731" duration="5829000" />
-    </task>
-    <task id="LOCAL-00062" summary="Add Comments System">
-      <created>1629175486774</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1629175486774</updated>
+      <workItem from="1629291003310" duration="4877000" />
     </task>
     <task id="LOCAL-00063" summary="Add Comments System">
       <created>1629175667518</created>
@@ -576,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629289317207</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Test Custom Helper Inside Markdowns">
+      <created>1629291186267</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1629291186267</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +600,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add https config" />
     <MESSAGE value="Add single banner adsense" />
     <MESSAGE value="Add The Legend Of Neverland Topics" />
     <MESSAGE value="Try test auto square adsense banner !1" />
@@ -623,7 +624,8 @@
     <MESSAGE value="Add Backend Processed" />
     <MESSAGE value="Add Backend Processed (Heroku)" />
     <MESSAGE value="Test Static Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Static Files" />
+    <MESSAGE value="Test Custom Helper Inside Markdowns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Custom Helper Inside Markdowns" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

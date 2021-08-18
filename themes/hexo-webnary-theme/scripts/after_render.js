@@ -1,6 +1,8 @@
 "use strict";
 
-hexo.extend.filter.register("after_post_render", (data) => {
+const chalk = require("chalk");
+
+function lightBox(data) {
   const regex_img = /<img .*?>/gi;
   const regex_rel = /rel="external"/g;
 
@@ -26,4 +28,28 @@ hexo.extend.filter.register("after_post_render", (data) => {
     .replace(regex_rel, "");
 
   return data;
+}
+
+function MDReadFile(data, hexo) {
+  hexo.log.d("Post asset folder path:", chalk.magenta(data.asset_dir));
+  // Split by path delimiter, filter out empty string, last one is asset folder's name.
+  let asset_dir_name = data.asset_dir
+    .split(/[\/\\]/)
+    .filter((i) => i)
+    .pop();
+  hexo.log.d("Post asset folder name:", chalk.magenta(asset_dir_name));
+
+  // TODO: parse readfile tag inside markdown page/post
+  let readfile = data.content.match(/\<\!\-\-\s+?readfile\s+?.+?\s+?\-\-\>/gm);
+  if (readfile) {
+    // if readfile tag found
+    hexo.log.d("Readfile:", readfile);
+    let match = readfile[0].match(/\<\!\-\-\s+?readfile\s+?(.+?)\s+?\-\-\>/);
+    hexo.log.d("match:", match[1]);
+  }
+}
+
+hexo.extend.filter.register("after_post_render", (data) => {
+  lightBox(data);
+  MDReadFile(data, hexo);
 });

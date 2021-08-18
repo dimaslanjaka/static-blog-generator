@@ -140,10 +140,8 @@ theme: hexo-webnary-theme
 deploy:
   type: git
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
-  branch: gh-pages
-  #type: 'netlify'
-  #token: <your-own-access-tokens>
-  #site_id: <your-own-access-tokens>
+  branch: master
+  message: "Git Deployment"
 
 # Twitter Auto-Publish Config
 twitterAutoPublish:
