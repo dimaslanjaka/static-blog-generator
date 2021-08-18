@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add New Quiz TLON">
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz/Screenshot_20210818-100256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz/Screenshot_20210818-100321.png" beforeDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Skip Checkout">
+      <change afterPath="$PROJECT_DIR$/scripts/www/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/www/tlon/quiz.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_data/favicons.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/_data/favicons.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/browserconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/source/img/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +23,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="cors-proxy" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -27,14 +40,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/electron/menu.ts" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/markdown/transformPosts.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/gulpfile.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/post.swig" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/markdown/transformPosts.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/gulpfile.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/translator/index.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
@@ -89,7 +102,7 @@
       <recent name="D:\Repositories\gh-pages\source\assets\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.article:copy">
+  <component name="RunManager" selected="npm.server">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -161,11 +174,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:copy" />
         <item itemvalue="npm.server" />
-        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.dev:electron" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
+        <item itemvalue="Gulp.js.article:copy" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +234,8 @@
       <workItem from="1629182202902" duration="3713000" />
       <workItem from="1629186644514" duration="14751000" />
       <workItem from="1629256777546" duration="1112000" />
+      <workItem from="1629263445572" duration="2220000" />
+      <workItem from="1629269445731" duration="1982000" />
     </task>
     <task id="LOCAL-00056" summary="Add Opengraph metadata">
       <created>1629118156612</created>

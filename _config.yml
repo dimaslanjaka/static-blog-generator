@@ -229,3 +229,10 @@ tagmanager:
 
 https:
   enable: true
+
+# https://github.com/liuzc/hexo-autonofollow
+nofollow:
+  enable: true
+  exclude:
+    - exclude1.com
+    - exclude2.com
