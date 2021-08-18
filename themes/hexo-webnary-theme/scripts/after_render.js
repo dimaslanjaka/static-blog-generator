@@ -51,10 +51,7 @@ function MDReadFile(data) {
     hexo.log.d("Readfile:", readfile);
     let match = readfile[0].match(/\<\!\-\-\s+?readfile\s+?(.+?)\s+?\-\-\>/);
     hexo.log.i("Readfile match:", match[1]);
-    fs.writeFileSync(
-      path.join(rootFolder, "docs/log/" + arguments.callee.name + ".json"),
-      JSON.stringify(match, null, 2)
-    );
+    fs.writeFileSync(path.join(rootFolder, "docs/log/Readfile.json"), JSON.stringify(match, null, 2));
   }
 }
 
