@@ -234,5 +234,5 @@ https:
 nofollow:
   enable: true
   exclude:
-    - exclude1.com
-    - exclude2.com
+    - git.webmanajemen.com
+    - webmanajemen.com

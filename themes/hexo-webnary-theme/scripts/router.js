@@ -4,8 +4,8 @@ const serveStatic = require("serve-static"),
 const fs = require("hexo-fs");
 
 hexo.extend.filter.register("server_middleware", function (app) {
-  const staticRoutes = path.join(__dirname, "/../../../scripts/www");
-  console.log(staticRoutes, fs.existsSync(staticRoutes));
+  const staticRoutes = path.join(__dirname, "/../../../source/assets/www");
+  //console.log(staticRoutes, fs.existsSync(staticRoutes));
 
   // Main routes
   app.use(hexo.config.root + "backend/", serveStatic(staticRoutes));
@@ -13,6 +13,8 @@ hexo.extend.filter.register("server_middleware", function (app) {
 
   app.use(function (req, res, next) {
     res.setHeader("X-Powered-By", "Hexo L3n4r0x");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Max-Age", "86400");
     next();
   });
 });
