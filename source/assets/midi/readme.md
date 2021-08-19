@@ -10,6 +10,4 @@ current folder path:
 https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/  
 example direct download/streaming `7 Orange`:   
 https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7%20orange.mid  
-
-## Understanding
-`spance` replace with `%20`
+ 
