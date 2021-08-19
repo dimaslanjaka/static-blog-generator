@@ -1,7 +1,7 @@
 ---
-title: Test
+title: Test Helper
 
-subtitle: "Test Inline Image"
+subtitle: "Test Helper Function"
 
 lang: en
 

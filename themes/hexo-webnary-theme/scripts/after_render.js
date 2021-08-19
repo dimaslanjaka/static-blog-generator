@@ -52,8 +52,9 @@ function MDReadFile(data) {
     let match = readfile[0].match(/\<\!\-\-\s+?readfile\s+?(.+?)\s+?\-\-\>/);
     hexo.log.i("Readfile match:", match[1]);
     fs.writeFileSync(path.join(rootFolder, "docs/log/Readfile.json"), JSON.stringify(match, null, 2));
-    if (fs.existsSync(match[1])) {
-      let read = fs.readFileSync(match[1]);
+    let loc = path.join(process.cwd(), match[1]);
+    if (fs.existsSync(loc)) {
+      let read = fs.readFileSync(loc);
       if (read) {
         read = read.toString();
         data.content.replace(match[0], read);
