@@ -1,4 +1,5 @@
 ### Short url services
+to avoid typing long url, better you short them to easily typed.  
 [bit.ly](http://bitly.com)
 
 ### How to copy url
