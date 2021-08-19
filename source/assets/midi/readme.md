@@ -7,7 +7,7 @@
 
 # 2
 current folder path:  
-https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/
+https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/  
 example direct download/streaming `7 Orange`:   
-https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7%20orange.mid
+https://github.com/dimaslanjaka/dimaslanjaka.github.io/raw/compiler/source/assets/midi/7%20orange.mid  
 
