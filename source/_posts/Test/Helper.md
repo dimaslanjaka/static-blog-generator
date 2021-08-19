@@ -31,4 +31,4 @@ location: Indonesia
 <%- list_from_file("src-posts/The Legend Of Neverland/Quiz/quiz.txt") %>
 -->
 
-<!-- readfile Helper/readfile.md -->
+<!-- readfile source/_posts/Test/Helper/readfile.md -->
