@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix Quiz">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Remove annoying midi's">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/assets/Midi/Avenged Sevenfold/DearGod.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/assets/Midi/DearGod.mid" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,10 +160,10 @@
     <list>
       <item itemvalue="Gulp.js.article:copy" />
       <item itemvalue="Gulp.js.article:copy:dev" />
+      <item itemvalue="Gulp.js.article:clean" />
       <item itemvalue="Node.js.ts-node" />
       <item itemvalue="npm.server" />
       <item itemvalue="npm.wsl-install" />
-      <item itemvalue="Gulp.js.article:clean" />
     </list>
     <recent_temporary>
       <list>
@@ -228,14 +230,8 @@
       <workItem from="1629263445572" duration="2220000" />
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
-      <workItem from="1629470127826" duration="6931000" />
-    </task>
-    <task id="LOCAL-00072" summary="Fix disqus comments">
-      <created>1629183611332</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1629183611332</updated>
+      <workItem from="1629470127826" duration="7211000" />
+      <workItem from="1629477535602" duration="540000" />
     </task>
     <task id="LOCAL-00073" summary="Fix disqus comments">
       <created>1629183767919</created>
@@ -573,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629476394988</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Remove annoying midi's">
+      <created>1629477345834</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1629477345834</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +598,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed single banner" />
     <MESSAGE value="Quiz TLON" />
     <MESSAGE value="Add Opengraph metadata" />
     <MESSAGE value="Fix path" />
@@ -620,7 +622,8 @@
     <MESSAGE value="Test Custom Helper Inside Markdowns" />
     <MESSAGE value="Fix Gulp" />
     <MESSAGE value="Fix Quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Quiz" />
+    <MESSAGE value="Remove annoying midi's" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove annoying midi's" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
