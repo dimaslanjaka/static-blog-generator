@@ -38,7 +38,7 @@ const devPostDir = path.join(__dirname, "build/_posts");
  * Empty all files and folders in directory path
  * @param directory
  */
-function emptyDir(directory: string) {
+function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
   if (fs.existsSync(directory))
     fs.readdir(directory, (err, files) => {
       if (err) throw err;
@@ -55,6 +55,8 @@ function emptyDir(directory: string) {
           if (err) console.error(err);
         });
       }
+
+      if (typeof cb == "function") cb(directory);
     });
 }
 
@@ -114,6 +116,10 @@ gulp.task("article:copy", function (done) {
 
 gulp.task("article:copy:dev", function (done) {
   articleCopy(done, false);
+});
+
+gulp.task("article:clean", function (done) {
+  emptyDir(prodPostDir, done);
 });
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));

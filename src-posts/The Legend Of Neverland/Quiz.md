@@ -65,7 +65,7 @@ input[type="text"]:focus {
 </div>
 
 <ul id="questions">
-  <!-- include Quiz/quiz.txt -->
+  <!-- include /source/assets/tlon/Quiz/quiz.txt -->
 </ul>
 
 <blockquote>

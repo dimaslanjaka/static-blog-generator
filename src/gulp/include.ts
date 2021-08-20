@@ -30,15 +30,25 @@ function includeProcess(destDir: fs.PathLike | string) {
             console.log("matched ", match);
             if (match && match.length > 1) {
               let directFile = path.join(destDir.toString(), match[1]);
-              console.log("try find " + directFile);
               let directFind = fs.existsSync(directFile);
               if (directFind) {
-                console.log("Processing shortcode " + directFile);
+                console.log("[direct] Processing shortcode " + directFile);
                 let directRead = fs.readFileSync(directFile).toString();
                 let directReplace = read.replace(match[0], directRead);
                 fs.writeFileSync(absolute, directReplace);
-                console.log(path.basename(absolute) + " Include successfully processed");
+                console.log(path.basename(absolute) + " include successfully processed");
+              } else {
+                console.error(match[1] + " not inline with " + absolute);
+                let rootFind = path.join(process.cwd(), match[1]);
+                if (fs.existsSync(rootFind)) {
+                  console.log("[root] Processing shortcode " + directFile);
+                  let rootRead = fs.readFileSync(rootFind).toString();
+                  let rootReplace = read.replace(match[0], rootRead);
+                  fs.writeFileSync(absolute, rootReplace);
+                  console.log(path.basename(absolute) + " include successfully processed");
+                }
               }
+              console.log("\n");
             }
           });
         }
