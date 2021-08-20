@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Remove annoying midi's" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Midi">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,14 +229,7 @@
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
       <workItem from="1629470127826" duration="7211000" />
-      <workItem from="1629477535602" duration="934000" />
-    </task>
-    <task id="LOCAL-00075" summary="test inline images folder">
-      <created>1629185153002</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1629185153002</updated>
+      <workItem from="1629477535602" duration="1841000" />
     </task>
     <task id="LOCAL-00076" summary="test inline images folder">
       <created>1629185172161</created>
@@ -572,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629478129111</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Add Midi">
+      <created>1629478752028</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1629478752028</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +596,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Quiz TLON" />
     <MESSAGE value="Add Opengraph metadata" />
     <MESSAGE value="Fix path" />
     <MESSAGE value="Introduce by Mila" />
@@ -619,7 +620,8 @@
     <MESSAGE value="Fix Gulp" />
     <MESSAGE value="Fix Quiz" />
     <MESSAGE value="Remove annoying midi's" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove annoying midi's" />
+    <MESSAGE value="Add Midi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Midi" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
