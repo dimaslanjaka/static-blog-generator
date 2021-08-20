@@ -63,7 +63,7 @@ input[type="text"]:focus {
 
 <div id="bootstrap-wrapper">
   <div class="container">
-    <label for="search-questions">Filter</label>
+    <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
     <small id="passwordHelpBlock" class="form-text text-muted">
       <tr>
