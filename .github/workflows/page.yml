@@ -22,7 +22,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        run: npm i -g hexo-cli && npm install
+        run: npm i -g hexo-cli gulp typescript ts-node && npm install
       - name: Copy Article
         run: npx gulp article:copy
       - name: Build Custom Domain

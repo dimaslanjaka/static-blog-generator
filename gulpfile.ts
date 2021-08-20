@@ -5,13 +5,14 @@ import transformPosts, { transformPostBody } from "./src/markdown/transformPosts
 import * as fs from "fs";
 import * as fse from "fs-extra";
 import rimraf from "rimraf";
+import includeFile from "./src/gulp/include";
 
 /**
  * slash alternative
  * @url {@link https://github.com/sindresorhus/slash}
  * @param path
  */
-function slash(path) {
+function slash(path: string) {
   const isExtendedLengthPath = /^\\\\\?\\/.test(path);
   const hasNonAscii = /[^\u0000-\u0080]+/.test(path); // eslint-disable-line no-control-regex
 
@@ -37,7 +38,7 @@ const devPostDir = path.join(__dirname, "build/_posts");
  * Empty all files and folders in directory path
  * @param directory
  */
-function emptyDir(directory) {
+function emptyDir(directory: string) {
   if (fs.existsSync(directory))
     fs.readdir(directory, (err, files) => {
       if (err) throw err;
@@ -82,7 +83,7 @@ function articleCopy(done, clean = false) {
 
   setTimeout(function () {
     // To copy a folder
-    fse.copy(srcDir, destDir, function (err) {
+    fse.copy(srcDir, destDir, function (err: any | null) {
       if (err) {
         console.error(err);
         console.error("error");
@@ -93,9 +94,15 @@ function articleCopy(done, clean = false) {
       } else {
         console.log("success!");
       }
-
-      done();
     });
+
+    setTimeout(() => {
+      // process
+      includeFile(destDir);
+
+      // notify gulp process has done
+      done();
+    }, 1000);
   }, 1000);
 }
 

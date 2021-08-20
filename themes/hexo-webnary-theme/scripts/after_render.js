@@ -88,5 +88,5 @@ function censor(censor) {
 
 hexo.extend.filter.register("after_post_render", (data) => {
   lightBox(data);
-  MDReadFile(data);
+  //MDReadFile(data);
 });
