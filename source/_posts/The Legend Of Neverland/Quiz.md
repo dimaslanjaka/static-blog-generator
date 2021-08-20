@@ -64,7 +64,7 @@ input[type="text"]:focus {
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
 </div>
 
-<tr><td>Last updated</td><td>2021-08-20 15:45:45</td></tr>
+<tr><td>Last updated</td><td>2021-08-20 15:55:39</td></tr>
 
 <ul id="questions">
   The eight wonder of the world is Terra Cotta Warriors (O)
@@ -254,7 +254,7 @@ function escapeRegExp(string) {
 }
 
 const quizUrl =
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Quiz/quiz.txt";
+  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt";
 let quizSrc = [];
 
 function jQueryMethod() {

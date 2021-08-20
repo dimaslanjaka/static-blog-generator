@@ -38,7 +38,9 @@ const devPostDir = path.join(__dirname, "build/_posts");
 /**
  * Empty all files and folders in directory path
  * @param directory
+ * @param cb
  */
+// eslint-disable-next-line no-unused-vars
 function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
   if (fs.existsSync(directory))
     fs.readdir(directory, (err, files) => {
@@ -127,7 +129,9 @@ gulp.task("article:copy:dev", function (done) {
 });
 
 gulp.task("article:clean", function (done) {
-  emptyDir(prodPostDir, done);
+  emptyDir(prodPostDir);
+
+  done();
 });
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
