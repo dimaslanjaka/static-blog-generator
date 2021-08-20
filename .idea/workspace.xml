@@ -229,14 +229,7 @@
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
       <workItem from="1629470127826" duration="7211000" />
-      <workItem from="1629477535602" duration="1841000" />
-    </task>
-    <task id="LOCAL-00076" summary="test inline images folder">
-      <created>1629185172161</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1629185172161</updated>
+      <workItem from="1629477535602" duration="2436000" />
     </task>
     <task id="LOCAL-00077" summary="test inline images folder">
       <created>1629185262673</created>
@@ -574,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629478752028</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Add Midi">
+      <created>1629479904140</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1629479904140</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

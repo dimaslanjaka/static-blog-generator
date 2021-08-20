@@ -23,7 +23,7 @@ category:
 
 comments: true
 
-cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg"
+cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
 location: Indonesia
 ---
 
@@ -35,3 +35,4 @@ location: Indonesia
 [https://midisfree.com/](https://midisfree.com/)<br/>
 [https://www.midiworld.com/](https://www.midiworld.com/)<br/>
 [http://www.midishrine.com/](http://www.midishrine.com/)<br/>
+[https://midistock.ru/](https://midistock.ru/)<br/>
