@@ -1,12 +1,12 @@
 // noinspection ES6PreferShortImport
-import * as gulp from "gulp";
 import * as path from "path";
 import * as fs from "fs";
-import * as fse from "fs-extra";
-import rimraf from "rimraf";
 
 /**
- * Process `shortcode include` to included in file
+ * Process `shortcode include` to included in file, shortcode below:
+ * ```html
+ * <!-- include file.ext -->
+ * ```
  * @param destDir directory to scan markdown
  */
 function includeProcess(destDir: fs.PathLike | string) {
