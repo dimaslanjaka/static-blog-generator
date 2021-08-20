@@ -6,6 +6,8 @@ import * as fs from "fs";
 import * as fse from "fs-extra";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
+import * as time from "./src/gulp/time";
+import { loopDir } from "./src/gulp/utils";
 
 /**
  * slash alternative
@@ -101,7 +103,13 @@ function articleCopy(done, clean = false) {
 
     setTimeout(() => {
       // process
+      const loop = loopDir(destDir);
       includeFile(destDir);
+      loop.forEach(function (file) {
+        if (fs.lstatSync(file).isFile()) {
+          time.shortcodeNow(file);
+        }
+      });
 
       // notify gulp process has done
       done();

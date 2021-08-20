@@ -417,20 +417,3 @@ hexo.extend.helper.register("escape_with_json", function (str) {
   }
   return str;
 });
-
-// transform each line as <li/>
-hexo.extend.helper.register("html_list_from_file", function (file) {
-  if (fs.existsSync(file)) {
-    // eslint-disable-next-line prefer-const
-    let read = fs.readFileSync(file);
-    if (read) {
-      // eslint-disable-next-line prefer-const
-      let splitNewLine = read.toString().split("\n");
-      splitNewLine.map(function (str) {
-        return `<li>${str}</li>`;
-      });
-      return splitNewLine.join("\n");
-    }
-  }
-  return file;
-});

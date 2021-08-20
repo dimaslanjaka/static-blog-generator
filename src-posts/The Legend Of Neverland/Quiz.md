@@ -64,6 +64,8 @@ input[type="text"]:focus {
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
 </div>
 
+<tr><td>Last updated</td><td><!-- now() --></td></tr>
+
 <ul id="questions">
   <!-- include /source/assets/tlon/Quiz/quiz.txt -->
 </ul>

@@ -5,7 +5,7 @@ const fs = require("hexo-fs");
 
 hexo.extend.filter.register("server_middleware", function (app) {
   const staticRoutes = path.join(__dirname, "/../../../source/assets/www");
-  //console.log(staticRoutes, fs.existsSync(staticRoutes));
+  console.log(staticRoutes, fs.existsSync(staticRoutes));
 
   // Main routes
   app.use(hexo.config.root + "backend/", serveStatic(staticRoutes));

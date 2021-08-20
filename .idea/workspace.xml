@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test Custom Helper Inside Markdowns">
-      <change afterPath="$PROJECT_DIR$/source/_posts/Test/Helper/readfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src-posts/Test/Helper/readfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/before_render.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gulp/time.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gulp/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Helper.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Test/Helper.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210820-120531.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210820-120556.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/assets/tlon/Quiz/quiz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/quiz.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src-posts/Test/Helper.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/Test/Helper.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter-db.json" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gulp/include.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gulp/include.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/scripts/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +103,7 @@
       <recent name="D:\Repositories\gh-pages\themes\hexo-webnary-theme\source\scss" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.article:copy">
+  <component name="RunManager" selected="Node.js.ts-node">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -234,6 +238,7 @@
       <workItem from="1629263445572" duration="2220000" />
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
+      <workItem from="1629470127826" duration="2651000" />
     </task>
     <task id="LOCAL-00063" summary="Add Comments System">
       <created>1629175667518</created>
