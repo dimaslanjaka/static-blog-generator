@@ -1,7 +1,7 @@
 ---
-title: Test Helper
+title: Test Include
 
-subtitle: "Test Helper Function"
+subtitle: "Test Include File Function"
 
 lang: en
 
