@@ -27,7 +27,7 @@ cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.
 location: Indonesia
 ---
 
-{% youtube lJIrF4YjHfQ %}
+{% youtube tik3ZFwFsJA %}
 
 ### Available Midi Sites
 
