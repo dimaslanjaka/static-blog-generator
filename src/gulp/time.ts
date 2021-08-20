@@ -17,7 +17,10 @@ export function now() {
  * @see {@link now}
  */
 export function shortcodeNow(file) {
-  if (!fs.lstatSync(file).isDirectory()) throw new Error("its a directory, not a file");
+  if (!fs.lstatSync(file).isDirectory()) {
+    console.log("its a directory, not a file");
+    return;
+  }
   const read = fs.readFileSync(file).toString();
   const replaceNow = read.replace(/<!-- now\(\) -->/gm, now());
   fs.writeFileSync(file, replaceNow);
