@@ -27,9 +27,10 @@ cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.
 location: Indonesia
 ---
 
-Coming soon
+{% youtube lJIrF4YjHfQ %}
 
 ### Available Midi Sites
 
 [https://www.mfiles.co.uk/midi-files.htm](https://www.mfiles.co.uk/midi-files.htm)<br/>
-[https://midisfree.com/](https://midisfree.com/)
+[https://midisfree.com/](https://midisfree.com/)<br/>
+[https://www.midiworld.com/](https://www.midiworld.com/)
