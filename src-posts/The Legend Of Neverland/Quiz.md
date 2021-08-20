@@ -59,27 +59,33 @@ input[type="text"]:focus {
 }
 </style>
 
-<div class="container">
-  <label for="search-questions">Filter</label>
-  <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
+<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
+
+<div id="bootstrap-wrapper">
+  <div class="container">
+    <label for="search-questions">Filter</label>
+    <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
+    <small id="passwordHelpBlock" class="form-text text-muted">
+      <tr>
+        <td>Last updated</td>
+        <td>
+          <!-- now() -->
+        </td>
+      </tr>
+    </small>
+
+  </div>
+
+  <ul id="questions">
+    <!-- include /source/assets/tlon/Quiz/quiz.txt -->
+  </ul>
+
+  <blockquote>
+    If you know of other questions and answers that are not on the list, please comment below.
+  </blockquote>
 </div>
 
-<tr><td>Last updated</td><td><!-- now() --></td></tr>
-
-<ul id="questions">
-  <!-- include /source/assets/tlon/Quiz/quiz.txt -->
-</ul>
-
-<blockquote>
-  If you know of other questions and answers that are not on the list, please comment below.
-</blockquote>
-
 <script>
-loadJScript(
-  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-  jQueryMethod
-);
-
 //this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
@@ -158,4 +164,9 @@ function jQueryMethod() {
     processLi();
   });
 }
+
+loadJScript(
+  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+  jQueryMethod
+);
 </script>

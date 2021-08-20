@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix Quiz">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix Gulp">
+      <change beforePath="$PROJECT_DIR$/.idea/gh-pages.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gh-pages.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Genshin Impact/Location/Starconch.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Genshin Impact/Update/update-genshin-impact-1.6.0-1.6.1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Helper.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Helper/readfile.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Include.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Inline Image.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Gaya Snow Mountain 2F.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Gaya Snow Mountain 3F.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Oak Town.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Crystals Fairy Exp/Skala Desert 3F.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char/Kagmaw Grassland F1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char/Kagmaw Grassland F3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char/Oak Town 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char/Oak Town.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char/Skala Desert F1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Exp Char/Twilight Rainforest 1F.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Standard Rewards.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Standard Rewards/Skala Desert F2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Expel Incident/Standard Rewards/Sophilia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Midi.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Quiz.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Recipes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/TLON/recipes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,8 +168,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:clean" />
         <item itemvalue="Gulp.js.article:copy" />
+        <item itemvalue="Gulp.js.article:clean" />
         <item itemvalue="npm.server" />
         <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.wsl-install" />
@@ -255,14 +231,7 @@
       <workItem from="1629263445572" duration="2220000" />
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
-      <workItem from="1629470127826" duration="4732000" />
-    </task>
-    <task id="LOCAL-00069" summary="Fix disqus comments">
-      <created>1629183308335</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1629183308335</updated>
+      <workItem from="1629470127826" duration="5505000" />
     </task>
     <task id="LOCAL-00070" summary="Fix disqus comments">
       <created>1629183465453</created>
@@ -600,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629474856500</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Fix Gulp">
+      <created>1629474947270</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1629474947270</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +598,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Try test auto square adsense banner !1" />
     <MESSAGE value="Fixed single banner" />
     <MESSAGE value="Quiz TLON" />
     <MESSAGE value="Add Opengraph metadata" />
@@ -647,7 +622,8 @@
     <MESSAGE value="Test Custom Helper Inside Markdowns #2" />
     <MESSAGE value="Test Custom Helper Inside Markdowns" />
     <MESSAGE value="Fix Quiz" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Quiz" />
+    <MESSAGE value="Fix Gulp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Gulp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
