@@ -80,6 +80,7 @@ function articleCopy(done, clean = false) {
   if (clean) emptyDir(prodPostDir);
   const srcDir = slash(path.join(__dirname, "src-posts"));
   const destDir = slash(prodPostDir);
+  if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
 
   setTimeout(function () {
     // To copy a folder

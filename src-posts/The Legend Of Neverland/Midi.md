@@ -28,3 +28,8 @@ location: Indonesia
 ---
 
 Coming soon
+
+### Available Midi Sites
+
+[https://www.mfiles.co.uk/midi-files.htm](https://www.mfiles.co.uk/midi-files.htm)<br/>
+[https://midisfree.com/](https://midisfree.com/)
