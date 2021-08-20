@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Remove annoying midi's">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/assets/Midi/Avenged Sevenfold/DearGod.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/assets/Midi/DearGod.mid" beforeDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Remove annoying midi's" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,21 +227,7 @@
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
       <workItem from="1629470127826" duration="7211000" />
-      <workItem from="1629477535602" duration="540000" />
-    </task>
-    <task id="LOCAL-00073" summary="Fix disqus comments">
-      <created>1629183767919</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1629183767919</updated>
-    </task>
-    <task id="LOCAL-00074" summary="test inline images folder">
-      <created>1629185079767</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1629185079767</updated>
+      <workItem from="1629477535602" duration="934000" />
     </task>
     <task id="LOCAL-00075" summary="test inline images folder">
       <created>1629185153002</created>
@@ -576,7 +558,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629477345834</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Remove annoying midi's">
+      <created>1629478091500</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1629478091501</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Remove annoying midi's">
+      <created>1629478129111</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1629478129111</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
