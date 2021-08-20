@@ -138,6 +138,9 @@ function jQueryMethod() {
     });
   };
 
+  // clean orphan text
+  $("#questions").text('');
+  // remove existing li's
   $("#questions li").remove();
 
   $.get(quizUrl).then(function (data) {
