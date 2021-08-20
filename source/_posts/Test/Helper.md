@@ -24,11 +24,6 @@ comments: true
 cover: "https://suaraborneo.co.id/wp-content/uploads/2020/05/783px-Test-Logo.svg_.png"
 location: Indonesia
 ---
+ 
+<!-- include /source/_posts/Test/Helper/readFile.md -->
 
-<!--
-<%- gravatar('a@abc.com' {s: 40, d: 'https://via.placeholder.com/150'}) %>
-
-<%- list_from_file("src-posts/The Legend Of Neverland/Quiz/quiz.txt") %>
--->
-
-<!-- readfile source/_posts/Test/Helper/readfile.md -->

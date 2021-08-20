@@ -17,8 +17,8 @@ export function now() {
  * @see {@link now}
  */
 export function shortcodeNow(file) {
-  if (!fs.statSync(file).isDirectory()) {
-    console.log("its a directory, not a file");
+  if (!fs.statSync(file).isFile()) {
+    console.log("[" + file + "] its a directory, not a file");
     return;
   }
   const read = fs.readFileSync(file).toString();
