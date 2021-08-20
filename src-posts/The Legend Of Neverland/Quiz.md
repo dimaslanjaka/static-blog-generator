@@ -66,12 +66,7 @@ input[type="text"]:focus {
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
     <small id="passwordHelpBlock" class="form-text text-muted">
-      <tr>
-        <td>Last updated</td>
-        <td>
-          <!-- now() -->
-        </td>
-      </tr>
+      Last updated <!-- now() -->
     </small>
 
   </div>
