@@ -1,5 +1,34 @@
 /// <reference path="globals.d.ts" />
 
+let isNodeEnv = false;
+
+// noinspection JSPrimitiveTypeWrapperUsage
+(function () {
+  // Establish the root object, `window` in the browser, or `global` on the server.
+  const root = this;
+
+  // Create a reference to this
+  // noinspection JSPrimitiveTypeWrapperUsage
+  const _ = new Object();
+
+  // Export the Underscore object for **CommonJS**, with backwards-compatibility
+  // for the old `require()` API. If we're not in CommonJS, add `_` to the
+  // global object.
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = _;
+    root._ = _;
+    // eslint-disable-next-line no-unused-vars
+    isNodeEnv = true;
+  } else {
+    root._ = _;
+  }
+})();
+
+String.prototype.removeRoot = function () {
+  if (isNodeEnv) return this.replace(process.cwd(), "");
+  return this;
+};
+
 String.prototype.parse_url = function () {
   let parser = document.createElement("a"),
     searchObject: Array<Object | any>,

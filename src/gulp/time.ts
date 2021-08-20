@@ -1,4 +1,5 @@
 import fs from "fs";
+import "./../../src/js/_Prototype-String.ts";
 
 /**
  * Current date time
@@ -18,10 +19,15 @@ export function now() {
  */
 export function shortcodeNow(file) {
   if (!fs.statSync(file).isFile()) {
-    console.log("[" + file + "] its a directory, not a file");
+    console.log("[" + file.removeRoot() + "] its a directory, not a file");
     return;
   }
+  const rex = /<!-- now\(\) -->/gm;
   const read = fs.readFileSync(file).toString();
-  const replaceNow = read.replace(/<!-- now\(\) -->/gm, now());
-  fs.writeFileSync(file, replaceNow);
+  const matchRegex = read.match(rex);
+  if (matchRegex && matchRegex.length > 0) {
+    const replaceNow = read.replace(rex, now());
+    fs.writeFileSync(file, replaceNow);
+    console.log("[" + file.removeRoot() + "] done");
+  }
 }

@@ -64,7 +64,7 @@ input[type="text"]:focus {
   <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
 </div>
 
-<tr><td>Last updated</td><td><!-- now() --></td></tr>
+<tr><td>Last updated</td><td>2021-08-20 15:45:45</td></tr>
 
 <ul id="questions">
   The eight wonder of the world is Terra Cotta Warriors (O)

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test Custom Helper Inside Markdowns #2">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test Custom Helper Inside Markdowns">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Test/Helper.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Test/Helper.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Quiz.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Quiz.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gulp/time.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gulp/time.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/_Prototype-String.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/_Prototype-String.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/globals.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/globals.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +231,7 @@
       <workItem from="1629263445572" duration="2220000" />
       <workItem from="1629269445731" duration="5829000" />
       <workItem from="1629291003310" duration="4877000" />
-      <workItem from="1629470127826" duration="3501000" />
-    </task>
-    <task id="LOCAL-00066" summary="Fix disqus comments">
-      <created>1629182532934</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1629182532934</updated>
+      <workItem from="1629470127826" duration="4151000" />
     </task>
     <task id="LOCAL-00067" summary="Fix disqus comments">
       <created>1629182716356</created>
@@ -576,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629473439899</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Test Custom Helper Inside Markdowns">
+      <created>1629473698286</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1629473698286</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,9 +621,9 @@
     <MESSAGE value="Add Backend Processed" />
     <MESSAGE value="Add Backend Processed (Heroku)" />
     <MESSAGE value="Test Static Files" />
-    <MESSAGE value="Test Custom Helper Inside Markdowns" />
     <MESSAGE value="Test Custom Helper Inside Markdowns #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Custom Helper Inside Markdowns #2" />
+    <MESSAGE value="Test Custom Helper Inside Markdowns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Custom Helper Inside Markdowns" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

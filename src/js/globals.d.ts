@@ -389,6 +389,12 @@ interface String {
   split(splitter: { [Symbol.split](string: string, limit?: number): string[] }, limit?: number): string[];
 
   /**
+   * Remove root from path
+   * * Node will remove process.cwd()
+   */
+  removeRoot(): string;
+
+  /**
    * Parse url into part object
    */
   parse_url(): {
