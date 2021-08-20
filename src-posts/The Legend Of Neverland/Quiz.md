@@ -103,7 +103,7 @@ function escapeRegExp(string) {
 }
 
 const quizUrl =
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Quiz/quiz.txt";
+  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt";
 let quizSrc = [];
 
 function jQueryMethod() {
