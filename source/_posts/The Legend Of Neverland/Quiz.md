@@ -59,15 +59,25 @@ input[type="text"]:focus {
 }
 </style>
 
-<div class="container">
-  <label for="search-questions">Filter</label>
-  <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
-</div>
+<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
 
-<tr><td>Last updated</td><td>2021-08-20 15:55:39</td></tr>
+<div id="bootstrap-wrapper">
+  <div class="container">
+    <label for="search-questions" class="sr-only">Filter</label>
+    <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
+    <small id="passwordHelpBlock" class="form-text text-muted">
+      <tr>
+        <td>Last updated</td>
+        <td>
+          2021-08-20 16:48:31
+        </td>
+      </tr>
+    </small>
 
-<ul id="questions">
-  The eight wonder of the world is Terra Cotta Warriors (O)
+  </div>
+
+  <ul id="questions">
+    The eight wonder of the world is Terra Cotta Warriors (O)
 The earth day is on the Apr. 22nd of each year (O)
 The earth Day every year falls on 20-Dec (X)
 The sea with the most islands in the world is Sea Of Marmara (X)
@@ -219,18 +229,14 @@ Alligator’s tear is to disguise yourself (X)
 Cuttlefish and octopus are both crawl animals (X)
 Seattle is one of main financial centers in the world (X)
 
-</ul>
+  </ul>
 
-<blockquote>
-  If you know of other questions and answers that are not on the list, please comment below.
-</blockquote>
+  <blockquote>
+    If you know of other questions and answers that are not on the list, please comment below.
+  </blockquote>
+</div>
 
 <script>
-loadJScript(
-  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-  jQueryMethod
-);
-
 //this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
@@ -309,4 +315,9 @@ function jQueryMethod() {
     processLi();
   });
 }
+
+loadJScript(
+  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+  jQueryMethod
+);
 </script>
