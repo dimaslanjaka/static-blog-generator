@@ -150,6 +150,7 @@ function jQueryMethod() {
         document.getElementById("questions").appendChild(li);
       });
     }
+    processLi();
   });
 }
 </script>
