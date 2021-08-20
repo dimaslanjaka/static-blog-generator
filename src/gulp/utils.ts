@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import * as fse from "fs-extra";
 
 //console.log(loopDir(path.join(process.cwd(), "source")));
 /**
@@ -29,4 +30,20 @@ export function loopDir(destDir: fs.PathLike | string, debug = false) {
   }
 
   return result;
+}
+
+// eslint-disable-next-line no-unused-vars
+export function copyDir(
+  source,
+  dest,
+  callback = function (err: any | null) {
+    if (err) {
+      console.error(err);
+      console.error("error");
+    } else {
+      console.log("success!");
+    }
+  }
+) {
+  return fse.copy(source, dest, callback);
 }

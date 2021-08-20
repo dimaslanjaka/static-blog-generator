@@ -3,11 +3,10 @@ import * as gulp from "gulp";
 import * as path from "path";
 import transformPosts, { transformPostBody } from "./src/markdown/transformPosts";
 import * as fs from "fs";
-import * as fse from "fs-extra";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
 import * as time from "./src/gulp/time";
-import { loopDir } from "./src/gulp/utils";
+import { copyDir, loopDir } from "./src/gulp/utils";
 
 /**
  * slash alternative
@@ -75,6 +74,7 @@ gulp.task("article:dist", function (done) {
 });
 
 let tryCount = 0;
+
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
@@ -88,7 +88,7 @@ function articleCopy(done, clean = false) {
 
   setTimeout(function () {
     // To copy a folder
-    fse.copy(srcDir, destDir, function (err: any | null) {
+    copyDir(srcDir, destDir, function (err: any | null) {
       if (err) {
         console.error(err);
         console.error("error");
@@ -106,7 +106,7 @@ function articleCopy(done, clean = false) {
       const loop = loopDir(destDir);
       includeFile(destDir);
       loop.forEach(function (file) {
-        if (fs.lstatSync(file).isFile()) {
+        if (fs.statSync(file).isFile()) {
           time.shortcodeNow(file);
         }
       });

@@ -17,7 +17,7 @@ export function now() {
  * @see {@link now}
  */
 export function shortcodeNow(file) {
-  if (!fs.lstatSync(file).isDirectory()) {
+  if (!fs.statSync(file).isDirectory()) {
     console.log("its a directory, not a file");
     return;
   }
