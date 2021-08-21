@@ -26,7 +26,8 @@ cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
 location: Indonesia
 ---
 
-{% youtube video tik3ZFwFsJA %}
+{% youtuber video tik3ZFwFsJA %}
+{% endyoutuber %}
 
 ### Available Midi Sites
 

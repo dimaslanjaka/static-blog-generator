@@ -10,7 +10,8 @@
     "apgus",
     "epiphyllum",
     "musique",
-    "shortcode"
+    "shortcode",
+    "youtube"
   ],
   "files.autoSave": "onWindowChange"
 }
