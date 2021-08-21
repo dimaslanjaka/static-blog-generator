@@ -65,8 +65,15 @@ input[type="text"]:focus {
   <div class="container">
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
+    <div class="mt-1 mb-1">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="O_only" value="option1">
+        <label class="form-check-label" for="O_only">Only Show (O)</label>
+      </div>
+    </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
-      Last updated <!-- now() -->
+      Last updated
+      <!-- now() -->
     </small>
 
   </div>
