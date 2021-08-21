@@ -10,8 +10,7 @@ date: 2021-8-21
 type: post
 
 tags:
-  - Quiz
-  - Event
+  - Life Skill
 
 author:
   nick: "Maulinda Agustina"
