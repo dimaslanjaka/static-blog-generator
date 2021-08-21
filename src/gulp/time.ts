@@ -17,9 +17,9 @@ export function now() {
  * @param file
  * @see {@link now}
  */
-export function shortcodeNow(file) {
+export function shortcodeNow(file: string | fs.PathLike) {
   if (!fs.statSync(file).isFile()) {
-    console.log("[" + file.removeRoot() + "] its a directory, not a file");
+    console.log("[" + file.toString().removeRoot() + "] its a directory, not a file");
     return;
   }
   const rex = /<!-- now\(\) -->/gm;
@@ -28,6 +28,6 @@ export function shortcodeNow(file) {
   if (matchRegex && matchRegex.length > 0) {
     const replaceNow = read.replace(rex, now());
     fs.writeFileSync(file, replaceNow);
-    console.log("[" + file.removeRoot() + "] done");
+    console.log("[" + file.toString().removeRoot() + "] done");
   }
 }

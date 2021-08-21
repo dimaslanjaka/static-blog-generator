@@ -27,7 +27,7 @@ function includeProcess(destDir: fs.PathLike | string) {
         if (matchFile && matchFile.length > 0) {
           matchFile.forEach(function (readied) {
             const match = readied.match(/\<\!\-\-\s+?include\s+?(.+?)\s+?\-\-\>/);
-            console.log("matched ", match);
+            //console.log("matched ", match);
             if (match && match.length > 1) {
               const directFile = path.join(destDir.toString(), match[1]);
               const directFind = fs.existsSync(directFile);

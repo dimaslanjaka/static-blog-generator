@@ -84,6 +84,7 @@ function jQueryMethod() {
     }
   };
 
+  // get from source url
   $.get(quizUrl).then(function (data) {
     if (data) {
       // split newLine from retrieved text into array
@@ -106,6 +107,10 @@ function jQueryMethod() {
       $(".isFalse").remove();
     } else {
       transformArray2Li();
+    }
+
+    if (inputSearch && inputSearch.value && inputSearch.value.trim().length > 0) {
+      searchLi(inputSearch.value);
     }
   });
 }

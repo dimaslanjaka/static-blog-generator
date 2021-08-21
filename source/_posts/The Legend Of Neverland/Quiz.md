@@ -65,13 +65,8 @@ input[type="text"]:focus {
   <div class="container">
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
-    <small id="passwordHelpBlock" class="form-text text-muted">
-      <tr>
-        <td>Last updated</td>
-        <td>
-          2021-08-20 16:48:31
-        </td>
-      </tr>
+    <small id="search-questionsHelpBlock" class="form-text text-muted">
+      Last updated 2021-08-21 12:20:14
     </small>
 
   </div>
@@ -85,6 +80,7 @@ Bones can lever when you are doing sports (O)
 Bones can balance when you are doing sports (X)
 XBOX ONE is microsoft's product (O)
 When person is drinking water while doing handstand, it's same effect just like talking while drinking and sleep (O)
+Expose to X ray causes Aplastic Anemia (O)
 Saxophone is also called French Horn (X)
 The peninsula with most oil is Asia Minor Peninsula (X)
 A round in Professional Boxing is 1 minute (X)
@@ -92,12 +88,15 @@ If the human body losses 10% water, it will be life-threatening (X)
 The north star that often used to for directions belongs to the category of Ursa Minor (O)
 Currently the mathematician who made the most progress in Goldbach is Prague/Praha (X)
 The turning point of World War II was the opening of the second battlefield in Europe (X)
+The euro came into existence on 1 January 1999 (O)
+The euro came into existence on 1 Dec (X)
 The length of the entire marathon is 40km (O)
-Wearing black clothes is easier for mosquitoes to bite (O)
+Wearing black clothes is easier for mosquitoes to bite / Wearing black clothes are easier to get bitten by mosquitoes (O)
 The effect barrier tree wants to achieve the best effect, it must be formed from the top 10 trees (O)
 80% food storage capacity in the refrigerator, can't be too energy efficient (O)
 The earliest records of Halley's Comet were left by the Americans (X)
 The earliest record of Halley's Comet was left by Chinese (O)
+1 kwh electricity powers a 50 watt bulb light for 20 hours (O)
 A flower with a shorter flowering phase than epiphyllum cactus is dandelion (X)
 8 categories of orchestral music on the music box point to 8 types of music (X)
 The largest stone building in the world is the Colosseum Ancient Rome (X)
@@ -108,17 +107,21 @@ Engels said someone is "The last bard in Medieval Age", that person was Boccacci
 The adventures of tom sawyer is representative of the work of renowned US writer Mark Twain (O)
 Features of the temperate desert environment include the plant has long leaves and small roots (X)
 Japan is the first country to form the strategic and tactical missile forces in asia (X)
-The photocopier will produce carbon dioxide while photocopying (X)
+The photocopier/copier will produce carbon dioxide while photocopying (X)
+The copier will produce Ozone while copy process (O)
 The Persian Gulf Coast is one of the most important oil-producing areas in the world (O)
-Monet is an impressionist painter (O)
+Monet/Manet is an (impressionist painter / artist of impressionism) (O)
 Currently the mathematician who made the most progress in Goldbach is John Von Neuman (X)
 "volga river tracker" once shocked the world because of its beauty, the painter is llya repin (O)
 International marine speed is indicated using "Section", 1 "Section" is 3112 KM/hour (X)
 When using a microwave to steam eggs, you have to pierce the egg whites with a toothpick, the use of egg yolks is anti-explosion (O)
 In walking races beyond 20km, there is a food supply station every 3km (X)
-The country that held the most Olympic Summer Games is USA (X)
+The country that held the most Olympic Summer Games is USA (O)
 The country that held the most Olympic Summer Games is Greece (X)
 The country that held the most Olympic Summer Games is UK (X)
+The Olympic Games held in beijing in 2008 was the 30th Olympic (X)
+On the centennial birthday of the International Olympic Committee (IOC) in 1984, Athens was nominated as the capital of the IOC (X)
+The Olympic Games held in Beijing in 2008 was the 30th Olympic (X)
 The Ugly Duckling is one of the works of Andersen’s fairy tales (O)
 (Oliver Twist / The Old Curiosity Shop / Bleak House / Little Dorrit / Great Expectations) is masterwork of dickens (O)
 David Copperfield is the masterworks of Dickens (O)
@@ -128,9 +131,9 @@ Saves power if the food volume in the fridge is 80% of the total capacity (O)
 The eighth wonder of the world is Eiffel Tower (X)
 Mazurka originated from Finland (X)
 A fine book, printed with golden words which are Copper-Manganese Alloy (X)
-On the centennial birthday of the International Olympic Committee (IOC) in 1984, Athens was nominated as the capital of the IOC (X)
 AS in the macro economics refers to total supply (O)
 Nile, Amu and Indus rivers are all an exorheic river (X)
+Nile, Amu and indus rivers are all both of them are important sources of irrigation water in coast area (O)
 The longest film series according to the Guinness book of world records is Star Wars series (X)
 The adventures of Tom Sawyer is the masterwork of the American writer Mark Twain (O)
 Maupassant is the only writer from Russia who has reached the peak of the world of literature (X)
@@ -158,6 +161,7 @@ The best way to put out the fire of alcohol lamp is put out with water (X)
 The four most important inventions of the 20th century are semiconductors? (O)
 The sea with the most islands in the world is Aegean Sea (O)
 The sea with the lowest salinity in the world is Baltic Sea (O)
+The sea with the highest salinity in the world is Baltic Sea (X)
 In order to maximize its effect, windbreak shall be formed with more than 10 rows of trees (O)
 In order to maximize its effect, windbreak shall be formed with 5 to 10 rows of trees (X)
 Noise pollution refers to noise over 90 decibels (X)
@@ -165,17 +169,17 @@ Noise pollution is a global environmental problem (X)
 Apples contain a memory strengthening microelement which is Iodine (X)
 Apples contain a memory strengthening microelement called Calcium (X)
 Calcium is also called the Intelligent Element (O)
-The Olympic Games held in Beijing in 2008 was the 30th Olympic (X)
 Alligator’s tear is to disguise itself (X)
 Alligators shed tears to secrete toxin (X)
 The country that borders China to the east is Japan (X)
 The country that borders China to the east is South Korea (X)
+The country that borders China to the east is North Korea (O)
 The general international naval speed uses “knot” as unit, one knot stands for 3.112 km/h (X)
 In order to maximize its effect, windbreak shall formed with more than 10 rows of trees (O)
 Noise polution refers to noise over 90 decibels (X)
 Apples contain a memory strengthening microelement which is Zinc (O)
-Apples contain a memory strengthening microelement which is lodine (X)
-Lodine deficiency in children and adolescents can lead to General Weakness (X)
+Apples contain a memory strengthening microelement which is lodine/Iodine (X)
+Lodine/Iodine deficiency in children and adolescents can lead to General Weakness (X)
 The first shot that symbols the freedom of the United States of America started on Washington (X)
 Aurora is the special scenery you can see in High Latitude (O)
 The greatest branch of Yellow River is River Fen (X)
@@ -186,7 +190,6 @@ The main reason that boost Singapore’s economic development is Good Natural Co
 The bust way to put out the fire of alcohol lamp is put out with water (X)
 Graf was the only tennis player who won 3 championships of Grand Slam (X)
 Graf was the only tennis player who won 2 championships of Grand Slam (X)
-Among the “World’s Top 3 Tenors”, Pavarotti is Spanish (X)
 South Korea is the first to form the strategic and tactical missile forces in Asia (X)
 China is the first to form strategic and tactical missile forces in Asia (O)
 Mazurka originated from Poland (O)
@@ -198,11 +201,13 @@ Potato is Stem of a plant (O)
 In stock exchange, Closing price is the most basic data to analyze the stock market (O)
 When cooking poached eggs in a microwave oven, use a toothpick to puncture the egg whites and egg yolks mainly for Faster to cook (X)
 When cooking poached eggs in a microwave oven, use a toothpick to puncture the egg whites and egg yolks mainly for Prevention of Burst (O)
+While cooking, adding salt to before taking the dish out, can reduce the loss of iodine (O)
 The largest body of water on land is Glacier Water (O)
 Main resources used by humans include: Solar Resources (O)
 Main resources used by humans include: Mineral Resources (O)
 The Suez Canal belongs to Panama (X)
 The biggest stone Buddha statue in the world is in Henan (X)
+The biggest stone Buddha statue in the world is in Pingshan (X)
 The first Mahjong Museum in the world is located in China (X)
 Cathaya enjoys the title of "Panda Of Plants" (O)
 The longest organ in the gastrointestinal tract of human body is Small Intestine (O)
@@ -211,7 +216,8 @@ The number of “World player Soccer” Pele shirt is no 23 (X)
 The Afghan Hound is also called Bracco Italiano (X)
 The Afghan Hound is also called Vizsla (X)
 The Afghan Hound is a dog from Afghanistan (O)
-The campaign in the first World War that used gas for the first time is Battle of Verdun (O)
+The Afghan Hound is also called Afghan Hound (O)
+The battle in the first World War that used poison gas for the first time is Battle of Verdun (O)
 Boule de Suif is the masterwork of American writer, Mark Twain (X)
 The “Five Hardwares” in life stands for Silver (O)
 The “Five Hardwares” in life stands for Tin (O)
@@ -220,15 +226,21 @@ The country that is connected to the east of China is Russia (X)
 “Law” first appear in Slavery society
 Death rate is one of the decesive factors for population reproduction (O)
 In 3500 BC, slavery states appeared in Ancient India (X)
+In 3500 BC, slavery states appeared in Ancient Babylon (O)
 The cat os protected wll in Ancient Rome (X)
+The cat os protected wll in Ancient Egypt (O)
 Lenin called someone “A mirror of Russian Revolution”, it is Sholokhov (X)
 The general international naval speed uses “knot” as unit, one knot stands for 1.852 km/h (O)
-The Olympic Games held in beijing in 2008 was the 30th Olympic (X)
 Just like Statue of Liberty, another well-known nickname of the USA is Old Sam (X)
+Just like Statue of Liberty, another well-known nickname of the USA is Uncle Sam (O)
 Alligator’s tear is to disguise yourself (X)
 Cuttlefish and octopus are both crawl animals (X)
 Seattle is one of main financial centers in the world (X)
-
+Among "World’s Top 3 Tenors", Domingo is Spaniard (O)
+Among the "World’s Top 3 Tenors", Pavarotti is Spanish (X)
+The ring put on middle finger, means being in love (O)
+WNBA means WNBA (O)
+Food coloring usually included in jellies (O)
   </ul>
 
   <blockquote>
@@ -236,8 +248,7 @@ Seattle is one of main financial centers in the world (X)
   </blockquote>
 </div>
 
-<script>
-//this function will work cross-browser for loading scripts asynchronously
+<script>//this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
@@ -256,7 +267,7 @@ function loadJScript(src, callback) {
 }
 
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\<!-- script /source/assets/js/quiz.js -->"); // <!-- script /source/assets/js/quiz.js --> means the whole matched string
 }
 
 const quizUrl =
@@ -264,60 +275,94 @@ const quizUrl =
 let quizSrc = [];
 
 function jQueryMethod() {
-  const processLi = function () {
-    // ul questions
-    const questions = document.getElementById("questions");
-    const inputSearch = document.getElementById("search-questions");
+  // ul questions
+  const questions = document.getElementById("questions");
+  const inputSearch = document.getElementById("search-questions");
+  const O_only = document.getElementById("O_only");
 
-    jQuery("#search-questions").keyup(function () {
-      var filter = jQuery(this).val();
-      let listQuiz = jQuery("ul[id*='questions'] li");
-      listQuiz.each(function (index) {
-        const searchWild =
-          jQuery(this)
-            .text()
-            .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
-        const searchFirst =
-          jQuery(this)
-            .text()
-            .search(new RegExp("^" + escapeRegExp(filter), "gmi")) < 0;
-        if (searchFirst) {
-          jQuery(this).hide();
-        } else {
-          jQuery(this).show();
-          // move to first position
-          jQuery(this).prependTo(jQuery("ul[id*='questions']"));
-        }
-        if (searchWild) {
-          jQuery(this).hide();
-        } else {
-          jQuery(this).show();
-        }
-      });
+  // searcher
+  const searchLi = function (filter) {
+    let listQuiz = jQuery("ul[id*='questions'] li");
+    listQuiz.each(function (index) {
+      const searchWild =
+        jQuery(this)
+          .text()
+          .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
+      const searchFirst =
+        jQuery(this)
+          .text()
+          .search(new RegExp("^" + escapeRegExp(filter), "gmi")) < 0;
+      if (searchFirst) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+        // move to first position
+        jQuery(this).prependTo(jQuery("ul[id*='questions']"));
+      }
+      if (searchWild) {
+        jQuery(this).hide();
+      } else {
+        jQuery(this).show();
+      }
     });
   };
 
-  // clean orphan text
-  $("#questions").text('');
-  // remove existing li's
-  $("#questions li").remove();
+  const processLi = function () {
+    jQuery("#search-questions").keyup(function () {
+      searchLi(jQuery(this).val());
+    });
+  };
+
+  // transform array to li
+  const transformArray2Li = function () {
+    // clean orphan text
+    $("#questions").text("");
+    // remove existing li's
+    $("#questions li").remove();
+
+    for (let i = 0; i < quizSrc.length; i++) {
+      let str = quizSrc[i];
+      let isTrue = /\(O\)$/i;
+      const li = document.createElement("li");
+      li.innerHTML = str;
+      if (isTrue.test(str)) {
+        li.setAttribute("class", "isTrue");
+      } else {
+        li.setAttribute("class", "isFalse");
+      }
+      document.getElementById("questions").appendChild(li);
+    }
+  };
 
   $.get(quizUrl).then(function (data) {
     if (data) {
+      // split newLine from retrieved text into array
       const split = data.split("\n");
+      // merge
       quizSrc = quizSrc.concat(split);
+      // trim
       quizSrc.map(function (str) {
-        const li = document.createElement("li");
-        li.innerHTML = str;
-        document.getElementById("questions").appendChild(li);
+        return str.trim();
       });
+      // transform
+      transformArray2Li();
     }
     processLi();
   });
+
+  $("#O_only").on("change", function (e) {
+    e.preventDefault();
+    if (this.checked) {
+      $(".isFalse").remove();
+    } else {
+      transformArray2Li();
+    }
+
+    if (inputSearch && inputSearch.value && inputSearch.value.trim().length > 0) {
+      searchLi(inputSearch.value);
+    }
+  });
 }
 
-loadJScript(
-  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-  jQueryMethod
-);
+loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", jQueryMethod);
 </script>

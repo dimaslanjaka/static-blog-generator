@@ -5,6 +5,8 @@
     "Praha",
     "apgus",
     "epiphyllum",
-    "musique"
-  ]
+    "musique",
+    "shortcode"
+  ],
+  "files.autoSave": "onWindowChange"
 }

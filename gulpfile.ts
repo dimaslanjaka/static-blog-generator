@@ -1,12 +1,14 @@
 // noinspection ES6PreferShortImport
+import "./src/js/_Prototype-String";
 import * as gulp from "gulp";
 import * as path from "path";
 import transformPosts, { transformPostBody } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
-import * as time from "./src/gulp/time";
 import { copyDir, loopDir } from "./src/gulp/utils";
+import { shortcodeScript } from "./src/gulp/script";
+import { shortcodeNow } from "./src/gulp/time";
 
 /**
  * slash alternative
@@ -109,7 +111,8 @@ function articleCopy(done, clean = false) {
       includeFile(destDir);
       loop.forEach(function (file) {
         if (fs.statSync(file).isFile()) {
-          time.shortcodeNow(file);
+          shortcodeNow(file);
+          shortcodeScript(file);
         }
       });
 
