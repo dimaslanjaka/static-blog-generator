@@ -62,7 +62,6 @@
     "hexo-renderer-swig": "^1.1.0",
     "hexo-server": "^2.0.0",
     "hexo-tag-html5video": "git+https://github.com/stephenmkbrady/hexo-tag-html5.git",
-    "hexo-tag-youtube-responsive": "^0.4.2",
     "hexo-twitter-auto-publish": "0.0.10",
     "hexo-uglify": "^2.0.0",
     "hexo-util": "^2.5.0",
