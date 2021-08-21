@@ -65,7 +65,7 @@ input[type="text"]:focus {
   <div class="container">
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
-    <small id="passwordHelpBlock" class="form-text text-muted">
+    <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated <!-- now() -->
     </small>
 
