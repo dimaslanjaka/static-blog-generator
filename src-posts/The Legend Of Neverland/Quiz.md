@@ -83,7 +83,7 @@ input[type="text"]:focus {
   </ul>
 
   <blockquote>
-    If you know of other questions and answers that are not on the list, please comment below.
+    If you know of other questions and answers that are not on the list, please comment below or join [Discord INDO1945](https://tiny.one/INDO1945)
   </blockquote>
 </div>
 
