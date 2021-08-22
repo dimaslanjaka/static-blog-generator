@@ -3,11 +3,11 @@ console.clear();
 // automated test
 setTimeout(function () {
   let inputSearch = document.getElementById("search-questions");
-  const randx = ["i", "a", "p", "j"];
+  let randx = ["i", "a", "p", "j"];
   var keyword = randx[Math.floor(Math.random() * randx.length)];
   inputSearch.value = keyword;
   inputSearch.dispatchEvent(new Event("keyup"));
-}, 1500);
+}, 3000);
 
 /*** MAIN SCRIPT START ***/
 
@@ -40,7 +40,7 @@ function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 }
 
-const quizUrls = [
+let quizUrls = [
   "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt",
   "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt",
 ];
@@ -48,19 +48,19 @@ let quizSrc = [];
 
 function jQueryMethod() {
   // ul questions
-  const questions = document.getElementById("questions");
-  const inputSearch = document.getElementById("search-questions");
-  const O_only = document.getElementById("O_only");
+  let questions = document.getElementById("questions");
+  let inputSearch = document.getElementById("search-questions");
+  let O_only = document.getElementById("O_only");
 
   // searcher
-  const searchLi = function (filter) {
+  let searchLi = function (filter) {
     let listQuiz = jQuery("ul[id*='questions'] li");
     listQuiz.each(function (index) {
-      const searchWild =
+      let searchWild =
         jQuery(this)
           .text()
           .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
-      const searchFirst =
+      let searchFirst =
         jQuery(this)
           .text()
           .search(new RegExp("^" + escapeRegExp(filter), "gmi")) < 0;
@@ -79,14 +79,14 @@ function jQueryMethod() {
     });
   };
 
-  const processLi = function () {
+  let processLi = function () {
     jQuery("#search-questions").keyup(function () {
       searchLi(jQuery(this).val());
     });
   };
 
   // transform array to li
-  const transformArray2Li = function () {
+  let transformArray2Li = function () {
     // clean orphan text
     $("#questions").text("");
     // remove existing li's
@@ -95,7 +95,7 @@ function jQueryMethod() {
     for (let i = 0; i < quizSrc.length; i++) {
       let str = quizSrc[i];
       let isTrue = /\(O\)$/i;
-      const li = document.createElement("li");
+      let li = document.createElement("li");
       li.innerHTML = str;
       if (isTrue.test(str)) {
         li.setAttribute("class", "isTrue");
@@ -112,7 +112,7 @@ function jQueryMethod() {
     $.get(quizUrl).then(function (data) {
       if (data) {
         // split newLine from retrieved text into array
-        const split = data.split("\n");
+        let split = data.split("\n");
         // trim
         quizSrc.map(function (str) {
           return str.trim();
