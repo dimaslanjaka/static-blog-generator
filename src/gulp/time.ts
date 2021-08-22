@@ -6,10 +6,15 @@ import "./../../src/js/_Prototype-String.ts";
  * @return string ex> '2012-11-04 14:55:45'
  */
 export function now() {
-  return new Date()
-    .toISOString()
-    .replace(/T/, " ") // replace T with a space
-    .replace(/\..+/, ""); // delete the dot and everything after
+  return (
+    new Date()
+      //.toISOString()
+      .toLocaleString("en-US", {
+        timeZone: "Asia/Jakarta",
+      })
+      .replace(/T/, " ") // replace T with a space
+      .replace(/\..+/, "")
+  ); // delete the dot and everything after
 }
 
 /**
