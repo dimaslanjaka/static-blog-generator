@@ -50,7 +50,7 @@ location: Indonesia
     <!-- include /source/assets/tlon/Quiz/quiz.txt -->
   </ul>
 
-  <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz">
+  <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mt-4 mb-4">
     <input type="hidden" name="add" value="add">
     <div class="row">
       <div class="col-md-6">
@@ -80,8 +80,7 @@ location: Indonesia
     Join discord https://tiny.one/INDO1945.<br />
     This article shortcut url https://bit.ly/TLONQUIZ<br />
     Add new quiz https://bit.ly/TLONQUIZADD<br />
-    Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo<br />
-    This article https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html
+    Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   </blockquote>
 
   <div id="incoming-terms">
@@ -91,6 +90,9 @@ location: Indonesia
       <li>quiz grid the legend of neverland</li>
       <li>quiz clue the legend of neverland</li>
       <li>quiz the legend of neverland updated</li>
+      <li>kuis the legend of neverland</li>
+      <li>jawaban kuis the legend of neverland</li>
+      <li>scenic quiz the legend of neverland</li>
     </ul>
   </div>
 </div>
