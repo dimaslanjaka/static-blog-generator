@@ -30,8 +30,9 @@ location: Indonesia
 
 {% youtube kIXXv8oUqOc %}
   
-### List Best Midi
-[https://bitmidi.com/uploads/38563.mid](https://bitmidi.com/uploads/38563.mid)
+### List Best Midi (Hold tap/Right click to copy)
+[Deep purle](https://bitmidi.com/uploads/38563.mid)
+[Deep purle 2](https://bitmidi.com/uploads/38560.mid)
 
 ### Available Midi Sites
 
