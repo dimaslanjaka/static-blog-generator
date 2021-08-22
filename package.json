@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "npx hexo server",
-    "build": "hexo generate",
+    "build": "",
+    "heroku-postbuild": "set NPM_CONFIG_PRODUCTION=false && npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy",
+    "generate": "hexo generate",
     "clean": "hexo clean && echo git.webmanajemen.com > docs/CNAME",
     "deploy": "hexo deploy",
     "server": "hexo server",
