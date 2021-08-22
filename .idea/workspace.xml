@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="migrate hexo-filter-cleanup to packages/">
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/.sgcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/__test__/js-test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/__test__/js.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/jsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/css.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/favicons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/html.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/img.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/js-old.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/js.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/useref.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/lib/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup-x/release-local.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="migrate hexo-filter-cleanup to packages/" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
