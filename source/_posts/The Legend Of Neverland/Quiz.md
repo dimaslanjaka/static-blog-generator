@@ -65,8 +65,15 @@ input[type="text"]:focus {
   <div class="container">
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
+    <div class="mt-1 mb-1">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="O_only" value="option1">
+        <label class="form-check-label" for="O_only">Only Show (O)</label>
+      </div>
+    </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
-      Last updated 2021-08-21 12:20:14
+      Last updated
+      2021-08-22 04:31:49
     </small>
 
   </div>
@@ -244,7 +251,7 @@ Food coloring usually included in jellies (O)
   </ul>
 
   <blockquote>
-    If you know of other questions and answers that are not on the list, please comment below.
+    If you know of other questions and answers that are not on the list, please comment below or join https://tiny.one/INDO1945.<br/> Share: Quiz event Answers https://bit.ly/TLONQUIZ to contribute by commenting to this article
   </blockquote>
 </div>
 
@@ -334,6 +341,7 @@ function jQueryMethod() {
     }
   };
 
+  // get from source url
   $.get(quizUrl).then(function (data) {
     if (data) {
       // split newLine from retrieved text into array

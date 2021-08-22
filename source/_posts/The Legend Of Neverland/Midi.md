@@ -10,8 +10,7 @@ date: 2021-8-21
 type: post
 
 tags:
-  - Quiz
-  - Event
+  - Life Skill
 
 author:
   nick: "Maulinda Agustina"
@@ -27,7 +26,8 @@ cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
 location: Indonesia
 ---
 
-{% youtube video tik3ZFwFsJA %}
+{% youtube tik3ZFwFsJA %}
+{% youtube kIXXv8oUqOc %}
 
 ### Available Midi Sites
 
