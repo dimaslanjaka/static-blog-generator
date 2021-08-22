@@ -28,6 +28,7 @@
     "npm": "6.x"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "chokidar": "^2.1.8",
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
@@ -39,9 +40,8 @@
     "hexo-browsersync": "^0.3.0",
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^3.0.0",
-    "hexo-deployer-netlify": "0.0.7",
     "hexo-feed": "^1.0.2",
-    "hexo-filter-cleanup": "^1.2.2",
+    "hexo-filter-cleanup": "file:./packages/hexo-filter-cleanup",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-fs": "^3.1.0",
     "hexo-generator-archive": "^1.0.0",

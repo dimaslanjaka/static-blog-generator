@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Change Workflow">
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/_config.yml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Disable processing images">
+      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/__test__/js-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/__test__/js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/js-old.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-filter-cleanup/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +75,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/exclude/dimaslanjaka.github.io" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-filter-cleanup" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -73,7 +84,7 @@
     <property name="nodejs_package_manager_path" value="/usr/lib/node_modules/npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Repositories\gh-pages\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="D:\Repositories\gh-pages\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -230,14 +241,9 @@
       <workItem from="1629291003310" duration="4877000" />
       <workItem from="1629470127826" duration="7211000" />
       <workItem from="1629477535602" duration="2783000" />
-      <workItem from="1629615883370" duration="290000" />
-    </task>
-    <task id="LOCAL-00080" summary="test assets images folder">
-      <created>1629185753091</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1629185753092</updated>
+      <workItem from="1629615883370" duration="480000" />
+      <workItem from="1629618170268" duration="408000" />
+      <workItem from="1629618701941" duration="289000" />
     </task>
     <task id="LOCAL-00081" summary="test assets images folder">
       <created>1629185991245</created>
@@ -575,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629616068068</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Disable processing images">
+      <created>1629616215041</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1629616215041</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +610,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix path" />
     <MESSAGE value="Introduce by Mila" />
     <MESSAGE value="Add Comments System" />
     <MESSAGE value="Fix copy gulp task" />
@@ -622,7 +634,8 @@
     <MESSAGE value="Remove annoying midi's" />
     <MESSAGE value="Add Midi" />
     <MESSAGE value="Change Workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Workflow" />
+    <MESSAGE value="Disable processing images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable processing images" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
