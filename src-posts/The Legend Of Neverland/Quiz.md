@@ -62,7 +62,7 @@ input[type="text"]:focus {
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
 
 <div id="bootstrap-wrapper">
-  <div class="container">
+  <div class="mb-2">
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
     <div class="mt-1 mb-1">
@@ -101,7 +101,7 @@ input[type="text"]:focus {
           <input type="radio" id="customRadioInline2" name="a" class="custom-control-input" value="X">
           <label class="custom-control-label" for="customRadioInline2">(X)</label>
         </div>
-        <div class="mt-2">
+        <div id="submitter" class="mt-2">
           <button type="submit" class="btn btn-primary btn-block btn-sm">Send</button>
         </div>
       </div>
