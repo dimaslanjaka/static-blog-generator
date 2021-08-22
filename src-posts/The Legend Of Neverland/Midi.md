@@ -29,7 +29,15 @@ location: Indonesia
 {% youtube tik3ZFwFsJA %}
 
 {% youtube kIXXv8oUqOc %}
-
+  
+### List Best Midi (Hold tap/Right click to copy)
+  
+| Title | Link |
+| ----------- | ----------- |
+| Deep purle | https://bitmidi.com/uploads/38563.mid |
+| Deep purle 2 | https://bitmidi.com/uploads/38560.mid |
+  
+  
 ### Available Midi Sites
 
 [https://www.mfiles.co.uk/midi-files.htm](https://www.mfiles.co.uk/midi-files.htm)<br/>
