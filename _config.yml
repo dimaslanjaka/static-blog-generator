@@ -219,7 +219,9 @@ schema:
 adsense:
   enable: true
   pub: ca-pub-1165447249910969
-  ads1: 3325057139
+  # responsive horizontal
+  ads1: 6376402862
+  # responsive square
   ads-sidebar: 3325057139
 
 adblock: true
