@@ -62,6 +62,10 @@ input[type="text"]:focus {
   font-size: 10px;
   margin: 0;
 }
+
+#incoming-terms ul {
+  list-style-type: none;
+}
 </style>
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />

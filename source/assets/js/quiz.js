@@ -1,10 +1,22 @@
 console.clear();
+function rangeAlphabetic(start, stop) {
+  var result = [];
+  for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
+    result.push(String.fromCharCode(idx));
+  }
+  return result;
+}
+
+let aZ = rangeAlphabetic("a", "z")
+  .concat(rangeAlphabetic("A", "Z"))
+  .filter(function (el) {
+    return el != null;
+  }); // a-zA-Z array
 
 // automated test
 setTimeout(function () {
   let inputSearch = document.getElementById("search-questions");
-  let randx = ["i", "a", "p", "j"];
-  var keyword = randx[Math.floor(Math.random() * randx.length)];
+  var keyword = aZ[Math.floor(Math.random() * aZ.length)];
   inputSearch.value = keyword;
   inputSearch.dispatchEvent(new Event("keyup"));
 }, 3000);
