@@ -50,7 +50,7 @@ location: Indonesia
     <!-- include /source/assets/tlon/Quiz/quiz.txt -->
   </ul>
 
-  <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mt-4 mb-4">
+  <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mt-4 mb-4 text-center">
     <input type="hidden" name="add" value="add">
     <div class="row">
       <div class="col-md-6">
@@ -93,6 +93,7 @@ location: Indonesia
       <li>kuis the legend of neverland</li>
       <li>jawaban kuis the legend of neverland</li>
       <li>scenic quiz the legend of neverland</li>
+      <li>scenic quiz event the legend of neverland</li>
     </ul>
   </div>
 </div>
