@@ -27,47 +27,6 @@ cover: "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.
 location: Indonesia
 ---
 
-<style>
-[id*="questions-filter"] li:not([data-id]) {
-  display: none;
-}
-
-[id*="questions"] li {
-  display: block;
-  /*text-transform: lowercase;*/
-}
-
-[id*="questions"] li:first-letter {
-  text-transform: uppercase;
-}
-
-input[type="text"] {
-  width: 90%;
-  border: 2px solid #aaa;
-  border-radius: 4px;
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-  display: inline-block;
-}
-
-input[type="text"]:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
-}
-
-#incoming-terms * {
-  font-size: 10px;
-  margin: 0;
-}
-
-#incoming-terms ul {
-  list-style-type: none;
-}
-</style>
-
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
 
 <div id="bootstrap-wrapper">
@@ -136,4 +95,5 @@ input[type="text"]:focus {
   </div>
 </div>
 
+<!-- css /source/assets/css/quiz.css -->
 <!-- script /source/assets/js/quiz.js -->

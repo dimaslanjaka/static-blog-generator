@@ -34,8 +34,8 @@ export function loopDir(destDir: fs.PathLike | string, debug = false) {
 
 // eslint-disable-next-line no-unused-vars
 export function copyDir(
-  source,
-  dest,
+  source: string,
+  dest: string,
   callback = function (err: any | null) {
     if (err) {
       console.error(err);
@@ -50,6 +50,9 @@ export function copyDir(
 
 /**
  * slash alternative
+ * ```bash
+ * npm i slash #usually
+ * ```
  * @url {@link https://github.com/sindresorhus/slash}
  * @param path
  */

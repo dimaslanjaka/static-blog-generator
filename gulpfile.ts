@@ -9,6 +9,7 @@ import includeFile from "./src/gulp/include";
 import { copyDir, loopDir, slash } from "./src/gulp/utils";
 import { shortcodeScript } from "./src/gulp/script";
 import { shortcodeNow } from "./src/gulp/time";
+import { shortcodeCss } from "./src/gulp/css";
 
 /**
  * Production article.
@@ -97,6 +98,7 @@ function articleCopy(done, clean = false) {
         if (fs.statSync(file).isFile()) {
           shortcodeNow(file);
           shortcodeScript(file);
+          shortcodeCss(file);
         }
       });
 
