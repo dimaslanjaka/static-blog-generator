@@ -11,7 +11,11 @@ setTimeout(function () {
 
 /*** MAIN SCRIPT START ***/
 
-//this function will work cross-browser for loading scripts asynchronously
+/**
+ * this function will work cross-browser for loading scripts asynchronously
+ * @param {string} src
+ * @param {function} callback
+ */
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
@@ -29,6 +33,11 @@ function loadJScript(src, callback) {
   t.parentNode.insertBefore(s, t);
 }
 
+/**
+ * Unique Array
+ * @param {Array} a
+ * @returns
+ */
 function uniqArr(a) {
   var seen = {};
   return a.filter(function (item) {
@@ -36,6 +45,11 @@ function uniqArr(a) {
   });
 }
 
+/**
+ * Escape regexp
+ * @param {string} string
+ * @returns
+ */
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 }
@@ -108,7 +122,7 @@ function jQueryMethod() {
 
   // get new question sources
   quizUrls.forEach(function (quizUrl) {
-    console.log(quizUrl);
+    //console.log(quizUrl);
     $.get(quizUrl).then(function (data) {
       if (data) {
         // split newLine from retrieved text into array
