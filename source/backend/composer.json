@@ -1,0 +1,26 @@
+{
+    "name": "dimas/nodejs",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimas Lanjaka",
+            "email": "dimaslanjaka@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": [
+            "PHP_CIPHER/PHP_CIPHER/index.php"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    }
+}
