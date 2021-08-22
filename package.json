@@ -4,7 +4,7 @@
   "private": true,
   "main": "main.js",
   "scripts": {
-    "start": "npx hexo server",
+    "start": "npx hexo server -p 4000",
     "build": "npx hexo generate && echo git.webmanajemen.com > docs/CNAME",
     "heroku-postbuild": "npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy",
     "generate": "hexo generate",
