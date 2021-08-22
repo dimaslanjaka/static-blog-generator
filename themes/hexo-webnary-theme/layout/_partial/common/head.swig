@@ -57,3 +57,8 @@
 
 <!-- 统计 -->
 {% include './analytics.swig' %}
+
+<!-- note: for support on older browsers, you will need to load es5-shim and es6-shim -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.23.0/es6-shim.min.js"></script>
+
