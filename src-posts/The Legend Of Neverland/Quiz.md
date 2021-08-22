@@ -101,14 +101,14 @@ input[type="text"]:focus {
           <input type="radio" id="customRadioInline2" name="a" class="custom-control-input" value="X">
           <label class="custom-control-label" for="customRadioInline2">(X)</label>
         </div>
-
-        <div class="mt-2"><button type="submit" class="btn btn-primary btn-block btn-sm">Send</button></div>
+        <div class="mt-2">
+          <button type="submit" class="btn btn-primary btn-block btn-sm">Send</button>
+        </div>
       </div>
     </div>
-
   </form>
 
-  <blockquote>
+  <blockquote class="mt-2">
     Join discord https://tiny.one/INDO1945.<br />
     This article shortcut url https://bit.ly/TLONQUIZ
   </blockquote>
