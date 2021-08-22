@@ -128,15 +128,19 @@ function jQueryMethod() {
         // split newLine from retrieved text into array
         let split = data.split("\n");
         // trim
-        quizSrc.map(function (str) {
+        quizSrc = quizSrc.map(function (str) {
           return str.trim();
         });
         // merge and remove duplicates
-        quizSrc = uniqArr(quizSrc.concat(split));
-        // trim
-        quizSrc.map(function (str) {
-          return str.trim();
-        });
+        quizSrc = uniqArr(
+          // merge
+          quizSrc
+            .concat(split)
+            // trim
+            .map(function (str) {
+              return str.trim();
+            })
+        );
         // transform
         transformArray2Li();
       }

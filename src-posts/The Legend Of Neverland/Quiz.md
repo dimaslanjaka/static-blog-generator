@@ -57,6 +57,11 @@ input[type="text"]:focus {
   border-color: dodgerBlue;
   box-shadow: 0 0 8px 0 dodgerBlue;
 }
+
+#incoming-terms * {
+  font-size: 10px;
+  margin: 0;
+}
 </style>
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
@@ -110,9 +115,21 @@ input[type="text"]:focus {
 
   <blockquote class="mt-2">
     Join discord https://tiny.one/INDO1945.<br />
-    This article shortcut url https://bit.ly/TLONQUIZ<br/>
-    Add new quiz https://bit.ly/TLONQUIZADD
+    This article shortcut url https://bit.ly/TLONQUIZ<br />
+    Add new quiz https://bit.ly/TLONQUIZADD<br />
+    Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo<br />
+    This article https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html
   </blockquote>
+
+  <div id="incoming-terms">
+    <ul>
+      <li>quiz the legend of neverland</li>
+      <li>jawaban quiz the legend of neverland</li>
+      <li>quiz grid the legend of neverland</li>
+      <li>quiz clue the legend of neverland</li>
+      <li>quiz the legend of neverland updated</li>
+    </ul>
+  </div>
 </div>
 
 <!-- script /source/assets/js/quiz.js -->
