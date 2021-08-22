@@ -4,8 +4,8 @@
   "private": true,
   "main": "main.js",
   "scripts": {
-    "start": "npx hexo server -p 4000",
-    "build": "npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy",
+    "start": "npx ts-node src/express/app.ts",
+    "skip-build": "npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy",
     "skip-heroku-postbuild": "npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy",
     "generate": "hexo generate",
     "clean": "hexo clean && echo git.webmanajemen.com > docs/CNAME",
@@ -14,8 +14,8 @@
     "server:clean": "npm run clean && hexo server",
     "dev": "ts-node src/electron-express.ts",
     "dev:tsc": "tsc --watch",
-    "dev:express": "nodemon --config nodemon.json",
-    "dev:electron": "nodemon --config nodemon-electron.json -L",
+    "dev:express": "npx nodemon --config nodemon.json",
+    "dev:electron": "npx nodemon --config nodemon-electron.json -L",
     "intaller": "npm install --save hexo-autoprefixer hexo-filter-cleanup hexo-generator-feed hexo-generator-sitemap hexo-renderer-sass hexo-renderer-swig mamboer/lunr.js moment node-sass object-assign",
     "fix-sharp": "rm node_modules/sharp -rf && npm install --ignore-scripts=false --verbose sharp",
     "wsl-install": "rm -r node_modules && npm install --platform=win32"
@@ -146,7 +146,7 @@
     "response-time": "^2.3.2",
     "serve-index": "^1.9.1",
     "serve-static": "^1.14.1",
-    "ts-node": "^10.2.0",
+    "ts-node": "^10.2.1",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   }

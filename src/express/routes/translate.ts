@@ -4,13 +4,13 @@ import filemanager from "../../node/filemanager";
 import path from "path";
 import url from "url";
 import { appRoot } from "../../config";
-import slash from "slash";
 import { getNgrokUrl } from "../../ngrok";
 import { URLParameter } from "../types/request";
 import { parsePost } from "../../markdown/transformPosts";
 import Translator from "../../translator";
 import toHtml from "../../markdown/toHtml";
 import notranslate from "../../translator/notranslate";
+import { slash } from "../../gulp/utils";
 
 const router = express.Router();
 // domain.com/translate

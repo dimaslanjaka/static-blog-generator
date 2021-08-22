@@ -15,13 +15,15 @@
     "js": "node --harmony",
     "ts": "ts-node"
   },
-  "exec": "ts-node src/express/app.ts",
+  "exec": "npx  ts-node src/express/app.ts",
   "events": {
     "restart": "kill-port --port 3001,3000",
     "crash": "kill-port --port 3001,3000"
   },
   "delay": 1500,
-  "watch": ["src/**"],
+  "watch": [
+    "src/**"
+  ],
   "env": {
     "NODE_ENV": "development"
   },

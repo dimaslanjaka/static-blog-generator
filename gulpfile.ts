@@ -6,25 +6,9 @@ import transformPosts, { transformPostBody } from "./src/markdown/transformPosts
 import * as fs from "fs";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
-import { copyDir, loopDir } from "./src/gulp/utils";
+import { copyDir, loopDir, slash } from "./src/gulp/utils";
 import { shortcodeScript } from "./src/gulp/script";
 import { shortcodeNow } from "./src/gulp/time";
-
-/**
- * slash alternative
- * @url {@link https://github.com/sindresorhus/slash}
- * @param path
- */
-function slash(path: string) {
-  const isExtendedLengthPath = /^\\\\\?\\/.test(path);
-  const hasNonAscii = /[^\u0000-\u0080]+/.test(path); // eslint-disable-line no-control-regex
-
-  if (isExtendedLengthPath || hasNonAscii) {
-    return path;
-  }
-
-  return path.replace(/\\/g, "/");
-}
 
 /**
  * Production article.
