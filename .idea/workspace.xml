@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix busuanzi">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add es5 es6 shim">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,14 +235,8 @@
       <workItem from="1629618701941" duration="387000" />
       <workItem from="1629619097187" duration="481000" />
       <workItem from="1629620037050" duration="727000" />
-      <workItem from="1629620951613" duration="1037000" />
-    </task>
-    <task id="LOCAL-00086" summary="test assets images folder">
-      <created>1629188371848</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1629188371848</updated>
+      <workItem from="1629620951613" duration="1076000" />
+      <workItem from="1629622415877" duration="158000" />
     </task>
     <task id="LOCAL-00087" summary="test assets images folder">
       <created>1629188519967</created>
@@ -581,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629621972902</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="Add es5 es6 shim">
+      <created>1629622042307</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1629622042307</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +603,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test assets images folder" />
     <MESSAGE value="Fix https (exclude from localhost)" />
     <MESSAGE value="Rename Expel Incident" />
     <MESSAGE value="Modify Article Expel Incident" />
@@ -628,7 +627,8 @@
     <MESSAGE value="add adblock" />
     <MESSAGE value="Set timezone Asia/Jakarta" />
     <MESSAGE value="Fix busuanzi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix busuanzi" />
+    <MESSAGE value="Add es5 es6 shim" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add es5 es6 shim" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
