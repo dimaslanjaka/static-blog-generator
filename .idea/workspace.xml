@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add es5 es6 shim">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Genshin Impact">
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160229.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160347.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160413.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160438.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160530.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160557.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/Screenshot_20210822-160623.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,14 +243,7 @@
       <workItem from="1629619097187" duration="481000" />
       <workItem from="1629620037050" duration="727000" />
       <workItem from="1629620951613" duration="1076000" />
-      <workItem from="1629622415877" duration="158000" />
-    </task>
-    <task id="LOCAL-00087" summary="test assets images folder">
-      <created>1629188519967</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1629188519967</updated>
+      <workItem from="1629622415877" duration="861000" />
     </task>
     <task id="LOCAL-00088" summary="Fix https (exclude from localhost)">
       <created>1629192440110</created>
@@ -581,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629622042307</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Add Genshin Impact">
+      <created>1629622599549</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1629622599549</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +610,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix https (exclude from localhost)" />
     <MESSAGE value="Rename Expel Incident" />
     <MESSAGE value="Modify Article Expel Incident" />
     <MESSAGE value="Modify TLON Articles" />
@@ -628,7 +634,8 @@
     <MESSAGE value="Set timezone Asia/Jakarta" />
     <MESSAGE value="Fix busuanzi" />
     <MESSAGE value="Add es5 es6 shim" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add es5 es6 shim" />
+    <MESSAGE value="Add Genshin Impact" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Genshin Impact" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
