@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Clean Posts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/assets/tlon/Quiz/quiz.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/assets/tlon/Quiz/quiz.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +239,7 @@
       <workItem from="1629620951613" duration="1076000" />
       <workItem from="1629622415877" duration="861000" />
       <workItem from="1629623836276" duration="359000" />
-      <workItem from="1629624425074" duration="191000" />
-    </task>
-    <task id="LOCAL-00090" summary="Modify Article Expel Incident">
-      <created>1629193444928</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1629193444928</updated>
+      <workItem from="1629624425074" duration="1068000" />
     </task>
     <task id="LOCAL-00091" summary="Modify Article Expel Incident">
       <created>1629193706080</created>
@@ -584,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629624548808</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="Clean Posts">
+      <created>1629624874225</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1629624874225</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
