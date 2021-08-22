@@ -117,6 +117,7 @@ gulp.task("article:copy:dev", function (done) {
 
 gulp.task("article:clean", function (done) {
   emptyDir(prodPostDir);
+  fs.mkdirSync(prodPostDir, { recursive: true });
 
   done();
 });
