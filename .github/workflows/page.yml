@@ -28,7 +28,7 @@ jobs:
       - name: Build Custom Domain
         #run: mkdir docs && echo git.webmanajemen.com > docs/CNAME
         run: node userscripts/custom-domain.js
-      - name: Build Hexo
+      - name: Generate Hexo
         run: npx hexo generate
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
