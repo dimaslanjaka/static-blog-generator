@@ -110,7 +110,8 @@ input[type="text"]:focus {
 
   <blockquote class="mt-2">
     Join discord https://tiny.one/INDO1945.<br />
-    This article shortcut url https://bit.ly/TLONQUIZ
+    This article shortcut url https://bit.ly/TLONQUIZ<br/>
+    Add new quiz https://bit.ly/TLONQUIZADD
   </blockquote>
 </div>
 
