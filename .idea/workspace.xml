@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="migrate hexo-filter-cleanup to packages/">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="fix hexo-filter-cleanup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,14 +234,8 @@
       <workItem from="1629618170268" duration="408000" />
       <workItem from="1629618701941" duration="387000" />
       <workItem from="1629619097187" duration="481000" />
-      <workItem from="1629620037050" duration="679000" />
-    </task>
-    <task id="LOCAL-00082" summary="test assets images folder">
-      <created>1629186823729</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1629186823729</updated>
+      <workItem from="1629620037050" duration="727000" />
+      <workItem from="1629620951613" duration="339000" />
     </task>
     <task id="LOCAL-00083" summary="test assets images folder">
       <created>1629186958242</created>
@@ -579,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629619024411</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="fix hexo-filter-cleanup">
+      <created>1629620755452</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1629620755452</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +602,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Comments System" />
     <MESSAGE value="Fix copy gulp task" />
     <MESSAGE value="Fix disqus comments" />
     <MESSAGE value="test inline images folder" />
@@ -626,7 +626,8 @@
     <MESSAGE value="Change Workflow" />
     <MESSAGE value="Disable processing images" />
     <MESSAGE value="migrate hexo-filter-cleanup to packages/" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate hexo-filter-cleanup to packages/" />
+    <MESSAGE value="fix hexo-filter-cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix hexo-filter-cleanup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
