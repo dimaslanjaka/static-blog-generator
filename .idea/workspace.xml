@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="migrate hexo-filter-cleanup to packages/" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="migrate hexo-filter-cleanup to packages/">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,7 +234,7 @@
       <workItem from="1629618170268" duration="408000" />
       <workItem from="1629618701941" duration="387000" />
       <workItem from="1629619097187" duration="481000" />
-      <workItem from="1629620037050" duration="305000" />
+      <workItem from="1629620037050" duration="679000" />
     </task>
     <task id="LOCAL-00082" summary="test assets images folder">
       <created>1629186823729</created>
