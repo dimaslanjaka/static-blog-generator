@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Add Midi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Midi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Midi.md" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Change Workflow">
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,21 +230,7 @@
       <workItem from="1629291003310" duration="4877000" />
       <workItem from="1629470127826" duration="7211000" />
       <workItem from="1629477535602" duration="2783000" />
-      <workItem from="1629615883370" duration="141000" />
-    </task>
-    <task id="LOCAL-00078" summary="test inline images folder">
-      <created>1629185366753</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1629185366753</updated>
-    </task>
-    <task id="LOCAL-00079" summary="test inline images folder">
-      <created>1629185741566</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1629185741566</updated>
+      <workItem from="1629615883370" duration="290000" />
     </task>
     <task id="LOCAL-00080" summary="test assets images folder">
       <created>1629185753091</created>
@@ -576,7 +561,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629480182956</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Change Workflow">
+      <created>1629616059638</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1629616059638</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Change Workflow">
+      <created>1629616068068</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1629616068068</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +597,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Opengraph metadata" />
     <MESSAGE value="Fix path" />
     <MESSAGE value="Introduce by Mila" />
     <MESSAGE value="Add Comments System" />
@@ -623,7 +621,8 @@
     <MESSAGE value="Fix Quiz" />
     <MESSAGE value="Remove annoying midi's" />
     <MESSAGE value="Add Midi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Midi" />
+    <MESSAGE value="Change Workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Workflow" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
