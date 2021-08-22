@@ -8,9 +8,9 @@ class PHP_AES_Cipher {
     /**
      * Encrypt data using AES Cipher (CBC) with 128 bit key
      *
-     * @param type $key - key to use should be 16 bytes long (128 bits)
-     * @param type $iv - initialization vector
-     * @param type $data - data to encrypt
+     * @param string $key - key to use should be 16 bytes long (128 bits)
+     * @param string $iv - initialization vector
+     * @param string $data - data to encrypt
      * @return encrypted data in base64 encoding with iv attached at end after a :
      */
 

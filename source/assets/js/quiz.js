@@ -1,3 +1,16 @@
+console.clear();
+
+// automated test
+setTimeout(function () {
+  let inputSearch = document.getElementById("search-questions");
+  const randx = ["i", "a", "p", "j"];
+  var keyword = randx[Math.floor(Math.random() * randx.length)];
+  inputSearch.value = keyword;
+  inputSearch.dispatchEvent(new Event("keyup"));
+}, 1500);
+
+/*** MAIN SCRIPT START ***/
+
 //this function will work cross-browser for loading scripts asynchronously
 function loadJScript(src, callback) {
   var s, r, t;
@@ -16,12 +29,21 @@ function loadJScript(src, callback) {
   t.parentNode.insertBefore(s, t);
 }
 
+function uniqArr(a) {
+  var seen = {};
+  return a.filter(function (item) {
+    return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+  });
+}
+
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 }
 
-const quizUrl =
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt";
+const quizUrls = [
+  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt",
+  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt",
+];
 let quizSrc = [];
 
 function jQueryMethod() {
@@ -84,23 +106,31 @@ function jQueryMethod() {
     }
   };
 
-  // get from source url
-  $.get(quizUrl).then(function (data) {
-    if (data) {
-      // split newLine from retrieved text into array
-      const split = data.split("\n");
-      // merge
-      quizSrc = quizSrc.concat(split);
-      // trim
-      quizSrc.map(function (str) {
-        return str.trim();
-      });
-      // transform
-      transformArray2Li();
-    }
-    processLi();
+  // get new question sources
+  quizUrls.forEach(function (quizUrl) {
+    console.log(quizUrl);
+    $.get(quizUrl).then(function (data) {
+      if (data) {
+        // split newLine from retrieved text into array
+        const split = data.split("\n");
+        // trim
+        quizSrc.map(function (str) {
+          return str.trim();
+        });
+        // merge and remove duplicates
+        quizSrc = uniqArr(quizSrc.concat(split));
+        // trim
+        quizSrc.map(function (str) {
+          return str.trim();
+        });
+        // transform
+        transformArray2Li();
+      }
+      processLi();
+    });
   });
 
+  // filter only (O)
   $("#O_only").on("change", function (e) {
     e.preventDefault();
     if (this.checked) {
@@ -113,6 +143,23 @@ function jQueryMethod() {
       searchLi(inputSearch.value);
     }
   });
+
+  // form add quiz
+  /*
+  $("form#addQuiz").on("submit", function (e) {
+    e.preventDefault();
+    let t = $(this);
+    $.ajax({
+      url: t.attr("action"),
+      type: "post",
+      //dataType: "json",
+      data: t.serialize(),
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  });
+  */
 }
 
 loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", jQueryMethod);
