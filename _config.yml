@@ -197,6 +197,9 @@ browsersync:
   ghostMode:
     scroll: true
   instanceName: "uniqueString"
+  port: 4000
+  browser: "google chrome"
+  open: false
 
 # Article schema
 # https://developers.google.com/structured-data/rich-snippets/articles#article_markup_properties
