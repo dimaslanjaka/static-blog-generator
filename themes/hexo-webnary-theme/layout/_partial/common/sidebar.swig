@@ -38,10 +38,10 @@
     <div class="sidebar__block" style="background-color: red;">
         <h3 class="block__title">{{ __('ads') }}</h3>
         <style>
+        .adsense_responsive_sidebar { min-height: 300px; }
         //.adsense_responsive_sidebar { width: 300px; height: 300px; }
-        /*
-        @media(min-width: 500px) { .adsense_responsive_sidebar { width: 468px; height: 60px; } }
-        @media(min-width: 800px) { .adsense_responsive_sidebar { width: 728px; height: 90px; } }*/
+        //@media(min-width: 500px) { .adsense_responsive_sidebar { width: 468px; height: 60px; } }
+        //@media(min-width: 800px) { .adsense_responsive_sidebar { width: 728px; height: 90px; } }
         </style>
         <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.adsense.pub }}" crossorigin="anonymous"></script>
