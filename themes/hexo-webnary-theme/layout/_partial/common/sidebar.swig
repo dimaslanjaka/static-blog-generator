@@ -35,16 +35,16 @@
     </div>
 
 
-    <div class="sidebar__block">
+    <div class="sidebar__block" style="background-color: red;">
         <h3 class="block__title">{{ __('ads') }}</h3>
         <style>
-        .adsense_responsive_sidebar { width: 300px; height: 300px; }
+        //.adsense_responsive_sidebar { width: 300px; height: 300px; }
         /*
         @media(min-width: 500px) { .adsense_responsive_sidebar { width: 468px; height: 60px; } }
         @media(min-width: 800px) { .adsense_responsive_sidebar { width: 728px; height: 90px; } }*/
         </style>
         <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969" crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.adsense.pub }}" crossorigin="anonymous"></script>
         <ins class="adsbygoogle adsense_responsive_sidebar"
                 style="display:inline-block"
                 data-ad-client="{{ config.adsense.pub }}"
