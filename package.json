@@ -42,7 +42,7 @@
     "hexo-deployer-git": "^3.0.0",
     "hexo-feed": "^1.0.2",
     "hexo-filter-cleanup": "file:./packages/hexo-filter-cleanup",
-    "hexo-filter-nofollow": "^2.0.2",
+    "hexo-filter-nofollow": "file:./packages/hexo-filter-nofollow",
     "hexo-fs": "^3.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",

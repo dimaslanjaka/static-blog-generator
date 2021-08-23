@@ -124,6 +124,9 @@ include:
 exclude:
 ignore:
 
+# https://hexo.io/docs/configuration.html#:~:text=skip_render%3A%20%22mypage/**/*%22
+skip_render: "page/**/*"
+
 # Comments
 disqus_shortname: dimaslanjaka
 
