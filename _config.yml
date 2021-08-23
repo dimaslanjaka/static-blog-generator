@@ -222,7 +222,7 @@ adsense:
   # responsive horizontal
   ads1: 6376402862
   # responsive square
-  ads-sidebar: 3325057139
+  ads_sidebar: 3325057139
 
 adblock: true
 

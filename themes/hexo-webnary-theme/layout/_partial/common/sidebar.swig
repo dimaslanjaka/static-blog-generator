@@ -48,7 +48,7 @@
         <ins class="adsbygoogle adsense_responsive_sidebar"
                 style="display:inline-block"
                 data-ad-client="{{ config.adsense.pub }}"
-                data-ad-slot="{{ config.adsense.ads-sidebar }}"></ins>
+                data-ad-slot="{{ config.adsense.ads_sidebar }}"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
