@@ -375,11 +375,18 @@ hexo.extend.helper.register("get_text_html", function (data) {
     span.innerHTML = s;
     return span.textContent || span.innerText;
   };
-  // remove elements
+
+  /**
+   * remove elements
+   * @see {@link https://stackoverflow.com/a/14003661}
+   * @param {Array<HTMLElement>} elements
+   * @returns
+   */
   let removeElement = function (elements) {
     while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
     return elements;
   };
+
   // extract from entire html
   //let entire = extractTextFromHtmlString(dom.window.document.documentElement.innerHTML);
   let body = dom.window.document.body;
