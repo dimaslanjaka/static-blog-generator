@@ -32,7 +32,7 @@
             },
             "datePublished": "{{ page.date.toDate().toISOString() }}",
             "dateModified": "{{ page.updated.toDate().toISOString() }}",
-            "description": "{{ get_text_html(page.excerpt|page.subtitle) }} {% if page.subtitle %}{{ page.subtitle }}{% endif %}",
+            "description": "{% if page.excerpt %}{{ get_text_html(page.excerpt) }}{% endif %} {% if page.subtitle %}{{ page.subtitle }}{% endif %}",
             "articleBody": {{ escape_with_json(trim_whitespace(get_text_html(page.more), " ")) }}
         }
     </script>
