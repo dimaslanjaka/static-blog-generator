@@ -370,13 +370,24 @@ hexo.extend.helper.register("get_text_html", function (data) {
    * @param {string} s
    * @returns {string}
    */
-  const extractContent = function (s) {
+  const extractTextFromHtmlString = function (s) {
     var span = dom.window.document.createElement("span");
     span.innerHTML = s;
     return span.textContent || span.innerText;
   };
-
-  return extractContent(dom.window.document.documentElement.innerHTML);
+  // remove elements
+  let removeElement = function (elements) {
+    while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+    return elements;
+  };
+  // extract from entire html
+  //let entire = extractTextFromHtmlString(dom.window.document.documentElement.innerHTML);
+  let body = dom.window.document.body;
+  removeElement(body.getElementsByTagName('style'));
+  removeElement(body.getElementsByTagName('script'));
+  removeElement(body.getElementsByTagName('link'));
+  let extractBody = extractTextFromHtmlString(body.innerHTML);
+  return extractBody;
 });
 
 hexo.extend.helper.register("condition", function (data, callback) {});
