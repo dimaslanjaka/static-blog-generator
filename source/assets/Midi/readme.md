@@ -1,6 +1,5 @@
 ### Short url services
-to avoid typing long url, better you short them to easily typed.  
-[bit.ly](http://bitly.com)
+to avoid typing long url, better you short them to easily typed using [bit.ly](http://bitly.com).
 another list midi [https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html](https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html)
 
 ### How to copy url
