@@ -53,6 +53,7 @@ render_drafts: false
 
 # https://hexo.io/docs/asset-folders
 post_asset_folder: true
+
 # https://github.com/hexojs/hexo-renderer-marked
 marked:
   gfm: true
