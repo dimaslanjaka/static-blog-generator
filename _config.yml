@@ -228,8 +228,10 @@ adsense:
 adblock: true
 
 tagmanager:
-  enable: true
+  enable: false
   id: GTM-NJNNXSR
+
+google_statistic: UA-106238155-1
 
 https:
   enable: true
