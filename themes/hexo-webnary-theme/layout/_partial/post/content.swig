@@ -77,7 +77,7 @@
             @media(min-width: 800px) { .adsense_responsive_1 { width: 728px; height: 90px; } }
             </style>
             <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.adsense.pub }}" crossorigin="anonymous"></script>
+            <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.adsense.pub }}" crossorigin="anonymous"></script-->
             <ins class="adsbygoogle adsense_responsive_1"
                  style="display:inline-block"
                  data-ad-client="{{ config.adsense.pub }}"
