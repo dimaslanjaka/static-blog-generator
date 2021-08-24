@@ -34,7 +34,6 @@
         {{ tags({ order: -1 }) }}
     </div>
 
-
     <div class="sidebar__block" style="background-color: red;">
         <h3 class="block__title">{{ __('ads') }}</h3>
         <style>
