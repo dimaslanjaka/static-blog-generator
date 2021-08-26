@@ -24,12 +24,12 @@
  * auto responsive embedded video with tag {% youtube YOUTUBE_VIDEO_ID %}
  */
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  padding-top: 25px;
+  position: relative !important;
+  padding-bottom: 56.25% !important; /* 16:9 Aspect Ratio */
+  padding-top: 25px !important;
 
   iframe {
-    position: absolute;
+    position: absolute !important;
     width: 100% !important;
     height: 100% !important;
   }
