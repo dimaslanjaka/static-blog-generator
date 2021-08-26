@@ -19,7 +19,10 @@
   }
 }
 
-/* youtube embed responsive https://codepen.io/jakewm/pen/rWWdgB */
+/*
+ * youtube embed responsive https://codepen.io/jakewm/pen/rWWdgB
+ * auto responsive embedded video with tag {% youtube YOUTUBE_VIDEO_ID %}
+ */
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
