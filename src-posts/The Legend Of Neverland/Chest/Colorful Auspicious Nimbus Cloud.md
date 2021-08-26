@@ -10,7 +10,7 @@ date: 2021-8-21
 type: post
 
 tags:
-  - Life Skill
+  - Chest Location
 
 author:
   nick: "Maulinda Agustina"
