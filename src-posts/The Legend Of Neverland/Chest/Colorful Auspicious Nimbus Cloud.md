@@ -30,13 +30,13 @@ location: Indonesia
 - Blueprint (To buy this blueprint, you have to go to an NPC named the `Wonder Creator` in `Sophila`.)
 ![](Colorful%20Auspicious%20Nimbus%20Cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png)
 
-Magic Wool chest location
+- Magic Wool chest location
+Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you'll found the chest
 ![](Colorful%20Auspicious%20Nimbus%20Cloud/map-tr1.png)
-*Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you'll found the chest*
-
-Miraculous Dye chest location
+![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png)
 ![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-teleporter.png)
+
+- Miraculous Dye chest location
 *Twilight Rainforest F2. Behind map teleporter*
 
-Weightless Dust chest location
-![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png)
+- Weightless Dust chest location
