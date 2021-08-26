@@ -234,9 +234,13 @@ tagmanager:
   enable: false
   id: GTM-NJNNXSR
 
-google_statistic: UA-106238155-1
-google_analytic:
+analytic:
+  # google analytic v4
   GA4: G-BG75CLNJZ1
+  # google analytic
+  GA3: UA-106238155-1
+  # cloudflare web statistic
+  cloudflare: 2157c0f3b9e74a92badffe39156166b9
 
 https:
   enable: true
