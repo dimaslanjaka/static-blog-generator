@@ -38,7 +38,7 @@ location: Indonesia
 | Deep purle - soldier of fortune [2] | https://bitmidi.com/uploads/38560.mid |
 | Only The Lonely | https://bitmidi.com/uploads/112561.mid |
 | Final Fantasy VII (Battle Theme) | https://bitmidi.com/uploads/46430.mid |
-  
+| Queen - Bohemian Rhapsody | https://bitmidi.com/uploads/87216.mid |
 ### Available Midi Sites
 
 [https://www.mfiles.co.uk/midi-files.htm](https://www.mfiles.co.uk/midi-files.htm)<br/>
