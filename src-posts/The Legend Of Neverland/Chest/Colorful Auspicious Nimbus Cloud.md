@@ -1,7 +1,7 @@
 ---
-title: Colorful Auspicious Cloud
+title: Colorful Auspicious Nimbus Cloud
 
-subtitle: "Chest Colorful Auspicious Cloud location in the legend of neverland"
+subtitle: "Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland"
 
 lang: en
 
@@ -22,7 +22,7 @@ category:
 
 comments: true
 
-cover: "/The Legend Of Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud/cover.jpg"
+cover: "/The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg"
 location: Indonesia
 ---
 
@@ -30,7 +30,7 @@ location: Indonesia
 - Blueprint (To buy this blueprint, you have to go to an NPC named the `Wonder Creator` in `Sophila`.)
 ![](Colorful%20Auspicious%20Nimbus%20Cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png)
 
-### Colorful Auspicious Cloud Material Chest Locations
+### Colorful Auspicious Nimbus Cloud Material Chest Locations
 - Magic Wool chest location
 
 Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you'll found the chest
@@ -54,4 +54,4 @@ Twilight Rainforest F1. there has hidden teleporter, you must enter that telepor
 
 
 *detail video*
-[![Colorful Auspicious Cloud Video Tutorial](https://img.youtube.com/vi/hVhzL_q1IOs/0.jpg)](https://www.youtube.com/watch?v=hVhzL_q1IOs)
+[![Colorful Auspicious Nimbus Cloud Video Tutorial](https://img.youtube.com/vi/hVhzL_q1IOs/0.jpg)](https://www.youtube.com/watch?v=hVhzL_q1IOs)
