@@ -200,7 +200,7 @@ browsersync:
   logLevel: "warn"
   ghostMode:
     scroll: true
-  instanceName: "uniqueString"
+  instanceName: "customInstance"
   port: 4000
   browser: "google chrome"
   open: false

@@ -1,3 +1,4 @@
+/* inline images */
 .container-box {
   /*border: 3px solid blue;
   padding: 20px 40px 40px;
@@ -15,5 +16,18 @@
     @media (max-width: 620px) {
       width: 100%;
     }
+  }
+}
+
+/* youtube embed responsive https://codepen.io/jakewm/pen/rWWdgB */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 25px;
+
+  iframe {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
