@@ -40,3 +40,8 @@ Twilight Rainforest F1. there has hidden teleporter, you must enter that telepor
 *Twilight Rainforest F2. Behind map teleporter*
 
 - Weightless Dust chest location
+
+
+
+*detail video*
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/hVhzL_q1IOs/0.jpg)](https://www.youtube.com/watch?v=hVhzL_q1IOs)
