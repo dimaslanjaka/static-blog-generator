@@ -22,21 +22,21 @@ category:
 
 comments: true
 
-cover: "cloud/the-legend-of-neverland-colorful-auspicious-cloud-guide-id-1.png"
+cover: "Colorful%20Auspicious%20Nimbus%20Cloud/cover.jpg"
 location: Indonesia
 ---
 
 ## Requirement
 - Blueprint (To buy this blueprint, you have to go to an NPC named the `Wonder Creator` in `Sophila`.)
-![](cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png)
+![](Colorful%20Auspicious%20Nimbus%20Cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png)
 
 Magic Wool chest location
-![](cloud/map-tr1.png)
+![](Colorful%20Auspicious%20Nimbus%20Cloud/map-tr1.png)
 *Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you'll found the chest*
 
 Miraculous Dye chest location
-![](cloud/tr1-teleporter.png)
+![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-teleporter.png)
 *Twilight Rainforest F2. Behind map teleporter*
 
 Weightless Dust chest location
-![](cloud/tr1-chest.png)
+![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png)
