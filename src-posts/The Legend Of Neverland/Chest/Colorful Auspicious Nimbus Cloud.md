@@ -22,7 +22,7 @@ category:
 
 comments: true
 
-cover: "Colorful%20Auspicious%20Nimbus%20Cloud/cover.jpg"
+cover: "/The Legend Of Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud/cover.jpg"
 location: Indonesia
 ---
 
