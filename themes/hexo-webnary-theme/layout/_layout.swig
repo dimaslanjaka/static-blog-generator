@@ -78,12 +78,7 @@
 
     {% if config.https && config.https.enable %}
     <!-- force https -->
-    <script>
-    const LOCAL_DOMAINS = ['localhost', '127.0.0.1', '0.0.0.0'];
-    if (!LOCAL_DOMAINS.includes(window.location.hostname) && location.protocol && location.protocol !== 'https:') {
-        location.replace(`https:${location.href.substring(location.protocol.length)}`);
-    }
-    </script>
+    <script type="text/javascript" src="/js/https.js"></script>
     {% endif %}
 
     {% if config.adblock %}
