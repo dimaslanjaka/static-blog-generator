@@ -28,8 +28,15 @@ location: Indonesia
 
 ## Requirement
 - Blueprint (To buy this blueprint, you have to go to an NPC named the `Wonder Creator` in `Sophila`.)
-![](cloud/the-legend-of-neverland-colorful-auspicious-cloud-guide-id-1.png)
+![](cloud/Colorful%20Auspicious%20Nimbus%20Cloud.png)
 
 Magic Wool chest location
-![](cloud/the-legend-of-neverland-colorful-auspicious-cloud-guide-id-2.png)
-*Twilight Rainforest F1*
+![](cloud/map-tr1.png)
+*Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you'll found the chest*
+
+Miraculous Dye chest location
+![](cloud/tr1-teleporter.png)
+*Twilight Rainforest F2. Behind map teleporter*
+
+Weightless Dust chest location
+![](cloud/tr1-chest.png)
