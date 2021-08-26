@@ -31,9 +31,12 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Kagmaw Grassland F3
 ![](./Exp%20Char/Kagmaw%20Grassland%20F3.png)
+![](./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png)
+*Black Wolf King*
 
 ## Kagmaw Grassland F1
 ![](../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png)
+*Silk And Satin*
 
 ## Skala Desert F1
 ![](Exp%20Char/Skala%20Desert%20F1.png)
