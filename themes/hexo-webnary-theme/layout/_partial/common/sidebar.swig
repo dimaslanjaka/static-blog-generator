@@ -34,13 +34,12 @@
         {{ tags({ order: -1 }) }}
     </div>
 
-    <div class="sidebar__block" style="background-color: red;">
+    <div class="sidebar__block">
         <h3 class="block__title">{{ __('ads') }}</h3>
         <style>
-        .adsense_responsive_sidebar { min-height: 200px; padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
-        //.adsense_responsive_sidebar { width: 300px; height: 300px; }
-        //@media(min-width: 500px) { .adsense_responsive_sidebar { width: 468px; height: 60px; } }
-        //@media(min-width: 800px) { .adsense_responsive_sidebar { width: 728px; height: 90px; } }
+        .adsense_responsive_sidebar { height: 100px; padding-left: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
+        @media(min-width: 500px) { .adsense_responsive_sidebar { height: 250px; } }
+        @media(min-width: 800px) { .adsense_responsive_sidebar { height: 600px; width: 160px } }
         </style>
         <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
         <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.adsense.pub }}" crossorigin="anonymous"></script-->
