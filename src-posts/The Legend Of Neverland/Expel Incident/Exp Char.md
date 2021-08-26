@@ -11,6 +11,7 @@ type: post
 
 tags:
   - Expel Incident
+  - Quest
 
 author:
   nick: "Maulinda Agustina"
