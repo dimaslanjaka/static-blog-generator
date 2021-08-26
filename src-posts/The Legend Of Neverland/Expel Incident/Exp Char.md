@@ -54,3 +54,5 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Fog Swamp F3
 ![](./Exp%20Char/Fog%20Swamp%20F3.png)
+![](./Exp%20Char/Fog%20Swamp%20F3%202.png)
+*Murloc Sushi*
