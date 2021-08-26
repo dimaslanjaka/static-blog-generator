@@ -55,23 +55,27 @@ hfc_useref:
   enable: true
   concat: true
 
+# compress html
 hfc_html:
   enable: true
   exclude:
 
+# compress css
 hfc_css:
   enable: true
   exclude:
     - "*.min.css"
 
+# compress js
 hfc_js:
   enable: true
   mangle: true
   exclude:
     - "*.min.js"
 
+# compress images
 hfc_img:
-  enable: false #true
+  enable: true
   interlaced: false
   multipass: false
   optimizationLevel: 2
