@@ -36,6 +36,7 @@ location: Indonesia
 | ----------- | ----------- |
 | Deep purle | https://bitmidi.com/uploads/38563.mid |
 | Deep purle 2 | https://bitmidi.com/uploads/38560.mid |
+| Only The Lonely | https://bitmidi.com/uploads/112561.mid |
   
   
 ### Available Midi Sites
