@@ -78,7 +78,7 @@ export function transformPostBody(
         }
         const parse = parsePost(read);
         //console.log(parse.metadata); //<--- debug
-        if (parse.hasOwnProperty("body")) {
+        if (parse && parse.hasOwnProperty("body")) {
           const html = toHtml(parse.body);
           const filter_notranslate = notranslate(html);
           filemanager.write(filepath, String(filter_notranslate));

@@ -100,6 +100,7 @@
     "@types/node": "^15.12.2",
     "@types/nodemon": "^1.19.0",
     "@types/pako": "^1.0.1",
+    "@types/request": "^2.48.7",
     "@types/rimraf": "^3.0.1",
     "@types/serve-index": "^1.7.30",
     "@types/serve-static": "^1.13.9",

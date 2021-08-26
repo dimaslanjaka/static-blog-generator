@@ -15,7 +15,7 @@
     "js": "node --harmony",
     "ts": "ts-node"
   },
-  "exec": "npx  ts-node src/express/app.ts",
+  "exec": "npx ts-node src/express/app.ts",
   "events": {
     "restart": "kill-port --port 3001,3000",
     "crash": "kill-port --port 3001,3000"

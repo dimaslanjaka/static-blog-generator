@@ -23,7 +23,7 @@ const server = createServer(async (app) => {
     // read query parameters
     const url = req.query["url"];
     // make request to IEX API and forward response
-    if (url && url.length > 0) return request(url).pipe(res);
+    if (url && url.length > 0) return request(url.toString()).pipe(res);
     res.json({ error: true, message: 'Query "url" required' });
   });
   expressApp = app;
