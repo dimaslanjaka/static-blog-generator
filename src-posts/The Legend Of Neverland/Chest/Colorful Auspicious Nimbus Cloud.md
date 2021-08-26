@@ -32,16 +32,19 @@ location: Indonesia
 
 - Magic Wool chest location
 Twilight Rainforest F1. there has hidden teleporter, you must enter that teleporter and you'll found the chest
-![](Colorful%20Auspicious%20Nimbus%20Cloud/map-tr1.png)
+![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-map.png)
 ![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-chest.png)
 ![](Colorful%20Auspicious%20Nimbus%20Cloud/tr1-teleporter.png)
 
 - Miraculous Dye chest location
 *Twilight Rainforest F2. Behind map teleporter*
+![map](Colorful%20Auspicious%20Nimbus%20Cloud/tr2-map.png)
+![overview](Colorful%20Auspicious%20Nimbus%20Cloud/tr2-overview.png)
+![detail](Colorful%20Auspicious%20Nimbus%20Cloud/tr2-detail.png)
 
 - Weightless Dust chest location
 
 
 
 *detail video*
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/hVhzL_q1IOs/0.jpg)](https://www.youtube.com/watch?v=hVhzL_q1IOs)
+[![Colorful Auspicious Cloud Video Tutorial](https://img.youtube.com/vi/hVhzL_q1IOs/0.jpg)](https://www.youtube.com/watch?v=hVhzL_q1IOs)
