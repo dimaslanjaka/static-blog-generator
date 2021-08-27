@@ -25,10 +25,6 @@ comments: true
 cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
 location: Indonesia
 ---
-
-{% youtube tik3ZFwFsJA %}
-
-{% youtube kIXXv8oUqOc %}
   
 ### List Best Midi (Hold tap/Right click to copy)
   
@@ -48,3 +44,9 @@ https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/asse
 [http://www.midishrine.com/](http://www.midishrine.com/)<br/>
 [https://midistock.ru/](https://midistock.ru/)<br/>
 [https://freemidi.org/topmidi](https://freemidi.org/topmidi)
+  
+### How to create music/song mp3 to midi
+  
+{% youtube tik3ZFwFsJA %}
+
+{% youtube kIXXv8oUqOc %}
