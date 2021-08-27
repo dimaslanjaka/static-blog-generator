@@ -32,15 +32,15 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Kagmaw Grassland F3
 ![](./Exp%20Char/Kagmaw%20Grassland%20F3.png)
-![](./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png)
+![Black Wolf King](./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png)
 *Black Wolf King*
 
 ## Kagmaw Grassland F1
-![](../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png)
+![Silk And Satin](../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png)
 *Silk And Satin*
 
 ## Skala Desert F1
-![](Exp%20Char/Skala%20Desert%20F1.png)
+![Raiders of the lost arks](Exp%20Char/Skala%20Desert%20F1.png)
 *Raiders of the lost arks*
 
 ## Oak Town
@@ -55,10 +55,12 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ![](./Exp%20Char/Gaia%20Snow%20Mountain%20F2.png)
 
 ## Fog Swamp F1
-![](./Exp%20Char/Fog%20Swamp%20F1.png)
+![Hurry-Curry](./Exp%20Char/Fog%20Swamp%20F1.png)
 *Hurry-Curry*
+![Poacher Doomsday](https://cdn.discordapp.com/attachments/875357200913162342/880940999810121728/Screenshot_20210828-052408.png)
+*Poacher Doomsday*
 
 ## Fog Swamp F3
 ![](./Exp%20Char/Fog%20Swamp%20F3.png)
-![](./Exp%20Char/Fog%20Swamp%20F3%202.png)
+![Murloc Sushi](./Exp%20Char/Fog%20Swamp%20F3%202.png)
 *Murloc Sushi*
