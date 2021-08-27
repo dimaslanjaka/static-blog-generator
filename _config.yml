@@ -174,11 +174,22 @@ author:
   name: "Dimas Lanjaka"
   link: "https://git.webmanajemen.com/"
 
-# Feed Atom
+# Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
-  type: atom
-  path: atom.xml
+  enable: true
   limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date
+  # Generate both atom and rss2 feeds
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
 
 # Sitemap
 sitemap:
