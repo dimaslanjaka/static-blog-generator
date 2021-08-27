@@ -53,6 +53,10 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ## Gaia Snow Mountain F2
 ![](./Exp%20Char/Gaia%20Snow%20Mountain%20F2.png)
 
+## Fog Swamp F1
+![](./Exp%20Char/Fog%20Swamp%20F1.png)
+*Hurry-Curry*
+
 ## Fog Swamp F3
 ![](./Exp%20Char/Fog%20Swamp%20F3.png)
 ![](./Exp%20Char/Fog%20Swamp%20F3%202.png)
