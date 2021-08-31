@@ -33,7 +33,7 @@ location: Indonesia
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the STANDARD REWARDS.
 
 
-## Sophilia
+## Sophila
 ![](Standard%20Rewards/Sophilia.png)
   ![Work Together](https://user-images.githubusercontent.com/12471057/131433396-702bbcc8-1c0b-43d8-a688-caff61d8d8b2.png)
   *Work Together*
