@@ -27,3 +27,6 @@ location: Indonesia
 ---
 
 ## Requirement
+
+## Video tutorial
+{% youtube psOnlBSRBjA %}
