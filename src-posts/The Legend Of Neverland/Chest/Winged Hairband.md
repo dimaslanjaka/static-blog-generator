@@ -21,8 +21,8 @@ category:
   - The Legend Of Neverland
 
 comments: true
-
-cover: "/The Legend Of Neverland/Chest/Winged Hairband/cover.jpg"
+cover: "http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg"
+#cover: "/The Legend Of Neverland/Chest/Winged Hairband/cover.jpg"
 location: Indonesia
 ---
 
