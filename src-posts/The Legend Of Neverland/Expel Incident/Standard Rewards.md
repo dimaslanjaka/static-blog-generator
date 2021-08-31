@@ -33,6 +33,8 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Sophilia
 ![](Standard%20Rewards/Sophilia.png)
+  ![Work Together](https://user-images.githubusercontent.com/12471057/131433396-702bbcc8-1c0b-43d8-a688-caff61d8d8b2.png)
+  *Work Together*
   
   ## Kagmaw Grassland F1
   ![Monkey Tricks](https://user-images.githubusercontent.com/12471057/131432947-509bdb14-e643-4859-965f-b634ea8f8805.png)
