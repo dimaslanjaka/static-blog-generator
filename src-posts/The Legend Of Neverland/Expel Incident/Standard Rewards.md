@@ -40,3 +40,8 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Skala Desert F2
 ![](Standard%20Rewards/Skala%20Desert%20F2.png)
+  
+  ## Skala Desert F3
+  ![Flaming Heart](https://user-images.githubusercontent.com/12471057/131433100-70aa2477-fc05-4e1d-be15-b63ac72b8841.png)
+  *Flaming Heart*
+
