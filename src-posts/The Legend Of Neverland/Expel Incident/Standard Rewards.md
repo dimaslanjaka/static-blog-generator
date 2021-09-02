@@ -43,6 +43,10 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
   *Monkey Tricks*
   ![Grassland Busy Man](https://user-images.githubusercontent.com/12471057/131443088-50778773-7e35-4474-bbc9-14d75b3943d0.png)
   *Grassland Busy Man*
+  
+  ## Twilight Rainforest F2
+  ![](https://cdn.discordapp.com/attachments/875357200913162342/883045694003355700/Screenshot_20210903-004720.png)
+  *Rat Crisis*
 
 ## Skala Desert F2
 ![](Standard%20Rewards/Skala%20Desert%20F2.png)
