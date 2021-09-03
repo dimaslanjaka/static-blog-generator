@@ -214,9 +214,11 @@ hexo.extend.helper.register("num_toArray", function (num) {
   return ret;
 });
 
-hexo.extend.helper.register("get_setting", function (...keys) {
+function get_setting(...keys) {
   return keys.reduce((p, key) => p || this.config[key] || this.theme[key], void 0);
-});
+}
+
+hexo.extend.helper.register("get_setting", get_setting);
 
 hexo.extend.helper.register("tags", function () {
   let tags = this.site.tags.sort("name", 1).filter((tag) => tag.length);
@@ -390,9 +392,9 @@ hexo.extend.helper.register("get_text_html", function (data) {
   // extract from entire html
   //let entire = extractTextFromHtmlString(dom.window.document.documentElement.innerHTML);
   let body = dom.window.document.body;
-  removeElement(body.getElementsByTagName('style'));
-  removeElement(body.getElementsByTagName('script'));
-  removeElement(body.getElementsByTagName('link'));
+  removeElement(body.getElementsByTagName("style"));
+  removeElement(body.getElementsByTagName("script"));
+  removeElement(body.getElementsByTagName("link"));
   let extractBody = extractTextFromHtmlString(body.innerHTML);
   return extractBody;
 });

@@ -22,7 +22,7 @@
   "homepage": "https://github.com/BRAVO68WEB/hexo-webnary-theme#readme",
   "dependencies": {
     "hexo-description": "^0.1.0",
-    "hexo-excerpt": "^1.1.6",
+    "hexo-excerpt": "^1.2.1",
     "hexo-excerpt-block": "^1.0.0"
   }
 }
