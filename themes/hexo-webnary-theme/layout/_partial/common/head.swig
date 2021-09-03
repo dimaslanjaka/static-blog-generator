@@ -1,7 +1,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 <meta name="format-detection" content="telephone=no">
-<meta name="author" content="{{ get_setting('author') }}" />
+<meta name="author" content="{% if get_setting('author').name %}{{ get_setting('author').name }}{% else %}Dimas Lanjaka{% endif %}" />
 <meta name="designer" content="minfive" />
 <meta name="keywords" content="{% if page.keywords %}{% endif %}{{ get_setting('keywords') }}"/>
 <meta name="description" content="{% if page.subtitle %}{{ page.subtitle }}{% elseif page.title %}{{ page.title }}{% else %}{{ get_setting('description') }}{% endif %}" />
