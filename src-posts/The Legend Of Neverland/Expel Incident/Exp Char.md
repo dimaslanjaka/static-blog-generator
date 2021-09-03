@@ -48,6 +48,10 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ![Raiders of the lost arks](Exp%20Char/Skala%20Desert%20F1.png)
 *Raiders of the lost arks*
 
+## Skala Desert F3
+![](https://drive.google.com/uc?export=view&id=1P3LF3l1ViyaXKAZ2-EDQkKctNU63IBR0)
+  *Cherish Food*
+  
 ## Oak Town
 ![](Exp%20Char/Oak%20Town%202.png)
 ![](Exp%20Char/Oak%20Town.png)
