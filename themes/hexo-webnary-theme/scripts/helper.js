@@ -430,10 +430,19 @@ hexo.extend.helper.register("escape_double_quotes", function (str, replacement) 
   return str.replace(/"/g, replacement);
 });
 
-hexo.extend.helper.register("escape_with_json", function (str) {
-  let json = JSON.stringify(str);
-  if (typeof str == "string") {
-    return json;
+hexo.extend.helper.register(
+  "escape_with_json",
+  /**
+   *
+   * @param {any} str
+   * @returns
+   */
+  function (str) {
+    let json = JSON.stringify(str);
+    if (typeof str == "string") {
+      return json;
+    } else {
+      return str;
+    }
   }
-  return str;
-});
+);

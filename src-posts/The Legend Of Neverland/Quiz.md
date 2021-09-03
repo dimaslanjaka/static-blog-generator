@@ -77,7 +77,7 @@ location: Indonesia
   </form>
 
   <blockquote class="mt-2">
-    Join discord https://tiny.one/INDO1945.<br />
+    <span style="display: none;">Join discord https://tiny.one/INDO1945.</span>
     This article shortcut url https://bit.ly/TLONQUIZ<br />
     Add new quiz https://bit.ly/TLONQUIZADD<br />
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo

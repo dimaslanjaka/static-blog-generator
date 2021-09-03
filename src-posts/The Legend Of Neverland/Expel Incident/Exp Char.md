@@ -28,7 +28,7 @@ location: Indonesia
 ---
 
 <style>em::before{content: "Gate Name : ";}</style>
-  
+
 ## Expel Incident The Legend Of NeverLand
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most CHARACTER EXP.
 
@@ -41,7 +41,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ## Kagmaw Grassland F1
 ![Silk And Satin](../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png)
 *Silk And Satin*
-![Rolling Rock](https://media.discordapp.net/attachments/875357200913162342/880779158735687690/Screenshot_20210827-184116.png)
+![Rolling Rock](./Exp%20Char/Kagmaw%20Grassland%20F1%202.png)
 *Rolling Rock*
 
 ## Skala Desert F1
@@ -51,7 +51,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ## Skala Desert F3
 ![](https://drive.google.com/uc?export=view&id=1P3LF3l1ViyaXKAZ2-EDQkKctNU63IBR0)
   *Cherish Food*
-  
+
 ## Oak Town
 ![](Exp%20Char/Oak%20Town%202.png)
 ![](Exp%20Char/Oak%20Town.png)
@@ -66,7 +66,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ## Fog Swamp F1
 ![Hurry-Curry](./Exp%20Char/Fog%20Swamp%20F1.png)
 *Hurry-Curry*
-![Poacher Doomsday](https://cdn.discordapp.com/attachments/875357200913162342/880940999810121728/Screenshot_20210828-052408.png)
+![Poacher Doomsday](./Exp%20Char/Fog%20Swamp%20F1%202.png)
 *Poacher Doomsday*
 
 ## Fog Swamp F3
