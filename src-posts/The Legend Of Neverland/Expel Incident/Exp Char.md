@@ -27,16 +27,14 @@ cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
 location: Indonesia
 ---
 
-<style>em::before{content: "Gate Name : ";}</style>
-
 ## Expel Incident The Legend Of NeverLand
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most CHARACTER EXP.
 
 ## Kagmaw Grassland F3
 ![Running Wolf Pack](./Exp%20Char/Kagmaw%20Grassland%20F3.png)
-  *Running Wolf Pack*
+*Running Wolf Pack*
 ![Black Wolf King](./Exp%20Char/../Exp%20Char/Kagmaw%20Grassland%20F3%202.png)
-  *Black Wolf King*
+*Black Wolf King*
 
 ## Kagmaw Grassland F1
 ![Silk And Satin](../../The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char/Kagmaw%20Grassland%20F1.png)
@@ -50,7 +48,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Skala Desert F3
 ![](https://drive.google.com/uc?export=view&id=1P3LF3l1ViyaXKAZ2-EDQkKctNU63IBR0)
-  *Cherish Food*
+*Cherish Food*
 
 ## Oak Town
 ![](Exp%20Char/Oak%20Town%202.png)
@@ -73,3 +71,5 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ![](./Exp%20Char/Fog%20Swamp%20F3.png)
 ![Murloc Sushi](./Exp%20Char/Fog%20Swamp%20F3%202.png)
 *Murloc Sushi*
+
+<style>em::before{content: "Gate Name : ";}</style>
