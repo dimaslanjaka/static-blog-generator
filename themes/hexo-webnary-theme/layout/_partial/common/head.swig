@@ -3,8 +3,8 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="author" content="{{ get_setting('author') }}" />
 <meta name="designer" content="minfive" />
-<meta name="keywords" content="{{ get_setting('keywords') }}"/>
-<meta name="description" content="{{ get_setting('description') }}" />
+<meta name="keywords" content="{% if page.keywords %}{% endif %}{{ get_setting('keywords') }}"/>
+<meta name="description" content="{% if page.subtitle %}{{ page.subtitle }}{% elseif page.title %}{{ page.title }}{% else %}{{ get_setting('description') }}{% endif %}" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url }}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ config.subtitle|default(theme.subtitle) }}">
-<meta property="og:description" content="{% if page.subtitle %}{{ page.subtitle }}{% endif %} {% if page.title %}{{ page.title }}{% endif %}">
+<meta property="og:description" content="{% if page.subtitle %}{{ page.subtitle }}{% elseif page.title %}{{ page.title }}{% else %}{{ get_setting('description') }}{% endif %}">
 <meta property="og:image" content="{{ page.cover|default(get_setting('default_cover')) }}">
 
 {% if config.google_site_verification %}
