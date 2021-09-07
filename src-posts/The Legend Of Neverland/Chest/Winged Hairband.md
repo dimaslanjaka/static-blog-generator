@@ -49,7 +49,7 @@ location: Indonesia
 
   Goto `Fog Swamp F3`, large purple and dark green trees, with early trees appearing bright blue and forming a circle.
 
-  ![Vitalization Dust Location](https://1.bp.blogspot.com/-QSMnAr7EbXA/YPJx2CjtMgI/AAAAAAAAShk/jo6Y4LDvOWgyEk1jQO7LopBw5EiqudFJACLcBGAsYHQ/s16000/Cara%2BMendapatkan%2BWinged%2BHairband%2Bdi%2BThe%2BLegend%2Bof%2BNeverland-3.webp)
+  ![Vitalization Dust Location](./Winged%20Hairband/fs3-map.webp)
   ![Vitalization Dust Chest Detail Location](./Winged%20Hairband/fs3-detail.png)
 
 ## Video tutorial
