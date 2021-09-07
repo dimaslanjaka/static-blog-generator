@@ -45,6 +45,13 @@ location: Indonesia
   ![Mysterious Yarn Chest Location](./Winged%20Hairband/fs2-map.webp)
   ![Mysterious Yarn Chest Detail Location](https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png)
 
+- Vitalization Dust
+
+  Goto `Fog Swamp F3`, large purple and dark green trees, with early trees appearing bright blue and forming a circle.
+
+  ![](https://1.bp.blogspot.com/-QSMnAr7EbXA/YPJx2CjtMgI/AAAAAAAAShk/jo6Y4LDvOWgyEk1jQO7LopBw5EiqudFJACLcBGAsYHQ/s16000/Cara%2BMendapatkan%2BWinged%2BHairband%2Bdi%2BThe%2BLegend%2Bof%2BNeverland-3.webp)
+
+
 ## Video tutorial
 {% youtube psOnlBSRBjA %}
 
