@@ -30,10 +30,13 @@ location: Indonesia
 Indeed, in case you're on BlueStacks construct 4.130 or higher, you'll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs/monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.
 
 # Features
+
 ## Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.
+
 Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. [Read more](https://www.bluestacks.com/features/macros.html)
 
 ### How to download the macros (Example)
+
 <div style="clear:both;"></div>
 <div>
   <img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="50%" height="auto" alt="Save Link As" style="display:inline-block;float:left;" />
@@ -56,5 +59,9 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
   <tr>
     <td>Auto Claim Abyss Rewards</td>
     <td>[Download](Macros/auto%20claim%20abyss.json)</td>
+  </tr>
+  <tr>
+    <td>Auto target monsters</td>
+    <td>[Download](Macros/auto%20target.json)</td>
   </tr>
 </table>
