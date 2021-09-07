@@ -52,21 +52,21 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
 <table class="table table-responsive">
   <tr>
     <td rowspan="2">Auto Farming Materials</td>
-    <td>[Download (normal mode)](Macros/auto%20action%20[n].json)</td>
+    <td><a href="Macros/auto%20action%20%5Bn%5D.json">Download (normal mode)</a></td>
   </tr>
   <tr>
-    <td>[Download (unlimited mode)](Macros/auto%20action%20[u1].json)</td>
+    <td><a href="Macros/auto%20action%20%5Bu1%5D.json">Download (unlimited mode)</a></td>
   </tr>
   <tr>
     <td>Auto accept Time Of Trial Captain Invitation</td>
-    <td>[Download](Macros/auto%20acc%20tt.json)</td>
+    <td><a href="Macros/auto%20acc%20tt.json">Download</a></td>
   </tr>
   <tr>
     <td>Auto Claim Abyss Rewards</td>
-    <td>[Download](Macros/auto%20claim%20abyss.json)</td>
+    <td><a href="Macros/auto%20claim%20abyss.json">Download</a></td>
   </tr>
   <tr>
     <td>Auto target monsters</td>
-    <td>[Download](Macros/auto%20target.json)</td>
+    <td><a href="Macros/auto%20target.json">Download</a></td>
   </tr>
 </table>
