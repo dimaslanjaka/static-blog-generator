@@ -41,13 +41,13 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
 </div>
 <div style="clear:both;"></div>
 
-<table>
+<table class="table table-responsive">
   <tr>
-    <td>Auto Farming Materials</td>
-    <td rowspan="2">[Download (normal mode)](Macros/auto%20action%20[n].json)<br />[Download (unlimited mode)](Macros/auto%20action%20[u1].json) </td>
+    <td rowspan="2">Auto Farming Materials</td>
+    <td>[Download (normal mode)](Macros/auto%20action%20[n].json)</td>
   </tr>
   <tr>
-    <td></td>
+    <td>[Download (unlimited mode)](Macros/auto%20action%20[u1].json)</td>
   </tr>
   <tr>
     <td>Auto accept Time Of Trial Captain Invitation</td>
