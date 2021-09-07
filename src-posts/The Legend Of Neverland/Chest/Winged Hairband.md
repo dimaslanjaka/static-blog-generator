@@ -33,6 +33,7 @@ location: Indonesia
 - Feather Decoration Chest Location
 
   Goto `Fog Swamp F1`
+
   ![Feather Decoration Chest Location](./Winged%20Hairband/fs1-map.webp)
   ![Feather Decoration Chest Detail Location](https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png)
 
@@ -40,6 +41,7 @@ location: Indonesia
 - Mysterious Yarn Chest Location
 
   Goto `Fog Swamp F2`, near house of NPC named Robin.
+
   ![Mysterious Yarn Chest Location](./Winged%20Hairband/fs2-map.webp)
 
 ## Video tutorial
