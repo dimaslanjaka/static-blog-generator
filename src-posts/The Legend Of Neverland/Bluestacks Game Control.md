@@ -26,3 +26,5 @@ comments: true
 cover: "https://neverland.game-ark.com/images/img_big_04.jpg"
 location: Indonesia
 ---
+
+![Game Control Advanced Preview](https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png)
