@@ -35,10 +35,20 @@ location: Indonesia
 ### Requirements
   - Bluestacks (4 or 5 supported) ( [Download Bluestacks](https://www.bluestacks.com/bluestacks-5.html) )
 
+### Features
+  - Switch Fairies
+  - Switch Jobs/Classes
+  - Zoom in - Zoom out
+  - Rotate Camera Using D-PAD
+  - 2 Skill Fairies
+  - And More
+
 ##### Switch Fairies Ability Preview
 {% youtube 9ZEqUD5piB4 %}
 
+<hr/>
 ##### [Download Game Control](https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg)
+<hr/>
 
 ##### How to download
 <div style="clear:both;"></div>
