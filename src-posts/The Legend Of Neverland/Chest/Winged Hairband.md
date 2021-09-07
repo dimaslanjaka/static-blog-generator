@@ -30,7 +30,15 @@ location: Indonesia
 - Blueprint (Buy to Npc in Sophila)
 ![Blueprint](./Winged%20Hairband/blueprint.webp)
 
-- Feather Decoration Location
+- Feather Decoration Chest Location
+
+  Goto `Fog Swamp F1`
+  ![Feather Decoration Chest Location](./Winged%20Hairband/fs1-map.webp)
+
+- Mysterious Yarn Chest Location
+
+  Goto `Fog Swamp F2`, near house of NPC named Robin.
+  ![Mysterious Yarn Chest Location](./Winged%20Hairband/fs2-map.webp)
 
 ## Video tutorial
 {% youtube psOnlBSRBjA %}
