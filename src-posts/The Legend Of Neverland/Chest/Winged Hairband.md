@@ -43,6 +43,7 @@ location: Indonesia
   Goto `Fog Swamp F2`, near house of NPC named Robin.
 
   ![Mysterious Yarn Chest Location](./Winged%20Hairband/fs2-map.webp)
+  ![Mysterious Yarn Chest Detail Location](https://user-images.githubusercontent.com/12471057/132348675-22ebc85c-7ea4-411c-88a3-b9f7515dd710.png)
 
 ## Video tutorial
 {% youtube psOnlBSRBjA %}
