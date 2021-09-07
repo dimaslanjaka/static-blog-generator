@@ -28,18 +28,16 @@ keywords:
   - download game control the legend of neverland for bluestacks
   - download the legend of neverland for bluestacks
   - complex game control the legend of neverland for bluestacks
-cover: "https://neverland.game-ark.com/images/img_big_04.jpg"
+cover: "https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png"
 location: Indonesia
 ---
 
 ### Requirements
-  - Bluestacks (4 or 5 supported) ( [Download Bluestack](https://www.bluestacks.com/bluestacks-5.html) )
-  
-![Game Control Advanced Preview](https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png)
-  
+  - Bluestacks (4 or 5 supported) ( [Download Bluestacks](https://www.bluestacks.com/bluestacks-5.html) )
+
 ##### Switch Fairies Ability Preview
 {% youtube 9ZEqUD5piB4 %}
-  
+
 ##### [Download Game Control](https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg)
 
 ##### How to download
