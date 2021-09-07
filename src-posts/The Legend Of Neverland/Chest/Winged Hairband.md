@@ -27,10 +27,10 @@ location: Indonesia
 ---
 
 ## Requirement
-- Blueprint ()
-  ![Blueprint](https://1.bp.blogspot.com/-12HaBSycKKg/YPJx-8o3E4I/AAAAAAAASho/PXAvOgsrjPgIPd8bG5eG9919Ihh60nwsQCLcBGAsYHQ/w640-h298/Cara%2BMendapatkan%2BWinged%2BHairband%2Bdi%2BThe%2BLegend%2Bof%2BNeverland-4.webp)
+- Blueprint (Buy to Npc in Sophila)
+![Blueprint](./Winged%20Hairband/blueprint.webp)
 
 - Feather Decoration Location
-  
+
 ## Video tutorial
 {% youtube psOnlBSRBjA %}
