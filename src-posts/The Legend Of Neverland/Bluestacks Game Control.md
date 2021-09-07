@@ -27,6 +27,9 @@ cover: "https://neverland.game-ark.com/images/img_big_04.jpg"
 location: Indonesia
 ---
 
+### Requirements
+  - Bluestack (4 or 5 supported) ( [Download Bluestack](https://www.bluestacks.com/bluestacks-5.html) )
+  
 ![Game Control Advanced Preview](https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png)
   
 ##### Switch Fairies Ability Preview
