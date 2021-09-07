@@ -31,7 +31,7 @@ location: Indonesia
 
 Indeed, in case you're on BlueStacks construct 4.130 or higher, you'll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs/monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.
 
-#### Introduction: Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.
+#### Introduction: Macros barely used for Collect assets. Update abilities. Train troops. Assault brutes. Farming monsters. And More.
 Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrangement of activities on any piece of BlueStacks, including the home screen, tie it to a catch on your mouse or console, and duplicate them later with 100% accuracy. You can make Macros for any game however it is particularly viable in victory games and RPGs. [Read more](https://www.bluestacks.com/features/macros.html)
 
 # Features
