@@ -10,7 +10,6 @@ date: 2021-9-7
 type: post
 
 tags:
-  - Bluestacks
   - Macros
   - Auto Click
 
