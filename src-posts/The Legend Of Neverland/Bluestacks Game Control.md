@@ -35,5 +35,7 @@ location: Indonesia
 ##### [Download Game Control](https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg)
 
 ##### How to download
-<img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="50%" height="auto" alt="Save Link As" />
-
+<div style="display:relative">
+<img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="50%" height="auto" alt="Save Link As" style="display:inline-block" />
+<img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="50%" height="auto" alt="Save Link As" style="display:inline-block" />
+  </div>
