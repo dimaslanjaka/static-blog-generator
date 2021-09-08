@@ -11,11 +11,14 @@ keywords: the legend of neverland, genshin impact, games, how to, tips and trick
 language: en
 timezone: "Asia/Jakarta"
 introduction: "introduction"
+# https://github.com/wzpan/hexo-generator-search
+# https://github.com/next-theme/hexo-generator-searchdb
 search:
   path: search.xml
-  field: post
+  field: all
   content: true
   format: html
+  template: ./template/search.xml
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
