@@ -207,6 +207,23 @@ about:
   address: Surabaya, Indonesia
   email: dimaslanjaka@gmail.com
 
+# https://github.com/bubkoo/hexo-toc
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: "#"
+    style: header-anchor
+
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  render:
+    html: true
+
 # live reload
 # https://github.com/hexojs/hexo-livereload
 # https://github.com/hexojs/hexo-livereload/issues/7
