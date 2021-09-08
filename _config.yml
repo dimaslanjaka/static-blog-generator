@@ -167,6 +167,7 @@ menu:
   contact: /contact
   about: /about
 
+loader: false
 #loader_img: "/assets/img/loading-animations-preloader-gifs-ui-ux-effects-4.gif"
 loader_img: "https://thememyxbox.net/images/loading.gif"
 header_cover: "/assets/img/Library-min.jpg"
