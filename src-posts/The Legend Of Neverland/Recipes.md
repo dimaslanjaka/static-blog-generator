@@ -56,13 +56,11 @@ comments: false
 | Tomato Macaroni | Wheat 4 Onion 4 Tomato 4 |
 | Chocolate Cream Cake | Wheat 6 Egg 6 Chocolate 6 |
 | Steamed Dumplings | Wheat 4 Meat 4 Salt 4 |
-| Steamed Pork Ribs with Potatoes | Potato 5 Meat 5 Salt 5
-| Fried Pork Chop | Egg 5 Wheat 5 Meat 5
-| Matcha Chicken Wing | Chicken Wing 2 Thyme 2 Salt 2 
-
-T Stewed Chicken with Wine ChickenWing 2 Thyme 2 Red Wine 2
-
-18 T-Bone Steak Meat Chunk 3 Thyme 3 salt 3
+| Steamed Pork Ribs with Potatoes | Potato 5 Meat 5 Salt 5 |
+| Fried Pork Chop | Egg 5 Wheat 5 Meat 5 |
+| Matcha Chicken Wing | Chicken Wing 2 Thyme 2 Salt 2 |
+| Stewed Chicken with Wine | Chicken Wing 2 Thyme 2 Red Wine 2 |
+| T-Bone Steak | Meat Chunk 3 Thyme 3 salt 3 |
 
 | Flower Fairy Upgrade Dish | Ingredients | HeroEXP |
 
