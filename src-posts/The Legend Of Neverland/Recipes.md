@@ -41,3 +41,56 @@ comments: false
   | Sugar | 750 | Water | 150 |
   | Rice | 700 | Salt | 150 |
   
+1 Fried Egg Egg 1 Salt 1
+
+2 Baked Mushroom Mushroom 2 Salt 2 Water 2
+
+g Barley Tea Barley 3 Salt 3 Water 3
+
+4 Corn Flake Com 4 Milk 4 Salt 4
+
+5 Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4
+Popcorn Com 6 Milk ‘6 Butter 6
+
+7 Mixed Fried Rice Egg 5 Potato 5 Rice 5
+8 Fried Rice with Mushroom Mushroom 4 Carrot a Rice 4
+
+9 Fried Onion Rings Wheat 5 Onion 5 Salt 5
+
+10 Fried Food Platter Celery 3 Carrot 3 Bacon 3
+
+11 Tomato Macaroni Wheat 4 Onion 4 Tomato 4
+12 Chocolate Cream Cake Wheat 6 Egg 6 Chocolate 6
+
+13 Steamed Dumplings Wheat 4 Meat 4 Salt 4
+
+Steamed Pork Ribs with Potatoes Potato 5 Meat 5 Salt 5
+15 Fried Pork Chop Egg 5 Wheat 5 Meat 5
+
+16 Matcha Chicken Wing ChickenWing 2 Thyme 2 Salt 2
+
+T Stewed Chicken with Wine ChickenWing 2 Thyme 2 Red Wine 2
+
+18 T-Bone Steak Meat Chunk 3 Thyme 3 salt 3
+
+| Flower Fairy Upgrade Dish | Ingredients | HeroEXP |
+
+1 Boiled Corn Com 1 Salt 1 ro EX
+
+2 Roasted Potato Potato 3 salt 3 ro
+
+3 Gruel Barley 2 Wheat 3 Water 2 0
+4 Com Porridge Com 3 Milk 4 Water 3 0 EXP +31
+5 Vegetable Soup Milk 2 Clery 2 Carrot 2 0
+
+[ Onion Soup Black Pepper 2 Onion 3 | FreshCheese = 2 ro EXP
+
+Strawberry Milk Milk 3 Strawberry 2 Sugar 2 e (P +600
+
+8 Chocolate Milk Milk 2 Chocolate 3 Sugar 2
+
+9 Fried Shrimp Egg 3 Wheat 3 Shrimp 4
+
+10 Fried Rice with Shrimp Rice 4 Egg 4 Shrimp 4 { 0
+" Chicken Soup Noodle Wheat 4 | ChickenWing = 5 Salt 4 { 0
+12 Ham Sandwich Wheat 3 Cheese 4 Meat 3 0
