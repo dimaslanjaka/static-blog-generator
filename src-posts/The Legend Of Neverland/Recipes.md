@@ -47,12 +47,10 @@ comments: false
 | Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
 | Barley Tea | Barley 3 Salt 3 Water 3 | Crush/Roll +300 |
 | Corn Flake | Corn 4 Milk 4 Salt 4 | Resistance +300 |
-
-5 Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4
-Popcorn Com 6 Milk ‘6 Butter 6
-
-7 Mixed Fried Rice Egg 5 Potato 5 Rice 5
-8 Fried Rice with Mushroom Mushroom 4 Carrot a Rice 4
+| Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4 | Protect +300 |
+| Popcorn | Corn 6 Milk ‘6 Butter 6 | Pierce/Penet +300 |
+| Mixed Fried Rice | Egg 5 Potato 5 Rice 5 | Attack +150 |
+| Fried Rice with Mushroom | Mushroom 4 Carrot a Rice 4 | crit +600 |
 
 9 Fried Onion Rings Wheat 5 Onion 5 Salt 5
 
