@@ -53,16 +53,12 @@ comments: false
 | Fried Rice with Mushroom | Mushroom 4 Carrot 4 Rice 4 | crit +600 |
 | Fried Onion Rings | Wheat 5 Onion 5 Salt 5 | Block +600 |
 | Fried Food Platter | Celery 3 Carrot 3 Bacon 3 | crush +600 |
-
-11 Tomato Macaroni Wheat 4 Onion 4 Tomato 4
-12 Chocolate Cream Cake Wheat 6 Egg 6 Chocolate 6
-
-13 Steamed Dumplings Wheat 4 Meat 4 Salt 4
-
-Steamed Pork Ribs with Potatoes Potato 5 Meat 5 Salt 5
-15 Fried Pork Chop Egg 5 Wheat 5 Meat 5
-
-16 Matcha Chicken Wing ChickenWing 2 Thyme 2 Salt 2
+| Tomato Macaroni | Wheat 4 Onion 4 Tomato 4 |
+| Chocolate Cream Cake | Wheat 6 Egg 6 Chocolate 6 |
+| Steamed Dumplings | Wheat 4 Meat 4 Salt 4 |
+| Steamed Pork Ribs with Potatoes | Potato 5 Meat 5 Salt 5
+| Fried Pork Chop | Egg 5 Wheat 5 Meat 5
+| Matcha Chicken Wing | Chicken Wing 2 Thyme 2 Salt 2 
 
 T Stewed Chicken with Wine ChickenWing 2 Thyme 2 Red Wine 2
 
