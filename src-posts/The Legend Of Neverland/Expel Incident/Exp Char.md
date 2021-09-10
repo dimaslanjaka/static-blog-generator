@@ -56,11 +56,15 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ![](Exp%20Char/Oak%20Town%202.png)
 ![](Exp%20Char/Oak%20Town.png)
 
-## Twilight Rainforest 1F/F1
+## Twilight Rainforest F1
 ![](Exp%20Char/Twilight%20Rainforest%201F.png)
   *Rampant Insect*
 ![](Exp%20Char/Twilight%20Rainforest%20F1.png)
 
+## Twilight Rainforest F3
+![Lemuridae Chief](https://user-images.githubusercontent.com/12471057/132796579-01ac578a-c4d9-4c3f-8497-216e238ef8c3.png)
+*Lemuridae Chief*
+  
 ## Gaia Snow Mountain F2
 ![](./Exp%20Char/Gaia%20Snow%20Mountain%20F2.png)
 
