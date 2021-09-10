@@ -32,14 +32,14 @@ comments: false
   
   ## Ingredients Prices
   
-| ingredients | Water Essence Price | ingredients | Water Essence Price |
-| :--- | :---: | :--- | :---: |
-| Eeg | 50 | Fresh Cheese | 500 |
-| Meat Chunk | 2000 | Carrot | 500 |
-| Cheese | 2000 | Onion | 500 |
-| Chicken Wing | 2000 | Celery | 500 |
-| Meat | 1500 | Butter | 300 |
-| Shrimp | 1500 | Black Pepper | 300 |
+| ingredients | Water Essence Price | ingredients | Water Essence Price | ingredients | Water Essence Price |
+| :--- | :---: | :--- | :---: | :--- | :---: |
+| Eeg | 50 | Fresh Cheese | 500 | Barley | 150 |
+| Meat Chunk | 2000 | Carrot | 500 | Mushroom | 150 |
+| Cheese | 2000 | Onion | 500 | Corn | 50 |
+| Chicken Wing | 2000 | Celery | 500 | Potato | 50 |
+| Meat | 1500 | Butter | 300 | Thyme | 2000 |
+| Shrimp | 1500 | Black Pepper | 300 | Red Wine | 2000 |
 | Tomato | 750 | Milk | 300 |
 | Bacon | 750 | Wheat | 300 |
 | Sugar | 750 | Water | 150 |
