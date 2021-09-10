@@ -35,7 +35,9 @@ jobs:
         #run: mkdir docs && echo git.webmanajemen.com > docs/CNAME
         run: node userscripts/custom-domain.js
       - name: Process Article && Generate Hexo
-        run: npx gulp article:copy && npx hexo generate
+        run: npx gulp article:copy
+      - name: Hexo Generate
+        run: npx hexo generate
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
