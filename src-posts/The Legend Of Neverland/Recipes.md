@@ -49,9 +49,9 @@ comments: false
   
 | Food Name | Ingredients | Buff | Total Price |
 | :--- | :---: | :--- | :---: |
-| Fried Egg | Egg 1 Salt 1 | Crit +300 | 200 |
-| Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 | 900 |
-| Barley Tea | Barley 3 Salt 3 Water 3 | Crush +300 |
+| Fried Egg | Egg 1 Salt 1 | Crit +300 | 50+150 |
+| Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 | (150x2)+(150x2)+(150x2) |
+| Barley Tea | Barley 3 Salt 3 Water 3 | Crush +300 | (150x3)+(150x3)+(150x3)
 | Corn Flake | Corn 4 Milk 4 Salt 4 | Resistance +300 |
 | Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4 | Protect +300 |
 | Popcorn | Corn 6 Milk 6 Butter 6 | Pierce +300 |
@@ -84,3 +84,5 @@ comments: false
 | Fried Rice with Shrimp | Rice 4 Egg 4 Shrimp 4 | +1450 |
 | Chicken Soup Noodle | Wheat 4 Chicken Wing 5 Salt 4 | +1800 |
 | Ham Sandwich | Wheat 3 Cheese 4 Meat 3 | +2200 |
+  
+  <!-- include ./Recipes/math.js -->
