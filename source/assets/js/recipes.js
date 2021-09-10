@@ -1,3 +1,5 @@
+console.clear();
+
 let table = document.getElementsByTagName("table");
 for (i = 0; i < table.length; i++) {
   CalculateTR(table[i]);
@@ -18,6 +20,7 @@ function CalculateTR(table) {
         if (str.includes("+")) {
           str = str.trim().replaceAll(/x/gs, "*");
           td[3].innerText = eval(str);
+          console.log(str);
         }
       }
     }
