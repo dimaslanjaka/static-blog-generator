@@ -47,10 +47,10 @@ comments: false
 
   ## Char Buff Dish
   
-| Food Name | Ingredients | Buff |
-| :--- | :---: | :--- |
-| Fried Egg | Egg 1 Salt 1 | Crit +300 |
-| Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
+| Food Name | Ingredients | Buff | Total Price |
+| :--- | :---: | :--- | :---: |
+| Fried Egg | Egg 1 Salt 1 | Crit +300 | 200 |
+| Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 | 900 |
 | Barley Tea | Barley 3 Salt 3 Water 3 | Crush +300 |
 | Corn Flake | Corn 4 Milk 4 Salt 4 | Resistance +300 |
 | Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4 | Protect +300 |
@@ -72,8 +72,8 @@ comments: false
   
 | Food Name | Ingredients | Fairy EXP |
 | :--- | :---: | :--- |
-| Boiled Corn | Corn 1 Salt 1 Water 1 | +100 |
-| Roasted Potato | Potato 3 salt 3 | +150 |
+| Boiled Corn | Corn 1 Salt 1 Water 1 | +100 | 350
+| Roasted Potato | Potato 3 salt 3 | +150 | 600
 | Gruel Barley | Barley 2 Wheat 3 Water 2 | +230 |
 | Corn Porridge | Corn 3 Milk 4 Water 3 | +310 |
 | Vegetable Soup | Milk 2 Clery 2 Carrot 2 | +400 |
