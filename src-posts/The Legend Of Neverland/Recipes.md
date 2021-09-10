@@ -256,4 +256,42 @@ comments: false
 	</tbody>
 </table>
 
-  <!-- script /source/assets/js/recipes.js -->
+<!-- script /source/assets/js/recipes.js -->
+
+<div style="margin:10px">
+  <b>Calculate x100 foods</b>
+  <ul>
+    <li>Boiled Corn x100 total price <b i="bcprice">-</b> total exp <b i="bcexp">-</b></li>
+    <li>Ham x100 total price <b i="hamprice">-</b> total exp <b i="hamexp">-</b></li>
+  </ul>
+  <em>if the total price of ham is calculated into boiled corn food</em> <b i="hamprice"></b> &divide; <b i="bcprice"></b> &#61; <b i="ham-bc"></b> &times <b i="bcexp">-</b> (x100 Boiled Corn) &#61; <b i='bctotal'></b> total exp
+</div>
+
+<script>
+  console.clear();
+  /* Ham */
+  writeTo("[i='hamprice']", 14900 * 100, "brown");
+  writeTo("[i='hamexp']", 2200 * 100, "brown");
+  /* Boiled Corn */
+  writeTo("[i='bcprice']", 350 * 100, "yellow");
+  writeTo("[i='bcexp']", 100 * 100, "yellow");
+  writeTo("[i='ham-bc']", (14900 * 100) / (350 * 100), "blue", function(total) {
+    return total.toFixed(2);
+  });
+  writeTo('[i="bctotal"]', ((14900 * 100) / (350 * 100)) * (100 * 100));
+
+  function writeTo(priceid, totalprice, color, callback) {
+    if (typeof callback == "function") {
+      totalprice = callback(totalprice);
+    } else if (typeof color == "function") {
+      totalprice = color(totalprice);
+    }
+    if (!color || typeof color == "function") color = "red";
+    let x = document.querySelectorAll(priceid);
+    for (i = 0; i < x.length; i++) {
+      x[i].style.backgroundColor = color;
+      if (color != "yellow") x[i].style.color = "white";
+      x[i].innerHTML = totalprice.toLocaleString("en-US");
+    }
+  }
+</script>
