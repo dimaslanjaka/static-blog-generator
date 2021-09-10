@@ -86,4 +86,4 @@ comments: false
 | Chicken Soup Noodle    |     Wheat 4 Chicken Wing 5 Salt 4     | +1800     |
 | Ham Sandwich           |        Wheat 3 Cheese 4 Meat 3        | +2200     |
 
-  <!-- script ./Recipes/math.js -->
+  <!-- script /source/assets/js/recipes.js -->

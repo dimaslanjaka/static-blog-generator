@@ -1,14 +1,3 @@
-// add id to table ingredients
-
-let tbl = document.getElementsByName("table")[0];
-let tr = tbl.getElementsByTagName("tr");
-for (i = 0; i < tr.length; i++) {
-  let td = tr[i].getElementsByTagName("td");
-  for (i = 0; i < td.length; i++) {
-    
-  }
-}
-
 let table = document.getElementsByTagName("table");
 for (i = 0; i < table.length; i++) {
   CalculateTR(table[i]);
