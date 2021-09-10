@@ -29,12 +29,10 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm i -g hexo-cli gulp typescript ts-node && npm install
-      #- name: Process Article
-        #run: npx gulp article:copy
       - name: Build Custom Domain
         #run: mkdir docs && echo git.webmanajemen.com > docs/CNAME
         run: node userscripts/custom-domain.js
-      - name: Process Article && Generate Hexo
+      - name: Process Article
         run: npx gulp article:copy
       - name: Hexo Generate
         run: npx hexo generate
