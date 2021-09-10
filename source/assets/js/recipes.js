@@ -1,9 +1,7 @@
 console.clear();
 
-let table = document.getElementsByTagName("table");
-for (i = 0; i < table.length; i++) {
-  CalculateTR(table[i]);
-}
+CalculateTR(document.getElementById("char-dish"));
+CalculateTR(document.getElementById("fairy-dish"));
 
 /**
  * Calculate TR
