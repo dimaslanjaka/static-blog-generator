@@ -68,24 +68,19 @@ comments: false
 | Stewed Chicken with Wine | Chicken Wing 2 Thyme 2 Red Wine 2 | Crush +1000 |
 | T-Bone Steak | Meat Chunk 3 Thyme 3 salt 3 | Resistance +1000 |
 
-| Flower Fairy Upgrade Dish | Ingredients | HeroEXP |
-
-1 Boiled Corn Com 1 Salt 1 ro EX
-
-2 Roasted Potato Potato 3 salt 3 ro
-
-3 Gruel Barley 2 Wheat 3 Water 2 0
-4 Com Porridge Com 3 Milk 4 Water 3 0 EXP +31
-5 Vegetable Soup Milk 2 Clery 2 Carrot 2 0
-
-[ Onion Soup Black Pepper 2 Onion 3 | FreshCheese = 2 ro EXP
-
-Strawberry Milk Milk 3 Strawberry 2 Sugar 2 e (P +600
-
-8 Chocolate Milk Milk 2 Chocolate 3 Sugar 2
-
-9 Fried Shrimp Egg 3 Wheat 3 Shrimp 4
-
-10 Fried Rice with Shrimp Rice 4 Egg 4 Shrimp 4 { 0
-" Chicken Soup Noodle Wheat 4 | ChickenWing = 5 Salt 4 { 0
-12 Ham Sandwich Wheat 3 Cheese 4 Meat 3 0
+  ## Flower Fairy Upgrade Dish
+  
+| Food Name | Ingredients | Fairy EXP |
+| :--- | :---: | :--- |
+| Boiled Corn | Corn 1 Salt 1 Water 1 | +100 |
+| Roasted Potato | Potato 3 salt 3 | +150 |
+| Gruel Barley | Barley 2 Wheat 3 Water 2 | +230 |
+| Corn Porridge | Corn 3 Milk 4 Water 3 | +310 |
+| Vegetable Soup | Milk 2 Clery 2 Carrot 2 | +400 |
+| Onion Soup | Black Pepper 2 Onion 3 Fresh Cheese 2 | +480 |
+| Strawberry Milk | Milk 3 Strawberry 2 Sugar 2 | +600 |
+| Chocolate Milk | Milk 2 Chocolate 3 Sugar 2 | +850 |
+| Fried Shrimp | Egg 3 Wheat 3 Shrimp 4 | +1150 |
+| Fried Rice with Shrimp | Rice 4 Egg 4 Shrimp 4 | +1450 |
+| Chicken Soup Noodle | Wheat 4 Chicken Wing 5 Salt 4 | +1800 |
+| Ham Sandwich | Wheat 3 Cheese 4 Meat 3 | +2200 |
