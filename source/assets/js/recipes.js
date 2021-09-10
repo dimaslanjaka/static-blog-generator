@@ -17,7 +17,7 @@ function CalculateTR(table) {
         str;
       if (typeof td[3] != "undefined") {
         str = td[3].innerText;
-        if (str.includes("+")) {
+        if (/[+\(\)]/gm.test(str)) {
           str = str.trim().replaceAll(/x/gs, "*");
           td[3].innerText = eval(str);
           console.log(str);
