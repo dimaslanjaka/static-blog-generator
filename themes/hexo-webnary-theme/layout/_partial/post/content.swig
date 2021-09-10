@@ -56,6 +56,37 @@
     <div class="post__content">
         {{ render(page.content) }}
 
+        {% if page.keywords %}
+<style>
+#incoming-terms * {
+  font-size: 10px;
+  margin: 0;
+}
+#incoming-terms li:after {
+  content: " | ";
+}
+#incoming-terms li:last-child:after {
+  content: "";
+}
+#incoming-terms li {
+  display: inline;
+}
+#incoming-terms ul {
+  list-style-type: none;
+}
+</style>
+  <div id="incoming-terms" itemscope itemtype="https://schema.org/ItemList">
+    <h2 itemprop="name">Quiz the legend of neverland</h2><br>
+    <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending" />
+    <ul>
+      <li itemprop="itemListElement">quiz the legend of neverland</li>
+    {% for keyword in page.keywords %}
+        <li itemprop="itemListElement">{{ keyword }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+        {% endif %}
+
         {% if page.editor %}
         <div class="post-announce">
             {{ __('copyright_statement.one') }}
