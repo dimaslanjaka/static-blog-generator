@@ -30,9 +30,9 @@ comments: false
 <!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
 ![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
   
-  ## Ingredients Prices
+  ## Ingredients Water Essence Prices
   
-| ingredients | Water Essence Price | ingredients | Water Essence Price | ingredients | Water Essence Price |
+| ingredients | Price | ingredients | Price | ingredients | Price |
 | :--- | :---: | :--- | :---: | :--- | :---: |
 | Eeg | 50 | Fresh Cheese | 500 | Barley | 150 |
 | Meat Chunk | 2000 | Carrot | 500 | Mushroom | 150 |
