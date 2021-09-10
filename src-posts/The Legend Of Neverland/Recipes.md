@@ -33,28 +33,26 @@ comments: false
 | Eeg | 50 | Fresh Cheese | 500 |
 | Meat Chunk | 2000 | Carrot | 500 |
 | Cheese | 2000 | Onion | 500 |
-  | Chicken Wing | 2000 | Celery | 500 |
-  | Meat | 1500 | Butter | 300 |
-  | Shrimp | 1500 | Black Pepper | 300 |
-  | Tomato | 750 | Milk | 300 |
-  | Bacon | 750 | Wheat | 300 |
-  | Sugar | 750 | Water | 150 |
-  | Rice | 700 | Salt | 150 |
-  
-  | Char Buff Dish | Ingredients | Buff |
-  | :--- | :---: | :--- |
+| Chicken Wing | 2000 | Celery | 500 |
+| Meat | 1500 | Butter | 300 |
+| Shrimp | 1500 | Black Pepper | 300 |
+| Tomato | 750 | Milk | 300 |
+| Bacon | 750 | Wheat | 300 |
+| Sugar | 750 | Water | 150 |
+| Rice | 700 | Salt | 150 |
+
+| Char Buff Dish | Ingredients | Buff |
+| :--- | :---: | :--- |
 | Fried Egg | Egg 1 Salt 1 | Crit +300 |
 | Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
 | Barley Tea | Barley 3 Salt 3 Water 3 | Crush/Roll +300 |
 | Corn Flake | Corn 4 Milk 4 Salt 4 | Resistance +300 |
 | Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4 | Protect +300 |
-| Popcorn | Corn 6 Milk ‘6 Butter 6 | Pierce/Penet +300 |
+| Popcorn | Corn 6 Milk 6 Butter 6 | Pierce/Penet +300 |
 | Mixed Fried Rice | Egg 5 Potato 5 Rice 5 | Attack +150 |
 | Fried Rice with Mushroom | Mushroom 4 Carrot 4 Rice 4 | crit +600 |
-
-9 Fried Onion Rings Wheat 5 Onion 5 Salt 5
-
-10 Fried Food Platter Celery 3 Carrot 3 Bacon 3
+| Fried Onion Rings | Wheat 5 Onion 5 Salt 5 | Block +600 |
+| Fried Food Platter | Celery 3 Carrot 3 Bacon 3 | crush +600 |
 
 11 Tomato Macaroni Wheat 4 Onion 4 Tomato 4
 12 Chocolate Cream Cake Wheat 6 Egg 6 Chocolate 6
