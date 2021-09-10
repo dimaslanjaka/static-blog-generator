@@ -42,7 +42,7 @@ comments: false
   | Rice | 700 | Salt | 150 |
   
   | Char Buff Dish | Ingredients | Buff |
-  | :--- | :---: | :---: |
+  | :--- | :---: | :--- |
 | Fried Egg | Egg 1 Salt 1 | Crit +300 |
 | Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
 | Barley Tea | Barley 3 Salt 3 Water 3 | Crush/Roll +300 |
