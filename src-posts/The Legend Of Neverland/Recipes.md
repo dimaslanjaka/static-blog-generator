@@ -50,7 +50,7 @@ comments: false
 | Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4 | Protect +300 |
 | Popcorn | Corn 6 Milk ‘6 Butter 6 | Pierce/Penet +300 |
 | Mixed Fried Rice | Egg 5 Potato 5 Rice 5 | Attack +150 |
-| Fried Rice with Mushroom | Mushroom 4 Carrot a Rice 4 | crit +600 |
+| Fried Rice with Mushroom | Mushroom 4 Carrot 4 Rice 4 | crit +600 |
 
 9 Fried Onion Rings Wheat 5 Onion 5 Salt 5
 
