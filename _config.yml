@@ -41,10 +41,12 @@ i18n_dir: :lang
 # https://hexo.io/docs/configuration.html#:~:text=skip_render%3A%20%22mypage/**/*%22
 skip_render:
   - "page/**/*"
+  - "backend"
   - "backend/**/*"
   # https://github.com/hexojs/hexo/issues/1797
   - "*.json"
   - "_posts/**/*.json"
+  - "_posts/**/*.js"
 
 # Writing
 new_post_name: :title.md # File name of new posts
