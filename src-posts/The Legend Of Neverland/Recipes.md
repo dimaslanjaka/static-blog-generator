@@ -41,13 +41,12 @@ comments: false
   | Sugar | 750 | Water | 150 |
   | Rice | 700 | Salt | 150 |
   
-1 Fried Egg Egg 1 Salt 1
-
-2 Baked Mushroom Mushroom 2 Salt 2 Water 2
-
-g Barley Tea Barley 3 Salt 3 Water 3
-
-4 Corn Flake Com 4 Milk 4 Salt 4
+  | Char Buff Dish | Ingredients | Buff |
+  | :--- | :---: | :---: |
+| Fried Egg | Egg 1 Salt 1 | Crit +300 |
+| Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
+| Barley Tea | Barley 3 Salt 3 Water 3 | Crush/Roll +300 |
+| Corn Flake | Corn 4 Milk 4 Salt 4 | Resistance +300 |
 
 5 Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4
 Popcorn Com 6 Milk ‘6 Butter 6
