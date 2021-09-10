@@ -19,15 +19,16 @@ jobs:
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
       - name: Cache NPM dependencies
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: actions/cache@v2.1.6
         with:
           path: |
             - ${{ steps.npm-cache-dir.outputs.dir }}
             - node_modules
             - ~/.npm
-          key: ${{ runner.OS }}-npm-cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
+            ${{ runner.os }}-node-
       - name: Install Dependencies
         run: npm i -g hexo-cli gulp typescript ts-node && npm install
       - name: Build Custom Domain
