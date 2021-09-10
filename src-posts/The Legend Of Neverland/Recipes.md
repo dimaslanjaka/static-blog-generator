@@ -71,19 +71,19 @@ comments: false
 
 ## Flower Fairy Upgrade Dish
 
-| Food Name              |              Ingredients              | Fairy EXP | Price      |
-| :--------------------- | :-----------------------------------: | :-------- | ---------- |
-| Boiled Corn            |         Corn 1 Salt 1 Water 1         | +100      | 50+150+150 |
-| Roasted Potato         |            Potato 3 salt 3            | +150      | 600        |
-| Gruel Barley           |       Barley 2 Wheat 3 Water 2        | +230      |
-| Corn Porridge          |         Corn 3 Milk 4 Water 3         | +310      |
-| Vegetable Soup         |        Milk 2 Clery 2 Carrot 2        | +400      |
-| Onion Soup             | Black Pepper 2 Onion 3 Fresh Cheese 2 | +480      |
-| Strawberry Milk        |      Milk 3 Strawberry 2 Sugar 2      | +600      |
-| Chocolate Milk         |      Milk 2 Chocolate 3 Sugar 2       | +850      |
-| Fried Shrimp           |        Egg 3 Wheat 3 Shrimp 4         | +1150     |
-| Fried Rice with Shrimp |         Rice 4 Egg 4 Shrimp 4         | +1450     |
-| Chicken Soup Noodle    |     Wheat 4 Chicken Wing 5 Salt 4     | +1800     |
-| Ham Sandwich           |        Wheat 3 Cheese 4 Meat 3        | +2200     |
+| Food Name              |              Ingredients              | Fairy EXP | Price                     |
+| :--------------------- | :-----------------------------------: | :-------- | ------------------------- |
+| Boiled Corn            |         Corn 1 Salt 1 Water 1         | +100      | 50+150+150                |
+| Roasted Potato         |            Potato 3 salt 3            | +150      | (50x3)+(150x3)            |
+| Gruel Barley           |       Barley 2 Wheat 3 Water 2        | +230      | (150x2)+(300x3)+(150x2)   |
+| Corn Porridge          |         Corn 3 Milk 4 Water 3         | +310      | (50x3)+(300x4)+(150x3)    |
+| Vegetable Soup         |       Milk 2 Celery 2 Carrot 2        | +400      | (300x2)+(500x2)+(500x2)   |
+| Onion Soup             | Black Pepper 2 Onion 3 Fresh Cheese 2 | +480      | (300x2)+(500x3)+(500x2)   |
+| Strawberry Milk        |      Milk 3 Strawberry 2 Sugar 2      | +600      | (300x3)+(750x2)+(750x2)   |
+| Chocolate Milk         |      Milk 2 Chocolate 3 Sugar 2       | +850      | (300x2)+(950x3)+(750x2)   |
+| Fried Shrimp           |        Egg 3 Wheat 3 Shrimp 4         | +1150     | (50x3)+(300x3)+(1500x4)   |
+| Fried Rice with Shrimp |         Rice 4 Egg 4 Shrimp 4         | +1450     | (700x4)+(50x4)+(1500x4)   |
+| Chicken Soup Noodle    |     Wheat 4 Chicken Wing 5 Salt 4     | +1800     | (300x4)+(2000x5)+(150x4)  |
+| Ham Sandwich           |        Wheat 3 Cheese 4 Meat 3        | +2200     | (300x3)+(2000x4)+(2000x3) |
 
   <!-- script /source/assets/js/recipes.js -->
