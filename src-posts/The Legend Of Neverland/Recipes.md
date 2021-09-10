@@ -25,8 +25,12 @@ location: Indonesia
 comments: false
 ---
 
+  <!-- toc -->
+  
 <!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
 ![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
+  
+  ## Ingredients Prices
   
 | ingredients | Water Essence Price | ingredients | Water Essence Price |
 | :--- | :---: | :--- | :---: |
@@ -41,7 +45,9 @@ comments: false
 | Sugar | 750 | Water | 150 |
 | Rice | 700 | Salt | 150 |
 
-| Char Buff Dish | Ingredients | Buff |
+  ## Char Buff Dish
+  
+| Food Name | Ingredients | Buff |
 | :--- | :---: | :--- |
 | Fried Egg | Egg 1 Salt 1 | Crit +300 |
 | Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
