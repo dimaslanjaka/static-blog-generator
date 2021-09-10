@@ -48,7 +48,7 @@ comments: false
 
 ## Char Buff Dish
 
-| Food Name                       | Ingredients                       | Buff             |        Total Price         |
+| Food Name                       | Ingredients                       | Buff             |           Price            |
 | :------------------------------ | :-------------------------------- | :--------------- | :------------------------: |
 | Fried Egg                       | Egg 1 Salt 1                      | Crit +300        |           50+150           |
 | Baked Mushroom                  | Mushroom 2 Salt 2 Water 2         | Block +300       |  (150x2)+(150x2)+(150x2)   |
@@ -71,7 +71,7 @@ comments: false
 
 ## Flower Fairy Upgrade Dish
 
-| Food Name              |              Ingredients              | Fairy EXP |
+| Food Name              |              Ingredients              | Fairy EXP | Price      |
 | :--------------------- | :-----------------------------------: | :-------- | ---------- |
 | Boiled Corn            |         Corn 1 Salt 1 Water 1         | +100      | 50+150+150 |
 | Roasted Potato         |            Potato 3 salt 3            | +150      | 600        |
