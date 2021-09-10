@@ -76,16 +76,11 @@
             }
             </style>
             <div id="incoming-terms" itemscope itemtype="https://schema.org/ItemList">
-            <h2 itemprop="name">Quiz the legend of neverland
-            </h2>
-            <br>
+            <h2 itemprop="name">{{ page.title }}</h2>
             <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending" />
             <ul>
-                <li itemprop="itemListElement">quiz the legend of neverland
-                </li>
                 {% for keyword in page.keywords %}
-                <li itemprop="itemListElement">{{ keyword }}
-                </li>
+                <li itemprop="itemListElement">{{ keyword }}</li>
                 {% endfor %}
             </ul>
             </div>
