@@ -51,22 +51,22 @@ comments: false
 | :--- | :---: | :--- |
 | Fried Egg | Egg 1 Salt 1 | Crit +300 |
 | Baked Mushroom | Mushroom 2 Salt 2 Water 2 | Block +300 |
-| Barley Tea | Barley 3 Salt 3 Water 3 | Crush/Roll +300 |
+| Barley Tea | Barley 3 Salt 3 Water 3 | Crush +300 |
 | Corn Flake | Corn 4 Milk 4 Salt 4 | Resistance +300 |
 | Mushroom Stew Mushroom 4 Milk 4 | BlackPepper 4 | Protect +300 |
-| Popcorn | Corn 6 Milk 6 Butter 6 | Pierce/Penet +300 |
+| Popcorn | Corn 6 Milk 6 Butter 6 | Pierce +300 |
 | Mixed Fried Rice | Egg 5 Potato 5 Rice 5 | Attack +150 |
 | Fried Rice with Mushroom | Mushroom 4 Carrot 4 Rice 4 | crit +600 |
 | Fried Onion Rings | Wheat 5 Onion 5 Salt 5 | Block +600 |
 | Fried Food Platter | Celery 3 Carrot 3 Bacon 3 | crush +600 |
-| Tomato Macaroni | Wheat 4 Onion 4 Tomato 4 |
-| Chocolate Cream Cake | Wheat 6 Egg 6 Chocolate 6 |
-| Steamed Dumplings | Wheat 4 Meat 4 Salt 4 |
-| Steamed Pork Ribs with Potatoes | Potato 5 Meat 5 Salt 5 |
-| Fried Pork Chop | Egg 5 Wheat 5 Meat 5 |
-| Matcha Chicken Wing | Chicken Wing 2 Thyme 2 Salt 2 |
-| Stewed Chicken with Wine | Chicken Wing 2 Thyme 2 Red Wine 2 |
-| T-Bone Steak | Meat Chunk 3 Thyme 3 salt 3 |
+| Tomato Macaroni | Wheat 4 Onion 4 Tomato 4 | Resistance +600 |
+| Chocolate Cream Cake | Wheat 6 Egg 6 Chocolate 6 | Protect +600 |
+| Steamed Dumplings | Wheat 4 Meat 4 Salt 4 | Pierce +600 |
+| Steamed Pork Ribs with Potatoes | Potato 5 Meat 5 Salt 5 | Attack +300 |
+| Fried Pork Chop | Egg 5 Wheat 5 Meat 5 | Crit +1000 |
+| Matcha Chicken Wing | Chicken Wing 2 Thyme 2 Salt 2 | Block +1000 |
+| Stewed Chicken with Wine | Chicken Wing 2 Thyme 2 Red Wine 2 | Crush +1000 |
+| T-Bone Steak | Meat Chunk 3 Thyme 3 salt 3 | Resistance +1000 |
 
 | Flower Fairy Upgrade Dish | Ingredients | HeroEXP |
 
