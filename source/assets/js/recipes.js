@@ -21,7 +21,7 @@ function CalculateTR(table) {
         str = td[3].innerText;
         console.log(str);
         if (/[+\(\)]/gm.test(str)) {
-          str = str.trim().replaceAll(/x/gs, "*");
+          str = str.trim().replaceAll(/x/gm, "*");
           td[3].innerText = eval(str);
         }
       }
