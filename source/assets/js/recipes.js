@@ -10,7 +10,8 @@ for (i = 0; i < table.length; i++) {
  * @param {HTMLTableElement} table
  */
 function CalculateTR(table) {
-  console.log(`Start Calculating Table ${table.id}`);
+  let identifier = table.hasAttribute("id") ? table.id : "-";
+  console.log(`Start Calculating Table ${identifier}`);
   let tr = table.getElementsByTagName("tr");
   if (tr.length > 0)
     for (i = 0; i < tr.length; i++) {
