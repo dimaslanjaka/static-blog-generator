@@ -39,7 +39,7 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
   - Inscription: for upgrading skills and talents
   - Insect: for produce crystal
 
-### How to download the macros (Example)
+### How to download the macros
 
 <div style="clear:both;"></div>
 <div style="width: 100%;">
@@ -69,3 +69,13 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
     <td><a href="Macros/auto%20target.json">Download</a></td>
   </tr>
 </table>
+  
+  ### How to import the macros script into bluestack
+  ![Click Macros On Bluestacks](https://user-images.githubusercontent.com/12471057/132939380-d9fbf1d7-2cb1-469a-a29b-cf3f1c33084f.png)
+  *Click Macros On Bluestacks*
+  
+  ![Click Import](https://user-images.githubusercontent.com/12471057/132939401-b1a36399-2d91-46bd-82f9-78cb8e65c985.png)
+  *Click Import*
+  
+  ![Select JSON macros script](https://user-images.githubusercontent.com/12471057/132939413-53a2940a-d018-4b04-963c-9968abd6304c.png)
+  *Select JSON macros script then import*
