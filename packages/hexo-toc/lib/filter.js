@@ -1,14 +1,23 @@
-var toc = require('markdown-toc');
-var assign = require('object-assign');
-var cheerio = require('cheerio');
+var toc = require("markdown-toc");
+var assign = require("object-assign");
+var cheerio = require("cheerio");
+let doProcess = true;
 
 exports.insert = function (data) {
-
   var options = assign({}, this.config.toc);
+
+  // if <!-- toc --> not exists return original data
+  if (!/<!-- toc -->/gm.test(data.content)) {
+    doProcess = false;
+    return data;
+  }
 
   // add class option
   if (options.class) {
-    data.content = data.content.replace("<!-- toc -->", '<div class="' + options.class + 'Start"></div><!-- toc --><div class="' + options.class + 'End"></div>');
+    data.content = data.content.replace(
+      "<!-- toc -->",
+      '<div class="' + options.class + 'Start"></div><!-- toc --><div class="' + options.class + 'End"></div>'
+    );
   }
 
   data.content = toc.insert(data.content, options);
@@ -18,30 +27,36 @@ exports.insert = function (data) {
 exports.heading = function (data) {
   var options = assign({}, this.config.toc);
 
-  var $ = cheerio.load(data.content, { decodeEntities: ( options.decodeEntities !== undefined ? options.decodeEntities : false ) });
-  var headings = $('h1, h2, h3, h4, h5, h6');
+  // if variable doProcess false, skip and return original data
+  if (!doProcess) return data;
+
+  var $ = cheerio.load(data.content, {
+    decodeEntities: options.decodeEntities !== undefined ? options.decodeEntities : false,
+  });
+  var headings = $("h1, h2, h3, h4, h5, h6");
 
   headings.each(function () {
     var $title = $(this);
     var title = $title.text();
     var id = toc.slugify(title, options);
     // $title.attr('id', id);
-    $title.children('a').remove();
-    $title.html( '<span id="' + id + '">' + $title.html() + '</span>' );
-    $title.removeAttr('id');
-
+    $title.children("a").remove();
+    $title.html('<span id="' + id + '">' + $title.html() + "</span>");
+    $title.removeAttr("id");
 
     if (options.anchor) {
       var anchorOpts = assign(
         {
-          position: 'after',
-          symbol: '#',
-          style: 'header-anchor'
-        }, options.anchor);
+          position: "after",
+          symbol: "#",
+          style: "header-anchor",
+        },
+        options.anchor
+      );
 
       //  Put the anchor after the title by default, unless says otherwise
-      var link = '<a href="#' + id + '" class="' + anchorOpts.style + '">' + anchorOpts.symbol + '</a>';
-      if (anchorOpts.position === 'before') {
+      var link = '<a href="#' + id + '" class="' + anchorOpts.style + '">' + anchorOpts.symbol + "</a>";
+      if (anchorOpts.position === "before") {
         $title.prepend(link);
       } else {
         $title.append(link);
@@ -53,7 +68,9 @@ exports.heading = function (data) {
 
   // add class option
   if (options.class) {
-    data.content = data.content.replace('<div class="' + options.class + 'Start"></div>', '<div class="' + options.class + '">').replace('<div class="' + options.class + 'End"></div>', '</div>');
+    data.content = data.content
+      .replace('<div class="' + options.class + 'Start"></div>', '<div class="' + options.class + '">')
+      .replace('<div class="' + options.class + 'End"></div>', "</div>");
   }
 
   return data;
