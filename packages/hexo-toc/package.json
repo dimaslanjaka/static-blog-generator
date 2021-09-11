@@ -30,7 +30,7 @@
   "homepage": "https://github.com/bubkoo/hexo-toc",
   "dependencies": {
     "cheerio": "^0.19.0",
-    "markdown-toc": "^0.12.12",
+    "markdown-toc": "file:../markdown-toc",
     "object-assign": "^4.0.1",
     "transliteration": "^1.1.7",
     "uslug": "^1.0.3"
