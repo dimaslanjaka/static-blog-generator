@@ -38,7 +38,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-# https://hexo.io/docs/configuration.html#:~:text=skip_render%3A%20%22mypage/**/*%22
+# https://hexo.io/docs/configuration.html
 skip_render:
   - "page/**/*"
   - "backend"
