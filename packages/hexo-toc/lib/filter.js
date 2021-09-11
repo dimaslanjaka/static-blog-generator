@@ -48,7 +48,7 @@ exports.heading = function (data) {
       var anchorOpts = assign(
         {
           position: "after",
-          symbol: "#",
+          symbol: ".", // #
           style: "header-anchor",
         },
         options.anchor
