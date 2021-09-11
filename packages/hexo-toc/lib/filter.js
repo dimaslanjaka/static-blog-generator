@@ -3,12 +3,12 @@ var assign = require("object-assign");
 var cheerio = require("cheerio"); 
 
 exports.insert = function (data) {
-  var options = assign({}, this.config.toc);
-
-  // @todo if <!-- toc --> not exists return original data
+ // @todo if <!-- toc --> not exists return original data
   if (!/<!-- toc -->/gm.test(data.content)) { 
     return data;
   } 
+
+  var options = assign({}, this.config.toc);
 
   // add class option
   if (options.class) {
