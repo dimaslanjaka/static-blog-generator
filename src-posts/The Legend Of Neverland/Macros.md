@@ -70,7 +70,7 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
   </tr>
 </table>
   
-  ### How to import the macros script into bluestack
+  ### How to import the macros script into bluestacks
   ![Click Macros On Bluestacks](https://user-images.githubusercontent.com/12471057/132939380-d9fbf1d7-2cb1-469a-a29b-cf3f1c33084f.png)
   *Click Macros On Bluestacks*
   
