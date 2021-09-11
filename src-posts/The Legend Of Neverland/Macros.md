@@ -79,3 +79,6 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
   
   ![Select JSON macros script](https://user-images.githubusercontent.com/12471057/132939413-53a2940a-d018-4b04-963c-9968abd6304c.png)
   *Select JSON macros script then import*
+
+  ![image](https://user-images.githubusercontent.com/12471057/132939502-c9bb6e0c-284b-47a9-84b5-8863af2266f5.png)
+  *Import successful*
