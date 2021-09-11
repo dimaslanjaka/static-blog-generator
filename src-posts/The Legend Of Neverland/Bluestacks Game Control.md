@@ -59,7 +59,7 @@ location: Indonesia
 ##### How to download
 <div style="clear:both;"></div>
 <div>
-  <img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="50%" height="auto" alt="Save Link As" style="display:inline-block;float:left;" />
-  <img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="50%" height="auto" alt="Save Link As" style="display:inline-block;float:left;" />
+  <img src="https://user-images.githubusercontent.com/12471057/132330527-d978ef5c-aa2d-4387-bf65-bf817ae66c97.png" width="250px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" />
+  <img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="250px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" />
 </div>
 <div style="clear:both;"></div>
