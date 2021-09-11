@@ -6,7 +6,7 @@ let doProcess = true;
 exports.insert = function (data) {
   var options = assign({}, this.config.toc);
 
-  // if <!-- toc --> not exists return original data
+  // @todo if <!-- toc --> not exists return original data
   if (!/<!-- toc -->/gm.test(data.content)) {
     doProcess = false;
     return data;
@@ -27,7 +27,7 @@ exports.insert = function (data) {
 exports.heading = function (data) {
   var options = assign({}, this.config.toc);
 
-  // if variable doProcess false, skip and return original data
+  // @todo if variable doProcess false, skip and return original data
   if (!doProcess) return data;
 
   var $ = cheerio.load(data.content, {
