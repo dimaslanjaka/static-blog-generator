@@ -10,7 +10,9 @@ exports.insert = function (data) {
   if (!/<!-- toc -->/gm.test(data.content)) {
     doProcess = false;
     return data;
-  }
+  } else {
+doProcess = true;
+}
 
   // add class option
   if (options.class) {
