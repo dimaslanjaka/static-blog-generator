@@ -1,18 +1,14 @@
 var toc = require("markdown-toc");
 var assign = require("object-assign");
-var cheerio = require("cheerio");
-let doProcess = true;
+var cheerio = require("cheerio"); 
 
 exports.insert = function (data) {
   var options = assign({}, this.config.toc);
 
   // @todo if <!-- toc --> not exists return original data
-  if (!/<!-- toc -->/gm.test(data.content)) {
-    doProcess = false;
+  if (!/<!-- toc -->/gm.test(data.content)) { 
     return data;
-  } else {
-doProcess = true;
-}
+  } 
 
   // add class option
   if (options.class) {
@@ -27,10 +23,11 @@ doProcess = true;
 };
 
 exports.heading = function (data) {
+// @todo if <!-- toc --> not exists return original data
+  if (!/<!-- toc -->/gm.test(data.content)) { 
+    return data;
+  } 
   var options = assign({}, this.config.toc);
-
-  // @todo if variable doProcess false, skip and return original data
-  if (!doProcess) return data;
 
   var $ = cheerio.load(data.content, {
     decodeEntities: options.decodeEntities !== undefined ? options.decodeEntities : false,
