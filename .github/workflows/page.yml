@@ -26,15 +26,15 @@ jobs:
         with:
           path: |
             ${{ steps.npm-cache-dir.outputs.dir }}
-            # ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ./node_modules
             ~/.npm
           key: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            # ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+            ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            # ${{ runner.os }}-yarn-
+            ${{ runner.os }}-yarn-
       - name: Install Dependencies
         #run: npm i -g hexo-cli gulp typescript ts-node && npm install
         run: npm install --prefer-offline
