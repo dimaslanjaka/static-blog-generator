@@ -16,19 +16,21 @@ jobs:
           node-version: "12.x"
       - name: Get npm cache directory
         id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
       - name: Cache NPM dependencies
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: actions/cache@v2
         with:
           path: |
-            - ${{ steps.npm-cache-dir.outputs.dir }}
-            - node_modules
-            - ~/.npm
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ./node_modules
+            ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          restore-keys: ${{ runner.os }}-node-
       - name: Install Dependencies
         #run: npm i -g hexo-cli gulp typescript ts-node && npm install
         run: npm install --prefer-offline
