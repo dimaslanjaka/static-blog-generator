@@ -109,7 +109,7 @@
             <!-- adsense single banner auto square {{ config.adsense.ads1 }} -->
             <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.adsense.pub }}" crossorigin="anonymous"></script-->
             <ins class="adsbygoogle adsense_responsive_1"
-                 style="display:inline-block"
+                 style="display:inline-block" data-full-width-responsive="true"
                  data-ad-client="{{ config.adsense.pub }}"
                  data-ad-slot="{{ config.adsense.ads1 }}"></ins>
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
