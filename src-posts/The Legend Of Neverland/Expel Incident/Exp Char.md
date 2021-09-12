@@ -65,6 +65,10 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ![Lemuridae Chief](https://user-images.githubusercontent.com/12471057/132796579-01ac578a-c4d9-4c3f-8497-216e238ef8c3.png)
 *Lemuridae Chief*
   
+## Gaia Snow Mountain F1
+  ![Winter Fashion](https://user-images.githubusercontent.com/12471057/133004330-3b54aef9-6bcf-4e9d-9dd6-da6b5672afb2.png)
+  *Winter Fashion*
+
 ## Gaia Snow Mountain F2
 ![](./Exp%20Char/Gaia%20Snow%20Mountain%20F2.png)
 
