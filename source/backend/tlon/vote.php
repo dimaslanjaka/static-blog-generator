@@ -80,18 +80,26 @@ function getIpAddress()
           </div>
           <form action="?vote" method="post">
             <input type="hidden" name="vote" value="i">
-            <div class="btn-group text-center" data-toggle="buttons">
-              <label class="btn">
-                <input type="radio" name='guildname' value="UNITED48" required> <span> UNITED48</span>
-              </label>
-              <label class="btn">
-                <input type="radio" name='guildname' value="ALLIANCE48" required> <span> ALLIANCE48</span>
-              </label>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="btn-group text-center" data-toggle="buttons">
+                  <label class="btn btn-danger">
+                    <input type="radio" name='guildname' value="UNITED48" required> <span> UNITED48</span>
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name='guildname' value="ALLIANCE48" required> <span> ALLIANCE48</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div>
+                  <button type="submit" class="btn-warning btn btn-block">Submit Vote</button>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <button type="submit" class="btn-primary btn btn-block">Submit Vote</button>
-            </div>
           </form>
 
           <div class="mt-2">
