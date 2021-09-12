@@ -81,10 +81,10 @@ function getIpAddress()
     <div class="row">
       <div class="col-md-12">
         <div class="jumbotron m-5">
-          <div class="text-center">
+          <div class="text-center mb-2">
             please vote for the guild name for INDO1945 which is good for all players in s48 <br>
             User Hash: <?= md5(getIpAddress()) ?> <br>
-            Choose One Below
+            Choose One Below.
           </div>
           <form action="?vote" method="post">
             <input type="hidden" name="vote" value="i">
@@ -111,6 +111,7 @@ function getIpAddress()
           </form>
 
           <div class="mt-2">
+            This Short url : <a href="http://bit.ly/INDO1945-NAMEVOTE">http://bit.ly/INDO1945-NAMEVOTE</a>
             <pre><code><?= json_encode($json, JSON_PRETTY_PRINT) ?></code></pre>
           </div>
         </div>
