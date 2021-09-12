@@ -32,7 +32,7 @@
     "chokidar": "^2.1.8",
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
-    "hexo": "git+https://github.com/hexojs/hexo.git", 
+    "hexo": "git+https://github.com/hexojs/hexo.git",
     "hexo-asset-link": "^2.1.0",
     "hexo-autonofollow": "^1.0.1",
     "hexo-autoprefixer": "^2.0.0",
