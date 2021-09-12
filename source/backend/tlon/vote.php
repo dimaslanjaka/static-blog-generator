@@ -65,11 +65,19 @@ function getIpAddress()
   <title>Guild Name Change</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    @media screen and (max-width:576px) {
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="jumbotron m-5">
@@ -83,7 +91,7 @@ function getIpAddress()
 
             <div class="row">
               <div class="col-md-4">
-                <div class="btn-group text-center" data-toggle="buttons">
+                <div class="btn-group" data-toggle="buttons">
                   <label class="btn btn-danger">
                     <input type="radio" name='guildname' value="UNITED48" required> <span> UNITED48</span>
                   </label>
