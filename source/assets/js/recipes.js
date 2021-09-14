@@ -38,7 +38,9 @@ function CalculateTR(table) {
   writeTo("[i='ham-bc']", (14900 * 100) / (350 * 100), "blue", function(total) {
     return total.toFixed(2);
   });
-  writeTo('[i="bctotal"]', ((14900 * 100) / (350 * 100)) * (100 * 100));
+  writeTo('[i="bctotal"]', ((14900 * 100) / (350 * 100)) * (100 * 100), function(total) {
+    return total.toFixed(0);
+  });
 
   function writeTo(priceid, totalprice, color, callback) {
     if (typeof callback == "function") {
