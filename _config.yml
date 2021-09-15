@@ -40,6 +40,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 # https://hexo.io/docs/configuration.html
 skip_render:
+  - "page"
   - "page/**/*"
   - "backend"
   - "backend/**/*"
