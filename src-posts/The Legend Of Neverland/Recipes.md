@@ -20,16 +20,12 @@ category:
   - Games
   - The Legend Of Neverland
 
-cover: "https://i.ytimg.com/vi/jb_xYx5iLig/mqdefault.jpg"
+cover: "Recipes/recipes.jpg"
 location: Indonesia
 comments: false
 ---
 
   <!-- toc -->
-
-<!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
-
-![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
 
 ## Ingredients Water Essence Prices
 
@@ -267,4 +263,8 @@ comments: false
   <em>if the total price of ham is calculated into boiled corn food</em> <b i="hamprice"></b> &divide; <b i="bcprice"></b> &#61; <b i="ham-bc"></b> &times <b i="bcexp">-</b> (x100 Boiled Corn) &#61; <b i='bctotal'></b> total exp
 </div>
 
-  <!-- script /source/assets/js/recipes.js --> 
+<!-- [![603TF.png](https://i.im.ge/2021/08/15/603TF.png)](https://im.ge/i/603TF) -->
+
+![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
+
+  <!-- script /source/assets/js/recipes.js -->
