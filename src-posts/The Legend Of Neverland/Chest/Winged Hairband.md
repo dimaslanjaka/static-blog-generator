@@ -19,7 +19,8 @@ author:
 category:
   - Games
   - The Legend Of Neverland
-
+related_posts:
+  - /The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html
 comments: true
 cover: "http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg"
 #cover: "/The Legend Of Neverland/Chest/Winged Hairband/cover.jpg"
@@ -27,8 +28,9 @@ location: Indonesia
 ---
 
 ## Requirement
+
 - Blueprint (Buy to Npc in Sophila)
-![Blueprint](./Winged%20Hairband/blueprint.webp)
+  ![Blueprint](./Winged%20Hairband/blueprint.webp)
 
 - Feather Decoration Chest Location
 
@@ -36,7 +38,6 @@ location: Indonesia
 
   ![Feather Decoration Chest Location](./Winged%20Hairband/fs1-map.webp)
   ![Feather Decoration Chest Detail Location](https://user-images.githubusercontent.com/12471057/132348027-6c32d2a3-9b9e-41e1-98b5-ba62507272c1.png)
-
 
 - Mysterious Yarn Chest Location
 
@@ -53,6 +54,7 @@ location: Indonesia
   ![Vitalization Dust Chest Detail Location](./Winged%20Hairband/fs3-detail.png)
 
 ## Video tutorial
+
 {% youtube psOnlBSRBjA %}
 
 {% youtube yRbP_fSP3xY %}

@@ -138,6 +138,7 @@
     "gulp-connect": "^5.7.0",
     "gulp-markdown": "^6.0.0",
     "gulp-webserver": "^0.9.1",
+    "hexo-related-posts": "file:./packages/hexo-related-posts",
     "http-proxy-middleware": "^2.0.0",
     "jest": "^27.1.1",
     "kill-port": "^1.6.1",

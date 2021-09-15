@@ -110,3 +110,25 @@ hfc_favicons:
 #      url: img/android-chrome-144x144.png
 #      width: 144 # <= 600
 #      height: 144 # >= 60
+
+# https://github.com/sergeyzwezdin/hexo-related-posts#Configuration
+related_posts:
+  enabled: true
+  enable_env_name: prod
+  filter_threshold: 0.3
+  related_count: 3
+  weight:
+    title: 0.05
+    description: 0.05
+    keywords: 0.01
+    tags: 0.005
+    categories: 0.005
+    text: 1
+  stemmers:
+    - en
+    - ru
+  reserved:
+    - asp.net
+    - vs.net
+    - ado.net
+    - .net
