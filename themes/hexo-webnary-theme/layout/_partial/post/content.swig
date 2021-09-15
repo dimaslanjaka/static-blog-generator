@@ -117,12 +117,12 @@
         {% endif %}
 
         <!-- https://github.com/sergeyzwezdin/hexo-related-posts -->
-        {% if page.related_posts && page.related_posts.length > 0 %}
+        {% if page.related_posts && page.related_posts.length %}
             <section style="padding: 5px">
                 <h2 id="related-posts">Related posts</h2>
                 <ul>
                 {% for const path of page.related_posts %}
-                    {% if url_for(path) { %}
+                    {% if url_for(path).length { %}
                         <li><a href="{{ url_for(path) }}">{{ url_for(path) }}</a></li>
                     {% endif %}
                 {% endif %}
