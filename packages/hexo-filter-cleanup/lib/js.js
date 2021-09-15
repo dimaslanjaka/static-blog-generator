@@ -3,7 +3,7 @@
 
 const Promise = require("bluebird");
 const minimatch = require("minimatch");
-const uglifyJS = require("uglify-js");
+const uglifyJS = require("uglify-es");
 const pkg = require("../package.json");
 const utils = require("./utils");
 
