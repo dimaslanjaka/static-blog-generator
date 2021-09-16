@@ -10,7 +10,6 @@ date: 2021-8-16
 type: post
 
 tags:
-  - Quiz
   - Event
 
 author:
