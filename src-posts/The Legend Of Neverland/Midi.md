@@ -38,6 +38,7 @@ location: Indonesia
 | Janis Joplin - Me and Bobby McGee | https://bitmidi.com/uploads/62322.mid |
 | Clout - Save me | https://bitmidi.com/uploads/24659.mid |
 | TokiMeki | https://bitmidi.com/uploads/24659.mid |
+| Hatsune Miku | https://bitmidi.com/uploads/55292.mid |
 
 ### Available Midi Sites
 https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi<br/>
