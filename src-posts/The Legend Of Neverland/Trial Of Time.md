@@ -11,7 +11,7 @@ type: post
 related_posts:
   - Quiz.md
 tags:
-  - Life Skill
+  - Event
 
 author:
   nick: "Maulinda Agustina"
@@ -21,7 +21,7 @@ category:
   - Games
   - The Legend Of Neverland
 
-cover: "Recipes/recipes.jpg"
+cover: "https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg"
 location: Indonesia
 comments: false
 ---
