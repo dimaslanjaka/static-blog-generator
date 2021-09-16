@@ -125,7 +125,7 @@
                     {% if url_for(path).length %}
                         <li><a href="{{ url_for(path) }}">{{ url_for(path) }}</a></li>
                     {% endif %}
-                {% endif %}
+                {% endfor %}
                 </ul>
             </section>
         {% endif %}
