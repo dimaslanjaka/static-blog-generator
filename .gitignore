@@ -8,3 +8,4 @@ public/
 build
 tmp
 exclude
+docs

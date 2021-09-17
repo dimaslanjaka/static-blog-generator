@@ -86,8 +86,6 @@
     "yaml": "^1.10.2"
   },
   "devDependencies": {
-    "page": "file:./source/page",
-    "webnary-theme": "file:./themes/hexo-webnary-theme",
     "@types/browser-sync": "^2.26.1",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.10",
@@ -147,14 +145,16 @@
     "jest": "^27.1.1",
     "kill-port": "^1.6.1",
     "ngrok": "^4.2.2",
+    "page": "file:./source/page",
     "pako": "^2.0.3",
-    "prettier": "^2.4.0",
+    "prettier": "^2.4.1",
     "request": "^2.88.2",
     "response-time": "^2.3.2",
     "serve-index": "^1.9.1",
     "serve-static": "^1.14.1",
     "ts-node": "^10.2.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "webnary-theme": "file:./themes/hexo-webnary-theme"
   }
 }
