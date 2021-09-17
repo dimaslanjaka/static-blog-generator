@@ -85,6 +85,7 @@
   },
   "devDependencies": {
     "page": "file:./source/page",
+    "webnary-theme": "file:./themes/webnary-theme",
     "@types/browser-sync": "^2.26.1",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.10",
