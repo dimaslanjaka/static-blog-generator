@@ -36,7 +36,9 @@ hexo.extend.helper.register("blog_archives", function (posts) {
   });
 
   archives.forEach((archive, idx) => {
-    archive.posts = archive.posts.sort((first, next) => getTime(next.date) - getTime(first.date));
+    archive.posts = archive.posts.sort(
+      (first, next) => getTime(next.date) - getTime(first.date)
+    );
   });
 
   return archives;
@@ -62,7 +64,10 @@ hexo.extend.helper.register("blog_archive_menu", function (page) {
   menu = menu
     .sort((first, next) => first < next)
     .map((item, idx) => {
-      let baseLink = idx === 0 ? `${this.config.archive_dir}/` : Util.format(`${this.config.archive_dir}/%d/`, item);
+      let baseLink =
+        idx === 0
+          ? `${this.config.archive_dir}/`
+          : Util.format(`${this.config.archive_dir}/%d/`, item);
       return {
         label: item,
         baseLink: baseLink,
@@ -72,7 +77,9 @@ hexo.extend.helper.register("blog_archive_menu", function (page) {
 
   let menuHtml = menu
     .map((item) => {
-      let isSelect = page.base === item.baseLink || page.base === `${item.baseLink}${item.label}/`;
+      let isSelect =
+        page.base === item.baseLink ||
+        page.base === `${item.baseLink}${item.label}/`;
 
       return `
             <a
@@ -116,7 +123,9 @@ hexo.extend.helper.register("archive_index_paginator", function (size = 2) {
 
   let current = page.current;
   let total = Math.ceil(
-    this.site.posts.filter((post) => !post.draft).filter((post) => label == this.date(post.date, "YYYY")).length /
+    this.site.posts
+      .filter((post) => !post.draft)
+      .filter((post) => label == this.date(post.date, "YYYY")).length /
       this.config.per_page
   );
 
@@ -215,7 +224,10 @@ hexo.extend.helper.register("num_toArray", function (num) {
 });
 
 function get_setting(...keys) {
-  return keys.reduce((p, key) => p || this.config[key] || this.theme[key], void 0);
+  return keys.reduce(
+    (p, key) => p || this.config[key] || this.theme[key],
+    void 0
+  );
 }
 
 hexo.extend.helper.register("get_setting", get_setting);
@@ -230,7 +242,9 @@ hexo.extend.helper.register("tags", function () {
                 p +
                 `
                     <li class="tag-item">
-                        <a class="tag-link" href="${this.url_for(item.path)}">${item.name}</a>
+                        <a class="tag-link" href="${this.url_for(item.path)}">${
+                  item.name
+                }</a>
                     </li>
                 `
               );
@@ -242,7 +256,9 @@ hexo.extend.helper.register("tags", function () {
 hexo.extend.helper.register("latest_post", function (len = 4) {
   const getTime = (date) => new Date(this.date_xml(date)).getTime();
 
-  let posts = this.site.posts.data.sort((first, next) => getTime(next.date) - getTime(first.date)).slice(0, len);
+  let posts = this.site.posts.data
+    .sort((first, next) => getTime(next.date) - getTime(first.date))
+    .slice(0, len);
 
   return `
         <ul class="block-list latest-post-list">
@@ -251,15 +267,21 @@ hexo.extend.helper.register("latest_post", function (len = 4) {
                 p +
                 `
                     <li class="latest-post-item">
-                        <a href="${this.url_for(post.path)}" title="${post.title}">
+                        <a href="${this.url_for(post.path)}" title="${
+                  post.title
+                }">
                             <div class="item__cover">
                                 <img src="${
-                                  post.cover || hexo.config.default_cover || hexo.theme.config.default_cover
+                                  post.cover ||
+                                  hexo.config.default_cover ||
+                                  hexo.theme.config.default_cover
                                 }" alt="${post.title}" />
                             </div>
                             <div class="item__info">
                                 <h3 class="item__title">${post.title}</h3>
-                                <span class="item__text">${this.date(post.date)}</span>
+                                <span class="item__text">${this.date(
+                                  post.date
+                                )}</span>
                             </div>
                         </a>
                     </li>
@@ -426,13 +448,20 @@ hexo.extend.helper.register("trim_whitespace", function (str, replacement) {
 });
 
 hexo.extend.helper.register("trim_str", function (str) {
-  return str.trim();
+  return _.trim(str);
 });
 
-hexo.extend.helper.register("escape_double_quotes", function (str, replacement) {
-  if (!replacement) replacement = '\\"';
-  return str.replace(/"/g, replacement);
+hexo.extend.helper.register("capitalize", function (str) {
+  return _.startCase(_.toLower(str));
 });
+
+hexo.extend.helper.register(
+  "escape_double_quotes",
+  function (str, replacement) {
+    if (!replacement) replacement = '\\"';
+    return str.replace(/"/g, replacement);
+  }
+);
 
 hexo.extend.helper.register(
   "escape_with_json",
