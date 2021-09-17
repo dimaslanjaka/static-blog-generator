@@ -145,7 +145,7 @@ disqus_shortname: dimaslanjaka
 ## Themes: https://hexo.io/themes/
 
 ## Current Theme Url: https://github.com/dfcommunity/hexo-webnary-theme/
-theme: webnary-theme
+theme: hexo-webnary-theme
 #theme: lx
 
 # Deployment
