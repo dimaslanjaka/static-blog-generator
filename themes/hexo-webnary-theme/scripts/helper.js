@@ -425,6 +425,10 @@ hexo.extend.helper.register("trim_whitespace", function (str, replacement) {
   return str;
 });
 
+hexo.extend.helper.register("trim_str", function (str) {
+  return str.trim();
+});
+
 hexo.extend.helper.register("escape_double_quotes", function (str, replacement) {
   if (!replacement) replacement = '\\"';
   return str.replace(/"/g, replacement);
