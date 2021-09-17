@@ -3,90 +3,6 @@
   "to-destroy": [],
   "to-publish": [
     {
-      "title": "Expel Incident Highest Exp Character",
-      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html",
-      "hexoPublished": true,
-      "tags": [
-        "Expel Incident"
-      ]
-    },
-    {
-      "title": "Expel Incident Highest Fairies Exp And Crystals",
-      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html",
-      "hexoPublished": true,
-      "tags": [
-        "Expel Incident"
-      ]
-    },
-    {
-      "title": "Expel Incident Standard Rewards",
-      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html",
-      "hexoPublished": true,
-      "tags": [
-        "Expel Incident"
-      ]
-    },
-    {
-      "title": "Test",
-      "permalink": "https://git.webmanajemen.com/Test/Inline%20Image.html",
-      "hexoPublished": true,
-      "tags": [
-        "Test"
-      ]
-    },
-    {
-      "title": "Test Helper",
-      "permalink": "https://git.webmanajemen.com/Test/Helper.html",
-      "hexoPublished": true,
-      "tags": [
-        "Test"
-      ]
-    },
-    {
-      "title": "Quiz The Legend Of Neverland",
-      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html",
-      "hexoPublished": true,
-      "tags": [
-        "Quiz",
-        "Event"
-      ]
-    },
-    {
-      "title": "Cooking Recipes",
-      "permalink": "https://git.webmanajemen.com/The%20Legend%20Of%20Neverland/Recipes.html",
-      "hexoPublished": true,
-      "tags": [
-        "Life Skill"
-      ]
-    },
-    {
-      "title": "Update Genshin Impact 1.6.1 Manual",
-      "permalink": "https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.0-1.6.1.html",
-      "hexoPublished": true,
-      "tags": [
-        "Games",
-        "Genshin Impact"
-      ]
-    },
-    {
-      "title": "Update Genshin Impact 1.6.0 Manual",
-      "permalink": "https://git.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.5.1-1.6.0.html",
-      "hexoPublished": true,
-      "tags": [
-        "Games",
-        "Genshin Impact"
-      ]
-    },
-    {
-      "title": "Starconch Location",
-      "permalink": "https://git.webmanajemen.com/Genshin%20Impact/Location/Starconch.html",
-      "hexoPublished": true,
-      "tags": [
-        "Games",
-        "Genshin Impact"
-      ]
-    },
-    {
       "title": "404 Page Not Found",
       "permalink": "https://git.webmanajemen.com/404.html",
       "hexoPublished": true,
@@ -195,7 +111,31 @@
     },
     {
       "title": "",
+      "permalink": "https://git.webmanajemen.com/assets/css/quiz.css",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "",
       "permalink": "https://git.webmanajemen.com/assets/js/quiz.js",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "",
+      "permalink": "https://git.webmanajemen.com/assets/Midi/Lenka/readme.html",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "",
+      "permalink": "https://git.webmanajemen.com/assets/Midi/readme.html",
+      "hexoPublished": true,
+      "tags": []
+    },
+    {
+      "title": "",
+      "permalink": "https://git.webmanajemen.com/assets/js/recipes.js",
       "hexoPublished": true,
       "tags": []
     }
