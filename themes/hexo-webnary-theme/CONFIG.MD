@@ -16,7 +16,7 @@ Now, Web-Nary support only one kinds of language:
 To edit the root `_config.yml` file and set the `menu` item：
 ``` yml
 menu:
-  home: / 
+  home: /
   archive: /archives
   about: /about
 ```
@@ -28,7 +28,7 @@ menu:
 | home | home: / | home |
 | archive | archive: /archives | archives |
 | about | about: /about | about |
-| search | search: /search | search | 
+| search | search: /search | search |
 
 Then, you need create `about`,`search` and `404` page manually:
 
@@ -99,7 +99,7 @@ introduction: Hello World!
 # your blog favicon icon, support two ways: local and online. the local way need you to put the icon under  themes/hexo-theme-Web-Nary/source/img directory
 favicon_ico: "Set Your Favicon Logo"
 
-# blog logo icon in the upper left corner. support the local way and online way. 
+# blog logo icon in the upper left corner. support the local way and online way.
 logo: "Set your Your Logo here"
 
 # avatar
@@ -168,7 +168,7 @@ create `footer_link.yml` under the `source/_data` directory(This configuration w
 friend_links:
   - name: hexo-webnary-theme
     desc: hexo-webnary-theme
-    link: https://github.com/Bravo68web/hexo-webnary-theme
+    link: https://github.com/dimaslanjaka/hexo-webnary-theme
 
 build_tools:
   - name: Hexo
@@ -185,24 +185,24 @@ Web-Nary uses `sass` precompiled style and packages all the baisc styles in the 
 ### Blog Basic Usage Template
 To configure basic info in your markdown blog file:
 ```
-title: Hello World 
+title: Hello World
 cover: http://oxnuwmm3w.bkt.clouddn.com/hello-world.jpeg
 # author information, multiple authors are set to array
 # single author
-author: 
+author:
   nick: Barvo68web
   link: https://www.github.com/Barvo68web
 # multiple authors
 author:
-  - nick: Bravo68web
-    link: https://www.github.com/Bravo68web
+  - nick: dimaslanjaka
+    link: https://www.github.com/dimaslanjaka
   - nick: KaliDFDev
     link: https://www.github.com/KaliDFDev
 
 # If the article is reproduced, you need to increase the article source
 editor:
-  name: Bravo68Web
-  link: https://www.github.com/Bravo68web
+  name: dimaslanjaka
+  link: https://www.github.com/dimaslanjaka
 
 # post subtitle in your index page
 subtitle: post introduction
@@ -238,7 +238,7 @@ sitemap:
 ```
 
 ##### Comment system
-###### Gitalk 
+###### Gitalk
 Web-Nary has integrated [gitalk](https://github.com/gitalk/gitalk).
 If you want to use this comment function, you need to register the Github Application(follow the [gitalk document](https://github.com/gitalk/gitalk#usage)).
 Then to edit the `_config.yml` configuration:
@@ -250,7 +250,7 @@ gitTalk:
   clientSecret: ***
   repo: ***
   owner: ***
-  admin: 
+  admin:
     - ***
 ```
 
@@ -267,7 +267,7 @@ disqus_shortname: ***
 
 #### Math Equations Render Support
 
-Web-Nary uses [hexo-math][math] to render math formulas and it's closes by default. Configure the `_config.yml` under the theme folder to use this feature: 
+Web-Nary uses [hexo-math][math] to render math formulas and it's closes by default. Configure the `_config.yml` under the theme folder to use this feature:
 
 ```yml
 # Math Equations Render Support
