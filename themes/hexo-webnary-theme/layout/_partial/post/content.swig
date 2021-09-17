@@ -76,7 +76,7 @@
             }
             </style>
             <div id="incoming-terms" itemscope itemtype="https://schema.org/ItemList">
-            <h2 itemprop="name">{{ page.title }}</h2>
+            <h2 itemprop="name">Incoming Terms {{ capitalize(page.title) }}</h2>
             <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending" />
             <ul>
                 {% for keyword in page.keywords %}
