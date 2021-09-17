@@ -60,7 +60,7 @@
             <style>
             #incoming-terms * {
                 font-size: 10px;
-                margin: 5px;
+                /*margin: 5px;*/
             }
             #incoming-terms li:after {
                 content: " | ";
