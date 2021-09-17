@@ -1,6 +1,6 @@
 ---
-title: Quiz The Legend Of Neverland
-
+title: Quiz
+webtitle: The Legend Of Neverland
 subtitle: "Quiz questions and the answers. The Legend Of Neverland Event."
 
 lang: en
