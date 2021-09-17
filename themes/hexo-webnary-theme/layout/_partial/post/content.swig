@@ -80,7 +80,7 @@
             <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending" />
             <ul>
                 {% for keyword in page.keywords %}
-                <li itemprop="itemListElement">{{ keyword }}</li>
+                <li itemprop="itemListElement">{{ trim_str(keyword) }}</li>
                 {% endfor %}
             </ul>
             </div>
