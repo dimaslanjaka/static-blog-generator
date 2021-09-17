@@ -88,6 +88,7 @@
 
         {% if page.editor %}
         <div class="post-announce">
+            <h6>Disclaimer</h6>
             {{ __('copyright_statement.one') }}
             <a href="{{ page.editor.link }}">{{ page.editor.name }}</a> {{ __('copyright_statement.two') }}：{{ page.editor.name }}（<a href="{{ page.editor.link }}">{{ page.editor.link }}</a>）
         </div>
