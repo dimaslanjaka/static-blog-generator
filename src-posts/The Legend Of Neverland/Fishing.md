@@ -31,3 +31,6 @@ location: Indonesia
 Fishing in the legend of neverland is an important activity to collect fish and then sell them and get 'water essences'. Water Essences are used to buy ingredients in the `cooking shop`. You can see the recipe at [Cooking Recipes](/The%20Legend%20Of%20Neverland/Recipes.html).
 You can cook buffs for your character or make dishes to increase the level of `Fairies` you have.
 This time you can auto-fish using `bluestacks` and `macros`.
+
+  ## Auto fishing script
+  [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
