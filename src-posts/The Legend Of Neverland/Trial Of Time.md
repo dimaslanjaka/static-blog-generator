@@ -26,7 +26,7 @@ location: Indonesia
 comments: false
 ---
 
-  #Trial of time gate locations
+  # Trial of time gate locations
   
 ## Fog Swamp F2
 
