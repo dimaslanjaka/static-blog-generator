@@ -1,27 +1,27 @@
 {
     "Acceleration": 1,
-    "CreationTime": "20210830T080151",
+    "CreationTime": "20210903T192605",
     "DoNotShowWindowOnFinish": false,
     "Events": [
         {
             "Delta": 0,
             "EventType": "MouseDown",
-            "Timestamp": 603,
-            "X": 71.43,
-            "Y": 56.7
+            "Timestamp": 433,
+            "X": 62.06,
+            "Y": 64.29
         },
         {
             "Delta": 0,
             "EventType": "MouseUp",
-            "Timestamp": 707,
-            "X": 71.43,
-            "Y": 56.7
+            "Timestamp": 521,
+            "X": 62.06,
+            "Y": 64.29
         }
     ],
-    "LoopDuration": 3600,
-    "LoopInterval": 2,
+    "LoopDuration": 0,
+    "LoopInterval": 5,
     "LoopIterations": 1,
-    "LoopType": "TillTime",
+    "LoopType": "UntilStopped",
     "MacroSchemaVersion": 3,
     "MergeConfigurations": [
     ],
