@@ -11,7 +11,7 @@ type: post
 
 tags:
   - Macros
-  - Auto Click
+  - Life Skill
 
 author:
   nick: "Dimas Lanjaka"
