@@ -5,7 +5,7 @@ subtitle: "Macros Auto Fishing Bluestacks for the legend of neverland download"
 
 lang: en
 # Y-M-D
-date: 2021-9-7
+date: 2021-9-19
 
 type: post
 
@@ -14,7 +14,7 @@ tags:
   - Auto Click
 
 author:
-  nick: "Maulinda Agustina"
+  nick: "Dimas Lanjaka"
   link: "<Your Profile Link Here>"
 
 category:
