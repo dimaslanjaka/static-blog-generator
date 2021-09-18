@@ -1,6 +1,6 @@
 ---
-title: Expel Incident Standard Rewards
-
+title: Standard Rewards Expel Incident
+webtitle: The Legend Of Neverland
 subtitle: "Expel Incident With The Standard Rewards."
 
 lang: en
@@ -10,7 +10,6 @@ date: 2021-8-17
 type: post
 
 tags:
-  - Expel Incident
   - Quest
 
 author:
