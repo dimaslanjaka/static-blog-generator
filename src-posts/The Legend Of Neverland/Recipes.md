@@ -20,7 +20,7 @@ category:
   - Games
   - The Legend Of Neverland
 
-cover: "Recipes/recipes.jpg"
+cover: "/The%20Legend%20Of%20Neverland/Recipes/recipes.jpg"
 location: Indonesia
 comments: false
 ---
