@@ -52,8 +52,10 @@ This time you can auto-fish using `bluestacks` and `macros`.
 </ul>
   
   ## Configuration
-  Set the `Repeat Action` with your total stamina bottles
-  ![Setup total stamina bottles as repeat action](https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png)
+  - First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot
+    ![image](https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png)
+  - Set the `Repeat Action` with your total stamina bottles
+    ![Setup total stamina bottles as repeat action](https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png)
   
   ## Auto fishing script
   [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
