@@ -36,10 +36,11 @@ Presenting Macros in BlueStacks (for variants 4.140 or higher). Record an arrang
 
 # Features
 
-- Collect materials
+  - Collect materials
   - Mining: for upgrading gears and weapons
   - Inscription: for upgrading skills and talents
   - Insect: for produce crystal
+  - Auto fishing: [Click Here To Read And Download The Script](/The%20Legend%20Of%20Neverland/Fishing.html)
 
 ### How to download the macros
 
