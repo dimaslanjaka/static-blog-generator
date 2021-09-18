@@ -10,7 +10,6 @@ date: 2021-8-17
 type: post
 
 tags:
-  - Expel Incident
   - Quest
 
 author:
