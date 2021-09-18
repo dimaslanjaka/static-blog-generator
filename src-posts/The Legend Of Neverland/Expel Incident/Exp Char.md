@@ -1,6 +1,6 @@
 ---
-title: Expel Incident Highest Exp Character
-
+title: Highest Exp Character Expel Incident
+webtitle: The Legend Of Neverland
 subtitle: "Expel Incident With The Highest Exp Character Rewards."
 
 lang: en
