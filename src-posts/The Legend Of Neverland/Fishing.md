@@ -32,5 +32,7 @@ Fishing in the legend of neverland is an important activity to collect fish and 
 You can cook buffs for your character or make dishes to increase the level of `Fairies` you have.
 This time you can auto-fish using `bluestacks` and `macros`.
 
+  ![Fishing the legend of neverland](https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png)
+  
   ## Auto fishing script
   [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
