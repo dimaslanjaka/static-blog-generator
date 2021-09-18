@@ -33,7 +33,7 @@ You can cook buffs for your character or make dishes to increase the level of `F
 This time you can auto-fish using `bluestacks` and `macros`.
 
   ![Fishing the legend of neverland](https://user-images.githubusercontent.com/12471057/133905459-d00d586f-0b2e-4a43-abb9-cb726940bf3d.png)
-  
+
   ## Calculating the fishing actions
 <ul>
   <li><span>1 bottle = 300 staminas</span> &divide; 5/action &rarr; <span>
@@ -50,6 +50,10 @@ This time you can auto-fish using `bluestacks` and `macros`.
       </script> minutes
     </span> <span>to finish 1 stamina bottle</span></li>
 </ul>
+  
+  ## Configuration
+  Set the `Repeat Action` with your total stamina bottles
+  ![Setup total stamina bottles as repeat action](https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png)
   
   ## Auto fishing script
   [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
