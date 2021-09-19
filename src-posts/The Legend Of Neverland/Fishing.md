@@ -59,3 +59,6 @@ This time you can auto-fish using `bluestacks` and `macros`.
   
   ## Auto fishing script
   [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
+  
+  ## How to import script ?
+  [Read Here](/The%20Legend%20Of%20Neverland/Macros.html)
