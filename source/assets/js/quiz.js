@@ -1,25 +1,28 @@
 console.clear();
-function rangeAlphabetic(start, stop) {
-  var result = [];
-  for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
-    result.push(String.fromCharCode(idx));
+
+if (location.host == "cdpn.io") {
+  function rangeAlphabetic(start, stop) {
+    var result = [];
+    for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
+      result.push(String.fromCharCode(idx));
+    }
+    return result;
   }
-  return result;
+
+  let aZ = rangeAlphabetic("a", "z")
+    .concat(rangeAlphabetic("A", "Z"))
+    .filter(function (el) {
+      return el != null;
+    }); // a-zA-Z array
+
+  // automated test
+  setTimeout(function () {
+    let inputSearch = document.getElementById("search-questions");
+    var keyword = aZ[Math.floor(Math.random() * aZ.length)];
+    inputSearch.value = keyword;
+    inputSearch.dispatchEvent(new Event("keyup"));
+  }, 3000);
 }
-
-let aZ = rangeAlphabetic("a", "z")
-  .concat(rangeAlphabetic("A", "Z"))
-  .filter(function (el) {
-    return el != null;
-  }); // a-zA-Z array
-
-// automated test
-setTimeout(function () {
-  let inputSearch = document.getElementById("search-questions");
-  var keyword = aZ[Math.floor(Math.random() * aZ.length)];
-  inputSearch.value = keyword;
-  inputSearch.dispatchEvent(new Event("keyup"));
-}, 3000);
 
 /*** MAIN SCRIPT START ***/
 
@@ -67,8 +70,8 @@ function escapeRegExp(string) {
 }
 
 let quizUrls = [
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt",
-  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt",
+  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt?#uniqid()",
+  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt?#uniqid()",
 ];
 let quizSrc = [];
 
@@ -82,10 +85,6 @@ function jQueryMethod() {
   let searchLi = function (filter) {
     let listQuiz = jQuery("ul[id*='questions'] li");
     listQuiz.each(function (index) {
-      let searchWild =
-        jQuery(this)
-          .text()
-          .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
       let searchFirst =
         jQuery(this)
           .text()
@@ -97,6 +96,11 @@ function jQueryMethod() {
         // move to first position
         jQuery(this).prependTo(jQuery("ul[id*='questions']"));
       }
+
+      let searchWild =
+        jQuery(this)
+          .text()
+          .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
       if (searchWild) {
         jQuery(this).hide();
       } else {
@@ -132,7 +136,7 @@ function jQueryMethod() {
     }
   };
 
-  // get new question sources
+  // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
     //console.log(quizUrl);
     $.get(quizUrl).then(function (data) {

@@ -99,6 +99,7 @@
     "@types/jest": "^26.0.23",
     "@types/jquery": "^3.5.5",
     "@types/jsdom": "^16.2.11",
+    "@types/lodash": "^4.14.173",
     "@types/method-override": "^0.0.31",
     "@types/node": "^15.14.9",
     "@types/nodemon": "^1.19.0",

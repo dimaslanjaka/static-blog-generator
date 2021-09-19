@@ -1,4 +1,4 @@
-// copy static files
+// copy static files into docs
 const { promises: fs } = require("fs");
 const path = require("path");
 
