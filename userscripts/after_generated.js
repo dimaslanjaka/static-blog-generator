@@ -9,5 +9,5 @@ const replaceAll = function (find, replace, str) {
 // process docs/assets/js/quiz.js
 let quizjs = path.join(__dirname, "/../docs/assets/js/quiz.js");
 let read = fs.readFileSync(quizjs).toString();
-read = replaceAll(/\#uniqid\(\)/gm, _.uniqueId("uuid="), read);
+read = replaceAll(/\#uniqid\(\)/gm, _.uniqueId(), read);
 fs.writeFileSync(quizjs, read);
