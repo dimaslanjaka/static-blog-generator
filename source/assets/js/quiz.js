@@ -139,9 +139,11 @@ function jQueryMethod() {
   // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
     let url_parse = new URL(quizUrl);
+    url_parse.search = "?date=" + new Date();
+    //console.log(url_parse.toString());
 
     //console.log(quizUrl);
-    $.get(quizUrl).then(function (data) {
+    $.get(url_parse.toString()).then(function (data) {
       if (data) {
         // split newLine from retrieved text into array
         let split = data.split("\n");
