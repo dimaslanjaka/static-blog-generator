@@ -9,7 +9,7 @@ date: 2021-8-15
 
 type: post
 related_posts:
-  - Quiz.md
+  - /The Legend Of Neverland/Quiz.html
 tags:
   - Event
 
