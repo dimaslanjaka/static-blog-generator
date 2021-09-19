@@ -139,7 +139,7 @@ function jQueryMethod() {
   // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
     let url_parse = new URL(quizUrl);
-    url_parse.search = "?date=" + new Date();
+    url_parse.search = "?uid=#uniqid()";
     //console.log(url_parse.toString());
 
     //console.log(quizUrl);
