@@ -70,8 +70,8 @@ function escapeRegExp(string) {
 }
 
 let quizUrls = [
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt?#uniqid()",
-  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt?#uniqid()",
+  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt",
+  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt",
 ];
 let quizSrc = [];
 
@@ -138,6 +138,8 @@ function jQueryMethod() {
 
   // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
+    let url_parse = new URL(quizUrl);
+
     //console.log(quizUrl);
     $.get(quizUrl).then(function (data) {
       if (data) {
@@ -197,3 +199,26 @@ function jQueryMethod() {
 }
 
 loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", jQueryMethod);
+
+/**
+ * How URL native work {@link https://dmitripavlutin.com/parse-url-javascript/}
+ * @see {@link https://stackoverflow.com/questions/8486099/how-do-i-parse-a-url-query-parameters-in-javascript}
+ * @param {string} url
+ * @returns
+ */
+function parse_query_url(url) {
+  if (!url) throw "Please provide url";
+  var query = url.substr(1); // skip first ?
+  var result = {};
+  query.split("&").forEach(function (part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+
+function parse_url(url) {
+  let parse = new URL(url);
+  parse.search = parse_query_url(parse.search);
+  return parse;
+}

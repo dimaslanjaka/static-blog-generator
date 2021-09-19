@@ -52,6 +52,7 @@ jobs:
           node userscripts/custom-domain.js
           node userscripts/copy.js
           node userscripts/after_generated.js
+          node userscripts/validate.js
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
