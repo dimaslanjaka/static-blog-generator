@@ -24,7 +24,7 @@ category:
 
 comments: true
 
-cover: "https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg"
+cover: "/The Legend Of Neverland/Fishing/Studio_Project.jpeg"
 location: Indonesia
 ---
   
