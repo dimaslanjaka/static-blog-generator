@@ -21,7 +21,7 @@ let read = fs.readFileSync(quizjs).toString();
 let regex = /\#uniqid\(\)/gm;
 let uuid = _.uniqueId();
 if (typeof read.replaceAll == "function") {
-  read.replaceAll(regex, uuid);
+  read = read.replaceAll(regex, uuid);
 } else {
   read = replaceAll(regex, uuid, read);
 }
