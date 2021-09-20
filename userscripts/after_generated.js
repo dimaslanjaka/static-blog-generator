@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const _ = require("lodash");
-const replaceall = function (replaceThis, withThis, inThis) {
+const replaceAll = function (replaceThis, withThis, inThis) {
   withThis = withThis.replace(/\$/g, "$$$$");
   return inThis.replace(
     new RegExp(
