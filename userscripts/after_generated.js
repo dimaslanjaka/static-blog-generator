@@ -5,7 +5,7 @@ const _ = require("lodash");
 if (typeof "".replaceAll != "function") {
   String.prototype.replaceAll = function (search, replacement) {
     var target = this;
-    let find = typeof search == 'string' ? new RegExp(search, "g") : search;
+    let find = typeof search == "string" ? new RegExp(search, "g") : search;
     return target.replace(find, replacement);
   };
 }
