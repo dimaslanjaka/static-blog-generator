@@ -102,6 +102,10 @@ location: Indonesia
     Add new quiz https://bit.ly/TLONQUIZADD<br />
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   </blockquote>
+  
+  <div>
+    ![image](https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png)
+  </div>
 </div>
 
 <!-- css /source/assets/css/quiz.css -->
