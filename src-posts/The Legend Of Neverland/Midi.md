@@ -28,14 +28,17 @@ location: Indonesia
 ---
   
   ### NPC's favorite musical instrument
-  Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
+  
+  > Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
+  
 | NPC Name | musical instrument |
-| ----------- | ----------- |
-| Colin | Flute |
-  | Maggie | Piano |
-  | Guard | Drum |
-  | Anna | Violin |
-  | Freya | Guitar |
+| -------- | ------------------ |
+| Colin    | Flute              |
+| Maggie   | Piano              |
+| Guard    | Drum               |
+| Anna     | Violin             |
+| Freya    | Guitar             |
+
   
 ### List Best Midi (Hold tap/Right click to copy)
   
