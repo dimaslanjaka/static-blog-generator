@@ -1,6 +1,6 @@
 ---
-title: Midi The Legend Of Neverland
-
+title: Midi
+webtitle: The Legend Of Neverland
 subtitle: "Midi collection for the legend of neverland perform music skill"
 
 lang: en
