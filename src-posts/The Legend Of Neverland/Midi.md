@@ -31,14 +31,13 @@ location: Indonesia
   
   > Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
   
-| NPC Name | musical instrument |
-| -------- | ------------------ |
-| Colin    | Flute              |
-| Maggie   | Piano              |
-| Guard    | Drum               |
-| Anna     | Violin             |
-| Freya    | Guitar             |
-
+| NPC Name | NPC Location | musical instrument |
+| -------- | ------------ | ------------------ |
+| Colin    | Sophila      | Flute              |
+| Maggie   | Oak Town     | Piano              |
+| Guard    | Sophila      | Drum               |
+| Anna     |              | Violin             |
+| Freya    | Sophila      | Guitar             |
   
 ### List Best Midi (Hold tap/Right click to copy)
   
