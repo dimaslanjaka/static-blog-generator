@@ -27,6 +27,15 @@ cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
 location: Indonesia
 ---
   
+  ### NPC's favorite musical instrument
+| Title | Link |
+| ----------- | ----------- |
+| Colin | Flute |
+  | Maggie | Piano |
+  | Guard | Drum |
+  | Anna | Violin |
+  | Freya | Guitar |
+  
 ### List Best Midi (Hold tap/Right click to copy)
   
 | Title | Link |
