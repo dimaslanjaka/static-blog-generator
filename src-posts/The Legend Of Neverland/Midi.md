@@ -28,7 +28,7 @@ location: Indonesia
 ---
   
   ### NPC's favorite musical instrument
-| Title | Link |
+| NPC Name | musical instrument |
 | ----------- | ----------- |
 | Colin | Flute |
   | Maggie | Piano |
