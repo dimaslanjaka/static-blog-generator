@@ -7,6 +7,4 @@
 [submodule "packages/hexo-admin-ehc"]
 	path = packages/hexo-admin-ehc
 	url = https://github.com/lwz7512/hexo-admin-ehc
-[submodule "packages/hexo-auto-category"]
-	path = packages/hexo-auto-category
-	url = https://github.com/xu-song/hexo-auto-category
+
