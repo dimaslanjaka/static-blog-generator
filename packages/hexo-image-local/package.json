@@ -1,7 +1,7 @@
 {
-  "name": "hexo-blogger-xml",
+  "name": "hexo-image-local",
   "version": "0.0.1",
-  "description": "Import xml blogger",
+  "description": "Import external images into local",
   "main": "index",
   "scripts": {
     "eslint": "eslint .",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dimaslanjaka/hexo-blogger-xml.git"
+    "url": "https://github.com/dimaslanjaka/hexo-image-local.git"
   },
   "keywords": [
     "hexo",
