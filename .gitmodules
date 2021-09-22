@@ -1,3 +1,6 @@
 [submodule "packages/hexo-blogger-xml"]
 	path = packages/hexo-blogger-xml
 	url = https://github.com/dimaslanjaka/hexo-blogger-xml
+[submodule "packages/ga-analytics"]
+	path = packages/ga-analytics
+	url = https://github.com/sfarthin/ga-analytics
