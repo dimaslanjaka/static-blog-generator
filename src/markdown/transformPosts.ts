@@ -41,7 +41,7 @@ type parsePostReturn = Object & {
  */
 export function parsePost(text: string): parsePostReturn | null {
   const regex = /---([\s\S]*?)---/;
-  let m;
+  let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
 
   if ((m = regex.exec(text)) !== null) {
     if (m.hasOwnProperty(0)) {

@@ -245,10 +245,30 @@ toc:
     style: header-anchor
 
 # Markdown-it config
+## Installation https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Getting-Started
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
 markdown:
+  preset: "default"
   render:
     html: true
+    xhtmlOut: false
+    langPrefix: "language-"
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: "“”‘’"
+  enable_rules:
+  disable_rules:
+  plugins:
+  anchors:
+    level: 2
+    collisionSuffix: ""
+    permalink: false
+    permalinkClass: "header-anchor"
+    permalinkSide: "left"
+    permalinkSymbol: "¶"
+    case: 0
+    separator: "-"
 
 # live reload
 # https://github.com/hexojs/hexo-livereload
