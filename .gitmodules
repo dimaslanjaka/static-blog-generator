@@ -4,3 +4,6 @@
 [submodule "packages/ga-analytics"]
 	path = packages/ga-analytics
 	url = https://github.com/sfarthin/ga-analytics
+[submodule "packages/hexo-admin-ehc"]
+	path = packages/hexo-admin-ehc
+	url = https://github.com/lwz7512/hexo-admin-ehc
