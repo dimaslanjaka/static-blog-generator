@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+.editorconfig
+.npmignore
+.gitignore
+.jshintrc
+.jshintignore
+Gruntfile.js
+npm-debug.log
+test
+mock
