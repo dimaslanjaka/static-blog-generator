@@ -1,7 +1,7 @@
 {
-  "name": "hexo-filter-cleanup",
-  "version": "0.0.0-development",
-  "description": "Bunble cleanup, including minifying HTML, CSS, JS and Image files, and do `useref` on HTML files.",
+  "name": "hexo-blogger-xml",
+  "version": "0.0.1",
+  "description": "Import xml blogger",
   "main": "index",
   "scripts": {
     "eslint": "eslint .",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mamboer/hexo-filter-cleanup.git"
+    "url": "https://github.com/dimaslanjaka/hexo-blogger-xml.git"
   },
   "keywords": [
     "hexo",
@@ -24,7 +24,7 @@
     "optimize",
     "minify"
   ],
-  "author": "LV <mamboer@gmail.com> (http://faso.me)",
+  "author": "LV <dimaslanjaka@gmail.com> (http://faso.me)",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.4",
@@ -61,6 +61,7 @@
     "minimist": "^1.2.0",
     "mocha": "^6.1.4",
     "path": "^0.12.7",
+    "prettier": "^2.4.1",
     "semantic-release": "^15.13.3",
     "terser": "^5.7.1"
   }

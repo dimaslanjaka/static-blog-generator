@@ -275,7 +275,6 @@ markdown:
 # https://github.com/hexojs/hexo-livereload/issues/7
 #livereload:
 #  port: 35729
-
 # https://github.com/hexojs/hexo-browsersync
 browsersync:
   logLevel: "warn"

@@ -15,7 +15,7 @@ author:
 category:
   - Regular Expression
 
-cover: "/The%20Legend%20Of%20Neverland/Recipes/recipes.jpg"
+cover: "https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg"
 location: Indonesia
 comments: false
 ---
