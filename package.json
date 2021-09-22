@@ -34,7 +34,7 @@
     "ejs": "^3.1.6",
     "hexo": "git+https://github.com/hexojs/hexo.git",
     "hexo-asset-link": "^2.1.0",
-    "hexo-auto-category": "^0.2.1",
+    "hexo-auto-category": "file:./packages/hexo-auto-category",
     "hexo-autonofollow": "^1.0.1",
     "hexo-autoprefixer": "^2.0.0",
     "hexo-blogger-xml": "file:./packages/hexo-blogger-xml",
