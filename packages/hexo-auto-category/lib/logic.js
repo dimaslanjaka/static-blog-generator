@@ -14,7 +14,7 @@ let logic = function (data) {
   }
 
   var overwrite = true;
-  if (this.config.auto_category.enable && overwrite) {
+  if (this.config.hasOwnProperty("auto_category") && this.config.auto_category.enable && overwrite) {
     let postStr;
     // 1. parse front matter
     var tmpPost = front.parse(data.raw);
