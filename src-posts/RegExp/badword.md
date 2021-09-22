@@ -27,4 +27,7 @@ comments: false
 ^((?!badword).)*$
 ```
 
+## Try It
+[Click Here](https://www.regextester.com/15)
+
 <!-- script /RegExp/RegExp/badwords.js -->
