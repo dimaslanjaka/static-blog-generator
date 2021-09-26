@@ -48,6 +48,7 @@ skip_render:
   - "*.json"
   - "_posts/**/*.json"
   - "_posts/**/*.js"
+  - "_posts/The Legend Of Neverland/Midi/readme.md"
 
 # Writing
 new_post_name: :title.md # File name of new posts
