@@ -106,6 +106,7 @@ location: Indonesia
   <div>
     <img src="https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png" alt="preview" />
     <img src="https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png" alt="Winner - MilimNava_s48" />
+    <img src="https://user-images.githubusercontent.com/12471057/135248607-de662c5f-6b58-4156-9e54-6f43f7fe7850.png" alt="Winner 29/9/2021 Nanao_s48" />
   </div>
 </div>
 
