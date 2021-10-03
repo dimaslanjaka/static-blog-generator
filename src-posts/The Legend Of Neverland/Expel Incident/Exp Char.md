@@ -87,6 +87,10 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ![Murloc Sushi](./Exp%20Char/Fog%20Swamp%20F3%202.png)
 *Murloc Sushi*
 
+  ## Morcuri Mines F1
+  ![Missing Parts](https://user-images.githubusercontent.com/12471057/135747541-3ebdf01b-aa4c-498a-9564-2f88e09ac08d.png)
+  *Missing Parts - collect and submit parts*
+
   ## Morcuri Mines F2
   ![Mechanic](https://user-images.githubusercontent.com/12471057/133885294-5c64c56c-bb09-414f-a479-b300b0c7cb88.png)
   *Mechanic*
