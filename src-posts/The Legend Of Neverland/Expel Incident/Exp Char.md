@@ -89,6 +89,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
   ## Morcuri Mines F1
   ![Missing Parts](https://user-images.githubusercontent.com/12471057/135747587-f2eca982-841d-4aec-b0f0-87469510292e.png)
+  ![Missing Parts](https://user-images.githubusercontent.com/12471057/135747612-1cd75206-e8d0-4835-a3aa-801ee28e3229.png) 
   *Missing Parts - collect and submit parts*
 
   ## Morcuri Mines F2
