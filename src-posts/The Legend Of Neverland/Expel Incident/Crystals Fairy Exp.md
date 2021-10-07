@@ -39,5 +39,9 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Skala Desert 3F
 ![](Crystals%20Fairy%20Exp/Skala%20Desert%203F.png)
+  
+  ## Maple Grove F1
+  ![Troublemaker](https://user-images.githubusercontent.com/12471057/136435907-f0b7241e-a0c0-4091-8c2c-f04358acbfcc.png)
+  *Troublemaker - Defeat adult kappa*
 
 <style>em::before{content:"Gate Name : ";}</style>
