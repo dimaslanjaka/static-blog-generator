@@ -118,10 +118,11 @@ export class helper {
 
 // noinspection JSUnusedGlobalSymbols
 export default async function index() {
+  // console.log(app.getPath("appData"), app.getName());
   await app.whenReady();
   app.setName("Electron Browser");
-  app.setPath("userData", path.join(app.getPath("appData"), app.getName()));
-  app.setPath("userCache", path.join(app.getPath("cache"), app.getName()));
+  //app.setPath("userData", path.join(app.getPath("appData"), app.getName()));
+  //app.setPath("userCache", path.join(app.getPath("cache"), app.getName()));
   //Menu.setApplicationMenu(menu);
   app.whenReady().then(() => {
     globalShortcut.register("Alt+CommandOrControl+L", () => {

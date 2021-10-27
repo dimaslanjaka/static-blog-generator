@@ -1,15 +1,14 @@
 "use strict";
 
-//const Hexo = require("hexo");
 var front = require("hexo-front-matter");
 var fs = require("hexo-fs");
 debugger;
 let logic = function (data) {
   /**
-   * @type {import {  } from "hexo";}
+   * @type {import("hexo")}
    */
   var t = this;
-  var log = this.log;
+  var log = t.log;
   var defConfig = {
     enable: false,
     depth: null,
