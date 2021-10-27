@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="add quiz">
-      <change afterPath="$PROJECT_DIR$/source/backend/dimlan2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/backend/src/cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/backend/ssl/backend.webmanajemen.com.csr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/backend/ssl/backend.webmanajemen.com.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/backend/tlon/midi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/backend/tlon/quiz.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/backend/tlon/quiz.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/.idea/hexo-webnary-theme.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/backend/CrossPlatformCiphers/PHP_CIPHER/PHP_CIPHER/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/backend/CrossPlatformCiphers/PHP_CIPHER/PHP_CIPHER/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/backend/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/electron-browser/simple-samples" beforeDir="false" afterPath="$PROJECT_DIR$/packages/electron-browser/simple-samples" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/electron-browser/simple-samples/url/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/electron-browser/simple-samples/url/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-admin-ehc" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-admin-ehc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-admin-ehc/docs/demo/admin/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-admin-ehc/docs/demo/admin/bundle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/parser/Blogger.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/parser/Blogger.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/parser/Blogger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/parser/Blogger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,15 +49,15 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/electron/menu.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/post.swig" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/markdown/transformPosts.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/electron/menu.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/markdown/transformPosts.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/gulpfile.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/gulpfile.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/translator/index.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
@@ -70,21 +81,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.13.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="16.11.6" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-filter-cleanup" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_interpreter_path" value="wsl://Ubuntu@/usr/bin/node" />
-    <property name="nodejs_package_manager_path" value="/usr/lib/node_modules/npm" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v16.13.0/bin/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Repositories\gh-pages\node_modules\prettier" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="ktor" />
     <property name="ts.external.directory.path" value="D:\Repositories\gh-pages\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -101,23 +117,12 @@
       <recent name="D:\Repositories\gh-pages\themes\hexo-webnary-theme\source\scss" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.ts-node">
+  <component name="RunManager" selected="npm.fix-sharp">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
       <gulpfile />
       <tasks />
-      <arguments />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="article:clean" type="js.build_tools.gulp" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options>-r ts-node/register</node-options>
-      <gulpfile>$PROJECT_DIR$/gulpfile.ts</gulpfile>
-      <tasks>
-        <task>article:clean</task>
-      </tasks>
       <arguments />
       <envs />
       <method v="2" />
@@ -144,6 +149,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="fix-sharp" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="fix-sharp" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -167,18 +182,18 @@
     <list>
       <item itemvalue="Gulp.js.article:copy" />
       <item itemvalue="Gulp.js.article:copy:dev" />
-      <item itemvalue="Gulp.js.article:clean" />
       <item itemvalue="Node.js.ts-node" />
       <item itemvalue="npm.server" />
       <item itemvalue="npm.wsl-install" />
+      <item itemvalue="npm.fix-sharp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:clean" />
-        <item itemvalue="Gulp.js.article:copy" />
+        <item itemvalue="npm.fix-sharp" />
+        <item itemvalue="npm.wsl-install" />
         <item itemvalue="npm.server" />
         <item itemvalue="Gulp.js.article:copy:dev" />
-        <item itemvalue="npm.wsl-install" />
+        <item itemvalue="Gulp.js.article:copy" />
       </list>
     </recent_temporary>
   </component>
@@ -249,6 +264,8 @@
       <workItem from="1629623836276" duration="359000" />
       <workItem from="1629624425074" duration="1816000" />
       <workItem from="1629630838630" duration="2001000" />
+      <workItem from="1635322797751" duration="426000" />
+      <workItem from="1635340799170" duration="373000" />
     </task>
     <task id="LOCAL-00092" summary="Modify Article Expel Incident">
       <created>1629193720399</created>
