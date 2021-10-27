@@ -117,7 +117,7 @@ export class helper {
 }
 
 // noinspection JSUnusedGlobalSymbols
-export default async function index() {
+export default async function () {
   // console.log(app.getPath("appData"), app.getName());
   await app.whenReady();
   app.setName("Electron Browser");

@@ -5,11 +5,11 @@
   "description": "Electron Browser Helper",
   "main": "index.js",
   "scripts": {
-    "start": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron .",
+    "start": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "build:dev": "tsc --watch",
-    "runner": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron -r ts-node/register src/runner.ts",
+    "runner": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron -r ts-node/register src/main/runner.ts",
     "wsl-install": "npm install --platform=win32",
     "wsl-rebuild": "npm rebuild --platform=win32"
   },

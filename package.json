@@ -24,8 +24,8 @@
     "version": "5.4.0"
   },
   "engines": {
-    "node": "12.x",
-    "npm": "6.x"
+    "node": ">=12.x",
+    "npm": ">=6.x"
   },
   "dependencies": {
     "chalk": "^4.1.2",

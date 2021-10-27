@@ -7,4 +7,7 @@ if (isDev) {
   });
 }
  */
-require("./build/index");
+//require("./build/app");
+
+require("ts-node").register(); // This will register the TypeScript compiler
+require("./src/app"); // This will load our Typescript application

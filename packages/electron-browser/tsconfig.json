@@ -16,7 +16,18 @@
     "allowJs": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "lib": ["DOM", "ES7", "DOM.Iterable", "ES2015", "ESNext", "ES2016", "ES2017", "ES2018", "ES2019", "ES2020"],
+    "lib": [
+      "DOM",
+      "ES7",
+      "DOM.Iterable",
+      "ES2015",
+      "ESNext",
+      "ES2016",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES2020"
+    ],
     "rootDir": "./src",
     "outDir": "./build",
     "noLib": false,
@@ -25,10 +36,17 @@
   },
   "typeAcquisition": {
     "enable": true,
-    "include": ["electron"]
+    "include": [
+      "electron"
+    ]
   },
   "buildOnSave": true,
   "compileOnSave": true,
-  "exclude": ["./plugins/**/*", "./typings/**/*", "./node_modules/**/*", "./libs/compiler/**/*"],
-  "include": ["./src/**/*"]
+  "exclude": [
+    "./node_modules/**/*",
+    "./build/**/*"
+  ],
+  "include": [
+    "./src/**/*"
+  ]
 }
