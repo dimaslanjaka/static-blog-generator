@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update test">
-      <change afterPath="$PROJECT_DIR$/packages/markdown-toc/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/page/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/page/node_modules/crypto-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/page/node_modules/crypto-js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,9 @@
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
+    <dismissed value="$PROJECT_DIR$/packages/hexo-blogger-xml/package.json" />
+    <dismissed value="$PROJECT_DIR$/packages/hexo-filter-cleanup/package.json" />
+    <dismissed value="$PROJECT_DIR$/packages/markdown-toc/package.json" />
   </component>
   <component name="ProjectId" id="1teKNyAv1LUuMrN19onUWZXePYL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -64,21 +69,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="16.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="16.11.6" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-filter-nofollow" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v16.13.0/bin/node" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v12.22.6/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\Repositories\gh-pages\node_modules\prettier" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="ktor" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="ts.external.directory.path" value="D:\Repositories\gh-pages\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -595,6 +600,11 @@
     </task>
     <option name="localTasksCounter" value="142" />
     <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <envs>
+      <env key="PATH" value="/app/bin:/usr/bin:/usr/local/bin:" />
+    </envs>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
