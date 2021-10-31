@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Try Update With Hexo Blogger Importer">
-      <change afterPath="$PROJECT_DIR$/gulpfile.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/config.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/core.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/gulp-core.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/hexo-core.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/Blogger.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/Blogger.test.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/Error.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/JSON.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/StringBuilder.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/html.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/url.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/util.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/parser/yaml.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/types/test.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/index.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/gulp-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/gulp-core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/hexo-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/hexo-core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/html.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/html.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/gulp-core.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/gulp-core.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/types/entry.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/types/entry.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/types/post-header.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/src/types/post-header.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userscripts/post_callback.js" beforeDir="false" afterPath="$PROJECT_DIR$/userscripts/post_callback.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,13 +254,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00101" summary="Test">
-      <created>1629201875911</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1629201875911</updated>
     </task>
     <task id="LOCAL-00102" summary="Test">
       <created>1629203748021</created>
@@ -635,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635669508845</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="Try Update With Hexo Blogger Importer">
+      <created>1635677284578</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1635677284578</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">

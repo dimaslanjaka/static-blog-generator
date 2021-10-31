@@ -10,8 +10,8 @@ import { copyDir, loopDir, slash } from "./src/gulp/utils";
 import { shortcodeScript } from "./src/gulp/script";
 import { shortcodeNow } from "./src/gulp/time";
 import { shortcodeCss } from "./src/gulp/css";
-import gulpBlogger from "./packages/hexo-blogger-xml/src/gulp-core";
-
+//import gulpBlogger from "./packages/hexo-blogger-xml/src/gulp-core";
+import { gulp as gulpBlogger } from "hexo-blogger-xml";
 /**
  * Production article.
  * Articles which published on google index
