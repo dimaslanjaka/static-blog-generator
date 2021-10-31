@@ -105,7 +105,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ""
-  per_page: 9
+  per_page: 18
   order_by: -date
 
 # Category & Tag
@@ -129,7 +129,7 @@ updated_option: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 9
+per_page: 18
 pagination_dir: page
 
 # Include / Exclude file(s)

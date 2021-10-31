@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Change index to 9 posts">
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/demo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/demo/.idea/demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/demo/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/demo/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/demo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userscripts/post_callback.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userscripts/xml/webmanajemen.com.xml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Try Update With Hexo Blogger Importer">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +102,7 @@
       <recent name="D:\Repositories\gh-pages\themes\hexo-webnary-theme\source\scss" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.fix-sharp">
+  <component name="RunManager" selected="npm.server">
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options>-r ts-node/register</node-options>
@@ -182,9 +174,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.server" />
         <item itemvalue="npm.fix-sharp" />
         <item itemvalue="npm.wsl-install" />
-        <item itemvalue="npm.server" />
         <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="Gulp.js.article:copy" />
       </list>
@@ -259,13 +251,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00099" summary="Test">
-      <created>1629201519437</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1629201519437</updated>
     </task>
     <task id="LOCAL-00100" summary="Test">
       <created>1629201627923</created>
@@ -603,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635653117139</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="Try Update With Hexo Blogger Importer">
+      <created>1635668461948</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1635668461956</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -630,7 +622,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add New Quiz TLON" />
     <MESSAGE value="Add Backend Processed" />
     <MESSAGE value="Add Backend Processed (Heroku)" />
     <MESSAGE value="Test Static Files" />
@@ -655,7 +646,8 @@
     <MESSAGE value="Update test" />
     <MESSAGE value="Update docs readme" />
     <MESSAGE value="Change index to 9 posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change index to 9 posts" />
+    <MESSAGE value="Try Update With Hexo Blogger Importer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try Update With Hexo Blogger Importer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
