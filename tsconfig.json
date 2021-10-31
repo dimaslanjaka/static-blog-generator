@@ -12,6 +12,7 @@
     "removeComments": false,
     "allowUnusedLabels": true,
     "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true,
     "inlineSources": false,
     "allowJs": true,
     "skipDefaultLibCheck": true,

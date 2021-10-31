@@ -10,6 +10,7 @@ import { copyDir, loopDir, slash } from "./src/gulp/utils";
 import { shortcodeScript } from "./src/gulp/script";
 import { shortcodeNow } from "./src/gulp/time";
 import { shortcodeCss } from "./src/gulp/css";
+import gulpBlogger from "./packages/hexo-blogger-xml/src/gulp-core";
 
 /**
  * Production article.
@@ -120,6 +121,17 @@ gulp.task("article:copy:dev", function (done) {
 gulp.task("article:clean", function (done) {
   emptyDir(prodPostDir);
   fs.mkdirSync(prodPostDir, { recursive: true });
+
+  done();
+});
+
+gulp.task("blogger", function (done) {
+  gulpBlogger({
+    input: [path.resolve("userscripts/xml/webmanajemen.com.xml")],
+    output: "./src-posts",
+    hostname: ["webmanajemen.com", "git.webmanajemen.com", "dimaslanjaka.github.io"],
+    callback: require("./userscripts/post_callback"),
+  });
 
   done();
 });

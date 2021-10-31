@@ -2,7 +2,7 @@ const chalk = require("chalk");
 /**
  * Callback Post Imported XML
  * @param {string} content
- * @param {import("../../src/types/post-header").PostHeader} headers
+ * @param {import("../packages/hexo-blogger-xml/src/types/post-header").PostHeader} headers
  * @returns {string}
  */
 module.exports = function (content, headers) {
