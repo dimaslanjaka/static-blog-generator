@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update test">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update docs readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,20 +250,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00095" summary="Modify GI Articles">
-      <created>1629196291049</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1629196291049</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Add AdBlock">
-      <created>1629197534576</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1629197534576</updated>
     </task>
     <task id="LOCAL-00097" summary="Add AdBlock">
       <created>1629199006055</created>
@@ -594,7 +580,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635648834539</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Update test">
+      <created>1635648953171</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1635648953171</updated>
+    </task>
+    <task id="LOCAL-00145" summary="Update docs readme">
+      <created>1635649346368</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1635649346368</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -621,7 +621,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add AdBlock" />
     <MESSAGE value="Test" />
     <MESSAGE value="Add New Quiz TLON" />
     <MESSAGE value="Add Backend Processed" />
@@ -646,7 +645,8 @@
     <MESSAGE value="Clean Posts" />
     <MESSAGE value="add quiz" />
     <MESSAGE value="Update test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update test" />
+    <MESSAGE value="Update docs readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update docs readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -16,4 +16,8 @@ todo:
 npm install
 # Process articles from ./src-posts into ./source/__posts
 npx gulp article:copy # safely using npx
+# Generate blog
+npx hexo generate
 ```
+
+# Powered By Hexo
