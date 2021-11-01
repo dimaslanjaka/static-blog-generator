@@ -37,7 +37,7 @@
     "hexo-auto-category": "file:./packages/hexo-auto-category",
     "hexo-autonofollow": "^1.0.1",
     "hexo-autoprefixer": "^2.0.0",
-    "hexo-blogger-xml": "file:./packages/hexo-blogger-xml",
+    "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-browsersync": "^0.3.0",
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^3.0.0",
