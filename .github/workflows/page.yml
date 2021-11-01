@@ -45,6 +45,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: install theme
         run: cd themes/hexo-webnary-theme && npm install
+      - name: install hexo-blogger-xml
+        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       - name: Install Dependencies
         #run: npm i -g hexo-cli gulp typescript ts-node && npm install
         run: npm install #--prefer-offline
