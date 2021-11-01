@@ -271,7 +271,7 @@ markdown:
     case: 0
     separator: "-"
 
-# live reload
+# live reload (unused)
 # https://github.com/hexojs/hexo-livereload
 # https://github.com/hexojs/hexo-livereload/issues/7
 #livereload:
@@ -332,18 +332,17 @@ nofollow:
   exclude:
     - git.webmanajemen.com
     - webmanajemen.com
-
 ## Migrate using gulp
 #blogger_xml:
-  # script path relative path from hexo root directory
-  #callback: "./userscripts/post_callback.js"
-  # Your blog domain and subdomain to seo external link, and bellow list is a internal link based on domain name
-  #hostname:
-    #- "webmanajemen.com"
-    #- "git.webmanajemen.com"
-    #- "dimaslanjaka.github.io"
-  # Output directory
-  #output: "source/_posts"
-  # blogger xml path relative path from hexo root directory, you can insert multiple xml
-  #input:
-    #- "./userscripts/xml/webmanajemen.com.xml"
+# script path relative path from hexo root directory
+#callback: "./userscripts/post_callback.js"
+# Your blog domain and subdomain to seo external link, and bellow list is a internal link based on domain name
+#hostname:
+#- "webmanajemen.com"
+#- "git.webmanajemen.com"
+#- "dimaslanjaka.github.io"
+# Output directory
+#output: "source/_posts"
+# blogger xml path relative path from hexo root directory, you can insert multiple xml
+#input:
+#- "./userscripts/xml/webmanajemen.com.xml"
