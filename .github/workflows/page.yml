@@ -50,8 +50,8 @@ jobs:
         run: cd themes/hexo-webnary-theme && npm install
       - name: Install Dependencies
         run: npm install #--prefer-offline
-      - name: install hexo-blogger-xml from github
-        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
+      #- name: install hexo-blogger-xml from github
+        #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       #- name: Copying Blogger Article
         #run: npx gulp blogger --production
       - name: Copying Blogger Local
