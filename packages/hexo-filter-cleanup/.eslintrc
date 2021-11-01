@@ -1,9 +1,0 @@
----
-"parserOptions":
-  "ecmaVersion": 6
-"globals":
-  "hexo": true
-  "App": true
-  "Util": true
-"env":
-  "node": true
