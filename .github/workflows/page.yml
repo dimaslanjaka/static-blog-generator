@@ -51,10 +51,10 @@ jobs:
         run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       - name: Install Dependencies
         run: npm install #--prefer-offline
-      - name: Copying Article
-        run: |
-          npx gulp blogger --production
-          npx gulp article:copy --production
+      #- name: Copying Blogger Article
+      #run: npx gulp blogger --production
+      - name: Copying Blogger Local
+        run: npx gulp article:copy --production
       - name: Hexo Generate
         run: npx hexo generate
       - name: install page
