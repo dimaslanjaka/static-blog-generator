@@ -52,7 +52,9 @@ jobs:
       - name: Install Dependencies
         run: npm install #--prefer-offline
       - name: Copying Article
-        run: npx gulp article:copy
+        run: |
+          npx gulp blogger --production
+          npx gulp article:copy --production
       - name: Hexo Generate
         run: npx hexo generate
       - name: install page

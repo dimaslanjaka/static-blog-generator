@@ -11,6 +11,7 @@ import { shortcodeNow } from "./src/gulp/time";
 import { shortcodeCss } from "./src/gulp/css";
 //import gulpBlogger from "./packages/hexo-blogger-xml/src/gulp-core";
 import { gulpCore } from "hexo-blogger-xml";
+import { argv } from "yargs";
 
 /**
  * Production article.
@@ -130,13 +131,20 @@ gulp.task("blogger", function (done) {
   const mainXML = path.resolve("userscripts/xml/webmanajemen.com.xml");
   // eslint-disable-next-line no-unused-vars
   const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
+  const isProduction = argv["production"] === undefined ? false : true;
   gulpCore({
     input: [mainXML],
-    output: "./build/src-posts",
+    output: isProduction ? "./src-posts" : "./build/src-posts",
     hostname: ["webmanajemen.com", "git.webmanajemen.com", "dimaslanjaka.github.io"],
     callback: require("./userscripts/post_callback"),
   });
 
+  done();
+});
+
+gulp.task("arg", function (done) {
+  var isProduction = argv["production"] === undefined ? false : true;
+  console.log(argv, isProduction);
   done();
 });
 
