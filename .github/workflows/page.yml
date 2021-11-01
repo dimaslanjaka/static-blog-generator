@@ -12,6 +12,7 @@ jobs:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
         with:
+          submodules: 'true'
           token: "${{ secrets.GITHUB_TOKEN }}"
           #repository: dimaslanjaka/hexo-blogger-xml
           #path: packages/hexo-blogger-xml
