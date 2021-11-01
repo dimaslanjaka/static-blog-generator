@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Workflow -submodule recursive">
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Workflow [fix]">
       <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,13 +258,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00106" summary="Add Backend Processed (Heroku)">
-      <created>1629273768686</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1629273768686</updated>
     </task>
     <task id="LOCAL-00107" summary="Add Backend Processed (Heroku)">
       <created>1629273956100</created>
@@ -600,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635748641212</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Workflow [fix]">
+      <created>1635749252749</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1635749252749</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -627,7 +629,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test Custom Helper Inside Markdowns #2" />
     <MESSAGE value="Test Custom Helper Inside Markdowns" />
     <MESSAGE value="Fix Gulp" />
     <MESSAGE value="Fix Quiz" />
@@ -652,7 +653,8 @@
     <MESSAGE value="Fix Broken Posts Header" />
     <MESSAGE value="Workflow +submodule recursive" />
     <MESSAGE value="Workflow -submodule recursive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Workflow -submodule recursive" />
+    <MESSAGE value="Workflow [fix]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workflow [fix]" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
