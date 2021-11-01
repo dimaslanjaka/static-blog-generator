@@ -9,8 +9,8 @@ import { copyDir, loopDir, slash } from "./src/gulp/utils";
 import { shortcodeScript } from "./src/gulp/script";
 import { shortcodeNow } from "./src/gulp/time";
 import { shortcodeCss } from "./src/gulp/css";
-//import gulpBlogger from "./packages/hexo-blogger-xml/src/gulp-core";
-import { gulpCore } from "hexo-blogger-xml";
+import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
+//import { gulpCore } from "hexo-blogger-xml";
 import { argv } from "yargs";
 
 /**
