@@ -126,10 +126,12 @@ gulp.task("article:clean", function (done) {
 });
 
 gulp.task("blogger", function (done) {
-  const mainxml = path.resolve("userscripts/xml/webmanajemen.com.xml");
+  // eslint-disable-next-line no-unused-vars
+  const mainXML = path.resolve("userscripts/xml/webmanajemen.com.xml");
+  // eslint-disable-next-line no-unused-vars
   const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
   gulpCore({
-    input: [testXML],
+    input: [mainXML],
     output: "./build/src-posts",
     hostname: ["webmanajemen.com", "git.webmanajemen.com", "dimaslanjaka.github.io"],
     callback: require("./userscripts/post_callback"),

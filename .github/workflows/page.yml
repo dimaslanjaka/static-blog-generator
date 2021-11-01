@@ -43,7 +43,7 @@ jobs:
       - name: Install Dependencies
         #run: npm i -g hexo-cli gulp typescript ts-node && npm install
         run: npm install #--prefer-offline
-      - name: Process Article
+      - name: Copying Article
         run: npx gulp article:copy
       - name: Hexo Generate
         run: npx hexo generate
