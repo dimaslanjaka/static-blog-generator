@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
-        with: submodules
+        with:
+          submodules: sync
         #with:
         #submodules: recursive
       - name: Use Node.js 12.x
