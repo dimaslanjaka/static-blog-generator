@@ -139,7 +139,9 @@ gulp.task("blogger", function (done) {
     hostname: ["webmanajemen.com", "git.webmanajemen.com", "dimaslanjaka.github.io"],
     callback: require("./userscripts/post_callback"),
     on: {
-      finish: done,
+      finish: (parser) => {
+        done();
+      },
     },
   });
 
