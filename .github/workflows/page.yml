@@ -48,12 +48,12 @@ jobs:
         run: npm i -g hexo-cli gulp-cli typescript ts-node npm
       - name: install themes/hexo-webnary-theme
         run: cd themes/hexo-webnary-theme && npm install
-      - name: install hexo-blogger-xml from github
-        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
+      #- name: install hexo-blogger-xml from github
+        #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       - name: Install Dependencies
         run: npm install #--prefer-offline
       #- name: Copying Blogger Article
-      #run: npx gulp blogger --production
+        #run: npx gulp blogger --production
       - name: Copying Blogger Local
         run: npx gulp article:copy --production
       - name: Hexo Generate

@@ -10,3 +10,4 @@ build
 tmp
 exclude
 #docs
+package-lock.json
