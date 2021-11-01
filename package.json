@@ -24,7 +24,7 @@
     "version": "5.4.0"
   },
   "engines": {
-    "node": "12.22.6",
+    "node": ">=12.22.6",
     "npm": ">=6.x"
   },
   "dependencies": {
