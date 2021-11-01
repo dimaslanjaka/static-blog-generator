@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Caching docs">
-      <change afterPath="$PROJECT_DIR$/packages/hexo-theme-boilerplate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/hexo-theme-clover" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Try workflows">
       <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +102,7 @@
       <recent name="D:\Repositories\gh-pages\themes\hexo-webnary-theme\source\scss" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.blogger">
+  <component name="RunManager" selected="npm.server">
     <configuration name="gulpfile.test.ts" type="TypeScriptProgramRunner" factoryName="TypeScript" temporary="true">
       <module name="gh-pages" />
       <option name="interpreterRef" value="project" />
@@ -127,6 +122,17 @@
       <node-options>-r ts-node/register</node-options>
       <gulpfile />
       <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="article:copy:dev" type="js.build_tools.gulp" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options>-r ts-node/register</node-options>
+      <gulpfile>$PROJECT_DIR$/gulpfile.ts</gulpfile>
+      <tasks>
+        <task>article:copy:dev</task>
+      </tasks>
       <arguments />
       <envs />
       <method v="2" />
@@ -169,11 +175,13 @@
       <item itemvalue="npm.fix-sharp" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
       <item itemvalue="TypeScript.gulpfile.test.ts" />
+      <item itemvalue="Gulp.js.article:copy:dev" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TypeScript.gulpfile.test.ts" />
         <item itemvalue="npm.server" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
+        <item itemvalue="TypeScript.gulpfile.test.ts" />
         <item itemvalue="npm.fix-sharp" />
         <item itemvalue="npm.wsl-install" />
       </list>
@@ -248,13 +256,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00113" summary="Test Custom Helper Inside Markdowns #2">
-      <created>1629473038465</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1629473038465</updated>
     </task>
     <task id="LOCAL-00114" summary="Test Custom Helper Inside Markdowns #2">
       <created>1629473439899</created>
@@ -592,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635795625019</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Try workflows">
+      <created>1635797009328</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1635797009328</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -619,7 +627,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix Gulp" />
     <MESSAGE value="Fix Quiz" />
     <MESSAGE value="Remove annoying midi's" />
     <MESSAGE value="Add Midi" />
@@ -644,7 +651,8 @@
     <MESSAGE value="Workflow -submodule recursive" />
     <MESSAGE value="Workflow [fix]" />
     <MESSAGE value="Caching docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Caching docs" />
+    <MESSAGE value="Try workflows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try workflows" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
