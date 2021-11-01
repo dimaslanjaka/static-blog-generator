@@ -138,9 +138,12 @@ gulp.task("blogger", function (done) {
     output: isProduction ? "./src-posts" : "./build/src-posts",
     hostname: ["webmanajemen.com", "git.webmanajemen.com", "dimaslanjaka.github.io"],
     callback: require("./userscripts/post_callback"),
+    on: {
+      finish: done,
+    },
   });
 
-  done();
+  //done();
 });
 
 gulp.task("arg", function (done) {
