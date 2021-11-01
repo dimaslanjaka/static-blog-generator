@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Workflow [fix]">
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/dist/parser/Blogger.js" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Workflow [fix]" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +65,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-blogger-xml/tsconfig.publish.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/electron-browser" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -171,13 +165,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="TypeScript.gulpfile.test.ts" />
       <item itemvalue="Gulp.js.blogger" />
-      <item itemvalue="Node.js.ts-node" />
+      <item itemvalue="npm.fix-sharp" />
       <item itemvalue="npm.server" />
       <item itemvalue="npm.wsl-install" />
-      <item itemvalue="npm.fix-sharp" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
-      <item itemvalue="TypeScript.gulpfile.test.ts" />
+      <item itemvalue="Node.js.ts-node" />
     </list>
     <recent_temporary>
       <list>
@@ -258,13 +252,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00107" summary="Add Backend Processed (Heroku)">
-      <created>1629273956100</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1629273956100</updated>
     </task>
     <task id="LOCAL-00108" summary="Test Static Files">
       <created>1629288166081</created>
@@ -602,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635749252749</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Workflow [fix]">
+      <created>1635749920311</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1635749920311</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
