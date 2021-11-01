@@ -141,5 +141,5 @@ gulp.task("blogger", function (done) {
 });
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
-//gulp.task("default", gulp.series("article:copy:dev"));
-exports.default = gulp.series("article:copy:dev");
+gulp.task("default", gulp.series("article:copy:dev"));
+//exports.default = gulp.series("article:copy:dev");

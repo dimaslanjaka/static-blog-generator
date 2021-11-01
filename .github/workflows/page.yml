@@ -44,7 +44,7 @@ jobs:
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
       - name: install global packages
-        run: npm i -g hexo-cli gulp-cli typescript ts-node
+        run: npm i -g hexo-cli gulp-cli typescript ts-node npm
       - name: install theme
         run: cd themes/hexo-webnary-theme && npm install
       - name: install hexo-blogger-xml
