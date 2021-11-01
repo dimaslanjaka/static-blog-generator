@@ -165,13 +165,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="TypeScript.gulpfile.test.ts" />
       <item itemvalue="Gulp.js.blogger" />
-      <item itemvalue="Node.js.ts-node" />
+      <item itemvalue="npm.fix-sharp" />
       <item itemvalue="npm.server" />
       <item itemvalue="npm.wsl-install" />
-      <item itemvalue="npm.fix-sharp" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
-      <item itemvalue="TypeScript.gulpfile.test.ts" />
+      <item itemvalue="Node.js.ts-node" />
     </list>
     <recent_temporary>
       <list>
