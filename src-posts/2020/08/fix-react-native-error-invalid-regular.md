@@ -1,7 +1,7 @@
 ---
 title: "Fix React Native error Invalid regular expression: /(.*\\\\__fixtures__"
 webtitle: WMI Gitlab
-subtitle: If you Got this issue today on windows, but don\'t need to downgrade
+subtitle: If you Got this issue today on windows, but dont need to downgrade
   node, just as discussed on
 lang: en
 date: 2020-08-03T08:26:00.001+07:00

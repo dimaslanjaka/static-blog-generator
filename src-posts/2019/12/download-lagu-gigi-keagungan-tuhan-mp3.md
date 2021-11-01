@@ -1,7 +1,7 @@
 ---
 title: Download lagu GIGI - Keagungan Tuhan Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu GIGI - Keagungan Tuhan Mp3 DENTAL - God\\'s Majesty
+subtitle: "Download lagu GIGI - Keagungan Tuhan Mp3 DENTAL - Gods Majesty
   Listen: 37,204 Duration: 247 MP3 size: 3.86MB Download Links"
 lang: en
 date: 2019-12-03T16:12:00.000+07:00

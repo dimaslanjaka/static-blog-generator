@@ -1,7 +1,9 @@
 ---
 title: Google passed proxies, updated at 2019-12-29
 webtitle: WMI Gitlab
-subtitle: Fresh proxy oogle passed\nGoogle passed proxies,
+subtitle: |-
+  Fresh proxy oogle passed
+  Google passed proxies,
 lang: en
 date: 2019-12-30T04:08:00.001+07:00
 type: post

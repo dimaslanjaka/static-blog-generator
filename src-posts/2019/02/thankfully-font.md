@@ -1,7 +1,7 @@
 ---
 title: Thankfully Font
 webtitle: WMI Gitlab
-subtitle: "Untungnya Font CATATAN: Font ini GRATIS 100\\% UNTUK PENGGUNAAN
+subtitle: "Untungnya Font CATATAN: Font ini GRATIS 100% UNTUK PENGGUNAAN
   KOMERSIAL! Tetapi setiap donasi sangat dihargai. Akun Paypal"
 lang: en
 date: 2019-02-05T01:51:00.000+07:00

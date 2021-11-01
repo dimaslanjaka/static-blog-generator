@@ -2,7 +2,7 @@
 title: Easy Ways to Make About Us On Blogger Widget
 webtitle: WMI Gitlab
 subtitle: Easy Ways to Make About Us On Blogger Widget Do you need to feature
-  the About Us on the journal and don\'t recognize how?
+  the About Us on the journal and dont recognize how?
 lang: en
 date: 2017-05-09T05:49:00.000+07:00
 type: post

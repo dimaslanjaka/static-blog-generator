@@ -2,7 +2,7 @@
 title: SCSS Animate Hover Scale Letters
 webtitle: WMI Gitlab
 subtitle: <center><h2>Demo</h2></center><iframe
-  src=\"//rawgit.com/dimaslanjaka/Web-Manajemen/master/HTML/Text-Animate/\%20Scale\%20LetterHovers.html\"
+  src=//rawgit.com/dimaslanjaka/Web-Manajemen/master/HTML/Text-Animate/%20Scale%20LetterHovers.html
 lang: en
 date: 2017-11-21T23:53:00.000+07:00
 type: post

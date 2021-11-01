@@ -1,9 +1,9 @@
 ---
 title: Update code Simple SafeLink v3
 webtitle: WMI Gitlab
-subtitle: '<blockquote>First post : <a
-  href=\"http://web-manajemen.blogspot.com/2017/09/cara-simple-membuat-blogger-safelink.html\"
-  title=\"Cara Simple'
+subtitle: "<blockquote>First post : <a
+  href=http://web-manajemen.blogspot.com/2017/09/cara-simple-membuat-blogger-sa\
+  felink.html title=Cara Simple"
 lang: en
 date: 2018-08-05T07:56:00.001+07:00
 type: post

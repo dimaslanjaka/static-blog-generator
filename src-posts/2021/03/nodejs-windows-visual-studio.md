@@ -1,9 +1,8 @@
 ---
 title: Fix Error NodeJS Windows Visual Studio
 webtitle: WMI Gitlab
-subtitle: <ul> <li>Install <a
-  href=\"https://visualstudio.microsoft.com/downloads/\" rel=\"nofollow
-  noopener\" target=\"_blank\">Microsoft Visual Studio
+subtitle: <ul> <li>Install <a href=https://visualstudio.microsoft.com/downloads/
+  rel=nofollow noopener target=_blank>Microsoft Visual Studio
 lang: en
 date: 2021-03-25T06:04:00.006+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Goku Skin Solo DFF Mobile
 webtitle: WMI Gitlab
-subtitle: Goku Skin Solo DFF Mobile Karakter manga terkenal \"Son Goku\" skin
+subtitle: Goku Skin Solo DFF Mobile Karakter manga terkenal Son Goku skin
   sekarang tersedia untuk GTA San Andreas Mobile. Pembuat mod ini
 lang: en
 date: 2019-11-20T23:26:00.001+07:00

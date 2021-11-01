@@ -1,7 +1,7 @@
 ---
 title: Conditional Tags For Targeting On Blogger Template Format
 webtitle: WMI Gitlab
-subtitle: I\'ll explain a little what it is conditional tags. Conditional tags
+subtitle: Ill explain a little what it is conditional tags. Conditional tags
   are<br />limiting a program command on certain conditions use a
 lang: en
 date: 2017-05-19T13:39:00.000+07:00

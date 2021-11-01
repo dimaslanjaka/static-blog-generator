@@ -2,7 +2,7 @@
 title: In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin
 webtitle: WMI Gitlab
 subtitle: <center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA
-  Plugin</h2></center><img src=\"https://imgdb.net/images/3203.jpg\" /><br
+  Plugin</h2></center><img src=https://imgdb.net/images/3203.jpg /><br
 lang: en
 date: 2017-11-11T23:34:00.000+07:00
 type: post

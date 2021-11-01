@@ -2,7 +2,7 @@
 title: An alternative way to resolve the submit button is not working or return
   to home
 webtitle: WMI Gitlab
-subtitle: AdSense brings me back to the beginning every time I click \'Submit\' .
+subtitle: AdSense brings me back to the beginning every time I click Submit .
 lang: en
 date: 2017-07-23T06:56:00.000+07:00
 type: post

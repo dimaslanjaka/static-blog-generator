@@ -1,7 +1,7 @@
 ---
 title: Parsing HTML untuk menemukan Links
 webtitle: WMI Gitlab
-subtitle: /<a href=\\\"([^\\\"]*)\\\">(.*)<\\/a>/iU
+subtitle: /<a href=\([^\]*)\>(.*)<\/a>/iU
 lang: en
 date: 2017-08-20T18:32:00.000+07:00
 type: post

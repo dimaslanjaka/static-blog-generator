@@ -2,7 +2,7 @@
 title: Lazy load images blogger
 webtitle: WMI Gitlab
 subtitle: "Lazy load images bloggerlazy loading blogger berguna untuk :
-  Mempercepat laman webMeningkatkan rating pagespeedHTML (Usage)<img alt=\\'\\'"
+  Mempercepat laman webMeningkatkan rating pagespeedHTML (Usage)<img alt="
 lang: en
 date: 2019-08-01T00:05:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: How to Fix Structured Data Errors in Blogger
 webtitle: WMI Gitlab
-subtitle: "How to Fix Structured Data Errors in Blogger: 100\\% Fix Use Schema
+subtitle: "How to Fix Structured Data Errors in Blogger: 100% Fix Use Schema
   Markup - Boost Your SEO Be it Google or the"
 lang: en
 date: 2017-05-07T13:05:00.000+07:00

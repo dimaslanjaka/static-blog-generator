@@ -2,7 +2,7 @@
 title: Buff Topping Pizza Durango Wild Lands
 webtitle: WMI Gitlab
 subtitle: Ulat, Lebah = Buff WIL Tomat = Buff Memasak Bawang = Pengumpulan
-  Tumbuhan Pisang = Produksi Tangan<div class=\"blogger-post-footer\">Article
+  Tumbuhan Pisang = Produksi Tangan<div class=blogger-post-footer>Article
 lang: en
 date: 2018-07-14T21:39:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Expandable Search box Using CSS LESS Processor
 webtitle: WMI Gitlab
-subtitle: "Here the code: <!DOCTYPE html><html class=\\'\\'><head><script"
+subtitle: "Here the code: <!DOCTYPE html><html class=><head><script"
 lang: en
 date: 2017-04-20T11:59:00.000+07:00
 type: post

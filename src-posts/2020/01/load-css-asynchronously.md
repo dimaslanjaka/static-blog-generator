@@ -1,7 +1,7 @@
 ---
 title: Load CSS Asynchronously
 webtitle: WMI Gitlab
-subtitle: <h1 itemprop=\"headline name\" class=\"text-center\">Load CSS
+subtitle: <h1 itemprop=headline name class=text-center>Load CSS
   Asynchronously</h1> <script
 lang: en
 date: 2020-01-21T00:39:00.001+07:00

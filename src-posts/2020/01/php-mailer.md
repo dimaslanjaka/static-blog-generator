@@ -2,8 +2,8 @@
 title: PHP Mailer work with AJAX
 webtitle: WMI Gitlab
 subtitle: "Basic Mailer basic php mailer php
-  <?phpheader(\\'Access-Control-Allow-Origin: *\\');header(\\'Content-Type:
-  application/json\\');/* *"
+  <?phpheader(Access-Control-Allow-Origin: *);header(Content-Type:
+  application/json);/* *"
 lang: en
 date: 2020-01-07T01:43:00.000+07:00
 type: post

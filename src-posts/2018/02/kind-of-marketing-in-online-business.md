@@ -1,8 +1,8 @@
 ---
 title: Kind of marketing in online business
 webtitle: WMI Gitlab
-subtitle: <img border=\"0\" src=\"https://imgdb.net/images/3610.jpg\" />The
-  ultimate goal of all <b>Marketing</b> efforts is the creation of sales and
+subtitle: <img border=0 src=https://imgdb.net/images/3610.jpg />The ultimate
+  goal of all <b>Marketing</b> efforts is the creation of sales and
 lang: en
 date: 2018-02-14T02:58:00.000+07:00
 type: post

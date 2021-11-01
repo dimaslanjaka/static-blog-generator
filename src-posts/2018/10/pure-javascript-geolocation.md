@@ -2,8 +2,8 @@
 title: Pure Javascript Geolocation
 webtitle: WMI Gitlab
 subtitle: <img
-  src=\"https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg\"
-  class=\"w3-image\" title=\"JS Geolocation\"
+  src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg
+  class=w3-image title=JS Geolocation
 lang: en
 date: 2018-10-31T03:13:00.001+07:00
 type: post
