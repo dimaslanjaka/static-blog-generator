@@ -1,7 +1,3 @@
 [submodule "packages/hexo-blogger-xml"]
 	path = packages/hexo-blogger-xml
 	url = https://github.com/dimaslanjaka/hexo-blogger-xml.git
-[submodule "packages/hexo-blogger-xml/site"]
-	path = packages/hexo-blogger-xml/site
-	url = https://github.com/dimaslanjaka/site.git
-	update = none
