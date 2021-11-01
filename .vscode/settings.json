@@ -3,6 +3,8 @@
     "Agustina",
     "Beaucachu",
     "Dimas",
+    "dimaslanjaka",
+    "webmanajemen",
     "Gitlab",
     "Goldbach",
     "Hexo",
@@ -26,5 +28,9 @@
     "tlon",
     "youtube"
   ],
-  "files.autoSave": "onWindowChange"
+  "files.autoSave": "onWindowChange",
+  "typescript.tsc.autoDetect": "off",
+  "gulptasks.pattern": "**/gulpfile.ts",
+  "gulptasks.args": ["-r", "ts-node/register"],
+  "gulptasks.filters": ["!**/node_modules/**", "!**/bower_components/**", "!**/packages/**", "!**/themes/**"]
 }

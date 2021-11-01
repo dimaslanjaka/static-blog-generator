@@ -126,6 +126,7 @@ gulp.task("article:clean", function (done) {
   done();
 });
 
+// gulp blogger --production
 gulp.task("blogger", function (done) {
   // eslint-disable-next-line no-unused-vars
   const mainXML = path.resolve("userscripts/xml/webmanajemen.com.xml");
