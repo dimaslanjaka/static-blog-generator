@@ -13,9 +13,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          repository: dimaslanjaka/hexo-blogger-xml
-          path: packages/hexo-blogger-xml
-          ref: "master"
+          #repository: dimaslanjaka/hexo-blogger-xml
+          #path: packages/hexo-blogger-xml
+          #ref: "master"
         #with:
         #submodules: recursive
       - name: Use Node.js 12.x
@@ -55,7 +55,7 @@ jobs:
       #- name: Copying Blogger Article
         #run: npx gulp blogger --production
       - name: Copying Blogger Local
-        run: npx gulp article:copy --production
+        run: npx gulp article:copy
       - name: Hexo Generate
         run: npx hexo generate
       - name: install page
