@@ -1,8 +1,8 @@
 ---
 title: 45 Posting Facebook Gagasan Yang Menghasilkan Keterlibatan Tinggi
 webtitle: WMI Gitlab
-subtitle: 45 Facebook Post Ideas That Generate High Engagement  Kehabisan ide
-  posting Facebook untuk halaman Anda?   Posting Facebook sama dengan
+subtitle: 45 Facebook Post Ideas That Generate High Engagement Kehabisan ide
+  posting Facebook untuk halaman Anda? Posting Facebook sama dengan
 lang: en
 date: 2019-12-07T04:11:00.001+07:00
 type: post

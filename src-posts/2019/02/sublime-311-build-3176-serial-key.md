@@ -2,7 +2,7 @@
 title: Sublime 3.1.1 Build 3176  Serial key
 webtitle: WMI Gitlab
 subtitle: <pre><br />## Sublime Text 3 Serial key build is 3176<br /><br
-  />&#x3E; * Added these lines into  /etc/hosts <br /><br />127.0.0.1
+  />&#x3E; * Added these lines into /etc/hosts <br /><br />127.0.0.1
 lang: en
 date: 2019-02-06T10:10:00.000+07:00
 type: post

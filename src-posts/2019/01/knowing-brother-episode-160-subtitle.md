@@ -1,9 +1,8 @@
 ---
 title: Knowing Brother Episode 160 Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: Synopsis of Variety Show Knowing Brother Indonesian
-  Subtitles     Knowing Brother is a South Korean television entertainment
-  program
+subtitle: Synopsis of Variety Show Knowing Brother Indonesian Subtitles Knowing
+  Brother is a South Korean television entertainment program
 lang: en
 date: 2019-01-07T18:13:00.000+07:00
 type: post

@@ -2,7 +2,7 @@
 title: How to Remove a URL ERROR Automatically on blogger
 webtitle: WMI Gitlab
 subtitle: How to Remove a URL ERROR Blog Automatically you may never
-  experiencing an error in the blog url that many hundreds. to  see it, we can
+  experiencing an error in the blog url that many hundreds. to see it, we can
 lang: en
 date: 2017-04-25T16:12:00.000+07:00
 type: post

@@ -1,9 +1,8 @@
 ---
 title: Download lagu Tompi - L.O.V.E Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Tompi - L.O.V.E Mp3  Tompi - LOVE   Listen:
-  216,545   Duration: 181   MP3 size: 2.83MB   Download Links   Download Mp3
-  Server"
+subtitle: "Download lagu Tompi - L.O.V.E Mp3 Tompi - LOVE Listen: 216,545
+  Duration: 181 MP3 size: 2.83MB Download Links Download Mp3 Server"
 lang: en
 date: 2019-12-02T07:08:00.001+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: File Kecantikan Merek Bab 11
 webtitle: WMI Gitlab
-subtitle: "Menyelam singkat:       Pada hari Minggu, Beauty Brands, peritel
-  Kansas City, Missouri, mengajukan perlindungan kebangkrutan Bab"
+subtitle: "Menyelam singkat: Pada hari Minggu, Beauty Brands, peritel Kansas
+  City, Missouri, mengajukan perlindungan kebangkrutan Bab"
 lang: en
 date: 2019-01-24T00:23:00.000+07:00
 type: post

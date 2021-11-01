@@ -2,7 +2,7 @@
 title: Film of Love Letter for Starla The Movie (2017) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
 subtitle: Watch a Love Letter Film For Starla The Movie (2017) Indonesian
-  Subtitles - Hema loves nature so much.  He wrote love letter to
+  Subtitles - Hema loves nature so much. He wrote love letter to
 lang: en
 date: 2019-01-27T00:42:00.000+07:00
 type: post

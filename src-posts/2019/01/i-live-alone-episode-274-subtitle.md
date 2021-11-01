@@ -1,8 +1,8 @@
 ---
 title: I Live Alone Episode 274 Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: I Live Alone     I Live Alone is recognized as one of the
-  \"Real-Variety\" shows in Korean television.  The program is unscripted using
+subtitle: I Live Alone I Live Alone is recognized as one of the \"Real-Variety\"
+  shows in Korean television. The program is unscripted using
 lang: en
 date: 2019-01-05T18:37:00.000+07:00
 type: post

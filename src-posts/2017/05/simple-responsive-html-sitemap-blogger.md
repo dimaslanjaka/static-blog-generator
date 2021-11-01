@@ -2,7 +2,7 @@
 title: Simple Responsive HTML Sitemap Blogger
 webtitle: WMI Gitlab
 subtitle: Today i want to share an simple codes for creating \'Simple Responsive
-  HTML Sitemap\'.CSS#show-cat{float:left;margin:20px 5% 20px
+  HTML Sitemap\'.CSS#show-cat{float:left;margin:20px 5\% 20px
 lang: en
 date: 2017-05-03T22:21:00.000+07:00
 type: post

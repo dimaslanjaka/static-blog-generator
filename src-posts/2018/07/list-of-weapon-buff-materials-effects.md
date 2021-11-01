@@ -1,8 +1,8 @@
 ---
 title: List of weapon buff materials, effects and how it can be durango wild lands
 webtitle: WMI Gitlab
-subtitle: Weapons are one of the most important elements in durango
-  games,         whatever we do in the game definitely requires
+subtitle: Weapons are one of the most important elements in durango games,
+  whatever we do in the game definitely requires
 lang: en
 date: 2018-07-07T22:55:00.000+07:00
 type: post

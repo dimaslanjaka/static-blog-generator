@@ -1,7 +1,7 @@
 ---
 title: Related Post Blogger Support WEBP
 webtitle: WMI Gitlab
-subtitle: Related Post Blogger Support WEBP  Related Blogger Post Support WEBP -
+subtitle: Related Post Blogger Support WEBP Related Blogger Post Support WEBP -
   After the previous post we got a solution for Blogger thumbnails to
 lang: en
 date: 2019-12-22T03:14:00.000+07:00

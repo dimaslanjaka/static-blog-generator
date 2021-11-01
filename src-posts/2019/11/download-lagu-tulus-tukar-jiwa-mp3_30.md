@@ -1,8 +1,8 @@
 ---
 title: Download lagu TULUS - Tukar Jiwa Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu TULUS - Tukar Jiwa Mp3  SINCERELY - Soul Swap   Listen:
-  8,424,327   Duration: 232   MP3 size: 3.63MB   Download Links"
+subtitle: "Download lagu TULUS - Tukar Jiwa Mp3 SINCERELY - Soul Swap Listen:
+  8,424,327 Duration: 232 MP3 size: 3.63MB Download Links"
 lang: en
 date: 2019-11-30T22:32:00.000+07:00
 type: post

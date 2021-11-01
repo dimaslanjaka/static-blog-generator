@@ -1,8 +1,8 @@
 ---
 title: Cara Membatalkan Akun Facebook dari Aplikasi Apa Pun
 webtitle: WMI Gitlab
-subtitle: Munculnya aplikasi telah mendorong pengembang untuk
-  memastikan     kesinambungan penggunaan aplikasi terlepas dari platform atau
+subtitle: Munculnya aplikasi telah mendorong pengembang untuk memastikan
+  kesinambungan penggunaan aplikasi terlepas dari platform atau
 lang: en
 date: 2018-11-07T23:49:00.000+07:00
 type: post

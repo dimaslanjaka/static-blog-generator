@@ -1,8 +1,8 @@
 ---
 title: Mencegah Pengguna Menginstal Aplikasi UI Modern
 webtitle: WMI Gitlab
-subtitle: Windows Store adalah tempat yang tepat untuk menemukan dan
-  menginstal     aplikasi, namun dalam situasi tertentu Anda sebagai orang tua
+subtitle: Windows Store adalah tempat yang tepat untuk menemukan dan menginstal
+  aplikasi, namun dalam situasi tertentu Anda sebagai orang tua
 lang: en
 date: 2017-10-18T00:51:00.000+07:00
 type: post

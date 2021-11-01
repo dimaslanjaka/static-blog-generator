@@ -2,7 +2,7 @@
 title: Cara Menambahkan Komentar Facebook Di Wordpress Tanpa Plugin
 webtitle: WMI Gitlab
 subtitle: Cara menambah komentar facebook di wordpress tanpa plugin. Anda dapat
-  terus menggunakan        Plugin Facebook resmi untuk WordPress
+  terus menggunakan Plugin Facebook resmi untuk WordPress
 lang: en
 date: 2017-04-14T01:53:00.000+07:00
 type: post

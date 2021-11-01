@@ -1,7 +1,7 @@
 ---
 title: Download Drama Korea Priest Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: Download Korean Drama Priest Indonesian Subtitles     Oh Soo-Min (Yeon
+subtitle: Download Korean Drama Priest Indonesian Subtitles Oh Soo-Min (Yeon
   Woo-Jin) is a young Catholic priest who is devoted, full of
 lang: en
 date: 2019-01-01T01:54:00.000+07:00

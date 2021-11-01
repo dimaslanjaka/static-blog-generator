@@ -1,8 +1,8 @@
 ---
 title: Can OnePlus 6 be called a Flagship Killer?
 webtitle: WMI Gitlab
-subtitle: Can OnePlus 6 be called a Flagship Killer?       Digital Mobile Phones
-  - After many rumors about this smartphone, OnePlus 6 was finally
+subtitle: Can OnePlus 6 be called a Flagship Killer? Digital Mobile Phones -
+  After many rumors about this smartphone, OnePlus 6 was finally
 lang: en
 date: 2018-11-30T18:06:00.000+07:00
 type: post

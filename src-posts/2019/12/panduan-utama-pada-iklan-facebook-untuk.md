@@ -1,7 +1,7 @@
 ---
 title: Panduan Utama Pada Iklan Facebook Untuk Pengusaha
 webtitle: WMI Gitlab
-subtitle: Ultimate Guide On Facebook Ads For Entrepreneurs  Iklan Facebook untuk
+subtitle: Ultimate Guide On Facebook Ads For Entrepreneurs Iklan Facebook untuk
   wirausahawan mungkin menjadi solusi untuk masalah pemasaran bisnis
 lang: en
 date: 2019-12-13T10:19:00.000+07:00

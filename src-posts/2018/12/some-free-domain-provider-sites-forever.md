@@ -1,8 +1,8 @@
 ---
 title: Some free domain provider sites forever
 webtitle: WMI Gitlab
-subtitle: Some free domain provider sites forever                Be a useful
-  human being.                Keep sharing, What you
+subtitle: Some free domain provider sites forever Be a useful human being. Keep
+  sharing, What you
 lang: en
 date: 2018-12-19T17:40:00.000+07:00
 type: post

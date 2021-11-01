@@ -2,7 +2,7 @@
 title: How to Make HTML Without Text Format (pre tags and tag code)
 webtitle: WMI Gitlab
 subtitle: "Text HTML Tutorial Part 8: How to Make HTML Without Text Format (pre
-  tags     and tag code) In the HTML, to display the text in order"
+  tags and tag code) In the HTML, to display the text in order"
 lang: en
 date: 2017-04-30T10:24:00.000+07:00
 type: post

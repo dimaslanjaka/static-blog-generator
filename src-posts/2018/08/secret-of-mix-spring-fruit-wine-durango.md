@@ -2,7 +2,7 @@
 title: Secret of Mix Spring Fruit Wine Durango wild Lands
 webtitle: WMI Gitlab
 subtitle: Spring Fruit Wine is a cooking skill which has the biggest effect
-  among     other dishes, even though having the biggest buff, this mix
+  among other dishes, even though having the biggest buff, this mix
 lang: en
 date: 2018-08-20T10:35:00.000+07:00
 type: post

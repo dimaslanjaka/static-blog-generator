@@ -1,8 +1,8 @@
 ---
 title: Disable Mouse Dragging CSS JS
 webtitle: WMI Gitlab
-subtitle: "CSS<style>    body {      -webkit-touch-callout:
-  none;      -webkit-user-select: none;      -khtml-user-select: none;"
+subtitle: "CSS<style> body { -webkit-touch-callout: none; -webkit-user-select:
+  none; -khtml-user-select: none;"
 lang: en
 date: 2019-09-22T10:13:00.000+07:00
 type: post

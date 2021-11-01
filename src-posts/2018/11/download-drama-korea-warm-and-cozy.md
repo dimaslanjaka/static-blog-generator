@@ -1,8 +1,8 @@
 ---
 title: Download Drama Korea Warm And Cozy Subtitle Indonesia 1 - 16(end)
 webtitle: WMI Gitlab
-subtitle: "Korean Drama Warm and Cozy Indonesian Subtitles   Synopsis Warm and
-  Cozy:  The Korean drama Warm and Cozy Sub Indo tells the story of a"
+subtitle: "Korean Drama Warm and Cozy Indonesian Subtitles Synopsis Warm and
+  Cozy: The Korean drama Warm and Cozy Sub Indo tells the story of a"
 lang: en
 date: 2018-11-15T07:41:00.000+07:00
 type: post

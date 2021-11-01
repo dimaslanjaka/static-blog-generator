@@ -2,7 +2,7 @@
 title: Mengatasi XAMMP mysql table db error must be repaired
 webtitle: WMI Gitlab
 subtitle: "Mengatasi XAMMP mysql table db error must be repaired (WINDOWS
-  7,8,10)         Buka CMD    Ketik Command berikut (satu per satu):"
+  7,8,10) Buka CMD Ketik Command berikut (satu per satu):"
 lang: en
 date: 2019-12-11T23:19:00.001+07:00
 type: post

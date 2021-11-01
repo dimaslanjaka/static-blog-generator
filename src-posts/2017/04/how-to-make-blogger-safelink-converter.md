@@ -1,7 +1,7 @@
 ---
 title: How to Make Blogger Safelink Converter v3
 webtitle: WMI Gitlab
-subtitle: How to Make Blogger Safelink Converter v3     Understanding What is
+subtitle: How to Make Blogger Safelink Converter v3 Understanding What is
   Safelink on blogger or wordpress ?Safelink is one option blogs
 lang: en
 date: 2017-04-10T15:55:00.000+07:00

@@ -1,8 +1,8 @@
 ---
 title: Download Drama Korea Fates And Furies Subtitle Indonesia Episode 15 - 16
 webtitle: WMI Gitlab
-subtitle: "Korean Drama Fates and Furies Indonesian Subtitles   Synopsis of
-  Fates and Furies:     The Korean drama Fates and Furies Sub Indo tells"
+subtitle: "Korean Drama Fates and Furies Indonesian Subtitles Synopsis of Fates
+  and Furies: The Korean drama Fates and Furies Sub Indo tells"
 lang: en
 date: 2019-01-09T10:18:00.000+07:00
 type: post

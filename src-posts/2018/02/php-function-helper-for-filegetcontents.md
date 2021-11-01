@@ -1,8 +1,8 @@
 ---
 title: "[PHP] Function Helper For file_get_contents()"
 webtitle: WMI Gitlab
-subtitle: "Description Of file_get_contents     Source Description:
-  PHP.NET            (PHP 4 >= 4.3.0, PHP 5, PHP 7)"
+subtitle: "Description Of file_get_contents Source Description: PHP.NET (PHP 4
+  >= 4.3.0, PHP 5, PHP 7)"
 lang: en
 date: 2018-02-21T21:16:00.001+07:00
 type: post

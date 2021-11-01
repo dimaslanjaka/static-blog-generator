@@ -1,8 +1,8 @@
 ---
 title: Fix apache wont run on android
 webtitle: WMI Gitlab
-subtitle: Previous Install XAMPP apache on android termux  Fix error starting
-  apache on android        Open httpd.conf      nano
+subtitle: Previous Install XAMPP apache on android termux Fix error starting
+  apache on android Open httpd.conf nano
 lang: en
 date: 2021-06-03T06:00:00.002+07:00
 type: post

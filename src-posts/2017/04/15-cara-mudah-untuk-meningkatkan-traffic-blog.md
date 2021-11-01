@@ -1,8 +1,8 @@
 ---
 title: 15 Cara Mudah Untuk Meningkatkan Traffic Blog Anda
 webtitle: WMI Gitlab
-subtitle: 15 Cara Mudah Untuk Meningkatkan Traffic Blog Anda.          Sebagian
-  besar dari Anda mungkin tahu bahwa lalu lintas merupakan    salah
+subtitle: 15 Cara Mudah Untuk Meningkatkan Traffic Blog Anda. Sebagian besar
+  dari Anda mungkin tahu bahwa lalu lintas merupakan salah
 lang: en
 date: 2017-04-17T07:13:00.000+07:00
 type: post

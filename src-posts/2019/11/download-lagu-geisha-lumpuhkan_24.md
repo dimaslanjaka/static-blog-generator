@@ -1,8 +1,8 @@
 ---
 title: Download lagu GEISHA - Lumpuhkan Ingatanku Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu GEISHA - Lumpuhkan Ingatanku Mp3  GEISHA - Cripple my
-  memory   Listen: 82,901,793   Duration: 289   MP3 size: 4.52MB"
+subtitle: "Download lagu GEISHA - Lumpuhkan Ingatanku Mp3 GEISHA - Cripple my
+  memory Listen: 82,901,793 Duration: 289 MP3 size: 4.52MB"
 lang: en
 date: 2019-11-24T21:34:00.001+07:00
 type: post

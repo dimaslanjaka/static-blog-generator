@@ -1,8 +1,8 @@
 ---
 title: Cara Membuat Jalan pintas untuk Aplikasi UI Modern di Windows 8.1
 webtitle: WMI Gitlab
-subtitle: Anda perlu menentukan nama dan ikon untuk pintasan aplikasi
-  Modern         karena nilai tersebut tidak diambil langsung dari folder
+subtitle: Anda perlu menentukan nama dan ikon untuk pintasan aplikasi Modern
+  karena nilai tersebut tidak diambil langsung dari folder
 lang: en
 date: 2017-10-15T00:42:00.000+07:00
 type: post

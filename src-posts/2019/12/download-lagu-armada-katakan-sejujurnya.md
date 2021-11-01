@@ -1,8 +1,8 @@
 ---
 title: Download lagu Armada - Katakan Sejujurnya Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Armada - Katakan Sejujurnya Mp3  Fleet - Tell the
-  Truth   Listen: 2,712,275   Duration: 237   MP3 size: 3.7MB   Download"
+subtitle: "Download lagu Armada - Katakan Sejujurnya Mp3 Fleet - Tell the Truth
+  Listen: 2,712,275 Duration: 237 MP3 size: 3.7MB Download"
 lang: en
 date: 2019-12-04T13:10:00.001+07:00
 type: post

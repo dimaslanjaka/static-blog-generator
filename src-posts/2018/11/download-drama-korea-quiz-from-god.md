@@ -1,8 +1,8 @@
 ---
 title: "Download Drama Korea Quiz from God: Reboot Subtitle Indonesia"
 webtitle: WMI Gitlab
-subtitle: "Download Korean Drama Quiz from God: Reboot Indonesian
-  Subtitles  Quiz from God: Reboot is a drama about elite doctors and forensic"
+subtitle: "Download Korean Drama Quiz from God: Reboot Indonesian Subtitles Quiz
+  from God: Reboot is a drama about elite doctors and forensic"
 lang: en
 date: 2018-11-15T06:37:00.000+07:00
 type: post

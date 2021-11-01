@@ -1,8 +1,8 @@
 ---
 title: Download lagu Armand Maulana & Dewi Gita - Seperti Legenda Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Armand Maulana & Dewi Gita - Seperti Legenda
-  Mp3  Armand Maulana & Dewi Gita - Like a Legend   Listen: 386,307   Duration:"
+subtitle: "Download lagu Armand Maulana & Dewi Gita - Seperti Legenda Mp3 Armand
+  Maulana & Dewi Gita - Like a Legend Listen: 386,307 Duration:"
 lang: en
 date: 2019-12-04T16:58:00.001+07:00
 type: post

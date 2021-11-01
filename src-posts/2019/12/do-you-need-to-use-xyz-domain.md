@@ -1,8 +1,8 @@
 ---
 title: Do You Need to Use an XYZ Domain?
 webtitle: WMI Gitlab
-subtitle: Perlukah Kamu Menggunakan Domain XYZ?    Have you ever heard of the
-  XYZ domain name?  Some of you may be unfamiliar or have never even
+subtitle: Perlukah Kamu Menggunakan Domain XYZ? Have you ever heard of the XYZ
+  domain name? Some of you may be unfamiliar or have never even
 lang: en
 date: 2019-12-16T10:28:00.000+07:00
 type: post

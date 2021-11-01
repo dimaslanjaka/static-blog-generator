@@ -1,8 +1,8 @@
 ---
 title: Install PHP for Android (CLI or Web Server)
 webtitle: WMI Gitlab
-subtitle: Official php5-cli installation on android by L3n4r0x (php Running
-  On     Android Terminal) -> This Repost From My Another Blogs <-
+subtitle: Official php5-cli installation on android by L3n4r0x (php Running On
+  Android Terminal) -> This Repost From My Another Blogs <-
 lang: en
 date: 2017-04-09T13:26:00.001+07:00
 type: post

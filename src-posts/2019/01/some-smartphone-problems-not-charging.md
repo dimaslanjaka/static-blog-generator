@@ -1,8 +1,8 @@
 ---
 title: Some Smartphone Problems Not Charging And How To Overcome It
 webtitle: WMI Gitlab
-subtitle: Some Smartphone Problems Not Charging And How To Overcome
-  It       Digital Mobile Phones - As we know that life in this millennial era,
+subtitle: Some Smartphone Problems Not Charging And How To Overcome It Digital
+  Mobile Phones - As we know that life in this millennial era,
 lang: en
 date: 2019-01-13T11:51:00.000+07:00
 type: post

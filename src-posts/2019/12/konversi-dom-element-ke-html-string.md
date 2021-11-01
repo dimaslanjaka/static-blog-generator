@@ -1,11 +1,8 @@
 ---
 title: Konversi DOM element ke HTML string
 webtitle: WMI Gitlab
-subtitle: |-
-  Mengubah dom document sebuah elemen kedalam HTMl string biasa
-  <div id=\"elemenTersedia\"></div>
-  <script>
-  function
+subtitle: Mengubah dom document sebuah elemen kedalam HTMl string biasa\n<div
+  id=\"elemenTersedia\"></div>\n<script>\nfunction
 lang: en
 date: 2019-12-28T11:49:00.001+07:00
 type: post

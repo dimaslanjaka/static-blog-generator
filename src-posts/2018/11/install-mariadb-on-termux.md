@@ -1,8 +1,8 @@
 ---
 title: Install MariaDB on Termux
 webtitle: WMI Gitlab
-subtitle: Install MariaDB on Termux  as in my previous article about termux, (
-  Termux, a Linux in Android ).  Termux is a Linux system that uses
+subtitle: Install MariaDB on Termux as in my previous article about termux, (
+  Termux, a Linux in Android ). Termux is a Linux system that uses
 lang: en
 date: 2018-11-13T07:53:00.000+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: How to Create Social Share Buttons Without Javascript
 webtitle: WMI Gitlab
-subtitle: If you feel loading a blog a bit heavy or slow, one of the causes
-  is         the presence of javascript. Maybe one of them is
+subtitle: If you feel loading a blog a bit heavy or slow, one of the causes is
+  the presence of javascript. Maybe one of them is
 lang: en
 date: 2017-08-27T07:15:00.000+07:00
 type: post

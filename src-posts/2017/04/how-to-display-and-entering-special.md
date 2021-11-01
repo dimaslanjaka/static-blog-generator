@@ -1,8 +1,8 @@
 ---
 title: How to Display and Entering Special Characters in HTML
 webtitle: WMI Gitlab
-subtitle: "Text HTML Tutorial Part 11: How to Display and Entering
-  Special         Characters in HTMLIn addition to alphanumeric"
+subtitle: "Text HTML Tutorial Part 11: How to Display and Entering Special
+  Characters in HTMLIn addition to alphanumeric"
 lang: en
 date: 2017-04-29T10:33:00.000+07:00
 type: post

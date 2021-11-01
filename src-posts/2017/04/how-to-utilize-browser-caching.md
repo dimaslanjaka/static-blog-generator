@@ -2,7 +2,7 @@
 title: How to Utilize Browser Caching
 webtitle: WMI Gitlab
 subtitle: How to Utilize Browser Caching To increase page loading and rendering
-  speed up the blog, a method is         to use browser caching.
+  speed up the blog, a method is to use browser caching.
 lang: en
 date: 2017-04-25T18:24:00.000+07:00
 type: post

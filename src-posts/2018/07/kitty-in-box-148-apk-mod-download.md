@@ -1,8 +1,8 @@
 ---
 title: Kitty in the Box 1.4.8 Apk Mod Download
 webtitle: WMI Gitlab
-subtitle: Unduh langsung gratis versi terakhir             Kitty in the
-  Box         Apk Android dari Rexdl. Beberapa kucing dilahirkan siap
+subtitle: Unduh langsung gratis versi terakhir Kitty in the Box Apk Android dari
+  Rexdl. Beberapa kucing dilahirkan siap
 lang: en
 date: 2018-07-31T02:24:00.004+07:00
 type: post

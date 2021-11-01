@@ -1,9 +1,8 @@
 ---
 title: Download Drama Korea Feel Good To Die Episode 29-30 Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: Download Korean Drama Feel Good To Die Indonesian
-  Subtitles     Download Korean Drama Feel Good To Die Indonesian Subtitles -
-  Lee
+subtitle: Download Korean Drama Feel Good To Die Indonesian Subtitles Download
+  Korean Drama Feel Good To Die Indonesian Subtitles - Lee
 lang: en
 date: 2019-01-04T01:53:00.000+07:00
 type: post

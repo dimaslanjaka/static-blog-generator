@@ -1,8 +1,8 @@
 ---
 title: Download lagu GIGI - Mohon Ampun Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu GIGI - Mohon Ampun Mp3  DENTAL - Please
-  forgive   Listen: 19,242   Duration: 282   MP3 size: 4.41MB   Download Links"
+subtitle: "Download lagu GIGI - Mohon Ampun Mp3 DENTAL - Please forgive Listen:
+  19,242 Duration: 282 MP3 size: 4.41MB Download Links"
 lang: en
 date: 2019-12-04T16:32:00.001+07:00
 type: post

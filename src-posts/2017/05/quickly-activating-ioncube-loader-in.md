@@ -2,7 +2,7 @@
 title: Quickly Activating IONCUBE Loader In CPANEL
 webtitle: WMI Gitlab
 subtitle: Constrained in themes wordpress at the time of installation in self
-  hosting     for beginners like ane feel confused, gaptek dll. Let alone
+  hosting for beginners like ane feel confused, gaptek dll. Let alone
 lang: en
 date: 2017-05-16T19:52:00.001+07:00
 type: post

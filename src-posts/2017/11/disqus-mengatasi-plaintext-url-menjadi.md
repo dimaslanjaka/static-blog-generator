@@ -2,7 +2,7 @@
 title: "[DISQUS] Mengatasi Plaintext URL Menjadi Link Hidup Otomatis"
 webtitle: WMI Gitlab
 subtitle: Disqus merupakan sebuah layanan komentar di dunia maya yang bisa di
-  pakai     dalam berbagai situs populer, seperti blog WordPress,
+  pakai dalam berbagai situs populer, seperti blog WordPress,
 lang: en
 date: 2017-11-12T08:01:00.000+07:00
 type: post

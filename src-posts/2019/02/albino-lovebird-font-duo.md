@@ -1,8 +1,8 @@
 ---
 title: Albino Lovebird Font Duo
 webtitle: WMI Gitlab
-subtitle: Albino Lovebird Font Duo    Unduh     Sumber daya ini berasal dari
-  situs web lain dan kami tidak dapat mengkonfirmasi keabsahannya.
+subtitle: Albino Lovebird Font Duo Unduh Sumber daya ini berasal dari situs web
+  lain dan kami tidak dapat mengkonfirmasi keabsahannya.
 lang: en
 date: 2019-02-21T00:38:00.000+07:00
 type: post

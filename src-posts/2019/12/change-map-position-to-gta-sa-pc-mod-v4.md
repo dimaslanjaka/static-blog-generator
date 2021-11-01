@@ -1,8 +1,8 @@
 ---
 title: Change Map Position to GTA SA PC Mod V4 Download
 webtitle: WMI Gitlab
-subtitle: Change Map Position to GTA SA PC Mod V4 Download    Jika Anda ingin
-  mengubah posisi radar di GTA San Andreas Mobile, instal mod ini.  Mod
+subtitle: Change Map Position to GTA SA PC Mod V4 Download Jika Anda ingin
+  mengubah posisi radar di GTA San Andreas Mobile, instal mod ini. Mod
 lang: en
 date: 2019-12-07T00:55:00.000+07:00
 type: post

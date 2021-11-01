@@ -2,8 +2,7 @@
 title: Access XAMPP (Apache + MySQL) via Android Smartphone
 webtitle: WMI Gitlab
 subtitle: <br /><br /><figure><img class=\"center w3-center\"
-  src=\"https://imgdb.net/images/3200.jpg\" /><br
-  />    <figcaption>        XAMPP is a
+  src=\"https://imgdb.net/images/3200.jpg\" /><br /> <figcaption> XAMPP is a
 lang: en
 date: 2017-10-06T01:07:00.000+07:00
 type: post

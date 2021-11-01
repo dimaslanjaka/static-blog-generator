@@ -2,7 +2,7 @@
 title: How to Get Free NET Domain September 2017
 webtitle: WMI Gitlab
 subtitle: How to Obtain Free Domain NET September 2017 - Assalamualaikum Dear
-  Friend, Hope     we are in good health and in his protection.So long
+  Friend, Hope we are in good health and in his protection.So long
 lang: en
 date: 2017-09-25T23:55:00.000+07:00
 type: post

@@ -1,9 +1,8 @@
 ---
 title: Apa Pemasaran Smb & 10 Strategi Terbukti Yang Sebenarnya Bekerja
 webtitle: WMI Gitlab
-subtitle: What Is Smb Marketing & 10 Proven Strategies That Actually
-  Work  Apakah Anda menerapkan strategi pemasaran SMB untuk bisnis
-  Anda?   Bisnis
+subtitle: What Is Smb Marketing & 10 Proven Strategies That Actually Work Apakah
+  Anda menerapkan strategi pemasaran SMB untuk bisnis Anda? Bisnis
 lang: en
 date: 2019-12-08T02:55:00.000+07:00
 type: post

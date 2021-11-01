@@ -1,8 +1,8 @@
 ---
 title: It Will Happen If You Do Not Update Blog More Than 1 Month
 webtitle: WMI Gitlab
-subtitle: Not continually all the items we wish are done, we have a
-  tendency     similarly as we attempt to continually produce articles daily to
+subtitle: Not continually all the items we wish are done, we have a tendency
+  similarly as we attempt to continually produce articles daily to
 lang: en
 date: 2017-05-08T23:18:00.000+07:00
 type: post

@@ -1,9 +1,8 @@
 ---
 title: Download Drama Korea A Pledge To God Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: Download Korean Drama A Pledge To God Indonesian
-  Subtitles     Ji-Young (Han Chae-Young) works as a broadcaster and she is
-  married to
+subtitle: Download Korean Drama A Pledge To God Indonesian Subtitles Ji-Young
+  (Han Chae-Young) works as a broadcaster and she is married to
 lang: en
 date: 2019-01-06T18:38:00.000+07:00
 type: post

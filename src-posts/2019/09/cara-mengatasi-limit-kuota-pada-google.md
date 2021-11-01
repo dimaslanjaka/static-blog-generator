@@ -2,7 +2,7 @@
 title: How to Overcome Quota Limits on Google Drive
 webtitle: WMI Gitlab
 subtitle: Full download server is the desire of many people, especially the
-  downloader mania, hehe.  Well, Google Drive is a server that supports
+  downloader mania, hehe. Well, Google Drive is a server that supports
 lang: en
 date: 2019-09-28T17:56:00.000+07:00
 type: post

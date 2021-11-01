@@ -2,7 +2,7 @@
 title: Remove index.php?route= from opencart
 webtitle: WMI Gitlab
 subtitle: I Also have the same problem and any that I found not solved my
-  problem. But!     I remember that I also working with Laravel and in
+  problem. But! I remember that I also working with Laravel and in
 lang: en
 date: 2019-09-27T13:13:00.001+07:00
 type: post

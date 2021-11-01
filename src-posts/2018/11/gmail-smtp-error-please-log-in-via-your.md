@@ -1,7 +1,7 @@
 ---
 title: Gmail SMTP error please log in via your web browser
 webtitle: WMI Gitlab
-subtitle: "You having problems with gmail smtp server. Like this  Gmail SMTP
+subtitle: "You having problems with gmail smtp server. Like this Gmail SMTP
   error please log in via your web browser , Then Goggle says: Please log"
 lang: en
 date: 2018-11-10T05:21:00.000+07:00

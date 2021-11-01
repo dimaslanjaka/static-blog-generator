@@ -1,8 +1,8 @@
 ---
 title: Toyota Chaser Tourer V JZX100 Tuned + DFF Only Mobile
 webtitle: WMI Gitlab
-subtitle: Toyota Chaser Tourer V JZX100 Tuned + DFF Only Mobile      Dengan
-  banyak mod mobil saya akan menambahkan mod mobil hebat lainnya di basis
+subtitle: Toyota Chaser Tourer V JZX100 Tuned + DFF Only Mobile Dengan banyak
+  mod mobil saya akan menambahkan mod mobil hebat lainnya di basis
 lang: en
 date: 2019-12-05T00:44:00.000+07:00
 type: post

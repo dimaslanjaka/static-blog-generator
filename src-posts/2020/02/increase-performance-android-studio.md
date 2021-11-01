@@ -1,8 +1,7 @@
 ---
 title: Increase Performance Android Studio
 webtitle: WMI Gitlab
-subtitle: "You can speed up your Eclipse or Android Studio work, you just
-  follow   these:"
+subtitle: "You can speed up your Eclipse or Android Studio work, you just follow these:"
 lang: en
 date: 2020-02-25T05:25:00.001+07:00
 type: post

@@ -1,9 +1,8 @@
 ---
 title: Tether VPN Android
 webtitle: WMI Gitlab
-subtitle: How to tethering vpn on android        ROOT is
-  required      Requirement          Terminal
-  Emulator        Tutorial          Start your
+subtitle: How to tethering vpn on android ROOT is required Requirement Terminal
+  Emulator Tutorial Start your
 lang: en
 date: 2020-01-31T00:36:00.001+07:00
 type: post

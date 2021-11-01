@@ -3,7 +3,7 @@ title: download lagu selama matahari terbit dari timur, cinta ku padamu takan
   pernah luntur.mp3
 webtitle: WMI Gitlab
 subtitle: "Download Lagu Mp3 Selama matahari terbit dari timur, Cinta ku padamu
-  takan pernah luntur.mp3 Gratis              Size :"
+  takan pernah luntur.mp3 Gratis Size :"
 lang: en
 date: 2018-11-08T05:07:00.001+07:00
 type: post

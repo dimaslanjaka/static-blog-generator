@@ -1,8 +1,8 @@
 ---
 title: Penulisan Symbol HTML Entities
 webtitle: WMI Gitlab
-subtitle: <h2>ASCII simbol</h2><table>    <thead>        <tr>            <th
-  nowrap=\"nowrap\">                Symbol             </th>            <th
+subtitle: <h2>ASCII simbol</h2><table> <thead> <tr> <th nowrap=\"nowrap\">
+  Symbol </th> <th
 lang: en
 date: 2019-07-23T07:21:00.000+07:00
 type: post

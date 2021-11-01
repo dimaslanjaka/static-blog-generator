@@ -1,8 +1,8 @@
 ---
 title: Apakah Iklan Facebook Bekerja ?
 webtitle: WMI Gitlab
-subtitle: Do Facebook Ads Work? (110% Yes & Here\'s Proof)  Media sosial telah
-  menjadi bagian integral dari pertumbuhan bisnis saat ini.  Jika sebuah
+subtitle: Do Facebook Ads Work? (110\% Yes & Here\'s Proof) Media sosial telah
+  menjadi bagian integral dari pertumbuhan bisnis saat ini. Jika sebuah
 lang: en
 date: 2019-12-09T05:26:00.000+07:00
 type: post

@@ -2,7 +2,7 @@
 title: Film Yowis Ben (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
 subtitle: Watching Yowis Ben\'s Film (2018) Indonesian Subtitles - Bayu (Bayu
-  Skak) loves Susan (Cut Meyriska).  Because he feels inferior to
+  Skak) loves Susan (Cut Meyriska). Because he feels inferior to
 lang: en
 date: 2019-01-28T00:41:00.000+07:00
 type: post

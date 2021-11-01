@@ -1,8 +1,8 @@
 ---
 title: "Proses Kulit : Durango Wild Lands"
 webtitle: WMI Gitlab
-subtitle: Nama Proses    Bahan   Hasil    Buff   Debuff       Kulit
-  Kering    Kulit    Kulit Kering    -    -      Proses Pencokelatan Dengan
+subtitle: Nama Proses  Bahan Hasil  Buff Debuff   Kulit Kering  Kulit  Kulit
+  Kering  -  -  Proses Pencokelatan Dengan
 lang: en
 date: 2018-06-18T03:28:00.001+07:00
 type: post

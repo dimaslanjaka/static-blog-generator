@@ -1,8 +1,8 @@
 ---
 title: Download lagu Gusty - Beri Aku Kesempatan Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Gusty - Beri Aku Kesempatan Mp3  Gusty - Give Me a
-  Chance   Listen: 46,422   Duration: 223   MP3 size: 3.48MB   Download"
+subtitle: "Download lagu Gusty - Beri Aku Kesempatan Mp3 Gusty - Give Me a
+  Chance Listen: 46,422 Duration: 223 MP3 size: 3.48MB Download"
 lang: en
 date: 2019-11-24T21:19:00.001+07:00
 type: post

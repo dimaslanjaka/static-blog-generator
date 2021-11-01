@@ -1,9 +1,8 @@
 ---
 title: Download lagu Dissa - Penantian Bodoh Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Dissa - Penantian Bodoh Mp3  Dissa - Stupid
-  Expectations   Listen: 65,964   Duration: 265   MP3 size: 4.14MB   Download
-  Links"
+subtitle: "Download lagu Dissa - Penantian Bodoh Mp3 Dissa - Stupid Expectations
+  Listen: 65,964 Duration: 265 MP3 size: 4.14MB Download Links"
 lang: en
 date: 2019-12-19T22:22:00.001+07:00
 type: post

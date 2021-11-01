@@ -1,8 +1,8 @@
 ---
 title: DOWNLOAD Lucky Patcher 7.5.0 Apk + Mod for android
 webtitle: WMI Gitlab
-subtitle: Lucky Patcher Apk + Mod for android                             Lucky
-  Patcher                 Apakah Baik App Untuk Pach All
+subtitle: Lucky Patcher Apk + Mod for android Lucky Patcher Apakah Baik App
+  Untuk Pach All
 lang: en
 date: 2018-11-12T13:04:00.000+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: GTA V Wasted and Busted Screen for GTA SA Mobile
 webtitle: WMI Gitlab
-subtitle: GTA V Wasted and Busted Screen for GTA SA Mobile      Ini adalah mod
-  GTA V lain untuk GTA San Andreas Mobile (Android).  Mod ini akan
+subtitle: GTA V Wasted and Busted Screen for GTA SA Mobile Ini adalah mod GTA V
+  lain untuk GTA San Andreas Mobile (Android). Mod ini akan
 lang: en
 date: 2019-12-08T01:00:00.000+07:00
 type: post

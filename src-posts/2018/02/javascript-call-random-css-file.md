@@ -1,8 +1,8 @@
 ---
 title: JavaScript Call Random CSS file
 webtitle: WMI Gitlab
-subtitle: I am trying to rotate random CSS sheets via JS - I have the
-  following     script but when I am using it - it doesnt seem to work ?
+subtitle: I am trying to rotate random CSS sheets via JS - I have the following
+  script but when I am using it - it doesnt seem to work ?
 lang: en
 date: 2018-02-10T06:57:00.000+07:00
 type: post

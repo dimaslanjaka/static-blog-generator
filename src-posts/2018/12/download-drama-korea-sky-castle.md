@@ -1,8 +1,8 @@
 ---
 title: Download Drama Korea Sky Castle Subtitle Indonesia Episode 5
 webtitle: WMI Gitlab
-subtitle: "Korean Drama Sky Castle Indonesian Subtitles   Sky Castle
-  Synopsis:     Korean Drama Sky Castle Sub Indo tells about a group of"
+subtitle: "Korean Drama Sky Castle Indonesian Subtitles Sky Castle Synopsis:
+  Korean Drama Sky Castle Sub Indo tells about a group of"
 lang: en
 date: 2018-12-10T15:22:00.000+07:00
 type: post

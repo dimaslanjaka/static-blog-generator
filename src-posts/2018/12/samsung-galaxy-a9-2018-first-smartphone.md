@@ -1,8 +1,8 @@
 ---
 title: Samsung Galaxy A9 (2018) First Smartphone with Four Cameras
 webtitle: WMI Gitlab
-subtitle: Samsung Galaxy A9 (2018) First Smartphone with Four
-  Cameras       Digital Mobile Phones - Samsung Galaxy A9 is an attractive smart
+subtitle: Samsung Galaxy A9 (2018) First Smartphone with Four Cameras Digital
+  Mobile Phones - Samsung Galaxy A9 is an attractive smart
 lang: en
 date: 2018-12-01T21:31:00.000+07:00
 type: post

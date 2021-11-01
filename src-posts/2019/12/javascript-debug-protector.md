@@ -1,8 +1,8 @@
 ---
 title: Javascript Debug Protector
 webtitle: WMI Gitlab
-subtitle: How to protect javascript from developer tools ? here the
-  answer.     put this code into your page or template before closing body
+subtitle: How to protect javascript from developer tools ? here the answer. put
+  this code into your page or template before closing body
 lang: en
 date: 2019-12-29T15:02:00.001+07:00
 type: post

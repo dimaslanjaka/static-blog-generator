@@ -1,8 +1,8 @@
 ---
 title: Cloudflare Basic Guide
 webtitle: WMI Gitlab
-subtitle: Panduan Dasar Cloudflare    This article is a complete basic guide
-  about Cloudflare as the flagship CDN among web developers.  You will get
+subtitle: Panduan Dasar Cloudflare This article is a complete basic guide about
+  Cloudflare as the flagship CDN among web developers. You will get
 lang: en
 date: 2019-12-20T22:26:00.000+07:00
 type: post

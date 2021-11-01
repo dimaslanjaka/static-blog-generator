@@ -1,8 +1,8 @@
 ---
 title: DOWNLOAD Burly Men at Sea 1.3.6 Apk android
 webtitle: WMI Gitlab
-subtitle: Kekar Men at Sea                adalah Game Petualangan untuk
-  android                 Download versi terakhir dari
+subtitle: Kekar Men at Sea adalah Game Petualangan untuk android Download versi
+  terakhir dari
 lang: en
 date: 2018-11-16T12:51:00.000+07:00
 type: post

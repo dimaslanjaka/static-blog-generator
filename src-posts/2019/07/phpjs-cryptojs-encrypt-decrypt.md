@@ -1,8 +1,8 @@
 ---
 title: "[PHP][JS] CryptoJS encrypt decrypt"
 webtitle: WMI Gitlab
-subtitle: CryptoJS encrypt decrypt support PHP 5, PHP 7.x.                   See
-  the Pen             PHP CryptoJS Encrypt Decrypt by dimas
+subtitle: CryptoJS encrypt decrypt support PHP 5, PHP 7.x. See the Pen PHP
+  CryptoJS Encrypt Decrypt by dimas
 lang: en
 date: 2019-07-22T00:16:00.001+07:00
 type: post

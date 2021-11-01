@@ -1,7 +1,7 @@
 ---
 title: GBWhatsApp Apk 6.50 android
 webtitle: WMI Gitlab
-subtitle: GBWhatsApp adalah Aplikasi Komunikasi untuk android   unduh versi
+subtitle: GBWhatsApp adalah Aplikasi Komunikasi untuk android unduh versi
   terakhir dari GBWhatsApp Apk untuk android dari Website Manajemen
 lang: en
 date: 2018-11-12T12:26:00.000+07:00

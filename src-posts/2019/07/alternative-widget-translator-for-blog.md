@@ -1,7 +1,7 @@
 ---
 title: Alternative Widget Translator for blog
 webtitle: WMI Gitlab
-subtitle: English          Indonesian          Afrikaans          Albanian          Arabic          Armenian          Azerbaijani
+subtitle: English Indonesian Afrikaans Albanian Arabic Armenian Azerbaijani
 lang: en
 date: 2019-07-26T00:56:00.000+07:00
 type: post

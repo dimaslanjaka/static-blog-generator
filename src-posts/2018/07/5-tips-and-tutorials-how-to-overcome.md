@@ -3,7 +3,7 @@ title: 5 Tips and Tutorials How to Overcome Lag or Broken Game Ark Survival
   Evolved Mobile on Android Smartphone
 webtitle: WMI Gitlab
 subtitle: Lag or Broken is one of the factors that make it uncomfortable when
-  users     play the game. Not only happens in notebooks or PCs, lag
+  users play the game. Not only happens in notebooks or PCs, lag
 lang: en
 date: 2018-07-28T12:41:00.000+07:00
 type: post

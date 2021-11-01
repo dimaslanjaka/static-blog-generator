@@ -1,8 +1,8 @@
 ---
 title: Download Drama Korea The Last Empress Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: Download Korean Drama The Last Empress Indonesian Subtitles     Oh
-  Ssu-Ni (Jang Na-Ra) is a musical actress with a bright
+subtitle: Download Korean Drama The Last Empress Indonesian Subtitles Oh Ssu-Ni
+  (Jang Na-Ra) is a musical actress with a bright
 lang: en
 date: 2018-12-29T01:53:00.000+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: berhenti langganan konten berbayar Indosat
 webtitle: WMI Gitlab
-subtitle: "Anda bisa mengubungi customer service melalui Email, Sosial Media
-  dan     Telepon, kontaknya dibawah ini:"
+subtitle: "Anda bisa mengubungi customer service melalui Email, Sosial Media dan
+  Telepon, kontaknya dibawah ini:"
 lang: en
 date: 2018-12-03T13:57:00.005+07:00
 type: post

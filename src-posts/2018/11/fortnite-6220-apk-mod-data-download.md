@@ -1,8 +1,7 @@
 ---
 title: Fortnite 6.22.0 Apk + Mod + Data Download
 webtitle: WMI Gitlab
-subtitle: Fortnite                adalah Game Arcade untuk
-  android                 Download versi terakhir dari
+subtitle: Fortnite adalah Game Arcade untuk android Download versi terakhir dari
 lang: en
 date: 2018-11-09T12:40:00.000+07:00
 type: post

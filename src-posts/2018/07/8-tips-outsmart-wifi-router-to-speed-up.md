@@ -1,8 +1,8 @@
 ---
 title: 8 Tips Outsmart the Wifi Router to Speed ​​Up Internet Connection
 webtitle: WMI Gitlab
-subtitle: "Here are 8 Tips to Outsmart your Wifi router to get a faster and
-  more     stable Internet connection:"
+subtitle: "Here are 8 Tips to Outsmart your Wifi router to get a faster and more
+  stable Internet connection:"
 lang: en
 date: 2018-07-05T22:43:00.000+07:00
 type: post

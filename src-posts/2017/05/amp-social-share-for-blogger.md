@@ -1,8 +1,8 @@
 ---
 title: AMP Social Share for Blogger
 webtitle: WMI Gitlab
-subtitle: AMP Social Share for Blogger - Updated (Twitter, Google, Facebook
-  &     Whatsapp)                             Social Media & SEO
+subtitle: AMP Social Share for Blogger - Updated (Twitter, Google, Facebook &
+  Whatsapp) Social Media & SEO
 lang: en
 date: 2017-05-14T13:28:00.000+07:00
 type: post

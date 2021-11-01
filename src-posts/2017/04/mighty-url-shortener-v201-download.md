@@ -1,8 +1,8 @@
 ---
 title: Mighty URL Shortener v2.0.1 Download
 webtitle: WMI Gitlab
-subtitle: Download Free Mighty URL Shortener PHP Script 2.0.1 - CodeCanyon
-  |    Mighty URL Shortener v2.0.1 - Short URL Script   PHP Script ini
+subtitle: Download Free Mighty URL Shortener PHP Script 2.0.1 - CodeCanyon |
+  Mighty URL Shortener v2.0.1 - Short URL Script PHP Script ini
 lang: en
 date: 2017-04-09T13:00:00.001+07:00
 type: post

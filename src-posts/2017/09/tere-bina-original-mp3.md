@@ -1,8 +1,8 @@
 ---
 title: Tere Bina Original mp3
 webtitle: WMI Gitlab
-subtitle: Zinda rahe ke kya karu     Tere bina..     Dhunde hai jawab wo     Jo
-  dil na de saka     Jo bhi sapne dekhe thee     aur likhe thee     JIn
+subtitle: Zinda rahe ke kya karu Tere bina.. Dhunde hai jawab wo Jo dil na de
+  saka Jo bhi sapne dekhe thee aur likhe thee JIn
 lang: en
 date: 2017-09-21T21:37:00.003+07:00
 type: post

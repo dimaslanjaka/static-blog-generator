@@ -1,7 +1,7 @@
 ---
 title: Install PHP Web Server on Termux
 webtitle: WMI Gitlab
-subtitle: Install PHP Web Server on Termux  connect the previous article about
+subtitle: Install PHP Web Server on Termux connect the previous article about
   how to install maria db in termux ( Install MariaDB on Termux ),
 lang: en
 date: 2018-11-13T09:19:00.001+07:00

@@ -1,8 +1,8 @@
 ---
 title: Auto Defer Images in Blogger And Wordpress
 webtitle: WMI Gitlab
-subtitle: jQuery Functions To Async Or Defer Images On Wordpress CMS And
-  Blogger         Blogs.                     Understanding async
+subtitle: jQuery Functions To Async Or Defer Images On Wordpress CMS And Blogger
+  Blogs. Understanding async
 lang: en
 date: 2017-04-10T21:55:00.000+07:00
 type: post

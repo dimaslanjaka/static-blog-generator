@@ -1,8 +1,8 @@
 ---
 title: Hunter Helicopter Bug Fix by MacMatt
 webtitle: WMI Gitlab
-subtitle: Hunter Helicopter Bug Fix by MacMatt      Anda mungkin memperhatikan
-  dua tombol saling bertepuk tangan saat berada di Hunter Heli.  Ini
+subtitle: Hunter Helicopter Bug Fix by MacMatt Anda mungkin memperhatikan dua
+  tombol saling bertepuk tangan saat berada di Hunter Heli. Ini
 lang: en
 date: 2019-12-01T23:40:00.000+07:00
 type: post

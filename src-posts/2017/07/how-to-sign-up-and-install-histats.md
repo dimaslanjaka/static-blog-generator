@@ -1,8 +1,8 @@
 ---
 title: How to Sign Up and Install Histats Widget on Blogger
 webtitle: WMI Gitlab
-subtitle: have long wanted to make a post about getting visitor data and
-  widgets         from histats for Blog.But only now can terlakasana and I
+subtitle: have long wanted to make a post about getting visitor data and widgets
+  from histats for Blog.But only now can terlakasana and I
 lang: en
 date: 2017-07-30T03:00:00.000+07:00
 type: post

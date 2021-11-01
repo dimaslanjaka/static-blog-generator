@@ -1,7 +1,7 @@
 ---
 title: Improve Blog Performance with Cloudflare DNS
 webtitle: WMI Gitlab
-subtitle: Tingkatkan Performa Blog Dengan DNS Cloudflare  Increase Blog
+subtitle: Tingkatkan Performa Blog Dengan DNS Cloudflare Increase Blog
   Performance with Cloudflare DNS - Basically all DNS is the same, namely the
 lang: en
 date: 2019-12-29T23:37:00.000+07:00

@@ -2,7 +2,7 @@
 title: How to make black clothes Durango Wild Lands
 webtitle: WMI Gitlab
 subtitle: this time I will explain how to make black clothes using black
-  coloring or     dye in durango wilderness games, wild lands durango itself
+  coloring or dye in durango wilderness games, wild lands durango itself
 lang: en
 date: 2018-08-20T10:53:00.001+07:00
 type: post

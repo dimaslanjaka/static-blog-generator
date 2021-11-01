@@ -1,8 +1,8 @@
 ---
 title: Hiding javascript to increase blogger blog speed
 webtitle: WMI Gitlab
-subtitle: Me often find comments on blogs Mascots inquiring about
-  blogger            widgets that can not be performed, such as the blog\'s stat
+subtitle: Me often find comments on blogs Mascots inquiring about blogger
+  widgets that can not be performed, such as the blog\'s stat
 lang: en
 date: 2017-11-18T13:56:00.000+07:00
 type: post

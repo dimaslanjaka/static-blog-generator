@@ -2,7 +2,7 @@
 title: How to download from Google Drive (sedot.club)
 webtitle: WMI Gitlab
 subtitle: Cara Download melalui Google Drive (sedot.club) - Website Development
-  Indonesia  [ Website Development Indonesia ] - Lately, there have
+  Indonesia [ Website Development Indonesia ] - Lately, there have
 lang: en
 date: 2019-12-14T01:05:00.000+07:00
 type: post

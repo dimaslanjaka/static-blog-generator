@@ -1,8 +1,8 @@
 ---
 title: Animated Ipad Pro 2018 Mockup
 webtitle: WMI Gitlab
-subtitle: Animated Ipad Pro 2018 Mockup       Freebie hari ini adalah Animated
-  iPad Pro 2018 Mockup oleh Anthony Boyd Graphics.  Gunakan maket
+subtitle: Animated Ipad Pro 2018 Mockup Freebie hari ini adalah Animated iPad
+  Pro 2018 Mockup oleh Anthony Boyd Graphics. Gunakan maket
 lang: en
 date: 2018-12-06T03:47:00.000+07:00
 type: post

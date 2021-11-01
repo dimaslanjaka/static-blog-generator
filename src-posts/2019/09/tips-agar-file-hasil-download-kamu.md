@@ -2,7 +2,7 @@
 title: Tips Agar File Hasil Download Kamu Tidak Corrupt
 webtitle: WMI Gitlab
 subtitle: Web Development Indonesia - Everyone certainly does not expect the
-  downloaded file to be corrupt or corrupt.  The downloaded file is
+  downloaded file to be corrupt or corrupt. The downloaded file is
 lang: en
 date: 2019-09-29T17:56:00.000+07:00
 type: post

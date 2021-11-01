@@ -1,8 +1,8 @@
 ---
 title: Mora Cost Artifact Genshin Impact
 webtitle: WMI Gitlab
-subtitle: Rarity																																																																				 																		Exp
-  Multiplier Chance
+subtitle: Rarity\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tExp Multiplier Chance
 lang: en
 date: 2021-05-13T20:37:00.008+07:00
 type: post

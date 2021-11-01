@@ -2,7 +2,7 @@
 title: "[JS] Youtube Video ID URL Parser"
 webtitle: WMI Gitlab
 subtitle: Extract video id from youtube URL with javascript function function
-  youtube_parser(url){    var regExp =
+  youtube_parser(url){ var regExp =
 lang: en
 date: 2019-07-16T03:03:00.000+07:00
 type: post

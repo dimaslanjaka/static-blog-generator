@@ -1,9 +1,8 @@
 ---
 title: Download lagu Armada - Buka Hatimu Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Armada - Buka Hatimu Mp3  Fleet - Open Your
-  Heart   Listen: 26,297,572   Duration: 273   MP3 size: 4.27MB   Download
-  Links"
+subtitle: "Download lagu Armada - Buka Hatimu Mp3 Fleet - Open Your Heart
+  Listen: 26,297,572 Duration: 273 MP3 size: 4.27MB Download Links"
 lang: en
 date: 2019-12-02T07:04:00.001+07:00
 type: post

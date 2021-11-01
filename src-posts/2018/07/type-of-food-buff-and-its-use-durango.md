@@ -1,7 +1,7 @@
 ---
 title: Type of Food Buff Durango wild lands
 webtitle: WMI Gitlab
-subtitle: buff str you can get from various types ofdino    meat that you hunt.
+subtitle: buff str you can get from various types ofdino meat that you hunt.
 lang: en
 date: 2018-07-11T22:58:00.000+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: HTML Select Complete Countries
 webtitle: WMI Gitlab
-subtitle: See the Pen   github.com/select2/select2-bootstrap-theme/issues/35 by
-  Florian Kissling (@fk)   on CodePen.
+subtitle: See the Pen github.com/select2/select2-bootstrap-theme/issues/35 by
+  Florian Kissling (@fk) on CodePen.
 lang: en
 date: 2020-10-28T14:17:00.005+07:00
 type: post

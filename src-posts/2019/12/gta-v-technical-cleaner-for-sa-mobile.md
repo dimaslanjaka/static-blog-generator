@@ -1,8 +1,8 @@
 ---
 title: GTA V Technical Cleaner For SA Mobile DFF Only
 webtitle: WMI Gitlab
-subtitle: GTA V Technical Cleaner For SA Mobile DFF Only      Di sinilah GTA V
-  Port untuk GTA San Andreas Mobile.  Ini adalah Karin Technical,
+subtitle: GTA V Technical Cleaner For SA Mobile DFF Only Di sinilah GTA V Port
+  untuk GTA San Andreas Mobile. Ini adalah Karin Technical,
 lang: en
 date: 2019-12-10T01:08:00.000+07:00
 type: post

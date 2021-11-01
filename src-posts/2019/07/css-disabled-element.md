@@ -1,8 +1,8 @@
 ---
 title: "[CSS] Disabled Element"
 webtitle: WMI Gitlab
-subtitle: "*:disabled, .disabled, *[disabled] {   opacity: 0.5;   color:
-  #666666;   cursor: not-allowed;   pointer-events: none; }  *:disabled,"
+subtitle: "*:disabled, .disabled, *[disabled] { opacity: 0.5; color: #666666;
+  cursor: not-allowed; pointer-events: none; } *:disabled,"
 lang: en
 date: 2019-07-09T08:07:00.000+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: Download lagu Juicy Luicy - Kenal lebih dekat Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Juicy Luicy - Kenal lebih dekat Mp3  Juicy Luicy - Get
-  to know you closer   Listen: 9,710   Duration: 328   MP3 size: 5.13MB"
+subtitle: "Download lagu Juicy Luicy - Kenal lebih dekat Mp3 Juicy Luicy - Get
+  to know you closer Listen: 9,710 Duration: 328 MP3 size: 5.13MB"
 lang: en
 date: 2019-11-24T23:47:00.001+07:00
 type: post

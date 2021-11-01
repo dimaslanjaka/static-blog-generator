@@ -1,8 +1,7 @@
 ---
 title: Shortcut Windows Undo Redo Drag
 webtitle: WMI Gitlab
-subtitle: SHORTCUT KEYS                                         LANGKAH-LANGKAH
-  UNTUK DIPROSES
+subtitle: SHORTCUT KEYS LANGKAH-LANGKAH UNTUK DIPROSES
 lang: en
 date: 2019-02-08T22:15:00.002+07:00
 type: post

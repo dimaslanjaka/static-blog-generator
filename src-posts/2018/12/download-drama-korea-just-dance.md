@@ -1,8 +1,8 @@
 ---
 title: Download Drama Korea Just Dance Subtitle Indonesia
 webtitle: WMI Gitlab
-subtitle: Korean Drama Just Dance Indonesian Subtitles     Located in Geoje,
-  South Gyeongsang Province, South Korea where the city\'s main
+subtitle: Korean Drama Just Dance Indonesian Subtitles Located in Geoje, South
+  Gyeongsang Province, South Korea where the city\'s main
 lang: en
 date: 2018-12-28T01:54:00.000+07:00
 type: post

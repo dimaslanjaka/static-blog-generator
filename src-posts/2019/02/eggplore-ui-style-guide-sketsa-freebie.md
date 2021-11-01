@@ -1,8 +1,8 @@
 ---
 title: Eggplore Ui Style Guide Sketsa Freebie
 webtitle: WMI Gitlab
-subtitle: Eggplore Ui Style Guide Sketsa Freebie     Stephen dan Gahuy ingin
-  berbagi sumber daya panduan gaya UI dengan komunitas.  Sumber daya
+subtitle: Eggplore Ui Style Guide Sketsa Freebie Stephen dan Gahuy ingin berbagi
+  sumber daya panduan gaya UI dengan komunitas. Sumber daya
 lang: en
 date: 2019-02-20T00:38:00.000+07:00
 type: post
