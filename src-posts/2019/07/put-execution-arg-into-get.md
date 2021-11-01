@@ -1,8 +1,8 @@
 ---
 title: Put execution arg into $_GET
 webtitle: WMI Gitlab
-subtitle: PHP CLI<?phpif ($argv) {    foreach ($argv as $k=>$v)    {        if
-  ($k==0) continue;        $it = explode("=",$argv[$i]);        if
+subtitle: PHP CLI<?phpif (\$argv) {    foreach (\$argv as \$k=>\$v)    {       
+  if (\$k==0) continue;        \$it = explode(\"=\",\$argv[\$i]);        if
 lang: en
 date: 2019-07-29T06:42:00.000+07:00
 type: post

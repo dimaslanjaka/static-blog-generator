@@ -2,7 +2,7 @@
 title: "[JS] Google Recaptcha V3 Complete Code"
 webtitle: WMI Gitlab
 subtitle: "Requirements:      jQuery (if not it will automated added into
-  pages)           if (typeof jQuery == 'undefined' || !window.jQuery) {"
+  pages)           if (typeof jQuery == \\'undefined\\' || !window.jQuery) {"
 lang: en
 date: 2019-07-12T19:36:00.001+07:00
 type: post

@@ -3,7 +3,7 @@ title: "Download Wrong Turn 2: Dead End (2007) Indonesian Subtitles Movie Free
   Movie Bluray"
 webtitle: WMI Gitlab
 subtitle: '@import
-  url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css");  .content
+  url(\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css\");  .content
   *,.keyword *,.keywords *'
 lang: en
 date: 2018-12-23T19:53:00.000+07:00

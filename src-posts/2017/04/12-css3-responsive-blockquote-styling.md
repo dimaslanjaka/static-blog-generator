@@ -1,8 +1,8 @@
 ---
 title: 12 CSS3 Responsive Blockquote Styling
 webtitle: WMI Gitlab
-subtitle: <img height="280"
-  src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ"
+subtitle: <img height=\"280\"
+  src=\"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ\"
 lang: en
 date: 2017-04-27T23:29:00.000+07:00
 type: post

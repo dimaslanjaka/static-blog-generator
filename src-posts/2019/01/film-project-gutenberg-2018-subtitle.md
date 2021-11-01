@@ -2,7 +2,7 @@
 title: Film Project Gutenberg (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
 subtitle: Watch Project Gutenberg Online Film (2018) Indonesian Subtitles - The
-  Hong Kong police led by a mastermind code-named "Painter" (Chow
+  Hong Kong police led by a mastermind code-named \"Painter\" (Chow
 lang: en
 date: 2019-01-20T11:53:00.000+07:00
 type: post

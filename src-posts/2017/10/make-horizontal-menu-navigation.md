@@ -1,8 +1,9 @@
 ---
 title: MAKE A HORIZONTAL MENU NAVIGATION
 webtitle: WMI Gitlab
-subtitle: <hr align="CENTER" color="#336600" size="2" width="90%" /><img
-  height="97" src="https://imgdb.net/images/3198.jpg" width="100%" /><br /><hr
+subtitle: <hr align=\"CENTER\" color=\"#336600\" size=\"2\" width=\"90%\" /><img
+  height=\"97\" src=\"https://imgdb.net/images/3198.jpg\" width=\"100%\" /><br
+  /><hr
 lang: en
 date: 2017-10-01T02:31:00.000+07:00
 type: post

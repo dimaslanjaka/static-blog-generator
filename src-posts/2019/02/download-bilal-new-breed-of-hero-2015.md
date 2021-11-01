@@ -3,7 +3,7 @@ title: "Download Bilal: A New Breed Of Hero (2015) Indonesian Subtitles Movie
   Free Movie Bluray"
 webtitle: WMI Gitlab
 subtitle: '@import
-  url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css");  .content
+  url(\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css\");  .content
   *,.keyword *,.keywords *'
 lang: en
 date: 2019-02-18T15:13:00.000+07:00

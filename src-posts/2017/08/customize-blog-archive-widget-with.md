@@ -1,7 +1,7 @@
 ---
 title: Customize Blog Archive Widget With Scrollbar
 webtitle: WMI Gitlab
-subtitle: The Blog Document gadget is one of Blogger's legitimate gadgets. The
+subtitle: The Blog Document gadget is one of Blogger\'s legitimate gadgets. The
   main issue with the default Blog File gadget is that it will take up
 lang: en
 date: 2017-08-03T16:06:00.000+07:00

@@ -2,7 +2,7 @@
 title: How to resolve the submit button adsense does not work or return to home
 webtitle: WMI Gitlab
 subtitle: AdSense brings me back to the beginning every time I
-  click 'Submit . ' The submit button for adsense is not working or it is home
+  click \'Submit . \' The submit button for adsense is not working or it is home
   this is
 lang: en
 date: 2017-07-23T03:14:00.000+07:00

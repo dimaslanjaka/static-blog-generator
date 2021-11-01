@@ -1,8 +1,9 @@
 ---
 title: Buff Kayu Durango Wild Lands (Woods Buffs)
 webtitle: WMI Gitlab
-subtitle: if(window.location.href.indexOf("264760159080518290") > -1)
-  {        document.write('<img src="https://imgdb.net/images/3970.jpg" />');
+subtitle: if(window.location.href.indexOf(\"264760159080518290\") > -1)
+  {        document.write(\'<img src=\"https://imgdb.net/images/3970.jpg\"
+  />\');
 lang: en
 date: 2018-08-09T21:54:00.000+07:00
 type: post

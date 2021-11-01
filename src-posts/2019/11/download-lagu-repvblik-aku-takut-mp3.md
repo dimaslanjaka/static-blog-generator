@@ -1,7 +1,7 @@
 ---
 title: Download lagu Repvblik - Aku Takut Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Repvblik - Aku Takut Mp3  Repvblik - I'm
+subtitle: "Download lagu Repvblik - Aku Takut Mp3  Repvblik - I\\'m
   afraid   Listen: 168,646,315   Duration: 251   MP3 size: 3.92MB   Download
   Links"
 lang: en

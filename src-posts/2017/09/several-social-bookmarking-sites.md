@@ -1,8 +1,8 @@
 ---
 title: Several social bookmarking sites
 webtitle: WMI Gitlab
-subtitle: Buddy must have bookmarks in the browser's favorite sites belonging to
-  my friend, this so easily at any time in order to return to the
+subtitle: Buddy must have bookmarks in the browser\'s favorite sites belonging
+  to my friend, this so easily at any time in order to return to the
 lang: en
 date: 2017-09-26T01:33:00.000+07:00
 type: post

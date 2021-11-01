@@ -1,7 +1,7 @@
 ---
 title: Apa Seo Dan Bagaimana Cara Kerjanya? [Inilah Jawabannya]
 webtitle: WMI Gitlab
-subtitle: What Is Seo And How It Works? [here's The Answer]  Ingin tahu apa itu
+subtitle: What Is Seo And How It Works? [here\'s The Answer]  Ingin tahu apa itu
   SEO dan bagaimana cara kerjanya?  Kami telah membuat panduan SEO
 lang: en
 date: 2019-12-07T00:35:00.000+07:00

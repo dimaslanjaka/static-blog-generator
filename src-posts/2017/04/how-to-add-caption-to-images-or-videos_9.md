@@ -2,7 +2,7 @@
 title: How to add caption to images or videos in wordpress and Blogger
 webtitle: WMI Gitlab
 subtitle: How to add caption to images or videos in wordpress and
-  Blogger     That's true; a picture is value cardinal words, however a picture
+  Blogger     That\'s true; a picture is value cardinal words, however a picture
 lang: en
 date: 2017-04-09T23:48:00.003+07:00
 type: post

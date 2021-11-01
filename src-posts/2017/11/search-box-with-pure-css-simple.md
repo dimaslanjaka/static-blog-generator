@@ -2,7 +2,7 @@
 title: Search Box With Pure CSS Simple
 webtitle: WMI Gitlab
 subtitle: <h2>Simple Widget Blogger search box with pure CSS.</h2><br />Here the
-  HTML:<br /><br /><pre>&lt;form id="searchthis" action="/search"
+  HTML:<br /><br /><pre>&lt;form id=\"searchthis\" action=\"/search\"
 lang: en
 date: 2017-11-12T23:29:00.000+07:00
 type: post

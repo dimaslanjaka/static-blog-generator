@@ -1,8 +1,8 @@
 ---
 title: Download lagu Armada - Jangan Marah Lagi Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Armada - Jangan Marah Lagi Mp3  Armada - Don't be angry
-  anymore   Listen: 10,664,799   Duration: 238   MP3 size: 3.72MB"
+subtitle: "Download lagu Armada - Jangan Marah Lagi Mp3  Armada - Don\\'t be
+  angry anymore   Listen: 10,664,799   Duration: 238   MP3 size: 3.72MB"
 lang: en
 date: 2019-12-04T13:25:00.001+07:00
 type: post

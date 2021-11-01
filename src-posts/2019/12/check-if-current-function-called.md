@@ -1,8 +1,8 @@
 ---
 title: Check if current function called statically or not
 webtitle: WMI Gitlab
-subtitle: <pre><br />$static = !(isset($this) &amp;&amp; get_class($this) ==
-  __CLASS__);<br />if ($static) {<br />  return self;<br />} else {<br />
+subtitle: <pre><br />\$static = !(isset(\$this) &amp;&amp; get_class(\$this) ==
+  __CLASS__);<br />if (\$static) {<br />  return self;<br />} else {<br />
 lang: en
 date: 2019-12-04T05:51:00.001+07:00
 type: post

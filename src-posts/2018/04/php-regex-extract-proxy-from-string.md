@@ -2,7 +2,7 @@
 title: PHP Regex Extract Proxy From String
 webtitle: WMI Gitlab
 subtitle: <img
-  src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg"
+  src=\"https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg\"
   /><ul><li>Extract
 lang: en
 date: 2018-04-12T19:43:00.000+07:00

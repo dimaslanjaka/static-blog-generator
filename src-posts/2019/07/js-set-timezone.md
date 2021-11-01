@@ -2,7 +2,7 @@
 title: "[JS] Set Timezone"
 webtitle: WMI Gitlab
 subtitle: "Set timezone javascript without using any pluginsconst DATE = new
-  Date().toLocaleString('en-US', {  timeZone:"
+  Date().toLocaleString(\\'en-US\\', {  timeZone:"
 lang: en
 date: 2019-07-17T17:05:00.001+07:00
 type: post

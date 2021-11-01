@@ -2,7 +2,7 @@
 title: SVG Social Media Icon With Sass CSS
 webtitle: WMI Gitlab
 subtitle: "// Thanks to codepen.io/alaingalvan for suggesting this color
-  variable:$background: hsl(210, 45, 10)//"
+  variable:\\$background: hsl(210, 45, 10)//"
 lang: en
 date: 2017-06-15T13:15:00.000+07:00
 type: post

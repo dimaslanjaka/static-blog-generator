@@ -2,8 +2,8 @@
 title: How to Display Icon Blog In speed dial Browser
 webtitle: WMI Gitlab
 subtitle: <img
-  src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png"
-  title="speed dial icon" alt="speed dial
+  src=\"https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png\"
+  title=\"speed dial icon\" alt=\"speed dial
 lang: en
 date: 2018-12-25T14:03:00.001+07:00
 type: post

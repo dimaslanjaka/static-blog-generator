@@ -3,7 +3,7 @@ title: Cara menambah syntax highlighter dengan prettyprint di blog tanpa
   mengurangi kecepatan loading website 100% Work Tested
 webtitle: WMI Gitlab
 subtitle: <h2>Bagaimana cara menambah syntax highlighter dengan prettyprint
-  tanpa mengurangi waktu response loading blog.</h2><img height="207"
+  tanpa mengurangi waktu response loading blog.</h2><img height=\"207\"
 lang: en
 date: 2017-04-26T04:30:00.000+07:00
 type: post

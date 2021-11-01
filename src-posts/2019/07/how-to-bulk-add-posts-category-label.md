@@ -2,7 +2,7 @@
 title: How to bulk add category label to blogger posts
 webtitle: WMI Gitlab
 subtitle: "At this time I will share, How to move the blogger categoryExample:
-  We'll move all post label Javascript to JS Filter and Choose the label"
+  We\\'ll move all post label Javascript to JS Filter and Choose the label"
 lang: en
 date: 2019-07-22T03:01:00.001+07:00
 type: post

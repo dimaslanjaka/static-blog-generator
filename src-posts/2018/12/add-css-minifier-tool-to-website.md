@@ -2,7 +2,7 @@
 title: Add CSS Minifier Tool to Website
 webtitle: WMI Gitlab
 subtitle: <h2>Simple way to add CSS minifier to an websites.</h2><br />Here the
-  codes:<br /><br />HTML<br /><pre class="highlight">&lt;div
+  codes:<br /><br />HTML<br /><pre class=\"highlight\">&lt;div
 lang: en
 date: 2018-12-09T15:23:00.000+07:00
 type: post

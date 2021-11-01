@@ -1,7 +1,7 @@
 ---
 title: Javascript detect bot crawler
 webtitle: WMI Gitlab
-subtitle: <img src='https://imgdb.net/images/3206.png'/><script
+subtitle: <img src=\'https://imgdb.net/images/3206.png\'/><script
 lang: en
 date: 2017-09-25T00:57:00.003+07:00
 type: post
