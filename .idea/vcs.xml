@@ -6,7 +6,7 @@
     <mapping directory="$PROJECT_DIR$/packages/ga-analytics" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-admin-ehc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/php/wordpress-blogger-importer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/php/wordpress-blogger-importer" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-filter-cleanup" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/google-scraper" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/proxy-finder" vcs="" />

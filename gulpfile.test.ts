@@ -1,5 +1,5 @@
-const gulptest = require("hexo-blogger-xml").gulp;
+const gulptest = require("hexo-blogger-xml").gulpCore;
 console.log(typeof gulptest);
 
-import { gulp as gulpx } from "hexo-blogger-xml";
+import { gulpCore as gulpx } from "hexo-blogger-xml";
 console.log(typeof gulpx);

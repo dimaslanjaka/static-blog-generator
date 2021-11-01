@@ -1,4 +1,3 @@
-// noinspection ES6PreferShortImport
 import "./src/js/_Prototype-String";
 import * as gulp from "gulp";
 import * as path from "path";
@@ -11,7 +10,8 @@ import { shortcodeScript } from "./src/gulp/script";
 import { shortcodeNow } from "./src/gulp/time";
 import { shortcodeCss } from "./src/gulp/css";
 //import gulpBlogger from "./packages/hexo-blogger-xml/src/gulp-core";
-import { gulp as gulpBlogger } from "hexo-blogger-xml";
+import { gulpCore } from "hexo-blogger-xml";
+
 /**
  * Production article.
  * Articles which published on google index
@@ -126,9 +126,11 @@ gulp.task("article:clean", function (done) {
 });
 
 gulp.task("blogger", function (done) {
-  gulpBlogger({
-    input: [path.resolve("userscripts/xml/webmanajemen.com.xml")],
-    output: "./src-posts",
+  const mainxml = path.resolve("userscripts/xml/webmanajemen.com.xml");
+  const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
+  gulpCore({
+    input: [testXML],
+    output: "./build/src-posts",
     hostname: ["webmanajemen.com", "git.webmanajemen.com", "dimaslanjaka.github.io"],
     callback: require("./userscripts/post_callback"),
   });
@@ -137,4 +139,5 @@ gulp.task("blogger", function (done) {
 });
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
-gulp.task("default", gulp.series("article:copy:dev"));
+//gulp.task("default", gulp.series("article:copy:dev"));
+exports.default = gulp.series("article:copy:dev");
