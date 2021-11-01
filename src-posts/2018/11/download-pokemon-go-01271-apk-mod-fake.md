@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Pokemon GO 0.127.1 Apk + Mod (fake gps) + Poke Radar + modded apk
 webtitle: WMI Gitlab
-subtitle: Pokemon GO 0.127.1 Apk + Mod (gps palsu) + Poke Radar + apk yang diretas
+subtitle: Pokemon GO .127.1 Apk + Mod (gps palsu) + Poke Radar + apk yang diretas
 lang: en
 date: 2018-11-15T11:44:00.000+07:00
 type: post

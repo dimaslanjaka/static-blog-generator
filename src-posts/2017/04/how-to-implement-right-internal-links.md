@@ -2,7 +2,7 @@
 title: How to Implement  A Right Internal links To Blog Adsense
 webtitle: WMI Gitlab
 subtitle: Lately I see a lot of blog friends adsense publishers banned for
-  violating Google AdSense program policies. Actually I have long seen
+  violating Google AdSense program policies.Actually I have long seen
 lang: en
 date: 2017-04-18T07:40:00.000+07:00
 type: post

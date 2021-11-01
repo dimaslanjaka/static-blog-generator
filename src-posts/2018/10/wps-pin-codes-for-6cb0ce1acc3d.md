@@ -1,7 +1,7 @@
 ---
 title: WPS PIN codes for 6C:B0:CE:1A:CC:3D
 webtitle: WMI Gitlab
-subtitle: WPS PIN codes for 6C:B0:CE:1A:CC:3D
+subtitle: WPS PIN codes for C:B0:CE:1A:CC:3D
 lang: en
 date: 2018-10-16T13:31:00.000+07:00
 type: post

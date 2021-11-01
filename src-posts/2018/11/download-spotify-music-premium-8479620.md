@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Spotify Music Premium 8.4.79.620 Apk + Mod Final android
 webtitle: WMI Gitlab
-subtitle: Spotify Music adalah musik & aplikasi audio untuk android men-download versi
+subtitle: Spotify Music adalah musik  aplikasi audio untuk android men-download versi
 lang: en
 date: 2018-11-15T13:20:00.000+07:00
 type: post

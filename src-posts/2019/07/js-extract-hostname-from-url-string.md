@@ -1,7 +1,7 @@
 ---
 title: "[JS] Extract Hostname From URL STRING"
 webtitle: WMI Gitlab
-subtitle: Extract Hostname/Domain from URL (string)function extractHostname(url)
+subtitle: Extract HostnameDomain from URL (string)function extractHostname(url)
   { var hostname; //find & remove protocol (http, ftp, etc.) and
 lang: en
 date: 2019-07-18T01:21:00.005+07:00

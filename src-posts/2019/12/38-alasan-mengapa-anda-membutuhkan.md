@@ -1,7 +1,7 @@
 ---
 title: 38 Alasan Mengapa Anda Membutuhkan Seorang Ahli Media Sosial Untuk Bisnis Anda
 webtitle: WMI Gitlab
-subtitle: Selamat datang di abad ke-21, di mana mobil self-driving tidak lagi
+subtitle: Selamat datang di abad ke21, di mana mobil self-driving tidak lagi
   menjadi fantasi sci-fi yang jauh, anak-anak memiliki smartphone di
 lang: en
 date: 2019-12-07T05:19:00.001+07:00

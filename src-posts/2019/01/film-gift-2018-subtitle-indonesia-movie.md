@@ -1,7 +1,7 @@
 ---
 title: Film The Gift (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watch Film Online The Gift (2018) Indonesian subtitles - When novelist
+subtitle: Watch Film Online The Gift 2018) Indonesian subtitles - When novelist
   Tiana falls in love with a visually impaired Harun on her 30th
 lang: en
 date: 2019-01-08T03:09:00.000+07:00

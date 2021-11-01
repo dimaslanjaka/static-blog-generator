@@ -1,7 +1,7 @@
 ---
 title: Download lagu GIGI - Akhirnya Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu GIGI - Akhirnya Mp3 DENTAL - Finally Listen: 90,422
+subtitle: "Download lagu GIGI  Akhirnya Mp3 DENTAL - Finally Listen: 90,422
   Duration: 247 MP3 size: 3.86MB Download Links Download Mp3"
 lang: en
 date: 2019-12-19T22:22:00.002+07:00

@@ -1,7 +1,7 @@
 ---
 title: "DOWNLOAD Mobile Legends: Bang Bang 1.3.31.3412 Apk + Mod Radar Hacked android"
 webtitle: WMI Gitlab
-subtitle: "Mobile Legends: Bang Bang 1.3.31.3412 Apk + Mod Radar Hacked android"
+subtitle: Mobile Legends Bang Bang 1.3.31.3412 Apk + Mod Radar Hacked android
 lang: en
 date: 2018-11-26T21:30:00.000+07:00
 type: post

@@ -2,7 +2,7 @@
 title: Bagaimana Menggunakan SSL Certificate Gratis Dengan Bluehost Hosting
 webtitle: WMI Gitlab
 subtitle: Bagaimana Menggunakan SSL Certificate Gratis Dengan Bluehost Hosting
-  Untuk menjalankan berbasis WordPress blog & website.
+  Untuk menjalankan berbasis WordPress blog  website.
 lang: en
 date: 2017-04-27T08:24:00.000+07:00
 type: post

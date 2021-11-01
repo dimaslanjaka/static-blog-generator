@@ -1,7 +1,7 @@
 ---
 title: Korean Drama My Mister Episode 10 Indonesian Subtitles
 webtitle: WMI Gitlab
-subtitle: Korean Drama My Mister (My Ajusshi) Episode 10 Indonesian Subtitles |
+subtitle: Korean Drama My Mister My Ajusshi) Episode 10 Indonesian Subtitles |
 lang: en
 date: 2018-11-20T21:17:00.000+07:00
 type: post

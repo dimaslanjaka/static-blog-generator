@@ -1,7 +1,7 @@
 ---
 title: 8 Tips Rahasia Untuk Menggunakan Iklan Facebook Untuk E-commerce
 webtitle: WMI Gitlab
-subtitle: 8 Secret Tips For Using Facebook Ads For Ecommerce Sebagai jaringan
+subtitle: Secret Tips For Using Facebook Ads For Ecommerce Sebagai jaringan
   media sosial terbesar, Facebook adalah platform yang sangat baik untuk
 lang: en
 date: 2019-12-07T03:52:00.001+07:00

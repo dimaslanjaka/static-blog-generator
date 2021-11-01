@@ -2,7 +2,7 @@
 title: Cara Jadwalkan Post pada Blogger
 webtitle: WMI Gitlab
 subtitle: Cara Menjadwalkan Post pada BloggerJika Anda menggunakan Blogspot atau
-  Blogger untuk blog, Anda mungkin bertanya-tanya apakah ada cara
+  Blogger untuk blog, Anda mungkin bertanyatanya apakah ada cara
 lang: en
 date: 2017-04-10T10:58:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Pug Preporcessor + SCSS border animation without svg
 webtitle: WMI Gitlab
-subtitle: Normal HTML (Compiled | Before converted to PUG)<script
+subtitle: Normal HTML Compiled | Before converted to PUG)<script
 lang: en
 date: 2017-11-17T11:46:00.000+07:00
 type: post

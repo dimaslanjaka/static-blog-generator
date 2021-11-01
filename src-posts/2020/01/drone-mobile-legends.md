@@ -2,7 +2,7 @@
 title: Drone Mobile Legends
 webtitle: WMI Gitlab
 subtitle: Drone Mobile Legends Now Available at
-  https://git.webmanajemen.com/Web-Manajemen/mlbb.html?v.1.0.5 Unity v4 ALL MAPS
+  https//git.webmanajemen.com/Web-Manajemen/mlbb.html?v.1.0.5 Unity v4 ALL MAPS
   WorkPosted by Dimas
 lang: en
 date: 2020-01-21T04:27:00.000+07:00

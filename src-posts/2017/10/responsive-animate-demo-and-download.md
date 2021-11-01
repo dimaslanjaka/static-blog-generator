@@ -1,7 +1,7 @@
 ---
 title: Responsive Animate Demo And Download Button
 webtitle: WMI Gitlab
-subtitle: "Here the Demo:"
+subtitle: Here the Demo
 lang: en
 date: 2017-10-08T21:54:00.000+07:00
 type: post

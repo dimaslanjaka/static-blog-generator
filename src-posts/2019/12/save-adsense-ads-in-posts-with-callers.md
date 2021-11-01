@@ -2,7 +2,7 @@
 title: Save Adsense Ads In Posts With Callers Using Javascript
 webtitle: WMI Gitlab
 subtitle: Manfaatkan Google Question Hub Untuk Mendapatkan Ide Menulis Take
-  advantage of the Google Question Hub to Get Writing Ideas - Nowadays
+  advantage of the Google Question Hub to Get Writing Ideas  Nowadays
 lang: en
 date: 2019-12-27T01:20:00.000+07:00
 type: post

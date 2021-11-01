@@ -1,7 +1,7 @@
 ---
 title: 46 Cara Untuk Meningkatkan Pendapatan Google Adsense Anda
 webtitle: WMI Gitlab
-subtitle: 46 Cara Untuk Meningkatkan Pendapatan Google Adsense AndaSaya tidak
+subtitle: 6 Cara Untuk Meningkatkan Pendapatan Google Adsense AndaSaya tidak
   akan berbicara tentang mengapa adsense adalah program periklanan
 lang: en
 date: 2017-04-22T22:08:00.000+07:00

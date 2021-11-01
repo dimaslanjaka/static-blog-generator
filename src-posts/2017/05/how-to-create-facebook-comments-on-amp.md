@@ -1,7 +1,7 @@
 ---
 title: How to create facebook comments on AMP Blogger
 webtitle: WMI Gitlab
-subtitle: Finally Google chose Facebook comments plugin first supported by AMP HTML.
+subtitle: Finally Google choseFacebook comments plugin first supported by AMP HTML.
 lang: en
 date: 2017-05-04T21:01:00.001+07:00
 type: post

@@ -1,8 +1,8 @@
 ---
 title: List of Blog Dofollow 2017
 webtitle: WMI Gitlab
-subtitle: List of Blog Dofollow 2017 - Hello blogger friend, in order to
-  optimize SEO on a blog or website is to multiply a quality backlink that
+subtitle: List of Blog Dofollow 017 - Hello blogger friend, in order to optimize
+  SEO on a blog or website is to multiply a quality backlink that
 lang: en
 date: 2017-09-22T09:47:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Privatebattle 26 February 2018
 webtitle: WMI Gitlab
-subtitle: VG Private Battle (20:00 Wib)<br />Tim A<br />1. Mamskid<br />2.
+subtitle: VG Private Battle 20:00 Wib)<br />Tim A<br />1. Mamskid<br />2.
   abdulajis<br />3. Hanif17(roamer)<br /><br />Tim B<br />1.Hadifadillah<br
 lang: en
 date: 2018-02-26T19:20:00.002+07:00

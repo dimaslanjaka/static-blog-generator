@@ -1,7 +1,7 @@
 ---
 title: Memasang Histats Di AMP Menggunakan amp-pixel
 webtitle: WMI Gitlab
-subtitle: Komponen amp-pixel berperilaku seperti img img gambar sederhana.
+subtitle: Komponen amppixel berperilaku seperti img img gambar sederhana.
   Dibutuhkan satu URL saja, namun memberikan variabel yang bisa digantikan
 lang: en
 date: 2017-09-14T01:20:00.000+07:00

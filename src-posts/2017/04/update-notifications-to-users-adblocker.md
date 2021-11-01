@@ -1,7 +1,7 @@
 ---
 title: Update! Notifications To Users AdBlocker Adsense
 webtitle: WMI Gitlab
-subtitle: Update! Notifications To Users AdBlocker Adsense
+subtitle: Update Notifications To Users AdBlocker Adsense
 lang: en
 date: 2017-04-15T01:00:00.000+07:00
 type: post

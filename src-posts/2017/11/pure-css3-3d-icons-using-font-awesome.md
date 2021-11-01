@@ -1,7 +1,7 @@
 ---
 title: Pure CSS3 3D Icons Using Font Awesome 4.7.0
 webtitle: WMI Gitlab
-subtitle: <img width=350 height=300 alt=CSS3 3D Transformation layout=responsive
+subtitle: img width=350 height=300 alt=CSS3 3D Transformation layout=responsive
 lang: en
 date: 2017-11-10T04:42:00.002+07:00
 type: post

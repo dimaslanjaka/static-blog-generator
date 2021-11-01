@@ -1,7 +1,7 @@
 ---
 title: Know Your Basic Types CSS Selector
 webtitle: WMI Gitlab
-subtitle: "Learning CSS Tutorial Part 5: Know Your Basic Types CSS SelectorCSS
+subtitle: "Learning CSS Tutorial Part : Know Your Basic Types CSS SelectorCSS
   has the type selector that varies, even greatly vary depending"
 lang: en
 date: 2017-05-06T20:55:00.000+07:00

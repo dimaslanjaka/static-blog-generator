@@ -1,7 +1,7 @@
 ---
 title: 10 Tips for Choosing a Domain Name To Blog
 webtitle: WMI Gitlab
-subtitle: 10 Tips for Choosing a Domain Name To Blog Choosing the right domain
+subtitle: 0 Tips for Choosing a Domain Name To Blog Choosing the right domain
   name is one of the things that is important when you want to build a
 lang: en
 date: 2017-04-16T11:50:00.000+07:00

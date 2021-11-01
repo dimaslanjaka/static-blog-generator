@@ -1,7 +1,7 @@
 ---
 title: Best Organic Auto Ping To More Traffic Blog
 webtitle: WMI Gitlab
-subtitle: Best Organic Auto Ping To More Traffic Blog | auto organic ping |
+subtitle: Best Organic Auto Ping To More Traffic Blog  auto organic ping |
   Organic Auto Ping
 lang: en
 date: 2017-04-30T07:49:00.000+07:00

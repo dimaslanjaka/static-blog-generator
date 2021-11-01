@@ -1,7 +1,7 @@
 ---
 title: How to Download a File on Google Drive that Limit Access
 webtitle: WMI Gitlab
-subtitle: For those of you who want to download files shared on <kbd>Google
+subtitle: For those of you who want to download files shared on kbd>Google
   Drive</kbd> may have experienced access limits from shared files, be they
 lang: en
 date: 2017-06-25T20:59:00.000+07:00

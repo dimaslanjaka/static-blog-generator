@@ -1,7 +1,7 @@
 ---
 title: PHP check session has started
 webtitle: WMI Gitlab
-subtitle: PHP >= 5.4.0 , PHP 7
+subtitle: PHP = 5.4.0 , PHP 7
 lang: en
 date: 2018-12-25T00:58:00.000+07:00
 type: post

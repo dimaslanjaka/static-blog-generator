@@ -2,7 +2,7 @@
 title: Install Linux on the Android part 1-running Linux (Ubuntu/Xenial) on Android
 webtitle: WMI Gitlab
 subtitle: Another of the features of the android smartphone that we can take
-  advantage of IE running OS Ubuntu Xenial at 16 or more times There in
+  advantage of IE running OS Ubuntu Xenial at 6 or more times There in
 lang: en
 date: 2017-09-01T23:41:00.000+07:00
 type: post

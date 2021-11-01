@@ -1,7 +1,7 @@
 ---
 title: How to reproduce like on fanpage facebook
 webtitle: WMI Gitlab
-subtitle: How to reproduce like on fanpage facebook ??
+subtitle: How to reproduce like on fanpage facebook??
 lang: en
 date: 2017-09-07T09:39:00.000+07:00
 type: post

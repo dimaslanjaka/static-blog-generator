@@ -2,7 +2,7 @@
 title: Cygwin In Context Menus
 webtitle: WMI Gitlab
 subtitle: How might I make a Cygwin alternate way that will open Cygwin at a
-  particular envelope? This would hinder composing cd
+  particular envelope This would hinder composing cd
 lang: en
 date: 2019-06-25T14:48:00.004+07:00
 type: post

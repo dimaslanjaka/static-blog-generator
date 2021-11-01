@@ -1,7 +1,7 @@
 ---
 title: The Vanishing Film (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watching the online film The Vanishing (2018) Indonesian subtitles -
+subtitle: Watching the online film The Vanishing 2018) Indonesian subtitles -
   Three lighthouse keepers and uninhabited islands off the coast
 lang: en
 date: 2019-01-30T00:39:00.000+07:00

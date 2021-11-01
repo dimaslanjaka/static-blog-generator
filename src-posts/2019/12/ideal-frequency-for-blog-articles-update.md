@@ -1,8 +1,8 @@
 ---
 title: Ideal Frequency For Blog Articles Update
 webtitle: WMI Gitlab
-subtitle: Do we have to write articles every day on the blog? Maybe this
-  question has crossed many bloggers. I, as someone new to the blogging
+subtitle: Do we have to write articles every day on the blog Maybe this question
+  has crossed many bloggers. I, as someone new to the blogging
 lang: en
 date: 2019-12-15T04:02:00.000+07:00
 type: post

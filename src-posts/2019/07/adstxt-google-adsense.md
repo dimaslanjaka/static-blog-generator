@@ -1,7 +1,7 @@
 ---
 title: Ads.txt Google Adsense
 webtitle: WMI Gitlab
-subtitle: "ads.txt format for valid adsenseexample combine ads.txt adsense with
+subtitle: "ads.txtformat for valid adsenseexample combine ads.txt adsense with
   other ads:google.com, pub-1037373295371110, DIRECT #video, banner,"
 lang: en
 date: 2019-07-25T06:20:00.000+07:00

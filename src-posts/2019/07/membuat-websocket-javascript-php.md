@@ -1,7 +1,7 @@
 ---
 title: "[JS][PHP] Membuat Websocket Javascript"
 webtitle: WMI Gitlab
-subtitle: "Cara membuat websocket dengan Javascript (JS) dan PHPUpdate: Simple
+subtitle: "Cara membuat websocket dengan Javascript JS) dan PHPUpdate: Simple
   WebsocketRequirements: PHP 5.6+ (minimum) Websocket merupakan standard"
 lang: en
 date: 2019-07-13T01:38:00.001+07:00

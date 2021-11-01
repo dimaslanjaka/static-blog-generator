@@ -1,7 +1,7 @@
 ---
 title: Fix openssl encrypt decrypt [PHP]
 webtitle: WMI Gitlab
-subtitle: "Warning: openssl_decrypt(): IV passed is only 12 bytes long, cipher
+subtitle: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 lang: en
 date: 2019-07-31T16:03:00.001+07:00

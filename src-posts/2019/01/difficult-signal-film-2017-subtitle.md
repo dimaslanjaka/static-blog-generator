@@ -1,8 +1,8 @@
 ---
 title: Difficult Signal Film (2017) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watching Difficult Signal Movies (2017) Indonesian Subtitles - A
-  single mother struggle to find balance between her career and
+subtitle: Watching Difficult Signal Movies 2017) Indonesian Subtitles - A single
+  mother struggle to find balance between her career and
 lang: en
 date: 2019-01-31T00:49:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Cara agar artikel di index dalam 60 detik
 webtitle: WMI Gitlab
-subtitle: Cara agar artikel di index search engine dalam 60 - 120 detik.Anda,
+subtitle: Cara agar artikel di index search engine dalam 0 - 120 detik.Anda,
   saya dan semua orang lain tahu bahwa Google adalah yang paling
 lang: en
 date: 2017-04-16T07:06:00.000+07:00

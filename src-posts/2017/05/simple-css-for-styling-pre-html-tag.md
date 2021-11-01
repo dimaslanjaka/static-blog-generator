@@ -1,7 +1,7 @@
 ---
 title: Simple CSS for Styling pre html tag
 webtitle: WMI Gitlab
-subtitle: Styling <pre> tag using simple css code Description of <pre> tag on
+subtitle: Styling pre> tag using simple css code Description of <pre> tag on
   HTML The HTML <pre> tag is employed for indicating
 lang: en
 date: 2017-05-04T20:27:00.000+07:00

@@ -1,7 +1,7 @@
 ---
 title: Sublime Text 3 Shortcut Open Folder
 webtitle: WMI Gitlab
-subtitle: <h2>open folder with sublime text 3</h2><script
+subtitle: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
 lang: en
 date: 2019-03-08T08:20:00.001+07:00

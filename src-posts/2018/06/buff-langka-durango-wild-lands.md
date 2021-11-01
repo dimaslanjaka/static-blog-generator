@@ -2,7 +2,7 @@
 title: Buff Langka - Durango Wild Lands
 webtitle: WMI Gitlab
 subtitle: Artikel lainnya yang direkomendasikan Buff Kayu Durango Wild Lands
-  Terbaru Buff Langka (Buff Hijau) Durango Wild Lands Buff Bahan Utama
+  Terbaru Buff Langka Buff Hijau) Durango Wild Lands Buff Bahan Utama
 lang: en
 date: 2018-06-29T08:04:00.000+07:00
 type: post

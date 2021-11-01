@@ -1,7 +1,7 @@
 ---
 title: Cara install heroku CLI di Termux
 webtitle: WMI Gitlab
-subtitle: "Klik huruf i di keyboard (tanpa tanda petik)Ubah kode di line pertama
+subtitle: "Klik huruf i di keyboard tanpa tanda petik)Ubah kode di line pertama
   ( #!/usr/bin/env bash ) ke ("
 lang: en
 date: 2018-11-17T14:08:00.000+07:00

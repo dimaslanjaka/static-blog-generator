@@ -1,8 +1,8 @@
 ---
 title: "Pirates of the Caribbean: Salazar’s Revenge (2017)"
 webtitle: WMI Gitlab
-subtitle: "Short History: Johnny Depp kembali sebagai Kapten Jack Sparrow dalam
-  angsuran kelima (kelima!) Dari seri swashbuckling Disney. Plotnya"
+subtitle: Short History Johnny Depp kembali sebagai Kapten Jack Sparrow dalam
+  angsuran kelima (kelima!) Dari seri swashbuckling Disney. Plotnya
 lang: en
 date: 2017-09-23T11:02:00.002+07:00
 type: post

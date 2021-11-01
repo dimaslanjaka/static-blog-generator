@@ -1,8 +1,8 @@
 ---
 title: How to Play Durango Wild Lands on PC
 webtitle: WMI Gitlab
-subtitle: "Durango: Wild Lands production from Nexon Company is one of the most
-  anticipated games in 2018. Many clients have played this game during"
+subtitle: Durango Wild Lands production from Nexon Company is one of the most
+  anticipated games in 2018. Many clients have played this game during
 lang: en
 date: 2018-07-27T12:40:00.000+07:00
 type: post

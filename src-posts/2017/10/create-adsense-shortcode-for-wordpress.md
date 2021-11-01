@@ -1,7 +1,7 @@
 ---
 title: Create Adsense shortcode for WordPress
 webtitle: WMI Gitlab
-subtitle: <img class=center w3-center height=250
+subtitle: img class=center w3-center height=250
   src=https://imgdb.net/images/3202.jpg width=100% /><br /><ol><li>Go to Your
   Dashboard
 lang: en

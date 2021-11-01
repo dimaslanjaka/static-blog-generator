@@ -1,7 +1,7 @@
 ---
 title: 4 Kode SEO Optimalkan Blogger Blog Anda
 webtitle: WMI Gitlab
-subtitle: 4 Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
+subtitle: Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
   platform blogging yang paling sering digunakan, tapi pasti memiliki
 lang: en
 date: 2017-04-15T04:55:00.000+07:00

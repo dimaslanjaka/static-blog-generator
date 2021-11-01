@@ -1,7 +1,7 @@
 ---
 title: Remove all objects in an arraylist that exist in another arraylist Java
 webtitle: WMI Gitlab
-subtitle: <pre><br />ArrayList&lt;String&gt; firstArr = new
+subtitle: pre><br />ArrayList&lt;String&gt; firstArr = new
   ArrayList&lt;&gt;();<br /> firstArr.add(&quot;1&quot;);<br />
 lang: en
 date: 2020-09-22T10:36:00.001+07:00

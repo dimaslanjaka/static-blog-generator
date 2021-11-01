@@ -1,7 +1,7 @@
 ---
 title: How To Embed Blogger Video Iframe To Be Responsive
 webtitle: WMI Gitlab
-subtitle: How to Embed Bloggers Iframe Video to Be Responsive - Actually the
+subtitle: How to Embed Bloggers Iframe Video to Be Responsive  Actually the
   video uploaded on Blogger doesnt need to be responsive because its
 lang: en
 date: 2019-12-23T02:43:00.000+07:00

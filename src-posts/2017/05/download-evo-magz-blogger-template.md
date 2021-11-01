@@ -2,7 +2,7 @@
 title: Download Evo Magz Blogger Template Version 5.0 Clone Super Fast Loading
 webtitle: WMI Gitlab
 subtitle: Hi Buddy , Now I want to share for free template that is Tempo Evo
-  Magz Version 5.0 Clone Super Fast Loading , Is a special
+  Magz Version .0 Clone Super Fast Loading , Is a special
 lang: en
 date: 2017-05-17T11:00:00.000+07:00
 type: post

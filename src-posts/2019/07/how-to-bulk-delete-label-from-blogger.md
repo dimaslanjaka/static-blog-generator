@@ -1,8 +1,8 @@
 ---
 title: How to bulk delete category label from blogger posts
 webtitle: WMI Gitlab
-subtitle: "Previous: How to bulk add category label to blogger postsFilter and
-  Select category label you want to remove Select the post that will be"
+subtitle: Previous How to bulk add category label to blogger postsFilter and
+  Select category label you want to remove Select the post that will be
 lang: en
 date: 2019-07-22T03:19:00.002+07:00
 type: post

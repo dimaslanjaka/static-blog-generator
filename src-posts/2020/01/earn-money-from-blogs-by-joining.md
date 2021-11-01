@@ -1,7 +1,7 @@
 ---
 title: Earn money from blogs by joining the Influencer Marketplace
 webtitle: WMI Gitlab
-subtitle: Earn Income From Blogs By Joining the Influencer Marketplace - It is
+subtitle: Earn Income From Blogs By Joining the Influencer Marketplace  It is
   undeniable that the vast majority of bloggers are earning income on
 lang: en
 date: 2020-01-01T21:48:00.000+07:00

@@ -1,7 +1,7 @@
 ---
 title: Auto Add Alt Attributes To Images Using jQuery
 webtitle: WMI Gitlab
-subtitle: Using jQuery to adding alt attributes to all images <img> tags. Alt
+subtitle: Using jQuery to adding alt attributes to all images img> tags. Alt
   attributes of images are one of SEO Score. Alt Tag SEO is
 lang: en
 date: 2017-04-15T22:52:00.000+07:00

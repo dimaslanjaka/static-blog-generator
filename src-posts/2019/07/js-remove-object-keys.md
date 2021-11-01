@@ -1,7 +1,7 @@
 ---
 title: "[JS] Remove Object Keys"
 webtitle: WMI Gitlab
-subtitle: "<pre><br />var thisIsObject= {<br /> &apos;Cow&apos; :
+subtitle: "pre><br />var thisIsObject= {<br /> &apos;Cow&apos; :
   &apos;Moo&apos;,<br /> &apos;Cat&apos; : &apos;Meow&apos;,<br />"
 lang: en
 date: 2019-07-18T02:14:00.002+07:00

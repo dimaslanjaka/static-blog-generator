@@ -2,7 +2,7 @@
 title: Understanding SEO prenjak In Optimization Blog
 webtitle: WMI Gitlab
 subtitle: Google launches sophisticated algorithms named Hummingbird, webmasters
-  also use cutting-edge way to deal with it anyway, using SEO
+  also use cuttingedge way to deal with it anyway, using SEO
 lang: en
 date: 2017-04-11T09:26:00.000+07:00
 type: post

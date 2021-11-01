@@ -2,7 +2,7 @@
 title: Get first post WORDPRESS tutorial
 webtitle: WMI Gitlab
 subtitle: Edit your functions.php of your themes. This also work on amp plugin
-  (wp AMP ninja) -&gt; Edit on functions.php too. <br /><h3>Codes
+  wp AMP ninja) -&gt; Edit on functions.php too. <br /><h3>Codes
 lang: en
 date: 2017-10-04T23:36:00.000+07:00
 type: post

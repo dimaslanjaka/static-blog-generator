@@ -1,7 +1,7 @@
 ---
 title: VSCode
 webtitle: WMI Gitlab
-subtitle: Install jQuery Auto Complete and Hinting on VSCode- Required npm-
+subtitle: Install jQuery Auto Complete and Hinting on VSCode Required npm-
   Syntax Terminalnpm i --save @types/jquery
 lang: en
 date: 2020-03-23T15:04:00.001+07:00

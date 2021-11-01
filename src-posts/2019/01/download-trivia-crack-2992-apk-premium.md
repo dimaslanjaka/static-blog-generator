@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Trivia Crack 2.99.2 APK Premium + Mod Android download [Latest]
 webtitle: WMI Gitlab
-subtitle: Trivia Crack 2.99.2 APK Unduh Premium + Mod Android [Terbaru]
+subtitle: Trivia Crack .99.2 APK Unduh Premium + Mod Android [Terbaru]
 lang: en
 date: 2019-01-15T11:50:00.000+07:00
 type: post

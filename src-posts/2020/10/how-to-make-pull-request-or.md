@@ -1,7 +1,7 @@
 ---
 title: How to make pull request or contribution on github
 webtitle: WMI Gitlab
-subtitle: <h2>Contribution Tutorial</h2><ol> <li>Fork it (git clone
+subtitle: h2>Contribution Tutorial</h2><ol> <li>Fork it (git clone
   https://github.com/name/repo)</li> <li>Create your feature branch (git
   checkout
 lang: en

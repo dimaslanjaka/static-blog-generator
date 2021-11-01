@@ -1,7 +1,7 @@
 ---
 title: Fix error retrieving pid file on termux apache
 webtitle: WMI Gitlab
-subtitle: "Solution to error retrieving pid file - Termux and apache Apache
+subtitle: "Solution to error retrieving pid file  Termux and apache Apache
   errors overview: (20014) Internal error (specific"
 lang: en
 date: 2021-06-04T01:00:00.002+07:00

@@ -1,7 +1,7 @@
 ---
 title: (SCSS) Responsive Menu Hover Effect
 webtitle: WMI Gitlab
-subtitle: <b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery library
+subtitle: b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery library
   -&gt; <pre>&lt;script
 lang: en
 date: 2017-09-18T09:40:00.000+07:00

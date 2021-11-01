@@ -1,7 +1,7 @@
 ---
 title: CSS for a cookie policy
 webtitle: WMI Gitlab
-subtitle: <pre>.cc-banner .cc-btn:last-child,.cc-theme-classic
+subtitle: pre>.cc-banner .cc-btn:last-child,.cc-theme-classic
   .cc-btn:last-child{min-width:140px}.cc-window{left:20px;bottom:20px;transition:opacity
 lang: en
 date: 2018-12-17T02:59:00.000+07:00

@@ -1,7 +1,7 @@
 ---
 title: Alternatif untuk file_get_contents yang disabled on server by allow_url_fopen=0
 webtitle: WMI Gitlab
-subtitle: <h1> cURL alternatif untuk file_get_contents melalui HTTP </h1>Dalam
+subtitle: h1> cURL alternatif untuk file_get_contents melalui HTTP </h1>Dalam
   versi PHP yang lebih baru, Anda akan sering mendapati bahwa mengambil
 lang: en
 date: 2017-08-19T10:35:00.000+07:00

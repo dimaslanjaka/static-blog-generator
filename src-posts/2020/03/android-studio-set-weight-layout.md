@@ -1,7 +1,7 @@
 ---
 title: Android Studio Set Weight Layout Programatically
 webtitle: WMI Gitlab
-subtitle: <pre><br />LinearLayout.LayoutParams param = new
+subtitle: pre><br />LinearLayout.LayoutParams param = new
   LinearLayout.LayoutParams(<br /> LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT
   ->
 lang: en

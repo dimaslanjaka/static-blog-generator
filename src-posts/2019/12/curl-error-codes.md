@@ -1,7 +1,7 @@
 ---
 title: Curl Error Codes
 webtitle: WMI Gitlab
-subtitle: CURLE_UNSUPPORTED_PROTOCOL (1)
+subtitle: CURLEUNSUPPORTED_PROTOCOL (1)
 lang: en
 date: 2019-12-28T12:41:00.000+07:00
 type: post

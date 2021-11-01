@@ -1,7 +1,7 @@
 ---
 title: Overcoming Browser Caching Leverage for Favicon.ico
 webtitle: WMI Gitlab
-subtitle: Overcoming Browser Caching Leverage for Favicon.ico - Favicon is the
+subtitle: Overcoming Browser Caching Leverage for Favicon.ico  Favicon is the
   main icon of a website that appears on the left side of the browser
 lang: en
 date: 2019-12-25T00:01:00.000+07:00

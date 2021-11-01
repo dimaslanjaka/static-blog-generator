@@ -1,7 +1,7 @@
 ---
 title: Find and Fix broken links in Blogger For SEO
 webtitle: WMI Gitlab
-subtitle: Find and Fix broken links in Blogger – Redirect broken links for
+subtitle: Find and Fix broken links in Blogger  Redirect broken links for
   SEOContent could be a king which is that the major on page SEO issue, you
 lang: en
 date: 2017-04-23T23:18:00.000+07:00

@@ -1,7 +1,7 @@
 ---
 title: Bootstrap 4 Auto Progress Bar
 webtitle: WMI Gitlab
-subtitle: See the Pen Bootstrap 4 progress bar countdown by dimas lanjaka
+subtitle: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
   (@dimaslanjaka) on CodePen.
 lang: en
 date: 2019-07-25T23:09:00.001+07:00

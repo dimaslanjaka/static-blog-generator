@@ -2,7 +2,7 @@
 title: Basic CodeIgniter Usage Tutorial
 webtitle: WMI Gitlab
 subtitle: In this tutorial, the author will provide a tutorial on the basic use
-  of the php framework is CodeIgniter. The author uses CodeIgniter v
+  of the php framework is CodeIgniter.The author uses CodeIgniter v
 lang: en
 date: 2018-12-18T20:17:00.000+07:00
 type: post

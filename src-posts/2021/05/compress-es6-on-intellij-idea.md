@@ -1,7 +1,7 @@
 ---
 title: Compress ES6 On Intellij IDEA
 webtitle: WMI Gitlab
-subtitle: <ul><li>Install terser locally or globally <code>npm i
+subtitle: ul><li>Install terser locally or globally <code>npm i
   terser</code></li><li>Open IDEA <strong>Settings/Preferences</strong>
 lang: en
 date: 2021-05-30T16:43:00.003+07:00

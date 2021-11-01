@@ -1,7 +1,7 @@
 ---
 title: Android Studio Fix Issues
 webtitle: WMI Gitlab
-subtitle: Unsupported Modules Detected in Android Studio File -> Invalidate
+subtitle: Unsupported Modules Detected in Android Studio File > Invalidate
   Caches / Restart.
 lang: en
 date: 2020-03-29T20:23:00.002+07:00

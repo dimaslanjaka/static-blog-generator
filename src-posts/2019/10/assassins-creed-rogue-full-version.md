@@ -1,8 +1,8 @@
 ---
 title: Assassins Creed Rogue Full Version
 webtitle: WMI Gitlab
-subtitle: Web Development Indonesia - After a while ago we had distributed
-  Dragon Ball game, now a reborn game made by Ubisoft. Yes, hearing that
+subtitle: Web Development Indonesia  After a while ago we had distributed Dragon
+  Ball game, now a reborn game made by Ubisoft. Yes, hearing that
 lang: en
 date: 2019-10-26T17:42:00.000+07:00
 type: post

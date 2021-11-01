@@ -1,7 +1,7 @@
 ---
 title: Mimi Tomo Event Guide
 webtitle: WMI Gitlab
-subtitle: Unusual Hilicurl Spawn Time Unta Nunu (Stage 1 & 3) Unusual Hilicurl
+subtitle: Unusual Hilicurl Spawn Time Unta Nunu Stage 1 & 3) Unusual Hilicurl
   spawn at 00:00 - 06:00 AM Unta Mosi Dada (Stage 2) Unusual
 lang: en
 date: 2021-05-28T07:47:00.002+07:00

@@ -1,7 +1,7 @@
 ---
 title: Download Drama Korea My Lawyer, Mr. Jo 2 Subtitle Indonesia Episode 1 - 2
 webtitle: WMI Gitlab
-subtitle: "Korean Drama My Lawyer Mr. Jo 2 Indonesian Subtitles Synopsis of My
+subtitle: "Korean Drama My Lawyer Mr. Jo  Indonesian Subtitles Synopsis of My
   Lawyer, Mr. Jo 2: Korean Drama My Lawyer Mr. Jo 2 Sub Indo"
 lang: en
 date: 2019-01-22T00:24:00.000+07:00

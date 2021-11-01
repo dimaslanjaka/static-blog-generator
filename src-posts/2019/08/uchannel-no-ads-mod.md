@@ -1,7 +1,7 @@
 ---
 title: Uchannel no ads mod
 webtitle: WMI Gitlab
-subtitle: Download Uchannel modUchannel tanpa iklanUchannel no adsSub4sub
+subtitle: Download Uchannel modUchannel tanpa iklanUchannel no adsSubsub
   modBonus Auto clicker mod
 lang: en
 date: 2019-08-18T06:05:00.003+07:00

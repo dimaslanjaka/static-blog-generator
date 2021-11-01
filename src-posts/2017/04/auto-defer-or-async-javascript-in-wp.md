@@ -1,7 +1,7 @@
 ---
 title: Auto Defer Or Async Javascript in Wordpress
 webtitle: WMI Gitlab
-subtitle: async vs defer attributesTags:The async and defer attributes for
+subtitle: async vs defer attributesTagsThe async and defer attributes for
   the <script> element have nice support now, so it’s time to learn exactly
 lang: en
 date: 2017-04-21T18:48:00.000+07:00

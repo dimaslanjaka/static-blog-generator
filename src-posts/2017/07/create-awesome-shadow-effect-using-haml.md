@@ -1,7 +1,7 @@
 ---
 title: Create Awesome Shadow Effect Using HAML and LESS CSS
 webtitle: WMI Gitlab
-subtitle: <h2>How to Create <mark>Awesome Shadow Effects</mark> Using HAML (HTML
+subtitle: h2>How to Create <mark>Awesome Shadow Effects</mark> Using HAML (HTML
   Processor) and LESS CSS (Preprocessor)</h2><h3>HAML
 lang: en
 date: 2017-07-19T02:52:00.000+07:00

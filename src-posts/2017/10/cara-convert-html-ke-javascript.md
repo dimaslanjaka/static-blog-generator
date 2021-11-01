@@ -1,7 +1,7 @@
 ---
 title: Cara convert HTML ke Javascript document.write otomatis
 webtitle: WMI Gitlab
-subtitle: <h2>Bagaimana cara convert HTML ke Javascript document.write secara
+subtitle: h2>Bagaimana cara convert HTML ke Javascript document.write secara
   otomatis</h2><img
 lang: en
 date: 2017-10-05T14:50:00.000+07:00

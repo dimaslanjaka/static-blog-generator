@@ -1,7 +1,7 @@
 ---
 title: Dilan Film 1990 (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watching Film Dilan 1990 (2018) Subtitles Indonesia - It was 1990.
+subtitle: Watching Film Dilan 990 (2018) Subtitles Indonesia - It was 1990.
   Milea just moved from Jakarta to Bandung. She met a boy named
 lang: en
 date: 2018-11-19T02:25:00.000+07:00

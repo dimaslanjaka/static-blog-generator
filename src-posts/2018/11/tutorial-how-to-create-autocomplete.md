@@ -1,7 +1,7 @@
 ---
 title: Tutorial How to Create Autocomplete with CodeIgniter
 webtitle: WMI Gitlab
-subtitle: In this tutorial we will discuss how to create autocomplete with
+subtitle: In this tutorial we will discuss how to create autocompletewith
   codeigniter , in this discussion I assume all friends TWD already
 lang: en
 date: 2018-11-06T20:50:00.000+07:00

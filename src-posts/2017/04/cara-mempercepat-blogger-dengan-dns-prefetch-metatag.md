@@ -1,7 +1,7 @@
 ---
 title: Cara Mempercepat Blogger Dengan dns-prefetch metatag
 webtitle: WMI Gitlab
-subtitle: <b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
+subtitle: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
   AMP.</b><br /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
 lang: en
 date: 2017-04-30T01:34:00.002+07:00

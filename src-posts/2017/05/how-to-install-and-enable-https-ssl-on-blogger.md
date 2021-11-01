@@ -1,7 +1,7 @@
 ---
 title: How to Install and Enable HTTPS (SSL) on Blogspot Custom Domain
 webtitle: WMI Gitlab
-subtitle: How to Install and Enable HTTPS (SSL) on Blogspot Custom Domain
+subtitle: How to Install and Enable HTTPS SSL) on Blogspot Custom Domain
 lang: en
 date: 2017-05-22T22:41:00.000+07:00
 type: post

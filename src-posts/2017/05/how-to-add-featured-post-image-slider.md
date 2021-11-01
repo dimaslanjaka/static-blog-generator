@@ -2,7 +2,7 @@
 title: How to add Featured Post Image Slider Widget Blogger
 webtitle: WMI Gitlab
 subtitle: How to Install the Featured Post Image Slider Widget Auto
-  Blogger FEATURED Post Image Slider Auto is a widget blogger that displays a
+  BloggerFEATURED Post Image Slider Auto is a widget blogger that displays a
   large
 lang: en
 date: 2017-05-11T07:17:00.000+07:00

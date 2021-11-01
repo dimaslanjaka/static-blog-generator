@@ -1,7 +1,7 @@
 ---
 title: 00webhost file manager alternative
 webtitle: WMI Gitlab
-subtitle: Feature:Support unzip fileSupport edit file/script on different
+subtitle: FeatureSupport unzip fileSupport edit file/script on different
   encodingsSupport upload,edit,open,delete,rename,and other.Support add
 lang: en
 date: 2018-03-26T21:18:00.000+07:00

@@ -1,7 +1,7 @@
 ---
 title: Avoid Using The Following Anchor Text In Making Links
 webtitle: WMI Gitlab
-subtitle: Avoid Using Anchor Text Here in Link Creation - There are some anchor
+subtitle: Avoid Using Anchor Text Here in Link Creation  There are some anchor
   text that should be avoided when creating link links in the
 lang: en
 date: 2019-12-30T02:35:00.000+07:00

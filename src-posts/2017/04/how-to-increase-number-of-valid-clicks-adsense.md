@@ -1,7 +1,7 @@
 ---
 title: How to Increase the Number of Valid Clicks Adsense Ads
 webtitle: WMI Gitlab
-subtitle: How to Increase the Number of Clicks Shah / Valid Clicks Of Adsense
+subtitle: How to Increase the Number of Clicks Shah  Valid Clicks Of Adsense
   AdsWhy your adsense ads not anyone want to click? Because your blog
 lang: en
 date: 2017-04-24T08:08:00.000+07:00

@@ -1,8 +1,8 @@
 ---
 title: Finally the Blogger Thumbnail Can Support WEBP
 webtitle: WMI Gitlab
-subtitle: Finally, the Blogger Thumbnail Can Support WEBP - This is the result
-  of my imprisonment that I have done for almost 4 weeks, hahaha ...
+subtitle: Finally, the Blogger Thumbnail Can Support WEBP  This is the result of
+  my imprisonment that I have done for almost 4 weeks, hahaha ...
 lang: en
 date: 2019-12-09T02:56:00.000+07:00
 type: post

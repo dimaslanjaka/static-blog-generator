@@ -1,7 +1,7 @@
 ---
 title: 4 Strategies to Compete in First-Class Blog To Increase traffic
 webtitle: WMI Gitlab
-subtitle: 4 Strategies to Compete in First-Class Blog To Increase traffic Your
+subtitle: Strategies to Compete in First-Class Blog To Increase traffic Your
   blog traffic is largely determined by the quality of the articles
 lang: en
 date: 2017-04-25T19:51:00.000+07:00

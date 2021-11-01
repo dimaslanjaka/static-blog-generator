@@ -2,7 +2,7 @@
 title: Install MySQL di termux
 webtitle: WMI Gitlab
 subtitle: Install dan buka termuxketik pkg install mariadbmkdir
-  ../usr/etc/my.cnf.dmysql_install_dbmysqldBuka tab sesi baru, lalu ketik mysql
+  ..usr/etc/my.cnf.dmysql_install_dbmysqldBuka tab sesi baru, lalu ketik mysql
   -u root
 lang: en
 date: 2019-02-07T13:09:00.001+07:00

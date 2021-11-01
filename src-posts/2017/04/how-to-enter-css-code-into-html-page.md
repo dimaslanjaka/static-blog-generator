@@ -1,7 +1,7 @@
 ---
 title: How to enter CSS code into the HTML page
 webtitle: WMI Gitlab
-subtitle: "Learning CSS Tutorial Part 2: How to enter CSS code into the HTML
+subtitle: "Learning CSS Tutorial Part : How to enter CSS code into the HTML
   pageIn this tutorial we will discuss how to input the CSS"
 lang: en
 date: 2017-04-28T11:12:00.000+07:00

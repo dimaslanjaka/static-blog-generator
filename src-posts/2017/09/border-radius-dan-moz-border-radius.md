@@ -1,7 +1,7 @@
 ---
 title: border-radius dan -moz-border-radius
 webtitle: WMI Gitlab
-subtitle: Salah satu sifat CSS3 yang paling ditunggu
+subtitle: Salah satu sifat CSS yang paling ditunggu
   adalah border-radius . Perancang web tidak lagi harus menggunakan struktur
   tabel yang rumit
 lang: en

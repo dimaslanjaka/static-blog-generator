@@ -1,8 +1,8 @@
 ---
 title: How to Play PS2 Games on Low-End Laptops Easily and Without Lag
 webtitle: WMI Gitlab
-subtitle: In the era of the 2000s, the PS2 console was known to bring a myriad
-  of valuable experiences to its connoisseurs. But along with the
+subtitle: In the era of the 000s, the PS2 console was known to bring a myriad of
+  valuable experiences to its connoisseurs. But along with the
 lang: en
 date: 2021-05-14T04:15:00.001+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Calm Clouds v1 New HD Clouds GTA SA Mobile
 webtitle: WMI Gitlab
-subtitle: Calm Clouds v1 New HD Clouds GTA SA Mobile Mod yang akan mengubah awan
+subtitle: Calm Clouds v New HD Clouds GTA SA Mobile Mod yang akan mengubah awan
   lama GTA San Andreas Mobile menjadi awan baru berkualitas tinggi.
 lang: en
 date: 2019-12-03T00:56:00.000+07:00

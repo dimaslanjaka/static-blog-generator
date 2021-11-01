@@ -1,7 +1,7 @@
 ---
 title: Example getting properties value from settings.gradle.kts
 webtitle: WMI Gitlab
-subtitle: <pre><br />pluginManagement {<br /> resolutionStrategy {<br />
+subtitle: pre><br />pluginManagement {<br /> resolutionStrategy {<br />
   eachPlugin {<br /> // Work around
 lang: en
 date: 2020-10-24T09:19:00.000+07:00

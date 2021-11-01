@@ -1,7 +1,7 @@
 ---
 title: Install google chrome kali linux/debian/etc
 webtitle: WMI Gitlab
-subtitle: open terminal, type: 64 bitwget
+subtitle: open terminal, type 64 bitwget
   https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 32
   bit wget
 lang: en

@@ -1,7 +1,7 @@
 ---
 title: Update Genshin Impact Patch v.1.5.1 - v.1.6.0 Via Download Manager
 webtitle: WMI Gitlab
-subtitle: Update genshin impact manual via download manager (IDM).
+subtitle: Update genshin impact manual via download manager IDM).
 lang: en
 date: 2021-06-07T11:20:00.003+07:00
 type: post

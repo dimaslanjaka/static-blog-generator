@@ -2,7 +2,7 @@
 title: "Taktik Pemasaran Media Sosial: 10 Gagasan Yang Sebenarnya Berhasil"
 webtitle: WMI Gitlab
 subtitle: Apakah Anda siap untuk mengambil taktik pemasaran media sosial Anda ke
-  tingkat berikutnya? Media sosial dan bisnis tidak dapat
+  tingkat berikutnya Media sosial dan bisnis tidak dapat
 lang: en
 date: 2019-12-28T01:24:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: "[PHP] Detect User Client IP (XAMPP or Localhost Machine Supported)"
 webtitle: WMI Gitlab
-subtitle: "<pre><br />Usage: var_dump(get_client_ip());<br /></pre> <pre><br
+subtitle: "pre><br />Usage: var_dump(get_client_ip());<br /></pre> <pre><br
   />/**<br /> * Detect is localhost<br /> *<br /> * @return boolean<br />"
 lang: en
 date: 2020-10-17T04:26:00.004+07:00

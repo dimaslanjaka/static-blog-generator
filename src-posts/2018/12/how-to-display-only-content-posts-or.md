@@ -1,7 +1,7 @@
 ---
 title: How to display only content posts or pages on blogger
 webtitle: WMI Gitlab
-subtitle: <img
+subtitle: img
   src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0esfECcbfautWTR7oGMPXO6eLhiAOX03vpEXndHO2HQDPVIJC
   /><br />Usually a
 lang: en

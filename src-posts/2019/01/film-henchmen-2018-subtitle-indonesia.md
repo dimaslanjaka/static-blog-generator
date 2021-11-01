@@ -1,7 +1,7 @@
 ---
 title: Film Henchmen (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watch Online Henchmen Cinema (2018) Indonesian subtitles - World of
+subtitle: Watch Online Henchmen Cinema 2018) Indonesian subtitles - World of
   super villains, evil schemes and global domination ... someone
 lang: en
 date: 2019-01-14T11:50:00.000+07:00

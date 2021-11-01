@@ -1,7 +1,7 @@
 ---
 title: css keren untuk blockquote tag
 webtitle: WMI Gitlab
-subtitle: Apa itu blockquote tag ? HTML <blockquote> tag digunakan untuk
+subtitle: Apa itu blockquote tag  HTML <blockquote> tag digunakan untuk
   menunjukkan kutipan panjang (yaitu kutipan yang berlangsung beberapa baris).
 lang: en
 date: 2017-04-11T15:56:00.000+07:00

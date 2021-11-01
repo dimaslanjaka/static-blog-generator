@@ -1,7 +1,7 @@
 ---
 title: "[PHP] Function get_meta_tags() Helper"
 webtitle: WMI Gitlab
-subtitle: "Description Of get_meta_tags Source Description: PHP.NET (PHP 4, PHP
+subtitle: "Description Of getmeta_tags Source Description: PHP.NET (PHP 4, PHP
   5, PHP 7) get_meta_tags —"
 lang: en
 date: 2018-02-21T20:55:00.000+07:00

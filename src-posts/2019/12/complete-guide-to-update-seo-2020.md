@@ -1,8 +1,8 @@
 ---
 title: Complete Guide to Update Seo 2020
 webtitle: WMI Gitlab
-subtitle: Panduan Lengkap Seo Update 2020 There are various SEO tips that you
-  can explore from various sources. But, can everything be like a
+subtitle: Panduan Lengkap Seo Update 020 There are various SEO tips that you can
+  explore from various sources. But, can everything be like a
 lang: en
 date: 2019-12-06T19:03:00.001+07:00
 type: post

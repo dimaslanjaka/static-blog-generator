@@ -1,7 +1,7 @@
 ---
 title: Download Baaghi (2016) Indonesian Subtitle Movie Free Movie Bluray
 webtitle: WMI Gitlab
-subtitle: .content *,.keyword *,.keywords * { max-width:100%} @import
+subtitle: .content ,.keyword *,.keywords * { max-width:100%} @import
 lang: en
 date: 2018-11-23T23:26:00.000+07:00
 type: post

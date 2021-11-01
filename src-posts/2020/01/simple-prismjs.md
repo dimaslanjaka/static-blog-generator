@@ -1,7 +1,7 @@
 ---
 title: Simple PrismJS
 webtitle: WMI Gitlab
-subtitle: "Simple PrismJS Syntax Highlighter <pre> <code> (Not Single) Usage:
+subtitle: "Simple PrismJS Syntax Highlighter pre> <code> (Not Single) Usage:
   <pre><code>code block</code></pre> <h3>Welcome to the real-time"
 lang: en
 date: 2020-01-20T10:49:00.003+07:00

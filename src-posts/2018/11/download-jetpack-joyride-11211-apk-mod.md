@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Jetpack Joyride 1.12.11 Apk + Mod Unlimited Money android
 webtitle: WMI Gitlab
-subtitle: Jetpack Joyride 1.12.11 Apk + Mod Unlimited Money android
+subtitle: Jetpack Joyride .12.11 Apk + Mod Unlimited Money android
 lang: en
 date: 2018-11-14T15:54:00.000+07:00
 type: post

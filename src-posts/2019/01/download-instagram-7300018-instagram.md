@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Instagram 73.0.0.0.18 + Instagram Plus OGInsta + Mod GB Insta Apk
 webtitle: WMI Gitlab
-subtitle: Instagram 73.0.0.0.18 + Instagram Plus OGInsta + Mod GB Insta Apk
+subtitle: Instagram 3.0.0.0.18 + Instagram Plus OGInsta + Mod GB Insta Apk
 lang: en
 date: 2019-01-25T00:28:00.000+07:00
 type: post

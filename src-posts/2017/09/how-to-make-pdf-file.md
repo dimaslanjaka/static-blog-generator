@@ -1,7 +1,7 @@
 ---
 title: HOW TO MAKE A PDF FILE
 webtitle: WMI Gitlab
-subtitle: http://www.dopdf.com/download/setup/dopdf-7.exe
+subtitle: http//www.dopdf.com/download/setup/dopdf-7.exe
 lang: en
 date: 2017-09-24T01:51:00.000+07:00
 type: post

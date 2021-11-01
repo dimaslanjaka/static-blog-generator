@@ -1,8 +1,8 @@
 ---
 title: Differences Onpage SEO Optimization and SEO Offpage
 webtitle: WMI Gitlab
-subtitle: Differences Onpage SEO Optimization and SEO Offpage    Before I
-  explain the differences onpage seo optimization and offpage seo
+subtitle: Differences Onpage SEO Optimization and SEO Offpage   Before I explain
+  the differences onpage seo optimization and offpage seo
 lang: en
 date: 2017-04-28T17:59:00.000+07:00
 type: post

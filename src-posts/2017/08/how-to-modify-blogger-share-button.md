@@ -2,7 +2,7 @@
 title: How to Modify Blogger Share Button Tweak Valid HTML5 CSS3
 webtitle: WMI Gitlab
 subtitle: Actually Blogger has been updating its share button quite a bit by
-  adding Pinterest button. But just now I am thinking of making it valid
+  adding Pinterest button.But just now I am thinking of making it valid
 lang: en
 date: 2017-08-23T09:55:00.000+07:00
 type: post

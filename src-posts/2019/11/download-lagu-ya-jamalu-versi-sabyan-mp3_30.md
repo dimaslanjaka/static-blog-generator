@@ -1,7 +1,7 @@
 ---
 title: Download lagu YA JAMALU Versi SABYAN Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu YA JAMALU Versi SABYAN Mp3 YES JAMALU SABYAN Version
+subtitle: "Download lagu YA JAMALU Versi SABYAN Mp YES JAMALU SABYAN Version
   Listen: 99,473,816 Duration: 253 MP3 size: 3.95MB Download"
 lang: en
 date: 2019-11-30T17:58:00.000+07:00

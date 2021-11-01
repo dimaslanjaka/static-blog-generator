@@ -1,8 +1,8 @@
 ---
 title: Blog and Website Writing Service
 webtitle: WMI Gitlab
-subtitle: How Much Rates Per Article ?The article tariff adjusts the need for
-  the number of words each article you need. I offer IDR 150 / word .
+subtitle: How Much Rates Per Article The article tariff adjusts the need for the
+  number of words each article you need. I offer IDR 150 / word .
 lang: en
 date: 2018-02-08T11:46:00.000+07:00
 type: post

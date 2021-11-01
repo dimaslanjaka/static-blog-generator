@@ -1,8 +1,8 @@
 ---
 title: What is bitly?
 webtitle: WMI Gitlab
-subtitle: What is Bitly - bitly is an online service that provides short URLs
-  for your posts so you can be easier to share with friends, family, and
+subtitle: What is Bitly  bitly is an online service that provides short URLs for
+  your posts so you can be easier to share with friends, family, and
 lang: en
 date: 2017-07-20T10:47:00.000+07:00
 type: post

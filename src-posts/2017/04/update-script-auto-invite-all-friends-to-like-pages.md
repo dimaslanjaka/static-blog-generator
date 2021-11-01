@@ -1,7 +1,7 @@
 ---
 title: Update Script Auto Invite All Friends To Like Fanpages
 webtitle: WMI Gitlab
-subtitle: Script Auto Invite / Invite All Friends to FansPage FREE (Updated April 2017).
+subtitle: Script Auto Invite  Invite All Friends to FansPage FREE (Updated April 2017).
 lang: en
 date: 2017-04-20T23:57:00.000+07:00
 type: post

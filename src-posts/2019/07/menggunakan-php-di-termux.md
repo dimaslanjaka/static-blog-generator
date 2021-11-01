@@ -1,7 +1,7 @@
 ---
 title: Menggunakan PHP di termux
 webtitle: WMI Gitlab
-subtitle: Instalasipkg update -ypkg upgrade -ypkg install php curl wget git
+subtitle: Instalasipkg update ypkg upgrade -ypkg install php curl wget git
   -yContoh Penggunaan PHP (CLI) pada termuxbuat file
 lang: en
 date: 2019-07-28T06:38:00.002+07:00

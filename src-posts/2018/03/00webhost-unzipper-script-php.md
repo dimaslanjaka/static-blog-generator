@@ -1,8 +1,8 @@
 ---
 title: 00webhost unzipper script php
 webtitle: WMI Gitlab
-subtitle: <h2>Features:</h2><ul><li>Detect zip file
-  automatically</li><li>Extract zip to custom folder</li><li>Detect zip file on
+subtitle: h2>Features:</h2><ul><li>Detect zip file automatically</li><li>Extract
+  zip to custom folder</li><li>Detect zip file on
 lang: en
 date: 2018-03-27T02:22:00.000+07:00
 type: post

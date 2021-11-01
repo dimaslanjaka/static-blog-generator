@@ -1,7 +1,7 @@
 ---
 title: Buff Bahan Utama (Attributes) - Durango Wild Lands
 webtitle: WMI Gitlab
-subtitle: Attributes / BuffSenjata / WeaponsPakaian / ClothesMakanan / FoodsRingan /
+subtitle: Attributes  BuffSenjata / WeaponsPakaian / ClothesMakanan / FoodsRingan /
 lang: en
 date: 2018-06-29T07:56:00.000+07:00
 type: post

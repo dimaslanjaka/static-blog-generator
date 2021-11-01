@@ -1,7 +1,7 @@
 ---
 title: Update Code Widget Dan Template Untuk Simple Safelink Converter
 webtitle: WMI Gitlab
-subtitle: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini (Cara
+subtitle: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
   Membuat Simple Safelink Converter)
 lang: en
 date: 2017-12-12T18:41:00.000+07:00

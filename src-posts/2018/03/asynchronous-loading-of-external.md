@@ -1,7 +1,7 @@
 ---
 title: Asynchronous Loading of External Javascript
 webtitle: WMI Gitlab
-subtitle: Loading of external javascript resources (libraries, plugins, widgets)
+subtitle: Loading of external javascript resources libraries, plugins, widgets)
   should be done asynchronously, in a non-blocking manner, so the load
 lang: en
 date: 2018-03-11T00:53:00.002+07:00

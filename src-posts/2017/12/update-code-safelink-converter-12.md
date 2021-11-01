@@ -1,7 +1,7 @@
 ---
 title: Update Code Safelink Converter Untuk Halaman 12 Desember 2017
 webtitle: WMI Gitlab
-subtitle: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini (Cara
+subtitle: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
   Membuat Simple Safelink Converter)
 lang: en
 date: 2017-12-12T01:39:00.000+07:00

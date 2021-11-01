@@ -1,7 +1,7 @@
 ---
 title: Download Korean Drama Player Episode 12 Indonesian Subtitles
 webtitle: WMI Gitlab
-subtitle: Download Korean Drama Player Episode 12 Indonesian Subtitles
+subtitle: Download Korean Drama Player Episode 2 Indonesian Subtitles
 lang: en
 date: 2018-11-17T05:22:00.000+07:00
 type: post

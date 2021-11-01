@@ -1,7 +1,7 @@
 ---
 title: 10 Strategi Terbukti untuk Meningkatkan Pendapatan AdSense Anda
 webtitle: WMI Gitlab
-subtitle: 10 Strategi Terbukti untuk Meningkatkan Pendapatan AdSense
+subtitle: 0 Strategi Terbukti untuk Meningkatkan Pendapatan AdSense
   AndaMenggunakan AdSense & ingin meningkatkan pendapatan Anda? Di sini saya
 lang: en
 date: 2017-04-09T14:00:00.000+07:00

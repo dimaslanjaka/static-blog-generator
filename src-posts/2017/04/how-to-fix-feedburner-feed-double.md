@@ -1,7 +1,7 @@
 ---
 title: How to fix Feedburner feed double titles issue
 webtitle: WMI Gitlab
-subtitle: How to fix Feedburner feed double titles issue – Quick tip Most of the
+subtitle: How to fix Feedburner feed double titles issue  Quick tip Most of the
   wordpress users syndicate their RSS feeds victimisation
 lang: en
 date: 2017-04-22T23:30:00.000+07:00

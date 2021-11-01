@@ -1,7 +1,7 @@
 ---
 title: "Film Danur 2: Maddah (2018) Subtitle Indonesia Movie"
 webtitle: WMI Gitlab
-subtitle: "Watch Danur Film 2: Maddah (2018) Indonesian Subtitles - Film Danur 2
+subtitle: "Watch Danur Film : Maddah (2018) Indonesian Subtitles - Film Danur 2
   Maddah continues the story of Risa (Prilly Latuconsina) who has"
 lang: en
 date: 2019-01-29T00:42:00.000+07:00

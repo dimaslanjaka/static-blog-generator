@@ -2,7 +2,7 @@
 title: Chrome Allow Localhost SSL XAMPP
 webtitle: WMI Gitlab
 subtitle: "Input into chrome address bar
-  :chrome://flags/#allow-insecure-localhostenable it, then restart the chrome
+  chrome://flags/#allow-insecure-localhostenable it, then restart the chrome
   browser. seems like this :"
 lang: en
 date: 2019-05-31T18:33:00.001+07:00

@@ -2,7 +2,7 @@
 title: Kode Recommend Dan Comments Facebook Based JavaScript
 webtitle: WMI Gitlab
 subtitle: Dengan plugin komentar, orang dapat mengomentari konten di situs web
-  Anda menggunakan akun Facebook mereka. Orang-orang juga bisa memilih
+  Anda menggunakan akun Facebook mereka. Orangorang juga bisa memilih
 lang: en
 date: 2017-07-28T22:55:00.000+07:00
 type: post

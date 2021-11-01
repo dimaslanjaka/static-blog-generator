@@ -1,7 +1,7 @@
 ---
 title: Cara membuat html sitemap wordpress tanpa plugin
 webtitle: WMI Gitlab
-subtitle: Menjadi pengguna WordPress bertahun-tahun saya telah menemukan tidak
+subtitle: Menjadi pengguna WordPress bertahuntahun saya telah menemukan tidak
   banyak yang bisa salah dengan CMS open source tapi bila Anda memiliki
 lang: en
 date: 2017-08-05T18:02:00.000+07:00

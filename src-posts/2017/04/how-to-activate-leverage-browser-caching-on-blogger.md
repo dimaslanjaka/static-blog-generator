@@ -1,7 +1,7 @@
 ---
 title: How to activate Leverage Browser Caching On Blogger
 webtitle: WMI Gitlab
-subtitle: <h2> How to enabling/activate Leverage Browser Caching On Blogger
+subtitle: h2> How to enabling/activate Leverage Browser Caching On Blogger
   </h2><img height=293
 lang: en
 date: 2017-04-12T05:34:00.000+07:00

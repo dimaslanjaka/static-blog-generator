@@ -1,7 +1,7 @@
 ---
 title: Film Johnny English Strikes Again (2018) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watch Movies Online Movie Johnny English Strikes Again (2018)
+subtitle: Watch Movies Online Movie Johnny English Strikes Again 2018)
   Indonesian Subtitles - Disaster strikes when a criminal mastermind
 lang: en
 date: 2019-02-19T22:21:00.000+07:00

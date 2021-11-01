@@ -1,7 +1,7 @@
 ---
 title: How to Remove Blogger sidebar and make spesific pages at full width
 webtitle: WMI Gitlab
-subtitle: This one is a famous request in Blogger Help Forum - instructions to
+subtitle: This one is a famous request inBlogger Help Forum - instructions to
   shroud the sidebar on one of the static pages, and make the principle
 lang: en
 date: 2017-05-01T19:22:00.000+07:00

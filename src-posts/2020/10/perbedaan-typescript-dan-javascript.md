@@ -1,7 +1,7 @@
 ---
 title: Perbedaan typescript dan javascript secara rinci
 webtitle: WMI Gitlab
-subtitle: Typescript lebih strict / lebih detail dan harus mematuhi peraturan
+subtitle: Typescript lebih strict  lebih detail dan harus mematuhi peraturan
   seperti typedata (variable, class, interface, dll), hampir sama seperti
 lang: en
 date: 2020-10-28T14:00:00.004+07:00

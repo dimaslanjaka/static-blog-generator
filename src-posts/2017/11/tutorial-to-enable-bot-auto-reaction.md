@@ -2,8 +2,8 @@
 title: TUTORIAL TO ENABLE BOT AUTO REACTION / BOT LIKE FACEBOOK HOME COMPLETE
   WITH IMAGE 2017
 webtitle: WMI Gitlab
-subtitle: 3.) Then the message will appear as drawn. Do not be afraid, then
-  press PROXY.4.) Input Email and Password your fb account earlier. Then
+subtitle: .) Then the message will appear as drawn. Do not be afraid, then press
+  PROXY.4.) Input Email and Password your fb account earlier. Then
 lang: en
 date: 2017-11-10T22:43:00.000+07:00
 type: post

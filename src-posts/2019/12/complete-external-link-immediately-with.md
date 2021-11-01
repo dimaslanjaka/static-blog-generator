@@ -2,7 +2,7 @@
 title: Complete the External Link immediately with the Noopener Rail
 webtitle: WMI Gitlab
 subtitle: If you add an external link in the template or in the post and use the
-  target=_blank attribute, then immediately complete the
+  target_blank attribute, then immediately complete the
 lang: en
 date: 2019-12-18T01:16:00.000+07:00
 type: post

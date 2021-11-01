@@ -2,7 +2,7 @@
 title: Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam
   Blogger Post
 webtitle: WMI Gitlab
-subtitle: Dalam tutorial ini Kita dapat memanipulasi lokasi iklan yang akan
+subtitle: Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan
   ditampilkan dengan menambahkan script dalam template dan menggunakan tag
 lang: en
 date: 2017-04-09T10:38:00.000+07:00

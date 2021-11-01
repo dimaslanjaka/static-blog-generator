@@ -1,7 +1,7 @@
 ---
 title: How to create blogger sitemap per tables 100% Worked
 webtitle: WMI Gitlab
-subtitle: <h2>Stylish blogger sitemap per tables</h2><img
+subtitle: h2>Stylish blogger sitemap per tables</h2><img
 lang: en
 date: 2017-11-16T19:34:00.000+07:00
 type: post

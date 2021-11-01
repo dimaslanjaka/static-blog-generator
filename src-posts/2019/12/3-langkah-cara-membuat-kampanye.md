@@ -1,7 +1,7 @@
 ---
 title: 3 Langkah Cara Membuat Kampanye Pemasaran Media Sosial B2b
 webtitle: WMI Gitlab
-subtitle: 3 Steps On How To Create A B2b Social Media Marketing Campaign Panduan
+subtitle: Steps On How To Create A B2b Social Media Marketing Campaign Panduan
   pemasaran media sosial B2B ini adalah apa yang Anda butuhkan untuk
 lang: en
 date: 2019-12-07T04:09:00.001+07:00

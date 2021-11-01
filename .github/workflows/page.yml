@@ -36,6 +36,7 @@ jobs:
             ${{ steps.npm-cache-dir.outputs.dir }}
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ./node_modules
+            ./docs
             ~/.npm
           key: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}

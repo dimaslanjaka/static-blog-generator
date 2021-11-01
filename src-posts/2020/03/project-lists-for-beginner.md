@@ -1,7 +1,7 @@
 ---
 title: Project lists for beginner
 webtitle: WMI Gitlab
-subtitle: Movies App (Flutter Project)
+subtitle: Movies App Flutter Project)
 lang: en
 date: 2020-03-17T17:13:00.000+07:00
 type: post

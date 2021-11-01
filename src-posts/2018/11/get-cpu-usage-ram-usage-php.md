@@ -1,7 +1,7 @@
 ---
 title: Get CPU usage / RAM usage [PHP]
 webtitle: WMI Gitlab
-subtitle: "if you mean how much ram/cpu php is using then you can do the
+subtitle: "if you mean how much ramcpu php is using then you can do the
   following using plain php without using any package: this returns the"
 lang: en
 date: 2018-11-06T03:08:00.000+07:00

@@ -1,8 +1,8 @@
 ---
 title: How to Enable Ads.txt on Blogger
 webtitle: WMI Gitlab
-subtitle: After yesterday Google introduced the Search Console Beta version ,
-  now Google added Ads.txt on Blogger .
+subtitle: After yesterday Google introduced theSearch Console Beta version , now
+  Google added Ads.txt on Blogger .
 lang: en
 date: 2018-03-01T18:32:00.000+07:00
 type: post

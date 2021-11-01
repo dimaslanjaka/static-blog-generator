@@ -1,7 +1,7 @@
 ---
 title: Schema Markup Untuk Homepage Blog
 webtitle: WMI Gitlab
-subtitle: "<pre>&lt;script type=&quot;application/ld+json&quot;&gt;<br /><br
+subtitle: "pre>&lt;script type=&quot;application/ld+json&quot;&gt;<br /><br
   />{<br /><br />&nbsp; &nbsp; &quot;@context&quot;:"
 lang: en
 date: 2017-09-09T13:00:00.000+07:00

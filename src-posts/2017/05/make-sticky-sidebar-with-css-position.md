@@ -1,7 +1,7 @@
 ---
 title: "Make Sticky Sidebar With CSS position: sticky"
 webtitle: WMI Gitlab
-subtitle: "Make Sticky Sidebar With CSS position: sticky"
+subtitle: Make Sticky Sidebar With CSS position sticky
 lang: en
 date: 2017-05-18T03:50:00.000+07:00
 type: post

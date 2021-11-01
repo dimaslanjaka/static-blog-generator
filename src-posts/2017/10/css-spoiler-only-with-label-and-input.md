@@ -1,7 +1,7 @@
 ---
 title: CSS Spoiler Only With Label And Input
 webtitle: WMI Gitlab
-subtitle: unfortunately the details and summary tags are not allowed in AMP HTML.
+subtitle: unfortunately thedetails and summary tags are not allowed in AMP HTML.
 lang: en
 date: 2017-10-07T05:14:00.000+07:00
 type: post

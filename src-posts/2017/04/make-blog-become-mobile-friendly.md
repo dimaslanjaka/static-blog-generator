@@ -1,7 +1,7 @@
 ---
 title: Make Blog Become a Mobile-Friendly
 webtitle: WMI Gitlab
-subtitle: Make Blog Become a Mobile-Friendly How to Make a Blog For Mobile
+subtitle: Make Blog Become a MobileFriendly How to Make a Blog For Mobile
   Friendly and SEO - After the latest algorithms of search engine
 lang: en
 date: 2017-04-26T16:21:00.000+07:00

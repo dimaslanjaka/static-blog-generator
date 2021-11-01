@@ -1,7 +1,7 @@
 ---
 title: Url Opener Script Termux
 webtitle: WMI Gitlab
-subtitle: <img
+subtitle: img
 lang: en
 date: 2018-03-26T00:48:00.000+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: What If Adsense Ads Are Not In Visit Clicks? Is It Still Paid?
 webtitle: WMI Gitlab
-subtitle: What If Adsense Ads Are Not In Visit Clicks?
+subtitle: What If Adsense Ads Are Not In Visit Clicks
 lang: en
 date: 2017-09-19T12:03:00.001+07:00
 type: post

@@ -1,7 +1,7 @@
 ---
 title: Kumpulan Serial Keys Untuk ESET NOD32/ESS 9
 webtitle: WMI Gitlab
-subtitle: Untuk Tanggal (xx:xx:xxxx) merupakan valid serial key tersebut
+subtitle: Untuk Tanggal xx:xx:xxxx) merupakan valid serial key tersebut
 lang: en
 date: 2017-07-26T23:52:00.000+07:00
 type: post

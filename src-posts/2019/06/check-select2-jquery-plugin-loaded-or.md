@@ -1,7 +1,7 @@
 ---
 title: "[JS] Check select2 jquery plugin loaded or not"
 webtitle: WMI Gitlab
-subtitle: "Example: How to change select2 jQuery plugin using jQuery.val()"
+subtitle: Example How to change select2 jQuery plugin using jQuery.val()
 lang: en
 date: 2019-06-26T11:20:00.002+07:00
 type: post

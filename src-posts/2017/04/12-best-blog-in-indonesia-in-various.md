@@ -1,7 +1,7 @@
 ---
 title: 12 Best Blog in Indonesia in Various Topics
 webtitle: WMI Gitlab
-subtitle: 12 Best Blog in Indonesia in Various TopicsA few days ago I idly
+subtitle: 2 Best Blog in Indonesia in Various TopicsA few days ago I idly
   googling the keywordsBest Blog in IndonesiaAfter I check one by one from
 lang: en
 date: 2017-04-13T12:31:00.000+07:00

@@ -2,7 +2,7 @@
 title: Cara Melihat Sandi WiFi Tersimpan di Windows 7, 8, & 10
 webtitle: WMI Gitlab
 subtitle: Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian
-  belakang router yang ISP Anda berikan? Jika demikian, mungkin
+  belakang router yang ISP Anda berikan Jika demikian, mungkin
 lang: en
 date: 2017-07-10T16:26:00.001+07:00
 type: post

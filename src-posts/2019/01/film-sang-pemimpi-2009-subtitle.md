@@ -1,7 +1,7 @@
 ---
 title: Film Sang Pemimpi (2009) Subtitle Indonesia Movie
 webtitle: WMI Gitlab
-subtitle: Watch Sang Pemimpi Online Movies (2009) Indonesian Subtitles - This
+subtitle: Watch Sang Pemimpi Online Movies 2009) Indonesian Subtitles - This
   movie is an adaptation from a popular novel by the same title
 lang: en
 date: 2019-01-19T11:49:00.000+07:00

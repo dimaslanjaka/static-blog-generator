@@ -1,7 +1,7 @@
 ---
 title: Remove IDM "Fake Serial" Pop-ups
 webtitle: WMI Gitlab
-subtitle: Web Development Indonesia - If you are a pirated Internet Download
+subtitle: Web Development Indonesia  If you are a pirated Internet Download
   Manager user, lately there must be something strange about your
 lang: en
 date: 2019-11-20T17:20:00.000+07:00

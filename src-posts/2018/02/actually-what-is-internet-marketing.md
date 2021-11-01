@@ -1,7 +1,7 @@
 ---
 title: Actually, What is Internet Marketing?
 webtitle: WMI Gitlab
-subtitle: countDown();
+subtitle: countDown);
 lang: en
 date: 2018-02-13T02:11:00.000+07:00
 type: post

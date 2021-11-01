@@ -2,7 +2,7 @@
 title: Turn off the Platform Protection Service Software Program
 webtitle: WMI Gitlab
 subtitle: One time I was playing a game, and running several programs on a
-  Windows 8 laptop. Then the memory was heavy, some of my programs were
+  Windows  laptop. Then the memory was heavy, some of my programs were
 lang: en
 date: 2019-07-21T01:20:00.000+07:00
 type: post

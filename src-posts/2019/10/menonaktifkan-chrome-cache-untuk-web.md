@@ -1,7 +1,7 @@
 ---
 title: Menonaktifkan Chrome Cache Untuk Web Development
 webtitle: WMI Gitlab
-subtitle: Bagaimana cara menonaktifkan (disable) chrome cache untuk website
+subtitle: Bagaimana cara menonaktifkan disable) chrome cache untuk website
   development ?Jawabannya The Chrome DevToolsTutorial :Buka development
 lang: en
 date: 2019-10-14T22:15:00.000+07:00

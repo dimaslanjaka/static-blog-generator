@@ -1,7 +1,7 @@
 ---
 title: conditional tags blogger for desktop only
 webtitle: WMI Gitlab
-subtitle: <h2>Is there any Blogger (blogspot) not portable contingent
+subtitle: h2>Is there any Blogger (blogspot) not portable contingent
   arrangement.</h2>Someone ask to stackoverflow like this.<br /><br />I would
 lang: en
 date: 2017-05-17T20:02:00.000+07:00

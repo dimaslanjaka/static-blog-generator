@@ -3,7 +3,7 @@ title: 5 Free File Hosting / Berbagi Situs Cloud Storage dengan Direct / Hot
   Link Support | CloudLinker v2.0 Direct Link Maker
 webtitle: WMI Gitlab
 subtitle: Hei Guys, seperti yang Anda tahu kanonik mematikan Ubuntu One Cloud
-  Storage-nya jadi saya mencari situs berbagi file alternatif yang
+  Storagenya jadi saya mencari situs berbagi file alternatif yang
 lang: en
 date: 2017-07-25T10:10:00.001+07:00
 type: post

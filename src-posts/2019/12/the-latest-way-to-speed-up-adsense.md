@@ -1,7 +1,7 @@
 ---
 title: The Latest Way to Speed Up Loading Adsense Ads
 webtitle: WMI Gitlab
-subtitle: The Latest Way to Speed ​​Up Loading Adsense Ads - By default for
+subtitle: The Latest Way to Speed ​Up Loading Adsense Ads - By default for
   Adsense ads that use asynchronous ads will appear after all page
 lang: en
 date: 2019-12-11T02:22:00.000+07:00

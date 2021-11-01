@@ -1,7 +1,7 @@
 ---
 title: PHP array magic trick and manipulations
 webtitle: WMI Gitlab
-subtitle: manipulating multidimensional array using array_map/*** Ilterate
+subtitle: manipulating multidimensional array using arraymap/*** Ilterate
   multidimensional array simplicity* @desc modify and manipulate or populate
 lang: en
 date: 2020-03-23T23:21:00.003+07:00

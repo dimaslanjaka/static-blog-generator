@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Smart Launcher 5 pro 5.1 build 108 Apk + Plugin + Tema android
 webtitle: WMI Gitlab
-subtitle: Cerdas Launcher 5 adalah permainan Personalisasi untuk android Download versi
+subtitle: Cerdas Launcher  adalah permainan Personalisasi untuk android Download versi
 lang: en
 date: 2018-11-08T12:54:00.002+07:00
 type: post

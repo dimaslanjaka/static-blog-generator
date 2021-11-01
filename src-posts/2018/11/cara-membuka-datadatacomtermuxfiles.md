@@ -1,7 +1,7 @@
 ---
 title: Cara membuka data/data/com.termux/files
 webtitle: WMI Gitlab
-subtitle: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh      nama
+subtitle: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh     nama
   jalan seperti ini.
 lang: en
 date: 2018-11-12T10:41:00.003+07:00

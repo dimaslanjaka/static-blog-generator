@@ -1,8 +1,8 @@
 ---
 title: Download lagu Bullet For My Valentine - Waking The Demon Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Bullet For My Valentine - Waking The Demon Mp3Bullet
-  For My Valentine - Waking The Demon Listen: 63,861,608 Duration: 254"
+subtitle: "Download lagu Bullet For My Valentine  Waking The Demon Mp3Bullet For
+  My Valentine - Waking The Demon Listen: 63,861,608 Duration: 254"
 lang: en
 date: 2019-12-11T00:19:00.001+07:00
 type: post

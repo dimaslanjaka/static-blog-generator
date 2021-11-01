@@ -1,8 +1,8 @@
 ---
 title: build.gradle with custom repository
 webtitle: WMI Gitlab
-subtitle: Fix missing dependencies from your gradle project (android, maven,
-  etc) with this build.gradle. <br/>insert into
+subtitle: Fix missing dependencies from your gradle project android, maven, etc)
+  with this build.gradle. <br/>insert into
 lang: en
 date: 2020-08-03T18:02:00.005+07:00
 type: post

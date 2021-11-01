@@ -1,7 +1,7 @@
 ---
 title: "[JS][PHP] Regexp for matching URL Pattern"
 webtitle: WMI Gitlab
-subtitle: <img
+subtitle: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
   alt=regexp
 lang: en

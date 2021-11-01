@@ -1,7 +1,7 @@
 ---
 title: PHP Amazon S3 File Upload Code AWS Signature Version 4
 webtitle: WMI Gitlab
-subtitle: Amazon offers a PHP SDK for taking care of AWS and S3 asks for, yet it
+subtitle: Amazon offers a PHP SDK for taking care of AWS and S asks for, yet it
   tips the scales at more than 500 documents and almost 5MB. In the
 lang: en
 date: 2017-07-24T07:44:00.000+07:00

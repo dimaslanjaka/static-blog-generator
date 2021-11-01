@@ -1,7 +1,7 @@
 ---
 title: Tutorial Membuat Blogspot Safelink Converter Work 100%
 webtitle: WMI Gitlab
-subtitle: Langkah-langkah Build Safelink Converter
+subtitle: Langkahlangkah Build Safelink Converter
 lang: en
 date: 2017-09-07T20:27:00.000+07:00
 type: post

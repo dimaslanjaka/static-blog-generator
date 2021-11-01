@@ -1,7 +1,7 @@
 ---
 title: Download lagu Judika - Aku Yang Tersakiti Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Judika - Aku Yang Tersakiti Mp3 Judika - I Was Hurt
+subtitle: "Download lagu Judika  Aku Yang Tersakiti Mp3 Judika - I Was Hurt
   Listen: 79,458,853 Duration: 252 MP3 size: 3.94MB Download Links"
 lang: en
 date: 2019-11-30T18:08:00.001+07:00

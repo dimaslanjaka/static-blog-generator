@@ -2,7 +2,7 @@
 title: Defer loading css js
 webtitle: WMI Gitlab
 subtitle: Cara defer loading javascript atau menunda pemanggilan javascript di
-  bloggerBerfungsi untuk :Mempercepat loading blog website /
+  bloggerBerfungsi untuk Mempercepat loading blog website /
 lang: en
 date: 2019-07-23T02:53:00.000+07:00
 type: post

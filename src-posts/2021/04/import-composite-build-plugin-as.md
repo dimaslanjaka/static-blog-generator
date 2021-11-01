@@ -1,7 +1,7 @@
 ---
 title: Import composite build plugin as subtitue module dependency [Gradle]
 webtitle: WMI Gitlab
-subtitle: <pre><br />// change folder path inside bracket<br
+subtitle: pre><br />// change folder path inside bracket<br
   />includeBuild(plugin) {<br /> dependencySubstitution {<br /> 	// change your
 lang: en
 date: 2021-04-20T16:40:00.001+07:00

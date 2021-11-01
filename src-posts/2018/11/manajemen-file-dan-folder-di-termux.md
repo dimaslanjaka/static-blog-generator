@@ -1,8 +1,8 @@
 ---
 title: Manajemen file dan folder di Termux
 webtitle: WMI Gitlab
-subtitle: "mkdir berguna untuk membuat folder.Misal anda ingin membuat folder di
-  HOME termux:"
+subtitle: mkdir berguna untuk membuat folder.Misal anda ingin membuat folder di
+  HOME termux
 lang: en
 date: 2018-11-12T11:49:00.000+07:00
 type: post

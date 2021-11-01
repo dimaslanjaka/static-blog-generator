@@ -1,7 +1,7 @@
 ---
 title: Membuat array javascript unik
 webtitle: WMI Gitlab
-subtitle: <img border=0
+subtitle: img border=0
   src=https://static.cdn-cdpl.com/700x350/5615bb41d81fad8fe992985aec0e5f29/js.jpg
   data-original-width=700
 lang: en

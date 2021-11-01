@@ -1,7 +1,7 @@
 ---
 title: Cara redirect domain lama ke domain baru untuk SEO menggunakan Cloudflare
 webtitle: WMI Gitlab
-subtitle: Step 1.Migrasi domain (host) ke cloudflare dengan mengubah nameserver
+subtitle: Step .Migrasi domain (host) ke cloudflare dengan mengubah nameserver
   nyaBelum tahu caranya ? Klik tautan Cara host domain ke
 lang: en
 date: 2019-12-05T04:03:00.000+07:00

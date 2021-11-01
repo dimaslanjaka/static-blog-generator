@@ -2,7 +2,7 @@
 title: Membuat semua link dan source html http menjadi https
 webtitle: WMI Gitlab
 subtitle: Yo guys, kali ini akan saya share bagaimana cara mengubah semua source
-  link atau iframe yang tidak menggunakan https.<br />Mula mula anda
+  link atau iframe yang tidak menggunakan https.br />Mula mula anda
 lang: en
 date: 2017-09-11T22:49:00.002+07:00
 type: post

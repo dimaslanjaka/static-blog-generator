@@ -1,7 +1,7 @@
 ---
 title: Random Posts Widget Blogger
 webtitle: WMI Gitlab
-subtitle: https://www.web-development.cf
+subtitle: https//www.web-development.cf
 lang: en
 date: 2017-12-06T19:07:00.000+07:00
 type: post

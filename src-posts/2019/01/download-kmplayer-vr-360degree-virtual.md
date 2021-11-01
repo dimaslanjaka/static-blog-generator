@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD KMPlayer VR (360degree, Virtual Reality) 0.1.11 Apk android
 webtitle: WMI Gitlab
-subtitle: KMPlayer VR (360degree, Virtual Reality) 0.1.11 Apk android
+subtitle: KMPlayer VR 360degree, Virtual Reality) 0.1.11 Apk android
 lang: en
 date: 2019-01-17T11:52:00.000+07:00
 type: post

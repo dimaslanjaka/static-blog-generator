@@ -1,7 +1,7 @@
 ---
 title: Glowing Text Loading Animation
 webtitle: WMI Gitlab
-subtitle: "Glowing Text Loading AnimationCSSbody{
+subtitle: "Glowing Text Loading AnimationCSSbody
   margin:0px;padding:0px;background:#262222;}UL{position:
   absolute;top:50%;left:50%;display:"
 lang: en

@@ -1,7 +1,7 @@
 ---
 title: Install XAMPP/LAMPP On Android (Non-Root)
 webtitle: WMI Gitlab
-subtitle: php apache setup on android with Termux (without
+subtitle: php apache setup on android with Termux without
   root) 											Download Termux 						(allow installation from unknwon
   sources and
 lang: en

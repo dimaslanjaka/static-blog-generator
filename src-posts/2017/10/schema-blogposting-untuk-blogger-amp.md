@@ -2,7 +2,7 @@
 title: Schema Blogposting Untuk Blogger AMP
 webtitle: WMI Gitlab
 subtitle: Structure BlogPosting pada AMP merupakan hal istimewa. Dijamin bila
-  keyword density (kata-kata/kalimat yang berhubungan dengan title/judul
+  keyword density kata-kata/kalimat yang berhubungan dengan title/judul
 lang: en
 date: 2017-10-23T18:34:00.000+07:00
 type: post

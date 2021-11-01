@@ -1,7 +1,7 @@
 ---
 title: 8 Tools Creating Responsive Web Designs For Developers
 webtitle: WMI Gitlab
-subtitle: Web Responsive Creating Tool For Web Developers - Web design is an
+subtitle: Web Responsive Creating Tool For Web Developers- Web design is an
   important part of a website development project. The client at this time
 lang: en
 date: 2017-05-15T20:59:00.000+07:00

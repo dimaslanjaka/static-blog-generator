@@ -2,7 +2,7 @@
 title: Mencegah Pengguna Menghapus Aplikasi UI Modern di Windows 8
 webtitle: WMI Gitlab
 subtitle: Ada pengaturan lain di GPE yang mencegah pencopotan pemasangan
-  aplikasi yang terpasang. Inilah cara mengaktifkannya .. <br /><img
+  aplikasi yang terpasang. Inilah cara mengaktifkannya .. br /><img
 lang: en
 date: 2017-10-17T00:47:00.000+07:00
 type: post

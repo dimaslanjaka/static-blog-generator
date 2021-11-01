@@ -1,7 +1,7 @@
 ---
 title: How to Multiple Delete With CodeIgniter
 webtitle: WMI Gitlab
-subtitle: "-- -- Database: `codeigniter_crud` -- --
+subtitle: "- -- Database: `codeigniter_crud` -- --
   -------------------------------------------------------- -- -- Table structure
   for table `siswa`"
 lang: en

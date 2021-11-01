@@ -1,7 +1,7 @@
 ---
 title: Default Kali Linux Repositories
 webtitle: WMI Gitlab
-subtitle: "open terminal, type : gedit /etc/apt/sources.listadd following codes:
+subtitle: "open terminal, type  gedit /etc/apt/sources.listadd following codes:
   deb http://http.kali.org/kali kali-rolling main non-free"
 lang: en
 date: 2019-07-21T20:17:00.000+07:00

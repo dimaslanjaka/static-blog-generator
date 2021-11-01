@@ -1,7 +1,7 @@
 ---
 title: GBWhatsApp 6.25 Apk Download
 webtitle: WMI Gitlab
-subtitle: GBWhatsApp - WhatsApp Mod [Dual WhatsApp dalam Satu Ponsel]
+subtitle: GBWhatsApp  WhatsApp Mod [Dual WhatsApp dalam Satu Ponsel]
 lang: en
 date: 2018-08-01T02:33:00.000+07:00
 type: post

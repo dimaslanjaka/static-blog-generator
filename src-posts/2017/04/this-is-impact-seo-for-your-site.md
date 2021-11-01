@@ -2,7 +2,7 @@
 title: This is the Impact SEO For Your Site
 webtitle: WMI Gitlab
 subtitle: This is the Impact SEO For Your SiteImpact SEO Impact SEO For Your
-  Site - If my friend blogger already know dong
+  Site  If my friend blogger already know dong
 lang: en
 date: 2017-04-10T12:42:00.000+07:00
 type: post

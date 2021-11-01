@@ -1,7 +1,7 @@
 ---
 title: Download film the nun (2018) subtitle indonesia download  movie
 webtitle: WMI Gitlab
-subtitle: Download film the nun (2018) subtitle indonesia download movie The Nun
+subtitle: Download film the nun 2018) subtitle indonesia download movie The Nun
   film will tell about a priest named Father Burke
 lang: en
 date: 2018-11-15T12:51:00.000+07:00

@@ -1,7 +1,7 @@
 ---
 title: Sticky expandable search bar on top right using classie.js
 webtitle: WMI Gitlab
-subtitle: <h2>How to create sticky search bar on top right pages using
+subtitle: h2>How to create sticky search bar on top right pages using
   classie.js</h2><br />Today i will share implementation of codes from
 lang: en
 date: 2017-05-27T12:33:00.000+07:00

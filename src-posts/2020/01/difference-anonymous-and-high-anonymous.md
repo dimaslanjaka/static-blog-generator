@@ -1,7 +1,7 @@
 ---
 title: Difference Anonymous And High Anonymous Proxy
 webtitle: WMI Gitlab
-subtitle: Anonymous proxy:no HTTP_X_FORWARDED_FOR headerHigh anonymous/Elite
+subtitle: Anonymous proxyno HTTP_X_FORWARDED_FOR headerHigh anonymous/Elite
   proxy:no HTTP_X_FORWARDED_FOR, HTTP_VIA, HTTP_FORWARDED,
 lang: en
 date: 2020-01-13T22:49:00.000+07:00

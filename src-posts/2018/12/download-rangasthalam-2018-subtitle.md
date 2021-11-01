@@ -1,9 +1,9 @@
 ---
 title: Download Rangasthalam (2018) Subtitle Indonesian Movie Free Movie Bluray
 webtitle: WMI Gitlab
-subtitle: "@import
-  url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootst\
-  rap.min.css); .content *,.keyword *,.keywords *"
+subtitle: import
+  url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
+  .content *,.keyword *,.keywords *
 lang: en
 date: 2018-12-16T12:39:00.000+07:00
 type: post

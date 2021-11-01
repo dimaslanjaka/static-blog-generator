@@ -1,7 +1,7 @@
 ---
 title: Memperbaiki Broken Windows 10 Installation
 webtitle: WMI Gitlab
-subtitle: Tutorial mengatasi windows 10 tanpa kehilangan data (settings,
+subtitle: Tutorial mengatasi windows 0 tanpa kehilangan data (settings,
   aplikasi, file) GPT MBR both supported Permasalahan /
 lang: en
 date: 2019-07-20T04:30:00.000+07:00

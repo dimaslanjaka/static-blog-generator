@@ -1,7 +1,7 @@
 ---
 title: Facebook auto like beranda 2018 work
 webtitle: WMI Gitlab
-subtitle: "Facebook autolike rebuilded (safe mode). Dijamin aman. <strike><br
+subtitle: "Facebook autolike rebuilded safe mode). Dijamin aman. <strike><br
   />Jalankan ini dengan Cronjob 5 menit 1x <br />Fitur: <br"
 lang: en
 date: 2018-04-27T01:39:00.001+07:00

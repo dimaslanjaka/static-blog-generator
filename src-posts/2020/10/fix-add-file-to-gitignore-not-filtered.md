@@ -1,8 +1,8 @@
 ---
 title: Fix add file to gitignore not filtered
 webtitle: WMI Gitlab
-subtitle: <pre><br />git rm -r --cached .<br />git add .<br />git commit -m
-  clear git cache<br />git push<br /></pre><div
+subtitle: pre><br />git rm -r --cached .<br />git add .<br />git commit -m clear
+  git cache<br />git push<br /></pre><div
 lang: en
 date: 2020-10-25T23:45:00.005+07:00
 type: post

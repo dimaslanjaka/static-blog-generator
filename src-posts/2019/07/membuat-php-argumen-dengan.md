@@ -1,7 +1,7 @@
 ---
 title: Membuat PHP argumen dengan '='
 webtitle: WMI Gitlab
-subtitle: Cara Membuat argumen PHP CLI dengan = --=
+subtitle: Cara Membuat argumen PHP CLI dengan  --=
 lang: en
 date: 2019-07-30T06:48:00.000+07:00
 type: post

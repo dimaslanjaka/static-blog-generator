@@ -1,7 +1,7 @@
 ---
 title: Cara membuat kulit yang dicat kasar (Pewarna Tawas) Durango Wild Lands
 webtitle: WMI Gitlab
-subtitle: Bunga & zat warna Pearl Kekayaan Warna mirip dengan foto Beli &
+subtitle: Bunga  zat warna Pearl Kekayaan Warna mirip dengan foto Beli &
   Kumpulkan Pewarna harus diterapkan setidaknya 3 kali untuk
 lang: en
 date: 2018-07-30T20:34:00.001+07:00

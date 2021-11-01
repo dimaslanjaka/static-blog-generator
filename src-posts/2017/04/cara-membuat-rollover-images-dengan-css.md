@@ -1,7 +1,7 @@
 ---
 title: Cara membuat Rollover Images Dengan CSS
 webtitle: WMI Gitlab
-subtitle: CSS Rollover Efek Gambar - Ganti Gambar pada gambar HoverRollover
+subtitle: CSS Rollover Efek Gambar  Ganti Gambar pada gambar HoverRollover
   adalah fitur desain di mana gambar berubah ketika mouse melayang di
 lang: en
 date: 2017-04-12T01:34:00.000+07:00

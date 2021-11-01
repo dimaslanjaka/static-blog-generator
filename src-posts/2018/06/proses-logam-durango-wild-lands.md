@@ -1,7 +1,7 @@
 ---
 title: "Proses Logam : Durango Wild Lands"
 webtitle: WMI Gitlab
-subtitle: "TAGS : Durango, Proses Logam, Material Processing, Durango Wild Lands."
+subtitle: TAGS  Durango, Proses Logam, Material Processing, Durango Wild Lands.
 lang: en
 date: 2018-06-19T03:56:00.000+07:00
 type: post

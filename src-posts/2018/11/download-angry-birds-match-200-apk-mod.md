@@ -1,7 +1,7 @@
 ---
 title: DOWNLOAD Angry Birds Match 2.0.0 Apk + Mod Coins,Gems,Lives,Moves,... android
 webtitle: WMI Gitlab
-subtitle: Angry Birds Match 2.0.0 Apk + Mod Koin, Permata, Kehidupan, Bergerak,
+subtitle: Angry Birds Match .0.0 Apk + Mod Koin, Permata, Kehidupan, Bergerak,
   ... android
 lang: en
 date: 2018-11-26T21:31:00.000+07:00

@@ -2,7 +2,7 @@
 title: How To Resize and Crop Image to fit Container div using CodeIgniter and jQuery
 webtitle: WMI Gitlab
 subtitle: When we have a tendency to visit the gallery page of an internet site
-  we primarily see there area unit 2 varieties of image for a selected
+  we primarily see there area unit  varieties of image for a selected
 lang: en
 date: 2017-05-25T06:52:00.000+07:00
 type: post

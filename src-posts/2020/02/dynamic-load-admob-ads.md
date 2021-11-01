@@ -1,7 +1,7 @@
 ---
 title: Dynamic load admob ads
 webtitle: WMI Gitlab
-subtitle: <pre><br />&lt;LinearLayout<br
+subtitle: pre><br />&lt;LinearLayout<br
   />&#x9;android:id=&quot;@+id/main_adTopBanner&quot;<br
   />&#x9;android:orientation=&quot;vertical&quot; <br
 lang: en

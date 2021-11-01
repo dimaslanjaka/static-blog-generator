@@ -1,7 +1,7 @@
 ---
 title: Linux Clear Cache
 webtitle: WMI Gitlab
-subtitle: <pre>#!/bin/bash<br />#clean page cache<br />#sync<br />#echo 1
+subtitle: pre>#!/bin/bash<br />#clean page cache<br />#sync<br />#echo 1
   &gt;/proc/sys/vm/drop_caches<br />#clean dentries and inodes<br />#sync<br
 lang: en
 date: 2020-05-30T00:03:00.002+07:00

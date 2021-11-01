@@ -1,7 +1,7 @@
 ---
 title: Download lagu SHANTY - TINJU Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu SHANTY - TINJU Mp3 SHANTY - REVIEWS Listen: 4,432
+subtitle: "Download lagu SHANTY  TINJU Mp3 SHANTY - REVIEWS Listen: 4,432
   Duration: 227 MP3 size: 3.55MB Download Links Download Mp3"
 lang: en
 date: 2019-12-04T16:52:00.001+07:00

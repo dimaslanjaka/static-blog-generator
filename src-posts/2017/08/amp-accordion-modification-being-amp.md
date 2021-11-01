@@ -1,7 +1,7 @@
 ---
 title: AMP-Accordion Modification Being an AMP HTML Blog Spoiler
 webtitle: WMI Gitlab
-subtitle: "Problem: U"
+subtitle: Problem U
 lang: en
 date: 2017-08-30T04:51:00.000+07:00
 type: post

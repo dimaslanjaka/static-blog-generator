@@ -1,7 +1,7 @@
 ---
 title: Download lagu Ghaury - Janji Abang Mp3
 webtitle: WMI Gitlab
-subtitle: "Download lagu Ghaury - Janji Abang Mp3 Ghaury - Promise brother
+subtitle: "Download lagu Ghaury  Janji Abang Mp3 Ghaury - Promise brother
   Listen: 1,852,094 Duration: 265 MP3 size: 4.14MB Download Links"
 lang: en
 date: 2019-11-24T22:48:00.001+07:00

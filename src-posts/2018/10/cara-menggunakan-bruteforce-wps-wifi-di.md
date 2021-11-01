@@ -1,7 +1,7 @@
 ---
 title: Cara Menggunakan Bruteforce WPS WiFi Di Android Tanpa Root
 webtitle: WMI Gitlab
-subtitle: Penjabaran dari WPS WPA WiFi Tester (Tanpa Root)
+subtitle: Penjabaran dari WPS WPA WiFi Tester Tanpa Root)
 lang: en
 date: 2018-10-17T22:04:00.001+07:00
 type: post

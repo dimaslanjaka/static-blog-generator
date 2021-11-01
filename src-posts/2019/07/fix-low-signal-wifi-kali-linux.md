@@ -1,7 +1,7 @@
 ---
 title: FIX Low signal wifi kali linux
 webtitle: WMI Gitlab
-subtitle: Memperbaiki low wifi signal kali linux  git clone
+subtitle: Memperbaiki low wifi signal kali linux git clone
   https://github.com/lwfinger/rtlwifi_new.gitcd rtlwifi_newsudo makesudo make
   installsudo
 lang: en

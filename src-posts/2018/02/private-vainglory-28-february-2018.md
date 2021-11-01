@@ -1,7 +1,7 @@
 ---
 title: Private Vainglory 28 February 2018
 webtitle: WMI Gitlab
-subtitle: VG Private Battle (20:00 Wib)<br />Tim A<br />1.<br />2.figo05<br
+subtitle: VG Private Battle 20:00 Wib)<br />Tim A<br />1.<br />2.figo05<br
   />3.<br /><br />Tim B<br />1.<br />2.<br />3.<br /><br />Spectator<br
 lang: en
 date: 2018-02-28T20:52:00.002+07:00

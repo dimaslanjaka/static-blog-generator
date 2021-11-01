@@ -1,7 +1,7 @@
 ---
 title: Langkah demi langkah mendaftarkan domain di godaddy
 webtitle: WMI Gitlab
-subtitle: Senang dengan artikel ini ? Tolong bagikan ya
+subtitle: Senang dengan artikel ini  Tolong bagikan ya
 lang: en
 date: 2017-08-26T21:53:00.000+07:00
 type: post

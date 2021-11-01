@@ -2,7 +2,7 @@
 title: Important Role Of Social Media For Any Blogs
 webtitle: WMI Gitlab
 subtitle: Important Role Of Social Media For Any Blogs Pal knows what it is
-  Facebook, Twitter, Instagram or Way? I firmly accept 100% that my
+  Facebook, Twitter, Instagram or Way I firmly accept 100% that my
 lang: en
 date: 2017-05-10T06:31:00.000+07:00
 type: post
