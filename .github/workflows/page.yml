@@ -45,8 +45,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
-      - name: ls
-        run: ls packages
+      #- name: ls packages
+        #run: ls packages
       - name: install global packages
         run: npm i -g hexo-cli gulp-cli typescript ts-node npm
       #- name: install themes/hexo-webnary-theme
@@ -57,7 +57,7 @@ jobs:
         #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       #- name: Copying Blogger Article
         #run: npx gulp blogger --production
-      - name: Copying Blogger Local
+      - name: Copying Article Local (./src-posts)
         run: npx gulp article:copy
       - name: Hexo Generate
         run: npx hexo generate

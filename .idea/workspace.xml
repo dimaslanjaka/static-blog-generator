@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Try workflows">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,13 +256,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00134" summary="Fix busuanzi">
-      <created>1629621972902</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1629621972902</updated>
     </task>
     <task id="LOCAL-00135" summary="Add es5 es6 shim">
       <created>1629622042307</created>
@@ -602,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635804647207</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="Try workflows">
+      <created>1635862794885</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1635862794886</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
