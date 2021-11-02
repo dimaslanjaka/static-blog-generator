@@ -147,9 +147,9 @@ disqus_shortname: dimaslanjaka
 ## Themes: https://hexo.io/themes/
 
 ## Current Theme Url: https://github.com/dfcommunity/hexo-webnary-theme/
-#theme: hexo-webnary-theme
+theme: hexo-webnary-theme
 #theme: lx
-theme: amp
+#theme: amp
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -224,11 +224,15 @@ related_posts:
   stemmers:
     - en
     - ru
+    - id
   reserved:
     - asp.net
     - vs.net
     - ado.net
     - .net
+    - games
+    - js
+    - ts
 
 # footer information
 about:
@@ -244,34 +248,19 @@ toc:
   decodeEntities: false
   anchor:
     position: after
-    symbol: "#"
+    symbol: ""
     style: header-anchor
 
-# Markdown-it config
-## Installation https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Getting-Started
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  preset: "default"
-  render:
-    html: true
-    xhtmlOut: false
-    langPrefix: "language-"
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: "“”‘’"
-  enable_rules:
-  disable_rules:
-  plugins:
-  anchors:
-    level: 2
-    collisionSuffix: ""
-    permalink: false
-    permalinkClass: "header-anchor"
-    permalinkSide: "left"
-    permalinkSymbol: "¶"
-    case: 0
-    separator: "-"
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  pre_class: highlight
 
 # live reload (unused)
 # https://github.com/hexojs/hexo-livereload
@@ -284,8 +273,8 @@ browsersync:
   ghostMode:
     scroll: true
   instanceName: "customInstance"
-  port: 4000
-  browser: "google chrome"
+  port: 3001
+  browser: "firefox"
   open: false
 
 # Article schema
