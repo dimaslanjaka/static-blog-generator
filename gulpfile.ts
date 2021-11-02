@@ -140,7 +140,7 @@ gulp.task("blogger", function (done) {
     callback: require("./userscripts/post_callback"),
     on: {
       finish: (parser) => {
-        console.log("Blogger gulp finished")
+        console.log("Blogger gulp finished");
       },
     },
   });
