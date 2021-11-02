@@ -14,7 +14,8 @@ tests.forEach(function (test) {
   }
 });
 
-function exitMsg(str) {
+// eslint-disable-next-line no-unused-vars
+function exitMsg(...str) {
   for (let i = 0, j = arguments.length; i < j; i++) {
     console.log(arguments[i] + " ");
   }
