@@ -132,7 +132,7 @@ gulp.task("blogger", function (done) {
   const mainXML = path.resolve("userscripts/xml/webmanajemen.com.xml");
   // eslint-disable-next-line no-unused-vars
   const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
-  const isProduction = argv["production"] === undefined ? false : true;
+  const isProduction = argv["production"] !== undefined;
   gulpCore({
     input: [mainXML],
     output: isProduction ? "./src-posts" : "./build/src-posts",
@@ -140,16 +140,16 @@ gulp.task("blogger", function (done) {
     callback: require("./userscripts/post_callback"),
     on: {
       finish: (parser) => {
-        done();
+        console.log("Blogger gulp finished")
       },
     },
   });
 
-  //done();
+  done();
 });
 
 gulp.task("arg", function (done) {
-  var isProduction = argv["production"] === undefined ? false : true;
+  const isProduction = argv["production"] !== undefined;
   console.log(argv, isProduction);
   done();
 });
