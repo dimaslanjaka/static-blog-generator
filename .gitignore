@@ -6,8 +6,8 @@ twitter-db.json
 node_modules
 public/
 .deploy*/
-build
-tmp
-exclude
+build/
+tmp/
+exclude/
 #docs
 #package-lock.json
