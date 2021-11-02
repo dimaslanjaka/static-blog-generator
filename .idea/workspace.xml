@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="+hexo-migrator-blogger [RSS Scraper]">
-      <change afterPath="$PROJECT_DIR$/_config.webnary.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/package-ori.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/hexo-webnary-theme/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hexo-webnary-theme/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Prepare switch theme" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +62,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes/hexo-webnary-theme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -92,8 +83,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/themes/hexo-webnary-theme" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/themes/hexo-webnary-theme" />
       <recent name="D:\Repositories\gh-pages\source\_posts" />
       <recent name="D:\Repositories\gh-pages\src\express" />
       <recent name="D:\Repositories\gh-pages\src-post" />
@@ -260,13 +251,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00144" summary="Update test">
-      <created>1635648953171</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1635648953171</updated>
     </task>
     <task id="LOCAL-00145" summary="Update docs readme">
       <created>1635649346368</created>
@@ -604,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635867133827</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <task id="LOCAL-00193" summary="Prepare switch theme">
+      <created>1635868389325</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1635868389325</updated>
+    </task>
+    <option name="localTasksCounter" value="194" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -631,7 +622,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix hexo-filter-cleanup" />
     <MESSAGE value="add adblock" />
     <MESSAGE value="Set timezone Asia/Jakarta" />
     <MESSAGE value="Fix busuanzi" />
@@ -656,7 +646,8 @@
     <MESSAGE value="restore theme flow" />
     <MESSAGE value="Fix try" />
     <MESSAGE value="+hexo-migrator-blogger [RSS Scraper]" />
-    <option name="LAST_COMMIT_MESSAGE" value="+hexo-migrator-blogger [RSS Scraper]" />
+    <MESSAGE value="Prepare switch theme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepare switch theme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
