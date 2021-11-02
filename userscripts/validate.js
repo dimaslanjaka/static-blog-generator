@@ -15,6 +15,8 @@ tests.forEach(function (test) {
 });
 
 function exitMsg(str) {
-  throw str;
-  process.exit(1);
+  for (let i = 0, j = arguments.length; i < j; i++) {
+    console.log(arguments[i] + " ");
+  }
+  throw "";
 }

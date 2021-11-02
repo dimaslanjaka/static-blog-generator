@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Push package-lock.json to fixed hashes">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix validate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userscripts/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/userscripts/validate.js" afterDir="false" />
     </list>
@@ -257,13 +256,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00137" summary="Add Quiz">
-      <created>1629624147049</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1629624147049</updated>
     </task>
     <task id="LOCAL-00138" summary="Clean Posts">
       <created>1629624548808</created>
@@ -601,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635863116675</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="Fix validate">
+      <created>1635864441124</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1635864441124</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -628,7 +627,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Remove annoying midi's" />
     <MESSAGE value="Add Midi" />
     <MESSAGE value="Change Workflow" />
     <MESSAGE value="Disable processing images" />
@@ -653,7 +651,8 @@
     <MESSAGE value="Caching docs" />
     <MESSAGE value="Try workflows" />
     <MESSAGE value="Push package-lock.json to fixed hashes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push package-lock.json to fixed hashes" />
+    <MESSAGE value="Fix validate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix validate" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
