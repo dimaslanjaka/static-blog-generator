@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Prepare switch theme" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="git submodule update --remote">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-blogger-xml/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-blogger-xml/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,20 +256,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00145" summary="Update docs readme">
-      <created>1635649346368</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1635649346368</updated>
-    </task>
-    <task id="LOCAL-00146" summary="Update docs readme">
-      <created>1635649494608</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1635649494608</updated>
     </task>
     <task id="LOCAL-00147" summary="Change index to 9 posts">
       <created>1635653117139</created>
@@ -595,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635868389325</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="Prepare switch theme">
+      <created>1635868542296</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1635868542296</updated>
+    </task>
+    <task id="LOCAL-00195" summary="git submodule update --remote">
+      <created>1635868742451</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1635868742451</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -622,7 +627,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add adblock" />
     <MESSAGE value="Set timezone Asia/Jakarta" />
     <MESSAGE value="Fix busuanzi" />
     <MESSAGE value="Add es5 es6 shim" />
@@ -647,7 +651,8 @@
     <MESSAGE value="Fix try" />
     <MESSAGE value="+hexo-migrator-blogger [RSS Scraper]" />
     <MESSAGE value="Prepare switch theme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepare switch theme" />
+    <MESSAGE value="git submodule update --remote" />
+    <option name="LAST_COMMIT_MESSAGE" value="git submodule update --remote" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

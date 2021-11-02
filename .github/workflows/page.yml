@@ -49,8 +49,8 @@ jobs:
         #run: ls packages
       - name: install global packages
         run: npm i -g hexo-cli gulp-cli typescript ts-node npm
-      - name: install themes/hexo-webnary-theme
-        run: cd themes/hexo-webnary-theme && npm install
+      #- name: install themes/hexo-webnary-theme
+        #run: cd themes/hexo-webnary-theme && npm install
       - name: Install Dependencies
         run: npm install #--prefer-offline
       #- name: install hexo-blogger-xml from github
@@ -60,7 +60,7 @@ jobs:
       - name: Copying Article Local (./src-posts)
         run: npx gulp article:copy
       - name: Hexo Generate
-        run: npx hexo generate
+        run: npx hexo generate --config _config.webnary.xml
       - name: install page
         run: cd docs/page && npm install
       - name: Run Userscripts
