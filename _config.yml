@@ -1,0 +1,348 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: "Website Management Indonesia"
+subtitle: "WMI Gitlab"
+subtitle_desc: "WMI Github Laboratory"
+description: "External source WMI Github Laboratory"
+keywords: the legend of neverland, genshin impact, games, how to, tips and tricks
+language: en
+timezone: "Asia/Jakarta"
+introduction: "introduction"
+# https://github.com/wzpan/hexo-generator-search
+# https://github.com/next-theme/hexo-generator-searchdb
+search:
+  path: search.xml
+  field: all
+  content: true
+  format: html
+  template: ./template/search.xml
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://git.webmanajemen.com/
+root: /
+permalink: :title.html #:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: docs
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+# https://hexo.io/docs/configuration.html
+skip_render:
+  - "page"
+  - "page/**/*"
+  - "backend"
+  - "backend/**/*"
+  # https://github.com/hexojs/hexo/issues/1797
+  - "*.json"
+  - "_posts/**/*.json"
+  - "_posts/**/*.js"
+  - "_posts/The Legend Of Neverland/Midi/readme.md"
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ""
+filename_case: 0
+render_drafts: false
+
+# https://hexo.io/docs/asset-folders
+post_asset_folder: true
+
+# https://github.com/hexojs/hexo-renderer-marked
+marked:
+  gfm: true
+  pedantic: false
+  breaks: true
+  smartLists: true
+  smartypants: true
+  quotes: "“”‘’"
+  modifyAnchors: 0
+  anchorAlias: false
+  autolink: true
+  mangle: true
+  sanitizeUrl: false
+  dompurify: false
+  headerIds: true
+  lazyload: false
+  prependRoot: false
+  postAsset: true
+  external_link:
+    enable: false
+    exclude: []
+    nofollow: false
+  disableNunjucks: false
+  descriptionLists: true
+
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  hljs: false
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ""
+  per_page: 18
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+## Use post's date for updated date unless set in front-matter
+updated_option: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 18
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Comments
+disqus_shortname: dimaslanjaka
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+
+## Current Theme Url: https://github.com/dfcommunity/hexo-webnary-theme/
+theme: hexo-webnary-theme
+#theme: lx
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
+  branch: master
+  message: "Git Deployment"
+
+# Twitter Auto-Publish Config
+twitterAutoPublish:
+  consumerKey: <your-own-access-tokens>
+  consumerSecret: <your-own-access-tokens>
+  accessTokenKey: <your-own-access-tokens>
+  accessTokenSecret: <your-own-access-tokens>
+
+## Custom by DFcommunity
+menu:
+  "home": /
+  archive: /archives
+  contact: /contact
+  about: /about
+
+loader: false
+#loader_img: "/assets/img/loading-animations-preloader-gifs-ui-ux-effects-4.gif"
+loader_img: "https://thememyxbox.net/images/loading.gif"
+header_cover: "/assets/img/Library-min.jpg"
+default_cover: "/assets/img/e-learning_1.jpg"
+error_page_bg:
+logo: "/assets/img/PicsArt_09-09-12.12.25.jpg"
+avatar: "/assets/img/PicsArt_09-09-12.12.25.jpg"
+favicon_ico: "/assets/img/hexo-logo-avatar-transparent-background.png"
+
+author:
+  name: "Dimas Lanjaka"
+  link: "https://git.webmanajemen.com/"
+
+# Feed Atom https://github.com/hexojs/hexo-generator-feed
+feed:
+  enable: true
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date
+  # Generate both atom and rss2 feeds
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+
+# https://github.com/sergeyzwezdin/hexo-related-posts#Configuration
+related_posts:
+  enabled: true
+  enable_env_name: prod
+  filter_threshold: 0.3
+  related_count: 3
+  weight:
+    title: 0.05
+    description: 0.05
+    keywords: 0.01
+    tags: 0.005
+    categories: 0.005
+    text: 1
+  stemmers:
+    - en
+    - ru
+  reserved:
+    - asp.net
+    - vs.net
+    - ado.net
+    - .net
+
+# footer information
+about:
+  info: WMI
+  address: Surabaya, Indonesia
+  email: dimaslanjaka@gmail.com
+
+# https://github.com/bubkoo/hexo-toc
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: "#"
+    style: header-anchor
+
+# Markdown-it config
+## Installation https://github.com/hexojs/hexo-renderer-markdown-it/wiki/Getting-Started
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+markdown:
+  preset: "default"
+  render:
+    html: true
+    xhtmlOut: false
+    langPrefix: "language-"
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: "“”‘’"
+  enable_rules:
+  disable_rules:
+  plugins:
+  anchors:
+    level: 2
+    collisionSuffix: ""
+    permalink: false
+    permalinkClass: "header-anchor"
+    permalinkSide: "left"
+    permalinkSymbol: "¶"
+    case: 0
+    separator: "-"
+
+# live reload (unused)
+# https://github.com/hexojs/hexo-livereload
+# https://github.com/hexojs/hexo-livereload/issues/7
+#livereload:
+#  port: 35729
+# https://github.com/hexojs/hexo-browsersync
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+  instanceName: "customInstance"
+  port: 4000
+  browser: "google chrome"
+  open: false
+
+# Article schema
+# https://developers.google.com/structured-data/rich-snippets/articles#article_markup_properties
+schema:
+  image:
+    url: img/android-chrome-144x144.png
+    height: 144
+    width: 144 # <= 696
+  publisher:
+    name: Dimas Lanjaka
+    logo:
+      url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+      width: 1944 # <= 600
+      height: 2592 # >= 60
+
+# adsense
+adsense:
+  enable: true
+  pub: ca-pub-1165447249910969
+  # responsive horizontal
+  ads1: 6376402862
+  # responsive square
+  ads_sidebar: 3325057139
+
+adblock: true
+
+tagmanager:
+  enable: false
+  id: GTM-NJNNXSR
+
+analytic:
+  # google analytic v4
+  GA4: G-BG75CLNJZ1
+  # google analytic
+  GA3: UA-106238155-1
+  # cloudflare web statistic
+  cloudflare: 2157c0f3b9e74a92badffe39156166b9
+
+https:
+  enable: true
+
+# https://github.com/liuzc/hexo-autonofollow
+nofollow:
+  enable: true
+  exclude:
+    - git.webmanajemen.com
+    - webmanajemen.com
+## Migrate using gulp
+#blogger_xml:
+# script path relative path from hexo root directory
+#callback: "./userscripts/post_callback.js"
+# Your blog domain and subdomain to seo external link, and bellow list is a internal link based on domain name
+#hostname:
+#- "webmanajemen.com"
+#- "git.webmanajemen.com"
+#- "dimaslanjaka.github.io"
+# Output directory
+#output: "source/_posts"
+# blogger xml path relative path from hexo root directory, you can insert multiple xml
+#input:
+#- "./userscripts/xml/webmanajemen.com.xml"

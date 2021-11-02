@@ -1,0 +1,130 @@
+// app.js
+// noinspection DuplicatedCode
+
+import express, { RequestHandler } from "express";
+import path from "path";
+import serveIndex from "serve-index";
+import serveStatic from "serve-static";
+import { default as translateRouter } from "./routes/translate";
+import ngrok from "../ngrok";
+import session from "express-session";
+import methodOverride from "method-override";
+import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import Storage from "../js/Storage";
+import expressLayouts from "./express-layouts";
+import request from "request";
+import { CorsOptions } from "cors";
+const cors = require("cors");
+const morgan = require("morgan");
+
+const storage = new Storage();
+let port = 3000;
+const app = express();
+
+// set views folder
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "hbs");
+
+// set layout configuration
+app.set("layout extractScripts", true);
+app.set("layout extractStyles", true);
+app.use(expressLayouts);
+
+// FormData
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(methodOverride());
+app.use(cookieParser());
+
+// CORS
+let cors2 = function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", req.get("Origin") || "*");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+  res.header("Access-Control-Expose-Headers", "Content-Length");
+  res.header("Access-Control-Allow-Headers", "Accept, Authorization, Content-Type, X-Requested-With, Range");
+  res.header("Allow", "GET, POST, HEAD, OPTIONS, DELETE");
+  res.header("X-Powered-By", "L3n4r0x");
+  if (req.method === "OPTIONS") {
+    return res.send(200);
+  } else {
+    return next();
+  }
+};
+// noinspection HttpUrlsUsage
+const allowedOrigins = [
+  "http://0.0.0.0:3000",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  "http://[::1]:3000",
+  "http://::1:3000",
+];
+// eslint-disable-next-line no-unused-vars
+const corsOptions: CorsOptions = {
+  origin: function (origin, callback) {
+    // allow requests with no origin
+    // (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    //console.log(origin, allowedOrigins.indexOf(origin) === -1);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = "The CORS policy for this site does not allow access from the specified Origin.";
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  allowedHeaders: ["GET", "POST", "OPTIONS", "HEAD", "DELETE", "PUT"],
+};
+app.use(cors(corsOptions));
+// https://www.npmjs.com/package/cors#enabling-cors-pre-flight
+app.options("*", cors(corsOptions));
+//app.use(cors2);
+
+// prepare session
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
+
+// serve static build/_posts
+app.use("/", express.static("build/_posts"), serveIndex("build/_posts", { icons: true }));
+app.use(serveStatic(path.join(__dirname, "views")));
+app.use(serveStatic(path.resolve("node_modules")));
+
+// router start
+app.use("/translate", translateRouter);
+app.get("/proxy", (req, res) => {
+  // read query parameters
+  const url = req.query["url"];
+  // make request to IEX API and forward response
+  request(url).pipe(res);
+});
+
+const receive: RequestHandler = (req, res, next) => {
+  /*
+  const translated = req.body["html"];
+  console.log(translated);
+  let resp;
+  if (typeof translated != "undefined" && translated.length) {
+    resp = { error: false, message: "received successfully" };
+  } else {
+    resp = { error: true };
+  }
+  res.header("Content-Type", "application/json");
+  res.status(200).send(JSON.stringify(resp)).end();
+   */
+  res.status(200).end("hello");
+};
+app.all("/receive", receive);
+
+app.listen(port);
+console.log(`Express listening on http://localhost:${port}`);
+ngrok(port).then((url) => {
+  // save ngrok url to storage
+  storage.set("ngrok", url);
+});

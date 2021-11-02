@@ -1,0 +1,1 @@
+https://github.com/xu-song/hexo-auto-category
