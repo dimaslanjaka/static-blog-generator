@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Removing docs from local">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix try">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,15 +29,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/post/content.swig" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_layout.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/electron/menu.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/gulpfile.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/_partial/common/head.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src-posts/Genshin Impact/Location/Starconch.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/markdown/transformPosts.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/themes/hexo-webnary-theme/layout/post.swig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/translator/index.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
@@ -256,20 +251,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00141" summary="Update test">
-      <created>1635342946338</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1635342946340</updated>
-    </task>
-    <task id="LOCAL-00142" summary="Update test">
-      <created>1635648594632</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1635648594633</updated>
     </task>
     <task id="LOCAL-00143" summary="Update test">
       <created>1635648834539</created>
@@ -600,7 +581,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635864671249</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="restore theme flow">
+      <created>1635866451133</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1635866451133</updated>
+    </task>
+    <task id="LOCAL-00191" summary="Fix try">
+      <created>1635866751793</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1635866751793</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -627,8 +622,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change Workflow" />
-    <MESSAGE value="Disable processing images" />
     <MESSAGE value="migrate hexo-filter-cleanup to packages/" />
     <MESSAGE value="fix hexo-filter-cleanup" />
     <MESSAGE value="add adblock" />
@@ -652,7 +645,9 @@
     <MESSAGE value="Push package-lock.json to fixed hashes" />
     <MESSAGE value="Fix validate" />
     <MESSAGE value="Removing docs from local" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing docs from local" />
+    <MESSAGE value="restore theme flow" />
+    <MESSAGE value="Fix try" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix try" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
