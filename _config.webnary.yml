@@ -11,7 +11,6 @@ keywords: the legend of neverland, genshin impact, games, how to, tips and trick
 language: en
 timezone: "Asia/Jakarta"
 introduction: "introduction"
-
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb
 search:
@@ -147,9 +146,8 @@ disqus_shortname: dimaslanjaka
 ## Themes: https://hexo.io/themes/
 
 ## Current Theme Url: https://github.com/dfcommunity/hexo-webnary-theme/
-#theme: hexo-webnary-theme
+theme: hexo-webnary-theme
 #theme: lx
-theme: amp
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
