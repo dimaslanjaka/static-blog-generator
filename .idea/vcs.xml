@@ -7,7 +7,7 @@
     <mapping directory="$PROJECT_DIR$/packages/hexo-admin-ehc" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/php/wordpress-blogger-importer" vcs="" />
-    <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/site" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/site" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-filter-cleanup" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-theme-boilerplate" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-theme-clover" vcs="" />
