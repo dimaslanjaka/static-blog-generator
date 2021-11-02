@@ -65,31 +65,6 @@ render_drafts: false
 # https://hexo.io/docs/asset-folders
 post_asset_folder: true
 
-# https://github.com/hexojs/hexo-renderer-marked
-marked:
-  gfm: true
-  pedantic: false
-  breaks: true
-  smartLists: true
-  smartypants: true
-  quotes: "“”‘’"
-  modifyAnchors: 0
-  anchorAlias: false
-  autolink: true
-  mangle: true
-  sanitizeUrl: false
-  dompurify: false
-  headerIds: true
-  lazyload: false
-  prependRoot: false
-  postAsset: true
-  external_link:
-    enable: false
-    exclude: []
-    nofollow: false
-  disableNunjucks: false
-  descriptionLists: true
-
 relative_link: false
 future: true
 highlight:
@@ -251,6 +226,7 @@ toc:
     symbol: ""
     style: header-anchor
 
+# https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
 markdown_it_plus:
   highlight: true
   html: true
