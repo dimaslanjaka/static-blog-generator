@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Test gulp">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Fix themes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-filter-cleanup" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -256,13 +254,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00155" summary="Workflow [fix]">
-      <created>1635749252749</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1635749252749</updated>
     </task>
     <task id="LOCAL-00156" summary="Workflow [fix]">
       <created>1635749920311</created>
@@ -600,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635887264754</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="Fix themes">
+      <created>1635889031848</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1635889031848</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -627,7 +625,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Genshin Impact" />
     <MESSAGE value="Add Quiz" />
     <MESSAGE value="Clean Posts" />
     <MESSAGE value="add quiz" />
@@ -652,7 +649,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="+hexo-github-card" />
     <MESSAGE value="Test gulp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test gulp" />
+    <MESSAGE value="Fix themes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix themes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
