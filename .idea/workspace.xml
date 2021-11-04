@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Switch `material` Theme">
-      <change afterPath="$PROJECT_DIR$/source/Midi/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/Midi/example.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/Midi/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/themes/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +22,7 @@
         <entry key="$PROJECT_DIR$" value="cors-proxy" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/themes/material" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -262,27 +258,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00161" summary="Caching docs">
-      <created>1635795625019</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1635795625019</updated>
-    </task>
-    <task id="LOCAL-00162" summary="Try workflows">
-      <created>1635797009328</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1635797009328</updated>
-    </task>
-    <task id="LOCAL-00163" summary="Try workflows">
-      <created>1635797606116</created>
-      <option name="number" value="00163" />
-      <option name="presentableId" value="LOCAL-00163" />
-      <option name="project" value="LOCAL" />
-      <updated>1635797606117</updated>
     </task>
     <task id="LOCAL-00164" summary="Try workflows">
       <created>1635798284192</created>
@@ -606,7 +581,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636020537448</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="Switch `material` Theme">
+      <created>1636021415900</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1636021415900</updated>
+    </task>
+    <task id="LOCAL-00211" summary="Switch `material` Theme">
+      <created>1636021496706</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1636021496706</updated>
+    </task>
+    <task id="LOCAL-00212" summary="Switch `material` Theme">
+      <created>1636021629505</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1636021629505</updated>
+    </task>
+    <option name="localTasksCounter" value="213" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
