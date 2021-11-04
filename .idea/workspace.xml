@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update submodule" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Cleanup Posts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +100,7 @@
       <recent name="D:\Repositories\gh-pages\src-posts\Test" />
     </key>
   </component>
-  <component name="RunManager" selected="Gulp.js.blogger">
+  <component name="RunManager" selected="npm.server">
     <configuration name="gulpfile.test.ts" type="TypeScriptProgramRunner" factoryName="TypeScript" temporary="true">
       <module name="gh-pages" />
       <option name="interpreterRef" value="project" />
@@ -177,8 +177,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.server" />
+        <item itemvalue="Gulp.js.article:copy:dev" />
         <item itemvalue="npm.server:clean" />
         <item itemvalue="TypeScript.gulpfile.test.ts" />
         <item itemvalue="npm.fix-sharp" />
@@ -254,13 +254,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00169" summary="Try workflows">
-      <created>1635798965781</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1635798965781</updated>
     </task>
     <task id="LOCAL-00170" summary="Try workflows">
       <created>1635799347856</created>
@@ -598,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636024677148</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="Cleanup Posts">
+      <created>1636029393596</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1636029393597</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -625,7 +625,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change index to 9 posts" />
     <MESSAGE value="Try Update With Hexo Blogger Importer" />
     <MESSAGE value="Fix Broken Posts Header" />
     <MESSAGE value="Workflow +submodule recursive" />
@@ -650,7 +649,8 @@
     <MESSAGE value="Switch `material` Theme" />
     <MESSAGE value="Update note" />
     <MESSAGE value="Update submodule" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update submodule" />
+    <MESSAGE value="Cleanup Posts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup Posts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
