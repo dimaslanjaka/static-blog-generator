@@ -10,6 +10,7 @@
     <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/site" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-filter-cleanup" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-images" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/packages/hexo-images/packages/smartcrop-sharp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-theme-boilerplate" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-theme-clover" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/google-scraper" vcs="" />
