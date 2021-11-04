@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update note">
-      <change beforePath="$PROJECT_DIR$/.gitmodules.sh" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules.sh" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update submodule">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,6 @@
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
-    <dismissed value="$PROJECT_DIR$/packages/hexo-blogger-xml/package.json" />
     <dismissed value="$PROJECT_DIR$/packages/hexo-filter-cleanup/package.json" />
     <dismissed value="$PROJECT_DIR$/packages/markdown-toc/package.json" />
     <dismissed value="$PROJECT_DIR$/themes/hexo-webnary-theme/package.json" />
@@ -169,14 +168,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gulp.js.blogger" />
+      <item itemvalue="TypeScript.gulpfile.test.ts" />
       <item itemvalue="Gulp.js.article:copy:dev" />
-      <item itemvalue="Node.js.ts-node current file" />
       <item itemvalue="npm.fix-sharp" />
       <item itemvalue="npm.server" />
       <item itemvalue="npm.server:clean" />
+      <item itemvalue="Gulp.js.blogger" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
-      <item itemvalue="TypeScript.gulpfile.test.ts" />
+      <item itemvalue="Node.js.ts-node current file" />
     </list>
     <recent_temporary>
       <list>
@@ -257,13 +256,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00165" summary="Try workflows">
-      <created>1635798298147</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1635798298147</updated>
     </task>
     <task id="LOCAL-00166" summary="Try workflows">
       <created>1635798642099</created>
@@ -601,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636021886910</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="Update submodule">
+      <created>1636021941952</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1636021941952</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -628,7 +627,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update docs readme" />
     <MESSAGE value="Change index to 9 posts" />
     <MESSAGE value="Try Update With Hexo Blogger Importer" />
     <MESSAGE value="Fix Broken Posts Header" />
@@ -653,7 +651,8 @@
     <MESSAGE value="Just test html post" />
     <MESSAGE value="Switch `material` Theme" />
     <MESSAGE value="Update note" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update note" />
+    <MESSAGE value="Update submodule" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update submodule" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
