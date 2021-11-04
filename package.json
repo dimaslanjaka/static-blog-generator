@@ -30,6 +30,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "chokidar": "^2.1.8",
+    "common": "file:packages/common",
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
     "fs-extra": "^10.0.0",
@@ -48,8 +49,8 @@
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-sitemap": "^2.1.0",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-images": "file:./packages/hexo-images",
     "hexo-i18n": "^1.0.0",
+    "hexo-images": "./packages/hexo-images",
     "hexo-log": "^3.0.0",
     "hexo-pagination": "^2.0.0",
     "hexo-pdf": "^1.1.1",

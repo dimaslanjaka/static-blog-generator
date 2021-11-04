@@ -10,12 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browsersync": "^0.0.1-security",
+    "hexo": "^5.4.0",
     "livereload": "^0.9.3",
     "lunr": "github:mamboer/lunr.js",
     "method-override": "^3.0.0",
     "node-libcurl": "^2.3.3",
     "node-sass": "^6.0.1",
     "object-assign": "^4.1.1",
+    "rx": "^4.1.0",
     "sharp": "^0.29.2"
   }
 }
