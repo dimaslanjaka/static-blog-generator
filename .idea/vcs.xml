@@ -13,11 +13,15 @@
     <mapping directory="$PROJECT_DIR$/packages/hexo-theme-clover" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/google-scraper" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/proxy/proxy-finder" vcs="" />
+    <mapping directory="$PROJECT_DIR$/source/Midi/MIDI.js" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Midi/MIDI.js" vcs="" />
-    <mapping directory="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Midi/MIDI.js" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Midi/MIDI.js" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/bootstrap-4" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-boilerplate" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover/source/css/font-awesome" vcs="" />
+    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover/source/iconfont" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/lx" vcs="" />
+    <mapping directory="$PROJECT_DIR$/themes/material" vcs="Git" />
   </component>
 </project>

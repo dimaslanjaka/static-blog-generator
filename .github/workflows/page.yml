@@ -3,7 +3,7 @@ name: github-pages
 on:
   push:
     branches:
-      - compiler # run when this brach pushed
+      - compiler # run when this branch pushed
 
 jobs:
   pages:
@@ -53,17 +53,19 @@ jobs:
         #run: cd themes/hexo-webnary-theme && npm install
       - name: Install Dependencies
         run: npm install #--prefer-offline
-      #- name: install hexo-blogger-xml from github
+      #- name: Install Local Dependencies
+        #run: npm i ./packages/hexo-filter-cleanup
+      #- name: install hexo-blogger-xml from GitHub
         #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       #- name: Copy package.json
         #run: cp package.webnary.json package.json
-      #- name: Copying Blogger Article
-        #run: npx gulp blogger --production
+      - name: Copying Blogger Article
+        run: npx gulp blogger --production
       - name: Copying Article Local (./src-posts)
         run: npx gulp article:copy
       - name: Hexo Generate
-        run: npx hexo generate --config _config.webnary.xml
-      - name: install page
+        run: npx hexo generate #--config _config.webnary.xml
+      - name: install source/page -> docs/page
         run: cd docs/page && npm install
       - name: Run Userscripts
         #run: mkdir docs && echo git.webmanajemen.com > docs/CNAME

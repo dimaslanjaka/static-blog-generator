@@ -41,6 +41,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 # https://hexo.io/docs/configuration.html
 skip_render:
+  - "Midi"
+  - "Midi/**/*"
   - "page"
   - "page/**/*"
   - "backend"
@@ -112,6 +114,8 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude:
+  - Midi
+  - Midi/**/*
 ignore:
 
 # Comments
@@ -122,9 +126,7 @@ disqus_shortname: dimaslanjaka
 ## Themes: https://hexo.io/themes/
 
 ## Current Theme Url: https://github.com/dfcommunity/hexo-webnary-theme/
-theme: hexo-webnary-theme
-#theme: lx
-#theme: amp
+theme: material
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -133,13 +135,6 @@ deploy:
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
   branch: master
   message: "Git Deployment"
-
-# Twitter Auto-Publish Config
-twitterAutoPublish:
-  consumerKey: <your-own-access-tokens>
-  consumerSecret: <your-own-access-tokens>
-  accessTokenKey: <your-own-access-tokens>
-  accessTokenSecret: <your-own-access-tokens>
 
 ## Custom by DFcommunity
 menu:
@@ -215,17 +210,6 @@ about:
   address: Surabaya, Indonesia
   email: dimaslanjaka@gmail.com
 
-# https://github.com/bubkoo/hexo-toc
-toc:
-  maxdepth: 3
-  class: toc
-  slugify: transliteration
-  decodeEntities: false
-  anchor:
-    position: after
-    symbol: ""
-    style: header-anchor
-
 # https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
 markdown_it_plus:
   highlight: true
@@ -282,6 +266,7 @@ tagmanager:
   enable: false
   id: GTM-NJNNXSR
 
+# custom
 analytic:
   # google analytic v4
   GA4: G-BG75CLNJZ1

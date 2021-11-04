@@ -14,3 +14,4 @@ ij_javascript_block_brace_style = end_of_line
 
 [*.md]
 trim_trailing_whitespace = false
+ 
