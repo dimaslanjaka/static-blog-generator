@@ -22,6 +22,6 @@
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover/source/css/font-awesome" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover/source/iconfont" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/lx" vcs="" />
-    <mapping directory="$PROJECT_DIR$/themes/material" vcs="" />
+    <mapping directory="$PROJECT_DIR$/themes/material" vcs="Git" />
   </component>
 </project>
