@@ -6,3 +6,4 @@ hexo-theme-clover/
 #*
 hexo-webnary-theme/
 #material/
+*.{zip,tar,xz}
