@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Cleanup Posts" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Refresh Posts">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/material/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/material/_config.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +23,7 @@
         <entry key="$PROJECT_DIR$" value="cors-proxy" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/themes/material" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -254,13 +258,6 @@
       <workItem from="1629630838630" duration="2001000" />
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
-    </task>
-    <task id="LOCAL-00170" summary="Try workflows">
-      <created>1635799347856</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1635799347856</updated>
     </task>
     <task id="LOCAL-00171" summary="Try workflows">
       <created>1635799600712</created>
@@ -598,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636029393597</updated>
     </task>
-    <option name="localTasksCounter" value="219" />
+    <task id="LOCAL-00219" summary="Refresh Posts">
+      <created>1636029826945</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1636029826945</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -625,7 +629,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Try Update With Hexo Blogger Importer" />
     <MESSAGE value="Fix Broken Posts Header" />
     <MESSAGE value="Workflow +submodule recursive" />
     <MESSAGE value="Workflow -submodule recursive" />
@@ -650,7 +653,8 @@
     <MESSAGE value="Update note" />
     <MESSAGE value="Update submodule" />
     <MESSAGE value="Cleanup Posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup Posts" />
+    <MESSAGE value="Refresh Posts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refresh Posts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
