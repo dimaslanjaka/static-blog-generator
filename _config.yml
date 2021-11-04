@@ -259,6 +259,10 @@ adsense:
   ads1: 6376402862
   # responsive square
   ads_sidebar: 3325057139
+  # in-article ads source
+  in_article_ads:
+    - "source/ads/in_article.html"
+    - "source/ads/in_article2.html"
 
 adblock: true
 

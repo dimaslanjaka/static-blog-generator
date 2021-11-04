@@ -132,6 +132,7 @@ gulp.task("blogger", function (done) {
   const mainXML = path.resolve("userscripts/xml/webmanajemen.com.xml");
   // eslint-disable-next-line no-unused-vars
   const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
+  // use --production for produce to ./src-posts
   const isProduction = argv["production"] !== undefined;
   gulpCore({
     input: [mainXML],

@@ -49,6 +49,7 @@
     "hexo-generator-sitemap": "^2.1.0",
     "hexo-generator-tag": "^1.0.0",
     "hexo-i18n": "^1.0.0",
+    "hexo-images": "file:packages/hexo-images",
     "hexo-log": "^3.0.0",
     "hexo-pagination": "^2.0.0",
     "hexo-pdf": "^1.1.1",
@@ -67,6 +68,7 @@
     "livereload": "^0.9.3",
     "lodash": "^4.17.21",
     "lunr": "github:mamboer/lunr.js",
+    "material": "file:themes/material",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
     "node-libcurl": "^2.3.3",
@@ -144,11 +146,13 @@
     "prettier": "^2.4.1",
     "request": "^2.88.2",
     "response-time": "^2.3.2",
+    "sanitize-filename": "^1.6.3",
     "serve-index": "^1.9.1",
     "serve-static": "^1.14.1",
     "ts-node": "^10.2.1",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3",
+    "xml2js": "^0.4.23",
     "yargs": "^17.2.1"
   }
 }
