@@ -9,13 +9,18 @@ root = true
 .sass-cache
 .tmp
 node_modules
-CVS 
+CVS
 .sources
 
 [files.exclude]
 **/.git
 **/.DS_Store
 **/source/.images
+docs/
+.deploy_git/
+**/tmp
+**/temp
+**/build
 
 [*]
 indent_style = space
@@ -31,4 +36,4 @@ ij_javascript_block_brace_style = end_of_line
 
 [*.md]
 trim_trailing_whitespace = false
- 
+

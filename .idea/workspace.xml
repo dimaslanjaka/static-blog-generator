@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="submodule update">
+      <change afterPath="$PROJECT_DIR$/src/gulp/hexo-config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gulp/hexo-deploy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gh-pages.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gh-pages.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gulp/shortcode/css.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gulp/shortcode/css.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gulp/shortcode/script.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gulp/shortcode/script.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gulp/shortcode/time.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gulp/shortcode/time.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="ts.rename.search.for.js.occurrences" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -103,7 +104,7 @@
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland" />
     </key>
   </component>
-  <component name="RunManager" selected="TypeScript.gulpfile.test.ts">
+  <component name="RunManager" selected="TypeScript.hexo-deploy.ts">
     <configuration name="gulpfile.test.ts" type="TypeScriptProgramRunner" factoryName="TypeScript" temporary="true">
       <module name="gh-pages" />
       <option name="interpreterRef" value="project" />
@@ -114,6 +115,21 @@
       <option name="extraTypeScriptOptions" value="" />
       <option name="scriptName" value="$PROJECT_DIR$/gulpfile.test.ts" />
       <option name="programParameters" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hexo-deploy.ts" type="TypeScriptProgramRunner" factoryName="TypeScript" temporary="true">
+      <module name="gh-pages" />
+      <option name="interpreterRef" value="project" />
+      <option name="enabledTsNodeEsmLoader" value="false" />
+      <option name="interpreterOptions" value="" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/src/gulp" />
+      <option name="tsconfigFile" value="" />
+      <option name="extraTypeScriptOptions" value="" />
+      <option name="scriptName" value="$PROJECT_DIR$/src/gulp/hexo-deploy.ts" />
+      <option name="programParameters" value="" />
+      <option name="tsnodePackage" value="$PROJECT_DIR$/node_modules/ts-node" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,34 +173,24 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="server:clean" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="server:clean" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Gulp.js.blogger" />
       <item itemvalue="Node.js.ts-node current file" />
-      <item itemvalue="npm.gh-pages server" />
       <item itemvalue="npm.server" />
-      <item itemvalue="npm.server:clean" />
       <item itemvalue="npm.generate" />
       <item itemvalue="npm.generate:clean" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
       <item itemvalue="TypeScript.gulpfile.test.ts" />
+      <item itemvalue="npm.gh-pages server" />
+      <item itemvalue="TypeScript.hexo-deploy.ts" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TypeScript.hexo-deploy.ts" />
         <item itemvalue="TypeScript.gulpfile.test.ts" />
         <item itemvalue="npm.generate:clean" />
         <item itemvalue="npm.generate" />
         <item itemvalue="npm.server" />
-        <item itemvalue="npm.server:clean" />
       </list>
     </recent_temporary>
   </component>
@@ -258,13 +264,6 @@
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
       <workItem from="1636213987624" duration="1817000" />
-    </task>
-    <task id="LOCAL-00177" summary="Try workflows">
-      <created>1635800526201</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1635800526201</updated>
     </task>
     <task id="LOCAL-00178" summary="Try workflows">
       <created>1635804016727</created>
@@ -602,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636292882095</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="submodule update">
+      <created>1636293381144</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1636293381144</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
