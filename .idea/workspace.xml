@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Refresh Posts">
-      <change afterPath="$PROJECT_DIR$/src/gulp/compress/img3.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gulp/compress/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/gulp/compress/index.ts" afterDir="false" />
-    </list>
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Refresh Posts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +62,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes/material" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-blogger-xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -167,15 +162,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gulp.js.blogger" />
-      <item itemvalue="Node.js.ts-node current file" />
-      <item itemvalue="npm.gh-pages server" />
-      <item itemvalue="npm.server" />
-      <item itemvalue="npm.server:clean" />
+      <item itemvalue="TypeScript.gulpfile.test.ts" />
       <item itemvalue="npm.generate" />
       <item itemvalue="npm.generate:clean" />
+      <item itemvalue="npm.server" />
+      <item itemvalue="npm.server:clean" />
+      <item itemvalue="Gulp.js.blogger" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
-      <item itemvalue="TypeScript.gulpfile.test.ts" />
+      <item itemvalue="Node.js.ts-node current file" />
     </list>
     <recent_temporary>
       <list>
@@ -257,13 +251,6 @@
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
       <workItem from="1636213987624" duration="1817000" />
-    </task>
-    <task id="LOCAL-00173" summary="Try workflows">
-      <created>1635799772940</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1635799772940</updated>
     </task>
     <task id="LOCAL-00174" summary="Try workflows">
       <created>1635799986121</created>
@@ -601,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636055599090</updated>
     </task>
-    <option name="localTasksCounter" value="222" />
+    <task id="LOCAL-00222" summary="Refresh Posts">
+      <created>1636292525579</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1636292525580</updated>
+    </task>
+    <option name="localTasksCounter" value="223" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
