@@ -32,5 +32,17 @@
   "typescript.tsc.autoDetect": "off",
   "gulptasks.pattern": "**/gulpfile.ts",
   "gulptasks.args": ["-r", "ts-node/register"],
-  "gulptasks.filters": ["!**/node_modules/**", "!**/bower_components/**", "!**/packages/**", "!**/themes/**"]
+  "gulptasks.filters": ["!**/node_modules/**", "!**/bower_components/**", "!**/packages/**", "!**/themes/**"],
+  "npm.enableRunFromFolder": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "exclude/**": true,
+    "**/.idea": true
+  }
 }
