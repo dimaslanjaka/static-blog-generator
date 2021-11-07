@@ -49,7 +49,7 @@ skip_render:
   - "backend"
   - "backend/**/*"
   # https://github.com/hexojs/hexo/issues/1797
-  - "*.json"
+  - "*.{json,php}"
   - "_posts/**/*.json"
   - "_posts/**/*.js"
   - "_posts/The Legend Of Neverland/Midi/readme.md"
@@ -115,8 +115,6 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude:
-  - Midi
-  - Midi/**/*
 ignore:
 
 # Comments

@@ -9,5 +9,5 @@ public/
 build/
 tmp/
 exclude/
-docs/
+#docs/
 #package-lock.json

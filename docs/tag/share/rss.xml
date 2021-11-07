@@ -13,27 +13,27 @@
         <category>Macros</category>
         <category>Life Skill</category>
         <category>Auto Click</category>
-        <category>Event</category>
-        <category>Wordpress</category>
-        <category>Blogger</category>
+        <category>Tools</category>
         <category>Blogging</category>
-        <category>CSS</category>
+        <category>Wordpress</category>
         <category>SEO</category>
-        <category>Adsense</category>
-        <category>JS</category>
-        <category>PHP</category>
+        <category>Blogger</category>
         <category>HTML</category>
-        <category>AMP</category>
-        <category>Facebook</category>
         <category>Social Media</category>
+        <category>Event</category>
+        <category>JS</category>
+        <category>AMP</category>
+        <category>CSS</category>
+        <category>Adsense</category>
+        <category>PHP</category>
+        <category>Facebook</category>
         <category>Android</category>
         <category>Script</category>
-        <category>Tools</category>
         <category>Tips &amp; Tricks</category>
         <category>CodeIgniter</category>
         <category>Miscellaneous</category>
-        <category>Linux/Unix</category>
         <category>Marketing Strategies</category>
+        <category>Linux/Unix</category>
         <category>VainGlory</category>
         <category>Hosting</category>
         <category>Games</category>
@@ -58,9 +58,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2020/02/backlink-by-google.html</guid>
             <title>Find Backlink From Google Dork</title>
             <link>https://git.webmanajemen.com/2020/02/backlink-by-google.html</link>
-            <category>Blogger</category>
             <category>Blogging</category>
             <category>SEO</category>
+            <category>Blogger</category>
             <category>Tips &amp; Tricks</category>
             <category>Share</category>
             <pubDate>Wed, 05 Feb 2020 16:39:00 +0700</pubDate>
@@ -110,8 +110,8 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2019/12/improve-blog-performance-with.html</guid>
             <title>Improve Blog Performance with Cloudflare DNS</title>
             <link>https://git.webmanajemen.com/2019/12/improve-blog-performance-with.html</link>
-            <category>Blogger</category>
             <category>Blogging</category>
+            <category>Blogger</category>
             <category>Tips &amp; Tricks</category>
             <category>Share</category>
             <pubDate>Sun, 29 Dec 2019 16:37:00 +0700</pubDate>
@@ -122,8 +122,8 @@
             <title>Javascript Debug Protector</title>
             <link>https://git.webmanajemen.com/2019/12/javascript-debug-protector.html</link>
             <category>Blogging</category>
-            <category>JS</category>
             <category>HTML</category>
+            <category>JS</category>
             <category>Share</category>
             <pubDate>Sun, 29 Dec 2019 08:02:00 +0700</pubDate>
             <description><![CDATA[ &lt;p&gt;  How to protect javascript from developer tools ? here the answer.   &lt;br&gt;  put this code into your page or template before closing body (&lt;kbd&gt;&amp;lt;/body&amp;gt;&lt;/kbd&gt;) &lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;pre&gt;&amp;lt;script src=&#34;https://cdn.jsdelivr.net/gh/dimaslanjaka/Web-Manajemen@master/js/protector.js&#34; async&amp;gt;&amp;lt;/script&amp;gt;&lt;br&gt;&lt;/pre&gt;&lt;p&gt;           This script functions to hide the output from console.log, console.error, console.warning, and so on. and will also notify visitors that the site being opened is in a time suspension, because the visitor is opening the developer tools in his browser.&lt;br&gt;&lt;/p&gt;&lt;p&gt;This article about :&lt;/p&gt;&lt;ol&gt;&lt;li&gt;protect javascript from debugging&lt;/li&gt;&lt;li&gt;hide javascript console from developer tools&lt;/li&gt;&lt;li&gt;protect site from debugging&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;/p&gt;&lt;img src=&#34;https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg&#34; title=&#34;How to secure javascript&#34; alt=&#34;How to protect javascript&#34; width=&#34;100%&#34;&gt; ]]></description>
@@ -142,8 +142,8 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2019/12/save-adsense-ads-in-posts-with-callers.html</guid>
             <title>Save Adsense Ads In Posts With Callers Using Javascript</title>
             <link>https://git.webmanajemen.com/2019/12/save-adsense-ads-in-posts-with-callers.html</link>
-            <category>Blogger</category>
             <category>Blogging</category>
+            <category>Blogger</category>
             <category>Tips &amp; Tricks</category>
             <category>Share</category>
             <pubDate>Thu, 26 Dec 2019 18:20:00 +0700</pubDate>
@@ -219,9 +219,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2019/12/complete-external-link-immediately-with.html</guid>
             <title>Complete the External Link immediately with the Noopener Rail</title>
             <link>https://git.webmanajemen.com/2019/12/complete-external-link-immediately-with.html</link>
-            <category>Blogger</category>
             <category>Blogging</category>
             <category>SEO</category>
+            <category>Blogger</category>
             <category>Tips &amp; Tricks</category>
             <category>Share</category>
             <pubDate>Tue, 17 Dec 2019 18:16:00 +0700</pubDate>
@@ -231,8 +231,8 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2019/12/ideal-frequency-for-blog-articles-update.html</guid>
             <title>Ideal Frequency For Blog Articles Update</title>
             <link>https://git.webmanajemen.com/2019/12/ideal-frequency-for-blog-articles-update.html</link>
-            <category>Blogger</category>
             <category>Blogging</category>
+            <category>Blogger</category>
             <category>Tips &amp; Tricks</category>
             <category>Share</category>
             <pubDate>Sat, 14 Dec 2019 21:02:00 +0700</pubDate>

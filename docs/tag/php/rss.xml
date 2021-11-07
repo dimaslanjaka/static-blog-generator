@@ -13,27 +13,27 @@
         <category>Macros</category>
         <category>Life Skill</category>
         <category>Auto Click</category>
-        <category>Event</category>
-        <category>Wordpress</category>
-        <category>Blogger</category>
+        <category>Tools</category>
         <category>Blogging</category>
-        <category>CSS</category>
+        <category>Wordpress</category>
         <category>SEO</category>
-        <category>Adsense</category>
-        <category>JS</category>
-        <category>PHP</category>
+        <category>Blogger</category>
         <category>HTML</category>
-        <category>AMP</category>
-        <category>Facebook</category>
         <category>Social Media</category>
+        <category>Event</category>
+        <category>JS</category>
+        <category>AMP</category>
+        <category>CSS</category>
+        <category>Adsense</category>
+        <category>PHP</category>
+        <category>Facebook</category>
         <category>Android</category>
         <category>Script</category>
-        <category>Tools</category>
         <category>Tips &amp; Tricks</category>
         <category>CodeIgniter</category>
         <category>Miscellaneous</category>
-        <category>Linux/Unix</category>
         <category>Marketing Strategies</category>
+        <category>Linux/Unix</category>
         <category>VainGlory</category>
         <category>Hosting</category>
         <category>Games</category>
@@ -171,9 +171,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2019/07/membuat-websocket-javascript-php.html</guid>
             <title>[JS][PHP] Membuat Websocket Javascript</title>
             <link>https://git.webmanajemen.com/2019/07/membuat-websocket-javascript-php.html</link>
+            <category>HTML</category>
             <category>JS</category>
             <category>PHP</category>
-            <category>HTML</category>
             <category>Tips &amp; Tricks</category>
             <pubDate>Fri, 12 Jul 2019 18:38:00 +0700</pubDate>
             <description><![CDATA[ &lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;div style=&#34;text-align: center;&#34;&gt;Cara membuat &lt;b&gt;websocket &lt;/b&gt;dengan &lt;b&gt;Javascript (JS)&lt;/b&gt; dan &lt;b&gt;PHP&lt;/b&gt;&lt;br&gt;&lt;img src=&#34;https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png&#34;&gt;&lt;br&gt;&lt;blockquote&gt;Update: &lt;a href=&#34;https://www.webmanajemen.com/p/simple-websocket.html&#34;&gt;Simple Websocket&lt;/a&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;blockquote class=&#34;tr_bq&#34; style=&#34;text-align: left;&#34;&gt;Requirements: &lt;br&gt;&lt;ol style=&#34;text-align: left;&#34;&gt;&lt;li&gt;PHP 5.6+ (minimum)&amp;nbsp;&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;&lt;br&gt;Websocket merupakan standard baru untuk berkomunikasi, dan cocok untuk aplikasi chat, live server, live listener. Hampir sama dengan AJAX namun perbedaannya ada pada kecepatan dan CPU usage pada device client maupun server. Intinya lebih ringan lah.&lt;br&gt;Websocket ini dapat menerima request apapun dan mendistribusikannya secara instant dari perubahan data sebelumnya. Berikut &lt;b&gt;Cara membuat websocket tanpa NODEJS menggunakan Pure Javascript dan PHP:&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;i&gt;websocket.js&lt;/i&gt;&lt;br&gt;&lt;pre&gt;/** websocket steam */&lt;br&gt;var socket;&lt;br&gt;socket_start(); //start websocket&lt;br&gt;&lt;br&gt;function socket_start() {&lt;br&gt;  if (!socket) { //if socket is null&lt;br&gt;    console.log(&#39;WebSocket Started&#39;); //start server&lt;br&gt;    socket = socket_server();&lt;br&gt;  }&lt;br&gt;  try {&lt;br&gt;    socket.onopen = function (msg) {&lt;br&gt;      //console.log(&#39;socket initialized&#39;);&lt;br&gt;    };&lt;br&gt;    socket.onmessage = function (msg) {&lt;br&gt;      var data = JSON.parse(msg.data);&lt;br&gt;      //PARSING RESPONSE DATA&lt;br&gt;    };&lt;br&gt;    socket.onclose = function (msg) {&lt;br&gt;      console.log({ closed: socket });&lt;br&gt;    };&lt;br&gt;  }&lt;br&gt;  catch (ex) {&lt;br&gt;    console.log(ex);&lt;br&gt;  }&lt;br&gt;}&lt;br&gt;&lt;br&gt;function socket_server() {&lt;br&gt;  console.log(&#39;Socket Initialized&#39;);&lt;br&gt;  // &lt;b&gt;Set YOUR PHP FILE URL&lt;/b&gt;&lt;br&gt;  var host = &#39;/websocket/server.php&#39;; &lt;br&gt;  if (!!window.EventSource) {&lt;br&gt;    var socket = new EventSource(host);&lt;br&gt;  } else {&lt;br&gt;    var socket = new WebSocket(host);&lt;br&gt;  }&lt;br&gt;  return socket;&lt;br&gt;}&lt;br&gt;&lt;br&gt;function socket_stop() {&lt;br&gt;  if (socket != null) {&lt;br&gt;    console.log(&#34;WebSocket Stopped&#34;);&lt;br&gt;    socket.close();&lt;br&gt;    socket = null;&lt;br&gt;  }&lt;br&gt;}&lt;br&gt;&lt;br&gt;function socket_check(){&lt;br&gt;  return socket;&lt;br&gt;}&lt;br&gt;&lt;/pre&gt;&lt;br&gt;&lt;i&gt;Usage:&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;ol style=&#34;text-align: left;&#34;&gt;&lt;li&gt;&lt;u&gt;Checking socket:&lt;/u&gt;&amp;nbsp;befungsi untuk mengecek apakah socket sudah berjalan atau tidak.&lt;/li&gt;&lt;pre&gt;if (!socket_check()){&lt;br&gt;  /* Socket tidak berjalan */&lt;br&gt;}&lt;br&gt;--- OR ---&lt;br&gt;if (socket_check() === null){&lt;br&gt;  /* Socket tidak berjalan */&lt;br&gt;}&lt;br&gt;--- OR ---&lt;br&gt;if (socket_check()){&lt;br&gt;  /* Socket berjalan */&lt;br&gt;}&lt;br&gt;&lt;/pre&gt;&lt;li&gt;&lt;u&gt;Parsing response data&lt;/u&gt;&lt;/li&gt;&lt;pre&gt;&lt;br&gt;socket.onmessage = function (msg) { //function socket_start()&lt;br&gt;   var data = JSON.parse(msg.data);&lt;br&gt;   //PARSING RESPONSE DATA DISINI&lt;br&gt;};&lt;br&gt;&lt;/pre&gt;&lt;/ol&gt;&lt;br&gt;&lt;i&gt;server.php&lt;/i&gt;&lt;pre&gt;&lt;br&gt;&amp;lt;?php&lt;br&gt;header(&#39;X-Robots-Tag: noindex, nofollow&#39;, true);&lt;br&gt;header(&#39;Content-Type: text/event-stream&#39;);&lt;br&gt;header(&#39;Cache-Control: no-store, no-cache, must-revalidate, max-age=0&#39;);&lt;br&gt;header(&#39;Cache-Control: post-check=0, pre-check=0&#39;, false);&lt;br&gt;header(&#39;Cache-Control: no-cache&#39;);&lt;br&gt;&lt;br&gt;function SEND($id, $msg)&lt;br&gt;{&lt;br&gt;  echo &#34;id: $id&#34; . PHP_EOL;&lt;br&gt;  $data = trim(json_encode([ //encoding JSON untuk data yang panjang&lt;br&gt;    &#39;array_key&#39; =&amp;gt; &#39;array_value&#39;,&lt;br&gt;  ]));&lt;br&gt;  echo &#34;data: $data&#34; . PHP_EOL;&lt;br&gt;  echo PHP_EOL;&lt;br&gt;  ob_flush();&lt;br&gt;  flush();&lt;br&gt;}&lt;br&gt;&lt;br&gt;$serverTime = time();&lt;br&gt;&lt;br&gt;SEND($serverTime, &#39;server time: &#39; . date(&#39;h:i:s&#39;, time()));&lt;br&gt;exit;&lt;br&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;Update: &lt;a href=&#34;https://www.webmanajemen.com/p/simple-websocket.html&#34;&gt;Simple Websocket&lt;/a&gt;&lt;/blockquote&gt; &lt;ol&gt;&lt;p&gt;Incoming terms:&lt;/p&gt;&lt;li&gt;javascript&lt;/li&gt;&lt;li&gt;php&lt;/li&gt;&lt;li&gt;websocket&lt;/li&gt;&lt;li&gt;web socket&lt;/li&gt;&lt;li&gt;simple websocket&lt;/li&gt;&lt;li&gt;websocket simple&lt;/li&gt;&lt;li&gt;websocket javascript php&lt;/li&gt;&lt;/ol&gt; ]]></description>
@@ -202,11 +202,11 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2018/11/cara-install-heroku-cli-di-termux.html</guid>
             <title>Cara install heroku CLI di Termux</title>
             <link>https://git.webmanajemen.com/2018/11/cara-install-heroku-cli-di-termux.html</link>
+            <category>Tools</category>
             <category>JS</category>
             <category>PHP</category>
             <category>Android</category>
             <category>Script</category>
-            <category>Tools</category>
             <category>Tips &amp; Tricks</category>
             <category>Software</category>
             <pubDate>Sat, 17 Nov 2018 07:08:00 +0700</pubDate>
@@ -217,9 +217,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2018/11/install-php-web-server-on-termux.html</guid>
             <title>Install PHP Web Server on Termux</title>
             <link>https://git.webmanajemen.com/2018/11/install-php-web-server-on-termux.html</link>
+            <category>Tools</category>
             <category>PHP</category>
             <category>Android</category>
-            <category>Tools</category>
             <category>Tips &amp; Tricks</category>
             <pubDate>Tue, 13 Nov 2018 02:19:00 +0700</pubDate>
             <description><![CDATA[ &lt;h1 for=&#34;title&#34;&gt; Install PHP Web Server on Termux&lt;/h1&gt;&lt;div class=&#34;container-fluid container&#34; id=&#34;wrapper&#34;&gt;&lt;div class=&#34;row-fluid&#34; id=&#34;mainbody&#34;&gt;&lt;!--    --&gt;&lt;br&gt;&lt;div class=&#34;span8 content&#34; id=&#34;content&#34;&gt;&lt;div class=&#34;post&#34;&gt;&lt;h1 class=&#34;post-3408 post type-post status-publish format-standard hentry category-android category-linux category-operating-sistem category-review tag-install-apache2-in-termux tag-install-web-server-di-android tag-install-web-server-di-termux tag-install-web-server-php-di-android tag-linux-in-android&#34; id=&#34;post-3408&#34;&gt; &lt;span class=&#34;notranslate&#34;&gt; &lt;/span&gt; &lt;a alt=&#34; Install PHP Web Server on Termux &#34; href=&#34;https://web-manajemen.blogspot.com/p/search.html?q=install%20server%20termux#internal_link_http://www.goblooge.com/blog/install-php-web-server-di-termux/&#34; rel=&#34;follow, referer, index&#34; target=&#34;_blank&#34; title=&#34; Install PHP Web Server on Termux &#34;&gt;&lt;img alt=&#34; Install PHP Web Server on Termux &#34; height=&#34;auto&#34; src=&#34;https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no&#34; title=&#34; Install PHP Web Server on Termux &#34; width=&#34;100%&#34;&gt;&lt;/a&gt; &lt;span class=&#34;notranslate&#34;&gt; Install PHP Web Server on Termux&lt;/span&gt; &lt;/h1&gt;&lt;div class=&#34;entry&#34;&gt;&lt;span class=&#34;notranslate&#34;&gt; connect the previous article about how to install maria db in termux ( &lt;a alt=&#34; Install PHP Web Server on Termux &#34; href=&#34;https://web-manajemen.blogspot.com/p/search.html?q=install%20mariadb%20termux#internal_link_http://www.goblooge.com/blog/install-mariadb-di-termux/&#34; rel=&#34;follow, referer, index&#34; target=&#34;_blank&#34; title=&#34; Install PHP Web Server on Termux &#34;&gt;Install MariaDB on Termux&lt;/a&gt; ), as a complement we will &lt;em&gt;install the apache web server&lt;/em&gt; in &lt;em&gt;termux&lt;/em&gt; .&lt;/span&gt; &lt;span class=&#34;notranslate&#34;&gt; due to the differences in termux compared to native Linux, the default ports for &lt;em&gt;web servers&lt;/em&gt; like 80 etc cannot be used, so later we will use other &lt;em&gt;ports&lt;/em&gt; to run the &lt;em&gt;web server&lt;/em&gt; .&lt;/span&gt; &lt;br&gt;&lt;div class=&#34;wp-caption aligncenter&#34;&gt;&lt;a alt=&#34; Install PHP Web Server on Termux «j &#34; href=&#34;https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no&#34; rel=&#34;noopener noreferer nofollow&#34; target=&#34;_blank&#34; title=&#34; Install PHP Web Server on Termux &#34;&gt;&lt;img alt=&#34; Install PHP Web Server on Termux &#34; class=&#34;size-medium&#34; height=&#34;auto&#34; src=&#34;https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no&#34; title=&#34; Install PHP Web Server on Termux &#34; width=&#34;100%&#34;&gt;&lt;/a&gt; &lt;br&gt;&lt;div class=&#34;wp-caption-text&#34;&gt;&lt;span class=&#34;notranslate&#34;&gt; Install Apache WEb server&lt;/span&gt; &lt;/div&gt;&lt;/div&gt;&lt;span class=&#34;notranslate&#34;&gt; to install Apache web server is quite easy, just type&lt;/span&gt; &lt;br&gt;&lt;pre class=&#34;wp-code-highlight prettyprint linenums:1&#34;&gt; &lt;span class=&#34;notranslate&#34;&gt; #apt install Apache2&lt;/span&gt; &lt;/pre&gt;&lt;span class=&#34;notranslate&#34;&gt; wait until the process is complete, if it&#39;s already running it it&#39;s easy enough.&lt;/span&gt; &lt;span class=&#34;notranslate&#34;&gt; all we need to do is type the command.&lt;/span&gt; &lt;br&gt;&lt;pre class=&#34;wp-code-highlight prettyprint linenums:1&#34;&gt; &lt;span class=&#34;notranslate&#34;&gt; #php -S ip: port -t /path/to/web/file.php&lt;/span&gt; &lt;/pre&gt;&lt;span class=&#34;notranslate&#34;&gt; where ip is the ip address of the web that we want, the port is the port we want to use as an http port, if by chance port 80 is not used it can use port 80, and /path/to/web/file.php is the directory of the php file that we want to run.&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;notranslate&#34;&gt; suppose I have a file at /sdcard/www/html/index.php.&lt;/span&gt; &lt;span class=&#34;notranslate&#34;&gt; then the ip address of my cellphone on the WLAN network is 192.168.1.200 and I want to use port 8080 as the port just type&lt;/span&gt; &lt;br&gt;&lt;pre class=&#34;wp-code-highlight prettyprint linenums:1&#34;&gt; &lt;span class=&#34;notranslate&#34;&gt; #php -S 192.168.1.200:8080 -t / sdcard / www / html / index.php&lt;/span&gt;  &lt;/pre&gt;&lt;span class=&#34;notranslate&#34;&gt; to try it just type in the android browser localhost / index.php or if you happen to be connected to the network can use the direct ip address 192.168.1.200, and try accessing it from another cellphone or computer.&lt;/span&gt; &lt;span class=&#34;notranslate&#34;&gt; if it happens to not have a LAN / Wifi network then ip can be filled with 127.0.0.1.&lt;/span&gt; &lt;br&gt;&lt;span class=&#34;notranslate&#34;&gt; maybe this is what I can &lt;em&gt;share&lt;/em&gt; , in the next article I will discuss about ssh server in termux, so we can tamper with &lt;em&gt;console thermux&lt;/em&gt; directly using the ssh &lt;em&gt;server&lt;/em&gt; .&lt;/span&gt; &lt;span class=&#34;notranslate&#34;&gt; it can even be used for &lt;em&gt;debugging&lt;/em&gt; when we &lt;em&gt;develop&lt;/em&gt; applications on Android.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;notranslate&#34;&gt;see you in the next article&lt;/span&gt;&lt;br&gt;&lt;!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ --&gt;     &lt;/div&gt;&lt;!--entry--&gt; &lt;/div&gt;&lt;/div&gt;&lt;!--content--&gt; &lt;!--WP Code Highlight_start--&gt;&lt;!--WP Code Highlight_end--&gt; &lt;/div&gt;&lt;!--mainbody--&gt; &lt;!--footer --&gt; &lt;script src=&#34;https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201846&#34; type=&#34;text/javascript&#34;&gt;&lt;/script&gt;&lt;script async=&#34;async&#34; defer=&#34;&#34; src=&#34;https://stats.wp.com/e-201846.js&#34; type=&#34;text/javascript&#34;&gt;&lt;/script&gt; &lt;/div&gt;&lt;!--wrapper--&gt;    ]]></description>
@@ -228,8 +228,8 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2018/11/installation-ubuntu-on-android-tutorial.html</guid>
             <title>Installation Ubuntu On Android Tutorial</title>
             <link>https://git.webmanajemen.com/2018/11/installation-ubuntu-on-android-tutorial.html</link>
-            <category>PHP</category>
             <category>Social Media</category>
+            <category>PHP</category>
             <category>Android</category>
             <category>Tips &amp; Tricks</category>
             <category>Linux/Unix</category>
