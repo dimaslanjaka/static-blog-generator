@@ -10,3 +10,7 @@
 	path = packages/hexo-images
 	url = https://github.com/dimaslanjaka/hexo-images.git
 	branch = l3n4r0x
+[submodule "packages/hexo"]
+	path = packages/hexo
+	url = https://github.com/dimaslanjaka/hexo.git
+	branch = dimaslanjaka

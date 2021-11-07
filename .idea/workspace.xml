@@ -1,13 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="submodule update">
-      <change afterPath="$PROJECT_DIR$/src/gulp/hexo-config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gulp/hexo-deploy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/page.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/page.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gh-pages.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gh-pages.iml" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update themes">
+      <change afterPath="$PROJECT_DIR$/packages/hexo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/lib/logic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-auto-category/repository.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/.run/gh-pages server.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/.sgcrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/__test__/js-test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/__test__/js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/Cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/Config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/Console.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/Date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/Write.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/favicons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/img.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/js-old.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/useref.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-filter-cleanup/release-local.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/gh-pages.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/hexo-filter-cleanup.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/hexo-image-local.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/jsLinters/eslint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/prettier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/runConfigurations/gh_pages_server_clean.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/runConfigurations/ts_node.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/.run/gh-pages server.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/lib/imagemin-x.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/lib/optimizeImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/lib/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-image-local/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.github/FUNDING.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/.verb.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/appveyor.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/lib/insert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/foo.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/insert-no-links.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/insert-options.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/insert.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/newline.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/repeated-headings.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/expected/replace-existing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/basic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/diacritics.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/extra-comment.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/fenced-code-blocks.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/filter.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/heading-levels.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/insert.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/levels.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/mixed.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/newline.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/repeat-bullets.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/repeated-headings.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/replace-existing.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/strip-words.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/fixtures/tocstop.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/markdown-toc/test/test.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +179,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="ts.rename.search.for.js.occurrences" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -129,7 +228,6 @@
       <option name="extraTypeScriptOptions" value="" />
       <option name="scriptName" value="$PROJECT_DIR$/src/gulp/hexo-deploy.ts" />
       <option name="programParameters" value="" />
-      <option name="tsnodePackage" value="$PROJECT_DIR$/node_modules/ts-node" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,7 +279,6 @@
       <item itemvalue="npm.generate:clean" />
       <item itemvalue="Shell Script.Compile hexo-blogger-xml &amp;&amp; Test Gulp Blogger" />
       <item itemvalue="TypeScript.gulpfile.test.ts" />
-      <item itemvalue="npm.gh-pages server" />
       <item itemvalue="TypeScript.hexo-deploy.ts" />
     </list>
     <recent_temporary>
@@ -264,20 +361,6 @@
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
       <workItem from="1636213987624" duration="1817000" />
-    </task>
-    <task id="LOCAL-00178" summary="Try workflows">
-      <created>1635804016727</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1635804016727</updated>
-    </task>
-    <task id="LOCAL-00179" summary="Try workflows">
-      <created>1635804152701</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1635804152701</updated>
     </task>
     <task id="LOCAL-00180" summary="Try workflows">
       <created>1635804272268</created>
@@ -608,7 +691,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636293381144</updated>
     </task>
-    <option name="localTasksCounter" value="227" />
+    <task id="LOCAL-00227" summary="Update themes">
+      <created>1636297057927</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1636297057928</updated>
+    </task>
+    <task id="LOCAL-00228" summary="Update themes">
+      <created>1636297222352</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1636297222352</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -635,7 +732,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Workflow +submodule recursive" />
     <MESSAGE value="Workflow -submodule recursive" />
     <MESSAGE value="Workflow [fix]" />
     <MESSAGE value="Caching docs" />
@@ -660,7 +756,8 @@
     <MESSAGE value="Cleanup Posts" />
     <MESSAGE value="Refresh Posts" />
     <MESSAGE value="submodule update" />
-    <option name="LAST_COMMIT_MESSAGE" value="submodule update" />
+    <MESSAGE value="Update themes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update themes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

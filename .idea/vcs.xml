@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/electron-browser/simple-samples" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/ga-analytics" vcs="" />
+    <mapping directory="$PROJECT_DIR$/packages/hexo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-admin-ehc" vcs="" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/packages/hexo-blogger-xml/php/wordpress-blogger-importer" vcs="" />
@@ -19,8 +20,8 @@
     <mapping directory="$PROJECT_DIR$/source/_posts/The Legend Of Neverland/Midi/MIDI.js" vcs="" />
     <mapping directory="$PROJECT_DIR$/src-posts/The Legend Of Neverland/Midi/MIDI.js" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/bootstrap-4" vcs="" />
-    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-boilerplate" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-boilerplate" vcs="" />
+    <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover/source/css/font-awesome" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/hexo-theme-clover/source/iconfont" vcs="" />
     <mapping directory="$PROJECT_DIR$/themes/lx" vcs="" />
