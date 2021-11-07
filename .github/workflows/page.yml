@@ -44,8 +44,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
-        #run: ls packages
-      #- name: ls packages
+
       - name: install global packages
         run: npm i -g hexo-cli gulp-cli typescript ts-node npm
       #- name: install themes/hexo-webnary-theme
