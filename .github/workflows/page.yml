@@ -58,8 +58,8 @@ jobs:
         #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       #- name: Copy package.json
         #run: cp package.webnary.json package.json
-      - name: Copying Blogger Article
-        run: npx gulp blogger --production
+      #- name: Copying Blogger Article
+        #run: npx gulp blogger --production
       - name: Copying Article Local (./src-posts)
         run: npx gulp article:copy
       - name: Hexo Clean

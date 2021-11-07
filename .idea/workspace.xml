@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update themes [update]">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update themes [flow]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +21,7 @@
         <entry key="$PROJECT_DIR$" value="cors-proxy" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/packages/hexo" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -64,7 +64,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-toc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -75,7 +75,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="ts.rename.search.for.js.occurrences" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -99,7 +99,7 @@
       <recent name="D:\Repositories\gh-pages\src-posts\The Legend Of Neverland" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server">
+  <component name="RunManager" selected="npm.generate:clean">
     <configuration name="gulpfile.test.ts" type="TypeScriptProgramRunner" factoryName="TypeScript" temporary="true">
       <module name="gh-pages" />
       <option name="interpreterRef" value="project" />
@@ -179,10 +179,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.generate:clean" />
         <item itemvalue="npm.server" />
         <item itemvalue="TypeScript.hexo-deploy.ts" />
         <item itemvalue="TypeScript.gulpfile.test.ts" />
-        <item itemvalue="npm.generate:clean" />
         <item itemvalue="npm.generate" />
       </list>
     </recent_temporary>
@@ -257,13 +257,6 @@
       <workItem from="1635322797751" duration="426000" />
       <workItem from="1635340799170" duration="373000" />
       <workItem from="1636213987624" duration="1817000" />
-    </task>
-    <task id="LOCAL-00183" summary="Try workflows">
-      <created>1635862794885</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1635862794886</updated>
     </task>
     <task id="LOCAL-00184" summary="Try workflows">
       <created>1635863003177</created>
@@ -601,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636299855928</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <task id="LOCAL-00232" summary="Update themes [flow]">
+      <created>1636300080539</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1636300080539</updated>
+    </task>
+    <option name="localTasksCounter" value="233" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -628,7 +628,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Caching docs" />
     <MESSAGE value="Try workflows" />
     <MESSAGE value="Push package-lock.json to fixed hashes" />
     <MESSAGE value="Fix validate" />
@@ -653,7 +652,8 @@
     <MESSAGE value="Update themes" />
     <MESSAGE value="Update themes [clean]" />
     <MESSAGE value="Update themes [update]" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update themes [update]" />
+    <MESSAGE value="Update themes [flow]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update themes [flow]" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
