@@ -267,6 +267,49 @@ adsense:
 
 adblock: true
 
+# filter_cleanup
+hfc_useref:
+  enable: true
+  concat: true
+
+hfc_html:
+  enable: true
+  exclude:
+
+hfc_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+hfc_js:
+  enable: true
+  mangle: true
+  exclude:
+    - '*.min.js'
+
+hfc_img:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: true
+
+hfc_favicons:
+  enable: false
+  src: /assets/img/favicon.png
+  target: /assets/img/
+  icons:
+    android: true
+    appleIcon: true
+    appleStartup: false
+    coast: false
+    favicons: true
+    firefox: true
+    opengraph: false
+    windows: true
+    yandex: false
+
 tagmanager:
   enable: false
   id: GTM-NJNNXSR

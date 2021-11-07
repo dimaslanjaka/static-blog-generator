@@ -12,25 +12,25 @@
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="Website Management Indonesia" type="application/atom+xml">
-  <meta name="description" content="This widget supports responsive which will follow the screen size used.  For live view of this widget can visit my friend pen below:How, interested to install it on the blog? For my friend who want to">
+  <meta name="description" content="This widget supports responsive which will follow the screen size used.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Make Colored Recent Post Widget Blogger">
 <meta property="og:url" content="https://git.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html">
 <meta property="og:site_name" content="Website Management Indonesia">
-<meta property="og:description" content="This widget supports responsive which will follow the screen size used.  For live view of this widget can visit my friend pen below:How, interested to install it on the blog? For my friend who want to">
+<meta property="og:description" content="This widget supports responsive which will follow the screen size used.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="data:image/webp;base64,UklGRr4CAABXRUJQVlA4ILICAABwHwCdASpsAbsAPu12uFQprT+kJBHYw/AdiWVu4XKRCBlf6XYA/PUTXZ/89i/1W8KdQB5/N8pCTBT2zAJJkgp7ZgEkyQU9swCSZIKe2YBJMkFPbMAkmSCntWm+23fbbvtkmGQhE/b+XIcygXdDtDFLVliPFLbllcZLNcz/RrZeclxmBShzXzWo2gFwVuL0oQpIASFC08qI3Hu6iKeNdvF9/6CcJB5ecetaE96ppf1JgN8aA5TkcWYNfBwOk/thIuLblKKy/D6LQU45AeUUGe5CeuSSYYsqAM1SZIKe2YBJMkFPbMAkmSCntmASTJBT2zAJJkgp7ZgEkyQU9swCSZIKe2XgAAD+/cUzgH0AAACC5zAwYpAmrQuknl/VFZgkQUMYcnqroF2uZBf5/L2eXHxhFXw4ClGJ9nTLPtfbnedyy1O2BCO5bl17mEwoIullp2iHwuR+qrXf5bjf35g1WT+/MGy49Pxv7NTdY6dgftM/o3fDqrhpXFg8r+19sZAa3KOh3cDEcEKHE6RgVZe+1Fww5Z2R1cHBkswXMRqyYl5j7FQQWLx/2KOF0qa3InBtfB7l1mUsJDtPxvn3EMWJcZveO53YtqW6JCWAtz0BolHgm4UE0SuyTbR4VjlRz88MwbwAMBP08jkJs5LnS08M1nH8paoVLYm3TledhjNuflug0JFYa0ClBjVvKMUseeX/tV9yc8i+1/pCh9tTV+d7D0UuWC5KFtvZgMftAgfPhSssoSEW6qtMFa48rSnx0ShCoMVguAk2PAYUVBsrqail5TRdrxttynmuByqopR0KZmm0uDpRw+0YyuuChZ6rM0C3FCwKq5EDdXOz1Fog+xpGBvjT2NStQB2d880f3+cv93HhCc7IU8E8Y5RmqWg3FuL/GKtzM8EuJTuLZamV+AAAAAAAAAA=">
 <meta property="article:published_time" content="2017-08-02T07:51:00.000Z">
 <meta property="article:modified_time" content="2021-11-04T12:43:53.811Z">
 <meta property="article:author" content="[object Object]">
-<meta property="article:tag" content="JS">
 <meta property="article:tag" content="Blogger">
 <meta property="article:tag" content="CSS">
+<meta property="article:tag" content="JS">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="data:image/webp;base64,UklGRr4CAABXRUJQVlA4ILICAABwHwCdASpsAbsAPu12uFQprT+kJBHYw/AdiWVu4XKRCBlf6XYA/PUTXZ/89i/1W8KdQB5/N8pCTBT2zAJJkgp7ZgEkyQU9swCSZIKe2YBJMkFPbMAkmSCntWm+23fbbvtkmGQhE/b+XIcygXdDtDFLVliPFLbllcZLNcz/RrZeclxmBShzXzWo2gFwVuL0oQpIASFC08qI3Hu6iKeNdvF9/6CcJB5ecetaE96ppf1JgN8aA5TkcWYNfBwOk/thIuLblKKy/D6LQU45AeUUGe5CeuSSYYsqAM1SZIKe2YBJMkFPbMAkmSCntmASTJBT2zAJJkgp7ZgEkyQU9swCSZIKe2XgAAD+/cUzgH0AAACC5zAwYpAmrQuknl/VFZgkQUMYcnqroF2uZBf5/L2eXHxhFXw4ClGJ9nTLPtfbnedyy1O2BCO5bl17mEwoIullp2iHwuR+qrXf5bjf35g1WT+/MGy49Pxv7NTdY6dgftM/o3fDqrhpXFg8r+19sZAa3KOh3cDEcEKHE6RgVZe+1Fww5Z2R1cHBkswXMRqyYl5j7FQQWLx/2KOF0qa3InBtfB7l1mUsJDtPxvn3EMWJcZveO53YtqW6JCWAtz0BolHgm4UE0SuyTbR4VjlRz88MwbwAMBP08jkJs5LnS08M1nH8paoVLYm3TledhjNuflug0JFYa0ClBjVvKMUseeX/tV9yc8i+1/pCh9tTV+d7D0UuWC5KFtvZgMftAgfPhSssoSEW6qtMFa48rSnx0ShCoMVguAk2PAYUVBsrqail5TRdrxttynmuByqopR0KZmm0uDpRw+0YyuuChZ6rM0C3FCwKq5EDdXOz1Fog+xpGBvjT2NStQB2d880f3+cv93HhCc7IU8E8Y5RmqWg3FuL/GKtzM8EuJTuLZamV+AAAAAAAAAA=">
 
-  <meta name="keywords" content=",JS,Blogger,CSS,HTML">
+  <meta name="keywords" content=",Blogger,CSS,JS,HTML">
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
 
@@ -328,6 +328,26 @@
         
     </nav>
 
+
+    <div id="comment" class="mdui-m-t-5">
+        <div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = 'https://git.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html';
+    this.page.identifier = 'https://git.webmanajemen.com/2017/08/how-to-make-colored-recent-post-widget.html';
+  };
+  (function () {
+    var d = document, s = d.createElement('script');
+    s.src = '//dimaslanjaka.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank"
+                                                  rel="nofollow noopener noreferrer">comments powered by Disqus.</a>
+</noscript>
+
+    </div>
 
 
 

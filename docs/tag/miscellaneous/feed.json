@@ -117,9 +117,9 @@
             "date_published": "2018-02-07T21:46:00.000Z",
             "content_html": "<p><img src=\"https://goo.gl/1QBD9u\"><h2>Difficulty in dividing the time to write an article ?</h2><b>&quot;We provide solutions to simplify you&quot;</b><br><br>Writing services with the best SEO articles, fast and pass copyscape.<br>Experienced in writing articles for company website, personal and social media.<br><div><h3>How Much Rates Per Article ?</h3>The article tariff adjusts the need for the number of words each article you need. I offer IDR 150 / word . (Example: 1 article 300 words = IDR 45000) <br><br>If you are interested in other additional services, please look at the description column (the price is already deducted) <br><br>Thanks. </div></p>\n",
             "tags": [
-                "Miscellaneous",
+                "Blogging",
                 "SEO",
-                "Blogging"
+                "Miscellaneous"
             ]
         },
         {
@@ -129,10 +129,10 @@
             "date_published": "2018-01-29T08:31:00.001Z",
             "content_html": "<div><a href=\"https://urlz.fr/6tog\" rel=\"noopener noreferer nofollow\"> <img alt=\"Cara Mudah Menambahkan Tombol Pin It di Gambar\" id=\"-wl-ii0\" src=\"//urlz.fr/6tog\"> </a></div><br>Function of this button to directly input images in your blog to your Pinterest account. How it works from the Button share Pin It this is the button will appear when you focus the cursor on each image in the blog.<br><br><h4> Easy Way of Adding Pin It Buttons in Images</h4><div><a href=\"https://urlz.fr/6to9\" rel=\"noopener noreferer nofollow\"> <img alt=\"Cara Mudah Menambahkan Tombol Pin It di Gambar\" id=\"-wl-ii1\" src=\"//urlz.fr/6to9\"> </a></div>The trick is very easy, here you just need to add the code below before the body cover code <kbd>&lt;/ body&gt;</kbd> or before the head cover code in the template <kbd>&lt;/ head&gt;</kbd><br><blockquote>Before adding this code make sure that in your blog template you have added jquery library link</blockquote><pre><code><br>&lt;script async='' data-pin-color='white' data-pin-hover='true' src='//assets.pinterest.com/js/pinit.js'/&gt;<br></code></pre><div class=\"w3-center w3-green w3-round\">Here is a display demo of this Pin It button. <a class=\"w3-button w3-round w3-blue\" href=\"https://goo.gl/T13Ebr\" rel=\"noopener noreferer nofollow\">DEMO</a></div>",
             "tags": [
-                "Tips & Tricks",
-                "Script",
-                "JS",
                 "Blogger",
+                "JS",
+                "Script",
+                "Tips & Tricks",
                 "Miscellaneous"
             ]
         },
@@ -143,9 +143,9 @@
             "date_published": "2017-09-11T04:43:00.000Z",
             "content_html": "<h3>Cara mempercepat loading fonts blog (webfonts).</h3><div class=\"separator\" style=\"clear: both; text-align: center;\"><a href=\"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\" rel=\"noopener noreferer nofollow\"><img border=\"0\" src=\"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc\"></a></div>Sekian banyak kode yang saya implementasikan namun belum ada yang mempercepat loading font. Nah berikut tutorialnya:<br><br><b>Metode 1.</b><br><br>Taruh atau ambil fonts (ttf,woff, dan lainnya) di cdn<br>&nbsp;Lalu pasang htaccess berikut:<br><pre class=\".htaccess\"><code># Apache config<br>&lt;FilesMatch \".(eot|ttf|otf|woff)\"&gt;<br> Header set Access-Control-Allow-Origin \"*\"<br>&lt;/FilesMatch&gt;<br># nginx config<br>if ($filename ~* ^.*?\\.(eot)|(ttf)|(woff)$)&#123;<br> add_header Access-Control-Allow-Origin *;<br>&#125;</code></pre><br><b>2.  Gunakan Non-Blocking CSS Loading</b><br><br><pre><code>&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"fonts.css\" media=\"none\" onload=\"this.media='all';\"&gt;<br>&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" media=\"none\" onload=\"this.media='all';\"&gt;<br></code></pre><br><b>3. Bedakan fonts model dengan CSS</b><br><br><br><pre><code>h1 &#123; font-family: Arial, serif; &#125; /* basic system font */ .fontsloaded h1 &#123; font-family: 'MySpecialFont', serif; &#125; /* custom system font */</code></pre><br><pre><code>&lt;link href=\"fonts.css\" onload=\"document.body.className+=' fontsloaded';\" rel=\"stylesheet\" type=\"text/css\" &gt;</code></pre><br><b>4. Letakkan fonts file di penyimpanan lokal (localstorage)</b><br><br>Selesai. Begitulah sedikit pengetahuan saya dalam merender fonts lebih cepat.<br>Namun saya rekomendasikan menggunakan <i>NON BLOCKING RENDER LOADING</i>.",
             "tags": [
+                "HTML",
                 "Tips & Tricks",
-                "Miscellaneous",
-                "HTML"
+                "Miscellaneous"
             ]
         }
     ]

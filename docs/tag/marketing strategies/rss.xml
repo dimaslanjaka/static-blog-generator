@@ -14,46 +14,46 @@
         <category>Life Skill</category>
         <category>Auto Click</category>
         <category>Event</category>
-        <category>Games</category>
-        <category>Genshin Impact</category>
-        <category>Chest Location</category>
-        <category>Quest</category>
-        <category>Tools</category>
-        <category>Social Media</category>
-        <category>PHP</category>
-        <category>Facebook</category>
-        <category>Tips &amp; Tricks</category>
-        <category>Script</category>
-        <category>JS</category>
+        <category>Wordpress</category>
         <category>Blogger</category>
-        <category>Miscellaneous</category>
-        <category>SEO</category>
         <category>Blogging</category>
         <category>CSS</category>
-        <category>HTML</category>
+        <category>SEO</category>
         <category>Adsense</category>
-        <category>VainGlory</category>
-        <category>Durango</category>
+        <category>JS</category>
+        <category>PHP</category>
+        <category>HTML</category>
+        <category>AMP</category>
+        <category>Facebook</category>
+        <category>Social Media</category>
         <category>Android</category>
+        <category>Script</category>
+        <category>Tools</category>
+        <category>Tips &amp; Tricks</category>
+        <category>CodeIgniter</category>
+        <category>Miscellaneous</category>
+        <category>Linux/Unix</category>
+        <category>Marketing Strategies</category>
+        <category>VainGlory</category>
         <category>Hosting</category>
+        <category>Games</category>
+        <category>Durango</category>
         <category>Software</category>
         <category>Movies</category>
         <category>Musics</category>
-        <category>Linux/Unix</category>
         <category>Popular</category>
-        <category>Wordpress</category>
-        <category>AMP</category>
-        <category>CodeIgniter</category>
-        <category>Marketing Strategies</category>
         <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
-        <category>Windows</category>
         <category>Java</category>
         <category>Gradle</category>
         <category>Kotlin</category>
         <category>Github</category>
         <category>TS</category>
+        <category>Windows</category>
+        <category>Genshin Impact</category>
+        <category>Chest Location</category>
+        <category>Quest</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/2020/01/earn-money-from-blogs-by-joining.html</guid>
             <title>Earn money from blogs by joining the Influencer Marketplace</title>
@@ -151,9 +151,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code.html</guid>
             <title>[JS] Google Recaptcha V3 Complete Code</title>
             <link>https://git.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code.html</link>
-            <category>Tips &amp; Tricks</category>
             <category>JS</category>
             <category>HTML</category>
+            <category>Tips &amp; Tricks</category>
             <category>Marketing Strategies</category>
             <pubDate>Fri, 12 Jul 2019 12:36:00 +0700</pubDate>
             <description><![CDATA[ &lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;&lt;div&gt;  &lt;img src=&#34;https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg&#34; alt=&#34;grecaptcha&#34;&gt;&lt;/div&gt;  &lt;b&gt;Requirements:&lt;/b&gt;  &lt;ol style=&#34;text-align: left;&#34;&gt;    &lt;li&gt;jQuery (if not it will automated added into pages)&amp;nbsp;&lt;/li&gt;    &lt;pre&gt;&lt;br&gt;      if (typeof jQuery == &#39;undefined&#39; || !window.jQuery) {&lt;br&gt;        var hs = document.createElement(&#39;script&#39;);&lt;br&gt;        hs.type = &#39;text/javascript&#39;;&lt;br&gt;        hs.async = true;&lt;br&gt;        hs.src = &#39;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&#39;;&lt;br&gt;        document.getElementsByTagName(&#39;head&#39;)[0].appendChild(hs);&lt;br&gt;        document.getElementsByTagName(&#39;body&#39;)[0].appendChild(hs);&lt;br&gt;        document.head.appendChild(hs);&lt;br&gt;        document.body.appendChild(hs);&lt;br&gt;      }&lt;br&gt;    &lt;/pre&gt;     &lt;li&gt;Recaptcha Site Key And Secret (backend): &lt;a href=&#34;https://www.google.com/recaptcha/admin/&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;Get Here&lt;/a&gt;&lt;/li&gt;    &lt;pre&gt;&lt;br&gt;    //Set site key as global variable&lt;br&gt;    const g_site_key = &#39;YOUR_SITE_KEY&#39;;&lt;br&gt;    &lt;/pre&gt;     &lt;li&gt;Main Code:&lt;/li&gt;    &lt;pre&gt;&lt;br&gt;        //loader&lt;br&gt;        (function () {&lt;br&gt;          submitDisable();&lt;br&gt;          download_script(&#39;https://www.google.com/recaptcha/api.js?render=&#39;+g_site_key+&#39;&amp;amp;render=explicit&#39;, function () {&lt;br&gt;            grecaptcha.ready(function () {&lt;br&gt;              gexec();&lt;br&gt;            });&lt;br&gt;          });&lt;br&gt;        })();&lt;br&gt;      //function callback&lt;br&gt;      function gexec(){ //also refresh function&lt;br&gt;        grecaptcha.execute(g_site_key, { action: &#39;homepage&#39; }).then(function (token) {&lt;br&gt;          recaptcha_insert_token(token); //insert element token into form&lt;br&gt;        });&lt;br&gt;      }&lt;br&gt;      //function add recaptcha elements&lt;br&gt;      function recaptcha_insert_token(token) {&lt;br&gt;        if (typeof jQuery == &#39;undefined&#39;){&lt;br&gt;          console.log(&#39;JQuery Not Loaded&#39;);&lt;br&gt;        } else {&lt;br&gt;          var f = $(&#39;form&#39;), fg = f.find(&#39;[name=&#34;g-recaptcha-response&#34;]&#39;);&lt;br&gt;        if (fg.length === 0){&lt;br&gt;          $(&#39;&amp;lt;input type=&#34;hidden&#34; readonly value=&#34;&#39; + token + &#39;&#34; name=&#34;g-recaptcha-response&#34;&amp;gt;&#39;).appendTo(f);&lt;br&gt;        } else {&lt;br&gt;          fg.val(token);&lt;br&gt;        }&lt;br&gt;        }&lt;br&gt;      }&lt;br&gt;    &lt;/pre&gt;  &lt;/ol&gt;   &lt;h2&gt;Complete Code&lt;/h2&gt;  &lt;b&gt;HTML&lt;/b&gt;  &lt;pre&gt;&lt;br&gt;      &amp;lt;!--button refresh token (example)--&amp;gt;&lt;br&gt;      &amp;lt;button class=&#34;btn-block btn&#34; onclick=&#34;gexec()&#34;&amp;gt;Refresh&amp;lt;/button&amp;gt;&lt;br&gt;  &lt;/pre&gt;  &lt;b&gt;Javascript&lt;/b&gt;  &lt;pre&gt;&lt;br&gt;    //load jQuery if not exists (automated)&lt;br&gt;    if (typeof jQuery == &#39;undefined&#39; || !window.jQuery) {&lt;br&gt;      var hs = document.createElement(&#39;script&#39;);&lt;br&gt;      hs.type = &#39;text/javascript&#39;;&lt;br&gt;      hs.async = true;&lt;br&gt;      hs.src = &#39;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&#39;;&lt;br&gt;      document.getElementsByTagName(&#39;head&#39;)[0].appendChild(hs);&lt;br&gt;      document.getElementsByTagName(&#39;body&#39;)[0].appendChild(hs);&lt;br&gt;      document.head.appendChild(hs);&lt;br&gt;      document.body.appendChild(hs);&lt;br&gt;    }&lt;br&gt;    //set site key&lt;br&gt;    const g_site_key = &#39;YOUR_SITE_KEY&#39;;&lt;br&gt;    //loader&lt;br&gt;    (function () {&lt;br&gt;      submitDisable();&lt;br&gt;      download_script(&#39;https://www.google.com/recaptcha/api.js?render=&#39;+g_site_key+&#39;&amp;amp;render=explicit&#39;, function () {&lt;br&gt;        grecaptcha.ready(function () {&lt;br&gt;          gexec();&lt;br&gt;        });&lt;br&gt;      });&lt;br&gt;    })();&lt;br&gt;    //function callback&lt;br&gt;    function gexec(){ //also refresh function&lt;br&gt;      grecaptcha.execute(g_site_key, { action: &#39;homepage&#39; }).then(function (token) {&lt;br&gt;        recaptcha_insert_token(token); //insert element token into form&lt;br&gt;      });&lt;br&gt;    }&lt;br&gt;    //function add recaptcha elements&lt;br&gt;    function recaptcha_insert_token(token) {&lt;br&gt;      if (typeof jQuery == &#39;undefined&#39;){&lt;br&gt;        console.log(&#39;JQuery Not Loaded&#39;);&lt;br&gt;      } else {&lt;br&gt;        var f = $(&#39;form&#39;), fg = f.find(&#39;[name=&#34;g-recaptcha-response&#34;]&#39;);&lt;br&gt;      if (fg.length === 0){&lt;br&gt;        $(&#39;&amp;lt;input type=&#34;hidden&#34; readonly value=&#34;&#39; + token + &#39;&#34; name=&#34;g-recaptcha-response&#34;&amp;gt;&#39;).appendTo(f);&lt;br&gt;      } else {&lt;br&gt;        fg.val(token);&lt;br&gt;      }&lt;br&gt;      }&lt;br&gt;    }&lt;br&gt;  &lt;/pre&gt;  &lt;b&gt;PHP (backend)&lt;/b&gt;  &lt;pre&gt;&lt;br&gt;      &amp;lt;?php&lt;br&gt;      function recaptcha_verify($secret)&lt;br&gt;      {&lt;br&gt;      	if (isset($_POST[&#39;g-recaptcha-response&#39;])) {&lt;br&gt;      		$response = $_POST[&#39;g-recaptcha-response&#39;];&lt;br&gt;      		$remoteip = $this-&amp;gt;getUIP();&lt;br&gt;      		$secret = $this-&amp;gt;recaptcha_s;&lt;br&gt;      		$g_response = json_decode(file_get_contents(&#39;https://www.google.com/recaptcha/api/siteverify?secret=&#39; . $secret . &#39;&amp;amp;response=&#39; . $response . &#39;&amp;amp;remoteip=&#39; . $remoteip), true);&lt;br&gt;      		if (isset($g_response[&#39;success&#39;]) &amp;amp;&amp;amp; true === $g_response[&#39;success&#39;]) {&lt;br&gt;      			return true;&lt;br&gt;      		} else {&lt;br&gt;      			return false;&lt;br&gt;      		}&lt;br&gt;      	}&lt;br&gt;      }&lt;br&gt;&lt;br&gt;      if (isset($_POST[&#39;login&#39;])){ //example if you have post named login&lt;br&gt;      	if (recaptcha_verify(&#39;YOUR_SECRET_KEY_HERE&#39;) !== false){&lt;br&gt;      		/* Recaptcha Success */&lt;br&gt;      	} else {&lt;br&gt;      		/* Recaptcha Failed */&lt;br&gt;      	}&lt;br&gt;      }&lt;br&gt;  &lt;/pre&gt;  &lt;h2&gt;Full Example at Codepen&lt;/h2&gt;  &lt;div class=&#34;codepen&#34; data-default-tab=&#34;js,result&#34; data-height=&#34;265&#34; data-pen-title=&#34;Complete Google recaptcha v3&#34; data-slug-hash=&#34;qzgYmp&#34; data-theme-id=&#34;0&#34; data-user=&#34;dimaslanjaka&#34; style=&#34;border: 2px solid; box-sizing: border-box; display: flex; height: 265px; margin: 1em 0; padding: 1em;&#34;&gt;    See the Pen &lt;a href=&#34;https://codepen.io/dimaslanjaka/pen/qzgYmp/&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;      Complete Google recaptcha v3&lt;/a&gt; by dimas lanjaka (&lt;a href=&#34;https://codepen.io/dimaslanjaka&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;@dimaslanjaka&lt;/a&gt;)     on &lt;a href=&#34;https://codepen.io/&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;CodePen&lt;/a&gt;.   &lt;/div&gt;  &lt;script async=&#34;&#34; src=&#34;https://static.codepen.io/assets/embed/ei.js&#34;&gt;&lt;/script&gt; &lt;/div&gt; ]]></description>

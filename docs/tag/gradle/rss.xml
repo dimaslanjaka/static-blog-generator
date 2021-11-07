@@ -14,52 +14,52 @@
         <category>Life Skill</category>
         <category>Auto Click</category>
         <category>Event</category>
-        <category>Games</category>
-        <category>Genshin Impact</category>
-        <category>Chest Location</category>
-        <category>Quest</category>
-        <category>Tools</category>
-        <category>Social Media</category>
-        <category>PHP</category>
-        <category>Facebook</category>
-        <category>Tips &amp; Tricks</category>
-        <category>Script</category>
-        <category>JS</category>
+        <category>Wordpress</category>
         <category>Blogger</category>
-        <category>Miscellaneous</category>
-        <category>SEO</category>
         <category>Blogging</category>
         <category>CSS</category>
-        <category>HTML</category>
+        <category>SEO</category>
         <category>Adsense</category>
-        <category>VainGlory</category>
-        <category>Durango</category>
+        <category>JS</category>
+        <category>PHP</category>
+        <category>HTML</category>
+        <category>AMP</category>
+        <category>Facebook</category>
+        <category>Social Media</category>
         <category>Android</category>
+        <category>Script</category>
+        <category>Tools</category>
+        <category>Tips &amp; Tricks</category>
+        <category>CodeIgniter</category>
+        <category>Miscellaneous</category>
+        <category>Linux/Unix</category>
+        <category>Marketing Strategies</category>
+        <category>VainGlory</category>
         <category>Hosting</category>
+        <category>Games</category>
+        <category>Durango</category>
         <category>Software</category>
         <category>Movies</category>
         <category>Musics</category>
-        <category>Linux/Unix</category>
         <category>Popular</category>
-        <category>Wordpress</category>
-        <category>AMP</category>
-        <category>CodeIgniter</category>
-        <category>Marketing Strategies</category>
         <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
-        <category>Windows</category>
         <category>Java</category>
         <category>Gradle</category>
         <category>Kotlin</category>
         <category>Github</category>
         <category>TS</category>
+        <category>Windows</category>
+        <category>Genshin Impact</category>
+        <category>Chest Location</category>
+        <category>Quest</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/2021/04/import-composite-build-plugin-as.html</guid>
             <title>Import composite build plugin as subtitue module dependency [Gradle]</title>
             <link>https://git.webmanajemen.com/2021/04/import-composite-build-plugin-as.html</link>
-            <category>Tips &amp; Tricks</category>
             <category>Script</category>
+            <category>Tips &amp; Tricks</category>
             <category>Gradle</category>
             <pubDate>Tue, 20 Apr 2021 09:40:00 +0700</pubDate>
             <description><![CDATA[ &lt;pre&gt;&lt;br&gt;// change folder path inside bracket&lt;br&gt;includeBuild(&#34;plugin&#34;) {&lt;br&gt;    dependencySubstitution {&lt;br&gt;    	// change your artifact group and id&lt;br&gt;        // iam using &lt;a href=&#34;https://github.com/dimaslanjaka/gradle-plugin/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;https://github.com/dimaslanjaka/gradle-plugin/&lt;/a&gt; for example&lt;br&gt;        substitute(module(&#34;com.dimaslanjaka:gradle-plugin&#34;)).with(project(&#34;:&#34;))&lt;br&gt;    }&lt;br&gt;}&lt;br&gt;&lt;/pre&gt; &lt;img src=&#34;https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png&#34;&gt; ]]></description>

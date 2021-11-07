@@ -14,46 +14,46 @@
         <category>Life Skill</category>
         <category>Auto Click</category>
         <category>Event</category>
-        <category>Games</category>
-        <category>Genshin Impact</category>
-        <category>Chest Location</category>
-        <category>Quest</category>
-        <category>Tools</category>
-        <category>Social Media</category>
-        <category>PHP</category>
-        <category>Facebook</category>
-        <category>Tips &amp; Tricks</category>
-        <category>Script</category>
-        <category>JS</category>
+        <category>Wordpress</category>
         <category>Blogger</category>
-        <category>Miscellaneous</category>
-        <category>SEO</category>
         <category>Blogging</category>
         <category>CSS</category>
-        <category>HTML</category>
+        <category>SEO</category>
         <category>Adsense</category>
-        <category>VainGlory</category>
-        <category>Durango</category>
+        <category>JS</category>
+        <category>PHP</category>
+        <category>HTML</category>
+        <category>AMP</category>
+        <category>Facebook</category>
+        <category>Social Media</category>
         <category>Android</category>
+        <category>Script</category>
+        <category>Tools</category>
+        <category>Tips &amp; Tricks</category>
+        <category>CodeIgniter</category>
+        <category>Miscellaneous</category>
+        <category>Linux/Unix</category>
+        <category>Marketing Strategies</category>
+        <category>VainGlory</category>
         <category>Hosting</category>
+        <category>Games</category>
+        <category>Durango</category>
         <category>Software</category>
         <category>Movies</category>
         <category>Musics</category>
-        <category>Linux/Unix</category>
         <category>Popular</category>
-        <category>Wordpress</category>
-        <category>AMP</category>
-        <category>CodeIgniter</category>
-        <category>Marketing Strategies</category>
         <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
-        <category>Windows</category>
         <category>Java</category>
         <category>Gradle</category>
         <category>Kotlin</category>
         <category>Github</category>
         <category>TS</category>
+        <category>Windows</category>
+        <category>Genshin Impact</category>
+        <category>Chest Location</category>
+        <category>Quest</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/2020/12/nodejs-common-fix-command-on-linux-or.html</guid>
             <title>NodeJS Common Fix Command On Linux Or Windows</title>
@@ -68,8 +68,8 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2020/05/linux-clear-cache.html</guid>
             <title>Linux Clear Cache</title>
             <link>https://git.webmanajemen.com/2020/05/linux-clear-cache.html</link>
-            <category>Tips &amp; Tricks</category>
             <category>Script</category>
+            <category>Tips &amp; Tricks</category>
             <category>Linux/Unix</category>
             <pubDate>Fri, 29 May 2020 17:03:00 +0700</pubDate>
             <description><![CDATA[ &lt;pre&gt;#!/bin/bash&lt;br&gt;#clean page cache&lt;br&gt;#sync&lt;br&gt;#echo 1 &amp;gt;/proc/sys/vm/drop_caches&lt;br&gt;#clean dentries and inodes&lt;br&gt;#sync&lt;br&gt;#echo 2 &amp;gt;/proc/sys/vm/drop_caches&lt;br&gt;#clean page cache and dentries inodes, but it is not recommended in production instead use &#34;echo 1&#34;&lt;br&gt;#sync&lt;br&gt;#echo 3 &amp;gt;/proc/sys/vm/drop_caches&lt;br&gt;&lt;br&gt;##################&lt;br&gt;# begin refresh script&lt;br&gt;##################&lt;br&gt;&lt;br&gt;sync&lt;br&gt;if [ $(dpkg-query -W -f=&#39;${Status}&#39; polipo 2&amp;gt;/dev/null | grep -c &#34;ok installed&#34;) -eq 0 ]; then&lt;br&gt;  apt-get install polipo -y&lt;br&gt;fi&lt;br&gt;polipo -x&lt;br&gt;echo 3 &amp;gt;/proc/sys/vm/drop_caches&lt;br&gt;swapoff -a &amp;amp;&amp;amp; swapon -a&lt;br&gt;printf &#39;\n%s\n\n&#39; &#39;Ram-cache and Swap Cleared&#39;&lt;br&gt;/opt/lampp/xampp restart&lt;br&gt;free -h&lt;br&gt;&lt;/pre&gt;&lt;br&gt;this script used for better performance your vps (LINUX). &lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;fix apache slow response&lt;/li&gt;&lt;li&gt;fix xampp web server slow&lt;/li&gt;&lt;li&gt;fix overload ram vps&lt;/li&gt;&lt;li&gt;fix mysqld overheat&lt;/li&gt;&lt;li&gt;fix java machine overheat ram&lt;/li&gt;&lt;/ul&gt; ]]></description>
@@ -121,10 +121,10 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2018/11/installation-ubuntu-on-android-tutorial.html</guid>
             <title>Installation Ubuntu On Android Tutorial</title>
             <link>https://git.webmanajemen.com/2018/11/installation-ubuntu-on-android-tutorial.html</link>
-            <category>Social Media</category>
             <category>PHP</category>
-            <category>Tips &amp; Tricks</category>
+            <category>Social Media</category>
             <category>Android</category>
+            <category>Tips &amp; Tricks</category>
             <category>Linux/Unix</category>
             <category>Popular</category>
             <pubDate>Mon, 12 Nov 2018 20:33:00 +0700</pubDate>
@@ -136,8 +136,8 @@
             <link>https://git.webmanajemen.com/2018/11/gmail-smtp-error-please-log-in-via-your.html</link>
             <category>PHP</category>
             <category>Tips &amp; Tricks</category>
-            <category>Hosting</category>
             <category>Linux/Unix</category>
+            <category>Hosting</category>
             <pubDate>Fri, 09 Nov 2018 22:21:00 +0700</pubDate>
             <description><![CDATA[ &lt;div dir=&#34;ltr&#34; style=&#34;text-align: left;&#34; trbidi=&#34;on&#34;&gt;  You having problems with gmail smtp server. Like this &lt;kbd&gt; Gmail SMTP error please log in via your web browser , Then Goggle says: Please log in via your web browser and then try again. 534-5.7.14 Learn more at https://support.google.com/mail/bin/answer.py?answer=787&lt;/kbd&gt; ?.&lt;br&gt;  I know this is an older issue, but I recently had the same problem and was   having issues resolving it, despite attempting the DisplayUnlockCaptcha   fix. This is how I got it alive.   &lt;br&gt;  Firstly you must activate less secure apps at &lt;a href=&#34;https://myaccount.google.com/security?hl=en&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;https://myaccount.google.com/security?hl=en&lt;/a&gt;  &lt;figure&gt;    &lt;img src=&#34;https://2.bp.blogspot.com/-axfbmdLI3Pc/XoIVHlkeicI/AAAAAAAAAA0/N9WMnayMq20kxlOxwl3vZgydjoGi9AcxQCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png&#34; alt=&#34;enable less secure apps&#34; style=&#34;width:100%&#34;&gt;    &lt;figcaption&gt;Enable less secure apps&lt;/figcaption&gt;  &lt;/figure&gt;  &lt;br&gt;  Head over to Account Security Settings (   &lt;a href=&#34;https://www.google.com/settings/security/lesssecureapps&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;    https://www.google.com/settings/security/lesssecureapps   &lt;/a&gt;  ) and enable &#34;Access for less secure apps&#34;, this allows you to use the   google smtp for clients other than the official ones.   &lt;br&gt;  &lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;    &lt;figure&gt;      &lt;img src=&#34;https://1.bp.blogspot.com/-atdwl-jQEh0/XoIWlT0DoaI/AAAAAAAAABA/cWA2QM8H9Ds6BQ6tQyvpFxlnXJef4DiegCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png&#34; alt=&#34;enable less secure apps&#34; style=&#34;width:100%&#34;&gt;      &lt;figcaption&gt;Enable less secure apps&lt;/figcaption&gt;    &lt;/figure&gt;  &lt;/div&gt;  &lt;br&gt;  &lt;strong&gt;Update&lt;/strong&gt;  &lt;br&gt;  Google has been so kind as to   &lt;a href=&#34;https://support.google.com/mail/answer/14257&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;    list   &lt;/a&gt;  all the potential problems and fixes for us. Although I recommend trying   the   &lt;a href=&#34;https://www.google.com/settings/security/lesssecureapps&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;    less secure apps setting   &lt;/a&gt;  . Be sure you are applying these to the correct account.   &lt;br&gt;  &lt;blockquote&gt;    &lt;ul&gt;      &lt;li&gt;        If you&#39;ve turned on 2-Step Verification for your account, you might         need to enter an         &lt;a href=&#34;https://support.google.com/accounts/answer/185834?hl=en#ASPs&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;          App password         &lt;/a&gt;        instead of your regular password.       &lt;/li&gt;      &lt;li&gt;        Sign in to your account from the web version of Gmail at         &lt;a href=&#34;https://mail.google.com/&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;          https://mail.google.com         &lt;/a&gt;        . Once you’re signed in, try signing in         &lt;br&gt;        to the mail app again.       &lt;/li&gt;      &lt;li&gt;        Visit         &lt;a href=&#34;http://www.google.com/accounts/DisplayUnlockCaptcha&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;          http://www.google.com/accounts/DisplayUnlockCaptcha         &lt;/a&gt;        and sign in with your Gmail username and password. If asked, enter         the         &lt;br&gt;        letters in the distorted picture.       &lt;/li&gt;      &lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;        &lt;figure&gt;          &lt;img src=&#34;https://1.bp.blogspot.com/-1u9KfUFTz54/XoITM22-RQI/AAAAAAAAAAc/PbH8qXLj9OwKKt6WJL-FMwWOziMj99dFgCLcBGAsYHQ/s1600/Screenshot_4.png&#34; alt=&#34;enable less secure apps&#34; style=&#34;width:100%&#34;&gt;          &lt;figcaption&gt;Continue&lt;/figcaption&gt;        &lt;/figure&gt;        &lt;figure&gt;          &lt;img src=&#34;https://1.bp.blogspot.com/-O_sDQWQHPBM/XoITc7xrDoI/AAAAAAAAAAo/Dp-l6clwgVEiJMSgudXvtv2lJiKSQ1gHQCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png&#34; alt=&#34;enable less secure apps&#34; style=&#34;width:100%&#34;&gt;          &lt;figcaption&gt;Success, now run your smtp again&lt;/figcaption&gt;        &lt;/figure&gt;      &lt;/div&gt;      &lt;li&gt;        Your app might not support the latest security standards. Try         changing a few settings to         &lt;a href=&#34;https://support.google.com/accounts/answer/6010255&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;          allow less secure apps         &lt;/a&gt;        access to your account.       &lt;/li&gt;      &lt;li&gt;        Make sure your mail app isn&#39;t set to check for new email too often.         If your mail app checks for new messages more than once every 10         &lt;br&gt;        minutes, the app’s access to your account could be blocked.       &lt;/li&gt;    &lt;/ul&gt;  &lt;/blockquote&gt;  &lt;div&gt;    Did you success with it ?.&lt;br&gt;    let&#39;s put your comments below.     Hopefully, my article can be help you now.   &lt;/div&gt;  &lt;img alt=&#34;GMAIL SMTP&#34; src=&#34;https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.betterhostreview.com/wp-content/uploads/gmail-icon.jpg&#34; title=&#34;GMAIL SMTP&#34;&gt;&lt;/div&gt; ]]></description>
         </item>

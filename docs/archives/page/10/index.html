@@ -264,7 +264,7 @@
         </a>
         <div class="mdui-card-content mdui-typo">
             
-                $static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);……
+                $static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);if ($static) {  return self;} else {  return $this;}……
             
         </div>
         <div class="mdui-text-center">

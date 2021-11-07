@@ -1,5 +1,22 @@
 root = true
 
+[search.exclude]
+**/node_modules
+**/bower_components
+.svn
+.git
+.hg
+.sass-cache
+.tmp
+node_modules
+CVS 
+.sources
+
+[files.exclude]
+**/.git
+**/.DS_Store
+**/source/.images
+
 [*]
 indent_style = space
 indent_size = 2

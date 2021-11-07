@@ -14,46 +14,46 @@
         <category>Life Skill</category>
         <category>Auto Click</category>
         <category>Event</category>
-        <category>Games</category>
-        <category>Genshin Impact</category>
-        <category>Chest Location</category>
-        <category>Quest</category>
-        <category>Tools</category>
-        <category>Social Media</category>
-        <category>PHP</category>
-        <category>Facebook</category>
-        <category>Tips &amp; Tricks</category>
-        <category>Script</category>
-        <category>JS</category>
+        <category>Wordpress</category>
         <category>Blogger</category>
-        <category>Miscellaneous</category>
-        <category>SEO</category>
         <category>Blogging</category>
         <category>CSS</category>
-        <category>HTML</category>
+        <category>SEO</category>
         <category>Adsense</category>
-        <category>VainGlory</category>
-        <category>Durango</category>
+        <category>JS</category>
+        <category>PHP</category>
+        <category>HTML</category>
+        <category>AMP</category>
+        <category>Facebook</category>
+        <category>Social Media</category>
         <category>Android</category>
+        <category>Script</category>
+        <category>Tools</category>
+        <category>Tips &amp; Tricks</category>
+        <category>CodeIgniter</category>
+        <category>Miscellaneous</category>
+        <category>Linux/Unix</category>
+        <category>Marketing Strategies</category>
+        <category>VainGlory</category>
         <category>Hosting</category>
+        <category>Games</category>
+        <category>Durango</category>
         <category>Software</category>
         <category>Movies</category>
         <category>Musics</category>
-        <category>Linux/Unix</category>
         <category>Popular</category>
-        <category>Wordpress</category>
-        <category>AMP</category>
-        <category>CodeIgniter</category>
-        <category>Marketing Strategies</category>
         <category>Fonts</category>
         <category>Share</category>
         <category>Proxy</category>
-        <category>Windows</category>
         <category>Java</category>
         <category>Gradle</category>
         <category>Kotlin</category>
         <category>Github</category>
         <category>TS</category>
+        <category>Windows</category>
+        <category>Genshin Impact</category>
+        <category>Chest Location</category>
+        <category>Quest</category>
         <item>
             <guid isPermalink="true">https://git.webmanajemen.com/2019/02/albino-lovebird-font-duo.html</guid>
             <title>Albino Lovebird Font Duo</title>
@@ -144,9 +144,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2018/02/blog-and-website-writing-service.html</guid>
             <title>Blog and Website Writing Service</title>
             <link>https://git.webmanajemen.com/2018/02/blog-and-website-writing-service.html</link>
-            <category>Miscellaneous</category>
-            <category>SEO</category>
             <category>Blogging</category>
+            <category>SEO</category>
+            <category>Miscellaneous</category>
             <pubDate>Thu, 08 Feb 2018 04:46:00 +0700</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;img src=&#34;https://goo.gl/1QBD9u&#34;&gt;&lt;h2&gt;Difficulty in dividing the time to write an article ?&lt;/h2&gt;&lt;b&gt;&amp;quot;We provide solutions to simplify you&amp;quot;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Writing services with the best SEO articles, fast and pass copyscape.&lt;br&gt;Experienced in writing articles for company website, personal and social media.&lt;br&gt;&lt;div&gt;&lt;h3&gt;How Much Rates Per Article ?&lt;/h3&gt;The article tariff adjusts the need for the number of words each article you need. I offer IDR 150 / word . (Example: 1 article 300 words = IDR 45000) &lt;br&gt;&lt;br&gt;If you are interested in other additional services, please look at the description column (the price is already deducted) &lt;br&gt;&lt;br&gt;Thanks. &lt;/div&gt;&lt;/p&gt;
  ]]></description>
@@ -155,10 +155,10 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2018/01/easy-way-of-adding-pin-it-buttons-in.html</guid>
             <title>Easy Way of Adding Pin It Buttons in Images</title>
             <link>https://git.webmanajemen.com/2018/01/easy-way-of-adding-pin-it-buttons-in.html</link>
-            <category>Tips &amp; Tricks</category>
-            <category>Script</category>
-            <category>JS</category>
             <category>Blogger</category>
+            <category>JS</category>
+            <category>Script</category>
+            <category>Tips &amp; Tricks</category>
             <category>Miscellaneous</category>
             <pubDate>Mon, 29 Jan 2018 15:31:00 +0700</pubDate>
             <description><![CDATA[ &lt;div&gt;&lt;a href=&#34;https://urlz.fr/6tog&#34; rel=&#34;noopener noreferer nofollow&#34;&gt; &lt;img alt=&#34;Cara Mudah Menambahkan Tombol Pin It di Gambar&#34; id=&#34;-wl-ii0&#34; src=&#34;//urlz.fr/6tog&#34;&gt; &lt;/a&gt;&lt;/div&gt;&lt;br&gt;Function of this button to directly input images in your blog to your Pinterest account. How it works from the Button share Pin It this is the button will appear when you focus the cursor on each image in the blog.&lt;br&gt;&lt;br&gt;&lt;h4&gt; Easy Way of Adding Pin It Buttons in Images&lt;/h4&gt;&lt;div&gt;&lt;a href=&#34;https://urlz.fr/6to9&#34; rel=&#34;noopener noreferer nofollow&#34;&gt; &lt;img alt=&#34;Cara Mudah Menambahkan Tombol Pin It di Gambar&#34; id=&#34;-wl-ii1&#34; src=&#34;//urlz.fr/6to9&#34;&gt; &lt;/a&gt;&lt;/div&gt;The trick is very easy, here you just need to add the code below before the body cover code &lt;kbd&gt;&amp;lt;/ body&amp;gt;&lt;/kbd&gt; or before the head cover code in the template &lt;kbd&gt;&amp;lt;/ head&amp;gt;&lt;/kbd&gt;&lt;br&gt;&lt;blockquote&gt;Before adding this code make sure that in your blog template you have added jquery library link&lt;/blockquote&gt;&lt;pre&gt;&lt;code&gt;&lt;br&gt;&amp;lt;script async=&#39;&#39; data-pin-color=&#39;white&#39; data-pin-hover=&#39;true&#39; src=&#39;//assets.pinterest.com/js/pinit.js&#39;/&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;w3-center w3-green w3-round&#34;&gt;Here is a display demo of this Pin It button. &lt;a class=&#34;w3-button w3-round w3-blue&#34; href=&#34;https://goo.gl/T13Ebr&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;DEMO&lt;/a&gt;&lt;/div&gt; ]]></description>
@@ -167,9 +167,9 @@
             <guid isPermalink="true">https://git.webmanajemen.com/2017/09/cara-mempercepat-loading-webfonts.html</guid>
             <title>Cara mempercepat loading webfonts</title>
             <link>https://git.webmanajemen.com/2017/09/cara-mempercepat-loading-webfonts.html</link>
+            <category>HTML</category>
             <category>Tips &amp; Tricks</category>
             <category>Miscellaneous</category>
-            <category>HTML</category>
             <pubDate>Mon, 11 Sep 2017 11:43:00 +0700</pubDate>
             <description><![CDATA[ &lt;h3&gt;Cara mempercepat loading fonts blog (webfonts).&lt;/h3&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34; rel=&#34;noopener noreferer nofollow&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc&#34;&gt;&lt;/a&gt;&lt;/div&gt;Sekian banyak kode yang saya implementasikan namun belum ada yang mempercepat loading font. Nah berikut tutorialnya:&lt;br&gt;&lt;br&gt;&lt;b&gt;Metode 1.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Taruh atau ambil fonts (ttf,woff, dan lainnya) di cdn&lt;br&gt;&amp;nbsp;Lalu pasang htaccess berikut:&lt;br&gt;&lt;pre class=&#34;.htaccess&#34;&gt;&lt;code&gt;# Apache config&lt;br&gt;&amp;lt;FilesMatch &#34;.(eot|ttf|otf|woff)&#34;&amp;gt;&lt;br&gt; Header set Access-Control-Allow-Origin &#34;*&#34;&lt;br&gt;&amp;lt;/FilesMatch&amp;gt;&lt;br&gt;# nginx config&lt;br&gt;if ($filename ~* ^.*?\.(eot)|(ttf)|(woff)$)&amp;#123;&lt;br&gt; add_header Access-Control-Allow-Origin *;&lt;br&gt;&amp;#125;&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;&lt;b&gt;2.  Gunakan Non-Blocking CSS Loading&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;fonts.css&#34; media=&#34;none&#34; onload=&#34;this.media=&#39;all&#39;;&#34;&amp;gt;&lt;br&gt;&amp;lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;style.css&#34; media=&#34;none&#34; onload=&#34;this.media=&#39;all&#39;;&#34;&amp;gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;&lt;b&gt;3. Bedakan fonts model dengan CSS&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;pre&gt;&lt;code&gt;h1 &amp;#123; font-family: Arial, serif; &amp;#125; /* basic system font */ .fontsloaded h1 &amp;#123; font-family: &#39;MySpecialFont&#39;, serif; &amp;#125; /* custom system font */&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;link href=&#34;fonts.css&#34; onload=&#34;document.body.className+=&#39; fontsloaded&#39;;&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34; &amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;&lt;b&gt;4. Letakkan fonts file di penyimpanan lokal (localstorage)&lt;/b&gt;&lt;br&gt;&lt;br&gt;Selesai. Begitulah sedikit pengetahuan saya dalam merender fonts lebih cepat.&lt;br&gt;Namun saya rekomendasikan menggunakan &lt;i&gt;NON BLOCKING RENDER LOADING&lt;/i&gt;. ]]></description>
         </item>
