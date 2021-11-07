@@ -1,5 +1,5 @@
 import fs from "fs";
-import "./../../src/js/_Prototype-String.ts";
+import "../../../src/js/_Prototype-String.ts";
 
 /**
  * Current date time

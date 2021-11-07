@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import "./../../src/js/_Prototype-String";
+import "../../../src/js/_Prototype-String";
 
 export function shortcodeCss(file: string) {
   if (!fs.statSync(file).isFile()) {
