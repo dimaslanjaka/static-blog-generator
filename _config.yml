@@ -278,16 +278,17 @@ hfc_html:
 hfc_css:
   enable: true
   exclude:
-    - '*.min.css'
+    - "*.min.css"
 
 hfc_js:
   enable: true
   mangle: true
+  engine: "uglify-es"
   exclude:
-    - '*.min.js'
+    - "*.min.js"
 
 hfc_img:
-  enable: true
+  enable: false
   interlaced: false
   multipass: false
   optimizationLevel: 2
