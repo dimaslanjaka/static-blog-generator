@@ -49,7 +49,8 @@ skip_render:
   - "backend"
   - "backend/**/*"
   # https://github.com/hexojs/hexo/issues/1797
-  - "*.{json,php}"
+  - "*.json"
+  - "**/*.json"
   - "_posts/**/*.json"
   - "_posts/**/*.js"
   - "_posts/The Legend Of Neverland/Midi/readme.md"
