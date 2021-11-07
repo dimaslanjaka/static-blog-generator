@@ -63,6 +63,8 @@ jobs:
         run: npx gulp blogger --production
       - name: Copying Article Local (./src-posts)
         run: npx gulp article:copy
+      - name: Hexo Clean
+        run: npx hexo clean
       - name: Hexo Generate
         run: npx hexo generate
       - name: install source/page -> docs/page
