@@ -64,7 +64,7 @@ jobs:
       - name: Hexo Clean
         run: npx hexo clean
       - name: Hexo Generate
-        if: always()
+        if: ${{ !failure() }}
         run: npx hexo generate
       - name: install source/page -> docs/page
         run: cd docs/page && npm install
