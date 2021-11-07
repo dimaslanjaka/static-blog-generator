@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
         with:
-          submodules: 'true'
+          submodules: "true"
           token: "${{ secrets.GITHUB_TOKEN }}"
           #repository: dimaslanjaka/hexo-blogger-xml
           #path: packages/hexo-blogger-xml
@@ -44,22 +44,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
-      #- name: ls packages
         #run: ls packages
+      #- name: ls packages
       - name: install global packages
         run: npm i -g hexo-cli gulp-cli typescript ts-node npm
       #- name: install themes/hexo-webnary-theme
-        #run: cd themes/hexo-webnary-theme && npm install
+      #run: cd themes/hexo-webnary-theme && npm install
       - name: Install Dependencies
         run: npm install #--prefer-offline
-      - name: Install hexo-filter-cleanup
-        run: npm i hexo-filter-cleanup #./packages/hexo-filter-cleanup
+      - name: Install packages/hexo-filter-cleanup
+        run: npm i ./packages/hexo-filter-cleanup
       #- name: install hexo-blogger-xml from GitHub
-        #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
+      #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       #- name: Copy package.json
-        #run: cp package.webnary.json package.json
+      #run: cp package.webnary.json package.json
       #- name: Copying Blogger Article
-        #run: npx gulp blogger --production
+      #run: npx gulp blogger --production
       - name: Copying Article Local (./src-posts)
         run: npx gulp article:copy
       - name: Hexo Clean
