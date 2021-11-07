@@ -17,7 +17,9 @@ if (Array.isArray(config.exclude)) exclude = exclude.concat(config.exclude);
 
 //console.log(config.public_dir, config.source_dir);
 
-compress_img([path.join(public_dir, "/**/*.{jpg,jpeg,webp,png,gif,svg}")], path.join(public_dir, "compressed"));
+//compress_img([path.join(public_dir, "/**/*.{jpg,jpeg,webp,png,gif,svg}")], path.join(public_dir, "compressed"));
+
+readDirW(require("./img3"));
 
 // eslint-disable-next-line no-unused-vars
 function readDirW(cb: (value: string[]) => string[] | PromiseLike<string[]>) {

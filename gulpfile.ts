@@ -18,6 +18,7 @@ import { argv } from "yargs";
  * Articles which published on google index
  */
 const prodPostDir = path.join(__dirname, "source/_posts");
+
 /**
  * Development article.
  * Articles location for translation
