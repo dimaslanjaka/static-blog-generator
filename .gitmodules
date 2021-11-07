@@ -14,3 +14,7 @@
 	path = packages/hexo
 	url = https://github.com/dimaslanjaka/hexo.git
 	branch = dimaslanjaka
+[submodule "packages/hexo-filter-cleanup"]
+	path = packages/hexo-filter-cleanup
+	url = https://github.com/dimaslanjaka/hexo-filter-cleanup.git
+	branch = dimaslanjaka
