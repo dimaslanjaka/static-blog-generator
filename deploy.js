@@ -1,19 +1,29 @@
-const { exec } = require("child_process");
+const execSys = require("child_process").exec;
 
-console.log("install global dependencies");
-exec("npm i -g npm gulp-cli typescript ts-node", (err, stdout, stderr) => {
+exec("npm i -g npm hexo-cli gulp-cli typescript ts-node", (err, stdout, stderr) => {
   if (!err) {
-    console.log("npm install");
     exec("npm install", (err, stdout, stderr) => {
       if (!err) {
-        console.log("gulp article:copy");
-        exec("npx gulp article:copy", (err, stdout, stderr) => {
+        exec("npm i ./packages/hexo-filter-cleanup", (err) => {
           if (!err) {
-            console.log("hexo generate");
-            exec("hexo generate", (err, stdout, stderr) => {});
+            exec("npx gulp article:copy", (err, stdout, stderr) => {
+              if (!err) {
+                exec("hexo generate", (err, stdout, stderr) => {});
+              }
+            });
           }
         });
       }
     });
   }
 });
+
+/**
+ * Shadow exec
+ * @param {string} cmd
+ * @param {(err: Error, stdout: string, stderr: string)} callback
+ */
+function exec(cmd, callback) {
+  console.log("cmd: " + cmd);
+  execSys(cmd, callback);
+}
