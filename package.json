@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "npx ts-node src/express/app.ts",
-    "build": "npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy && hexo generate",
+    "build": "node deploy.js",
     "skip-heroku-postbuild": "npm i -g gulp gulp-cli typescript ts-node && npm install && npx gulp article:copy",
     "generate": "hexo generate",
     "generate:clean": "hexo clean && hexo generate",
