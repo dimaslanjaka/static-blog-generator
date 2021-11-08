@@ -18,7 +18,7 @@ function run() {
   exec(cmds[0], function (err, stdout, stderr) {
     if (!err) {
       cmds.shift();
-      return run(cmds[0]);
+      if (cmds.length > 0) return run(cmds[0]);
     } else {
       throw err;
     }
