@@ -266,13 +266,36 @@ adsense:
 
 adblock: true
 
-# filter_cleanup
+tagmanager:
+  enable: false
+  id: GTM-NJNNXSR
+
+# custom
+analytic:
+  # google analytic v4
+  GA4: G-BG75CLNJZ1
+  # google analytic
+  GA3: UA-106238155-1
+  # cloudflare web statistic
+  cloudflare: 2157c0f3b9e74a92badffe39156166b9
+
+https:
+  enable: true
+
+# https://github.com/liuzc/hexo-autonofollow
+nofollow:
+  enable: true
+  exclude:
+    - git.webmanajemen.com
+    - webmanajemen.com
+
+# hexo-filter-cleanup
 hfc_useref:
   enable: true
   concat: true
 
 hfc_html:
-  enable: true
+  enable: false
   exclude:
 
 hfc_css:
@@ -309,40 +332,3 @@ hfc_favicons:
     opengraph: false
     windows: true
     yandex: false
-
-tagmanager:
-  enable: false
-  id: GTM-NJNNXSR
-
-# custom
-analytic:
-  # google analytic v4
-  GA4: G-BG75CLNJZ1
-  # google analytic
-  GA3: UA-106238155-1
-  # cloudflare web statistic
-  cloudflare: 2157c0f3b9e74a92badffe39156166b9
-
-https:
-  enable: true
-
-# https://github.com/liuzc/hexo-autonofollow
-nofollow:
-  enable: true
-  exclude:
-    - git.webmanajemen.com
-    - webmanajemen.com
-## Migrate using gulp
-#blogger_xml:
-# script path relative path from hexo root directory
-#callback: "./userscripts/post_callback.js"
-# Your blog domain and subdomain to seo external link, and bellow list is a internal link based on domain name
-#hostname:
-#- "webmanajemen.com"
-#- "git.webmanajemen.com"
-#- "dimaslanjaka.github.io"
-# Output directory
-#output: "source/_posts"
-# blogger xml path relative path from hexo root directory, you can insert multiple xml
-#input:
-#- "./userscripts/xml/webmanajemen.com.xml"
