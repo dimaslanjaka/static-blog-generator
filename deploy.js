@@ -14,7 +14,6 @@ const cmds = [
 ];
 
 function run() {
-  let cmd = cmds[0];
   exec(cmds[0], function (err, stdout, stderr) {
     if (!err) {
       cmds.shift();

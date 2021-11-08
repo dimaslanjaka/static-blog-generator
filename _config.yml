@@ -297,7 +297,6 @@ hfc_useref:
 hfc_html:
   enable: true
   exclude:
-    - "page/**/*"
 
 hfc_css:
   enable: true
