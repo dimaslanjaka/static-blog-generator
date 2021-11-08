@@ -1,5 +1,33 @@
 const execSys = require("child_process").exec;
 
+const cmds = [
+  "npm i -g npm hexo-cli gulp-cli typescript ts-node",
+  "npm install",
+  "npm i ./packages/hexo-filter-cleanup",
+  "npx gulp article:copy",
+  "hexo generate",
+  "cd docs/page && npm install",
+  "node userscripts/custom-domain.js",
+  "node userscripts/copy.js",
+  "node userscripts/after_generated.js",
+  "node userscripts/validate.js",
+];
+
+function run() {
+  let cmd = cmds[0];
+  exec(cmds[0], function (err, stdout, stderr) {
+    if (!err) {
+      cmds.shift();
+      return run(cmds[0]);
+    } else {
+      throw err;
+    }
+  });
+}
+
+run();
+
+/*
 exec("npm i -g npm hexo-cli gulp-cli typescript ts-node", (err, stdout, stderr) => {
   if (!err) {
     exec("npm install", (err, stdout, stderr) => {
@@ -8,7 +36,25 @@ exec("npm i -g npm hexo-cli gulp-cli typescript ts-node", (err, stdout, stderr) 
           if (!err) {
             exec("npx gulp article:copy", (err, stdout, stderr) => {
               if (!err) {
-                exec("hexo generate", (err, stdout, stderr) => {});
+                exec("hexo generate", (err, stdout, stderr) => {
+                  if (!err) {
+                    exec("npm install", "docs/page", (err, stdout, stderr) => {
+                      if (!err)
+                        exec("node userscripts/custom-domain.js", (err, stdout, stderr) => {
+                          if (!err) {
+                            exec("node userscripts/copy.js", (err, stdout, stderr) => {
+                              if (!err)
+                                exec("node userscripts/after_generated.js", (err, stdout, stderr) => {
+                                  if (!err) {
+                                    exec("node userscripts/validate.js", (err, stdout, stderr) => {});
+                                  }
+                                });
+                            });
+                          }
+                        });
+                    });
+                  }
+                });
               }
             });
           }
@@ -17,13 +63,22 @@ exec("npm i -g npm hexo-cli gulp-cli typescript ts-node", (err, stdout, stderr) 
     });
   }
 });
+*/
 
 /**
  * Shadow exec
  * @param {string} cmd
  * @param {(err: Error, stdout: string, stderr: string)} callback
  */
-function exec(cmd, callback) {
-  console.log("cmd: " + cmd);
-  execSys(cmd, callback);
+function exec(cmd, cwd, callback) {
+  console.log("cmd: " + (typeof cwd == "string" ? "cd " + cwd + " && " : "") + cmd);
+  if (typeof cwd == "function") {
+    return execSys(cmd, cwd);
+  }
+  if (typeof callback == "function") {
+    if (typeof cwd == "string") {
+      return execSys(cmd, { cwd: cwd }, callback);
+    }
+    return execSys(cmd, callback);
+  }
 }

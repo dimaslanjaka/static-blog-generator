@@ -45,32 +45,15 @@ jobs:
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
 
-      - name: Install Dependencies
-        run: npm install #--prefer-offline
-      - name: Install packages/hexo-filter-cleanup
-        run: npm i ./packages/hexo-filter-cleanup
+      - name: Run deploy.js
+        if: ${{ !failure() }}
+        run: node deploy.js
       #- name: install hexo-blogger-xml from GitHub
       #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       #- name: Copy package.json
       #run: cp package.webnary.json package.json
       #- name: Copying Blogger Article
       #run: npx gulp blogger --production
-      - name: Copying Article Local (./src-posts)
-        run: npx gulp article:copy
-      - name: Hexo Clean
-        run: npx hexo clean
-      - name: Hexo Generate
-        if: ${{ !failure() }}
-        run: npx hexo generate
-      - name: install source/page -> docs/page
-        run: cd docs/page && npm install
-      - name: Run Userscripts
-        #run: mkdir docs && echo git.webmanajemen.com > docs/CNAME
-        run: |
-          node userscripts/custom-domain.js
-          node userscripts/copy.js
-          node userscripts/after_generated.js
-          node userscripts/validate.js
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
