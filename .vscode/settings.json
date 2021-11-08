@@ -43,6 +43,13 @@
     "**/Thumbs.db": true,
     "**/node_modules": true,
     "exclude/**": true,
-    "**/.idea": true
+    "**/.idea": true,
+    "packages/hexo-admin": true,
+    "packages/hexo-admin-ehc": true,
+    "packages/hexo-toc": true,
+    "packages/hexo-related*": true,
+    "packages/hexo": true,
+    "packages/common": true,
+    "packages/ga-analytics": true
   }
 }
