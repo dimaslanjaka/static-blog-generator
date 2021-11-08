@@ -295,8 +295,9 @@ hfc_useref:
   concat: true
 
 hfc_html:
-  enable: false
+  enable: true
   exclude:
+    - "page/**/*"
 
 hfc_css:
   enable: true
