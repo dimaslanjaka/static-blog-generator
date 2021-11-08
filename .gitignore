@@ -11,3 +11,4 @@ tmp/
 exclude/
 docs/
 #package-lock.json
+firebase.js
