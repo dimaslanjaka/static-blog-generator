@@ -3,9 +3,9 @@ const execSys = require("child_process").exec;
 const cmds = [
   "npm i -g npm hexo-cli gulp-cli typescript ts-node",
   "npm install",
-  "npm i ./packages/hexo-filter-cleanup",
+  //"npm i ./packages/hexo-filter-cleanup",
   "npx gulp article:copy",
-  "hexo generate",
+  "hexo clean && hexo generate",
   "cd docs/page && npm install",
   "node userscripts/custom-domain.js",
   "node userscripts/copy.js",
