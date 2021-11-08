@@ -8,7 +8,7 @@ tags:
 subtitle: "A Example Blog for Web-Nary Blog"
 author:
   nick: Barvo68Web
-  link: https://bravo68web.dfcommunity.win/
+  link: https://webmanajemen.com/
 cover: "https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png"
 ---
 <!-- change extension to md -->
@@ -20,7 +20,7 @@ cover: "https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png"
 
 ## Git-Hub Cards
 
-{% githubCard user:bravo68web %}
+{% githubCard user:dimaslanjaka %}
 
 ### And Much more
 

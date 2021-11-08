@@ -17,7 +17,7 @@ This is Website is made by **Delta Force Techs** team of **Delta Force Community
 Here, we post Free Ebooks of Different types of Books for People of all *Ages* and *Type* for them to gain Knowledge.
 If you also want to contribute to the **"Web-Nary"** Project, contact us at [library@dfcommunity.win](mailto:library@dfcommunity.win)
 
-# Frameworks used :- 
+# Frameworks used :-
 
 <!--suppress HtmlDeprecatedAttribute -->
 <img src="https://raw.githubusercontent.com/hexojs/logo/master/hexo-logo-avatar.png" alt="Hexo logo" width="100" height="100" align="right" />
@@ -51,18 +51,18 @@ To Support Us :-
 
 # Website Administrators
 
-<a  href="https://bravo68web.dfcommunity.win"><img  src="https://avatars1.githubusercontent.com/u/67438566" height=120>
+<a  href="https://webmanajemen.com"><img  src="https://avatars1.githubusercontent.com/u/67438566" height=120>
 Delta Force Community</a>
 
-<a  href="https://bravo68web.dfcommunity.win"><img  src="https://avatars1.githubusercontent.com/u/41448696" height=120>
+<a  href="https://webmanajemen.com"><img  src="https://avatars1.githubusercontent.com/u/41448696" height=120>
 Delta Force Techs</a>
 
 ## Website Contributors
 
-<a  href="https://bravo68web.dfcommunity.win"><img  src="https://avatars1.githubusercontent.com/u/41448663" height=120>
+<a  href="https://webmanajemen.com"><img  src="https://avatars1.githubusercontent.com/u/41448663" height=120>
 Bravo 68 Web</a>
 
-<a  href="https://bravo68web.dfcommunity.win"><img  src="https://avatars2.githubusercontent.com/u/53594347" height=120>
+<a  href="https://webmanajemen.com"><img  src="https://avatars2.githubusercontent.com/u/53594347" height=120>
 Kali DF Dev</a>
 
 <a  href="https://bravo68web.dfcommunity.win"><img  src="https://avatars1.githubusercontent.com/u/59129302" height=120>
