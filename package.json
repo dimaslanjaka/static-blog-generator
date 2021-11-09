@@ -44,6 +44,7 @@
     "hexo-adsense": "file:packages/hexo-adsense",
     "hexo-asset-link": "^2.1.0",
     "hexo-autoprefixer": "^2.0.0",
+    "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
     "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^3.0.0",

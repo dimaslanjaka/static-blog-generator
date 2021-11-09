@@ -34,6 +34,7 @@
   "gulptasks.args": ["-r", "ts-node/register"],
   "gulptasks.filters": ["!**/node_modules/**", "!**/bower_components/**", "!**/packages/**", "!**/themes/**"],
   "npm.enableRunFromFolder": true,
+  "javascript.suggestionActions.enabled": false,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,

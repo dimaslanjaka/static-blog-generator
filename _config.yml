@@ -118,14 +118,10 @@ include:
 exclude:
 ignore:
 
-# Comments
-disqus_shortname: dimaslanjaka
-
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-## Current Theme Url: https://github.com/dfcommunity/hexo-webnary-theme/
 theme: material
 
 # Deployment
@@ -135,13 +131,6 @@ deploy:
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
   branch: master
   message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
-
-## Custom by DFcommunity
-menu:
-  "home": /
-  archive: /archives
-  contact: /contact
-  about: /about
 
 loader: false
 #loader_img: "/assets/img/loading-animations-preloader-gifs-ui-ux-effects-4.gif"
@@ -204,12 +193,6 @@ related_posts:
     - js
     - ts
 
-# footer information
-about:
-  info: WMI
-  address: Surabaya, Indonesia
-  email: dimaslanjaka@gmail.com
-
 # https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus.git
 markdown_it_plus:
   highlight: true
@@ -251,36 +234,35 @@ schema:
       width: 1944 # <= 600
       height: 2592 # >= 60
 
-# adsense
+# hexo-adsense
 adsense:
   enable: true
   pub: ca-pub-1165447249910969
-  # responsive horizontal
-  ads1: 6376402862
-  # responsive square
-  ads_sidebar: 3325057139
   # in-article ads source
-  in_article_ads:
+  article_ads:
     - "source/ads/in_article.html"
     - "source/ads/in_article2.html"
+  # ads field
+  field: "site" # post=only post, site=all pages and posts
+  # auto redirect to https
+  https: true
+  # block user with adblock enabled
+  adblock: true
+  # exclude pattern, disable adding adsense
+  exclude:
+    - "*.min.html"
+    - "exclude/**/*"
 
-adblock: true
-
-tagmanager:
-  enable: false
-  id: GTM-NJNNXSR
-
-# custom
-analytic:
-  # google analytic v4
+# next project: hexo-analytics
+analytics:
+  # google tag manager
+  tagmanager: GTM-NJNNXSR
+  # google analytics v4
   GA4: G-BG75CLNJZ1
-  # google analytic
+  # google analytics
   GA3: UA-106238155-1
-  # cloudflare web statistic
+  # cloudflare web statistics
   cloudflare: 2157c0f3b9e74a92badffe39156166b9
-
-https:
-  enable: true
 
 # https://github.com/liuzc/hexo-autonofollow
 nofollow:
