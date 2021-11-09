@@ -23,4 +23,7 @@ to target ads to appear to the specified position or element, then you must crea
 
 > below is `<div hexo-adsense-fill=""></div>`
 
-<div hexo-adsense-fill=""></div>
+<div hexo-adsense-fill="" style="width:728;height:90"></div>
+
+[Sample adsense ads sizes](https://support.google.com/adsense/answer/185665?hl=en)
+[Test adsense in localhost](https://medium.com/@jeffersonlicet/testing-ads-on-localhost-300215b415d6)
