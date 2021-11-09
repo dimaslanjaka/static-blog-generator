@@ -23,7 +23,7 @@ search:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://git.webmanajemen.com/
+url: https://www.webmanajemen.com/
 root: /
 permalink: :title.html #:title/
 permalink_defaults:
@@ -144,7 +144,7 @@ favicon_ico: "/assets/img/hexo-logo-avatar-transparent-background.png"
 
 author:
   name: "Dimas Lanjaka"
-  link: "https://git.webmanajemen.com/"
+  link: "https://www.webmanajemen.com/"
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
@@ -268,7 +268,7 @@ analytics:
 nofollow:
   enable: true
   exclude:
-    - git.webmanajemen.com
+    - www.webmanajemen.com
     - webmanajemen.com
 
 # hexo-filter-cleanup

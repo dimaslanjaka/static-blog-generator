@@ -1,4 +1,4 @@
-## git.webmanajemen.com compiler
+## www.webmanajemen.com compiler
 - node 12.22.6
 
 # NodeJS Blogging System

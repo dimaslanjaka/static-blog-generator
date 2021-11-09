@@ -105,4 +105,4 @@ Update genshin impact `2.1.0` manual via download manager (IDM).
 | Title    |                         URL                          |
 | -------- | :--------------------------------------------------: |
 | Blogger  |     [webmanajemen.com](https://webmanajemen.com)     |
-| Git Page | [git.webmanajemen.com](https://git.webmanajemen.com) |
+| Git Page | [www.webmanajemen.com](https://www.webmanajemen.com) |
