@@ -1,11 +1,12 @@
 ---
-title: Adsense Example
+title: Adsense auto display on headers
 date: 2021-11-10 14:15:01
 tags:
   - "adsense"
-  - "test"
+  - "headers"
   - "examples"
-subtitle: "Adsense example"
+  - "auto"
+subtitle: "Adsense auto display on headers (h1,h2,h3,h4,h5,h6,hr)"
 adsense: true
 author:
   nick: Dimas Lanjaka
@@ -13,22 +14,13 @@ author:
 cover: "https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png"
 ---
 
-> Auto ads test
+# Auto ads test on headers
+
+> adsense will shown randomly on below headers.
 
 # Adsense H1
 ## Adsense H2
 ### Adsense H3
 #### Adsense H4
 ##### Adsense H5
-
-> below is `<br/>`
-
-<br/>
-
-> below is `<hr/>`
-
-<hr/>
-
-> below is `<div hexo-adsense-fill=""></div>`
-
-<div hexo-adsense-fill=""></div>
+###### Adsense H6
