@@ -6,7 +6,7 @@ tags:
   - "headers"
   - "examples"
   - "auto"
-subtitle: "Adsense auto display on headers (h1,h2,h3,h4,h5,h6,hr)"
+subtitle: "Adsense auto display on headers (h1,h2,h3,h4,h5,h6)"
 adsense: true
 author:
   nick: Dimas Lanjaka
@@ -16,7 +16,7 @@ cover: "https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png"
 
 # Auto ads test on headers
 
-> adsense will shown randomly on below headers.
+> adsense will shown randomly on below headers (h1,h2,h3,h4,h5,h6).
 
 # Adsense H1
 ## Adsense H2

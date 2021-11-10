@@ -16,7 +16,7 @@ cover: "https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png"
 
 **Auto ads test on linebreaks**
 
-> adsense will shown randomly on below linebreaks.
+> adsense will shown randomly on below linebreaks (br,hr).
 
 <hr>
 
