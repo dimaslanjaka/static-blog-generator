@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.10",
     "chokidar": "^2.1.8",
     "crypto-js": "^4.0.0",
     "ejs": "^3.1.6",
@@ -69,6 +70,7 @@
     "hexo-renderer-sass": "^0.4.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-renderer-swig": "^1.1.0",
+    "hexo-seo": "file:packages/hexo-seo",
     "hexo-server": "^2.0.0",
     "hexo-toc": "file:./packages/hexo-toc",
     "hexo-uglify": "^2.0.0",
