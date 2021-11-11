@@ -1,11 +1,18 @@
+/***********
+ * GITHUB WORKFLOW DEPLOY THIS SITE
+ ***********/
+
 const execSys = require("child_process").exec;
 
 const cmds = [
   "npm i -g npm hexo-cli gulp-cli typescript ts-node",
   "npm install",
+  // install themes dependencies
+  "cd themes/material && npm install",
   //"npm i ./packages/hexo-filter-cleanup",
   "npx gulp article:copy",
   "hexo clean && hexo generate",
+  // install static page dependencies
   "cd docs/page && npm install",
   "node userscripts/custom-domain.js",
   "node userscripts/copy.js",
