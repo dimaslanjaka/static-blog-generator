@@ -22,3 +22,7 @@
 	path = packages/hexo-adsense
 	url = https://github.com/dimaslanjaka/hexo-adsense.git
 	branch = master
+[submodule "packages/hexo-seo"]
+	path = packages/hexo-seo
+	url = https://github.com/dimaslanjaka/hexo-seo.git
+	branch = master

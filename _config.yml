@@ -243,7 +243,7 @@ adsense:
     - "source/ads/in_article.html"
     - "source/ads/in_article2.html"
   # ads field
-  field: "site" # post=only post, site=all pages and posts
+  field: "post" # post=only post, site=all pages and posts
   # auto redirect to https
   https: true
   # block user with adblock enabled
