@@ -22,7 +22,7 @@
     "firebase:preview": "firebase hosting:channel:deploy --project android-008",
     "intaller": "npm install --save hexo-autoprefixer hexo-filter-cleanup hexo-generator-feed hexo-generator-sitemap hexo-renderer-sass hexo-renderer-swig mamboer/lunr.js moment node-sass object-assign",
     "fix-sharp": "rm node_modules/sharp -rf && npm install --ignore-scripts=false --verbose sharp",
-    "postinstall":"cd themes/material && npm install",
+    "postinstall": "cd themes/material && npm install",
     "wsl-install": "rm -r node_modules && npm install --platform=win32"
   },
   "hexo": {
@@ -44,7 +44,7 @@
     "hexo": "file:packages/hexo",
     "hexo-adsense": "file:packages/hexo-adsense",
     "hexo-asset-link": "^2.1.0",
-    "hexo-autoprefixer": "^2.0.0",
+    "hexo-autoprefixer": "github:hexojs/hexo-autoprefixer",
     "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
     "hexo-clean-css": "^2.0.0",
@@ -90,7 +90,7 @@
     "jsdom": "^16.6.0",
     "livereload": "^0.9.3",
     "lodash": "^4.17.21",
-    "lunr": "github:mamboer/lunr.js", 
+    "lunr": "github:mamboer/lunr.js",
     "minimatch": "^3.0.4",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
