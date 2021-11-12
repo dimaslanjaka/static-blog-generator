@@ -65,8 +65,7 @@
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
-    "**/.hg/store/**": true,
-    "./packages": true
+    "**/.hg/store/**": true
   },
   //"editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
 }
