@@ -67,5 +67,7 @@
     "**/node_modules/*/**": true,
     "**/.hg/store/**": true
   },
+  "git.detectSubmodulesLimit": 10,
+  "git.detectSubmodules": false
   //"editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
 }
