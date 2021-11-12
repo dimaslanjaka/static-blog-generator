@@ -14,7 +14,7 @@ todo:
 - Compiler
 ```shell
 npm install
-# Process articles from ./src-posts into ./source/__posts
+# Process articles from ./src-posts into ./source/_posts
 npx gulp article:copy # safely using npx
 # Generate blog
 npx hexo generate
