@@ -111,7 +111,7 @@ function articleCopy(done, clean = false) {
   }, 1000);
 }
 
-// just copy from source posts (src-posts) to production posts (source/__posts)
+// just copy from source posts (src-posts) to production posts (source/_posts)
 gulp.task("article:copy", function (done) {
   articleCopy(done, true);
 });
