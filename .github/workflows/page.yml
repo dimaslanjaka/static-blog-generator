@@ -9,7 +9,7 @@ on:
       - compiler # run when this branch pushed
 
 jobs:
-  pages:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository and submodules
@@ -70,3 +70,20 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDROID_008 }}"
           channelId: live
           projectId: android-008
+  multiversion:
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g hexo-cli
+      - run: npm ci --save
+      - run: npx hexo generate
