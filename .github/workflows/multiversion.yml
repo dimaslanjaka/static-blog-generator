@@ -5,9 +5,9 @@ name: Build Test With Multiple Node Version
 
 on:
   push:
-    branches: [gh-pages]
+    branches: [compiler]
   pull_request:
-    branches: [gh-pages]
+    branches: [compiler]
 
 jobs:
   build:
