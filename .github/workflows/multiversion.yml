@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
       - run: npm install -g hexo-cli
-      - run: npm install --save
+      - run: npm ci --save
       - run: npx hexo generate
