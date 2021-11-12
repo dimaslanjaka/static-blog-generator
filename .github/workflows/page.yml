@@ -1,6 +1,9 @@
 name: github-pages
 
 on:
+  pull_request:
+    branches:
+      - compiler # run when this branch pull requested
   push:
     branches:
       - compiler # run when this branch pushed
@@ -60,3 +63,10 @@ jobs:
         with:
           branch: master # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
+      - name: Deploy to firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDROID_008 }}"
+          channelId: live
+          projectId: android-008
