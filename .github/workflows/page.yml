@@ -84,6 +84,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install -g hexo-cli
+      - run: npm install -g hexo-cli gulp-cli typescript ts-node
       - run: npm ci --save
       - run: npx hexo generate
