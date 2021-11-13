@@ -1,4 +1,4 @@
-name: github-pages
+name: Build www.webmanajemen.com
 
 on:
   pull_request:
