@@ -5,22 +5,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-node",
-      "request": "launch",
-      "name": "Launch Program",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/main.js"
-    },
-    {
-      "command": "hexo server",
-      "env": { "NODE_ENV": "development" },
+      "command": "hexo server --development",
+      "env": {
+        "NODE_ENV": "development"
+      },
       "name": "Hexo server",
       "request": "launch",
       "type": "node-terminal"
     },
     {
-      "command": "hexo clean && hexo server",
-      "env": { "NODE_ENV": "development" },
+      "command": "hexo clean && hexo server --development",
+      "env": {
+        "NODE_ENV": "development"
+      },
       "name": "Hexo clean server",
       "request": "launch",
       "type": "node-terminal"
