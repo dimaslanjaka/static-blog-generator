@@ -24,13 +24,14 @@ function run() {
   exec(cmds[0], function (err, stdout, stderr) {
     if (!err) {
       cmds.shift();
+      if (stdout) console.log(stdout);
+      if (stderr) console.log(stderr);
       if (cmds.length > 0) return run(cmds[0]);
     } else {
       throw err;
     }
 
-    if (stdout) console.log(stdout);
-    if (stderr) console.log(stderr);
+
   });
 }
 

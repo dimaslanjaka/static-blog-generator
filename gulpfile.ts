@@ -11,7 +11,6 @@ import { shortcodeNow } from "./src/gulp/shortcode/time";
 import { shortcodeCss } from "./src/gulp/shortcode/css";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 //import { gulpCore } from "hexo-blogger-xml";
-import { argv } from "yargs";
 
 /**
  * Production article.
@@ -127,17 +126,14 @@ gulp.task("article:clean", function (done) {
   done();
 });
 
-// gulp blogger --production
 gulp.task("blogger", function (done) {
   // eslint-disable-next-line no-unused-vars
   const mainXML = path.resolve("userscripts/xml/webmanajemen.com.xml");
   // eslint-disable-next-line no-unused-vars
   const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
-  // use --production for produce to ./src-posts
-  const isProduction = argv["production"] !== undefined;
   gulpCore({
     input: [mainXML],
-    output: isProduction ? "./src-posts" : "./build/src-posts",
+    output: "./src-posts",
     hostname: ["webmanajemen.com", "www.webmanajemen.com", "dimaslanjaka.github.io"],
     callback: require("./userscripts/post_callback"),
     on: {
@@ -150,12 +146,6 @@ gulp.task("blogger", function (done) {
   done();
 });
 
-gulp.task("arg", function (done) {
-  const isProduction = argv["production"] !== undefined;
-  console.log(argv, isProduction);
-  done();
-});
-
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
-gulp.task("default", gulp.series("article:copy:dev"));
+gulp.task("default", gulp.series("blogger", "article:copy:dev"));
 //exports.default = gulp.series("article:copy:dev");
