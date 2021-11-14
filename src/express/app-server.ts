@@ -24,7 +24,6 @@ export default function (extendApp?: (instance: Express) => any) {
   // Set express server port
   app.set("port", port);
 
-  //app.use(morgan("dev"));
   app.use(cors());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
