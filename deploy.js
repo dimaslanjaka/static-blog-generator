@@ -28,6 +28,9 @@ function run() {
     } else {
       throw err;
     }
+
+    if (stdout) console.log(stdout);
+    if (stderr) console.log(stderr);
   });
 }
 
