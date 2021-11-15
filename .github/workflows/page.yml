@@ -17,9 +17,8 @@ jobs:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
         with:
-          submodules: "true"
-          token: "${{ secrets.GITHUB_TOKEN }}"
           submodules: recursive
+          token: "${{ secrets.GITHUB_TOKEN }}"
         #with:
         #submodules: recursive
       - name: Use Node.js 12.x
