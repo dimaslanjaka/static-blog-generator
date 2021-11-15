@@ -1,15 +1,68 @@
 #!/usr/bin/env node
 "use strict";
 
+const { exec } = require("child_process");
+const { existsSync } = require("fs");
 const path = require("path");
 const minimist = require("minimist")(process.argv.slice(2));
-console.dir(minimist);
+//console.dir(minimist);
 
-const files = [];
-if (typeof minimist.file == "string") {
-  minimist.file.split(",").forEach((f) => {
-    console.log(f);
-  });
+// commit -f=package.json "update dependencies"
+if (minimist._.length) {
+  let message = minimist._.length == 1 ? minimist._[0] : minimist._.join(" ");
+  const filesToCommit = [];
+  let argFiles = minimist.file || minimist.f;
+  if (argFiles) {
+    argFiles.split(",").forEach(
+      /**
+       * @param {string} f
+       */
+      (f) => {
+        if (f.trim().length) {
+          const cwd = process.cwd();
+          let find;
+          if (existsSync(path.join(cwd, f))) {
+            find = path.join(cwd, f);
+          }
+
+          if (find) {
+            filesToCommit.push(find);
+          }
+        }
+      }
+    );
+  }
+
+  if (filesToCommit.length) {
+    filesToCommit.forEach((f) => {
+      execute(`git add ${f}`).then((err) => {
+        if (!err) {
+          execute(`git commit -m "${message}"`);
+        } else {
+          execute("git reset --soft HEAD^");
+        }
+      });
+    });
+  } else {
+    // if custom files empty, then add all files and commit them
+    execute(`git add .`).then((err) => {
+      if (!err) {
+        execute(`git commit -m "${message}"`);
+      } else {
+        execute("git reset --soft HEAD^");
+      }
+    });
+  }
 }
 
 //git commit -m $*
+
+function execute(command) {
+  return new Promise(function (resolve, reject) {
+    exec(command, { cwd: process.cwd() }, (err, stdout, stderr) => {
+      if (err) return reject(err);
+      if (stderr) console.error(stderr);
+      resolve(null, stdout, stderr);
+    });
+  });
+}

@@ -18,6 +18,7 @@ module.exports = {
       files: ["*.js", "*.jsx", "bin/*"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-unused-vars": "off",
       },
     },
   ],
