@@ -1,5 +1,5 @@
 ## www.webmanajemen.com compiler
-- node 12.22.6
+- node 12.22.6 - 14.8.1
 
 # NodeJS Blogging System
 todo:
