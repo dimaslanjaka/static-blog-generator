@@ -28,6 +28,9 @@
     "tlon",
     "youtube"
   ],
+  "terminal.integrated.env.linux": {
+    "PATH": "bin:${env:PATH}"
+  },
   "files.autoSave": "onWindowChange",
   "typescript.tsc.autoDetect": "off",
   "gulptasks.pattern": "**/gulpfile.ts",
