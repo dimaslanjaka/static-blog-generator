@@ -51,12 +51,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
-
+      #- name: install additional dependencies
+        #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git git+https://github.com/dimaslanjaka/hexo-seo.git
       - name: Run deploy.js
         if: ${{ !failure() }}
         run: node deploy.js
-      - name: install hexo-blogger-xml from GitHub
-        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

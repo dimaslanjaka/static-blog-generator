@@ -234,7 +234,7 @@ schema:
       width: 1944 # <= 600
       height: 2592 # >= 60
 
-# hexo-adsense
+# https://github.com/dimaslanjaka/hexo-adsense
 adsense:
   enable: true
   pub: ca-pub-1165447249910969
@@ -264,53 +264,14 @@ analytics:
   # cloudflare web statistics
   cloudflare: 2157c0f3b9e74a92badffe39156166b9
 
-# https://github.com/liuzc/hexo-autonofollow
-nofollow:
-  enable: true
-  exclude:
-    - www.webmanajemen.com
-    - webmanajemen.com
+# https://github.com/dimaslanjaka/hexo-seo
+seo:
+  html: true
+  css: true
+  js: true
+  links:
+    exclude:
+      - webmanajemen.com
+      - web-manajemen.blogspot.com
+      - dimaslanjaka.github.io
 
-# hexo-filter-cleanup
-hfc_useref:
-  enable: true
-  concat: true
-
-hfc_html:
-  enable: true
-  exclude:
-
-hfc_css:
-  enable: true
-  exclude:
-    - "*.min.css"
-
-hfc_js:
-  enable: true
-  mangle: true
-  engine: "uglify-es"
-  exclude:
-    - "*.min.js"
-
-hfc_img:
-  enable: true
-  interlaced: false
-  multipass: false
-  optimizationLevel: 2
-  pngquant: false
-  progressive: true
-
-hfc_favicons:
-  enable: false
-  src: /assets/img/favicon.png
-  target: /assets/img/
-  icons:
-    android: true
-    appleIcon: true
-    appleStartup: false
-    coast: false
-    favicons: true
-    firefox: true
-    opengraph: false
-    windows: true
-    yandex: false
