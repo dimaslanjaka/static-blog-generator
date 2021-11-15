@@ -269,9 +269,14 @@ seo:
   html: true
   css: true
   js: true
+  schema: true
+  img:
+    default: /hexo-seo/img/no-image.png
+    onerror: serverside
   links:
     exclude:
       - webmanajemen.com
       - web-manajemen.blogspot.com
       - dimaslanjaka.github.io
+
 
