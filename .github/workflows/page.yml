@@ -57,10 +57,10 @@ jobs:
         #if: ${{ !failure() }}
         run: |
           npm i -g npm hexo-cli gulp-cli typescript ts-node
-          npm install
+          npm ci
+          cd themes/material && npm install
       - name: Build
         run: |
-          cd themes/material && npm install && cd ../../
           npx gulp article:copy
           hexo generate
           cd docs/page && npm install
