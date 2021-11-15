@@ -32,6 +32,7 @@
     "PATH": "bin:${env:PATH}"
   },
   "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 30000,
   "typescript.tsc.autoDetect": "off",
   "gulptasks.pattern": "**/gulpfile.ts",
   "gulptasks.args": [

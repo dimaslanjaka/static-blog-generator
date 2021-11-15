@@ -4,4 +4,6 @@
 
 const yargs = require("yargs");
 
+console.log(yargs);
+
 //git commit -m $*
