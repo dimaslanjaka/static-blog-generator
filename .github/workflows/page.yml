@@ -42,7 +42,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
       - name: install additional dependencies
-        #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git git+https://github.com/dimaslanjaka/hexo-seo.git
         run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - name: Install
         run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci

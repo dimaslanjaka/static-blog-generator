@@ -50,7 +50,7 @@ jobs:
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
       - name: install additional dependencies
-        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git git+https://github.com/dimaslanjaka/hexo-seo.git
+        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
       - name: Install
         run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - run: cd themes/material && npm install
