@@ -11,12 +11,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 13.x, 14.x]
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
         with:
           submodules: "true"
           token: "${{ secrets.GITHUB_TOKEN }}"
+          recursive: "true"
           #repository: dimaslanjaka/hexo-blogger-xml
           #path: packages/hexo-blogger-xml
           #ref: "master"
@@ -25,7 +29,7 @@ jobs:
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: ${{ matrix.node-version }}
       - name: Get npm cache directory
         id: npm-cache-dir
         run: echo "::set-output name=dir::$(npm config get cache)"
@@ -48,43 +52,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
-
+      - name: install additional dependencies
+        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git git+https://github.com/dimaslanjaka/hexo-seo.git
       - name: Run deploy.js
         if: ${{ !failure() }}
         run: node deploy.js
-      #- name: install hexo-blogger-xml from GitHub
-      #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
-      #- name: Copy package.json
-      #run: cp package.webnary.json package.json
-      #- name: Copying Blogger Article
-      #run: npx gulp blogger --production
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: master # The branch the action should deploy to.
-          folder: docs # The folder the action should deploy.
-      - name: Deploy to firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDROID_008 }}"
-          channelId: live
-          projectId: android-008
 
-  multiversion:
-    needs: build
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 13.x, 14.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install -g hexo-cli gulp-cli typescript ts-node
-      - run: npm ci --save
-      - run: npx hexo generate
