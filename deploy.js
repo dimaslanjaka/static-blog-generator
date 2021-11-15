@@ -11,7 +11,7 @@ const cmds = [
   "cd themes/material && npm install",
   //"npm i ./packages/hexo-filter-cleanup",
   "npx gulp article:copy",
-  "hexo clean && hexo generate",
+  "hexo generate",
   // install static page dependencies
   "cd docs/page && npm install",
   "node userscripts/custom-domain.js",
