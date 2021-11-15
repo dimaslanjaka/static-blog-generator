@@ -20,7 +20,7 @@ const cmds = [
   "node userscripts/validate.js",
 ];
 
-(function () {
+function run() {
   exec(cmds[0], function (err, stdout, stderr) {
     if (!err) {
       cmds.shift();
@@ -31,7 +31,9 @@ const cmds = [
       throw err;
     }
   });
-})();
+}
+
+run();
 
 /**
  * Shadow exec

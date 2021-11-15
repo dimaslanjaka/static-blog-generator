@@ -1,10 +1,83 @@
-multiversion:
+name: Build With Multiple NodeJS Versions
+
+on:
+  pull_request:
+    branches:
+      - compiler # run when this branch pull requested
+  push:
+    branches:
+      - compiler # run when this branch pushed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: "true"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          #repository: dimaslanjaka/hexo-blogger-xml
+          #path: packages/hexo-blogger-xml
+          #ref: "master"
+        #with:
+        #submodules: recursive
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get Cache NPM dependencies
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ./node_modules
+            ./docs
+            ~/.npm
+          key: |
+            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-yarn-
+
+      - name: Run deploy.js
+        if: ${{ !failure() }}
+        run: node deploy.js
+      #- name: install hexo-blogger-xml from GitHub
+      #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
+      #- name: Copy package.json
+      #run: cp package.webnary.json package.json
+      #- name: Copying Blogger Article
+      #run: npx gulp blogger --production
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: master # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+      - name: Deploy to firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDROID_008 }}"
+          channelId: live
+          projectId: android-008
+
+  multiversion:
     needs: build
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [13.x, 14.x] # 12.x skip, previous build node version is 12.x
+        node-version: [12.x, 13.x, 14.x]
 
     steps:
       - uses: actions/checkout@v2

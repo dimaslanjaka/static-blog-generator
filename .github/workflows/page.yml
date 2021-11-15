@@ -52,12 +52,8 @@ jobs:
       - name: Run deploy.js
         if: ${{ !failure() }}
         run: node deploy.js
-      #- name: install hexo-blogger-xml from GitHub
-      #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
-      #- name: Copy package.json
-      #run: cp package.webnary.json package.json
-      #- name: Copying Blogger Article
-      #run: npx gulp blogger --production
+      - name: install hexo-blogger-xml from GitHub
+        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
@@ -70,4 +66,4 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ANDROID_008 }}"
           channelId: live
           projectId: android-008
-  
+
