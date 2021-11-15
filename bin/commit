@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 "use strict";
 
 const path = require("path");
@@ -8,7 +7,9 @@ console.dir(minimist);
 
 const files = [];
 if (typeof minimist.file == "string") {
-  minimist.file.split(",").forEach((f) => { });
+  minimist.file.split(",").forEach((f) => {
+    console.log(f);
+  });
 }
 
 //git commit -m $*

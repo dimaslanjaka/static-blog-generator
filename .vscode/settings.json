@@ -77,7 +77,7 @@
   },
   "git.detectSubmodulesLimit": 10,
   "git.detectSubmodules": false,
-  // format code with eslint and vscode
+  // format code with eslint-prettier and vscode
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
