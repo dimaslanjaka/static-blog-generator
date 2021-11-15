@@ -25,7 +25,7 @@ function run() {
     if (!err) {
       cmds.shift();
       //if (stdout) console.log(stdout);
-      if (stderr) console.log(stderr);
+      //if (stderr) console.log(stderr);
       if (cmds.length > 0) run(cmds[0]);
     } else {
       throw err;
