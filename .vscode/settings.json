@@ -76,6 +76,10 @@
     "docs/*/**": true,
   },
   "git.detectSubmodulesLimit": 10,
-  "git.detectSubmodules": false
+  "git.detectSubmodules": false,
+  // format code with eslint and vscode
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
   //"editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
 }

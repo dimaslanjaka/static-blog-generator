@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 
-'use strict';
+"use strict";
 
-const yargs = require("yargs");
+const path = require("path");
+const minimist = require("minimist")(process.argv.slice(2));
+console.dir(minimist);
 
-console.log(yargs);
+const files = [];
+if (typeof minimist.file == "string") {
+  minimist.file.split(",").forEach((f) => { });
+}
 
 //git commit -m $*
