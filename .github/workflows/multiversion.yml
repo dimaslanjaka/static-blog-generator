@@ -51,7 +51,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
-      - run: sudo apt-get install libcurl4-openssl-dev
       - id: npm-install
         continue-on-error: true
         run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
