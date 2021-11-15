@@ -23,7 +23,7 @@ jobs:
         with:
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Use Node.js 12.x
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
