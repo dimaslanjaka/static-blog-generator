@@ -59,11 +59,10 @@ jobs:
           npm i -g npm hexo-cli gulp-cli typescript ts-node
           npm ci
           cd themes/material && npm install
+      - run: npx gulp article:copy
+      - run: hexo generate
       - name: Build
-        run: |
-          npx gulp article:copy
-          hexo generate
-          cd docs/page && npm install
+        run: cd docs/page && npm install
       - name: Userscripts
         run: |
           node userscripts/custom-domain.js
