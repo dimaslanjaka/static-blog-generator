@@ -37,7 +37,7 @@ if (minimist._.length) {
     filesToCommit.forEach((f) => {
       execute(`git add ${f}`).then((err) => {
         if (!err) {
-          execute(`git commit -m "${message}"`);
+          execute(`git commit -m "${message}"`).then(gitPush);
         } else {
           execute("git reset --soft HEAD^");
         }
@@ -47,7 +47,7 @@ if (minimist._.length) {
     // if custom files empty, then add all files and commit them
     execute(`git add .`).then((err) => {
       if (!err) {
-        execute(`git commit -m "${message}"`);
+        execute(`git commit -m "${message}"`).then(gitPush);
       } else {
         execute("git reset --soft HEAD^");
       }
@@ -55,12 +55,18 @@ if (minimist._.length) {
   }
 }
 
+function gitPush(err, stdout, stderr) {
+  if (!err) {
+    if (minimist.push) execute("git push");
+  }
+}
+
 //git commit -m $*
 
-function execute(command) {
+function execute(command, cb) {
   return new Promise(function (resolve, reject) {
     exec(command, { cwd: process.cwd() }, (err, stdout, stderr) => {
-      if (err) return reject(err);
+      if (err) return reject(err, stdout, stderr);
       if (stderr) console.error(stderr);
       resolve(null, stdout, stderr);
     });
