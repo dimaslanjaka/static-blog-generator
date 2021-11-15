@@ -52,7 +52,7 @@ jobs:
       - run: sudo apt-get install libcurl4-openssl-dev
       - id: npm-install
         continue-on-error: true
-        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm install node-libcurl --build-from-source
+        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - name: install additional dependencies
         run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
 
