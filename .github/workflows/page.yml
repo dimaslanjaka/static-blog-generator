@@ -41,10 +41,10 @@ jobs:
             ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
-      - name: install additional dependencies
-        run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - name: Install
         run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
+      - name: install additional dependencies
+        run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
       - run: hexo generate

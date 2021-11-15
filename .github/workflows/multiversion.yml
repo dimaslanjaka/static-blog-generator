@@ -49,10 +49,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
             ${{ runner.os }}-yarn-
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - name: install additional dependencies
         run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
-      - name: Install
-        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
       - run: hexo generate
