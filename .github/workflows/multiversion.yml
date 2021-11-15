@@ -55,11 +55,18 @@ jobs:
         run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm install node-libcurl --build-from-source
       - name: install additional dependencies
         run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
-      - run: cd themes/material && npm install
-      - run: npx gulp article:copy
-      - run: hexo generate
-      - run: cd docs/page && npm install
-      - name: Userscripts
+
+      #### ONLY RUN BELOW RUNNER IF ABOVE INSTALLATIONS SUCCEEDED ####
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: cd themes/material && npm install
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: npx gulp article:copy
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: hexo generate
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: cd docs/page && npm install
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        name: Userscripts
         run: |
           node userscripts/custom-domain.js
           node userscripts/copy.js
