@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NODE_OPTIONS: "--max_old_space_size=4096" #8192
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
