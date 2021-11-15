@@ -65,7 +65,11 @@
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
-    "**/.hg/store/**": true
+    "**/tmp/*/**": true,
+    "**/build/*/**": true,
+    "**/dist/*/**": true,
+    "**/.hg/store/**": true,
+    "docs/*/**": true,
   },
   "git.detectSubmodulesLimit": 10,
   "git.detectSubmodules": false
