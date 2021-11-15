@@ -53,15 +53,19 @@ jobs:
             ${{ runner.os }}-yarn-
       #- name: install additional dependencies
         #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git git+https://github.com/dimaslanjaka/hexo-seo.git
-      - name: Build
-        if: ${{ !failure() }}
+      - name: Install
+        #if: ${{ !failure() }}
         run: |
           npm i -g npm hexo-cli gulp-cli typescript ts-node
           npm install
+      - name: Build
+        run: |
           cd themes/material && npm install && cd ../../
           npx gulp article:copy
           hexo generate
           cd docs/page && npm install
+      - name: Userscripts
+        run: |
           node userscripts/custom-domain.js
           node userscripts/copy.js
           node userscripts/after_generated.js
