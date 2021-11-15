@@ -19,8 +19,6 @@ jobs:
         with:
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
-        #with:
-        #submodules: recursive
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:

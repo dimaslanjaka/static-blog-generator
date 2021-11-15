@@ -21,14 +21,8 @@ jobs:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
         with:
-          submodules: "true"
+          submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
-          #recursive: "true"
-          #repository: dimaslanjaka/hexo-blogger-xml
-          #path: packages/hexo-blogger-xml
-          #ref: "master"
-        #with:
-        #submodules: recursive
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
