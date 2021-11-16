@@ -2,5 +2,3 @@
 **/node_modules/**
 **/dist/**
 **/lib/**
-.idea/vcs.xml
-.idea/workspace.xml
