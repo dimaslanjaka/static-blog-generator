@@ -75,6 +75,7 @@ jobs:
           projectId: android-008
 
   test:
+    name: Test Build With NPM Packages
     needs: build
     runs-on: ${{ matrix.os }}
     continue-on-error: true
@@ -124,7 +125,8 @@ jobs:
       - name: install additional dependencies
         id: npm-install-submodules
         continue-on-error: true
-        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
+        #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
+        run: npm i hexo-seo hexo-blogger-xml hexo-adsense
 
       #### ONLY RUN BELOW RUNNER IF ABOVE INSTALLATIONS SUCCEEDED ####
       - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
