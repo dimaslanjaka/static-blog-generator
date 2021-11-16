@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c806164-e3fe-4a6a-a660-7f3c6a392a69" name="Default Changelist" comment="Update themes [flow]">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-seo" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-seo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-seo/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-seo/src/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-seo/src/img/broken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-seo/src/img/broken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hexo-seo/src/img/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hexo-seo/src/img/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +26,7 @@
         <entry key="$PROJECT_DIR$" value="cors-proxy" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/packages/hexo" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -64,7 +69,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.22.6" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.36" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/hexo-seo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
