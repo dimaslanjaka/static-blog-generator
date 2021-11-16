@@ -2,9 +2,9 @@
 title: Hello World
 date: 2020-07-29 14:15:01
 tags:
-- "hello"
-- "test"
-- "world"
+  - "hello"
+  - "test"
+  - "world"
 subtitle: "The Deafult Hexo Blog"
 author:
   nick: Dimas Lanjaka
