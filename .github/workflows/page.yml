@@ -75,7 +75,7 @@ jobs:
           channelId: live
           projectId: android-008
 
-  test:
+  test-npm-package:
     name: Test Build With NPM Packages
     #needs: build
     runs-on: ${{ matrix.os }}
@@ -128,6 +128,77 @@ jobs:
         continue-on-error: true
         #run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
         run: npm i hexo-seo hexo-blogger-xml hexo-adsense
+
+      #### ONLY RUN BELOW RUNNER IF ABOVE INSTALLATIONS SUCCEEDED ####
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: cd themes/material && npm install
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: npx gulp article:copy
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: hexo generate
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        run: cd docs/page && npm install
+      - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
+        name: Userscripts
+        run: |
+          node userscripts/custom-domain.js
+          node userscripts/copy.js
+          node userscripts/after_generated.js
+          node userscripts/validate.js
+
+  test-git-package:
+    name: Test Build With GIT Packages
+    #needs: build
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true
+    strategy:
+      # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idstrategymax-parallel
+      max-parallel: 1
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [12.x, 13.x, 14.x]
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get Cache NPM dependencies
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ./node_modules
+            ./docs
+            ~/.npm
+          key: |
+            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-yarn-
+      - id: npm-install
+        continue-on-error: true
+        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm install
+      - name: install additional dependencies
+        id: npm-install-submodules
+        continue-on-error: true
+        run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
+        #run: npm i hexo-seo hexo-blogger-xml hexo-adsense
 
       #### ONLY RUN BELOW RUNNER IF ABOVE INSTALLATIONS SUCCEEDED ####
       - if: steps.npm-install.outcome == 'success' && steps.npm-install.conclusion == 'success'
