@@ -271,7 +271,7 @@ seo:
   js: true
   schema: true
   img:
-    default: /hexo-seo/img/no-image.png
+    default: /images/no-image.png
     onerror: serverside
   links:
     exclude:
