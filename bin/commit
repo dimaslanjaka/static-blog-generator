@@ -9,6 +9,11 @@ const minimist = require("minimist")(process.argv.slice(2));
 
 // commit -f=package.json "update dependencies"
 if (minimist._.length) {
+  const help = minimist.help || minimist.h || (minimist._.length == 1 && minimist._[0] == "help");
+  if (help) {
+    console.log({ cwd: process.cwd(), dependencies: [require.resolve("minimist")] });
+    return;
+  }
   let message = minimist._.length == 1 ? minimist._[0] : minimist._.join(" ");
   const filesToCommit = [];
   let argFiles = minimist.file || minimist.f;
@@ -43,7 +48,7 @@ if (minimist._.length) {
         }
       });
     });
-  } else {
+  } else if (message.trim().length > 0) {
     // if custom files empty, then add all files and commit them
     execute(`git add .`).then((err) => {
       if (!err) {
