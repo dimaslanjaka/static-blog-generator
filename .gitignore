@@ -12,5 +12,9 @@ exclude/
 docs/
 #package-lock.json
 firebase.js
+
+# remove dynamic idea objects
+.idea/vcs.xml
+.idea/workspace.xml
 **/.idea/vcs.xml
 **/.idea/workspace.xml
