@@ -24,9 +24,9 @@ npx hexo generate
 
 [![Build And Tests](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
-[<img src="https://img.shields.io/badge/webmanajemen.com-up-green"/>](https://dimaslanjaka.github.io)
-[![Website dimaslanjaka.github.io](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)
-[![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
+[![Website](https://img.shields.io/badge/webmanajemen.com-up-green)](https://dimaslanjaka.github.io)
+[![Website](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)
+[![Website](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
 
 ## hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg)](https://badge.fury.io/js/hexo-adsense)
