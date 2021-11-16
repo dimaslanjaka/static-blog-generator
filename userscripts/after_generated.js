@@ -19,5 +19,6 @@ let regex = /#uniqid\(\)/gm;
 let uuid = _.uniqueId();
 read = read.replaceAll(regex, uuid);
 fs.writeFileSync(quizjs, read);
+
 // copy readme to docs
 fs.copyFileSync(path.join(root, "README.md"), path.join(docs, "readme.md"));
