@@ -41,14 +41,13 @@ jobs:
             ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
-      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
+      #- run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - name: install additional dependencies
         run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
       - run: hexo generate
-      - name: Build
-        run: cd docs/page && npm install
+      - run: cd docs/page && npm install
       - name: Userscripts
         run: |
           node userscripts/custom-domain.js
