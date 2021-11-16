@@ -8,6 +8,11 @@ on:
     branches:
       - compiler # run when this branch pushed
 
+# cancel previous workflows, run only one workflow
+concurrency: 
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
