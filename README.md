@@ -20,4 +20,7 @@ npx gulp article:copy # safely using npx
 npx hexo generate
 ```
 
-# Powered By Hexo
+### Powered By Hexo
+
+[![Build www.webmanajemen.com](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
+<a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler" alt="github">Github <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20px" height="20px" /></a> [dimaslanjaka.github.io](https://dimaslanjaka.github.io)
