@@ -35,3 +35,7 @@ npx hexo generate
 ## hexo-seo
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo)](https://npmjs.com/package/hexo-seo)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-seo)](https://npmjs.com/package/hexo-seo)
+
+## hexo-blogger-xml
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-blogger-xml)](https://npmjs.com/package/hexo-blogger-xml)
