@@ -20,7 +20,18 @@ npx gulp article:copy # safely using npx
 npx hexo generate
 ```
 
-### Powered By Hexo
+# Hexo NodeJS Blogging System
 
 [![Build www.webmanajemen.com](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg?branch=compiler)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
-<a href="https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler" alt="github">Github <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20px" height="20px" /></a> [dimaslanjaka.github.io](https://dimaslanjaka.github.io)
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler)
+[<img src="https://img.shields.io/badge/webmanajemen.com-up-green"/>](https://dimaslanjaka.github.io)
+[![Website dimaslanjaka.github.io](https://img.shields.io/website-up-down-green-red/http/webmanajemen.com.svg)](https://webmanajemen.com)
+[![Website webmanajemen.com](https://img.shields.io/website-up-down-green-red/https/webmanajemen.com.svg)](https://webmanajemen.com/)
+
+## hexo-adsense
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense)](https://npmjs.com/package/hexo-adsense)
+
+## hexo-seo
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo)](https://npmjs.com/package/hexo-seo)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-seo)](https://npmjs.com/package/hexo-seo)
