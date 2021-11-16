@@ -4,7 +4,7 @@ const path = require("path");
 const root = path.join(__dirname, "/../");
 const docs = path.join(root, "docs");
 
-const tests = [path.join(docs, "index.html")];
+const tests = [path.join(docs, "index.html"), path.join(docs, "The Legend Of Neverland/Quiz.html")];
 tests.forEach(function (test) {
   if (fs.existsSync(test)) {
     const sizes_byte = fs.statSync(test).size;
