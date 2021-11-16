@@ -63,7 +63,7 @@ function gitPush(err, stdout, stderr) {
 
 //git commit -m $*
 
-function execute(command, cb) {
+function execute(command) {
   return new Promise(function (resolve, reject) {
     exec(command, { cwd: process.cwd() }, (err, stdout, stderr) => {
       if (err) return reject(err, stdout, stderr);
