@@ -77,7 +77,7 @@ jobs:
 
   test:
     name: Test Build With NPM Packages
-    needs: build
+    #needs: build
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
