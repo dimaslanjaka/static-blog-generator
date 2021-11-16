@@ -116,8 +116,10 @@ jobs:
             ${{ runner.os }}-yarn-
       - id: npm-install
         continue-on-error: true
-        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
+        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm install
       - name: install additional dependencies
+        id: npm-install-submodules
+        continue-on-error: true
         run: npm i git+https://github.com/dimaslanjaka/hexo-blogger-xml.git git+https://github.com/dimaslanjaka/hexo-seo.git git+https://github.com/dimaslanjaka/hexo-adsense.git
 
       #### ONLY RUN BELOW RUNNER IF ABOVE INSTALLATIONS SUCCEEDED ####
