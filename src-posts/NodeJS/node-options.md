@@ -51,3 +51,9 @@ for 64-bit non-android are:
 ```shell
 node --max-executable-size=192 --max-old-space-size=256 --max-semi-space-size=2 app.js
 ```
+These above codes would limit the heap totals to 225mb and 450mb respectively. It doesn't include memory usage outside JS. For instance buffers are allocated as "c memory" , not in the JavaScript heap.
+
+### Flags
+- `--max-executable-size` the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).
+- `--max-old-space-size` the maximum size of heap reserved for long term objects
+- `--max-semi-space-size` the maximum size of heap reserved for short term objects
