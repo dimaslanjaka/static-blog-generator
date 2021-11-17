@@ -271,9 +271,19 @@ seo:
   js: true
   schema: true
   img:
+    # fix broken images
+    broken: false
+    # default broken images
     default: https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg
+    # broken images methods
+    # serverside : process broken images from server side (caused javascript heap out of memory, if your post large and your device has insufficient memory)
+    # clientside : process broken image from client side browser with webjs
     onerror: serverside
+  # external links fix
   links:
+    # enable or false
+    enable: true
+    # allowed following links, otherwise nofollow others
     exclude:
       - webmanajemen.com
       - web-manajemen.blogspot.com
