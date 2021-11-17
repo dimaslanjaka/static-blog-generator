@@ -68,6 +68,7 @@ jobs:
           folder: docs # The folder the action should deploy.
 
       - name: Deploy to firebase
+        if: "contains(github.event.head_commit.message, 'firebase')"
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
