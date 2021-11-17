@@ -271,7 +271,7 @@ seo:
   js: true
   schema: true
   img:
-    default: /images/no-image.png
+    default: https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg
     onerror: serverside
   links:
     exclude:
