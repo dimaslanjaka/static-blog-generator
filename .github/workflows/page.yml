@@ -18,7 +18,7 @@ jobs:
     name: Build www.webmanajemen.com
     runs-on: ubuntu-latest
     env:
-      NODE_OPTIONS: "--max_old_space_size=8192 --expose-gc" #8192 4096
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
