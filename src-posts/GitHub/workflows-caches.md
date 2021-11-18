@@ -54,4 +54,8 @@ dengan konfigurasi diatas, command `npm install` akan sangat lebih cepat ketimba
 
 `build-${{ hashFiles('package-lock.json') }}` merupakan kunci untuk save, apabila dependencies atau packages berubah atau di update, maka kunci ini akan membuat cache baru otomatis sesuai dengan yang saat itu dikerjakan oleh workflow. Kunci tersebut akan membuat cache index baru misalnya seperti `build-d5ea0750`. Apabila kamu tidak memberikan kunci unik seperti `build-${{ hashFiles('package-lock.json') }}`, maka workflow tidak akan membuat cache baru melainkan mengambil cache yang lama dan akan terus mengulangi instalasi. Jadi perlu untuk memberikan kode unik di kunci save.
 
+**Metode Cache Menggunakan In-Memory Cache (In-Program)**
 
+Metode ini harus kamu tulis sendiri di dalam program-mu. Setiap bahasa pemrograman berbeda caranya. Berikut metode-metode yang bisa kamu buat di dalam program-mu.
+- [NodeJS node-cache](https://www.npmjs.com/package/node-cache)
+- [PHP Cache](http://www.php-cache.com/en/latest/)
