@@ -123,7 +123,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - id: npm-install
         continue-on-error: true
-        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && rm -rf node_modules && npm install
+        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - name: install additional dependencies
         id: npm-install-submodules
         continue-on-error: true
@@ -194,7 +194,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - id: npm-install
         continue-on-error: true
-        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm install
+        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm ci
       - name: install additional dependencies
         id: npm-install-submodules
         continue-on-error: true
