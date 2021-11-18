@@ -77,6 +77,7 @@ jobs:
           projectId: android-008
 
   test-npm-package:
+    if: ${{ false }} # disable
     name: Test Build With NPM Packages
     #needs: build
     runs-on: ${{ matrix.os }}
@@ -126,6 +127,7 @@ jobs:
           node userscripts/validate.js
 
   test-git-package:
+    if: ${{ false }} # disable
     name: Test Build With GIT Packages
     #needs: test-npm-package
     runs-on: ${{ matrix.os }}
