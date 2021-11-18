@@ -14,7 +14,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -36,14 +36,14 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 
 ## Gaya Snow Mountain F3
 ![](Crystals%20Fairy%20Exp/Gaya%20Snow%20Mountain%203F.png)
-  
+
   ## Skala Desert F2
   ![Scorpion's Revenge](https://user-images.githubusercontent.com/12471057/136436283-942699d6-be8d-4b55-9ebc-6641ca9884ac.png)
   *Scorpion's Revenge - Kill toxic desert scorpions*
-  
+
 ## Skala Desert F3
 ![](Crystals%20Fairy%20Exp/Skala%20Desert%203F.png)
-  
+
   ## Maple Grove F1
   ![Troublemaker](https://user-images.githubusercontent.com/12471057/136435907-f0b7241e-a0c0-4091-8c2c-f04358acbfcc.png)
   *Troublemaker - Defeat adult kappa*

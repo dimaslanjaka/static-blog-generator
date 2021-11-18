@@ -14,7 +14,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -26,11 +26,11 @@ related_posts:
 cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
 location: Indonesia
 ---
-  
+
   ### NPC's favorite musical instrument
-  
+
   > Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
-  
+
 | NPC Name | NPC Location | musical instrument |
 | -------- | ------------ | ------------------ |
 | Colin    | Sophila      | Flute              |
@@ -38,9 +38,9 @@ location: Indonesia
 | Guard    | Sophila      | Drum               |
 | Anna     |              | Violin             |
 | Freya    | Sophila      | Guitar             |
-  
+
 ### List Best Midi (Hold tap/Right click to copy)
-  
+
 | Title | Link |
 | ----------- | ----------- |
 | Deep purple - soldier of fortune | https://bitmidi.com/uploads/38563.mid |
@@ -63,9 +63,9 @@ location: Indonesia
 - https://freemidi.org/topmidi
 - https://sheet.host/
 - http://www.hamienet.com/
-  
+
 ### How to create music/song mp3 to midi
-  
+
 {% youtube tik3ZFwFsJA %}
 
 {% youtube kIXXv8oUqOc %}

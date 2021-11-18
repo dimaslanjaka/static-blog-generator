@@ -14,7 +14,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -102,7 +102,7 @@ location: Indonesia
     Add new quiz https://bit.ly/TLONQUIZADD<br />
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   </blockquote>
-  
+
   <div>
     <img src="https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png" alt="preview" />
     <img src="https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png" alt="Winner - MilimNava_s48" />

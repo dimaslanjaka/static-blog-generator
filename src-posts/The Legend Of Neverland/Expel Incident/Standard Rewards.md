@@ -14,7 +14,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -44,11 +44,11 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 *Grassland Busy Man*
 ![Lawless](https://user-images.githubusercontent.com/12471057/132125883-1c0ca56c-f32e-4b86-b0d3-d56876384cde.png)
 *Lawless*
-  
+
 ## Twilight Rainforest F2
 ![](./Standard%20Rewards/Twilight%20Rainforest%20F2.png)
 *Rat Crisis*
-  
+
   ## Fog Swamp F1
   ![Gory Plague](https://user-images.githubusercontent.com/12471057/136440610-bf123bea-e18a-4ff8-9de6-b735d2ddb3bf.png)
   *Gory Plague - Expel Vampiric Bats*

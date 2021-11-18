@@ -14,7 +14,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -27,7 +27,7 @@ location: Indonesia
 ---
 
 <!-- toc -->
-  
+
 <h2 id="Intro">Expel Incident The Legend Of NeverLand</h2>
 In the game The Legend Of Neverland, every day is given 6 kinds of Expel Incidents. Each incident has a reward variant. There are those who have Exp for more characters, more Exp for fairies and crystals, and standard rewards (balance rewards). The following is the Expel Incident with the most CHARACTER EXP.
 
@@ -63,7 +63,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
 ## Twilight Rainforest F3
 ![Lemuridae Chief](https://user-images.githubusercontent.com/12471057/132796579-01ac578a-c4d9-4c3f-8497-216e238ef8c3.png)
 *Lemuridae Chief*
-  
+
 ## Gaia Snow Mountain F1
   ![Winter Fashion](https://user-images.githubusercontent.com/12471057/133004330-3b54aef9-6bcf-4e9d-9dd6-da6b5672afb2.png)
   *Winter Fashion*
@@ -75,7 +75,7 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
   ## Gaia Snow Mountain F3
   ![Sparkling](https://user-images.githubusercontent.com/12471057/133228994-3f8d9ba4-b09a-46ee-b46d-5f680f728331.png)
   *Sparkling*
-  
+
 ## Fog Swamp F1
 ![Hurry-Curry](./Exp%20Char/Fog%20Swamp%20F1.png)
 *Hurry-Curry*
@@ -91,13 +91,13 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
   ## Maple Grove F3
   ![Organize Fruits](https://user-images.githubusercontent.com/12471057/136435134-713014a9-c3aa-446d-888f-4eab62ef85a9.png)
   *Organize and arrange - Organize Fruits*
-  
-  ## Morcuri Mines F1 
+
+  ## Morcuri Mines F1
   ![Missing Parts](https://user-images.githubusercontent.com/12471057/135747669-08d437bf-eeba-463f-b8cd-64403c3e8d0a.png)
   *Missing Parts - collect and submit parts*
 
   ## Morcuri Mines F2
   ![Mechanic](https://user-images.githubusercontent.com/12471057/133885294-5c64c56c-bb09-414f-a479-b300b0c7cb88.png)
   *Mechanic*
-  
+
 <style>em::before{content: "Gate Name : ";}</style>

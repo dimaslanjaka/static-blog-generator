@@ -15,7 +15,7 @@ tags:
 
 author:
   nick: "Dimas Lanjaka"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -27,7 +27,7 @@ comments: true
 cover: "/The Legend Of Neverland/Fishing/Studio_Project.jpeg"
 location: Indonesia
 ---
-  
+
 Fishing in the legend of neverland is an important activity to collect fish and then sell them and get 'water essences'. Water Essences are used to buy ingredients in the `cooking shop`. You can see the recipe at [Cooking Recipes](/The%20Legend%20Of%20Neverland/Recipes.html).
 You can cook buffs for your character or make dishes to increase the level of `Fairies` you have.
 This time you can auto-fish using `bluestacks` and `macros`.
@@ -50,18 +50,18 @@ This time you can auto-fish using `bluestacks` and `macros`.
       </script> minutes
     </span> <span>to finish 1 stamina bottle</span></li>
 </ul>
-  
+
   ## Configuration
   - First of all, make sure the position of the stamina bottle in your inventory/bag is in the second slot
     ![image](https://user-images.githubusercontent.com/12471057/133907462-bf07b4c7-10f2-46ce-ba61-076af0357232.png)
   - set `repeat actions` with the total stamina bottle you have, or my recommendation is to subtract a little from the total stamina bottle you have. for example you have 55 bottles, set just 50 repeat actions, this to prevent other items to be used unexpectedly/unintentionally.
     ![Setup total stamina bottles as repeat action](https://user-images.githubusercontent.com/12471057/133907408-c3505025-1e78-4353-bdc0-1c6e7672d742.png)
-  
+
   ## How to download script
   [Read Here](/The%20Legend%20Of%20Neverland/Macros.html)
-  
+
   ## Auto fishing script
   [Download Macros Auto Fishing](/The%20Legend%20Of%20Neverland/Macros/Auto%20Fishing%20%26%20Stamina.json)
-  
+
   ## How to import script ?
   [Read Here](/The%20Legend%20Of%20Neverland/Macros.html)

@@ -14,7 +14,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -50,8 +50,8 @@ location: Indonesia
   - And More
 
 ##### Switch Fairies Ability Preview
-{% youtube 9ZEqUD5piB4 %} 
-  
+{% youtube 9ZEqUD5piB4 %}
+
 <hr/>
 <center><b><a href="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg">Download Game Control</a></b></center>
 <hr/>

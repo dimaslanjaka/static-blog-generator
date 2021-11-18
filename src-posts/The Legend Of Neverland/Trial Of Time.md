@@ -15,7 +15,7 @@ tags:
 
 author:
   nick: "Maulinda Agustina"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Games
@@ -27,7 +27,7 @@ comments: false
 ---
 
   # Trial of time gate locations
-  
+
 ## Fog Swamp F2
 
 ![Fog Swamp F2](./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png)

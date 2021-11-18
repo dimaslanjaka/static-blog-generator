@@ -10,7 +10,7 @@ tags:
 
 author:
   nick: "Dimas Lanjaka"
-  link: "<Your Profile Link Here>"
+  link: "https://github.com/dimaslanjaka"
 
 category:
   - Regular Expression
