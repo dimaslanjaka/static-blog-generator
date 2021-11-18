@@ -90,9 +90,12 @@ jobs:
             ~/.npm
             ./node_modules
             ./vendor
-          key: ${{ runner.os }}-build # ini kunci menyimpan/save
+          key: ${{ runner.os }}-build-${{ hashFiles('package-lock.json') }} # ini kunci menyimpan/save
           restore-keys: ${{ runner.os }}-build # ini kunci restore
       - run: npm install # install project nodejs
 ```
 dengan konfigurasi diatas, command `npm install` akan sangat lebih cepat ketimbang tidak menggunakan cache. Yang biasanya menginstall biasa memerlukan waktu 10 menit, sekarang hanya butuh 2 menit saja untuk menyelesaikan-nya.
+
+`build-${{ hashFiles('package-lock.json') }}` merupakan kunci untuk save, apabila dependencies atau packages berubah atau di update, maka kunci ini akan membuat cache baru otomatis sesuai dengan yang saat itu dikerjakan oleh workflow. Kunci tersebut akan membuat cache index baru misalnya seperti `build-d5ea0750`. Apabila kamu tidak memberikan kunci unik seperti `build-${{ hashFiles('package-lock.json') }}`, maka workflow tidak akan membuat cache baru melainkan mengambil cache yang lama dan akan terus mengulangi instalasi. Jadi perlu untuk memberikan kode unik di kunci save.
+
 
