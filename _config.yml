@@ -266,7 +266,12 @@ analytics:
 
 # https://github.com/dimaslanjaka/hexo-seo
 seo:
-  html: true
+  html:
+    # fix html
+    fix: true
+    # exclude from minify
+    exclude:
+      - "*.min.{htm,html}"
   css: true
   js: true
   schema: true
