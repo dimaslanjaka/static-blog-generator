@@ -78,7 +78,7 @@ jobs:
 
   test-npm-package:
     name: Test Build With NPM Packages
-    needs: build
+    #needs: build
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
@@ -127,7 +127,7 @@ jobs:
 
   test-git-package:
     name: Test Build With GIT Packages
-    needs: test-npm-package
+    #needs: test-npm-package
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
