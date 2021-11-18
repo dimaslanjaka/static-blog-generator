@@ -44,8 +44,10 @@ jobs:
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ./node_modules
             ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-nodejs-
+      #- run: npm install
+        #if: steps.cache-packages.outputs.cache-hit != 'true'
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
       - run: npm install
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
