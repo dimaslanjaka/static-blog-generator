@@ -77,6 +77,7 @@ jobs:
           projectId: android-008
 
   test-npm-package:
+    if: ${{ false }} # disable
     name: Test Build With NPM Packages
     #needs: build
     runs-on: ${{ matrix.os }}
@@ -126,6 +127,7 @@ jobs:
           node userscripts/validate.js
 
   test-git-package:
+    #if: ${{ false }} # disable
     name: Test Build With GIT Packages
     #needs: test-npm-package
     runs-on: ${{ matrix.os }}
@@ -135,7 +137,7 @@ jobs:
       max-parallel: 3
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [12.x, 13.x, 14.x]
+        node-version: [12.x, 14.x]
     env:
       NODE_OPTIONS: "--max_old_space_size=8192" #8192
     steps:
