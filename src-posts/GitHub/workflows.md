@@ -55,16 +55,16 @@ jobs:
   NodeJS:
     runs-on: ubuntu-latest # OS yang akan kamu gunakan
     steps: # daftar urutan command line yang akan dijalankan
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "🎉 job otomatis berjalan saat dipicu oleh ${{ github.event_name }} event."
+      - run: echo "🐧 job ini berjalan pada sistem operasi ${{ runner.os }} server hosted dari GitHub!"
+      - run: echo "🔎 nama branch repository-mu adalah ${{ github.ref }} and repository-mu ialah ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2 # ini wajib ya, untuk memuat repository kamu ke dalam home os
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - run: echo "💡 The ${{ github.repository }} repository berhasil di duplikasi ke dalam os ${{ runner.os }}"
+      - run: echo "🖥️ Workflow ini sekarang sudah siap untuk melakukan rangkaian program yang ada pada repository ${{ github.repository }}#${{ github.ref }}"
+      - name: Daftar keseluruhan file di dalam repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 Job status ${{ job.status }}."
 
 ```
