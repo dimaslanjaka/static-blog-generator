@@ -114,7 +114,6 @@ jobs:
             ${{ steps.npm-cache-dir.outputs.dir }}
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ./node_modules
-            ./docs
             ~/.npm
           key: |
             ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -124,7 +123,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - id: npm-install
         continue-on-error: true
-        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && npm install
+        run: npm i -g npm hexo-cli gulp-cli typescript ts-node && rm -rf node_modules && npm install
       - name: install additional dependencies
         id: npm-install-submodules
         continue-on-error: true
