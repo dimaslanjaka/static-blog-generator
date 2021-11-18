@@ -66,5 +66,33 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 Job status ${{ job.status }}."
-
 ```
+
+## Mempercepat kinerja github workflow
+Satu-satunya cara untuk mempercepat kinerja github workflow (ci) adalah menggunakan metode `Cache Strategy`. Metode cache ini dapat beruba in-program function dan github action method, kamu juga dapat menggunakan keduanya untuk mepercepat kinerja Continous Integration di github workflow.
+
+**Metode Cache Menggunakan Package GitHub Workflow**
+
+cara ini menggunakan fungsi internal dari github workflow itu sendiri untuk menyimpan cache. Berikut contoh konfigurasi github workflow cache:
+```yaml
+name: CI NPM Menggunakan Cache
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 # ini wajib
+      - name: Metode Cache Dimulai
+        uses: actions/cache@v2 # ini nama packagenya
+        with:
+          # folder yang akan di cache ialah `~/.npm, ./node_modules, dan ./vendor folder
+          path: |
+            ~/.npm
+            ./node_modules
+            ./vendor
+          key: ${{ runner.os }}-build # ini kunci menyimpan/save
+          restore-keys: ${{ runner.os }}-build # ini kunci restore
+      - run: npm install # install project nodejs
+```
+dengan konfigurasi diatas, command `npm install` akan sangat lebih cepat ketimbang tidak menggunakan cache. Yang biasanya menginstall biasa memerlukan waktu 10 menit, sekarang hanya butuh 2 menit saja untuk menyelesaikan-nya.
+
