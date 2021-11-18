@@ -61,4 +61,4 @@ Metode ini harus kamu tulis sendiri di dalam program-mu. Setiap bahasa pemrogram
 - [PHP Cache](http://www.php-cache.com/en/latest/)
 
 
-Sekian artikel tentang metode cache github workflow. Artikel ini akan terus di update, jangan lupa di bookmark. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.
+Sekian artikel tentang metode cache github workflow. **Artikel ini akan terus di update**, **jangan lupa di bookmark**. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.
