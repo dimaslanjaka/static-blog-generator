@@ -79,12 +79,12 @@ jobs:
 
   test-npm-package:
     name: Test Build With NPM Packages
-    #needs: build
+    needs: build
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
       # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idstrategymax-parallel
-      max-parallel: 1
+      max-parallel: 3
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         node-version: [12.x, 13.x, 14.x]
@@ -149,12 +149,12 @@ jobs:
 
   test-git-package:
     name: Test Build With GIT Packages
-    #needs: build
+    needs: test-npm-package
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
       # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idstrategymax-parallel
-      max-parallel: 1
+      max-parallel: 3
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         node-version: [12.x, 13.x, 14.x]
