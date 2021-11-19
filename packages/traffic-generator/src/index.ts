@@ -1,5 +1,4 @@
-import { app, BrowserWindow, Menu, MenuItem, IpcMain } from "electron";
-import { lte } from "lodash";
+import { app, BrowserWindow, globalShortcut } from "electron";
 import path from "path";
 import contextMenu from "../../electron-browser/src/main/menu";
 import SOCKS5 from "./proxies/socks5";
@@ -14,12 +13,13 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, "scripts/preload.js"),
       nodeIntegration: true,
-      contextIsolation: false
-    }
+      contextIsolation: false,
+    },
   });
 
   win.once("ready-to-show", () => {
     win.show();
+    win.minimize();
   });
 
   /**
@@ -46,7 +46,8 @@ const createWindow = () => {
     loadURLP(proxy);
   }
 
-  loadURLP(proxy);
+  //loadURLP(proxy);
+  win.loadURL("file://" + __dirname + "/views/index.html");
 
   win.on("closed", function () {
     win = null;
@@ -61,36 +62,52 @@ const createWindow = () => {
 
   win.on("page-title-updated", () => {
     const title = win.getTitle();
-    console.log("title", title);
+    //console.log("title", title);
   });
 
   win.webContents.on("did-finish-load", function () {
     const title = win.getTitle();
     if (title.toLowerCase().startsWith("attention required!")) {
-      restartProxy();
+      //restartProxy();
     }
-    console.log(win.getTitle());
+    //console.log(win.getTitle());
   });
 
   /* Set did-fail-load listener once, load default view */
-  win.webContents.on(
-    "did-fail-load",
-    function (event, errorCode, errorDescription) {
-      //console.log("did-fail-load", errorCode);
+  win.webContents.on("did-fail-load", function (event, errorCode, errorDescription) {
+    //console.log("did-fail-load", errorCode);
+    //restartProxy();
+  });
 
-      restartProxy();
-      win.loadURL("file://" + __dirname + "/views/index.html");
-    }
-  );
+  return win;
 };
 
+// inject custom context menu
 contextMenu();
 
 app.whenReady().then(() => {
-  createWindow();
+  let mainWindow: Electron.BrowserWindow; // = createWindow();
+
+  globalShortcut.register("Alt+CommandOrControl+L", () => {
+    //mainWindow.webContents.send("show-server-log");
+  });
+  globalShortcut.register("f5", function () {
+    //console.log("f5 is pressed");
+    mainWindow.reload();
+  });
+  globalShortcut.register("CommandOrControl+R", function () {
+    //console.log("CommandOrControl+R is pressed");
+    mainWindow.reload();
+  });
 
   app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    const totalWindows = BrowserWindow.getAllWindows().length;
+    console.log("total", totalWindows);
+    // if browser window empty
+    if (totalWindows === 0) {
+      if (mainWindow.closable) mainWindow.close();
+      mainWindow = createWindow();
+    }
   });
 });
 app.on("window-all-closed", () => {

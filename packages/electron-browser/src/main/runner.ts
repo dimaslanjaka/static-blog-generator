@@ -10,7 +10,7 @@ let mainWindow: Electron.BrowserWindow;
   const index = new helper();
   index.start().then((app) => {
     mainWindow = createWindow();
-    mainWindow.maximize();
+    //mainWindow.maximize();
     /*getHtml(mainWindow, function (html) {
       fs.writeFileSync(path.join(__dirname, "/../build/generatedHTML/index.html"), html);
     });*/

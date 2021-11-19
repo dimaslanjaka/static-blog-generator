@@ -15,10 +15,12 @@ process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 const isDev = process.env.ENV ? process.env.ENV.trim() == "true" : false;
 //console.log(process.env.ENV, isDev);
 
+const root = path.join(__dirname,"/../../");
+
 export default function (
   options: MainWindowOpt = {
     //loadUrl: "http://127.0.0.1:" + port,
-    icon: fs.realpathSync(__dirname + "/../Assets/Images/icon32.png"),
+    icon: fs.realpathSync(root + "/Assets/Images/icon32.png"),
   }
 ) {
   let mainWindow = new BrowserWindow({
@@ -46,7 +48,7 @@ export default function (
   if (options.hasOwnProperty("loadUrl")) {
     mainWindow.loadURL(options.loadUrl).then((r) => console.info(r));
   } else {
-    mainWindow.loadFile(__dirname + "/../Renderer/main.html"); //.then((r) => console.info(r));
+    mainWindow.loadFile(root + "/Renderer/main.html"); //.then((r) => console.info(r));
   }
   if (isDev) {
     mainWindow.webContents.openDevTools({ mode: "detach" });

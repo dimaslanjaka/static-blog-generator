@@ -1,5 +1,2 @@
-import index from "./main/index";
-
-index().then(function (app) {
-  console.log(app);
-});
+//import index from "./main/index";
+export { default as helper } from "./main/index";
