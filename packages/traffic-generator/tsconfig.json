@@ -53,6 +53,6 @@
     "**/build/**"
   ],
   "include": [
-    "./src/**/*"
+    "./src/index.ts"
   ]
 }
