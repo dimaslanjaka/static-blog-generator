@@ -7,13 +7,18 @@ const createWindow = () => {
   let win = new BrowserWindow({
     width: 800,
     height: 600,
-    center: true,
     show: false,
+    center: true,
+    frame: false,
     title: "Traffic Automator <dimaslanjaka@gmail.com>",
     webPreferences: {
       preload: path.join(__dirname, "scripts/preload.js"),
       nodeIntegration: true,
+      enableRemoteModule: true,
       contextIsolation: false,
+      spellcheck: true,
+      webviewTag: true,
+      webSecurity: false,
     },
   });
 
@@ -31,7 +36,7 @@ const createWindow = () => {
     win.webContents.session
       .setProxy({ proxyRules: prx })
       .then(() => {
-        win.loadURL("https://whatismyipaddress.com/");
+        win.loadURL("https://www.webmanajemen.com/page/bot-detect");
       })
       .catch((err) => {});
   }
@@ -86,7 +91,7 @@ const createWindow = () => {
 contextMenu();
 
 app.whenReady().then(() => {
-  let mainWindow: Electron.BrowserWindow; // = createWindow();
+  let mainWindow: Electron.BrowserWindow = createWindow();
 
   globalShortcut.register("Alt+CommandOrControl+L", () => {
     //mainWindow.webContents.send("show-server-log");
@@ -102,7 +107,7 @@ app.whenReady().then(() => {
 
   app.on("activate", () => {
     const totalWindows = BrowserWindow.getAllWindows().length;
-    console.log("total", totalWindows);
+    console.log("total windows", totalWindows);
     // if browser window empty
     if (totalWindows === 0) {
       if (mainWindow.closable) mainWindow.close();

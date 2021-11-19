@@ -1,24 +1,41 @@
 import gulp from "gulp";
 import { exec } from "child_process";
+import minimatch from "minimatch";
+import moment from "moment";
+import { memoize } from "underscore";
 
 // copy non ts files
-gulp.task("copy-non-ts", function () {
-  return gulp
-    .src(["./src/**/*.*", "!./src/**/*.{ts,json}"])
-    .pipe(gulp.dest("./dist/traffic-generator/src"));
-});
+const copyNonTsFiles = function () {
+  return gulp.src(["./src/**/*.*", "!./src/**/*.{ts,json}"]).pipe(gulp.dest("./dist/traffic-generator/src"));
+};
+gulp.task("copy-non-ts", copyNonTsFiles);
 
 // delete dist and compile typescript
-gulp.task("tsc", function (cb) {
-  exec("tsc", function (err, stdout, stderr) {
+const tsc = function (cb?) {
+  return exec("tsc", function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
-    cb(err);
+    if (typeof cb === "function") cb(err);
   });
-});
+};
+gulp.task("tsc", tsc);
 
 gulp.task("watch", function () {
-  return gulp.watch(["./src/**/*"], gulp.series("tsc", "copy-non-ts"));
+  const watcher = gulp.watch(["./src/**/*"]);
+  watcher.on("change", function (filePath, stats) {
+    //console.log(path, stats);
+    const isTs = memoize((filePath: string) => {
+      return minimatch(filePath, "*.{ts,js,json}", { nocase: true, matchBase: true });
+    });
+    if (isTs(filePath)) {
+      console.log("compiling typescript..");
+      return tsc();
+    } else {
+      console.log("copying non-typescript file..");
+      return copyNonTsFiles();
+    }
+  });
+  return watcher;
 });
 
 gulp.task("default", gulp.series("tsc", "copy-non-ts"));

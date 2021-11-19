@@ -43,10 +43,11 @@
   "buildOnSave": true,
   "compileOnSave": true,
   "exclude": [
-    "./node_modules/**/*",
-    "./build/**/*"
+    "**/node_modules/**",
+    "**/build/**"
   ],
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "../traffic-generator/src/context-menu"
   ]
 }

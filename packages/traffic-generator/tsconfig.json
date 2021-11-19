@@ -48,8 +48,9 @@
   "buildOnSave": true,
   "compileOnSave": true,
   "exclude": [
-    "./node_modules/**/*",
-    "./dist/**/*"
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**"
   ],
   "include": [
     "./src/**/*"

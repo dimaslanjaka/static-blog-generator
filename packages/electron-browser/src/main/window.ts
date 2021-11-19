@@ -15,7 +15,7 @@ process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 const isDev = process.env.ENV ? process.env.ENV.trim() == "true" : false;
 //console.log(process.env.ENV, isDev);
 
-const root = path.join(__dirname,"/../../");
+const root = path.join(__dirname, "/../../");
 
 export default function (
   options: MainWindowOpt = {
