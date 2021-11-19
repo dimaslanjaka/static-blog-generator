@@ -19,16 +19,13 @@ const prepare = (config: PrepareConfig) => {
   /**
    * Custom menu
    */
-  let customMenu = false;
   if (config.hasOwnProperty("customMenu")) {
     if (typeof config.customMenu == "function") {
       config.customMenu();
-      customMenu = true;
+    } else {
+      // initialize default context menu
+      contextMenu();
     }
-  }
-  if (!customMenu) {
-    // initialize context menu
-    contextMenu();
   }
 
   // bind process killer

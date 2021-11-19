@@ -4,11 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set ENV=true && set ELECTRON_DISABLE_SECURITY_WARNINGS=true && npx electron ."
+    "start": "set ELECTRON_DISABLE_SECURITY_WARNINGS=true && electron --trace-warnings index.js",
+    "dev": "rm -rf dist && tsc --watch"
   },
   "author": "Dimas Lanjaka",
   "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "electron": "16.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "gulp": "^4.0.2",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  },
   "dependencies": {
-    "electron-browser": "file:../electron-browser"
+    "electron-context-menu": "^3.1.1"
   }
 }

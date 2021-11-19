@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "..\\electron-browser"
+			"path": "../electron-browser"
 		}
 	],
 	"settings": {}

@@ -4,7 +4,7 @@ import { BrowserWindow, shell } from "electron";
 export default function () {
   //console.log("context menu show");
   return contextMenu({
-    prepend: (defaultActions, parameters, browserWindow) => [
+    prepend: (_defaultActions, parameters, _browserWindow) => [
       {
         label: "Rainbow",
         // Only show it when right-clicking images
@@ -39,7 +39,6 @@ export default function () {
           }
 
           const win = new BrowserWindow(settings);
-
           win.loadFile("views/settings.html").then((r) => console.log(r));
         },
       },
