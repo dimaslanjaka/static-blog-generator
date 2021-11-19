@@ -4,9 +4,9 @@
 
 const fs = require("fs");
 const path = require("path");
-///require("./menu");
+const is = require("./is");
 
-onload = () => {
+window.onload = () => {
   /**
    * @typedef {Element|import('electron').webviewTag}
    * @type {Element|import('electron').webviewTag}
@@ -77,9 +77,9 @@ onload = () => {
 
   // listen url address enter
   addrBar.addEventListener("keydown", function (event) {
-    const val = this.value;
-    if (event.key === "Enter") {
-      console.log(val);
+    const addrBarValue = this.value;
+    if (event.key == "Enter") {
+      webview.loadURL(addrBarValue);
     }
   });
 

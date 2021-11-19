@@ -17,181 +17,6 @@ const decorateMenuItem = (menuItem) => {
     return menuItem;
   };
 };
-const defaultActions = {
-  separator: () => ({ type: "separator" }),
-  learnSpelling: decorateMenuItem({
-    id: "learnSpelling",
-    label: "&Learn Spelling",
-    visible: Boolean(props.isEditable && hasText && props.misspelledWord),
-    click() {
-      const target = webContents(win);
-      target.session.addWordToSpellCheckerDictionary(props.misspelledWord);
-    }
-  }),
-  lookUpSelection: decorateMenuItem({
-    id: "lookUpSelection",
-    label: "Look Up “{selection}”",
-    visible: process.platform === "darwin" && hasText && !isLink,
-    click() {
-      if (process.platform === "darwin") {
-        webContents(win).showDefinitionForSelection();
-      }
-    }
-  }),
-  searchWithGoogle: decorateMenuItem({
-    id: "searchWithGoogle",
-    label: "&Search with Google",
-    visible: hasText,
-    click() {
-      const url = new URL("https://www.google.com/search");
-      url.searchParams.set("q", props.selectionText);
-      electron.shell.openExternal(url.toString());
-    }
-  }),
-  cut: decorateMenuItem({
-    id: "cut",
-    label: "Cu&t",
-    enabled: can("Cut"),
-    visible: props.isEditable,
-    click(menuItem) {
-      const target = webContents(win);
-
-      if (!menuItem.transform && target) {
-        target.cut();
-      } else {
-        props.selectionText = menuItem.transform
-          ? menuItem.transform(props.selectionText)
-          : props.selectionText;
-        electron.clipboard.writeText(props.selectionText);
-      }
-    }
-  }),
-  copy: decorateMenuItem({
-    id: "copy",
-    label: "&Copy",
-    enabled: can("Copy"),
-    visible: props.isEditable || hasText,
-    click(menuItem) {
-      const target = webContents(win);
-
-      if (!menuItem.transform && target) {
-        target.copy();
-      } else {
-        props.selectionText = menuItem.transform
-          ? menuItem.transform(props.selectionText)
-          : props.selectionText;
-        electron.clipboard.writeText(props.selectionText);
-      }
-    }
-  }),
-  paste: decorateMenuItem({
-    id: "paste",
-    label: "&Paste",
-    enabled: editFlags.canPaste,
-    visible: props.isEditable,
-    click(menuItem) {
-      const target = webContents(win);
-
-      if (menuItem.transform) {
-        let clipboardContent = electron.clipboard.readText(props.selectionText);
-        clipboardContent = menuItem.transform
-          ? menuItem.transform(clipboardContent)
-          : clipboardContent;
-        target.insertText(clipboardContent);
-      } else {
-        target.paste();
-      }
-    }
-  }),
-  saveImage: decorateMenuItem({
-    id: "saveImage",
-    label: "Save I&mage",
-    visible: props.mediaType === "image",
-    click(menuItem) {
-      props.srcURL = menuItem.transform
-        ? menuItem.transform(props.srcURL)
-        : props.srcURL;
-      download(win, props.srcURL);
-    }
-  }),
-  saveImageAs: decorateMenuItem({
-    id: "saveImageAs",
-    label: "Sa&ve Image As…",
-    visible: props.mediaType === "image",
-    click(menuItem) {
-      props.srcURL = menuItem.transform
-        ? menuItem.transform(props.srcURL)
-        : props.srcURL;
-      download(win, props.srcURL, { saveAs: true });
-    }
-  }),
-  copyLink: decorateMenuItem({
-    id: "copyLink",
-    label: "Copy Lin&k",
-    visible: props.linkURL.length > 0 && props.mediaType === "none",
-    click(menuItem) {
-      props.linkURL = menuItem.transform
-        ? menuItem.transform(props.linkURL)
-        : props.linkURL;
-
-      electron.clipboard.write({
-        bookmark: props.linkText,
-        text: props.linkURL
-      });
-    }
-  }),
-  saveLinkAs: decorateMenuItem({
-    id: "saveLinkAs",
-    label: "Save Link As…",
-    visible: props.linkURL.length > 0 && props.mediaType === "none",
-    click(menuItem) {
-      props.linkURL = menuItem.transform
-        ? menuItem.transform(props.linkURL)
-        : props.linkURL;
-      download(win, props.linkURL, { saveAs: true });
-    }
-  }),
-  copyImage: decorateMenuItem({
-    id: "copyImage",
-    label: "Cop&y Image",
-    visible: props.mediaType === "image",
-    click() {
-      webContents(win).copyImageAt(props.x, props.y);
-    }
-  }),
-  copyImageAddress: decorateMenuItem({
-    id: "copyImageAddress",
-    label: "C&opy Image Address",
-    visible: props.mediaType === "image",
-    click(menuItem) {
-      props.srcURL = menuItem.transform
-        ? menuItem.transform(props.srcURL)
-        : props.srcURL;
-
-      electron.clipboard.write({
-        bookmark: props.srcURL,
-        text: props.srcURL
-      });
-    }
-  }),
-  inspect: () => ({
-    id: "inspect",
-    label: "I&nspect Element",
-    click() {
-      win.inspectElement(props.x, props.y);
-
-      if (webContents(win).isDevToolsOpened()) {
-        webContents(win).devToolsWebContents.focus();
-      }
-    }
-  }),
-  services: () => ({
-    id: "services",
-    label: "Services",
-    role: "services",
-    visible: process.platform === "darwin" && (props.isEditable || hasText)
-  })
-};
 
 const removeUnusedMenuItems = (menuTemplate) => {
   let notDeletedPreviousElement;
@@ -230,6 +55,184 @@ const create = (win, options) => {
     const hasText = props.selectionText.trim().length > 0;
     const isLink = Boolean(props.linkURL);
     const can = (type) => editFlags[`can${type}`] && hasText;
+
+    const defaultActions = {
+      separator: () => ({ type: "separator" }),
+      learnSpelling: decorateMenuItem({
+        id: "learnSpelling",
+        label: "&Learn Spelling",
+        visible: Boolean(props.isEditable && hasText && props.misspelledWord),
+        click() {
+          const target = webContents(win);
+          target.session.addWordToSpellCheckerDictionary(props.misspelledWord);
+        }
+      }),
+      lookUpSelection: decorateMenuItem({
+        id: "lookUpSelection",
+        label: "Look Up “{selection}”",
+        visible: process.platform === "darwin" && hasText && !isLink,
+        click() {
+          if (process.platform === "darwin") {
+            webContents(win).showDefinitionForSelection();
+          }
+        }
+      }),
+      searchWithGoogle: decorateMenuItem({
+        id: "searchWithGoogle",
+        label: "&Search with Google",
+        visible: hasText,
+        click() {
+          const url = new URL("https://www.google.com/search");
+          url.searchParams.set("q", props.selectionText);
+          electron.shell.openExternal(url.toString());
+        }
+      }),
+      cut: decorateMenuItem({
+        id: "cut",
+        label: "Cu&t",
+        enabled: can("Cut"),
+        visible: props.isEditable,
+        click(menuItem) {
+          const target = webContents(win);
+
+          if (!menuItem.transform && target) {
+            target.cut();
+          } else {
+            props.selectionText = menuItem.transform
+              ? menuItem.transform(props.selectionText)
+              : props.selectionText;
+            electron.clipboard.writeText(props.selectionText);
+          }
+        }
+      }),
+      copy: decorateMenuItem({
+        id: "copy",
+        label: "&Copy",
+        enabled: can("Copy"),
+        visible: props.isEditable || hasText,
+        click(menuItem) {
+          const target = webContents(win);
+
+          if (!menuItem.transform && target) {
+            target.copy();
+          } else {
+            props.selectionText = menuItem.transform
+              ? menuItem.transform(props.selectionText)
+              : props.selectionText;
+            electron.clipboard.writeText(props.selectionText);
+          }
+        }
+      }),
+      paste: decorateMenuItem({
+        id: "paste",
+        label: "&Paste",
+        enabled: editFlags.canPaste,
+        visible: props.isEditable,
+        click(menuItem) {
+          const target = webContents(win);
+
+          if (menuItem.transform) {
+            let clipboardContent = electron.clipboard.readText(
+              props.selectionText
+            );
+            clipboardContent = menuItem.transform
+              ? menuItem.transform(clipboardContent)
+              : clipboardContent;
+            target.insertText(clipboardContent);
+          } else {
+            target.paste();
+          }
+        }
+      }),
+      saveImage: decorateMenuItem({
+        id: "saveImage",
+        label: "Save I&mage",
+        visible: props.mediaType === "image",
+        click(menuItem) {
+          props.srcURL = menuItem.transform
+            ? menuItem.transform(props.srcURL)
+            : props.srcURL;
+          download(win, props.srcURL);
+        }
+      }),
+      saveImageAs: decorateMenuItem({
+        id: "saveImageAs",
+        label: "Sa&ve Image As…",
+        visible: props.mediaType === "image",
+        click(menuItem) {
+          props.srcURL = menuItem.transform
+            ? menuItem.transform(props.srcURL)
+            : props.srcURL;
+          download(win, props.srcURL, { saveAs: true });
+        }
+      }),
+      copyLink: decorateMenuItem({
+        id: "copyLink",
+        label: "Copy Lin&k",
+        visible: props.linkURL.length > 0 && props.mediaType === "none",
+        click(menuItem) {
+          props.linkURL = menuItem.transform
+            ? menuItem.transform(props.linkURL)
+            : props.linkURL;
+
+          electron.clipboard.write({
+            bookmark: props.linkText,
+            text: props.linkURL
+          });
+        }
+      }),
+      saveLinkAs: decorateMenuItem({
+        id: "saveLinkAs",
+        label: "Save Link As…",
+        visible: props.linkURL.length > 0 && props.mediaType === "none",
+        click(menuItem) {
+          props.linkURL = menuItem.transform
+            ? menuItem.transform(props.linkURL)
+            : props.linkURL;
+          download(win, props.linkURL, { saveAs: true });
+        }
+      }),
+      copyImage: decorateMenuItem({
+        id: "copyImage",
+        label: "Cop&y Image",
+        visible: props.mediaType === "image",
+        click() {
+          webContents(win).copyImageAt(props.x, props.y);
+        }
+      }),
+      copyImageAddress: decorateMenuItem({
+        id: "copyImageAddress",
+        label: "C&opy Image Address",
+        visible: props.mediaType === "image",
+        click(menuItem) {
+          props.srcURL = menuItem.transform
+            ? menuItem.transform(props.srcURL)
+            : props.srcURL;
+
+          electron.clipboard.write({
+            bookmark: props.srcURL,
+            text: props.srcURL
+          });
+        }
+      }),
+      inspect: () => ({
+        id: "inspect",
+        label: "I&nspect Element",
+        click() {
+          win.inspectElement(props.x, props.y);
+
+          if (webContents(win).isDevToolsOpened()) {
+            webContents(win).devToolsWebContents.focus();
+          }
+        }
+      }),
+      services: () => ({
+        id: "services",
+        label: "Services",
+        role: "services",
+        visible: process.platform === "darwin" && (props.isEditable || hasText)
+      })
+    };
 
     const shouldShowInspectElement =
       typeof options.showInspectElement === "boolean"
@@ -363,7 +366,7 @@ const create = (win, options) => {
   };
 };
 
-const defaultFunction = (options = {}) => {
+module.exports = (options = {}) => {
   if (process.type === "renderer") {
     throw new Error(
       "Cannot use electron-context-menu in the renderer process!"
@@ -445,9 +448,4 @@ const defaultFunction = (options = {}) => {
   });
 
   return dispose;
-};
-
-module.exports = {
-  defaultActions,
-  default: defaultFunction
 };
