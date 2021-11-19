@@ -21,5 +21,6 @@
   },
   "editor.formatOnSave": true,
   "javascript.suggestionActions.enabled": false,
-  "typescript.suggestionActions.enabled": false
+  "typescript.suggestionActions.enabled": false,
+  "git.detectSubmodules": false
 }

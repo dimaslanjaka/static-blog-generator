@@ -6,7 +6,9 @@ import { memoize } from "underscore";
 
 // copy non ts files
 const copyNonTsFiles = function () {
-  return gulp.src(["./src/**/*.*", "!./src/**/*.{ts,json}"]).pipe(gulp.dest("./dist/traffic-generator/src"));
+  return gulp
+    .src(["./src/**/*.*", "!./src/**/*.{ts,json}"])
+    .pipe(gulp.dest("./dist/traffic-generator/src"));
 };
 gulp.task("copy-non-ts", copyNonTsFiles);
 
@@ -19,9 +21,12 @@ const tsc = function (cb?) {
   });
 };
 gulp.task("tsc", tsc);
-
 gulp.task("watch", function () {
-  const watcher = gulp.watch(["./src/**/*"]);
+  return gulp.watch(["./src/**/*"], gulp.series("tsc", "copy-non-ts"));
+});
+
+/*gulp.task("watch", function () {
+
   watcher.on("change", function (filePath, stats) {
     //console.log(path, stats);
     const isTs = memoize((filePath: string) => {
@@ -36,6 +41,6 @@ gulp.task("watch", function () {
     }
   });
   return watcher;
-});
+*/
 
 gulp.task("default", gulp.series("tsc", "copy-non-ts"));

@@ -1,208 +1,218 @@
 import {
-	BrowserWindow,
-	BrowserView,
-	WebviewTag,
-	ContextMenuParams,
-	MenuItemConstructorOptions,
-	Event as ElectronEvent,
-	WebContents
-} from 'electron';
+  BrowserWindow,
+  BrowserView,
+  WebviewTag,
+  ContextMenuParams,
+  MenuItemConstructorOptions,
+  Event as ElectronEvent,
+  WebContents
+} from "electron";
 
 declare namespace contextMenu {
-	interface Labels {
-		/**
+  interface Labels {
+    /**
 		@default 'Learn Spelling'
 		*/
-		readonly learnSpelling?: string;
+    readonly learnSpelling?: string;
 
-		/**
+    /**
 		The placeholder `{selection}` will be replaced by the currently selected text.
 		@default 'Look Up “{selection}”'
 		*/
-		readonly lookUpSelection?: string;
+    readonly lookUpSelection?: string;
 
-		/**
+    /**
 		@default 'Search with Google'
 		*/
-		readonly searchWithGoogle?: string;
+    readonly searchWithGoogle?: string;
 
-		/**
+    /**
 		@default 'Cut'
 		*/
-		readonly cut?: string;
+    readonly cut?: string;
 
-		/**
+    /**
 		@default 'Copy'
 		*/
-		readonly copy?: string;
+    readonly copy?: string;
 
-		/**
+    /**
 		@default 'Paste'
 		*/
-		readonly paste?: string;
+    readonly paste?: string;
 
-		/**
+    /**
 		@default 'Save Image'
 		*/
-		readonly saveImage?: string;
+    readonly saveImage?: string;
 
-		/**
+    /**
 		@default 'Save Image As…'
 		*/
-		readonly saveImageAs?: string;
+    readonly saveImageAs?: string;
 
-		/**
+    /**
 		@default 'Copy Link'
 		*/
-		readonly copyLink?: string;
+    readonly copyLink?: string;
 
-		/**
+    /**
 		@default 'Save Link As…'
 		*/
-		readonly saveLinkAs?: string;
+    readonly saveLinkAs?: string;
 
-		/**
+    /**
 		@default 'Copy Image'
 		*/
-		readonly copyImage?: string;
+    readonly copyImage?: string;
 
-		/**
+    /**
 		@default 'Copy Image Address'
 		*/
-		readonly copyImageAddress?: string;
+    readonly copyImageAddress?: string;
 
-		/**
+    /**
 		@default 'Inspect Element'
 		*/
-		readonly inspect?: string;
+    readonly inspect?: string;
 
-		/**
+    /**
 		@default 'Services'
 		*/
-		readonly services?: string;
-	}
+    readonly services?: string;
+  }
 
-	interface ActionOptions {
-		/**
+  interface ActionOptions {
+    /**
 		Apply a transformation to the content of the action.
 
 		If you use this on `cut`, `copy`, or `paste`, they will convert rich text to plain text.
 		*/
-		readonly transform?: (content: string) => string;
-	}
+    readonly transform?: (content: string) => string;
+  }
 
-	interface Actions {
-		readonly separator: () => MenuItemConstructorOptions;
-		readonly learnSpelling: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly lookUpSelection: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly searchWithGoogle: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly cut: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly copy: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly paste: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly saveImage: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly saveImageAs: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly copyLink: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly copyImage: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly copyImageAddress: (options: ActionOptions) => MenuItemConstructorOptions;
-		readonly inspect: () => MenuItemConstructorOptions;
-		readonly services: () => MenuItemConstructorOptions;
-	}
+  interface Actions {
+    readonly separator: () => MenuItemConstructorOptions;
+    readonly learnSpelling: (
+      options: ActionOptions
+    ) => MenuItemConstructorOptions;
+    readonly lookUpSelection: (
+      options: ActionOptions
+    ) => MenuItemConstructorOptions;
+    readonly searchWithGoogle: (
+      options: ActionOptions
+    ) => MenuItemConstructorOptions;
+    readonly cut: (options: ActionOptions) => MenuItemConstructorOptions;
+    readonly copy: (options: ActionOptions) => MenuItemConstructorOptions;
+    readonly paste: (options: ActionOptions) => MenuItemConstructorOptions;
+    readonly saveImage: (options: ActionOptions) => MenuItemConstructorOptions;
+    readonly saveImageAs: (
+      options: ActionOptions
+    ) => MenuItemConstructorOptions;
+    readonly copyLink: (options: ActionOptions) => MenuItemConstructorOptions;
+    readonly copyImage: (options: ActionOptions) => MenuItemConstructorOptions;
+    readonly copyImageAddress: (
+      options: ActionOptions
+    ) => MenuItemConstructorOptions;
+    readonly inspect: () => MenuItemConstructorOptions;
+    readonly services: () => MenuItemConstructorOptions;
+  }
 
-	interface Options {
-		/**
+  interface Options {
+    /**
 		Window or WebView to add the context menu to.
 		When not specified, the context menu will be added to all existing and new windows.
 		*/
-		readonly window?: BrowserWindow | BrowserView | WebviewTag | WebContents;
+    readonly window?: BrowserWindow | BrowserView | WebviewTag | WebContents;
 
-		/**
+    /**
 		Should return an array of [menu items](https://electronjs.org/docs/api/menu-item) to be prepended to the context menu.
 
 		`MenuItem` labels may contain the placeholder `{selection}` which will be replaced by the currently selected text as described in `options.labels`.
 		*/
-		readonly prepend?: (
-			defaultActions: Actions,
-			parameters: ContextMenuParams,
-			browserWindow: BrowserWindow | BrowserView | WebviewTag | WebContents,
-			event: ElectronEvent
-		) => MenuItemConstructorOptions[];
+    readonly prepend?: (
+      defaultActions: Actions,
+      parameters: ContextMenuParams,
+      browserWindow: BrowserWindow | BrowserView | WebviewTag | WebContents,
+      event: ElectronEvent
+    ) => MenuItemConstructorOptions[];
 
-		/**
+    /**
 		Should return an array of [menu items](https://electronjs.org/docs/api/menu-item) to be appended to the context menu.
 
 		`MenuItem` labels may contain the placeholder `{selection}` which will be replaced by the currently selected text as described in `options.labels`.
 		*/
-		readonly append?: (
-			defaultActions: Actions,
-			parameters: ContextMenuParams,
-			browserWindow: BrowserWindow | BrowserView | WebviewTag | WebContents,
-			event: ElectronEvent
-		) => MenuItemConstructorOptions[];
+    readonly append?: (
+      defaultActions: Actions,
+      parameters: ContextMenuParams,
+      browserWindow: BrowserWindow | BrowserView | WebviewTag | WebContents,
+      event: ElectronEvent
+    ) => MenuItemConstructorOptions[];
 
-		/**
+    /**
 		Show the `Look Up {selection}` menu item when right-clicking text on macOS.
 
 		@default true
 		*/
-		readonly showLookUpSelection?: boolean;
+    readonly showLookUpSelection?: boolean;
 
-		/**
+    /**
 		Show the `Search with Google` menu item when right-clicking text on macOS.
 
 		@default true
 		*/
-		readonly showSearchWithGoogle?: boolean;
+    readonly showSearchWithGoogle?: boolean;
 
-		/**
+    /**
 		Show the `Copy Image` menu item when right-clicking on an image.
 
 		@default true
 		*/
-		readonly showCopyImage?: boolean;
+    readonly showCopyImage?: boolean;
 
-		/**
+    /**
 		Show the `Copy Image Address` menu item when right-clicking on an image.
 
 		@default false
 		*/
-		readonly showCopyImageAddress?: boolean;
+    readonly showCopyImageAddress?: boolean;
 
-		/**
+    /**
 		Show the `Save Image` menu item when right-clicking on an image.
 
 		@default false
 		 */
-		readonly showSaveImage?: boolean;
+    readonly showSaveImage?: boolean;
 
-		/**
+    /**
 		Show the `Save Image As…` menu item when right-clicking on an image.
 
 		@default false
 		*/
-		readonly showSaveImageAs?: boolean;
+    readonly showSaveImageAs?: boolean;
 
-		/**
+    /**
 		Show the `Save Link As…` menu item when right-clicking on a link.
 
 		@default false
 		*/
-		readonly showSaveLinkAs?: boolean;
+    readonly showSaveLinkAs?: boolean;
 
-		/**
+    /**
 		Force enable or disable the `Inspect Element` menu item.
 
 		Default: [Only in development](https://github.com/sindresorhus/electron-is-dev)
 		*/
-		readonly showInspectElement?: boolean;
+    readonly showInspectElement?: boolean;
 
-		/**
+    /**
 		Show the system `Services` submenu on macOS.
 
 		@default false
 		*/
-		readonly showServices?: boolean;
+    readonly showServices?: boolean;
 
-		/**
+    /**
 		Override labels for the default menu items. Useful for i18n.
 
 		The placeholder `{selection}` may be used in any label, and will be replaced by the currently selected text, trimmed to a maximum of 25 characters length. This is useful when localizing the `Look Up “{selection}”` menu item, but can also be used in custom menu items, for example, to implement a `Search Google for “{selection}”` menu item. If there is no selection, the `{selection}` placeholder will be replaced by an empty string. Normally this placeholder is only useful for menu items which will only be shown when there is text selected. This can be checked using `visible: parameters.selectionText.trim().length > 0` when implementing a custom menu item.
@@ -219,9 +229,9 @@ declare namespace contextMenu {
 		}
 		```
 		*/
-		readonly labels?: Labels;
+    readonly labels?: Labels;
 
-		/**
+    /**
 		Determines whether or not to show the menu.
 		Can be useful if you for example have other code presenting a context menu in some contexts.
 
@@ -233,12 +243,12 @@ declare namespace contextMenu {
 		}
 		```
 		*/
-		readonly shouldShowMenu?: (
-			event: ElectronEvent,
-			parameters: ContextMenuParams
-		) => boolean;
+    readonly shouldShowMenu?: (
+      event: ElectronEvent,
+      parameters: ContextMenuParams
+    ) => boolean;
 
-		/**
+    /**
 		This option lets you manually pick what menu items to include. It's meant for advanced needs. The default menu with the other options should be enough for most use-cases, and it ensures correct behavior, for example, correct order of menu items. So prefer the `append` and `prepend` option instead of `menu` whenever possible.
 
 		The function passed to this option is expected to return an array of [`MenuItem` constructor options](https://electronjs.org/docs/api/menu-item/).
@@ -268,14 +278,14 @@ declare namespace contextMenu {
 
 		@default [...dictionarySuggestions, defaultActions.separator(), defaultActions.separator(), defaultActions.learnSpelling(), defaultActions.separator(), defaultActions.lookUpSelection(), defaultActions.separator(),defaultActions.searchWithGoogle(), defaultActions.cut(), defaultActions.copy(), defaultActions.paste(), defaultActions.separator(), defaultActions.saveImage(), defaultActions.saveImageAs(), defaultActions.copyLink(), defaultActions.copyImage(), defaultActions.copyImageAddress(), defaultActions.separator(), defaultActions.copyLink(), defaultActions.saveLinkAs(), defaultActions.separator(), defaultActions.inspect()]
 		*/
-		readonly menu?: (
-			defaultActions: Actions,
-			parameters: ContextMenuParams,
-			browserWindow: BrowserWindow | BrowserView | WebviewTag | WebContents,
-			dictionarySuggestions: MenuItemConstructorOptions[],
-			event: ElectronEvent
-		) => MenuItemConstructorOptions[];
-	}
+    readonly menu?: (
+      defaultActions: Actions,
+      parameters: ContextMenuParams,
+      browserWindow: BrowserWindow | BrowserView | WebviewTag | WebContents,
+      dictionarySuggestions: MenuItemConstructorOptions[],
+      event: ElectronEvent
+    ) => MenuItemConstructorOptions[];
+  }
 }
 
 /**

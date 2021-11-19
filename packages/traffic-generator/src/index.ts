@@ -1,6 +1,6 @@
 import { app, BrowserWindow, globalShortcut } from "electron";
 import path from "path";
-import contextMenu from "../../electron-browser/src/main/menu";
+import contextMenu from "./context-menu/menu2";
 import SOCKS5 from "./proxies/socks5";
 
 const createWindow = () => {
@@ -19,12 +19,15 @@ const createWindow = () => {
       spellcheck: true,
       webviewTag: true,
       webSecurity: false,
-    },
+      partition: "persist:persistent_webview" // OR  'persist:unique_random_path' to save session on disk
+    }
   });
 
   win.once("ready-to-show", () => {
     win.show();
-    win.minimize();
+    if (win.webContents.isDevToolsOpened()) win.webContents.closeDevTools();
+    else win.webContents.openDevTools({ mode: "undocked" });
+    //win.minimize();
   });
 
   /**
@@ -79,20 +82,21 @@ const createWindow = () => {
   });
 
   /* Set did-fail-load listener once, load default view */
-  win.webContents.on("did-fail-load", function (event, errorCode, errorDescription) {
-    //console.log("did-fail-load", errorCode);
-    //restartProxy();
-  });
+  win.webContents.on(
+    "did-fail-load",
+    function (event, errorCode, errorDescription) {
+      //console.log("did-fail-load", errorCode);
+      //restartProxy();
+    }
+  );
 
   return win;
 };
 
-// inject custom context menu
-contextMenu();
-
 app.whenReady().then(() => {
   let mainWindow: Electron.BrowserWindow = createWindow();
-
+  // inject custom context menu
+  contextMenu(app);
   globalShortcut.register("Alt+CommandOrControl+L", () => {
     //mainWindow.webContents.send("show-server-log");
   });

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 // noinspection JSIgnoredPromiseFromCall
 
 const fs = require("fs");
@@ -31,9 +33,9 @@ onload = () => {
     // load webview default from url bar
     if (firstLoad) {
       firstLoad = false;
-      setTimeout(function () {
+      /*setTimeout(function () {
         webview.loadURL(addrBar.value);
-      }, 1500);
+      }, 1500);*/
     } else {
       addrBar.value = webview.getURL();
     }
