@@ -54,6 +54,7 @@ skip_render:
   - "_posts/**/*.json"
   - "_posts/**/*.js"
   - "_posts/The Legend Of Neverland/Midi/readme.md"
+  - "**__test__**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -267,8 +268,8 @@ analytics:
 # https://github.com/dimaslanjaka/hexo-seo
 seo:
   html:
-    # fix html
-    fix: true
+    # fix invalid html
+    fix: false
     # exclude from minify
     exclude:
       - "*.min.{htm,html}"
