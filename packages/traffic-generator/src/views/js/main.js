@@ -2,13 +2,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // noinspection JSIgnoredPromiseFromCall
 
+const { ipcRenderer } = require("electron");
+
 window.onload = () => {
   /**
    * @typedef {Element|import('electron').webviewTag}
    * @type {Element|import('electron').webviewTag}
    */
   const webview = document.querySelector("webview");
-  const indicator = document.querySelector(".indicator");
+  const indicator = document.querySelector("#indicator");
   /**
    * @type {HTMLInputElement}
    */
@@ -48,13 +50,24 @@ window.onload = () => {
       }
     });
 
+    // toastr
+    ipcRenderer.on("toastr", function (e, options) {
+      console.log(options);
+      toastr(options.message, options.title);
+    });
+
+    // loading icon
     if (indicator) {
+      const textIndicator = indicator.querySelector(".loading-text");
       const loadstart = () => {
-        indicator.innerText = "loading...";
+        console.log("loading start");
+        textIndicator.innerText = "Loading...";
+        indicator.classList.remove("none");
       };
 
       const loadstop = () => {
-        indicator.innerText = "";
+        console.log("loading stop");
+        indicator.classList.add("none");
       };
 
       webview.addEventListener("did-start-loading", loadstart);

@@ -8,13 +8,29 @@
   <title>CodePen - Fake browser UI</title>
 
   <link rel="stylesheet" href="css/normalize.css" />
-
   <link rel="stylesheet" href="css/main.css" />
-  <script src="js/webview-gethtml.js"></script>
+  <link rel="stylesheet" href="css/toastr.min.css">
+  <script src="js/toastr.min.js"></script>
   <script src="js/main.js"></script>
 </head>
 
 <body translate="no">
+  <div id="indicator" class="centered">
+    <span class="loading-text">Loading</span>
+    <div>
+      <div class="lds-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="fake-browser">
       <header class="fake-browser-header">
