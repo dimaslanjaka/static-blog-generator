@@ -6,6 +6,13 @@ import { readFileSync, writeFileSync } from "fs";
 
 export default class {
   file = path.join(__dirname, "socks5.json");
+
+  win: Electron.BrowserWindow;
+
+  constructor(winx: Electron.BrowserWindow) {
+    this.win = winx;
+  }
+
   getAllProxies(): string[] {
     const read = readFileSync(this.file, "utf8").toString();
     const json = JSON.parse(read);

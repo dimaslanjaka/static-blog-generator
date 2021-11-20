@@ -2,6 +2,9 @@ import { app, BrowserWindow, globalShortcut } from "electron";
 import path from "path";
 import contextMenu from "./context-menu/menu2";
 import SOCKS5 from "./proxies/socks5";
+import HTTPS from "./proxies/https";
+import webviewProxy from "./proxies/webview-proxy";
+import windowProxy from "./proxies/window-proxy";
 
 const createWindow = () => {
   let win = new BrowserWindow({
@@ -19,43 +22,45 @@ const createWindow = () => {
       spellcheck: true,
       webviewTag: true,
       webSecurity: false,
-      partition: "persist:persistent_webview" // OR  'persist:unique_random_path' to save session on disk
+      partition: "persist:webviewsession" // OR  'persist:unique_random_path' to save session on disk
     }
   });
 
-  win.once("ready-to-show", () => {
-    win.show();
-    if (win.webContents.isDevToolsOpened()) win.webContents.closeDevTools();
-    else win.webContents.openDevTools({ mode: "undocked" });
-    //win.minimize();
-  });
-
-  /**
-   * load url with proxy and set session with the proxy
-   * @param prx "socks5://88.198.50.103:1080"
-   */
-  function loadURLP(prx: string, callback?: () => void) {
-    console.log("using proxy", prx);
-    win.webContents.session
-      .setProxy({ proxyRules: prx })
-      .then(() => {
-        win.loadURL("https://www.webmanajemen.com/page/bot-detect");
-      })
-      .catch((err) => {});
-  }
-
-  const proxyClass = new SOCKS5();
+  const proxyClasses = [new HTTPS(win), new SOCKS5(win)];
+  const proxyClass = proxyClasses[0];
   let proxy = proxyClass.getRandom();
 
-  function restartProxy() {
-    console.log("restarting...");
+  function injectWindowProxy() {
+    windowProxy(win, proxy);
     proxyClass.deleteProxy(proxy);
     proxy = proxyClass.getRandom();
-    loadURLP(proxy);
   }
 
-  //loadURLP(proxy);
-  win.loadURL("file://" + __dirname + "/views/index.html");
+  function loadDefault() {
+    win.loadURL("file://" + __dirname + "/views/index.html");
+  }
+
+  function injectWebViewProxy(proxy: string, url?: string) {
+    webviewProxy(proxy, "persist:webviewsession", (details) => {
+      // delete dead proxy
+      proxyClass.deleteProxy(proxy);
+      // rotate proxies
+      injectWebViewProxy(proxyClass.getRandom(), details.url);
+    });
+    // reload current url
+    if (url) {
+      console.log("current", url);
+      win.loadURL(url);
+    } else {
+      loadDefault();
+    }
+  }
+  injectWebViewProxy(proxy);
+
+  win.once("ready-to-show", () => {
+    win.show();
+    win.minimize();
+  });
 
   win.on("closed", function () {
     win = null;
@@ -67,28 +72,6 @@ const createWindow = () => {
       win.webContents.goBack();
     }
   });
-
-  win.on("page-title-updated", () => {
-    const title = win.getTitle();
-    //console.log("title", title);
-  });
-
-  win.webContents.on("did-finish-load", function () {
-    const title = win.getTitle();
-    if (title.toLowerCase().startsWith("attention required!")) {
-      //restartProxy();
-    }
-    //console.log(win.getTitle());
-  });
-
-  /* Set did-fail-load listener once, load default view */
-  win.webContents.on(
-    "did-fail-load",
-    function (event, errorCode, errorDescription) {
-      //console.log("did-fail-load", errorCode);
-      //restartProxy();
-    }
-  );
 
   return win;
 };
@@ -108,6 +91,11 @@ app.whenReady().then(() => {
     //console.log("CommandOrControl+R is pressed");
     mainWindow.reload();
   });
+  globalShortcut.register("F12", () => {
+    if (mainWindow.webContents.isDevToolsOpened())
+      mainWindow.webContents.closeDevTools();
+    else mainWindow.webContents.openDevTools({ mode: "undocked" });
+  });
 
   app.on("activate", () => {
     const totalWindows = BrowserWindow.getAllWindows().length;
@@ -119,6 +107,7 @@ app.whenReady().then(() => {
     }
   });
 });
+
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });

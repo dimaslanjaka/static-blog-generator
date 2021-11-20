@@ -2,10 +2,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // noinspection JSIgnoredPromiseFromCall
 
-const fs = require("fs");
-const path = require("path");
-const is = require("./is");
-
 window.onload = () => {
   /**
    * @typedef {Element|import('electron').webviewTag}
@@ -28,7 +24,7 @@ window.onload = () => {
   let firstLoad = true;
   webview.addEventListener("dom-ready", () => {
     // clear log every page
-    console.clear();
+    //console.clear();
 
     // load webview default from url bar
     if (firstLoad) {
@@ -40,59 +36,29 @@ window.onload = () => {
       addrBar.value = webview.getURL();
     }
 
-    // we can get its URL and display it in the console
-    const currentURL = new URL(webview.getURL());
-    console.log("currentURL is : " + currentURL);
-
-    // same thing about the title of the page
-    const titlePage = webview.getTitle();
-    console.log("titlePage is : " + titlePage);
-
-    // executing Javascript into the webview to get the full HTML
-    webview
-      .executeJavaScript(
-        `function gethtml () {
-    return new Promise((resolve, reject) => { resolve(document.documentElement.innerHTML); });
-    }
-    gethtml();`
-      )
-      .then(
-        /**
-         * @param {string} html
-         */
-        (html) => {
-          // save HTML
-          const savePath = path.join(
-            process.cwd(),
-            "build/html",
-            currentURL.host,
-            currentURL.pathname,
-            `${titlePage}.html`
-          );
-          fs.mkdirSync(path.dirname(savePath), { recursive: true });
-          fs.writeFileSync(savePath, html);
+    // listen url address enter
+    addrBar.addEventListener("keydown", function (event) {
+      const addrBarValue = this.value;
+      if (event.key == "Enter") {
+        if (/https?:\/\//gs.test(addrBarValue)) {
+          webview.loadURL(addrBarValue);
+        } else {
+          webview.loadURL("http://google.com/search?q=" + addrBarValue);
         }
-      );
-  });
+      }
+    });
 
-  // listen url address enter
-  addrBar.addEventListener("keydown", function (event) {
-    const addrBarValue = this.value;
-    if (event.key == "Enter") {
-      webview.loadURL(addrBarValue);
+    if (indicator) {
+      const loadstart = () => {
+        indicator.innerText = "loading...";
+      };
+
+      const loadstop = () => {
+        indicator.innerText = "";
+      };
+
+      webview.addEventListener("did-start-loading", loadstart);
+      webview.addEventListener("did-stop-loading", loadstop);
     }
   });
-
-  if (indicator) {
-    const loadstart = () => {
-      indicator.innerText = "loading...";
-    };
-
-    const loadstop = () => {
-      indicator.innerText = "";
-    };
-
-    webview.addEventListener("did-start-loading", loadstart);
-    webview.addEventListener("did-stop-loading", loadstop);
-  }
 };
