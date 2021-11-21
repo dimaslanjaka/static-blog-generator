@@ -54,6 +54,7 @@ if (minimist._.length) {
       if (!err) {
         execute(`git commit -m "${message}"`).then(gitPush);
       } else {
+        console.log("(git) failed to add");
         execute("git reset --soft HEAD^");
       }
     });

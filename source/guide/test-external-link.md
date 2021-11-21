@@ -5,7 +5,7 @@ tags:
   - "hello"
   - "test"
   - "world"
-subtitle: "The Deafult Hexo Blog"
+subtitle: "The Default Hexo Blog"
 author:
   nick: Dimas Lanjaka
   link: https://webmanajemen.com/
