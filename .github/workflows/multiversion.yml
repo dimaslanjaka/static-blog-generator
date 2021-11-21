@@ -8,7 +8,7 @@ on:
 
 jobs:
   test-npm-package:
-    if: ${{ false }} # disable
+    #if: ${{ false }} # disable
     name: Test Build With NPM Packages
     #needs: build
     runs-on: ${{ matrix.os }}
