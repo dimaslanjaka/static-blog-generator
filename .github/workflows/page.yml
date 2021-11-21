@@ -54,7 +54,7 @@ jobs:
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
-      - run: hexo generate
+      - run: hexo clean && hexo generate
       - run: cd docs/page && npm install
       - name: Userscripts
         run: |
