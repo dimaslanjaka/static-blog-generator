@@ -49,7 +49,7 @@ jobs:
       #- run: npm install
         #if: steps.cache-packages.outputs.cache-hit != 'true'
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
-      - run: npm install
+      - run: rm -rf node_modules && npm install
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
