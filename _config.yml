@@ -155,10 +155,8 @@ feed:
   type:
     - atom
     - rss2
-    - rss
   path:
     - atom.xml
-    - rss2.xml
     - rss.xml
 
 # Sitemap
