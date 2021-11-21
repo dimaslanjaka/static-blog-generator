@@ -80,6 +80,15 @@
   // format code with eslint-prettier and vscode
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "github.copilot.enable": {
+    "typescript": true,
+    "javascript": true,
+    "html": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "github.copilot.toggleCopilot": "on"
   //"editor.fontFamily": "Droid Sans Mono, Droid Sans Fallback"
 }
