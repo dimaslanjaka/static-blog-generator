@@ -62,6 +62,7 @@ jobs:
         # run if commit contains substring 'clean cache'
         if: "contains(github.event.head_commit.message, 'clean cache')"
       - run: hexo generate
+        id: hexo-g
       - run: cd docs/page && npm install
       - name: Userscripts
         run: |
@@ -71,6 +72,7 @@ jobs:
           node userscripts/validate.js
 
       - name: Deploy 🚀
+        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: master # The branch the action should deploy to.
@@ -78,7 +80,7 @@ jobs:
 
       - name: Deploy to firebase
         # deploy if commit message contains firebase string
-        if: "contains(github.event.head_commit.message, 'firebase')"
+        if: "contains(github.event.head_commit.message, 'firebase') && steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'"
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
