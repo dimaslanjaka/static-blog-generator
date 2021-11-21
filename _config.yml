@@ -149,17 +149,17 @@ author:
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
-  # Generate atom feed
-  type: atom
   # include contents in feeds
   content: true
   # Generate both atom and rss2 feeds
   type:
     - atom
     - rss2
+    - rss
   path:
     - atom.xml
     - rss2.xml
+    - rss.xml
 
 # Sitemap
 sitemap:
