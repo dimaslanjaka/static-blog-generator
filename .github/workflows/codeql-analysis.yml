@@ -22,7 +22,12 @@ on:
   workflow_run:
     workflows: ["Build And Tests"]
     types: [completed] #requested
-     
+
+# cancel previous workflows, run only one workflow
+concurrency:
+  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   analyze:
     name: Analyze
