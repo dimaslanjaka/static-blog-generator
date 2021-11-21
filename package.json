@@ -52,7 +52,6 @@
     "hexo-autoprefixer": "github:hexojs/hexo-autoprefixer",
     "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
-    "hexo-deployer-git": "^3.0.0",
     "hexo-front-matter": "github:hexojs/hexo-front-matter",
     "hexo-fs": "^3.1.0",
     "hexo-generator-archive": "^1.0.0",
