@@ -59,6 +59,6 @@ dengan konfigurasi diatas, command `npm install` akan sangat lebih cepat ketimba
 Metode ini harus kamu tulis sendiri di dalam program-mu. Setiap bahasa pemrograman berbeda caranya. Berikut metode-metode yang bisa kamu buat di dalam program-mu.
 - [NodeJS node-cache](https://www.npmjs.com/package/node-cache)
 - [PHP Cache](http://www.php-cache.com/en/latest/)
-
+- [Python Cache](https://docs.python.org/3.4/library/functools.html#functools.lru_cache)
 
 Sekian artikel tentang metode cache github workflow. **Artikel ini akan terus di update**, **jangan lupa di bookmark**. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.
