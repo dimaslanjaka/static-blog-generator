@@ -71,3 +71,24 @@ on:
     # hanya akan jalan apabila 'Primary Workflow' terpicu
     types: [requested]
 ```
+
+## Contoh: Github workflow run after other workflow [[source](https://stackoverflow.com/a/67534920)]
+```yaml
+ on:
+   workflow_run:
+     workflows: ["Other Workflow Name"]
+     types: [completed]
+
+ jobs:
+   on-success:
+     runs-on: ubuntu-latest
+     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+     steps:
+       - run: echo "First workflow was a success"
+
+   on-failure:
+     runs-on: ubuntu-latest
+     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+     steps:
+       - run: echo "First workflow was a failure"
+```
