@@ -52,6 +52,7 @@ window.onload = () => {
 
     // toastr
     ipcRenderer.on("toastr", function (e, options) {
+      console.log(e);
       console.log(options);
       toastr(options.message, options.title);
     });
@@ -60,13 +61,13 @@ window.onload = () => {
     if (indicator) {
       const textIndicator = indicator.querySelector(".loading-text");
       const loadstart = () => {
-        console.log("loading start");
+        //console.log("loading start");
         textIndicator.innerText = "Loading...";
         indicator.classList.remove("none");
       };
 
       const loadstop = () => {
-        console.log("loading stop");
+        //console.log("loading stop");
         indicator.classList.add("none");
       };
 

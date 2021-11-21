@@ -46,6 +46,7 @@ const createWindow = () => {
       proxyClass.deleteProxy(proxy);
       proxy = proxyClass.getRandom();
       // send notification to renderer
+      console.log("sending notification");
       webworker.sendToRenderer(win, "toastr", {
         title: "Proxy Change",
         message: `${proxy} ${details.url}`
@@ -53,6 +54,7 @@ const createWindow = () => {
       // rotate proxies
       injectWebViewProxy(proxy, details.url);
     });
+
     // reload current url
     if (url) {
       console.log("current", url);
@@ -62,6 +64,13 @@ const createWindow = () => {
     }
   }
   injectWebViewProxy(proxy);
+
+  win.webContents.on("will-navigate", (e, redirectUrl) => {
+    // send notification
+    webworker.sendToRenderer(win, "toastr", {
+      message: `will-navigate ${redirectUrl}`
+    });
+  });
 
   win.once("ready-to-show", () => {
     win.show();

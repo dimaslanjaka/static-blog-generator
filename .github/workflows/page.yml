@@ -50,6 +50,7 @@ jobs:
         #if: steps.cache-packages.outputs.cache-hit != 'true'
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
       - run: npm install
+      - run: npm un hexo-seo
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy

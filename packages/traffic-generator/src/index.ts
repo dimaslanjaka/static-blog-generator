@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import { app, BrowserWindow, globalShortcut } from "electron";
 import path from "path";
 import contextMenu from "./context-menu/menu2";

@@ -7,5 +7,6 @@
   project: "tsconfig.json"
 });
 require("./src");*/
-
+require("dotenv").config();
+//console.log(process.env);
 require("./dist/traffic-generator/src/index");
