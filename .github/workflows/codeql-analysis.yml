@@ -12,13 +12,10 @@
 name: "CodeQL"
 
 on:
-  #push:
-    #branches: [ compiler ]
-  #pull_request:
-    # The branches below must be a subset of the branches above
-    #branches: [ compiler ]
+  # schedule this job every 1:45 AM everydays
   schedule:
     - cron: '45 1 * * *'
+  # run this job after previous workflow name completed, otherwise skipped
   workflow_run:
     workflows: ["Build And Tests"]
     types: [completed] #requested
