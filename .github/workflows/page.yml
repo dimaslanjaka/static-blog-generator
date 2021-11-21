@@ -49,11 +49,17 @@ jobs:
       #- run: npm install
         #if: steps.cache-packages.outputs.cache-hit != 'true'
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
-      - run: rm -rf node_modules && npm install
+      - run: rm -rf node_modules
+        # run if commit contains substring 'clean cache'
+        if: "contains(github.event.head_commit.message, 'clean cache')"
+      - run: npm install
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
-      - run: hexo clean && hexo generate
+      - run: hexo clean
+        # run if commit contains substring 'clean cache'
+        if: "contains(github.event.head_commit.message, 'clean cache')"
+      - run: hexo generate
       - run: cd docs/page && npm install
       - name: Userscripts
         run: |
