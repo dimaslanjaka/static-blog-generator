@@ -50,7 +50,7 @@ if (minimist._.length) {
     });
   } else if (message.trim().length > 0) {
     // if custom files empty, then add all files and commit them
-    execute(`git add .`).then((err) => {
+    execute(`git add -A`).then((err) => {
       if (!err) {
         execute(`git commit -m "${message}"`).then(gitPush);
       } else {
