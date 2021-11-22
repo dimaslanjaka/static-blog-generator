@@ -60,7 +60,8 @@ on:
   workflow_run:
     workflows: ["Primary Workflow"]
     # hanya akan jalan apabila 'Primary Workflow' sukses/tidak error
-    types: [completed]
+    types:
+      - completed
 ```
 Ini workflow ketiga yang akan jalan berdampingan dengan workflow pertama, apabila workflow tersebut diminta untuk jalan (terpicu)
 ```yaml
@@ -69,7 +70,8 @@ on:
   workflow_run:
     workflows: ["Primary Workflow"]
     # hanya akan jalan apabila 'Primary Workflow' terpicu
-    types: [requested]
+    types:
+      - requested
 ```
 
 ## Contoh Github workflow run after other workflow
@@ -78,7 +80,8 @@ on:
  on:
    workflow_run:
      workflows: ["Other Workflow Name"]
-     types: [completed]
+     types:
+      - completed
 
  jobs:
    on-success:
@@ -93,3 +96,5 @@ on:
      steps:
        - run: echo "First workflow was a failure"
 ```
+
+Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.
