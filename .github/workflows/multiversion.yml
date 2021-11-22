@@ -4,7 +4,9 @@ on:
   # run this job after previous workflow name completed, otherwise skipped
   workflow_run:
     workflows: ["Build And Tests", "Build www.webmanajemen.com"]
-    types: [completed] #requested
+    types:
+      - completed
+      #- requested
 
 jobs:
   test-npm-package:
