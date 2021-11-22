@@ -24,7 +24,7 @@ comments: true
 ---
 
 # Kondisional pada GitHub Workflow
-Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. Misalnya:
+Kondisional-kondisional yang ada di Github Workflow. Kondisional ini berguna untuk memicu job step dengan kasus-kasus tertentu. [source](https://docs.github.com/en/actions/learn-github-actions/expressions) Misalnya:
 ## Menjalankan command apabila repository di push dengan commit yang memiliki substring tertentu (match substring from github commit messages)
 ```yaml
 jobs:
@@ -51,3 +51,5 @@ jobs:
         id: custom-id # membuat id khusus (opsional)
       - run: echo "git commit any"
 ```
+
+Artikel ini untuk mempermudah visitor untuk memahami github workflow.
