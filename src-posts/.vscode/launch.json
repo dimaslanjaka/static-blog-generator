@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "command": "cd ../ && gulp article:copy && hexo server",
+      "name": "Hexo Server",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "cd ../ && gulp article:copy && hexo clean && hexo server",
+      "name": "Hexo Clean Server",
+      "request": "launch",
+      "type": "node-terminal"
+    }
+  ]
+}
