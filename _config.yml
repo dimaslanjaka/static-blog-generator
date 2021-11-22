@@ -207,6 +207,15 @@ markdown_it_plus:
   typographer:
   #quotes: “”‘’
   pre_class: highlight
+  plugins:
+    - plugin:
+        # https://www.npmjs.com/package/markdown-it-attrs
+        name: markdown-it-attrs
+        enable: true
+        options:
+          leftDelimiter: "{"
+          rightDelimiter: "}"
+          allowedAttributes: [] # empty array = all attributes are allowed
 
 # live reload (unused)
 # https://github.com/hexojs/hexo-livereload
