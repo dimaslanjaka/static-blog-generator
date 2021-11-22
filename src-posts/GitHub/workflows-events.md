@@ -26,12 +26,12 @@ comments: true
 # Events yang memicu Github Workflow
 Anda dapat mengonfigurasi alur kerja Anda untuk berjalan saat aktivitas tertentu di GitHub terjadi, pada waktu yang dijadwalkan, atau saat peristiwa di luar GitHub terjadi.
 
-## Contoh: Menggunakan single event
+## Contoh Menggunakan single event
 ```yaml
 # Memicu workflow pada event push atau pull request
 on: [push, pull_request]
 ```
-## Contoh: Menggunakan beberapa events dengan jenis atau konfigurasi aktivitas
+## Contoh Menggunakan beberapa events dengan jenis atau konfigurasi aktivitas
 Jika Anda perlu menentukan jenis aktivitas atau konfigurasi untuk suatu peristiwa, Anda harus mengonfigurasi setiap peristiwa secara terpisah. Anda harus menambahkan titik dua (:) ke semua event, termasuk event tanpa konfigurasi.
 ```yaml
 on:
@@ -47,7 +47,7 @@ on:
       - main
 ```
 
-## Contoh: Menggunakan workflow lain sebagai acuan untuk memicu workflow saat ini
+## Contoh Menggunakan workflow lain sebagai acuan untuk memicu workflow saat ini
 Ini workflow yang akan di lihat (primary workflow)
 ```yaml
 # workflow yang akan berjalan pertama kali
@@ -72,7 +72,8 @@ on:
     types: [requested]
 ```
 
-## Contoh: Github workflow run after other workflow [[source](https://stackoverflow.com/a/67534920)]
+## Contoh Github workflow run after other workflow
+[source idea](https://stackoverflow.com/a/67534920)
 ```yaml
  on:
    workflow_run:
