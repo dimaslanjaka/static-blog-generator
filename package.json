@@ -89,7 +89,7 @@
     "lodash": "^4.17.21",
     "lunr": "github:mamboer/lunr.js",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-attrs": "^4.1.0",
+    "markdown-it-attrs": "file:packages/markdown-it-attrs",
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-emoji": "^2.0.0",
     "markdown-it-footnote": "^3.0.3",
