@@ -20,6 +20,12 @@
       "console": "internalConsole",
       "sourceMaps": false,
       "outFiles": []
+    },
+    {
+      "command": "cd ../../ && hexo clean && hexo server",
+      "name": "Hexo clean server",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

@@ -96,7 +96,7 @@ exports.getAttrs = function (str, start, options) {
     return attrs.filter(function (attrPair) {
       let attr = attrPair[0];
 
-      function isAllowedAttribute (allowedAttribute) {
+      function isAllowedAttribute(allowedAttribute) {
         return (attr === allowedAttribute
           || (allowedAttribute instanceof RegExp && allowedAttribute.test(attr))
         );
@@ -117,7 +117,7 @@ exports.getAttrs = function (str, start, options) {
  * @returns token
  */
 exports.addAttrs = function (attrs, token) {
-  for (let j = 0, l = attrs.length; j < l; ++j) {
+  if (token) for (let j = 0, l = attrs.length; j < l; ++j) {
     let key = attrs[j][0];
     if (key === 'class') {
       token.attrJoin('class', attrs[j][1]);
@@ -158,7 +158,7 @@ exports.hasDelimiters = function (where, options) {
       return false;
     }
 
-    function validCurlyLength (curly) {
+    function validCurlyLength(curly) {
       let isClass = curly.charAt(options.leftDelimiter.length) === '.';
       let isId = curly.charAt(options.leftDelimiter.length) === '#';
       return (isClass || isId)
@@ -169,32 +169,32 @@ exports.hasDelimiters = function (where, options) {
     let start, end, slice, nextChar;
     let rightDelimiterMinimumShift = minCurlyLength - options.rightDelimiter.length;
     switch (where) {
-    case 'start':
-      // first char should be {, } found in char 2 or more
-      slice = str.slice(0, options.leftDelimiter.length);
-      start = slice === options.leftDelimiter ? 0 : -1;
-      end = start === -1 ? -1 : str.indexOf(options.rightDelimiter, rightDelimiterMinimumShift);
-      // check if next character is not one of the delimiters
-      nextChar = str.charAt(end + options.rightDelimiter.length);
-      if (nextChar && options.rightDelimiter.indexOf(nextChar) !== -1) {
-        end = -1;
-      }
-      break;
+      case 'start':
+        // first char should be {, } found in char 2 or more
+        slice = str.slice(0, options.leftDelimiter.length);
+        start = slice === options.leftDelimiter ? 0 : -1;
+        end = start === -1 ? -1 : str.indexOf(options.rightDelimiter, rightDelimiterMinimumShift);
+        // check if next character is not one of the delimiters
+        nextChar = str.charAt(end + options.rightDelimiter.length);
+        if (nextChar && options.rightDelimiter.indexOf(nextChar) !== -1) {
+          end = -1;
+        }
+        break;
 
-    case 'end':
-      // last char should be }
-      start = str.lastIndexOf(options.leftDelimiter);
-      end = start === -1 ? -1 : str.indexOf(options.rightDelimiter, start + rightDelimiterMinimumShift);
-      end = end === str.length - options.rightDelimiter.length ? end : -1;
-      break;
+      case 'end':
+        // last char should be }
+        start = str.lastIndexOf(options.leftDelimiter);
+        end = start === -1 ? -1 : str.indexOf(options.rightDelimiter, start + rightDelimiterMinimumShift);
+        end = end === str.length - options.rightDelimiter.length ? end : -1;
+        break;
 
-    case 'only':
-      // '{.a}'
-      slice = str.slice(0, options.leftDelimiter.length);
-      start = slice === options.leftDelimiter ? 0 : -1;
-      slice = str.slice(str.length - options.rightDelimiter.length);
-      end = slice === options.rightDelimiter ? str.length - options.rightDelimiter.length : -1;
-      break;
+      case 'only':
+        // '{.a}'
+        slice = str.slice(0, options.leftDelimiter.length);
+        start = slice === options.leftDelimiter ? 0 : -1;
+        slice = str.slice(str.length - options.rightDelimiter.length);
+        end = slice === options.rightDelimiter ? str.length - options.rightDelimiter.length : -1;
+        break;
     }
 
     return start !== -1 && end !== -1 && validCurlyLength(str.substring(start, end + options.rightDelimiter.length));
@@ -223,7 +223,7 @@ exports.removeDelimiter = function (str, options) {
  * @param {string} s Regex string.
  * @return {string} Escaped string.
  */
-function escapeRegExp (s) {
+function escapeRegExp(s) {
   return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
 }
 exports.escapeRegExp = escapeRegExp;
