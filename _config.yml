@@ -78,7 +78,7 @@ highlight:
   enable: true
   line_number: false
   auto_detect: false
-  tab_replace: "  "
+  tab_replace: "  " # replace tabs with 2 spaces
   wrap: false
   hljs: false
 prismjs:
