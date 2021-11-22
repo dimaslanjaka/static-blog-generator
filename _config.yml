@@ -72,13 +72,20 @@ post_asset_folder: true
 
 relative_link: false
 future: true
+# https://github.com/hexojs/hexo-util
+# https://hexo.io/docs/syntax-highlight.html
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
-  tab_replace: ""
-  wrap: true
+  tab_replace: "  "
+  wrap: false
   hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -198,7 +205,7 @@ markdown_it_plus:
   langPrefix:
   linkify: true
   typographer:
-  quotes: “”‘’
+  #quotes: “”‘’
   pre_class: highlight
 
 # live reload (unused)
@@ -289,5 +296,3 @@ seo:
       - webmanajemen.com
       - web-manajemen.blogspot.com
       - dimaslanjaka.github.io
-
-
