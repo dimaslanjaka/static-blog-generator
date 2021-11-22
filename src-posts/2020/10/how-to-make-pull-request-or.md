@@ -21,7 +21,6 @@ category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 location: ""
-
 ---
 
 <h2>Contribution Tutorial</h2><ol>  <li>Fork it (git clone https://github.com/name/repo)</li>  <li>Create your feature branch (git checkout -b my-new-feature)</li>  <li>Commit your changes (git commit -am 'Add some feature')</li>  <li>Push to the branch (git push origin my-new-feature)</li>  <li>Create new Pull Request</li></ol>

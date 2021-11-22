@@ -16,12 +16,11 @@ category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
 location: ""
-
 ---
 
 <div id="proxy_result_wrapper">
          <div class="w3-card-4">
- 
+
            <header class="w3-container w3-blue">
              <div class="d-flex justify-content-between">
                <div>
@@ -33,7 +32,7 @@ location: ""
                </div>
              </div>
            </header>
- 
+
            <div class="w3-container">
              <p>
                </p><table id="proxies_result" class="w3-table w3-striped">
@@ -47,13 +46,13 @@ location: ""
                </table>
              <p></p>
            </div>
- 
+
            <footer class="w3-container w3-blue">
              <div class="d-flex justify-content-between">
                <div>
                  <h5>WMI Proxy checker 2019</h5>
                </div>
- 
+
                <div>
                  <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview" alt="Google" width="30px" height="30px" class="w3-margin w3-hide">
                </div>
@@ -66,8 +65,7 @@ location: ""
              <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/v4-shims.js"></script>
  -->
            </footer>
- 
+
          </div>
- 
+
        </div>
-     
