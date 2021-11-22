@@ -79,7 +79,7 @@ function articleCopy(done, clean = false) {
 
   setTimeout(function () {
     // To copy a folder
-    copyDir(srcDir, destDir, function (err: any | null) {
+    copyDir(srcDir, destDir, function (err) {
       if (err) {
         console.error(err);
         console.error("error");
