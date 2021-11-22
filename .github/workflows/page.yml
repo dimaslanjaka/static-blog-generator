@@ -67,6 +67,7 @@ jobs:
         id: hexo-g
       - run: cd docs/page && npm install
       - name: Userscripts
+        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
         run: |
           node userscripts/custom-domain.js
           node userscripts/copy.js
