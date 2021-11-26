@@ -12,6 +12,9 @@ docs/
 #package-lock.json
 firebase.js
 
+# git filter-branch
+.git-rewrite
+
 # remove dynamic idea objects
 .idea/vcs.xml
 .idea/workspace.xml
