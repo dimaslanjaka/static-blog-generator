@@ -3,7 +3,8 @@ name: Build With Multiple NodeJS Versions
 on:
   # run this job after previous workflow name completed, otherwise skipped
   workflow_run:
-    workflows: ["Build And Tests", "Build www.webmanajemen.com"]
+    workflows: #["Build And Tests", "Build www.webmanajemen.com"]
+      - Build And Tests
     types:
       - completed
       #- requested
