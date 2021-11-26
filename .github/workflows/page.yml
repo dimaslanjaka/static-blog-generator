@@ -1,5 +1,4 @@
 name: Build And Tests
-id: build-and-test
 
 on:
   # schedule this job every 1:45 AM everydays
