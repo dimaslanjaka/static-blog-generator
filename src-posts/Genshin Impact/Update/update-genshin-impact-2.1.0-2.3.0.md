@@ -36,27 +36,6 @@ Update genshin impact `2.3.0` manual via download manager (IDM).
 - [game_2.1.0_2.3.0_diff_IFqrKCzDYyUt697g.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.1.0_2.3.0_diff_IFqrKCzDYyUt697g.zip)
 - [ja-jp_2.1.0_2.3.0_diff_8nXfsMArgbPOU30c.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.1.0_2.3.0_diff_8nXfsMArgbPOU30c.zip)
 
-## Patch 2.0.0 - 2.1.0
-- [en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip)
-- [game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip)
-- [ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip)
-
-## Patch 1.6.1 - 2.0.0
-
-- [en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip)
-- [game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip)
-- [ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip)
-- [ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip)
-- [zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip)
-
-## [Patch 1.6.0 - 1.6.1](update-genshin-impact-1.6.0-1.6.1.md)
-
-- [en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip)
-- [game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip)
-- [ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip)
-- [ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip)
-- [zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip)
-
 ## How to update
 ### Updating to 2.3.0
 
@@ -108,6 +87,29 @@ Open the launcher, and it will say **Pre-installation done**
 ## Screenshot
 
 ![preview](https://i.imgur.com/zHDw2i0.png)
+
+# Older Patches
+
+## [Patch 2.0.0 - 2.1.0](2.0.update-genshin-impact-2.0.0-2.1.0.html)
+- [en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip)
+- [game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip)
+- [ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip)
+
+## [Patch 1.6.1 - 2.0.0](update-genshin-impact-1.6.1-2.0.0.html)
+
+- [en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.1_2.0.0_diff_pa7XSfuvwheYHlR4.zip)
+- [game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.1_2.0.0_diff_GLrkVi02eEIJHmoZ.zip)
+- [ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.1_2.0.0_diff_Rr1nlK3O0Wjgo4M2.zip)
+- [ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip)
+- [zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip)
+
+## [Patch 1.6.0 - 1.6.1](update-genshin-impact-1.6.0-1.6.1.html)
+
+- [en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip)
+- [game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip)
+- [ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_1.6.0_1.6.1_diff_8fK2vdMnkmsHEO4e.zip)
+- [ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.0_1.6.1_diff_bfFmUj9kRoEZIuWz.zip)
+- [zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.0_1.6.1_diff_spTaeOM64imbcLGw.zip)
 
 ## Full Game
 
