@@ -49,7 +49,7 @@ Update genshin impact `2.3.0` manual via download manager (IDM).
 - [ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.6.1_2.0.0_diff_YHsxbir0lqzcvNIk.zip)
 - [zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.6.1_2.0.0_diff_kxn7JGptOMsUWeXf.zip)
 
-## Patch 1.6.0 - 1.6.1
+## [Patch 1.6.0 - 1.6.1](update-genshin-impact-1.6.0-1.6.1.md)
 
 - [en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_1.6.0_1.6.1_diff_hfuFbIATOe16BZwW.zip)
 - [game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_1.6.0_1.6.1_diff_nUOVRNMH4fb1tJsC.zip)
