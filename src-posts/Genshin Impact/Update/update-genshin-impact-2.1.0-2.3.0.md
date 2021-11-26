@@ -62,15 +62,15 @@ Update genshin impact `2.3.0` manual via download manager (IDM).
 
 After you have all the files, you can start the updating process.
 
-*   First, open the Genshin Impact launcher, and make sure it is updated. This means, that the launcher version is updated, and not the game version. This is automatic, and you will be prompted.
+*   Firstly, open the **Genshin Impact** launcher, and make sure it is updated. This means, that the launcher version is updated, and not the game version. This is automatic, and you will be prompted.
 *   Now, click on the **Update** button, and then click **Pause**, after a few seconds.
 *   Close the launcher, and make sure it isn’t running in the background. You can also check if it is running in the taskbar, close it from there too.
 
 ![If you want to update to Genshin Impact 2.3.0 manually, you will need to close the launcher from the taskbar as well.](update-genshin-impact-1.5.1-1.6.0/Genshin-Impact-in-Taskbar.png)
 
-Genshin Impact running in the taskbar
+> Genshin Impact running in the taskbar > right click > exit
 
-Now, head over to the following location
+Now, go to the following location
 
 **C:\\Program Files\\Genshin Impact\\Genshin Impact Game\\**
 
