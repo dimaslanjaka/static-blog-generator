@@ -108,7 +108,8 @@ jobs:
           projectId: android-008
 
       - name: Push changes
-        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        if: ${{ false }}
+        #if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
