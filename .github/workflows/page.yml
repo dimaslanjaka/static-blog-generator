@@ -25,10 +25,19 @@ jobs:
         with:
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: "12.x"
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+      - name: Setup GitHub
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
       - name: Get npm cache directory
         id: npm-cache-dir
         run: echo "::set-output name=dir::$(npm config get cache)"
@@ -61,7 +70,9 @@ jobs:
       - run: npx hexo clean
         # run if commit contains substring 'clean cache'
         if: "contains(github.event.head_commit.message, 'clean cache')"
-      - run: npx hexo generate
+      - run: |
+          npx hexo generate
+          git commit -m "saved hexo database ${{ steps.date.outputs.date }}" -a
         # continue on error, prevent failing/exited
         continue-on-error: true
         id: hexo-g
@@ -73,6 +84,11 @@ jobs:
           node userscripts/copy.js
           node userscripts/after_generated.js
           node userscripts/validate.js
+
+      - name: Commit Files
+        id: git-commit
+        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        run: git commit -m "Add changes ${{ steps.date.outputs.date }}" -a
 
       - name: Deploy 🚀
         if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
@@ -91,3 +107,10 @@ jobs:
           channelId: live
           projectId: android-008
 
+      - name: Push changes
+        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          directory: build
