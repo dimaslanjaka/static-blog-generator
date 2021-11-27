@@ -36,11 +36,8 @@ Update genshin impact `2.3.0` manual via download manager (IDM).
 - [game_2.1.0_2.3.0_diff_IFqrKCzDYyUt697g.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.1.0_2.3.0_diff_IFqrKCzDYyUt697g.zip)
 - [ja-jp_2.1.0_2.3.0_diff_8nXfsMArgbPOU30c.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.1.0_2.3.0_diff_8nXfsMArgbPOU30c.zip)
 
-## How to update
-### Updating to 2.3.0
-
+## How to updating to 2.3.0
 After you have all the files, you can start the updating process.
-
 *   Firstly, open the **Genshin Impact** launcher, and make sure it is updated. This means, that the launcher version is updated, and not the game version. This is automatic, and you will be prompted.
 *   Now, click on the **Update** button, and then click **Pause**, after a few seconds.
 *   Close the launcher, and make sure it isn’t running in the background. You can also check if it is running in the taskbar, close it from there too.
