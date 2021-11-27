@@ -24,7 +24,7 @@ on:
 
 # cancel previous workflows, run only one workflow
 concurrency:
-  group: codeql-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  group: analysis-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
