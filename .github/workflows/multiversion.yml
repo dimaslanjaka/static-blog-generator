@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  on-success:
+  test-npm-package:
     #if: ${{ false }} # disable
     name: Test Build With NPM Packages
     #needs: build
