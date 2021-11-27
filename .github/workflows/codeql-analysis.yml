@@ -15,10 +15,12 @@ on:
   # schedule this job every 1:45 AM everydays
   schedule:
     - cron: '45 1 * * *'
-  # run this job after previous workflow name completed, otherwise skipped
-  workflow_run:
-    workflows: ["Build And Tests"]
-    types: [completed] #requested
+  pull_request:
+    branches:
+      - compiler # run when this branch pull requested
+  push:
+    branches:
+      - compiler # run when this branch pushed
 
 # cancel previous workflows, run only one workflow
 concurrency:

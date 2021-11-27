@@ -1,17 +1,16 @@
 name: Build With Multiple NodeJS Versions
 
 on:
-  # run this job after previous workflow name completed, otherwise skipped
-  workflow_run:
-    workflows: #["Build And Tests", "Build www.webmanajemen.com"]
-      - Build And Tests
-    types:
-      - completed
-      #- requested
+  pull_request:
+    branches:
+      - compiler # run when this branch pull requested
+  push:
+    branches:
+      - compiler # run when this branch pushed
 
 # cancel previous workflows, run only one workflow
 concurrency:
-  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  group: multi-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
