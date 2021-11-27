@@ -21,4 +21,4 @@
 [submodule "packages/hexo-seo"]
 	path = packages/hexo-seo
 	url = https://github.com/dimaslanjaka/hexo-seo.git
-	branch = master
+	branch = compiler
