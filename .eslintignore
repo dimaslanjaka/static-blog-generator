@@ -1,4 +1,4 @@
-**/packages/**
+#**/packages/**
 **/node_modules/**
 **/dist/**
 **/lib/**
