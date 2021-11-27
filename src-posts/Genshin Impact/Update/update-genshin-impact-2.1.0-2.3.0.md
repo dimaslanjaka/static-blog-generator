@@ -58,7 +58,7 @@ Now,
 ### Important things to **note**
 *   **DON’T EXTRACT THE FILES** . If you extract the files, you won’t be able to play it until 2.3.0 is live. We recommend you don’t do that.
 *   **Pre-installation done** means that you can keep playing the **Genshin Impact game** until the patch is live
-*   If you are following this guide after the patch is live, it will say **Update** instead of **Pre-installation done**. Click that, and it will install these files
+*   If you are following this guide after the patch is live, it will say **Update** instead of **Pre-installation done**. Click that, and it will install the files you downloaded above
 
 ## Simple way
 - Download Update Version Or Full Game Version
