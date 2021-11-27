@@ -3,6 +3,7 @@ import { exec } from "child_process";
 import minimatch from "minimatch";
 import moment from "moment";
 import { memoize } from "underscore";
+import del from "del";
 
 // copy non ts files
 const copyNonTsFiles = function () {
@@ -20,6 +21,10 @@ const tsc = function (cb?) {
     if (typeof cb === "function") cb(err);
   });
 };
+
+function clean(params) {
+  return del("./dist");
+}
 gulp.task("tsc", tsc);
 gulp.task("watch", function () {
   return gulp.watch(["./src/**/*"], gulp.series("tsc", "copy-non-ts"));
@@ -43,4 +48,4 @@ gulp.task("watch", function () {
   return watcher;
 */
 
-gulp.task("default", gulp.series("tsc", "copy-non-ts"));
+gulp.task("default", gulp.series(clean, "tsc", "copy-non-ts"));
