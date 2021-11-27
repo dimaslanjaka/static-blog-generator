@@ -67,7 +67,7 @@ jobs:
   test-git-package:
     #if: ${{ false }} # disable
     name: Test Build With GIT Packages
-    #needs: test-npm-package
+    needs: test-npm-package
     runs-on: ${{ matrix.os }}
     continue-on-error: true
     strategy:
