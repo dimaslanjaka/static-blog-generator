@@ -49,22 +49,16 @@ After you have all the files, you can start the updating process.
 
 > Genshin Impact running in the taskbar > right click > exit
 
-Now, go to the following location
-
-**C:\\Program Files\\Genshin Impact\\Genshin Impact Game\\**
-
-*   In this location, delete all the **.zip\_tmp files** ( _temp files that were downloaded when you hit the Update button_ )
-*   Copy all the files you downloaded in the “Required Downloads” section, and paste them in the following location ( _the patch file for 2.3.0, and the audio files_)
-
-**C:\\Program Files\\Genshin Impact\\Genshin Impact Game\\** _(or wherever the game is installed, just make sure it is in the Genshin Impact Game folder)_
-
-Open the launcher, and it will say **Pre-installation done**
+Now,
+* go to the following location **C:\\Program Files\\Genshin Impact\\Genshin Impact Game\\**
+* delete all the **.zip\_tmp files** if exists ( _temp files that were downloaded when you hit the Update button_ )
+* Copy all the files you downloaded in the “Required Downloads” section, and paste them in the following location ( _the patch file for 2.3.0, and the audio files_) **C:\\Program Files\\Genshin Impact\\Genshin Impact Game\\** _(or wherever the game is installed, just make sure it is in the Genshin Impact Game folder)_
+* Open the launcher, and it will say **Pre-installation done**
 
 ### Important things to **note**
-
 *   **DON’T EXTRACT THE FILES** . If you extract the files, you won’t be able to play it until 2.3.0 is live. We recommend you don’t do that.
-*   **Pre-installation done** means that you can keep playing the game until the patch is live
-*   If you are following this guide after the patch is live, it will say **Update** instead of Pre-installation done. Click that, and it will install these files
+*   **Pre-installation done** means that you can keep playing the **Genshin Impact game** until the patch is live
+*   If you are following this guide after the patch is live, it will say **Update** instead of **Pre-installation done**. Click that, and it will install these files
 
 ## Simple way
 - Download Update Version Or Full Game Version
@@ -90,7 +84,7 @@ Open the launcher, and it will say **Pre-installation done**
 
 # Older Patches
 
-## [Patch 2.0.0 - 2.1.0](2.0.update-genshin-impact-2.0.0-2.1.0.html)
+## [Patch 2.0.0 - 2.1.0](update-genshin-impact-2.0.0-2.1.0.html)
 - [en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_2.0.0_2.1.0_diff_n8EeG923ZU1BPcgq.zip)
 - [game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.0.0_2.1.0_diff_kYU5QpgOiPB1woI4.zip)
 - [ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.0.0_2.1.0_diff_Ub6DpehQk19xKEVa.zip)
