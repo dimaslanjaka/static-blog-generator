@@ -31,7 +31,7 @@ Update genshin impact `2.3.0` manual via download manager (IDM).
 
 # Download Genshin Impact Patches
 
-## Patch 2.1.0 - 2.3.0
+## [Patch 2.1.0 - 2.3.0](update-genshin-impact-2.1.0-2.3.0.html)
 - [en-us_2.1.0_2.3.0_diff_9WOeMLlpzcFh7owj.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/en-us_2.1.0_2.3.0_diff_9WOeMLlpzcFh7owj.zip)
 - [game_2.1.0_2.3.0_diff_IFqrKCzDYyUt697g.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/game_2.1.0_2.3.0_diff_IFqrKCzDYyUt697g.zip)
 - [ja-jp_2.1.0_2.3.0_diff_8nXfsMArgbPOU30c.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ja-jp_2.1.0_2.3.0_diff_8nXfsMArgbPOU30c.zip)
