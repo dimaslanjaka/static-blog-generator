@@ -133,5 +133,6 @@ Now,
 
 | Title    |                         URL                          |
 | -------- | :--------------------------------------------------: |
-| Blogger  |     [webmanajemen.com](https://webmanajemen.com)     |
+| Blog  |     [webmanajemen.com](https://webmanajemen.com)     |
 | Git Page | [www.webmanajemen.com](https://www.webmanajemen.com) |
+| GitHub | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |
