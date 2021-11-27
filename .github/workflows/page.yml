@@ -91,7 +91,8 @@ jobs:
 
       - name: Commit Files
         id: git-commit
-        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        if: ${{ false }}
+        #if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
         run: git commit -m "Add changes ${{ steps.date.outputs.date }}" -a
 
       - name: Deploy 🚀
