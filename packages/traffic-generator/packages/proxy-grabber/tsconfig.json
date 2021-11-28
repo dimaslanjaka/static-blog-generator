@@ -1,19 +1,29 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 12",
-  "extends": "@tsconfig/node12/tsconfig.json",
+  "extends": "../../../hexo-seo/packages/js-prototypes/tsconfig.json",
   "compilerOptions": {
-    "preserveConstEnums": true,
+    "baseUrl": ".", // This must be specified if "paths" is.
     "allowJs": true,
-    "outDir": "./dist"
+    "allowUnusedLabels": true,
+    "outDir": "./dist",
+    //"declarationDir": "./dist/@types",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "checkJs": false,
+    "skipLibCheck": true
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "**/node_modules/**",
     "**/*.spec.ts",
     "**/*.test.ts",
-    "**/__tests__/**"
+    "**/__tests__/**",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/.git/**"
+  ],
+  "include": [
+    "src/index.ts",
+    "source/**/*"
   ]
 }
