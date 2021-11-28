@@ -1,0 +1,26 @@
+{
+  "name": "proxy-grabber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lowdb": "^3.0.0",
+    "node-libcurl": "^2.3.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.9",
+    "@tsconfig/node14": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.0"
+  }
+}
