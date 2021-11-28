@@ -69,7 +69,17 @@ module.exports = {
   ],
   // specify your desired rules for eslint
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off', // disable function without return type
+    "no-unused-vars": "off", // disable original eslint unused-vars
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // enable typescript-eslint unused-vars and allow unused vars start with underscore (_)
+    "@typescript-eslint/no-explicit-any": "off", // allow any types
+    "@typescript-eslint/no-this-alias": [ // rules for this binding
+      "error",
+      {
+        allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
+        allowedNames: ["self"], // Allow `const self = this`; `[]` by default
+      },
+    ],
   },
 };
 ```
