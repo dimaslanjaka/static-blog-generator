@@ -1,16 +1,34 @@
 {
-  "name": "proxy-grabber",
-  "version": "1.0.0",
-  "description": "",
+  "name": "proxies-grabber",
+  "version": "1.0.3",
+  "description": "NodeJS Public Proxy Grabber",
   "main": "index.js",
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "proxy",
+    "public",
+    "grabber",
+    "proxy finder"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimaslanjaka/dimaslanjaka.github.io.git",
+    "directory": "/packages/traffic-generator/packages/proxy-grabber"
+  },
+  "homepage": "https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/packages/traffic-generator/packages/proxy-grabber",
+  "author": {
+    "email": "dimaslanjaka@gmail.com",
+    "name": "Dimas Lanjaka",
+    "url": "https://github.com/dimaslanjaka"
+  },
   "license": "ISC",
   "dependencies": {
-    "lowdb": "^3.0.0",
+    "bluebird": "^3.7.2",
+    "moment": "^2.29.1",
+    "node-html-parser": "^5.1.0",
+    "node-json-db": "^1.4.1",
     "node-libcurl": "^2.3.3"
   },
   "devDependencies": {
@@ -21,6 +39,8 @@
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   }
 }
