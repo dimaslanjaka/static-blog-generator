@@ -34,7 +34,7 @@ comments: true
 Linter becomes 2 types:
 - [TSLint](https://palantir.github.io/tslint/) is a linter that must be utilized for TypeScript.
 - [ESLint](https://eslint.org/) is a linter supports both JavaScript and TypeScript.
-**ESLint has a more performant architecture than TSLint** and that they will **only be focusing on ESLint** when providing editor linting integration for TypeScript. Now how to automated these linter in vscode.
+**ESLint has a more performant architecture than TSLint** and that they will **only be focusing on ESLint** when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without **[prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
 
 ## Install dependencies
 ```shell
@@ -44,10 +44,13 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
 yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 ```
 
+## install and activate VSCode ESLint extension for auto Linter And Formatter
+[Download Here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 ## Create .eslintrc.js
 ```js
 module.exports = {
-  root: true,
+  root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
     browser: true, // add support for browser js (window,document,location,etc)
@@ -92,3 +95,30 @@ this will automate lint and format your codes when saving.
   },
 }
 ```
+
+# create tsconfig.json (if not created yet)
+for example tsconfig.json for node 12
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 12",
+  "extends": "@tsconfig/node12/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**"
+  ]
+}
+```
+
+## Finish
+now your vscode format and lint your codes automatically.
