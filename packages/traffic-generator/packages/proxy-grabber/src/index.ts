@@ -1,12 +1,15 @@
+/* global dbFolder */
 import dbl from './db';
 import spys, { returnObj } from './spys';
 import moment from 'moment';
 import sslProxiesOrg from './sslproxies';
 import Promise from 'bluebird';
 import proxyListOrg from './proxylist';
+import path from 'path';
 import curl from './curl';
 import '../../../../hexo-seo/packages/js-prototypes/src/Array';
-const db = new dbl('proxies');
+declare const dbFolder: string;
+const db = new dbl(path.join(dbFolder, 'databases/proxies'));
 
 class proxyGrabber {
   method1(): Promise<returnObj[]> {
@@ -63,13 +66,11 @@ class proxyGrabber {
 
   /**
    * Test all proxies
-   * @param limit limit proxies to test (0=unlimited)
+   * @param limit limit proxies each instance to test (0=unlimited)
    */
   test(limit = 10) {
-    this.get().then((proxies) => {
-      proxies = proxies.uniqueObjectKey('proxy').shuffle();
-      if (limit != 0) proxies.length = limit;
-      const tests = proxies.map((obj) => {
+    function testProxies(proxies: returnObj[], dbKey: string) {
+      return proxies.map((obj) => {
         return curl
           .testProxy(obj.proxy, 'https://httpbin.org/get', { HTTPHEADER: ['Accept: application/json'] })
           .then((res) => {
@@ -80,10 +81,32 @@ class proxyGrabber {
               } else {
                 obj.test = 'FAILED';
               }
-              //db.push('/proxies', obj);
+              db.edit(dbKey, obj, { proxy: obj.proxy });
               return obj;
             }
+          })
+          .catch((e: Error) => {
+            console.log({ proxy: obj.proxy, message: e.message, code: e['code'] });
           });
+      });
+    }
+    return [this.method1(), this.method2(), this.method3()].map((obj, index) => {
+      let dbKey: string;
+      switch (index) {
+        case 0:
+          dbKey = '/spys/proxies';
+          break;
+        case 1:
+          dbKey = '/sslProxiesOrg/proxies';
+          break;
+        case 2:
+          dbKey = '/proxyListOrg/proxies';
+          break;
+      }
+      return obj.then((proxies) => {
+        proxies = proxies.uniqueObjectKey('proxy').shuffle();
+        if (limit != 0) proxies.length = limit;
+        return testProxies(proxies, dbKey);
       });
     });
   }
@@ -93,4 +116,4 @@ class proxyGrabber {
   }
 }
 
-export default proxyGrabber;
+export = proxyGrabber;
