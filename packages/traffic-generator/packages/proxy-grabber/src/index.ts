@@ -70,23 +70,33 @@ class proxyGrabber {
    */
   test(limit = 10) {
     function testProxies(proxies: returnObj[], dbKey: string) {
-      return proxies.map((obj) => {
+      return Promise.resolve(proxies).map((obj) => {
+        const result: TestResult = { error: true, proxy: null, message: null, code: 0 };
         return curl
           .testProxy(obj.proxy, 'https://httpbin.org/get', { HTTPHEADER: ['Accept: application/json'] })
           .then((res) => {
             //console.log({ proxy: obj.proxy, origin: res.data.origin });
-            if (res.statusCode == 200) {
-              if (res.data.origin == obj.proxy) {
-                obj.test = 'PASSED';
-              } else {
-                obj.test = 'FAILED';
-              }
-              db.edit(dbKey, obj, { proxy: obj.proxy });
-              return obj;
+            /*if (res.statusCode == 200) {
+            if (res.data.origin == obj.proxy) {
+              obj.test = 'PASSED';
+            } else {
+              obj.test = 'FAILED';
             }
+            db.edit(dbKey, obj, { proxy: obj.proxy });
+            return { error: false, proxy: obj };
+          } */
+            result.error = res.statusCode != 200;
+            result.proxy = obj;
+            obj.test = !result.error ? 'PASSED' : 'FAILED';
+            db.edit(dbKey, obj, { proxy: obj.proxy });
+            return result;
           })
           .catch((e: Error) => {
-            console.log({ proxy: obj.proxy, message: e.message, code: e['code'] });
+            result.error = true;
+            result.proxy = obj;
+            result.message = e.message;
+            result.code = e['code'] as number;
+            return result;
           });
       });
     }
@@ -103,17 +113,27 @@ class proxyGrabber {
           dbKey = '/proxyListOrg/proxies';
           break;
       }
-      return obj.then((proxies) => {
-        proxies = proxies.uniqueObjectKey('proxy').shuffle();
-        if (limit != 0) proxies.length = limit;
-        return testProxies(proxies, dbKey);
-      });
+      if (dbKey) {
+        return obj.then((proxies) => {
+          proxies = proxies.uniqueObjectKey('proxy').shuffle();
+          if (limit != 0) proxies.length = limit;
+          return testProxies(proxies, dbKey);
+        });
+      }
+      return { error: true, proxy: null, message: 'cannot find database key', code: 99 };
     });
   }
 
   toString() {
     return JSON.stringify(this.get());
   }
+}
+
+interface TestResult {
+  error: boolean;
+  proxy: returnObj;
+  message?: string;
+  code?: number;
 }
 
 export = proxyGrabber;

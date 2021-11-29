@@ -1,6 +1,7 @@
 import '../../../../../hexo-seo/packages/js-prototypes/src/Number';
 declare class DBConstructor {
     folder: string;
+    debug: boolean;
     /**
      * Database File Constructor
      * @param folder folder to save entire databases
@@ -18,7 +19,8 @@ declare class DBConstructor {
      * @param value
      */
     push(key: string, value: any): void;
-    edit(key: string, newValue: any, by: any): void;
+    private save;
+    edit(key: string, newValue: any, by: object): void;
     /**
      * get table database by key
      * @param key key table

@@ -29,7 +29,6 @@
     "bluebird": "^3.7.2",
     "moment": "^2.29.1",
     "node-html-parser": "^5.1.0",
-    "node-json-db": "^1.4.1",
     "node-libcurl": "^2.3.3",
     "pretty-error": "^4.0.0"
   },
