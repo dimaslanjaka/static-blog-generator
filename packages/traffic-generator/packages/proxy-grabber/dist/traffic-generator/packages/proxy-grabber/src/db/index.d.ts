@@ -1,4 +1,3 @@
-import { JsonDB } from 'node-json-db';
+import DBConstructor from './construct';
 export declare const getNodeVersion: number;
-declare function loadDb(dbfilename?: string): JsonDB;
-export default loadDb;
+export default DBConstructor;

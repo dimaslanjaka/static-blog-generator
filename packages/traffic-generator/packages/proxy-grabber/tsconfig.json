@@ -8,7 +8,7 @@
     "target": "ES2015",
     //"declarationDir": "./dist/@types",
     "resolveJsonModule": true,
-    "emitDeclarationOnly": true,
+    //"emitDeclarationOnly": true,
     "declaration": true,
     "esModuleInterop": true,
     "skipDefaultLibCheck": true,
