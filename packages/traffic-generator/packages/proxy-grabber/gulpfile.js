@@ -3,12 +3,16 @@ const dbProxy = require('.').db;
 const path = require('path');
 const gulp = require('gulp');
 
-function testProxy() {
+function testProxy(done) {
   const grabber = new proxyGrabber();
   grabber.test();
+  done();
 }
 
-function testDB() {
+function testDB(done) {
+  /**
+   * @type {import('./src/db/construct')}
+   */
   const db = new dbProxy(path.join(__dirname, 'databases'));
   if (!db.exists('/test')) {
     db.push('/test/string', 'string db');
@@ -16,6 +20,7 @@ function testDB() {
     db.push('/test/float', parseFloat(Math.random()));
     db.push('/test/object', { key: 'value' });
     db.push('/test/array', ['satu', 'dua', 'tiga']);
+    db.push('/test/arrayOfObjects', [{ key: 'value' }, { key: 'value2' }, { key: 'value3' }]);
   }
 
   console.log(
@@ -25,6 +30,11 @@ function testDB() {
     db.get('/test/float'),
     db.get('/test/string'),
   );
+
+  db.edit('/test/arrayOfObjects', { key: 'value', newKey: Math.random().toFixed(2) }, { key: 'value' });
+  console.log(db.get('/test/arrayOfObjects'));
+
+  done();
 }
 
 exports.db = testDB;

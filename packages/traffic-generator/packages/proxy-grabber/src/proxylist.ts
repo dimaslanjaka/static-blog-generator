@@ -56,4 +56,4 @@ function proxyListOrg() {
     return objectWrapper;
   });
 }
-export default proxyListOrg;
+export = proxyListOrg;

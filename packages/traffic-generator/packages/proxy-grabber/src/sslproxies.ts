@@ -55,4 +55,4 @@ function sslProxiesOrg() {
   });
 }
 
-export default sslProxiesOrg;
+export = sslProxiesOrg;

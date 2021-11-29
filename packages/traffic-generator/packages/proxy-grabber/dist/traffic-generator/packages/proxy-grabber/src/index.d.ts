@@ -12,9 +12,9 @@ declare class proxyGrabber {
     get(): Promise<returnObj[]>;
     /**
      * Test all proxies
-     * @param limit limit proxies to test (0=unlimited)
+     * @param limit limit proxies each instance to test (0=unlimited)
      */
-    test(limit?: number): void;
+    test(limit?: number): Promise<Promise<void | returnObj>[]>[];
     toString(): string;
 }
-export default proxyGrabber;
+export = proxyGrabber;

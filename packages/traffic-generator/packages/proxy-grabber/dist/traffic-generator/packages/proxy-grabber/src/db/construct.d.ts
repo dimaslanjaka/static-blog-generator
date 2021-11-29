@@ -18,6 +18,7 @@ declare class DBConstructor {
      * @param value
      */
     push(key: string, value: any): void;
+    edit(key: string, newValue: any, by: any): void;
     /**
      * get table database by key
      * @param key key table
@@ -30,4 +31,4 @@ declare class DBConstructor {
     get<T>(key: string, fallback?: T): null | T | string | ReturnType<typeof JSON.parse> | ReturnType<typeof parseInt> | ReturnType<typeof parseFloat>;
     private locationfile;
 }
-export default DBConstructor;
+export = DBConstructor;

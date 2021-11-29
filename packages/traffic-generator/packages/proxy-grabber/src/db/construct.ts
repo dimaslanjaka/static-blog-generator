@@ -2,6 +2,7 @@ import path from 'path';
 import * as fm from '../../../../../hexo-seo/src/fm';
 import '../../../../../hexo-seo/packages/js-prototypes/src/Number';
 import { existsSync } from 'fs';
+import PrettyError from 'pretty-error';
 
 class DBConstructor {
   folder: string;
@@ -28,7 +29,9 @@ class DBConstructor {
   push(key: string, value: any) {
     let content: string;
     content = typeof value + ':' + Buffer.from(value.toString()).toString('base64');
-    if (Array.isArray(value) || typeof value == 'object') {
+    if (Array.isArray(value)) {
+      content = 'array:' + Buffer.from(JSON.stringify(value)).toString('base64');
+    } else if (typeof value == 'object') {
       content = typeof value + ':' + Buffer.from(JSON.stringify(value)).toString('base64');
     } else if (typeof value == 'number') {
       if (isInt(value)) {
@@ -38,7 +41,36 @@ class DBConstructor {
       }
     }
 
+    this.save(key, content);
+  }
+  private save(key: string, content: any) {
     fm.writeFile(this.locationfile(key), content);
+  }
+  edit(key: string, newValue: any, by: object) {
+    if (typeof by == 'object') {
+      const get = this.get(key);
+      if (Array.isArray(get)) {
+        // get index array, -1 = not found
+        const getIndex = get.findIndex((predicate: object) => {
+          // if object by === predicate
+          if (objectEquals(predicate, by)) return true;
+          const keysBy = Object.keys(by);
+          let resultLoop = true;
+          for (let index = 0; index < keysBy.length; index++) {
+            const keyBy = keysBy[index];
+            // if not match, it return false (true && false)
+            resultLoop = resultLoop && predicate[keyBy] === by[keyBy];
+          }
+          if (resultLoop) return true;
+          throw new Error();
+        });
+        if (getIndex > -1) {
+          // set new value
+          get[getIndex] = newValue;
+          this.push(key, get);
+        }
+      }
+    }
   }
 
   /**
@@ -61,8 +93,10 @@ class DBConstructor {
     }
     const content = fm.readFile(this.locationfile(key)).toString().split(':');
     const value = Buffer.from(content[1], 'base64').toString('ascii');
+
     switch (content[0]) {
-      case 'object' || 'array':
+      case 'object':
+      case 'array':
         return JSON.parse(value);
       case 'float':
         return parseFloat(value);
@@ -77,4 +111,54 @@ class DBConstructor {
   }
 }
 
-export default DBConstructor;
+function objectEquals(x, y) {
+  'use strict';
+
+  if (x === null || x === undefined || y === null || y === undefined) {
+    return x === y;
+  }
+  // after this just checking type of one would be enough
+  if (x.constructor !== y.constructor) {
+    return false;
+  }
+  // if they are functions, they should exactly refer to same one (because of closures)
+  if (x instanceof Function) {
+    return x === y;
+  }
+  // if they are regexps, they should exactly refer to same one (it is hard to better equality check on current ES)
+  if (x instanceof RegExp) {
+    return x === y;
+  }
+  if (x === y || x.valueOf() === y.valueOf()) {
+    return true;
+  }
+  if (Array.isArray(x) && x.length !== y.length) {
+    return false;
+  }
+
+  // if they are dates, they must had equal valueOf
+  if (x instanceof Date) {
+    return false;
+  }
+
+  // if they are strictly equal, they both need to be object at least
+  if (!(x instanceof Object)) {
+    return false;
+  }
+  if (!(y instanceof Object)) {
+    return false;
+  }
+
+  // recursive object equality check
+  const p = Object.keys(x);
+  return (
+    Object.keys(y).every(function (i) {
+      return p.indexOf(i) !== -1;
+    }) &&
+    p.every(function (i) {
+      return objectEquals(x[i], y[i]);
+    })
+  );
+}
+
+export = DBConstructor;
