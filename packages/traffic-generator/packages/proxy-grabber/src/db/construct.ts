@@ -3,9 +3,12 @@ import * as fm from '../../../../../hexo-seo/src/fm';
 import '../../../../../hexo-seo/packages/js-prototypes/src/Number';
 import { existsSync } from 'fs';
 import PrettyError from 'pretty-error';
+const pe = new PrettyError();
+pe.start();
 
 class DBConstructor {
   folder: string;
+  debug = false;
   /**
    * Database File Constructor
    * @param folder folder to save entire databases
@@ -62,12 +65,13 @@ class DBConstructor {
             resultLoop = resultLoop && predicate[keyBy] === by[keyBy];
           }
           if (resultLoop) return true;
-          throw new Error();
         });
         if (getIndex > -1) {
           // set new value
           get[getIndex] = newValue;
           this.push(key, get);
+        } else {
+          if (this.debug) console.error('cannot find index ' + key, by);
         }
       }
     }

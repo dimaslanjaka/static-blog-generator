@@ -14,14 +14,13 @@ function testDB(done) {
    * @type {import('./src/db/construct')}
    */
   const db = new dbProxy(path.join(__dirname, 'databases'));
-  if (!db.exists('/test')) {
-    db.push('/test/string', 'string db');
-    db.push('/test/number', parseInt(Math.random()));
-    db.push('/test/float', parseFloat(Math.random()));
-    db.push('/test/object', { key: 'value' });
-    db.push('/test/array', ['satu', 'dua', 'tiga']);
-    db.push('/test/arrayOfObjects', [{ key: 'value' }, { key: 'value2' }, { key: 'value3' }]);
-  }
+  db.debug = true;
+  db.push('/test/string', 'string db');
+  db.push('/test/number', parseInt(Math.random()));
+  db.push('/test/float', parseFloat(Math.random()));
+  db.push('/test/object', { key: 'value' });
+  db.push('/test/array', ['satu', 'dua', 'tiga']);
+  db.push('/test/arrayOfObjects', [{ key: 'value' }, { key: 'value2', fixed: 'fix' }, { key: 'value3' }]);
 
   console.log(
     db.get('/test/array'),
@@ -32,6 +31,11 @@ function testDB(done) {
   );
 
   db.edit('/test/arrayOfObjects', { key: 'value', newKey: Math.random().toFixed(2) }, { key: 'value' });
+  db.edit(
+    '/test/arrayOfObjects',
+    { key: 'value2', fixed: Math.random().toFixed(2), newKey: Math.random().toFixed(2) },
+    { key: 'value2', fixed: 'fix' },
+  );
   console.log(db.get('/test/arrayOfObjects'));
 
   done();
