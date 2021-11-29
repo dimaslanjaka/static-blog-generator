@@ -1,4 +1,4 @@
-# Public Proxy Grabber
+# NodeJS Public Proxy Grabber
 
 ```js
 import proxyGrabber from 'proxies-grabber';
