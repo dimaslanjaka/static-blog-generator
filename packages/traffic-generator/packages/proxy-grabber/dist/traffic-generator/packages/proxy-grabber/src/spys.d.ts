@@ -32,6 +32,10 @@ export declare type returnObj = {
      * Proxy Type
      */
     type: string | 'http' | 'socks4' | 'socks5';
+    /**
+     * Test Result
+     */
+    test: string | 'PASSED' | 'FAILED';
 };
 /**
  * Grab Spys

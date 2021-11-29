@@ -1,5 +1,6 @@
 import { returnObj } from './spys';
 import Promise from 'bluebird';
+import '../../../../hexo-seo/packages/js-prototypes/src/Array';
 declare class proxyGrabber {
     method1(): Promise<returnObj[]>;
     method2(): Promise<returnObj[]>;
@@ -9,6 +10,11 @@ declare class proxyGrabber {
      * @returns
      */
     get(): Promise<returnObj[]>;
+    /**
+     * Test all proxies
+     * @param limit limit proxies to test (0=unlimited)
+     */
+    test(limit?: number): void;
     toString(): string;
 }
 export default proxyGrabber;
