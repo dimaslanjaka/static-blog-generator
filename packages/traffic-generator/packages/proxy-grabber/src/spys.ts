@@ -33,6 +33,10 @@ export type returnObj = {
    * Proxy Type
    */
   type: string | 'http' | 'socks4' | 'socks5';
+  /**
+   * Test Result
+   */
+  test: string | 'PASSED' | 'FAILED';
 };
 
 /**
@@ -64,6 +68,7 @@ function spys() {
             google: null,
             alert: null,
             type: 'http',
+            test: null,
           };
           // [ '79.104.25.218:8080', 'RU-H-S', '-' ]
           const parse = str.split(/\s/);

@@ -1,6 +1,7 @@
 import { join } from 'path';
 import { JsonDB } from 'node-json-db';
 import { Config } from 'node-json-db/dist/lib/JsonDBConfig';
+import DBConstructor from './construct';
 import * as fm from '../../../../../hexo-seo/src/fm';
 //https://www.npmjs.com/package/node-json-db
 export const getNodeVersion = parseInt(process.version.toLowerCase().replace('v', ''));
@@ -13,4 +14,4 @@ function loadDb(dbfilename = 'db') {
   return db;
 }
 
-export default loadDb;
+export default DBConstructor;

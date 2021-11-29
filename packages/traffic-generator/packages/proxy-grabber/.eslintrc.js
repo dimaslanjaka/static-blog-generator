@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

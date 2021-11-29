@@ -20,6 +20,7 @@ function sslProxiesOrg() {
           google: null,
           alert: null,
           type: 'http',
+          test: null,
         };
         const td = tr.querySelectorAll('td');
         const proxy = td[0];
@@ -29,7 +30,7 @@ function sslProxiesOrg() {
         const google = td[5];
         const ssl = td[6];
         if (proxy && /^\d/.test(proxy.rawText)) {
-          console.log(proxy.rawText, port.rawText, countryCode.rawText, anonymity.rawText, google.rawText, ssl.rawText);
+          //console.log(proxy.rawText, port.rawText, countryCode.rawText, anonymity.rawText, google.rawText, ssl.rawText);
           buildObject.proxy = `${proxy.rawText.trim()}:${port.rawText.trim()}`;
           buildObject.google = /^yes/.test(google.rawText.trim()) ? true : false;
           buildObject.ssl = /^yes/.test(ssl.rawText.trim()) ? true : false;
@@ -46,8 +47,8 @@ function sslProxiesOrg() {
               buildObject.anonymity = 'N';
               break;
           }
+          objectWrapper.push(buildObject);
         }
-        objectWrapper.push(buildObject);
       });
     });
     return objectWrapper;
