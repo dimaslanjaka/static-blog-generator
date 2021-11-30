@@ -20,5 +20,12 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-this-alias': [
+      'error',
+      {
+        allowDestructuring: true, // Allow `const { props, state } = this`; false by default
+        allowedNames: ['self'], // Allow `const self = this`; `[]` by default
+      },
+    ],
   },
 };

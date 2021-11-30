@@ -2,11 +2,18 @@ const proxyGrabber = require('.');
 const dbProxy = require('.').db;
 const path = require('path');
 const gulp = require('gulp');
+const Promise = require('bluebird');
 
 function testProxy(done) {
   const grabber = new proxyGrabber();
-  grabber.test();
-  done();
+  grabber.test(1).then((resx) => {
+    let xx = [];
+    resx.map((rx) => {
+      xx = xx.concat(rx);
+    });
+    console.log(xx);
+    done();
+  });
 }
 
 function testDB(done) {

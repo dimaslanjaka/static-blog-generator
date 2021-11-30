@@ -9,6 +9,18 @@
       "name": "Test",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "command": "gulp proxy",
+      "name": "Test Proxy",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "gulp db",
+      "name": "Test Database",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

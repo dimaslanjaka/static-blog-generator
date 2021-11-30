@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "NodeJS Public Proxy Grabber",
   "main": "index.js",
-  "types": "dist/traffic-generator/packages/proxy-grabber/src/index.d.ts",
+  "types": "dist/traffic-generator/packages/proxy-grabber/index.d.ts",
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix"
   },
