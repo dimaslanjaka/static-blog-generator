@@ -64,28 +64,25 @@ class proxyGrabber {
     });
   }
 
+  getDb() {
+    return { proxyListOrg: this.method3, sslProxiesOrg: this.method2, spys: this.method1 };
+  }
+
   /**
    * Test all proxies
    * @param limit limit proxies each instance to test (0=unlimited)
    */
   test(limit = 10) {
+    const self = this;
     function testProxies(proxies: returnObj[], dbKey: string) {
-      return Promise.resolve(proxies).map((obj) => {
+      return proxies.map((obj) => {
         const result: TestResult = { error: true, proxy: null, message: null, code: 0 };
         return curl
-          .testProxy(obj.proxy, 'https://httpbin.org/get', { HTTPHEADER: ['Accept: application/json'] })
+          .testProxy(obj.proxy, 'https://httpbin.org/get', { HTTPHEADER: ['Accept: application/json'], TIMEOUT: '60L' })
           .then((res) => {
             //console.log({ proxy: obj.proxy, origin: res.data.origin });
-            /*if (res.statusCode == 200) {
-            if (res.data.origin == obj.proxy) {
-              obj.test = 'PASSED';
-            } else {
-              obj.test = 'FAILED';
-            }
-            db.edit(dbKey, obj, { proxy: obj.proxy });
-            return { error: false, proxy: obj };
-          } */
-            result.error = res.statusCode != 200;
+            //console.log(res.headers[1]['content-type'] == 'application/json');
+            result.error = res.statusCode != 200 && res.headers[1]['content-type'] != 'application/json';
             result.proxy = obj;
             obj.test = !result.error ? 'PASSED' : 'FAILED';
             db.edit(dbKey, obj, { proxy: obj.proxy });
@@ -100,28 +97,45 @@ class proxyGrabber {
           });
       });
     }
-    return [this.method1(), this.method2(), this.method3()].map((obj, index) => {
-      let dbKey: string;
-      switch (index) {
-        case 0:
-          dbKey = '/spys/proxies';
-          break;
-        case 1:
-          dbKey = '/sslProxiesOrg/proxies';
-          break;
-        case 2:
-          dbKey = '/proxyListOrg/proxies';
-          break;
-      }
-      if (dbKey) {
-        return obj.then((proxies) => {
+
+    function getProxies() {
+      const getProxies = [self.method1(), self.method2(), self.method3()];
+      let results: TestResult[] = [];
+      return Promise.all(getProxies).map((proxies, index) => {
+        // calculate database key
+        let dbKey: string;
+        switch (index) {
+          case 0:
+            dbKey = '/spys/proxies';
+            break;
+          case 1:
+            dbKey = '/sslProxiesOrg/proxies';
+            break;
+          case 2:
+            dbKey = '/proxyListOrg/proxies';
+            break;
+        }
+
+        if (dbKey) {
           proxies = proxies.uniqueObjectKey('proxy').shuffle();
-          if (limit != 0) proxies.length = limit;
-          return testProxies(proxies, dbKey);
-        });
-      }
-      return { error: true, proxy: null, message: 'cannot find database key', code: 99 };
-    });
+          if (limit > 0) proxies.length = limit;
+          const test = testProxies(proxies, dbKey).map((tested) => {
+            return tested.then((result) => {
+              results = results.concat(result);
+              return Promise.all(results);
+            });
+          });
+          return Promise.all(test).then(() => {
+            console.log('test', index + 1, 'done');
+            return results;
+          });
+        } else {
+          console.log('dbKey not found');
+        }
+      });
+    }
+
+    return getProxies();
   }
 
   toString() {

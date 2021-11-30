@@ -14,12 +14,7 @@ declare class proxyGrabber {
      * Test all proxies
      * @param limit limit proxies each instance to test (0=unlimited)
      */
-    test(limit?: number): (Promise<TestResult[]> | {
-        error: boolean;
-        proxy: any;
-        message: string;
-        code: number;
-    })[];
+    test(limit?: number): Promise<TestResult[][]>;
     toString(): string;
 }
 interface TestResult {
