@@ -6,19 +6,20 @@ lang: en
 date: 2021-11-30T20:00:00
 type: post
 tags:
-  - GitHub
+  - Games
 keywords:
-  - GitHub
-  - workflows
-  - yml
+  - Seven Knight
+  - Guide
+  - F2P
 author:
   nick: "Dimas Lanjaka"
   link: "https://github.com/dimaslanjaka"
 
 category:
-  - Programming
+  - Games
+  - Seven Knight
 
-cover: "/GitHub/workflows/cover.png"
+cover: "https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg"
 location: Indonesia
 comments: true
 ---
