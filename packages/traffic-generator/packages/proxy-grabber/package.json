@@ -5,7 +5,8 @@
   "main": "dist/traffic-generator/packages/proxy-grabber/index.js",
   "types": "dist/traffic-generator/packages/proxy-grabber/index.d.ts",
   "scripts": {
-    "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix",
+    "build": "rm -rf dist && tsc"
   },
   "keywords": [
     "proxy",

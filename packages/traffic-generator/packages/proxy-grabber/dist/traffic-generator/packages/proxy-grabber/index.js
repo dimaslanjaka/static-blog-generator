@@ -9,6 +9,7 @@ if (process.env.NODE_ENV) {
   }
 }
 */
+require('');
 if (process.env.NODE_ENV) {
     if (process.env.NODE_ENV == 'development') {
         require('ts-node').register({ projectSearchDir: __dirname, project: 'tsconfig.json' });
