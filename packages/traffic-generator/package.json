@@ -33,6 +33,7 @@
     "moment": "^2.29.1",
     "nightmare": "file:packages/nightmare",
     "node-libcurl": "^2.3.3",
+    "proxies-grabber": "file:packages/proxy-grabber",
     "tsd": "^0.19.0",
     "underscore": "^1.13.1"
   }

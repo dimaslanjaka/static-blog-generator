@@ -1,4 +1,3 @@
-/* global dbFolder */
 import dbl from './db';
 import spys, { returnObj } from './spys';
 import moment from 'moment';
@@ -8,8 +7,7 @@ import proxyListOrg from './proxylist';
 import path from 'path';
 import curl from './curl';
 import '../../../../hexo-seo/packages/js-prototypes/src/Array';
-declare const dbFolder: string;
-const db = new dbl(path.join(dbFolder, 'databases/proxies'));
+const db = new dbl(path.join(process.cwd(), 'databases/proxies'));
 
 class proxyGrabber {
   method1(): Promise<returnObj[]> {

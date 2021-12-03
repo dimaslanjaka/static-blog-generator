@@ -1,8 +1,8 @@
 {
   "name": "proxies-grabber",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "NodeJS Public Proxy Grabber",
-  "main": "index.js",
+  "main": "dist/traffic-generator/packages/proxy-grabber/index.js",
   "types": "dist/traffic-generator/packages/proxy-grabber/index.d.ts",
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix"
