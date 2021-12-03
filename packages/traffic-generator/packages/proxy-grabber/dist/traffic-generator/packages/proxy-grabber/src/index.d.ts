@@ -10,6 +10,11 @@ declare class proxyGrabber {
      * @returns
      */
     get(): Promise<returnObj[]>;
+    getDb(): {
+        proxyListOrg: () => Promise<returnObj[]>;
+        sslProxiesOrg: () => Promise<returnObj[]>;
+        spys: () => Promise<returnObj[]>;
+    };
     /**
      * Test all proxies
      * @param limit limit proxies each instance to test (0=unlimited)

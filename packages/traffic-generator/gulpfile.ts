@@ -47,5 +47,15 @@ gulp.task("watch", function () {
   });
   return watcher;
 */
+import proxyGrabber from "proxies-grabber";
+function testProxy(done) {
+  const grabber = new proxyGrabber();
+  const proxies = grabber.get();
+  return proxies.then((result) => {
+    console.log(result);
+    done();
+  });
+}
+gulp.task("proxy", testProxy);
 
 gulp.task("default", gulp.series(clean, "tsc", "copy-non-ts"));
