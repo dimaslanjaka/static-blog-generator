@@ -146,6 +146,14 @@ gulp.task("blogger", function (done) {
   done();
 });
 
+import minifyHtml from "./src/gulp/minify";
+gulp.task("hexo:minify", function () {
+  return gulp
+    .src("docs/**/*.html")
+    .pipe(minifyHtml({ collapseWhitespace: true, minifyJS: true, minifyCSS: true, preserveLineBreaks: true }))
+    .pipe(gulp.dest("docs"));
+});
+
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
 gulp.task("default", gulp.series("article:copy:dev"));
 //exports.default = gulp.series("article:copy:dev");
