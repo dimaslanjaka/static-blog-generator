@@ -1,6 +1,6 @@
 ---
-title: Mora Cost Artifact Genshin Impact
-webtitle: WMI Gitlab
+title: Mora Cost Artifact
+webtitle: Genshin Impact
 subtitle: Rarity Exp Multiplier Chance
 lang: en
 date: 2021-05-13T20:37:00.008+07:00
