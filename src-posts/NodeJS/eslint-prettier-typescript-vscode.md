@@ -67,6 +67,17 @@ module.exports = {
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
+  // override rules for js files
+  "overrides": [
+    {
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off" // disable require warning on js files
+      }
+    }
+  ],
   // specify your desired rules for eslint
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off', // disable function without return type
@@ -80,6 +91,9 @@ module.exports = {
         allowedNames: ["self"], // Allow `const self = this`; `[]` by default
       },
     ],
+    // "arrow-body-style" and "prefer-arrow-callback" are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
   },
 };
 ```
