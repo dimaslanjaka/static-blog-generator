@@ -1,6 +1,5 @@
 import path from "path";
-import SOCKS5 from "./proxies/socks5";
-import HTTPS from "./proxies/https";
+import PROXIES from "./proxies";
 import webviewProxy from "./proxies/webview-proxy";
 import windowProxy from "./proxies/window-proxy";
 import { BrowserWindow } from "electron";
@@ -26,8 +25,7 @@ const createWindow = () => {
     }
   });
 
-  const proxyClasses = [new HTTPS(win), new SOCKS5(win)];
-  const proxyClass = proxyClasses[0];
+  const proxyClass = new PROXIES(win);
   let proxy = proxyClass.getRandom();
 
   function injectWindowProxy() {

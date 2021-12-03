@@ -1,6 +1,6 @@
 {
   "name": "proxies-grabber",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "NodeJS Public Proxy Grabber",
   "main": "dist/traffic-generator/packages/proxy-grabber/index.js",
   "types": "dist/traffic-generator/packages/proxy-grabber/index.d.ts",
