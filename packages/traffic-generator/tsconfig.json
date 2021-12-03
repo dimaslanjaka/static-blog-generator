@@ -15,6 +15,7 @@
     "allowJs": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "checkJs": false,
     "lib": [
       "DOM",
       "ES7",

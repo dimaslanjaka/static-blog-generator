@@ -2,3 +2,4 @@ nestjs
 node_modules
 tmp
 build
+databases
