@@ -23,10 +23,11 @@
     "**/dist/**",
     "**/node_modules/**",
     "**/.git/**",
-    "dist"
+    "./dist/**/*"
   ],
   "include": [
     "index.js",
-    "src/**/*"
+    //"src/**/*",
+    //"../../../hexo-seo/packages/js-prototypes/src/**/*"
   ]
 }

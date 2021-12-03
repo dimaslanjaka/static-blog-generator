@@ -33,7 +33,7 @@ function sslProxiesOrg() {
                 var ssl = td[6];
                 if (proxy && /^\d/.test(proxy.rawText)) {
                     //console.log(proxy.rawText, port.rawText, countryCode.rawText, anonymity.rawText, google.rawText, ssl.rawText);
-                    buildObject.proxy = proxy.rawText.trim() + ":" + port.rawText.trim();
+                    buildObject.proxy = "".concat(proxy.rawText.trim(), ":").concat(port.rawText.trim());
                     buildObject.google = /^yes/.test(google.rawText.trim()) ? true : false;
                     buildObject.ssl = /^yes/.test(ssl.rawText.trim()) ? true : false;
                     buildObject.code = countryCode.rawText.trim();
