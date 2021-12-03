@@ -32,8 +32,8 @@ comments: true
             fascinating heroes that I grew fond of. My favorites are the
             crusader heroes Shane, Sieg, Nia, and Rury.
         </p>
-        <blockquote>
-            <p>
+        <img src="https://user-images.githubusercontent.com/12471057/144593163-8c842636-4d5f-4997-8adc-2051531d7619.png" alt="thumbnail" />
+            <!--p>
                 <a
                     href="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA3MjJfMTI1%2FMDAxNjI2OTU5OTM5MDk5.SRJb1tE3-72MOuEsFqbq1Zcc4UtLGujvHRjDGQ4sm7og.LDvJj9ILAjq5qvKZCl4WhLpFUIrnct-TbmEHF-gAH6Ig.JPEG.dustpeodls%2F1.jpg&amp;type=sc960_832"
                     rel="noopener nofollow ugc"
@@ -42,7 +42,7 @@ comments: true
                     https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA3MjJfMTI1%2FMDAxNjI2OTU5OTM5MDk5.SRJb1tE3-72MOuEsFqbq1Zcc4UtLGujvHRjDGQ4sm7og.LDvJj9ILAjq5qvKZCl4WhLpFUIrnct-TbmEHF-gAH6Ig.JPEG.dustpeodls%2F1.jpg&amp;type=sc960_832
                 </a>
             </p>
-        </blockquote>
+        </blockquote-->
         <p>
             ^ If you click that, you will see Sieg from SK2. My first awakening
             hero in SK1 😄
