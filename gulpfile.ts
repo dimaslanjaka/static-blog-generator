@@ -150,7 +150,7 @@ import minifyHtml from "./src/gulp/minify";
 gulp.task("hexo:minify", function () {
   return gulp
     .src("docs/**/*.html")
-    .pipe(minifyHtml({ collapseWhitespace: true, minifyJS: true, minifyCSS: true, preserveLineBreaks: true }))
+    .pipe(minifyHtml({ collapseWhitespace: true, minifyJS: true, minifyCSS: true }))
     .pipe(gulp.dest("docs"));
 });
 
