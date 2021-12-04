@@ -55,9 +55,15 @@ function extracthost(url: string) {
   return url;
 }
 
-export function isAds(url: string) {
+/**
+ * detect url is ads?
+ * @param url
+ * @param debug
+ * @returns
+ */
+export function isAds(url: string, debug = false) {
   url = extracthost(url);
-  console.log("ads", url, typeof ads[url] === "string");
+  if (debug) console.log("ads", url, typeof ads[url] === "string");
   return typeof ads[url] === "string";
 }
 
