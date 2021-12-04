@@ -1,4 +1,4 @@
-import { app, BrowserWindow, session } from "electron";
+import { app, BrowserWindow, globalShortcut, session } from "electron";
 import path from "path";
 import { isAds } from "./proxies/webview-proxy";
 import * as proxies from "./proxies";
@@ -17,7 +17,7 @@ function createWindow() {
   function injectWebViewProxy() {
     const persists = ["persist:webviewsession", "persist:multi1"];
     persists.forEach((partition) => {
-      const proxy = proxies.random();
+      let proxy = proxies.random();
       const ses = session.fromPartition(partition);
       ses.setProxy({ proxyRules: proxy }).then(() => {
         console.log(`injected [${partition}] with proxy: ${proxy}`);
@@ -27,11 +27,35 @@ function createWindow() {
           details.resourceType == "mainFrame" &&
           !isAds(new URL(details.url).hostname)
         ) {
-          const errors = ["ERR_TIMED_OUT", "ERR_PROXY_CONNECTION_FAILED"];
+          const errors = [
+            "ERR_TIMED_OUT",
+            "ERR_PROXY_CONNECTION_FAILED",
+            "ERR_TUNNEL_CONNECTION_FAILED"
+          ];
           // check if the string has some of the terms
           const hasProxyError = errors.some((term) =>
             details.error.toUpperCase().includes(term)
           );
+
+          if (hasProxyError) {
+            proxies.remove(proxy);
+            // regenerate proxy
+            proxy = proxies.random();
+            // reset proxy
+            ses.setProxy({ proxyRules: proxy }).then(() => {
+              console.log(`re-injected [${partition}] with proxy: ${proxy}`);
+            });
+            // flush caches and data
+            ses.clearCache();
+            ses.clearStorageData();
+            ses.clearAuthCache();
+            ses.clearHostResolverCache();
+            // flush cookies
+            ses.cookies.flushStore().then(() => {
+              // reload window after reset proxy
+              win.reload();
+            });
+          }
 
           console.log(
             hasProxyError ? "proxy error" : "request error",
@@ -49,6 +73,15 @@ function createWindow() {
 
   win.on("closed", () => {
     win = null;
+  });
+
+  globalShortcut.register("f5", function () {
+    console.log("reload by f5");
+    win.reload();
+  });
+  globalShortcut.register("CommandOrControl+R", function () {
+    console.log("reload by CommandOrControl+R");
+    win.reload();
   });
 }
 

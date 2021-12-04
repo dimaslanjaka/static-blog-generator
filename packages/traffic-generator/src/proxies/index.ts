@@ -35,10 +35,11 @@ const get: returnObj[] = db.get("/spys/proxies");
 /**
  * TYPE://IP:PORT
  */
-const result: string[] = [];
-get.forEach((ret) => {
-  result.push(ret.type + "://" + ret.proxy);
-});
+const result = db.get("/spys/electron-proxies", null)
+  ? db.get("/spys/electron-proxies")
+  : get.map((ret) => {
+      return ret.type + "://" + ret.proxy;
+    });
 
 export default result;
 export const random = (): string => {
@@ -48,7 +49,7 @@ export function remove(proxy: string | number) {
   if (typeof result[proxy] == "string") {
     if (typeof proxy == "number") result.deleteAt(proxy);
     else result.unset(proxy);
-    db.edit("/spys/proxies", result);
+    db.push("/spys/electron-proxies", result);
   }
   return result;
 }
