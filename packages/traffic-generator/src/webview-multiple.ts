@@ -9,6 +9,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1000,
     height: 600,
+    title: "Multiple Webview <dimaslanjaka@gmail.com>",
     webPreferences: {
       partition: "persist:multi1",
       webviewTag: true
