@@ -8,23 +8,29 @@
   <title>Webview Multiple</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/multi-webview.style.css">
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-md-6">
-        <webview id="wv_1" partition="persist:webviewsession" src="https://www.webmanajemen.com/page/bot-detect"
-          disablewebsecurity="on" nodeintegration="on" style="height: 600px;" tabindex="-1" guestinstance="1"></webview>
+        <webview partition="persist:multi1" src="https://www.webmanajemen.com/page/bot-detect"
+          disablewebsecurity="on" nodeintegration="on" tabindex="-1" guestinstance="1"></webview>
       </div>
       <div class="col-md-6">
-        <webview id="wv_1" partition="persist:multi1" src="https://www.webmanajemen.com/page/bot-detect"
-          disablewebsecurity="on" nodeintegration="on" style="height: 600px;" tabindex="-1" guestinstance="2"></webview>
+        <webview partition="persist:multi2" src="https://www.webmanajemen.com/page/bot-detect" disablewebsecurity="on"
+          nodeintegration="on" tabindex="-1" guestinstance="2"></webview>
+      </div>
+      <div class="col-md-6">
+        <webview partition="persist:multi3" src="https://www.webmanajemen.com/page/bot-detect" disablewebsecurity="on"
+          nodeintegration="on" tabindex="-1" guestinstance="3"></webview>
+      </div>
+      <div class="col-md-6">
+        <webview partition="persist:multi4" src="https://www.webmanajemen.com/page/bot-detect" disablewebsecurity="on"
+          nodeintegration="on" tabindex="-1" guestinstance="4"></webview>
       </div>
     </div>
   </div>
-
-
 </body>
-
 </html>
