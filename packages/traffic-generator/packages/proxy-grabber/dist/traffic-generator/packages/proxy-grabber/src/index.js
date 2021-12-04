@@ -12,13 +12,22 @@ var path_1 = __importDefault(require("path"));
 var curl_1 = __importDefault(require("./curl"));
 require("../../../../hexo-seo/packages/js-prototypes/src/Array");
 var db = new db_1.default(path_1.default.join(process.cwd(), 'databases/proxies'));
+/**
+ * Proxy Grabber
+ */
 var proxyGrabber = /** @class */ (function () {
-    function proxyGrabber() {
+    /**
+     * Proxy Grabber Constructor
+     * @param TTL Time To Live in Day
+     */
+    function proxyGrabber(TTL) {
+        if (TTL === void 0) { TTL = 1; }
+        this.TTL = TTL;
     }
     proxyGrabber.prototype.method1 = function () {
         var lastUpdated = db.exists('/spys/lastUpdated') ? db.get('/spys/lastUpdated') : 100;
         // if spys last grab is more than 1 day
-        if ((0, moment_1.default)().diff(lastUpdated, 'days') > 1) {
+        if ((0, moment_1.default)().diff(lastUpdated, 'days') > this.TTL) {
             return (0, spys_1.default)().then(function (proxies) {
                 db.push('/spys/lastUpdated', new Date());
                 db.push('/spys/proxies', proxies);
@@ -29,7 +38,7 @@ var proxyGrabber = /** @class */ (function () {
     };
     proxyGrabber.prototype.method2 = function () {
         var lastUpdated = db.exists('/sslProxiesOrg/lastUpdated') ? db.get('/sslProxiesOrg/lastUpdated') : 100;
-        if ((0, moment_1.default)().diff(lastUpdated, 'days') > 1) {
+        if ((0, moment_1.default)().diff(lastUpdated, 'days') > this.TTL) {
             return (0, sslproxies_1.default)().then(function (proxies) {
                 db.push('/sslProxiesOrg/lastUpdated', new Date());
                 db.push('/sslProxiesOrg/proxies', proxies);
@@ -40,7 +49,7 @@ var proxyGrabber = /** @class */ (function () {
     };
     proxyGrabber.prototype.method3 = function () {
         var lastUpdated = db.exists('/proxyListOrg/lastUpdated') ? db.get('/proxyListOrg/lastUpdated') : 100;
-        if ((0, moment_1.default)().diff(lastUpdated, 'days') > 1) {
+        if ((0, moment_1.default)().diff(lastUpdated, 'days') > this.TTL) {
             return (0, proxylist_1.default)().then(function (proxies) {
                 db.push('/proxyListOrg/lastUpdated', new Date());
                 db.push('/proxyListOrg/proxies', proxies);

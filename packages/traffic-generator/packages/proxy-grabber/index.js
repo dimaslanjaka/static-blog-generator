@@ -15,5 +15,7 @@ if (process.env.NODE_ENV) {
     require('ts-node').register({ projectSearchDir: __dirname, project: 'tsconfig.json' });
   }
 }
+
 module.exports = require('./src/index');
+module.exports.default = require('./src/index');
 module.exports.db = require('./src/db/construct');

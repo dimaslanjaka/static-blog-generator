@@ -31,7 +31,8 @@
     "rootDirs": [
       "../hexo-seo/packages/js-prototypes/src",
       "../electron-browser/src",
-      "./src"
+      "./src",
+      "./packages/proxy-grabber"
     ],
     "baseUrl": "./",
     "outDir": "./dist",
@@ -54,7 +55,8 @@
     "**/build/**"
   ],
   "include": [
-    "./src/index.ts",
-    "./src/views/**/*"
+    //"./src/index.ts",
+    //"./src/views/**/*"
+    "src/**/*"
   ]
 }

@@ -9,11 +9,25 @@ import curl from './curl';
 import '../../../../hexo-seo/packages/js-prototypes/src/Array';
 const db = new dbl(path.join(process.cwd(), 'databases/proxies'));
 
+/**
+ * Proxy Grabber
+ */
 class proxyGrabber {
+  /**
+   * Time to live
+   */
+  TTL: number;
+  /**
+   * Proxy Grabber Constructor
+   * @param TTL Time To Live in Day
+   */
+  constructor(TTL = 1) {
+    this.TTL = TTL;
+  }
   method1(): Promise<returnObj[]> {
     const lastUpdated = db.exists('/spys/lastUpdated') ? db.get('/spys/lastUpdated') : 100;
     // if spys last grab is more than 1 day
-    if (moment().diff(lastUpdated, 'days') > 1) {
+    if (moment().diff(lastUpdated, 'days') > this.TTL) {
       return spys().then((proxies) => {
         db.push('/spys/lastUpdated', new Date());
         db.push('/spys/proxies', proxies);
@@ -25,7 +39,7 @@ class proxyGrabber {
 
   method2(): Promise<returnObj[]> {
     const lastUpdated = db.exists('/sslProxiesOrg/lastUpdated') ? db.get('/sslProxiesOrg/lastUpdated') : 100;
-    if (moment().diff(lastUpdated, 'days') > 1) {
+    if (moment().diff(lastUpdated, 'days') > this.TTL) {
       return sslProxiesOrg().then((proxies) => {
         db.push('/sslProxiesOrg/lastUpdated', new Date());
         db.push('/sslProxiesOrg/proxies', proxies);
@@ -37,7 +51,7 @@ class proxyGrabber {
 
   method3(): Promise<returnObj[]> {
     const lastUpdated = db.exists('/proxyListOrg/lastUpdated') ? db.get('/proxyListOrg/lastUpdated') : 100;
-    if (moment().diff(lastUpdated, 'days') > 1) {
+    if (moment().diff(lastUpdated, 'days') > this.TTL) {
       return proxyListOrg().then((proxies) => {
         db.push('/proxyListOrg/lastUpdated', new Date());
         db.push('/proxyListOrg/proxies', proxies);

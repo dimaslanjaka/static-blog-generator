@@ -1,7 +1,19 @@
 import { returnObj } from './spys';
 import Promise from 'bluebird';
 import '../../../../hexo-seo/packages/js-prototypes/src/Array';
+/**
+ * Proxy Grabber
+ */
 declare class proxyGrabber {
+    /**
+     * Time to live
+     */
+    TTL: number;
+    /**
+     * Proxy Grabber Constructor
+     * @param TTL Time To Live in Day
+     */
+    constructor(TTL?: number);
     method1(): Promise<returnObj[]>;
     method2(): Promise<returnObj[]>;
     method3(): Promise<returnObj[]>;
