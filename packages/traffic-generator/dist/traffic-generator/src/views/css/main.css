@@ -1,0 +1,208 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  /*
+  padding-top: 100px;
+  */
+}
+
+.fake-browser {
+  /*
+  width: 860px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.fake-browser .fake-browser-header {
+  background-color: #eee;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+.fake-browser .fake-browser-header .action-btns {
+  min-width: 100px;
+}
+.fake-browser .fake-browser-header .action-btns span {
+  width: 10px;
+  height: 10px;
+  /*display: inline-block;*/
+  margin-left: 10px;
+  border-radius: 50%;
+  float: left;
+}
+.fake-browser .fake-browser-header .action-btns span:first-child {
+  background-color: red;
+}
+.fake-browser .fake-browser-header .action-btns span:nth-child(2) {
+  background-color: orange;
+}
+.fake-browser .fake-browser-header .action-btns span:nth-child(3) {
+  background-color: green;
+}
+.fake-browser .fake-browser-header .address-bar {
+  background-color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  flex: 1;
+}
+.fake-browser .fake-browser-header .address-bar input {
+  width: 100%;
+  border: none;
+  padding: 0;
+  outline: none;
+  font-size: 12px;
+}
+.fake-browser .fake-browser-header .setting-more {
+  min-width: 100px;
+  text-align: right;
+  padding-right: 15px;
+}
+.fake-browser .fake-browser-header .setting-more .more-btn {
+  position: relative;
+}
+.fake-browser .fake-browser-header .setting-more .more-btn,
+.fake-browser .fake-browser-header .setting-more .more-btn:before,
+.fake-browser .fake-browser-header .setting-more .more-btn:after {
+  display: inline-block;
+  height: 3px;
+  width: 20px;
+  border-radius: 2px;
+  background-color: #999;
+  vertical-align: middle;
+}
+.fake-browser .fake-browser-header .setting-more .more-btn:before,
+.fake-browser .fake-browser-header .setting-more .more-btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.fake-browser .fake-browser-header .setting-more .more-btn:before {
+  top: -6px;
+}
+.fake-browser .fake-browser-header .setting-more .more-btn:after {
+  bottom: -6px;
+}
+.fake-browser .fake-window-body {
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* custom */
+.none {
+  display: none;
+}
+
+/* indicator */
+
+#indicator {
+  z-index: 5999;
+  /* position the div in center */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  text-align: center;
+}
+
+.loading-text {
+  position: relative;
+  text-align: center;
+}
+
+.lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-grid div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(115, 167, 226);
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  top: 8px;
+  left: 8px;
+  animation-delay: 0s;
+}
+.lds-grid div:nth-child(2) {
+  top: 8px;
+  left: 32px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(3) {
+  top: 8px;
+  left: 56px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(4) {
+  top: 32px;
+  left: 8px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(5) {
+  top: 32px;
+  left: 32px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(6) {
+  top: 32px;
+  left: 56px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(7) {
+  top: 56px;
+  left: 8px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(8) {
+  top: 56px;
+  left: 32px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(9) {
+  top: 56px;
+  left: 56px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* webview */
+
+webview {
+  display: flex;   /* iframes are inline by default */
+  border: none;     /* Reset default border */
+  height: 100%;     /* Viewport-relative units */
+  width: 100%;
+}
