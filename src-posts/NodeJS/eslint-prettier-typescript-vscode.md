@@ -115,8 +115,12 @@ this will automate lint and format your codes when saving.
 ```json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true // let ESLint take formating and linting
   },
+  "[json]": {
+    "editor.formatOnSave": true // enable json formating with default vscode formatter
+  },
+  "editor.formatOnSave": false, // disable default vscode formatter
 }
 ```
 
