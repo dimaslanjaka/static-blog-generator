@@ -1,9 +1,10 @@
 import path from "path";
-import PROXIES from "./proxies";
+//import PROXIES from "./proxies";
 import webviewProxy from "./proxies/webview-proxy";
-import windowProxy from "./proxies/window-proxy";
+//import windowProxy from "./proxies/window-proxy";
 import { BrowserWindow } from "electron";
 import * as webworker from "./electron-utils/webworker";
+import * as proxies from "./proxies";
 
 const createWindow = () => {
   let win = new BrowserWindow({
@@ -25,24 +26,15 @@ const createWindow = () => {
     }
   });
 
-  const proxyClass = new PROXIES(win);
-  let proxy = proxyClass.getRandom();
-
-  function injectWindowProxy() {
-    windowProxy(win, proxy);
-    proxyClass.deleteProxy(proxy);
-    proxy = proxyClass.getRandom();
-  }
-
   function loadDefault() {
     win.loadURL("file://" + __dirname + "/views/index.html");
   }
-
+  //loadDefault();
   function injectWebViewProxy(proxy: string, url?: string) {
     webviewProxy(proxy, "persist:webviewsession", (details) => {
       // delete dead proxy
-      proxyClass.deleteProxy(proxy);
-      proxy = proxyClass.getRandom();
+      proxies.remove(proxy);
+      proxy = proxies.random();
       // send notification to renderer
       console.log("sending notification");
       webworker.sendToRenderer(win, "toastr", {
@@ -61,7 +53,16 @@ const createWindow = () => {
       loadDefault();
     }
   }
-  injectWebViewProxy(proxy);
+  injectWebViewProxy(proxies.random());
+
+  /*const proxyClass = new PROXIES(win);
+  let proxy = proxyClass.getRandom();
+
+  function injectWindowProxy() {
+    windowProxy(win, proxy);
+    proxyClass.deleteProxy(proxy);
+    proxy = proxyClass.getRandom();
+  }*/
 
   win.webContents.on("will-navigate", (e, redirectUrl) => {
     // send notification

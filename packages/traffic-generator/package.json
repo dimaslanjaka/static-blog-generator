@@ -6,7 +6,8 @@
   "scripts": {
     "start": "set NODE_ENV = 'development' && electron index.js",
     "dev": "gulp watch",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "node-libcurl": "npm install node-libcurl --build-from-source --curl_static_build=true"
   },
   "author": "Dimas Lanjaka",
   "license": "ISC",
@@ -27,11 +28,11 @@
   },
   "dependencies": {
     "agent-base": "^6.0.2",
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "jsdom": "^18.1.0",
     "minimatch": "^3.0.4",
     "moment": "^2.29.1",
-    "nightmare": "file:packages/nightmare",
     "node-libcurl": "^2.3.3",
     "proxies-grabber": "file:packages/proxy-grabber",
     "tsd": "^0.19.0",

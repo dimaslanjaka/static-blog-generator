@@ -49,11 +49,20 @@ class DBConstructor {
   private save(key: string, content: any) {
     fm.writeFile(this.locationfile(key), content);
   }
-  edit(key: string, newValue: any, by: object) {
+  /**
+   * Edit database key
+   * @param key
+   * @param newValue
+   * @param by
+   * @returns
+   */
+  edit<T, K extends T>(key: string, newValue: T, by?: K) {
     if (typeof by == 'object') {
       const get = this.get(key);
       if (Array.isArray(get)) {
-        // get index array, -1 = not found
+        /**
+         * get index array, if (-1) = not found
+         */
         const getIndex = get.findIndex((predicate: object) => {
           // if object by === predicate
           if (objectEquals(predicate, by)) return true;
@@ -70,11 +79,17 @@ class DBConstructor {
           // set new value
           get[getIndex] = newValue;
           this.push(key, get);
+          return true;
         } else {
           if (this.debug) console.error('cannot find index ' + key, by);
+          return false;
         }
       }
+    } else if (!by) {
+      this.push(key, newValue);
+      return true;
     }
+    return false;
   }
 
   /**
@@ -110,6 +125,7 @@ class DBConstructor {
         return value;
     }
   }
+
   private locationfile(key: string) {
     return path.join(this.folder, key);
   }

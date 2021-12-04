@@ -16,4 +16,5 @@ if (process.env.NODE_ENV) {
     }
 }
 module.exports = require('./src/index');
+module.exports.default = require('./src/index');
 module.exports.db = require('./src/db/construct');

@@ -9,4 +9,5 @@
 require("./src");*/
 require("dotenv").config();
 //console.log(process.env);
-require("./dist/traffic-generator/src/index");
+//require("./dist/traffic-generator/src/index");
+require("./dist/traffic-generator/src/webview-multiple");
