@@ -22,6 +22,9 @@
   "[json]": {
     "editor.formatOnSave": true // enable json formating with default vscode formatter
   },
+  "[html]": {
+    "editor.formatOnSave": true // enable html formating with default vscode formatter
+  },
   "editor.formatOnSave": false, // disable default vscode formatter
   "javascript.suggestionActions.enabled": false,
   "typescript.suggestionActions.enabled": false,
