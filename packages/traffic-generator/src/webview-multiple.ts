@@ -1,10 +1,11 @@
 import { app, BrowserWindow, globalShortcut } from "electron";
 import path from "path";
-
-let mainWindow;
+import webviewProxy from "./proxies/webview-proxy";
+import * as proxies from "./proxies";
+let win: BrowserWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({
+  win = new BrowserWindow({
     width: 1000,
     height: 600,
     webPreferences: {
@@ -12,10 +13,27 @@ function createWindow() {
       webviewTag: true
     }
   });
-  mainWindow.loadURL("file://" + __dirname + "/views/webview-multi.html");
 
-  mainWindow.on("closed", () => {
-    mainWindow = null;
+  function injectWebViewProxy(url?: string) {
+    const proxy = proxies.random();
+    const persists = ["persist:webviewsession", "persist:multi1"];
+    persists.forEach((persist) => {
+      webviewProxy(proxy, persist, (details) => {
+        // delete dead proxy
+        // proxies.remove(proxy);
+        // proxy = proxies.random();
+        // rotate proxies
+        injectWebViewProxy(details.url);
+      });
+    });
+
+    // reload multi webview
+    win.loadURL("file://" + __dirname + "/views/webview-multi.html");
+  }
+  injectWebViewProxy();
+
+  win.on("closed", () => {
+    win = null;
   });
 }
 
@@ -31,7 +49,7 @@ app.whenReady().then(() => {
   });
 
   app.on("activate", () => {
-    if (mainWindow === null) {
+    if (win === null) {
       createWindow();
     }
   });
