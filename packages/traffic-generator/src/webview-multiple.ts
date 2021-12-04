@@ -15,7 +15,11 @@ function createWindow() {
     }
   });
 
-  function injectWebViewProxy() {
+  /**
+   * Inject webview proxy
+   * @param clearCache Clear cookies, data, and caches on proxy change
+   */
+  function injectWebViewProxy(clearCache = false) {
     const persists = ["persist:webviewsession", "persist:multi1"];
     persists.forEach((partition) => {
       let proxy = proxies.random();
@@ -24,6 +28,30 @@ function createWindow() {
         console.log(`injected [${partition}] with proxy: ${proxy}`);
       });
       ses.setUserAgent(rand_ua());
+      const sessionReloadProxy = (removePreviousProxy = false) => {
+        if (removePreviousProxy) proxies.remove(proxy);
+        // regenerate proxy
+        proxy = proxies.random();
+        // reset proxy
+        ses.setProxy({ proxyRules: proxy }).then(() => {
+          console.log(`re-injected [${partition}] with proxy: ${proxy}`);
+        });
+        if (clearCache) {
+          // flush caches and data
+          ses.clearCache();
+          ses.clearStorageData();
+          ses.clearAuthCache();
+          ses.clearHostResolverCache();
+          // flush cookies
+          ses.cookies.flushStore().then(() => {
+            // reload window after reset proxy
+            win.reload();
+          });
+        } else {
+          // reload window after reset proxy
+          win.reload();
+        }
+      };
       ses.webRequest.onErrorOccurred((details) => {
         if (
           details.resourceType == "mainFrame" &&
@@ -40,23 +68,7 @@ function createWindow() {
           );
 
           if (hasProxyError) {
-            proxies.remove(proxy);
-            // regenerate proxy
-            proxy = proxies.random();
-            // reset proxy
-            ses.setProxy({ proxyRules: proxy }).then(() => {
-              console.log(`re-injected [${partition}] with proxy: ${proxy}`);
-            });
-            // flush caches and data
-            ses.clearCache();
-            ses.clearStorageData();
-            ses.clearAuthCache();
-            ses.clearHostResolverCache();
-            // flush cookies
-            ses.cookies.flushStore().then(() => {
-              // reload window after reset proxy
-              win.reload();
-            });
+            sessionReloadProxy(true);
           }
 
           console.log(
@@ -64,7 +76,16 @@ function createWindow() {
             details.error,
             details.url
           );
-        }
+        } /*else if (details.resourceType == "subFrame") {
+          //console.log("error loading url", details.url, details.resourceType);
+          if (
+            /googlesyndication|googleads\.g\.doubleclick\.net/g.test(
+              details.url
+            )
+          ) {
+            sessionReloadProxy();
+          }
+        }*/
       });
     });
 
