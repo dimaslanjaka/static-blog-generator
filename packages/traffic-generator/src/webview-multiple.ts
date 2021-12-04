@@ -2,6 +2,7 @@ import { app, BrowserWindow, globalShortcut, session } from "electron";
 import path from "path";
 import { isAds } from "./proxies/webview-proxy";
 import * as proxies from "./proxies";
+import { random as rand_ua } from "./utils/useragent";
 let win: BrowserWindow;
 
 function createWindow() {
@@ -22,6 +23,7 @@ function createWindow() {
       ses.setProxy({ proxyRules: proxy }).then(() => {
         console.log(`injected [${partition}] with proxy: ${proxy}`);
       });
+      ses.setUserAgent(rand_ua());
       ses.webRequest.onErrorOccurred((details) => {
         if (
           details.resourceType == "mainFrame" &&
