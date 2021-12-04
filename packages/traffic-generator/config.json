@@ -2,7 +2,8 @@
   "proxy": "databases/proxy.txt",
   "webview": {
     "http://webmanajemen.com": {
-      "clean": true
+      "clean": true,
+      "proxy": true
     }
   }
 }

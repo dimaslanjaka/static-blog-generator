@@ -80,13 +80,14 @@ app.whenReady().then(() => {
     mwebview.push(div);
   }
   webviews.set_content(mwebview.join(""));
-  //writeFile(fileIndex, parse.toString());
-  //win.loadURL("file://" + fileIndex);
-  //console.log(parse.toString());
-  win.loadURL("data:text/html;charset=utf-8," + parse.toString());
+  writeFile(fileIndex, parse.toString());
+  win.loadURL("file://" + fileIndex);
 
   win.on("ready-to-show", function () {
-    if (mwebview.length > 0) win.show();
+    //win.webContents.openDevTools({ mode: "detach" });
+    if (mwebview.length > 0) {
+      win.show();
+    }
   });
 
   // set shortcut
