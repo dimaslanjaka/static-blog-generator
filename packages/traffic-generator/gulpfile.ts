@@ -1,14 +1,12 @@
 import gulp from "gulp";
 import { exec } from "child_process";
-import minimatch from "minimatch";
-import moment from "moment";
-import { memoize } from "underscore";
 import del from "del";
 
 // copy non ts files
 const copyNonTsFiles = function () {
   return gulp
-    .src(["./src/**/*.*", "!./src/**/*.{ts,json}"])
+    .src(["./src/**/*", "!./src/**/*.{ts}"])
+    .pipe(gulp.src(["./src/**/*.d.ts"]))
     .pipe(gulp.dest("./dist/traffic-generator/src"));
 };
 gulp.task("copy-non-ts", copyNonTsFiles);
@@ -56,6 +54,18 @@ function testProxy(done) {
     done();
   });
 }
-gulp.task("proxy", testProxy);
 
+import map from "map-stream";
+import { Readable } from "stream";
+gulp.task("tsx", function (done) {
+  gulp.src(["./src/views/**/*.tsx"]).pipe(function (file) {
+    console.log(file);
+    const s = Readable.from(["input string"]);
+    return s;
+  });
+  done();
+});
+
+gulp.task("proxy", testProxy);
+gulp.task("dev", gulp.series("tsc", "copy-non-ts"));
 gulp.task("default", gulp.series(clean, "tsc", "copy-non-ts"));

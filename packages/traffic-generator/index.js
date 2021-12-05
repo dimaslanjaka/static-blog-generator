@@ -11,4 +11,6 @@ require("dotenv").config();
 //console.log(process.env);
 //require("./dist/traffic-generator/src/index");
 //require("./dist/traffic-generator/src/webview-multiple");
-require("./dist/traffic-generator/src/dynamic-webview-multi");
+//require("./dist/traffic-generator/src/dynamic-webview-multi");
+//require("./dist/traffic-generator/src/window-proxy");
+require("./dist/traffic-generator/src/gui");

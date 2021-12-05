@@ -1,15 +1,36 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
-var path_1 = (0, tslib_1.__importDefault)(require("path"));
+const path_1 = __importDefault(require("path"));
 //import PROXIES from "./proxies";
-var webview_proxy_1 = (0, tslib_1.__importDefault)(require("./proxies/webview-proxy"));
+const webview_proxy_1 = __importDefault(require("./proxies/webview-proxy"));
 //import windowProxy from "./proxies/window-proxy";
-var electron_1 = require("electron");
-var webworker = (0, tslib_1.__importStar)(require("./electron-utils/webworker"));
-var proxies = (0, tslib_1.__importStar)(require("./proxies"));
-var createWindow = function () {
-    var win = new electron_1.BrowserWindow({
+const electron_1 = require("electron");
+const webworker = __importStar(require("./electron-utils/webworker"));
+const proxies = __importStar(require("./proxies"));
+const createWindow = () => {
+    let win = new electron_1.BrowserWindow({
         width: 800,
         height: 600,
         show: false,
@@ -32,7 +53,7 @@ var createWindow = function () {
     }
     //loadDefault();
     function injectWebViewProxy(proxy, url) {
-        (0, webview_proxy_1.default)(proxy, "persist:webviewsession", function (details) {
+        (0, webview_proxy_1.default)(proxy, "persist:webviewsession", (details) => {
             // delete dead proxy
             proxies.remove(proxy);
             proxy = proxies.random();
@@ -40,7 +61,7 @@ var createWindow = function () {
             console.log("sending notification");
             webworker.sendToRenderer(win, "toastr", {
                 title: "Proxy Change",
-                message: proxy + " " + details.url
+                message: `${proxy} ${details.url}`
             });
             // rotate proxies
             injectWebViewProxy(proxy, details.url);
@@ -63,20 +84,20 @@ var createWindow = function () {
       proxyClass.deleteProxy(proxy);
       proxy = proxyClass.getRandom();
     }*/
-    win.webContents.on("will-navigate", function (e, redirectUrl) {
+    win.webContents.on("will-navigate", (e, redirectUrl) => {
         // send notification
         webworker.sendToRenderer(win, "toastr", {
-            message: "will-navigate " + redirectUrl
+            message: `will-navigate ${redirectUrl}`
         });
     });
-    win.once("ready-to-show", function () {
+    win.once("ready-to-show", () => {
         win.show();
         win.minimize();
     });
     win.on("closed", function () {
         win = null;
     });
-    win.on("app-command", function (e, cmd) {
+    win.on("app-command", (e, cmd) => {
         // Navigate the window back when the user hits their mouse back button
         if (cmd === "browser-backward" && win.webContents.canGoBack()) {
             win.webContents.goBack();
@@ -85,4 +106,4 @@ var createWindow = function () {
     return win;
 };
 exports.default = createWindow;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3JlYXRlV2luZG93LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2NyZWF0ZVdpbmRvdy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwyREFBd0I7QUFDeEIsa0NBQWtDO0FBQ2xDLHVGQUFtRDtBQUNuRCxtREFBbUQ7QUFDbkQscUNBQXlDO0FBQ3pDLGlGQUF3RDtBQUN4RCw4REFBcUM7QUFFckMsSUFBTSxZQUFZLEdBQUc7SUFDbkIsSUFBSSxHQUFHLEdBQUcsSUFBSSx3QkFBYSxDQUFDO1FBQzFCLEtBQUssRUFBRSxHQUFHO1FBQ1YsTUFBTSxFQUFFLEdBQUc7UUFDWCxJQUFJLEVBQUUsS0FBSztRQUNYLE1BQU0sRUFBRSxJQUFJO1FBQ1osS0FBSyxFQUFFLEtBQUs7UUFDWixLQUFLLEVBQUUsNENBQTRDO1FBQ25ELGNBQWMsRUFBRTtZQUNkLE9BQU8sRUFBRSxjQUFJLENBQUMsSUFBSSxDQUFDLFNBQVMsRUFBRSxvQkFBb0IsQ0FBQztZQUNuRCxlQUFlLEVBQUUsSUFBSTtZQUNyQixrQkFBa0IsRUFBRSxJQUFJO1lBQ3hCLGdCQUFnQixFQUFFLEtBQUs7WUFDdkIsVUFBVSxFQUFFLElBQUk7WUFDaEIsVUFBVSxFQUFFLElBQUk7WUFDaEIsV0FBVyxFQUFFLEtBQUs7WUFDbEIsU0FBUyxFQUFFLHdCQUF3QixDQUFDLDJEQUEyRDtTQUNoRztLQUNGLENBQUMsQ0FBQztJQUVILFNBQVMsV0FBVztRQUNsQixHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsR0FBRyxTQUFTLEdBQUcsbUJBQW1CLENBQUMsQ0FBQztJQUMzRCxDQUFDO0lBQ0QsZ0JBQWdCO0lBQ2hCLFNBQVMsa0JBQWtCLENBQUMsS0FBYSxFQUFFLEdBQVk7UUFDckQsSUFBQSx1QkFBWSxFQUFDLEtBQUssRUFBRSx3QkFBd0IsRUFBRSxVQUFDLE9BQU87WUFDcEQsb0JBQW9CO1lBQ3BCLE9BQU8sQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLENBQUM7WUFDdEIsS0FBSyxHQUFHLE9BQU8sQ0FBQyxNQUFNLEVBQUUsQ0FBQztZQUN6QixnQ0FBZ0M7WUFDaEMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxzQkFBc0IsQ0FBQyxDQUFDO1lBQ3BDLFNBQVMsQ0FBQyxjQUFjLENBQUMsR0FBRyxFQUFFLFFBQVEsRUFBRTtnQkFDdEMsS0FBSyxFQUFFLGNBQWM7Z0JBQ3JCLE9BQU8sRUFBSyxLQUFLLFNBQUksT0FBTyxDQUFDLEdBQUs7YUFDbkMsQ0FBQyxDQUFDO1lBQ0gsaUJBQWlCO1lBQ2pCLGtCQUFrQixDQUFDLEtBQUssRUFBRSxPQUFPLENBQUMsR0FBRyxDQUFDLENBQUM7UUFDekMsQ0FBQyxDQUFDLENBQUM7UUFFSCxxQkFBcUI7UUFDckIsSUFBSSxHQUFHLEVBQUU7WUFDUCxPQUFPLENBQUMsR0FBRyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztZQUM1QixHQUFHLENBQUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxDQUFDO1NBQ2xCO2FBQU07WUFDTCxXQUFXLEVBQUUsQ0FBQztTQUNmO0lBQ0gsQ0FBQztJQUNELGtCQUFrQixDQUFDLE9BQU8sQ0FBQyxNQUFNLEVBQUUsQ0FBQyxDQUFDO0lBRXJDOzs7Ozs7O09BT0c7SUFFSCxHQUFHLENBQUMsV0FBVyxDQUFDLEVBQUUsQ0FBQyxlQUFlLEVBQUUsVUFBQyxDQUFDLEVBQUUsV0FBVztRQUNqRCxvQkFBb0I7UUFDcEIsU0FBUyxDQUFDLGNBQWMsQ0FBQyxHQUFHLEVBQUUsUUFBUSxFQUFFO1lBQ3RDLE9BQU8sRUFBRSxtQkFBaUIsV0FBYTtTQUN4QyxDQUFDLENBQUM7SUFDTCxDQUFDLENBQUMsQ0FBQztJQUVILEdBQUcsQ0FBQyxJQUFJLENBQUMsZUFBZSxFQUFFO1FBQ3hCLEdBQUcsQ0FBQyxJQUFJLEVBQUUsQ0FBQztRQUNYLEdBQUcsQ0FBQyxRQUFRLEVBQUUsQ0FBQztJQUNqQixDQUFDLENBQUMsQ0FBQztJQUVILEdBQUcsQ0FBQyxFQUFFLENBQUMsUUFBUSxFQUFFO1FBQ2YsR0FBRyxHQUFHLElBQUksQ0FBQztJQUNiLENBQUMsQ0FBQyxDQUFDO0lBRUgsR0FBRyxDQUFDLEVBQUUsQ0FBQyxhQUFhLEVBQUUsVUFBQyxDQUFDLEVBQUUsR0FBRztRQUMzQixzRUFBc0U7UUFDdEUsSUFBSSxHQUFHLEtBQUssa0JBQWtCLElBQUksR0FBRyxDQUFDLFdBQVcsQ0FBQyxTQUFTLEVBQUUsRUFBRTtZQUM3RCxHQUFHLENBQUMsV0FBVyxDQUFDLE1BQU0sRUFBRSxDQUFDO1NBQzFCO0lBQ0gsQ0FBQyxDQUFDLENBQUM7SUFFSCxPQUFPLEdBQUcsQ0FBQztBQUNiLENBQUMsQ0FBQztBQUVGLGtCQUFlLFlBQVksQ0FBQyJ9
+//# sourceMappingURL=createWindow.js.map

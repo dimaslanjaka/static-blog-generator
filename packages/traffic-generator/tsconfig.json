@@ -1,62 +1,45 @@
 {
   "compilerOptions": {
+    "target": "es2021",
     "module": "commonjs",
-    "target": "ES5",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "inlineSourceMap": true,
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "declaration": true,
+    "declarationMap": true,
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
+    //"strict": true,
+    "pretty": true,
+    "allowUmdGlobalAccess": true,
+    "noImplicitThis": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    //"baseUrl": "./src",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "allowUnusedLabels": true,
     "allowUnreachableCode": true,
     "noImplicitReturns": false,
-    "noImplicitAny": false,
-    "removeComments": false,
-    "allowUnusedLabels": true,
-    "allowUmdGlobalAccess": true,
-    "inlineSources": false,
-    "allowJs": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "checkJs": false,
-    "lib": [
-      "DOM",
-      "ES7",
-      "DOM.Iterable",
-      "ES2015",
-      "ESNext",
-      "ES2016",
-      "ES2017",
-      "ES2018",
-      "ES2019",
-      "ES2020"
-    ],
-    "rootDirs": [
-      "../hexo-seo/packages/js-prototypes/src",
-      "../electron-browser/src",
-      "./src",
-      "./packages/proxy-grabber"
-    ],
-    "baseUrl": "./",
-    "outDir": "./dist",
-    "noLib": false,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "importHelpers": true
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "dist"
   },
-  "typeAcquisition": {
-    "enable": true,
-    "include": [
-      "electron"
-    ]
-  },
-  "buildOnSave": true,
-  "compileOnSave": true,
-  "exclude": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/build/**"
-  ],
   "include": [
-    //"./src/index.ts",
-    //"./src/views/**/*"
-    "src/**/*"
+    "src"
+  ],
+  "exclude": [
+    "test",
+    "release/build",
+    "dist",
+    ".erb/dll",
+    "src/views/theme/**/*"
   ]
 }

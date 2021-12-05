@@ -1,3 +1,6 @@
 webview {
-  height: 600px;
+  height: 500px;
+}
+[data-id="webview"] .card-title {
+  font-size: 15px;
 }
