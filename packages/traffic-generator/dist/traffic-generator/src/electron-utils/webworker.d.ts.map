@@ -1,0 +1,1 @@
+{"version":3,"file":"webworker.d.ts","sourceRoot":"","sources":["../../../../src/electron-utils/webworker.ts"],"names":[],"mappings":"AACA,OAAO,qDAAqD,CAAC;AAC7D,oBAAY,aAAa,GAAG;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,GAAG,CAAA;CAAE,CAAC;AAEnD,wBAAgB,cAAc,CAC5B,GAAG,EAAE,QAAQ,CAAC,aAAa,EAC3B,KAAK,EAAE,MAAM,EACb,GAAG,GAAE,aAAkB,QAGxB"}

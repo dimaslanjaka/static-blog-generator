@@ -97,7 +97,7 @@ class proxyGrabber {
             result.error = res.statusCode != 200 && res.headers[1]['content-type'] != 'application/json';
             result.proxy = obj;
             obj.test = !result.error ? 'PASSED' : 'FAILED';
-            db.edit(dbKey, obj, { proxy: obj.proxy });
+            db.edit(dbKey, obj, { proxy: obj.proxy as string } as returnObj);
             return result;
           })
           .catch((e: Error) => {

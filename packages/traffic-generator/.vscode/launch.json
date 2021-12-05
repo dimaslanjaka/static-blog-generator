@@ -5,6 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "command": "npm run start",
+      "name": "run",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "command": "gulp && npm run start",
       "name": "Build and run",
       "request": "launch",
