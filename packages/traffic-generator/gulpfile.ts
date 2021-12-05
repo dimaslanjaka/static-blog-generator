@@ -55,17 +55,6 @@ function testProxy(done) {
   });
 }
 
-import map from "map-stream";
-import { Readable } from "stream";
-gulp.task("tsx", function (done) {
-  gulp.src(["./src/views/**/*.tsx"]).pipe(function (file) {
-    console.log(file);
-    const s = Readable.from(["input string"]);
-    return s;
-  });
-  done();
-});
-
 gulp.task("proxy", testProxy);
 gulp.task("dev", gulp.series("tsc", "copy-non-ts"));
 gulp.task("default", gulp.series(clean, "tsc", "copy-non-ts"));
