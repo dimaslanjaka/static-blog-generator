@@ -26,6 +26,7 @@ app.whenReady().then(async () => {
   win.loadURL("file://" + __dirname + "/views/theme/index.html");
   win.once("ready-to-show", () => {
     win.show();
+    win.webContents.openDevTools();
   });
 });
 
