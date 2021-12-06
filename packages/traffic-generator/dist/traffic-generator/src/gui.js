@@ -10,27 +10,38 @@ const proxyFile_1 = __importDefault(require("./proxies/proxyFile"));
 const fm_1 = require("../../hexo-seo/src/fm");
 const gui_menu_1 = __importDefault(require("./gui.menu"));
 const global_1 = require("./global");
+const theme_1 = __importDefault(require("./views/theme"));
 // load config
 const config = JSON.parse((0, fm_1.readFile)(path_1.default.join(process.cwd(), "config.json")).toString());
 // load proxy
 const proxy = new proxyFile_1.default(path_1.default.join(process.cwd(), config.proxy));
-let win;
+//let win: BrowserWindow;
+const theme = new theme_1.default(path_1.default.join(__dirname, "views/routes"));
 electron_1.app.setPath("userData", path_1.default.join(process.cwd(), "build/electron/cache"));
 electron_1.app.setPath("userCache", path_1.default.join(process.cwd(), "build/electron/data"));
 electron_1.app.whenReady().then(async () => {
-    win = createWindow();
+    //app.allowRendererProcessReuse = false;
+    createNewWindow("options");
+});
+function createNewWindow(routePath) {
+    const win = createWindow();
     (0, global_1.shortcutInit)(win);
     const menuBuilder = new gui_menu_1.default(win);
     menuBuilder.buildMenu();
-    win.loadURL("file://" + __dirname + "/views/theme/index.html");
+    const renderer = theme.route(routePath).getPath(true);
+    win.loadURL(renderer);
     win.once("ready-to-show", () => {
         win.show();
         win.webContents.openDevTools();
     });
-});
+    electron_1.ipcMain.on("new-window", (e, ...msg) => {
+        console.log(msg[0]);
+    });
+    return win;
+}
 function createWindow() {
     return new electron_1.BrowserWindow({
-        //frame: false, // hide dock
+        frame: false,
         width: 1000,
         height: 600,
         center: true,
