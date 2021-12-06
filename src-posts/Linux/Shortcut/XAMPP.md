@@ -14,6 +14,7 @@ keywords:
   - apache
   - MySQL
   - shortcut
+  - desktop
 author:
   nick: "Dimas Lanjaka"
   link: "https://github.com/dimaslanjaka"
