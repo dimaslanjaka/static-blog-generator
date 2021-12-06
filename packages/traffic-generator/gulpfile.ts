@@ -5,11 +5,11 @@ import del from "del";
 // copy non ts files
 const copyNonTsFiles = function () {
   return gulp
-    .src(["./src/**/*", "!./src/**/*.{ts}"])
-    .pipe(gulp.src(["./src/**/*.d.ts"]))
+    .src(["./src/**/*", "./src/**/*.d.ts", "!./src/**/*.ts"])
     .pipe(gulp.dest("./dist/traffic-generator/src"));
 };
 gulp.task("copy-non-ts", copyNonTsFiles);
+gulp.task("copy", copyNonTsFiles);
 
 // delete dist and compile typescript
 const tsc = function (cb?) {
@@ -20,9 +20,15 @@ const tsc = function (cb?) {
   });
 };
 
-function clean(params) {
-  return del("./dist");
+function clean(done) {
+  exec("rm -rf dist", function () {
+    done();
+  });
 }
+
+exports.clean = clean;
+exports.del = clean;
+
 gulp.task("tsc", tsc);
 gulp.task("watch", function () {
   return gulp.watch(["./src/**/*"], gulp.series("tsc", "copy-non-ts"));
@@ -56,5 +62,5 @@ function testProxy(done) {
 }
 
 gulp.task("proxy", testProxy);
-gulp.task("dev", gulp.series("tsc", "copy-non-ts"));
-gulp.task("default", gulp.series(clean, "tsc", "copy-non-ts"));
+gulp.task("default", gulp.series("copy-non-ts", "tsc"));
+gulp.task("build", gulp.series(clean, "copy-non-ts", "tsc"));

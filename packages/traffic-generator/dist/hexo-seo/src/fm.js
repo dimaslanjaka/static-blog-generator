@@ -22,7 +22,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.md5File = exports.md5FileSync = exports.readFile = exports.writeFile = exports.resolveFile = exports.buildFolder = exports.tmpFolder = void 0;
+exports.readDir = exports.md5File = exports.md5FileSync = exports.readFile = exports.writeFile = exports.resolveFile = exports.buildFolder = exports.tmpFolder = void 0;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const crypto_1 = __importDefault(require("crypto"));
@@ -111,4 +111,15 @@ function md5File(path) {
     });
 }
 exports.md5File = md5File;
+/**
+ * Read Dir
+ * @param folder
+ * @returns
+ */
+function readDir(folder) {
+    return fs.readdirSync(folder).map((file) => {
+        return path.join(folder, file);
+    });
+}
+exports.readDir = readDir;
 //# sourceMappingURL=fm.js.map

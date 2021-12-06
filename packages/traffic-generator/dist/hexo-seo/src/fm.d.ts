@@ -30,4 +30,10 @@ export declare function readFile(filePath: string, options?: {
 } | null, autocreate?: any): Buffer | string;
 export declare function md5FileSync(path: any): string;
 export declare function md5File(path: any): Promise<unknown>;
+/**
+ * Read Dir
+ * @param folder
+ * @returns
+ */
+export declare function readDir(folder: any): string[];
 //# sourceMappingURL=fm.d.ts.map
