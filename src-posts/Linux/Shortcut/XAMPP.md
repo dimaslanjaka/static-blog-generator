@@ -6,16 +6,14 @@ lang: en
 date: 2021-12-06T23:25:00
 type: post
 tags:
-  - JS
-  - NodeJS
+  - PHP
+  - Apache
+  - MySQL
 keywords:
-  - nodejs
-  - eslint
-  - prettier
-  - vscode
-  - auto
-  - format
-  - lint
+  - xampp
+  - apache
+  - MySQL
+  - shortcut
 author:
   nick: "Dimas Lanjaka"
   link: "https://github.com/dimaslanjaka"
@@ -28,6 +26,12 @@ cover: "https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg"
 location: Indonesia
 comments: true
 ---
+
+```shell
+XAMPP=/usr/share/applications/xampp-control-panel.desktop
+sudo touch $XAMPP
+sudo gedit $XAMPP
+```
 
 ```desktop
 [Desktop Entry]
