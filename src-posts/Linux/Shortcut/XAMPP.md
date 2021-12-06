@@ -27,6 +27,16 @@ location: Indonesia
 comments: true
 ---
 
+# Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
+
+> are you took below errors ?
+<pre><code>sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel 
+Traceback (most recent call last):
+  File "xampp-control-panel.py", line 18, in &lt;module&gt;
+    import gtk
+ImportError: No module named gtk</code></pre>
+
+## Here how to fix show XAMPP Panel on Linux
 - Open Terminal, Type below codes
 ```shell
 XAMPP=/usr/share/applications/xampp-control-panel.desktop
