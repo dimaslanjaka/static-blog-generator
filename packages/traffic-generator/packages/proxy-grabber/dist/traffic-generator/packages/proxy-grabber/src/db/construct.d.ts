@@ -20,7 +20,14 @@ declare class DBConstructor {
      */
     push(key: string, value: any): void;
     private save;
-    edit(key: string, newValue: any, by: object): void;
+    /**
+     * Edit database key
+     * @param key
+     * @param newValue
+     * @param by
+     * @returns
+     */
+    edit<T, K extends T>(key: string, newValue: T, by?: K): boolean;
     /**
      * get table database by key
      * @param key key table

@@ -2,9 +2,6 @@ import path from 'path';
 import * as fm from '../../../../../hexo-seo/src/fm';
 import '../../../../../hexo-seo/packages/js-prototypes/src/Number';
 import { existsSync } from 'fs';
-import PrettyError from 'pretty-error';
-const pe = new PrettyError();
-pe.start();
 
 class DBConstructor {
   folder: string;

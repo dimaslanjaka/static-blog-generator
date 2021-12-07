@@ -25,9 +25,6 @@ var path_1 = __importDefault(require("path"));
 var fm = __importStar(require("../../../../../hexo-seo/src/fm"));
 require("../../../../../hexo-seo/packages/js-prototypes/src/Number");
 var fs_1 = require("fs");
-var pretty_error_1 = __importDefault(require("pretty-error"));
-var pe = new pretty_error_1.default();
-pe.start();
 var DBConstructor = /** @class */ (function () {
     /**
      * Database File Constructor
@@ -72,11 +69,20 @@ var DBConstructor = /** @class */ (function () {
     DBConstructor.prototype.save = function (key, content) {
         fm.writeFile(this.locationfile(key), content);
     };
+    /**
+     * Edit database key
+     * @param key
+     * @param newValue
+     * @param by
+     * @returns
+     */
     DBConstructor.prototype.edit = function (key, newValue, by) {
         if (typeof by == 'object') {
             var get = this.get(key);
             if (Array.isArray(get)) {
-                // get index array, -1 = not found
+                /**
+                 * get index array, if (-1) = not found
+                 */
                 var getIndex = get.findIndex(function (predicate) {
                     // if object by === predicate
                     if (objectEquals(predicate, by))
@@ -95,13 +101,20 @@ var DBConstructor = /** @class */ (function () {
                     // set new value
                     get[getIndex] = newValue;
                     this.push(key, get);
+                    return true;
                 }
                 else {
                     if (this.debug)
                         console.error('cannot find index ' + key, by);
+                    return false;
                 }
             }
         }
+        else if (!by) {
+            this.push(key, newValue);
+            return true;
+        }
+        return false;
     };
     /**
      * get table database by key
