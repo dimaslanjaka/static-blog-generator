@@ -53,6 +53,18 @@ if (HTMLCollection.prototype.isPrototypeOf(this.loaders)) {
 ```
 
 ## Typescript how to iterate Nodelist or HTMLCollection variable type
+### Wrong/Bad
+```ts
+loaders.forEach((el) => {
+  console.log(el);
+});
+```
+> will thrown
+> Property 'forEach' does not exist on type 'NodeListOf<Element> | HTMLCollectionOf<Element>'.
+>
+> &nbsp;&nbsp;Property 'forEach' does not exist on type 'HTMLCollectionOf<Element>'.ts(2339)
+
+### Good
 ```ts
 let loaders: NodeListOf<Element> | HTMLCollectionOf<Element>;
 loaders = document.getElementsByClassName("className"); // will return typeof HTMLCollectionOf<Element>
