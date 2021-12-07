@@ -1,12 +1,13 @@
 {
   "name": "proxies-grabber",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "NodeJS Public Proxy Grabber",
   "main": "dist/traffic-generator/packages/proxy-grabber/index.js",
   "types": "dist/traffic-generator/packages/proxy-grabber/index.d.ts",
   "scripts": {
     "lint": "eslint '*/**/*.{js,ts,html}' --quiet --fix",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "clean": "rm -rf dist databases"
   },
   "keywords": [
     "proxy",
@@ -27,11 +28,10 @@
   },
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
     "bluebird": "^3.7.2",
     "moment": "^2.29.1",
-    "node-html-parser": "^5.1.0",
-    "node-libcurl": "*",
-    "pretty-error": "^4.0.0"
+    "node-html-parser": "^5.1.0"
   },
   "devDependencies": {
     "@tsconfig/node12": "^1.0.9",

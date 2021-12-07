@@ -1,11 +1,12 @@
-const proxyGrabber = require('./index');
-const dbProxy = require('./index').db;
+const proxyGrabber = require('.');
+const dbProxy = require('.').db;
 const path = require('path');
 const gulp = require('gulp');
 const Promise = require('bluebird');
 
+const grabber = new proxyGrabber();
+
 function testProxy(done) {
-  const grabber = new proxyGrabber();
   grabber.test(1).then((resx) => {
     let xx = [];
     resx.map((rx) => {
@@ -48,6 +49,35 @@ function testDB(done) {
   done();
 }
 
+function getProxy(done) {
+  Promise.all([grabber.method1(), grabber.method2(), grabber.method3()])
+    .then((o) => {
+      if (
+        !o
+          .map((ret) => {
+            return ret.length > 0;
+          })
+          .every(Boolean)
+      ) {
+        throw new Error('some proxy get method return empty');
+      } else {
+        console.log('get proxy successful');
+      }
+      done();
+    })
+    .catch(
+      /**
+       *
+       * @param {import('axios').AxiosError} e
+       */
+      (e) => {
+        console.log(e.message);
+        done();
+      },
+    );
+}
+
+exports.get = getProxy;
 exports.db = testDB;
-exports.proxy = testProxy;
+exports.test = testProxy;
 exports.default = gulp.series(testDB, testProxy);
