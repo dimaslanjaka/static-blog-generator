@@ -59,7 +59,8 @@ loaders.forEach((el) => {
   console.log(el);
 });
 ```
-> will thrown
+> above will thrown:
+> 
 > Property 'forEach' does not exist on type 'NodeListOf<Element> | HTMLCollectionOf<Element>'.
 >
 > &nbsp;&nbsp;Property 'forEach' does not exist on type 'HTMLCollectionOf<Element>'.ts(2339)
