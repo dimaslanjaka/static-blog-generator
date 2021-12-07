@@ -1,5 +1,12 @@
 {
   "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true,
+    "commonjs": true,
+    "prototypejs": true
+  },
   "settings": {
     "import/parsers": {
       "@typescript-eslint/parser": [
@@ -31,6 +38,17 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
+  // override rules for js files
+  "overrides": [
+    {
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off" // disable require warning on js files
+      }
+    }
+  ],
   "rules": {
     "import/extensions": [
       "error",
@@ -42,6 +60,7 @@
         "tsx": "never"
       }
     ],
+    "no-prototype-builtins": "off",
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "no-unused-vars": "off",

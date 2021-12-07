@@ -14,7 +14,13 @@ export declare function remove(proxy: string | number): any;
  * @author Dimas Lanjaka <dimaslanjaka@gmail.com>
  * @returns
  */
-export declare function setProxyPartition(name: string, prx: string): Promise<void>;
+export declare function setProxyPartition(name: string, prx: string): Electron.Session;
+/**
+ * Get Proxy from partition
+ * @param name
+ * @returns
+ */
+export declare function getProxyPartition(name: string): Promise<string>;
 /**
  * Electron set proxy to window session
  * @param win BrowserWindow Instance

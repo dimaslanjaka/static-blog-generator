@@ -6,15 +6,25 @@ import { readFile } from "../../hexo-seo/src/fm";
 import MenuBuilder from "./gui.menu";
 import { Config, shortcutInit } from "./global";
 import Theme from "./views/theme";
+import { DB_PROXIES_KEY } from "./db/constant";
+import DBConstructor from "./db";
+import { MyTypeIpcMain } from "./electron-utils/webworker";
+import { clearCachePartition } from "./utils/cache";
+import { getProxyPartition, setProxyPartition } from "./proxies";
 
+const ipm: MyTypeIpcMain = ipcMain;
 // load config
 const config: Config = JSON.parse(
   readFile(path.join(process.cwd(), "config.json")).toString()
 );
-
+// database folder
+const dbf = path.join(process.cwd(), "databases");
+// database class
+const db = new DBConstructor(dbf);
+const proxies = db.get(DB_PROXIES_KEY, []) as string[];
 // load proxy
-const proxy = new proxyFile(path.join(process.cwd(), config.proxy));
-//let win: BrowserWindow;
+const proxy = proxyFile.fromText(proxies.join("\n"));
+const win: BrowserWindow[] = [];
 const theme = new Theme(path.join(__dirname, "views/routes"));
 
 app.setPath("userData", path.join(process.cwd(), "build/electron/cache"));
@@ -24,23 +34,50 @@ app.whenReady().then(async () => {
   createNewWindow("options");
 });
 
-function createNewWindow(routePath: string) {
-  const win = createWindow();
-  shortcutInit(win);
-  const menuBuilder = new MenuBuilder(win);
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") app.quit();
+});
+
+ipcMain.on("new-window", (e, msg) => {
+  const routePath = path.basename(msg[0], ".html");
+  //console.log(routePath, theme.route(routePath).getPath());
+  createNewWindow(routePath);
+});
+
+// handle proxy change webview
+ipm.handle("change-webview-proxy", (event, partisi, clear_cache) => {
+  if (clear_cache) {
+    clearCachePartition(partisi);
+  }
+  const prx = proxy.random();
+  return getProxyPartition(partisi).then((deadpx) => {
+    proxy.delete(deadpx);
+    setProxyPartition(partisi, prx);
+    return prx;
+  });
+});
+
+function createNewWindow(routePath = "/") {
+  win[routePath] = createWindow();
+  shortcutInit(win[routePath]);
+  const menuBuilder = new MenuBuilder(win[routePath]);
   menuBuilder.buildMenu();
 
   const renderer = theme.route(routePath).getPath(true);
 
-  win.loadURL(renderer);
+  win[routePath].loadURL(renderer);
 
-  win.once("ready-to-show", () => {
-    win.show();
-    win.webContents.openDevTools();
+  win[routePath].once("ready-to-show", () => {
+    win[routePath].show();
+    win[routePath].webContents.openDevTools();
   });
 
-  ipcMain.on("new-window", (e, msg) => {
-    console.log(msg);
+  // Emitted when the window is closed.
+  win[routePath].on("closed", function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    win[routePath] = null;
   });
 
   return win;

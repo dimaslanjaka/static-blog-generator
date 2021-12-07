@@ -2,6 +2,7 @@ import htmlparser from "node-html-parser";
 export default class Theme {
     index: string;
     dom: ReturnType<typeof htmlparser>;
+    scan: boolean;
     /**
      * Base folder
      */

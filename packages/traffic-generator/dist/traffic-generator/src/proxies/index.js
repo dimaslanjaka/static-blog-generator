@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getProxyWindow = exports.setProxyWindow = exports.setProxyPartition = exports.remove = exports.random = void 0;
+exports.getProxyWindow = exports.setProxyWindow = exports.getProxyPartition = exports.setProxyPartition = exports.remove = exports.random = void 0;
 /* eslint-disable import/extensions */
 const axios_1 = __importDefault(require("axios"));
 const spys_txt_1 = require("../../packages/proxy-grabber/src/parser/spys.txt");
@@ -67,9 +67,22 @@ exports.remove = remove;
  */
 function setProxyPartition(name, prx) {
     const ses = electron_1.session.fromPartition(name);
-    return ses.setProxy({ proxyRules: prx });
+    ses.setProxy({ proxyRules: prx });
+    return ses;
 }
 exports.setProxyPartition = setProxyPartition;
+/**
+ * Get Proxy from partition
+ * @param name
+ * @returns
+ */
+function getProxyPartition(name) {
+    const ses = electron_1.session.fromPartition(name);
+    return ses.resolveProxy("http://google.com").then((deadpx) => {
+        return deadpx;
+    });
+}
+exports.getProxyPartition = getProxyPartition;
 /**
  * Electron set proxy to window session
  * @param win BrowserWindow Instance

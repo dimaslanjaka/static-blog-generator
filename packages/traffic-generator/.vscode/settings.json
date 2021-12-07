@@ -6,18 +6,20 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "node_modules": true
+    "node_modules": true,
+    "dist": true
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
-    "**/.hg/store/**": true
-    //"**/dist/**": true
+    "**/.hg/store/**": true,
+    "**/dist/**": true
   },
   "eslint.codeActionsOnSave.mode": "all",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
   },
   "[json]": {
     "editor.formatOnSave": true // enable json formating with default vscode formatter
@@ -25,9 +27,16 @@
   "[html]": {
     "editor.formatOnSave": true // enable html formating with default vscode formatter
   },
+  "[css]": {
+    "editor.formatOnSave": true // enable html formating with default vscode formatter
+  },
   "editor.formatOnSave": false, // disable default vscode formatter
   "javascript.suggestionActions.enabled": false,
   "typescript.suggestionActions.enabled": false,
   "git.detectSubmodules": false,
-  "git.enabled": false
+  "git.enabled": false,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "eslint.format.enable": true
 }

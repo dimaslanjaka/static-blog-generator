@@ -1,15 +1,30 @@
 "use strict";
 // Proxy.txt handler
 // handling proxies line by line in text files
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fm_1 = require("../../../hexo-seo/src/fm");
 require("../../../hexo-seo/packages/js-prototypes/src/globals");
+const path_1 = __importDefault(require("path"));
 class proxyFile {
-    constructor(filepath) {
+    constructor(filepath = path_1.default.join(process.cwd(), "databases/proxy.txt")) {
         this.list = [];
         this.file = filepath.toString();
         const read = (0, fm_1.readFile)(filepath.toString()).toString();
         this.list = proxyFile.parseProxyFromText(read).shuffle();
+    }
+    /**
+     * load from text
+     * @param str
+     * @returns
+     */
+    static fromText(str) {
+        const parsed = proxyFile.parseProxyFromText(str);
+        const init = new proxyFile();
+        init.list = parsed;
+        return init;
     }
     /**
      * Parse string from text
@@ -26,7 +41,7 @@ class proxyFile {
                 result.push(m[0]);
             }
         } while (m);
-        return result;
+        return result.unique().removeEmpties();
     }
     /**
      * get random proxy

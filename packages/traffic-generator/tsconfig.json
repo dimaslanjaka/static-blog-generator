@@ -40,6 +40,7 @@
     "release/build",
     "dist",
     ".erb/dll",
-    "src/views/theme/src/js/**/*"
+    "src/views/theme/src/js/**/*",
+    "src/views/theme/loader/web/**/*"
   ]
 }
