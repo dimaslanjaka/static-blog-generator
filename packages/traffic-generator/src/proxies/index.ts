@@ -65,7 +65,20 @@ export function remove(proxy: string | number) {
  */
 export function setProxyPartition(name: string, prx: string) {
   const ses = session.fromPartition(name);
-  return ses.setProxy({ proxyRules: prx });
+  ses.setProxy({ proxyRules: prx });
+  return ses;
+}
+
+/**
+ * Get Proxy from partition
+ * @param name
+ * @returns
+ */
+export function getProxyPartition(name: string) {
+  const ses = session.fromPartition(name);
+  return ses.resolveProxy("http://google.com").then((deadpx) => {
+    return deadpx;
+  });
 }
 
 /**

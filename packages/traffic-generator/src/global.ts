@@ -1,10 +1,7 @@
 import { BrowserWindow, globalShortcut } from "electron";
+import { GenericObject } from "./electron-utils/webworker";
 
-export interface LooseObject {
-  [key: string]: any;
-}
-
-export interface WebviewInstances extends LooseObject {
+export interface WebviewInstances extends GenericObject {
   [key: string]: {
     /**
      * Clean on proxy change
@@ -16,7 +13,7 @@ export interface WebviewInstances extends LooseObject {
     proxy?: boolean;
   };
 }
-export interface Config extends LooseObject {
+export interface Config extends GenericObject {
   /**
    * Proxy file (txt) path
    */
@@ -24,13 +21,27 @@ export interface Config extends LooseObject {
   webview: WebviewInstances;
 }
 
+/**
+ * Shortcut initializer (automated find active window)
+ * @see {@link https://stackoverflow.com/a/64502431}
+ * @param win
+ */
 export function shortcutInit(win: BrowserWindow) {
-  globalShortcut.register("f5", function () {
-    console.log("reload by f5");
-    win.reload();
+  win.on("focus", () => {
+    globalShortcut.register("f5", function () {
+      console.log("reload by f5");
+      win.reload();
+    });
+    globalShortcut.register("ESC", function () {
+      if (win.closable) win.close();
+    });
+    globalShortcut.register("CommandOrControl+R", function () {
+      console.log("reload by CommandOrControl+R");
+      win.reload();
+    });
   });
-  globalShortcut.register("CommandOrControl+R", function () {
-    console.log("reload by CommandOrControl+R");
-    win.reload();
+
+  win.on("blur", () => {
+    globalShortcut.unregisterAll();
   });
 }

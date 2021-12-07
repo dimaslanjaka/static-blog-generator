@@ -10,23 +10,26 @@ const fs_1 = require("fs");
 class Theme {
     constructor(base) {
         this.index = path_1.default.join(__dirname, "index.html");
+        this.scan = false;
         this.base = base;
-        // read all routes
-        const readdir = (0, fm_1.readDir)(base);
-        const pathes = readdir
-            .filter((file) => {
-            return file.endsWith(".html");
-        })
-            .map((file) => {
-            return path_1.default.basename(file, ".html");
-        });
-        if (pathes.length)
-            for (const key in pathes) {
-                if (Object.prototype.hasOwnProperty.call(pathes, key)) {
-                    const route = this.route(pathes[key]).getPath();
-                    console.log(route);
+        if (this.scan) {
+            // read all routes
+            const readdir = (0, fm_1.readDir)(base);
+            const pathes = readdir
+                .filter((file) => {
+                return file.endsWith(".html");
+            })
+                .map((file) => {
+                return path_1.default.basename(file, ".html");
+            });
+            if (pathes.length)
+                for (const key in pathes) {
+                    if (Object.prototype.hasOwnProperty.call(pathes, key)) {
+                        const route = this.route(pathes[key]).getPath();
+                        //console.log(route);
+                    }
                 }
-            }
+        }
     }
     /**
      * Load index theme for reuse template
@@ -42,9 +45,10 @@ class Theme {
      */
     route(routePath) {
         this.loadThemeIndex();
-        const js = this.dom.querySelector("script#js-custom");
-        const css = this.dom.querySelector("link#css-custom");
+        // define root content
         const root = this.dom.querySelector("#root");
+        // define js files
+        const js = this.dom.querySelector("script#js-custom");
         const assetJs = path_1.default.join(this.base, routePath + ".js");
         if ((0, fs_1.existsSync)(assetJs)) {
             js.setAttribute("src", assetJs);
@@ -52,6 +56,8 @@ class Theme {
         else {
             js.remove();
         }
+        // define css files
+        const css = this.dom.querySelector("link#css-custom");
         const assetCss = path_1.default.join(this.base, routePath + ".css");
         if ((0, fs_1.existsSync)(assetCss)) {
             css.setAttribute("href", assetCss);
@@ -59,6 +65,7 @@ class Theme {
         else {
             css.remove();
         }
+        // append root with content
         const assetHtml = path_1.default.join(this.base, routePath + ".html");
         if ((0, fs_1.existsSync)(assetHtml)) {
             root.set_content((0, fm_1.readFile)(assetHtml).toString());
@@ -66,14 +73,14 @@ class Theme {
         else {
             root.set_content(`${assetHtml} not found`);
         }
-        const self = this;
-        /*const links = this.dom.querySelectorAll("a"); // as NodeListOf<HTMLAnchorElement>
+        // set internal page as new window
+        const links = this.dom.querySelectorAll("a"); // as NodeListOf<HTMLAnchorElement>
         links.forEach((a) => {
-          const href = a.getAttribute("href");
-          if (!/^https?:\/\//g.test(href)) {
-            a.setAttribute("href", self.route(href.replace(".html", "")).getPath());
-          }
-        });*/
+            const href = a.getAttribute("href");
+            if (!/^https?:\/\//g.test(href)) {
+                a.setAttribute("new-window", "true");
+            }
+        });
         const writeTo = new Theme.routeResolver(routePath);
         (0, fm_1.writeFile)(writeTo.getPath(), this.dom.toString());
         return writeTo;
