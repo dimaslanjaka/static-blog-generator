@@ -15,6 +15,7 @@ const constant_1 = require("./db/constant");
 const db_1 = __importDefault(require("./db"));
 const cache_1 = require("./utils/cache");
 const proxies_1 = require("./proxies");
+const useragent_1 = require("./utils/useragent");
 const ipm = electron_1.ipcMain;
 // load config
 const config = JSON.parse((0, fm_1.readFile)(path_1.default.join(process.cwd(), "config.json")).toString());
@@ -41,6 +42,18 @@ electron_1.ipcMain.on("new-window", (e, msg) => {
     const routePath = path_1.default.basename(msg[0], ".html");
     //console.log(routePath, theme.route(routePath).getPath());
     createNewWindow(routePath);
+});
+ipm.handle("change-webview-ua", function (evt, partisi, ua) {
+    let agent;
+    if (typeof ua == "string") {
+        agent = ua;
+    }
+    else {
+        agent = (0, useragent_1.userAgentRandom)();
+    }
+    const ses = electron_1.session.fromPartition(partisi);
+    ses.setUserAgent(agent);
+    return agent;
 });
 // handle proxy change webview
 ipm.handle("change-webview-proxy", (event, partisi, clear_cache) => {
