@@ -1,6 +1,6 @@
 ---
 title: Eslint Prettier In Typescript Project Using Vscode
-webtitle: WMI NodeJS
+webtitle: NodeJS
 subtitle: "How to configure eslint with prettier to automated lint and format codes in typescript project using vscode"
 lang: en
 date: 2021-11-28T07:00:00

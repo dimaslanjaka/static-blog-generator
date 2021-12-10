@@ -1,6 +1,6 @@
 ---
 title: Node Options For NodeJS
-webtitle: WMI NodeJS
+webtitle: NodeJS
 subtitle: "Usage, explanations of node options for nodejs"
 lang: en
 date: 2021-11-17T16:00:00
