@@ -9,4 +9,5 @@ export default _default;
  * @returns
  */
 export declare const random: () => string;
+export { random as userAgentRandom };
 //# sourceMappingURL=useragent.d.ts.map

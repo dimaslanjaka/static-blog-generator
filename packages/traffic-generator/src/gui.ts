@@ -11,6 +11,7 @@ import DBConstructor from "./db";
 import { MyTypeIpcMain } from "./electron-utils/webworker";
 import { clearCachePartition } from "./utils/cache";
 import { getProxyPartition, setProxyPartition } from "./proxies";
+import { userAgentRandom } from "./utils/useragent";
 
 const ipm: MyTypeIpcMain = ipcMain;
 // load config
@@ -42,6 +43,18 @@ ipcMain.on("new-window", (e, msg) => {
   const routePath = path.basename(msg[0], ".html");
   //console.log(routePath, theme.route(routePath).getPath());
   createNewWindow(routePath);
+});
+
+ipm.handle("change-webview-ua", function (evt, partisi, ua) {
+  let agent: string;
+  if (typeof ua == "string") {
+    agent = ua;
+  } else {
+    agent = userAgentRandom();
+  }
+  const ses = session.fromPartition(partisi);
+  ses.setUserAgent(agent);
+  return agent;
 });
 
 // handle proxy change webview

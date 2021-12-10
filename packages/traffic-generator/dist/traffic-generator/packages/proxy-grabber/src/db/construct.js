@@ -25,9 +25,6 @@ const path_1 = __importDefault(require("path"));
 const fm = __importStar(require("../../../../../hexo-seo/src/fm"));
 require("../../../../../hexo-seo/packages/js-prototypes/src/Number");
 const fs_1 = require("fs");
-const pretty_error_1 = __importDefault(require("pretty-error"));
-const pe = new pretty_error_1.default();
-pe.start();
 class DBConstructor {
     /**
      * Database File Constructor

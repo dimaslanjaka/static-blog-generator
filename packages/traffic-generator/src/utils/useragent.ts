@@ -11,3 +11,5 @@ export default data as string[];
 export const random = (): string => {
   return (<string[]>data).shuffle().random();
 };
+
+export { random as userAgentRandom };

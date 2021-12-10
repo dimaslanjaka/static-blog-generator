@@ -14,16 +14,26 @@ webviews.forEach((webview: Electron.WebviewTag) => {
   const proxyText = webviewContainer.querySelector('[data-id="proxy"]');
   const partisi = webview.getAttribute("partition");
 
-  const reloadWebProxy = (partisi: string) => {
+  const reloadWebProxy = (
+    partisi: string,
+    clear_cache = false,
+    change_useragent = false
+  ) => {
     proxyText.setAttribute("class", "text-primary");
     proxyText.innerHTML = "Changing Proxy...";
-    ipr.invoke("change-webview-proxy", partisi).then((proxy) => {
+
+    if (change_useragent)
+      ipr.invoke("change-webview-ua", partisi).then((ua) => {
+        console.log(ua);
+      });
+
+    ipr.invoke("change-webview-proxy", partisi, clear_cache).then((proxy) => {
       proxyText.innerHTML = proxy;
     });
-  };
 
-  // init proxy
-  reloadWebProxy(partisi);
+    console.log(webview.getURL());
+    webview.setUserAgent("Electron");
+  };
 
   // loader
   const loadstart = () => {
@@ -37,14 +47,15 @@ webviews.forEach((webview: Electron.WebviewTag) => {
   webview.addEventListener("did-start-loading", loadstart);
   webview.addEventListener("did-stop-loading", loadstop);
 
-  //console.log("attach listener to webview", webview.attributes);
+  // init proxy
+  reloadWebProxy(partisi, true, true);
+
+  // process after dom-ready
   webview.addEventListener("dom-ready", (e) => {
-    //const x = (<any>e.target).getURL();
     const url = webview.getURL();
     const title = webview.getTitle();
     const titleText = webviewContainer.querySelector('[data-id="title"]');
     titleText.innerHTML = title;
-    //console.log(url);
   });
 
   webview.addEventListener("did-fail-load", (e) => {

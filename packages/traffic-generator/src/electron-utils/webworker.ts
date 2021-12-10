@@ -31,6 +31,15 @@ export interface MyTypeIpcMain extends IpcMain {
       clear_cache?: boolean
     ) => Promise<void> | any
   ): void;
+
+  handle(
+    channel: "change-webview-ua",
+    listener: (
+      event: IpcMainInvokeEvent,
+      partition_name: string,
+      ua?: string
+    ) => void
+  );
 }
 
 /**
@@ -44,6 +53,11 @@ export interface MyTypeIpcRenderer extends IpcRenderer {
       messages: { proxy: string }
     ) => void
   ): this;
+  invoke(
+    channel: "change-webview-ua",
+    partition_name: string,
+    ua?: string
+  ): Promise<string>;
   invoke(
     event: "change-webview-proxy",
     partition_name: string,
