@@ -28,20 +28,20 @@ comments: true
 # How to detect HTMLCollection/NodeList in JavaScript/Typescript?
 
 ## HTMLCollection Detect
-```js
+```javascript
 // check if variable is instance of HTMLCollection
 HTMLCollection.prototype.isPrototypeOf(variable)
 ```
 
 ## NodeList Detect
-```js
+```javascript
 // check if variable is instance of NodeList
 NodeList.prototype.isPrototypeOf(variable)
 ```
 
 ## Typescript Comparator Example
 
-```ts
+```typescript
 let loaders: NodeListOf<Element> | HTMLCollectionOf<Element>;
 loaders = document.getElementsByClassName("className"); // will return typeof HTMLCollectionOf<Element>
 loaders = document.querySelectorAll("[class*='className']"); // will return typeof NodeListOf<Element>
@@ -54,11 +54,12 @@ if (HTMLCollection.prototype.isPrototypeOf(this.loaders)) {
 
 ## Typescript how to iterate Nodelist or HTMLCollection variable type
 ### Wrong/Bad
-```ts
+```typescript
 loaders.forEach((el) => {
   console.log(el);
 });
 ```
+
 > above will thrown:
 >
 > Property 'forEach' does not exist on type 'NodeListOf<Element> | HTMLCollectionOf<Element>'.
@@ -66,7 +67,7 @@ loaders.forEach((el) => {
 > Property 'forEach' does not exist on type 'HTMLCollectionOf<Element>'. ts(2339)
 
 ### Good
-```ts
+```typescript
 let loaders: NodeListOf<Element> | HTMLCollectionOf<Element>;
 loaders = document.getElementsByClassName("className"); // will return typeof HTMLCollectionOf<Element>
 loaders = document.querySelectorAll("[class*='className']"); // will return typeof NodeListOf<Element>
