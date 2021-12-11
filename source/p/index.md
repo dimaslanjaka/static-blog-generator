@@ -6,7 +6,7 @@ title: Blogger Page Migration
 
 <div id="bootstrap-wrapper">
   <div class="container">
-    <ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8418182273"></ins>
+    <div><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8418182273"></ins></div>
 
     <div class="row m-2">
       <div class="col-md-4">
@@ -23,7 +23,7 @@ title: Blogger Page Migration
     </div>
   </div>
 
-  <ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7823254087"></ins>
+  <div><ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="7823254087"></ins></div>
 </div>
 
 ## Page Lists
