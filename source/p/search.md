@@ -16,7 +16,7 @@ webtitle: WMI
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchresults-only>Search Results Here</gcse:searchresults-only>
+<gcse:searchresults-only class='gcse-searchresults-only'>Search Results Here</gcse:searchresults-only>
 </div>
 <div class="clear"></div>
 <div>
