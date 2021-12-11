@@ -76,20 +76,8 @@ $("div #info").html('<div><b>User-agent:</b> '+navigator.userAgent+'<br/><b>Brow
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<!-- Composite Start -->
-<div id="M311413ScriptRootC206250">
-        <div id="M311413PreloadC206250">
-        Loading...    </div>
-        <script>
-                (function(){
-            var D=new Date(),d=document,b='body',ce='createElement',ac='appendChild',st='style',ds='display',n='none',gi='getElementById',lp=d.location.protocol,wp=lp.indexOf('http')==0?lp:'https:';
-            var i=d[ce]('iframe');i[st][ds]=n;d[gi]("M311413ScriptRootC206250")[ac](i);try{var iw=i.contentWindow.document;iw.open();iw.writeln("<ht"+"ml><bo"+"dy></bo"+"dy></ht"+"ml>");iw.close();var c=iw[b];}
-            catch(e){var iw=d;var c=d[gi]("M311413ScriptRootC206250");}var dv=iw[ce]('div');dv.id="MG_ID";dv[st][ds]=n;dv.innerHTML=206250;c[ac](dv);
-            var s=iw[ce]('script');s.async='async';s.defer='defer';s.charset='utf-8';s.src=wp+"//jsc.mgid.com/w/e/webmanajemen.xyz.206250.js?t="+D.getYear()+D.getMonth()+D.getUTCDate()+D.getUTCHours();c[ac](s);})();
-    </script>
-    </div>
-<!-- Composite End -->
-
+  <!-- banner here -->
+  
 <center>
 <div id="continue"></div>
 </center>
@@ -110,13 +98,19 @@ location.replace('https://dimaslanjaka.github.io/page/safelink.html?url='+redire
 $('#continue').html('<div class="text-center d-inline-block"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <a href="https://nullrefer.com/?'+decodeURIComponent(redirectURL)+'" target="_blank" class="btn w3-button button bg-default"><i class="fa fa-link" aria-hidden="true"></i> <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://denalidestroyers.org/wp-content/uploads/continue-button-1024x282.png" style="display:inline-block !important;height:15px;width:120px" align="top" title="Continue!" /> <i class="fa fa-external-link"></i></a> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i></div>');
 </script>
 <div class="overflow">
-<div id="SC_TBlock_481591" class="SC_TBlock">loading...</div>
+<div id="SC_TBlock_708314" class="SC_TBlock">loading...</div>
 <script type="text/javascript">
-    (sc_adv_out = window.sc_adv_out || []).push({
-        id : "481591",
-        domain : "n.ads1-adnow.com"
-    });
+  (sc_adv_out = window.sc_adv_out || []).push({
+    id: "708314",
+    domain: "n.ads1-adnow.com",
+  });
+  (sc_adv_out = window.sc_adv_out || []).push({
+    id: "708314",
+    domain: "n.ads5-adnow.com",
+    no_div: false,
+  });
 </script>
+<script async type="text/javascript" src="//st-n.ads5-adnow.com/js/a.js"></script>
 <script type="text/javascript" src="//st-n.ads1-adnow.com/js/adv_out.js"></script>
 </div>
 
