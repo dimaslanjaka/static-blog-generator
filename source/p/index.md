@@ -38,7 +38,7 @@ title: Blogger Page Migration
   </script>
 </div>
 
-## Page List
+## Page Lists
 [Loan news](a.html)
 [Loan redirect](redirect.html)
 [Search](search.html)
