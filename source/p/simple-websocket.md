@@ -2,10 +2,8 @@
 title: Simple Websocket
 date: 2020-01-20 14:15:01
 tags:
-  - "adsense"
-  - "headers"
-  - "examples"
-  - "auto"
+  - websocket
+  - js
 subtitle: "Adsense auto display on headers (h1,h2,h3,h4,h5,h6)"
 adsense: true
 author:
