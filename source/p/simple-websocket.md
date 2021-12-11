@@ -1,6 +1,6 @@
 ---
 title: Simple Websocket
-date: 2020-01-20 14:15:01
+date: 2020-01-20T14:15:01
 tags:
   - websocket
   - js
