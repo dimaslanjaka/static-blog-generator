@@ -67,6 +67,7 @@ cover: "https://miro.medium.com/max/700/1*aOv6h3h_v9PQWa03zGACnw.png"
     color: white;
   }
 </style>
+
 <!--Content Here-->
 <div>
   <h1 itemprop="name">Simple Websocket Writen in PHP and Javascript</h1>
