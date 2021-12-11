@@ -4,12 +4,6 @@ title: Blogger Page Migration
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
 
-## Page List
-[Loan news](a.html)
-[Loan redirect](redirect.html)
-[Search](search.html)
-[Simple websocket](simple-websocket.html)
-
 <div id="bootstrap-wrapper">
   <div class="container">
     <ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8418182273"></ins>
@@ -44,4 +38,8 @@ title: Blogger Page Migration
   </script>
 </div>
 
-
+## Page List
+[Loan news](a.html)
+[Loan redirect](redirect.html)
+[Search](search.html)
+[Simple websocket](simple-websocket.html)
