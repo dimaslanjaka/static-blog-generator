@@ -4,7 +4,7 @@ date: 2020-01-20T14:15:01
 tags:
   - websocket
   - js
-subtitle: "Adsense auto display on headers (h1,h2,h3,h4,h5,h6)"
+subtitle: "Javascript super simple websocket"
 adsense: true
 author:
   nick: Dimas Lanjaka
