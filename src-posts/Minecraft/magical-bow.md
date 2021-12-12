@@ -14,10 +14,9 @@ keywords:
 
 # Super Magical Bow Recipes
 
-## Bow magical Power Strength + Auto Repair
+## Recipe bow magical equipment power strength + auto repair
 Auto repair + increase durability + more damage + fire damage at once
 
-Requirements:
 - Bow
 - Magical Book **Power I II III IV V**
 - - **Deal more damage** with arrows. Max rank 5.
@@ -30,10 +29,10 @@ Requirements:
 - Magical book **Mending I**
 - - **Repair items using experience** (mutually exclusive with Infinity). Max rank 1.
 
-## Bow magical Power Strength + Infinity Arrows
+## Recipe bow magical equipment power strength + infinity arrows
 Infinity Arrows + increase durability + more damage + fire damage at once
 
-Requirements:
+Recipes:
 - Bow
 - Magical Book **Power I II III IV V**
 - - **Deal more damage** with arrows. Max rank 5.
