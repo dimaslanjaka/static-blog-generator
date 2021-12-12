@@ -9,7 +9,6 @@ interface MainWindowOpt extends Object {
   icon?: string;
 }
 
-require("dotenv").config({ debug: true });
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 //process.env["ENV"] = "true";
 const isDev = process.env.ENV ? process.env.ENV.trim() == "true" : false;
