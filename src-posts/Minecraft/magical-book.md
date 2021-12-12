@@ -11,87 +11,86 @@ keywords:
   - magical books
   - enchantments
   - minecraft
-toc: true
 ---
 
 # List of all Magical Book Minecraft Enchantments
 
 If you’re curious about all of the possible enchantments you can get in vanilla Minecraft then the list below has the lot, plus their max ranks.
 
-*   **Aqua Affinity**{#aqua-affinity}
-    **Increases mining rate** while under water. Max rank 1.
-*   **Bane of Arthropods**{#bane-of-arthropods}
-    **Increases damage to arthropods**, can't be combined with [Smite](#smite) and [Sharpness](#sharpness). Max rank 5.
-*   **Blast Protection**{#blast-protection}
-    **Reduce explosions damage** (Creeper or TNT). Max rank 4.
-*   **Channeling**{#channeling}
-    Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) only. Channels a bolt of lightning towards an entity you’ve hit – **only works during thunderstorms** and is can't be combined with Riptide. Max Rank 1.
-*   **Curse of Binding**{#curse-of-binding}
-    **Prevents removal of items** (keep item in inventory upon death). Max rank 1.
-*   **Curse of Vanishing**{#curse-of-vanishing}
-    **Item destroyed on death** (the item will disappear upon death). Max rank 1.
-*   **Depth Strider**{#depth-strider}
-    Move faster underwater (can't be combined with Frost Walker). Max rank 3.
-*   **Efficiency**{#efficiency}
-    Mine faster. Max rank 5.
-*   **Feather Falling**{#feather-falling}
-    Take less fall damage. Max rank 4.
-*   **Fire Aspect**{#fire-aspect}
-    Sets the target on fire. Max rank 2.
-*   **Fire Protection**{#fire-protection}
-    Take less fire damage. Max rank 4
-*   **Flame**{#flame}
-    Arrows set the target on fire. Max rank 1.
-*   **Fortune**{#fortune}
-    Get more block drops (can't be combined with Silk Touch).
-*   **Frost Walker**{#frost-walker}
-    Turns any water beneath you into frosted ice, which explains why this can’t be used in tandem with Depth Strider. Max rank 2.
-*   **Impaling**
-    Deal more damage to ocean mobs with the trident. Max rank 5.
-*   **Infinity**
-    Consume no arrows when firing your bow (can't be combined with mending) Max rank 3.
-*   **Knockback**
-    More knockback. Max rank 2.
-*   **Looting**
-    Get more loot from mobs. Max rank 3.
-*   **Loyalty**
-    Trident returns after you throw it (can't be combined with Riptide). At higher ranks the trident returns faster. Max rank 3.
-*   **Luck of the Sea**
-    More luck with catching fish. Max rank 3.
-*   **Lure**
-    Faster fishing. Max rank 3.
-*   **Mending**
-    Repair items using experience (can't be combined with Infinity). Max rank 1.
-*   **Multishot**
-    Fire three arrows at once, while only consuming one arrow (can't be combined with Piercing). Max rank 1.
-*   **Piercing**
-    Arrows can go through two targets (can't be combined with [Multishot](#multishot)). Max rank 4.
-*   **Power**
-    Deal more damage with arrows. Max rank 5.
-*   **Projectile Protection**
-    Take less damage from projectiles. Max rank 4.
-*   **Protection**
-    Reduces damage taken from most sources. Max rank 4.
-*   **Punch**
-    Your arrows have more knockback. Max rank 2.
-*   **Quick Charge**
-    Reload your crossbow faster. Max rank 3.
-*   **Respiration**
-    Swim underwater for longer without needing to resurface. Max rank 3.
-*   **Riptide**
-    When you throw your trident you go with it (can't be combined with Channeling and Loyalty). This only works in water or during rain. Max rank 3.
-*   **Sharpness**
-    Deal more damage with sword and axes (can't be combined with Smite and Bane of Arthropods). Max rank 5.
-*   **Silk Touch**
-    Mined blocks drop automatically (can't be combined with Fortune). Max rank 1.
-*   **Smite**
-    Dish out more damage to undead mobs (can't be combined with Sharpness and Bane of Arthropods). Max rank 5.
-*   **Sweeping Edge**
-    More damage with sweeping attacks. Max rank 3.
-*   **Thorns**
-    Deals damage to attackers upon being hit. Max rank 3.
-*   **Unbreaking**
-    Increases the durability of the enchanted item. Max rank 3.
+## Aqua Affinity
+**Increases mining rate** while under water. Max rank 1.
+## Bane of Arthropods
+**Increases damage to arthropods**, can't be combined with [Smite](#smite) and [Sharpness](#sharpness). Max rank 5.
+## Blast Protection
+**Reduce explosions damage** (Creeper or TNT). Max rank 4.
+## Channeling
+Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) only. Channels a bolt of lightning towards an entity you’ve hit – **only works during thunderstorms** and is can't be combined with Riptide. Max Rank 1.
+## Curse of Binding
+**Prevents removal of items** (keep item in inventory upon death). Max rank 1.
+## Curse of Vanishing
+**Item destroyed on death** (the item will disappear upon death). Max rank 1.
+## Depth Strider
+Move faster underwater (can't be combined with Frost Walker). Max rank 3.
+## Efficiency
+Mine faster. Max rank 5.
+## Feather Falling
+Take less fall damage. Max rank 4.
+## Fire Aspect
+Sets the target on fire. Max rank 2.
+## Fire Protection
+Take less fire damage. Max rank 4
+## Flame
+Arrows set the target on fire. Max rank 1.
+## Fortune
+Get more block drops (can't be combined with Silk Touch).
+## Frost Walker
+Turns any water beneath you into frosted ice, which explains why this can’t be used in tandem with Depth Strider. Max rank 2.
+## Impaling
+Deal more damage to ocean mobs with the trident. Max rank 5.
+## Infinity
+Consume no arrows when firing your bow (can't be combined with mending) Max rank 3.
+## Knockback
+More knockback. Max rank 2.
+## Looting
+Get more loot from mobs. Max rank 3.
+## Loyalty
+Trident returns after you throw it (can't be combined with Riptide). At higher ranks the trident returns faster. Max rank 3.
+## Luck of the Sea
+More luck with catching fish. Max rank 3.
+## Lure
+Faster fishing. Max rank 3.
+## Mending
+Repair items using experience (can't be combined with Infinity). Max rank 1.
+## Multishot
+Fire three arrows at once, while only consuming one arrow (can't be combined with Piercing). Max rank 1.
+## Piercing
+Arrows can go through two targets (can't be combined with [Multishot](#multishot)). Max rank 4.
+## Power
+Deal more damage with arrows. Max rank 5.
+## Projectile Protection
+Take less damage from projectiles. Max rank 4.
+## Protection
+Reduces damage taken from most sources. Max rank 4.
+## Punch
+Your arrows have more knockback. Max rank 2.
+## Quick Charge
+Reload your crossbow faster. Max rank 3.
+## Respiration
+Swim underwater for longer without needing to resurface. Max rank 3.
+## Riptide
+When you throw your trident you go with it (can't be combined with Channeling and Loyalty). This only works in water or during rain. Max rank 3.
+## Sharpness
+Deal more damage with sword and axes (can't be combined with Smite and Bane of Arthropods). Max rank 5.
+## Silk Touch
+Mined blocks drop automatically (can't be combined with Fortune). Max rank 1.
+## Smite
+Dish out more damage to undead mobs (can't be combined with Sharpness and Bane of Arthropods). Max rank 5.
+## Sweeping Edge
+More damage with sweeping attacks. Max rank 3.
+## Thorns
+Deals damage to attackers upon being hit. Max rank 3.
+## Unbreaking
+Increases the durability of the enchanted item. Max rank 3.
 
 Minecraft best enchantments
 ---------------------------
