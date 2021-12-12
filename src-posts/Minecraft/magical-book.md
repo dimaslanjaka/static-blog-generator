@@ -24,7 +24,7 @@ If you’re curious about all of the possible enchantments you can get in vanill
 ## Blast Protection
 **Reduce explosions damage** (Creeper or TNT). Max rank 4.
 ## Channeling
-Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) only. Channels a bolt of lightning towards an entity you’ve hit – **only works during thunderstorms** and is can't be combined with Riptide. Max Rank 1.
+[Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) enchantment only. Channels a bolt of lightning towards an entity you’ve hit – **only works during thunderstorms** and is can't be combined with Riptide. Max Rank 1.
 ## Curse of Binding
 **Prevents removal of items** (keep item in inventory upon death). Max rank 1.
 ## Curse of Vanishing
@@ -80,7 +80,7 @@ Swim underwater for longer without needing to resurface. Max rank 3.
 ## Riptide
 When you throw your trident you go with it (can't be combined with Channeling and Loyalty). This only works in water or during rain. Max rank 3.
 ## Sharpness
-Deal more damage with sword and axes (can't be combined with Smite and Bane of Arthropods). Max rank 5.
+_**Deal more damage** with **sword** and **axes**_ (can't be combined with Smite and Bane of Arthropods). Max rank 5.
 ## Silk Touch
 Mined blocks drop automatically (can't be combined with Fortune). Max rank 1.
 ## Smite
@@ -90,7 +90,7 @@ More damage with sweeping attacks. Max rank 3.
 ## Thorns
 Deals damage to attackers upon being hit. Max rank 3.
 ## Unbreaking
-Increases the durability of the enchanted item. Max rank 3.
+**Increases the durability** of the enchanted item. Max rank 3.
 
 Minecraft best enchantments
 ---------------------------

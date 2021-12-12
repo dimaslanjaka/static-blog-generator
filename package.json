@@ -49,7 +49,6 @@
     "hexo": "github:hexojs/hexo",
     "hexo-adsense": "file:packages/hexo-adsense",
     "hexo-asset-link": "^2.1.0",
-    "hexo-autoprefixer": "github:hexojs/hexo-autoprefixer",
     "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
     "hexo-front-matter": "github:hexojs/hexo-front-matter",
