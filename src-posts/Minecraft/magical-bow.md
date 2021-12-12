@@ -53,3 +53,6 @@ You must choose one of the Magical Books below as the last step.
 - - **Prevents removal of items**. Max rank 1.
 - Curse of Vanishing
 - - **Item destroyed on death**. Max rank 1.
+
+
+{% youtube sSnrK7m2RFo %}

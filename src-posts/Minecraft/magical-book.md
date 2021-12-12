@@ -11,39 +11,40 @@ keywords:
   - magical books
   - enchantments
   - minecraft
+toc: true
 ---
 
 # List of all Magical Book Minecraft Enchantments
 
 If you’re curious about all of the possible enchantments you can get in vanilla Minecraft then the list below has the lot, plus their max ranks.
 
-*   **Aqua Affinity**
+*   **Aqua Affinity**{#aqua-affinity}
     Increases your mining rate while under water. Max rank 1.
-*   **Bane of Arthropods**
+*   **Bane of Arthropods**{#bane-of-arthropods}
     Increases damage to arthropods, exclusive with Smite and Sharpness. Max rank 5.
-*   **Blast Protection**
+*   **Blast Protection**{#blast-protection}
     Reduce damage from explosions. Max rank 4.
-*   **Channeling**
+*   **Channeling**{#channeling}
     Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) only. Channels a bolt of lightning towards an entity you’ve hit – only works during thunderstorms and is mutually exclusive with Riptide. Max Rank 1.
-*   **Curse of Binding**
+*   **Curse of Binding**{#curse-of-binding}
     Prevents removal of items. Max rank 1.
-*   **Curse of Vanishing**
+*   **Curse of Vanishing**{#curse-of-vanishing}
     Item destroyed on death. Max rank 1.
-*   **Depth Strider**
+*   **Depth Strider**{#depth-strider}
     Move faster underwater (mutually exclusive with Frost Walker). Max rank 3.
-*   **Efficiency**
+*   **Efficiency**{#efficiency}
     Mine faster. Max rank 5.
-*   **Feather Falling**
+*   **Feather Falling**{#feather-falling}
     Take less fall damage. Max rank 4.
-*   **Fire Aspect**
+*   **Fire Aspect**{#fire-aspect}
     Sets the target on fire. Max rank 2.
-*   **Fire Protection**
+*   **Fire Protection**{#fire-protection}
     Take less fire damage. Max rank 4
-*   **Flame**
+*   **Flame**{#flame}
     Arrows set the target on fire. Max rank 1.
-*   **Fortune**
+*   **Fortune**{#fortune}
     Get more block drops (mutually exclusive with Silk Touch).
-*   **Frost Walker**
+*   **Frost Walker**{#frost-walker}
     Turns any water beneath you into frosted ice, which explains why this can’t be used in tandem with Depth Strider. Max rank 2.
 *   **Impaling**
     Deal more damage to ocean mobs with the trident. Max rank 5.
@@ -64,7 +65,7 @@ If you’re curious about all of the possible enchantments you can get in vanill
 *   **Multishot**
     Fire three arrows at once, while only consuming one arrow (mutually exclusive with Piercing). Max rank 1.
 *   **Piercing**
-    Arrows can go through two targets (mutually exclusive with Multishot). Max rank 4.
+    Arrows can go through two targets (mutually exclusive with [Multishot](#multishot)). Max rank 4.
 *   **Power**
     Deal more damage with arrows. Max rank 5.
 *   **Projectile Protection**
