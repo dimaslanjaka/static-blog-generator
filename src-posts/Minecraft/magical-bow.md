@@ -25,5 +25,5 @@ Requirements:
 - - Your arrows have more knockback. Max rank 2.
 - Magical Book **Unbreaking I II II**
 - - Increases the durability of the enchanted item. Max rank 3.
-- Magical Book **Flame I*
+- Magical Book **Flame I**
 - - Arrows **set the target on fire**. Max rank 1.
