@@ -15,7 +15,9 @@ keywords:
 # Bow magical power + punch + unbreaking
 - Power I II III IV V
 - - Deal more damage with arrows. Max rank 5.
-- Punch
+- Punch I II
 - - Your arrows have more knockback. Max rank 2.
-- Unbreaking
+- Unbreaking I II II
 - - Increases the durability of the enchanted item. Max rank 3.
+- Flame I
+- - Arrows set the target on fire. Max rank 1.
