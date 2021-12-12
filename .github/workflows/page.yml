@@ -88,6 +88,7 @@ jobs:
           node userscripts/after_generated.js
           node userscripts/validate.js
           gulp hexo:minify
+          gulp sitemap
 
       - name: Commit Files
         id: git-commit

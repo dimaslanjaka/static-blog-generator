@@ -184,14 +184,20 @@ gulp.task("sitemap", (done) => {
   walk("source", (err, files) => {
     const filter = files
       .filter((file) => {
-        return /\.(md|html)$/.test(file);
+        return /\.(md|html)$/.test(file) && !/\/Test\/|\/404\.html/.test(file);
       })
       .map((file) => {
-        return file.replace(/\.md$/, ".html").replace(path.join(__dirname, "source"), "https://www.webmanajemen.com");
+        return file
+          .replace(/\.md$/, ".html")
+          .replace("_posts/", "")
+          .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com");
       });
     results.addAll(filter);
+    if (results.length) {
+      fs.writeFileSync(path.join(__dirname, "docs/sitemap.txt"), results.join("\n"));
+    }
+    done();
   });
-  done();
 });
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
