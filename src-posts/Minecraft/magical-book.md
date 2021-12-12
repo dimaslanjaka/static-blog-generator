@@ -19,19 +19,19 @@ toc: true
 If you’re curious about all of the possible enchantments you can get in vanilla Minecraft then the list below has the lot, plus their max ranks.
 
 *   **Aqua Affinity**{#aqua-affinity}
-    Increases your mining rate while under water. Max rank 1.
+    **Increases mining rate** while under water. Max rank 1.
 *   **Bane of Arthropods**{#bane-of-arthropods}
-    Increases damage to arthropods, exclusive with Smite and Sharpness. Max rank 5.
+    **Increases damage to arthropods**, can't be combined with [Smite](#smite) and [Sharpness](#sharpness). Max rank 5.
 *   **Blast Protection**{#blast-protection}
-    Reduce damage from explosions. Max rank 4.
+    **Reduce explosions damage** (Creeper or TNT). Max rank 4.
 *   **Channeling**{#channeling}
-    Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) only. Channels a bolt of lightning towards an entity you’ve hit – only works during thunderstorms and is mutually exclusive with Riptide. Max Rank 1.
+    Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) only. Channels a bolt of lightning towards an entity you’ve hit – **only works during thunderstorms** and is can't be combined with Riptide. Max Rank 1.
 *   **Curse of Binding**{#curse-of-binding}
-    Prevents removal of items. Max rank 1.
+    **Prevents removal of items** (keep item in inventory upon death). Max rank 1.
 *   **Curse of Vanishing**{#curse-of-vanishing}
-    Item destroyed on death. Max rank 1.
+    **Item destroyed on death** (the item will disappear upon death). Max rank 1.
 *   **Depth Strider**{#depth-strider}
-    Move faster underwater (mutually exclusive with Frost Walker). Max rank 3.
+    Move faster underwater (can't be combined with Frost Walker). Max rank 3.
 *   **Efficiency**{#efficiency}
     Mine faster. Max rank 5.
 *   **Feather Falling**{#feather-falling}
@@ -43,29 +43,29 @@ If you’re curious about all of the possible enchantments you can get in vanill
 *   **Flame**{#flame}
     Arrows set the target on fire. Max rank 1.
 *   **Fortune**{#fortune}
-    Get more block drops (mutually exclusive with Silk Touch).
+    Get more block drops (can't be combined with Silk Touch).
 *   **Frost Walker**{#frost-walker}
     Turns any water beneath you into frosted ice, which explains why this can’t be used in tandem with Depth Strider. Max rank 2.
 *   **Impaling**
     Deal more damage to ocean mobs with the trident. Max rank 5.
 *   **Infinity**
-    Consume no arrows when firing your bow (mutually exclusive with mending) Max rank 3.
+    Consume no arrows when firing your bow (can't be combined with mending) Max rank 3.
 *   **Knockback**
     More knockback. Max rank 2.
 *   **Looting**
     Get more loot from mobs. Max rank 3.
 *   **Loyalty**
-    Trident returns after you throw it (mutually exclusive with Riptide). At higher ranks the trident returns faster. Max rank 3.
+    Trident returns after you throw it (can't be combined with Riptide). At higher ranks the trident returns faster. Max rank 3.
 *   **Luck of the Sea**
     More luck with catching fish. Max rank 3.
 *   **Lure**
     Faster fishing. Max rank 3.
 *   **Mending**
-    Repair items using experience (mutually exclusive with Infinity). Max rank 1.
+    Repair items using experience (can't be combined with Infinity). Max rank 1.
 *   **Multishot**
-    Fire three arrows at once, while only consuming one arrow (mutually exclusive with Piercing). Max rank 1.
+    Fire three arrows at once, while only consuming one arrow (can't be combined with Piercing). Max rank 1.
 *   **Piercing**
-    Arrows can go through two targets (mutually exclusive with [Multishot](#multishot)). Max rank 4.
+    Arrows can go through two targets (can't be combined with [Multishot](#multishot)). Max rank 4.
 *   **Power**
     Deal more damage with arrows. Max rank 5.
 *   **Projectile Protection**
@@ -79,13 +79,13 @@ If you’re curious about all of the possible enchantments you can get in vanill
 *   **Respiration**
     Swim underwater for longer without needing to resurface. Max rank 3.
 *   **Riptide**
-    When you throw your trident you go with it (mutually exclusive with Channeling and Loyalty). This only works in water or during rain. Max rank 3.
+    When you throw your trident you go with it (can't be combined with Channeling and Loyalty). This only works in water or during rain. Max rank 3.
 *   **Sharpness**
-    Deal more damage with sword and axes (mutually exclusive with Smite and Bane of Arthropods). Max rank 5.
+    Deal more damage with sword and axes (can't be combined with Smite and Bane of Arthropods). Max rank 5.
 *   **Silk Touch**
-    Mined blocks drop automatically (mutually exclusive with Fortune). Max rank 1.
+    Mined blocks drop automatically (can't be combined with Fortune). Max rank 1.
 *   **Smite**
-    Dish out more damage to undead mobs (mutually exclusive with Sharpness and Bane of Arthropods). Max rank 5.
+    Dish out more damage to undead mobs (can't be combined with Sharpness and Bane of Arthropods). Max rank 5.
 *   **Sweeping Edge**
     More damage with sweeping attacks. Max rank 3.
 *   **Thorns**
