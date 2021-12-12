@@ -14,9 +14,9 @@ import proxyFile from "./proxyFile";
 
 const db = new dbc(path.join(process.cwd(), "databases/proxies"));
 const instance = axios.create({
-  baseURL: "https://google.com/",
-  timeout: 1000,
-  headers: { "X-Custom-Header": "foobar" },
+  baseURL: "https://httpbin.org/",
+  timeout: 10000,
+  headers: {},
   // `maxRedirects` defines the maximum number of redirects to follow in node.js.
   // If set to 0, no redirects will be followed.
   maxRedirects: 5

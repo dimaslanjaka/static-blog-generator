@@ -4,14 +4,47 @@
       <h5 class="mb-0 text-center"><strong>Traffic Generator Options</strong></h5>
     </div>
     <div class="card-body">
-      <form action="#" id="form-options" method="post">
-        <div class="form-outline mb-4">
-          <textarea class="form-control" id="proxies" rows="10" name="proxies"></textarea>
-          <label class="form-label" for="proxies">Proxies</label>
-        </div>
+      <form action="#" enctype="application/json" id="form-options" method="post">
+        <div sites=''>
+          <div site=''>
+            <div class="form-outline mb-2">
+              <input type="url" name="opt[0][url]" id="opturl" class="form-control" value="http://webmanajemen.com">
+              <label class="form-label" for="opturl">URL</label>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="useProxy" name="opt[0][proxy]" />
+                  <label class="form-check-label" for="useProxy"> Proxy </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="useAgent" name="opt[0][agent]" />
+                  <label class="form-check-label" for="useAgent"> Useragent </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="useCache" name="opt[0][cache]" />
+                  <label class="form-check-label" for="useCache"> Clear Cache Cookies </label>
+                </div>
 
-        <button type="submit" class="btn btn-primary btn-block mb-4"><i class="fal fa-save"></i></button>
-      </form>
+                <div class="btn-group">
+                  <button role="button" type="button" add="" class="btn btn-sm btn-success"><i
+                      class="far fa-plus"></i></button>
+                  <button role="button" type="button" remove="" class="btn btn-sm btn-danger"><i
+                      class="far fa-times"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+
+    <div class="form-outline mb-4">
+      <textarea class="form-control" id="proxies" rows="10" name="proxies"></textarea>
+      <label class="form-label" for="proxies" id="proxy-counter">Proxies</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mb-4"><i class="fal fa-save"></i></button>
+    </form>
+  </div>
   </div>
 </section>

@@ -60,7 +60,7 @@ loaders.forEach((el) => {
 });
 ```
 
-> above will thrown:
+> codes above will thrown:
 >
 > Property 'forEach' does not exist on type `NodeListOf<Element> | HTMLCollectionOf<Element>`.
 >
