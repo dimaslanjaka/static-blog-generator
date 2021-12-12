@@ -2,7 +2,7 @@
 title: Magical Book For Bow
 webtitle: Minecraft
 subtitle: How to use magical books for bow
-date: 2020-12-12T13:01:00
+date: 2021-12-12T13:01:00
 cover: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 tags:
   - games
