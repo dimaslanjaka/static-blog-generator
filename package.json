@@ -124,6 +124,7 @@
     "@types/serve-index": "^1.7.30",
     "@types/serve-static": "^1.13.9",
     "@types/showdown": "^1.9.3",
+    "@types/sitemap-generator": "^8.5.1",
     "@types/swfobject": "^2.2.27",
     "@types/through2": "^2.0.36",
     "@types/toastr": "^2.1.38",

@@ -1,3 +1,7 @@
+/* eslint-disable prefer-rest-params */
+/* eslint-disable prefer-const */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="./globals.d.ts" />
 
 Array.prototype.shuffle = function () {
