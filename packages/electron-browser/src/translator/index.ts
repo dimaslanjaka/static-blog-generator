@@ -25,6 +25,9 @@ function createWindow(){
   mainWindow.on("closed", () => {
     mainWindow = null;
   });
+  mainWindow.once("ready-to-show", () => {
+    mainWindow.show();
+  });
   return mainWindow
 }
 
