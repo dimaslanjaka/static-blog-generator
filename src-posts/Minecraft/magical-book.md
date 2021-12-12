@@ -30,9 +30,9 @@ Applies to the [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-en
 ## Curse of Vanishing
 **Item destroyed on death** (the item will disappear upon death). Max rank 1.
 ## Depth Strider
-Move faster underwater (can't be combined with Frost Walker). Max rank 3.
+**Move faster underwater** (can't be combined with Frost Walker). Max rank 3.
 ## Efficiency
-Mine faster. Max rank 5.
+**Mine faster**. Max rank 5.
 ## Feather Falling
 Take less fall damage. Max rank 4.
 ## Fire Aspect
