@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import "./src/js/_Prototype-String";
 import * as gulp from "gulp";
 import * as path from "path";
@@ -11,6 +12,7 @@ import { shortcodeNow } from "./src/gulp/shortcode/time";
 import { shortcodeCss } from "./src/gulp/shortcode/css";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 //import { gulpCore } from "hexo-blogger-xml";
+import "./src/js/_Prototype-Array";
 
 /**
  * Production article.
@@ -152,6 +154,44 @@ gulp.task("hexo:minify", function () {
     .src("docs/**/*.html")
     .pipe(minifyHtml({ collapseWhitespace: true, minifyJS: true, minifyCSS: true }))
     .pipe(gulp.dest("docs"));
+});
+
+function walk(dir: fs.PathLike, done: { (err: NodeJS.ErrnoException, files: string[]): void }) {
+  let results = [];
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err, null);
+    let i = 0;
+    (function next() {
+      let file = list[i++];
+      if (!file) return done(null, results);
+      file = path.resolve(dir.toString(), file);
+      fs.stat(file, function (err, stat) {
+        if (stat && stat.isDirectory()) {
+          walk(file, function (err, res) {
+            results = results.concat(res);
+            next();
+          });
+        } else {
+          results.push(file);
+          next();
+        }
+      });
+    })();
+  });
+}
+gulp.task("sitemap", (done) => {
+  const results: string[] = [];
+  walk("source", (err, files) => {
+    const filter = files
+      .filter((file) => {
+        return /\.(md|html)$/.test(file);
+      })
+      .map((file) => {
+        return file.replace(/\.md$/, ".html").replace(path.join(__dirname, "source"), "https://www.webmanajemen.com");
+      });
+    results.addAll(filter);
+  });
+  done();
 });
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
