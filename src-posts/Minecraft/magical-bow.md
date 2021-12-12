@@ -45,3 +45,11 @@ Requirements:
 - - Arrows **set the target on fire**. Max rank 1.
 - Magical book **Infinity I**
 - - Consume **no arrows when firing** your bow (mutually exclusive with mending) Max rank 3.
+
+## Finalizing
+You must choose one of the Magical Books below as the last step.
+
+- Curse of Binding
+- - **Prevents removal of items**. Max rank 1.
+- Curse of Vanishing
+- - **Item destroyed on death**. Max rank 1.

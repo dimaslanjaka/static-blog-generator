@@ -6,11 +6,13 @@
     "genshin",
     "Lanjaka",
     "Maulinda",
+    "Minecraft",
     "Neverland",
     "RPGs",
     "Sophila",
     "Unbreaking",
-    "webp"
+    "webp",
+    "webtitle"
   ],
   "editor.tabCompletion": "on",
   "emmet.excludeLanguages": [],
@@ -22,5 +24,7 @@
     "editor.quickSuggestions": true
   },
   "emmet.showSuggestionsAsSnippets": true,
-  "emmet.extensionsPath": ["D:\\Repositories\\gh-pages\\src-posts\\The Legend Of Neverland\\.vscode"]
+  "emmet.extensionsPath": [
+    "D:\\Repositories\\gh-pages\\src-posts\\The Legend Of Neverland\\.vscode"
+  ]
 }
