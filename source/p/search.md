@@ -2,7 +2,12 @@
 title: Search
 webtitle: WMI
 ---
-
+<style>
+#___gcse_0 * {
+    background-color: transparent;
+    color: white;
+}
+</style>
 <div>
 <script>
   (function() {
