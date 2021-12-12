@@ -14,8 +14,8 @@ keywords:
 
 # Super Magical Bow Recipes
 
-## Bow magical power + punch + unbreaking
-Infinity arrows + increase durability + auto repair + more damage + fire damage at once
+## Bow magical Power Strength + Auto Repair
+Auto repair + increase durability + more damage + fire damage at once
 
 Requirements:
 - Bow
@@ -29,3 +29,19 @@ Requirements:
 - - Arrows **set the target on fire**. Max rank 1.
 - Magical book **Mending I**
 - - **Repair items using experience** (mutually exclusive with Infinity). Max rank 1.
+
+## Bow magical Power Strength + Infinity Arrows
+Infinity Arrows + increase durability + more damage + fire damage at once
+
+Requirements:
+- Bow
+- Magical Book **Power I II III IV V**
+- - **Deal more damage** with arrows. Max rank 5.
+- Magical Book **Punch I II**
+- - Your arrows have **more knockback**. Max rank 2.
+- Magical Book **Unbreaking I II II**
+- - **Increases the durability** of the enchanted item. Max rank 3.
+- Magical Book **Flame I**
+- - Arrows **set the target on fire**. Max rank 1.
+- Magical book **Infinity I**
+- - Consume **no arrows when firing** your bow (mutually exclusive with mending) Max rank 3.
