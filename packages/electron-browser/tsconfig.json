@@ -16,6 +16,7 @@
     "allowJs": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "typescript.tsserver.log": "verbose",
     "lib": [
       "DOM",
       "ES7",
