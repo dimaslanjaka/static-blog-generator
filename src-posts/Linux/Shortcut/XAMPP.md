@@ -23,7 +23,7 @@ author:
 category:
   - Programming
 
-cover: "https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg"
+cover: https://i.stack.imgur.com/4TYxW.jpg
 location: Indonesia
 comments: true
 ---
@@ -31,7 +31,7 @@ comments: true
 # Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
 
 > are you took below errors ?
-<pre><code>sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel 
+<pre><code>sudo /opt/lampp/share/xampp-control-panel/xampp-control-panel
 Traceback (most recent call last):
   File "xampp-control-panel.py", line 18, in &lt;module&gt;
     import gtk
