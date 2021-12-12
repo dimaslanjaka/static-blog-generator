@@ -2,6 +2,15 @@
 title: Magical Books
 webtitle: Minecraft
 subtitle: All Description And Usages Of Magical Books Minecraft
+date: 2020-12-12T13:01:00
+cover: https://www.pcgamesn.com/wp-content/uploads/2019/06/minecraft-enchant-at-anvil-900x506.jpg
+tags:
+  - games
+  - minecraft
+keywords:
+  - magical books
+  - enchantments
+  - minecraft
 ---
 
 # List of all Magical Book Minecraft Enchantments
