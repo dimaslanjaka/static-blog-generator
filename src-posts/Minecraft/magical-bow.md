@@ -12,12 +12,18 @@ keywords:
   - minecraft
 ---
 
-# Bow magical power + punch + unbreaking
-- Power I II III IV V
+# Super Magical Bow Recipes
+
+## Bow magical power + punch + unbreaking
+Infinity arrows + increase durability + more damage + fire damage at once
+
+Requirements:
+- Bow
+- Magical Book **Power I II III IV V**
 - - Deal more damage with arrows. Max rank 5.
-- Punch I II
+- Magical Book **Punch I II**
 - - Your arrows have more knockback. Max rank 2.
-- Unbreaking I II II
+- Magical Book **Unbreaking I II II**
 - - Increases the durability of the enchanted item. Max rank 3.
-- Flame I
-- - Arrows set the target on fire. Max rank 1.
+- Magical Book **Flame I*
+- - Arrows **set the target on fire**. Max rank 1.
