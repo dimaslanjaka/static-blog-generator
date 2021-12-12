@@ -11,6 +11,7 @@ keywords:
   - magical books
   - enchantments
   - minecraft
+toc: true
 ---
 
 # List of all Magical Book Minecraft Enchantments
