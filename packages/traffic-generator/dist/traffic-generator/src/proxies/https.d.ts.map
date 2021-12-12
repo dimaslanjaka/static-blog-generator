@@ -1,1 +1,0 @@
-{"version":3,"file":"https.d.ts","sourceRoot":"","sources":["../../../../src/proxies/https.ts"],"names":[],"mappings":"AAIA,OAAO,oDAAoD,CAAC;AAK5D,MAAM,CAAC,OAAO;IACZ,IAAI,SAA4D;IAChE,GAAG,EAAE,QAAQ,CAAC,aAAa,CAAC;gBAEhB,IAAI,EAAE,QAAQ,CAAC,aAAa;IAKxC,OAAO,CAAC,aAAa;IAmBrB,OAAO,CAAC,IAAI;IAIZ,aAAa,IAAI,MAAM,EAAE;IAIzB,SAAS;IAMT,WAAW,CAAC,GAAG,EAAE,MAAM;CAexB"}

@@ -24,15 +24,14 @@ webviews.forEach((webview: Electron.WebviewTag) => {
 
     if (change_useragent)
       ipr.invoke("change-webview-ua", partisi).then((ua) => {
-        console.log(ua);
+        console.log("useragent", ua);
       });
 
     ipr.invoke("change-webview-proxy", partisi, clear_cache).then((proxy) => {
       proxyText.innerHTML = proxy;
     });
 
-    console.log(webview.getURL());
-    webview.setUserAgent("Electron");
+    console.log(webview.getAttribute("src"));
   };
 
   // loader

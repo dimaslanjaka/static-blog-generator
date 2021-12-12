@@ -22,6 +22,16 @@ export function sendToRenderer(
   }
 }
 
+export interface siteOptionObject {
+  url: string;
+  useProxy: boolean;
+  /**
+   * Clear cache and cookies
+   */
+  useCache: boolean;
+  useAgent: boolean;
+}
+
 export interface MyTypeIpcMain extends IpcMain {
   handle(
     channel: "change-webview-proxy",

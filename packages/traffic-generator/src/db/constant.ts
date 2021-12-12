@@ -1,2 +1,2 @@
 export const DB_PROXIES_KEY = "config/proxies";
-export const DB_URLS_KEY = "config/urls";
+export const DB_SITES_KEY = "config/sites";

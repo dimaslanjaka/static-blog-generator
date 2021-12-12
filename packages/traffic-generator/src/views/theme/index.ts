@@ -42,6 +42,20 @@ export default class Theme {
     const read = readFile(this.index);
     this.dom = htmlparser(read.toString());
   }
+
+  /**
+   * Get resources of route path
+   * @param routePath
+   * @returns
+   */
+  getSource(routePath: string) {
+    return {
+      js: path.join(this.base, routePath + ".js"),
+      css: path.join(this.base, routePath + ".css"),
+      html: path.join(this.base, routePath + ".html")
+    };
+  }
+
   /**
    * Generate static files by route path
    * @param routePath
@@ -87,6 +101,7 @@ export default class Theme {
         a.setAttribute("new-window", "true");
       }
     });
+    // write to __dirname/route/path/name.html
     const writeTo = new Theme.routeResolver(routePath);
     writeFile(writeTo.getPath(), this.dom.toString());
     return writeTo;
