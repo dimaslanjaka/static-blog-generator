@@ -1,55 +1,47 @@
 module.exports = {
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  root: true,
+  root: true, // Specifies your current project has own eslint rules without extends parent folder eslint rules
+  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   env: {
-    node: true,
-    browser: true,
-    commonjs: true,
-    es6: true,
-    jquery: true,
+    browser: true, // add support for browser js (window,document,location,etc)
+    amd: true, // add amd support
+    node: true, // add node support (module.export,etc)
   },
   parserOptions: {
-    parser: "babel-eslint",
-    ecmaVersion: 6, // Allows for the parsing of modern ECMAScript features
-    sourceType: "module", // Allows for the use of imports
-    ecmaFeatures: {
-      impliedStrict: true,
-    },
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module', // Allows for the use of imports
   },
-  plugins: [/*'prettier'*/ "ejs"],
   extends: [
-    /*'prettier'*/
+    'eslint:recommended', // uses eslint default recommended
+    'plugin:@typescript-eslint/eslint-recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
+  // override rules for js files
+  "overrides": [
+    {
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off" // disable require warning on js files
+      }
+    }
+  ],
+  // specify your desired rules for eslint
   rules: {
-    "prefer-const": [
-      "warn",
+    '@typescript-eslint/explicit-function-return-type': 'off', // disable function without return type
+    "no-unused-vars": "off", // disable original eslint unused-vars
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // enable typescript-eslint unused-vars and allow unused vars start with underscore (_)
+    "@typescript-eslint/no-explicit-any": "off", // allow any types
+    "@typescript-eslint/no-this-alias": [ // rules for this binding
+      "error",
       {
-        destructuring: "any",
-        ignoreReadBeforeAssign: true,
+        allowDestructuring: false, // Disallow `const { props, state } = this`; true by default
+        allowedNames: ["self"], // Allow `const self = this`; `[]` by default
       },
     ],
-    "require-jsdoc": 0,
-    "prefer-rest-params": "off",
-    "no-const-assign": 1,
-    "no-extra-semi": 0,
-    semi: 0,
-    "no-fallthrough": 0,
-    "no-empty": 0, // no empty statement
-    "no-mixed-spaces-and-tabs": 1,
-    "no-redeclare": 0, // no redeclare function/const
-    "no-this-before-super": 1,
-    "no-undef": 0, // fix call function on single browser js without import
-    "no-unreachable": 1,
-    "no-unused-vars": 1,
-    "no-use-before-define": 0,
-    "constructor-super": 1,
-    curly: 0,
-    eqeqeq: 0, // fix disable == and ===
-    "func-names": 0, // fix anonymous function warning
-    "valid-typeof": 1,
-    //'prettier/prettier': 1,
-    "import/prefer-default-export": "off",
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off", // fix no console warning
+    // "arrow-body-style" and "prefer-arrow-callback" are two ESLint core rules that can cause issues with prettier/prettier plugin, so turn them off.
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
   },
 };
