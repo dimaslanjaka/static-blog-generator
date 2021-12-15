@@ -3,7 +3,6 @@ title: Privacy Policy
 type: page
 ---
 
-
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/all.css" />
 <h1>Privacy Policy <i class="fas fa-shield-alt"></i></h1>
  If you require any more information or have any questions about our privacy policy, please feel free to contact us by email at <a href="http://web-manajemen.blogspot.com/p/contact.html">http://web-manajemen.blogspot.com/p/contact.html</a>.<br />
