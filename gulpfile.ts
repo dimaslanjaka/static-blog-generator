@@ -190,7 +190,8 @@ gulp.task("sitemap", (done) => {
         return file
           .replace(/\.md$/, ".html")
           .replace("_posts/", "")
-          .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com").replace(/\s/,'%20')
+          .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com")
+          .replace(/\s/, "%20");
       });
     results.addAll(filter);
     if (results.length) {
