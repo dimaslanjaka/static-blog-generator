@@ -28,8 +28,10 @@ If you’re curious about all of the possible enchantments you can get in vanill
 [Minecraft trident](https://www.pcgamesn.com/minecraft/trident-enchantments-recipe-guide) enchantment only. Channels a bolt of lightning towards an entity you’ve hit – **only works during thunderstorms** and is can't be combined with Riptide. Max Rank 1.
 ## Curse of Binding
 **Prevents removal of items** (keep item in inventory upon death). Max rank 1.
+> Avoiding enchantment items lost
 ## Curse of Vanishing
 **Item destroyed on death** (the item will disappear upon death). Max rank 1.
+> Avoiding enchantment items being picked up by mobs
 ## Depth Strider
 **Move faster underwater** (can't be combined with Frost Walker). Max rank 3.
 ## Efficiency
