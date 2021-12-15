@@ -39,10 +39,14 @@ app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
 
-ipcMain.on("new-window", (e, msg) => {
+ipm.on("new-window", (e, msg) => {
   const routePath = path.basename(msg[0], ".html");
   //console.log(routePath, theme.route(routePath).getPath());
   createNewWindow(routePath);
+});
+
+ipm.on("reload-theme", () => {
+  console.log("theme reloaded");
 });
 
 ipm.handle("change-webview-ua", function (evt, partisi, ua) {
