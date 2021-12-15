@@ -191,7 +191,7 @@ gulp.task("sitemap", (done) => {
           .replace(/\.md$/, ".html")
           .replace("_posts/", "")
           .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com")
-          .replace(/\s/, "%20");
+          .replace(/\s/gm, "%20");
       });
     results.addAll(filter);
     if (results.length) {
