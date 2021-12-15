@@ -1,5 +1,6 @@
 ---
 title: Terms Of Service
+type: page
 ---
 
 <h2><strong>Terms and Conditions</strong></h2>
