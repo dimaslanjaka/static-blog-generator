@@ -50,7 +50,7 @@ location: Indonesia
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
 
 <div id="bootstrap-wrapper">
-  <div class="text-center mb-1"><h1>Scenic Quiz Answer The Legend Of Neverlands</h1></div>
+  <div class="text-center mb-1"><h1>Scenic Quiz Answer The Legend Of Neverlands</h1><div id="hexo-adsense-fill"></div></div>
   <div class="mb-2">
     <label for="search-questions" class="sr-only">Filter</label>
     <input autocomplete="chrome-off" type="text" id="search-questions" class="form-control" placeholder="search from here">
