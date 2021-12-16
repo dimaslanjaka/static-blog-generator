@@ -28,7 +28,6 @@
       "ES2019",
       "ES2020"
     ],
-    "rootDir": "./src",
     "outDir": "./build",
     "noLib": false,
     "esModuleInterop": true,
@@ -40,8 +39,6 @@
       "electron"
     ]
   },
-  "buildOnSave": true,
-  "compileOnSave": true,
   "exclude": [
     "**/node_modules/**",
     "**/build/**"
