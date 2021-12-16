@@ -42,5 +42,15 @@
       ],
       "type": "pwa-node"
     },
+    {
+      "command": "electron --no-lazy -r ts-node/register/transpile-only src/translator/index.ts",
+      "name": "Translator",
+      "request": "launch",
+      "env": {
+        "ELECTRON_DISABLE_SECURITY_WARNINGS": "true",
+        "NODE_ENV": "development"
+      },
+      "type": "node-terminal"
+    }
   ]
 }
