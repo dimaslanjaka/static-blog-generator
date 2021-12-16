@@ -12,6 +12,7 @@ keywords:
   - tutorial
   - minecraft
 toc: true
+lang: id
 ---
 
 # Shaders

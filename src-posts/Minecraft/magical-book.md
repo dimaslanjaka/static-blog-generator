@@ -4,6 +4,7 @@ webtitle: Minecraft
 subtitle: All Description And Usages Of Magical Books Minecraft
 date: 2021-12-12T13:01:00
 cover: /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
+lang: en
 tags:
   - games
   - minecraft
