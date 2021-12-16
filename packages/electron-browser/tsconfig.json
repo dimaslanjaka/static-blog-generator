@@ -30,6 +30,7 @@
     ],
     "outDir": "./build",
     "noLib": false,
+    "checkJs": false,
     "esModuleInterop": true,
     "importHelpers": true
   },
