@@ -56,7 +56,7 @@ Sekarang tinggal download dan install shaders saja. Kali ini saya akan menggunak
 > Klik Shaders Folder -> anda akan diarahkan ke folder shaders minecraft yang saat ini dijalankan
 
 ![](https://minecraftshader.com/wp-content/uploads/2021/07/how-to-install-shaders-5.jpg)
-> Pindahkan Shader ZIP yang di download tadi ke Lokasi: `%appdata%\\.minecraft\\shaderpacks` yang tadi sudah terbuka
+> Pindahkan Shader ZIP yang di download tadi ke Lokasi: `%appdata%\\.minecraft\\shaderpacks` (windows) yang tadi sudah terbuka
 > Setelah dipindah, otomatis akan muncul file ZIP tersebut di daftar shaders, dan pilihlah. Selesai
 
 # Rekomendasi
