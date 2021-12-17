@@ -94,13 +94,13 @@ export default class Theme {
     }
 
     // set internal page as new window
-    const links = this.dom.querySelectorAll("a"); // as NodeListOf<HTMLAnchorElement>
+    /*const links = this.dom.querySelectorAll("a"); // as NodeListOf<HTMLAnchorElement>
     links.forEach((a) => {
       const href = a.getAttribute("href");
       if (!/^https?:\/\//g.test(href)) {
         a.setAttribute("new-window", "true");
       }
-    });
+    });*/
     // write to __dirname/route/path/name.html
     const writeTo = new Theme.routeResolver(routePath);
     writeFile(writeTo.getPath(), this.dom.toString());

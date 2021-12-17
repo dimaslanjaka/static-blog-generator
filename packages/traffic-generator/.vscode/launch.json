@@ -51,6 +51,12 @@
         "NODE_ENV": "development"
       },
       "type": "node-terminal"
+    },
+    {
+      "command": "node --no-lazy -r ts-node/register/transpile-only src/curl/traslate.google.ts",
+      "name": "translate.google.ts",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

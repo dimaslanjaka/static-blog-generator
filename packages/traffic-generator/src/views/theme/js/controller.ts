@@ -7,3 +7,4 @@ document.querySelectorAll("a").forEach((a) => {
     });
   }
 });
+
