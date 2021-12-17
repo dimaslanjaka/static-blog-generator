@@ -5,8 +5,14 @@ import webviewProxy from "./proxies/webview-proxy";
 import { BrowserWindow } from "electron";
 import * as webworker from "./electron-utils/webworker";
 import * as proxies from "./proxies";
+import { shortcutInit } from "./global";
+import MenuBuilder from "./gui.menu";
+import Theme from "./views/theme";
 
-const createWindow = () => {
+const createWindow = (
+  partitionName = "webviewSession",
+  override: Electron.BrowserWindowConstructorOptions = {}
+) => {
   let win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -22,14 +28,14 @@ const createWindow = () => {
       spellcheck: true,
       webviewTag: true,
       webSecurity: false,
-      partition: "persist:webviewsession" // OR  'persist:unique_random_path' to save session on disk
+      partition: "persist:" + partitionName.replace("persist:", "")
     }
   });
 
   function loadDefault() {
     win.loadURL("file://" + __dirname + "/views/index.html");
   }
-  //loadDefault();
+
   function injectWebViewProxy(proxy: string, url?: string) {
     webviewProxy(proxy, "persist:webviewsession", (details) => {
       // delete dead proxy
@@ -54,15 +60,6 @@ const createWindow = () => {
     }
   }
   injectWebViewProxy(proxies.random());
-
-  /*const proxyClass = new PROXIES(win);
-  let proxy = proxyClass.getRandom();
-
-  function injectWindowProxy() {
-    windowProxy(win, proxy);
-    proxyClass.deleteProxy(proxy);
-    proxy = proxyClass.getRandom();
-  }*/
 
   win.webContents.on("will-navigate", (e, redirectUrl) => {
     // send notification
