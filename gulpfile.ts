@@ -2,7 +2,7 @@
 import "./src/js/_Prototype-String";
 import * as gulp from "gulp";
 import * as path from "path";
-import transformPosts, { transformPostBody } from "./src/markdown/transformPosts";
+import transformPosts, { parsePost, transformPostBody } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
@@ -150,6 +150,7 @@ gulp.task("blogger", function (done) {
 
 import minifyHtml from "./src/gulp/minify";
 import { TaskCallback } from "undertaker";
+import { writeFileSync } from "./packages/hexo-blogger-xml/src/parser/util";
 gulp.task("hexo:minify", function () {
   return gulp
     .src("docs/**/*.html")
@@ -181,26 +182,125 @@ function walk(dir: fs.PathLike, done: { (err: NodeJS.ErrnoException, files: stri
   });
 }
 
+function sitemap(done?) {
+  const results: string[] = [];
+  return new Promise((resolve, reject) => {
+    walk("source", (err, files) => {
+      const filter = files
+        .filter((file) => {
+          return /\.(md|html)$/.test(file) && !/\/Test\/|\/404\.html/.test(file);
+        })
+        .map((file) => {
+          return file
+            .replace(/\.md$/, ".html")
+            .replace("_posts/", "")
+            .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com")
+            .replace(/ /gm, "%20");
+        });
+      results.addAll(filter);
+      if (results.length) {
+        fs.writeFileSync(path.join(__dirname, "docs/sitemap.txt"), results.join("\n"));
+      }
+      if (typeof done == "function") done();
+      resolve(results);
+    });
+  });
+}
+
 // sitemap.txt generator
 gulp.task("sitemap", (done) => {
-  const results: string[] = [];
+  return sitemap(done);
+});
+
+import GoogleNewsSitemap, { ClassItemType } from "./packages/google-news-sitemap/src";
+import moment from "moment";
+// google news sitemap generator
+gulp.task("sitemap-gn", (done) => {
+  const sitemaps = new GoogleNewsSitemap();
   walk("source", (err, files) => {
-    const filter = files
+    files
       .filter((file) => {
-        return /\.(md|html)$/.test(file) && !/\/Test\/|\/404\.html/.test(file);
+        return /\.md$/.test(file) && !/\/Test\/|\/404\//.test(file);
       })
-      .map((file) => {
-        return file
-          .replace(/\.md$/, ".html")
-          .replace("_posts/", "")
-          .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com")
-          .replace(/ /gm, "%20");
+      .forEach((file) => {
+        const contentMD = fs.readFileSync(file).toString();
+        const parse = parsePost(contentMD);
+        if (parse) {
+          if (!parse.metadata || !parse.metadata.title || !parse.metadata.author || !parse.metadata.date) {
+            //console.log("metadata not found", file);
+            return;
+          }
+          //console.log(parse.metadata);
+          const build: ClassItemType = {
+            publication_name: "",
+            publication_language: "",
+            publication_date: "",
+            title: "",
+            author: "",
+            location: "",
+          };
+
+          // parse post title
+          build.title = parse.metadata.title;
+          if (parse.metadata.webtitle) build.title += " | " + parse.metadata.webtitle;
+
+          // parse post author
+          build.author = "Dimas Lanjaka";
+          if (typeof parse.metadata.author == "string") {
+            build.author = parse.metadata.author;
+          } else if (typeof parse.metadata.author.nick == "string") {
+            build.author = parse.metadata.author.nick;
+          } else if (typeof parse.metadata.author.nickname == "string") {
+            build.author = parse.metadata.author.nickname;
+          } else if (typeof parse.metadata.author.name == "string") {
+            build.author = parse.metadata.author.name;
+          }
+
+          // parse date using YYYY-MM-DDThh:mm:ssTZD
+          if (typeof parse.metadata.date == "string" && parse.metadata.date.length) {
+            try {
+              build.publication_date = moment(parse.metadata.date, moment.ISO_8601).format("YYYY-MM-DDTHH:mm:ssZ");
+            } catch (e) {
+              console.log("fail", parse.metadata.date);
+            }
+            //console.log(build.publication_date);
+          }
+
+          // parse genre
+          if (typeof parse.metadata.genre == "string") {
+            build.genres = parse.metadata.genre;
+          } else if (Array.isArray(parse.metadata.genre)) {
+            build.genres = parse.metadata.genre.join(",");
+          } else {
+            build.genres = "Blog";
+          }
+
+          // parse keywords
+          if (typeof parse.metadata.keywords == "string") {
+            build.keywords = parse.metadata.keywords;
+          } else if (Array.isArray(parse.metadata.keywords)) {
+            build.keywords = parse.metadata.keywords.join(",");
+          }
+
+          const url = file
+            .replace(/\.md$/, ".html")
+            .replace("_posts/", "")
+            .replace(path.join(__dirname, "source"), "https://www.webmanajemen.com")
+            .replace(/ /gm, "%20");
+          build.location = url;
+          const temp = path.join(
+            "build/google-news-sitemap",
+            file.replace(/\.md$/, ".json").replace("_posts/", "").replace(path.join(__dirname, "source"), "")
+          );
+          sitemaps.add(build);
+          writeFileSync(temp, JSON.stringify(parse, null, 2));
+          writeFileSync("build/google-news-sitemap/sitemap.xml", sitemaps.toString());
+        } else {
+          //console.error("cannot parse", file);
+        }
       });
-    results.addAll(filter);
-    if (results.length) {
-      fs.writeFileSync(path.join(__dirname, "docs/sitemap.txt"), results.join("\n"));
-    }
-    done();
+
+    if (typeof done == "function") done();
   });
 });
 

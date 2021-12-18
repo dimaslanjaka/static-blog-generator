@@ -1,3 +1,4 @@
+import moment from "moment";
 import xmlbuilder from "xmlbuilder";
 import languages from "./languages.json";
 
@@ -10,7 +11,7 @@ export const root = {
 };
 
 export type UnionOfArrayElements<ARR_T extends Readonly<unknown[]>> = ARR_T[number];
-const genres = ["Blog", "OpEd", "Opinion", "PressRelease", "Satire", "UserGenerated"];
+const genres = ["Blog", "OpEd", "Opinion", "PressRelease", "Satire", "UserGenerated"] as const;
 
 export interface ItemType {
   loc: string;
@@ -22,6 +23,7 @@ export interface ItemType {
     publication_date: string;
     title: string;
     genres?: string | typeof genres[number];
+    keywords?: string;
   };
 }
 
@@ -54,15 +56,15 @@ export function parse(prepare: ItemType): XMLItemType {
   };
 }
 
-interface ClassItemType {
+export interface ClassItemType {
   /**
    * Publisher or Author Name
    */
-  publication_name?: string;
+  publication_name: string;
   /**
    * Language Article. Default: en
    */
-  publication_language?: string;
+  publication_language: string;
   access?: string;
   /**
    * This tag allows you to specify genres that your news story is in. This must be in the form of a comma-separated list. Default: Blog
@@ -75,11 +77,11 @@ interface ClassItemType {
    * - YYYY-MM-DDThh:mm:ssTZD (e.g. 2017-08-10T17:49:30+11:00)
    * - YYYY-MM-DDThh:mm:ss.sTZD (e.g. 2017-08-10T17:49:30.45+11:00)
    */
-  publication_date?: string;
+  publication_date: string;
   /**
    * Article Title
    */
-  title?: string;
+  title: string;
   /**
    * Location Article Created.
    * - Default NULL
@@ -89,10 +91,13 @@ interface ClassItemType {
    * Article Keyword.
    * - The keyword should be in the form of a comma-separated list
    */
-  keywords?: string;
+  keywords?: string | string[];
   stock_tickers?: string;
-  location?: string;
-  author?:
+  /**
+   * URL
+   */
+  location: string;
+  author:
     | string
     | {
         name?: string;
@@ -107,16 +112,27 @@ export default class GoogleNewsSitemap {
   items: ItemType[] = [];
   add(item: ClassItemType) {
     if (!item.title && !item.publication_name && item.publication_date && !item.author) return;
-    const author = typeof item.author == "string" ? item.author : item.author.name;
+    const author =
+      typeof item.author == "string"
+        ? item.author
+        : item.author.name
+        ? item.author.name
+        : "Dimas Lanjaka (Default User)";
     const build: ItemType = {
       loc: item.location,
       news: {
-        publication: { name: author, language: item.publication_language },
-        publication_date: item.publication_date,
+        publication: { name: author, language: item.publication_language || "en" },
+        publication_date: item.publication_date || moment(new Date(), moment.ISO_8601).format("YYYY-MM-DDTHH:mm:ssZ"),
         title: item.title,
         genres: item.genres || "Blog",
       },
     };
+    if (typeof item.keywords == "string") {
+      build.news.keywords = item.keywords;
+    } else if (Array.isArray(item.keywords)) {
+      build.news.keywords = (<Array<string>>item.keywords).join(",");
+    }
+    root.urlset.url.push(parse(build));
     this.items.push(build);
   }
   toString() {

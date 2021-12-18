@@ -5,7 +5,11 @@ import toHtml from "./toHtml";
 import yaml from "yaml";
 import notranslate from "../translator/notranslate";
 
-type parsePostReturn = Object & {
+interface LooseObject {
+  [key: string]: any;
+}
+
+type parsePostReturn = LooseObject & {
   /**
    * Article metadata
    */
@@ -13,7 +17,7 @@ type parsePostReturn = Object & {
   /**
    * Article metadata
    */
-  metadata: Object & {
+  metadata: LooseObject & {
     /**
      * Article language code
      */
@@ -36,18 +40,22 @@ type parsePostReturn = Object & {
  * * return null == failed
  * @param text
  */
-export function parsePost(text: string): parsePostReturn | null {
+export function parsePost(text: string, debug = false): parsePostReturn | null {
   const regex = /---([\s\S]*?)---/;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
 
-  if ((m = regex.exec(text)) !== null) {
-    if (m.hasOwnProperty(0)) {
-      return {
-        metadataString: m[0],
-        metadata: yaml.parse(m[1]),
-        body: text.replace(m[0], ""),
-      };
+  try {
+    if ((m = regex.exec(text)) !== null) {
+      if (m[0]) {
+        return {
+          metadataString: m[0],
+          metadata: yaml.parse(m[1]),
+          body: text.replace(m[0], ""),
+        };
+      }
     }
+  } catch (e) {
+    if (debug) console.error(e);
   }
   return null;
 }
@@ -75,7 +83,7 @@ export function transformPostBody(
         }
         const parse = parsePost(read);
         //console.log(parse.metadata); //<--- debug
-        if (parse && parse.hasOwnProperty("body")) {
+        if (parse && parse.body) {
           const html = toHtml(parse.body);
           const filter_notranslate = notranslate(html);
           filemanager.write(filepath, String(filter_notranslate));
@@ -98,7 +106,7 @@ export default function (outputDir = "source/_posts") {
         const filedir = path.normalize(path.dirname(file).replace("src-posts", outputDir));
         const filepath = path.join(filedir, filename);
         const parse = parsePost(read);
-        if (parse !== null && parse.hasOwnProperty("body")) {
+        if (parse !== null && parse.body) {
           const html = toHtml(parse.body);
           const filter_notranslate = notranslate(html);
           fs.writeFileSync(filepath, `${parse.metadataString}\n\n${filter_notranslate}`);
