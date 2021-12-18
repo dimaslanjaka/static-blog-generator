@@ -19,6 +19,9 @@ export function now() {
 
 /**
  * Transform `now shortcode` to current formatted time
+ * ```html
+ * <!-- now() -->
+ * ```
  * @param file
  * @see {@link now}
  */
