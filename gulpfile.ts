@@ -236,7 +236,6 @@ gulp.task("sitemap-gn", (done) => {
             publication_language: "",
             publication_date: "",
             title: "",
-            author: "",
             location: "",
           };
 
@@ -245,15 +244,15 @@ gulp.task("sitemap-gn", (done) => {
           if (parse.metadata.webtitle) build.title += " | " + parse.metadata.webtitle;
 
           // parse post author
-          build.author = "Dimas Lanjaka";
-          if (typeof parse.metadata.author == "string") {
-            build.author = parse.metadata.author;
+          build.publication_name = "Dimas Lanjaka";
+          if (typeof parse.metadata.publisher_name == "string") {
+            build.publication_name = parse.metadata.author;
           } else if (typeof parse.metadata.author.nick == "string") {
-            build.author = parse.metadata.author.nick;
+            build.publication_name = parse.metadata.author.nick;
           } else if (typeof parse.metadata.author.nickname == "string") {
-            build.author = parse.metadata.author.nickname;
+            build.publication_name = parse.metadata.author.nickname;
           } else if (typeof parse.metadata.author.name == "string") {
-            build.author = parse.metadata.author.name;
+            build.publication_name = parse.metadata.author.name;
           }
 
           // parse date using YYYY-MM-DDThh:mm:ssTZD
