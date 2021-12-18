@@ -1,6 +1,7 @@
 ---
 title: Search
 webtitle: WMI
+date: 2018-11-24
 ---
 <style>
 #___gcse_0 * {
