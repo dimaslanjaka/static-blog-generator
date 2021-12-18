@@ -239,6 +239,11 @@ gulp.task("sitemap-gn", (done) => {
             location: "",
           };
 
+          // parse post language
+          if (typeof parse.metadata.lang == "string" && parse.metadata.lang.length) {
+            build.publication_language = parse.metadata.lang;
+          }
+
           // parse post title
           build.title = parse.metadata.title;
           if (parse.metadata.webtitle) build.title += " | " + parse.metadata.webtitle;
@@ -294,6 +299,7 @@ gulp.task("sitemap-gn", (done) => {
             file.replace(/\.md$/, ".json").replace("_posts/", "").replace(path.join(__dirname, "source"), "")
           );
           if (build.publication_date == "Invalid date") {
+            parse.metadata.error = "INVALID DATE";
             console.log(parse.metadata);
           } else {
             sitemaps.add(build);
