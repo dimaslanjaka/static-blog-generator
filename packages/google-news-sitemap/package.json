@@ -10,6 +10,7 @@
   },
   "files": [
     "dist",
+    "src",
     "*.json",
     "*.xml"
   ],
@@ -25,6 +26,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.29.1",
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
