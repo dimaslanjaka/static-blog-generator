@@ -294,12 +294,11 @@ gulp.task("sitemap-gn", (done) => {
           );
           sitemaps.add(build);
           writeFileSync(temp, JSON.stringify(parse, null, 2));
-          writeFileSync("build/google-news-sitemap/sitemap.xml", sitemaps.toString());
         } else {
           //console.error("cannot parse", file);
         }
       });
-
+    writeFileSync("docs/sitemap-google-news.xml", sitemaps.toString());
     if (typeof done == "function") done();
   });
 });
