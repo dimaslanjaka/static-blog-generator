@@ -8,6 +8,9 @@ toc: true
 lang: en
 ---
 
+# Basic
+Basic blogger conditional tags
+
 ## Homepage
 Blogger Conditional Tag for determine current page is homepage
 ```xml
@@ -36,6 +39,16 @@ Blogger Conditional Tag for determine current page is page or static page (**Is 
 or
 ```xml
 <b:if cond='data:view.isPage'></b:if>
+```
+
+## Custom Post Page
+`data:blog.url` is the code to display the original opened url. In the latest version can use `data:view.url`. When the url is the same as the filled url, then the result will be true so that . If you move to a custom domain, the Page Url from blogspot must also be replaced with a custom domain.
+```xml
+<b:if cond='data:blog.url == &quot;Url Post Or Page&quot;'></b:if>
+```
+Example: Determine current page is https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html
+```xml
+<b:if cond='data:blog.url == &quot;https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html&quot;'></b:if>
 ```
 
 ## Index
@@ -107,6 +120,20 @@ or
 ```xml
 <b:if cond='data:view.isError'></b:if>
 ```
+
+## Layout Preview Page
+This blogger conditional tag can be used to not display adsense js on page layout (layout) and preview (preview). The goal is of course so that the ad does not appear when the article is opened in preview.
+```xml
+<b:if cond='data:view.isLayoutMode and data:view.isPreview'></b:if>
+```
+
+## Mobile Requests
+This blogger conditional tag code will only read for HTML code that is displayed specifically on mobile devices aka HandPhones and Tablets. ex: https://web-manajemen.blogspot.com/2017/04/instal-php-cli-pada-android-instalasi.html?m=1
+```xml
+<b:if cond='data:blog.isMobileRequest'></b:if>
+```
+
+# NOT, AND, OR Declaration Function in Blogger Conditional Tags
 
 [Conditional Tags For Desktop](/2017/05/conditional-tags-blogger-for-desktop.md)
 [Add Featured Post Image Slider](/2017/05/how-to-add-featured-post-image-slider.md)
