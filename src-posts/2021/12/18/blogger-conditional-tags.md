@@ -136,9 +136,12 @@ This blogger conditional tag code will only read for HTML code that is displayed
 ```
 
 # NOT, AND, OR Declaration Function in Blogger Conditional Tags
+In using the blogger conditional tag, we can also provide a declaration function on the conditional tag to make it shorter
+
 
 [Conditional Tags For Desktop](/2017/05/conditional-tags-blogger-for-desktop.md)
 [Add Featured Post Image Slider](/2017/05/how-to-add-featured-post-image-slider.md)
 [Conditional Tags For Targeting](/2017/05/conditional-tags-for-targeting-on.md)
 [Menyembunyikan Javascript Di Blogger AMP](/2017/04/cara-menyembunyikan-javascript-di.md)
 
+### THIS ARTICLE WILL CONTINUE TO BE UPDATED AS THE BLOGGER DEVELOPES FROM TIME TO TIME
