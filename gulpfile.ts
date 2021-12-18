@@ -73,7 +73,7 @@ let tryCount = 0;
  * @param done Callback
  * @param clean Clean All Files And Folder Inside Production Folder
  */
-function articleCopy(done, clean = false) {
+function articleCopy(done: TaskCallback, clean = false) {
   if (clean) emptyDir(prodPostDir);
   const srcDir = slash(path.join(__dirname, "src-posts"));
   const destDir = slash(prodPostDir);
@@ -149,6 +149,7 @@ gulp.task("blogger", function (done) {
 });
 
 import minifyHtml from "./src/gulp/minify";
+import { TaskCallback } from "undertaker";
 gulp.task("hexo:minify", function () {
   return gulp
     .src("docs/**/*.html")
@@ -179,6 +180,8 @@ function walk(dir: fs.PathLike, done: { (err: NodeJS.ErrnoException, files: stri
     })();
   });
 }
+
+// sitemap.txt generator
 gulp.task("sitemap", (done) => {
   const results: string[] = [];
   walk("source", (err, files) => {
@@ -203,4 +206,4 @@ gulp.task("sitemap", (done) => {
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
 gulp.task("default", gulp.series("article:copy:dev"));
-//exports.default = gulp.series("article:copy:dev");
+

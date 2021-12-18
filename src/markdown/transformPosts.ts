@@ -2,11 +2,8 @@ import filemanager from "../node/filemanager";
 import path from "path";
 import * as fs from "fs";
 import toHtml from "./toHtml";
-import jsdom from "jsdom";
 import yaml from "yaml";
 import notranslate from "../translator/notranslate";
-
-const { JSDOM } = jsdom;
 
 type parsePostReturn = Object & {
   /**
@@ -34,7 +31,7 @@ type parsePostReturn = Object & {
 };
 
 /**
- * Parse markdown post (structured with yaml and universal markdown blocks)
+ * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return metadata {string & object} and body
  * * return null == failed
  * @param text
