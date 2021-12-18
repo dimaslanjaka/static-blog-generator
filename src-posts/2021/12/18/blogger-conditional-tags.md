@@ -138,14 +138,6 @@ This blogger conditional tag code will only read for HTML code that is displayed
 # NOT, AND, OR Declaration Function in Blogger Conditional Tags
 In using the blogger conditional tag, we can also provide a declaration function on the conditional tag to make it shorter
 
-
-[Conditional Tags For Desktop](/2017/05/conditional-tags-blogger-for-desktop.md)
-[Add Featured Post Image Slider](/2017/05/how-to-add-featured-post-image-slider.md)
-[Conditional Tags For Targeting](/2017/05/conditional-tags-for-targeting-on.md)
-[Menyembunyikan Javascript Di Blogger AMP](/2017/04/cara-menyembunyikan-javascript-di.md)
-
-### THIS ARTICLE WILL CONTINUE TO BE UPDATED AS THE BLOGGER DEVELOPES FROM TIME TO TIME
-
 ## NOT
 In the use of the blogger conditional tag if it is **NOT** the page in question, which means the code will **NOT** be displayed on the page in question. Add function ! (exclamation mark)
 ```xml
@@ -164,3 +156,23 @@ In blogger conditional tag use Condition if both are true. Add `AND` function
 
 ## OR
 condition if one of them is true. Add `OR` function
+```xml
+<b:if cond='data:view.isPost OR data:view.isMultipleItems'>
+```
+**Addition :**
+To concatenate multiple page urls on a specific page tag. If the code like no.11 above is only 1 url, then for multiple urls:
+```xml
+<b:if cond='data:view.url in {&quot;URL page 1&quot;,&quot;URL page 2&quot;,&quot;Next page URL&quot;}'></b:if>
+```
+Notice there is a **comma**. On the other hand you can use and, which means that if the use of both or more conditions is true it will be displayed. If one is not correct then it will not be displayed.
+
+Thus a collection of blogger conditional tag codes that I can show you all, good luck and happy experimenting.
+
+See Also:
+- [Conditional Tags For Desktop](/2017/05/conditional-tags-blogger-for-desktop.md)
+- [Add Featured Post Image Slider](/2017/05/how-to-add-featured-post-image-slider.md)
+- [Conditional Tags For Targeting](/2017/05/conditional-tags-for-targeting-on.md)
+- [Menyembunyikan Javascript Di Blogger AMP](/2017/04/cara-menyembunyikan-javascript-di.md)
+
+### Bookmark This
+**THIS ARTICLE WILL CONTINUE TO BE UPDATED AS THE BLOGGER DEVELOPES FROM TIME TO TIME**
