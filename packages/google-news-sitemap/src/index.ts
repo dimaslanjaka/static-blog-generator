@@ -60,7 +60,12 @@ export interface ClassItemType {
   /**
    * Publisher or Author Name
    */
-  publication_name: string;
+  publication_name:
+    | string
+    | {
+        name?: string;
+        url?: string;
+      };
   /**
    * Language Article. Default: en
    */
@@ -97,12 +102,6 @@ export interface ClassItemType {
    * URL
    */
   location: string;
-  author:
-    | string
-    | {
-        name?: string;
-        url?: string;
-      };
 }
 
 export default class GoogleNewsSitemap {
@@ -111,13 +110,13 @@ export default class GoogleNewsSitemap {
    */
   items: ItemType[] = [];
   add(item: ClassItemType) {
-    if (!item.title && !item.publication_name && item.publication_date && !item.author) return;
-    const author =
-      typeof item.author == "string"
-        ? item.author
-        : item.author.name
-        ? item.author.name
-        : "Dimas Lanjaka (Default User)";
+    if (!item.title && !item.publication_name && item.publication_date) return;
+    let author = "Dimas Lanjaka (Default User)";
+    if (typeof item.publication_name == "string") {
+      author = item.publication_name;
+    } else if (item.publication_name.name) {
+      author = item.publication_name.name;
+    }
     const build: ItemType = {
       loc: item.location,
       news: {

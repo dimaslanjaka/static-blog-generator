@@ -7,7 +7,7 @@ export declare const root: {
     };
 };
 export declare type UnionOfArrayElements<ARR_T extends Readonly<unknown[]>> = ARR_T[number];
-declare const genres: string[];
+declare const genres: readonly ["Blog", "OpEd", "Opinion", "PressRelease", "Satire", "UserGenerated"];
 export interface ItemType {
     loc: string;
     news: {
@@ -18,6 +18,7 @@ export interface ItemType {
         publication_date: string;
         title: string;
         genres?: string | typeof genres[number];
+        keywords?: string;
     };
 }
 declare type codelang = string | keyof typeof languages;
@@ -33,15 +34,18 @@ export declare type XMLItemType = {
     };
 };
 export declare function parse(prepare: ItemType): XMLItemType;
-interface ClassItemType {
+export interface ClassItemType {
     /**
      * Publisher or Author Name
      */
-    publication_name?: string;
+    publication_name: string | {
+        name?: string;
+        url?: string;
+    };
     /**
      * Language Article. Default: en
      */
-    publication_language?: string;
+    publication_language: string;
     access?: string;
     /**
      * This tag allows you to specify genres that your news story is in. This must be in the form of a comma-separated list. Default: Blog
@@ -54,11 +58,11 @@ interface ClassItemType {
      * - YYYY-MM-DDThh:mm:ssTZD (e.g. 2017-08-10T17:49:30+11:00)
      * - YYYY-MM-DDThh:mm:ss.sTZD (e.g. 2017-08-10T17:49:30.45+11:00)
      */
-    publication_date?: string;
+    publication_date: string;
     /**
      * Article Title
      */
-    title?: string;
+    title: string;
     /**
      * Location Article Created.
      * - Default NULL
@@ -68,13 +72,12 @@ interface ClassItemType {
      * Article Keyword.
      * - The keyword should be in the form of a comma-separated list
      */
-    keywords?: string;
+    keywords?: string | string[];
     stock_tickers?: string;
-    location?: string;
-    author?: string | {
-        name?: string;
-        url?: string;
-    };
+    /**
+     * URL
+     */
+    location: string;
 }
 export default class GoogleNewsSitemap {
     /**
