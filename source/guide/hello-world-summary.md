@@ -1,7 +1,7 @@
 ---
 title: Hello World Summary
-
-date: 2020-6-4
+noindex: true
+date: 2020-06-04
 
 tags:
     - hello
