@@ -109,6 +109,7 @@ export default class GoogleNewsSitemap {
    * Max 1000 items
    */
   items: ItemType[] = [];
+  static date_pattern = "YYYY-MM-DDTHH:mm:ssZ";
   add(item: ClassItemType) {
     if (!item.title && !item.publication_name && item.publication_date) return;
     let author = "Dimas Lanjaka (Default User)";
@@ -121,7 +122,8 @@ export default class GoogleNewsSitemap {
       loc: item.location,
       news: {
         publication: { name: author, language: item.publication_language || "en" },
-        publication_date: item.publication_date || moment(new Date(), moment.ISO_8601).format("YYYY-MM-DDTHH:mm:ssZ"),
+        publication_date:
+          item.publication_date || moment(new Date(), moment.ISO_8601).format(GoogleNewsSitemap.date_pattern),
         title: item.title,
         genres: item.genres || "Blog",
       },

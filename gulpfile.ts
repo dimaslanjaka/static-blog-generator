@@ -258,7 +258,9 @@ gulp.task("sitemap-gn", (done) => {
           // parse date using YYYY-MM-DDThh:mm:ssTZD
           if (typeof parse.metadata.date == "string" && parse.metadata.date.length) {
             try {
-              build.publication_date = moment(parse.metadata.date, moment.ISO_8601).format("YYYY-MM-DDTHH:mm:ssZ");
+              build.publication_date = moment(parse.metadata.date, moment.ISO_8601).format(
+                GoogleNewsSitemap.date_pattern
+              );
             } catch (e) {
               console.log("fail", parse.metadata.date);
             }

@@ -84,6 +84,7 @@ export default class GoogleNewsSitemap {
      * Max 1000 items
      */
     items: ItemType[];
+    static date_pattern: string;
     add(item: ClassItemType): void;
     toString(): string;
 }
