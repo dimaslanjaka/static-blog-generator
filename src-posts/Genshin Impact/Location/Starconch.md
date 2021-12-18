@@ -5,7 +5,7 @@ subtitle: "Where to find starconch in genshin impact"
 
 lang: id
 
-date: 2020-6-12
+date: 2020-06-12
 
 type: post
 

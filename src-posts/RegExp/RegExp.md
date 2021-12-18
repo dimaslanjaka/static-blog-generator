@@ -3,7 +3,7 @@ title: What is RegExp
 webtitle: RegExp
 subtitle: "Regular Expression is a"
 lang: en
-date: 2021-9-22
+date: 2021-09-22
 type: post
 tags:
   - RegExp

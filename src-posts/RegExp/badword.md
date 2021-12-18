@@ -3,7 +3,7 @@ title: Badword
 webtitle: RegExp
 subtitle: "Match string not containing string, exclude badwords"
 lang: en
-date: 2021-9-22
+date: 2021-09-22
 type: post
 tags:
   - RegExp
