@@ -81,24 +81,29 @@ jobs:
         id: hexo-g
       - run: cd docs/page && npm install
       - name: Userscripts
+        id: hexo-validate
         if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
         run: |
           node userscripts/custom-domain.js
           node userscripts/copy.js
           node userscripts/after_generated.js
+          echo "Validating"
           node userscripts/validate.js
+          echo "Minifying HTML"
           gulp hexo:minify
+          echo "Generating Sitemap Text"
           gulp sitemap
+          echo "Generating Google News Sitemap"
           gulp sitemap-gn
 
       - name: Commit Files
         id: git-commit
         if: ${{ false }}
-        #if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         run: git commit -m "Add changes ${{ steps.date.outputs.date }}" -a
 
       - name: Deploy 🚀
-        if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: master # The branch the action should deploy to.
@@ -106,7 +111,7 @@ jobs:
 
       - name: Deploy to firebase
         # deploy if commit message contains firebase string
-        if: "contains(github.event.head_commit.message, 'firebase') && steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'"
+        if: "contains(github.event.head_commit.message, 'firebase') && steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'"
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
@@ -116,7 +121,7 @@ jobs:
 
       - name: Push changes
         if: ${{ false }}
-        #if: steps.hexo-g.outcome == 'success' && steps.hexo-g.conclusion == 'success'
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
