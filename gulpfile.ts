@@ -293,7 +293,11 @@ gulp.task("sitemap-gn", (done) => {
             "build/google-news-sitemap",
             file.replace(/\.md$/, ".json").replace("_posts/", "").replace(path.join(__dirname, "source"), "")
           );
-          sitemaps.add(build);
+          if (build.publication_date == "Invalid date") {
+            console.log(parse.metadata);
+          } else {
+            sitemaps.add(build);
+          }
           writeFileSync(temp, JSON.stringify(parse, null, 2));
         } else {
           //console.error("cannot parse", file);
