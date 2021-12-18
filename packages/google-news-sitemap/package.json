@@ -5,8 +5,14 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "ts-node src/xml.ts"
+    "test": "ts-node src/index.test.ts",
+    "build": "rm -rf dist && tsc"
   },
+  "files": [
+    "dist",
+    "*.json",
+    "*.xml"
+  ],
   "keywords": [
     "google news",
     "sitemap",

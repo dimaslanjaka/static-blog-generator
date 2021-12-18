@@ -4,6 +4,7 @@
     "target": "ES5",
     "experimentalDecorators": true,
     "strict": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "inlineSourceMap": true,
     "allowUnreachableCode": true,
