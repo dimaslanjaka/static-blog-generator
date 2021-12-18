@@ -300,6 +300,7 @@ gulp.task("sitemap-gn", (done) => {
           );
           if (build.publication_date == "Invalid date") {
             parse.metadata.error = "INVALID DATE";
+            parse.metadata.path = file;
             console.log(parse.metadata);
           } else {
             sitemaps.add(build);
