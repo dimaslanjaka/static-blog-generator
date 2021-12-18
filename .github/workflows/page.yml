@@ -89,6 +89,7 @@ jobs:
           node userscripts/validate.js
           gulp hexo:minify
           gulp sitemap
+          gulp sitemap-gn
 
       - name: Commit Files
         id: git-commit
