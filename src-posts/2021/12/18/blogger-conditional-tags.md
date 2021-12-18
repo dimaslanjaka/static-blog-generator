@@ -145,3 +145,22 @@ In using the blogger conditional tag, we can also provide a declaration function
 [Menyembunyikan Javascript Di Blogger AMP](/2017/04/cara-menyembunyikan-javascript-di.md)
 
 ### THIS ARTICLE WILL CONTINUE TO BE UPDATED AS THE BLOGGER DEVELOPES FROM TIME TO TIME
+
+## NOT
+In the use of the blogger conditional tag if it is **NOT** the page in question, which means the code will **NOT** be displayed on the page in question. Add function ! (exclamation mark)
+```xml
+<b:if cond='data:blog.url != data:blog.homepageUrl'></b:if>
+```
+or
+```xml
+<b:if cond='!data:view.isPost'>
+```
+
+## AND
+In blogger conditional tag use Condition if both are true. Add `AND` function
+```xml
+<b:if cond='!data:view.isPost AND data:view.isMultipleItems'></b:if>
+```
+
+## OR
+condition if one of them is true. Add `OR` function
