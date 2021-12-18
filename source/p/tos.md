@@ -1,6 +1,7 @@
 ---
 title: Terms Of Service
 type: page
+date: 2018-11-24
 ---
 
 <h2><strong>Terms and Conditions</strong></h2>

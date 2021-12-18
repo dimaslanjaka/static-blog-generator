@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 type: page
+date: 2018-11-24
 ---
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/all.css" />
