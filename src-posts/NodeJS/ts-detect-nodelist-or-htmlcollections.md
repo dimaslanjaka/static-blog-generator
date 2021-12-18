@@ -19,13 +19,14 @@ author:
 
 category:
   - Programming
-
+toc: false
 cover: "https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg"
 location: Indonesia
 comments: true
 ---
 
 # How to detect HTMLCollection/NodeList in JavaScript/Typescript?
+Detecting HTML Collection or NodeList in typescript.
 
 ## HTMLCollection Detect
 ```javascript
