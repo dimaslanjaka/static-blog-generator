@@ -28,10 +28,8 @@ textarea {
   Or input manual:
   </div>
 <textarea id="src" class="form-control" placeholder="input your proxy list here"></textarea>
-<hr/>
 <!-- Iklan Responsive -->
 <div hexo-adsense-fill=""></div>
-<hr/>
 <textarea id="result" class="form-control" placeholder="result here"></textarea>
 <blockquote>
 Paste to First box, then result in second box.
