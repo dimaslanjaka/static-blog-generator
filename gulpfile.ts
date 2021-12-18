@@ -206,4 +206,3 @@ gulp.task("sitemap", (done) => {
 
 //gulp.task("default", gulp.series("article:dev", "article:dist"));
 gulp.task("default", gulp.series("article:copy:dev"));
-
