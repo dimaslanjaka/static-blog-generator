@@ -1,7 +1,7 @@
 {
   "name": "google-news-sitemap",
-  "version": "1.0.1",
-  "description": "=== Google XML News Sitemap plugin ===\r Contributors: Gary Illyes\r Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10928083\r Tags: post,google,seo,news,google news,sitemap,posts,plugin,search engine optimization,XML news sitemap\r Requires at least: 2.5\r Tested up to: 2.9\r Stable tag: trunk",
+  "version": "1.0.2",
+  "description": "=== Google XML News Sitemap plugin ===\r Contributors: Dimas Lanjaka\r Donate link: +6285655667573\r Tags: post,google,seo,news,google news,sitemap,posts,plugin,search engine optimization,XML news sitemap\r Requires at least: 2.5\r Tested up to: 2.9\r Stable tag: trunk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
