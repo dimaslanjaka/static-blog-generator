@@ -29,7 +29,6 @@ textarea {
   </div>
 <textarea id="src" class="form-control" placeholder="input your proxy list here"></textarea>
 <hr/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Iklan Responsive -->
 <div hexo-adsense-fill=""></div>
 <hr/>
