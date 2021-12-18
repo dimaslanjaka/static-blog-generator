@@ -3,7 +3,7 @@ title: Update Genshin Impact 2.0.0 Manual
 webtitle: WMI Genshin Impact
 subtitle: "Update Genshin Impact 1.6.1 - 2.0.0 Manual"
 
-date: 2021-8-16
+date: 2021-08-16
 
 lang: en
 
