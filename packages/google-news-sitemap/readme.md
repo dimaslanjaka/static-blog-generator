@@ -18,6 +18,7 @@ builder.add({
   publication_date: "May 25, 2012",
   publication_name: "Dimas Lanjaka",
 });
+console.log(builder.toString());
 ```
 
 ## Site using this package
