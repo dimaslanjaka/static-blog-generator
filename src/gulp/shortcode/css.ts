@@ -2,6 +2,14 @@ import fs from "fs";
 import path from "path";
 import "../../../src/js/_Prototype-String";
 
+/**
+ * Parse shortcode css
+ * ```html
+ * <!-- css /path/file.css -->
+ * ```
+ * @param file markdown file
+ * @returns
+ */
 export function shortcodeCss(file: string) {
   if (!fs.statSync(file).isFile()) {
     console.log("[" + file.toString().removeRoot() + "] its a directory, not a file");
