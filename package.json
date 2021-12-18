@@ -96,6 +96,7 @@
     "object-assign": "^4.1.1",
     "rimraf": "^3.0.2",
     "showdown": "^1.9.1",
+    "xml": "^1.0.1",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
@@ -128,6 +129,7 @@
     "@types/swfobject": "^2.2.27",
     "@types/through2": "^2.0.36",
     "@types/toastr": "^2.1.38",
+    "@types/xml": "^1.0.7",
     "@types/yargs": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
