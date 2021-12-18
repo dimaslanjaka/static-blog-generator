@@ -38,7 +38,7 @@
   "exclude": [
     "test",
     "release/build",
-    "dist",
+    "**/dist/**",
     ".erb/dll",
     "src/views/theme/src/js/**/*",
     "src/views/theme/loader/web/**/*"

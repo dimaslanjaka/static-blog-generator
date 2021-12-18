@@ -1,0 +1,132 @@
+export default Tooltip;
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
+declare class Tooltip extends BaseComponent {
+    static get Default(): {
+        animation: boolean;
+        template: string;
+        trigger: string;
+        title: string;
+        delay: number;
+        html: boolean;
+        selector: boolean;
+        placement: string;
+        offset: number[];
+        container: boolean;
+        fallbackPlacements: string[];
+        boundary: string;
+        customClass: string;
+        sanitize: boolean;
+        sanitizeFn: any;
+        allowList: {
+            '*': (string | RegExp)[];
+            a: string[];
+            area: any[];
+            b: any[];
+            br: any[];
+            col: any[];
+            code: any[];
+            div: any[];
+            em: any[];
+            hr: any[];
+            h1: any[];
+            h2: any[];
+            h3: any[];
+            h4: any[];
+            h5: any[];
+            h6: any[];
+            i: any[];
+            img: string[];
+            li: any[];
+            ol: any[];
+            p: any[];
+            pre: any[];
+            s: any[];
+            small: any[];
+            span: any[];
+            sub: any[];
+            sup: any[];
+            strong: any[];
+            u: any[];
+            ul: any[];
+        };
+        popperConfig: any;
+    };
+    static get NAME(): string;
+    static get DATA_KEY(): string;
+    static get Event(): {
+        HIDE: string;
+        HIDDEN: string;
+        SHOW: string;
+        SHOWN: string;
+        INSERTED: string;
+        CLICK: string;
+        FOCUSIN: string;
+        FOCUSOUT: string;
+        MOUSEENTER: string;
+        MOUSELEAVE: string;
+    };
+    static get EVENT_KEY(): string;
+    static get DefaultType(): {
+        animation: string;
+        template: string;
+        title: string;
+        trigger: string;
+        delay: string;
+        html: string;
+        selector: string;
+        placement: string;
+        offset: string;
+        container: string;
+        fallbackPlacements: string;
+        boundary: string;
+        customClass: string;
+        sanitize: string;
+        sanitizeFn: string;
+        allowList: string;
+        popperConfig: string;
+    };
+    static jQueryInterface(config: any): any;
+    constructor(element: any, config: any);
+    _isEnabled: boolean;
+    _timeout: number;
+    _hoverState: string;
+    _activeTrigger: {};
+    _popper: any;
+    config: any;
+    tip: any;
+    enable(): void;
+    disable(): void;
+    toggleEnabled(): void;
+    toggle(event: any): void;
+    show(): void;
+    hide(): void;
+    update(): void;
+    isWithContent(): boolean;
+    getTipElement(): any;
+    setContent(): void;
+    setElementContent(element: any, content: any): void;
+    getTitle(): any;
+    updateAttachment(attachment: any): any;
+    _initializeOnDelegatedTarget(event: any, context: any): any;
+    _getOffset(): any;
+    _getPopperConfig(attachment: any): any;
+    _addAttachmentClass(attachment: any): void;
+    _getContainer(): any;
+    _getAttachment(placement: any): any;
+    _setListeners(): void;
+    _hideModalHandler: () => void;
+    _fixTitle(): void;
+    _enter(event: any, context: any): void;
+    _leave(event: any, context: any): void;
+    _isWithActiveTrigger(): boolean;
+    _getConfig(config: any): any;
+    _getDelegateConfig(): {};
+    _cleanTipClass(): void;
+    _handlePopperPlacementChange(popperData: any): void;
+}
+import BaseComponent from "./base-component";
+//# sourceMappingURL=tooltip.d.ts.map

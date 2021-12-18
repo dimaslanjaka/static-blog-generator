@@ -1,0 +1,34 @@
+export function sanitizeHtml(unsafeHtml: any, allowList: any, sanitizeFn: any): any;
+export const DefaultAllowlist: {
+    '*': (string | RegExp)[];
+    a: string[];
+    area: any[];
+    b: any[];
+    br: any[];
+    col: any[];
+    code: any[];
+    div: any[];
+    em: any[];
+    hr: any[];
+    h1: any[];
+    h2: any[];
+    h3: any[];
+    h4: any[];
+    h5: any[];
+    h6: any[];
+    i: any[];
+    img: string[];
+    li: any[];
+    ol: any[];
+    p: any[];
+    pre: any[];
+    s: any[];
+    small: any[];
+    span: any[];
+    sub: any[];
+    sup: any[];
+    strong: any[];
+    u: any[];
+    ul: any[];
+};
+//# sourceMappingURL=sanitizer.d.ts.map
