@@ -3,6 +3,8 @@ export declare const root: {
     urlset: {
         "@xmlns": string;
         "@xmlns:news": string;
+        "@xmlns:xsi": string;
+        "@xsi:schemaLocation": string;
         url: any[];
     };
 };
