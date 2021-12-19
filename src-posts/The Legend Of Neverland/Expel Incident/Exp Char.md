@@ -100,4 +100,10 @@ In the game The Legend Of Neverland, every day is given 6 kinds of Expel Inciden
   ![Mechanic](https://user-images.githubusercontent.com/12471057/133885294-5c64c56c-bb09-414f-a479-b300b0c7cb88.png)
   *Mechanic*
 
+## Expel Incident Lists
+Daily task the legend of neverland lists
+- [Standard Rewards](Standard%20Rewards.md)
+- [Highest Exp Char](Exp%20Char.md)
+- [Highest Exp Fairies](Crystals%20Fairy%20Exp.md)
+
 <style>em::before{content: "Gate Name : ";}</style>
