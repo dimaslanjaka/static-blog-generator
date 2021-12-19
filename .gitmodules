@@ -25,3 +25,4 @@
 [submodule "packages/hexo-client"]
 	path = packages/hexo-client
 	url = https://github.com/dimaslanjaka/hexo-client.git
+	branch = dimaslanjaka
