@@ -50,7 +50,7 @@ location: ""
            <footer class="w3-container w3-blue">
              <div class="d-flex justify-content-between">
                <div>
-                 <h5><a href="https://wp.webmanajemen.com/AGC/proxy" class="w3-text-white" style="pointer-events: none;">WMI Proxy checker 2019</a></h5>
+                 <h5><a href="https://www.webmanajemen.com/AGC/proxy" class="w3-text-white" style="pointer-events: none;">WMI Proxy checker 2019</a></h5>
                </div>
 
                <div>
