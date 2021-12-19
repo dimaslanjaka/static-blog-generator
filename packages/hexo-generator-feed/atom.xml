@@ -10,7 +10,7 @@
   <id>{{ url | uriencode }}</id>
   {% if config.author %}
   <author>
-    <name>{{ config.author.name | config.author.nick | config.author.nickname | config.author }}</name>
+    <name>{% if config.author.name %}{{ config.author.name }}{% elseif config.author.nick %}{{ config.author.nick }}{% elseif config.author.nickname %}{{ config.author.nickname }}{% else %}{{ config.author }}{% endif %}</name>
     {% if config.email %}<email>{{ config.email }}</email>{% endif %}
   </author>
   {% endif %}
