@@ -91,8 +91,13 @@ export function parsePost(text: string): parsePostReturn | null {
         let meta: parsePostReturn["metadata"] = yaml.parse(m[1]); // header post
         //console.log(meta);
         if (!meta.uuid) {
-          //console.log("generating UUID");
-          meta.uuid = uuidv4(meta.title || meta.subtitle || m[0]);
+          let uid = m[0];
+          if (meta.title && meta.webtitle) {
+            uid = meta.title + meta.webtitle;
+          } else if (meta.subtitle) {
+            uid = meta.subtitle;
+          }
+          meta.uuid = uuidv4(uid);
           meta = Object.keys(meta)
             .sort()
             .reduce(
