@@ -63,6 +63,11 @@ env.addFilter('authormail', str => {
   if (typeof str === 'string') return str;
 });
 
+env.addGlobal('year', new Date().getFullYear().toString());
+env.addFilter('domain', str => {
+  return new URL(str).hostname;
+});
+
 module.exports = function (locals, type, path) {
   const { config } = this;
   const { email, feed, url: urlCfg } = config;

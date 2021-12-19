@@ -18,6 +18,7 @@
     <pubDate>{% if posts.first().updated %}{{ posts.first().updated.toDate().toUTCString() }}{% else %}{{ posts.first().date.toDate().toUTCString() }}{% endif %}</pubDate>
     <generator>http://webmanajemen.com/</generator>
     <ttl>1800</ttl>
+    <copyright>{{ year }} {{ config.url | domain }} All rights reserved</copyright>
 
     {% for post in posts.toArray() %}
     <item>
