@@ -19,7 +19,7 @@
   <entry>
     <title>{{ post.title }}</title>
     <link href="{{ post.permalink | uriencode }}" />
-    <id>urn:uuid:{{ post.permalink | uuid }}</id>
+    <id>urn:uuid:{% if post.uuid %}{{ post.uuid }}{% else %}{{ post.permalink | uuid }}{% endif %}</id>
     {% if post.author %}
     <author>
       <name>{{ post.author | authorname }}</name>

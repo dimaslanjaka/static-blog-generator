@@ -26,7 +26,7 @@
     <item>
       <title>{{ post.title }}</title>
       <link>{{ post.permalink | uriencode }}</link>
-      <guid isPermaLink="false">{{ post.permalink | uuid }}</guid>
+      <guid isPermaLink="false">{% if post.uuid %}{{ post.uuid }}{% else %}{{ post.permalink | uuid }}{% endif %}</guid>
       <pubDate>{{ post.date.toDate().toUTCString() }}</pubDate>
       {% if post.subtitle %}
       <description>{{ post.subtitle }}</description>
