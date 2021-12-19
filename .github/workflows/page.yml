@@ -3,7 +3,7 @@ name: Build
 on:
   # schedule this job every 1:45 AM everydays
   schedule:
-    - cron: '45 1 * * *'
+    - cron: "45 1 * * *"
   pull_request:
     branches:
       - compiler # run when this branch pull requested
@@ -58,7 +58,7 @@ jobs:
             ./tmp
             ./build
           key: ${{ runner.os }}-${{ hashFiles('**/.guid') }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-nodejs-
+          restore-keys: ${{ runner.os }}-${{ hashFiles('**/.guid') }}-
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not found
         if: steps.npm-cache.outputs.cache-hit != 'true'
