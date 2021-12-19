@@ -29,7 +29,7 @@
     <published>{{ post.date.toISOString() }}</published>
     <updated>{% if post.updated %}{{ post.updated.toISOString() }}{% else %}{{ post.date.toISOString() }}{% endif %}</updated>
     {% if config.feed.content and post.content %}
-    <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
+    <content type="html"><div xmlns="http://www.w3.org/1999/xhtml"><![CDATA[{{ post.content | noControlChars | safe }}]]></div></content>
     {% endif %}
     {% if post.subtitle %}
     <summary type="html">{{ post.subtitle }}</summary>
