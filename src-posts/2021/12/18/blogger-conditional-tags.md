@@ -116,7 +116,7 @@ or
 
 ## Error Page (404)
 This blogger conditional tag is used to display a warning that the page you are looking for does not exist or is the result of a url error or 404 not found.
-``xml
+```xml
 <b:if cond='data:blog.pageType == &quot;error_page&quot;'></b:if>
 ```
 or
