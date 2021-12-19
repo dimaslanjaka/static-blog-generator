@@ -7,33 +7,25 @@
   {% if config.feed.hub %}<link href="{{ config.feed.hub | uriencode }}" rel="hub"/>{% endif %}
   <link href="{{ url | uriencode }}"/>
   <updated>{% if posts.first().updated %}{{ posts.first().updated.toISOString() }}{% else %}{{ posts.first().date.toISOString() }}{% endif %}</updated>
-  <id>urn:uuid:{{ url | uuid }}</id>
+  <id>{{ url | uriencode }}</id>
   {% if config.author %}
   <author>
-    <name>{{ config.author | authorname }}</name>
-    {% if config | authormail %}<email>{{ config | authormail }}</email>{% endif %}
+    <name>{% if config.author.name %}{{ config.author.name }}{% elseif config.author.nick %}{{ config.author.nick }}{% elseif config.author.nickname %}{{ config.author.nickname }}{% else %}{{ config.author }}{% endif %}</name>
+    {% if config.email %}<email>{{ config.email }}</email>{% endif %}
   </author>
   {% endif %}
   <generator uri="https://webmanajemen.com/">WMI</generator>
   {% for post in posts.toArray() %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ post.permalink | uriencode }}" />
-    <id>urn:uuid:{{ post.permalink | uuid }}</id>
-    {% if post.author %}
-    <author>
-      <name>{{ post.author | authorname }}</name>
-      {% if post.author | authormail %}<email>{{ post.author | authormail }}</email>{% endif %}
-    </author>
-    {% endif %}
+    <link href="{{ post.permalink | uriencode }}"/>
+    <id>{{ post.permalink | uriencode }}</id>
     <published>{{ post.date.toISOString() }}</published>
     <updated>{% if post.updated %}{{ post.updated.toISOString() }}{% else %}{{ post.date.toISOString() }}{% endif %}</updated>
     {% if config.feed.content and post.content %}
     <content type="html"><![CDATA[{{ post.content | noControlChars | safe }}]]></content>
     {% endif %}
-    {% if post.subtitle %}
-    <summary type="html">{{ post.subtitle }}</summary>
-    {% elif post.description %}
+    {% if post.description %}
     <summary type="html">{{ post.description }}</summary>
     {% elif post.intro %}
     <summary type="html">{{ post.intro }}</summary>
