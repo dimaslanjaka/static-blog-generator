@@ -14,7 +14,7 @@
     {% if config.email %}<email>{{ config.email }}</email>{% endif %}
   </author>
   {% endif %}
-  <generator uri="https://hexo.io/">Hexo</generator>
+  <generator uri="https://webmanajemen.com/">WMI</generator>
   {% for post in posts.toArray() %}
   <entry>
     <title>{{ post.title }}</title>
