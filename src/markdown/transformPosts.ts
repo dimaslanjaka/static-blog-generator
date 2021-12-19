@@ -113,7 +113,7 @@ export function parsePost(text: string): parsePostReturn | null {
         return {
           metadataString: m[0],
           metadata: meta,
-          body: text.replace(m[0], ""),
+          body: fixPostBody(text.replace(m[0], "")),
         };
       }
     }
@@ -122,6 +122,23 @@ export function parsePost(text: string): parsePostReturn | null {
     console.log("fail parse markdown post", originalArg);
   }
   return null;
+}
+
+/**
+ * Fix post body
+ * * remove *.wp.com cdn
+ * @param str
+ */
+export function fixPostBody(str: string) {
+  // remote i2.wp.com i1.wp.com etc
+  const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
+  str = str.replace(regex, "https://res.cloudinary.com/practicaldev/image/fetch/");
+  // add notranslate
+  str += `<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>`;
+  return str;
 }
 
 /**
