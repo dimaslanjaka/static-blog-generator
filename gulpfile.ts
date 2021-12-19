@@ -59,10 +59,9 @@ import YAML from "yaml";
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
- * @param clean Clean All Files And Folder Inside Production Folder
  */
-function articleCopy(done: TaskCallback, clean = false) {
-  if (clean) emptyDir(prodPostDir);
+function articleCopy(done: TaskCallback) {
+  if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
   const srcDir = slash(path.join(__dirname, "src-posts"));
   const destDir = slash(prodPostDir);
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
@@ -104,11 +103,7 @@ function articleCopy(done: TaskCallback, clean = false) {
 
 // just copy from source posts (src-posts) to production posts (source/_posts)
 gulp.task("article:copy", function (done) {
-  articleCopy(done, true);
-});
-
-gulp.task("article:copy:dev", function (done) {
-  articleCopy(done, false);
+  articleCopy(done);
 });
 
 gulp.task("article:clean", function (done) {
@@ -310,5 +305,4 @@ gulp.task("sitemap-gn", (done) => {
   });
 });
 
-//gulp.task("default", gulp.series("article:dev", "article:dist"));
-gulp.task("default", gulp.series("article:copy:dev"));
+gulp.task("default", gulp.series("article:copy"));
