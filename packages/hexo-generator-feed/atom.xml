@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:blogger='http://schemas.google.com/blogger/2008' xmlns:georss='http://www.georss.org/georss' xmlns:gd="http://schemas.google.com/g/2005" xmlns:thr='http://purl.org/syndication/thread/1.0'>
   <title>{{ config.title }}</title>
   {% if icon %}<icon>{{ icon }}</icon>{% endif %}
   {% if config.subtitle %}<subtitle>{{ config.subtitle }}</subtitle>{% endif %}
@@ -14,7 +14,7 @@
     {% if config | authormail %}<email>{{ config | authormail }}</email>{% endif %}
   </author>
   {% endif %}
-  <generator uri="https://webmanajemen.com/">WMI</generator>
+  <generator version='7.00' uri="https://webmanajemen.com/">WMI</generator>
   {% for post in posts.toArray() %}
   <entry>
     <title>{{ post.title }}</title>
