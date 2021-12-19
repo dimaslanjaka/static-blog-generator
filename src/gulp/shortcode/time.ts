@@ -1,5 +1,5 @@
 import fs from "fs";
-import "../../../src/js/_Prototype-String.ts";
+import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
 
 /**
  * Current date time
@@ -27,7 +27,7 @@ export function now() {
  */
 export function shortcodeNow(file: string | fs.PathLike) {
   if (!fs.statSync(file).isFile()) {
-    console.log("[" + file.toString().removeRoot() + "] its a directory, not a file");
+    console.log("[" + file.toString().replace(process.cwd(), "") + "] its a directory, not a file");
     return;
   }
   const rex = /<!-- now\(\) -->/gm;
@@ -36,6 +36,6 @@ export function shortcodeNow(file: string | fs.PathLike) {
   if (matchRegex && matchRegex.length > 0) {
     const replaceNow = read.replace(rex, now());
     fs.writeFileSync(file, replaceNow);
-    console.log("[" + file.toString().removeRoot() + "] done");
+    console.log("[" + file.toString().replace(process.cwd(), "") + "] done");
   }
 }

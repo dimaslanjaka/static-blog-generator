@@ -8,7 +8,7 @@ const regex = /\[.*\]\(.*(.md)\)/gm;
  */
 export default function replaceMD2HTML(file: string) {
   if (!fs.statSync(file).isFile()) {
-    console.log("[" + file.toString().removeRoot() + "] its a directory, not a file");
+    console.log("[" + file.toString().replace(process.cwd(), "") + "] its a directory, not a file");
     return;
   }
   const read = fs.readFileSync(file).toString();

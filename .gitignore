@@ -24,3 +24,6 @@ firebase.js
 # custom build for cache hexo-seo
 build/*
 #!build/hexo-seo/
+
+tmp
+temo

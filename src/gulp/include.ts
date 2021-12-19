@@ -1,7 +1,7 @@
 // noinspection ES6PreferShortImport
 import * as path from "path";
 import * as fs from "fs";
-import "./../../src/js/_Prototype-String";
+import "../../packages/hexo-seo/packages/js-prototypes/src/String";
 
 /**
  * Process `shortcode include` to included in file, shortcode below:
@@ -37,7 +37,7 @@ function includeProcess(destDir: fs.PathLike | string) {
                 const directRead = fs.readFileSync(directFile).toString();
                 const directReplace = read.replace(match[0], directRead);
                 fs.writeFileSync(absolute, directReplace);
-                console.log(absolute.removeRoot() + " include successfully processed");
+                console.log(absolute.replace(process.cwd(), "") + " include successfully processed");
               } else {
                 console.error(match[1] + " not inline with " + absolute);
                 const rootFind = path.join(process.cwd(), match[1]);
@@ -46,7 +46,7 @@ function includeProcess(destDir: fs.PathLike | string) {
                   const rootRead = fs.readFileSync(rootFind).toString();
                   const rootReplace = read.replace(match[0], rootRead);
                   fs.writeFileSync(absolute, rootReplace);
-                  console.log(absolute.removeRoot() + " include successfully processed");
+                  console.log(absolute.replace(process.cwd(), "") + " include successfully processed");
                 }
               }
               console.log("\n");

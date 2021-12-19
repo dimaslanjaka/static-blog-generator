@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import "./src/js/_Prototype-String";
+import "./packages/hexo-seo/packages/js-prototypes/src/globals";
 import * as gulp from "gulp";
 import * as path from "path";
 import transformPosts, { parsePost, transformPostBody } from "./src/markdown/transformPosts";
@@ -12,7 +12,6 @@ import { shortcodeNow } from "./src/gulp/shortcode/time";
 import { shortcodeCss } from "./src/gulp/shortcode/css";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 //import { gulpCore } from "hexo-blogger-xml";
-import "./src/js/_Prototype-Array";
 
 /**
  * Production article.
