@@ -5,6 +5,7 @@ const env = new nunjucks.Environment();
 const { join } = require('path');
 const { readFileSync } = require('fs');
 const { encodeURL, gravatar, full_url_for } = require('hexo-util');
+const crypto = require('crypto');
 
 env.addFilter('uriencode', str => {
   return encodeURL(str);
@@ -14,10 +15,64 @@ env.addFilter('noControlChars', str => {
   return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
 });
 
-module.exports = function(locals, type, path) {
+const md5 = function (data) {
+  return crypto.createHash('md5').update(data).digest('hex');
+};
+
+env.addFilter('uuid', str => {
+  let original = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'; // length 8-4-4-4-12
+  if (str) {
+    const hash = md5(str);
+    original = original
+      .replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13))
+      .replace(
+        /xxx-xxxxxxxxxxxx$/,
+        hash.slice(14, 17) + '-' + hash.slice(18, 30)
+      );
+  }
+  return original.replace(/[xy]/g, c => {
+    if (!str) {
+      const r = (Math.random() * 16) | 0;
+      const v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    }
+    const r = 0;
+    let v = r | 0x8;
+    if (c === 'y') v = (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+});
+
+env.addFilter('authorname', str => {
+  if (str.nick) return str.nick;
+  if (str.name) return str.name;
+  if (str.nickname) return str.nickname;
+  if (typeof str === 'string') return str;
+});
+
+env.addFilter('authormail', str => {
+  if (str.email) return str.email;
+  if (str.mail) return str.mail;
+  if (str.author) {
+    if (str.author.email) {
+      return str.author.email;
+    } else if (str.author.mail) {
+      return str.author.mail;
+    }
+  }
+  if (typeof str === 'string') return str;
+});
+
+module.exports = function (locals, type, path) {
   const { config } = this;
   const { email, feed, url: urlCfg } = config;
-  const { icon: iconCfg, limit, order_by, template: templateCfg, type: typeCfg } = feed;
+  const {
+    icon: iconCfg,
+    limit,
+    order_by,
+    template: templateCfg,
+    type: typeCfg
+  } = feed;
 
   env.addFilter('formatUrl', str => {
     return full_url_for.call(this, str);
