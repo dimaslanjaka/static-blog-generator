@@ -306,9 +306,9 @@ gulp.task("sitemap-gn", (done) => {
 });
 
 gulp.task("update-hash", (done) => {
-  const loc = fs.readFileSync(path.join(__dirname, ".guid")).toString();
+  const loc = path.join(__dirname, ".guid");
   writeFileSync(loc, uuidv4());
   done();
 });
 
-gulp.task("default", gulp.series("article:copy"));
+gulp.task("default", gulp.series("article:copy", "update-hash"));
