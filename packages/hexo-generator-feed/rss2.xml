@@ -17,13 +17,17 @@
     <description>{{ config.description }}</description>
     <pubDate>{% if posts.first().updated %}{{ posts.first().updated.toDate().toUTCString() }}{% else %}{{ posts.first().date.toDate().toUTCString() }}{% endif %}</pubDate>
     <generator>http://webmanajemen.com/</generator>
+    <ttl>1800</ttl>
+
     {% for post in posts.toArray() %}
     <item>
       <title>{{ post.title }}</title>
       <link>{{ post.permalink | uriencode }}</link>
-      <guid>{{ post.permalink | uriencode }}</guid>
+      <guid isPermaLink="false">{{ post.permalink | uuid }}</guid>
       <pubDate>{{ post.date.toDate().toUTCString() }}</pubDate>
-      {% if post.description %}
+      {% if post.subtitle %}
+      <description>{{ post.subtitle }}</description>
+      {% elif post.description %}
       <description>{{ post.description }}</description>
       {% elif post.intro %}
       <description>{{ post.intro }}</description>
