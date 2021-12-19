@@ -18,7 +18,7 @@ author:
 category:
   - Programming
 
-cover: "/GitHub/workflows/cover.png"
+cover: "/GitHub/workflows/events.png"
 location: Indonesia
 comments: true
 ---
