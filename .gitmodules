@@ -22,3 +22,6 @@
 	path = packages/hexo-seo
 	url = https://github.com/dimaslanjaka/hexo-seo.git
 	branch = compiler
+[submodule "packages/hexo-client"]
+	path = packages/hexo-client
+	url = https://github.com/dimaslanjaka/hexo-client.git
