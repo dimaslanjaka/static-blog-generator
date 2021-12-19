@@ -67,7 +67,7 @@ gulp.task("article:dist", function (done) {
 });
 
 let tryCount = 0;
-
+import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
@@ -103,6 +103,7 @@ function articleCopy(done: TaskCallback, clean = false) {
           shortcodeNow(file);
           shortcodeScript(file);
           shortcodeCss(file);
+          replaceMD2HTML(file);
         }
       });
 
@@ -158,6 +159,11 @@ gulp.task("hexo:minify", function () {
     .pipe(gulp.dest("docs"));
 });
 
+/**
+ * Read directory recursive
+ * @param dir
+ * @param done
+ */
 function walk(dir: fs.PathLike, done: { (err: NodeJS.ErrnoException, files: string[]): void }) {
   let results = [];
   fs.readdir(dir, function (err, list) {
@@ -182,7 +188,7 @@ function walk(dir: fs.PathLike, done: { (err: NodeJS.ErrnoException, files: stri
   });
 }
 
-function sitemap(done?) {
+function sitemap(done?: TaskCallback) {
   const results: string[] = [];
   return new Promise((resolve, reject) => {
     walk("source", (err, files) => {
