@@ -45,7 +45,9 @@ export function uuidv4(fromString?: string) {
   let original = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"; // length 8-4-4-4-12
   if (fromString) {
     const hash = md5(fromString);
-    original = original.replace(/^xxxxxxxx/, hash.slice(0, 8));
+    original = original
+      .replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + "-" + hash.slice(9, 13))
+      .replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + "-" + hash.slice(18, 30));
   }
   return original.replace(/[xy]/g, function (c) {
     if (!fromString) {

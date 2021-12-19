@@ -2,7 +2,7 @@
 import "./packages/hexo-seo/packages/js-prototypes/src/globals";
 import * as gulp from "gulp";
 import * as path from "path";
-import transformPosts, { parsePost, transformPostBody, uuidv4 } from "./src/markdown/transformPosts";
+import transformPosts, { md5, parsePost, transformPostBody, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
@@ -305,9 +305,23 @@ gulp.task("sitemap-gn", (done) => {
   });
 });
 
+import { hashElement } from "folder-hash";
+// update .guid has based on src-posts for github workflow cache
 gulp.task("update-hash", (done) => {
   const loc = path.join(__dirname, ".guid");
-  writeFileSync(loc, uuidv4());
+  const options = {
+    folders: { exclude: [".*", "node_modules", "test_coverage"] },
+    files: { include: ["*.js", "*.json", "*.ts", "*.md"] },
+  };
+
+  console.log("Creating a hash over the current folder:");
+  hashElement("./src-posts", options)
+    .then((hash) => {
+      writeFileSync(loc, uuidv4(hash.toString()));
+    })
+    .catch((error) => {
+      return console.error("hashing failed:", error);
+    });
   done();
 });
 
