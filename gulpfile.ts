@@ -2,7 +2,7 @@
 import "./packages/hexo-seo/packages/js-prototypes/src/globals";
 import * as gulp from "gulp";
 import * as path from "path";
-import transformPosts, { parsePost, transformPostBody } from "./src/markdown/transformPosts";
+import transformPosts, { parsePost, transformPostBody, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import includeFile from "./src/gulp/include";
@@ -303,6 +303,12 @@ gulp.task("sitemap-gn", (done) => {
     writeFileSync("docs/sitemap-google-news.xml", sitemaps.toString());
     if (typeof done == "function") done();
   });
+});
+
+gulp.task("update-hash", (done) => {
+  const loc = fs.readFileSync(path.join(__dirname, ".guid")).toString();
+  writeFileSync(loc, uuidv4());
+  done();
 });
 
 gulp.task("default", gulp.series("article:copy"));
