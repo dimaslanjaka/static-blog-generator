@@ -14,10 +14,8 @@ keywords:
 author:
   nick: "Dimas Lanjaka"
   link: "https://github.com/dimaslanjaka"
-
 category:
   - Programming
-
 cover: "/GitHub/workflows/events.png"
 location: Indonesia
 comments: true
