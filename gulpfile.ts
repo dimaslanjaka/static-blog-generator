@@ -314,7 +314,6 @@ gulp.task("update-hash", (done) => {
     files: { include: ["*.js", "*.json", "*.ts", "*.md"] },
   };
 
-  console.log("Creating a hash over the current folder:");
   hashElement("./src-posts", options)
     .then((hash) => {
       writeFileSync(loc, uuidv4(hash.toString()));
