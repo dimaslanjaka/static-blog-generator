@@ -53,20 +53,9 @@ function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
     });
 }
 
-gulp.task("article:dev", function (done) {
-  emptyDir(devPostDir);
-  transformPostBody("build/_posts");
-  done();
-});
-
-gulp.task("article:dist", function (done) {
-  emptyDir(prodPostDir);
-  transformPosts("source/_posts");
-  done();
-});
-
 let tryCount = 0;
 import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
+import YAML from "yaml";
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
@@ -89,26 +78,27 @@ function articleCopy(done: TaskCallback, clean = false) {
           return articleCopy(done);
         }
       } else {
-        console.log("success!");
+        console.log("copied successful!");
+
+        // process
+        const loop = loopDir(destDir);
+        includeFile(destDir);
+        loop.forEach(function (file) {
+          if (fs.statSync(file).isFile() && file.endsWith(".md")) {
+            shortcodeNow(file);
+            shortcodeScript(file);
+            shortcodeCss(file);
+            replaceMD2HTML(file);
+            const parse = parsePost(file);
+            const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+            writeFileSync(file, rebuildPost);
+          }
+        });
+
+        // notify gulp process has done
+        done();
       }
     });
-
-    setTimeout(() => {
-      // process
-      const loop = loopDir(destDir);
-      includeFile(destDir);
-      loop.forEach(function (file) {
-        if (fs.statSync(file).isFile()) {
-          shortcodeNow(file);
-          shortcodeScript(file);
-          shortcodeCss(file);
-          replaceMD2HTML(file);
-        }
-      });
-
-      // notify gulp process has done
-      done();
-    }, 1000);
   }, 1000);
 }
 

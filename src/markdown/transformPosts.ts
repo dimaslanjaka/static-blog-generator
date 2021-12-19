@@ -4,6 +4,8 @@ import * as fs from "fs";
 import toHtml from "./toHtml";
 import yaml from "yaml";
 import notranslate from "../translator/notranslate";
+import crypto from "crypto";
+import { readFileSync } from "fs";
 
 interface LooseObject {
   [key: string]: any;
@@ -35,27 +37,82 @@ type parsePostReturn = LooseObject & {
 };
 
 /**
+ * UUID V4 Generator
+ * @param fromString generate based on string (unique based on this string)
+ * @returns ex: a2d6fee8-369b-bebc-3d8e-b8ff2faf40d3
+ */
+export function uuidv4(fromString?: string) {
+  let original = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"; // length 8-4-4-4-12
+  if (fromString) {
+    const hash = md5(fromString);
+    original = original.replace(/^xxxxxxxx/, hash.slice(0, 8));
+  }
+  return original.replace(/[xy]/g, function (c) {
+    if (!fromString) {
+      const r = (Math.random() * 16) | 0,
+        v = c == "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    } else {
+      const r = 0;
+      let v = r | 0x8;
+      if (c == "y") v = (r & 0x3) | 0x8;
+      return v.toString(16);
+    }
+  });
+}
+
+/**
+ * PHP MD5 Equivalent
+ * @param data
+ * @returns
+ */
+export function md5(data: string) {
+  return crypto.createHash("md5").update(data).digest("hex");
+}
+
+/**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return metadata {string & object} and body
  * * return null == failed
  * @param text
  */
-export function parsePost(text: string, debug = false): parsePostReturn | null {
-  const regex = /---([\s\S]*?)---/;
+export function parsePost(text: string): parsePostReturn | null {
+  ///const regex = /---([\s\S]*?)---/;
+  const regex = /^---([\s\S]*?)---\n/gm;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
+  const originalArg = text;
+  if (text.startsWith("/")) {
+    text = readFileSync(text).toString();
+  }
 
   try {
     if ((m = regex.exec(text)) !== null) {
       if (m[0]) {
+        let meta: parsePostReturn["metadata"] = yaml.parse(m[1]); // header post
+        //console.log(meta);
+        if (!meta.uuid) {
+          //console.log("generating UUID");
+          meta.uuid = uuidv4(meta.title || meta.subtitle || m[0]);
+          meta = Object.keys(meta)
+            .sort()
+            .reduce(
+              (acc, key) => ({
+                ...acc,
+                [key]: meta[key],
+              }),
+              {}
+            ) as parsePostReturn["metadata"];
+        }
         return {
           metadataString: m[0],
-          metadata: yaml.parse(m[1]),
+          metadata: meta,
           body: text.replace(m[0], ""),
         };
       }
     }
   } catch (e) {
-    if (debug) console.error(e);
+    //if (debug) console.error(e.message, originalArg);
+    console.log("fail parse markdown post", originalArg);
   }
   return null;
 }
@@ -97,7 +154,7 @@ export function transformPostBody(
  * Transform entire post
  * @param outputDir custom output, default source/_posts
  */
-export default function (outputDir = "source/_posts") {
+export default function transformPosts(outputDir = "source/_posts") {
   filemanager.readdir(path.join(__dirname, "../../src-posts"), function (err, results) {
     if (!err) {
       results.forEach(function (file) {
