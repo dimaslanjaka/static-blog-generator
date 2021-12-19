@@ -18,7 +18,7 @@
     <pubDate>{% if posts.first().updated %}{{ posts.first().updated.toDate().toUTCString() }}{% else %}{{ posts.first().date.toDate().toUTCString() }}{% endif %}</pubDate>
     <generator>http://webmanajemen.com/</generator>
     <ttl>1800</ttl>
-    <copyright>{{ year }} {{ config.url | domain }} All rights reserved</copyright>
+    <copyright>Copyright {{ year }} &copy; {{ config.url | domain }}. All rights reserved. Do not copy articles from this website and related sites on this website. Copyright is a form of protection based on the U.S. Constitution. and is granted by law for original works of authorship set in a tangible medium of expression. Copyright includes both published and unpublished works.</copyright>
 
     {% for post in posts.toArray() %}
     <item>
