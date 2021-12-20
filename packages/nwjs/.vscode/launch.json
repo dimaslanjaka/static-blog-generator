@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "nw . --remote-debugging-port=9222",
+      "command": "nw . --remote-debugging-port=9222 --disable-raf-throttling",
       "name": "Start",
       "env": {
         "NODE_ENV": "development"
