@@ -114,6 +114,7 @@ gulp.task("article:fix", (done) => {
           parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
           allowWriten = true;
         }
+        if (!parse.metadata.lang) parse.metadata.lang = "en";
       }
     }
     if (allowWriten) {
