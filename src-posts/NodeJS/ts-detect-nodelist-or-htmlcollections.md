@@ -1,28 +1,29 @@
 ---
-title: HTMLCollection/NodeList in JavaScript/Typescript?
-webtitle: NodeJS
-subtitle: "How to detect HTMLCollection/NodeList in JavaScript/Typescript?"
-lang: en
-date: 2021-11-28T07:00:00
-type: post
-tags:
-  - TS
-  - JS
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+  image: https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg
+category:
+  - Programming
+comments: true
+cover: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
+date: 2021-11-28T07:00:00+07:00
 keywords:
   - typescript
   - NodeListOf
   - HTMLCollectionOf
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-  image: "https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg"
-
-category:
-  - Programming
-toc: false
-cover: "https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg"
+lang: en
 location: Indonesia
-comments: true
+subtitle: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
+tags:
+  - TS
+  - JS
+title: HTMLCollection/NodeList in JavaScript/Typescript?
+toc: false
+type: post
+uuid: 2aa96bcf-7d7a-4888-875f-1cced5ac4938
+webtitle: NodeJS
+updated: 2021-12-18T21:07:09+07:00
 ---
 
 # How to detect HTMLCollection/NodeList in JavaScript/Typescript?
@@ -77,3 +78,7 @@ for (let index = 0; index < loaders.length; index++) {
   console.log(element);
 }
 ```
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

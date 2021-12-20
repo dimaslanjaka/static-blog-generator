@@ -1,29 +1,23 @@
 ---
-title: Highest Exp Character Expel Incident
-webtitle: The Legend Of Neverland
-subtitle: "Expel Incident With The Highest Exp Character Rewards."
-
-lang: en
-
-date: 2021-08-17
-
-type: post
-
-tags:
-  - Quest
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
-
 comments: true
-
-cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
+cover: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
+date: 2021-08-17T00:00:00+07:00
+lang: en
 location: Indonesia
+subtitle: Expel Incident With The Highest Exp Character Rewards.
+tags:
+  - Quest
+title: Highest Exp Character Expel Incident
+type: post
+uuid: bc381ceb-c8e3-4888-8896-25c3e1acba96
+webtitle: The Legend Of Neverland
+updated: 2021-12-20T02:11:19+07:00
 ---
 
 <!-- toc -->
@@ -107,3 +101,7 @@ Daily task the legend of neverland lists
 - [Highest Exp Fairies](Crystals%20Fairy%20Exp.md)
 
 <style>em::before{content: "Gate Name : ";}</style>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

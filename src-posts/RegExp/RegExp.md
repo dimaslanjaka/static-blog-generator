@@ -1,23 +1,23 @@
 ---
-title: What is RegExp
-webtitle: RegExp
-subtitle: "Regular Expression is a"
-lang: en
-date: 2021-09-22
-type: post
-tags:
-  - RegExp
 ads: false
 author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
 category:
   - Regular Expression
-
-cover: "https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg"
-location: Indonesia
 comments: false
+cover: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
+date: 2021-09-22T00:00:00+07:00
+lang: en
+location: Indonesia
+subtitle: Regular Expression is a
+tags:
+  - RegExp
+title: What is RegExp
+type: post
+uuid: 4cd70405-503d-4888-85a2-55b39642d633
+webtitle: RegExp
+updated: 2021-12-19T06:34:45+07:00
 ---
 
 <!--https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285-->
@@ -59,3 +59,7 @@ A regular expression can be a single character, or a more complicated pattern. R
   | RegExp | Explanations |
   | ------ | ------------ |
 
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

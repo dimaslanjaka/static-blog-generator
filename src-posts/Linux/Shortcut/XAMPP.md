@@ -1,31 +1,31 @@
 ---
-title: XAMPP
-webtitle: Desktop Shortcut
-subtitle: "How to configure shortcut desktop for xampp linux"
-lang: en
-date: 2021-12-06T23:25:00
-type: post
-tags:
-  - PHP
-  - Apache
-  - MySQL
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+  image: https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg
+category:
+  - Programming
+comments: true
+cover: https://i.stack.imgur.com/4TYxW.jpg
+date: 2021-12-06T23:25:00+07:00
 keywords:
   - xampp
   - apache
   - MySQL
   - shortcut
   - desktop
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-  image: "https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg"
-
-category:
-  - Programming
-
-cover: https://i.stack.imgur.com/4TYxW.jpg
+lang: en
 location: Indonesia
-comments: true
+subtitle: How to configure shortcut desktop for xampp linux
+tags:
+  - PHP
+  - Apache
+  - MySQL
+title: XAMPP
+type: post
+uuid: 1bd42c10-7050-4888-887e-658da5efced0
+webtitle: Desktop Shortcut
+updated: 2021-12-12T13:38:42+07:00
 ---
 
 # Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
@@ -68,3 +68,7 @@ sudo -H /opt/lampp/manager-linux-x64.run
 
 ## Result
 ![Screenshot from 2021-12-07 02-45-08](https://user-images.githubusercontent.com/12471057/144911998-7459f8b8-1816-447e-a0c7-898a2cd4da49.png)
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

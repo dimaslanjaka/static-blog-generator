@@ -1,27 +1,28 @@
 ---
-title: Konversi DOM element ke HTML string
-webtitle: WMI Gitlab
+author:
+  nick: Dimas Lanjaka Kumala Indra
+  link: https://www.blogger.com/profile/17555754514989936273
+  email: noreply@blogger.com
+category: []
+comments: true
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+date: 2019-12-28T11:49:00.001+07:00
+lang: en
+location: ""
+modified: 2019-12-28T11:57:05.497+07:00
 subtitle: |-
   Mengubahdom document sebuah elemen kedalam HTMl string biasa
   <div id=elemenTersedia></div>
   <script>
   function
-lang: en
-date: 2019-12-28T11:49:00.001+07:00
-type: post
 tags:
   - JS
   - HTML
-author:
-  nick: Dimas Lanjaka Kumala Indra
-  link: https://www.blogger.com/profile/17555754514989936273
-  email: noreply@blogger.com
-modified: 2019-12-28T11:57:05.497+07:00
-category: []
-comments: true
-cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-location: ""
-
+title: Konversi DOM element ke HTML string
+type: post
+uuid: 686519e0-5fe3-4888-8d40-56b2cdf5ab57
+webtitle: WMI Gitlab
+updated: 2021-11-08T00:26:52+07:00
 ---
 
 <div>
@@ -51,4 +52,7 @@ location: ""
 <br>&lt;/script&gt;
 <br>  </pre>
  </div>        
- 
+ <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

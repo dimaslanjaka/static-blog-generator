@@ -1,29 +1,23 @@
 ---
-title: Standard Rewards Expel Incident
-webtitle: The Legend Of Neverland
-subtitle: "Expel Incident With The Standard Rewards."
-
-lang: en
-
-date: 2021-08-17
-
-type: post
-
-tags:
-  - Quest
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
-
 comments: true
-
-cover: "https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg"
+cover: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
+date: 2021-08-17T00:00:00+07:00
+lang: en
 location: Indonesia
+subtitle: Expel Incident With The Standard Rewards.
+tags:
+  - Quest
+title: Standard Rewards Expel Incident
+type: post
+uuid: aa5d1a55-c90a-4888-8ea4-c0942c8bfcc1
+webtitle: The Legend Of Neverland
+updated: 2021-12-20T02:11:10+07:00
 ---
 
 <!-- toc -->
@@ -67,3 +61,7 @@ Daily task the legend of neverland lists
 - [Highest Exp Fairies](Crystals%20Fairy%20Exp.md)
 
 <style>em::before{content:"Gate Name : ";}</style>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

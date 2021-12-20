@@ -1,23 +1,22 @@
 ---
-title: Badword
-webtitle: RegExp
-subtitle: "Match string not containing string, exclude badwords"
-lang: en
-date: 2021-09-22
-type: post
-tags:
-  - RegExp
-
 author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
 category:
   - Regular Expression
-
-cover: "/RegExp/RegExp/badwords.png"
-location: Indonesia
 comments: false
+cover: /RegExp/RegExp/badwords.png
+date: 2021-09-22T00:00:00+07:00
+lang: en
+location: Indonesia
+subtitle: Match string not containing string, exclude badwords
+tags:
+  - RegExp
+title: Badword
+type: post
+uuid: e14cbf39-1ac8-4888-8b41-9b6d9b1ad4f4
+webtitle: RegExp
+updated: 2021-12-19T06:33:56+07:00
 ---
 
 <!--toc-->
@@ -30,4 +29,7 @@ comments: false
 ## Try It
 [Click Here](https://www.regextester.com/15)
 
-<!-- script /RegExp/RegExp/badwords.js -->
+<!-- script /RegExp/RegExp/badwords.js --><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

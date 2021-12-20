@@ -1,13 +1,13 @@
 ---
-title: Eslint Prettier In Typescript Project Using Vscode
-webtitle: NodeJS
-subtitle: "How to configure eslint with prettier to automated lint and format codes in typescript project using vscode"
-lang: en
-date: 2021-11-28T07:00:00
-type: post
-tags:
-  - JS
-  - NodeJS
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+  image: https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg
+category:
+  - Programming
+comments: true
+cover: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
+date: 2021-11-28T07:00:00+07:00
 keywords:
   - nodejs
   - eslint
@@ -16,17 +16,18 @@ keywords:
   - auto
   - format
   - lint
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-  image: "https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg"
-
-category:
-  - Programming
-
-cover: "https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg"
+lang: en
 location: Indonesia
-comments: true
+subtitle: How to configure eslint with prettier to automated lint and format
+  codes in typescript project using vscode
+tags:
+  - JS
+  - NodeJS
+title: Eslint Prettier In Typescript Project Using Vscode
+type: post
+uuid: 3f6ada3c-0ed8-4888-87c8-3371f8927a2c
+webtitle: NodeJS
+updated: 2021-12-10T19:53:25+07:00
 ---
 
 # Auto Lint And Format Typescript Using VSCode With Eslint And Prettier
@@ -150,3 +151,7 @@ for example tsconfig.json for node 12
 
 ## Finish
 now your vscode format and lint your codes automatically.
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

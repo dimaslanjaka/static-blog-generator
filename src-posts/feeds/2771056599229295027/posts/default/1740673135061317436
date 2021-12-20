@@ -1,22 +1,26 @@
 ---
-title: Henri Nugraha Ft Anna Marie Asli Rockabye KOCAK ABIS
-webtitle: WMI Gitlab
-subtitle: iframe allowfullscreen= frameborder=0 height=344
-  src=https://www.youtube.com/embed/SRFF0OU8Z0E width=459></iframe><div
-lang: en
-date: 2019-10-01T13:18:00.001+07:00
-type: post
-tags: []
 author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-modified: 2019-10-01T13:18:43.028+07:00
 category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+date: 2019-10-01T13:18:00.001+07:00
+lang: en
 location: ""
-
+modified: 2019-10-01T13:18:43.028+07:00
+subtitle: iframe allowfullscreen= frameborder=0 height=344
+  src=https://www.youtube.com/embed/SRFF0OU8Z0E width=459></iframe><div
+tags: []
+title: Henri Nugraha Ft Anna Marie Asli Rockabye KOCAK ABIS
+type: post
+uuid: a807b6c4-3848-4888-8868-d9a8e2af542c
+webtitle: WMI Gitlab
+updated: 2021-11-08T00:27:00+07:00
 ---
 
-<iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/SRFF0OU8Z0E" width="459"></iframe>
+<iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/SRFF0OU8Z0E" width="459"></iframe><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

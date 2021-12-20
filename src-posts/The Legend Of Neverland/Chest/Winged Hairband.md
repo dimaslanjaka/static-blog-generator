@@ -1,30 +1,24 @@
 ---
-title: Winged Hairband
-
-subtitle: "Chest Winged Hairband location in the legend of neverland"
-
-lang: en
-
-date: 2021-08-31
-
-type: post
-
-tags:
-  - Chest Location
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
+comments: true
+cover: http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
+date: 2021-08-31T00:00:00+07:00
+lang: en
+location: Indonesia
 related_posts:
   - /The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html
-comments: true
-cover: "http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg"
-#cover: "/The Legend Of Neverland/Chest/Winged Hairband/cover.jpg"
-location: Indonesia
+subtitle: Chest Winged Hairband location in the legend of neverland
+tags:
+  - Chest Location
+title: Winged Hairband
+type: post
+uuid: 8d281b58-7835-4888-85cc-f2c12e1fc87f
+updated: 2021-12-19T06:35:16+07:00
 ---
 
 ## Requirement
@@ -58,3 +52,7 @@ location: Indonesia
 {% youtube psOnlBSRBjA %}
 
 {% youtube yRbP_fSP3xY %}
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

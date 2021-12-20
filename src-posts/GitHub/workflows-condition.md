@@ -1,26 +1,26 @@
 ---
-title: GitHub Workflow Conditions
-webtitle: WMI GitHub
-subtitle: "Macam-macam kondisional pada GitHub Workflows"
-lang: id
-date: 2021-11-23T02:00:00
-type: post
-tags:
-  - GitHub
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+category:
+  - Programming
+comments: true
+cover: /GitHub/workflows/cover.png
+date: 2021-11-23T02:00:00+07:00
 keywords:
   - GitHub
   - workflows
   - yml
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
-category:
-  - Programming
-
-cover: "/GitHub/workflows/cover.png"
+lang: id
 location: Indonesia
-comments: true
+subtitle: Macam-macam kondisional pada GitHub Workflows
+tags:
+  - GitHub
+title: GitHub Workflow Conditions
+type: post
+uuid: f4c6a18d-2377-4888-8330-9223d5f34263
+webtitle: WMI GitHub
+updated: 2021-11-30T20:10:25+07:00
 ---
 
 # Kondisional pada GitHub Workflow
@@ -52,4 +52,7 @@ jobs:
       - run: echo "git commit any"
 ```
 
-Artikel ini untuk mempermudah visitor untuk memahami github workflow.
+Artikel ini untuk mempermudah visitor untuk memahami github workflow.<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

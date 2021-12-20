@@ -1,27 +1,27 @@
 ---
-title: Node Options For NodeJS
-webtitle: NodeJS
-subtitle: "Usage, explanations of node options for nodejs"
-lang: en
-date: 2021-11-17T16:00:00
-type: post
-tags:
-  - JS
-  - NodeJS
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+category:
+  - Programming
+comments: true
+cover: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
+date: 2021-11-17T16:00:00+07:00
 keywords:
   - nodejs
   - arguments
   - cli
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
-category:
-  - Programming
-
-cover: "https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg"
+lang: en
 location: Indonesia
-comments: true
+subtitle: Usage, explanations of node options for nodejs
+tags:
+  - JS
+  - NodeJS
+title: Node Options For NodeJS
+type: post
+uuid: 586f70e0-6dec-4888-8cac-99671aad2296
+webtitle: NodeJS
+updated: 2021-12-10T19:53:25+07:00
 ---
 
 # NODEJS OPTIONS [ NODE_OPTIONS ]
@@ -57,3 +57,7 @@ These above codes would limit the heap totals to 225mb and 450mb respectively. I
 - `--max-executable-size` the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).
 - `--max-old-space-size` the maximum size of heap reserved for long term objects
 - `--max-semi-space-size` the maximum size of heap reserved for short term objects
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

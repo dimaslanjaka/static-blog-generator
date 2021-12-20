@@ -1,30 +1,25 @@
 ---
-title: Midi
-webtitle: The Legend Of Neverland
-subtitle: "Midi collection for the legend of neverland perform music skill"
-
-lang: en
-
-date: 2021-08-21
-
-type: post
-
-tags:
-  - Life Skill
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
-
 comments: true
+cover: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
+date: 2021-08-21T00:00:00+07:00
+lang: en
+location: Indonesia
 related_posts:
   - /The%20Legend%20Of%20Neverland/Recipes.html
-cover: "https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg"
-location: Indonesia
+subtitle: Midi collection for the legend of neverland perform music skill
+tags:
+  - Life Skill
+title: Midi
+type: post
+uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
+webtitle: The Legend Of Neverland
+updated: 2021-12-19T06:34:03+07:00
 ---
 
   ### NPC's favorite musical instrument
@@ -69,3 +64,7 @@ location: Indonesia
 {% youtube tik3ZFwFsJA %}
 
 {% youtube kIXXv8oUqOc %}
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

@@ -1,16 +1,18 @@
 ---
-title: Magical Book For Bow
-webtitle: Minecraft
-subtitle: How to use magical books for bow
-date: 2021-12-12T13:01:00
 cover: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
-lang: en
-tags:
-  - games
-  - minecraft
+date: 2021-12-12T13:01:00+07:00
 keywords:
   - bow
   - minecraft
+lang: en
+subtitle: How to use magical books for bow
+tags:
+  - games
+  - minecraft
+title: Magical Book For Bow
+uuid: a4619a8b-d625-4888-8e18-5569e773bd85
+webtitle: Minecraft
+updated: 2021-12-16T23:40:43+07:00
 ---
 
 # Super Magical Bow Recipes
@@ -56,3 +58,7 @@ You must choose one of the Magical Books below as the last step.
 
 
 {% youtube sSnrK7m2RFo %}
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

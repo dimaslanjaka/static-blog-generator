@@ -1,28 +1,28 @@
 ---
-title: Hero Usage and Equipment Guide
-webtitle: Seven Knights 2
-subtitle: "Seven Knights 2 Hero Usage and Equipment Guide"
-lang: en
-date: 2021-12-03T18:00:00
-type: post
-tags:
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+category:
   - Games
+  - Seven Knight
+comments: true
+cover: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
+date: 2021-12-03T18:00:00+07:00
 keywords:
   - Seven Knight
   - Guide
   - Hero
   - Equipment
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
-category:
-  - Games
-  - Seven Knight
-
-cover: "https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg"
+lang: en
 location: Indonesia
-comments: true
+subtitle: Seven Knights 2 Hero Usage and Equipment Guide
+tags:
+  - Games
+title: Hero Usage and Equipment Guide
+type: post
+uuid: c49cfc4a-d91b-4888-8c78-1f1f111e778c
+webtitle: Seven Knights 2
+updated: 2021-12-03T19:06:19+07:00
 ---
 
 <p>
@@ -436,3 +436,7 @@ Scenario, PvP, Elixir dungeon, Divinity dungeon, Exp dungeon.            <strong
         </p>
     </li>
 </ul>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

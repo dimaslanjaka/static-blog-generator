@@ -27,3 +27,4 @@ build/*
 
 tmp
 temo
+*.tar.xz

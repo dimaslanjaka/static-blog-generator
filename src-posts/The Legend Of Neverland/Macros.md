@@ -1,31 +1,25 @@
 ---
-title: Macros Auto Click Bluestacks
-webtitle: The Legend Of Neverland
-subtitle: "Macros Auto Click Bluestacks for the legend of neverland download"
-
-lang: en
-# Y-M-D
-date: 2021-09-07
-
-type: post
-
-tags:
-  - Macros
-  - Auto Click
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
   - Bluestacks
-
 comments: true
-
-cover: "https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg"
+cover: https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
+date: 2021-09-07T00:00:00+07:00
+lang: en
 location: Indonesia
+subtitle: Macros Auto Click Bluestacks for the legend of neverland download
+tags:
+  - Macros
+  - Auto Click
+title: Macros Auto Click Bluestacks
+type: post
+uuid: 4fc575e7-a1ab-4888-8279-4eed4d8c1d85
+webtitle: The Legend Of Neverland
+updated: 2021-12-19T06:34:14+07:00
 ---
 
 Indeed, in case you're on BlueStacks construct 4.130 or higher, you'll approach the Macros, a component that permits you to record yourself finishing a portion of these dull jobs/monotonous tasks, and afterward utilize these accounts to mechanize them in each resulting endeavor.
@@ -88,3 +82,7 @@ _Select JSON macros script then import_
 
 ![image](https://user-images.githubusercontent.com/12471057/132939502-c9bb6e0c-284b-47a9-84b5-8863af2266f5.png)
 _Import successful_
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>
