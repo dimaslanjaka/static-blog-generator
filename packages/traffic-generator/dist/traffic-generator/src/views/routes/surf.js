@@ -17,14 +17,15 @@ webviews.forEach((webview) => {
     const reloadWebProxy = (partisi, clear_cache = false, change_useragent = false) => {
         proxyText.setAttribute("class", "text-primary");
         proxyText.innerHTML = "Changing Proxy...";
-        if (change_useragent)
+        if (change_useragent) {
             ipr.invoke("change-webview-ua", partisi).then((ua) => {
                 console.log("useragent", ua);
             });
+        }
         ipr.invoke("change-webview-proxy", partisi, clear_cache).then((proxy) => {
             proxyText.innerHTML = proxy;
         });
-        console.log(webview.getAttribute("src"));
+        //console.log(webview.getAttribute("src"));
     };
     // loader
     const loadstart = () => {
@@ -35,10 +36,14 @@ webviews.forEach((webview) => {
     };
     webview.addEventListener("did-start-loading", loadstart);
     webview.addEventListener("did-stop-loading", loadstop);
-    // init proxy
-    reloadWebProxy(partisi, true, true);
+    let init = false;
     // process after dom-ready
     webview.addEventListener("dom-ready", (e) => {
+        if (!init) {
+            init = true;
+            // init proxy
+            reloadWebProxy(partisi, true, true);
+        }
         const url = webview.getURL();
         const title = webview.getTitle();
         const titleText = webviewContainer.querySelector('[data-id="title"]');
