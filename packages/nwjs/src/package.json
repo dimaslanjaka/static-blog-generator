@@ -5,9 +5,37 @@
   "chromium-args": "--disable-raf-throttling",
   "window": {
     "icon": "img/icon.png",
-    "height": 240,
-    "resizable": false,
-    "width": 400,
+    "height": 600,
+    "resizable": true,
+    "width": 1000,
     "title": "Metronome_manifest_window_title"
+  },
+  "webview": {
+    "partitions": [
+      {
+        "name": "web-session",
+        "accessible_resources": [
+          "<all_urls>"
+        ]
+      },
+      {
+        "name": "web-session-1",
+        "accessible_resources": [
+          "<all_urls>"
+        ]
+      },
+      {
+        "name": "web-session-2",
+        "accessible_resources": [
+          "<all_urls>"
+        ]
+      },
+      {
+        "name": "web-session-3",
+        "accessible_resources": [
+          "<all_urls>"
+        ]
+      }
+    ]
   }
 }

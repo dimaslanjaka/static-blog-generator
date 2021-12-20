@@ -1,22 +1,35 @@
 {
-  "name": "nwjs-tutorial",
+  "name": "app",
   "version": "0.0.1",
-  "description": "Tutorial to use NW.js to create a desktop program from a JavaScript app.",
-  "author": "Wouter Hisschemöller",
-  "homepage": "https://github.com/hisschemoller/nwjs-tutorial#readme",
+  "description": "Node-Webkit Test",
+  "chromium-args": "--remote-debugging-port=9222 --disable-raf-throttling --disable-features=nw2 -ignore-certificate-errors",
+  "window": {
+    "icon": "src/img/icon.png",
+    "height": 600,
+    "resizable": true,
+    "width": 1000,
+    "title": "Metronome_manifest_window_title"
+  },
+  "webview": {
+    "partitions": [
+      {
+        "name": "web-session",
+        "accessible_resources": [
+          "<all_urls>"
+        ]
+      }
+    ]
+  },
+  "author": "Dimas Lanjaka",
   "license": "mit",
   "private": true,
   "main": "src/index.html",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hisschemoller/nwjs-tutorial.git"
-  },
   "scripts": {
     "start": "node index.js",
     "start-nw": "nw --disable-raf-throttling"
   },
   "devDependencies": {
     "express": "^4.16.4",
-    "nw": "0.38.0-sdk"
+    "nw": "^0.38.0-sdk"
   }
 }
