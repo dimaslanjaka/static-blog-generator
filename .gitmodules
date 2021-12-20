@@ -26,3 +26,6 @@
 	path = packages/hexo-client
 	url = https://github.com/dimaslanjaka/hexo-client.git
 	branch = dimaslanjaka
+[submodule "packages/hexo-generator-sitemap"]
+	path = packages/hexo-generator-sitemap
+	url = https://github.com/dimaslanjaka/hexo-generator-sitemap.git
