@@ -2,5 +2,7 @@
 . "$(dirname "$0")/_/husky.sh"
 
 gulp update-hash
-git add .guid
-git commit -m "update hash"
+if `git status | grep -q ".guid"`; then
+  git add .guid
+  #git commit -m "update hash"
+fi
