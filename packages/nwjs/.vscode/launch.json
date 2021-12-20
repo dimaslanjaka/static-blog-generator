@@ -5,10 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "nw . --remote-debugging-port=9222 --disable-raf-throttling",
+      "command": "nw . --remote-debugging-port=9222 --disable-raf-throttling --disable-features=nw2",
       "name": "Start",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "PORT": "4000"
       },
       "request": "launch",
       "type": "node-terminal"
