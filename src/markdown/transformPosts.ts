@@ -29,6 +29,9 @@ type parsePostReturn = LooseObject & {
      */
     title: string;
     subtitle: string;
+    uuid?: string;
+    updated?: string;
+    description?: string;
   };
   /**
    * Article body
@@ -83,7 +86,8 @@ export function parsePost(text: string): parsePostReturn | null {
   const regex = /^---([\s\S]*?)---\n/gm;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   const originalArg = text;
-  if (text.startsWith("/")) {
+  const isFile = text.startsWith("/") && fs.statSync(text).isFile();
+  if (isFile) {
     text = readFileSync(text).toString();
   }
 
