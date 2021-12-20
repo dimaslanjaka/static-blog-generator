@@ -66,39 +66,43 @@ function articleCopy(done: TaskCallback) {
   const destDir = slash(prodPostDir);
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
 
-  setTimeout(function () {
-    // To copy a folder
-    copyDir(srcDir, destDir, function (err) {
-      if (err) {
-        console.error(err);
-        console.error("error");
-        if (tryCount == 0) {
-          tryCount++;
-          return articleCopy(done);
-        }
-      } else {
-        console.log("copied successful!");
-
-        // process
-        const loop = loopDir(destDir);
-        includeFile(destDir);
-        loop.forEach(function (file) {
-          if (fs.statSync(file).isFile() && file.endsWith(".md")) {
-            shortcodeNow(file);
-            shortcodeScript(file);
-            shortcodeCss(file);
-            replaceMD2HTML(file);
-            const parse = parsePost(file);
-            const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
-            writeFileSync(file, rebuildPost);
-          }
-        });
-
-        // notify gulp process has done
-        done();
+  // To copy a folder
+  copyDir(srcDir, destDir, function (err) {
+    if (err) {
+      console.error(err);
+      console.error("error");
+      if (tryCount == 0) {
+        tryCount++;
+        return articleCopy(done);
       }
-    });
-  }, 1000);
+    } else {
+      console.log("copied successful!");
+
+      // process
+      const loop = loopDir(destDir);
+      includeFile(destDir);
+      loop.forEach(function (file) {
+        const sourceFile = file.replace("/source/_posts/", "/src-posts/");
+        if (fs.statSync(file).isFile() && file.endsWith(".md")) {
+          shortcodeNow(file);
+          shortcodeScript(file);
+          shortcodeCss(file);
+          replaceMD2HTML(file);
+          const parse = parsePost(file);
+          if (!parse.metadata.updated && fs.existsSync(sourceFile)) {
+            const stats = fs.statSync(sourceFile);
+            const mtime = stats.mtime;
+            parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
+          }
+          const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+          writeFileSync(file, rebuildPost);
+        }
+      });
+
+      // notify gulp process has done
+      done();
+    }
+  });
 }
 
 // just copy from source posts (src-posts) to production posts (source/_posts)
