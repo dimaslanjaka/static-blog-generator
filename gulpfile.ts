@@ -88,14 +88,6 @@ function articleCopy(done: TaskCallback) {
           shortcodeScript(file);
           shortcodeCss(file);
           replaceMD2HTML(file);
-          const parse = parsePost(file);
-          if (!parse.metadata.updated && fs.existsSync(sourceFile)) {
-            const stats = fs.statSync(sourceFile);
-            const mtime = stats.mtime;
-            parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
-          }
-          const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
-          writeFileSync(file, rebuildPost);
         }
       });
 
