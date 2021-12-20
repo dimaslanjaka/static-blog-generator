@@ -1,0 +1,13 @@
+{
+  "name": "Metronome_manifest_name",
+  "description": "A metronome app to keep time.",
+  "main": "index.html",
+  "chromium-args": "--disable-raf-throttling",
+  "window": {
+    "icon": "img/icon.png",
+    "height": 240,
+    "resizable": false,
+    "width": 400,
+    "title": "Metronome_manifest_window_title"
+  }
+}
