@@ -1,23 +1,25 @@
 ---
-title: Mora Cost Artifact
-webtitle: Genshin Impact
-subtitle: Rarity Exp Multiplier Chance
-lang: en
-date: 2021-05-13T20:37:00.008+07:00
-type: post
-tags:
-  - Genshin Impact
-  - Games
-  - Tips & Tricks
 author:
   nick: Dimas Lanjaka
   link: https://www.blogger.com/profile/07981649157148639830
   email: noreply@blogger.com
-modified: 2021-06-01T02:19:33.298+07:00
 category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/63?cb=20201226100736
+date: 2021-05-13T20:37:00.008+07:00
+lang: en
 location: ""
+modified: 2021-06-01T02:19:33.298+07:00
+subtitle: Rarity Exp Multiplier Chance
+tags:
+  - Genshin Impact
+  - Games
+  - Tips & Tricks
+title: Mora Cost Artifact
+type: post
+uuid: 7c2644ae-b310-4888-8272-15eb1b3dc9bb
+webtitle: Genshin Impact
+updated: 2021-12-03T22:15:36+07:00
 ---
 
 <!-- @format -->
@@ -466,3 +468,7 @@ location: ""
     visibility: visible;
   }
 </style>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

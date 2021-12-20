@@ -31,6 +31,7 @@ type parsePostReturn = LooseObject & {
     subtitle: string;
     uuid?: string;
     updated?: string;
+    date: string;
     description?: string;
   };
   /**

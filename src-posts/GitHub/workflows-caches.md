@@ -1,27 +1,27 @@
 ---
-title: Mempercepat GitHub Workflow Dengan Cache Strategy
-webtitle: WMI GitHub
-subtitle: "Cara menggunakan cache untuk mempercepat GitHub Workflows"
-lang: id
-date: 2021-11-18T22:00:00
-type: post
-tags:
-  - GitHub
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+category:
+  - Programming
+comments: true
+cover: /GitHub/workflows/cover2.jpg
+date: 2021-11-18T22:00:00+07:00
 keywords:
   - GitHub
   - workflows
   - yml
   - cache
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
-category:
-  - Programming
-
-cover: "/GitHub/workflows/cover2.jpg"
+lang: id
 location: Indonesia
-comments: true
+subtitle: Cara menggunakan cache untuk mempercepat GitHub Workflows
+tags:
+  - GitHub
+title: Mempercepat GitHub Workflow Dengan Cache Strategy
+type: post
+uuid: 1525e23b-de51-4888-8aa7-b643034cdf7d
+webtitle: WMI GitHub
+updated: 2021-11-21T23:06:49+07:00
 ---
 
 ## Mempercepat kinerja github workflow
@@ -61,4 +61,7 @@ Metode ini harus kamu tulis sendiri di dalam program-mu. Setiap bahasa pemrogram
 - [PHP Cache](http://www.php-cache.com/en/latest/)
 - [Python Cache](https://docs.python.org/3.4/library/functools.html#functools.lru_cache)
 
-Sekian artikel tentang metode cache github workflow. **Artikel ini akan terus di update**, **jangan lupa di bookmark**. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.
+Sekian artikel tentang metode cache github workflow. **Artikel ini akan terus di update**, **jangan lupa di bookmark**. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

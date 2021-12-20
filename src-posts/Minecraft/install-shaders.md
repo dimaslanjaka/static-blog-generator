@@ -1,18 +1,21 @@
 ---
-title: Bagaimana cara install shaders minecraft
-webtitle: Minecraft
-subtitle: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci ini dengan screenshot
-date: 2021-12-16T22:57:00
 cover: /Minecraft/install-shaders/cover.jpg
-tags:
-  - games
-  - minecraft
+date: 2021-12-16T22:57:00+07:00
 keywords:
   - shaders
   - tutorial
   - minecraft
-toc: true
 lang: id
+subtitle: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci
+  ini dengan screenshot
+tags:
+  - games
+  - minecraft
+title: Bagaimana cara install shaders minecraft
+toc: true
+uuid: 9c4dd0da-b700-4888-8ecc-3cdc3654907b
+webtitle: Minecraft
+updated: 2021-12-16T23:40:27+07:00
 ---
 
 # Shaders
@@ -71,4 +74,7 @@ Sekarang tinggal download dan install shaders saja. Kali ini saya akan menggunak
 
 *   **[Shaders Mod v2.3.30 For Minecraft 1.7.2](https://www.mediafire.com/file/pj0aru2vwph46hr/ShadersModCore-v2.3.30-mc1.7.2-f.jar)** – Kompatibel dengan Forge Latest _Kompatibel dengan OptiFine\_1.7.2\_HD\_U\_D3_ . (hanya ultra edition)
 
-*   **[Shaders Mod v2.2.3 For Minecraft 1.6.4](https://www.mediafire.com/file/f0cn5wabknbuh3s/ShadersModCore-v2.2.3-mc1.6.4-f965.jar)** – Kompatibel dengan Forge Latest _Kompatibel dengan OptiFine\_1.6.4\_HD\_U\_D1_ (hanya ultra edition)
+*   **[Shaders Mod v2.2.3 For Minecraft 1.6.4](https://www.mediafire.com/file/f0cn5wabknbuh3s/ShadersModCore-v2.2.3-mc1.6.4-f965.jar)** – Kompatibel dengan Forge Latest _Kompatibel dengan OptiFine\_1.6.4\_HD\_U\_D1_ (hanya ultra edition)<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

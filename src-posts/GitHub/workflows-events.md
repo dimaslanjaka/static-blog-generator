@@ -1,24 +1,26 @@
 ---
-title: GitHub Workflow Events
-webtitle: WMI GitHub
-subtitle: "Macam-macam events pada GitHub Workflows"
-lang: id
-date: 2021-11-21T23:00:00
-type: post
-tags:
-  - GitHub
+author:
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
+category:
+  - Programming
+comments: true
+cover: /GitHub/workflows/events.png
+date: 2021-11-21T23:00:00+07:00
 keywords:
   - GitHub
   - workflows
   - yml
-author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-category:
-  - Programming
-cover: "/GitHub/workflows/events.png"
+lang: id
 location: Indonesia
-comments: true
+subtitle: Macam-macam events pada GitHub Workflows
+tags:
+  - GitHub
+title: GitHub Workflow Events
+type: post
+uuid: e94a4f00-6a10-4888-8fca-dfc8fe6e687f
+webtitle: WMI GitHub
+updated: 2021-12-20T15:33:55+07:00
 ---
 
 # Events yang memicu Github Workflow
@@ -95,4 +97,7 @@ on:
        - run: echo "First workflow was a failure"
 ```
 
-Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.
+Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

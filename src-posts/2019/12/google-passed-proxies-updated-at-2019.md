@@ -1,22 +1,23 @@
 ---
-title: Google passed proxies, updated at 2019-12-29
-webtitle: WMI Gitlab
-subtitle: Fresh proxy oogle passedGoogle passed proxies,
-lang: en
-date: 2019-12-30T04:08:00.001+07:00
-type: post
-tags:
-  - Proxy
 author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-modified: 2019-12-30T04:08:12.354+07:00
 category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+date: 2019-12-30T04:08:00.001+07:00
+lang: en
 location: ""
-
+modified: 2019-12-30T04:08:12.354+07:00
+subtitle: Fresh proxy oogle passedGoogle passed proxies,
+tags:
+  - Proxy
+title: Google passed proxies, updated at 2019-12-29
+type: post
+uuid: 4e97f685-3821-4888-83bd-d8b40799a5f1
+webtitle: WMI Gitlab
+updated: 2021-11-08T00:26:52+07:00
 ---
 
 <div id="proxy_result_wrapper">
@@ -57,4 +58,7 @@ location: ""
          </div>
  
        </div>
-     
+     <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

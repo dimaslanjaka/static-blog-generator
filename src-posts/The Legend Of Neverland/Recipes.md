@@ -1,28 +1,23 @@
 ---
-title: Cooking Recipes
-webtitle: The Legend Of Neverland
-subtitle: "Cooking recipes in the legend of neverland game android ios"
-
-lang: en
-
-date: 2021-08-15
-
-type: post
-
-tags:
-  - Life Skill
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
-
-cover: "/The%20Legend%20Of%20Neverland/Recipes/recipes.jpg"
-location: Indonesia
 comments: false
+cover: /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
+date: 2021-08-15T00:00:00+07:00
+lang: en
+location: Indonesia
+subtitle: Cooking recipes in the legend of neverland game android ios
+tags:
+  - Life Skill
+title: Cooking Recipes
+type: post
+uuid: 67b14bd4-5e1c-4888-8fd8-a2e2e0038291
+webtitle: The Legend Of Neverland
+updated: 2021-12-19T06:34:39+07:00
 ---
 
   <!-- toc -->
@@ -268,3 +263,7 @@ comments: false
 ![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
 
   <!-- script /source/assets/js/recipes.js -->
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

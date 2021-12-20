@@ -105,6 +105,33 @@ function articleCopy(done: TaskCallback) {
   });
 }
 
+gulp.task("article:fix", (done) => {
+  const loop = loopDir(path.join(__dirname, "src-posts"));
+  loop.forEach((file) => {
+    const parse = parsePost(file);
+    let allowWriten = false;
+    if (parse) {
+      if (parse.metadata) {
+        if (!parse.metadata.updated) {
+          const stats = fs.statSync(file);
+          const mtime = stats.mtime;
+          parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
+          allowWriten = true;
+        }
+        if (!parse.metadata.date.includes("+")) {
+          parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
+          allowWriten = true;
+        }
+      }
+    }
+    if (allowWriten) {
+      const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+      writeFileSync(file, rebuildPost);
+    }
+  });
+  done();
+});
+
 // just copy from source posts (src-posts) to production posts (source/_posts)
 gulp.task("article:copy", function (done) {
   articleCopy(done);

@@ -1,34 +1,29 @@
 ---
-title: Bluestacks Game Control The Legend Of Neverland
-
-subtitle: "Game control the legend of neverland bluestacks Support change fairy and job skill"
-
-lang: en
-
-date: 2021-09-07
-
-type: post
-
-tags:
-  - Game Control
-
 author:
-  nick: "Maulinda Agustina"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Maulinda Agustina
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - The Legend Of Neverland
   - Bluestacks
-
 comments: true
+cover: https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png
+date: 2021-09-07T00:00:00+07:00
 keywords:
   - download game control bluestacks
   - download game control the legend of neverland for bluestacks
   - download the legend of neverland for bluestacks
   - complex game control the legend of neverland for bluestacks
-cover: "https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png"
+lang: en
 location: Indonesia
+subtitle: Game control the legend of neverland bluestacks Support change fairy
+  and job skill
+tags:
+  - Game Control
+title: Bluestacks Game Control The Legend Of Neverland
+type: post
+uuid: ec9e4ed7-6ff8-4888-8800-3e184ff42ba6
+updated: 2021-12-19T06:34:29+07:00
 ---
 
 ### Requirements
@@ -63,3 +58,7 @@ location: Indonesia
   <img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="300px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" />
 </div>
 <div style="clear:both;"></div>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

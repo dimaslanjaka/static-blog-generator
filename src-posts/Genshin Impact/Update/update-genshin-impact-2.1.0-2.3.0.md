@@ -1,28 +1,23 @@
 ---
-title: Update Genshin Impact 2.3.0 Manual
-webtitle: WMI Genshin Impact
-subtitle: "Update Genshin Impact 2.1.0 - 2.3.0 Manual"
-
-date: "2021-11-26"
-
-lang: en
-
-type: post
-
-tags:
-  - Games
-  - Genshin Impact
-
 author:
-  nick: "Dimas Lanjaka"
-  link: "https://github.com/dimaslanjaka"
-
+  nick: Dimas Lanjaka
+  link: https://github.com/dimaslanjaka
 category:
   - Games
   - Genshin Impact
-
-cover: "/Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg"
+cover: /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
+date: 2021-11-26T00:00:00+07:00
+lang: en
 location: Indonesia
+subtitle: Update Genshin Impact 2.1.0 - 2.3.0 Manual
+tags:
+  - Games
+  - Genshin Impact
+title: Update Genshin Impact 2.3.0 Manual
+type: post
+uuid: dae70e1a-6ea2-4888-8409-ebbcd9a13c41
+webtitle: WMI Genshin Impact
+updated: 2021-11-27T10:38:39+07:00
 ---
 
 Update genshin impact `2.3.0` manual via download manager (IDM).
@@ -135,4 +130,7 @@ Now,
 | -------- | :--------------------------------------------------: |
 | Blog  |     [webmanajemen.com](https://webmanajemen.com)     |
 | Git Page | [www.webmanajemen.com](https://www.webmanajemen.com) |
-| GitHub | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |
+| GitHub | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>
