@@ -22,7 +22,7 @@ comments: true
 ---
 
 # Events yang memicu Github Workflow
-Anda dapat mengonfigurasi alur kerja Anda untuk berjalan saat aktivitas tertentu di GitHub terjadi, pada waktu yang dijadwalkan, atau saat peristiwa di luar GitHub terjadi.
+Anda dapat mengkonfigurasi alur kerja Anda untuk berjalan saat aktivitas tertentu di GitHub terjadi, pada waktu yang dijadwalkan, atau saat peristiwa di luar GitHub terjadi.
 
 ## Contoh Menggunakan single event
 ```yaml
