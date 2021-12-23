@@ -1,9 +1,6 @@
 name: Build
 
 on:
-  # schedule this job every 1:45 AM everydays
-  schedule:
-    - cron: "45 1 * * *"
   pull_request:
     branches:
       - compiler # run when this branch pull requested
