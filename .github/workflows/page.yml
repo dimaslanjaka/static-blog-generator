@@ -37,6 +37,8 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+      - name: submodule update
+        run: git submodule update --remote --recursive
       - name: Get npm cache directory
         id: npm-cache-dir
         run: echo "::set-output name=dir::$(npm config get cache)"
