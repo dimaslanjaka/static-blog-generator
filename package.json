@@ -26,7 +26,8 @@
     "lint:format": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "postinstall": "cd themes/material && npm install",
     "wsl-install": "rm -r node_modules && npm install --platform=win32",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prototypes": "npm un js-prototypes && npm i git+https://github.com/dimaslanjaka/js-prototypes.git"
   },
   "hexo": {
     "version": "5.4.0"
