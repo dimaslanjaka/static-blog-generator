@@ -96,12 +96,15 @@ jobs:
           node userscripts/after_generated.js
           echo "Validating"
           node userscripts/validate.js
-          echo "Minifying HTML"
-          gulp hexo:minify
           echo "Generating Sitemap Text"
           gulp sitemap
           echo "Generating Google News Sitemap"
           gulp sitemap-gn
+      - name: Minify HTML
+        if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        run: gulp hexo:minify
+        # continue on error, prevent failing/exited
+        continue-on-error: true
 
       - name: Commit Files
         id: git-commit
