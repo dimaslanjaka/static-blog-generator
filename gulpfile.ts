@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import "./packages/hexo-seo/packages/js-prototypes/src/globals";
+//import "./packages/hexo-seo/packages/js-prototypes/src/globals";
+import "js-prototypes";
 import * as gulp from "gulp";
 import * as path from "path";
 import transformPosts, { md5, parsePost, transformPostBody, uuidv4 } from "./src/markdown/transformPosts";
@@ -202,7 +203,9 @@ function sitemap(done?: TaskCallback) {
     walk("source", (err, files) => {
       const filter = files
         .filter((file) => {
-          return /\.(md|html)$/.test(file) && !/\/Test\/|\/404\.html/.test(file);
+          return (
+            /\.(md|html)$/.test(file) && !/\/readme.md$/.test(file.toLowerCase()) && !/\/Test\/|\/404\.html/.test(file)
+          );
         })
         .map((file) => {
           return file
