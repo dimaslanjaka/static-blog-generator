@@ -52,7 +52,7 @@ jobs:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      - name: Get Cache NPM dependencies
+      - name: Get Caches
         id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: actions/cache@v2
         with:
@@ -63,6 +63,7 @@ jobs:
             ~/.npm
             ./tmp
             ./build
+            ./packages
           key: ${{ runner.os }}-npm-${{ hashFiles('**/.guid') }}${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-npm-
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
