@@ -63,8 +63,8 @@ jobs:
             ~/.npm
             ./tmp
             ./build
-          key: ${{ runner.os }}-${{ hashFiles('**/.guid') }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('**/.guid') }}-
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/.guid') }}${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not found
         if: steps.npm-cache.outputs.cache-hit != 'true'
