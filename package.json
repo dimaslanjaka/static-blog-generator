@@ -29,9 +29,6 @@
     "prepare": "husky install",
     "prototypes": "npm un js-prototypes && npm i git+https://github.com/dimaslanjaka/js-prototypes.git"
   },
-  "hexo": {
-    "version": "5.4.0"
-  },
   "engines": {
     "node": ">=12.22.6",
     "npm": ">=6.x"
@@ -75,7 +72,7 @@
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-renderer-swig": "^1.1.0",
     "hexo-seo": "file:packages/hexo-seo",
-    "hexo-server": "^2.0.0",
+    "hexo-server": "github:hexojs/hexo-server",
     "hexo-util": "^2.5.0",
     "imagemin": "^6.1.0",
     "imagemin-giflossy": "^5.1.10",
@@ -89,14 +86,12 @@
     "imagemin-webp": "^5.0.0",
     "imagemin-zopfli": "^7.0.0",
     "jsdom": "^16.6.0",
-    "lodash": "^4.17.21",
     "lunr": "github:mamboer/lunr.js",
     "markdown-it-attrs": "file:packages/markdown-it-attrs",
     "minimatch": "^3.0.4",
     "moment": "^2.29.1",
     "node-libcurl": "^2.3.3",
     "node-sass": "^6.0.1",
-    "nodemon": "^2.0.7",
     "object-assign": "^4.1.1",
     "rimraf": "^3.0.2",
     "showdown": "^1.9.1",
@@ -141,7 +136,6 @@
     "babel-eslint": "^10.1.0",
     "body-parser": "^1.19.0",
     "browser-sync": "^2.26.14",
-    "connect-livereload": "^0.6.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-spawn": "^7.0.3",
@@ -163,10 +157,8 @@
     "hexo-related-posts": "file:./packages/hexo-related-posts",
     "html-minifier-terser": "^5.1.1",
     "husky": "^7.0.4",
-    "livereload": "^0.9.3",
     "ngrok": "^4.2.2",
     "pako": "^2.0.3",
-    "plugin-error": "^1.0.1",
     "prettier": "^2.4.1",
     "request": "^2.88.2",
     "response-time": "^2.3.2",
