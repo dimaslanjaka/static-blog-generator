@@ -333,6 +333,7 @@ gulp.task("sitemap-gn", (done) => {
 });
 
 import { hashElement } from "folder-hash";
+import md5File from "md5-file";
 // update .guid has based on src-posts for github workflow cache
 gulp.task("update-hash", (done) => {
   const loc = path.join(__dirname, ".guid");
@@ -343,7 +344,8 @@ gulp.task("update-hash", (done) => {
 
   hashElement("./src-posts", options)
     .then((hash) => {
-      writeFileSync(loc, uuidv4(hash.toString()));
+      const pkglock = md5File.sync(path.join(__dirname, "package-lock.json"));
+      writeFileSync(loc, uuidv4(hash.toString() + pkglock));
     })
     .catch((error) => {
       return console.error("hashing failed:", error);

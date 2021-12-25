@@ -157,6 +157,7 @@
     "hexo-related-posts": "file:./packages/hexo-related-posts",
     "html-minifier-terser": "^5.1.1",
     "husky": "^7.0.4",
+    "md5-file": "^5.0.0",
     "ngrok": "^4.2.2",
     "pako": "^2.0.3",
     "prettier": "^2.4.1",
