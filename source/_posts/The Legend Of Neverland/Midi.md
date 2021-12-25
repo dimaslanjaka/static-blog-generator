@@ -7,7 +7,7 @@ category:
   - The Legend Of Neverland
 comments: true
 cover: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-date: 2021-08-21
+date: 2021-08-21T00:00:00+07:00
 lang: en
 location: Indonesia
 related_posts:
@@ -22,9 +22,9 @@ webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:03+07:00
 ---
 
-  ### NPC's favorite musical instrument
+### NPC's favorite musical instrument
 
-  > Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
+> Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
 
 | NPC Name | NPC Location | musical instrument |
 | -------- | ------------ | ------------------ |

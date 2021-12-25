@@ -7,7 +7,7 @@ category:
   - Regular Expression
 comments: false
 cover: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
-date: 2021-09-22
+date: 2021-09-22T00:00:00+07:00
 lang: en
 location: Indonesia
 subtitle: Regular Expression is a

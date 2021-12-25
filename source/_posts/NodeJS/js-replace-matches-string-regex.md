@@ -3,7 +3,7 @@ author:
   nick: Dimas Lanjaka
   link: http://webmanajemen.com
 cover: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/DWR2ZKQ/carbon-3.png
-date: 2021-12-19 15:07:43
+date: 2021-12-19T15:07:43+07:00
 subtitle: How to match regex from string and replace matched string $1-$9
 tags:
   - JS

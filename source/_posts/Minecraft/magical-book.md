@@ -1,6 +1,6 @@
 ---
 cover: /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
-date: 2021-12-12T13:01:00
+date: 2021-12-12T13:01:00+07:00
 keywords:
   - magical books
   - enchantments

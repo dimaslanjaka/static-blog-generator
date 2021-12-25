@@ -6,7 +6,7 @@ category:
   - Games
   - Genshin Impact
 cover: /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
-date: 2021-11-26
+date: 2021-11-26T00:00:00+07:00
 lang: en
 location: Indonesia
 subtitle: Update Genshin Impact 2.1.0 - 2.3.0 Manual

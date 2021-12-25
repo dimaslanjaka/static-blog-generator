@@ -1,6 +1,6 @@
 ---
 cover: /Minecraft/install-shaders/cover.jpg
-date: 2021-12-16T22:57:00
+date: 2021-12-16T22:57:00+07:00
 keywords:
   - shaders
   - tutorial

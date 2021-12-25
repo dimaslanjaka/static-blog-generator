@@ -7,7 +7,7 @@ category:
   - The Legend Of Neverland
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
-date: 2021-08-16
+date: 2021-08-16T00:00:00+07:00
 keywords:
   - quiz the legend of neverland
   - jawaban quiz the legend of neverland
@@ -57,7 +57,7 @@ updated: 2021-12-19T06:28:57+07:00
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      12/20/2021, 6:55:27 PM
+      12/25/2021, 8:24:13 PM
     </small>
 
   </div>
