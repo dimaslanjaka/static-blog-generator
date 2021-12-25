@@ -7,7 +7,7 @@ category:
   - The Legend Of Neverland
 comments: false
 cover: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
-date: 2021-08-15
+date: 2021-08-15T00:00:00+07:00
 lang: en
 location: Indonesia
 related_posts:

@@ -6,7 +6,7 @@ category:
   - Regular Expression
 comments: false
 cover: /RegExp/RegExp/badwords.png
-date: 2021-09-22
+date: 2021-09-22T00:00:00+07:00
 lang: en
 location: Indonesia
 subtitle: Match string not containing string, exclude badwords

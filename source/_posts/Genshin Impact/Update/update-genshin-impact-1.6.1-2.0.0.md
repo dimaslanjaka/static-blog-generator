@@ -6,7 +6,7 @@ category:
   - Games
   - Genshin Impact
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg
-date: 2021-08-16
+date: 2021-08-16T00:00:00+07:00
 lang: en
 location: Indonesia
 subtitle: Update Genshin Impact 1.6.1 - 2.0.0 Manual

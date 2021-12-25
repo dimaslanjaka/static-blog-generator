@@ -7,7 +7,7 @@ category:
   - The Legend Of Neverland
 comments: true
 cover: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
-date: 2021-08-17
+date: 2021-08-17T00:00:00+07:00
 lang: en
 location: Indonesia
 subtitle: Expel Incident With The Highest Fairies Exp And Crystals Rewards.

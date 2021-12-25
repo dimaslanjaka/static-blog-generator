@@ -1,6 +1,6 @@
 ---
 cover: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
-date: 2021-12-12T13:01:00
+date: 2021-12-12T13:01:00+07:00
 keywords:
   - bow
   - minecraft

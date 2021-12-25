@@ -7,7 +7,7 @@ category:
   - Programming
 comments: true
 cover: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
-date: 2021-11-28T07:00:00
+date: 2021-11-28T07:00:00+07:00
 keywords:
   - nodejs
   - eslint
