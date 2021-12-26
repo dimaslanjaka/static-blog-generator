@@ -1,1 +1,0 @@
-{"version":3,"file":"socks5.d.ts","sourceRoot":"","sources":["../../../../src/proxies/socks5.ts"],"names":[],"mappings":"AACA,OAAO,oDAAoD,CAAC;AAK5D,MAAM,CAAC,OAAO;IACZ,IAAI,SAAuC;IAE3C,GAAG,EAAE,QAAQ,CAAC,aAAa,CAAC;gBAEhB,IAAI,EAAE,QAAQ,CAAC,aAAa;IAIxC,aAAa,IAAI,MAAM,EAAE;IAMzB,SAAS;IAMT,WAAW,CAAC,GAAG,EAAE,MAAM;CAcxB"}
