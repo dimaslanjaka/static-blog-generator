@@ -1,5 +1,5 @@
-nestjs
-node_modules
-tmp
-build
-databases
+nestjs/
+node_modules/
+tmp/
+build/
+databases/

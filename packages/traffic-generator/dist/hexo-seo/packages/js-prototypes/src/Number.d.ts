@@ -17,27 +17,4 @@ declare interface Number {
      */
     AddZero(add: number, target: string): number;
 }
-/**
- * Odd or Even (Ganjil Genap);
- * @param n
- * @param type odd or even
- */
-declare function oddoreven(n: string, type: string): boolean;
-/**
- * strpad / startwith zero [0]
- * @param {number} val
- */
-declare function strpad(val: number): string | number;
-/**
- * is variable number?
- * @param n
- * @returns
- */
-declare function isInt(n: any): boolean;
-/**
- * is variable float?
- * @param n
- * @returns
- */
-declare function isFloat(n: any): boolean;
 //# sourceMappingURL=Number.d.ts.map

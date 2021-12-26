@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./Array");
-require("./String");
-require("./Object");
 require("./Number");
+require("./Array");
+require("./Object");
+require("./String");
 //# sourceMappingURL=globals.js.map

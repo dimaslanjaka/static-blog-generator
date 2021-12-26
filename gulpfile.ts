@@ -344,7 +344,9 @@ gulp.task("update-hash", (done) => {
 
   hashElement("./src-posts", options)
     .then((hash) => {
+      // generate md5 has from package-lock.json
       const pkglock = md5File.sync(path.join(__dirname, "package-lock.json"));
+      // write merged uuid v4 from md5 hashes
       writeFileSync(loc, uuidv4(hash.toString() + pkglock));
     })
     .catch((error) => {
