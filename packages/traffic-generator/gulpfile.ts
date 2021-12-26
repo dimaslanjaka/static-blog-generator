@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import { exec } from "child_process";
 import del from "del";
+import Promise from "bluebird";
 
 // copy non ts files
 const copyNonTsFiles = function () {
@@ -21,36 +22,16 @@ const tsc = function (cb?) {
 };
 
 function clean(done) {
-  exec("rm -rf dist", function () {
-    done();
-  });
+  return del("dist");
 }
 
-exports.clean = clean;
-exports.del = clean;
+gulp.task("clean", clean);
 
 gulp.task("tsc", tsc);
 gulp.task("watch", function () {
   return gulp.watch(["./src/**/*"], gulp.series("tsc", "copy-non-ts"));
 });
 
-/*gulp.task("watch", function () {
-
-  watcher.on("change", function (filePath, stats) {
-    //console.log(path, stats);
-    const isTs = memoize((filePath: string) => {
-      return minimatch(filePath, "*.{ts,js,json}", { nocase: true, matchBase: true });
-    });
-    if (isTs(filePath)) {
-      console.log("compiling typescript..");
-      return tsc();
-    } else {
-      console.log("copying non-typescript file..");
-      return copyNonTsFiles();
-    }
-  });
-  return watcher;
-*/
 import proxyGrabber from "proxies-grabber";
 function testProxy(done) {
   const grabber = new proxyGrabber();
@@ -64,3 +45,36 @@ function testProxy(done) {
 gulp.task("proxy", testProxy);
 gulp.task("default", gulp.series("copy-non-ts", "tsc"));
 gulp.task("build", gulp.series(clean, "copy-non-ts", "tsc"));
+
+import obfuscator from "gulp-javascript-obfuscator";
+function obfuscate(done: gulp.TaskFunctionCallback) {
+  const obfuscateMain = () => {
+    return gulp
+      .src([
+        "./dist/traffic-generator/src/*.js",
+        "!./dist/traffic-generator/src/views"
+      ])
+      .pipe(
+        obfuscator({
+          target: "node",
+          compact: true,
+          identifierNamesGenerator: "mangled-shuffled"
+        })
+      )
+      .pipe(gulp.dest("./dist/traffic-generator/src"));
+  };
+  const obfuscateRenderer = () => {
+    return gulp
+      .src(["./dist/traffic-generator/src/views/**/*.js"])
+      .pipe(
+        obfuscator({
+          target: "browser",
+          compact: true,
+          identifierNamesGenerator: "mangled-shuffled"
+        })
+      )
+      .pipe(gulp.dest("./dist/traffic-generator/src/views"));
+  };
+  return Promise.all([obfuscateRenderer]).lastly(done);
+}
+gulp.task("obfuscate", gulp.series("default", obfuscate));

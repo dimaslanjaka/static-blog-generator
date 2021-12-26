@@ -1,6 +1,9 @@
 "use strict";
-//process.stdin.resume(); //so the program will not close instantly
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const log_1 = __importDefault(require("../log"));
 //const fns1: Array<(data?: string) => void> = [];
 const fns = [];
 /**
@@ -10,13 +13,11 @@ const fns = [];
  */
 function exitHandler(options, exitCode) {
     Object.keys(fns).forEach((key) => {
-        console.log(`executing function key: ${key}`);
+        log_1.default.log(`executing function key: ${key}`);
         fns[key]();
     });
     if (options.cleanup)
-        console.log("clean");
-    if (exitCode || exitCode === 0)
-        console.log(exitCode);
+        log_1.default.log(`clean exit(${exitCode})`);
     if (options.exit)
         process.exit();
 }

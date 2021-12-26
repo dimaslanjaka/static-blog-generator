@@ -17,6 +17,12 @@
       "type": "node-terminal"
     },
     {
+      "command": "gulp obfuscate && npm run start",
+      "name": "Build Obfuscate Run",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "command": "npm run dev",
       "name": "Run npm dev",
       "request": "launch",

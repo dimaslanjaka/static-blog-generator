@@ -14,6 +14,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
+    "gulp-javascript-obfuscator": "file:packages/gulp-javascript-obfuscator",
     "jquery": "^3.6.0",
     "jsdom": "^18.1.0",
     "minimatch": "^3.0.4",
@@ -27,6 +28,7 @@
     "yaml": "^1.10.2"
   },
   "devDependencies": {
+    "@types/javascript-obfuscator": "^0.17.0",
     "@types/node": "^16.11.11",
     "@types/through2": "^2.0.36",
     "@types/toastr": "^2.1.39",
@@ -39,6 +41,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-wait": "^0.0.2",
+    "javascript-obfuscator": "^3.0.0",
     "ts-node": "^10.4.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
