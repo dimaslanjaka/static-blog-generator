@@ -286,7 +286,7 @@ seo:
       - "*.min.{htm,html}"
   css: true
   js: true
-  schema: true
+  schema: false
   img:
     # fix broken images
     broken: false
