@@ -105,6 +105,18 @@ gulp.task("article:fix", (done) => {
     let allowWriten = false;
     if (parse) {
       if (parse.metadata) {
+        if (parse.metadata.modified) {
+          if (!parse.metadata.updated) {
+            parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
+          } else {
+            const updated = moment(parse.metadata.updated);
+            const modified = moment(parse.metadata.modified);
+            console.log('updated', updated);
+            console.log('modified', modified);
+            console.log('same', updated.isSame(modified, 'date'));
+          }
+        }
+        return;
         if (!parse.metadata.updated) {
           const stats = fs.statSync(file);
           const mtime = stats.mtime;
