@@ -1,12 +1,17 @@
 name: Build With Multiple NodeJS Versions
 
 on:
-  pull_request:
-    branches:
-      - compiler # run when this branch pull requested
-  push:
-    branches:
-      - compiler # run when this branch pushed
+  # schedule this job every 1:45 AM everydays
+  schedule:
+    - cron: '45 1 * * *'
+
+#on:
+  #pull_request:
+    #branches:
+      #- compiler # run when this branch pull requested
+  #push:
+    #branches:
+      #- compiler # run when this branch pushed
 
 # cancel previous workflows, run only one workflow
 concurrency:
