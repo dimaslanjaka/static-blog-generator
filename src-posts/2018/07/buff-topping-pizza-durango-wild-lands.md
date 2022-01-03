@@ -20,10 +20,13 @@ title: Buff Topping Pizza Durango Wild Lands
 type: post
 uuid: ece161ee-1811-4888-83f7-b08659e86f42
 webtitle: WMI Gitlab
-updated: 2021-11-08T00:26:46+07:00
+updated: 2018-08-05T06:17:29+07:00
 ---
 
 Ulat, Lebah = Buff WIL  Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan Pisang = Produksi Tangan<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

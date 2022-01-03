@@ -17,10 +17,13 @@ title: KARTONYONO MEDOT JANJI NIGHTCORE REGGAE
 type: post
 uuid: b0cb79e2-5d7a-4888-895b-c6fc78b23c6a
 webtitle: WMI Gitlab
-updated: 2021-11-08T00:27:00+07:00
+updated: 2019-08-22T17:11:54+07:00
 ---
 
 <iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/XRBv0edH4cg" width="459"></iframe><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

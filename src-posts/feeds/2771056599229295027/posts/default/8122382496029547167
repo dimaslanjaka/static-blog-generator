@@ -17,10 +17,13 @@ title: Keramat   Nightcore Reggae
 type: post
 uuid: df7931c7-0d30-4888-8716-a3d30c4ece12
 webtitle: WMI Gitlab
-updated: 2021-11-23T02:47:51+07:00
+updated: 2019-08-25T14:30:23+07:00
 ---
 
 <iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/jkGrOLLAXYc" width="459"></iframe><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

@@ -108,15 +108,21 @@ gulp.task("article:fix", (done) => {
         if (parse.metadata.modified) {
           if (!parse.metadata.updated) {
             parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
+            allowWriten = true;
           } else {
             const updated = moment(parse.metadata.updated);
             const modified = moment(parse.metadata.modified);
-            console.log('updated', updated);
-            console.log('modified', modified);
-            console.log('same', updated.isSame(modified, 'date'));
+            const same = updated.isSame(modified, 'date');
+            //console.log('updated', updated);
+            //console.log('modified', modified);
+            //console.log('same', same);
+            if (!same) {
+              parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
+              //console.log(parse.metadata.updated)
+              allowWriten = true;
+            }
           }
         }
-        return;
         if (!parse.metadata.updated) {
           const stats = fs.statSync(file);
           const mtime = stats.mtime;

@@ -1,33 +1,4 @@
 {
-  "cSpell.words": [
-    "Agustina",
-    "Beaucachu",
-    "Dimas",
-    "dimaslanjaka",
-    "webmanajemen",
-    "Gitlab",
-    "Goldbach",
-    "Hexo",
-    "INDO",
-    "Lanjaka",
-    "Maulinda",
-    "Neverland",
-    "Praha",
-    "apgus",
-    "browsersync",
-    "delim",
-    "epiphyllum",
-    "filemanager",
-    "genshin",
-    "livereload",
-    "maxdepth",
-    "musique",
-    "notranslate",
-    "shortcode",
-    "titlecase",
-    "tlon",
-    "youtube"
-  ],
   "terminal.integrated.env.linux": {
     "PATH": "bin:${env:PATH}"
   },

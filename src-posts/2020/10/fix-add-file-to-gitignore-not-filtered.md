@@ -19,10 +19,13 @@ title: Fix add file to gitignore not filtered
 type: post
 uuid: d0ce851a-9de9-4888-87cd-931b67b961b3
 webtitle: WMI Gitlab
-updated: 2021-11-23T02:47:58+07:00
+updated: 2020-10-25T23:45:36+07:00
 ---
 
 <pre><br>git rm -r --cached .<br>git add .<br>git commit -m 'clear git cache'<br>git push<br></pre><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>
