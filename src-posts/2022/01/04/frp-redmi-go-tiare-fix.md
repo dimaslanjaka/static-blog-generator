@@ -6,6 +6,7 @@ date: 2022-01-04 05:27:00
 ---
 
 # Fix FRP Redmi GO Latest Security Patch (Updated 2022)
+<!-- more -->
 - Open MiFlash
 - Select Firmware `tiare_global_images_V10.2.6.0.OCLMIXM_8.1\images`
 ![](./frp-redmi-go-tiare-fix/select%20firmware.jpg)
