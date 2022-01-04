@@ -87,7 +87,7 @@ export function parsePost(text: string): parsePostReturn | null {
   const regex = /^---([\s\S]*?)---\n/gm;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   const originalArg = text;
-  const isFile = fs.statSync(text).isFile();
+  const isFile = fs.existsSync(text) && fs.statSync(text).isFile();
   if (isFile) {
     text = readFileSync(text).toString();
   }

@@ -34,7 +34,7 @@
     "npm": ">=6.x"
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "6.0.0"
   },
   "dependencies": {
     "chalk": "^4.1.2",
