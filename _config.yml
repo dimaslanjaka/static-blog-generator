@@ -153,6 +153,10 @@ favicon_ico: "/assets/img/hexo-logo-avatar-transparent-background.png"
 author:
   name: "Dimas Lanjaka"
   link: "https://www.webmanajemen.com/"
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944 # <= 600
+    height: 2592 # >= 60
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
@@ -232,19 +236,7 @@ browsersync:
   browser: "firefox"
   open: false
 
-# Article schema
-# https://developers.google.com/structured-data/rich-snippets/articles#article_markup_properties
-schema:
-  image:
-    url: img/android-chrome-144x144.png
-    height: 144
-    width: 144 # <= 696
-  publisher:
-    name: Dimas Lanjaka
-    logo:
-      url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-      width: 1944 # <= 600
-      height: 2592 # >= 60
+
 
 # https://github.com/dimaslanjaka/hexo-adsense
 adsense:
@@ -286,7 +278,7 @@ seo:
       - "*.min.{htm,html}"
   css: true
   js: true
-  schema: true
+  schema: false
   img:
     # fix broken images
     broken: false
