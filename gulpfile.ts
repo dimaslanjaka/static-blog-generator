@@ -112,7 +112,7 @@ gulp.task("article:fix", (done) => {
           } else {
             const updated = moment(parse.metadata.updated);
             const modified = moment(parse.metadata.modified);
-            const same = updated.isSame(modified, 'date');
+            const same = updated.isSame(modified, "date");
             //console.log('updated', updated);
             //console.log('modified', modified);
             //console.log('same', same);
