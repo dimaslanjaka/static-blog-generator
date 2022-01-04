@@ -1,6 +1,9 @@
 {
   "terminal.integrated.env.linux": {
-    "PATH": "bin:${env:PATH}"
+    "PATH": "node_modules/.bin:bin:${env:PATH}"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "node_modules\\.bin:bin:${env:PATH}"
   },
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
