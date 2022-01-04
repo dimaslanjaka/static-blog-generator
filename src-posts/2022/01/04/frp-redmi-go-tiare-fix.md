@@ -4,6 +4,12 @@ subtitle: Bypass FRP Redmi GO Tiare Via MiFlash
 cover: /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
 date: 2022-01-04 05:27:00
 toc: true
+keywords:
+  - redmi go
+  - tiare
+  - frp
+  - bypass
+  - firmware
 ---
 
 # Fix FRP Redmi GO Latest Security Patch (Updated 2022)
