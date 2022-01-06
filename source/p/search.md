@@ -18,7 +18,9 @@ search ads *.webmanajemen.com
 <script>
   (function() {
     //var cx = 'partner-pub-7975270895217217:5914050470';
-    var cx = 'bdcdd8d729cb6b0dd';
+    // adsense, cse
+    var cxs = {ads: '0e11f01d3a7759942',cse: 'bdcdd8d729cb6b0dd'};
+    var cx = cxs.ads;
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
@@ -27,7 +29,7 @@ search ads *.webmanajemen.com
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchresults-only class='gcse-searchresults-only'>Search Results Here</gcse:searchresults-only>
+<gcse:searchresults-only class='gcse-searchresults-only gcse-searchresults'>Search Results Here</gcse:searchresults-only>
 </div>
 <div class="clear"></div>
 <div>
