@@ -68,7 +68,7 @@ jobs:
           restore-keys: ${{ runner.os }}-npm-
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
         # run global install when cache not found
-        if: steps.npm-cache.outputs.cache-hit != 'true'
+        #if: steps.npm-cache.outputs.cache-hit != 'true'
       - run: rm -rf node_modules tmp build
         # run if commit contains substring 'clean cache'
         if: "contains(github.event.head_commit.message, 'clean cache')"
