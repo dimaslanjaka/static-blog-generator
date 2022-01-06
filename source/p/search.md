@@ -10,6 +10,11 @@ date: 2018-11-24
 }
 </style>
 <div>
+<!--
+search ads *.webmanajemen.com
+<script async src="https://cse.google.com/cse.js?cx=0e11f01d3a7759942"></script>
+<div class="gcse-search"></div>
+-->
 <script>
   (function() {
     //var cx = 'partner-pub-7975270895217217:5914050470';
