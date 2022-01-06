@@ -13,7 +13,7 @@ date: 2018-11-24
 <script>
   (function() {
     //var cx = 'partner-pub-7975270895217217:5914050470';
-    var cx = '50db9c8dc9d9cf8a2';
+    var cx = 'bdcdd8d729cb6b0dd';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
