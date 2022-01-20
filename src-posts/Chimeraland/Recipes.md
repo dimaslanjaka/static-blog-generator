@@ -6,7 +6,7 @@ author:
 category:
   - Games
 comments: true
-cover: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
+cover: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 date: 2022-01-11T07:00:00+07:00
 keywords:
   - recipes
