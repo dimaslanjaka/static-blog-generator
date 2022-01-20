@@ -21,6 +21,9 @@ type: post
 webtitle: Chimeraland
 ---
 
+## Chimeraland Cooking Guide
+Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means, if you look at 10 seconds. for cooking time, you will get 2 dishes, which may not be what you want. You can cancel before cooking is done if you don't want more than one dish, it won't cost you anything. Basically, you can cook food in your **Camp** and **Stove**, but you may need certain tools to cook some foods, for example **Mixer** (you need to open it in Home Tech and create one).
+
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 * Camp 2 is not permanent, this building will disappear within a certain time 
 
@@ -31,3 +34,5 @@ Recipe :
 Video Tutorial:
 
  {% youtube I_QH6jv7rzA %}
+ 
+ 
