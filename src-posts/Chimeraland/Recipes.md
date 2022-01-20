@@ -27,3 +27,7 @@ webtitle: Chimeraland
 Recipe : 
 - grilled mushrom = any mushroom ( camp 2)
 - mushroom broth = any mushroom + any meat + dew/ice piece (camp 2)
+
+Video Tutorial:
+
+ {% youtube I_QH6jv7rzA %}
