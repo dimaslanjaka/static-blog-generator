@@ -24,9 +24,17 @@ webtitle: Chimeraland
 ## Chimeraland Cooking Guide
 Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means, if you look at 10 seconds. for cooking time, you will get 2 dishes, which may not be what you want. You can cancel before cooking is done if you don't want more than one dish, it won't cost you anything. Basically, you can cook food in your **Camp** and **Stove**, but you may need certain tools to cook some foods, for example **Mixer** (you need to open it in Home Tech and create one).
 
+| Dish Name | Ingredients | Cooking Facilities | Buffs |
+|---|---|---|--|
+| Apple Sauce | Apple[2] | Mixer | +180 fullness, +5 Heat Resistance |
+| Ice Block | Ice Piece[2] | Mixer | +180 fullness, +10 Heat Resistance |
+| Refreshing Pill | Wild Garlic + Vegie Paste | Mixer | +180 fullness, **reduces toxins by 40 (decreased over time)** |
+| Cantaloupe Slushie | Cantaloupe + Ice Piece | Mixer | +300 fullness, +15 Heat Resistance |
+| Sea-Buckthron Mixed Juice | Sea-Buckthron + Apple | Mixer | +180 fullness, +Lv.2 Sandstrom Resistance |
+
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
-* Using **Camp 2** to unlock **Stove II**
-* **Camp 2** is not permanent, this building will disappear within a certain time 
+> Using **Camp 2** to unlock **Stove II**
+> **Camp 2** is not permanent, this building will disappear within a certain time 
 
 Recipe : 
 - grilled mushrom = any mushroom ( camp 2)
@@ -34,6 +42,6 @@ Recipe :
 
 Video Tutorial:
 
- {% youtube I_QH6jv7rzA %}
+{% youtube I_QH6jv7rzA %}
  
  
