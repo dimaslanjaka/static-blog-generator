@@ -49,16 +49,8 @@ Video Tutorial:
 <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
 <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
 <script>
-$(document).ready(function () {
-  const tableinarticle = $('article table');
-  console.log(tableinarticle);
-  if (tableinarticle && tableinarticle.length) {
-   if (tableinarticle.DataTable){
-    tableinarticle.DataTable();
-   } else {
-    console.log($$);
-   }
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  let table = new DataTable('article table');
 }); 
 </script>
  
