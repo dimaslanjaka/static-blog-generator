@@ -53,13 +53,15 @@ Video Tutorial:
 <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
 <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
 <style>
+.mdui-theme-layout-dark .mdui-typo table th, .mdui-theme-layout-dark .mdui-typo table thead th,
 .mdui-theme-layout-dark table.dataTable {
-  background-color: black;
+  background: black;
   color: white;
   font-family: "Courier New", Courier, monospace;
 }
 .mdui-theme-layout-dark table.dataTable * {
-  background-color: black;
+   background-color: black !important;
+    background-repeat: no-repeat;
   color: white;
 }
 .mdui-theme-layout-dark table.dataTable td {
