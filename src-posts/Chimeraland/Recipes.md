@@ -31,6 +31,7 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 | Refreshing Pill | Wild Garlic + Vegie Paste | Mixer | +180 fullness, **reduces toxins by 40 (decreased over time)** |
 | Cantaloupe Slushie | Cantaloupe + Ice Piece | Mixer | +300 fullness, +15 Heat Resistance |
 | Sea-Buckthron Mixed Juice | Sea-Buckthron + Apple | Mixer | +180 fullness, +Lv.2 Sandstrom Resistance |
+| Meat Noodles | dew + crop level 6 + any meat + crop level 6 | +600 fullness, +atk 250 | Camp level 2 |
 
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 > Using **Camp 2** to unlock **Stove II**
