@@ -56,7 +56,7 @@ $(document).ready(function () {
    if (tableinarticle.DataTable){
     tableinarticle.DataTable();
    } else {
-    console.log($);
+    console.log($$);
    }
   }
 }); 
