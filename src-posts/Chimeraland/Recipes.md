@@ -48,25 +48,20 @@ Video Tutorial:
 <link rel='stylesheet' href='https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css'>
 <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
 <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
-  <style>
-    html { font-size: 15px; }
-    html, body { margin: 0; padding: 0; min-height: 100%; }
-    body { height:100%; display: flex; flex-direction: column; }
-    .referer-warning {
-      background: black;
-      box-shadow: 0 2px 5px rgba(0,0,0, 0.5);
-      padding: 0.75em;
-      color: white;
-      text-align: center;
-      font-family: var(--cp-font-family);
-      line-height: 1.2;
-      font-size: 1rem;
-      position: relative;
-      z-index: 2;
-    }
-    .referer-warning h1 { font-size: 1.2rem; margin: 0; }
-    .referer-warning a { color: #56bcf9; } /* $linkColorOnBlack */
-  </style>
+<style>
+.mdui-theme-layout-dark table.dataTable {
+  background-color: black;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+.mdui-theme-layout-dark table.dataTable * {
+  background-color: black;
+  color: white;
+}
+.mdui-theme-layout-dark table.dataTable td {
+  border: 0.1em solid white;
+}
+</style>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   let table = new DataTable('article table');
