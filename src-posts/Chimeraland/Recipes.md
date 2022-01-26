@@ -53,7 +53,11 @@ $(document).ready(function () {
   const tableinarticle = $('article table');
   console.log(tableinarticle);
   if (tableinarticle && tableinarticle.length) {
+   if (tableinarticle.DataTable){
     tableinarticle.DataTable();
+   } else {
+    console.log($);
+   }
   }
 }); 
 </script>
