@@ -55,13 +55,13 @@ Video Tutorial:
 <style>
 .mdui-theme-layout-dark .mdui-typo table th, .mdui-theme-layout-dark .mdui-typo table thead th,
 .mdui-theme-layout-dark table.dataTable {
-  background: black;
+  background-color: black !important;
   color: white;
   font-family: "Courier New", Courier, monospace;
 }
 .mdui-theme-layout-dark table.dataTable * {
-   background-color: black !important;
-    background-repeat: no-repeat;
+  background-color: black !important;
+  background-repeat: no-repeat;
   color: white;
 }
 .mdui-theme-layout-dark table.dataTable td {
