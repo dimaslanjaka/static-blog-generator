@@ -54,6 +54,7 @@ Video Tutorial:
 <script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
 <style>
 .mdui-theme-layout-dark .mdui-typo table th, .mdui-theme-layout-dark .mdui-typo table thead th,
+.mdui-theme-layout-dark [class^="dataTables_"],
 .mdui-theme-layout-dark table.dataTable {
   background-color: black !important;
   color: white;
