@@ -55,6 +55,7 @@ Video Tutorial:
 <style>
 .mdui-theme-layout-dark .mdui-typo table th, .mdui-theme-layout-dark .mdui-typo table thead th,
 .mdui-theme-layout-dark [class^="dataTables_"],
+.mdui-theme-layout-dark [id^="DataTables_Table"],
 .mdui-theme-layout-dark table.dataTable {
   background-color: black !important;
   color: white;
