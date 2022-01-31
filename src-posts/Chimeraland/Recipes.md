@@ -28,14 +28,15 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 >
 > Material Name[Amount]
 
-| Dish Name                 | Ingredients                                  | Cooking Facilities | Buffs                                                           |
-| ------------------------- | -------------------------------------------- | ------------------ | --------------------------------------------------------------- |
-| Apple Sauce               | Apple[2]                                     | Mixer              | +180 fullness, +5 Heat Resistance                               |
-| Ice Block                 | Ice Piece[2]                                 | Mixer              | +180 fullness, +10 Heat Resistance                              |
-| Refreshing Pill           | Wild Garlic + Vegie Paste                    | Mixer              | +180 fullness, **reduces toxins by 40** _(decreased over time)_ |
-| Cantaloupe Slushie        | Cantaloupe + Ice Piece                       | Mixer              | +300 fullness, +15 Heat Resistance                              |
-| Sea-Buckthron Mixed Juice | Sea-Buckthron + Apple                        | Mixer              | +180 fullness, +Lv.2 Sandstrom Resistance                       |
-| Meat Noodles              | dew + crop level 6 + any meat + crop level 6 | Camp level 2       | +600 fullness, +atk 250                                         |
+| Dish Name                 | Ingredients                                    | Cooking Facilities | Buffs                                                           |
+| ------------------------- | ---------------------------------------------- | ------------------ | --------------------------------------------------------------- |
+| Apple Sauce               | Apple[2]                                       | Mixer              | +180 fullness, +5 Heat Resistance                               |
+| Ice Block                 | Ice Piece[2]                                   | Mixer              | +180 fullness, +10 Heat Resistance                              |
+| Refreshing Pill           | Wild Garlic + Vegie Paste                      | Mixer              | +180 fullness, **reduces toxins by 40** _(decreased over time)_ |
+| Cantaloupe Slushie        | Cantaloupe + Ice Piece                         | Mixer              | +300 fullness, +15 Heat Resistance                              |
+| Sea-Buckthron Mixed Juice | Sea-Buckthron + Apple                          | Mixer              | +180 fullness, +Lv.2 Sandstrom Resistance                       |
+| Meat Noodles              | dew + crop level 6 + any meat + crop level 6   | Camp level 2       | +600 fullness, +atk 250                                         |
+| -                         | Ice Piece + Beast Heart(Liver/Brain/Kidney)[4] |
 
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 > Using **Camp 2** to unlock **Stove II**
