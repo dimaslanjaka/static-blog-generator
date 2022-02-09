@@ -130,7 +130,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: material
+theme: hueman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -140,16 +140,6 @@ deploy:
   branch: master
   message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
-loader: false
-#loader_img: "/assets/img/loading-animations-preloader-gifs-ui-ux-effects-4.gif"
-loader_img: "https://thememyxbox.net/images/loading.gif"
-header_cover: "/assets/img/Library-min.jpg"
-default_cover: "/assets/img/e-learning_1.jpg"
-error_page_bg:
-logo: "/assets/img/PicsArt_09-09-12.12.25.jpg"
-avatar: "/assets/img/PicsArt_09-09-12.12.25.jpg"
-favicon_ico: "/assets/img/hexo-logo-avatar-transparent-background.png"
-
 author:
   name: "Dimas Lanjaka"
   link: "https://www.webmanajemen.com/"
@@ -157,6 +147,13 @@ author:
     url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
     width: 1944 # <= 600
     height: 2592 # >= 60
+
+menu:
+  Home: /
+  About: /p/about.html
+  GitHub: https://github.com/dimaslanjaka
+  Categories:
+    PHP: /category/php
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
@@ -221,11 +218,6 @@ markdown_it_plus:
           rightDelimiter: "}"
           allowedAttributes: [] # empty array = all attributes are allowed
 
-# live reload (unused)
-# https://github.com/hexojs/hexo-livereload
-# https://github.com/hexojs/hexo-livereload/issues/7
-#livereload:
-#  port: 35729
 # https://github.com/hexojs/hexo-browsersync
 browsersync:
   logLevel: "warn"
@@ -235,8 +227,6 @@ browsersync:
   port: 3001
   browser: "firefox"
   open: false
-
-
 
 # https://github.com/dimaslanjaka/hexo-adsense
 adsense:
