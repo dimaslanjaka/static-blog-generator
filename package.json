@@ -56,6 +56,7 @@
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "file:packages/hexo-generator-feed",
     "hexo-generator-index": "^2.0.0",
+    "hexo-generator-json-content": "^4.2.3",
     "hexo-generator-search": "file:packages/hexo-generator-search",
     "hexo-generator-tag": "^1.0.0",
     "hexo-github-card": "^1.0.5",
