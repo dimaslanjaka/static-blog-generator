@@ -148,12 +148,9 @@ author:
     width: 1944 # <= 600
     height: 2592 # >= 60
 
-menu:
-  Home: /
-  About: /p/about.html
-  GitHub: https://github.com/dimaslanjaka
-  Categories:
-    PHP: /category/php
+social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
