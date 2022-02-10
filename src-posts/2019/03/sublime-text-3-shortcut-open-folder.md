@@ -19,9 +19,17 @@ type: post
 uuid: 2382bf25-24b9-4888-839e-81f82f51c669
 webtitle: WMI Gitlab
 updated: 2019-03-08T08:20:51+07:00
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+photos:
+  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+description: h2>open folder with sublime text 3</h2><script
+  src=https://gist.github.com/roundand/9367852.js></script><div
 ---
 
 <h2>open folder with sublime text 3</h2><script src="https://gist.github.com/roundand/9367852.js"></script><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script><script>document.querySelectorAll("pre,code");

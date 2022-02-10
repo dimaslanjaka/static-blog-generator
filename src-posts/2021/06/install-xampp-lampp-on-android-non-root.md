@@ -23,6 +23,12 @@ type: post
 uuid: fe9bd82e-f555-4888-8952-a281475f8148
 webtitle: WMI Gitlab
 updated: 2021-06-02T21:48:37+07:00
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
+photos:
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
+description: php apache setup on android with Termux without
+  root) 											Download Termux 						(allow installation from unknwon
+  sources and
 ---
 
 <div id="bootstrap-wrapper">
@@ -127,6 +133,9 @@ updated: 2021-06-02T21:48:37+07:00
   hljs.initHighlightingOnLoad();
 </script>
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script><script>document.querySelectorAll("pre,code");

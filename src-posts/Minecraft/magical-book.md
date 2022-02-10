@@ -15,6 +15,10 @@ toc: true
 uuid: 90a378ff-426f-4888-8b7c-a97e78646688
 webtitle: Minecraft
 updated: 2021-12-16T23:40:51+07:00
+thumbnail: /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
+photos:
+  - /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
+description: All Description And Usages Of Magical Books Minecraft
 ---
 
 # List of all Magical Book Minecraft Enchantments
@@ -120,6 +124,9 @@ The Minecraft enchanting table language is actually known as standard galactic l
 
 And there you have it, all the basics on Minecraft enchantments plus descriptions of every vanilla enchantment in the game. Some of these are especially powerful – we’re big fans of using Punch to knock mobs of ledges – so use them wisely. You can also enchant your [Minecraft shield](https://www.pcgamesn.com/minecraft/banners-custom-shields) with three different Minecraft enchantments to improve your defence in battle.
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

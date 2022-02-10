@@ -24,6 +24,10 @@ type: post
 uuid: 2aa96bcf-7d7a-4888-875f-1cced5ac4938
 webtitle: NodeJS
 updated: 2021-12-18T21:07:09+07:00
+thumbnail: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
+description: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
 ---
 
 # How to detect HTMLCollection/NodeList in JavaScript/Typescript?
@@ -79,6 +83,9 @@ for (let index = 0; index < loaders.length; index++) {
 }
 ```
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>
