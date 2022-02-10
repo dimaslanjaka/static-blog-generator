@@ -16,7 +16,7 @@ location: Indonesia
 subtitle: Chimeraland Cooking Recipes
 tags:
   - Chimeraland
-title: Cooking Recipes
+title: Cooking Recipes Chimeraland
 type: post
 webtitle: Chimeraland
 ---
