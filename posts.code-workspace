@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "src-posts"
+		},
+		{
+			"path": "source/_posts"
+		}
+	],
+	"settings": {
+		"emmet.showSuggestionsAsSnippets": true
+	}
+}

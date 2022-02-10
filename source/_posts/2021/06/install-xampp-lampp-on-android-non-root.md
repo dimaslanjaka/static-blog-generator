@@ -22,7 +22,7 @@ title: Install XAMPP/LAMPP On Android (Non-Root)
 type: post
 uuid: fe9bd82e-f555-4888-8952-a281475f8148
 webtitle: WMI Gitlab
-updated: 2021-12-03T22:28:01+07:00
+updated: 2021-06-02T21:48:37+07:00
 ---
 
 <div id="bootstrap-wrapper">
@@ -127,6 +127,9 @@ updated: 2021-12-03T22:28:01+07:00
   hljs.initHighlightingOnLoad();
 </script>
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

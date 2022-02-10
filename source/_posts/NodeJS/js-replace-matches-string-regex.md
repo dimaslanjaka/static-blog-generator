@@ -14,8 +14,10 @@ updated: 2021-12-19T15:20:44+07:00
 
 # NodeJS Replace Matched String From Regex
 How to match regex from string and replace matched string $1-$9
+> $1 = matched index 1 and so on
 
 for example: were going to replace all markdown extensions to html extension.
+
 ```js
 const str = `[text1](url.html) [txt](http://webmanajemen.com/post.md)`; // string to replace
 const regex = /\[.*\]\(.*(.md)\)/gm; // regex to match group index 1 (.md)
@@ -26,7 +28,11 @@ if (regex.exec(str)) { // check if regex match
   });
   console.log(replaced); // [text1](url.html) [txt](http://webmanajemen.com/post.html)
 }
-```<script>document.querySelectorAll("pre,code");
+```
+
+<script>
+  document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
-  });</script>
+  });
+</script>

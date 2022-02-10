@@ -19,10 +19,13 @@ title: Load CSS Asynchronously
 type: post
 uuid: 528f01ae-7ae1-4888-8049-39b5dec543c8
 webtitle: WMI Gitlab
-updated: 2021-11-23T02:47:58+07:00
+updated: 2020-01-21T00:40:28+07:00
 ---
 
 <h1 itemprop="headline name" class="text-center">Load CSS Asynchronously</h1>  <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fdimaslanjaka%2FWeb-Manajemen%2Fblob%2Fmaster%2Fjs%2Floadcss.js&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script></script><pre class="alert alert-info" lang="js"><br>Usage: <br>loadCSS('//CSS_URL');<br>loadCSS('//raw.githack.com/PrismJS/prism-themes/master/themes/prism-vs.css');<br></pre><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

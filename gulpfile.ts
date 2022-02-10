@@ -15,6 +15,11 @@ import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 //import { gulpCore } from "hexo-blogger-xml";
 
 /**
+ * Source folder articles
+ */
+const srcPostDir = path.join(__dirname, "src-posts");
+
+/**
  * Production article.
  * Articles which published on google index
  */
@@ -62,8 +67,8 @@ import YAML from "yaml";
  * @param done Callback
  */
 function articleCopy(done: TaskCallback) {
-  if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
-  const srcDir = slash(path.join(__dirname, "src-posts"));
+  //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
+  const srcDir = slash(srcPostDir);
   const destDir = slash(prodPostDir);
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
 
@@ -102,13 +107,13 @@ gulp.task("article:fix", (done) => {
   const loop = loopDir(path.join(__dirname, "src-posts"));
   loop.forEach((file) => {
     const parse = parsePost(file);
-    let allowWriten = false;
+    let allowWritten = false;
     if (parse) {
       if (parse.metadata) {
         if (parse.metadata.modified) {
           if (!parse.metadata.updated) {
             parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-            allowWriten = true;
+            allowWritten = true;
           } else {
             const updated = moment(parse.metadata.updated);
             const modified = moment(parse.metadata.modified);
@@ -119,7 +124,7 @@ gulp.task("article:fix", (done) => {
             if (!same) {
               parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
               //console.log(parse.metadata.updated)
-              allowWriten = true;
+              allowWritten = true;
             }
           }
         }
@@ -127,16 +132,17 @@ gulp.task("article:fix", (done) => {
           const stats = fs.statSync(file);
           const mtime = stats.mtime;
           parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
-          allowWriten = true;
+          allowWritten = true;
         }
         if (!parse.metadata.date.includes("+")) {
           parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
-          allowWriten = true;
+          allowWritten = true;
         }
         if (!parse.metadata.lang) parse.metadata.lang = "en";
+        console.log(parse.metadata.cover);
       }
     }
-    if (allowWriten) {
+    if (allowWritten) {
       const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
       writeFileSync(file, rebuildPost);
     }

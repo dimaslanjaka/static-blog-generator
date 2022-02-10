@@ -19,7 +19,7 @@ title: Mora Cost Artifact
 type: post
 uuid: 7c2644ae-b310-4888-8272-15eb1b3dc9bb
 webtitle: Genshin Impact
-updated: 2021-12-03T22:15:36+07:00
+updated: 2021-06-01T02:19:33+07:00
 ---
 
 <!-- @format -->
@@ -469,6 +469,9 @@ updated: 2021-12-03T22:15:36+07:00
   }
 </style>
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>
