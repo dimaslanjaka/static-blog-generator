@@ -107,13 +107,11 @@ gulp.task("article:fix", (done) => {
   const loop = loopDir(path.join(__dirname, "src-posts"));
   loop.forEach((file) => {
     const parse = parsePost(file);
-    let allowWritten = false;
     if (parse) {
       if (parse.metadata) {
         if (parse.metadata.modified) {
           if (!parse.metadata.updated) {
             parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-            allowWritten = true;
           } else {
             const updated = moment(parse.metadata.updated);
             const modified = moment(parse.metadata.modified);
@@ -124,7 +122,6 @@ gulp.task("article:fix", (done) => {
             if (!same) {
               parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
               //console.log(parse.metadata.updated)
-              allowWritten = true;
             }
           }
         }
@@ -132,19 +129,29 @@ gulp.task("article:fix", (done) => {
           const stats = fs.statSync(file);
           const mtime = stats.mtime;
           parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
-          allowWritten = true;
         }
         if (!parse.metadata.date.includes("+")) {
           parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
-          allowWritten = true;
         }
         if (!parse.metadata.lang) parse.metadata.lang = "en";
-        console.log(parse.metadata.cover);
+        // fix thumbnail
+        if (parse.metadata.cover) {
+          if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
+          if (!parse.metadata.photos) {
+            parse.metadata.photos = [];
+            parse.metadata.photos.push(parse.metadata.cover);
+          }
+        }
+        // fix description
+        if (parse.metadata.subtitle) {
+          if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
+        }
       }
-    }
-    if (allowWritten) {
-      const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
-      writeFileSync(file, rebuildPost);
+
+      if (parse.metadata) {
+        const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+        writeFileSync(file, rebuildPost);
+      }
     }
   });
   done();

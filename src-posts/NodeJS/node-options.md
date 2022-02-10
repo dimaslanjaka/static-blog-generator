@@ -22,6 +22,10 @@ type: post
 uuid: 586f70e0-6dec-4888-8cac-99671aad2296
 webtitle: NodeJS
 updated: 2021-12-10T19:53:25+07:00
+thumbnail: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
+photos:
+  - https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
+description: Usage, explanations of node options for nodejs
 ---
 
 # NODEJS OPTIONS [ NODE_OPTIONS ]
@@ -58,6 +62,9 @@ These above codes would limit the heap totals to 225mb and 450mb respectively. I
 - `--max-old-space-size` the maximum size of heap reserved for long term objects
 - `--max-semi-space-size` the maximum size of heap reserved for short term objects
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

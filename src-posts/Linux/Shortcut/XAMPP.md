@@ -26,6 +26,10 @@ type: post
 uuid: 1bd42c10-7050-4888-887e-658da5efced0
 webtitle: Desktop Shortcut
 updated: 2021-12-12T13:38:42+07:00
+thumbnail: https://i.stack.imgur.com/4TYxW.jpg
+photos:
+  - https://i.stack.imgur.com/4TYxW.jpg
+description: How to configure shortcut desktop for xampp linux
 ---
 
 # Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
@@ -69,6 +73,9 @@ sudo -H /opt/lampp/manager-linux-x64.run
 ## Result
 ![Screenshot from 2021-12-07 02-45-08](https://user-images.githubusercontent.com/12471057/144911998-7459f8b8-1816-447e-a0c7-898a2cd4da49.png)
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

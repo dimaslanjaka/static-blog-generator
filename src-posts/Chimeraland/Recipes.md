@@ -18,7 +18,13 @@ tags:
   - Chimeraland
 title: Cooking Recipes Chimeraland
 type: post
+uuid: d70dc9ba-8b4e-4888-8a32-b316cded7f49
 webtitle: Chimeraland
+updated: 2022-02-10T07:58:19+07:00
+thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+photos:
+  - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+description: Chimeraland Cooking Recipes
 ---
 
 ## Chimeraland Cooking Guide
@@ -79,4 +85,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<center>_cooking recipes chimeraland updated january 2022_</center>
+<center>_cooking recipes chimeraland updated january 2022_</center><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

@@ -24,6 +24,11 @@ title: Bluestacks Game Control The Legend Of Neverland
 type: post
 uuid: ec9e4ed7-6ff8-4888-8800-3e184ff42ba6
 updated: 2021-12-19T06:34:29+07:00
+thumbnail: https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png
+photos:
+  - https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png
+description: Game control the legend of neverland bluestacks Support change
+  fairy and job skill
 ---
 
 ### Requirements
@@ -59,6 +64,9 @@ updated: 2021-12-19T06:34:29+07:00
 </div>
 <div style="clear:both;"></div>
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

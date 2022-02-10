@@ -13,6 +13,10 @@ title: Magical Book For Bow
 uuid: a4619a8b-d625-4888-8e18-5569e773bd85
 webtitle: Minecraft
 updated: 2021-12-16T23:40:43+07:00
+thumbnail: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
+description: How to use magical books for bow
 ---
 
 # Super Magical Bow Recipes
@@ -59,6 +63,9 @@ You must choose one of the Magical Books below as the last step.
 
 {% youtube sSnrK7m2RFo %}
 <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>
