@@ -17,10 +17,13 @@ title: Cara mengetahui produk android melalui fastboot
 type: post
 uuid: 1189520c-28ba-4888-89b8-5371a2ab1d72
 webtitle: WMI Gitlab
-updated: 2021-11-23T02:47:58+07:00
+updated: 2020-07-10T13:05:50+07:00
 ---
 
 <ul style="text-align: left;"><li>reboot ke fastboot mode</li><li>ketik</li></ul>fastboot devices<div>fastboot getvar product</div><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

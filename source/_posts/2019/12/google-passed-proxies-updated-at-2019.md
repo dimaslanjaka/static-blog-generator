@@ -17,7 +17,7 @@ title: Google passed proxies, updated at 2019-12-29
 type: post
 uuid: 4e97f685-3821-4888-83bd-d8b40799a5f1
 webtitle: WMI Gitlab
-updated: 2021-11-08T00:26:52+07:00
+updated: 2019-12-30T04:08:12+07:00
 ---
 
 <div id="proxy_result_wrapper">
@@ -59,6 +59,9 @@ updated: 2021-11-08T00:26:52+07:00
  
        </div>
      <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

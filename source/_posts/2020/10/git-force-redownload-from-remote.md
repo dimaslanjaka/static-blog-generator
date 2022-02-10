@@ -17,10 +17,13 @@ title: Git force redownload from remote repository
 type: post
 uuid: beb05131-0c41-4888-8b5e-d922308c54b5
 webtitle: WMI Gitlab
-updated: 2021-11-23T02:47:58+07:00
+updated: 2020-10-26T23:39:05+07:00
 ---
 
 <p>Tutorial</p><pre><br>git reset --hard origin/<branch_name><br>git fetch --all<br></branch_name></pre>  <p>Example from master</p><pre><br>git reset --hard origin/master<br>git fetch --all<br></pre><script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

@@ -99,8 +99,9 @@ module.exports = {
 };
 ```
 
-## Create .prettierrc.js
+## Create Prettier Config
 specify your desired config for prettier
+### Using .prettierrc.js
 ```js
 module.exports = {
   semi: true,
@@ -109,6 +110,17 @@ module.exports = {
   printWidth: 120,
   tabWidth: 2
 };
+```
+### Using .prettierc
+```json
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": true,
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2
+}
 ```
 
 ## Create .vscode/settings.json

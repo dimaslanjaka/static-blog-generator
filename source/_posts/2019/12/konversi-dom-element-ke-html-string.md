@@ -22,7 +22,7 @@ title: Konversi DOM element ke HTML string
 type: post
 uuid: 686519e0-5fe3-4888-8d40-56b2cdf5ab57
 webtitle: WMI Gitlab
-updated: 2021-11-08T00:26:52+07:00
+updated: 2019-12-28T11:57:05+07:00
 ---
 
 <div>
@@ -53,6 +53,9 @@ updated: 2021-11-08T00:26:52+07:00
 <br>  </pre>
  </div>        
  <script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script><script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>
