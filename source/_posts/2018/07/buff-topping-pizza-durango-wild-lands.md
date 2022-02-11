@@ -24,9 +24,7 @@ updated: 2018-08-05T06:17:29+07:00
 ---
 
 Ulat, Lebah = Buff WIL  Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan Pisang = Produksi Tangan<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

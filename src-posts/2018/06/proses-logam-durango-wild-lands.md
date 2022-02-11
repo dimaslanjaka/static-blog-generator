@@ -21,19 +21,6 @@ type: post
 uuid: a16b3c7d-1281-4888-86e6-66a9cde7055d
 webtitle: WMI Gitlab
 updated: 2018-08-05T06:18:52+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
-photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
-description: TAGS  Durango, Proses Logam, Material Processing, Durango Wild Lands.
 ---
 
-<table>  <tbody><tr><td>Nama Proses</td><td>Bahan</td><td>Hasil</td><td>Buff</td><td>Debuff</td></tr>    <tr>      <td>Sempurnakan Bijih       </td>      <td>Bijih logam       </td>      <td>Logam       </td>      <td>-       </td>      <td>-       </td>    </tr>    <tr>      <td>Panduan Tembaga       </td>      <td>Tembaga + Seng / Timah       </td>      <td>Perunggu       </td>      <td>+ Lv 5 Kepadatan Tinggi       </td>      <td>-       </td>    </tr>    <tr>      <td>Menghilangkan sulfur dari logam       </td>      <td>Logam +       </td>      <td>Logam Desulfurisasi       </td>      <td>+ Lv 2 Kepadatan Tinggi       </td>      <td>-       </td>    </tr>    <tr>      <td>Melelehkan logam       </td>      <td>Logam +       </td>      <td>Logam Panas       </td>      <td>        + Lv 1 Ringan         <br> + Lv 1 Struktur Kompak       </td><td>-</td>    </tr>  </tbody></table><div>TAGS : Durango, Proses Logam, Material Processing, Durango Wild Lands. </div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png" title="durango" alt="durango"><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<table>  <tbody><tr><td>Nama Proses</td><td>Bahan</td><td>Hasil</td><td>Buff</td><td>Debuff</td></tr>    <tr>      <td>Sempurnakan Bijih       </td>      <td>Bijih logam       </td>      <td>Logam       </td>      <td>-       </td>      <td>-       </td>    </tr>    <tr>      <td>Panduan Tembaga       </td>      <td>Tembaga + Seng / Timah       </td>      <td>Perunggu       </td>      <td>+ Lv 5 Kepadatan Tinggi       </td>      <td>-       </td>    </tr>    <tr>      <td>Menghilangkan sulfur dari logam       </td>      <td>Logam +       </td>      <td>Logam Desulfurisasi       </td>      <td>+ Lv 2 Kepadatan Tinggi       </td>      <td>-       </td>    </tr>    <tr>      <td>Melelehkan logam       </td>      <td>Logam +       </td>      <td>Logam Panas       </td>      <td>        + Lv 1 Ringan         <br> + Lv 1 Struktur Kompak       </td><td>-</td>    </tr>  </tbody></table><div>TAGS : Durango, Proses Logam, Material Processing, Durango Wild Lands. </div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png" title="durango" alt="durango">

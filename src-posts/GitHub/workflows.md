@@ -21,10 +21,6 @@ type: post
 uuid: 741baa72-98c8-4888-8c0f-96eee0b56067
 webtitle: WMI GitHub
 updated: 2021-11-19T00:29:25+07:00
-thumbnail: /GitHub/workflows/cover.png
-photos:
-  - /GitHub/workflows/cover.png
-description: Semua yang kamu harus tau tentang GitHub Workflows
 ---
 
 GitHub menyediakan templat alur kerja (<i>preconfigured workflow templates</i>) yang telah dikonfigurasi sebelumnya yang dapat Anda sesuaikan untuk membuat alur kerja integrasi berkelanjutan (<i>CI</i>) Anda sendiri. GitHub menganalisis kode Anda dan menunjukkan template <i>CI</i> yang mungkin berguna untuk repositori Anda. Misalnya, jika repositori Anda berisi Node/Program. [[source](https://docs.github.com/en/actions/quickstart)]
@@ -73,10 +69,4 @@ jobs:
 ```
 
 # Berikut ini daftar penggunaan dan tips trick untuk github workflow
-[Cara mempercepat kinerja github workflows](workflows-caches.md)<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+[Cara mempercepat kinerja github workflows](workflows-caches.md)

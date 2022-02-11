@@ -72,9 +72,7 @@ updated: 2020-01-12T02:59:41+07:00
 
        </div>
 <script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

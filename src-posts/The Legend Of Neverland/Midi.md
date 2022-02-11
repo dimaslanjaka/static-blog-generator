@@ -20,10 +20,6 @@ type: post
 uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:03+07:00
-thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-photos:
-  - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-description: Midi collection for the legend of neverland perform music skill
 ---
 
 ### NPC's favorite musical instrument
@@ -40,17 +36,17 @@ description: Midi collection for the legend of neverland perform music skill
 
 ### List Best Midi (Hold tap/Right click to copy)
 
-| Title | Link |
-| ----------- | ----------- |
-| Deep purple - soldier of fortune | https://bitmidi.com/uploads/38563.mid |
-| Deep purple - soldier of fortune [2] | https://bitmidi.com/uploads/38560.mid |
-| Only The Lonely | https://bitmidi.com/uploads/112561.mid |
-| Final Fantasy VII (Battle Theme) | https://bitmidi.com/uploads/46430.mid |
-| Queen - Bohemian Rhapsody | https://bitmidi.com/uploads/87216.mid |
-| Janis Joplin - Me and Bobby McGee | https://bitmidi.com/uploads/62322.mid |
-| Clout - Save me | https://bitmidi.com/uploads/24659.mid |
-| TokiMeki | https://bitmidi.com/uploads/24659.mid |
-| Hatsune Miku | https://bitmidi.com/uploads/55292.mid |
+| Title                                | Link                                   |
+| ------------------------------------ | -------------------------------------- |
+| Deep purple - soldier of fortune     | https://bitmidi.com/uploads/38563.mid  |
+| Deep purple - soldier of fortune [2] | https://bitmidi.com/uploads/38560.mid  |
+| Only The Lonely                      | https://bitmidi.com/uploads/112561.mid |
+| Final Fantasy VII (Battle Theme)     | https://bitmidi.com/uploads/46430.mid  |
+| Queen - Bohemian Rhapsody            | https://bitmidi.com/uploads/87216.mid  |
+| Janis Joplin - Me and Bobby McGee    | https://bitmidi.com/uploads/62322.mid  |
+| Clout - Save me                      | https://bitmidi.com/uploads/24659.mid  |
+| TokiMeki                             | https://bitmidi.com/uploads/24659.mid  |
+| Hatsune Miku                         | https://bitmidi.com/uploads/55292.mid  |
 
 ### Available Midi Sites
 - https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi
@@ -68,10 +64,3 @@ description: Midi collection for the legend of neverland perform music skill
 {% youtube tik3ZFwFsJA %}
 
 {% youtube kIXXv8oUqOc %}
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

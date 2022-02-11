@@ -163,7 +163,4 @@ for example tsconfig.json for node 12
 
 ## Finish
 now your vscode format and lint your codes automatically.
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+

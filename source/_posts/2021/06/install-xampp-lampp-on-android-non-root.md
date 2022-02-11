@@ -127,9 +127,7 @@ updated: 2021-06-02T21:48:37+07:00
   hljs.initHighlightingOnLoad();
 </script>
 <script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

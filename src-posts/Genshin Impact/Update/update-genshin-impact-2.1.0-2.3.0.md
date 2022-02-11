@@ -18,10 +18,6 @@ type: post
 uuid: dae70e1a-6ea2-4888-8409-ebbcd9a13c41
 webtitle: WMI Genshin Impact
 updated: 2021-11-27T10:38:39+07:00
-thumbnail: /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
-photos:
-  - /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
-description: Update Genshin Impact 2.1.0 - 2.3.0 Manual
 ---
 
 Update genshin impact `2.3.0` manual via download manager (IDM).
@@ -130,14 +126,8 @@ Now,
 - [ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip)
 - [zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip)
 
-| Title    |                         URL                          |
-| -------- | :--------------------------------------------------: |
-| Blog  |     [webmanajemen.com](https://webmanajemen.com)     |
-| Git Page | [www.webmanajemen.com](https://www.webmanajemen.com) |
-| GitHub | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+| Title    |                            URL                             |
+| -------- | :--------------------------------------------------------: |
+| Blog     |        [webmanajemen.com](https://webmanajemen.com)        |
+| Git Page |    [www.webmanajemen.com](https://www.webmanajemen.com)    |
+| GitHub   | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |

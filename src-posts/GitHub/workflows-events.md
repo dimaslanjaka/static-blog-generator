@@ -21,10 +21,6 @@ type: post
 uuid: e94a4f00-6a10-4888-8fca-dfc8fe6e687f
 webtitle: WMI GitHub
 updated: 2021-12-20T15:33:55+07:00
-thumbnail: /GitHub/workflows/events.png
-photos:
-  - /GitHub/workflows/events.png
-description: Macam-macam events pada GitHub Workflows
 ---
 
 # Events yang memicu Github Workflow
@@ -101,10 +97,4 @@ on:
        - run: echo "First workflow was a failure"
 ```
 
-Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.

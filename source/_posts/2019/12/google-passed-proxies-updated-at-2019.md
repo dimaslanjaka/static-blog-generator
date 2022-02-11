@@ -22,7 +22,7 @@ updated: 2019-12-30T04:08:12+07:00
 
 <div id="proxy_result_wrapper">
          <div class="w3-card-4">
- 
+
            <header class="w3-container w3-blue">
              <div class="d-flex justify-content-between">
                <div>
@@ -34,7 +34,7 @@ updated: 2019-12-30T04:08:12+07:00
                </div>
              </div>
            </header>
- 
+
            <div class="w3-container">
              <p>
                </p><table id="proxies_result" class="w3-table w3-striped">
@@ -48,20 +48,18 @@ updated: 2019-12-30T04:08:12+07:00
                </table>
              <p></p>
            </div>
- 
+
            <footer class="w3-container w3-blue">
              <h5>WMI Proxy checker 2019</h5>
              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
            </footer>
- 
+
          </div>
- 
+
        </div>
      <script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

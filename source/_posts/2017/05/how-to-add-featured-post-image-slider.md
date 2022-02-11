@@ -28,9 +28,7 @@ updated: 2019-07-22T03:23:17+07:00
 
 ## Also Read Blogger Conditional Tags
 [Blogger Conditional Tags](/2021/12/18/blogger-conditional-tags.html)<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

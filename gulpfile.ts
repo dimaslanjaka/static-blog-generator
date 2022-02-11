@@ -146,11 +146,13 @@ gulp.task("article:fix", (done) => {
         if (parse.metadata.subtitle) {
           if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
         }
+        // merge php js css to programming
+        console.log(parse.metadata.category);
       }
 
       if (parse.metadata) {
         const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
-        writeFileSync(file, rebuildPost);
+        //writeFileSync(file, rebuildPost);
       }
     }
   });
