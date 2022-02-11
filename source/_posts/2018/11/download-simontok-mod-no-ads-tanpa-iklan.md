@@ -29,9 +29,7 @@ updated: 2019-07-22T03:34:02+07:00
 - [Simontok 150b anti block no ads](/2019/07/si-montok-150b-anti-block-no-ads.html)
 - [Simontok 2020](https://sfile.mobi/1wLSds1DBW3)
 - [Simontok](https://sfile.mobi/7vXO7p3V6MG)<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

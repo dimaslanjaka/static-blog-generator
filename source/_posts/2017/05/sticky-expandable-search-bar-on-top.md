@@ -24,9 +24,7 @@ updated: 2019-07-22T03:23:18+07:00
 ---
 
 <h2>How to create sticky search bar on top right pages using classie.js</h2><br>Today i will share implementation of codes from classie.js<br>this code is search bar fixed position on top right of pages<br>.<br><h3>Here the DEMO</h3><br><br><iframe allowfullscreen="allowfullscreen" frameborder="0" height="100" src="//jsfiddle.net/dewjo4s4/6/embedded/result/" width="100%"></iframe><br><br><br><h3>Here the codes:</h3><br><br><iframe allowfullscreen="allowfullscreen" frameborder="0" height="2200" src="//jsfiddle.net/dewjo4s4/6/embedded/html/" width="100%"></iframe><br><a alt="codepen" href="https://codepen.io/dimaslanjaka/pen/ybeweY" rel="noopener noreferer nofollow" title="codepen">Source</a><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

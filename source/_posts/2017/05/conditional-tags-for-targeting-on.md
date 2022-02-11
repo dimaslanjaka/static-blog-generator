@@ -25,9 +25,7 @@ I'll explain a little what it is conditional tags. Conditional tags are<br>limit
 
 ## Also Read Blogger Conditional Tags
 [Blogger Conditional Tags](/2021/12/18/blogger-conditional-tags.html)<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

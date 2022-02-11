@@ -22,9 +22,7 @@ updated: 2020-01-13T22:49:00+07:00
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"><h4 style="background-color: white; color: #777777; font-family: Arial, Verdana, sans-serif; font-size: 12px;">Anonymous proxy:</h4><span style="background-color: white; color: #333333; font-family: Arial, Verdana, sans-serif; font-size: 12px;">no HTTP_X_FORWARDED_FOR header</span><br><div style="background-color: white; color: #333333; font-family: Arial, Verdana, sans-serif; font-size: 12px;"></div><div style="background-color: white; color: #333333; font-family: Arial, Verdana, sans-serif; font-size: 12px;"></div><h4 style="background-color: white; color: #777777; font-family: Arial, Verdana, sans-serif; font-size: 12px;">High anonymous/Elite proxy:</h4><span style="background-color: white; color: #333333; font-family: Arial, Verdana, sans-serif; font-size: 12px;">no HTTP_X_FORWARDED_FOR, HTTP_VIA, HTTP_FORWARDED, HTTP_X_CLUSTER_CLIENT_IP, HTTP_CLIENT_IP, HTTP_PROXY_CONNECTION headers</span></div><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

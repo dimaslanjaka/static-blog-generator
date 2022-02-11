@@ -23,9 +23,7 @@ updated: 2020-03-29T20:45:40+07:00
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"> <h2>Unsupported Modules Detected in Android Studio</h2> <ol>    <li>        <p>            File -&gt; Invalidate Caches / Restart.         </p>    </li>    <li>        <ul>            <li>                Close the project and Android Studio.             </li>            <li>Remove the <code>.idea</code> directory and all                <code>.iml</code> files.             </li>            <li>                Reopen Android Studio and import your project.             </li>        </ul>    </li></ol><p>    If it doesn't help could you please try to reproduce this issue on the     empty project and let me know about results. </p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1" width="100%"></div><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

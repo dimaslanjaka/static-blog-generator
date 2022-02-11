@@ -21,10 +21,6 @@ type: post
 uuid: f4c6a18d-2377-4888-8330-9223d5f34263
 webtitle: WMI GitHub
 updated: 2021-11-30T20:10:25+07:00
-thumbnail: /GitHub/workflows/cover.png
-photos:
-  - /GitHub/workflows/cover.png
-description: Macam-macam kondisional pada GitHub Workflows
 ---
 
 # Kondisional pada GitHub Workflow
@@ -56,10 +52,4 @@ jobs:
       - run: echo "git commit any"
 ```
 
-Artikel ini untuk mempermudah visitor untuk memahami github workflow.<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+Artikel ini untuk mempermudah visitor untuk memahami github workflow.

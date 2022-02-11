@@ -22,9 +22,7 @@ updated: 2020-08-03T08:26:05+07:00
 ---
 
 <p>    If you Got this issue today on windows, but don't need to downgrade node, just as     discussed on </p><a href="https://stackoverflow.com/a/58199866" rel="noopener noreferer nofollow">stackoverflow</a><p>    just need to change some hashes on your project: </p> <code>node_modules\react-native\packager\blacklist.js</code> <pre><br>var sharedBlacklist = [<br>  /node_modules[/\\]react[/\\]dist[/\\].*/,<br>  /website\/node_modules\/.*/,<br>  /heapCapture\/bundle\.js/,<br>  /.*\/__tests__\/.*/<br>];<br></pre>Change to: <pre><br>var sharedBlacklist = [<br>  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,<br>  /website\/node_modules\/.*/,<br>  /heapCapture\/bundle\.js/,<br>  /.*\/__tests__\/.*/<br>];<br></pre><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

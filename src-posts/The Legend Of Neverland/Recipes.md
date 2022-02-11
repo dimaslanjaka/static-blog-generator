@@ -18,10 +18,6 @@ type: post
 uuid: 67b14bd4-5e1c-4888-8fd8-a2e2e0038291
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:39+07:00
-thumbnail: /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
-photos:
-  - /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
-description: Cooking recipes in the legend of neverland game android ios
 ---
 
   <!-- toc -->
@@ -267,10 +263,3 @@ description: Cooking recipes in the legend of neverland game android ios
 ![Recipes](https://user-images.githubusercontent.com/12471057/132800836-32af1b73-bbb0-4af1-8a7c-dd96ee02cb3c.png)
 
   <!-- script /source/assets/js/recipes.js -->
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

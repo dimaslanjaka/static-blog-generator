@@ -51,11 +51,9 @@ updated: 2019-12-28T11:57:05+07:00
 <br>  document.getElementById('elemenTersedia').innerHTML = htmlFromDom(elem);
 <br>&lt;/script&gt;
 <br>  </pre>
- </div>        
+ </div>
  <script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
+
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>

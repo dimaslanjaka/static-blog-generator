@@ -19,20 +19,6 @@ type: post
 uuid: d7a937ec-9c02-4888-846e-68077d4507d8
 webtitle: WMI Gitlab
 updated: 2019-12-04T09:13:32+07:00
-thumbnail: https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
-photos:
-  - https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
-description: pre><br />$static = !(isset($this) &amp;&amp; get_class($this) ==
-  __CLASS__);<br />if ($static) {<br /> return self;<br />} else {<br />
 ---
 
-<pre><br>$static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);<br>if ($static) {<br>  return self;<br>} else {<br>  return $this;<br>}<br></pre> in class example: <pre>class Foo {<br>   function bar() {<br>      $static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);<br>if ($static) {<br>  return self;<br>} else {<br>  return $this;<br>}<br>   }<br>}</pre> or simply create below function to test: <pre><br>class A<br>{<br>    function foo()<br>    {<br>        if (isset($this)) {<br>            echo '$this is defined (';<br>            echo get_class($this);<br>            echo ")\n";<br>        } else {<br>            echo "\$this is not defined.\n";<br>        }<br>    }<br>}<br></pre> <i>How do I check in PHP that I'm in a static context (or not)?</i> <a href="https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg" imageanchor="1" rel="noopener noreferer nofollow"><img border="0" src="https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg" data-original-width="800" data-original-height="450"></a><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<pre><br>$static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);<br>if ($static) {<br>  return self;<br>} else {<br>  return $this;<br>}<br></pre> in class example: <pre>class Foo {<br>   function bar() {<br>      $static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);<br>if ($static) {<br>  return self;<br>} else {<br>  return $this;<br>}<br>   }<br>}</pre> or simply create below function to test: <pre><br>class A<br>{<br>    function foo()<br>    {<br>        if (isset($this)) {<br>            echo '$this is defined (';<br>            echo get_class($this);<br>            echo ")\n";<br>        } else {<br>            echo "\$this is not defined.\n";<br>        }<br>    }<br>}<br></pre> <i>How do I check in PHP that I'm in a static context (or not)?</i> <a href="https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg" imageanchor="1" rel="noopener noreferer nofollow"><img border="0" src="https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg" data-original-width="800" data-original-height="450"></a>

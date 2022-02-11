@@ -18,15 +18,11 @@ type: post
 uuid: 4e97f685-3821-4888-83bd-d8b40799a5f1
 webtitle: WMI Gitlab
 updated: 2019-12-30T04:08:12+07:00
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-photos:
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: Fresh proxy oogle passedGoogle passed proxies,
 ---
 
 <div id="proxy_result_wrapper">
          <div class="w3-card-4">
- 
+
            <header class="w3-container w3-blue">
              <div class="d-flex justify-content-between">
                <div>
@@ -38,7 +34,7 @@ description: Fresh proxy oogle passedGoogle passed proxies,
                </div>
              </div>
            </header>
- 
+
            <div class="w3-container">
              <p>
                </p><table id="proxies_result" class="w3-table w3-striped">
@@ -52,23 +48,13 @@ description: Fresh proxy oogle passedGoogle passed proxies,
                </table>
              <p></p>
            </div>
- 
+
            <footer class="w3-container w3-blue">
              <h5>WMI Proxy checker 2019</h5>
              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
            </footer>
- 
+
          </div>
- 
+
        </div>
-     <script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

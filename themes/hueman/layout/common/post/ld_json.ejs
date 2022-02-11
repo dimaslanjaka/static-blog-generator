@@ -4,7 +4,7 @@
         "@type": "BlogPosting",
         "author": {
             "@type": "Person",
-            "name": "<%= config.author %>"
+            "name": "<% if (config.author.nick) { %><%= config.author.nick %><% } else if (config.author.name) { %><%= config.author.name %><% } else { %><%= config.author %><% } %>"
         },
         <% if (post.title) { %>"headline": "<%= post.title %>",<% } %>
         "image": "<%- url_for(config.url + thumbnail(post)) %>",
