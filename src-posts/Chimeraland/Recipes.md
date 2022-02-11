@@ -29,7 +29,7 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 > Material Name[Amount]
 
 | Dish Name | Ingredients | Unlock Facility | Buffs | Grade |
-| ------------------------- | -------------------------------------------- | --------------- | --------------------------------------------------------------- |
+| --- | --- | --- | --- | --- |
 | Apple Sauce               | Apple[2]                                     | Mixer           | +180 fullness, +5 Heat Resistance                               |
 | Ice Block                 | Ice Piece[2]                                 | Mixer           | +180 fullness, +10 Heat Resistance                              |
 | Refreshing Pill           | Wild Garlic + Vegie Paste                    | Mixer           | +180 fullness, -40 toxisnsns |
