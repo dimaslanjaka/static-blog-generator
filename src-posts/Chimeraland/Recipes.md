@@ -41,6 +41,18 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 | Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 |
 | Veggie Cake | Egg White + Peanut Oil + Veggie Paste + Equinox Flower | Stove II | - | Epic |
 
+<script>
+const td = document.querySelectorAll("article table td");
+Array.from(td).forEach((el) => {
+  let text = el.innerHTML;
+  text = text.replace(
+    "fullness",
+    '<img src="https://res.cloudinary.com/practicaldev/image/fetch/https://icon-library.com/images/stomach-icon/stomach-icon-29.jpg" class="img-inline-text" />'
+  );
+  el.innerHTML = text;
+});
+</script>
+
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 > Using **Camp 2** to unlock **Stove II**
 > **Camp 2** is not permanent, this building will disappear within a certain time
