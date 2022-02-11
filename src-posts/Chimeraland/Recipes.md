@@ -41,20 +41,29 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 | Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 | - |
 | Veggie Cake | Egg White + Peanut Oil + Veggie Paste + Equinox Flower | Stove II | - | Epic |
 
+<!-- playground https://codepen.io/dimaslanjaka/pen/gOXWPra -->
 <style>
 .img-inline-text {
   width: 15px;
   height: 100%;
   vertical-align: sub;
 }
+.atk {
+  border: 1px solid red;
+}
 </style>
 <script>
-const td = document.querySelectorAll("article table td");
+console.clear();
+const td = document.querySelectorAll("article td");
 Array.from(td).forEach((el) => {
   let text = el.innerHTML;
   text = text.replace(
     "fullness",
     '<img src="https://res.cloudinary.com/practicaldev/image/fetch/https://icon-library.com/images/stomach-icon/stomach-icon-29.jpg" class="img-inline-text" />'
+  );
+  text = text.replace(
+    "atk",
+    '<img src="https://res.cloudinary.com/practicaldev/image/fetch/https://cdn-icons-png.flaticon.com/512/2736/2736453.png" class="img-inline-text atk" />'
   );
   el.innerHTML = text;
 });
