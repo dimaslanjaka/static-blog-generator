@@ -38,7 +38,7 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 | Meat Noodles              | dew + crop level 6 + any meat + crop level 6 | Camp level 2    | +600 fullness, +atk 250                                         |
 | Stewed Liver              | Ice Piece + Beast Liver[4]                   | Stove II        | +540 fullness, +50 Armor Pierce for 15 mins                     |
 | Dark Cuisine              | Any Meat[1]                                  | ALL             | Component for making fertilizer                                 |
-| Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 |
+| Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 | - |
 | Veggie Cake | Egg White + Peanut Oil + Veggie Paste + Equinox Flower | Stove II | - | Epic |
 
 <script>
