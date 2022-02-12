@@ -20,6 +20,10 @@ type: post
 uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:03+07:00
+description: Midi collection for the legend of neverland perform music skill
+thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 ---
 
 ### NPC's favorite musical instrument
@@ -64,3 +68,7 @@ updated: 2021-12-19T06:34:03+07:00
 {% youtube tik3ZFwFsJA %}
 
 {% youtube kIXXv8oUqOc %}
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

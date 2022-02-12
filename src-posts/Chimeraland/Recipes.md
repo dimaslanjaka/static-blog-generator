@@ -78,4 +78,4 @@ setTimeout(() => {
 }, 4000);
 </script>
 
-<center>_cooking recipes chimeraland updated january 2022_</center>
+<center><i>cooking recipes chimeraland updated january 2022</i></center>

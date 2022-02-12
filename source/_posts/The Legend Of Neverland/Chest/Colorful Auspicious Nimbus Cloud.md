@@ -17,6 +17,10 @@ title: Colorful Auspicious Nimbus Cloud
 type: post
 uuid: 3c897e3e-864f-4888-8194-3cf99989790e
 updated: 2021-12-19T06:34:56+07:00
+description: Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland
+thumbnail: /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
+photos:
+  - /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
 ---
 
 ## Requirement
@@ -47,4 +51,7 @@ Twilight Rainforest F1. there has hidden teleporter, you must enter that telepor
 
 
 *Colorful Auspicious Nimbus Cloud Video Tutorial*
-{% youtube hVhzL_q1IOs %}
+{% youtube hVhzL_q1IOs %}<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

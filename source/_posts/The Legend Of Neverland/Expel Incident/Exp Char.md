@@ -18,6 +18,10 @@ type: post
 uuid: bc381ceb-c8e3-4888-8896-25c3e1acba96
 webtitle: The Legend Of Neverland
 updated: 2021-12-20T02:11:19+07:00
+description: Expel Incident With The Highest Exp Character Rewards.
+thumbnail: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 ---
 
 <!-- toc -->
@@ -101,3 +105,7 @@ Daily task the legend of neverland lists
 - [Highest Exp Fairies](Crystals%20Fairy%20Exp.html)
 
 <style>em::before{content: "Gate Name : ";}</style>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

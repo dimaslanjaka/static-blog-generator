@@ -18,6 +18,10 @@ type: post
 uuid: e53bdb15-439c-4888-8a45-d541aaa352ca
 webtitle: WMI Gitlab
 updated: 2020-01-12T02:59:41+07:00
+description: Fresh proxy oogle passedGoogle passed proxies,
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
+photos:
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
 ---
 
 <div id="proxy_result_wrapper">
@@ -71,3 +75,7 @@ updated: 2020-01-12T02:59:41+07:00
          </div>
 
        </div>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

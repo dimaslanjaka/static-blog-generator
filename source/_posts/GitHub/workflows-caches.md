@@ -22,6 +22,10 @@ type: post
 uuid: 1525e23b-de51-4888-8aa7-b643034cdf7d
 webtitle: WMI GitHub
 updated: 2021-11-21T23:06:49+07:00
+description: Cara menggunakan cache untuk mempercepat GitHub Workflows
+thumbnail: /GitHub/workflows/cover2.jpg
+photos:
+  - /GitHub/workflows/cover2.jpg
 ---
 
 ## Mempercepat kinerja github workflow
@@ -61,4 +65,7 @@ Metode ini harus kamu tulis sendiri di dalam program-mu. Setiap bahasa pemrogram
 - [PHP Cache](http://www.php-cache.com/en/latest/)
 - [Python Cache](https://docs.python.org/3.4/library/functools.html#functools.lru_cache)
 
-Sekian artikel tentang metode cache github workflow. **Artikel ini akan terus di update**, **jangan lupa di bookmark**. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.
+Sekian artikel tentang metode cache github workflow. **Artikel ini akan terus di update**, **jangan lupa di bookmark**. Jangan lupa komentar agar tidak ketinggalan metode-metode baru dalam menerapkan caching strategy di GitHub Flow.<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

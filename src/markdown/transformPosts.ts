@@ -139,10 +139,12 @@ export function fixPostBody(str: string) {
   const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
   str = str.replace(regex, "https://res.cloudinary.com/practicaldev/image/fetch/");
   // add notranslate
-  str += `<script>document.querySelectorAll("pre,code");
+  if (!str.includes('document.querySelectorAll("pre,code")')) {
+    str += `<script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>`;
+  }
   return str;
 }
 
