@@ -33,7 +33,9 @@ description: Chimeraland Cooking Recipes
 Makanan sangat penting di Chimeraland karena memberikan buff dan stat sementara selama durasi. Dengan memasak dan mengonsumsi makanan atau minuman tertentu, Anda akan mendapatkan buff tertentu, dan untuk memasak makanan atau minuman tersebut Anda ingin memahami Resep Makanan Chimeraland.
 Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan menjelaskan kepada Anda semua Resep Makanan Chimeraland. jadi tanpa lebih lanjut mari kita mulai.
 
-Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 detik = 1 piring. Artinya:
+Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan.
+
+Informasi waktu dalam memasak di chimeraland:
 
 > 5 detik = sukses (rate keberhasilan 100%)
 > 10 detik = Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda (rate keberhasilan 50%)
@@ -41,7 +43,10 @@ Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 deti
 
 Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan (10 detik atau lebih), tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di **Camp** dan **Stove**, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya **Mixer** (Anda perlu membukanya di Home Tech (Spirit Orb) dan membuatnya).
 
-> Informasi table:
+## Daftar resep masakan
+
+Informasi table:
+
 > Nama material[Jumlah]
 
 <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"

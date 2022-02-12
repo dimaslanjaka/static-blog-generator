@@ -34,7 +34,7 @@ Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan m
 
 Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan.
 
-Informasi waktu dalam memasak:
+Informasi waktu dalam memasak di chimeraland:
 
 > 5 detik = sukses (rate keberhasilan 100%)
 > 10 detik = Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda (rate keberhasilan 50%)
@@ -42,7 +42,10 @@ Informasi waktu dalam memasak:
 
 Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan (10 detik atau lebih), tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di **Camp** dan **Stove**, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya **Mixer** (Anda perlu membukanya di Home Tech (Spirit Orb) dan membuatnya).
 
-> Informasi table:
+## Daftar resep masakan
+
+Informasi table:
+
 > Nama material[Jumlah]
 
 <!-- include Recipes/table.html -->
