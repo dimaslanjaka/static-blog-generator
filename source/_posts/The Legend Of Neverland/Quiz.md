@@ -61,7 +61,7 @@ photos:
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      2/12/2022, 11:12:54 AM
+      2/12/2022, 11:16:45 AM
     </small>
 
   </div>
@@ -699,7 +699,3 @@ function parse_url(url) {
   return parse;
 }
 </script>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

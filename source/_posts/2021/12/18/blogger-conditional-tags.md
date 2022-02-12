@@ -181,7 +181,4 @@ See Also:
 - [Menyembunyikan Javascript Di Blogger AMP](/2017/04/cara-menyembunyikan-javascript-di.html)
 
 ### Bookmark This
-**THIS ARTICLE WILL CONTINUE TO BE UPDATED AS THE BLOGGER DEVELOPES FROM TIME TO TIME**<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+**THIS ARTICLE WILL CONTINUE TO BE UPDATED AS THE BLOGGER DEVELOPES FROM TIME TO TIME**

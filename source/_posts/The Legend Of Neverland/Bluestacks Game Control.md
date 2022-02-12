@@ -63,7 +63,3 @@ photos:
   <img src="https://user-images.githubusercontent.com/12471057/132330641-d0b6dd99-34b4-42c4-81aa-4be7bddfb4b7.png" width="300px" height="250px" alt="Save Link As" style="display:inline-block;float:left;" />
 </div>
 <div style="clear:both;"></div>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

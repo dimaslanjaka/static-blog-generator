@@ -56,7 +56,4 @@ jobs:
       - run: echo "git commit any"
 ```
 
-Artikel ini untuk mempermudah visitor untuk memahami github workflow.<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+Artikel ini untuk mempermudah visitor untuk memahami github workflow.

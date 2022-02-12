@@ -134,7 +134,4 @@ Now,
 | -------- | :--------------------------------------------------------: |
 | Blog     |        [webmanajemen.com](https://webmanajemen.com)        |
 | Git Page |    [www.webmanajemen.com](https://www.webmanajemen.com)    |
-| GitHub   | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+| GitHub   | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |

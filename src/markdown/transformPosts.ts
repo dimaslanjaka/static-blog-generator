@@ -140,10 +140,11 @@ export function fixPostBody(str: string) {
   str = str.replace(regex, "https://res.cloudinary.com/practicaldev/image/fetch/");
   // add notranslate
   if (!str.includes('document.querySelectorAll("pre,code")')) {
-    str += `<script>document.querySelectorAll("pre,code");
+    let notranslate = `<script>document.querySelectorAll("pre,code");
   pretext.forEach(function (el) {
     el.classList.toggle("notranslate", true);
   });</script>`;
+    str = str.replace(notranslate, "");
   }
   return str;
 }

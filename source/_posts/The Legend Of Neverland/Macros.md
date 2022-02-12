@@ -86,7 +86,3 @@ _Select JSON macros script then import_
 
 ![image](https://user-images.githubusercontent.com/12471057/132939502-c9bb6e0c-284b-47a9-84b5-8863af2266f5.png)
 _Import successful_
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

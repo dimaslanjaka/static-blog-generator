@@ -27,7 +27,4 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---
 
-<pre><br>git rm -r --cached .<br>git add .<br>git commit -m 'clear git cache'<br>git push<br></pre><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<pre><br>git rm -r --cached .<br>git add .<br>git commit -m 'clear git cache'<br>git push<br></pre>

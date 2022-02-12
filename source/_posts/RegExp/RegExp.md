@@ -63,7 +63,3 @@ A regular expression can be a single character, or a more complicated pattern. R
   | RegExp | Explanations |
   | ------ | ------------ |
 
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

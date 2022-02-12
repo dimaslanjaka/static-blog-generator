@@ -28,7 +28,4 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---
 
-Ulat, Lebah = Buff WIL  Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan Pisang = Produksi Tangan<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+Ulat, Lebah = Buff WIL  Tomat = Buff Memasak Bawang = Pengumpulan Tumbuhan Pisang = Produksi Tangan

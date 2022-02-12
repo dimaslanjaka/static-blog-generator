@@ -24,7 +24,4 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---
 
-<p>Tutorial</p><pre><br>git reset --hard origin/<branch_name><br>git fetch --all<br></branch_name></pre>  <p>Example from master</p><pre><br>git reset --hard origin/master<br>git fetch --all<br></pre><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<p>Tutorial</p><pre><br>git reset --hard origin/<branch_name><br>git fetch --all<br></branch_name></pre>  <p>Example from master</p><pre><br>git reset --hard origin/master<br>git fetch --all<br></pre>

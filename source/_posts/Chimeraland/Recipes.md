@@ -20,7 +20,7 @@ title: Cooking Recipes Chimeraland
 type: post
 uuid: d70dc9ba-8b4e-4888-8a32-b316cded7f49
 webtitle: Chimeraland
-updated: 2022-02-12T11:12:54+07:00
+updated: 2022-02-12T11:16:44+07:00
 description: Chimeraland Cooking Recipes
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
@@ -181,7 +181,3 @@ setTimeout(() => {
 </script>
 
 <center><i>cooking recipes chimeraland updated january 2022</i></center>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
