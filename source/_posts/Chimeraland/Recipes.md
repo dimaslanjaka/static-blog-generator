@@ -35,8 +35,7 @@ Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan m
 
 Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan.
 
-Informasi waktu dalam memasak di chimeraland:
-
+> **Informasi waktu dalam memasak di chimeraland:**
 > 5 detik = sukses (rate keberhasilan 100%)
 > 10 detik = Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda (rate keberhasilan 50%)
 > 15 detik = gagal (rate keberhasilan 10%)
@@ -45,8 +44,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 
 ## Daftar resep masakan
 
-Informasi table:
-
+> **Informasi table:**
 > Nama material[Jumlah]
 
 <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
