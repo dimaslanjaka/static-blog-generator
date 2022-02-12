@@ -18,10 +18,11 @@ type: post
 uuid: 7125eaea-4d55-4888-8a73-74ec14b3e76a
 webtitle: WMI Genshin Impact
 updated: 2021-12-19T06:33:51+07:00
-description: Update Genshin Impact 1.6.1 - 2.0.0 Manual
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg
+description: Update Genshin Impact 1.6.1 - 2.0.0 Manual
 ---
 
 Update genshin impact `2.0.0` manual via download manager (IDM).

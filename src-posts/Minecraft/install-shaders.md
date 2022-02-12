@@ -16,6 +16,11 @@ toc: true
 uuid: 9c4dd0da-b700-4888-8ecc-3cdc3654907b
 webtitle: Minecraft
 updated: 2021-12-16T23:40:27+07:00
+thumbnail: /Minecraft/install-shaders/cover.jpg
+photos:
+  - /Minecraft/install-shaders/cover.jpg
+description: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial
+  terperinci ini dengan screenshot
 ---
 
 # Shaders

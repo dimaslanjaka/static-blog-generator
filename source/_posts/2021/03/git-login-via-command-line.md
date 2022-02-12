@@ -21,6 +21,7 @@ updated: 2021-03-29T07:50:58+07:00
 thumbnail: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
+  - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 ---
 
 <pre class="test"><br>git config --global user.name myusername

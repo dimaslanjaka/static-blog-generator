@@ -17,6 +17,10 @@ type: post
 uuid: e14cbf39-1ac8-4888-8b41-9b6d9b1ad4f4
 webtitle: RegExp
 updated: 2021-12-19T06:33:56+07:00
+thumbnail: /RegExp/RegExp/badwords.png
+photos:
+  - /RegExp/RegExp/badwords.png
+description: Match string not containing string, exclude badwords
 ---
 
 <!--toc-->

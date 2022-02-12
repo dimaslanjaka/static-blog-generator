@@ -26,6 +26,10 @@ type: post
 uuid: 1bd42c10-7050-4888-887e-658da5efced0
 webtitle: Desktop Shortcut
 updated: 2021-12-12T13:38:42+07:00
+thumbnail: https://i.stack.imgur.com/4TYxW.jpg
+photos:
+  - https://i.stack.imgur.com/4TYxW.jpg
+description: How to configure shortcut desktop for xampp linux
 ---
 
 # Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)
