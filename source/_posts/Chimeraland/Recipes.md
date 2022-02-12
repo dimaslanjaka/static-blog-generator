@@ -143,6 +143,7 @@ Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 deti
 
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 > Menggunakan **Camp 2** untuk unlock **Stove II**
+>
 > **Camp 2** tidak permanen, bangunan camp II akan hilang dalam 15 menit setelah diletakkan.
 
 Recipe :
