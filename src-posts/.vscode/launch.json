@@ -1,6 +1,12 @@
 {
   "configurations": [
     {
+      "command": "cd ../ && gulp article:copy",
+      "name": "Copy article",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "command": "cd ../ && gulp article:copy && hexo server",
       "name": "Hexo Server",
       "request": "launch",
