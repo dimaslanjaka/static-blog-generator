@@ -17,10 +17,11 @@ title: Colorful Auspicious Nimbus Cloud
 type: post
 uuid: 3c897e3e-864f-4888-8194-3cf99989790e
 updated: 2021-12-19T06:34:56+07:00
-description: Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland
 thumbnail: /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
 photos:
   - /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
+  - /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
+description: Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland
 ---
 
 ## Requirement

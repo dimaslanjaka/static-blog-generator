@@ -5,6 +5,7 @@ author:
   image: https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg
 category:
   - Games
+  - Chimeraland
 comments: true
 cover: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 date: 2022-01-11T07:00:00+07:00
@@ -20,11 +21,12 @@ title: Cooking Recipes Chimeraland
 type: post
 uuid: d70dc9ba-8b4e-4888-8a32-b316cded7f49
 webtitle: Chimeraland
-updated: 2022-02-12T11:16:44+07:00
-description: Chimeraland Cooking Recipes
+updated: 2022-02-12T11:18:24+07:00
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+  - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+description: Chimeraland Cooking Recipes
 ---
 
 ## Chimeraland Cooking Guide

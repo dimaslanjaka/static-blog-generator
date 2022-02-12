@@ -24,12 +24,13 @@ type: post
 uuid: 4e577201-dab4-4888-8c7d-5a7ccee64efa
 webtitle: WMI Gitlab
 updated: 2018-12-25T14:03:38+07:00
-description: img
-  src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
-  title=speed dial icon alt=speed dial
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
+description: img
+  src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
+  title=speed dial icon alt=speed dial
 ---
 
 <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png" title="speed dial icon" alt="speed dial icon"><blockquote> Input Below Codes into <kbd>&lt;head&gt;HERE&lt;/head&gt;</kbd></blockquote> <pre><br>&lt;link rel='icon' sizes='192x192' href='URL_IMAGES' /&gt;<br>&lt;link rel='shortcut icon' href='URL_IMAGES' sizes='192x182' type='image/x-icon'&gt;<br>&lt;link rel='apple-touch-icon' href='URL_IMAGES' /&gt;<br>&lt;meta name='msapplication-square310x310logo' content='URL_IMAGES' /&gt;<br>&lt;meta name='msapplication-TileImage' content='URL_IMAGES?w=270' /&gt;<br></pre>

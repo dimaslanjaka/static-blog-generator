@@ -22,10 +22,11 @@ type: post
 uuid: 1525e23b-de51-4888-8aa7-b643034cdf7d
 webtitle: WMI GitHub
 updated: 2021-11-21T23:06:49+07:00
-description: Cara menggunakan cache untuk mempercepat GitHub Workflows
 thumbnail: /GitHub/workflows/cover2.jpg
 photos:
   - /GitHub/workflows/cover2.jpg
+  - /GitHub/workflows/cover2.jpg
+description: Cara menggunakan cache untuk mempercepat GitHub Workflows
 ---
 
 ## Mempercepat kinerja github workflow

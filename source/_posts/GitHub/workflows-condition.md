@@ -21,10 +21,11 @@ type: post
 uuid: f4c6a18d-2377-4888-8330-9223d5f34263
 webtitle: WMI GitHub
 updated: 2021-11-30T20:10:25+07:00
-description: Macam-macam kondisional pada GitHub Workflows
 thumbnail: /GitHub/workflows/cover.png
 photos:
   - /GitHub/workflows/cover.png
+  - /GitHub/workflows/cover.png
+description: Macam-macam kondisional pada GitHub Workflows
 ---
 
 # Kondisional pada GitHub Workflow

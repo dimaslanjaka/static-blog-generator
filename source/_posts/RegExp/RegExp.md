@@ -18,10 +18,11 @@ type: post
 uuid: 4cd70405-503d-4888-85a2-55b39642d633
 webtitle: RegExp
 updated: 2021-12-19T06:34:45+07:00
-description: Regular Expression is a
 thumbnail: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
 photos:
   - https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
+  - https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
+description: Regular Expression is a
 ---
 
 <!--https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285-->

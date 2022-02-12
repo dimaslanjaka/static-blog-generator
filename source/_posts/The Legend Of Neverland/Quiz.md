@@ -40,10 +40,11 @@ type: post
 uuid: 0e998c19-d6c6-4888-82d3-f22d331ecc6d
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:28:57+07:00
-description: Quiz questions and the answers. The Legend Of Neverland Event.
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
+description: Quiz questions and the answers. The Legend Of Neverland Event.
 ---
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
@@ -61,7 +62,7 @@ photos:
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      2/12/2022, 11:16:45 AM
+      2/12/2022, 11:20:20 AM
     </small>
 
   </div>

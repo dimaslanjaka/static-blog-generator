@@ -20,6 +20,10 @@ type: post
 uuid: b0619489-c7d3-4888-8642-1e1c70136016
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:50+07:00
+thumbnail: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
+photos:
+  - https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
+description: Trial Of Time the legend of neverland stage location
 ---
 
   # Trial of time gate locations

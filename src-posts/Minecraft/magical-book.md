@@ -15,6 +15,10 @@ toc: true
 uuid: 90a378ff-426f-4888-8b7c-a97e78646688
 webtitle: Minecraft
 updated: 2021-12-16T23:40:51+07:00
+thumbnail: /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
+photos:
+  - /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
+description: All Description And Usages Of Magical Books Minecraft
 ---
 
 # List of all Magical Book Minecraft Enchantments
