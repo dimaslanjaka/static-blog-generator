@@ -34,9 +34,9 @@ Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan m
 
 Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 detik = 1 piring. Artinya, jika Anda melihat 10 detik, jika tidak maka akan gagal. untuk waktu memasak, Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan, tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di **Camp** dan **Stove**, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya **Mixer** (Anda perlu membukanya di Home Tech dan membuatnya ).
 
-> Legends:
+> Informasi table:
 >
-> Material Name[Amount]
+> Nama material[Jumlah]
 
 <!-- include Recipes/table.html -->
 
@@ -46,7 +46,7 @@ Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 deti
 
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 > Using **Camp 2** to unlock **Stove II**
-> **Camp 2** is not permanent, this building will disappear within a certain time
+> **Camp 2** tidak permanen, bangunan camp II akan hilang dalam 15 menit setelah diletakkan.
 
 Recipe :
 - grilled mushroom = any mushroom (unlock at camp 2)
