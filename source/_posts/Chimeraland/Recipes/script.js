@@ -1,4 +1,4 @@
-const td = document.querySelectorAll("article td");
+const td = document.querySelectorAll("article table td");
 Array.from(td).forEach((el) => {
   let text = el.innerHTML;
   text = text.replace(
@@ -7,7 +7,7 @@ Array.from(td).forEach((el) => {
   );
   text = text.replace(
     "atk",
-    '<img src="https://res.cloudinary.com/practicaldev/image/fetch/https://cdn-icons-png.flaticon.com/512/2736/2736453.png" class="img-inline-text atk" />'
+    '<img src="Recipes/attack.jpg" class="img-inline-text atk" />'
   );
   el.innerHTML = text;
 });
