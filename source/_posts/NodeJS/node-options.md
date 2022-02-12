@@ -61,7 +61,3 @@ These above codes would limit the heap totals to 225mb and 450mb respectively. I
 - `--max-executable-size` the maximum size of heap reserved for executable code (the native code result of just-in-time compiled JavaScript).
 - `--max-old-space-size` the maximum size of heap reserved for long term objects
 - `--max-semi-space-size` the maximum size of heap reserved for short term objects
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

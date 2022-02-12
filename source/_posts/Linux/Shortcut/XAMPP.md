@@ -72,7 +72,3 @@ sudo -H /opt/lampp/manager-linux-x64.run
 
 ## Result
 ![Screenshot from 2021-12-07 02-45-08](https://user-images.githubusercontent.com/12471057/144911998-7459f8b8-1816-447e-a0c7-898a2cd4da49.png)
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

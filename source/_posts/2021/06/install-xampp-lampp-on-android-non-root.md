@@ -132,7 +132,3 @@ photos:
 <script>
   hljs.initHighlightingOnLoad();
 </script>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

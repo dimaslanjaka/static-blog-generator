@@ -123,7 +123,3 @@ How to read Minecraft enchantment language
 The Minecraft enchanting table language is actually known as standard galactic language, and originated in Commander Keen. There are many, many tools available to convert the letters, but the words don’t correlate to the enchantment you get: it’s nothing but a fun easter egg. So while you can translate the enchanting language in Minecraft, it’s not helpful at all.
 
 And there you have it, all the basics on Minecraft enchantments plus descriptions of every vanilla enchantment in the game. Some of these are especially powerful – we’re big fans of using Punch to knock mobs of ledges – so use them wisely. You can also enchant your [Minecraft shield](https://www.pcgamesn.com/minecraft/banners-custom-shields) with three different Minecraft enchantments to improve your defence in battle.
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

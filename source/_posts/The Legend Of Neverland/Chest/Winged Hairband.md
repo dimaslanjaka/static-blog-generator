@@ -56,7 +56,3 @@ photos:
 {% youtube psOnlBSRBjA %}
 
 {% youtube yRbP_fSP3xY %}
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

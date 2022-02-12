@@ -82,7 +82,3 @@ for (let index = 0; index < loaders.length; index++) {
   console.log(element);
 }
 ```
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

@@ -71,7 +71,3 @@ photos:
          </div>
 
        </div>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

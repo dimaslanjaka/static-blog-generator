@@ -49,7 +49,3 @@ Saat berburu `Starconch`, perhatikan `kerang berwarna biru muda`. Kalian juga bi
 ---
 
 Itulah lokasi `Starconch` yang bisa kalian gunakan untuk memperkuat karakter Childe di Genshin Impact. Nantikan tips dan guide Genshin Impact lainnya. Sampai jumpa.
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

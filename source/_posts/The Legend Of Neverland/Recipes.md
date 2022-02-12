@@ -325,7 +325,3 @@ function CalculateTR(table) {
     }
   }
 </script>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

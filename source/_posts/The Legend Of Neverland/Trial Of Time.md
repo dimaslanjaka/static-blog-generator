@@ -31,7 +31,3 @@ photos:
 ## Fog Swamp F2
 
 ![Fog Swamp F2](./Trial%20Of%20Time/Trial%20Of%20Time%20Fog%20Swamp%20F2%20-%203.png)
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

@@ -24,7 +24,4 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---
 
-<ul style="text-align: left;"><li>reboot ke fastboot mode</li><li>ketik</li></ul>fastboot devices<div>fastboot getvar product</div><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<ul style="text-align: left;"><li>reboot ke fastboot mode</li><li>ketik</li></ul>fastboot devices<div>fastboot getvar product</div>

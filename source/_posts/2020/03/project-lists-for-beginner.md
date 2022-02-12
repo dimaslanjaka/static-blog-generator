@@ -26,7 +26,4 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>

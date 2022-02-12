@@ -65,7 +65,3 @@ Daily task the legend of neverland lists
 - [Highest Exp Fairies](Crystals%20Fairy%20Exp.html)
 
 <style>em::before{content:"Gate Name : ";}</style>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
