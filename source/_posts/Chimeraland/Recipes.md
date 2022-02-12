@@ -131,15 +131,17 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Grilled Mushroom</td>
       <td>any mushroom</td>
       <td>Camp II</td>
+      <td>Unlock Stove II</td>
       <td>-</td>
-      <td>-</td>
+      <td><a href="#unlock-stove-ii">Watch Tutorial</a></td>
     </tr>
     <tr>
       <td>mushroom broth</td>
       <td>any mushroom + any meat + dew/ice piece</td>
       <td>Camp II</td>
+      <td>Unlock Stove II</td>
       <td>-</td>
-      <td>-</td>
+      <td><a href="#unlock-stove-ii">Watch Tutorial</a></td>
     </tr>
   </tbody>
 </table>
@@ -180,7 +182,9 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 <link rel="stylesheet" href="Recipes/style.css" />
 <script src="Recipes/script.js"></script>
 
-### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
+### Unlock Stove II
+Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
+
 > Menggunakan **Camp 2** untuk unlock **Stove II**
 >
 > **Camp 2** tidak permanen, bangunan camp II akan hilang dalam 15 menit setelah diletakkan.
