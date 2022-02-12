@@ -11,7 +11,7 @@ date: 2022-01-11T07:00:00+07:00
 keywords:
   - recipes
   - chimeraland
-lang: en
+lang: id
 location: Indonesia
 subtitle: Chimeraland Cooking Recipes
 tags:
@@ -22,24 +22,112 @@ webtitle: Chimeraland
 ---
 
 ## Chimeraland Cooking Guide
-Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means, if you look at 10 seconds, otherwise it will be failed. for cooking time, you will get 2 dishes, which may not be what you want. You can cancel before cooking is done if you don't want more than one dish, it won't cost you anything. Basically, you can cook food in your **Camp** and **Stove**, but you may need certain tools to cook some foods, for example **Mixer** (you need to open it in Home Tech and create one).
+Makanan sangat penting di Chimeraland karena memberikan buff dan stat sementara selama durasi. Dengan memasak dan mengonsumsi makanan atau minuman tertentu, Anda akan mendapatkan buff tertentu, dan untuk memasak makanan atau minuman tersebut Anda ingin memahami Resep Makanan Chimeraland.
+Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan menjelaskan kepada Anda semua Resep Makanan Chimeraland. jadi tanpa lebih lanjut mari kita mulai.
+
+Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 detik = 1 piring. Artinya, jika Anda melihat 10 detik, jika tidak maka akan gagal. untuk waktu memasak, Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan, tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di **Camp** dan **Stove**, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya **Mixer** (Anda perlu membukanya di Home Tech dan membuatnya ).
 
 > Legends:
 >
 > Material Name[Amount]
 
-| Dish Name | Ingredients | Unlock Facility | Buffs | Grade |
-| --- | --- | --- | --- | --- |
-| Apple Sauce               | Apple[2]                                     | Mixer           | +180 fullness, +5 Heat Resistance                               |
-| Ice Block                 | Ice Piece[2]                                 | Mixer           | +180 fullness, +10 Heat Resistance                              |
-| Refreshing Pill           | Wild Garlic + Vegie Paste                    | Mixer           | +180 fullness, -40 toxisnsns |
-| Cantaloupe Slushie        | Cantaloupe + Ice Piece                       | Mixer           | +300 fullness, +15 Heat Resistance                              |
-| Sea-Buckthron Mixed Juice | Sea-Buckthron + Apple                        | Mixer           | +180 fullness, +Lv.2 Sandstrom Resistance                       |
-| Meat Noodles              | dew + crop level 6 + any meat + crop level 6 | Camp level 2    | +600 fullness, +250 atk                                         |
-| Stewed Liver              | Ice Piece + Beast Liver[4]                   | Stove II        | +540 fullness, +50 Armor Pierce for 15 mins                     |
-| Dark Cuisine              | Any Meat[1]                                  | ALL             | Component for making fertilizer                                 |
-| Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 | - |
-| Veggie Cake | Egg White + Peanut Oil + Veggie Paste + Equinox Flower | Stove II | - | Epic |
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Dish Name</th>
+      <th>Ingredients</th>
+      <th>Unlock Facility</th>
+      <th>Buffs</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apple Sauce</td>
+      <td>Apple[2]</td>
+      <td>Mixer</td>
+      <td>+180 fullness, +5 Heat Resistance</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ice Block</td>
+      <td>Ice Piece[2]</td>
+      <td>Mixer</td>
+      <td>+180 fullness, +10 Heat Resistance</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Refreshing Pill</td>
+      <td>Wild Garlic + Vegie Paste</td>
+      <td>Mixer</td>
+      <td>+180 fullness, -40 toxisnsns</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cantaloupe Slushie</td>
+      <td>Cantaloupe + Ice Piece</td>
+      <td>Mixer</td>
+      <td>+300 fullness, +15 Heat Resistance</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sea-Buckthron Mixed Juice</td>
+      <td>Sea-Buckthron + Apple</td>
+      <td>Mixer</td>
+      <td>+180 fullness, +Lv.2 Sandstrom Resistance</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Meat Noodles</td>
+      <td>dew + crop level 6 + any meat + crop level 6</td>
+      <td>Camp II</td>
+      <td>+600 fullness, +250 atk</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Stewed Liver</td>
+      <td>Ice Piece + Beast Liver[4]</td>
+      <td>Stove II</td>
+      <td>+540 fullness, +50 Armor Pierce for 15 mins</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Dark Cuisine</td>
+      <td>Any Meat[1]</td>
+      <td>ALL</td>
+      <td>Component for making fertilizer</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Dark Cuisine</td>
+      <td>Insect Inchor[1]</td>
+      <td>ALL</td>
+      <td>Component for making fertilizer</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Veggie Cake</td>
+      <td>Egg White + Peanut Oil + Veggie Paste + Equinox Flower</td>
+      <td>Stove II</td>
+      <td>-</td>
+      <td>Epic</td>
+    </tr>
+    <tr>
+      <td>Grilled Mushroom</td>
+      <td>any mushroom</td>
+      <td>Camp II</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>mushroom broth</td>
+      <td>any mushroom + any meat + dew/ice piece</td>
+      <td>Camp II</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- playground https://codepen.io/dimaslanjaka/pen/gOXWPra -->
 <link rel="stylesheet" href="Recipes/style.css" />
