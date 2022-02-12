@@ -55,6 +55,7 @@ skip_render:
   - "_posts/**/*.js"
   - "_posts/The Legend Of Neverland/Midi/readme.md"
   - "**/__test__/**"
+  - "_posts/Chimeraland/Recipes/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -149,8 +150,8 @@ author:
     height: 2592 # >= 60
 
 social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
+  github: https://github.com/dimaslanjaka
+  youtube: https://youtube.com/p/L3n4r0x
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
