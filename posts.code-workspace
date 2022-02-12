@@ -5,9 +5,13 @@
 		},
 		{
 			"path": "source/_posts"
+		},
+		{
+			"path": "src"
 		}
 	],
 	"settings": {
-		"emmet.showSuggestionsAsSnippets": true
+		"emmet.showSuggestionsAsSnippets": true,
+		"files.autoSave": "afterDelay"
 	}
 }
