@@ -33,7 +33,7 @@ description: Chimeraland Cooking Recipes
 Makanan sangat penting di Chimeraland karena memberikan buff dan stat sementara selama durasi. Dengan memasak dan mengonsumsi makanan atau minuman tertentu, Anda akan mendapatkan buff tertentu, dan untuk memasak makanan atau minuman tersebut Anda ingin memahami Resep Makanan Chimeraland.
 Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan menjelaskan kepada Anda semua Resep Makanan Chimeraland. jadi tanpa lebih lanjut mari kita mulai.
 
-Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 detik = 1 piring. Artinya, jika Anda melihat 10 detik, jika tidak maka akan gagal.
+Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 detik = 1 piring. Artinya:
 
 > 5 detik = sukses (rate keberhasilan 100%)
 > 10 detik = Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda (rate keberhasilan 50%)
@@ -149,7 +149,10 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
   </tbody>
 </table>
 
-<!-- references https://zilliongamer.com/chimeraland/c/items-list/food-epic-grad-->
+<!-- references
+  https://zilliongamer.com/chimeraland/c/items-list/food-epic-grad
+  https://theclashify.com/chimeraland-cooking-recipes/
+-->
 
 <link rel='stylesheet' href='https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css'>
 <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
