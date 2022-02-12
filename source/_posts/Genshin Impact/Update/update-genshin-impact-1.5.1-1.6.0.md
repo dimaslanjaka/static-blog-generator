@@ -87,7 +87,3 @@ Update genshin impact `1.6.1` manual via download manager (IDM).
 | -------- | :--------------------------------------------------: |
 | Blogger  |     [webmanajemen.com](https://webmanajemen.com)     |
 | Git Page | [www.webmanajemen.com](https://www.webmanajemen.com) |
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

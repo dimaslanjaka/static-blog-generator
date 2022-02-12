@@ -22,8 +22,4 @@ webtitle: WMI Gitlab
 updated: 2020-03-17T17:13:59+07:00
 ---
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>

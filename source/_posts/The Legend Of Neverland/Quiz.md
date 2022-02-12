@@ -57,7 +57,7 @@ updated: 2021-12-19T06:28:57+07:00
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      2/10/2022, 8:14:03 AM
+      2/12/2022, 10:19:15 AM
     </small>
 
   </div>
@@ -695,7 +695,3 @@ function parse_url(url) {
   return parse;
 }
 </script>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

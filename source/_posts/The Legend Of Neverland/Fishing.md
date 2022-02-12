@@ -59,7 +59,3 @@ This time you can auto-fish using `bluestacks` and `macros`.
 
   ## How to import script ?
   [Read Here](/The%20Legend%20Of%20Neverland/Macros.html)
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

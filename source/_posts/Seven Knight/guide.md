@@ -1706,7 +1706,3 @@ and once you have that move on to                    <strong>8 pieces forgotten 
         </p>
     </div>
 </div>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

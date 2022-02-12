@@ -29,7 +29,4 @@ updated: 2021-12-19T06:33:56+07:00
 ## Try It
 [Click Here](https://www.regextester.com/15)
 
-<!-- script /RegExp/RegExp/badwords.js --><script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<!-- script /RegExp/RegExp/badwords.js -->

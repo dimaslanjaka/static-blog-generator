@@ -97,7 +97,4 @@ on:
        - run: echo "First workflow was a failure"
 ```
 
-Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+Artikel ini hanya untuk mempermudah pengguna dalam memahami GitHub Workflow.

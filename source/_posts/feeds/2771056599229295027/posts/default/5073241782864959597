@@ -20,8 +20,4 @@ webtitle: WMI Gitlab
 updated: 2019-10-01T13:30:01+07:00
 ---
 
-<iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/HIXBxBKXO_w" width="459"></iframe><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/HIXBxBKXO_w" width="459"></iframe>

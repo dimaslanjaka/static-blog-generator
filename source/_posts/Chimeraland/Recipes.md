@@ -28,17 +28,22 @@ Cooking time shows how many dishes you will get. 5 seconds = 1 plate. This means
 >
 > Material Name[Amount]
 
-| Dish Name                 | Ingredients                                  | Unlock Facility | Buffs                                                           |
-| ------------------------- | -------------------------------------------- | --------------- | --------------------------------------------------------------- |
+| Dish Name | Ingredients | Unlock Facility | Buffs | Grade |
+| --- | --- | --- | --- | --- |
 | Apple Sauce               | Apple[2]                                     | Mixer           | +180 fullness, +5 Heat Resistance                               |
 | Ice Block                 | Ice Piece[2]                                 | Mixer           | +180 fullness, +10 Heat Resistance                              |
-| Refreshing Pill           | Wild Garlic + Vegie Paste                    | Mixer           | +180 fullness, **reduces toxins by 40** _(decreased over time)_ |
+| Refreshing Pill           | Wild Garlic + Vegie Paste                    | Mixer           | +180 fullness, -40 toxisnsns |
 | Cantaloupe Slushie        | Cantaloupe + Ice Piece                       | Mixer           | +300 fullness, +15 Heat Resistance                              |
 | Sea-Buckthron Mixed Juice | Sea-Buckthron + Apple                        | Mixer           | +180 fullness, +Lv.2 Sandstrom Resistance                       |
-| Meat Noodles              | dew + crop level 6 + any meat + crop level 6 | Camp level 2    | +600 fullness, +atk 250                                         |
+| Meat Noodles              | dew + crop level 6 + any meat + crop level 6 | Camp level 2    | +600 fullness, +250 atk                                         |
 | Stewed Liver              | Ice Piece + Beast Liver[4]                   | Stove II        | +540 fullness, +50 Armor Pierce for 15 mins                     |
 | Dark Cuisine              | Any Meat[1]                                  | ALL             | Component for making fertilizer                                 |
-| Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 |
+| Dark Cuisine              | Insect Inchor[1]                             | ALL             | Component for making fertilizer                                 | - |
+| Veggie Cake | Egg White + Peanut Oil + Veggie Paste + Equinox Flower | Stove II | - | Epic |
+
+<!-- playground https://codepen.io/dimaslanjaka/pen/gOXWPra -->
+<link rel="stylesheet" href="Recipes/style.css" />
+<script src="Recipes/script.js"></script>
 
 ### Grilled mushroom and Mushroom broth - Chimeraland cooking recipe to activate stove 2
 > Using **Camp 2** to unlock **Stove II**
@@ -74,9 +79,11 @@ Video Tutorial:
 }
 </style>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  let table = new DataTable('article table');
-});
+setTimeout(() => {
+  document.addEventListener('DOMContentLoaded', function () {
+    let table = new DataTable('article table');
+  });
+}, 4000);
 </script>
 
 <center>_cooking recipes chimeraland updated january 2022_</center>

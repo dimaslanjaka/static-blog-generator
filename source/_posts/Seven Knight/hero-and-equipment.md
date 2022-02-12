@@ -436,7 +436,3 @@ Scenario, PvP, Elixir dungeon, Divinity dungeon, Exp dungeon.            <strong
         </p>
     </li>
 </ul>
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

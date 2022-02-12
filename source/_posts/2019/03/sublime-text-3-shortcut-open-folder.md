@@ -21,8 +21,4 @@ webtitle: WMI Gitlab
 updated: 2019-03-08T08:20:51+07:00
 ---
 
-<h2>open folder with sublime text 3</h2><script src="https://gist.github.com/roundand/9367852.js"></script><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<h2>open folder with sublime text 3</h2><script src="https://gist.github.com/roundand/9367852.js"></script>

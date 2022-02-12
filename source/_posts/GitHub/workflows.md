@@ -69,7 +69,4 @@ jobs:
 ```
 
 # Berikut ini daftar penggunaan dan tips trick untuk github workflow
-[Cara mempercepat kinerja github workflows](workflows-caches.html)<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+[Cara mempercepat kinerja github workflows](workflows-caches.html)

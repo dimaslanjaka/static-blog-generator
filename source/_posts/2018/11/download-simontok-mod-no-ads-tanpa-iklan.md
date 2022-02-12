@@ -28,8 +28,4 @@ updated: 2019-07-22T03:34:02+07:00
 - [Simontok Mod Tanpa Iklan](/2018/11/download-simontok-mod-no-ads-tanpa-iklan.html)
 - [Simontok 150b anti block no ads](/2019/07/si-montok-150b-anti-block-no-ads.html)
 - [Simontok 2020](https://sfile.mobi/1wLSds1DBW3)
-- [Simontok](https://sfile.mobi/7vXO7p3V6MG)<script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+- [Simontok](https://sfile.mobi/7vXO7p3V6MG)
