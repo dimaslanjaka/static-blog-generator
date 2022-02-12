@@ -24,7 +24,4 @@ updated: 2021-12-20T02:10:55+07:00
 Daily task the legend of neverland lists
 - [Standard Rewards](Standard%20Rewards.html)
 - [Highest Exp Char](Exp%20Char.html)
-- [Highest Exp Fairies](Crystals%20Fairy%20Exp.html)<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+- [Highest Exp Fairies](Crystals%20Fairy%20Exp.html)

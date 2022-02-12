@@ -25,8 +25,4 @@ webtitle: WMI Gitlab
 updated: 2020-10-26T23:37:05+07:00
 ---
 
-<h2>Contribution Tutorial</h2><ol>  <li>Fork it (git clone https://github.com/name/repo)</li>  <li>Create your feature branch (git checkout -b my-new-feature)</li>  <li>Commit your changes (git commit -am 'Add some feature')</li>  <li>Push to the branch (git push origin my-new-feature)</li>  <li>Create new Pull Request</li></ol><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<h2>Contribution Tutorial</h2><ol>  <li>Fork it (git clone https://github.com/name/repo)</li>  <li>Create your feature branch (git checkout -b my-new-feature)</li>  <li>Commit your changes (git commit -am 'Add some feature')</li>  <li>Push to the branch (git push origin my-new-feature)</li>  <li>Create new Pull Request</li></ol>

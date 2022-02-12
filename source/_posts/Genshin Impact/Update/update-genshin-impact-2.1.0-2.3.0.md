@@ -126,11 +126,8 @@ Now,
 - [ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/ko-kr_1.5.0_1.5.1_diff_4wMycdN3.zip)
 - [zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip](https://autopatchhk.yuanshen.com/client_app/update/hk4e_global/10/zh-cn_1.5.0_1.5.1_diff_2heO3D7V.zip)
 
-| Title    |                         URL                          |
-| -------- | :--------------------------------------------------: |
-| Blog  |     [webmanajemen.com](https://webmanajemen.com)     |
-| Git Page | [www.webmanajemen.com](https://www.webmanajemen.com) |
-| GitHub | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+| Title    |                            URL                             |
+| -------- | :--------------------------------------------------------: |
+| Blog     |        [webmanajemen.com](https://webmanajemen.com)        |
+| Git Page |    [www.webmanajemen.com](https://www.webmanajemen.com)    |
+| GitHub   | [github.com/dimaslanjaka](https://github.com/dimaslanjaka) |

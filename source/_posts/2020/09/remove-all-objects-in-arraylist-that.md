@@ -20,8 +20,4 @@ webtitle: WMI Gitlab
 updated: 2020-09-22T10:36:39+07:00
 ---
 
-<pre><br>ArrayList&lt;String&gt; firstArr = new ArrayList&lt;&gt;();<br>  firstArr.add("1");<br>  firstArr.add("2");<br>  firstArr.add("3");<br>  <br>  // array/list to be removed from firstArr<br>  ArrayList&lt;String&gt; filterArr = new ArrayList&lt;&gt;();<br>  filterArr.add("1");<br>  filterArr.add("3");<br>  <br>  // filter now<br>  filterArr.removeAll(blockedArr);<br>  <br>  // Dump<br>  System.out.println(filterArr.toString); // output 1 and 3<br>  </pre><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<pre><br>ArrayList&lt;String&gt; firstArr = new ArrayList&lt;&gt;();<br>  firstArr.add("1");<br>  firstArr.add("2");<br>  firstArr.add("3");<br>  <br>  // array/list to be removed from firstArr<br>  ArrayList&lt;String&gt; filterArr = new ArrayList&lt;&gt;();<br>  filterArr.add("1");<br>  filterArr.add("3");<br>  <br>  // filter now<br>  filterArr.removeAll(blockedArr);<br>  <br>  // Dump<br>  System.out.println(filterArr.toString); // output 1 and 3<br>  </pre>

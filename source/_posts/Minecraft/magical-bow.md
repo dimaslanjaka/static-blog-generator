@@ -58,7 +58,3 @@ You must choose one of the Magical Books below as the last step.
 
 
 {% youtube sSnrK7m2RFo %}
-<script>document.querySelectorAll("pre,code");
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>

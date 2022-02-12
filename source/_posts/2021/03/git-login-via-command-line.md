@@ -29,8 +29,4 @@ updated: 2021-03-29T07:50:58+07:00
 <br>git config --global github.token mytoken
 <br></pre>
 
- <div class="separator" style="clear: both;"><a href="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg" style="display: block; padding: 1em 0; text-align: center; " rel="noopener noreferer nofollow"><img alt="" border="0" data-original-height="360" data-original-width="480" src="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg"></a></div><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+ <div class="separator" style="clear: both;"><a href="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg" style="display: block; padding: 1em 0; text-align: center; " rel="noopener noreferer nofollow"><img alt="" border="0" data-original-height="360" data-original-width="480" src="https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg"></a></div>

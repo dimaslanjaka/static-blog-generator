@@ -21,8 +21,4 @@ webtitle: WMI Gitlab
 updated: 2019-08-18T06:06:36+07:00
 ---
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><a href="https://www74.zippyshare.com/v/bm6KsF0Q/file.html" target="_blank" rel="noopener noreferer nofollow">Download</a> <br><hr><ol><li>Uchannel mod</li><li>Uchannel tanpa iklan</li><li>Uchannel no ads</li><li>Sub4sub mod</li></ol><div>Bonus&nbsp;<a href="https://www74.zippyshare.com/v/SKKuxfAr/file.html" rel="noopener noreferer nofollow">Auto clicker mod</a></div></div><script>document.querySelectorAll("pre,code");
-
-  pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
-  });</script>
+<div dir="ltr" style="text-align: left;" trbidi="on"><a href="https://www74.zippyshare.com/v/bm6KsF0Q/file.html" target="_blank" rel="noopener noreferer nofollow">Download</a> <br><hr><ol><li>Uchannel mod</li><li>Uchannel tanpa iklan</li><li>Uchannel no ads</li><li>Sub4sub mod</li></ol><div>Bonus&nbsp;<a href="https://www74.zippyshare.com/v/SKKuxfAr/file.html" rel="noopener noreferer nofollow">Auto clicker mod</a></div></div>
