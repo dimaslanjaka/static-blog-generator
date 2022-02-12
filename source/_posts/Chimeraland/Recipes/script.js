@@ -1,4 +1,4 @@
-const td = document.querySelectorAll("article table td");
+const td = document.querySelectorAll("article table#recipes td");
 Array.from(td).forEach((el) => {
   let text = el.innerHTML;
   text = text.replace(
