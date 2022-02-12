@@ -44,6 +44,9 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 > Informasi table:
 > Nama material[Jumlah]
 
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+  data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
+
 <table class="table table-striped table-bordered" id="recipes">
   <thead>
     <tr>
@@ -174,7 +177,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let table = new DataTable('article table#recipes');
+    let table = new DataTable('article table');
   });
 </script>
 
