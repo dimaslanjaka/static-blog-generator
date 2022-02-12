@@ -35,9 +35,9 @@ Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan m
 
 Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 detik = 1 piring. Artinya, jika Anda melihat 10 detik, jika tidak maka akan gagal. untuk waktu memasak, Anda akan mendapatkan 2 hidangan, yang mungkin tidak sesuai keinginan Anda. Anda dapat membatalkan sebelum memasak selesai jika Anda tidak ingin lebih dari satu hidangan, tidak akan dikenakan biaya apa pun. Pada dasarnya, Anda dapat memasak makanan di **Camp** dan **Stove**, tetapi Anda mungkin memerlukan alat tertentu untuk memasak beberapa makanan, misalnya **Mixer** (Anda perlu membukanya di Home Tech dan membuatnya ).
 
-> Legends:
+> Informasi table:
 >
-> Material Name[Amount]
+> Nama material[Jumlah]
 
 <table class="table table-striped table-bordered" id="recipes">
   <thead>
