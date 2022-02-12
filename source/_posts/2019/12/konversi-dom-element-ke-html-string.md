@@ -23,6 +23,14 @@ type: post
 uuid: 686519e0-5fe3-4888-8d40-56b2cdf5ab57
 webtitle: WMI Gitlab
 updated: 2019-12-28T11:57:05+07:00
+description: |-
+  Mengubahdom document sebuah elemen kedalam HTMl string biasa
+  <div id=elemenTersedia></div>
+  <script>
+  function
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+photos:
+  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---
 
 <div>
@@ -52,3 +60,7 @@ updated: 2019-12-28T11:57:05+07:00
 <br>&lt;/script&gt;
 <br>  </pre>
  </div>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

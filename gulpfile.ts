@@ -94,6 +94,50 @@ function articleCopy(done: TaskCallback) {
           shortcodeScript(file);
           shortcodeCss(file);
           replaceMD2HTML(file);
+          const parse = parsePost(file);
+          if (parse) {
+            if (parse.metadata) {
+              // fix post time
+              if (parse.metadata.modified) {
+                if (!parse.metadata.updated) {
+                  parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
+                } else {
+                  const updated = moment(parse.metadata.updated);
+                  const modified = moment(parse.metadata.modified);
+                  const same = updated.isSame(modified, "date");
+                  //console.log('updated', updated);
+                  //console.log('modified', modified);
+                  //console.log('same', same);
+                  if (!same) {
+                    parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
+                    //console.log(parse.metadata.updated)
+                  }
+                }
+              }
+              if (!parse.metadata.updated) {
+                const stats = fs.statSync(file);
+                const mtime = stats.mtime;
+                parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
+              }
+              if (!parse.metadata.date.includes("+")) {
+                parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
+              }
+              // fix lang
+              if (!parse.metadata.lang) parse.metadata.lang = "en";
+              // fix post description
+              if (parse.metadata.subtitle && !parse.metadata.description)
+                parse.metadata.description = parse.metadata.subtitle;
+              if (parse.metadata.cover) {
+                if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
+                if (!parse.metadata.photos) {
+                  parse.metadata.photos = [];
+                }
+                parse.metadata.photos.push(parse.metadata.cover);
+              }
+              const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+              writeFileSync(file, rebuildPost);
+            }
+          }
         }
       });
 

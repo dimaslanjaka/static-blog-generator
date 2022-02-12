@@ -19,6 +19,10 @@ title: Winged Hairband
 type: post
 uuid: 8d281b58-7835-4888-85cc-f2c12e1fc87f
 updated: 2021-12-19T06:35:16+07:00
+description: Chest Winged Hairband location in the legend of neverland
+thumbnail: http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
+photos:
+  - http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
 ---
 
 ## Requirement
@@ -52,3 +56,7 @@ updated: 2021-12-19T06:35:16+07:00
 {% youtube psOnlBSRBjA %}
 
 {% youtube yRbP_fSP3xY %}
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

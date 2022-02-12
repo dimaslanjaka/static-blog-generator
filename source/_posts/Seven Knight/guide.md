@@ -22,6 +22,10 @@ type: post
 uuid: d6337782-e225-4888-8fca-4207d72f764f
 webtitle: Seven Knights 2
 updated: 2021-12-03T19:06:19+07:00
+description: Guide SK2 for F2P
+thumbnail: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
+photos:
+  - https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 ---
 
 <div>
@@ -1706,3 +1710,7 @@ and once you have that move on to                    <strong>8 pieces forgotten 
         </p>
     </div>
 </div>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

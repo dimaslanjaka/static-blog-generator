@@ -23,6 +23,10 @@ type: post
 uuid: c49cfc4a-d91b-4888-8c78-1f1f111e778c
 webtitle: Seven Knights 2
 updated: 2021-12-03T19:06:19+07:00
+description: Seven Knights 2 Hero Usage and Equipment Guide
+thumbnail: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
+photos:
+  - https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 ---
 
 <p>
@@ -436,3 +440,7 @@ Scenario, PvP, Elixir dungeon, Divinity dungeon, Exp dungeon.            <strong
         </p>
     </li>
 </ul>
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>

@@ -15,6 +15,10 @@ toc: true
 uuid: 90a378ff-426f-4888-8b7c-a97e78646688
 webtitle: Minecraft
 updated: 2021-12-16T23:40:51+07:00
+description: All Description And Usages Of Magical Books Minecraft
+thumbnail: /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
+photos:
+  - /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
 ---
 
 # List of all Magical Book Minecraft Enchantments
@@ -119,3 +123,7 @@ How to read Minecraft enchantment language
 The Minecraft enchanting table language is actually known as standard galactic language, and originated in Commander Keen. There are many, many tools available to convert the letters, but the words don’t correlate to the enchantment you get: it’s nothing but a fun easter egg. So while you can translate the enchanting language in Minecraft, it’s not helpful at all.
 
 And there you have it, all the basics on Minecraft enchantments plus descriptions of every vanilla enchantment in the game. Some of these are especially powerful – we’re big fans of using Punch to knock mobs of ledges – so use them wisely. You can also enchant your [Minecraft shield](https://www.pcgamesn.com/minecraft/banners-custom-shields) with three different Minecraft enchantments to improve your defence in battle.
+<script>document.querySelectorAll("pre,code");
+  pretext.forEach(function (el) {
+    el.classList.toggle("notranslate", true);
+  });</script>
