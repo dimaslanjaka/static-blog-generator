@@ -115,7 +115,7 @@ function articleCopy(done: TaskCallback) {
                 }
               }
               if (!parse.metadata.updated) {
-                const stats = fs.statSync(file);
+                const stats = fs.statSync(sourceFile);
                 const mtime = stats.mtime;
                 parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
               }
