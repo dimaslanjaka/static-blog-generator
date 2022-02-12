@@ -7,7 +7,7 @@ Array.from(td).forEach((el) => {
   );
   text = text.replace(
     "atk",
-    '<img src="Recipes/attack.jpg" class="img-inline-text atk" />'
+    '<img src="Recipes/attack.png" class="img-inline-text atk" />'
   );
   el.innerHTML = text;
 });
