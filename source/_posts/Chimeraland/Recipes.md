@@ -49,7 +49,9 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 
 <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
   data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
-
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <table class="table table-striped table-bordered" id="recipes">
   <thead>
     <tr>
@@ -184,6 +186,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     let table = new DataTable('article table');
+    console.log(table);
   });
 </script>
 
