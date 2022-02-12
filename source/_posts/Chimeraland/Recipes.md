@@ -31,7 +31,7 @@ Waktu memasak menunjukkan berapa banyak hidangan yang akan Anda dapatkan. 5 deti
 >
 > Material Name[Amount]
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered" id="recipes">
   <thead>
     <tr>
       <th>Dish Name</th>
@@ -169,7 +169,7 @@ Video Tutorial:
 <script>
 setTimeout(() => {
   document.addEventListener('DOMContentLoaded', function () {
-    let table = new DataTable('article table');
+    let table = new DataTable('article table#recipes');
   });
 }, 4000);
 </script>
