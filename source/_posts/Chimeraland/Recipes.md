@@ -70,12 +70,14 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Mixer</td>
       <td>+180 fullness, +5 Heat Resistance</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Ice Block</td>
       <td>Ice Piece[2]</td>
       <td>Mixer</td>
       <td>+180 fullness, +10 Heat Resistance</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -84,12 +86,14 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Mixer</td>
       <td>+180 fullness, -40 toxins/s</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Cantaloupe Slushie</td>
       <td>Cantaloupe + Ice Piece</td>
       <td>Mixer</td>
       <td>+300 fullness, +15 Heat Resistance</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -98,12 +102,14 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Mixer</td>
       <td>+180 fullness, +Lv.2 Sandstrom Resistance</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Meat Noodles</td>
       <td>dew + crop level 6 + any meat + crop level 6</td>
       <td>Camp II</td>
       <td>+600 fullness, +250 atk</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -112,12 +118,14 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Stove II</td>
       <td>+540 fullness, +50 Armor Pierce 15 mins</td>
       <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Dark Cuisine</td>
       <td>Any Meat[1]</td>
       <td>ALL</td>
       <td>Component for making fertilizer</td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -126,6 +134,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>ALL</td>
       <td>Component for making fertilizer</td>
       <td>-</td>
+      <td></td>
     </tr>
     <tr>
       <td>Veggie Cake</td>
@@ -185,8 +194,10 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let table = new DataTable('article table');
-    console.log(table);
+    setTimeout(() => {
+      let table = new DataTable('article table');
+      console.log(table);
+    }, 4000);
   });
 </script>
 
