@@ -64,10 +64,15 @@ Recipe :
 - mushroom broth = any mushroom + any meat + dew/ice piece (unlock at camp 2)
 
 Video Tutorial:
-
+Cara unlock **Stove II**
 {% youtube I_QH6jv7rzA %}
 
 ### Windoo
+Cara mendapatkan attendant **Windoo**
 {% youtube P5uAFGr33YA %}
+
+### Vulorman
+Cara mendapatkan attendant **Vulorman**
+{% youtube 5K-X_U2YwAI %}
 
 <center><i>cooking recipes chimeraland updated january 2022</i></center>
