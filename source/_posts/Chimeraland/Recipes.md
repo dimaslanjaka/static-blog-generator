@@ -14,7 +14,9 @@ keywords:
   - chimeraland
 lang: id
 location: Indonesia
-subtitle: Chimeraland Cooking Recipes
+subtitle: Chimeraland cooking recipes and food functions such as buffs and
+  attendant preferences, Chimeraland cooking recipes dan fungsi-fungsi makanan
+  seperti buff dan kesukaan attendant
 tags:
   - Chimeraland
 title: Cooking Recipes Chimeraland
@@ -160,6 +162,14 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>-</td>
       <td><a href="#unlock-stove-ii">Watch Tutorial</a></td>
     </tr>
+    <tr>
+      <td>Fried Tenderloin</td>
+      <td>Peanut Oil + Fruit Sauce + Any meat + Equinox Flower</td>
+      <td>Stove II</td>
+      <td>+540 fullness, +120 Def 15 mins, Vulorman Attendant Recruitment</td>
+      <td>Mythic</td>
+      <td><a href="#vulorman">Watch Tutorial</a></td>
+    </tr>
   </tbody>
 </table>
 
@@ -217,10 +227,15 @@ Recipe :
 - mushroom broth = any mushroom + any meat + dew/ice piece (unlock at camp 2)
 
 Video Tutorial:
-
+Cara unlock **Stove II**
 {% youtube I_QH6jv7rzA %}
 
 ### Windoo
+Cara mendapatkan attendant **Windoo**
 {% youtube P5uAFGr33YA %}
+
+### Vulorman
+Cara mendapatkan attendant **Vulorman**
+{% youtube 5K-X_U2YwAI %}
 
 <center><i>cooking recipes chimeraland updated january 2022</i></center>
