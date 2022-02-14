@@ -22,7 +22,6 @@ updated: 2019-12-04T15:54:41+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/7acb87ad8c3b83dc53d0c77acdb8a427.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/7acb87ad8c3b83dc53d0c77acdb8a427.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/7acb87ad8c3b83dc53d0c77acdb8a427.jpeg
 description: "Download lagu Marcell  Takkan Terganti Mp3 Marcell - Will Not Be
   Replaceable Listen: 32,370,712 Duration: 253 MP3 size: 3.95MB"
 ---

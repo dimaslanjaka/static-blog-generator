@@ -23,7 +23,6 @@ updated: 2021-05-14T04:15:56+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
 description: In the era of the 000s, the PS2 console was known to bring a myriad
   of valuable experiences to its connoisseurs. But along with the
 ---

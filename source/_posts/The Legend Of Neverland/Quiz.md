@@ -43,7 +43,6 @@ updated: 2021-12-19T06:28:57+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
 description: Quiz questions and the answers. The Legend Of Neverland Event.
 ---
 
@@ -62,7 +61,7 @@ description: Quiz questions and the answers. The Legend Of Neverland Event.
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      2/14/2022, 8:16:40 AM
+      2/14/2022, 9:00:14 AM
     </small>
 
   </div>

@@ -22,7 +22,6 @@ updated: 2019-11-24T21:20:30+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/fd3530ffc5a624177274308fa427f6a5.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/fd3530ffc5a624177274308fa427f6a5.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/fd3530ffc5a624177274308fa427f6a5.jpeg
 description: "Download lagu HIVI - Siapkah Kau Tuk Jatuh Cinta Lagi Mp3 HIVI! -
   Are you ready to fall in love again Listen: 85,788,312 Duration:"
 ---

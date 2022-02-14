@@ -22,7 +22,6 @@ updated: 2019-12-04T13:29:28+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e35a13b69650813b631bfb1716242936.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e35a13b69650813b631bfb1716242936.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/e35a13b69650813b631bfb1716242936.jpeg
 description: "Download lagu THOMAS ARYA  SATU HATI SAMPAI MATI Mp3 THOMAS ARYA -
   ONE HEART UNTIL DEAD Listen: 1,690 Duration: 391 MP3 size:"
 ---

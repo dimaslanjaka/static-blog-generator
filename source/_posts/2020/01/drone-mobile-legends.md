@@ -24,7 +24,6 @@ updated: 2020-02-01T15:02:16+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Drone Mobile Legends Now Available at
   https//www.webmanajemen.com/Web-Manajemen/mlbb.html?v.1.0.5 Unity v4 ALL MAPS
   WorkPosted by Dimas

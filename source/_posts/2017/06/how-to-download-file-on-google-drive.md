@@ -22,7 +22,6 @@ updated: 2017-06-25T20:59:18+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
 description: For those of you who want to download files shared on kbd>Google
   Drive</kbd> may have experienced access limits from shared files, be they
 ---

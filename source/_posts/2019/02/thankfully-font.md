@@ -23,7 +23,6 @@ updated: 2019-02-05T01:51:25+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
 description: Untungnya Font CATATAN Font ini GRATIS 100% UNTUK PENGGUNAAN
   KOMERSIAL! Tetapi setiap donasi sangat dihargai. Akun Paypal
 ---

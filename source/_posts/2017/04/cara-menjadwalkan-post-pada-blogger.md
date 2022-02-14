@@ -22,7 +22,6 @@ updated: 2017-04-10T10:58:00+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
 description: Cara Menjadwalkan Post pada BloggerJika Anda menggunakan Blogspot
   atau Blogger untuk blog, Anda mungkin bertanyatanya apakah ada cara
 ---

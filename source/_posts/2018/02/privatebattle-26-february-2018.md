@@ -22,7 +22,6 @@ updated: 2018-02-26T19:22:57+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: VG Private Battle 20:00 Wib)<br />Tim A<br />1. Mamskid<br />2.
   abdulajis<br />3. Hanif17(roamer)<br /><br />Tim B<br />1.Hadifadillah<br
 ---

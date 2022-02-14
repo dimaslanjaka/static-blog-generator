@@ -24,7 +24,6 @@ updated: 2021-04-20T16:40:48+07:00
 thumbnail: https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 photos:
   - https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
-  - https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 description: pre><br />// change folder path inside bracket<br
   />includeBuild(plugin) {<br /> dependencySubstitution {<br /> 	// change your
 ---

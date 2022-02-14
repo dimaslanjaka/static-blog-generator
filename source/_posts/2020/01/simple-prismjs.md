@@ -22,7 +22,6 @@ updated: 2020-01-20T11:22:00+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "Simple PrismJS Syntax Highlighter pre> <code> (Not Single) Usage:
   <pre><code>code block</code></pre> <h3>Welcome to the real-time"
 ---

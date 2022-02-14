@@ -23,7 +23,6 @@ updated: 2019-07-26T01:10:33+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 description: English Indonesian Afrikaans Albanian Arabic Armenian Azerbaijani
 ---
 

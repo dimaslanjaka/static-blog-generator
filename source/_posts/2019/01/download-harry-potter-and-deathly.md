@@ -24,7 +24,6 @@ updated: 2019-01-26T00:28:00+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

@@ -21,7 +21,6 @@ updated: 2017-11-25T01:10:00+07:00
 thumbnail: http://www.bestchange.com/images/banners/468x60-16.gif
 photos:
   - http://www.bestchange.com/images/banners/468x60-16.gif
-  - http://www.bestchange.com/images/banners/468x60-16.gif
 description: Among hundreds of exchangers where Internet users can exchange
   electronic money, only slightly over forty most reliable ones with flawless
 ---

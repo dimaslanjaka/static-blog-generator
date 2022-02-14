@@ -25,7 +25,6 @@ updated: 2019-12-15T04:02:09+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/edd537cfee3f5f3a8bde808f052c0934.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/edd537cfee3f5f3a8bde808f052c0934.jpeg
-  - https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/edd537cfee3f5f3a8bde808f052c0934.jpeg
 description: Do we have to write articles every day on the blog Maybe this
   question has crossed many bloggers. I, as someone new to the blogging
 ---

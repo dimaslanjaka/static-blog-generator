@@ -22,7 +22,6 @@ updated: 2019-12-04T17:13:06+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/aad93d556ced350e9aab220f8469ffcf.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/aad93d556ced350e9aab220f8469ffcf.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/aad93d556ced350e9aab220f8469ffcf.jpeg
 description: "Download lagu GIGI  Damai Bersamamu Mp3 DENTAL - Peace be with you
   Listen: 44,066 Duration: 182 MP3 size: 2.84MB Download Links"
 ---

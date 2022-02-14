@@ -22,7 +22,6 @@ updated: 2019-12-04T17:12:52+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/9724ab484cb48339251837b64932b570.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/9724ab484cb48339251837b64932b570.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/9724ab484cb48339251837b64932b570.jpeg
 description: "Download lagu Armand Maulana  Dewi Gita - Seperti Legenda Mp3
   Armand Maulana & Dewi Gita - Like a Legend Listen: 386,307 Duration:"
 ---

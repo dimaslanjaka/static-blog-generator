@@ -22,7 +22,6 @@ updated: 2017-07-28T10:13:00+07:00
 thumbnail: https://img.raymond.cc/blog/wp-content/uploads/2015/08/dropbox-error-429.png
 photos:
   - https://img.raymond.cc/blog/wp-content/uploads/2015/08/dropbox-error-429.png
-  - https://img.raymond.cc/blog/wp-content/uploads/2015/08/dropbox-error-429.png
 description: Ada banyak layanan file hosting yang bisa Anda temukan di Internet
   dan beberapa yang terkenal adalah Dropbox, Google Drive, Microsoft
 ---

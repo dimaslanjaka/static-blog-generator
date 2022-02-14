@@ -23,7 +23,6 @@ updated: 2018-11-30T00:03:14+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
 description: Angry Birds Match .0.0 Apk + Mod Koin, Permata, Kehidupan,
   Bergerak, ... android
 ---

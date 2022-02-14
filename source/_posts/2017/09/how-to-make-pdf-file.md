@@ -21,7 +21,6 @@ updated: 2017-09-24T01:51:01+07:00
 thumbnail: https://3.bp.blogspot.com/-JsB839A6H5U/ThI-R0-PcXI/AAAAAAAAAbA/W4xMXiJ_2x8/s1600/do-pdf-free.png
 photos:
   - https://3.bp.blogspot.com/-JsB839A6H5U/ThI-R0-PcXI/AAAAAAAAAbA/W4xMXiJ_2x8/s1600/do-pdf-free.png
-  - https://3.bp.blogspot.com/-JsB839A6H5U/ThI-R0-PcXI/AAAAAAAAAbA/W4xMXiJ_2x8/s1600/do-pdf-free.png
 description: http//www.dopdf.com/download/setup/dopdf-7.exe
 ---
 

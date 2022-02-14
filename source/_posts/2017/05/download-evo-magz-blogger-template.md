@@ -22,7 +22,6 @@ updated: 2017-05-17T11:00:04+07:00
 thumbnail: https://1.bp.blogspot.com/-Z1TBK-4l9zQ/V8gjaxUDCZI/AAAAAAAAB0U/hP_YpKpX2HUSmc6EDoJTG-7UYr3xVzIFACLcB/s640/Capture.PNG
 photos:
   - https://1.bp.blogspot.com/-Z1TBK-4l9zQ/V8gjaxUDCZI/AAAAAAAAB0U/hP_YpKpX2HUSmc6EDoJTG-7UYr3xVzIFACLcB/s640/Capture.PNG
-  - https://1.bp.blogspot.com/-Z1TBK-4l9zQ/V8gjaxUDCZI/AAAAAAAAB0U/hP_YpKpX2HUSmc6EDoJTG-7UYr3xVzIFACLcB/s640/Capture.PNG
 description: Hi Buddy , Now I want to share for free template that is Tempo Evo
   Magz Version .0 Clone Super Fast Loading , Is a special
 ---

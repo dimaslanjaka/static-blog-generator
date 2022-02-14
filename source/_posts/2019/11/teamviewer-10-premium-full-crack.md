@@ -23,7 +23,6 @@ updated: 2019-11-02T17:38:59+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
 description: Web Development Indonesia  For some people, maybe this remote PC
   software is already familiar to you. TeamViewer 10 Premium Full Crack
 ---

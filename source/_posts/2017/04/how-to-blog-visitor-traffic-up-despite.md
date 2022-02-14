@@ -24,7 +24,6 @@ updated: 2017-04-18T19:08:47+07:00
 thumbnail: http://sugeng.id/blog/wp-content/uploads/2016/01/Jarang-posting-400x336.png
 photos:
   - http://sugeng.id/blog/wp-content/uploads/2016/01/Jarang-posting-400x336.png
-  - http://sugeng.id/blog/wp-content/uploads/2016/01/Jarang-posting-400x336.png
 description: How To Blog Visitor Traffic Up Despite stable or even Rarely Post
   Posted on the blog regularly and consistently is one of the obstacles
 ---

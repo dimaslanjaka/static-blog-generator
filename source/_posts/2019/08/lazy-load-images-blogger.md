@@ -22,7 +22,6 @@ updated: 2019-08-01T00:05:01+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
 description: Lazy load images bloggerlazy loading blogger berguna
   untuk  Mempercepat laman webMeningkatkan rating pagespeedHTML (Usage)<img alt=
 ---

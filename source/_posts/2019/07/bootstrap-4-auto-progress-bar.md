@@ -24,7 +24,6 @@ updated: 2019-07-25T23:54:52+07:00
 thumbnail: https://dimaslanjaka.github.io/assets/img/javascript.png
 photos:
   - https://dimaslanjaka.github.io/assets/img/javascript.png
-  - https://dimaslanjaka.github.io/assets/img/javascript.png
 description: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
   (@dimaslanjaka) on CodePen.
 ---

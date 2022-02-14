@@ -22,7 +22,6 @@ updated: 2017-09-23T01:36:04+07:00
 thumbnail: https://imgdb.net/images/3195.png
 photos:
   - https://imgdb.net/images/3195.png
-  - https://imgdb.net/images/3195.png
 description: When first mate to create a blog must have occurred in the mind of
   my friend, for what this blog will be created. Maybe at first just a
 ---

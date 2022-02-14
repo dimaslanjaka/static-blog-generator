@@ -23,7 +23,6 @@ updated: 2017-11-11T00:00:13+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
 description: Ping Service Advise Web crawlers, Blog and RSS Registries that your
   blog is refreshed or made. The advantages are speedier Web index
 ---

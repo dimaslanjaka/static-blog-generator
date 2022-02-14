@@ -25,7 +25,6 @@ updated: 2018-08-05T06:18:13+07:00
 thumbnail: https://imgdb.net/images/3863.png
 photos:
   - https://imgdb.net/images/3863.png
-  - https://imgdb.net/images/3863.png
 description: Weapons are one of the most important elements in durango games,
   whatever we do in the game definitely requires
 ---

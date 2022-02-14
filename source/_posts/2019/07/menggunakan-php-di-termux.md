@@ -22,7 +22,6 @@ updated: 2019-07-28T06:38:50+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Instalasipkg update ypkg upgrade -ypkg install php curl wget git
   -yContoh Penggunaan PHP (CLI) pada termuxbuat file
 ---

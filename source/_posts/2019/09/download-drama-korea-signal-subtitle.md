@@ -22,7 +22,6 @@ updated: 2019-09-25T15:34:32+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/08/Signal-Subtitle-Indonesia.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/08/Signal-Subtitle-Indonesia.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/08/Signal-Subtitle-Indonesia.png
 description: Korean Drama Signal Indonesian Subtitles Signal Synopsis The Korean
   drama Signal Sub Indo tells the story of a man named Park Hae
 ---

@@ -22,7 +22,6 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
 description: registers the default width and renders the advertisement that you
   will choosen. This may not generally be the most suitable approach since
 ---

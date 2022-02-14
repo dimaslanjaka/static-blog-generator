@@ -23,7 +23,6 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://goo.gl/dzGpyo
 photos:
   - https://goo.gl/dzGpyo
-  - https://goo.gl/dzGpyo
 description: I am trying to rotate random CSS sheets via JS  I have the
   following script but when I am using it - it doesnt seem to work ?
 ---

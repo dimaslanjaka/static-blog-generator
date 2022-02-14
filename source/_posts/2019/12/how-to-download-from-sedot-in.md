@@ -23,7 +23,6 @@ updated: 2019-12-14T01:05:02+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.bagas31.info/a415d91f0af09d3f0b5f2f8bc5844706.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/www.bagas31.info/a415d91f0af09d3f0b5f2f8bc5844706.jpeg
-  - https://imgcdn.000webhostapp.com/https/www.bagas31.info/a415d91f0af09d3f0b5f2f8bc5844706.jpeg
 description: Cara Download melalui Google Drive sedot.club) - Website
   Development Indonesia [ Website Development Indonesia ] - Lately, there have
 ---

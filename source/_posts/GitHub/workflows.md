@@ -24,7 +24,6 @@ updated: 2021-11-19T00:29:25+07:00
 thumbnail: /GitHub/workflows/cover.png
 photos:
   - /GitHub/workflows/cover.png
-  - /GitHub/workflows/cover.png
 description: Semua yang kamu harus tau tentang GitHub Workflows
 ---
 

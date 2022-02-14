@@ -24,7 +24,6 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
 description: Salah satu hal paling luar biasa tentang Visual Studio Code adalah
   kemampuan untuk meningkatkan kemampuannya dengan penambahan ekstensi
 ---

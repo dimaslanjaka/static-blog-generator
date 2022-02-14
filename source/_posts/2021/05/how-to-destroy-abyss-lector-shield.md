@@ -23,7 +23,6 @@ updated: 2021-06-01T02:19:23+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools%2Fgenshin-impact%2Fgacha%2Fcryo_icon.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools%2Fgenshin-impact%2Fgacha%2Fcryo_icon.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools%2Fgenshin-impact%2Fgacha%2Fcryo_icon.png
 description: Use Element Reactions
 ---
 

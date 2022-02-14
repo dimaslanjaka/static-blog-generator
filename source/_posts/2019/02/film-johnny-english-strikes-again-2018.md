@@ -22,7 +22,6 @@ updated: 2019-02-19T22:21:09+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Watch Movies Online Movie Johnny English Strikes Again 2018)
   Indonesian Subtitles - Disaster strikes when a criminal mastermind
 ---

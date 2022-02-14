@@ -22,7 +22,6 @@ updated: 2019-12-02T07:10:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/ef85e80b42817d14e94b2f885480a9b6.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/ef85e80b42817d14e94b2f885480a9b6.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/ef85e80b42817d14e94b2f885480a9b6.jpeg
 description: "Download lagu Anji  Ternyata cinta Mp3 Anji - Turns out love
   Listen: 97,739 Duration: 261 MP3 size: 4.08MB Download Links"
 ---

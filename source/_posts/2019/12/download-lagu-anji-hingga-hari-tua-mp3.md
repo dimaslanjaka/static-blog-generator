@@ -22,7 +22,6 @@ updated: 2019-12-04T17:13:06+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/596765e98791b10494079cf36a0d8076.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/596765e98791b10494079cf36a0d8076.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/596765e98791b10494079cf36a0d8076.jpeg
 description: "Download lagu Anji  Hingga Hari Tua Mp3 Anji - Until the Old Age
   Listen: 266,480 Duration: 219 MP3 size: 3.42MB Download Links"
 ---

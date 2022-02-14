@@ -24,7 +24,6 @@ updated: 2018-02-08T20:07:30+07:00
 thumbnail: https://goo.gl/1QBD9u
 photos:
   - https://goo.gl/1QBD9u
-  - https://goo.gl/1QBD9u
 description: How Much Rates Per Article The article tariff adjusts the need for
   the number of words each article you need. I offer IDR 150 / word .
 ---

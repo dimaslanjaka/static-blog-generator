@@ -21,7 +21,6 @@ updated: 2018-11-10T04:54:12+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/10/Happy-Together-Season-4-Subtitle-Indonesia.jpg?resize=300%2C300&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/10/Happy-Together-Season-4-Subtitle-Indonesia.jpg?resize=300%2C300&ssl=1
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/10/Happy-Together-Season-4-Subtitle-Indonesia.jpg?resize=300%2C300&ssl=1
 description: Happy Together Season  Episode 5 Indonesian Subtitles
 ---
 

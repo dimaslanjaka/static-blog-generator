@@ -23,7 +23,6 @@ updated: 2018-10-17T22:20:20+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
 description: Penjabaran dari WPS WPA WiFi Tester Tanpa Root)
 ---
 

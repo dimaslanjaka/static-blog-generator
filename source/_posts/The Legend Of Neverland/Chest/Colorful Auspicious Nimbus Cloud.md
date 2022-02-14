@@ -20,7 +20,6 @@ updated: 2021-12-19T06:34:56+07:00
 thumbnail: /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
 photos:
   - /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
-  - /The Legend Of Neverland/Chest/Colorful Auspicious Nimbus Cloud/cover.jpg
 description: Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland
 ---
 

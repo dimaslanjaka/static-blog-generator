@@ -25,7 +25,6 @@ updated: 2019-02-08T22:17:27+07:00
 thumbnail: https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
 photos:
   - https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
-  - https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
 description: Download Scriptauto reaction facebook
 ---
 

@@ -24,7 +24,6 @@ updated: 2017-04-15T04:55:00+07:00
 thumbnail: https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
 photos:
   - https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
-  - https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
 description: Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
   platform blogging yang paling sering digunakan, tapi pasti memiliki
 ---

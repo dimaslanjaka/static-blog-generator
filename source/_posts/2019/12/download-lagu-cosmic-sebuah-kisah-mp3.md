@@ -22,7 +22,6 @@ updated: 2019-12-02T17:11:09+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/1e7074d895048a029e1f14b097bc15cf.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/1e7074d895048a029e1f14b097bc15cf.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/1e7074d895048a029e1f14b097bc15cf.jpeg
 description: "Download lagu Cosmic  Sebuah Kisah Mp3 Cosmic - A Story Listen:
   104,065 Duration: 188 MP3 size: 2.94MB Download Links Download"
 ---

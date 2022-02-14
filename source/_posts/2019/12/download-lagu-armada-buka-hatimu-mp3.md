@@ -22,7 +22,6 @@ updated: 2019-12-02T07:10:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/eb2beadf8674a90fdaf96dfffd202144.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/eb2beadf8674a90fdaf96dfffd202144.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/eb2beadf8674a90fdaf96dfffd202144.jpeg
 description: "Download lagu Armada  Buka Hatimu Mp3 Fleet - Open Your Heart
   Listen: 26,297,572 Duration: 273 MP3 size: 4.27MB Download Links"
 ---

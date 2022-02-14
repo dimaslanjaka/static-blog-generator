@@ -24,7 +24,6 @@ updated: 2021-05-14T04:54:22+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
 description: Typescript lebih strict  lebih detail dan harus mematuhi peraturan
   seperti typedata (variable, class, interface, dll), hampir sama seperti
 ---

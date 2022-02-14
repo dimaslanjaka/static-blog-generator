@@ -25,7 +25,6 @@ updated: 2017-10-09T14:56:42+07:00
 thumbnail: https://imgdb.net/images/3202.jpg
 photos:
   - https://imgdb.net/images/3202.jpg
-  - https://imgdb.net/images/3202.jpg
 description: img class=center w3-center height=250
   src=https://imgdb.net/images/3202.jpg width=100% /><br /><ol><li>Go to Your
   Dashboard

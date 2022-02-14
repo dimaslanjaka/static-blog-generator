@@ -22,7 +22,6 @@ updated: 2018-11-15T11:50:02+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
 description: Pokemon GO .127.1 Apk + Mod (gps palsu) + Poke Radar + apk yang diretas
 ---
 

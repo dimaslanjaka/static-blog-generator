@@ -21,7 +21,6 @@ updated: 2021-12-19T06:34:39+07:00
 thumbnail: /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
 photos:
   - /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
-  - /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
 description: Cooking recipes in the legend of neverland game android ios
 ---
 

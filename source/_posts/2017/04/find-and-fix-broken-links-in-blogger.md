@@ -23,7 +23,6 @@ updated: 2017-04-23T23:18:04+07:00
 thumbnail: http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
 photos:
   - http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
-  - http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
 description: Find and Fix broken links in Blogger  Redirect broken links for
   SEOContent could be a king which is that the major on page SEO issue, you
 ---

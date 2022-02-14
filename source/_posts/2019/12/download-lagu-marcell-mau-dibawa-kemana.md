@@ -22,7 +22,6 @@ updated: 2019-12-05T05:37:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/c3115265653a06e47477cb82ebefeab6.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/c3115265653a06e47477cb82ebefeab6.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/c3115265653a06e47477cb82ebefeab6.jpeg
 description: "Download lagu Marcell  Mau Dibawa Kemana Mp3 Marcell - Where to Be
   Taken Listen: 681,805 Duration: 277 MP3 size: 4.33MB Download"
 ---

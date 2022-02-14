@@ -22,7 +22,6 @@ updated: 2019-12-19T22:21:35+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/58c0947562118fec9256e1969980d480.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/58c0947562118fec9256e1969980d480.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/58c0947562118fec9256e1969980d480.jpeg
 description: "Download lagu Tompi  Sedari Dulu Mp3 Tompi - Sedari First Listen:
   42,285 Duration: 277 MP3 size: 4.33MB Download Links Download"
 ---

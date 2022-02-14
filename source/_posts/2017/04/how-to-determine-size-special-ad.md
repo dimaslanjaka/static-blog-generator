@@ -22,7 +22,6 @@ updated: 2017-04-19T07:49:04+07:00
 thumbnail: http://juragancipir.com/wp-content/uploads/2014/02/Unit-iklan-khusus.png
 photos:
   - http://juragancipir.com/wp-content/uploads/2014/02/Unit-iklan-khusus.png
-  - http://juragancipir.com/wp-content/uploads/2014/02/Unit-iklan-khusus.png
 description: How to Determine Size Special Ad Adsense Most TrueGoogle adsense
   since last few months has launched a new ad sizes, ie custom ad sizes or
 ---

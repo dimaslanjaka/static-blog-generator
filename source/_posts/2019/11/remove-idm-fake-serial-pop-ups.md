@@ -24,7 +24,6 @@ updated: 2019-11-20T17:20:02+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.bagas31.com/09b291991e3c6af733a56a80694b83bc.png
 photos:
   - https://imgcdn.000webhostapp.com/https/www.bagas31.com/09b291991e3c6af733a56a80694b83bc.png
-  - https://imgcdn.000webhostapp.com/https/www.bagas31.com/09b291991e3c6af733a56a80694b83bc.png
 description: Web Development Indonesia  If you are a pirated Internet Download
   Manager user, lately there must be something strange about your
 ---

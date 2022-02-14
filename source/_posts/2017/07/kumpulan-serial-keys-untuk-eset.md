@@ -21,7 +21,6 @@ updated: 2017-07-26T23:52:04+07:00
 thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
-  - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
 description: Untuk Tanggal xx:xx:xxxx) merupakan valid serial key tersebut
 ---
 

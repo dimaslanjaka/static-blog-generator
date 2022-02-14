@@ -24,7 +24,6 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
-  - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
 description: h2>Bagaimana cara convert HTML ke Javascript document.write secara
   otomatis</h2><img
 ---

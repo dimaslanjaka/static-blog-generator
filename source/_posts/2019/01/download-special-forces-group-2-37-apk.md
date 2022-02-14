@@ -22,7 +22,6 @@ updated: 2019-01-11T10:19:05+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/special-forces-group-2-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/special-forces-group-2-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/special-forces-group-2-1.png
 description: Pasukan Khusus Grup  3.7 Apk + Uang Mod + Data android
 ---
 

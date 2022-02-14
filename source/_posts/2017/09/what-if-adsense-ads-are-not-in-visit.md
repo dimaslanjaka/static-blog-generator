@@ -21,7 +21,6 @@ updated: 2017-09-19T12:11:26+07:00
 thumbnail: https://imgdb.net/images/3201.png
 photos:
   - https://imgdb.net/images/3201.png
-  - https://imgdb.net/images/3201.png
 description: What If Adsense Ads Are Not In Visit Clicks
 ---
 

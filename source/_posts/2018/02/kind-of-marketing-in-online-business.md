@@ -22,7 +22,6 @@ updated: 2018-02-23T15:30:03+07:00
 thumbnail: https://imgdb.net/images/3610.jpg
 photos:
   - https://imgdb.net/images/3610.jpg
-  - https://imgdb.net/images/3610.jpg
 description: img border=0 src=https://imgdb.net/images/3610.jpg />The ultimate
   goal of all <b>Marketing</b> efforts is the creation of sales and
 ---

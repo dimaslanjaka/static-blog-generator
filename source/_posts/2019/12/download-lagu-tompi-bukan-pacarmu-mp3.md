@@ -22,7 +22,6 @@ updated: 2019-12-04T15:54:41+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/c455478444e7247aa55281873578e555.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/c455478444e7247aa55281873578e555.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/c455478444e7247aa55281873578e555.jpeg
 description: "Download lagu Tompi  Bukan Pacarmu Mp3 Tompi - Not your girlfriend
   Listen: 174,378 Duration: 182 MP3 size: 2.84MB Download Links"
 ---

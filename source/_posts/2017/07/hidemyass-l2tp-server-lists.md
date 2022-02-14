@@ -22,7 +22,6 @@ updated: 2017-07-27T21:04:23+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: ad.hma.rocks Andorra, Andorra la Vellaae.hma.rocks United Arab
   Emirates, Dubaiaf.hma.rocks Afghanistan, Kabulag.hma.rocks Antigua and
 ---

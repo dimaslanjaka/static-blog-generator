@@ -24,7 +24,6 @@ updated: 2017-04-16T11:50:00+07:00
 thumbnail: https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
 photos:
   - https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
-  - https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
 description: 0 Tips for Choosing a Domain Name To Blog Choosing the right domain
   name is one of the things that is important when you want to build a
 ---

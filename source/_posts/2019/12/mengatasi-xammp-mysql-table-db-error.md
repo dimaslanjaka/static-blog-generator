@@ -23,7 +23,6 @@ updated: 2019-12-11T23:19:57+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS
   7,8,10) Buka CMD Ketik Command berikut (satu per satu):"
 ---

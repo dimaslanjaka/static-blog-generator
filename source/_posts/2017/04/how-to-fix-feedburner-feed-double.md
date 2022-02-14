@@ -24,7 +24,6 @@ updated: 2017-04-22T23:30:11+07:00
 thumbnail: https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
 photos:
   - https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
-  - https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
 description: How to fix Feedburner feed double titles issue  Quick tip Most of
   the wordpress users syndicate their RSS feeds victimisation
 ---

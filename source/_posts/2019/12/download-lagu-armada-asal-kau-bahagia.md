@@ -22,7 +22,6 @@ updated: 2019-12-02T05:02:43+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/a83cb0e2a007d1bad39fdb3b1520e645.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/a83cb0e2a007d1bad39fdb3b1520e645.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/a83cb0e2a007d1bad39fdb3b1520e645.jpeg
 description: "Download lagu Armada  Asal Kau Bahagia Mp3 Fleet - As long as
   youre happy Listen: 300,934,788 Duration: 259 MP3 size: 4.05MB"
 ---

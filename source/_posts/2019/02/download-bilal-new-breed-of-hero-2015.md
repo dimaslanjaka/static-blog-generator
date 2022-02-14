@@ -24,7 +24,6 @@ updated: 2019-02-18T15:13:12+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s4.dunia21.org/wp-content/uploads/2018/03/film-bilal-a-new-breed-of-hero-2018.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s4.dunia21.org/wp-content/uploads/2018/03/film-bilal-a-new-breed-of-hero-2018.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s4.dunia21.org/wp-content/uploads/2018/03/film-bilal-a-new-breed-of-hero-2018.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

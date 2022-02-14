@@ -22,7 +22,6 @@ updated: 2019-12-19T22:24:42+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/88a516ec393232de5433be81d9919a1a.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/88a516ec393232de5433be81d9919a1a.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/88a516ec393232de5433be81d9919a1a.jpeg
 description: "Download lagu Anji  Merindukanmu Mp3 Anji - Missing you Listen:
   265,616 Duration: 278 MP3 size: 4.34MB Download Links Download"
 ---

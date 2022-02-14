@@ -22,7 +22,6 @@ updated: 2020-04-04T14:51:16+07:00
 thumbnail: http://www.duniailkom.com/wp-content/uploads/2014/06/Tabel-Karakter-Khusus-dalam-HTML.png
 photos:
   - http://www.duniailkom.com/wp-content/uploads/2014/06/Tabel-Karakter-Khusus-dalam-HTML.png
-  - http://www.duniailkom.com/wp-content/uploads/2014/06/Tabel-Karakter-Khusus-dalam-HTML.png
 description: "Text HTML Tutorial Part 1: How to Display and Entering Special
   Characters in HTMLIn addition to alphanumeric"
 ---

@@ -23,7 +23,6 @@ updated: 2017-05-01T19:44:58+07:00
 thumbnail: https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
 photos:
   - https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
-  - https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
 description: This one is a famous request inBlogger Help Forum - instructions to
   shroud the sidebar on one of the static pages, and make the principle
 ---

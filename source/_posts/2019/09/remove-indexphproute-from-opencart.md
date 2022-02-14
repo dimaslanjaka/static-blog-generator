@@ -23,7 +23,6 @@ updated: 2019-09-27T13:13:59+07:00
 thumbnail: https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png
 photos:
   - https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png
-  - https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png
 description: I Also have the same problem and any that I found not solved my
   problem. But I remember that I also working with Laravel and in
 ---

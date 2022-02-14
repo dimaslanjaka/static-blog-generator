@@ -22,7 +22,6 @@ updated: 2017-04-11T09:26:03+07:00
 thumbnail: http://juragancipir.com/wp-content/uploads/2013/12/Seo-Prenjak-300x240.jpg
 photos:
   - http://juragancipir.com/wp-content/uploads/2013/12/Seo-Prenjak-300x240.jpg
-  - http://juragancipir.com/wp-content/uploads/2013/12/Seo-Prenjak-300x240.jpg
 description: Google launches sophisticated algorithms named Hummingbird,
   webmasters also use cuttingedge way to deal with it anyway, using SEO
 ---

@@ -21,7 +21,6 @@ updated: 2017-09-21T21:44:25+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Zinda rahe ke kya karu Tere bina.. Dhunde hai jawab wo Jo dil na de
   saka Jo bhi sapne dekhe thee aur likhe thee JIn
 ---

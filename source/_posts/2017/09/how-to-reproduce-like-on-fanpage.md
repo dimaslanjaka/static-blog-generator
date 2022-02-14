@@ -21,7 +21,6 @@ updated: 2017-09-07T09:39:59+07:00
 thumbnail: https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
 photos:
   - https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
-  - https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
 description: How to reproduce like on fanpage facebook??
 ---
 

@@ -22,7 +22,6 @@ updated: 2018-11-15T07:41:08+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Warm-and-Cozy-Subtitle-Indonesia.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Warm-and-Cozy-Subtitle-Indonesia.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Warm-and-Cozy-Subtitle-Indonesia.jpg
 description: Korean Drama Warm and Cozy Indonesian Subtitles Synopsis Warm and
   Cozy The Korean drama Warm and Cozy Sub Indo tells the story of a
 ---

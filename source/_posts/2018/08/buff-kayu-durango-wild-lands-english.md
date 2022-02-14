@@ -24,7 +24,6 @@ updated: 2018-08-12T00:04:39+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3970.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3970.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3970.jpg
 description: ifwindow.location.href.indexOf(264760159080518290) > -1) {
   document.write(<img src=https://imgdb.net/images/3970.jpg />);
 ---

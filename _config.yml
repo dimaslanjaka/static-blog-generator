@@ -264,8 +264,8 @@ seo:
     # exclude from minify
     exclude:
       - "*.min.{htm,html}"
-  css: true
-  js: true
+  css: false
+  js: false
   schema: false
   img:
     # fix broken images

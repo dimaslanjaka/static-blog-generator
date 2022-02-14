@@ -22,7 +22,6 @@ updated: 2017-09-25T01:49:07+07:00
 thumbnail: https://3.bp.blogspot.com/-hxvTzkWtBOs/TuW8orRN2kI/AAAAAAAAAcQ/GlQU_popqJM/s1600/skype.JPG
 photos:
   - https://3.bp.blogspot.com/-hxvTzkWtBOs/TuW8orRN2kI/AAAAAAAAAcQ/GlQU_popqJM/s1600/skype.JPG
-  - https://3.bp.blogspot.com/-hxvTzkWtBOs/TuW8orRN2kI/AAAAAAAAAcQ/GlQU_popqJM/s1600/skype.JPG
 description: Actually there are several free telephone facilities on the
   internet using VoIP, and Skype is one of them. To make calls for free users
 ---

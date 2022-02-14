@@ -24,7 +24,6 @@ updated: 2018-12-23T19:53:01+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

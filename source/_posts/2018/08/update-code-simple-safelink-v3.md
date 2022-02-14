@@ -26,7 +26,6 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://cdn1.imggmi.com/uploads/2018/8/5/4f4281f038eb505c8f145d2c7f0b4f04-full.png
 photos:
   - https://cdn1.imggmi.com/uploads/2018/8/5/4f4281f038eb505c8f145d2c7f0b4f04-full.png
-  - https://cdn1.imggmi.com/uploads/2018/8/5/4f4281f038eb505c8f145d2c7f0b4f04-full.png
 description: "blockquote>First post : <a
   href=http://web-manajemen.blogspot.com/2017/09/cara-simple-membuat-blogger-sa\
   felink.html title=Cara Simple"

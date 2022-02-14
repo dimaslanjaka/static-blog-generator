@@ -24,7 +24,6 @@ updated: 2019-12-22T03:14:04+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/4d5a3d96d1f59cec23878a9b1e7ee970.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/4d5a3d96d1f59cec23878a9b1e7ee970.jpeg
-  - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/4d5a3d96d1f59cec23878a9b1e7ee970.jpeg
 description: Related Post Blogger Support WEBP Related Blogger Post Support
   WEBP  After the previous post we got a solution for Blogger thumbnails to
 ---

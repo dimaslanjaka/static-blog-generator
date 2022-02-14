@@ -23,7 +23,6 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://imgdb.net/images/3192.jpg
 photos:
   - https://imgdb.net/images/3192.jpg
-  - https://imgdb.net/images/3192.jpg
 description: How to Create a Sticky Widget in Blog Sidebar
 ---
 

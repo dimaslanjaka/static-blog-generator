@@ -22,7 +22,6 @@ updated: 2018-02-21T21:18:33+07:00
 thumbnail: //urlz.fr/6BUs
 photos:
   - //urlz.fr/6BUs
-  - //urlz.fr/6BUs
 description: "Description Of fileget_contents Source Description: PHP.NET (PHP 4
   >= 4.3.0, PHP 5, PHP 7)"
 ---

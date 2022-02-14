@@ -25,7 +25,6 @@ updated: 2021-11-21T23:06:49+07:00
 thumbnail: /GitHub/workflows/cover2.jpg
 photos:
   - /GitHub/workflows/cover2.jpg
-  - /GitHub/workflows/cover2.jpg
 description: Cara menggunakan cache untuk mempercepat GitHub Workflows
 ---
 

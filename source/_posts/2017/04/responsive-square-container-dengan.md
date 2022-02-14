@@ -24,7 +24,6 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
 photos:
   - https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
-  - https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
 description: Menggunakan vanili JavaScript dan CSS, saya akan menunjukkan cara
   untuk secara vertikal dan horizontal pusat dinamis konten berukuran dalam
 ---

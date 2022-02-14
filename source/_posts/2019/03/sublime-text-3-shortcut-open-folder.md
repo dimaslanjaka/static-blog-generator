@@ -22,7 +22,6 @@ updated: 2019-03-08T08:20:51+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
 ---

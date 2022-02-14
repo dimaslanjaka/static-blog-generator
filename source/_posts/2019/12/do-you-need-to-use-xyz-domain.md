@@ -22,7 +22,6 @@ updated: 2019-12-16T10:28:03+07:00
 thumbnail: https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/11/dewaweb-blog-perlukah-kamu-menggunakan-domain-xyz-696x411.png
 photos:
   - https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/11/dewaweb-blog-perlukah-kamu-menggunakan-domain-xyz-696x411.png
-  - https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/11/dewaweb-blog-perlukah-kamu-menggunakan-domain-xyz-696x411.png
 description: Perlukah Kamu Menggunakan Domain XYZ Have you ever heard of the XYZ
   domain name? Some of you may be unfamiliar or have never even
 ---

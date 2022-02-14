@@ -23,7 +23,6 @@ updated: 2019-12-13T10:19:05+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/a8da9fcee0cd12d606fe9ecaaedc0828.png
 photos:
   - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/a8da9fcee0cd12d606fe9ecaaedc0828.png
-  - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/a8da9fcee0cd12d606fe9ecaaedc0828.png
 description: Ultimate Guide On Facebook Ads For Entrepreneurs Iklan Facebook
   untuk wirausahawan mungkin menjadi solusi untuk masalah pemasaran bisnis
 ---

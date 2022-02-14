@@ -23,7 +23,6 @@ updated: 2018-08-05T06:16:12+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/game/kitty-in-the-box.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/game/kitty-in-the-box.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/game/kitty-in-the-box.jpg
 description: Unduh langsung gratis versi terakhir Kitty in the Box Apk Android
   dari Rexdl. Beberapa kucing dilahirkan siap
 ---

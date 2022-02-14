@@ -21,7 +21,6 @@ updated: 2018-02-23T15:30:03+07:00
 thumbnail: https://goo.gl/yao7VY
 photos:
   - https://goo.gl/yao7VY
-  - https://goo.gl/yao7VY
 description: countDown);
 ---
 

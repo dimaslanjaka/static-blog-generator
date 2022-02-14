@@ -25,7 +25,6 @@ updated: 2019-07-22T03:25:13+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
 description: Requirements jQuery (if not it will automated added into pages)  if
   (typeof jQuery == undefined || !window.jQuery) {
 ---

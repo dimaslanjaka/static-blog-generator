@@ -22,7 +22,6 @@ updated: 2018-11-20T16:34:28+07:00
 thumbnail: //urlz.fr/6BUs
 photos:
   - //urlz.fr/6BUs
-  - //urlz.fr/6BUs
 description: "Description Of getmeta_tags Source Description: PHP.NET (PHP 4,
   PHP 5, PHP 7) get_meta_tags —"
 ---

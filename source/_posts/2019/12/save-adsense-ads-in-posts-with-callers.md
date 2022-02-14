@@ -25,7 +25,6 @@ updated: 2019-12-27T01:20:06+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/74a25169f643208460acbd9f69a39c02.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/74a25169f643208460acbd9f69a39c02.jpeg
-  - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/74a25169f643208460acbd9f69a39c02.jpeg
 description: Manfaatkan Google Question Hub Untuk Mendapatkan Ide Menulis Take
   advantage of the Google Question Hub to Get Writing Ideas  Nowadays
 ---

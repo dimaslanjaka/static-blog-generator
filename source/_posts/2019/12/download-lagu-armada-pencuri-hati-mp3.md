@@ -22,7 +22,6 @@ updated: 2019-12-09T02:58:48+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/f9b69983931b50167c04ee6ce09752c6.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/f9b69983931b50167c04ee6ce09752c6.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/f9b69983931b50167c04ee6ce09752c6.jpeg
 description: "Download lagu Armada  Pencuri Hati Mp3Fleet - Heart Thief Listen:
   4,614,192 Duration: 277 MP3 size: 4.33MB Download Links"
 ---

@@ -22,7 +22,6 @@ updated: 2017-08-30T04:51:07+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
 description: Problem U
 ---
 

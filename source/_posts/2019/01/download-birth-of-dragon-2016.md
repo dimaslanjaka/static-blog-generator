@@ -24,7 +24,6 @@ updated: 2019-01-21T00:23:01+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

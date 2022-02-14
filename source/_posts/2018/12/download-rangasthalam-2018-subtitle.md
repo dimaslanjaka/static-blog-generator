@@ -23,7 +23,6 @@ updated: 2018-12-16T12:39:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2018/08/film-rangasthalam2018-lk21.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2018/08/film-rangasthalam2018-lk21.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2018/08/film-rangasthalam2018-lk21.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

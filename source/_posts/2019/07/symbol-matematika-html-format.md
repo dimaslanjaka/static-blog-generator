@@ -21,7 +21,6 @@ updated: 2019-07-25T23:13:45+07:00
 thumbnail: https://dimaslanjaka.github.io/assets/img/html.png
 photos:
   - https://dimaslanjaka.github.io/assets/img/html.png
-  - https://dimaslanjaka.github.io/assets/img/html.png
 description: simbol matematika dan penulisan dalam html HTML.
 ---
 

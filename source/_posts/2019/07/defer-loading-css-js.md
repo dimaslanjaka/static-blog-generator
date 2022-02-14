@@ -23,7 +23,6 @@ updated: 2020-01-20T04:41:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
 description: Cara defer loading javascript atau menunda pemanggilan javascript
   di bloggerBerfungsi untuk Mempercepat loading blog website /
 ---

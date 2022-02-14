@@ -23,7 +23,6 @@ updated: 2020-01-09T03:13:31+07:00
 thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ
-  - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ
 description: Google translate service has shutdown, this plugin was removed
 ---
 

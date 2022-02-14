@@ -23,7 +23,6 @@ updated: 2017-05-18T03:50:14+07:00
 thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
-  - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
 description: Make Sticky Sidebar With CSS position sticky
 ---
 

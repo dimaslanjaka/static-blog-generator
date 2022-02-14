@@ -20,7 +20,6 @@ updated: 2018-08-24T23:54:15+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_GSwBHWgKexKRlrdNTFKAvtv827hyFeGx4dvA4ln2k8UDV1vT
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_GSwBHWgKexKRlrdNTFKAvtv827hyFeGx4dvA4ln2k8UDV1vT
-  - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_GSwBHWgKexKRlrdNTFKAvtv827hyFeGx4dvA4ln2k8UDV1vT
 description: Website Development Indonesia
 ---
 

@@ -21,7 +21,6 @@ updated: 2017-05-22T22:41:04+07:00
 thumbnail: https://2.bp.blogspot.com/-THwUQIZSve0/WJRctlNolxI/AAAAAAAAEcg/dIQv0GpStXkwgpoAFZFdWefnzy8DJkTmACPcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B02.jpg
 photos:
   - https://2.bp.blogspot.com/-THwUQIZSve0/WJRctlNolxI/AAAAAAAAEcg/dIQv0GpStXkwgpoAFZFdWefnzy8DJkTmACPcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B02.jpg
-  - https://2.bp.blogspot.com/-THwUQIZSve0/WJRctlNolxI/AAAAAAAAEcg/dIQv0GpStXkwgpoAFZFdWefnzy8DJkTmACPcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B02.jpg
 description: How to Install and Enable HTTPS SSL) on Blogspot Custom Domain
 ---
 

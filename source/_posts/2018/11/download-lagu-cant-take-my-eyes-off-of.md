@@ -22,7 +22,6 @@ updated: 2018-11-08T04:56:26+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/images/download-lagu-mp3-terbaru-gratis.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/images/download-lagu-mp3-terbaru-gratis.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/images/download-lagu-mp3-terbaru-gratis.png
 description: "Download Lagu Mp Cant Take My Eyes Off Of You - Joseph Vincent
   Cover Gratis Size : Duration : 2:"
 ---

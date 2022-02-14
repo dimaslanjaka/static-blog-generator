@@ -22,7 +22,6 @@ updated: 2019-12-19T22:20:49+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/3971187125eaca673a7f9c11af9bf591.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/3971187125eaca673a7f9c11af9bf591.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/3971187125eaca673a7f9c11af9bf591.jpeg
 description: "Download lagu Titi Kamal  Jatuh Cinta Mp3 Titi Kamal - In Love
   Listen: 154,945 Duration: 239 MP3 size: 3.73MB Download Links"
 ---

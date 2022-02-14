@@ -24,7 +24,6 @@ updated: 2021-12-20T15:33:55+07:00
 thumbnail: /GitHub/workflows/events.png
 photos:
   - /GitHub/workflows/events.png
-  - /GitHub/workflows/events.png
 description: Macam-macam events pada GitHub Workflows
 ---
 

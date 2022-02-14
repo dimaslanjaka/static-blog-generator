@@ -22,7 +22,6 @@ updated: 2018-12-06T03:47:14+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/Animated-iPad-Pro-2018-Mockup-By-Anthony-Boyd-Graphics-768x576.gif
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/Animated-iPad-Pro-2018-Mockup-By-Anthony-Boyd-Graphics-768x576.gif
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/Animated-iPad-Pro-2018-Mockup-By-Anthony-Boyd-Graphics-768x576.gif
 description: Animated Ipad Pro 018 Mockup Freebie hari ini adalah Animated iPad
   Pro 2018 Mockup oleh Anthony Boyd Graphics. Gunakan maket
 ---

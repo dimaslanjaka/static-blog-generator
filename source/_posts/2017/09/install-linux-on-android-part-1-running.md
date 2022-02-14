@@ -23,7 +23,6 @@ updated: 2017-09-02T16:24:38+07:00
 thumbnail: https://image.ibb.co/fFtDUF/unnamed_5.png
 photos:
   - https://image.ibb.co/fFtDUF/unnamed_5.png
-  - https://image.ibb.co/fFtDUF/unnamed_5.png
 description: Another of the features of the android smartphone that we can take
   advantage of IE running OS Ubuntu Xenial at 6 or more times There in
 ---

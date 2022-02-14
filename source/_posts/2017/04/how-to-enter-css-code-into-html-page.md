@@ -23,7 +23,6 @@ updated: 2017-04-28T11:12:07+07:00
 thumbnail: http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png
 photos:
   - http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png
-  - http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png
 description: "Learning CSS Tutorial Part : How to enter CSS code into the HTML
   pageIn this tutorial we will discuss how to input the CSS"
 ---

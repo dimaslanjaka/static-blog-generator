@@ -25,7 +25,6 @@ updated: 2021-12-10T19:53:25+07:00
 thumbnail: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 photos:
   - https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
-  - https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 description: Usage, explanations of node options for nodejs
 ---
 

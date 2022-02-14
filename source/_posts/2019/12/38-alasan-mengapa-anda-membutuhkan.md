@@ -24,7 +24,6 @@ updated: 2019-12-16T01:23:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/380def9044953d917ff4a115d32bc760.png
 photos:
   - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/380def9044953d917ff4a115d32bc760.png
-  - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/380def9044953d917ff4a115d32bc760.png
 description: Selamat datang di abad ke21, di mana mobil self-driving tidak lagi
   menjadi fantasi sci-fi yang jauh, anak-anak memiliki smartphone di
 ---

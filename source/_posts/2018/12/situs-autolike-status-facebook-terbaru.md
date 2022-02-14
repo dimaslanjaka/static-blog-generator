@@ -23,7 +23,6 @@ updated: 2018-12-24T06:11:52+07:00
 thumbnail: https://1.bp.blogspot.com/-UJPfz4U072o/XCAWBTOM8vI/AAAAAAAAAWw/YfXs94MzOUIE6jCNMZ4v43tR_A32WyWYACLcBGAs/s1600/Screenshot_2018-12-24-02-22-34-226_com.android.chrome.png
 photos:
   - https://1.bp.blogspot.com/-UJPfz4U072o/XCAWBTOM8vI/AAAAAAAAAWw/YfXs94MzOUIE6jCNMZ4v43tR_A32WyWYACLcBGAs/s1600/Screenshot_2018-12-24-02-22-34-226_com.android.chrome.png
-  - https://1.bp.blogspot.com/-UJPfz4U072o/XCAWBTOM8vI/AAAAAAAAAWw/YfXs94MzOUIE6jCNMZ4v43tR_A32WyWYACLcBGAs/s1600/Screenshot_2018-12-24-02-22-34-226_com.android.chrome.png
 description: Akhir tahun ini saya akan membagikan situs autolike terbaru buatan
   saya sendiri. Silahkan langsung saja dibawah Link nya
 ---

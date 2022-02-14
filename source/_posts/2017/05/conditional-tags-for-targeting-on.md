@@ -22,7 +22,6 @@ updated: 2017-05-19T13:39:02+07:00
 thumbnail: https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
 photos:
   - https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
-  - https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
 description: Ill explain a little what it is conditional tags. Conditional tags
   arebr />limiting a program command on certain conditions use a
 ---

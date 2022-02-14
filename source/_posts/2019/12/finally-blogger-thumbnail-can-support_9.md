@@ -23,7 +23,6 @@ updated: 2019-12-09T02:57:54+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/8554a2b99506f0fdc49578e7bed10bb4.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/8554a2b99506f0fdc49578e7bed10bb4.jpeg
-  - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/8554a2b99506f0fdc49578e7bed10bb4.jpeg
 description: Finally, the Blogger Thumbnail Can Support WEBP  This is the result
   of my imprisonment that I have done for almost 4 weeks, hahaha ...
 ---

@@ -23,7 +23,6 @@ updated: 2018-11-07T23:51:21+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
 description: Munculnya aplikasi telah mendorong pengembang untuk memastikan
   kesinambungan penggunaan aplikasi terlepas dari platform atau
 ---

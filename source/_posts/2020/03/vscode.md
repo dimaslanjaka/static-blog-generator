@@ -22,7 +22,6 @@ updated: 2020-03-23T15:04:22+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Install jQuery Auto Complete and Hinting on VSCode Required npm-
   Syntax Terminalnpm i --save @types/jquery
 ---

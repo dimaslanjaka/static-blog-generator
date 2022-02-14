@@ -22,7 +22,6 @@ updated: 2017-07-20T10:47:01+07:00
 thumbnail: https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&h=232
 photos:
   - https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&h=232
-  - https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&h=232
 description: What is Bitly  bitly is an online service that provides short URLs
   for your posts so you can be easier to share with friends, family, and
 ---

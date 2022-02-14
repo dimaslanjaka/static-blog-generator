@@ -22,7 +22,6 @@ updated: 2019-01-23T00:27:06+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Watching Online Movies Gives Birth in the Tomb of The Movie 2007)
   Indonesian Subtitles - Jessy (Adytia Putri), Jovan (Revand T
 ---

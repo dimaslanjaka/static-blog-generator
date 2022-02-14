@@ -23,7 +23,6 @@ updated: 2017-11-10T22:43:46+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
 description: .) Then the message will appear as drawn. Do not be afraid, then
   press PROXY.4.) Input Email and Password your fb account earlier. Then
 ---

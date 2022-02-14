@@ -24,7 +24,6 @@ updated: 2017-08-27T07:15:12+07:00
 thumbnail: https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
 photos:
   - https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
-  - https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
 description: If you feel loading a blog a bit heavy or slow, one of the causes
   is the presence of javascript. Maybe one of them is
 ---

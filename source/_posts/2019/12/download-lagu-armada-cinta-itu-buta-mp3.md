@@ -22,7 +22,6 @@ updated: 2019-12-02T07:10:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/fbed84daabef5aebb8ec510a340ad6b3.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/fbed84daabef5aebb8ec510a340ad6b3.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/fbed84daabef5aebb8ec510a340ad6b3.jpeg
 description: "Download lagu Armada  Cinta Itu Buta Mp3 Armada - Love Is Blind
   Listen: 4,780,233 Duration: 279 MP3 size: 4.36MB Download Links"
 ---

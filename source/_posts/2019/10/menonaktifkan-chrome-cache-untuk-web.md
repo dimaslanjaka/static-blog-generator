@@ -24,7 +24,6 @@ updated: 2019-10-14T22:18:48+07:00
 thumbnail: https://i.stack.imgur.com/Grwsc.png
 photos:
   - https://i.stack.imgur.com/Grwsc.png
-  - https://i.stack.imgur.com/Grwsc.png
 description: Bagaimana cara menonaktifkan disable) chrome cache untuk website
   development ?Jawabannya The Chrome DevToolsTutorial :Buka development
 ---

@@ -24,7 +24,6 @@ updated: 2020-02-06T23:45:23+07:00
 thumbnail: https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
 photos:
   - https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
-  - https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
 description: Yo guys, kali ini akan saya share bagaimana cara mengubah semua
   source link atau iframe yang tidak menggunakan https.br />Mula mula anda
 ---

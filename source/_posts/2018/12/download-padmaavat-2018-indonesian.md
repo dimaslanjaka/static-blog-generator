@@ -23,7 +23,6 @@ updated: 2018-12-12T07:38:00+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

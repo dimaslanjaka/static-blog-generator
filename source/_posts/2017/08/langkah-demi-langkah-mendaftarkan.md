@@ -21,7 +21,6 @@ updated: 2017-08-26T21:53:05+07:00
 thumbnail: https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
 photos:
   - https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
-  - https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
 description: Senang dengan artikel ini  Tolong bagikan ya
 ---
 

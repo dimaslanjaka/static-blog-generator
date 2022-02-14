@@ -22,7 +22,6 @@ updated: 2019-12-19T22:22:47+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/9863d85128f9e9fd158c40571ee62413.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/9863d85128f9e9fd158c40571ee62413.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/9863d85128f9e9fd158c40571ee62413.jpeg
 description: "Download lagu Dissa  Penantian Bodoh Mp3 Dissa - Stupid
   Expectations Listen: 65,964 Duration: 265 MP3 size: 4.14MB Download Links"
 ---

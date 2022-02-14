@@ -23,7 +23,6 @@ updated: 2020-03-30T21:48:16+07:00
 thumbnail: https://pear.php.net/gifs/pearsmall.gif
 photos:
   - https://pear.php.net/gifs/pearsmall.gif
-  - https://pear.php.net/gifs/pearsmall.gif
 description: "Basic Mailer basic php mailer php
   ?phpheader(Access-Control-Allow-Origin: *);header(Content-Type:
   application/json);/* *"

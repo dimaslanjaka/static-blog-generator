@@ -23,7 +23,6 @@ updated: 2019-12-25T00:01:09+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg
-  - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/784bea405c9b1bc89e2d5bda77cf8752.jpeg
 description: Overcoming Browser Caching Leverage for Favicon.ico  Favicon is the
   main icon of a website that appears on the left side of the browser
 ---

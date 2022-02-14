@@ -22,7 +22,6 @@ updated: 2017-05-17T20:02:06+07:00
 thumbnail: https://i.stack.imgur.com/frOSJ.png
 photos:
   - https://i.stack.imgur.com/frOSJ.png
-  - https://i.stack.imgur.com/frOSJ.png
 description: h2>Is there any Blogger (blogspot) not portable contingent
   arrangement.</h2>Someone ask to stackoverflow like this.<br /><br />I would
 ---

@@ -22,7 +22,6 @@ updated: 2017-05-08T23:18:18+07:00
 thumbnail: https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
 photos:
   - https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
-  - https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
 description: Not continually all the items we wish are done, we have a tendency
   similarly as we attempt to continually produce articles daily to
 ---

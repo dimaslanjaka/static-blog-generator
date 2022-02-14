@@ -127,12 +127,17 @@ function articleCopy(done: TaskCallback) {
               // fix post description
               if (parse.metadata.subtitle && !parse.metadata.description)
                 parse.metadata.description = parse.metadata.subtitle;
+              // fix thumbnail
               if (parse.metadata.cover) {
                 if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
                 if (!parse.metadata.photos) {
                   parse.metadata.photos = [];
                 }
                 parse.metadata.photos.push(parse.metadata.cover);
+              }
+              if (parse.metadata.photos) {
+                let photos: string[] = parse.metadata.photos;
+                parse.metadata.photos = photos.unique();
               }
               const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
               writeFileSync(file, rebuildPost);

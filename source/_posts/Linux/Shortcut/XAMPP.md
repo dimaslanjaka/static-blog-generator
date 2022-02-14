@@ -29,7 +29,6 @@ updated: 2021-12-12T13:38:42+07:00
 thumbnail: https://i.stack.imgur.com/4TYxW.jpg
 photos:
   - https://i.stack.imgur.com/4TYxW.jpg
-  - https://i.stack.imgur.com/4TYxW.jpg
 description: How to configure shortcut desktop for xampp linux
 ---
 

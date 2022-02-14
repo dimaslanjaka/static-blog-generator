@@ -22,7 +22,6 @@ updated: 2019-11-24T23:34:27+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/3e47b288605a4f10b3fd7c992adcf0dd.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/3e47b288605a4f10b3fd7c992adcf0dd.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/3e47b288605a4f10b3fd7c992adcf0dd.jpeg
 description: "Download lagu Jaz  Dari Mata Mp3 Jaz - From the Eyes Listen:
   72,933,752 Duration: 234 MP3 size: 3.66MB Download Links Download"
 ---

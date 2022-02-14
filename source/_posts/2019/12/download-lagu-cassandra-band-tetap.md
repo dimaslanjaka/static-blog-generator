@@ -22,7 +22,6 @@ updated: 2019-12-11T02:32:17+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/c4af1e2c5f308aeada0435127d2150b7.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/c4af1e2c5f308aeada0435127d2150b7.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/c4af1e2c5f308aeada0435127d2150b7.jpeg
 description: "Download lagu Cassandra Band  Tetap Menjadi Milikmu Mp3Cassandra
   Band - Remain Yours Listen: 5,123,334 Duration: 250 MP3 size: 3.91MB"
 ---

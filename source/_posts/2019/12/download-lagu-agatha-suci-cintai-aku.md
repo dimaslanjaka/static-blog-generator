@@ -22,7 +22,6 @@ updated: 2019-12-04T13:29:28+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/2b3e9f282442056f85f7b4a4214411e1.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/2b3e9f282442056f85f7b4a4214411e1.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/2b3e9f282442056f85f7b4a4214411e1.jpeg
 description: "Download lagu Agatha Suci  Cintai Aku Lagi Mp3 Holy Agatha - Love
   Me Again Listen: 486,169 Duration: 238 MP3 size: 3.72MB"
 ---

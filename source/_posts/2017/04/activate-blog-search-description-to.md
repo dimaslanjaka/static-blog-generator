@@ -25,7 +25,6 @@ updated: 2017-04-14T21:41:06+07:00
 thumbnail: https://1.bp.blogspot.com/-ci6cJ-WlLo8/WKQ4JcDQ4pI/AAAAAAAAF0I/Gp5LD-xDMgYr0It3EAZWWVkDlvSijot6QCLcB/s280/judul-dan-deskripsi-penelusuran-di-pencarian-google.jpg
 photos:
   - https://1.bp.blogspot.com/-ci6cJ-WlLo8/WKQ4JcDQ4pI/AAAAAAAAF0I/Gp5LD-xDMgYr0It3EAZWWVkDlvSijot6QCLcB/s280/judul-dan-deskripsi-penelusuran-di-pencarian-google.jpg
-  - https://1.bp.blogspot.com/-ci6cJ-WlLo8/WKQ4JcDQ4pI/AAAAAAAAF0I/Gp5LD-xDMgYr0It3EAZWWVkDlvSijot6QCLcB/s280/judul-dan-deskripsi-penelusuran-di-pencarian-google.jpg
 description: Blog search description activate important to improve CTR, SEO and
   relevance of articlesYou probably already know the character of the
 ---

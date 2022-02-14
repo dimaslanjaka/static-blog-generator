@@ -22,7 +22,6 @@ updated: 2019-01-20T11:53:02+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Watch Project Gutenberg Online Film 2018) Indonesian Subtitles -
   The Hong Kong police led by a mastermind code-named Painter (Chow
 ---

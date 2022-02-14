@@ -23,7 +23,6 @@ updated: 2017-11-12T23:29:07+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: h2>Simple Widget Blogger search box with pure CSS.</h2><br />Here
   the HTML:<br /><br /><pre>&lt;form id=searchthis action=/search
 ---

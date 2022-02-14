@@ -25,7 +25,6 @@ updated: 2017-11-12T08:03:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
 description: Disqus merupakan sebuah layanan komentar di dunia maya yang bisa di
   pakai dalam berbagai situs populer, seperti blog WordPress,
 ---

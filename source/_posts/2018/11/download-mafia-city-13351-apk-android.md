@@ -22,7 +22,6 @@ updated: 2018-11-30T00:04:12+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/mafia-city-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/mafia-city-1.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/mafia-city-1.jpg
 description: Mafia City .3.351 Apk android
 ---
 

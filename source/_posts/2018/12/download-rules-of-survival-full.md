@@ -22,7 +22,6 @@ updated: 2018-12-24T22:41:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
 description: ATURAN SURVIVAL Penuh .204011.213685 Apk + Data android
 ---
 

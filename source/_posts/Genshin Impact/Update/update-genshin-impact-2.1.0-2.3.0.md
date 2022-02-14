@@ -21,7 +21,6 @@ updated: 2021-11-27T10:38:39+07:00
 thumbnail: /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
 photos:
   - /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
-  - /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
 description: Update Genshin Impact 2.1.0 - 2.3.0 Manual
 ---
 

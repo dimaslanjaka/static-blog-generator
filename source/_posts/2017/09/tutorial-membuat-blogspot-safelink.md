@@ -24,7 +24,6 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
 photos:
   - https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
-  - https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
 description: Langkahlangkah Build Safelink Converter
 ---
 

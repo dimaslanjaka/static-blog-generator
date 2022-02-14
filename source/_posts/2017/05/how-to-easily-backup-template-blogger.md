@@ -21,7 +21,6 @@ updated: 2017-05-13T19:26:01+07:00
 thumbnail: https://2.bp.blogspot.com/-ckNqKjK4iac/WRb5CltPGFI/AAAAAAAAACE/KXjMhakpN2MA2CWE3T3_L_JD56H0MffQwCLcB/s1600/download.png
 photos:
   - https://2.bp.blogspot.com/-ckNqKjK4iac/WRb5CltPGFI/AAAAAAAAACE/KXjMhakpN2MA2CWE3T3_L_JD56H0MffQwCLcB/s1600/download.png
-  - https://2.bp.blogspot.com/-ckNqKjK4iac/WRb5CltPGFI/AAAAAAAAACE/KXjMhakpN2MA2CWE3T3_L_JD56H0MffQwCLcB/s1600/download.png
 description: How to easily backup template blogger or blogspot
 ---
 
