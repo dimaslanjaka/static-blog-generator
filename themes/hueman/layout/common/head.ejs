@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+
+<head lang="en">
     <meta charset="utf-8" />
 
     <%- partial('pwa/index') %>
@@ -19,9 +20,9 @@
             title = __('index.tag') + ': ' + page.tag;
         }
     %>
-    <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+    <title><% if (title) { %><%= title %> | <% } %><%= page.title || config.title %></title>
     <% if (theme.plugins.bing_site_verification) { %>
-      <meta name="msvalidate.01" content="<%- theme.plugins.bing_site_verification %>" />
+    <meta name="msvalidate.01" content="<%- theme.plugins.bing_site_verification %>" />
     <% } %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <% if (page.tags) {
@@ -41,11 +42,12 @@
     <%- meta(page) %>
 
     <% if (theme.customize && theme.customize.social_links && theme.customize.social_links.rss) { %>
-        <link rel="alternate" href="<%- theme.customize.social_links.rss %>" title="<%= config.title %>" type="application/atom+xml" />
+    <link rel="alternate" href="<%- theme.customize.social_links.rss %>" title="<%= config.title %>"
+        type="application/atom+xml" />
     <% } %>
 
     <% if (theme.customize.favicon) { %>
-        <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
+    <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
     <% } %>
 
     <%- css('libs/font-awesome/css/font-awesome.min') %>
