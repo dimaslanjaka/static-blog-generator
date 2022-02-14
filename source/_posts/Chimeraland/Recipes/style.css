@@ -17,3 +17,6 @@ img.img-recipe {
   display: inline-block;
   width: 35px;
 }
+table span.caption {
+  display: none;
+}
