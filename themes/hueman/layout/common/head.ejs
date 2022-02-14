@@ -20,7 +20,7 @@
             title = __('index.tag') + ': ' + page.tag;
         }
     %>
-    <title><% if (title) { %><%= title %> | <% } %><%= page.title || config.title %></title>
+    <title><% if (title) { %><%= title %> | <% } %><%= page.webtitle || config.title %></title>
     <% if (theme.plugins.bing_site_verification) { %>
     <meta name="msvalidate.01" content="<%- theme.plugins.bing_site_verification %>" />
     <% } %>
