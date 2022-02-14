@@ -23,7 +23,6 @@ updated: 2018-11-10T06:34:53+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
 description: Cerdas Launcher  adalah permainan Personalisasi untuk android Download versi
 ---
 

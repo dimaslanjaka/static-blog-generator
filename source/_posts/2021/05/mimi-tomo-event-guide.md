@@ -24,7 +24,6 @@ updated: 2021-05-29T19:07:46+07:00
 thumbnail: https://i.ibb.co/8mHZrW4/189511811-288027676360564-3911263534233651523-n.jpg
 photos:
   - https://i.ibb.co/8mHZrW4/189511811-288027676360564-3911263534233651523-n.jpg
-  - https://i.ibb.co/8mHZrW4/189511811-288027676360564-3911263534233651523-n.jpg
 description: Unusual Hilicurl Spawn Time Unta Nunu Stage 1 & 3) Unusual Hilicurl
   spawn at 00:00 - 06:00 AM Unta Mosi Dada (Stage 2) Unusual
 ---

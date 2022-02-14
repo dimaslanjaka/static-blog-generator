@@ -24,7 +24,6 @@ updated: 2020-05-30T00:03:46+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: pre>#!/bin/bash<br />#clean page cache<br />#sync<br />#echo 1
   &gt;/proc/sys/vm/drop_caches<br />#clean dentries and inodes<br />#sync<br
 ---

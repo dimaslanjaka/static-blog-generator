@@ -22,7 +22,6 @@ updated: 2017-05-16T19:52:19+07:00
 thumbnail: https://4.bp.blogspot.com/-nZHOJ0yIwFA/VxdhC6oKlcI/AAAAAAAAChg/eNqEsF4QEbcPbkDo3sPQPyaQkWAnlFBAwCLcB/s320/ioncube_loader.png
 photos:
   - https://4.bp.blogspot.com/-nZHOJ0yIwFA/VxdhC6oKlcI/AAAAAAAAChg/eNqEsF4QEbcPbkDo3sPQPyaQkWAnlFBAwCLcB/s320/ioncube_loader.png
-  - https://4.bp.blogspot.com/-nZHOJ0yIwFA/VxdhC6oKlcI/AAAAAAAAChg/eNqEsF4QEbcPbkDo3sPQPyaQkWAnlFBAwCLcB/s320/ioncube_loader.png
 description: Constrained in themes wordpress at the time of installation in self
   hosting for beginners like ane feel confused, gaptek dll. Let alone
 ---

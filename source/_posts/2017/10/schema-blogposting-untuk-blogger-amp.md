@@ -24,7 +24,6 @@ updated: 2017-10-23T18:34:03+07:00
 thumbnail: https://imgdb.net/images/3205.png
 photos:
   - https://imgdb.net/images/3205.png
-  - https://imgdb.net/images/3205.png
 description: Structure BlogPosting pada AMP merupakan hal istimewa. Dijamin bila
   keyword density kata-kata/kalimat yang berhubungan dengan title/judul
 ---

@@ -22,7 +22,6 @@ updated: 2017-04-10T07:40:50+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
 description: Holiday banned blog or website means it can not be used again for
   participating in the adsense program because the blog violates google
 ---

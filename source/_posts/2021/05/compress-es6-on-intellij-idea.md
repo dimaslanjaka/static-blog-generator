@@ -23,7 +23,6 @@ updated: 2021-05-30T16:43:44+07:00
 thumbnail: https://i.ibb.co/024Dzwh/Screenshot-1.png
 photos:
   - https://i.ibb.co/024Dzwh/Screenshot-1.png
-  - https://i.ibb.co/024Dzwh/Screenshot-1.png
 description: ul><li>Install terser locally or globally <code>npm i
   terser</code></li><li>Open IDEA <strong>Settings/Preferences</strong>
 ---

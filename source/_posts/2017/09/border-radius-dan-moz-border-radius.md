@@ -23,7 +23,6 @@ updated: 2017-09-30T02:24:05+07:00
 thumbnail: http://cdn.the-art-of-web.com/images/moz-border-radius.gif
 photos:
   - http://cdn.the-art-of-web.com/images/moz-border-radius.gif
-  - http://cdn.the-art-of-web.com/images/moz-border-radius.gif
 description: Salah satu sifat CSS yang paling ditunggu
   adalah border-radius . Perancang web tidak lagi harus menggunakan struktur
   tabel yang rumit

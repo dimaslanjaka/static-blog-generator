@@ -22,7 +22,6 @@ updated: 2018-11-15T13:20:09+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Spotify-Music-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Spotify-Music-1.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Spotify-Music-1.jpg
 description: Spotify Music adalah musik  aplikasi audio untuk android men-download versi
 ---
 

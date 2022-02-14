@@ -22,7 +22,6 @@ updated: 2019-02-21T00:38:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/albino-lovebird-font-duo.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/albino-lovebird-font-duo.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/albino-lovebird-font-duo.jpg
 description: Albino Lovebird Font Duo Unduh Sumber daya ini berasal dari situs
   web lain dan kami tidak dapat mengkonfirmasi keabsahannya.
 ---

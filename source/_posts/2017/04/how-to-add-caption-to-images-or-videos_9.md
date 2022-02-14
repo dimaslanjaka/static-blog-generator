@@ -24,7 +24,6 @@ updated: 2017-04-09T23:48:53+07:00
 thumbnail: https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
 photos:
   - https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
-  - https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
 description: How to add caption to images or videos in wordpress and Blogger
   Thats true a picture is value cardinal words, however a picture
 ---

@@ -22,7 +22,6 @@ updated: 2019-12-02T17:11:09+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/hWP3X8WDIIc/hqdefault.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/hWP3X8WDIIc/hqdefault.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/hWP3X8WDIIc/hqdefault.jpg
 description: "Download lagu Armada  Mabuk Cinta Lagi Mp3 Fleet - Drunk in Love
   Again Listen: 35,705 Duration: 263 MP3 size: 4.11MB Download"
 ---

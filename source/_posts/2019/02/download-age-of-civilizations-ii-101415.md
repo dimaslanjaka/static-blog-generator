@@ -22,7 +22,6 @@ updated: 2019-02-13T15:14:12+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
 description: Age of Civilisations II .01415 Apk + Data android
 ---
 

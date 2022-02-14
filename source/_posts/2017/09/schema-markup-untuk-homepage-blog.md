@@ -22,7 +22,6 @@ updated: 2017-09-09T13:00:09+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "pre>&lt;script type=&quot;application/ld+json&quot;&gt;<br /><br
   />{<br /><br />&nbsp; &nbsp; &quot;@context&quot;:"
 ---

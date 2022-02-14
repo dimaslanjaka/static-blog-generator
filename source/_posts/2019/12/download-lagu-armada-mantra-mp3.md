@@ -22,7 +22,6 @@ updated: 2019-12-04T13:29:28+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/89ba9a58ae31223f2f59459cdabf1009.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/89ba9a58ae31223f2f59459cdabf1009.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/89ba9a58ae31223f2f59459cdabf1009.jpeg
 description: "Download lagu Armada  Mantra Mp3 Armada - Spell Listen: 266,752
   Duration: 263 MP3 size: 4.11MB Download Links Download Mp3"
 ---

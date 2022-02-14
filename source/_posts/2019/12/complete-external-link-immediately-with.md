@@ -26,7 +26,6 @@ updated: 2019-12-18T01:16:03+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/514cc0b2c6a504375873f242e193fc29.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/514cc0b2c6a504375873f242e193fc29.jpeg
-  - https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/514cc0b2c6a504375873f242e193fc29.jpeg
 description: If you add an external link in the template or in the post and use
   the target_blank attribute, then immediately complete the
 ---

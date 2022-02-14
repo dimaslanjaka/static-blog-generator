@@ -22,7 +22,6 @@ updated: 2019-11-24T23:51:13+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/cc87daea38fcf7daa55605d7025d5d6d.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/cc87daea38fcf7daa55605d7025d5d6d.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/cc87daea38fcf7daa55605d7025d5d6d.jpeg
 description: "Download lagu Anji  Kekasih Terhebat Mp3 Anji - The Greatest Lover
   Listen: 985,106 Duration: 244 MP3 size: 3.81MB Download Links"
 ---

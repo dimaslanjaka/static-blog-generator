@@ -22,7 +22,6 @@ updated: 2018-11-23T20:48:24+07:00
 thumbnail: https://en.miui.com/data/attachment/image/001/02/52/11_240_240.jpg
 photos:
   - https://en.miui.com/data/attachment/image/001/02/52/11_240_240.jpg
-  - https://en.miui.com/data/attachment/image/001/02/52/11_240_240.jpg
 description: Font Noteworthy terbaru yang mendukung Unicode dan simbol.
 ---
 

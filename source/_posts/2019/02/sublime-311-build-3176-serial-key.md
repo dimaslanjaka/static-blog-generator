@@ -25,7 +25,6 @@ updated: 2019-02-06T10:10:17+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: pre><br />## Sublime Text 3 Serial key build is 3176<br /><br
   />&#x3E; * Added these lines into /etc/hosts <br /><br />127.0.0.1
 ---

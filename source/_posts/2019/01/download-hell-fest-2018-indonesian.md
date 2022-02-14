@@ -23,7 +23,6 @@ updated: 2019-01-16T03:55:00+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

@@ -19,7 +19,6 @@ updated: 2021-12-16T23:40:27+07:00
 thumbnail: /Minecraft/install-shaders/cover.jpg
 photos:
   - /Minecraft/install-shaders/cover.jpg
-  - /Minecraft/install-shaders/cover.jpg
 description: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial
   terperinci ini dengan screenshot
 ---

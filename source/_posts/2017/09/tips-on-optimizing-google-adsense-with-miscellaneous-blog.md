@@ -22,7 +22,6 @@ updated: 2017-09-08T08:02:00+07:00
 thumbnail: http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense3-copy-300x254.jpg
 photos:
   - http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense3-copy-300x254.jpg
-  - http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense3-copy-300x254.jpg
 description: Tips on Optimizing Google Adsense With Blog MiscellaneousBlog
   hodgepodge is not always bad and niche blogs are not always good for
 ---

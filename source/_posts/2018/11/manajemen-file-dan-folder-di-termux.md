@@ -23,7 +23,6 @@ updated: 2018-11-12T11:49:46+07:00
 thumbnail: https://cdn1.imggmi.com/uploads/2018/11/12/64a52e8966eaa055d3c4d714a994f2a6-full.png
 photos:
   - https://cdn1.imggmi.com/uploads/2018/11/12/64a52e8966eaa055d3c4d714a994f2a6-full.png
-  - https://cdn1.imggmi.com/uploads/2018/11/12/64a52e8966eaa055d3c4d714a994f2a6-full.png
 description: mkdir berguna untuk membuat folder.Misal anda ingin membuat folder
   di HOME termux
 ---

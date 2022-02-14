@@ -18,7 +18,6 @@ updated: 2021-12-16T23:40:51+07:00
 thumbnail: /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
 photos:
   - /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
-  - /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
 description: All Description And Usages Of Magical Books Minecraft
 ---
 

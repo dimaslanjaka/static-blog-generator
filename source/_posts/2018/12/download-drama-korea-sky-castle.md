@@ -22,7 +22,6 @@ updated: 2018-12-10T15:22:09+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Sky-Castle-Subtitle-Indonesia.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Sky-Castle-Subtitle-Indonesia.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Sky-Castle-Subtitle-Indonesia.jpg
 description: Korean Drama Sky Castle Indonesian Subtitles Sky Castle Synopsis
   Korean Drama Sky Castle Sub Indo tells about a group of
 ---

@@ -22,7 +22,6 @@ updated: 2017-07-10T16:26:39+07:00
 thumbnail: http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png
 photos:
   - http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png
-  - http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png
 description: Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di
   bagian belakang router yang ISP Anda berikan Jika demikian, mungkin
 ---

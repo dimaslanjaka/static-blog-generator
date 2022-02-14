@@ -22,7 +22,6 @@ updated: 2019-11-24T21:20:30+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/d3fa95ac660d54e425df5486f710b462.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/d3fa95ac660d54e425df5486f710b462.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/d3fa95ac660d54e425df5486f710b462.jpeg
 description: "Download lagu Gusty  Beri Aku Kesempatan Mp3 Gusty - Give Me a
   Chance Listen: 46,422 Duration: 223 MP3 size: 3.48MB Download"
 ---

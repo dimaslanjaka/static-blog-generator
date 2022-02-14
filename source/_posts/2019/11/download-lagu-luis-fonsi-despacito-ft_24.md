@@ -22,7 +22,6 @@ updated: 2019-11-24T23:34:27+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/fe07acf5a7e39e3c0e916b3b3b1e3622.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/fe07acf5a7e39e3c0e916b3b3b1e3622.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/fe07acf5a7e39e3c0e916b3b3b1e3622.jpeg
 description: "Download lagu Luis Fonsi  Despacito ft. Daddy Yankee Mp3 Luis
   Fonsi - Despacito ft. Daddy Yankee Listen: 6,253,921,006 Duration: 282"
 ---

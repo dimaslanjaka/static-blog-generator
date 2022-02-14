@@ -25,7 +25,6 @@ updated: 2020-01-07T13:17:28+07:00
 thumbnail: https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
-  - https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
 description: How to protect javascript from developer tools  here the answer.
   put this code into your page or template before closing body
 ---

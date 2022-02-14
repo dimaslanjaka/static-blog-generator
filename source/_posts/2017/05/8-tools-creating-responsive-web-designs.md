@@ -22,7 +22,6 @@ updated: 2017-05-15T20:59:21+07:00
 thumbnail: http://www.tutorial-webdesign.com/wp-content/uploads/2015/06/froont-responsive-web-design.jpg
 photos:
   - http://www.tutorial-webdesign.com/wp-content/uploads/2015/06/froont-responsive-web-design.jpg
-  - http://www.tutorial-webdesign.com/wp-content/uploads/2015/06/froont-responsive-web-design.jpg
 description: Web Responsive Creating Tool For Web Developers- Web design is an
   important part of a website development project. The client at this time
 ---

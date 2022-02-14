@@ -22,7 +22,6 @@ updated: 2018-11-27T19:55:24+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/dancing-line-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/dancing-line-1.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/dancing-line-1.jpg
 description: Dancing Line .3.2 Apk + Mod Money android
 ---
 

@@ -22,7 +22,6 @@ updated: 2019-11-24T21:20:30+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/b16c6b1c17f22233f4b624004b5282e3.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/b16c6b1c17f22233f4b624004b5282e3.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/b16c6b1c17f22233f4b624004b5282e3.jpeg
 description: "Download lagu SEVENTEEN  KEMARIN Mp3 SEVENTEEN - YESTERDAY Listen:
   27,614,837 Duration: 243 MP3 size: 3.8MB Download Links"
 ---

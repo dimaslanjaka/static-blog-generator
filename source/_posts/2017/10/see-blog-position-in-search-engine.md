@@ -23,7 +23,6 @@ updated: 2017-10-03T02:35:01+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
 description: There is one of the bloggers on the comments asking about how to
   blog can search on google.
 ---

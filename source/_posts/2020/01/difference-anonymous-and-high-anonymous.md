@@ -22,7 +22,6 @@ updated: 2020-01-13T22:49:00+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Anonymous proxyno HTTP_X_FORWARDED_FOR headerHigh anonymous/Elite
   proxy:no HTTP_X_FORWARDED_FOR, HTTP_VIA, HTTP_FORWARDED,
 ---

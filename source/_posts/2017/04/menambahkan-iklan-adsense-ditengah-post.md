@@ -24,7 +24,6 @@ updated: 2017-04-10T07:42:38+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
 description: Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan
   ditampilkan dengan menambahkan script dalam template dan menggunakan tag
 ---

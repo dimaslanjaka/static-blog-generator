@@ -22,7 +22,6 @@ updated: 2018-11-27T20:05:35+07:00
 thumbnail: http://www.tutorial-webdesign.com/wp-content/uploads/2015/05/autocomplete.png
 photos:
   - http://www.tutorial-webdesign.com/wp-content/uploads/2015/05/autocomplete.png
-  - http://www.tutorial-webdesign.com/wp-content/uploads/2015/05/autocomplete.png
 description: In this tutorial we will discuss how to create autocompletewith
   codeigniter , in this discussion I assume all friends TWD already
 ---

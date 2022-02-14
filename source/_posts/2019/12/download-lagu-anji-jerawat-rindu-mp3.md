@@ -22,7 +22,6 @@ updated: 2019-12-04T17:13:07+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/bba1d9203a83e1c57ec78ac64b4cf4f7.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/bba1d9203a83e1c57ec78ac64b4cf4f7.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/bba1d9203a83e1c57ec78ac64b4cf4f7.jpeg
 description: "Download lagu Anji  Jerawat Rindu Mp3 Anji - Pimples Miss Listen:
   541,457 Duration: 234 MP3 size: 3.66MB Download Links"
 ---

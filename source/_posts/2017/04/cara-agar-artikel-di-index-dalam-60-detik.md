@@ -24,7 +24,6 @@ updated: 2017-04-16T07:06:09+07:00
 thumbnail: https://i1.wp.com/legeeks.org/wp-content/uploads/2013/12/Get-Your-New-Post-Indexed-In-Google-In-60-Seconds.jpg?resize=550%2C331
 photos:
   - https://i1.wp.com/legeeks.org/wp-content/uploads/2013/12/Get-Your-New-Post-Indexed-In-Google-In-60-Seconds.jpg?resize=550%2C331
-  - https://i1.wp.com/legeeks.org/wp-content/uploads/2013/12/Get-Your-New-Post-Indexed-In-Google-In-60-Seconds.jpg?resize=550%2C331
 description: Cara agar artikel di index search engine dalam 0 - 120 detik.Anda,
   saya dan semua orang lain tahu bahwa Google adalah yang paling
 ---

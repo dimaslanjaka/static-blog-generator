@@ -23,7 +23,6 @@ updated: 2021-12-19T06:34:22+07:00
 thumbnail: /The Legend Of Neverland/Fishing/Studio_Project.jpeg
 photos:
   - /The Legend Of Neverland/Fishing/Studio_Project.jpeg
-  - /The Legend Of Neverland/Fishing/Studio_Project.jpeg
 description: Macros Auto Fishing Bluestacks for the legend of neverland download
 ---
 

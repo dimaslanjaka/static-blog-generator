@@ -21,7 +21,6 @@ updated: 2020-09-22T10:36:39+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: pre><br />ArrayList&lt;String&gt; firstArr = new
   ArrayList&lt;&gt;();<br /> firstArr.add(&quot;1&quot;);<br />
 ---

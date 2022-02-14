@@ -26,7 +26,6 @@ updated: 2021-12-03T19:06:19+07:00
 thumbnail: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 photos:
   - https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
-  - https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 description: Seven Knights 2 Hero Usage and Equipment Guide
 ---
 

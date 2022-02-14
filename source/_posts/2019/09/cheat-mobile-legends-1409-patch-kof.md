@@ -24,7 +24,6 @@ updated: 2019-09-02T14:09:55+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
 description: Download ScriptCheat via Game GuardiansNon Root Using Parallel
   SpaceVirtual Engine
 ---

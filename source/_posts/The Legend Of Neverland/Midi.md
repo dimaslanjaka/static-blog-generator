@@ -23,7 +23,6 @@ updated: 2021-12-19T06:34:03+07:00
 thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-  - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 description: Midi collection for the legend of neverland perform music skill
 ---
 

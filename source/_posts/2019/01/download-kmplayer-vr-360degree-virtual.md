@@ -23,7 +23,6 @@ updated: 2019-01-17T11:52:08+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/kmplayer-vr-360degree-virtual-reality-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/kmplayer-vr-360degree-virtual-reality-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/kmplayer-vr-360degree-virtual-reality-1.png
 description: KMPlayer VR 360degree, Virtual Reality) 0.1.11 Apk android
 ---
 

@@ -22,7 +22,6 @@ updated: 2019-07-22T03:23:18+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "pre><br />var thisIsObject= {<br /> &apos;Cow&apos; :
   &apos;Moo&apos;,<br /> &apos;Cat&apos; : &apos;Meow&apos;,<br />"
 ---

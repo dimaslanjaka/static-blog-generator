@@ -27,7 +27,6 @@ updated: 2018-12-25T14:03:38+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
 description: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
   title=speed dial icon alt=speed dial

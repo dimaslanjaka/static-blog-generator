@@ -23,7 +23,6 @@ updated: 2017-05-10T06:31:04+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
-  - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
 description: Important Role Of Social Media For Any Blogs Pal knows what it is
   Facebook, Twitter, Instagram or Way I firmly accept 100% that my
 ---

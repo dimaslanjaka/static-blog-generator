@@ -22,7 +22,6 @@ updated: 2018-11-19T09:33:51+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
 description: Unduh Free Ronneby V.4.4 Tema Wordpress berperforma tinggi Tema
   WordPress Serbaguna Praktis WordPress Dibangun pada Komposer
 ---

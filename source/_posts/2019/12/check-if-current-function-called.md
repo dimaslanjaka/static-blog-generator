@@ -22,7 +22,6 @@ updated: 2019-12-04T09:13:32+07:00
 thumbnail: https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
-  - https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
 description: pre><br />$static = !(isset($this) &amp;&amp; get_class($this) ==
   __CLASS__);<br />if ($static) {<br /> return self;<br />} else {<br />
 ---

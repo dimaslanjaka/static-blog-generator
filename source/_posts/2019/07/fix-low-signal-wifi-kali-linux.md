@@ -24,7 +24,6 @@ updated: 2019-07-28T06:31:48+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Memperbaiki low wifi signal kali linux git clone
   https://github.com/lwfinger/rtlwifi_new.gitcd rtlwifi_newsudo makesudo make
   installsudo

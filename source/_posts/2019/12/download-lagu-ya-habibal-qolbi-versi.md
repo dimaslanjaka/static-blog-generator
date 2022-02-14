@@ -22,7 +22,6 @@ updated: 2019-12-02T05:02:42+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/8243928431836ae6e2fbe012a947a57d.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/8243928431836ae6e2fbe012a947a57d.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/8243928431836ae6e2fbe012a947a57d.jpeg
 description: "Download lagu YA HABIBAL QOLBI versi SABYAN Mp YES HABIBAL QOLBI
   SABYAN version Listen: 303,502,351 Duration: 266 MP3 size: 4.16MB"
 ---

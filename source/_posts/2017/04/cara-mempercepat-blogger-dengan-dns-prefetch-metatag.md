@@ -24,7 +24,6 @@ updated: 2017-04-30T01:38:00+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
-  - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
 description: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
   AMP.</b><br /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
 ---

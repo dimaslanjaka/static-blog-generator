@@ -22,7 +22,6 @@ updated: 2017-04-18T19:03:40+07:00
 thumbnail: https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
 photos:
   - https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
-  - https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
 description: Lately I see a lot of blog friends adsense publishers banned for
   violating Google AdSense program policies.Actually I have long seen
 ---

@@ -25,7 +25,6 @@ updated: 2017-09-03T13:33:02+07:00
 thumbnail: https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
 photos:
   - https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
-  - https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
 description: Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server
   Web yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda
 ---

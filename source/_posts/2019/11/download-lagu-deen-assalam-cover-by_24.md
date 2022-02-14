@@ -22,7 +22,6 @@ updated: 2019-11-24T22:06:14+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e34c0eb2a290187ec78f9f777967074f.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e34c0eb2a290187ec78f9f777967074f.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/e34c0eb2a290187ec78f9f777967074f.jpeg
 description: "Download lagu DEEN ASSALAM  Cover by SABYAN Mp3 DEEN ASSALAM -
   Cover by SABYAN Listen: 234,314,815 Duration: 262 MP3 size: 4.09MB"
 ---

@@ -22,7 +22,6 @@ updated: 2019-01-09T10:18:06+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/12/Fates-and-Furies-Subtitle-Indonesia.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/12/Fates-and-Furies-Subtitle-Indonesia.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/12/Fates-and-Furies-Subtitle-Indonesia.jpg
 description: Korean Drama Fates and Furies Indonesian Subtitles Synopsis of
   Fates and Furies The Korean drama Fates and Furies Sub Indo tells
 ---

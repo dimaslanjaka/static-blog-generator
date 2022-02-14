@@ -22,7 +22,6 @@ updated: 2019-12-05T05:37:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e55fe3f7f44f6f70ae4b413b565631da.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e55fe3f7f44f6f70ae4b413b565631da.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/e55fe3f7f44f6f70ae4b413b565631da.jpeg
 description: "Download lagu Marcell  Sisa Semalam Mp3 Marcell - Overnight
   Remaining Listen: 5,118 Duration: 308 MP3 size: 4.81MB Download Links"
 ---

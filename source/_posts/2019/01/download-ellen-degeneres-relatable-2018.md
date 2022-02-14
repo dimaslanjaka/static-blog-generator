@@ -24,7 +24,6 @@ updated: 2019-01-03T01:39:07+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

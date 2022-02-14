@@ -22,7 +22,6 @@ updated: 2019-12-04T17:12:52+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/f4d55b0ff972a6cb2e363a981be9ed74.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/f4d55b0ff972a6cb2e363a981be9ed74.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/f4d55b0ff972a6cb2e363a981be9ed74.jpeg
 description: "Download lagu rif - Turn Off The Light Mp3 / rif - Turn Off The
   Light Listen: 15,546 Duration: 195 MP3 size: 3.05MB Download"
 ---

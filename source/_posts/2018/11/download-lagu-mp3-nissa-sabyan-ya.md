@@ -21,7 +21,6 @@ updated: 2018-11-14T03:42:02+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/icon_content/2018/05/27/13/00/download-mp3-nissa-sabyan-ya-maulana-music-terbaru.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/icon_content/2018/05/27/13/00/download-mp3-nissa-sabyan-ya-maulana-music-terbaru.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/icon_content/2018/05/27/13/00/download-mp3-nissa-sabyan-ya-maulana-music-terbaru.png
 description: "Download Lagu Mp NISSA SABYAN - YA MAULANA Gratis Size : Duration : 4: 42 min"
 ---
 

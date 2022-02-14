@@ -22,7 +22,6 @@ updated: 2018-11-10T07:29:48+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/images/download-lagu-mp3-terbaru-gratis.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/images/download-lagu-mp3-terbaru-gratis.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/images/download-lagu-mp3-terbaru-gratis.png
 description: "Download Lagu Mp Gugur Bunga [Ismail Marzuki] Gratis Size :
   Duration : 3: 6 min"
 ---

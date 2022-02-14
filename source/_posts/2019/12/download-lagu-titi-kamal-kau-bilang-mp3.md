@@ -22,7 +22,6 @@ updated: 2019-12-04T17:12:52+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/1cb03553e156a278ec4ef2929d6a00c5.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/1cb03553e156a278ec4ef2929d6a00c5.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/1cb03553e156a278ec4ef2929d6a00c5.jpeg
 description: "Download lagu Titi Kamal  Kau Bilang Mp3 Titi Kamal - You Said
   Listen: 104,319 Duration: 263 MP3 size: 4.11MB Download Links"
 ---

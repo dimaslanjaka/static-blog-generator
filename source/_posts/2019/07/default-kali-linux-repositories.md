@@ -22,7 +22,6 @@ updated: 2019-07-23T01:56:32+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 description: "open terminal, type  gedit /etc/apt/sources.listadd following
   codes: deb http://http.kali.org/kali kali-rolling main non-free"
 ---

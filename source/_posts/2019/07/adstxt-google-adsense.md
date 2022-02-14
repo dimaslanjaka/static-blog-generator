@@ -23,7 +23,6 @@ updated: 2019-07-25T06:20:37+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
 description: "ads.txtformat for valid adsenseexample combine ads.txt adsense
   with other ads:google.com, pub-1037373295371110, DIRECT #video, banner,"
 ---

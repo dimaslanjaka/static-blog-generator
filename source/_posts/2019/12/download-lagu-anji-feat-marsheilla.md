@@ -22,7 +22,6 @@ updated: 2019-12-02T05:02:42+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/14921a91e9a53e01476286a3f4de31d2.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/14921a91e9a53e01476286a3f4de31d2.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/14921a91e9a53e01476286a3f4de31d2.jpeg
 description: "Download lagu Anji feat. Marsheilla  Cukup 3 Kata Mp3 Anji feat
   Marsheilla - Enough 3 Words Listen: 63,451 Duration: 239 MP3 size:"
 ---

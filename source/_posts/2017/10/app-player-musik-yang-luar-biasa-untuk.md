@@ -21,7 +21,6 @@ updated: 2017-10-14T00:32:02+07:00
 thumbnail: https://4.bp.blogspot.com/-F-ocOo6kFI4/TZmheb35DxI/AAAAAAAAL0M/qYSBewm5xDY/s1600/Local-Player.png
 photos:
   - https://4.bp.blogspot.com/-F-ocOo6kFI4/TZmheb35DxI/AAAAAAAAL0M/qYSBewm5xDY/s1600/Local-Player.png
-  - https://4.bp.blogspot.com/-F-ocOo6kFI4/TZmheb35DxI/AAAAAAAAL0M/qYSBewm5xDY/s1600/Local-Player.png
 description: Pemain Lokal
 ---
 

@@ -24,7 +24,6 @@ updated: 2019-02-08T22:20:05+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Facebook tokenrefresh token facebookphp script018 auto refresh
   tokenAuto refresh token Facebook autolikeToken autolike facebookGet token
 ---

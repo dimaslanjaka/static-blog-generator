@@ -23,7 +23,6 @@ updated: 2017-10-01T02:31:10+07:00
 thumbnail: https://imgdb.net/images/3198.jpg
 photos:
   - https://imgdb.net/images/3198.jpg
-  - https://imgdb.net/images/3198.jpg
 description: hr align=CENTER color=#336600 size=2 width=90% /><img height=97
   src=https://imgdb.net/images/3198.jpg width=100% /><br /><hr
 ---

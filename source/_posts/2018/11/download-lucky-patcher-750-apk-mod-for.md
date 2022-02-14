@@ -23,7 +23,6 @@ updated: 2018-11-13T11:33:37+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techylist.com/wp-content/uploads/2017/12/image-result-for-lucky-patcher-images-3-1024x593.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techylist.com/wp-content/uploads/2017/12/image-result-for-lucky-patcher-images-3-1024x593.jpeg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techylist.com/wp-content/uploads/2017/12/image-result-for-lucky-patcher-images-3-1024x593.jpeg
 description: Lucky Patcher Apk  Mod for android Lucky Patcher Apakah Baik App Untuk Pach All
 ---
 

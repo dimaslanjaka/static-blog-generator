@@ -23,7 +23,6 @@ updated: 2017-11-10T22:41:26+07:00
 thumbnail: http://juragancipir.com/wp-content/uploads/2013/11/Skor-bagus-lagi.jpg
 photos:
   - http://juragancipir.com/wp-content/uploads/2013/11/Skor-bagus-lagi.jpg
-  - http://juragancipir.com/wp-content/uploads/2013/11/Skor-bagus-lagi.jpg
 description: Managing Tips Optimizing Google Adsense BlogWriting articles on the
   blog that so many kinds and styles.There is a style of journalism,
 ---

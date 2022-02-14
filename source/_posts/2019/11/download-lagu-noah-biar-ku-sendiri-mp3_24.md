@@ -22,7 +22,6 @@ updated: 2019-11-24T23:49:05+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/8812c4ae3d7e14f98762906380b47355.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/8812c4ae3d7e14f98762906380b47355.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/8812c4ae3d7e14f98762906380b47355.jpeg
 description: "Download lagu NOAH  Biar Ku Sendiri Mp3 NOAH - Ill Be Alone
   Listen: 11,059,001 Duration: 278 MP3 size: 4.34MB Download Links"
 ---

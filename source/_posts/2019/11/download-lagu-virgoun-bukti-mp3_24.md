@@ -22,7 +22,6 @@ updated: 2019-11-24T23:49:05+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/08416aa9bf89d3b183b251382ac6a5a7.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/08416aa9bf89d3b183b251382ac6a5a7.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/08416aa9bf89d3b183b251382ac6a5a7.jpeg
 description: "Download lagu Virgoun  Bukti Mp3 Virgoun - Evidence Listen:
   229,149,680 Duration: 305 MP3 size: 4.77MB Download Links Download"
 ---

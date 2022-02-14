@@ -23,7 +23,6 @@ updated: 2017-10-04T23:36:03+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Edit your functions.php of your themes. This also work on amp
   plugin wp AMP ninja) -&gt; Edit on functions.php too. <br /><h3>Codes
 ---

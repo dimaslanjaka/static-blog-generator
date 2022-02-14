@@ -22,7 +22,6 @@ updated: 2018-11-19T02:25:26+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Watching Film Dilan 990 (2018) Subtitles Indonesia - It was 1990.
   Milea just moved from Jakarta to Bandung. She met a boy named
 ---

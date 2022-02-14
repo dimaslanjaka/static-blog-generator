@@ -22,7 +22,6 @@ updated: 2019-11-24T23:49:05+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/237064220d357dbb8a8ec02aa1c79655.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/237064220d357dbb8a8ec02aa1c79655.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/237064220d357dbb8a8ec02aa1c79655.jpeg
 description: "Download lagu Raisa  Isyana Sarasvati - Anganku Anganmu Mp3 Raisa
   & Isyana Sarasvati - My Angan Anganmu Listen: 22,935,419 Duration:"
 ---

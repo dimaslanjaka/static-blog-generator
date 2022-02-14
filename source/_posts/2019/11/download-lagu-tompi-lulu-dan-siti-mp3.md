@@ -22,7 +22,6 @@ updated: 2019-12-01T23:13:01+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/fb085eb95bffd0d9f0df2a5c25759e2b.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/fb085eb95bffd0d9f0df2a5c25759e2b.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/fb085eb95bffd0d9f0df2a5c25759e2b.jpeg
 description: "Download lagu Tompi  Lulu dan Siti Mp3 Tompi - Lulu and Siti
   Listen: 85,519 Duration: 226 MP3 size: 3.53MB Download Links"
 ---

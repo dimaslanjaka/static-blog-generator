@@ -21,7 +21,6 @@ updated: 2017-05-20T14:32:00+07:00
 thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
-  - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
 description: How to edit the template blogger or blogspot
 ---
 

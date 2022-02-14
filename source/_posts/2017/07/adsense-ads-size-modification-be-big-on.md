@@ -21,7 +21,6 @@ updated: 2017-07-18T12:23:13+07:00
 thumbnail: https://cdnpower.klikmania.net/wp-content/uploads/2015/12/1-min-3-1024x499.png
 photos:
   - https://cdnpower.klikmania.net/wp-content/uploads/2015/12/1-min-3-1024x499.png
-  - https://cdnpower.klikmania.net/wp-content/uploads/2015/12/1-min-3-1024x499.png
 description: The ads appear in full on the screen
 ---
 

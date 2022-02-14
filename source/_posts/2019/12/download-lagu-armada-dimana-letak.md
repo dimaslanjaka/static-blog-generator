@@ -22,7 +22,6 @@ updated: 2019-12-02T17:11:09+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e3254d784b96e96acac576294f4a59bd.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e3254d784b96e96acac576294f4a59bd.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/e3254d784b96e96acac576294f4a59bd.jpeg
 description: "Download lagu Armada  Dimana Letak Hatimu Mp3 Fleet - Where Your
   Heart Is Listen: 99,680 Duration: 224 MP3 size: 3.5MB Download"
 ---

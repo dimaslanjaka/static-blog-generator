@@ -22,7 +22,6 @@ updated: 2018-07-05T22:43:43+07:00
 thumbnail: https://imgdb.net/images/3862.jpg
 photos:
   - https://imgdb.net/images/3862.jpg
-  - https://imgdb.net/images/3862.jpg
 description: "Here are  Tips to Outsmart your Wifi router to get a faster and
   more stable Internet connection:"
 ---

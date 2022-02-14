@@ -22,7 +22,6 @@ updated: 2019-09-29T17:56:03+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
 description: Web Development Indonesia  Everyone certainly does not expect the
   downloaded file to be corrupt or corrupt. The downloaded file is
 ---

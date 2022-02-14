@@ -23,7 +23,6 @@ updated: 2019-12-04T00:50:01+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/2a73e2f62dec48d0c7d33ae571601799.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/2a73e2f62dec48d0c7d33ae571601799.jpeg
-  - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/2a73e2f62dec48d0c7d33ae571601799.jpeg
 description: Maximum Reflection Mod GTA SA Mobile Dengan ENB Mods hebat untuk
   GTA San Andreas Mobile, terkadang Anda mungkin kehilangan refleksi
 ---

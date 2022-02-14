@@ -23,7 +23,6 @@ updated: 2019-02-05T01:52:05+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

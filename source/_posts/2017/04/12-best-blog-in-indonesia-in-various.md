@@ -23,7 +23,6 @@ updated: 2017-04-13T12:31:00+07:00
 thumbnail: http://sugeng.id/blog/wp-content/uploads/2015/06/Blog-Raditya-Dika-800x392.png
 photos:
   - http://sugeng.id/blog/wp-content/uploads/2015/06/Blog-Raditya-Dika-800x392.png
-  - http://sugeng.id/blog/wp-content/uploads/2015/06/Blog-Raditya-Dika-800x392.png
 description: 2 Best Blog in Indonesia in Various TopicsA few days ago I idly
   googling the keywordsBest Blog in IndonesiaAfter I check one by one from
 ---

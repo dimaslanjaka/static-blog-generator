@@ -27,7 +27,6 @@ updated: 2022-02-12T11:18:24+07:00
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
-  - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 description: Chimeraland Cooking Recipes
 ---
 
@@ -163,15 +162,41 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td><a href="#unlock-stove-ii">Watch Tutorial</a></td>
     </tr>
     <tr>
-      <td>Fried Tenderloin</td>
+      <td><img src="Recipes/fried-tenderloin.jpg" title="Fried Tenderloin" class="img-recipe"> Fried Tenderloin</td>
       <td>Peanut Oil + Fruit Sauce + Any meat + Equinox Flower</td>
       <td>Stove II</td>
       <td>+540 fullness, +120 Def 15 mins, Vulorman Attendant Recruitment</td>
       <td>Mythic</td>
       <td><a href="#vulorman">Watch Tutorial</a></td>
     </tr>
+    <tr>
+      <td>Sliced Fish Stew</td>
+      <td>Egg White + Any Meat + Lemon Tree Leaf/Any rare corps such as pumpkin etc + any epic fish</td>
+      <td>Stove II</td>
+      <td>+540 fullness, Temporarily protect from drowning for a long time</td>
+      <td>Mythic</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Stewed Liver</td>
+      <td>Ice Piece/Dew, Beast (Heart/Beast Liver/Beast Brain/Beast Insentines/Kidney/Hoof Sinew/Chunk Of Fat)[4]</td>
+      <td>Stove II</td>
+      <td>+540 fullness, +50 Armor Pierce for 15 mins</td>
+      <td>Mythic</td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
+<!--
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+-->
 
 <!-- references
   https://zilliongamer.com/chimeraland/c/items-list/food-epic-grad

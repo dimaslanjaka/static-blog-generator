@@ -22,7 +22,6 @@ updated: 2019-02-14T04:54:03+07:00
 thumbnail: https://image.revdl.com/2017/the-escapists-1.jpg
 photos:
   - https://image.revdl.com/2017/the-escapists-1.jpg
-  - https://image.revdl.com/2017/the-escapists-1.jpg
 description: The Escapists .1.5.556924 Apk Patched + Mod money untuk android
 ---
 

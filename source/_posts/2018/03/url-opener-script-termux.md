@@ -22,7 +22,6 @@ updated: 2018-03-26T00:48:50+07:00
 thumbnail: https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
 photos:
   - https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
-  - https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
 description: img
 ---
 

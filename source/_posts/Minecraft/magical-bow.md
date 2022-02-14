@@ -16,7 +16,6 @@ updated: 2021-12-16T23:40:43+07:00
 thumbnail: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
-  - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 description: How to use magical books for bow
 ---
 

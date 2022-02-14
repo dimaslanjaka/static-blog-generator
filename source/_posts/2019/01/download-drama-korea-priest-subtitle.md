@@ -22,7 +22,6 @@ updated: 2019-01-07T01:42:07+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-Priest-Subtitle-Indonesia-678x381.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-Priest-Subtitle-Indonesia-678x381.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-Priest-Subtitle-Indonesia-678x381.jpg
 description: Download Korean Drama Priest Indonesian Subtitles Oh SooMin (Yeon
   Woo-Jin) is a young Catholic priest who is devoted, full of
 ---

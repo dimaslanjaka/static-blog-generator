@@ -21,7 +21,6 @@ updated: 2018-08-05T06:15:56+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/app/GBWhatsApp.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/app/GBWhatsApp.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/app/GBWhatsApp.jpg
 description: GBWhatsApp  WhatsApp Mod [Dual WhatsApp dalam Satu Ponsel]
 ---
 

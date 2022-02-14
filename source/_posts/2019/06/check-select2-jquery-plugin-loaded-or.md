@@ -22,7 +22,6 @@ updated: 2020-01-20T04:37:48+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://laraget.com/images/blog/1482184906-Select2.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://laraget.com/images/blog/1482184906-Select2.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://laraget.com/images/blog/1482184906-Select2.png
 description: Example How to change select2 jQuery plugin using jQuery.val()
 ---
 

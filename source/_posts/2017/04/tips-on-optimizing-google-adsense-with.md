@@ -22,7 +22,6 @@ updated: 2017-04-20T07:52:00+07:00
 thumbnail: http://juragancipir.com/wp-content/uploads/2014/01/Skor-naik.png
 photos:
   - http://juragancipir.com/wp-content/uploads/2014/01/Skor-naik.png
-  - http://juragancipir.com/wp-content/uploads/2014/01/Skor-naik.png
 description: Tips on Optimizing Google Adsense With A  B TestingWebsite general
   news world-class giant Daily Mail level often use A / B testing to find
 ---

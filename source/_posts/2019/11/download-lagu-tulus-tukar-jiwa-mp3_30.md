@@ -22,7 +22,6 @@ updated: 2019-11-30T22:32:40+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/96d3c05cb6889296a3b0d65f48d34c24.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/96d3c05cb6889296a3b0d65f48d34c24.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/96d3c05cb6889296a3b0d65f48d34c24.jpeg
 description: "Download lagu TULUS  Tukar Jiwa Mp3 SINCERELY - Soul Swap Listen:
   8,424,327 Duration: 232 MP3 size: 3.63MB Download Links"
 ---

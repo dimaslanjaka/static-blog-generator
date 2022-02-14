@@ -22,7 +22,6 @@ updated: 2019-01-13T10:46:56+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/pes2017-pro-evolution-soccer-unreleased-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/pes2017-pro-evolution-soccer-unreleased-1.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/pes2017-pro-evolution-soccer-unreleased-1.jpg
 description: PES 019 PRO EVOLUTION SOCCER 3.0.1 Apk Lengkap + Data android
 ---
 

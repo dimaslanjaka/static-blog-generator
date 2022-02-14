@@ -23,7 +23,6 @@ updated: 2017-10-11T19:49:03+07:00
 thumbnail: http://botcrawl.com/wp-content/uploads/2012/04/toggle-arrow.png
 photos:
   - http://botcrawl.com/wp-content/uploads/2012/04/toggle-arrow.png
-  - http://botcrawl.com/wp-content/uploads/2012/04/toggle-arrow.png
 description: Membuat Google AdSense Shortcodes Untuk WordPress
 ---
 

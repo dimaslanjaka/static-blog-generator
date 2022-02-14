@@ -22,7 +22,6 @@ updated: 2019-12-09T02:58:48+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/da712dd749bade902bd6bd1cd2541a73.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/da712dd749bade902bd6bd1cd2541a73.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/da712dd749bade902bd6bd1cd2541a73.jpeg
 description: "Download lagu Anji  Tentang Rasa Mp3Anji - About Taste Listen:
   3,880,791 Duration: 279 MP3 size: 4.36MB Download Links Download"
 ---

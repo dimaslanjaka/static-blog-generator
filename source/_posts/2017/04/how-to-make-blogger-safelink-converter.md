@@ -22,7 +22,6 @@ updated: 2020-01-21T02:10:38+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
 description: How to Make Blogger Safelink Converter v Understanding What is
   Safelink on blogger or wordpress ?Safelink is one option blogs
 ---

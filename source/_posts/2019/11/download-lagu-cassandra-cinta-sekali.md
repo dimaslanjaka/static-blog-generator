@@ -22,7 +22,6 @@ updated: 2019-12-01T23:13:01+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/fc747917662b4d8828eca7115bc2b17c.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/fc747917662b4d8828eca7115bc2b17c.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/fc747917662b4d8828eca7115bc2b17c.jpeg
 description: "Download lagu Cassandra  Cinta Sekali Saja Mp3 Cassandra - Just
   Love Once Listen: 126,000 Duration: 225 MP3 size: 3.52MB Download"
 ---

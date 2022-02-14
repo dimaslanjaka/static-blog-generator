@@ -22,7 +22,6 @@ updated: 2021-12-19T06:35:16+07:00
 thumbnail: http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
 photos:
   - http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
-  - http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
 description: Chest Winged Hairband location in the legend of neverland
 ---
 

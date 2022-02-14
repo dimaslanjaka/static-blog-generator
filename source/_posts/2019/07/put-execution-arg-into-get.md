@@ -22,7 +22,6 @@ updated: 2019-07-29T06:42:02+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: PHP CLI?phpif ($argv) {    foreach ($argv as $k=>$v)    {        if
   ($k==0) continue;        $it = explode(=,$argv[$i]);        if
 ---

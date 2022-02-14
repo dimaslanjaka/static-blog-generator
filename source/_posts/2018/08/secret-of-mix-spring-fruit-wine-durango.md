@@ -24,7 +24,6 @@ updated: 2018-08-20T10:44:20+07:00
 thumbnail: https://cdn1.imggmi.com/uploads/2018/8/20/e17d8d0b84fe9de0ad5002333f5764f7-full.jpg
 photos:
   - https://cdn1.imggmi.com/uploads/2018/8/20/e17d8d0b84fe9de0ad5002333f5764f7-full.jpg
-  - https://cdn1.imggmi.com/uploads/2018/8/20/e17d8d0b84fe9de0ad5002333f5764f7-full.jpg
 description: Spring Fruit Wine is a cooking skill which has the biggest effect
   among other dishes, even though having the biggest buff, this mix
 ---

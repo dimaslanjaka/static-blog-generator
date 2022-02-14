@@ -22,7 +22,6 @@ updated: 2019-12-05T05:37:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/357e393aa1f5ef55f94e6c16697da18a.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/357e393aa1f5ef55f94e6c16697da18a.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/357e393aa1f5ef55f94e6c16697da18a.jpeg
 description: "Download lagu Piyu feat.The Frontmen  Hancur Mp3 Piyu feat.The
   Frontmen - Ruined Listen: 91,194 Duration: 262 MP3 size: 4.09MB"
 ---

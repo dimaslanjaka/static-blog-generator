@@ -22,7 +22,6 @@ updated: 2019-12-04T17:12:52+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/77cdd63b44b1a95479c780c0f78877b6.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/77cdd63b44b1a95479c780c0f78877b6.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/77cdd63b44b1a95479c780c0f78877b6.jpeg
 description: "Download lagu Marcell  The Best for You (Official Mp3 Marcell -
   The Best for You (Official Listen: 15,053 Duration: 269 MP3 size:"
 ---

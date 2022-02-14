@@ -22,7 +22,6 @@ updated: 2018-11-14T15:54:49+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Jetpack-Joyride-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Jetpack-Joyride-1.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Jetpack-Joyride-1.jpg
 description: Jetpack Joyride .12.11 Apk + Mod Unlimited Money android
 ---
 

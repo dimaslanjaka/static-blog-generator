@@ -22,7 +22,6 @@ updated: 2019-01-05T18:37:07+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/03/Download-I-Live-Alone.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/03/Download-I-Live-Alone.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/03/Download-I-Live-Alone.jpg
 description: I Live Alone I Live Alone is recognized as one of the RealVariety
   shows in Korean television. The program is unscripted using
 ---

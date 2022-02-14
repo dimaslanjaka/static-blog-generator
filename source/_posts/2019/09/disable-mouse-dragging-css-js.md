@@ -23,7 +23,6 @@ updated: 2019-09-22T10:13:14+07:00
 thumbnail: https://i.stack.imgur.com/3pgKv.png
 photos:
   - https://i.stack.imgur.com/3pgKv.png
-  - https://i.stack.imgur.com/3pgKv.png
 description: "CSSstyle> body { -webkit-touch-callout: none; -webkit-user-select:
   none; -khtml-user-select: none;"
 ---

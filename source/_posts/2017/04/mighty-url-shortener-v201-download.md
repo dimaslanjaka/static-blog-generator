@@ -23,7 +23,6 @@ updated: 2017-04-10T07:45:16+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
 description: Download Free Mighty URL Shortener PHP Script .0.1 - CodeCanyon |
   Mighty URL Shortener v2.0.1 - Short URL Script PHP Script ini
 ---

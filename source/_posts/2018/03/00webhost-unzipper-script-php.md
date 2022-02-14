@@ -24,7 +24,6 @@ updated: 2018-03-27T02:22:11+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
 description: h2>Features:</h2><ul><li>Detect zip file
   automatically</li><li>Extract zip to custom folder</li><li>Detect zip file on
 ---

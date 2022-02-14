@@ -22,7 +22,6 @@ updated: 2019-07-22T03:34:02+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
 description: Download Simontok MOD Tanpa Iklan No Ads] [VIP] terbaru Via »
   ConfigInter | SiMonTokSimontok MOd tanpa iklan v.1.9 | SiMontk V.3.2.2 Mod
 ---

@@ -23,7 +23,6 @@ updated: 2018-12-22T13:43:00+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
 description: import
   url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css);
   .content *,.keyword *,.keywords *

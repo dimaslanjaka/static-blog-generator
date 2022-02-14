@@ -23,7 +23,6 @@ updated: 2017-04-27T08:24:11+07:00
 thumbnail: https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
 photos:
   - https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
-  - https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
 description: Bagaimana Menggunakan SSL Certificate Gratis Dengan Bluehost
   Hosting Untuk menjalankan berbasis WordPress blog  website.
 ---

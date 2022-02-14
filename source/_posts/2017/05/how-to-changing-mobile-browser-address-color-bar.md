@@ -23,7 +23,6 @@ updated: 2017-08-20T11:00:43+07:00
 thumbnail: https://3.bp.blogspot.com/-ItMBdFpxYYE/V_H7ypdUiWI/AAAAAAAAESI/g1v0CDfhJR4-4PAqBUijaH0erCXuOmuNQCLcB/s550/Mengganti%2BWarna%2BAddress%2BBar%2BBrowser%2BHandphone%2BAgar%2BSesuai%2BLayout%2BBlog%2B01.jpg
 photos:
   - https://3.bp.blogspot.com/-ItMBdFpxYYE/V_H7ypdUiWI/AAAAAAAAESI/g1v0CDfhJR4-4PAqBUijaH0erCXuOmuNQCLcB/s550/Mengganti%2BWarna%2BAddress%2BBar%2BBrowser%2BHandphone%2BAgar%2BSesuai%2BLayout%2BBlog%2B01.jpg
-  - https://3.bp.blogspot.com/-ItMBdFpxYYE/V_H7ypdUiWI/AAAAAAAAESI/g1v0CDfhJR4-4PAqBUijaH0erCXuOmuNQCLcB/s550/Mengganti%2BWarna%2BAddress%2BBar%2BBrowser%2BHandphone%2BAgar%2BSesuai%2BLayout%2BBlog%2B01.jpg
 description: Color Changing Mobile Browser Address Bar Layout To Match Blog
 ---
 

@@ -23,7 +23,6 @@ updated: 2019-02-09T19:58:48+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
 description: Saya ingin menulis bot telegram. Bagaimana cara menempatkan opsi
   yang memungkinkan di bot saya. Saya menyisipkan gambar bot sampel dengan
 ---

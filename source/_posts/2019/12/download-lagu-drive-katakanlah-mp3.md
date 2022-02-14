@@ -22,7 +22,6 @@ updated: 2019-12-02T07:10:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/54c9a4b73215e6ddbc3a2c574f6a7dd4.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/54c9a4b73215e6ddbc3a2c574f6a7dd4.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/54c9a4b73215e6ddbc3a2c574f6a7dd4.jpeg
 description: "Download lagu Drive  Katakanlah Mp3 Drive - Say Listen: 136,256
   Duration: 219 MP3 size: 3.42MB Download Links Download Mp3"
 ---

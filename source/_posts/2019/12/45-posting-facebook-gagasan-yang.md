@@ -23,7 +23,6 @@ updated: 2019-12-07T05:49:03+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/9759bbe055a3e1097f92c400318095c2.png
 photos:
   - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/9759bbe055a3e1097f92c400318095c2.png
-  - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/9759bbe055a3e1097f92c400318095c2.png
 description: 5 Facebook Post Ideas That Generate High Engagement Kehabisan ide
   posting Facebook untuk halaman Anda? Posting Facebook sama dengan
 ---

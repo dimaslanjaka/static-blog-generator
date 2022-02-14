@@ -24,7 +24,6 @@ updated: 2019-07-17T13:52:43+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: ":disabled, .disabled, *[disabled] { opacity: 0.5; color: #666666;
   cursor: not-allowed; pointer-events: none; } *:disabled,"
 ---

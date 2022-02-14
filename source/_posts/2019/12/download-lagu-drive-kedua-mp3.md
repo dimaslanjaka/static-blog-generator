@@ -22,7 +22,6 @@ updated: 2019-12-05T05:37:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/9d0245d21f3c4a7dbe2011c9203e2b02.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/9d0245d21f3c4a7dbe2011c9203e2b02.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/9d0245d21f3c4a7dbe2011c9203e2b02.jpeg
 description: "Download lagu Drive  Kedua Mp3 Drive - Second Listen: 851,409
   Duration: 230 MP3 size: 3.59MB Download Links Download Mp3 Server"
 ---

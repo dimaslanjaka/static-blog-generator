@@ -22,7 +22,6 @@ updated: 2019-12-04T17:12:52+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e3fd830e76ab14281129587079522a3e.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e3fd830e76ab14281129587079522a3e.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/e3fd830e76ab14281129587079522a3e.jpeg
 description: "Download lagu Agatha Suci  Karena Kamu Mp3 Holy Agatha - Because
   of You Listen: 82,705 Duration: 234 MP3 size: 3.66MB Download"
 ---

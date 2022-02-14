@@ -21,7 +21,6 @@ updated: 2021-12-19T06:34:45+07:00
 thumbnail: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
 photos:
   - https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
-  - https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
 description: Regular Expression is a
 ---
 

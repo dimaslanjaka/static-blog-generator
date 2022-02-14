@@ -24,7 +24,6 @@ updated: 2020-10-17T04:26:36+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "pre><br />Usage: var_dump(get_client_ip());<br /></pre> <pre><br
   />/**<br /> * Detect is localhost<br /> *<br /> * @return boolean<br />"
 ---

@@ -22,7 +22,6 @@ updated: 2019-12-02T05:51:37+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e6f899c6a4423e5b6fff163c3ceceda5.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e6f899c6a4423e5b6fff163c3ceceda5.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/e6f899c6a4423e5b6fff163c3ceceda5.jpeg
 description: "Download lagu Tompi  Happy Life Mp3 Tompi - Happy Life Listen:
   12,098 Duration: 236 MP3 size: 3.69MB Download Links Download"
 ---

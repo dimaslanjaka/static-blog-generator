@@ -22,7 +22,6 @@ updated: 2021-06-07T11:55:21+07:00
 thumbnail: https://i.imgur.com/zHDw2i0.png
 photos:
   - https://i.imgur.com/zHDw2i0.png
-  - https://i.imgur.com/zHDw2i0.png
 description: Update genshin impact manual via download manager IDM).
 ---
 

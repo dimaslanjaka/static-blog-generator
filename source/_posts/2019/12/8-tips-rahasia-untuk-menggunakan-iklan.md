@@ -23,7 +23,6 @@ updated: 2019-12-07T05:49:04+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/670f120afdd78209155b405b071116c2.png
 photos:
   - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/670f120afdd78209155b405b071116c2.png
-  - https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/670f120afdd78209155b405b071116c2.png
 description: Secret Tips For Using Facebook Ads For Ecommerce Sebagai jaringan
   media sosial terbesar, Facebook adalah platform yang sangat baik untuk
 ---

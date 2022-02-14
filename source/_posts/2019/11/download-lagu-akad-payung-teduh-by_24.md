@@ -22,7 +22,6 @@ updated: 2019-11-24T21:33:29+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/399271df541a5f491a95ea3e5284ce66.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/399271df541a5f491a95ea3e5284ce66.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/399271df541a5f491a95ea3e5284ce66.jpeg
 description: "Download lagu Akad  Payung Teduh by Hanin Dhiya Mp3 Akad -
   Umbrella Teduh by Hanin Dhiya Listen: 54,623,426 Duration: 268 MP3"
 ---

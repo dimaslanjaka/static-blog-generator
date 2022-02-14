@@ -22,7 +22,6 @@ updated: 2017-07-24T07:44:02+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Amazon offers a PHP SDK for taking care of AWS and S asks for, yet
   it tips the scales at more than 500 documents and almost 5MB. In the
 ---

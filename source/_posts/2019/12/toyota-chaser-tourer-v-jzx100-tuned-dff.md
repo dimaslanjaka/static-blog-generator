@@ -23,7 +23,6 @@ updated: 2019-12-05T00:44:07+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/abb7afbb4ce255b394cc35d14e068312.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/abb7afbb4ce255b394cc35d14e068312.jpeg
-  - https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/abb7afbb4ce255b394cc35d14e068312.jpeg
 description: Toyota Chaser Tourer V JZX00 Tuned + DFF Only Mobile Dengan banyak
   mod mobil saya akan menambahkan mod mobil hebat lainnya di basis
 ---

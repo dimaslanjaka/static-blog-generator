@@ -22,7 +22,6 @@ updated: 2019-01-15T11:50:01+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/trivia-crack-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/trivia-crack-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/trivia-crack-1.png
 description: Trivia Crack .99.2 APK Unduh Premium + Mod Android [Terbaru]
 ---
 

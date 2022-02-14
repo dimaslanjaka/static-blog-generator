@@ -24,7 +24,6 @@ updated: 2018-12-18T20:17:02+07:00
 thumbnail: http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png
 photos:
   - http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png
-  - http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png
 description: In this tutorial, the author will provide a tutorial on the basic
   use of the php framework is CodeIgniter.The author uses CodeIgniter v
 ---

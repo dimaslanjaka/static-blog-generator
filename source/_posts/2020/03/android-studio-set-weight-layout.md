@@ -23,7 +23,6 @@ updated: 2020-03-29T20:45:55+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 description: pre><br />LinearLayout.LayoutParams param = new
   LinearLayout.LayoutParams(<br /> LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT
   ->

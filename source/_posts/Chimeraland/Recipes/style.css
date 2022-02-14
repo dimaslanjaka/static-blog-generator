@@ -13,3 +13,7 @@ table a.gallery-item {
   /*border: 1px solid red;*/
   color: red;
 }
+img.img-recipe {
+  display: inline-block;
+  width: 35px;
+}

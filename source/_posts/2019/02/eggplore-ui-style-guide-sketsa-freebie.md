@@ -22,7 +22,6 @@ updated: 2019-02-20T00:38:06+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
 description: Eggplore Ui Style Guide Sketsa Freebie Stephen dan Gahuy ingin
   berbagi sumber daya panduan gaya UI dengan komunitas. Sumber daya
 ---

@@ -22,7 +22,6 @@ updated: 2019-12-02T07:10:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/b27af05cd0e2a7268d21e8ea0f9f1579.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/b27af05cd0e2a7268d21e8ea0f9f1579.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/b27af05cd0e2a7268d21e8ea0f9f1579.jpeg
 description: "Download lagu Armada  Mau Dibawa Kemana Mp3 Fleet - Where to Be
   Taken Listen: 6,863,502 Duration: 233 MP3 size: 3.64MB Download"
 ---

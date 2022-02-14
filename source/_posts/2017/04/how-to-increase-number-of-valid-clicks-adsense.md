@@ -22,7 +22,6 @@ updated: 2020-01-08T18:33:30+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
 description: How to Increase the Number of Clicks Shah  Valid Clicks Of Adsense
   AdsWhy your adsense ads not anyone want to click? Because your blog
 ---

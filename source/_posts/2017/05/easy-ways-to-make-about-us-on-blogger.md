@@ -22,7 +22,6 @@ updated: 2017-05-09T05:49:01+07:00
 thumbnail: https://3.bp.blogspot.com/-ALUdm0qBrwA/VPlJ1M--s5I/AAAAAAAAADM/d0MRXUYlTxE/s1600/about-us.jpg
 photos:
   - https://3.bp.blogspot.com/-ALUdm0qBrwA/VPlJ1M--s5I/AAAAAAAAADM/d0MRXUYlTxE/s1600/about-us.jpg
-  - https://3.bp.blogspot.com/-ALUdm0qBrwA/VPlJ1M--s5I/AAAAAAAAADM/d0MRXUYlTxE/s1600/about-us.jpg
 description: Easy Ways to Make About Us On Blogger Widget Do you need to feature
   the About Us on the journal and dont recognize how
 ---

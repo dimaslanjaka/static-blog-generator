@@ -23,7 +23,6 @@ updated: 2021-12-19T06:34:14+07:00
 thumbnail: https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
 photos:
   - https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
-  - https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
 description: Macros Auto Click Bluestacks for the legend of neverland download
 ---
 

@@ -24,7 +24,6 @@ updated: 2018-02-02T08:42:29+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
 description: Running Google adsense advertising program or a Google ads
   publisher can be spelled out easy, even if I think personally more difficult
 ---

@@ -22,7 +22,6 @@ updated: 2019-12-02T05:02:43+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/dbbcc50cc4381d0acccae075ef428822.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/dbbcc50cc4381d0acccae075ef428822.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/dbbcc50cc4381d0acccae075ef428822.jpeg
 description: "Download lagu Armada  Mabuk Cinta Mp3 Fleet - Love Drunk Listen:
   6,632,914 Duration: 254 MP3 size: 3.97MB Download Links"
 ---

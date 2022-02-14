@@ -25,7 +25,6 @@ updated: 2018-11-19T11:10:38+07:00
 thumbnail: https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no
 photos:
   - https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no
-  - https://images.weserv.nl/?url=https://lh3.googleusercontent.com/3M76NJzxn73Dl2MOkOhrXCgBxTKtVkwkL1gAkTrRLzK5a7khSS2grnNJVU5SzgbhxOa_LKqI4OBP9dfaDz0=w1080-h1920-rw-no
 description: Install PHP Web Server on Termux connect the previous article about
   how to install maria db in termux  Install MariaDB on Termux ),
 ---

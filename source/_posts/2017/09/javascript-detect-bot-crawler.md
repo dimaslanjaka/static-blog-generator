@@ -22,7 +22,6 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://imgdb.net/images/3206.png
 photos:
   - https://imgdb.net/images/3206.png
-  - https://imgdb.net/images/3206.png
 description: img src=https://imgdb.net/images/3206.png/><script
 ---
 

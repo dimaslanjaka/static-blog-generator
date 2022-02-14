@@ -22,7 +22,6 @@ updated: 2019-01-08T03:09:08+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-  - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Watch Film Online The Gift 2018) Indonesian subtitles - When
   novelist Tiana falls in love with a visually impaired Harun on her 30th
 ---

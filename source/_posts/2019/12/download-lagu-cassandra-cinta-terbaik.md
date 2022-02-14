@@ -22,7 +22,6 @@ updated: 2019-12-02T05:51:37+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/5989e97c241c8c964288ba9485121991.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/5989e97c241c8c964288ba9485121991.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/5989e97c241c8c964288ba9485121991.jpeg
 description: "Download lagu Cassandra  Cinta Terbaik Mp3 Cassandra - Best Love
   Listen: 837,618 Duration: 443 MP3 size: 6.92MB Download Links"
 ---

@@ -22,7 +22,6 @@ updated: 2019-12-16T01:18:36+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/07e69d66010618aead3185df4f370fc3.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/07e69d66010618aead3185df4f370fc3.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/07e69d66010618aead3185df4f370fc3.jpeg
 description: "Download lagu Cosmic  Tunjukkan Aku Mp3Cosmic - Show Me Listen:
   19,189 Duration: 229 MP3 size: 3.58MB Download Links Download Mp3"
 ---

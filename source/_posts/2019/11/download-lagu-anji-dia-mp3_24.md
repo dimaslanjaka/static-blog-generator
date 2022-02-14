@@ -22,7 +22,6 @@ updated: 2019-11-24T21:57:50+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/63626ad79cf5c66737b97d29c0a3cfa9.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/63626ad79cf5c66737b97d29c0a3cfa9.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/63626ad79cf5c66737b97d29c0a3cfa9.jpeg
 description: "Download lagu ANJI  DIA Mp3 ANJI - HIM Listen: 123,674,133
   Duration: 249 MP3 size: 3.89MB Download Links Download Mp3 Server 1"
 ---

@@ -20,7 +20,6 @@ updated: 2018-10-16T13:31:30+07:00
 thumbnail: https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
 photos:
   - https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
-  - https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
 description: WPS PIN codes for C:B0:CE:1A:CC:3D
 ---
 

@@ -22,7 +22,6 @@ updated: 2019-12-19T22:21:21+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/57740d0e1ad92de2ef3d77955308ddfc.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/57740d0e1ad92de2ef3d77955308ddfc.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/57740d0e1ad92de2ef3d77955308ddfc.jpeg
 description: "Download lagu Drive  Melepasmu Mp3 Drive - Take you off Listen:
   166,324 Duration: 265 MP3 size: 4.14MB Download Links Download"
 ---

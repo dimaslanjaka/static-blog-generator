@@ -22,7 +22,6 @@ updated: 2017-09-26T01:33:08+07:00
 thumbnail: https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
 photos:
   - https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
-  - https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
 description: Buddy must have bookmarks in the browsers favorite sites belonging
   to my friend, this so easily at any time in order to return to the
 ---

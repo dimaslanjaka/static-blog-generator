@@ -23,7 +23,6 @@ updated: 2019-12-06T19:03:53+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/dwblog-ecdf.kxcdn.com/eb32b22de46d5af55b69a1ffc1ee93ad.png
 photos:
   - https://imgcdn.000webhostapp.com/https/dwblog-ecdf.kxcdn.com/eb32b22de46d5af55b69a1ffc1ee93ad.png
-  - https://imgcdn.000webhostapp.com/https/dwblog-ecdf.kxcdn.com/eb32b22de46d5af55b69a1ffc1ee93ad.png
 description: Panduan Lengkap Seo Update 020 There are various SEO tips that you
   can explore from various sources. But, can everything be like a
 ---

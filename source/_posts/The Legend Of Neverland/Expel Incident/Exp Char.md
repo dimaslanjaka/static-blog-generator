@@ -21,7 +21,6 @@ updated: 2021-12-20T02:11:19+07:00
 thumbnail: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
-  - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 description: Expel Incident With The Highest Exp Character Rewards.
 ---
 

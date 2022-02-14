@@ -22,7 +22,6 @@ updated: 2019-12-02T05:51:37+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/55a22d38cfdd9e197afd1fbc8184f7a8.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/55a22d38cfdd9e197afd1fbc8184f7a8.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/55a22d38cfdd9e197afd1fbc8184f7a8.jpeg
 description: "Download lagu Armada  Penantian Mp3 Fleet - Waiting Listen:
   443,955 Duration: 250 MP3 size: 3.91MB Download Links Download Mp3"
 ---

@@ -22,7 +22,6 @@ updated: 2019-12-02T17:11:09+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/88fe8264afe073915f9b341078151241.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/88fe8264afe073915f9b341078151241.jpeg
-  - https://imgcdn.000webhostapp.com/https/img.youtube.com/88fe8264afe073915f9b341078151241.jpeg
 description: "Download lagu Marsheilla  Kamulah Kelemahanku Mp3 Marsheilla - You
   Are My Weakness Listen: 5,105 Duration: 194 MP3 size: 3.03MB"
 ---

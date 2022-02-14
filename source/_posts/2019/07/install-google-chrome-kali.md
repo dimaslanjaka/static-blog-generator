@@ -23,7 +23,6 @@ updated: 2019-07-23T01:56:17+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 description: open terminal, type 64 bitwget
   https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 32
   bit wget

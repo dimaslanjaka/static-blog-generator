@@ -24,7 +24,6 @@ updated: 2018-08-05T06:16:27+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
 description: Bunga  zat warna Pearl Kekayaan Warna mirip dengan foto Beli &
   Kumpulkan Pewarna harus diterapkan setidaknya 3 kali untuk
 ---

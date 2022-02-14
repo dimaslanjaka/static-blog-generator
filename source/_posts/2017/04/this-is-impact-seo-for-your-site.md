@@ -22,7 +22,6 @@ updated: 2017-04-10T12:42:02+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
 description: This is the Impact SEO For Your SiteImpact SEO Impact SEO For Your
   Site  If my friend blogger already know dong
 ---

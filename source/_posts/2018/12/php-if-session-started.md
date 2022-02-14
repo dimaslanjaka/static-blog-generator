@@ -21,7 +21,6 @@ updated: 2020-01-24T06:39:22+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
 description: PHP = 5.4.0 , PHP 7
 ---
 

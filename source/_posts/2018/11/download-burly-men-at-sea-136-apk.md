@@ -23,7 +23,6 @@ updated: 2018-11-16T23:38:12+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/burly-men-at-sea-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/burly-men-at-sea-1.png
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/burly-men-at-sea-1.png
 description: Kekar Men at Sea adalah Game Petualangan untuk android Download
   versi terakhir dari
 ---

@@ -21,7 +21,6 @@ updated: 2019-02-08T22:15:39+07:00
 thumbnail: http://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.techlicious.com/images/computers/windows-10-shortcuts-510px.jpg
 photos:
   - http://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.techlicious.com/images/computers/windows-10-shortcuts-510px.jpg
-  - http://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.techlicious.com/images/computers/windows-10-shortcuts-510px.jpg
 description: SHORTCUT KEYS LANGKAHLANGKAH UNTUK DIPROSES
 ---
 
