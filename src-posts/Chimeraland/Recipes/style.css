@@ -18,5 +18,5 @@ img.img-recipe {
   width: 35px;
 }
 table span.caption {
-  display: none;
+  display: none !important;
 }
