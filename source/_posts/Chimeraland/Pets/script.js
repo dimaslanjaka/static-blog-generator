@@ -1,4 +1,4 @@
-const td = document.querySelectorAll("table#pet-tree");
+const td = document.querySelectorAll("table#pet-tree tbody");
 Array.from(td).forEach((el) => {
   let text = el.innerHTML;
   text = text.replace(
