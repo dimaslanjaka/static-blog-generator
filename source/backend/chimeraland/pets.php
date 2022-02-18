@@ -1,6 +1,11 @@
 <?php
 session_start();
 header("Access-Control-Allow-Origin: *");
+$session = isset($_SESSION['visitor']) ? $_SESSION['visitor'] : function () {
+  $new_session = uniqid();
+  $_SESSION['visitor'] = $new_session;
+  return $new_session;
+};
 
 $file = __DIR__ . '/pets.json';
 $read = json_decode(file_get_contents($file));
