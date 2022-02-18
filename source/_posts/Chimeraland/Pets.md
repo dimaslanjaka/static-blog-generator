@@ -59,7 +59,24 @@ description: Pets Informations Chimeraland
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let table = new DataTable("table#pet-tree");
+    let table = new DataTable("table#pet-tree", {
+      ajax: function (d, cb) {
+        fetch('https://backend.webmanajemen.com/chimeraland/pets.php?json')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            return cb(data);
+          });
+      },
+      columns: [
+        { data: 'name' },
+        { data: 'position' },
+        { data: 'office' },
+        { data: 'extn' },
+        { data: 'start_date' },
+        { data: 'salary' }
+      ]
+    });
   });
 </script>
 <script src='Pets/script.js'></script>
