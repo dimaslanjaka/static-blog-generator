@@ -19,7 +19,7 @@ photos:
 ---
 
 ## Cooking Recipes
-[View Cooking Recipes](/Chimeraland/Recipes.html)
+[View Cooking Recipes](Recipes.html)
 
 ## Pets
-[View Chimeraland Pets](/Chimeraland/Pets.html)
+[View Chimeraland Pets](Pets.html)

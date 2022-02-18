@@ -19,21 +19,34 @@ photos:
   - https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
 ---
 
+<blockquote>
+  <ul>
+    <li><b>Attributes Conversion Rate</b> untuk menentukan persentase <b>Bloodline</b> hewan peliharaan yang diubah
+      menjadi
+      atribut pemilik</li>
+  </ul>
+</blockquote>
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Quality</th>
-      <th>Attributes</th>
-      <th>Skill</th>
+      <th>Skill Attributes</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Smobirdgon</td>
-      <td>- ATK 63
+      <td>
+        - ATK 63
         - HP 67
-        - DEF 53</td>
+        - DEF 53
+      </td>
+      <td>
+        - Melee DMG Increase 4.8%
+        - Attributes Conversion Rate 4.0%
+      </td>
     </tr>
   </tbody>
 </table>
