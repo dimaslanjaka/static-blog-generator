@@ -4,7 +4,7 @@
   padding: 0;
   height: 100%;
   vertical-align: sub;
-  display: inline-block;
+  display: inline-block !important;
 }
 table a.gallery-item {
   margin: 0;
