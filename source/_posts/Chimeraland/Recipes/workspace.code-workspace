@@ -16,6 +16,12 @@
 				"name": "Hexo Server",
 				"request": "launch",
 				"type": "node-terminal"
+			},
+			{
+				"command": "cd ../../ && npx gulp article:copy && npx hexo server",
+				"name": "Commit && Server",
+				"request": "launch",
+				"type": "node-terminal"
 			}
 		]
 	}
