@@ -3,7 +3,7 @@ category:
   - Games
   - Chimeraland
 comments: true
-cover: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+cover: /Chimeraland/Pets/cover.jpg
 date: 2022-02-18T10:37:00+07:00
 updated: 2022-02-18T14:55:00+07:00
 keywords:
@@ -17,9 +17,9 @@ title: Pets
 toc: true
 uuid: f400312e-d747-4888-862b-da6772a34afa
 webtitle: Chimeraland
-thumbnail: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+thumbnail: /Chimeraland/Pets/cover.jpg
 photos:
-  - https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+  - /Chimeraland/Pets/cover.jpg
 description: Pets Informations Chimeraland
 ---
 
