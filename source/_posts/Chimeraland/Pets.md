@@ -57,5 +57,8 @@ description: Pets Informations Chimeraland
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
+<iframe src="https://backend.webmanajemen.com/chimeraland/pets.php" frameborder="0" width="100%"
+  height="500px"></iframe>
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
+

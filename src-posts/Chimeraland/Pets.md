@@ -26,3 +26,4 @@ description: Pets Informations Chimeraland
 <!-- include Pets/table.html -->
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
+
