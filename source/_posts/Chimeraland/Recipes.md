@@ -206,6 +206,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
     </tr>
 -->
 
+<h5>Add New Chimeraland Recipe</h5>
 <iframe src="https://backend.webmanajemen.com/chimeraland/recipes.php" frameborder="0" width="100%"
   height="500px"></iframe>
 
@@ -240,14 +241,11 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    fetch('https://backend.webmanajemen.com/chimeraland/recipes.php?json')
+      .then(response => response.json())
+      .then(data => console.log(data));
     setTimeout(() => {
-      let table = new DataTable('article table', {
-        ajax: function (d, cb) {
-          fetch('https://backend.webmanajemen.com/chimeraland/recipes.php?json')
-            .then(response => response.json())
-            .then(data => cb(data));
-        }
-      });
+      let table = new DataTable('article table');
     }, 4000);
   });
 </script>
