@@ -1,9 +1,9 @@
-const td = document.querySelectorAll("table#pet-tree");
+const td = document.querySelectorAll("table#pet-tree tbody");
 Array.from(td).forEach((el) => {
   let text = el.innerHTML;
   text = text.replace(
     /HP\s/gmi,
-    ' <img src="Pets/hp.webp" class="img-inline-text" title="Health Points" />'
+    ' <img src="Pets/hp.webp" class="img-inline-text" title="Hit Points" />'
   );
   text = text.replace(
     /ATK\s/gmi,
