@@ -33,7 +33,7 @@ photos:
   <thead>
     <tr>
       <th>Name</th>
-      <th>Quality</th>
+      <th>Quality (ATK HP DEF)</th>
       <th>Skill Attributes</th>
     </tr>
   </thead>
