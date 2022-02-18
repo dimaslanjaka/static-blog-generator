@@ -39,13 +39,11 @@ photos:
     <tr>
       <td>Smobirdgon</td>
       <td>
-        - ATK 63
-        - HP 67
-        - DEF 53
+        ATK 63 HP 67 DEF 53
       </td>
       <td>
-        - Melee DMG Increase 4.8%
-        - Attributes Conversion Rate 4.0%
+        <li>Melee DMG Increase 4.8%</li>
+        <li>Attributes Conversion Rate 4.0%</li>
       </td>
     </tr>
   </tbody>
