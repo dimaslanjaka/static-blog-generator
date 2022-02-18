@@ -166,7 +166,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Peanut Oil + Fruit Sauce + Any meat + Equinox Flower</td>
       <td>Stove II</td>
       <td>+540 fullness, +120 Def 15 mins, Vulorman Attendant Recruitment</td>
-      <td>Mythic</td>
+      <td>Legendary</td>
       <td><a href="#vulorman">Watch Tutorial</a></td>
     </tr>
     <tr>
@@ -174,7 +174,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Egg White + Any Meat + Lemon Tree Leaf/Any rare corps such as pumpkin etc + any epic fish</td>
       <td>Stove II</td>
       <td>+540 fullness, Temporarily protect from drowning for a long time</td>
-      <td>Mythic</td>
+      <td>Legendary</td>
       <td></td>
     </tr>
     <tr>
@@ -182,7 +182,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Ice Piece/Dew, Beast (Heart/Beast Liver/Beast Brain/Beast Insentines/Kidney/Hoof Sinew/Chunk Of Fat)[4]</td>
       <td>Stove II</td>
       <td>+540 fullness, +50 Armor Pierce for 15 mins</td>
-      <td>Mythic</td>
+      <td>Legendary</td>
       <td></td>
     </tr>
     <tr>
@@ -190,7 +190,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Peanut Oil + Job's Tear Powder + Apple + Any Epic Fish (puple fish)</td>
       <td>Stove II</td>
       <td>+540 fullness, Temporarily protect from drowning for a long time, Astakat Attendant Recruitment</td>
-      <td>Mythic</td>
+      <td>Legendary</td>
       <td><a href="#astakat">Watch Tutorial</a></td>
     </tr>
   </tbody>
@@ -244,8 +244,17 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
     fetch("https://backend.webmanajemen.com/chimeraland/recipes.php?json")
       .then((response) => response.json())
       .then((data) => {
+        /**
+         * @type {string[]}
+         **/
         const recipes = data.data;
-        console.log(recipes);
+        const table = document.querySelector("article table");
+        const tbody = table.querySelector("tbody");
+        for (let index = 0; index < recipes.length; index++) {
+          const recipe = recipes[index];
+          const tr = `<tr><td>${recipe[0]}</td> <td>${recipe[1]}</td> <td>${recipe[2]}</td> <td>${recipe[3]}</td> <td>${recipe[4]}</td> <td>${recipe[5]}</td></tr>`;
+          tbody.innerHTML += tr;
+        }
         return data;
       })
       .then((data) => {
