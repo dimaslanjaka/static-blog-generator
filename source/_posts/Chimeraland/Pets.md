@@ -69,9 +69,15 @@ description: Pets Informations Chimeraland
             const items = data.data;
             for (let i = 0; i < items.length; i++) {
               const item = items[i];
-              console.log(item);
-              //const attr = item.attr
+              /**
+               * @type {string[]}
+               **/
+              const attr = item.attr;
+              item.attr = attr.map((str) => {
+                return `<li>${str}</li>`;
+              });
             }
+            data.data = items;
             return cb(data);
           });
       },
@@ -79,5 +85,6 @@ description: Pets Informations Chimeraland
     });
   });
 </script>
+
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
