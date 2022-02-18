@@ -185,6 +185,14 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
       <td>Mythic</td>
       <td></td>
     </tr>
+    <tr>
+      <td>Sweet Vinegar Fish</td>
+      <td>Peanut Oil + Job's Tear Powder + Apple + Any Epic Fish (puple fish)</td>
+      <td>Stove II</td>
+      <td>+540 fullness, Temporarily protect from drowning for a long time, Astakat Attendant Recruitment</td>
+      <td>Mythic</td>
+      <td><a href="#astakat">Watch Tutorial</a></td>
+    </tr>
   </tbody>
 </table>
 <!--
@@ -262,5 +270,9 @@ Cara mendapatkan attendant **Windoo**
 ### Vulorman
 Cara mendapatkan attendant **Vulorman**
 {% youtube 5K-X_U2YwAI %}
+
+### Astakat
+Cara mendapatkan attendant **Astakat**
+{% youtube NYYoisSMqkM %}
 
 <center><i>cooking recipes chimeraland updated january 2022</i></center>
