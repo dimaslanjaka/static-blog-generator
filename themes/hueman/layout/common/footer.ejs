@@ -7,7 +7,8 @@
                     <a href="<%- url_for() %>" class="logo"></a>
                 </h1>
                 <p>&copy; <%= date(new Date(), 'YYYY') %>
-                    <%= config.author.name || config.author.nick || config.author || config.title %></p>
+                    <%= page.author.nick || config.author.name || config.author.nick || config.author || config.title %>
+                </p>
                 <% if (theme.poweredby) { %>
                 <p>Powered by <a href="https://hexo.io/" rel="nofollow noopener" target="_blank">Hexo</a>. Theme by <a
                         href="https://github.com/ppoffice" rel="nofollow noopener" target="_blank">PPOffice</a></p>

@@ -11,7 +11,7 @@
             }
             title = '<i class="icon fa fa-archive"></i>' + title;
 	} else if (page.author && !is_post()) {
-	    title = page.author.name;
+	    title = page.author.nick || page.author.name;
 	    if (page.author.about) {
 	        title += ' - ' + page.author.about;
 	    }
