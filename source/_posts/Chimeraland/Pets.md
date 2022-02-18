@@ -7,7 +7,7 @@ cover: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
 date: 2022-02-18T10:37:00+07:00
 updated: 2022-02-18T14:55:00+07:00
 keywords:
-  - pets
+  - pets informations
   - chimeraland
 lang: id
 subtitle: Pets Informations Chimeraland

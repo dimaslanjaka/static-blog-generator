@@ -30,6 +30,14 @@
         for (var i in page.tags.data) {
             keywords.push(page.tags.data[i].name);
         }
+        if (page.keywords) {
+            for (var i in page.keywords) {
+                keywords.push(page.keywords);
+            }
+        }
+        keywords = keywords.filter(function(item, pos) {
+            return keywords.indexOf(item) == pos && item.trim().length;
+        });
     %>
     <meta name="keywords" content="<%= keywords.join(',') %>" />
     <% } %>
@@ -38,7 +46,7 @@
         fb_app_id:      theme.miscellaneous.open_graph.fb_app_id,
         fb_admins:      theme.miscellaneous.open_graph.fb_admins,
         twitter_id:     theme.miscellaneous.open_graph.twitter_id,
-        author: get_author_name(page)
+        author: get_author_name(page, config)
     }) %>
     <%- meta(page) %>
 
