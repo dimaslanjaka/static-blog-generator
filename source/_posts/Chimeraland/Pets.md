@@ -59,7 +59,7 @@ description: Pets Informations Chimeraland
 
 <h5>Add New Pet Information</h5>
 <iframe src="https://backend.webmanajemen.com/chimeraland/pets.php" frameborder="0" width="100%"
-  height="500px"></iframe>
+  height="550px"></iframe>
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
 
