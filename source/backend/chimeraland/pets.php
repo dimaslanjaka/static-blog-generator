@@ -29,61 +29,74 @@ if (isset($_REQUEST['json'])) {
     }
 
     label {
-      text-align: center;
+      text-align: right;
+    }
+
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    main {
+      width: fit-content;
+      text-align: left;
     }
   </style>
 </head>
 
 <body>
 
-  <main>
-    <form action="?ok" method="post" class="form-horizontal">
-      <input type="hidden" name="add" value="<?= $session ?>">
-      <div class="row">
-        <div class="form-group row col-md-12 mb-2">
-          <label for="BeastName" class="col-2 col-form-label">Beast Name</label>
-          <div class="col-10">
-            <input type="text" name="dish-name" id="BeastName" class="form-control" placeholder="Insert Animal Name" required>
-          </div>
-        </div>
-
-        <div class="form-group row col-md-12 mb-2">
-          <label for="Ingredients" class="col-2 col-form-label">Quality</label>
-          <div class="col-10">
-            <div class="form-group row col mb-2">
-              <label for="Atk" class="col-1 col-form-label">ATK</label>
-              <div class="col-2">
-                <input type="number" name="atk" id="Atk" class="form-control" required>
-              </div>
-            </div>
-            <div class="form-group row col mb-2">
-              <label for="Hp" class="col-1 col-form-label">HP</label>
-              <div class="col-2">
-                <input type="number" name="hp" id="Hp" class="form-control" required>
-              </div>
-            </div>
-            <div class="form-group row col mb-2">
-              <label for="Def" class="col-1 col-form-label">DEF</label>
-              <div class="col-2">
-                <input type="number" name="def" id="Def" class="form-control" required>
-              </div>
+  <center>
+    <main>
+      <form action="?ok" method="post" class="form-horizontal">
+        <input type="hidden" name="add" value="<?= $session ?>">
+        <div class="row">
+          <div class="form-group row col-md-12 mb-2">
+            <label for="BeastName" class="col-2 col-form-label">Beast Name</label>
+            <div class="col-10">
+              <input type="text" name="dish-name" id="BeastName" class="form-control" placeholder="Insert Animal Name" required>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row col-md-12 mb-2">
-          <label for="Buffs" class="col-2 col-form-label">Skill Attributes</label>
-          <div class="col-10">
-            <textarea type="text" id="Buffs" name="buffs" cols="10" rows="10" class="form-control" placeholder="Food buffs" required>-</textarea>
+          <div class="form-group row col-md-12 mb-2">
+            <label for="Ingredients" class="col-2 col-form-label">Quality</label>
+            <div class="col-10">
+              <div class="form-group row col mb-2">
+                <label for="Atk" class="col-1 col-form-label">ATK</label>
+                <div class="col-2">
+                  <input type="number" name="atk" id="Atk" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group row col mb-2">
+                <label for="Hp" class="col-1 col-form-label">HP</label>
+                <div class="col-2">
+                  <input type="number" name="hp" id="Hp" class="form-control" required>
+                </div>
+              </div>
+              <div class="form-group row col mb-2">
+                <label for="Def" class="col-1 col-form-label">DEF</label>
+                <div class="col-2">
+                  <input type="number" name="def" id="Def" class="form-control" required>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row col-md-12 mb-2">
+            <label for="Buffs" class="col-2 col-form-label">Skill Attributes</label>
+            <div class="col-10">
+              <textarea type="text" id="Buffs" name="buffs" cols="10" rows="10" class="form-control" placeholder="Pet Attributes" required></textarea>
+              <small class="form-text text-muted">Must Be Separated by line</small>
+            </div>
+          </div>
+
+          <div class="text-center col-md-12 p-2">
+            <button type="submit" class="btn btn-block btn-primary mb-2">Confirm recipe</button>
           </div>
         </div>
-
-        <div class="text-center col-md-12">
-          <button type="submit" class="btn btn-block btn-primary mb-2">Confirm recipe</button>
-        </div>
-      </div>
-    </form>
-  </main>
+      </form>
+    </main>
+  </center>
 
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
