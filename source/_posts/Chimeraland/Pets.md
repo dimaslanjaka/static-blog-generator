@@ -23,7 +23,8 @@ photos:
   <ul>
     <li><b>Attributes Conversion Rate</b> untuk menentukan persentase <b>Bloodline</b> hewan peliharaan yang diubah
       menjadi
-      atribut pemilik</li>
+      atribut pemilik. Contoh: apabila pet memiliki attack 100 maka karakter anda mendapatkan 4 attack (tergantung
+      kelipatan <u>base status</u>).</li>
   </ul>
 </blockquote>
 
