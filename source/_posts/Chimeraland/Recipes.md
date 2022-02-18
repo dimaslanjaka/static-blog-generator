@@ -206,6 +206,9 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
     </tr>
 -->
 
+<iframe src="https://backend.webmanajemen.com/chimeraland/recipes.php" frameborder="0" width="100%"
+  height="500px"></iframe>
+
 <!-- references
   https://zilliongamer.com/chimeraland/c/items-list/food-epic-grad
   https://theclashify.com/chimeraland-cooking-recipes/
