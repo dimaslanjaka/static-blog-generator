@@ -241,8 +241,13 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
-      let table = new DataTable('article table');
-      console.log(table);
+      let table = new DataTable('article table', {
+        ajax: function (d, cb) {
+          fetch('https://backend.webmanajemen.com/chimeraland/recipes.php?json')
+            .then(response => response.json())
+            .then(data => cb(data));
+        }
+      });
     }, 4000);
   });
 </script>
