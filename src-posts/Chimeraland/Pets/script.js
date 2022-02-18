@@ -7,11 +7,11 @@ Array.from(td).forEach((el) => {
   );
   text = text.replace(
     /ATK\s/gmi,
-    '<img src="Recipes/attack.png" class="img-inline-text atk" title="attack" /> '
+    '<img src="Recipes/attack.png" class="img-inline-text atk" title="Attack" /> '
   );
   text = text.replace(
     /DEF\s/gmi,
-    '<img src="Recipes/defense.png" class="img-inline-text def" title="defense" /> '
+    '<img src="Recipes/defense.png" class="img-inline-text def" title="Defense" /> '
   );
   el.innerHTML = text;
 });
