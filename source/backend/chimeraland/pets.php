@@ -41,14 +41,14 @@ if (isset($_REQUEST['json'])) {
       <input type="hidden" name="add" value="<?= $session ?>">
       <div class="row">
         <div class="form-group row col-md-12 mb-2">
-          <label for="DishName" class="col-2 col-form-label">Dish Name</label>
+          <label for="BeastName" class="col-2 col-form-label">Beast Name</label>
           <div class="col-10">
-            <input type="text" name="dish-name" id="DishName" class="form-control">
+            <input type="text" name="dish-name" id="BeastName" class="form-control" placeholder="Insert Animal Name" required>
           </div>
         </div>
 
         <div class="form-group row col-md-12 mb-2">
-          <label for="Ingredients" class="col-2 col-form-label">Ingredients</label>
+          <label for="Ingredients" class="col-2 col-form-label">Quality</label>
           <div class="col-10">
             <textarea name="material" id="Ingredients" cols="10" rows="10" class="form-control" required>-</textarea>
           </div>
