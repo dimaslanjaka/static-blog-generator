@@ -7,7 +7,7 @@
                     <a href="<%- url_for() %>" class="logo"></a>
                 </h1>
                 <p>&copy; <%= date(new Date(), 'YYYY') %>
-                    <%= page.author.nick || config.author.name || config.author.nick || config.author || config.title %>
+                    <%= get_author_name(page, config) || config.title %>
                 </p>
                 <% if (theme.poweredby) { %>
                 <p>Powered by <a href="https://hexo.io/" rel="nofollow noopener" target="_blank">Hexo</a>. Theme by <a
