@@ -53,9 +53,10 @@ skip_render:
   - "**/*.json"
   - "_posts/**/*.json"
   - "_posts/**/*.js"
+  - "_posts/**/*.css"
   - "_posts/The Legend Of Neverland/Midi/readme.md"
   - "**/__test__/**"
-  - "_posts/Chimeraland/**/*.{html,json}"
+  - "_posts/Chimeraland/**/*.html"
 
 # Writing
 new_post_name: :title.md # File name of new posts
