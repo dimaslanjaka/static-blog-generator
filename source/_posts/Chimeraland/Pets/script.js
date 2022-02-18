@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return `<li>${str}</li>`;
               })
               .join(" ");
+            // switch icon quality
             let quality = item.qty;
             quality = quality.replace(
               /HP/gmi,
