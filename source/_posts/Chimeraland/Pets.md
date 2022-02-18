@@ -25,10 +25,11 @@ description: Pets Informations Chimeraland
 
 <blockquote>
   <ul>
-    <li><b>Attributes Conversion Rate</b> untuk menentukan persentase <b>Bloodline</b> hewan peliharaan yang diubah
-      menjadi
-      atribut pemilik. Contoh: apabila pet memiliki attack 100 maka karakter anda mendapatkan 4 attack (tergantung
-      kelipatan <u>base status</u>).</li>
+    <li>
+      <b>Attributes Conversion Rate</b> untuk menentukan persentase <b>Bloodline</b> hewan peliharaan yang diubah
+      menjadi atribut pemilik. Contoh: apabila pet memiliki attack 100 maka karakter anda mendapatkan 4 attack
+      (tergantung kelipatan <u>base status</u>).
+    </li>
   </ul>
 </blockquote>
 
@@ -43,9 +44,7 @@ description: Pets Informations Chimeraland
   <tbody>
     <tr>
       <td>Smobirdgon</td>
-      <td>
-        ATK 63 HP 67 DEF 53
-      </td>
+      <td>ATK 63 HP 67 DEF 53</td>
       <td>
         <li>Melee DMG Increase 4.8%</li>
         <li>Attributes Conversion Rate 4.0%</li>
@@ -61,18 +60,22 @@ description: Pets Informations Chimeraland
   document.addEventListener("DOMContentLoaded", function () {
     let table = new DataTable("table#pet-tree", {
       ajax: function (d, cb) {
-        fetch('https://backend.webmanajemen.com/chimeraland/pets.php?json')
-          .then(response => response.json())
-          .then(data => {
-            console.log(data);
+        fetch("https://backend.webmanajemen.com/chimeraland/pets.php?json")
+          .then((response) => response.json())
+          .then((data) => {
+            /**
+             * @type {string[][]}
+             **/
+            const items = data.data;
+            for (let i = 0; i < items.length; i++) {
+              const item = items[i];
+              console.log(item);
+              //const attr = item.attr
+            }
             return cb(data);
           });
       },
-      columns: [
-        { data: 'name' },
-        { data: 'qty' },
-        { data: 'attr' }
-      ]
+      columns: [{ data: "name" }, { data: "qty" }, { data: "attr" }],
     });
   });
 </script>
