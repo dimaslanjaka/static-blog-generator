@@ -216,8 +216,10 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 -->
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 <style>
   .mdui-theme-layout-dark .mdui-typo table th,
   .mdui-theme-layout-dark .mdui-typo table thead th,
@@ -268,7 +270,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
         return data;
       })
       .then((data) => {
-        let table = new DataTable("article table");
+        let table = new DataTable("article table", { responsive: true, });
       }, 4000);
   });
 </script>
