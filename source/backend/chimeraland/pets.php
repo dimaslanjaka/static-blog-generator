@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/../vendor/autoload.php');
 session_start();
 header("Access-Control-Allow-Origin: *");
 if (!isset($_SESSION['visitor'])) {
@@ -21,18 +22,26 @@ if (isset($_POST['add'])) {
   $attr = array_map(function ($value) {
     return trim($value);
   }, explode("\n", $_POST['attr']));
-  $data['data'][] = ['name' => ucwords($petName), 'qty' => 'ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
+
   $search = $petName;
   $found = array_filter($data['data'], function ($v, $k) use ($search) {
     //var_dump($v);
     return $v['name'] == $search;
   }, ARRAY_FILTER_USE_BOTH);
-  //file_put_contents($file, json_encode($data));
-
-  var_dump($found);
 
   if (empty($found) && count($attr) >= 2) {
-    echo ' ok';
+    $data['data'][] = ['name' => ucwords($petName), 'qty' => 'ATK ' . $_POST['atk'] . ' HP ' . $_POST['hp'] . ' DEF ' . $_POST['def'], 'attr' => $attr];
+    file_put_contents($file, json_encode($data));
+    header('Location: ?done');
+    $_SESSION['submit'] = 1;
+  } else {
+    if (!empty($found)) {
+      $_SESSION['submit'] = 1;
+      header('Location: ?duplicate');
+    } else {
+      $_SESSION['submit'] = 1;
+      header('Location: ?missing');
+    }
   }
   exit;
 }
@@ -75,6 +84,30 @@ if (isset($_POST['add'])) {
 
   <center>
     <main>
+      <?php
+      if (isset($_SESSION['submit'])) {
+        unset($_SESSION['submit']);
+        if (isset($_REQUEST['done'])) {
+      ?>
+          <div class="alert alert-success" role="alert">
+            Done Pet Information Added
+          </div>
+        <?php
+        } else if (isset($_REQUEST['duplicate'])) {
+        ?>
+          <div class="alert alert-danger" role="alert">
+            That pet information already added before (duplicated).
+          </div>
+        <?php
+        } else if (isset($_REQUEST['missing'])) {
+        ?>
+          <div class="alert alert-danger" role="alert">
+            Pet attributes information missing (required).
+          </div>
+      <?php
+        }
+      }
+      ?>
       <form action="?<?= $session ?>" method="post" class="form-horizontal">
         <input type="hidden" name="add" value="<?= $session ?>">
         <div class="row">
