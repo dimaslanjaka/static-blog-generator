@@ -11,7 +11,7 @@ Array.from(td).forEach((el) => {
   );
   text = text.replace(
     /\sdef/gmi,
-    ' <img src="Recipes/attack.png" class="img-inline-text atk" title="attack" />'
+    ' <img src="Recipes/defense.png" class="img-inline-text def" title="defense" />'
   );
   el.innerHTML = text;
 });
