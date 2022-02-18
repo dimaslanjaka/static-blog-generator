@@ -194,7 +194,11 @@
     fetch("https://backend.webmanajemen.com/chimeraland/recipes.php?json")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        const recipes = data.data;
+        const table = document.querySelector("article table");
+        const tbody = table.querySelector("tbody");
+        console.log(recipes);
+        console.log(tbody)
         return data;
       })
       .then((data) => {

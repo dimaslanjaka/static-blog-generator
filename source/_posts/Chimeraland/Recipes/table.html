@@ -1,4 +1,4 @@
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+<ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article" data-ad-format="fluid"
   data-ad-client="ca-pub-1165447249910969" data-ad-slot="7724988334"></ins>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
@@ -112,7 +112,7 @@
       <td><a href="#unlock-stove-ii">Watch Tutorial</a></td>
     </tr>
     <tr>
-      <td><img src="Recipes/fried-tenderloin.jpg" title="Fried Tenderloin" class="img-recipe"> Fried Tenderloin</td>
+      <td><img src="Recipes/fried-tenderloin.jpg" title="Fried Tenderloin" class="img-recipe" /> Fried Tenderloin</td>
       <td>Peanut Oil + Fruit Sauce + Any meat + Equinox Flower</td>
       <td>Stove II</td>
       <td>+540 fullness, +120 Def 15 mins, Vulorman Attendant Recruitment</td>
@@ -165,9 +165,9 @@
   https://theclashify.com/chimeraland-cooking-recipes/
 -->
 
-<link rel='stylesheet' href='https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css'>
-<script src='https://code.jquery.com/jquery-3.5.1.js'></script>
-<script src='https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js'></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <style>
   .mdui-theme-layout-dark .mdui-typo table th,
   .mdui-theme-layout-dark .mdui-typo table thead th,
@@ -190,12 +190,16 @@
   }
 </style>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://backend.webmanajemen.com/chimeraland/recipes.php?json')
-      .then(response => response.json())
-      .then(data => console.log(data));
-    setTimeout(() => {
-      let table = new DataTable('article table');
-    }, 4000);
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://backend.webmanajemen.com/chimeraland/recipes.php?json")
+      .then((response) => response.json())
+      .then((data) => {
+        const recipes = data.data;
+        console.log(recipes);
+        return data;
+      })
+      .then((data) => {
+        let table = new DataTable("article table");
+      }, 4000);
   });
 </script>
