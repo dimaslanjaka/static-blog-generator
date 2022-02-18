@@ -252,7 +252,17 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
         const tbody = table.querySelector("tbody");
         for (let index = 0; index < recipes.length; index++) {
           const recipe = recipes[index];
-          const tr = `<tr><td>${recipe[0]}</td> <td>${recipe[1]}</td> <td>${recipe[2]}</td> <td>${recipe[3]}</td> <td>${recipe[4]}</td> <td>${recipe[5]}</td></tr>`;
+          let facility = recipe[2]
+            .split(/\s/gim)
+            .map((str, index) => {
+              //console.log(str, index);
+              if (index === 1 && str.startsWith('i')) {
+                return str.toUpperCase();
+              }
+              return str.charAt(0).toUpperCase() + str.slice(1);
+            })
+            .join(" ");
+          const tr = `<tr><td>${recipe[0]}</td> <td>${recipe[1]}</td> <td>${facility}</td> <td>${recipe[3]}</td> <td>${recipe[4]}</td> <td>${recipe[5]}</td></tr>`;
           tbody.innerHTML += tr;
         }
         return data;
