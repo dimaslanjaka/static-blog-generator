@@ -1,8 +1,10 @@
 .img-inline-text {
   width: 16px;
   margin: 0 2px 0 2px;
+  padding: 0;
   height: 100%;
   vertical-align: sub;
+  display: inline-block;
 }
 table a.gallery-item {
   margin: 0;
