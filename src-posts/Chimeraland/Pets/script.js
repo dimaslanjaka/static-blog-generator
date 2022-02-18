@@ -22,15 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
             // switch icon quality
             let quality = item.qty;
             quality = quality.replace(
-              /HP/gmi,
+              /HP/gim,
               ' <img src="Pets/hp.webp" class="img-inline-text" title="Hit Points" />'
             );
             quality = quality.replace(
-              /ATK/gmi,
+              /ATK/gim,
               '<img src="Recipes/attack.png" class="img-inline-text atk" title="Attack" /> '
             );
             quality = quality.replace(
-              /DEF/gmi,
+              /DEF/gim,
               '<img src="Recipes/defense.png" class="img-inline-text def" title="Defense" /> '
             );
             item.qty = quality;
