@@ -4,7 +4,8 @@ category:
   - Chimeraland
 comments: true
 cover: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
-date: 28-02-2022T10:37:00+07:00
+date: 2022-02-28T10:37:00+07:00
+updated: 2022-02-28T14:55:00+07:00
 keywords:
   - pets
   - chimeraland
@@ -14,7 +15,6 @@ tags:
   - Chimeraland
 title: Pets
 toc: true
-updated: 28-02-2022T11:55:00+07:00
 uuid: f400312e-d747-4888-862b-da6772a34afa
 webtitle: Chimeraland
 thumbnail: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
