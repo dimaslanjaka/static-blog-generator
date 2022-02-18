@@ -14,7 +14,9 @@ keywords:
   - chimeraland
 lang: id
 location: Indonesia
-subtitle: Chimeraland cooking recipes and food functions such as buffs and attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan seperti buff dan kesukaan attendant
+subtitle: Chimeraland cooking recipes and food functions such as buffs and
+  attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan
+  seperti buff dan kesukaan attendant
 tags:
   - Chimeraland
 title: Cooking Recipes Chimeraland
