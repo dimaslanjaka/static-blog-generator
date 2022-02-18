@@ -12,10 +12,11 @@ category:
 tags:
   - Chimeraland
 cover: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+toc: true
 ---
 
 ## Cooking Recipes
-[View Cooking Recipes](/Chimeraland/Recipes.html)
+[View Cooking Recipes](Recipes.md)
 
 ## Pets
-[View Chimeraland Pets](/Chimeraland/Pets.html)
+[View Chimeraland Pets](Pets.md)
