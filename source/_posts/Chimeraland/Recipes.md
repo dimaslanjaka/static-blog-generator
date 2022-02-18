@@ -304,4 +304,9 @@ Cara mendapatkan attendant **Vulorman**
 Cara mendapatkan attendant **Astakat**
 {% youtube NYYoisSMqkM %}
 
-<center><i>cooking recipes chimeraland updated january 2022</i></center>
+<center><i>cooking recipes chimeraland updated january 2022</i> <a href="index.html">Back to index chimeraland</a></center>
+
+### Others
+see also other chimeraland articles:
+- [index chimeraland](index.html)
+- [Pet Informations](Pets.html)
