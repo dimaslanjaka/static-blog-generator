@@ -75,4 +75,8 @@ Cara mendapatkan attendant **Windoo**
 Cara mendapatkan attendant **Vulorman**
 {% youtube 5K-X_U2YwAI %}
 
+### Astakat
+Cara mendapatkan attendant **Astakat**
+{% youtube NYYoisSMqkM %}
+
 <center><i>cooking recipes chimeraland updated january 2022</i></center>
