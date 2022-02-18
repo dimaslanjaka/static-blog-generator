@@ -3,15 +3,15 @@ Array.from(td).forEach((el) => {
   let text = el.innerHTML;
   text = text.replace(
     /HP\s/gmi,
-    ' <img src="Pets/hp.webp" class="img-inline-text" title="Health Points" />'
+    ' <img src="Pets/hp.webp" class="img-inline-text" title="Hit Points" />'
   );
   text = text.replace(
     /ATK\s/gmi,
-    '<img src="Recipes/attack.png" class="img-inline-text atk" title="attack" /> '
+    '<img src="Recipes/attack.png" class="img-inline-text atk" title="Attack" /> '
   );
   text = text.replace(
     /DEF\s/gmi,
-    '<img src="Recipes/defense.png" class="img-inline-text def" title="defense" /> '
+    '<img src="Recipes/defense.png" class="img-inline-text def" title="Defense" /> '
   );
   el.innerHTML = text;
 });
