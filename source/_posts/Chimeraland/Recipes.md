@@ -174,7 +174,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 
 <script type="text/javascript">
   function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    new google.translate.TranslateElement({ pageLanguage: 'id' }, 'google_translate_element');
   }
 </script>
 
