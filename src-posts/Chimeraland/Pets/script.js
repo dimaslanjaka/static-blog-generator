@@ -35,19 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
             );
             quality = quality.replace(
               /GRADE A/gim,
-              '<img src="Recipes/grade-a.png" class="img-inline-text grade-a" title="Noble" /> '
+              '<img src="Pets/grade-a.png" class="img-inline-text grade-a" title="Noble" /> '
             );
             quality = quality.replace(
               /GRADE B/gim,
-              '<img src="Recipes/grade-b.jpeg" class="img-inline-text grade-a" title="Grand" /> '
+              '<img src="Pets/grade-b.jpeg" class="img-inline-text grade-a" title="Grand" /> '
             );
             quality = quality.replace(
               /GRADE C/gim,
-              '<img src="Recipes/grade-c.png" class="img-inline-text grade-a" title="Rare" /> '
+              '<img src="Pets/grade-c.png" class="img-inline-text grade-a" title="Rare" /> '
             );
             quality = quality.replace(
               /GRADE S/gim,
-              '<img src="Recipes/grade-s.png" class="img-inline-text grade-a" title="Illustrious" /> '
+              '<img src="Pets/grade-s.png" class="img-inline-text grade-a" title="Illustrious" /> '
             );
             item.qty = quality;
           }

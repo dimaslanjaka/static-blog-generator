@@ -132,7 +132,7 @@
     },
     {
       "name": "Giant Smobirdgon",
-      "qty": "ATK 63 HP 67 DEF 53",
+      "qty": "Grade B ATK 63 HP 67 DEF 53",
       "attr": [
         "Attributes Conversion Rate 4.0%",
         "Melee DMG Increase 4.8%"
@@ -140,7 +140,7 @@
     },
     {
       "name": "Blushpuff",
-      "qty": "ATK 60 HP 61 DEF 59",
+      "qty": "Grade B ATK 60 HP 61 DEF 59",
       "attr": [
         "Attributes Conversion Rate 4.0%",
         "Reslience 257"
@@ -148,7 +148,7 @@
     },
     {
       "name": "Giant Stoatle",
-      "qty": "ATK 72 HP 67 DEF 73",
+      "qty": "Grade A ATK 72 HP 67 DEF 73",
       "attr": [
         "Attributes Conversion Rate 4.0%",
         "Crit DMG 4.8%"
