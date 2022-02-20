@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
             );
             quality = quality.replace(
               /GRADE A/gim,
-              '<img src="Recipes/grade-a.png" class="img-inline-text grade-a" title="Defense" /> '
+              '<img src="Recipes/grade-a.png" class="img-inline-text grade-a" title="Noble" /> '
             );
             quality = quality.replace(
               /GRADE B/gim,
-              '<img src="Recipes/grade-b.jpeg" class="img-inline-text grade-a" title="Defense" /> '
+              '<img src="Recipes/grade-b.jpeg" class="img-inline-text grade-a" title="Grand" /> '
             );
             item.qty = quality;
           }
