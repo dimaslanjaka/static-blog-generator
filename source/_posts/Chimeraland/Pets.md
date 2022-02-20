@@ -63,6 +63,41 @@ description: Pets Informations Chimeraland
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+<!-- translator -->
+<style>
+  .translated-ltr {
+    margin-top: -40px;
+  }
+
+  .translated-ltr {
+    margin-top: -40px;
+  }
+
+  .goog-te-banner-frame {
+    display: none;
+    margin-top: -20px;
+  }
+
+  .goog-logo-link {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    color: transparent !important;
+  }
+</style>
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'id' }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
 
