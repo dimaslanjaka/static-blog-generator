@@ -25,7 +25,6 @@ if (isset($_POST['add'])) {
 
   $search = $petName;
   $found = array_filter($data['data'], function ($v, $k) use ($search) {
-    //var_dump($v);
     return $v['name'] == $search;
   }, ARRAY_FILTER_USE_BOTH);
 
