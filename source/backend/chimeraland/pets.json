@@ -100,7 +100,7 @@
     },
     {
       "name": "Giant Moogiradeer",
-      "qty": "ATK 62 HP 60 DEF 60",
+      "qty": "Grade B ATK 62 HP 60 DEF 60",
       "attr": [
         "Attributes Conversion Rate 4.0%",
         "PvP DMG Reduction 4.8%"

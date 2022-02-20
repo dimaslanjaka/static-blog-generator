@@ -41,6 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
               /GRADE B/gim,
               '<img src="Recipes/grade-b.jpeg" class="img-inline-text grade-a" title="Grand" /> '
             );
+            quality = quality.replace(
+              /GRADE C/gim,
+              '<img src="Recipes/grade-c.png" class="img-inline-text grade-a" title="Rare" /> '
+            );
+            quality = quality.replace(
+              /GRADE S/gim,
+              '<img src="Recipes/grade-s.png" class="img-inline-text grade-a" title="Illustrious" /> '
+            );
             item.qty = quality;
           }
           data.data = items;
