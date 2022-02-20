@@ -17,6 +17,7 @@ table span.caption {
 }
 table {
   max-width: 100vw;
-  overflow-y: scroll;
+  overflow-x: auto;
+  overflow: auto;
   display: block;
 }
