@@ -63,3 +63,5 @@ description: Pets Informations Chimeraland
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
 
+> ## See Also
+> - [Chimeraland Cooking Recipes](https://www.webmanajemen.com/Chimeraland/Recipes.html)
