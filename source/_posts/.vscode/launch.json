@@ -1,13 +1,13 @@
 {
   "configurations": [
     {
-      "command": "cd ../ && gulp article:copy",
+      "command": "cd ../ && npx gulp article:copy",
       "name": "Copy article",
       "request": "launch",
       "type": "node-terminal"
     },
     {
-      "command": "cd ../ && gulp article:copy && hexo server",
+      "command": "cd ../ && npx gulp article:copy && npx hexo server",
       "name": "Hexo Server",
       "request": "launch",
       "type": "node-terminal",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "command": "cd ../ && gulp article:copy && hexo clean && hexo server",
+      "command": "cd ../ && npx gulp article:copy && npx hexo clean && npx hexo server",
       "name": "Hexo Clean Server",
       "request": "launch",
       "type": "node-terminal"

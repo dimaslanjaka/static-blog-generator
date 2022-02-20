@@ -23,6 +23,8 @@ photos:
 description: Pets Informations Chimeraland
 ---
 
+## Pet Attributes Information
+
 <!-- include Pets/table.html -->
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
