@@ -9,12 +9,11 @@ table a.gallery-item {
   display: inline-block;
   width: fit-content;
 }
-.atk {
-  /*border: 1px solid red;*/
-  color: red;
-}
-.def {
-  color: blue;
+table {
+  max-width: 100vw;
+  overflow-x: auto;
+  overflow: auto;
+  display: block;
 }
 img.img-recipe {
   display: inline-block;
