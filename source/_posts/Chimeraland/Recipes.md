@@ -53,7 +53,7 @@ Untuk waktu memasak. Anda dapat membatalkan sebelum memasak selesai jika Anda ti
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<table class="table table-striped table-bordered" id="recipes">
+<table class="table table-striped table-bordered notranslate" notranslate id="recipes">
   <thead>
     <tr>
       <th>Dish Name</th>

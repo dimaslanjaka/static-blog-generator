@@ -33,6 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
               /DEF/gim,
               '<img src="Recipes/defense.png" class="img-inline-text def" title="Defense" /> '
             );
+            quality = quality.replace(
+              /GRADE A/gim,
+              '<img src="Recipes/grade-a.png" class="img-inline-text grade-a" title="Defense" /> '
+            );
+            quality = quality.replace(
+              /GRADE B/gim,
+              '<img src="Recipes/grade-b.jpeg" class="img-inline-text grade-a" title="Defense" /> '
+            );
             item.qty = quality;
           }
           data.data = items;

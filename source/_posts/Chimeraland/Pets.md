@@ -23,6 +23,8 @@ photos:
 description: Pets Informations Chimeraland
 ---
 
+## Pet Attributes Information
+
 <blockquote>
   <ul>
     <li>
@@ -33,11 +35,11 @@ description: Pets Informations Chimeraland
   </ul>
 </blockquote>
 
-<table id="pet-tree">
+<table id="pet-tree" notranslate class="notranslate">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Quality (ATK HP DEF)</th>
+      <th>Default Quality (ATK HP DEF)</th>
       <th>Skill Attributes</th>
     </tr>
   </thead>
@@ -53,13 +55,14 @@ description: Pets Informations Chimeraland
   </tbody>
 </table>
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 
 <h5>Add New Pet Information</h5>
 <iframe src="https://backend.webmanajemen.com/chimeraland/pets.php" frameborder="0" width="100%"
   height="550px"></iframe>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
 
