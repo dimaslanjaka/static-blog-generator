@@ -15,7 +15,7 @@ const localeMap = {
   vi: 'vi_VN',
 };
 
-function locale(str) {
+function get_locale(str) {
   if (str.length === 2 && localeMap[str]) return localeMap[str];
   if (str.length === 5) {
     let territory = [];
@@ -27,4 +27,5 @@ function locale(str) {
 
     if (territory.length === 2) return territory[0].toLowerCase() + '_' + territory[1].toUpperCase();
   }
+  return 'en';
 }

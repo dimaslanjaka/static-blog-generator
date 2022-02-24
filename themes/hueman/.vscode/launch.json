@@ -5,10 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "cd ../../ && gulp article:copy && hexo server",
+      "command": "gulp article:copy && hexo server",
       "name": "Server",
       "request": "launch",
-      "type": "node-terminal"
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/../../"
     }
   ]
 }
