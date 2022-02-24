@@ -26,7 +26,6 @@
     "lint:format": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "postinstall": "cd themes/material && npm install",
     "wsl-install": "rm -r node_modules && npm install --platform=win32",
-    "prepare": "husky install",
     "prototypes": "npm un js-prototypes && npm i git+https://github.com/dimaslanjaka/js-prototypes.git"
   },
   "engines": {
@@ -146,7 +145,6 @@
     "eslint-plugin-prettier": "^3.4.1",
     "gulp": "^4.0.2",
     "html-minifier-terser": "^5.1.1",
-    "husky": "^7.0.4",
     "md5-file": "^5.0.0",
     "ngrok": "^4.2.2",
     "pako": "^2.0.3",

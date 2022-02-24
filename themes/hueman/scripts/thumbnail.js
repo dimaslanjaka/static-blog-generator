@@ -1,11 +1,12 @@
 /**
  * Thumbnail Helper
  * @description Get the thumbnail url from a post
+ * @param {object} post
  * @example
  *     <%- thumbnail(post) %>
  */
-hexo.extend.helper.register("thumbnail", function (post) {
-  var url = post.thumbnail || "";
+function thumbnail(post) {
+  var url = post.thumbnail || '';
   if (!url) {
     var imgPattern = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/gi;
     var result = imgPattern.exec(post.content);
@@ -14,17 +15,16 @@ hexo.extend.helper.register("thumbnail", function (post) {
     }
   }
   return url;
-});
+}
 
-hexo.extend.helper.register("get_author_name", function (post, config) {
-  if (post && post.author) {
-    if (post.author.name) return post.author.name;
-    if (post.author.nick) return post.author.nick;
-    return post.author;
-  } else if (config && config.author) {
-    if (config.author.name) return config.author.name;
-    if (config.author.nick) return config.author.nick;
-    return config.author;
+hexo.extend.helper.register('thumbnail', thumbnail);
+
+hexo.extend.helper.register('img_url', function (post, config) {
+  const cover = thumbnail(post);
+  if (/^https?:\/\//gm.test(cover) || /^\//gm.test(cover)) {
+    return cover;
+  } else if (typeof config.logo == 'string') {
+    return config.logo;
   }
-  return "Default Author";
+  return 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
 });
