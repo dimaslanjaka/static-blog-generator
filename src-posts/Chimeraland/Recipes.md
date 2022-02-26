@@ -30,8 +30,6 @@ photos:
 description: Chimeraland Cooking Recipes
 ---
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 ## Chimeraland Cooking Guide
 Makanan sangat penting di Chimeraland karena memberikan buff dan stat sementara selama durasi. Dengan memasak dan mengonsumsi makanan atau minuman tertentu, Anda akan mendapatkan buff tertentu, dan untuk memasak makanan atau minuman tersebut Anda ingin memahami Resep Makanan Chimeraland.
 Ada begitu banyak jenis makanan di Chimeraland dan Pada artikel ini, kami akan menjelaskan kepada Anda semua Resep Makanan Chimeraland. jadi tanpa bicara tentang chimeraland lebih lanjut mari kita mulai.
