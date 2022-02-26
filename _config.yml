@@ -128,6 +128,18 @@ include:
 exclude:
 ignore:
 
+# https://www.npmjs.com/package/hexo-server
+server:
+  port: 4000
+  log: false
+  ip: 0.0.0.0
+  compress: false
+  cache: false
+  header: true
+  serveStatic:
+    extensions:
+      - html
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

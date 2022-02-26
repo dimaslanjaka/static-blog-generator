@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<head lang="<%- get_locale(page.lang || 'en') %>">
+<head lang="<%- page.lang || 'en' %>">
     <meta charset="utf-8" />
 
     <link rel="alternate" href="<%- url_for('/en-ie') %>" hreflang="en-ie" />
     <link rel="alternate" href="<%- url_for('/en-ca') %>" hreflang="en-ca" />
     <link rel="alternate" href="<%- url_for('/en-au') %>" hreflang="en-au" />
     <link rel="alternate" href="<%- url_for('/en') %>" hreflang="en" />
+    <link rel="alternate" href="<%- url_for('/id') %>" hreflang="id" />
 
     <%- partial('pwa/index') %>
     <%
