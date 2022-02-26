@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "hexo-server": "^3.0.0"
   }
 }
