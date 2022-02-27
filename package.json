@@ -68,6 +68,7 @@
     "hexo-renderer-sass": "^0.4.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-renderer-swig": "^1.1.0",
+    "hexo-seo": "file:packages/hexo-seo",
     "hexo-server": "^3.0.0",
     "hexo-theme-hueman": "file:themes/hueman",
     "hexo-util": "^2.5.0",
