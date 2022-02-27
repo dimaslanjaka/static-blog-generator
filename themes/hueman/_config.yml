@@ -22,7 +22,7 @@ customize:
         stack-overflow: /
         github: https://github.com/ppoffice/hexo-theme-hueman
         weibo: /
-        rss: /
+        rss: /rss.xml
 
 # Widgets
 widgets:
