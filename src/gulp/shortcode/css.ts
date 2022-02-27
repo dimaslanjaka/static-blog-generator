@@ -7,15 +7,11 @@ import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
  * ```html
  * <!-- css /path/file.css -->
  * ```
- * @param file markdown file
+ * @param file file path
+ * @param read body content
  * @returns
  */
-export function shortcodeCss(file: string) {
-  if (!fs.statSync(file).isFile()) {
-    console.log("[" + file.toString().replace(process.cwd(), "") + "] its a directory, not a file");
-    return;
-  }
-  const read = fs.readFileSync(file).toString();
+export function shortcodeCss(file: string, read: string) {
   const matchFile = read.match(/\<\!\-\-\s+?css\s+?.+?\s+?\-\-\>/gm);
   if (matchFile && matchFile.length > 0) {
     matchFile.forEach(function (readied) {
@@ -27,22 +23,22 @@ export function shortcodeCss(file: string) {
         if (directFind) {
           console.log("[direct] Processing shortcode " + directFile);
           const directRead = fs.readFileSync(directFile).toString();
-          const directReplace = read.replace(match[0], `<style>${directRead}</style>`);
-          fs.writeFileSync(file, directReplace);
-          console.log(file.replace(process.cwd(), "") + " include style successfully");
+          read = read.replace(match[0], `<style>${directRead}</style>`);
+          //fs.writeFileSync(file, directReplace);
+          console.log("[shortcode css] " + file.replace(process.cwd(), "") + " include style successfully");
         } else {
-          console.error(match[1] + " not inline with " + file.replace(process.cwd(), ""));
+          console.error("[shortcode css] " + match[1] + " not inline with " + file.replace(process.cwd(), ""));
           const rootFind = path.join(process.cwd(), match[1]);
           if (fs.existsSync(rootFind)) {
-            console.log("[root] Processing shortcode " + directFile);
+            console.log("[shortcode css][root] Processing shortcode " + directFile);
             const rootRead = fs.readFileSync(rootFind).toString();
-            const rootReplace = read.replace(match[0], `<style>${rootRead}</style>`);
-            fs.writeFileSync(file, rootReplace);
-            console.log(file.replace(process.cwd(), "") + " include style successfully");
+            read = read.replace(match[0], `<style>${rootRead}</style>`);
+            //fs.writeFileSync(file, rootReplace);
+            console.log("[shortcode css] " + file.replace(process.cwd(), "") + " include style successfully");
           }
         }
-        console.log("\n");
       }
     });
   }
+  return read;
 }

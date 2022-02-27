@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "hexo server --development",
+      "command": "npx gulp article:copy && npx hexo server --development",
       "env": {
         "NODE_ENV": "development"
       },
@@ -14,7 +14,16 @@
       "type": "node-terminal"
     },
     {
-      "command": "hexo clean && hexo server --development",
+      "command": "npx gulp article:copy",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "name": "Article Copy",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npx gulp article:copy && npx hexo clean && npx hexo server --development",
       "env": {
         "NODE_ENV": "development"
       },

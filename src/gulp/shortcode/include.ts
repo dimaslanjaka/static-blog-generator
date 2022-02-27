@@ -1,7 +1,7 @@
 // noinspection ES6PreferShortImport
 import * as path from "path";
 import * as fs from "fs";
-import "../../packages/hexo-seo/packages/js-prototypes/src/String";
+import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
 
 /**
  * Process `shortcode include` to included in file, shortcode below:
@@ -58,4 +58,34 @@ function includeProcess(destDir: fs.PathLike | string) {
   }
 }
 
-export default includeProcess;
+function shortcodeInclude(file: string, read: string) {
+  const matchFile = read.match(/\<\!\-\-\s+?include\s+?.+?\s+?\-\-\>/gm);
+  if (matchFile && matchFile.length > 0) {
+    matchFile.forEach(function (readied) {
+      const match = readied.match(/\<\!\-\-\s+?include\s+?(.+?)\s+?\-\-\>/);
+      //console.log("matched ", match);
+      if (match && match.length > 1) {
+        const directFile = path.join(path.dirname(file), match[1]);
+        const directFind = fs.existsSync(directFile);
+        if (directFind) {
+          console.log("[shortcode include][direct] Processing shortcode " + directFile);
+          const directRead = fs.readFileSync(directFile).toString();
+          read = read.replace(match[0], directRead);
+          console.log("[shortcode include] " + file.replace(process.cwd(), "") + " include successfully processed");
+        } else {
+          console.error("[shortcode include] " + match[1] + " not inline with " + file.replace(process.cwd(), ""));
+          const rootFind = path.join(process.cwd(), match[1]);
+          if (fs.existsSync(rootFind)) {
+            console.log("[shortcode include][root] Processing shortcode " + directFile);
+            const rootRead = fs.readFileSync(rootFind).toString();
+            read = read.replace(match[0], rootRead);
+            console.log("[shortcode include] " + file.replace(process.cwd(), "") + " include successfully processed");
+          }
+        }
+      }
+    });
+  }
+  return read;
+}
+
+export default shortcodeInclude;

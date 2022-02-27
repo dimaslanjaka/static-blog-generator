@@ -10,12 +10,7 @@ import "../../../packages/hexo-seo/packages/js-prototypes/src/String";
  * @param file markdown file
  * @returns
  */
-export function shortcodeScript(file: string) {
-  if (!fs.statSync(file).isFile()) {
-    console.log("[" + file.toString().replace(process.cwd(), "") + "] its a directory, not a file");
-    return;
-  }
-  const read = fs.readFileSync(file).toString();
+export function shortcodeScript(file: string, read: string) {
   const matchFile = read.match(/\<\!\-\-\s+?script\s+?.+?\s+?\-\-\>/gm);
   if (matchFile && matchFile.length > 0) {
     matchFile.forEach(function (readied) {
@@ -25,24 +20,22 @@ export function shortcodeScript(file: string) {
         const directFile = path.join(path.dirname(file), match[1]);
         const directFind = fs.existsSync(directFile);
         if (directFind) {
-          console.log("[direct] Processing shortcode " + directFile);
+          console.log("[shortcode script][direct] Processing shortcode " + directFile);
           const directRead = fs.readFileSync(directFile).toString();
-          const directReplace = read.replace(match[0], `<script>${directRead}</script>`);
-          fs.writeFileSync(file, directReplace);
+          read = read.replace(match[0], `<script>${directRead}</script>`);
           console.log(file.replace(process.cwd(), "") + " include script successfully");
         } else {
-          console.error(match[1] + " not inline with " + file.replace(process.cwd(), ""));
+          console.error("[shortcode script] " + match[1] + " not inline with " + file.replace(process.cwd(), ""));
           const rootFind = path.join(process.cwd(), match[1]);
           if (fs.existsSync(rootFind)) {
-            console.log("[root] Processing shortcode " + directFile);
+            console.log("[shortcode script][root] Processing shortcode " + directFile);
             const rootRead = fs.readFileSync(rootFind).toString();
-            const rootReplace = read.replace(match[0], `<script>${rootRead}</script>`);
-            fs.writeFileSync(file, rootReplace);
-            console.log(file.replace(process.cwd(), "") + " include script successfully");
+            read = read.replace(match[0], `<script>${rootRead}</script>`);
+            console.log("[shortcode script] " + file.replace(process.cwd(), "") + " include script successfully");
           }
         }
-        console.log("\n");
       }
     });
   }
+  return read;
 }

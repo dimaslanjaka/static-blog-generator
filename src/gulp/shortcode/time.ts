@@ -25,17 +25,12 @@ export function now() {
  * @param file
  * @see {@link now}
  */
-export function shortcodeNow(file: string | fs.PathLike) {
-  if (!fs.statSync(file).isFile()) {
-    console.log("[" + file.toString().replace(process.cwd(), "") + "] its a directory, not a file");
-    return;
-  }
+export function shortcodeNow(file: string | fs.PathLike, read: string) {
   const rex = /<!-- now\(\) -->/gm;
-  const read = fs.readFileSync(file).toString();
   const matchRegex = read.match(rex);
   if (matchRegex && matchRegex.length > 0) {
-    const replaceNow = read.replace(rex, now());
-    fs.writeFileSync(file, replaceNow);
-    console.log("[" + file.toString().replace(process.cwd(), "") + "] done");
+    read = read.replace(rex, now());
+    console.log("[shortcode now][" + file.toString().replace(process.cwd(), "") + "] done");
   }
+  return read;
 }
