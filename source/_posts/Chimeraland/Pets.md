@@ -26,7 +26,39 @@ description: Pets Informations Chimeraland
 
 ## Pet Attributes Information
 
-<!-- include Pets/table.html -->
+<blockquote>
+  <ul>
+    <li>
+      <u><b>Attributes Conversion Rate</b></u> untuk menentukan persentase <u><b>Bloodline</b></u> hewan peliharaan yang
+      diubah
+      menjadi atribut pemilik. Contoh <b><u>Attributes Conversion Rate 4.0%</u></b>: apabila pet memiliki attack 100
+      maka
+      karakter anda mendapatkan 4 attack (tergantung kelipatan <b><u>base status</u></b>).
+    </li>
+  </ul>
+</blockquote>
+
+<table id="pet-tree" notranslate class="notranslate">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default Quality (ATK HP DEF)</th>
+      <th>Skill Attributes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- extract-text Pets/table.html -->
+  </tbody>
+</table>
+
+
+<h5>Add New Pet Information</h5>
+<iframe src="https://backend.webmanajemen.com/chimeraland/pets.php" frameborder="0" width="100%"
+  height="550px"></iframe>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
 
@@ -75,7 +107,7 @@ description: Pets Informations Chimeraland
 
 <script type="text/javascript">
   function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'id' }, 'google_translate_element');
+    new google.translate.TranslateElement({ pageLanguage: 'auto' }, 'google_translate_element');
   }
   function restoreLang() {
     var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
@@ -94,3 +126,5 @@ description: Pets Informations Chimeraland
     }
   }
 </script>
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

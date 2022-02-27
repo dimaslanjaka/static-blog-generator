@@ -6,7 +6,7 @@ import * as path from "path";
 import transformPosts, { md5, parsePost, transformPostBody, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
-import includeFile from "./src/gulp/include";
+import shortcodeInclude from "./src/gulp/shortcode/include";
 import { copyDir, loopDir, slash } from "./src/gulp/utils";
 import { shortcodeScript } from "./src/gulp/shortcode/script";
 import { shortcodeNow } from "./src/gulp/shortcode/time";
@@ -86,14 +86,9 @@ function articleCopy(done: TaskCallback) {
 
       // process
       const loop = loopDir(destDir);
-      includeFile(destDir);
       loop.forEach(function (file) {
         const sourceFile = file.replace("/source/_posts/", "/src-posts/");
         if (fs.statSync(file).isFile() && file.endsWith(".md")) {
-          shortcodeNow(file);
-          shortcodeScript(file);
-          shortcodeCss(file);
-          replaceMD2HTML(file);
           const parse = parsePost(file);
           if (parse) {
             if (parse.metadata) {
@@ -139,6 +134,17 @@ function articleCopy(done: TaskCallback) {
                 let photos: string[] = parse.metadata.photos;
                 parse.metadata.photos = photos.unique();
               }
+            }
+
+            if (parse.body) {
+              parse.body = shortcodeNow(file, parse.body);
+              parse.body = shortcodeScript(file, parse.body);
+              parse.body = replaceMD2HTML(file, parse.body);
+              parse.body = shortcodeCss(file, parse.body);
+              parse.body = shortcodeInclude(file, parse.body);
+            }
+
+            if (parse.metadata && parse.body) {
               const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
               writeFileSync(file, rebuildPost);
             }
