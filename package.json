@@ -70,6 +70,7 @@
     "hexo-renderer-swig": "^1.1.0",
     "hexo-seo": "file:packages/hexo-seo",
     "hexo-server": "^3.0.0",
+    "hexo-theme-amp": "file:themes/amp",
     "hexo-theme-hueman": "file:themes/hueman",
     "hexo-util": "^2.5.0",
     "imagemin": "^6.1.0",
