@@ -43,7 +43,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 # https://hexo.io/docs/configuration.html
 skip_render:
-  - "yandex_3376b3ccb82eb34c.html"
+  - "yandex_*.html"
   - "Midi"
   - "Midi/**/*"
   - "page"
