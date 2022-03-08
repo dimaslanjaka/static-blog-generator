@@ -6,7 +6,7 @@ category:
   - Games
   - The Legend Of Neverland
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
+cover: /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
 date: 2021-08-16T00:00:00+07:00
 keywords:
   - quiz the legend of neverland
@@ -40,9 +40,9 @@ type: post
 uuid: 0e998c19-d6c6-4888-82d3-f22d331ecc6d
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:28:57+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
+thumbnail: /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
 photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://findurthing.com/wp-content/uploads/2021/01/SCENIC-QUIZ.jpg
+  - https://webmanajemen.com/The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
 description: Quiz questions and the answers. The Legend Of Neverland Event.
 ---
 
