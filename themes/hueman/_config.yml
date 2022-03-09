@@ -18,9 +18,9 @@ customize:
     favicon: # path to favicon
     social_links: # for more icons, please see http://fontawesome.io/icons/#brand
         twitter: /
-        facebook: /
+        facebook: /dimaslanjaka1
         stack-overflow: /
-        github: https://github.com/ppoffice/hexo-theme-hueman
+        github: https://github.com/dimaslanjaka
         weibo: /
         rss: /rss.xml
 
