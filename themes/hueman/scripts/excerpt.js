@@ -16,7 +16,7 @@ function getExcerpt(post) {
 
 function getOnlyText(str){
   const scriptgx = /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>/gmi;
-  const defaultgx = /\<[^\>]+\>/g;
+  const defaultgx = /\<[^\>]+\>/gm; // default only g
   const stylegx = /<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>/gmi;
   str = str.replace(scriptgx, '');
   str = str.replace(stylegx, '');
