@@ -4,7 +4,7 @@
  * @example
  *     <%- excerpt(post) %>
  */
-function excerpt(post) {
+function get_excerpt(post) {
   var excerpt;
   if (post.excerpt) {
     excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
@@ -24,4 +24,4 @@ function getOnlyText(str){
   return str;
 }
 
-hexo.extend.helper.register('excerpt', excerpt);
+hexo.extend.helper.register('excerpt', get_excerpt);
