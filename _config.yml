@@ -146,7 +146,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: hueman
+theme: amphtml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -255,6 +255,8 @@ adsense:
   https: true
   # block user with adblock enabled
   adblock: false
+  # amp or javascript
+  type: amp
   # exclude pattern, disable adding adsense
   exclude:
     - "*.min.html"
