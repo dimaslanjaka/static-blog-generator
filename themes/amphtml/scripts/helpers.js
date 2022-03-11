@@ -50,4 +50,5 @@ hexo.extend.helper.register("author", function (conf) {
     if (conf.author.nick) return conf.author.nick;
     if (conf.author.name) return conf.author.name;
   }
+  return "Default Author";
 });
