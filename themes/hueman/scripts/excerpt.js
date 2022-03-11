@@ -23,18 +23,6 @@ function get_excerpt(post) {
   }
 }
 
-/**
- * Excerpt Helper
- * @description Get the excerpt from a post
- * @example
- *     <%- excerpt(post) %>
- */
-hexo.extend.helper.register('excerpt', function (post) {
-  if (post.excerpt) return extractText(post.excerpt);
-  if (post.content) return extractText(post.content).substring(0, 200);
-  return post.title;
-});
-
 function excerpt_original(post) {
   var excerpt;
   if (post.excerpt) {
@@ -44,3 +32,13 @@ function excerpt_original(post) {
   }
   return excerpt;
 }
+
+/**
+ * Excerpt Helper
+ * @description Get the excerpt from a post
+ * @example
+ *     <%- excerpt(post) %>
+ */
+hexo.extend.helper.register('excerpt', function (post) {
+  return excerpt_original(post) || post.title;
+});
