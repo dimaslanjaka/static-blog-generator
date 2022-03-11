@@ -45,7 +45,6 @@
     "gulp-cache": "^1.1.3",
     "gulp-imagemin": "^8.0.0",
     "hexo": "^6.0.0",
-    "hexo-adsense": "file:packages/hexo-adsense",
     "hexo-asset-link": "^2.1.0",
     "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
