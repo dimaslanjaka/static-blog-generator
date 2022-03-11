@@ -1,3 +1,8 @@
+/**
+ * Extract Text
+ * @param {string} text
+ * @returns {string}
+ */
 function extractText(text) {
   let str = text;
   const scriptgx =
@@ -25,6 +30,12 @@ function get_excerpt(post) {
  *     <%- excerpt(post) %>
  */
 hexo.extend.helper.register('excerpt', function (post) {
+  if (post.excerpt) return extractText(post.excerpt);
+  if (post.content) return extractText(post.content).substring(0, 200);
+  return post.title;
+});
+
+function excerpt_original(post) {
   var excerpt;
   if (post.excerpt) {
     excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
@@ -32,4 +43,4 @@ hexo.extend.helper.register('excerpt', function (post) {
     excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
   }
   return excerpt;
-});
+}
