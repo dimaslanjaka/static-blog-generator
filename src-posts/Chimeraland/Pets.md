@@ -23,6 +23,8 @@ photos:
 description: Pets Informations Chimeraland
 ---
 
+<!-- translator -->
+<!-- include Recipes/translator.html -->
 
 ## Pet Attributes Information
 
@@ -33,5 +35,3 @@ description: Pets Informations Chimeraland
 > ## See Also
 > - [Chimeraland Cooking Recipes](/Chimeraland/Recipes.html)
 
-<!-- translator -->
-<!-- include Recipes/translator.html -->
