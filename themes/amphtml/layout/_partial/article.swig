@@ -12,8 +12,10 @@
     <div class="article__entry">
 	    {% if item.excerpt && index %}
 	    {{ item.excerpt }}
-	    {% else %}
-			{{ index ? get_excerpt(item.content) : item.content }}
+	    {% elseif index %}
+			{{ get_excerpt(item.content) }}
+			{% else %}
+			{{ item.content }}
 	    {% endif %}
 	</div>
     <footer class="article__footer">
