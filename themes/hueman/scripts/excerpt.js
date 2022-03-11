@@ -1,19 +1,21 @@
-function getOnlyText(text) {
+function extractText(text) {
   let str = text;
-  const scriptgx = /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>/gim;
+  const scriptgx =
+    /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>/gim;
   const defaultgx = /\<[^\>]+\>/gm; // default only g
-  const stylegx = /<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>/gim;
-  return str.replace(scriptgx, "").replace(stylegx, "").replace(defaultgx, "");
+  const stylegx =
+    /<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>/gim;
+  return str.replace(scriptgx, '').replace(stylegx, '').replace(defaultgx, '');
 }
 
 function get_excerpt(post) {
   if (post.excerpt) {
-    return post.excerpt.replace(/\<[^\>]+\>/g, "");
+    return post.excerpt.replace(/\<[^\>]+\>/g, '');
   } else if (post.content) {
-    return getOnlyText(post.content).substring(0, 200);
+    return post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
   } else {
-    return getOnlyText(post);
-  } 
+    return extractText(post);
+  }
 }
 
 /**
@@ -22,4 +24,12 @@ function get_excerpt(post) {
  * @example
  *     <%- excerpt(post) %>
  */
-hexo.extend.helper.register("excerpt", get_excerpt);
+hexo.extend.helper.register('excerpt', function (post) {
+  var excerpt;
+  if (post.excerpt) {
+    excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
+  } else {
+    excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
+  }
+  return excerpt;
+});

@@ -5,7 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "gulp article:copy && hexo server",
+      "command": "npx gulp article:copy && npx hexo server",
+      "name": "Copy Server",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/../../"
+    },
+    {
+      "command": "npx hexo server",
       "name": "Server",
       "request": "launch",
       "type": "node-terminal",
