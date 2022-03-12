@@ -21,6 +21,7 @@ thumbnail: /Chimeraland/Pets/cover.jpg
 photos:
   - /Chimeraland/Pets/cover.jpg
 description: Pets Informations Chimeraland
+excerpt: Information about pets attributes chimeraland
 ---
 
 <!-- translator -->
