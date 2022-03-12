@@ -9,6 +9,8 @@ updated: 2022-02-18T14:55:00+07:00
 keywords:
   - pets informations
   - chimeraland
+  - chimeraland pets
+  - pet evolution
 lang: id
 subtitle: Pets Informations Chimeraland
 tags:
