@@ -1,9 +1,9 @@
 # Menus
 menu:
     Home: /
+    About: /about/index.html
     # Delete this row if you don't want categories in your header nav bar
     Categories:
-    About: /about/index.html
 
 # Customize
 customize:
@@ -102,9 +102,9 @@ plugins:
     bing_site_verification: # enter Bing verification key here
     statcounter:
       sc_project: 11355793
-      sc_invisible: 0 # enter 1 to make statcounter invisible
+      sc_invisible: 1 # enter 1 to make statcounter invisible
       sc_security: 378879d7 # enter security code
-      public: true # enter true if you want a link to your public stats. Must be configured on statcouter as well.
+      public: false # enter true if you want a link to your public stats. Must be configured on statcouter as well.
       on: true # enter true to enable statcounter
     mathjax: false # options: true, false
     counter: false # for post words count and time of reading, need hexo-wordcount: https://github.com/willin/hexo-wordcount
@@ -121,5 +121,6 @@ miscellaneous:
         twitter_id:
     links:
         Old Blog: https://web-manajemen.blogspot.com
+        Javascript Smartform: https://www.webmanajemen.com/smartform/
 
 poweredby: false
