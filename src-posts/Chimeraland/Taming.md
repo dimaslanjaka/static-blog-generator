@@ -22,7 +22,7 @@ Pity direset setiap jam 04:00 AM GMT+7.
 > 
 > xN-Ne = tame ke N-N egg
 >
-> xN-Nt = tame ke N-N temp
+> xN-NT = tame ke N-N temp
 
 ### Teknik mengamati pity karaktermu
 - egg + x5aT + x6e
