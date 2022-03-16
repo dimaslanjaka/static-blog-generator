@@ -12,6 +12,7 @@ comments: true
 Taming dalam chimeraland dihitung menggunakan PITY. 
 Apabila sudah mencapai pity, maka akan dipastikan akan mendapatkan telur pet. 
 Pity direset setiap jam 04:00 AM GMT+7.
+Rumus pity artikel ini saya tulis berdasarkan pengalaman saya bermain di server 108.
 
 ### Legends
 > N = angka
