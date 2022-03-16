@@ -1,7 +1,8 @@
 ---
 title: Taming Pets Chimeraland
 webtitle: Chimeraland
-date: 2022-3-16T14:30:0.000+07:00
+date: 2022-03-16T14:41:00+0700
+updated: 2022-03-16T14:41:00+0700
 excerpt: Taming pity in chimeraland
 toc: true
 comments: true
