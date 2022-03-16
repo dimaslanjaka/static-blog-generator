@@ -104,7 +104,7 @@ function articleCopy(done: TaskCallback) {
                   //console.log('modified', modified);
                   //console.log('same', same);
                   if (!same) {
-                    // java format y-MM-dd'T'HH:mm:ssZ
+                    // java format yyyy-MM-dd'T'HH:mm:ssZ
                     parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
                     //console.log(parse.metadata.updated)
                   }
