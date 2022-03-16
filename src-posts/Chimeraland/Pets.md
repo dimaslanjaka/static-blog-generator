@@ -45,6 +45,10 @@ Berikutnya adalah langkah berikut agar pemain menjinakkan binatang pilihan merek
 
 Apa yang akan terjadi selanjutnya adalah bagi pemain untuk mengurangi poin hit binatang itu menjadi jumlah yang jauh lebih rendah. Pemain harus berhati-hati untuk tidak sepenuhnya mengurangi poin hit binatang itu menjadi nol karena ini akan mengakibatkan pemain membunuh binatang itu. Sama seperti permainan menangkap binatang buas yang populer, pemain hanya harus menurunkan poin pukulan binatang itu hingga sekitar lima belas hingga dua puluh persen atau bahkan sampai pemain akan melihat opsi Tangkap Sekarang keluar ketika mencoba menjinakkan binatang itu. Pemain juga harus memperhatikan bahwa binatang buas juga akan berubah menjadi musuh saat diserang sehingga pemain harus waspada terhadap keluaran kerusakan mereka dan pastikan mereka tidak berlebihan saat mengurangi poin pukulan binatang itu.
 
+Setelah opsi untuk menangkap ditampilkan di atas binatang itu, pemain kemudian harus melengkapi Mustard-Shot X-Bow yang tepercaya dan menembakkannya ke binatang yang lemah. Ini kemudian akan menunjukkan animasi dari binatang yang ditangkap. Setelah berhasil melakukannya, pemain akan mendapatkan kesempatan untuk mengambil item sementara dari binatang yang mereka tangkap. Itu akan muncul di inventaris pemain sebagai nama binatang itu ditambah kata Temp di akhir.
+
+Ini berarti bahwa pemain akan memiliki satu kali penggunaan binatang itu karena hanya sementara. Untuk memastikan bahwa pemain akan mendapatkan hewan peliharaan permanen, mereka membutuhkan telur untuk melakukannya. Beberapa binatang akan menjatuhkan telur yang bertentangan dengan penggunaan sementara dari satu tetapi ini akan benar-benar acak dan berdasarkan nilai masing-masing binatang dalam permainan.
+
 > ## See Also
 > - [Chimeraland Cooking Recipes](/Chimeraland/Recipes.html)
 
