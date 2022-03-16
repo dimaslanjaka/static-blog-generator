@@ -14,7 +14,9 @@ Pity direset setiap jam 04:00 AM GMT+7.
 
 ### Legends
 > N = angka
+> 
 > xN-NaT = tame ke N-N alot temp
+> 
 > xN-Ne = tame ke N-N egg
 
 ### Teknik mengamati pity karaktermu
