@@ -29,11 +29,21 @@ excerpt: Information about pets attributes chimeraland
 <!-- translator -->
 <!-- include Recipes/translator.html -->
 
-## Pet Attributes Information
+## Memperkenalkan Binatang dan Hewan Peliharaan di Chimeraland
+
+Memiliki hewan peliharaan bisa menjadi tugas yang cukup berat setelah pemain menetapkan pikiran mereka untuk itu dan itu bisa menjadi tantangan untuk menjinakkan mereka dan memiliki mereka di sisi pemain. Terlepas dari fakta itu, pemain masih berusaha untuk mencari binatang yang lebih mudah untuk dijinakkan dan memastikan mereka mendapatkan bantuan yang sangat dibutuhkan dalam pertempuran dan menjelajahi dunia Chimeraland. Sesuai dengan namanya, dunia Chimeraland memiliki banyak binatang yang berbeda dan mengejutkan, dan dengan itu.
+
+### Pet Attributes Information
 
 <!-- include Pets/table.html -->
 <script src='Pets/script.js'></script>
 <link rel="stylesheet" href="Pets/style.css" />
+
+### Menjinakkan binatang buas dengan Mustard-Shot X-Bow di Chimeraland
+
+Berikutnya adalah langkah berikut agar pemain menjinakkan binatang pilihan mereka. Pemain kemudian harus pergi ke hutan belantara dan mencari binatang yang ingin mereka jinakkan. Pemain dapat melihat-lihat dan mencatat dari eksplorasi mana yang sesuai dengan kebutuhan dan keinginan mereka dalam hal hewan peliharaan ideal mereka.
+
+Apa yang akan terjadi selanjutnya adalah bagi pemain untuk mengurangi poin hit binatang itu menjadi jumlah yang jauh lebih rendah. Pemain harus berhati-hati untuk tidak sepenuhnya mengurangi poin hit binatang itu menjadi nol karena ini akan mengakibatkan pemain membunuh binatang itu. Sama seperti permainan menangkap binatang buas yang populer, pemain hanya harus menurunkan poin pukulan binatang itu hingga sekitar lima belas hingga dua puluh persen atau bahkan sampai pemain akan melihat opsi Tangkap Sekarang keluar ketika mencoba menjinakkan binatang itu. Pemain juga harus memperhatikan bahwa binatang buas juga akan berubah menjadi musuh saat diserang sehingga pemain harus waspada terhadap keluaran kerusakan mereka dan pastikan mereka tidak berlebihan saat mengurangi poin pukulan binatang itu.
 
 > ## See Also
 > - [Chimeraland Cooking Recipes](/Chimeraland/Recipes.html)
