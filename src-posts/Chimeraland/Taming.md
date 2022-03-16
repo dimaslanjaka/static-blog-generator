@@ -26,7 +26,7 @@ Pity direset setiap jam 04:00 AM GMT+7.
 
 ### Teknik mengamati pity karaktermu
 - egg + x5aT + x6e
-- egg + x3-6aT
+- egg + x3-6aT + x7-8T
 
 ### Chimeraland
 Chimeraland adalah salah satu game yang sangat didasarkan pada mitologi dan dapat memunculkan imajinasi pada siapa saja. Ini juga mirip dengan game RPG klasik, tetapi yang satu ini menambahkan banyak elemen untuk gameplay dan alur cerita. Panduan Chimeraland ini akan mengajarkan pemain baru atau bahkan beberapa pemain yang sedang berjuang bagaimana menjinakkan binatang atau hewan peliharaan agar mereka menjadi lebih kuat dan maju lebih jauh dalam permainan. Ketika datang untuk bermain permainan peran, sekutu bisa sulit untuk menemukan dan pemain berharap untuk mendapatkan keunggulan ekstra yang mereka butuhkan untuk terus bergerak maju. Sama seperti di Chimeraland, pemain dapat mencari bantuan pemain lain untuk beberapa tenaga dan kekuatan ekstra. Tetapi bagaimana jika tidak ada sekutu pemain yang online pada saat itu? Hal terbaik berikutnya secara mengejutkan adalah hewan peliharaan atau binatang buas yang bisa Anda miliki dalam permainan. Memperkenalkan Binatang dan Hewan Peliharaan di ChimeralandMemiliki hewan peliharaan bisa menjadi tugas yang cukup berat setelah pemain menetapkan pikiran mereka untuk itu dan itu bisa menjadi tantangan...
