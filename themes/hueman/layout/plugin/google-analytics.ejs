@@ -17,13 +17,16 @@
   // track links clicked
   const trackLinks = document.getElementsByTagName('a');
   for (var i = 0, len = trackLinks.length; i < len; i++) {
-    trackLinks[i].onclick = function () {
-      gtag('event', 'outbound-link', {
-        event_category: 'outbound',
-        event_label: this.href,
-        transport_type: 'beacon',
-      });
-    };
+    const href = trackLinks[i].href;
+    if (!href.startsWith('#')) {
+      trackLinks[i].onclick = function () {
+        gtag('event', 'outbound-link', {
+          event_category: 'outbound',
+          event_label: this.href,
+          transport_type: 'beacon',
+        });
+      };
+    }
   }
 </script>
 <!-- End Google Analytics -->
