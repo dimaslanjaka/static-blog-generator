@@ -6,6 +6,11 @@ updated: 2022-03-16T14:41:00+0700
 excerpt: Taming pity in chimeraland
 toc: true
 comments: true
+tags:
+  - Chimeraland
+category:
+  - Games
+  - Chimeraland
 ---
 
 ## Deskripsi pemahaman tentang pity taming pet
