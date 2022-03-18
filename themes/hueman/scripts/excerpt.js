@@ -24,7 +24,7 @@ function get_excerpt(post) {
 }
 
 function excerpt_original(post) {
-  var excerpt;
+  let excerpt;
   if (post.excerpt) {
     excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
   } else {
