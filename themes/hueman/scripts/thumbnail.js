@@ -1,3 +1,5 @@
+const noimage = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
+
 /**
  * Thumbnail Helper
  * @description Get the thumbnail url from a post
@@ -6,7 +8,7 @@
  *     <%- thumbnail(post) %>
  */
 function thumbnail(post) {
-  var url = post.thumbnail || '';
+  let url = post.thumbnail || noimage;
   if (!url) {
     var imgPattern = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/gi;
     var result = imgPattern.exec(post.content);
@@ -26,7 +28,7 @@ hexo.extend.helper.register('img_url', function (post, config) {
   } else if (typeof config.logo == 'string') {
     return config.logo;
   }
-  return 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
+  return noimage;
 });
 
 // LOCALES
