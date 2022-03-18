@@ -1,5 +1,8 @@
 {
   "cSpell.words": [
     "Neverland"
-  ]
+  ],
+  "terminal.integrated.env.linux": {
+    "PATH": "./bin:${env:PATH}"
+  }
 }
