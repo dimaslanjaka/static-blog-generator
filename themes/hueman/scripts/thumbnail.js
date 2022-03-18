@@ -8,7 +8,10 @@ const noimage = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Pl
  *     <%- thumbnail(post) %>
  */
 function thumbnail(post) {
-  let url = post.thumbnail || noimage;
+  let url = post.thumbnail || post.cover || noimage;
+  if (!url && post.photos) {
+    if (Array.isArray(post.photos)) return post.photos[0];
+  }
   if (!url) {
     var imgPattern = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/gi;
     var result = imgPattern.exec(post.content);
