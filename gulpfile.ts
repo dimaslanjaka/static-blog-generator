@@ -150,7 +150,7 @@ function articleCopy(done: TaskCallback) {
             }
 
             if (parse.metadata && parse.body) {
-              const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+              const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n\n${parse.body}`;
               writeFileSync(file, rebuildPost);
             }
           }
@@ -211,7 +211,7 @@ gulp.task("article:fix", (done) => {
       }
 
       if (parse.metadata) {
-        const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n${parse.body}`;
+        const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n\n${parse.body}`;
         writeFileSync(file, rebuildPost);
       }
     }

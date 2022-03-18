@@ -4,8 +4,8 @@ import chalk from "chalk";
 
 const logname = chalk.bgMagenta.whiteBright("[extract-text]");
 
-export function extractText(file: string, str: string) {
-  const regex = /\<\!\-\-\s+?extract-text\s+?(.+?)\s+?\-\-\>/gim;
+export function datatables(file: string, str: string) {
+  const regex = /\<\!\-\-\s+?datatables\s+?(.+?)\s+?\-\-\>/gim;
   let m: RegExpExecArray;
   while ((m = regex.exec(str)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches
@@ -35,4 +35,4 @@ export function extractText(file: string, str: string) {
   }
   return str;
 }
-export default extractText;
+export default datatables;

@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             item.qty = quality;
           }
           data.data = items;
+          document.querySelector("div#raw-data").remove();
           return cb(data);
         });
     },

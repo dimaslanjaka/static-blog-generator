@@ -5,11 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "npx gulp article:copy && npx hexo server --development",
+      "command": "npx gulp article:copy && npx hexo server",
       "env": {
         "NODE_ENV": "development"
       },
-      "name": "Hexo server",
+      "name": "Copy & server",
       "request": "launch",
       "type": "node-terminal"
     },
