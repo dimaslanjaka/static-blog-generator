@@ -27,6 +27,10 @@ function excerpt_original(post) {
   let excerpt;
   if (post.excerpt) {
     excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
+  } else if (post.subtitle) {
+    excerpt = post.subtitle.replace(/\<[^\>]+\>/g, '');
+  } else if (post.description) {
+    excerpt = post.description.replace(/\<[^\>]+\>/g, '');
   } else {
     excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
   }

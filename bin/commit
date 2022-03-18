@@ -42,9 +42,10 @@ if (minimist._.length) {
     filesToCommit.forEach((f) => {
       execute(`git add ${f}`).then((err) => {
         if (!err) {
-          execute(`git commit -m "${message}"`).then(gitPush);
+          execute(`git commit -m "${message}"`).then(gitPush).catch(console.error);
         } else {
-          execute("git reset --soft HEAD^");
+          // reset git add
+          execute("git reset --soft HEAD^").catch(console.error);
         }
       });
     });
@@ -52,7 +53,7 @@ if (minimist._.length) {
     // if custom files empty, then add all files and commit them
     execute(`git add -A`).then((err) => {
       if (!err) {
-        execute(`git commit -m "${message}"`).then(gitPush);
+        execute(`git commit -m "${message}"`).then(gitPush).catch(console.error);
       } else {
         console.log("(git) failed to add");
         execute("git reset --soft HEAD^");
@@ -63,7 +64,7 @@ if (minimist._.length) {
 
 function gitPush(err, stdout, stderr) {
   if (!err) {
-    if (minimist.push) execute("git push");
+    if (minimist.push) execute("git push").catch(console.error);
   }
 }
 
