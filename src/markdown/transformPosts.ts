@@ -85,7 +85,7 @@ export function md5(data: string) {
  */
 export function parsePost(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;
-  const regex = /^---([\s\S]*?)---[\n\s\S]/gim;
+  const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   const originalArg = text;
   const isFile = fs.existsSync(text) && fs.statSync(text).isFile();
