@@ -1,4 +1,5 @@
 // fix all hyperlinks endsWith .md
+// [test](test.md) -> [test](test.html)
 import * as fs from "fs";
 const regex = /\[.*\]\(.*(.md)\)/gm;
 /**

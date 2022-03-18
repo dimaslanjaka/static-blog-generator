@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 //import "./packages/hexo-seo/packages/js-prototypes/src/globals";
+//import "./src/node/console";
 import "js-prototypes";
 import * as gulp from "gulp";
 import * as path from "path";
-import transformPosts, { md5, parsePost, transformPostBody, uuidv4 } from "./src/markdown/transformPosts";
+import { parsePost, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import shortcodeInclude from "./src/gulp/shortcode/include";
@@ -61,6 +62,7 @@ function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
 
 let tryCount = 0;
 import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
+import extractText from "./src/gulp/shortcode/extract-text";
 import YAML from "yaml";
 /**
  * Copy source post directly into production posts without transform to multiple languages
@@ -83,6 +85,7 @@ function articleCopy(done: TaskCallback) {
       }
     } else {
       console.log("copied successful!");
+      console.log("starting process article shortcodes...");
 
       // process
       const loop = loopDir(destDir);
@@ -138,11 +141,12 @@ function articleCopy(done: TaskCallback) {
             }
 
             if (parse.body) {
+              parse.body = shortcodeInclude(file, parse.body);
               parse.body = shortcodeNow(file, parse.body);
               parse.body = shortcodeScript(file, parse.body);
               parse.body = replaceMD2HTML(file, parse.body);
               parse.body = shortcodeCss(file, parse.body);
-              parse.body = shortcodeInclude(file, parse.body);
+              parse.body = extractText(file, parse.body);
             }
 
             if (parse.metadata && parse.body) {

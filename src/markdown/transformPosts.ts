@@ -6,6 +6,7 @@ import yaml from "yaml";
 import notranslate from "../translator/notranslate";
 import crypto from "crypto";
 import { readFileSync } from "fs";
+import chalk from "chalk";
 
 interface LooseObject {
   [key: string]: any;
@@ -80,11 +81,11 @@ export function md5(data: string) {
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return metadata {string & object} and body
  * * return null == failed
- * @param text
+ * @param text file or string text
  */
 export function parsePost(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;
-  const regex = /^---([\s\S]*?)---\n/gm;
+  const regex = /^---([\s\S]*?)---[\n\s\S]/gim;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   const originalArg = text;
   const isFile = fs.existsSync(text) && fs.statSync(text).isFile();
@@ -92,11 +93,14 @@ export function parsePost(text: string): parsePostReturn | null {
     text = readFileSync(text).toString();
   }
 
+  //if (originalArg.includes("Pets")) console.log(regex.exec(text));
+
   try {
-    if ((m = regex.exec(text)) !== null) {
+    while ((m = regex.exec(text)) !== null) {
+      //if (originalArg.includes("Pets")) console.log(m);
       if (m[0]) {
         let meta: parsePostReturn["metadata"] = yaml.parse(m[1]); // header post
-        //console.log(meta);
+        //if (originalArg.includes("Pets")) console.log(meta);
         if (!meta.uuid) {
           let uid = m[0];
           if (meta.title && meta.webtitle) {
@@ -124,7 +128,12 @@ export function parsePost(text: string): parsePostReturn | null {
     }
   } catch (e) {
     //if (debug) console.error(e.message, originalArg);
-    console.log("fail parse markdown post", originalArg);
+    console.error(
+      "fail parse markdown post",
+      chalk.redBright(originalArg),
+      "original file of",
+      chalk.magentaBright(originalArg.replace("/source/_posts/", "/src-posts/"))
+    );
   }
   return null;
 }

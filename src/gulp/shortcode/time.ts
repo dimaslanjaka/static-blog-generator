@@ -30,7 +30,7 @@ export function shortcodeNow(file: string | fs.PathLike, read: string) {
   const matchRegex = read.match(rex);
   if (matchRegex && matchRegex.length > 0) {
     read = read.replace(rex, now());
-    console.log("[shortcode now][" + file.toString().replace(process.cwd(), "") + "] done");
+    //console.log("[shortcode now][" + file.toString().replace(process.cwd(), "") + "] done");
   }
   return read;
 }

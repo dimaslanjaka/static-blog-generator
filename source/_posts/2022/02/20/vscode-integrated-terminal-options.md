@@ -1,14 +1,17 @@
 ---
-title: VSCode Integrated Terminal Options
-webtitle: VSCode
-date: 2022-02-20T07:00:00+07:00
-updated: 2022-02-20T07:00:00+07:00
-tags:
-  - VSCode
 Category:
   - Programming
   - IDE
+date: 2022-02-20T07:00:00+07:00
+tags:
+  - VSCode
+title: VSCode Integrated Terminal Options
+updated: 2022-02-20T07:00:00+07:00
+uuid: d187db4f-84c5-4888-845d-a57a9da1f610
+webtitle: VSCode
+lang: en
 ---
+
 
 ## Windows Env
 Add path into vscode terminal windows

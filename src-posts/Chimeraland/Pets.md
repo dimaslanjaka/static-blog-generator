@@ -12,7 +12,7 @@ keywords:
   - chimeraland pets
   - pet evolution
 lang: id
-subtitle: Pets Informations Chimeraland
+subtitle: Information about pets attributes chimeraland
 tags:
   - Chimeraland
 title: Pets
@@ -22,8 +22,6 @@ webtitle: Chimeraland
 thumbnail: /Chimeraland/Pets/cover.jpg
 photos:
   - /Chimeraland/Pets/cover.jpg
-description: Pets Informations Chimeraland
-excerpt: Information about pets attributes chimeraland
 ---
 
 <!-- translator -->
