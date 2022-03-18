@@ -27,7 +27,6 @@ updated: 2022-02-12T11:18:24+07:00
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
-description: Chimeraland Cooking Recipes
 ---
 
 <!-- translator -->
