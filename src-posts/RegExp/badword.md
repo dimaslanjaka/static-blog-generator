@@ -3,6 +3,7 @@ author:
   nick: Dimas Lanjaka
   link: https://github.com/dimaslanjaka
 category:
+  - Programming
   - Regular Expression
 comments: false
 cover: /RegExp/RegExp/badwords.png
