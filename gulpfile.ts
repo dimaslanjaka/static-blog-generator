@@ -125,8 +125,16 @@ function articleCopy(done: TaskCallback) {
               if (!parse.metadata.lang) parse.metadata.lang = "en";
               // fix post description
               if (parse.metadata.subtitle) {
-                if (!!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
+                if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
                 if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
+              }
+              if (parse.metadata.excerpt) {
+                if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
+                if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
+              }
+              if (parse.metadata.description) {
+                if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
+                if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
               }
               // fix thumbnail
               if (parse.metadata.cover) {
