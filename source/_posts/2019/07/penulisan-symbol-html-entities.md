@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - HTML
   - Programming
+  - HTML
 comments: true
 cover: https://dimaslanjaka.github.io/assets/img/html.png
 date: 2019-07-23T07:21:00.000+07:00

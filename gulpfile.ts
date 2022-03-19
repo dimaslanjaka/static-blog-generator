@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-//import "./packages/hexo-seo/packages/js-prototypes/src/globals";
+import "./packages/hexo-seo/packages/js-prototypes/src/globals";
 //import "./src/node/console";
-import "js-prototypes";
+//import "js-prototypes";
 import * as gulp from "gulp";
 import * as path from "path";
 import { parsePost, uuidv4 } from "./src/markdown/transformPosts";
@@ -168,6 +168,14 @@ function articleCopy(done: TaskCallback) {
                 // remove duplicated tags and categories
                 parse.metadata.category = parse.metadata.category.unique();
                 parse.metadata.tags = parse.metadata.tags.unique();
+                // move 'programming' to first index
+                parse.metadata.category.forEach((str, i) => {
+                  if (str === "Programming") {
+                    console.info("moving index", i);
+                    parse.metadata.category = parse.metadata.category.move(i, 0);
+                  }
+                });
+                if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
               }
             }
 

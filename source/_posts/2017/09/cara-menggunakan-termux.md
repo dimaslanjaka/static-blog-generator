@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
 category:
-  - PHP
   - Programming
+  - PHP
 comments: true
 cover: https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
 date: 2017-09-03T13:33:00.000+07:00

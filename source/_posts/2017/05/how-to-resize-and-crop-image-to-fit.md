@@ -4,8 +4,8 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - PHP
   - Programming
+  - PHP
 comments: true
 cover: http://www.larnr.com/wp-content/uploads/2015/05/resize-crop-1024x535.jpg
 date: 2017-05-25T06:52:00.000+07:00
