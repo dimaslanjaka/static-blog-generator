@@ -9,7 +9,16 @@
       "env": {
         "NODE_ENV": "development"
       },
-      "name": "Copy & server",
+      "name": "Copy & Serv",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npx gulp article:copy && npx hexo generate",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "name": "Copy & Gen",
       "request": "launch",
       "type": "node-terminal"
     },
