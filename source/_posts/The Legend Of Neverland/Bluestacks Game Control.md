@@ -29,6 +29,8 @@ photos:
   - https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png
 description: Game control the legend of neverland bluestacks Support change
   fairy and job skill
+excerpt: Game control the legend of neverland bluestacks Support change fairy
+  and job skill
 ---
 
 ### Requirements

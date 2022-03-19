@@ -34,6 +34,8 @@ type parsePostReturn = LooseObject & {
     updated?: string;
     date: string;
     description?: string;
+    tags: string[];
+    category: string[];
   };
   /**
    * Article body
@@ -107,6 +109,10 @@ export function parsePost(text: string): parsePostReturn | null {
             uid = meta.title + meta.webtitle;
           } else if (meta.subtitle) {
             uid = meta.subtitle;
+          } else if (meta.excerpt) {
+            uid = meta.excerpt;
+          } else if (meta.title) {
+            uid = meta.title;
           }
           meta.uuid = uuidv4(uid);
           meta = Object.keys(meta)
@@ -119,6 +125,8 @@ export function parsePost(text: string): parsePostReturn | null {
               {}
             ) as parsePostReturn["metadata"];
         }
+        if (!meta.category) meta.category = ["Uncategorized"];
+        if (!meta.tags) meta.tags = ["Untagged"];
         return {
           metadataString: m[0],
           metadata: meta,
