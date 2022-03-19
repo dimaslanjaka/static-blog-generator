@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ9xXGAmyFtnQR2UzPn6Xm7BqXdVwCLcB/s320/amp-blogger-social-share.webp
 date: 2017-05-14T13:28:00.000+07:00

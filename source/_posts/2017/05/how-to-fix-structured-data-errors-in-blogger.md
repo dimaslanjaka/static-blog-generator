@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp
 date: 2017-05-07T13:05:00.000+07:00

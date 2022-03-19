@@ -152,15 +152,7 @@ function articleCopy(done: TaskCallback) {
                   "typescript",
                   "javascript",
                   "html",
-                ].some((r) => {
-                  return parse.metadata.tags.map((str) => {
-                    const match = str.toLowerCase().includes(r);
-                    if (match) {
-                      parse.metadata.category.push(str.toUpperCase());
-                    }
-                    return match;
-                  });
-                });
+                ].some((r) => parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r));
                 if (containsTag) {
                   parse.metadata.category.push("Programming");
                   if (parse.metadata.category.includes("Uncategorized")) {
