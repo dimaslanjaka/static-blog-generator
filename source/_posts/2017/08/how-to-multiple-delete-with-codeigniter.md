@@ -22,6 +22,7 @@ updated: 2022-03-18T20:38:03+07:00
 thumbnail: https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
 photos:
   - https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
+description: How to multiple delete with codeigniter
 excerpt: How to multiple delete with codeigniter
 ---
 
