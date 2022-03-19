@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - HTML
   - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp

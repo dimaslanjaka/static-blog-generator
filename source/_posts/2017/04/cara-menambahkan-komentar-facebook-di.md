@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - PHP
   - Programming
 comments: true
 cover: https://i2.wp.com/orbitingweb.com/wp-content/uploads/facebook-create-app-page.png?resize=641%2C174

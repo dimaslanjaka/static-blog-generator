@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - PHP
   - Programming
 comments: true
 cover: https://pear.php.net/gifs/pearsmall.gif

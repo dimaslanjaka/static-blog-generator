@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png

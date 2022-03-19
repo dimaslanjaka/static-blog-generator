@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - CSS
   - Programming
 comments: true
 cover: http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png

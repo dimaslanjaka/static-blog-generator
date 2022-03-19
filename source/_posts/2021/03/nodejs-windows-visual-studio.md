@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/07981649157148639830
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png

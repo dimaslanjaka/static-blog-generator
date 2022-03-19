@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - HTML
   - Programming
 comments: true
 cover: https://2.bp.blogspot.com/-vz_NgjmMup4/VR6qQOfliiI/AAAAAAAAA0g/ps8xLzLvGwM/s1600/advertise-here.jpg

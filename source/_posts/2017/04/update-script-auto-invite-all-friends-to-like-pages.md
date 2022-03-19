@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-B7u7YsAqwIo/WOekieIT5sI/AAAAAAAAEno/FnW9NIDzeUcfZ0dqcI-urdOHqZhkkjMaQCLcB/s1600/Script-Auto-Invite-Undang-Semua-Teman-ke-Fanspage-02.jpg

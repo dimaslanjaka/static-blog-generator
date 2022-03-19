@@ -152,13 +152,22 @@ function articleCopy(done: TaskCallback) {
                   "typescript",
                   "javascript",
                   "html",
-                ].some((r) => parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r));
+                ].some((r) => {
+                  const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
+                  if (matchTag) {
+                    parse.metadata.category.push(r.toUpperCase());
+                  }
+                  return matchTag;
+                });
                 if (containsTag) {
                   parse.metadata.category.push("Programming");
                   if (parse.metadata.category.includes("Uncategorized")) {
                     parse.metadata.category = parse.metadata.category.filter((e) => e !== "Uncategorized");
                   }
                 }
+                // remove duplicated tags and categories
+                parse.metadata.category = parse.metadata.category.unique();
+                parse.metadata.tags = parse.metadata.tags.unique();
               }
             }
 

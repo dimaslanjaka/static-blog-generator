@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - HTML
   - Programming
 comments: true
 cover: https://lh3.googleusercontent.com/proxy/OJWB1B8t8vRrLSxK6kaSpqIC5_Qs2dO1XoRwPDzu3_Bd221wjlh0rpTomRwyZlUtrmkMw2DLJ-KKN78v5L4XQLFbshEZtu5ZqlrbHwJReRgklNkx4swVr0ffz200BtqCdIMeW9PIrLoU_PNgyISDAcz45W-Fv0rtpgL6K4AjP_Pqx4MKDg

@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png

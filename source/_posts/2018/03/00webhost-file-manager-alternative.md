@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
 category:
+  - PHP
   - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seoclerk.com/pics/want29446-1eGFdc1437614695.png
