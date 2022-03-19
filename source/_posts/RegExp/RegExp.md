@@ -4,6 +4,7 @@ author:
   nick: Dimas Lanjaka
   link: https://github.com/dimaslanjaka
 category:
+  - Programming
   - Regular Expression
 comments: false
 cover: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg

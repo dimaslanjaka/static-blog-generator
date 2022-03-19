@@ -22,6 +22,7 @@ webtitle: Chimeraland
 thumbnail: /Chimeraland/Pets/cover.jpg
 photos:
   - /Chimeraland/Pets/cover.jpg
+description: Information about pets attributes chimeraland
 excerpt: Information about pets attributes chimeraland
 ---
 
