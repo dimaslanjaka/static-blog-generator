@@ -171,11 +171,10 @@ function articleCopy(done: TaskCallback) {
                 // move 'programming' to first index
                 parse.metadata.category.forEach((str, i) => {
                   if (str === "Programming") {
-                    console.info("moving index", i);
                     parse.metadata.category = parse.metadata.category.move(i, 0);
                   }
                 });
-                if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
+                //if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
               }
             }
 
