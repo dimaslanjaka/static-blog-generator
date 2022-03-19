@@ -4,6 +4,7 @@ db.json
 twitter-db.json
 *.log
 node_modules
+vendor
 public/
 .deploy*/
 tmp/

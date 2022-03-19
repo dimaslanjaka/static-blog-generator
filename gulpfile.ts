@@ -124,8 +124,10 @@ function articleCopy(done: TaskCallback) {
               // fix lang
               if (!parse.metadata.lang) parse.metadata.lang = "en";
               // fix post description
-              if (parse.metadata.subtitle && !parse.metadata.description)
-                parse.metadata.description = parse.metadata.subtitle;
+              if (parse.metadata.subtitle) {
+                if (!!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
+                if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
+              }
               // fix thumbnail
               if (parse.metadata.cover) {
                 if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
@@ -137,6 +139,18 @@ function articleCopy(done: TaskCallback) {
               if (parse.metadata.photos) {
                 let photos: string[] = parse.metadata.photos;
                 parse.metadata.photos = photos.unique();
+              }
+              // merge php js css to programming
+              if (Array.isArray(parse.metadata.tags)) {
+                const containsTag = ["php", "css", "js", "kotlin", "java", "ts", "typescript", "javascript"].some((r) =>
+                  parse.metadata.tags.map((str) => str.toLowerCase()).includes(r)
+                );
+                if (containsTag) {
+                  parse.metadata.category.push("Programming");
+                  if (parse.metadata.category.includes("Uncategorized")) {
+                    parse.metadata.category = parse.metadata.category.filter((e) => e !== "Uncategorized");
+                  }
+                }
               }
             }
 
@@ -162,62 +176,6 @@ function articleCopy(done: TaskCallback) {
     }
   });
 }
-
-gulp.task("article:fix", (done) => {
-  const loop = loopDir(path.join(__dirname, "src-posts"));
-  loop.forEach((file) => {
-    const parse = parsePost(file);
-    if (parse) {
-      if (parse.metadata) {
-        if (parse.metadata.modified) {
-          if (!parse.metadata.updated) {
-            parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-          } else {
-            const updated = moment(parse.metadata.updated);
-            const modified = moment(parse.metadata.modified);
-            const same = updated.isSame(modified, "date");
-            //console.log('updated', updated);
-            //console.log('modified', modified);
-            //console.log('same', same);
-            if (!same) {
-              parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-              //console.log(parse.metadata.updated)
-            }
-          }
-        }
-        if (!parse.metadata.updated) {
-          const stats = fs.statSync(file);
-          const mtime = stats.mtime;
-          parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
-        }
-        if (!parse.metadata.date.includes("+")) {
-          parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
-        }
-        if (!parse.metadata.lang) parse.metadata.lang = "en";
-        // fix thumbnail
-        if (parse.metadata.cover) {
-          if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
-          if (!parse.metadata.photos) {
-            parse.metadata.photos = [];
-            parse.metadata.photos.push(parse.metadata.cover);
-          }
-        }
-        // fix description
-        if (parse.metadata.subtitle) {
-          if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
-        }
-        // merge php js css to programming
-        console.log(parse.metadata.tags);
-      }
-
-      if (parse.metadata) {
-        const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n\n${parse.body}`;
-        writeFileSync(file, rebuildPost);
-      }
-    }
-  });
-  done();
-});
 
 // just copy from source posts (src-posts) to production posts (source/_posts)
 gulp.task("article:copy", function (done) {

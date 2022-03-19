@@ -31,6 +31,11 @@ description: |-
   <div id=elemenTersedia></div>
   <script>
   function
+excerpt: |-
+  Mengubahdom document sebuah elemen kedalam HTMl string biasa
+  <div id=elemenTersedia></div>
+  <script>
+  function
 ---
 
 <div>

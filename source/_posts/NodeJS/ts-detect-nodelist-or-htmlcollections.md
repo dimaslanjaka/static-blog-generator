@@ -28,6 +28,7 @@ thumbnail: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
 description: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
+excerpt: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
 ---
 
 # How to detect HTMLCollection/NodeList in JavaScript/Typescript?

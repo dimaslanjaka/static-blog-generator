@@ -24,6 +24,7 @@ thumbnail: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqen
 photos:
   - https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
 description: Trial Of Time the legend of neverland stage location
+excerpt: Trial Of Time the legend of neverland stage location
 ---
 
   # Trial of time gate locations

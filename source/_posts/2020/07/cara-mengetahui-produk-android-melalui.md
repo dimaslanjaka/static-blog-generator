@@ -22,6 +22,7 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: fastboot getvar product
+excerpt: fastboot getvar product
 ---
 
 <ul style="text-align: left;"><li>reboot ke fastboot mode</li><li>ketik</li></ul>fastboot devices<div>fastboot getvar product</div>

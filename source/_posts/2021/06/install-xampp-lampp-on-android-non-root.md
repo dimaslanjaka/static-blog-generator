@@ -29,6 +29,9 @@ photos:
 description: php apache setup on android with Termux without
   root) 											Download Termux 						(allow installation from unknwon
   sources and
+excerpt: php apache setup on android with Termux without
+  root) 											Download Termux 						(allow installation from unknwon
+  sources and
 ---
 
 <div id="bootstrap-wrapper">

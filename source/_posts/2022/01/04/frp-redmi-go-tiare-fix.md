@@ -13,7 +13,7 @@ toc: true
 uuid: 8c318f99-ed4a-4888-8415-e0ff5b08bc39
 updated: 2022-01-05T01:03:09+07:00
 lang: en
-description: Bypass FRP Redmi GO Tiare Via MiFlash
+excerpt: Bypass FRP Redmi GO Tiare Via MiFlash
 thumbnail: /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
 photos:
   - /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg

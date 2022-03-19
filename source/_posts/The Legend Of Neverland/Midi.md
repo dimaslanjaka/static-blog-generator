@@ -24,6 +24,7 @@ thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 description: Midi collection for the legend of neverland perform music skill
+excerpt: Midi collection for the legend of neverland perform music skill
 ---
 
 ### NPC's favorite musical instrument

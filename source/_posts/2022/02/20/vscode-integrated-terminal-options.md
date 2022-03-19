@@ -2,16 +2,31 @@
 Category:
   - Programming
   - IDE
+cover: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 date: 2022-02-20T07:00:00+07:00
 tags:
   - VSCode
-title: VSCode Integrated Terminal Options
+title: Custom PATH VSCode Integrated Terminal Options
 updated: 2022-02-20T07:00:00+07:00
-uuid: d187db4f-84c5-4888-845d-a57a9da1f610
+uuid: 3b1b7031-6ca3-4888-8c93-4812c6cc40c2
 webtitle: VSCode
 lang: en
+thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
+photos:
+  - https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 ---
 
+Determining custom path on vscode IDE made easily development programs within multiple platforms.
+
+## Linux Env
+Add custom path to terminal linux
+```json
+{
+  "terminal.integrated.env.linux": {
+    "PATH": "./bin:${env:PATH}"
+  }
+}
+```
 
 ## Windows Env
 Add path into vscode terminal windows

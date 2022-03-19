@@ -25,6 +25,7 @@ thumbnail: /GitHub/workflows/cover.png
 photos:
   - /GitHub/workflows/cover.png
 description: Macam-macam kondisional pada GitHub Workflows
+excerpt: Macam-macam kondisional pada GitHub Workflows
 ---
 
 # Kondisional pada GitHub Workflow
