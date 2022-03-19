@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/07981649157148639830
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://i.ibb.co/024Dzwh/Screenshot-1.png

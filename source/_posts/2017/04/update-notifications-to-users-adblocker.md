@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - CSS
   - Programming
 comments: true
 cover: https://1.bp.blogspot.com/-JkpTNtGOMaE/WJoMX1QnTmI/AAAAAAAAHBE/CPdxv-D-Xa0bdghE1HwdwkC1bHp9OA9EgCLcB/s640/How%2BTo%2BMake%2BAdsense%2BAdBlocker%2BNotifications.png

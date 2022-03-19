@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png

@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - HTML
   - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-mkz0lWksXfQ/VUAqpSUJo5I/AAAAAAAABEA/jtNaXv7Oiw4/s1600/Cara%2BMenghapus%2BURL%2BERROR%2Bsecara%2Botomatis.png

@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - HTML
   - Programming
 comments: true
 cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ

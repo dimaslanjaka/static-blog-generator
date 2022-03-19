@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
+  - PHP
   - Programming
 comments: true
 cover: http://botcrawl.com/wp-content/uploads/2012/04/toggle-arrow.png

@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1

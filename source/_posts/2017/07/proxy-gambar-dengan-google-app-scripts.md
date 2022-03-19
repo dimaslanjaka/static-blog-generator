@@ -4,6 +4,7 @@ author:
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1

@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - JS
   - Programming
 comments: true
 cover: https://3.bp.blogspot.com/-1K6wl1YmvoY/VRpleEPVStI/AAAAAAAAAtE/ZiZBz937iIk/s1600/facebook-fan-page-fans.png

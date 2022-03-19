@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - HTML
   - Programming
 comments: true
 cover: http://www.duniailkom.com/wp-content/uploads/2014/06/Tabel-Karakter-Khusus-dalam-HTML.png

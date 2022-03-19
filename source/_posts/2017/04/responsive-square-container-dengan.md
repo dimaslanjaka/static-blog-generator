@@ -4,6 +4,7 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
+  - CSS
   - Programming
 comments: true
 cover: https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
