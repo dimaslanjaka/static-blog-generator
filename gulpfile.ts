@@ -142,18 +142,9 @@ function articleCopy(done: TaskCallback) {
               }
               // merge php js css to programming
               if (Array.isArray(parse.metadata.tags)) {
-                const containsTag = [
-                  "php",
-                  "css",
-                  "js",
-                  "kotlin",
-                  "java",
-                  "ts",
-                  "typescript",
-                  "javascript",
-                  "wordpress",
-                  "blogger",
-                ].some((r) => parse.metadata.tags.map((str) => str.toLowerCase()).includes(r));
+                const containsTag = ["php", "css", "js", "kotlin", "java", "ts", "typescript", "javascript"].some((r) =>
+                  parse.metadata.tags.map((str) => str.toLowerCase()).includes(r)
+                );
                 if (containsTag) {
                   parse.metadata.category.push("Programming");
                   if (parse.metadata.category.includes("Uncategorized")) {
