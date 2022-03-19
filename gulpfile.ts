@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-//import "./packages/hexo-seo/packages/js-prototypes/src/globals";
+import "./packages/hexo-seo/packages/js-prototypes/src/globals";
 //import "./src/node/console";
-import "js-prototypes";
+//import "js-prototypes";
 import * as gulp from "gulp";
 import * as path from "path";
 import { parsePost, uuidv4 } from "./src/markdown/transformPosts";
