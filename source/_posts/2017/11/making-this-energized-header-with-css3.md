@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.webdesignerdepot.com/uploads/2014/05/thumbnail8.jpg
 date: 2017-11-19T10:00:00.000+07:00

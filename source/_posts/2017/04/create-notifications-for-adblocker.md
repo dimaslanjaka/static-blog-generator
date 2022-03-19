@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
 date: 2017-04-13T07:22:00.000+07:00

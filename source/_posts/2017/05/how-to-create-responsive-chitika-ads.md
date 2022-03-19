@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
 date: 2017-05-02T21:18:00.000+07:00

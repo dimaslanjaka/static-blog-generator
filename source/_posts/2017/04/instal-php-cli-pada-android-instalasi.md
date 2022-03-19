@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg
 date: 2017-04-09T13:26:00.001+07:00

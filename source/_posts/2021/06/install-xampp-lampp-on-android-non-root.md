@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 date: 2021-06-02T20:52:00.004+07:00

@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
 date: 2017-04-09T13:00:00.001+07:00

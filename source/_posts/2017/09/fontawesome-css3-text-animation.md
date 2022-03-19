@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://1.bp.blogspot.com/-JTaqhxiYd1E/WcU1hIQLgxI/AAAAAAAAAHk/sZcV1Nd5gf8nN_sb9B26g69ev9WkebldACLcBGAs/s320/Screenshot_2017-09-22-23-08-01-400_com.android.chrome.png
 date: 2017-09-20T11:36:00.000+07:00

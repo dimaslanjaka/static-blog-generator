@@ -3,7 +3,8 @@ author:
   nick: Kuswati
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2020-10-24T09:19:00.000+07:00
