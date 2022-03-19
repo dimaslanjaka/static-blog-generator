@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - PHP
   - Programming
+  - PHP
 comments: true
 cover: https://imgdb.net/images/3203.jpg
 date: 2017-11-11T23:34:00.000+07:00

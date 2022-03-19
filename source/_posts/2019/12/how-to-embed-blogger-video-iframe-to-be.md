@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - HTML
   - Programming
+  - HTML
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/c1ec076b93bbc245f81fcb7f15845eca.jpeg
 date: 2019-12-23T02:43:00.000+07:00

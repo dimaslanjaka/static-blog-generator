@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - PHP
   - Programming
+  - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
 date: 2018-11-23T22:25:00.000+07:00

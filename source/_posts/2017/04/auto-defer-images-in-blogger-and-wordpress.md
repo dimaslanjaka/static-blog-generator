@@ -4,8 +4,8 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - JS
   - Programming
+  - JS
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQCQZ1lrGJs-Gmk6cKtdBHXyfgzRIAQYqScDZlU2o_MkjX0SylMtA
 date: 2017-04-10T21:55:00.000+07:00

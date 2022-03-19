@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
 category:
-  - JS
   - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png
 date: 2017-08-21T10:55:00.003+07:00

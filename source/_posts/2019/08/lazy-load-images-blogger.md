@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - JS
   - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
 date: 2019-08-01T00:05:00.000+07:00

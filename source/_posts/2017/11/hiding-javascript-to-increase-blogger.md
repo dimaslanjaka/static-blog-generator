@@ -4,8 +4,8 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - JS
   - Programming
+  - JS
 comments: true
 cover: https://lh5.googleusercontent.com/proxy/zOJPQmOxXy895GIkyGjPcsnz3xVCQZGUJhgMGWk2BJS4JNQcjbpMUA9IeG5TdHv9Yv0q5USG8ipopidYGRGZUZgo-yGy2zPcevf0iMrMACluVNuYUgrAOQ=w300-h300-nc
 date: 2017-11-18T13:56:00.000+07:00

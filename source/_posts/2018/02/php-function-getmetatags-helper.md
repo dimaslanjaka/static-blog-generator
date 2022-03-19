@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - PHP
   - Programming
+  - PHP
 comments: true
 cover: //urlz.fr/6BUs
 date: 2018-02-21T20:55:00.000+07:00

@@ -4,8 +4,8 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - JS
   - Programming
+  - JS
 comments: true
 cover: https://1.bp.blogspot.com/-vBmmKKOdix4/V510voCoYqI/AAAAAAAAPNk/gttSjmyHe3Q9trg2yO_FF8HnxFws0P7VgCLcB/s320/featured%2Bpost%2Bimage%2Bslider%2Botomatis%2Bblogger.JPG
 date: 2017-05-11T07:17:00.000+07:00

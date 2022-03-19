@@ -4,8 +4,8 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - JS
   - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg
 date: 2017-12-27T05:39:00.000+07:00
