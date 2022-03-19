@@ -11,6 +11,10 @@ subtitle: Bypass FRP Redmi GO Tiare Via MiFlash
 title: Fix FRP Redmi GO Tiare Via MiFlash
 toc: true
 uuid: 8c318f99-ed4a-4888-8415-e0ff5b08bc39
+category:
+  - Uncategorized
+tags:
+  - Untagged
 updated: 2022-01-05T01:03:09+07:00
 lang: en
 excerpt: Bypass FRP Redmi GO Tiare Via MiFlash

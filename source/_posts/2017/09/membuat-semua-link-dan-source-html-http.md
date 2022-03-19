@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
 comments: true
 cover: https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
 date: 2017-09-11T22:49:00.002+07:00
