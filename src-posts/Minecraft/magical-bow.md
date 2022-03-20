@@ -6,9 +6,9 @@ keywords:
   - minecraft
 lang: en
 subtitle: How to use magical books for bow
-tags:
-  - games
-  - minecraft
+category:
+  - Games
+  - Minecraft
 title: Magical Book For Bow
 uuid: a4619a8b-d625-4888-8e18-5569e773bd85
 webtitle: Minecraft
