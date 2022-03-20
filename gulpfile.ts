@@ -143,6 +143,10 @@ function articleCopy(done: TaskCallback) {
                     parseSource.metadata.updated = format_stdout;
                     // only store modified time to original source post file when both modified date is different
                     if (parse.metadata.updated !== parseSource.metadata.updated) {
+                      fs.appendFileSync(
+                        path.join(__dirname, "tmp/updated-time.log"),
+                        `Update ${sourceFile} with ${format_stdout} from ${parseSource.metadata.updated}\n`
+                      );
                       saveParsedPost(parseSource, sourceFile);
                     }
                   }
