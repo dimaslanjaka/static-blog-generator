@@ -98,6 +98,9 @@
     "xml": "^1.0.1",
     "yaml": "^1.10.2"
   },
+  "peerDependencies": {
+    "hexo": "6.0.0"
+  },
   "devDependencies": {
     "@types/browser-sync": "^2.26.1",
     "@types/cookie-parser": "^1.4.2",
