@@ -130,7 +130,8 @@ function articleCopy(done: TaskCallback) {
                 const modified_file = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
                 // if modified today, try get modification date from git commit
                 const isToday = moment(modified_file).isSame(moment(), "day"); // O/P : **true**
-                if (isToday) {
+                // only run this function on localhost (not github workflow)
+                if (isToday && typeof process.env.GITFLOW === "undefined") {
                   // get modified date from git commit date
                   const stdout = execSync('git log -1 --pretty="format:%cD" ' + sourceFile, { encoding: "utf8" });
                   const format_stdout = moment(stdout.trim()).format("YYYY-MM-DDTHH:mm:ssZ");
