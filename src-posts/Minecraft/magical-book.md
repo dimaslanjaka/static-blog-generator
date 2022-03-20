@@ -7,9 +7,9 @@ keywords:
   - minecraft
 lang: en
 subtitle: All Description And Usages Of Magical Books Minecraft
-tags:
-  - games
-  - minecraft
+category:
+  - Games
+  - Minecraft
 title: Magical Books
 toc: true
 uuid: 90a378ff-426f-4888-8b7c-a97e78646688
