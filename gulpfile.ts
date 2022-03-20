@@ -141,7 +141,7 @@ function articleCopy(done: TaskCallback) {
                     // save the git modified time to source post file
                     const parseSource = parsePost(sourceFile);
                     parseSource.metadata.updated = format_stdout;
-                    saveParsedPost(parseSource, sourceFile);
+                    //saveParsedPost(parseSource, sourceFile);
                   }
                 }
               }
