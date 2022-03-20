@@ -27,4 +27,32 @@ description: If you Got this issue today on windows, but dont need to downgrade
   node, just as discussed on
 ---
 
-<p>    If you Got this issue today on windows, but don't need to downgrade node, just as     discussed on </p><a href="https://stackoverflow.com/a/58199866" rel="noopener noreferer nofollow">Stackoverflow</a><p>    just need to change some hashes on your project: </p> <code>node_modules\react-native\packager\blacklist.js</code> <pre><br>var sharedBlacklist = [<br>  /node_modules[/\\]react[/\\]dist[/\\].*/,<br>  /website\/node_modules\/.*/,<br>  /heapCapture\/bundle\.js/,<br>  /.*\/__tests__\/.*/<br>];<br></pre>Change to: <pre><br>var sharedBlacklist = [<br>  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,<br>  /website\/node_modules\/.*/,<br>  /heapCapture\/bundle\.js/,<br>  /.*\/__tests__\/.*/<br>];<br></pre>
+If you Got this issue today on windows, but don't need to downgrade node, just as discussed on
+
+[Stackoverflow](https://stackoverflow.com/a/58199866)
+
+just need to change some hashes on your project:
+
+`node_modules\react-native\packager\blacklist.js`
+
+  
+```javascript
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
+```
+
+Change to:
+
+  
+```js
+var sharedBlacklist = [
+  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
+```
