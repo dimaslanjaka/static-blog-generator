@@ -131,8 +131,6 @@ function articleCopy(done: TaskCallback) {
                 // if modified today, try get modification date from git commit
                 const isToday = moment(modified_file).isSame(moment(), "day"); // O/P : **true**
                 if (isToday) {
-                  // console.log(parse.metadata.title, parse.metadata.updated, modified_file);
-                  // parse.metadata.updated = modified_file;
                   // get modified date from git commit date
                   const stdout = execSync('git log -1 --pretty="format:%cD" ' + sourceFile, { encoding: "utf8" });
                   const format_stdout = moment(stdout.trim()).format("YYYY-MM-DDTHH:mm:ssZ");
