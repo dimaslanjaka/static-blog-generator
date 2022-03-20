@@ -3,7 +3,8 @@ cover: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit
 date: 2021-12-08T19:48:00+07:00
 lang: en
 category:
-  - Blogging
+  - Programming
+  - Blogger
 tags:
   - Blogger
   - XML
