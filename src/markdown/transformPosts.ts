@@ -125,8 +125,8 @@ export function parsePost(text: string): parsePostReturn | null {
               {}
             ) as parsePostReturn["metadata"];
         }
+        // default category
         if (!meta.category) meta.category = ["Uncategorized"];
-        if (!meta.tags) meta.tags = ["Untagged"];
         return {
           metadataString: m[0],
           metadata: meta,
@@ -164,6 +164,17 @@ export function fixPostBody(str: string) {
     str = str.replace(notranslate, "");
   }
   return str;
+}
+
+/**
+ * Save Parsed Hexo markdown post
+ * @param parsed return {@link parsePost}
+ * @param file file path to save
+ */
+export function saveParsedPost(parsed: parsePostReturn, file: string) {
+  const rebuildPost = `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
+  if (!fs.existsSync(path.dirname(file))) fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, rebuildPost);
 }
 
 /**
