@@ -4,6 +4,9 @@ webtitle: Playbook88
 subtitle: Informasi bocoran jackpot
 date: 2022-03-20
 updated: 2022-03-20
+category:
+  - Games
+  - Playbook88
 ---
 
 ![](https://51.79.239.136/wp-content/uploads/2021/12/JP.gif)
