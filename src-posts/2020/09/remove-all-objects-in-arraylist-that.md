@@ -28,4 +28,20 @@ description: pre><br />ArrayList&lt;String&gt; firstArr = new
   ArrayList&lt;&gt;();<br /> firstArr.add(&quot;1&quot;);<br />
 ---
 
-<pre><br>ArrayList&lt;String&gt; firstArr = new ArrayList&lt;&gt;();<br>  firstArr.add("1");<br>  firstArr.add("2");<br>  firstArr.add("3");<br>  <br>  // array/list to be removed from firstArr<br>  ArrayList&lt;String&gt; filterArr = new ArrayList&lt;&gt;();<br>  filterArr.add("1");<br>  filterArr.add("3");<br>  <br>  // filter now<br>  filterArr.removeAll(blockedArr);<br>  <br>  // Dump<br>  System.out.println(filterArr.toString); // output 1 and 3<br>  </pre>
+```java
+  ArrayList<String> firstArr = new ArrayList<>();
+  firstArr.add("1");
+  firstArr.add("2");
+  firstArr.add("3");
+  
+  // array/list to be removed from firstArr
+  ArrayList<String> filterArr = new ArrayList<>();
+  filterArr.add("1");
+  filterArr.add("3");
+  
+  // filter now
+  filterArr.removeAll(blockedArr);
+  
+  // Dump
+  System.out.println(filterArr.toString); // output 1 and 3
+```
