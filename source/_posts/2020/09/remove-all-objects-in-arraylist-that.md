@@ -21,11 +21,8 @@ title: Remove all objects in an arraylist that exist in another arraylist Java
 type: post
 uuid: 86dc6b3b-9670-4888-8e6a-bd91726de97c
 webtitle: WMI Gitlab
-<<<<<<< HEAD
 updated: 2022-03-20T20:57:28+07:00
-=======
 updated: 2022-03-20T20:36:55+07:00
->>>>>>> 549dddd5788ed34d60596db54388ee5a822ba149
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
@@ -40,15 +37,15 @@ excerpt: pre><br />ArrayList&lt;String&gt; firstArr = new
   firstArr.add("1");
   firstArr.add("2");
   firstArr.add("3");
-  
+
   // array/list to be removed from firstArr
   ArrayList<String> filterArr = new ArrayList<>();
   filterArr.add("1");
   filterArr.add("3");
-  
+
   // filter now
   filterArr.removeAll(blockedArr);
-  
+
   // Dump
   System.out.println(filterArr.toString); // output 1 and 3
 ```
