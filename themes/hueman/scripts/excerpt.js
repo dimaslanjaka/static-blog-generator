@@ -4,23 +4,10 @@
  * @returns {string}
  */
 function extractText(text) {
-  let str = text;
-  const scriptgx =
-    /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>/gim;
-  const defaultgx = /\<[^\>]+\>/gm; // default only g
-  const stylegx =
-    /<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>/gim;
-  return str.replace(scriptgx, '').replace(stylegx, '').replace(defaultgx, '');
-}
-
-function get_excerpt(post) {
-  if (post.excerpt) {
-    return post.excerpt.replace(/\<[^\>]+\>/g, '');
-  } else if (post.content) {
-    return post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
-  } else {
-    return extractText(post);
-  }
+  return text.replace(
+    /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>|<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>/gm,
+    '',
+  );
 }
 
 function excerpt_original(post) {
