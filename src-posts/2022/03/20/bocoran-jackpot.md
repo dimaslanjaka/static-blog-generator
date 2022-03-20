@@ -1,12 +1,13 @@
 ---
-title: Bocoran Jackpot
-webtitle: Playbook88
-subtitle: Informasi bocoran jackpot
-date: 2022-03-20
-updated: 2022-03-20
 category:
   - Games
   - Playbook88
+date: 2022-03-20
+subtitle: Informasi bocoran jackpot
+title: Bocoran Jackpot
+updated: 2022-03-20T19:08:18+07:00
+uuid: d469a16a-26c0-4888-8f6d-cf7ce1151856
+webtitle: Playbook88
 ---
 
 ![](https://51.79.239.136/wp-content/uploads/2021/12/JP.gif)
