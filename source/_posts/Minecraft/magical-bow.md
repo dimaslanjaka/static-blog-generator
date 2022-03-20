@@ -17,8 +17,6 @@ thumbnail: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 description: How to use magical books for bow
-tags:
-  - Untagged
 excerpt: How to use magical books for bow
 ---
 

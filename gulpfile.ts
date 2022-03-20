@@ -7,7 +7,7 @@ import { hashElement } from "folder-hash";
 import md5File from "md5-file";
 import { execSync } from "child_process";
 import * as path from "path";
-import { parsePost, uuidv4 } from "./src/markdown/transformPosts";
+import { parsePost, saveParsedPost, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import minifyHtml from "./src/gulp/minify";
@@ -135,7 +135,14 @@ function articleCopy(done: TaskCallback) {
                   // get modified date from git commit date
                   const stdout = execSync('git log -1 --pretty="format:%cD" ' + sourceFile, { encoding: "utf8" });
                   const format_stdout = moment(stdout.trim()).format("YYYY-MM-DDTHH:mm:ssZ");
-                  parse.metadata.updated = format_stdout;
+                  // only run if existing post updated time is different with git modified time
+                  if (parse.metadata.updated != format_stdout) {
+                    parse.metadata.updated = format_stdout;
+                    // save the git modified time to source post file
+                    const parseSource = parsePost(sourceFile);
+                    parseSource.metadata.updated = format_stdout;
+                    saveParsedPost(parseSource, sourceFile);
+                  }
                 }
               }
               if (!parse.metadata.date.includes("+")) {
@@ -216,8 +223,7 @@ function articleCopy(done: TaskCallback) {
             }
 
             if (parse.metadata && parse.body) {
-              const rebuildPost = `---\n${YAML.stringify(parse.metadata)}---\n\n${parse.body}`;
-              writeFileSync(file, rebuildPost);
+              saveParsedPost(parse, file);
             }
           }
         }
