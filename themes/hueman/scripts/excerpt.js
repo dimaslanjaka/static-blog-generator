@@ -1,11 +1,12 @@
 /**
  * Extract Text
+ * @todo remove style,script,comment html tag
  * @param {string} text
  * @returns {string}
  */
 function extractText(text) {
   return text.replace(
-    /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>|<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>/gm,
+    /<script(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/script>|<style(?:(?!\/\/)(?!\/\*)[^'"]|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\/.*(?:\n)|\/\*(?:(?:.|\s))*?\*\/)*?<\/style>|<!--[\s\S]*?-->/gim,
     '',
   );
 }
@@ -21,6 +22,7 @@ function excerpt_original(post) {
   } else {
     excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
   }
+  // remove double/single quotes
   return excerpt.replace(/[\"\']/, '');
 }
 
