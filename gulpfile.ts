@@ -141,7 +141,10 @@ function articleCopy(done: TaskCallback) {
                     // save the git modified time to source post file
                     const parseSource = parsePost(sourceFile);
                     parseSource.metadata.updated = format_stdout;
-                    //saveParsedPost(parseSource, sourceFile);
+                    // only store modified time to original source post file when both modified date is different
+                    if (parse.metadata.updated !== parseSource.metadata.updated) {
+                      saveParsedPost(parseSource, sourceFile);
+                    }
                   }
                 }
               }
