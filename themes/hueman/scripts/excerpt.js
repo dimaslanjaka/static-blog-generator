@@ -34,7 +34,7 @@ function excerpt_original(post) {
   } else {
     excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
   }
-  return excerpt;
+  return excerpt.replace(/[\"\']/, '');
 }
 
 /**
