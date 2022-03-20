@@ -4,3 +4,5 @@ https://www.ssltrust.com.au/ssl-tools/website-security-check?domain=webmanajemen
 https://www.search.com/web?q=webmanajemen.com&qo=homeSearchBox
 https://duckduckgo.com/www.webmanajemen.com?ia=web
 https://ersupport.com/plugins/QuickWebProxy/miniProxy.php?https://www.webmanajemen.com/
+http://treinandoseo.esy.es/seo-panel/plugins/QuickWebProxy/miniProxy.php?https://www.webmanajemen.com/
+https://empreendacomperformance.com/wp-content/plugins/super-links/application/helpers/super-links-proxy.php?https://www.webmanajemen.com/
