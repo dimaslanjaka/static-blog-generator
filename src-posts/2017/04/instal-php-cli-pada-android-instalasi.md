@@ -3,7 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: 
+category:
   - Programming
   - PHP
 comments: true
@@ -131,10 +131,10 @@ description: Official php-cli installation on android by L3n4r0x (php Running On
       </tbody>
     </table>
     Done. Try test open the Terminal emulator. Type the following code: <br />
-    <br />
-    php -v <br />
-    php --help <br />
-    <br />
+    <pre>
+    php -v
+    php --help
+    </pre>
     <table align="center" cellpadding="0" cellspacing="0">
       <tbody>
         <tr>
@@ -142,7 +142,7 @@ description: Official php-cli installation on android by L3n4r0x (php Running On
             <a
               href="https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/16681945_1737945366535452_7911565320819698077_n.png.jpg?efg=eyJpIjoidCJ9&amp;_nc_eui2=v1%3AAeHINJr_n4BocgCIOoIv5Of91PA65CcH0sY_WavQVXTlxnXFlUbfatL4PIoNcwX8LIVHwjq8xGa8zxSqvIS9x7GUrWL5COW0Tkat7Uv4LJs5rA&amp;oh=ce40fc8acc02caf728a9956a95ad6b3e&amp;oe=5939A832"
               rel="noopener noreferer nofollow">
-              <img border="0" src="https://goo.gl/hR9MbP" />
+              <img border="0" src="instal-php-cli-pada-android-instalasi/terminal-preview.webp" />
             </a>
           </td>
         </tr>
