@@ -101,6 +101,8 @@ jobs:
           gulp sitemap
           echo "Generating Google News Sitemap"
           gulp sitemap-gn
+          echo "Copy Robots.txt"
+          cp -rf source/robots.txt docs/robots.txt
       - name: Minify HTML
         if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         run: gulp hexo:minify
