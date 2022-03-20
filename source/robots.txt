@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: *.txt
+Disallow: /backend/*
 Disallow: /page/*
 Disallow: /tags/*
 Disallow: /search/label/*
