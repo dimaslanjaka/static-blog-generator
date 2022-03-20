@@ -1,5 +1,6 @@
 ---
 title: Bocoran Jackpot
+webtitle: Playbook88
 subtitle: Informasi bocoran jackpot
 date: 2022-03-20
 updated: 2022-03-20
