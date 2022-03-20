@@ -3,15 +3,26 @@
 //import "./src/node/console";
 import "js-prototypes";
 import * as gulp from "gulp";
+import { hashElement } from "folder-hash";
+import md5File from "md5-file";
+import { execSync } from "child_process";
 import * as path from "path";
 import { parsePost, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
+import minifyHtml from "./src/gulp/minify";
+import { TaskCallback } from "undertaker";
+import { writeFileSync } from "./packages/hexo-blogger-xml/src/parser/util";
 import shortcodeInclude from "./src/gulp/shortcode/include";
 import { copyDir, loopDir, slash } from "./src/gulp/utils";
+import GoogleNewsSitemap, { ClassItemType } from "./packages/google-news-sitemap/src";
+import moment from "moment";
 import { shortcodeScript } from "./src/gulp/shortcode/script";
 import { shortcodeNow } from "./src/gulp/shortcode/time";
 import { shortcodeCss } from "./src/gulp/shortcode/css";
+import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
+import extractText from "./src/gulp/shortcode/extract-text";
+import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 //import { gulpCore } from "hexo-blogger-xml";
 
@@ -61,9 +72,6 @@ function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
 }
 
 let tryCount = 0;
-import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
-import extractText from "./src/gulp/shortcode/extract-text";
-import YAML from "yaml";
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
@@ -113,10 +121,23 @@ function articleCopy(done: TaskCallback) {
                   }
                 }
               }
+              const stats = fs.statSync(sourceFile);
               if (!parse.metadata.updated) {
-                const stats = fs.statSync(sourceFile);
                 const mtime = stats.mtime;
                 parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
+              } else {
+                const mtime = stats.mtime;
+                const modified_file = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
+                // if modified today, try get modification date from git commit
+                const isToday = moment(modified_file).isSame(moment(), "day"); // O/P : **true**
+                if (isToday) {
+                  // console.log(parse.metadata.title, parse.metadata.updated, modified_file);
+                  // parse.metadata.updated = modified_file;
+                  // get modified date from git commit date
+                  const stdout = execSync('git log -1 --pretty="format:%cD" ' + sourceFile, { encoding: "utf8" });
+                  const format_stdout = moment(stdout.trim()).format("YYYY-MM-DDTHH:mm:ssZ");
+                  parse.metadata.updated = format_stdout;
+                }
               }
               if (!parse.metadata.date.includes("+")) {
                 parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
@@ -241,9 +262,6 @@ gulp.task("blogger", function (done) {
   done();
 });
 
-import minifyHtml from "./src/gulp/minify";
-import { TaskCallback } from "undertaker";
-import { writeFileSync } from "./packages/hexo-blogger-xml/src/parser/util";
 gulp.task("hexo:minify", function () {
   return gulp
     .src("docs/**/*.html")
@@ -312,8 +330,6 @@ gulp.task("sitemap", (done) => {
   return sitemap(done);
 });
 
-import GoogleNewsSitemap, { ClassItemType } from "./packages/google-news-sitemap/src";
-import moment from "moment";
 // google news sitemap generator
 gulp.task("sitemap-gn", (done) => {
   const sitemaps = new GoogleNewsSitemap();
@@ -415,8 +431,6 @@ gulp.task("sitemap-gn", (done) => {
   });
 });
 
-import { hashElement } from "folder-hash";
-import md5File from "md5-file";
 // update .guid has based on src-posts for github workflow cache
 gulp.task("update-hash", (done) => {
   const loc = path.join(__dirname, ".guid");
