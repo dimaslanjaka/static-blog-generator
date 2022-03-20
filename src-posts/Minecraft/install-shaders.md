@@ -8,7 +8,7 @@ keywords:
 lang: id
 subtitle: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci
   ini dengan screenshot
-tags:
+category:
   - games
   - minecraft
 title: Bagaimana cara install shaders minecraft
