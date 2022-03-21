@@ -147,7 +147,7 @@ function articleCopy(done: TaskCallback) {
                       path.join(__dirname, "tmp/updated-time.log"),
                       `Update ${sourceFile} with ${format_stdout} from ${parseSource.metadata.updated}\n`
                     );
-                    saveParsedPost(parseSource, sourceFile);
+                    //saveParsedPost(parseSource, sourceFile);
                   }
                 }
               }
