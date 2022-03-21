@@ -151,6 +151,9 @@ function articleCopy(done: TaskCallback) {
                   }
                 }
               }
+              if (!parse.metadata.date) {
+                parse.metadata.date = moment(new Date()).format("YYYY-MM-DDTHH:mm:ssZ");
+              }
               if (!parse.metadata.date.includes("+")) {
                 parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
               }
