@@ -5,6 +5,7 @@ category:
   - Games
   - Chimeraland
 subtitle: Spawn locations of flowers
+toc: true
 ---
 
 ## Equinox Flower Spawn Location
