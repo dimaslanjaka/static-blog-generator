@@ -210,8 +210,8 @@ function articleCopy(done: TaskCallback) {
                   }
                 }
                 // remove duplicated tags and categories
-                parse.metadata.category = parse.metadata.category.unique();
-                parse.metadata.tags = parse.metadata.tags.unique();
+                parse.metadata.category = parse.metadata.category.uniqueStringArray();
+                parse.metadata.tags = parse.metadata.tags.uniqueStringArray();
                 // move 'programming' to first index
                 parse.metadata.category.forEach((str, i) => {
                   if (str === "Programming") {
