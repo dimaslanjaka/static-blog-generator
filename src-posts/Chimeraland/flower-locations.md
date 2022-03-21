@@ -18,3 +18,6 @@ updated: 2022-03-21
 ![Braggart Border - Fuddler's Beach](https://user-images.githubusercontent.com/12471057/159218222-06251518-afff-4598-b9c5-db91e69a6bd5.png)
 ![Braggart Border - Fuddler's Beach](https://user-images.githubusercontent.com/12471057/159218262-4c315ef8-6746-4668-8d85-6530e4099a01.png)
 Di tempat ini juga banyak ditemukan **Clay**, **Precious Jade**
+
+## Tutorial Video Lokasi Equinox Flower
+{% youtube Gnm-9hgkOB8 %}
