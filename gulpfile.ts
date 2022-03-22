@@ -255,28 +255,53 @@ function afterGenerate(done: TaskCallback) {
   const public_dir = path.join(__dirname, config.public_dir);
   const loop = loopDir(public_dir);
   const hexoURL = new URL(config.url);
-  const exclude = [...config.seo.links.exclude, hexoURL.host, "https://github.com/dimaslanjaka"].uniqueStringArray();
+  const exclude = [
+    ...config.seo.links.exclude,
+    hexoURL.host,
+    "www.webmanajemen.com",
+    "https://github.com/dimaslanjaka",
+    "/dimaslanjaka1",
+  ].uniqueStringArray();
   //console.log(exclude);
-  if (fs.existsSync(__dirname + "/tmp/inspect.log")) fs.unlinkSync(__dirname + "/tmp/inspect.log");
+  //if (fs.existsSync(__dirname + "/tmp/inspect.log")) fs.unlinkSync(__dirname + "/tmp/inspect.log");
 
   for (let index = 0; index < loop.length; index++) {
     const file = loop[index];
     const isHtml = file.endsWith(".html");
     if (isHtml) {
       const doc = parseHTML(fs.readFileSync(file, "utf-8"));
+      const html = doc.querySelector("html");
+      if (html && !html.hasAttribute("lang")) html.setAttribute("lang", "en");
       const hrefs = doc.querySelectorAll("a");
       if (hrefs.length) {
         for (let i = 0; i < hrefs.length; i++) {
           const element = hrefs[i];
-          const href = element.getAttribute("href");
-          if (!href.trim().match(/^(\/[^\/]|#|javascript:)/i) && href.trim().length) {
-            console.log(href);
+          let href = element.getAttribute("href");
+          // skip `/` homepage links
+          if (href && href.length > 2) {
+            if (href.startsWith("//")) href = config.url + href;
+            // skip hash and javascript anchors
+            if (!href.trim().match(/^(#|javascript:)/i) && href.trim().length) {
+              // only get external links
+              if (href.trim().match(/^https?:\/\//)) {
+                const matchHost = exclude.includes(new URL(href).host);
+                const matchHref = exclude.includes(href);
+                if (!matchHost) {
+                  element.setAttribute("rel", "nofollow noopener noreferer");
+                  element.setAttribute("target", "_blank");
+                }
+                if (!matchHost && !matchHref) {
+                  let safelink = "/page/safelink.html?url=" + Buffer.from(encodeURIComponent(href)).toString("base64");
+                  element.setAttribute("href", safelink);
+                }
+              }
+            }
           }
         }
       }
-      const memoryUsage = util.inspect(process.memoryUsage()).replace(/\s+/gm, " ");
-
-      fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
+      //const memoryUsage = util.inspect(process.memoryUsage()).replace(/\s+/gm, " ");
+      //fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
+      fs.writeFileSync(file, doc.toString());
     }
   }
   done();
