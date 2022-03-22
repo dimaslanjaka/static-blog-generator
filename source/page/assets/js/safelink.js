@@ -31,7 +31,8 @@ var H = (function () {
 	};
 })();
 
-$(document).ready(function () {
+$(function () {
+	// scroll to top first visit
 	$('html, body').animate(
 		{
 			scrollTop: 0,
@@ -40,9 +41,12 @@ $(document).ready(function () {
 	);
 
 	//--progress
-	var getlink = $('#result'),
-		gotolink = $('#result2'),
+	var getlink = $('#result'), // button
+		gotolink = $('#result2'), // div
 		timer = $('#progress');
+	// disable gotolink and getlink
+	getlink.prop('disabled', true);
+	gotolink.attr('disabled', 'true');
 
 	countdown(function () {
 		var safq = getQuery('url');
@@ -82,15 +86,21 @@ $(document).ready(function () {
 				'" target="_blank" class="btn btn-success btn-sm">' +
 				l.hostname +
 				'</a> <i class="ml-1 fas fa-arrow-circle-left"></i>';
-			getlink.text('click 2x to get your links');
+			getlink.html('<u>click <b>2x</b></u> to get your links');
 			getlink.prop('disabled', false);
 			timer.remove();
+			// hide goto link
 			gotolink.html(link_);
 			gotolink.fadeOut('fast');
-			if (typeof gtag == 'function') gtag('event', 'safelink-' + saf);
+			if (typeof gtag == 'function') {
+				setTimeout(() => {
+					gtag('event', 'safelink-' + saf);
+				}, 300);
+			}
 		}
 	});
 
+	// getlink listener
 	$('#result').on('click', function () {
 		gotolink.removeClass('d-none');
 		$('html, body').animate(
@@ -100,6 +110,9 @@ $(document).ready(function () {
 			100,
 		);
 		gotolink.fadeIn('slow');
+		setTimeout(() => {
+			gotolink.removeAttr('disabled'); // enable div
+		}, 400);
 	});
 
 	var enc_ = getQuery('crypt_enc');
