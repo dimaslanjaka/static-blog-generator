@@ -13,6 +13,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "server:clean": "npm run clean && hexo server",
+    "server:php": "php -s localhost:4000 -t docs",
     "dev": "ts-node src/electron-express.ts",
     "dev:tsc": "tsc --watch",
     "dev:express": "npx nodemon --config nodemon.json",
