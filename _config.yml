@@ -43,8 +43,9 @@ code_dir: downloads/code
 i18n_dir: :lang
 # https://hexo.io/docs/configuration.html
 skip_render:
-  - "yandex_*.html"
+  - "yandex_*"
   - "ahrefs_*"
+  - "glx_*"
   - "Midi"
   - "Midi/**/*"
   - "page"
