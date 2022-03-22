@@ -21,7 +21,7 @@ title: Install PHP for Android (CLI or Web Server)
 type: post
 uuid: 14e9225b-f78d-4888-85cc-de9f5862689c
 webtitle: WMI Gitlab
-updated: 2022-03-20T21:46:11+07:00
+updated: 2020-01-24T06:50:22+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg

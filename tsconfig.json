@@ -34,7 +34,11 @@
     "outDir": "./build",
     "noLib": false,
     "esModuleInterop": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
   },
   "buildOnSave": true,
   "compileOnSave": true,
