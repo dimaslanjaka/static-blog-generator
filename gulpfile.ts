@@ -261,6 +261,7 @@ function afterGenerate(done: TaskCallback) {
     "www.webmanajemen.com",
     "https://github.com/dimaslanjaka",
     "/dimaslanjaka1",
+    "dimaslanjaka.github.io",
   ].uniqueStringArray();
   //console.log(exclude);
   //if (fs.existsSync(__dirname + "/tmp/inspect.log")) fs.unlinkSync(__dirname + "/tmp/inspect.log");
