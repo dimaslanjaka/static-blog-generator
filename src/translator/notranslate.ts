@@ -1,12 +1,11 @@
-import jsdom from "jsdom";
-const { JSDOM } = jsdom;
+import parse from "node-html-parser";
+
 export default function (html: string) {
-  const dom = new JSDOM(html);
-  const pretext: NodeListOf<Element> = dom.window.document.querySelectorAll("pre,code");
+  const dom = parse(html);
+  const pretext = dom.querySelectorAll("pre,code"); // NodeListOf<Element>
   pretext.forEach(function (el) {
-    el.classList.toggle("notranslate", true);
+    if (!el.classList.contains("notranslate")) el.classList.add("notranslate");
   });
 
-  //return dom.serialize();
-  return dom.window.document.body.innerHTML;
+  return dom.querySelector("body").innerHTML;
 }

@@ -24,7 +24,13 @@ import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
 import extractText from "./src/gulp/shortcode/extract-text";
 import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
+import { Hexo_Config } from "./types/_config";
+import { parse as parseHTML } from "node-html-parser";
+import util from "util";
 //import { gulpCore } from "hexo-blogger-xml";
+const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
+// generate definition config https://jvilk.com/MakeTypes/
+fs.writeFileSync(__dirname + "/types/_config.json", JSON.stringify(config));
 
 /**
  * Source folder articles
@@ -205,6 +211,7 @@ function articleCopy(done: TaskCallback) {
                 });
                 if (containsTag) {
                   parse.metadata.category.push("Programming");
+                  // remove uncategorized if programming category pushed
                   if (parse.metadata.category.includes("Uncategorized")) {
                     parse.metadata.category = parse.metadata.category.filter((e) => e !== "Uncategorized");
                   }
@@ -244,7 +251,42 @@ function articleCopy(done: TaskCallback) {
   });
 }
 
-// just copy from source posts (src-posts) to production posts (source/_posts)
+function afterGenerate(done: TaskCallback) {
+  const public_dir = path.join(__dirname, config.public_dir);
+  const loop = loopDir(public_dir);
+  const hexoURL = new URL(config.url);
+  const exclude = [...config.seo.links.exclude, hexoURL.host, "https://github.com/dimaslanjaka"].uniqueStringArray();
+  //console.log(exclude);
+  if (fs.existsSync(__dirname + "/tmp/inspect.log")) fs.unlinkSync(__dirname + "/tmp/inspect.log");
+
+  for (let index = 0; index < loop.length; index++) {
+    const file = loop[index];
+    const isHtml = file.endsWith(".html");
+    if (isHtml) {
+      const doc = parseHTML(fs.readFileSync(file, "utf-8"));
+      const hrefs = doc.querySelectorAll("a");
+      if (hrefs.length) {
+        for (let i = 0; i < hrefs.length; i++) {
+          const element = hrefs[i];
+          const href = element.getAttribute("href");
+          if (!href.trim().match(/^(\/[^\/]|#|javascript:)/i) && href.trim().length) {
+            console.log(href);
+          }
+        }
+      }
+      const memoryUsage = util.inspect(process.memoryUsage()).replace(/\s+/gm, " ");
+
+      fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
+    }
+  }
+  done();
+}
+
+gulp.task("article:after-gen", (done) => {
+  afterGenerate(done);
+});
+
+// just copy and process from source posts (src-posts) to production posts (source/_posts)
 gulp.task("article:copy", function (done) {
   articleCopy(done);
 });
@@ -256,6 +298,7 @@ gulp.task("article:clean", function (done) {
   done();
 });
 
+// extract blogger exported xml content to src-posts
 gulp.task("blogger", function (done) {
   ["araka_id.xml" /*"webmanajemen.com.xml"*/].forEach((xml) => {
     const mainXML = path.resolve("./userscripts/xml/" + xml);
@@ -276,6 +319,7 @@ gulp.task("blogger", function (done) {
   done();
 });
 
+// minifying hexo generate result
 gulp.task("hexo:minify", function () {
   return gulp
     .src("docs/**/*.html")
