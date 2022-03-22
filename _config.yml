@@ -44,6 +44,7 @@ i18n_dir: :lang
 # https://hexo.io/docs/configuration.html
 skip_render:
   - "yandex_*.html"
+  - "ahrefs_*"
   - "Midi"
   - "Midi/**/*"
   - "page"
