@@ -160,7 +160,7 @@ export default async function downloadImg(parse: parsePostReturn) {
         return bluebird
           .all(processed)
           .each((data) => {
-            if (data.fullpath && !data.err) {
+            if (data.fullpath) {
               if (!data.err) {
                 if (parse.metadata.cover.trim() === data.url) {
                   parse.metadata.cover = data.fullpath;
@@ -177,6 +177,8 @@ export default async function downloadImg(parse: parsePostReturn) {
                 if (parse.body) {
                   parse.body.replace(data.url, data.fullpath);
                 }
+              } else {
+                console.error(chalk.red("[img][error]"), data);
               }
             }
             return data;
