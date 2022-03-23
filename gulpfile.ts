@@ -327,7 +327,7 @@ function afterGenerate(done: TaskCallback) {
           const artisanfile = basename(dirname(imgobj.file)) + "/" + basename(imgobj.file);
           const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
           result = result.replace(new RegExp(imgobj.url, "gm"), fullpathfile);
-          //if (imgobj.url.includes("fabianlee")) console.log(imgobj.url, artisanfile);
+          if (imgobj.url.includes("fabianlee")) console.log(imgobj.url, fullpathfile);
         }
       }
       fs.writeFileSync(file, result);
