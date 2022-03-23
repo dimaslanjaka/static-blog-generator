@@ -78,6 +78,7 @@ jobs:
       #- run: npm i hexo-seo hexo-blogger-xml hexo-adsense
       - run: cd themes/material && npm install
       - run: npx gulp article:copy
+      - run: npx gulp article:img
       - run: npx hexo clean
         # run if commit contains substring 'clean cache'
         if: "contains(github.event.head_commit.message, 'clean cache')"
