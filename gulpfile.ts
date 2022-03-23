@@ -26,10 +26,7 @@ import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
 import { parse as parseHTML } from "node-html-parser";
-import downloadImg, { imagesDBFile, ImgLib, ImgLibData } from "./src/gulp/fix/external-img";
-import { basename, dirname, join } from "path";
-import { cwd } from "process";
-import chalk from "chalk";
+import downloadImg from "./src/gulp/fix/external-img";
 import bluebird from "bluebird";
 
 //import { gulpCore } from "hexo-blogger-xml";
@@ -276,8 +273,6 @@ function afterGenerate(done: TaskCallback) {
     "/dimaslanjaka1",
     "dimaslanjaka.github.io",
   ].uniqueStringArray();
-  //console.log(exclude);
-  //if (fs.existsSync(__dirname + "/tmp/inspect.log")) fs.unlinkSync(__dirname + "/tmp/inspect.log");
 
   for (let index = 0; index < loop.length; index++) {
     const file = loop[index];
@@ -318,26 +313,6 @@ function afterGenerate(done: TaskCallback) {
       //const memoryUsage = util.inspect(process.memoryUsage()).replace(/\s+/gm, " ");
       //fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
       let result = doc.toString();
-      const ijs: ImgLib = JSON.parse(fs.readFileSync(imagesDBFile, "utf-8"));
-      for (const key in ijs) {
-        if (Object.prototype.hasOwnProperty.call(ijs, key)) {
-          const imgobj: ImgLibData = ijs[key];
-
-          // img direct asset folder
-          const artisanfile = basename(dirname(file)) + "/" + basename(imgobj.file);
-          const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
-          const genfile = imgobj.file.replace(cwd(), "").replace("/source/_posts/", `/${config.public_dir}/`);
-          const findGenFile = join(__dirname, genfile);
-
-          /*if (!fs.existsSync(findGenFile)) {
-            console.error(chalk.redBright(genfile), "not exists");
-            continue;
-          }*/
-
-          result = result.replace(new RegExp(imgobj.url, "gm"), fullpathfile);
-          console.log(`${imgobj.url} => ${fullpathfile}`);
-        }
-      }
       fs.writeFileSync(file, result);
     }
   }
@@ -345,7 +320,7 @@ function afterGenerate(done: TaskCallback) {
 }
 
 gulp.task("article:img", (done) => {
-  const posts = loopDir(join(__dirname, config.source_dir, "_posts")).filter((f) => f.endsWith(".md"));
+  const posts = loopDir(path.join(__dirname, config.source_dir, "_posts")).filter((f) => f.endsWith(".md"));
   return bluebird
     .all(posts)
     .map(parsePost)
