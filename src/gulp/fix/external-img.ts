@@ -3,7 +3,7 @@ import { parsePostReturn } from "../../markdown/transformPosts";
 import crypto from "crypto";
 import { basename, dirname, join } from "path";
 import { cwd } from "process";
-import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, rmdirSync, unlinkSync, writeFileSync } from "fs";
 import "js-prototypes";
 
 export interface ImgLib {
@@ -79,6 +79,8 @@ export default async function downloadImg(parse: parsePostReturn) {
     }
   }
   if (images.length) {
+    // delete log file
+    if (existsSync(join(cwd(), "tmp/images.log"))) unlinkSync(join(cwd(), "tmp/images.log"));
     // remove duplicates
     images = images.unique();
     // process downloading images
@@ -114,7 +116,8 @@ export default async function downloadImg(parse: parsePostReturn) {
                 if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
                 // save images content
                 writeFileSync(libres.file, data);
-                appendFileSync(join(cwd(), "tmp/images.log"), `[img] saved ${libres.file}\n`);
+                // save images log
+                appendFileSync(join(cwd(), "tmp/images.log"), `[img ${parse.fileTree.public}] saved ${libres.file}\n`);
                 // add result to `libraries`
                 libraries[key] = libres;
               }
