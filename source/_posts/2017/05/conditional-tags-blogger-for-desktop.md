@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/05/conditional-tags-blogger-for-desktop/e7bfc6e2e7677ee2d49a33436133c21a.png
+cover: https://i.stack.imgur.com/frOSJ.png
 date: 2017-05-17T20:02:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 24793524-327a-4888-8df4-3dfeac1f9f0c
 webtitle: WMI Gitlab
 updated: 2017-05-17T20:02:06+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/conditional-tags-blogger-for-desktop/e7bfc6e2e7677ee2d49a33436133c21a.png
+thumbnail: https://i.stack.imgur.com/frOSJ.png
 photos:
   - https://i.stack.imgur.com/frOSJ.png
 description: h2>Is there any Blogger (blogspot) not portable contingent

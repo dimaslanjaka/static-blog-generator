@@ -5,7 +5,7 @@ author:
 category:
   - Games
   - Genshin Impact
-cover: https://www.webmanajemen.com/Genshin%20Impact/Location/Starconch/e6828de0eae3a1b8628528c763ec8413.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/4/46/Item_Starconch.png/revision/latest
 date: 2020-06-12T00:00:00+07:00
 lang: id
 location: Indonesia
@@ -17,7 +17,7 @@ title: Starconch Location
 type: post
 uuid: f300e9d4-361e-4888-80b7-8338c028d93a
 updated: 2021-12-19T06:32:29+07:00
-thumbnail: https://www.webmanajemen.com/Genshin%20Impact/Location/Starconch/e6828de0eae3a1b8628528c763ec8413.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/4/46/Item_Starconch.png/revision/latest
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/4/46/Item_Starconch.png/revision/latest
 description: Where to find starconch in genshin impact

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/02/albino-lovebird-font-duo/0249309e09d06b37172604159be32b51.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/albino-lovebird-font-duo.jpg
 date: 2019-02-21T00:38:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 58f50dc2-6002-4888-82aa-98d1f030ae5a
 webtitle: WMI Gitlab
 updated: 2019-02-21T00:38:03+07:00
-thumbnail: https://www.webmanajemen.com/2019/02/albino-lovebird-font-duo/0249309e09d06b37172604159be32b51.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/albino-lovebird-font-duo.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/albino-lovebird-font-duo.jpg
 description: Albino Lovebird Font Duo Unduh Sumber daya ini berasal dari situs

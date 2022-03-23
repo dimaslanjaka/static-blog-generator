@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-farmville-2-country-escape/488db110f763a89edc6b073ccdaab848.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2014/01/FarmVille-2-Country-Escape-1.jpg
 date: 2018-11-25T21:30:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c23fb60f-b203-4888-8a1e-ba8e514343fa
 webtitle: WMI Gitlab
 updated: 2018-11-30T00:03:52+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-farmville-2-country-escape/488db110f763a89edc6b073ccdaab848.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2014/01/FarmVille-2-Country-Escape-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2014/01/FarmVille-2-Country-Escape-1.jpg
 description: FarmVille  Country Escape 11.3.2931 Apk + Mod Tombol tidak terbatas, Permata

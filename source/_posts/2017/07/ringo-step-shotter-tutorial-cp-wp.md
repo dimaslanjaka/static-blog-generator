@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/07/ringo-step-shotter-tutorial-cp-wp/a3bfa20c68eb913be346b61273565e5e.png
+cover: https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 date: 2017-07-07T16:55:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 3219ab07-317e-4888-8b29-8640b2b47be4
 webtitle: WMI Gitlab
 updated: 2017-07-07T17:10:01+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/ringo-step-shotter-tutorial-cp-wp/a3bfa20c68eb913be346b61273565e5e.png
+thumbnail: https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 photos:
   - https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 ---

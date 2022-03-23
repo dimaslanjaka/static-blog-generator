@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/how-to-create-table-of-contents-or-sitemap-blogger/712cd89b4127c7b6c9ff60318d130650.jpeg
+cover: https://2.bp.blogspot.com/-DIRhiZq0cPg/Vr5-ETcI9AI/AAAAAAAABvo/pwTQPnRlg60/s640/gambar-sitemap-blogger-min.jpg
 date: 2017-05-15T13:46:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 1e78f355-f172-4888-807e-c68e6e937a13
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/how-to-create-table-of-contents-or-sitemap-blogger/712cd89b4127c7b6c9ff60318d130650.jpeg
+thumbnail: https://2.bp.blogspot.com/-DIRhiZq0cPg/Vr5-ETcI9AI/AAAAAAAABvo/pwTQPnRlg60/s640/gambar-sitemap-blogger-min.jpg
 photos:
   - https://2.bp.blogspot.com/-DIRhiZq0cPg/Vr5-ETcI9AI/AAAAAAAABvo/pwTQPnRlg60/s640/gambar-sitemap-blogger-min.jpg
 description: How to create a table of contents or sitemap in blogger or blogspot

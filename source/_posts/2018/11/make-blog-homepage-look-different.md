@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2018/11/make-blog-homepage-look-different/cd3926d9911b23a6dc9743eeaf82a1f4.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-kz6KVIcdKck/WPL9AYym7FI/AAAAAAAAqqI/lqIph6SjXNUJEm0vW6p6HHi0AhV2n1FNwCLcB/w1100/Untitled-1_1.jpg
 date: 2018-11-24T04:39:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 0f247fd0-08db-4888-8fb5-d20fae36cd7a
 webtitle: WMI Gitlab
 updated: 2018-11-24T04:39:01+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/make-blog-homepage-look-different/cd3926d9911b23a6dc9743eeaf82a1f4.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-kz6KVIcdKck/WPL9AYym7FI/AAAAAAAAqqI/lqIph6SjXNUJEm0vW6p6HHi0AhV2n1FNwCLcB/w1100/Untitled-1_1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-kz6KVIcdKck/WPL9AYym7FI/AAAAAAAAqqI/lqIph6SjXNUJEm0vW6p6HHi0AhV2n1FNwCLcB/w1100/Untitled-1_1.jpg
 description: Sometimes we as the blog owner was bored to see the look of the

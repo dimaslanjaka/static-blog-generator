@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/09/download-how-to-overcome-downloads-on/0b181b67abc0b3d1e0384a4bfbc589b8.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2019/03/Google-Drive.jpg
 date: 2019-09-29T05:48:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: d2607a69-f40e-4888-8ec9-e766eb5db3b9
 webtitle: WMI Gitlab
 updated: 2019-10-20T18:33:52+07:00
-thumbnail: https://www.webmanajemen.com/2019/09/download-how-to-overcome-downloads-on/0b181b67abc0b3d1e0384a4bfbc589b8.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2019/03/Google-Drive.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2019/03/Google-Drive.jpg
 description: Download method on PC Many of you still dont understand How To

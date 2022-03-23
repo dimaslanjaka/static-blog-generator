@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/07/cara-mengkonversi-bookmarklet-ke/2f4cd3c1370c46f1f80e2c092c53d2ab.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png
 date: 2017-07-13T07:34:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 1e810e0f-e81f-4888-8d6b-4e28c17de31b
 webtitle: WMI Gitlab
 updated: 2017-07-13T07:34:15+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/cara-mengkonversi-bookmarklet-ke/2f4cd3c1370c46f1f80e2c092c53d2ab.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png
 ---

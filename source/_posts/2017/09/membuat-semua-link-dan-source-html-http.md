@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/09/membuat-semua-link-dan-source-html-http/a087f46bbd97fa5cbd6c575636db8065.png
+cover: https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
 date: 2017-09-11T22:49:00.002+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 4b6e1b22-9d3d-4888-818d-3b3c867fd46c
 webtitle: WMI Gitlab
 updated: 2020-02-06T23:45:23+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/membuat-semua-link-dan-source-html-http/a087f46bbd97fa5cbd6c575636db8065.png
+thumbnail: https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
 photos:
   - https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
 description: Yo guys, kali ini akan saya share bagaimana cara mengubah semua

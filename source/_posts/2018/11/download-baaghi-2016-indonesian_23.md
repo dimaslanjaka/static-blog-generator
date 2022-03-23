@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-baaghi-2016-indonesian_23/c371cfea0dd3c5bf159a9088264ca36d.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.net/wp-content/uploads/2017/06/film-baaghi-2016.jpg
 date: 2018-11-23T23:26:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: cea07d59-bb89-4888-8290-fef8ed8fc392
 webtitle: WMI Gitlab
 updated: 2018-11-23T23:27:50+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-baaghi-2016-indonesian_23/c371cfea0dd3c5bf159a9088264ca36d.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.net/wp-content/uploads/2017/06/film-baaghi-2016.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.net/wp-content/uploads/2017/06/film-baaghi-2016.jpg
 description: .content ,.keyword *,.keywords * { max-width:100%} @import

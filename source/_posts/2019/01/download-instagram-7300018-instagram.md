@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-instagram-7300018-instagram/a16e0bc11fe4aac2ea85ed168811ec11.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/instagram-1.png
 date: 2019-01-25T00:28:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 6b29e7cb-b9ca-4888-8f44-5ec5d846d51e
 webtitle: WMI Gitlab
 updated: 2019-01-25T00:28:01+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-instagram-7300018-instagram/a16e0bc11fe4aac2ea85ed168811ec11.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/instagram-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/instagram-1.png
 description: Instagram 3.0.0.0.18 + Instagram Plus OGInsta + Mod GB Insta Apk

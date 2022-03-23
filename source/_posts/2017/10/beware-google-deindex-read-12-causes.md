@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/10/beware-google-deindex-read-12-causes/7cd5f1c2d2ee9f6d45e9837fff1669f2.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KGl-2bvcaKg/WFA0coka7kI/AAAAAAAAAbU/k-WH1u1o7vUZgxvSTWzOzRnrYEPAS6VdwCLcB/s1600/penyebab-dan-cara-mengatasi-deindex-google.jpg
 date: 2017-10-02T02:59:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: fe8603fe-ee27-4888-8e87-ba3a69e844d4
 webtitle: WMI Gitlab
 updated: 2017-10-02T02:59:06+07:00
-thumbnail: https://www.webmanajemen.com/2017/10/beware-google-deindex-read-12-causes/7cd5f1c2d2ee9f6d45e9837fff1669f2.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KGl-2bvcaKg/WFA0coka7kI/AAAAAAAAAbU/k-WH1u1o7vUZgxvSTWzOzRnrYEPAS6VdwCLcB/s1600/penyebab-dan-cara-mengatasi-deindex-google.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KGl-2bvcaKg/WFA0coka7kI/AAAAAAAAAbU/k-WH1u1o7vUZgxvSTWzOzRnrYEPAS6VdwCLcB/s1600/penyebab-dan-cara-mengatasi-deindex-google.jpg
 ---

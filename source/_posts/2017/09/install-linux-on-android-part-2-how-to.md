@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/install-linux-on-android-part-2-how-to/3486cd30d4139233d8e6b9d4ae66acb3.png
+cover: https://image.ibb.co/fFtDUF/unnamed_5.png
 date: 2017-09-02T23:46:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 93d9745f-e9ee-4888-8cf1-9379fe986077
 webtitle: WMI Gitlab
 updated: 2017-09-02T23:46:07+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/install-linux-on-android-part-2-how-to/3486cd30d4139233d8e6b9d4ae66acb3.png
+thumbnail: https://image.ibb.co/fFtDUF/unnamed_5.png
 photos:
   - https://image.ibb.co/fFtDUF/unnamed_5.png
 ---

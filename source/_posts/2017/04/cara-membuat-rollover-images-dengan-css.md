@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css/7cf9fc8706dbcf5cf995294a49a8050f.png
+cover: https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png
 date: 2017-04-12T01:34:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 66cec86c-5d34-4888-8a7d-3bc86d928a6d
 webtitle: WMI Gitlab
 updated: 2017-04-12T01:34:02+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/cara-membuat-rollover-images-dengan-css/7cf9fc8706dbcf5cf995294a49a8050f.png
+thumbnail: https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png
 photos:
   - https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png
 description: CSS Rollover Efek Gambar  Ganti Gambar pada gambar HoverRollover

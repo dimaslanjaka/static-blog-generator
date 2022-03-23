@@ -2,7 +2,7 @@
 author:
   nick: Dimas Lanjaka
   link: http://webmanajemen.com
-cover: https://www.webmanajemen.com/NodeJS/js-replace-matches-string-regex/dfe9519b0c6447626954e62a6a8ed78e.png
+cover: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/DWR2ZKQ/carbon-3.png
 date: 2021-12-19T15:07:43+07:00
 subtitle: How to match regex from string and replace matched string $1-$9
 tags:
@@ -11,7 +11,7 @@ title: Replace Matched Regex $1-$9 From String
 uuid: 765a18cd-4bfd-4888-8919-eff198a9f8de
 updated: 2021-12-19T15:20:44+07:00
 lang: en
-thumbnail: https://www.webmanajemen.com/NodeJS/js-replace-matches-string-regex/dfe9519b0c6447626954e62a6a8ed78e.png
+thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/DWR2ZKQ/carbon-3.png
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://i.ibb.co/DWR2ZKQ/carbon-3.png
 description: How to match regex from string and replace matched string $1-$9

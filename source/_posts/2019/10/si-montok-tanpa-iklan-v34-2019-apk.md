@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/10/si-montok-tanpa-iklan-v34-2019-apk/aede0b7bb55fb691ae99a37918e190e8.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-vUXS2dpqfgo/XW5OxR98EyI/AAAAAAAAHW0/4j-djiD7fDgHchVIL8SNdn_O2OV9k057QCLcBGAs/s1600/images.png
 date: 2019-10-11T14:28:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 04ecfe1e-8788-4888-81e9-d6706af455bf
 webtitle: WMI Gitlab
 updated: 2019-10-11T14:28:42+07:00
-thumbnail: https://www.webmanajemen.com/2019/10/si-montok-tanpa-iklan-v34-2019-apk/aede0b7bb55fb691ae99a37918e190e8.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-vUXS2dpqfgo/XW5OxR98EyI/AAAAAAAAHW0/4j-djiD7fDgHchVIL8SNdn_O2OV9k057QCLcBGAs/s1600/images.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-vUXS2dpqfgo/XW5OxR98EyI/AAAAAAAAHW0/4j-djiD7fDgHchVIL8SNdn_O2OV9k057QCLcBGAs/s1600/images.png
 description: a

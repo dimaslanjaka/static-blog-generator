@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2020/02/increase-performance-android-studio/155a968093231f35da84f45ff6f96c13.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 date: 2020-03-29T20:23:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 4f7faec7-7a2d-4888-82a3-38d9b208ef1b
 webtitle: WMI Gitlab
 updated: 2020-03-29T20:45:40+07:00
-thumbnail: https://www.webmanajemen.com/2020/02/increase-performance-android-studio/155a968093231f35da84f45ff6f96c13.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 description: Unsupported Modules Detected in Android Studio File > Invalidate

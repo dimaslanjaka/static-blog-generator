@@ -7,7 +7,7 @@ category:
   - The Legend Of Neverland
   - Bluestacks
 comments: true
-cover: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros/ca0dd79387fa764797a350585ba1368e.jpeg
+cover: https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
 date: 2021-09-07T00:00:00+07:00
 lang: en
 location: Indonesia
@@ -20,7 +20,7 @@ type: post
 uuid: 4fc575e7-a1ab-4888-8279-4eed4d8c1d85
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:14+07:00
-thumbnail: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Macros/ca0dd79387fa764797a350585ba1368e.jpeg
+thumbnail: https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
 photos:
   - https://cdn-www.bluestacks.com/bs-images/BlueStacks_Macros_Banner_EN.jpg
 description: Macros Auto Click Bluestacks for the legend of neverland download

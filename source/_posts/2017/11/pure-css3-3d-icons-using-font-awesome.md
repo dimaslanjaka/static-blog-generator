@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/11/pure-css3-3d-icons-using-font-awesome/3e387e4d60fbe516bf24751af0421fb4.jpeg
+cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppA7rQroLKWdCMKXWTRh4ybyogf1cT_XQFnD95O0VCwVjKu_O
 date: 2017-11-10T04:42:00.002+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: ff3683ca-e40b-4888-8440-1a39a3266eaa
 webtitle: WMI Gitlab
 updated: 2017-11-10T04:42:54+07:00
-thumbnail: https://www.webmanajemen.com/2017/11/pure-css3-3d-icons-using-font-awesome/3e387e4d60fbe516bf24751af0421fb4.jpeg
+thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppA7rQroLKWdCMKXWTRh4ybyogf1cT_XQFnD95O0VCwVjKu_O
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppA7rQroLKWdCMKXWTRh4ybyogf1cT_XQFnD95O0VCwVjKu_O
 description: img width=350 height=300 alt=CSS3 3D Transformation layout=responsive

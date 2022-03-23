@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/02/install-mysql-di-termux/e6b473672adfb16d718bea52c0482c9c.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png
 date: 2019-02-07T13:09:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 88f4fad2-2966-4888-8741-45f35477c275
 webtitle: WMI Gitlab
 updated: 2019-02-07T13:18:15+07:00
-thumbnail: https://www.webmanajemen.com/2019/02/install-mysql-di-termux/e6b473672adfb16d718bea52c0482c9c.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png
 description: Install dan buka termuxketik pkg install mariadbmkdir

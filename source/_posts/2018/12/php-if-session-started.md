@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2018/12/php-if-session-started/c8319f4669a63ff1d89999cedd9b5149.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
 date: 2018-12-25T00:58:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 8b9c3c94-5fe5-4888-87f6-ace74d654923
 webtitle: WMI Gitlab
 updated: 2020-01-24T06:39:22+07:00
-thumbnail: https://www.webmanajemen.com/2018/12/php-if-session-started/c8319f4669a63ff1d89999cedd9b5149.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
 description: PHP = 5.4.0 , PHP 7

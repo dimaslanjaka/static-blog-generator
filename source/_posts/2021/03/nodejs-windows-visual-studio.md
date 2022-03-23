@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2021/03/nodejs-windows-visual-studio/5fcf0ee6a05d3ebe03889fb6586ae7a6.png
+cover: https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png
 date: 2021-03-25T06:04:00.006+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 15dbb40f-cd38-4888-8fea-3f90f189a448
 webtitle: WMI Gitlab
 updated: 2021-03-26T17:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2021/03/nodejs-windows-visual-studio/5fcf0ee6a05d3ebe03889fb6586ae7a6.png
+thumbnail: https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png
 photos:
   - https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png
 description: ul> <li>Install <a

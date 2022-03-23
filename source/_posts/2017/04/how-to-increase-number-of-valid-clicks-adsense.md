@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/how-to-increase-number-of-valid-clicks-adsense/0b48e6f5475715a05fc1866ed3f257f3.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
 date: 2017-04-24T08:08:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: fa105e4a-a6cb-4888-8486-3d0dfff2ab97
 webtitle: WMI Gitlab
 updated: 2020-01-08T18:33:30+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/how-to-increase-number-of-valid-clicks-adsense/0b48e6f5475715a05fc1866ed3f257f3.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
 description: How to Increase the Number of Clicks Shah  Valid Clicks Of Adsense

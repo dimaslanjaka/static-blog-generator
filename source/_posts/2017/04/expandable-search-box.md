@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/04/expandable-search-box/4b42ed0bdb3c2458a8f3f1ef9a4bd800.jpeg
+cover: https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSLZVZeQ2rpoUkl-KFH5E9004wBHmgCLcB/s320/Screenshot_2017-04-20-07-39-35.jpg
 date: 2017-04-20T09:40:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: bfb7bbf0-42d5-4888-8b54-583cfa3b4b30
 webtitle: WMI Gitlab
 updated: 2017-04-23T16:10:41+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/expandable-search-box/4b42ed0bdb3c2458a8f3f1ef9a4bd800.jpeg
+thumbnail: https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSLZVZeQ2rpoUkl-KFH5E9004wBHmgCLcB/s320/Screenshot_2017-04-20-07-39-35.jpg
 photos:
   - https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSLZVZeQ2rpoUkl-KFH5E9004wBHmgCLcB/s320/Screenshot_2017-04-20-07-39-35.jpg
 ---

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/bagaimana-menggunakan-ssl-certificate/d875a1f73a7532248aee84154d57576d.jpeg
+cover: https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
 date: 2017-04-27T08:24:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 5a509fca-17bf-4888-819d-36d7c227764b
 webtitle: WMI Gitlab
 updated: 2017-04-27T08:24:11+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/bagaimana-menggunakan-ssl-certificate/d875a1f73a7532248aee84154d57576d.jpeg
+thumbnail: https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
 photos:
   - https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
 description: Bagaimana Menggunakan SSL Certificate Gratis Dengan Bluehost

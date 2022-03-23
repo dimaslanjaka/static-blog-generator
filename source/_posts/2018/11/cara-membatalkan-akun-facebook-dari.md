@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/cara-membatalkan-akun-facebook-dari/da613874b9406baa70c083aa6bb1b185.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
 date: 2018-11-07T23:49:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: fd22cfb9-612a-4888-853a-ad5136aff8b4
 webtitle: WMI Gitlab
 updated: 2018-11-07T23:51:21+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/cara-membatalkan-akun-facebook-dari/da613874b9406baa70c083aa6bb1b185.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
 description: Munculnya aplikasi telah mendorong pengembang untuk memastikan

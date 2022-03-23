@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/12/download-wrong-turn-2-dead-end-2007/0b01842bbe3fcc131e3d81f0999cf3e5.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
 date: 2018-12-23T19:53:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 0bc400b8-98a1-4888-8cd6-362286f3159f
 webtitle: WMI Gitlab
 updated: 2018-12-23T19:53:01+07:00
-thumbnail: https://www.webmanajemen.com/2018/12/download-wrong-turn-2-dead-end-2007/0b01842bbe3fcc131e3d81f0999cf3e5.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
 description: import

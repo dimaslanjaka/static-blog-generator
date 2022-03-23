@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit/c70a7aca5c6058df2e895e846ea25345.png
+cover: https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png
 date: 2017-09-05T01:42:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: fb267490-78fe-4888-8b93-ae871cee96c1
 webtitle: WMI Gitlab
 updated: 2017-09-05T01:42:00+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit/c70a7aca5c6058df2e895e846ea25345.png
+thumbnail: https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png
 photos:
   - https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png
 description: Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda

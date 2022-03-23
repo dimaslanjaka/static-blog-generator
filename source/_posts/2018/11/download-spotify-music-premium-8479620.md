@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-spotify-music-premium-8479620/1aa78a08f59d27b0035ab154d63a575b.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Spotify-Music-1.jpg
 date: 2018-11-15T13:20:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 9141767c-2967-4888-83e9-0037d47195de
 webtitle: WMI Gitlab
 updated: 2018-11-15T13:20:09+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-spotify-music-premium-8479620/1aa78a08f59d27b0035ab154d63a575b.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Spotify-Music-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Spotify-Music-1.jpg
 description: Spotify Music adalah musik  aplikasi audio untuk android men-download versi

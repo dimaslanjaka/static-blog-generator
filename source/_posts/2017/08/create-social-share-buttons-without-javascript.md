@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://www.webmanajemen.com/2017/08/create-social-share-buttons-without-javascript/060f2faf98ff5d6602eb02fdb02372b0.jpeg
+cover: https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
 date: 2017-08-27T07:15:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: cb4a3dd0-3336-4888-812c-3070394f4e79
 webtitle: WMI Gitlab
 updated: 2017-08-27T07:15:12+07:00
-thumbnail: https://www.webmanajemen.com/2017/08/create-social-share-buttons-without-javascript/060f2faf98ff5d6602eb02fdb02372b0.jpeg
+thumbnail: https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
 photos:
   - https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
 description: If you feel loading a blog a bit heavy or slow, one of the causes

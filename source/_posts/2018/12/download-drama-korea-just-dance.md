@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/12/download-drama-korea-just-dance/3c72a43d09404105dea4731c2f7da304.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/12/Download-Drama-Korea-Just-Dance-Subtitle-Indonesia-678x381.jpg
 date: 2018-12-28T01:54:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 8fa4ef27-1391-4888-885e-4f522061c507
 webtitle: WMI Gitlab
 updated: 2019-01-07T01:42:28+07:00
-thumbnail: https://www.webmanajemen.com/2018/12/download-drama-korea-just-dance/3c72a43d09404105dea4731c2f7da304.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/12/Download-Drama-Korea-Just-Dance-Subtitle-Indonesia-678x381.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/12/Download-Drama-Korea-Just-Dance-Subtitle-Indonesia-678x381.jpg
 description: Korean Drama Just Dance Indonesian Subtitles Located in Geoje,

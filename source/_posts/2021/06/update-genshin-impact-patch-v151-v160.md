@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/04/update-genshin-impact-via-download/545e0ca3839594169b741b51db5e280d.png
+cover: https://i.imgur.com/zHDw2i0.png
 date: 2021-06-07T11:20:00.003+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 419c2d50-0863-4888-8472-68be4e9cc5c1
 webtitle: WMI Gitlab
 updated: 2021-06-07T11:55:21+07:00
-thumbnail: https://www.webmanajemen.com/2021/04/update-genshin-impact-via-download/545e0ca3839594169b741b51db5e280d.png
+thumbnail: https://i.imgur.com/zHDw2i0.png
 photos:
   - https://i.imgur.com/zHDw2i0.png
 description: Update genshin impact manual via download manager IDM).

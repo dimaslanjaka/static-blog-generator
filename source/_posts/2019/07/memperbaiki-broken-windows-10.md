@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/07/memperbaiki-broken-windows-10/668ede5e98e7332a498e58303ebcb954.jpeg
+cover: https://1.bp.blogspot.com/-uIxGKxlwpuU/XTIpx8O5NDI/AAAAAAAAAbA/qVaaGh3genIYBE0rl0PDNTnt6RznLulJQCLcBGAs/s1600/2513807.jpg
 date: 2019-07-20T04:30:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: ba38e1a4-1f2c-4888-8289-3ccfcf4407ab
 webtitle: WMI Gitlab
 updated: 2019-07-20T04:30:07+07:00
-thumbnail: https://www.webmanajemen.com/2019/07/memperbaiki-broken-windows-10/668ede5e98e7332a498e58303ebcb954.jpeg
+thumbnail: https://1.bp.blogspot.com/-uIxGKxlwpuU/XTIpx8O5NDI/AAAAAAAAAbA/qVaaGh3genIYBE0rl0PDNTnt6RznLulJQCLcBGAs/s1600/2513807.jpg
 photos:
   - https://1.bp.blogspot.com/-uIxGKxlwpuU/XTIpx8O5NDI/AAAAAAAAAbA/qVaaGh3genIYBE0rl0PDNTnt6RznLulJQCLcBGAs/s1600/2513807.jpg
 description: Tutorial mengatasi windows 0 tanpa kehilangan data (settings,

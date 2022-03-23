@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/05/mimi-tomo-event-guide/5cb8348e39c553ed81607f76e8ef3cbc.jpeg
+cover: https://i.ibb.co/8mHZrW4/189511811-288027676360564-3911263534233651523-n.jpg
 date: 2021-05-28T07:47:00.002+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 388b08c2-3bdd-4888-87bf-16cf9f01c3e9
 webtitle: WMI Gitlab
 updated: 2021-05-29T19:07:46+07:00
-thumbnail: https://www.webmanajemen.com/2021/05/mimi-tomo-event-guide/5cb8348e39c553ed81607f76e8ef3cbc.jpeg
+thumbnail: https://i.ibb.co/8mHZrW4/189511811-288027676360564-3911263534233651523-n.jpg
 photos:
   - https://i.ibb.co/8mHZrW4/189511811-288027676360564-3911263534233651523-n.jpg
 description: Unusual Hilicurl Spawn Time Unta Nunu Stage 1 & 3) Unusual Hilicurl

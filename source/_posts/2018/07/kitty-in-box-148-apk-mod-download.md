@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/07/kitty-in-box-148-apk-mod-download/6975ab4cf4069d5e348000ebab5bdbe3.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/game/kitty-in-the-box.jpg
 date: 2018-07-31T02:24:00.004+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: fa7f6c2a-d391-4888-8ce5-6bcd3d1b4f9c
 webtitle: WMI Gitlab
 updated: 2018-08-05T06:16:12+07:00
-thumbnail: https://www.webmanajemen.com/2018/07/kitty-in-box-148-apk-mod-download/6975ab4cf4069d5e348000ebab5bdbe3.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/game/kitty-in-the-box.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/game/kitty-in-the-box.jpg
 description: Unduh langsung gratis versi terakhir Kitty in the Box Apk Android

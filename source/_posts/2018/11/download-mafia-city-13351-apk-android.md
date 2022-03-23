@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-mafia-city-13351-apk-android/63435559211b20b43a4164a7c23111ed.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/mafia-city-1.jpg
 date: 2018-11-24T02:21:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 39cb3c29-ee94-4888-80e0-74fe2c5ba57e
 webtitle: WMI Gitlab
 updated: 2018-11-30T00:04:12+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-mafia-city-13351-apk-android/63435559211b20b43a4164a7c23111ed.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/mafia-city-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/mafia-city-1.jpg
 description: Mafia City .3.351 Apk android

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/how-to-get-free-net-domain-september/04ecede4334d7ab0827cd0e97d27ffff.png
+cover: https://4.bp.blogspot.com/-L3KQKqkEUcE/WWpMHqAgUBI/AAAAAAAACU4/7KJ5yi2UlTErYq_6Fflz--LsOR6K52nGQCLcBGAs/s400/bodo.png
 date: 2017-09-25T23:55:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: bef39e09-fc2a-4888-8816-5bc2fd423bed
 webtitle: WMI Gitlab
 updated: 2017-09-25T23:55:43+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/how-to-get-free-net-domain-september/04ecede4334d7ab0827cd0e97d27ffff.png
+thumbnail: https://4.bp.blogspot.com/-L3KQKqkEUcE/WWpMHqAgUBI/AAAAAAAACU4/7KJ5yi2UlTErYq_6Fflz--LsOR6K52nGQCLcBGAs/s400/bodo.png
 photos:
   - https://4.bp.blogspot.com/-L3KQKqkEUcE/WWpMHqAgUBI/AAAAAAAACU4/7KJ5yi2UlTErYq_6Fflz--LsOR6K52nGQCLcBGAs/s400/bodo.png
 description: How to Obtain Free Domain NET September 017 - Assalamualaikum Dear

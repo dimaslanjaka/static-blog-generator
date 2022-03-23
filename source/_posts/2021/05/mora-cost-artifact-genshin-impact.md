@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/05/mora-cost-artifact-genshin-impact/97f860958d6403f86bfd0f1704c00583.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/63?cb=20201226100736
 date: 2021-05-13T20:37:00.008+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 7c2644ae-b310-4888-8272-15eb1b3dc9bb
 webtitle: Genshin Impact
 updated: 2021-06-01T02:19:33+07:00
-thumbnail: https://www.webmanajemen.com/2021/05/mora-cost-artifact-genshin-impact/97f860958d6403f86bfd0f1704c00583.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/63?cb=20201226100736
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/63?cb=20201226100736
 description: Rarity Exp Multiplier Chance

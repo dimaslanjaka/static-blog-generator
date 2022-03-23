@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-hell-fest-2018-indonesian/309969e760d9c830883cd080a85dce10.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
 date: 2019-01-16T03:55:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 0f53cec6-92d9-4888-8a6b-2103e2548fb5
 webtitle: WMI Gitlab
 updated: 2019-01-16T03:55:00+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-hell-fest-2018-indonesian/309969e760d9c830883cd080a85dce10.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
 description: import

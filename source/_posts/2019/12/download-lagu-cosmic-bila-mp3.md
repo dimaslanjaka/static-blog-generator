@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/12/download-lagu-cosmic-bila-mp3/2931b8d3330505030e06dccd413271dc.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/MFX6M1MPjPY/hqdefault.jpg
 date: 2019-12-02T16:42:00.001+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 7abd2064-7f6a-4888-886e-85fd8d26fd6f
 webtitle: WMI Gitlab
 updated: 2019-12-02T17:11:09+07:00
-thumbnail: https://www.webmanajemen.com/2019/12/download-lagu-cosmic-bila-mp3/2931b8d3330505030e06dccd413271dc.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/MFX6M1MPjPY/hqdefault.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/MFX6M1MPjPY/hqdefault.jpg
 description: "Download lagu Cosmic  Bila Mp3 Cosmic - When Listen: 21,986

@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp/c72347463968581dc0f10850abffbb4a.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
 date: 2017-05-04T21:01:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 7cf55936-4dc6-4888-8910-545428872e42
 webtitle: WMI Gitlab
 updated: 2017-05-05T09:41:54+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp/c72347463968581dc0f10850abffbb4a.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
 description: Finally Google choseFacebook comments plugin first supported by AMP HTML.

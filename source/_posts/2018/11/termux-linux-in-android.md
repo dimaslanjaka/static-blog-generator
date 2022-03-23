@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/install-mariadb-on-termux/46bd8fc9219851e33a11a34bdd029667.webp
+cover: https://images.weserv.nl/?url=https://lh3.googleusercontent.com/p162-Lwo8Fxms5LAJ8IpICqtsT-3ziYMoy-WdSM66_jCQboVvfB8qU9c0KU3gzg_yqLE1iQAMyhVe8eRzi8=w1080-h1920-rw-no
 date: 2018-11-13T04:22:00.003+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 0ccfca9d-9805-4888-88ac-c8a3c42d0e38
 webtitle: WMI Gitlab
 updated: 2018-11-13T04:22:28+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/install-mariadb-on-termux/46bd8fc9219851e33a11a34bdd029667.webp
+thumbnail: https://images.weserv.nl/?url=https://lh3.googleusercontent.com/p162-Lwo8Fxms5LAJ8IpICqtsT-3ziYMoy-WdSM66_jCQboVvfB8qU9c0KU3gzg_yqLE1iQAMyhVe8eRzi8=w1080-h1920-rw-no
 photos:
   - https://images.weserv.nl/?url=https://lh3.googleusercontent.com/p162-Lwo8Fxms5LAJ8IpICqtsT-3ziYMoy-WdSM66_jCQboVvfB8qU9c0KU3gzg_yqLE1iQAMyhVe8eRzi8=w1080-h1920-rw-no
 description: You are a Linux lover, like to play with theLinux operating system

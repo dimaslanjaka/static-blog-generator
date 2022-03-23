@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/recent-widget-animations-effect-on-blogger/5b739dc6dde9259b8aeff344284147d7.jpeg
+cover: https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
 date: 2017-05-05T23:00:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 90ac57f2-8104-4888-8000-8cc0e203d812
 webtitle: WMI Gitlab
 updated: 2017-05-05T23:00:26+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/recent-widget-animations-effect-on-blogger/5b739dc6dde9259b8aeff344284147d7.jpeg
+thumbnail: https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
 photos:
   - https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
 description: How to Install News Recent Articles With Animation Effects Hello

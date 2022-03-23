@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/03/git-login-via-command-line/b373f05febe09a679530a0b6ad965289.jpeg
+cover: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 date: 2021-03-28T09:54:00.004+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 06997095-6d39-4888-8c9d-c0d516fcede7
 webtitle: WMI Gitlab
 updated: 2021-03-29T07:50:58+07:00
-thumbnail: https://www.webmanajemen.com/2021/03/git-login-via-command-line/b373f05febe09a679530a0b6ad965289.jpeg
+thumbnail: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 ---

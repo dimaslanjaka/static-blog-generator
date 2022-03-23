@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/how-to-reproduce-like-on-fanpage/841773770d476f486187acaac19bc910.png
+cover: https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
 date: 2017-09-07T09:39:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 17cba081-b42c-4888-8216-921887a0d2e1
 webtitle: WMI Gitlab
 updated: 2017-09-07T09:39:59+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/how-to-reproduce-like-on-fanpage/841773770d476f486187acaac19bc910.png
+thumbnail: https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
 photos:
   - https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
 description: How to reproduce like on fanpage facebook??

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/free-calls-over-internet/64cbe931a1bee26d39f104908eeb72a4.jpeg
+cover: https://3.bp.blogspot.com/-hxvTzkWtBOs/TuW8orRN2kI/AAAAAAAAAcQ/GlQU_popqJM/s1600/skype.JPG
 date: 2017-09-25T01:49:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: f78cd312-fc72-4888-8c77-41f4ac8530d3
 webtitle: WMI Gitlab
 updated: 2017-09-25T01:49:07+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/free-calls-over-internet/64cbe931a1bee26d39f104908eeb72a4.jpeg
+thumbnail: https://3.bp.blogspot.com/-hxvTzkWtBOs/TuW8orRN2kI/AAAAAAAAAcQ/GlQU_popqJM/s1600/skype.JPG
 photos:
   - https://3.bp.blogspot.com/-hxvTzkWtBOs/TuW8orRN2kI/AAAAAAAAAcQ/GlQU_popqJM/s1600/skype.JPG
 description: Actually there are several free telephone facilities on the

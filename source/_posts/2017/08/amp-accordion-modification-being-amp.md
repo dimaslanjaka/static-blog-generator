@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/08/amp-accordion-modification-being-amp/c04e7636c4807a7f9fd55428c2f44900.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
 date: 2017-08-30T04:51:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 95437db8-e3ba-4888-8584-a2d7cf332c5a
 webtitle: WMI Gitlab
 updated: 2017-08-30T04:51:07+07:00
-thumbnail: https://www.webmanajemen.com/2017/08/amp-accordion-modification-being-amp/c04e7636c4807a7f9fd55428c2f44900.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
 description: Problem U

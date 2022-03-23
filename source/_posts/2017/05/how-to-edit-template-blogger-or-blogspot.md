@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/05/how-to-edit-template-blogger-or-blogspot/82ed7a25e2114cb7bc07cee70f7fd24a.png
+cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
 date: 2017-05-20T14:32:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: feca69da-0deb-4888-8a1b-1be0b2091178
 webtitle: WMI Gitlab
 updated: 2017-05-20T14:32:00+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/how-to-edit-template-blogger-or-blogspot/82ed7a25e2114cb7bc07cee70f7fd24a.png
+thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
 description: How to edit the template blogger or blogspot

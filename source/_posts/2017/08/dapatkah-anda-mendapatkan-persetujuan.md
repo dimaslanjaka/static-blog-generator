@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/08/dapatkah-anda-mendapatkan-persetujuan/92637d9f865062dbc18b16fab643fd29.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
 date: 2017-08-24T15:30:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 5704933f-e9e2-4888-896b-18f55bfde038
 webtitle: WMI Gitlab
 updated: 2017-08-24T15:30:05+07:00
-thumbnail: https://www.webmanajemen.com/2017/08/dapatkah-anda-mendapatkan-persetujuan/92637d9f865062dbc18b16fab643fd29.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
 ---

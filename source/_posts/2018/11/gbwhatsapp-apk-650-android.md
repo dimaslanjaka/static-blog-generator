@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/gbwhatsapp-apk-650-android/a61ca87acfecd37e42df0ae194fdc2b1.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/gbwhatsapp_1.jpg
 date: 2018-11-12T12:26:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 7bcb99dd-b28a-4888-8a1f-9e0b62f7d244
 webtitle: WMI Gitlab
 updated: 2018-11-12T12:26:37+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/gbwhatsapp-apk-650-android/a61ca87acfecd37e42df0ae194fdc2b1.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/gbwhatsapp_1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/gbwhatsapp_1.jpg
 description: GBWhatsApp adalah Aplikasi Komunikasi untuk android unduh versi

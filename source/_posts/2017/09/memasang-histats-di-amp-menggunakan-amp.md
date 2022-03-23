@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://www.webmanajemen.com/2017/09/memasang-histats-di-amp-menggunakan-amp/7d2114579327daf3a333333bd5046176.jpeg
+cover: https://2.bp.blogspot.com/-jSLiOZsuahQ/WaRcT-NMI4I/AAAAAAAAACI/vjuid9-u-hE4pT43zsx0XxoytpjWj5HdACLcBGAs/s320/histats-2.jpg
 date: 2017-09-14T01:20:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: ba11674a-9d5b-4888-8e3a-e14f223a43a2
 webtitle: WMI Gitlab
 updated: 2017-09-14T01:20:01+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/memasang-histats-di-amp-menggunakan-amp/7d2114579327daf3a333333bd5046176.jpeg
+thumbnail: https://2.bp.blogspot.com/-jSLiOZsuahQ/WaRcT-NMI4I/AAAAAAAAACI/vjuid9-u-hE4pT43zsx0XxoytpjWj5HdACLcBGAs/s320/histats-2.jpg
 photos:
   - https://2.bp.blogspot.com/-jSLiOZsuahQ/WaRcT-NMI4I/AAAAAAAAACI/vjuid9-u-hE4pT43zsx0XxoytpjWj5HdACLcBGAs/s320/histats-2.jpg
 description: Komponen amppixel berperilaku seperti img img gambar sederhana.

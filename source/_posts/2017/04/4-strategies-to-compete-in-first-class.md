@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/4-strategies-to-compete-in-first-class/405fd62bdaebd7629e5b329fc7a9d757.png
+cover: https://3.bp.blogspot.com/-CjeZnOKOvnQ/VywXHhgpt7I/AAAAAAAADvE/iIsbyNQHP58kzam3zUzWyUqlWJyeyO_YQCLcB/s280/cara-meningkatkan-trafik-blog.png
 date: 2017-04-25T19:51:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 22994726-f869-4888-81c7-be8956a41750
 webtitle: WMI Gitlab
 updated: 2017-04-25T19:51:03+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/4-strategies-to-compete-in-first-class/405fd62bdaebd7629e5b329fc7a9d757.png
+thumbnail: https://3.bp.blogspot.com/-CjeZnOKOvnQ/VywXHhgpt7I/AAAAAAAADvE/iIsbyNQHP58kzam3zUzWyUqlWJyeyO_YQCLcB/s280/cara-meningkatkan-trafik-blog.png
 photos:
   - https://3.bp.blogspot.com/-CjeZnOKOvnQ/VywXHhgpt7I/AAAAAAAADvE/iIsbyNQHP58kzam3zUzWyUqlWJyeyO_YQCLcB/s280/cara-meningkatkan-trafik-blog.png
 description: Strategies to Compete in First-Class Blog To Increase traffic Your

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/05/conditional-tags-for-targeting-on/15a3e096b16ef5e8e4652d305de32b78.jpeg
+cover: https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
 date: 2017-05-19T13:39:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 6cf36b22-f184-4888-87bb-e2c0db711247
 webtitle: WMI Gitlab
 updated: 2017-05-19T13:39:02+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/conditional-tags-for-targeting-on/15a3e096b16ef5e8e4652d305de32b78.jpeg
+thumbnail: https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
 photos:
   - https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
 description: Ill explain a little what it is conditional tags. Conditional tags

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/07/one-time-i-was-playing-game-and-running/8c312a1f1e9b8bc195f1bced0d2ee174.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-RgpJNTI1w90/Uy4W4qlHVuI/AAAAAAAAAf4/JozWbUyJgts/s1600/spp.png
 date: 2019-07-21T01:20:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: dbf6c734-f90c-4888-8bd3-b775fec8ca50
 webtitle: WMI Gitlab
 updated: 2019-07-21T01:20:57+07:00
-thumbnail: https://www.webmanajemen.com/2019/07/one-time-i-was-playing-game-and-running/8c312a1f1e9b8bc195f1bced0d2ee174.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-RgpJNTI1w90/Uy4W4qlHVuI/AAAAAAAAAf4/JozWbUyJgts/s1600/spp.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-RgpJNTI1w90/Uy4W4qlHVuI/AAAAAAAAAf4/JozWbUyJgts/s1600/spp.png
 description: One time I was playing a game, and running several programs on a

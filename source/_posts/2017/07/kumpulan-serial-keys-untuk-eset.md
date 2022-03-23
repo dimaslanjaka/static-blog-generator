@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/07/kumpulan-serial-keys-untuk-eset/34f7cf5800af1c0d6e6c6b21a55aa09b.jpeg
+cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
 date: 2017-07-26T23:52:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 71275cf5-0952-4888-8ff5-07f0f4f34f50
 webtitle: WMI Gitlab
 updated: 2017-07-26T23:52:04+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/kumpulan-serial-keys-untuk-eset/34f7cf5800af1c0d6e6c6b21a55aa09b.jpeg
+thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
 description: Untuk Tanggal xx:xx:xxxx) merupakan valid serial key tersebut

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/02/download-age-of-civilizations-ii-101415/a604257e7131ac1acd9995ffc44540de.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
 date: 2019-02-13T15:14:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 19849aa8-13ff-4888-8cc6-0ebce767b903
 webtitle: WMI Gitlab
 updated: 2019-02-13T15:14:12+07:00
-thumbnail: https://www.webmanajemen.com/2019/02/download-age-of-civilizations-ii-101415/a604257e7131ac1acd9995ffc44540de.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
 description: Age of Civilisations II .01415 Apk + Data android

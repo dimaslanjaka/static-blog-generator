@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/07/how-to-bulk-delete-label-from-blogger/be8979ae884a2e1099323ad69fce117d.png
+cover: https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png
 date: 2019-07-22T03:19:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 119c768f-b569-4888-847d-fa774501bbfb
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:22:16+07:00
-thumbnail: https://www.webmanajemen.com/2019/07/how-to-bulk-delete-label-from-blogger/be8979ae884a2e1099323ad69fce117d.png
+thumbnail: https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png
 photos:
   - https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png
 description: Previous How to bulk add category label to blogger postsFilter and

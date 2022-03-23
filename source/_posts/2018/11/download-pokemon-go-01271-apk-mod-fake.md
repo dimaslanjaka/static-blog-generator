@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-pokemon-go-01271-apk-mod-fake/76a6886c4258c5d3710b6b3884496aaf.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
 date: 2018-11-15T11:44:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: b4886b56-f88b-4888-89c1-fd3ac2ae3a8d
 webtitle: WMI Gitlab
 updated: 2018-11-15T11:50:02+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-pokemon-go-01271-apk-mod-fake/76a6886c4258c5d3710b6b3884496aaf.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
 description: Pokemon GO .127.1 Apk + Mod (gps palsu) + Poke Radar + apk yang diretas

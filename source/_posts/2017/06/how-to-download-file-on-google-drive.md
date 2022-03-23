@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/06/how-to-download-file-on-google-drive/3901e796654a76e8237dcd3c0ee8a5ca.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
 date: 2017-06-25T20:59:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: f62514e4-f12c-4888-8af0-d1d4a54942a8
 webtitle: WMI Gitlab
 updated: 2017-06-25T20:59:18+07:00
-thumbnail: https://www.webmanajemen.com/2017/06/how-to-download-file-on-google-drive/3901e796654a76e8237dcd3c0ee8a5ca.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
 description: For those of you who want to download files shared on kbd>Google

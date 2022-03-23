@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/07/how-to-sign-up-and-install-histats/1a046f6352821924f5d3cc49260e645f.jpeg
+cover: https://4.bp.blogspot.com/-wRS-Eyu86jI/V1EjfzBfDBI/AAAAAAAAH3g/6KiOnExqzUE_FGzf2zLefBXrt78IWbJ1gCLcB/s320/histats.jpg
 date: 2017-07-30T03:00:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: ebda9ee9-ad64-4888-8d13-f39d5c330334
 webtitle: WMI Gitlab
 updated: 2017-07-30T03:00:13+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/how-to-sign-up-and-install-histats/1a046f6352821924f5d3cc49260e645f.jpeg
+thumbnail: https://4.bp.blogspot.com/-wRS-Eyu86jI/V1EjfzBfDBI/AAAAAAAAH3g/6KiOnExqzUE_FGzf2zLefBXrt78IWbJ1gCLcB/s320/histats.jpg
 photos:
   - https://4.bp.blogspot.com/-wRS-Eyu86jI/V1EjfzBfDBI/AAAAAAAAH3g/6KiOnExqzUE_FGzf2zLefBXrt78IWbJ1gCLcB/s320/histats.jpg
 description: have long wanted to make a post about getting visitor data and

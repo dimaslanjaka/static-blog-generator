@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/causes-blog-website-or-site-google-adsense-ban/e6dcb5fb9f350e450952cb1102d180e5.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
 date: 2017-04-09T07:29:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c8683d7a-4271-4888-8783-b5cf2d9e0340
 webtitle: WMI Gitlab
 updated: 2017-04-10T07:40:50+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/causes-blog-website-or-site-google-adsense-ban/e6dcb5fb9f350e450952cb1102d180e5.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
 description: Holiday banned blog or website means it can not be used again for

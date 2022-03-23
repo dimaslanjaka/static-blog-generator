@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/02/download-bilal-new-breed-of-hero-2015/c14e32420f86d60f1e928fedb258eb79.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s4.dunia21.org/wp-content/uploads/2018/03/film-bilal-a-new-breed-of-hero-2018.jpg
 date: 2019-02-18T15:13:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 61f17127-e805-4888-818c-166fc65f09f4
 webtitle: WMI Gitlab
 updated: 2019-02-18T15:13:12+07:00
-thumbnail: https://www.webmanajemen.com/2019/02/download-bilal-new-breed-of-hero-2015/c14e32420f86d60f1e928fedb258eb79.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s4.dunia21.org/wp-content/uploads/2018/03/film-bilal-a-new-breed-of-hero-2018.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s4.dunia21.org/wp-content/uploads/2018/03/film-bilal-a-new-breed-of-hero-2018.jpg
 description: import
