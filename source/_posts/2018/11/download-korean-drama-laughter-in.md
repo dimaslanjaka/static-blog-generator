@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-korean-drama-laughter-in/dbe97ac68f3d4a19908cddfac2d6bf7f.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/02/Download-Drama-Korea-Laughter-in-Waikiki-Subtitle-Indonesia.jpg?resize=560%2C381&ssl=1
 date: 2018-11-21T21:15:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: c6898641-fcda-4888-88ed-380d86ec1031
 webtitle: WMI Gitlab
 updated: 2018-11-21T21:15:00+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-korean-drama-laughter-in/dbe97ac68f3d4a19908cddfac2d6bf7f.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/02/Download-Drama-Korea-Laughter-in-Waikiki-Subtitle-Indonesia.jpg?resize=560%2C381&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/02/Download-Drama-Korea-Laughter-in-Waikiki-Subtitle-Indonesia.jpg?resize=560%2C381&ssl=1
 description: Download Korean Drama Laughter in Waikiki Indonesian Subtitles

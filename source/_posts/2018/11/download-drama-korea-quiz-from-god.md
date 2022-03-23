@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-drama-korea-quiz-from-god/76c1ae2263bc96511207747fa6971076.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/11/Download-Drama-Korea-Gods-Quiz-Reboot-Subtitle-Indonesia.jpg?resize=600%2C381&ssl=1
 date: 2018-11-15T06:37:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: f54d905c-73d0-4888-89d1-cd0e8b88d485
 webtitle: WMI Gitlab
 updated: 2018-11-15T06:37:01+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-drama-korea-quiz-from-god/76c1ae2263bc96511207747fa6971076.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/11/Download-Drama-Korea-Gods-Quiz-Reboot-Subtitle-Indonesia.jpg?resize=600%2C381&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/11/Download-Drama-Korea-Gods-Quiz-Reboot-Subtitle-Indonesia.jpg?resize=600%2C381&ssl=1
 description: "Download Korean Drama Quiz from God Reboot Indonesian Subtitles

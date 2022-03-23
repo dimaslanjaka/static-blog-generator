@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/09/cara-simple-membuat-blogger-safelink/a1ab18df4cea2582d7a00aa933cfbbae.png
+cover: https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png
 date: 2017-09-02T23:13:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: f4616f74-be9f-4888-84c8-27cabc879056
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/cara-simple-membuat-blogger-safelink/a1ab18df4cea2582d7a00aa933cfbbae.png
+thumbnail: https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png
 photos:
   - https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png
 ---

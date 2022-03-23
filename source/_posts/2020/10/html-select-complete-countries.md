@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2020-10-28T14:17:00.005+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 9dbda671-6a2c-4888-8f0a-43b0a9bd3163
 webtitle: WMI Gitlab
 updated: 2020-10-28T14:19:08+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: See the Pen github.comselect2/select2-bootstrap-theme/issues/35 by

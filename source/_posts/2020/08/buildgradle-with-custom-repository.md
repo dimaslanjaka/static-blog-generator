@@ -7,7 +7,7 @@ category:
   - Programming
   - KOTLIN
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2020-08-03T18:02:00.005+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: e536a08c-6257-4888-8667-4b39732b9374
 webtitle: WMI Gitlab
 updated: 2020-08-10T20:47:57+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Fix missing dependencies from your gradle project android, maven,

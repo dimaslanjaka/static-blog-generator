@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2019/12/javascript-debug-protector/be3037a898c0e0b8f65765b5411d151c.jpeg
+cover: https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
 date: 2019-12-29T15:02:00.001+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 5081493b-4b80-4888-890c-0c028fa074bc
 webtitle: WMI Gitlab
 updated: 2020-01-07T13:17:28+07:00
-thumbnail: https://www.webmanajemen.com/2019/12/javascript-debug-protector/be3037a898c0e0b8f65765b5411d151c.jpeg
+thumbnail: https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
 description: How to protect javascript from developer tools  here the answer.

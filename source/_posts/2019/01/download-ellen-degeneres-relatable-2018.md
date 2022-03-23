@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-ellen-degeneres-relatable-2018/853401cafbbf7f6217e904fb088a47f0.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
 date: 2019-01-03T01:39:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 3eaa8317-b83f-4888-8c1b-d78aa800ff2c
 webtitle: WMI Gitlab
 updated: 2019-01-03T01:39:07+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-ellen-degeneres-relatable-2018/853401cafbbf7f6217e904fb088a47f0.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
 description: import

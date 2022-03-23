@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/06/buff-bahan-utama-attributes-durango/dd80d3b675817f2cd15a3e6227370877.jpeg
+cover: https://4.bp.blogspot.com/-jB3ahTlpbOg/WzVjXZm_g-I/AAAAAAAAAS4/MTfdRe9Dcm8MoF6krkWY_d3iciZPaj4VACLcBGAs/s1600/FB_IMG_15302253070912946.jpg
 date: 2018-06-29T07:56:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: dc3ecfd5-2485-4888-89ea-d246aa0d5937
 webtitle: WMI Gitlab
 updated: 2018-08-09T22:10:11+07:00
-thumbnail: https://www.webmanajemen.com/2018/06/buff-bahan-utama-attributes-durango/dd80d3b675817f2cd15a3e6227370877.jpeg
+thumbnail: https://4.bp.blogspot.com/-jB3ahTlpbOg/WzVjXZm_g-I/AAAAAAAAAS4/MTfdRe9Dcm8MoF6krkWY_d3iciZPaj4VACLcBGAs/s1600/FB_IMG_15302253070912946.jpg
 photos:
   - https://4.bp.blogspot.com/-jB3ahTlpbOg/WzVjXZm_g-I/AAAAAAAAAS4/MTfdRe9Dcm8MoF6krkWY_d3iciZPaj4VACLcBGAs/s1600/FB_IMG_15302253070912946.jpg
 description: Attributes  BuffSenjata / WeaponsPakaian / ClothesMakanan / FoodsRingan /

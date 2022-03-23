@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/04/cara-menambah-syntax-highlighter-dengan/5b27dda9adb8a8153bfb8614b2e3aa3e.jpeg
+cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBSJoxKxnt9n6oeRW1QcYweC0Y5-T_t-bexOhydafI1lnSIDQx
 date: 2017-04-26T04:30:00.000+07:00
 lang: en
 location: ""
@@ -26,7 +26,7 @@ type: post
 uuid: 91708df3-7078-4888-850d-3231dff222a2
 webtitle: WMI Gitlab
 updated: 2020-01-09T04:00:58+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/cara-menambah-syntax-highlighter-dengan/5b27dda9adb8a8153bfb8614b2e3aa3e.jpeg
+thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBSJoxKxnt9n6oeRW1QcYweC0Y5-T_t-bexOhydafI1lnSIDQx
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBSJoxKxnt9n6oeRW1QcYweC0Y5-T_t-bexOhydafI1lnSIDQx
 description: h2>Bagaimana cara menambah syntax highlighter dengan prettyprint

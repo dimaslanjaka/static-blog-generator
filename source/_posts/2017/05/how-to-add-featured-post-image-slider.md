@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/how-to-add-featured-post-image-slider/e78907e63c3dd432bd4c45ad5aceb79f.jpeg
+cover: https://1.bp.blogspot.com/-vBmmKKOdix4/V510voCoYqI/AAAAAAAAPNk/gttSjmyHe3Q9trg2yO_FF8HnxFws0P7VgCLcB/s320/featured%2Bpost%2Bimage%2Bslider%2Botomatis%2Bblogger.JPG
 date: 2017-05-11T07:17:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: a26fc0cb-d479-4888-8820-491f84f7573e
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/how-to-add-featured-post-image-slider/e78907e63c3dd432bd4c45ad5aceb79f.jpeg
+thumbnail: https://1.bp.blogspot.com/-vBmmKKOdix4/V510voCoYqI/AAAAAAAAPNk/gttSjmyHe3Q9trg2yO_FF8HnxFws0P7VgCLcB/s320/featured%2Bpost%2Bimage%2Bslider%2Botomatis%2Bblogger.JPG
 photos:
   - https://1.bp.blogspot.com/-vBmmKKOdix4/V510voCoYqI/AAAAAAAAPNk/gttSjmyHe3Q9trg2yO_FF8HnxFws0P7VgCLcB/s320/featured%2Bpost%2Bimage%2Bslider%2Botomatis%2Bblogger.JPG
 description: How to Install the Featured Post Image Slider Widget Auto

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/happy-together-season-4-episode-5_10/8c78bc0fd4bc013331402f7626f4def3.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/10/Happy-Together-Season-4-Subtitle-Indonesia.jpg?resize=300%2C300&ssl=1
 date: 2018-11-10T04:54:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: a84c3470-1409-4888-8824-247ee6db105e
 webtitle: WMI Gitlab
 updated: 2018-11-10T04:54:12+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/happy-together-season-4-episode-5_10/8c78bc0fd4bc013331402f7626f4def3.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/10/Happy-Together-Season-4-Subtitle-Indonesia.jpg?resize=300%2C300&ssl=1
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/10/Happy-Together-Season-4-Subtitle-Indonesia.jpg?resize=300%2C300&ssl=1
 description: Happy Together Season  Episode 5 Indonesian Subtitles

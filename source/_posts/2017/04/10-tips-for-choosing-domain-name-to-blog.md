@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/10-tips-for-choosing-domain-name-to-blog/1e428f94c08aa951318d83c61536dffb.jpeg
+cover: https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
 date: 2017-04-16T11:50:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 6f8f2ea8-d647-4888-8fa4-5bf09fe6beb9
 webtitle: WMI Gitlab
 updated: 2017-04-16T11:50:00+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/10-tips-for-choosing-domain-name-to-blog/1e428f94c08aa951318d83c61536dffb.jpeg
+thumbnail: https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
 photos:
   - https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
 description: 0 Tips for Choosing a Domain Name To Blog Choosing the right domain

@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/08/defer-loading-file-css-untuk-mengurangi/8f57520f6114c68dd552603cb8fb5fba.jpeg
+cover: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKpYAOy9FD3qAngAFoLYAB9faenCIkJi44YFLGAmFBWDa5
 date: 2017-08-07T19:11:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 7c12cdd4-eeee-4888-8529-a5ff0af2ed6e
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: https://www.webmanajemen.com/2017/08/defer-loading-file-css-untuk-mengurangi/8f57520f6114c68dd552603cb8fb5fba.jpeg
+thumbnail: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKpYAOy9FD3qAngAFoLYAB9faenCIkJi44YFLGAmFBWDa5
 photos:
   - https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKpYAOy9FD3qAngAFoLYAB9faenCIkJi44YFLGAmFBWDa5
 ---

@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/easly-add-translate-widget-to-page-blog/fda82e119bdded9110b7df2047edbec3.png
+cover: https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png
 date: 2017-05-12T00:54:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 1dff66f8-eb95-4888-8605-2c1d4e50434a
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/easly-add-translate-widget-to-page-blog/fda82e119bdded9110b7df2047edbec3.png
+thumbnail: https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png
 photos:
   - https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png
 description: Add Translate widget to sidebar or page blog with state flags using

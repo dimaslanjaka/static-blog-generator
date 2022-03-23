@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-dancing-line-232-apk-mod-money/0735d75c93a7c28dfe250929b2c74665.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/dancing-line-1.jpg
 date: 2018-11-27T19:55:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 9781e173-511b-4888-8717-33ed77cb4a16
 webtitle: WMI Gitlab
 updated: 2018-11-27T19:55:24+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-dancing-line-232-apk-mod-money/0735d75c93a7c28dfe250929b2c74665.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/dancing-line-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/dancing-line-1.jpg
 description: Dancing Line .3.2 Apk + Mod Money android

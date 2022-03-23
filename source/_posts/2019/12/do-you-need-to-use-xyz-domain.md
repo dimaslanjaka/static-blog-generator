@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/12/do-you-need-to-use-xyz-domain/5f2c6ccf6eba5f6fd7c2baa744a5861e.png
+cover: https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/11/dewaweb-blog-perlukah-kamu-menggunakan-domain-xyz-696x411.png
 date: 2019-12-16T10:28:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c13813d7-41fd-4888-8123-27dd890fdb90
 webtitle: WMI Gitlab
 updated: 2019-12-16T10:28:03+07:00
-thumbnail: https://www.webmanajemen.com/2019/12/do-you-need-to-use-xyz-domain/5f2c6ccf6eba5f6fd7c2baa744a5861e.png
+thumbnail: https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/11/dewaweb-blog-perlukah-kamu-menggunakan-domain-xyz-696x411.png
 photos:
   - https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/11/dewaweb-blog-perlukah-kamu-menggunakan-domain-xyz-696x411.png
 description: Perlukah Kamu Menggunakan Domain XYZ Have you ever heard of the XYZ

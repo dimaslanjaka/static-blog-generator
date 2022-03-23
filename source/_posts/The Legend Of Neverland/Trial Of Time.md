@@ -6,7 +6,7 @@ category:
   - Games
   - The Legend Of Neverland
 comments: false
-cover: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time/6c8fa1479a17ce543d7f4f29197b5eb9.jpeg
+cover: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
 date: 2021-08-15T00:00:00+07:00
 lang: en
 location: Indonesia
@@ -20,7 +20,7 @@ type: post
 uuid: b0619489-c7d3-4888-8642-1e1c70136016
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:50+07:00
-thumbnail: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time/6c8fa1479a17ce543d7f4f29197b5eb9.jpeg
+thumbnail: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
 photos:
   - https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
 description: Trial Of Time the legend of neverland stage location

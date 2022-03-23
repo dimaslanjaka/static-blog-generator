@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-07-26T21:16:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: b1114daa-b48d-4888-8cd2-7a947170c584
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Sometimes we want to make the posting page become more simple in

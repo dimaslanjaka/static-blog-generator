@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/02/menampilkan-shortcut-telegram-bot/d115b278f7bf99c1b2aaa71b6639a8b4.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
 date: 2019-02-09T19:58:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: fd0c56c9-627c-4888-882f-e5c3355e3b2e
 webtitle: WMI Gitlab
 updated: 2019-02-09T19:58:48+07:00
-thumbnail: https://www.webmanajemen.com/2019/02/menampilkan-shortcut-telegram-bot/d115b278f7bf99c1b2aaa71b6639a8b4.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
 description: Saya ingin menulis bot telegram. Bagaimana cara menempatkan opsi

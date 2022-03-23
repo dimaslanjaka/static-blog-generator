@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/46-cara-untuk-meningkatkan-pendapatan/209fb88b40f14eadf5de4a1e12a78852.jpeg
+cover: https://www.shoutmeloud.com/wp-content/uploads/2012/03/Increase-Adsense-Revenue.jpg
 date: 2017-04-22T22:08:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 4f0cc636-2707-4888-85b8-e3fb5ac35a80
 webtitle: WMI Gitlab
 updated: 2017-04-22T22:08:06+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/46-cara-untuk-meningkatkan-pendapatan/209fb88b40f14eadf5de4a1e12a78852.jpeg
+thumbnail: https://www.shoutmeloud.com/wp-content/uploads/2012/03/Increase-Adsense-Revenue.jpg
 photos:
   - https://www.shoutmeloud.com/wp-content/uploads/2012/03/Increase-Adsense-Revenue.jpg
 description: 6 Cara Untuk Meningkatkan Pendapatan Google Adsense AndaSaya tidak

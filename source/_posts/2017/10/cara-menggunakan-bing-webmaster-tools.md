@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/10/cara-menggunakan-bing-webmaster-tools/41fd4c92a1ebb5afb82bbf0df5eb34df.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-bing-1024x513.png
 date: 2017-10-21T10:38:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 67859f94-1f65-4888-883b-6072b55a4f0d
 webtitle: WMI Gitlab
 updated: 2017-10-21T10:38:03+07:00
-thumbnail: https://www.webmanajemen.com/2017/10/cara-menggunakan-bing-webmaster-tools/41fd4c92a1ebb5afb82bbf0df5eb34df.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-bing-1024x513.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-bing-1024x513.png
 ---

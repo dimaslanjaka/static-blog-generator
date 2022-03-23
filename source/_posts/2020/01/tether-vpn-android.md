@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2020/01/tether-vpn-android/9cbf210c0c77a2f494a42edc2746d450.png
+cover: https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
 date: 2020-01-31T00:36:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 5936ea34-a22d-4888-8bfd-a55fa5998592
 webtitle: WMI Gitlab
 updated: 2020-03-01T19:40:59+07:00
-thumbnail: https://www.webmanajemen.com/2020/01/tether-vpn-android/9cbf210c0c77a2f494a42edc2746d450.png
+thumbnail: https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
 photos:
   - https://4.bp.blogspot.com/-4_aOS3F7Fg0/XlutU8-PrnI/AAAAAAAAAK0/7KvHUpX78WQw8a-2MYQjo-P1Oq9Mv1zTACLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
 description: How to tethering vpn on android ROOT is required Requirement

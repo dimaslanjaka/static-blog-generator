@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2020/02/backlink-by-google/4c01578abf83a6e1b1002342d39ef2b4.png
+cover: https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
 date: 2020-02-05T23:39:00.002+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 4dbd5e9d-f473-4888-88a6-255ed9ef3ecc
 webtitle: WMI Gitlab
 updated: 2020-02-07T02:19:57+07:00
-thumbnail: https://www.webmanajemen.com/2020/02/backlink-by-google/4c01578abf83a6e1b1002342d39ef2b4.png
+thumbnail: https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
 photos:
   - https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
 ---

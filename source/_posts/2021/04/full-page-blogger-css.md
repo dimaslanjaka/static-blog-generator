@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2021/04/full-page-blogger-css/5d08c7998e448c88b8b04d5e87f28f22.png
+cover: https://1.bp.blogspot.com/-kKrjUF3L7_w/YJyInp5cH-I/AAAAAAAAABU/km6DnnEqjRAoXHTYYpg8BCg1VcbjPCOvgCLcBGAsYHQ/s0/Screenshot_1.png
 date: 2021-04-27T21:18:00.008+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 972fc323-d5ed-4888-8491-bfa6b8cb7607
 webtitle: WMI Gitlab
 updated: 2021-05-13T09:02:48+07:00
-thumbnail: https://www.webmanajemen.com/2021/04/full-page-blogger-css/5d08c7998e448c88b8b04d5e87f28f22.png
+thumbnail: https://1.bp.blogspot.com/-kKrjUF3L7_w/YJyInp5cH-I/AAAAAAAAABU/km6DnnEqjRAoXHTYYpg8BCg1VcbjPCOvgCLcBGAsYHQ/s0/Screenshot_1.png
 photos:
   - https://1.bp.blogspot.com/-kKrjUF3L7_w/YJyInp5cH-I/AAAAAAAAABU/km6DnnEqjRAoXHTYYpg8BCg1VcbjPCOvgCLcBGAsYHQ/s0/Screenshot_1.png
 description: OR

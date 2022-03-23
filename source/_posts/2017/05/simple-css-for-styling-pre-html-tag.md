@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/simple-css-for-styling-pre-html-tag/db97628896fe5c8a36ebedb00ff19a73.png
+cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPU5mp9B9Vq99lF8d8-apVN1I1DoiA9DcmpTwYsP1MY5hRB8oY
 date: 2017-05-04T20:27:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 3fa28066-8726-4888-897a-41e981e9c37a
 webtitle: WMI Gitlab
 updated: 2017-05-05T09:57:57+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/simple-css-for-styling-pre-html-tag/db97628896fe5c8a36ebedb00ff19a73.png
+thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPU5mp9B9Vq99lF8d8-apVN1I1DoiA9DcmpTwYsP1MY5hRB8oY
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPU5mp9B9Vq99lF8d8-apVN1I1DoiA9DcmpTwYsP1MY5hRB8oY
 description: Styling pre> tag using simple css code Description of <pre> tag on

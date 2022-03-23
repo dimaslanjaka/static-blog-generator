@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/06/font-face-google-fonts-roboto-and-open/4120812e75c8e2569e47fa0697e1b23e.png
+cover: https://2.bp.blogspot.com/-E174-5esug8/WU5OdQLQfCI/AAAAAAAArrM/r-L-cAnkpgwYmTzu4t06BPIDaV3rbjdNwCLcBGAs/w1100/opengraph_color_1200dp.png
 date: 2017-06-24T20:49:00.004+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: d1b9548b-a285-4888-8073-c104054fa476
 webtitle: WMI Gitlab
 updated: 2017-06-24T20:49:58+07:00
-thumbnail: https://www.webmanajemen.com/2017/06/font-face-google-fonts-roboto-and-open/4120812e75c8e2569e47fa0697e1b23e.png
+thumbnail: https://2.bp.blogspot.com/-E174-5esug8/WU5OdQLQfCI/AAAAAAAArrM/r-L-cAnkpgwYmTzu4t06BPIDaV3rbjdNwCLcBGAs/w1100/opengraph_color_1200dp.png
 photos:
   - https://2.bp.blogspot.com/-E174-5esug8/WU5OdQLQfCI/AAAAAAAArrM/r-L-cAnkpgwYmTzu4t06BPIDaV3rbjdNwCLcBGAs/w1100/opengraph_color_1200dp.png
 description: a

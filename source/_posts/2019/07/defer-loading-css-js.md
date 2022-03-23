@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2019/07/defer-loading-css-js/327cc31b5ae6555c58509c59802ba79c.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
 date: 2019-07-23T02:53:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 86b04bd1-5bc5-4888-8ffa-cfcce4af9cc1
 webtitle: WMI Gitlab
 updated: 2020-01-20T04:41:03+07:00
-thumbnail: https://www.webmanajemen.com/2019/07/defer-loading-css-js/327cc31b5ae6555c58509c59802ba79c.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
 description: Cara defer loading javascript atau menunda pemanggilan javascript

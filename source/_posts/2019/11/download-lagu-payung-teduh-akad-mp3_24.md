@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/11/download-lagu-payung-teduh-akad-mp3_24/c5d8ae0bb1bc9ace46bc7beeb2c7eb11.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/viW0M5R2BLo/hqdefault.jpg
 date: 2019-11-24T23:38:00.001+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: d8493e9d-d702-4888-88c8-ea5c6d5bb031
 webtitle: WMI Gitlab
 updated: 2019-11-24T23:49:05+07:00
-thumbnail: https://www.webmanajemen.com/2019/11/download-lagu-payung-teduh-akad-mp3_24/c5d8ae0bb1bc9ace46bc7beeb2c7eb11.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/viW0M5R2BLo/hqdefault.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/viW0M5R2BLo/hqdefault.jpg
 description: "Download lagu Payung Teduh  Akad Mp3 Payung Teduh - Akad Listen:

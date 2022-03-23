@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2020-03-23T23:21:00.003+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 5922c5c8-86e4-4888-822c-2326c4a662b3
 webtitle: WMI Gitlab
 updated: 2020-03-23T23:24:56+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: manipulating multidimensional array using arraymap/*** Ilterate

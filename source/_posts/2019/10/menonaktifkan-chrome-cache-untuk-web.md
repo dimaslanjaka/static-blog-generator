@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web/b5454e8ad09a7cc8c05e16b005f60cca.png
+cover: https://i.stack.imgur.com/Grwsc.png
 date: 2019-10-14T22:15:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 7ed934db-24ac-4888-8f72-b8ab7782b3aa
 webtitle: WMI Gitlab
 updated: 2019-10-14T22:18:48+07:00
-thumbnail: https://www.webmanajemen.com/2019/10/menonaktifkan-chrome-cache-untuk-web/b5454e8ad09a7cc8c05e16b005f60cca.png
+thumbnail: https://i.stack.imgur.com/Grwsc.png
 photos:
   - https://i.stack.imgur.com/Grwsc.png
 description: Bagaimana cara menonaktifkan disable) chrome cache untuk website

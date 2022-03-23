@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/11/eliminating-notifications-and-news-on/4dd8abf565f205b799cd36621b2bca3f.png
+cover: https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQggOobwQe8koB_YqLft3FeLj9jp8xgCEwYBhgL/s320/Screenshot_2017-11-20-15-17-10-330_com.UCMobile.intl.png
 date: 2017-11-22T23:28:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 053e4385-eec6-4888-8b6e-09c96843d0f1
 webtitle: WMI Gitlab
 updated: 2017-11-22T23:28:24+07:00
-thumbnail: https://www.webmanajemen.com/2017/11/eliminating-notifications-and-news-on/4dd8abf565f205b799cd36621b2bca3f.png
+thumbnail: https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQggOobwQe8koB_YqLft3FeLj9jp8xgCEwYBhgL/s320/Screenshot_2017-11-20-15-17-10-330_com.UCMobile.intl.png
 photos:
   - https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQggOobwQe8koB_YqLft3FeLj9jp8xgCEwYBhgL/s320/Screenshot_2017-11-20-15-17-10-330_com.UCMobile.intl.png
 ---

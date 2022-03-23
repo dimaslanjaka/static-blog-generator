@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/how-to-implement-right-internal-links/24d2f4436b11fd9ab7cc7c1cbc11da3f.jpeg
+cover: https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
 date: 2017-04-18T07:40:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 85aefeaf-4e2c-4888-8606-c18f40d89992
 webtitle: WMI Gitlab
 updated: 2017-04-18T19:03:40+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/how-to-implement-right-internal-links/24d2f4436b11fd9ab7cc7c1cbc11da3f.jpeg
+thumbnail: https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
 photos:
   - https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
 description: Lately I see a lot of blog friends adsense publishers banned for

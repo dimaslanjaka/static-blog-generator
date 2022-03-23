@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-special-forces-group-2-37-apk/8994b1c3b779c0192b1484e7b339690f.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/special-forces-group-2-1.png
 date: 2019-01-11T10:19:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c34f93ef-7d5e-4888-8336-43b529f3eea6
 webtitle: WMI Gitlab
 updated: 2019-01-11T10:19:05+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-special-forces-group-2-37-apk/8994b1c3b779c0192b1484e7b339690f.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/special-forces-group-2-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/special-forces-group-2-1.png
 description: Pasukan Khusus Grup  3.7 Apk + Uang Mod + Data android

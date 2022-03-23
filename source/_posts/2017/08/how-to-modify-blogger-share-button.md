@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/08/how-to-modify-blogger-share-button/a42386a2f26aa567e29516f3c1c07343.png
+cover: https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png
 date: 2017-08-23T09:55:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 5bff3658-fdb3-4888-8564-5013357f8da9
 webtitle: WMI Gitlab
 updated: 2017-08-23T09:55:11+07:00
-thumbnail: https://www.webmanajemen.com/2017/08/how-to-modify-blogger-share-button/a42386a2f26aa567e29516f3c1c07343.png
+thumbnail: https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png
 photos:
   - https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png
 description: Actually Blogger has been updating its share button quite a bit by

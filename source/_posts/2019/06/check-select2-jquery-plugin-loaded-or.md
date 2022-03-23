@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2019/06/check-select2-jquery-plugin-loaded-or/e16d36c7815055aaf32e3220a3f113c6.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://laraget.com/images/blog/1482184906-Select2.png
 date: 2019-06-26T11:20:00.002+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 41c07fdd-3aba-4888-8fef-f72db6aa6221
 webtitle: WMI Gitlab
 updated: 2020-01-20T04:37:48+07:00
-thumbnail: https://www.webmanajemen.com/2019/06/check-select2-jquery-plugin-loaded-or/e16d36c7815055aaf32e3220a3f113c6.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://laraget.com/images/blog/1482184906-Select2.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://laraget.com/images/blog/1482184906-Select2.png
 description: Example How to change select2 jQuery plugin using jQuery.val()

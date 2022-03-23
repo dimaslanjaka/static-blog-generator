@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/04/import-composite-build-plugin-as/1690bacfb19ae8bf378476293710fc26.png
+cover: https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 date: 2021-04-20T16:40:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: a9027466-66dd-4888-8a50-f96f0c8f8ab0
 webtitle: WMI Gitlab
 updated: 2021-04-20T16:40:48+07:00
-thumbnail: https://www.webmanajemen.com/2021/04/import-composite-build-plugin-as/1690bacfb19ae8bf378476293710fc26.png
+thumbnail: https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 photos:
   - https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 description: pre><br />// change folder path inside bracket<br

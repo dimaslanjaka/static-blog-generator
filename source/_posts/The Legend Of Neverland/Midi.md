@@ -6,7 +6,7 @@ category:
   - Games
   - The Legend Of Neverland
 comments: true
-cover: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi/7827065bdc04f0c9c05ad8e9baa44e0a.jpeg
+cover: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 date: 2021-08-21T00:00:00+07:00
 lang: en
 location: Indonesia
@@ -20,7 +20,7 @@ type: post
 uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
 updated: 2021-12-19T06:34:03+07:00
-thumbnail: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi/7827065bdc04f0c9c05ad8e9baa44e0a.jpeg
+thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 description: Midi collection for the legend of neverland perform music skill

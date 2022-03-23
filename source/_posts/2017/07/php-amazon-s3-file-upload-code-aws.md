@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-07-24T07:44:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: b44a833c-625f-4888-881b-88122d881b86
 webtitle: WMI Gitlab
 updated: 2017-07-24T07:44:02+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Amazon offers a PHP SDK for taking care of AWS and S asks for, yet

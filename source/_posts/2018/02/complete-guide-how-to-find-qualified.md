@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/02/complete-guide-how-to-find-qualified/ed10317d364762d50cb0dd417b504b0d.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.imgur.com/6005jwN.jpg
 date: 2018-02-10T22:39:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 174f13eb-c534-4888-823d-df7e1358b2a7
 webtitle: WMI Gitlab
 updated: 2018-02-10T23:52:39+07:00
-thumbnail: https://www.webmanajemen.com/2018/02/complete-guide-how-to-find-qualified/ed10317d364762d50cb0dd417b504b0d.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.imgur.com/6005jwN.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.imgur.com/6005jwN.jpg
 ---

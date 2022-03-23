@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2017/04/cara-menambahkan-komentar-facebook-di/6c3efc25aa2a921763d72d20ea4e642d.png
+cover: https://i2.wp.com/orbitingweb.com/wp-content/uploads/facebook-create-app-page.png?resize=641%2C174
 date: 2017-04-14T01:53:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 52cd2952-606b-4888-89a9-8aca71ed8953
 webtitle: WMI Gitlab
 updated: 2017-04-14T01:53:09+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/cara-menambahkan-komentar-facebook-di/6c3efc25aa2a921763d72d20ea4e642d.png
+thumbnail: https://i2.wp.com/orbitingweb.com/wp-content/uploads/facebook-create-app-page.png?resize=641%2C174
 photos:
   - https://i2.wp.com/orbitingweb.com/wp-content/uploads/facebook-create-app-page.png?resize=641%2C174
 description: Cara menambah komentar facebook di wordpress tanpa plugin. Anda

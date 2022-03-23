@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-danur-2-maddah-2018-subtitle/25418e84d164f11f9e51aa3ff83b1a13.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets-a1.kompasiana.com/items/album/2018/04/09/danur-2-maddah-tembus-1-juta-penonton-5acb7ff9cf01b401f923e9c2.jpg
 date: 2019-01-29T00:42:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 476dfa12-9de1-4888-857d-7ec6f618e579
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:36:05+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-danur-2-maddah-2018-subtitle/25418e84d164f11f9e51aa3ff83b1a13.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets-a1.kompasiana.com/items/album/2018/04/09/danur-2-maddah-tembus-1-juta-penonton-5acb7ff9cf01b401f923e9c2.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets-a1.kompasiana.com/items/album/2018/04/09/danur-2-maddah-tembus-1-juta-penonton-5acb7ff9cf01b401f923e9c2.jpg
 description: "Watch Danur Film : Maddah (2018) Indonesian Subtitles - Film Danur

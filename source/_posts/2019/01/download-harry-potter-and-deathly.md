@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-harry-potter-and-deathly/06c585c0bcc78099cd0fa94bc241d4dc.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
 date: 2019-01-26T00:28:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 814d3eeb-46dc-4888-892e-736a238cde89
 webtitle: WMI Gitlab
 updated: 2019-01-26T00:28:00+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-harry-potter-and-deathly/06c585c0bcc78099cd0fa94bc241d4dc.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
 description: import

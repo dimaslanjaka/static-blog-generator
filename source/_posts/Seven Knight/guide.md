@@ -6,7 +6,7 @@ category:
   - Games
   - Seven Knight
 comments: true
-cover: https://www.webmanajemen.com/Seven%20Knight/hero-and-equipment/538f8fc7dd94ca55ee7c60437f4f5f2d.jpeg
+cover: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 date: 2021-11-30T20:00:00+07:00
 keywords:
   - Seven Knight
@@ -22,7 +22,7 @@ type: post
 uuid: d6337782-e225-4888-8fca-4207d72f764f
 webtitle: Seven Knights 2
 updated: 2021-12-03T19:06:19+07:00
-thumbnail: https://www.webmanajemen.com/Seven%20Knight/hero-and-equipment/538f8fc7dd94ca55ee7c60437f4f5f2d.jpeg
+thumbnail: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 photos:
   - https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 description: Guide SK2 for F2P

@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2018/03/00webhost-unzipper-script-php/522667440077e3e4a2d186b21c915bd9.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
 date: 2018-03-27T02:22:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 7641ace7-cf12-4888-8a6d-6d22e47eeb50
 webtitle: WMI Gitlab
 updated: 2018-03-27T02:22:11+07:00
-thumbnail: https://www.webmanajemen.com/2018/03/00webhost-unzipper-script-php/522667440077e3e4a2d186b21c915bd9.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
 description: h2>Features:</h2><ul><li>Detect zip file

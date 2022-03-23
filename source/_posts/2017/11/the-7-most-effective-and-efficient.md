@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/11/the-7-most-effective-and-efficient/f7e6e4f8eff905621e1bd29c4095a457.jpeg
+cover: https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
 date: 2017-11-14T10:00:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 9d15f051-3611-4888-8cb9-dc889b4c7730
 webtitle: WMI Gitlab
 updated: 2017-11-14T10:00:13+07:00
-thumbnail: https://www.webmanajemen.com/2017/11/the-7-most-effective-and-efficient/f7e6e4f8eff905621e1bd29c4095a457.jpeg
+thumbnail: https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
 photos:
   - https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
 ---

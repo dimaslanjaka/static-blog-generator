@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/several-social-bookmarking-sites/d47107fbc0b5da5fc28924f2b6e166f9.jpeg
+cover: https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
 date: 2017-09-26T01:33:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: a1ceef58-caf0-4888-822e-1f90f9b7d6fd
 webtitle: WMI Gitlab
 updated: 2017-09-26T01:33:08+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/several-social-bookmarking-sites/d47107fbc0b5da5fc28924f2b6e166f9.jpeg
+thumbnail: https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
 photos:
   - https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
 description: Buddy must have bookmarks in the browsers favorite sites belonging

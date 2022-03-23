@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/04/update-script-auto-invite-all-friends-to-like-pages/5676d6b4bbfee0fb0abe1b3ae4cd2469.jpeg
+cover: https://4.bp.blogspot.com/-B7u7YsAqwIo/WOekieIT5sI/AAAAAAAAEno/FnW9NIDzeUcfZ0dqcI-urdOHqZhkkjMaQCLcB/s1600/Script-Auto-Invite-Undang-Semua-Teman-ke-Fanspage-02.jpg
 date: 2017-04-20T23:57:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 6e42004a-964b-4888-8902-28b344a2e77f
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/update-script-auto-invite-all-friends-to-like-pages/5676d6b4bbfee0fb0abe1b3ae4cd2469.jpeg
+thumbnail: https://4.bp.blogspot.com/-B7u7YsAqwIo/WOekieIT5sI/AAAAAAAAEno/FnW9NIDzeUcfZ0dqcI-urdOHqZhkkjMaQCLcB/s1600/Script-Auto-Invite-Undang-Semua-Teman-ke-Fanspage-02.jpg
 photos:
   - https://4.bp.blogspot.com/-B7u7YsAqwIo/WOekieIT5sI/AAAAAAAAEno/FnW9NIDzeUcfZ0dqcI-urdOHqZhkkjMaQCLcB/s1600/Script-Auto-Invite-Undang-Semua-Teman-ke-Fanspage-02.jpg
 description: Script Auto Invite  Invite All Friends to FansPage FREE (Updated April 2017).

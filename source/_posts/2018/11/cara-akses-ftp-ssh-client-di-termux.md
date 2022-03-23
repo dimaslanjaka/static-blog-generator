@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/cara-akses-ftp-ssh-client-di-termux/43ee15ddad3a5e7c17c6582f26efa4f9.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechronicle.com/wp-content/uploads/2012/09/FTP-icon.jpg
 date: 2018-11-08T00:08:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 35dc714d-550d-4888-8144-b9302dc9bf7e
 webtitle: WMI Gitlab
 updated: 2018-11-12T12:48:36+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/cara-akses-ftp-ssh-client-di-termux/43ee15ddad3a5e7c17c6582f26efa4f9.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechronicle.com/wp-content/uploads/2012/09/FTP-icon.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechronicle.com/wp-content/uploads/2012/09/FTP-icon.jpg
 ---

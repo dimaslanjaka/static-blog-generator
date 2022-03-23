@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/04/how-to-solve-duplicate-content-on-blog/438eb103fb2959d12cc37d6cef472e13.png
+cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQa1lm1EI1a4kQStyHaoRq2LTQ3iHdj3CuE8YfEqS3-jKcycvJfOP44cSUy_A
 date: 2017-04-23T16:00:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 1174149a-9f43-4888-8a83-c0005fc2644c
 webtitle: WMI Gitlab
 updated: 2017-04-23T16:00:13+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/how-to-solve-duplicate-content-on-blog/438eb103fb2959d12cc37d6cef472e13.png
+thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQa1lm1EI1a4kQStyHaoRq2LTQ3iHdj3CuE8YfEqS3-jKcycvJfOP44cSUy_A
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQa1lm1EI1a4kQStyHaoRq2LTQ3iHdj3CuE8YfEqS3-jKcycvJfOP44cSUy_A
 description: How To Solve Duplicate Content On Blog Duplicate content is to

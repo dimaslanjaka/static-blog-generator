@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/07/cara-simple-memasang-prismjs-di-bloh/be62e45fbbbadc07afbceff76e8e15c2.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.com/wp-content/uploads/2014/07/PrismJS_Blog_NEW.jpg
 date: 2017-07-21T02:11:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 88cbec25-9c30-4888-8f9a-1eeb0ddd65e4
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/cara-simple-memasang-prismjs-di-bloh/be62e45fbbbadc07afbceff76e8e15c2.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.com/wp-content/uploads/2014/07/PrismJS_Blog_NEW.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.com/wp-content/uploads/2014/07/PrismJS_Blog_NEW.jpg
 ---

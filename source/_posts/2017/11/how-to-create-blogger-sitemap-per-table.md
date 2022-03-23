@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/11/how-to-create-blogger-sitemap-per-table/8f1c5f5d55d8363955a855c1c4a1a46b.png
+cover: https://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s1600/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
 date: 2017-11-16T19:34:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 23bc6fee-c977-4888-8e75-1cdba59c78e1
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/11/how-to-create-blogger-sitemap-per-table/8f1c5f5d55d8363955a855c1c4a1a46b.png
+thumbnail: https://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s1600/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
 photos:
   - https://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s1600/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
 description: h2>Stylish blogger sitemap per tables</h2><img

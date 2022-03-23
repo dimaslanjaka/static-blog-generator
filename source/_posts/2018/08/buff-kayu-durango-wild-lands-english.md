@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/08/buff-kayu-durango-wild-lands-english/8d452a086e57a75d02cda1bc509fb4de.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3970.jpg
 date: 2018-08-09T21:54:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: a7d3bbae-95ed-4888-86d5-aca8da44272c
 webtitle: WMI Gitlab
 updated: 2018-08-12T00:04:39+07:00
-thumbnail: https://www.webmanajemen.com/2018/08/buff-kayu-durango-wild-lands-english/8d452a086e57a75d02cda1bc509fb4de.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3970.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3970.jpg
 description: ifwindow.location.href.indexOf(264760159080518290) > -1) {

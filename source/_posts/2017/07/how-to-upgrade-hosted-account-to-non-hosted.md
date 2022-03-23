@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/07/how-to-upgrade-hosted-account-to-non-hosted/b26fa4d57e4bf762bb64c6079dbc68be.png
+cover: https://4.bp.blogspot.com/-UNoYF1MuqU8/WLrx-G_vDwI/AAAAAAAADYc/pkuJXiffujId6YxjHEopP62TimMsWcPaQCLcB/s1600/akun_triknews.png
 date: 2017-07-22T02:45:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: bc47c6fb-b12f-4888-8322-d6084e8a145c
 webtitle: WMI Gitlab
 updated: 2017-07-22T02:45:07+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/how-to-upgrade-hosted-account-to-non-hosted/b26fa4d57e4bf762bb64c6079dbc68be.png
+thumbnail: https://4.bp.blogspot.com/-UNoYF1MuqU8/WLrx-G_vDwI/AAAAAAAADYc/pkuJXiffujId6YxjHEopP62TimMsWcPaQCLcB/s1600/akun_triknews.png
 photos:
   - https://4.bp.blogspot.com/-UNoYF1MuqU8/WLrx-G_vDwI/AAAAAAAADYc/pkuJXiffujId6YxjHEopP62TimMsWcPaQCLcB/s1600/akun_triknews.png
 description: How to upgrade a hosted account to a non hosted version of the

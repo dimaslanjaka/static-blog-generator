@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-drama-korea-warm-and-cozy/e040e9f9f8bf043cedf357cb9f1ad647.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Warm-and-Cozy-Subtitle-Indonesia.jpg
 date: 2018-11-15T07:41:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 295c8419-749c-4888-8e21-b1dacab992c1
 webtitle: WMI Gitlab
 updated: 2018-11-15T07:41:08+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-drama-korea-warm-and-cozy/e040e9f9f8bf043cedf357cb9f1ad647.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Warm-and-Cozy-Subtitle-Indonesia.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/11/Warm-and-Cozy-Subtitle-Indonesia.jpg
 description: Korean Drama Warm and Cozy Indonesian Subtitles Synopsis Warm and

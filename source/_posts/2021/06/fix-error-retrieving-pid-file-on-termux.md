@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/06/fix-error-retrieving-pid-file-on-termux/e8293fa9e75c8776057c7b0aae406a08.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png
 date: 2021-06-04T01:00:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 95fc0792-3544-4888-8662-4579d3e71eeb
 webtitle: WMI Gitlab
 updated: 2021-06-04T01:00:00+07:00
-thumbnail: https://www.webmanajemen.com/2021/06/fix-error-retrieving-pid-file-on-termux/e8293fa9e75c8776057c7b0aae406a08.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png
 description: "Solution to error retrieving pid file  Termux and apache Apache

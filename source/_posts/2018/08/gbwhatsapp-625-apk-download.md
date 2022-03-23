@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/08/gbwhatsapp-625-apk-download/1f61a278bca8c6e6284035787c36c9cf.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/app/GBWhatsApp.jpg
 date: 2018-08-01T02:33:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: a7279f4b-e57d-4888-8e2c-9ef17618e345
 webtitle: WMI Gitlab
 updated: 2018-08-05T06:15:56+07:00
-thumbnail: https://www.webmanajemen.com/2018/08/gbwhatsapp-625-apk-download/1f61a278bca8c6e6284035787c36c9cf.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/app/GBWhatsApp.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://image.rexdl.com/android/app/GBWhatsApp.jpg
 description: GBWhatsApp  WhatsApp Mod [Dual WhatsApp dalam Satu Ponsel]

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/install-linux-on-android-part-2-how-to/3486cd30d4139233d8e6b9d4ae66acb3.png
+cover: https://image.ibb.co/fFtDUF/unnamed_5.png
 date: 2017-09-01T23:41:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 538f7e86-39b8-4888-86a9-a37c219c1c1c
 webtitle: WMI Gitlab
 updated: 2017-09-02T16:24:38+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/install-linux-on-android-part-2-how-to/3486cd30d4139233d8e6b9d4ae66acb3.png
+thumbnail: https://image.ibb.co/fFtDUF/unnamed_5.png
 photos:
   - https://image.ibb.co/fFtDUF/unnamed_5.png
 description: Another of the features of the android smartphone that we can take

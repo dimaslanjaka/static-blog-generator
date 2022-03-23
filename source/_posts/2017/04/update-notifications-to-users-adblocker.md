@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/04/update-notifications-to-users-adblocker/c91e12946bcdabe233576566bca65a47.png
+cover: https://1.bp.blogspot.com/-JkpTNtGOMaE/WJoMX1QnTmI/AAAAAAAAHBE/CPdxv-D-Xa0bdghE1HwdwkC1bHp9OA9EgCLcB/s640/How%2BTo%2BMake%2BAdsense%2BAdBlocker%2BNotifications.png
 date: 2017-04-15T01:00:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 02365894-ddcd-4888-8ed6-4b95ea2ef5fb
 webtitle: WMI Gitlab
 updated: 2017-04-15T01:00:14+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/update-notifications-to-users-adblocker/c91e12946bcdabe233576566bca65a47.png
+thumbnail: https://1.bp.blogspot.com/-JkpTNtGOMaE/WJoMX1QnTmI/AAAAAAAAHBE/CPdxv-D-Xa0bdghE1HwdwkC1bHp9OA9EgCLcB/s640/How%2BTo%2BMake%2BAdsense%2BAdBlocker%2BNotifications.png
 photos:
   - https://1.bp.blogspot.com/-JkpTNtGOMaE/WJoMX1QnTmI/AAAAAAAAHBE/CPdxv-D-Xa0bdghE1HwdwkC1bHp9OA9EgCLcB/s640/How%2BTo%2BMake%2BAdsense%2BAdBlocker%2BNotifications.png
 description: Update Notifications To Users AdBlocker Adsense

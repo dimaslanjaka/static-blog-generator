@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2021/05/how-to-destroy-abyss-lector-shield/568e72df28ff7faa4f289315539ea357.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools%2Fgenshin-impact%2Fgacha%2Fcryo_icon.png
 date: 2021-05-27T05:42:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: fd27f290-4eb5-4888-804b-0d12c732a3d5
 webtitle: WMI Gitlab
 updated: 2021-06-01T02:19:23+07:00
-thumbnail: https://www.webmanajemen.com/2021/05/how-to-destroy-abyss-lector-shield/568e72df28ff7faa4f289315539ea357.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools%2Fgenshin-impact%2Fgacha%2Fcryo_icon.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools%2Fgenshin-impact%2Fgacha%2Fcryo_icon.png
 description: Use Element Reactions

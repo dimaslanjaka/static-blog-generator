@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2018/11/regexp-for-matching-url-pattern/0c4d6734aaac778f4892a91fc9571f3d.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
 date: 2018-11-23T22:25:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: d8c6ac9a-9287-4888-8c62-2619979a958a
 webtitle: WMI Gitlab
 updated: 2020-01-21T01:56:29+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/regexp-for-matching-url-pattern/0c4d6734aaac778f4892a91fc9571f3d.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
 description: img

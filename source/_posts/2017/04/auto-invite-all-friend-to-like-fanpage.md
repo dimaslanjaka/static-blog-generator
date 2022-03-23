@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2017/04/auto-invite-all-friend-to-like-fanpage/e363df011dbf0bbdbe45b96af2297f06.png
+cover: https://1.bp.blogspot.com/-v8fRzugmiVw/VvD5ipgRbaI/AAAAAAAADeE/DJPMUJuCNNMi-j7QTh8V6RpfBNlvqf6zw/s600/Script%2BAuto%2BInvite%2BAll%2BFriends%2BTo%2BLike%2BFanpage.%2BTanpa%2BPlugin.png
 date: 2017-04-16T23:38:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 5e21cecb-0f3b-4888-8b45-848677b3e7ea
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/04/auto-invite-all-friend-to-like-fanpage/e363df011dbf0bbdbe45b96af2297f06.png
+thumbnail: https://1.bp.blogspot.com/-v8fRzugmiVw/VvD5ipgRbaI/AAAAAAAADeE/DJPMUJuCNNMi-j7QTh8V6RpfBNlvqf6zw/s600/Script%2BAuto%2BInvite%2BAll%2BFriends%2BTo%2BLike%2BFanpage.%2BTanpa%2BPlugin.png
 photos:
   - https://1.bp.blogspot.com/-v8fRzugmiVw/VvD5ipgRbaI/AAAAAAAADeE/DJPMUJuCNNMi-j7QTh8V6RpfBNlvqf6zw/s600/Script%2BAuto%2BInvite%2BAll%2BFriends%2BTo%2BLike%2BFanpage.%2BTanpa%2BPlugin.png
 description: Script Auto Invite All Friends To Like Fanpage

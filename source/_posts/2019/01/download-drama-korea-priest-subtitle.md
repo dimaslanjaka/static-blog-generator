@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-drama-korea-priest-subtitle/86c7b7dafa4fa13add24630677390e0a.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-Priest-Subtitle-Indonesia-678x381.jpg
 date: 2019-01-01T01:54:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 19131c52-07a8-4888-81ea-6d26095a0c2b
 webtitle: WMI Gitlab
 updated: 2019-01-07T01:42:07+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-drama-korea-priest-subtitle/86c7b7dafa4fa13add24630677390e0a.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-Priest-Subtitle-Indonesia-678x381.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-Priest-Subtitle-Indonesia-678x381.jpg
 description: Download Korean Drama Priest Indonesian Subtitles Oh SooMin (Yeon

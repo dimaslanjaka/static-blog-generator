@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2019/07/alternative-widget-translator-for-blog/4ea14beb187448a00bf9920819284cbb.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 date: 2019-07-26T00:56:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: addf0df2-5c9f-4888-87d4-e2c3f31e59bb
 webtitle: WMI Gitlab
 updated: 2019-07-26T01:10:33+07:00
-thumbnail: https://www.webmanajemen.com/2019/07/alternative-widget-translator-for-blog/4ea14beb187448a00bf9920819284cbb.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 description: English Indonesian Afrikaans Albanian Arabic Armenian Azerbaijani

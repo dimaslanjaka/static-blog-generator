@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/11/create-blogger-contact-popup-with-google-maps/490c9d1a369bfa9a334b79e3087558a3.jpeg
+cover: https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwufv5_UfBY2yXZZEu34LmZ9OMAMoACLcB/s1600/Screenshot_1_1.jpg
 date: 2017-11-11T04:24:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 142b9042-54b0-4888-80dd-d1407aacadc9
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.webmanajemen.com/2017/11/create-blogger-contact-popup-with-google-maps/490c9d1a369bfa9a334b79e3087558a3.jpeg
+thumbnail: https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwufv5_UfBY2yXZZEu34LmZ9OMAMoACLcB/s1600/Screenshot_1_1.jpg
 photos:
   - https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwufv5_UfBY2yXZZEu34LmZ9OMAMoACLcB/s1600/Screenshot_1_1.jpg
 description: The function of the contact form on a blog is to make it easier for

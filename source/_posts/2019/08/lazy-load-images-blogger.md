@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2019/08/lazy-load-images-blogger/826c3785d1836371c0c6f1a18569c0ec.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
 date: 2019-08-01T00:05:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 2314fa90-b3fc-4888-8acc-cc21e65058ad
 webtitle: WMI Gitlab
 updated: 2019-08-01T00:05:01+07:00
-thumbnail: https://www.webmanajemen.com/2019/08/lazy-load-images-blogger/826c3785d1836371c0c6f1a18569c0ec.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
 description: Lazy load images bloggerlazy loading blogger berguna

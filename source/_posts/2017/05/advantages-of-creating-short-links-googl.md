@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/05/advantages-of-creating-short-links-googl/00660c234ae61ba6cb1c88018a616615.png
+cover: https://2.bp.blogspot.com/-q6ZKyisuRjs/VKp_mksoudI/AAAAAAAABqU/8VM-NTbbi64/s1600/short%2Blink%2Bgoogle.png
 date: 2017-05-16T07:37:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: b1208090-5289-4888-84fa-6134ed16fe90
 webtitle: WMI Gitlab
 updated: 2017-05-16T07:37:13+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/advantages-of-creating-short-links-googl/00660c234ae61ba6cb1c88018a616615.png
+thumbnail: https://2.bp.blogspot.com/-q6ZKyisuRjs/VKp_mksoudI/AAAAAAAABqU/8VM-NTbbi64/s1600/short%2Blink%2Bgoogle.png
 photos:
   - https://2.bp.blogspot.com/-q6ZKyisuRjs/VKp_mksoudI/AAAAAAAABqU/8VM-NTbbi64/s1600/short%2Blink%2Bgoogle.png
 description: Advantages Of Creating Short Links Goo.Gl

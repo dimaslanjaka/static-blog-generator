@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/knowing-brother-episode-160-subtitle/2da4d289f006fce2d88f348f052e8a67.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2017/07/Knowing-Brother-Subtitle-Indonesia.jpg
 date: 2019-01-07T18:13:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 803696b6-e713-4888-8e33-04db078e6c06
 webtitle: WMI Gitlab
 updated: 2019-01-07T18:13:01+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/knowing-brother-episode-160-subtitle/2da4d289f006fce2d88f348f052e8a67.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2017/07/Knowing-Brother-Subtitle-Indonesia.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2017/07/Knowing-Brother-Subtitle-Indonesia.jpg
 description: Synopsis of Variety Show Knowing Brother Indonesian Subtitles

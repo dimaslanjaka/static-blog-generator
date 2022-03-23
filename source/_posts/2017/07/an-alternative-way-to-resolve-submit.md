@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/07/an-alternative-way-to-resolve-submit/15d92a3679f5bd35245933d016312434.png
+cover: https://3.bp.blogspot.com/-JdPb9Jp1xSk/WODgW427ETI/AAAAAAAADb4/zLz2WLm7lfs3S-7d2itu2hJ3-slbN6esACLcB/s1600/adsense-1.png
 date: 2017-07-23T06:56:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 1183dfa0-4715-4888-81cf-0b937a3ca8dc
 webtitle: WMI Gitlab
 updated: 2017-07-23T06:56:19+07:00
-thumbnail: https://www.webmanajemen.com/2017/07/an-alternative-way-to-resolve-submit/15d92a3679f5bd35245933d016312434.png
+thumbnail: https://3.bp.blogspot.com/-JdPb9Jp1xSk/WODgW427ETI/AAAAAAAADb4/zLz2WLm7lfs3S-7d2itu2hJ3-slbN6esACLcB/s1600/adsense-1.png
 photos:
   - https://3.bp.blogspot.com/-JdPb9Jp1xSk/WODgW427ETI/AAAAAAAADb4/zLz2WLm7lfs3S-7d2itu2hJ3-slbN6esACLcB/s1600/adsense-1.png
 description: AdSense brings me back to the beginning every time I clickSubmit .

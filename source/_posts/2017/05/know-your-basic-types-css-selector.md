@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/know-your-basic-types-css-selector/f784f0cfa82b85298cacf9bcf02211bc.jpeg
+cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpLEYpRfgPOwSkpUWGmr5SWmGGZoesHfcyD8FyIejZ_AZiE_lAsWcPdHuI
 date: 2017-05-06T20:55:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 53d750fe-4766-4888-8ec9-b8cb78707f8d
 webtitle: WMI Gitlab
 updated: 2017-05-06T20:55:03+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/know-your-basic-types-css-selector/f784f0cfa82b85298cacf9bcf02211bc.jpeg
+thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpLEYpRfgPOwSkpUWGmr5SWmGGZoesHfcyD8FyIejZ_AZiE_lAsWcPdHuI
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpLEYpRfgPOwSkpUWGmr5SWmGGZoesHfcyD8FyIejZ_AZiE_lAsWcPdHuI
 description: "Learning CSS Tutorial Part : Know Your Basic Types CSS SelectorCSS

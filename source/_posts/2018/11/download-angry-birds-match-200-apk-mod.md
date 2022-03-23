@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/11/download-angry-birds-match-200-apk-mod/e6dfab4b5ecb6283e2f02c0b1e1d4669.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
 date: 2018-11-26T21:31:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 3bd5bd4b-4df6-4888-8322-405a4173422d
 webtitle: WMI Gitlab
 updated: 2018-11-30T00:03:14+07:00
-thumbnail: https://www.webmanajemen.com/2018/11/download-angry-birds-match-200-apk-mod/e6dfab4b5ecb6283e2f02c0b1e1d4669.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
 description: Angry Birds Match .0.0 Apk + Mod Koin, Permata, Kehidupan,

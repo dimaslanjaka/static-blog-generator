@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/2019/12/js-how-to-delay-ajax-one-by-one-in-loop/fac2f1ca62b5fca4af036add30aee26b.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://artandlogic.com/wp-content/uploads/2000px-AJAX_logo_by_gengns.svg_.png
 date: 2019-12-30T02:26:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: c78f5103-caec-4888-895e-2fd1cefce788
 webtitle: WMI Gitlab
 updated: 2020-01-07T13:18:21+07:00
-thumbnail: https://www.webmanajemen.com/2019/12/js-how-to-delay-ajax-one-by-one-in-loop/fac2f1ca62b5fca4af036add30aee26b.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://artandlogic.com/wp-content/uploads/2000px-AJAX_logo_by_gengns.svg_.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://artandlogic.com/wp-content/uploads/2000px-AJAX_logo_by_gengns.svg_.png
 ---

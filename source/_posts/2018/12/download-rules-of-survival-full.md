@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2018/12/download-rules-of-survival-full/e5d88d8d76706d94e664d3b90968aee7.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
 date: 2018-12-27T01:01:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 4444b929-b2dd-4888-8a7a-f93580334721
 webtitle: WMI Gitlab
 updated: 2018-12-24T22:41:03+07:00
-thumbnail: https://www.webmanajemen.com/2018/12/download-rules-of-survival-full/e5d88d8d76706d94e664d3b90968aee7.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
 description: ATURAN SURVIVAL Penuh .204011.213685 Apk + Data android

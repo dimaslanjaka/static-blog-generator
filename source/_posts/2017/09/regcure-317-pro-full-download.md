@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2017/09/regcure-317-pro-full-download/34aa71b971a3da48b0b313427f17bedf.jpeg
+cover: https://2.bp.blogspot.com/-6r0R1QZzPpQ/Wal2_GeX74I/AAAAAAAAHYc/prs45HLxpWY08_6nLj7fgott6i9MPqo2ACLcBGAs/s320/screenshot_scan.jpg
 date: 2017-09-01T22:11:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 5c9423e2-536c-4888-8922-291d1c2f925b
 webtitle: WMI Gitlab
 updated: 2017-09-01T22:12:55+07:00
-thumbnail: https://www.webmanajemen.com/2017/09/regcure-317-pro-full-download/34aa71b971a3da48b0b313427f17bedf.jpeg
+thumbnail: https://2.bp.blogspot.com/-6r0R1QZzPpQ/Wal2_GeX74I/AAAAAAAAHYc/prs45HLxpWY08_6nLj7fgott6i9MPqo2ACLcBGAs/s320/screenshot_scan.jpg
 photos:
   - https://2.bp.blogspot.com/-6r0R1QZzPpQ/Wal2_GeX74I/AAAAAAAAHYc/prs45HLxpWY08_6nLj7fgott6i9MPqo2ACLcBGAs/s320/screenshot_scan.jpg
 ---

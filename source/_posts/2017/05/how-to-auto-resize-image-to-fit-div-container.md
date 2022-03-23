@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container/9ed17fb3819f404a5263642250d9363b.jpeg
+cover: https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&w=320&h=180&stc=true&jpg444=true&jpgq=90&sp=68&sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c
 date: 2017-05-09T05:58:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 0d0a8b9f-018f-4888-8d6c-0283ad106d79
 webtitle: WMI Gitlab
 updated: 2017-05-09T05:58:05+07:00
-thumbnail: https://www.webmanajemen.com/2017/05/how-to-auto-resize-image-to-fit-div-container/9ed17fb3819f404a5263642250d9363b.jpeg
+thumbnail: https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&w=320&h=180&stc=true&jpg444=true&jpgq=90&sp=68&sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c
 photos:
   - https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&w=320&h=180&stc=true&jpg444=true&jpgq=90&sp=68&sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c
 description: How do I autoresize an image to fit a div container

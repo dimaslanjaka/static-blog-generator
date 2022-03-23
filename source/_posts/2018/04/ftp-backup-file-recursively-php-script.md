@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/2018/04/ftp-backup-file-recursively-php-script/02daf9a0da68336a42a5121ce45d6c76.jpeg
+cover: https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
 date: 2018-04-05T23:33:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: b0bbaa57-3fc2-4888-8b44-07e3d3ee0f41
 webtitle: WMI Gitlab
 updated: 2018-04-05T23:34:19+07:00
-thumbnail: https://www.webmanajemen.com/2018/04/ftp-backup-file-recursively-php-script/02daf9a0da68336a42a5121ce45d6c76.jpeg
+thumbnail: https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
 ---

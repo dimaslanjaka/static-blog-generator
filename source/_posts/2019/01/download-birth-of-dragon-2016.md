@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/download-birth-of-dragon-2016/1e127df41a7c82be8fb92ac7af19e299.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
 date: 2019-01-21T00:23:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 2097afee-4dee-4888-86d0-9af506e9b999
 webtitle: WMI Gitlab
 updated: 2019-01-21T00:23:01+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/download-birth-of-dragon-2016/1e127df41a7c82be8fb92ac7af19e299.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
 description: import

@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://www.webmanajemen.com/2017/10/css-spoiler-only-with-label-and-input/18f69aa6c0757e7ff27a318508905fd7.jpeg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-fuQY4ZIJfBw/WIfqL98biyI/AAAAAAAApSU/2Tw6yaOlGJ8GjyAXYt60X65XxNbn8kMIACLcB/w1100/spoiler-css-only.jpg
 date: 2017-10-07T05:14:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 71827b6b-9a66-4888-82e6-82083fe98b92
 webtitle: WMI Gitlab
 updated: 2018-02-24T03:44:35+07:00
-thumbnail: https://www.webmanajemen.com/2017/10/css-spoiler-only-with-label-and-input/18f69aa6c0757e7ff27a318508905fd7.jpeg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-fuQY4ZIJfBw/WIfqL98biyI/AAAAAAAApSU/2Tw6yaOlGJ8GjyAXYt60X65XxNbn8kMIACLcB/w1100/spoiler-css-only.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-fuQY4ZIJfBw/WIfqL98biyI/AAAAAAAApSU/2Tw6yaOlGJ8GjyAXYt60X65XxNbn8kMIACLcB/w1100/spoiler-css-only.jpg
 description: unfortunately thedetails and summary tags are not allowed in AMP HTML.

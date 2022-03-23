@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://www.webmanajemen.com/Linux/Shortcut/XAMPP/52c789c94af0e988fd49e23cdfc76d31.jpeg
+cover: https://i.stack.imgur.com/4TYxW.jpg
 date: 2021-12-06T23:25:00+07:00
 keywords:
   - xampp
@@ -27,7 +27,7 @@ type: post
 uuid: 1bd42c10-7050-4888-887e-658da5efced0
 webtitle: Desktop Shortcut
 updated: 2021-12-12T13:38:42+07:00
-thumbnail: https://www.webmanajemen.com/Linux/Shortcut/XAMPP/52c789c94af0e988fd49e23cdfc76d31.jpeg
+thumbnail: https://i.stack.imgur.com/4TYxW.jpg
 photos:
   - https://i.stack.imgur.com/4TYxW.jpg
 description: How to configure shortcut desktop for xampp linux

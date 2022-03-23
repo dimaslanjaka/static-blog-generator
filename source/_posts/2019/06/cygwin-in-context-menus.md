@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/06/cygwin-in-context-menus/2e5062dcdfaba8b86c1d55e425d0a543.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image3.mouthshut.com/images/imagesp/925039881s.png
 date: 2019-06-25T14:48:00.004+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 68ca946d-b045-4888-8151-ea26e99578b6
 webtitle: WMI Gitlab
 updated: 2019-06-25T14:51:28+07:00
-thumbnail: https://www.webmanajemen.com/2019/06/cygwin-in-context-menus/2e5062dcdfaba8b86c1d55e425d0a543.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image3.mouthshut.com/images/imagesp/925039881s.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image3.mouthshut.com/images/imagesp/925039881s.png
 description: How might I make a Cygwin alternate way that will open Cygwin at a
