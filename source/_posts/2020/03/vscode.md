@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+cover: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
 date: 2020-03-23T15:04:00.001+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 4d624922-6e19-4888-850c-8652041fa419
 webtitle: WMI Gitlab
 updated: 2020-03-23T15:04:22+07:00
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+thumbnail: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Install jQuery Auto Complete and Hinting on VSCode Required npm-

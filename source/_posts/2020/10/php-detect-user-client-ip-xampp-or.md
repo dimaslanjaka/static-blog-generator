@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+cover: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
 date: 2020-10-17T04:26:00.004+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 34312352-b8b1-4888-8e50-1c29c99b2e5d
 webtitle: WMI Gitlab
 updated: 2020-10-17T04:26:36+07:00
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+thumbnail: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "pre><br />Usage: var_dump(get_client_ip());<br /></pre> <pre><br
