@@ -52,5 +52,11 @@
     "./gulpfile.ts",
     //"./src/**/*",
     "./userscripts/**/*"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true
+    }
+  }
 }
