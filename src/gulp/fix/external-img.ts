@@ -113,7 +113,7 @@ export default async function downloadImg(parse: parsePostReturn) {
                 libres.type = contentType;
                 libres.file = join(libres.dir, basename(src));
                 if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
-                // save images
+                // save images content
                 writeFileSync(libres.file, data);
                 console.log(`${chalk.blueBright("[img]")} saved ${libres.file}`);
                 // add result to `libraries`
