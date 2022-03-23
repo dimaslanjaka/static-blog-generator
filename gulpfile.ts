@@ -335,7 +335,7 @@ function afterGenerate(done: TaskCallback) {
           console.log(`${imgobj.url} => ${fullpathfile}`);
         }
       }
-      fs.writeFileSync(file, result);
+      fs.writeFileSync(file, chalk.greenBright(result));
     }
   }
   done();

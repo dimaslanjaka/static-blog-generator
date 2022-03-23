@@ -3,9 +3,8 @@ import { parsePostReturn } from "../../markdown/transformPosts";
 import crypto from "crypto";
 import { basename, dirname, join } from "path";
 import { cwd } from "process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import "js-prototypes";
-import chalk from "chalk";
 
 export interface ImgLib {
   /**
@@ -86,7 +85,7 @@ export default async function downloadImg(parse: parsePostReturn) {
     for (let index = 0; index < images.length; index++) {
       let src = images[index].trim();
       // setup key with md5
-      const key = crypto.createHash("md5").update(src).digest("hex");
+      const key = md5(src);
       // setup result data
       const libres: ImgLibData = {
         url: src,
@@ -111,11 +110,11 @@ export default async function downloadImg(parse: parsePostReturn) {
               const contentType = headers[0]["content-type"];
               if (contentType.startsWith("image/")) {
                 libres.type = contentType;
-                libres.file = join(libres.dir, basename(src));
+                libres.file = join(libres.dir, md5(basename(src)));
                 if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
                 // save images content
                 writeFileSync(libres.file, data);
-                console.log(`${chalk.blueBright("[img]")} saved ${libres.file}`);
+                appendFileSync(join(cwd(), "tmp/images.log"), `[img] saved ${libres.file}\n`);
                 // add result to `libraries`
                 libraries[key] = libres;
               }
@@ -139,4 +138,8 @@ export default async function downloadImg(parse: parsePostReturn) {
       }
     }
   }
+}
+
+function md5(src: string) {
+  return crypto.createHash("md5").update(src).digest("hex");
 }
