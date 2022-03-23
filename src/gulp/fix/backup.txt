@@ -1,14 +1,6 @@
 .map(async (src) => {
-        // setup key with md5
-        const key = md5(src);
-        // setup result data
-        const libres: ImgLibData = libraries[key] || {
-          type: null,
-          url: src,
-          err: false,
-          file: null,
-          dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, ".md")),
-        };
+
+
         /**
          * Download func
          */
@@ -22,32 +14,13 @@
             if (!src.match(new RegExp("^https?://" + HexoURL.host))) {
               try {
                 //console.log(`${chalk.magenta("[img][try]")} ${key}`);
-                const { statusCode, data, headers } = await curly.get(src, {
-                  FOLLOWLOCATION: true,
-                  REFERER: "https://www.google.com",
-                  SSL_VERIFYPEER: 0,
-                  SSL_VERIFYHOST: 0,
-                });
-                if (statusCode === 200) {
-                  const contentType = headers[0]["content-type"];
-                  if (contentType && contentType.startsWith("image/")) {
-                    libres.type = contentType;
-                    let imgtype = contentType.replace("image/", "");
-                    // fix svg+xml
-                    if (imgtype.includes("+")) {
-                      imgtype = imgtype.split("+")[0];
-                    }
-                    libres.file = join(libres.dir, md5(src) + "." + imgtype);
-                    if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
-                    // save images content
-                    writeFileSync(libres.file, data);
-                    // save images log
-                    appendFileSync(
-                      join(cwd(), "tmp/images.log"),
-                      `[img ${parse.fileTree.public}] saved ${libres.file}\n`
-                    );
-                  }
-                }
+
+        const download = bluebird.method(() => {
+          return
+        });
+        return download()
+
+
               } catch (error) {
                 const err: Error = error;
                 libres.err = err.message;
@@ -76,12 +49,7 @@
           if (!existsSync(libres.file)) {
             await download(libres.url);
           }
-          // determine full path url
-          const fullpath = HexoURL;
-          fullpath.pathname = libres.file
-            .replace(new RegExp("^" + cwd()), "")
-            .replace(new RegExp("^/source/_posts/"), "/");
-          libres.fullpath = fullpath.toString();
+
           // add result to `libraries`
           libraries[key] = libres;
           // save libraries
@@ -90,25 +58,5 @@
         return libres;
       })
       .each((data) => {
-        if (data.fullpath) {
-          if (!data.err) {
-            if (parse.metadata.cover.trim() === data.url) {
-              parse.metadata.cover = data.fullpath;
-            }
-            if (parse.metadata.thumbnail.trim() === data.url) {
-              parse.metadata.thumbnail = data.fullpath;
-            }
-            if (Array.isArray(parse.metadata.photos)) {
-              parse.metadata.photos.map((img) => {
-                if (img.trim() == data.url) return data.fullpath;
-                return img;
-              });
-            }
-            if (parse.body) {
-              parse.body.replace(data.url, data.fullpath);
-            }
-            //console.log(parse.fileTree.public);
-            saveParsedPost(parse, parse.fileTree.public);
-          }
-        }
+
       });

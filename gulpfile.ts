@@ -328,7 +328,7 @@ gulp.task("article:img", (done) => {
     .map(parsePost)
     .each((post) => {
       if (post) {
-        downloadImg(post);
+        return downloadImg(post);
       }
     });
 });
