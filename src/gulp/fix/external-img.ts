@@ -218,7 +218,7 @@ function download(callback: (processed: ImgLibData[]) => any) {
   if (!libraries[key]) libraries[key] = { url: src };
   // [github workflow] process from `filesave`
   if (typeof process.env.GITFLOW !== "undefined") {
-    processed.push(libraries[key]);
+    if (libraries[key]) processed.push(libraries[key]);
     return retry();
   }
   // [local] process with curl
