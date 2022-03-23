@@ -27,6 +27,7 @@ import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
 import { parse as parseHTML } from "node-html-parser";
 import downloadImage from "./src/gulp/fix/external-img";
+import { join } from "path";
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
 // generate definition config https://jvilk.com/MakeTypes/
@@ -241,9 +242,6 @@ function articleCopy(done: TaskCallback) {
             }
 
             if (parse.metadata && parse.body) {
-              // download external images locally
-              downloadImage(parse);
-
               // remove duplicated metadata photos
               if (parse.metadata.photos && parse.metadata.photos.length) {
                 parse.metadata.photos = parse.metadata.photos.unique();
@@ -320,6 +318,15 @@ function afterGenerate(done: TaskCallback) {
   }
   done();
 }
+
+gulp.task("article:img", (done) => {
+  const posts = loopDir(join(__dirname, config.source_dir, "_posts")).filter((f) => f.endsWith(".md"));
+  for (let index = 0; index < posts.length; index++) {
+    const post = posts[index];
+    const parse = parsePost(post);
+    downloadImage(parse);
+  }
+});
 
 gulp.task("article:after-gen", (done) => {
   afterGenerate(done);
