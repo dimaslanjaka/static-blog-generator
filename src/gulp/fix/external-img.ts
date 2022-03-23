@@ -118,13 +118,14 @@ export default async function downloadImg(parse: parsePostReturn) {
                 console.log(`${chalk.blueBright("[img]")} saved ${libres.file}`);
                 // add result to `libraries`
                 libraries[key] = libres;
-                // save libraries
-                writeFileSync(filesave, JSON.stringify(libraries));
               }
             }
           } catch (error) {
             const err: Error = error;
             libres.err = err.message;
+          } finally {
+            // save libraries with errors
+            writeFileSync(filesave, JSON.stringify(libraries));
           }
         }
       };
