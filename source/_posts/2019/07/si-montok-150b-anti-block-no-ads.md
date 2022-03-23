@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KpglWEBljLY/XMevpDPyhkI/AAAAAAAABZw/iCCyiwjIMOsP_geq81zpicf0nm_zceNdgCEwYBhgL/w585/simontok.jpg
+cover: https://www.webmanajemen.com/2019/07/si-montok-150b-anti-block-no-ads/4e8f77a0ed6177b13830792c6f7bf6b9.jpeg
 date: 2019-07-31T15:43:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 7dae2148-e93f-4888-801a-e55edb37070a
 webtitle: WMI Gitlab
 updated: 2019-07-31T15:43:02+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KpglWEBljLY/XMevpDPyhkI/AAAAAAAABZw/iCCyiwjIMOsP_geq81zpicf0nm_zceNdgCEwYBhgL/w585/simontok.jpg
+thumbnail: https://www.webmanajemen.com/2019/07/si-montok-150b-anti-block-no-ads/4e8f77a0ed6177b13830792c6f7bf6b9.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KpglWEBljLY/XMevpDPyhkI/AAAAAAAABZw/iCCyiwjIMOsP_geq81zpicf0nm_zceNdgCEwYBhgL/w585/simontok.jpg
 description: Simontok 5.0b anti blocks tanpa iklanDownload [zippyshare]Si

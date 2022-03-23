@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
+cover: https://www.webmanajemen.com/2021/04/update-genshin-impact-via-download/87fbdbd0f08dac4cb92dde301fee31d8.png
 date: 2021-04-27T00:17:00.006+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 4e4d250c-a07f-4888-86e3-1bbc35d3f6d6
 webtitle: WMI Gitlab
 updated: 2021-06-01T02:20:08+07:00
-thumbnail: https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
+thumbnail: https://www.webmanajemen.com/2021/04/update-genshin-impact-via-download/87fbdbd0f08dac4cb92dde301fee31d8.png
 photos:
   - https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
 ---

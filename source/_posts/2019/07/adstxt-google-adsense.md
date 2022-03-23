@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
+cover: https://www.webmanajemen.com/2019/07/adstxt-google-adsense/528d9b9d2cca48b85bda5a5315e56ac9.png
 date: 2019-07-25T06:20:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: b2e7e8bf-3209-4888-8c31-e0e9aa1ede0a
 webtitle: WMI Gitlab
 updated: 2019-07-25T06:20:37+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
+thumbnail: https://www.webmanajemen.com/2019/07/adstxt-google-adsense/528d9b9d2cca48b85bda5a5315e56ac9.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
 description: "ads.txtformat for valid adsenseexample combine ads.txt adsense

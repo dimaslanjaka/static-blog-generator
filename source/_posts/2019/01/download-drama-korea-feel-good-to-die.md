@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Feel-Good-To-Die-Korean-Drama.jpg
+cover: https://www.webmanajemen.com/2019/01/download-drama-korea-feel-good-to-die/0d9246ccbbb8777233fb4f3a4d1d1d2c.jpeg
 date: 2019-01-04T01:53:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c2ee4809-9bcf-4888-823f-c8935fb0ff9c
 webtitle: WMI Gitlab
 updated: 2019-01-07T01:43:37+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Feel-Good-To-Die-Korean-Drama.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/download-drama-korea-feel-good-to-die/0d9246ccbbb8777233fb4f3a4d1d1d2c.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Feel-Good-To-Die-Korean-Drama.jpg
 description: Download Korean Drama Feel Good To Die Indonesian Subtitles

@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY273Zd60Z1FdySOdLoB4r94bXskwZQCLcB/s320/Screenshot_2017-04-24-20-56-21.jpg
+cover: https://www.webmanajemen.com/2017/04/cara-membuat-responsive-recent-slider/24a545ca1e96807f93f4263b823dcf32.jpeg
 date: 2017-04-24T20:18:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: f8c59679-f117-4888-8fe1-7e73753630a3
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY273Zd60Z1FdySOdLoB4r94bXskwZQCLcB/s320/Screenshot_2017-04-24-20-56-21.jpg
+thumbnail: https://www.webmanajemen.com/2017/04/cara-membuat-responsive-recent-slider/24a545ca1e96807f93f4263b823dcf32.jpeg
 photos:
   - https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY273Zd60Z1FdySOdLoB4r94bXskwZQCLcB/s320/Screenshot_2017-04-24-20-56-21.jpg
 description: Nah kali ini saya akan share bagaimana cara membuat recent widget

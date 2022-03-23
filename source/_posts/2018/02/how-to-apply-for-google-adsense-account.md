@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
+cover: https://www.webmanajemen.com/2018/02/how-to-apply-for-google-adsense-account/5b8bfafae509e2b14c5d2d88b7e711d1.jpeg
 date: 2018-02-02T08:37:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 6ff538ab-5a29-4888-8685-8eb89bcf12fd
 webtitle: WMI Gitlab
 updated: 2018-02-02T08:42:29+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
+thumbnail: https://www.webmanajemen.com/2018/02/how-to-apply-for-google-adsense-account/5b8bfafae509e2b14c5d2d88b7e711d1.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
 description: Running Google adsense advertising program or a Google ads

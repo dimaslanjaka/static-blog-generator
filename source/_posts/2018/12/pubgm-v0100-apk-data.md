@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4579.jpg
+cover: https://www.webmanajemen.com/2018/12/pubgm-v0100-apk-data/ca23f7c7a1399f01b344bb1d9921f6a8.jpeg
 date: 2018-12-18T13:18:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 89643971-d972-4888-8a02-b853a906c09a
 webtitle: WMI Gitlab
 updated: 2018-12-18T13:25:09+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4579.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/pubgm-v0100-apk-data/ca23f7c7a1399f01b344bb1d9921f6a8.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4579.jpg
 ---

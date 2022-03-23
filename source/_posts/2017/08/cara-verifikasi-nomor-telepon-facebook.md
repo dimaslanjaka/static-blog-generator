@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://2.bp.blogspot.com/-_iPfvFT3nYw/WaJmqQ6ifoI/AAAAAAAAAAo/kmhDBlj0teEtqHC1OAmA2e3GrhCGxhaNACLcBGAs/s320/StockSnap_WBWKY1FQ2I.jpg
+cover: https://www.webmanajemen.com/2017/08/cara-verifikasi-nomor-telepon-facebook/5b0b7e33d2ff9b0773d6e5973a7bc0c0.jpeg
 date: 2017-08-25T18:07:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 0c6244bf-d7ae-4888-867b-1c75e58538e9
 webtitle: WMI Gitlab
 updated: 2018-11-26T16:07:52+07:00
-thumbnail: https://2.bp.blogspot.com/-_iPfvFT3nYw/WaJmqQ6ifoI/AAAAAAAAAAo/kmhDBlj0teEtqHC1OAmA2e3GrhCGxhaNACLcBGAs/s320/StockSnap_WBWKY1FQ2I.jpg
+thumbnail: https://www.webmanajemen.com/2017/08/cara-verifikasi-nomor-telepon-facebook/5b0b7e33d2ff9b0773d6e5973a7bc0c0.jpeg
 photos:
   - https://2.bp.blogspot.com/-_iPfvFT3nYw/WaJmqQ6ifoI/AAAAAAAAAAo/kmhDBlj0teEtqHC1OAmA2e3GrhCGxhaNACLcBGAs/s320/StockSnap_WBWKY1FQ2I.jpg
 ---

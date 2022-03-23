@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://3.bp.blogspot.com/-rlX3eX2Ncmc/WaZzcWKApYI/AAAAAAAAHVc/EtQrgEUUiyou54pxhpU0AfAW-ivce0fZgCLcBGAs/s320/images%2B%25281%2529.png
+cover: https://www.webmanajemen.com/2017/08/responsive-rss-search-form-with-bootstrap-4/c2c6c60361c0af7a4efd679e331ee2ab.png
 date: 2017-08-30T18:05:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 787ad08a-0922-4888-8ec7-41c54743ed96
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://3.bp.blogspot.com/-rlX3eX2Ncmc/WaZzcWKApYI/AAAAAAAAHVc/EtQrgEUUiyou54pxhpU0AfAW-ivce0fZgCLcBGAs/s320/images%2B%25281%2529.png
+thumbnail: https://www.webmanajemen.com/2017/08/responsive-rss-search-form-with-bootstrap-4/c2c6c60361c0af7a4efd679e331ee2ab.png
 photos:
   - https://3.bp.blogspot.com/-rlX3eX2Ncmc/WaZzcWKApYI/AAAAAAAAHVc/EtQrgEUUiyou54pxhpU0AfAW-ivce0fZgCLcBGAs/s320/images%2B%25281%2529.png
 ---

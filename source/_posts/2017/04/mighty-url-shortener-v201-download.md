@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
+cover: https://www.webmanajemen.com/2017/04/mighty-url-shortener-v201-download/8d2c7c4da2c8a227154caa95ac7c8ba5.jpeg
 date: 2017-04-09T13:00:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 5325f6b5-9bfc-4888-8ae1-8fd551f8ca97
 webtitle: WMI Gitlab
 updated: 2017-04-10T07:45:16+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
+thumbnail: https://www.webmanajemen.com/2017/04/mighty-url-shortener-v201-download/8d2c7c4da2c8a227154caa95ac7c8ba5.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
 description: Download Free Mighty URL Shortener PHP Script .0.1 - CodeCanyon |

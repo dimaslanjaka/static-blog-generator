@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/pes2017-pro-evolution-soccer-unreleased-1.jpg
+cover: https://www.webmanajemen.com/2019/01/download-pes-2019-pro-evolution-soccer/b99aa8ca26affd9176a8643b0b762390.jpeg
 date: 2019-01-13T10:46:00.002+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c9542bc2-1ad7-4888-88c1-9baeec74ed4f
 webtitle: WMI Gitlab
 updated: 2019-01-13T10:46:56+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/pes2017-pro-evolution-soccer-unreleased-1.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/download-pes-2019-pro-evolution-soccer/b99aa8ca26affd9176a8643b0b762390.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/pes2017-pro-evolution-soccer-unreleased-1.jpg
 description: PES 019 PRO EVOLUTION SOCCER 3.0.1 Apk Lengkap + Data android

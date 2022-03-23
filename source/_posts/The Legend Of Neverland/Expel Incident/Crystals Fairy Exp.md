@@ -6,7 +6,7 @@ category:
   - Games
   - The Legend Of Neverland
 comments: true
-cover: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
+cover: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards/a67bc5fa6f17e0f1fe61868145df0e3b.jpeg
 date: 2021-08-17T00:00:00+07:00
 lang: en
 location: Indonesia
@@ -18,7 +18,7 @@ type: post
 uuid: 776af528-5208-4888-89a7-b1d1be87ed02
 webtitle: The Legend Of Neverland
 updated: 2021-12-20T02:11:37+07:00
-thumbnail: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
+thumbnail: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards/a67bc5fa6f17e0f1fe61868145df0e3b.jpeg
 photos:
   - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 description: Expel Incident With The Highest Fairies Exp And Crystals Rewards.

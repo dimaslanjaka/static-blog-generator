@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
+cover: https://www.webmanajemen.com/2018/11/download-simontok-mod-no-ads-tanpa-iklan/202dc1d2eeec2d6a47a592862c11e8ce.png
 date: 2018-11-19T21:39:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 126bccfb-5306-4888-8116-203aaf90876a
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:34:02+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
+thumbnail: https://www.webmanajemen.com/2018/11/download-simontok-mod-no-ads-tanpa-iklan/202dc1d2eeec2d6a47a592862c11e8ce.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
 description: Download Simontok MOD Tanpa Iklan No Ads] [VIP] terbaru Via »

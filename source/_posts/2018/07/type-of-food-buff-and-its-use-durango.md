@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
+cover: https://www.webmanajemen.com/2018/07/type-of-food-buff-and-its-use-durango/a1ae681ef339dcc115fcdec49f2995f2.png
 date: 2018-07-11T22:58:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: e2cf3850-10d7-4888-8fbb-e13fa2904d95
 webtitle: WMI Gitlab
 updated: 2018-08-05T06:17:46+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
+thumbnail: https://www.webmanajemen.com/2018/07/type-of-food-buff-and-its-use-durango/a1ae681ef339dcc115fcdec49f2995f2.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
 description: buff str you can get from various types ofdino meat that you hunt.

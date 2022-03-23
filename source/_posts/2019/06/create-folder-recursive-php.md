@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-G8uvcGY1HKk/XRJ2h07bE2I/AAAAAAAAAZ4/xFxE1oVc6nctLlNdnpbGx-xvqOADFqcfQCLcBGAs/s1600/iconfinder_folder_black_PHP_51814.png
+cover: https://www.webmanajemen.com/2019/06/create-folder-recursive-php/df9b297121eb0b5db59e4d3bf4fa0bbc.png
 date: 2019-06-26T02:24:00.000+07:00
 lang: en
 location: ""
@@ -17,7 +17,7 @@ type: post
 uuid: de885efa-8101-4888-85f5-befdd26e92be
 webtitle: WMI Gitlab
 updated: 2019-06-26T02:36:59+07:00
-thumbnail: https://4.bp.blogspot.com/-G8uvcGY1HKk/XRJ2h07bE2I/AAAAAAAAAZ4/xFxE1oVc6nctLlNdnpbGx-xvqOADFqcfQCLcBGAs/s1600/iconfinder_folder_black_PHP_51814.png
+thumbnail: https://www.webmanajemen.com/2019/06/create-folder-recursive-php/df9b297121eb0b5db59e4d3bf4fa0bbc.png
 photos:
   - https://4.bp.blogspot.com/-G8uvcGY1HKk/XRJ2h07bE2I/AAAAAAAAAZ4/xFxE1oVc6nctLlNdnpbGx-xvqOADFqcfQCLcBGAs/s1600/iconfinder_folder_black_PHP_51814.png
 description: How to automatically create folder if not exists on spesific PATH

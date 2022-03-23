@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
+cover: https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined/406cffefba950aaca794aa0b569b21c5.png
 date: 2021-04-27T19:26:00.002+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 0879db41-1cc7-4888-88b3-d7f0056a20b8
 webtitle: WMI Gitlab
 updated: 2021-05-14T04:26:37+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
+thumbnail: https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined/406cffefba950aaca794aa0b569b21c5.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
 description: "h5>Uncaught Error: Call to undefined function str_starts_with()

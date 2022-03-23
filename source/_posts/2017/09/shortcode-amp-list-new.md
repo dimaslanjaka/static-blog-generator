@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
+cover: https://www.webmanajemen.com/2017/09/shortcode-amp-list-new/e497739e08ea56719fb76abf5b5f1397.jpeg
 date: 2017-09-15T01:48:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 5b1c1769-e723-4888-8be1-e499a748dbb4
 webtitle: WMI Gitlab
 updated: 2017-09-15T01:48:06+07:00
-thumbnail: https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
+thumbnail: https://www.webmanajemen.com/2017/09/shortcode-amp-list-new/e497739e08ea56719fb76abf5b5f1397.jpeg
 photos:
   - https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
 ---

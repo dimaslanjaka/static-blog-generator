@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
+cover: https://www.webmanajemen.com/2017/09/create-countdown-clock-for-purposes-of/cd3fba082ea5da61c0de76423ff2d395.jpeg
 date: 2017-09-11T00:49:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 4f2c3e1e-7847-4888-84fd-f1609ce018dc
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
+thumbnail: https://www.webmanajemen.com/2017/09/create-countdown-clock-for-purposes-of/cd3fba082ea5da61c0de76423ff2d395.jpeg
 photos:
   - https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
 ---

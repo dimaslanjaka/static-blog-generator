@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
+cover: https://www.webmanajemen.com/2018/11/unduh-free-ronneby-v244-tema-wordpress/ac75bf1722b627a3626ab4e73ea113ac.jpeg
 date: 2018-11-19T09:32:00.001+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 3d4f8715-1362-4888-8a08-ba890086bb75
 webtitle: WMI Gitlab
 updated: 2018-11-19T09:33:51+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
+thumbnail: https://www.webmanajemen.com/2018/11/unduh-free-ronneby-v244-tema-wordpress/ac75bf1722b627a3626ab4e73ea113ac.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
 description: Unduh Free Ronneby V.4.4 Tema Wordpress berperforma tinggi Tema

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
+cover: https://www.webmanajemen.com/2018/12/download-tiger-zinda-hai-2017/d93701abfee97f0b1b8aaa3e9caf883a.jpeg
 date: 2018-12-22T13:43:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: eb81b963-d412-4888-86dc-301aaea343b7
 webtitle: WMI Gitlab
 updated: 2018-12-22T13:43:00+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/download-tiger-zinda-hai-2017/d93701abfee97f0b1b8aaa3e9caf883a.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
 description: import

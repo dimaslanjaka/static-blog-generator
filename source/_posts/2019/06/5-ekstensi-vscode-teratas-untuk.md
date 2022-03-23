@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
+cover: https://www.webmanajemen.com/2019/06/5-ekstensi-vscode-teratas-untuk/f3b33657433f8663513036befd917e4a.png
 date: 2019-06-15T20:02:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: d390ecda-c1cd-4888-8a7f-8bcad93666fa
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
+thumbnail: https://www.webmanajemen.com/2019/06/5-ekstensi-vscode-teratas-untuk/f3b33657433f8663513036befd917e4a.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
 description: Salah satu hal paling luar biasa tentang Visual Studio Code adalah

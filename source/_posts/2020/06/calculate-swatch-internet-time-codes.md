@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
 date: 2020-06-06T01:11:00.002+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: b0925972-d256-4888-8c80-907cde21a142
 webtitle: WMI Gitlab
 updated: 2020-06-06T01:15:54+07:00
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 ---

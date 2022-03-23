@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
+cover: https://www.webmanajemen.com/2017/05/how-to-create-responsive-chitika-ads/527a6534f9a33aaa8e866f0a0b00f713.jpeg
 date: 2017-05-02T21:18:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: df46c755-03b8-4888-8253-70a4efb46a2e
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
+thumbnail: https://www.webmanajemen.com/2017/05/how-to-create-responsive-chitika-ads/527a6534f9a33aaa8e866f0a0b00f713.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
 description: registers the default width and renders the advertisement that you

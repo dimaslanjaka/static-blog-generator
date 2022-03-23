@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
+cover: https://www.webmanajemen.com/2018/12/how-to-display-icon-blog-in-speed-dial/05ecaafe7de943133a06e6a26af4c4a4.png
 date: 2018-12-25T14:03:00.001+07:00
 lang: en
 location: ""
@@ -26,7 +26,7 @@ type: post
 uuid: 4e577201-dab4-4888-8c7d-5a7ccee64efa
 webtitle: WMI Gitlab
 updated: 2018-12-25T14:03:38+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
+thumbnail: https://www.webmanajemen.com/2018/12/how-to-display-icon-blog-in-speed-dial/05ecaafe7de943133a06e6a26af4c4a4.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4624.png
 description: img

@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://2.bp.blogspot.com/-axfbmdLI3Pc/XoIVHlkeicI/AAAAAAAAAA0/N9WMnayMq20kxlOxwl3vZgydjoGi9AcxQCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
+cover: https://www.webmanajemen.com/2018/11/gmail-smtp-error-please-log-in-via-your/44d06d7aaafb6918c51d0b85c49048ba.png
 date: 2018-11-10T05:21:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 16000189-00c3-4888-8a18-c5014c618b1c
 webtitle: WMI Gitlab
 updated: 2020-03-30T22:56:56+07:00
-thumbnail: https://2.bp.blogspot.com/-axfbmdLI3Pc/XoIVHlkeicI/AAAAAAAAAA0/N9WMnayMq20kxlOxwl3vZgydjoGi9AcxQCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
+thumbnail: https://www.webmanajemen.com/2018/11/gmail-smtp-error-please-log-in-via-your/44d06d7aaafb6918c51d0b85c49048ba.png
 photos:
   - https://2.bp.blogspot.com/-axfbmdLI3Pc/XoIVHlkeicI/AAAAAAAAAA0/N9WMnayMq20kxlOxwl3vZgydjoGi9AcxQCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
 description: You having problems with gmail smtp server. Like this Gmail SMTP

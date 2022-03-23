@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-WFX0GRHO_hU/VW1H7LU1faI/AAAAAAAABmU/hFAoVMjR--M/s1600/mengaktifkan%2Btampilan%2Bseluler%2Bpada%2Bblog.png
+cover: https://www.webmanajemen.com/2017/04/make-blog-become-mobile-friendly/f513f4c351511689e43a053a1707cdb9.png
 date: 2017-04-26T16:21:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 20a42013-5c7f-4888-880d-0cb410e8c30f
 webtitle: WMI Gitlab
 updated: 2017-04-26T16:21:02+07:00
-thumbnail: https://1.bp.blogspot.com/-WFX0GRHO_hU/VW1H7LU1faI/AAAAAAAABmU/hFAoVMjR--M/s1600/mengaktifkan%2Btampilan%2Bseluler%2Bpada%2Bblog.png
+thumbnail: https://www.webmanajemen.com/2017/04/make-blog-become-mobile-friendly/f513f4c351511689e43a053a1707cdb9.png
 photos:
   - https://1.bp.blogspot.com/-WFX0GRHO_hU/VW1H7LU1faI/AAAAAAAABmU/hFAoVMjR--M/s1600/mengaktifkan%2Btampilan%2Bseluler%2Bpada%2Bblog.png
 description: Make Blog Become a MobileFriendly How to Make a Blog For Mobile

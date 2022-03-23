@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
+cover: https://www.webmanajemen.com/2017/05/make-sticky-sidebar-with-css-position/30c3cee98d552f81b6bc33c39898e259.png
 date: 2017-05-18T03:50:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 54c8b0e2-ffe7-4888-8b6f-c3205de29ab2
 webtitle: WMI Gitlab
 updated: 2017-05-18T03:50:14+07:00
-thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
+thumbnail: https://www.webmanajemen.com/2017/05/make-sticky-sidebar-with-css-position/30c3cee98d552f81b6bc33c39898e259.png
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
 description: Make Sticky Sidebar With CSS position sticky

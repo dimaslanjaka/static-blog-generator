@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
+cover: https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root/01c8da4a30ed69d222575fda61b9c822.jpeg
 date: 2021-06-03T06:00:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 7923e4c5-8f45-4888-8354-c98606dbd5d0
 webtitle: WMI Gitlab
 updated: 2021-06-03T06:00:00+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
+thumbnail: https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root/01c8da4a30ed69d222575fda61b9c822.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 description: Previous Install XAMPP apache on android termux Fix error starting

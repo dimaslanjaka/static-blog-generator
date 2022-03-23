@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
+cover: https://www.webmanajemen.com/2018/11/script-auto-reaction-facebook-dan-auto/65dc9af40fab62a05086c184b2c35076.png
 date: 2018-11-03T20:16:00.001+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 6ae454f6-561b-4888-8c9b-eb88be2a3c03
 webtitle: WMI Gitlab
 updated: 2019-02-08T22:17:27+07:00
-thumbnail: https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
+thumbnail: https://www.webmanajemen.com/2018/11/script-auto-reaction-facebook-dan-auto/65dc9af40fab62a05086c184b2c35076.png
 photos:
   - https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
 description: Download Scriptauto reaction facebook

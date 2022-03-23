@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
+cover: https://www.webmanajemen.com/2019/01/download-halloween-2018-indonesian/675fb9108f645e32ac07b82196f69a39.jpeg
 date: 2019-01-06T13:31:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 1735d23e-d41b-4888-8b65-b876924f8245
 webtitle: WMI Gitlab
 updated: 2019-02-05T01:52:05+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/download-halloween-2018-indonesian/675fb9108f645e32ac07b82196f69a39.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
 description: import

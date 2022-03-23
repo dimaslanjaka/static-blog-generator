@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh5.googleusercontent.com/proxy/0M7YVi9ALp2H_7yL8Qjxytyl1bR_a1wm5w9439itLQLMHsRgTo9wU-PwoO19di1vA4AtAt7zBE0ZcrqhoKcYDH6TKwZgVpu1C4Ba5KITbvPGYV8I2qLOHxtrSP68PrsWHYP3PHIOQtipt2cL8ARZOa9YNwjV16QhJWsZThVqKVQrPA=w507-h290-nc
+cover: https://www.webmanajemen.com/2017/09/deskripsi-tentang-noodp-dan-noydir-meta/2bc31461ae81512d237ccac6ca8c8a75.jpeg
 date: 2017-09-10T16:02:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: e5bcb6b3-fee2-4888-8a63-c403f1d52715
 webtitle: WMI Gitlab
 updated: 2017-09-13T01:10:40+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh5.googleusercontent.com/proxy/0M7YVi9ALp2H_7yL8Qjxytyl1bR_a1wm5w9439itLQLMHsRgTo9wU-PwoO19di1vA4AtAt7zBE0ZcrqhoKcYDH6TKwZgVpu1C4Ba5KITbvPGYV8I2qLOHxtrSP68PrsWHYP3PHIOQtipt2cL8ARZOa9YNwjV16QhJWsZThVqKVQrPA=w507-h290-nc
+thumbnail: https://www.webmanajemen.com/2017/09/deskripsi-tentang-noodp-dan-noydir-meta/2bc31461ae81512d237ccac6ca8c8a75.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh5.googleusercontent.com/proxy/0M7YVi9ALp2H_7yL8Qjxytyl1bR_a1wm5w9439itLQLMHsRgTo9wU-PwoO19di1vA4AtAt7zBE0ZcrqhoKcYDH6TKwZgVpu1C4Ba5KITbvPGYV8I2qLOHxtrSP68PrsWHYP3PHIOQtipt2cL8ARZOa9YNwjV16QhJWsZThVqKVQrPA=w507-h290-nc
 description: Untuk mencegah yahoo search engine menampilkan deskripsi dan title

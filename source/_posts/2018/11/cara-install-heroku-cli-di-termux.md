@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://camo.githubusercontent.com/30c7758f9ac63488d3c2814ed2dcd9dbb7e967f3/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667
+cover: https://www.webmanajemen.com/2018/11/cara-install-heroku-cli-di-termux/c5a2efde8362cd5d6e7186b94a49a7fd.svg
 date: 2018-11-17T14:08:00.000+07:00
 lang: en
 location: ""
@@ -27,7 +27,7 @@ type: post
 uuid: a48833a6-c005-4888-81b2-d030b4dc8f2a
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://camo.githubusercontent.com/30c7758f9ac63488d3c2814ed2dcd9dbb7e967f3/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667
+thumbnail: https://www.webmanajemen.com/2018/11/cara-install-heroku-cli-di-termux/c5a2efde8362cd5d6e7186b94a49a7fd.svg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://camo.githubusercontent.com/30c7758f9ac63488d3c2814ed2dcd9dbb7e967f3/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6865726f6b752d312e737667
 description: "Klik huruf i di keyboard tanpa tanda petik)Ubah kode di line

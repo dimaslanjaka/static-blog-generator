@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png
+cover: https://www.webmanajemen.com/2019/07/membuat-websocket-javascript-php/aec7d53d7fa04ef1a8b06a23b63f41b7.png
 date: 2019-07-13T01:38:00.001+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: f549c4d8-78f3-4888-87a4-f7bf9d4df5fb
 webtitle: WMI Gitlab
 updated: 2020-02-01T00:40:44+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png
+thumbnail: https://www.webmanajemen.com/2019/07/membuat-websocket-javascript-php/aec7d53d7fa04ef1a8b06a23b63f41b7.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png
 description: "Cara membuat websocket dengan Javascript JS) dan PHPUpdate: Simple

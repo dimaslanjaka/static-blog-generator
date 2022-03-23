@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-F-ocOo6kFI4/TZmheb35DxI/AAAAAAAAL0M/qYSBewm5xDY/s1600/Local-Player.png
+cover: https://www.webmanajemen.com/2017/10/app-player-musik-yang-luar-biasa-untuk/42d0001e962ebad255849bc65b4353ab.png
 date: 2017-10-14T00:32:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 89b06ce1-da9a-4888-836a-a4e6c67c80c0
 webtitle: WMI Gitlab
 updated: 2017-10-14T00:32:02+07:00
-thumbnail: https://4.bp.blogspot.com/-F-ocOo6kFI4/TZmheb35DxI/AAAAAAAAL0M/qYSBewm5xDY/s1600/Local-Player.png
+thumbnail: https://www.webmanajemen.com/2017/10/app-player-musik-yang-luar-biasa-untuk/42d0001e962ebad255849bc65b4353ab.png
 photos:
   - https://4.bp.blogspot.com/-F-ocOo6kFI4/TZmheb35DxI/AAAAAAAAL0M/qYSBewm5xDY/s1600/Local-Player.png
 description: Pemain Lokal

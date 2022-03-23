@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seoclerk.com/pics/want29446-1eGFdc1437614695.png
+cover: https://www.webmanajemen.com/2018/03/00webhost-file-manager-alternative/c50c50f667dc55c0b2356bd86d46f17b.png
 date: 2018-03-26T21:18:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 6de7befd-bc1c-4888-8919-f36828840d7a
 webtitle: WMI Gitlab
 updated: 2018-03-27T02:22:48+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seoclerk.com/pics/want29446-1eGFdc1437614695.png
+thumbnail: https://www.webmanajemen.com/2018/03/00webhost-file-manager-alternative/c50c50f667dc55c0b2356bd86d46f17b.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seoclerk.com/pics/want29446-1eGFdc1437614695.png
 description: FeatureSupport unzip fileSupport edit file/script on different

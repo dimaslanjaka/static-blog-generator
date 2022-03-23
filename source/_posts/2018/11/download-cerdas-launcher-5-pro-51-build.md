@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
+cover: https://www.webmanajemen.com/2018/11/download-cerdas-launcher-5-pro-51-build/d839f8e5346a44c4d2b54bea78379c19.jpeg
 date: 2018-11-08T12:54:00.002+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 14a75683-4f4e-4888-8560-579107832e32
 webtitle: WMI Gitlab
 updated: 2018-11-10T06:34:53+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
+thumbnail: https://www.webmanajemen.com/2018/11/download-cerdas-launcher-5-pro-51-build/d839f8e5346a44c4d2b54bea78379c19.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
 description: Cerdas Launcher  adalah permainan Personalisasi untuk android Download versi

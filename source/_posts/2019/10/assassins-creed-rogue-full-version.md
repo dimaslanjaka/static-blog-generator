@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/03/Untitled-2.png
+cover: https://www.webmanajemen.com/2019/10/assassins-creed-rogue-full-version/4ed2862a9190c09024c3ab7f621d9c8d.png
 date: 2019-10-26T17:42:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 5dbe678c-349f-4888-84ce-7f07c1107aec
 webtitle: WMI Gitlab
 updated: 2019-10-26T17:42:07+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/03/Untitled-2.png
+thumbnail: https://www.webmanajemen.com/2019/10/assassins-creed-rogue-full-version/4ed2862a9190c09024c3ab7f621d9c8d.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/03/Untitled-2.png
 description: Web Development Indonesia  After a while ago we had distributed

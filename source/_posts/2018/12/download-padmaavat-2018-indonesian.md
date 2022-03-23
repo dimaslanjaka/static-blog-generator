@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
+cover: https://www.webmanajemen.com/2018/12/download-padmaavat-2018-indonesian/87faa76b80fea6d14d1b51b2e5fc8621.jpeg
 date: 2018-12-12T07:38:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: afe22559-2feb-4888-83a7-86312939d000
 webtitle: WMI Gitlab
 updated: 2018-12-12T07:38:00+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/download-padmaavat-2018-indonesian/87faa76b80fea6d14d1b51b2e5fc8621.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
 description: import

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
+cover: https://www.webmanajemen.com/2017/05/it-will-happen-if-you-do-not-update/62e65f46368304dbdbf9750e4b3d3329.jpeg
 date: 2017-05-08T23:18:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 30026cd3-780a-4888-8b3b-4fc375c03ff2
 webtitle: WMI Gitlab
 updated: 2017-05-08T23:18:18+07:00
-thumbnail: https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
+thumbnail: https://www.webmanajemen.com/2017/05/it-will-happen-if-you-do-not-update/62e65f46368304dbdbf9750e4b3d3329.jpeg
 photos:
   - https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
 description: Not continually all the items we wish are done, we have a tendency

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/08/Signal-Subtitle-Indonesia.png
+cover: https://www.webmanajemen.com/2019/09/download-drama-korea-signal-subtitle/4092c07732119f48f626d4e0b061f27d.png
 date: 2019-09-25T15:34:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 7545ffbe-17cc-4888-89ef-6d054f9e0258
 webtitle: WMI Gitlab
 updated: 2019-09-25T15:34:32+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/08/Signal-Subtitle-Indonesia.png
+thumbnail: https://www.webmanajemen.com/2019/09/download-drama-korea-signal-subtitle/4092c07732119f48f626d4e0b061f27d.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/08/Signal-Subtitle-Indonesia.png
 description: Korean Drama Signal Indonesian Subtitles Signal Synopsis The Korean

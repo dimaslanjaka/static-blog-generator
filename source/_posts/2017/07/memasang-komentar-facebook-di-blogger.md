@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
+cover: https://www.webmanajemen.com/2017/07/memasang-komentar-facebook-di-blogger/164a8050c995dea64b44ad98fc30c646.png
 date: 2017-07-24T20:47:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 580f2618-b09c-4888-821d-11791192ff77
 webtitle: WMI Gitlab
 updated: 2017-07-24T20:47:00+07:00
-thumbnail: https://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
+thumbnail: https://www.webmanajemen.com/2017/07/memasang-komentar-facebook-di-blogger/164a8050c995dea64b44ad98fc30c646.png
 photos:
   - https://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
 description: Blogger AMP Tutorial PartsMemasang Komentar Facebook di blogger AMP

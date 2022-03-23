@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/02/f5/02f54d770dbf6913804ebf03a2a537c4.jpg
+cover: https://www.webmanajemen.com/2019/01/file-kecantikan-merek-bab-11/ea64ac9b95f306927cebda0c1bca955e.jpeg
 date: 2019-01-24T00:23:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: a7aec9f5-9943-4888-818c-3079f3abb888
 webtitle: WMI Gitlab
 updated: 2019-01-24T00:23:00+07:00
-thumbnail: https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/02/f5/02f54d770dbf6913804ebf03a2a537c4.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/file-kecantikan-merek-bab-11/ea64ac9b95f306927cebda0c1bca955e.jpeg
 photos:
   - https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/02/f5/02f54d770dbf6913804ebf03a2a537c4.jpg
 description: Menyelam singkat Pada hari Minggu, Beauty Brands, peritel Kansas

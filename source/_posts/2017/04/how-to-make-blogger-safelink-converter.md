@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
+cover: https://www.webmanajemen.com/2017/04/how-to-make-blogger-safelink-converter/6057ba68e331d826e591549e51c2f91b.png
 date: 2017-04-10T15:55:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 102470c4-cd9e-4888-8e1f-fb9c2d8d0255
 webtitle: WMI Gitlab
 updated: 2020-01-21T02:10:38+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-make-blogger-safelink-converter/6057ba68e331d826e591549e51c2f91b.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
 description: How to Make Blogger Safelink Converter v Understanding What is

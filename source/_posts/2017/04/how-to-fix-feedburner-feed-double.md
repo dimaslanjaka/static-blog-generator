@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
+cover: https://www.webmanajemen.com/2017/04/how-to-fix-feedburner-feed-double/e472132202137407331fb6a37ebae0e3.jpeg
 date: 2017-04-22T23:30:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 1a0abc3e-65d6-4888-8542-07d2cbc02188
 webtitle: WMI Gitlab
 updated: 2017-04-22T23:30:11+07:00
-thumbnail: https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-fix-feedburner-feed-double/e472132202137407331fb6a37ebae0e3.jpeg
 photos:
   - https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
 description: How to fix Feedburner feed double titles issue  Quick tip Most of

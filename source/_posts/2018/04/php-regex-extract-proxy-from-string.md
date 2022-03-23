@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
+cover: https://www.webmanajemen.com/2018/04/php-regex-extract-proxy-from-string/8509290308de89510bb003539591da2b.jpeg
 date: 2018-04-12T19:43:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 0b37cfa2-42c5-4888-8f05-5ad12ecdc2e9
 webtitle: WMI Gitlab
 updated: 2018-04-12T19:52:07+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
+thumbnail: https://www.webmanajemen.com/2018/04/php-regex-extract-proxy-from-string/8509290308de89510bb003539591da2b.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
 description: img

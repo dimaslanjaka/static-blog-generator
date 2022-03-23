@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-ALUdm0qBrwA/VPlJ1M--s5I/AAAAAAAAADM/d0MRXUYlTxE/s1600/about-us.jpg
+cover: https://www.webmanajemen.com/2017/05/easy-ways-to-make-about-us-on-blogger/c207f663a1f099eed693e809aed6add7.jpeg
 date: 2017-05-09T05:49:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 0fb9be8e-d2b6-4888-891c-7078ba39442a
 webtitle: WMI Gitlab
 updated: 2017-05-09T05:49:01+07:00
-thumbnail: https://3.bp.blogspot.com/-ALUdm0qBrwA/VPlJ1M--s5I/AAAAAAAAADM/d0MRXUYlTxE/s1600/about-us.jpg
+thumbnail: https://www.webmanajemen.com/2017/05/easy-ways-to-make-about-us-on-blogger/c207f663a1f099eed693e809aed6add7.jpeg
 photos:
   - https://3.bp.blogspot.com/-ALUdm0qBrwA/VPlJ1M--s5I/AAAAAAAAADM/d0MRXUYlTxE/s1600/about-us.jpg
 description: Easy Ways to Make About Us On Blogger Widget Do you need to feature

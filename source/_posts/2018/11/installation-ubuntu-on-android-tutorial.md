@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/-toLz3YUOMz8/T4N7B_ofSMI/AAAAAAAADa8/YIwsAh5MVtI/s800/shot_000003.png
+cover: https://www.webmanajemen.com/2018/11/installation-ubuntu-on-android-tutorial/2b4ebe7a2597233254c5d87f78cd78d9.png
 date: 2018-11-13T03:33:00.000+07:00
 lang: en
 location: ""
@@ -25,7 +25,7 @@ type: post
 uuid: 3402c99d-aeef-4888-8696-cc1b3bbff706
 webtitle: WMI Gitlab
 updated: 2018-11-13T03:33:28+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/-toLz3YUOMz8/T4N7B_ofSMI/AAAAAAAADa8/YIwsAh5MVtI/s800/shot_000003.png
+thumbnail: https://www.webmanajemen.com/2018/11/installation-ubuntu-on-android-tutorial/2b4ebe7a2597233254c5d87f78cd78d9.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/-toLz3YUOMz8/T4N7B_ofSMI/AAAAAAAADa8/YIwsAh5MVtI/s800/shot_000003.png
 description: after struggling finally

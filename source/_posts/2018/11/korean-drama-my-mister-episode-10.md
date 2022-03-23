@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/03/Download-Drama-Korea-My-Mister-Subtitle-Indonesia.jpg?resize=390%2C270&ssl=1
+cover: https://www.webmanajemen.com/2018/11/korean-drama-my-mister-episode-10/31c0a2387fe7820ffb128b65e5992e11.jpeg
 date: 2018-11-20T21:17:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 5cfbb263-a446-4888-8162-8dbd6094413b
 webtitle: WMI Gitlab
 updated: 2019-01-07T01:44:04+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/03/Download-Drama-Korea-My-Mister-Subtitle-Indonesia.jpg?resize=390%2C270&ssl=1
+thumbnail: https://www.webmanajemen.com/2018/11/korean-drama-my-mister-episode-10/31c0a2387fe7820ffb128b65e5992e11.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/03/Download-Drama-Korea-My-Mister-Subtitle-Indonesia.jpg?resize=390%2C270&ssl=1
 description: Korean Drama My Mister My Ajusshi) Episode 10 Indonesian Subtitles |

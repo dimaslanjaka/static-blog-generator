@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-giqsH22jmJk/XS6iSSs03bI/AAAAAAAAAao/fbiS01VwdK89uUQ7oe0FCI2X5Tm-xEl9gCLcBGAs/s1600/msmdownloadtool-flash-oppo-a71-2018-cph1801.jpg
+cover: https://www.webmanajemen.com/2019/07/msmdownloadtool-connect-timeout-solving/197b9a99c3ab179c75109626a71cac56.jpeg
 date: 2019-07-17T11:22:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: abb590dd-8215-4888-86ea-dffa011442ef
 webtitle: WMI Gitlab
 updated: 2019-07-17T12:19:52+07:00
-thumbnail: https://1.bp.blogspot.com/-giqsH22jmJk/XS6iSSs03bI/AAAAAAAAAao/fbiS01VwdK89uUQ7oe0FCI2X5Tm-xEl9gCLcBGAs/s1600/msmdownloadtool-flash-oppo-a71-2018-cph1801.jpg
+thumbnail: https://www.webmanajemen.com/2019/07/msmdownloadtool-connect-timeout-solving/197b9a99c3ab179c75109626a71cac56.jpeg
 photos:
   - https://1.bp.blogspot.com/-giqsH22jmJk/XS6iSSs03bI/AAAAAAAAAao/fbiS01VwdK89uUQ7oe0FCI2X5Tm-xEl9gCLcBGAs/s1600/msmdownloadtool-flash-oppo-a71-2018-cph1801.jpg
 ---

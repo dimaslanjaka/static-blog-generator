@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/12/film-bumblebee-2018-lk21.jpg
+cover: https://www.webmanajemen.com/2018/12/download-bumblebee-2018-indonesian/e76a3fd631ee0601af21cccc6cba4e68.jpeg
 date: 2018-12-21T13:42:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 36b760f0-30c2-4888-8cec-7a36f6594407
 webtitle: WMI Gitlab
 updated: 2018-12-21T13:42:01+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/12/film-bumblebee-2018-lk21.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/download-bumblebee-2018-indonesian/e76a3fd631ee0601af21cccc6cba4e68.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/12/film-bumblebee-2018-lk21.jpg
 description: import

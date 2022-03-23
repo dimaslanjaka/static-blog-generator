@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/mobile-legends-esports-moba-1.jpg
+cover: https://www.webmanajemen.com/2018/11/download-mobile-legends-bang-bang/98c27863957bd0ec456d7d9e42dad6e3.jpeg
 date: 2018-11-26T21:30:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 9007a7b5-2473-4888-8258-a4cfe67a0054
 webtitle: WMI Gitlab
 updated: 2018-11-30T00:03:33+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/mobile-legends-esports-moba-1.jpg
+thumbnail: https://www.webmanajemen.com/2018/11/download-mobile-legends-bang-bang/98c27863957bd0ec456d7d9e42dad6e3.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/mobile-legends-esports-moba-1.jpg
 description: Mobile Legends Bang Bang 1.3.31.3412 Apk + Mod Radar Hacked android

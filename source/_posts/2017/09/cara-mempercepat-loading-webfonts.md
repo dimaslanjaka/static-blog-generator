@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc
+cover: https://www.webmanajemen.com/2017/09/cara-mempercepat-loading-webfonts/1be1cea3997c5720c6946368b8d6b586.jpeg
 date: 2017-09-11T18:43:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 15e86d8b-7e46-4888-88bf-cf5ce7f1c0d3
 webtitle: WMI Gitlab
 updated: 2017-09-11T18:43:44+07:00
-thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc
+thumbnail: https://www.webmanajemen.com/2017/09/cara-mempercepat-loading-webfonts/1be1cea3997c5720c6946368b8d6b586.jpeg
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc
 ---

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-7ZnAq5qCUqU/UnUovHpfPYI/AAAAAAAAaQE/Wn5m_IyQ7MA/s1600/Modern-Apps-Shortcut-1.png
+cover: https://www.webmanajemen.com/2017/10/cara-membuat-jalan-pintas-untuk/b046a2ac114517396340162457dfb2d8.png
 date: 2017-10-15T00:42:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 2ee19537-6cb3-4888-86ce-71f31331966c
 webtitle: WMI Gitlab
 updated: 2017-10-15T00:42:02+07:00
-thumbnail: https://3.bp.blogspot.com/-7ZnAq5qCUqU/UnUovHpfPYI/AAAAAAAAaQE/Wn5m_IyQ7MA/s1600/Modern-Apps-Shortcut-1.png
+thumbnail: https://www.webmanajemen.com/2017/10/cara-membuat-jalan-pintas-untuk/b046a2ac114517396340162457dfb2d8.png
 photos:
   - https://3.bp.blogspot.com/-7ZnAq5qCUqU/UnUovHpfPYI/AAAAAAAAaQE/Wn5m_IyQ7MA/s1600/Modern-Apps-Shortcut-1.png
 description: Anda perlu menentukan nama dan ikon untuk pintasan aplikasi Modern

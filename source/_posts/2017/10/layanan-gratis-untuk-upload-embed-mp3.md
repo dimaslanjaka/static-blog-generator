@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-JFg4ItYxFCw/T7wg6WSoHfI/AAAAAAAATQI/HMlZHgopewA/s1600/mp3-soundcloud.png
+cover: https://www.webmanajemen.com/2017/10/layanan-gratis-untuk-upload-embed-mp3/5bb438654de5109954fa7ab36a753652.jpeg
 date: 2017-10-13T00:28:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 54fefb5d-426c-4888-89b6-b141e387ff5d
 webtitle: WMI Gitlab
 updated: 2017-10-13T00:28:15+07:00
-thumbnail: https://3.bp.blogspot.com/-JFg4ItYxFCw/T7wg6WSoHfI/AAAAAAAATQI/HMlZHgopewA/s1600/mp3-soundcloud.png
+thumbnail: https://www.webmanajemen.com/2017/10/layanan-gratis-untuk-upload-embed-mp3/5bb438654de5109954fa7ab36a753652.jpeg
 photos:
   - https://3.bp.blogspot.com/-JFg4ItYxFCw/T7wg6WSoHfI/AAAAAAAATQI/HMlZHgopewA/s1600/mp3-soundcloud.png
 description: Mencari cara untuk berbagi kreasi musik Anda secara online Di sini

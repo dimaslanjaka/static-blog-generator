@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2YaDb94PqUXRdkwXbOVSMWfn1USCwCLcBGAs/s320/PicsArt_09-12-10.18.11.png
+cover: https://www.webmanajemen.com/2017/09/seo-responsive-author-box-untuk-blog/0242bb955280d682522f6178fb9e9601.png
 date: 2017-09-12T22:21:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 93c7e8cf-e926-4888-8cf7-642a9fe9460c
 webtitle: WMI Gitlab
 updated: 2017-09-12T22:21:28+07:00
-thumbnail: https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2YaDb94PqUXRdkwXbOVSMWfn1USCwCLcBGAs/s320/PicsArt_09-12-10.18.11.png
+thumbnail: https://www.webmanajemen.com/2017/09/seo-responsive-author-box-untuk-blog/0242bb955280d682522f6178fb9e9601.png
 photos:
   - https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2YaDb94PqUXRdkwXbOVSMWfn1USCwCLcBGAs/s320/PicsArt_09-12-10.18.11.png
 ---

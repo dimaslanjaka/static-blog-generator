@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
+cover: https://www.webmanajemen.com/2020/01/google-passed-proxies-updated-at-2020_14/d554b6165f650a993e38664d3e21f566.png
 date: 2020-01-12T02:59:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: e53bdb15-439c-4888-8a45-d541aaa352ca
 webtitle: WMI Gitlab
 updated: 2020-01-12T02:59:41+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
+thumbnail: https://www.webmanajemen.com/2020/01/google-passed-proxies-updated-at-2020_14/d554b6165f650a993e38664d3e21f566.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
 description: Fresh proxy oogle passedGoogle passed proxies,

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
+cover: https://www.webmanajemen.com/2018/07/pencelupan-cara-membuat-kulit-yang/e99e3647b6add63ddabc06bab261cdbc.jpeg
 date: 2018-07-30T20:34:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 0b510437-17c1-4888-8ca9-98480a8667ce
 webtitle: WMI Gitlab
 updated: 2018-08-05T06:16:27+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
+thumbnail: https://www.webmanajemen.com/2018/07/pencelupan-cara-membuat-kulit-yang/e99e3647b6add63ddabc06bab261cdbc.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
 description: Bunga  zat warna Pearl Kekayaan Warna mirip dengan foto Beli &

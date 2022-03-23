@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
+cover: https://www.webmanajemen.com/2017/04/this-is-impact-seo-for-your-site/21928add36f182f0e3071e6479acfd29.png
 date: 2017-04-10T12:42:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: df3891e7-44f9-4888-8c0e-8fea8473b5a2
 webtitle: WMI Gitlab
 updated: 2017-04-10T12:42:02+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
+thumbnail: https://www.webmanajemen.com/2017/04/this-is-impact-seo-for-your-site/21928add36f182f0e3071e6479acfd29.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
 description: This is the Impact SEO For Your SiteImpact SEO Impact SEO For Your

@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp
+cover: https://www.webmanajemen.com/2017/05/how-to-fix-structured-data-errors-in-blogger/42ef5e164295af9aeaec10be88651232.jpeg
 date: 2017-05-07T13:05:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 40d91754-4f66-4888-86cd-f6f2d72aa34a
 webtitle: WMI Gitlab
 updated: 2017-05-07T13:05:10+07:00
-thumbnail: https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp
+thumbnail: https://www.webmanajemen.com/2017/05/how-to-fix-structured-data-errors-in-blogger/42ef5e164295af9aeaec10be88651232.jpeg
 photos:
   - https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp
 description: How to Fix Structured Data Errors in Blogger 100% Fix Use Schema

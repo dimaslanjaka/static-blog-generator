@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuOg_gfMhS2VUZUWkzeWq3UGOyKjkwCLcBGAs/s320/images.png
+cover: https://www.webmanajemen.com/2017/07/10-template-gratis-untuk-dokumentasi-api/81eb7745d15f795e872b10e37c6b53e1.png
 date: 2017-07-14T09:00:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 7968f49a-9831-4888-8e0f-e384776c8377
 webtitle: WMI Gitlab
 updated: 2017-07-14T09:00:00+07:00
-thumbnail: https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuOg_gfMhS2VUZUWkzeWq3UGOyKjkwCLcBGAs/s320/images.png
+thumbnail: https://www.webmanajemen.com/2017/07/10-template-gratis-untuk-dokumentasi-api/81eb7745d15f795e872b10e37c6b53e1.png
 photos:
   - https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuOg_gfMhS2VUZUWkzeWq3UGOyKjkwCLcBGAs/s320/images.png
 ---

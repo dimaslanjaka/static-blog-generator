@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://2.bp.blogspot.com/-UFidWzf_o3A/Xfp0n9U9c4I/AAAAAAAAAiI/Ve1ajQPHYdsVNKW9F8Rc8iPr0eLAYVeQgCLcBGAsYHQ/s1600/Screenshot_1.png
+cover: https://www.webmanajemen.com/2019/12/glowing-text-loading-animation/379224808e36e7952a1c7519035a1e5e.png
 date: 2019-12-31T01:50:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 862e19a4-fdf1-4888-8d3b-b2616fe48ad3
 webtitle: WMI Gitlab
 updated: 2019-12-31T01:50:05+07:00
-thumbnail: https://2.bp.blogspot.com/-UFidWzf_o3A/Xfp0n9U9c4I/AAAAAAAAAiI/Ve1ajQPHYdsVNKW9F8Rc8iPr0eLAYVeQgCLcBGAsYHQ/s1600/Screenshot_1.png
+thumbnail: https://www.webmanajemen.com/2019/12/glowing-text-loading-animation/379224808e36e7952a1c7519035a1e5e.png
 photos:
   - https://2.bp.blogspot.com/-UFidWzf_o3A/Xfp0n9U9c4I/AAAAAAAAAiI/Ve1ajQPHYdsVNKW9F8Rc8iPr0eLAYVeQgCLcBGAsYHQ/s1600/Screenshot_1.png
 description: "Glowing Text Loading AnimationCSSbody

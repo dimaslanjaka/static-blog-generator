@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
+cover: https://www.webmanajemen.com/2018/03/url-opener-script-termux/893f5dd6aac2ab39cce198036001a25f.png
 date: 2018-03-26T00:48:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: b6dca6b5-ab3f-4888-8ec0-d15adf3c7fc3
 webtitle: WMI Gitlab
 updated: 2018-03-26T00:48:50+07:00
-thumbnail: https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
+thumbnail: https://www.webmanajemen.com/2018/03/url-opener-script-termux/893f5dd6aac2ab39cce198036001a25f.png
 photos:
   - https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
 description: img

@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
+cover: https://www.webmanajemen.com/2017/05/remove-blogger-sidebar-and-maximize-main-pages-content/ebd2938b1e2dc1234b0b482d80f12785.jpeg
 date: 2017-05-01T19:22:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: f022bcf7-8090-4888-8d55-e5b51dcd10a1
 webtitle: WMI Gitlab
 updated: 2017-05-01T19:44:58+07:00
-thumbnail: https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
+thumbnail: https://www.webmanajemen.com/2017/05/remove-blogger-sidebar-and-maximize-main-pages-content/ebd2938b1e2dc1234b0b482d80f12785.jpeg
 photos:
   - https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
 description: This one is a famous request inBlogger Help Forum - instructions to

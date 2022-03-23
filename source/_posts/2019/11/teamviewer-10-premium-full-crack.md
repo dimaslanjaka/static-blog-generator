@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
+cover: https://www.webmanajemen.com/2019/11/teamviewer-10-premium-full-crack/b8b90212112b023e8eadb35953ef3a1b.jpeg
 date: 2019-11-02T17:38:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 7b72d3e3-5369-4888-8908-e091bdb9e777
 webtitle: WMI Gitlab
 updated: 2019-11-02T17:38:59+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
+thumbnail: https://www.webmanajemen.com/2019/11/teamviewer-10-premium-full-crack/b8b90212112b023e8eadb35953ef3a1b.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
 description: Web Development Indonesia  For some people, maybe this remote PC

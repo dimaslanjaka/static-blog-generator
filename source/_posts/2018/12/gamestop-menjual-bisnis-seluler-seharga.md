@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/ca/af/caaf3c5c453af06608ab5eafbf455a0a.jpg
+cover: https://www.webmanajemen.com/2018/12/gamestop-menjual-bisnis-seluler-seharga/1c7c19bc28f7d51dfd8f8f41f3e3aebd.jpeg
 date: 2018-12-07T03:45:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: f0c259e4-fdc5-4888-8012-0d048d4e42f4
 webtitle: WMI Gitlab
 updated: 2018-12-07T03:45:07+07:00
-thumbnail: https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/ca/af/caaf3c5c453af06608ab5eafbf455a0a.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/gamestop-menjual-bisnis-seluler-seharga/1c7c19bc28f7d51dfd8f8f41f3e3aebd.jpeg
 photos:
   - https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/ca/af/caaf3c5c453af06608ab5eafbf455a0a.jpg
 description: Dive Brief GameStop mengumumkan minggu lalu bahwa ia menjual divisi

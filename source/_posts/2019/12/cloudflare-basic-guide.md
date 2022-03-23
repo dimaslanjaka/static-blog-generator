@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/08/dewaweb-blog-panduan-dasar-cloudflare-revisi-696x411.png
+cover: https://www.webmanajemen.com/2019/12/cloudflare-basic-guide/c4d332cab3f7069751b3080ba20f15cb.png
 date: 2019-12-20T22:26:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: c0afd841-fe63-4888-85d0-9b14119c19cd
 webtitle: WMI Gitlab
 updated: 2019-12-20T22:26:07+07:00
-thumbnail: https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/08/dewaweb-blog-panduan-dasar-cloudflare-revisi-696x411.png
+thumbnail: https://www.webmanajemen.com/2019/12/cloudflare-basic-guide/c4d332cab3f7069751b3080ba20f15cb.png
 photos:
   - https://dwblog-ecdf.kxcdn.com/wp-content/uploads/2019/08/dewaweb-blog-panduan-dasar-cloudflare-revisi-696x411.png
 description: Panduan Dasar Cloudflare This article is a complete basic guide

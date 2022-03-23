@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://2.bp.blogspot.com/-th4E2njtIHE/V3jTNqPF9FI/AAAAAAAAEDA/NG4-G59Lr4g1Ni2SCTtRyk3u2Aeq-w0vgCLcB/s320/Membuat%2BShort%2BURL%2BOtomatis%2BDengan%2BGoogle%2BAPI%2B01.jpg
+cover: https://www.webmanajemen.com/2017/05/auto-shorten-url-from-googl-using-api/fc7f373318f92e64391658d62c2e0b13.jpeg
 date: 2017-05-24T00:16:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: f462e1a3-5ac5-4888-89fc-79786c230800
 webtitle: WMI Gitlab
 updated: 2017-05-24T00:16:15+07:00
-thumbnail: https://2.bp.blogspot.com/-th4E2njtIHE/V3jTNqPF9FI/AAAAAAAAEDA/NG4-G59Lr4g1Ni2SCTtRyk3u2Aeq-w0vgCLcB/s320/Membuat%2BShort%2BURL%2BOtomatis%2BDengan%2BGoogle%2BAPI%2B01.jpg
+thumbnail: https://www.webmanajemen.com/2017/05/auto-shorten-url-from-googl-using-api/fc7f373318f92e64391658d62c2e0b13.jpeg
 photos:
   - https://2.bp.blogspot.com/-th4E2njtIHE/V3jTNqPF9FI/AAAAAAAAEDA/NG4-G59Lr4g1Ni2SCTtRyk3u2Aeq-w0vgCLcB/s320/Membuat%2BShort%2BURL%2BOtomatis%2BDengan%2BGoogle%2BAPI%2B01.jpg
 description: Make Short URL Automatic With Google API

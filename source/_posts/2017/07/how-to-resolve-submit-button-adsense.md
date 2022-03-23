@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-JdPb9Jp1xSk/WODgW427ETI/AAAAAAAADb4/zLz2WLm7lfs3S-7d2itu2hJ3-slbN6esACLcB/s1600/adsense-1.png
+cover: https://www.webmanajemen.com/2017/07/an-alternative-way-to-resolve-submit/15d92a3679f5bd35245933d016312434.png
 date: 2017-07-23T03:14:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 69f5df51-a5d5-4888-8a5b-c573704b6f91
 webtitle: WMI Gitlab
 updated: 2017-07-23T03:14:00+07:00
-thumbnail: https://3.bp.blogspot.com/-JdPb9Jp1xSk/WODgW427ETI/AAAAAAAADb4/zLz2WLm7lfs3S-7d2itu2hJ3-slbN6esACLcB/s1600/adsense-1.png
+thumbnail: https://www.webmanajemen.com/2017/07/an-alternative-way-to-resolve-submit/15d92a3679f5bd35245933d016312434.png
 photos:
   - https://3.bp.blogspot.com/-JdPb9Jp1xSk/WODgW427ETI/AAAAAAAADb4/zLz2WLm7lfs3S-7d2itu2hJ3-slbN6esACLcB/s1600/adsense-1.png
 description: AdSense brings me back to the beginning every time I

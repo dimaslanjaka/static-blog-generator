@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+cover: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
 date: 2018-04-27T01:39:00.001+07:00
 lang: en
 location: ""
@@ -25,7 +25,7 @@ type: post
 uuid: 9a77a55f-7fe9-4888-8512-6dadfc96f324
 webtitle: WMI Gitlab
 updated: 2018-11-20T16:37:41+07:00
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
+thumbnail: https://www.webmanajemen.com/2019/01/film-project-gutenberg-2018-subtitle/ab93c1b0256b581497d4d4eabe9ad5c3.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "Facebook autolike rebuilded safe mode). Dijamin aman. <strike><br

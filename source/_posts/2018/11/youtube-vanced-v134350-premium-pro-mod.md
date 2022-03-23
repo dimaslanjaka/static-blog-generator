@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4380.png
+cover: https://www.webmanajemen.com/2018/11/youtube-vanced-v134350-premium-pro-mod/c3e0438ce606bb36dd46025edd87af09.png
 date: 2018-11-27T21:20:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: a3d30ecf-3dbe-4888-8752-6b82a710a1f6
 webtitle: WMI Gitlab
 updated: 2018-11-27T21:25:36+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4380.png
+thumbnail: https://www.webmanajemen.com/2018/11/youtube-vanced-v134350-premium-pro-mod/c3e0438ce606bb36dd46025edd87af09.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4380.png
 ---

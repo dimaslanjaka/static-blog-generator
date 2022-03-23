@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
+cover: https://www.webmanajemen.com/2017/11/tutorial-to-enable-bot-auto-reaction/6b3992c91dd1c542488f23438c09d3fb.jpeg
 date: 2017-11-10T22:43:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: f2899371-4c8c-4888-8b64-7d41ec5b5137
 webtitle: WMI Gitlab
 updated: 2017-11-10T22:43:46+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
+thumbnail: https://www.webmanajemen.com/2017/11/tutorial-to-enable-bot-auto-reaction/6b3992c91dd1c542488f23438c09d3fb.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
 description: .) Then the message will appear as drawn. Do not be afraid, then

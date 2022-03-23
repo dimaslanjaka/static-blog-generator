@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
+cover: https://www.webmanajemen.com/2017/09/amp-social-sharing-button-added-bbm-and/13a001759a76f25f15d8ef949a740e1f.jpeg
 date: 2017-09-17T02:41:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: c35b628b-b859-4888-857b-e46145cfab8a
 webtitle: WMI Gitlab
 updated: 2017-09-17T02:41:06+07:00
-thumbnail: https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
+thumbnail: https://www.webmanajemen.com/2017/09/amp-social-sharing-button-added-bbm-and/13a001759a76f25f15d8ef949a740e1f.jpeg
 photos:
   - https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
 ---

@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
+cover: https://www.webmanajemen.com/2017/08/cara-mengeksekusi-kode-php-di-text/619290bd9f900cc4e5e4c6c3ba783890.jpeg
 date: 2017-08-04T08:05:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: a16325c4-c2d4-4888-8a05-4c7f0e2c5f0a
 webtitle: WMI Gitlab
 updated: 2017-08-04T08:05:15+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
+thumbnail: https://www.webmanajemen.com/2017/08/cara-mengeksekusi-kode-php-di-text/619290bd9f900cc4e5e4c6c3ba783890.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
 ---

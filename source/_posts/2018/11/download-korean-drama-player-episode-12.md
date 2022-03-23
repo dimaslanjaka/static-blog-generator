@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/09/Download-Drama-Korea-Player-Subtitle-Indonesia.jpg?resize=520%2C343&ssl=1
+cover: https://www.webmanajemen.com/2018/11/download-korean-drama-player-episode-12/36c8309860c4ec1c224e9184049cd53e.jpeg
 date: 2018-11-17T05:22:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: a13d6597-4077-4888-8099-a0dc8bf22661
 webtitle: WMI Gitlab
 updated: 2018-11-17T05:22:04+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/09/Download-Drama-Korea-Player-Subtitle-Indonesia.jpg?resize=520%2C343&ssl=1
+thumbnail: https://www.webmanajemen.com/2018/11/download-korean-drama-player-episode-12/36c8309860c4ec1c224e9184049cd53e.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i2.wp.com/www.dramaencode.com/wp-content/uploads/2018/09/Download-Drama-Korea-Player-Subtitle-Indonesia.jpg?resize=520%2C343&ssl=1
 description: Download Korean Drama Player Episode 2 Indonesian Subtitles

@@ -3,7 +3,7 @@ category:
   - Games
   - Chimeraland
 comments: true
-cover: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+cover: https://www.webmanajemen.com/Chimeraland/index/4c67a828a90d019026de5ca949d5a1ce.jpeg
 date: 2022-02-18T10:37:00+07:00
 description: Index Tree Chimeraland
 lang: id
@@ -14,7 +14,7 @@ toc: true
 updated: 2022-02-18T11:37:00+07:00
 uuid: 2b555aca-b8dc-4888-8578-ab54bc31027a
 webtitle: Chimeraland
-thumbnail: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+thumbnail: https://www.webmanajemen.com/Chimeraland/index/4c67a828a90d019026de5ca949d5a1ce.jpeg
 photos:
   - https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
 excerpt: Index Tree Chimeraland

@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
+cover: https://www.webmanajemen.com/NodeJS/ts-detect-nodelist-or-htmlcollections/2e4deaf267c8f3158b485fc68a1a302a.jpeg
 date: 2021-11-28T07:00:00+07:00
 keywords:
   - typescript
@@ -25,7 +25,7 @@ type: post
 uuid: 2aa96bcf-7d7a-4888-875f-1cced5ac4938
 webtitle: NodeJS
 updated: 2021-12-18T21:07:09+07:00
-thumbnail: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
+thumbnail: https://www.webmanajemen.com/NodeJS/ts-detect-nodelist-or-htmlcollections/2e4deaf267c8f3158b485fc68a1a302a.jpeg
 photos:
   - https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
 description: How to detect HTMLCollection/NodeList in JavaScript/Typescript?

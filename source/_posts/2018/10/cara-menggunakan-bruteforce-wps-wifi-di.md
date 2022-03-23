@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
+cover: https://www.webmanajemen.com/2018/10/cara-menggunakan-bruteforce-wps-wifi-di/73fc7aac1c638a9b6ebf1a3360da19d9.png
 date: 2018-10-17T22:04:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: f726d62e-06a1-4888-8132-05b1b0b01498
 webtitle: WMI Gitlab
 updated: 2018-10-17T22:20:20+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
+thumbnail: https://www.webmanajemen.com/2018/10/cara-menggunakan-bruteforce-wps-wifi-di/73fc7aac1c638a9b6ebf1a3360da19d9.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
 description: Penjabaran dari WPS WPA WiFi Tester Tanpa Root)

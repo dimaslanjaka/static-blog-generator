@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/trivia-crack-1.png
+cover: https://www.webmanajemen.com/2019/01/download-trivia-crack-2992-apk-premium/fdbfe3dd7d342a3f108483806a901c13.jpeg
 date: 2019-01-15T11:50:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 3d3287c7-5871-4888-80b9-98abf5fe0dff
 webtitle: WMI Gitlab
 updated: 2019-01-15T11:50:01+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/trivia-crack-1.png
+thumbnail: https://www.webmanajemen.com/2019/01/download-trivia-crack-2992-apk-premium/fdbfe3dd7d342a3f108483806a901c13.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/trivia-crack-1.png
 description: Trivia Crack .99.2 APK Unduh Premium + Mod Android [Terbaru]

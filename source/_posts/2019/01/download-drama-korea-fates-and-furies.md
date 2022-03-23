@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/12/Fates-and-Furies-Subtitle-Indonesia.jpg
+cover: https://www.webmanajemen.com/2019/01/download-drama-korea-fates-and-furies/fe0c5386174d2845e92ded66a4624b55.jpeg
 date: 2019-01-09T10:18:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: b8d3e62e-8ee3-4888-8651-d06fbd14c354
 webtitle: WMI Gitlab
 updated: 2019-01-09T10:18:06+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/12/Fates-and-Furies-Subtitle-Indonesia.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/download-drama-korea-fates-and-furies/fe0c5386174d2845e92ded66a4624b55.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2018/12/Fates-and-Furies-Subtitle-Indonesia.jpg
 description: Korean Drama Fates and Furies Indonesian Subtitles Synopsis of

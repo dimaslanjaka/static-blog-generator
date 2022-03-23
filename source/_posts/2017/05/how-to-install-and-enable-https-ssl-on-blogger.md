@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://2.bp.blogspot.com/-THwUQIZSve0/WJRctlNolxI/AAAAAAAAEcg/dIQv0GpStXkwgpoAFZFdWefnzy8DJkTmACPcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B02.jpg
+cover: https://www.webmanajemen.com/2017/07/simple-way-to-install-and-enable-https/5028ebd9ee414ea3fa4b56ef7d0a872f.jpeg
 date: 2017-05-22T22:41:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 447ae00f-b88d-4888-8eb0-0110d7b478b4
 webtitle: WMI Gitlab
 updated: 2017-05-22T22:41:04+07:00
-thumbnail: https://2.bp.blogspot.com/-THwUQIZSve0/WJRctlNolxI/AAAAAAAAEcg/dIQv0GpStXkwgpoAFZFdWefnzy8DJkTmACPcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B02.jpg
+thumbnail: https://www.webmanajemen.com/2017/07/simple-way-to-install-and-enable-https/5028ebd9ee414ea3fa4b56ef7d0a872f.jpeg
 photos:
   - https://2.bp.blogspot.com/-THwUQIZSve0/WJRctlNolxI/AAAAAAAAEcg/dIQv0GpStXkwgpoAFZFdWefnzy8DJkTmACPcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B02.jpg
 description: How to Install and Enable HTTPS SSL) on Blogspot Custom Domain

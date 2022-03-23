@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBLK56IMCbfHmazdWHifnYzigxC7hgCLcBGAsYHQ/s320/gradle.png
+cover: https://www.webmanajemen.com/2020/03/build-gradle-component-definitions/21c4220ffa3faa707a2d0e2d57ce860b.png
 date: 2020-03-07T15:48:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 00aeca0f-7cf8-4888-81ea-5fd3dccd18cf
 webtitle: WMI Gitlab
 updated: 2020-03-13T17:12:44+07:00
-thumbnail: https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBLK56IMCbfHmazdWHifnYzigxC7hgCLcBGAsYHQ/s320/gradle.png
+thumbnail: https://www.webmanajemen.com/2020/03/build-gradle-component-definitions/21c4220ffa3faa707a2d0e2d57ce860b.png
 photos:
   - https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBLK56IMCbfHmazdWHifnYzigxC7hgCLcBGAsYHQ/s320/gradle.png
 ---

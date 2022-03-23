@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/kmplayer-vr-360degree-virtual-reality-1.png
+cover: https://www.webmanajemen.com/2019/01/download-kmplayer-vr-360degree-virtual/89f4c003cb9716ea6d3d60274f87e47d.jpeg
 date: 2019-01-17T11:52:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: bbf6225c-6a8c-4888-8012-51a08a901b8d
 webtitle: WMI Gitlab
 updated: 2019-01-17T11:52:08+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/kmplayer-vr-360degree-virtual-reality-1.png
+thumbnail: https://www.webmanajemen.com/2019/01/download-kmplayer-vr-360degree-virtual/89f4c003cb9716ea6d3d60274f87e47d.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/kmplayer-vr-360degree-virtual-reality-1.png
 description: KMPlayer VR 360degree, Virtual Reality) 0.1.11 Apk android

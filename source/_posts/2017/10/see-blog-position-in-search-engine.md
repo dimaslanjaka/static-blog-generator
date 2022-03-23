@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
+cover: https://www.webmanajemen.com/2017/10/see-blog-position-in-search-engine/274f3405acb4b55775da353f82d20f7f.jpeg
 date: 2017-10-03T02:35:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 89975ba8-fee3-4888-8faa-72924ccc49a2
 webtitle: WMI Gitlab
 updated: 2017-10-03T02:35:01+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
+thumbnail: https://www.webmanajemen.com/2017/10/see-blog-position-in-search-engine/274f3405acb4b55775da353f82d20f7f.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
 description: There is one of the bloggers on the comments asking about how to

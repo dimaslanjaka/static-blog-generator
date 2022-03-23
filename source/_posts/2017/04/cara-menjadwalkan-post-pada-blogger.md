@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
+cover: https://www.webmanajemen.com/2017/04/cara-menjadwalkan-post-pada-blogger/3e284b42fc1e16b9e17a1b73f78e3e2d.webp
 date: 2017-04-10T10:58:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 6d9795a0-c187-4888-87e6-e00365d746bb
 webtitle: WMI Gitlab
 updated: 2017-04-10T10:58:00+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
+thumbnail: https://www.webmanajemen.com/2017/04/cara-menjadwalkan-post-pada-blogger/3e284b42fc1e16b9e17a1b73f78e3e2d.webp
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
 description: Cara Menjadwalkan Post pada BloggerJika Anda menggunakan Blogspot

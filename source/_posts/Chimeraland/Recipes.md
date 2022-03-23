@@ -7,7 +7,7 @@ category:
   - Games
   - Chimeraland
 comments: true
-cover: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+cover: https://www.webmanajemen.com/Chimeraland/Recipes/e4ba014df3328c998cf914539d0ecf8e.jpeg
 date: 2022-01-11T07:00:00+07:00
 keywords:
   - recipes
@@ -24,7 +24,7 @@ type: post
 uuid: d70dc9ba-8b4e-4888-8a32-b316cded7f49
 webtitle: Chimeraland
 updated: 2022-02-12T11:18:24+07:00
-thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+thumbnail: https://www.webmanajemen.com/Chimeraland/Recipes/e4ba014df3328c998cf914539d0ecf8e.jpeg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 description: Chimeraland cooking recipes and food functions such as buffs and

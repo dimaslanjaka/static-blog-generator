@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
+cover: https://www.webmanajemen.com/2019/09/cheat-mobile-legends-1409-patch-kof/50dff35bf47d4e88408067a0236aee40.jpeg
 date: 2019-09-02T13:55:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 126fd99f-5c14-4888-8ca1-ff247cc4ce50
 webtitle: WMI Gitlab
 updated: 2019-09-02T14:09:55+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
+thumbnail: https://www.webmanajemen.com/2019/09/cheat-mobile-legends-1409-patch-kof/50dff35bf47d4e88408067a0236aee40.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
 description: Download ScriptCheat via Game GuardiansNon Root Using Parallel

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-xr13nwoay60/XTTB3CWtC1I/AAAAAAAAAcE/nrHcc8rWjm8kit-VSE7gcqimjMOreeUHgCLcBGAs/s1600/Screenshot_2.png
+cover: https://www.webmanajemen.com/2019/07/how-to-bulk-add-posts-category-label/ebeb3767a5f6e957238bfbc729dd7e61.png
 date: 2019-07-22T03:01:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: c30aa17b-a017-4888-8e53-8e89093179ac
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:21:56+07:00
-thumbnail: https://3.bp.blogspot.com/-xr13nwoay60/XTTB3CWtC1I/AAAAAAAAAcE/nrHcc8rWjm8kit-VSE7gcqimjMOreeUHgCLcBGAs/s1600/Screenshot_2.png
+thumbnail: https://www.webmanajemen.com/2019/07/how-to-bulk-add-posts-category-label/ebeb3767a5f6e957238bfbc729dd7e61.png
 photos:
   - https://3.bp.blogspot.com/-xr13nwoay60/XTTB3CWtC1I/AAAAAAAAAcE/nrHcc8rWjm8kit-VSE7gcqimjMOreeUHgCLcBGAs/s1600/Screenshot_2.png
 description: At this time I will share, How to move the blogger categoryExample
