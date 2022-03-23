@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png
 date: 2017-09-02T23:13:00.000+07:00

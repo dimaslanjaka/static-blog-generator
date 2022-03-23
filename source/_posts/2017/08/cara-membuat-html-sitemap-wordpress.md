@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-08-05T18:02:00.000+07:00
@@ -24,6 +26,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Menjadi pengguna WordPress bertahuntahun saya telah menemukan tidak
+  banyak yang bisa salah dengan CMS open source tapi bila Anda memiliki
+excerpt: Menjadi pengguna WordPress bertahuntahun saya telah menemukan tidak
   banyak yang bisa salah dengan CMS open source tapi bila Anda memiliki
 ---
 

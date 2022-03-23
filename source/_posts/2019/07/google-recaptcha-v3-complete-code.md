@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
 date: 2019-07-12T19:36:00.001+07:00
@@ -26,6 +28,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.c
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
 description: Requirements jQuery (if not it will automated added into pages)  if
+  (typeof jQuery == undefined || !window.jQuery) {
+excerpt: Requirements jQuery (if not it will automated added into pages)  if
   (typeof jQuery == undefined || !window.jQuery) {
 ---
 
