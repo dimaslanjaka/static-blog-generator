@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2019-07-29T06:42:00.000+07:00
@@ -25,8 +23,6 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: PHP CLI?phpif ($argv) {    foreach ($argv as $k=>$v)    {        if
-  ($k==0) continue;        $it = explode(=,$argv[$i]);        if
-excerpt: PHP CLI?phpif ($argv) {    foreach ($argv as $k=>$v)    {        if
   ($k==0) continue;        $it = explode(=,$argv[$i]);        if
 ---
 

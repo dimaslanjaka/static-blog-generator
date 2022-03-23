@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
 date: 2017-08-04T08:05:00.000+07:00

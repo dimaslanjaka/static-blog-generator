@@ -24,8 +24,6 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: pre><br />IFS=$\n<br /> for f in $(find . -type f -name *)<br /> do
   <br /> mv $f ${f/\.\/ /\.\/}<br /> done<br /></pre><div
-excerpt: pre><br />IFS=$\n<br /> for f in $(find . -type f -name *)<br /> do <br
-  /> mv $f ${f/\.\/ /\.\/}<br /> done<br /></pre><div
 ---
 
 <pre><br>IFS=$'\n'<br> for f in $(find . -type f -name ' *')<br> do <br>     mv $f ${f/\.\/ /\.\/}<br> done<br></pre>

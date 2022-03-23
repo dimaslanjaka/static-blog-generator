@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png
 date: 2019-07-13T01:38:00.001+07:00
@@ -28,8 +26,6 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png
 description: "Cara membuat websocket dengan Javascript JS) dan PHPUpdate: Simple
-  WebsocketRequirements: PHP 5.6+ (minimum) Websocket merupakan standard"
-excerpt: "Cara membuat websocket dengan Javascript JS) dan PHPUpdate: Simple
   WebsocketRequirements: PHP 5.6+ (minimum) Websocket merupakan standard"
 ---
 

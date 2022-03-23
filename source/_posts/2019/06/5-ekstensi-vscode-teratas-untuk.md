@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - JS
+category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
 date: 2019-06-15T20:02:00.000+07:00
@@ -27,8 +25,6 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpu
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
 description: Salah satu hal paling luar biasa tentang Visual Studio Code adalah
-  kemampuan untuk meningkatkan kemampuannya dengan penambahan ekstensi
-excerpt: Salah satu hal paling luar biasa tentang Visual Studio Code adalah
   kemampuan untuk meningkatkan kemampuannya dengan penambahan ekstensi
 ---
 

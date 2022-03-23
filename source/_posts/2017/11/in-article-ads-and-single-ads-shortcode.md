@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://imgdb.net/images/3203.jpg
 date: 2017-11-11T23:34:00.000+07:00
@@ -28,8 +26,6 @@ thumbnail: https://imgdb.net/images/3203.jpg
 photos:
   - https://imgdb.net/images/3203.jpg
 description: center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA
-  Plugin</h2></center><img src=https://imgdb.net/images/3203.jpg /><br
-excerpt: center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA
   Plugin</h2></center><img src=https://imgdb.net/images/3203.jpg /><br
 ---
 

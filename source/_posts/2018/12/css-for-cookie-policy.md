@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2018-12-17T02:59:00.000+07:00
@@ -25,8 +23,6 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: pre>.cc-banner .cc-btn:last-child,.cc-theme-classic
-  .cc-btn:last-child{min-width:140px}.cc-window{left:20px;bottom:20px;transition:opacity
-excerpt: pre>.cc-banner .cc-btn:last-child,.cc-theme-classic
   .cc-btn:last-child{min-width:140px}.cc-window{left:20px;bottom:20px;transition:opacity
 ---
 

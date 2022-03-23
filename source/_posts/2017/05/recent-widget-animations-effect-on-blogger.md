@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
 date: 2017-05-05T23:00:00.000+07:00
@@ -27,8 +25,6 @@ thumbnail: https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6
 photos:
   - https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
 description: How to Install News Recent Articles With Animation Effects Hello
-  bloggers, this point i will be able to share a recent widget with
-excerpt: How to Install News Recent Articles With Animation Effects Hello
   bloggers, this point i will be able to share a recent widget with
 ---
 
