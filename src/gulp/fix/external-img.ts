@@ -105,6 +105,12 @@ export default async function downloadImg(parse: parsePostReturn) {
         if (typeof process.env.GITFLOW !== "undefined") return;
         // fix if src startwith dynamic protocol `//`
         if (src.startsWith("//")) src = "http:" + src;
+        // moved domains
+        const domains = [["cdn.woorkup.com", "woorkup.com"]];
+        domains.forEach((domainArr) => {
+          const regex = new RegExp("^https?://" + domainArr[0], "gi");
+          if (src.match(regex)) src = src.replace(regex, "http://" + domainArr[1]);
+        });
         // only download valid url and not local domain
         if (src.match(/^https?:\/\//) && !src.match(new RegExp("^https?://" + HexoURL.host))) {
           try {
@@ -153,7 +159,9 @@ export default async function downloadImg(parse: parsePostReturn) {
           await download(libraries[key].url);
         }
         const fullpath = HexoURL;
-        console.log(libraries[key].file.replace(cwd(), ""));
+        console.log(
+          libraries[key].file.replace(new RegExp("^" + cwd()), "").replace(new RegExp("^/source/_posts/"), "/")
+        );
       }
     }
   }
