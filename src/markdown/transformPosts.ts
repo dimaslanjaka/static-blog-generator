@@ -1,5 +1,5 @@
 import filemanager from "../node/filemanager";
-import path from "path";
+import path, { join } from "path";
 import * as fs from "fs";
 import toHtml from "./toHtml";
 import yaml from "yaml";
@@ -7,20 +7,36 @@ import notranslate from "../translator/notranslate";
 import crypto from "crypto";
 import { readFileSync } from "fs";
 import chalk from "chalk";
+import YAML from "yaml";
+import { Hexo_Config } from "../../types/_config";
 
-interface LooseObject {
+export interface LooseObject {
   [key: string]: any;
 }
 
-type parsePostReturn = LooseObject & {
+export type parsePostReturn = LooseObject & {
   /**
    * Article metadata
    */
-  metadataString: string;
+  metadataString?: string;
+  fileTree?: {
+    /**
+     * post file from src-posts
+     */
+    source?: string;
+    /**
+     * post file from public_dir _config.yml
+     */
+    public?: string;
+  };
+  /**
+   * _config.yml
+   */
+  config?: Hexo_Config | null;
   /**
    * Article metadata
    */
-  metadata: LooseObject & {
+  metadata?: LooseObject & {
     /**
      * Article language code
      */
@@ -36,11 +52,14 @@ type parsePostReturn = LooseObject & {
     description?: string;
     tags: string[];
     category: string[];
+    photos?: string[];
+    cover?: string;
+    thumbnail?: string;
   };
   /**
    * Article body
    */
-  body: string;
+  body?: string;
 };
 
 /**
@@ -89,13 +108,24 @@ export function parsePost(text: string): parsePostReturn | null {
   ///const regex = /---([\s\S]*?)---/;
   const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
+  /**
+   * source file if `text` is file
+   */
   const originalArg = text;
   const isFile = fs.existsSync(text) && fs.statSync(text).isFile();
   if (isFile) {
     text = readFileSync(text).toString();
   }
 
-  //if (originalArg.includes("Pets")) console.log(regex.exec(text));
+  // determine and parse _config.yml
+  let config_file: string;
+  let config_yml: Hexo_Config;
+  if (fs.existsSync(join(process.cwd(), "_config.yml"))) {
+    config_file = join(process.cwd(), "_config.yml");
+  }
+  if (config_file) {
+    config_yml = YAML.parse(readFileSync(config_file, "utf-8"));
+  }
 
   try {
     while ((m = regex.exec(text)) !== null) {
@@ -127,11 +157,22 @@ export function parsePost(text: string): parsePostReturn | null {
         }
         // default category
         if (!meta.category) meta.category = ["Uncategorized"];
-        return {
+
+        let result: parsePostReturn = {
           metadataString: m[0],
           metadata: meta,
           body: fixPostBody(text.replace(m[0], "")),
+          config: config_yml,
         };
+        // put fileTree
+        if (isFile) {
+          result.fileTree = {
+            source: originalArg.replace("/source/_posts/", "/src-posts/"),
+            public: originalArg.replace("/src-posts", "/source/_posts/"),
+          };
+          //console.log(result.fileTree);
+        }
+        return result;
       }
     }
   } catch (e) {

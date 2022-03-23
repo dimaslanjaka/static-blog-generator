@@ -26,7 +26,7 @@ import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
 import { parse as parseHTML } from "node-html-parser";
-import util from "util";
+import downloadImage from "./src/gulp/fix/external-img";
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
 // generate definition config https://jvilk.com/MakeTypes/
@@ -105,6 +105,8 @@ function articleCopy(done: TaskCallback) {
       const loop = loopDir(destDir);
       loop.forEach(function (file) {
         const sourceFile = file.replace("/source/_posts/", "/src-posts/");
+        const publicAssetDir = path.join(path.dirname(file), path.basename(file, ".md"));
+        const sourceAssetDir = path.join(path.dirname(sourceFile), path.basename(sourceFile, ".md"));
         if (fs.statSync(file).isFile() && file.endsWith(".md")) {
           const parse = parsePost(file);
           if (parse) {
@@ -239,7 +241,10 @@ function articleCopy(done: TaskCallback) {
             }
 
             if (parse.metadata && parse.body) {
-              saveParsedPost(parse, file);
+              // download external images locally
+              downloadImage(parse);
+              // save parsed post to public _config.yml
+              saveParsedPost(parse, parse.fileTree.public);
             }
           }
         }
@@ -273,6 +278,8 @@ function afterGenerate(done: TaskCallback) {
       const doc = parseHTML(fs.readFileSync(file, "utf-8"));
       const html = doc.querySelector("html");
       if (html && !html.hasAttribute("lang")) html.setAttribute("lang", "en");
+
+      // safelinkify
       const hrefs = doc.querySelectorAll("a");
       if (hrefs.length) {
         for (let i = 0; i < hrefs.length; i++) {
