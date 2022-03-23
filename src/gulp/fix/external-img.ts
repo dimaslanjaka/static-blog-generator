@@ -101,7 +101,7 @@ export default async function downloadImg(parse: parsePostReturn) {
        */
       const download = async function (src: string) {
         if (src.startsWith("//")) src = "http:" + src;
-        if (src.match(/^https?:\/\//)) {
+        if (src.match(/^https?:\/\//) && !src.match(new RegExp("^https?://" + new URL(parse.config.url).host))) {
           try {
             const { statusCode, data, headers } = await curly.get(src, {
               FOLLOWLOCATION: true,
@@ -114,6 +114,7 @@ export default async function downloadImg(parse: parsePostReturn) {
               if (contentType.startsWith("image/")) {
                 libres.type = contentType;
                 let imgtype = contentType.replace("image/", "");
+                // fix svg+xml
                 if (imgtype.includes("+")) {
                   imgtype = imgtype.split("+")[0];
                 }
