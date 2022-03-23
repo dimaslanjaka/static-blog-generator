@@ -243,6 +243,12 @@ function articleCopy(done: TaskCallback) {
             if (parse.metadata && parse.body) {
               // download external images locally
               downloadImage(parse);
+
+              // remove duplicated metadata photos
+              if (parse.metadata.photos && parse.metadata.photos.length) {
+                parse.metadata.photos = parse.metadata.photos.unique();
+              }
+
               // save parsed post to public _config.yml
               saveParsedPost(parse, parse.fileTree.public);
             }
