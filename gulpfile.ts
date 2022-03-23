@@ -29,6 +29,7 @@ import { parse as parseHTML } from "node-html-parser";
 import downloadImage, { imagesDBFile, ImgLib, ImgLibData } from "./src/gulp/fix/external-img";
 import { basename, dirname, join } from "path";
 import { cwd } from "process";
+import chalk from "chalk";
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
 // generate definition config https://jvilk.com/MakeTypes/
@@ -319,15 +320,19 @@ function afterGenerate(done: TaskCallback) {
       for (const key in ijs) {
         if (Object.prototype.hasOwnProperty.call(ijs, key)) {
           const imgobj: ImgLibData = ijs[key];
-          if (!fs.existsSync(imgobj.file)) {
-            console.error(imgobj.file, "not exists");
+
+          // img direct asset folder
+          const artisanfile = basename(dirname(file)) + "/" + basename(imgobj.file);
+          const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
+          const genfile = imgobj.file.replace(cwd(), "").replace("/source/_posts/", `/${config.public_dir}/`);
+          const findGenFile = join(__dirname, genfile);
+          if (!fs.existsSync(findGenFile)) {
+            console.error(chalk.redBright(genfile), "not exists");
             continue;
           }
-          // img direct asset folder
-          const artisanfile = basename(dirname(imgobj.file)) + "/" + basename(imgobj.file);
-          const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
+
           result = result.replace(new RegExp(imgobj.url, "gm"), fullpathfile);
-          if (imgobj.url.includes("fabianlee")) console.log(imgobj.url, fullpathfile);
+          console.log(`${imgobj.url} => ${fullpathfile}`);
         }
       }
       fs.writeFileSync(file, result);
