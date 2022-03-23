@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png
 date: 2019-07-22T00:16:00.001+07:00
@@ -26,8 +24,6 @@ thumbnail: https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io
 photos:
   - https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png
 description: CryptoJS encrypt decrypt support PHP , PHP 7.x. See the Pen PHP
-  CryptoJS Encrypt Decrypt by dimas
-excerpt: CryptoJS encrypt decrypt support PHP , PHP 7.x. See the Pen PHP
   CryptoJS Encrypt Decrypt by dimas
 ---
 

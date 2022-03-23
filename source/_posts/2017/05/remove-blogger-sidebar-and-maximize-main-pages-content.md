@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
 date: 2017-05-01T19:22:00.000+07:00
@@ -26,8 +24,6 @@ thumbnail: https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe
 photos:
   - https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
 description: This one is a famous request inBlogger Help Forum - instructions to
-  shroud the sidebar on one of the static pages, and make the principle
-excerpt: This one is a famous request inBlogger Help Forum - instructions to
   shroud the sidebar on one of the static pages, and make the principle
 ---
 

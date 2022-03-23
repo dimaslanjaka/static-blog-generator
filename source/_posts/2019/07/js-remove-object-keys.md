@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - JS
+category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2019-07-18T02:14:00.002+07:00
@@ -25,8 +23,6 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "pre><br />var thisIsObject= {<br /> &apos;Cow&apos; :
-  &apos;Moo&apos;,<br /> &apos;Cat&apos; : &apos;Meow&apos;,<br />"
-excerpt: "pre><br />var thisIsObject= {<br /> &apos;Cow&apos; :
   &apos;Moo&apos;,<br /> &apos;Cat&apos; : &apos;Meow&apos;,<br />"
 ---
 

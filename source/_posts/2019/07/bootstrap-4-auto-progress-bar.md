@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://dimaslanjaka.github.io/assets/img/javascript.png
 date: 2019-07-25T23:09:00.001+07:00
@@ -27,8 +25,6 @@ thumbnail: https://dimaslanjaka.github.io/assets/img/javascript.png
 photos:
   - https://dimaslanjaka.github.io/assets/img/javascript.png
 description: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
-  (@dimaslanjaka) on CodePen.
-excerpt: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
   (@dimaslanjaka) on CodePen.
 ---
 

@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - JS
+category: []
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
 date: 2017-10-05T14:50:00.000+07:00
@@ -27,8 +25,6 @@ thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
 description: h2>Bagaimana cara convert HTML ke Javascript document.write secara
-  otomatis</h2><img
-excerpt: h2>Bagaimana cara convert HTML ke Javascript document.write secara
   otomatis</h2><img
 ---
 

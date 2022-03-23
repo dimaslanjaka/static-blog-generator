@@ -15,6 +15,10 @@ interface ImgLib {
      * saved to
      */
     file: string;
+    /**
+     * Unreachable url, etc
+     */
+    err: boolean;
   };
 }
 const libraries: ImgLib = {};
@@ -50,14 +54,15 @@ export default function downloadImg(parse: parsePostReturn) {
           const src = m[1].trim();
           const key = crypto.createHash("md5").update(src).digest("hex");
           if (typeof libraries[key] == "undefined") {
-            curly
-              .get(src)
-              .then((res) => {
-                console.log(res.statusCode);
-              })
-              .catch((err) => {
-                console.log(err.message);
-              });
+            if (src.startsWith("//") || src.match(/^https?:\/\//))
+              curly
+                .get(src)
+                .then((res) => {
+                  console.log(res.statusCode);
+                })
+                .catch((err) => {
+                  console.log(err.message, src);
+                });
           }
         }
       }

@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-06-15T13:15:00.000+07:00
@@ -26,8 +24,6 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "/ Thanks to codepen.io/alaingalvan for suggesting this color
-  variable:$background: hsl(210, 45, 10)//"
-excerpt: "/ Thanks to codepen.io/alaingalvan for suggesting this color
   variable:$background: hsl(210, 45, 10)//"
 ---
 
