@@ -43,3 +43,6 @@ https://tips-of.blogspot.com/2009/04/document-text-sizer.html?showComment=164800
 // content
 <a href="http://webmanajemen.com/ rel="follow dofollow">Thanks for sharing</a>
 <a href="http://webmanajemen.com/ rel="follow dofollow">Terimakasih sudah berbagi</a>
+
+// blogger comment iframe
+https://www.blogger.com/comment-iframe.g?blogID=${blogid}&postID=${postid}
