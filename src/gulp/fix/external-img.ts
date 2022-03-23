@@ -49,6 +49,7 @@ if (existsSync(filesave)) {
  * @param parse parsed
  */
 export default async function downloadImg(parse: parsePostReturn) {
+  if (!parse) return;
   // cancel github workflow
   if (typeof process.env.GITFLOW !== "undefined") return;
   // result all images
@@ -92,8 +93,10 @@ export default async function downloadImg(parse: parsePostReturn) {
         file: null,
         dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, ".md")),
       };
-      // only run if key not specified in `libraries`
-      if (typeof libraries[key] === "undefined") {
+      /**
+       * Download func
+       */
+      const download = async function (src: string) {
         if (src.startsWith("//")) src = "http:" + src;
         if (src.match(/^https?:\/\//)) {
           try {
@@ -123,6 +126,14 @@ export default async function downloadImg(parse: parsePostReturn) {
             libres.err = err.message;
           }
         }
+      };
+      // if key not specified in `libraries`
+      if (typeof libraries[key] === "undefined") {
+        download(src);
+      } else {
+        // check if downloaded file removed
+        const fileimg = libraries[key].file;
+        if (!existsSync(fileimg)) download(libraries[key].url);
       }
     }
   }
