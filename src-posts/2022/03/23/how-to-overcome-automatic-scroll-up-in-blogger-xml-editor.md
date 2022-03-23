@@ -4,6 +4,7 @@ webtitle: Blogger
 date: 2022-03-23T13:27:20+0000
 updated: 2022-03-23T20:27:20+0000
 toc: true
+cover: https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
 ---
 
 ## Blogger update information
