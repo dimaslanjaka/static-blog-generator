@@ -39,6 +39,32 @@ if (!function_exists('str_starts_with')) {
   }
 }
 ```
+### Example with the empty string ''
+```php
+<?php
+if (str_starts_with('abc', '')) {
+    echo "All strings start with the empty string"; // <-- this will show as output
+}
+?>
+```
+
+### Example case-sensitivity
+```php
+<?php
+$string = 'The lazy fox jumped over the fence';
+
+if (str_starts_with($string, 'The')) {
+    echo "The string starts with 'The'\n"; // <-- this will show as output
+}
+
+if (str_starts_with($string, 'the')) {
+    echo 'The string starts with "the"'; // this ignored because insensitive
+} else {
+    echo '"the" was not found because the case does not match'; // <-- this will show as output
+}
+
+?>
+```
 
 ## Uncaught Error: Call to undefined function str_ends_with() Fix Solutions
 ```php
