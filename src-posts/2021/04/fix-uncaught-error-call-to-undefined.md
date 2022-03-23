@@ -9,7 +9,7 @@ cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.
 date: 2021-04-27T19:26:00.002+07:00
 lang: en
 location: ""
-modified: 2021-05-14T04:26:37.028+07:00
+modified: 2022-03-23T13:42:23+0000
 subtitle: "h5>Uncaught Error: Call to undefined function str_starts_with() Fix
   Solutions</h5><img"
 tags:
@@ -19,7 +19,7 @@ title: Fix Uncaught Error Call to undefined function str_starts_with and str_end
 webtitle: PHP
 type: post
 uuid: 0879db41-1cc7-4888-88b3-d7f0056a20b8
-updated: 2022-03-23T20:15:37+07:00
+updated: 2022-03-23T13:42:23+0000
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
