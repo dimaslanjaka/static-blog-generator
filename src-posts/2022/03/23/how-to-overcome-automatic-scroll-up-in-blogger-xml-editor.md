@@ -13,6 +13,10 @@ Some time ago, blogger made an update about the XML editor system. The most stri
 ## Problem
 On this new system, there is an issue related to the behavior of the XML editor when the XML save process is complete. The editor interface will automatically scroll to the top every time the save process is complete. This is certainly very disturbing because we have to go back and forth to the last editing position. Especially for XML code that already involves tens of thousands of code, this will greatly hinder editing activities.
 
+### Forum Problem Posts
+- [https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en](https://support.google.com/blogger/thread/117960083/html-editor-auto-scroll-up?hl=en)
+- [https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up](https://www.quora.com/How-do-I-make-my-blog-header-stop-showing-up-when-scrolling-up)
+
 ## Solution
 This problem can be solved by injecting javascript code to prevent the blogger auto scroll event effect. Simply put, when the auto scroll is running and the scroll position is at the top, this function will reset the scroll position to the last position before saving. Function injection is performed using the browser's _bookmark system_.
 
