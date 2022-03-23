@@ -26,7 +26,8 @@ hexo.extend.helper.register('thumbnail', thumbnail);
 
 hexo.extend.helper.register('img_url', function (post, config) {
   const cover = thumbnail(post);
-  if (/^https?:\/\//gm.test(cover) || /^\//gm.test(cover)) {
+  // if start with protocol or slash
+  if (/^https?:\/\/|^\//gm.test(cover)) {
     return cover;
   } else if (typeof config.logo == 'string') {
     return config.logo;
