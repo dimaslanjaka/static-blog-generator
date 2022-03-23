@@ -43,6 +43,9 @@ if (existsSync(filesave)) {
   libraries = JSON.parse(readFileSync(filesave, "utf-8"));
 }
 
+// delete log file
+if (existsSync(join(cwd(), "tmp/images.log"))) unlinkSync(join(cwd(), "tmp/images.log"));
+
 /**
  * Download External Images To Local
  * * Store database on `${workspaceFolder}/source/_data/external-images.json`
@@ -79,8 +82,6 @@ export default async function downloadImg(parse: parsePostReturn) {
     }
   }
   if (images.length) {
-    // delete log file
-    if (existsSync(join(cwd(), "tmp/images.log"))) unlinkSync(join(cwd(), "tmp/images.log"));
     // remove duplicates
     images = images.unique();
     // process downloading images
@@ -112,7 +113,11 @@ export default async function downloadImg(parse: parsePostReturn) {
               const contentType = headers[0]["content-type"];
               if (contentType.startsWith("image/")) {
                 libres.type = contentType;
-                libres.file = join(libres.dir, md5(basename(src)));
+                let imgtype = contentType.replace("image/", "");
+                if (imgtype.includes("+")) {
+                  imgtype = imgtype.split("+")[0];
+                }
+                libres.file = join(libres.dir, md5(src) + "." + imgtype);
                 if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
                 // save images content
                 writeFileSync(libres.file, data);
@@ -141,6 +146,8 @@ export default async function downloadImg(parse: parsePostReturn) {
       }
     }
   }
+
+  return;
 }
 
 function md5(src: string) {
