@@ -160,7 +160,7 @@ export default async function downloadImg(parse: parsePostReturn) {
         return bluebird
           .all(processed)
           .each((data) => {
-            if (data.fullpath) {
+            if (data.fullpath && !data.err) {
               if (!data.err) {
                 if (parse.metadata.cover.trim() === data.url) {
                   parse.metadata.cover = data.fullpath;
