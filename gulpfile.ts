@@ -328,10 +328,11 @@ function afterGenerate(done: TaskCallback) {
           const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
           const genfile = imgobj.file.replace(cwd(), "").replace("/source/_posts/", `/${config.public_dir}/`);
           const findGenFile = join(__dirname, genfile);
-          if (!fs.existsSync(findGenFile)) {
+
+          /*if (!fs.existsSync(findGenFile)) {
             console.error(chalk.redBright(genfile), "not exists");
             continue;
-          }
+          }*/
 
           result = result.replace(new RegExp(imgobj.url, "gm"), fullpathfile);
           console.log(`${imgobj.url} => ${fullpathfile}`);
