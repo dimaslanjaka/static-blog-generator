@@ -53,8 +53,8 @@ if (existsSync(join(cwd(), "tmp/images.log"))) unlinkSync(join(cwd(), "tmp/image
  */
 export default async function downloadImg(parse: parsePostReturn) {
   if (!parse) return;
-  // cancel github workflow
-  if (typeof process.env.GITFLOW !== "undefined") return;
+
+  const HexoURL = new URL(parse.config.url);
 
   // result all images
   let images = [];
@@ -101,8 +101,12 @@ export default async function downloadImg(parse: parsePostReturn) {
        * Download func
        */
       const download = async function (src: string) {
+        // cancel github workflow
+        if (typeof process.env.GITFLOW !== "undefined") return;
+        // fix if src startwith dynamic protocol `//`
         if (src.startsWith("//")) src = "http:" + src;
-        if (src.match(/^https?:\/\//) && !src.match(new RegExp("^https?://" + new URL(parse.config.url).host))) {
+        // only download valid url and not local domain
+        if (src.match(/^https?:\/\//) && !src.match(new RegExp("^https?://" + HexoURL.host))) {
           try {
             console.log(`starting download ${src}`);
             const { statusCode, data, headers } = await curly.get(src, {
@@ -141,11 +145,15 @@ export default async function downloadImg(parse: parsePostReturn) {
       };
       // if key not specified in `libraries`
       if (typeof libraries[key] === "undefined") {
-        download(src);
-      } else {
+        await download(src);
+      }
+      if (typeof libraries[key] == "object" && libraries[key].file && !libraries[key].err) {
         // check if downloaded file removed
-        const fileimg = libraries[key].file;
-        if (!existsSync(fileimg)) download(libraries[key].url);
+        if (!existsSync(libraries[key].file)) {
+          await download(libraries[key].url);
+        }
+        const fullpath = HexoURL;
+        console.log(libraries[key].file.replace(cwd(), ""));
       }
     }
   }
