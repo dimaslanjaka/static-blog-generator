@@ -48,11 +48,12 @@ if (existsSync(filesave)) {
  * * Store database on `${workspaceFolder}/source/_data/external-images.json`
  * @param parse parsed
  */
-export default function downloadImg(parse: parsePostReturn) {
+export default async function downloadImg(parse: parsePostReturn) {
   // cancel github workflow
   if (typeof process.env.GITFLOW !== "undefined") return;
+  // result all images
+  let images = [];
   if (parse.metadata) {
-    let images = [];
     // extract photos from metadata
     const meta = parse.metadata;
     if (meta.cover) images.push(meta.cover);
@@ -60,70 +61,66 @@ export default function downloadImg(parse: parsePostReturn) {
       meta.photos.forEach((v) => images.push(v));
     }
     if (meta.thumbnail) images.push(meta.thumbnail);
-    if (parse.body) {
-      const regex = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/gim;
-      const str = parse.body;
-      let m: RegExpExecArray;
+  }
+  if (parse.body) {
+    const regex = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/gim;
+    const str = parse.body;
+    let m: RegExpExecArray;
 
-      while ((m = regex.exec(str)) !== null) {
-        // This is necessary to avoid infinite loops with zero-width matches
-        if (m.index === regex.lastIndex) {
-          regex.lastIndex++;
-        }
-        if (m.length > 1) {
-          images.push(m[1].trim());
-        }
+    while ((m = regex.exec(str)) !== null) {
+      // This is necessary to avoid infinite loops with zero-width matches
+      if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
       }
-
-      if (images.length) {
-        // remove duplicates
-        images = images.unique();
-        // process downloading images
-        for (let index = 0; index < images.length; index++) {
-          let src = images[index].trim();
-          // setup key with md5
-          const key = crypto.createHash("md5").update(src).digest("hex");
-          // setup result data
-          const libres: ImgLibData = {
-            url: src,
-            err: false,
-            file: null,
-            dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, ".md")),
-          };
-          // only run if key not specified in `libraries`
-          if (typeof libraries[key] === "undefined") {
-            if (src.startsWith("//")) src = "http:" + src;
-            if (src.match(/^https?:\/\//))
-              curly
-                .get(src, {
-                  FOLLOWLOCATION: true,
-                  REFERER: "https://www.google.com",
-                  SSL_VERIFYPEER: 0,
-                  SSL_VERIFYHOST: 0,
-                })
-                .then((res) => {
-                  if (res.statusCode === 200) {
-                    const contentType = res.headers[0]["content-type"];
-                    if (contentType.startsWith("image/")) {
-                      libres.type = contentType;
-                      libres.file = join(libres.dir, basename(src));
-                      if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
-                      writeFileSync(libres.file, res.data);
-                      console.log(`${chalk.blueBright("[img]")} saved ${libres.file}`);
-                      // add result to `libraries`
-                      libraries[key] = libres;
-                      // save libraries
-                      writeFileSync(filesave, JSON.stringify(libraries));
-                    }
-                  }
-                })
-                .catch((err: Error) => {
-                  libres.err = err.message;
-                })
-                .finally(() => {
-                  //libraries[key] = libres;
-                  //writeFileSync(filesave, JSON.stringify(libraries));
-                });
+      if (m.length > 1) {
+        images.push(m[1].trim());
+      }
+    }
+  }
+  if (images.length) {
+    // remove duplicates
+    images = images.unique();
+    // process downloading images
+    for (let index = 0; index < images.length; index++) {
+      let src = images[index].trim();
+      // setup key with md5
+      const key = crypto.createHash("md5").update(src).digest("hex");
+      // setup result data
+      const libres: ImgLibData = {
+        url: src,
+        err: false,
+        file: null,
+        dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, ".md")),
+      };
+      // only run if key not specified in `libraries`
+      if (typeof libraries[key] === "undefined") {
+        if (src.startsWith("//")) src = "http:" + src;
+        if (src.match(/^https?:\/\//)) {
+          try {
+            const { statusCode, data, headers } = await curly.get(src, {
+              FOLLOWLOCATION: true,
+              REFERER: "https://www.google.com",
+              SSL_VERIFYPEER: 0,
+              SSL_VERIFYHOST: 0,
+            });
+            if (statusCode === 200) {
+              const contentType = headers[0]["content-type"];
+              if (contentType.startsWith("image/")) {
+                libres.type = contentType;
+                libres.file = join(libres.dir, basename(src));
+                if (!existsSync(libres.dir)) mkdirSync(libres.dir, { recursive: true });
+                // save images
+                writeFileSync(libres.file, data);
+                console.log(`${chalk.blueBright("[img]")} saved ${libres.file}`);
+                // add result to `libraries`
+                libraries[key] = libres;
+                // save libraries
+                writeFileSync(filesave, JSON.stringify(libraries));
+              }
+            }
+          } catch (error) {
+            const err: Error = error;
+            libres.err = err.message;
           }
         }
       }
