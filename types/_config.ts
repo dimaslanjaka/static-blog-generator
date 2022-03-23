@@ -1,57 +1,74 @@
-import HexoConfig, { Author } from "hexo/HexoConfig";
-export interface Hexo_Config extends HexoConfig {
-  title: string;
-  subtitle: string;
-  description: string;
-  subtitle_desc: string;
-  keywords: string;
-  timezone: string;
-  introduction: string;
-  search: Search;
-  url: string;
-  root: string;
-  permalink: string;
-  pretty_urls: PrettyUrls;
-  source_dir: string;
-  public_dir: string;
-  tag_dir: string;
-  archive_dir: string;
-  category_dir: string;
-  code_dir: string;
-  i18n_dir: string;
-  new_post_name: string;
-  default_layout: string;
-  titlecase: boolean;
-  //external_link: ExternalLink;
-  filename_case: number;
-  render_drafts: boolean;
-  post_asset_folder: boolean;
-  relative_link: boolean;
-  future: boolean;
-  highlight: Highlight;
-  prismjs: Prismjs;
-  index_generator: IndexGenerator;
-  default_category: string;
-  meta_generator: boolean;
-  date_format: string;
-  time_format: string;
-  updated_option: boolean;
-  per_page: number;
-  pagination_dir: string;
-  server: Server;
-  theme: string;
-  deploy: Deploy;
-  author: Author;
-  social_links: SocialLinks;
-  feed: Feed;
-  sitemap: Sitemap;
-  related_posts: RelatedPosts;
-  markdown_it_plus: MarkdownItPlus;
-  browsersync: Browsersync;
-  adsense: Adsense;
-  analytics: Analytics;
-  seo: Seo;
-}
+import HexoConfig from "hexo/HexoConfig";
+export type Hexo_Config =
+  | HexoConfig
+  | {
+      title: string;
+      subtitle: string;
+      description: string;
+      subtitle_desc: string;
+      keywords: string;
+      timezone: string;
+      introduction: string;
+      search: Search;
+      url: string;
+      root: string;
+      author: Author;
+      permalink: string;
+      pretty_urls: PrettyUrls;
+      source_dir: string;
+      public_dir: string;
+      tag_dir: string;
+      archive_dir: string;
+      category_dir: string;
+      code_dir: string;
+      i18n_dir: string;
+      new_post_name: string;
+      default_layout: string;
+      titlecase: boolean;
+      //external_link: ExternalLink;
+      filename_case: number;
+      render_drafts: boolean;
+      post_asset_folder: boolean;
+      relative_link: boolean;
+      future: boolean;
+      highlight: Highlight;
+      prismjs: Prismjs;
+      index_generator: IndexGenerator;
+      default_category: string;
+      meta_generator: boolean;
+      date_format: string;
+      time_format: string;
+      updated_option: boolean;
+      per_page: number;
+      pagination_dir: string;
+      server: Server;
+      theme: string;
+      deploy: Deploy;
+      social_links: SocialLinks;
+      feed: Feed;
+      sitemap: Sitemap;
+      related_posts: RelatedPosts;
+      markdown_it_plus: MarkdownItPlus;
+      browsersync: Browsersync;
+      adsense: Adsense;
+      analytics: Analytics;
+      seo: Seo;
+    };
+
+type Writable<T> = { -readonly [K in keyof T]: T[K] };
+
+type Mutable<T> = {
+  -readonly [k in keyof T]: T[k];
+};
+
+export type Author =
+  | string
+  | {
+      name: string;
+      link: string;
+      image: Image;
+    };
+
 export interface Search {
   path: string;
   field: string;
