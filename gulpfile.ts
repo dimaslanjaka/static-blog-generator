@@ -319,6 +319,10 @@ function afterGenerate(done: TaskCallback) {
       for (const key in ijs) {
         if (Object.prototype.hasOwnProperty.call(ijs, key)) {
           const imgobj: ImgLibData = ijs[key];
+          if (!fs.existsSync(imgobj.file)) {
+            console.error(imgobj.file, "not exists");
+            continue;
+          }
           // img direct asset folder
           const artisanfile = basename(dirname(imgobj.file)) + "/" + basename(imgobj.file);
           const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
