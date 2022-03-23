@@ -55,6 +55,7 @@ export default async function downloadImg(parse: parsePostReturn) {
   if (!parse) return;
   // cancel github workflow
   if (typeof process.env.GITFLOW !== "undefined") return;
+
   // result all images
   let images = [];
   if (parse.metadata) {
@@ -103,6 +104,7 @@ export default async function downloadImg(parse: parsePostReturn) {
         if (src.startsWith("//")) src = "http:" + src;
         if (src.match(/^https?:\/\//) && !src.match(new RegExp("^https?://" + new URL(parse.config.url).host))) {
           try {
+            console.log(`starting download ${src}`);
             const { statusCode, data, headers } = await curly.get(src, {
               FOLLOWLOCATION: true,
               REFERER: "https://www.google.com",
