@@ -49,6 +49,8 @@ if (str_starts_with('abc', '')) {
 ```
 
 ### Example case-sensitivity
+- **Case Sensitive** is a case where uppercase and lowercase letters are interpreted differently.
+- **Case Insensitive** is a case where uppercase and lowercase letters are interpreted the same.
 ```php
 <?php
 $string = 'The lazy fox jumped over the fence';
