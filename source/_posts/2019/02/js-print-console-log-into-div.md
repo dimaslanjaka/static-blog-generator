@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png
 date: 2019-02-06T22:55:00.001+07:00

@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/00073980860956332189
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - CSS
 comments: true
 cover: https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwufv5_UfBY2yXZZEu34LmZ9OMAMoACLcB/s1600/Screenshot_1_1.jpg
 date: 2017-11-11T04:24:00.000+07:00
@@ -26,6 +28,8 @@ thumbnail: https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwu
 photos:
   - https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwufv5_UfBY2yXZZEu34LmZ9OMAMoACLcB/s1600/Screenshot_1_1.jpg
 description: The function of the contact form on a blog is to make it easier for
+  blog visitors to contact the blog admin.
+excerpt: The function of the contact form on a blog is to make it easier for
   blog visitors to contact the blog admin.
 ---
 

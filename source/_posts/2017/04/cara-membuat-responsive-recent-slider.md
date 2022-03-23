@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - CSS
 comments: true
 cover: https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY273Zd60Z1FdySOdLoB4r94bXskwZQCLcB/s320/Screenshot_2017-04-24-20-56-21.jpg
 date: 2017-04-24T20:18:00.000+07:00
@@ -26,6 +28,8 @@ thumbnail: https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY27
 photos:
   - https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY273Zd60Z1FdySOdLoB4r94bXskwZQCLcB/s320/Screenshot_2017-04-24-20-56-21.jpg
 description: Nah kali ini saya akan share bagaimana cara membuat recent widget
+  blogger dengan fitur Slider style, Responsive, Elegant Style.
+excerpt: Nah kali ini saya akan share bagaimana cara membuat recent widget
   blogger dengan fitur Slider style, Responsive, Elegant Style.
 ---
 

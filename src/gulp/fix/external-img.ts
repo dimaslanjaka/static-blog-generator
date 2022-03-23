@@ -1,25 +1,31 @@
 import { curly } from "node-libcurl";
 import { parsePostReturn } from "../../markdown/transformPosts";
 import crypto from "crypto";
+import { basename, dirname, join } from "path";
 
 interface ImgLib {
   /**
    * Image information key from url img
    */
-  [key: string]: {
-    /**
-     * url image
-     */
-    url: string;
-    /**
-     * saved to
-     */
-    file: string;
-    /**
-     * Unreachable url, etc
-     */
-    err: boolean;
-  };
+  [key: string]: ImgLibData;
+}
+interface ImgLibData {
+  /**
+   * url image
+   */
+  url: string;
+  /**
+   * File Path
+   */
+  file: string;
+  /**
+   * Folder Path
+   */
+  dir: string;
+  /**
+   * Unreachable url, etc
+   */
+  err: boolean;
 }
 const libraries: ImgLib = {};
 
@@ -51,17 +57,27 @@ export default function downloadImg(parse: parsePostReturn) {
           regex.lastIndex++;
         }
         if (m.length > 1) {
-          const src = m[1].trim();
+          let src = m[1].trim();
           const key = crypto.createHash("md5").update(src).digest("hex");
+          const libres: ImgLibData = {
+            url: src,
+            err: false,
+            file: null,
+            dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, ".md")),
+          };
+
           if (typeof libraries[key] == "undefined") {
-            if (src.startsWith("//") || src.match(/^https?:\/\//))
+            if (src.startsWith("//")) src = "http:" + src;
+            if (src.match(/^https?:\/\//))
               curly
                 .get(src)
                 .then((res) => {
-                  console.log(res.statusCode);
+                  if (res.statusCode === 200) {
+                    console.log(res.headers["content-type"]);
+                  }
                 })
                 .catch((err) => {
-                  console.log(err.message, src);
+                  console.error(err.message, src);
                 });
           }
         }

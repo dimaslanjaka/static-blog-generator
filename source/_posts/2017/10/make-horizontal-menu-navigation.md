@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - CSS
 comments: true
 cover: https://imgdb.net/images/3198.jpg
 date: 2017-10-01T02:31:00.000+07:00
@@ -24,6 +26,8 @@ thumbnail: https://imgdb.net/images/3198.jpg
 photos:
   - https://imgdb.net/images/3198.jpg
 description: hr align=CENTER color=#336600 size=2 width=90% /><img height=97
+  src=https://imgdb.net/images/3198.jpg width=100% /><br /><hr
+excerpt: hr align=CENTER color=#336600 size=2 width=90% /><img height=97
   src=https://imgdb.net/images/3198.jpg width=100% /><br /><hr
 ---
 

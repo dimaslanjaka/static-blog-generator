@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png
 date: 2017-05-12T00:54:00.000+07:00
@@ -26,6 +28,8 @@ thumbnail: https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFk
 photos:
   - https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png
 description: Add Translate widget to sidebar or page blog with state flags using
+  javascriptNot everybody on the planet comprehends the dialect we
+excerpt: Add Translate widget to sidebar or page blog with state flags using
   javascriptNot everybody on the planet comprehends the dialect we
 ---
 

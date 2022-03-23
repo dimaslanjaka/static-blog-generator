@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
 date: 2017-04-09T13:00:00.001+07:00
@@ -24,6 +26,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojot
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.jojothemes.com/wp-content/uploads/2016/07/Mighty-URL-Shortener-v1.0.1-%E2%80%93-Short-URL-Script.jpg
 description: Download Free Mighty URL Shortener PHP Script .0.1 - CodeCanyon |
+  Mighty URL Shortener v2.0.1 - Short URL Script PHP Script ini
+excerpt: Download Free Mighty URL Shortener PHP Script .0.1 - CodeCanyon |
   Mighty URL Shortener v2.0.1 - Short URL Script PHP Script ini
 ---
 

@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 date: 2019-07-31T16:03:00.001+07:00
@@ -23,6 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanj
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 description: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
+  expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
+excerpt: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 ---
 
