@@ -26,8 +26,9 @@ import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
 import { parse as parseHTML } from "node-html-parser";
-import downloadImage from "./src/gulp/fix/external-img";
-import { join } from "path";
+import downloadImage, { imagesDBFile, ImgLib, ImgLibData } from "./src/gulp/fix/external-img";
+import { basename, dirname, join } from "path";
+import { cwd } from "process";
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
 // generate definition config https://jvilk.com/MakeTypes/
@@ -313,7 +314,19 @@ function afterGenerate(done: TaskCallback) {
       }
       //const memoryUsage = util.inspect(process.memoryUsage()).replace(/\s+/gm, " ");
       //fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
-      fs.writeFileSync(file, doc.toString());
+      let result = doc.toString();
+      const ijs: ImgLib = JSON.parse(fs.readFileSync(imagesDBFile, "utf-8"));
+      for (const key in ijs) {
+        if (Object.prototype.hasOwnProperty.call(ijs, key)) {
+          const imgobj: ImgLibData = ijs[key];
+          // img direct asset folder
+          const artisanfile = basename(dirname(imgobj.file)) + "/" + basename(imgobj.file);
+          const fullpathfile = config.url + imgobj.file.replace(cwd(), "").replace("/source/_posts/", "");
+          result = result.replace(new RegExp(imgobj.url, "gm"), fullpathfile);
+          //if (imgobj.url.includes("fabianlee")) console.log(imgobj.url, artisanfile);
+        }
+      }
+      fs.writeFileSync(file, result);
     }
   }
   done();

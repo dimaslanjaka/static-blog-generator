@@ -7,13 +7,13 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import "js-prototypes";
 import chalk from "chalk";
 
-interface ImgLib {
+export interface ImgLib {
   /**
    * Image information key from url img
    */
   [key: string]: ImgLibData;
 }
-interface ImgLibData {
+export interface ImgLibData {
   [key: string]: any;
   /**
    * url image
@@ -39,6 +39,7 @@ interface ImgLibData {
  */
 let libraries: ImgLib = {};
 const filesave = join(cwd(), "/source/_data/external-images.json");
+export { filesave as imagesDBFile };
 if (existsSync(filesave)) {
   libraries = JSON.parse(readFileSync(filesave, "utf-8"));
 }
