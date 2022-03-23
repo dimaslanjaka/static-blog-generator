@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-JsB839A6H5U/ThI-R0-PcXI/AAAAAAAAAbA/W4xMXiJ_2x8/s1600/do-pdf-free.png
+cover: https://www.webmanajemen.com/2017/09/how-to-make-pdf-file/35b5ea2fc8066174f5d88de1e8bb6ea1.png
 date: 2017-09-24T01:51:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 6caab6c9-5085-4888-8fd6-9f036417d26d
 webtitle: WMI Gitlab
 updated: 2017-09-24T01:51:01+07:00
-thumbnail: https://3.bp.blogspot.com/-JsB839A6H5U/ThI-R0-PcXI/AAAAAAAAAbA/W4xMXiJ_2x8/s1600/do-pdf-free.png
+thumbnail: https://www.webmanajemen.com/2017/09/how-to-make-pdf-file/35b5ea2fc8066174f5d88de1e8bb6ea1.png
 photos:
   - https://3.bp.blogspot.com/-JsB839A6H5U/ThI-R0-PcXI/AAAAAAAAAbA/W4xMXiJ_2x8/s1600/do-pdf-free.png
 description: http//www.dopdf.com/download/setup/dopdf-7.exe

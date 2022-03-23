@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
+cover: https://www.webmanajemen.com/2021/05/how-to-play-ps2-games-on-low-end/b37ace212ec8b8c5a6adefe8d71d83e0.jpeg
 date: 2021-05-14T04:15:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 779e4029-20c2-4888-8040-21c6e79c6cda
 webtitle: WMI Gitlab
 updated: 2021-05-14T04:15:56+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
+thumbnail: https://www.webmanajemen.com/2021/05/how-to-play-ps2-games-on-low-end/b37ace212ec8b8c5a6adefe8d71d83e0.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
 description: In the era of the 000s, the PS2 console was known to bring a myriad

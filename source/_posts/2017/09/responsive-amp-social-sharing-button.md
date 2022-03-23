@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6g556I05TKO6xT2Xahym5NTp-ArQCLcBGAs/s320/images%2B%252810%2529.jpg
+cover: https://www.webmanajemen.com/2017/09/responsive-amp-social-sharing-button/b71292f7ff11f570d6b422e332709481.jpeg
 date: 2017-09-16T02:15:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 5594609c-4b54-4888-892c-5cce2523369c
 webtitle: WMI Gitlab
 updated: 2017-09-16T02:15:12+07:00
-thumbnail: https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6g556I05TKO6xT2Xahym5NTp-ArQCLcBGAs/s320/images%2B%252810%2529.jpg
+thumbnail: https://www.webmanajemen.com/2017/09/responsive-amp-social-sharing-button/b71292f7ff11f570d6b422e332709481.jpeg
 photos:
   - https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6g556I05TKO6xT2Xahym5NTp-ArQCLcBGAs/s320/images%2B%252810%2529.jpg
 ---

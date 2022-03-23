@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4379.png
+cover: https://www.webmanajemen.com/2018/11/js-get-list-facebook-groups-id/2200008228e1697ab46babef3c8887c2.png
 date: 2018-11-26T19:41:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: f92ac380-6fbc-4888-805d-18d9e1067cd2
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4379.png
+thumbnail: https://www.webmanajemen.com/2018/11/js-get-list-facebook-groups-id/2200008228e1697ab46babef3c8887c2.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4379.png
 ---

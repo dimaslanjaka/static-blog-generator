@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/03/Download-I-Live-Alone.jpg
+cover: https://www.webmanajemen.com/2019/01/i-live-alone-episode-274-subtitle/27053c1af3bd34b224cfb7bb11a86d74.jpeg
 date: 2019-01-05T18:37:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 4336d9cd-7e9d-4888-8b8f-887a4a49718b
 webtitle: WMI Gitlab
 updated: 2019-01-05T18:37:07+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/03/Download-I-Live-Alone.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/i-live-alone-episode-274-subtitle/27053c1af3bd34b224cfb7bb11a86d74.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/03/Download-I-Live-Alone.jpg
 description: I Live Alone I Live Alone is recognized as one of the RealVariety

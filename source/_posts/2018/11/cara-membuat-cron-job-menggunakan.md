@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-PpWaOxbn6Tk/Uxx5oeTV9sI/AAAAAAAAAc0/Nbc-Oluyp0s/s280/Screenshot_1.png
+cover: https://www.webmanajemen.com/2018/11/cara-membuat-cron-job-menggunakan/9341255db020c528e0c4812b4b20ccf4.png
 date: 2018-11-03T20:02:00.003+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 20f6dd26-58e1-4888-83a5-1c1330e8fec9
 webtitle: WMI Gitlab
 updated: 2018-11-03T20:02:36+07:00
-thumbnail: https://4.bp.blogspot.com/-PpWaOxbn6Tk/Uxx5oeTV9sI/AAAAAAAAAc0/Nbc-Oluyp0s/s280/Screenshot_1.png
+thumbnail: https://www.webmanajemen.com/2018/11/cara-membuat-cron-job-menggunakan/9341255db020c528e0c4812b4b20ccf4.png
 photos:
   - https://4.bp.blogspot.com/-PpWaOxbn6Tk/Uxx5oeTV9sI/AAAAAAAAAc0/Nbc-Oluyp0s/s280/Screenshot_1.png
 ---

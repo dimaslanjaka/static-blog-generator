@@ -320,7 +320,9 @@ function afterGenerate(done: TaskCallback) {
 }
 
 gulp.task("article:img", (done) => {
-  const posts = loopDir(path.join(__dirname, config.source_dir, "_posts")).filter((f) => f.endsWith(".md"));
+  const posts = loopDir(path.join(__dirname, config.source_dir, "_posts"))
+    .filter((f) => f.endsWith(".md"))
+    .unique();
   return bluebird
     .all(posts)
     .map(parsePost)

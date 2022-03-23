@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.info/wp-content/uploads/2018/12/Google_Drive_logo.png
+cover: https://www.webmanajemen.com/2019/09/cara-mengatasi-limit-kuota-pada-google/1ebada025bcd0dea185be191a266f355.png
 date: 2019-09-28T17:56:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c3106ffe-a906-4888-885b-38e34eb8f77b
 webtitle: WMI Gitlab
 updated: 2019-09-29T06:00:50+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.info/wp-content/uploads/2018/12/Google_Drive_logo.png
+thumbnail: https://www.webmanajemen.com/2019/09/cara-mengatasi-limit-kuota-pada-google/1ebada025bcd0dea185be191a266f355.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.info/wp-content/uploads/2018/12/Google_Drive_logo.png
 description: Full download server is the desire of many people, especially the

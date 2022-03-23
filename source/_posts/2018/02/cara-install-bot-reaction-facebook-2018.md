@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-4EyGER4fK5U/Wn1wXZIwkyI/AAAAAAAAANw/AAQpyom5zrI4MJR0OOOVnkNizmucsqrDgCLcBGAs/s320/Screenshot_2018-02-09-16-56-15-284_com.android.chrome.png
+cover: https://www.webmanajemen.com/2018/02/cara-install-bot-reaction-facebook-2018/5efdbcc6117c1f6542a54465a80d5b97.png
 date: 2018-02-09T16:58:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: b705be81-03e7-4888-8f7a-e0443393efc6
 webtitle: WMI Gitlab
 updated: 2018-11-20T16:47:03+07:00
-thumbnail: https://3.bp.blogspot.com/-4EyGER4fK5U/Wn1wXZIwkyI/AAAAAAAAANw/AAQpyom5zrI4MJR0OOOVnkNizmucsqrDgCLcBGAs/s320/Screenshot_2018-02-09-16-56-15-284_com.android.chrome.png
+thumbnail: https://www.webmanajemen.com/2018/02/cara-install-bot-reaction-facebook-2018/5efdbcc6117c1f6542a54465a80d5b97.png
 photos:
   - https://3.bp.blogspot.com/-4EyGER4fK5U/Wn1wXZIwkyI/AAAAAAAAANw/AAQpyom5zrI4MJR0OOOVnkNizmucsqrDgCLcBGAs/s320/Screenshot_2018-02-09-16-56-15-284_com.android.chrome.png
 ---

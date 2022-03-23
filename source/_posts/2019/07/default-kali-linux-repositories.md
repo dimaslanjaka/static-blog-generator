@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
+cover: https://www.webmanajemen.com/2019/07/install-google-chrome-kali/de91bf1e1677c51a48beea32904ef8c5.png
 date: 2019-07-21T20:17:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 1cc6d972-1070-4888-80b9-14237c91806a
 webtitle: WMI Gitlab
 updated: 2019-07-23T01:56:32+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
+thumbnail: https://www.webmanajemen.com/2019/07/install-google-chrome-kali/de91bf1e1677c51a48beea32904ef8c5.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 description: "open terminal, type  gedit /etc/apt/sources.listadd following

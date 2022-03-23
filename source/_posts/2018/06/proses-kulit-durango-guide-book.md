@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
+cover: https://www.webmanajemen.com/2018/07/type-of-food-buff-and-its-use-durango/a1ae681ef339dcc115fcdec49f2995f2.png
 date: 2018-06-18T03:28:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: b8660c92-d4af-4888-8259-278b243627fb
 webtitle: WMI Gitlab
 updated: 2018-08-05T06:18:29+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
+thumbnail: https://www.webmanajemen.com/2018/07/type-of-food-buff-and-its-use-durango/a1ae681ef339dcc115fcdec49f2995f2.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
 description: Nama Proses Bahan Hasil  Buff Debuff   Kulit Kering  Kulit  Kulit

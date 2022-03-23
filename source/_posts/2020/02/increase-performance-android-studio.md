@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
+cover: https://www.webmanajemen.com/2020/02/increase-performance-android-studio/155a968093231f35da84f45ff6f96c13.png
 date: 2020-02-25T05:25:00.001+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 07fe6730-d4e9-4888-8069-db5d8c1f9297
 webtitle: WMI Gitlab
 updated: 2020-03-29T20:45:31+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
+thumbnail: https://www.webmanajemen.com/2020/02/increase-performance-android-studio/155a968093231f35da84f45ff6f96c13.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 description: You can speed up your Eclipse or Android Studio work, you just follow these

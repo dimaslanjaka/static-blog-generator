@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
+cover: https://www.webmanajemen.com/2018/10/wps-pin-codes-for-6cb0ce1acc3d/72f64a79395c3217024864a2cdf6a695.png
 date: 2018-10-16T13:31:00.000+07:00
 lang: en
 location: ""
@@ -17,7 +17,7 @@ type: post
 uuid: 5eb40b87-bdfb-4888-8664-8b05af8f609b
 webtitle: WMI Gitlab
 updated: 2018-10-16T13:31:30+07:00
-thumbnail: https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
+thumbnail: https://www.webmanajemen.com/2018/10/wps-pin-codes-for-6cb0ce1acc3d/72f64a79395c3217024864a2cdf6a695.png
 photos:
   - https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
 description: WPS PIN codes for C:B0:CE:1A:CC:3D

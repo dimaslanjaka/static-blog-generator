@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1
+cover: https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts/8bc2541aaf8e2a5f09f520a51e820821.jpeg
 date: 2017-07-11T23:51:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 4337dbd3-7c5f-4888-86e8-31cdf523da2e
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1
+thumbnail: https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts/8bc2541aaf8e2a5f09f520a51e820821.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1
 ---

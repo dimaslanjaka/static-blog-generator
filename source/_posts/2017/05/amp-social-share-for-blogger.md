@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ9xXGAmyFtnQR2UzPn6Xm7BqXdVwCLcB/s320/amp-blogger-social-share.webp
+cover: https://www.webmanajemen.com/2017/05/amp-social-share-for-blogger/66a7b40c2d2927d52dcaae508f5db8dd.jpeg
 date: 2017-05-14T13:28:00.000+07:00
 lang: en
 location: ""
@@ -26,7 +26,7 @@ type: post
 uuid: 988645b6-3568-4888-870f-76561e070e93
 webtitle: WMI Gitlab
 updated: 2017-05-14T13:28:18+07:00
-thumbnail: https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ9xXGAmyFtnQR2UzPn6Xm7BqXdVwCLcB/s320/amp-blogger-social-share.webp
+thumbnail: https://www.webmanajemen.com/2017/05/amp-social-share-for-blogger/66a7b40c2d2927d52dcaae508f5db8dd.jpeg
 photos:
   - https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ9xXGAmyFtnQR2UzPn6Xm7BqXdVwCLcB/s320/amp-blogger-social-share.webp
 description: AMP Social Share for Blogger  Updated (Twitter, Google, Facebook &

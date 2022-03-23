@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
+cover: https://www.webmanajemen.com/2017/04/cara-mempercepat-blogger-dengan-dns-prefetch-metatag/73589b9e157e217cae8bed1d4e10ae13.jpeg
 date: 2017-04-30T01:34:00.002+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 5289e74a-6ef9-4888-8f2e-f29add41b8b5
 webtitle: WMI Gitlab
 updated: 2017-04-30T01:38:00+07:00
-thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
+thumbnail: https://www.webmanajemen.com/2017/04/cara-mempercepat-blogger-dengan-dns-prefetch-metatag/73589b9e157e217cae8bed1d4e10ae13.jpeg
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
 description: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON

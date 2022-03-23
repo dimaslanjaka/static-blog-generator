@@ -1,5 +1,5 @@
 ---
-cover: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
+cover: https://www.webmanajemen.com/Minecraft/magical-bow/ff4f3a9c12066fe048aa49edc55c1a36.jpeg
 date: 2021-12-12T13:01:00+07:00
 keywords:
   - bow
@@ -13,7 +13,7 @@ title: Magical Book For Bow
 uuid: a4619a8b-d625-4888-8e18-5569e773bd85
 webtitle: Minecraft
 updated: 2022-03-20T20:57:28+07:00
-thumbnail: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
+thumbnail: https://www.webmanajemen.com/Minecraft/magical-bow/ff4f3a9c12066fe048aa49edc55c1a36.jpeg
 photos:
   - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 description: How to use magical books for bow

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
+cover: https://www.webmanajemen.com/2017/11/disqus-mengatasi-plaintext-url-menjadi/04a8b2f1696da754c1d7224cdad7be69.jpeg
 date: 2017-11-12T08:01:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: b3b2b192-f9f0-4888-8fbd-b2aaa129a38d
 webtitle: WMI Gitlab
 updated: 2017-11-12T08:03:03+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
+thumbnail: https://www.webmanajemen.com/2017/11/disqus-mengatasi-plaintext-url-menjadi/04a8b2f1696da754c1d7224cdad7be69.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
 description: Disqus merupakan sebuah layanan komentar di dunia maya yang bisa di

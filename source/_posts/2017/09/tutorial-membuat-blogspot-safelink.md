@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
+cover: https://www.webmanajemen.com/2017/09/tutorial-membuat-blogspot-safelink/511f02a3898c2674c09edac9b043b52f.jpeg
 date: 2017-09-07T20:27:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 1f3c94a9-8c42-4888-8c6e-512a73cf0656
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
+thumbnail: https://www.webmanajemen.com/2017/09/tutorial-membuat-blogspot-safelink/511f02a3898c2674c09edac9b043b52f.jpeg
 photos:
   - https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
 description: Langkahlangkah Build Safelink Converter

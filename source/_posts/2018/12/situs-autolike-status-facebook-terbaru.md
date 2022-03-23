@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-UJPfz4U072o/XCAWBTOM8vI/AAAAAAAAAWw/YfXs94MzOUIE6jCNMZ4v43tR_A32WyWYACLcBGAs/s1600/Screenshot_2018-12-24-02-22-34-226_com.android.chrome.png
+cover: https://www.webmanajemen.com/2018/12/situs-autolike-status-facebook-terbaru/8b0db7668067ffdc346d2e9c9e825ae4.png
 date: 2018-12-24T06:11:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 5b2bbb5d-9562-4888-8e72-8c09de2397b6
 webtitle: WMI Gitlab
 updated: 2018-12-24T06:11:52+07:00
-thumbnail: https://1.bp.blogspot.com/-UJPfz4U072o/XCAWBTOM8vI/AAAAAAAAAWw/YfXs94MzOUIE6jCNMZ4v43tR_A32WyWYACLcBGAs/s1600/Screenshot_2018-12-24-02-22-34-226_com.android.chrome.png
+thumbnail: https://www.webmanajemen.com/2018/12/situs-autolike-status-facebook-terbaru/8b0db7668067ffdc346d2e9c9e825ae4.png
 photos:
   - https://1.bp.blogspot.com/-UJPfz4U072o/XCAWBTOM8vI/AAAAAAAAAWw/YfXs94MzOUIE6jCNMZ4v43tR_A32WyWYACLcBGAs/s1600/Screenshot_2018-12-24-02-22-34-226_com.android.chrome.png
 description: Akhir tahun ini saya akan membagikan situs autolike terbaru buatan

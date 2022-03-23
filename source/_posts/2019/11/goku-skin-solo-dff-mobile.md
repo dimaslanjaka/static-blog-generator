@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-1YG7YP8iC1E/WdB8e1DepUI/AAAAAAAAFhQ/f2Vi34mKX0gU54_vQT9GiCs3dn0YjfLTACLcBGAs/s640/1490480397_Screenshot_2017-03-17-13-56-29.jpg
+cover: https://www.webmanajemen.com/2019/11/goku-skin-solo-dff-mobile/64b87f3dffbce3eb651415302c1519b6.jpeg
 date: 2019-11-20T23:26:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 0a43fd49-ebac-4888-8e65-fb47849e53d4
 webtitle: WMI Gitlab
 updated: 2019-11-20T23:42:37+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-1YG7YP8iC1E/WdB8e1DepUI/AAAAAAAAFhQ/f2Vi34mKX0gU54_vQT9GiCs3dn0YjfLTACLcBGAs/s640/1490480397_Screenshot_2017-03-17-13-56-29.jpg
+thumbnail: https://www.webmanajemen.com/2019/11/goku-skin-solo-dff-mobile/64b87f3dffbce3eb651415302c1519b6.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-1YG7YP8iC1E/WdB8e1DepUI/AAAAAAAAFhQ/f2Vi34mKX0gU54_vQT9GiCs3dn0YjfLTACLcBGAs/s640/1490480397_Screenshot_2017-03-17-13-56-29.jpg
 description: Goku Skin Solo DFF Mobile Karakter manga terkenal Son Goku skin

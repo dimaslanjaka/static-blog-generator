@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png
+cover: https://www.webmanajemen.com/2019/09/remove-indexphproute-from-opencart/3c72a5640ee18ea91440d9abf193e58a.png
 date: 2019-09-27T13:13:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 963cc71f-b97e-4888-86b0-b798fb762de3
 webtitle: WMI Gitlab
 updated: 2019-09-27T13:13:59+07:00
-thumbnail: https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png
+thumbnail: https://www.webmanajemen.com/2019/09/remove-indexphproute-from-opencart/3c72a5640ee18ea91440d9abf193e58a.png
 photos:
   - https://i.pinimg.com/originals/6b/fd/9c/6bfd9ce3f5358772d835bc0f03fa26be.png
 description: I Also have the same problem and any that I found not solved my

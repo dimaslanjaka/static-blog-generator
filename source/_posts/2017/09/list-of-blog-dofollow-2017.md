@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-G5--Axpm8Ek/WbNXDBEH5FI/AAAAAAAAAFE/WrQTXkM9SkQ0c0DLjtXuDW3i3bYWCacAACLcBGAs/s400/images%2B%252811%2529.jpg
+cover: https://www.webmanajemen.com/2017/09/list-of-blog-dofollow-2017/4aaa6cade53e1af805dc3ca46219631c.jpeg
 date: 2017-09-22T09:47:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 2d09e269-4cd9-4888-871f-25d729effa17
 webtitle: WMI Gitlab
 updated: 2017-09-22T09:47:02+07:00
-thumbnail: https://1.bp.blogspot.com/-G5--Axpm8Ek/WbNXDBEH5FI/AAAAAAAAAFE/WrQTXkM9SkQ0c0DLjtXuDW3i3bYWCacAACLcBGAs/s400/images%2B%252811%2529.jpg
+thumbnail: https://www.webmanajemen.com/2017/09/list-of-blog-dofollow-2017/4aaa6cade53e1af805dc3ca46219631c.jpeg
 photos:
   - https://1.bp.blogspot.com/-G5--Axpm8Ek/WbNXDBEH5FI/AAAAAAAAAFE/WrQTXkM9SkQ0c0DLjtXuDW3i3bYWCacAACLcBGAs/s400/images%2B%252811%2529.jpg
 description: List of Blog Dofollow 017 - Hello blogger friend, in order to

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMomHV9R07ECo_Z7zC1dLgP2gPtxc0ACLcBGAs/s1600/blacklist-rubber-stamp-clip-art-vector_csp42894667.jpg
+cover: https://www.webmanajemen.com/2018/08/blacklist-player-durango/1a4183f6f6d1117086c646da8f3939ff.jpeg
 date: 2018-08-24T21:40:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 9f633a5e-a527-4888-8e41-d16445689bee
 webtitle: WMI Gitlab
 updated: 2018-09-21T11:14:47+07:00
-thumbnail: https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMomHV9R07ECo_Z7zC1dLgP2gPtxc0ACLcBGAs/s1600/blacklist-rubber-stamp-clip-art-vector_csp42894667.jpg
+thumbnail: https://www.webmanajemen.com/2018/08/blacklist-player-durango/1a4183f6f6d1117086c646da8f3939ff.jpeg
 photos:
   - https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMomHV9R07ECo_Z7zC1dLgP2gPtxc0ACLcBGAs/s1600/blacklist-rubber-stamp-clip-art-vector_csp42894667.jpg
 ---

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/hWP3X8WDIIc/hqdefault.jpg
+cover: https://www.webmanajemen.com/2019/12/download-lagu-armada-mabuk-cinta-lagi/14f85513cae6ffdb83e057a30ce6617d.jpeg
 date: 2019-12-02T17:08:00.001+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: ad6561c5-0a3b-4888-8028-bb45b1fe0525
 webtitle: WMI Gitlab
 updated: 2019-12-02T17:11:09+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/hWP3X8WDIIc/hqdefault.jpg
+thumbnail: https://www.webmanajemen.com/2019/12/download-lagu-armada-mabuk-cinta-lagi/14f85513cae6ffdb83e057a30ce6617d.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.youtube.com/vi/hWP3X8WDIIc/hqdefault.jpg
 description: "Download lagu Armada  Mabuk Cinta Lagi Mp3 Fleet - Drunk in Love

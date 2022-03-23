@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
+cover: https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root/01c8da4a30ed69d222575fda61b9c822.jpeg
 date: 2021-06-02T20:52:00.004+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: fe9bd82e-f555-4888-8952-a281475f8148
 webtitle: WMI Gitlab
 updated: 2021-06-02T21:48:37+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
+thumbnail: https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root/01c8da4a30ed69d222575fda61b9c822.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 description: php apache setup on android with Termux without

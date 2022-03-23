@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png
+cover: https://www.webmanajemen.com/2017/09/simple-recent-posts-blogger-plus/6771fd29a4b9150012c56e8afda38b87.png
 date: 2017-09-12T00:23:00.000+07:00
 lang: en
 location: ""
@@ -25,7 +25,7 @@ type: post
 uuid: 7c4871bb-f958-4888-8f73-1105aa764934
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png
+thumbnail: https://www.webmanajemen.com/2017/09/simple-recent-posts-blogger-plus/6771fd29a4b9150012c56e8afda38b87.png
 photos:
   - https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png
 ---

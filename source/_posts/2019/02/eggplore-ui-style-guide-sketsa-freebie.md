@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
+cover: https://www.webmanajemen.com/2019/02/eggplore-ui-style-guide-sketsa-freebie/33b3c75cb3c42d9d53c7d46425ba29b4.png
 date: 2019-02-20T00:38:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: c88b8b2e-cadf-4888-8176-a7a008410a28
 webtitle: WMI Gitlab
 updated: 2019-02-20T00:38:06+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
+thumbnail: https://www.webmanajemen.com/2019/02/eggplore-ui-style-guide-sketsa-freebie/33b3c75cb3c42d9d53c7d46425ba29b4.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
 description: Eggplore Ui Style Guide Sketsa Freebie Stephen dan Gahuy ingin

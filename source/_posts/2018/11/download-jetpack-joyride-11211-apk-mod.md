@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Jetpack-Joyride-1.jpg
+cover: https://www.webmanajemen.com/2018/11/download-jetpack-joyride-11211-apk-mod/048171396a29405d85a8e7c4c907f343.jpeg
 date: 2018-11-14T15:54:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 886e4e0f-1457-4888-8e04-4d2e4c649498
 webtitle: WMI Gitlab
 updated: 2018-11-14T15:54:49+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Jetpack-Joyride-1.jpg
+thumbnail: https://www.webmanajemen.com/2018/11/download-jetpack-joyride-11211-apk-mod/048171396a29405d85a8e7c4c907f343.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/Jetpack-Joyride-1.jpg
 description: Jetpack Joyride .12.11 Apk + Mod Unlimited Money android

@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://i.ibb.co/024Dzwh/Screenshot-1.png
+cover: https://www.webmanajemen.com/2021/05/compress-es6-on-intellij-idea/17eb6b971f0a5a783f49a5402fe08050.png
 date: 2021-05-30T16:43:00.003+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 0ac49882-5f5b-4888-84cf-0a0541116745
 webtitle: Intellij IDEA
 updated: 2022-03-23T09:07:35+07:00
-thumbnail: https://i.ibb.co/024Dzwh/Screenshot-1.png
+thumbnail: https://www.webmanajemen.com/2021/05/compress-es6-on-intellij-idea/17eb6b971f0a5a783f49a5402fe08050.png
 photos:
   - https://i.ibb.co/024Dzwh/Screenshot-1.png
 description: compress es6, minify es6 in intellij idea automatically

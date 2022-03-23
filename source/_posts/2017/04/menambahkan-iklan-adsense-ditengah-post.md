@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
+cover: https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post/033a73678421917dba236f12e6235369.png
 date: 2017-04-09T10:38:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 956ad53c-0b89-4888-838d-f03d54fce90f
 webtitle: WMI Gitlab
 updated: 2017-04-10T07:42:38+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
+thumbnail: https://www.webmanajemen.com/2017/04/menambahkan-iklan-adsense-ditengah-post/033a73678421917dba236f12e6235369.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
 description: Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan

@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D
+cover: https://www.webmanajemen.com/2018/07/cara-menginstal-fedora-di-android/e57616099c7edd05cd8888b6092c99c6.png
 date: 2018-07-27T11:57:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: a44a05d1-85d3-4888-89c4-f8e20104883a
 webtitle: WMI Gitlab
 updated: 2018-11-12T12:49:24+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D
+thumbnail: https://www.webmanajemen.com/2018/07/cara-menginstal-fedora-di-android/e57616099c7edd05cd8888b6092c99c6.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D
 description: Halo semuanya, hanya ingin memberi Anda pembaruan cepat di Fedora

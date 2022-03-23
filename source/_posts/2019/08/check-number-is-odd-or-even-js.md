@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/jFazrvLodrA/maxresdefault.jpg
+cover: https://www.webmanajemen.com/2019/08/check-number-is-odd-or-even-js/a1c62c4cdae3bc174687005d5e06e7fe.jpeg
 date: 2019-08-02T19:10:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: d2b9bcf1-4eb6-4888-8a40-1a164fb36b67
 webtitle: WMI Gitlab
 updated: 2019-08-02T19:10:04+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/jFazrvLodrA/maxresdefault.jpg
+thumbnail: https://www.webmanajemen.com/2019/08/check-number-is-odd-or-even-js/a1c62c4cdae3bc174687005d5e06e7fe.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/jFazrvLodrA/maxresdefault.jpg
 ---

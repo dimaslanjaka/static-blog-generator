@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.digitalponsel.com/wp-content/uploads/2018/11/xSamsung-Galaxy-A9.jpg.pagespeed.ic.BISLCcxlaz.jpg
+cover: https://www.webmanajemen.com/2018/12/samsung-galaxy-a9-2018-first-smartphone/c401d05a538d211e9ac10a04097d2786.jpeg
 date: 2018-12-01T21:31:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: b5e2b450-9b00-4888-8e3e-e436ab1d1963
 webtitle: WMI Gitlab
 updated: 2018-12-01T21:31:13+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.digitalponsel.com/wp-content/uploads/2018/11/xSamsung-Galaxy-A9.jpg.pagespeed.ic.BISLCcxlaz.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/samsung-galaxy-a9-2018-first-smartphone/c401d05a538d211e9ac10a04097d2786.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.digitalponsel.com/wp-content/uploads/2018/11/xSamsung-Galaxy-A9.jpg.pagespeed.ic.BISLCcxlaz.jpg
 description: Samsung Galaxy A (2018) First Smartphone with Four Cameras Digital

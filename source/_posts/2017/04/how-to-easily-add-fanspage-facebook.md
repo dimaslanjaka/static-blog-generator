@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://3.bp.blogspot.com/-1K6wl1YmvoY/VRpleEPVStI/AAAAAAAAAtE/ZiZBz937iIk/s1600/facebook-fan-page-fans.png
+cover: https://www.webmanajemen.com/2017/04/how-to-easily-add-fanspage-facebook/431f408dfe3738ff596b820ebb3b26ac.png
 date: 2017-04-11T06:44:00.001+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: d4da02f0-575f-4888-8d28-c2e5dee032cd
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://3.bp.blogspot.com/-1K6wl1YmvoY/VRpleEPVStI/AAAAAAAAAtE/ZiZBz937iIk/s1600/facebook-fan-page-fans.png
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-easily-add-fanspage-facebook/431f408dfe3738ff596b820ebb3b26ac.png
 photos:
   - https://3.bp.blogspot.com/-1K6wl1YmvoY/VRpleEPVStI/AAAAAAAAAtE/ZiZBz937iIk/s1600/facebook-fan-page-fans.png
 description: How To Easily Install FansPage Facebook Levitating On BlogsThis

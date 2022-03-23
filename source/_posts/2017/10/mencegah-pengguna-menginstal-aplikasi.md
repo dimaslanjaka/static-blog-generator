@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-X8tdy9N2l8w/UJT2gcqpvLI/AAAAAAAAWUk/VPPxUYEMDPs/s1600/Windows-Store-Disable.png
+cover: https://www.webmanajemen.com/2017/10/mencegah-pengguna-menginstal-aplikasi/950342d86ebf64f209fd7fc807861d57.png
 date: 2017-10-18T00:51:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 5fc580eb-27e8-4888-85f1-43738818e6e4
 webtitle: WMI Gitlab
 updated: 2017-10-18T00:51:17+07:00
-thumbnail: https://1.bp.blogspot.com/-X8tdy9N2l8w/UJT2gcqpvLI/AAAAAAAAWUk/VPPxUYEMDPs/s1600/Windows-Store-Disable.png
+thumbnail: https://www.webmanajemen.com/2017/10/mencegah-pengguna-menginstal-aplikasi/950342d86ebf64f209fd7fc807861d57.png
 photos:
   - https://1.bp.blogspot.com/-X8tdy9N2l8w/UJT2gcqpvLI/AAAAAAAAWUk/VPPxUYEMDPs/s1600/Windows-Store-Disable.png
 description: Windows Store adalah tempat yang tepat untuk menemukan dan

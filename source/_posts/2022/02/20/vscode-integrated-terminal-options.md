@@ -2,7 +2,7 @@
 Category:
   - Programming
   - IDE
-cover: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
+cover: https://www.webmanajemen.com/2022/02/20/vscode-integrated-terminal-options/44d04e1c89459529cb6f08a9b0044d0f.png
 date: 2022-02-20T07:00:00+07:00
 tags:
   - VSCode
@@ -13,7 +13,7 @@ webtitle: VSCode
 category:
   - Uncategorized
 lang: en
-thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
+thumbnail: https://www.webmanajemen.com/2022/02/20/vscode-integrated-terminal-options/44d04e1c89459529cb6f08a9b0044d0f.png
 photos:
   - https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 ---

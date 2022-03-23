@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg
+cover: https://www.webmanajemen.com/2018/10/pure-javascript-geolocation/d71572be500ef2f5ce730f0973160942.jpeg
 date: 2018-10-31T03:13:00.001+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: fe4e8922-3832-4888-850d-cddf9ac71fb1
 webtitle: WMI Gitlab
 updated: 2019-07-25T23:57:58+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg
+thumbnail: https://www.webmanajemen.com/2018/10/pure-javascript-geolocation/d71572be500ef2f5ce730f0973160942.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg
 description: img

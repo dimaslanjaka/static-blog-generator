@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://3.bp.blogspot.com/-bOCTNQhWzYA/WBmcYZFKW8I/AAAAAAAAAw0/V1juMdd-VWw8AUrPb8b7Wz8jDYdm1Vi0gCLcB/s400/HTTPS_for_custom_domains-min.png
+cover: https://www.webmanajemen.com/2017/05/activate-https-on-blogger-third-party/1bd53b7da899267ec5c9b7bc775e7b90.png
 date: 2017-05-25T12:41:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: b62242c0-bf81-4888-87f9-1ef479200a4a
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://3.bp.blogspot.com/-bOCTNQhWzYA/WBmcYZFKW8I/AAAAAAAAAw0/V1juMdd-VWw8AUrPb8b7Wz8jDYdm1Vi0gCLcB/s400/HTTPS_for_custom_domains-min.png
+thumbnail: https://www.webmanajemen.com/2017/05/activate-https-on-blogger-third-party/1bd53b7da899267ec5c9b7bc775e7b90.png
 photos:
   - https://3.bp.blogspot.com/-bOCTNQhWzYA/WBmcYZFKW8I/AAAAAAAAAw0/V1juMdd-VWw8AUrPb8b7Wz8jDYdm1Vi0gCLcB/s400/HTTPS_for_custom_domains-min.png
 ---

@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://2.bp.blogspot.com/-vz_NgjmMup4/VR6qQOfliiI/AAAAAAAAA0g/ps8xLzLvGwM/s1600/advertise-here.jpg
+cover: https://www.webmanajemen.com/2017/04/how-to-add-ads-on-blogger-with-double-click-close/4911b34c59f5e4e18ea8af4a2ad4ee78.jpeg
 date: 2017-04-11T06:14:00.002+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 87e5ba7e-dab9-4888-84e8-3d0244d1cfbe
 webtitle: WMI Gitlab
 updated: 2017-04-11T06:14:45+07:00
-thumbnail: https://2.bp.blogspot.com/-vz_NgjmMup4/VR6qQOfliiI/AAAAAAAAA0g/ps8xLzLvGwM/s1600/advertise-here.jpg
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-add-ads-on-blogger-with-double-click-close/4911b34c59f5e4e18ea8af4a2ad4ee78.jpeg
 photos:
   - https://2.bp.blogspot.com/-vz_NgjmMup4/VR6qQOfliiI/AAAAAAAAA0g/ps8xLzLvGwM/s1600/advertise-here.jpg
 description: On this occasion i will be able to share a way to a way to

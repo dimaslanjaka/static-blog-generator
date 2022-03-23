@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3RPXenY/s320/quick+edit+and+wrench+icon.jpg
+cover: https://www.webmanajemen.com/2017/10/how-to-get-rid-of-icon-screwdriver-and/f50d3aaf211a35672d4a9cb605c5728a.jpeg
 date: 2017-10-24T18:29:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 2390455b-6075-4888-8d19-59e6c8548b19
 webtitle: WMI Gitlab
 updated: 2017-10-24T18:29:03+07:00
-thumbnail: https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3RPXenY/s320/quick+edit+and+wrench+icon.jpg
+thumbnail: https://www.webmanajemen.com/2017/10/how-to-get-rid-of-icon-screwdriver-and/f50d3aaf211a35672d4a9cb605c5728a.jpeg
 photos:
   - https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3RPXenY/s320/quick+edit+and+wrench+icon.jpg
 ---

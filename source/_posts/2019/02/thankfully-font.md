@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
+cover: https://www.webmanajemen.com/2019/02/thankfully-font/5eac02c0b2d6080258f88507a01ad32e.jpeg
 date: 2019-02-05T01:51:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: a74c3b01-a0a1-4888-8bc5-9c171dcff6b3
 webtitle: WMI Gitlab
 updated: 2019-02-05T01:51:25+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
+thumbnail: https://www.webmanajemen.com/2019/02/thankfully-font/5eac02c0b2d6080258f88507a01ad32e.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
 description: Untungnya Font CATATAN Font ini GRATIS 100% UNTUK PENGGUNAAN

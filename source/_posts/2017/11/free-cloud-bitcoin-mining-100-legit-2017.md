@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bitkonga.com/wp-content/uploads/2016/12/Bitcoin-cloud-mining.jpg
+cover: https://www.webmanajemen.com/2017/11/free-cloud-bitcoin-mining-100-legit-2017/7f5578db5722472502ca651a8a2f9dc9.jpeg
 date: 2017-11-12T06:48:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 39e13ce3-6b75-4888-8688-297c1dcbd63a
 webtitle: WMI Gitlab
 updated: 2017-11-12T06:48:52+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bitkonga.com/wp-content/uploads/2016/12/Bitcoin-cloud-mining.jpg
+thumbnail: https://www.webmanajemen.com/2017/11/free-cloud-bitcoin-mining-100-legit-2017/7f5578db5722472502ca651a8a2f9dc9.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bitkonga.com/wp-content/uploads/2016/12/Bitcoin-cloud-mining.jpg
 description: Free Cloud Bitcoin Mining.Free Cloud Bitcoin Mining.

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-vaafAtA7fJ0/XegbZIw3CYI/AAAAAAAAAgg/0S7WeEzqKLg1nPSyrd1zJ-ZaVjXVORKZgCLcBGAsYHQ/s640/Screenshot_1.png
+cover: https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare/b273e586cd6e286a5268e5e3689bba15.png
 date: 2019-12-05T04:03:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: be685d41-99b2-4888-8c9f-fa12844b8741
 webtitle: WMI Gitlab
 updated: 2019-12-05T04:04:00+07:00
-thumbnail: https://1.bp.blogspot.com/-vaafAtA7fJ0/XegbZIw3CYI/AAAAAAAAAgg/0S7WeEzqKLg1nPSyrd1zJ-ZaVjXVORKZgCLcBGAsYHQ/s640/Screenshot_1.png
+thumbnail: https://www.webmanajemen.com/2019/12/redirect-domain-via-cloudflare/b273e586cd6e286a5268e5e3689bba15.png
 photos:
   - https://1.bp.blogspot.com/-vaafAtA7fJ0/XegbZIw3CYI/AAAAAAAAAgg/0S7WeEzqKLg1nPSyrd1zJ-ZaVjXVORKZgCLcBGAsYHQ/s640/Screenshot_1.png
 description: Step .Migrasi domain (host) ke cloudflare dengan mengubah

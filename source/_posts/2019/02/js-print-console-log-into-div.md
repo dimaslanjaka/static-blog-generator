@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png
+cover: https://www.webmanajemen.com/2019/02/js-print-console-log-into-div/f6b95a4c675d2b11501b5481f37343fd.png
 date: 2019-02-06T22:55:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: e680a9ca-1abf-4888-8602-dea9131a390b
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png
+thumbnail: https://www.webmanajemen.com/2019/02/js-print-console-log-into-div/f6b95a4c675d2b11501b5481f37343fd.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png
 ---

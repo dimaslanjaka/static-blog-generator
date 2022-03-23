@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/burly-men-at-sea-1.png
+cover: https://www.webmanajemen.com/2018/11/download-burly-men-at-sea-136-apk/0bd35eceb9ffa6b9bd425664792e2cf8.jpeg
 date: 2018-11-16T12:51:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: e7efb33e-64a0-4888-8ea3-4aba44601232
 webtitle: WMI Gitlab
 updated: 2018-11-16T23:38:12+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/burly-men-at-sea-1.png
+thumbnail: https://www.webmanajemen.com/2018/11/download-burly-men-at-sea-136-apk/0bd35eceb9ffa6b9bd425664792e2cf8.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/burly-men-at-sea-1.png
 description: Kekar Men at Sea adalah Game Petualangan untuk android Download

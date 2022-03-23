@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-522nPhSnyvQ/WgODKCDGFjI/AAAAAAAAt2M/quoqrtMi1jcuXJOFDeBDUoaASkA_tD0jgCLcBGAs/w1100/Screenshot_87.jpg
+cover: https://www.webmanajemen.com/2017/11/css-only-responsive-social-share/314248046433f1cbb974caa446a051e1.jpeg
 date: 2017-11-11T04:51:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: ac0254d5-f896-4888-8776-87dd70140911
 webtitle: WMI Gitlab
 updated: 2017-11-11T04:51:03+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-522nPhSnyvQ/WgODKCDGFjI/AAAAAAAAt2M/quoqrtMi1jcuXJOFDeBDUoaASkA_tD0jgCLcBGAs/w1100/Screenshot_87.jpg
+thumbnail: https://www.webmanajemen.com/2017/11/css-only-responsive-social-share/314248046433f1cbb974caa446a051e1.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-522nPhSnyvQ/WgODKCDGFjI/AAAAAAAAt2M/quoqrtMi1jcuXJOFDeBDUoaASkA_tD0jgCLcBGAs/w1100/Screenshot_87.jpg
 ---

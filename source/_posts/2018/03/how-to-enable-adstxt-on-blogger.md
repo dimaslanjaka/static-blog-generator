@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-dGUliWFLKSY/WnGd3G8SgyI/AAAAAAAAF90/QMALZVj1V_YrcGf6dhEoCPsfB0DR4DYsACLcBGAs/s1600/Cara%252BMengaktifkan%252BAds%252Btxt%252Bdi%252BBlogger.png
+cover: https://www.webmanajemen.com/2018/03/how-to-enable-adstxt-on-blogger/3c5f4669289a1c1620f339e6652217b1.png
 date: 2018-03-01T18:32:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 6108a20c-0bdd-4888-84a2-d70c8eb4bdad
 webtitle: WMI Gitlab
 updated: 2018-03-01T18:36:25+07:00
-thumbnail: https://4.bp.blogspot.com/-dGUliWFLKSY/WnGd3G8SgyI/AAAAAAAAF90/QMALZVj1V_YrcGf6dhEoCPsfB0DR4DYsACLcBGAs/s1600/Cara%252BMengaktifkan%252BAds%252Btxt%252Bdi%252BBlogger.png
+thumbnail: https://www.webmanajemen.com/2018/03/how-to-enable-adstxt-on-blogger/3c5f4669289a1c1620f339e6652217b1.png
 photos:
   - https://4.bp.blogspot.com/-dGUliWFLKSY/WnGd3G8SgyI/AAAAAAAAF90/QMALZVj1V_YrcGf6dhEoCPsfB0DR4DYsACLcBGAs/s1600/Cara%252BMengaktifkan%252BAds%252Btxt%252Bdi%252BBlogger.png
 description: After yesterday Google introduced theSearch Console Beta version ,

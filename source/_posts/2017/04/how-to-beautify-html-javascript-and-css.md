@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
+cover: https://www.webmanajemen.com/2017/04/how-to-beautify-html-javascript-and-css/71ae131d7019a31ef10a0015b1606754.jpeg
 date: 2017-04-17T04:31:00.001+07:00
 lang: en
 location: ""
@@ -25,7 +25,7 @@ type: post
 uuid: e93db569-abba-4888-8153-92f5f4ba91c8
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-beautify-html-javascript-and-css/71ae131d7019a31ef10a0015b1606754.jpeg
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
 ---

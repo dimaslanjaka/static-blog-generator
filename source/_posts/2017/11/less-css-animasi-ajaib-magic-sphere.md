@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://2.bp.blogspot.com/-5d_OvW33fDo/WhBervqePKI/AAAAAAAAAJQ/R6hFARO2rXspRWC5wdtu-_XHj1j-miz9ACLcBGAs/s400/Screenshot_2017-11-18-23-18-35-554_com.android.chrome.png
+cover: https://www.webmanajemen.com/2017/11/less-css-animasi-ajaib-magic-sphere/246d7c6c488d2438de9a008591f2c367.png
 date: 2017-11-20T23:35:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: e1a80170-a27b-4888-82e7-92db9b98fc84
 webtitle: WMI Gitlab
 updated: 2017-11-20T23:35:07+07:00
-thumbnail: https://2.bp.blogspot.com/-5d_OvW33fDo/WhBervqePKI/AAAAAAAAAJQ/R6hFARO2rXspRWC5wdtu-_XHj1j-miz9ACLcBGAs/s400/Screenshot_2017-11-18-23-18-35-554_com.android.chrome.png
+thumbnail: https://www.webmanajemen.com/2017/11/less-css-animasi-ajaib-magic-sphere/246d7c6c488d2438de9a008591f2c367.png
 photos:
   - https://2.bp.blogspot.com/-5d_OvW33fDo/WhBervqePKI/AAAAAAAAAJQ/R6hFARO2rXspRWC5wdtu-_XHj1j-miz9ACLcBGAs/s400/Screenshot_2017-11-18-23-18-35-554_com.android.chrome.png
 ---

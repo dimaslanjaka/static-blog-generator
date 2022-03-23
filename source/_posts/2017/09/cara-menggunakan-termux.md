@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
+cover: https://www.webmanajemen.com/2017/09/cara-menggunakan-termux/11e95935b2a309e6f7df1828d280ffea.png
 date: 2017-09-03T13:33:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 0ff7f115-cacc-4888-8bc8-627dde7896a6
 webtitle: WMI Gitlab
 updated: 2017-09-03T13:33:02+07:00
-thumbnail: https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
+thumbnail: https://www.webmanajemen.com/2017/09/cara-menggunakan-termux/11e95935b2a309e6f7df1828d280ffea.png
 photos:
   - https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
 description: Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server

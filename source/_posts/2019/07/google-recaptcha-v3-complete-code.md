@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
+cover: https://www.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code/c9649c33c11b57107ca8b825cb35527a.jpeg
 date: 2019-07-12T19:36:00.001+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: 06adc5bf-4bae-4888-8554-fdbaf2058bd8
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:25:13+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
+thumbnail: https://www.webmanajemen.com/2019/07/google-recaptcha-v3-complete-code/c9649c33c11b57107ca8b825cb35527a.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/tbvxFW4UJdU/maxresdefault.jpg
 description: Requirements jQuery (if not it will automated added into pages)  if

@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
+cover: https://www.webmanajemen.com/2017/04/html5-boostrap-for-amp/d4c9ebf8a447bbf6a77e9131fb6b6f95.png
 date: 2017-04-16T21:38:00.001+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 50dc711f-b623-4888-8098-114c050515b9
 webtitle: WMI Gitlab
 updated: 2017-04-21T00:48:32+07:00
-thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
+thumbnail: https://www.webmanajemen.com/2017/04/html5-boostrap-for-amp/d4c9ebf8a447bbf6a77e9131fb6b6f95.png
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
 ---

@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
+cover: https://www.webmanajemen.com/2017/04/responsive-square-container-dengan/03d01369dc7e8e0fcd27f439cece26bd.jpeg
 date: 2017-04-13T16:29:00.000+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 6198d61d-06c5-4888-874d-5827b493a2f1
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
+thumbnail: https://www.webmanajemen.com/2017/04/responsive-square-container-dengan/03d01369dc7e8e0fcd27f439cece26bd.jpeg
 photos:
   - https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
 description: Menggunakan vanili JavaScript dan CSS, saya akan menunjukkan cara

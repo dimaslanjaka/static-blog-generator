@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://2.bp.blogspot.com/-nWTezguuZbI/WMNWsyTxqyI/AAAAAAAAGDY/Vhl11bnyteQw4xPJR7atzUHixsNqixmBQCLcB/s280/optimasi-seo-onpage-dan-seo-offpage.png
+cover: https://www.webmanajemen.com/2017/04/differences-onpage-seo-optimization-and/f3d721a686fee43b88846de0927c8e73.png
 date: 2017-04-28T17:59:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 864023ee-c49e-4888-8463-1cd720778f0c
 webtitle: WMI Gitlab
 updated: 2017-04-28T17:59:00+07:00
-thumbnail: https://2.bp.blogspot.com/-nWTezguuZbI/WMNWsyTxqyI/AAAAAAAAGDY/Vhl11bnyteQw4xPJR7atzUHixsNqixmBQCLcB/s280/optimasi-seo-onpage-dan-seo-offpage.png
+thumbnail: https://www.webmanajemen.com/2017/04/differences-onpage-seo-optimization-and/f3d721a686fee43b88846de0927c8e73.png
 photos:
   - https://2.bp.blogspot.com/-nWTezguuZbI/WMNWsyTxqyI/AAAAAAAAGDY/Vhl11bnyteQw4xPJR7atzUHixsNqixmBQCLcB/s280/optimasi-seo-onpage-dan-seo-offpage.png
 description: Differences Onpage SEO Optimization and SEO Offpage   Before I

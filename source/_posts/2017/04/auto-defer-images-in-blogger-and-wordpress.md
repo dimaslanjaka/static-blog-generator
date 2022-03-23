@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQCQZ1lrGJs-Gmk6cKtdBHXyfgzRIAQYqScDZlU2o_MkjX0SylMtA
+cover: https://www.webmanajemen.com/2017/04/auto-defer-images-in-blogger-and-wordpress/55f4c6afbdc80dc03cf76d7f0bb1677e.jpeg
 date: 2017-04-10T21:55:00.000+07:00
 lang: en
 location: ""
@@ -24,7 +24,7 @@ type: post
 uuid: c39ef55c-ef82-4888-8d60-d7ea81d98dd4
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQCQZ1lrGJs-Gmk6cKtdBHXyfgzRIAQYqScDZlU2o_MkjX0SylMtA
+thumbnail: https://www.webmanajemen.com/2017/04/auto-defer-images-in-blogger-and-wordpress/55f4c6afbdc80dc03cf76d7f0bb1677e.jpeg
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQCQZ1lrGJs-Gmk6cKtdBHXyfgzRIAQYqScDZlU2o_MkjX0SylMtA
 description: jQuery Functions To Async Or Defer Images On Wordpress CMS And

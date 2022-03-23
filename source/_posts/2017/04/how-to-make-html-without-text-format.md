@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://lh3.googleusercontent.com/proxy/OJWB1B8t8vRrLSxK6kaSpqIC5_Qs2dO1XoRwPDzu3_Bd221wjlh0rpTomRwyZlUtrmkMw2DLJ-KKN78v5L4XQLFbshEZtu5ZqlrbHwJReRgklNkx4swVr0ffz200BtqCdIMeW9PIrLoU_PNgyISDAcz45W-Fv0rtpgL6K4AjP_Pqx4MKDg
+cover: https://www.webmanajemen.com/2017/04/how-to-make-html-without-text-format/bf59c8332c2b44f6a8f0b2de72bacec2.png
 date: 2017-04-30T10:24:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 0c88eaf9-ab13-4888-86b9-f4e3cf061c18
 webtitle: WMI Gitlab
 updated: 2017-05-01T09:51:08+07:00
-thumbnail: https://lh3.googleusercontent.com/proxy/OJWB1B8t8vRrLSxK6kaSpqIC5_Qs2dO1XoRwPDzu3_Bd221wjlh0rpTomRwyZlUtrmkMw2DLJ-KKN78v5L4XQLFbshEZtu5ZqlrbHwJReRgklNkx4swVr0ffz200BtqCdIMeW9PIrLoU_PNgyISDAcz45W-Fv0rtpgL6K4AjP_Pqx4MKDg
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-make-html-without-text-format/bf59c8332c2b44f6a8f0b2de72bacec2.png
 photos:
   - https://lh3.googleusercontent.com/proxy/OJWB1B8t8vRrLSxK6kaSpqIC5_Qs2dO1XoRwPDzu3_Bd221wjlh0rpTomRwyZlUtrmkMw2DLJ-KKN78v5L4XQLFbshEZtu5ZqlrbHwJReRgklNkx4swVr0ffz200BtqCdIMeW9PIrLoU_PNgyISDAcz45W-Fv0rtpgL6K4AjP_Pqx4MKDg
 description: "Text HTML Tutorial Part : How to Make HTML Without Text Format

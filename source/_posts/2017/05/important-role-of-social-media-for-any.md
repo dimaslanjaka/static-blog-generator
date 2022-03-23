@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
+cover: https://www.webmanajemen.com/2017/05/important-role-of-social-media-for-any/73d8b0fcff97712b57ccd859f532bccc.png
 date: 2017-05-10T06:31:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 94d23a37-39c1-4888-8c63-667f2dee91be
 webtitle: WMI Gitlab
 updated: 2017-05-10T06:31:04+07:00
-thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
+thumbnail: https://www.webmanajemen.com/2017/05/important-role-of-social-media-for-any/73d8b0fcff97712b57ccd859f532bccc.png
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
 description: Important Role Of Social Media For Any Blogs Pal knows what it is

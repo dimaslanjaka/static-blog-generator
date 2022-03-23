@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+cover: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php/e29536b0ccfbd18aaabd02e988c66543.svg
 date: 2019-07-31T16:03:00.001+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 9251b369-4ea6-4888-8b29-44aa20aa58aa
 webtitle: WMI Gitlab
 updated: 2019-07-31T16:03:49+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+thumbnail: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php/e29536b0ccfbd18aaabd02e988c66543.svg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 description: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher

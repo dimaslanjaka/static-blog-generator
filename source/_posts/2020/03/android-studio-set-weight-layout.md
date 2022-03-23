@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
+cover: https://www.webmanajemen.com/2020/02/increase-performance-android-studio/155a968093231f35da84f45ff6f96c13.png
 date: 2020-03-08T16:44:00.001+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 377f0593-3583-4888-8eac-4270cb7d5d5f
 webtitle: WMI Gitlab
 updated: 2020-03-29T20:45:55+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
+thumbnail: https://www.webmanajemen.com/2020/02/increase-performance-android-studio/155a968093231f35da84f45ff6f96c13.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 description: pre><br />LinearLayout.LayoutParams param = new

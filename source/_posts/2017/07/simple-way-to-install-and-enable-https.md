@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
+cover: https://www.webmanajemen.com/2017/07/simple-way-to-install-and-enable-https/bbc1dbd777315959d3d68a92d69cf32f.jpeg
 date: 2017-07-21T02:32:00.001+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 74146192-d760-4888-80a2-0d8207ba8df9
 webtitle: WMI Gitlab
 updated: 2017-07-21T02:32:38+07:00
-thumbnail: https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
+thumbnail: https://www.webmanajemen.com/2017/07/simple-way-to-install-and-enable-https/bbc1dbd777315959d3d68a92d69cf32f.jpeg
 photos:
   - https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
 ---

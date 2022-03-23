@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
+cover: https://www.webmanajemen.com/2017/11/top-pr7-blog-ping-submissions-service/05872b889ddeddbbac864d866015ca43.jpeg
 date: 2017-11-11T00:00:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: a5880c4d-ec29-4888-838e-328f34d57118
 webtitle: WMI Gitlab
 updated: 2017-11-11T00:00:13+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
+thumbnail: https://www.webmanajemen.com/2017/11/top-pr7-blog-ping-submissions-service/05872b889ddeddbbac864d866015ca43.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
 description: Ping Service Advise Web crawlers, Blog and RSS Registries that your

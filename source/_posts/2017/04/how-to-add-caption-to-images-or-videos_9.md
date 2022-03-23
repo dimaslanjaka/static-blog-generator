@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
+cover: https://www.webmanajemen.com/2017/04/how-to-add-caption-to-images-or-videos_9/a62f158066a41deedd7e7d71ff86c884.jpeg
 date: 2017-04-09T23:48:00.003+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: 97da7e60-01ff-4888-86bb-456242b296c5
 webtitle: WMI Gitlab
 updated: 2017-04-09T23:48:53+07:00
-thumbnail: https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
+thumbnail: https://www.webmanajemen.com/2017/04/how-to-add-caption-to-images-or-videos_9/a62f158066a41deedd7e7d71ff86c884.jpeg
 photos:
   - https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
 description: How to add caption to images or videos in wordpress and Blogger

@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png
+cover: https://www.webmanajemen.com/2019/07/phpjs-cryptojs-encrypt-decrypt/a73d46b83f99a30bfe71fa01965b2a8a.png
 date: 2019-07-22T00:16:00.001+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 83ca465d-648e-4888-875f-4bb6f2810c96
 webtitle: WMI Gitlab
 updated: 2020-01-22T19:08:55+07:00
-thumbnail: https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png
+thumbnail: https://www.webmanajemen.com/2019/07/phpjs-cryptojs-encrypt-decrypt/a73d46b83f99a30bfe71fa01965b2a8a.png
 photos:
   - https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/master/assets/img/phpjs.png
 description: CryptoJS encrypt decrypt support PHP , PHP 7.x. See the Pen PHP

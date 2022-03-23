@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://image.revdl.com/2017/the-escapists-1.jpg
+cover: https://www.webmanajemen.com/2019/02/download-escapists-115556924-apk/18478165ddd293519971b49f6b103409.jpeg
 date: 2019-02-14T04:54:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 5a74f7dc-4b0e-4888-858c-580ea12a8fdf
 webtitle: WMI Gitlab
 updated: 2019-02-14T04:54:03+07:00
-thumbnail: https://image.revdl.com/2017/the-escapists-1.jpg
+thumbnail: https://www.webmanajemen.com/2019/02/download-escapists-115556924-apk/18478165ddd293519971b49f6b103409.jpeg
 photos:
   - https://image.revdl.com/2017/the-escapists-1.jpg
 description: The Escapists .1.5.556924 Apk Patched + Mod money untuk android

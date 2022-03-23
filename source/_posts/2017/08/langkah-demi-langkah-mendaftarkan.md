@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
+cover: https://www.webmanajemen.com/2017/08/langkah-demi-langkah-mendaftarkan/8ab40c9dbaad2c10a1b25809f582b781.jpeg
 date: 2017-08-26T21:53:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 92cf0e8c-c1cb-4888-8163-5d0a3e54280c
 webtitle: WMI Gitlab
 updated: 2017-08-26T21:53:05+07:00
-thumbnail: https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
+thumbnail: https://www.webmanajemen.com/2017/08/langkah-demi-langkah-mendaftarkan/8ab40c9dbaad2c10a1b25809f582b781.jpeg
 photos:
   - https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
 description: Senang dengan artikel ini  Tolong bagikan ya

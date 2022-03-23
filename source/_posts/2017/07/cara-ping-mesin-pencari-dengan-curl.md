@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/proxy/tYpoSEj-W-8XcUJyBsi4Tq7Q8AaMtVNwK9CTgxcg1ZbZ0u5lHPzUcRDhOo6VJKysWUEe768ddx0ckD0uobENOvlY1GdhblF6n_NvZDSk3EaJecDY6XiWVSiz65Pe2tKGr0oo9Wgf12ea98aNcA55vNFXbYQKLLcdvyQ8YOEZotzbww=w350-h200-nc
+cover: https://www.webmanajemen.com/2017/07/cara-ping-mesin-pencari-dengan-curl/56011f62fd6243d103692c7c3fe3925e.png
 date: 2017-07-24T12:54:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: 374cffaa-be70-4888-853e-3bed70eae9b0
 webtitle: WMI Gitlab
 updated: 2017-07-24T12:54:00+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/proxy/tYpoSEj-W-8XcUJyBsi4Tq7Q8AaMtVNwK9CTgxcg1ZbZ0u5lHPzUcRDhOo6VJKysWUEe768ddx0ckD0uobENOvlY1GdhblF6n_NvZDSk3EaJecDY6XiWVSiz65Pe2tKGr0oo9Wgf12ea98aNcA55vNFXbYQKLLcdvyQ8YOEZotzbww=w350-h200-nc
+thumbnail: https://www.webmanajemen.com/2017/07/cara-ping-mesin-pencari-dengan-curl/56011f62fd6243d103692c7c3fe3925e.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/proxy/tYpoSEj-W-8XcUJyBsi4Tq7Q8AaMtVNwK9CTgxcg1ZbZ0u5lHPzUcRDhOo6VJKysWUEe768ddx0ckD0uobENOvlY1GdhblF6n_NvZDSk3EaJecDY6XiWVSiz65Pe2tKGr0oo9Wgf12ea98aNcA55vNFXbYQKLLcdvyQ8YOEZotzbww=w350-h200-nc
 ---

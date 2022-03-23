@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
+cover: https://www.webmanajemen.com/2020/10/perbedaan-typescript-dan-javascript/c7e1c2c64eb047947cbb8a9c2c18abf6.png
 date: 2020-10-28T14:00:00.004+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 357dabaa-3b5a-4888-8631-67cb73c97af5
 webtitle: WMI Gitlab
 updated: 2021-05-14T04:54:22+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
+thumbnail: https://www.webmanajemen.com/2020/10/perbedaan-typescript-dan-javascript/c7e1c2c64eb047947cbb8a9c2c18abf6.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
 description: Typescript lebih strict  lebih detail dan harus mematuhi peraturan

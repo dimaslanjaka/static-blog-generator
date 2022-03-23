@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://1.bp.blogspot.com/-bZrtgAkZh-4/UP0uT3DtuhI/AAAAAAAABpQ/IIk5CHpCW8U/s1600/do-follow-blog.gif
+cover: https://www.webmanajemen.com/2017/09/how-to-create-and-know-blog-dofollow/5c5457ba49a0132e23dbca6281c8fffa.gif
 date: 2017-09-09T17:00:00.000+07:00
 lang: en
 location: ""
@@ -18,7 +18,7 @@ type: post
 uuid: 4d88293c-a9d0-4888-89c5-5dc055114b5f
 webtitle: WMI Gitlab
 updated: 2017-09-09T17:00:13+07:00
-thumbnail: https://1.bp.blogspot.com/-bZrtgAkZh-4/UP0uT3DtuhI/AAAAAAAABpQ/IIk5CHpCW8U/s1600/do-follow-blog.gif
+thumbnail: https://www.webmanajemen.com/2017/09/how-to-create-and-know-blog-dofollow/5c5457ba49a0132e23dbca6281c8fffa.gif
 photos:
   - https://1.bp.blogspot.com/-bZrtgAkZh-4/UP0uT3DtuhI/AAAAAAAABpQ/IIk5CHpCW8U/s1600/do-follow-blog.gif
 ---

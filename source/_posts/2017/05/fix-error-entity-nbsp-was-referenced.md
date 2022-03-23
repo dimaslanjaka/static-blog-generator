@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1oyNv0g8JghoA700vJYvtBk-2E4NgQss7ztfOGGt37brH
+cover: https://www.webmanajemen.com/2017/05/fix-error-entity-nbsp-was-referenced/1d1786d5cb83c6d4b584a4247c100596.png
 date: 2017-05-26T03:53:00.000+07:00
 lang: en
 location: ""
@@ -20,7 +20,7 @@ type: post
 uuid: e4be987c-4501-4888-81fb-996ac9addddb
 webtitle: WMI Gitlab
 updated: 2017-05-26T03:53:02+07:00
-thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1oyNv0g8JghoA700vJYvtBk-2E4NgQss7ztfOGGt37brH
+thumbnail: https://www.webmanajemen.com/2017/05/fix-error-entity-nbsp-was-referenced/1d1786d5cb83c6d4b584a4247c100596.png
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1oyNv0g8JghoA700vJYvtBk-2E4NgQss7ztfOGGt37brH
 ---

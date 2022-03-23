@@ -7,7 +7,7 @@ category:
   - Programming
   - HTML
 comments: true
-cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ
+cover: https://www.webmanajemen.com/2017/04/cara-menambah-google-translate-ke-halaman-amp/eda60831f7d4a1669bdc056e41527302.jpeg
 date: 2017-04-14T13:22:00.000+07:00
 lang: en
 location: ""
@@ -22,7 +22,7 @@ type: post
 uuid: 140ba271-70c9-4888-8323-7992dcca3775
 webtitle: WMI Gitlab
 updated: 2020-01-09T03:13:31+07:00
-thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ
+thumbnail: https://www.webmanajemen.com/2017/04/cara-menambah-google-translate-ke-halaman-amp/eda60831f7d4a1669bdc056e41527302.jpeg
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8zV44YvCSI-H-ZORzXuVh4MXW0hDc7tECPrChm8Mtz_TyFDMofUn7uLIBQ
 description: Google translate service has shutdown, this plugin was removed

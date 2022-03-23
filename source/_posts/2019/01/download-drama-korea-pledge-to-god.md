@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-A-Pledge-to-God-Subtitle-Indonesia.jpg
+cover: https://www.webmanajemen.com/2019/01/download-drama-korea-pledge-to-god/a5a58fc0e72f0a95fa206c613f9189c9.jpeg
 date: 2019-01-06T18:38:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 6ca77bac-4cc2-4888-8918-d5853ed02c09
 webtitle: WMI Gitlab
 updated: 2019-01-07T01:43:05+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-A-Pledge-to-God-Subtitle-Indonesia.jpg
+thumbnail: https://www.webmanajemen.com/2019/01/download-drama-korea-pledge-to-god/a5a58fc0e72f0a95fa206c613f9189c9.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-A-Pledge-to-God-Subtitle-Indonesia.jpg
 description: Download Korean Drama A Pledge To God Indonesian Subtitles JiYoung

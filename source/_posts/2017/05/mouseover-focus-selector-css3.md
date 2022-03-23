@@ -7,7 +7,7 @@ category:
   - Programming
   - CSS
 comments: true
-cover: https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9KOA4gg9ERDx3YEY_tg9r4KTY8LQCLcB/s320/Screenshot_2017-04-20-08-38-25.jpg
+cover: https://www.webmanajemen.com/2017/05/mouseover-focus-selector-css3/8467e718362c13b35040c6cf316d368f.jpeg
 date: 2017-05-03T08:40:00.000+07:00
 lang: en
 location: ""
@@ -21,7 +21,7 @@ type: post
 uuid: c719eb89-a6ba-4888-838a-c8a3410fcaf0
 webtitle: WMI Gitlab
 updated: 2017-05-03T08:40:07+07:00
-thumbnail: https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9KOA4gg9ERDx3YEY_tg9r4KTY8LQCLcB/s320/Screenshot_2017-04-20-08-38-25.jpg
+thumbnail: https://www.webmanajemen.com/2017/05/mouseover-focus-selector-css3/8467e718362c13b35040c6cf316d368f.jpeg
 photos:
   - https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9KOA4gg9ERDx3YEY_tg9r4KTY8LQCLcB/s320/Screenshot_2017-04-20-08-38-25.jpg
 ---

@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-The-Last-Empress-Subtitle-Indonesia-678x381.jpg
+cover: https://www.webmanajemen.com/2018/12/download-drama-korea-last-empress/7d2eb8ecf26fb8d0b2764aee0a74f401.jpeg
 date: 2018-12-29T01:53:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 055ba019-8c6e-4888-85e9-88619fa02051
 webtitle: WMI Gitlab
 updated: 2018-12-29T01:53:10+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-The-Last-Empress-Subtitle-Indonesia-678x381.jpg
+thumbnail: https://www.webmanajemen.com/2018/12/download-drama-korea-last-empress/7d2eb8ecf26fb8d0b2764aee0a74f401.jpeg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/11/Download-Drama-Korea-The-Last-Empress-Subtitle-Indonesia-678x381.jpg
 description: Download Korean Drama The Last Empress Indonesian Subtitles Oh

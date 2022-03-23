@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
+cover: https://www.webmanajemen.com/2019/09/tips-agar-file-hasil-download-kamu/a3422ed31d79731579a8c390ef97d6bf.png
 date: 2019-09-29T17:56:00.000+07:00
 lang: en
 location: ""
@@ -19,7 +19,7 @@ type: post
 uuid: 68c72bf6-8dcf-4888-81bf-e028dc991e95
 webtitle: WMI Gitlab
 updated: 2019-09-29T17:56:03+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
+thumbnail: https://www.webmanajemen.com/2019/09/tips-agar-file-hasil-download-kamu/a3422ed31d79731579a8c390ef97d6bf.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
 description: Web Development Indonesia  Everyone certainly does not expect the
