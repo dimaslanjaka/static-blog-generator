@@ -33,7 +33,7 @@ widgets:
     - tag
     - tagcloud
     - links
-    - google_adsense
+    #- google_adsense
 
 # Search
 search:
