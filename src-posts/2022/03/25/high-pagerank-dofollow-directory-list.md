@@ -4,6 +4,9 @@ subtitle: High Pagerank Dofollow Directory List
 date: 2022-03-25
 updated: 2022-03-25
 cover: https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+tags:
+  - SEO
+  - Blogging
 ---
 
 ** If I get a new one, I will always update the list. For now and also for the future, I suggest making between dofollow backlinks and nofollow backlinks that lead to a balanced blog, or still in a very reasonable category**, if you don't want your blog to get Google Penalty sanctions later.
