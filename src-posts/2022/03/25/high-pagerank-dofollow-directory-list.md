@@ -11,9 +11,9 @@ Because it will be quite difficult to improve the ranking of blogs that have bee
 
 **The important thing that you have to pay attention to is the way the process is done so that there are no errors when you register in each of these directories.** Pay attention to the writing of **anchor text** and also **categories**, **keywords**, * *meta tags**, **description**, and other things that may be important for you to fill in when registering. In addition, you should prepare from the beginning all the data that will be needed, at least it can save time making it easier for you during the registration process later.
 
-[![Directory Dofollow](https://3.bp.blogspot.com/-6veBHLXbOls/Ua5SXmU1WEI/AAAAAAAAAtA/bLFjLW3SnBY/s1600/Directory+Dofollow.jpg "Directory Dofollow")](https://3.bp. blogspot.com/-6veBHLXbOls/Ua5SXmU1WEI/AAAAAAAAAtA/bLFjLW3SnBY/s1600/Directory+Dofollow.jpg)
+![Directory Dofollow](https://3.bp.blogspot.com/-6veBHLXbOls/Ua5SXmU1WEI/AAAAAAAAAtA/bLFjLW3SnBY/s1600/Directory+Dofollow.jpg "Directory Dofollow")
 
-**Your attempt to register your blog to this directory is one way to build link building so that [get free backlinks](http://tipsseoeasy.blogspot.com/2013/05/cara-mendapatkan-backling-free-google.html) , whose purpose is to improve optimization** SEO **and [blog traffic](http://tipsseoeasy.blogspot.com/2013/05/how-cara-increasing-traffic-blog.html)**. Why do you have to do that, because blogs that have been registered in various directories can have the opportunity to get traffic or visitors from the directory in question. I hope this is useful and can help.
+**Your attempt to register your blog to this directory is one way to build link building so that [get free backlinks](http://google.com/search?q=site:webmanajemen.com+Free+google+Backlinks) , whose purpose is to improve optimization** SEO **and [blog traffic](http://google.com/search?q=site:webmanajemen.com+Increasing+blog+traffic)**. Why do you have to do that, because blogs that have been registered in various directories can have the opportunity to get traffic or visitors from the directory in question. I hope this is useful and can help.
 
 | **Blog Directory** | **Page Rank** | **Blog Directory** | **Page Rank**
 | --- | --- | --- | --- |
@@ -37,3 +37,4 @@ Because it will be quite difficult to improve the ranking of blogs that have bee
 | 18\. www.topbloglists.com | 5   | 37\. blogvillage.gotop100.com | 3   |
 | 19\. www.lsblogs.com | 5   | 38\. www.search4blogs.com | 3   |
 
+Please regularly and diligently register every time you create a new article to the several dlog directories above. That's my post on this occasion. Hopefully these blogging tips are useful and can help you, especially for beginners who want higher **traffic** or visitors to your blog.
