@@ -7,7 +7,7 @@ updated: 2022-03-25T15:05:28+0000
 
 |     |     |
 | --- | --- |
-| Blog / Website | Domain Authority |
+| Website | Domain Authority Score |
 | http://robcalhoun.com/ | 15  |
 | http://www.bloggingfromparadise.com/ | 47  |
 | http://robert-corrigan.com/ | 23  |
