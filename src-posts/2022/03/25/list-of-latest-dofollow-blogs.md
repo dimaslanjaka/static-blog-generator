@@ -16,9 +16,8 @@ tags:
 
 Because if your blog's pagerank is currently high, or it has quite a lot of backlinks but it's not balanced with nofollow backlinks that go to your blog, now **Google will think that the blog is doing excessive optimization**. For example, by buying backlinks.
 
-|     |     |
-| --- | --- |
 | Website | Domain Authority Score |
+| --- | --- |
 | http://robcalhoun.com/ | 15  |
 | http://www.bloggingfromparadise.com/ | 47  |
 | http://robert-corrigan.com/ | 23  |
