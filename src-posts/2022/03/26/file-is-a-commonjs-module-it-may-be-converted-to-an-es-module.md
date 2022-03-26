@@ -1,5 +1,6 @@
 ---
-title: fix vscode File is a CommonJS module; it may be converted to an ES module
+title: disable vscode alert: File is a CommonJS module; it may be converted to an ES module
+subtitle: disable vscode alert: File is a CommonJS module; it may be converted to an ES module
 cover: https://i.stack.imgur.com/Xo2sA.png
 tags:
   - TS
@@ -11,6 +12,7 @@ tags:
 insert below option
 ```json
 {
-    "javascript.suggestionActions.enabled": false
+    "javascript.suggestionActions.enabled": false, // disable vscode alert on javascript
+    "typescript.suggestionActions.enabled": false // disable vscode alert on typescript
 }
 ```
