@@ -23,7 +23,7 @@ function excerpt_original(post) {
     excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
   }
   // remove double/single quotes
-  return excerpt.replace(/[\"\']/, '');
+  return excerpt.replace(/[\"\']/gim, '');
 }
 
 /**

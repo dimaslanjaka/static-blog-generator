@@ -1,5 +1,6 @@
 {
   "[ejs]": {
     "editor.formatOnSave": false
-  }
+  },
+  "editor.formatOnSaveMode": "modificationsIfAvailable"
 }
