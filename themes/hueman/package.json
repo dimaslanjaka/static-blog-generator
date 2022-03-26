@@ -10,6 +10,7 @@
     "prettier": "^2.5.1"
   },
   "dependencies": {
+    "hexo-log": "^3.0.0",
     "hexo-server": "^3.0.0"
   }
 }

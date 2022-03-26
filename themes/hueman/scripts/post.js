@@ -1,4 +1,10 @@
+const console = require('hexo-log')({
+  debug: false,
+  silent: false,
+});
+
 function list_post_by_updated(posts) {
+  console.log(Array.isArray(posts.data));
   return posts;
 }
 
