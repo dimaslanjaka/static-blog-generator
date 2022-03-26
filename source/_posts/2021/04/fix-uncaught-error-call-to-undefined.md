@@ -11,24 +11,76 @@ cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.
 date: 2021-04-27T19:26:00.002+07:00
 lang: en
 location: ""
-modified: 2021-05-14T04:26:37.028+07:00
-subtitle: "h5>Uncaught Error: Call to undefined function str_starts_with() Fix
-  Solutions</h5><img"
+modified: 2022-03-23T13:42:23+0000
+subtitle: "Uncaught Error: Call to undefined function str_starts_with() Fix Solutions"
 tags:
   - Script
   - PHP
-title: Fix Uncaught Error Call to undefined function str_starts_with()
+title: Fix Uncaught Error Call to undefined function str_starts_with and str_ends_with
+webtitle: PHP
 type: post
 uuid: 0879db41-1cc7-4888-88b3-d7f0056a20b8
-webtitle: WMI Gitlab
-updated: 2021-05-14T04:26:37+07:00
+updated: 2022-03-23T13:42:23+0000
+description: "Uncaught Error: Call to undefined function str_starts_with() Fix Solutions"
+excerpt: "Uncaught Error: Call to undefined function str_starts_with() Fix Solutions"
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png
-description: "h5>Uncaught Error: Call to undefined function str_starts_with()
-  Fix Solutions</h5><img"
-excerpt: "h5>Uncaught Error: Call to undefined function str_starts_with() Fix
-  Solutions</h5><img"
 ---
 
-<h5>Uncaught Error: Call to undefined function str_starts_with() Fix Solutions</h5><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png" alt="PHP Thumbnail"><pre><br>if (!function_exists('str_starts_with')) {<br>  function str_starts_with($haystack, $needle, $case = true)<br>  {<br>    if ($case) {<br>      return strpos($haystack, $needle, 0) === 0;<br>    }<br>    return stripos($haystack, $needle, 0) === 0;<br>  }<br>}<br><br>if (!function_exists('str_ends_with')) {<br>  function str_ends_with($haystack, $needle, $case = true)<br>  {<br>    $expectedPosition = strlen($haystack) - strlen($needle);<br>    if ($case) {<br>      return strrpos($haystack, $needle, 0) === $expectedPosition;<br>    }<br>    return strripos($haystack, $needle, 0) === $expectedPosition;<br>  }<br>}<br></pre>
+## Uncaught Error: Call to undefined function str_starts_with() Fix Solutions
+```php
+if (!function_exists('str_starts_with')) {
+  function str_starts_with($haystack, $needle, $case = true)
+  {
+    if ($case) {
+      return strpos($haystack, $needle, 0) === 0;
+    }
+    return stripos($haystack, $needle, 0) === 0;
+  }
+}
+```
+### Example with the empty string ''
+```php
+<?php
+if (str_starts_with('abc', '')) {
+    echo "All strings start with the empty string"; // <-- this will show as output
+}
+?>
+```
+
+### Example case-sensitivity
+- **Case Sensitive** is a case where uppercase and lowercase letters are interpreted differently.
+- **Case Insensitive** is a case where uppercase and lowercase letters are interpreted the same.
+```php
+<?php
+$string = 'The lazy fox jumped over the fence';
+
+if (str_starts_with($string, 'The')) {
+    echo "The string starts with 'The'\n"; // <-- this will show as output
+}
+
+if (str_starts_with($string, 'the')) {
+    echo 'The string starts with "the"'; // this ignored because insensitive
+} else {
+    echo '"the" was not found because the case does not match'; // <-- this will show as output
+}
+
+?>
+```
+
+## Uncaught Error: Call to undefined function str_ends_with() Fix Solutions
+```php
+if (!function_exists('str_ends_with')) {
+  function str_ends_with($haystack, $needle, $case = true)
+  {
+    $expectedPosition = strlen($haystack) - strlen($needle);
+    if ($case) {
+      return strrpos($haystack, $needle, 0) === $expectedPosition;
+    }
+    return strripos($haystack, $needle, 0) === $expectedPosition;
+  }
+}
+```
+
+![PHP Thumbnail](https://res.cloudinary.com/dimaslanjaka/image/fetch/https://kuliahitblog.files.wordpress.com/2019/08/1dbdb-fatal2berror2buncaught2berror2bcall2bto2bundefined2bfunction2bmysql_connect25282529.png)

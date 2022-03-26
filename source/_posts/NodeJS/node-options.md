@@ -6,7 +6,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.webmanajemen.com/NodeJS/node-options/7ccdde09a0337e33f2ad6173314a9729.jpeg
+cover: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 date: 2021-11-17T16:00:00+07:00
 keywords:
   - nodejs
@@ -23,7 +23,7 @@ type: post
 uuid: 586f70e0-6dec-4888-8cac-99671aad2296
 webtitle: NodeJS
 updated: 2021-12-10T19:53:25+07:00
-thumbnail: https://www.webmanajemen.com/NodeJS/node-options/7ccdde09a0337e33f2ad6173314a9729.jpeg
+thumbnail: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 photos:
   - https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 description: Usage, explanations of node options for nodejs

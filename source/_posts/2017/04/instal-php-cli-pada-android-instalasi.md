@@ -27,8 +27,6 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg
 description: Official php-cli installation on android by L3n4r0x (php Running On
   Android Terminal) -> This Repost From My Another Blogs <-
-excerpt: Official php-cli installation on android by L3n4r0x (php Running On
-  Android Terminal) -> This Repost From My Another Blogs <-
 ---
 
 <div dir="ltr" style="text-align: left" trbidi="on">

@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png
 date: 2017-04-28T11:12:00.000+07:00
@@ -26,8 +24,6 @@ thumbnail: http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-C
 photos:
   - http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png
 description: "Learning CSS Tutorial Part : How to enter CSS code into the HTML
-  pageIn this tutorial we will discuss how to input the CSS"
-excerpt: "Learning CSS Tutorial Part : How to enter CSS code into the HTML
   pageIn this tutorial we will discuss how to input the CSS"
 ---
 

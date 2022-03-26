@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - HTML
+category: []
 comments: true
 cover: https://lh6.googleusercontent.com/proxy/4Jrx-c1qmdyJBBFWaTVYP6cr1OXxZADd8-8FRy0T0GJ041YEC_g6DBddYsU20X7p0UPshwbJY7vxAoJOqppV5HbWDVBpnr7lMTRrNw4bgI_0i2VHIhFR0Vc=w543-h271-nc
 date: 2017-04-20T13:39:00.001+07:00

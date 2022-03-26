@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - JS
+category: []
 comments: true
 cover: https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
 date: 2017-08-01T16:48:00.000+07:00

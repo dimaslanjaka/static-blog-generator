@@ -19,7 +19,7 @@ title: Midi
 type: post
 uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
-updated: 2021-12-19T06:34:03+07:00
+updated: 2022-03-25T16:37:39+0000
 thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
@@ -27,7 +27,7 @@ description: Midi collection for the legend of neverland perform music skill
 excerpt: Midi collection for the legend of neverland perform music skill
 ---
 
-### NPC's favorite musical instrument
+## NPC's favorite musical instrument
 
 > Did you know that playing music with certain instruments to the npc who gave you the quest "Music Performance Request" will give you better rewards, such as ff seeds, cabala, etc.
 
@@ -39,7 +39,7 @@ excerpt: Midi collection for the legend of neverland perform music skill
 | Anna     |              | Violin             |
 | Freya    | Sophila      | Guitar             |
 
-### List Best Midi (Hold tap/Right click to copy)
+## List Best Midi (Hold tap/Right click to copy)
 
 | Title                                | Link                                   |
 | ------------------------------------ | -------------------------------------- |
@@ -52,6 +52,9 @@ excerpt: Midi collection for the legend of neverland perform music skill
 | Clout - Save me                      | https://bitmidi.com/uploads/24659.mid  |
 | TokiMeki                             | https://bitmidi.com/uploads/24659.mid  |
 | Hatsune Miku                         | https://bitmidi.com/uploads/55292.mid  |
+
+## How to convert Youtube Videos to MIDI
+Visit [YT2MIDI](https://youtube2midi.github.io/)
 
 ### Available Midi Sites
 - https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/compiler/source/assets/Midi

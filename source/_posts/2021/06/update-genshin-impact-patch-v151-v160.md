@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka
   link: https://www.blogger.com/profile/07981649157148639830
   email: noreply@blogger.com
-category: []
+category:
+  - Games
+  - Genshin Impact
 comments: true
 cover: https://i.imgur.com/zHDw2i0.png
 date: 2021-06-07T11:20:00.003+07:00

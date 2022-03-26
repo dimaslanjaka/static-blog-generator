@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-09-09T13:00:00.000+07:00
 lang: en
 location: ""
@@ -19,12 +19,10 @@ type: post
 uuid: cb3980be-9fc4-4888-883f-e76ea72f2ba0
 webtitle: WMI Gitlab
 updated: 2017-09-09T13:00:09+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "pre>&lt;script type=&quot;application/ld+json&quot;&gt;<br /><br
-  />{<br /><br />&nbsp; &nbsp; &quot;@context&quot;:"
-excerpt: "pre>&lt;script type=&quot;application/ld+json&quot;&gt;<br /><br
   />{<br /><br />&nbsp; &nbsp; &quot;@context&quot;:"
 ---
 

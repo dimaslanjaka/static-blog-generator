@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - JS
+category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg
 date: 2017-12-27T05:39:00.000+07:00
@@ -26,8 +24,6 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dr
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg
 description: All I needed was to expel every single forward slice in a string
-  utilizing Javascript.
-excerpt: All I needed was to expel every single forward slice in a string
   utilizing Javascript.
 ---
 
