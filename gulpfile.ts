@@ -191,6 +191,7 @@ gulp.task("hexo:minify", function () {
   return gulp
     .src("docs/**/*.html")
     .pipe(minifyHtml({ collapseWhitespace: true, minifyJS: true, minifyCSS: true }))
+    .on("error", console.log)
     .pipe(gulp.dest("docs"));
 });
 
