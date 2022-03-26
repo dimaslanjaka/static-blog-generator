@@ -1,16 +1,5 @@
 <% var last, postCount = 0; %>
-<% page.posts.sort(function (a, b) {
-    if (a.updated && b.updated) {
-      return myParseDate(b.updated) - myParseDate(a.updated);
-    } else if (a.hasOwnProperty('updated')) {
-      return -1;
-    } else if (b.hasOwnProperty('updated')) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
-  page.posts.each(function(post, i) { %>
+<% list_posts(page.posts, {'orderby': 'updated', 'order': -1}).each(function(post, i) { %>
     <% var year = post.date.year(); %>
     <% if (last != year) { %>
         <% if (last != null) { %>
