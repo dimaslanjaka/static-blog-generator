@@ -8,7 +8,7 @@ tags:
   - IDE
 ---
 
-- open settings.json file
+### open settings.json file
 insert below option
 ```json
 {
@@ -16,3 +16,6 @@ insert below option
     "typescript.suggestionActions.enabled": false // disable vscode alert on typescript
 }
 ```
+
+### [Preview Example] it should be looks like:
+![Preview Setting](https://i.stack.imgur.com/2AUwp.png)
