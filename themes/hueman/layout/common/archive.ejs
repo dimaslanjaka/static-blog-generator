@@ -1,4 +1,6 @@
 <% let last, postCount = 0, posts = list_post_by_updated(page.posts); %>
+<link itemprop="url" href="<%= page.url || config.url %>">
+<span itemprop="numberOfItems" style="display: none;"><%= posts.length %></span>
 <% posts.each(function(post, i) { %>
     <% let year = post.date.year(); %>
     <% if (last != year) { %>
