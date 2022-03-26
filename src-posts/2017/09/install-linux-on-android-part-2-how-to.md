@@ -14,6 +14,7 @@ subtitle: ""
 tags:
   - Android
   - Tips & Tricks
+  - MySQL
 title: Install Linux on the Android part 2-How to Install Apache2, PHP and MYSQL
   on Android
 type: post
