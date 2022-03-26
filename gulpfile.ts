@@ -22,12 +22,19 @@ import { parse as parseHTML } from "node-html-parser";
 import downloadImg from "./src/gulp/fix/external-img";
 import bluebird from "bluebird";
 // `gulp article:copy`
-import "./src/gulp/tasks/article-copy";
+import articleCopy from "./src/gulp/tasks/article-copy";
+// `gulp article:date`
+import "./src/gulp/tasks/article-date";
 
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
 // generate definition config https://jvilk.com/MakeTypes/
 fs.writeFileSync(__dirname + "/types/_config.json", JSON.stringify(config));
+
+// just copy and process from source posts (src-posts) to production posts (source/_posts)
+gulp.task("article:copy", function (done) {
+  return articleCopy(config, done);
+});
 
 /**
  * Source folder articles
@@ -133,6 +140,7 @@ function afterGenerate(done: TaskCallback) {
 }
 
 gulp.task("article:img", (done) => {
+  // get post from ${config.source_dir}/_posts
   const posts = loopDir(path.join(__dirname, config.source_dir, "_posts"))
     .filter((f) => f.endsWith(".md"))
     .unique();

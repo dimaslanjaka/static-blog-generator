@@ -1,7 +1,6 @@
-//** gulp article:copy **//
+//** copy from src-posts to source/_posts **//
 
-import { execSync } from "child_process";
-import { appendFileSync, existsSync, mkdirSync, statSync } from "fs";
+import { existsSync, mkdirSync, statSync } from "fs";
 import gulp from "gulp";
 import moment from "moment";
 import { basename, dirname, join } from "path";
@@ -15,25 +14,18 @@ import { copyDir, loopDir, slash } from "../utils";
 import { TaskCallback } from "undertaker";
 import parseShortCodeInclude from "../shortcode/include";
 import { cwd } from "process";
+import { Hexo_Config } from "../../../types/_config";
 
 let tryCount = 0;
-/**
- * Source folder articles
- */
-const srcPostDir = join(cwd(), "src-posts");
-
-/**
- * Production article.
- * Articles which published on google index
- */
-const prodPostDir = join(cwd(), "source/_posts");
 
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
  */
-function articleCopy(done: TaskCallback) {
+export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
   //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
+  const srcPostDir = join(cwd(), "src-posts");
+  const prodPostDir = join(cwd(), config.source_dir, "/_posts");
   const srcDir = slash(srcPostDir);
   const destDir = slash(prodPostDir);
   if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
@@ -45,7 +37,7 @@ function articleCopy(done: TaskCallback) {
       console.error("error");
       if (tryCount == 0) {
         tryCount++;
-        return articleCopy(done);
+        return articleCopy(config, done);
       }
     } else {
       console.log("copied successful!");
@@ -54,7 +46,7 @@ function articleCopy(done: TaskCallback) {
       // process
       const loop = loopDir(destDir);
       loop.forEach(function (file) {
-        const sourceFile = file.replace("/source/_posts/", "/src-posts/");
+        const sourceFile = file.replace(prodPostDir, srcPostDir);
         const publicAssetDir = join(dirname(file), basename(file, ".md"));
         const sourceAssetDir = join(dirname(sourceFile), basename(sourceFile, ".md"));
         if (statSync(file).isFile() && file.endsWith(".md")) {
@@ -183,8 +175,3 @@ function articleCopy(done: TaskCallback) {
     }
   });
 }
-
-// just copy and process from source posts (src-posts) to production posts (source/_posts)
-gulp.task("article:copy", function (done) {
-  return articleCopy(done);
-});
