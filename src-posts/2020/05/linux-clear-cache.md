@@ -10,8 +10,6 @@ comments: true
 cover: https://res.cloudinary.com/practicaldev/image/fetch/https://www.wissenschaft.com.ng/wp-content/uploads/2021/02/clear_ram_buffer_linux.jpg
 date: 2020-05-30T00:03:00.002+07:00
 lang: en
-location: ""
-modified: 2020-05-30T00:03:46.972+07:00
 subtitle: Script To Clear Cache Linux
 tags:
   - Bash
