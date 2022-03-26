@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://goo.gl/ZDjCRk
 date: 2018-02-07T16:36:00.000+07:00

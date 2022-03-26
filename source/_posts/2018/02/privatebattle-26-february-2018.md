@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2018-02-26T19:20:00.002+07:00
 lang: en
 location: ""
@@ -19,12 +19,10 @@ type: post
 uuid: 5af49877-3ecb-4888-8d26-baa7d70a58da
 webtitle: WMI Gitlab
 updated: 2018-02-26T19:22:57+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: VG Private Battle 20:00 Wib)<br />Tim A<br />1. Mamskid<br />2.
-  abdulajis<br />3. Hanif17(roamer)<br /><br />Tim B<br />1.Hadifadillah<br
-excerpt: VG Private Battle 20:00 Wib)<br />Tim A<br />1. Mamskid<br />2.
   abdulajis<br />3. Hanif17(roamer)<br /><br />Tim B<br />1.Hadifadillah<br
 ---
 

@@ -21,7 +21,7 @@ title: Compress ES6 In Intellij IDEA
 type: post
 uuid: 0ac49882-5f5b-4888-84cf-0a0541116745
 webtitle: Intellij IDEA
-updated: 2022-03-23T09:07:35+07:00
+updated: 2021-05-30T16:43:44+07:00
 thumbnail: https://i.ibb.co/024Dzwh/Screenshot-1.png
 photos:
   - https://i.ibb.co/024Dzwh/Screenshot-1.png

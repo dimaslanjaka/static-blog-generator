@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka 2
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seoclerk.com/pics/want29446-1eGFdc1437614695.png
 date: 2018-03-26T21:18:00.000+07:00
@@ -27,8 +25,6 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seocl
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.seoclerk.com/pics/want29446-1eGFdc1437614695.png
 description: FeatureSupport unzip fileSupport edit file/script on different
-  encodingsSupport upload,edit,open,delete,rename,and other.Support add
-excerpt: FeatureSupport unzip fileSupport edit file/script on different
   encodingsSupport upload,edit,open,delete,rename,and other.Support add
 ---
 

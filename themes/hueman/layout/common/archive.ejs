@@ -1,5 +1,5 @@
 <% var last, postCount = 0; %>
-<% page.posts.each(function(post, i) { %>
+<% list_post_by_updated(page.posts).each(function(post, i) { %>
     <% var year = post.date.year(); %>
     <% if (last != year) { %>
         <% if (last != null) { %>

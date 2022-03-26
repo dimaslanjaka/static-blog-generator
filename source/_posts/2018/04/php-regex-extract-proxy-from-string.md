@@ -3,9 +3,7 @@ author:
   nick: Dimas Lanjaka 2
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
-category:
-  - Programming
-  - PHP
+category: []
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
 date: 2018-04-12T19:43:00.000+07:00
@@ -26,9 +24,6 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.f
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
 description: img
-  src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
-  /><ul><li>Extract
-excerpt: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
   /><ul><li>Extract
 ---

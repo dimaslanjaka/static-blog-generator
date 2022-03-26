@@ -5,29 +5,24 @@ import "js-prototypes";
 import * as gulp from "gulp";
 import { hashElement } from "folder-hash";
 import md5File from "md5-file";
-import { execSync } from "child_process";
 import * as path from "path";
-import { parsePost, saveParsedPost, uuidv4 } from "./src/markdown/transformPosts";
+import { parsePost, uuidv4 } from "./src/markdown/transformPosts";
 import * as fs from "fs";
 import rimraf from "rimraf";
 import minifyHtml from "./src/gulp/minify";
 import { TaskCallback } from "undertaker";
 import { writeFileSync } from "./packages/hexo-blogger-xml/src/parser/util";
-import shortcodeInclude from "./src/gulp/shortcode/include";
-import { copyDir, loopDir, slash } from "./src/gulp/utils";
+import { loopDir } from "./src/gulp/utils";
 import GoogleNewsSitemap, { ClassItemType } from "./packages/google-news-sitemap/src";
 import moment from "moment";
-import { shortcodeScript } from "./src/gulp/shortcode/script";
-import { shortcodeNow } from "./src/gulp/shortcode/time";
-import { shortcodeCss } from "./src/gulp/shortcode/css";
-import replaceMD2HTML from "./src/gulp/fix/hyperlinks";
-import extractText from "./src/gulp/shortcode/extract-text";
 import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
 import { parse as parseHTML } from "node-html-parser";
 import downloadImg from "./src/gulp/fix/external-img";
 import bluebird from "bluebird";
+// `gulp article:copy`
+import "./src/gulp/tasks/article-copy";
 
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
@@ -77,188 +72,6 @@ function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
 
       if (typeof cb == "function") cb(directory);
     });
-}
-
-let tryCount = 0;
-/**
- * Copy source post directly into production posts without transform to multiple languages
- * @param done Callback
- */
-function articleCopy(done: TaskCallback) {
-  //if (process.env.NODE_ENV == "development") emptyDir(prodPostDir);
-  const srcDir = slash(srcPostDir);
-  const destDir = slash(prodPostDir);
-  if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
-
-  // To copy a folder
-  copyDir(srcDir, destDir, function (err) {
-    if (err) {
-      console.error(err);
-      console.error("error");
-      if (tryCount == 0) {
-        tryCount++;
-        return articleCopy(done);
-      }
-    } else {
-      console.log("copied successful!");
-      console.log("starting process article shortcodes...");
-
-      // process
-      const loop = loopDir(destDir);
-      loop.forEach(function (file) {
-        const sourceFile = file.replace("/source/_posts/", "/src-posts/");
-        const publicAssetDir = path.join(path.dirname(file), path.basename(file, ".md"));
-        const sourceAssetDir = path.join(path.dirname(sourceFile), path.basename(sourceFile, ".md"));
-        if (fs.statSync(file).isFile() && file.endsWith(".md")) {
-          const parse = parsePost(file);
-          if (parse) {
-            if (parse.metadata) {
-              // fix post time
-              if (parse.metadata.modified) {
-                if (!parse.metadata.updated) {
-                  parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-                } else {
-                  const updated = moment(parse.metadata.updated);
-                  const modified = moment(parse.metadata.modified);
-                  const same = updated.isSame(modified, "date");
-                  //console.log('updated', updated);
-                  //console.log('modified', modified);
-                  //console.log('same', same);
-                  if (!same) {
-                    // java format yyyy-MM-dd'T'HH:mm:ssZ
-                    parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-                    //console.log(parse.metadata.updated)
-                  }
-                }
-              }
-              const stats = fs.statSync(sourceFile);
-              if (!parse.metadata.updated) {
-                const mtime = stats.mtime;
-                parse.metadata.updated = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
-              }
-              const mtime = stats.mtime;
-              const modified_file = moment(mtime).format("YYYY-MM-DDTHH:mm:ssZ");
-              // if modified today, try get modification date from git commit
-              const isToday = moment(modified_file).isSame(moment(), "day"); // O/P : **true**
-              // only run this function on localhost (not github workflow)
-              if (isToday && typeof process.env.GITFLOW === "undefined") {
-                // get modified date from git commit date
-                const stdout = execSync('git log -1 --pretty="format:%cD" ' + sourceFile, { encoding: "utf8" });
-                const format_stdout = moment(stdout.trim()).format("YYYY-MM-DDTHH:mm:ssZ");
-                // only run if existing post updated time is different with git modified time
-                if (parse.metadata.updated != format_stdout) {
-                  parse.metadata.updated = format_stdout;
-                  // save the git modified time to source post file
-                  const parseSource = parsePost(sourceFile);
-                  parseSource.metadata.updated = format_stdout;
-                  // only store modified time to original source post file when both modified date is different
-                  if (parse.metadata.updated !== parseSource.metadata.updated) {
-                    fs.appendFileSync(
-                      path.join(__dirname, "tmp/updated-time.log"),
-                      `Update ${sourceFile} with ${format_stdout} from ${parseSource.metadata.updated}\n`
-                    );
-                    //saveParsedPost(parseSource, sourceFile);
-                  }
-                }
-              }
-              if (!parse.metadata.date) {
-                parse.metadata.date = moment(new Date()).format("YYYY-MM-DDTHH:mm:ssZ");
-              }
-              if (!parse.metadata.date.includes("+")) {
-                parse.metadata.date = moment(parse.metadata.date).format("YYYY-MM-DDTHH:mm:ssZ");
-              }
-              // fix lang
-              if (!parse.metadata.lang) parse.metadata.lang = "en";
-              // fix post description
-              if (parse.metadata.subtitle) {
-                if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
-                if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
-              }
-              if (parse.metadata.excerpt) {
-                if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
-                if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
-              }
-              if (parse.metadata.description) {
-                if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
-                if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
-              }
-              // fix thumbnail
-              if (parse.metadata.cover) {
-                if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
-                if (!parse.metadata.photos) {
-                  parse.metadata.photos = [];
-                }
-                parse.metadata.photos.push(parse.metadata.cover);
-              }
-              if (parse.metadata.photos) {
-                let photos: string[] = parse.metadata.photos;
-                parse.metadata.photos = photos.unique();
-              }
-              // merge php js css to programming
-              if (Array.isArray(parse.metadata.tags)) {
-                const containsTag = [
-                  "php",
-                  "css",
-                  "js",
-                  "kotlin",
-                  "java",
-                  "ts",
-                  "typescript",
-                  "javascript",
-                  "html",
-                ].some((r) => {
-                  const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
-                  if (matchTag) {
-                    parse.metadata.category.push(r.toUpperCase());
-                  }
-                  return matchTag;
-                });
-                if (containsTag) {
-                  parse.metadata.category.push("Programming");
-                  // remove uncategorized if programming category pushed
-                  if (parse.metadata.category.includes("Uncategorized")) {
-                    parse.metadata.category = parse.metadata.category.filter((e) => e !== "Uncategorized");
-                  }
-                }
-                // remove duplicated tags and categories
-                parse.metadata.category = parse.metadata.category.uniqueStringArray();
-                parse.metadata.tags = parse.metadata.tags.uniqueStringArray();
-                // move 'programming' to first index
-                parse.metadata.category.forEach((str, i) => {
-                  if (str === "Programming") {
-                    parse.metadata.category = parse.metadata.category.move(i, 0);
-                  }
-                });
-                //if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
-              }
-            }
-
-            if (parse.body) {
-              parse.body = shortcodeInclude(file, parse.body);
-              parse.body = shortcodeNow(file, parse.body);
-              parse.body = shortcodeScript(file, parse.body);
-              parse.body = replaceMD2HTML(file, parse.body);
-              parse.body = shortcodeCss(file, parse.body);
-              parse.body = extractText(file, parse.body);
-            }
-
-            if (parse.metadata && parse.body) {
-              // remove duplicated metadata photos
-              if (parse.metadata.photos && parse.metadata.photos.length) {
-                parse.metadata.photos = parse.metadata.photos.unique();
-              }
-
-              // save parsed post to public _config.yml
-              saveParsedPost(parse, parse.fileTree.public);
-            }
-          }
-        }
-      });
-
-      // notify gulp process has done
-      done();
-    }
-  });
 }
 
 function afterGenerate(done: TaskCallback) {
@@ -335,11 +148,6 @@ gulp.task("article:img", (done) => {
 
 gulp.task("article:after-gen", (done) => {
   afterGenerate(done);
-});
-
-// just copy and process from source posts (src-posts) to production posts (source/_posts)
-gulp.task("article:copy", function (done) {
-  articleCopy(done);
 });
 
 gulp.task("article:clean", function (done) {

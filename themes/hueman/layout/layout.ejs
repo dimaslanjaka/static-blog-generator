@@ -1,5 +1,7 @@
 <%- partial('common/head') %>
-<body>
+<body itemscope itemtype="https://schema.org/WebSite">
+    <meta itemprop="url" content="<%= page.url || config.url %>"/>
+
     <div id="wrap">
         <%- partial('common/header', null, {cache: !config.relative_link}) %>
         <div class="container">

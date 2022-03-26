@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
+cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2020-10-17T13:51:00.004+07:00
 lang: en
 location: ""
@@ -23,7 +23,7 @@ type: post
 uuid: 621dc505-222b-4888-8cf1-2856ec8104b6
 webtitle: WMI Gitlab
 updated: 2020-10-26T23:37:05+07:00
-thumbnail: https://www.webmanajemen.com/2019/01/film-gift-2018-subtitle-indonesia-movie/ab93c1b0256b581497d4d4eabe9ad5c3.png
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: h2>Contribution Tutorial</h2><ol> <li>Fork it (git clone

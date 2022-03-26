@@ -12,6 +12,13 @@
       "cwd": "${workspaceFolder}/../../"
     },
     {
+      "command": "npx gulp article:copy && npx hexo generate",
+      "name": "Copy Generate",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/../../"
+    },
+    {
       "command": "npx hexo server",
       "name": "Server",
       "request": "launch",

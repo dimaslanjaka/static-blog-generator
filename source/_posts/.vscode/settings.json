@@ -37,5 +37,37 @@
   "emmet.extensionsPath": [
     "D:\\Repositories\\gh-pages\\src-posts\\The Legend Of Neverland\\.vscode"
   ],
+  "platformSettings.condition": "os.release()",
+  "platformSettings.platforms": {
+    "default": {
+      "nodes": {
+        "editor.lineNumbers": "on"
+      }
+    },
+    "win32": {
+      "inherits": "default",
+      "nodes": {
+        "workspaceExplorer.workspaceStorageDirectory": "%userprofile%\\.vscode_workspaces",
+        "editor.lineNumbers": "on"
+      },
+      "remove": [
+        "platformSettings.placebo"
+      ]
+    },
+    "linux": {
+      "inherits": "default",
+      "nodes": {
+        "workspaceExplorer.workspaceStorageDirectory": "~/.vscode_workspaces",
+        "editor.lineNumbers": "relative"
+      }
+    },
+    "darwin": {
+      "inherits": "linux",
+      "nodes": {
+        "workspaceExplorer.workspaceStorageDirectory": "~/.vscode_workspaces",
+        "editor.lineNumbers": "off"
+      }
+    },
+  },
   "files.autoSave": "afterDelay"
 }

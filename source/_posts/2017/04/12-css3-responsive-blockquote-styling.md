@@ -3,9 +3,7 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category:
-  - Programming
-  - CSS
+category: []
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
 date: 2017-04-27T23:29:00.000+07:00
@@ -25,8 +23,6 @@ thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKga
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
 description: img height=280
-  src=https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
-excerpt: img height=280
   src=https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
 ---
 
