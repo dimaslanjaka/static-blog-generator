@@ -7,15 +7,15 @@ const myParseDate = (date_string) => {
   let [y, M, d, h, m, s] = date_string.split(/[- :T]/);
   return new Date(y, parseInt(M) - 1, d, h, parseInt(m), s.replace('Z', ''));
 };
-hexo.extend.helper.register('myParseDate', myParseDate);
+//hexo.extend.helper.register('myParseDate', myParseDate);
 
 /**
  * List post by updated date
  * @param {Array<object>} posts
+ * @see {@link https://stackoverflow.com/a/59421533/6404439}
  * @returns
  */
 function list_post_by_updated(posts) {
-  console.log(process.env.NODE_OPTIONS);
   if (typeof process.env.NODE_OPTIONS == 'string' && process.env.NODE_OPTIONS.includes('max_old_space_size')) {
     return posts.sort(function (a, b) {
       if (a.updated && b.updated) {
