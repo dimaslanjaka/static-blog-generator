@@ -10,7 +10,7 @@ tags:
 
 ### open settings.json file
 insert below option
-```json
+```jsonc
 {
     "javascript.suggestionActions.enabled": false, // disable vscode alert on javascript
     "typescript.suggestionActions.enabled": false // disable vscode alert on typescript
