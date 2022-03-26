@@ -120,7 +120,7 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                   "ts",
                   "typescript",
                   "javascript",
-                  "html",
+                  "html", 'mysql', 'database'
                 ].some((r) => {
                   const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
                   if (matchTag) {
