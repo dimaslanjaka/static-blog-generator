@@ -3,7 +3,7 @@ title: High Pagerank Dofollow Directory List
 subtitle: High Pagerank Dofollow Directory List
 date: 2022-03-25
 updated: 2022-03-25
-cover: https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 tags:
   - SEO
   - Blogging
