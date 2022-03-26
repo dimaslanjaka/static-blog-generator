@@ -21,7 +21,7 @@ updated: 2022-03-27T23:46:00+0700
 how to solve above log ?
 
 #### Folder Location
-Make sure the location of the `XAMPP` folder is outside the drive. Example:
+Make sure the location of the `XAMPP` folder is outside the drive. Basically xampp only reads from your drive letter. for example:
 ```text
 D:\xampp
 C:\xampp
