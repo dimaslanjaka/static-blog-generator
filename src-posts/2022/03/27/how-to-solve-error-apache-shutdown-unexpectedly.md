@@ -1,8 +1,8 @@
 ---
 title: How to solve Error Apache shutdown unexpectedly updated 2022
 subtitle: Various step to fix xampp windows updated 2022
-date: 2022-03-26T23:43:28+0000
-updated: 2022-03-26T23:43:28+0000
+date: 2022-03-26T23:46:00+0700
+updated: 2022-03-27T23:46:00+0700
 ---
 
 ## How to solve "Error: Apache shutdown unexpectedly"?
@@ -21,3 +21,17 @@ updated: 2022-03-26T23:43:28+0000
 how to solve above log ?
 
 #### Folder Location
+Make sure the location of the `XAMPP` folder is outside the drive. Example:
+```text
+D:\xampp
+C:\xampp
+```
+
+#### Changing Port
+- Try changing port.
+> in **Control Panel** change apache port `80` -> `8081`, `443` -> `4433`
+![Port XAMPP](https://i.stack.imgur.com/McjHN.png)
+- Open folder `D:\xampp\apache\conf\extra` and open all conf files one by one. (change `D:` with your drive letter)
+> Find `<VirtualHost _default_:443>` and change it to `<VirtualHost _default_:4443>`.
+> 
+> Find `ServerName localhost:443`. It’s possible that this hasn’t been set up yet and it reads `ServerName www.example.com:443`. In any case, change it to `ServerName localhost:4443`.
