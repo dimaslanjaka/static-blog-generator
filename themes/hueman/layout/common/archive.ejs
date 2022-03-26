@@ -1,6 +1,6 @@
-<% var last, postCount = 0; %>
-<% list_post_by_updated(page.posts).each(function(post, i) { %>
-    <% var year = post.date.year(); %>
+<% let last, postCount = 0, posts = list_post_by_updated(page.posts); %>
+<% posts.each(function(post, i) { %>
+    <% let year = post.date.year(); %>
     <% if (last != year) { %>
         <% if (last != null) { %>
             </div></section>
@@ -17,11 +17,11 @@
         <div class="article-row">
     <% } %>
         <%- partial('summary', { post: post }) %>
-    <% if (postCount == page.posts.length || postCount % 2 == 0) { %>
+    <% if (postCount == posts.length || postCount % 2 == 0) { %>
         </div>
     <% } %>
 <% }) %>
-<% if (page.posts.length) { %>
+<% if (posts.length) { %>
     </div></section>
 <% } %>
 <% if (page.total > 1) { %>
