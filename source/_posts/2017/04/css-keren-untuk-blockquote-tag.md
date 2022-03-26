@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-04-11T15:56:00.000+07:00
@@ -23,6 +25,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Apa itu blockquote tag  HTML <blockquote> tag digunakan untuk
+  menunjukkan kutipan panjang (yaitu kutipan yang berlangsung beberapa baris).
+excerpt: Apa itu blockquote tag  HTML <blockquote> tag digunakan untuk
   menunjukkan kutipan panjang (yaitu kutipan yang berlangsung beberapa baris).
 ---
 

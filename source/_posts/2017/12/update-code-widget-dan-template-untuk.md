@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: //res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
 date: 2017-12-12T18:41:00.000+07:00
@@ -25,6 +27,8 @@ thumbnail: //res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.co
 photos:
   - //res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
 description: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
+  Membuat Simple Safelink Converter)
+excerpt: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
   Membuat Simple Safelink Converter)
 ---
 

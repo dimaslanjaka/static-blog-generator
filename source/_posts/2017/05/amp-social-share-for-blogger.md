@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - HTML
 comments: true
 cover: https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ9xXGAmyFtnQR2UzPn6Xm7BqXdVwCLcB/s320/amp-blogger-social-share.webp
 date: 2017-05-14T13:28:00.000+07:00
@@ -28,6 +30,8 @@ thumbnail: https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ
 photos:
   - https://2.bp.blogspot.com/-BArnZ4MFXXQ/WITkNuW5pUI/AAAAAAAAAfM/6gQsyQ9xXGAmyFtnQR2UzPn6Xm7BqXdVwCLcB/s320/amp-blogger-social-share.webp
 description: AMP Social Share for Blogger  Updated (Twitter, Google, Facebook &
+  Whatsapp) Social Media & SEO
+excerpt: AMP Social Share for Blogger  Updated (Twitter, Google, Facebook &
   Whatsapp) Social Media & SEO
 ---
 

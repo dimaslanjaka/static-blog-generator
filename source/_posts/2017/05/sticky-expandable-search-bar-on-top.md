@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-05-27T12:33:00.000+07:00
@@ -25,6 +27,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: h2>How to create sticky search bar on top right pages using
+  classie.js</h2><br />Today i will share implementation of codes from
+excerpt: h2>How to create sticky search bar on top right pages using
   classie.js</h2><br />Today i will share implementation of codes from
 ---
 
