@@ -52,9 +52,9 @@ free -h
 ```
 
   
-this script used for better performance your vps (LINUX).  
+this script used for better performance your linux vps.
   
-
+incoming terms:
 * fix apache slow response
 * fix xampp web server slow
 * fix overload ram vps
