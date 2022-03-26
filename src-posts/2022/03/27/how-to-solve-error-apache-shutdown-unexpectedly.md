@@ -35,3 +35,7 @@ C:\xampp
 > Find `<VirtualHost _default_:443>` and change it to `<VirtualHost _default_:4443>`.
 > 
 > Find `ServerName localhost:443`. It’s possible that this hasn’t been set up yet and it reads `ServerName www.example.com:443`. In any case, change it to `ServerName localhost:4443`.
+
+#### Restart XAMPP
+- Stop and Start apache
+- Stop and start mysql
