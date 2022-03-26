@@ -1,6 +1,11 @@
 ---
 title: How to solve Error Apache shutdown unexpectedly updated 2022
 subtitle: Various step to fix xampp windows updated 2022
+tags:
+  - Apache
+  - XAMPP
+  - PHP
+  - MySQL
 date: 2022-03-26T23:46:00+0700
 updated: 2022-03-27T23:46:00+0700
 ---
