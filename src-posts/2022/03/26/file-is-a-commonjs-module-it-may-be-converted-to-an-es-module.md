@@ -2,6 +2,8 @@
 title: disable vscode alert: File is a CommonJS module; it may be converted to an ES module
 subtitle: disable vscode alert: File is a CommonJS module; it may be converted to an ES module
 cover: https://i.stack.imgur.com/Xo2sA.png
+date: 2022-03-26T04:27:16+0000
+updated: 2022-03-26T04:27:16+0000
 tags:
   - TS
   - JS
