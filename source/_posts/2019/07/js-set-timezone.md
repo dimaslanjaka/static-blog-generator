@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2019-07-17T17:05:00.001+07:00
@@ -23,6 +25,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "Set timezone javascript without using any pluginsconst DATE  new
+  Date().toLocaleString(en-US, { timeZone:"
+excerpt: "Set timezone javascript without using any pluginsconst DATE  new
   Date().toLocaleString(en-US, { timeZone:"
 ---
 

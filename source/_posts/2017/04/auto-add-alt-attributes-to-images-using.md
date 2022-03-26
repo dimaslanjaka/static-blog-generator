@@ -3,7 +3,9 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - JS
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5Zj3AddI7sOew19yh8zjKsfJC3Wlu0dFXd2rVQ
 date: 2017-04-15T22:52:00.000+07:00
@@ -24,6 +26,8 @@ thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5Zj3AddI7sOew19yh8zjKsfJC3Wlu0dFXd2rVQ
 description: Using jQuery to adding alt attributes to all images img> tags. Alt
+  attributes of images are one of SEO Score. Alt Tag SEO is
+excerpt: Using jQuery to adding alt attributes to all images img> tags. Alt
   attributes of images are one of SEO Score. Alt Tag SEO is
 ---
 
