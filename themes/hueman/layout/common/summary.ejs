@@ -1,5 +1,5 @@
 <!-- archive and homepage -->
-<article class="article article-summary<%= (post.direction && post.direction.toLowerCase() === 'rtl' ? ' rtl' : '') %>" itemprop="itemListElement">
+<article class="article article-summary<%= (post.direction && post.direction.toLowerCase() === 'rtl' ? ' rtl' : '') %>">
     <div class="article-summary-inner">
         <% if (theme.customize.thumbnail === true) { %>
         <%- partial('common/thumbnail', { counter: true }) %>
