@@ -5,6 +5,13 @@
   "terminal.integrated.env.windows": {
     "PATH": "node_modules\\.bin:bin:${env:PATH}"
   },
+  "editor.formatOnSave": false,
+  "[ejs]": {
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
   "typescript.tsc.autoDetect": "off",
