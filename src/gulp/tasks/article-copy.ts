@@ -121,7 +121,7 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
               }
               // merge php js css to programming
               if (Array.isArray(parse.metadata.tags)) {
-                const containsTag = [
+                const programTags = [
                   "php",
                   "css",
                   "js",
@@ -133,7 +133,8 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                   "html",
                   "mysql",
                   "database",
-                ].some((r) => {
+                ];
+                const containsTag = programTags.some((r) => {
                   const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
                   if (matchTag) {
                     parse.metadata.category.push(r.toUpperCase());
@@ -148,8 +149,15 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                   }
                 }
                 // remove duplicated tags and categories
-                parse.metadata.category = parse.metadata.category.uniqueStringArray();
-                parse.metadata.tags = parse.metadata.tags.uniqueStringArray();
+                const filterTagCat = function (arr: string[]) {
+                  return arr.map((item) => {
+                    if (item.toLowerCase() === "github") return "GitHub";
+                    // make programming tags uppercase
+                    if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
+                  });
+                };
+                parse.metadata.category = filterTagCat(parse.metadata.category.uniqueStringArray());
+                parse.metadata.tags = filterTagCat(parse.metadata.tags.uniqueStringArray());
                 // move 'programming' to first index
                 parse.metadata.category.forEach((str, i) => {
                   if (str === "Programming") {
