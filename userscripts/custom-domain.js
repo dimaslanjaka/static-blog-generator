@@ -1,6 +1,9 @@
+// add CNAME for github page custom domain
 const fs = require("fs");
 const path = require("path");
+
+const domain = "www.webmanajemen.com";
+console.log(`Add CNAME (${domain})`);
 const prodFolder = path.join(__dirname, "../docs");
 if (!fs.existsSync(prodFolder)) fs.mkdirSync(prodFolder);
-console.log("Add CNAME");
-fs.writeFileSync(path.join(prodFolder, "CNAME"), "www.webmanajemen.com");
+fs.writeFileSync(path.join(prodFolder, "CNAME"), domain);
