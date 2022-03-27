@@ -157,7 +157,7 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                     if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
                   });
                 };
-                parse.metadata.category = filterTagCat(parse.metadata.category.uniqueStringArray());
+                parse.metadata.category = parse.metadata.category.uniqueStringArray();
                 parse.metadata.tags = filterTagCat(parse.metadata.tags.uniqueStringArray());
                 // move 'programming' to first index
                 parse.metadata.category.forEach((str, i) => {
