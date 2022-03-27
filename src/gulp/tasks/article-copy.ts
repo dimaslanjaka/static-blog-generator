@@ -162,7 +162,7 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                 parse.metadata.tags = filterTagCat(parse.metadata.tags.uniqueStringArray());
                 // move 'programming' to first index
                 parse.metadata.category.forEach((str, i) => {
-                  if (str === "Programming") {
+                  if (str.toLowerCase().trim() === "programming") {
                     parse.metadata.category = parse.metadata.category.move(i, 0);
                   }
                 });
