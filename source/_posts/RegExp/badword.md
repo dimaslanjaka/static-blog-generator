@@ -22,6 +22,7 @@ thumbnail: /RegExp/RegExp/badwords.png
 photos:
   - /RegExp/RegExp/badwords.png
 description: Match string not containing string, exclude badwords
+excerpt: Match string not containing string, exclude badwords
 ---
 
 <!--toc-->
