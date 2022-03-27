@@ -15,7 +15,7 @@ Powershell is alternative for default terminal windows.
 
 ## Powershell problem lists with php
 - cannot call php from powershell
-- php : The term 'php' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the 
+- php : The term 'php' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
 name, or if a path was included, verify that the path is correct and try again.
 At line:1 char:1
 
