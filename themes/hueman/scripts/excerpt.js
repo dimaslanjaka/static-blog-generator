@@ -17,7 +17,7 @@ function cleanString(text) {
   // get only text without special chars
   // except space
   // return text.replace(/[^a-zA-Z ]/g, "");
-  return text.replace(/^[A-Za-z0-9 ]+$/gm, '');
+  return text.replace(/^[A-Za-z0-9-_., ]+$/gm, '');
 }
 
 hexo.extend.helper.register('cleanString', cleanString);
