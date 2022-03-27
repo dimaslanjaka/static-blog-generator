@@ -21,6 +21,7 @@ At line:1 char:1
 
 ## Fix solution
 - Open directory of your `php.exe` for example mine is `D:\xampp\php\php.exe`.
+![Environtment Variables Windows](https://user-images.githubusercontent.com/12471057/160263043-e813f6e5-9ab3-4b6d-816b-8228e1928f07.png)
 - Create new file called `php.ps1` and paste below codes:
 ```powershell
 #!/usr/bin/env pwsh
