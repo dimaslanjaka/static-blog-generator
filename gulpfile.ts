@@ -25,6 +25,7 @@ import bluebird from "bluebird";
 import articleCopy from "./src/gulp/tasks/article-copy";
 // `gulp article:date`
 import "./src/gulp/tasks/article-date";
+import articleDate from "./src/gulp/tasks/article-date";
 
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
@@ -148,10 +149,23 @@ gulp.task("article:img", (done) => {
     .all(posts)
     .map(parsePost)
     .each((post) => {
-      if (post) {
-        return downloadImg(post);
-      }
+      if (post) return downloadImg(post);
     });
+  //.finally(() => done());
+});
+
+gulp.task("article:date", (done) => {
+  // get post from ${config.source_dir}/_posts
+  const posts = loopDir(path.join(__dirname, config.source_dir, "_posts"))
+    .filter((f) => f.endsWith(".md"))
+    .unique();
+  return bluebird
+    .all(posts)
+    .map(parsePost)
+    .each((post) => {
+      if (post) return articleDate(post);
+    });
+  //.finally(() => done());
 });
 
 gulp.task("article:after-gen", (done) => {
