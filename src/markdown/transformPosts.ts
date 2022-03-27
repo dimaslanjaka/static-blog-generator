@@ -157,6 +157,17 @@ export function parsePost(text: string): parsePostReturn | null {
         }
         // default category
         if (!meta.category) meta.category = ["Uncategorized"];
+        // default excerpt/description
+        if (meta.subtitle) {
+          meta.excerpt = meta.subtitle;
+          meta.description = meta.subtitle;
+        }
+        if (meta.description && !meta.excerpt) {
+          meta.excerpt = meta.description;
+        }
+        if (meta.excerpt && !meta.description) {
+          meta.description = meta.excerpt;
+        }
 
         let result: parsePostReturn = {
           metadataString: m[0],
