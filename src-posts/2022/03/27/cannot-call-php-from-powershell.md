@@ -77,3 +77,5 @@ The execution policy can be change to the Unrestricted for all users in the syst
 **incoming terms (problem lists fixable with this article):**
 - PowerShell “Running script is disabled on this system” Error and Solution
 - PowerShell - Running scripts is disabled on this system
+- php.cmd
+- php.ps1
