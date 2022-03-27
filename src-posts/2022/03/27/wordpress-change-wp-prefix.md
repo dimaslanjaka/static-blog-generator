@@ -8,7 +8,22 @@ tags:
   - MySQL
 ---
 
-## SQL method to change wordpress table prefix
+## How to change wordpress table prefix
+> NOTE: replace `NEWPREFIX_` and `OLDPREFIX_` with yours
+
+## Step 1
+### Change variable value of wp-config.php
+Locate the following entry:
+```php
+$table_prefix = 'OLDPREFIX_';
+```
+Replace with new entry:
+```php
+$table_prefix = 'NEWPREFIX_';
+```
+
+## Step 2 
+### Update SQL database to change wordpress table prefix
 1.  [Open your database in PhpMyAdmin](/p/search.html?q=access+database+phpmyadmin).
 2.  Click on the database name in the menu to the left to unfold all tables.
 3.  Select all tables that start with *wp_*; you should have 12 in total.
@@ -40,4 +55,4 @@ update NEWPREFIX_usermeta set meta_key = 'NEWPREFIX_user_level' where meta_key =
 update NEWPREFIX_usermeta set meta_key = 'NEWPREFIX_autosave_draft_ids' where meta_key = 'OLDPREFIX_autosave_draft_ids';
 update NEWPREFIX_options set option_name = 'NEWPREFIX_user_roles' where option_name = 'OLDPREFIX_user_roles';
 ```
-> replace `NEWPREFIX_` and `OLDPREFIX_` with yours
+
