@@ -151,6 +151,7 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                 // remove duplicated tags and categories
                 const filterTagCat = function (arr: string[]) {
                   return arr.map((item) => {
+                    if (item.toLowerCase() === "programming") return "Programming";
                     if (item.toLowerCase() === "github") return "GitHub";
                     if (item.toLowerCase() === "mysql") return "MySQL";
                     // make child of programming tags uppercase
