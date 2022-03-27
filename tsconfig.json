@@ -50,7 +50,7 @@
   ],
   "include": [
     "./gulpfile.ts",
-    //"./src/**/*",
+    "./src/**/*",
     "./userscripts/**/*"
   ],
   "ts-node": {

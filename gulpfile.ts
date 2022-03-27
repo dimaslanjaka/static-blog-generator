@@ -18,7 +18,6 @@ import moment from "moment";
 import YAML from "yaml";
 import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
-import { parse as parseHTML } from "node-html-parser";
 import downloadImg from "./src/gulp/fix/external-img";
 import bluebird from "bluebird";
 // `gulp article:copy`
@@ -26,6 +25,7 @@ import articleCopy from "./src/gulp/tasks/article-copy";
 // `gulp article:date`
 import "./src/gulp/tasks/article-date";
 import articleDate from "./src/gulp/tasks/article-date";
+import afterGenerate from "./src/gulp/fix/after-generate";
 
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;
@@ -82,64 +82,6 @@ function emptyDir(directory: string, cb: (arg0?: any) => void = null) {
     });
 }
 
-function afterGenerate(done: TaskCallback) {
-  const public_dir = path.join(__dirname, config.public_dir);
-  const loop = loopDir(public_dir);
-  const hexoURL = new URL(config.url);
-  const exclude = [
-    ...config.seo.links.exclude,
-    hexoURL.host,
-    "www.webmanajemen.com",
-    "https://github.com/dimaslanjaka",
-    "/dimaslanjaka1",
-    "dimaslanjaka.github.io",
-  ].uniqueStringArray();
-
-  for (let index = 0; index < loop.length; index++) {
-    const file = loop[index];
-    const isHtml = file.endsWith(".html");
-    if (isHtml) {
-      const doc = parseHTML(fs.readFileSync(file, "utf-8"));
-      const html = doc.querySelector("html");
-      if (html && !html.hasAttribute("lang")) html.setAttribute("lang", "en");
-
-      // safelinkify
-      const hrefs = doc.querySelectorAll("a");
-      if (hrefs.length) {
-        for (let i = 0; i < hrefs.length; i++) {
-          const element = hrefs[i];
-          let href = element.getAttribute("href");
-          // skip `/` homepage links
-          if (href && href.length > 2) {
-            if (href.startsWith("//")) href = config.url + href;
-            // skip hash and javascript anchors
-            if (!href.trim().match(/^(#|javascript:)/i) && href.trim().length) {
-              // only get external links
-              if (href.trim().match(/^https?:\/\//)) {
-                const matchHost = exclude.includes(new URL(href).host);
-                const matchHref = exclude.includes(href);
-                if (!matchHost) {
-                  element.setAttribute("rel", "nofollow noopener noreferer");
-                  element.setAttribute("target", "_blank");
-                }
-                if (!matchHost && !matchHref) {
-                  let safelink = "/page/safelink.html?url=" + Buffer.from(encodeURIComponent(href)).toString("base64");
-                  element.setAttribute("href", safelink);
-                }
-              }
-            }
-          }
-        }
-      }
-      //const memoryUsage = util.inspect(process.memoryUsage()).replace(/\s+/gm, " ");
-      //fs.appendFileSync(__dirname + "/tmp/inspect.log", memoryUsage + "\n");
-      let result = doc.toString();
-      fs.writeFileSync(file, result);
-    }
-  }
-  done();
-}
-
 gulp.task("article:img", (done) => {
   // get post from ${config.source_dir}/_posts
   const posts = loopDir(path.join(__dirname, config.source_dir, "_posts"))
@@ -169,7 +111,7 @@ gulp.task("article:date", (done) => {
 });
 
 gulp.task("article:after-gen", (done) => {
-  afterGenerate(done);
+  return afterGenerate(config);
 });
 
 gulp.task("article:clean", function (done) {
