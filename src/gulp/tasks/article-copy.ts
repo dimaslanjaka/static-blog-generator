@@ -152,7 +152,8 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                 const filterTagCat = function (arr: string[]) {
                   return arr.map((item) => {
                     if (item.toLowerCase() === "github") return "GitHub";
-                    // make programming tags uppercase
+                    if (item.toLowerCase() === "mysql") return "MySQL";
+                    // make child of programming tags uppercase
                     if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
                   });
                 };
