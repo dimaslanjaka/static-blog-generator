@@ -4,7 +4,6 @@ author:
   link: https://github.com/dimaslanjaka
 category:
   - Programming
-  - JS
 comments: true
 cover: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 date: 2021-11-17T16:00:00+07:00
@@ -27,7 +26,6 @@ thumbnail: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-heade
 photos:
   - https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 description: Usage, explanations of node options for nodejs
-excerpt: Usage, explanations of node options for nodejs
 ---
 
 # NODEJS OPTIONS [ NODE_OPTIONS ]

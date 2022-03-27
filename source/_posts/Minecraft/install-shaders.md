@@ -21,8 +21,6 @@ photos:
   - /Minecraft/install-shaders/cover.jpg
 description: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial
   terperinci ini dengan screenshot
-excerpt: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci
-  ini dengan screenshot
 ---
 
 # Shaders
