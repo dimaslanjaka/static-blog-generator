@@ -15,7 +15,7 @@ function cleanString(text) {
   // return text.replace(/[\"\']/gim, '');
   // @see {@link https://stackoverflow.com/a/6555220/6404439}
   // get only text without special chars
-  // except space
+  // except spaces,.-_
   if (text) return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
   return text;
 }
