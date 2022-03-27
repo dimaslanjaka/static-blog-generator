@@ -44,7 +44,7 @@
   "compileOnSave": true,
   "exclude": [
     "./plugins/**/*",
-    "./typings/**/*",
+    "./types/**/*",
     "./node_modules/**/*",
     "./libs/compiler/**/*"
   ],
