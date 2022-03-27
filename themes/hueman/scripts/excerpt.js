@@ -23,15 +23,17 @@ function cleanString(text) {
 hexo.extend.helper.register('cleanString', cleanString);
 
 function excerpt_original(post) {
-  let excerpt;
-  if (post.excerpt) {
+  let excerpt = new String(post);
+  if (typeof post.excerpt == 'string') {
     excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
-  } else if (post.subtitle) {
+  } else if (typeof post.subtitle == 'string') {
     excerpt = post.subtitle.replace(/\<[^\>]+\>/g, '');
-  } else if (post.description) {
+  } else if (typeof post.description == 'string') {
     excerpt = post.description.replace(/\<[^\>]+\>/g, '');
-  } else {
+  } else if (typeof post.content == 'string') {
     excerpt = post.content.replace(/\<[^\>]+\>/g, '').substring(0, 200);
+  } else if (typeof post.title == 'string') {
+    excerpt = post.title;
   }
   // remove double/single quotes
   return cleanString(excerpt);
