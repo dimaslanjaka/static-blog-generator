@@ -161,11 +161,12 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                 parse.metadata.category = parse.metadata.category.uniqueStringArray();
                 parse.metadata.tags = filterTagCat(parse.metadata.tags.uniqueStringArray());
                 // move 'programming' to first index
-                parse.metadata.category.forEach((str, i) => {
-                  if (str.toLowerCase().trim() === "programming") {
-                    parse.metadata.category = parse.metadata.category.move(i, 0);
-                  }
-                });
+                if (parse.metadata.category.includes("Programming"))
+                  parse.metadata.category.forEach((str, i) => {
+                    if (str.toLowerCase().trim() === "programming") {
+                      parse.metadata.category = parse.metadata.category.move(i, 0);
+                    }
+                  });
                 //if (parse.metadata.category.includes("Programming")) console.log(parse.metadata.category);
               }
             }
