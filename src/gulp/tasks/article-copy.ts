@@ -60,9 +60,9 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
             if (parse.metadata) {
               // fix special char in metadata
               parse.metadata.title = cleanString(parse.metadata.title);
-              parse.metadata.subtitle = cleanString(parse.metadata.subtitle).replace(/(\n)/g, " ");
-              parse.metadata.excerpt = cleanString(parse.metadata.excerpt).replace(/(\n)/g, " ");
-              parse.metadata.description = cleanString(parse.metadata.description).replace(/(\n)/g, " ");
+              parse.metadata.subtitle = cleanString(parse.metadata.subtitle).replace(/(\n)/gm, " ");
+              parse.metadata.excerpt = cleanString(parse.metadata.excerpt).replace(/(\n)/gm, " ");
+              parse.metadata.description = cleanString(parse.metadata.description).replace(/(\n)/gm, " ");
               // fix post time
               if (parse.metadata.modified) {
                 if (!parse.metadata.updated) {
