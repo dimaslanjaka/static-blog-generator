@@ -156,6 +156,8 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                     if (item.toLowerCase() === "mysql") return "MySQL";
                     // make child of programming tags uppercase
                     if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
+                    // fallback
+                    return item;
                   });
                 };
                 parse.metadata.category = parse.metadata.category.uniqueStringArray();
