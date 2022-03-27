@@ -10,7 +10,7 @@ uuid: d469a16a-26c0-4888-8f6d-cf7ce1151856
 webtitle: Playbook88
 ---
 
-![](https://51.79.239.136/wp-content/uploads/2021/12/JP.gif)
+![Jackpot](https://51.79.239.136/wp-content/uploads/2021/12/JP.gif)
 
 ## TRIK BERMAIN JITU SPECIAL PRAGMATIC PLAY
 
