@@ -13,11 +13,15 @@ tags:
 
 ## Step 1
 ### Change variable value of wp-config.php
-Locate the following entry:
+1. Login to your control panel or via FTP.
+2. Open File Manager under Files & Security.
+3. Locate the file wp-config.php and check the box to select it.
+4. Edit the wp-config.php.
+5. Locate the following entry:
 ```php
 $table_prefix = 'OLDPREFIX_';
 ```
-Replace with new entry:
+6. Replace with new entry:
 ```php
 $table_prefix = 'NEWPREFIX_';
 ```
