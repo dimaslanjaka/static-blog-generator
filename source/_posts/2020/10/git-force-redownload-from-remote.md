@@ -12,7 +12,7 @@ location: ""
 modified: 2020-10-26T23:39:05.144+07:00
 subtitle: Tutorial
 tags:
-  - Github
+  - GitHub
 title: Git force redownload from remote repository
 type: post
 uuid: beb05131-0c41-4888-8b5e-d922308c54b5
