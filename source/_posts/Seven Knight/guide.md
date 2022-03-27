@@ -26,6 +26,7 @@ thumbnail: https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_
 photos:
   - https://cdn.nijigenfun.com/wp-content/uploads/2021/11/10145404/games_2021111001_cover.jpg
 description: Guide SK2 for F2P
+excerpt: Guide SK2 for F2P
 ---
 
 <div>

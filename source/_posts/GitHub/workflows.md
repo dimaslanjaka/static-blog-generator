@@ -25,6 +25,7 @@ thumbnail: /GitHub/workflows/cover.png
 photos:
   - /GitHub/workflows/cover.png
 description: Semua yang kamu harus tau tentang GitHub Workflows
+excerpt: Semua yang kamu harus tau tentang GitHub Workflows
 ---
 
 GitHub menyediakan templat alur kerja (<i>preconfigured workflow templates</i>) yang telah dikonfigurasi sebelumnya yang dapat Anda sesuaikan untuk membuat alur kerja integrasi berkelanjutan (<i>CI</i>) Anda sendiri. GitHub menganalisis kode Anda dan menunjukkan template <i>CI</i> yang mungkin berguna untuk repositori Anda. Misalnya, jika repositori Anda berisi Node/Program. [[source](https://docs.github.com/en/actions/quickstart)]
@@ -73,4 +74,4 @@ jobs:
 ```
 
 # Berikut ini daftar penggunaan dan tips trick untuk github workflow
-[Cara mempercepat kinerja github workflows](workflows-caches.md)
+[Cara mempercepat kinerja github workflows](workflows-caches.html)

@@ -25,6 +25,7 @@ thumbnail: /GitHub/workflows/events.png
 photos:
   - /GitHub/workflows/events.png
 description: Macam-macam events pada GitHub Workflows
+excerpt: Macam-macam events pada GitHub Workflows
 ---
 
 # Events yang memicu Github Workflow
