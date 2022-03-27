@@ -69,7 +69,7 @@ Set-ExecutionPolicy -Scope User Unrestricted
 #### Change Execution Policy to Unrestricted For All Users
 The execution policy can be change to the Unrestricted for all users in the system. In order to accomplish this the PowerShell terminal should be opened with the Local Administrator or Domain Administrator privileges. This is explained in the following posts.
 
-### Youtube video tutorial
+### Youtube video tutorial - fix running scripts is disabled on this system
 
 {% youtube F-fWwkG5Xrk %}
 
