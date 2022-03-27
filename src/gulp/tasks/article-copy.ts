@@ -23,6 +23,11 @@ function cleanString(text: string) {
   return text;
 }
 
+function removeMultipleWhiteSpaces(text: string) {
+  if (typeof text == "string") return text.replace(/\n|\s{2,}/gm, " ");
+  return text;
+}
+
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
@@ -60,9 +65,9 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
             if (parse.metadata) {
               // fix special char in metadata
               parse.metadata.title = cleanString(parse.metadata.title);
-              parse.metadata.subtitle = cleanString(parse.metadata.subtitle).replace(/(\n)/gm, " ");
-              parse.metadata.excerpt = cleanString(parse.metadata.excerpt).replace(/(\n)/gm, " ");
-              parse.metadata.description = cleanString(parse.metadata.description).replace(/(\n)/gm, " ");
+              parse.metadata.subtitle = removeMultipleWhiteSpaces(cleanString(parse.metadata.subtitle));
+              parse.metadata.excerpt = removeMultipleWhiteSpaces(cleanString(parse.metadata.excerpt));
+              parse.metadata.description = removeMultipleWhiteSpaces(cleanString(parse.metadata.description));
               // fix post time
               if (parse.metadata.modified) {
                 if (!parse.metadata.updated) {
