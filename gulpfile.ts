@@ -16,7 +16,7 @@ import { loopDir } from "./src/gulp/utils";
 import GoogleNewsSitemap, { ClassItemType } from "./packages/google-news-sitemap/src";
 import moment from "moment";
 import YAML from "yaml";
-import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
+//import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
 import downloadImg from "./src/gulp/fix/external-img";
 import bluebird from "bluebird";
@@ -122,8 +122,8 @@ gulp.task("article:clean", function (done) {
 });
 
 // extract blogger exported xml content to src-posts
-gulp.task("blogger", function (done) {
-  ["araka_id.xml" /*"webmanajemen.com.xml"*/].forEach((xml) => {
+/*gulp.task("blogger", function (done) {
+  ["araka_id.xml" /"webmanajemen.com.xml"/].forEach((xml) => {
     const mainXML = path.resolve("./userscripts/xml/" + xml);
     ///const testXML = path.resolve("packages/hexo-blogger-xml/xml/test.xml");
     gulpCore({
@@ -140,7 +140,7 @@ gulp.task("blogger", function (done) {
   });
 
   done();
-});
+});*/
 
 // minifying hexo generate result
 gulp.task("hexo:minify", function () {
