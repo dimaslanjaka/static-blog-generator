@@ -256,7 +256,9 @@ function download(callback: (processed: ImgLibData[]) => any) {
             .replace(new RegExp("^/source/_posts/"), "/");
           libraries[key].fullpath = fullpath.toString();
           // save images log
-          appendFileSync(join(cwd(), "tmp/images.log"), `[img] saved ${libraries[key].file}\n`);
+          const logfile = join(cwd(), "tmp/images.log");
+          if (!existsSync(dirname(logfile))) mkdirSync(dirname(logfile), { recursive: true });
+          appendFileSync(logfile, `[img] saved ${libraries[key].file}\n`);
         }
       }
     })
