@@ -2,6 +2,7 @@
 title: Change wordpress table prefix updated 2022
 date: 2022-03-27T03:02:25+0000
 updated: 2022-03-27T03:02:25+0000
+cover: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 tags:
   - Wordpress
   - MySQL
