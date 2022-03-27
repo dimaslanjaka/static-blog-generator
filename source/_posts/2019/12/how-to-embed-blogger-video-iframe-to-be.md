@@ -12,8 +12,8 @@ date: 2019-12-23T02:43:00.000+07:00
 lang: en
 location: ""
 modified: 2019-12-23T02:43:09.479+07:00
-subtitle: How to Embed Bloggers Iframe Video to Be Responsive  Actually the
-  video uploaded on Blogger doesnt need to be responsive because its
+subtitle: How to Embed Bloggers Iframe Video to Be Responsive Actually the video
+  uploaded on Blogger doesnt need to be responsive because its
 tags:
   - Share
   - HTML
@@ -26,9 +26,9 @@ updated: 2019-12-23T02:43:09+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/c1ec076b93bbc245f81fcb7f15845eca.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/c1ec076b93bbc245f81fcb7f15845eca.jpeg
-description: How to Embed Bloggers Iframe Video to Be Responsive  Actually the
+description: How to Embed Bloggers Iframe Video to Be Responsive Actually the
   video uploaded on Blogger doesnt need to be responsive because its
-excerpt: How to Embed Bloggers Iframe Video to Be Responsive  Actually the video
+excerpt: How to Embed Bloggers Iframe Video to Be Responsive Actually the video
   uploaded on Blogger doesnt need to be responsive because its
 ---
 

@@ -10,7 +10,7 @@ date: 2019-12-04T16:32:00.001+07:00
 lang: en
 location: ""
 modified: 2019-12-04T17:12:52.332+07:00
-subtitle: "Download lagu GIGI  Mohon Ampun Mp3 DENTAL - Please forgive Listen:
+subtitle: "Download lagu GIGI Mohon Ampun Mp3 DENTAL - Please forgive Listen:
   19,242 Duration: 282 MP3 size: 4.41MB Download Links"
 tags:
   - Musics
@@ -22,9 +22,9 @@ updated: 2019-12-04T17:12:52+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/9ed5dd84f2689b2d40aff92aa9b6009b.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/9ed5dd84f2689b2d40aff92aa9b6009b.jpeg
-description: "Download lagu GIGI  Mohon Ampun Mp3 DENTAL - Please forgive
-  Listen: 19,242 Duration: 282 MP3 size: 4.41MB Download Links"
-excerpt: "Download lagu GIGI  Mohon Ampun Mp3 DENTAL - Please forgive Listen:
+description: "Download lagu GIGI Mohon Ampun Mp3 DENTAL - Please forgive Listen:
+  19,242 Duration: 282 MP3 size: 4.41MB Download Links"
+excerpt: "Download lagu GIGI Mohon Ampun Mp3 DENTAL - Please forgive Listen:
   19,242 Duration: 282 MP3 size: 4.41MB Download Links"
 ---
 

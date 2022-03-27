@@ -10,7 +10,7 @@ date: 2017-04-23T23:18:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-23T23:18:04.065+07:00
-subtitle: Find and Fix broken links in Blogger  Redirect broken links for
+subtitle: Find and Fix broken links in Blogger Redirect broken links for
   SEOContent could be a king which is that the major on page SEO issue, you
 tags:
   - SEO
@@ -23,9 +23,9 @@ updated: 2017-04-23T23:18:04+07:00
 thumbnail: http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
 photos:
   - http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
-description: Find and Fix broken links in Blogger  Redirect broken links for
+description: Find and Fix broken links in Blogger Redirect broken links for
   SEOContent could be a king which is that the major on page SEO issue, you
-excerpt: Find and Fix broken links in Blogger  Redirect broken links for
+excerpt: Find and Fix broken links in Blogger Redirect broken links for
   SEOContent could be a king which is that the major on page SEO issue, you
 ---
 

@@ -10,8 +10,8 @@ date: 2018-11-30T18:06:00.000+07:00
 lang: en
 location: ""
 modified: 2018-11-30T18:06:04.705+07:00
-subtitle: Can OnePlus  be called a Flagship Killer? Digital Mobile Phones -
-  After many rumors about this smartphone, OnePlus 6 was finally
+subtitle: Can OnePlus be called a Flagship Killer? Digital Mobile Phones - After
+  many rumors about this smartphone, OnePlus 6 was finally
 tags:
   - Miscellaneous
 title: Can OnePlus 6 be called a Flagship Killer?
@@ -22,9 +22,9 @@ updated: 2018-11-30T18:06:04+07:00
 thumbnail: https://www.digitalponsel.com/wp-content/uploads/2018/09/xOnePlus-6-1024x538.jpg.pagespeed.ic.zkfkebn_T3.jpg
 photos:
   - https://www.digitalponsel.com/wp-content/uploads/2018/09/xOnePlus-6-1024x538.jpg.pagespeed.ic.zkfkebn_T3.jpg
-description: Can OnePlus  be called a Flagship Killer? Digital Mobile Phones -
+description: Can OnePlus be called a Flagship Killer? Digital Mobile Phones -
   After many rumors about this smartphone, OnePlus 6 was finally
-excerpt: Can OnePlus  be called a Flagship Killer? Digital Mobile Phones - After
+excerpt: Can OnePlus be called a Flagship Killer? Digital Mobile Phones - After
   many rumors about this smartphone, OnePlus 6 was finally
 ---
 
