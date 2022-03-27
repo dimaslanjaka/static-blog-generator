@@ -18,6 +18,10 @@ import { Hexo_Config } from "../../../types/_config";
 
 let tryCount = 0;
 
+function cleanString(text: string) {
+  return text.replace(/^[A-Za-z0-9-_., ]+$/gm, "");
+}
+
 /**
  * Copy source post directly into production posts without transform to multiple languages
  * @param done Callback
@@ -53,6 +57,11 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
           const parse = parsePost(file);
           if (parse) {
             if (parse.metadata) {
+              // fix special char in metadata
+              parse.metadata.title = cleanString(parse.metadata.title);
+              parse.metadata.subtitle = cleanString(parse.metadata.subtitle);
+              parse.metadata.excerpt = cleanString(parse.metadata.excerpt);
+              parse.metadata.description = cleanString(parse.metadata.description);
               // fix post time
               if (parse.metadata.modified) {
                 if (!parse.metadata.updated) {
@@ -106,7 +115,7 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                 parse.metadata.photos.push(parse.metadata.cover);
               }
               if (parse.metadata.photos) {
-                let photos: string[] = parse.metadata.photos;
+                const photos: string[] = parse.metadata.photos;
                 parse.metadata.photos = photos.unique();
               }
               // merge php js css to programming
@@ -120,7 +129,9 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                   "ts",
                   "typescript",
                   "javascript",
-                  "html", 'mysql', 'database'
+                  "html",
+                  "mysql",
+                  "database",
                 ].some((r) => {
                   const matchTag = parse.metadata.tags.map((str) => str.trim().toLowerCase()).includes(r);
                   if (matchTag) {
