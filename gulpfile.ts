@@ -25,7 +25,7 @@ import articleCopy from "./src/gulp/tasks/article-copy";
 // `gulp article:date`
 import "./src/gulp/tasks/article-date";
 import articleDate from "./src/gulp/tasks/article-date";
-import afterGenerate from "./src/gulp/fix/after-generate";
+import afterGenerate from "./src/gulp/tasks/after-generate";
 
 //import { gulpCore } from "hexo-blogger-xml";
 const config = YAML.parse(fs.readFileSync(path.join(__dirname, "_config.yml"), "utf8")) as Hexo_Config;

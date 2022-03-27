@@ -155,8 +155,11 @@ export function parsePost(text: string): parsePostReturn | null {
               {}
             ) as parsePostReturn["metadata"];
         }
-        // default category
+        // default category and tags
         if (!meta.category) meta.category = ["Uncategorized"];
+        if (!meta.category.length) meta.category.push("Uncategorized");
+        if (!meta.tags) meta.tags = [];
+
         // default excerpt/description
         if (meta.subtitle) {
           meta.excerpt = meta.subtitle;
