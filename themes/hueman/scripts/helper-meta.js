@@ -5,7 +5,8 @@
 *     <%- meta(post) %>
 */
 function trim (str) {
-    return str.trim().replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
+    if (typeof str == 'string') return str.trim().replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
+    return str;
 }
 
 function split (str, sep) {
