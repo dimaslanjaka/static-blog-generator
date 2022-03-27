@@ -8,6 +8,7 @@ tags:
   - MySQL
 date: 2022-03-26T23:46:00+0700
 updated: 2022-03-27T23:46:00+0700
+cover: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
 ---
 
 ## How to solve "Error: Apache shutdown unexpectedly"?
