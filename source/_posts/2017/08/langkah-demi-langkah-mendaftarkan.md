@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka 2
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
 date: 2017-08-26T21:53:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sugeng.id/blog/wp-content/uploads/2015/02/SEO-400x386.png
 date: 2017-04-10T12:42:00.000+07:00

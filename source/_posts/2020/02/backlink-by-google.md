@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
 date: 2020-02-05T23:39:00.002+07:00

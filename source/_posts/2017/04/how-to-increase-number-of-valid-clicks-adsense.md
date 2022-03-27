@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense-300x300.jpg
 date: 2017-04-24T08:08:00.000+07:00

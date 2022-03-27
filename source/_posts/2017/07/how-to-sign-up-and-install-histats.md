@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-wRS-Eyu86jI/V1EjfzBfDBI/AAAAAAAAH3g/6KiOnExqzUE_FGzf2zLefBXrt78IWbJ1gCLcB/s320/histats.jpg
 date: 2017-07-30T03:00:00.000+07:00

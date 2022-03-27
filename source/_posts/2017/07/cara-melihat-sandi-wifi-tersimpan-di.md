@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png
 date: 2017-07-10T16:26:00.001+07:00

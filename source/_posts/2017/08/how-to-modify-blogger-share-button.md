@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/00073980860956332189
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png
 date: 2017-08-23T09:55:00.000+07:00

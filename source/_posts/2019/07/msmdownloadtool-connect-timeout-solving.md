@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-giqsH22jmJk/XS6iSSs03bI/AAAAAAAAAao/fbiS01VwdK89uUQ7oe0FCI2X5Tm-xEl9gCLcBGAs/s1600/msmdownloadtool-flash-oppo-a71-2018-cph1801.jpg
 date: 2019-07-17T11:22:00.000+07:00

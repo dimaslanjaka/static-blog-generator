@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s0.dunia21.net/wp-content/uploads/2018/04/film-padmaavat-2018.jpg
 date: 2018-12-12T07:38:00.000+07:00

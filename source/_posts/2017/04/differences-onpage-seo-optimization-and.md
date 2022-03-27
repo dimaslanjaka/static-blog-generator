@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-nWTezguuZbI/WMNWsyTxqyI/AAAAAAAAGDY/Vhl11bnyteQw4xPJR7atzUHixsNqixmBQCLcB/s280/optimasi-seo-onpage-dan-seo-offpage.png
 date: 2017-04-28T17:59:00.000+07:00

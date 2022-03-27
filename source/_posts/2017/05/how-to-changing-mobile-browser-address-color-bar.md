@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://3.bp.blogspot.com/-ItMBdFpxYYE/V_H7ypdUiWI/AAAAAAAAESI/g1v0CDfhJR4-4PAqBUijaH0erCXuOmuNQCLcB/s550/Mengganti%2BWarna%2BAddress%2BBar%2BBrowser%2BHandphone%2BAgar%2BSesuai%2BLayout%2BBlog%2B01.jpg
 date: 2017-05-23T22:53:00.000+07:00

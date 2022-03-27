@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/00073980860956332189
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
 date: 2017-08-29T20:38:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.shoutmeloud.com/wp-content/uploads/2012/04/Increase-Adsense-Earning.jpg
 date: 2017-04-09T14:00:00.000+07:00

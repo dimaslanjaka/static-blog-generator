@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-VwfKH6fqBk0/WaR0UFJU_1I/AAAAAAAAAC4/UX3FZFBayIcxGx5tHIiHEYiiFB0YR93YQCLcBGAs/s320/adsense-ctr-device-1348751497.png
 date: 2017-08-25T16:44:00.000+07:00

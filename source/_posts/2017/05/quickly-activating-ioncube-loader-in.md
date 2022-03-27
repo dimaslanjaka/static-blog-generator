@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/00073980860956332189
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-nZHOJ0yIwFA/VxdhC6oKlcI/AAAAAAAAChg/eNqEsF4QEbcPbkDo3sPQPyaQkWAnlFBAwCLcB/s320/ioncube_loader.png
 date: 2017-05-16T19:52:00.001+07:00

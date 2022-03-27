@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
 date: 2018-12-22T13:43:00.000+07:00

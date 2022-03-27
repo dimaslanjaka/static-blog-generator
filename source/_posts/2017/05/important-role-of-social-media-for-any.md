@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
 date: 2017-05-10T06:31:00.000+07:00

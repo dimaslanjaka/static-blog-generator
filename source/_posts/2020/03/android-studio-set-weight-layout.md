@@ -3,7 +3,8 @@ author:
   nick: Kuswati
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 date: 2020-03-08T16:44:00.001+07:00

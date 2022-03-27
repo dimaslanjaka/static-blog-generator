@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense3-copy-300x254.jpg
 date: 2017-09-08T08:02:00.000+07:00

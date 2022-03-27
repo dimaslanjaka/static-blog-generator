@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.jalantikus.com/assets/cache/0/0/apps/2018/08/29/simontok-a390b.png
 date: 2018-11-19T21:39:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://dimaslanjaka-storage.000webhostapp.com/img.php?type=jpeg&url=https://layarindo21.ws/wp-content/uploads/2017/04/Telaga_Angker_1984_obverse_wiki-150x150.jpg
 date: 2018-11-11T05:51:00.000+07:00

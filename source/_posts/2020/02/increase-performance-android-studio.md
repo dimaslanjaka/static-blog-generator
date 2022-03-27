@@ -3,7 +3,8 @@ author:
   nick: Kus Wati
   link: https://www.blogger.com/profile/06399286952380672824
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
 date: 2020-02-25T05:25:00.001+07:00

@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/00073980860956332189
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://www.tutorial-webdesign.com/wp-content/uploads/2015/06/froont-responsive-web-design.jpg
 date: 2017-05-15T20:59:00.000+07:00

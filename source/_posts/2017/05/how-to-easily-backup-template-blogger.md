@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-ckNqKjK4iac/WRb5CltPGFI/AAAAAAAAACE/KXjMhakpN2MA2CWE3T3_L_JD56H0MffQwCLcB/s1600/download.png
 date: 2017-05-13T14:17:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/icon_content/2018/05/17/06/57/download-lagu-selama-matahari-terbit-dari-timur-cinta-ku-padamu-takan-pernah-lunturmp3-mp3-gratis-di-sitelagump3com.png
 date: 2018-11-08T05:07:00.001+07:00

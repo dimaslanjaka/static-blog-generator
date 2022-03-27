@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-ci6cJ-WlLo8/WKQ4JcDQ4pI/AAAAAAAAF0I/Gp5LD-xDMgYr0It3EAZWWVkDlvSijot6QCLcB/s280/judul-dan-deskripsi-penelusuran-di-pencarian-google.jpg
 date: 2017-04-14T21:41:00.000+07:00

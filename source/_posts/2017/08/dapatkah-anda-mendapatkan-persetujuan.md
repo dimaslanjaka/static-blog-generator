@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka 2
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
 date: 2017-08-24T15:30:00.000+07:00

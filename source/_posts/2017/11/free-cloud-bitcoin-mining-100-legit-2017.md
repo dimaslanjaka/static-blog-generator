@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bitkonga.com/wp-content/uploads/2016/12/Bitcoin-cloud-mining.jpg
 date: 2017-11-12T06:48:00.001+07:00

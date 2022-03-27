@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
 date: 2017-04-09T10:38:00.000+07:00

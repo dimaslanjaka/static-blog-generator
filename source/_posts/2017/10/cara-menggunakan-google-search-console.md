@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-google.png
 date: 2017-10-20T10:46:00.000+07:00

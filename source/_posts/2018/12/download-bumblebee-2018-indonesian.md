@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/12/film-bumblebee-2018-lk21.jpg
 date: 2018-12-21T13:42:00.000+07:00

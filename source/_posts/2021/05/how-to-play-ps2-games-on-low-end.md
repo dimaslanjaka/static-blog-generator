@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka
   link: https://www.blogger.com/profile/07981649157148639830
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
 date: 2021-05-14T04:15:00.001+07:00

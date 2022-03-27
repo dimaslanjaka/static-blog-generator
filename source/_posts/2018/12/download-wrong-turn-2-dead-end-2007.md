@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2015/12/film-wrong-turn-2-dead-end-2007.jpg
 date: 2018-12-23T19:53:00.000+07:00

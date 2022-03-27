@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/03/Download-Drama-Korea-My-Mister-Subtitle-Indonesia.jpg?resize=390%2C270&ssl=1
 date: 2018-11-20T21:17:00.000+07:00

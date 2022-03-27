@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/6b063537c79ace6e9123dd35249248fa.jpeg
 date: 2019-12-07T00:55:00.000+07:00

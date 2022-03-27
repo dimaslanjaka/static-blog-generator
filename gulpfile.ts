@@ -18,7 +18,7 @@ import moment from "moment";
 import YAML from "yaml";
 //import gulpCore from "./packages/hexo-blogger-xml/src/gulp-core";
 import { Hexo_Config } from "./types/_config";
-import downloadImg from "./src/gulp/fix/external-img";
+import downloadImg from "./src/gulp/tasks/external-img";
 import bluebird from "bluebird";
 // `gulp article:copy`
 import articleCopy from "./src/gulp/tasks/article-copy";

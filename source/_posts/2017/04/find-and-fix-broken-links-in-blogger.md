@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
 date: 2017-04-23T23:18:00.000+07:00

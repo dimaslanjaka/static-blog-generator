@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.org/wp-content/uploads/2017/11/film-birth-of-the-dragon-2017.jpg
 date: 2019-01-21T00:23:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-q6ZKyisuRjs/VKp_mksoudI/AAAAAAAABqU/8VM-NTbbi64/s1600/short%2Blink%2Bgoogle.png
 date: 2017-05-16T07:37:00.000+07:00

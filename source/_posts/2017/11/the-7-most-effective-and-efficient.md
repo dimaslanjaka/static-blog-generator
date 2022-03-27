@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
 date: 2017-11-14T10:00:00.000+07:00

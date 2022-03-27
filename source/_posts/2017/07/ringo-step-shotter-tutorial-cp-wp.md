@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 date: 2017-07-07T16:55:00.001+07:00

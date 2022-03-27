@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-WFX0GRHO_hU/VW1H7LU1faI/AAAAAAAABmU/hFAoVMjR--M/s1600/mengaktifkan%2Btampilan%2Bseluler%2Bpada%2Bblog.png
 date: 2017-04-26T16:21:00.000+07:00

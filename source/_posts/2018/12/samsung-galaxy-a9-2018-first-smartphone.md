@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.digitalponsel.com/wp-content/uploads/2018/11/xSamsung-Galaxy-A9.jpg.pagespeed.ic.BISLCcxlaz.jpg
 date: 2018-12-01T21:31:00.000+07:00

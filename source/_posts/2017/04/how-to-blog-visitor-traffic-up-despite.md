@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://sugeng.id/blog/wp-content/uploads/2016/01/Jarang-posting-400x336.png
 date: 2017-04-18T12:18:00.000+07:00

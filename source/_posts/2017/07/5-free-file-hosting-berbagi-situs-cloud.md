@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://www.dropbox.com/s/nmlirhi6f5ktcha/Screenshot_2017-07-25-10-07-04-237_com.android.chrome.png?dl=1
 date: 2017-07-25T10:10:00.001+07:00

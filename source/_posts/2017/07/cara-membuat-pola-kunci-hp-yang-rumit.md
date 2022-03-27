@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://image.ibb.co/eyVsN5/13438874_1966615786928595_9194443384423239792_n.jpg
 date: 2017-07-19T19:38:00.002+07:00

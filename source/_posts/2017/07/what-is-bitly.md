@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&h=232
 date: 2017-07-20T10:47:00.000+07:00

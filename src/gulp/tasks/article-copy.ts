@@ -76,13 +76,10 @@ export default function articleCopy(config: Hexo_Config, done: TaskCallback) {
                   const updated = moment(parse.metadata.updated);
                   const modified = moment(parse.metadata.modified);
                   const same = updated.isSame(modified, "date");
-                  //console.log('updated', updated);
-                  //console.log('modified', modified);
-                  //console.log('same', same);
+                  // if meta.modified != meta.updated apply meta.modified to meta.updated
                   if (!same) {
                     // java format yyyy-MM-dd'T'HH:mm:ssZ
                     parse.metadata.updated = moment(parse.metadata.modified).format("YYYY-MM-DDTHH:mm:ssZ");
-                    //console.log(parse.metadata.updated)
                   }
                 }
               }
