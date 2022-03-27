@@ -10,8 +10,8 @@ date: 2019-07-21T20:26:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-23T01:56:17.590+07:00
-subtitle: open terminal, type 64 bitwget
-  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 32
+subtitle: open terminal, type64 bitwget
+  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb32
   bit wget
 tags:
   - Linux/Unix
@@ -23,11 +23,11 @@ updated: 2019-07-23T01:56:17+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
-description: open terminal, type 64 bitwget
-  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 32
+description: open terminal, type64 bitwget
+  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb32
   bit wget
-excerpt: open terminal, type 64 bitwget
-  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 32
+excerpt: open terminal, type64 bitwget
+  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb32
   bit wget
 ---
 

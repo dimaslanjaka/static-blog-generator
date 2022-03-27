@@ -12,7 +12,7 @@ date: 2019-09-22T10:13:00.000+07:00
 lang: en
 location: ""
 modified: 2019-09-22T10:13:14.548+07:00
-subtitle: "CSSstyle> body { -webkit-touch-callout: none; -webkit-user-select:
+subtitle: "CSSstyle> body  -webkit-touch-callout: none; -webkit-user-select:
   none; -khtml-user-select: none;"
 tags:
   - CSS
@@ -25,9 +25,9 @@ updated: 2019-09-22T10:13:14+07:00
 thumbnail: https://i.stack.imgur.com/3pgKv.png
 photos:
   - https://i.stack.imgur.com/3pgKv.png
-description: "CSSstyle> body { -webkit-touch-callout: none; -webkit-user-select:
+description: "CSSstyle> body  -webkit-touch-callout: none; -webkit-user-select:
   none; -khtml-user-select: none;"
-excerpt: "CSSstyle> body { -webkit-touch-callout: none; -webkit-user-select:
+excerpt: "CSSstyle> body  -webkit-touch-callout: none; -webkit-user-select:
   none; -khtml-user-select: none;"
 ---
 

@@ -1,5 +1,5 @@
 ---
-cover: https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 date: 2022-03-25T00:00:00+07:00
 subtitle: High Pagerank Dofollow Directory List
 tags:
@@ -10,12 +10,12 @@ updated: 2022-03-25
 uuid: 2bbd77ce-1bda-4888-8da3-b9f6763917bc
 category:
   - Uncategorized
-lang: en
-description: High Pagerank Dofollow Directory List
 excerpt: High Pagerank Dofollow Directory List
-thumbnail: https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+description: High Pagerank Dofollow Directory List
+lang: en
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 photos:
-  - https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 ---
 
 ** If I get a new one, I will always update the list. For now and also for the future, I suggest making between dofollow backlinks and nofollow backlinks that lead to a balanced blog, or still in a very reasonable category**, if you don't want your blog to get Google Penalty sanctions later.

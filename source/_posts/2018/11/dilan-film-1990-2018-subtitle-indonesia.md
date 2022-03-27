@@ -10,11 +10,11 @@ date: 2018-11-19T02:25:00.000+07:00
 lang: en
 location: ""
 modified: 2018-11-19T02:25:26.038+07:00
-subtitle: Watching Film Dilan 990 (2018) Subtitles Indonesia - It was 1990.
-  Milea just moved from Jakarta to Bandung. She met a boy named
+subtitle: Watching Film Dilan 990 2018 Subtitles Indonesia - It was 1990. Milea
+  just moved from Jakarta to Bandung. She met a boy named
 tags:
   - Movies
-title: Dilan Film 1990 (2018) Subtitle Indonesia Movie
+title: Dilan Film 1990 2018 Subtitle Indonesia Movie
 type: post
 uuid: d4a60931-1ae0-4888-89ed-72b59d8cada3
 webtitle: WMI Gitlab
@@ -22,9 +22,9 @@ updated: 2018-11-19T02:25:26+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: Watching Film Dilan 990 (2018) Subtitles Indonesia - It was 1990.
+description: Watching Film Dilan 990 2018 Subtitles Indonesia - It was 1990.
   Milea just moved from Jakarta to Bandung. She met a boy named
-excerpt: Watching Film Dilan 990 (2018) Subtitles Indonesia - It was 1990. Milea
+excerpt: Watching Film Dilan 990 2018 Subtitles Indonesia - It was 1990. Milea
   just moved from Jakarta to Bandung. She met a boy named
 ---
 

@@ -18,7 +18,7 @@ tags:
   - JS
   - Blogger
   - Tips & Tricks
-title: Tutorial Membuat Blogspot Safelink Converter Work 100%
+title: Tutorial Membuat Blogspot Safelink Converter Work 100
 type: post
 uuid: 1f3c94a9-8c42-4888-8c6e-512a73cf0656
 webtitle: WMI Gitlab

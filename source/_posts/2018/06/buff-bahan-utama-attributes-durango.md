@@ -16,7 +16,7 @@ tags:
   - Durango
   - Android
   - Tips & Tricks
-title: Buff Bahan Utama (Attributes) - Durango Wild Lands
+title: Buff Bahan Utama Attributes - Durango Wild Lands
 type: post
 uuid: dc3ecfd5-2485-4888-89ea-d246aa0d5937
 webtitle: WMI Gitlab

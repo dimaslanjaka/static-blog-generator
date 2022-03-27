@@ -14,7 +14,7 @@ subtitle: Dive Brief GameStop mengumumkan minggu lalu bahwa ia menjual divisi
   Spring Mobile dan 1.289 toko ritel yang beroperasi
 tags:
   - Miscellaneous
-title: Gamestop Menjual Bisnis Seluler seharga $ 700 juta
+title: Gamestop Menjual Bisnis Seluler seharga  700 juta
 type: post
 uuid: f0c259e4-fdc5-4888-8012-0d048d4e42f4
 webtitle: WMI Gitlab

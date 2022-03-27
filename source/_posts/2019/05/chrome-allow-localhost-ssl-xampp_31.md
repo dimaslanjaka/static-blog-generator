@@ -11,7 +11,7 @@ lang: en
 location: ""
 modified: 2019-05-31T18:33:21.822+07:00
 subtitle: "Input into chrome address bar
-  chrome://flags/#allow-insecure-localhostenable it, then restart the chrome
+  chrome://flags/allow-insecure-localhostenable it, then restart the chrome
   browser. seems like this :"
 tags:
   - Tips & Tricks
@@ -24,10 +24,10 @@ thumbnail: https://1.bp.blogspot.com/-eg2mJWQjW-A/XPEQ2UeWMCI/AAAAAAAAAZU/_CDwAD
 photos:
   - https://1.bp.blogspot.com/-eg2mJWQjW-A/XPEQ2UeWMCI/AAAAAAAAAZU/_CDwADdk058CT_Iu1TMGtcURu6Y5vMHkwCLcBGAs/s320/WhatsApp%2BImage%2B2019-05-31%2Bat%2B6.30.22%2BPM.jpeg
 description: "Input into chrome address bar
-  chrome://flags/#allow-insecure-localhostenable it, then restart the chrome
+  chrome://flags/allow-insecure-localhostenable it, then restart the chrome
   browser. seems like this :"
 excerpt: "Input into chrome address bar
-  chrome://flags/#allow-insecure-localhostenable it, then restart the chrome
+  chrome://flags/allow-insecure-localhostenable it, then restart the chrome
   browser. seems like this :"
 ---
 

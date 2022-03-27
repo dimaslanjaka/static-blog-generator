@@ -17,7 +17,7 @@ tags:
   - Blogger
   - HTML
   - AMP
-title: Memasang komentar facebook di Blogger​ AMP
+title: Memasang komentar facebook di Blogger AMP
 type: post
 uuid: 580f2618-b09c-4888-821d-11791192ff77
 webtitle: WMI Gitlab

@@ -10,8 +10,8 @@ date: 2019-02-05T01:51:00.000+07:00
 lang: en
 location: ""
 modified: 2019-02-05T01:51:25.647+07:00
-subtitle: Untungnya Font CATATAN Font ini GRATIS 100% UNTUK PENGGUNAAN
-  KOMERSIAL! Tetapi setiap donasi sangat dihargai. Akun Paypal
+subtitle: Untungnya Font CATATAN Font ini GRATIS 100 UNTUK PENGGUNAAN KOMERSIAL
+  Tetapi setiap donasi sangat dihargai. Akun Paypal
 tags:
   - Fonts
   - Miscellaneous
@@ -23,9 +23,9 @@ updated: 2019-02-05T01:51:25+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/543ca35a6b694410bbbbbdccb0d8b046.jpg
-description: Untungnya Font CATATAN Font ini GRATIS 100% UNTUK PENGGUNAAN
-  KOMERSIAL! Tetapi setiap donasi sangat dihargai. Akun Paypal
-excerpt: Untungnya Font CATATAN Font ini GRATIS 100% UNTUK PENGGUNAAN KOMERSIAL!
+description: Untungnya Font CATATAN Font ini GRATIS 100 UNTUK PENGGUNAAN
+  KOMERSIAL Tetapi setiap donasi sangat dihargai. Akun Paypal
+excerpt: Untungnya Font CATATAN Font ini GRATIS 100 UNTUK PENGGUNAAN KOMERSIAL
   Tetapi setiap donasi sangat dihargai. Akun Paypal
 ---
 

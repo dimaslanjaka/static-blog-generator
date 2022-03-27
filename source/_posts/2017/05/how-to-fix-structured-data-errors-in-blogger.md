@@ -12,8 +12,8 @@ date: 2017-05-07T13:05:00.000+07:00
 lang: en
 location: ""
 modified: 2017-05-07T13:05:10.899+07:00
-subtitle: How to Fix Structured Data Errors in Blogger 100% Fix Use Schema
-  Markup - Boost Your SEO Be it Google or the
+subtitle: How to Fix Structured Data Errors in Blogger 100 Fix Use Schema Markup
+  - Boost Your SEO Be it Google or the
 tags:
   - SEO
   - Blogger
@@ -26,9 +26,9 @@ updated: 2017-05-07T13:05:10+07:00
 thumbnail: https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp
 photos:
   - https://4.bp.blogspot.com/-DhtbWc4gbkI/V-LrKhHdxvI/AAAAAAAAARI/u-a3KwShRlQHQX9NBHBUw6_hnniNCJYsACLcB/s320/fix-structured-data-errors.webp
-description: How to Fix Structured Data Errors in Blogger 100% Fix Use Schema
+description: How to Fix Structured Data Errors in Blogger 100 Fix Use Schema
   Markup - Boost Your SEO Be it Google or the
-excerpt: How to Fix Structured Data Errors in Blogger 100% Fix Use Schema Markup
+excerpt: How to Fix Structured Data Errors in Blogger 100 Fix Use Schema Markup
   - Boost Your SEO Be it Google or the
 ---
 
