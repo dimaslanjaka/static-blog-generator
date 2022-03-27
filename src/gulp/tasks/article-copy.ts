@@ -19,7 +19,7 @@ import { Hexo_Config } from "../../../types/_config";
 let tryCount = 0;
 
 function cleanString(text: string) {
-  if (text) return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, "");
+  if (typeof text == "string") return text.replace(/[^a-zA-Z0-9.,-_ ]/gm, "");
   return text;
 }
 
