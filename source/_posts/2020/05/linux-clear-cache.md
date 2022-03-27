@@ -29,7 +29,7 @@ photos:
 ---
 
 ```bash
-                                                                             #!/bin/bash
+#!/bin/bash
 #clean page cache
 #sync
 #echo 1 >/proc/sys/vm/drop_caches
@@ -56,9 +56,9 @@ printf '\n%s\n\n' 'Ram-cache and Swap Cleared'
 free -h
 ```
 
-  
+
 this script used for better performance your linux vps.
-  
+
 incoming terms:
 * fix apache slow response
 * fix xampp web server slow

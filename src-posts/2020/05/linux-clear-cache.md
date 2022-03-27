@@ -3,7 +3,7 @@ author:
   nick: Kuswati
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
-category: 
+category:
   - Programming
   - Bash
 comments: true
@@ -24,7 +24,7 @@ updated: 2022-03-26T05:37:59+0000
 ---
 
 ```bash
-                                                                             #!/bin/bash
+#!/bin/bash
 #clean page cache
 #sync
 #echo 1 >/proc/sys/vm/drop_caches
@@ -51,9 +51,9 @@ printf '\n%s\n\n' 'Ram-cache and Swap Cleared'
 free -h
 ```
 
-  
+
 this script used for better performance your linux vps.
-  
+
 incoming terms:
 * fix apache slow response
 * fix xampp web server slow
