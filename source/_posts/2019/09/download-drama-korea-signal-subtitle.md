@@ -14,7 +14,7 @@ subtitle: Korean Drama Signal Indonesian Subtitles Signal Synopsis The Korean
   drama Signal Sub Indo tells the story of a man named Park Hae
 tags:
   - Movies
-title: Download Drama Korea Signal Subtitle Indonesia 1 - 16(end)
+title: Download Drama Korea Signal Subtitle Indonesia 1 - 16end
 type: post
 uuid: 7545ffbe-17cc-4888-89ef-6d054f9e0258
 webtitle: WMI Gitlab

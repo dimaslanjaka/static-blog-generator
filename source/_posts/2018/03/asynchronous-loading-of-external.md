@@ -12,7 +12,7 @@ date: 2018-03-11T00:53:00.002+07:00
 lang: en
 location: ""
 modified: 2019-07-22T03:23:18.013+07:00
-subtitle: Loading of external javascript resources libraries, plugins, widgets)
+subtitle: Loading of external javascript resources libraries, plugins, widgets
   should be done asynchronously, in a non-blocking manner, so the load
 tags:
   - JS
@@ -25,8 +25,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Loading of external javascript resources libraries, plugins,
-  widgets) should be done asynchronously, in a non-blocking manner, so the load
-excerpt: Loading of external javascript resources libraries, plugins, widgets)
+  widgets should be done asynchronously, in a non-blocking manner, so the load
+excerpt: Loading of external javascript resources libraries, plugins, widgets
   should be done asynchronously, in a non-blocking manner, so the load
 ---
 

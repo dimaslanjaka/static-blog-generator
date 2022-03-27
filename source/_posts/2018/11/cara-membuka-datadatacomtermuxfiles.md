@@ -10,7 +10,7 @@ date: 2018-11-12T10:41:00.003+07:00
 lang: en
 location: ""
 modified: 2018-11-12T10:45:16.204+07:00
-subtitle: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh     nama
+subtitle: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh  nama
   jalan seperti ini.
 tags:
   - Android
@@ -23,9 +23,9 @@ updated: 2018-11-12T10:45:16+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh    
-  nama jalan seperti ini.
-excerpt: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh     nama
+description: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh  nama
+  jalan seperti ini.
+excerpt: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh  nama
   jalan seperti ini.
 ---
 

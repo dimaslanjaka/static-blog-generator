@@ -3,7 +3,9 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Programming
+  - MYSQL
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png
 date: 2019-02-07T13:09:00.001+07:00
@@ -17,6 +19,7 @@ tags:
   - Tools
   - Tips & Tricks
   - Linux/Unix
+  - MySQL
 title: Install MySQL di termux
 type: post
 uuid: 88f4fad2-2966-4888-8741-45f35477c275

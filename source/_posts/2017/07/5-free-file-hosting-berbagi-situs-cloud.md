@@ -15,7 +15,7 @@ subtitle: Hei Guys, seperti yang Anda tahu kanonik mematikan Ubuntu One Cloud
 tags:
   - Tips & Tricks
 title: 5 Free File Hosting / Berbagi Situs Cloud Storage dengan Direct / Hot
-  Link Support | CloudLinker v2.0 Direct Link Maker
+  Link Support  CloudLinker v2.0 Direct Link Maker
 type: post
 uuid: 650ed8ff-ca94-4888-8cdd-20c9d7aa5a61
 webtitle: WMI Gitlab

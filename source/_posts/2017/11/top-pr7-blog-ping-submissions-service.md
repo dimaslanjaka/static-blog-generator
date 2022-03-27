@@ -15,7 +15,7 @@ subtitle: Ping Service Advise Web crawlers, Blog and RSS Registries that your
 tags:
   - SEO
   - Blogging
-title: Top PR7 blog ping submissions service (Updated)
+title: Top PR7 blog ping submissions service Updated
 type: post
 uuid: a5880c4d-ec29-4888-838e-328f34d57118
 webtitle: WMI Gitlab

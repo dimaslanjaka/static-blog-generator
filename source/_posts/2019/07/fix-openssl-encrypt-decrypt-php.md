@@ -12,7 +12,7 @@ date: 2019-07-31T16:03:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-31T16:03:49.913+07:00
-subtitle: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
+subtitle: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 tags:
   - PHP
@@ -24,9 +24,9 @@ updated: 2019-07-31T16:03:49+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
-description: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
+description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
-excerpt: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
+excerpt: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 ---
 

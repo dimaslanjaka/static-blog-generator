@@ -16,7 +16,7 @@ subtitle: registers the default width and renders the advertisement that you
   will choosen. This may not generally be the most suitable approach since
 tags:
   - JS
-title: How To Create Responsive Chitika Ads 100% Work
+title: How To Create Responsive Chitika Ads 100 Work
 type: post
 uuid: df46c755-03b8-4888-8253-70a4efb46a2e
 webtitle: WMI Gitlab

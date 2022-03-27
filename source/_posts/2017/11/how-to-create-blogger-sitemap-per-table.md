@@ -17,7 +17,7 @@ tags:
   - CSS
   - JS
   - Blogger
-title: How to create blogger sitemap per tables 100% Worked
+title: How to create blogger sitemap per tables 100 Worked
 type: post
 uuid: 23bc6fee-c977-4888-8e75-1cdba59c78e1
 webtitle: WMI Gitlab

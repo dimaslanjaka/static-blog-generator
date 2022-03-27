@@ -14,11 +14,11 @@ uuid: 1d699a76-b023-4888-85f3-bd25b793aa3d
 category:
   - Programming
   - JS
-lang: en
-description: disable vscode alert File is a CommonJS module; it may be converted
-  to an ES module
 excerpt: disable vscode alert File is a CommonJS module; it may be converted to
   an ES module
+description: disable vscode alert File is a CommonJS module; it may be converted
+  to an ES module
+lang: en
 thumbnail: https://i.stack.imgur.com/Xo2sA.png
 photos:
   - https://i.stack.imgur.com/Xo2sA.png

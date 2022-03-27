@@ -10,12 +10,12 @@ date: 2019-12-14T01:05:00.000+07:00
 lang: en
 location: ""
 modified: 2019-12-14T01:05:02.965+07:00
-subtitle: Cara Download melalui Google Drive sedot.club) - Website Development
+subtitle: Cara Download melalui Google Drive sedot.club - Website Development
   Indonesia [ Website Development Indonesia ] - Lately, there have
 tags:
   - Share
   - Tips & Tricks
-title: How to download from Google Drive (sedot.club)
+title: How to download from Google Drive sedot.club
 type: post
 uuid: 737f3e1b-705d-4888-8bad-ac6c61b16895
 webtitle: WMI Gitlab
@@ -23,9 +23,9 @@ updated: 2019-12-14T01:05:02+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/www.bagas31.info/a415d91f0af09d3f0b5f2f8bc5844706.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/www.bagas31.info/a415d91f0af09d3f0b5f2f8bc5844706.jpeg
-description: Cara Download melalui Google Drive sedot.club) - Website
-  Development Indonesia [ Website Development Indonesia ] - Lately, there have
-excerpt: Cara Download melalui Google Drive sedot.club) - Website Development
+description: Cara Download melalui Google Drive sedot.club - Website Development
+  Indonesia [ Website Development Indonesia ] - Lately, there have
+excerpt: Cara Download melalui Google Drive sedot.club - Website Development
   Indonesia [ Website Development Indonesia ] - Lately, there have
 ---
 

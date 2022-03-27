@@ -21,7 +21,7 @@ tags:
   - HTML
   - Blogging
 title: Cara menambah syntax highlighter dengan prettyprint di blog tanpa
-  mengurangi kecepatan loading website 100% Work Tested
+  mengurangi kecepatan loading website 100 Work Tested
 type: post
 uuid: 91708df3-7078-4888-850d-3231dff222a2
 webtitle: WMI Gitlab

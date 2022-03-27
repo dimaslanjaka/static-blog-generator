@@ -16,7 +16,7 @@ tags:
   - Tools
   - Software
   - Tips & Tricks
-title: Remove IDM "Fake Serial" Pop-ups
+title: Remove IDM Fake Serial Pop-ups
 type: post
 uuid: 4e3d434f-3b10-4888-891e-9f8d16c88224
 webtitle: WMI Gitlab

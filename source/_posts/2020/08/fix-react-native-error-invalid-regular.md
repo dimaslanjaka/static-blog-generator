@@ -17,7 +17,7 @@ subtitle: If you Got this issue today on windows, but dont need to downgrade
 tags:
   - JS
   - Regular Expression
-title: "Fix React Native error Invalid regular expression: /(.*\\\\__fixtures__"
+title: "Fix React Native error Invalid regular expression: /.\\\\__fixtures__"
 type: post
 uuid: 14f3d748-31a4-4888-8f4c-eaba432bc58a
 webtitle: WMI Gitlab

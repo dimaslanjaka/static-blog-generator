@@ -8,6 +8,9 @@ uuid: 2668bdf8-b6e4-4888-8824-6686c5f999d3
 webtitle: Blogger
 category:
   - Uncategorized
+subtitle: null
+excerpt: null
+description: null
 lang: en
 thumbnail: https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
 photos:

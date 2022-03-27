@@ -18,7 +18,7 @@ tags:
   - PHP
   - Android
   - Tips & Tricks
-title: Access XAMPP (Apache + MySQL) via Android Smartphone
+title: Access XAMPP Apache  MySQL via Android Smartphone
 type: post
 uuid: 8061a10d-0b6a-4888-8a42-139b67c9e1c9
 webtitle: WMI Gitlab

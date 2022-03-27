@@ -15,7 +15,7 @@ modified: 2019-07-30T06:48:00.415+07:00
 subtitle: Cara Membuat argumen PHP CLI dengan  --=
 tags:
   - PHP
-title: Membuat PHP argumen dengan '='
+title: Membuat PHP argumen dengan =
 type: post
 uuid: 9b343c14-a93e-4888-8a60-16425294fdcf
 webtitle: WMI Gitlab

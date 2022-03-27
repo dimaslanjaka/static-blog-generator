@@ -12,14 +12,13 @@ date: 2021-06-02T20:52:00.004+07:00
 lang: en
 location: ""
 modified: 2021-06-02T21:48:37.630+07:00
-subtitle: php apache setup on android with Termux without
-  root) 											Download Termux 						(allow installation from unknwon
-  sources and
+subtitle: php apache setup on android with Termux without root Download Termux
+  allow installation from unknwon sources and
 tags:
   - PHP
   - Android
   - Tips & Tricks
-title: Install XAMPP/LAMPP On Android (Non-Root)
+title: Install XAMPP/LAMPP On Android Non-Root
 type: post
 uuid: fe9bd82e-f555-4888-8952-a281475f8148
 webtitle: WMI Gitlab
@@ -27,12 +26,10 @@ updated: 2021-06-02T21:48:37+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
-description: php apache setup on android with Termux without
-  root) 											Download Termux 						(allow installation from unknwon
-  sources and
-excerpt: php apache setup on android with Termux without
-  root) 											Download Termux 						(allow installation from unknwon
-  sources and
+description: php apache setup on android with Termux without root Download
+  Termux allow installation from unknwon sources and
+excerpt: php apache setup on android with Termux without root Download Termux
+  allow installation from unknwon sources and
 ---
 
 <div id="bootstrap-wrapper">

@@ -14,7 +14,7 @@ subtitle: "Download OY Indonesia 1.6.2 APK File name: com.oy.chat-1.6.2-45.apk
   File size: 26.41 MB"
 tags:
   - Android
-title: OY! Indonesia 1.6.2 APK Download
+title: OY Indonesia 1.6.2 APK Download
 type: post
 uuid: b151f129-a6e3-4888-8d43-a92c98fb3170
 webtitle: WMI Gitlab

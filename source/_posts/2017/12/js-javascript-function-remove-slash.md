@@ -17,7 +17,7 @@ subtitle: All I needed was to expel every single forward slice in a string
 tags:
   - JS
   - HTML
-title: (JS) Javascript Function Remove Slash From String
+title: JS Javascript Function Remove Slash From String
 type: post
 uuid: 8477ce0f-070e-4888-8dea-7874e23542cc
 webtitle: WMI Gitlab
