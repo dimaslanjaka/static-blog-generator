@@ -23,7 +23,7 @@ function cleanString(text) {
 hexo.extend.helper.register('cleanString', cleanString);
 
 function excerpt_original(post) {
-  let excerpt = new String(post);
+  let excerpt;
   if (typeof post.excerpt == 'string') {
     excerpt = post.excerpt.replace(/\<[^\>]+\>/g, '');
   } else if (typeof post.subtitle == 'string') {
@@ -36,7 +36,8 @@ function excerpt_original(post) {
     excerpt = post.title;
   }
   // remove double/single quotes
-  return cleanString(excerpt);
+  //return cleanString(excerpt);
+  return excerpt;
 }
 
 /**
