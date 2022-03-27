@@ -24,7 +24,7 @@ cover: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
 16:50:26  [Apache]     If you need more help, copy and post this
 16:50:26  [Apache]     entire log window on the forums
 ```
-how to solve above log ?
+how to solve [above log](#xampp-log-error) ?
 
 #### Folder Location
 Make sure the location of the `XAMPP` folder is outside the drive. Basically xampp only reads from your drive letter. for example:
