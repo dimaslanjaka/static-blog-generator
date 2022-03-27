@@ -24,7 +24,7 @@ function cleanString(text: string) {
 }
 
 function removeMultipleWhiteSpaces(text: string) {
-  if (typeof text == "string") return text.replace(/\n|\s{2,}/gm, " ");
+  if (typeof text == "string") return text.replace(/\s+/gm, " ");
   return text;
 }
 

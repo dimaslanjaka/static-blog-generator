@@ -12,7 +12,7 @@ date: 2020-10-28T14:00:00.004+07:00
 lang: en
 location: ""
 modified: 2021-05-14T04:54:22.686+07:00
-subtitle: Typescript lebih strict  lebih detail dan harus mematuhi peraturan
+subtitle: Typescript lebih strict lebih detail dan harus mematuhi peraturan
   seperti typedata variable, class, interface, dll, hampir sama seperti
 tags:
   - TS
@@ -26,9 +26,9 @@ updated: 2021-05-14T04:54:22+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
-description: Typescript lebih strict  lebih detail dan harus mematuhi peraturan
+description: Typescript lebih strict lebih detail dan harus mematuhi peraturan
   seperti typedata variable, class, interface, dll, hampir sama seperti
-excerpt: Typescript lebih strict  lebih detail dan harus mematuhi peraturan
+excerpt: Typescript lebih strict lebih detail dan harus mematuhi peraturan
   seperti typedata variable, class, interface, dll, hampir sama seperti
 ---
 

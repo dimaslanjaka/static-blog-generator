@@ -10,7 +10,7 @@ date: 2019-11-24T21:31:00.001+07:00
 lang: en
 location: ""
 modified: 2019-11-24T21:33:29.210+07:00
-subtitle: "Download lagu Siti Badriah  Lagi Syantik Mp3 Siti Badriah - More
+subtitle: "Download lagu Siti Badriah Lagi Syantik Mp3 Siti Badriah - More
   Syantik Listen: 510,901,455 Duration: 234 MP3 size: 3.66MB"
 tags:
   - Musics
@@ -22,9 +22,9 @@ updated: 2019-11-24T21:33:29+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/bb201229d7c52251d81702bbe266757b.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/bb201229d7c52251d81702bbe266757b.jpeg
-description: "Download lagu Siti Badriah  Lagi Syantik Mp3 Siti Badriah - More
+description: "Download lagu Siti Badriah Lagi Syantik Mp3 Siti Badriah - More
   Syantik Listen: 510,901,455 Duration: 234 MP3 size: 3.66MB"
-excerpt: "Download lagu Siti Badriah  Lagi Syantik Mp3 Siti Badriah - More
+excerpt: "Download lagu Siti Badriah Lagi Syantik Mp3 Siti Badriah - More
   Syantik Listen: 510,901,455 Duration: 234 MP3 size: 3.66MB"
 ---
 

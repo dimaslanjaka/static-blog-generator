@@ -12,7 +12,7 @@ date: 2017-04-12T01:34:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-12T01:34:02.094+07:00
-subtitle: CSS Rollover Efek Gambar  Ganti Gambar pada gambarHoverRollover adalah
+subtitle: CSS Rollover Efek Gambar Ganti Gambar pada gambarHoverRollover adalah
   fitur desain di mana gambar berubah ketika mouse melayang di
 tags:
   - CSS
@@ -25,9 +25,9 @@ updated: 2017-04-12T01:34:02+07:00
 thumbnail: https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png
 photos:
   - https://3.bp.blogspot.com/-JOfTRWkg06Y/V_z6BpgKHjI/AAAAAAAAL3M/vF_yc-oNkd8BjbQOElXOiHEx7Jj93k25wCLcB/s200/css-rollover-image-change-on-hover.png
-description: CSS Rollover Efek Gambar  Ganti Gambar pada gambarHoverRollover
+description: CSS Rollover Efek Gambar Ganti Gambar pada gambarHoverRollover
   adalah fitur desain di mana gambar berubah ketika mouse melayang di
-excerpt: CSS Rollover Efek Gambar  Ganti Gambar pada gambarHoverRollover adalah
+excerpt: CSS Rollover Efek Gambar Ganti Gambar pada gambarHoverRollover adalah
   fitur desain di mana gambar berubah ketika mouse melayang di
 ---
 

@@ -10,8 +10,8 @@ date: 2019-12-04T12:58:00.001+07:00
 lang: en
 location: ""
 modified: 2019-12-04T13:29:28.832+07:00
-subtitle: "Download lagu THOMAS ARYA  SATU HATI SAMPAI MATI Mp3 THOMAS ARYA -
-  ONE HEART UNTIL DEAD Listen: 1,690 Duration: 391 MP3 size:"
+subtitle: "Download lagu THOMAS ARYA SATU HATI SAMPAI MATI Mp3 THOMAS ARYA - ONE
+  HEART UNTIL DEAD Listen: 1,690 Duration: 391 MP3 size:"
 tags:
   - Musics
 title: Download lagu THOMAS ARYA - SATU HATI SAMPAI MATI Mp3
@@ -22,9 +22,9 @@ updated: 2019-12-04T13:29:28+07:00
 thumbnail: https://imgcdn.000webhostapp.com/https/img.youtube.com/e35a13b69650813b631bfb1716242936.jpeg
 photos:
   - https://imgcdn.000webhostapp.com/https/img.youtube.com/e35a13b69650813b631bfb1716242936.jpeg
-description: "Download lagu THOMAS ARYA  SATU HATI SAMPAI MATI Mp3 THOMAS ARYA -
+description: "Download lagu THOMAS ARYA SATU HATI SAMPAI MATI Mp3 THOMAS ARYA -
   ONE HEART UNTIL DEAD Listen: 1,690 Duration: 391 MP3 size:"
-excerpt: "Download lagu THOMAS ARYA  SATU HATI SAMPAI MATI Mp3 THOMAS ARYA - ONE
+excerpt: "Download lagu THOMAS ARYA SATU HATI SAMPAI MATI Mp3 THOMAS ARYA - ONE
   HEART UNTIL DEAD Listen: 1,690 Duration: 391 MP3 size:"
 ---
 

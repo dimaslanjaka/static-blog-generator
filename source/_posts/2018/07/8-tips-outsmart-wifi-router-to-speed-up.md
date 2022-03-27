@@ -10,7 +10,7 @@ date: 2018-07-05T22:43:00.000+07:00
 lang: en
 location: ""
 modified: 2018-07-05T22:43:43.434+07:00
-subtitle: "Here are  Tips to Outsmart your Wifi router to get a faster and more
+subtitle: "Here are Tips to Outsmart your Wifi router to get a faster and more
   stable Internet connection:"
 tags:
   - Tips & Tricks
@@ -22,9 +22,9 @@ updated: 2018-07-05T22:43:43+07:00
 thumbnail: https://imgdb.net/images/3862.jpg
 photos:
   - https://imgdb.net/images/3862.jpg
-description: "Here are  Tips to Outsmart your Wifi router to get a faster and
+description: "Here are Tips to Outsmart your Wifi router to get a faster and
   more stable Internet connection:"
-excerpt: "Here are  Tips to Outsmart your Wifi router to get a faster and more
+excerpt: "Here are Tips to Outsmart your Wifi router to get a faster and more
   stable Internet connection:"
 ---
 

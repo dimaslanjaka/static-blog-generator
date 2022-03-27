@@ -12,7 +12,7 @@ date: 2019-07-25T23:09:00.001+07:00
 lang: en
 location: ""
 modified: 2019-07-25T23:54:52.055+07:00
-subtitle: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
+subtitle: See the Pen Bootstrap progress bar countdown by dimas lanjaka
   @dimaslanjaka on CodePen.
 tags:
   - CSS
@@ -26,9 +26,9 @@ updated: 2019-07-25T23:54:52+07:00
 thumbnail: https://dimaslanjaka.github.io/assets/img/javascript.png
 photos:
   - https://dimaslanjaka.github.io/assets/img/javascript.png
-description: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
+description: See the Pen Bootstrap progress bar countdown by dimas lanjaka
   @dimaslanjaka on CodePen.
-excerpt: See the Pen Bootstrap  progress bar countdown by dimas lanjaka
+excerpt: See the Pen Bootstrap progress bar countdown by dimas lanjaka
   @dimaslanjaka on CodePen.
 ---
 

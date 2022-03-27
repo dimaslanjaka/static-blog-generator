@@ -12,7 +12,7 @@ date: 2017-04-22T23:30:00.000+07:00
 lang: en
 location: ""
 modified: 2017-04-22T23:30:11.499+07:00
-subtitle: How to fix Feedburner feed double titles issue  Quick tip Most of the
+subtitle: How to fix Feedburner feed double titles issue Quick tip Most of the
   wordpress users syndicate their RSS feeds victimisation
 tags:
   - Wordpress
@@ -26,9 +26,9 @@ updated: 2017-04-22T23:30:11+07:00
 thumbnail: https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
 photos:
   - https://lh4.googleusercontent.com/proxy/OpPDt025N-7dF5nwAf8tkrBp0OX9NtsuZ7n-yatXnVPGYd4zDaTeUaUFavXyJVHQ7SbiPaDDZjg0ofk6nIcZZluTC6pVI3VDJgB6oW7oiu7OqdvER9xoLOfs57kodu4115sRRnrJGnOia-e_ugI_aUU
-description: How to fix Feedburner feed double titles issue  Quick tip Most of
+description: How to fix Feedburner feed double titles issue Quick tip Most of
   the wordpress users syndicate their RSS feeds victimisation
-excerpt: How to fix Feedburner feed double titles issue  Quick tip Most of the
+excerpt: How to fix Feedburner feed double titles issue Quick tip Most of the
   wordpress users syndicate their RSS feeds victimisation
 ---
 
