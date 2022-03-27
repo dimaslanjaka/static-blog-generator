@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://www.shoutmeloud.com/wp-content/uploads/2012/03/Increase-Adsense-Revenue.jpg
 date: 2017-04-22T22:08:00.000+07:00

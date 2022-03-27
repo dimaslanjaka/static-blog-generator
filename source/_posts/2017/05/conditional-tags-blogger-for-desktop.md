@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://i.stack.imgur.com/frOSJ.png
 date: 2017-05-17T20:02:00.000+07:00

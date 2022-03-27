@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2013/11/Skor-bagus-lagi.jpg
 date: 2017-11-10T22:40:00.000+07:00

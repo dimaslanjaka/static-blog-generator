@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
 date: 2017-07-21T02:32:00.001+07:00

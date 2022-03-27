@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
 date: 2019-01-26T00:28:00.000+07:00

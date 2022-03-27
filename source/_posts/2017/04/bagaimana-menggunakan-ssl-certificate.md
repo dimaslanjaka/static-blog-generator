@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://www.shoutmeloud.com/wp-content/uploads/2017/03/Free-SSL-certificate-Bluehost.jpg
 date: 2017-04-27T08:24:00.000+07:00

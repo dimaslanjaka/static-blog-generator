@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-HiBHocMqmrQ/WOmDVkI8uKI/AAAAAAAAFFc/BKA_t9kCVWowkvq-u4JHs5AKDaQF8v5LQCLcB/s320/Internal-linking-1.jpg
 date: 2017-04-18T07:40:00.000+07:00

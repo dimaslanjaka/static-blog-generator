@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/00073980860956332189
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
 date: 2017-11-11T00:00:00.000+07:00

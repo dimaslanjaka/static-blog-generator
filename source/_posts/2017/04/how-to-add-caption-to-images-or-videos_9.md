@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
 date: 2017-04-09T23:48:00.003+07:00

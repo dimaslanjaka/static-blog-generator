@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-F0nPVJldBjc/Wc5TIDQtjqI/AAAAAAAAFh0/WFawWHriTBwCX2_jw9jBn_F6jp0Bole4wCLcBGAs/s1600/Mengatasi+Tulisan+Link+yang+Otomatis+Menjadi+Link+Hidup.jpg
 date: 2017-11-12T08:01:00.000+07:00

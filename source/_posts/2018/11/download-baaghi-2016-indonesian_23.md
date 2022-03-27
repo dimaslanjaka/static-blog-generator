@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.net/wp-content/uploads/2017/06/film-baaghi-2016.jpg
 date: 2018-11-23T23:26:00.000+07:00

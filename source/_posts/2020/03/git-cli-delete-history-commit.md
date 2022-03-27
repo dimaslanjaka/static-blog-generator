@@ -3,7 +3,8 @@ author:
   nick: Kuswati
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://cdn.icon-icons.com/icons2/1488/PNG/512/5347-github_102542.png
 date: 2020-03-08T14:10:00.002+07:00

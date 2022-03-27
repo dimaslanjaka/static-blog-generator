@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: https://www.blogger.com/profile/18262459107951035499
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
 date: 2017-11-10T22:43:00.000+07:00

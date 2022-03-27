@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-WdF_VsX3iVA/VMoMuyVZ2kI/AAAAAAAABuU/uqgnLoCEysE/s1600/Pingtest.net.png
 date: 2017-04-30T07:49:00.000+07:00

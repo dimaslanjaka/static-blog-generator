@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
 date: 2017-04-16T11:50:00.000+07:00

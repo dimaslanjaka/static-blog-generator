@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2014/01/Skor-naik.png
 date: 2017-04-20T07:52:00.000+07:00

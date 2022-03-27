@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://oketekno.com/wp-content/uploads/2019/04/Granger-Mobile-Legends-1068x534.jpg
 date: 2019-09-02T13:55:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://i1.wp.com/legeeks.org/wp-content/uploads/2013/12/Get-Your-New-Post-Indexed-In-Google-In-60-Seconds.jpg?resize=550%2C331
 date: 2017-04-16T07:06:00.000+07:00

@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka 2
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-VzY5zqLgJmw/Wfhs0xihnNI/AAAAAAAAAJo/TguGeZ4QyGMbG2U0bUgZ79MnJxSLGM9QACEwYBhgL/s1600/images%25285%2529%255B1%255D.jpg
 date: 2018-03-26T00:48:00.000+07:00

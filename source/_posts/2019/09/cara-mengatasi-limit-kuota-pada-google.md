@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.info/wp-content/uploads/2018/12/Google_Drive_logo.png
 date: 2019-09-28T17:56:00.000+07:00

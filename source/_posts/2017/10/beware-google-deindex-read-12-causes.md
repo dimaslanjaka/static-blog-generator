@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KGl-2bvcaKg/WFA0coka7kI/AAAAAAAAAbU/k-WH1u1o7vUZgxvSTWzOzRnrYEPAS6VdwCLcB/s1600/penyebab-dan-cara-mengatasi-deindex-google.jpg
 date: 2017-10-02T02:59:00.000+07:00

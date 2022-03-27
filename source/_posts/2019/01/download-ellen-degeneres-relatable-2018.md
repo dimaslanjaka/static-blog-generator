@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
 date: 2019-01-03T01:39:00.000+07:00

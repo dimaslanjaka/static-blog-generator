@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://sitelagump3.com/icon_content/2018/05/27/13/00/download-mp3-nissa-sabyan-ya-maulana-music-terbaru.png
 date: 2018-11-14T03:42:00.000+07:00

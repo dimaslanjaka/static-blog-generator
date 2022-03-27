@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2013/12/Seo-Prenjak-300x240.jpg
 date: 2017-04-11T09:26:00.000+07:00

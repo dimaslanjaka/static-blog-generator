@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dzapk.com/imagefly/w200-h200-c/images/2017/12/09/3514/thumb_tubemate-pro-v3-0-11-1038-apk_1.jpg
 date: 2018-12-07T13:17:00.000+07:00

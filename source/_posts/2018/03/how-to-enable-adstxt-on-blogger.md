@@ -3,7 +3,8 @@ author:
   nick: Dimas Lanjaka Kumala Indra
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-dGUliWFLKSY/WnGd3G8SgyI/AAAAAAAAF90/QMALZVj1V_YrcGf6dhEoCPsfB0DR4DYsACLcBGAs/s1600/Cara%252BMengaktifkan%252BAds%252Btxt%252Bdi%252BBlogger.png
 date: 2018-03-01T18:32:00.000+07:00

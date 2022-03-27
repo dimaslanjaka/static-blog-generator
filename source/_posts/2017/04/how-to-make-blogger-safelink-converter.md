@@ -3,7 +3,8 @@ author:
   nick: Unknown
   link: ""
   email: noreply@blogger.com
-category: []
+category:
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
 date: 2017-04-10T15:55:00.000+07:00
