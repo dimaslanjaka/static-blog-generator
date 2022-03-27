@@ -6,7 +6,7 @@
 
     <link rel="alternate" href="<%- url_for('/en') %>" hreflang="en" />
     <link rel="alternate" href="<%- url_for('/id') %>" hreflang="id" />
-    
+
     <include expiration="7d" path="*.css"></include>
 		<include expiration="7d" path="*.js"></include>
 		<include expiration="3d" path="*.gif"></include>
@@ -66,17 +66,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <% if (page.tags) {
         var keywords = [];
-        for (var i in page.tags.data) {
-            keywords.push(page.tags.data[i].name);
+        if (page.tags.data.length) {
+            for (var i in page.tags.data) {
+                keywords.push(page.tags.data[i].name);
+            }
         }
-        if (page.keywords) {
+        if (page.keywords && page.keywords.length) {
             for (var i in page.keywords) {
                 keywords.push(page.keywords);
             }
         }
-        keywords = keywords.filter(function(item, pos) {
-            return keywords.indexOf(item) == pos && item.trim().length;
-        });
+        if (keywords.length) {
+            keywords = keywords.filter(function(item, pos) {
+                return keywords.indexOf(item) == pos && item.trim().length;
+            });
+        }
     %>
     <meta name="keywords" content="<%= keywords.join(',') %>" />
     <% } %>
