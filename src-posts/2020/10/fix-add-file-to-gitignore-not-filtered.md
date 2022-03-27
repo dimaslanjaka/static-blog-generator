@@ -13,7 +13,7 @@ modified: 2020-10-25T23:45:36.135+07:00
 subtitle: pre><br />git rm -r --cached .<br />git add .<br />git commit -m clear
   git cache<br />git push<br /></pre><div
 tags:
-  - Github
+  - GitHub
   - Tips & Tricks
 title: Fix add file to gitignore not filtered
 type: post

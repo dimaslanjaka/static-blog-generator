@@ -15,7 +15,7 @@ subtitle: h2>Contribution Tutorial</h2><ol> <li>Fork it (git clone
   checkout
 tags:
   - Popular
-  - Github
+  - GitHub
   - Social Media
   - Tips & Tricks
 title: How to make pull request or contribution on github
