@@ -7,6 +7,9 @@ tags:
   - GitHub
 ---
 
+## From repository subdirectory to git submodule
+The following steps are based on the repository introduced in the previous section. They will explain how to turn a subdirectory of a project into an independent git repository and how to use this new repository as submodule, a foreign repository embedded within a dedicated subdirectory of the source tree of a project.
+
 ## Folder structure example
 ```bash
 # this is parent repository
