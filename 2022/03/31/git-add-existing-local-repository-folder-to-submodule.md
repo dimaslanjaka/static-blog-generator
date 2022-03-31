@@ -36,6 +36,13 @@ example:
 cp ~/other ~/master/
 ```
 
+## Create .git file
+Create **.git** file instead of folder. input following codes:
+```
+gitdir: ../.git/modules/other
+```
+make sure `../.git/modules/other` is located to `~/master/.git/modules/other/.git/modules/other`.
+
 ## Add .gitmodules
 add `.gitmodules` to the parent repository
 ```bash
