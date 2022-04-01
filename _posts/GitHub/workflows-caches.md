@@ -27,6 +27,7 @@ photos:
   - /GitHub/workflows/cover2.jpg
 description: Cara menggunakan cache untuk mempercepat GitHub Workflows
 excerpt: Cara menggunakan cache untuk mempercepat GitHub Workflows
+wordcount: 332
 ---
 
 ## Mempercepat kinerja github workflow

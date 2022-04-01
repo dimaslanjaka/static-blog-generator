@@ -17,6 +17,7 @@ lang: en
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+wordcount: 310
 ---
 
 **In this post I want to share a list of dofollow blogs.** Maybe it can help other beginner blogger friends, who happen to be still looking for backlinks from several blogs that follow the dofollow system. The number is about 200 blogs. Maybe from all the lists below some have been changed to nofollow. However, there is nothing wrong if you keep commenting there.

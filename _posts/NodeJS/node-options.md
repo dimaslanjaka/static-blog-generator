@@ -28,6 +28,7 @@ photos:
   - https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 description: Usage, explanations of node options for nodejs
 excerpt: Usage, explanations of node options for nodejs
+wordcount: 216
 ---
 
 # NODEJS OPTIONS [ NODE_OPTIONS ]

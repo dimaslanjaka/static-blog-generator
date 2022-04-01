@@ -19,8 +19,8 @@ lang: en
 thumbnail: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
+wordcount: 265
 ---
-
 
 ## How to solve "Error: Apache shutdown unexpectedly"?
 ### XAMPP Log Error
@@ -35,7 +35,7 @@ photos:
 16:50:26  [Apache]     If you need more help, copy and post this
 16:50:26  [Apache]     entire log window on the forums
 ```
-how to solve above log ?
+how to solve [above log](#xampp-log-error) ?
 
 #### Folder Location
 Make sure the location of the `XAMPP` folder is outside the drive. Basically xampp only reads from your drive letter. for example:
@@ -50,7 +50,7 @@ C:\xampp
 ![Port XAMPP](https://i.stack.imgur.com/McjHN.png)
 - Open folder `D:\xampp\apache\conf\extra` and open all conf files one by one. (change `D:` with your drive letter)
 > Find `<VirtualHost _default_:443>` and change it to `<VirtualHost _default_:4443>`.
-> 
+>
 > Find `ServerName localhost:443`. It’s possible that this hasn’t been set up yet and it reads `ServerName www.example.com:443`. In any case, change it to `ServerName localhost:4443`.
 
 #### Restart XAMPP

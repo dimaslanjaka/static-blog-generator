@@ -29,6 +29,7 @@ description: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
   id=elemenTersedia></div><script>function
 excerpt: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
   id=elemenTersedia></div><script>function
+wordcount: 137
 ---
 
 <div>

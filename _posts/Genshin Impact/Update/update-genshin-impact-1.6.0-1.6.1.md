@@ -23,6 +23,7 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://uploadstatic-sea.mihoyo.com/contentweb/20210201/2021020109195088725.jpg
 description: Update Genshin Impact 1.6.0 - 1.6.1 Manual
 excerpt: Update Genshin Impact 1.6.0 - 1.6.1 Manual
+wordcount: 87
 ---
 
 Update genshin impact `1.6.1` manual via download manager (IDM).

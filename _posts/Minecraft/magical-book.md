@@ -21,6 +21,7 @@ photos:
 description: All Description And Usages Of Magical Books Minecraft
 tags: []
 excerpt: All Description And Usages Of Magical Books Minecraft
+wordcount: 939
 ---
 
 # List of all Magical Book Minecraft Enchantments

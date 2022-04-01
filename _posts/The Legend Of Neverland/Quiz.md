@@ -46,6 +46,7 @@ photos:
   - /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
 description: Quiz questions and the answers. The Legend Of Neverland Event.
 excerpt: Quiz questions and the answers. The Legend Of Neverland Event.
+wordcount: 7845
 ---
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
@@ -63,7 +64,7 @@ excerpt: Quiz questions and the answers. The Legend Of Neverland Event.
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      3/27/2022, 11:17:12 PM
+      4/1/2022, 8:42:59 PM
     </small>
 
   </div>

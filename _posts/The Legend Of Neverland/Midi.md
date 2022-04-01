@@ -25,6 +25,7 @@ excerpt: Midi collection for the legend of neverland perform music skill
 thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
+wordcount: 246
 ---
 
 ## NPC's favorite musical instrument
@@ -69,6 +70,30 @@ Visit [YT2MIDI](https://youtube2midi.github.io/)
 
 ### How to create music/song mp3 to midi
 
-{% youtube tik3ZFwFsJA %}
+<amp-youtube
+      id="video-container-7"
+      data-videoid="tik3ZFwFsJA"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/tik3ZFwFsJA/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
 
-{% youtube kIXXv8oUqOc %}
+<amp-youtube
+      id="video-container-8"
+      data-videoid="kIXXv8oUqOc"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/kIXXv8oUqOc/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>

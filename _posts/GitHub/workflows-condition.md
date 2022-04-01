@@ -26,6 +26,7 @@ photos:
   - /GitHub/workflows/cover.png
 description: Macam-macam kondisional pada GitHub Workflows
 excerpt: Macam-macam kondisional pada GitHub Workflows
+wordcount: 216
 ---
 
 # Kondisional pada GitHub Workflow

@@ -27,6 +27,7 @@ description: pre><br />IFS=\n<br /> for f in find . -type f -name <br /> do <br
   /> mv f f/\.\/ /\.\/<br /> done<br /></pre><div
 excerpt: pre><br />IFS=\n<br /> for f in find . -type f -name <br /> do <br />
   mv f f/\.\/ /\.\/<br /> done<br /></pre><div
+wordcount: 18
 ---
 
 <pre><br>IFS=$'\n'<br> for f in $(find . -type f -name ' *')<br> do <br>     mv $f ${f/\.\/ /\.\/}<br> done<br></pre>

@@ -21,6 +21,7 @@ lang: en
 thumbnail: /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
 photos:
   - /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
+wordcount: 163
 ---
 
 # Fix FRP Redmi GO Latest Security Patch (Updated 2022)

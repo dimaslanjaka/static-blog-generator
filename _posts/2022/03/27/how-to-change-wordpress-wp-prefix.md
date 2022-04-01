@@ -10,13 +10,14 @@ uuid: a69fa1b4-3f2c-4888-8757-27179d208826
 category:
   - Programming
   - MYSQL
-subtitle: null
-excerpt: null
-description: null
 lang: en
+description: Change wordpress table prefix updated 2022
+subtitle: Change wordpress table prefix updated 2022
+excerpt: Change wordpress table prefix updated 2022
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 photos:
   - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
+wordcount: 340
 ---
 
 ## How to change wordpress table prefix
@@ -37,7 +38,7 @@ $table_prefix = 'OLDPREFIX_';
 $table_prefix = 'NEWPREFIX_';
 ```
 
-## Step 2 
+## Step 2
 ### Update SQL database to change wordpress table prefix
 1.  [Open your database in PhpMyAdmin](/p/search.html?q=access+database+phpmyadmin).
 2.  Click on the database name in the menu to the left to unfold all tables.

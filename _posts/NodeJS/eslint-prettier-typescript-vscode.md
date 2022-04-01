@@ -36,6 +36,7 @@ description: How to configure eslint with prettier to automated lint and format
 thumbnail: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
+wordcount: 584
 ---
 
 # Auto Lint And Format Typescript Using VSCode With Eslint And Prettier

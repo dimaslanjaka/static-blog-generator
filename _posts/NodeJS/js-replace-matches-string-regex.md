@@ -19,6 +19,7 @@ category:
   - Programming
   - JS
 excerpt: How to match regex from string and replace matched string 1-9
+wordcount: 95
 ---
 
 # NodeJS Replace Matched String From Regex

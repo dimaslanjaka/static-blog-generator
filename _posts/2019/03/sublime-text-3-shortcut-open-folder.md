@@ -27,6 +27,7 @@ description: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
 excerpt: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
+wordcount: 6
 ---
 
 <h2>open folder with sublime text 3</h2><script src="https://gist.github.com/roundand/9367852.js"></script>

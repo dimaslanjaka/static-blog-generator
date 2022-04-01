@@ -23,6 +23,7 @@ photos:
   - /Genshin Impact/Update/update-genshin-impact-1.5.1-1.6.0/cover.jpg
 description: Update Genshin Impact 2.0.0 - 2.1.0 Manual
 excerpt: Update Genshin Impact 2.0.0 - 2.1.0 Manual
+wordcount: 99
 ---
 
 Update genshin impact `2.1.0` manual via download manager (IDM).

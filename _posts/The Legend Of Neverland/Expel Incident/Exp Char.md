@@ -23,6 +23,7 @@ photos:
   - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 description: Expel Incident With The Highest Exp Character Rewards.
 excerpt: Expel Incident With The Highest Exp Character Rewards.
+wordcount: 175
 ---
 
 <!-- toc -->

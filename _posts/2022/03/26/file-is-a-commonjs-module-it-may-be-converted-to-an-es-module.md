@@ -22,6 +22,7 @@ lang: en
 thumbnail: https://i.stack.imgur.com/Xo2sA.png
 photos:
   - https://i.stack.imgur.com/Xo2sA.png
+wordcount: 137
 ---
 
 # File is a CommonJS module; it may be converted to an ES module
@@ -40,3 +41,6 @@ insert below option
 
 ### [Preview Example] it should be looks like:
 ![Preview Setting](https://i.stack.imgur.com/2AUwp.png)
+
+## This solution also fix vscode alerts below
+- fix vscode alert This may be converted to an async function.

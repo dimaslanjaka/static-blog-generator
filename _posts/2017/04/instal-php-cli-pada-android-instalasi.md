@@ -29,6 +29,7 @@ description: Official php-cli installation on android by L3n4r0x php Running On
   Android Terminal -> This Repost From My Another Blogs <-
 excerpt: Official php-cli installation on android by L3n4r0x php Running On
   Android Terminal -> This Repost From My Another Blogs <-
+wordcount: 1488
 ---
 
 <div dir="ltr" style="text-align: left" trbidi="on">

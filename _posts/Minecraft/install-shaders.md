@@ -24,6 +24,7 @@ description: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial
 tags: []
 excerpt: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci
   ini dengan screenshot
+wordcount: 695
 ---
 
 # Shaders

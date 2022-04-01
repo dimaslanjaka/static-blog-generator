@@ -24,8 +24,8 @@ photos:
   - /Chimeraland/Pets/cover.jpg
 excerpt: Information about pets attributes chimeraland
 description: Information about pets attributes chimeraland
+wordcount: 2295
 ---
-
 
 <!-- translator -->
 <style>

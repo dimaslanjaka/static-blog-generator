@@ -71,7 +71,7 @@
          * @type {string[]}
          **/
         const recipes = data.data;
-        const table = document.querySelector("article table");
+        const table = document.querySelector("table#recipes");
         const tbody = table.querySelector("tbody");
         for (let index = 0; index < recipes.length; index++) {
           const recipe = recipes[index];
@@ -91,7 +91,7 @@
         return data;
       })
       .then((data) => {
-        let table = new DataTable("article table", { responsive: true, });
+        let table = new DataTable("table#recipes", { responsive: true, });
       }, 4000);
   });
 </script>

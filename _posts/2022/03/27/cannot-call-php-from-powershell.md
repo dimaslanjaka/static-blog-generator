@@ -17,15 +17,15 @@ lang: en
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
+wordcount: 454
 ---
-
 
 ## Powershell
 Powershell is alternative for default terminal windows.
 
 ## Powershell problem lists with php
 - cannot call php from powershell
-- php : The term 'php' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the 
+- php : The term 'php' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
 name, or if a path was included, verify that the path is correct and try again.
 At line:1 char:1
 
@@ -82,7 +82,19 @@ The execution policy can be change to the Unrestricted for all users in the syst
 
 ### Youtube video tutorial - fix running scripts is disabled on this system
 
-{% youtube F-fWwkG5Xrk %}
+<amp-youtube
+      id="video-container-12"
+      data-videoid="F-fWwkG5Xrk"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/F-fWwkG5Xrk/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
 
 **incoming terms (problem lists fixable with this article):**
 - PowerShell “Running script is disabled on this system” Error and Solution

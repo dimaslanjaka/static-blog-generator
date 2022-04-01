@@ -24,6 +24,7 @@ photos:
   - http://i3.ytimg.com/vi/psOnlBSRBjA/maxresdefault.jpg
 description: Chest Winged Hairband location in the legend of neverland
 excerpt: Chest Winged Hairband location in the legend of neverland
+wordcount: 144
 ---
 
 ## Requirement
@@ -54,6 +55,30 @@ excerpt: Chest Winged Hairband location in the legend of neverland
 
 ## Video tutorial
 
-{% youtube psOnlBSRBjA %}
+<amp-youtube
+      id="video-container-10"
+      data-videoid="psOnlBSRBjA"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/psOnlBSRBjA/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
 
-{% youtube yRbP_fSP3xY %}
+<amp-youtube
+      id="video-container-11"
+      data-videoid="yRbP_fSP3xY"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/yRbP_fSP3xY/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
