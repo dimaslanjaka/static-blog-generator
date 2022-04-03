@@ -13,7 +13,7 @@ uuid: 3aff2ffd-22b7-4888-8a2a-9db0f2b147a6
 webtitle: Chimeraland
 excerpt: Spawn locations of flowers
 description: Spawn locations of flowers
-wordcount: 212
+wordcount: 211
 ---
 
 ## Lokasi Spawn Equinox Flower
@@ -28,6 +28,16 @@ Bunga ini memiliki umbi yang beracun sehingga sering digunakan di dekat tanaman 
 Di tempat ini juga banyak ditemukan **Clay**, **Precious Jade**
 
 ## Tutorial Video Lokasi Equinox Flower
-<div class="video-container">
-      <iframe src="https://www.youtube.com/embed/Gnm-9hgkOB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<amp-youtube
+      id="video-container-4"
+      data-videoid="Gnm-9hgkOB8"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/Gnm-9hgkOB8/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>

@@ -64,6 +64,16 @@ You must choose one of the Magical Books below as the last step.
 - - **Item destroyed on death**. Max rank 1.
 
 
-<div class="video-container">
-      <iframe src="https://www.youtube.com/embed/sSnrK7m2RFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<amp-youtube
+      id="video-container-5"
+      data-videoid="sSnrK7m2RFo"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/sSnrK7m2RFo/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>

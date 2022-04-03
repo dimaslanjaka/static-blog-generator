@@ -29,7 +29,7 @@ How to match regex from string and replace matched string $1-$9
 for example: were going to replace all markdown extensions to html extension.
 
 ```js
-const str = `[text1](url.html) [txt](http://webmanajemen.com/post.md)`; // string to replace
+const str = `[text1](url.html) [txt](http://webmanajemen.com/post.html)`; // string to replace
 const regex = /\[.*\]\(.*(.md)\)/gm; // regex to match group index 1 (.md)
 if (regex.exec(str)) { // check if regex match
   const replaced = str.replace(regex, function (wholeMatch, index1) {

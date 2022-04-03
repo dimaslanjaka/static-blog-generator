@@ -17,7 +17,7 @@ lang: en
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
-wordcount: 456
+wordcount: 454
 ---
 
 ## Powershell
@@ -82,9 +82,19 @@ The execution policy can be change to the Unrestricted for all users in the syst
 
 ### Youtube video tutorial - fix running scripts is disabled on this system
 
-<div class="video-container">
-      <iframe src="https://www.youtube.com/embed/F-fWwkG5Xrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<amp-youtube
+      id="video-container-12"
+      data-videoid="F-fWwkG5Xrk"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/F-fWwkG5Xrk/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
 
 **incoming terms (problem lists fixable with this article):**
 - PowerShell “Running script is disabled on this system” Error and Solution

@@ -70,10 +70,30 @@ Visit [YT2MIDI](https://youtube2midi.github.io/)
 
 ### How to create music/song mp3 to midi
 
-<div class="video-container">
-      <iframe src="https://www.youtube.com/embed/tik3ZFwFsJA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<amp-youtube
+      id="video-container-7"
+      data-videoid="tik3ZFwFsJA"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/tik3ZFwFsJA/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
 
-<div class="video-container">
-      <iframe src="https://www.youtube.com/embed/kIXXv8oUqOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<amp-youtube
+      id="video-container-8"
+      data-videoid="kIXXv8oUqOc"
+      width="480"
+      height="270"
+      layout="responsive"
+    >
+      <amp-img
+        src="https://img.youtube.com/vi/kIXXv8oUqOc/sddefault.jpg"
+        placeholder
+        layout="fill"
+      />
+    </amp-youtube>
