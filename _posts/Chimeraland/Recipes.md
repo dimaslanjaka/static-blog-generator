@@ -234,7 +234,7 @@ Recipe :
 Video Tutorial:
 Cara unlock **Stove II**
 <amp-youtube
-      id="video-container-0"
+      id="video-container-1"
       data-videoid="I_QH6jv7rzA"
       width="480"
       height="270"
@@ -250,7 +250,7 @@ Cara unlock **Stove II**
 ### Windoo
 Cara mendapatkan attendant **Windoo**
 <amp-youtube
-      id="video-container-1"
+      id="video-container-2"
       data-videoid="P5uAFGr33YA"
       width="480"
       height="270"
@@ -266,7 +266,7 @@ Cara mendapatkan attendant **Windoo**
 ### Vulorman
 Cara mendapatkan attendant **Vulorman**
 <amp-youtube
-      id="video-container-2"
+      id="video-container-3"
       data-videoid="5K-X_U2YwAI"
       width="480"
       height="270"
@@ -282,7 +282,7 @@ Cara mendapatkan attendant **Vulorman**
 ### Astakat
 Cara mendapatkan attendant **Astakat**
 <amp-youtube
-      id="video-container-3"
+      id="video-container-4"
       data-videoid="NYYoisSMqkM"
       width="480"
       height="270"
