@@ -1,6 +1,7 @@
 ---
 title: Latest News For Injury Lawyer's And Insurances
 date: 2020-01-20T14:15:01
+updated: 2020-01-20T14:15:01
 tags:
   - loan
   - insurance
