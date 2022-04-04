@@ -56,7 +56,7 @@ wordcount: 144
 ## Video tutorial
 
 <amp-youtube
-      id="video-container-10"
+      id="video-container-9"
       data-videoid="psOnlBSRBjA"
       width="480"
       height="270"
@@ -70,7 +70,7 @@ wordcount: 144
     </amp-youtube>
 
 <amp-youtube
-      id="video-container-11"
+      id="video-container-10"
       data-videoid="yRbP_fSP3xY"
       width="480"
       height="270"
