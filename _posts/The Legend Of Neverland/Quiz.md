@@ -64,7 +64,7 @@ wordcount: 7845
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
       Last updated
-      4/5/2022, 7:28:24 PM
+      4/5/2022, 7:40:24 PM
     </small>
 
   </div>
@@ -550,7 +550,7 @@ function escapeRegExp(string) {
 }
 
 let quizUrls = [
-  'https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt',
+  'https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/source/assets/tlon/Quiz/quiz.txt',
   'https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt',
 ];
 let quizSrc = [];
