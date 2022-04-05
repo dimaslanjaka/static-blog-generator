@@ -1,6 +1,9 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-inner-declarations */
 console.clear();
 
-if (location.host == "cdpn.io") {
+if (location.host == 'cdpn.io') {
   function rangeAlphabetic(start, stop) {
     var result = [];
     for (var idx = start.charCodeAt(0), end = stop.charCodeAt(0); idx <= end; ++idx) {
@@ -9,18 +12,18 @@ if (location.host == "cdpn.io") {
     return result;
   }
 
-  let aZ = rangeAlphabetic("a", "z")
-    .concat(rangeAlphabetic("A", "Z"))
+  let aZ = rangeAlphabetic('a', 'z')
+    .concat(rangeAlphabetic('A', 'Z'))
     .filter(function (el) {
       return el != null;
     }); // a-zA-Z array
 
   // automated test
   setTimeout(function () {
-    let inputSearch = document.getElementById("search-questions");
+    let inputSearch = document.getElementById('search-questions');
     var keyword = aZ[Math.floor(Math.random() * aZ.length)];
     inputSearch.value = keyword;
-    inputSearch.dispatchEvent(new Event("keyup"));
+    inputSearch.dispatchEvent(new Event('keyup'));
   }, 3000);
 }
 
@@ -34,17 +37,17 @@ if (location.host == "cdpn.io") {
 function loadJScript(src, callback) {
   var s, r, t;
   r = false;
-  s = document.createElement("script");
-  s.type = "text/javascript";
+  s = document.createElement('script');
+  s.type = 'text/javascript';
   s.src = src;
   s.onload = s.onreadystatechange = function () {
     //console.log( this.readyState ); //uncomment this line to see which ready states are called.
-    if (!r && (!this.readyState || this.readyState == "complete")) {
+    if (!r && (!this.readyState || this.readyState == 'complete')) {
       r = true;
       callback();
     }
   };
-  t = document.getElementsByTagName("script")[0];
+  t = document.getElementsByTagName('script')[0];
   t.parentNode.insertBefore(s, t);
 }
 
@@ -66,20 +69,20 @@ function uniqArr(a) {
  * @returns
  */
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
 
 let quizUrls = [
-  "https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/source/assets/tlon/Quiz/quiz.txt",
-  "https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt",
+  'https://dimaslanjaka-cors.herokuapp.com/https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/source/assets/tlon/Quiz/quiz.txt',
+  'https://dimaslanjaka-cors.herokuapp.com/http://backend.webmanajemen.com/tlon/quiz.txt',
 ];
 let quizSrc = [];
 
 function jQueryMethod() {
   // ul questions
-  let questions = document.getElementById("questions");
-  let inputSearch = document.getElementById("search-questions");
-  let O_only = document.getElementById("O_only");
+  let questions = document.getElementById('questions');
+  let inputSearch = document.getElementById('search-questions');
+  let O_only = document.getElementById('O_only');
 
   // searcher
   let searchLi = function (filter) {
@@ -88,7 +91,7 @@ function jQueryMethod() {
       let searchFirst =
         jQuery(this)
           .text()
-          .search(new RegExp("^" + escapeRegExp(filter), "gmi")) < 0;
+          .search(new RegExp('^' + escapeRegExp(filter), 'gmi')) < 0;
       if (searchFirst) {
         jQuery(this).hide();
       } else {
@@ -100,7 +103,7 @@ function jQueryMethod() {
       let searchWild =
         jQuery(this)
           .text()
-          .search(new RegExp(escapeRegExp(filter), "gmi")) < 0;
+          .search(new RegExp(escapeRegExp(filter), 'gmi')) < 0;
       if (searchWild) {
         jQuery(this).hide();
       } else {
@@ -110,7 +113,7 @@ function jQueryMethod() {
   };
 
   let processLi = function () {
-    jQuery("#search-questions").keyup(function () {
+    jQuery('#search-questions').keyup(function () {
       searchLi(jQuery(this).val());
     });
   };
@@ -118,35 +121,35 @@ function jQueryMethod() {
   // transform array to li
   let transformArray2Li = function () {
     // clean orphan text
-    $("#questions").text("");
+    $('#questions').text('');
     // remove existing li's
-    $("#questions li").remove();
+    $('#questions li').remove();
 
     for (let i = 0; i < quizSrc.length; i++) {
       let str = quizSrc[i];
       let isTrue = /\(O\)$/i;
-      let li = document.createElement("li");
+      let li = document.createElement('li');
       li.innerHTML = str;
       if (isTrue.test(str)) {
-        li.setAttribute("class", "isTrue");
+        li.setAttribute('class', 'isTrue');
       } else {
-        li.setAttribute("class", "isFalse");
+        li.setAttribute('class', 'isFalse');
       }
-      document.getElementById("questions").appendChild(li);
+      document.getElementById('questions').appendChild(li);
     }
   };
 
   // step 1: get new question sources
   quizUrls.forEach(function (quizUrl) {
     let url_parse = new URL(quizUrl);
-    url_parse.search = "?uid=#uniqid()";
+    url_parse.search = '?uid=#uniqid()';
     //console.log(url_parse.toString());
 
     //console.log(quizUrl);
     $.get(url_parse.toString()).then(function (data) {
       if (data) {
         // split newLine from retrieved text into array
-        let split = data.split("\n");
+        let split = data.split('\n');
         // trim
         quizSrc = quizSrc.map(function (str) {
           return str.trim();
@@ -169,10 +172,10 @@ function jQueryMethod() {
   });
 
   // filter only (O)
-  $("#O_only").on("change", function (e) {
+  $('#O_only').on('change', function (e) {
     e.preventDefault();
     if (this.checked) {
-      $(".isFalse").remove();
+      $('.isFalse').remove();
     } else {
       transformArray2Li();
     }
@@ -200,7 +203,7 @@ function jQueryMethod() {
   */
 }
 
-loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", jQueryMethod);
+loadJScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', jQueryMethod);
 
 /**
  * How URL native work {@link https://dmitripavlutin.com/parse-url-javascript/}
@@ -209,11 +212,11 @@ loadJScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
  * @returns
  */
 function parse_query_url(url) {
-  if (!url) throw "Please provide url";
+  if (!url) throw 'Please provide url';
   var query = url.substr(1); // skip first ?
   var result = {};
-  query.split("&").forEach(function (part) {
-    var item = part.split("=");
+  query.split('&').forEach(function (part) {
+    var item = part.split('=');
     result[item[0]] = decodeURIComponent(item[1]);
   });
   return result;
