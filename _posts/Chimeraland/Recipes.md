@@ -27,13 +27,13 @@ updated: 2022-02-12T11:18:24+07:00
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
+wordcount: 403
 excerpt: Chimeraland cooking recipes and food functions such as buffs and
   attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan
   seperti buff dan kesukaan attendant
 description: Chimeraland cooking recipes and food functions such as buffs and
   attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan
   seperti buff dan kesukaan attendant
-wordcount: 403
 ---
 
 <!-- translator -->

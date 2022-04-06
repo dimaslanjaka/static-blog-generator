@@ -28,9 +28,9 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 description: php apache setup on android with Termux without root Download
   Termux allow installation from unknwon sources and
+wordcount: 1083
 excerpt: php apache setup on android with Termux without root Download Termux
   allow installation from unknwon sources and
-wordcount: 1083
 ---
 
 <div id="bootstrap-wrapper">

@@ -12,6 +12,8 @@ uuid: 3b1b7031-6ca3-4888-8c93-4812c6cc40c2
 webtitle: VSCode
 category:
   - Uncategorized
+comments: true
+wordcount: 127
 lang: en
 description: Custom PATH VSCode Integrated Terminal Options
 subtitle: Custom PATH VSCode Integrated Terminal Options
@@ -19,7 +21,6 @@ excerpt: Custom PATH VSCode Integrated Terminal Options
 thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 photos:
   - https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
-wordcount: 127
 ---
 
 Determining custom path on vscode IDE made easily development programs within multiple platforms.

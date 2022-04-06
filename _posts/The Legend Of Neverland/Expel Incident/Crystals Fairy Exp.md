@@ -22,8 +22,8 @@ thumbnail: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 description: Expel Incident With The Highest Fairies Exp And Crystals Rewards.
-excerpt: Expel Incident With The Highest Fairies Exp And Crystals Rewards.
 wordcount: 75
+excerpt: Expel Incident With The Highest Fairies Exp And Crystals Rewards.
 ---
 
 <!-- toc -->

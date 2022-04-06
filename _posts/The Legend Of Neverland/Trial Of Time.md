@@ -5,7 +5,7 @@ author:
 category:
   - Games
   - The Legend Of Neverland
-comments: false
+comments: true
 cover: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
 date: 2021-08-15T00:00:00+07:00
 lang: en
@@ -24,8 +24,8 @@ thumbnail: https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqen
 photos:
   - https://image.winudf.com/v2/image1/dGguaW4uc2lhbWdhbWUuZ2dwbGF5LnNqenRzZWFfc2NyZWVuXzBfMTYwOTI0NzAyN18wNTQ/screen-0.jpg?fakeurl=1&type=.jpg
 description: Trial Of Time the legend of neverland stage location
-excerpt: Trial Of Time the legend of neverland stage location
 wordcount: 13
+excerpt: Trial Of Time the legend of neverland stage location
 ---
 
   # Trial of time gate locations

@@ -9,6 +9,8 @@ webtitle: Blogger
 category:
   - Uncategorized
 tags: []
+comments: true
+wordcount: 537
 lang: en
 description: How to Overcome Automatic Scroll Up in Blogger XML Editor
 subtitle: How to Overcome Automatic Scroll Up in Blogger XML Editor
@@ -16,7 +18,6 @@ excerpt: How to Overcome Automatic Scroll Up in Blogger XML Editor
 thumbnail: https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
-wordcount: 537
 ---
 
 ## Blogger update information

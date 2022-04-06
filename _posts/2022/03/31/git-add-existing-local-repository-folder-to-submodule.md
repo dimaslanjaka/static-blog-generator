@@ -8,10 +8,11 @@ updated: 2022-03-31T16:51:59+0000
 uuid: df364b7a-2f1e-4888-8f8f-2a34a28ccdce
 category:
   - Uncategorized
+comments: true
+wordcount: 267
 excerpt: how to add existing local repository folder to submodule
 description: how to add existing local repository folder to submodule
 lang: en
-wordcount: 267
 ---
 
 ## From repository subdirectory to git submodule

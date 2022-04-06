@@ -5,7 +5,7 @@ author:
 category:
   - Games
   - The Legend Of Neverland
-comments: false
+comments: true
 cover: /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
 date: 2021-08-15T00:00:00+07:00
 lang: en
@@ -22,8 +22,8 @@ thumbnail: /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
 photos:
   - /The%20Legend%20Of%20Neverland/Recipes/recipes.jpg
 description: Cooking recipes in the legend of neverland game android ios
-excerpt: Cooking recipes in the legend of neverland game android ios
 wordcount: 1016
+excerpt: Cooking recipes in the legend of neverland game android ios
 ---
 
   <!-- toc -->

@@ -22,8 +22,8 @@ thumbnail: https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/2X152P2goVs/maxresdefault.jpg
 description: Expel Incident Specific Rewards The Legend Of Neverland
-excerpt: Expel Incident Specific Rewards The Legend Of Neverland
 wordcount: 26
+excerpt: Expel Incident Specific Rewards The Legend Of Neverland
 ---
 
 ## Expel Incident Lists

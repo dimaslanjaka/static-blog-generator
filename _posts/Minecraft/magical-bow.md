@@ -18,8 +18,9 @@ photos:
   - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 description: How to use magical books for bow
 tags: []
-excerpt: How to use magical books for bow
+comments: true
 wordcount: 613
+excerpt: How to use magical books for bow
 ---
 
 # Super Magical Bow Recipes
@@ -65,7 +66,7 @@ You must choose one of the Magical Books below as the last step.
 
 
 <amp-youtube
-      id="video-container-5"
+      id="video-container-8"
       data-videoid="sSnrK7m2RFo"
       width="480"
       height="270"

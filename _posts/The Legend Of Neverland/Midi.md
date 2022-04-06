@@ -21,11 +21,11 @@ uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
 updated: 2022-03-25T16:37:39+0000
 description: Midi collection for the legend of neverland perform music skill
+wordcount: 246
 excerpt: Midi collection for the legend of neverland perform music skill
 thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-wordcount: 246
 ---
 
 ## NPC's favorite musical instrument
@@ -71,7 +71,7 @@ Visit [YT2MIDI](https://youtube2midi.github.io/)
 ### How to create music/song mp3 to midi
 
 <amp-youtube
-      id="video-container-7"
+      id="video-container-6"
       data-videoid="tik3ZFwFsJA"
       width="480"
       height="270"
@@ -85,7 +85,7 @@ Visit [YT2MIDI](https://youtube2midi.github.io/)
     </amp-youtube>
 
 <amp-youtube
-      id="video-container-8"
+      id="video-container-7"
       data-videoid="kIXXv8oUqOc"
       width="480"
       height="270"

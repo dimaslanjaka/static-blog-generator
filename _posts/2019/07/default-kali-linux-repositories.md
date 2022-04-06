@@ -25,9 +25,9 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 description: "open terminal, type gedit /etc/apt/sources.listadd following
   codes: deb http://http.kali.org/kali kali-rolling main non-free"
+wordcount: 30
 excerpt: "open terminal, type gedit /etc/apt/sources.listadd following codes:
   deb http://http.kali.org/kali kali-rolling main non-free"
-wordcount: 30
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">open terminal, type : <pre>gedit /etc/apt/sources.list</pre>add following codes: <br><pre>deb http://http.kali.org/kali kali-rolling main non-free contrib<br>deb-src http://http.kali.org/kali kali-rolling main non-free contrib<br></pre></div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png">

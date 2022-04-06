@@ -27,10 +27,10 @@ photos:
 description: pre><br />LinearLayout.LayoutParams param = new
   LinearLayout.LayoutParams<br /> LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT
   ->
+wordcount: 19
 excerpt: pre><br />LinearLayout.LayoutParams param = new
   LinearLayout.LayoutParams<br /> LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT
   ->
-wordcount: 19
 ---
 
 <pre><br>LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(<br>    LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT -&gt; layout_width<br>    LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT -&gt; layout_height<br>    1.0f // layout_weight 1<br>);<br>YOUR_VIEW.setLayoutParams(param);<br></pre> <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&amp;crop=1" width="100%">

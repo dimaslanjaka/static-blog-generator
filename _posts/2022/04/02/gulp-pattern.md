@@ -8,10 +8,11 @@ webtitle: NodeJS
 category:
   - Uncategorized
 tags: []
+comments: true
+wordcount: 88
 excerpt: macam-macam source pattern pada gulp
 description: macam-macam source pattern pada gulp
 lang: en
-wordcount: 88
 ---
 
 <!--https://www.google.com/search?client=firefox-b-d&q=gulp+pattern+exclude+all+in+subfolder-->

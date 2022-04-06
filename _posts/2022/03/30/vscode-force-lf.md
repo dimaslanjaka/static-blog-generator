@@ -7,6 +7,8 @@ uuid: 2f56d454-ee7d-4888-838d-8c92369290cb
 category:
   - Uncategorized
 tags: []
+comments: true
+wordcount: 51
 lang: en
 description: Force Change ALl End Of Line VSCode To LF
 subtitle: Force Change ALl End Of Line VSCode To LF
@@ -14,7 +16,6 @@ excerpt: Force Change ALl End Of Line VSCode To LF
 thumbnail: https://miro.medium.com/max/1400/1*HSXWWE7wkg9phEJ7ImhT2Q.jpeg
 photos:
   - https://miro.medium.com/max/1400/1*HSXWWE7wkg9phEJ7ImhT2Q.jpeg
-wordcount: 51
 ---
 
 ## Git change all crlf to lf for vscode

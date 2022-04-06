@@ -27,9 +27,9 @@ photos:
   - https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 description: pre><br />// change folder path inside bracket<br
   />includeBuildplugin <br /> dependencySubstitution <br /> // change your
+wordcount: 29
 excerpt: pre><br />// change folder path inside bracket<br />includeBuildplugin
   <br /> dependencySubstitution <br /> // change your
-wordcount: 29
 ---
 
 <pre><br>// change folder path inside bracket<br>includeBuild("plugin") {<br>    dependencySubstitution {<br>    	// change your artifact group and id<br>        // iam using <a href="https://github.com/dimaslanjaka/gradle-plugin/" target="_blank" rel="noopener noreferer nofollow">https://github.com/dimaslanjaka/gradle-plugin/</a> for example<br>        substitute(module("com.dimaslanjaka:gradle-plugin")).with(project(":"))<br>    }<br>}<br></pre> <img src="https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png">

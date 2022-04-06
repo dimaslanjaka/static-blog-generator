@@ -27,9 +27,9 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
   id=elemenTersedia></div><script>function
+wordcount: 137
 excerpt: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
   id=elemenTersedia></div><script>function
-wordcount: 137
 ---
 
 <div>

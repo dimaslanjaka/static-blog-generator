@@ -5,7 +5,7 @@ author:
 category:
   - Programming
   - Regular Expression
-comments: false
+comments: true
 cover: /RegExp/RegExp/badwords.png
 date: 2021-09-22T00:00:00+07:00
 lang: en
@@ -22,8 +22,8 @@ thumbnail: /RegExp/RegExp/badwords.png
 photos:
   - /RegExp/RegExp/badwords.png
 description: Match string not containing string, exclude badwords
-excerpt: Match string not containing string, exclude badwords
 wordcount: 9
+excerpt: Match string not containing string, exclude badwords
 ---
 
 <!--toc-->

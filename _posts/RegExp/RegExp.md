@@ -6,7 +6,7 @@ author:
 category:
   - Programming
   - Regular Expression
-comments: false
+comments: true
 cover: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
 date: 2021-09-22T00:00:00+07:00
 lang: en
@@ -23,8 +23,8 @@ thumbnail: https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
 photos:
   - https://www.w3programmers.com/wp-content/uploads/2012/07/regex.jpg
 description: Regular Expression is a
-excerpt: Regular Expression is a
 wordcount: 1124
+excerpt: Regular Expression is a
 ---
 
 <!--https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285-->

@@ -23,8 +23,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.ma
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets.materialup.com/uploads/82eae29e-33b7-4ff7-be10-df432402b2b6/preview
 description: Fresh proxy oogle passedGoogle passed proxies,
-excerpt: Fresh proxy oogle passedGoogle passed proxies,
 wordcount: 172
+excerpt: Fresh proxy oogle passedGoogle passed proxies,
 ---
 
 <div id="proxy_result_wrapper">

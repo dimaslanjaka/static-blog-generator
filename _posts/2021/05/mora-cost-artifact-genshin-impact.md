@@ -25,8 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wi
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Icon_5_Stars.png/revision/latest/scale-to-width-down/63?cb=20201226100736
 description: Rarity Exp Multiplier Chance
-excerpt: Rarity Exp Multiplier Chance
 wordcount: 2355
+excerpt: Rarity Exp Multiplier Chance
 ---
 
 <!-- @format -->

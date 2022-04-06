@@ -13,13 +13,14 @@ uuid: 60adad91-cafd-4888-8da8-a84bfff539a9
 category:
   - Programming
   - PHP
+comments: true
+wordcount: 265
 excerpt: Various step to fix xampp windows updated 2022
 description: Various step to fix xampp windows updated 2022
 lang: en
 thumbnail: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
-wordcount: 265
 ---
 
 ## How to solve "Error: Apache shutdown unexpectedly"?

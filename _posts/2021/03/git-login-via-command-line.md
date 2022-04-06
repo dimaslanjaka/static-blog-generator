@@ -22,9 +22,9 @@ updated: 2021-03-29T07:50:58+07:00
 thumbnail: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
+wordcount: 17
 description: Git Login Via Command Line
 excerpt: Git Login Via Command Line
-wordcount: 17
 ---
 
 <pre class="test"><br>git config --global user.name myusername

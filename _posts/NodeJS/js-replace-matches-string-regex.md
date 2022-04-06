@@ -18,8 +18,9 @@ description: How to match regex from string and replace matched string 1-9
 category:
   - Programming
   - JS
-excerpt: How to match regex from string and replace matched string 1-9
+comments: true
 wordcount: 95
+excerpt: How to match regex from string and replace matched string 1-9
 ---
 
 # NodeJS Replace Matched String From Regex

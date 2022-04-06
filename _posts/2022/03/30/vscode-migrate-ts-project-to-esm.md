@@ -7,6 +7,8 @@ uuid: 0d62f3d2-19c9-4888-8674-ddff779112e4
 category:
   - Uncategorized
 tags: []
+comments: true
+wordcount: 420
 lang: en
 description: VSCode Migrate Typescript CommonJS to ESM
 subtitle: VSCode Migrate Typescript CommonJS to ESM
@@ -14,7 +16,6 @@ excerpt: VSCode Migrate Typescript CommonJS to ESM
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314
-wordcount: 420
 ---
 
 ## How to migrate typescript commonjs to esm with vscode

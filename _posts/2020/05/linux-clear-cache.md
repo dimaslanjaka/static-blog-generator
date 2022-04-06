@@ -21,12 +21,12 @@ type: post
 uuid: db68c44f-5c4e-4888-824c-065ae21add60
 webtitle: Script
 updated: 2022-03-26T05:37:59+0000
+wordcount: 105
 excerpt: Script To Clear Cache Linux
 description: Script To Clear Cache Linux
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://www.wissenschaft.com.ng/wp-content/uploads/2021/02/clear_ram_buffer_linux.jpg
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/https://www.wissenschaft.com.ng/wp-content/uploads/2021/02/clear_ram_buffer_linux.jpg
-wordcount: 105
 ---
 
 ```bash

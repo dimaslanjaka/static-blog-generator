@@ -25,9 +25,9 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
+wordcount: 6
 excerpt: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
-wordcount: 6
 ---
 
 <h2>open folder with sublime text 3</h2><script src="https://gist.github.com/roundand/9367852.js"></script>

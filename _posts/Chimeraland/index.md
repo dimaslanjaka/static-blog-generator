@@ -17,9 +17,9 @@ webtitle: Chimeraland
 thumbnail: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
-excerpt: Index Tree Chimeraland
-subtitle: Index Tree Chimeraland
 wordcount: 11
+subtitle: Index Tree Chimeraland
+excerpt: Index Tree Chimeraland
 ---
 
 ## Cooking Recipes

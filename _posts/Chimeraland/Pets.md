@@ -22,9 +22,9 @@ webtitle: Chimeraland
 thumbnail: /Chimeraland/Pets/cover.jpg
 photos:
   - /Chimeraland/Pets/cover.jpg
+wordcount: 2391
 excerpt: Information about pets attributes chimeraland
 description: Information about pets attributes chimeraland
-wordcount: 2391
 ---
 
 <!-- translator -->

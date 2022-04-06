@@ -26,9 +26,9 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br
   /> firstArr.addquot;1quot;;<br />
+wordcount: 38
 excerpt: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br />
   firstArr.addquot;1quot;;<br />
-wordcount: 38
 ---
 
 ```java

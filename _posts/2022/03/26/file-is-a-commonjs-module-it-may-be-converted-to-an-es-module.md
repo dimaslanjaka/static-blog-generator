@@ -14,6 +14,8 @@ uuid: 1d699a76-b023-4888-85f3-bd25b793aa3d
 category:
   - Programming
   - JS
+comments: true
+wordcount: 137
 excerpt: disable vscode alert File is a CommonJS module; it may be converted to
   an ES module
 description: disable vscode alert File is a CommonJS module; it may be converted
@@ -22,7 +24,6 @@ lang: en
 thumbnail: https://i.stack.imgur.com/Xo2sA.png
 photos:
   - https://i.stack.imgur.com/Xo2sA.png
-wordcount: 137
 ---
 
 # File is a CommonJS module; it may be converted to an ES module

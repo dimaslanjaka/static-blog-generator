@@ -20,8 +20,9 @@ photos:
   - /Minecraft/magical-book/minecraft-enchant-at-anvil-900x506.jpg
 description: All Description And Usages Of Magical Books Minecraft
 tags: []
-excerpt: All Description And Usages Of Magical Books Minecraft
+comments: true
 wordcount: 939
+excerpt: All Description And Usages Of Magical Books Minecraft
 ---
 
 # List of all Magical Book Minecraft Enchantments
