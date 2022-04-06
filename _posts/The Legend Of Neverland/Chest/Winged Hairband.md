@@ -56,7 +56,7 @@ excerpt: Chest Winged Hairband location in the legend of neverland
 ## Video tutorial
 
 <amp-youtube
-      id="video-container-10"
+      id="video-container-1"
       data-videoid="psOnlBSRBjA"
       width="480"
       height="270"
@@ -70,7 +70,7 @@ excerpt: Chest Winged Hairband location in the legend of neverland
     </amp-youtube>
 
 <amp-youtube
-      id="video-container-11"
+      id="video-container-2"
       data-videoid="yRbP_fSP3xY"
       width="480"
       height="270"
