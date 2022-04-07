@@ -1,3 +1,7 @@
+---
+title: test iframe
+---
+
 IFRAME
 
 <iframe src="/guide/adsense-auto-headers.html" frameborder="0" width="100%" height="150px"></iframe>
