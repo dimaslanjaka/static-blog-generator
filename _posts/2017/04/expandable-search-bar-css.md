@@ -25,6 +25,8 @@ thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPiiyCAjSBQpwIQ
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPiiyCAjSBQpwIQYKGS6wUqFGHQWSK9W7UhmZ5mu9eAPavFkA-
 wordcount: 11
+url: https://www.webmanajemen.com/source/2017/04/expandable-search-bar-css.html
+permalink: /source/2017/04/expandable-search-bar-css.html
 description: Expandable Search Bar [CSS]
 excerpt: Expandable Search Bar [CSS]
 ---

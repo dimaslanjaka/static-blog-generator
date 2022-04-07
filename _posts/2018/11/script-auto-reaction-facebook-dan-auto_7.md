@@ -25,6 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blog
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-8_qQfeqjz3o/Wou11Ei7rNI/AAAAAAAABww/akGzXB7i6moUJchh3oKOBkmlblOyEor4ACLcBGAs/s400/Screenshot_Chrome_20180220-124435.png
 wordcount: 33
+url: https://www.webmanajemen.com/source/2018/11/script-auto-reaction-facebook-dan-auto_7.html
+permalink: /source/2018/11/script-auto-reaction-facebook-dan-auto_7.html
 description: "[NEW] Script Terbaru auto Reaction Facebook dan auto refresh token"
 excerpt: "[NEW] Script Terbaru auto Reaction Facebook dan auto refresh token"
 ---

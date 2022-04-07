@@ -24,6 +24,8 @@ photos:
 description: Expel Incident With The Highest Exp Character Rewards.
 wordcount: 175
 excerpt: Expel Incident With The Highest Exp Character Rewards.
+url: https://www.webmanajemen.com/source/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html
+permalink: /source/The%20Legend%20Of%20Neverland/Expel%20Incident/Exp%20Char.html
 ---
 
 <!-- toc -->

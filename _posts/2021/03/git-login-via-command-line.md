@@ -23,6 +23,8 @@ thumbnail: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 wordcount: 17
+url: https://www.webmanajemen.com/source/2021/03/git-login-via-command-line.html
+permalink: /source/2021/03/git-login-via-command-line.html
 description: Git Login Via Command Line
 excerpt: Git Login Via Command Line
 ---

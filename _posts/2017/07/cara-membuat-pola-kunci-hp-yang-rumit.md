@@ -23,6 +23,8 @@ thumbnail: https://image.ibb.co/eyVsN5/13438874_1966615786928595_919444338442323
 photos:
   - https://image.ibb.co/eyVsN5/13438874_1966615786928595_9194443384423239792_n.jpg
 wordcount: 139
+url: https://www.webmanajemen.com/source/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html
+permalink: /source/2017/07/cara-membuat-pola-kunci-hp-yang-rumit.html
 description: Cara membuat pola kunci hp yang rumit
 excerpt: Cara membuat pola kunci hp yang rumit
 ---

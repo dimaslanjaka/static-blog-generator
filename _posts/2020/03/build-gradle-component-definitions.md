@@ -23,6 +23,8 @@ thumbnail: https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBL
 photos:
   - https://1.bp.blogspot.com/-Tos8rqKMyGA/XmNfZ846naI/AAAAAAAAAAM/PjoZBLK56IMCbfHmazdWHifnYzigxC7hgCLcBGAsYHQ/s320/gradle.png
 wordcount: 267
+url: https://www.webmanajemen.com/source/2020/03/build-gradle-component-definitions.html
+permalink: /source/2020/03/build-gradle-component-definitions.html
 description: Build Gradle Component Definitions
 excerpt: Build Gradle Component Definitions
 ---

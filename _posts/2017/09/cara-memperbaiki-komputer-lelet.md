@@ -23,6 +23,8 @@ thumbnail: https://imgdb.net/images/3181.png
 photos:
   - https://imgdb.net/images/3181.png
 wordcount: 2343
+url: https://www.webmanajemen.com/source/2017/09/cara-memperbaiki-komputer-lelet.html
+permalink: /source/2017/09/cara-memperbaiki-komputer-lelet.html
 description: Cara Memperbaiki komputer lelet
 excerpt: Cara Memperbaiki komputer lelet
 ---

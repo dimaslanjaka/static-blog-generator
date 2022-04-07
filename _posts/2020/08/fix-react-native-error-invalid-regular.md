@@ -30,6 +30,8 @@ description: If you Got this issue today on windows, but dont need to downgrade
 wordcount: 42
 excerpt: If you Got this issue today on windows, but dont need to downgrade
   node, just as discussed on
+url: https://www.webmanajemen.com/source/2020/08/fix-react-native-error-invalid-regular.html
+permalink: /source/2020/08/fix-react-native-error-invalid-regular.html
 ---
 
 If you Got this issue today on windows, but don't need to downgrade node, just as discussed on

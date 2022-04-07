@@ -25,6 +25,8 @@ thumbnail: https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
 photos:
   - https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
 wordcount: 54
+url: https://www.webmanajemen.com/source/2021/05/update-genshin-impact-patch-v150-v151.html
+permalink: /source/2021/05/update-genshin-impact-patch-v150-v151.html
 description: Update Genshin Impact Patch v.1.5.0 - v.1.5.1 Via Download Manager
 excerpt: Update Genshin Impact Patch v.1.5.0 - v.1.5.1 Via Download Manager
 ---

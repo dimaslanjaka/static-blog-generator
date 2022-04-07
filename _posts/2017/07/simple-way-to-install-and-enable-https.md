@@ -23,6 +23,8 @@ thumbnail: https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hn
 photos:
   - https://4.bp.blogspot.com/-ZkYZnuPViOs/WJRctu7ZvqI/AAAAAAAAEcc/CcO3hnHt38w5jxEHtSSi9XAq21mnyCRyACLcB/s1600/Cara%2BPasang%2Bdan%2BAktifkan%2BHTTPS%2B%2528SSL%2529%2Bdi%2BBlogspot%2BCustom%2BDomain%2B01.jpg
 wordcount: 4187
+url: https://www.webmanajemen.com/source/2017/07/simple-way-to-install-and-enable-https.html
+permalink: /source/2017/07/simple-way-to-install-and-enable-https.html
 description: Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain
 excerpt: Simple way to Install and Enable HTTPS SSL in Blogspot Custom Domain
 ---

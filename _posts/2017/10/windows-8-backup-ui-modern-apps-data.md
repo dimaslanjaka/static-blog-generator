@@ -23,6 +23,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 368
+url: https://www.webmanajemen.com/source/2017/10/windows-8-backup-ui-modern-apps-data.html
+permalink: /source/2017/10/windows-8-backup-ui-modern-apps-data.html
 description: "Windows 8: Backup UI Modern Apps Data Offline, Restore dengan mudah"
 excerpt: "Windows 8: Backup UI Modern Apps Data Offline, Restore dengan mudah"
 ---

@@ -23,6 +23,8 @@ thumbnail: https://dimaslanjaka-storage.000webhostapp.com/img.php?type=jpeg&url=
 photos:
   - https://dimaslanjaka-storage.000webhostapp.com/img.php?type=jpeg&url=https://image.tmdb.org/t/p/w185/qey0tdcOp9kCDdEZuJ87yE3crSe.jpg
 wordcount: 663
+url: https://www.webmanajemen.com/source/2018/11/download-film-axl-2018-subtitle.html
+permalink: /source/2018/11/download-film-axl-2018-subtitle.html
 description: Download film axl 2018 subtitle indonesia download movie
 excerpt: Download film axl 2018 subtitle indonesia download movie
 ---

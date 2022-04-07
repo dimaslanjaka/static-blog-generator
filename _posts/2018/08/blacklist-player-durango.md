@@ -23,6 +23,8 @@ thumbnail: https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMom
 photos:
   - https://4.bp.blogspot.com/-lM_qJ3TzI-o/W4A248M9M_I/AAAAAAAAAUA/VwfMomHV9R07ECo_Z7zC1dLgP2gPtxc0ACLcBGAs/s1600/blacklist-rubber-stamp-clip-art-vector_csp42894667.jpg
 wordcount: 5
+url: https://www.webmanajemen.com/source/2018/08/blacklist-player-durango.html
+permalink: /source/2018/08/blacklist-player-durango.html
 description: BLACKLIST PLAYER Durango
 excerpt: BLACKLIST PLAYER Durango
 ---

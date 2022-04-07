@@ -28,6 +28,8 @@ thumbnail: //urlz.fr/6tog
 photos:
   - //urlz.fr/6tog
 wordcount: 42
+url: https://www.webmanajemen.com/source/2018/01/easy-way-of-adding-pin-it-buttons-in.html
+permalink: /source/2018/01/easy-way-of-adding-pin-it-buttons-in.html
 description: Easy Way of Adding Pin It Buttons in Images
 excerpt: Easy Way of Adding Pin It Buttons in Images
 ---

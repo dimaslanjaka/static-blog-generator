@@ -25,6 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatu
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://topjavatutorial.com/wp-content/uploads/2016/08/consolelog.png
 wordcount: 83
+url: https://www.webmanajemen.com/source/2019/02/js-print-console-log-into-div.html
+permalink: /source/2019/02/js-print-console-log-into-div.html
 description: "[JS] Print console log into div"
 excerpt: "[JS] Print console log into div"
 ---

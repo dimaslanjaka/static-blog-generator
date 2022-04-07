@@ -29,6 +29,8 @@ photos:
 description: Usage, explanations of node options for nodejs
 wordcount: 216
 excerpt: Usage, explanations of node options for nodejs
+url: https://www.webmanajemen.com/source/NodeJS/node-options.html
+permalink: /source/NodeJS/node-options.html
 ---
 
 # NODEJS OPTIONS [ NODE_OPTIONS ]

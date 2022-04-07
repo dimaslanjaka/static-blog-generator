@@ -30,6 +30,8 @@ description: Official php-cli installation on android by L3n4r0x php Running On
 wordcount: 1488
 excerpt: Official php-cli installation on android by L3n4r0x php Running On
   Android Terminal -> This Repost From My Another Blogs <-
+url: https://www.webmanajemen.com/source/2017/04/instal-php-cli-pada-android-instalasi.html
+permalink: /source/2017/04/instal-php-cli-pada-android-instalasi.html
 ---
 
 <div dir="ltr" style="text-align: left" trbidi="on">

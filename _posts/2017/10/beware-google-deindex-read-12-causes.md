@@ -24,6 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blog
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KGl-2bvcaKg/WFA0coka7kI/AAAAAAAAAbU/k-WH1u1o7vUZgxvSTWzOzRnrYEPAS6VdwCLcB/s1600/penyebab-dan-cara-mengatasi-deindex-google.jpg
 wordcount: 989
+url: https://www.webmanajemen.com/source/2017/10/beware-google-deindex-read-12-causes.html
+permalink: /source/2017/10/beware-google-deindex-read-12-causes.html
 description: Beware Google DeIndex Read the 12 Causes and Solutions Here
 excerpt: Beware Google DeIndex Read the 12 Causes and Solutions Here
 ---

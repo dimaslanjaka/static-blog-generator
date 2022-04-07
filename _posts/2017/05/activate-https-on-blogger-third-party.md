@@ -25,6 +25,8 @@ thumbnail: https://3.bp.blogspot.com/-bOCTNQhWzYA/WBmcYZFKW8I/AAAAAAAAAw0/V1juMd
 photos:
   - https://3.bp.blogspot.com/-bOCTNQhWzYA/WBmcYZFKW8I/AAAAAAAAAw0/V1juMdd-VWw8AUrPb8b7Wz8jDYdm1Vi0gCLcB/s400/HTTPS_for_custom_domains-min.png
 wordcount: 5610
+url: https://www.webmanajemen.com/source/2017/05/activate-https-on-blogger-third-party.html
+permalink: /source/2017/05/activate-https-on-blogger-third-party.html
 description: Activate HTTPS on Blogger third party Domain 100 Worked
 excerpt: Activate HTTPS on Blogger third party Domain 100 Worked
 ---

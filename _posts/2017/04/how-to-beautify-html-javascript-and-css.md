@@ -29,6 +29,8 @@ thumbnail: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9
 photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
 wordcount: 89
+url: https://www.webmanajemen.com/source/2017/04/how-to-beautify-html-javascript-and-css.html
+permalink: /source/2017/04/how-to-beautify-html-javascript-and-css.html
 description: How to beautify html javascript and css using script on the fly
 excerpt: How to beautify html javascript and css using script on the fly
 ---

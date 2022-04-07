@@ -24,6 +24,8 @@ thumbnail: https://imgdb.net/images/3179.png
 photos:
   - https://imgdb.net/images/3179.png
 wordcount: 442
+url: https://www.webmanajemen.com/source/2017/09/tutorial-cara-symlink-file-di-android.html
+permalink: /source/2017/09/tutorial-cara-symlink-file-di-android.html
 description: Tutorial Cara symlink file di android
 excerpt: Tutorial Cara symlink file di android
 ---

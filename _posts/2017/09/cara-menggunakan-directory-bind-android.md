@@ -24,6 +24,8 @@ thumbnail: https://imgdb.net/images/3180.jpg
 photos:
   - https://imgdb.net/images/3180.jpg
 wordcount: 266
+url: https://www.webmanajemen.com/source/2017/09/cara-menggunakan-directory-bind-android.html
+permalink: /source/2017/09/cara-menggunakan-directory-bind-android.html
 description: Cara menggunakan Directory Bind Android
 excerpt: Cara menggunakan Directory Bind Android
 ---

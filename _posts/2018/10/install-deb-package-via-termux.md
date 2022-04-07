@@ -25,6 +25,8 @@ thumbnail: https://imgdb.net/images/4271.png
 photos:
   - https://imgdb.net/images/4271.png
 wordcount: 338
+url: https://www.webmanajemen.com/source/2018/10/install-deb-package-via-termux.html
+permalink: /source/2018/10/install-deb-package-via-termux.html
 description: Install deb package via Termux
 excerpt: Install deb package via Termux
 ---

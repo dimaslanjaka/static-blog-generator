@@ -23,6 +23,8 @@ thumbnail: https://4.bp.blogspot.com/-wYBURBO6LNU/WbNRyJBVHKI/AAAAAAAAAE0/jpCy2b
 photos:
   - https://4.bp.blogspot.com/-wYBURBO6LNU/WbNRyJBVHKI/AAAAAAAAAE0/jpCy2bnD9CY-322fJ6JcJdfEiH8MsXl9QCLcBGAs/s320/images%2B%252810%2529.jpg
 wordcount: 554
+url: https://www.webmanajemen.com/source/2017/09/list-of-social-bookmarking-dofollow.html
+permalink: /source/2017/09/list-of-social-bookmarking-dofollow.html
 description: List of Social Bookmarking Dofollow 2017
 excerpt: List of Social Bookmarking Dofollow 2017
 ---

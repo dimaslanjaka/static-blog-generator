@@ -27,6 +27,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblo
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://roadtoblogging.com/wp-content/uploads/2013/01/Adsense-Account-With-Subdomain-1.png?w=730&ssl=1
 wordcount: 174
+url: https://www.webmanajemen.com/source/2017/08/dapatkah-anda-mendapatkan-persetujuan.html
+permalink: /source/2017/08/dapatkah-anda-mendapatkan-persetujuan.html
 description: Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?
 excerpt: Dapatkah Anda Mendapatkan Persetujuan AdSense dengan Situs Subdomain?
 ---

@@ -10,6 +10,8 @@ updated: 2022-03-26
 uuid: abcdca48-acd1-4888-8a33-cdcdb7b877dc
 comments: true
 wordcount: 48
+url: https://www.webmanajemen.com/source/2022/03/26/mysql-create-new-user.html
+permalink: /source/2022/03/26/mysql-create-new-user.html
 lang: en
 description: MySQL Command to create new database user
 subtitle: MySQL Command to create new database user

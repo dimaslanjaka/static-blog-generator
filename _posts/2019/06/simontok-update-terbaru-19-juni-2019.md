@@ -23,6 +23,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 80
+url: https://www.webmanajemen.com/source/2019/06/simontok-update-terbaru-19-juni-2019.html
+permalink: /source/2019/06/simontok-update-terbaru-19-juni-2019.html
 description: Simontok Update Terbaru 19 Juni 2019
 excerpt: Simontok Update Terbaru 19 Juni 2019
 ---

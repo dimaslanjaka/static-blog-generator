@@ -25,6 +25,8 @@ photos:
 description: fastboot getvar product
 wordcount: 9
 excerpt: fastboot getvar product
+url: https://www.webmanajemen.com/source/2020/07/cara-mengetahui-produk-android-melalui.html
+permalink: /source/2020/07/cara-mengetahui-produk-android-melalui.html
 ---
 
 <ul style="text-align: left;"><li>reboot ke fastboot mode</li><li>ketik</li></ul>fastboot devices<div>fastboot getvar product</div>

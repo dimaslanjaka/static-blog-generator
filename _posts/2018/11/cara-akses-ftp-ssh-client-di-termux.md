@@ -24,6 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechro
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://caninechronicle.com/wp-content/uploads/2012/09/FTP-icon.jpg
 wordcount: 869
+url: https://www.webmanajemen.com/source/2018/11/cara-akses-ftp-ssh-client-di-termux.html
+permalink: /source/2018/11/cara-akses-ftp-ssh-client-di-termux.html
 description: Cara akses FTP SSH client di termux
 excerpt: Cara akses FTP SSH client di termux
 ---

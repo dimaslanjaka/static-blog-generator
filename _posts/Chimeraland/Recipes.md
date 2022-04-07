@@ -34,6 +34,8 @@ excerpt: Chimeraland cooking recipes and food functions such as buffs and
 description: Chimeraland cooking recipes and food functions such as buffs and
   attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan
   seperti buff dan kesukaan attendant
+url: https://www.webmanajemen.com/source/Chimeraland/Recipes.html
+permalink: /source/Chimeraland/Recipes.html
 ---
 
 <!-- translator -->

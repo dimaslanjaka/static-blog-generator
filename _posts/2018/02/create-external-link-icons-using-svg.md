@@ -28,6 +28,8 @@ thumbnail: https://goo.gl/ZDjCRk
 photos:
   - https://goo.gl/ZDjCRk
 wordcount: 85
+url: https://www.webmanajemen.com/source/2018/02/create-external-link-icons-using-svg.html
+permalink: /source/2018/02/create-external-link-icons-using-svg.html
 description: Create External Link Icons Using SVG without JavaScript In Blogger
 excerpt: Create External Link Icons Using SVG without JavaScript In Blogger
 ---

@@ -23,6 +23,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.co
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/QLNHFRe.png
 wordcount: 784
+url: https://www.webmanajemen.com/source/2017/07/cara-mengkonversi-bookmarklet-ke.html
+permalink: /source/2017/07/cara-mengkonversi-bookmarklet-ke.html
 description: Cara Mengkonversi Bookmarklet ke Ekstensi Chrome
 excerpt: Cara Mengkonversi Bookmarklet ke Ekstensi Chrome
 ---

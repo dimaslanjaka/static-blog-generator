@@ -27,6 +27,8 @@ thumbnail: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSD3Z65uK5mWj1kF
 photos:
   - https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSD3Z65uK5mWj1kFiaYKxcVJ8w0XiysZTz3V3ak8FIwpkFiTpnc
 wordcount: 54
+url: https://www.webmanajemen.com/source/2017/04/cara-defer-multiple-external-file-js.html
+permalink: /source/2017/04/cara-defer-multiple-external-file-js.html
 description: Cara defer multiple external file js
 excerpt: Cara defer multiple external file js
 ---

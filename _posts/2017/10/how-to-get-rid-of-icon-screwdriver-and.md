@@ -26,6 +26,8 @@ thumbnail: https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3R
 photos:
   - https://3.bp.blogspot.com/-8fO6Qeldjf4/Uu-WS4ZbepI/AAAAAAAAEC0/HVEq3RPXenY/s320/quick+edit+and+wrench+icon.jpg
 wordcount: 50
+url: https://www.webmanajemen.com/source/2017/10/how-to-get-rid-of-icon-screwdriver-and.html
+permalink: /source/2017/10/how-to-get-rid-of-icon-screwdriver-and.html
 description: How to Get Rid of Icon Screwdriver and Pliers Wrenches Quick Edit Wrench
 excerpt: How to Get Rid of Icon Screwdriver and Pliers Wrenches Quick Edit Wrench
 ---

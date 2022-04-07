@@ -14,6 +14,8 @@ category:
   - Uncategorized
 comments: true
 wordcount: 127
+url: https://www.webmanajemen.com/source/2022/02/20/vscode-integrated-terminal-options.html
+permalink: /source/2022/02/20/vscode-integrated-terminal-options.html
 lang: en
 description: Custom PATH VSCode Integrated Terminal Options
 subtitle: Custom PATH VSCode Integrated Terminal Options

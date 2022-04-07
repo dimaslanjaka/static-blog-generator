@@ -30,6 +30,8 @@ description: manipulating multidimensional array using arraymap/ Ilterate
 wordcount: 164
 excerpt: manipulating multidimensional array using arraymap/ Ilterate
   multidimensional array simplicity @desc modify and manipulate or populate
+url: https://www.webmanajemen.com/source/2020/03/php-array-magic-trick-and-manipulations.html
+permalink: /source/2020/03/php-array-magic-trick-and-manipulations.html
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"><ol><li>manipulating multidimensional array using array_map</li><pre><br>/**<br>* Ilterate multidimensional array simplicity<br>* @desc modify and manipulate or populate multidimensional array with simple tricks<br>* @param array $arr<br>* @param function $callback<br>* @return Array<br>**/<br>function Map($arr, $callback)<br>{<br>  if (!is_callable($callback)) {<br>    throw new Exception("Callback must be function", 1);<br>  }<br><br>  return array_map(function ($key, $val) use ($callback) {<br>    return call_user_func($callback, $key, $val);<br>  }, array_keys($arr), $arr);<br>}<br></pre></ol> </div>

@@ -25,6 +25,8 @@ thumbnail: https://2.bp.blogspot.com/-_iPfvFT3nYw/WaJmqQ6ifoI/AAAAAAAAAAo/kmhDBl
 photos:
   - https://2.bp.blogspot.com/-_iPfvFT3nYw/WaJmqQ6ifoI/AAAAAAAAAAo/kmhDBlj0teEtqHC1OAmA2e3GrhCGxhaNACLcBGAs/s320/StockSnap_WBWKY1FQ2I.jpg
 wordcount: 246
+url: https://www.webmanajemen.com/source/2017/08/cara-verifikasi-nomor-telepon-facebook.html
+permalink: /source/2017/08/cara-verifikasi-nomor-telepon-facebook.html
 description: Cara verifikasi nomor telepon facebook
 excerpt: Cara verifikasi nomor telepon facebook
 ---

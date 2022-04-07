@@ -24,6 +24,8 @@ thumbnail: https://imgdb.net/images/3197.jpg
 photos:
   - https://imgdb.net/images/3197.jpg
 wordcount: 817
+url: https://www.webmanajemen.com/source/2017/09/some-types-of-border-css.html
+permalink: /source/2017/09/some-types-of-border-css.html
 description: SOME TYPES OF BORDER CSS
 excerpt: SOME TYPES OF BORDER CSS
 ---

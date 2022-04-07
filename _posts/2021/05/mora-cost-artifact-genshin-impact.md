@@ -27,6 +27,8 @@ photos:
 description: Rarity Exp Multiplier Chance
 wordcount: 2355
 excerpt: Rarity Exp Multiplier Chance
+url: https://www.webmanajemen.com/source/2021/05/mora-cost-artifact-genshin-impact.html
+permalink: /source/2021/05/mora-cost-artifact-genshin-impact.html
 ---
 
 <!-- @format -->

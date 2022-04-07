@@ -19,6 +19,8 @@ comments: true
 wordcount: 163
 excerpt: Bypass FRP Redmi GO Tiare Via MiFlash
 description: Bypass FRP Redmi GO Tiare Via MiFlash
+url: https://www.webmanajemen.com/source/2022/01/04/frp-redmi-go-tiare-fix.html
+permalink: /source/2022/01/04/frp-redmi-go-tiare-fix.html
 lang: en
 thumbnail: /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
 photos:

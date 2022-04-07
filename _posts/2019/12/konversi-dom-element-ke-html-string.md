@@ -30,6 +30,8 @@ description: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
 wordcount: 137
 excerpt: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
   id=elemenTersedia></div><script>function
+url: https://www.webmanajemen.com/source/2019/12/konversi-dom-element-ke-html-string.html
+permalink: /source/2019/12/konversi-dom-element-ke-html-string.html
 ---
 
 <div>

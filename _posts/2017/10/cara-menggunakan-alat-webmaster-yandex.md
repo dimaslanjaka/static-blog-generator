@@ -25,6 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woork
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-yandex-1024x513.png
 wordcount: 106
+url: https://www.webmanajemen.com/source/2017/10/cara-menggunakan-alat-webmaster-yandex.html
+permalink: /source/2017/10/cara-menggunakan-alat-webmaster-yandex.html
 description: Cara Menggunakan Alat Webmaster Yandex
 excerpt: Cara Menggunakan Alat Webmaster Yandex
 ---

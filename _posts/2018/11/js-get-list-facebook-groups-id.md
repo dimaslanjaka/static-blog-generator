@@ -26,6 +26,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4379.png
 wordcount: 1182
+url: https://www.webmanajemen.com/source/2018/11/js-get-list-facebook-groups-id.html
+permalink: /source/2018/11/js-get-list-facebook-groups-id.html
 description: "[JS] Get List Facebook Groups ID"
 excerpt: "[JS] Get List Facebook Groups ID"
 ---

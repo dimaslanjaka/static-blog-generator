@@ -23,6 +23,8 @@ thumbnail: https://4.bp.blogspot.com/-PpWaOxbn6Tk/Uxx5oeTV9sI/AAAAAAAAAc0/Nbc-Ol
 photos:
   - https://4.bp.blogspot.com/-PpWaOxbn6Tk/Uxx5oeTV9sI/AAAAAAAAAc0/Nbc-Oluyp0s/s280/Screenshot_1.png
 wordcount: 256
+url: https://www.webmanajemen.com/source/2018/11/cara-membuat-cron-job-menggunakan.html
+permalink: /source/2018/11/cara-membuat-cron-job-menggunakan.html
 description: Cara Membuat Cron Job Menggunakan webcron.org
 excerpt: Cara Membuat Cron Job Menggunakan webcron.org
 ---

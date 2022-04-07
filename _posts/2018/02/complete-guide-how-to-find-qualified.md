@@ -24,6 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.imgur.c
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.imgur.com/6005jwN.jpg
 wordcount: 2571
+url: https://www.webmanajemen.com/source/2018/02/complete-guide-how-to-find-qualified.html
+permalink: /source/2018/02/complete-guide-how-to-find-qualified.html
 description: Complete Guide How to Find a Qualified Expired Domain
 excerpt: Complete Guide How to Find a Qualified Expired Domain
 ---

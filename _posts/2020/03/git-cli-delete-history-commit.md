@@ -23,6 +23,8 @@ thumbnail: https://cdn.icon-icons.com/icons2/1488/PNG/512/5347-github_102542.png
 photos:
   - https://cdn.icon-icons.com/icons2/1488/PNG/512/5347-github_102542.png
 wordcount: 79
+url: https://www.webmanajemen.com/source/2020/03/git-cli-delete-history-commit.html
+permalink: /source/2020/03/git-cli-delete-history-commit.html
 description: Git CLI Delete History Commit
 excerpt: Git CLI Delete History Commit
 ---

@@ -23,6 +23,8 @@ thumbnail: https://1.bp.blogspot.com/-bZrtgAkZh-4/UP0uT3DtuhI/AAAAAAAABpQ/IIk5CH
 photos:
   - https://1.bp.blogspot.com/-bZrtgAkZh-4/UP0uT3DtuhI/AAAAAAAABpQ/IIk5CHpCW8U/s1600/do-follow-blog.gif
 wordcount: 1078
+url: https://www.webmanajemen.com/source/2017/09/how-to-create-and-know-blog-dofollow.html
+permalink: /source/2017/09/how-to-create-and-know-blog-dofollow.html
 description: HOW TO CREATE AND KNOW BLOG DOFOLLOW
 excerpt: HOW TO CREATE AND KNOW BLOG DOFOLLOW
 ---

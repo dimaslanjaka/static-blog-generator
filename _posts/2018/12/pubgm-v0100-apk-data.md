@@ -24,6 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4579.jpg
 wordcount: 173
+url: https://www.webmanajemen.com/source/2018/12/pubgm-v0100-apk-data.html
+permalink: /source/2018/12/pubgm-v0100-apk-data.html
 description: PUBGM v.0.10.0 APK DATA
 excerpt: PUBGM v.0.10.0 APK DATA
 ---

@@ -27,6 +27,8 @@ thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxm
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxmme5yXnxWiCKL71LNDgDbdXJxGC31KXn6aG-PyQdmuOFvQ
 wordcount: 470
+url: https://www.webmanajemen.com/source/2017/04/valid-amp-contact-form-html-for-amp-page.html
+permalink: /source/2017/04/valid-amp-contact-form-html-for-amp-page.html
 description: Valid AMP Contact Form Html For AMP Page
 excerpt: Valid AMP Contact Form Html For AMP Page
 ---

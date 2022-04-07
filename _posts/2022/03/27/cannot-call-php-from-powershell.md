@@ -15,6 +15,8 @@ comments: true
 wordcount: 456
 excerpt: fix php environtment path for powershell
 description: fix php environtment path for powershell
+url: https://www.webmanajemen.com/source/2022/03/27/cannot-call-php-from-powershell.html
+permalink: /source/2022/03/27/cannot-call-php-from-powershell.html
 lang: en
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
 photos:

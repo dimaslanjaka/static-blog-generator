@@ -29,6 +29,8 @@ description: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br
 wordcount: 38
 excerpt: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br />
   firstArr.addquot;1quot;;<br />
+url: https://www.webmanajemen.com/source/2020/09/remove-all-objects-in-arraylist-that.html
+permalink: /source/2020/09/remove-all-objects-in-arraylist-that.html
 ---
 
 ```java

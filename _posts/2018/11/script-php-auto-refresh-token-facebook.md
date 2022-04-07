@@ -31,6 +31,8 @@ description: Facebook tokenrefresh token facebookphp script018 auto refresh
 wordcount: 97
 excerpt: Facebook tokenrefresh token facebookphp script018 auto refresh
   tokenAuto refresh tokenFacebook autolikeToken autolike facebookGet token
+url: https://www.webmanajemen.com/source/2018/11/script-php-auto-refresh-token-facebook.html
+permalink: /source/2018/11/script-php-auto-refresh-token-facebook.html
 ---
 
 <pre><br>&lt;?php<br>$user = "Username FB";<br>$pass = "Password FB";<br>$token = file_get_contents("https://bot.about-devices.me/instagram/refreshtoken.php?user=$user&amp;pass=$pass");<br>?&gt;<br></pre>Butuh scriptnya ?. Download <a href="https://web-manajemen.blogspot.com/2018/11/script-auto-reaction-facebook-dan-auto.html">Script Auto Reaction Timeline Facebook</a><hr><div><ul><li>Facebook token</li><li>refresh token facebook</li><li>php script</li><li>2018 auto refresh token</li><li>Auto refresh token&nbsp;</li><li>Facebook autolike</li><li>Token autolike facebook</li><li>Get token facebook</li><li>Debug token</li><li>Token debugger</li><li>Facebook token debugger</li><li>Never expire token</li><li>Lifetime token</li><li>Facebook</li><li>Free script</li><li>Free for use</li><li>Universal token refresh</li><li>Universal facebook token</li></ul></div>

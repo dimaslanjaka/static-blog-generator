@@ -23,6 +23,8 @@ thumbnail: https://2.bp.blogspot.com/-6r0R1QZzPpQ/Wal2_GeX74I/AAAAAAAAHYc/prs45H
 photos:
   - https://2.bp.blogspot.com/-6r0R1QZzPpQ/Wal2_GeX74I/AAAAAAAAHYc/prs45HLxpWY08_6nLj7fgott6i9MPqo2ACLcBGAs/s320/screenshot_scan.jpg
 wordcount: 217
+url: https://www.webmanajemen.com/source/2017/09/regcure-317-pro-full-download.html
+permalink: /source/2017/09/regcure-317-pro-full-download.html
 description: RegCure 3.1.7 Pro Full Download
 excerpt: RegCure 3.1.7 Pro Full Download
 ---

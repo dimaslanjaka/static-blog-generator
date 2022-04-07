@@ -24,6 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.c
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.ytimg.com/vi/jFazrvLodrA/maxresdefault.jpg
 wordcount: 69
+url: https://www.webmanajemen.com/source/2019/08/check-number-is-odd-or-even-js.html
+permalink: /source/2019/08/check-number-is-odd-or-even-js.html
 description: Check number is Odd or Even [JS]
 excerpt: Check number is Odd or Even [JS]
 ---

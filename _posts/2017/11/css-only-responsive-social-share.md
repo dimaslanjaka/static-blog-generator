@@ -25,6 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blog
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-522nPhSnyvQ/WgODKCDGFjI/AAAAAAAAt2M/quoqrtMi1jcuXJOFDeBDUoaASkA_tD0jgCLcBGAs/w1100/Screenshot_87.jpg
 wordcount: 1101
+url: https://www.webmanajemen.com/source/2017/11/css-only-responsive-social-share.html
+permalink: /source/2017/11/css-only-responsive-social-share.html
 description: CSS Only Responsive Social Share Buttons For Blogger
 excerpt: CSS Only Responsive Social Share Buttons For Blogger
 ---

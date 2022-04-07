@@ -23,6 +23,8 @@ photos:
 description: Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland
 wordcount: 114
 excerpt: Chest Colorful Auspicious Nimbus Cloud location in the legend of neverland
+url: https://www.webmanajemen.com/source/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html
+permalink: /source/The%20Legend%20Of%20Neverland/Chest/Colorful%20Auspicious%20Nimbus%20Cloud.html
 ---
 
 ## Requirement

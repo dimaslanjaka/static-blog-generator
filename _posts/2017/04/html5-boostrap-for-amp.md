@@ -27,6 +27,8 @@ thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3x
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
 wordcount: 807
+url: https://www.webmanajemen.com/source/2017/04/html5-boostrap-for-amp.html
+permalink: /source/2017/04/html5-boostrap-for-amp.html
 description: HTML5 Boostrap For AMP
 excerpt: HTML5 Boostrap For AMP
 ---

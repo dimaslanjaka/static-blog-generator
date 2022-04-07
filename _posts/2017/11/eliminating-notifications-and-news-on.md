@@ -23,6 +23,8 @@ thumbnail: https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQgg
 photos:
   - https://4.bp.blogspot.com/-_kPiHEMi_LM/WhKCYvQz_uI/AAAAAAAALBY/XQhQggOobwQe8koB_YqLft3FeLj9jp8xgCEwYBhgL/s320/Screenshot_2017-11-20-15-17-10-330_com.UCMobile.intl.png
 wordcount: 62
+url: https://www.webmanajemen.com/source/2017/11/eliminating-notifications-and-news-on.html
+permalink: /source/2017/11/eliminating-notifications-and-news-on.html
 description: Eliminating Notifications and News on UCBROWSER
 excerpt: Eliminating Notifications and News on UCBROWSER
 ---

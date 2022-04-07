@@ -27,6 +27,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogs
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s320/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
 wordcount: 113
+url: https://www.webmanajemen.com/source/2017/06/how-to-create-dark-style-table-sitemap.html
+permalink: /source/2017/06/how-to-create-dark-style-table-sitemap.html
 description: How to Create Dark Style Table Sitemap Blogger
 excerpt: How to Create Dark Style Table Sitemap Blogger
 ---

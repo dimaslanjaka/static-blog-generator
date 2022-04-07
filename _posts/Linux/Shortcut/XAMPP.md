@@ -33,6 +33,8 @@ photos:
 description: How to configure shortcut desktop for xampp linux
 wordcount: 107
 excerpt: How to configure shortcut desktop for xampp linux
+url: https://www.webmanajemen.com/source/Linux/Shortcut/XAMPP.html
+permalink: /source/Linux/Shortcut/XAMPP.html
 ---
 
 # Desktop Start Menu Shortcut XAMPP Linux (Ubuntu etc)

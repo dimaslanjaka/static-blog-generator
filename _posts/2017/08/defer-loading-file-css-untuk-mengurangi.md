@@ -28,6 +28,8 @@ thumbnail: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKp
 photos:
   - https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkn6QekHv4y1EKpYAOy9FD3qAngAFoLYAB9faenCIkJi44YFLGAmFBWDa5
 wordcount: 94
+url: https://www.webmanajemen.com/source/2017/08/defer-loading-file-css-untuk-mengurangi.html
+permalink: /source/2017/08/defer-loading-file-css-untuk-mengurangi.html
 description: Defer Loading File CSS untuk Mengurangi Waktu Pemuatan Halaman
 excerpt: Defer Loading File CSS untuk Mengurangi Waktu Pemuatan Halaman
 ---

@@ -29,6 +29,8 @@ photos:
 description: Seven Knights 2 Hero Usage and Equipment Guide
 wordcount: 2813
 excerpt: Seven Knights 2 Hero Usage and Equipment Guide
+url: https://www.webmanajemen.com/source/Seven%20Knight/hero-and-equipment.html
+permalink: /source/Seven%20Knight/hero-and-equipment.html
 ---
 
 <p>

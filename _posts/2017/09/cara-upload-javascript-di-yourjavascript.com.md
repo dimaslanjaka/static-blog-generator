@@ -25,6 +25,8 @@ thumbnail: https://imgdb.net/images/3191.png
 photos:
   - https://imgdb.net/images/3191.png
 wordcount: 718
+url: https://www.webmanajemen.com/source/2017/09/cara-upload-javascript-di-yourjavascript.com.html
+permalink: /source/2017/09/cara-upload-javascript-di-yourjavascript.com.html
 description: Multilingual hreflang tag for blogger
 excerpt: Multilingual hreflang tag for blogger
 ---
