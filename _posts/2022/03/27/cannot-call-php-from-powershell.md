@@ -12,7 +12,7 @@ uuid: f1fe35f4-632d-4888-8be4-d86b8a41eb8f
 category:
   - Uncategorized
 comments: true
-wordcount: 454
+wordcount: 456
 excerpt: fix php environtment path for powershell
 description: fix php environtment path for powershell
 lang: en
@@ -83,19 +83,9 @@ The execution policy can be change to the Unrestricted for all users in the syst
 
 ### Youtube video tutorial - fix running scripts is disabled on this system
 
-<amp-youtube
-      id="video-container-1"
-      data-videoid="F-fWwkG5Xrk"
-      width="480"
-      height="270"
-      layout="responsive"
-    >
-      <amp-img
-        src="https://img.youtube.com/vi/F-fWwkG5Xrk/sddefault.jpg"
-        placeholder
-        layout="fill"
-      />
-    </amp-youtube>
+<div class="video-container">
+      <iframe src="https://www.youtube.com/embed/F-fWwkG5Xrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 **incoming terms (problem lists fixable with this article):**
 - PowerShell “Running script is disabled on this system” Error and Solution

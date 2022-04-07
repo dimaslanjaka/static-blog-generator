@@ -27,7 +27,7 @@ updated: 2022-02-12T11:18:24+07:00
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
-wordcount: 403
+wordcount: 411
 excerpt: Chimeraland cooking recipes and food functions such as buffs and
   attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan
   seperti buff dan kesukaan attendant
@@ -233,67 +233,27 @@ Recipe :
 
 Video Tutorial:
 Cara unlock **Stove II**
-<amp-youtube
-      id="video-container-1"
-      data-videoid="I_QH6jv7rzA"
-      width="480"
-      height="270"
-      layout="responsive"
-    >
-      <amp-img
-        src="https://img.youtube.com/vi/I_QH6jv7rzA/sddefault.jpg"
-        placeholder
-        layout="fill"
-      />
-    </amp-youtube>
+<div class="video-container">
+      <iframe src="https://www.youtube.com/embed/I_QH6jv7rzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 ### Windoo
 Cara mendapatkan attendant **Windoo**
-<amp-youtube
-      id="video-container-2"
-      data-videoid="P5uAFGr33YA"
-      width="480"
-      height="270"
-      layout="responsive"
-    >
-      <amp-img
-        src="https://img.youtube.com/vi/P5uAFGr33YA/sddefault.jpg"
-        placeholder
-        layout="fill"
-      />
-    </amp-youtube>
+<div class="video-container">
+      <iframe src="https://www.youtube.com/embed/P5uAFGr33YA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 ### Vulorman
 Cara mendapatkan attendant **Vulorman**
-<amp-youtube
-      id="video-container-3"
-      data-videoid="5K-X_U2YwAI"
-      width="480"
-      height="270"
-      layout="responsive"
-    >
-      <amp-img
-        src="https://img.youtube.com/vi/5K-X_U2YwAI/sddefault.jpg"
-        placeholder
-        layout="fill"
-      />
-    </amp-youtube>
+<div class="video-container">
+      <iframe src="https://www.youtube.com/embed/5K-X_U2YwAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 ### Astakat
 Cara mendapatkan attendant **Astakat**
-<amp-youtube
-      id="video-container-4"
-      data-videoid="NYYoisSMqkM"
-      width="480"
-      height="270"
-      layout="responsive"
-    >
-      <amp-img
-        src="https://img.youtube.com/vi/NYYoisSMqkM/sddefault.jpg"
-        placeholder
-        layout="fill"
-      />
-    </amp-youtube>
+<div class="video-container">
+      <iframe src="https://www.youtube.com/embed/NYYoisSMqkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 <center><i>cooking recipes chimeraland updated january 2022</i> <a href="index.html">Back to index chimeraland</a></center>
 
