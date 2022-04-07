@@ -60,8 +60,7 @@ description: Quiz questions and the answers. The Legend Of Neverland Event.
       </div>
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
-      Last updated
-      <!-- now() -->
+      Last updated <%- date_format(page.updated, "LLL") %>
     </small>
 
   </div>
