@@ -27,8 +27,8 @@ thumbnail: https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1Q
 photos:
   - https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
 wordcount: 498
-url: https://www.webmanajemen.com/source/2017/09/create-countdown-clock-for-purposes-of.html
-permalink: /source/2017/09/create-countdown-clock-for-purposes-of.html
+url: https://www.webmanajemen.com/2017/09/create-countdown-clock-for-purposes-of.html
+permalink: /2017/09/create-countdown-clock-for-purposes-of.html
 description: Create a Countdown Clock for the purposes of 1 Hour Promo
 excerpt: Create a Countdown Clock for the purposes of 1 Hour Promo
 ---

@@ -26,8 +26,8 @@ photos:
 description: PHP = 5.4.0 , PHP 7
 wordcount: 41
 excerpt: PHP = 5.4.0 , PHP 7
-url: https://www.webmanajemen.com/source/2018/12/php-if-session-started.html
-permalink: /source/2018/12/php-if-session-started.html
+url: https://www.webmanajemen.com/2018/12/php-if-session-started.html
+permalink: /2018/12/php-if-session-started.html
 ---
 
 <img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png" title="php" alt="php"><p>    <strong>PHP &gt;= 5.4.0 , PHP 7</strong></p><pre><code>if (session_status() == PHP_SESSION_NONE) {<br>    session_start();<br>}</code></pre><p>    Reference:     <a href="//www.php.net/manual/en/function.session-status.php" rel="nofollow noreferrer">        http://www.php.net/manual/en/function.session-status.php     </a></p><p>    For versions of <strong>PHP &lt; 5.4.0</strong></p><pre><code>if(session_id() == '') {<br>    session_start();<br>}</code></pre> <blockquote>PHP Check if session has started or not, then session_start()</blockquote>

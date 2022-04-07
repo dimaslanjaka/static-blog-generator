@@ -28,8 +28,8 @@ thumbnail: https://3.bp.blogspot.com/-5Eg4P1d-TBY/WZ_9I94dwQI/AAAAAAAAADU/1T1DA5
 photos:
   - https://3.bp.blogspot.com/-5Eg4P1d-TBY/WZ_9I94dwQI/AAAAAAAAADU/1T1DA5cmQD0l_7_SM6aT_1l6KA7lk73RACLcBGAs/s1600/download%2B%25281%2529.jpg
 wordcount: 239
-url: https://www.webmanajemen.com/source/2017/08/update-robot-reaction-facebook-terbaru.html
-permalink: /source/2017/08/update-robot-reaction-facebook-terbaru.html
+url: https://www.webmanajemen.com/2017/08/update-robot-reaction-facebook-terbaru.html
+permalink: /2017/08/update-robot-reaction-facebook-terbaru.html
 description: Update Robot Reaction Facebook Terbaru Migrasi Keamanan Terbaik SSL
   dan Enkripsi Terbaik
 excerpt: Update Robot Reaction Facebook Terbaru Migrasi Keamanan Terbaik SSL dan

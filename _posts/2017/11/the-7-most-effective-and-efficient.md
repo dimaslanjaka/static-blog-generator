@@ -23,8 +23,8 @@ thumbnail: https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLH
 photos:
   - https://2.bp.blogspot.com/-FHAPQbdM_bQ/VAUXVuxesQI/AAAAAAAADt8/U56zLHUTn8c/s1600/Strategi-Pemasaran-Online.jpg
 wordcount: 6862
-url: https://www.webmanajemen.com/source/2017/11/the-7-most-effective-and-efficient.html
-permalink: /source/2017/11/the-7-most-effective-and-efficient.html
+url: https://www.webmanajemen.com/2017/11/the-7-most-effective-and-efficient.html
+permalink: /2017/11/the-7-most-effective-and-efficient.html
 description: The 7 Most Effective and Efficient Online Marketing Strategies
 excerpt: The 7 Most Effective and Efficient Online Marketing Strategies
 ---

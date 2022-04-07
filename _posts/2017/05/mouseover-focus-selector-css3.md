@@ -25,8 +25,8 @@ thumbnail: https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9
 photos:
   - https://1.bp.blogspot.com/-uaYqOPzmKIk/WPgRWL0wYyI/AAAAAAAAFJU/BSgqP9KOA4gg9ERDx3YEY_tg9r4KTY8LQCLcB/s320/Screenshot_2017-04-20-08-38-25.jpg
 wordcount: 155
-url: https://www.webmanajemen.com/source/2017/05/mouseover-focus-selector-css3.html
-permalink: /source/2017/05/mouseover-focus-selector-css3.html
+url: https://www.webmanajemen.com/2017/05/mouseover-focus-selector-css3.html
+permalink: /2017/05/mouseover-focus-selector-css3.html
 description: Mouseover Focus Selector CSS3 Transitions Code HTML and CSS3
 excerpt: Mouseover Focus Selector CSS3 Transitions Code HTML and CSS3
 ---

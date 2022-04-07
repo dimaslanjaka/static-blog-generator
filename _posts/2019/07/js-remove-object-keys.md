@@ -29,8 +29,8 @@ description: "pre><br />var thisIsObject= <br /> apos;Cowapos; :
 wordcount: 71
 excerpt: "pre><br />var thisIsObject= <br /> apos;Cowapos; : apos;Mooapos;,<br
   /> apos;Catapos; : apos;Meowapos;,<br />"
-url: https://www.webmanajemen.com/source/2019/07/js-remove-object-keys.html
-permalink: /source/2019/07/js-remove-object-keys.html
+url: https://www.webmanajemen.com/2019/07/js-remove-object-keys.html
+permalink: /2019/07/js-remove-object-keys.html
 ---
 
 <pre><br>var thisIsObject= {<br>    'Cow' : 'Moo',<br>    'Cat' : 'Meow',<br>    'Dog' : 'Bark'<br>};<br>try {<br>  delete thisIsObject['Cow'];<br>} catch(e){<br>  thisIsObject.cow = undefined;<br>}<br>//test using developer tools F12<br>console.log(thisIsObject);<br></pre> <b>Output</b> <pre><br>=&gt; {Cat: "Meow", Dog: "Bark"}<br></pre> <b>Wrapping in function for <i>Easy Use</i></b> <pre><br>function delkey(obj, key){<br>  try {<br>    delete obj[key];<br>  } catch(e){<br>    obj[key] = undefined;<br>  }<br>  return obj;<br>}<br></pre> <b>Test Wrapped function</b><pre><br>var thisIsObject= {<br>    'Cow' : 'Moo',<br>    'Cat' : 'Meow',<br>    'Dog' : 'Bark'<br>};<br><br>//test using developer tools F12<br>console.log(delkey(thisIsObject, 'Cow'));<br></pre> <b>Output wrapped function</b> <pre><br>=&gt; {Cat: "Meow", Dog: "Bark"}<br></pre>

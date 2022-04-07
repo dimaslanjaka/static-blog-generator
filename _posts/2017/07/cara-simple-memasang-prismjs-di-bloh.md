@@ -25,8 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.c
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://crambler.com/wp-content/uploads/2014/07/PrismJS_Blog_NEW.jpg
 wordcount: 113
-url: https://www.webmanajemen.com/source/2017/07/cara-simple-memasang-prismjs-di-bloh.html
-permalink: /source/2017/07/cara-simple-memasang-prismjs-di-bloh.html
+url: https://www.webmanajemen.com/2017/07/cara-simple-memasang-prismjs-di-bloh.html
+permalink: /2017/07/cara-simple-memasang-prismjs-di-bloh.html
 description: Cara simple memasang prismjs di blog 100 Work
 excerpt: Cara simple memasang prismjs di blog 100 Work
 ---

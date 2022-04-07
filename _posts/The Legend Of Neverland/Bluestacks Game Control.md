@@ -32,8 +32,8 @@ description: Game control the legend of neverland bluestacks Support change
 wordcount: 127
 excerpt: Game control the legend of neverland bluestacks Support change fairy
   and job skill
-url: https://www.webmanajemen.com/source/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
-permalink: /source/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
+url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
+permalink: /The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
 ---
 
 ### Requirements

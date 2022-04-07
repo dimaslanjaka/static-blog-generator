@@ -12,8 +12,8 @@ comments: true
 wordcount: 88
 excerpt: macam-macam source pattern pada gulp
 description: macam-macam source pattern pada gulp
-url: https://www.webmanajemen.com/source/2022/04/02/gulp-pattern.html
-permalink: /source/2022/04/02/gulp-pattern.html
+url: https://www.webmanajemen.com/2022/04/02/gulp-pattern.html
+permalink: /2022/04/02/gulp-pattern.html
 lang: en
 ---
 

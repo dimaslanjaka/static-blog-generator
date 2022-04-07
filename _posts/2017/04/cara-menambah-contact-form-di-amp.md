@@ -27,8 +27,8 @@ thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxm
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrPydJSDJ0qsdxmme5yXnxWiCKL71LNDgDbdXJxGC31KXn6aG-PyQdmuOFvQ
 wordcount: 394
-url: https://www.webmanajemen.com/source/2017/04/cara-menambah-contact-form-di-amp.html
-permalink: /source/2017/04/cara-menambah-contact-form-di-amp.html
+url: https://www.webmanajemen.com/2017/04/cara-menambah-contact-form-di-amp.html
+permalink: /2017/04/cara-menambah-contact-form-di-amp.html
 description: Cara Menambah Contact Form Di AMP Blogger Tanpa Menggunakan amp-iframe
 excerpt: Cara Menambah Contact Form Di AMP Blogger Tanpa Menggunakan amp-iframe
 ---

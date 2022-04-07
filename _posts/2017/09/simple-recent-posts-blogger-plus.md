@@ -29,8 +29,8 @@ thumbnail: https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYu
 photos:
   - https://4.bp.blogspot.com/-M7b7TGI5AZI/WaRRhUHpaMI/AAAAAAAAABs/6QHVYugtOzwTqYJqNN7FkWZM_MOl83csACLcBGAs/s320/Screenshot_2017-08-29-00-22-36-950_com.android.chrome.png
 wordcount: 90
-url: https://www.webmanajemen.com/source/2017/09/simple-recent-posts-blogger-plus.html
-permalink: /source/2017/09/simple-recent-posts-blogger-plus.html
+url: https://www.webmanajemen.com/2017/09/simple-recent-posts-blogger-plus.html
+permalink: /2017/09/simple-recent-posts-blogger-plus.html
 description: Simple Recent Posts Blogger Plus Thumbnails
 excerpt: Simple Recent Posts Blogger Plus Thumbnails
 ---

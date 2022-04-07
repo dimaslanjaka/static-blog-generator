@@ -12,8 +12,8 @@ category:
   - MYSQL
 comments: true
 wordcount: 340
-url: https://www.webmanajemen.com/source/2022/03/27/how-to-change-wordpress-wp-prefix.html
-permalink: /source/2022/03/27/how-to-change-wordpress-wp-prefix.html
+url: https://www.webmanajemen.com/2022/03/27/how-to-change-wordpress-wp-prefix.html
+permalink: /2022/03/27/how-to-change-wordpress-wp-prefix.html
 lang: en
 description: Change wordpress table prefix updated 2022
 subtitle: Change wordpress table prefix updated 2022

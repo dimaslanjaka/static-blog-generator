@@ -25,8 +25,8 @@ thumbnail: https://3.bp.blogspot.com/-4EyGER4fK5U/Wn1wXZIwkyI/AAAAAAAAANw/AAQpyo
 photos:
   - https://3.bp.blogspot.com/-4EyGER4fK5U/Wn1wXZIwkyI/AAAAAAAAANw/AAQpyom5zrI4MJR0OOOVnkNizmucsqrDgCLcBGAs/s320/Screenshot_2018-02-09-16-56-15-284_com.android.chrome.png
 wordcount: 66
-url: https://www.webmanajemen.com/source/2018/02/cara-install-bot-reaction-facebook-2018.html
-permalink: /source/2018/02/cara-install-bot-reaction-facebook-2018.html
+url: https://www.webmanajemen.com/2018/02/cara-install-bot-reaction-facebook-2018.html
+permalink: /2018/02/cara-install-bot-reaction-facebook-2018.html
 description: Cara install Bot Reaction Facebook 2018 terbaru work 100
 excerpt: Cara install Bot Reaction Facebook 2018 terbaru work 100
 ---

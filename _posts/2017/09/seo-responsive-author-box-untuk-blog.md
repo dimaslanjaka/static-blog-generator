@@ -26,8 +26,8 @@ thumbnail: https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2Y
 photos:
   - https://3.bp.blogspot.com/-2GV0ViBRH0Y/Wbf65awyH9I/AAAAAAAAAFY/03ly2YaDb94PqUXRdkwXbOVSMWfn1USCwCLcBGAs/s320/PicsArt_09-12-10.18.11.png
 wordcount: 383
-url: https://www.webmanajemen.com/source/2017/09/seo-responsive-author-box-untuk-blog.html
-permalink: /source/2017/09/seo-responsive-author-box-untuk-blog.html
+url: https://www.webmanajemen.com/2017/09/seo-responsive-author-box-untuk-blog.html
+permalink: /2017/09/seo-responsive-author-box-untuk-blog.html
 description: SEO Responsive Author Box Untuk Blog
 excerpt: SEO Responsive Author Box Untuk Blog
 ---

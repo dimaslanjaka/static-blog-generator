@@ -29,8 +29,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googl
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/proxy/osOBUo2W1kAeTZxgpk8ucxEhICG8CgcH-6-x1tgh_Lxix6DZhYKY3HTQlsK63ZE9LLsWprBq83sOK4iqA9g1N_QAe53OJE0CALp9aT3CA6MYQfh_w8fpZyb_J1k6mOcngON_epxQsKM_lRE=w384-h384-nc
 wordcount: 162
-url: https://www.webmanajemen.com/source/2017/08/cara-defer-loading-multi-css.html
-permalink: /source/2017/08/cara-defer-loading-multi-css.html
+url: https://www.webmanajemen.com/2017/08/cara-defer-loading-multi-css.html
+permalink: /2017/08/cara-defer-loading-multi-css.html
 description: Cara defer loading multi css
 excerpt: Cara defer loading multi css
 ---

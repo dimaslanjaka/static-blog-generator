@@ -29,8 +29,8 @@ description: At this time I will share, How to move the blogger categoryExample
 wordcount: 202
 excerpt: At this time I will share, How to move the blogger categoryExample Well
   move all post label Javascript to JS Filter and Choose the label
-url: https://www.webmanajemen.com/source/2019/07/how-to-bulk-add-posts-category-label.html
-permalink: /source/2019/07/how-to-bulk-add-posts-category-label.html
+url: https://www.webmanajemen.com/2019/07/how-to-bulk-add-posts-category-label.html
+permalink: /2019/07/how-to-bulk-add-posts-category-label.html
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">At this time I will share, <b>How to move the blogger category</b><br><div>Example: We'll move all post label <b>Javascript</b> to <b>JS</b><br><br><ol> <li>Filter and Choose the label <img border="0" data-original-height="591" data-original-width="1341" src="https://3.bp.blogspot.com/-xr13nwoay60/XTTB3CWtC1I/AAAAAAAAAcE/nrHcc8rWjm8kit-VSE7gcqimjMOreeUHgCLcBGAs/s1600/Screenshot_2.png"></li><li>Select spesific or all filtered posts you want to add label <img border="0" data-original-height="569" data-original-width="1341" src="https://3.bp.blogspot.com/-bQLv54teFnA/XTTC5FSECfI/AAAAAAAAAcc/sKqFaDMJZeQa2Ls3XUv1iDpGuWRl05eiQCLcBGAs/s1600/Screenshot_3.png"></li><li>add <b>new</b> category label (Auto Added New label) <img border="0" data-original-height="527" data-original-width="1355" src="https://3.bp.blogspot.com/-ItAVFqVRmzI/XTTAae-vmrI/AAAAAAAAAb4/zwl3PYBJ-Ikm74EPR2clQt1Awxzkea81gCLcBGAs/s1600/Screenshot_1.png"></li><li>Done, you've added new label to the selected posts</li><li>Continue: <a href="https://blog.akarmas.com/2019/07/how-to-bulk-delete-label-from-blogger.html" rel="noopener noreferer nofollow">How to remove category label from blogger posts</a></li></ol></div></div>

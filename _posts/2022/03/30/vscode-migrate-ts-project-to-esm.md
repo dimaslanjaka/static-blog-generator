@@ -9,8 +9,8 @@ category:
 tags: []
 comments: true
 wordcount: 420
-url: https://www.webmanajemen.com/source/2022/03/30/vscode-migrate-ts-project-to-esm.html
-permalink: /source/2022/03/30/vscode-migrate-ts-project-to-esm.html
+url: https://www.webmanajemen.com/2022/03/30/vscode-migrate-ts-project-to-esm.html
+permalink: /2022/03/30/vscode-migrate-ts-project-to-esm.html
 lang: en
 description: VSCode Migrate Typescript CommonJS to ESM
 subtitle: VSCode Migrate Typescript CommonJS to ESM

@@ -26,8 +26,8 @@ thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1W
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRwHYn1q6qKyIO1WJAsg-ZtU3RJIlFDpbwnD9gZRG_NE29f4lDc
 wordcount: 79
-url: https://www.webmanajemen.com/source/2017/09/cara-mempercepat-loading-webfonts.html
-permalink: /source/2017/09/cara-mempercepat-loading-webfonts.html
+url: https://www.webmanajemen.com/2017/09/cara-mempercepat-loading-webfonts.html
+permalink: /2017/09/cara-mempercepat-loading-webfonts.html
 description: Cara mempercepat loading webfonts
 excerpt: Cara mempercepat loading webfonts
 ---

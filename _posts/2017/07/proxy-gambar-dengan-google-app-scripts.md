@@ -24,8 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.co
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://i.imgur.com/FFGsnXd.jpg?1
 wordcount: 633
-url: https://www.webmanajemen.com/source/2017/07/proxy-gambar-dengan-google-app-scripts.html
-permalink: /source/2017/07/proxy-gambar-dengan-google-app-scripts.html
+url: https://www.webmanajemen.com/2017/07/proxy-gambar-dengan-google-app-scripts.html
+permalink: /2017/07/proxy-gambar-dengan-google-app-scripts.html
 description: Proxy Gambar dengan Google App Scripts
 excerpt: Proxy Gambar dengan Google App Scripts
 ---

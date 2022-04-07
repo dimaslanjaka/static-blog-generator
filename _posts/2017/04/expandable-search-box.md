@@ -25,8 +25,8 @@ thumbnail: https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSL
 photos:
   - https://3.bp.blogspot.com/-fCN06ibkF9s/WPgDaZnEMdI/AAAAAAAAFJE/gFcoSLZVZeQ2rpoUkl-KFH5E9004wBHmgCLcB/s320/Screenshot_2017-04-20-07-39-35.jpg
 wordcount: 430
-url: https://www.webmanajemen.com/source/2017/04/expandable-search-box.html
-permalink: /source/2017/04/expandable-search-box.html
+url: https://www.webmanajemen.com/2017/04/expandable-search-box.html
+permalink: /2017/04/expandable-search-box.html
 description: Expandable Search Box
 excerpt: Expandable Search Box
 ---

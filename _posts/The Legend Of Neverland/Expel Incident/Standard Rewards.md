@@ -24,8 +24,8 @@ photos:
 description: Expel Incident With The Standard Rewards.
 wordcount: 73
 excerpt: Expel Incident With The Standard Rewards.
-url: https://www.webmanajemen.com/source/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html
-permalink: /source/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html
+url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html
+permalink: /The%20Legend%20Of%20Neverland/Expel%20Incident/Standard%20Rewards.html
 ---
 
 <!-- toc -->

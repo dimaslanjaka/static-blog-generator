@@ -23,8 +23,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 623
-url: https://www.webmanajemen.com/source/2017/04/cara-membuat-halaman-contact-form-di-blog-AMP.html
-permalink: /source/2017/04/cara-membuat-halaman-contact-form-di-blog-AMP.html
+url: https://www.webmanajemen.com/2017/04/cara-membuat-halaman-contact-form-di-blog-AMP.html
+permalink: /2017/04/cara-membuat-halaman-contact-form-di-blog-AMP.html
 description: Cara membuat halaman contact form di blog AMP
 excerpt: Cara membuat halaman contact form di blog AMP
 ---

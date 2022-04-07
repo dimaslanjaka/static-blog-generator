@@ -25,8 +25,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 94
-url: https://www.webmanajemen.com/source/2020/12/nodejs-common-fix-command-on-linux-or.html
-permalink: /source/2020/12/nodejs-common-fix-command-on-linux-or.html
+url: https://www.webmanajemen.com/2020/12/nodejs-common-fix-command-on-linux-or.html
+permalink: /2020/12/nodejs-common-fix-command-on-linux-or.html
 description: NodeJS Common Fix Command On Linux Or Windows
 excerpt: NodeJS Common Fix Command On Linux Or Windows
 ---

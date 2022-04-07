@@ -29,8 +29,8 @@ description: Previous How to bulk add category label to blogger postsFilter and
 wordcount: 211
 excerpt: Previous How to bulk add category label to blogger postsFilter and
   Select category label you want to remove Select the post that will be
-url: https://www.webmanajemen.com/source/2019/07/how-to-bulk-delete-label-from-blogger.html
-permalink: /source/2019/07/how-to-bulk-delete-label-from-blogger.html
+url: https://www.webmanajemen.com/2019/07/how-to-bulk-delete-label-from-blogger.html
+permalink: /2019/07/how-to-bulk-delete-label-from-blogger.html
 ---
 
 <div dir="ltr" trbidi="on"><p><i>Previous: <a href="https://blog.akarmas.com/2019/07/how-to-bulk-add-posts-category-label.html" rel="noopener noreferer nofollow">How to bulk add category label to blogger posts</a></i></p><br><ol><li><i>Filter</i> and Select category label you want to remove <a href="https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png" imageanchor="1" rel="noopener noreferer nofollow"><img border="0" src="https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png" data-original-width="1363" data-original-height="595"></a></li><li><b>Select the post</b> that will be <b>removed </b>from the label <img border="0" src="https://3.bp.blogspot.com/-43zGiVgY4Fk/XTTHOVXzg_I/AAAAAAAAAdE/mo_hABpl43YcelluUTcohR6K_oFTWEp9wCLcBGAs/s1600/Screenshot_5.png"></li><li>Select again the selected label from label selector <img border="0" src="https://2.bp.blogspot.com/-hwB2UcHi24w/XTTIWXqs4YI/AAAAAAAAAdk/UtOgg6ikCQ0LVaePFIq6vuDnEJj4flrugCLcBGAs/s1600/Screenshot_6.png" data-original-width="1351" data-original-height="622"></li><li>Selected label from the selected posts have been deleted. (<i>If no posts at that label, the label will be removed automatically from your blog label lists</i>)</li></ol></div>

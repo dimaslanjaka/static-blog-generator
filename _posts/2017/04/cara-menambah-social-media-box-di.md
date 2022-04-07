@@ -26,8 +26,8 @@ thumbnail: https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/177968
 photos:
   - https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/17796846_1773189839677671_6977008867135609966_n.png.jpg?efg=eyJpIjoidCJ9&oh=292c21d1c58e8e185a8d6c63dec60c5a&oe=5957C4B8
 wordcount: 65
-url: https://www.webmanajemen.com/source/2017/04/cara-menambah-social-media-box-di.html
-permalink: /source/2017/04/cara-menambah-social-media-box-di.html
+url: https://www.webmanajemen.com/2017/04/cara-menambah-social-media-box-di.html
+permalink: /2017/04/cara-menambah-social-media-box-di.html
 description: Cara menambah social media box di blogger AMP
 excerpt: Cara menambah social media box di blogger AMP
 ---

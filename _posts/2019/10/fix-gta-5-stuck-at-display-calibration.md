@@ -24,8 +24,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 292
-url: https://www.webmanajemen.com/source/2019/10/fix-gta-5-stuck-at-display-calibration.html
-permalink: /source/2019/10/fix-gta-5-stuck-at-display-calibration.html
+url: https://www.webmanajemen.com/2019/10/fix-gta-5-stuck-at-display-calibration.html
+permalink: /2019/10/fix-gta-5-stuck-at-display-calibration.html
 description: Fix GTA 5 Stuck at Display Calibration
 excerpt: Fix GTA 5 Stuck at Display Calibration
 ---

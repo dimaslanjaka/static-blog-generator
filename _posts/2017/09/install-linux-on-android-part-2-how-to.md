@@ -28,8 +28,8 @@ thumbnail: https://image.ibb.co/fFtDUF/unnamed_5.png
 photos:
   - https://image.ibb.co/fFtDUF/unnamed_5.png
 wordcount: 673
-url: https://www.webmanajemen.com/source/2017/09/install-linux-on-android-part-2-how-to.html
-permalink: /source/2017/09/install-linux-on-android-part-2-how-to.html
+url: https://www.webmanajemen.com/2017/09/install-linux-on-android-part-2-how-to.html
+permalink: /2017/09/install-linux-on-android-part-2-how-to.html
 description: Install Linux on the Android part 2-How to Install Apache2, PHP and
   MYSQL on Android
 excerpt: Install Linux on the Android part 2-How to Install Apache2, PHP and

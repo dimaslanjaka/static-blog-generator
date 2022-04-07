@@ -26,8 +26,8 @@ thumbnail: https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/UJ2O4SRxwkA/maxresdefault.jpg
 wordcount: 271
-url: https://www.webmanajemen.com/source/2018/04/ftp-backup-file-recursively-php-script.html
-permalink: /source/2018/04/ftp-backup-file-recursively-php-script.html
+url: https://www.webmanajemen.com/2018/04/ftp-backup-file-recursively-php-script.html
+permalink: /2018/04/ftp-backup-file-recursively-php-script.html
 description: FTP Backup File Recursively PHP Script
 excerpt: FTP Backup File Recursively PHP Script
 ---

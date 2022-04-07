@@ -25,8 +25,8 @@ thumbnail: https://imgdb.net/images/3196.jpg
 photos:
   - https://imgdb.net/images/3196.jpg
 wordcount: 138
-url: https://www.webmanajemen.com/source/2017/09/how-to-make-iframe.html
-permalink: /source/2017/09/how-to-make-iframe.html
+url: https://www.webmanajemen.com/2017/09/how-to-make-iframe.html
+permalink: /2017/09/how-to-make-iframe.html
 description: HOW TO MAKE IFRAME
 excerpt: HOW TO MAKE IFRAME
 ---

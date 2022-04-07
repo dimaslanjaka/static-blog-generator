@@ -24,8 +24,8 @@ thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1o
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6A8Kv8hDwOaw1oyNv0g8JghoA700vJYvtBk-2E4NgQss7ztfOGGt37brH
 wordcount: 124
-url: https://www.webmanajemen.com/source/2017/05/fix-error-entity-nbsp-was-referenced.html
-permalink: /source/2017/05/fix-error-entity-nbsp-was-referenced.html
+url: https://www.webmanajemen.com/2017/05/fix-error-entity-nbsp-was-referenced.html
+permalink: /2017/05/fix-error-entity-nbsp-was-referenced.html
 description: Fix Error The entity nbsp was referenced, but not declared
 excerpt: Fix Error The entity nbsp was referenced, but not declared
 ---

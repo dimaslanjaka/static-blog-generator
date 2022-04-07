@@ -24,8 +24,8 @@ photos:
 description: Expel Incident With The Highest Fairies Exp And Crystals Rewards.
 wordcount: 75
 excerpt: Expel Incident With The Highest Fairies Exp And Crystals Rewards.
-url: https://www.webmanajemen.com/source/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html
-permalink: /source/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html
+url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html
+permalink: /The%20Legend%20Of%20Neverland/Expel%20Incident/Crystals%20Fairy%20Exp.html
 ---
 
 <!-- toc -->

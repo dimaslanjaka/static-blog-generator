@@ -24,8 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blog
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://3.bp.blogspot.com/-KhWvYh2yApY/W3K2X8QfpAI/AAAAAAAAFic/xljYGye6zjsZlJAa-NJKxRsvVnWiq5PTQCK4BGAYYCw/s640/maxresdefault%2B%25281%2529.jpg
 wordcount: 248
-url: https://www.webmanajemen.com/source/2018/08/how-to-create-wide-screen-or-drone-view.html
-permalink: /source/2018/08/how-to-create-wide-screen-or-drone-view.html
+url: https://www.webmanajemen.com/2018/08/how-to-create-wide-screen-or-drone-view.html
+permalink: /2018/08/how-to-create-wide-screen-or-drone-view.html
 description: How to Create a Wide Screen or Drone View in Mobile Legend NO ROOT
 excerpt: How to Create a Wide Screen or Drone View in Mobile Legend NO ROOT
 ---

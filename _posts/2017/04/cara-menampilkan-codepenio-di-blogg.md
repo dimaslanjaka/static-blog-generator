@@ -24,8 +24,8 @@ thumbnail: https://lh6.googleusercontent.com/proxy/4Jrx-c1qmdyJBBFWaTVYP6cr1OXxZ
 photos:
   - https://lh6.googleusercontent.com/proxy/4Jrx-c1qmdyJBBFWaTVYP6cr1OXxZADd8-8FRy0T0GJ041YEC_g6DBddYsU20X7p0UPshwbJY7vxAoJOqppV5HbWDVBpnr7lMTRrNw4bgI_0i2VHIhFR0Vc=w543-h271-nc
 wordcount: 188
-url: https://www.webmanajemen.com/source/2017/04/cara-menampilkan-codepenio-di-blogg.html
-permalink: /source/2017/04/cara-menampilkan-codepenio-di-blogg.html
+url: https://www.webmanajemen.com/2017/04/cara-menampilkan-codepenio-di-blogg.html
+permalink: /2017/04/cara-menampilkan-codepenio-di-blogg.html
 description: Cara menampilkan codepen.io di blog
 excerpt: Cara menampilkan codepen.io di blog
 ---

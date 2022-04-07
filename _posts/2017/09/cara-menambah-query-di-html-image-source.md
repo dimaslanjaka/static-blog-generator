@@ -25,8 +25,8 @@ thumbnail: https://imgdb.net/images/3190.jpg
 photos:
   - https://imgdb.net/images/3190.jpg
 wordcount: 265
-url: https://www.webmanajemen.com/source/2017/09/cara-menambah-query-di-html-image-source.html
-permalink: /source/2017/09/cara-menambah-query-di-html-image-source.html
+url: https://www.webmanajemen.com/2017/09/cara-menambah-query-di-html-image-source.html
+permalink: /2017/09/cara-menambah-query-di-html-image-source.html
 description: Cara menambah query di html image source
 excerpt: Cara menambah query di html image source
 ---

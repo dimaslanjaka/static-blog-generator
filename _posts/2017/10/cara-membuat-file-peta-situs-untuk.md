@@ -27,8 +27,8 @@ thumbnail: https://cdn.woorkup.com/wp-content/uploads/2013/09/xml-sitemap-html.j
 photos:
   - https://cdn.woorkup.com/wp-content/uploads/2013/09/xml-sitemap-html.jpg
 wordcount: 279
-url: https://www.webmanajemen.com/source/2017/10/cara-membuat-file-peta-situs-untuk.html
-permalink: /source/2017/10/cara-membuat-file-peta-situs-untuk.html
+url: https://www.webmanajemen.com/2017/10/cara-membuat-file-peta-situs-untuk.html
+permalink: /2017/10/cara-membuat-file-peta-situs-untuk.html
 description: Cara Membuat File Peta Situs untuk Situs Web HTML Anda
 excerpt: Cara Membuat File Peta Situs untuk Situs Web HTML Anda
 ---

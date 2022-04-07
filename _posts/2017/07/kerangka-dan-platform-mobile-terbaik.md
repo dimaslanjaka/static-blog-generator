@@ -24,8 +24,8 @@ thumbnail: http://i.imgur.com/4kHlYlw.png
 photos:
   - http://i.imgur.com/4kHlYlw.png
 wordcount: 2347
-url: https://www.webmanajemen.com/source/2017/07/kerangka-dan-platform-mobile-terbaik.html
-permalink: /source/2017/07/kerangka-dan-platform-mobile-terbaik.html
+url: https://www.webmanajemen.com/2017/07/kerangka-dan-platform-mobile-terbaik.html
+permalink: /2017/07/kerangka-dan-platform-mobile-terbaik.html
 description: Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid
 excerpt: Kerangka dan Platform Mobile Terbaik untuk Aplikasi HTML5 Hybrid
 ---

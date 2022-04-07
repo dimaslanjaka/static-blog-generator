@@ -26,8 +26,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woork
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-bing-1024x513.png
 wordcount: 49
-url: https://www.webmanajemen.com/source/2017/10/cara-menggunakan-bing-webmaster-tools.html
-permalink: /source/2017/10/cara-menggunakan-bing-webmaster-tools.html
+url: https://www.webmanajemen.com/2017/10/cara-menggunakan-bing-webmaster-tools.html
+permalink: /2017/10/cara-menggunakan-bing-webmaster-tools.html
 description: Cara Menggunakan Bing Webmaster Tools
 excerpt: Cara Menggunakan Bing Webmaster Tools
 ---

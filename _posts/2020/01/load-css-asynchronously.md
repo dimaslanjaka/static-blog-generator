@@ -30,8 +30,8 @@ description: h1 itemprop=headline name class=text-center>Load CSS
 wordcount: 4
 excerpt: h1 itemprop=headline name class=text-center>Load CSS
   Asynchronously</h1> <script
-url: https://www.webmanajemen.com/source/2020/01/load-css-asynchronously.html
-permalink: /source/2020/01/load-css-asynchronously.html
+url: https://www.webmanajemen.com/2020/01/load-css-asynchronously.html
+permalink: /2020/01/load-css-asynchronously.html
 ---
 
 <h1 itemprop="headline name" class="text-center">Load CSS Asynchronously</h1>  <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fdimaslanjaka%2FWeb-Manajemen%2Fblob%2Fmaster%2Fjs%2Floadcss.js&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script></script><pre class="alert alert-info" lang="js"><br>Usage: <br>loadCSS('//CSS_URL');<br>loadCSS('//raw.githack.com/PrismJS/prism-themes/master/themes/prism-vs.css');<br></pre>

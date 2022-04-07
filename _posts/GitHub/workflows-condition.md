@@ -27,8 +27,8 @@ photos:
 description: Macam-macam kondisional pada GitHub Workflows
 wordcount: 216
 excerpt: Macam-macam kondisional pada GitHub Workflows
-url: https://www.webmanajemen.com/source/GitHub/workflows-condition.html
-permalink: /source/GitHub/workflows-condition.html
+url: https://www.webmanajemen.com/GitHub/workflows-condition.html
+permalink: /GitHub/workflows-condition.html
 ---
 
 # Kondisional pada GitHub Workflow

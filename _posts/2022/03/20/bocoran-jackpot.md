@@ -13,8 +13,8 @@ comments: true
 wordcount: 165
 excerpt: Informasi bocoran jackpot
 description: Informasi bocoran jackpot
-url: https://www.webmanajemen.com/source/2022/03/20/bocoran-jackpot.html
-permalink: /source/2022/03/20/bocoran-jackpot.html
+url: https://www.webmanajemen.com/2022/03/20/bocoran-jackpot.html
+permalink: /2022/03/20/bocoran-jackpot.html
 lang: en
 ---
 

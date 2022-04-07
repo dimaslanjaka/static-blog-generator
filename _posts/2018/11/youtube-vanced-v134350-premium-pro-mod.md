@@ -26,8 +26,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4380.png
 wordcount: 798
-url: https://www.webmanajemen.com/source/2018/11/youtube-vanced-v134350-premium-pro-mod.html
-permalink: /source/2018/11/youtube-vanced-v134350-premium-pro-mod.html
+url: https://www.webmanajemen.com/2018/11/youtube-vanced-v134350-premium-pro-mod.html
+permalink: /2018/11/youtube-vanced-v134350-premium-pro-mod.html
 description: Youtube Vanced v.13.43.50 Premium Pro Mod Apk [NON-ROOT]
 excerpt: Youtube Vanced v.13.43.50 Premium Pro Mod Apk [NON-ROOT]
 ---

@@ -23,8 +23,8 @@ thumbnail: https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuO
 photos:
   - https://4.bp.blogspot.com/-BQU_uWPJuPE/WWUSXvcrYSI/AAAAAAAAABc/aB-OuOg_gfMhS2VUZUWkzeWq3UGOyKjkwCLcBGAs/s320/images.png
 wordcount: 536
-url: https://www.webmanajemen.com/source/2017/07/10-template-gratis-untuk-dokumentasi-api.html
-permalink: /source/2017/07/10-template-gratis-untuk-dokumentasi-api.html
+url: https://www.webmanajemen.com/2017/07/10-template-gratis-untuk-dokumentasi-api.html
+permalink: /2017/07/10-template-gratis-untuk-dokumentasi-api.html
 description: 10 Template Gratis untuk Dokumentasi API
 excerpt: 10 Template Gratis untuk Dokumentasi API
 ---

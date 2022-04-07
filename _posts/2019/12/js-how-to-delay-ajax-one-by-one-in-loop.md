@@ -25,8 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://artandlog
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://artandlogic.com/wp-content/uploads/2000px-AJAX_logo_by_gengns.svg_.png
 wordcount: 564
-url: https://www.webmanajemen.com/source/2019/12/js-how-to-delay-ajax-one-by-one-in-loop.html
-permalink: /source/2019/12/js-how-to-delay-ajax-one-by-one-in-loop.html
+url: https://www.webmanajemen.com/2019/12/js-how-to-delay-ajax-one-by-one-in-loop.html
+permalink: /2019/12/js-how-to-delay-ajax-one-by-one-in-loop.html
 description: "[JS] How to delay ajax one by one in loop"
 excerpt: "[JS] How to delay ajax one by one in loop"
 ---

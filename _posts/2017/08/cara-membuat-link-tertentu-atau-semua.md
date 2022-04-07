@@ -27,8 +27,8 @@ thumbnail: https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
 photos:
   - https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
 wordcount: 91
-url: https://www.webmanajemen.com/source/2017/08/cara-membuat-link-tertentu-atau-semua.html
-permalink: /source/2017/08/cara-membuat-link-tertentu-atau-semua.html
+url: https://www.webmanajemen.com/2017/08/cara-membuat-link-tertentu-atau-semua.html
+permalink: /2017/08/cara-membuat-link-tertentu-atau-semua.html
 description: Cara membuat link tertentu atau semua link menjadi adf.ly tanpa
   menggunakan full page script
 excerpt: Cara membuat link tertentu atau semua link menjadi adf.ly tanpa

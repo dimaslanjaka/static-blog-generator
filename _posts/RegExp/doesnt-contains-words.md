@@ -9,8 +9,8 @@ category:
 tags: []
 comments: true
 wordcount: 823
-url: https://www.webmanajemen.com/source/RegExp/doesnt-contains-words.html
-permalink: /source/RegExp/doesnt-contains-words.html
+url: https://www.webmanajemen.com/RegExp/doesnt-contains-words.html
+permalink: /RegExp/doesnt-contains-words.html
 lang: en
 description: RegExp Match Doesnt Contain Words
 subtitle: RegExp Match Doesnt Contain Words

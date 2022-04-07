@@ -26,8 +26,8 @@ thumbnail: https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-
 photos:
   - https://cdn.woorkup.com/wp-content/uploads/2013/09/submit-website-to-google.png
 wordcount: 530
-url: https://www.webmanajemen.com/source/2017/10/cara-menggunakan-google-search-console.html
-permalink: /source/2017/10/cara-menggunakan-google-search-console.html
+url: https://www.webmanajemen.com/2017/10/cara-menggunakan-google-search-console.html
+permalink: /2017/10/cara-menggunakan-google-search-console.html
 description: Cara Menggunakan Google Search Console
 excerpt: Cara Menggunakan Google Search Console
 ---

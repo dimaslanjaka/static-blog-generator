@@ -27,8 +27,8 @@ thumbnail: https://3.bp.blogspot.com/-J1AEEzKm7nw/WPoyJbtEpbI/AAAAAAAAFKI/QAv38U
 photos:
   - https://3.bp.blogspot.com/-J1AEEzKm7nw/WPoyJbtEpbI/AAAAAAAAFKI/QAv38U0jjIstJfVpQtVyDX6lBpgs9WNbACLcB/s320/Screenshot_2017-04-21-23-23-36.jpg
 wordcount: 115
-url: https://www.webmanajemen.com/source/2018/12/stylish-full-sitemap-blogger.html
-permalink: /source/2018/12/stylish-full-sitemap-blogger.html
+url: https://www.webmanajemen.com/2018/12/stylish-full-sitemap-blogger.html
+permalink: /2018/12/stylish-full-sitemap-blogger.html
 description: Stylish Full Sitemap Blogger
 excerpt: Stylish Full Sitemap Blogger
 ---

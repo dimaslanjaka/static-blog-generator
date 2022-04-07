@@ -25,8 +25,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuf
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.wpstuffs.com/wp-content/uploads/2013/05/php-wordpress-300x197.jpg
 wordcount: 44
-url: https://www.webmanajemen.com/source/2017/08/cara-mengeksekusi-kode-php-di-text.html
-permalink: /source/2017/08/cara-mengeksekusi-kode-php-di-text.html
+url: https://www.webmanajemen.com/2017/08/cara-mengeksekusi-kode-php-di-text.html
+permalink: /2017/08/cara-mengeksekusi-kode-php-di-text.html
 description: Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin
 excerpt: Cara mengeksekusi kode PHP di Text Widget tanpa menggunakan Plugin
 ---

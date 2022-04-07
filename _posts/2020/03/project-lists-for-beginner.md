@@ -27,8 +27,8 @@ photos:
 description: Movies App Flutter Project
 wordcount: 13
 excerpt: Movies App Flutter Project
-url: https://www.webmanajemen.com/source/2020/03/project-lists-for-beginner.html
-permalink: /source/2020/03/project-lists-for-beginner.html
+url: https://www.webmanajemen.com/2020/03/project-lists-for-beginner.html
+permalink: /2020/03/project-lists-for-beginner.html
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>

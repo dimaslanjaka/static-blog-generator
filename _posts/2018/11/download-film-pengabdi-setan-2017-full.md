@@ -23,8 +23,8 @@ thumbnail: https://dimaslanjaka-storage.000webhostapp.com/img.php?type=jpeg&url=
 photos:
   - https://dimaslanjaka-storage.000webhostapp.com/img.php?type=jpeg&url=https://layarindo21.ws/wp-content/uploads/2017/04/Telaga_Angker_1984_obverse_wiki-150x150.jpg
 wordcount: 6466
-url: https://www.webmanajemen.com/source/2018/11/download-film-pengabdi-setan-2017-full.html
-permalink: /source/2018/11/download-film-pengabdi-setan-2017-full.html
+url: https://www.webmanajemen.com/2018/11/download-film-pengabdi-setan-2017-full.html
+permalink: /2018/11/download-film-pengabdi-setan-2017-full.html
 description: download film pengabdi setan 2017 full movie
 excerpt: download film pengabdi setan 2017 full movie
 ---

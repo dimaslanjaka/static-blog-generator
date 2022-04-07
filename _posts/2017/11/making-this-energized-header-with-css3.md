@@ -24,8 +24,8 @@ thumbnail: https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.web
 photos:
   - https://netdna-webdesignerdepot-com.cdn.ampproject.org/i/s/netdna.webdesignerdepot.com/uploads/2014/05/thumbnail8.jpg
 wordcount: 710
-url: https://www.webmanajemen.com/source/2017/11/making-this-energized-header-with-css3.html
-permalink: /source/2017/11/making-this-energized-header-with-css3.html
+url: https://www.webmanajemen.com/2017/11/making-this-energized-header-with-css3.html
+permalink: /2017/11/making-this-energized-header-with-css3.html
 description: Making this energized header with CSS3 properties
 excerpt: Making this energized header with CSS3 properties
 ---

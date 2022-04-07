@@ -24,8 +24,8 @@ thumbnail: https://imgdb.net/images/3212.jpg
 photos:
   - https://imgdb.net/images/3212.jpg
 wordcount: 49
-url: https://www.webmanajemen.com/source/2017/10/how-to-fix-mdadmconf-defines-no-arrays.html
-permalink: /source/2017/10/how-to-fix-mdadmconf-defines-no-arrays.html
+url: https://www.webmanajemen.com/2017/10/how-to-fix-mdadmconf-defines-no-arrays.html
+permalink: /2017/10/how-to-fix-mdadmconf-defines-no-arrays.html
 description: how to fix mdadm.conf defines no arrays on UBUNTU SERVER 16.04
 excerpt: how to fix mdadm.conf defines no arrays on UBUNTU SERVER 16.04
 ---

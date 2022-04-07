@@ -25,8 +25,8 @@ thumbnail: https://1.bp.blogspot.com/-giqsH22jmJk/XS6iSSs03bI/AAAAAAAAAao/fbiS01
 photos:
   - https://1.bp.blogspot.com/-giqsH22jmJk/XS6iSSs03bI/AAAAAAAAAao/fbiS01VwdK89uUQ7oe0FCI2X5Tm-xEl9gCLcBGAs/s1600/msmdownloadtool-flash-oppo-a71-2018-cph1801.jpg
 wordcount: 297
-url: https://www.webmanajemen.com/source/2019/07/msmdownloadtool-connect-timeout-solving.html
-permalink: /source/2019/07/msmdownloadtool-connect-timeout-solving.html
+url: https://www.webmanajemen.com/2019/07/msmdownloadtool-connect-timeout-solving.html
+permalink: /2019/07/msmdownloadtool-connect-timeout-solving.html
 description: MsmDownloadTool Connect Timeout Solving
 excerpt: MsmDownloadTool Connect Timeout Solving
 ---

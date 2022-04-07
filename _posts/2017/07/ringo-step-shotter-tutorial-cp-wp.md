@@ -23,8 +23,8 @@ thumbnail: https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 photos:
   - https://www.vaingloryfire.com/images/heroes/potrait/ringo.png
 wordcount: 8904
-url: https://www.webmanajemen.com/source/2017/07/ringo-step-shotter-tutorial-cp-wp.html
-permalink: /source/2017/07/ringo-step-shotter-tutorial-cp-wp.html
+url: https://www.webmanajemen.com/2017/07/ringo-step-shotter-tutorial-cp-wp.html
+permalink: /2017/07/ringo-step-shotter-tutorial-cp-wp.html
 description: Ringo Step Shotter Tutorial CP WP
 excerpt: Ringo Step Shotter Tutorial CP WP
 ---

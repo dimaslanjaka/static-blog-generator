@@ -25,8 +25,8 @@ photos:
 description: Fresh proxy oogle passedGoogle passed proxies,
 wordcount: 199
 excerpt: Fresh proxy oogle passedGoogle passed proxies,
-url: https://www.webmanajemen.com/source/2020/01/google-passed-proxies-updated-at-2020_14.html
-permalink: /source/2020/01/google-passed-proxies-updated-at-2020_14.html
+url: https://www.webmanajemen.com/2020/01/google-passed-proxies-updated-at-2020_14.html
+permalink: /2020/01/google-passed-proxies-updated-at-2020_14.html
 ---
 
 <div id="proxy_result_wrapper">

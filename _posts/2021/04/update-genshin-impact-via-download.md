@@ -25,8 +25,8 @@ thumbnail: https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
 photos:
   - https://imagizer.imageshack.com/v2/xq90/924/u7hBUr.png
 wordcount: 58
-url: https://www.webmanajemen.com/source/2021/04/update-genshin-impact-via-download.html
-permalink: /source/2021/04/update-genshin-impact-via-download.html
+url: https://www.webmanajemen.com/2021/04/update-genshin-impact-via-download.html
+permalink: /2021/04/update-genshin-impact-via-download.html
 description: Update Genshin Impact Via Download Manager
 excerpt: Update Genshin Impact Via Download Manager
 ---

@@ -27,8 +27,8 @@ thumbnail: https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berk
 photos:
   - https://fruitylogic.com/blog/wp-content/uploads/2019/07/backlink-berkualitas-surabaya-seo-website.png
 wordcount: 1462
-url: https://www.webmanajemen.com/source/2020/02/backlink-by-google.html
-permalink: /source/2020/02/backlink-by-google.html
+url: https://www.webmanajemen.com/2020/02/backlink-by-google.html
+permalink: /2020/02/backlink-by-google.html
 description: Find Backlink From Google Dork
 excerpt: Find Backlink From Google Dork
 ---

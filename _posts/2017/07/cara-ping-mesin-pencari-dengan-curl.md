@@ -24,8 +24,8 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googl
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/proxy/tYpoSEj-W-8XcUJyBsi4Tq7Q8AaMtVNwK9CTgxcg1ZbZ0u5lHPzUcRDhOo6VJKysWUEe768ddx0ckD0uobENOvlY1GdhblF6n_NvZDSk3EaJecDY6XiWVSiz65Pe2tKGr0oo9Wgf12ea98aNcA55vNFXbYQKLLcdvyQ8YOEZotzbww=w350-h200-nc
 wordcount: 627
-url: https://www.webmanajemen.com/source/2017/07/cara-ping-mesin-pencari-dengan-curl.html
-permalink: /source/2017/07/cara-ping-mesin-pencari-dengan-curl.html
+url: https://www.webmanajemen.com/2017/07/cara-ping-mesin-pencari-dengan-curl.html
+permalink: /2017/07/cara-ping-mesin-pencari-dengan-curl.html
 description: Cara ping mesin pencari dengan curl
 excerpt: Cara ping mesin pencari dengan curl
 ---

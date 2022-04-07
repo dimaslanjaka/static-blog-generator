@@ -12,8 +12,8 @@ comments: true
 wordcount: 267
 excerpt: how to add existing local repository folder to submodule
 description: how to add existing local repository folder to submodule
-url: https://www.webmanajemen.com/source/2022/03/31/git-add-existing-local-repository-folder-to-submodule.html
-permalink: /source/2022/03/31/git-add-existing-local-repository-folder-to-submodule.html
+url: https://www.webmanajemen.com/2022/03/31/git-add-existing-local-repository-folder-to-submodule.html
+permalink: /2022/03/31/git-add-existing-local-repository-folder-to-submodule.html
 lang: en
 ---
 

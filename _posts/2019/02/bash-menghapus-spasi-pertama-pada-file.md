@@ -28,8 +28,8 @@ description: pre><br />IFS=\n<br /> for f in find . -type f -name <br /> do <br
 wordcount: 18
 excerpt: pre><br />IFS=\n<br /> for f in find . -type f -name <br /> do <br />
   mv f f/\.\/ /\.\/<br /> done<br /></pre><div
-url: https://www.webmanajemen.com/source/2019/02/bash-menghapus-spasi-pertama-pada-file.html
-permalink: /source/2019/02/bash-menghapus-spasi-pertama-pada-file.html
+url: https://www.webmanajemen.com/2019/02/bash-menghapus-spasi-pertama-pada-file.html
+permalink: /2019/02/bash-menghapus-spasi-pertama-pada-file.html
 ---
 
 <pre><br>IFS=$'\n'<br> for f in $(find . -type f -name ' *')<br> do <br>     mv $f ${f/\.\/ /\.\/}<br> done<br></pre>

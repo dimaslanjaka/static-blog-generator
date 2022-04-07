@@ -24,8 +24,8 @@ thumbnail: https://imgdb.net/images/3178.png
 photos:
   - https://imgdb.net/images/3178.png
 wordcount: 252
-url: https://www.webmanajemen.com/source/2017/09/install-perl-on-android-2017.html
-permalink: /source/2017/09/install-perl-on-android-2017.html
+url: https://www.webmanajemen.com/2017/09/install-perl-on-android-2017.html
+permalink: /2017/09/install-perl-on-android-2017.html
 description: Install perl on android 2017
 excerpt: Install perl on android 2017
 ---

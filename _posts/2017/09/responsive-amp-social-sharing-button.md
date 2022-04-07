@@ -26,8 +26,8 @@ thumbnail: https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6
 photos:
   - https://3.bp.blogspot.com/-PfigKHqV7j0/WaRrYLCXHVI/AAAAAAAAACY/o3ygO6g556I05TKO6xT2Xahym5NTp-ArQCLcBGAs/s320/images%2B%252810%2529.jpg
 wordcount: 237
-url: https://www.webmanajemen.com/source/2017/09/responsive-amp-social-sharing-button.html
-permalink: /source/2017/09/responsive-amp-social-sharing-button.html
+url: https://www.webmanajemen.com/2017/09/responsive-amp-social-sharing-button.html
+permalink: /2017/09/responsive-amp-social-sharing-button.html
 description: Responsive AMP Social Sharing Button
 excerpt: Responsive AMP Social Sharing Button
 ---

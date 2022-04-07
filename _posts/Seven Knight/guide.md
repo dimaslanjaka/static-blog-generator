@@ -28,8 +28,8 @@ photos:
 description: Guide SK2 for F2P
 wordcount: 24144
 excerpt: Guide SK2 for F2P
-url: https://www.webmanajemen.com/source/Seven%20Knight/guide.html
-permalink: /source/Seven%20Knight/guide.html
+url: https://www.webmanajemen.com/Seven%20Knight/guide.html
+permalink: /Seven%20Knight/guide.html
 ---
 
 <div>

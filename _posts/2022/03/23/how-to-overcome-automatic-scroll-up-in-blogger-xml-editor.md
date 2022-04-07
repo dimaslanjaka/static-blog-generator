@@ -11,8 +11,8 @@ category:
 tags: []
 comments: true
 wordcount: 537
-url: https://www.webmanajemen.com/source/2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
-permalink: /source/2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
+url: https://www.webmanajemen.com/2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
+permalink: /2022/03/23/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
 lang: en
 description: How to Overcome Automatic Scroll Up in Blogger XML Editor
 subtitle: How to Overcome Automatic Scroll Up in Blogger XML Editor

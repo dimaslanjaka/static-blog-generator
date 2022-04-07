@@ -26,8 +26,8 @@ thumbnail: https://1.bp.blogspot.com/-JTaqhxiYd1E/WcU1hIQLgxI/AAAAAAAAAHk/sZcV1N
 photos:
   - https://1.bp.blogspot.com/-JTaqhxiYd1E/WcU1hIQLgxI/AAAAAAAAAHk/sZcV1Nd5gf8nN_sb9B26g69ev9WkebldACLcBGAs/s320/Screenshot_2017-09-22-23-08-01-400_com.android.chrome.png
 wordcount: 896
-url: https://www.webmanajemen.com/source/2017/09/fontawesome-css3-text-animation.html
-permalink: /source/2017/09/fontawesome-css3-text-animation.html
+url: https://www.webmanajemen.com/2017/09/fontawesome-css3-text-animation.html
+permalink: /2017/09/fontawesome-css3-text-animation.html
 description: FontAwesome CSS3 Text Animation
 excerpt: FontAwesome CSS3 Text Animation
 ---

@@ -15,8 +15,8 @@ comments: true
 wordcount: 212
 excerpt: Spawn locations of flowers
 description: Spawn locations of flowers
-url: https://www.webmanajemen.com/source/Chimeraland/flower-locations.html
-permalink: /source/Chimeraland/flower-locations.html
+url: https://www.webmanajemen.com/Chimeraland/flower-locations.html
+permalink: /Chimeraland/flower-locations.html
 ---
 
 ## Lokasi Spawn Equinox Flower

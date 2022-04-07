@@ -25,8 +25,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 1181
-url: https://www.webmanajemen.com/source/2020/06/calculate-swatch-internet-time-codes.html
-permalink: /source/2020/06/calculate-swatch-internet-time-codes.html
+url: https://www.webmanajemen.com/2020/06/calculate-swatch-internet-time-codes.html
+permalink: /2020/06/calculate-swatch-internet-time-codes.html
 description: Calculate Swatch Internet Time Codes
 excerpt: Calculate Swatch Internet Time Codes
 ---

@@ -29,8 +29,8 @@ description: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS
 wordcount: 81
 excerpt: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS 7,8,10
   Buka CMD Ketik Command berikut satu per satu:"
-url: https://www.webmanajemen.com/source/2019/12/mengatasi-xammp-mysql-table-db-error.html
-permalink: /source/2019/12/mengatasi-xammp-mysql-table-db-error.html
+url: https://www.webmanajemen.com/2019/12/mengatasi-xammp-mysql-table-db-error.html
+permalink: /2019/12/mengatasi-xammp-mysql-table-db-error.html
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">  Mengatasi XAMMP mysql table db error must be repaired (WINDOWS 7,8,10)   <br>  <ol>    <li>Buka CMD</li>    <li>Ketik Command berikut (satu per satu):</li>    <pre><br>      cd c:\ [enter]<br>      cd c:\xammp\mysql\bin [enter]<br>      .\mysqlcheck -u root -p --auto-repair --check --all-databases [enter]<br>    </pre>    <li>Selesai</li>  </ol></div>
