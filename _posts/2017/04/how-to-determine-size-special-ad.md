@@ -10,7 +10,7 @@ cover: http://juragancipir.com/wp-content/uploads/2014/02/Unit-iklan-khusus.png
 date: 2017-04-19T07:49:00.000+07:00
 lang: en
 location: ""
-modified: 2017-04-19T07:49:04.071+07:00
+modified: 2022-04-09T20:45:24+0000
 subtitle: How to Determine Size Special Ad Adsense Most TrueGoogle adsense since
   last few months has launched a new ad sizes, ie custom ad sizes or
 tags:
@@ -19,7 +19,7 @@ title: How to Determine Size Special Ad Adsense Most True
 type: post
 uuid: c04f2bcc-b3ba-4888-8a3a-076e0f7db67b
 webtitle: WMI Gitlab
-updated: 2017-04-19T07:49:04+07:00
+updated: 2022-04-09T20:45:24+0000
 thumbnail: http://juragancipir.com/wp-content/uploads/2014/02/Unit-iklan-khusus.png
 photos:
   - http://juragancipir.com/wp-content/uploads/2014/02/Unit-iklan-khusus.png
