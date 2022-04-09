@@ -28,6 +28,7 @@ excerpt: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci
   ini dengan screenshot
 url: https://www.webmanajemen.com/Minecraft/install-shaders.html
 permalink: /Minecraft/install-shaders.html
+type: post
 ---
 
 # Shaders

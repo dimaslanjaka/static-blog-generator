@@ -21,6 +21,7 @@ excerpt: Change wordpress table prefix updated 2022
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 photos:
   - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
+type: post
 ---
 
 ## How to change wordpress table prefix

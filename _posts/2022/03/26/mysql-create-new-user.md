@@ -16,6 +16,7 @@ lang: en
 description: MySQL Command to create new database user
 subtitle: MySQL Command to create new database user
 excerpt: MySQL Command to create new database user
+type: post
 ---
 
 ```mysql

@@ -20,6 +20,7 @@ excerpt: How to Overcome Automatic Scroll Up in Blogger XML Editor
 thumbnail: https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
+type: post
 ---
 
 ## Blogger update information

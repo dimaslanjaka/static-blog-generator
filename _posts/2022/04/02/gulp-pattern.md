@@ -15,6 +15,7 @@ description: macam-macam source pattern pada gulp
 url: https://www.webmanajemen.com/2022/04/02/gulp-pattern.html
 permalink: /2022/04/02/gulp-pattern.html
 lang: en
+type: post
 ---
 
 <!--https://www.google.com/search?client=firefox-b-d&q=gulp+pattern+exclude+all+in+subfolder-->

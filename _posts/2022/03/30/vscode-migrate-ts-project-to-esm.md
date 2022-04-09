@@ -18,6 +18,7 @@ excerpt: VSCode Migrate Typescript CommonJS to ESM
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314
+type: post
 ---
 
 ## How to migrate typescript commonjs to esm with vscode
