@@ -16,7 +16,6 @@ description: Informasi bocoran jackpot
 url: https://www.webmanajemen.com/2022/03/20/bocoran-jackpot.html
 permalink: /2022/03/20/bocoran-jackpot.html
 lang: en
-type: post
 ---
 
 ![Jackpot](https://51.79.239.136/wp-content/uploads/2021/12/JP.gif)

@@ -17,7 +17,6 @@ excerpt: Spawn locations of flowers
 description: Spawn locations of flowers
 url: https://www.webmanajemen.com/Chimeraland/flower-locations.html
 permalink: /Chimeraland/flower-locations.html
-type: post
 ---
 
 ## Lokasi Spawn Equinox Flower

@@ -23,7 +23,6 @@ lang: en
 thumbnail: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
-type: post
 ---
 
 ## How to solve "Error: Apache shutdown unexpectedly"?

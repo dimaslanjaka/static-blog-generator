@@ -18,7 +18,6 @@ excerpt: Force Change ALl End Of Line VSCode To LF
 thumbnail: https://miro.medium.com/max/1400/1*HSXWWE7wkg9phEJ7ImhT2Q.jpeg
 photos:
   - https://miro.medium.com/max/1400/1*HSXWWE7wkg9phEJ7ImhT2Q.jpeg
-type: post
 ---
 
 ## Git change all crlf to lf for vscode

@@ -24,7 +24,6 @@ permalink: /2021/12/18/blogger-conditional-tags.html
 description: Blogger Conditional Tags
 subtitle: Blogger Conditional Tags
 excerpt: Blogger Conditional Tags
-type: post
 ---
 
 # Basic
