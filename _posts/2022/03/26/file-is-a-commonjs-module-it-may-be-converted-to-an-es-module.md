@@ -26,6 +26,7 @@ lang: en
 thumbnail: https://i.stack.imgur.com/Xo2sA.png
 photos:
   - https://i.stack.imgur.com/Xo2sA.png
+type: post
 ---
 
 # File is a CommonJS module; it may be converted to an ES module

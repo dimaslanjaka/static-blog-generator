@@ -18,6 +18,7 @@ subtitle: Taming pity in chimeraland
 url: https://www.webmanajemen.com/Chimeraland/Taming.html
 permalink: /Chimeraland/Taming.html
 lang: en
+type: post
 ---
 
 ## Deskripsi pemahaman tentang pity taming pet

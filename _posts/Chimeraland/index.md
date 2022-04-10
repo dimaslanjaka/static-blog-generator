@@ -22,6 +22,7 @@ subtitle: Index Tree Chimeraland
 excerpt: Index Tree Chimeraland
 url: https://www.webmanajemen.com/Chimeraland/index.html
 permalink: /Chimeraland/index.html
+type: post
 ---
 
 ## Cooking Recipes

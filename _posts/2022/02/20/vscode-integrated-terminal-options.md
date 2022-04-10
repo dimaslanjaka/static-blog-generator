@@ -23,6 +23,7 @@ excerpt: Custom PATH VSCode Integrated Terminal Options
 thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 photos:
   - https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
+type: post
 ---
 
 Determining custom path on vscode IDE made easily development programs within multiple platforms.

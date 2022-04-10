@@ -27,6 +27,7 @@ excerpt: Information about pets attributes chimeraland
 description: Information about pets attributes chimeraland
 url: https://www.webmanajemen.com/Chimeraland/Pets.html
 permalink: /Chimeraland/Pets.html
+type: post
 ---
 
 <!-- translator -->
