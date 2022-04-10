@@ -10,9 +10,9 @@ comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-08-20T18:32:00.000+07:00
 lang: id
-subtitle: search engine optimization SEO) orang mencari script yang bisa
-  mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana
-  lalu lintasnya berasal dari antara lain
+subtitle: search engine optimization SEO orang mencari script yang bisa mengurai
+  halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana lalu
+  lintasnya berasal dari antara lain
 tags:
   - PHP
 title: Parsing HTML untuk menemukan Links
@@ -20,10 +20,10 @@ type: post
 uuid: aba0e536-1908-4888-8a75-1bf11361dcf3
 updated: 2022-04-10T19:58:05+0000
 wordcount: 1259
-excerpt: search engine optimization SEO) orang mencari script yang bisa mengurai
+excerpt: search engine optimization SEO orang mencari script yang bisa mengurai
   halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana lalu
   lintasnya berasal dari antara lain
-description: search engine optimization SEO) orang mencari script yang bisa
+description: search engine optimization SEO orang mencari script yang bisa
   mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana
   lalu lintasnya berasal dari antara lain
 url: https://www.webmanajemen.com/2017/08/parsing-html-untuk-menemukan-links.html
