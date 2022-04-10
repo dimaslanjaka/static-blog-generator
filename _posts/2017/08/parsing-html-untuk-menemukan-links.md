@@ -10,7 +10,7 @@ comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-08-20T18:32:00.000+07:00
 lang: id
-subtitle: <a href=\[^\]*)\>(.*)<\/a>/iU
+subtitle: <a href=\[^\])\>(.*)<\/a>/iU
 tags:
   - PHP
 title: Parsing HTML untuk menemukan Links
@@ -21,9 +21,9 @@ updated: 2022-04-10T19:58:05+0000
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: <a href=\[^\]*)\>(.*)<\/a>/iU
+description: <a href=\[^\])\>(.*)<\/a>/iU
 wordcount: 1259
-excerpt: <a href=\[^\]*)\>(.*)<\/a>/iU
+excerpt: <a href=\[^\])\>(.*)<\/a>/iU
 url: https://www.webmanajemen.com/2017/08/parsing-html-untuk-menemukan-links.html
 permalink: /2017/08/parsing-html-untuk-menemukan-links.html
 ---
