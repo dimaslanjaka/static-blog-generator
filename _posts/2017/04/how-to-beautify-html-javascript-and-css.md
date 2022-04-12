@@ -11,7 +11,6 @@ cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe
 date: 2017-04-17T04:31:00.001+07:00
 lang: en
 location: ""
-modified: 2019-07-22T03:23:17.908+07:00
 subtitle: How to beautify html javascript and css using script on the fly
 tags:
   - Wordpress
