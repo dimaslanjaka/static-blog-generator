@@ -29,7 +29,7 @@ description: Simontok Update Terbaru 19 Juni 2019
 excerpt: Simontok Update Terbaru 19 Juni 2019
 ---
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><br></div><a href="https://www9.zippyshare.com/v/cKn836NK/file.html " class="button btn" rel="noopener noreferer nofollow">Download <i class="fa fa-download"></i></a><br><div><ol> <li>Si montok terbaru</li> <li>Si montok update 2019</li> <li>Si montok update juni 2019</li> <li>Si montok mod 2019</li></ol></div>
+<div dir="ltr" trbidi="on"><br></div><a href="https://www9.zippyshare.com/v/cKn836NK/file.html " class="button btn" rel="noopener noreferer nofollow">Download <i class="fa fa-download"></i></a><br><div><ol> <li>Si montok terbaru</li> <li>Si montok update 2019</li> <li>Si montok update juni 2019</li> <li>Si montok mod 2019</li></ol></div>
 
 ## Download Juga:
 - [Simontok Update 19-Juni-2019](/2019/06/simontok-update-terbaru-19-juni-2019.html)
