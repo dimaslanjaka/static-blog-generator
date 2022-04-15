@@ -14,24 +14,18 @@ title: Blogger Conditional Tags
 toc: true
 uuid: ae9c4084-655b-4888-8bf2-1f716589ab5d
 updated: 2022-03-20T20:57:28+07:00
-redirect: /2021/12/blogger-conditional-tags.html
-canonical: https://www.webmanajemen.com/2021/12/blogger-conditional-tags.html
-comments: true
-wordcount: 678
-url: https://www.webmanajemen.com/2021/12/18/blogger-conditional-tags.html
-permalink: /2021/12/18/blogger-conditional-tags.html
-description: Blogger Conditional Tags
-subtitle: Blogger Conditional Tags
-excerpt: Blogger Conditional Tags
 thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://3.bp.blogspot.com/-2x-KTSHQ7Sk/V3fogcBcWjI/AAAAAAAAASk/JIZkwUf6r5QLH3soYaG0q0LeLxp2xjhOACLcB/w1200-h630-p-k-no-nu/blogger-conditioanl-tags-ultimate-blogger-guide.jpg
 photos:
   - https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://3.bp.blogspot.com/-2x-KTSHQ7Sk/V3fogcBcWjI/AAAAAAAAASk/JIZkwUf6r5QLH3soYaG0q0LeLxp2xjhOACLcB/w1200-h630-p-k-no-nu/blogger-conditioanl-tags-ultimate-blogger-guide.jpg
+comments: true
+wordcount: 678
+url: https://www.webmanajemen.com/2021/12/blogger-conditional-tags.html
+permalink: /2021/12/blogger-conditional-tags.html
+description: Blogger Conditional Tags
+subtitle: Blogger Conditional Tags
+excerpt: Blogger Conditional Tags
 type: post
 ---
-
-<script>
-  window.location.replace('/2021/12/blogger-conditional-tags.html');
-</script>
 
 # Basic
 Basic blogger conditional tags
