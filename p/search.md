@@ -2,6 +2,7 @@
 title: Search
 webtitle: WMI
 date: 2018-11-24
+type: page
 ---
 
 <form action="/p/search.html" method="GET">
