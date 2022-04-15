@@ -11,8 +11,6 @@ cover: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4
 date: 2017-04-13T07:22:00.000+07:00
 lang: en
 location: ""
-modified: 2022-04-09T20:45:24+0000
-subtitle: Create Notifications For Adblocker Adsense Users
 tags:
   - Adsense
   - CSS
@@ -23,15 +21,16 @@ title: Create Notifications For Adblocker Adsense Users
 type: post
 uuid: aee210d8-b0e7-4888-891a-0ae9ca18716d
 webtitle: WMI Gitlab
-updated: 2022-04-09T20:45:24+0000
-thumbnail: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
-photos:
-  - https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
+updated: 2022-04-15T12:19:00+0700
 description: Create Notifications For Adblocker Adsense Users
 wordcount: 585
+subtitle: Create Notifications For Adblocker Adsense Users
 excerpt: Create Notifications For Adblocker Adsense Users
 url: https://www.webmanajemen.com/2017/04/create-notifications-for-adblocker.html
 permalink: /2017/04/create-notifications-for-adblocker.html
+thumbnail: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
+photos:
+  - https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
 ---
 
 <div>
@@ -43,5 +42,5 @@ permalink: /2017/04/create-notifications-for-adblocker.html
 <pre><code>&lt;div id='keep-ads'&gt;<br /> &lt;p&gt;Like this blog? Keep us running by whitelisting this blog in your ad blocker.&lt;/p&gt;<br /> &lt;p&gt;This is &lt;a href='URL PAGE HOW TO WHITELIST' target='_blank' title='how to whitelisting'&gt;how to whitelisting&lt;/a&gt; this blog in your ad blocker.&lt;/p&gt;<br /> &lt;p&gt;Thank you!&lt;/p&gt;<br /> &lt;div class='close-keep-ads' onclick='hidekeep()'&gt;&amp;#215;&lt;/div&gt;<br />&lt;/div&gt;<br />&lt;script&gt;<br />//&lt;![CDATA[<br />setTimeout(function() {<br /> var info = document.getElementById("keep-ads");<br /> var ads = document.querySelectorAll("ins.adsbygoogle");<br /> if ($(ads).height() === 0 ) {<br /> info.className = "show";<br /> }<br />}, 2000)<br />function hidekeep() {<br /> var e = document.getElementById("keep-ads").style.display = "none";<br />};<br />//]]&gt;<br />&lt;/script&gt;</code></pre>
 <p><br />Please adjust the sentence with your language, then please create PAGE for&nbsp;how to whitelist&nbsp;<a title="like this" href="http://www.kompiajaib.com/p/whitelisting-kompi-ajaib-in-your-ad.html&amp;usg=ALkJrhiZK1q3pqOLP7G2mmns_jcG81lSPw" target="_blank" rel="noopener noreferer nofollow">like this</a>&nbsp;and then change the&nbsp;<code>URL PAGE HOW TO WHITELIST</code>&nbsp;URL Page how to whitelist you.&nbsp;<br /><br />And make sure your blog is already using any Jquery Library version.&nbsp;<br /><br /></p>
 <h3>UPDATED!</h3>
-<p>Please refer to&nbsp;<a title="Update" href="http://www.webmanajemen.com/search?q=update%20notification%20adblock%20adsense" target="_blank" rel="noopener noreferer nofollow">this post</a>&nbsp;for updates.&nbsp;</p>
+<p>Please refer to&nbsp;<a title="Update" href="http://www.webmanajemen.com/p/search.html?q=update%20notification%20adblock%20adsense" target="_blank" rel="noopener noreferer nofollow">this post</a>&nbsp;for updates.&nbsp;</p>
 <div><noscript><img src="https://scontent.fsub2-1.fna.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/17796846_1773189839677671_6977008867135609966_n.png.jpg?efg=eyJpIjoidCJ9&amp;oh=292c21d1c58e8e185a8d6c63dec60c5a&amp;oe=5957C4B8" width="650" height="350" alt="NoScript Default Fallback" title="default fallback"></noscript></div>
