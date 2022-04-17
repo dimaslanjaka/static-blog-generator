@@ -143,7 +143,17 @@ this will automate lint and format your codes when saving.
 ```
 
 # create tsconfig.json (if not created yet)
-for example tsconfig.json for node 12
+for example tsconfig.json for node 12.
+
+npm
+```bash
+npm install --save-dev @tsconfig/node16
+```
+yarn
+```bash
+yarn add --dev @tsconfig/node16
+```
+
 ```jsonc
 {
   "$schema": "https://json.schemastore.org/tsconfig",
