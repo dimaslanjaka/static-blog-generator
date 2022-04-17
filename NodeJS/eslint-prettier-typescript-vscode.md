@@ -117,7 +117,7 @@ module.exports = {
 };
 ```
 ### Using .prettierc
-```json
+```jsonc
 {
   "$schema": "https://json.schemastore.org/prettierrc",
   "semi": true,
@@ -130,7 +130,7 @@ module.exports = {
 
 ## Create .vscode/settings.json
 this will automate lint and format your codes when saving.
-```json
+```jsonc
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true // let ESLint take formating and linting
@@ -144,7 +144,7 @@ this will automate lint and format your codes when saving.
 
 # create tsconfig.json (if not created yet)
 for example tsconfig.json for node 12
-```json
+```jsonc
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Node 12",
