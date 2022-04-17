@@ -28,8 +28,8 @@ title: Eslint Prettier In Typescript Project Using Vscode
 type: post
 uuid: 3f6ada3c-0ed8-4888-87c8-3371f8927a2c
 webtitle: NodeJS
-updated: 2022-03-19T19:53:25+07:00
-wordcount: 584
+updated: 2022-04-17T10:01:31+0000
+wordcount: 616
 excerpt: How to configure eslint with prettier to automated lint and format
   codes in typescript project using vscode
 description: How to configure eslint with prettier to automated lint and format
@@ -41,12 +41,15 @@ photos:
   - https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
 ---
 
-# Auto Lint And Format Typescript Using VSCode With Eslint And Prettier
+## Auto Lint And Format Typescript Using VSCode With Eslint And Prettier
 
 Linter becomes 2 types:
 - [TSLint](https://palantir.github.io/tslint/) is a linter that must be utilized for TypeScript.
 - [ESLint](https://eslint.org/) is a linter supports both JavaScript and TypeScript.
 **ESLint has a more performant architecture than TSLint** and that they will **only be focusing on ESLint** when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without **[prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
+
+## ESM
+for project with esm `"type": "module"` in `package.json` you can using these configurations [ESM Eslint Auto Format In VSCode](eslint-prettier-typescript-vscode-esm.html)
 
 ## Install dependencies
 install using npm:
@@ -125,7 +128,7 @@ module.exports = {
 };
 ```
 ### Using .prettierc
-```json
+```jsonc
 {
   "$schema": "https://json.schemastore.org/prettierrc",
   "semi": true,
@@ -138,7 +141,7 @@ module.exports = {
 
 ## Create .vscode/settings.json
 this will automate lint and format your codes when saving.
-```json
+```jsonc
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true // let ESLint take formating and linting
@@ -151,8 +154,18 @@ this will automate lint and format your codes when saving.
 ```
 
 # create tsconfig.json (if not created yet)
-for example tsconfig.json for node 12
-```json
+for example tsconfig.json for node 12.
+
+npm
+```bash
+npm install --save-dev @tsconfig/node16
+```
+yarn
+```bash
+yarn add --dev @tsconfig/node16
+```
+
+```jsonc
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Node 12",
