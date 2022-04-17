@@ -10,8 +10,6 @@ comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 date: 2019-07-31T16:03:00.001+07:00
 lang: en
-location: ""
-modified: 2019-07-31T16:03:49.913+07:00
 subtitle: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 tags:
@@ -19,18 +17,18 @@ tags:
 title: Fix openssl encrypt decrypt [PHP]
 type: post
 uuid: 9251b369-4ea6-4888-8b29-44aa20aa58aa
-webtitle: WMI Gitlab
-updated: 2019-07-31T16:03:49+07:00
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
-photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
-description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
-  expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
+webtitle: PHP
+updated: 2022-04-17T00:53:39+0000
 wordcount: 174
 excerpt: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
+description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
+  expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 url: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php.html
 permalink: /2019/07/fix-openssl-encrypt-decrypt-php.html
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+photos:
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 ---
 
 <div dir="ltr">
