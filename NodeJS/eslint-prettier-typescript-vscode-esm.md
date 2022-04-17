@@ -5,6 +5,9 @@ date: 2022-04-17T10:01:31+0000
 updated: 2022-04-17T10:01:31+0000
 ---
 
+## Non-ESM
+for non esm you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.md)
+
 ## Install dependencies
 
 install using npm:
