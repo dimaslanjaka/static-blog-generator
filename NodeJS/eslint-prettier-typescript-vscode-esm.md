@@ -21,6 +21,7 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
 ## Create .eslintrc
 ```jsonc
 {
+  "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
   "parser": "@typescript-eslint/parser",
   "env": {
