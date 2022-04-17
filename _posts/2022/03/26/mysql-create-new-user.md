@@ -2,7 +2,7 @@
 category:
   - Programming
   - MYSQL
-cover: mysql-create-new-user/phpmyadmin-changepw.png
+cover: /2022/03/26/mysql-create-new-user/phpmyadmin-changepw.png
 date: 2022-04-11T00:00:00+07:00
 tags:
   - MySQL
@@ -17,9 +17,9 @@ lang: en
 description: MySQL Command to create new database user
 subtitle: MySQL Command to create new database user
 excerpt: MySQL Command to create new database user
-thumbnail: mysql-create-new-user/phpmyadmin-changepw.png
+thumbnail: /2022/03/26/mysql-create-new-user/phpmyadmin-changepw.png
 photos:
-  - mysql-create-new-user/phpmyadmin-changepw.png
+  - /2022/03/26/mysql-create-new-user/phpmyadmin-changepw.png
 type: post
 ---
 

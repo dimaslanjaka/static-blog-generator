@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: //res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
+cover: http://res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
 date: 2017-12-12T01:39:00.000+07:00
 lang: en
 location: ""
@@ -22,9 +22,9 @@ type: post
 uuid: 2411225b-4a52-4888-8790-aeec9323cff5
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:18+07:00
-thumbnail: //res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
+thumbnail: http://res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
 photos:
-  - //res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
+  - http://res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
 description: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
   Membuat Simple Safelink Converter
 wordcount: 426

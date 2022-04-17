@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
+cover: https://www.dropbox.com/s320/5w9n86434703syx/unnamed (4).png?dl=1
 date: 2017-08-01T16:48:00.000+07:00
 lang: en
 location: ""
@@ -23,9 +23,9 @@ type: post
 uuid: 16df9ae4-135a-4888-8e82-af47b880aea1
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
+thumbnail: https://www.dropbox.com/s320/5w9n86434703syx/unnamed (4).png?dl=1
 photos:
-  - https://www.dropbox.com/s320/5w9n86434703syx/unnamed%20(4).png?dl=1
+  - https://www.dropbox.com/s320/5w9n86434703syx/unnamed (4).png?dl=1
 wordcount: 91
 url: https://www.webmanajemen.com/2017/08/cara-membuat-link-tertentu-atau-semua.html
 permalink: /2017/08/cara-membuat-link-tertentu-atau-semua.html

@@ -7,7 +7,7 @@ category:
   - Programming
   - JS
 comments: true
-cover: //urlz.fr/6tog
+cover: http://urlz.fr/6tog
 date: 2018-01-29T22:31:00.001+07:00
 lang: en
 location: ""
@@ -24,9 +24,9 @@ type: post
 uuid: 9cab36b7-e362-4888-89d6-b37b56e165d8
 webtitle: WMI Gitlab
 updated: 2019-07-22T03:23:17+07:00
-thumbnail: //urlz.fr/6tog
+thumbnail: http://urlz.fr/6tog
 photos:
-  - //urlz.fr/6tog
+  - http://urlz.fr/6tog
 wordcount: 42
 url: https://www.webmanajemen.com/2018/01/easy-way-of-adding-pin-it-buttons-in.html
 permalink: /2018/01/easy-way-of-adding-pin-it-buttons-in.html
