@@ -99,7 +99,7 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
 }
 ```
 
-# create tsconfig.json (if not created yet)
+## optional: create tsconfig.json (if not created yet)
 for example tsconfig.json for node 16.
 
 npm
