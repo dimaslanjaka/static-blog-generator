@@ -15,7 +15,7 @@ tags:
 ---
 
 ## CommonJS
-for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.md)
+for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier Auto Format Typescript Project In VSCode](eslint-prettier-typescript-vscode.md)
 
 ## install and activate VSCode ESLint extension for auto Linter And Formatter
 [Download Here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
