@@ -10,6 +10,9 @@ type: post
 ## CommonJS
 for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.md)
 
+## install and activate VSCode ESLint extension for auto Linter And Formatter
+[Download Here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 ## Install dependencies
 
 install using npm:
@@ -20,6 +23,7 @@ install using yarn:
 ```bash
 yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 ```
+
 ## Create .eslintrc
 ```jsonc
 {
