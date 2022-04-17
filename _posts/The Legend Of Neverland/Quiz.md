@@ -39,20 +39,18 @@ title: Quiz
 type: post
 uuid: 0e998c19-d6c6-4888-82d3-f22d331ecc6d
 webtitle: The Legend Of Neverland
-updated: 2021-12-19T06:28:57+07:00
-thumbnail: /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
-photos:
-  - https://webmanajemen.com/The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
-  - /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
-description: Quiz questions and the answers. The Legend Of Neverland Event.
-wordcount: 7848
+updated: 2022-04-17T14:34:24+0000
+wordcount: 7871
 excerpt: Quiz questions and the answers. The Legend Of Neverland Event.
+description: Quiz questions and the answers. The Legend Of Neverland Event.
 url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html
 permalink: /The%20Legend%20Of%20Neverland/Quiz.html
+thumbnail: /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
+photos:
+  - /The Legend Of Neverland/Quiz/SCENIC-QUIZ.jpg
 ---
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
-
 <div id="bootstrap-wrapper">
   <div class="text-center mb-1"><h1>Scenic Quiz Answer The Legend Of Neverlands</h1><div id="hexo-adsense-fill"></div></div>
   <div class="mb-2">
@@ -65,11 +63,9 @@ permalink: /The%20Legend%20Of%20Neverland/Quiz.html
       </div>
     </div>
     <small id="search-questionsHelpBlock" class="form-text text-muted">
-      Last updated <%- date_format(page.updated, "LLL") %>
+      Last updated <%- date_format(page.updated, "LLL") %> <a href="#changelog">changelog</a>
     </small>
-
   </div>
-
   <ul id="questions">
     "Cité de la musique" is located in France (X)
 "volga river tracker" once shocked the world because of its beauty, the painter is llya repin (O)
@@ -405,7 +401,6 @@ calcium is a intelligent element (O)
 “WHO” stands for World Health Organization (O)
 
   </ul>
-
   <form action="https://backend.webmanajemen.com/tlon/quiz.php" method="post" id="addQuiz" target="_blank" name="form_add_quiz" class="mt-4 mb-4 text-center">
     <input type="hidden" name="add" value="add">
     <div class="row">
@@ -431,20 +426,24 @@ calcium is a intelligent element (O)
       </div>
     </div>
   </form>
-
   <blockquote class="mt-2">
     <span style="display: none;">Join discord https://tiny.one/INDO1945.</span>
     This article shortcut url https://bit.ly/TLONQUIZ<br />
     Add new quiz https://bit.ly/TLONQUIZADD<br />
     Code this article https://codepen.io/dimaslanjaka/pen/yLbrZVo
   </blockquote>
-
   <div>
     <img src="https://user-images.githubusercontent.com/12471057/134035068-ee7b2344-0902-4b4a-a87d-ce526ee45863.png" alt="preview" />
     <img src="https://user-images.githubusercontent.com/12471057/134026167-fc86c462-6e04-4c61-a66b-1316f5172bd2.png" alt="Winner - MilimNava_s48" />
     <img src="https://user-images.githubusercontent.com/12471057/135248607-de662c5f-6b58-4156-9e54-6f43f7fe7850.png" alt="Winner 29/9/2021 Nanao_s48" />
   </div>
 </div>
+
+## Changelog
+### 2022-04-17
+- skip process when input is emptied
+### 2021-08-16
+- Integrate search `li` texts
 
 <style>[id*="questions-filter"] li:not([data-id]) {
   display: none;
@@ -564,6 +563,10 @@ function jQueryMethod() {
 
   // searcher
   let searchLi = function (filter) {
+    if (!filter) {
+      console.log('input empty');
+      return;
+    }
     let listQuiz = jQuery("ul[id*='questions'] li");
     listQuiz.each(function (index) {
       // search from first characters
