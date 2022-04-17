@@ -1,16 +1,21 @@
 ---
+category:
+  - Programming
+  - JS
 cover: https://eslint.org/assets/img/favicon.512x512.png
 date: 2022-04-17T10:01:31+0000
 subtitle: Auto format typescript with esm using only eslint and prettier module
+tags:
+  - JS
+  - TS
+  - NodeJS
+  - ESLint
 title: Auto format typescript with esm in vscode
 type: post
 updated: 2022-04-17T10:01:31+0000
 uuid: 7fc9817d-e4da-4888-8b90-6d4d163e3a21
-category:
-  - Uncategorized
-tags: []
 comments: true
-wordcount: 233
+wordcount: 239
 excerpt: Auto format typescript with esm using only eslint and prettier module
 description: Auto format typescript with esm using only eslint and prettier module
 url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-esm.html
@@ -22,7 +27,7 @@ photos:
 ---
 
 ## CommonJS
-for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.html)
+for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier Auto Format Typescript Project In VSCode](eslint-prettier-typescript-vscode.html)
 
 ## install and activate VSCode ESLint extension for auto Linter And Formatter
 [Download Here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
