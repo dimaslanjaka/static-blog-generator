@@ -40,7 +40,7 @@ Linter becomes 2 types:
 **ESLint has a more performant architecture than TSLint** and that they will **only be focusing on ESLint** when providing editor linting integration for TypeScript. Now how to automated these linter in vscode without **[prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
 
 ## ESM
-for project with esm `"type": "module"` in `package.json` you can using these configurations [ESM Eslint Auto Format In VSCode](eslint-prettier-typescript-vscode-esm.md)
+for project with esm `"type": "module"` in `package.json` you can using these configurations [ESM Eslint Auto Format Typescript Project In VSCode](eslint-prettier-typescript-vscode-esm.md)
 
 ## Install dependencies
 install using npm:
