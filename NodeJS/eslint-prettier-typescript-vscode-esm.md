@@ -94,3 +94,40 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
   }
 }
 ```
+
+# create tsconfig.json (if not created yet)
+for example tsconfig.json for node 16.
+
+npm
+```bash
+npm install --save-dev @tsconfig/node16
+```
+yarn
+```bash
+yarn add --dev @tsconfig/node16
+```
+
+```jsonc
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 16",
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/__tests__/**"
+  ]
+}
+```
+
+## Finish
+now your vscode format and lint your codes automatically.
