@@ -26,11 +26,21 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
 description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
-wordcount: 172
+wordcount: 174
 excerpt: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 url: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php.html
 permalink: /2019/07/fix-openssl-encrypt-decrypt-php.html
 ---
 
-<div dir="ltr" trbidi="on"><pre type="Example ERROR PHP">Warning: openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0 in PATH_FILE on line LINE_N<br>openssl_encrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0 in PATH_FILE on line LINE_N<br></pre><h4>How to fix the errors</h4><br><ol><li>Ensure your <b>SALT</b>&nbsp;only using <b>NUMBER ONLY</b>&nbsp;and <i>Minimum length of </i><b>SALT</b>&nbsp;is <b>12</b>.</li><li>Ensure your PHP version is 7 or above</li></ol><blockquote class="tr_bq">That's how to fix openssl_encrypt() and openssl_decrypt() errors</blockquote></div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png">
+<div dir="ltr">
+<pre>Warning: openssl_decrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0 in PATH_FILE on line LINE_N<br />openssl_encrypt(): IV passed is only 12 bytes long, cipher expects an IV of precisely 16 bytes, padding with \0 in PATH_FILE on line LINE_N</pre>
+<h4>How to fix the errors</h4>
+<br />
+<ol>
+<li>Ensure your <strong>SALT</strong>&nbsp;only using <strong>NUMBER ONLY</strong>&nbsp;and <em>Minimum length of </em><strong>SALT</strong>&nbsp;is <strong>12</strong>.</li>
+<li>Ensure your PHP version is 7 or above</li>
+</ol>
+<blockquote>That's how to fix openssl_encrypt() and openssl_decrypt() errors</blockquote>
+</div>
+<p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png" alt="" /></p>
