@@ -10,7 +10,7 @@ category:
   - Uncategorized
 tags: []
 comments: true
-wordcount: 209
+wordcount: 233
 excerpt: Auto format typescript with esm using only eslint and prettier module
 description: Auto format typescript with esm using only eslint and prettier module
 url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-esm.html
@@ -24,6 +24,9 @@ photos:
 ## CommonJS
 for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.html)
 
+## install and activate VSCode ESLint extension for auto Linter And Formatter
+[Download Here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 ## Install dependencies
 
 install using npm:
@@ -34,6 +37,7 @@ install using yarn:
 ```bash
 yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 ```
+
 ## Create .eslintrc
 ```jsonc
 {
@@ -109,7 +113,7 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
 }
 ```
 
-# create tsconfig.json (if not created yet)
+## optional: create tsconfig.json (if not created yet)
 for example tsconfig.json for node 16.
 
 npm

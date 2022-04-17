@@ -29,7 +29,7 @@ type: post
 uuid: 3f6ada3c-0ed8-4888-87c8-3371f8927a2c
 webtitle: NodeJS
 updated: 2022-04-17T10:01:31+0000
-wordcount: 616
+wordcount: 618
 excerpt: How to configure eslint with prettier to automated lint and format
   codes in typescript project using vscode
 description: How to configure eslint with prettier to automated lint and format
@@ -153,7 +153,7 @@ this will automate lint and format your codes when saving.
 }
 ```
 
-# create tsconfig.json (if not created yet)
+## optional: create tsconfig.json (if not created yet)
 for example tsconfig.json for node 12.
 
 npm
