@@ -7,8 +7,8 @@ cover: https://eslint.org/assets/img/favicon.512x512.png
 type: post
 ---
 
-## Non-ESM
-for non esm you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.md)
+## CommonJS
+for Non-ESM/CommonJS you can read these article [CommonJS Eslint Prettier In Typescript Project](eslint-prettier-typescript-vscode.md)
 
 ## Install dependencies
 
