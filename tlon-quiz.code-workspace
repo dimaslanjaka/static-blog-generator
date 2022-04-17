@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../source/assets/tlon"
+		},
+		{
+			"path": "../source/assets"
 		}
 	],
 	"settings": {}
