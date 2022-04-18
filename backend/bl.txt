@@ -34,6 +34,9 @@ https://www.search.com/web?q=webmanajemen.com&qo=homeSearchBox
 https://www.ssltrust.com.au/ssl-tools/website-security-check?domain=webmanajemen.com
 https://www.site24x7.com/link-checker.html#webmanajemen.com
 
+// redirect
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiooPWVl573AhW6ILcAHZuQCcEQFnoECAsQAw&url=https%3A%2F%2Fwww.webmanajemen.com%2F2019%2F07%2Fhow-to-bulk-delete-label-from-blogger.html&usg=AOvVaw2WlSAcBaDbj43Psh5sospG
+
 // comments
 https://blogger2-tips-tricks.blogspot.com/2020/08/how-to-crack-vidiq-boost-package-for.html?showComment=1647748764012#c5907979333600771251
 https://infokomp2008.blogspot.com/2008/09/seagate-meluncurkan-hd-eksternal.html?showComment=1647908439214#c2014722241442524197
