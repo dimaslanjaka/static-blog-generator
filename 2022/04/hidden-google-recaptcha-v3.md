@@ -4,6 +4,11 @@ subtitle: Google recaptcha V3 support reload token without Reload Pages
 date: 2022-04-18T17:12:30+0000
 updated: 2022-04-18T17:12:30+0000
 cover: https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
+category:
+  - Programming
+tags:
+  - JS
+  - Recaptcha
 ---
 
 ## How to refresh token google recaptcha v3 (hidden recaptcha supported)
