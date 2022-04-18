@@ -19,7 +19,7 @@ type: post
 uuid: 119c768f-b569-4888-847d-fa774501bbfb
 webtitle: Blogger
 updated: 2022-04-18T07:28:00+0700
-wordcount: 163
+wordcount: 185
 excerpt: Previous How to bulk add category label to blogger postsFilter and
   Select category label you want to remove Select the post that will be
 description: Previous How to bulk add category label to blogger postsFilter and
@@ -38,3 +38,6 @@ _Previous: [How to bulk add category label to blogger posts](../../2019/07/how-t
 3.  Select again the selected label from label selector ![Select Label](https://2.bp.blogspot.com/-hwB2UcHi24w/XTTIWXqs4YI/AAAAAAAAAdk/UtOgg6ikCQ0LVaePFIq6vuDnEJj4flrugCLcBGAs/s1600/Screenshot_6.png)
 4.  Selected label from the selected posts have been deleted.
     > If no posts at that label, the label will be removed automatically from your blog label lists
+
+> You Might Also Like:
+> - [Blogger Conditional Tags For Desktop](../../2017/05/conditional-tags-blogger-for-desktop.html)
