@@ -16,7 +16,7 @@ tags:
 title: How to bulk delete category label from blogger posts
 type: post
 uuid: 119c768f-b569-4888-847d-fa774501bbfb
-webtitle: WMI Gitlab
+webtitle: Blogger
 updated: 2022-04-18T07:28:00+0700
 ---
 
