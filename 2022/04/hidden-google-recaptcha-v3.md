@@ -4,6 +4,10 @@ subtitle: Google recaptcha V3 support reload token without Reload Pages
 date: 2022-04-18T17:12:30+0000
 updated: 2022-04-18T17:12:30+0000
 cover: https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
+keywords:
+  - reload recaptcha v3
+  - reload recaptcha without refresh page
+  - hidden recaptcha v3
 category:
   - Programming
 tags:
@@ -12,6 +16,7 @@ tags:
 ---
 
 ## How to refresh token google recaptcha v3 (hidden recaptcha supported)
+_Google recaptcha V3 support reload token without Reload Pages._
 
 reCaptcha V3 in an **invisible captcha**, it _automagically_ detects user behaviors and rate it, **no need to reload or user's direct interaction** with any UI.
 
