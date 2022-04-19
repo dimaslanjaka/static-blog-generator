@@ -1,14 +1,17 @@
 ---
-title: Eslint Prettier Auto Format In React Project Tsx
+title: Eslint Prettier Auto Format In Typescript React Project
 subtitle: How to auto format using eslint and prettier in typescript react project using vscode
 cover: https://miro.medium.com/max/1400/1*N9n5F63ne3HimpJ10d1HEw.jpeg
-date: 2022-04-19
-updated: 2022-04-19T09:37:38+0000
+date: 2022-04-19T09:37:38+0000
+updated: 2022-04-19T11:20:17+0000
 tags:
   - Eslint
   - TS
   - JS
 ---
+
+## Auto format Tsx files
+Assuming you've got `eslint` extension installed on Visual Studio Code, you should add the following to your settings.
 
 ## Install dependencies
 using specific stable versions:
@@ -18,6 +21,10 @@ npm install --save-dev @types/react@16.9.34 @types/react-dom@16.9.6 @typescript-
 using latest stable versions:
 ```bash
 npm install --save-dev @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react prettier react-scripts 
+```
+using airbnb latest stable versions:
+```
+npm i -D prettier eslint eslint-config-airbnb-typescript eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y@^6.2.3 eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ## .eslintrc.js
@@ -72,6 +79,41 @@ exports = {
 };
 ```
 
+## .eslintrc with airbnb
+```jsonc
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "airbnb-typescript",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "rules": {
+    // Make prettier code formatting suggestions more verbose.
+    "prettier/prettier": ["warn"],
+    // Disable <Fragment> => <> replacement. Feel free to change
+    "react/jsx-fragments": "off",
+    // Disable prefer default export
+    "import/prefer-default-export": "off"
+  },
+  "overrides": [{
+    "files": ["**/*.tsx"],
+    "rules": {
+      "react/prop-types": "off",
+      "react/jsx-props-no-spreading": "off"
+    }
+  }]
+}
+```
+
 ## .prettierrc
 ```jsonc
 {
@@ -89,6 +131,12 @@ exports = {
 {
   "eslint.format.enable": true,
   "editor.formatOnSave": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
@@ -139,6 +187,16 @@ exports = {
     "eslint-plugin-react": "^7.29.4",
     "prettier": "2.6.2",
     "react-scripts": "3.4.1"
+  }
+}
+```
+
+## manual run with scripts package.json
+```json
+{
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}"
   }
 }
 ```
