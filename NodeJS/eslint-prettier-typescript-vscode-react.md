@@ -79,40 +79,57 @@ exports = {
 };
 ```
 
-## .eslintrc with airbnb
-```jsonc
-{
-  "$schema": "https://json.schemastore.org/eslintrc",
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "."
-  },
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "plugin:prettier/recommended",
-    "airbnb-typescript",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
-  ],
-  "rules": {
-    // Make prettier code formatting suggestions more verbose.
-    "prettier/prettier": ["warn"],
-    // Disable <Fragment> => <> replacement. Feel free to change
-    "react/jsx-fragments": "off",
-    // Disable prefer default export
-    "import/prefer-default-export": "off"
-  },
-  "overrides": [{
-    "files": ["**/*.tsx"],
-    "rules": {
-      "react/prop-types": "off",
-      "react/jsx-props-no-spreading": "off"
-    }
-  }]
+## .eslintrc.js with airbnb
+```js
+// https://www.google.com/search?channel=fs&client=ubuntu&q=%40typescript-eslint%2Feslint-plugin%2Fdist%2Fconfigs%2Fbase.json
+// https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/base.ts
+
+const { join } = require('upath');
+const { writeFileSync, existsSync } = require('fs');
+const dest = 'node_modules/@typescript-eslint/eslint-plugin/dist';
+const filebase = join(__dirname, dest, 'configs/base.json');
+if (!existsSync(filebase)) {
+  const base = {
+    parser: '@typescript-eslint/parser',
+    parserOptions: { sourceType: 'module' },
+    plugins: ['@typescript-eslint']
+  };
+  writeFileSync(filebase, JSON.stringify(base));
 }
+
+exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: '.'
+  },
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'plugin:prettier/recommended',
+    'airbnb-typescript',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react'
+  ],
+  rules: {
+    // Make prettier code formatting suggestions more verbose.
+    'prettier/prettier': ['warn'],
+    // Disable <Fragment> => <> replacement. Feel free to change
+    'react/jsx-fragments': 'off',
+    // Disable prefer default export
+    'import/prefer-default-export': 'off'
+  },
+  overrides: [
+    {
+      files: ['**/*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
+        'react/jsx-props-no-spreading': 'off'
+      }
+    }
+  ]
+};
 ```
 
 ## .prettierrc
