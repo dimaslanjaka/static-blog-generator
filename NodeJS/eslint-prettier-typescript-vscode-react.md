@@ -82,6 +82,7 @@ exports = {
 ## .eslintrc with airbnb
 ```jsonc
 {
+  "$schema": "https://json.schemastore.org/eslintrc",
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
