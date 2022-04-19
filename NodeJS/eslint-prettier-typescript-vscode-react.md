@@ -10,7 +10,7 @@ tags:
   - JS
 ---
 
-## Auto format Tsx files
+## Auto format Tsx files in VSCode
 Assuming you've got `eslint` extension installed on Visual Studio Code, you should add the following to your settings.
 
 ## Install dependencies
