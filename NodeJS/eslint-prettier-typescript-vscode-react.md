@@ -5,7 +5,7 @@ cover: https://miro.medium.com/max/1400/1*N9n5F63ne3HimpJ10d1HEw.jpeg
 date: 2022-04-19T09:37:38+0000
 updated: 2022-04-19T11:20:17+0000
 tags:
-  - Eslint
+  - ESLint
   - TS
   - JS
 ---
@@ -20,7 +20,7 @@ npm install --save-dev @types/react@16.9.34 @types/react-dom@16.9.6 @typescript-
 ```
 using latest stable versions:
 ```bash
-npm install --save-dev @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react prettier react-scripts 
+npm install --save-dev @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react prettier react-scripts
 ```
 using airbnb latest stable versions:
 ```
