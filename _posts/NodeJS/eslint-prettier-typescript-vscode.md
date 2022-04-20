@@ -160,11 +160,11 @@ for example tsconfig.json for node 12.
 
 npm
 ```bash
-npm install --save-dev @tsconfig/node16
+npm install --save-dev @tsconfig/node12
 ```
 yarn
 ```bash
-yarn add --dev @tsconfig/node16
+yarn add --dev @tsconfig/node12
 ```
 
 ```jsonc
