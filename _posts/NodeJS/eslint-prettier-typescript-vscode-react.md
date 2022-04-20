@@ -4,7 +4,7 @@ date: 2022-04-19T09:37:38+0000
 subtitle: How to auto format using eslint and prettier in typescript react
   project using vscode
 tags:
-  - Eslint
+  - ESLint
   - TS
   - JS
 title: Eslint Prettier Auto Format In Typescript React Project
@@ -14,7 +14,7 @@ category:
   - Programming
   - JS
 comments: true
-wordcount: 408
+wordcount: 407
 excerpt: How to auto format using eslint and prettier in typescript react
   project using vscode
 description: How to auto format using eslint and prettier in typescript react
@@ -38,7 +38,7 @@ npm install --save-dev @types/react@16.9.34 @types/react-dom@16.9.6 @typescript-
 ```
 using latest stable versions:
 ```bash
-npm install --save-dev @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react prettier react-scripts 
+npm install --save-dev @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react prettier react-scripts
 ```
 using airbnb latest stable versions:
 ```
