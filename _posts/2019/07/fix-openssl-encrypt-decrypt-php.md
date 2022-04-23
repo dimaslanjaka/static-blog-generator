@@ -7,7 +7,7 @@ category:
   - Programming
   - PHP
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
 date: 2019-07-31T16:03:00.001+07:00
 lang: en
 subtitle: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
@@ -26,9 +26,9 @@ description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 url: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php.html
 permalink: /2019/07/fix-openssl-encrypt-decrypt-php.html
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
 photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
 ---
 
 <div dir="ltr">
@@ -41,4 +41,4 @@ photos:
 </ol>
 <blockquote>That's how to fix openssl_encrypt() and openssl_decrypt() errors</blockquote>
 </div>
-<p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png" alt="" /></p>
+<p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png" alt="" /></p>
