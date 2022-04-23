@@ -5,7 +5,7 @@ author:
   email: noreply@blogger.com
 category: []
 comments: true
-cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png
+cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
 date: 2019-07-31T16:03:00.001+07:00
 lang: en
 subtitle: "Warning openssl_decrypt(): IV passed is only 12 bytes long, cipher
@@ -29,4 +29,4 @@ updated: 2022-04-17T00:53:39+0000
 </ol>
 <blockquote>That's how to fix openssl_encrypt() and openssl_decrypt() errors</blockquote>
 </div>
-<p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://dimaslanjaka.github.io/assets/img/phpjs.svg?.png" alt="" /></p>
+<p><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png" alt="" /></p>
