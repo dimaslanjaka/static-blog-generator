@@ -42,5 +42,19 @@ const __filename = __resolve.__filename;
 const __dirname = dirname(__filename);
 console.log(__dirname, __filename); // /media/dimaslanjaka/DATA/Repositories/traffic-generator/express/src/public/routes /media/dimaslanjaka/DATA/Repositories/traffic-generator/express/src/public/routes/index.ts
 ```
+## Usage Force Unix Style
+Install upath
+```bash
+npm i upath
+```
+Call them
+```ts
+import path from 'upath';
+import { getDirname } from 'config';
+const { dirname } = path;
+const __resolve = getDirname();
+const __filename = __resolve.__filename;
+const __dirname = dirname(__filename);
+```
 
 This is trick for resolving __dirname and __filename on typescript ESM hybrid compiler
