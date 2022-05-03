@@ -12,10 +12,10 @@ tags:
   - ESLint
 title: Auto format typescript with esm in vscode
 type: post
-updated: 2022-04-17T10:01:31+0000
+updated: 2022-05-03T18:14:00+0700
 uuid: 7fc9817d-e4da-4888-8b90-6d4d163e3a21
 comments: true
-wordcount: 239
+wordcount: 243
 excerpt: Auto format typescript with esm using only eslint and prettier module
 description: Auto format typescript with esm using only eslint and prettier module
 url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-esm.html
@@ -80,7 +80,9 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "argsIgnorePattern": "^_"
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",
