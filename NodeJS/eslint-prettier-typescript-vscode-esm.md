@@ -68,7 +68,9 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier eslint @typescri
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "argsIgnorePattern": "^_"
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",
