@@ -3,7 +3,7 @@ title: Fix FRP Redmi GO Tiare Via MiFlash
 subtitle: Bypass FRP Redmi GO Tiare Via MiFlash
 cover: /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
 date: 2022-01-04T05:27:00+0700
-updated: 2022-01-04T05:27:00+0700
+updated: 2022-03-30T06:57:37+0000
 toc: true
 keywords:
   - redmi go
