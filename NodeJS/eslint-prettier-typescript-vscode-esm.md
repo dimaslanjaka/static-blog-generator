@@ -2,7 +2,7 @@
 title: Auto format typescript with esm in vscode
 subtitle: Auto format typescript with esm using only eslint and prettier module
 date: 2022-04-17T10:01:31+0000
-updated: 2022-04-17T10:01:31+0000
+updated: 2022-05-03T18:14:00+0700
 cover: https://eslint.org/assets/img/favicon.512x512.png
 type: post
 category:
