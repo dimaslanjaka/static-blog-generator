@@ -29,7 +29,7 @@ title: Eslint Prettier In Typescript Project Using Vscode
 type: post
 uuid: 3f6ada3c-0ed8-4888-87c8-3371f8927a2c
 webtitle: NodeJS
-updated: 2022-04-17T10:01:31+0000
+updated: 2022-05-03T18:14:00+0700
 ---
 
 ## Auto Lint And Format Typescript Using VSCode With Eslint And Prettier
