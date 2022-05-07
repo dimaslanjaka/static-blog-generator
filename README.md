@@ -1,2 +1,3 @@
-# dimaslanjaka.github.io
-Source Posts
+# dimaslanjaka.github.io source Posts
+
+**COPYING THE ARTICLES HERE ARE STRICTLY PROHIBITED**
