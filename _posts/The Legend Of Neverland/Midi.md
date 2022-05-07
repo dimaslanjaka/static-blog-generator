@@ -19,7 +19,7 @@ title: Midi
 type: post
 uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
-updated: 2022-03-25T16:37:39+0000
+updated: 2022-05-07T10:48:40+0000
 description: Midi collection for the legend of neverland perform music skill
 wordcount: 246
 excerpt: Midi collection for the legend of neverland perform music skill
@@ -69,6 +69,7 @@ Visit [YT2MIDI](https://youtube2midi.github.io/)
 - https://freemidi.org/topmidi
 - https://sheet.host/
 - http://www.hamienet.com/
+- https://bitmidi.com
 
 ### How to create music/song mp3 to midi
 
