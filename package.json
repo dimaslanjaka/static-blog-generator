@@ -8,6 +8,9 @@
   },
   "keywords": [],
   "private": true,
+    "workspaces": [
+    "page"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
