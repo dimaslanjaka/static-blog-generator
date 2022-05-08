@@ -135,7 +135,7 @@
 				function ImageLoading() {
 					c += 1;
 					var perc = (((100 / tot) * c) << 0) + '%';
-					console.log(perc, c, tot);
+					//console.log(perc, c, tot);
 					prog.style.width = perc;
 					stat.innerHTML = 'Loading ' + perc;
 					if (c === tot) return ImageDoneLoading();
@@ -157,7 +157,6 @@
 		})();
 	</script>
 </head>
-
 <body class="fixed-sn mdb-skin-custom" data-spy="scroll" data-target="#scrollspy" data-offset="15">
 	<div id="Overlay">
 		<div id="Overlayprogstat"></div>
