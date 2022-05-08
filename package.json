@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "private": true,
-    "workspaces": [
+  "workspaces": [
     "page"
   ],
   "author": "",
