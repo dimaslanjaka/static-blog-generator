@@ -46,11 +46,11 @@ change `ca-pub-1165447249910969` with your own adsense pub
 
 ## Usages
 just put `<ins/>` tag adsense
-```
+```html
 <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
 ```
 full example
-```
+```html
 <section class="mb-5">
   <div class="card bg-light">
     <ins
