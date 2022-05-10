@@ -3,7 +3,7 @@ title: Setup node_modules bin on global environtment path
 description: How to setup node_modules/.bin on global environtment path
 date: 2022-05-10T12:13:21+0000
 updated: 2022-05-10T23:45:40+0000
-thumbnail: https://user-images.githubusercontent.com/12471057/167625972-59c6297f-a4ac-41ad-a7dc-2e4bb819f71c.png
+thumbnail: https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png
 ---
 
 ## Setup Windows
@@ -23,4 +23,4 @@ if [ -d "./node_modules/.bin" ] ; then
 fi
 ```
 
-![cover](https://user-images.githubusercontent.com/12471057/167625972-59c6297f-a4ac-41ad-a7dc-2e4bb819f71c.png)
+![cover](https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png)
