@@ -1,0 +1,67 @@
+---
+title: Lazy Load Adsense Full Support 2022 Adsense API
+description: Snippet lazy load adsense full support for blogger, wordpress, etc
+date: 2022-05-10T23:20:16+0000
+updated: 2022-05-10T23:20:16+0000
+---
+
+change `ca-pub-1165447249910969` with your own adsense pub
+```html
+<script type="text/javascript">//<![CDATA[
+  var lazyloadads = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var notop = 0 != document.documentElement.scrollTop;
+      var notopbody = 0 != document.body.scrollTop;
+      var noload = false === lazyloadads;
+      if (noload && (notop || notopbody)) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969';
+        script.setAttribute('crossorigin', 'anonymous');
+        script.onload = function () {
+          var adsbygoogle = window.adsbygoogle || [];
+          Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
+            (ins) => {
+              var adsid = ins.getAttribute('data-ad-slot'); //nullable
+              if (adsid) {
+                adsbygoogle.push({ google_ad_client: "ca-pub-1165447249910969" });
+                console.log('[adsense][ins]', adsid);
+              }
+            }
+          );
+        };
+        var target = document.getElementsByTagName('script')[0];
+        target.parentNode.insertBefore(script, target);
+        lazyloadads = true;
+      }
+    },
+    true
+  );
+//]]></script>
+```
+
+## Usages
+just put `<ins/>` tag adsense
+```
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-1165447249910969" data-ad-slot="8307991972"></ins>
+```
+full example
+```
+<section class="mb-5">
+  <div class="card bg-light">
+    <ins
+      class="adsbygoogle"
+      style="display: block"
+      data-ad-format="autorelaxed"
+      data-ad-client="ca-pub-1165447249910969"
+      data-ad-slot="8307991972"
+    ></ins>
+  </div>
+</section>
+```
+
+this is a article of Snippet Lazy Load Adsense Full Support for new adsense API 2022
