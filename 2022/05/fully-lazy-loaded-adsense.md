@@ -45,6 +45,11 @@ change `ca-pub-1165447249910969` with your own adsense pub
 //]]></script>
 ```
 
+## Minified Version
+```js
+var lazyloadads=!1;window.addEventListener("scroll",function(){var o=0!=document.documentElement.scrollTop,e=0!=document.body.scrollTop;!1===lazyloadads&&(o||e)&&((o=document.createElement("script")).type="text/javascript",o.async=!0,o.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1165447249910969",o.setAttribute("crossorigin","anonymous"),o.onload=function(){var e=window.adsbygoogle||[];Array.from(document.querySelectorAll("ins.adsbygoogle")).forEach(o=>{o=o.getAttribute("data-ad-slot");o&&(e.push({google_ad_client:"ca-pub-1165447249910969"}),console.log("[adsense][ins]",o))})},(e=document.getElementsByTagName("script")[0]).parentNode.insertBefore(o,e),lazyloadads=!0)},!0);
+```
+
 ## Usages
 just put `<ins/>` tag adsense
 ```html
