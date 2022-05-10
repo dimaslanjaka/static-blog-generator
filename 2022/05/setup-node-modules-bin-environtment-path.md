@@ -9,4 +9,18 @@ thumbnail: https://user-images.githubusercontent.com/12471057/167625972-59c6297f
 ## Setup Windows
 ![Environtment Path Windows](https://user-images.githubusercontent.com/12471057/167625486-8ba5d865-b3e5-4cec-bdb5-6c335ff5b2d6.png)
 
+## Setup Linux
+```bash
+sudo gedit ~/.bashrc
+```
+add following codes to end of file
+```bash
+if [ -d "./bin" ] ; then
+    export PATH="$PATH:./bin"
+fi
+if [ -d "./node_modules/.bin" ] ; then
+    export PATH="$PATH:./node_modules/.bin"
+fi
+```
+
 ![cover](https://user-images.githubusercontent.com/12471057/167625972-59c6297f-a4ac-41ad-a7dc-2e4bb819f71c.png)
