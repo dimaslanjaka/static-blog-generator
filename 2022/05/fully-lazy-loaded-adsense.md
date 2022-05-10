@@ -3,6 +3,7 @@ title: Lazy Load Adsense Full Support 2022 Adsense API
 description: Snippet lazy load adsense full support for blogger, wordpress, etc
 date: 2022-05-10T23:20:16+0000
 updated: 2022-05-10T23:20:16+0000
+cover: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 ---
 
 change `ca-pub-1165447249910969` with your own adsense pub
