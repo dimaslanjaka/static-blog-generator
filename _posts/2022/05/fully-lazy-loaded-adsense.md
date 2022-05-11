@@ -9,7 +9,7 @@ category:
   - Uncategorized
 tags: []
 comments: true
-wordcount: 53
+wordcount: 149
 subtitle: Snippet lazy load adsense full support for blogger, wordpress, etc
 excerpt: Snippet lazy load adsense full support for blogger, wordpress, etc
 url: https://www.webmanajemen.com/2022/05/fully-lazy-loaded-adsense.html
