@@ -33,6 +33,7 @@ change `ca-pub-1165447249910969` with your own adsense pub
         script.setAttribute('crossorigin', 'anonymous');
         script.onload = function () {
           var adsbygoogle = window.adsbygoogle || [];
+          // customizing your personalized ads here, read more: https://support.google.com/adsense/answer/9042142?hl=en
           Array.from(document.querySelectorAll('ins.adsbygoogle')).forEach(
             (ins) => {
               var adsid = ins.getAttribute('data-ad-slot'); //nullable
