@@ -29,7 +29,7 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Fix missing dependencies from your gradle project android, maven,
   etc with this build.gradle. <br/>insert into
-wordcount: 290
+wordcount: 250
 excerpt: Fix missing dependencies from your gradle project android, maven, etc
   with this build.gradle. <br/>insert into
 url: https://www.webmanajemen.com/2020/08/buildgradle-with-custom-repository.html

@@ -26,7 +26,7 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogs
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
 description: Finally Google choseFacebook comments pluginfirst supported by AMP HTML.
-wordcount: 456
+wordcount: 455
 excerpt: Finally Google choseFacebook comments pluginfirst supported by AMP HTML.
 url: https://www.webmanajemen.com/2017/05/how-to-create-facebook-comments-on-amp.html
 permalink: /2017/05/how-to-create-facebook-comments-on-amp.html

@@ -19,7 +19,7 @@ type: post
 uuid: a0392d1b-fa82-4888-812e-4f460e19dc81
 webtitle: PHP
 updated: 2022-04-18
-wordcount: 863
+wordcount: 862
 excerpt: "Description Of getmeta_tags Source Description: PHP.NET PHP 4, PHP 5,
   PHP 7 get_meta_tags "
 description: "Description Of getmeta_tags Source Description: PHP.NET PHP 4, PHP

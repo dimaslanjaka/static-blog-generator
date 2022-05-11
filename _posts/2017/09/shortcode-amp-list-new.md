@@ -24,7 +24,7 @@ updated: 2017-09-15T01:48:06+07:00
 thumbnail: https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
 photos:
   - https://4.bp.blogspot.com/-ko3CcyyJKSY/WaRzKI6HwWI/AAAAAAAAACo/ZusaTqvFcJA-hjqVsLk9jArt00QUPbYwwCLcBGAs/s320/shortcode.jpg
-wordcount: 235
+wordcount: 234
 url: https://www.webmanajemen.com/2017/09/shortcode-amp-list-new.html
 permalink: /2017/09/shortcode-amp-list-new.html
 description: Shortcode amp list new

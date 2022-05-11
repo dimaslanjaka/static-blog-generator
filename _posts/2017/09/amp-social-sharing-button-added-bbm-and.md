@@ -26,7 +26,7 @@ updated: 2017-09-17T02:41:06+07:00
 thumbnail: https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
 photos:
   - https://3.bp.blogspot.com/-58OfUSyH_V0/WaRzuo8mhaI/AAAAAAAAACw/fai_QJfb4O0lgOKoPLyD-qehFxRac00wQCLcBGAs/s320/BBM-vs-WhatsApp.jpg
-wordcount: 1139
+wordcount: 1117
 url: https://www.webmanajemen.com/2017/09/amp-social-sharing-button-added-bbm-and.html
 permalink: /2017/09/amp-social-sharing-button-added-bbm-and.html
 description: AMP Social Sharing Button Added BBM and WhatsApp

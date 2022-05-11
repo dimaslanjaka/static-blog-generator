@@ -30,7 +30,7 @@ photos:
 description: img class=center w3-center height=250
   src=https://imgdb.net/images/3202.jpg width=100 /><br /><ol><li>Go to Your
   Dashboard
-wordcount: 220
+wordcount: 218
 excerpt: img class=center w3-center height=250
   src=https://imgdb.net/images/3202.jpg width=100 /><br /><ol><li>Go to Your
   Dashboard

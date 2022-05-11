@@ -27,7 +27,7 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "/ Thanks to codepen.io/alaingalvan for suggesting this color
   variable:background: hsl210, 45, 10//"
-wordcount: 5307
+wordcount: 5297
 excerpt: "/ Thanks to codepen.io/alaingalvan for suggesting this color
   variable:background: hsl210, 45, 10//"
 url: https://www.webmanajemen.com/2017/06/svg-social-media-icon-with-sass-css.html

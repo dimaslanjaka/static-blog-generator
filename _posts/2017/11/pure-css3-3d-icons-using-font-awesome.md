@@ -25,7 +25,7 @@ thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppA7rQroLKWdCM
 photos:
   - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppA7rQroLKWdCMKXWTRh4ybyogf1cT_XQFnD95O0VCwVjKu_O
 description: img width=350 height=300 alt=CSS3 3D Transformation layout=responsive
-wordcount: 1332
+wordcount: 1328
 excerpt: img width=350 height=300 alt=CSS3 3D Transformation layout=responsive
 url: https://www.webmanajemen.com/2017/11/pure-css3-3d-icons-using-font-awesome.html
 permalink: /2017/11/pure-css3-3d-icons-using-font-awesome.html

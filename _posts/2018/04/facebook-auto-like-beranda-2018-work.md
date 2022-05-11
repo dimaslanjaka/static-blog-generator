@@ -30,7 +30,7 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "Facebook autolike rebuilded safe mode. Dijamin aman. <strike><br
   />Jalankan ini dengan Cronjob 5 menit 1x <br />Fitur: <br"
-wordcount: 157
+wordcount: 151
 excerpt: "Facebook autolike rebuilded safe mode. Dijamin aman. <strike><br
   />Jalankan ini dengan Cronjob 5 menit 1x <br />Fitur: <br"
 url: https://www.webmanajemen.com/2018/04/facebook-auto-like-beranda-2018-work.html

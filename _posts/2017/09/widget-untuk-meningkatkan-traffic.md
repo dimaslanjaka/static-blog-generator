@@ -24,7 +24,7 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-wordcount: 640
+wordcount: 612
 url: https://www.webmanajemen.com/2017/09/widget-untuk-meningkatkan-traffic.html
 permalink: /2017/09/widget-untuk-meningkatkan-traffic.html
 description: Widget untuk meningkatkan traffic blogger

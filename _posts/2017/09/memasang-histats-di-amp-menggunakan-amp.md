@@ -27,7 +27,7 @@ photos:
   - https://2.bp.blogspot.com/-jSLiOZsuahQ/WaRcT-NMI4I/AAAAAAAAACI/vjuid9-u-hE4pT43zsx0XxoytpjWj5HdACLcBGAs/s320/histats-2.jpg
 description: Komponen amppixel berperilaku seperti img img gambar sederhana.
   Dibutuhkan satu URL saja, namun memberikan variabel yang bisa digantikan
-wordcount: 458
+wordcount: 446
 excerpt: Komponen amppixel berperilaku seperti img img gambar sederhana.
   Dibutuhkan satu URL saja, namun memberikan variabel yang bisa digantikan
 url: https://www.webmanajemen.com/2017/09/memasang-histats-di-amp-menggunakan-amp.html

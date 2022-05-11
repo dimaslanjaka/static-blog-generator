@@ -27,7 +27,7 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg
 description: All I needed was to expel every single forward slice in a string
   utilizing Javascript.
-wordcount: 269
+wordcount: 267
 excerpt: All I needed was to expel every single forward slice in a string
   utilizing Javascript.
 url: https://www.webmanajemen.com/2017/12/js-javascript-function-remove-slash.html

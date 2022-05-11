@@ -26,7 +26,7 @@ updated: 2019-07-22T03:23:17+07:00
 thumbnail: https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png
 photos:
   - https://3.bp.blogspot.com/-Ach7nLitXms/WarZUJ5bRYI/AAAAAAAAADY/pkBFgGKt0x0oi0j_LjJN6kdeXjwQ7xRtACLcBGAs/s320/SafeLinkConverter1.png
-wordcount: 826
+wordcount: 822
 url: https://www.webmanajemen.com/2017/09/cara-simple-membuat-blogger-safelink.html
 permalink: /2017/09/cara-simple-membuat-blogger-safelink.html
 description: Cara Simple Membuat Blogger Safelink Converter 2017 100 Work

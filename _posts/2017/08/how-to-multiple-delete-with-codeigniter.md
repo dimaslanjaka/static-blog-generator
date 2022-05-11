@@ -23,7 +23,7 @@ updated: 2017-08-29T20:38:03+07:00
 thumbnail: https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
 photos:
   - https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
-wordcount: 990
+wordcount: 982
 excerpt: How to multiple delete with codeigniter
 description: How to multiple delete with codeigniter
 url: https://www.webmanajemen.com/2017/08/how-to-multiple-delete-with-codeigniter.html

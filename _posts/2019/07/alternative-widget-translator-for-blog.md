@@ -26,7 +26,7 @@ thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robi
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 description: English Indonesian Afrikaans Albanian Arabic Armenian Azerbaijani
-wordcount: 516
+wordcount: 515
 excerpt: English Indonesian Afrikaans Albanian Arabic Armenian Azerbaijani
 url: https://www.webmanajemen.com/2019/07/alternative-widget-translator-for-blog.html
 permalink: /2019/07/alternative-widget-translator-for-blog.html

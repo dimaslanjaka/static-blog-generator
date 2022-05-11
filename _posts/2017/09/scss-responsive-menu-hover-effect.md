@@ -28,7 +28,7 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery
   library -gt; <pre>lt;script
-wordcount: 1843
+wordcount: 1835
 excerpt: b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery library
   -gt; <pre>lt;script
 url: https://www.webmanajemen.com/2017/09/scss-responsive-menu-hover-effect.html

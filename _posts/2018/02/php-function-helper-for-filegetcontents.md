@@ -20,7 +20,7 @@ type: post
 uuid: 2c2fed27-5d55-4888-86ef-52ebb308a008
 webtitle: PHP
 updated: 2022-04-18
-wordcount: 1199
+wordcount: 1198
 excerpt: "Description Of fileget_contents Source Description: PHP.NET PHP 4 >=
   4.3.0, PHP 5, PHP 7"
 description: "Description Of fileget_contents Source Description: PHP.NET PHP 4

@@ -24,7 +24,7 @@ thumbnail: https://2.bp.blogspot.com/-E174-5esug8/WU5OdQLQfCI/AAAAAAAArrM/r-L-cA
 photos:
   - https://2.bp.blogspot.com/-E174-5esug8/WU5OdQLQfCI/AAAAAAAArrM/r-L-cAnkpgwYmTzu4t06BPIDaV3rbjdNwCLcBGAs/w1100/opengraph_color_1200dp.png
 description: a
-wordcount: 1033
+wordcount: 911
 excerpt: a
 url: https://www.webmanajemen.com/2017/06/font-face-google-fonts-roboto-and-open.html
 permalink: /2017/06/font-face-google-fonts-roboto-and-open.html

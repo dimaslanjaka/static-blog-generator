@@ -26,7 +26,7 @@ photos:
   - https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
 description: img height=280
   src=https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
-wordcount: 551
+wordcount: 545
 excerpt: img height=280
   src=https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtlynMMhFXVKgaLk8lcOo_X_6ZTtwmffeOl4rVh8h-EJtJejQ
 url: https://www.webmanajemen.com/2017/04/12-css3-responsive-blockquote-styling.html

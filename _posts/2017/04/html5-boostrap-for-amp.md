@@ -26,7 +26,7 @@ updated: 2017-04-21T00:48:32+07:00
 thumbnail: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
 photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU6daixUyrq6m3xUPsDdb4VZ4UR6ctElGQg4CeeBUJ39a-VCfX
-wordcount: 807
+wordcount: 803
 url: https://www.webmanajemen.com/2017/04/html5-boostrap-for-amp.html
 permalink: /2017/04/html5-boostrap-for-amp.html
 description: HTML5 Boostrap For AMP

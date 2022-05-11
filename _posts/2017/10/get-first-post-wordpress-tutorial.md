@@ -27,7 +27,7 @@ photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: Edit your functions.php of your themes. This also work on amp
   plugin wp AMP ninja -gt; Edit on functions.php too. <br /><h3>Codes
-wordcount: 875
+wordcount: 871
 excerpt: Edit your functions.php of your themes. This also work on amp plugin wp
   AMP ninja -gt; Edit on functions.php too. <br /><h3>Codes
 url: https://www.webmanajemen.com/2017/10/get-first-post-wordpress-tutorial.html

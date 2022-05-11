@@ -25,7 +25,7 @@ photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
 description: For those of you who want to download files shared on kbd>Google
   Drive</kbd> may have experienced access limits from shared files, be they
-wordcount: 334
+wordcount: 332
 excerpt: For those of you who want to download files shared on kbd>Google
   Drive</kbd> may have experienced access limits from shared files, be they
 url: https://www.webmanajemen.com/2017/06/how-to-download-file-on-google-drive.html

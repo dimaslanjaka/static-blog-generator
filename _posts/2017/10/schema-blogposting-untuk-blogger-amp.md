@@ -27,7 +27,7 @@ photos:
   - https://imgdb.net/images/3205.png
 description: Structure BlogPosting pada AMP merupakan hal istimewa. Dijamin bila
   keyword density kata-kata/kalimat yang berhubungan dengan title/judul
-wordcount: 151
+wordcount: 147
 excerpt: Structure BlogPosting pada AMP merupakan hal istimewa. Dijamin bila
   keyword density kata-kata/kalimat yang berhubungan dengan title/judul
 url: https://www.webmanajemen.com/2017/10/schema-blogposting-untuk-blogger-amp.html

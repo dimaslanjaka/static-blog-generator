@@ -30,7 +30,7 @@ photos:
 description: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
   alt=regexp
-wordcount: 186
+wordcount: 182
 excerpt: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
   alt=regexp

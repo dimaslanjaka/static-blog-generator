@@ -26,7 +26,7 @@ photos:
   - https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png
 description: Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda
   yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus
-wordcount: 2009
+wordcount: 2003
 excerpt: Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda
   yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus
 url: https://www.webmanajemen.com/2017/09/cara-host-css-dan-js-file-di-github-dan-rawgit.html

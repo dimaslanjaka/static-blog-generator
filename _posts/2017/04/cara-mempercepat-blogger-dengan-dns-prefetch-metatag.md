@@ -28,7 +28,7 @@ photos:
   - https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
 description: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
   AMP.</b><br /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
-wordcount: 345
+wordcount: 327
 excerpt: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON AMP.</b><br
   /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
 url: https://www.webmanajemen.com/2017/04/cara-mempercepat-blogger-dengan-dns-prefetch-metatag.html

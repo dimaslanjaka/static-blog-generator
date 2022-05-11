@@ -25,7 +25,7 @@ photos:
   - https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
 description: Ill explain a little what it is conditional tags. Conditional tags
   arebr />limiting a program command on certain conditions use a
-wordcount: 1080
+wordcount: 1078
 excerpt: Ill explain a little what it is conditional tags. Conditional tags
   arebr />limiting a program command on certain conditions use a
 url: https://www.webmanajemen.com/2017/05/conditional-tags-for-targeting-on.html
