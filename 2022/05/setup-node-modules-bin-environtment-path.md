@@ -4,6 +4,10 @@ description: How to setup node_modules/.bin on global environtment path
 date: 2022-05-10T12:13:21+0000
 updated: 2022-05-10T23:45:40+0000
 thumbnail: https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png
+tags:
+  - NodeJS
+  - Bash
+  - CMD
 ---
 
 ## Setup Windows
