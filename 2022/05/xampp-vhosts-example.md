@@ -5,6 +5,23 @@ date:
 updated:
 ---
 
+- important for linux and mac users. Make sure permission of xampp, open `etc/httpd.conf` change **nobody** and **nogroup** with your username
+```apache
+<IfModule unixd_module>
+#
+# If you wish httpd to run as a different user or group, you must run
+# httpd as root initially and it will switch.  
+#
+# User/Group: The name (or #number) of the user/group to run httpd as.
+# It is usually good practice to create a dedicated user and group for
+# running httpd, as with most system services.
+#
+User nobody
+Group nogroup
+</IfModule>
+```
+
+- open and edit `httpd-vhosts.conf`
 ```apache
 <VirtualHost *:80>
     ServerAdmin dimaslanjaka@gmail.com
