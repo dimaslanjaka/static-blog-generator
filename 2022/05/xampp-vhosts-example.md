@@ -36,7 +36,7 @@ Group dimaslanjaka
 Include etc/extra/httpd-vhosts.conf
 ```
 
-- open and edit `httpd-vhosts.conf`
+- open and edit `etc/extra/httpd-vhosts.conf`
 ```apache
 <VirtualHost *:80>
     ServerAdmin dimaslanjaka@gmail.com
