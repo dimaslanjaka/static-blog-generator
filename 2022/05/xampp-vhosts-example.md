@@ -1,9 +1,12 @@
 ---
-title: XAMPP vhosts config example
-description:
-date:
-updated:
+title: XAMPP vhosts config full example and guide
+description: Sample configuration for xampp virtual hosts 100% work tested 2022
+date: 2022-05-15T02:40:27+0000
+updated: 2022-05-15T02:40:27+0000
 ---
+
+## Sample configuration for xampp virtual hosts 100% work tested 2022
+XAMPP vhosts config full example and guide
 
 - important for linux and mac users. Make sure permission of xampp, open `etc/httpd.conf` change **nobody** and **nogroup** with your username and your group
 ```apache
