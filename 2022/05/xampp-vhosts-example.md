@@ -5,7 +5,7 @@ date:
 updated:
 ---
 
-```conf
+```apache
 <VirtualHost *:80>
     ServerAdmin dimaslanjaka@gmail.com
     ServerName wp.webmanajemen.com
