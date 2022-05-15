@@ -3,7 +3,7 @@ title: XAMPP vhosts config full example and guide
 description: Sample configuration for xampp virtual hosts 100% work tested 2022
 date: 2022-05-15T02:40:27+0000
 updated: 2022-05-15T02:40:27+0000
-cover:
+cover: https://www.automationdojos.com/wp-content/uploads/2021/11/post-xampp-virtualhost-fimg.png
 ---
 
 ## Sample configuration for xampp virtual hosts 100% work tested 2022
