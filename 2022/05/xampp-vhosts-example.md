@@ -5,7 +5,7 @@ date:
 updated:
 ---
 
-- important for linux and mac users. Make sure permission of xampp, open `etc/httpd.conf` change **nobody** and **nogroup** with your username
+- important for linux and mac users. Make sure permission of xampp, open `etc/httpd.conf` change **nobody** and **nogroup** with your username and your group
 ```apache
 <IfModule unixd_module>
 #
@@ -16,8 +16,12 @@ updated:
 # It is usually good practice to create a dedicated user and group for
 # running httpd, as with most system services.
 #
-User nobody
-Group nogroup
+#User daemon
+#Group daemon
+#User nobody
+#Group nogroup
+User dimaslanjaka
+Group dimaslanjaka
 </IfModule>
 ```
 
