@@ -21,6 +21,14 @@ Group nogroup
 </IfModule>
 ```
 
+- enable xampp virtual hosts
+  > The virtual hosts conf by defualt is disabled in httpd.conf, in order to allow virtual hosts in XAMPP **under** Ubuntu you have to uncomment line `480` in `httpd.conf`
+  uncomment below codes:
+```apache
+# Virtual hosts
+Include etc/extra/httpd-vhosts.conf
+```
+
 - open and edit `httpd-vhosts.conf`
 ```apache
 <VirtualHost *:80>
@@ -41,7 +49,6 @@ Group nogroup
         Allow from all
     </Directory>
 </VirtualHost>
-
 
 <VirtualHost *:80>
     ServerAdmin dimaslanjaka@gmail.com
