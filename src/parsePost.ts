@@ -1,19 +1,12 @@
+import { existsSync, readFileSync, statSync } from 'fs';
 import moment from 'moment';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
-import yargs from 'yargs';
-import CacheFile from '../../node/cache';
-import { cwd, existsSync, read, statSync, write } from '../../node/filemanager';
-import uuidv4 from '../../node/uuid';
-import { DynamicObject } from '../../types';
-import config, { tmp } from '../../types/_config';
-import ErrorMarkdown from '../error-markdown';
-import { dateMapper, DeepPartial } from './postMapper';
-const argv = yargs(process.argv.slice(2)).argv;
-const nocache = argv['nocache'];
+import { dateMapper } from './dateMapper';
+import uuidv4 from './node/uuid';
+import { DynamicObject } from './types';
+import config from './types/_config';
 const homepage = new URL(config.url);
-const parseCache = new CacheFile('parsePost');
-const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 /**
  * post metadata information (title, etc)
@@ -72,7 +65,7 @@ export type postMap = DynamicObject & {
   /**
    * Article metadata
    */
-  metadata?: DeepPartial<postMeta>;
+  metadata?: Partial<postMeta>;
   /**
    * Article body
    */
@@ -96,7 +89,7 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
   const originalArg = text;
   const isFile = existsSync(text) && statSync(text).isFile();
   if (isFile) {
-    text = String(read(text));
+    text = String(readFileSync(text, 'utf-8'));
   }
 
   const mapper = (m: RegExpMatchArray) => {
@@ -164,16 +157,23 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
 
     if (isFile) {
       // setup permalink
-      homepage.pathname = toUnix(originalArg)
+      /*homepage.pathname = toUnix(originalArg)
         .replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
         .replace(/\/+/, '/')
         .replace(/.md$/, '.html');
       meta.permalink = homepage.pathname;
       homepage.pathname = meta.permalink;
-      meta.url = homepage.toString();
+      meta.url = homepage.toString();*/
 
       // determine post type
-      meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
+      //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
+      if (!meta.type) {
+        if (toUnix(originalArg).match(/(_posts|src-posts)\//)) {
+          meta.type = 'post';
+        } else {
+          meta.type = 'page';
+        }
+      }
     }
 
     const result: postMap = {
@@ -200,71 +200,3 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
   const testPage = Array.from(text.matchAll(regexPage)).map(mapper)[0];
   return testPage;
 }
-
-/**
- * generate {@link postMap.fileTree}
- * @param source
- * @param parsed
- * @returns
- */
-function generateFileTree(source: string, parsed: postMap) {
-  if (existsSync(source)) {
-    if (parsed)
-      parsed.fileTree = {
-        source: toUnix(source).replaceArr(['source/_posts/', '_posts/'], 'src-posts/'),
-        public: toUnix(source).replaceArr(['src-posts/'], 'source/_posts/'),
-      };
-  } else {
-    //console.log('cannot generate file tree', parsed.metadata.title);
-  }
-  return parsed;
-}
-
-/**
- * Cacheable parsePost
- * @param text file path or content markdown
- * @param sourceFile set cache key if `text` isn't `file path`
- * @param cache read cache? default true
- * @see {@link parsePostOri }
- * @returns
- */
-export function cacheableParsePost(text: string, sourceFile: string = null, cache = true) {
-  let result: postMap;
-  const key = sourceFile || text;
-  // if file changed, --nocache, or cache parameter is false
-  // do write new cache
-  if (parseCache.isFileChanged(key) || nocache || !cache) {
-    // parse changed or no cache
-    result = originalParsePost(text);
-    //console.log('parse no cache', typeof result);
-    parseCache.set(key, result);
-  } else {
-    // restore cache
-    result = parseCache.get(key);
-    // try parsing
-    if (typeof result == 'string') {
-      try {
-        result = JSON.parse(result);
-      } catch (error) {
-        const ef = tmp('parsePost.md');
-        const em = new ErrorMarkdown({ argument: '```\n' + text + '\n```' });
-        em.add('get', '```json\n' + JSON.stringify(result) + '\n```');
-        write(ef, em.toString());
-        throw new Error('fail parse post ' + ef);
-      }
-    }
-  }
-
-  return generateFileTree(text, result);
-}
-
-let parsePost: typeof originalParsePost | typeof cacheableParsePost;
-if (config.generator.cache) {
-  parsePost = cacheableParsePost;
-} else {
-  parsePost = originalParsePost;
-}
-
-export default parsePost;
-export { parsePost };
-__g.parsePost = parsePost;

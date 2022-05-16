@@ -18,3 +18,17 @@ export function cleanString(text: string, exception = '.,-_ ') {
   if (typeof text == 'string') return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']', 'gm'), '');
   return text;
 }
+
+/**
+ * Replace string by array pattern
+ * @param array
+ * @param replacement
+ */
+export function replaceArr(str: string, array: string[], replacement: string) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
+  let ori = str;
+  array.map((str) => {
+    ori = ori.replace(str, replacement);
+  });
+  return ori;
+}
