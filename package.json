@@ -1,0 +1,24 @@
+{
+  "name": "hexo-post-parser",
+  "version": "1.0.0",
+  "description": "Parse Hexo Post To Object",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/hexo-post-parser.git"
+  },
+  "keywords": [
+    "hexo",
+    "post",
+    "parser"
+  ],
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/hexo-post-parser/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/hexo-post-parser#readme"
+}
