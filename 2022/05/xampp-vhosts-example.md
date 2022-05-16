@@ -39,6 +39,7 @@ Include etc/extra/httpd-vhosts.conf
 ```
 
 - open and edit `etc/extra/httpd-vhosts.conf`
+> specify your own local domains and paths
 ```apache
 <VirtualHost *:80>
     ServerAdmin dimaslanjaka@gmail.com
@@ -78,3 +79,16 @@ Include etc/extra/httpd-vhosts.conf
     </IfModule>
 </VirtualHost>
 ```
+
+- Edit `hosts` file
+> specify your own local domain
+> - Windows 10 – `C:\Windows\System32\drivers\etc\hosts`
+> - Linux – `/etc/hosts`
+> - Mac OS X – `/private/etc/hosts`
+```hosts
+127.0.0.1 wp.webmanajemen.com
+127.0.0.1 adsense.webmanajemen.com
+```
+
+- Restart XAMPP
+- Access Browser URL http://wp.webmanajemen.com and http://adsense.webmanajemen.com now each domain has their own public directory to serve
