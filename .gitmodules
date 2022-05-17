@@ -2,11 +2,7 @@
 	path = src-posts
 	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io
 	branch = posts
-[submodule "source"]
-	path = source
-	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io
-	branch = source
-[submodule "packages/safelink"]
-	path = packages/safelink
-	url = https://github.com/dimaslanjaka/safelink.git
-	branch = main
+[submodule "packages/persistent-cache"]
+	path = packages/persistent-cache
+	url = https://github.com/dimaslanjaka/persistent-cache.git
+	branch = improve
