@@ -30,24 +30,28 @@ export function shortcodeYoutube(content: string) {
 
     let html: string;
     if (typeof config.amp === 'boolean' && config.amp) {
-      html = `<amp-youtube
-      id="video-container-${count}"
-      data-videoid="${ytid}"
-      width="480"
-      height="270"
-      layout="responsive"
-    >
-      <amp-img
-        src="https://img.youtube.com/vi/${ytid}/sddefault.jpg"
-        placeholder
-        layout="fill"
-      />
-    </amp-youtube>`;
+      html = `
+<amp-youtube
+id="video-container-${count}"
+data-videoid="${ytid}"
+width="480"
+height="270"
+layout="responsive"
+>
+<amp-img
+  src="https://img.youtube.com/vi/${ytid}/sddefault.jpg"
+  placeholder
+  layout="fill"
+/>
+</amp-youtube>
+    `;
     } else {
       // https://flaviocopes.com/responsive-youtube-videos/
-      html = `<div class="video-container">
-      <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>`;
+      html = `
+<div class="video-container">
+  <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+    `;
     }
     content = content.replace(allmatch, () => html);
   }
