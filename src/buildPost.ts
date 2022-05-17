@@ -6,7 +6,7 @@ import { parsePost, postMap } from './parsePost';
  * @param parsed parsed post return {@link parsePost}
  * @returns
  */
-export function buildPost(parsed: postMap) {
+export function buildPost(parsed: Partial<postMap>) {
   return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
 }
 
