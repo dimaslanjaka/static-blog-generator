@@ -11,13 +11,26 @@ type: page
 From Local Directory
 
 ```css
-<!-- css shortcodes/style.css -->
+<!-- css shortcodes/include.css -->
 ```
 
 From Root/cwd Directory
 
 ```css
-<!-- css /src-posts/Tests/shortcodes/style.css -->
+<!-- css /src-posts/Tests/shortcodes/include.css -->
+```
+
+## Shortcode JS
+From Local Directory
+
+```css
+<!-- css shortcodes/include.js -->
+```
+
+From Root/cwd Directory
+
+```css
+<!-- css /src-posts/Tests/shortcodes/include.js -->
 ```
 
 ## Shortcode Include
