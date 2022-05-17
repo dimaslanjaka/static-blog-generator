@@ -9,7 +9,8 @@ import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { DynamicObject } from './types';
 import config from './types/_config';
-//const homepage = new URL(config.url);
+
+const homepage = new URL(config.url);
 
 /**
  * post metadata information (title, etc)
@@ -76,12 +77,30 @@ export type postMap = DynamicObject & {
 };
 
 interface ParseOptions {
-  shortcodes?: boolean;
+  shortcodes?: Partial<{
+    css: boolean;
+    script: boolean;
+    include: boolean;
+    youtube: boolean;
+    link: boolean;
+  }>;
   sourceFile?: null | string;
+  formatDate?:
+    | boolean
+    | {
+        pattern: string;
+      };
 }
 const default_options: ParseOptions = {
-  shortcodes: false,
-  sourceFile: null
+  shortcodes: {
+    css: false,
+    script: false,
+    include: false,
+    youtube: false,
+    link: false
+  },
+  sourceFile: null,
+  formatDate: false
 };
 
 /**
@@ -133,26 +152,27 @@ function originalParsePost(text: string, options = default_options): postMap | n
         ) as postMap['metadata'];
     }
 
-    // default category and tags
+    // @todo set default category and tags
     if ((!meta.category || !meta.category.length) && config.default_category) meta.category = [config.default_category];
     if ((!meta.tags || !meta.tags.length) && config.default_tag) meta.tags = [config.default_tag];
 
-    // default date post
+    // @todo set default date post
     if (!meta.date) meta.date = moment().format();
     if (!meta.updated) {
       if (meta.modified) {
         // fix for hexo-blogger-xml
         meta.updated = meta.modified;
+        delete meta.modified;
       } else {
         meta.updated = meta.date;
       }
     }
 
-    // default enable comments
+    // @todo set default enable comments
     if (typeof meta.comments == 'undefined' || meta.comments == null) meta.comments = true;
     if (!meta.wordcount) meta.wordcount = null;
 
-    // default excerpt/description
+    // @todo set default excerpt/description
     if (meta.subtitle) {
       meta.excerpt = meta.subtitle;
       meta.description = meta.subtitle;
@@ -168,13 +188,21 @@ function originalParsePost(text: string, options = default_options): postMap | n
 
     if (isFile) {
       // setup permalink
-      /*homepage.pathname = toUnix(originalArg)
-        .replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
-        .replace(/\/+/, '/')
-        .replace(/.md$/, '.html');
+      /*
       meta.permalink = homepage.pathname;
       homepage.pathname = meta.permalink;
       meta.url = homepage.toString();*/
+
+      if (!meta.url) {
+        homepage.pathname = replaceArr(
+          toUnix(originalArg),
+          [toUnix(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'],
+          '/'
+        )
+          .replace(/\/+/, '/')
+          .replace(/.md$/, '.html');
+        meta.url = homepage.pathname;
+      }
 
       // determine post type
       //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
@@ -187,23 +215,36 @@ function originalParsePost(text: string, options = default_options): postMap | n
       }
     }
 
-    if (typeof options === 'object' && options.shortcodes) {
-      let sourceFile: string;
-      if (!isFile) {
-        if (!options.sourceFile) throw new Error('Shortcodes cannot process if options.sourceFile does not exist');
-        sourceFile = options.sourceFile;
-      } else {
-        sourceFile = toUnix(originalArg);
+    if (typeof options === 'object') {
+      // @todo format dates
+      if (options.formatDate) {
+        const pattern =
+          typeof options.formatDate === 'object' && options.formatDate.pattern
+            ? options.formatDate.pattern
+            : 'YYYY-MM-DDTHH:mm:ssZ';
+        meta.date = new dateMapper(String(meta.date)).format(pattern);
+        meta.updated = new dateMapper(String(meta.updated)).format(pattern);
       }
       // @todo process shortcodes
-      if (body && sourceFile) {
-        body = parseShortCodeInclude(sourceFile, body);
-        //body = shortcodeNow(publicFile, body);
-        //body = shortcodeScript(publicFile, body);
-        //body = replaceMD2HTML(body);
-        body = shortcodeCss(sourceFile, body);
-        //body = extractText(publicFile, body);
-        //body = shortcodeYoutube(body);
+      if (options.shortcodes) {
+        const shortcodes = options.shortcodes;
+        let sourceFile: string;
+        if (!isFile) {
+          if (!options.sourceFile) throw new Error('Shortcodes cannot process if options.sourceFile does not exist');
+          sourceFile = options.sourceFile;
+        } else {
+          sourceFile = toUnix(originalArg);
+        }
+
+        if (body && sourceFile) {
+          if (shortcodes.include) body = parseShortCodeInclude(sourceFile, body);
+          //body = shortcodeNow(publicFile, body);
+          //body = shortcodeScript(publicFile, body);
+          //body = replaceMD2HTML(body);
+          if (shortcodes.css) body = shortcodeCss(sourceFile, body);
+          //body = extractText(publicFile, body);
+          //body = shortcodeYoutube(body);
+        }
       }
     }
 
