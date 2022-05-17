@@ -6,8 +6,9 @@ import { dateMapper } from './dateMapper';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { shortcodeCss } from './shortcodes/css';
-import replaceMD2HTML from './shortcodes/hyperlinks-md2html';
-import parseShortCodeInclude from './shortcodes/include';
+import { extractText } from './shortcodes/extractText';
+import { replaceMD2HTML } from './shortcodes/hyperlinks-md2html';
+import { parseShortCodeInclude } from './shortcodes/include';
 import { shortcodeScript } from './shortcodes/script';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { DynamicObject } from './types';
@@ -68,7 +69,7 @@ export type postMap = DynamicObject & {
   /**
    * _config.yml
    */
-  config?: typeof config | null;
+  config?: DeepPartial<typeof config> | null;
   /**
    * Article metadata
    */
@@ -80,13 +81,32 @@ export type postMap = DynamicObject & {
 };
 
 export interface ParseOptions {
-  shortcodes?: Partial<{
+  shortcodes?: {
+    /**
+     * Transform shortcode `<!-- css path/to/file.css -->`
+     */
     css: boolean;
+    /**
+     * Transform shortcode `<!-- script path/to/file.js -->`
+     */
     script: boolean;
+    /**
+     * Transform shortcode `<!-- include path/to/file -->`
+     */
     include: boolean;
+    /**
+     * Transform shortcode `{% youtube id 'type' %}` tag
+     */
     youtube: boolean;
+    /**
+     * Transform hyperlinks ends with `path/to/file.md` with `path/to/file.html`
+     */
     link: boolean;
-  }>;
+    /**
+     * Transform shortcode ``
+     */
+    text: boolean;
+  };
   /**
    * Source File, keep empty when first parameter (text) is file
    */
@@ -102,7 +122,7 @@ export interface ParseOptions {
   /**
    * Site Config
    */
-  config?: Partial<typeof config>;
+  config?: DeepPartial<typeof config>;
 }
 
 const default_options: ParseOptions = {
@@ -111,12 +131,19 @@ const default_options: ParseOptions = {
     script: false,
     include: false,
     youtube: false,
-    link: false
+    link: false,
+    text: false
   },
   sourceFile: null,
   formatDate: false,
   config
 };
+
+export type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
 
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
@@ -125,7 +152,7 @@ const default_options: ParseOptions = {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function parsePost(text: string, options: ParseOptions = {}): postMap | null {
+export function parsePost(text: string, options: DeepPartial<ParseOptions> = {}): postMap | null {
   options = Object.assign(default_options, options);
   const config = options.config;
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
@@ -260,7 +287,7 @@ export function parsePost(text: string, options: ParseOptions = {}): postMap | n
           if (shortcodes.script) body = shortcodeScript(sourceFile, body);
           if (shortcodes.link) body = replaceMD2HTML(body);
           if (shortcodes.css) body = shortcodeCss(sourceFile, body);
-          //body = extractText(publicFile, body);
+          if (shortcodes.text) body = extractText(sourceFile, body);
           if (shortcodes.youtube) body = shortcodeYoutube(body);
         }
       }

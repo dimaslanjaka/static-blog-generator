@@ -6,7 +6,7 @@ import CacheFile from '../../node/cache';
 import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
 import { shortcodeCss } from '../../shortcodes/css';
-import extractText from '../../shortcodes/extract-text';
+import extractText from '../../shortcodes/extractText';
 import replaceMD2HTML from '../../shortcodes/hyperlinks-md2html';
 import parseShortCodeInclude from '../../shortcodes/include';
 import { shortcodeScript } from '../../shortcodes/script';
