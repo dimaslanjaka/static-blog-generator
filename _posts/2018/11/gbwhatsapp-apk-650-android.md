@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2015/01/gbwhatsapp_1.jpg
-date: 2018-11-12T12:26:00.000+07:00
+date: 2018-11-12T12:26:00+07:00
 lang: en
-location: ""
 modified: 2018-11-12T12:26:37.712+07:00
 subtitle: GBWhatsApp adalah Aplikasi Komunikasi untuk android unduh versi
   terakhir dari GBWhatsApp Apk untuk android dari Website Manajemen

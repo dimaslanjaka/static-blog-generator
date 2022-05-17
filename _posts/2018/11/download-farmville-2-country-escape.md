@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2014/01/FarmVille-2-Country-Escape-1.jpg
-date: 2018-11-25T21:30:00.000+07:00
+date: 2018-11-25T21:30:00+07:00
 lang: en
-location: ""
 modified: 2018-11-30T00:03:52.744+07:00
 subtitle: FarmVille Country Escape 11.3.2931 Apk Mod Tombol tidak terbatas, Permata
 tags:

@@ -2,19 +2,19 @@
 date: 2022-04-24T00:00:00+07:00
 description: all about nodemon
 title: nodemon
-updated: 2022-04-24
+updated: 2022-04-24T00:00:00+07:00
 uuid: c0c30a89-10ff-4888-8a1b-0225815a65ed
 category:
   - Uncategorized
-tags: []
 comments: true
 wordcount: 32
 subtitle: all about nodemon
 excerpt: all about nodemon
 url: https://www.webmanajemen.com/NodeJS/nodemon.html
+type: post
 permalink: /NodeJS/nodemon.html
 lang: en
-type: post
+tags: []
 ---
 
 ## Basic nodemon.json configuration

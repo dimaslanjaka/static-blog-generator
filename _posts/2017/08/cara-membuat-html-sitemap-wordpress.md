@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-08-05T18:02:00.000+07:00
+date: 2017-08-05T18:02:00+07:00
 lang: en
-location: ""
 modified: 2017-08-05T18:02:00.203+07:00
 subtitle: Menjadi pengguna WordPress bertahuntahun saya telah menemukan tidak
   banyak yang bisa salah dengan CMS open source tapi bila Anda memiliki

@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://4.bp.blogspot.com/-B7u7YsAqwIo/WOekieIT5sI/AAAAAAAAEno/FnW9NIDzeUcfZ0dqcI-urdOHqZhkkjMaQCLcB/s1600/Script-Auto-Invite-Undang-Semua-Teman-ke-Fanspage-02.jpg
-date: 2017-04-20T23:57:00.000+07:00
+date: 2017-04-20T23:57:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.967+07:00
 subtitle: Script Auto Invite Invite All Friends to FansPage FREE Updated April 2017.
 tags:

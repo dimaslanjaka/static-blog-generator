@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-OCrG57WlTmc/Tx0SI0GJV-I/AAAAAAAAAX0/EXa3X81Jows/s280/fss.png
-date: 2017-09-07T09:39:00.000+07:00
+date: 2017-09-07T09:39:00+07:00
 lang: en
-location: ""
 modified: 2017-09-07T09:39:59.881+07:00
 subtitle: How to reproduce like on fanpage facebook??
 tags:

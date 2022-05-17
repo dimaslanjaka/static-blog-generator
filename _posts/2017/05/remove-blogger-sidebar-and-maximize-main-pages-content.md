@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://3.bp.blogspot.com/-q-AHZo_sm-c/Tbx33FuXgVI/AAAAAAAAC2I/h9SaOe4k_AE/s500/0.jpg
-date: 2017-05-01T19:22:00.000+07:00
+date: 2017-05-01T19:22:00+07:00
 lang: en
-location: ""
 modified: 2017-05-01T19:44:58.218+07:00
 subtitle: This one is a famous request inBlogger Help Forum- instructions to
   shroud the sidebar on one of the static pages, and make the principle

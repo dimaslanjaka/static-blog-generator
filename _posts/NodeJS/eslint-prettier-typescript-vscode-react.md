@@ -1,6 +1,6 @@
 ---
 cover: https://miro.medium.com/max/1400/1*N9n5F63ne3HimpJ10d1HEw.jpeg
-date: 2022-04-19T09:37:38+0000
+date: 2022-04-19T16:37:38+07:00
 subtitle: How to auto format using eslint and prettier in typescript react
   project using vscode
 tags:
@@ -8,7 +8,7 @@ tags:
   - TS
   - JS
 title: Eslint Prettier Auto Format In Typescript React Project
-updated: 2022-04-19T11:20:17+0000
+updated: 2022-04-19T18:20:17+07:00
 uuid: 6cba6ec8-458e-4888-8cb9-d446bfd0cdf4
 category:
   - Programming
@@ -20,12 +20,12 @@ excerpt: How to auto format using eslint and prettier in typescript react
 description: How to auto format using eslint and prettier in typescript react
   project using vscode
 url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-react.html
+type: post
 permalink: /NodeJS/eslint-prettier-typescript-vscode-react.html
 lang: en
 thumbnail: https://miro.medium.com/max/1400/1*N9n5F63ne3HimpJ10d1HEw.jpeg
 photos:
   - https://miro.medium.com/max/1400/1*N9n5F63ne3HimpJ10d1HEw.jpeg
-type: post
 ---
 
 ## Auto format Tsx files in VSCode

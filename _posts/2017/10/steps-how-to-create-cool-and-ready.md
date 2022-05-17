@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-10-10T11:41:00.000+07:00
+date: 2017-10-10T11:41:00+07:00
 lang: en
-location: ""
 modified: 2017-10-10T11:41:07.708+07:00
 subtitle: In modern times, technology is developing faster and faster.
   Especially in the field of communication, the Internet has now become the

@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-07-24T07:44:00.000+07:00
+date: 2017-07-24T07:44:00+07:00
 lang: en
-location: ""
 modified: 2017-07-24T07:44:02.718+07:00
 subtitle: Amazon offers a PHP SDK for taking care of AWS and S asks for, yet it
   tips the scales at more than 500 documents and almost 5MB. In the

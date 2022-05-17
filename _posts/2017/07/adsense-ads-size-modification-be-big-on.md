@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://cdnpower.klikmania.net/wp-content/uploads/2015/12/1-min-3-1024x499.png
-date: 2017-07-18T12:23:00.001+07:00
+date: 2017-07-18T12:23:00+07:00
 lang: en
-location: ""
 modified: 2017-07-18T12:23:13.479+07:00
 subtitle: The ads appear in full on the screen
 tags:

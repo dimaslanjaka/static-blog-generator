@@ -8,9 +8,8 @@ category:
   - KOTLIN
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-08-03T18:02:00.005+07:00
+date: 2020-08-03T18:02:00+07:00
 lang: en
-location: ""
 modified: 2020-08-10T20:47:57.089+07:00
 subtitle: Fix missing dependencies from your gradle project android, maven, etc
   with this build.gradle. <br/>insert into

@@ -8,9 +8,8 @@ category:
   - HTML
 comments: true
 cover: https://2.bp.blogspot.com/-zFYfhcEw2zU/UWfLii_MNyI/AAAAAAAAYC0/8x-A-h5Gbsg/s640/share+this.jpg
-date: 2017-08-27T07:15:00.000+07:00
+date: 2017-08-27T07:15:00+07:00
 lang: en
-location: ""
 modified: 2017-08-27T07:15:12.677+07:00
 subtitle: If you feel loading a blog a bit heavy or slow, one of the causes is
   the presence of javascript. Maybe one of them is

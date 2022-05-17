@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRppA7rQroLKWdCMKXWTRh4ybyogf1cT_XQFnD95O0VCwVjKu_O
-date: 2017-11-10T04:42:00.002+07:00
+date: 2017-11-10T04:42:00+07:00
 lang: en
-location: ""
 modified: 2017-11-10T04:42:54.112+07:00
 subtitle: img width=350 height=300 alt=CSS3 3D Transformation layout=responsive
 tags:

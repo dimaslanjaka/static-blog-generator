@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://imgdb.net/images/3203.jpg
-date: 2017-11-11T23:34:00.000+07:00
+date: 2017-11-11T23:34:00+07:00
 lang: en
-location: ""
 modified: 2017-11-11T23:34:02.579+07:00
 subtitle: center><h2>Adsense Shortcode Wordpress Compatible With WP AMP NINJA
   Plugin</h2></center><img src=https://imgdb.net/images/3203.jpg /><br

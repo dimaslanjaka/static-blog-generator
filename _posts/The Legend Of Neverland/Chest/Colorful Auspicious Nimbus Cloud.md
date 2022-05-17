@@ -56,5 +56,5 @@ Twilight Rainforest F1. there has hidden teleporter, you must enter that telepor
 
 *Colorful Auspicious Nimbus Cloud Video Tutorial*
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/hVhzL_q1IOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/hVhzL_q1IOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>

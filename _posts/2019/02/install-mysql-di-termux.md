@@ -8,9 +8,8 @@ category:
   - MYSQL
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png
-date: 2019-02-07T13:09:00.001+07:00
+date: 2019-02-07T13:09:00+07:00
 lang: en
-location: ""
 modified: 2019-02-07T13:18:15.997+07:00
 subtitle: Install dan buka termuxketik pkg install mariadbmkdir
   ..usr/etc/my.cnf.dmysql_install_dbmysqldBuka tab sesi baru, lalu ketik mysql
@@ -24,7 +23,7 @@ title: Install MySQL di termux
 type: post
 uuid: 88f4fad2-2966-4888-8741-45f35477c275
 webtitle: WMI Gitlab
-updated: 2022-03-26T19:01:31+0700
+updated: 2022-03-26T19:01:31+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://netsolutions.net.au/wp-content/uploads/2015/07/mysql-mariadb-795x480.png

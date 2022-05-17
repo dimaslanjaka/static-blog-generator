@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://1.bp.blogspot.com/-JkpTNtGOMaE/WJoMX1QnTmI/AAAAAAAAHBE/CPdxv-D-Xa0bdghE1HwdwkC1bHp9OA9EgCLcB/s640/How%2BTo%2BMake%2BAdsense%2BAdBlocker%2BNotifications.png
-date: 2017-04-15T01:00:00.000+07:00
+date: 2017-04-15T01:00:00+07:00
 lang: en
-location: ""
 modified: 2017-04-15T01:00:14.707+07:00
 subtitle: UpdateNotifications To Users AdBlocker Adsense
 tags:

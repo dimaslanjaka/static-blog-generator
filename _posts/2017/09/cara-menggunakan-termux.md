@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://files.phpclasses.org/files/blog/package/10192/file/php-termux.png
-date: 2017-09-03T13:33:00.000+07:00
+date: 2017-09-03T13:33:00+07:00
 lang: en
-location: ""
 modified: 2017-09-03T13:33:02.121+07:00
 subtitle: Anda dapat menjalankan PHP dan membuatnya bekerja sebagai server Web
   yang menjalankan skrip PHP Anda di sisi direktori akar proyek Anda

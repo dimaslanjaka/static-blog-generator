@@ -3,22 +3,22 @@ category:
   - Games
   - Chimeraland
 comments: true
-date: 2022-03-16T14:41:00+0700
+date: 2022-03-16T14:41:00+07:00
 excerpt: Taming pity in chimeraland
 tags:
   - Chimeraland
 title: Taming Pets Chimeraland
 toc: true
-updated: 2022-03-17T14:21:00+0700
+updated: 2022-03-17T14:21:00+07:00
 uuid: 6bb86ddd-8407-4888-8428-e335b157339c
 webtitle: Chimeraland
 wordcount: 305
 description: Taming pity in chimeraland
 subtitle: Taming pity in chimeraland
 url: https://www.webmanajemen.com/Chimeraland/Taming.html
+type: post
 permalink: /Chimeraland/Taming.html
 lang: en
-type: post
 ---
 
 ## Deskripsi pemahaman tentang pity taming pet

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-wRS-Eyu86jI/V1EjfzBfDBI/AAAAAAAAH3g/6KiOnExqzUE_FGzf2zLefBXrt78IWbJ1gCLcB/s320/histats.jpg
-date: 2017-07-30T03:00:00.000+07:00
+date: 2017-07-30T03:00:00+07:00
 lang: en
-location: ""
 modified: 2017-07-30T03:00:13.588+07:00
 subtitle: have long wanted to make a post about getting visitor data and widgets
   from histats for Blog.But only now can terlakasana and I

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: http://www.bestchange.com/images/banners/468x60-16.gif
-date: 2017-11-25T01:10:00.000+07:00
+date: 2017-11-25T01:10:00+07:00
 lang: en
-location: ""
 modified: 2017-11-25T01:10:00.881+07:00
 subtitle: Among hundreds of exchangers where Internet users can exchange
   electronic money, only slightly over forty most reliable ones with flawless

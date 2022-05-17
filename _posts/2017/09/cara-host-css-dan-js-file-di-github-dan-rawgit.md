@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-Bqv85t32yUc/Vo_fhhQ3jvI/AAAAAAAAEyU/tQUONmtG1tE/s640/why%2Byou%2Bshould%2BCDN%2Bfor%2Bblogger.png
-date: 2017-09-05T01:42:00.000+07:00
+date: 2017-09-05T01:42:00+07:00
 lang: en
-location: ""
 modified: 2017-09-05T01:42:00.692+07:00
 subtitle: Jika Anda serius tentang blogging dan ingin untuk membuat blog Anda
   yang terbaik dalam semua kategori, maka Anda tidak hanya perlu fokus

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://www.abrightclearweb.com/wp-content/uploads/2015/02/domain-name-suffixes.jpeg
-date: 2017-08-26T21:53:00.000+07:00
+date: 2017-08-26T21:53:00+07:00
 lang: en
-location: ""
 modified: 2017-08-26T21:53:05.961+07:00
 subtitle: Senang dengan artikel ini Tolong bagikan ya
 tags:

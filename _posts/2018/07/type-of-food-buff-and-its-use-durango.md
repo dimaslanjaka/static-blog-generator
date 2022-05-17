@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
-date: 2018-07-11T22:58:00.000+07:00
+date: 2018-07-11T22:58:00+07:00
 lang: en
-location: ""
 modified: 2018-08-05T06:17:46.204+07:00
 subtitle: buff str you can get from various types ofdino meat that you hunt.
 tags:

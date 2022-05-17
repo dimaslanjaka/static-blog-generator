@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://imgdb.net/images/3200.jpg
-date: 2017-10-06T01:07:00.000+07:00
+date: 2017-10-06T01:07:00+07:00
 lang: en
-location: ""
 modified: 2017-10-06T01:07:05.877+07:00
 subtitle: br /><br /><figure><img class=center w3-center
   src=https://imgdb.net/images/3200.jpg /><br /> <figcaption> XAMPP is a

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2019/age-of-civilizations-ii-1.png
-date: 2019-02-13T15:14:00.000+07:00
+date: 2019-02-13T15:14:00+07:00
 lang: en
-location: ""
 modified: 2019-02-13T15:14:12.586+07:00
 subtitle: Age of Civilisations II .01415 Apk Data android
 tags:

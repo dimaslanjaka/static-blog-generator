@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://i.ytimg.com/vi/RkrTGQsv14k/hqdefault.jpg?custom=true&w=320&h=180&stc=true&jpg444=true&jpgq=90&sp=68&sigh=eCvhWuyCHTD0lyZ0Dhi-6XTOs0c
-date: 2017-05-09T05:58:00.000+07:00
+date: 2017-05-09T05:58:00+07:00
 lang: en
-location: ""
 modified: 2017-05-09T05:58:05.279+07:00
 subtitle: How do I autoresize an image to fit a div container
 tags:

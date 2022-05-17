@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-r2rcHfz-Dto/WSb5DKBPBkI/AAAAAAAAB4I/H0a69gufG-UXKzPcAr2M-O9jhNZ_Nf5uACHM/%255BUNSET%255D
-date: 2018-07-27T11:57:00.000+07:00
+date: 2018-07-27T11:57:00+07:00
 lang: en
-location: ""
 modified: 2018-11-12T12:49:24.632+07:00
 subtitle: Halo semuanya, hanya ingin memberi Anda pembaruan cepat di Fedora
   dalam proyek chroot Android. Berikut tutorial cara menginstal fedora di

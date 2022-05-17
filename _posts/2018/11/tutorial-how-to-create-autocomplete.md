@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: http://www.tutorial-webdesign.com/wp-content/uploads/2015/05/autocomplete.png
-date: 2018-11-06T20:50:00.000+07:00
+date: 2018-11-06T20:50:00+07:00
 lang: en
-location: ""
 modified: 2018-11-27T20:05:35.701+07:00
 subtitle: In this tutorial we will discuss how to create autocompletewith
   codeigniter, in this discussion I assume all friends TWD already

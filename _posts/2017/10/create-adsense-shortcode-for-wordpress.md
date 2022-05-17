@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://imgdb.net/images/3202.jpg
-date: 2017-10-09T14:56:00.000+07:00
+date: 2017-10-09T14:56:00+07:00
 lang: en
-location: ""
 modified: 2017-10-09T14:56:42.855+07:00
 subtitle: img class=center w3-center height=250
   src=https://imgdb.net/images/3202.jpg width=100 /><br /><ol><li>Go to Your

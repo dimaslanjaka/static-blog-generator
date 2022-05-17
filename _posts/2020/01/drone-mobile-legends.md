@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-01-21T04:27:00.000+07:00
+date: 2020-01-21T04:27:00+07:00
 lang: en
-location: ""
 modified: 2020-02-01T15:02:16.957+07:00
 subtitle: Drone Mobile Legends Now Available at
   https//www.webmanajemen.com/Web-Manajemen/mlbb.html?v.1.0.5 Unity v4 ALL MAPS

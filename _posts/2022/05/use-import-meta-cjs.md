@@ -2,7 +2,7 @@
 category:
   - Programming
   - JS
-date: 2022-05-02T06:01:50+0000
+date: 2022-05-02T13:01:50+07:00
 description: How to implement import.meta on typescript hybrid esm and commonjs compiler
 tags:
   - NodeJS
@@ -11,16 +11,16 @@ tags:
   - JS
   - CommonJS
 title: How to use import.meta on typescript hybrid compiler
-updated: 2022-05-02T06:01:50+0000
+updated: 2022-05-02T13:01:50+07:00
 uuid: a5434cb6-fe27-4888-8192-0f32468a6165
 comments: true
 wordcount: 208
 subtitle: How to implement import.meta on typescript hybrid esm and commonjs compiler
 excerpt: How to implement import.meta on typescript hybrid esm and commonjs compiler
 url: https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html
+type: post
 permalink: /2022/05/use-import-meta-cjs.html
 lang: en
-type: post
 ---
 
 ## explanation

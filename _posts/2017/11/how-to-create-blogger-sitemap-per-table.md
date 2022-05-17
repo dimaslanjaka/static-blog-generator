@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://4.bp.blogspot.com/-0ALg8SCnD24/VSsqzL7AxJI/AAAAAAAACOQ/4w_tFyoUEVo/s1600/Menerapkan%2BDaftar%2Bisi%2BMenurut%2BLabel.png
-date: 2017-11-16T19:34:00.000+07:00
+date: 2017-11-16T19:34:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.904+07:00
 subtitle: h2>Stylish blogger sitemap per tables</h2><img
 tags:

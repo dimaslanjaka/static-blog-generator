@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/4212331a1f52d3260dfb68bcc385ebd0.jpeg
-date: 2019-11-24T22:25:00.001+07:00
+date: 2019-11-24T22:25:00+07:00
 lang: en
-location: ""
 modified: 2019-11-24T23:34:27.281+07:00
 subtitle: "Download lagu TULUS Ruang Sendiri Mp3 SINCERELY - Your Own Room
   Listen: 35,702,406 Duration: 273 MP3 size: 4.27MB Download Links"

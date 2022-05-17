@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.mygyanblog.com/wp-content/uploads/2017/01/chitika-se-kaise-paise-kamaye.jpg
-date: 2017-05-02T21:18:00.000+07:00
+date: 2017-05-02T21:18:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.949+07:00
 subtitle: registers the default width and renders the advertisement that you
   will choosen. This may not generally be the most suitable approach since

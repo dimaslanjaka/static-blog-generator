@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-04-27T01:39:00.001+07:00
+date: 2018-04-27T01:39:00+07:00
 lang: en
-location: ""
 modified: 2018-11-20T16:37:41.766+07:00
 subtitle: "Facebook autolike rebuilded safe mode. Dijamin aman. <strike><br
   />Jalankan ini dengan Cronjob 5 menit 1x <br />Fitur: <br"

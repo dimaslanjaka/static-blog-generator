@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://www.digitalponsel.com/wp-content/uploads/2018/12/xCharging-Error-1024x576.jpg.pagespeed.ic.EnaRgqXG5M.jpg
-date: 2019-01-13T11:51:00.000+07:00
+date: 2019-01-13T11:51:00+07:00
 lang: en
-location: ""
 modified: 2019-01-13T11:51:05.803+07:00
 subtitle: Some Smartphone Problems Not Charging And How To Overcome It Digital
   Mobile Phones As we know that life in this millennial era,

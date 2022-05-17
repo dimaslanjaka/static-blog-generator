@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-07-27T21:02:00.001+07:00
+date: 2017-07-27T21:02:00+07:00
 lang: en
-location: ""
 modified: 2017-07-27T21:04:23.132+07:00
 subtitle: ad.hma.rocks Andorra, Andorra la Vellaae.hma.rocks United Arab
   Emirates, Dubaiaf.hma.rocks Afghanistan, Kabulag.hma.rocks Antigua and

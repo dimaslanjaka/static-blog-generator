@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-03-17T17:13:00.000+07:00
+date: 2020-03-17T17:13:00+07:00
 lang: en
-location: ""
 modified: 2020-03-17T17:13:59.112+07:00
 subtitle: Movies App Flutter Project
 tags:
@@ -31,4 +30,4 @@ url: https://www.webmanajemen.com/2020/03/project-lists-for-beginner.html
 permalink: /2020/03/project-lists-for-beginner.html
 ---
 
-<div dir="ltr" trbidi="on"><br><ol><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>
+<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>

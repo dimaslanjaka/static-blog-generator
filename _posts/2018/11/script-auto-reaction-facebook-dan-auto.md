@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://4.bp.blogspot.com/-8grw-L-Uyu0/Ulvum_9MWCI/AAAAAAAAAFE/gAP0SrSBdWE/s280/cp.png
-date: 2018-11-03T20:16:00.001+07:00
+date: 2018-11-03T20:16:00+07:00
 lang: en
-location: ""
 modified: 2019-02-08T22:17:27.096+07:00
 subtitle: Download Scriptauto reaction facebook
 tags:

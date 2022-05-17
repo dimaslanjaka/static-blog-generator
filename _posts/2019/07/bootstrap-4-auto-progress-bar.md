@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://www.webmanajemen.com/assets/img/javascript.png
-date: 2019-07-25T23:09:00.001+07:00
+date: 2019-07-25T23:09:00+07:00
 lang: en
-location: ""
 modified: 2019-07-25T23:54:52.055+07:00
 subtitle: See the Pen Bootstrap progress bar countdown by dimas lanjaka
   @dimaslanjaka on CodePen.

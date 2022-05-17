@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-a0sq1Wumnlg/UzKddVU-T9I/AAAAAAAAbig/hsq3W86sRMM/w1100/Blogger-Share-Button-Hack.png
-date: 2017-08-23T09:55:00.000+07:00
+date: 2017-08-23T09:55:00+07:00
 lang: en
-location: ""
 modified: 2017-08-23T09:55:11.416+07:00
 subtitle: Actually Blogger has been updating its share button quite a bit by
   adding Pinterest button.But just now I am thinking of making it valid

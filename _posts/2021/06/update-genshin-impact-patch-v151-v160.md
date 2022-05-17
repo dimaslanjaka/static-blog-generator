@@ -8,9 +8,8 @@ category:
   - Genshin Impact
 comments: true
 cover: https://i.imgur.com/zHDw2i0.png
-date: 2021-06-07T11:20:00.003+07:00
+date: 2021-06-07T11:20:00+07:00
 lang: en
-location: ""
 modified: 2021-06-07T11:55:21.551+07:00
 subtitle: Update genshin impact manual via download manager IDM.
 tags:

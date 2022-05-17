@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s6.dunia21.net/wp-content/uploads/2018/02/film-tiger-zinda-hai-2017.jpg
-date: 2018-12-22T13:43:00.000+07:00
+date: 2018-12-22T13:43:00+07:00
 lang: en
-location: ""
 modified: 2018-12-22T13:43:00.221+07:00
 subtitle: "import
   urlhttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstr\

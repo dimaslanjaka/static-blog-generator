@@ -1,27 +1,27 @@
 ---
 cover: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
-date: 2022-03-27T03:02:25+0000
+date: 2022-03-27T10:02:25+07:00
 tags:
   - Wordpress
   - MySQL
 title: Change wordpress table prefix updated 2022
-updated: 2022-03-27T03:02:25+0000
+updated: 2022-03-27T10:02:25+07:00
 uuid: a69fa1b4-3f2c-4888-8757-27179d208826
 category:
   - Programming
   - MYSQL
 comments: true
 wordcount: 340
+description: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
+subtitle: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
+excerpt: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
 url: https://www.webmanajemen.com/2022/03/how-to-change-wordpress-wp-prefix.html
+type: post
 permalink: /2022/03/how-to-change-wordpress-wp-prefix.html
 lang: en
-description: Change wordpress table prefix updated 2022
-subtitle: Change wordpress table prefix updated 2022
-excerpt: Change wordpress table prefix updated 2022
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 photos:
   - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
-type: post
 ---
 
 ## How to change wordpress table prefix

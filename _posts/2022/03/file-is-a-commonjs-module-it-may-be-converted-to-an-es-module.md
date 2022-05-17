@@ -1,6 +1,6 @@
 ---
 cover: https://i.stack.imgur.com/Xo2sA.png
-date: 2022-03-26T04:27:16+0000
+date: 2022-03-26T11:27:16+07:00
 subtitle: disable vscode alert File is a CommonJS module; it may be converted to
   an ES module
 tags:
@@ -9,7 +9,7 @@ tags:
   - IDE
 title: disable vscode alert File is a CommonJS module; it may be converted to an
   ES module
-updated: 2022-03-26T04:27:16+0000
+updated: 2022-03-26T11:27:16+07:00
 uuid: 1d699a76-b023-4888-85f3-bd25b793aa3d
 category:
   - Programming
@@ -21,12 +21,12 @@ excerpt: disable vscode alert File is a CommonJS module; it may be converted to
 description: disable vscode alert File is a CommonJS module; it may be converted
   to an ES module
 url: https://www.webmanajemen.com/2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html
+type: post
 permalink: /2022/03/file-is-a-commonjs-module-it-may-be-converted-to-an-es-module.html
 lang: en
 thumbnail: https://i.stack.imgur.com/Xo2sA.png
 photos:
   - https://i.stack.imgur.com/Xo2sA.png
-type: post
 ---
 
 # File is a CommonJS module; it may be converted to an ES module

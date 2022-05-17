@@ -11,6 +11,7 @@ tags:
   - Chimeraland
 title: Index Chimeraland
 toc: true
+type: page
 updated: 2022-02-18T11:37:00+07:00
 uuid: 2b555aca-b8dc-4888-8578-ab54bc31027a
 webtitle: Chimeraland
@@ -22,7 +23,6 @@ subtitle: Index Tree Chimeraland
 excerpt: Index Tree Chimeraland
 url: https://www.webmanajemen.com/Chimeraland/index.html
 permalink: /Chimeraland/index.html
-type: post
 ---
 
 ## Cooking Recipes

@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-11-21T23:53:00.000+07:00
+date: 2017-11-21T23:53:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:18.046+07:00
 subtitle: center><h2>Demo</h2></center><iframe
   src=//rawgit.com/dimaslanjaka/Web-Manajemen/master/HTML/Text-Animate/20Scale20LetterHovers.html

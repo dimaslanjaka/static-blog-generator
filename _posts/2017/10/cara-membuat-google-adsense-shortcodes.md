@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: http://botcrawl.com/wp-content/uploads/2012/04/toggle-arrow.png
-date: 2017-10-11T19:49:00.000+07:00
+date: 2017-10-11T19:49:00+07:00
 lang: en
-location: ""
 modified: 2017-10-11T19:49:03.766+07:00
 subtitle: Membuat Google AdSense Shortcodes Untuk WordPress
 tags:

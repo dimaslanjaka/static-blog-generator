@@ -8,9 +8,8 @@ category:
   - HTML
 comments: true
 cover: https://www.webmanajemen.com/assets/img/html.png
-date: 2019-07-23T07:24:00.000+07:00
+date: 2019-07-23T07:24:00+07:00
 lang: en
-location: ""
 modified: 2019-07-25T23:13:45.416+07:00
 subtitle: simbol matematika dan penulisan dalam html HTML.
 tags:

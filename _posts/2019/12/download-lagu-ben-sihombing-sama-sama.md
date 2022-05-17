@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/4710c35393f272573da3dd8eeb897042.jpeg
-date: 2019-12-11T02:35:00.001+07:00
+date: 2019-12-11T02:35:00+07:00
 lang: en
-location: ""
 modified: 2019-12-16T01:19:10.122+07:00
 subtitle: "Download lagu Ben Sihombing Sama Sama Menunggu Mp3Ben Sihombing -
   Youre welcome Listen: 82,645 Duration: 272 MP3 size: 4.25MB"

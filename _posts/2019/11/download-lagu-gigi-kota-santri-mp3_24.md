@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/1514e477dae70eb7cf2ad5f8ad1d5a98.jpeg
-date: 2019-11-24T21:21:00.001+07:00
+date: 2019-11-24T21:21:00+07:00
 lang: en
-location: ""
 modified: 2019-11-24T21:33:29.166+07:00
 subtitle: "Download lagu GIGI Kota Santri Mp3 DENTAL - City of Santri Listen:
   23,847 Duration: 210 MP3 size: 3.28MB Download Links"

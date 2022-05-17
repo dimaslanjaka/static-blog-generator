@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg
-date: 2018-04-12T19:43:00.000+07:00
+date: 2018-04-12T19:43:00+07:00
 lang: en
-location: ""
 modified: 2018-04-12T19:52:07.922+07:00
 subtitle: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://mazadie.files.wordpress.com/2012/03/regex.jpg

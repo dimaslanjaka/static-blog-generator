@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://1.bp.blogspot.com/-kKrjUF3L7_w/YJyInp5cH-I/AAAAAAAAABU/km6DnnEqjRAoXHTYYpg8BCg1VcbjPCOvgCLcBGAsYHQ/s0/Screenshot_1.png
-date: 2021-04-27T21:18:00.008+07:00
+date: 2021-04-27T21:18:00+07:00
 lang: en
-location: ""
 modified: 2021-05-13T09:02:48.744+07:00
 subtitle: OR
 tags:

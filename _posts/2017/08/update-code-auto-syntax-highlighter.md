@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-gUVjKXD8MMM/WWHz7oK-SxI/AAAAAAAACVc/3uL5_0HdMNkvWyjyIAUcSYpVJIQxmIvnQCLcBGAs/s400/syntax%2Bhighlighting%2Bcode%2Bformatting.png
-date: 2017-08-21T10:55:00.003+07:00
+date: 2017-08-21T10:55:00+07:00
 lang: en
-location: ""
 modified: 2021-05-25T22:47:46.743+07:00
 subtitle: Jumpa lagi dengan topik JavaScript Dan jQuery. Sebelumnya saya sudah
   share Cara menambah syntax highlighter dengan prettyprint di

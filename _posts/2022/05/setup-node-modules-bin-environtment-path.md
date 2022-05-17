@@ -1,5 +1,5 @@
 ---
-date: 2022-05-10T12:13:21+0000
+date: 2022-05-10T19:13:21+07:00
 description: How to setup node_modules/.bin on global environtment path
 tags:
   - NodeJS
@@ -7,7 +7,7 @@ tags:
   - CMD
 thumbnail: https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png
 title: Setup node_modules bin on global environtment path
-updated: 2022-05-10T23:45:40+0000
+updated: 2022-05-11T06:45:40+07:00
 uuid: 89ff33e9-de5b-4888-857e-1d7b93b0c3b2
 category:
   - Uncategorized
@@ -16,9 +16,9 @@ wordcount: 30
 subtitle: How to setup node_modules/.bin on global environtment path
 excerpt: How to setup node_modules/.bin on global environtment path
 url: https://www.webmanajemen.com/2022/05/setup-node-modules-bin-environtment-path.html
+type: post
 permalink: /2022/05/setup-node-modules-bin-environtment-path.html
 lang: en
-type: post
 ---
 
 ## Setup Windows

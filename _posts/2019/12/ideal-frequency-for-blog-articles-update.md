@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/edd537cfee3f5f3a8bde808f052c0934.jpeg
-date: 2019-12-15T04:02:00.000+07:00
+date: 2019-12-15T04:02:00+07:00
 lang: en
-location: ""
 modified: 2019-12-15T04:02:09.534+07:00
 subtitle: Do we have to write articles every day on the blog Maybe this question
   has crossed many bloggers. I, as someone new to the blogging

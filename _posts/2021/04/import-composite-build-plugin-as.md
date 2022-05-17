@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
-date: 2021-04-20T16:40:00.001+07:00
+date: 2021-04-20T16:40:00+07:00
 lang: en
-location: ""
 modified: 2021-04-20T16:40:48.445+07:00
 subtitle: pre><br />// change folder path inside bracket<br />includeBuildplugin
   <br /> dependencySubstitution <br /> // change your

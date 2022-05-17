@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/7eda57e044b4b484bdb43a59f29078d0.jpeg
-date: 2019-12-29T23:37:00.000+07:00
+date: 2019-12-29T23:37:00+07:00
 lang: en
-location: ""
 modified: 2019-12-29T23:37:00.131+07:00
 subtitle: Tingkatkan Performa Blog Dengan DNS Cloudflare Increase Blog
   Performance with Cloudflare DNS Basically all DNS is the same, namely the

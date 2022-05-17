@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/98160c2a169a1b76a688f055ecfe2d3e.jpeg
-date: 2019-12-10T23:51:00.001+07:00
+date: 2019-12-10T23:51:00+07:00
 lang: en
-location: ""
 modified: 2019-12-11T02:29:36.703+07:00
 subtitle: "Download lagu Bullet For My Valentine Scream Aim Fire Mp3Bullet For
   My Valentine - Scream Aim Fire Listen: 37,402,797 Duration: 272"

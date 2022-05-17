@@ -1,21 +1,21 @@
 ---
-date: 2022-04-01T17:34:31+0000
+date: 2022-04-02T00:34:31+07:00
 subtitle: macam-macam source pattern pada gulp
 title: gulp src pattern
-updated: 2022-04-01T17:34:31+0000
+updated: 2022-04-02T00:34:31+07:00
 uuid: 32de1d5f-52a5-4888-88e6-0ef31c247e82
 webtitle: NodeJS
 category:
   - Uncategorized
-tags: []
 comments: true
 wordcount: 88
 excerpt: macam-macam source pattern pada gulp
 description: macam-macam source pattern pada gulp
 url: https://www.webmanajemen.com/2022/04/gulp-pattern.html
+type: post
 permalink: /2022/04/gulp-pattern.html
 lang: en
-type: post
+tags: []
 ---
 
 <!--https://www.google.com/search?client=firefox-b-d&q=gulp+pattern+exclude+all+in+subfolder-->

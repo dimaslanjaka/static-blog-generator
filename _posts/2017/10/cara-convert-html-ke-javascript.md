@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
-date: 2017-10-05T14:50:00.000+07:00
+date: 2017-10-05T14:50:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.820+07:00
 subtitle: h2>Bagaimana cara convert HTML ke Javascript document.write secara
   otomatis</h2><img

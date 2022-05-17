@@ -8,9 +8,8 @@ category:
   - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png
-date: 2018-11-23T22:25:00.000+07:00
+date: 2018-11-23T22:25:00+07:00
 lang: en
-location: ""
 modified: 2020-01-21T01:56:29.965+07:00
 subtitle: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webubi.com/wp-content/uploads/2017/03/regex.png

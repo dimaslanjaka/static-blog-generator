@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg
-date: 2018-10-31T03:13:00.001+07:00
+date: 2018-10-31T03:13:00+07:00
 lang: en
-location: ""
 modified: 2019-07-25T23:57:58.828+07:00
 subtitle: img
   src=https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg

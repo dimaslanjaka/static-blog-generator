@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-07-26T21:16:00.000+07:00
+date: 2017-07-26T21:16:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.915+07:00
 subtitle: Sometimes we want to make the posting page become more simple in
   displaying the content.

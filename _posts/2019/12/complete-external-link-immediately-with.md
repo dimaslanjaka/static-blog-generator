@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/2.bp.blogspot.com/514cc0b2c6a504375873f242e193fc29.jpeg
-date: 2019-12-18T01:16:00.000+07:00
+date: 2019-12-18T01:16:00+07:00
 lang: en
-location: ""
 modified: 2019-12-18T01:16:03.789+07:00
 subtitle: If you add an external link in the template or in the post and use the
   target_blank attribute, then immediately complete the

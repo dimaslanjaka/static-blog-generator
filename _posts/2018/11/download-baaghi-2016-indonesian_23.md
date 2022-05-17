@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.net/wp-content/uploads/2017/06/film-baaghi-2016.jpg
-date: 2018-11-23T23:26:00.000+07:00
+date: 2018-11-23T23:26:00+07:00
 lang: en
-location: ""
 modified: 2018-11-23T23:27:50.104+07:00
 subtitle: .content ,.keyword ,.keywords max-width:100 @import
 tags:

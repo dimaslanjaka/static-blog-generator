@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://i.stack.imgur.com/frOSJ.png
-date: 2017-05-17T20:02:00.000+07:00
+date: 2017-05-17T20:02:00+07:00
 lang: en
-location: ""
 modified: 2017-05-17T20:02:06.629+07:00
 subtitle: h2>Is there any Blogger blogspot not portable contingent
   arrangement.</h2>Someone ask to stackoverflow like this.<br /><br />I would

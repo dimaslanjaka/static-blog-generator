@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://diansberbagi.files.wordpress.com/2014/11/bitly-620x480.jpg?w=300&h=232
-date: 2017-07-20T10:47:00.000+07:00
+date: 2017-07-20T10:47:00+07:00
 lang: en
-location: ""
 modified: 2017-07-20T10:47:01.322+07:00
 subtitle: What is Bitly bitly is an online service that provides short URLs for
   your posts so you can be easier to share with friends, family, and

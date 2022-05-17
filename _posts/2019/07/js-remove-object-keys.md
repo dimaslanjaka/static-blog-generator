@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-07-18T02:14:00.002+07:00
+date: 2019-07-18T02:14:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:18.023+07:00
 subtitle: "pre><br />var thisIsObject= <br /> apos;Cowapos; : apos;Mooapos;,<br
   /> apos;Catapos; : apos;Meowapos;,<br />"

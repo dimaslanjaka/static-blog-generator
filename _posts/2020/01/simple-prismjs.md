@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-01-20T10:49:00.003+07:00
+date: 2020-01-20T10:49:00+07:00
 lang: en
-location: ""
 modified: 2020-01-20T11:22:00.834+07:00
 subtitle: "Simple PrismJS Syntax Highlighter pre> <code> Not Single Usage:
   <pre><code>code block</code></pre> <h3>Welcome to the real-time"

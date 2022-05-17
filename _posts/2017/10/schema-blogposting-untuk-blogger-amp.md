@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgdb.net/images/3205.png
-date: 2017-10-23T18:34:00.000+07:00
+date: 2017-10-23T18:34:00+07:00
 lang: en
-location: ""
 modified: 2017-10-23T18:34:03.220+07:00
 subtitle: Structure BlogPosting pada AMP merupakan hal istimewa. Dijamin bila
   keyword density kata-kata/kalimat yang berhubungan dengan title/judul

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
-date: 2017-08-29T20:38:00.000+07:00
+date: 2017-08-29T20:38:00+07:00
 lang: en
-location: ""
 modified: 2022-03-18T20:38:03.355+07:00
 subtitle: How to multiple delete with codeigniter
 tags:

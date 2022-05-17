@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-01-21T00:39:00.001+07:00
+date: 2020-01-21T00:39:00+07:00
 lang: en
-location: ""
 modified: 2020-01-21T00:40:28.660+07:00
 subtitle: h1 itemprop=headline name class=text-center>Load CSS
   Asynchronously</h1> <script

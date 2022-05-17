@@ -8,9 +8,8 @@ category:
   - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-07-19T02:52:00.000+07:00
+date: 2017-07-19T02:52:00+07:00
 lang: en
-location: ""
 modified: 2017-07-19T02:52:09.899+07:00
 subtitle: h2>How to Create <mark>Awesome Shadow Effects</mark> Using HAML HTML
   Processor and LESS CSS Preprocessor</h2><h3>HAML

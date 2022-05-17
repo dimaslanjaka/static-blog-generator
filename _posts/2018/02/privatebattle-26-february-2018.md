@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-02-26T19:20:00.002+07:00
+date: 2018-02-26T19:20:00+07:00
 lang: en
-location: ""
 modified: 2018-02-26T19:22:57.275+07:00
 subtitle: VG Private Battle 20:00 Wib<br />Tim A<br />1. Mamskid<br />2.
   abdulajis<br />3. Hanif17roamer<br /><br />Tim B<br />1.Hadifadillah<br

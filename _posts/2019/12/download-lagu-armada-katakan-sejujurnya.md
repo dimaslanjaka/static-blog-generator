@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/be307b73b2a6079cf72b3b7b98d8fb59.jpeg
-date: 2019-12-04T13:10:00.001+07:00
+date: 2019-12-04T13:10:00+07:00
 lang: en
-location: ""
 modified: 2019-12-04T13:29:28.803+07:00
 subtitle: "Download lagu Armada Katakan Sejujurnya Mp3 Fleet - Tell the Truth
   Listen: 2,712,275 Duration: 237 MP3 size: 3.7MB Download"

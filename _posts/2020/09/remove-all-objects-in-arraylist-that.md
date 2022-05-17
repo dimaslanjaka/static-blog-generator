@@ -8,9 +8,8 @@ category:
   - JAVA
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-09-22T10:36:00.001+07:00
+date: 2020-09-22T10:36:00+07:00
 lang: en
-location: ""
 modified: 2020-09-22T10:36:39.906+07:00
 subtitle: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br />
   firstArr.addquot;1quot;;<br />

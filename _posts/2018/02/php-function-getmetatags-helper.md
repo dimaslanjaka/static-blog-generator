@@ -8,7 +8,7 @@ category:
   - PHP
 comments: true
 cover: https://www.svgrepo.com/show/84714/php.svg
-date: 2018-02-21T20:55:00.000+07:00
+date: 2018-02-21T20:55:00+07:00
 lang: en
 subtitle: "Description Of getmeta_tags Source Description: PHP.NET PHP 4, PHP 5,
   PHP 7 get_meta_tags "
@@ -18,7 +18,7 @@ title: "[PHP] Function get_meta_tags Helper"
 type: post
 uuid: a0392d1b-fa82-4888-812e-4f460e19dc81
 webtitle: PHP
-updated: 2022-04-18
+updated: 2022-04-18T00:00:00+07:00
 wordcount: 862
 excerpt: "Description Of getmeta_tags Source Description: PHP.NET PHP 4, PHP 5,
   PHP 7 get_meta_tags "

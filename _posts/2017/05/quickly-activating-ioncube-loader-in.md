@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-nZHOJ0yIwFA/VxdhC6oKlcI/AAAAAAAAChg/eNqEsF4QEbcPbkDo3sPQPyaQkWAnlFBAwCLcB/s320/ioncube_loader.png
-date: 2017-05-16T19:52:00.001+07:00
+date: 2017-05-16T19:52:00+07:00
 lang: en
-location: ""
 modified: 2017-05-16T19:52:19.621+07:00
 subtitle: Constrained in themes wordpress at the time of installation in self
   hosting for beginners like ane feel confused, gaptek dll. Let alone

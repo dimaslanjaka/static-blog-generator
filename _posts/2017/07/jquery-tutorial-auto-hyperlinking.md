@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-07-31T12:08:00.000+07:00
+date: 2017-07-31T12:08:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.925+07:00
 subtitle: Links are found in nearly all web pages. Links allow users to click
   their way from page to page.

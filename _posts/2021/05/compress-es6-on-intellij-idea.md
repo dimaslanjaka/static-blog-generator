@@ -8,9 +8,8 @@ category:
   - JS
 comments: true
 cover: https://i.ibb.co/024Dzwh/Screenshot-1.png
-date: 2021-05-30T16:43:00.003+07:00
+date: 2021-05-30T16:43:00+07:00
 lang: en
-location: ""
 modified: 2021-05-30T16:43:44.714+07:00
 subtitle: compress es6, minify es6 in intellij idea automatically
 tags:

@@ -8,7 +8,7 @@ category:
   - PHP
 comments: true
 cover: https://www.svgrepo.com/show/84714/php.svg
-date: 2018-02-21T21:16:00.001+07:00
+date: 2018-02-21T21:16:00+07:00
 lang: en
 modified: 2018-02-21T21:18:33.835+07:00
 subtitle: "Description Of fileget_contents Source Description: PHP.NET PHP 4 >=
@@ -19,7 +19,7 @@ title: "[PHP] Function Helper For file_get_contents"
 type: post
 uuid: 2c2fed27-5d55-4888-86ef-52ebb308a008
 webtitle: PHP
-updated: 2022-04-18
+updated: 2022-04-18T00:00:00+07:00
 wordcount: 1198
 excerpt: "Description Of fileget_contents Source Description: PHP.NET PHP 4 >=
   4.3.0, PHP 5, PHP 7"

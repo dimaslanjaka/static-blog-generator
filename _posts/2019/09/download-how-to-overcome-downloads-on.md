@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2019/03/Google-Drive.jpg
-date: 2019-09-29T05:48:00.001+07:00
+date: 2019-09-29T05:48:00+07:00
 lang: en
-location: ""
 modified: 2019-10-20T18:33:52.798+07:00
 subtitle: Download method on PC Many of you still dont understand How To
   Download Google Drive That Is Affected By Limit. This time I will

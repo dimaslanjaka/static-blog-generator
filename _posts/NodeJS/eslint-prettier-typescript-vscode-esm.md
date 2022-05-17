@@ -3,7 +3,7 @@ category:
   - Programming
   - JS
 cover: https://eslint.org/assets/img/favicon.512x512.png
-date: 2022-04-17T10:01:31+0000
+date: 2022-04-17T17:01:31+07:00
 subtitle: Auto format typescript with esm using only eslint and prettier module
 tags:
   - JS
@@ -12,7 +12,7 @@ tags:
   - ESLint
 title: Auto format typescript with esm in vscode
 type: post
-updated: 2022-05-03T18:14:00+0700
+updated: 2022-05-03T18:14:00+07:00
 uuid: 7fc9817d-e4da-4888-8b90-6d4d163e3a21
 comments: true
 wordcount: 243

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://3.bp.blogspot.com/-SQp52Dfe-iM/VsEW5VlzHcI/AAAAAAAABxM/7bEQbN_owsk/s320/gambar-conditional-tag-blogger-min.jpg
-date: 2017-05-19T13:39:00.000+07:00
+date: 2017-05-19T13:39:00+07:00
 lang: en
-location: ""
 modified: 2017-05-19T13:39:02.460+07:00
 subtitle: Ill explain a little what it is conditional tags. Conditional tags
   arebr />limiting a program command on certain conditions use a

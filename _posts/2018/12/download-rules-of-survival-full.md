@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/rules-of-survival-1.jpg
-date: 2018-12-27T01:01:00.000+07:00
+date: 2018-12-27T01:01:00+07:00
 lang: en
-location: ""
 modified: 2018-12-24T22:41:03.584+07:00
 subtitle: ATURAN SURVIVAL Penuh .204011.213685 Apk Data android
 tags:

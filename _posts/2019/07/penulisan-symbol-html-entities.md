@@ -8,9 +8,8 @@ category:
   - HTML
 comments: true
 cover: https://www.webmanajemen.com/assets/img/html.png
-date: 2019-07-23T07:21:00.000+07:00
+date: 2019-07-23T07:21:00+07:00
 lang: en
-location: ""
 modified: 2019-07-25T23:13:53.392+07:00
 subtitle: h2>ASCII simbol</h2><table> <thead> <tr> <th nowrap=nowrap> Symbol </th> <th
 tags:
