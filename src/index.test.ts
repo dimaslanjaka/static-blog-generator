@@ -1,6 +1,6 @@
 import { PathLike, readdirSync, writeFileSync } from 'fs';
 import { basename, join } from 'upath';
-import { parsePost } from './parsePost';
+import { parsePost } from '.';
 
 const files = walkSync(join(__dirname, '../src-posts/Tests')).filter((path) => path.endsWith('.md'));
 const tmp = join(__dirname, '../tmp');

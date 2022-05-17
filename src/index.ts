@@ -1,4 +1,5 @@
 import parsePost from './parsePost';
 
-const obj = { parsePost };
+export const obj = { parsePost };
 export default obj;
+export { parsePost };
