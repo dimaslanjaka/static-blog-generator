@@ -91,6 +91,7 @@ type MergeData = Partial<typeof data> & Partial<typeof def>;
 interface Config extends Partial<MergeData> {
   default_tag?: string;
   default_category?: string;
+  content?: string;
 }
 
 let config = def;

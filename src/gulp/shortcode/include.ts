@@ -1,8 +1,8 @@
-import 'js-prototypes';
 import chalk from 'chalk';
-import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
-import { root } from '../../types/_config';
+import { existsSync, readFileSync } from 'fs';
+import { dirname, join, toUnix } from 'upath';
 
+const root = toUnix(process.cwd());
 const logname = chalk.blue('[include]');
 
 /**
@@ -23,8 +23,8 @@ export function parseShortCodeInclude(file: string, str: string) {
       const includefile = m[1];
       const dirs = {
         directFile: join(dirname(file.toString()), includefile),
-        cwdFile: join(cwd(), includefile),
-        rootFile: join(root, includefile),
+        //cwdFile: join(cwd(), includefile),
+        rootFile: join(root, includefile)
       };
       for (const key in dirs) {
         if (Object.prototype.hasOwnProperty.call(dirs, key)) {

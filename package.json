@@ -2,7 +2,8 @@
   "name": "hexo-post-parser",
   "version": "1.0.0",
   "description": "Parse Hexo Post To Object",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
   },

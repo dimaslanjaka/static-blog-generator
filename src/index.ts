@@ -73,6 +73,10 @@ export type postMap = DynamicObject & {
   body?: string;
 };
 
+const default_options = {
+  shortcodes: false
+};
+
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return metadata {string & object} and body
@@ -80,7 +84,7 @@ export type postMap = DynamicObject & {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-function originalParsePost(text: string, ..._: any[]): postMap | null {
+function originalParsePost(text: string, options = default_options): postMap | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -176,12 +180,26 @@ function originalParsePost(text: string, ..._: any[]): postMap | null {
       }
     }
 
+    if (options.shortcodes) {
+      // @todo process shortcodes
+      if (body) {
+        //body = parseShortCodeInclude(publicFile, body);
+        //body = shortcodeNow(publicFile, body);
+        //body = shortcodeScript(publicFile, body);
+        //body = replaceMD2HTML(body);
+        //body = shortcodeCss(publicFile, body);
+        //body = extractText(publicFile, body);
+        //body = shortcodeYoutube(body);
+      }
+    }
+
     const result: postMap = {
       metadata: meta,
       body: body,
       content: body,
       config: config
     };
+
     // put fileTree
     if (isFile) {
       result.fileTree = {
