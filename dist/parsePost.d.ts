@@ -54,7 +54,7 @@ export declare type postMap = DynamicObject & {
     /**
      * _config.yml
      */
-    config?: typeof config | null;
+    config?: DeepPartial<typeof config> | null;
     /**
      * Article metadata
      */
@@ -65,13 +65,38 @@ export declare type postMap = DynamicObject & {
     body?: string;
 };
 export interface ParseOptions {
-    shortcodes?: Partial<{
+    shortcodes?: {
+        /**
+         * Transform shortcode `<!-- css path/to/file.css -->`
+         */
         css: boolean;
+        /**
+         * Transform shortcode `<!-- script path/to/file.js -->`
+         */
         script: boolean;
+        /**
+         * Transform shortcode `<!-- include path/to/file -->`
+         */
         include: boolean;
+        /**
+         * Transform shortcode `{% youtube id 'type' %}` tag
+         */
         youtube: boolean;
+        /**
+         * Transform hyperlinks ends with `path/to/file.md` with `path/to/file.html`
+         */
         link: boolean;
-    }>;
+        /**
+         * Transform shortcode `<!-- extract-text path/to/file -->`
+         * @see {@link extractText}
+         */
+        text: boolean;
+        /**
+         * Transform shortcode `<!-- now() -->`
+         * @see {@link shortcodeNow}
+         */
+        now: boolean;
+    };
     /**
      * Source File, keep empty when first parameter (text) is file
      */
@@ -85,8 +110,11 @@ export interface ParseOptions {
     /**
      * Site Config
      */
-    config?: Partial<typeof config>;
+    config?: DeepPartial<typeof config>;
 }
+export declare type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
@@ -94,5 +122,5 @@ export interface ParseOptions {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export declare function parsePost(text: string, options?: ParseOptions): postMap | null;
+export declare function parsePost(text: string, options?: DeepPartial<ParseOptions>): postMap | null;
 export default parsePost;

@@ -10,7 +10,12 @@ const dateMapper_1 = require("./dateMapper");
 const utils_1 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
 const css_1 = require("./shortcodes/css");
-const include_1 = tslib_1.__importDefault(require("./shortcodes/include"));
+const extractText_1 = require("./shortcodes/extractText");
+const hyperlinks_md2html_1 = require("./shortcodes/hyperlinks-md2html");
+const include_1 = require("./shortcodes/include");
+const script_1 = require("./shortcodes/script");
+const time_1 = require("./shortcodes/time");
+const youtube_1 = require("./shortcodes/youtube");
 const _config_1 = tslib_1.__importDefault(require("./types/_config"));
 const homepage = new URL(_config_1.default.url);
 const default_options = {
@@ -19,7 +24,9 @@ const default_options = {
         script: false,
         include: false,
         youtube: false,
-        link: false
+        link: false,
+        text: false,
+        now: false
     },
     sourceFile: null,
     formatDate: false,
@@ -32,7 +39,9 @@ const default_options = {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-function parsePost(text, options = default_options) {
+function parsePost(text, options = {}) {
+    options = Object.assign(default_options, options);
+    const config = options.config;
     const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
     //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
     //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -71,10 +80,10 @@ function parsePost(text, options = default_options) {
                 .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
         }
         // @todo set default category and tags
-        if ((!meta.category || !meta.category.length) && _config_1.default.default_category)
-            meta.category = [_config_1.default.default_category];
-        if ((!meta.tags || !meta.tags.length) && _config_1.default.default_tag)
-            meta.tags = [_config_1.default.default_tag];
+        if ((!meta.category || !meta.category.length) && config.default_category)
+            meta.category = [config.default_category];
+        if ((!meta.tags || !meta.tags.length) && config.default_tag)
+            meta.tags = [config.default_tag];
         // @todo set default date post
         if (!meta.date)
             meta.date = (0, moment_1.default)().format();
@@ -153,14 +162,19 @@ function parsePost(text, options = default_options) {
                 }
                 if (body && sourceFile) {
                     if (shortcodes.include)
-                        body = (0, include_1.default)(sourceFile, body);
-                    //body = shortcodeNow(publicFile, body);
-                    //body = shortcodeScript(publicFile, body);
-                    //body = replaceMD2HTML(body);
+                        body = (0, include_1.parseShortCodeInclude)(sourceFile, body);
+                    if (shortcodes.now)
+                        body = (0, time_1.shortcodeNow)(sourceFile, body);
+                    if (shortcodes.script)
+                        body = (0, script_1.shortcodeScript)(sourceFile, body);
+                    if (shortcodes.link)
+                        body = (0, hyperlinks_md2html_1.replaceMD2HTML)(body);
                     if (shortcodes.css)
                         body = (0, css_1.shortcodeCss)(sourceFile, body);
-                    //body = extractText(publicFile, body);
-                    //body = shortcodeYoutube(body);
+                    if (shortcodes.text)
+                        body = (0, extractText_1.extractText)(sourceFile, body);
+                    if (shortcodes.youtube)
+                        body = (0, youtube_1.shortcodeYoutube)(body);
                 }
             }
         }
@@ -168,7 +182,7 @@ function parsePost(text, options = default_options) {
             metadata: meta,
             body: body,
             content: body,
-            config: _config_1.default
+            config: config
         };
         // put fileTree
         if (isFile) {
