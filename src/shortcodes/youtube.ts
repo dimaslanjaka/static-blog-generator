@@ -44,14 +44,14 @@ layout="responsive"
   layout="fill"
 />
 </amp-youtube>
-    `;
+    `.trim();
     } else {
       // https://flaviocopes.com/responsive-youtube-videos/
       html = `
 <div class="video-container">
   <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
-    `;
+    `.trim();
     }
     content = content.replace(allmatch, () => html);
   }
