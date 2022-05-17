@@ -47,6 +47,19 @@ From Root/cwd Directory
 <!-- include /src-posts/Tests/shortcodes/include.html -->
 ```
 
+## Shortcode extract-text
+From Local Directory
+
+```html
+<!-- extract-text shortcodes/include.txt -->
+```
+
+From Root/cwd Directory
+
+```html
+<!-- extract-text /src-posts/Tests/shortcodes/include.txt -->
+```
+
 ## Shortcode Youtube
 By default youtube tag will output video
 ```html
@@ -59,11 +72,6 @@ Manually set type `video`
 Manually set type `playlist`
 ```html
 {% youtube RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA 'playlist' %}
-```
-
-## Shortcode extract-text
-```html
-<!-- extract-text shortcodes/include.txt -->
 ```
 
 ## Shortcode now()
