@@ -4,7 +4,7 @@ import { join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
-import { md5 } from './node/md5-file';
+import { md5FileSync } from './node/md5-file';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { shortcodeCss } from './shortcodes/css';
@@ -20,7 +20,7 @@ import config from './types/_config';
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'parsePost',
-  duration: 1000 * 3600 * 240 // 240 hours
+  duration: 1000 * 3600 * 24 // 24 hours
 });
 const homepage = new URL(config.url);
 
@@ -174,6 +174,11 @@ export function parsePost(
 ): postMap | null {
   options = Object.assign(default_options, options);
   const config = options.config;
+  const cacheKey = md5FileSync(text);
+  if (options.cache) {
+    const getCache = _cache.getSync<postMap>(cacheKey);
+    if (getCache) return getCache;
+  }
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -340,7 +345,7 @@ export function parsePost(
       };
     }
 
-    _cache.putSync(md5(meta.title), result);
+    _cache.putSync(cacheKey, result);
 
     return result;
   };

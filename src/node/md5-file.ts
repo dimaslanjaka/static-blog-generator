@@ -2,11 +2,11 @@ import crypto from 'crypto';
 import * as fs from 'fs';
 
 export function md5FileSync(path: string) {
-  let fileBuffer: Buffer = Buffer.from(path);
+  let fileBuffer = Buffer.from(path);
   if (fs.existsSync(path)) {
     fileBuffer = fs.readFileSync(path);
   }
-  const hashSum = crypto.createHash('sha256');
+  const hashSum = crypto.createHash('md5'); // sha256
   hashSum.update(fileBuffer);
   return hashSum.digest('hex');
 }

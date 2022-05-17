@@ -17,7 +17,8 @@ for (const filePath of files) {
       link: true,
       text: true,
       now: true
-    }
+    },
+    cache: true
   });
   writeFileSync(join(tmp, basename(filePath, '.md') + '.body.md'), parse.body);
 
