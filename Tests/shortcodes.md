@@ -23,14 +23,14 @@ From Root/cwd Directory
 ## Shortcode JS
 From Local Directory
 
-```css
-<!-- css shortcodes/include.js -->
+```js
+<!-- script shortcodes/include.js -->
 ```
 
 From Root/cwd Directory
 
-```css
-<!-- css /src-posts/Tests/shortcodes/include.js -->
+```js
+<!-- script /src-posts/Tests/shortcodes/include.js -->
 ```
 
 ## Shortcode Include
