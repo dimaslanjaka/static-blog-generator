@@ -60,3 +60,14 @@ Manually set type `playlist`
 ```html
 {% youtube RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA 'playlist' %}
 ```
+
+## Shortcode extract-text
+```html
+<!-- extract-text shortcodes/include.html -->
+```
+
+## Shortcode now()
+```html
+<!-- now() -->
+```
+
