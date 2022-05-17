@@ -1,4 +1,4 @@
-import config from '../../types/_config';
+import config from '../types/_config';
 
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
