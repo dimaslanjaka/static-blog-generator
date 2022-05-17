@@ -3,11 +3,14 @@
 title: Hexo
 subtitle: "A fast, simple & powerful blog framework powered by Node.js."
 description: "Hexo is a fast, simple & powerful blog framework powered by Node.js."
-author: Hexo
+author:
+  name: Hexo
+  url: https://www.webmanajemen.com
+  email: dimaslanjaka@gmail.com
 language: en
 timezone: UTC
 
-url: https://hexo.io
+url: https://www.webmanajemen.com
 root: /
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
