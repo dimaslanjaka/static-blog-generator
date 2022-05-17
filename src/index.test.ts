@@ -1,12 +1,26 @@
-import { PathLike, readdirSync, writeFileSync } from 'fs';
+import {
+  existsSync,
+  mkdirSync,
+  PathLike,
+  readdirSync,
+  writeFileSync
+} from 'fs';
+import minimatch from 'minimatch';
 import { basename, join } from 'upath';
 import { parsePost } from '.';
 import buildPost from './buildPost';
+import config from './types/_config';
 
-const files = walkSync(join(__dirname, '../src-posts/Tests')).filter((path) =>
-  path.endsWith('.md')
-);
-const tmp = join(__dirname, '../tmp');
+const files = walkSync(join(__dirname, '../src-posts')).filter((path) => {
+  const haveExclusion = config.skip_render.some((pattern) =>
+    minimatch(path, pattern, { matchBase: true, dot: true })
+  );
+  //if (path.includes('README')) console.log(have, path);
+  return path.endsWith('.md') && !haveExclusion;
+});
+const tmp = join(__dirname, '../tmp/test');
+if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
+
 for (const filePath of files) {
   const parse = parsePost(filePath, {
     formatDate: true,
@@ -21,19 +35,25 @@ for (const filePath of files) {
     },
     cache: true
   });
+  if (!parse) {
+    console.log(`fail parse ${filePath}`);
+    continue;
+  }
+  // write body
   writeFileSync(join(tmp, basename(filePath, '.md') + '.body.md'), parse.body);
+  // rebuild post with processed shortcodes
+  writeFileSync(join(tmp, basename(filePath, '.md') + '.md'), buildPost(parse));
 
   // remove anoying properties for easy to read
   parse.body = 'body';
   parse.content = 'body';
   parse.config = {};
 
+  // write parsed object to json
   writeFileSync(
     join(tmp, basename(filePath, '.md') + '.json'),
     JSON.stringify(parse, null, 2)
   );
-
-  writeFileSync(join(tmp, basename(filePath, '.md') + '.md'), buildPost(parse));
 }
 
 /**

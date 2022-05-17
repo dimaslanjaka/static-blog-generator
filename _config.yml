@@ -22,6 +22,10 @@ pretty_urls:
   trailing_index: false
   trailing_html: false
 
+skip_render:
+  - readme.md
+  - README.md
+
 theme: navy
 
 highlight:

@@ -38,12 +38,14 @@
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "minimatch": "^5.1.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.7.0",
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "deepmerge-ts": "^4.0.3",
     "moment": "^2.29.3",
     "persistent-cache": "git+https://github.com/LionC/persistent-cache.git#master",
     "upath": "^2.0.1",

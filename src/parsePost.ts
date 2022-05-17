@@ -1,3 +1,4 @@
+import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
 import moment from 'moment';
 import { join, toUnix } from 'upath';
@@ -172,7 +173,7 @@ export function parsePost(
   text: string,
   options: DeepPartial<ParseOptions> = {}
 ): postMap | null {
-  options = Object.assign(default_options, options);
+  options = deepmerge(default_options, options);
   const config = options.config;
   const cacheKey = md5FileSync(text);
   if (options.cache) {
@@ -259,6 +260,14 @@ export function parsePost(
       meta.description = newExcerpt;
       meta.subtitle = newExcerpt;
       meta.excerpt = newExcerpt;
+    }
+
+    // @todo delete location
+    if (
+      Object.prototype.hasOwnProperty.call(meta, 'location') &&
+      !meta.location
+    ) {
+      delete meta.location;
     }
 
     if (isFile) {
@@ -348,7 +357,7 @@ export function parsePost(
       };
     }
 
-    _cache.putSync(cacheKey, result);
+    if (meta && body) _cache.putSync(cacheKey, result);
 
     return result;
   };

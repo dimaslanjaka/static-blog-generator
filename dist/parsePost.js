@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePost = void 0;
 const tslib_1 = require("tslib");
+const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const upath_1 = require("upath");
@@ -48,7 +49,7 @@ const default_options = {
  * @param text file path or string markdown contents
  */
 function parsePost(text, options = {}) {
-    options = Object.assign(default_options, options);
+    options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
     const config = options.config;
     const cacheKey = (0, md5_file_1.md5FileSync)(text);
     if (options.cache) {
@@ -136,6 +137,11 @@ function parsePost(text, options = {}) {
             meta.subtitle = newExcerpt;
             meta.excerpt = newExcerpt;
         }
+        // @todo delete location
+        if (Object.prototype.hasOwnProperty.call(meta, 'location') &&
+            !meta.location) {
+            delete meta.location;
+        }
         if (isFile) {
             // setup permalink
             /*
@@ -213,7 +219,8 @@ function parsePost(text, options = {}) {
                 public: (0, upath_1.toUnix)(originalArg).replace('/src-posts/', '/source/_posts/')
             };
         }
-        _cache.putSync(cacheKey, result);
+        if (meta && body)
+            _cache.putSync(cacheKey, result);
         return result;
     };
     // process parsing
