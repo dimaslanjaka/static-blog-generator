@@ -1,4 +1,7 @@
-// : { [key: string]: any }
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { join } from 'upath';
+import yaml from 'yaml';
+import data from './_config_project.json';
 
 const def = {
   // Site
@@ -83,9 +86,23 @@ const def = {
   // Category & Tag
   meta_generator: true
 };
-interface Config extends Partial<typeof def> {
+
+type MergeData = Partial<typeof data> & Partial<typeof def>;
+interface Config extends Partial<MergeData> {
   default_tag?: string;
   default_category?: string;
 }
 
-export default def as Config;
+let config = def;
+
+// find _config.yml
+const file = join(process.cwd(), '_config.yml');
+if (existsSync(file)) {
+  const readConfig = readFileSync(file, 'utf-8');
+  const parse = yaml.parse(readConfig);
+  config = Object.assign(def, parse);
+}
+
+writeFileSync(join(__dirname, '_config_project.json'), JSON.stringify(config));
+
+export default config as Config;

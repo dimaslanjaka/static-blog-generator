@@ -4,7 +4,7 @@
   "description": "Parse Hexo Post To Object",
   "main": "index.js",
   "scripts": {
-    "build": "del dist && tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json"
   },
   "repository": {
     "type": "git",
