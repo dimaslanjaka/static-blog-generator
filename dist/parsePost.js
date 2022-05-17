@@ -22,7 +22,7 @@ const _config_1 = tslib_1.__importDefault(require("./types/_config"));
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
     name: 'parsePost',
-    duration: 1000 * 3600 * 240 // 240 hours
+    duration: 1000 * 3600 * 24 // 24 hours
 });
 const homepage = new URL(_config_1.default.url);
 const default_options = {
@@ -50,6 +50,12 @@ const default_options = {
 function parsePost(text, options = {}) {
     options = Object.assign(default_options, options);
     const config = options.config;
+    const cacheKey = (0, md5_file_1.md5FileSync)(text);
+    if (options.cache) {
+        const getCache = _cache.getSync(cacheKey);
+        if (getCache)
+            return getCache;
+    }
     const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
     //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
     //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -201,7 +207,7 @@ function parsePost(text, options = {}) {
                 public: (0, upath_1.toUnix)(originalArg).replace('/src-posts/', '/source/_posts/')
             };
         }
-        _cache.putSync((0, md5_file_1.md5)(meta.title), result);
+        _cache.putSync(cacheKey, result);
         return result;
     };
     // process parsing

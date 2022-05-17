@@ -1,3 +1,8 @@
+/**
+ * MD5 file synchronously
+ * @param path
+ * @returns
+ */
 export declare function md5FileSync(path: string): string;
 /**
  * PHP MD5 Equivalent

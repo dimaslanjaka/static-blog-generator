@@ -1,6 +1,11 @@
 import crypto from 'crypto';
 import * as fs from 'fs';
 
+/**
+ * MD5 file synchronously
+ * @param path
+ * @returns
+ */
 export function md5FileSync(path: string) {
   let fileBuffer = Buffer.from(path);
   if (fs.existsSync(path)) {

@@ -4,12 +4,17 @@ exports.md5 = exports.md5FileSync = void 0;
 const tslib_1 = require("tslib");
 const crypto_1 = tslib_1.__importDefault(require("crypto"));
 const fs = tslib_1.__importStar(require("fs"));
+/**
+ * MD5 file synchronously
+ * @param path
+ * @returns
+ */
 function md5FileSync(path) {
     let fileBuffer = Buffer.from(path);
     if (fs.existsSync(path)) {
         fileBuffer = fs.readFileSync(path);
     }
-    const hashSum = crypto_1.default.createHash('sha256');
+    const hashSum = crypto_1.default.createHash('md5'); // sha256
     hashSum.update(fileBuffer);
     return hashSum.digest('hex');
 }
