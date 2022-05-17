@@ -289,13 +289,15 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
           sourceFile = toUnix(originalArg);
         }
 
-        if (body && sourceFile) {
-          if (shortcodes.include) body = parseShortCodeInclude(sourceFile, body);
-          if (shortcodes.now) body = shortcodeNow(sourceFile, body);
-          if (shortcodes.script) body = shortcodeScript(sourceFile, body);
+        if (body) {
+          if (sourceFile) {
+            if (shortcodes.include) body = parseShortCodeInclude(sourceFile, body);
+            if (shortcodes.now) body = shortcodeNow(sourceFile, body);
+            if (shortcodes.script) body = shortcodeScript(sourceFile, body);
+            if (shortcodes.css) body = shortcodeCss(sourceFile, body);
+            if (shortcodes.text) body = extractText(sourceFile, body);
+          }
           if (shortcodes.link) body = replaceMD2HTML(body);
-          if (shortcodes.css) body = shortcodeCss(sourceFile, body);
-          if (shortcodes.text) body = extractText(sourceFile, body);
           if (shortcodes.youtube) body = shortcodeYoutube(body);
         }
       }

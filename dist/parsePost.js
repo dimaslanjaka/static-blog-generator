@@ -160,19 +160,21 @@ function parsePost(text, options = {}) {
                 else {
                     sourceFile = (0, upath_1.toUnix)(originalArg);
                 }
-                if (body && sourceFile) {
-                    if (shortcodes.include)
-                        body = (0, include_1.parseShortCodeInclude)(sourceFile, body);
-                    if (shortcodes.now)
-                        body = (0, time_1.shortcodeNow)(sourceFile, body);
-                    if (shortcodes.script)
-                        body = (0, script_1.shortcodeScript)(sourceFile, body);
+                if (body) {
+                    if (sourceFile) {
+                        if (shortcodes.include)
+                            body = (0, include_1.parseShortCodeInclude)(sourceFile, body);
+                        if (shortcodes.now)
+                            body = (0, time_1.shortcodeNow)(sourceFile, body);
+                        if (shortcodes.script)
+                            body = (0, script_1.shortcodeScript)(sourceFile, body);
+                        if (shortcodes.css)
+                            body = (0, css_1.shortcodeCss)(sourceFile, body);
+                        if (shortcodes.text)
+                            body = (0, extractText_1.extractText)(sourceFile, body);
+                    }
                     if (shortcodes.link)
                         body = (0, hyperlinks_md2html_1.replaceMD2HTML)(body);
-                    if (shortcodes.css)
-                        body = (0, css_1.shortcodeCss)(sourceFile, body);
-                    if (shortcodes.text)
-                        body = (0, extractText_1.extractText)(sourceFile, body);
                     if (shortcodes.youtube)
                         body = (0, youtube_1.shortcodeYoutube)(body);
                 }
