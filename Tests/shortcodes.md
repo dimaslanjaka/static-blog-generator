@@ -46,3 +46,11 @@ From Root/cwd Directory
 ```html
 <!-- include /src-posts/Tests/shortcodes/include.html -->
 ```
+
+## Shortcode Youtube
+By default youtube tag will output video
+{% youtube 4_oXjfgQ2G4 %}
+
+Manually set type
+{% youtube 4_oXjfgQ2G4 'video' %}
+{% youtube RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA 'playlist' %}
