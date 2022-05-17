@@ -13,8 +13,21 @@ export function shortcodeYoutube(content: string) {
       regex.lastIndex++;
     }
     count++;
-    const ytid = m[1].split(',').map((s) => s.trim())[0];
+    const split = m[1].split(' ').map((s) => s.trim());
+    const ytid = split[0];
     const allmatch = m[0];
+    console.log(split[1]);
+    let type: 'video' | 'playlist' = 'video';
+    if (split[1]) {
+      if (split[1].includes('playlist')) type = 'playlist';
+    }
+    let src: string;
+    if (type === 'video') {
+      src = 'https://www.youtube.com/embed/' + ytid;
+    } else if (type === 'playlist') {
+      src = 'https://www.youtube.com/embed/videoseries?list=' + ytid;
+    }
+
     let html: string;
     if (typeof config.amp === 'boolean' && config.amp) {
       html = `<amp-youtube
@@ -33,7 +46,7 @@ export function shortcodeYoutube(content: string) {
     } else {
       // https://flaviocopes.com/responsive-youtube-videos/
       html = `<div class="video-container">
-      <iframe src="https://www.youtube.com/embed/${ytid}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>`;
     }
     content = content.replace(allmatch, () => html);

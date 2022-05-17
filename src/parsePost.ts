@@ -9,6 +9,7 @@ import { shortcodeCss } from './shortcodes/css';
 import replaceMD2HTML from './shortcodes/hyperlinks-md2html';
 import parseShortCodeInclude from './shortcodes/include';
 import { shortcodeScript } from './shortcodes/script';
+import { shortcodeYoutube } from './shortcodes/youtube';
 import { DynamicObject } from './types';
 import config from './types/_config';
 
@@ -124,7 +125,9 @@ const default_options: ParseOptions = {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function parsePost(text: string, options = default_options): postMap | null {
+export function parsePost(text: string, options: ParseOptions = {}): postMap | null {
+  options = Object.assign(default_options, options);
+  const config = options.config;
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -258,7 +261,7 @@ export function parsePost(text: string, options = default_options): postMap | nu
           if (shortcodes.link) body = replaceMD2HTML(body);
           if (shortcodes.css) body = shortcodeCss(sourceFile, body);
           //body = extractText(publicFile, body);
-          //body = shortcodeYoutube(body);
+          if (shortcodes.youtube) body = shortcodeYoutube(body);
         }
       }
     }
