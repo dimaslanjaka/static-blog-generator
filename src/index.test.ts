@@ -3,15 +3,16 @@ import { basename, join } from 'upath';
 import { parsePost } from '.';
 
 const files = walkSync(join(__dirname, '../src-posts/Tests')).filter((path) => path.endsWith('.md'));
-
+const tmp = join(__dirname, '../tmp');
 for (const filePath of files) {
   const parse = parsePost(filePath, { shortcodes: true });
+  writeFileSync(join(tmp, basename(filePath, '.md') + '.body.md'), parse.body);
 
   // remove body to easy read
   parse.body = 'body';
   parse.content = 'body';
 
-  writeFileSync(join(__dirname, '../tmp', basename(filePath, '.md') + '.json'), JSON.stringify(parse, null, 2));
+  writeFileSync(join(tmp, basename(filePath, '.md') + '.json'), JSON.stringify(parse, null, 2));
 }
 
 /**

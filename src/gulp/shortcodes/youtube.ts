@@ -1,4 +1,4 @@
-import { theme_config } from '../../types/_config';
+import config from '../../types/_config';
 
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
@@ -16,7 +16,7 @@ export function shortcodeYoutube(content: string) {
     const ytid = m[1].split(',').map((s) => s.trim())[0];
     const allmatch = m[0];
     let html: string;
-    if (theme_config.amp) {
+    if (typeof config.amp === 'boolean' && config.amp) {
       html = `<amp-youtube
       id="video-container-${count}"
       data-videoid="${ytid}"

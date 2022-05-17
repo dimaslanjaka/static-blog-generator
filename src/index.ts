@@ -3,6 +3,8 @@ import moment from 'moment';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper } from './dateMapper';
+import { shortcodeCss } from './gulp/shortcodes/css';
+import parseShortCodeInclude from './gulp/shortcodes/include';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { DynamicObject } from './types';
@@ -73,8 +75,13 @@ export type postMap = DynamicObject & {
   body?: string;
 };
 
-const default_options = {
-  shortcodes: false
+interface ParseOptions {
+  shortcodes?: boolean;
+  sourceFile?: null | string;
+}
+const default_options: ParseOptions = {
+  shortcodes: false,
+  sourceFile: null
 };
 
 /**
@@ -180,14 +187,21 @@ function originalParsePost(text: string, options = default_options): postMap | n
       }
     }
 
-    if (options.shortcodes) {
+    if (typeof options === 'object' && options.shortcodes) {
+      let sourceFile: string;
+      if (!isFile) {
+        if (!options.sourceFile) throw new Error('Shortcodes cannot process if options.sourceFile does not exist');
+        sourceFile = options.sourceFile;
+      } else {
+        sourceFile = toUnix(originalArg);
+      }
       // @todo process shortcodes
-      if (body) {
-        //body = parseShortCodeInclude(publicFile, body);
+      if (body && sourceFile) {
+        body = parseShortCodeInclude(sourceFile, body);
         //body = shortcodeNow(publicFile, body);
         //body = shortcodeScript(publicFile, body);
         //body = replaceMD2HTML(body);
-        //body = shortcodeCss(publicFile, body);
+        body = shortcodeCss(sourceFile, body);
         //body = extractText(publicFile, body);
         //body = shortcodeYoutube(body);
       }

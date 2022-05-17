@@ -89,6 +89,7 @@ const def = {
 
 type MergeData = Partial<typeof data> & Partial<typeof def>;
 interface Config extends Partial<MergeData> {
+  amp?: any;
   default_tag?: string;
   default_category?: string;
   content?: string;

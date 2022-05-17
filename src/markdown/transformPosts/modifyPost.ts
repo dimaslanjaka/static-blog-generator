@@ -1,21 +1,21 @@
 import chalk from 'chalk';
+import moment from 'moment';
+import yargs from 'yargs';
+import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
+import { shortcodeCss } from '../../gulp/shortcodes/css';
+import extractText from '../../gulp/shortcodes/extract-text';
+import parseShortCodeInclude from '../../gulp/shortcodes/include';
+import { shortcodeScript } from '../../gulp/shortcodes/script';
+import { shortcodeNow } from '../../gulp/shortcodes/time';
+import { shortcodeYoutube } from '../../gulp/shortcodes/youtube';
+import { isValidHttpUrl } from '../../gulp/utils';
+import CacheFile from '../../node/cache';
 import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
 import config, { post_generated_dir } from '../../types/_config';
-import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
-import { shortcodeCss } from '../../gulp/shortcode/css';
-import extractText from '../../gulp/shortcode/extract-text';
-import parseShortCodeInclude from '../../gulp/shortcode/include';
-import { shortcodeScript } from '../../gulp/shortcode/script';
-import { shortcodeNow } from '../../gulp/shortcode/time';
-import { shortcodeYoutube } from '../../gulp/shortcode/youtube';
-import yargs from 'yargs';
-import CacheFile from '../../node/cache';
 import ErrorMarkdown from '../error-markdown';
-import moment from 'moment';
 import { postMap } from './parsePost';
 import { archiveMap, mergedPostMap } from './postMapper';
-import { isValidHttpUrl } from '../../gulp/utils';
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const modCache = new CacheFile('modifyPost');
@@ -161,7 +161,7 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
         'javascript',
         'html',
         'mysql',
-        'database',
+        'database'
       ];
       const containsTag = programTags.some((r) => {
         const matchTag = parse.metadata.tags
