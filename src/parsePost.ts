@@ -6,7 +6,9 @@ import { dateMapper } from './dateMapper';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { shortcodeCss } from './shortcodes/css';
+import replaceMD2HTML from './shortcodes/hyperlinks-md2html';
 import parseShortCodeInclude from './shortcodes/include';
+import { shortcodeScript } from './shortcodes/script';
 import { DynamicObject } from './types';
 import config from './types/_config';
 
@@ -252,8 +254,8 @@ export function parsePost(text: string, options = default_options): postMap | nu
         if (body && sourceFile) {
           if (shortcodes.include) body = parseShortCodeInclude(sourceFile, body);
           //body = shortcodeNow(publicFile, body);
-          //body = shortcodeScript(publicFile, body);
-          //body = replaceMD2HTML(body);
+          if (shortcodes.script) body = shortcodeScript(sourceFile, body);
+          if (shortcodes.link) body = replaceMD2HTML(body);
           if (shortcodes.css) body = shortcodeCss(sourceFile, body);
           //body = extractText(publicFile, body);
           //body = shortcodeYoutube(body);

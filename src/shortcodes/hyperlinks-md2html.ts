@@ -1,5 +1,4 @@
-import 'js-prototypes';
-import color from '../../node/color';
+import color from '../node/color';
 // fix all hyperlinks endsWith .md
 // [test](test.md) -> [test](test.html)
 const regex = /\[([^\]]+)\]\(([^)]+(.md))\)/gim;
@@ -10,8 +9,8 @@ const logname = color['Blizzard Blue']('[replaceMD2HTML]');
  * @param content body string
  * @returns
  */
-export default function replaceMD2HTML(content: string) {
-  if (content.isMatch(regex)) {
+export function replaceMD2HTML(content: string) {
+  if (content.match(regex)) {
     content = content.replace(regex, function (wholeMatch, _index1, index2, index3) {
       // act here or after the loop...
       //console.log(index2, index3);
@@ -24,3 +23,5 @@ export default function replaceMD2HTML(content: string) {
   }
   return content;
 }
+
+export default replaceMD2HTML;

@@ -1,13 +1,13 @@
 import chalk from 'chalk';
 import moment from 'moment';
 import yargs from 'yargs';
-import replaceMD2HTML from '../../gulp/fix/hyperlinks-md2html';
 import { isValidHttpUrl } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
 import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
 import { shortcodeCss } from '../../shortcodes/css';
 import extractText from '../../shortcodes/extract-text';
+import replaceMD2HTML from '../../shortcodes/hyperlinks-md2html';
 import parseShortCodeInclude from '../../shortcodes/include';
 import { shortcodeScript } from '../../shortcodes/script';
 import { shortcodeNow } from '../../shortcodes/time';

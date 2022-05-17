@@ -7,7 +7,7 @@ const tmp = join(__dirname, '../tmp');
 for (const filePath of files) {
   const parse = parsePost(filePath, {
     formatDate: true,
-    shortcodes: { youtube: true, include: true, css: true, script: true }
+    shortcodes: { youtube: true, include: true, css: true, script: true, link: true }
   });
   writeFileSync(join(tmp, basename(filePath, '.md') + '.body.md'), parse.body);
 
