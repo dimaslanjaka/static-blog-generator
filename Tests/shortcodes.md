@@ -63,7 +63,7 @@ Manually set type `playlist`
 
 ## Shortcode extract-text
 ```html
-<!-- extract-text shortcodes/include.html -->
+<!-- extract-text shortcodes/include.txt -->
 ```
 
 ## Shortcode now()
