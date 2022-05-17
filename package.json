@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "moment": "^2.29.3",
+    "persistent-cache": "file:./packages/persistent-cache",
     "upath": "^2.0.1",
     "yaml": "^2.1.0"
   }

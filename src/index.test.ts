@@ -2,12 +2,22 @@ import { PathLike, readdirSync, writeFileSync } from 'fs';
 import { basename, join } from 'upath';
 import { parsePost } from '.';
 
-const files = walkSync(join(__dirname, '../src-posts/Tests')).filter((path) => path.endsWith('.md'));
+const files = walkSync(join(__dirname, '../src-posts/Tests')).filter((path) =>
+  path.endsWith('.md')
+);
 const tmp = join(__dirname, '../tmp');
 for (const filePath of files) {
   const parse = parsePost(filePath, {
     formatDate: true,
-    shortcodes: { youtube: true, include: true, css: true, script: true, link: true, text: true, now: true }
+    shortcodes: {
+      youtube: true,
+      include: true,
+      css: true,
+      script: true,
+      link: true,
+      text: true,
+      now: true
+    }
   });
   writeFileSync(join(tmp, basename(filePath, '.md') + '.body.md'), parse.body);
 
@@ -16,7 +26,10 @@ for (const filePath of files) {
   parse.content = 'body';
   parse.config = {};
 
-  writeFileSync(join(tmp, basename(filePath, '.md') + '.json'), JSON.stringify(parse, null, 2));
+  writeFileSync(
+    join(tmp, basename(filePath, '.md') + '.json'),
+    JSON.stringify(parse, null, 2)
+  );
 }
 
 /**

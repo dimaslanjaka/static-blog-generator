@@ -1,7 +1,8 @@
 import { existsSync, readFileSync, statSync } from 'fs';
 import moment from 'moment';
-import { toUnix } from 'upath';
+import { join, toUnix } from 'upath';
 import yaml from 'yaml';
+import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
@@ -15,6 +16,11 @@ import { shortcodeYoutube } from './shortcodes/youtube';
 import { DynamicObject } from './types';
 import config from './types/_config';
 
+const _cache = cache({
+  base: join(process.cwd(), 'node_modules/.cache/persistent'),
+  name: 'parsePost',
+  duration: 1000 * 3600 * 240 // 240 hours
+});
 const homepage = new URL(config.url);
 
 /**
@@ -80,7 +86,6 @@ export type postMap = DynamicObject & {
    */
   body?: string;
 };
-
 export interface ParseOptions {
   shortcodes?: {
     /**
@@ -114,6 +119,7 @@ export interface ParseOptions {
      */
     now: boolean;
   };
+  cache?: boolean;
   /**
    * Source File, keep empty when first parameter (text) is file
    */
@@ -144,7 +150,8 @@ const default_options: ParseOptions = {
   },
   sourceFile: null,
   formatDate: false,
-  config
+  config,
+  cache: false
 };
 
 export type DeepPartial<T> = T extends object
@@ -160,7 +167,10 @@ export type DeepPartial<T> = T extends object
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function parsePost(text: string, options: DeepPartial<ParseOptions> = {}): postMap | null {
+export function parsePost(
+  text: string,
+  options: DeepPartial<ParseOptions> = {}
+): postMap | null {
   options = Object.assign(default_options, options);
   const config = options.config;
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
@@ -205,8 +215,10 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
     }
 
     // @todo set default category and tags
-    if ((!meta.category || !meta.category.length) && config.default_category) meta.category = [config.default_category];
-    if ((!meta.tags || !meta.tags.length) && config.default_tag) meta.tags = [config.default_tag];
+    if ((!meta.category || !meta.category.length) && config.default_category)
+      meta.category = [config.default_category];
+    if ((!meta.tags || !meta.tags.length) && config.default_tag)
+      meta.tags = [config.default_tag];
 
     // @todo set default date post
     if (!meta.date) meta.date = moment().format();
@@ -221,7 +233,8 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
     }
 
     // @todo set default enable comments
-    if (typeof meta.comments == 'undefined' || meta.comments == null) meta.comments = true;
+    if (typeof meta.comments == 'undefined' || meta.comments == null)
+      meta.comments = true;
     // @todo set default wordcount to 0
     if (!meta.wordcount) meta.wordcount = 0;
 
@@ -283,7 +296,10 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
         const shortcodes = options.shortcodes;
         let sourceFile: string;
         if (!isFile) {
-          if (!options.sourceFile) throw new Error('Shortcodes cannot process if options.sourceFile does not exist');
+          if (!options.sourceFile)
+            throw new Error(
+              'Shortcodes cannot process if options.sourceFile does not exist'
+            );
           sourceFile = options.sourceFile;
         } else {
           sourceFile = toUnix(originalArg);
@@ -291,7 +307,8 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
 
         if (body) {
           if (sourceFile) {
-            if (shortcodes.include) body = parseShortCodeInclude(sourceFile, body);
+            if (shortcodes.include)
+              body = parseShortCodeInclude(sourceFile, body);
             if (shortcodes.now) body = shortcodeNow(sourceFile, body);
             if (shortcodes.script) body = shortcodeScript(sourceFile, body);
             if (shortcodes.css) body = shortcodeCss(sourceFile, body);
@@ -313,7 +330,11 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
     // put fileTree
     if (isFile) {
       result.fileTree = {
-        source: replaceArr(toUnix(originalArg), ['source/_posts/', '_posts/'], 'src-posts/'),
+        source: replaceArr(
+          toUnix(originalArg),
+          ['source/_posts/', '_posts/'],
+          'src-posts/'
+        ),
         public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/')
       };
     }
