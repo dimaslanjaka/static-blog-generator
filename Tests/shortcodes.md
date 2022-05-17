@@ -10,26 +10,26 @@ type: page
 ## Shortcode CSS
 From Local Directory
 
-```css
+```html
 <!-- css shortcodes/include.css -->
 ```
 
 From Root/cwd Directory
 
-```css
+```html
 <!-- css /src-posts/Tests/shortcodes/include.css -->
 ```
 
 ## Shortcode JS
 From Local Directory
 
-```js
+```html
 <!-- script shortcodes/include.js -->
 ```
 
 From Root/cwd Directory
 
-```js
+```html
 <!-- script /src-posts/Tests/shortcodes/include.js -->
 ```
 
