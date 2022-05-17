@@ -34,7 +34,6 @@
     "@types/rimraf": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.24.0",
     "@typescript-eslint/parser": "^5.24.0",
-    "chalk": "^4.1.0",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -45,6 +44,7 @@
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "chalk": "^4.1.0",
     "deepmerge-ts": "^4.0.3",
     "moment": "^2.29.3",
     "persistent-cache": "git+https://github.com/LionC/persistent-cache.git#master",
