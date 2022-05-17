@@ -3,10 +3,11 @@ import moment from 'moment';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper } from './dateMapper';
+import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { DynamicObject } from './types';
 import config from './types/_config';
-const homepage = new URL(config.url);
+//const homepage = new URL(config.url);
 
 /**
  * post metadata information (title, etc)
@@ -79,7 +80,7 @@ export type postMap = DynamicObject & {
  * * no cacheable
  * @param text file path or string markdown contents
  */
-export function originalParsePost(text: string, ..._: any[]): postMap | null {
+function originalParsePost(text: string, ..._: any[]): postMap | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -115,16 +116,15 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
         .reduce(
           (acc, key) => ({
             ...acc,
-            [key]: meta[key],
+            [key]: meta[key]
           }),
           {}
         ) as postMap['metadata'];
     }
+
     // default category and tags
-    if (!meta.category) meta.category = [config.default_category];
-    if (!meta.category.length) meta.category.push(config.default_category);
-    if (!meta.tags) meta.tags = [config.default_tag];
-    if (!meta.tags.length) meta.tags.push(config.default_tag);
+    if ((!meta.category || !meta.category.length) && config.default_category) meta.category = [config.default_category];
+    if ((!meta.tags || !meta.tags.length) && config.default_tag) meta.tags = [config.default_tag];
 
     // default date post
     if (!meta.date) meta.date = moment().format();
@@ -180,13 +180,13 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
       metadata: meta,
       body: body,
       content: body,
-      config: config,
+      config: config
     };
     // put fileTree
     if (isFile) {
       result.fileTree = {
-        source: toUnix(originalArg).replaceArr(['source/_posts/', '_posts/'], 'src-posts/'),
-        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/'),
+        source: replaceArr(toUnix(originalArg), ['source/_posts/', '_posts/'], 'src-posts/'),
+        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/')
       };
     }
     return result;
@@ -200,3 +200,7 @@ export function originalParsePost(text: string, ..._: any[]): postMap | null {
   const testPage = Array.from(text.matchAll(regexPage)).map(mapper)[0];
   return testPage;
 }
+
+const parsePost = originalParsePost;
+export default parsePost;
+export { parsePost };
