@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "moment": "^2.29.3",
-    "persistent-cache": "file:./packages/persistent-cache",
+    "persistent-cache": "git+https://github.com/LionC/persistent-cache.git#master",
     "upath": "^2.0.1",
     "yaml": "^2.1.0"
   }
