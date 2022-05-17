@@ -1,7 +1,9 @@
+import color from '../node/color';
 import config from '../types/_config';
 
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
+const logname = color['Vivid Tangerine']('[youtube]');
 
 export function shortcodeYoutube(content: string) {
   let m: RegExpExecArray;
@@ -53,6 +55,7 @@ layout="responsive"
 </div>
     `.trim();
     }
+    console.log(`${logname} id ${ytid} type ${type} successful transformed`);
     content = content.replace(allmatch, () => html);
   }
 
