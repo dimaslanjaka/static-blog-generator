@@ -49,7 +49,7 @@ layout="responsive"
       // https://flaviocopes.com/responsive-youtube-videos/
       html = `
 <div class="video-container">
-  <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
 </div>
     `;
     }
