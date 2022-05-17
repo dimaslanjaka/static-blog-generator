@@ -55,7 +55,7 @@ layout="responsive"
 </div>
     `.trim();
     }
-    console.log(`${logname} id ${ytid} type ${type} successful transformed`);
+    console.log(`${logname} transformed id ${ytid} type ${type}`);
     content = content.replace(allmatch, () => html);
   }
 
