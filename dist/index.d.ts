@@ -1,6 +1,7 @@
-import parsePost from './parsePost';
+import { buildPost } from './buildPost';
+import { parsePost } from './parsePost';
 export declare const obj: {
     parsePost: typeof parsePost;
 };
+export { parsePost, buildPost };
 export default obj;
-export { parsePost };
