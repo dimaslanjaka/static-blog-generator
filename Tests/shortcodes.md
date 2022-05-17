@@ -49,8 +49,14 @@ From Root/cwd Directory
 
 ## Shortcode Youtube
 By default youtube tag will output video
+```html
 {% youtube 4_oXjfgQ2G4 %}
-
-Manually set type
+```
+Manually set type `video`
+```html
 {% youtube 4_oXjfgQ2G4 'video' %}
+```
+Manually set type `playlist`
+```html
 {% youtube RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA 'playlist' %}
+```
