@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.md5 = exports.md5FileSync = void 0;
 const tslib_1 = require("tslib");
 const crypto_1 = tslib_1.__importDefault(require("crypto"));
-const fs_1 = tslib_1.__importDefault(require("fs"));
+const fs = tslib_1.__importStar(require("fs"));
 function md5FileSync(path) {
     let fileBuffer = Buffer.from(path);
-    if (fs_1.default.existsSync(path)) {
-        fileBuffer = fs_1.default.readFileSync(path);
+    if (fs.existsSync(path)) {
+        fileBuffer = fs.readFileSync(path);
     }
     const hashSum = crypto_1.default.createHash('sha256');
     hashSum.update(fileBuffer);
@@ -26,7 +26,7 @@ exports.md5 = md5;
 function md5File(path) {
     return new Promise((resolve, reject) => {
         const output = crypto_1.default.createHash('md5');
-        const input = fs_1.default.createReadStream(path);
+        const input = fs.createReadStream(path);
         input.on('error', (err) => {
             reject(err);
         });

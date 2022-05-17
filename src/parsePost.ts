@@ -4,6 +4,7 @@ import { join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
+import { md5 } from './node/md5-file';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { shortcodeCss } from './shortcodes/css';
@@ -17,7 +18,7 @@ import { DynamicObject } from './types';
 import config from './types/_config';
 
 const _cache = cache({
-  base: join(process.cwd(), 'node_modules/.cache/persistent'),
+  base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'parsePost',
   duration: 1000 * 3600 * 240 // 240 hours
 });
@@ -338,6 +339,9 @@ export function parsePost(
         public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/')
       };
     }
+
+    _cache.putSync(md5(meta.title), result);
+
     return result;
   };
 

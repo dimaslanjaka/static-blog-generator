@@ -6,7 +6,9 @@ const fs_1 = require("fs");
 const moment_1 = tslib_1.__importDefault(require("moment"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
+const persistent_cache_1 = tslib_1.__importDefault(require("../packages/persistent-cache"));
 const dateMapper_1 = require("./dateMapper");
+const md5_file_1 = require("./node/md5-file");
 const utils_1 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
 const css_1 = require("./shortcodes/css");
@@ -17,6 +19,11 @@ const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
 const _config_1 = tslib_1.__importDefault(require("./types/_config"));
+const _cache = (0, persistent_cache_1.default)({
+    base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
+    name: 'parsePost',
+    duration: 1000 * 3600 * 240 // 240 hours
+});
 const homepage = new URL(_config_1.default.url);
 const default_options = {
     shortcodes: {
@@ -30,7 +37,8 @@ const default_options = {
     },
     sourceFile: null,
     formatDate: false,
-    config: _config_1.default
+    config: _config_1.default,
+    cache: false
 };
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
@@ -193,6 +201,7 @@ function parsePost(text, options = {}) {
                 public: (0, upath_1.toUnix)(originalArg).replace('/src-posts/', '/source/_posts/')
             };
         }
+        _cache.putSync((0, md5_file_1.md5)(meta.title), result);
         return result;
     };
     // process parsing

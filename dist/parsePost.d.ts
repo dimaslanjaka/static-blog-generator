@@ -97,6 +97,7 @@ export interface ParseOptions {
          */
         now: boolean;
     };
+    cache?: boolean;
     /**
      * Source File, keep empty when first parameter (text) is file
      */

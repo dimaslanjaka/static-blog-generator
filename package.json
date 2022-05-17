@@ -8,6 +8,10 @@
     "build": "rimraf dist/* && tsc -p tsconfig.build.json",
     "format": "prettier -w src/**/*.ts"
   },
+  "files": [
+    "packages",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/hexo-post-parser.git"

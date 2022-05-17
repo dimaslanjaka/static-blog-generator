@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import fs from 'fs';
+import * as fs from 'fs';
 
 export function md5FileSync(path: string) {
   let fileBuffer: Buffer = Buffer.from(path);
