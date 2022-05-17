@@ -84,13 +84,24 @@ export interface ParseOptions {
     youtube: boolean;
     link: boolean;
   }>;
+  /**
+   * Source File, keep empty when first parameter (text) is file
+   */
   sourceFile?: null | string;
+  /**
+   * Format dates?
+   */
   formatDate?:
     | boolean
     | {
         pattern: string;
       };
+  /**
+   * Site Config
+   */
+  config?: Partial<typeof config>;
 }
+
 const default_options: ParseOptions = {
   shortcodes: {
     css: false,
@@ -100,17 +111,18 @@ const default_options: ParseOptions = {
     link: false
   },
   sourceFile: null,
-  formatDate: false
+  formatDate: false,
+  config
 };
 
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
- * * return metadata {string & object} and body
- * * return null == failed
+ * * return {@link postMap} metadata {string & object} and body
+ * * return {@link null} == failed
  * * no cacheable
  * @param text file path or string markdown contents
  */
-function originalParsePost(text: string, options = default_options): postMap | null {
+export function parsePost(text: string, options = default_options): postMap | null {
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
@@ -275,6 +287,4 @@ function originalParsePost(text: string, options = default_options): postMap | n
   return testPage;
 }
 
-const parsePost = originalParsePost;
 export default parsePost;
-export { parsePost };

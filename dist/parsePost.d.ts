@@ -1,0 +1,98 @@
+import { dateMapper } from './dateMapper';
+import { DynamicObject } from './types';
+import config from './types/_config';
+/**
+ * post metadata information (title, etc)
+ */
+export declare type postMeta = DynamicObject & {
+    /**
+     * Article language code
+     */
+    lang?: string;
+    /**
+     * Article title
+     */
+    title: string;
+    subtitle: string;
+    uuid?: string;
+    updated?: string | dateMapper;
+    date: string | dateMapper;
+    description?: string;
+    tags: string[];
+    category: string[];
+    photos?: string[];
+    cover?: string;
+    thumbnail?: string;
+    /**
+     * full url
+     */
+    url?: string;
+    /**
+     * just pathname
+     */
+    permalink?: string;
+    /**
+     * archive (index, tags, categories)
+     */
+    type?: 'post' | 'page' | 'archive';
+};
+export declare type postMap = DynamicObject & {
+    /**
+     * Article metadata
+     */
+    metadataString?: string;
+    fileTree?: {
+        /**
+         * [post source] post file from `src-posts/`
+         */
+        source?: string;
+        /**
+         * [public source] post file from source_dir _config.yml
+         */
+        public?: string;
+    };
+    /**
+     * _config.yml
+     */
+    config?: typeof config | null;
+    /**
+     * Article metadata
+     */
+    metadata?: Partial<postMeta>;
+    /**
+     * Article body
+     */
+    body?: string;
+};
+export interface ParseOptions {
+    shortcodes?: Partial<{
+        css: boolean;
+        script: boolean;
+        include: boolean;
+        youtube: boolean;
+        link: boolean;
+    }>;
+    /**
+     * Source File, keep empty when first parameter (text) is file
+     */
+    sourceFile?: null | string;
+    /**
+     * Format dates?
+     */
+    formatDate?: boolean | {
+        pattern: string;
+    };
+    /**
+     * Site Config
+     */
+    config?: Partial<typeof config>;
+}
+/**
+ * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
+ * * return {@link postMap} metadata {string & object} and body
+ * * return {@link null} == failed
+ * * no cacheable
+ * @param text file path or string markdown contents
+ */
+export declare function parsePost(text: string, options?: ParseOptions): postMap | null;
+export default parsePost;
