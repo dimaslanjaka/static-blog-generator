@@ -16,7 +16,7 @@ export function shortcodeYoutube(content: string) {
     const split = m[1].split(' ').map((s) => s.trim());
     const ytid = split[0];
     const allmatch = m[0];
-    console.log(split[1]);
+    //console.log(split[1]);
     let type: 'video' | 'playlist' = 'video';
     if (split[1]) {
       if (split[1].includes('playlist')) type = 'playlist';
