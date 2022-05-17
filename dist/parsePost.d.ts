@@ -120,7 +120,6 @@ export declare type DeepPartial<T> = T extends object ? {
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
  * * return {@link null} == failed
- * * no cacheable
  * @param text file path or string markdown contents
  */
 export declare function parsePost(text: string, options?: DeepPartial<ParseOptions>): postMap | null;

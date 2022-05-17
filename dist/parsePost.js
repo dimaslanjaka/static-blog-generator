@@ -45,7 +45,6 @@ const default_options = {
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
  * * return {@link null} == failed
- * * no cacheable
  * @param text file path or string markdown contents
  */
 function parsePost(text, options = {}) {
