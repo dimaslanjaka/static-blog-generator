@@ -1,5 +1,5 @@
 import fs from 'fs';
-import 'js-prototypes';
+import config from '../types/_config';
 
 /**
  * Current date time
@@ -10,7 +10,7 @@ export function now() {
     new Date()
       //.toISOString()
       .toLocaleString('en-US', {
-        timeZone: 'Asia/Jakarta',
+        timeZone: config.timezone
       })
       .replace(/T/, ' ') // replace T with a space
       .replace(/\..+/, '')
@@ -34,3 +34,5 @@ export function shortcodeNow(file: string | fs.PathLike, read: string) {
   }
   return read;
 }
+
+export default shortcodeNow;

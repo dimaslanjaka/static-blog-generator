@@ -10,6 +10,7 @@ import { extractText } from './shortcodes/extractText';
 import { replaceMD2HTML } from './shortcodes/hyperlinks-md2html';
 import { parseShortCodeInclude } from './shortcodes/include';
 import { shortcodeScript } from './shortcodes/script';
+import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { DynamicObject } from './types';
 import config from './types/_config';
@@ -103,9 +104,15 @@ export interface ParseOptions {
      */
     link: boolean;
     /**
-     * Transform shortcode ``
+     * Transform shortcode `<!-- extract-text path/to/file -->`
+     * @see {@link extractText}
      */
     text: boolean;
+    /**
+     * Transform shortcode `<!-- now() -->`
+     * @see {@link shortcodeNow}
+     */
+    now: boolean;
   };
   /**
    * Source File, keep empty when first parameter (text) is file
@@ -132,7 +139,8 @@ const default_options: ParseOptions = {
     include: false,
     youtube: false,
     link: false,
-    text: false
+    text: false,
+    now: false
   },
   sourceFile: null,
   formatDate: false,
@@ -283,7 +291,7 @@ export function parsePost(text: string, options: DeepPartial<ParseOptions> = {})
 
         if (body && sourceFile) {
           if (shortcodes.include) body = parseShortCodeInclude(sourceFile, body);
-          //body = shortcodeNow(publicFile, body);
+          if (shortcodes.now) body = shortcodeNow(sourceFile, body);
           if (shortcodes.script) body = shortcodeScript(sourceFile, body);
           if (shortcodes.link) body = replaceMD2HTML(body);
           if (shortcodes.css) body = shortcodeCss(sourceFile, body);
