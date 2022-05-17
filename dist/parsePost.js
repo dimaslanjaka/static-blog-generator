@@ -122,13 +122,19 @@ function parsePost(text, options = {}) {
             meta.excerpt = meta.subtitle;
             meta.description = meta.subtitle;
         }
-        if (meta.description && !meta.excerpt) {
+        else if (meta.description && !meta.excerpt) {
             meta.subtitle = meta.description;
             meta.excerpt = meta.description;
         }
-        if (meta.excerpt && !meta.description) {
+        else if (meta.excerpt && !meta.description) {
             meta.description = meta.excerpt;
             meta.subtitle = meta.excerpt;
+        }
+        else {
+            const newExcerpt = `${meta.title} - ${config.title}`;
+            meta.description = newExcerpt;
+            meta.subtitle = newExcerpt;
+            meta.excerpt = newExcerpt;
         }
         if (isFile) {
             // setup permalink

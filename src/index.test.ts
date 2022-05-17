@@ -1,6 +1,7 @@
 import { PathLike, readdirSync, writeFileSync } from 'fs';
 import { basename, join } from 'upath';
 import { parsePost } from '.';
+import buildPost from './buildPost';
 
 const files = walkSync(join(__dirname, '../src-posts/Tests')).filter((path) =>
   path.endsWith('.md')
@@ -31,6 +32,8 @@ for (const filePath of files) {
     join(tmp, basename(filePath, '.md') + '.json'),
     JSON.stringify(parse, null, 2)
   );
+
+  writeFileSync(join(tmp, basename(filePath, '.md') + '.md'), buildPost(parse));
 }
 
 /**
