@@ -14,6 +14,7 @@ subtitle: Lazy load images bloggerlazy loading blogger berguna untuk Mempercepat
   laman webMeningkatkan rating pagespeedHTML Usage<img alt=
 tags:
   - JAVASCRIPT
+  - Blogging
 title: Lazy load images blogger
 type: post
 uuid: 2314fa90-b3fc-4888-8acc-cc21e65058ad

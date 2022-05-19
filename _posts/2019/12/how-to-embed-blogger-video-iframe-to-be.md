@@ -17,6 +17,7 @@ tags:
   - HTML
   - Tips & Tricks
   - Tips & Tricks
+  - Blogging
 title: How To Embed Blogger Video Iframe To Be Responsive
 type: post
 uuid: c2a0c109-08e1-4888-8773-0219f99b340d

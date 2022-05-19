@@ -11,6 +11,17 @@ toc: true
 updated: 2022-03-21T15:42:35+07:00
 uuid: 3aff2ffd-22b7-4888-8a2a-9db0f2b147a6
 webtitle: Chimeraland
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 211
 excerpt: Spawn locations of flowers

@@ -14,6 +14,7 @@ subtitle: How to edit the template blogger or blogspot
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to edit the template blogger or blogspot
 type: post
 uuid: feca69da-0deb-4888-8a1b-1be0b2091178

@@ -18,6 +18,17 @@ uuid: b0632b47-3fa3-4888-8d99-bc3a7a83a437
 thumbnail: https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
 photos:
   - https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 303
 excerpt: Google recaptcha V3 support reload token without Reload Pages

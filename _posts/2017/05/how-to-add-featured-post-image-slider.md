@@ -17,6 +17,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How to add Featured Post Image Slider Widget Blogger
 type: post
 uuid: a26fc0cb-d479-4888-8820-491f84f7573e

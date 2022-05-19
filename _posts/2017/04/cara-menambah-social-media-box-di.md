@@ -15,6 +15,7 @@ tags:
   - Blogger
   - HTML
   - AMP
+  - Blogging
 title: Cara menambah social media box di blogger AMP
 type: post
 uuid: c47ff08d-7907-4888-8914-b04d6b6c04d5

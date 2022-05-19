@@ -14,6 +14,7 @@ subtitle: h2>Is there any Blogger blogspot not portable contingent
   arrangement.</h2>Someone ask to stackoverflow like this.<br /><br />I would
 tags:
   - Blogger
+  - Blogging
 title: conditional tags blogger for desktop only
 type: post
 uuid: 24793524-327a-4888-8df4-3dfeac1f9f0c

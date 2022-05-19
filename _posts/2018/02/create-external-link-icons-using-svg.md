@@ -20,6 +20,7 @@ tags:
   - Blogging
   - Tips & Tricks
   - JAVASCRIPT
+  - Blogging
 title: Create External Link Icons Using SVG without JavaScript In Blogger
 type: post
 uuid: f23ed2a9-8e62-4888-8613-6b657a3bef63

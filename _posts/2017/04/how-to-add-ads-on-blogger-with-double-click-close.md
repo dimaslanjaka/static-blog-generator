@@ -17,6 +17,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How To Add Ads On Blogger With Double Clicks Close
 type: post
 uuid: 87e5ba7e-dab9-4888-84e8-3d0244d1cfbe

@@ -15,6 +15,7 @@ subtitle: Actually Blogger has been updating its share button quite a bit by
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to Modify Blogger Share Button Tweak Valid HTML5 CSS3
 type: post
 uuid: 5bff3658-fdb3-4888-8564-5013357f8da9

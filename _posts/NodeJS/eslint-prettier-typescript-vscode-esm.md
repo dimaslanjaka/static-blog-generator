@@ -21,6 +21,17 @@ uuid: 7fc9817d-e4da-4888-8b90-6d4d163e3a21
 thumbnail: https://eslint.org/assets/img/favicon.512x512.png
 photos:
   - https://eslint.org/assets/img/favicon.512x512.png
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 243
 excerpt: Auto format typescript with esm using only eslint and prettier module

@@ -16,6 +16,7 @@ tags:
   - CSS
   - Blogger
   - HTML
+  - Blogging
 title: Replacing the Label Widget Blogger Function to Be Dropdown
 type: post
 uuid: 0d4a547a-60b5-4888-8448-1d32f7c4a515

@@ -17,6 +17,7 @@ tags:
   - HTML
   - Blogging
   - Tips & Tricks
+  - Blogging
 title: How to Remove a URL ERROR Automatically on blogger
 type: post
 uuid: 5b92891a-85be-4888-8f94-42e68f94f57d

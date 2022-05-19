@@ -14,6 +14,7 @@ subtitle: Multilingual hreflang tag for blogger - Website Manajemen Indonesia
 tags:
   - Blogger
   - HTML
+  - Blogging
 title: Multilingual hreflang tag for blogger
 type: post
 uuid: 311f5e95-9357-4888-8e79-5aa7f73bd36c

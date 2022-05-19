@@ -17,6 +17,7 @@ tags:
   - Blogger
   - HTML
   - AMP
+  - Blogging
 title: Cara Menambah Contact Form Di AMP Blogger Tanpa Menggunakan amp-iframe
 type: post
 uuid: 7e5d42f5-c6dc-4888-806e-39a5ef2899d2

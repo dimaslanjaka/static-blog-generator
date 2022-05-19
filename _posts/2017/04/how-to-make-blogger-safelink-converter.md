@@ -15,6 +15,7 @@ subtitle: How to Make Blogger Safelink Converter v Understanding What is
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to Make Blogger Safelink Converter v3
 type: post
 uuid: 102470c4-cd9e-4888-8e1f-fb9c2d8d0255

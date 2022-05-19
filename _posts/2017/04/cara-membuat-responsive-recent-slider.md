@@ -18,6 +18,7 @@ tags:
   - JAVASCRIPT
   - Blogger
   - HTML
+  - Blogging
 title: Cara membuat Responsive Recent Slider Widget keren di Blogger
 type: post
 uuid: f8c59679-f117-4888-8fe1-7e73753630a3

@@ -16,6 +16,7 @@ tags:
   - Adsense
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to Enable Ads.txt on Blogger
 type: post
 uuid: 6108a20c-0bdd-4888-84a2-d70c8eb4bdad

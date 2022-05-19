@@ -16,6 +16,7 @@ tags:
   - CSS
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to Remove Blogger sidebar and make spesific pages at full width
 type: post
 uuid: f022bcf7-8090-4888-8d55-e5b51dcd10a1

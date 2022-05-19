@@ -19,6 +19,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How To Create a Blogger Contact Popup Comes With Google Maps
 type: post
 uuid: 142b9042-54b0-4888-80dd-d1407aacadc9

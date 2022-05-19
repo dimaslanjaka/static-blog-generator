@@ -15,6 +15,7 @@ subtitle: Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan
 tags:
   - Adsense
   - Blogger
+  - Blogging
 title: Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam
   Blogger Post
 type: post

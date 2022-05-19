@@ -15,6 +15,7 @@ tags:
   - Blogger
   - Tips & Tricks
   - Tips & Tricks
+  - Blogging
 title: How to bulk add category label to blogger posts
 type: post
 uuid: c30aa17b-a017-4888-8e53-8e89093179ac

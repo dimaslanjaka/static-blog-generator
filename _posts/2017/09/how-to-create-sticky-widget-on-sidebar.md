@@ -17,6 +17,7 @@ tags:
   - JAVASCRIPT
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to create sticky widget on sidebar blogger
 type: post
 uuid: bb943112-1738-4888-8824-d420c024992b

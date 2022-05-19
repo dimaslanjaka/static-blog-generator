@@ -8,6 +8,17 @@ webtitle: NodeJS
 category:
   - Uncategorized
 tags: []
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 88
 excerpt: macam-macam source pattern pada gulp

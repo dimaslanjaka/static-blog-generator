@@ -14,6 +14,7 @@ subtitle: Easy Ways to Make About Us On Blogger Widget Do you need to feature
   the About Us on the journal and dont recognize how
 tags:
   - Blogger
+  - Blogging
 title: Easy Ways to Make About Us On Blogger Widget
 type: post
 uuid: 0fb9be8e-d2b6-4888-891c-7078ba39442a

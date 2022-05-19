@@ -18,6 +18,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How to Make Colored Recent Post Widget Blogger
 type: post
 uuid: 9473cb43-6cd3-4888-80d6-aac02d0581c2

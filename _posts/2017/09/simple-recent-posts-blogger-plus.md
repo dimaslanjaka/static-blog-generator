@@ -18,6 +18,7 @@ tags:
   - Blogging
   - Social Media
   - Tips & Tricks
+  - Blogging
 title: Simple Recent Posts Blogger Plus Thumbnails
 type: post
 uuid: 7c4871bb-f958-4888-8f73-1105aa764934

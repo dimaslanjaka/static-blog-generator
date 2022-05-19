@@ -7,6 +7,17 @@ uuid: d1881648-7619-4888-83a1-081cc2ef5f3f
 category:
   - Uncategorized
 tags: []
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 1
 description: index NodeJS - Website Manajemen Indonesia

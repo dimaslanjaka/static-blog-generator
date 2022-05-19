@@ -16,6 +16,7 @@ tags:
   - Blogger
   - HTML
   - AMP
+  - Blogging
 title: Cara Mempercepat Blogger Dengan dns-prefetch metatag
 type: post
 uuid: 5289e74a-6ef9-4888-8f2e-f29add41b8b5

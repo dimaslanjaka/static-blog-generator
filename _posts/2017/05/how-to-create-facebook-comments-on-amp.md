@@ -16,6 +16,7 @@ tags:
   - HTML
   - AMP
   - Tips & Tricks
+  - Blogging
 title: How to create facebook comments on AMP Blogger
 type: post
 uuid: 7cf55936-4dc6-4888-8910-545428872e42

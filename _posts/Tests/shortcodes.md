@@ -9,6 +9,17 @@ uuid: 19cd8465-198b-4888-87fd-81972ebaceb1
 category:
   - Uncategorized
 tags: []
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 110
 description: Parse Shortcodes - Website Manajemen Indonesia
@@ -103,6 +114,6 @@ Manually set type `playlist`
 
 ## Shortcode now()
 ```html
-5/19/2022, 3:57:56 PM
+5/19/2022, 6:26:19 PM
 ```
 

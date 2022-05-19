@@ -15,6 +15,7 @@ subtitle: Edit your functions.php of your themes. This also work on amp plugin
 tags:
   - Wordpress
   - PHP
+  - Blogging
 title: Get first post WORDPRESS tutorial
 type: post
 uuid: 45f43922-4882-4888-8a2d-eb9133ac6054

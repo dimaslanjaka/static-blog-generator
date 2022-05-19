@@ -17,6 +17,7 @@ tags:
   - HTML
   - PHP
   - Facebook
+  - Blogging
 title: Cara Menambahkan Komentar Facebook Di Wordpress Tanpa Plugin
 type: post
 uuid: 52cd2952-606b-4888-89a9-8aca71ed8953

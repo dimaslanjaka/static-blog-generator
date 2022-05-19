@@ -18,6 +18,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How to Create Dark Style Table Sitemap Blogger
 type: post
 uuid: 90825974-148f-4888-8d61-f9fdf41989d6

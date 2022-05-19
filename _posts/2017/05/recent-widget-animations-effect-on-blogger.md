@@ -16,6 +16,7 @@ tags:
   - CSS
   - Blogger
   - HTML
+  - Blogging
 title: Recent Widget Animation Effects On Blogger
 type: post
 uuid: 90ac57f2-8104-4888-8000-8cc0e203d812

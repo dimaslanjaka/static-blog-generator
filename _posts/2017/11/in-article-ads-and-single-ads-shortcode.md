@@ -17,6 +17,7 @@ tags:
   - Wordpress
   - AMP
   - PHP
+  - Blogging
 title: In Article Ads And Single Ads Shortcode Wordpress With WP AMP NINJA Plugin
 type: post
 uuid: 59068f6c-11ed-4888-89bb-2e406d19c3e5

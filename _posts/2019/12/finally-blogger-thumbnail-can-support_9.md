@@ -15,6 +15,7 @@ subtitle: Finally, the Blogger Thumbnail Can Support WEBP This is the result of
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: Finally the Blogger Thumbnail Can Support WEBP
 type: post
 uuid: 79969e71-fb68-4888-86fc-2b6bd37df609

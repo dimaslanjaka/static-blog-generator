@@ -15,6 +15,7 @@ subtitle: Menjadi pengguna WordPress bertahuntahun saya telah menemukan tidak
 tags:
   - Wordpress
   - PHP
+  - Blogging
 title: Cara membuat html sitemap wordpress tanpa plugin
 type: post
 uuid: 8fc54a2e-0266-4888-8b13-5f402223f504

@@ -17,6 +17,7 @@ tags:
   - JAVASCRIPT
   - PHP
   - JAVASCRIPT
+  - Blogging
 title: Auto Defer Or Async Javascript in Wordpress
 type: post
 uuid: a7a0caca-a663-4888-8939-131defcbf670

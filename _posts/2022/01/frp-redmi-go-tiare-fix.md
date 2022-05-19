@@ -18,6 +18,17 @@ tags: []
 thumbnail: /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
 photos:
   - /2022/01/04/frp-redmi-go-tiare-fix/cover.jpg
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 163
 excerpt: Bypass FRP Redmi GO Tiare Via MiFlash

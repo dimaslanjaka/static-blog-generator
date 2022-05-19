@@ -15,6 +15,7 @@ subtitle: Cara membuat banner sticky ads dengan tombol close di blogger -
 tags:
   - Blogger
   - HTML
+  - Blogging
 title: Cara membuat banner sticky ads dengan tombol close di blogger
 type: post
 uuid: ba85ad41-b46a-4888-8d93-937c14f0f69f

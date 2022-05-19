@@ -16,6 +16,7 @@ tags:
   - CSS
   - Blogger
   - HTML
+  - Blogging
 title: Simple Responsive HTML Sitemap Blogger
 type: post
 uuid: 68e8ebf0-929c-4888-89d0-5ddb317ae897

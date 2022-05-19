@@ -14,6 +14,7 @@ subtitle: OR
 tags:
   - CSS
   - Script
+  - Blogging
 title: Full page blogger css
 type: post
 uuid: 972fc323-d5ed-4888-8491-bfa6b8cb7607

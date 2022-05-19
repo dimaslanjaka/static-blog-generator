@@ -14,6 +14,7 @@ subtitle: How to add pages in blogger or blogspot
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to add pages in blogger or blogspot
 type: post
 uuid: dd9fdd65-6f66-4888-8295-a307ee4ac72b

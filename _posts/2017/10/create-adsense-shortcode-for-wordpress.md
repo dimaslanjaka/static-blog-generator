@@ -17,6 +17,7 @@ tags:
   - Adsense
   - Wordpress
   - PHP
+  - Blogging
 title: Create Adsense shortcode for WordPress
 type: post
 uuid: de960b3e-b799-4888-847a-210629943dee

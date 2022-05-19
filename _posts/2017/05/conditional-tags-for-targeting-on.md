@@ -14,6 +14,7 @@ subtitle: Ill explain a little what it is conditional tags. Conditional tags
   arebr />limiting a program command on certain conditions use a
 tags:
   - Blogger
+  - Blogging
 title: Conditional Tags For Targeting On Blogger Template Format
 type: post
 uuid: 6cf36b22-f184-4888-87bb-e2c0db711247

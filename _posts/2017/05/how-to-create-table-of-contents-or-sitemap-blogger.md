@@ -18,6 +18,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How to create a table of contents or sitemap in blogger or blogspot
 type: post
 uuid: 1e78f355-f172-4888-807e-c68e6e937a13

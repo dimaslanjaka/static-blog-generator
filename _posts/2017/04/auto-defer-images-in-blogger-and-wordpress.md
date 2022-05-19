@@ -17,6 +17,8 @@ tags:
   - JAVASCRIPT
   - Blogger
   - Blogging
+  - Blogging
+  - Blogging
 title: Auto Defer Images in Blogger And Wordpress
 type: post
 uuid: c39ef55c-ef82-4888-8d60-d7ea81d98dd4

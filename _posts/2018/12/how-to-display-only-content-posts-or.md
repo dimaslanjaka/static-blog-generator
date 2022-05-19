@@ -17,6 +17,7 @@ tags:
   - JAVASCRIPT
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to display only content posts or pages on blogger
 type: post
 uuid: f8b22dfb-deac-4888-87f5-a9df322b9759

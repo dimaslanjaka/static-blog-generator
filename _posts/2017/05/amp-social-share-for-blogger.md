@@ -19,6 +19,7 @@ tags:
   - HTML
   - Blogging
   - Social Media
+  - Blogging
 title: AMP Social Share for Blogger
 type: post
 uuid: 988645b6-3568-4888-870f-76561e070e93

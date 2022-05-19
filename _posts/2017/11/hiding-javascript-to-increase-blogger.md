@@ -17,6 +17,7 @@ tags:
   - JAVASCRIPT
   - Blogger
   - JAVASCRIPT
+  - Blogging
 title: Hiding javascript to increase blogger blog speed
 type: post
 uuid: 03edbb56-cb36-4888-8644-056f684badbd

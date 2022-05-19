@@ -17,6 +17,7 @@ tags:
   - Blogger
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How to Install Advertising Box on Blogger
 type: post
 uuid: eee1fd69-fdae-4888-80e6-51577a16731b

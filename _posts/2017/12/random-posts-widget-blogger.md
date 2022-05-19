@@ -17,6 +17,7 @@ tags:
   - JAVASCRIPT
   - Blogger
   - HTML
+  - Blogging
 title: Random Posts Widget Blogger
 type: post
 uuid: 3da62a95-bd6f-4888-8809-1abce2ec8463

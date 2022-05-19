@@ -15,6 +15,7 @@ subtitle: CSS Only Responsive Social Share Buttons For Blogger - Website
 tags:
   - CSS
   - Blogger
+  - Blogging
 title: CSS Only Responsive Social Share Buttons For Blogger
 type: post
 uuid: ac0254d5-f896-4888-8776-87dd70140911

@@ -16,6 +16,7 @@ tags:
   - SEO
   - Blogger
   - AMP
+  - Blogging
 title: Schema Blogposting Untuk Blogger AMP
 type: post
 uuid: ac1809c4-69b8-4888-83ef-e9cb959e9bc3

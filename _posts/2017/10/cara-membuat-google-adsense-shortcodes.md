@@ -15,6 +15,7 @@ tags:
   - Adsense
   - Wordpress
   - PHP
+  - Blogging
 title: Cara Membuat Google AdSense Shortcodes Untuk WordPress
 type: post
 uuid: cb1f4d19-8d45-4888-8215-f851589c0972

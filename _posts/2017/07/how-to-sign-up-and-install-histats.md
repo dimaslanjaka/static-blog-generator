@@ -15,6 +15,7 @@ subtitle: have long wanted to make a post about getting visitor data and widgets
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to Sign Up and Install Histats Widget on Blogger
 type: post
 uuid: ebda9ee9-ad64-4888-8d13-f39d5c330334

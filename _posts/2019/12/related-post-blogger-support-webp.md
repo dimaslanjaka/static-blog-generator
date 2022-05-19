@@ -16,6 +16,7 @@ tags:
   - Share
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: Related Post Blogger Support WEBP
 type: post
 uuid: bc803e2f-ab84-4888-83f2-4ff4d207af85

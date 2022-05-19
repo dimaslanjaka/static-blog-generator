@@ -10,9 +10,21 @@ category:
   - Uncategorized
 tags:
   - Tips & Tricks
+  - Blogging
 thumbnail: https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 537
 description: How to Overcome Automatic Scroll Up in Blogger XML Editor - Website

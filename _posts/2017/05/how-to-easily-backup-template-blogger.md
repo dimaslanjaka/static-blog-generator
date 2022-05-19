@@ -14,6 +14,7 @@ subtitle: How to easily backup template blogger or blogspot
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: How to easily backup template blogger or blogspot
 type: post
 uuid: 2dbc0f98-036e-4888-8d17-506916946998

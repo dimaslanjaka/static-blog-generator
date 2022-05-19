@@ -17,6 +17,7 @@ tags:
   - JAVASCRIPT
   - Blogger
   - HTML
+  - Blogging
 title: Stylish Full Sitemap Blogger
 type: post
 uuid: ba076905-bbac-4888-8b54-b6644506681b

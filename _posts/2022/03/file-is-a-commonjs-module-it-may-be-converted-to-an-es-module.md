@@ -17,6 +17,17 @@ category:
 thumbnail: https://i.stack.imgur.com/Xo2sA.png
 photos:
   - https://i.stack.imgur.com/Xo2sA.png
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 137
 excerpt: disable vscode alert File is a CommonJS module; it may be converted to

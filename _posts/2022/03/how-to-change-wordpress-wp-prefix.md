@@ -4,6 +4,7 @@ date: 2022-03-27T10:02:25+07:00
 tags:
   - Wordpress
   - MySQL
+  - Blogging
 title: Change wordpress table prefix updated 2022
 updated: 2022-03-27T10:02:25+07:00
 uuid: a69fa1b4-3f2c-4888-8757-27179d208826
@@ -12,6 +13,17 @@ category:
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 photos:
   - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 340
 description: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
