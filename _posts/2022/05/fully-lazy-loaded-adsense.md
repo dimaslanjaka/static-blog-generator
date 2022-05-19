@@ -18,13 +18,8 @@ comments: true
 wordcount: 158
 subtitle: Snippet lazy load adsense full support for blogger, wordpress, etc
 excerpt: Snippet lazy load adsense full support for blogger, wordpress, etc
-url: https://www.webmanajemen.com/2022/05/fully-lazy-loaded-adsense.html
+url: /2022/05/fully-lazy-loaded-adsense.html
 type: post
-permalink: /2022/05/fully-lazy-loaded-adsense.html
-lang: en
-thumbnail: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
-photos:
-  - https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 ---
 
 change `ca-pub-1165447249910969` with your own adsense pub

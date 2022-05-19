@@ -24,11 +24,7 @@ updated: 2022-03-26T12:37:59+07:00
 wordcount: 105
 excerpt: Script To Clear Cache Linux
 description: Script To Clear Cache Linux
-url: https://www.webmanajemen.com/2020/05/linux-clear-cache.html
-permalink: /2020/05/linux-clear-cache.html
-thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://www.wissenschaft.com.ng/wp-content/uploads/2021/02/clear_ram_buffer_linux.jpg
-photos:
-  - https://res.cloudinary.com/practicaldev/image/fetch/https://www.wissenschaft.com.ng/wp-content/uploads/2021/02/clear_ram_buffer_linux.jpg
+url: /2020/05/linux-clear-cache.html
 ---
 
 ```bash

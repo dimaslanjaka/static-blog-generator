@@ -11,8 +11,8 @@ cover: https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
 date: 2019-12-04T05:51:00+07:00
 lang: en
 modified: 2019-12-04T09:13:32.961+07:00
-subtitle: pre><br />static = issetthis amp;amp; get_classthis == __CLASS__;<br
-  />if static <br /> return self;<br /> else <br />
+subtitle: pre><br />$static = !(isset($this) &amp;&amp; get_class($this) ==
+  __CLASS__);<br />if ($static) {<br /> return self;<br />} else {<br />
 tags:
   - PHP
 title: Check if current function called statically or not
@@ -23,13 +23,12 @@ updated: 2019-12-04T09:13:32+07:00
 thumbnail: https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
-description: pre><br />static = issetthis amp;amp; get_classthis ==
-  __CLASS__;<br />if static <br /> return self;<br /> else <br />
+description: pre><br />$static = !(isset($this) &amp;&amp; get_class($this) ==
+  __CLASS__);<br />if ($static) {<br /> return self;<br />} else {<br />
 wordcount: 75
-excerpt: pre><br />static = issetthis amp;amp; get_classthis == __CLASS__;<br
-  />if static <br /> return self;<br /> else <br />
-url: https://www.webmanajemen.com/2019/12/check-if-current-function-called.html
-permalink: /2019/12/check-if-current-function-called.html
+excerpt: pre><br />$static = !(isset($this) &amp;&amp; get_class($this) ==
+  __CLASS__);<br />if ($static) {<br /> return self;<br />} else {<br />
+url: /2019/12/check-if-current-function-called.html
 ---
 
 <pre><br>$static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);<br>if ($static) {<br>  return self;<br>} else {<br>  return $this;<br>}<br></pre> in class example: <pre>class Foo {<br>   function bar() {<br>      $static = !(isset($this) &amp;&amp; get_class($this) == __CLASS__);<br>if ($static) {<br>  return self;<br>} else {<br>  return $this;<br>}<br>   }<br>}</pre> or simply create below function to test: <pre><br>class A<br>{<br>    function foo()<br>    {<br>        if (isset($this)) {<br>            echo '$this is defined (';<br>            echo get_class($this);<br>            echo ")\n";<br>        } else {<br>            echo "\$this is not defined.\n";<br>        }<br>    }<br>}<br></pre> <i>How do I check in PHP that I'm in a static context (or not)?</i> <a href="https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg" imageanchor="1" rel="noopener noreferer nofollow"><img border="0" src="https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg" data-original-width="800" data-original-height="450"></a>

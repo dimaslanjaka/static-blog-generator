@@ -25,9 +25,8 @@ photos:
 wordcount: 2391
 excerpt: Information about pets attributes chimeraland
 description: Information about pets attributes chimeraland
-url: https://www.webmanajemen.com/Chimeraland/Pets.html
+url: /Chimeraland/Pets.html
 type: post
-permalink: /Chimeraland/Pets.html
 ---
 
 <!-- translator -->

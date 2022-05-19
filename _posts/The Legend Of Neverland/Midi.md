@@ -23,11 +23,7 @@ updated: 2022-05-07T17:48:40+07:00
 description: Midi collection for the legend of neverland perform music skill
 wordcount: 246
 excerpt: Midi collection for the legend of neverland perform music skill
-url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html
-permalink: /The%20Legend%20Of%20Neverland/Midi.html
-thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-photos:
-  - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
+url: /The%20Legend%20Of%20Neverland/Midi.html
 ---
 
 ## NPC's favorite musical instrument

@@ -2,7 +2,7 @@
 category:
   - Programming
   - MYSQL
-cover: /2022/03/mysql-create-new-user/phpmyadmin-changepw.png
+cover: mysql-create-new-user/phpmyadmin-changepw.png
 date: 2022-04-11T00:00:00+07:00
 tags:
   - MySQL
@@ -14,13 +14,8 @@ wordcount: 186
 description: MySQL Command to create new database user - Website Manajemen Indonesia
 subtitle: MySQL Command to create new database user - Website Manajemen Indonesia
 excerpt: MySQL Command to create new database user - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/2022/03/mysql-create-new-user.html
+url: /2022/03/mysql-create-new-user.html
 type: post
-permalink: /2022/03/mysql-create-new-user.html
-lang: en
-thumbnail: /2022/03/mysql-create-new-user/phpmyadmin-changepw.png
-photos:
-  - /2022/03/mysql-create-new-user/phpmyadmin-changepw.png
 ---
 
 First, you  need to open the database manager such as phpMyAdmin application to querying MySQL commands.

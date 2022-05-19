@@ -11,9 +11,7 @@ wordcount: 1
 description: index NodeJS - Website Manajemen Indonesia
 subtitle: index NodeJS - Website Manajemen Indonesia
 excerpt: index NodeJS - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/NodeJS/index.html
-permalink: /NodeJS/index.html
-lang: en
+url: /NodeJS/index.html
 tags: []
 ---
 

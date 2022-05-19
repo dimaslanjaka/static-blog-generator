@@ -25,9 +25,8 @@ comments: true
 wordcount: 695
 excerpt: Belajar Memasang Shader di Minecraft 1.18.1 dalam tutorial terperinci
   ini dengan screenshot
-url: https://www.webmanajemen.com/Minecraft/install-shaders.html
+url: /Minecraft/install-shaders.html
 type: post
-permalink: /Minecraft/install-shaders.html
 tags: []
 ---
 

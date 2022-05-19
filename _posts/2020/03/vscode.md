@@ -10,8 +10,8 @@ cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_availa
 date: 2020-03-23T15:04:00+07:00
 lang: en
 modified: 2020-03-23T15:04:22.529+07:00
-subtitle: Install jQuery Auto Complete and Hinting on VSCode Requirednpm- Syntax
-  Terminalnpm i --save @types/jquery
+subtitle: Install jQuery Auto Complete and Hinting on VSCode Required npm-
+  Syntax Terminalnpm i --save @types/jquery
 tags:
   - Tips & Tricks
 title: VSCode
@@ -22,13 +22,12 @@ updated: 2020-03-23T15:04:22+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: Install jQuery Auto Complete and Hinting on VSCode Requirednpm-
+description: Install jQuery Auto Complete and Hinting on VSCode Required npm-
   Syntax Terminalnpm i --save @types/jquery
 wordcount: 596
-excerpt: Install jQuery Auto Complete and Hinting on VSCode Requirednpm- Syntax
+excerpt: Install jQuery Auto Complete and Hinting on VSCode Required npm- Syntax
   Terminalnpm i --save @types/jquery
-url: https://www.webmanajemen.com/2020/03/vscode.html
-permalink: /2020/03/vscode.html
+url: /2020/03/vscode.html
 ---
 
 <div dir="ltr" style="text-align: left;" trbidi="on">Install jQuery Auto Complete and Hinting on VSCode<div>- Required&nbsp;</div><div>npm</div><div>- Syntax Terminal</div><div><pre class="default prettyprint prettyprinted" style="border-radius: 3px; border: 0px; box-sizing: inherit; color: #242729; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-size: 13px; font-stretch: inherit; font-variant-east-asian: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1em; max-height: 600px; overflow-wrap: normal; overflow: auto; padding: 12px 8px; vertical-align: baseline; width: auto;"><code style="border: 0px; box-sizing: inherit; font-family: Consolas, Menlo, Monaco, &quot;Lucida Console&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, &quot;Courier New&quot;, monospace, sans-serif; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;"><span class="pln" style="border: 0px; box-sizing: inherit; color: var(--black-750); font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">npm i </span><span class="pun" style="border: 0px; box-sizing: inherit; color: var(--black-750); font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">--</span><span class="pln" style="border: 0px; box-sizing: inherit; color: var(--black-750); font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">save </span><span class="lit" style="border: 0px; box-sizing: inherit; color: var(--red-800); font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">@types</span><span class="pun" style="border: 0px; box-sizing: inherit; color: var(--black-750); font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">/</span><span class="pln" style="border: 0px; box-sizing: inherit; color: var(--black-750); font-family: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">jquery</span></code></pre></div></div>

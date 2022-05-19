@@ -15,10 +15,8 @@ webtitle: Chimeraland
 wordcount: 305
 description: Taming pity in chimeraland
 subtitle: Taming pity in chimeraland
-url: https://www.webmanajemen.com/Chimeraland/Taming.html
+url: /Chimeraland/Taming.html
 type: post
-permalink: /Chimeraland/Taming.html
-lang: en
 ---
 
 ## Deskripsi pemahaman tentang pity taming pet

@@ -24,11 +24,7 @@ excerpt: Previous How to bulk add category label to blogger postsFilter and
   Select category label you want to remove Select the post that will be
 description: Previous How to bulk add category label to blogger postsFilter and
   Select category label you want to remove Select the post that will be
-url: https://www.webmanajemen.com/2019/07/how-to-bulk-delete-label-from-blogger.html
-permalink: /2019/07/how-to-bulk-delete-label-from-blogger.html
-thumbnail: https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png
-photos:
-  - https://3.bp.blogspot.com/-W6MUKBQWsys/XTTHZu4jWCI/AAAAAAAAAdI/kShJnPPkBgIWriKW2AAXvnH41q4-R2DhQCLcBGAs/s1600/Screenshot_4.png
+url: /2019/07/how-to-bulk-delete-label-from-blogger.html
 ---
 
 _Previous: [How to bulk add category label to blogger posts](../../2019/07/how-to-bulk-add-posts-category-label.html)_

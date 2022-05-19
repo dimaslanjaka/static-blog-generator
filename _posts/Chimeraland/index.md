@@ -21,8 +21,7 @@ photos:
 wordcount: 11
 subtitle: Index Tree Chimeraland
 excerpt: Index Tree Chimeraland
-url: https://www.webmanajemen.com/Chimeraland/index.html
-permalink: /Chimeraland/index.html
+url: /Chimeraland/index.html
 ---
 
 ## Cooking Recipes

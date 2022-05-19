@@ -20,9 +20,8 @@ description: How to use magical books for bow
 comments: true
 wordcount: 613
 excerpt: How to use magical books for bow
-url: https://www.webmanajemen.com/Minecraft/magical-bow.html
+url: /Minecraft/magical-bow.html
 type: post
-permalink: /Minecraft/magical-bow.html
 tags: []
 ---
 

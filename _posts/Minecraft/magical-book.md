@@ -22,9 +22,8 @@ description: All Description And Usages Of Magical Books Minecraft
 comments: true
 wordcount: 939
 excerpt: All Description And Usages Of Magical Books Minecraft
-url: https://www.webmanajemen.com/Minecraft/magical-book.html
+url: /Minecraft/magical-book.html
 type: post
-permalink: /Minecraft/magical-book.html
 tags: []
 ---
 

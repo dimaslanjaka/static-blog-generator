@@ -25,11 +25,7 @@ excerpt: Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
   platform blogging yang paling sering digunakan, tapi pasti memiliki
 description: Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
   platform blogging yang paling sering digunakan, tapi pasti memiliki
-url: https://www.webmanajemen.com/2017/04/4-kode-seo-optimalkan-blogger-blog-anda.html
-permalink: /2017/04/4-kode-seo-optimalkan-blogger-blog-anda.html
-thumbnail: https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
-photos:
-  - https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
+url: /2017/04/4-kode-seo-optimalkan-blogger-blog-anda.html
 ---
 
 <div dir="ltr">

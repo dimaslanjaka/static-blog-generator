@@ -19,13 +19,8 @@ comments: true
 wordcount: 303
 excerpt: Google recaptcha V3 support reload token without Reload Pages
 description: Google recaptcha V3 support reload token without Reload Pages
-url: https://www.webmanajemen.com/2022/04/hidden-google-recaptcha-v3.html
+url: /2022/04/hidden-google-recaptcha-v3.html
 type: post
-permalink: /2022/04/hidden-google-recaptcha-v3.html
-lang: en
-thumbnail: https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
-photos:
-  - https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
 ---
 
 ## How to refresh token google recaptcha v3 (hidden recaptcha supported)

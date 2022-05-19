@@ -26,8 +26,7 @@ photos:
 description: Trial Of Time the legend of neverland stage location
 wordcount: 13
 excerpt: Trial Of Time the legend of neverland stage location
-url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html
-permalink: /The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html
+url: /The%20Legend%20Of%20Neverland/Trial%20Of%20Time.html
 ---
 
   # Trial of time gate locations

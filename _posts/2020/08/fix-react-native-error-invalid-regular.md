@@ -16,7 +16,7 @@ subtitle: If you Got this issue today on windows, but dont need to downgrade
 tags:
   - JS
   - Regular Expression
-title: "Fix React Native error Invalid regular expression: /.\\\\__fixtures__"
+title: "Fix React Native error Invalid regular expression: /(.*\\\\__fixtures__"
 type: post
 uuid: 14f3d748-31a4-4888-8f4c-eaba432bc58a
 webtitle: WMI Gitlab
@@ -29,8 +29,7 @@ description: If you Got this issue today on windows, but dont need to downgrade
 wordcount: 42
 excerpt: If you Got this issue today on windows, but dont need to downgrade
   node, just as discussed on
-url: https://www.webmanajemen.com/2020/08/fix-react-native-error-invalid-regular.html
-permalink: /2020/08/fix-react-native-error-invalid-regular.html
+url: /2020/08/fix-react-native-error-invalid-regular.html
 ---
 
 If you Got this issue today on windows, but don't need to downgrade node, just as discussed on

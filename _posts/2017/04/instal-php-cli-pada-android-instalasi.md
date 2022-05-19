@@ -11,12 +11,12 @@ cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot
 date: 2017-04-09T13:26:00+07:00
 lang: en
 modified: 2020-01-24T06:50:22.992+07:00
-subtitle: Official php-cli installation on android by L3n4r0x php Running On
-  Android Terminal -> This Repost From My Another Blogs <-
+subtitle: Official php-cli installation on android by L3n4r0x (php Running On
+  Android Terminal) -> This Repost From My Another Blogs <-
 tags:
   - PHP
   - Android
-title: Install PHP for Android CLI or Web Server
+title: Install PHP for Android (CLI or Web Server)
 type: post
 uuid: 14e9225b-f78d-4888-85cc-de9f5862689c
 webtitle: WMI Gitlab
@@ -24,13 +24,12 @@ updated: 2020-01-24T06:50:22+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg
-description: Official php-cli installation on android by L3n4r0x php Running On
-  Android Terminal -> This Repost From My Another Blogs <-
+description: Official php-cli installation on android by L3n4r0x (php Running On
+  Android Terminal) -> This Repost From My Another Blogs <-
 wordcount: 1488
-excerpt: Official php-cli installation on android by L3n4r0x php Running On
-  Android Terminal -> This Repost From My Another Blogs <-
-url: https://www.webmanajemen.com/2017/04/instal-php-cli-pada-android-instalasi.html
-permalink: /2017/04/instal-php-cli-pada-android-instalasi.html
+excerpt: Official php-cli installation on android by L3n4r0x (php Running On
+  Android Terminal) -> This Repost From My Another Blogs <-
+url: /2017/04/instal-php-cli-pada-android-instalasi.html
 ---
 
 <div dir="ltr" style="text-align: left" trbidi="on">

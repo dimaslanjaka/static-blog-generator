@@ -15,10 +15,8 @@ comments: true
 wordcount: 30
 subtitle: How to setup node_modules/.bin on global environtment path
 excerpt: How to setup node_modules/.bin on global environtment path
-url: https://www.webmanajemen.com/2022/05/setup-node-modules-bin-environtment-path.html
+url: /2022/05/setup-node-modules-bin-environtment-path.html
 type: post
-permalink: /2022/05/setup-node-modules-bin-environtment-path.html
-lang: en
 ---
 
 ## Setup Windows

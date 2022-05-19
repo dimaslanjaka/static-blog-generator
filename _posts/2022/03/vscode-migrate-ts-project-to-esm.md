@@ -11,13 +11,8 @@ wordcount: 420
 description: VSCode Migrate Typescript CommonJS to ESM - Website Manajemen Indonesia
 subtitle: VSCode Migrate Typescript CommonJS to ESM - Website Manajemen Indonesia
 excerpt: VSCode Migrate Typescript CommonJS to ESM - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/2022/03/vscode-migrate-ts-project-to-esm.html
+url: /2022/03/vscode-migrate-ts-project-to-esm.html
 type: post
-permalink: /2022/03/vscode-migrate-ts-project-to-esm.html
-lang: en
-thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314
-photos:
-  - https://res.cloudinary.com/practicaldev/image/fetch/https://opengraph.githubassets.com/51ab140e160882668aa0f466b095b5bb634739d04b8095f768d1741def9280f2/inmanta/vscode-inmanta/issues/314
 tags: []
 ---
 

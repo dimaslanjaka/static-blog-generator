@@ -13,9 +13,7 @@ wordcount: 34
 description: fix shortcodes markdown with links .md - Website Manajemen Indonesia
 subtitle: fix shortcodes markdown with links .md - Website Manajemen Indonesia
 excerpt: fix shortcodes markdown with links .md - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/Tests/markdown-links.html
-permalink: /Tests/markdown-links.html
-lang: en
+url: /Tests/markdown-links.html
 tags: []
 ---
 

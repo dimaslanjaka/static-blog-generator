@@ -14,13 +14,8 @@ comments: true
 wordcount: 679
 excerpt: High Pagerank Dofollow Directory List
 description: High Pagerank Dofollow Directory List
-url: https://www.webmanajemen.com/2022/03/high-pagerank-dofollow-directory-list.html
+url: /2022/03/high-pagerank-dofollow-directory-list.html
 type: post
-permalink: /2022/03/high-pagerank-dofollow-directory-list.html
-lang: en
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
-photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 ---
 
 **If I get a new one, I will always update the list. For now and also for the future, I suggest making between dofollow backlinks and nofollow backlinks that lead to a balanced blog, or still in a very reasonable category**, if you don't want your blog to get Google Penalty sanctions later.

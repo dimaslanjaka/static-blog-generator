@@ -11,8 +11,11 @@ cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_availa
 date: 2019-12-28T11:49:00+07:00
 lang: en
 modified: 2019-12-28T11:57:05.497+07:00
-subtitle: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
-  id=elemenTersedia></div><script>function
+subtitle: |-
+  Mengubahdom document sebuah elemen kedalam HTMl string biasa
+  <div id=elemenTersedia></div>
+  <script>
+  function
 tags:
   - JS
   - HTML
@@ -24,13 +27,18 @@ updated: 2019-12-28T11:57:05+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
-  id=elemenTersedia></div><script>function
+description: |-
+  Mengubahdom document sebuah elemen kedalam HTMl string biasa
+  <div id=elemenTersedia></div>
+  <script>
+  function
 wordcount: 137
-excerpt: MengubahdomdocumentsebuahelemenkedalamHTMlstringbiasa<div
-  id=elemenTersedia></div><script>function
-url: https://www.webmanajemen.com/2019/12/konversi-dom-element-ke-html-string.html
-permalink: /2019/12/konversi-dom-element-ke-html-string.html
+excerpt: |-
+  Mengubahdom document sebuah elemen kedalam HTMl string biasa
+  <div id=elemenTersedia></div>
+  <script>
+  function
+url: /2019/12/konversi-dom-element-ke-html-string.html
 ---
 
 <div>

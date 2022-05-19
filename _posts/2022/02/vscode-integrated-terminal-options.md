@@ -17,13 +17,8 @@ wordcount: 127
 description: Custom PATH VSCode Integrated Terminal Options - Website Manajemen Indonesia
 subtitle: Custom PATH VSCode Integrated Terminal Options - Website Manajemen Indonesia
 excerpt: Custom PATH VSCode Integrated Terminal Options - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/2022/02/vscode-integrated-terminal-options.html
+url: /2022/02/vscode-integrated-terminal-options.html
 type: post
-permalink: /2022/02/vscode-integrated-terminal-options.html
-lang: en
-thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
-photos:
-  - https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 ---
 
 Determining custom path on vscode IDE made easily development programs within multiple platforms.

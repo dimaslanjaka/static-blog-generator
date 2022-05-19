@@ -28,11 +28,7 @@ updated: 2021-12-18T21:07:09+07:00
 wordcount: 172
 excerpt: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
 description: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
-url: https://www.webmanajemen.com/NodeJS/ts-detect-nodelist-or-htmlcollections.html
-permalink: /NodeJS/ts-detect-nodelist-or-htmlcollections.html
-thumbnail: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
-photos:
-  - https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
+url: /NodeJS/ts-detect-nodelist-or-htmlcollections.html
 ---
 
 # How to detect HTMLCollection/NodeList in JavaScript/Typescript?
