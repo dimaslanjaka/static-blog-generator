@@ -12,7 +12,7 @@
   "files": [
     "packages",
     "dist",
-    "_config.yml"
+    "_config.yml" 
   ],
   "repository": {
     "type": "git",
@@ -22,7 +22,10 @@
     "hexo",
     "markdown",
     "post",
-    "parser"
+    "parser",
+    "hexo-parser",
+    "hexo-post",
+    "hexo-markdown"
   ],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com>",
   "license": "MIT",
