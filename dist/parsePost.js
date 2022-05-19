@@ -102,10 +102,14 @@ function parsePost(text, options = {}) {
                 .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
         }
         // @todo set default category and tags
-        if ((!meta.category || !meta.category.length) && config.default_category)
-            meta.category = [config.default_category];
-        if ((!meta.tags || !meta.tags.length) && config.default_tag)
-            meta.tags = [config.default_tag];
+        if (!meta.category)
+            meta.category = [];
+        if (config.default_category && !meta.category.length)
+            meta.category.push(config.default_category);
+        if (!meta.tags)
+            meta.tags = [];
+        if (config.default_tag && !meta.tags.length)
+            meta.tags.push(config.default_tag);
         // @todo set default date post
         if (!meta.date)
             meta.date = (0, moment_1.default)().format();
