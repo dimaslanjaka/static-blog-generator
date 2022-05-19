@@ -9,9 +9,10 @@ const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const persistent_cache_1 = tslib_1.__importDefault(require("../packages/persistent-cache"));
 const dateMapper_1 = require("./dateMapper");
+const utils_1 = require("./gulp/utils");
 const array_unique_1 = tslib_1.__importDefault(require("./node/array-unique"));
 const md5_file_1 = require("./node/md5-file");
-const utils_1 = require("./node/utils");
+const utils_2 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
 const css_1 = require("./shortcodes/css");
 const extractText_1 = require("./shortcodes/extractText");
@@ -27,6 +28,11 @@ const _cache = (0, persistent_cache_1.default)({
     duration: 1000 * 3600 * 24 // 24 hours
 });
 const homepage = new URL(_config_1.default.url);
+const cwd = () => (0, upath_1.toUnix)(process.cwd());
+/**
+ * Hexo Generated Dir
+ */
+const post_generated_dir = (0, upath_1.join)(cwd(), _config_1.default.public_dir);
 const default_options = {
     shortcodes: {
         css: false,
@@ -159,10 +165,10 @@ function parsePost(text, options = {}) {
         // @todo fix description
         if (options.fix) {
             // fix special char in metadata
-            meta.title = (0, utils_1.cleanString)(meta.title);
-            meta.subtitle = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.subtitle));
-            meta.excerpt = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.excerpt));
-            meta.description = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.description));
+            meta.title = (0, utils_2.cleanString)(meta.title);
+            meta.subtitle = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.subtitle));
+            meta.excerpt = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.excerpt));
+            meta.description = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.description));
         }
         // @todo delete location
         if (Object.prototype.hasOwnProperty.call(meta, 'location') &&
@@ -170,13 +176,56 @@ function parsePost(text, options = {}) {
             delete meta.location;
         }
         if (isFile) {
-            // setup permalink
-            /*
-            meta.permalink = homepage.pathname;
-            homepage.pathname = meta.permalink;
-            meta.url = homepage.toString();*/
+            const publicFile = (0, upath_1.toUnix)(originalArg);
+            // @todo fix post_asset_folder
+            if (options.fix) {
+                const post_assets_fixer = (str) => {
+                    if (!publicFile)
+                        return str;
+                    // return base64 image
+                    if (str.startsWith('data:image'))
+                        return str;
+                    if (str.startsWith('//'))
+                        str = 'http:' + str;
+                    if (str.includes('%20'))
+                        str = decodeURIComponent(str);
+                    if (!(0, utils_1.isValidHttpUrl)(str) && !str.startsWith('/')) {
+                        let result;
+                        /** search from same directory */
+                        const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), str);
+                        /** search from parent directory */
+                        const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), str);
+                        /** search from root directory */
+                        const f3 = (0, upath_1.join)(cwd(), str);
+                        const f4 = (0, upath_1.join)(post_generated_dir, str);
+                        [f1, f2, f3, f4].forEach((src) => {
+                            if ((0, fs_1.existsSync)(src) && !result)
+                                result = src;
+                        });
+                        if (!result) {
+                            console.log('[PAF][fail]', str);
+                        }
+                        else {
+                            result = (0, utils_2.replaceArr)(result, [cwd(), 'source/', '_posts'], '/').replace(/\/+/, '/');
+                            result = encodeURI(result);
+                            console.log('[PAF][success]', result);
+                            return result;
+                        }
+                    }
+                    return str;
+                };
+                if (meta.cover) {
+                    meta.cover = post_assets_fixer(meta.cover);
+                }
+                if (meta.thumbnail) {
+                    meta.thumbnail = post_assets_fixer(meta.thumbnail);
+                }
+                if (meta.photos) {
+                    meta.photos = meta.photos.map(post_assets_fixer);
+                }
+            }
             if (!meta.url) {
-                homepage.pathname = (0, utils_1.replaceArr)((0, upath_1.toUnix)(originalArg), [(0, upath_1.toUnix)(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+                homepage.pathname = (0, utils_2.replaceArr)(publicFile, [(0, upath_1.toUnix)(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'], '/')
                     // @todo remove multiple slashes
                     .replace(/\/+/, '/')
                     // @todo replace .md to .html
@@ -189,7 +238,7 @@ function parsePost(text, options = {}) {
             // determine post type
             //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
             if (!meta.type) {
-                if ((0, upath_1.toUnix)(originalArg).match(/(_posts|src-posts)\//)) {
+                if (publicFile.match(/(_posts|src-posts)\//)) {
                     meta.type = 'post';
                 }
                 else {
@@ -247,7 +296,7 @@ function parsePost(text, options = {}) {
         // put fileTree
         if (isFile) {
             result.fileTree = {
-                source: (0, utils_1.replaceArr)((0, upath_1.toUnix)(originalArg), ['source/_posts/', '_posts/'], 'src-posts/'),
+                source: (0, utils_2.replaceArr)((0, upath_1.toUnix)(originalArg), ['source/_posts/', '_posts/'], 'src-posts/'),
                 public: (0, upath_1.toUnix)(originalArg).replace('/src-posts/', '/source/_posts/')
             };
         }

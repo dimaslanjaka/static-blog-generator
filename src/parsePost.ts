@@ -1,10 +1,11 @@
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
 import moment from 'moment';
-import { join, toUnix } from 'upath';
+import { dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
+import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray from './node/array-unique';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
@@ -25,6 +26,11 @@ const _cache = cache({
   duration: 1000 * 3600 * 24 // 24 hours
 });
 const homepage = new URL(config.url);
+const cwd = () => toUnix(process.cwd());
+/**
+ * Hexo Generated Dir
+ */
+const post_generated_dir = join(cwd(), config.public_dir);
 
 /**
  * post metadata information (title, etc)
@@ -302,15 +308,56 @@ export function parsePost(
     }
 
     if (isFile) {
-      // setup permalink
-      /*
-      meta.permalink = homepage.pathname;
-      homepage.pathname = meta.permalink;
-      meta.url = homepage.toString();*/
+      const publicFile = toUnix(originalArg);
+      // @todo fix post_asset_folder
+      if (options.fix) {
+        const post_assets_fixer = (str: string) => {
+          if (!publicFile) return str;
+          // return base64 image
+          if (str.startsWith('data:image')) return str;
+          if (str.startsWith('//')) str = 'http:' + str;
+          if (str.includes('%20')) str = decodeURIComponent(str);
+          if (!isValidHttpUrl(str) && !str.startsWith('/')) {
+            let result: string;
+            /** search from same directory */
+            const f1 = join(dirname(publicFile), str);
+            /** search from parent directory */
+            const f2 = join(dirname(dirname(publicFile)), str);
+            /** search from root directory */
+            const f3 = join(cwd(), str);
+            const f4 = join(post_generated_dir, str);
+            [f1, f2, f3, f4].forEach((src) => {
+              if (existsSync(src) && !result) result = src;
+            });
+            if (!result) {
+              console.log('[PAF][fail]', str);
+            } else {
+              result = replaceArr(
+                result,
+                [cwd(), 'source/', '_posts'],
+                '/'
+              ).replace(/\/+/, '/');
+              result = encodeURI(result);
+              console.log('[PAF][success]', result);
+              return result;
+            }
+          }
+          return str;
+        };
+        if (meta.cover) {
+          meta.cover = post_assets_fixer(meta.cover);
+        }
+        if (meta.thumbnail) {
+          meta.thumbnail = post_assets_fixer(meta.thumbnail);
+        }
+        if (meta.photos) {
+          meta.photos = meta.photos.map(post_assets_fixer);
+        }
+      }
 
       if (!meta.url) {
         homepage.pathname = replaceArr(
-          toUnix(originalArg),
+          publicFile,
           [toUnix(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'],
           '/'
         )
@@ -327,7 +374,7 @@ export function parsePost(
       // determine post type
       //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
       if (!meta.type) {
-        if (toUnix(originalArg).match(/(_posts|src-posts)\//)) {
+        if (publicFile.match(/(_posts|src-posts)\//)) {
           meta.type = 'post';
         } else {
           meta.type = 'page';
