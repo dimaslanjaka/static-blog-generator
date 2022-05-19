@@ -3,7 +3,14 @@ import moment from 'moment';
 import yargs from 'yargs';
 import { isValidHttpUrl } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
-import { cwd, dirname, existsSync, join, removeMultiSlashes, statSync } from '../../node/filemanager';
+import {
+  cwd,
+  dirname,
+  existsSync,
+  join,
+  removeMultiSlashes,
+  statSync
+} from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
 import { shortcodeCss } from '../../shortcodes/css';
 import extractText from '../../shortcodes/extractText';
@@ -41,7 +48,9 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
     }
 
     if (parse.metadata.modified && !parse.metadata.updated) {
-      parse.metadata.updated = moment(parse.metadata.modified).format('YYYY-MM-DDTHH:mm:ssZ');
+      parse.metadata.updated = moment(parse.metadata.modified).format(
+        'YYYY-MM-DDTHH:mm:ssZ'
+      );
     }
 
     if (existsSync(sourceFile)) {
@@ -54,7 +63,9 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
 
     if (parse.metadata.date && !parse.metadata.date.toString().includes('+')) {
       try {
-        parse.metadata.date = moment(parse.metadata.date.toString()).format('YYYY-MM-DDTHH:mm:ssZ');
+        parse.metadata.date = moment(parse.metadata.date.toString()).format(
+          'YYYY-MM-DDTHH:mm:ssZ'
+        );
       } catch (e) {
         console.log(parse.metadata.date, 'invalid moment date format');
       }
@@ -65,9 +76,13 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
       homepage.pathname = removeMultiSlashes(
         publicFile.replaceArr([cwd(), 'source/_posts/', 'src-posts/'], '/')
       ).replace(/.md$/, '.html');
-      if (!parse.metadata.url || !parse.metadata.url.isMatch(new RegExp('^https?://')))
+      if (
+        !parse.metadata.url ||
+        !parse.metadata.url.isMatch(new RegExp('^https?://'))
+      )
         parse.metadata.url = homepage.toString();
-      if (!parse.metadata.permalink) parse.metadata.permalink = homepage.pathname;
+      if (!parse.metadata.permalink)
+        parse.metadata.permalink = homepage.pathname;
     }
 
     // fix lang
@@ -75,14 +90,20 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
 
     // fix post description
     if (parse.metadata.subtitle) {
-      if (!parse.metadata.description) parse.metadata.description = parse.metadata.subtitle;
-      if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.subtitle;
+      if (!parse.metadata.description)
+        parse.metadata.description = parse.metadata.subtitle;
+      if (!parse.metadata.excerpt)
+        parse.metadata.excerpt = parse.metadata.subtitle;
     } else if (parse.metadata.excerpt) {
-      if (!parse.metadata.description) parse.metadata.description = parse.metadata.excerpt;
-      if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.excerpt;
+      if (!parse.metadata.description)
+        parse.metadata.description = parse.metadata.excerpt;
+      if (!parse.metadata.subtitle)
+        parse.metadata.subtitle = parse.metadata.excerpt;
     } else if (parse.metadata.description) {
-      if (!parse.metadata.excerpt) parse.metadata.excerpt = parse.metadata.description;
-      if (!parse.metadata.subtitle) parse.metadata.subtitle = parse.metadata.description;
+      if (!parse.metadata.excerpt)
+        parse.metadata.excerpt = parse.metadata.description;
+      if (!parse.metadata.subtitle)
+        parse.metadata.subtitle = parse.metadata.description;
     } else {
       parse.metadata.description = parse.metadata.title;
       parse.metadata.subtitle = parse.metadata.title;
@@ -91,13 +112,20 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
 
     // fix special char in metadata
     parse.metadata.title = cleanString(parse.metadata.title);
-    parse.metadata.subtitle = cleanWhiteSpace(cleanString(parse.metadata.subtitle));
-    parse.metadata.excerpt = cleanWhiteSpace(cleanString(parse.metadata.excerpt));
-    parse.metadata.description = cleanWhiteSpace(cleanString(parse.metadata.description));
+    parse.metadata.subtitle = cleanWhiteSpace(
+      cleanString(parse.metadata.subtitle)
+    );
+    parse.metadata.excerpt = cleanWhiteSpace(
+      cleanString(parse.metadata.excerpt)
+    );
+    parse.metadata.description = cleanWhiteSpace(
+      cleanString(parse.metadata.description)
+    );
 
     // fix thumbnail
     if (parse.metadata.cover) {
-      if (!parse.metadata.thumbnail) parse.metadata.thumbnail = parse.metadata.cover;
+      if (!parse.metadata.thumbnail)
+        parse.metadata.thumbnail = parse.metadata.cover;
       if (!parse.metadata.photos) {
         parse.metadata.photos = [];
       }
@@ -130,7 +158,9 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
         if (!result) {
           console.log('[PAF][fail]', str);
         } else {
-          result = result.replaceArr([cwd(), 'source/', '_posts'], '/').replace(/\/+/, '/');
+          result = result
+            .replaceArr([cwd(), 'source/', '_posts'], '/')
+            .replace(/\/+/, '/');
           result = encodeURI(result);
           console.log('[PAF][success]', result);
           return result;
@@ -177,7 +207,9 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
         parse.metadata.category.push('Programming');
         // remove uncategorized if programming category pushed
         if (parse.metadata.category.includes('Uncategorized')) {
-          parse.metadata.category = parse.metadata.category.filter((e) => e !== 'Uncategorized');
+          parse.metadata.category = parse.metadata.category.filter(
+            (e) => e !== 'Uncategorized'
+          );
         }
       }
       // remove duplicated tags and categories
@@ -187,13 +219,18 @@ export function originalModifyPost<T extends modifyPostType>(parse: T): T {
           if (item.toLowerCase() === 'github') return 'GitHub';
           if (item.toLowerCase() === 'mysql') return 'MySQL';
           // make child of programming tags uppercase
-          if (programTags.includes(item.toLowerCase())) return item.toUpperCase();
+          if (programTags.includes(item.toLowerCase()))
+            return item.toUpperCase();
           // fallback
           return item;
         });
       };
-      parse.metadata.category = parse.metadata.category.removeEmpties().uniqueStringArray();
-      parse.metadata.tags = filterTagCat(parse.metadata.tags.removeEmpties().uniqueStringArray());
+      parse.metadata.category = parse.metadata.category
+        .removeEmpties()
+        .uniqueStringArray();
+      parse.metadata.tags = filterTagCat(
+        parse.metadata.tags.removeEmpties().uniqueStringArray()
+      );
       // move 'programming' to first index
       if (parse.metadata.category.includes('Programming'))
         parse.metadata.category.forEach((str, i) => {
