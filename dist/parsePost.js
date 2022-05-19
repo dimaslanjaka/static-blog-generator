@@ -40,7 +40,8 @@ const default_options = {
     sourceFile: null,
     formatDate: false,
     config: _config_1.default,
-    cache: false
+    cache: false,
+    fix: false
 };
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
@@ -113,20 +114,22 @@ function parsePost(text, options = {}) {
             }
         }
         // @todo fix thumbnail
-        const thumbnail = meta.cover || meta.thumbnail;
-        if (thumbnail) {
-            if (!meta.thumbnail)
-                meta.thumbnail = thumbnail;
-            if (!meta.cover)
-                meta.cover = thumbnail;
-            if (!meta.photos) {
-                meta.photos = [];
+        if (options.fix) {
+            const thumbnail = meta.cover || meta.thumbnail;
+            if (thumbnail) {
+                if (!meta.thumbnail)
+                    meta.thumbnail = thumbnail;
+                if (!meta.cover)
+                    meta.cover = thumbnail;
+                if (!meta.photos) {
+                    meta.photos = [];
+                }
+                meta.photos.push(meta.cover);
             }
-            meta.photos.push(meta.cover);
-        }
-        if (meta.photos) {
-            const photos = meta.photos;
-            meta.photos = (0, array_unique_1.default)(photos);
+            if (meta.photos) {
+                const photos = meta.photos;
+                meta.photos = (0, array_unique_1.default)(photos);
+            }
         }
         // @todo set default enable comments
         if (typeof meta.comments == 'undefined' || meta.comments == null)
@@ -153,6 +156,14 @@ function parsePost(text, options = {}) {
             meta.subtitle = newExcerpt;
             meta.excerpt = newExcerpt;
         }
+        // @todo fix description
+        if (options.fix) {
+            // fix special char in metadata
+            meta.title = (0, utils_1.cleanString)(meta.title);
+            meta.subtitle = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.subtitle));
+            meta.excerpt = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.excerpt));
+            meta.description = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.description));
+        }
         // @todo delete location
         if (Object.prototype.hasOwnProperty.call(meta, 'location') &&
             !meta.location) {
@@ -166,9 +177,14 @@ function parsePost(text, options = {}) {
             meta.url = homepage.toString();*/
             if (!meta.url) {
                 homepage.pathname = (0, utils_1.replaceArr)((0, upath_1.toUnix)(originalArg), [(0, upath_1.toUnix)(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+                    // @todo remove multiple slashes
                     .replace(/\/+/, '/')
+                    // @todo replace .md to .html
                     .replace(/.md$/, '.html');
-                meta.url = homepage.pathname;
+                // meta url with full url
+                meta.url = homepage.toString();
+                // meta permalink just pathname
+                meta.permalink = homepage.pathname;
             }
             // determine post type
             //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';

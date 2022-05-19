@@ -112,6 +112,10 @@ export interface ParseOptions {
      * Site Config
      */
     config?: DeepPartial<typeof config>;
+    /**
+     * run auto fixer such as thumbnail, excerpt, etc
+     */
+    fix?: boolean;
 }
 export declare type DeepPartial<T> = T extends object ? {
     [P in keyof T]?: DeepPartial<T[P]>;

@@ -7,7 +7,7 @@ import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
 import uniqueArray from './node/array-unique';
 import { md5FileSync } from './node/md5-file';
-import { replaceArr } from './node/utils';
+import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
 import { shortcodeCss } from './shortcodes/css';
 import { extractText } from './shortcodes/extractText';
@@ -131,14 +131,18 @@ export interface ParseOptions {
    * Format dates?
    */
   formatDate?:
-  | boolean
-  | {
-    pattern: string;
-  };
+    | boolean
+    | {
+        pattern: string;
+      };
   /**
    * Site Config
    */
   config?: DeepPartial<typeof config>;
+  /**
+   * run auto fixer such as thumbnail, excerpt, etc
+   */
+  fix?: boolean;
 }
 
 const default_options: ParseOptions = {
@@ -154,13 +158,14 @@ const default_options: ParseOptions = {
   sourceFile: null,
   formatDate: false,
   config,
-  cache: false
+  cache: false,
+  fix: false
 };
 
 export type DeepPartial<T> = T extends object
   ? {
-    [P in keyof T]?: DeepPartial<T[P]>;
-  }
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
   : T;
 
 /**
@@ -240,20 +245,21 @@ export function parsePost(
     }
 
     // @todo fix thumbnail
-    const thumbnail = meta.cover || meta.thumbnail
-    if (thumbnail) {
-      if (!meta.thumbnail) meta.thumbnail = thumbnail;
-      if (!meta.cover) meta.cover = thumbnail;
-      if (!meta.photos) {
-        meta.photos = [];
+    if (options.fix) {
+      const thumbnail = meta.cover || meta.thumbnail;
+      if (thumbnail) {
+        if (!meta.thumbnail) meta.thumbnail = thumbnail;
+        if (!meta.cover) meta.cover = thumbnail;
+        if (!meta.photos) {
+          meta.photos = [];
+        }
+        meta.photos.push(meta.cover);
       }
-      meta.photos.push(meta.cover);
+      if (meta.photos) {
+        const photos: string[] = meta.photos;
+        meta.photos = uniqueArray(photos);
+      }
     }
-    if (meta.photos) {
-      const photos: string[] = meta.photos;
-      meta.photos = uniqueArray(photos);
-    }
-
 
     // @todo set default enable comments
     if (typeof meta.comments == 'undefined' || meta.comments == null)
@@ -278,6 +284,15 @@ export function parsePost(
       meta.excerpt = newExcerpt;
     }
 
+    // @todo fix description
+    if (options.fix) {
+      // fix special char in metadata
+      meta.title = cleanString(meta.title);
+      meta.subtitle = cleanWhiteSpace(cleanString(meta.subtitle));
+      meta.excerpt = cleanWhiteSpace(cleanString(meta.excerpt));
+      meta.description = cleanWhiteSpace(cleanString(meta.description));
+    }
+
     // @todo delete location
     if (
       Object.prototype.hasOwnProperty.call(meta, 'location') &&
@@ -299,9 +314,14 @@ export function parsePost(
           [toUnix(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'],
           '/'
         )
+          // @todo remove multiple slashes
           .replace(/\/+/, '/')
+          // @todo replace .md to .html
           .replace(/.md$/, '.html');
-        meta.url = homepage.pathname;
+        // meta url with full url
+        meta.url = homepage.toString();
+        // meta permalink just pathname
+        meta.permalink = homepage.pathname;
       }
 
       // determine post type
