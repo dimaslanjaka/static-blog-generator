@@ -137,10 +137,10 @@ export interface ParseOptions {
    * Format dates?
    */
   formatDate?:
-  | boolean
-  | {
-    pattern: string;
-  };
+    | boolean
+    | {
+        pattern: string;
+      };
   /**
    * Site Config
    */
@@ -170,8 +170,8 @@ const default_options: ParseOptions = {
 
 export type DeepPartial<T> = T extends object
   ? {
-    [P in keyof T]?: DeepPartial<T[P]>;
-  }
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
   : T;
 
 /**
@@ -358,7 +358,12 @@ export function parsePost(
       if (!meta.url) {
         homepage.pathname = replaceArr(
           publicFile,
-          [toUnix(process.cwd()), config.source_dir + '/_posts/', 'src-posts/', '_posts/'],
+          [
+            toUnix(process.cwd()),
+            config.source_dir + '/_posts/',
+            'src-posts/',
+            '_posts/'
+          ],
           '/'
         )
           // @todo remove multiple slashes
