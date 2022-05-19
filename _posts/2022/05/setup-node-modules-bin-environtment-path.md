@@ -9,6 +9,7 @@ thumbnail: https://user-images.githubusercontent.com/12471057/167742331-5e5ea481
 title: Setup node_modules bin on global environtment path
 updated: 2022-05-11T06:45:40+07:00
 uuid: 89ff33e9-de5b-4888-857e-1d7b93b0c3b2
+lang: en
 category:
   - Uncategorized
 cover: https://user-images.githubusercontent.com/12471057/167742331-5e5ea481-cbfc-4a9a-87fd-7b404b16a4dc.png

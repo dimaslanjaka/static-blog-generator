@@ -13,6 +13,7 @@ title: Auto format typescript with esm in vscode
 type: post
 updated: 2022-05-03T18:14:00+07:00
 uuid: 7fc9817d-e4da-4888-8b90-6d4d163e3a21
+lang: en
 thumbnail: https://eslint.org/assets/img/favicon.512x512.png
 photos:
   - https://eslint.org/assets/img/favicon.512x512.png

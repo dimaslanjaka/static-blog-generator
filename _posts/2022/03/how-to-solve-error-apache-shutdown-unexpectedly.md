@@ -11,6 +11,7 @@ tags:
 title: How to solve Error Apache shutdown unexpectedly updated 2022
 updated: 2022-03-27T23:46:00+07:00
 uuid: 60adad91-cafd-4888-8da8-a84bfff539a9
+lang: en
 category:
   - Programming
 thumbnail: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg

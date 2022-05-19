@@ -13,6 +13,7 @@ tags:
 title: How to use import.meta on typescript hybrid compiler
 updated: 2022-05-02T13:01:50+07:00
 uuid: a5434cb6-fe27-4888-8192-0f32468a6165
+lang: en
 author:
   name: Dimas Lanjaka
   link: https://www.webmanajemen.com/

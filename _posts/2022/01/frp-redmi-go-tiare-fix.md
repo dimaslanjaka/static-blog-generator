@@ -12,6 +12,7 @@ title: Fix FRP Redmi GO Tiare Via MiFlash
 toc: true
 updated: 2022-03-30T13:57:37+07:00
 uuid: 8c318f99-ed4a-4888-8415-e0ff5b08bc39
+lang: en
 category:
   - Uncategorized
 tags: []

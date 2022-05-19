@@ -6,6 +6,7 @@ tags:
 title: git add existing local repository folder to submodule
 updated: 2022-03-31T23:51:59+07:00
 uuid: df364b7a-2f1e-4888-8f8f-2a34a28ccdce
+lang: en
 category:
   - Uncategorized
 author:

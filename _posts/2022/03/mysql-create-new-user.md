@@ -9,6 +9,7 @@ tags:
 title: MySQL Command to create new database user
 updated: 2022-03-26T00:00:00+07:00
 uuid: abcdca48-acd1-4888-8a33-cdcdb7b877dc
+lang: en
 thumbnail: /src-posts/2022/03/mysql-create-new-user/phpmyadmin-changepw.png
 photos:
   - /src-posts/2022/03/mysql-create-new-user/phpmyadmin-changepw.png

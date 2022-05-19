@@ -4,6 +4,7 @@ date: 2022-03-30T13:43:38+07:00
 title: RegExp Match Doesnt Contain Words
 updated: 2022-03-30T13:43:38+07:00
 uuid: 838eebf3-a7ed-4888-884d-2b361639e7c9
+lang: en
 category:
   - Uncategorized
 tags: []

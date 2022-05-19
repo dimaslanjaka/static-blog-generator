@@ -17,6 +17,7 @@ title: Fix add file to gitignore not filtered
 type: post
 uuid: d0ce851a-9de9-4888-87cd-931b67b961b3
 webtitle: CMD
+lang: en
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png

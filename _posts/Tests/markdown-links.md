@@ -6,6 +6,7 @@ title: fix shortcodes markdown with links .md
 type: page
 updated: 2022-04-04T00:00:00+07:00
 uuid: 2f48db92-cc92-4888-8977-330cd94e2d1c
+lang: en
 category:
   - Uncategorized
 tags: []

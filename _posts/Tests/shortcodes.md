@@ -6,6 +6,7 @@ title: Parse Shortcodes
 type: page
 updated: 2022-05-17T00:00:00+07:00
 uuid: 19cd8465-198b-4888-87fd-81972ebaceb1
+lang: en
 category:
   - Uncategorized
 tags: []
@@ -114,6 +115,6 @@ Manually set type `playlist`
 
 ## Shortcode now()
 ```html
-5/19/2022, 6:41:59 PM
+5/19/2022, 7:11:56 PM
 ```
 

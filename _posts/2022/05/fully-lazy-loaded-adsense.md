@@ -13,6 +13,7 @@ tags:
 title: Lazy Load Adsense Full Support 2022 Adsense API
 updated: 2022-05-11T15:52:06+07:00
 uuid: 7a161b74-ae97-4888-88a4-055f71f691ee
+lang: en
 thumbnail: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 photos:
   - https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png

@@ -12,6 +12,7 @@ toc: true
 updated: 2022-03-17T14:21:00+07:00
 uuid: 6bb86ddd-8407-4888-8428-e335b157339c
 webtitle: Chimeraland
+lang: en
 author:
   name: Dimas Lanjaka
   link: https://www.webmanajemen.com/

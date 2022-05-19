@@ -5,6 +5,7 @@ description: Sample configuration for xampp virtual hosts 100 work tested 2022
 title: XAMPP vhosts config full example and guide
 updated: 2022-05-16T12:20:27+07:00
 uuid: eebdab1d-b491-4888-89ac-24b96cabcd59
+lang: en
 category:
   - Uncategorized
 tags:

@@ -14,6 +14,7 @@ tags:
 title: Recaptcha V3 Complete Code
 updated: 2022-04-19T00:12:30+07:00
 uuid: b0632b47-3fa3-4888-8d99-bc3a7a83a437
+lang: en
 thumbnail: https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
 photos:
   - https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png

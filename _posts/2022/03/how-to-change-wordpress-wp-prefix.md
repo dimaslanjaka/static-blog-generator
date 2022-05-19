@@ -8,6 +8,7 @@ tags:
 title: Change wordpress table prefix updated 2022
 updated: 2022-03-27T10:02:25+07:00
 uuid: a69fa1b4-3f2c-4888-8757-27179d208826
+lang: en
 category:
   - Programming
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg

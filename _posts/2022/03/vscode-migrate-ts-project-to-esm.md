@@ -4,6 +4,7 @@ date: 2022-03-30T13:57:37+07:00
 title: VSCode Migrate Typescript CommonJS to ESM
 updated: 2022-03-30T13:57:37+07:00
 uuid: 0d62f3d2-19c9-4888-8674-ddff779112e4
+lang: en
 category:
   - Programming
 tags:

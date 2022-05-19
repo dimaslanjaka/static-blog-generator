@@ -10,6 +10,7 @@ title: Custom PATH VSCode Integrated Terminal Options
 updated: 2022-04-04T18:26:00+07:00
 uuid: 3b1b7031-6ca3-4888-8c93-4812c6cc40c2
 webtitle: VSCode
+lang: en
 category:
   - Uncategorized
 thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png

@@ -5,6 +5,7 @@ title: gulp src pattern
 updated: 2022-04-02T00:34:31+07:00
 uuid: 32de1d5f-52a5-4888-88e6-0ef31c247e82
 webtitle: NodeJS
+lang: en
 category:
   - Uncategorized
 tags: []
