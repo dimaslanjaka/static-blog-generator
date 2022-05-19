@@ -1,12 +1,13 @@
 {
   "name": "hexo-post-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parse Hexo Post To Object",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist/* && tsc -p tsconfig.build.json",
-    "format": "prettier -w src/**/*.ts"
+    "format": "prettier -w src/**/*.ts",
+    "ci": "yarn --check-files"
   },
   "files": [
     "packages",
