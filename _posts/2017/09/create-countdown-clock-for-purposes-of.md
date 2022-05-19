@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://1.bp.blogspot.com/-kL99VLzW4Ms/WaRX_4aQlbI/AAAAAAAAAB8/ArrS1QtEfG84W6z8Fj_caMdA-_J9ycrwwCLcBGAs/s320/5bfe82185dce9a2a58dee19d3c102139--status-younique-presenter.jpg
 date: 2017-09-11T00:49:00+07:00

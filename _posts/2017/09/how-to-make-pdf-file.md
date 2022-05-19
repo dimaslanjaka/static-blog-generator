@@ -13,7 +13,6 @@ modified: 2017-09-24T01:51:01.133+07:00
 subtitle: http//www.dopdf.com/download/setup/dopdf-7.exe
 tags:
   - Tips & Tricks
-  - Tips & Tricks
 title: HOW TO MAKE A PDF FILE
 type: post
 uuid: 6caab6c9-5085-4888-8fd6-9f036417d26d

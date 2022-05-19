@@ -15,7 +15,6 @@ subtitle: Some Smartphone Problems Not Charging And How To Overcome It Digital
 tags:
   - Miscellaneous
   - Tips & Tricks
-  - Tips & Tricks
 title: Some Smartphone Problems Not Charging And How To Overcome It
 type: post
 uuid: b2fd8fb1-d496-4888-88a4-53a354894090

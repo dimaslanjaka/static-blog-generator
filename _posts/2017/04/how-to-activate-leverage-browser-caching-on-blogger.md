@@ -17,7 +17,6 @@ tags:
   - HTML
   - Blogging
   - Tips & Tricks
-  - Blogging
 title: How to activate Leverage Browser Caching On Blogger
 type: post
 uuid: f98f7870-1c33-4888-8c79-90609d4037d2

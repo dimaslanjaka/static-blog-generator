@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
 date: 2019-07-26T00:56:00+07:00

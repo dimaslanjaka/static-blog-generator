@@ -14,7 +14,6 @@ subtitle: At this time I will share, How to move the blogger categoryExample
 tags:
   - Blogger
   - Tips & Tricks
-  - Tips & Tricks
   - Blogging
 title: How to bulk add category label to blogger posts
 type: post

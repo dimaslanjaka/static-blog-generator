@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://goo.gl/ZDjCRk
 date: 2018-02-07T16:36:00+07:00
@@ -20,7 +19,6 @@ tags:
   - Blogging
   - Tips & Tricks
   - JAVASCRIPT
-  - Blogging
 title: Create External Link Icons Using SVG without JavaScript In Blogger
 type: post
 uuid: f23ed2a9-8e62-4888-8613-6b657a3bef63

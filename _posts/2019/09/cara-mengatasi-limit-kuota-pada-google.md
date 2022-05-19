@@ -14,7 +14,6 @@ subtitle: Full download server is the desire of many people, especially the
   downloader mania, hehe. Well, Google Drive is a server that supports
 tags:
   - Tips & Tricks
-  - Tips & Tricks
 title: How to Overcome Quota Limits on Google Drive
 type: post
 uuid: c3106ffe-a906-4888-885b-38e34eb8f77b

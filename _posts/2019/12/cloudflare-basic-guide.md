@@ -15,7 +15,6 @@ subtitle: Panduan Dasar Cloudflare This article is a complete basic guide about
 tags:
   - Share
   - Tips & Tricks
-  - Tips & Tricks
 title: Cloudflare Basic Guide
 type: post
 uuid: c0afd841-fe63-4888-85d0-9b14119c19cd

@@ -15,8 +15,6 @@ subtitle: Lag or Broken is one of the factors that make it uncomfortable when
 tags:
   - Games
   - Tips & Tricks
-  - Tips & Tricks
-  - Games
 title: 5 Tips and Tutorials How to Overcome Lag or Broken Game Ark Survival
   Evolved Mobile on Android Smartphone
 type: post

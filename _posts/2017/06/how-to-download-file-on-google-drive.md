@@ -14,7 +14,6 @@ subtitle: For those of you who want to download files shared on kbd>Google
   Drive</kbd> may have experienced access limits from shared files, be they
 tags:
   - Tips & Tricks
-  - Tips & Tricks
 title: How to Download a File on Google Drive that Limit Access
 type: post
 uuid: f62514e4-f12c-4888-8af0-d1d4a54942a8

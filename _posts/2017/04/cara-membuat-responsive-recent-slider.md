@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-8SFuxN53JKY/WP4EotL68mI/AAAAAAAAFLE/QKjY273Zd60Z1FdySOdLoB4r94bXskwZQCLcB/s320/Screenshot_2017-04-24-20-56-21.jpg
 date: 2017-04-24T20:18:00+07:00

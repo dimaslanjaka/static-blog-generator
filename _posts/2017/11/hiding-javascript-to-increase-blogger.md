@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://lh5.googleusercontent.com/proxy/zOJPQmOxXy895GIkyGjPcsnz3xVCQZGUJhgMGWk2BJS4JNQcjbpMUA9IeG5TdHv9Yv0q5USG8ipopidYGRGZUZgo-yGy2zPcevf0iMrMACluVNuYUgrAOQ=w300-h300-nc
 date: 2017-11-18T13:56:00+07:00
@@ -16,7 +15,6 @@ subtitle: Me often find comments on blogs Mascots inquiring about blogger
 tags:
   - JAVASCRIPT
   - Blogger
-  - JAVASCRIPT
   - Blogging
 title: Hiding javascript to increase blogger blog speed
 type: post

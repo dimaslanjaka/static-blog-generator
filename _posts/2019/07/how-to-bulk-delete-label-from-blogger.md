@@ -14,7 +14,6 @@ subtitle: Previous How to bulk add category label to blogger postsFilter and
 tags:
   - Blogger
   - Tips & Tricks
-  - Tips & Tricks
   - Blogging
 title: How to bulk delete category label from blogger posts
 type: post

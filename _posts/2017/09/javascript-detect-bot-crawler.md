@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://imgdb.net/images/3206.png
 date: 2017-09-25T00:57:00+07:00
@@ -15,7 +14,6 @@ subtitle: img src=https://imgdb.net/images/3206.png/><script
 tags:
   - JAVASCRIPT
   - Tips & Tricks
-  - JAVASCRIPT
 title: Javascript detect bot crawler
 type: post
 uuid: 3711008f-a5fb-4888-8f3a-2e43ef289ed3

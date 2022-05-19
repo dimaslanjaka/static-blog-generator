@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZ-Ya5lUljhzFq1eHq5wLN0Nooclq80d6mgWebE86HqthrDHyNsuF_gQPY
 date: 2017-10-05T14:50:00+07:00
@@ -17,7 +16,6 @@ tags:
   - JAVASCRIPT
   - HTML
   - Blogging
-  - JAVASCRIPT
 title: Cara convert HTML ke Javascript document.write otomatis
 type: post
 uuid: e28102dd-393e-4888-8c27-3a3072d9d548

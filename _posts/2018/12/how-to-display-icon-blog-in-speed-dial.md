@@ -19,7 +19,6 @@ tags:
   - HTML
   - Blogging
   - Tips & Tricks
-  - Tips & Tricks
 title: How to Display Icon Blog In speed dial Browser
 type: post
 uuid: 4e577201-dab4-4888-8c7d-5a7ccee64efa

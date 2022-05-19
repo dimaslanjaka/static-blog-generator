@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/javascriptt-light_870x220.png?sfvrsn=f0bf46af_3
 date: 2019-06-15T20:02:00+07:00
@@ -17,7 +16,6 @@ tags:
   - Tools
   - JAVASCRIPT
   - Tips & Tricks
-  - JAVASCRIPT
 title: 5 Ekstensi VSCode Teratas untuk Pengembangan JavaScript yang Efisien
 type: post
 uuid: d390ecda-c1cd-4888-8a7f-8bcad93666fa

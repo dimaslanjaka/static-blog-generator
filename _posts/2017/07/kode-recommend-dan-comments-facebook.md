@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2017-07-28T22:55:00+07:00
@@ -17,7 +16,6 @@ tags:
   - JAVASCRIPT
   - HTML
   - Social Media
-  - JAVASCRIPT
 title: Kode Recommend Dan Comments Facebook Based JavaScript
 type: post
 uuid: a53d40c3-9daa-4888-8c41-8925a20e7e8c

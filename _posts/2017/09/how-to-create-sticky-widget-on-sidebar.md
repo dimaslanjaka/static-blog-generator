@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://imgdb.net/images/3192.jpg
 date: 2017-09-13T14:55:00+07:00

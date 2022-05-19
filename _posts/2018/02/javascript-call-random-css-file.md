@@ -5,8 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
-  - Programming
 comments: true
 cover: https://goo.gl/dzGpyo
 date: 2018-02-10T06:57:00+07:00
@@ -16,7 +14,6 @@ subtitle: I am trying to rotate random CSS sheets via JS I have the following
   script but when I am using it - it doesnt seem to work ?
 tags:
   - CSS
-  - JAVASCRIPT
   - JAVASCRIPT
 title: JavaScript Call Random CSS file
 type: post

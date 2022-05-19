@@ -16,7 +16,6 @@ tags:
   - CSS
   - Blogger
   - Tips & Tricks
-  - Tips & Tricks
 title: How to Get Rid of Icon Screwdriver and Pliers Wrenches Quick Edit Wrench
 type: post
 uuid: 2390455b-6075-4888-8d19-59e6c8548b19

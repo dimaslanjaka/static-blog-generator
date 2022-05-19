@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/4291.jpg
 date: 2018-10-31T03:13:00+07:00
@@ -16,7 +15,6 @@ subtitle: img
   class=w3-image title=JS Geolocation
 tags:
   - Script
-  - JAVASCRIPT
   - JAVASCRIPT
 title: Pure Javascript Geolocation
 type: post

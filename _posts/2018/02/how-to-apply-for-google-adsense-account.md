@@ -15,7 +15,6 @@ subtitle: Running Google adsense advertising program or a Google ads publisher
 tags:
   - Adsense
   - Tips & Tricks
-  - Tips & Tricks
 title: How to Apply for a Google Adsense Account In Disabled Because of Invalid
   Activity
 type: post

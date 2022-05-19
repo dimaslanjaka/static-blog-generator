@@ -5,8 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
-  - Programming
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjdpDoe7h7wNQx9CmRe46wN2Ta_p7TYUg_q9p0GUr6OM6Y1hml
 date: 2017-04-17T04:31:00+07:00
@@ -21,7 +19,6 @@ tags:
   - HTML
   - Blogging
   - Tips & Tricks
-  - JAVASCRIPT
 title: How to beautify html javascript and css using script on the fly
 type: post
 uuid: e93db569-abba-4888-8153-92f5f4ba91c8

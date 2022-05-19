@@ -14,7 +14,6 @@ subtitle: HOW TO MAKE IFRAME - Website Manajemen Indonesia
 tags:
   - HTML
   - Tips & Tricks
-  - Tips & Tricks
 title: HOW TO MAKE IFRAME
 type: post
 uuid: 5dc6d6d0-6f25-4888-8fff-55dab64969dd

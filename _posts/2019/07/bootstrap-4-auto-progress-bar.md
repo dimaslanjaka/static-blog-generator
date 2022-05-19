@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://www.webmanajemen.com/assets/img/javascript.png
 date: 2019-07-25T23:09:00+07:00

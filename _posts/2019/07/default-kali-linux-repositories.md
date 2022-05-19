@@ -31,4 +31,4 @@ url: https://www.webmanajemen.com/2019/07/default-kali-linux-repositories.html
 permalink: /2019/07/default-kali-linux-repositories.html
 ---
 
-<div dir="ltr" trbidi="on">open terminal, type : <pre>gedit /etc/apt/sources.list</pre>add following codes: <br><pre>deb http://http.kali.org/kali kali-rolling main non-free contrib<br>deb-src http://http.kali.org/kali kali-rolling main non-free contrib<br></pre></div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png">
+<div dir="ltr" style="text-align: left;" trbidi="on">open terminal, type : <pre>gedit /etc/apt/sources.list</pre>add following codes: <br><pre>deb http://http.kali.org/kali kali-rolling main non-free contrib<br>deb-src http://http.kali.org/kali kali-rolling main non-free contrib<br></pre></div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png">

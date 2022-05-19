@@ -15,7 +15,6 @@ subtitle: how to fix mdadm.conf defines no arrays on UBUNTU SERVER 16.04 -
 tags:
   - Tips & Tricks
   - Linux/Unix
-  - Tips & Tricks
 title: how to fix  mdadm.conf defines no arrays on UBUNTU SERVER 16.04
 type: post
 uuid: 7f916828-d486-4888-8a96-f86034ba51db
