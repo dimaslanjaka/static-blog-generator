@@ -131,6 +131,9 @@ function parsePost(text, options = {}) {
                     }
                 }
             }
+            // @todo fix lang
+            if (!meta.lang)
+                meta.lang = 'en';
         }
         // @todo set default category and tags
         if (!meta.category)
@@ -211,6 +214,20 @@ function parsePost(text, options = {}) {
             meta.subtitle = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.subtitle));
             meta.excerpt = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.excerpt));
             meta.description = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.description));
+        }
+        // @todo fix default category and tags
+        if (options.fix) {
+            // remove uncategorized if programming category pushed
+            if (config.default_category)
+                if (meta.category.includes(config.default_category) &&
+                    meta.category.length > 1) {
+                    meta.category = meta.category.filter((e) => e !== config.default_category);
+                }
+            // remove untagged if programming category pushed
+            if (config.default_tag)
+                if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
+                    meta.tags = meta.tags.filter((e) => e !== config.default_tag);
+                }
         }
         // @todo delete location
         if (Object.prototype.hasOwnProperty.call(meta, 'location') &&

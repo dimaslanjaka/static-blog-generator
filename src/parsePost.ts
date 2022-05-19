@@ -265,6 +265,9 @@ export function parsePost(
           }
         }
       }
+
+      // @todo fix lang
+      if (!meta.lang) meta.lang = 'en';
     }
 
     // @todo set default category and tags
@@ -342,6 +345,25 @@ export function parsePost(
       meta.subtitle = cleanWhiteSpace(cleanString(meta.subtitle));
       meta.excerpt = cleanWhiteSpace(cleanString(meta.excerpt));
       meta.description = cleanWhiteSpace(cleanString(meta.description));
+    }
+
+    // @todo fix default category and tags
+    if (options.fix) {
+      // remove uncategorized if programming category pushed
+      if (config.default_category)
+        if (
+          meta.category.includes(config.default_category) &&
+          meta.category.length > 1
+        ) {
+          meta.category = meta.category.filter(
+            (e) => e !== config.default_category
+          );
+        }
+      // remove untagged if programming category pushed
+      if (config.default_tag)
+        if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
+          meta.tags = meta.tags.filter((e) => e !== config.default_tag);
+        }
     }
 
     // @todo delete location
