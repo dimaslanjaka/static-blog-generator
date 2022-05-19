@@ -1,6 +1,6 @@
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
-import moment from 'moment';
+import { default as momentInstance } from 'moment-timezone';
 import { dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
@@ -19,6 +19,19 @@ import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { DynamicObject } from './types';
 import config from './types/_config';
+
+/**
+ * Localized Moment
+ * @param date
+ * @returns
+ */
+function moment(date: any = new Date()) {
+  let parse = momentInstance(date);
+  if (config.timezone) {
+    parse = parse.tz(config.timezone);
+  }
+  return parse;
+}
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
@@ -231,6 +244,27 @@ export function parsePost(
           }),
           {}
         ) as postMap['metadata'];
+    }
+
+    if (options.fix) {
+      // @todo fix date
+      if (!meta.date) {
+        meta.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
+      }
+
+      if (meta.modified && !meta.updated) {
+        meta.updated = moment(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
+      }
+      if (isFile) {
+        const sourceFile = toUnix(originalArg);
+        if (existsSync(sourceFile)) {
+          const stats = statSync(sourceFile);
+          if (!meta.updated) {
+            const mtime = stats.mtime;
+            meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+          }
+        }
+      }
     }
 
     // @todo set default category and tags

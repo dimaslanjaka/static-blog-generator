@@ -4,7 +4,7 @@ exports.parsePost = void 0;
 const tslib_1 = require("tslib");
 const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
-const moment_1 = tslib_1.__importDefault(require("moment"));
+const moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const persistent_cache_1 = tslib_1.__importDefault(require("../packages/persistent-cache"));
@@ -22,6 +22,18 @@ const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
 const _config_1 = tslib_1.__importDefault(require("./types/_config"));
+/**
+ * Localized Moment
+ * @param date
+ * @returns
+ */
+function moment(date = new Date()) {
+    let parse = (0, moment_timezone_1.default)(date);
+    if (_config_1.default.timezone) {
+        parse = parse.tz(_config_1.default.timezone);
+    }
+    return parse;
+}
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
     name: 'parsePost',
@@ -101,6 +113,25 @@ function parsePost(text, options = {}) {
                 .sort()
                 .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
         }
+        if (options.fix) {
+            // @todo fix date
+            if (!meta.date) {
+                meta.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
+            }
+            if (meta.modified && !meta.updated) {
+                meta.updated = moment(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
+            }
+            if (isFile) {
+                const sourceFile = (0, upath_1.toUnix)(originalArg);
+                if ((0, fs_1.existsSync)(sourceFile)) {
+                    const stats = (0, fs_1.statSync)(sourceFile);
+                    if (!meta.updated) {
+                        const mtime = stats.mtime;
+                        meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+                    }
+                }
+            }
+        }
         // @todo set default category and tags
         if (!meta.category)
             meta.category = [];
@@ -112,7 +143,7 @@ function parsePost(text, options = {}) {
             meta.tags.push(config.default_tag);
         // @todo set default date post
         if (!meta.date)
-            meta.date = (0, moment_1.default)().format();
+            meta.date = moment().format();
         if (!meta.updated) {
             if (meta.modified) {
                 // fix for hexo-blogger-xml
