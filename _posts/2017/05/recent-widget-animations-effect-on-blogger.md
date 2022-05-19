@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
 date: 2017-05-05T23:00:00+07:00
@@ -16,6 +17,7 @@ tags:
   - CSS
   - Blogger
   - HTML
+  - Blogging
   - Blogging
 title: Recent Widget Animation Effects On Blogger
 type: post

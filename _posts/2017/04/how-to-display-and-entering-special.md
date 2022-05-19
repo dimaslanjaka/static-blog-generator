@@ -15,6 +15,7 @@ subtitle: "Text HTML Tutorial Part 1: How to Display and Entering Special
 tags:
   - HTML
   - Tips & Tricks
+  - Tips & Tricks
 title: How to Display and Entering Special Characters in HTML
 type: post
 uuid: 12e6672e-9166-4888-8f26-41592bb13a44

@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: https://4.bp.blogspot.com/-l94ir-kHDK8/VSK2vrIZEWI/AAAAAAAAA5w/r5ZkFkd7n2o/s1600/google-translate-256.png
 date: 2017-05-12T00:54:00+07:00

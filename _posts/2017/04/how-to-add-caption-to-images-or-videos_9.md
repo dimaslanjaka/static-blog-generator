@@ -19,6 +19,9 @@ tags:
   - Tips & Tricks
   - Blogging
   - Blogging
+  - Tips & Tricks
+  - Blogging
+  - Blogging
 title: How to add caption to images or videos in wordpress and Blogger
 type: post
 uuid: 97da7e60-01ff-4888-86bb-456242b296c5

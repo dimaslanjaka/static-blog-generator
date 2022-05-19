@@ -114,6 +114,6 @@ Manually set type `playlist`
 
 ## Shortcode now()
 ```html
-5/19/2022, 6:26:19 PM
+5/19/2022, 6:31:18 PM
 ```
 

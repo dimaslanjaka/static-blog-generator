@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: https://3.bp.blogspot.com/-1K6wl1YmvoY/VRpleEPVStI/AAAAAAAAAtE/ZiZBz937iIk/s1600/facebook-fan-page-fans.png
 date: 2017-04-11T06:44:00+07:00
@@ -17,6 +18,7 @@ tags:
   - Blogger
   - HTML
   - Social Media
+  - Tips & Tricks
   - Tips & Tricks
 title: How To Easily add FansPage Facebook Levitating On Blogs
 type: post

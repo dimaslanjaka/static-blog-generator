@@ -6,6 +6,8 @@ author:
 category:
   - Programming
   - Programming
+  - Programming
+  - Programming
 comments: true
 cover: https://i.stack.imgur.com/3pgKv.png
 date: 2019-09-22T10:13:00+07:00

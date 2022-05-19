@@ -15,6 +15,7 @@ subtitle: How To Solve Duplicate Content On Blog Duplicate content is to
 tags:
   - Blogger
   - Tips & Tricks
+  - Tips & Tricks
 title: How To Solve Duplicate Content On Blog
 type: post
 uuid: 1174149a-9f43-4888-8a83-c0005fc2644c

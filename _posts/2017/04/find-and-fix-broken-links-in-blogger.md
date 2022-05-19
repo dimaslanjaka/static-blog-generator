@@ -16,6 +16,7 @@ tags:
   - SEO
   - Blogger
   - Blogging
+  - Blogging
 title: Find and Fix broken links in Blogger For SEO
 type: post
 uuid: 1f698820-4b91-4888-8b0b-93da5ab3e5ef

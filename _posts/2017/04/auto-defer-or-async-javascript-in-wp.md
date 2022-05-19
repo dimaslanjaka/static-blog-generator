@@ -6,6 +6,7 @@ author:
 category:
   - Programming
   - Programming
+  - Programming
 comments: true
 cover: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSIWbE9ADSn11CH5cNI3gcioX1mK17u9QAfTSLX9hxLtwyXgFYdt0J_Yyrw
 date: 2017-04-21T18:48:00+07:00
@@ -16,6 +17,8 @@ tags:
   - Wordpress
   - JAVASCRIPT
   - PHP
+  - JAVASCRIPT
+  - Blogging
   - JAVASCRIPT
   - Blogging
 title: Auto Defer Or Async Javascript in Wordpress

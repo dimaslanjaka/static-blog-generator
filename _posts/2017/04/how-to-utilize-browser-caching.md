@@ -18,6 +18,7 @@ tags:
   - HTML
   - Blogging
   - Tips & Tricks
+  - Tips & Tricks
 title: How to Utilize Browser Caching
 type: post
 uuid: d52301f4-1a6a-4888-8a5e-caf09be02bc2

@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpLEYpRfgPOwSkpUWGmr5SWmGGZoesHfcyD8FyIejZ_AZiE_lAsWcPdHuI
 date: 2017-05-06T20:55:00+07:00

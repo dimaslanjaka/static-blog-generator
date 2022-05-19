@@ -17,6 +17,7 @@ tags:
   - HTML
   - PHP
   - Tips & Tricks
+  - Tips & Tricks
 title: How to fix Feedburner feed double titles issue
 type: post
 uuid: 1a0abc3e-65d6-4888-8542-07d2cbc02188

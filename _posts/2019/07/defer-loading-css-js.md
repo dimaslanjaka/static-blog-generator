@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
 date: 2019-07-23T02:53:00+07:00

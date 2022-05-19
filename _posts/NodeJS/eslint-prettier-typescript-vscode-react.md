@@ -7,15 +7,10 @@ tags:
   - ESLint
   - TYPESCRIPT
   - JAVASCRIPT
-  - TYPESCRIPT
-  - ESLint
 title: Eslint Prettier Auto Format In Typescript React Project
 updated: 2022-04-19T18:20:17+07:00
 uuid: 6cba6ec8-458e-4888-8cb9-d446bfd0cdf4
 category:
-  - Programming
-  - Programming
-  - Programming
   - Programming
 thumbnail: https://miro.medium.com/max/1400/1*N9n5F63ne3HimpJ10d1HEw.jpeg
 photos:

@@ -16,6 +16,7 @@ tags:
   - Adsense
   - Blogger
   - Blogging
+  - Blogging
 title: Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam
   Blogger Post
 type: post

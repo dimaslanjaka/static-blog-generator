@@ -6,6 +6,7 @@ author:
 category:
   - Programming
   - Programming
+  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.victim-site.com/img/snapshots/websocket.png
 date: 2019-07-13T01:38:00+07:00
@@ -18,6 +19,7 @@ tags:
   - HTML
   - PHP
   - Tips & Tricks
+  - JAVASCRIPT
   - JAVASCRIPT
 title: "[JS][PHP] Membuat Websocket Javascript"
 type: post

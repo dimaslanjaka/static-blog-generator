@@ -18,6 +18,8 @@ tags:
   - HTML
   - Tips & Tricks
   - Blogging
+  - Tips & Tricks
+  - Blogging
 title: How to Fix Structured Data Errors in Blogger
 type: post
 uuid: 40d91754-4f66-4888-86cd-f6f2d72aa34a

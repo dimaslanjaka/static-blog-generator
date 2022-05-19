@@ -5,6 +5,7 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - Programming
 comments: true
 cover: http://www.duniailkom.com/wp-content/uploads/2013/10/Cara-Menginput-CSS-Metode-Inline-Style.png
 date: 2017-04-28T11:12:00+07:00
@@ -15,6 +16,7 @@ subtitle: "Learning CSS Tutorial Part : How to enter CSS code into the HTML
 tags:
   - CSS
   - HTML
+  - Tips & Tricks
   - Tips & Tricks
 title: How to enter CSS code into the HTML page
 type: post

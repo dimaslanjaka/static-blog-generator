@@ -15,6 +15,7 @@ subtitle: "Text HTML Tutorial Part : How to Make HTML Without Text Format pre
 tags:
   - HTML
   - Tips & Tricks
+  - Tips & Tricks
 title: How to Make HTML Without Text Format pre tags and tag code
 type: post
 uuid: 0c88eaf9-ab13-4888-86b9-f4e3cf061c18

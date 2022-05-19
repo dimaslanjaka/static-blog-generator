@@ -5,10 +5,6 @@ author:
   image: https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg
 category:
   - Programming
-  - Programming
-  - Programming
-  - Programming
-  - Programming
 comments: true
 cover: https://i.ytimg.com/vi/ubNP6fbT2Ac/maxresdefault.jpg
 date: 2021-11-28T07:00:00+07:00
@@ -22,8 +18,6 @@ subtitle: How to detect HTMLCollection/NodeList in JavaScript/Typescript?
 tags:
   - TYPESCRIPT
   - JAVASCRIPT
-  - JAVASCRIPT
-  - TYPESCRIPT
 title: HTMLCollection/NodeList in JavaScript/Typescript?
 toc: false
 type: post

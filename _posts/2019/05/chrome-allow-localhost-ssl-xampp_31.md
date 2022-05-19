@@ -16,6 +16,7 @@ subtitle: "Input into chrome address bar
 tags:
   - Tips & Tricks
   - XAMPP
+  - XAMPP
 title: Chrome Allow Localhost SSL XAMPP
 type: post
 uuid: 7210af33-e7f0-4888-88c5-35871047a0e0

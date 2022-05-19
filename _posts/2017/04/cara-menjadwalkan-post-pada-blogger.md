@@ -15,6 +15,7 @@ subtitle: Cara Menjadwalkan Post pada BloggerJika Anda menggunakan Blogspot atau
 tags:
   - Blogger
   - Blogging
+  - Blogging
 title: Cara Jadwalkan Post pada Blogger
 type: post
 uuid: 6d9795a0-c187-4888-87e6-e00365d746bb

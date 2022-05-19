@@ -6,6 +6,8 @@ author:
 category:
   - Programming
   - Programming
+  - Programming
+  - Programming
 comments: true
 cover: https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
 date: 2017-04-13T16:29:00+07:00

@@ -15,6 +15,7 @@ subtitle: Lately I see a lot of blog friends adsense publishers banned for
 tags:
   - Adsense
   - Tips & Tricks
+  - Tips & Tricks
 title: How to Implement  A Right Internal links To Blog Adsense
 type: post
 uuid: 85aefeaf-4e2c-4888-8606-c18f40d89992
