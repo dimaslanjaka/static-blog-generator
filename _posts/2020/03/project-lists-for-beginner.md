@@ -29,4 +29,4 @@ excerpt: Movies App Flutter Project)
 url: /2020/03/project-lists-for-beginner.html
 ---
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><br><ol style="text-align: left;"><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>
+<div dir="ltr" trbidi="on"><br><ol><li><a href="https://github.com/madeadriandp/movies_app" rel="noopener noreferer nofollow" target="_blank">Movies App (Flutter Project)</a></li></ol></div>
