@@ -5,16 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JAVA
+  - Java
+  - Programming
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 date: 2020-09-22T10:36:00+07:00
 lang: en
 modified: 2020-09-22T10:36:39.906+07:00
-subtitle: pre><br />ArrayList&lt;String&gt; firstArr = new
-  ArrayList&lt;&gt;();<br /> firstArr.add(&quot;1&quot;);<br />
+subtitle: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br />
+  firstArr.addquot;1quot;;<br />
 tags:
-  - JAVA
+  - Java
 title: Remove all objects in an arraylist that exist in another arraylist Java
 type: post
 uuid: 86dc6b3b-9670-4888-8e6a-bd91726de97c
@@ -23,12 +24,13 @@ updated: 2022-03-20T20:57:28+07:00
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-description: pre><br />ArrayList&lt;String&gt; firstArr = new
-  ArrayList&lt;&gt;();<br /> firstArr.add(&quot;1&quot;);<br />
+description: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br
+  /> firstArr.addquot;1quot;;<br />
 wordcount: 38
-excerpt: pre><br />ArrayList&lt;String&gt; firstArr = new
-  ArrayList&lt;&gt;();<br /> firstArr.add(&quot;1&quot;);<br />
-url: /2020/09/remove-all-objects-in-arraylist-that.html
+excerpt: pre><br />ArrayListlt;Stringgt; firstArr = new ArrayListlt;gt;;<br />
+  firstArr.addquot;1quot;;<br />
+url: https://www.webmanajemen.com/2020/09/remove-all-objects-in-arraylist-that.html
+permalink: /2020/09/remove-all-objects-in-arraylist-that.html
 ---
 
 ```java

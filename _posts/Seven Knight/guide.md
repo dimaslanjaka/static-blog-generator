@@ -17,6 +17,7 @@ location: Indonesia
 subtitle: Guide SK2 for F2P
 tags:
   - Games
+  - Tips & Tricks
 title: F2P Guide
 type: post
 uuid: d6337782-e225-4888-8fca-4207d72f764f
@@ -28,7 +29,8 @@ photos:
 description: Guide SK2 for F2P
 wordcount: 24144
 excerpt: Guide SK2 for F2P
-url: /Seven%20Knight/guide.html
+url: https://www.webmanajemen.com/Seven%20Knight/guide.html
+permalink: /Seven%20Knight/guide.html
 ---
 
 <div>

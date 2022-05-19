@@ -5,20 +5,19 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 date: 2021-06-02T20:52:00+07:00
 lang: en
 modified: 2021-06-02T21:48:37.630+07:00
-subtitle: php apache setup on android with Termux without
-  root) 											Download Termux 						(allow installation from unknwon
-  sources and
+subtitle: php apache setup on android with Termux without root Download Termux
+  allow installation from unknwon sources and
 tags:
   - PHP
   - Android
   - Tips & Tricks
-title: Install XAMPP/LAMPP On Android (Non-Root)
+  - XAMPP
+title: Install XAMPP/LAMPP On Android Non-Root
 type: post
 uuid: fe9bd82e-f555-4888-8952-a281475f8148
 webtitle: WMI Gitlab
@@ -26,14 +25,13 @@ updated: 2021-06-02T21:48:37+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://parzibyte.me/blog/wp-content/uploads/2018/11/Configuraci%C3%B3n-httpd-en-termux-Android.jpg
-description: php apache setup on android with Termux without
-  root) 											Download Termux 						(allow installation from unknwon
-  sources and
+description: php apache setup on android with Termux without root Download
+  Termux allow installation from unknwon sources and
 wordcount: 1083
-excerpt: php apache setup on android with Termux without
-  root) 											Download Termux 						(allow installation from unknwon
-  sources and
-url: /2021/06/install-xampp-lampp-on-android-non-root.html
+excerpt: php apache setup on android with Termux without root Download Termux
+  allow installation from unknwon sources and
+url: https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html
+permalink: /2021/06/install-xampp-lampp-on-android-non-root.html
 ---
 
 <div id="bootstrap-wrapper">

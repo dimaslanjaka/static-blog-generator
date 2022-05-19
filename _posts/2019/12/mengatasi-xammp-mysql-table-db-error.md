@@ -10,8 +10,8 @@ cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_availa
 date: 2019-12-11T23:19:00+07:00
 lang: en
 modified: 2019-12-11T23:19:57.047+07:00
-subtitle: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS 7,8,10)
-  Buka CMD Ketik Command berikut (satu per satu):"
+subtitle: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS 7,8,10
+  Buka CMD Ketik Command berikut satu per satu:"
 tags:
   - Share
   - Tips & Tricks
@@ -24,11 +24,12 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 description: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS
-  7,8,10) Buka CMD Ketik Command berikut (satu per satu):"
+  7,8,10 Buka CMD Ketik Command berikut satu per satu:"
 wordcount: 81
-excerpt: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS 7,8,10)
-  Buka CMD Ketik Command berikut (satu per satu):"
-url: /2019/12/mengatasi-xammp-mysql-table-db-error.html
+excerpt: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS 7,8,10
+  Buka CMD Ketik Command berikut satu per satu:"
+url: https://www.webmanajemen.com/2019/12/mengatasi-xammp-mysql-table-db-error.html
+permalink: /2019/12/mengatasi-xammp-mysql-table-db-error.html
 ---
 
 <div dir="ltr" trbidi="on">  Mengatasi XAMMP mysql table db error must be repaired (WINDOWS 7,8,10)   <br>  <ol>    <li>Buka CMD</li>    <li>Ketik Command berikut (satu per satu):</li>    <pre><br>      cd c:\ [enter]<br>      cd c:\xammp\mysql\bin [enter]<br>      .\mysqlcheck -u root -p --auto-repair --check --all-databases [enter]<br>    </pre>    <li>Selesai</li>  </ol></div>

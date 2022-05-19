@@ -28,7 +28,8 @@ description: 2 Best Blog in Indonesia in Various TopicsA few days ago I idly
 wordcount: 2737
 excerpt: 2 Best Blog in Indonesia in Various TopicsA few days ago I idly
   googling the keywordsBest Blog in IndonesiaAfter I check one by one from
-url: /2017/04/12-best-blog-in-indonesia-in-various.html
+url: https://www.webmanajemen.com/2017/04/12-best-blog-in-indonesia-in-various.html
+permalink: /2017/04/12-best-blog-in-indonesia-in-various.html
 ---
 
 <div dir="ltr">

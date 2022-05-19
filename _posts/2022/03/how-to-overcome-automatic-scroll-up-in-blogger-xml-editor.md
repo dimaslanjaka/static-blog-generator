@@ -8,6 +8,11 @@ uuid: 2668bdf8-b6e4-4888-8824-6686c5f999d3
 webtitle: Blogger
 category:
   - Uncategorized
+tags:
+  - Tips & Tricks
+thumbnail: https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/Py9zUa4MGgs/maxresdefault.jpg
 comments: true
 wordcount: 537
 description: How to Overcome Automatic Scroll Up in Blogger XML Editor - Website
@@ -16,9 +21,9 @@ subtitle: How to Overcome Automatic Scroll Up in Blogger XML Editor - Website
   Manajemen Indonesia
 excerpt: How to Overcome Automatic Scroll Up in Blogger XML Editor - Website
   Manajemen Indonesia
-url: /2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
+url: https://www.webmanajemen.com/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
+permalink: /2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
 type: post
-tags: []
 ---
 
 ## Blogger update information

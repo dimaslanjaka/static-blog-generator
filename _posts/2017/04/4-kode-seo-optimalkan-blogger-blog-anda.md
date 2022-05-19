@@ -20,12 +20,16 @@ type: post
 uuid: dae4d2eb-cc40-4888-8a3c-0d92ae248799
 webtitle: WMI Gitlab
 updated: 2017-04-15T04:55:00+07:00
+thumbnail: https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
+photos:
+  - https://i2.wp.com/legeeks.org/wp-content/uploads/2013/12/1.jpg?resize=427%2C281
 wordcount: 5063
 excerpt: Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
   platform blogging yang paling sering digunakan, tapi pasti memiliki
 description: Kode SEO Optimalkan Blogger Blog Anda.Blogger adalah salah satu
   platform blogging yang paling sering digunakan, tapi pasti memiliki
-url: /2017/04/4-kode-seo-optimalkan-blogger-blog-anda.html
+url: https://www.webmanajemen.com/2017/04/4-kode-seo-optimalkan-blogger-blog-anda.html
+permalink: /2017/04/4-kode-seo-optimalkan-blogger-blog-anda.html
 ---
 
 <div dir="ltr">

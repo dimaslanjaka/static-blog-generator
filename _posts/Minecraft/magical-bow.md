@@ -17,12 +17,13 @@ thumbnail: https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 description: How to use magical books for bow
+tags: []
 comments: true
 wordcount: 613
 excerpt: How to use magical books for bow
-url: /Minecraft/magical-bow.html
+url: https://www.webmanajemen.com/Minecraft/magical-bow.html
+permalink: /Minecraft/magical-bow.html
 type: post
-tags: []
 ---
 
 # Super Magical Bow Recipes

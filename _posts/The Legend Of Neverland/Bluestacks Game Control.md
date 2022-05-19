@@ -20,6 +20,7 @@ subtitle: Game control the legend of neverland bluestacks Support change fairy
   and job skill
 tags:
   - Game Control
+  - Games
 title: Bluestacks Game Control The Legend Of Neverland
 type: post
 uuid: ec9e4ed7-6ff8-4888-8800-3e184ff42ba6
@@ -32,7 +33,8 @@ description: Game control the legend of neverland bluestacks Support change
 wordcount: 126
 excerpt: Game control the legend of neverland bluestacks Support change fairy
   and job skill
-url: /The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
+url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
+permalink: /The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
 ---
 
 ### Requirements

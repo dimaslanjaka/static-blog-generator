@@ -10,8 +10,8 @@ cover: https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 date: 2021-04-20T16:40:00+07:00
 lang: en
 modified: 2021-04-20T16:40:48.445+07:00
-subtitle: pre><br />// change folder path inside bracket<br
-  />includeBuild(plugin) {<br /> dependencySubstitution {<br /> 	// change your
+subtitle: pre><br />// change folder path inside bracket<br />includeBuildplugin
+  <br /> dependencySubstitution <br /> // change your
 tags:
   - Script
   - Gradle
@@ -25,11 +25,12 @@ thumbnail: https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 photos:
   - https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png
 description: pre><br />// change folder path inside bracket<br
-  />includeBuild(plugin) {<br /> dependencySubstitution {<br /> 	// change your
+  />includeBuildplugin <br /> dependencySubstitution <br /> // change your
 wordcount: 29
-excerpt: pre><br />// change folder path inside bracket<br
-  />includeBuild(plugin) {<br /> dependencySubstitution {<br /> 	// change your
-url: /2021/04/import-composite-build-plugin-as.html
+excerpt: pre><br />// change folder path inside bracket<br />includeBuildplugin
+  <br /> dependencySubstitution <br /> // change your
+url: https://www.webmanajemen.com/2021/04/import-composite-build-plugin-as.html
+permalink: /2021/04/import-composite-build-plugin-as.html
 ---
 
 <pre><br>// change folder path inside bracket<br>includeBuild("plugin") {<br>    dependencySubstitution {<br>    	// change your artifact group and id<br>        // iam using <a href="https://github.com/dimaslanjaka/gradle-plugin/" target="_blank" rel="noopener noreferer nofollow">https://github.com/dimaslanjaka/gradle-plugin/</a> for example<br>        substitute(module("com.dimaslanjaka:gradle-plugin")).with(project(":"))<br>    }<br>}<br></pre> <img src="https://miro.medium.com/max/2476/0*Mll3yo3DWALtRYPR.png">

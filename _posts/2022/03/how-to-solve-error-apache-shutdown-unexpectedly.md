@@ -7,17 +7,21 @@ tags:
   - XAMPP
   - PHP
   - MySQL
+  - Tips & Tricks
 title: How to solve Error Apache shutdown unexpectedly updated 2022
 updated: 2022-03-27T23:46:00+07:00
 uuid: 60adad91-cafd-4888-8da8-a84bfff539a9
 category:
   - Programming
-  - PHP
+thumbnail: https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/alj5it9EwIM/maxresdefault.jpg
 comments: true
 wordcount: 265
 excerpt: Various step to fix xampp windows updated 2022
 description: Various step to fix xampp windows updated 2022
-url: /2022/03/how-to-solve-error-apache-shutdown-unexpectedly.html
+url: https://www.webmanajemen.com/2022/03/how-to-solve-error-apache-shutdown-unexpectedly.html
+permalink: /2022/03/how-to-solve-error-apache-shutdown-unexpectedly.html
 type: post
 ---
 

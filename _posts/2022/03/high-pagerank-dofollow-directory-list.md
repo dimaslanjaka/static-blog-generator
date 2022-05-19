@@ -10,11 +10,15 @@ updated: 2022-04-09T22:37:49+07:00
 uuid: 2bbd77ce-1bda-4888-8da3-b9f6763917bc
 category:
   - Uncategorized
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+photos:
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 comments: true
 wordcount: 679
 excerpt: High Pagerank Dofollow Directory List
 description: High Pagerank Dofollow Directory List
-url: /2022/03/high-pagerank-dofollow-directory-list.html
+url: https://www.webmanajemen.com/2022/03/high-pagerank-dofollow-directory-list.html
+permalink: /2022/03/high-pagerank-dofollow-directory-list.html
 type: post
 ---
 

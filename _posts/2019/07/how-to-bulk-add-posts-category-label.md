@@ -14,17 +14,22 @@ subtitle: At this time I will share, How to move the blogger categoryExample
 tags:
   - Blogger
   - Tips & Tricks
+  - Tips & Tricks
 title: How to bulk add category label to blogger posts
 type: post
 uuid: c30aa17b-a017-4888-8e53-8e89093179ac
 webtitle: Blogger
 updated: 2022-04-18T07:28:00+07:00
+thumbnail: https://3.bp.blogspot.com/-xr13nwoay60/XTTB3CWtC1I/AAAAAAAAAcE/nrHcc8rWjm8kit-VSE7gcqimjMOreeUHgCLcBGAs/s1600/Screenshot_2.png
+photos:
+  - https://3.bp.blogspot.com/-xr13nwoay60/XTTB3CWtC1I/AAAAAAAAAcE/nrHcc8rWjm8kit-VSE7gcqimjMOreeUHgCLcBGAs/s1600/Screenshot_2.png
 wordcount: 128
 excerpt: At this time I will share, How to move the blogger categoryExample Well
   move all post label Javascript to JS Filter and Choose the label
 description: At this time I will share, How to move the blogger categoryExample
   Well move all post label Javascript to JS Filter and Choose the label
-url: /2019/07/how-to-bulk-add-posts-category-label.html
+url: https://www.webmanajemen.com/2019/07/how-to-bulk-add-posts-category-label.html
+permalink: /2019/07/how-to-bulk-add-posts-category-label.html
 ---
 
 At this time I will share, **How to move the blogger category**  

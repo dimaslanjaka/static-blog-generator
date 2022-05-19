@@ -11,11 +11,15 @@ updated: 2022-03-27T01:30:00+07:00
 uuid: f1fe35f4-632d-4888-8be4-d86b8a41eb8f
 category:
   - Uncategorized
+thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
+photos:
+  - https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
 comments: true
 wordcount: 454
 excerpt: fix php environtment path for powershell
 description: fix php environtment path for powershell
-url: /2022/03/cannot-call-php-from-powershell.html
+url: https://www.webmanajemen.com/2022/03/cannot-call-php-from-powershell.html
+permalink: /2022/03/cannot-call-php-from-powershell.html
 type: post
 ---
 

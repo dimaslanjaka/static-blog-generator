@@ -24,7 +24,8 @@ photos:
 description: Match string not containing string, exclude badwords
 wordcount: 9
 excerpt: Match string not containing string, exclude badwords
-url: /RegExp/badword.html
+url: https://www.webmanajemen.com/RegExp/badword.html
+permalink: /RegExp/badword.html
 ---
 
 <!--toc-->

@@ -6,13 +6,14 @@ updated: 2022-04-24T00:00:00+07:00
 uuid: c0c30a89-10ff-4888-8a1b-0225815a65ed
 category:
   - Uncategorized
+tags: []
 comments: true
 wordcount: 32
 subtitle: all about nodemon
 excerpt: all about nodemon
-url: /NodeJS/nodemon.html
+url: https://www.webmanajemen.com/NodeJS/nodemon.html
+permalink: /NodeJS/nodemon.html
 type: post
-tags: []
 ---
 
 ## Basic nodemon.json configuration

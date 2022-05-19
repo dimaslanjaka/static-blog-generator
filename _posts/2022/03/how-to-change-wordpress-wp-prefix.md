@@ -9,13 +9,16 @@ updated: 2022-03-27T10:02:25+07:00
 uuid: a69fa1b4-3f2c-4888-8757-27179d208826
 category:
   - Programming
-  - MYSQL
+thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
+photos:
+  - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 comments: true
 wordcount: 340
 description: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
 subtitle: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
 excerpt: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
-url: /2022/03/how-to-change-wordpress-wp-prefix.html
+url: https://www.webmanajemen.com/2022/03/how-to-change-wordpress-wp-prefix.html
+permalink: /2022/03/how-to-change-wordpress-wp-prefix.html
 type: post
 ---
 

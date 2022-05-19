@@ -24,7 +24,8 @@ photos:
 wordcount: 17
 description: Git Login Via Command Line - Website Manajemen Indonesia
 excerpt: Git Login Via Command Line - Website Manajemen Indonesia
-url: /2021/03/git-login-via-command-line.html
+url: https://www.webmanajemen.com/2021/03/git-login-via-command-line.html
+permalink: /2021/03/git-login-via-command-line.html
 ---
 
 <pre class="test"><br>git config --global user.name myusername

@@ -12,12 +12,16 @@ uuid: 3b1b7031-6ca3-4888-8c93-4812c6cc40c2
 webtitle: VSCode
 category:
   - Uncategorized
+thumbnail: https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
+photos:
+  - https://fabianlee.org/wp-content/uploads/2021/12/vscode-logo.png
 comments: true
 wordcount: 127
 description: Custom PATH VSCode Integrated Terminal Options - Website Manajemen Indonesia
 subtitle: Custom PATH VSCode Integrated Terminal Options - Website Manajemen Indonesia
 excerpt: Custom PATH VSCode Integrated Terminal Options - Website Manajemen Indonesia
-url: /2022/02/vscode-integrated-terminal-options.html
+url: https://www.webmanajemen.com/2022/02/vscode-integrated-terminal-options.html
+permalink: /2022/02/vscode-integrated-terminal-options.html
 type: post
 ---
 

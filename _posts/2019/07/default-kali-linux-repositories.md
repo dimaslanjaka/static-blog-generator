@@ -10,7 +10,7 @@ cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.c
 date: 2019-07-21T20:17:00+07:00
 lang: en
 modified: 2019-07-23T01:56:32.090+07:00
-subtitle: "open terminal, type  gedit /etc/apt/sources.listadd following codes:
+subtitle: "open terminal, type gedit /etc/apt/sources.listadd following codes:
   deb http://http.kali.org/kali kali-rolling main non-free"
 tags:
   - Linux/Unix
@@ -22,12 +22,13 @@ updated: 2019-07-23T01:56:32+07:00
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png
-description: "open terminal, type  gedit /etc/apt/sources.listadd following
+description: "open terminal, type gedit /etc/apt/sources.listadd following
   codes: deb http://http.kali.org/kali kali-rolling main non-free"
 wordcount: 30
-excerpt: "open terminal, type  gedit /etc/apt/sources.listadd following codes:
+excerpt: "open terminal, type gedit /etc/apt/sources.listadd following codes:
   deb http://http.kali.org/kali kali-rolling main non-free"
-url: /2019/07/default-kali-linux-repositories.html
+url: https://www.webmanajemen.com/2019/07/default-kali-linux-repositories.html
+permalink: /2019/07/default-kali-linux-repositories.html
 ---
 
 <div dir="ltr" trbidi="on">open terminal, type : <pre>gedit /etc/apt/sources.list</pre>add following codes: <br><pre>deb http://http.kali.org/kali kali-rolling main non-free contrib<br>deb-src http://http.kali.org/kali kali-rolling main non-free contrib<br></pre></div><img src="https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.pngarts.com/files/3/Linux-PNG-Image-Background.png">

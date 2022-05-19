@@ -1,24 +1,28 @@
 ---
 category:
-  - Programming
   - Adsense
-  - JS
+  - Programming
+  - Programming
 cover: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 date: 2022-05-11T06:20:16+07:00
 description: Snippet lazy load adsense full support for blogger, wordpress, etc
 tags:
-  - JS
+  - JAVASCRIPT
   - HTML
   - Blogger
   - Wordpress
 title: Lazy Load Adsense Full Support 2022 Adsense API
 updated: 2022-05-11T15:52:06+07:00
 uuid: 7a161b74-ae97-4888-88a4-055f71f691ee
+thumbnail: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
+photos:
+  - https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 comments: true
 wordcount: 158
 subtitle: Snippet lazy load adsense full support for blogger, wordpress, etc
 excerpt: Snippet lazy load adsense full support for blogger, wordpress, etc
-url: /2022/05/fully-lazy-loaded-adsense.html
+url: https://www.webmanajemen.com/2022/05/fully-lazy-loaded-adsense.html
+permalink: /2022/05/fully-lazy-loaded-adsense.html
 type: post
 ---
 

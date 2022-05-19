@@ -7,13 +7,14 @@ uuid: 32de1d5f-52a5-4888-88e6-0ef31c247e82
 webtitle: NodeJS
 category:
   - Uncategorized
+tags: []
 comments: true
 wordcount: 88
 excerpt: macam-macam source pattern pada gulp
 description: macam-macam source pattern pada gulp
-url: /2022/04/gulp-pattern.html
+url: https://www.webmanajemen.com/2022/04/gulp-pattern.html
+permalink: /2022/04/gulp-pattern.html
 type: post
-tags: []
 ---
 
 <!--https://www.google.com/search?client=firefox-b-d&q=gulp+pattern+exclude+all+in+subfolder-->

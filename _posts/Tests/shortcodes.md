@@ -8,13 +8,14 @@ updated: 2022-05-17T00:00:00+07:00
 uuid: 19cd8465-198b-4888-87fd-81972ebaceb1
 category:
   - Uncategorized
+tags: []
 comments: true
 wordcount: 110
 description: Parse Shortcodes - Website Manajemen Indonesia
 subtitle: Parse Shortcodes - Website Manajemen Indonesia
 excerpt: Parse Shortcodes - Website Manajemen Indonesia
-url: /Tests/shortcodes.html
-tags: []
+url: https://www.webmanajemen.com/Tests/shortcodes.html
+permalink: /Tests/shortcodes.html
 ---
 
 ## Shortcode CSS
@@ -102,6 +103,6 @@ Manually set type `playlist`
 
 ## Shortcode now()
 ```html
-5/19/2022, 7:09:09 AM
+5/19/2022, 3:57:56 PM
 ```
 

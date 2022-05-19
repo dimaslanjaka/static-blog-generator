@@ -8,13 +8,14 @@ updated: 2022-04-04T00:00:00+07:00
 uuid: 2f48db92-cc92-4888-8977-330cd94e2d1c
 category:
   - Uncategorized
+tags: []
 comments: true
 wordcount: 34
 description: fix shortcodes markdown with links .md - Website Manajemen Indonesia
 subtitle: fix shortcodes markdown with links .md - Website Manajemen Indonesia
 excerpt: fix shortcodes markdown with links .md - Website Manajemen Indonesia
-url: /Tests/markdown-links.html
-tags: []
+url: https://www.webmanajemen.com/Tests/markdown-links.html
+permalink: /Tests/markdown-links.html
 ---
 
 - [included test](included.html)

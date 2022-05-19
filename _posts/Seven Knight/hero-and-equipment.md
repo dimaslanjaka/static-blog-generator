@@ -18,6 +18,7 @@ location: Indonesia
 subtitle: Seven Knights 2 Hero Usage and Equipment Guide
 tags:
   - Games
+  - Tips & Tricks
 title: Hero Usage and Equipment Guide
 type: post
 uuid: c49cfc4a-d91b-4888-8c78-1f1f111e778c
@@ -29,7 +30,8 @@ photos:
 description: Seven Knights 2 Hero Usage and Equipment Guide
 wordcount: 2813
 excerpt: Seven Knights 2 Hero Usage and Equipment Guide
-url: /Seven%20Knight/hero-and-equipment.html
+url: https://www.webmanajemen.com/Seven%20Knight/hero-and-equipment.html
+permalink: /Seven%20Knight/hero-and-equipment.html
 ---
 
 <p>

@@ -15,7 +15,8 @@ comments: true
 wordcount: 211
 excerpt: Spawn locations of flowers
 description: Spawn locations of flowers
-url: /Chimeraland/flower-locations.html
+url: https://www.webmanajemen.com/Chimeraland/flower-locations.html
+permalink: /Chimeraland/flower-locations.html
 type: post
 ---
 
