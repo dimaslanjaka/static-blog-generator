@@ -22,6 +22,11 @@ declare const def: {
     code_dir: string;
     i18n_dir: string;
     skip_render: any[];
+    title_map: {};
+    tag_map: {};
+    category_map: {};
+    tag_group: {};
+    category_group: {};
     new_post_name: string;
     default_layout: string;
     titlecase: boolean;
@@ -51,8 +56,7 @@ declare const def: {
         tab_replace: string;
     };
     default_category: string;
-    category_map: {};
-    tag_map: {};
+    default_tag: any;
     date_format: string;
     time_format: string;
     updated_option: string;

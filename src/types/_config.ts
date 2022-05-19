@@ -30,7 +30,11 @@ const def = {
   i18n_dir: ':lang',
   skip_render: [],
   // mapper
-  title_map: {}, tag_map: {}, category_map: {}, tag_group: {}, category_group: {},
+  title_map: {},
+  tag_map: {},
+  category_map: {},
+  tag_group: {},
+  category_group: {},
   // Writing
   new_post_name: ':title.md',
   default_layout: 'post',
@@ -62,8 +66,7 @@ const def = {
   },
   // Category & Tag
   default_category: 'uncategorized',
-  category_map: {},
-  tag_map: {},
+  default_tag: null,
   // Date / Time format
   date_format: 'YYYY-MM-DD',
   time_format: 'HH:mm:ss',
