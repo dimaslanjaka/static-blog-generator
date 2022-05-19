@@ -225,7 +225,7 @@ function parsePost(text, options = {}) {
                 }
             }
             if (!meta.url) {
-                homepage.pathname = (0, utils_2.replaceArr)(publicFile, [(0, upath_1.toUnix)(process.cwd()), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+                homepage.pathname = (0, utils_2.replaceArr)(publicFile, [(0, upath_1.toUnix)(process.cwd()), config.source_dir + '/_posts/', 'src-posts/', '_posts/'], '/')
                     // @todo remove multiple slashes
                     .replace(/\/+/, '/')
                     // @todo replace .md to .html
