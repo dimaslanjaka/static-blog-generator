@@ -5,6 +5,7 @@ import { join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
+import uniqueArray from './node/array-unique';
 import { md5FileSync } from './node/md5-file';
 import { replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
@@ -130,10 +131,10 @@ export interface ParseOptions {
    * Format dates?
    */
   formatDate?:
-    | boolean
-    | {
-        pattern: string;
-      };
+  | boolean
+  | {
+    pattern: string;
+  };
   /**
    * Site Config
    */
@@ -158,8 +159,8 @@ const default_options: ParseOptions = {
 
 export type DeepPartial<T> = T extends object
   ? {
-      [P in keyof T]?: DeepPartial<T[P]>;
-    }
+    [P in keyof T]?: DeepPartial<T[P]>;
+  }
   : T;
 
 /**
@@ -237,6 +238,22 @@ export function parsePost(
         meta.updated = meta.date;
       }
     }
+
+    // @todo fix thumbnail
+    const thumbnail = meta.cover || meta.thumbnail
+    if (thumbnail) {
+      if (!meta.thumbnail) meta.thumbnail = thumbnail;
+      if (!meta.cover) meta.cover = thumbnail;
+      if (!meta.photos) {
+        meta.photos = [];
+      }
+      meta.photos.push(meta.cover);
+    }
+    if (meta.photos) {
+      const photos: string[] = meta.photos;
+      meta.photos = uniqueArray(photos);
+    }
+
 
     // @todo set default enable comments
     if (typeof meta.comments == 'undefined' || meta.comments == null)

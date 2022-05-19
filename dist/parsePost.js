@@ -9,6 +9,7 @@ const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const persistent_cache_1 = tslib_1.__importDefault(require("../packages/persistent-cache"));
 const dateMapper_1 = require("./dateMapper");
+const array_unique_1 = tslib_1.__importDefault(require("./node/array-unique"));
 const md5_file_1 = require("./node/md5-file");
 const utils_1 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
@@ -110,6 +111,22 @@ function parsePost(text, options = {}) {
             else {
                 meta.updated = meta.date;
             }
+        }
+        // @todo fix thumbnail
+        const thumbnail = meta.cover || meta.thumbnail;
+        if (thumbnail) {
+            if (!meta.thumbnail)
+                meta.thumbnail = thumbnail;
+            if (!meta.cover)
+                meta.cover = thumbnail;
+            if (!meta.photos) {
+                meta.photos = [];
+            }
+            meta.photos.push(meta.cover);
+        }
+        if (meta.photos) {
+            const photos = meta.photos;
+            meta.photos = (0, array_unique_1.default)(photos);
         }
         // @todo set default enable comments
         if (typeof meta.comments == 'undefined' || meta.comments == null)
