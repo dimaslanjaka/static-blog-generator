@@ -16,6 +16,9 @@ export declare type postMeta = DynamicObject & {
     subtitle: string;
     uuid?: string;
     updated?: string | dateMapper;
+    author?: string | {
+        [key: string]: any;
+    };
     date: string | dateMapper;
     description?: string;
     tags: string[];

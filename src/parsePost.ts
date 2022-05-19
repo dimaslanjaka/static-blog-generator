@@ -47,6 +47,7 @@ export type postMeta = DynamicObject & {
   subtitle: string;
   uuid?: string;
   updated?: string | dateMapper;
+  author?: string | { [key: string]: any };
   date: string | dateMapper;
   description?: string;
   tags: string[];
@@ -266,6 +267,14 @@ export function parsePost(
       if (meta.photos) {
         const photos: string[] = meta.photos;
         meta.photos = uniqueArray(photos);
+      }
+    }
+
+    // @todo fix post author
+    if (options.fix) {
+      const author = meta.author || config.author;
+      if (!meta.author && author) {
+        meta.author = author;
       }
     }
 

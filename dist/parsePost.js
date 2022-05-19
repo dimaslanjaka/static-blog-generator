@@ -141,6 +141,13 @@ function parsePost(text, options = {}) {
                 meta.photos = (0, array_unique_1.default)(photos);
             }
         }
+        // @todo fix post author
+        if (options.fix) {
+            const author = meta.author || config.author;
+            if (!meta.author && author) {
+                meta.author = author;
+            }
+        }
         // @todo set default enable comments
         if (typeof meta.comments == 'undefined' || meta.comments == null)
             meta.comments = true;

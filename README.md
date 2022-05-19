@@ -1,5 +1,5 @@
 # hexo-post-parser
-Parse Hexo Posts To Object
+Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/hexo-post-parser/blob/main/src/index.test.ts)
 
 ```js
 const {parsePost} = require('hexo-post-parser');

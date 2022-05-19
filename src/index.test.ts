@@ -22,6 +22,14 @@ const tmp = join(__dirname, '../tmp/test');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 
 for (const filePath of files) {
+  runParser(filePath);
+}
+
+const postPath = join(__dirname, 'test/index.md');
+const parseSingle = runParser(postPath);
+console.log(parseSingle);
+
+function runParser(filePath: string) {
   const parse = parsePost(filePath, {
     formatDate: true,
     shortcodes: {
@@ -33,16 +41,23 @@ for (const filePath of files) {
       text: true,
       now: true
     },
-    cache: true
+    cache: false,
+    fix: true,
+    sourceFile: filePath
   });
   if (!parse) {
     console.log(`fail parse ${filePath}`);
-    continue;
+    return;
   }
+  const resultPaths = {
+    bodyPath: join(tmp, basename(filePath, '.md') + '.body.md'),
+    buildPath: join(tmp, basename(filePath, '.md') + '.md'),
+    jsonPath: join(tmp, basename(filePath, '.md') + '.json')
+  };
   // write body
-  writeFileSync(join(tmp, basename(filePath, '.md') + '.body.md'), parse.body);
+  writeFileSync(resultPaths.bodyPath, parse.body);
   // rebuild post with processed shortcodes
-  writeFileSync(join(tmp, basename(filePath, '.md') + '.md'), buildPost(parse));
+  writeFileSync(resultPaths.buildPath, buildPost(parse));
 
   // remove anoying properties for easy to read
   parse.body = 'body';
@@ -50,10 +65,8 @@ for (const filePath of files) {
   parse.config = {};
 
   // write parsed object to json
-  writeFileSync(
-    join(tmp, basename(filePath, '.md') + '.json'),
-    JSON.stringify(parse, null, 2)
-  );
+  writeFileSync(resultPaths.jsonPath, JSON.stringify(parse, null, 2));
+  return resultPaths;
 }
 
 /**
