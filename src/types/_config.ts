@@ -29,6 +29,8 @@ const def = {
   code_dir: 'downloads/code',
   i18n_dir: ':lang',
   skip_render: [],
+  // mapper
+  title_map: {}, tag_map: {}, category_map: {}, tag_group: {}, category_group: {},
   // Writing
   new_post_name: ':title.md',
   default_layout: 'post',
