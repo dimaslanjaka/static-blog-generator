@@ -15,7 +15,6 @@ tags:
   - Genshin Impact
   - Games
   - Tips & Tricks
-  - Tips & Tricks
 title: How to destroy abyss lector shield faster
 type: post
 uuid: fd27f290-4eb5-4888-804b-0d12c732a3d5

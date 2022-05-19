@@ -17,7 +17,6 @@ tags:
   - GitHub
   - Social Media
   - Tips & Tricks
-  - Tips & Tricks
 title: How to make pull request or contribution on github
 type: post
 uuid: 621dc505-222b-4888-8cf1-2856ec8104b6

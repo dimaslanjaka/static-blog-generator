@@ -5,7 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
 comments: true
 cover: https://i.ytimg.com/vi/8VyzRlxo2-k/maxresdefault.jpg
 date: 2019-12-29T15:02:00+07:00
@@ -18,7 +17,6 @@ tags:
   - Share
   - HTML
   - Blogging
-  - JAVASCRIPT
 title: Javascript Debug Protector
 type: post
 uuid: 5081493b-4b80-4888-890c-0c028fa074bc

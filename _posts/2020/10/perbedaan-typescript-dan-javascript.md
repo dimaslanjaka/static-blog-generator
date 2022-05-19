@@ -5,9 +5,6 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - Programming
-  - Programming
-  - Programming
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://miro.medium.com/max/940/1*MfrpVoJuWJz8vyXVJDHUvA.png
 date: 2020-10-28T14:00:00+07:00
@@ -19,8 +16,6 @@ tags:
   - TYPESCRIPT
   - JAVASCRIPT
   - Tips & Tricks
-  - JAVASCRIPT
-  - TYPESCRIPT
 title: Perbedaan typescript dan javascript secara rinci
 type: post
 uuid: 357dabaa-3b5a-4888-8631-67cb73c97af5

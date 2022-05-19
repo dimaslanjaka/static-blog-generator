@@ -16,7 +16,6 @@ tags:
   - Share
   - HTML
   - Tips & Tricks
-  - Tips & Tricks
   - Blogging
 title: How To Embed Blogger Video Iframe To Be Responsive
 type: post

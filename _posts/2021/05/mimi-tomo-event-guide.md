@@ -16,7 +16,6 @@ tags:
   - Genshin Impact
   - Games
   - Tips & Tricks
-  - Tips & Tricks
 title: Mimi Tomo Event Guide
 type: post
 uuid: 388b08c2-3bdd-4888-87bf-16cf9f01c3e9

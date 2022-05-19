@@ -15,7 +15,6 @@ subtitle: In the era of the 000s, the PS2 console was known to bring a myriad of
 tags:
   - Games
   - Tips & Tricks
-  - Tips & Tricks
 title: How to Play PS2 Games on Low-End Laptops Easily and Without Lag
 type: post
 uuid: 779e4029-20c2-4888-8040-21c6e79c6cda

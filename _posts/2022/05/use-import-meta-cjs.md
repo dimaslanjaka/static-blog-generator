@@ -1,9 +1,6 @@
 ---
 category:
   - Programming
-  - Programming
-  - Programming
-  - Programming
 date: 2022-05-02T13:01:50+07:00
 description: How to implement import.meta on typescript hybrid esm and commonjs compiler
 tags:
@@ -13,7 +10,6 @@ tags:
   - JAVASCRIPT
   - CommonJS
   - Tips & Tricks
-  - TYPESCRIPT
 title: How to use import.meta on typescript hybrid compiler
 updated: 2022-05-02T13:01:50+07:00
 uuid: a5434cb6-fe27-4888-8192-0f32468a6165

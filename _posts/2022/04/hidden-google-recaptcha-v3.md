@@ -1,7 +1,6 @@
 ---
 category:
   - Programming
-  - Programming
 cover: https://miro.medium.com/max/309/1*5kaPMxO2svjJ5k34zOwmrg.png
 date: 2022-04-19T00:12:30+07:00
 keywords:
