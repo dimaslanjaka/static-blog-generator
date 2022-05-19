@@ -6,7 +6,7 @@ import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
 import { dateMapper } from './dateMapper';
 import { isValidHttpUrl } from './gulp/utils';
-import uniqueArray from './node/array-unique';
+import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
@@ -359,11 +359,16 @@ export function parsePost(
             (e) => e !== config.default_category
           );
         }
-      // remove untagged if programming category pushed
+      // @todo remove untagged if programming category pushed
       if (config.default_tag)
         if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
           meta.tags = meta.tags.filter((e) => e !== config.default_tag);
         }
+    }
+
+    // @todo remove duplicated metadata photos
+    if (options.fix && meta.photos && meta.photos.length) {
+      meta.photos = uniqueStringArray(meta.photos);
     }
 
     // @todo delete location

@@ -10,7 +10,7 @@ const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const persistent_cache_1 = tslib_1.__importDefault(require("../packages/persistent-cache"));
 const dateMapper_1 = require("./dateMapper");
 const utils_1 = require("./gulp/utils");
-const array_unique_1 = tslib_1.__importDefault(require("./node/array-unique"));
+const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
 const md5_file_1 = require("./node/md5-file");
 const utils_2 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
@@ -223,11 +223,15 @@ function parsePost(text, options = {}) {
                     meta.category.length > 1) {
                     meta.category = meta.category.filter((e) => e !== config.default_category);
                 }
-            // remove untagged if programming category pushed
+            // @todo remove untagged if programming category pushed
             if (config.default_tag)
                 if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
                     meta.tags = meta.tags.filter((e) => e !== config.default_tag);
                 }
+        }
+        // @todo remove duplicated metadata photos
+        if (options.fix && meta.photos && meta.photos.length) {
+            meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos);
         }
         // @todo delete location
         if (Object.prototype.hasOwnProperty.call(meta, 'location') &&
