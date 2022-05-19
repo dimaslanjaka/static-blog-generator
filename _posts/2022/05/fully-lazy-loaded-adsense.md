@@ -1,7 +1,7 @@
 ---
 category:
-  - Adsense
   - Programming
+  - Adsense
 cover: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 date: 2022-05-11T06:20:16+07:00
 description: Snippet lazy load adsense full support for blogger, wordpress, etc
