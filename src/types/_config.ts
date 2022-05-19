@@ -29,7 +29,7 @@ const def = {
   code_dir: 'downloads/code',
   i18n_dir: ':lang',
   skip_render: [],
-  // mapper
+  // Mapper
   title_map: {},
   tag_map: {},
   category_map: {},
