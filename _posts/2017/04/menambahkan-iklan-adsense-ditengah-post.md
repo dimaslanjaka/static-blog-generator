@@ -7,15 +7,15 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i1.wp.com/4.bp.blogspot.com/-Z4TdEbpcxn0/UthBZXiyPYI/AAAAAAAAF40/nwthnaxPQuw/s1600/insert-adsense-into-blogger-post.png?zoom=1.5&ssl=1
-date: 2017-04-09T10:38:00+07:00
+date: 2017-04-09T10:38:00.000+07:00
 lang: en
+location: ""
 modified: 2017-04-10T07:42:38.092+07:00
 subtitle: Dalam tutorial iniKita dapat memanipulasi lokasi iklan yang akan
   ditampilkan dengan menambahkan script dalam template dan menggunakan tag
 tags:
   - Adsense
   - Blogger
-  - Blogging
 title: Bagaimana Tambahkan Iklan Adsense Di Tengah atau di mana saja di dalam
   Blogger Post
 type: post

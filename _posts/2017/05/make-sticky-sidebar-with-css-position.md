@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTCd4o3dXXEcogeof29yBdsbadza7SUSm7H0RJ8N4Q5rDBGWB2LVQ
-date: 2017-05-18T03:50:00+07:00
+date: 2017-05-18T03:50:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-18T03:50:14.707+07:00
 subtitle: Make Sticky Sidebar With CSS position sticky
 tags:

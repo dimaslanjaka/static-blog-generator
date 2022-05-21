@@ -18,17 +18,6 @@ photos:
   - https://i.ytimg.com/vi/sSnrK7m2RFo/maxresdefault.jpg
 description: How to use magical books for bow
 tags: []
-author:
-  name: Dimas Lanjaka
-  link: https://www.webmanajemen.com/
-  email: dimaslanjaka@gmail.com
-  image:
-    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-    width: 1944
-    height: 2592
-  social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 613
 excerpt: How to use magical books for bow
@@ -80,5 +69,5 @@ You must choose one of the Magical Books below as the last step.
 
 
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/sSnrK7m2RFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
-</div>
+      <iframe src="https://www.youtube.com/embed/sSnrK7m2RFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>

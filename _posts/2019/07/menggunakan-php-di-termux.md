@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-07-28T06:38:00+07:00
+date: 2019-07-28T06:38:00.002+07:00
 lang: en
+location: ""
 modified: 2019-07-28T06:38:50.642+07:00
 subtitle: Instalasipkg update ypkg upgrade -ypkg install php curl wget git
   -yContoh Penggunaan PHP CLI pada termuxbuat file

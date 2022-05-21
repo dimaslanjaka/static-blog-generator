@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-ci6cJ-WlLo8/WKQ4JcDQ4pI/AAAAAAAAF0I/Gp5LD-xDMgYr0It3EAZWWVkDlvSijot6QCLcB/s280/judul-dan-deskripsi-penelusuran-di-pencarian-google.jpg
-date: 2017-04-14T21:41:00+07:00
+date: 2017-04-14T21:41:00.000+07:00
 lang: en
+location: ""
 modified: 2017-04-14T21:41:06.313+07:00
 subtitle: Blog search description activate important to improve CTR, SEO and
   relevance of articlesYou probably already know the character of the

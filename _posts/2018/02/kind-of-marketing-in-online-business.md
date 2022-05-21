@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgdb.net/images/3610.jpg
-date: 2018-02-14T02:58:00+07:00
+date: 2018-02-14T02:58:00.000+07:00
 lang: en
+location: ""
 modified: 2018-02-23T15:30:03.686+07:00
 subtitle: img border=0 src=https://imgdb.net/images/3610.jpg />The ultimate goal
   of all <b>Marketing</b> efforts is the creation of sales and

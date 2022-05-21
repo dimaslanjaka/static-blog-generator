@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://sugeng.id/blog/wp-content/uploads/2015/06/Blog-Raditya-Dika-800x392.png
-date: 2017-04-13T12:31:00+07:00
+date: 2017-04-13T12:31:00.000+07:00
 lang: en
+location: ""
 modified: 2017-04-13T12:31:00.159+07:00
 subtitle: 2 Best Blog in Indonesia in Various TopicsA few days ago I idly
   googling the keywordsBest Blog in IndonesiaAfter I check one by one from

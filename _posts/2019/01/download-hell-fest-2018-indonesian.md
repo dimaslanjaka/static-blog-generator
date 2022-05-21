@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.org/wp-content/uploads/2018/12/film-hell-fest-2018-lk21.jpg
-date: 2019-01-16T03:55:00+07:00
+date: 2019-01-16T03:55:00.000+07:00
 lang: en
+location: ""
 modified: 2019-01-16T03:55:00.199+07:00
 subtitle: "import
   urlhttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstr\

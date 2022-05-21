@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://cdn.woorkup.com/wp-content/uploads/2013/09/wordpress-sitemap.png
-date: 2017-10-18T23:00:00+07:00
+date: 2017-10-18T23:00:00.000+07:00
 lang: en
+location: ""
 modified: 2017-10-18T23:00:09.201+07:00
 subtitle: Cara Membuat File Peta Situs untuk Situs Anda
 tags:

@@ -5,16 +5,18 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://cdn1.imggmi.com/uploads/2018/8/5/4f4281f038eb505c8f145d2c7f0b4f04-full.png
-date: 2018-08-05T07:56:00+07:00
+date: 2018-08-05T07:56:00.001+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.934+07:00
 subtitle: "blockquote>First post : <a
   href=http://web-manajemen.blogspot.com/2017/09/cara-simple-membuat-blogger-sa\
   felink.html title=Cara Simple"
 tags:
-  - JAVASCRIPT
+  - JS
   - Blogger
   - Blogging
   - Tips & Tricks

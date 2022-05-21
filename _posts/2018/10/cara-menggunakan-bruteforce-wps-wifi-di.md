@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/w_300,h_300/https://imgdb.net/images/4221.png
-date: 2018-10-17T22:04:00+07:00
+date: 2018-10-17T22:04:00.001+07:00
 lang: en
+location: ""
 modified: 2018-10-17T22:20:20.149+07:00
 subtitle: Penjabaran dari WPS WPA WiFi Tester Tanpa Root
 tags:

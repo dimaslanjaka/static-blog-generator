@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgdb.net/images/3201.png
-date: 2017-09-19T12:03:00+07:00
+date: 2017-09-19T12:03:00.001+07:00
 lang: en
+location: ""
 modified: 2017-09-19T12:11:26.178+07:00
 subtitle: What If Adsense Ads Are Not In Visit Clicks
 tags:

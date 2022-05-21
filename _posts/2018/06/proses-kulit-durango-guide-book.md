@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
-date: 2018-06-18T03:28:00+07:00
+date: 2018-06-18T03:28:00.001+07:00
 lang: en
+location: ""
 modified: 2018-08-05T06:18:29.308+07:00
 subtitle: Nama Proses Bahan Hasil Buff Debuff Kulit Kering Kulit Kulit Kering -
   - Proses Pencokelatan Dengan

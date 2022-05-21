@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://www.bluecorona.com/wp-content/uploads/2017/02/https-cover-photo.png
-date: 2017-09-11T22:49:00+07:00
+date: 2017-09-11T22:49:00.002+07:00
 lang: en
+location: ""
 modified: 2020-02-06T23:45:23.750+07:00
 subtitle: Yo guys, kali ini akan saya share bagaimana cara mengubah semua source
   link atau iframe yang tidak menggunakan https.br />Mula mula anda
 tags:
-  - JAVASCRIPT
+  - JS
   - SEO
   - Tips & Tricks
 title: Membuat semua link dan source html http menjadi https

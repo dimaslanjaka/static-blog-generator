@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://goo.gl/zYJ88W
-date: 2018-02-02T08:37:00+07:00
+date: 2018-02-02T08:37:00.000+07:00
 lang: en
+location: ""
 modified: 2018-02-02T08:42:29.697+07:00
 subtitle: Running Google adsense advertising program or a Google ads publisher
   can be spelled out easy, even if I think personally more difficult

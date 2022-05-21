@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://cdn.johneengle.com/wp-content/uploads/2010/12/ping-blog.jpg
-date: 2017-11-11T00:00:00+07:00
+date: 2017-11-11T00:00:00.000+07:00
 lang: en
+location: ""
 modified: 2017-11-11T00:00:13.309+07:00
 subtitle: Ping Service Advise Web crawlers, Blog and RSS Registries that your
   blog is refreshed or made. The advantages are speedier Web index

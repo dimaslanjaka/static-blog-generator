@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://imgdb.net/images/3198.jpg
-date: 2017-10-01T02:31:00+07:00
+date: 2017-10-01T02:31:00.000+07:00
 lang: en
+location: ""
 modified: 2017-10-01T02:31:10.389+07:00
 subtitle: hr align=CENTER color=336600 size=2 width=90 /><img height=97
   src=https://imgdb.net/images/3198.jpg width=100 /><br /><hr

@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.googleusercontent.com/-toLz3YUOMz8/T4N7B_ofSMI/AAAAAAAADa8/YIwsAh5MVtI/s800/shot_000003.png
-date: 2018-11-13T03:33:00+07:00
+date: 2018-11-13T03:33:00.000+07:00
 lang: en
+location: ""
 modified: 2018-11-13T03:33:28.717+07:00
 subtitle: after struggling finally
 tags:

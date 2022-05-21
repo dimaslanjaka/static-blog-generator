@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-07-28T12:41:00+07:00
+date: 2018-07-28T12:41:00.000+07:00
 lang: en
+location: ""
 modified: 2018-07-28T12:41:15.611+07:00
 subtitle: Lag or Broken is one of the factors that make it uncomfortable when
   users play the game. Not only happens in notebooks or PCs, lag

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
-date: 2017-04-09T07:29:00+07:00
+date: 2017-04-09T07:29:00.000+07:00
 lang: en
+location: ""
 modified: 2022-04-09T20:45:24+0000
 subtitle: Holiday banned blog or website means it can not be used again for
   participating in the adsense program because the blog violates google
@@ -18,7 +19,7 @@ title: Causes Blog / Website Or Site Google Adsense banned
 type: post
 uuid: c8683d7a-4271-4888-8783-b5cf2d9e0340
 webtitle: WMI Gitlab
-updated: 2022-04-10T03:45:24+07:00
+updated: 2022-04-09T20:45:24+0000
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg
 photos:
   - https://res.cloudinary.com/dimaslanjaka/image/fetch/http://juragancipir.com/wp-content/uploads/2013/09/Adsense-banned-site-300x288.jpg

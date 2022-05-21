@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-02-28T20:52:00+07:00
+date: 2018-02-28T20:52:00.002+07:00
 lang: en
+location: ""
 modified: 2018-02-28T20:52:22.447+07:00
 subtitle: VG Private Battle 20:00 Wib<br />Tim A<br />1.<br />2.figo05<br
   />3.<br /><br />Tim B<br />1.<br />2.<br />3.<br /><br />Spectator<br

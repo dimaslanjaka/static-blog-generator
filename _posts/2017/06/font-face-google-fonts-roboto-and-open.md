@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://2.bp.blogspot.com/-E174-5esug8/WU5OdQLQfCI/AAAAAAAArrM/r-L-cAnkpgwYmTzu4t06BPIDaV3rbjdNwCLcBGAs/w1100/opengraph_color_1200dp.png
-date: 2017-06-24T20:49:00+07:00
+date: 2017-06-24T20:49:00.004+07:00
 lang: en
+location: ""
 modified: 2017-06-24T20:49:58.239+07:00
 subtitle: a
 tags:

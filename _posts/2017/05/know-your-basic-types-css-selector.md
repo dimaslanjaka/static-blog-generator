@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpLEYpRfgPOwSkpUWGmr5SWmGGZoesHfcyD8FyIejZ_AZiE_lAsWcPdHuI
-date: 2017-05-06T20:55:00+07:00
+date: 2017-05-06T20:55:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-06T20:55:03.631+07:00
 subtitle: "Learning CSS Tutorial Part : Know Your Basic Types CSS SelectorCSS
   has the type selector that varies, even greatly vary depending"

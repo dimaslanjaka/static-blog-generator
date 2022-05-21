@@ -4,11 +4,13 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://pear.php.net/gifs/pearsmall.gif
-date: 2020-01-07T01:43:00+07:00
+date: 2020-01-07T01:43:00.000+07:00
 lang: en
+location: ""
 modified: 2020-03-30T21:48:16.932+07:00
 subtitle: "Basic Mailer basic php mailer php
   ?phpheaderAccess-Control-Allow-Origin: ;headerContent-Type: application/json;/

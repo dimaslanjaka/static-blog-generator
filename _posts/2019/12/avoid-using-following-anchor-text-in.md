@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/ea0bf3421fc2572e64bac7d937113a5b.jpeg
-date: 2019-12-30T02:35:00+07:00
+date: 2019-12-30T02:35:00.000+07:00
 lang: en
+location: ""
 modified: 2019-12-30T02:35:01.500+07:00
 subtitle: Avoid Using Anchor Text Here in Link Creation There are some anchor
   text that should be avoided when creating link links in the

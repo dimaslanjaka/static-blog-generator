@@ -5,17 +5,19 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-12-09T15:23:00+07:00
+date: 2018-12-09T15:23:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.893+07:00
 subtitle: h2>Simple way to add CSS minifier to an websites.</h2><br />Here the
   codes:<br /><br />HTML<br /><pre class=highlight>lt;div
 tags:
   - Wordpress
   - CSS
-  - JAVASCRIPT
+  - JS
   - Blogger
   - HTML
   - Blogging

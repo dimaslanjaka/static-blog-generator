@@ -20,7 +20,6 @@ subtitle: Game control the legend of neverland bluestacks Support change fairy
   and job skill
 tags:
   - Game Control
-  - Games
 title: Bluestacks Game Control The Legend Of Neverland
 type: post
 uuid: ec9e4ed7-6ff8-4888-8800-3e184ff42ba6
@@ -30,7 +29,7 @@ photos:
   - https://user-images.githubusercontent.com/12471057/132322833-e5578e29-0ad7-422e-845a-bf9fabb313fd.png
 description: Game control the legend of neverland bluestacks Support change
   fairy and job skill
-wordcount: 126
+wordcount: 127
 excerpt: Game control the legend of neverland bluestacks Support change fairy
   and job skill
 url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
@@ -57,8 +56,8 @@ permalink: /The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
 
 ##### Switch Fairies Ability Preview
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/9ZEqUD5piB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
-</div>
+      <iframe src="https://www.youtube.com/embed/9ZEqUD5piB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 <hr/>
 <center><b><a href="https://raw.githubusercontent.com/dimaslanjaka/dimaslanjaka.github.io/compiler/src-posts/The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control/The%20Legend%20of%20Neverland%20%5Bcustom%20script%5D.cfg">Download Game Control</a></b></center>

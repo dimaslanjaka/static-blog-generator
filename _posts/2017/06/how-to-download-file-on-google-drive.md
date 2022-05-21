@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300
-date: 2017-06-25T20:59:00+07:00
+date: 2017-06-25T20:59:00.000+07:00
 lang: en
+location: ""
 modified: 2017-06-25T20:59:18.569+07:00
 subtitle: For those of you who want to download files shared on kbd>Google
   Drive</kbd> may have experienced access limits from shared files, be they

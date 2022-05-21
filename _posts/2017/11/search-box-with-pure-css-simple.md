@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-11-12T23:29:00+07:00
+date: 2017-11-12T23:29:00.000+07:00
 lang: en
+location: ""
 modified: 2017-11-12T23:29:07.123+07:00
 subtitle: h2>Simple Widget Blogger search box with pure CSS.</h2><br />Here the
   HTML:<br /><br /><pre>lt;form id=searchthis action=/search

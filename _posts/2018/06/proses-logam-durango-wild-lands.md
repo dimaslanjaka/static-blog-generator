@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://rifaldy.com/wp-content/uploads/2018/05/durango.png
-date: 2018-06-19T03:56:00+07:00
+date: 2018-06-19T03:56:00.000+07:00
 lang: en
+location: ""
 modified: 2018-08-05T06:18:52.201+07:00
 subtitle: TAGS Durango, Proses Logam, Material Processing, Durango Wild Lands.
 tags:

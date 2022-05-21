@@ -18,7 +18,6 @@ location: Indonesia
 subtitle: Seven Knights 2 Hero Usage and Equipment Guide
 tags:
   - Games
-  - Tips & Tricks
 title: Hero Usage and Equipment Guide
 type: post
 uuid: c49cfc4a-d91b-4888-8c78-1f1f111e778c

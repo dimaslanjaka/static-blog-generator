@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2018/12/Download-Drama-Korea-Just-Dance-Subtitle-Indonesia-678x381.jpg
-date: 2018-12-28T01:54:00+07:00
+date: 2018-12-28T01:54:00.000+07:00
 lang: en
+location: ""
 modified: 2019-01-07T01:42:28.688+07:00
 subtitle: Korean Drama Just Dance Indonesian Subtitles Located in Geoje, South
   Gyeongsang Province, South Korea where the citys main

@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-12-17T02:59:00+07:00
+date: 2018-12-17T02:59:00.000+07:00
 lang: en
+location: ""
 modified: 2018-12-17T02:59:14.032+07:00
 subtitle: pre>.cc-banner .cc-btn:last-child,.cc-theme-classic
   .cc-btn:last-childmin-width:140px.cc-windowleft:20px;bottom:20px;transition:opacity

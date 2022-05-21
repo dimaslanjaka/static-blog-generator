@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s3.dunia21.org/wp-content/uploads/2018/10/film-halloween2018-lk21.jpg
-date: 2019-01-06T13:31:00+07:00
+date: 2019-01-06T13:31:00.000+07:00
 lang: en
+location: ""
 modified: 2019-02-05T01:52:05.487+07:00
 subtitle: "import
   urlhttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstr\

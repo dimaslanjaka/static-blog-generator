@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-03-23T23:21:00+07:00
+date: 2020-03-23T23:21:00.003+07:00
 lang: en
+location: ""
 modified: 2020-03-23T23:24:56.448+07:00
 subtitle: manipulating multidimensional array using arraymap/ Ilterate
   multidimensional array simplicity @desc modify and manipulate or populate

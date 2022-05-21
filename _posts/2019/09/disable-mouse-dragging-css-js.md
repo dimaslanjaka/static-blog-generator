@@ -5,16 +5,18 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://i.stack.imgur.com/3pgKv.png
-date: 2019-09-22T10:13:00+07:00
+date: 2019-09-22T10:13:00.000+07:00
 lang: en
+location: ""
 modified: 2019-09-22T10:13:14.548+07:00
 subtitle: "CSSstyle> body -webkit-touch-callout: none; -webkit-user-select:
   none; -khtml-user-select: none;"
 tags:
   - CSS
-  - JAVASCRIPT
+  - JS
 title: Disable Mouse Dragging CSS JS
 type: post
 uuid: 27febd63-0795-4888-8df4-d10a18779fcd

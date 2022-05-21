@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-09-09T13:00:00+07:00
+date: 2017-09-09T13:00:00.000+07:00
 lang: en
+location: ""
 modified: 2017-09-09T13:00:09.396+07:00
 subtitle: "pre>lt;script type=quot;application/ldjsonquot;gt;<br /><br /><br
   /><br />nbsp; nbsp; quot;@contextquot;:"

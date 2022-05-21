@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/02/Untitled-2.jpg
-date: 2019-11-02T17:38:00+07:00
+date: 2019-11-02T17:38:00.000+07:00
 lang: en
+location: ""
 modified: 2019-11-02T17:38:59.061+07:00
 subtitle: Web Development Indonesia For some people, maybe this remote PC
   software is already familiar to you. TeamViewer 10 Premium Full Crack

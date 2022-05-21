@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://upload2.inven.co.kr/upload/2018/07/28/bbs/i13154442828.jpg
-date: 2018-07-30T20:34:00+07:00
+date: 2018-07-30T20:34:00.001+07:00
 lang: en
+location: ""
 modified: 2018-08-05T06:16:27.953+07:00
 subtitle: Bunga zat warna Pearl Kekayaan Warna mirip dengan foto Beli Kumpulkan
   Pewarna harus diterapkan setidaknya 3 kali untuk

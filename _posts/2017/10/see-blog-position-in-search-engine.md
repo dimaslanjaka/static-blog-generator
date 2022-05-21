@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://cdn.pixabay.com/photo/2014/08/06/00/06/search-engine-411105_1280.jpg
-date: 2017-10-03T02:35:00+07:00
+date: 2017-10-03T02:35:00.000+07:00
 lang: en
+location: ""
 modified: 2017-10-03T02:35:01.130+07:00
 subtitle: There is one of the bloggers on the comments asking about how to blog
   can search on google.

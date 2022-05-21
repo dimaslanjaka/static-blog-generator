@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2019/01/eggplore-styleguide.png
-date: 2019-02-20T00:38:00+07:00
+date: 2019-02-20T00:38:00.000+07:00
 lang: en
+location: ""
 modified: 2019-02-20T00:38:06.658+07:00
 subtitle: Eggplore Ui Style Guide Sketsa Freebie Stephen dan Gahuy ingin berbagi
   sumber daya panduan gaya UI dengan komunitas. Sumber daya
 tags:
   - Miscellaneous
-  - Tips & Tricks
 title: Eggplore Ui Style Guide Sketsa Freebie
 type: post
 uuid: c88b8b2e-cadf-4888-8176-a7a008410a28

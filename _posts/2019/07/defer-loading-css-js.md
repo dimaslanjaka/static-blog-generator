@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://varvy.com/pagespeed/images/defer-js-block-c.png
-date: 2019-07-23T02:53:00+07:00
+date: 2019-07-23T02:53:00.000+07:00
 lang: en
+location: ""
 modified: 2020-01-20T04:41:03.067+07:00
 subtitle: Cara defer loading javascript atau menunda pemanggilan javascript di
   bloggerBerfungsi untuk Mempercepat loading blog website /
 tags:
-  - JAVASCRIPT
+  - JS
   - Blogger
 title: Defer loading css js
 type: post

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.techlicious.com/images/computers/windows-10-shortcuts-510px.jpg
-date: 2019-02-08T22:15:00+07:00
+date: 2019-02-08T22:15:00.002+07:00
 lang: en
+location: ""
 modified: 2019-02-08T22:15:39.508+07:00
 subtitle: SHORTCUT KEYS LANGKAHLANGKAH UNTUK DIPROSES
 tags:

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s1.dunia21.org/wp-content/uploads/2015/12/film-harry-potter-and-the-deathly-hallows-part-2-2011.jpg
-date: 2019-01-26T00:28:00+07:00
+date: 2019-01-26T00:28:00.000+07:00
 lang: en
+location: ""
 modified: 2019-01-26T00:28:00.809+07:00
 subtitle: "import
   urlhttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstr\

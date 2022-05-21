@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT15ty0QckURBti5Zj3AddI7sOew19yh8zjKsfJC3Wlu0dFXd2rVQ
-date: 2017-04-15T22:52:00+07:00
+date: 2017-04-15T22:52:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.889+07:00
 subtitle: Using jQuery to adding alt attributes to all images img> tags. Alt
   attributes of images are one of SEO Score. Alt Tag SEO is
 tags:
-  - JAVASCRIPT
+  - JS
   - SEO
 title: Auto Add Alt Attributes To Images Using jQuery
 type: post

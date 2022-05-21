@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/d4026a0d60e9f2c105d484607b12a36e.jpeg
-date: 2019-12-04T16:01:00+07:00
+date: 2019-12-04T16:01:00.001+07:00
 lang: en
+location: ""
 modified: 2019-12-04T17:13:07.039+07:00
 subtitle: "Download lagu Tompi Tak Pernah Setengah Hati Official Mp3 Tompi -
   Never Half the Heart Official Listen: 33,940 Duration: 247"

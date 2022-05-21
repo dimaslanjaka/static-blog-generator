@@ -8,25 +8,14 @@ title: Bocoran Jackpot
 updated: 2022-03-20T20:57:28+07:00
 uuid: d469a16a-26c0-4888-8f6d-cf7ce1151856
 webtitle: Playbook88
-lang: en
 tags: []
-author:
-  name: Dimas Lanjaka
-  link: https://www.webmanajemen.com/
-  email: dimaslanjaka@gmail.com
-  image:
-    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-    width: 1944
-    height: 2592
-  social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 165
 excerpt: Informasi bocoran jackpot
 description: Informasi bocoran jackpot
 url: https://www.webmanajemen.com/2022/03/bocoran-jackpot.html
 permalink: /2022/03/bocoran-jackpot.html
+lang: en
 type: post
 ---
 

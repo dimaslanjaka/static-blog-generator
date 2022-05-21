@@ -3,32 +3,21 @@ category:
   - Games
   - Chimeraland
 comments: true
-date: 2022-03-16T14:41:00+07:00
+date: 2022-03-16T14:41:00+0700
 excerpt: Taming pity in chimeraland
 tags:
   - Chimeraland
 title: Taming Pets Chimeraland
 toc: true
-updated: 2022-03-17T14:21:00+07:00
+updated: 2022-03-17T14:21:00+0700
 uuid: 6bb86ddd-8407-4888-8428-e335b157339c
 webtitle: Chimeraland
-lang: en
-author:
-  name: Dimas Lanjaka
-  link: https://www.webmanajemen.com/
-  email: dimaslanjaka@gmail.com
-  image:
-    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-    width: 1944
-    height: 2592
-  social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
 wordcount: 305
 description: Taming pity in chimeraland
 subtitle: Taming pity in chimeraland
 url: https://www.webmanajemen.com/Chimeraland/Taming.html
 permalink: /Chimeraland/Taming.html
+lang: en
 type: post
 ---
 

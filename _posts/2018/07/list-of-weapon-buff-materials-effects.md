@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgdb.net/images/3863.png
-date: 2018-07-07T22:55:00+07:00
+date: 2018-07-07T22:55:00.000+07:00
 lang: en
+location: ""
 modified: 2018-08-05T06:18:13.023+07:00
 subtitle: Weapons are one of the most important elements in durango games,
   whatever we do in the game definitely requires

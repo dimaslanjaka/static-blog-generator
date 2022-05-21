@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-07-28T06:31:00+07:00
+date: 2019-07-28T06:31:00.002+07:00
 lang: en
+location: ""
 modified: 2019-07-28T06:31:48.136+07:00
 subtitle: Memperbaiki low wifi signal kali linux git clone
   https://github.com/lwfinger/rtlwifi_new.gitcd rtlwifi_newsudo makesudo make

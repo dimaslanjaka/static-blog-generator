@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://2.bp.blogspot.com/-i7bdnxh9Dlc/WaLJD_Te5HI/AAAAAAAAAA8/RfYz9cDKIZMAXfTZR2Xtwqyan2_3h1ueQCLcBGAs/s320/images%2B%252810%2529_1503840522780.jpg
-date: 2017-09-07T20:27:00+07:00
+date: 2017-09-07T20:27:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.922+07:00
 subtitle: Langkahlangkah Build Safelink Converter
 tags:
   - Adsense
-  - JAVASCRIPT
+  - JS
   - Blogger
   - Tips & Tricks
 title: Tutorial Membuat Blogspot Safelink Converter Work 100

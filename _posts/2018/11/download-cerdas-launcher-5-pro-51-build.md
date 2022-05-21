@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/smart-launcher-5-1.png
-date: 2018-11-08T12:54:00+07:00
+date: 2018-11-08T12:54:00.002+07:00
 lang: en
+location: ""
 modified: 2018-11-10T06:34:53.954+07:00
 subtitle: Cerdas Launcher adalah permainan Personalisasi untuk android Download versi
 tags:

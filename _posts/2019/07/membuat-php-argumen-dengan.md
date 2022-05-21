@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://static.cdn-cdpl.com/700x350/4817b4477491b436a2a3cb4db5f3943b/PHP_Logo-image700x350-crop-image700x350-crop-image(700x350-crop).png
-date: 2019-07-30T06:48:00+07:00
+date: 2019-07-30T06:48:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-30T06:48:00.415+07:00
 subtitle: Cara Membuat argumen PHP CLI dengan --=
 tags:

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://t7j2r8j8.stackpathcdn.com/wp-content/uploads/2017/07/Knowing-Brother-Subtitle-Indonesia.jpg
-date: 2019-01-07T18:13:00+07:00
+date: 2019-01-07T18:13:00.000+07:00
 lang: en
+location: ""
 modified: 2019-01-07T18:13:01.007+07:00
 subtitle: Synopsis of Variety Show Knowing Brother Indonesian Subtitles Knowing
   Brother is a South Korean television entertainment program

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://www.tutorial-webdesign.com/wp-content/uploads/2014/01/codeigniter.png
-date: 2018-12-18T20:17:00+07:00
+date: 2018-12-18T20:17:00.000+07:00
 lang: en
+location: ""
 modified: 2018-12-18T20:17:02.651+07:00
 subtitle: In this tutorial, the author will provide a tutorial on the basic use
   of the php framework is CodeIgniter.The author uses CodeIgniter v

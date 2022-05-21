@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-03-08T08:20:00+07:00
+date: 2019-03-08T08:20:00.001+07:00
 lang: en
+location: ""
 modified: 2019-03-08T08:20:51.354+07:00
 subtitle: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div

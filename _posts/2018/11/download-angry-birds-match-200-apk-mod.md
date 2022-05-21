@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/angry-birds-match-1.png
-date: 2018-11-26T21:31:00+07:00
+date: 2018-11-26T21:31:00.000+07:00
 lang: en
+location: ""
 modified: 2018-11-30T00:03:14.002+07:00
 subtitle: Angry Birds Match .0.0 Apk Mod Koin, Permata, Kehidupan, Bergerak, ... android
 tags:

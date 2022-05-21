@@ -5,16 +5,18 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQCQZ1lrGJs-Gmk6cKtdBHXyfgzRIAQYqScDZlU2o_MkjX0SylMtA
-date: 2017-04-10T21:55:00+07:00
+date: 2017-04-10T21:55:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:18.027+07:00
 subtitle: jQuery Functions To Async Or Defer Images On Wordpress CMS And Blogger
   Blogs. Understanding async
 tags:
   - Wordpress
-  - JAVASCRIPT
+  - JS
   - Blogger
   - Blogging
 title: Auto Defer Images in Blogger And Wordpress

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh5.googleusercontent.com/proxy/0M7YVi9ALp2H_7yL8Qjxytyl1bR_a1wm5w9439itLQLMHsRgTo9wU-PwoO19di1vA4AtAt7zBE0ZcrqhoKcYDH6TKwZgVpu1C4Ba5KITbvPGYV8I2qLOHxtrSP68PrsWHYP3PHIOQtipt2cL8ARZOa9YNwjV16QhJWsZThVqKVQrPA=w507-h290-nc
-date: 2017-09-10T16:02:00+07:00
+date: 2017-09-10T16:02:00.000+07:00
 lang: en
+location: ""
 modified: 2017-09-13T01:10:40.746+07:00
 subtitle: Untuk mencegah yahoo search engine menampilkan deskripsi dan title
   situs dari yahoo directory.

@@ -4,18 +4,19 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - HTML
 comments: true
 cover: https://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
-date: 2017-07-24T20:47:00+07:00
+date: 2017-07-24T20:47:00.000+07:00
 lang: en
+location: ""
 modified: 2017-07-24T20:47:00.668+07:00
 subtitle: Blogger AMP Tutorial PartsMemasang Komentar Facebook di blogger AMP
 tags:
   - Blogger
   - HTML
   - AMP
-  - Blogging
 title: Memasang komentar facebook di Blogger AMP
 type: post
 uuid: 580f2618-b09c-4888-821d-11791192ff77

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamjZSRo4NecDhkcMeytN2DOKXp_ZIaEw4c_3Cm8nFUsPJqU-Tgw
-date: 2017-07-26T23:52:00+07:00
+date: 2017-07-26T23:52:00.000+07:00
 lang: en
+location: ""
 modified: 2017-07-26T23:52:04.168+07:00
 subtitle: Untuk Tanggal xx:xx:xxxx merupakan valid serial key tersebut
 tags:

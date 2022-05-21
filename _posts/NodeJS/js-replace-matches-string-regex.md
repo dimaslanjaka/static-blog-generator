@@ -6,7 +6,7 @@ cover: https://res.cloudinary.com/practicaldev/image/fetch/s--73FnDTzR--/c_limit
 date: 2021-12-19T15:07:43+07:00
 subtitle: How to match regex from string and replace matched string 1-9
 tags:
-  - JAVASCRIPT
+  - JS
 title: Replace Matched Regex 1-9 From String
 uuid: 765a18cd-4bfd-4888-8919-eff198a9f8de
 updated: 2021-12-19T15:20:44+07:00
@@ -17,6 +17,7 @@ photos:
 description: How to match regex from string and replace matched string 1-9
 category:
   - Programming
+  - JS
 comments: true
 wordcount: 95
 excerpt: How to match regex from string and replace matched string 1-9

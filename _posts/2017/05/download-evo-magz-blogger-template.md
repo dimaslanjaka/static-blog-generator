@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-Z1TBK-4l9zQ/V8gjaxUDCZI/AAAAAAAAB0U/hP_YpKpX2HUSmc6EDoJTG-7UYr3xVzIFACLcB/s640/Capture.PNG
-date: 2017-05-17T11:00:00+07:00
+date: 2017-05-17T11:00:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-17T11:00:04.327+07:00
 subtitle: Hi Buddy , Now I want to share for free template that is Tempo Evo
   Magz Version .0 Clone Super Fast Loading , Is a special
 tags:
   - Blogger
-  - Blogging
 title: Download Evo Magz Blogger Template Version 5.0 Clone Super Fast Loading
 type: post
 uuid: 46c6637c-2427-4888-82e7-8124d0ba4c7d

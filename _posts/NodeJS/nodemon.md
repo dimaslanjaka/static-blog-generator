@@ -2,29 +2,18 @@
 date: 2022-04-24T00:00:00+07:00
 description: all about nodemon
 title: nodemon
-updated: 2022-04-24T00:00:00+07:00
+updated: 2022-04-24
 uuid: c0c30a89-10ff-4888-8a1b-0225815a65ed
-lang: en
 category:
   - Uncategorized
 tags: []
-author:
-  name: Dimas Lanjaka
-  link: https://www.webmanajemen.com/
-  email: dimaslanjaka@gmail.com
-  image:
-    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-    width: 1944
-    height: 2592
-  social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 32
 subtitle: all about nodemon
 excerpt: all about nodemon
 url: https://www.webmanajemen.com/NodeJS/nodemon.html
 permalink: /NodeJS/nodemon.html
+lang: en
 type: post
 ---
 

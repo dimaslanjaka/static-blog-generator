@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - KOTLIN
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-10-24T09:19:00+07:00
+date: 2020-10-24T09:19:00.000+07:00
 lang: en
+location: ""
 modified: 2020-10-24T09:19:53.448+07:00
 subtitle: pre><br />pluginManagement <br /> resolutionStrategy <br /> eachPlugin
   <br /> // Work around
 tags:
-  - Kotlin
+  - KOTLIN
 title: Example getting properties value from settings.gradle.kts
 type: post
 uuid: 27d03306-0c58-4888-8a64-b45d83662e64

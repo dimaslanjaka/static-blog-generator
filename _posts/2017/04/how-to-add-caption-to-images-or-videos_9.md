@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://lh3.googleusercontent.com/proxy/iXXMXlcltXb398p9VGuEZNu_q_9fOhWGI2a7MC0u0gxejcoAG9JwriwCAXcFnQzy04oNlHepGhjkRl5qZ5VnHRY4yte8q9STSCavvaAxYEXGBw6EnbpDem0nNPZPhkQ
-date: 2017-04-09T23:48:00+07:00
+date: 2017-04-09T23:48:00.003+07:00
 lang: en
+location: ""
 modified: 2017-04-09T23:48:53.944+07:00
 subtitle: How to add caption to images or videos in wordpress and Blogger Thats
   true a picture is value cardinal words, however a picture
@@ -16,7 +17,6 @@ tags:
   - Wordpress
   - Blogger
   - Blogging
-  - Tips & Tricks
 title: How to add caption to images or videos in wordpress and Blogger
 type: post
 uuid: 97da7e60-01ff-4888-86bb-456242b296c5

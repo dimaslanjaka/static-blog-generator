@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://api.duniagames.co.id/api/content/upload/file/14053741101592474239.jpg
-date: 2021-05-14T04:15:00+07:00
+date: 2021-05-14T04:15:00.001+07:00
 lang: en
+location: ""
 modified: 2021-05-14T04:15:56.054+07:00
 subtitle: In the era of the 000s, the PS2 console was known to bring a myriad of
   valuable experiences to its connoisseurs. But along with the

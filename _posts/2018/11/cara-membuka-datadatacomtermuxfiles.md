@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-11-12T10:41:00+07:00
+date: 2018-11-12T10:41:00.003+07:00
 lang: en
+location: ""
 modified: 2018-11-12T10:45:16.204+07:00
 subtitle: Untuk sampai ke folder file Termux, Anda harus CD ke seluruh nama
   jalan seperti ini.

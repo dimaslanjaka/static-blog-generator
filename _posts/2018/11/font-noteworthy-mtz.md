@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://en.miui.com/data/attachment/image/001/02/52/11_240_240.jpg
-date: 2018-11-23T20:45:00+07:00
+date: 2018-11-23T20:45:00.002+07:00
 lang: en
+location: ""
 modified: 2018-11-23T20:48:24.952+07:00
 subtitle: Font Noteworthy terbaru yang mendukung Unicode dan simbol.
 tags:

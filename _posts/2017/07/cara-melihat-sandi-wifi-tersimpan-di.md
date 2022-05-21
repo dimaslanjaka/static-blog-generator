@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://11986-presscdn-0-77.pagely.netdna-cdn.com/wp-content/uploads/2016/03/open-network-sharing-center.png
-date: 2017-07-10T16:26:00+07:00
+date: 2017-07-10T16:26:00.001+07:00
 lang: en
+location: ""
 modified: 2017-07-10T16:26:39.835+07:00
 subtitle: Apakah Anda masih menggunakan kata sandi WiFi yang tertulis di bagian
   belakang router yang ISP Anda berikanJika demikian, mungkin

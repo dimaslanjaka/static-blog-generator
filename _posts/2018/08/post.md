@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_GSwBHWgKexKRlrdNTFKAvtv827hyFeGx4dvA4ln2k8UDV1vT
-date: 2018-08-13T08:46:00+07:00
+date: 2018-08-13T08:46:00.001+07:00
 lang: en
+location: ""
 modified: 2018-08-24T23:54:15.641+07:00
 subtitle: Website Development Indonesia
 tags: []

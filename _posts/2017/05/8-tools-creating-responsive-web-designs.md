@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://www.tutorial-webdesign.com/wp-content/uploads/2015/06/froont-responsive-web-design.jpg
-date: 2017-05-15T20:59:00+07:00
+date: 2017-05-15T20:59:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-15T20:59:21.463+07:00
 subtitle: Web Responsive Creating Tool For Web Developers-Web design is an
   important part of a website development project.The client at this time

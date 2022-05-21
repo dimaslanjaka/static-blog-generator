@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-10-17T13:51:00+07:00
+date: 2020-10-17T13:51:00.004+07:00
 lang: en
+location: ""
 modified: 2020-10-26T23:37:05.422+07:00
 subtitle: h2>Contribution Tutorial</h2><ol> <li>Fork it git clone
   https://github.com/name/repo</li> <li>Create your feature branch git checkout

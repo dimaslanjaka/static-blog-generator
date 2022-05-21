@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://carat-cdn.azureedge.net/media/9570/ads-txt-624x374-2_square.jpg
-date: 2019-07-25T06:20:00+07:00
+date: 2019-07-25T06:20:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-25T06:20:37.816+07:00
 subtitle: ads.txtformat for valid adsenseexample combine ads.txt adsense with
   other ads:google.com, pub-1037373295371110, DIRECT video, banner,

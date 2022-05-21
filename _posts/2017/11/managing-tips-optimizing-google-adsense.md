@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2013/11/Skor-bagus-lagi.jpg
-date: 2017-11-10T22:40:00+07:00
+date: 2017-11-10T22:40:00.000+07:00
 lang: en
+location: ""
 modified: 2017-11-10T22:41:26.188+07:00
 subtitle: Managing Tips Optimizing Google Adsense BlogWriting articles on the
   blog that so many kinds and styles.There is a style of journalism,

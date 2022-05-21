@@ -7,14 +7,13 @@ category:
   - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-ckNqKjK4iac/WRb5CltPGFI/AAAAAAAAACE/KXjMhakpN2MA2CWE3T3_L_JD56H0MffQwCLcB/s1600/download.png
-date: 2017-05-13T14:17:00+07:00
+date: 2017-05-13T14:17:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-13T19:26:01.577+07:00
 subtitle: How to easily backup template blogger or blogspot
 tags:
   - Blogger
-  - Tips & Tricks
-  - Blogging
 title: How to easily backup template blogger or blogspot
 type: post
 uuid: 2dbc0f98-036e-4888-8d17-506916946998

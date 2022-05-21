@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://www.digitalponsel.com/wp-content/uploads/2018/09/xOnePlus-6-1024x538.jpg.pagespeed.ic.zkfkebn_T3.jpg
-date: 2018-11-30T18:06:00+07:00
+date: 2018-11-30T18:06:00.000+07:00
 lang: en
+location: ""
 modified: 2018-11-30T18:06:04.705+07:00
 subtitle: Can OnePlus be called a Flagship Killer? Digital Mobile Phones - After
   many rumors about this smartphone, OnePlus 6 was finally

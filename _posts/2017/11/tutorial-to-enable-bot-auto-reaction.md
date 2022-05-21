@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-6QJngubG5dQ/WPYfwOl5IGI/AAAAAAAAAWM/FJdnJM-8SE0qvr1gjHRwAAmV0PMC9jALACLcB/s1600/Capturee.JPG
-date: 2017-11-10T22:43:00+07:00
+date: 2017-11-10T22:43:00.000+07:00
 lang: en
+location: ""
 modified: 2017-11-10T22:43:46.885+07:00
 subtitle: . Then the message will appear as drawn.Do not be afraid, then press
   PROXY.4. Input Email and Password your fb account earlier.Then

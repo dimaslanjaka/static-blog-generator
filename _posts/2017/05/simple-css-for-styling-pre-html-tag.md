@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPU5mp9B9Vq99lF8d8-apVN1I1DoiA9DcmpTwYsP1MY5hRB8oY
-date: 2017-05-04T20:27:00+07:00
+date: 2017-05-04T20:27:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-05T09:57:57.923+07:00
 subtitle: Styling pre> tag using simple css code Description of <pre> tag on
   HTML The HTML <pre> tag is employed for indicating

@@ -1,39 +1,29 @@
 ---
 category:
   - Programming
+  - JS
 cover: https://eslint.org/assets/img/favicon.512x512.png
-date: 2022-04-17T17:01:31+07:00
+date: 2022-04-17T10:01:31+0000
 subtitle: Auto format typescript with esm using only eslint and prettier module
 tags:
-  - JAVASCRIPT
-  - TYPESCRIPT
+  - JS
+  - TS
   - NodeJS
   - ESLint
 title: Auto format typescript with esm in vscode
 type: post
-updated: 2022-05-03T18:14:00+07:00
+updated: 2022-05-03T18:14:00+0700
 uuid: 7fc9817d-e4da-4888-8b90-6d4d163e3a21
-lang: en
-thumbnail: https://eslint.org/assets/img/favicon.512x512.png
-photos:
-  - https://eslint.org/assets/img/favicon.512x512.png
-author:
-  name: Dimas Lanjaka
-  link: https://www.webmanajemen.com/
-  email: dimaslanjaka@gmail.com
-  image:
-    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-    width: 1944
-    height: 2592
-  social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 243
 excerpt: Auto format typescript with esm using only eslint and prettier module
 description: Auto format typescript with esm using only eslint and prettier module
 url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-esm.html
 permalink: /NodeJS/eslint-prettier-typescript-vscode-esm.html
+lang: en
+thumbnail: https://eslint.org/assets/img/favicon.512x512.png
+photos:
+  - https://eslint.org/assets/img/favicon.512x512.png
 ---
 
 ## CommonJS

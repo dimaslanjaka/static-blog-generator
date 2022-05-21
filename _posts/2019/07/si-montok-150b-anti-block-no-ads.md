@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-KpglWEBljLY/XMevpDPyhkI/AAAAAAAABZw/iCCyiwjIMOsP_geq81zpicf0nm_zceNdgCEwYBhgL/w585/simontok.jpg
-date: 2019-07-31T15:43:00+07:00
+date: 2019-07-31T15:43:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-31T15:43:02.245+07:00
 subtitle: Simontok 5.0b anti blocks tanpa iklanDownload [zippyshare]Si montokno
   adstanpa iklanmodanti block15.0b

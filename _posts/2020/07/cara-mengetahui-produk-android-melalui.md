@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-07-10T13:05:00+07:00
+date: 2020-07-10T13:05:00.000+07:00
 lang: en
+location: ""
 modified: 2020-07-10T13:05:50.887+07:00
 subtitle: fastboot getvar product
 tags:

@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - HTML
 comments: true
 cover: https://2.bp.blogspot.com/-jSLiOZsuahQ/WaRcT-NMI4I/AAAAAAAAACI/vjuid9-u-hE4pT43zsx0XxoytpjWj5HdACLcBGAs/s320/histats-2.jpg
-date: 2017-09-14T01:20:00+07:00
+date: 2017-09-14T01:20:00.000+07:00
 lang: en
+location: ""
 modified: 2017-09-14T01:20:01.785+07:00
 subtitle: Komponen amppixel berperilaku seperti img img gambar sederhana.
   Dibutuhkan satu URL saja, namun memberikan variabel yang bisa digantikan

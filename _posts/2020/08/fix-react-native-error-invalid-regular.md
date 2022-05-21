@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-08-03T08:26:00+07:00
+date: 2020-08-03T08:26:00.001+07:00
 lang: en
+location: ""
 modified: 2020-08-03T08:26:05.439+07:00
 subtitle: If you Got this issue today on windows, but dont need to downgrade
   node, just as discussed on
 tags:
-  - JAVASCRIPT
+  - JS
   - Regular Expression
 title: "Fix React Native error Invalid regular expression: /.\\\\__fixtures__"
 type: post

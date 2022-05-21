@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://cdn.staticaly.com/img/www.retaildive.com/user_media/cache/ca/af/caaf3c5c453af06608ab5eafbf455a0a.jpg
-date: 2018-12-07T03:45:00+07:00
+date: 2018-12-07T03:45:00.000+07:00
 lang: en
+location: ""
 modified: 2018-12-07T03:45:07.646+07:00
 subtitle: Dive Brief GameStop mengumumkan minggu lalu bahwa ia menjual divisi
   Spring Mobile dan 1.289 toko ritel yang beroperasi

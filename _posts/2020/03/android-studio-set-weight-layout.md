@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
-date: 2020-03-08T16:44:00+07:00
+date: 2020-03-08T16:44:00.001+07:00
 lang: en
+location: ""
 modified: 2020-03-29T20:45:55.271+07:00
 subtitle: pre><br />LinearLayout.LayoutParams param = new
   LinearLayout.LayoutParams<br /> LayoutParams.MATCH_PARENT, //OR WRAP_CONTENT

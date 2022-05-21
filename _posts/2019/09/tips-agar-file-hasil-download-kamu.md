@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2016/04/Corrupt.png
-date: 2019-09-29T17:56:00+07:00
+date: 2019-09-29T17:56:00.000+07:00
 lang: en
+location: ""
 modified: 2019-09-29T17:56:03.656+07:00
 subtitle: Web Development Indonesia Everyone certainly does not expect the
   downloaded file to be corrupt or corrupt. The downloaded file is

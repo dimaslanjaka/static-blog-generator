@@ -4,17 +4,18 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - HTML
 comments: true
 cover: https://lh3.googleusercontent.com/proxy/OJWB1B8t8vRrLSxK6kaSpqIC5_Qs2dO1XoRwPDzu3_Bd221wjlh0rpTomRwyZlUtrmkMw2DLJ-KKN78v5L4XQLFbshEZtu5ZqlrbHwJReRgklNkx4swVr0ffz200BtqCdIMeW9PIrLoU_PNgyISDAcz45W-Fv0rtpgL6K4AjP_Pqx4MKDg
-date: 2017-04-30T10:24:00+07:00
+date: 2017-04-30T10:24:00.000+07:00
 lang: en
+location: ""
 modified: 2017-05-01T09:51:08.841+07:00
 subtitle: "Text HTML Tutorial Part : How to Make HTML Without Text Format pre
   tags and tag code In the HTML, to display the text in order"
 tags:
   - HTML
-  - Tips & Tricks
 title: How to Make HTML Without Text Format pre tags and tag code
 type: post
 uuid: 0c88eaf9-ab13-4888-86b9-f4e3cf061c18

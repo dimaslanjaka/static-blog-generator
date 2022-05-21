@@ -5,17 +5,18 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://lh5.googleusercontent.com/proxy/zOJPQmOxXy895GIkyGjPcsnz3xVCQZGUJhgMGWk2BJS4JNQcjbpMUA9IeG5TdHv9Yv0q5USG8ipopidYGRGZUZgo-yGy2zPcevf0iMrMACluVNuYUgrAOQ=w300-h300-nc
-date: 2017-11-18T13:56:00+07:00
+date: 2017-11-18T13:56:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.862+07:00
 subtitle: Me often find comments on blogs Mascots inquiring about blogger
   widgets that can not be performed, such as the blogs stat
 tags:
-  - JAVASCRIPT
+  - JS
   - Blogger
-  - Blogging
 title: Hiding javascript to increase blogger blog speed
 type: post
 uuid: 03edbb56-cb36-4888-8644-056f684badbd

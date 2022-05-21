@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-G8uvcGY1HKk/XRJ2h07bE2I/AAAAAAAAAZ4/xFxE1oVc6nctLlNdnpbGx-xvqOADFqcfQCLcBGAs/s1600/iconfinder_folder_black_PHP_51814.png
-date: 2019-06-26T02:24:00+07:00
+date: 2019-06-26T02:24:00.000+07:00
 lang: en
+location: ""
 modified: 2019-06-26T02:36:59.505+07:00
 subtitle: How to automatically create folder if not exists on spesific PATH
 tags: []

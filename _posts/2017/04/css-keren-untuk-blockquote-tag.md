@@ -5,10 +5,12 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-04-11T15:56:00+07:00
+date: 2017-04-11T15:56:00.000+07:00
 lang: en
+location: ""
 modified: 2017-04-11T15:56:03.823+07:00
 subtitle: Apa itu blockquote tag HTML <blockquote> tag digunakan untuk
   menunjukkan kutipan panjang yaitu kutipan yang berlangsung beberapa baris.

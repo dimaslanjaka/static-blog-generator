@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-WFX0GRHO_hU/VW1H7LU1faI/AAAAAAAABmU/hFAoVMjR--M/s1600/mengaktifkan%2Btampilan%2Bseluler%2Bpada%2Bblog.png
-date: 2017-04-26T16:21:00+07:00
+date: 2017-04-26T16:21:00.000+07:00
 lang: en
+location: ""
 modified: 2017-04-26T16:21:02.128+07:00
 subtitle: Make Blog Become a MobileFriendly How to Make a Blog For Mobile
   Friendly and SEO - After the latest algorithms of search engine

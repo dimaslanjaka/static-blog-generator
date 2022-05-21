@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://1.bp.blogspot.com/-bnFVYzCkPiw/YFvFWw2im6I/AAAAAAAAAAM/28Q_ctk1SuE-1pskAFYfvVREqij-nsjhACLcBGAsYHQ/s0/VStudio2019-NodeJS.png
-date: 2021-03-25T06:04:00+07:00
+date: 2021-03-25T06:04:00.006+07:00
 lang: en
+location: ""
 modified: 2021-03-26T17:23:17.781+07:00
 subtitle: ul> <li>Install <a href=https://visualstudio.microsoft.com/downloads/
   rel=nofollow noopener target=_blank>Microsoft Visual Studio
 tags:
-  - JAVASCRIPT
+  - JS
   - Windows
 title: Fix Error NodeJS Windows Visual Studio
 type: post

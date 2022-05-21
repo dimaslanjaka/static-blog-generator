@@ -8,8 +8,9 @@ category:
   - PHP
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-3UATHL878wU/WKoXE11tarI/AAAAAAAAFAA/QhBnNJFo5QAiB4C04RKBG9zuFrP2Uhm4gCLcB/s1600/serverphp.jpg
-date: 2017-04-09T13:26:00+07:00
+date: 2017-04-09T13:26:00.001+07:00
 lang: en
+location: ""
 modified: 2020-01-24T06:50:22.992+07:00
 subtitle: Official php-cli installation on android by L3n4r0x php Running On
   Android Terminal -> This Repost From My Another Blogs <-

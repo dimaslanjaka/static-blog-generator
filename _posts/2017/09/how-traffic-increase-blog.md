@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgdb.net/images/3195.png
-date: 2017-09-23T01:36:00+07:00
+date: 2017-09-23T01:36:00.000+07:00
 lang: en
+location: ""
 modified: 2017-09-23T01:36:04.221+07:00
 subtitle: When first mate to create a blog must have occurred in the mind of my
   friend, for what this blog will be created. Maybe at first just a

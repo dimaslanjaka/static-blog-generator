@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2013/12/Halo-adsense3-copy-300x254.jpg
-date: 2017-09-08T08:02:00+07:00
+date: 2017-09-08T08:02:00.000+07:00
 lang: en
+location: ""
 modified: 2017-09-08T08:02:00.190+07:00
 subtitle: Tips on Optimizing Google Adsense With Blog MiscellaneousBlog
   hodgepodge is not always bad and niche blogs are not always good for

@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-10-17T04:26:00+07:00
+date: 2020-10-17T04:26:00.004+07:00
 lang: en
+location: ""
 modified: 2020-10-17T04:26:36.608+07:00
 subtitle: "pre><br />Usage: var_dumpget_client_ip;<br /></pre> <pre><br />/<br
   /> Detect is localhost<br /> <br /> @return boolean<br />"
@@ -16,7 +18,6 @@ tags:
   - Script
   - PHP
   - Tips & Tricks
-  - XAMPP
 title: "[PHP] Detect User Client IP XAMPP or Localhost Machine Supported"
 type: post
 uuid: 34312352-b8b1-4888-8e50-1c29c99b2e5d

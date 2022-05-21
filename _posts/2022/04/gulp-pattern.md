@@ -1,31 +1,20 @@
 ---
-date: 2022-04-02T00:34:31+07:00
+date: 2022-04-01T17:34:31+0000
 subtitle: macam-macam source pattern pada gulp
 title: gulp src pattern
-updated: 2022-04-02T00:34:31+07:00
+updated: 2022-04-01T17:34:31+0000
 uuid: 32de1d5f-52a5-4888-88e6-0ef31c247e82
 webtitle: NodeJS
-lang: en
 category:
   - Uncategorized
 tags: []
-author:
-  name: Dimas Lanjaka
-  link: https://www.webmanajemen.com/
-  email: dimaslanjaka@gmail.com
-  image:
-    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
-    width: 1944
-    height: 2592
-  social_links:
-    github: https://github.com/dimaslanjaka
-    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 88
 excerpt: macam-macam source pattern pada gulp
 description: macam-macam source pattern pada gulp
 url: https://www.webmanajemen.com/2022/04/gulp-pattern.html
 permalink: /2022/04/gulp-pattern.html
+lang: en
 type: post
 ---
 

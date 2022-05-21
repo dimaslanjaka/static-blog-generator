@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://www.tutorial-webdesign.com/wp-content/uploads/2015/01/12.png
-date: 2017-08-29T20:38:00+07:00
+date: 2017-08-29T20:38:00.000+07:00
 lang: en
+location: ""
 modified: 2022-03-18T20:38:03.355+07:00
 subtitle: How to multiple delete with codeigniter
 tags:
   - Wordpress
   - CodeIgniter
-  - Tips & Tricks
 title: How to Multiple Delete With CodeIgniter
 type: post
 uuid: 47c30314-bfb9-4888-8c55-7c27fc5c6d79

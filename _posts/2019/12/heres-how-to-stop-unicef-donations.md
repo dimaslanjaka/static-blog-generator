@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/4216ae32134391e1185ba26fb80983e0.jpeg
-date: 2019-12-24T22:08:00+07:00
+date: 2019-12-24T22:08:00.000+07:00
 lang: en
+location: ""
 modified: 2019-12-24T22:08:02.245+07:00
 subtitle: Heres How to Stop UNICEF Donations Right And Easy Many questions about
   how to stop UNICEF donations from those warriors of children

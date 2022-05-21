@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://1.bp.blogspot.com/-uIxGKxlwpuU/XTIpx8O5NDI/AAAAAAAAAbA/qVaaGh3genIYBE0rl0PDNTnt6RznLulJQCLcBGAs/s1600/2513807.jpg
-date: 2019-07-20T04:30:00+07:00
+date: 2019-07-20T04:30:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-20T04:30:07.664+07:00
 subtitle: Tutorial mengatasi windows 0 tanpa kehilangan data settings, aplikasi,
   file GPT MBR both supported Permasalahan /

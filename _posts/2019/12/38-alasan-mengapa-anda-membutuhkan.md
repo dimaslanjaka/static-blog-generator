@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/380def9044953d917ff4a115d32bc760.png
-date: 2019-12-07T05:19:00+07:00
+date: 2019-12-07T05:19:00.001+07:00
 lang: en
+location: ""
 modified: 2019-12-16T01:23:50.132+07:00
 subtitle: Selamat datang di abad ke21, di mana mobil self-driving tidak lagi
   menjadi fantasi sci-fi yang jauh, anak-anak memiliki smartphone di

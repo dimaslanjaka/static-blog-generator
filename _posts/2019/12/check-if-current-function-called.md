@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - PHP
 comments: true
 cover: https://i.ytimg.com/vi/ZFhadzpISPY/maxresdefault.jpg
-date: 2019-12-04T05:51:00+07:00
+date: 2019-12-04T05:51:00.001+07:00
 lang: en
+location: ""
 modified: 2019-12-04T09:13:32.961+07:00
 subtitle: pre><br />static = issetthis amp;amp; get_classthis == __CLASS__;<br
   />if static <br /> return self;<br /> else <br />

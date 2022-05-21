@@ -5,19 +5,20 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://3.bp.blogspot.com/-1K6wl1YmvoY/VRpleEPVStI/AAAAAAAAAtE/ZiZBz937iIk/s1600/facebook-fan-page-fans.png
-date: 2017-04-11T06:44:00+07:00
+date: 2017-04-11T06:44:00.001+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.816+07:00
 subtitle: How To Easily Install FansPage Facebook Levitating On BlogsThis time,
   I will give a brief tutorial easy way Add FansPage In Blog, Add
 tags:
-  - JAVASCRIPT
+  - JS
   - Blogger
   - HTML
   - Social Media
-  - Tips & Tricks
 title: How To Easily add FansPage Facebook Levitating On Blogs
 type: post
 uuid: d4da02f0-575f-4888-8d28-c2e5dee032cd

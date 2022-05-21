@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-07-28T22:55:00+07:00
+date: 2017-07-28T22:55:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.866+07:00
 subtitle: Dengan plugin komentar, orang dapat mengomentari konten di situs web
   Anda menggunakan akun Facebook mereka. Orangorang juga bisa memilih
 tags:
-  - JAVASCRIPT
+  - JS
   - HTML
   - Social Media
 title: Kode Recommend Dan Comments Facebook Based JavaScript

@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/--negiLKKB7s/VHgEBpFr2kI/AAAAAAAABR4/F1OABPKFt4k/s320/shareing%2Bbuttons%2Bfor%2Bblogger.jpeg
-date: 2017-09-26T01:33:00+07:00
+date: 2017-09-26T01:33:00.000+07:00
 lang: en
+location: ""
 modified: 2017-09-26T01:33:08.142+07:00
 subtitle: Buddy must have bookmarks in the browsers favorite sites belonging to
   my friend, this so easily at any time in order to return to the

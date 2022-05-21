@@ -4,11 +4,13 @@ author:
   link: https://www.blogger.com/profile/09256263851708439294
   email: noreply@blogger.com
 category:
-  - Uncategorized
+  - Programming
+  - HTML
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-10-28T14:17:00+07:00
+date: 2020-10-28T14:17:00.005+07:00
 lang: en
+location: ""
 modified: 2020-10-28T14:19:08.732+07:00
 subtitle: See the Pen github.comselect2/select2-bootstrap-theme/issues/35 by
   Florian Kissling @fk on CodePen.

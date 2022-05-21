@@ -5,15 +5,17 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://thumbs.dreamstime.com/z/javascript-flat-illustration-abstract-design-development-concepts-elements-mobile-web-applications-50893845.jpg
-date: 2017-12-27T05:39:00+07:00
+date: 2017-12-27T05:39:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.937+07:00
 subtitle: All I needed was to expel every single forward slice in a string
   utilizing Javascript.
 tags:
-  - JAVASCRIPT
+  - JS
   - HTML
 title: JS Javascript Function Remove Slash From String
 type: post

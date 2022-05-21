@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://1.bp.blogspot.com/-RgpJNTI1w90/Uy4W4qlHVuI/AAAAAAAAAf4/JozWbUyJgts/s1600/spp.png
-date: 2019-07-21T01:20:00+07:00
+date: 2019-07-21T01:20:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-21T01:20:57.339+07:00
 subtitle: One time I was playing a game, and running several programs on a
   Windows laptop. Then the memory was heavy, some of my programs were

@@ -17,7 +17,6 @@ location: Indonesia
 subtitle: Guide SK2 for F2P
 tags:
   - Games
-  - Tips & Tricks
 title: F2P Guide
 type: post
 uuid: d6337782-e225-4888-8fca-4207d72f764f

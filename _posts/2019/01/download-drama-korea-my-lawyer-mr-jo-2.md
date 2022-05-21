@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://drakorstation.com/wp-content/uploads/2019/01/My-Lawyer-Mr.-Jo-2-Subtitle-Indonesia.jpg
-date: 2019-01-22T00:24:00+07:00
+date: 2019-01-22T00:24:00.000+07:00
 lang: en
+location: ""
 modified: 2019-01-22T00:24:01.461+07:00
 subtitle: "Korean Drama My Lawyer Mr. Jo Indonesian Subtitles Synopsis of My
   Lawyer, Mr. Jo 2: Korean Drama My Lawyer Mr. Jo 2 Sub Indo"

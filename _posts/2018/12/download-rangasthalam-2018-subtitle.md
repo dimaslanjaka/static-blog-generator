@@ -7,8 +7,9 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s7.dunia21.net/wp-content/uploads/2018/08/film-rangasthalam2018-lk21.jpg
-date: 2018-12-16T12:39:00+07:00
+date: 2018-12-16T12:39:00.000+07:00
 lang: en
+location: ""
 modified: 2018-12-16T12:39:03.804+07:00
 subtitle: "import
   urlhttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstr\

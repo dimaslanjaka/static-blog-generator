@@ -5,16 +5,18 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
+  - JS
 comments: true
 cover: http://res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
-date: 2017-12-12T18:41:00+07:00
+date: 2017-12-12T18:41:00.000+07:00
 lang: en
+location: ""
 modified: 2019-07-22T03:23:17.929+07:00
 subtitle: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
   Membuat Simple Safelink Converter
 tags:
   - Wordpress
-  - JAVASCRIPT
+  - JS
   - Blogger
 title: Update Code Widget Dan Template Untuk Simple Safelink Converter
 type: post
