@@ -65,6 +65,7 @@ jobs:
             ./docs
           key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
           restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node rimraf
       - name: Remove Source And Posts
         run: |
           rimraf src-posts
@@ -73,7 +74,7 @@ jobs:
         run: |
           git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
-      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node rimraf
+      
       - run: git checkout old-revision
       - run: npm install
       - run: "gulp clean"
