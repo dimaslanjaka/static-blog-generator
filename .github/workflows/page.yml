@@ -74,8 +74,7 @@ jobs:
           git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
       - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
-        # run global install when cache not written
-        # if: steps.npm-cache.outputs.cache-hit != 'true'
+      - run: git checkout old-revision
       - run: npm install
       - run: "gulp clean"
         if: "contains(github.event.head_commit.message, 'clean')"
