@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQa1lm1EI1a4kQStyHaoRq2LTQ3iHdj3CuE8YfEqS3-jKcycvJfOP44cSUy_A
-date: 2017-04-23T16:00:00.000+07:00
+date: 2017-04-23T16:00:00+07:00
 lang: en
-location: ""
 modified: 2017-04-23T16:00:13.899+07:00
 subtitle: How To Solve Duplicate Content On Blog Duplicate content is to
   duplicate the title and description of the content in a blog which is
 tags:
   - Blogger
+  - Tips & Tricks
 title: How To Solve Duplicate Content On Blog
 type: post
 uuid: 1174149a-9f43-4888-8a83-c0005fc2644c

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-L3KQKqkEUcE/WWpMHqAgUBI/AAAAAAAACU4/7KJ5yi2UlTErYq_6Fflz--LsOR6K52nGQCLcBGAs/s400/bodo.png
-date: 2017-09-25T23:55:00.000+07:00
+date: 2017-09-25T23:55:00+07:00
 lang: en
-location: ""
 modified: 2017-09-25T23:55:43.336+07:00
 subtitle: How to Obtain Free Domain NET September 017 - Assalamualaikum Dear
   Friend, Hope we are in good healthand in his protection.So long

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/b30705df84f44261cfa28df3f671c8c8.jpeg
-date: 2019-11-30T18:39:00.001+07:00
+date: 2019-11-30T18:39:00+07:00
 lang: en
-location: ""
 modified: 2019-11-30T19:30:38.852+07:00
 subtitle: "Download lagu Repvblik Aku Takut Mp3 Repvblik - Im afraid Listen:
   168,646,315 Duration: 251 MP3 size: 3.92MB Download Links"

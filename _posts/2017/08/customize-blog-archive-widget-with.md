@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://1.bp.blogspot.com/-GV7abCMrwuY/VFjH5bdO0II/AAAAAAAAHgI/zvsV7trZFXY/s1600/archive%2Bcopy.jpg
-date: 2017-08-03T16:06:00.000+07:00
+date: 2017-08-03T16:06:00+07:00
 lang: en
-location: ""
 modified: 2017-08-03T16:06:00.348+07:00
 subtitle: The Blog Document gadget is one of Bloggers legitimate gadgets. The
   main issue with the default Blog File gadget is that it will take up

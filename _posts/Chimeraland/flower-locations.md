@@ -8,11 +8,22 @@ subtitle: Spawn locations of flowers
 tags: []
 title: Lokasi Spawn Bunga Di Chimeraland
 toc: true
-updated: 2022-03-21T08:42:35+0000
+updated: 2022-03-21T15:42:35+07:00
 uuid: 3aff2ffd-22b7-4888-8a2a-9db0f2b147a6
 webtitle: Chimeraland
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
-wordcount: 212
+wordcount: 211
 excerpt: Spawn locations of flowers
 description: Spawn locations of flowers
 url: https://www.webmanajemen.com/Chimeraland/flower-locations.html
@@ -33,5 +44,5 @@ Di tempat ini juga banyak ditemukan **Clay**, **Precious Jade**
 
 ## Tutorial Video Lokasi Equinox Flower
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/Gnm-9hgkOB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/Gnm-9hgkOB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>

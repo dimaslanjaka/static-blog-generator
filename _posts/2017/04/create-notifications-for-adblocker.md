@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
-date: 2017-04-13T07:22:00.000+07:00
+date: 2017-04-13T07:22:00+07:00
 lang: en
-location: ""
 tags:
   - Adsense
   - CSS
@@ -21,16 +19,16 @@ title: Create Notifications For Adblocker Adsense Users
 type: post
 uuid: aee210d8-b0e7-4888-891a-0ae9ca18716d
 webtitle: WMI Gitlab
-updated: 2022-04-15T12:19:00+0700
+updated: 2022-04-15T12:19:00+07:00
 description: Create Notifications For Adblocker Adsense Users
+thumbnail: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
+photos:
+  - https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
 wordcount: 585
 subtitle: Create Notifications For Adblocker Adsense Users
 excerpt: Create Notifications For Adblocker Adsense Users
 url: https://www.webmanajemen.com/2017/04/create-notifications-for-adblocker.html
 permalink: /2017/04/create-notifications-for-adblocker.html
-thumbnail: https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
-photos:
-  - https://1.bp.blogspot.com/-jpczn1kqplU/V4l0xj58D6I/AAAAAAAAnRU/GK2SYUZJ-4ERJuePuYYJlu4Ka-2PBLoYgCLcB/w1100/notifikasi-adblocker.jpg
 ---
 
 <div>

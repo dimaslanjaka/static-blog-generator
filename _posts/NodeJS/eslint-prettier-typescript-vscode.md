@@ -5,7 +5,6 @@ author:
   image: https://i.pinimg.com/564x/32/bc/65/32bc65e19220728fb290249059a7242a.jpg
 category:
   - Programming
-  - JS
 comments: true
 cover: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
 date: 2021-11-28T07:00:00+07:00
@@ -22,15 +21,18 @@ location: Indonesia
 subtitle: How to configure eslint with prettier to automated lint and format
   codes in typescript project using vscode
 tags:
-  - JS
-  - TS
+  - JAVASCRIPT
+  - TYPESCRIPT
   - NodeJS
   - ESLint
 title: Eslint Prettier In Typescript Project Using Vscode
 type: post
 uuid: 3f6ada3c-0ed8-4888-87c8-3371f8927a2c
 webtitle: NodeJS
-updated: 2022-05-03T18:14:00+0700
+updated: 2022-05-03T18:14:00+07:00
+thumbnail: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
 wordcount: 626
 excerpt: How to configure eslint with prettier to automated lint and format
   codes in typescript project using vscode
@@ -38,9 +40,6 @@ description: How to configure eslint with prettier to automated lint and format
   codes in typescript project using vscode
 url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html
 permalink: /NodeJS/eslint-prettier-typescript-vscode.html
-thumbnail: https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
-photos:
-  - https://i.ytimg.com/vi/lHAeK8t94as/maxresdefault.jpg
 ---
 
 ## Auto Lint And Format Typescript Using VSCode With Eslint And Prettier

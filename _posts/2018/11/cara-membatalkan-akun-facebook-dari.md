@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.tech-recipes.com/wp-content/uploads/2017/09/How-to-Unbind-an-App-Off-of-Facebook.png
-date: 2018-11-07T23:49:00.000+07:00
+date: 2018-11-07T23:49:00+07:00
 lang: en
-location: ""
 modified: 2018-11-07T23:51:21.966+07:00
 subtitle: Munculnya aplikasi telah mendorong pengembang untuk memastikan
   kesinambungan penggunaan aplikasi terlepas dari platform atau

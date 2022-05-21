@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.com/wp-content/uploads/2015/03/Untitled-2.png
-date: 2019-10-26T17:42:00.000+07:00
+date: 2019-10-26T17:42:00+07:00
 lang: en
-location: ""
 modified: 2019-10-26T17:42:07.441+07:00
 subtitle: Web Development Indonesia After a while ago we had distributed Dragon
   Ball game, now a reborn game made by Ubisoft. Yes, hearing that

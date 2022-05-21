@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2018/fortnite-1.jpg
-date: 2018-11-09T12:40:00.000+07:00
+date: 2018-11-09T12:40:00+07:00
 lang: en
-location: ""
 modified: 2018-11-10T06:33:02.233+07:00
 subtitle: Fortnite adalah Game Arcade untuk android Download versi terakhir dari
 tags:

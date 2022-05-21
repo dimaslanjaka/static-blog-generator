@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image3.mouthshut.com/images/imagesp/925039881s.png
-date: 2019-06-25T14:48:00.004+07:00
+date: 2019-06-25T14:48:00+07:00
 lang: en
-location: ""
 modified: 2019-06-25T14:51:28.135+07:00
 subtitle: How might I make a Cygwin alternate way that will open Cygwin at a
   particular envelope This would hinder composing cd

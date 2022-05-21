@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://4.bp.blogspot.com/-f-ct8DCNaLo/VSQIY4m9-iI/AAAAAAAAA-c/ZMxcl6H0S60/s1600/recent_posts.jpg
-date: 2017-05-05T23:00:00.000+07:00
+date: 2017-05-05T23:00:00+07:00
 lang: en
-location: ""
 modified: 2017-05-05T23:00:26.950+07:00
 subtitle: How to Install News Recent Articles With Animation Effects Hello
   bloggers, this point i will be able to share a recent widget with
@@ -18,6 +16,7 @@ tags:
   - CSS
   - Blogger
   - HTML
+  - Blogging
 title: Recent Widget Animation Effects On Blogger
 type: post
 uuid: 90ac57f2-8104-4888-8000-8cc0e203d812

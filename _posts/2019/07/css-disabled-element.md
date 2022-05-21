@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-07-09T08:07:00.000+07:00
+date: 2019-07-09T08:07:00+07:00
 lang: en
-location: ""
 modified: 2019-07-17T13:52:43.325+07:00
 subtitle: ":disabled, .disabled, [disabled] opacity: 0.5; color: 666666; cursor:
   not-allowed; pointer-events: none; :disabled,"

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-07-14T21:39:00.000+07:00
+date: 2018-07-14T21:39:00+07:00
 lang: en
-location: ""
 modified: 2018-08-05T06:17:29.863+07:00
 subtitle: Ulat, Lebah Buff WIL Tomat = Buff Memasak Bawang = Pengumpulan
   Tumbuhan Pisang = Produksi Tangan<div class=blogger-post-footer>Article

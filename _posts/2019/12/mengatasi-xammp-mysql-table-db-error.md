@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-12-11T23:19:00.001+07:00
+date: 2019-12-11T23:19:00+07:00
 lang: en
-location: ""
 modified: 2019-12-11T23:19:57.047+07:00
 subtitle: "Mengatasi XAMMP mysql table db error must be repaired WINDOWS 7,8,10
   Buka CMD Ketik Command berikut satu per satu:"

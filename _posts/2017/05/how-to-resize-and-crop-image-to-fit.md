@@ -4,13 +4,11 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: http://www.larnr.com/wp-content/uploads/2015/05/resize-crop-1024x535.jpg
-date: 2017-05-25T06:52:00.000+07:00
+date: 2017-05-25T06:52:00+07:00
 lang: en
-location: ""
 modified: 2017-05-25T06:52:12.447+07:00
 subtitle: When we have a tendency to visit the gallery page of an internet site
   we primarily see there area unit varieties of image for a selected
@@ -18,6 +16,7 @@ tags:
   - HTML
   - Blogging
   - PHP
+  - Tips & Tricks
 title: How To Resize and Crop Image to fit Container div using CodeIgniter and jQuery
 type: post
 uuid: 649c92ff-b257-4888-80b8-7ac90b26e80b

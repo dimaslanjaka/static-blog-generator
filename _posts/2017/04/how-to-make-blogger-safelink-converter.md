@@ -7,14 +7,15 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.marwanto606.xyz/wp-content/uploads/2016/02/blogger-safelink.png
-date: 2017-04-10T15:55:00.000+07:00
+date: 2017-04-10T15:55:00+07:00
 lang: en
-location: ""
 modified: 2020-01-21T02:10:38.464+07:00
 subtitle: How to Make Blogger Safelink Converter v Understanding What is
   Safelink on blogger or wordpress ?Safelink is one option blogs
 tags:
   - Blogger
+  - Tips & Tricks
+  - Blogging
 title: How to Make Blogger Safelink Converter v3
 type: post
 uuid: 102470c4-cd9e-4888-8e1f-fb9c2d8d0255

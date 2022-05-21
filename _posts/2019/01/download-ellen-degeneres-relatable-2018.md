@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://s2.dunia21.net/wp-content/uploads/2018/12/film-ellen-degeneres-relatable-2018-lk21.jpg
-date: 2019-01-03T01:39:00.000+07:00
+date: 2019-01-03T01:39:00+07:00
 lang: en
-location: ""
 modified: 2019-01-03T01:39:07.014+07:00
 subtitle: "import
   urlhttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstr\

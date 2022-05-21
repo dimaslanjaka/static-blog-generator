@@ -2,25 +2,36 @@
 categories:
   - Programming
 cover: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
-date: 2022-03-27T01:30:00+0700
+date: 2022-03-27T01:30:00+07:00
 subtitle: fix php environtment path for powershell
 tags:
   - Powershell
 title: Cannot run php on powershell
-updated: 2022-03-27T01:30:00+0700
+updated: 2022-03-27T01:30:00+07:00
 uuid: f1fe35f4-632d-4888-8be4-d86b8a41eb8f
+lang: en
 category:
   - Uncategorized
+thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
+photos:
+  - https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
-wordcount: 456
+wordcount: 454
 excerpt: fix php environtment path for powershell
 description: fix php environtment path for powershell
 url: https://www.webmanajemen.com/2022/03/cannot-call-php-from-powershell.html
 permalink: /2022/03/cannot-call-php-from-powershell.html
-lang: en
-thumbnail: https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
-photos:
-  - https://res.cloudinary.com/practicaldev/image/fetch/https://windowstect.com/wp-content/uploads/2021/05/image-80.png
 type: post
 ---
 
@@ -87,8 +98,8 @@ The execution policy can be change to the Unrestricted for all users in the syst
 ### Youtube video tutorial - fix running scripts is disabled on this system
 
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/F-fWwkG5Xrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/F-fWwkG5Xrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>
 
 **incoming terms (problem lists fixable with this article):**
 - PowerShell “Running script is disabled on this system” Error and Solution

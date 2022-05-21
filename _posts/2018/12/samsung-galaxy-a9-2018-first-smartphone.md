@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.digitalponsel.com/wp-content/uploads/2018/11/xSamsung-Galaxy-A9.jpg.pagespeed.ic.BISLCcxlaz.jpg
-date: 2018-12-01T21:31:00.000+07:00
+date: 2018-12-01T21:31:00+07:00
 lang: en
-location: ""
 modified: 2018-12-01T21:31:13.295+07:00
 subtitle: Samsung Galaxy A 2018 First Smartphone with Four Cameras Digital
   Mobile Phones - Samsung Galaxy A9 is an attractive smart

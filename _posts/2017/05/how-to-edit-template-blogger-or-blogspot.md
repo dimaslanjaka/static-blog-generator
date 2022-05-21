@@ -7,13 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcfBozE5M4AU-Bxl7z1Zwhuup0eSbwXVKtTS9N-rJ_je8jOuradHt8nVXX
-date: 2017-05-20T14:32:00.000+07:00
+date: 2017-05-20T14:32:00+07:00
 lang: en
-location: ""
 modified: 2017-05-20T14:32:00.979+07:00
 subtitle: How to edit the template blogger or blogspot
 tags:
   - Blogger
+  - Tips & Tricks
+  - Blogging
 title: How to edit the template blogger or blogspot
 type: post
 uuid: feca69da-0deb-4888-8a1b-1be0b2091178

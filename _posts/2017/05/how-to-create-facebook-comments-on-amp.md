@@ -4,19 +4,19 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Programming
-  - HTML
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://4.bp.blogspot.com/-9TgnNklt76g/WQFHOdxzpVI/AAAAAAAAq2s/wsRqKdRdwWg3gjEz1sC8512SVBmRNVwxwCLcB/s1600/Screenshot_8.png
-date: 2017-05-04T21:01:00.001+07:00
+date: 2017-05-04T21:01:00+07:00
 lang: en
-location: ""
 modified: 2017-05-05T09:41:54.601+07:00
 subtitle: Finally Google choseFacebook comments pluginfirst supported by AMP HTML.
 tags:
   - Blogger
   - HTML
   - AMP
+  - Tips & Tricks
+  - Blogging
 title: How to create facebook comments on AMP Blogger
 type: post
 uuid: 7cf55936-4dc6-4888-8910-545428872e42

@@ -5,18 +5,16 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://d1gug1ng40407.cloudfront.net/uploads/2017/03/allure-code-snippet.jpg
-date: 2017-04-13T16:29:00.000+07:00
+date: 2017-04-13T16:29:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:18.070+07:00
 subtitle: Menggunakan vanili JavaScript dan CSS, saya akan menunjukkan cara
   untuk secara vertikal dan horizontal pusat dinamis konten berukuran dalam
 tags:
   - CSS
-  - JS
+  - JAVASCRIPT
   - HTML
 title: Responsive Square Container Dengan Vertically Or Horizontally Ditengah Content
 type: post

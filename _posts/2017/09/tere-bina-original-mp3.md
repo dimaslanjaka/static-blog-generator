@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-09-21T21:37:00.003+07:00
+date: 2017-09-21T21:37:00+07:00
 lang: en
-location: ""
 modified: 2017-09-21T21:44:25.716+07:00
 subtitle: Zinda rahe ke kya karu Tere bina.. Dhunde hai jawab wo Jo dil na de
   saka Jo bhi sapne dekhe thee aur likhe thee JIn

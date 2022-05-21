@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2016/mobile-legends-esports-moba-1.jpg
-date: 2018-11-26T21:30:00.000+07:00
+date: 2018-11-26T21:30:00+07:00
 lang: en
-location: ""
 modified: 2018-11-30T00:03:33.460+07:00
 subtitle: Mobile Legends Bang Bang 1.3.31.3412 Apk Mod Radar Hacked android
 tags:

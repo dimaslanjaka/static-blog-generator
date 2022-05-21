@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2014/01/Skor-naik.png
-date: 2017-04-20T07:52:00.000+07:00
+date: 2017-04-20T07:52:00+07:00
 lang: en
-location: ""
 modified: 2017-04-20T07:52:00.913+07:00
 subtitle: Tips on Optimizing Google Adsense With A B TestingWebsite general news
   world-class giant Daily Mail level often use A / B testing to find

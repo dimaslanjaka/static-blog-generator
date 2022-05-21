@@ -7,11 +7,10 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-06-23T19:43:00.001+07:00
+date: 2019-06-23T19:43:00+07:00
 lang: en
-location: ""
 modified: 2019-06-24T00:15:11.906+07:00
-subtitle: Simontok Update Terbaru 19 Juni 2019
+subtitle: Simontok Update Terbaru 19 Juni 2019 - Website Manajemen Indonesia
 tags:
   - Android
 title: Simontok Update Terbaru 19 Juni 2019
@@ -23,10 +22,10 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_av
 photos:
   - https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
 wordcount: 80
+description: Simontok Update Terbaru 19 Juni 2019 - Website Manajemen Indonesia
+excerpt: Simontok Update Terbaru 19 Juni 2019 - Website Manajemen Indonesia
 url: https://www.webmanajemen.com/2019/06/simontok-update-terbaru-19-juni-2019.html
 permalink: /2019/06/simontok-update-terbaru-19-juni-2019.html
-description: Simontok Update Terbaru 19 Juni 2019
-excerpt: Simontok Update Terbaru 19 Juni 2019
 ---
 
 <div dir="ltr" trbidi="on"><br></div><a href="https://www9.zippyshare.com/v/cKn836NK/file.html " class="button btn" rel="noopener noreferer nofollow">Download <i class="fa fa-download"></i></a><br><div><ol> <li>Si montok terbaru</li> <li>Si montok update 2019</li> <li>Si montok update juni 2019</li> <li>Si montok mod 2019</li></ol></div>

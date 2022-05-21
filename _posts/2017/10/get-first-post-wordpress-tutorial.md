@@ -4,19 +4,18 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-10-04T23:36:00.000+07:00
+date: 2017-10-04T23:36:00+07:00
 lang: en
-location: ""
 modified: 2017-10-04T23:36:03.439+07:00
 subtitle: Edit your functions.php of your themes. This also work on amp plugin
   wp AMP ninja -gt; Edit on functions.php too. <br /><h3>Codes
 tags:
   - Wordpress
   - PHP
+  - Blogging
 title: Get first post WORDPRESS tutorial
 type: post
 uuid: 45f43922-4882-4888-8a2d-eb9133ac6054

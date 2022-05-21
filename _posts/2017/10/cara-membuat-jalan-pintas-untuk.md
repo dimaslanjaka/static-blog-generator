@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://3.bp.blogspot.com/-7ZnAq5qCUqU/UnUovHpfPYI/AAAAAAAAaQE/Wn5m_IyQ7MA/s1600/Modern-Apps-Shortcut-1.png
-date: 2017-10-15T00:42:00.000+07:00
+date: 2017-10-15T00:42:00+07:00
 lang: en
-location: ""
 modified: 2017-10-15T00:42:02.938+07:00
 subtitle: Anda perlu menentukan nama dan ikon untuk pintasan aplikasi Modern
   karena nilai tersebut tidak diambil langsung dari folder

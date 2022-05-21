@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://4.bp.blogspot.com/-fuQY4ZIJfBw/WIfqL98biyI/AAAAAAAApSU/2Tw6yaOlGJ8GjyAXYt60X65XxNbn8kMIACLcB/w1100/spoiler-css-only.jpg
-date: 2017-10-07T05:14:00.000+07:00
+date: 2017-10-07T05:14:00+07:00
 lang: en
-location: ""
 modified: 2018-02-24T03:44:35.117+07:00
 subtitle: unfortunately thedetailsandsummary tagsare not allowed in AMP HTML.
 tags:

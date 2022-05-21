@@ -2,28 +2,38 @@
 category:
   - Programming
   - Adsense
-  - JS
 cover: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
-date: 2022-05-10T23:20:16+0000
+date: 2022-05-11T06:20:16+07:00
 description: Snippet lazy load adsense full support for blogger, wordpress, etc
 tags:
-  - JS
+  - JAVASCRIPT
   - HTML
   - Blogger
   - Wordpress
 title: Lazy Load Adsense Full Support 2022 Adsense API
-updated: 2022-05-11T08:52:06+0000
+updated: 2022-05-11T15:52:06+07:00
 uuid: 7a161b74-ae97-4888-88a4-055f71f691ee
+lang: en
+thumbnail: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
+photos:
+  - https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 158
 subtitle: Snippet lazy load adsense full support for blogger, wordpress, etc
 excerpt: Snippet lazy load adsense full support for blogger, wordpress, etc
 url: https://www.webmanajemen.com/2022/05/fully-lazy-loaded-adsense.html
 permalink: /2022/05/fully-lazy-loaded-adsense.html
-lang: en
-thumbnail: https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
-photos:
-  - https://1.bp.blogspot.com/-JB0hsyji7wo/XR0Sq_evvpI/AAAAAAAATlo/afDSTs1Y-HcrcDANMV9fGrGwZUU37o31wCLcBGAs/w600/Cara-Memasang-Lazy-Load-Iklan-Adsense.png
 type: post
 ---
 

@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-11-03T13:59:00.000+07:00
+date: 2018-11-03T13:59:00+07:00
 lang: en
-location: ""
 modified: 2019-02-08T22:20:05.513+07:00
 subtitle: Facebook tokenrefresh token facebookphp script018 auto refresh
   tokenAuto refresh tokenFacebook autolikeToken autolike facebookGet token

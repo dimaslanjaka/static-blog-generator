@@ -7,11 +7,10 @@ category:
   - Uncategorized
 comments: true
 cover: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
-date: 2021-03-28T09:54:00.004+07:00
+date: 2021-03-28T09:54:00+07:00
 lang: en
-location: ""
 modified: 2021-03-29T07:50:58.964+07:00
-subtitle: Git Login Via Command Line
+subtitle: Git Login Via Command Line - Website Manajemen Indonesia
 tags:
   - Tips & Tricks
 title: Git Login Via Command Line
@@ -23,10 +22,10 @@ thumbnail: https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 photos:
   - https://i.ytimg.com/vi/yDntCIs-IJM/hqdefault.jpg
 wordcount: 17
+description: Git Login Via Command Line - Website Manajemen Indonesia
+excerpt: Git Login Via Command Line - Website Manajemen Indonesia
 url: https://www.webmanajemen.com/2021/03/git-login-via-command-line.html
 permalink: /2021/03/git-login-via-command-line.html
-description: Git Login Via Command Line
-excerpt: Git Login Via Command Line
 ---
 
 <pre class="test"><br>git config --global user.name myusername

@@ -4,19 +4,18 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: http://botcrawl.com/wp-content/uploads/2012/04/toggle-arrow.png
-date: 2017-10-11T19:49:00.000+07:00
+date: 2017-10-11T19:49:00+07:00
 lang: en
-location: ""
 modified: 2017-10-11T19:49:03.766+07:00
 subtitle: Membuat Google AdSense Shortcodes Untuk WordPress
 tags:
   - Adsense
   - Wordpress
   - PHP
+  - Blogging
 title: Cara Membuat Google AdSense Shortcodes Untuk WordPress
 type: post
 uuid: cb1f4d19-8d45-4888-8215-f851589c0972

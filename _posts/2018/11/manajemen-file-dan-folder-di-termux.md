@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://cdn1.imggmi.com/uploads/2018/11/12/64a52e8966eaa055d3c4d714a994f2a6-full.png
-date: 2018-11-12T11:49:00.000+07:00
+date: 2018-11-12T11:49:00+07:00
 lang: en
-location: ""
 modified: 2018-11-12T11:49:46.306+07:00
 subtitle: mkdir berguna untuk membuat folder.Misal anda ingin membuat folder di
   HOME termux

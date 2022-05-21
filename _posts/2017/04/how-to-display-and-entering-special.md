@@ -4,18 +4,17 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Programming
-  - HTML
+  - Uncategorized
 comments: true
 cover: http://www.duniailkom.com/wp-content/uploads/2014/06/Tabel-Karakter-Khusus-dalam-HTML.png
-date: 2017-04-29T10:33:00.000+07:00
+date: 2017-04-29T10:33:00+07:00
 lang: en
-location: ""
 modified: 2020-04-04T14:51:16.319+07:00
 subtitle: "Text HTML Tutorial Part 1: How to Display and Entering Special
   Characters in HTMLIn addition to alphanumeric"
 tags:
   - HTML
+  - Tips & Tricks
 title: How to Display and Entering Special Characters in HTML
 type: post
 uuid: 12e6672e-9166-4888-8f26-41592bb13a44

@@ -5,19 +5,19 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://1.bp.blogspot.com/-vBmmKKOdix4/V510voCoYqI/AAAAAAAAPNk/gttSjmyHe3Q9trg2yO_FF8HnxFws0P7VgCLcB/s320/featured%2Bpost%2Bimage%2Bslider%2Botomatis%2Bblogger.JPG
-date: 2017-05-11T07:17:00.000+07:00
+date: 2017-05-11T07:17:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.826+07:00
 subtitle: How to Install the Featured Post Image Slider Widget Auto
   BloggerFEATUREDPost Image Slider Autois a widgetbloggerthat displays a large
 tags:
-  - JS
+  - JAVASCRIPT
   - Blogger
   - HTML
+  - Tips & Tricks
+  - Blogging
 title: How to add Featured Post Image Slider Widget Blogger
 type: post
 uuid: a26fc0cb-d479-4888-8820-491f84f7573e

@@ -4,7 +4,6 @@ author:
   link: https://github.com/dimaslanjaka
 category:
   - Programming
-  - JS
 comments: true
 cover: https://www.bleepstatic.com/content/hl-images/2020/08/04/nodejs-header.jpg
 date: 2021-11-17T16:00:00+07:00
@@ -16,7 +15,7 @@ lang: en
 location: Indonesia
 subtitle: Usage, explanations of node options for nodejs
 tags:
-  - JS
+  - JAVASCRIPT
   - NodeJS
 title: Node Options For NodeJS
 type: post

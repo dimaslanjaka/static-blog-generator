@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.bagas31.info/wp-content/uploads/2018/12/Google_Drive_logo.png
-date: 2019-09-28T17:56:00.000+07:00
+date: 2019-09-28T17:56:00+07:00
 lang: en
-location: ""
 modified: 2019-09-29T06:00:50.243+07:00
 subtitle: Full download server is the desire of many people, especially the
   downloader mania, hehe. Well, Google Drive is a server that supports

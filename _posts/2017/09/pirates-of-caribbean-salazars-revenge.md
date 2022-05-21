@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-09-23T11:02:00.002+07:00
+date: 2017-09-23T11:02:00+07:00
 lang: en
-location: ""
 modified: 2017-09-24T00:59:56.214+07:00
 subtitle: Short History Johnny Depp kembali sebagai Kapten Jack Sparrow dalam
   angsuran kelima kelima Dari seri swashbuckling Disney. Plotnya

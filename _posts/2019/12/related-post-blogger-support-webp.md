@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/4d5a3d96d1f59cec23878a9b1e7ee970.jpeg
-date: 2019-12-22T03:14:00.000+07:00
+date: 2019-12-22T03:14:00+07:00
 lang: en
-location: ""
 modified: 2019-12-22T03:14:04.160+07:00
 subtitle: Related Post Blogger Support WEBP Related Blogger Post Support WEBP
   After the previous post we got a solution for Blogger thumbnails to
@@ -17,6 +16,7 @@ tags:
   - Share
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: Related Post Blogger Support WEBP
 type: post
 uuid: bc803e2f-ab84-4888-83f2-4ff4d207af85

@@ -19,15 +19,15 @@ title: Midi
 type: post
 uuid: 3e0f4b91-4e04-4888-8198-1bc1dff09f97
 webtitle: The Legend Of Neverland
-updated: 2022-05-07T10:48:40+0000
+updated: 2022-05-07T17:48:40+07:00
 description: Midi collection for the legend of neverland perform music skill
+thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
+photos:
+  - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 wordcount: 246
 excerpt: Midi collection for the legend of neverland perform music skill
 url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Midi.html
 permalink: /The%20Legend%20Of%20Neverland/Midi.html
-thumbnail: https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
-photos:
-  - https://i.ytimg.com/vi/lK7h30vvRuI/mqdefault.jpg
 ---
 
 ## NPC's favorite musical instrument
@@ -74,9 +74,9 @@ Visit [YT2MIDI](https://youtube2midi.github.io/)
 ### How to create music/song mp3 to midi
 
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/tik3ZFwFsJA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/tik3ZFwFsJA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>
 
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/kIXXv8oUqOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/kIXXv8oUqOc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>

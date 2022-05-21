@@ -5,18 +5,16 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBSJoxKxnt9n6oeRW1QcYweC0Y5-T_t-bexOhydafI1lnSIDQx
-date: 2017-04-26T04:30:00.000+07:00
+date: 2017-04-26T04:30:00+07:00
 lang: en
-location: ""
 modified: 2020-01-09T04:00:58.675+07:00
 subtitle: h2>Bagaimana cara menambah syntax highlighter dengan prettyprint tanpa
   mengurangi waktu response loading blog.</h2><img height=207
 tags:
   - Wordpress
-  - JS
+  - JAVASCRIPT
   - Blogger
   - HTML
   - Blogging

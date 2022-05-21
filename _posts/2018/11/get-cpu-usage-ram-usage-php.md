@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-11-06T03:08:00.000+07:00
+date: 2018-11-06T03:08:00+07:00
 lang: en
-location: ""
 modified: 2018-11-06T03:08:07.010+07:00
 subtitle: "if you mean how much ramcpu php is using then you can do the
   following using plain php without using any package: this returns the"

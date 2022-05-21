@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://4.bp.blogspot.com/-UNoYF1MuqU8/WLrx-G_vDwI/AAAAAAAADYc/pkuJXiffujId6YxjHEopP62TimMsWcPaQCLcB/s1600/akun_triknews.png
-date: 2017-07-22T02:45:00.000+07:00
+date: 2017-07-22T02:45:00+07:00
 lang: en
-location: ""
 modified: 2017-07-22T02:45:07.958+07:00
 subtitle: How to upgrade a hosted account to a non hosted version of the latest
   adsense display.
 tags:
   - Adsense
+  - Tips & Tricks
 title: How to upgrade a hosted account to a non hosted version of the latest
   adsense display
 type: post

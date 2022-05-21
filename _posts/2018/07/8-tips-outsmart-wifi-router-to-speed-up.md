@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgdb.net/images/3862.jpg
-date: 2018-07-05T22:43:00.000+07:00
+date: 2018-07-05T22:43:00+07:00
 lang: en
-location: ""
 modified: 2018-07-05T22:43:43.434+07:00
 subtitle: "Here are Tips to Outsmart your Wifi router to get a faster and more
   stable Internet connection:"

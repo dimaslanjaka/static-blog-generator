@@ -1,26 +1,37 @@
 ---
 cover: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
-date: 2022-03-27T03:02:25+0000
+date: 2022-03-27T10:02:25+07:00
 tags:
   - Wordpress
   - MySQL
+  - Blogging
 title: Change wordpress table prefix updated 2022
-updated: 2022-03-27T03:02:25+0000
+updated: 2022-03-27T10:02:25+07:00
 uuid: a69fa1b4-3f2c-4888-8757-27179d208826
+lang: en
 category:
   - Programming
-  - MYSQL
-comments: true
-wordcount: 340
-url: https://www.webmanajemen.com/2022/03/how-to-change-wordpress-wp-prefix.html
-permalink: /2022/03/how-to-change-wordpress-wp-prefix.html
-lang: en
-description: Change wordpress table prefix updated 2022
-subtitle: Change wordpress table prefix updated 2022
-excerpt: Change wordpress table prefix updated 2022
 thumbnail: https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
 photos:
   - https://i3.ytimg.com/vi/FgG5nYW5EUA/maxresdefault.jpg
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
+comments: true
+wordcount: 340
+description: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
+subtitle: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
+excerpt: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
+url: https://www.webmanajemen.com/2022/03/how-to-change-wordpress-wp-prefix.html
+permalink: /2022/03/how-to-change-wordpress-wp-prefix.html
 type: post
 ---
 

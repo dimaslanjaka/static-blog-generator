@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - HTML
+  - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/c1ec076b93bbc245f81fcb7f15845eca.jpeg
-date: 2019-12-23T02:43:00.000+07:00
+date: 2019-12-23T02:43:00+07:00
 lang: en
-location: ""
 modified: 2019-12-23T02:43:09.479+07:00
 subtitle: How to Embed Bloggers Iframe Video to Be Responsive Actually the video
   uploaded on Blogger doesnt need to be responsive because its
@@ -18,6 +16,7 @@ tags:
   - Share
   - HTML
   - Tips & Tricks
+  - Blogging
 title: How To Embed Blogger Video Iframe To Be Responsive
 type: post
 uuid: c2a0c109-08e1-4888-8773-0219f99b340d

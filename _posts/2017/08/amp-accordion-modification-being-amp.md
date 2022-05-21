@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://2.bp.blogspot.com/-O64Ll2AclHg/WIkzI-RSWBI/AAAAAAAApSw/w4xT5nifRPg3eClN6qphPIe2cVc-o971QCLcB/w1100/amp-accordion.jpg
-date: 2017-08-30T04:51:00.000+07:00
+date: 2017-08-30T04:51:00+07:00
 lang: en
-location: ""
 modified: 2017-08-30T04:51:07.263+07:00
 subtitle: Problem U
 tags:

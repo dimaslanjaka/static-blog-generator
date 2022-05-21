@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://lh3.googleusercontent.com/-bzDMCW2l14w/XuSyYUMCT-I/AAAAAAAAA_k/s6h8qlxl7joZyle2_ZVRQrN5tAQLu43JQCLcBGAsYHQ/s1600/1592046171170163-1.png
-date: 2021-06-04T01:00:00.002+07:00
+date: 2021-06-04T01:00:00+07:00
 lang: en
-location: ""
 modified: 2021-06-04T01:00:00.192+07:00
 subtitle: "Solution to error retrieving pid file Termux and apache Apache errors
   overview: 20014 Internal error specific"

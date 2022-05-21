@@ -5,17 +5,15 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-07-17T17:05:00.001+07:00
+date: 2019-07-17T17:05:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:18.020+07:00
 subtitle: "Set timezone javascript without using any pluginsconst DATE new
   Date.toLocaleStringen-US, timeZone:"
 tags:
-  - JS
+  - JAVASCRIPT
 title: "[JS] Set Timezone"
 type: post
 uuid: c3b80075-3eee-4888-8b07-fbc473d62555

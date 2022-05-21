@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-th4E2njtIHE/V3jTNqPF9FI/AAAAAAAAEDA/NG4-G59Lr4g1Ni2SCTtRyk3u2Aeq-w0vgCLcB/s320/Membuat%2BShort%2BURL%2BOtomatis%2BDengan%2BGoogle%2BAPI%2B01.jpg
-date: 2017-05-24T00:16:00.000+07:00
+date: 2017-05-24T00:16:00+07:00
 lang: en
-location: ""
 modified: 2017-05-24T00:16:15.221+07:00
 subtitle: Make Short URL Automatic With Google API
 tags:

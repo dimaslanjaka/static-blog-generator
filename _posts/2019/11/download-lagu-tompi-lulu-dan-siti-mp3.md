@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/fb085eb95bffd0d9f0df2a5c25759e2b.jpeg
-date: 2019-11-30T22:49:00.001+07:00
+date: 2019-11-30T22:49:00+07:00
 lang: en
-location: ""
 modified: 2019-12-01T23:13:01.786+07:00
 subtitle: "Download lagu Tompi Lulu dan Siti Mp3 Tompi - Lulu and Siti Listen:
   85,519 Duration: 226 MP3 size: 3.53MB Download Links"

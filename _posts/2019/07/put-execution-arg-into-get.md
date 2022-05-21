@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-07-29T06:42:00.000+07:00
+date: 2019-07-29T06:42:00+07:00
 lang: en
-location: ""
 modified: 2019-07-29T06:42:02.838+07:00
 subtitle: PHP CLI?phpif argv foreach argv as k=>v if k==0 continue; it =
   explode=,argv[i]; if

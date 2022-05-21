@@ -5,18 +5,16 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://static.cdn-cdpl.com/700x350/5615bb41d81fad8fe992985aec0e5f29/js.jpg
-date: 2019-12-26T22:18:00.000+07:00
+date: 2019-12-26T22:18:00+07:00
 lang: en
-location: ""
 modified: 2019-12-26T22:18:11.234+07:00
 subtitle: img border=0
   src=https://static.cdn-cdpl.com/700x350/5615bb41d81fad8fe992985aec0e5f29/js.jpg
   data-original-width=700
 tags:
-  - JS
+  - JAVASCRIPT
   - Share
 title: Membuat array javascript unik
 type: post

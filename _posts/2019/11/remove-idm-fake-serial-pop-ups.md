@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/www.bagas31.com/09b291991e3c6af733a56a80694b83bc.png
-date: 2019-11-20T17:20:00.000+07:00
+date: 2019-11-20T17:20:00+07:00
 lang: en
-location: ""
 modified: 2019-11-20T17:20:02.546+07:00
 subtitle: Web Development Indonesia If you are a pirated Internet Download
   Manager user, lately there must be something strange about your

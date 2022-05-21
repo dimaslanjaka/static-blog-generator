@@ -7,15 +7,15 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/1.bp.blogspot.com/8554a2b99506f0fdc49578e7bed10bb4.jpeg
-date: 2019-12-09T02:56:00.000+07:00
+date: 2019-12-09T02:56:00+07:00
 lang: en
-location: ""
 modified: 2019-12-09T02:57:54.806+07:00
 subtitle: Finally, the Blogger Thumbnail Can Support WEBP This is the result of
   my imprisonment that I have done for almost 4 weeks, hahaha ...
 tags:
   - Blogger
   - Tips & Tricks
+  - Blogging
 title: Finally the Blogger Thumbnail Can Support WEBP
 type: post
 uuid: 79969e71-fb68-4888-86fc-2b6bd37df609

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/3.bp.blogspot.com/7013fe6baac3483461dc8f588bb7b6ca.jpeg
-date: 2019-12-01T23:40:00.000+07:00
+date: 2019-12-01T23:40:00+07:00
 lang: en
-location: ""
 modified: 2019-12-01T23:40:05.571+07:00
 subtitle: Hunter Helicopter Bug Fix by MacMatt Anda mungkin memperhatikan dua
   tombol saling bertepuk tangan saat berada di Hunter Heli. Ini

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: http://juragancipir.com/wp-content/uploads/2013/12/Seo-Prenjak-300x240.jpg
-date: 2017-04-11T09:26:00.000+07:00
+date: 2017-04-11T09:26:00+07:00
 lang: en
-location: ""
 modified: 2017-04-11T09:26:03.622+07:00
 subtitle: Google launches sophisticated algorithms named Hummingbird, webmasters
   also use cuttingedge way to deal with it anyway, using SEO

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://cdn.searchenginejournal.com/wp-content/uploads/2015/11/shutterstock_213667126.jpg
-date: 2017-04-16T11:50:00.000+07:00
+date: 2017-04-16T11:50:00+07:00
 lang: en
-location: ""
 modified: 2017-04-16T11:50:00.152+07:00
 subtitle: 0 Tips for Choosing a Domain Name To Blog Choosing the right domain
   name is one of the things that is important when you want to build a

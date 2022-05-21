@@ -5,17 +5,15 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://tools.robingood.com/assets/393/1493297085-google-translate-2png.png
-date: 2019-07-26T00:56:00.000+07:00
+date: 2019-07-26T00:56:00+07:00
 lang: en
-location: ""
 modified: 2019-07-26T01:10:33.093+07:00
 subtitle: English Indonesian Afrikaans Albanian Arabic Armenian Azerbaijani
 tags:
   - CSS
-  - JS
+  - JAVASCRIPT
   - HTML
 title: Alternative Widget Translator for blog
 type: post

@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: http://cdn.the-art-of-web.com/images/moz-border-radius.gif
-date: 2017-09-30T02:24:00.000+07:00
+date: 2017-09-30T02:24:00+07:00
 lang: en
-location: ""
 modified: 2017-09-30T02:24:05.184+07:00
 subtitle: Salah satu sifat CSS yang paling ditunggu
   adalahborder-radius.Perancang web tidak lagi harus menggunakan struktur tabel

@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2020-02-14T22:49:00.000+07:00
+date: 2020-02-14T22:49:00+07:00
 lang: en
-location: ""
 modified: 2020-03-02T09:09:33.926+07:00
 subtitle: pre><br />lt;LinearLayout<br
   />x9;android:id=quot;@id/main_adTopBannerquot;<br

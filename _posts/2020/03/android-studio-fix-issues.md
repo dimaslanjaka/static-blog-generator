@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
-date: 2020-03-29T20:23:00.002+07:00
+date: 2020-03-29T20:23:00+07:00
 lang: en
-location: ""
 modified: 2020-03-29T20:45:40.464+07:00
 subtitle: Unsupported Modules Detected in Android Studio File > Invalidate
   Caches / Restart.

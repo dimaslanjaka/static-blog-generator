@@ -7,15 +7,15 @@ category:
   - Uncategorized
 comments: true
 cover: http://blogtimenow.com/images/find-fix-broken-links-blogger2.jpg
-date: 2017-04-23T23:18:00.000+07:00
+date: 2017-04-23T23:18:00+07:00
 lang: en
-location: ""
 modified: 2017-04-23T23:18:04.065+07:00
 subtitle: Find and Fix broken links in Blogger Redirect broken links for
   SEOContent could be a king which is that the major on page SEO issue, you
 tags:
   - SEO
   - Blogger
+  - Blogging
 title: Find and Fix broken links in Blogger For SEO
 type: post
 uuid: 1f698820-4b91-4888-8b0b-93da5ab3e5ef

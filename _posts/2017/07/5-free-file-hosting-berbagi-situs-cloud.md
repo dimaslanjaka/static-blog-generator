@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://www.dropbox.com/s/nmlirhi6f5ktcha/Screenshot_2017-07-25-10-07-04-237_com.android.chrome.png?dl=1
-date: 2017-07-25T10:10:00.001+07:00
+date: 2017-07-25T10:10:00+07:00
 lang: en
-location: ""
 modified: 2017-07-25T10:10:21.447+07:00
 subtitle: Hei Guys, seperti yang Anda tahu kanonik mematikan Ubuntu One Cloud
   Storagenya jadi saya mencari situs berbagi file alternatif yang

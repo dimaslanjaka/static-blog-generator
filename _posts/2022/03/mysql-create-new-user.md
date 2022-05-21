@@ -1,25 +1,36 @@
 ---
 category:
   - Programming
-  - MYSQL
-cover: /2022/03/mysql-create-new-user/phpmyadmin-changepw.png
+  - MySQL
+cover: /src-posts/2022/03/mysql-create-new-user/phpmyadmin-changepw.png
 date: 2022-04-11T00:00:00+07:00
 tags:
   - MySQL
 title: MySQL Command to create new database user
-updated: 2022-03-26
+updated: 2022-03-26T00:00:00+07:00
 uuid: abcdca48-acd1-4888-8a33-cdcdb7b877dc
+lang: en
+thumbnail: /src-posts/2022/03/mysql-create-new-user/phpmyadmin-changepw.png
+photos:
+  - /src-posts/2022/03/mysql-create-new-user/phpmyadmin-changepw.png
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 186
+description: MySQL Command to create new database user - Website Manajemen Indonesia
+subtitle: MySQL Command to create new database user - Website Manajemen Indonesia
+excerpt: MySQL Command to create new database user - Website Manajemen Indonesia
 url: https://www.webmanajemen.com/2022/03/mysql-create-new-user.html
 permalink: /2022/03/mysql-create-new-user.html
-lang: en
-description: MySQL Command to create new database user
-subtitle: MySQL Command to create new database user
-excerpt: MySQL Command to create new database user
-thumbnail: /2022/03/mysql-create-new-user/phpmyadmin-changepw.png
-photos:
-  - /2022/03/mysql-create-new-user/phpmyadmin-changepw.png
 type: post
 ---
 

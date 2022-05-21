@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://image.revdl.com/2017/pokemon-go-1.png
-date: 2018-11-15T11:44:00.000+07:00
+date: 2018-11-15T11:44:00+07:00
 lang: en
-location: ""
 modified: 2018-11-15T11:50:02.199+07:00
 subtitle: Pokemon GO .127.1 Apk Mod gps palsu Poke Radar apk yang diretas
 tags:

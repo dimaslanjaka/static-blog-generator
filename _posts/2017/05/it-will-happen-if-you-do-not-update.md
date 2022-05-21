@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://3.bp.blogspot.com/-GUjQbrIh570/VW8CZgHV4WI/AAAAAAAABc0/sYLAihhUM8g/s320/Screenshot_2.jpg
-date: 2017-05-08T23:18:00.000+07:00
+date: 2017-05-08T23:18:00+07:00
 lang: en
-location: ""
 modified: 2017-05-08T23:18:18.181+07:00
 subtitle: Not continually all the items we wish are done, we have a tendency
   similarly as we attempt to continually produce articles daily to

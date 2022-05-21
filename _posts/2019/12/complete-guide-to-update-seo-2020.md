@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/dwblog-ecdf.kxcdn.com/eb32b22de46d5af55b69a1ffc1ee93ad.png
-date: 2019-12-06T19:03:00.001+07:00
+date: 2019-12-06T19:03:00+07:00
 lang: en
-location: ""
 modified: 2019-12-06T19:03:53.242+07:00
 subtitle: Panduan Lengkap Seo Update 020 There are various SEO tips that you can
   explore from various sources. But, can everything be like a

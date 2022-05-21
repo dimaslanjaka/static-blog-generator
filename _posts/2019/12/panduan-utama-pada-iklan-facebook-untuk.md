@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/a8da9fcee0cd12d606fe9ecaaedc0828.png
-date: 2019-12-13T10:19:00.000+07:00
+date: 2019-12-13T10:19:00+07:00
 lang: en
-location: ""
 modified: 2019-12-13T10:19:05.157+07:00
 subtitle: Ultimate Guide On Facebook Ads For Entrepreneurs Iklan Facebook untuk
   wirausahawan mungkin menjadi solusi untuk masalah pemasaran bisnis

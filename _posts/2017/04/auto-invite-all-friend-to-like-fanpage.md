@@ -5,16 +5,14 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://1.bp.blogspot.com/-v8fRzugmiVw/VvD5ipgRbaI/AAAAAAAADeE/DJPMUJuCNNMi-j7QTh8V6RpfBNlvqf6zw/s600/Script%2BAuto%2BInvite%2BAll%2BFriends%2BTo%2BLike%2BFanpage.%2BTanpa%2BPlugin.png
-date: 2017-04-16T23:38:00.000+07:00
+date: 2017-04-16T23:38:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.842+07:00
 subtitle: Script Auto Invite All Friends To Like Fanpage
 tags:
-  - JS
+  - JAVASCRIPT
   - Social Media
 title: Script Auto Invite All Friends To Like Fanpage Without Plugin and Tool
 type: post

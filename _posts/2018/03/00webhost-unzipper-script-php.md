@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/08197822797622284515
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://www.phpshell.in/upload/images/37/unzipper-zipper.png
-date: 2018-03-27T02:22:00.000+07:00
+date: 2018-03-27T02:22:00+07:00
 lang: en
-location: ""
 modified: 2018-03-27T02:22:11.642+07:00
 subtitle: h2>Features:</h2><ul><li>Detect zip file automatically</li><li>Extract
   zip to custom folder</li><li>Detect zip file on

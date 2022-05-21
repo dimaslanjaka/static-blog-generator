@@ -18,6 +18,17 @@ webtitle: Chimeraland
 thumbnail: https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
 photos:
   - https://i.ytimg.com/vi/K3Ns77dNuoA/maxresdefault.jpg
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 wordcount: 11
 subtitle: Index Tree Chimeraland
 excerpt: Index Tree Chimeraland

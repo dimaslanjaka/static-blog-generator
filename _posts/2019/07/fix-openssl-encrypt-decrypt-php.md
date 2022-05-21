@@ -4,11 +4,10 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
-date: 2019-07-31T16:03:00.001+07:00
+date: 2019-07-31T16:03:00+07:00
 lang: en
 subtitle: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
@@ -18,7 +17,10 @@ title: Fix openssl encrypt decrypt [PHP]
 type: post
 uuid: 9251b369-4ea6-4888-8b29-44aa20aa58aa
 webtitle: PHP
-updated: 2022-04-17T00:53:39+0000
+updated: 2022-04-17T07:53:39+07:00
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
+photos:
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
 wordcount: 174
 excerpt: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
@@ -26,9 +28,6 @@ description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 url: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php.html
 permalink: /2019/07/fix-openssl-encrypt-decrypt-php.html
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
-photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.webmanajemen.com/assets/img/phpjs.svg?.png
 ---
 
 <div dir="ltr">

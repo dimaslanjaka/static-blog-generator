@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-01-14T11:50:00.000+07:00
+date: 2019-01-14T11:50:00+07:00
 lang: en
-location: ""
 modified: 2019-01-14T11:50:14.858+07:00
 subtitle: Watch Online Henchmen Cinema 2018 Indonesian subtitles - World of
   super villains, evil schemes and global domination ... someone

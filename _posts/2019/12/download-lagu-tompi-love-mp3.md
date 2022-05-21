@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/e99b28b48e4413e0838b5b643d3ba78a.jpeg
-date: 2019-12-02T07:08:00.001+07:00
+date: 2019-12-02T07:08:00+07:00
 lang: en
-location: ""
 modified: 2019-12-02T07:10:50.499+07:00
 subtitle: "Download lagu Tompi L.O.V.E Mp3 Tompi - LOVE Listen: 216,545
   Duration: 181 MP3 size: 2.83MB Download Links Download Mp3 Server"

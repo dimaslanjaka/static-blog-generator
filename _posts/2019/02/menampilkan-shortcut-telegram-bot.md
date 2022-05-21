@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i.stack.imgur.com/PPlQ0.png
-date: 2019-02-09T19:58:00.001+07:00
+date: 2019-02-09T19:58:00+07:00
 lang: en
-location: ""
 modified: 2019-02-09T19:58:48.873+07:00
 subtitle: Saya ingin menulis bot telegram. Bagaimana cara menempatkan opsi yang
   memungkinkan di bot saya. Saya menyisipkan gambar bot sampel dengan

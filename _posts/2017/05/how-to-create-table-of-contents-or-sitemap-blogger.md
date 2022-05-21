@@ -5,19 +5,19 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://2.bp.blogspot.com/-DIRhiZq0cPg/Vr5-ETcI9AI/AAAAAAAABvo/pwTQPnRlg60/s640/gambar-sitemap-blogger-min.jpg
-date: 2017-05-15T13:46:00.000+07:00
+date: 2017-05-15T13:46:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.992+07:00
 subtitle: How to create a table of contents or sitemap in blogger or blogspot
 tags:
   - CSS
-  - JS
+  - JAVASCRIPT
   - Blogger
   - HTML
+  - Tips & Tricks
+  - Blogging
 title: How to create a table of contents or sitemap in blogger or blogspot
 type: post
 uuid: 1e78f355-f172-4888-807e-c68e6e937a13

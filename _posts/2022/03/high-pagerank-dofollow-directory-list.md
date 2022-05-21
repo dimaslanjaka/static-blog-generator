@@ -6,20 +6,31 @@ tags:
   - SEO
   - Blogging
 title: High Pagerank Dofollow Directory List
-updated: 2022-04-09T15:37:49+0000
+updated: 2022-04-09T22:37:49+07:00
 uuid: 2bbd77ce-1bda-4888-8da3-b9f6763917bc
+lang: en
 category:
   - Uncategorized
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+photos:
+  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
+author:
+  name: Dimas Lanjaka
+  link: https://www.webmanajemen.com/
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944
+    height: 2592
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
 comments: true
 wordcount: 679
 excerpt: High Pagerank Dofollow Directory List
 description: High Pagerank Dofollow Directory List
 url: https://www.webmanajemen.com/2022/03/high-pagerank-dofollow-directory-list.html
 permalink: /2022/03/high-pagerank-dofollow-directory-list.html
-lang: en
-thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
-photos:
-  - https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.forbesindia.com/media/images/2020/Sep/img_143399_backlinks900x600.jpg
 type: post
 ---
 

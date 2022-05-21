@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2018-07-27T12:40:00.000+07:00
+date: 2018-07-27T12:40:00+07:00
 lang: en
-location: ""
 modified: 2018-08-05T06:17:10.902+07:00
 subtitle: Durango Wild Lands production from Nexon Company is one of the most
   anticipated games in 2018. Many clients have played this game during
@@ -17,6 +16,7 @@ tags:
   - Games
   - Durango
   - Android
+  - Tips & Tricks
 title: How to Play Durango Wild Lands on PC
 type: post
 uuid: 809c8265-5109-4888-8dac-17fc31be5b72

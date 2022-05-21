@@ -5,16 +5,14 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://imgdb.net/images/3206.png
-date: 2017-09-25T00:57:00.003+07:00
+date: 2017-09-25T00:57:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.941+07:00
 subtitle: img src=https://imgdb.net/images/3206.png/><script
 tags:
-  - JS
+  - JAVASCRIPT
   - Tips & Tricks
 title: Javascript detect bot crawler
 type: post

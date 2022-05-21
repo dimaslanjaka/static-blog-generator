@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://i0.wp.com/www.dramaencode.com/wp-content/uploads/2018/03/Download-Drama-Korea-My-Mister-Subtitle-Indonesia.jpg?resize=390%2C270&ssl=1
-date: 2018-11-20T21:17:00.000+07:00
+date: 2018-11-20T21:17:00+07:00
 lang: en
-location: ""
 modified: 2019-01-07T01:44:04.181+07:00
 subtitle: "Korean Drama My Mister My Ajusshi Episode 10 Indonesian Subtitles "
 tags:

@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://img.icons8.com/metro/1600/php.png
-date: 2018-12-25T00:58:00.000+07:00
+date: 2018-12-25T00:58:00+07:00
 lang: en
-location: ""
 modified: 2020-01-24T06:39:22.738+07:00
 subtitle: PHP = 5.4.0 , PHP 7
 tags:

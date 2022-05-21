@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/www.lyfemarketing.com/9759bbe055a3e1097f92c400318095c2.png
-date: 2019-12-07T04:11:00.001+07:00
+date: 2019-12-07T04:11:00+07:00
 lang: en
-location: ""
 modified: 2019-12-07T05:49:03.944+07:00
 subtitle: 5 Facebook Post Ideas That Generate High Engagement Kehabisan ide
   posting Facebook untuk halaman Anda? Posting Facebook sama dengan

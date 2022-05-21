@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://assets-a1.kompasiana.com/items/album/2018/04/09/danur-2-maddah-tembus-1-juta-penonton-5acb7ff9cf01b401f923e9c2.jpg
-date: 2019-01-29T00:42:00.000+07:00
+date: 2019-01-29T00:42:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:36:05.578+07:00
 subtitle: "Watch Danur Film : Maddah 2018 Indonesian Subtitles - Film Danur 2
   Maddah continues the story of Risa Prilly Latuconsina who has"

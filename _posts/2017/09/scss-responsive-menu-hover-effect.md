@@ -5,18 +5,16 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2017-09-18T09:40:00.000+07:00
+date: 2017-09-18T09:40:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.964+07:00
 subtitle: b>Responsive Menu Hover Effect</b>:<br /><ol><li>Call jquery library
   -gt; <pre>lt;script
 tags:
   - CSS
-  - JS
+  - JAVASCRIPT
   - HTML
 title: SCSS Responsive Menu Hover Effect
 type: post

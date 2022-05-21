@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.uxfree.com/wp-content/uploads/2018/11/ENBKzrz.jpg
-date: 2018-11-19T09:32:00.001+07:00
+date: 2018-11-19T09:32:00+07:00
 lang: en
-location: ""
 modified: 2018-11-19T09:33:51.945+07:00
 subtitle: Unduh Free Ronneby V.4.4 Tema Wordpress berperforma tinggi Tema
   WordPress Serbaguna Praktis WordPress Dibangun pada Komposer
 tags:
   - Wordpress
+  - Blogging
 title: Unduh Free Ronneby V2.4.4 Tema Wordpress berperforma tinggi
 type: post
 uuid: 3d4f8715-1362-4888-8a08-ba890086bb75

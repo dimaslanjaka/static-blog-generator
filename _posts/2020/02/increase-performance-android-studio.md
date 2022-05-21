@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://techcrunch.com/wp-content/uploads/2017/02/android-studio-logo.png?w=730&crop=1
-date: 2020-02-25T05:25:00.001+07:00
+date: 2020-02-25T05:25:00+07:00
 lang: en
-location: ""
 modified: 2020-03-29T20:45:31.857+07:00
 subtitle: You can speed up your Eclipse or Android Studio work, you just follow these
 tags:

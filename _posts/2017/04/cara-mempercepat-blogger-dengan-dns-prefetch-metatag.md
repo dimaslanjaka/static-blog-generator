@@ -4,13 +4,11 @@ author:
   link: ""
   email: noreply@blogger.com
 category:
-  - Programming
-  - HTML
+  - Uncategorized
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0Jbr1UikPXCMcKYhYI8In9l8ajc_-DJiJInkoPOmc0t4Vi3zz
-date: 2017-04-30T01:34:00.002+07:00
+date: 2017-04-30T01:34:00+07:00
 lang: en
-location: ""
 modified: 2017-04-30T01:38:00.433+07:00
 subtitle: b>Bagaimana Cara mempercepat loading blogger AMP maupun NON
   AMP.</b><br /><b>Langkah awal mempercepat loading <b>AMP Blogger</b> maupun
@@ -18,6 +16,7 @@ tags:
   - Blogger
   - HTML
   - AMP
+  - Blogging
 title: Cara Mempercepat Blogger Dengan dns-prefetch metatag
 type: post
 uuid: 5289e74a-6ef9-4888-8f2e-f29add41b8b5

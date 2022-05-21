@@ -58,9 +58,9 @@ permalink: /The%20Legend%20Of%20Neverland/Chest/Winged%20Hairband.html
 ## Video tutorial
 
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/psOnlBSRBjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/psOnlBSRBjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>
 
 <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/yRbP_fSP3xY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<iframe src="https://www.youtube.com/embed/yRbP_fSP3xY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+</div>

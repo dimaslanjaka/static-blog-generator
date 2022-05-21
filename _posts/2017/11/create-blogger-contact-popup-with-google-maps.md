@@ -5,20 +5,20 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://3.bp.blogspot.com/-EhentLplEKQ/WRfMCB4E5EI/AAAAAAAArEc/Lnhdwufv5_UfBY2yXZZEu34LmZ9OMAMoACLcB/s1600/Screenshot_1_1.jpg
-date: 2017-11-11T04:24:00.000+07:00
+date: 2017-11-11T04:24:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:17.960+07:00
 subtitle: The function of the contact form on a blog is to make it easier for
   blog visitors to contact the blog admin.
 tags:
   - CSS
-  - JS
+  - JAVASCRIPT
   - Blogger
   - HTML
+  - Tips & Tricks
+  - Blogging
 title: How To Create a Blogger Contact Popup Comes With Google Maps
 type: post
 uuid: 142b9042-54b0-4888-80dd-d1407aacadc9

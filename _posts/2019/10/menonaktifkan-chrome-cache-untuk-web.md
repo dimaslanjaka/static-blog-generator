@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://i.stack.imgur.com/Grwsc.png
-date: 2019-10-14T22:15:00.000+07:00
+date: 2019-10-14T22:15:00+07:00
 lang: en
-location: ""
 modified: 2019-10-14T22:18:48.610+07:00
 subtitle: Bagaimana cara menonaktifkan disable chrome cache untuk website
   development ?JawabannyaThe Chrome DevToolsTutorial :Buka development

@@ -5,17 +5,16 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/5963.png
-date: 2019-08-01T00:05:00.000+07:00
+date: 2019-08-01T00:05:00+07:00
 lang: en
-location: ""
 modified: 2019-08-01T00:05:01.092+07:00
 subtitle: Lazy load images bloggerlazy loading blogger berguna untuk Mempercepat
   laman webMeningkatkan rating pagespeedHTML Usage<img alt=
 tags:
-  - JS
+  - JAVASCRIPT
+  - Blogging
 title: Lazy load images blogger
 type: post
 uuid: 2314fa90-b3fc-4888-8acc-cc21e65058ad

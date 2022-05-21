@@ -5,12 +5,10 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - CSS
 comments: true
 cover: https://2.bp.blogspot.com/-UFidWzf_o3A/Xfp0n9U9c4I/AAAAAAAAAiI/Ve1ajQPHYdsVNKW9F8Rc8iPr0eLAYVeQgCLcBGAsYHQ/s1600/Screenshot_1.png
-date: 2019-12-31T01:50:00.000+07:00
+date: 2019-12-31T01:50:00+07:00
 lang: en
-location: ""
 modified: 2019-12-31T01:50:05.800+07:00
 subtitle: "Glowing Text Loading AnimationCSSbody
   margin:0px;padding:0px;background:262222;ULposition:

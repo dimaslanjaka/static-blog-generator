@@ -5,17 +5,15 @@ author:
   email: noreply@blogger.com
 category:
   - Programming
-  - JS
 comments: true
 cover: http://res.cloudinary.com/dimaslanjaka/image/fetch/https://anotherorion.com/wp-content/uploads/2015/05/SafeLinkConverter1.png
-date: 2017-12-12T01:39:00.000+07:00
+date: 2017-12-12T01:39:00+07:00
 lang: en
-location: ""
 modified: 2019-07-22T03:23:18.009+07:00
 subtitle: Untuk Cara Instal, Deskripsi, Dan Cara Penerapan Klik Disini Cara
   Membuat Simple Safelink Converter
 tags:
-  - JS
+  - JAVASCRIPT
   - Blogger
 title: Update Code Safelink Converter Untuk Halaman 12 Desember 2017
 type: post

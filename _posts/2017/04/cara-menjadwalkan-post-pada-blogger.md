@@ -7,14 +7,14 @@ category:
   - Uncategorized
 comments: true
 cover: https://res.cloudinary.com/dimaslanjaka/image/fetch/http://pad2.whstatic.com/images/thumb/e/ee/Schedule-a-Post-on-Blogger-Step-1.jpg/v3-460px-Schedule-a-Post-on-Blogger-Step-1.jpg.webp
-date: 2017-04-10T10:58:00.000+07:00
+date: 2017-04-10T10:58:00+07:00
 lang: en
-location: ""
 modified: 2017-04-10T10:58:00.642+07:00
 subtitle: Cara Menjadwalkan Post pada BloggerJika Anda menggunakan Blogspot atau
   Blogger untuk blog, Anda mungkin bertanyatanya apakah ada cara
 tags:
   - Blogger
+  - Blogging
 title: Cara Jadwalkan Post pada Blogger
 type: post
 uuid: 6d9795a0-c187-4888-87e6-e00365d746bb

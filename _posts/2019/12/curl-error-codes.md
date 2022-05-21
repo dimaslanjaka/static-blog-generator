@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png
-date: 2019-12-28T12:41:00.000+07:00
+date: 2019-12-28T12:41:00+07:00
 lang: en
-location: ""
 modified: 2019-12-28T12:41:44.070+07:00
 subtitle: CURLEUNSUPPORTED_PROTOCOL 1
 tags:

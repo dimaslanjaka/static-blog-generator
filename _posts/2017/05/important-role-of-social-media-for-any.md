@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVae8QcdeK12vKxKC_CrH9hB5EyUT8qCbX8AC-lyCzLoPeUzWU0NE32NfC
-date: 2017-05-10T06:31:00.000+07:00
+date: 2017-05-10T06:31:00+07:00
 lang: en
-location: ""
 modified: 2017-05-10T06:31:04.697+07:00
 subtitle: Important Role Of Social Media For Any Blogs Pal knows what it is
   Facebook, Twitter, Instagram or Way I firmly accept 100 that my

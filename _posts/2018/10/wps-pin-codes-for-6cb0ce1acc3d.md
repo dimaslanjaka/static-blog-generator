@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://3.bp.blogspot.com/-HATkEN6fBQo/W8WFogUS8rI/AAAAAAAAAUc/3TomXf6lYEwhuMHsB47vS9pe_MispcUzwCLcBGAs/s320/download.png
-date: 2018-10-16T13:31:00.000+07:00
+date: 2018-10-16T13:31:00+07:00
 lang: en
-location: ""
 modified: 2018-10-16T13:31:30.073+07:00
 subtitle: WPS PIN codes for C:B0:CE:1A:CC:3D
 tags: []

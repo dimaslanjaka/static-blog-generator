@@ -4,13 +4,11 @@ author:
   link: https://www.blogger.com/profile/17555754514989936273
   email: noreply@blogger.com
 category:
-  - Programming
-  - PHP
+  - Uncategorized
 comments: true
 cover: https://2.bp.blogspot.com/-axfbmdLI3Pc/XoIVHlkeicI/AAAAAAAAAA0/N9WMnayMq20kxlOxwl3vZgydjoGi9AcxQCLcBGAsYHQ/s1600/imgingest-2117968900021071073.png
-date: 2018-11-10T05:21:00.000+07:00
+date: 2018-11-10T05:21:00+07:00
 lang: en
-location: ""
 modified: 2020-03-30T22:56:56.277+07:00
 subtitle: You having problems with gmail smtp server. Like this Gmail SMTP error
   please log in via your web browser , Then Goggle says Please log

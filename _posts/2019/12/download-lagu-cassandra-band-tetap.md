@@ -7,9 +7,8 @@ category:
   - Uncategorized
 comments: true
 cover: https://imgcdn.000webhostapp.com/https/img.youtube.com/c4af1e2c5f308aeada0435127d2150b7.jpeg
-date: 2019-12-11T02:27:00.001+07:00
+date: 2019-12-11T02:27:00+07:00
 lang: en
-location: ""
 modified: 2019-12-11T02:32:17.455+07:00
 subtitle: "Download lagu Cassandra Band Tetap Menjadi Milikmu Mp3Cassandra Band
   - Remain Yours Listen: 5,123,334 Duration: 250 MP3 size: 3.91MB"
