@@ -27,7 +27,7 @@ author:
     github: https://github.com/dimaslanjaka
     youtube: https://youtube.com/p/L3n4r0x
 comments: true
-wordcount: 454
+wordcount: 455
 excerpt: fix php environtment path for powershell
 description: fix php environtment path for powershell
 url: https://www.webmanajemen.com/2022/03/cannot-call-php-from-powershell.html
@@ -98,7 +98,7 @@ The execution policy can be change to the Unrestricted for all users in the syst
 ### Youtube video tutorial - fix running scripts is disabled on this system
 
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/F-fWwkG5Xrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/F-fWwkG5Xrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
 
 **incoming terms (problem lists fixable with this article):**

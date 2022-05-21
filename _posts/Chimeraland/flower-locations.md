@@ -44,5 +44,5 @@ Di tempat ini juga banyak ditemukan **Clay**, **Precious Jade**
 
 ## Tutorial Video Lokasi Equinox Flower
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/Gnm-9hgkOB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/Gnm-9hgkOB8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>

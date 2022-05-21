@@ -27,7 +27,7 @@ updated: 2022-02-12T11:18:24+07:00
 thumbnail: https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
 photos:
   - https://i.ytimg.com/vi/biI1_Y15RcQ/sddefault.jpg
-wordcount: 403
+wordcount: 407
 excerpt: Chimeraland cooking recipes and food functions such as buffs and
   attendant preferences, Chimeraland resep masakan dan fungsi-fungsi makanan
   seperti buff dan kesukaan attendant
@@ -236,25 +236,25 @@ Recipe :
 Video Tutorial:
 Cara unlock **Stove II**
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/I_QH6jv7rzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/I_QH6jv7rzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
 
 ### Windoo
 Cara mendapatkan attendant **Windoo**
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/P5uAFGr33YA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/P5uAFGr33YA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
 
 ### Vulorman
 Cara mendapatkan attendant **Vulorman**
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/5K-X_U2YwAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/5K-X_U2YwAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
 
 ### Astakat
 Cara mendapatkan attendant **Astakat**
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/NYYoisSMqkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/NYYoisSMqkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
 
 <center><i>cooking recipes chimeraland updated january 2022</i> <a href="index.html">Back to index chimeraland</a></center>

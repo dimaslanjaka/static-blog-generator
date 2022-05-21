@@ -57,7 +57,7 @@ permalink: /The%20Legend%20Of%20Neverland/Bluestacks%20Game%20Control.html
 
 ##### Switch Fairies Ability Preview
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/9ZEqUD5piB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
+  <iframe src="https://www.youtube.com/embed/9ZEqUD5piB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen="true"></iframe>
 </div>
 
 <hr/>
