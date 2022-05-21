@@ -25,6 +25,7 @@ jobs:
           repository: dimaslanjaka/dimaslanjaka.github.io
           submodules: recursive
           token: "${{ secrets.GITHUB_TOKEN }}"
+          ref: old-revision
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v3
         with:
