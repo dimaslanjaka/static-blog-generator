@@ -3,9 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - compiler
-      - posts
-      - source
+      - old-revision
 
 # cancel previous workflows, run only one workflow
 concurrency:
@@ -69,7 +67,7 @@ jobs:
       - run: |
           git checkout compiler
           rm -rf src-posts
-          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch posts --single-branch src-posts
+          git clone https://github.com/dimaslanjaka/dimaslanjaka --branch posts --single-branch src-posts
           rm -rf source
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
         name: Pull & Update Submodules Recursively

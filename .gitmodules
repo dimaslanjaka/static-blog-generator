@@ -1,10 +1,10 @@
 [submodule "src-posts"]
 	path = src-posts
-	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io
+	url = https://github.com/dimaslanjaka/dimaslanjaka.git
 	branch = posts
 [submodule "source"]
 	path = source
-	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io
+	url = https://github.com/dimaslanjaka/dimaslanjaka.git
 	branch = source
 [submodule "packages/safelink"]
 	path = packages/safelink
