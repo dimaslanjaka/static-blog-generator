@@ -27,8 +27,6 @@ description: Tips on Optimizing Google Adsense With Blog MiscellaneousBlog
 wordcount: 3997
 excerpt: Tips on Optimizing Google Adsense With Blog MiscellaneousBlog
   hodgepodge is not always bad and niche blogs are not always good for
-url: https://www.webmanajemen.com/2017/09/tips-on-optimizing-google-adsense-with-miscellaneous-blog.html
-permalink: /2017/09/tips-on-optimizing-google-adsense-with-miscellaneous-blog.html
 ---
 
 <div dir="ltr">

@@ -27,8 +27,6 @@ wordcount: 823
 description: RegExp Match Doesnt Contain Words - Website Manajemen Indonesia
 subtitle: RegExp Match Doesnt Contain Words - Website Manajemen Indonesia
 excerpt: RegExp Match Doesnt Contain Words - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/RegExp/doesnt-contains-words.html
-permalink: /RegExp/doesnt-contains-words.html
 type: post
 ---
 

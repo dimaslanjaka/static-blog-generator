@@ -23,8 +23,6 @@ comments: true
 wordcount: 32
 subtitle: all about nodemon
 excerpt: all about nodemon
-url: https://www.webmanajemen.com/NodeJS/nodemon.html
-permalink: /NodeJS/nodemon.html
 type: post
 ---
 

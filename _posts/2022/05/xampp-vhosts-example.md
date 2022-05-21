@@ -31,8 +31,6 @@ comments: true
 wordcount: 440
 subtitle: Sample configuration for xampp virtual hosts 100 work tested 2022
 excerpt: Sample configuration for xampp virtual hosts 100 work tested 2022
-url: https://www.webmanajemen.com/2022/05/xampp-vhosts-example.html
-permalink: /2022/05/xampp-vhosts-example.html
 type: post
 ---
 

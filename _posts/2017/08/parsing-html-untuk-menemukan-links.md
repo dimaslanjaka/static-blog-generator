@@ -28,8 +28,6 @@ excerpt: search engine optimization SEO orang mencari script yang bisa mengurai
 description: search engine optimization SEO orang mencari script yang bisa
   mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana
   lalu lintasnya berasal dari antara lain
-url: https://www.webmanajemen.com/2017/08/parsing-html-untuk-menemukan-links.html
-permalink: /2017/08/parsing-html-untuk-menemukan-links.html
 ---
 
 <p>Dari blogging sampai log analysis dan search engine optimization (SEO) orang mencari script yang bisa mengurai halaman web dan RSS feed dari situs-situs lain - untuk melihat kemana lalu lintasnya berasal dari antara lain. <br /><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;nv=1&amp;rurl=translate.google.com&amp;sl=auto&amp;sp=nmt4&amp;tl=id&amp;u=http://www.google.com/search%3Fq%3Ddefine:parsing&amp;usg=ALkJrhjHQhEQ8CQV15d6T98UCse_Xkdwqg" target="_blank" rel="noopener noreferer nofollow"> Parsing </a> HTML Anda sendiri seharusnya tidak masalah - dengan asumsi Anda menggunakan format yang konsisten - tapi begitu Anda menetapkan pandangan Anda untuk mengurai HTML orang lain, frustrasi benar-benar terjadi. Halaman ini menyajikan beberapa ekspresi reguler dan sebuah komentar yang diharapkan akan mengarahkan Anda ke sisi yang benar. arah.</p>

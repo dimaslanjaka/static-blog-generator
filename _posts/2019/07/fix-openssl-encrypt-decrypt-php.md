@@ -26,8 +26,6 @@ excerpt: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
 description: "Warning openssl_decrypt: IV passed is only 12 bytes long, cipher
   expects an IV of precisely 16 bytes, padding with \\0 in PATH_FILE on"
-url: https://www.webmanajemen.com/2019/07/fix-openssl-encrypt-decrypt-php.html
-permalink: /2019/07/fix-openssl-encrypt-decrypt-php.html
 ---
 
 <div dir="ltr">

@@ -30,8 +30,6 @@ comments: true
 wordcount: 310
 excerpt: 500 List Of Latest Dofollow Backlinks
 description: 500 List Of Latest Dofollow Backlinks
-url: https://www.webmanajemen.com/2022/03/list-of-latest-dofollow-blogs.html
-permalink: /2022/03/list-of-latest-dofollow-blogs.html
 type: post
 ---
 

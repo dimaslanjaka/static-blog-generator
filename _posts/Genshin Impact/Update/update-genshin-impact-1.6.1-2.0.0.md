@@ -25,8 +25,6 @@ description: Update Genshin Impact 1.6.1 - 2.0.0 Manual
 comments: true
 wordcount: 93
 excerpt: Update Genshin Impact 1.6.1 - 2.0.0 Manual
-url: https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html
-permalink: /Genshin%20Impact/Update/update-genshin-impact-1.6.1-2.0.0.html
 ---
 
 Update genshin impact `2.0.0` manual via download manager (IDM).

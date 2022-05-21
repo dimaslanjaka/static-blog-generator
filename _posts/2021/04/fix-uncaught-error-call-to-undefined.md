@@ -25,8 +25,6 @@ photos:
 wordcount: 233
 excerpt: "Uncaught Error: Call to undefined function str_starts_with Fix Solutions"
 description: "Uncaught Error: Call to undefined function str_starts_with Fix Solutions"
-url: https://www.webmanajemen.com/2021/04/fix-uncaught-error-call-to-undefined.html
-permalink: /2021/04/fix-uncaught-error-call-to-undefined.html
 ---
 
 ## Uncaught Error: Call to undefined function str_starts_with() Fix Solutions

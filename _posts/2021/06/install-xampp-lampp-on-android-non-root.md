@@ -30,8 +30,6 @@ description: php apache setup on android with Termux without root Download
 wordcount: 1083
 excerpt: php apache setup on android with Termux without root Download Termux
   allow installation from unknwon sources and
-url: https://www.webmanajemen.com/2021/06/install-xampp-lampp-on-android-non-root.html
-permalink: /2021/06/install-xampp-lampp-on-android-non-root.html
 ---
 
 <div id="bootstrap-wrapper">

@@ -34,8 +34,6 @@ subtitle: How to Overcome Automatic Scroll Up in Blogger XML Editor - Website
   Manajemen Indonesia
 excerpt: How to Overcome Automatic Scroll Up in Blogger XML Editor - Website
   Manajemen Indonesia
-url: https://www.webmanajemen.com/2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
-permalink: /2022/03/how-to-overcome-automatic-scroll-up-in-blogger-xml-editor.html
 type: post
 ---
 

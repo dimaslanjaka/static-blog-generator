@@ -32,8 +32,6 @@ comments: true
 wordcount: 265
 excerpt: Various step to fix xampp windows updated 2022
 description: Various step to fix xampp windows updated 2022
-url: https://www.webmanajemen.com/2022/03/how-to-solve-error-apache-shutdown-unexpectedly.html
-permalink: /2022/03/how-to-solve-error-apache-shutdown-unexpectedly.html
 type: post
 ---
 

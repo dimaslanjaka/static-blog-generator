@@ -27,8 +27,6 @@ description: pre><br />pluginManagement <br /> resolutionStrategy <br />
 wordcount: 74
 excerpt: pre><br />pluginManagement <br /> resolutionStrategy <br /> eachPlugin
   <br /> // Work around
-url: https://www.webmanajemen.com/2020/10/example-getting-properties-value-from.html
-permalink: /2020/10/example-getting-properties-value-from.html
 ---
 
 <pre><br>pluginManagement {<br>    resolutionStrategy {<br>        eachPlugin {<br>            // Work around https://github.com/gradle/gradle/issues/1697.<br>            if (requested.version == null) {<br>                def pluginName = requested.id.name.split('-').collect { it.capitalize() }.join().uncapitalize()<br>                def versionPropertyName = (requested.id.id == 'org.jetbrains.kotlin.jvm') ?<br>                        "kotlinPluginVersion" : "${pluginName}PluginVersion"<br>                logger.info("Checking for plugin version property '$versionPropertyName'.")<br>                if (gradle.rootProject.hasProperty(versionPropertyName)) {<br>                    def version = gradle.rootProject.properties[versionPropertyName]<br>                    logger.info("Setting '${requested.id.id}' plugin version to $version.")<br>                    useVersion version<br>                } else {<br>                    logger.warn("No version specified for plugin '${requested.id.id}' and property " +<br>                            "'$versionPropertyName' does not exist.")<br>                }<br>            }<br>        }<br>    }<br>}<br></pre>

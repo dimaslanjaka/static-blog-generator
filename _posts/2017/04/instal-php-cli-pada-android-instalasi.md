@@ -28,8 +28,6 @@ subtitle: Official php-cli installation on android by L3n4r0x php Running On
   Android Terminal -> How to install php5-cli in android <-
 excerpt: Official php-cli installation on android by L3n4r0x php Running On
   Android Terminal -> How to install php5-cli in android <-
-url: https://www.webmanajemen.com/2017/04/instal-php-cli-pada-android-instalasi.html
-permalink: /2017/04/instal-php-cli-pada-android-instalasi.html
 ---
 
 <div dir="ltr" style="text-align: left" trbidi="on">

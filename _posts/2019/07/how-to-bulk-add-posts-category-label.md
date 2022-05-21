@@ -28,8 +28,6 @@ excerpt: At this time I will share, How to move the blogger categoryExample Well
   move all post label Javascript to JS Filter and Choose the label
 description: At this time I will share, How to move the blogger categoryExample
   Well move all post label Javascript to JS Filter and Choose the label
-url: https://www.webmanajemen.com/2019/07/how-to-bulk-add-posts-category-label.html
-permalink: /2019/07/how-to-bulk-add-posts-category-label.html
 ---
 
 At this time I will share, **How to move the blogger category**  

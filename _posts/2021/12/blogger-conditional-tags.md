@@ -34,8 +34,6 @@ wordcount: 678
 description: Blogger Conditional Tags - Website Manajemen Indonesia
 subtitle: Blogger Conditional Tags - Website Manajemen Indonesia
 excerpt: Blogger Conditional Tags - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/2021/12/blogger-conditional-tags.html
-permalink: /2021/12/blogger-conditional-tags.html
 type: post
 ---
 

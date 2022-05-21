@@ -24,8 +24,6 @@ photos:
 description: Tutorial
 wordcount: 13
 excerpt: Tutorial
-url: https://www.webmanajemen.com/2020/10/git-force-redownload-from-remote.html
-permalink: /2020/10/git-force-redownload-from-remote.html
 ---
 
 <p>Tutorial</p><pre><br>git reset --hard origin/<branch_name><br>git fetch --all<br></branch_name></pre>  <p>Example from master</p><pre><br>git reset --hard origin/master<br>git fetch --all<br></pre>

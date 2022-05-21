@@ -30,8 +30,6 @@ description: h2>Contribution Tutorial</h2><ol> <li>Fork it git clone
 wordcount: 64
 excerpt: h2>Contribution Tutorial</h2><ol> <li>Fork it git clone
   https://github.com/name/repo</li> <li>Create your feature branch git checkout
-url: https://www.webmanajemen.com/2020/10/how-to-make-pull-request-or.html
-permalink: /2020/10/how-to-make-pull-request-or.html
 ---
 
 <h2>Contribution Tutorial</h2><ol>  <li>Fork it (git clone https://github.com/name/repo)</li>  <li>Create your feature branch (git checkout -b my-new-feature)</li>  <li>Commit your changes (git commit -am 'Add some feature')</li>  <li>Push to the branch (git push origin my-new-feature)</li>  <li>Create new Pull Request</li></ol>

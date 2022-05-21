@@ -24,8 +24,6 @@ photos:
 wordcount: 13
 excerpt: command line Fix add file to gitignore not filtered
 description: command line Fix add file to gitignore not filtered
-url: https://www.webmanajemen.com/2020/10/fix-add-file-to-gitignore-not-filtered.html
-permalink: /2020/10/fix-add-file-to-gitignore-not-filtered.html
 ---
 
 <pre><br>git rm -r --cached .<br>git add .<br>git commit -m 'clear git cache'<br>git push<br></pre>

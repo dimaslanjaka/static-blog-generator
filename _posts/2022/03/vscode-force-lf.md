@@ -27,8 +27,6 @@ wordcount: 51
 description: Force Change ALl End Of Line VSCode To LF - Website Manajemen Indonesia
 subtitle: Force Change ALl End Of Line VSCode To LF - Website Manajemen Indonesia
 excerpt: Force Change ALl End Of Line VSCode To LF - Website Manajemen Indonesia
-url: https://www.webmanajemen.com/2022/03/vscode-force-lf.html
-permalink: /2022/03/vscode-force-lf.html
 type: post
 ---
 

@@ -27,8 +27,6 @@ photos:
 description: Macam-macam events pada GitHub Workflows
 wordcount: 315
 excerpt: Macam-macam events pada GitHub Workflows
-url: https://www.webmanajemen.com/GitHub/workflows-events.html
-permalink: /GitHub/workflows-events.html
 ---
 
 # Events yang memicu Github Workflow

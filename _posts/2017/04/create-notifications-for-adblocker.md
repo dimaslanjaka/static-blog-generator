@@ -27,8 +27,6 @@ photos:
 wordcount: 585
 subtitle: Create Notifications For Adblocker Adsense Users
 excerpt: Create Notifications For Adblocker Adsense Users
-url: https://www.webmanajemen.com/2017/04/create-notifications-for-adblocker.html
-permalink: /2017/04/create-notifications-for-adblocker.html
 ---
 
 <div>

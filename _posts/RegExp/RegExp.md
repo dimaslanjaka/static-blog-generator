@@ -25,8 +25,6 @@ photos:
 description: Regular Expression is a
 wordcount: 1124
 excerpt: Regular Expression is a
-url: https://www.webmanajemen.com/RegExp/RegExp.html
-permalink: /RegExp/RegExp.html
 ---
 
 <!--https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285-->
