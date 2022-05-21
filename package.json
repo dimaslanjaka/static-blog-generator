@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rimraf dist/* && tsc -p tsconfig.build.json",
     "format": "prettier -w src/**/*.ts",
-    "ci": "yarn --check-files"
+    "ci": "yarn install --immutable --immutable-cache --check-cache --frozen-lockfile --check-files"
   },
   "files": [
     "packages",
