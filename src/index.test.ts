@@ -21,15 +21,20 @@ const files = walkSync(join(__dirname, '../src-posts')).filter((path) => {
 const tmp = join(__dirname, '../tmp/test');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 
-// parse all posts on ../src-posts
-for (const filePath of files) {
-  runParser(filePath);
+// parse single sample post
+singleParse(join(process.cwd(), 'src-posts/Tests/index.md'));
+
+function singleParse(postPath = join(__dirname, 'test/index.md')) {
+  const parseSingle = runParser(postPath);
+  console.log(parseSingle);
 }
 
-// parse single sample post
-const postPath = join(__dirname, 'test/index.md');
-const parseSingle = runParser(postPath);
-console.log(parseSingle);
+function _bulkParse() {
+  // parse all posts on ../src-posts
+  for (const filePath of files) {
+    runParser(filePath);
+  }
+}
 
 function runParser(filePath: string) {
   const parse = parsePost(filePath, {
