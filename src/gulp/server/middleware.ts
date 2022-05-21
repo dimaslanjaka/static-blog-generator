@@ -105,7 +105,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       // find post and pages
       let sourceMD = [
         join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)),
-        join(cwd(), config.source_dir, decodeURIComponent(pathname)),
+        join(cwd(), config.source_dir, decodeURIComponent(pathname))
       ].map((s) => {
         return s.replace(/.html$/, '.md');
       });
@@ -170,7 +170,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         return res.end(showPreview(readFileSync(sourceIndex)));
       }
       next();
-    },
+    }
   },
   {
     route: '/api',
@@ -182,7 +182,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (req.url.includes('copy'))
         write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
       res.writeHead(200, {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain'
       });
       res.end(
         JSON.stringifyWithCircularRefs(
@@ -191,7 +191,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         )
       );
       next();
-    },
+    }
   },
   {
     route: '/admin',
@@ -200,8 +200,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         .renderFile(join(__dirname, 'public/admin.ejs'))
         .then((rendered) => res.end(rendered))
         .catch(next);
-    },
-  },
+    }
+  }
 ];
 
 if (config.server.compress) {
@@ -225,7 +225,7 @@ labelSrc.forEach((path) => {
         return res.end(showPreview(result));
       }*/
       next();
-    },
+    }
   });
 });
 
