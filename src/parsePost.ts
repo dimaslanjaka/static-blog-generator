@@ -81,7 +81,7 @@ export type postMeta = DynamicObject & {
    */
   type?: 'post' | 'page' | 'archive';
 };
-export type postMap = DynamicObject & {
+export interface postMap extends DynamicObject {
   /**
    * Article metadata
    */
@@ -108,7 +108,7 @@ export type postMap = DynamicObject & {
    * Article body
    */
   body?: string;
-};
+}
 export interface Config extends DeepPartial<typeof config> {
   [key: string]: any;
 }
@@ -185,12 +185,18 @@ const default_options: ParseOptions = {
   fix: false
 };
 
+/**
+ * make all properties as optional recursively
+ */
 export type DeepPartial<T> = T extends object
   ? {
       [P in keyof T]?: DeepPartial<T[P]>;
     }
   : T;
 
+/**
+ * null | type
+ */
 export type Nullable<T> = T | null | undefined;
 
 /**
