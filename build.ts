@@ -9,7 +9,7 @@ pkg.uuid = crypto
   .update(new Date().toDateString())
   .digest('hex');
 writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
-git(null, 'add', '-A').then(() => {
+git(null, 'add', 'package.json').then(() => {
   git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
     fse.emptyDirSync(join(__dirname, 'dist'));
     const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
