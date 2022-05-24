@@ -238,8 +238,8 @@ function parsePost(text, options = {}) {
             !meta.location) {
             delete meta.location;
         }
-        if (isFile) {
-            const publicFile = (0, upath_1.toUnix)(originalArg);
+        if (isFile || options.sourceFile) {
+            const publicFile = isFile ? (0, upath_1.toUnix)(originalArg) : options.sourceFile;
             // @todo fix post_asset_folder
             if (options.fix) {
                 const post_assets_fixer = (str) => {
