@@ -126,11 +126,12 @@ export interface ParseOptions {
 export declare type DeepPartial<T> = T extends object ? {
     [P in keyof T]?: DeepPartial<T[P]>;
 } : T;
+export declare type Nullable<T> = T | null | undefined;
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
  * * return {@link null} == failed
  * @param text file path or string markdown contents
  */
-export declare function parsePost(text: string, options?: DeepPartial<ParseOptions>): postMap | null;
+export declare function parsePost(text: string, options?: DeepPartial<ParseOptions>): Nullable<postMap>;
 export default parsePost;
