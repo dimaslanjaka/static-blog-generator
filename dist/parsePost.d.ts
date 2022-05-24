@@ -39,7 +39,8 @@ export declare type postMeta = DynamicObject & {
      */
     type?: 'post' | 'page' | 'archive';
 };
-export interface postMap extends DynamicObject {
+export interface postMap extends Object {
+    [key: string]: any;
     /**
      * Article metadata
      */
