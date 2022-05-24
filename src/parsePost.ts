@@ -391,8 +391,10 @@ export function parsePost(
       delete meta.location;
     }
 
-    if (isFile) {
-      const publicFile = toUnix(originalArg);
+    if (isFile || options.sourceFile) {
+      const publicFile = isFile
+        ? toUnix(originalArg)
+        : toUnix(options.sourceFile);
       // @todo fix post_asset_folder
       if (options.fix) {
         const post_assets_fixer = (str: string) => {
