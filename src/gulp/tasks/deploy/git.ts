@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { spawn } from 'child_process';
 import gulp from 'gulp';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { TaskCallback } from 'undertaker';
 import { existsSync, join, mkdirSync, resolve } from '../../../node/filemanager';
 import config, { post_generated_dir, root } from '../../../types/_config';

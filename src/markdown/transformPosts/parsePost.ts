@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';

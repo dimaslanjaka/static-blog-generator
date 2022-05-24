@@ -1,21 +1,17 @@
 import { spawn, SpawnOptions } from 'child_process';
-import rimraf from 'rimraf';
+import fse from 'fs-extra';
 import { join, toUnix } from 'upath';
-// rimraf dist/* && tsc -p tsconfig.build.json &&
 
-rimraf(join(__dirname, 'dist/*'), (err) => {
-  if (!err) {
-    const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
-      cwd: toUnix(__dirname),
-      stdio: 'inherit',
-      shell: true
-    });
-    summon.once('close', () => {
-      git(null, 'add', 'dist').then(() => {
-        git(null, 'commit', '-m', 'build ' + new Date());
-      });
-    });
-  }
+fse.emptyDirSync(join(__dirname, 'dist'));
+const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
+  cwd: toUnix(__dirname),
+  stdio: 'inherit',
+  shell: true
+});
+summon.once('close', () => {
+  git(null, 'add', 'dist').then(() => {
+    git(null, 'commit', '-m', 'build ' + new Date());
+  });
 });
 
 /**

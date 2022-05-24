@@ -1,15 +1,15 @@
 import chalk from 'chalk';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import yargs from 'yargs';
 import { isValidHttpUrl } from '../../gulp/utils';
 import CacheFile from '../../node/cache';
 import {
-  cwd,
-  dirname,
-  existsSync,
-  join,
-  removeMultiSlashes,
-  statSync
+    cwd,
+    dirname,
+    existsSync,
+    join,
+    removeMultiSlashes,
+    statSync
 } from '../../node/filemanager';
 import { cleanString, cleanWhiteSpace } from '../../node/utils';
 import { shortcodeCss } from '../../shortcodes/css';
