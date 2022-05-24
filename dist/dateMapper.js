@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dateMapper = void 0;
 const tslib_1 = require("tslib");
-const moment_1 = tslib_1.__importDefault(require("moment"));
+const moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 /**
  * HexoJS date formatter
  * * Playground Test {@link https://codepen.io/dimaslanjaka/pen/LYegjaV}
@@ -13,7 +13,7 @@ class dateMapper {
         this.year = () => this.data.format('YYYY');
         this.toString = () => this.data.format('YYYY-MM-DDTHH:mm:ssZ');
         if (typeof date == 'string') {
-            this.data = (0, moment_1.default)(date);
+            this.data = (0, moment_timezone_1.default)(date);
         }
     }
 }
