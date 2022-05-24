@@ -191,6 +191,8 @@ export type DeepPartial<T> = T extends object
     }
   : T;
 
+export type Nullable<T> = T | null | undefined;
+
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
@@ -200,7 +202,7 @@ export type DeepPartial<T> = T extends object
 export function parsePost(
   text: string,
   options: DeepPartial<ParseOptions> = {}
-): postMap | null {
+): Nullable<postMap> {
   options = deepmerge(default_options, options);
   const config = options.config;
   const cacheKey = md5FileSync(text);
