@@ -109,6 +109,9 @@ export type postMap = DynamicObject & {
    */
   body?: string;
 };
+export interface Config extends DeepPartial<typeof config> {
+  [key: string]: any;
+}
 export interface ParseOptions {
   shortcodes?: {
     /**
@@ -158,7 +161,7 @@ export interface ParseOptions {
   /**
    * Site Config
    */
-  config?: DeepPartial<typeof config>;
+  config?: Config;
   /**
    * run auto fixer such as thumbnail, excerpt, etc
    */
