@@ -25,6 +25,8 @@ description: Update Genshin Impact 2.1.0 - 2.3.0 Manual
 comments: true
 wordcount: 664
 excerpt: Update Genshin Impact 2.1.0 - 2.3.0 Manual
+url: https://www.webmanajemen.com/Genshin%20Impact/Update/update-genshin-impact-2.1.0-2.3.0.html
+permalink: /Genshin%20Impact/Update/update-genshin-impact-2.1.0-2.3.0.html
 ---
 
 Update genshin impact `2.3.0` manual via download manager (IDM).

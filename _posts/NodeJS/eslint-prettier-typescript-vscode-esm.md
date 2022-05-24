@@ -32,6 +32,8 @@ comments: true
 wordcount: 243
 excerpt: Auto format typescript with esm using only eslint and prettier module
 description: Auto format typescript with esm using only eslint and prettier module
+url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-esm.html
+permalink: /NodeJS/eslint-prettier-typescript-vscode-esm.html
 ---
 
 ## CommonJS

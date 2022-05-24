@@ -24,6 +24,8 @@ photos:
 wordcount: 758
 excerpt: How to Install and Enable HTTPS SSL on Blogspot Custom Domain
 description: How to Install and Enable HTTPS SSL on Blogspot Custom Domain
+url: https://www.webmanajemen.com/2017/05/how-to-install-and-enable-https-ssl-on-blogger.html
+permalink: /2017/05/how-to-install-and-enable-https-ssl-on-blogger.html
 ---
 
 <h2>How to Install and Enable HTTPS (SSL) on Blogspot Custom Domain</h2>

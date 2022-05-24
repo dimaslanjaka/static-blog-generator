@@ -27,6 +27,8 @@ excerpt: How to Determine Size Special Ad Adsense Most TrueGoogle adsense since
   last few months has launched a new ad sizes, ie custom ad sizes or
 description: How to Determine Size Special Ad Adsense Most TrueGoogle adsense
   since last few months has launched a new ad sizes, ie custom ad sizes or
+url: https://www.webmanajemen.com/2017/04/how-to-determine-size-special-ad.html
+permalink: /2017/04/how-to-determine-size-special-ad.html
 ---
 
 <div dir="ltr">

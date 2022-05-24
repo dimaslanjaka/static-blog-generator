@@ -27,6 +27,8 @@ description: h2>open folder with sublime text 3</h2><script
 wordcount: 6
 excerpt: h2>open folder with sublime text 3</h2><script
   src=https://gist.github.com/roundand/9367852.js></script><div
+url: https://www.webmanajemen.com/2019/03/sublime-text-3-shortcut-open-folder.html
+permalink: /2019/03/sublime-text-3-shortcut-open-folder.html
 ---
 
 <h2>open folder with sublime text 3</h2><script src="https://gist.github.com/roundand/9367852.js"></script>

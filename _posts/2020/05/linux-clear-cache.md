@@ -27,6 +27,8 @@ photos:
 wordcount: 105
 excerpt: Script To Clear Cache Linux
 description: Script To Clear Cache Linux
+url: https://www.webmanajemen.com/2020/05/linux-clear-cache.html
+permalink: /2020/05/linux-clear-cache.html
 ---
 
 ```bash

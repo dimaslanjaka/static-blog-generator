@@ -46,6 +46,8 @@ photos:
 wordcount: 7871
 excerpt: Quiz questions and the answers. The Legend Of Neverland Event.
 description: Quiz questions and the answers. The Legend Of Neverland Event.
+url: https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html
+permalink: /The%20Legend%20Of%20Neverland/Quiz.html
 ---
 
 <link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/Web-Manajemen/master/css/bootstrap-4.5-wrapper.css" />
