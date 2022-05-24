@@ -1,0 +1,10 @@
+packages/
+build
+dist
+#*.test.ts
+#*.test.js
+source/
+tmp
+temp
+*.min.js
+*.min.css

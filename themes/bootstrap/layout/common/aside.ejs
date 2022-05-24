@@ -1,0 +1,44 @@
+<!-- Side widgets-->
+<div class="col-lg-4">
+  <!-- Search widget-->
+  <div class="card mb-4">
+    <div class="card-header">Search</div>
+    <div class="card-body">
+      <form action="/p/search.html" method="GET">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..."
+            name="q" aria-describedby="button-search" />
+          <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="recent-sidebar" class="mb-4 bg-light">
+    <div class="sidebar widget">
+      <h3>Recent Post</h3>
+      <ul>
+        <% getLatestPosts('date', 5).forEach(post => { %>
+        <li>
+          <div class="sidebar-thumb">
+            <img class="animated rollIn" src="<%- thumbnail(post) %>" alt="<%- post.title %>" />
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-content">
+            <h5 class="animated bounceInRight"><a href="<%- post.url %>"><%- post.title %></a></h5>
+          </div><!-- .Sidebar-thumb -->
+          <div class="sidebar-meta">
+            <span class="time"><i class="fa fa-clock-o"></i> <%- date_format(post.date, 'LL') %></span>
+            <span class="comment d-none"><i class="fa fa-comment"></i> 10 comments</span>
+          </div><!-- .Sidebar-meta ends here -->
+        </li><!-- .Li ends here -->
+        <% }) %>
+      </ul><!-- .Ul ends here -->
+    </div><!-- .Widget ends here -->
+  </div>
+
+  <% if (config.adsense.enable && config.adsense.article_ads.length) { %>
+  <div class="card mb-4">
+    <%- config.adsense.article_ads[0] %>
+  </div>
+  <% } %>
+</div>

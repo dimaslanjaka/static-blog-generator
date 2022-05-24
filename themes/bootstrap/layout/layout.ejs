@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title><%- page.title %> - <%- page.webtitle||config.title %></title>
+  <%- include('common/seo') %>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="<%- config.favicon||'/assets/favicon.ico' %>" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/css/styles.css" rel="stylesheet" />
+  <link href="/css/custom.css" rel="stylesheet" />
+  <%- include('common/adsense') %>
+</head>
+
+<body>
+  <%- include('common/navbar') %>
+  <% if (page.type == 'post'||page.type == 'page') { %>
+  <%- include('page') %>
+  <% } else { %>
+  <%- include('archive') %>
+  <% } %>
+  <!-- Footer-->
+  <!--<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; <%- config.title %> <%- date_format(new Date(), 'YYYY') %>
+      </p>
+    </div>
+  </footer>-->
+  <footer class="py-5 my-3 bg-dark">
+    <div class="container">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/safelink" class="nav-link px-2 text-muted">Safelink</a></li>
+      <li class="nav-item"><a href="/js-prototypes" class="nav-link px-2 text-muted">js-prototypes</a></li>
+      <li class="nav-item"><a href="/smartform" class="nav-link px-2 text-muted">Smartform</a></li>
+      <li class="nav-item"><a href="/p/about.html" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">© <%- date_format(new Date(), 'YYYY') %> <%- config.title %>, Inc</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="/js/scripts.js"></script>
+</body>
+
+</html>
