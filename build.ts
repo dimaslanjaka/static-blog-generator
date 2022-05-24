@@ -1,16 +1,27 @@
 import { spawn, SpawnOptions } from 'child_process';
-import fse from 'fs-extra';
+import crypto from 'crypto';
+import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
+import pkg from './package.json';
 
-fse.emptyDirSync(join(__dirname, 'dist'));
-const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
-  cwd: toUnix(__dirname),
-  stdio: 'inherit',
-  shell: true
-});
-summon.once('close', () => {
-  git(null, 'add', 'dist').then(() => {
-    git(null, 'commit', '-m', 'build ' + new Date());
+pkg.uuid = crypto
+  .createHash('md5')
+  .update(new Date().toDateString())
+  .digest('hex');
+writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
+git(null, 'add', '-A').then(() => {
+  git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
+    fse.emptyDirSync(join(__dirname, 'dist'));
+    const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
+      cwd: toUnix(__dirname),
+      stdio: 'inherit',
+      shell: true
+    });
+    summon.once('close', () => {
+      git(null, 'add', 'dist').then(() => {
+        git(null, 'commit', '-m', 'build ' + new Date());
+      });
+    });
   });
 });
 
