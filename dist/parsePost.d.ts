@@ -39,7 +39,7 @@ export declare type postMeta = DynamicObject & {
      */
     type?: 'post' | 'page' | 'archive';
 };
-export declare type postMap = DynamicObject & {
+export interface postMap extends DynamicObject {
     /**
      * Article metadata
      */
@@ -66,7 +66,7 @@ export declare type postMap = DynamicObject & {
      * Article body
      */
     body?: string;
-};
+}
 export interface Config extends DeepPartial<typeof config> {
     [key: string]: any;
 }
