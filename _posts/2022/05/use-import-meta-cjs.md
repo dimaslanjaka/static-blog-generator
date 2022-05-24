@@ -29,6 +29,8 @@ comments: true
 wordcount: 208
 subtitle: How to implement import.meta on typescript hybrid esm and commonjs compiler
 excerpt: How to implement import.meta on typescript hybrid esm and commonjs compiler
+url: https://www.webmanajemen.com/2022/05/use-import-meta-cjs.html
+permalink: /2022/05/use-import-meta-cjs.html
 type: post
 ---
 

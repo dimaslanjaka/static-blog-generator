@@ -27,6 +27,8 @@ author:
 wordcount: 305
 description: Taming pity in chimeraland
 subtitle: Taming pity in chimeraland
+url: https://www.webmanajemen.com/Chimeraland/Taming.html
+permalink: /Chimeraland/Taming.html
 type: post
 ---
 

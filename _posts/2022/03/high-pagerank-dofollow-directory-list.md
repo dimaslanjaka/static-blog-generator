@@ -29,6 +29,8 @@ comments: true
 wordcount: 679
 excerpt: High Pagerank Dofollow Directory List
 description: High Pagerank Dofollow Directory List
+url: https://www.webmanajemen.com/2022/03/high-pagerank-dofollow-directory-list.html
+permalink: /2022/03/high-pagerank-dofollow-directory-list.html
 type: post
 ---
 

@@ -33,6 +33,8 @@ excerpt: How to auto format using eslint and prettier in typescript react
   project using vscode
 description: How to auto format using eslint and prettier in typescript react
   project using vscode
+url: https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode-react.html
+permalink: /NodeJS/eslint-prettier-typescript-vscode-react.html
 type: post
 ---
 

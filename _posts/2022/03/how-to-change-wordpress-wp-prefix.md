@@ -30,6 +30,8 @@ wordcount: 340
 description: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
 subtitle: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
 excerpt: Change wordpress table prefix updated 2022 - Website Manajemen Indonesia
+url: https://www.webmanajemen.com/2022/03/how-to-change-wordpress-wp-prefix.html
+permalink: /2022/03/how-to-change-wordpress-wp-prefix.html
 type: post
 ---
 

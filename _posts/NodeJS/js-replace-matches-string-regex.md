@@ -20,6 +20,8 @@ category:
 comments: true
 wordcount: 95
 excerpt: How to match regex from string and replace matched string 1-9
+url: https://www.webmanajemen.com/NodeJS/js-replace-matches-string-regex.html
+permalink: /NodeJS/js-replace-matches-string-regex.html
 type: post
 ---
 
