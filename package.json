@@ -5,14 +5,14 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist/* && tsc -p tsconfig.build.json",
+    "build": "ts-node build.ts",
     "format": "prettier -w src/**/*.ts",
     "ci": "yarn install --immutable --immutable-cache --check-cache --frozen-lockfile --check-files"
   },
   "files": [
     "packages",
     "dist",
-    "_config.yml" 
+    "_config.yml"
   ],
   "repository": {
     "type": "git",
