@@ -16,7 +16,10 @@ import jdom from '../../node/jsdom';
 import { isMatch, replaceArr } from '../../node/string-utils';
 import parsePost from '../../parser/post/parsePost';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
-import config, { post_generated_dir } from '../../types/_config';
+import config, {
+  post_generated_dir,
+  post_source_dir
+} from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate-archives';
@@ -285,8 +288,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   // generate dummy posts
   {
     route: '/gen',
-    handle: (_req, res, _next) => {
-      generateDummyPosts();
+    handle: async (_req, res, _next) => {
+      const _gen = (await generateDummyPosts()).map((s) =>
+        s.replace(post_source_dir, '')
+      );
+      //return res.end(gen);
       if (!res.headersSent) return res.end('post generating on backend');
     }
   },

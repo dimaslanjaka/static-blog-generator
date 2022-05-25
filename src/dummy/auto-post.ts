@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync } from 'fs';
+import memoizee from 'memoizee';
 import { join } from 'upath';
 import { write } from '../node/filemanager';
 import parsePost, {
@@ -10,16 +11,18 @@ import config, { root } from '../types/_config';
 
 const destFolder = join(root, config.source_dir, '_posts/dummy');
 if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
-
-export function generateDummyPosts() {
+export const generateDummyPosts = memoizee(_generateDummyPosts);
+async function _generateDummyPosts() {
+  const result: string[] = [];
   for (let x = 0; x < 5; x++) {
     const gen = dummyPost(x);
-    write(join(destFolder, gen.metadata.permalink), buildPost(gen)).then(
-      (f) => {
-        console.log(f);
-      }
+    const file = await write(
+      join(destFolder, gen.metadata.permalink.replace('dummy/', '')),
+      buildPost(gen)
     );
+    result.push(String(file));
   }
+  return result;
 }
 
 function dummyPost(counter: string | number = 0) {
@@ -34,7 +37,7 @@ function dummyPost(counter: string | number = 0) {
       title: 'Dummy Post ' + counter,
       category: ['dummy'],
       tags: ['dummy', 'sample'],
-      permalink: '/dummy-post-' + counter + '.md',
+      permalink: '/dummy/dummy-post-' + counter + '.md',
       date: randomDate(new Date(2020, 0, 1), new Date(), 0, 24).toISOString()
     },
     body: 'Dummy Post Body ' + counter
