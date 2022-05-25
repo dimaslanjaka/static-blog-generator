@@ -218,6 +218,7 @@ export function parsePost(
     if (getCache) return getCache;
   }
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+  const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
   //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
   /**
@@ -540,9 +541,16 @@ export function parsePost(
   const testPost = Array.from(text.matchAll(regexPost)).map(mapper)[0];
   if (typeof testPost == 'object') return testPost;
 
+  const testPost2 = Array.from(text.matchAll(regexPostNoOpening)).map(
+    mapper
+  )[0];
+  if (typeof testPost2 == 'object') return testPost2;
+
   const regexPage = /^---([\s\S]*?)---[\n\s\S]([\n\s\S]*)/gm;
   const testPage = Array.from(text.matchAll(regexPage)).map(mapper)[0];
-  return testPage;
+  if (typeof testPage == 'object') return testPage;
+
+  return null;
 }
 
 export default parsePost;
