@@ -155,6 +155,20 @@ export interface ParseOptions {
   fix?: boolean;
 }
 
+/**
+ * make all properties as optional recursively
+ */
+export type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
+
+/**
+ * null | type
+ */
+export type Nullable<T> = T | null | undefined;
+
 const default_options: ParseOptions = {
   shortcodes: {
     css: false,
@@ -173,24 +187,12 @@ const default_options: ParseOptions = {
 };
 
 /**
- * make all properties as optional recursively
- */
-export type DeepPartial<T> = T extends object
-  ? {
-      [P in keyof T]?: DeepPartial<T[P]>;
-    }
-  : T;
-
-/**
- * null | type
- */
-export type Nullable<T> = T | null | undefined;
-
-/**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
  * * return {@link null} == failed
- * @param target file path or string markdown contents
+ * @param target file path or string markdown contents (used for cache key)
+ * @param options options parser
+ * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
 export function parsePost(
   target: string,
@@ -199,7 +201,7 @@ export function parsePost(
   if (!target) return null;
   options = deepmerge(default_options, options);
   const config = options.config;
-  const cacheKey = md5FileSync(target);
+  const cacheKey = md5FileSync(options.sourceFile || target);
   if (options.cache) {
     const getCache = _cache.getSync<postMap>(cacheKey);
     if (getCache) return getCache;
