@@ -25,7 +25,7 @@ const cacheTags = pcache('tags');
  * @param labelname specific tag name
  * @param pagenum specific page number
  */
-export default async function generateTags(
+export async function generateTags(
   labelname?: string | null,
   pagenum?: number
 ) {
@@ -116,6 +116,7 @@ export default async function generateTags(
   }
   return null;
 }
+export default generateTags;
 
 scheduler.add('add-tags', () => {
   // iterate posts to get tags
