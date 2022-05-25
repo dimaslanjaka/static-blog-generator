@@ -10,25 +10,30 @@ if (!process.env['GITHUB_WORKFLOW']) {
     .update(new Date().toDateString())
     .digest('hex');
   writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
-} else {
-  console.log('not updating the uuid on github workflow');
-}
 
-git(null, 'add', 'package.json').then(() => {
-  git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
-    fse.emptyDirSync(join(__dirname, 'dist'));
-    const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
-      cwd: toUnix(__dirname),
-      stdio: 'inherit',
-      shell: true
-    });
-    summon.once('close', () => {
-      git(null, 'add', 'dist').then(() => {
-        git(null, 'commit', '-m', 'build ' + new Date());
-      });
+  git(null, 'add', 'package.json').then(() => {
+    git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
+      build();
     });
   });
-});
+} else {
+  console.log('not updating the uuid on github workflow');
+  build();
+}
+
+function build() {
+  fse.emptyDirSync(join(__dirname, 'dist'));
+  const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
+    cwd: toUnix(__dirname),
+    stdio: 'inherit',
+    shell: true
+  });
+  summon.once('close', () => {
+    git(null, 'add', 'dist').then(() => {
+      git(null, 'commit', '-m', 'build ' + new Date());
+    });
+  });
+}
 
 /**
  * git command
