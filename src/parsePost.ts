@@ -1,10 +1,9 @@
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
-import { default as momentInstance } from 'moment-timezone';
 import { dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
-import { dateMapper } from './dateMapper';
+import { dateMapper, moment } from './dateMapper';
 import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import { md5FileSync } from './node/md5-file';
@@ -19,19 +18,6 @@ import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { DynamicObject } from './types';
 import config from './types/_config';
-
-/**
- * Localized Moment
- * @param date
- * @returns
- */
-function moment(date: any = new Date()) {
-  let parse = momentInstance(date);
-  if (config.timezone) {
-    parse = parse.tz(config.timezone);
-  }
-  return parse;
-}
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
@@ -228,7 +214,13 @@ export function parsePost(
   }
 
   const mapper = (m: RegExpMatchArray) => {
-    let meta: postMap['metadata'] = yaml.parse(m[1]);
+    let meta: postMap['metadata'] = {};
+    try {
+      meta = yaml.parse(m[1]);
+    } catch (error) {
+      //if (error instanceof Error) console.log(error.message, 'cannot parse metadata');
+      return null;
+    }
     if (typeof meta !== 'object') {
       //writeFileSync(join(cwd(), 'tmp/dump.json'), JSON.stringify(m, null, 2));
       //console.log('meta required object');
@@ -484,8 +476,13 @@ export function parsePost(
           typeof options.formatDate === 'object' && options.formatDate.pattern
             ? options.formatDate.pattern
             : 'YYYY-MM-DDTHH:mm:ssZ';
-        meta.date = new dateMapper(String(meta.date)).format(pattern);
-        meta.updated = new dateMapper(String(meta.updated)).format(pattern);
+
+        if (meta.date) {
+          meta.date = new dateMapper(String(meta.date)).format(pattern);
+        }
+        if (meta.updated) {
+          meta.updated = new dateMapper(String(meta.updated)).format(pattern);
+        }
       }
       // @todo process shortcodes
       if (options.shortcodes) {
@@ -544,7 +541,7 @@ export function parsePost(
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   const testPost = Array.from(target.matchAll(regexPost)).map(mapper)[0];
   if (typeof testPost === 'object' && testPost !== null) {
-    //console.log('test 1 passed');
+    console.log('test 1 passed');
     return testPost;
   }
 
@@ -554,7 +551,7 @@ export function parsePost(
     mapper
   )[0];
   if (typeof testPost2 === 'object' && testPost2 !== null) {
-    //console.log('test 2 passed');
+    console.log('test 2 passed');
     return testPost2;
   }
 
