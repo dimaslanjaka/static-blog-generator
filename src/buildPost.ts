@@ -7,7 +7,9 @@ import { parsePost, postMap } from './parsePost';
  * @returns
  */
 export function buildPost(parsed: Partial<postMap>) {
-  return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
+  if (parsed.metadata)
+    return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
+  return parsed.body;
 }
 
 function _dummy() {
