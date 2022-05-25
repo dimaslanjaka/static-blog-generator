@@ -1,23 +1,12 @@
 import gulp from 'gulp';
 import { Nullable } from 'safelinkify/dist/resolveQueryUrl';
-import { excerpt } from '../../ejs/helper/excerpt';
-import { thumbnail } from '../../ejs/helper/thumbnail';
-import CacheFile from '../../node/cache';
-import color from '../../node/color';
-import { cwd, join, write } from '../../node/filemanager';
-import modifyPost from '../../parser/post/modifyPost';
+import { pcache } from '../../node/cache';
+import CachePost from '../../node/cache-post';
+import scheduler from '../../node/scheduler';
 import { postMap } from '../../parser/post/parsePost';
-import postChunksIterator from '../../parser/post/postChunksIterator';
-import {
-  array_wrap,
-  post_chunks,
-  simplifyDump
-} from '../../parser/post/postMapper';
-import config, { tmp } from '../../types/_config';
-import { renderer } from './generate-posts';
 
-const cacheTags = new CacheFile('postTags');
-
+//const cacheTags = new CacheFile('postTags');
+const cacheTags = pcache('tags');
 /**
  * generate tags archive
  * @param labelname specific tag name
@@ -27,7 +16,9 @@ export default async function generateTags(
   labelname?: string | null,
   pagenum?: number
 ): Promise<Nullable<string>> {
-  const tag_posts: { [key: string]: postMap[] } = cacheTags.getAll();
+  const tag_posts = cacheTags.valuesSync();
+  console.log(tag_posts);
+  /*const tag_posts: { [key: string]: postMap[] } = cacheTags.getAll();
   for (const tagname in tag_posts) {
     if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
       // specific tag label otherwise skip
@@ -97,8 +88,37 @@ export default async function generateTags(
         if (labelname) return rendered;
       }
     }
-  }
+  }*/
   return null;
+}
+
+// iterate posts to get tags
+const posts = new CachePost();
+const postTags: { [key: string]: postMap[] } = {};
+const allPosts = posts.getAll();
+for (let indexPost = 0; indexPost < allPosts.length; indexPost++) {
+  const post = allPosts[indexPost];
+  if (post.metadata.tags && !post.metadata.redirect) {
+    if (!Array.isArray(post.metadata.tags)) {
+      post.metadata.tags = [post.metadata.tags];
+    }
+
+    for (let indexTag = 0; indexTag < post.metadata.tags.length; indexTag++) {
+      const tagName = post.metadata.tags[indexTag];
+      if (!postTags[tagName]) postTags[tagName] = [];
+      if (
+        !postTags[tagName].find(
+          ({ metadata }) => metadata.title === post.metadata.title
+        )
+      ) {
+        postTags[tagName].push(<any>post);
+      }
+      scheduler.add('add-tag-' + tagName, () => {
+        cacheTags.putSync(tagName, postTags[tagName]);
+      });
+    }
+  }
+  //if (indexPost == allPosts.length - 1)
 }
 
 gulp.task('generate:tags', () => generateTags());
