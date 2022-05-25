@@ -65,31 +65,34 @@ const default_options = {
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
  * * return {@link null} == failed
- * @param text file path or string markdown contents
+ * @param target file path or string markdown contents
  */
-function parsePost(text, options = {}) {
+function parsePost(target, options = {}) {
+    if (!target)
+        return null;
     options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
     const config = options.config;
-    const cacheKey = (0, md5_file_1.md5FileSync)(text);
+    const cacheKey = (0, md5_file_1.md5FileSync)(target);
     if (options.cache) {
         const getCache = _cache.getSync(cacheKey);
         if (getCache)
             return getCache;
     }
-    const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
-    const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
-    //const regex = /^---([\s\S]*?)---[\n\s\S]\n/gim;
-    //let m: RegExpExecArray | { [Symbol.replace](string: string, replaceValue: string): string }[];
     /**
      * source file if `text` is file
      */
-    const originalArg = text;
-    const isFile = (0, fs_1.existsSync)(text) && (0, fs_1.statSync)(text).isFile();
+    const originalArg = target;
+    const isFile = (0, fs_1.existsSync)(target) && (0, fs_1.statSync)(target).isFile();
     if (isFile) {
-        text = String((0, fs_1.readFileSync)(text, 'utf-8'));
+        target = String((0, fs_1.readFileSync)(target, 'utf-8'));
     }
     const mapper = (m) => {
         let meta = yaml_1.default.parse(m[1]);
+        if (typeof meta !== 'object') {
+            //writeFileSync(join(cwd(), 'tmp/dump.json'), JSON.stringify(m, null, 2));
+            //console.log('meta required object');
+            return null;
+        }
         let body = m[2];
         if (!body)
             body = 'no content ' + (meta.title || '');
@@ -375,16 +378,23 @@ function parsePost(text, options = {}) {
             _cache.putSync(cacheKey, result);
         return result;
     };
-    // process parsing
-    const testPost = Array.from(text.matchAll(regexPost)).map(mapper)[0];
-    if (typeof testPost == 'object')
+    // test opening metadata tag
+    const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+    const testPost = Array.from(target.matchAll(regexPost)).map(mapper)[0];
+    if (typeof testPost === 'object' && testPost !== null) {
+        //console.log('test 1 passed');
         return testPost;
-    const testPost2 = Array.from(text.matchAll(regexPostNoOpening)).map(mapper)[0];
-    if (typeof testPost2 == 'object')
+    }
+    // test non-opening metadata tag
+    const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+    const testPost2 = Array.from(target.matchAll(regexPostNoOpening)).map(mapper)[0];
+    if (typeof testPost2 === 'object' && testPost2 !== null) {
+        //console.log('test 2 passed');
         return testPost2;
+    }
     const regexPage = /^---([\s\S]*?)---[\n\s\S]([\n\s\S]*)/gm;
-    const testPage = Array.from(text.matchAll(regexPage)).map(mapper)[0];
-    if (typeof testPage == 'object')
+    const testPage = Array.from(target.matchAll(regexPage)).map(mapper)[0];
+    if (typeof testPage === 'object' && testPage !== null)
         return testPage;
     return null;
 }
