@@ -37,9 +37,7 @@ please using stable version from https://github.com/dimaslanjaka/static-blog-gen
 - - android termux need c++
 
 ## Project Installation
-~Always use `npm` to install. `yarn` and `pnpm` not always compatible.~
-
-were keeping the `package-lock.json` to easily `yarn` and `pnpm` to fetch the cache, you can install this project with `yarn` or `pnpm` (not recommended).
+Install using `npm` recommended.
 
 ```bash
 # install global packages
