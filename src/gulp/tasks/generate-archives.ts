@@ -1,15 +1,18 @@
-import { cwd, join, write } from '../../node/filemanager';
-import config, { tmp } from '../../types/_config';
-import 'js-prototypes';
-import { renderer } from './generate-posts';
 import gulp from 'gulp';
+import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
 import color from '../../node/color';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
-import { archiveMap, array_wrap, post_chunks } from '../../markdown/transformPosts/postMapper';
-import { getLatestDateArray } from '../../ejs/helper/date';
-import './generate-tags';
+import { cwd, join, write } from '../../node/filemanager';
+import modifyPost from '../../parser/post/modifyPost';
+import {
+    archiveMap,
+    array_wrap,
+    post_chunks
+} from '../../parser/post/postMapper';
+import config, { tmp } from '../../types/_config';
 import './generate-categories';
+import { renderer } from './generate-posts';
+import './generate-tags';
 
 /**
  * generate index
@@ -26,7 +29,9 @@ import './generate-categories';
  * generateIndex('homepage'); // only generate homepage
  * generateIndex(4); // only generate page 4
  */
-export async function generateIndex(labelname: 'homepage' | 'all' | number = 'all') {
+export async function generateIndex(
+  labelname: 'homepage' | 'all' | number = 'all'
+) {
   const postsChunks = post_chunks();
   const chunks = postsChunks.chunk;
   // setup variable for infinite scroll
@@ -40,14 +45,22 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
     let logname = color['Desert Sand']('[generate][index]');
     let saveTo = join(cwd(), config.public_dir, 'index.html');
     if (!isHome) {
-      saveTo = join(cwd(), config.public_dir, config.archive_dir, 'page/' + current_page, 'index.html');
+      saveTo = join(
+        cwd(),
+        config.public_dir,
+        config.archive_dir,
+        'page/' + current_page,
+        'index.html'
+      );
       logname = logname + color.lightpink('[archive]');
     } else {
       logname = logname + color['Granny Smith Apple']('[homepage]');
     }
 
     const mapped = array_wrap(chunks[current_page]);
-    const latestUpdated = getLatestDateArray(mapped.map((post) => post.updated.toString()));
+    const latestUpdated = getLatestDateArray(
+      mapped.map((post) => post.updated.toString())
+    );
     const opt: archiveMap = {
       metadata: {
         title: isHome ? 'Homepage' : 'Page ' + current_page,
@@ -57,7 +70,7 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
         category: [],
         tags: [],
         type: 'archive',
-        url: config.url,
+        url: config.url
       },
       /** setup sitedata array as json */
       sitedata: JSON.stringify(sitedata),
@@ -65,7 +78,7 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
       content: '',
       fileTree: {
         source: saveTo,
-        public: join(tmp(), 'index.html'),
+        public: join(tmp(), 'index.html')
       },
       posts: mapped,
       total: chunks.length,
@@ -76,21 +89,24 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
         if (Array.isArray(chunks[prev])) return prev;
       })(),
       page_prev_url: (() => {
-        const prev = '/' + join(config.archive_dir, 'page', (current_page - 1).toString());
+        const prev =
+          '/' + join(config.archive_dir, 'page', (current_page - 1).toString());
         if (current_page - 1 === 0) return '/';
         return prev;
       })(),
       page_current_url: (() => {
-        const current = '/' + join(config.archive_dir, 'page', current_page.toString());
+        const current =
+          '/' + join(config.archive_dir, 'page', current_page.toString());
         if (current_page - 1 === 0) return '/';
         return current;
       })(),
-      page_next_url: '/' + join(config.archive_dir, 'page', (current_page + 1).toString()),
+      page_next_url:
+        '/' + join(config.archive_dir, 'page', (current_page + 1).toString()),
       page_next: (() => {
         const next = current_page + 1;
         // returns null if the next array is not an array type
         if (Array.isArray(chunks[next])) return next;
-      })(),
+      })()
     };
     const mod = modifyPost(opt);
     const rendered = await renderer(mod);
@@ -118,5 +134,9 @@ export async function generateIndex(labelname: 'homepage' | 'all' | number = 'al
 }
 
 gulp.task('generate:index', () => generateIndex());
-gulp.task('generate:label', gulp.series('generate:tags', 'generate:categories'));
+gulp.task(
+  'generate:label',
+  gulp.series('generate:tags', 'generate:categories')
+);
+gulp.task('generate:labels', gulp.series('generate:label'));
 gulp.task('generate:archive', gulp.series('generate:index', 'generate:label'));
