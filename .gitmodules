@@ -1,7 +1,3 @@
-[submodule "src-posts"]
-	path = src-posts
-	url = https://github.com/dimaslanjaka/dimaslanjaka.git
-	branch = posts
 [submodule "packages/persistent-cache"]
 	path = packages/persistent-cache
 	url = https://github.com/dimaslanjaka/persistent-cache.git
