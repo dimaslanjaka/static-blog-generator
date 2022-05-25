@@ -1,6 +1,9 @@
 # SBG (Static Blog Generator) Project
 Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
 
+## !Due to developing major changes were had some troubles
+please using stable version from https://github.com/dimaslanjaka/static-blog-generator/tree/stable
+
 <details>
   <summary>Walkthrough</summary>
 
@@ -34,7 +37,10 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - - android termux need c++
 
 ## Project Installation
-Always use `npm` to install. `yarn` and `pnpm` not always compatible.
+~Always use `npm` to install. `yarn` and `pnpm` not always compatible.~
+
+were keeping the `package-lock.json` to easily `yarn` and `pnpm` to fetch the cache, you can install this project with `yarn` or `pnpm` (not recommended).
+
 ```bash
 # install global packages
 npm i -g npm gulp-cli typescript ts-node

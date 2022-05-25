@@ -2,11 +2,11 @@
   "extends": "./tsconfig.base.json",
   "exclude": [
     "**/node_modules/**",
-    "**/tests/**"
+    "**/tests/**",
+    "**/*.test.*"
   ],
   "include": [
-    "./src/**/*",
-    "packages/hexo-post-parser/src/import-post.ts"
+    "./gulpfile.ts"
   ],
   "ts-node": {
     "compilerOptions": {
