@@ -52,14 +52,16 @@ const default_options = {
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
  * * return {@link null} == failed
- * @param target file path or string markdown contents
+ * @param target file path or string markdown contents (used for cache key)
+ * @param options options parser
+ * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
 function parsePost(target, options = {}) {
     if (!target)
         return null;
     options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
     const config = options.config;
-    const cacheKey = (0, md5_file_1.md5FileSync)(target);
+    const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);
     if (options.cache) {
         const getCache = _cache.getSync(cacheKey);
         if (getCache)
