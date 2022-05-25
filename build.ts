@@ -10,7 +10,7 @@ if (!process.env['GITHUB_WORKFLOW']) {
     .update(new Date().toDateString())
     .digest('hex');
   writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
-
+  // commit uuid
   git(null, 'add', 'package.json').then(() => {
     git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
       build();
@@ -21,6 +21,9 @@ if (!process.env['GITHUB_WORKFLOW']) {
   build();
 }
 
+/**
+ * main build function
+ */
 function build() {
   fse.emptyDirSync(join(__dirname, 'dist'));
   const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
