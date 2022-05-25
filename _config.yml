@@ -5,6 +5,9 @@
 ## All the variables listed here will be used in theme/layout/layout.ejs and some will be used in `internal functions` for program reference
 ## Empty value = null
 
+# debug
+verbose: false
+
 # Site title
 title: "Website Manajemen Indonesia"
 # site description
