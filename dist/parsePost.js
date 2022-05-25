@@ -207,6 +207,10 @@ function parsePost(target, options = {}) {
         }
         // @todo fix description
         if (options.fix) {
+            // fix empty title
+            if (typeof meta.title !== 'string' || meta.title.trim().length === 0) {
+                meta.title = (0, upath_1.basename)(options.sourceFile);
+            }
             // fix special char in metadata
             meta.title = (0, utils_2.cleanString)(meta.title);
             meta.subtitle = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.subtitle));
