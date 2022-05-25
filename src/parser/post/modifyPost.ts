@@ -2,6 +2,7 @@ import { parse as parseHTML } from 'node-html-parser';
 import { isValidHttpUrl } from '../../gulp/utils';
 import { array_move } from '../../node/array-utils';
 import { pcache } from '../../node/cache';
+import { json_encode } from '../../node/JSON';
 import { md5 } from '../../node/md5-file';
 import { countWords } from '../../node/string-utils';
 import config from '../../types/_config';
@@ -206,7 +207,7 @@ export function modifyPost<T extends modifyPostType>(parse: T): T {
     });
   });*/
 
-  modCache.putSync(cacheKey, parse);
+  modCache.putSync(cacheKey, json_encode(parse));
 
   return parse;
 }
