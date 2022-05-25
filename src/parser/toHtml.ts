@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { postMap } from 'hexo-post-parser';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
@@ -10,9 +11,12 @@ import MarkdownItSup from 'markdown-it-sup';
 import showdown from 'showdown';
 import { join, write } from '../node/filemanager';
 import slugify from '../node/slugify/index';
-import { postMap } from './transformPosts/parsePost';
 
-export const converterOpt = { strikethrough: true, tables: true, tablesHeaderId: true };
+export const converterOpt = {
+  strikethrough: true,
+  tables: true,
+  tablesHeaderId: true
+};
 
 /**
  * Transform markdown string to html string
@@ -31,7 +35,7 @@ const md = new MarkdownIt({
   // For the full list of replacements, see https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js
   typographer: true,
   breaks: false,
-  langPrefix: 'language-', // CSS language prefix for fenced blocks. Can be useful for external highlighters.
+  langPrefix: 'language-' // CSS language prefix for fenced blocks. Can be useful for external highlighters.
 });
 //md.linkify.set({ fuzzyEmail: false }); // disables converting email to link
 md.use(MarkdownItSup)
@@ -40,14 +44,16 @@ md.use(MarkdownItSup)
   .use(MarkdownItAbbr)
   .use(MarkdownItFootnote)
   .use(MarkdownItAttrs, {
-    allowedAttributes: ['id', 'class', /^regex.*$/],
+    allowedAttributes: ['id', 'class', /^regex.*$/]
   })
   .use(MarkdownItAnchor, {
     permalink: MarkdownItAnchor.permalink.headerLink(),
-    slugify: (s) => slugify(s),
+    slugify: (s) => slugify(s)
   });
 md.renderer.rules.footnote_block_open = () =>
-  '<h4 class="mt-3">Footnotes</h4>\n' + '<section class="footnotes">\n' + '<ol class="footnotes-list">\n';
+  '<h4 class="mt-3">Footnotes</h4>\n' +
+  '<section class="footnotes">\n' +
+  '<ol class="footnotes-list">\n';
 
 /**
  * Render markdown to html using `markdown-it`, `markdown-it-attrs`, `markdown-it-anchors`, `markdown-it-sup`, `markdown-it-sub`, `markdown-it-mark`, `markdown-it-footnote`, `markdown-it-abbr`
@@ -74,11 +80,12 @@ export function renderMarkdownIt(str: string) {
  * @param verbose dump
  * @returns
  */
-export function renderBodyMarkdown(parse: postMap, verbose = false) {
+export function renderBodyMarkdown(parse: Partial<postMap>, verbose = false) {
   if (!parse) throw new Error('cannot render markdown of undefined');
 
-  let body: string = parse.body || parse.content;
-  if (typeof body != 'string') throw new Error('cannot render undefined markdown body');
+  let body: string = parse.body; // || parse.content;
+  if (typeof body != 'string')
+    throw new Error('cannot render undefined markdown body');
 
   // extract code block first
   const re_code_block = /```[\s\S]*?```/gm;
@@ -95,14 +102,14 @@ export function renderBodyMarkdown(parse: postMap, verbose = false) {
   // extract style, script
   const re = {
     script: /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gm,
-    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gm,
+    style: /<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gm
   };
   const extracted: {
     script: string[];
     style: string[];
   } = {
     script: [],
-    style: [],
+    style: []
   };
   for (const key in re) {
     if (Object.prototype.hasOwnProperty.call(re, key)) {
