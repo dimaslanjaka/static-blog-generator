@@ -26,6 +26,7 @@
     "build:src": "fse remove build && tsc -p tsconfig.build.json",
     "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn --check-files && yarn build",
     "build:safelinkify": "cd packages/safelink && yarn --check-files && yarn build",
+    "build:reinstall": "yarn ci",
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
     "php": "php -S localhost:4002 -t docs",
     "eslint": "run-s eslint:**",
@@ -38,12 +39,9 @@
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --parser html -w ./themes/**/*.ejs",
     "ci": "run-s ci:**",
-    "ci:self": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache && yarn install --check-cache --check-files",
-    "ci:submodule": "git submodule foreach yarn ci",
-    "rebuild": "yarn rebuild --ignore-engines --ignore-platform",
-    "reinstall": "run-s reinstall:**",
-    "reinstall:npm": "npm install --ignore-engines --ignore-platform",
-    "reinstall:yarn": "fse remove yarn.lock && yarn install --ignore-engines --ignore-platform"
+    "ci:self": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache && yarn install --check-cache --check-files --ignore-engines --ignore-platform",
+    "ci:submodule": "git submodule foreach yarn install --check-files",
+    "rebuild": "yarn rebuild --ignore-engines --ignore-platform"
   },
   "repository": {
     "type": "git",
