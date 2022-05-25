@@ -1,4 +1,5 @@
-import moment from 'moment-timezone';
+import { default as momentInstance } from 'moment-timezone';
+export declare function moment(date?: any, format?: string): momentInstance.Moment;
 /**
  * HexoJS date formatter
  * * Playground Test {@link https://codepen.io/dimaslanjaka/pen/LYegjaV}

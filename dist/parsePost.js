@@ -4,7 +4,6 @@ exports.parsePost = void 0;
 const tslib_1 = require("tslib");
 const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
-const moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const persistent_cache_1 = tslib_1.__importDefault(require("../packages/persistent-cache"));
@@ -22,18 +21,6 @@ const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
 const _config_1 = tslib_1.__importDefault(require("./types/_config"));
-/**
- * Localized Moment
- * @param date
- * @returns
- */
-function moment(date = new Date()) {
-    let parse = (0, moment_timezone_1.default)(date);
-    if (_config_1.default.timezone) {
-        parse = parse.tz(_config_1.default.timezone);
-    }
-    return parse;
-}
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
     name: 'parsePost',
@@ -87,7 +74,14 @@ function parsePost(target, options = {}) {
         target = String((0, fs_1.readFileSync)(target, 'utf-8'));
     }
     const mapper = (m) => {
-        let meta = yaml_1.default.parse(m[1]);
+        let meta = {};
+        try {
+            meta = yaml_1.default.parse(m[1]);
+        }
+        catch (error) {
+            //if (error instanceof Error) console.log(error.message, 'cannot parse metadata');
+            return null;
+        }
         if (typeof meta !== 'object') {
             //writeFileSync(join(cwd(), 'tmp/dump.json'), JSON.stringify(m, null, 2));
             //console.log('meta required object');
@@ -120,10 +114,10 @@ function parsePost(target, options = {}) {
         if (options.fix) {
             // @todo fix date
             if (!meta.date) {
-                meta.date = moment(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
+                meta.date = (0, dateMapper_1.moment)(new Date()).format('YYYY-MM-DDTHH:mm:ssZ');
             }
             if (meta.modified && !meta.updated) {
-                meta.updated = moment(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
+                meta.updated = (0, dateMapper_1.moment)(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
             }
             if (isFile) {
                 const sourceFile = (0, upath_1.toUnix)(originalArg);
@@ -131,7 +125,7 @@ function parsePost(target, options = {}) {
                     const stats = (0, fs_1.statSync)(sourceFile);
                     if (!meta.updated) {
                         const mtime = stats.mtime;
-                        meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+                        meta.updated = (0, dateMapper_1.moment)(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
                     }
                 }
             }
@@ -150,7 +144,7 @@ function parsePost(target, options = {}) {
             meta.tags.push(config.default_tag);
         // @todo set default date post
         if (!meta.date)
-            meta.date = moment().format();
+            meta.date = (0, dateMapper_1.moment)().format();
         if (!meta.updated) {
             if (meta.modified) {
                 // fix for hexo-blogger-xml
@@ -326,8 +320,12 @@ function parsePost(target, options = {}) {
                 const pattern = typeof options.formatDate === 'object' && options.formatDate.pattern
                     ? options.formatDate.pattern
                     : 'YYYY-MM-DDTHH:mm:ssZ';
-                meta.date = new dateMapper_1.dateMapper(String(meta.date)).format(pattern);
-                meta.updated = new dateMapper_1.dateMapper(String(meta.updated)).format(pattern);
+                if (meta.date) {
+                    meta.date = new dateMapper_1.dateMapper(String(meta.date)).format(pattern);
+                }
+                if (meta.updated) {
+                    meta.updated = new dateMapper_1.dateMapper(String(meta.updated)).format(pattern);
+                }
             }
             // @todo process shortcodes
             if (options.shortcodes) {
@@ -382,14 +380,14 @@ function parsePost(target, options = {}) {
     const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
     const testPost = Array.from(target.matchAll(regexPost)).map(mapper)[0];
     if (typeof testPost === 'object' && testPost !== null) {
-        //console.log('test 1 passed');
+        console.log('test 1 passed');
         return testPost;
     }
     // test non-opening metadata tag
     const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
     const testPost2 = Array.from(target.matchAll(regexPostNoOpening)).map(mapper)[0];
     if (typeof testPost2 === 'object' && testPost2 !== null) {
-        //console.log('test 2 passed');
+        console.log('test 2 passed');
         return testPost2;
     }
     const regexPage = /^---([\s\S]*?)---[\n\s\S]([\n\s\S]*)/gm;
