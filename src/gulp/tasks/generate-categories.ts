@@ -16,10 +16,7 @@ import config, { tmp } from '../../types/_config';
 import { renderer } from './generate-posts';
 
 const cacheCats = new CacheFile('postCats');
-export default async function generateCategories(
-  labelname?: string,
-  pagenum?: number
-) {
+export async function generateCategories(labelname?: string, pagenum?: number) {
   const cat_posts: { [key: string]: postMap[] } = cacheCats.getAll();
   for (const catname in cat_posts) {
     if (Object.prototype.hasOwnProperty.call(cat_posts, catname)) {
@@ -89,5 +86,6 @@ export default async function generateCategories(
     }
   }
 }
+export default generateCategories;
 
 gulp.task('generate:categories', () => generateCategories());
