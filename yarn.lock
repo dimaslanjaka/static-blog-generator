@@ -5515,7 +5515,7 @@ he@1.2.0, he@^1.2.0:
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
 "hexo-post-parser@file:./packages/hexo-post-parser":
-  version "1.0.6"
+  version "1.0.10"
   dependencies:
     chalk "^4.1.0"
     deepmerge-ts "^4.0.3"
@@ -9588,13 +9588,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-f79d2408-f78e-455c-b43c-da5c02e88635-1653443544536/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-4d1eeb87-cf24-4185-ad68-272945d84ad8-1653477103809/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-b50a6bdf-8cef-4557-8d0d-93567d9f0691-1653443544533/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-b50a6bdf-8cef-4557-8d0d-93567d9f0691-1653443544533/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-70de5c33-d7b4-45e3-a23c-6665dc04bff0-1653477103805/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-70de5c33-d7b4-45e3-a23c-6665dc04bff0-1653477103805/node_modules/sbg-themes/iridium"
 
 scss-tokenizer@^0.3.0:
   version "0.3.0"

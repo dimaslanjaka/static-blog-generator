@@ -109,7 +109,7 @@ export async function generateIndex(
       })()
     };
     const mod = modifyPost(opt);
-    const rendered = await renderer(mod);
+    const rendered = await renderer(<any>mod);
     await write(saveTo, rendered);
     console.log(logname, saveTo);
     // immediately returns

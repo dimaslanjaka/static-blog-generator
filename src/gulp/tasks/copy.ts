@@ -7,8 +7,7 @@ import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
-import { parsePost } from '../../parser/post/parsePost';
-import { buildPost } from '../../parser/transformPosts';
+import { buildPost, parsePost } from '../../parser/post/parsePost';
 import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import { determineDirname } from '../utils';
 import './copy/assets';
@@ -40,9 +39,13 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
         }
         const log = [logname, String(path)];
         const parse = parsePost(String(path), String(file.contents));
+        if (!parse) {
+          console.log(`cannot parse ${String(path)}`);
+          return next('null ' + String(path));
+        }
 
         //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
-        const build = buildPost(parse);
+        const build = buildPost(<any>parse);
         //write(tmp(parse.metadata.uuid, 'article.md'), build);
         log.push(color.green('success'));
         file.contents = Buffer.from(build);

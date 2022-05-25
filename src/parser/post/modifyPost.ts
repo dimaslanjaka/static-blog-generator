@@ -53,7 +53,7 @@ export function modifyPost<T extends modifyPostType>(parse: T): T {
     parse.metadata.tags = [config.default_tag];
 
   // @todo add tags from title
-  if (config.title_map) {
+  if (config.title_map && typeof parse.metadata.title == 'string') {
     const title = parse.metadata.title.toLowerCase();
     for (const key in config.title_map) {
       if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
@@ -161,7 +161,7 @@ export function modifyPost<T extends modifyPostType>(parse: T): T {
   // render post for some properties
   let html: ReturnType<typeof parseHTML>;
   try {
-    const renderbody = renderBodyMarkdown(parse);
+    const renderbody = renderBodyMarkdown(<any>parse);
     html = parseHTML(renderbody);
   } catch (error) {
     console.log('[fail]', 'renderBodyMarkdown', error);

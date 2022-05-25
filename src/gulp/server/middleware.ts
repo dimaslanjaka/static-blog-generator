@@ -241,7 +241,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               //const modify = modifyPost(<any>parsed);
               //console.log(modify.metadata.type);
               // render markdown post
-              return renderer(parsed).then((rendered) => {
+              return renderer(<any>parsed).then((rendered) => {
                 rendered = fixHtmlPost(rendered);
                 write(dest, rendered);
                 const previewed = showPreview(rendered);
