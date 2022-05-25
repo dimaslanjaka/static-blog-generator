@@ -61,7 +61,11 @@ export function countWords(str: string) {
  * @param array
  * @param replacement
  */
-export function replaceArr(str: string, array: string[], replacement: string) {
+export function replaceArr(
+  str: string,
+  array: (string | RegExp)[],
+  replacement: string
+) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   let ori = str;
   array.map((str) => {
