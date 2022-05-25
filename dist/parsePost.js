@@ -380,14 +380,14 @@ function parsePost(target, options = {}) {
     const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
     const testPost = Array.from(target.matchAll(regexPost)).map(mapper)[0];
     if (typeof testPost === 'object' && testPost !== null) {
-        console.log('test 1 passed');
+        //console.log('test 1 passed');
         return testPost;
     }
     // test non-opening metadata tag
     const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
     const testPost2 = Array.from(target.matchAll(regexPostNoOpening)).map(mapper)[0];
     if (typeof testPost2 === 'object' && testPost2 !== null) {
-        console.log('test 2 passed');
+        //console.log('test 2 passed');
         return testPost2;
     }
     const regexPage = /^---([\s\S]*?)---[\n\s\S]([\n\s\S]*)/gm;
