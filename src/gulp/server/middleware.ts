@@ -289,7 +289,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   {
     route: '/gen',
     handle: async (_req, res, _next) => {
-      const _gen = (await generateDummyPosts()).map((s) =>
+      console.log(_req['_parsedUrl']);
+      const _gen = (await generateDummyPosts(5)).map((s) =>
         s.replace(post_source_dir, '')
       );
       //return res.end(gen);

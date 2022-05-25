@@ -12,9 +12,9 @@ import config, { root } from '../types/_config';
 const destFolder = join(root, config.source_dir, '_posts');
 if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
 export const generateDummyPosts = memoizee(_generateDummyPosts);
-async function _generateDummyPosts() {
+async function _generateDummyPosts(n = 5) {
   const result: string[] = [];
-  for (let x = 0; x < 5; x++) {
+  for (let x = 0; x < n; x++) {
     const gen = dummyPost(x);
     const file = await write(
       join(destFolder, gen.metadata.permalink),
