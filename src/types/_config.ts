@@ -107,7 +107,7 @@ export const post_generated_dir = resolve(join(root, config.public_dir));
  */
 export const post_source_dir = resolve(join(root, 'src-posts'));
 
-const pc = pcache('mem');
+const pc = pcache('tmp');
 /**
  * path to temp folder
  * * cacheable
