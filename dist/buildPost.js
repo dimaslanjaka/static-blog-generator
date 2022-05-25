@@ -10,7 +10,9 @@ const parsePost_1 = require("./parsePost");
  * @returns
  */
 function buildPost(parsed) {
-    return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
+    if (parsed.metadata)
+        return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
+    return parsed.body;
 }
 exports.buildPost = buildPost;
 function _dummy() {
