@@ -20,9 +20,9 @@ import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate-archives';
-import generateCategories from '../tasks/generate-categories';
+import { generateCategories } from '../tasks/generate-categories';
 import { renderer } from '../tasks/generate-posts';
-import generateTags from '../tasks/generate-tags';
+import { generateTags } from '../tasks/generate-tags';
 import './gen-middleware';
 
 let gulpIndicator = false;
@@ -82,7 +82,7 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
                 !existsSync(join(cwd(), config.public_dir, 'node_modules')) &&
                 existsSync(join(cwd(), config.public_dir, 'package.json'))
               ) {
-                spawn('npm', ['install'], {
+                spawn('yarn', ['install', '--check-files'], {
                   cwd: join(cwd(), config.public_dir),
                   shell: true,
                   stdio: 'inherit'
