@@ -20,7 +20,7 @@ jobs:
         token: "${{ secrets.GITHUB_TOKEN }}"
     - uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '16'
         cache: 'yarn'
 
     - name: Install dependencies
@@ -28,10 +28,6 @@ jobs:
 
     - name: Build
       run: yarn build
-
-    #- run: rm -rf node_modules tmp
-    #- run: cp -rfi . modified
-    #- run: rm -rf modified/yarn.lock
 
     - name: Re-deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.3.0
