@@ -7,6 +7,7 @@ import {
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
 import CachePost from '../../node/cache-post';
+import { md5 } from '../../node/md5-file';
 import config, { cwd } from '../../types/_config';
 import modifyPost from './modifyPost';
 
@@ -22,10 +23,11 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @returns
  */
 const parsePost = (path: string, content?: string): Nullable<postMap> => {
-  let cacheKey =
-    typeof path == 'string' ? toUnix(path).replace(cwd(), '') : null;
-  if (typeof cacheKey == 'string' && cacheKey.endsWith('/'))
-    cacheKey += 'index';
+  let cacheKey = md5(path);
+  if (typeof path == 'string' && !/\n/.test(path)) {
+    cacheKey = toUnix(path).replace(cwd(), '');
+    if (cacheKey.endsWith('/')) cacheKey += 'index';
+  }
   // @todo return from cache
   if (useCache && cacheKey) {
     const get =
@@ -78,7 +80,14 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
     cachePost.set(path, parse);
   }
 
-  parseCache.putSync(cacheKey, parse);
+  try {
+    parseCache.putSync(cacheKey, parse);
+  } catch (error) {
+    if (error instanceof Error) {
+      //console.log(error.message);
+      console.log('cannot add cache key', cacheKey);
+    }
+  }
 
   return parse;
 };
