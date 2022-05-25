@@ -22,8 +22,10 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @returns
  */
 const parsePost = (path: string, content?: string): Nullable<postMap> => {
-  const cacheKey =
+  let cacheKey =
     typeof path == 'string' ? toUnix(path).replace(cwd(), '') : null;
+  if (typeof cacheKey == 'string' && cacheKey.endsWith('/'))
+    cacheKey += 'index';
   // @todo return from cache
   if (useCache && cacheKey) {
     const get =
