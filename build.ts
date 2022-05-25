@@ -4,6 +4,8 @@ import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
 
+console.log(process.env);
+
 pkg.uuid = crypto
   .createHash('md5')
   .update(new Date().toDateString())
