@@ -27,8 +27,9 @@ export declare type postMeta = DynamicObject & {
     cover?: string;
     thumbnail?: string;
     /**
-     * Post permalink mover
-     * * canonical should be redirected to this url
+     * Post moved indicator
+     * * canonical should be replaced to this url
+     * * indicate this post was moved to another url
      */
     redirect?: string;
     /**
