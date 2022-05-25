@@ -1,3 +1,3 @@
 import { copyPosts } from './copy';
 
-copyPosts(null, 'Quiz.');
+copyPosts(null, '1');
