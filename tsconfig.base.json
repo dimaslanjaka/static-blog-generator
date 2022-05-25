@@ -30,7 +30,7 @@
     "skipLibCheck": true,
     "noLib": false,
     "esModuleInterop": true,
-    "importHelpers": true,
+    //"importHelpers": true,
     "lib": [
       "ES2020",
       "DOM",
