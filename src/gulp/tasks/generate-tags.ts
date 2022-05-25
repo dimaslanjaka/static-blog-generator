@@ -16,8 +16,12 @@ export default async function generateTags(
   labelname?: string | null,
   pagenum?: number
 ): Promise<Nullable<string>> {
-  const tag_posts = cacheTags.valuesSync();
-  console.log(tag_posts);
+  const tags = cacheTags.keysSync();
+  for (let indexTag = 0; indexTag < tags.length; indexTag++) {
+    const tagName = tags[indexTag];
+    const tag_posts = cacheTags.getSync(tagName);
+    console.log(tag_posts);
+  }
   /*const tag_posts: { [key: string]: postMap[] } = cacheTags.getAll();
   for (const tagname in tag_posts) {
     if (Object.prototype.hasOwnProperty.call(tag_posts, tagname)) {
@@ -92,33 +96,34 @@ export default async function generateTags(
   return null;
 }
 
-// iterate posts to get tags
-const posts = new CachePost();
-const postTags: { [key: string]: postMap[] } = {};
-const allPosts = posts.getAll();
-for (let indexPost = 0; indexPost < allPosts.length; indexPost++) {
-  const post = allPosts[indexPost];
-  if (post.metadata.tags && !post.metadata.redirect) {
-    if (!Array.isArray(post.metadata.tags)) {
-      post.metadata.tags = [post.metadata.tags];
-    }
-
-    for (let indexTag = 0; indexTag < post.metadata.tags.length; indexTag++) {
-      const tagName = post.metadata.tags[indexTag];
-      if (!postTags[tagName]) postTags[tagName] = [];
-      if (
-        !postTags[tagName].find(
-          ({ metadata }) => metadata.title === post.metadata.title
-        )
-      ) {
-        postTags[tagName].push(<any>post);
+scheduler.add('add-tags', () => {
+  // iterate posts to get tags
+  const posts = new CachePost();
+  const postTags: { [key: string]: postMap[] } = {};
+  const allPosts = posts.getAll();
+  for (let indexPost = 0; indexPost < allPosts.length; indexPost++) {
+    const post = allPosts[indexPost];
+    if (post.metadata.tags && !post.metadata.redirect) {
+      if (!Array.isArray(post.metadata.tags)) {
+        post.metadata.tags = [post.metadata.tags];
       }
-      scheduler.add('add-tag-' + tagName, () => {
-        cacheTags.putSync(tagName, postTags[tagName]);
-      });
+
+      for (let indexTag = 0; indexTag < post.metadata.tags.length; indexTag++) {
+        const tagName = post.metadata.tags[indexTag];
+        if (!postTags[tagName]) postTags[tagName] = [];
+        if (
+          !postTags[tagName].find(
+            ({ metadata }) => metadata.title === post.metadata.title
+          )
+        ) {
+          postTags[tagName].push(<any>post);
+        }
+        if (postTags[tagName].length > 0)
+          cacheTags.putSync(tagName, postTags[tagName]);
+      }
     }
+    //if (indexPost == allPosts.length - 1)
   }
-  //if (indexPost == allPosts.length - 1)
-}
+});
 
 gulp.task('generate:tags', () => generateTags());
