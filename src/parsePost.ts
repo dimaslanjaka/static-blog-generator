@@ -1,6 +1,6 @@
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
-import { dirname, join, toUnix } from 'upath';
+import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import cache from '../packages/persistent-cache';
 import { dateMapper, moment } from './dateMapper';
@@ -348,6 +348,10 @@ export function parsePost(
 
     // @todo fix description
     if (options.fix) {
+      // fix empty title
+      if (typeof meta.title !== 'string' || meta.title.trim().length === 0) {
+        meta.title = basename(options.sourceFile);
+      }
       // fix special char in metadata
       meta.title = cleanString(meta.title);
       meta.subtitle = cleanWhiteSpace(cleanString(meta.subtitle));
