@@ -7,6 +7,7 @@ import { existsSync, readFileSync, writeFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
 import { join, toUnix } from 'upath';
+import { generateDummyPosts } from '../../dummy/auto-post';
 import ejs_object from '../../ejs';
 import { array_unique, removeEmpties } from '../../node/array-utils';
 import color from '../../node/color';
@@ -279,6 +280,14 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         return res.end(showPreview(readFileSync(sourceIndex)));
       }
       next();
+    }
+  },
+  // generate dummy posts
+  {
+    route: '/gen',
+    handle: (_req, res, _next) => {
+      generateDummyPosts();
+      if (!res.headersSent) return res.end('post generating on backend');
     }
   },
   {
