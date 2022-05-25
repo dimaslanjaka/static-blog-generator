@@ -5,6 +5,7 @@ import { Ngrok } from 'ngrok';
 import { join, resolve, toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
+import { pcache } from '../node/cache';
 import { read, write } from '../node/filemanager';
 import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
@@ -28,7 +29,7 @@ export { root };
 const readConfig = readFileSync(file, 'utf-8');
 /** default project config */
 const def_config = {
-  verbose: argv['verbose'], // if set = true, otherwise undefined
+  verbose: false, // if set = true, otherwise undefined
   exclude: [],
   include: [],
   skip_render: [],
@@ -87,6 +88,8 @@ const config: ProjectConfig = project_config_merge;
 
 // @todo [config] bypass nocache if --nocache argument is set by cli
 if (argv['nocache']) config.generator.cache = false;
+// @todo [config] bypass verbose if --verbose argument is set by cli
+if (argv['verbose']) config.verbose = true;
 
 config.url = config.url.replace(/\/+$/, '');
 
@@ -103,14 +106,23 @@ export const post_generated_dir = resolve(join(root, config.public_dir));
  * `src-posts/` directory
  */
 export const post_source_dir = resolve(join(root, 'src-posts'));
+
+const pc = pcache('mem');
 /**
  * path to temp folder
+ * * cacheable
  * @param path file path inside temp folder
  * @returns
  */
-export const tmp = memoizee((...path: string[]) =>
-  join(root, 'tmp', path.join('/'))
-);
+export const tmp = (...path: string[]) => {
+  const key = String(path);
+  const get = pc.getSync<string>(key);
+  if (get) return get;
+  const result = join(root, 'tmp', path.filter((s) => s).join('/'));
+  pc.putSync(key, result);
+  return result;
+};
+
 if (!existsSync(tmp())) mkdirSync(tmp());
 
 /** THEME CONFIGS */
