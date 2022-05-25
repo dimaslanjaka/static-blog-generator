@@ -1,5 +1,5 @@
 import urlParse from 'url-parse';
-import { DeepPartial } from '../markdown/transformPosts/postMapper';
+import { DeepPartial } from '../parser/post/postMapper';
 
 /** URL Parsed Result */
 export interface URLParsed extends DeepPartial<ReturnType<typeof urlParse>> {
@@ -44,7 +44,7 @@ export default function urlParser(src: string): URLParsed | null {
     protohost: parser.protocol + '//' + parser.host,
     search: parser.query,
     searchObject: searchObject,
-    filename: parser.href.split('/').removeEmpties().unique().last(1)[0],
+    filename: parser.href.split('/').removeEmpties().unique().last(1)[0]
   };
   /*for (const key in parser) {
     if (Object.prototype.hasOwnProperty.call(parser, key)) {

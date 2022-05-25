@@ -1,5 +1,18 @@
+import Bluebird from 'bluebird';
+import chalk from 'chalk';
 import gulp from 'gulp';
+import { buildPost, postMap } from 'hexo-post-parser';
 import { toUnix } from 'upath';
+import yargs from 'yargs';
+import ejs_object from '../../ejs';
+import CacheFile from '../../node/cache';
+import {
+  getAllPosts,
+  getLatestPosts,
+  getRandomPosts
+} from '../../node/cache-post';
+import Sitemap from '../../node/cache-sitemap';
+import color from '../../node/color';
 import {
   cwd,
   dirname,
@@ -10,28 +23,20 @@ import {
   readFileSync,
   removeMultiSlashes,
   resolve,
-  statSync,
-  write,
+  write
 } from '../../node/filemanager';
-import config, { root, theme_config, theme_dir, tmp } from '../../types/_config';
-import ejs_object from '../../ejs';
-import { buildPost, parsePost, validateParsed } from '../../markdown/transformPosts';
-import chalk from 'chalk';
-import { renderBodyMarkdown } from '../../markdown/toHtml';
-import CacheFile from '../../node/cache';
-import logger from '../../node/logger';
-import { copyFileSync } from 'fs';
+import { replaceArr } from '../../node/string-utils';
+import { modifyPost } from '../../parser/post/modifyPost';
+import parsePost from '../../parser/post/parsePost';
+import { renderBodyMarkdown } from '../../parser/toHtml';
+import { validateParsed } from '../../parser/transformPosts';
 import { DynamicObject } from '../../types';
-import 'js-prototypes';
-import yargs from 'yargs';
-import Bluebird from 'bluebird';
-import Sitemap from '../../node/cache-sitemap';
-import { getAllPosts, getLatestPosts, getRandomPosts } from '../../node/cache-post';
-import modifyPost from '../../markdown/transformPosts/modifyPost';
-import color from '../../node/color';
-import through2 from 'through2';
-import sass from 'node-sass';
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import config, {
+  root,
+  theme_config,
+  theme_dir,
+  tmp
+} from '../../types/_config';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -52,72 +57,17 @@ if (!existsSync(generated_dir)) mkdirSync(generated_dir);
 const layout = toUnix(join(theme_dir, 'layout/layout.ejs'));
 const logname = chalk.hex('#fcba03')('[render]');
 const page_url = new URL(config.url);
-const global_exclude = ['**/_drafts/**', '**/_data/**'];
-
-const renderAssets = async () => {
-  logger.log(logname + chalk.magentaBright('[assets]'), 'copy ->', generated_dir);
-  const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
-  const ignore = ['**/*.md', '**/.git*', ...exclude, ...global_exclude];
-  const glob = await globSrc('**/*.*', { cwd: source_dir, ignore: ignore, dot: true, stat: true }).then((s) => {
-    if (config.verbose) {
-      logger.log(logname + '[total]', s.length);
-      logger.log(ignore);
-    }
-    return s;
-  });
-  for (let i = 0; i < glob.length; i++) {
-    const file = glob[i];
-    const src = join(source_dir, file);
-    const stat = statSync(src);
-    const dest = join(generated_dir, file.replace('_posts/', '/'));
-    if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
-    if (!stat.isDirectory() && existsSync(src)) {
-      copyFileSync(src, dest);
-      if (config.verbose) logger.log(logname + chalk.greenBright(`[${i}]`), src, '->', dest);
-    }
-  }
-};
-
-gulp.task('generate:assets', renderAssets);
-
-const renderTemplate = () => {
-  const src = join(theme_dir, 'source/**/**');
-  logger.log(logname + chalk.magentaBright('[template]'), 'copy', src, '->', generated_dir);
-  return gulp
-    .src([src, '!**/.git*'], { cwd: root })
-    .pipe(
-      through2.obj((file, enc, next) => {
-        if (file.isNull()) {
-          return next(null, file);
-        }
-        const path = file.path;
-        const ext = file.extname;
-
-        if (ext == '.scss') {
-          file.extname = '.css';
-          const result = sass.renderSync({
-            data: String(file.contents),
-          });
-          file.contents = result.css;
-          console.log('[sass]', 'compiled', path);
-        }
-        next(null, file);
-      })
-    )
-    .pipe(gulp.dest(generated_dir));
-  //.on('end', () => logger.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
-};
-
-gulp.task('generate:template', renderTemplate);
 
 const renderCache = new CacheFile('renderArticle');
 const sitemap = new Sitemap();
 
-export const renderArticle = function () {
+export const renderPost = function () {
   const log = logname + chalk.blue('[posts]');
   return new Bluebird((resolve) => {
-    logger.log(log, 'generating to', generated_dir);
-    const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
+    console.log(log, 'generating to', generated_dir);
+    const exclude = config.exclude.map((ePattern) =>
+      ePattern.replace(/^!+/, '')
+    );
     const ignore = ['_drafts/', '_data/', ...exclude];
     globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
       // validate excluded
@@ -136,24 +86,37 @@ export const renderArticle = function () {
           path: join(source_dir, file),
           /** Permalink path */
           permalink: removeMultiSlashes(
-            file.replaceArr([cwd(), 'source/_posts/', 'src-posts/', '_posts/'], '/')
+            replaceArr(
+              file,
+              [cwd(), 'source/_posts/', 'src-posts/', '_posts/'],
+              '/'
+            )
           ).replace(/.md$/, '.html'),
           /** Is Cached */
-          cached: false,
+          cached: false
         };
         // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && !nocache;
         let parsed = parsePost(result.path);
         // try non-cache method
-        if (!validateParsed(parsed)) parsed = parsePost(result.path, null, false);
+        if (!validateParsed(parsed)) parsed = parsePost(result.path);
         if (!validateParsed(parsed)) {
-          console.log(log, color.redBright('[fail]'), 'cannot parse', result.path);
+          console.log(
+            log,
+            color.redBright('[fail]'),
+            'cannot parse',
+            result.path
+          );
           return;
         }
-        const modify = modifyPost(parsed);
-        if (result.path.includes('Grid')) write(tmp('modify.md'), buildPost(modify)).then(console.log);
+        const modify = modifyPost(<any>parsed);
+        if (result.path.includes('Grid'))
+          write(tmp('modify.md'), buildPost(modify)).then(console.log);
         const merge = Object.assign(result, modify, result.path);
-        if (typeof merge.metadata == 'object' && typeof merge.metadata.url == 'string') {
+        if (
+          typeof merge.metadata == 'object' &&
+          typeof merge.metadata.url == 'string'
+        ) {
           const url = new URL(merge.metadata.url);
           url.pathname = url.pathname.replace(/\/+/, '/');
           merge.metadata.url = url.toString();
@@ -163,7 +126,7 @@ export const renderArticle = function () {
       // filter only non-empty object
       .filter((parsed) => typeof parsed == 'object')
       .then(function (result) {
-        logger.log(log, 'markdown sources total', result.length);
+        console.log(log, 'markdown sources total', result.length);
         let counter = 0;
         /**
          * Queue for process first item
@@ -193,20 +156,24 @@ export const renderArticle = function () {
            */
           const save = (rendered: string) => {
             const saveto = join(generated_dir, parsed.permalink);
-            //logger.log(logname, chalk.greenBright('generated'), saveto);
+            //console.log(logname, chalk.greenBright('generated'), saveto);
             write(saveto, rendered);
             parsed.generated = rendered;
             parsed.generated_path = saveto;
             renderCache.set(parsed.path, rendered);
             //write(tmp(parsed.permalink.replace(/.html$/, '.md')), JSON.stringify(parsed));
-            //logger.log(logname + chalk.cyanBright('[remaining]', result.length));
+            //console.log(logname + chalk.cyanBright('[remaining]', result.length));
             sitemap.add(parsed.metadata);
             return parsed;
           };
 
           if (parsed.cached) {
             if (renderCache.isFileChanged(parsed.path)) {
-              logger.log(log + chalk.blueBright('[cache]'), parsed.path, chalk.redBright('changed'));
+              console.log(
+                log + chalk.blueBright('[cache]'),
+                parsed.path,
+                chalk.redBright('changed')
+              );
             } else {
               // if cache hit, skip process
               return skip();
@@ -217,8 +184,8 @@ export const renderArticle = function () {
             .then(save)
             .then(skip)
             .catch((e) => {
-              logger.log(logname, chalk.red('[error]'), parsed.path);
-              logger.error(e);
+              console.log(logname, chalk.red('[error]'), parsed.path);
+              console.error(e);
             });
         };
         return runner();
@@ -226,7 +193,7 @@ export const renderArticle = function () {
   });
 };
 
-gulp.task('generate:posts', renderArticle);
+gulp.task('generate:posts', renderPost);
 
 const helpers: DynamicObject = {
   /**
@@ -246,7 +213,9 @@ const helpers: DynamicObject = {
    */
   getAllCachedPosts: (() => {
     try {
-      return getAllPosts().map((parsed) => Object.assign(parsed, parsed.metadata));
+      return getAllPosts().map((parsed) =>
+        Object.assign(parsed, parsed.metadata)
+      );
     } catch (error) {
       return [];
     }
@@ -255,7 +224,7 @@ const helpers: DynamicObject = {
     const find = {
       cwdFile: join(cwd(), path),
       themeFile: join(theme_dir, path),
-      layoutFile: join(dirname(layout), path),
+      layoutFile: join(dirname(layout), path)
     };
     let cssStr: string;
     for (const key in find) {
@@ -277,7 +246,7 @@ const helpers: DynamicObject = {
     if (!cssStr) return `<!-- ${path} not found -->`;
     if (!build.length) return `<style>${cssStr}</style>`;
     return `<style ${build.join(' ')}>${cssStr}</style>`;
-  },
+  }
 };
 
 interface Override extends ejs.Options {
@@ -303,7 +272,7 @@ interface Override extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export function renderer(parsed: postMap, override: Override = {}) {
+export function renderer(parsed: Partial<postMap>, override: Override = {}) {
   return new Promise((resolve: (arg: string) => any) => {
     // render markdown to html
     const body = renderBodyMarkdown(parsed);
@@ -313,9 +282,14 @@ export function renderer(parsed: postMap, override: Override = {}) {
     };
 
     // assign body
-    const pagedata = Object.assign(defaultOpt, parsed.metadata, parsed, override);
+    const pagedata = Object.assign(
+      defaultOpt,
+      parsed.metadata,
+      parsed,
+      override
+    );
 
-    page_url.pathname = parsed.permalink;
+    page_url.pathname = parsed['permalink'];
     const ejs_data = Object.assign(
       parsed,
       {
@@ -330,7 +304,7 @@ export function renderer(parsed: postMap, override: Override = {}) {
         // permalink
         url: page_url.toString(),
         // content
-        content: null,
+        content: null
       },
       helpers
     );

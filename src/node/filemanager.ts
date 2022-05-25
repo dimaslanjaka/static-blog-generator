@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import Bluebird from 'bluebird';
+import findCacheDir from 'find-cache-dir';
 import * as fs from 'fs';
 import { default as nodePath } from 'path';
-import upath from 'upath';
-import ErrnoException = NodeJS.ErrnoException;
 import { cwd as nodeCwd } from 'process';
-import 'js-prototypes';
-import Bluebird from 'bluebird';
+import upath from 'upath';
+import { removeEmpties } from './array-utils';
+import ErrnoException = NodeJS.ErrnoException;
+
 import glob = require('glob');
-import findCacheDir from 'find-cache-dir';
 /**
  * node_modules/.cache/${name}
  */
@@ -25,7 +26,10 @@ const modPath = nodePath as Mutable<typeof nodePath>;
  * @param done
  */
 // eslint-disable-next-line no-unused-vars
-const walk = function (dir: fs.PathLike, done: (err: ErrnoException | null, results?: string[]) => any) {
+const walk = function (
+  dir: fs.PathLike,
+  done: (err: ErrnoException | null, results?: string[]) => any
+) {
   let results = [];
   fs.readdir(dir, function (err, list) {
     if (err) return done(err);
@@ -50,7 +54,10 @@ const walk = function (dir: fs.PathLike, done: (err: ErrnoException | null, resu
 
 const filemanager = {
   // eslint-disable-next-line no-unused-vars
-  readdirSync: (path: fs.PathLike, callback: (err: ErrnoException, results?: string[]) => any) => {
+  readdirSync: (
+    path: fs.PathLike,
+    callback: (err: ErrnoException, results?: string[]) => any
+  ) => {
     return walk(path, callback);
   },
 
@@ -59,7 +66,8 @@ const filemanager = {
    * @param path
    */
   rmdirSync: (path: fs.PathLike, options: fs.RmOptions = {}) => {
-    if (fs.existsSync(path)) return fs.rmSync(path, Object.assign({ recursive: true }, options));
+    if (fs.existsSync(path))
+      return fs.rmSync(path, Object.assign({ recursive: true }, options));
   },
 
   /**
@@ -69,7 +77,11 @@ const filemanager = {
    * @param callback
    * @returns
    */
-  rm: (path: fs.PathLike, options: fs.RmOptions | fs.NoParamCallback = {}, callback?: fs.NoParamCallback) => {
+  rm: (
+    path: fs.PathLike,
+    options: fs.RmOptions | fs.NoParamCallback = {},
+    callback?: fs.NoParamCallback
+  ) => {
     if (fs.existsSync(path)) {
       if (typeof options == 'function') {
         return fs.rm(path, { recursive: true }, options);
@@ -105,7 +117,7 @@ const filemanager = {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (typeof content != 'string') {
       if (typeof content == 'object') {
-        content = JSON.stringifyWithCircularRefs(content, 4);
+        content = JSON.stringify(content, null, 4);
       } else {
         content = String(content);
       }
@@ -121,8 +133,9 @@ const filemanager = {
    * @returns
    */
   mkdirSync: (path: fs.PathLike, options: fs.MakeDirectoryOptions = {}) => {
-    if (!existsSync(path)) return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
-  },
+    if (!existsSync(path))
+      return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
+  }
 };
 
 export function removeMultiSlashes(str: string) {
@@ -131,7 +144,10 @@ export function removeMultiSlashes(str: string) {
 
 export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
   return new Bluebird((resolve: (arg: string[]) => any, reject) => {
-    const opt: glob.IOptions = Object.assign({ cwd: cwd(), dot: true, matchBase: true }, opts);
+    const opt: glob.IOptions = Object.assign(
+      { cwd: cwd(), dot: true, matchBase: true },
+      opts
+    );
     glob(pattern, opt, function (err, files) {
       if (err) {
         return reject(err);
@@ -145,7 +161,8 @@ export default filemanager;
 export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = () => upath.toUnix(nodeCwd());
-export const dirname = (str: string) => removeMultiSlashes(upath.toUnix(upath.dirname(str)));
+export const dirname = (str: string) =>
+  removeMultiSlashes(upath.toUnix(upath.dirname(str)));
 interface ResolveOpt {
   [key: string]: any;
   /**
@@ -163,7 +180,7 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
   const res = removeMultiSlashes(upath.toUnix(upath.resolve(str)));
   opt = Object.assign(
     {
-      validate: false,
+      validate: false
     },
     opt
   );
@@ -192,7 +209,7 @@ export function read(
  * @returns
  */
 export const join = (...str: any[]) => {
-  str = str.map((s) => String(s)).removeEmpties();
+  str = removeEmpties(str.map((s) => String(s)));
   return removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
 };
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;

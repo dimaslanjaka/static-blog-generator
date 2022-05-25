@@ -1,6 +1,7 @@
 import moment from 'moment';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
+import { array_split_chunks } from '../../node/array-utils';
 import { getAllPosts } from '../../node/cache-post';
 import config from '../../types/_config';
 import { postMap } from './parsePost';
@@ -17,13 +18,15 @@ export type Partial<T> = {
  * @see {@link https://stackoverflow.com/a/40076355/6404439}
  */
 export type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends Record<string, unknown> ? DeepPartial<T[P]> : T[P];
+  [P in keyof T]?: T[P] extends Record<string, unknown>
+    ? DeepPartial<T[P]>
+    : T[P];
 };
 
 /**
  * mapped type
  */
-export type mergedPostMap = postMap & DeepPartial<postMap['metadata']>;
+export type mergedPostMap = Partial<postMap> & DeepPartial<postMap['metadata']>;
 export interface archiveMap extends mergedPostMap {
   [key: string]: any;
   /**
@@ -81,7 +84,7 @@ export function postChunksMapper<T extends any[][]>(chunks: T): T {
     page_now: null,
     page_next_url: null,
     page_prev: null,
-    page_prev_url: null,
+    page_prev_url: null
   };
   chunks.map((arr_chunk, i) => {
     if (Array.isArray(arr_chunk)) {
@@ -152,14 +155,16 @@ export function post_chunks<T extends any[]>(arr?: T) {
   /**
    * split posts to chunks divided by {@link config.index_generator.per_page}
    */
-  const chunk = postChunksMapper(array_split_chunks(posts, config.index_generator.per_page));
+  const chunk = postChunksMapper(
+    array_split_chunks(posts, config.index_generator.per_page)
+  );
 
   const sitedata = posts.map((post) => {
     const data = {
       title: post.metadata.title,
       thumbnail: thumbnail(post.metadata),
       url: post.metadata.url,
-      excerpt: excerpt(post.metadata),
+      excerpt: excerpt(post.metadata)
     };
     return data;
   });
@@ -169,7 +174,7 @@ export function post_chunks<T extends any[]>(arr?: T) {
     /** all posts chunks */
     chunk,
     /** all posts infinite scroll sitedata */
-    sitedata,
+    sitedata
   };
 }
 

@@ -1,9 +1,8 @@
 'use strict';
 // https://www.npmjs.com/package/gulp-rename
 import Stream from 'stream';
-import { toUnix } from 'upath';
+import { basename, dirname, extname as ExtName, join, toUnix } from 'upath';
 import vinyl from 'vinyl';
-import { basename, dirname, join, extname as ExtName } from '../../node/filemanager';
 
 interface ParsedPath {
   dirname: string;
@@ -31,7 +30,7 @@ interface PluginOptions {
  * @returns NodeJS.ReadWriteStream
  * @see {@link https://www.npmjs.com/package/gulp-rename}
  */
-export default function gulpRename(
+export function gulpRename(
   obj: string | Options | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void),
   options?: PluginOptions
 ) {
@@ -45,7 +44,7 @@ export default function gulpRename(
       dirname: dirname(path),
       basename: basename(path, extname),
       extname: extname,
-      fullpath: toUnix(fullpath),
+      fullpath: toUnix(fullpath)
     };
   }
 
@@ -89,4 +88,5 @@ export default function gulpRename(
   return stream;
 }
 
+export default gulpRename;
 //module.exports = gulpRename;
