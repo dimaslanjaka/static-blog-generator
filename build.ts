@@ -4,13 +4,16 @@ import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
 
-console.log(process.env);
+if (!process.env['GITHUB_WORKFLOW']) {
+  pkg.uuid = crypto
+    .createHash('md5')
+    .update(new Date().toDateString())
+    .digest('hex');
+  writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
+} else {
+  console.log('not updating the uuid on github workflow');
+}
 
-pkg.uuid = crypto
-  .createHash('md5')
-  .update(new Date().toDateString())
-  .digest('hex');
-writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
 git(null, 'add', 'package.json').then(() => {
   git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
     fse.emptyDirSync(join(__dirname, 'dist'));
