@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { postMap } from 'hexo-post-parser';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
@@ -11,6 +10,7 @@ import MarkdownItSup from 'markdown-it-sup';
 import showdown from 'showdown';
 import { join, write } from '../node/filemanager';
 import slugify from '../node/slugify/index';
+import { postMap } from './post/parsePost';
 
 export const converterOpt = {
   strikethrough: true,

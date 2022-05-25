@@ -1,7 +1,6 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import gulp from 'gulp';
-import { buildPost, postMap } from 'hexo-post-parser';
 import { toUnix } from 'upath';
 import yargs from 'yargs';
 import ejs_object from '../../ejs';
@@ -27,7 +26,7 @@ import {
 } from '../../node/filemanager';
 import { replaceArr } from '../../node/string-utils';
 import { modifyPost } from '../../parser/post/modifyPost';
-import parsePost from '../../parser/post/parsePost';
+import parsePost, { buildPost, postMap } from '../../parser/post/parsePost';
 import { renderBodyMarkdown } from '../../parser/toHtml';
 import { validateParsed } from '../../parser/transformPosts';
 import { DynamicObject } from '../../types';
@@ -99,8 +98,8 @@ export const renderPost = function () {
         result.cached = renderCache.has(result.path) && !nocache;
         let parsed = parsePost(result.path);
         // try non-cache method
-        if (!validateParsed(parsed)) parsed = parsePost(result.path);
-        if (!validateParsed(parsed)) {
+        if (!validateParsed(<any>parsed)) parsed = parsePost(result.path);
+        if (!validateParsed(<any>parsed)) {
           console.log(
             log,
             color.redBright('[fail]'),
