@@ -1,4 +1,4 @@
-_posts/Test*
+_posts/*
 .guid
 node_modules/
 #yarn.lock
