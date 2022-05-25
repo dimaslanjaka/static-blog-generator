@@ -541,7 +541,7 @@ export function parsePost(
   const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
   const testPost = Array.from(target.matchAll(regexPost)).map(mapper)[0];
   if (typeof testPost === 'object' && testPost !== null) {
-    console.log('test 1 passed');
+    //console.log('test 1 passed');
     return testPost;
   }
 
@@ -551,7 +551,7 @@ export function parsePost(
     mapper
   )[0];
   if (typeof testPost2 === 'object' && testPost2 !== null) {
-    console.log('test 2 passed');
+    //console.log('test 2 passed');
     return testPost2;
   }
 

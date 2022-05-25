@@ -22,9 +22,11 @@ const tmp = join(__dirname, '../tmp/test');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 
 // parse single sample post
-singleParse(join(process.cwd(), 'src-posts/Tests/index.md'));
+//_singleParse(join(process.cwd(), 'src-posts/Tests/index.md'));
+// bulk parse
+_bulkParse();
 
-function singleParse(postPath = join(__dirname, 'test/index.md')) {
+function _singleParse(postPath = join(__dirname, 'test/index.md')) {
   const parseSingle = runParser(postPath);
   console.log(parseSingle);
 }
