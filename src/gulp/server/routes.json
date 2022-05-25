@@ -1,4 +1,8 @@
 {
-    "tag": [],
-    "category": []
+    "tag": [
+        "/tags/sample"
+    ],
+    "category": [
+        "/categories/post"
+    ]
 }

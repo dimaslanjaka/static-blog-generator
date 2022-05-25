@@ -38,7 +38,7 @@ const renderAssets = async () => {
     const src = join(post_public_dir, file);
     const stat = statSync(src);
     const dest = join(post_generated_dir, file.replace('_posts/', '/'));
-    if (!existsSync(dirname(dest))) mkdirSync(dirname(dest));
+    if (!existsSync(dirname(dest))) mkdirSync(dirname(dest), {recursive: true});
     if (!stat.isDirectory() && existsSync(src)) {
       copyFileSync(src, dest);
       console.log(logname + color.greenBright(`[${i}]`), src, '->', dest);
