@@ -2,10 +2,12 @@ import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
 import { Nullable } from 'safelinkify';
 import { toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
+import { pcache } from '../../node/cache';
 import CachePost from '../../node/cache-post';
-import config from '../../types/_config';
+import config, { cwd } from '../../types/_config';
 import modifyPost from './modifyPost';
-//const parseCache = new CacheFile('parsePost');
+
+const parseCache = pcache('parsePost');
 const useCache = config.generator.cache;
 const cachePost = new CachePost();
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
@@ -17,9 +19,12 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @returns
  */
 const parsePost = (path: string, content?: string): Nullable<postMap> => {
+  const cacheKey =
+    typeof path == 'string' ? toUnix(path).replace(cwd(), '') : null;
   // @todo return from cache
-  if (useCache) {
-    const get = cachePost.get<ReturnType<typeof moduleParsePost>>(path);
+  if (useCache && cacheKey) {
+    const get =
+      parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
     if (get) return get;
   }
   let parse = moduleParsePost(content || path, {
@@ -61,10 +66,14 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
 
   parse = modifyPost(<any>parse);
 
-  if (parse.metadata.type === 'post') {
+  if (
+    parse.metadata.type === 'post' &&
+    path.includes(config.source_dir + '/_posts')
+  ) {
     cachePost.set(path, parse);
-    //parseCache.set(path, parse);
   }
+
+  parseCache.putSync(cacheKey, parse);
 
   return parse;
 };

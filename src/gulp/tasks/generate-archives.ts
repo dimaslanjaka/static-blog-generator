@@ -5,9 +5,9 @@ import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
 import {
-    archiveMap,
-    array_wrap,
-    post_chunks
+  archiveMap,
+  array_wrap,
+  post_chunks
 } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import './generate-categories';

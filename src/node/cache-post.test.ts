@@ -1,4 +1,3 @@
-import { postMap } from 'hexo-post-parser';
 import { join } from 'upath';
 import CachePost, {
   getAllPosts,
@@ -8,8 +7,10 @@ import CachePost, {
 import { write } from './filemanager';
 
 const cache = new CachePost();
-const all = cache.getAll<postMap>();
-console.log(all);
+const all = cache.getAll();
+console.log('total posts', all.length);
+write(join(__dirname, 'tmp/all.json'), all);
+console.log(cache.getKeys());
 
 function _original() {
   const all = getAllPosts();
