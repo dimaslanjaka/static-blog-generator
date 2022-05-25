@@ -9,7 +9,7 @@ import parsePost, {
 } from '../parser/post/parsePost';
 import config, { root } from '../types/_config';
 
-const destFolder = join(root, config.source_dir, '_posts/dummy');
+const destFolder = join(root, config.source_dir, '_posts');
 if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
 export const generateDummyPosts = memoizee(_generateDummyPosts);
 async function _generateDummyPosts() {
@@ -17,7 +17,7 @@ async function _generateDummyPosts() {
   for (let x = 0; x < 5; x++) {
     const gen = dummyPost(x);
     const file = await write(
-      join(destFolder, gen.metadata.permalink.replace('dummy/', '')),
+      join(destFolder, gen.metadata.permalink),
       buildPost(gen)
     );
     result.push(String(file));
@@ -43,7 +43,7 @@ function dummyPost(counter: string | number = 0) {
     body: 'Dummy Post Body ' + counter
   };
   const build = buildPost(result);
-  parsePost(build);
+  parsePost(join(destFolder, result.metadata.permalink), build);
   return result;
 }
 
