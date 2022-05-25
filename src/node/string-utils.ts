@@ -101,3 +101,14 @@ if (typeof ''.replaceAll != 'function') {
     return this.replace(find, replacement);
   };
 }
+
+/**
+ * is variable an empty string ?
+ * @param str
+ * @returns
+ */
+export function isEmptyStr(str: any) {
+  const isStr = typeof str === 'string';
+  const isEmpty = isStr && str.trim().length > 0;
+  return isEmpty;
+}
