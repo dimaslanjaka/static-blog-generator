@@ -110,7 +110,7 @@ function generateSitemapHtml(done?: TaskCallback) {
       const modify = modifyPost(opt);
       if (modify.sitedata) delete modify.sitedata;
       //console.log(modify);
-      renderer(modify).then((rendered) => {
+      renderer(<any>modify).then((rendered) => {
         write(join(root, config.public_dir, 'sitemap.html'), rendered).then(
           (f) => {
             console.log(log, 'saved', f);

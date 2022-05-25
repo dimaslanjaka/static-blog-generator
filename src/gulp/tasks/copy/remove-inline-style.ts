@@ -1,8 +1,7 @@
-import { buildPost } from 'hexo-post-parser';
 import color from '../../../node/color';
 import { existsSync, globSrc, join, write } from '../../../node/filemanager';
 import jdom from '../../../node/jsdom';
-import parsePost from '../../../parser/post/parsePost';
+import parsePost, { buildPost } from '../../../parser/post/parsePost';
 import { post_public_dir } from '../../../types/_config';
 
 /**
@@ -56,7 +55,7 @@ export async function gulpInlineStyle() {
       ) {
         parsed.body = removeInlineStyle(parsed.body, true);
         //console.log(obj.path);
-        write(obj.path, buildPost(parsed));
+        write(obj.path, buildPost(<any>parsed));
       }
     });
 }

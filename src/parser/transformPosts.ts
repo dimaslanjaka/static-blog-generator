@@ -1,4 +1,3 @@
-import { buildPost, postMap } from 'hexo-post-parser';
 import color from '../node/color';
 import {
   dirname,
@@ -6,7 +5,7 @@ import {
   mkdirSync,
   writeFileSync
 } from '../node/filemanager';
-export { buildPost } from 'hexo-post-parser';
+import { buildPost, postMap } from './post/parsePost';
 
 /**
  * Save Parsed Hexo markdown post
