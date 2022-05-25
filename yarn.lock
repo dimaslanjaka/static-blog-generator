@@ -4530,7 +4530,7 @@ fined@^1.0.1:
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
 
-firebase@*, firebase@^9.6.11:
+firebase@*, firebase@^9.8.1:
   version "9.8.1"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.8.1.tgz#502e186078d69d72ab8d4f1b5befa287e0858276"
   integrity sha512-VyM+3ijzB1Q24b9v6HzVOB0bXNy0a/maOZlmv2P8M29VXfrS/npo6zntNiOEtcjrCoItZIuWFH4oDGiYkPHxbg==
@@ -4688,7 +4688,7 @@ fs-extra@3.0.1:
     jsonfile "^3.0.0"
     universalify "^0.1.0"
 
-fs-extra@^10.0.0, fs-extra@^10.0.1, fs-extra@^10.1.0:
+fs-extra@^10.0.0, fs-extra@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
@@ -5031,7 +5031,7 @@ glob@^5.0.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.2.0:
+glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
   integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
@@ -5042,6 +5042,17 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, gl
     minimatch "^3.1.1"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
+
+glob@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
+  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^5.0.1"
+    once "^1.3.0"
 
 glob@~7.1.1:
   version "7.1.7"
@@ -7755,10 +7766,15 @@ mute-stream@0.0.8:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-nan@2.15.0, nan@^2.12.1, nan@^2.13.2:
+nan@2.15.0, nan@^2.12.1:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.15.0.tgz#3f34a473ff18e15c1b5626b62903b5ad6e665fee"
   integrity sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==
+
+nan@^2.13.2:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.16.0.tgz#664f43e45460fb98faf00edca0bb0d7b8dce7916"
+  integrity sha512-UdAqHyFngu7TfQKsCBgAA6pWDkT8MAO7d0jyOecVhN5354xbLqdn8mV9Tat9gepAupm0bt2DbeaSC8vS52MuFA==
 
 nanoid@3.3.1:
   version "3.3.1"
@@ -9588,13 +9604,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-d28de93a-ebd9-438c-9e21-6fd1a8934bc3-1653518245540/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-9abba074-bea2-44a7-ad52-718e42bd5cf8-1653520593653/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-1fe70d31-8efa-4d5d-952d-05c646c892a0-1653518245534/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-1fe70d31-8efa-4d5d-952d-05c646c892a0-1653518245534/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-389e2a88-453b-44bd-9b6c-d37301580240-1653520593649/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-389e2a88-453b-44bd-9b6c-d37301580240-1653520593649/node_modules/sbg-themes/iridium"
 
 scss-tokenizer@^0.3.0:
   version "0.3.0"
