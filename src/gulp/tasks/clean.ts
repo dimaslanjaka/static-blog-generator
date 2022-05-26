@@ -13,8 +13,10 @@ export const clean_posts = (done?: TaskCallback) =>
   rm(join(root, config.source_dir, '_posts'), { recursive: true }, done);
 /** clean temp folder */
 export const clean_tmp = (done?: TaskCallback) => {
-  rm(tmp(), { recursive: true }, (_err) => {
-    rm(join(cwd(), 'tmp'), { recursive: true }, done);
+  rm(tmp(), { recursive: true }, () => {
+    rm(join(cwd(), 'tmp'), { recursive: true }, () => {
+      done();
+    });
   });
 };
 /** clean database folder */
