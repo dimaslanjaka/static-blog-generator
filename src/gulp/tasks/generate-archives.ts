@@ -1,14 +1,14 @@
 import gulp from 'gulp';
 import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
+import { renderer } from '../../ejs/renderer';
 import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
-import { cwd, join, write } from '../../node/filemanager';
+import { cwd, join } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
 import { archiveMap, post_chunks } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import './generate-categories';
-import { renderer } from './generate-posts';
 import './generate-tags';
 
 /**
@@ -112,7 +112,7 @@ export async function generateIndex(
     };
     const mod = modifyPost(opt);
     const rendered = await renderer(<any>mod);
-    await write(saveTo, rendered);
+    /*await write(saveTo, rendered);
     console.log(logname, saveTo);
     // immediately returns
     if (isHome && labelname == 'homepage') return rendered;
@@ -132,7 +132,7 @@ export async function generateIndex(
         })
       );
       console.log(logname, 'dump', f);
-    }
+    }*/
   }
 }
 
