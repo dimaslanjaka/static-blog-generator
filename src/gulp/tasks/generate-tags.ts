@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import { join } from 'upath';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
+import { array_wrap } from '../../node/array-wrapper';
 import { pcache } from '../../node/cache';
 import CachePost from '../../node/cache-post';
 import color from '../../node/color';
@@ -10,11 +11,7 @@ import scheduler from '../../node/scheduler';
 import modifyPost from '../../parser/post/modifyPost';
 import { postMap } from '../../parser/post/parsePost';
 import postChunksIterator from '../../parser/post/postChunksIterator';
-import {
-  array_wrap,
-  post_chunks,
-  simplifyDump
-} from '../../parser/post/postMapper';
+import { post_chunks, simplifyDump } from '../../parser/post/postMapper';
 import config, { cwd, tmp } from '../../types/_config';
 import { renderer } from './generate-posts';
 

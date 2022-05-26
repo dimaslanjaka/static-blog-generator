@@ -29,6 +29,7 @@ const allPosts = (() => {
       Bluebird.all(getAllPosts())
         .map((post) => {
           if (!post) return;
+          if (typeof post.metadata !== 'object') return;
           if (!post.metadata.type || !post.metadata.type.length)
             if (post.fileTree)
               if (typeof post.fileTree.public == 'string')
@@ -93,7 +94,7 @@ function copy() {
     .pipe(gulp.dest(post_generated_dir));
 }
 
-function generateLabels(done?: TaskCallback) {
+function _generateLabels(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/tag-sitemap.xml');
   const readXML = readFileSync(sourceIndexXML, 'utf-8');
   const mapTags = [];
