@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync } from 'fs';
+import { emptyDirSync, existsSync, mkdirSync } from 'fs-extra';
 import memoizee from 'memoizee';
 import { join } from 'upath';
 import { write } from '../node/filemanager';
@@ -11,6 +11,9 @@ import config, { root } from '../types/_config';
 
 const destFolder = join(root, config.source_dir, '_posts');
 if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
+// emptying generated dummy posts
+emptyDirSync(join(destFolder, 'dummy'));
+
 export const generateDummyPosts = memoizee(_generateDummyPosts);
 async function _generateDummyPosts(n = 5) {
   const result: string[] = [];

@@ -48,7 +48,10 @@ const postCache = new CachePost();
  * @returns
  */
 function fixPost(post: Partial<postMap>) {
-  if (typeof post.metadata.url == 'string') {
+  if (
+    typeof post.metadata == 'object' &&
+    typeof post.metadata.url == 'string'
+  ) {
     const url = new URL(post.metadata.url);
     if (isMatch(url.pathname, /.md$/)) {
       url.pathname = url.pathname.replace(/.md$/, '.html');

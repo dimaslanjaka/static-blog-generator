@@ -1,14 +1,11 @@
 import gulp from 'gulp';
 import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
+import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
-import {
-  archiveMap,
-  array_wrap,
-  post_chunks
-} from '../../parser/post/postMapper';
+import { archiveMap, post_chunks } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import './generate-categories';
 import { renderer } from './generate-posts';
