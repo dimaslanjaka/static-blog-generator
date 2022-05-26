@@ -71,12 +71,16 @@ export interface archiveMap extends mergedPostMap {
  * * merge post metadata property ({@link postMap.metadata}) to root property
  * @returns
  */
-export default function postMapper(post: postMap): archiveMap {
-  post.metadata.date =
-    typeof post.metadata.date == 'string'
-      ? new dateMapper(post.metadata.date)
-      : post.metadata.date;
-  return Object.assign(post, post.metadata);
+export default function postMapper(post: postMap) {
+  let assigned: postMap & postMap['metadata'] = post;
+  if (typeof post == 'object' && typeof post.metadata == 'object') {
+    post.metadata.date =
+      typeof post.metadata.date == 'string'
+        ? new dateMapper(post.metadata.date)
+        : post.metadata.date;
+    assigned = Object.assign(post, post.metadata);
+  }
+  return assigned;
 }
 
 /**
@@ -117,6 +121,9 @@ export function postChunksMapper<T extends any[][]>(chunks: T): T {
 
 export type DumperMerged = Partial<ReturnType<typeof postChunksIterator>> &
   Partial<mergedPostMap> &
+  Partial<archiveMap> &
+  Partial<mergedPostMap> &
+  Partial<postMap> &
   Record<string, unknown>;
 
 export interface DumperType extends DumperMerged {
@@ -126,26 +133,35 @@ export interface DumperType extends DumperMerged {
   content: string;
 }
 
-export function simplifyDump<T extends Partial<DumperType>>(post: T): T;
-export function simplifyDump<T extends Partial<DumperType>[]>(post: T): T;
+export function simplifyDump<T>(post: T): T;
+export function simplifyDump<T extends any[]>(post: T): T;
 /**
  * simplified dump
  * @param post
  * @returns
  */
-export function simplifyDump<T extends Partial<DumperType>>(post: T) {
+export function simplifyDump<T>(post: T) {
   if (Array.isArray(post)) return post.map(simplifyDump);
   if (typeof post == 'object') {
-    if (post.sitedata) post.sitedata = null;
-    if (post.posts) {
-      if (Array.isArray(post.posts)) {
-        post.posts = post.posts.map(simplifyDump);
+    if (post['posts']) {
+      if (Array.isArray(post['posts'])) {
+        post['posts'] = post['posts'].map(simplifyDump);
       }
     }
     for (const key in post) {
       if (Object.prototype.hasOwnProperty.call(post, key)) {
         const element = post[key];
-        if (['config', 'body', 'prev', 'next', 'content', 'body'].includes(key))
+        if (
+          [
+            'config',
+            'body',
+            'prev',
+            'next',
+            'content',
+            'body',
+            'sitedata'
+          ].includes(key)
+        )
           post[key] = <any>typeof post[key];
       }
     }
@@ -173,6 +189,7 @@ export function post_chunks<T extends any[]>(arr?: T) {
       return true;
     })
     .map(postMapper);
+  //console.log('post chunk total', posts.length);
   //.map((post) => Object.assign(post, post.metadata));
   /**
    * split posts to chunks divided by {@link config.index_generator.per_page}

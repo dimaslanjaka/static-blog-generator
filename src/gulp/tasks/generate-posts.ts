@@ -271,51 +271,51 @@ interface Override extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export function renderer(parsed: Partial<postMap>, override: Override = {}) {
-  return new Promise((resolve: (arg: string) => any) => {
-    // render markdown to html
-    const body = renderBodyMarkdown(parsed);
+export async function renderer(
+  parsed: Partial<postMap>,
+  override: Override = {}
+) {
+  if (!parsed) {
+    const e = new Error().stack.split('\n')[2];
+    console.log(e);
+    return null;
+  }
+  // render markdown to html
+  const body = renderBodyMarkdown(parsed);
 
-    const defaultOpt: ejs.Options = {
-      //cache: true,
-    };
+  const defaultOpt: ejs.Options = {
+    //cache: true,
+  };
 
-    // assign body
-    const pagedata = Object.assign(
-      defaultOpt,
-      parsed.metadata,
-      parsed,
-      override
-    );
+  // assign body
+  const pagedata = Object.assign(defaultOpt, parsed.metadata, parsed, override);
 
-    page_url.pathname = parsed['permalink'];
-    const ejs_data = Object.assign(
-      parsed,
-      {
-        // page metadata
-        page: pagedata,
-        // site config
-        config: config,
-        // layout theme
-        root: theme_dir,
-        // theme config
-        theme: theme_config,
-        // permalink
-        url: page_url.toString(),
-        // content
-        content: null
-      },
-      helpers
-    );
+  page_url.pathname = parsed['permalink'];
+  const ejs_data = Object.assign(
+    parsed,
+    {
+      // page metadata
+      page: pagedata,
+      // site config
+      config: config,
+      // layout theme
+      root: theme_dir,
+      // theme config
+      theme: theme_config,
+      // permalink
+      url: page_url.toString(),
+      // content
+      content: null
+    },
+    helpers
+  );
 
-    // render body html to ejs compiled
-    ejs_data.page.content = ejs_object.render(body, ejs_data);
-    ejs_data.page.body = ejs_data.page.content;
-    //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
-    //write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
+  // render body html to ejs compiled
+  ejs_data.page.content = ejs_object.render(body, ejs_data);
+  ejs_data.page.body = ejs_data.page.content;
+  //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
+  //write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
 
-    ejs_object.renderFile(layout, ejs_data).then(async (rendered) => {
-      resolve(rendered);
-    });
-  });
+  const rendered = await ejs_object.renderFile(layout, ejs_data);
+  return rendered;
 }

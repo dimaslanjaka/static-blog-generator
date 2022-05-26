@@ -104,7 +104,7 @@ export async function generateTags(
         if (config.verbose) {
           writeFileSync(
             tmp('generateTags', data.perm_current + '.log'),
-            simplifyDump(pagedata)
+            simplifyDump(<any>pagedata)
           );
         }
         if (labelname) return rendered;

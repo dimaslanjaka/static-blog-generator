@@ -21,5 +21,6 @@ export function array_wrap<T extends any[]>(arr: T) {
   //arr['each'] = arr.forEach;
   //return arr;
   const init = new ArrayWrapper<T[number]>(...arr);
+  init['each'] = init.forEach;
   return init;
 }
