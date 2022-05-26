@@ -1,10 +1,10 @@
 import gulp from 'gulp';
-import { EJSRenderer } from '../../ejs/EJSRenderer';
+import { inspect } from 'util';
 import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
-import { cwd, join } from '../../node/filemanager';
+import { cwd, join, write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
 import { archiveMap, post_chunks } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
@@ -83,7 +83,7 @@ export async function generateIndex(
         source: saveTo,
         public: join(tmp(), 'index.html')
       },
-      posts: mapped,
+      posts: mapped.map((chunks) => array_wrap(chunks)),
       total: chunks.length,
       page_now: current_page,
       page_prev: (() => {
@@ -112,10 +112,12 @@ export async function generateIndex(
       })()
     };
 
-    opt.posts.map((chunks) => array_wrap(chunks));
-
     const mod = modifyPost(opt as archiveMap);
-    const rendered = await EJSRenderer(<any>mod);
+    write(
+      join(__dirname, 'tmp/generate-archives/rendered.log'),
+      inspect(mod.posts)
+    );
+    //const rendered = await EJSRenderer(<any>mod);
     /*await write(saveTo, rendered);
     console.log(logname, saveTo);
     // immediately returns

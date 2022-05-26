@@ -68,7 +68,7 @@ export async function generateCategories(labelname?: string, pagenum?: number) {
             'Category: ' + catname + ' Page ' + current_page;
         }
         const merge_data = Object.assign(pagemeta, data);
-        const pagedata = modifyPost(merge_data);
+        const pagedata = modifyPost(<any>merge_data);
         const rendered = await EJSRenderer(<any>pagedata);
         const f = await write(saveTo, rendered);
         console.log(logname, f);
