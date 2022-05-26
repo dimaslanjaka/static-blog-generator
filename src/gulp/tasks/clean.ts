@@ -1,4 +1,5 @@
 import { rm } from 'fs';
+import * as fse from 'fs-extra';
 import { cwd } from 'process';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
@@ -9,8 +10,8 @@ import config, { root, tmp } from '../../types/_config';
 export const clean_public = (done?: TaskCallback) =>
   rm(join(root, config.public_dir), { recursive: true }, done);
 /** clean posts from config.source_dir */
-export const clean_posts = (done?: TaskCallback) =>
-  rm(join(root, config.source_dir, '_posts'), { recursive: true }, done);
+export const clean_posts = () =>
+  fse.emptyDir(join(root, config.source_dir, '_posts'));
 /** clean temp folder */
 export const clean_tmp = (done?: TaskCallback) => {
   rm(tmp(), { recursive: true }, () => {
