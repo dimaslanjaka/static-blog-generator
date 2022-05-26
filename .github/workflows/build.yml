@@ -1,8 +1,8 @@
-name: Build
+name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ stable ]
 
 # cancel previous workflows, run only one workflow
 concurrency:
