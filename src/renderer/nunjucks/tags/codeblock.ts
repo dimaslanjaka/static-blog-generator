@@ -1,22 +1,20 @@
 'use strict';
 
+// source: https://github.com/hexojs/hexo/blob/ba81258b5b6a1a7ae02033c056d82198c6d92ec9/lib/plugins/tag/code.js
 // Based on: https://raw.github.com/imathis/octopress/master/plugins/code_block.rb
 
 import hexoUtil, { escapeHTML } from 'hexo-util';
+import { FunctionType } from '../../../parser/utility';
+import { default_project_config } from '../../../types/_config';
 
 // Lazy require highlight.js & prismjs
-let highlight, prismHighlight;
+let highlight: FunctionType<string>, prismHighlight: FunctionType<string>;
 
 const rCaptionUrlTitle = /(\S[\S\s]*)\s+(https?:\/\/\S+)\s+(.+)/i;
 const rCaptionUrl = /(\S[\S\s]*)\s+(https?:\/\/\S+)/i;
 const rCaption = /\S[\S\s]*/;
 
 /**
- * Code block tag
- * Syntax:
- * {% codeblock [options] %}
- * code snippet
- * {% endcodeblock %}
  * @param {String} title Caption text
  * @param {Object} lang Specify language
  * @param {String} url Source link
@@ -30,10 +28,16 @@ const rCaption = /\S[\S\s]*/;
  * @returns {String} Code snippet with code highlighting
  */
 
-function parseArgs(args) {
+/**
+ * arg parser
+ * @param args
+ * @returns
+ */
+//parseArgs
+export function parseCodeblockArgs(args: string | any[]) {
   const _else = [];
   const len = args.length;
-  let lang, line_number, line_threshold, wrap;
+  let lang: string, line_number: boolean, line_threshold: number, wrap: boolean;
   let firstLine = 1;
   const mark = [];
   for (let i = 0; i < len; i++) {
@@ -93,7 +97,7 @@ function parseArgs(args) {
 
   const arg = _else.join(' ');
   // eslint-disable-next-line one-var
-  let match,
+  let match: any[],
     caption = '';
 
   if ((match = arg.match(rCaptionUrlTitle)) != null) {
@@ -115,20 +119,35 @@ function parseArgs(args) {
   };
 }
 
-module.exports = (ctx) =>
-  function codeTag(args, content) {
-    const hljsCfg = ctx.config.highlight || {};
-    const prismjsCfg = ctx.config.prismjs || {};
+/**
+ * Code block tag
+ * @example
+ * {% codeblock [options] %}
+ * code snippet
+ * {% endcodeblock %}
+ * @param ctx
+ * @returns
+ */
+export const codeblock = (ctx: {
+  config: {
+    highlight: Partial<typeof default_project_config.highlight>;
+    prismjs: Partial<typeof default_project_config.highlight>;
+  };
+}) =>
+  function codeTag(args: string | any[], content: string) {
+    const hljsCfg: typeof ctx.config.highlight = ctx.config.highlight || {};
+    const prismjsCfg: typeof ctx.config.prismjs = ctx.config.prismjs || {};
 
     // If neither highlight.js nor prism.js is enabled, return escaped code directly
     if (!hljsCfg.enable && !prismjsCfg.enable) {
       return `<pre><code>${escapeHTML(content)}</code></pre>`;
     }
 
-    let index;
+    let index: string | number;
     let enableHighlight = true;
 
     if (
+      Array.isArray(args) &&
       (index = args.findIndex((item) => item.startsWith('highlight:'))) !== -1
     ) {
       const arg = args[index];
@@ -150,20 +169,20 @@ module.exports = (ctx) =>
       line_threshold,
       mark,
       wrap
-    } = parseArgs(args);
+    } = parseCodeblockArgs(args);
 
     if (prismjsCfg.enable) {
       const shouldUseLineNumbers =
         typeof line_number !== 'undefined'
           ? line_number
           : prismjsCfg.line_number;
-      let surpassesLineThreshold;
+      let surpassesLineThreshold: boolean;
 
       if (typeof line_threshold !== 'undefined') {
         surpassesLineThreshold = content.split('\n').length > line_threshold;
       } else {
         surpassesLineThreshold =
-          content.split('\n').length > (prismjsCfg.line_threshold || 0);
+          content.split('\n').length > (prismjsCfg['line_threshold'] || 0);
       }
 
       const prismjsOption = {
@@ -173,7 +192,7 @@ module.exports = (ctx) =>
         lineNumber: shouldUseLineNumbers && surpassesLineThreshold,
         mark,
         tab: prismjsCfg.tab_replace,
-        isPreprocess: prismjsCfg.preprocess
+        isPreprocess: prismjsCfg['preprocess']
       };
 
       if (!prismHighlight) prismHighlight = hexoUtil['prismHighlight'];
@@ -182,13 +201,13 @@ module.exports = (ctx) =>
     } else {
       const shouldUseLineNumbers =
         typeof line_number !== 'undefined' ? line_number : hljsCfg.line_number;
-      let surpassesLineThreshold;
+      let surpassesLineThreshold: boolean;
 
       if (typeof line_threshold !== 'undefined') {
         surpassesLineThreshold = content.split('\n').length > line_threshold;
       } else {
         surpassesLineThreshold =
-          content.split('\n').length > (hljsCfg.line_threshold || 0);
+          content.split('\n').length > (hljsCfg['line_threshold'] || 0);
       }
 
       const hljsOption = {
