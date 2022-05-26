@@ -11,6 +11,10 @@ export interface FunctionType {
  * transform any variable type to string
  * @param varObj
  * @returns
+ * @example
+ * const func = () => {};
+ * const funcName = varToString({ func });
+ * console.log(funcName); // func
  */
 export const varToString = (varObj: { func?: FunctionType }) =>
   Object.keys(varObj)[0];

@@ -6,7 +6,6 @@ import { default as nodePath } from 'path';
 import { cwd as nodeCwd } from 'process';
 import upath from 'upath';
 import { removeEmpties } from './array-utils';
-import ErrnoException = NodeJS.ErrnoException;
 
 import glob = require('glob');
 /**
@@ -23,43 +22,24 @@ const modPath = nodePath as Mutable<typeof nodePath>;
 /**
  * Directory iterator recursive
  * @param dir
- * @param done
+ * @see {@link https://stackoverflow.com/a/66083078/6404439}
  */
-// eslint-disable-next-line no-unused-vars
-const walk = function (
-  dir: fs.PathLike,
-  done: (err: ErrnoException | null, results?: string[]) => any
-) {
-  let results = [];
-  fs.readdir(dir, function (err, list) {
-    if (err) return done(err);
-    let pending = list.length;
-    if (!pending) return done(null, results);
-    list.forEach(function (file) {
-      file = modPath.resolve(dir.toString(), file);
-      fs.stat(file, function (err, stat) {
-        if (stat && stat.isDirectory()) {
-          walk(file, function (err, res) {
-            results = results.concat(res);
-            if (!--pending) done(null, results);
-          });
-        } else {
-          results.push(file);
-          if (!--pending) done(null, results);
-        }
-      });
-    });
-  });
-};
+function* walkSync(dir: fs.PathLike): Generator<string> {
+  const files = fs.readdirSync(dir, { withFileTypes: true });
+  for (const file of files) {
+    if (file.isDirectory()) {
+      yield* walkSync(join(dir, file.name));
+    } else {
+      yield join(dir, file.name);
+    }
+  }
+}
 
 const filemanager = {
-  // eslint-disable-next-line no-unused-vars
-  readdirSync: (
-    path: fs.PathLike,
-    callback: (err: ErrnoException, results?: string[]) => any
-  ) => {
-    return walk(path, callback);
-  },
+  /**
+   * @see {@link walkSync}
+   */
+  readdirSync: walkSync,
 
   /**
    * Remove dir or file recursive synchronously (non-empty folders supported)

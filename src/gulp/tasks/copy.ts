@@ -60,7 +60,8 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
 export const copy_posts = copyPosts;
 
 scheduler.add('indexing-posts', () => {
-  readdirSync(post_public_dir, (err, files) => {
-    if (!err) console.log(files.length);
-  });
+  console.log('reading folder', post_public_dir);
+  for (const filePath of readdirSync(post_public_dir)) {
+    parsePost(filePath);
+  }
 });
