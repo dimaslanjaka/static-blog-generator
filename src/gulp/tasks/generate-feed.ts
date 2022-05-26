@@ -3,7 +3,12 @@ import { Feed, Item } from 'feed';
 import gulp from 'gulp';
 import moment from 'moment';
 import { helpers } from '../../ejs';
-import { author_email, author_link, author_name, author_object } from '../../ejs/helper/author';
+import {
+  author_email,
+  author_link,
+  author_name,
+  author_object
+} from '../../ejs/helper/author';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
 import { getAllPosts, getLatestPosts } from '../../node/cache-post';
@@ -26,7 +31,11 @@ function generateFeeds() {
       language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
       image: urlfor(config.logo),
       favicon: urlfor(config.favicon),
-      copyright: 'All rights reserved ' + moment().format('YYYY') + ', ' + author_name(config),
+      copyright:
+        'All rights reserved ' +
+        moment().format('YYYY') +
+        ', ' +
+        author_name(config),
       updated: new Date(2013, 6, 14), // optional, default = today
       generator: 'static blog generator', // optional, default = 'Feed for Node.js'
       feedLinks: {
@@ -57,7 +66,8 @@ function generateFeeds() {
         }
         let isImgValid = isValidHttpUrl(String(obj.image));
         if (!isImgValid) {
-          if (String(obj.image).startsWith('/')) obj.image = urlfor(String(obj.image));
+          if (String(obj.image).startsWith('/'))
+            obj.image = urlfor(String(obj.image));
         }
         isImgValid = isValidHttpUrl(String(obj.image));
         if (isImgValid && typeof obj.image == 'string') {
@@ -66,7 +76,12 @@ function generateFeeds() {
           });
           feed.addItem(obj);
         } else {
-          console.log(logname, 'invalid image url', post.metadata.title, obj.image);
+          console.log(
+            logname,
+            'invalid image url',
+            post.metadata.title,
+            obj.image
+          );
         }
       } catch (error) {
         console.log(logname, error.message, post.metadata.title);
