@@ -1,7 +1,7 @@
 import { readFileSync, writeFile } from 'fs';
 import { join } from 'upath';
+import MeasureTime from '../../node/measure-timing';
 import { root, tmp } from '../../types/_config';
-import { measureRunningTime } from '../utility';
 import parsePost from './parsePost';
 
 function run() {
@@ -12,4 +12,4 @@ function run() {
   });
 }
 
-measureRunningTime(run);
+new MeasureTime().measure(run);
