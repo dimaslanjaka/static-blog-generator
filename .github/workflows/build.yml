@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+
+# cancel previous workflows, run only one workflow
+concurrency:
+  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        token: "${{ secrets.GITHUB_TOKEN }}"
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+        cache: 'yarn'
+
+    - name: Install dependencies
+      run: npm i -g gulp-cli typescript npm ts-node && yarn install
+
+    - name: Build
+      run: yarn build
+    - name: Tests
+      run: yarn test
+
+    - name: Re-deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.3.0
+      with:
+        branch: main # The branch the action should deploy to.
+        folder: . # The folder the action should deploy.
+        force: false # merge instead delete old files
+        token: "${{ secrets.GITHUB_TOKEN }}"
