@@ -1,9 +1,9 @@
 import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'upath';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
-import { renderer } from '../../ejs/renderer';
 import { array_wrap } from '../../node/array-wrapper';
 import { pcache } from '../../node/cache';
 import CachePost from '../../node/cache-post';
@@ -97,7 +97,7 @@ export async function generateTags(
         }
         const merge_data = Object.assign(pagemeta, data);
         const pagedata = modifyPost(merge_data);
-        const rendered = await renderer(<any>pagedata);
+        const rendered = await EJSRenderer(<any>pagedata);
         const f = writeFileSync(saveTo, rendered);
         console.log(logname, f);
 

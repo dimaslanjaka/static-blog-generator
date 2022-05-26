@@ -1,7 +1,7 @@
 import gulp from 'gulp';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { getLatestDateArray } from '../../ejs/helper/date';
 import { excerpt } from '../../ejs/helper/excerpt';
-import { renderer } from '../../ejs/renderer';
 import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
 import { cwd, join } from '../../node/filemanager';
@@ -112,7 +112,7 @@ export async function generateIndex(
       })()
     };
     const mod = modifyPost(opt);
-    const rendered = await renderer(<any>mod);
+    const rendered = await EJSRenderer(<any>mod);
     /*await write(saveTo, rendered);
     console.log(logname, saveTo);
     // immediately returns

@@ -97,7 +97,7 @@ interface Override extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export async function renderer(
+export async function EJSRenderer(
   parsed: Partial<postMap>,
   override: Override = {}
 ) {

@@ -9,7 +9,7 @@ import memoizee from 'memoizee';
 import { join, toUnix } from 'upath';
 import { generateDummyPosts } from '../../dummy/auto-post';
 import ejs_object from '../../ejs';
-import { renderer } from '../../ejs/renderer';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { array_unique, removeEmpties } from '../../node/array-utils';
 import color from '../../node/color';
 import { write } from '../../node/filemanager';
@@ -242,7 +242,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
               //const modify = modifyPost(<any>parsed);
               //console.log(modify.metadata.type);
               // render markdown post
-              return renderer(<any>parsed).then((rendered) => {
+              return EJSRenderer(<any>parsed).then((rendered) => {
                 rendered = fixHtmlPost(rendered);
                 write(dest, rendered);
                 const previewed = showPreview(rendered);

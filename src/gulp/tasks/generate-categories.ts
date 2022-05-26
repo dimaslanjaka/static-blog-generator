@@ -1,7 +1,7 @@
 import gulp from 'gulp';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
-import { renderer } from '../../ejs/renderer';
 import { array_wrap } from '../../node/array-wrapper';
 import CacheFile from '../../node/cache';
 import color from '../../node/color';
@@ -69,7 +69,7 @@ export async function generateCategories(labelname?: string, pagenum?: number) {
         }
         const merge_data = Object.assign(pagemeta, data);
         const pagedata = modifyPost(merge_data);
-        const rendered = await renderer(<any>pagedata);
+        const rendered = await EJSRenderer(<any>pagedata);
         const f = await write(saveTo, rendered);
         console.log(logname, f);
         if (config.verbose) {
