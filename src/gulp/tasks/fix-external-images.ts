@@ -1,12 +1,12 @@
 import { join } from 'upath';
 import urlParser from '../../curl/url-parser';
+import { renderer } from '../../ejs/renderer';
 import { arrayAddAll } from '../../node/array-utils';
 import CacheFile from '../../node/cache';
 import { cwd, globSrc } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
-import { parsePost } from '../../parser/post';
+import { parsePost } from '../../parser/post/parsePost';
 import config from '../../types/_config';
-import { renderer } from './generate-posts';
 
 const images_url: string[] = [];
 

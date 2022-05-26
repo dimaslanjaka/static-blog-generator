@@ -5,6 +5,11 @@
 export default class MeasureTime {
   private startTime = 0;
   private endTime = 0;
+  run(fn: any) {
+    this.start();
+    if (typeof fn == 'function') fn();
+    console.log(this.end());
+  }
   start() {
     this.startTime = new Date().getTime();
     return this;
@@ -16,9 +21,6 @@ export default class MeasureTime {
   end() {
     this.endTime = new Date().getTime();
     return this.toString();
-  }
-  measure() {
-    console.log(this.toString());
   }
   toString() {
     return `time taken => ${(this.endTime - this.startTime) / 1000} seconds`;

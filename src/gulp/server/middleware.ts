@@ -9,6 +9,7 @@ import memoizee from 'memoizee';
 import { join, toUnix } from 'upath';
 import { generateDummyPosts } from '../../dummy/auto-post';
 import ejs_object from '../../ejs';
+import { renderer } from '../../ejs/renderer';
 import { array_unique, removeEmpties } from '../../node/array-utils';
 import color from '../../node/color';
 import { write } from '../../node/filemanager';
@@ -21,7 +22,6 @@ import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate-archives';
 import { generateCategories } from '../tasks/generate-categories';
-import { renderer } from '../tasks/generate-posts';
 import { generateTags } from '../tasks/generate-tags';
 import './gen-middleware';
 
