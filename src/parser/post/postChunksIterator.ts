@@ -2,7 +2,7 @@ import { getLatestDateArray } from '../../ejs/helper/date';
 import { XArray } from '../../node/array-wrapper';
 import { join, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
-import { DeepPartial, post_chunks } from './postMapper';
+import { archiveMap, DeepPartial, post_chunks } from './postMapper';
 
 export interface GeneratorOpt {
   /**
@@ -33,7 +33,9 @@ export interface GeneratorOpt {
  * @returns
  */
 export default function postChunksIterator(
-  innerChunks: ReturnType<typeof post_chunks>['chunk'][0] | Partial<XArray>,
+  innerChunks:
+    | ReturnType<typeof post_chunks>['chunk'][0]
+    | Partial<XArray<archiveMap>>,
   opt: DeepPartial<GeneratorOpt>
 ) {
   const current_page = opt.current_page;

@@ -34,16 +34,24 @@ export interface modifyPostType extends mergedTypes {
 
 /**
  * Modify Post With Defined Conditions
- * @param parse result of {@link parsePost}
+ * @param data result of {@link parsePost}
  * @returns
  */
-export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
-  if (!parse) return null;
+export function modifyPost<T extends Partial<modifyPostType>>(
+  data: T,
+  merge: boolean
+): T['metadata'] & T;
+export function modifyPost<T extends Partial<modifyPostType>>(data: T): T;
+export function modifyPost<T extends Partial<modifyPostType>>(
+  data: T,
+  merge = false
+) {
+  if (!data) return null;
   const cacheKey = md5(
-    parse.metadata.title +
-      parse.metadata.date +
-      parse.metadata.updated +
-      parse.metadata.type
+    data.metadata.title +
+      data.metadata.date +
+      data.metadata.updated +
+      data.metadata.type
   );
   /*if (parse.fileTree) {
     if (parse.fileTree.source) {
@@ -51,18 +59,21 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
     }
   }*/
   if (useCache) {
-    const get = modCache.getSync<typeof parse>(cacheKey);
+    const get = modCache.getSync<typeof data>(cacheKey);
+    if (typeof get == 'string') return JSON.parse(get);
     if (get) return get;
   }
   // @todo setup empty tags and categories when not set
-  if (!Array.isArray(parse.metadata.category))
-    parse.metadata.category = [config.default_category];
-  if (!Array.isArray(parse.metadata.tags))
-    parse.metadata.tags = [config.default_tag];
+  if (!Array.isArray(data.metadata.category)) {
+    data.metadata.category = [config.default_category].filter((s) => s);
+  }
+  if (!Array.isArray(data.metadata.tags)) {
+    data.metadata.tags = [config.default_tag].filter((s) => s);
+  }
 
   // @todo add tags from title
-  if (config.title_map && typeof parse.metadata.title == 'string') {
-    const title = parse.metadata.title.toLowerCase();
+  if (config.title_map && typeof data.metadata.title == 'string') {
+    const title = data.metadata.title.toLowerCase();
     for (const key in config.title_map) {
       if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
         const tag = config.title_map[key];
@@ -70,14 +81,14 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
 
         if (title.match(regexBoundary)) {
           //console.log('found', regexBoundary, tag);
-          parse.metadata.tags.push(tag);
+          data.metadata.tags.push(tag);
         }
       }
     }
   }
 
   // tag mapper
-  const postLowerTags = parse.metadata.tags.map(
+  const postLowerTags = data.metadata.tags.map(
     (tag) => tag && tag.toLowerCase()
   );
 
@@ -91,7 +102,7 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
         if (hasTag) {
           const indexTag = postLowerTags.indexOf(lowerkey);
           //console.log('original tag', parse.metadata.tags[indexTag]);
-          parse.metadata.tags[indexTag] = renameTagTo;
+          data.metadata.tags[indexTag] = renameTagTo;
           //console.log('renamed tag', renameTagTo);
         }
       }
@@ -109,7 +120,7 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
           //const indexTag = postLowerTags.indexOf(lowerkey);
           //console.log('original tag', parse.metadata.tags[indexTag]);
           //console.log('grouped to', group);
-          parse.metadata.category.push(group);
+          data.metadata.category.push(group);
         }
       }
     }
@@ -118,10 +129,10 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
   // @todo remove default tag when tags have more than 1 item
   if (
     config.default_tag &&
-    parse.metadata.tags.length > 1 &&
-    parse.metadata.tags.includes(config.default_tag)
+    data.metadata.tags.length > 1 &&
+    data.metadata.tags.includes(config.default_tag)
   ) {
-    parse.metadata.tags = parse.metadata.tags.filter(
+    data.metadata.tags = data.metadata.tags.filter(
       (tag) => tag !== config.default_tag
     );
   }
@@ -129,18 +140,18 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
   // @todo remove default category when categories have more than 1 item
   if (
     config.default_category &&
-    parse.metadata.category.length > 1 &&
-    parse.metadata.category.includes(config.default_category)
+    data.metadata.category.length > 1 &&
+    data.metadata.category.includes(config.default_category)
   ) {
-    parse.metadata.category = parse.metadata.category.filter(
+    data.metadata.category = data.metadata.category.filter(
       (category) => category !== config.default_category
     );
   }
 
   // @todo remove duplicate categories
-  parse.metadata.category = [...new Set(parse.metadata.category)];
+  data.metadata.category = [...new Set(data.metadata.category)];
   // @todo remove duplicate tags
-  parse.metadata.tags = [...new Set(parse.metadata.tags)];
+  data.metadata.tags = [...new Set(data.metadata.tags)];
 
   /*// @todo prepare to add post category to cache
   parse.metadata.category.forEach((name: string) => {
@@ -164,12 +175,12 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
   });*/
 
   // @todo set type post when not set
-  if (!parse.metadata.type) parse.metadata.type = 'post';
+  if (!data.metadata.type) data.metadata.type = 'post';
 
   // render post for some properties
   let html: ReturnType<typeof parseHTML>;
   try {
-    const renderbody = renderBodyMarkdown(<any>parse);
+    const renderbody = renderBodyMarkdown(<any>data);
     html = parseHTML(renderbody);
   } catch (error) {
     console.log('[fail]', 'renderBodyMarkdown', error);
@@ -183,18 +194,18 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
     .querySelectorAll('*:not(script,style,meta,link)')
     .map((e) => e.text)
     .join('\n');
-  parse.metadata.wordcount = countWords(words);
-  if (parse.metadata.canonical) {
-    const canonical: string = parse.metadata.canonical;
+  data.metadata.wordcount = countWords(words);
+  if (data.metadata.canonical) {
+    const canonical: string = data.metadata.canonical;
     if (!isValidHttpUrl(canonical))
-      parse.metadata.canonical = config.url + parse.metadata.canonical;
+      data.metadata.canonical = config.url + data.metadata.canonical;
   }
 
   // move 'programming' to first index
-  if (parse.metadata.category.includes('Programming')) {
-    parse.metadata.category.forEach((str, i) => {
+  if (data.metadata.category.includes('Programming')) {
+    data.metadata.category.forEach((str, i) => {
       if (str.toLowerCase().trim() === 'programming') {
-        parse.metadata.category = array_move(parse.metadata.category, i, 0);
+        data.metadata.category = array_move(data.metadata.category, i, 0);
       }
     });
   }
@@ -214,9 +225,10 @@ export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
     });
   });*/
 
-  modCache.putSync(cacheKey, json_encode(parse));
+  modCache.putSync(cacheKey, json_encode(data));
 
-  return parse;
+  if (data.metadata && merge) return Object.assign(data, data.metadata);
+  return data;
 }
 
 export default modifyPost;
