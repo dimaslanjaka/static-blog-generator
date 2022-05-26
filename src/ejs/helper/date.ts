@@ -88,11 +88,11 @@ export function date_format(
   page: postResult = null
 ) {
   if (!str) {
-    console.log(dumpCaller(null, { lib: false }));
     console.log(
       color['Red Orange']('invalid date variable'),
       'variable type:',
-      typeof str
+      typeof str,
+      dumpCaller(null, { lib: false })
     );
     return null;
   }
