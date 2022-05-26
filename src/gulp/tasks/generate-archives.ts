@@ -64,7 +64,7 @@ export async function generateIndex(
     const latestUpdated = getLatestDateArray(
       mapped.map((post) => post.updated.toString())
     );
-    const opt: archiveMap = {
+    const opt = {
       metadata: {
         title: isHome ? 'Homepage' : 'Page ' + current_page,
         subtitle: excerpt(config),
@@ -111,7 +111,10 @@ export async function generateIndex(
         if (Array.isArray(chunks[next])) return next;
       })()
     };
-    const mod = modifyPost(opt);
+
+    opt.posts.map((chunks) => array_wrap(chunks));
+
+    const mod = modifyPost(opt as archiveMap);
     const rendered = await EJSRenderer(<any>mod);
     /*await write(saveTo, rendered);
     console.log(logname, saveTo);
