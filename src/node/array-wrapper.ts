@@ -18,11 +18,13 @@ export class ArrayWrapper<T> extends Array<T> {
   }
 }
 
-export interface XArray extends Array<any> {
+export interface XArray<T> extends Array<T> {
   [key: string]: any;
   each?: (item: any, index: number) => any;
 }
-export function array_wrap<T extends Partial<XArray>>(arr: T): Partial<XArray> {
+export function array_wrap<T extends XArray<any>>(
+  arr: T
+): XArray<T[number]> | T {
   if (Array.isArray(arr)) {
     const newArr = arr;
     newArr.each = arr.forEach;

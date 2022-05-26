@@ -3,6 +3,7 @@ import moment from 'moment';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
 import { array_split_chunks } from '../../node/array-utils';
+import { XArray } from '../../node/array-wrapper';
 import { getAllPosts } from '../../node/cache-post';
 import config from '../../types/_config';
 import { postMap } from './parsePost';
@@ -69,7 +70,7 @@ export interface archiveMap extends mergedPostMap {
   /**
    * all posts in this chunks
    */
-  posts?: postMap[];
+  posts?: XArray<postMap>;
 }
 
 /**
