@@ -26,9 +26,15 @@ export class CachePost {
 
   getAll() {
     const keys: string[] = pcache('post').keysSync();
-    return keys.map((key) => {
-      return pcache('post').getSync<postMap>(key);
-    });
+    return keys
+      .map((key) => {
+        const get = pcache('post').getSync<postMap>(key);
+        //console.log('get', typeof get);
+        return get;
+      })
+      .filter(
+        (post) => typeof post == 'object' && post !== null && post !== undefined
+      );
   }
 
   /**
@@ -107,9 +113,17 @@ export function getLatestPosts(
   by: 'date' | 'updated' | '-date' | '-updated' = '-updated',
   max = 5
 ): postResult[] {
-  const posts: Partial<postMap>[] = getAllPosts();
+  const posts: Partial<postMap>[] = getAllPosts().map(
+    (post: string | Partial<postMap>) => {
+      if (typeof post == 'string') return JSON.parse(post);
+      return post;
+    }
+  );
+  const reorderPosts = order_by(posts, by); //removeEmpties(order_by(posts, by));
+  //console.log('getLatestPosts', reorderPosts.length);
+
   return (
-    removeEmpties(order_by(posts, by))
+    reorderPosts
       // dont index redirected post
       .filter((post) => !post.metadata.redirect)
       .splice(0, max)
