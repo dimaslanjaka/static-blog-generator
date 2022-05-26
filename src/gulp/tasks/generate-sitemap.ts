@@ -5,12 +5,12 @@ import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
-import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { removeEmpties } from '../../node/array-utils';
 import Sitemap from '../../node/cache-sitemap';
 import { write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
 import { postMap } from '../../parser/post/parsePost';
+import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
 import config, { cwd, root } from '../../types/_config';
 import './sitemap';
 

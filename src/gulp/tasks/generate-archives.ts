@@ -1,13 +1,13 @@
 import gulp from 'gulp';
 import { inspect } from 'util';
-import { EJSRenderer } from '../../ejs/EJSRenderer';
-import { getLatestDateArray } from '../../ejs/helper/date';
-import { excerpt } from '../../ejs/helper/excerpt';
 import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
 import { archiveMap, post_chunks } from '../../parser/post/postMapper';
+import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
+import { getLatestDateArray } from '../../renderer/ejs/helper/date';
+import { excerpt } from '../../renderer/ejs/helper/excerpt';
 import config, { tmp } from '../../types/_config';
 import './generate-categories';
 import './generate-tags';

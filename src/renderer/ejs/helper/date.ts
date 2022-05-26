@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import moment, { isMoment } from 'moment-timezone';
-import { removeEmpties } from '../../node/array-utils';
-import { postResult } from '../../node/cache-post';
-import color from '../../node/color';
-import { dumpCaller } from '../../node/trace';
-import { postMap } from '../../parser/post/parsePost';
-import config from '../../types/_config';
+import { removeEmpties } from '../../../node/array-utils';
+import { postResult } from '../../../node/cache-post';
+import color from '../../../node/color';
+import { dumpCaller } from '../../../node/trace';
+import { postMap } from '../../../parser/post/parsePost';
+import config from '../../../types/_config';
 
 export function getLatestDateArray(arr: moment.MomentInput[]) {
   arr = removeEmpties(arr);

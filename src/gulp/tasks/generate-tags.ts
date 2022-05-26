@@ -1,9 +1,6 @@
 import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'upath';
-import { EJSRenderer } from '../../ejs/EJSRenderer';
-import { excerpt } from '../../ejs/helper/excerpt';
-import { thumbnail } from '../../ejs/helper/thumbnail';
 import { array_wrap } from '../../node/array-wrapper';
 import { pcache } from '../../node/cache';
 import CachePost from '../../node/cache-post';
@@ -13,6 +10,9 @@ import modifyPost from '../../parser/post/modifyPost';
 import { postMap } from '../../parser/post/parsePost';
 import postChunksIterator from '../../parser/post/postChunksIterator';
 import { post_chunks, simplifyDump } from '../../parser/post/postMapper';
+import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
+import { excerpt } from '../../renderer/ejs/helper/excerpt';
+import { thumbnail } from '../../renderer/ejs/helper/thumbnail';
 import config, { cwd, tmp } from '../../types/_config';
 
 //const cacheTags = new CacheFile('postTags');
