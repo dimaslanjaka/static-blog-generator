@@ -23,17 +23,21 @@ const cacheCats = new CacheFile('postCats');*/
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 // export type modifyPostType = postMap | mergedPostMap | archiveMap;
-export type modifyPostType =
-  | Partial<postMap>
-  | Partial<mergedPostMap>
-  | Partial<archiveMap>;
+export type mergedTypes = Partial<postMap> &
+  Partial<mergedPostMap> &
+  Partial<archiveMap> &
+  Record<string, unknown>;
+
+export interface modifyPostType extends mergedTypes {
+  [key: string]: any;
+}
 
 /**
  * Modify Post With Defined Conditions
  * @param parse result of {@link parsePost}
  * @returns
  */
-export function modifyPost<T extends modifyPostType>(parse: T): T {
+export function modifyPost<T extends Partial<modifyPostType>>(parse: T): T {
   if (!parse) return null;
   const cacheKey = md5(
     parse.metadata.title +
