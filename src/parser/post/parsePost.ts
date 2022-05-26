@@ -73,10 +73,12 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
 
   parse = modifyPost(<any>parse);
 
-  if (
-    parse.metadata.type === 'post' &&
-    path.includes(config.source_dir + '/_posts')
-  ) {
+  /**
+   * validate if post path is post sources
+   */
+  const isPathPost =
+    path.includes(config.source_dir + '/_posts') || path.includes('src-posts/');
+  if (parse.metadata.type === 'post' && isPathPost) {
     cachePost.set(path, parse);
   }
 

@@ -143,7 +143,7 @@ export function simplifyDump(post: any) {
  * @returns
  */
 export function post_chunks<T extends any[]>(arr?: T) {
-  const posts = (typeof arr == 'object' ? arr : getAllPosts())
+  const posts = (Array.isArray(arr) ? arr : getAllPosts())
     .filter((item) => {
       if (!item) return false;
       if (!item.metadata) return false;

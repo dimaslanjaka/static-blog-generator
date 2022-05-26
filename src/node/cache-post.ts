@@ -122,7 +122,6 @@ export function getLatestPosts(
 
 /**
  * get all posts
- * @param opt {@link defaultResovableValue}
  * @returns array of posts {@link CacheFile.getValues}
  */
 export function getAllPosts() {
