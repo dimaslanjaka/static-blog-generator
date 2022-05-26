@@ -17,10 +17,16 @@ export class ArrayWrapper<T> extends Array<T> {
     return item;
   }
 }
-export function array_wrap<T extends any[]>(arr: T) {
-  //arr['each'] = arr.forEach;
-  //return arr;
-  const init = new ArrayWrapper<T[number]>(...arr);
-  init['each'] = init.forEach;
-  return init;
+
+export interface XArray extends Array<any> {
+  [key: string]: any;
+  each?: (item: any, index: number) => any;
 }
+export function array_wrap<T extends Partial<XArray>>(arr: T): Partial<XArray> {
+  const newArr = arr;
+  newArr.each = arr.forEach;
+  //const init = new ArrayWrapper<T[number]>(...arr);
+  //init['each'] = init.forEach;
+  return newArr;
+}
+export const array_wrapper = array_wrap;
