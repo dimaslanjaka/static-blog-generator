@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import moment from 'moment';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
@@ -69,7 +70,10 @@ export interface archiveMap extends mergedPostMap {
  * @returns
  */
 export default function postMapper(post: postMap): archiveMap {
-  post.metadata.date = new dateMapper(<string>post.metadata.date);
+  post.metadata.date =
+    typeof post.metadata.date == 'string'
+      ? new dateMapper(post.metadata.date)
+      : post.metadata.date;
   return Object.assign(post, post.metadata);
 }
 
@@ -107,11 +111,6 @@ export function postChunksMapper<T extends any[][]>(chunks: T): T {
     return arr_chunk;
   });
   return chunks;
-}
-
-export function array_wrap<T extends any[]>(arr: T): T {
-  arr['each'] = arr.forEach;
-  return arr;
 }
 
 /**

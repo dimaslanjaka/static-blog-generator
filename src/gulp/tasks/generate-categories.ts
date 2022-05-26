@@ -1,17 +1,14 @@
 import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
+import { array_wrap } from '../../node/array-wrapper';
 import CacheFile from '../../node/cache';
 import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
 import { postMap } from '../../parser/post/parsePost';
 import postChunksIterator from '../../parser/post/postChunksIterator';
-import {
-  array_wrap,
-  post_chunks,
-  simplifyDump
-} from '../../parser/post/postMapper';
+import { post_chunks, simplifyDump } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import { renderer } from './generate-posts';
 
