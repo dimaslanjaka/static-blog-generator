@@ -7,19 +7,13 @@ import { dbFolder } from '../../node/cache';
 import config, { root, tmp } from '../../types/_config';
 
 /** clean generated folder */
-export const clean_public = (done?: TaskCallback) =>
-  rm(join(root, config.public_dir), { recursive: true }, done);
+export const clean_public = () => fse.emptyDir(join(root, config.public_dir));
 /** clean posts from config.source_dir */
 export const clean_posts = () =>
   fse.emptyDir(join(root, config.source_dir, '_posts'));
 /** clean temp folder */
-export const clean_tmp = (done?: TaskCallback) => {
-  rm(tmp(), { recursive: true }, () => {
-    rm(join(cwd(), 'tmp'), { recursive: true }, () => {
-      done();
-    });
-  });
-};
+export const clean_tmp = () =>
+  fse.emptyDir(tmp()).then(() => fse.emptyDir(join(cwd(), 'tmp')));
 /** clean database folder */
 export const clean_db = (done?: TaskCallback) =>
   rm(dbFolder, { recursive: true }, done);
