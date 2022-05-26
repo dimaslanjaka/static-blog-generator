@@ -28,7 +28,9 @@ export type DeepPartial<T> = {
 /**
  * mapped type
  */
-export type mergedPostMap = Partial<postMap> & DeepPartial<postMap['metadata']>;
+export type mergedPostMap = Partial<postMap> &
+  DeepPartial<postMap['metadata']> &
+  Record<string, unknown>;
 
 export interface archiveMap extends mergedPostMap {
   [key: string]: any;
@@ -64,6 +66,10 @@ export interface archiveMap extends mergedPostMap {
    * page total
    */
   total?: number;
+  /**
+   * all posts in this chunks
+   */
+  posts?: postMap[];
 }
 
 /**

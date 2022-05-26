@@ -96,7 +96,7 @@ export async function generateTags(
           pagemeta.metadata.title = 'Tag: ' + tagName + ' Page ' + current_page;
         }
         const merge_data = Object.assign(pagemeta, data);
-        const pagedata = modifyPost(merge_data);
+        const pagedata = modifyPost(<any>merge_data);
         const rendered = await EJSRenderer(<any>pagedata);
         const f = writeFileSync(saveTo, rendered);
         console.log(logname, f);

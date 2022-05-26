@@ -25,8 +25,7 @@ export interface XArray extends Array<any> {
 export function array_wrap<T extends Partial<XArray>>(arr: T): Partial<XArray> {
   const newArr = arr;
   newArr.each = arr.forEach;
-  //const init = new ArrayWrapper<T[number]>(...arr);
-  //init['each'] = init.forEach;
+  newArr['each'] = arr.forEach;
   return newArr;
 }
 export const array_wrapper = array_wrap;
