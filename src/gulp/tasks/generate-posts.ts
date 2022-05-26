@@ -2,7 +2,6 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import yargs from 'yargs';
 import { renderer } from '../../ejs/renderer';
 import CacheFile from '../../node/cache';
 import Sitemap from '../../node/cache-sitemap';
@@ -22,9 +21,6 @@ import { modifyPost } from '../../parser/post/modifyPost';
 import parsePost, { buildPost } from '../../parser/post/parsePost';
 import { validateParsed } from '../../parser/transformPosts';
 import config, { root, tmp } from '../../types/_config';
-
-const argv = yargs(process.argv.slice(2)).argv;
-const nocache = argv['nocache'];
 
 /**
  * @see {@link config.source_dir}
@@ -75,7 +71,7 @@ export const renderPost = function () {
           cached: false
         };
         // set cache indicator, if cache not exist and argument nocache not set
-        result.cached = renderCache.has(result.path) && !nocache;
+        result.cached = renderCache.has(result.path) && config.generator.cache;
         let parsed = parsePost(result.path);
         // try non-cache method
         if (!validateParsed(<any>parsed)) parsed = parsePost(result.path);

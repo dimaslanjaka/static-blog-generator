@@ -6,6 +6,7 @@ import {
   getLatestPosts,
   getRandomPosts
 } from '../node/cache-post';
+import { write } from '../node/filemanager';
 import { postMap } from '../parser/post/parsePost';
 import { renderBodyMarkdown } from '../parser/toHtml';
 import { DynamicObject } from '../types';
@@ -101,15 +102,19 @@ export async function renderer(
   override: Override = {}
 ) {
   if (!parsed) {
-    const e = new Error().stack.split('\n')[2];
-    console.log(e);
+    const f = await write(join(__dirname, 'tmp/renderer.json'), parsed);
+    if (!parsed.body) {
+      console.log('body empty');
+    }
+    console.log('dump', f);
     return null;
   }
   // render markdown to html
-  const body = renderBodyMarkdown(parsed);
+  let body = '';
+  if (parsed.body) body = renderBodyMarkdown(parsed);
 
   const defaultOpt: ejs.Options = {
-    //cache: true,
+    cache: config.generator.cache
   };
 
   // assign body
