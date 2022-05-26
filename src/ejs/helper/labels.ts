@@ -38,7 +38,8 @@ const homepage = new URL(config.url);
  */
 export function tags(page: postMap) {
   const result: Label[] = [];
-  const target = page.tags || page.metadata.tags || [];
+  let target: string[] = page.tags || [];
+  if (page.metadata) target = page.metadata.tags;
   target.forEach((tag: string) => {
     homepage.pathname = join(tag_dir, tag);
     result.push({

@@ -59,6 +59,7 @@ export async function generateIndex(
       logname = logname + color['Granny Smith Apple']('[homepage]');
     }
 
+    // @fixme page.post.each
     const mapped = array_wrap(chunks[current_page]);
     const latestUpdated = getLatestDateArray(
       mapped.map((post) => post.updated.toString())
