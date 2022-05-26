@@ -4,8 +4,13 @@ import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
 import { readdirSync } from '../../node/filemanager';
 import scheduler from '../../node/scheduler';
+import { replaceArr } from '../../node/string-utils';
 import { buildPost, parsePost } from '../../parser/post/parsePost';
-import config, { post_public_dir, post_source_dir } from '../../types/_config';
+import config, {
+  cwd,
+  post_public_dir,
+  post_source_dir
+} from '../../types/_config';
 import { determineDirname } from '../utils';
 import './copy/assets';
 
@@ -60,8 +65,10 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
 export const copy_posts = copyPosts;
 
 scheduler.add('indexing-posts', () => {
-  console.log('reading folder', post_public_dir);
+  const logname = color.Fuchsia('[indexing]');
+  console.log(logname, 'indexing folder', post_public_dir);
   for (const filePath of readdirSync(post_public_dir)) {
+    console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
     parsePost(filePath);
   }
 });
