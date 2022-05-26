@@ -119,7 +119,7 @@ export async function generateIndex(
     if (isSpecific && labelname === current_page) return rendered;
     // dump
     if (config.verbose) {
-      write(
+      const f = await write(
         tmp('generateindex', `page-${current_page}.json`),
         mapped.map((post) => {
           delete post.config;
@@ -130,7 +130,8 @@ export async function generateIndex(
           post.metadata = null;
           return post;
         })
-      ).then((f) => console.log(logname, 'dump', f));
+      );
+      console.log(logname, 'dump', f);
     }
   }
 }

@@ -22,8 +22,11 @@ const cacheTags = new CacheFile('postTags');
 const cacheCats = new CacheFile('postCats');*/
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
-type modifyPostType = postMap | mergedPostMap | archiveMap;
-// type modifyPostType = Partial<postMap> | Partial<mergedPostMap> | Partial<archiveMap>;
+// export type modifyPostType = postMap | mergedPostMap | archiveMap;
+export type modifyPostType =
+  | Partial<postMap>
+  | Partial<mergedPostMap>
+  | Partial<archiveMap>;
 
 /**
  * Modify Post With Defined Conditions

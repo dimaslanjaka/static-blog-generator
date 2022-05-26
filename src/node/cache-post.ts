@@ -113,12 +113,7 @@ export function getLatestPosts(
   by: 'date' | 'updated' | '-date' | '-updated' = '-updated',
   max = 5
 ): postResult[] {
-  const posts: Partial<postMap>[] = getAllPosts().map(
-    (post: string | Partial<postMap>) => {
-      if (typeof post == 'string') return JSON.parse(post);
-      return post;
-    }
-  );
+  const posts: Partial<postMap>[] = getAllPosts();
   const reorderPosts = order_by(posts, by); //removeEmpties(order_by(posts, by));
   //console.log('getLatestPosts', reorderPosts.length);
 
@@ -143,7 +138,11 @@ export function getAllPosts() {
   return order_by(postCache.getAll(), config.index_generator.order_by)
     .filter((post: Partial<postMap>) => post && post.metadata.type == 'post')
     .map((post) => modifyPost(post))
-    .map((post) => fixPost(post));
+    .map((post) => fixPost(post))
+    .map((post: string | Partial<postMap>) => {
+      if (typeof post == 'string') return JSON.parse(post);
+      return post;
+    });
 }
 
 /**
