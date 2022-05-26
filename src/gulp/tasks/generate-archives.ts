@@ -31,6 +31,11 @@ export async function generateIndex(
 ) {
   const postsChunks = post_chunks();
   const chunks = postsChunks.chunk;
+  let logname = color['Desert Sand']('[generate][index]');
+  if (!chunks.length) {
+    console.log(logname, 'post empty');
+    return null;
+  }
   // setup variable for infinite scroll
   const sitedata = postsChunks.sitedata;
   const isSpecific = typeof labelname == 'number';
@@ -39,7 +44,7 @@ export async function generateIndex(
     if (isSpecific && current_page != labelname) continue;
     // break only process homepage
     if (labelname == 'homepage' && !isHome) break;
-    let logname = color['Desert Sand']('[generate][index]');
+    logname = color['Desert Sand']('[generate][index]');
     let saveTo = join(cwd(), config.public_dir, 'index.html');
     if (!isHome) {
       saveTo = join(
