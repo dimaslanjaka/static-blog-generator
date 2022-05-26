@@ -6,6 +6,7 @@ import { array_split_chunks } from '../../node/array-utils';
 import { getAllPosts } from '../../node/cache-post';
 import config from '../../types/_config';
 import { postMap } from './parsePost';
+import postChunksIterator from './postChunksIterator';
 
 /**
  * Partializing properties
@@ -28,6 +29,7 @@ export type DeepPartial<T> = {
  * mapped type
  */
 export type mergedPostMap = Partial<postMap> & DeepPartial<postMap['metadata']>;
+
 export interface archiveMap extends mergedPostMap {
   [key: string]: any;
   /**
@@ -113,12 +115,25 @@ export function postChunksMapper<T extends any[][]>(chunks: T): T {
   return chunks;
 }
 
+export type DumperMerged = Partial<ReturnType<typeof postChunksIterator>> &
+  Partial<mergedPostMap> &
+  Record<string, unknown>;
+
+export interface DumperType extends DumperMerged {
+  [key: string]: any;
+  next: any;
+  prev: any;
+  content: string;
+}
+
+export function simplifyDump<T extends Partial<DumperType>>(post: T): T;
+export function simplifyDump<T extends Partial<DumperType>[]>(post: T): T;
 /**
  * simplified dump
  * @param post
  * @returns
  */
-export function simplifyDump(post: any) {
+export function simplifyDump<T extends Partial<DumperType>>(post: T) {
   if (Array.isArray(post)) return post.map(simplifyDump);
   if (typeof post == 'object') {
     if (post.sitedata) post.sitedata = null;
@@ -127,12 +142,20 @@ export function simplifyDump(post: any) {
         post.posts = post.posts.map(simplifyDump);
       }
     }
-    if (post.config) post.config = null;
+    for (const key in post) {
+      if (Object.prototype.hasOwnProperty.call(post, key)) {
+        const element = post[key];
+        if (['config', 'body', 'prev', 'next', 'content', 'body'].includes(key))
+          post[key] = <any>typeof post[key];
+      }
+    }
+    /*if (post.config) post.config = null;
     if (post.body) post.body = null;
     if (post.content) post.content = null;
     if (post.next) post.next = null;
     if (post.prev) post.prev = null;
     if (post.metadata) post.metadata = null;
+    if (post.config) post.config = null;*/
   }
   return post;
 }
