@@ -133,7 +133,7 @@ const filemanager = {
    * @returns
    */
   mkdirSync: (path: fs.PathLike, options: fs.MakeDirectoryOptions = {}) => {
-    if (!existsSync(path))
+    if (!fs.existsSync(path))
       return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
   }
 };
@@ -185,7 +185,7 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
     opt
   );
   if (opt.validate) {
-    if (existsSync(res)) return res;
+    if (fs.existsSync(res)) return res;
     return null;
   }
   return res;
@@ -196,12 +196,16 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
  * @param opt
  * @returns
  */
+export function read(path: string): Buffer;
+export function read(path: string, opt?: BufferEncoding): string;
 export function read(
   path: string,
   opt?: Parameters<typeof fs.readFileSync>[1]
 ): ReturnType<typeof fs.readFileSync> | null {
-  if (existsSync(path)) return readFileSync(path, opt);
+  if (fs.existsSync(path)) return fs.readFileSync(path, opt);
+  return null;
 }
+
 /**
  * smart join to unix path
  * * removes empty/null/undefined
@@ -214,6 +218,5 @@ export const join = (...str: any[]) => {
 };
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
-export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
 export const { basename, relative, extname } = upath;
 export const PATH_SEPARATOR = modPath.sep;

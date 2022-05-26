@@ -1,5 +1,6 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
+import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { toUnix } from 'upath';
 import { EJSRenderer } from '../../ejs/EJSRenderer';
@@ -8,7 +9,6 @@ import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
 import {
   cwd,
-  existsSync,
   globSrc,
   join,
   mkdirSync,

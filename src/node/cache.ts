@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { rm } from 'fs';
+import { existsSync, rm } from 'fs';
 import memoizee from 'memoizee';
 import persistentCache from 'persistent-cache';
 import { TypedEmitter } from 'tiny-typed-emitter';
@@ -7,15 +7,7 @@ import { toUnix } from 'upath';
 import { DynamicObject } from '../types';
 import { array_shuffle } from './array-utils';
 import './cache-serialize';
-import {
-  cacheDir,
-  existsSync,
-  join,
-  mkdirSync,
-  read,
-  resolve,
-  write
-} from './filemanager';
+import { cacheDir, join, mkdirSync, read, resolve, write } from './filemanager';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import memoizer from './memoize-fs';

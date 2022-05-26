@@ -1,5 +1,6 @@
 import chalk from 'chalk';
-import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
+import { existsSync } from 'fs';
+import { cwd, dirname, join, read } from '../../node/filemanager';
 import { root } from '../../types/_config';
 
 const logname = chalk.blue('[include]');
@@ -30,8 +31,8 @@ export function parseShortCodeInclude(file: string, str: string) {
           const filepath = dirs[key];
           if (existsSync(filepath)) {
             console.log(logname + chalk.greenBright(`[${key}]`), file);
-            const read = readFileSync(filepath).toString();
-            str = str.replace(htmlTag, () => read);
+            const contents = read(filepath).toString();
+            str = str.replace(htmlTag, () => contents);
             break;
           }
         }

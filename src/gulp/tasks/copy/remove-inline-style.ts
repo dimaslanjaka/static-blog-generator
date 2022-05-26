@@ -1,5 +1,6 @@
+import { existsSync } from 'fs';
 import color from '../../../node/color';
-import { existsSync, globSrc, join, write } from '../../../node/filemanager';
+import { globSrc, join, write } from '../../../node/filemanager';
 import jdom from '../../../node/jsdom';
 import parsePost, { buildPost } from '../../../parser/post/parsePost';
 import { post_public_dir } from '../../../types/_config';
