@@ -3,7 +3,6 @@ title: Parse Shortcodes
 noindex: true
 date: 2022-05-17
 updated: 2022-05-17
-type: page
 ---
 
 ## Shortcode CSS
