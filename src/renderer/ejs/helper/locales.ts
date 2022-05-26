@@ -1,4 +1,4 @@
-import { postMap } from '../../parser/post/parsePost';
+import { postMap } from '../../../parser/post/parsePost';
 
 const localeMap = {
   en: 'en_US',

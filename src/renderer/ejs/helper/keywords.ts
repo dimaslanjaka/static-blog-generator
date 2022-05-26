@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
-import { uniqueStringArray } from '../../node/array-utils';
-import { postMap } from '../../parser/post/parsePost';
+import { uniqueStringArray } from '../../../node/array-utils';
+import { postMap } from '../../../parser/post/parsePost';
 
 export function keywords(page: postMap['metadata']) {
   let kw = [];

@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 
-import { postMap } from '../../parser/post/parsePost';
+import { postMap } from '../../../parser/post/parsePost';
 
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 const noimage =

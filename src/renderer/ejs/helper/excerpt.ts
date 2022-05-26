@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
-import { postMap } from '../../parser/post/parsePost';
-import { ProjectConfig } from '../../types/_config';
+import { postMap } from '../../../parser/post/parsePost';
+import { ProjectConfig } from '../../../types/_config';
 
 /**
  * get excerpt of page

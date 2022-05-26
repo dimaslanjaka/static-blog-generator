@@ -3,7 +3,6 @@ import chalk from 'chalk';
 import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { EJSRenderer } from '../../ejs/EJSRenderer';
 import CacheFile from '../../node/cache';
 import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
@@ -20,6 +19,7 @@ import { replaceArr } from '../../node/string-utils';
 import { modifyPost } from '../../parser/post/modifyPost';
 import parsePost, { buildPost } from '../../parser/post/parsePost';
 import { validateParsed } from '../../parser/transformPosts';
+import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
 import config, { root, tmp } from '../../types/_config';
 
 /**

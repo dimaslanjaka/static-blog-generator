@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import moment from 'moment';
-import { excerpt } from '../../ejs/helper/excerpt';
-import { thumbnail } from '../../ejs/helper/thumbnail';
 import { array_split_chunks } from '../../node/array-utils';
 import { XArray } from '../../node/array-wrapper';
 import { getAllPosts } from '../../node/cache-post';
+import { excerpt } from '../../renderer/ejs/helper/excerpt';
+import { thumbnail } from '../../renderer/ejs/helper/thumbnail';
 import config from '../../types/_config';
 import { postMap } from './parsePost';
 import postChunksIterator from './postChunksIterator';
