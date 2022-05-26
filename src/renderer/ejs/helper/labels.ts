@@ -1,6 +1,6 @@
-import { join } from '../../node/filemanager';
-import { postMap } from '../../parser/post/parsePost';
-import config from '../../types/_config';
+import { join } from '../../../node/filemanager';
+import { postMap } from '../../../parser/post/parsePost';
+import config from '../../../types/_config';
 const tag_dir = config.tag_dir;
 const cat_dir = config.category_dir;
 

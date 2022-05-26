@@ -5,12 +5,12 @@ import {
   getAllPosts,
   getLatestPosts,
   getRandomPosts
-} from '../node/cache-post';
-import { write } from '../node/filemanager';
-import { postMap } from '../parser/post/parsePost';
-import { renderBodyMarkdown } from '../parser/toHtml';
-import { DynamicObject } from '../types';
-import config, { theme_config, theme_dir } from '../types/_config';
+} from '../../node/cache-post';
+import { write } from '../../node/filemanager';
+import { postMap } from '../../parser/post/parsePost';
+import { renderBodyMarkdown } from '../../parser/toHtml';
+import { DynamicObject } from '../../types';
+import config, { theme_config, theme_dir } from '../../types/_config';
 import ejs_object from './index';
 
 const page_url = new URL(config.url);

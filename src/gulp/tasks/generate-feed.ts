@@ -2,18 +2,18 @@ import Bluebird from 'bluebird';
 import { Feed, Item } from 'feed';
 import gulp from 'gulp';
 import moment from 'moment';
-import { helpers } from '../../ejs';
-import {
-  author_email,
-  author_link,
-  author_name,
-  author_object
-} from '../../ejs/helper/author';
-import { excerpt } from '../../ejs/helper/excerpt';
-import { thumbnail } from '../../ejs/helper/thumbnail';
 import { getAllPosts, getLatestPosts } from '../../node/cache-post';
 import color from '../../node/color';
 import { join, write } from '../../node/filemanager';
+import { helpers } from '../../renderer/ejs';
+import {
+    author_email,
+    author_link,
+    author_name,
+    author_object
+} from '../../renderer/ejs/helper/author';
+import { excerpt } from '../../renderer/ejs/helper/excerpt';
+import { thumbnail } from '../../renderer/ejs/helper/thumbnail';
 import config, { post_generated_dir } from '../../types/_config';
 import { isValidHttpUrl } from '../utils';
 
