@@ -1,6 +1,7 @@
+import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { join, resolve, toUnix } from 'upath';
-import { existsSync, write } from '../../node/filemanager';
+import { write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import './generate-after';
 import './generate-archives';

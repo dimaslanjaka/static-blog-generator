@@ -1,10 +1,6 @@
+import { existsSync } from 'fs';
 import color from '../node/color';
-import {
-  dirname,
-  existsSync,
-  mkdirSync,
-  writeFileSync
-} from '../node/filemanager';
+import { dirname, mkdirSync, writeFileSync } from '../node/filemanager';
 import { buildPost, postMap } from './post/parsePost';
 
 /**

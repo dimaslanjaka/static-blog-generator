@@ -7,6 +7,8 @@ import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
+import { readdirSync } from '../../node/filemanager';
+import scheduler from '../../node/scheduler';
 import { buildPost, parsePost } from '../../parser/post/parsePost';
 import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import { determineDirname } from '../utils';
@@ -59,3 +61,9 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
  * @see {@link copyPosts}
  */
 export const copy_posts = copyPosts;
+
+scheduler.add('indexing-posts', () => {
+  readdirSync(post_public_dir, (err, files) => {
+    if (!err) console.log(files.length);
+  });
+});

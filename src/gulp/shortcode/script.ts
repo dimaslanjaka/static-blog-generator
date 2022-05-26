@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-escape */
 import chalk from 'chalk';
-import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
+import { existsSync } from 'fs';
+import { cwd, dirname, join, read } from '../../node/filemanager';
 import { root } from '../../types/_config';
-
 
 const logname = chalk.blue('[script]');
 
@@ -33,8 +33,8 @@ export function shortcodeScript(file: string, str: string) {
         if (existsSync(filepath)) {
           log[0] += chalk.greenBright(`[${key}]`);
           console.log(...log, file);
-          const read = readFileSync(filepath, 'utf-8');
-          str = str.replace(htmlTag, () => `<script>${read}</script>`);
+          const contents = read(filepath, 'utf-8');
+          str = str.replace(htmlTag, () => `<script>${contents}</script>`);
           //console.log('match tag', str.match(new RegExp(htmlTag, 'm'))[0]);
           //write(tmp('shortcode', 'script.txt'), mod).then(console.log);
           break;
