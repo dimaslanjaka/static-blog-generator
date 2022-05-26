@@ -1,6 +1,6 @@
 import { join } from 'upath';
 import urlParser from '../../curl/url-parser';
-import { renderer } from '../../ejs/renderer';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { arrayAddAll } from '../../node/array-utils';
 import CacheFile from '../../node/cache';
 import { cwd, globSrc } from '../../node/filemanager';
@@ -57,7 +57,7 @@ export async function fixExternalImages() {
         /*const body = renderBodyMarkdown(parsed);
         const renderBody = ejs_object.render(body, Object.assign(parsed, parsed.metadata));
         console.log(renderBody.includes('<img'));*/
-        const render = await renderer(parsed);
+        const render = await EJSRenderer(parsed);
         console.log(render.includes('<img'));
       }
     }

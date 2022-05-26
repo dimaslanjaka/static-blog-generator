@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
-import { renderer } from '../../ejs/renderer';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import { removeEmpties } from '../../node/array-utils';
 import Sitemap from '../../node/cache-sitemap';
 import { write } from '../../node/filemanager';
@@ -110,7 +110,7 @@ function generateSitemapHtml(done?: TaskCallback) {
       const modify = modifyPost(opt);
       if (modify.sitedata) delete modify.sitedata;
       //console.log(modify);
-      renderer(<any>modify).then((rendered) => {
+      EJSRenderer(<any>modify).then((rendered) => {
         write(join(root, config.public_dir, 'sitemap.html'), rendered).then(
           (f) => {
             console.log(log, 'saved', f);
