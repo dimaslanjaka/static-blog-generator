@@ -6,7 +6,7 @@ import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
 import modifyPost from '../../parser/post/modifyPost';
-import { archiveMap, post_chunks } from '../../parser/post/postMapper';
+import { post_chunks } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
 import './generate-categories';
 import './generate-tags';
@@ -83,7 +83,9 @@ export async function generateIndex(
         source: saveTo,
         public: join(tmp(), 'index.html')
       },
-      posts: mapped.map((chunks) => array_wrap(chunks)),
+      posts: mapped.map((chunks) => modifyPost(chunks)) as ReturnType<
+        typeof array_wrap
+      >,
       total: chunks.length,
       page_now: current_page,
       page_prev: (() => {
@@ -112,12 +114,14 @@ export async function generateIndex(
       })()
     };
 
-    const mod = modifyPost(opt as archiveMap);
-    write(
+    //const mod = modifyPost(opt as archiveMap);
+    const f = await write(
       join(__dirname, 'tmp/generate-archives/rendered.log'),
-      inspect(mod.posts)
+      inspect(opt.posts)
     );
-    //const rendered = await EJSRenderer(<any>mod);
+    console.log('dump to', f);
+    console.log(opt.posts.each);
+    //const rendered = await EJSRenderer(<any>opt);
     /*await write(saveTo, rendered);
     console.log(logname, saveTo);
     // immediately returns

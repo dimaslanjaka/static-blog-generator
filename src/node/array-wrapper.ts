@@ -23,9 +23,12 @@ export interface XArray extends Array<any> {
   each?: (item: any, index: number) => any;
 }
 export function array_wrap<T extends Partial<XArray>>(arr: T): Partial<XArray> {
-  const newArr = arr;
-  newArr.each = arr.forEach;
-  newArr['each'] = arr.forEach;
-  return newArr;
+  if (Array.isArray(arr)) {
+    const newArr = arr;
+    newArr.each = arr.forEach;
+    newArr['each'] = arr.forEach;
+    return newArr;
+  }
+  return arr;
 }
 export const array_wrapper = array_wrap;
