@@ -128,10 +128,11 @@ export async function generateIndex(
     const rendered = await EJSRenderer(<any>mod);
     await write(saveTo, rendered);
     console.log(logname, saveTo);
-    /*
     // immediately returns
     if (isHome && labelname == 'homepage') return rendered;
     if (isSpecific && labelname === current_page) return rendered;
+    /*
+
     // dump
     if (config.verbose) {
       const f = await write(
