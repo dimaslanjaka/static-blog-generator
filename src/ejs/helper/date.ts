@@ -2,6 +2,8 @@
 import moment, { isMoment } from 'moment-timezone';
 import { removeEmpties } from '../../node/array-utils';
 import { postResult } from '../../node/cache-post';
+import color from '../../node/color';
+import { dumpCaller } from '../../node/trace';
 import { postMap } from '../../parser/post/parsePost';
 import config from '../../types/_config';
 
@@ -86,7 +88,12 @@ export function date_format(
   page: postResult = null
 ) {
   if (!str) {
-    console.log('invalid date variable');
+    console.log(dumpCaller(null, { lib: false }));
+    console.log(
+      color['Red Orange']('invalid date variable'),
+      'variable type:',
+      typeof str
+    );
     return null;
   }
   const imoment = getMoment(str, date_local(page), config.timezone);
