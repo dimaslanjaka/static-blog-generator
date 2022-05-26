@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import { excerpt } from '../../ejs/helper/excerpt';
 import { thumbnail } from '../../ejs/helper/thumbnail';
+import { renderer } from '../../ejs/renderer';
 import { array_wrap } from '../../node/array-wrapper';
 import CacheFile from '../../node/cache';
 import color from '../../node/color';
@@ -10,7 +11,6 @@ import { postMap } from '../../parser/post/parsePost';
 import postChunksIterator from '../../parser/post/postChunksIterator';
 import { post_chunks, simplifyDump } from '../../parser/post/postMapper';
 import config, { tmp } from '../../types/_config';
-import { renderer } from './generate-posts';
 
 const cacheCats = new CacheFile('postCats');
 export async function generateCategories(labelname?: string, pagenum?: number) {
