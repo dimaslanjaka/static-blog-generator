@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import gulp from 'gulp';
 import { toUnix } from 'upath';
-import { renderer } from '../../ejs/renderer';
+import { EJSRenderer } from '../../ejs/EJSRenderer';
 import CacheFile from '../../node/cache';
 import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
@@ -155,7 +155,7 @@ export const renderPost = function () {
             }
           }
 
-          renderer(parsed)
+          EJSRenderer(parsed)
             .then(save)
             .then(skip)
             .catch((e) => {
