@@ -4503,7 +4503,8 @@ fd-slicer@~1.1.0:
 
 feed@^4.2.2:
   version "4.2.2"
-  resolved "git+ssh://git@github.com/jpmonette/feed.git#34dbde9aa47b85ae207ba4fefe4c5794b8ca43e2"
+  resolved "https://registry.yarnpkg.com/feed/-/feed-4.2.2.tgz#865783ef6ed12579e2c44bbef3c9113bc4956a7e"
+  integrity sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==
   dependencies:
     xml-js "^1.6.11"
 
@@ -9913,13 +9914,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-2576c998-5e51-4faa-b7a3-cef8be8e0ec7-1653548075526/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-d19b7947-1c91-45f7-bbb4-9d188a3626d1-1653550957503/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-c0961a17-8161-4609-a73a-e9884838390e-1653548075519/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-c0961a17-8161-4609-a73a-e9884838390e-1653548075519/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-bfd5880f-6463-4adb-86a5-a90bd15e35af-1653550957497/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-bfd5880f-6463-4adb-86a5-a90bd15e35af-1653550957497/node_modules/sbg-themes/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"
