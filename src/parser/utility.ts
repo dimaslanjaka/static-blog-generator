@@ -1,19 +1,25 @@
 /**
- * measure time execution
- * @see {@link https://stackoverflow.com/a/70004960/6404439}
- * @param func
- * @param args
+ * Function type
  */
-export function measureRunningTime(
-  func: { (arg0: any): void },
-  ...args: any[]
-) {
-  const varToString = (varObj: { func?: (arg0: any) => void }) =>
-    Object.keys(varObj)[0];
-  const displayName = func.name || varToString({ func });
-  console.time(displayName);
-  //const tupleArgs = [...args];
-  //func(tupleArgs);
-  func.apply(null, ...args);
-  console.timeEnd(displayName);
+export interface FunctionType {
+  (): any;
+  (arg0: any): any;
+  (...arg0: any[]): any;
 }
+
+/**
+ * transform any variable type to string
+ * @param varObj
+ * @returns
+ */
+export const varToString = (varObj: { func?: FunctionType }) =>
+  Object.keys(varObj)[0];
+
+/**
+ * get function name
+ * @param func
+ * @returns
+ */
+export const getFuncName = (func: FunctionType) => {
+  return func.name || varToString({ func });
+};
