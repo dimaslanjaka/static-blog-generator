@@ -13,7 +13,7 @@ import theme_config_data from './_config_theme.json';
 /**
  * Argument CLI reader
  */
-const argv = yargs(process.argv.slice(2)).argv;
+export const argv = yargs(process.argv.slice(2)).argv;
 
 /**
  * process cwd unix style
