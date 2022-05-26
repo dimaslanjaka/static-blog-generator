@@ -76,17 +76,15 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
   /**
    * validate if post path is post sources
    */
-  const isPathPost =
-    path.includes(config.source_dir + '/_posts') || path.includes('src-posts/');
+  const isPathPost = path.includes(config.source_dir + '/_posts'); // || path.includes('src-posts/');
   const isTypePost = parse.metadata.type === 'post';
-  //console.log('is post?', isPathPost && isTypePost);
-  /*if (!(isPathPost && isTypePost)) {
-    console.log("isn't post", parse.metadata.title);
-  }*/
+  const cachedPosts = cachePost.getAll();
+  // @todo indexing post
   if (isTypePost && isPathPost) {
     cachePost.set(path, parse);
   }
 
+  // @todo caching this parsePost
   try {
     parseCache.putSync(cacheKey, parse);
   } catch (error) {
