@@ -1,3 +1,4 @@
+import { deepmerge } from 'deepmerge-ts';
 import { initializeApp } from 'firebase/app';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
@@ -7,6 +8,7 @@ import yaml from 'yaml';
 import yargs from 'yargs';
 import { pcache } from '../node/cache';
 import { read, write } from '../node/filemanager';
+import default_config from './_config.default';
 import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
 
@@ -28,7 +30,7 @@ if (!existsSync(file)) {
 export { root };
 const readConfig = readFileSync(file, 'utf-8');
 /** default project config */
-const def_config = {
+export const default_project_config = deepmerge(default_config, {
   verbose: false, // if set = true, otherwise undefined
   exclude: [],
   include: [],
@@ -52,9 +54,12 @@ const def_config = {
   generator: {
     cache: true
   }
-};
+});
 
-const project_config_merge = Object.assign(def_config, yaml.parse(readConfig));
+const project_config_merge = Object.assign(
+  default_project_config,
+  yaml.parse(readConfig)
+);
 if (project_config_merge.adsense.enable) {
   const findads = (path: string) => {
     let findpath = join(cwd(), path);
@@ -82,7 +87,9 @@ interface PrivateProjectConfig {
   tmp: typeof tmp;
 }
 
-export type ProjectConfig = projectImportData & PrivateProjectConfig;
+export type ProjectConfig = projectImportData &
+  PrivateProjectConfig &
+  typeof default_project_config;
 
 const config: ProjectConfig = project_config_merge;
 
@@ -161,3 +168,4 @@ config.tmp = tmp;
 /** EXPORT PRIVATE AND PUBLIC CONFIGS */
 
 export default config;
+export const project_config = config;
