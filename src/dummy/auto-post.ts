@@ -2,11 +2,7 @@ import { emptyDirSync, existsSync, mkdirSync } from 'fs-extra';
 import memoizee from 'memoizee';
 import { join } from 'upath';
 import { write } from '../node/filemanager';
-import parsePost, {
-  buildPost,
-  postMap,
-  postMeta
-} from '../parser/post/parsePost';
+import parsePost, { buildPost, postMap } from '../parser/post/parsePost';
 import config, { root } from '../types/_config';
 
 const destFolder = join(root, config.source_dir, '_posts');
@@ -29,13 +25,7 @@ async function _generateDummyPosts(n = 5) {
 }
 
 function dummyPost(counter: string | number = 0) {
-  type Metadata = Partial<postMeta> & {
-    permalink: string;
-  };
-  interface Result extends postMap {
-    metadata: Metadata;
-  }
-  const result: Result = {
+  const result: postMap = {
     metadata: {
       title: 'Dummy Post ' + counter,
       category: ['dummy'],
@@ -46,8 +36,8 @@ function dummyPost(counter: string | number = 0) {
     body: 'Dummy Post Body ' + counter
   };
   const build = buildPost(result);
-  parsePost(join(destFolder, result.metadata.permalink), build);
-  return result;
+
+  return parsePost(join(destFolder, result.metadata.permalink), build);
 }
 
 /**
