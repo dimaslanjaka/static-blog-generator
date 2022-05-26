@@ -5,7 +5,7 @@ import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import { getLatestDateArray, sortByDate } from '../../../ejs/helper/date';
 import { getAllPosts } from '../../../node/cache-post';
-import { join, readFileSync, write } from '../../../node/filemanager';
+import { join, read, write } from '../../../node/filemanager';
 import { postMap } from '../../../parser/post/parsePost';
 import config, { post_generated_dir } from '../../../types/_config';
 
@@ -96,7 +96,7 @@ function copy() {
 
 function _generateLabels(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/tag-sitemap.xml');
-  const readXML = readFileSync(sourceIndexXML, 'utf-8');
+  const readXML = read(sourceIndexXML, 'utf-8');
   const mapTags = [];
   // generate tags by tag name
   for (const tagname in listCats) {
@@ -131,7 +131,7 @@ function _generateLabels(done?: TaskCallback) {
  */
 function generatePages(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/post-sitemap.xml');
-  const readXML = readFileSync(sourceIndexXML, 'utf-8');
+  const readXML = read(sourceIndexXML, 'utf-8');
   const posts = [];
   const pages = [];
   allPosts
@@ -181,7 +181,7 @@ function generatePages(done?: TaskCallback) {
  */
 async function generateIndex(done?: TaskCallback) {
   const sourceIndexXML = join(__dirname, 'views/sitemap.xml');
-  const readXML = readFileSync(sourceIndexXML, 'utf-8');
+  const readXML = read(sourceIndexXML, 'utf-8');
 
   /**
    * get latest date of tags

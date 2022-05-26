@@ -1,5 +1,6 @@
 import chalk from 'chalk';
-import { cwd, dirname, existsSync, join, readFileSync } from '../../node/filemanager';
+import { existsSync } from 'fs';
+import { cwd, dirname, join, read } from '../../node/filemanager';
 import { root } from '../../types/_config';
 
 const logname = chalk.blue('[css]');
@@ -29,8 +30,8 @@ export function shortcodeCss(file: string, str: string) {
         const filepath = dirs[key];
         if (existsSync(filepath)) {
           console.log(...log, chalk.greenBright(`[${key}]`), file);
-          const read = readFileSync(filepath, 'utf-8');
-          str = str.replace(htmlTag, () => `<style>${read}</style>`);
+          const contents = read(filepath, 'utf-8');
+          str = str.replace(htmlTag, () => `<style>${contents}</style>`);
           //console.log('match tag', str.match(new RegExp(htmlTag, 'm'))[0]);
           //write(tmp('shortcode', 'script.txt'), mod).then(console.log);
           break;
