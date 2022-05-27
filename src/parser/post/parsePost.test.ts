@@ -8,7 +8,11 @@ import parsePost, { buildPost } from './parsePost';
 import { simplifyDump } from './postMapper';
 
 function run() {
-  ['src-posts/Tests/unit/elements.md', 'src-posts/Tests/shortcodes.md']
+  [
+    'src-posts/Tests/unit/elements.md',
+    'src-posts/Tests/shortcodes.md',
+    'src-posts/Tests/codeblock.md'
+  ]
     .map((path) => join(cwd(), path))
     .filter(existsSync)
     .forEach(async (path) => {
