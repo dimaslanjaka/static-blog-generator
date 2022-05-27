@@ -168,10 +168,25 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   // post route
   async function (req, res, next) {
     const isHomepage = req.url === '/';
+    const isArchives = req.url.startsWith('/archives/page');
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname
 
-    // @todo skip homepage
-    if (isHomepage) return next();
+    // @todo render homepage
+    if (isHomepage) {
+      const sourceIndex = join(cwd(), config.public_dir, 'index.html');
+      const str = await generateIndex('homepage');
+      if (str) return res.end(showPreview(str));
+      if (existsSync(sourceIndex)) {
+        console.log('[archive] pre-processed', req.url, '->', sourceIndex);
+        return res.end(showPreview(readFileSync(sourceIndex)));
+      }
+      return next();
+    }
+
+    // @todo render archive
+    if (isArchives) {
+      //
+    }
 
     // @todo skip labels (tag and category)
     if (labelSrc.includes(pathname)) return next();
@@ -268,20 +283,6 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     // show previous generated
     //if (!pathname) console.log('last processed', pathname);
     next();
-  },
-  // homepage route
-  {
-    route: '/',
-    handle: async function (req, res, next) {
-      const sourceIndex = join(cwd(), config.public_dir, 'index.html');
-      const str = await generateIndex('homepage');
-      if (str) return res.end(showPreview(str));
-      if (existsSync(sourceIndex)) {
-        console.log('[archive] pre-processed', req.url, '->', sourceIndex);
-        return res.end(showPreview(readFileSync(sourceIndex)));
-      }
-      next();
-    }
   },
   // generate dummy posts
   {

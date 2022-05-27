@@ -5,7 +5,7 @@ import { tmp } from '../../types/_config';
 import { generateIndex } from './generate-archives';
 
 const measure = new MeasureTime();
-measure.run(() => generateIndex('homepage'));
+measure.run(async () => await generateIndex('homepage'), 'generate homepage');
 
 function _debugChunks() {
   // simplify debug
