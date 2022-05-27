@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-escape */
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import { postMap } from '../../parsePost';
 import { ProjectConfig } from '../../types/_config';
 
 /**
@@ -13,7 +12,10 @@ import { ProjectConfig } from '../../types/_config';
  * // escaped html
  * <%= excerpt(page) %>
  */
-export function excerpt(page: postMap['metadata'] | ProjectConfig, length = 200) {
+export function excerpt(
+  page: postMap['metadata'] | ProjectConfig,
+  length = 200
+) {
   let str: string;
   if (page.subtitle) {
     str = page.subtitle;
@@ -49,7 +51,7 @@ export function nExcerpt(page: postMap['metadata'] | ProjectConfig) {
 function cleanString(text: string) {
   if (typeof text == 'string') {
     const rawStr = text.replace(/[^a-zA-Z0-9.,-_ ]/gm, '');
-    const encodedStr = rawStr.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+    const encodedStr = rawStr.replace(/[\u00A0-\u9999<>&]/g, function (i) {
       return '&#' + i.charCodeAt(0) + ';';
     });
     return encodedStr;

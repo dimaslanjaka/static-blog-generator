@@ -1,9 +1,7 @@
-/* eslint-disable no-useless-escape */
+import { postMap } from '../../parsePost';
 
-import { postMap } from '../../markdown/transformPosts/parsePost';
-
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-const noimage = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
+const noimage =
+  'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
 
 /**
  * Thumbnail Helper
@@ -18,7 +16,7 @@ export function thumbnail(post: postMap['metadata']) {
     if (Array.isArray(post.photos)) return post.photos[0];
   }
   if (!url) {
-    const imgPattern = /\<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?\>/gi;
+    const imgPattern = /<img\s.*?\s?src\s*=\s*['|"]?([^\s'"]+).*?>/gi;
     const result = imgPattern.exec(post.content);
     if (result && result.length > 1) {
       url = result[1];

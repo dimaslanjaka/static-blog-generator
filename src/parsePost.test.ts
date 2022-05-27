@@ -1,20 +1,22 @@
 import { existsSync } from 'fs';
 import { join } from 'upath';
+import buildPost from './buildPost';
+import { simplifyDump } from './markdown/transformPosts/postMapper';
 import color from './node/color';
 import { write } from './node/filemanager';
 import parsePost from './parsePost';
 
 const files = [
-  join(__dirname, '../src-posts/with-description.md'),
-  join(__dirname, '../src-posts/Tests/unit/hello-world.md'),
+  //join(__dirname, '../src-posts/with-description.md'),
+  //join(__dirname, '../src-posts/Tests/unit/hello-world.md'),
   join(__dirname, '../src-posts/Tests/unit/elements.md'),
-  join(__dirname, '../src-posts/Tests/unit/markdown.md'),
-  join(__dirname, '../src-posts/Tests/codeblock.md')
+  join(__dirname, '../src-posts/Tests/unit/markdown.md')
+  //join(__dirname, '../src-posts/Tests/codeblock.md')
 ];
 
 files.forEach(async (file) => {
   if (existsSync(file)) {
-    const parse = parsePost(file, {
+    const parse = await parsePost(file, {
       formatDate: true,
       shortcodes: {
         youtube: true,
@@ -23,22 +25,25 @@ files.forEach(async (file) => {
         script: true,
         link: true,
         text: true,
-        now: true
+        now: true,
+        codeblock: true
       },
       cache: false,
       fix: true
       //sourceFile: filePath
     });
-    if (parse) {
-      parse.body = parse.content = 'hidden';
-      parse.config = {};
+    if (parse && parse.metadata) {
       const filename = parse.metadata.title;
 
-      const savedTo = await write(
+      const jsonFile = await write(
         join(__dirname, '../tmp/test/parsePost', filename + '.json'),
-        parse
+        simplifyDump(parse)
       );
-      console.log(color.green('success parse'), savedTo);
+      const mdFile = await write(
+        join(__dirname, '../tmp/test/parsePost', filename + '.md'),
+        buildPost(parse)
+      );
+      console.log(color.green('success parse'), [jsonFile, mdFile]);
     } else {
       console.log(color.redBright('fail parse'), file);
     }

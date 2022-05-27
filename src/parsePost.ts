@@ -554,7 +554,7 @@ export async function parsePost(
   };
 
   // test opening metadata tag
-  const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+  const regexPost = /^---([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/g;
   const testPost = Array.from(target.matchAll(regexPost)).map(mapper)[0];
   if (typeof testPost === 'object' && testPost !== null) {
     //console.log('test 1 passed');
@@ -562,7 +562,7 @@ export async function parsePost(
   }
 
   // test non-opening metadata tag
-  const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/gm;
+  const regexPostNoOpening = /^([\s\S]*?)---[\n\s\S]\n([\n\s\S]*)/g;
   const testPost2 = Array.from(target.matchAll(regexPostNoOpening)).map(
     mapper
   )[0];

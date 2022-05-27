@@ -127,3 +127,6 @@ if (existsSync(file)) {
 writeFileSync(join(__dirname, '_config_project.json'), JSON.stringify(config));
 
 export default config as Config;
+export interface ProjectConfig extends Partial<typeof config> {
+  [key: string]: any;
+}
