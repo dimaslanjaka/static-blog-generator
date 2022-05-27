@@ -4,6 +4,10 @@ const tslib_1 = require("tslib");
 const fs_1 = require("fs");
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
+const yargs_1 = tslib_1.__importDefault(require("yargs"));
+const argv = (0, yargs_1.default)(process.argv.slice(2)).argv;
+const nocache = argv['nocache'];
+const verbose = argv['verbose'];
 const def = {
     // Site
     title: 'Hexo',
@@ -96,7 +100,12 @@ const file = (0, upath_1.join)(process.cwd(), '_config.yml');
 if ((0, fs_1.existsSync)(file)) {
     const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
     const parse = yaml_1.default.parse(readConfig);
-    config = Object.assign(def, parse);
+    config = Object.assign(def, parse, {
+        verbose,
+        generator: {
+            cache: !nocache
+        }
+    });
 }
 (0, fs_1.writeFileSync)((0, upath_1.join)(__dirname, '_config_project.json'), JSON.stringify(config));
 exports.default = config;

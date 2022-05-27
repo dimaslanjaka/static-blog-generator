@@ -72,6 +72,10 @@ declare const def: {
 };
 declare type MergeData = Partial<typeof data> & Partial<typeof def>;
 interface Config extends Partial<MergeData> {
+    verbose?: boolean;
+    generator?: {
+        cache: boolean;
+    };
     amp?: any;
     default_tag?: string;
     default_category?: string;
