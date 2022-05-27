@@ -16,8 +16,8 @@ import './generate-tags';
  * generate index
  * * customized generation by param {@link labelname}
  * ```properties
- * "type number"  = generate specific pages
- * "all"          = generate all index
+ * "type number"  = generate specific archive page
+ * "all"          = generate all homepage and archives
  * "homepage"     = generate only first index/homepage
  * "null"         = all
  * "default"      = all
