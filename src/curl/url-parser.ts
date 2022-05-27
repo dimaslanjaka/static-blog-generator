@@ -1,4 +1,6 @@
+import { basename } from 'upath';
 import urlParse from 'url-parse';
+import { array_unique, removeEmpties } from '../node/array-utils';
 import { DeepPartial } from '../parser/post/postMapper';
 
 /** URL Parsed Result */
@@ -29,7 +31,7 @@ export default function urlParser(src: string): URLParsed | null {
   const queries: string[] = parser.query.replace(/^\?/, '').split('&');
   let split: Array<Record<any, any> | any> = [];
   for (let i = 0; i < queries.length; i++) {
-    split = queries[i].split('=').removeEmpties();
+    split = removeEmpties(queries[i].split('='));
     if (0 in split) {
       searchObject[split[0]] = split[1];
     }
@@ -44,7 +46,9 @@ export default function urlParser(src: string): URLParsed | null {
     protohost: parser.protocol + '//' + parser.host,
     search: parser.query,
     searchObject: searchObject,
-    filename: parser.href.split('/').removeEmpties().unique().last(1)[0]
+    filename: basename(
+      array_unique(removeEmpties(parser.pathname.split('/'))).join('/')
+    )
   };
   /*for (const key in parser) {
     if (Object.prototype.hasOwnProperty.call(parser, key)) {

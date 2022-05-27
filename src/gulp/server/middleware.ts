@@ -7,6 +7,7 @@ import { existsSync, readFileSync, writeFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
 import { join, toUnix } from 'upath';
+import urlParser from '../../curl/url-parser';
 import { generateDummyPosts } from '../../dummy/auto-post';
 import { array_unique, removeEmpties } from '../../node/array-utils';
 import color from '../../node/color';
@@ -167,25 +168,23 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   },
   // post route
   async function (req, res, next) {
+    const url = urlParser(config.url + req.url);
+    //console.log(url);
     const isHomepage = req.url === '/';
-    const isArchives = req.url.startsWith('/archives/page');
+    const isArchives = req.url.startsWith('/archives/');
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname
 
-    // @todo render homepage
-    if (isHomepage) {
+    // @todo render homepage and archives
+    if (isHomepage || isArchives) {
+      console.log(req.url);
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
-      const str = await generateIndex('homepage');
+      const str = await generateIndex(isHomepage ? 'homepage' : 'all');
       if (str) return res.end(showPreview(str));
       if (existsSync(sourceIndex)) {
         console.log('[archive] pre-processed', req.url, '->', sourceIndex);
         return res.end(showPreview(readFileSync(sourceIndex)));
       }
       return next();
-    }
-
-    // @todo render archive
-    if (isArchives) {
-      //
     }
 
     // @todo skip labels (tag and category)
