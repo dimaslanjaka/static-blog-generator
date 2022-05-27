@@ -1,4 +1,5 @@
 import { varToString } from '../../parser/utility';
+import color from '../color';
 
 /**
  * Timer measurement
@@ -14,11 +15,11 @@ export class MeasureTime {
         fn[Symbol.toStringTag] === 'Promise'
       ) {
         this.start();
-        fn().then(console.log(msg, this.end()));
+        fn().then(console.log(color.greenBright(msg), this.end()));
       } else {
         this.start();
         fn();
-        console.log(msg, this.end());
+        console.log(color.greenBright(msg), this.end());
       }
     }
   }
