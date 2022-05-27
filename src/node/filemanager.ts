@@ -208,10 +208,7 @@ export function read(
  * @param str
  * @returns
  */
-export const join = (...str: any[]) => {
-  str = str.map((s) => String(s)).removeEmpties();
-  return removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
-};
+export const join = (...str: any[]) => upath.join(...str);
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;

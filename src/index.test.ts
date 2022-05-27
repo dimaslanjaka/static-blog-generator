@@ -38,8 +38,8 @@ function _bulkParse() {
   }
 }
 
-function runParser(filePath: string) {
-  const parse = parsePost(filePath, {
+async function runParser(filePath: string) {
+  const parse = await parsePost(filePath, {
     formatDate: true,
     shortcodes: {
       youtube: true,
@@ -48,7 +48,8 @@ function runParser(filePath: string) {
       script: true,
       link: true,
       text: true,
-      now: true
+      now: true,
+      codeblock: true
     },
     cache: false,
     fix: true,
