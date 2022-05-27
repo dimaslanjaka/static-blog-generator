@@ -9,5 +9,5 @@ import parsePost from './parsePost';
     join(cwd(), 'src-posts', 'The Legend Of Neverland/Quiz.md')
   );
   const modify = modifyPost(parse);
-  write(join(__dirname, 'tmp/modify.json'), modify);
+  write(join(__dirname, 'tmp/modifyPost/test.json'), modify);
 })();
