@@ -78,15 +78,16 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
             hashes = `${src_posts}:${source}`;
             gulp.series(...tasks)(() => {
               gulpIndicator = false;
-              if (
-                !existsSync(join(cwd(), config.public_dir, 'node_modules')) &&
-                existsSync(join(cwd(), config.public_dir, 'package.json'))
-              ) {
-                spawn('yarn', ['install', '--check-files'], {
-                  cwd: join(cwd(), config.public_dir),
-                  shell: true,
-                  stdio: 'inherit'
-                });
+              if (existsSync(join(cwd(), config.public_dir, 'package.json'))) {
+                spawn(
+                  'yarn',
+                  ['install', '--check-files', '--production=true'],
+                  {
+                    cwd: join(cwd(), config.public_dir),
+                    shell: true,
+                    stdio: 'inherit'
+                  }
+                );
               }
 
               // resolve
