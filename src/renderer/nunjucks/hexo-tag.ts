@@ -217,7 +217,11 @@ export class Tag {
  * @param  {string}   input string input for Nunjucks
  * @return {Error}    New error object with embedded context
  */
-const formatNunjucksError = (err: Error, input: string, source = ''): Error => {
+export const formatNunjucksError = (
+  err: Error,
+  input: string,
+  source = ''
+): Error => {
   const match = err.message.match(/Line (\d+), Column \d+/);
   if (!match) return err;
   const errLine = parseInt(match[1], 10);
