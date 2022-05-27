@@ -15,7 +15,8 @@ export function cleanWhiteSpace(text: string) {
  * @returns
  */
 export function cleanString(text: string, exception = '.,-_ ') {
-  if (typeof text == 'string') return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']', 'gm'), '');
+  if (typeof text == 'string')
+    return text.replace(new RegExp('[^a-zA-Z0-9' + exception + ']', 'gm'), '');
   return text;
 }
 
@@ -23,12 +24,23 @@ export function cleanString(text: string, exception = '.,-_ ') {
  * Replace string by array pattern
  * @param array
  * @param replacement
+ * @example
+ * replaceArr('str', ['s','r'], ''); // t
+ * replaceArr('str', ['s','r'], ['a s', 'ring']); // a string
  */
-export function replaceArr(str: string, array: string[], replacement: string) {
-  // eslint-disable-next-line @typescript-eslint/no-this-alias
+export function replaceArr(
+  str: string,
+  array: (string | RegExp)[],
+  replacement: string | string[]
+) {
   let ori = str;
-  array.map((str) => {
-    ori = ori.replace(str, replacement);
+  array.forEach((str, i) => {
+    if (typeof replacement == 'string') {
+      ori = ori.replace(str, replacement);
+    } else {
+      ori = ori.replace(str, replacement[i]);
+    }
   });
+
   return ori;
 }

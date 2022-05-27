@@ -1,7 +1,12 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'upath';
 import yaml from 'yaml';
+import yargs from 'yargs';
 import data from './_config_project.json';
+
+const argv = yargs(process.argv.slice(2)).argv;
+const nocache = argv['nocache'];
+const verbose = argv['verbose'];
 
 const def = {
   // Site
@@ -94,6 +99,10 @@ const def = {
 
 type MergeData = Partial<typeof data> & Partial<typeof def>;
 interface Config extends Partial<MergeData> {
+  verbose?: boolean;
+  generator?: {
+    cache: boolean;
+  };
   amp?: any;
   default_tag?: string;
   default_category?: string;
@@ -106,8 +115,13 @@ let config = def;
 const file = join(process.cwd(), '_config.yml');
 if (existsSync(file)) {
   const readConfig = readFileSync(file, 'utf-8');
-  const parse = yaml.parse(readConfig);
-  config = Object.assign(def, parse);
+  const parse = yaml.parse(readConfig) as typeof data;
+  config = Object.assign(def, parse, {
+    verbose,
+    generator: {
+      cache: !nocache
+    }
+  });
 }
 
 writeFileSync(join(__dirname, '_config_project.json'), JSON.stringify(config));

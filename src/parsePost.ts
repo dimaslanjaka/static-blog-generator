@@ -9,6 +9,7 @@ import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
+import { shortcodeCodeblock } from './shortcodes/codeblock';
 import { shortcodeCss } from './shortcodes/css';
 import { extractText } from './shortcodes/extractText';
 import { replaceMD2HTML } from './shortcodes/hyperlinks-md2html';
@@ -137,6 +138,7 @@ export interface ParseOptions {
      * @see {@link shortcodeNow}
      */
     now: boolean;
+    codeblock: boolean;
   };
   cache?: boolean;
   /**
@@ -183,7 +185,8 @@ const default_options: ParseOptions = {
     youtube: false,
     link: false,
     text: false,
-    now: false
+    now: false,
+    codeblock: false
   },
   sourceFile: null,
   formatDate: false,
@@ -200,10 +203,10 @@ const default_options: ParseOptions = {
  * @param options options parser
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
-export function parsePost(
+export async function parsePost(
   target: string,
   options: DeepPartial<ParseOptions> = {}
-): Nullable<postMap> {
+) {
   if (!target) return null;
   options = deepmerge(default_options, options);
   const config = options.config;
@@ -221,7 +224,7 @@ export function parsePost(
     target = String(readFileSync(target, 'utf-8'));
   }
 
-  const mapper = (m: RegExpMatchArray) => {
+  const mapper = async (m: RegExpMatchArray) => {
     let meta: postMap['metadata'] = {};
     try {
       meta = yaml.parse(m[1]);
@@ -521,6 +524,7 @@ export function parsePost(
           }
           if (shortcodes.link) body = replaceMD2HTML(body);
           if (shortcodes.youtube) body = shortcodeYoutube(body);
+          if (shortcodes.codeblock) body = await shortcodeCodeblock(body);
         }
       }
     }
