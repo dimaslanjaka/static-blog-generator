@@ -1561,7 +1561,7 @@ ansi-styles@^3.2.1:
 
 ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   version "4.3.0"
-  resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-4.3.0.tgz#edd803628ae71c04c85ae7a0906edad34b648937"
   integrity sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
   dependencies:
     color-convert "^2.0.1"
@@ -2842,7 +2842,7 @@ color-convert@^1.9.0:
 
 color-convert@^2.0.1:
   version "2.0.1"
-  resolved "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-2.0.1.tgz#72d3a68d598c9bdb3af2ad1e84f21d896abd4de3"
   integrity sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==
   dependencies:
     color-name "~1.1.4"
@@ -2854,7 +2854,7 @@ color-name@1.1.3:
 
 color-name@~1.1.4:
   version "1.1.4"
-  resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
+  resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
 color-support@^1.1.2, color-support@^1.1.3:
@@ -5667,7 +5667,7 @@ has-flag@^3.0.0:
 
 has-flag@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
 has-gulplog@^0.1.0:
@@ -5784,10 +5784,13 @@ he@1.2.0, he@^1.2.0:
     chalk "^4.1.0"
     deepmerge-ts "^4.0.3"
     fs-extra "^10.1.0"
+    jsdom "^19.0.0"
+    lodash "^4.17.21"
     moment-timezone "^0.5.34"
     persistent-cache "git+https://github.com/LionC/persistent-cache.git#master"
     upath "^2.0.1"
     yaml "^2.1.0"
+    yargs "^17.5.1"
 
 hexo-util@^2.6.1:
   version "2.6.1"
@@ -6835,7 +6838,7 @@ is-zip@^1.0.0:
 
 is@~0.2.6:
   version "0.2.7"
-  resolved "https://registry.npmjs.org/is/-/is-0.2.7.tgz"
+  resolved "https://registry.yarnpkg.com/is/-/is-0.2.7.tgz#3b34a2c48f359972f35042849193ae7264b63562"
   integrity sha1-OzSixI81mXLzUEKEkZOucmS2NWI=
 
 isarray@0.0.1:
@@ -7969,7 +7972,7 @@ mixin-deep@^1.2.0:
 
 mkdirp-no-bin@^0.5.1:
   version "0.5.1"
-  resolved "https://registry.npmjs.org/mkdirp-no-bin/-/mkdirp-no-bin-0.5.1.tgz"
+  resolved "https://registry.yarnpkg.com/mkdirp-no-bin/-/mkdirp-no-bin-0.5.1.tgz#34c623196d36fb2ee2e561ab607305632e00619f"
   integrity sha1-NMYjGW02+y7i5WGrYHMFYy4AYZ8=
 
 mkdirp@^0.5.0, mkdirp@^0.5.1:
@@ -8264,7 +8267,7 @@ node-status-codes@^1.0.0:
 
 node.extend@1.0.8:
   version "1.0.8"
-  resolved "https://registry.npmjs.org/node.extend/-/node.extend-1.0.8.tgz"
+  resolved "https://registry.yarnpkg.com/node.extend/-/node.extend-1.0.8.tgz#bab04379f7383f4587990c9df07b6a7f65db772b"
   integrity sha1-urBDefc4P0WHmQyd8Htqf2Xbdys=
   dependencies:
     is "~0.2.6"
@@ -8272,7 +8275,7 @@ node.extend@1.0.8:
 
 node.flow@1.2.3:
   version "1.2.3"
-  resolved "https://registry.npmjs.org/node.flow/-/node.flow-1.2.3.tgz"
+  resolved "https://registry.yarnpkg.com/node.flow/-/node.flow-1.2.3.tgz#e1c44a82aeca8d78b458a77fb3dc642f2eba2649"
   integrity sha1-4cRKgq7KjXi0WKd/s9xkLy66Jkk=
   dependencies:
     node.extend "1.0.8"
@@ -8510,7 +8513,7 @@ object-keys@^1.1.1:
 
 object-keys@~0.4.0:
   version "0.4.0"
-  resolved "https://registry.npmjs.org/object-keys/-/object-keys-0.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
   integrity sha1-KKaq50KN0sOpLz2V8hM13SBOAzY=
 
 object-visit@^1.0.0:
@@ -9074,7 +9077,7 @@ performance-now@^2.1.0:
 
 "persistent-cache@git+https://github.com/LionC/persistent-cache.git#master":
   version "1.1.2"
-  resolved "git+ssh://git@github.com/LionC/persistent-cache.git#cb6218d49917a509b1c7af803ae61c12ed685228"
+  resolved "git+https://github.com/LionC/persistent-cache.git#cb6218d49917a509b1c7af803ae61c12ed685228"
   dependencies:
     mkdirp-no-bin "^0.5.1"
     rmdir "^1.2.0"
@@ -9874,7 +9877,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
 
 rmdir@^1.2.0:
   version "1.2.0"
-  resolved "https://registry.npmjs.org/rmdir/-/rmdir-1.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/rmdir/-/rmdir-1.2.0.tgz#4fe0357cb06168c258e73e968093dc4e8a0f3253"
   integrity sha1-T+A1fLBhaMJY5z6WgJPcTooPMlM=
   dependencies:
     node.flow "1.2.3"
@@ -9984,13 +9987,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-3f975d5f-4f95-4be3-a657-6ef5cf710f6f-1653571229491/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-2483d4d0-68e3-4391-84ec-6f1fac2c9540-1653616561071/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-53d4ae46-cdfc-4f0f-b1c7-2a684103b237-1653571229485/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-53d4ae46-cdfc-4f0f-b1c7-2a684103b237-1653571229485/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-88788781-9486-4a0d-9068-63f9c7027361-1653616561065/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-88788781-9486-4a0d-9068-63f9c7027361-1653616561065/node_modules/sbg-themes/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"
@@ -10784,7 +10787,7 @@ supports-color@^5.3.0, supports-color@^5.5.0:
 
 supports-color@^7.0.0, supports-color@^7.1.0:
   version "7.2.0"
-  resolved "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
@@ -11990,7 +11993,7 @@ yaml@^1.10.0, yaml@^1.10.2:
 
 yaml@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.npmjs.org/yaml/-/yaml-2.1.0.tgz"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.1.0.tgz#96ba62ff4dd990c0eb16bd96c6254a085d288b80"
   integrity sha512-OuAINfTsoJrY5H7CBWnKZhX6nZciXBydrMtTHr1dC4nP40X5jyTIVlogZHxSlVZM8zSgXRfgZGsaHF4+pV+JRw==
 
 yargs-parser@20.2.4, yargs-parser@^20.2.2, yargs-parser@^20.2.3:
@@ -12051,6 +12054,19 @@ yargs@^17.2.1, yargs@^17.3.1, yargs@^17.4.0:
   version "17.4.1"
   resolved "https://registry.npmjs.org/yargs/-/yargs-17.4.1.tgz"
   integrity sha512-WSZD9jgobAg3ZKuCQZSa3g9QOJeCCqLoLAykiWgmXnDo9EPnn4RPf5qVTtzgOx66o6/oqhcA5tHtJXpG8pMt3g==
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.3"
+    y18n "^5.0.5"
+    yargs-parser "^21.0.0"
+
+yargs@^17.5.1:
+  version "17.5.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.5.1.tgz#e109900cab6fcb7fd44b1d8249166feb0b36e58e"
+  integrity sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"

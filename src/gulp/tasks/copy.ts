@@ -20,7 +20,7 @@ const logname = color.cyan('[copy][post]');
  * copy posts from `src-posts` to config.source_dir {@link config.source_dir}
  * @description copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @summary copy from src-posts to source/_posts
- * @param cpath custom post path
+ * @param cpath custom copy, only copy post with this key
  * @returns
  */
 export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
@@ -35,26 +35,32 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
   const run = gulp
     .src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir })
     .pipe(
-      through2.obj(function (file, _encoding, next) {
+      through2.obj(async function (file, _encoding, next) {
         const path = file.path;
         if (typeof cpath == 'string' && cpath.length > 2) {
-          // copy specific post path
-          if (!path.includes(cpath)) return next(null, file);
+          // copy specific post path, otherwise drop this item
+          if (!path.includes(cpath)) return next();
         }
         const log = [logname, String(path)];
-        const parse = parsePost(String(path), String(file.contents));
+        const parse = await parsePost(String(path), String(file.contents));
         if (!parse) {
-          console.log(`cannot parse ${String(path)}`);
-          return next('null ' + String(path));
+          console.log(`cannot parse ${String(path)}`, parse);
+          // drop this item
+          return next();
         }
 
         //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
         const build = buildPost(<any>parse);
-        //write(tmp(parse.metadata.uuid, 'article.md'), build);
-        log.push(color.green('success'));
-        file.contents = Buffer.from(build);
-        //if (this) this.push(file);
-        return next(null, file);
+        if (typeof build == 'string') {
+          //write(tmp(parse.metadata.uuid, 'article.md'), build);
+          log.push(color.green('success'));
+          file.contents = Buffer.from(build);
+          //if (this) this.push(file);
+          return next(null, file);
+        } else {
+          console.log(logname, color.Red('build not string'));
+        }
+        return next();
       })
     );
   return determineDirname(run).pipe(gulp.dest(post_public_dir));

@@ -233,7 +233,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
           if (existsSync(file)) {
             if (file.endsWith('.md')) {
               // parse markdown metadata
-              const parsed = parsePost(file);
+              const parsed = await parsePost(file);
               if (!parsed) {
                 console.log(chalk.redBright('cannot parse'), file);
                 //return next();

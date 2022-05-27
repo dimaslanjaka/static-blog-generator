@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import { existsSync } from 'fs';
 import color from '../../../node/color';
 import { globSrc, join, write } from '../../../node/filemanager';
@@ -37,9 +38,9 @@ export async function gulpInlineStyle() {
       post_public_dir
     )} found=${color.Magenta(src.length)} post(s)`
   );
-  return src
-    .map((item) => {
-      return { path: item, parsed: parsePost(item) };
+  return Bluebird.all(src)
+    .map(async (item) => {
+      return { path: item, parsed: await parsePost(item) };
     })
     .filter(
       (obj) =>
@@ -47,7 +48,7 @@ export async function gulpInlineStyle() {
         typeof obj.parsed.body == 'string' &&
         obj.parsed.body.length > 0
     )
-    .forEach((obj) => {
+    .each((obj) => {
       const parsed = obj.parsed;
       if (
         parsed.body.includes(

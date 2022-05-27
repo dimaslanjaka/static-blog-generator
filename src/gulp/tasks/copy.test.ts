@@ -1,3 +1,3 @@
 import { copyPosts } from './copy';
 
-copyPosts(null, '1');
+copyPosts(null, 'src-posts/Tests/unit/elements.md');
