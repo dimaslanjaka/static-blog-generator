@@ -1,8 +1,8 @@
 import { existsSync } from 'fs';
 import { cwd } from 'process';
 import { basename, join } from 'upath';
+import MeasureTime from '../../node/benchmark/measure-timing';
 import { write } from '../../node/filemanager';
-import MeasureTime from '../../node/measure-timing';
 import config from '../../types/_config';
 import parsePost, { buildPost } from './parsePost';
 import { simplifyDump } from './postMapper';

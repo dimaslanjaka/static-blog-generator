@@ -1,4 +1,4 @@
-import { varToString } from '../parser/utility';
+import { varToString } from '../../parser/utility';
 
 /**
  * Timer measurement
