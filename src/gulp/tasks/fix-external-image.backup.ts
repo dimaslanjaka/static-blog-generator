@@ -1,14 +1,21 @@
 /* eslint-disable no-useless-escape */
-import { curly } from 'node-libcurl';
-import { saveParsedPost } from '../../markdown/transformPosts';
-import { basename, dirname, join } from 'path';
-import { appendFileSync, existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
-import 'js-prototypes';
-import chalk from 'chalk';
 import bluebird from 'bluebird';
-import { md5 } from '../../node/md5-file';
-import { cwd } from '../../node/filemanager';
+import chalk from 'chalk';
+import {
+    appendFileSync,
+    existsSync,
+    mkdirSync,
+    readFileSync,
+    unlinkSync,
+    writeFileSync
+} from 'fs';
+import { curly } from 'node-libcurl';
+import { basename, dirname, join } from 'path';
+import { saveParsedPost } from '../../markdown/transformPosts';
 import { postMap } from '../../markdown/transformPosts/parsePost';
+import { cwd } from '../../node/filemanager';
+import { md5 } from '../../node/md5-file';
+
 
 export interface ImgLib {
   /**
@@ -68,7 +75,8 @@ if (existsSync(filesave)) {
 }
 
 // delete log file
-if (existsSync(join(cwd(), 'tmp/images.log'))) unlinkSync(join(cwd(), 'tmp/images.log'));
+if (existsSync(join(cwd(), 'tmp/images.log')))
+  unlinkSync(join(cwd(), 'tmp/images.log'));
 
 // result all images for current post
 const images: string[] = [];
@@ -113,14 +121,18 @@ export default async function downloadImg(parse: postMap) {
     // remove duplicates
     .unique()
     // filter src length > 0 and not local domain
-    .filter((src) => src.length > 0 && !src.match(new RegExp('^https?://' + HexoURL.host)))
+    .filter(
+      (src) =>
+        src.length > 0 && !src.match(new RegExp('^https?://' + HexoURL.host))
+    )
     .map((src) => {
       // fix if src startwith dynamic protocol `//`
       if (src.startsWith('//')) src = 'http:' + src;
       // moved domains ['old domain', 'new domain']
       [['cdn.woorkup.com', 'woorkup.com']].forEach((domainArr) => {
         const regex = new RegExp('^https?://' + domainArr[0], 'gi');
-        if (src.match(regex)) src = src.replace(regex, 'http://' + domainArr[1]);
+        if (src.match(regex))
+          src = src.replace(regex, 'http://' + domainArr[1]);
       });
       // setup key with md5
       const key = md5(src);
@@ -131,14 +143,17 @@ export default async function downloadImg(parse: postMap) {
           url: src,
           err: false,
           file: null,
-          dir: join(dirname(parse.fileTree.public), basename(parse.fileTree.public, '.md')),
-          fileTree: parse.fileTree,
+          dir: join(
+            dirname(parse.fileTree.public),
+            basename(parse.fileTree.public, '.md')
+          ),
+          fileTree: parse.fileTree
         },
         libraries[key] || {}
       );
       return {
         key: key,
-        src: src,
+        src: src
       };
     });
 
@@ -216,7 +231,7 @@ function download(callback: (processed: ImgLibData[]) => any) {
       FOLLOWLOCATION: true,
       REFERER: 'https://www.google.com',
       SSL_VERIFYPEER: 0,
-      SSL_VERIFYHOST: 0,
+      SSL_VERIFYHOST: 0
     })
     .then((res) => {
       const data = res.data;
@@ -232,8 +247,12 @@ function download(callback: (processed: ImgLibData[]) => any) {
             imgtype = imgtype.split('+')[0];
           }
           // @todo [libres] add property file
-          libraries[key].file = join(libraries[key].dir, md5(src) + '.' + imgtype);
-          if (!existsSync(libraries[key].dir)) mkdirSync(libraries[key].dir, { recursive: true });
+          libraries[key].file = join(
+            libraries[key].dir,
+            md5(src) + '.' + imgtype
+          );
+          if (!existsSync(libraries[key].dir))
+            mkdirSync(libraries[key].dir, { recursive: true });
           // save images content
           writeFileSync(libraries[key].file, data);
           // determine full path url
@@ -244,7 +263,8 @@ function download(callback: (processed: ImgLibData[]) => any) {
           libraries[key].fullpath = fullpath.toString();
           // save images log
           const logfile = join(cwd(), 'tmp/images.log');
-          if (!existsSync(dirname(logfile))) mkdirSync(dirname(logfile), { recursive: true });
+          if (!existsSync(dirname(logfile)))
+            mkdirSync(dirname(logfile), { recursive: true });
           appendFileSync(logfile, `[img] saved ${libraries[key].file}\n`);
         }
       }

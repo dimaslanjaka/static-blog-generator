@@ -2,7 +2,6 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import { copyFileSync } from 'fs';
 import gulp from 'gulp';
-import 'js-prototypes';
 import sass from 'node-sass';
 import through2 from 'through2';
 import { toUnix } from 'upath';
@@ -10,41 +9,42 @@ import yargs from 'yargs';
 import ejs_object from '../../ejs';
 import { renderBodyMarkdown } from '../../markdown/toHtml';
 import {
-  buildPost,
-  parsePost,
-  validateParsed
+    buildPost,
+    parsePost,
+    validateParsed
 } from '../../markdown/transformPosts';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
 import { postMap } from '../../markdown/transformPosts/parsePost';
 import CacheFile from '../../node/cache';
 import {
-  getAllPosts,
-  getLatestPosts,
-  getRandomPosts
+    getAllPosts,
+    getLatestPosts,
+    getRandomPosts
 } from '../../node/cache-post';
 import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
 import {
-  cwd,
-  dirname,
-  existsSync,
-  globSrc,
-  join,
-  mkdirSync,
-  readFileSync,
-  removeMultiSlashes,
-  resolve,
-  statSync,
-  write
+    cwd,
+    dirname,
+    existsSync,
+    globSrc,
+    join,
+    mkdirSync,
+    readFileSync,
+    removeMultiSlashes,
+    resolve,
+    statSync,
+    write
 } from '../../node/filemanager';
 import logger from '../../node/logger';
 import { DynamicObject } from '../../types';
 import config, {
-  root,
-  theme_config,
-  theme_dir,
-  tmp
+    root,
+    theme_config,
+    theme_dir,
+    tmp
 } from '../../types/_config';
+
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];

@@ -1,4 +1,3 @@
-import 'js-prototypes';
 import { getAllPosts } from '../../node/cache-post';
 import { join, write } from '../../node/filemanager';
 import config from '../../types/_config';
@@ -35,5 +34,5 @@ const map_cats = cats
 
 write(join(__dirname, 'routes.json'), {
   tag: map_tags,
-  category: map_cats,
+  category: map_cats
 });

@@ -34,15 +34,16 @@ files.forEach(async (file) => {
     });
     if (parse && parse.metadata) {
       const filename = parse.metadata.title;
+      const mdFile = await write(
+        join(__dirname, '../tmp/test/parsePost', filename + '.md'),
+        buildPost(parse)
+      );
 
       const jsonFile = await write(
         join(__dirname, '../tmp/test/parsePost', filename + '.json'),
         simplifyDump(parse)
       );
-      const mdFile = await write(
-        join(__dirname, '../tmp/test/parsePost', filename + '.md'),
-        buildPost(parse)
-      );
+
       console.log(color.green('success parse'), [jsonFile, mdFile]);
     } else {
       console.log(color.redBright('fail parse'), file);

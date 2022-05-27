@@ -2,13 +2,18 @@ import Bluebird from 'bluebird';
 import chalk from 'chalk';
 import compress from 'compression';
 import gulp, { TaskFunction } from 'gulp';
-import 'js-prototypes';
 import minimatch from 'minimatch';
 import { toUnix } from 'upath';
 import ejs_object from '../../ejs';
 import { parsePost } from '../../markdown/transformPosts';
 import modifyPost from '../../markdown/transformPosts/modifyPost';
-import { cwd, existsSync, join, readFileSync, write } from '../../node/filemanager';
+import {
+    cwd,
+    existsSync,
+    join,
+    readFileSync,
+    write
+} from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 import config, { post_generated_dir } from '../../types/_config';
@@ -27,12 +32,18 @@ const labelSrc: string[] = routedata.category.addAll(routedata.tag);
 const dom = new jdom();
 function showPreview(str: string | Buffer) {
   const previewfile = join(__dirname, 'public/preview.html');
-  if (!preview) preview = existsSync(previewfile) ? readFileSync(previewfile, 'utf-8') : 'NO PREVIEW AVAILABLE';
+  if (!preview)
+    preview = existsSync(previewfile)
+      ? readFileSync(previewfile, 'utf-8')
+      : 'NO PREVIEW AVAILABLE';
   const doc = dom.parse(String(str));
   doc.body.innerHTML += preview;
   Array.from(doc.querySelectorAll('a')).forEach((a) => {
     let href = a.getAttribute('href');
-    if (typeof href == 'string' && href.isMatch(new RegExp('^https?://' + homepage.host))) {
+    if (
+      typeof href == 'string' &&
+      href.isMatch(new RegExp('^https?://' + homepage.host))
+    ) {
       href = href.replace(new RegExp('^https?://' + homepage.host + '/'), '/');
       return a.setAttribute('href', href);
     }
@@ -50,19 +61,25 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
   return new Bluebird((resolve) => {
     if (!gulpIndicator) {
       gulpIndicator = true;
-      const tasks = ['generate:assets', 'generate:template', ...fn].removeEmpties();
-      Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
-        // @todo [server] prevent call copy without any modifications
-        const chashes = `${src_posts}:${source}`;
-        if (chashes !== hashes) {
-          hashes = `${src_posts}:${source}`;
-          gulp.series(...tasks)(() => {
-            gulpIndicator = false;
-            //spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir) });
-            resolve();
-          });
+      const tasks = [
+        'generate:assets',
+        'generate:template',
+        ...fn
+      ].removeEmpties();
+      Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread(
+        (src_posts, source) => {
+          // @todo [server] prevent call copy without any modifications
+          const chashes = `${src_posts}:${source}`;
+          if (chashes !== hashes) {
+            hashes = `${src_posts}:${source}`;
+            gulp.series(...tasks)(() => {
+              gulpIndicator = false;
+              //spawn('npm', ['install'], { cwd: join(cwd(), config.public_dir) });
+              resolve();
+            });
+          }
         }
-      });
+      );
     }
   });
 };
@@ -88,8 +105,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
     const pathname: string = req['_parsedUrl'].pathname; // just get pathname
     // skip labels (tag and category)
     if (labelSrc.includes(pathname)) return next();
-    if (pathname.isMatch(new RegExp('^/' + config.category_dir + '/'))) return next();
-    if (pathname.isMatch(new RegExp('^/' + config.tag_dir + '/'))) return next();
+    if (pathname.isMatch(new RegExp('^/' + config.category_dir + '/')))
+      return next();
+    if (pathname.isMatch(new RegExp('^/' + config.tag_dir + '/')))
+      return next();
     // skip api, admin
     if (pathname.isMatch(/^\/(api|admin)/)) return next();
     // skip assets
@@ -105,11 +124,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       // find post and pages
       let sourceMD = [
         join(cwd(), config.source_dir, '_posts', decodeURIComponent(pathname)),
-        join(cwd(), config.source_dir, decodeURIComponent(pathname)),
+        join(cwd(), config.source_dir, decodeURIComponent(pathname))
       ].map((s) => {
         return s.replace(/.html$/, '.md');
       });
-      sourceMD.push(join(cwd(), config.source_dir, decodeURIComponent(pathname))); // push non-markdown source
+      sourceMD.push(
+        join(cwd(), config.source_dir, decodeURIComponent(pathname))
+      ); // push non-markdown source
       sourceMD = sourceMD
         .map((path) => {
           if (path.endsWith('/')) return path + 'index.md';
@@ -121,10 +142,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       if (sourceMD.length > 0) {
         for (let index = 0; index < sourceMD.length; index++) {
           const file = sourceMD[index];
-          const dest = join(post_generated_dir, toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')).replace(
-            /.md$/,
-            '.html'
-          );
+          const dest = join(
+            post_generated_dir,
+            toUnix(file).replaceArr([cwd(), 'source/', '_posts/'], '')
+          ).replace(/.md$/, '.html');
 
           // start generating
           if (existsSync(file)) {
@@ -144,7 +165,13 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
                 write(dest, rendered);
                 const previewed = showPreview(rendered);
 
-                console.log(chalk.greenBright(`[${parsed.metadata.type}]`), 'pre-processed', pathname, '->', file);
+                console.log(
+                  chalk.greenBright(`[${parsed.metadata.type}]`),
+                  'pre-processed',
+                  pathname,
+                  '->',
+                  file
+                );
                 res.end(previewed);
               });
             } else if (minimatch(file, '*.{html,txt,json}')) {
@@ -170,28 +197,34 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         return res.end(showPreview(readFileSync(sourceIndex)));
       }
       next();
-    },
+    }
   },
   {
     route: '/api',
     handle: function (req, res, next) {
       // write source/.guid
       if (req.url.includes('generate'))
-        write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() => console.log('gulp generate start'));
+        write(join(cwd(), config.source_dir, '.guid'), new Date()).then(() =>
+          console.log('gulp generate start')
+        );
       // write public_dir/.guid
       if (req.url.includes('copy'))
-        write(join(cwd(), 'src-posts/.guid'), new Date()).then(() => console.log('gulp copy start'));
+        write(join(cwd(), 'src-posts/.guid'), new Date()).then(() =>
+          console.log('gulp copy start')
+        );
       res.writeHead(200, {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain'
       });
       res.end(
-        JSON.stringifyWithCircularRefs(
-          new Error('Something went wrong. And we are reporting a custom error message.'),
+        json_encode(
+          new Error(
+            'Something went wrong. And we are reporting a custom error message.'
+          ),
           2
         )
       );
       next();
-    },
+    }
   },
   {
     route: '/admin',
@@ -200,8 +233,8 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
         .renderFile(join(__dirname, 'public/admin.ejs'))
         .then((rendered) => res.end(rendered))
         .catch(next);
-    },
-  },
+    }
+  }
 ];
 
 if (config.server.compress) {
@@ -213,9 +246,19 @@ labelSrc.forEach((path) => {
   ServerMiddleWare.push({
     route: path,
     handle: async function (req, res, next) {
-      const pathname = req['_parsedUrl'].pathname.replace(/\/+/, '/').replace(/^\//, '');
-      const labelname = req['_parsedUrl'].pathname.split('/').removeEmpties().last(1)[0];
-      const generatedTo = join(cwd(), config.public_dir, decodeURIComponent(pathname), 'index.html');
+      const pathname = req['_parsedUrl'].pathname
+        .replace(/\/+/, '/')
+        .replace(/^\//, '');
+      const labelname = req['_parsedUrl'].pathname
+        .split('/')
+        .removeEmpties()
+        .last(1)[0];
+      const generatedTo = join(
+        cwd(),
+        config.public_dir,
+        decodeURIComponent(pathname),
+        'index.html'
+      );
       console.log('[generate][label]', pathname, labelname, generatedTo);
       let result: string;
       /*await generateLabel((str) => {
@@ -225,7 +268,7 @@ labelSrc.forEach((path) => {
         return res.end(showPreview(result));
       }*/
       next();
-    },
+    }
   });
 });
 

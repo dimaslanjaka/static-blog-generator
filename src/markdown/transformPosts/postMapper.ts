@@ -1,8 +1,5 @@
 import moment from 'moment-timezone';
-import { excerpt } from '../../ejs/helper/excerpt';
-import { thumbnail } from '../../ejs/helper/thumbnail';
 import { postMap } from '../../parsePost';
-import config from '../../types/_config';
 
 /**
  * Partializing properties
@@ -112,71 +109,71 @@ export function array_wrap<T extends any[]>(arr: T): T {
   return arr;
 }
 
+export interface DumperType extends Object {
+  [key: string]: any;
+  next: any;
+  prev: any;
+  posts: any[];
+  content: string;
+}
+
+export function simplifyDump<T>(post: T, except?: string[] | string): T;
+export function simplifyDump<T extends any[]>(
+  post: T,
+  except?: string[] | string
+): T;
 /**
  * simplified dump
  * @param post
  * @returns
  */
-export function simplifyDump(post: any) {
-  if (Array.isArray(post)) return post.map(simplifyDump);
-  if (typeof post == 'object') {
-    if (post.sitedata) post.sitedata = null;
-    if (post.posts) {
-      if (Array.isArray(post.posts)) {
-        post.posts = post.posts.map(simplifyDump);
+export function simplifyDump<T extends DumperType>(
+  post: T,
+  except: string[] | string = []
+) {
+  if (Array.isArray(post)) return post.map((o) => simplifyDump(o, except));
+  if (typeof post == 'object' && post !== null) {
+    if ('posts' in post) {
+      const archivePosts = post['posts'] as postMap[];
+      if (Array.isArray(archivePosts)) {
+        post['posts'] = archivePosts.map((o) => simplifyDump(o, except));
       }
     }
-    if (post.config) post.config = null;
-    if (post.body) post.body = null;
-    if (post.content) post.content = null;
-    if (post.next) post.next = null;
-    if (post.prev) post.prev = null;
-    if (post.metadata) post.metadata = null;
+
+    const keyToRemove = [
+      'config',
+      'body',
+      'prev',
+      'next',
+      'content',
+      'body',
+      'sitedata',
+      'author'
+    ].filter(function (el) {
+      if (Array.isArray(except)) {
+        return except.indexOf(el) < 0;
+      } else {
+        return el === except;
+      }
+    });
+    for (const key in post) {
+      if (Object.prototype.hasOwnProperty.call(post, key)) {
+        if (keyToRemove.includes(key)) {
+          if (post[key]) post[key] = <any>`[${typeof post[key]}]`;
+        }
+      }
+    }
+    for (const key in post['metadata']) {
+      if (Object.prototype.hasOwnProperty.call(post['metadata'], key)) {
+        if (keyToRemove.includes(key)) {
+          if (post['metadata'][key])
+            post['metadata'][key] =
+              '[' + <any>typeof post['metadata'][key] + ']';
+        }
+      }
+    }
   }
   return post;
-}
-
-/**
- * split posts array to chunks
- * @param arr
- * @returns
- */
-export function post_chunks<T extends any[]>(arr?: T) {
-  const posts = (typeof arr == 'object' ? arr : [])
-    .filter((item) => {
-      if (!item) return false;
-      if (!item.metadata) return false;
-      return true;
-    })
-    .map(postMapper);
-  //.map((post) => Object.assign(post, post.metadata));
-  /**
-   * split posts to chunks divided by {@link config.index_generator.per_page}
-   */
-  const chunk = postChunksMapper(
-    array_split_chunks(
-      posts,
-      config['index_generator'] ? config['index_generator'].per_page : 5
-    )
-  );
-
-  const sitedata = posts.map((post) => {
-    const data = {
-      title: post.metadata.title,
-      thumbnail: thumbnail(post.metadata),
-      url: post.metadata.url,
-      excerpt: excerpt(post.metadata)
-    };
-    return data;
-  });
-  return {
-    /** all posts */
-    posts,
-    /** all posts chunks */
-    chunk,
-    /** all posts infinite scroll sitedata */
-    sitedata
-  };
 }
 
 /**
