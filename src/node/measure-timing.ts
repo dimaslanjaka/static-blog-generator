@@ -7,23 +7,33 @@ import { varToString } from '../parser/utility';
 export default class MeasureTime {
   private startTime = 0;
   private endTime = 0;
-  run(fn: any) {
-    this.start();
-    if (typeof fn == 'function') fn();
-    console.log(this.end());
+  run(fn: any, msg?: string) {
+    if (typeof fn == 'function') {
+      if (
+        typeof fn.then === 'function' &&
+        fn[Symbol.toStringTag] === 'Promise'
+      ) {
+        this.start();
+        fn().then(console.log(msg, this.end()));
+      } else {
+        this.start();
+        fn();
+        console.log(msg, this.end());
+      }
+    }
   }
   /**
    * measure time execution
    * @see {@link https://stackoverflow.com/a/70004960/6404439}
-   * @param func
+   * @param fn
    * @param args
    */
-  measure(func: any, ...args: any[]) {
-    const displayName = func.name || varToString({ func });
+  measure(fn: any, ...args: any[]) {
+    const displayName = fn.name || varToString({ func: fn });
     console.time(displayName);
     //const tupleArgs = [...args];
     //func(tupleArgs);
-    func.apply(null, ...args);
+    fn.apply(null, ...args);
     console.timeEnd(displayName);
   }
   start() {
