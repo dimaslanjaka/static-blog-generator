@@ -6,6 +6,7 @@ import { generateIndex } from './generate-archives';
 
 const measure = new MeasureTime();
 measure.run(async () => await generateIndex('homepage'), 'generate homepage');
+measure.run(async () => await generateIndex('all'), 'generate archive');
 
 function _debugChunks() {
   // simplify debug
