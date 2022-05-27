@@ -1,3 +1,4 @@
+import { deepmerge } from 'deepmerge-ts';
 import { toUnix } from 'upath';
 import {
   parsePost as moduleParsePost,
@@ -11,21 +12,31 @@ import config, { cwd } from '../../types/_config';
 import modifyPost from './modifyPost';
 
 const parseCache = pcache('parsePost');
-const useCache = config.generator.cache;
 const cachePost = new CachePost();
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
 /**
  * Parse Markdown Post
  * @see {@link moduleParsePost}
- * @param path
+ * @param path file path to read
+ * @param content content to parse, skip reading `path` parameter when settled
+ * @param options override {@link moduleParsePost} options
  * @returns
  */
-const parsePost = async (path: string, content?: string): Promise<postMap> => {
+const parsePost = async (
+  path: string,
+  content?: string,
+  options: Parameters<typeof moduleParsePost>[1] = {}
+): Promise<postMap> => {
   let cacheKey = md5(path);
   if (typeof path == 'string' && !/\n/.test(path)) {
     cacheKey = toUnix(path).replace(cwd(), '');
     if (cacheKey.endsWith('/')) cacheKey += 'index';
+  }
+  let useCache = config.generator.cache;
+  if ('cache' in options) {
+    // overriden cache when `cache` exist in options
+    useCache = options.cache;
   }
   // @todo return from cache
   if (useCache && cacheKey) {
@@ -33,22 +44,28 @@ const parsePost = async (path: string, content?: string): Promise<postMap> => {
       parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
     if (get) return get;
   }
-  let parse = await moduleParsePost(content || path, {
-    shortcodes: {
-      youtube: true,
-      css: true,
-      include: true,
-      link: true,
-      now: true,
-      script: true,
-      text: true
-    },
-    cache: config.generator.cache,
-    config: <any>config,
-    formatDate: true,
-    fix: true,
-    sourceFile: path
-  });
+  let parse = await moduleParsePost(
+    content || path,
+    deepmerge(
+      {
+        shortcodes: {
+          youtube: true,
+          css: true,
+          include: true,
+          link: true,
+          now: true,
+          script: true,
+          text: true
+        },
+        cache: config.generator.cache,
+        config: <any>config,
+        formatDate: true,
+        fix: true,
+        sourceFile: path
+      },
+      options
+    )
+  );
 
   if (!parse) return null;
 

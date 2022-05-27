@@ -97,6 +97,10 @@ const config: ProjectConfig = project_config_merge;
 if (argv['nocache']) config.generator.cache = false;
 // @todo [config] bypass verbose if --verbose argument is set by cli
 if (argv['verbose']) config.verbose = true;
+/**
+ * is verbose activated?
+ */
+export const verbose = config.verbose;
 
 config.url = config.url.replace(/\/+$/, '');
 

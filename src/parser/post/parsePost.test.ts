@@ -1,15 +1,36 @@
-import { readFileSync, writeFile } from 'fs';
-import { join } from 'upath';
+import { existsSync } from 'fs';
+import { cwd } from 'process';
+import { basename, join } from 'upath';
+import { write } from '../../node/filemanager';
 import MeasureTime from '../../node/measure-timing';
-import { root, tmp } from '../../types/_config';
-import parsePost from './parsePost';
+import config from '../../types/_config';
+import parsePost, { buildPost } from './parsePost';
+import { simplifyDump } from './postMapper';
 
 function run() {
-  const path = join(root, 'src-posts/Tests/shortcodes.md');
-  const parse = parsePost(path, readFileSync(path, 'utf-8'));
-  writeFile(tmp('test.json'), JSON.stringify(parse, null, 2), (err) => {
-    if (!err) console.log(tmp('test.json'));
-  });
+  ['src-posts/Tests/unit/elements.md', 'src-posts/Tests/shortcodes.md']
+    .map((path) => join(cwd(), path))
+    .filter(existsSync)
+    .forEach(async (path) => {
+      const filename = basename(path, '.md');
+      const parse = await parsePost(path, null, { cache: false });
+      if (!parse) {
+        console.log(`cannot parse ${path}`);
+        return;
+      }
+
+      const md = await write(
+        join(__dirname, 'tmp/parsePost', filename + '.md'),
+        buildPost(parse)
+      );
+
+      const json = await write(
+        join(__dirname, 'tmp/parsePost', filename + '.json'),
+        simplifyDump(parse, 'body')
+      );
+
+      if (config.verbose) console.log('saved dump', [json, md]);
+    });
 }
 
 new MeasureTime().measure(run);

@@ -140,45 +140,60 @@ export interface DumperType extends DumperMerged {
   content: string;
 }
 
-export function simplifyDump<T>(post: T): T;
-export function simplifyDump<T extends any[]>(post: T): T;
+export function simplifyDump<T>(post: T, except?: string[] | string): T;
+export function simplifyDump<T extends any[]>(
+  post: T,
+  except?: string[] | string
+): T;
 /**
  * simplified dump
  * @param post
  * @returns
  */
-export function simplifyDump<T>(post: T) {
-  if (Array.isArray(post)) return post.map(simplifyDump);
-  if (typeof post == 'object') {
+export function simplifyDump<T extends DumperType>(
+  post: T,
+  except: string[] | string = []
+) {
+  if (Array.isArray(post)) return post.map((o) => simplifyDump(o, except));
+  if (typeof post == 'object' && post !== null) {
     if (post['posts']) {
       if (Array.isArray(post['posts'])) {
-        post['posts'] = post['posts'].map(simplifyDump);
+        post['posts'] = post['posts'].map((o) => simplifyDump(o, except));
       }
     }
+
+    const keyToRemove = [
+      'config',
+      'body',
+      'prev',
+      'next',
+      'content',
+      'body',
+      'sitedata',
+      'author'
+    ].filter(function (el) {
+      if (Array.isArray(except)) {
+        return except.indexOf(el) < 0;
+      } else {
+        return el === except;
+      }
+    });
     for (const key in post) {
       if (Object.prototype.hasOwnProperty.call(post, key)) {
-        const element = post[key];
-        if (
-          [
-            'config',
-            'body',
-            'prev',
-            'next',
-            'content',
-            'body',
-            'sitedata'
-          ].includes(key)
-        )
-          post[key] = <any>typeof post[key];
+        if (keyToRemove.includes(key)) {
+          if (post[key]) post[key] = <any>typeof post[key];
+        }
       }
     }
-    /*if (post.config) post.config = null;
-    if (post.body) post.body = null;
-    if (post.content) post.content = null;
-    if (post.next) post.next = null;
-    if (post.prev) post.prev = null;
-    if (post.metadata) post.metadata = null;
-    if (post.config) post.config = null;*/
+    for (const key in post['metadata']) {
+      if (Object.prototype.hasOwnProperty.call(post['metadata'], key)) {
+        if (keyToRemove.includes(key)) {
+          if (post['metadata'][key])
+            post['metadata'][key] =
+              '[' + <any>typeof post['metadata'][key] + ']';
+        }
+      }
+    }
   }
   return post;
 }
