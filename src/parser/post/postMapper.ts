@@ -137,6 +137,7 @@ export interface DumperType extends DumperMerged {
   [key: string]: any;
   next: any;
   prev: any;
+  posts: any[];
   content: string;
 }
 
@@ -156,9 +157,10 @@ export function simplifyDump<T extends DumperType>(
 ) {
   if (Array.isArray(post)) return post.map((o) => simplifyDump(o, except));
   if (typeof post == 'object' && post !== null) {
-    if (post['posts']) {
-      if (Array.isArray(post['posts'])) {
-        post['posts'] = post['posts'].map((o) => simplifyDump(o, except));
+    if ('posts' in post) {
+      const archivePosts = post['posts'] as postMap[];
+      if (Array.isArray(archivePosts)) {
+        post['posts'] = archivePosts.map((o) => simplifyDump(o, except));
       }
     }
 
@@ -181,7 +183,7 @@ export function simplifyDump<T extends DumperType>(
     for (const key in post) {
       if (Object.prototype.hasOwnProperty.call(post, key)) {
         if (keyToRemove.includes(key)) {
-          if (post[key]) post[key] = <any>typeof post[key];
+          if (post[key]) post[key] = <any>`[${typeof post[key]}]`;
         }
       }
     }
