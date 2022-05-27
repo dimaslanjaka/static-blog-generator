@@ -56,23 +56,33 @@ export function countWords(str: string) {
   return str.split(' ').length;
 }
 
+
 /**
  * Replace string by array pattern
  * @param array
  * @param replacement
+ * @example
+ * replaceArr('str', ['s','r'], ''); // t
+ * replaceArr('str', ['s','r'], ['a s', 'ring']); // a string
  */
 export function replaceArr(
   str: string,
   array: (string | RegExp)[],
-  replacement: string
+  replacement: string | string[]
 ) {
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   let ori = str;
-  array.map((str) => {
-    ori = ori.replace(str, replacement);
+  array.forEach((str, i) => {
+    if (typeof replacement == 'string') {
+      ori = ori.replace(str, replacement);
+    } else {
+      ori = ori.replace(str, replacement[i]);
+    }
   });
+
   return ori;
 }
+
 
 export interface String {
   /**
