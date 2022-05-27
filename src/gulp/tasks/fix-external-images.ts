@@ -46,7 +46,7 @@ export async function fixExternalImages() {
     const isMd = file.endsWith('.md');
     const imageSrc = [];
     if (isMd) {
-      const parsed = parsePost(file);
+      const parsed = await parsePost(file);
       if (parsed && Object.hasOwnProperty.call(parsed, 'metadata')) {
         const meta = parsed.metadata;
         if (meta.thumbnail && !imageSrc.includes(meta.thumbnail))

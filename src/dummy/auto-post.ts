@@ -14,7 +14,7 @@ export const generateDummyPosts = memoizee(_generateDummyPosts);
 async function _generateDummyPosts(n = 5) {
   const result: string[] = [];
   for (let x = 0; x < n; x++) {
-    const gen = dummyPost(x);
+    const gen = await dummyPost(x);
     const file = await write(
       join(destFolder, gen.metadata.permalink),
       buildPost(gen)

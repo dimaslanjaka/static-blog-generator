@@ -44,14 +44,14 @@ export const renderPost = function () {
       ePattern.replace(/^!+/, '')
     );
     const ignore = ['_drafts/', '_data/', ...exclude];
-    globSrc('**/*.md', { ignore: ignore, cwd: source_dir })
+    Bluebird.all(globSrc('**/*.md', { ignore: ignore, cwd: source_dir }))
       // validate excluded
       .filter((file) => {
         if (file.match(/_(drafts|data)\//)) return false;
         return true;
       })
       // transform path and others
-      .map((file) => {
+      .map(async (file) => {
         const result = {
           /**
            * post type
@@ -72,7 +72,7 @@ export const renderPost = function () {
         };
         // set cache indicator, if cache not exist and argument nocache not set
         result.cached = renderCache.has(result.path) && config.generator.cache;
-        let parsed = parsePost(result.path);
+        let parsed = await parsePost(result.path);
         // try non-cache method
         if (!validateParsed(<any>parsed)) parsed = parsePost(result.path);
         if (!validateParsed(<any>parsed)) {

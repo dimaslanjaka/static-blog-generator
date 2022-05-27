@@ -1,4 +1,3 @@
-import { Nullable } from 'safelinkify';
 import { toUnix } from 'upath';
 import {
   parsePost as moduleParsePost,
@@ -22,7 +21,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  * @param path
  * @returns
  */
-const parsePost = (path: string, content?: string): Nullable<postMap> => {
+const parsePost = async (path: string, content?: string): Promise<postMap> => {
   let cacheKey = md5(path);
   if (typeof path == 'string' && !/\n/.test(path)) {
     cacheKey = toUnix(path).replace(cwd(), '');
@@ -34,7 +33,7 @@ const parsePost = (path: string, content?: string): Nullable<postMap> => {
       parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
     if (get) return get;
   }
-  let parse = moduleParsePost(content || path, {
+  let parse = await moduleParsePost(content || path, {
     shortcodes: {
       youtube: true,
       css: true,
