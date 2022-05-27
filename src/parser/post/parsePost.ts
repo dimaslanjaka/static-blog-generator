@@ -10,6 +10,7 @@ import CachePost from '../../node/cache-post';
 import { md5 } from '../../node/md5-file';
 import config, { cwd } from '../../types/_config';
 import modifyPost from './modifyPost';
+import { DeepPartial } from './postMapper';
 
 const parseCache = pcache('parsePost');
 const cachePost = new CachePost();
@@ -26,7 +27,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 const parsePost = async (
   path: string,
   content?: string,
-  options: Parameters<typeof moduleParsePost>[1] = {}
+  options: DeepPartial<Parameters<typeof moduleParsePost>[1]> = {}
 ): Promise<postMap> => {
   let cacheKey = md5(path);
   if (typeof path == 'string' && !/\n/.test(path)) {
@@ -39,7 +40,7 @@ const parsePost = async (
     useCache = options.cache;
   }
   // @todo return from cache
-  if (useCache && cacheKey) {
+  if (useCache && typeof cacheKey == 'string' && cacheKey.length > 0) {
     const get =
       parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
     if (get) return get;
@@ -47,7 +48,7 @@ const parsePost = async (
   let parse = await moduleParsePost(
     content || path,
     deepmerge(
-      {
+      <Parameters<typeof moduleParsePost>[1]>{
         shortcodes: {
           youtube: true,
           css: true,
@@ -55,7 +56,8 @@ const parsePost = async (
           link: true,
           now: true,
           script: true,
-          text: true
+          text: true,
+          codeblock: true
         },
         cache: config.generator.cache,
         config: <any>config,

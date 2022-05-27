@@ -1,3 +1,4 @@
+import { existsSync } from 'fs';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
@@ -72,8 +73,10 @@ export const copy_posts = copyPosts;
 
 scheduler.add('indexing-posts', () => {
   const logname = color.Fuchsia('[indexing]');
+  if (!existsSync(post_public_dir)) return;
   console.log(logname, 'indexing folder', post_public_dir);
   for (const filePath of readdirSync(post_public_dir)) {
+    if (!filePath.endsWith('.md')) continue;
     console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
     parsePost(filePath);
   }
