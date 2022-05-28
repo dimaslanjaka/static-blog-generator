@@ -1,16 +1,16 @@
 import gulp from 'gulp';
-import { array_wrap } from '../../node/array-wrapper';
-import CacheFile from '../../node/cache';
-import color from '../../node/color';
-import { cwd, join, write } from '../../node/filemanager';
-import modifyPost from '../../parser/post/modifyPost';
-import { postMap } from '../../parser/post/parsePost';
-import postChunksIterator from '../../parser/post/postChunksIterator';
-import { post_chunks, simplifyDump } from '../../parser/post/postMapper';
-import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
-import { excerpt } from '../../renderer/ejs/helper/excerpt';
-import { thumbnail } from '../../renderer/ejs/helper/thumbnail';
-import config, { tmp } from '../../types/_config';
+import { array_wrap } from '../../../node/array-wrapper';
+import CacheFile from '../../../node/cache';
+import color from '../../../node/color';
+import { cwd, join, write } from '../../../node/filemanager';
+import modifyPost from '../../../parser/post/modifyPost';
+import { postMap } from '../../../parser/post/parsePost';
+import postChunksIterator from '../../../parser/post/postChunksIterator';
+import { post_chunks, simplifyDump } from '../../../parser/post/postMapper';
+import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
+import { excerpt } from '../../../renderer/ejs/helper/excerpt';
+import { thumbnail } from '../../../renderer/ejs/helper/thumbnail';
+import config, { tmp } from '../../../types/_config';
 
 const cacheCats = new CacheFile('postCats');
 export async function generateCategories(labelname?: string, pagenum?: number) {
