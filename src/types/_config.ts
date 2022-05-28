@@ -150,11 +150,11 @@ export type ThemeOpt = typeof theme_config & {
 
 write(
   join(__dirname, '_config_project.json'),
-  json_encode(sortedObject(config))
+  json_encode(isDev ? sortedObject(config) : config)
 );
 write(
   join(__dirname, '_config_theme.json'),
-  json_encode(sortedObject(theme_config))
+  json_encode(isDev ? sortedObject(theme_config) : theme_config)
 );
 
 /** SETUP PRIVATE CONFIGS */
