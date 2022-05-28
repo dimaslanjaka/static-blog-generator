@@ -13,7 +13,10 @@ const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
  * @param callback
  * @returns
  */
-function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (() => any)) {
+function MinifyHTML(
+  options?: htmlmin.Options,
+  callback?: CallableFunction & (() => any)
+) {
   const workdir = join(cwd(), config.public_dir);
   return globSrc('**/*.html', { cwd: workdir })
     .map((path) => join(workdir, path))

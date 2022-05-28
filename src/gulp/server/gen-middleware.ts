@@ -1,5 +1,9 @@
 import { join } from 'upath';
-import { arrayAddAll, array_unique, removeEmpties } from '../../node/array-utils';
+import {
+  arrayAddAll,
+  array_unique,
+  removeEmpties
+} from '../../node/array-utils';
 import { getAllPosts } from '../../node/cache-post';
 import { write } from '../../node/filemanager';
 import config from '../../types/_config';

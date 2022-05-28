@@ -49,7 +49,10 @@ function startServer() {
         if (!child.killed) child.kill('SIGKILL');
       })
       .then(() => {
-        const child = spawn('gulp', ['generate', '--nocache'], { cwd: cwd(), stdio: 'inherit' });
+        const child = spawn('gulp', ['generate', '--nocache'], {
+          cwd: cwd(),
+          stdio: 'inherit'
+        });
         childs.generate.push(child);
       })
       .finally(cb);
@@ -61,7 +64,10 @@ function startServer() {
         if (!child.killed) child.kill('SIGKILL');
       })
       .then(() => {
-        const child = spawn('gulp', ['copy', '--nocache'], { cwd: cwd(), stdio: 'inherit' });
+        const child = spawn('gulp', ['copy', '--nocache'], {
+          cwd: cwd(),
+          stdio: 'inherit'
+        });
         childs.copy.push(child);
       })
       .finally(cb);

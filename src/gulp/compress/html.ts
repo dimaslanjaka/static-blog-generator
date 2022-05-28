@@ -18,12 +18,21 @@ export default function (files: string[]) {
     htmlMin
       .minify(html)
       .then((minifiedHtml) => {
-        const saved = html.length === 0 ? 0 : (((html.length - minifiedHtml.length) / html.length) * 100).toFixed(2);
+        const saved =
+          html.length === 0
+            ? 0
+            : (
+                ((html.length - minifiedHtml.length) / html.length) *
+                100
+              ).toFixed(2);
         writeFile(file, minifiedHtml);
       })
       .catch((err) => {
         if (err) {
-          const errFile = path.join('build/gulp/html/', file.replace(process.cwd(), ''));
+          const errFile = path.join(
+            'build/gulp/html/',
+            file.replace(process.cwd(), '')
+          );
           let errTxt = '';
           errTxt += file + '\n\n';
           errTxt += err.message;

@@ -31,7 +31,10 @@ interface PluginOptions {
  * @see {@link https://www.npmjs.com/package/gulp-rename}
  */
 export function gulpRename(
-  obj: string | Options | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void),
+  obj:
+    | string
+    | Options
+    | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void),
   options?: PluginOptions
 ) {
   options = options || {};
@@ -39,7 +42,9 @@ export function gulpRename(
   const stream = new Stream.Transform({ objectMode: true });
 
   function parsePath(path: string, fullpath?: string) {
-    const extname = options.multiExt ? basename(path).slice(basename(path).indexOf('.')) : ExtName(path);
+    const extname = options.multiExt
+      ? basename(path).slice(basename(path).indexOf('.'))
+      : ExtName(path);
     return {
       dirname: dirname(path),
       basename: basename(path, extname),
@@ -48,7 +53,11 @@ export function gulpRename(
     };
   }
 
-  stream._transform = function (originalFile: vinyl.BufferFile, unused, callback) {
+  stream._transform = function (
+    originalFile: vinyl.BufferFile,
+    unused,
+    callback
+  ) {
     const file = originalFile.clone({ contents: false });
     let parsedPath = parsePath(file.relative, originalFile.history[0]);
     let path: string;
@@ -71,7 +80,10 @@ export function gulpRename(
 
       path = join(dirname, prefix + basename + suffix + extname);
     } else {
-      callback(new Error('Unsupported renaming parameter type supplied'), undefined);
+      callback(
+        new Error('Unsupported renaming parameter type supplied'),
+        undefined
+      );
       return;
     }
 
