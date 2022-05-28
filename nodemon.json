@@ -3,7 +3,7 @@
   "restartable": "rs",
   "ignore": [
     ".git",
-    "*.test.*",
+    "*.test.js",
     ".gitignore",
     ".vscode",
     "__tests__/*",
