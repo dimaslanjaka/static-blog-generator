@@ -105,6 +105,7 @@
     "@types/compression": "^1.7.2",
     "@types/cross-spawn": "^6.0.2",
     "@types/ejs": "^3.1.0",
+    "@types/eslint": "^8.4.2",
     "@types/find-cache-dir": "^3.2.1",
     "@types/firebase": "^3.2.1",
     "@types/folder-hash": "^4.0.1",
