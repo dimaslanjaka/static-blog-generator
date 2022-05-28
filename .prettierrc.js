@@ -1,7 +1,7 @@
 const prettier = require('prettier');
 /** @type {prettier.Config} */
 const config = {
-    printWidth: 80,
+    printWidth: 120,
     tabWidth: 2,
     useTabs: false,
     bracketSameLine: true,

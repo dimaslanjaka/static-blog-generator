@@ -11,15 +11,11 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": [
-    "prettier"
-  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    //"plugin:prettier/recommended"
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "overrides": [
     {
@@ -32,7 +28,6 @@
     }
   ],
   "rules": {
-    "prettier/prettier": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-unused-vars": "off",
@@ -63,18 +58,6 @@
       }
     ],
     "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
-    "@typescript-eslint/ban-types": [
-      "error",
-      {
-        "types": {
-          // add a custom message to help explain why not to use it
-          "object": "use `Record<string, unknown>`",
-          // un-ban a type that's banned by default
-          "{}": false
-        },
-        "extendDefaults": true
-      }
-    ]
+    "prefer-arrow-callback": "off"
   }
 }
