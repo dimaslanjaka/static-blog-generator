@@ -1,10 +1,4 @@
 {
-    "tag": [
-        "/tags/dummy",
-        "/tags/sample"
-    ],
-    "category": [
-        "/categories/dummy",
-        "/categories/post"
-    ]
+    "tag": [],
+    "category": []
 }
