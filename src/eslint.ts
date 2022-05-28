@@ -30,6 +30,7 @@ rmSync(outputLog);
       }
     }
   }
+  console.log('log saved to', outputLog);
 })();
 
 async function runEslint(filePath = 'src/**/*.ts') {
