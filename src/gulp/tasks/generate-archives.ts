@@ -3,7 +3,7 @@ import { inspect } from 'util';
 import { array_wrap } from '../../node/array-wrapper';
 import color from '../../node/color';
 import { cwd, join, write } from '../../node/filemanager';
-import modifyPost from '../../parser/post/modifyPost';
+import { modifyPost } from '../../parser/post/modifyPost';
 import { archiveMap, post_chunks } from '../../parser/post/postMapper';
 import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
 import { getLatestDateArray } from '../../renderer/ejs/helper/date';
