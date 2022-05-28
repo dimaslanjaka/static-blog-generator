@@ -100,6 +100,8 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
     }
   });
 };
+// copy before ready
+copyAssets();
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   function (_, res, next) {
