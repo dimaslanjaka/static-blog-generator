@@ -10,7 +10,7 @@ import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
 import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
 import { excerpt } from '../../../renderer/ejs/helper/excerpt';
 import config, { cwd } from '../../../types/_config';
-import './generate/categories';
+import './categories';
 import './tags';
 
 /**
