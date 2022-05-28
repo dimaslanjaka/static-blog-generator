@@ -14,13 +14,7 @@ const logname = color.hex('#fcba03')('[render assets]');
 const renderAssets = async () => {
   const srcFolder = join(root, config.source_dir);
   const destFolder = join(root, config.public_dir);
-  console.log(
-    logname + color.magentaBright('[assets]'),
-    'copy',
-    srcFolder,
-    '->',
-    destFolder
-  );
+  console.log(logname, 'copy', srcFolder, '->', destFolder);
   const exclude = config.exclude.map((ePattern) => ePattern.replace(/^!+/, ''));
   const ignore = ['**/*.md', '**/.git*', ...exclude, ...global_exclude];
   const glob = await globSrc('**/*.*', {
