@@ -21,9 +21,9 @@ import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
-import { generateTags } from '../tasks/generate-tags';
 import { generateIndex } from '../tasks/generate/archives';
 import { generateCategories } from '../tasks/generate/categories';
+import { generateTags } from '../tasks/generate/tags';
 import './gen-middleware';
 
 let gulpIndicator = false;

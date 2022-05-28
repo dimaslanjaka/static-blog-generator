@@ -10,8 +10,8 @@ import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
 import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
 import { excerpt } from '../../../renderer/ejs/helper/excerpt';
 import config, { cwd } from '../../../types/_config';
-import './generate-tags';
 import './generate/categories';
+import './tags';
 
 /**
  * generate index

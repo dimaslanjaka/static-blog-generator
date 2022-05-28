@@ -1,7 +1,7 @@
-import color from '../../node/color';
-import { write } from '../../node/filemanager';
-import { tmp } from '../../types/_config';
-import { generateTags } from './generate-tags';
+import color from '../../../node/color';
+import { write } from '../../../node/filemanager';
+import { tmp } from '../../../types/_config';
+import { generateTags } from './tags';
 
 (async () => {
   const test = await generateTags();
