@@ -26,12 +26,7 @@ export default function fix2() {
     });
     dom.close();
   });
-  /*for (let i = 0; i < images_url.length; i++) {
-    const url = images_url[i];
-    const parse = urlParser(url);
-    console.log(parse);
-  }*/
-  const parse = urlParser(images_url[0]);
+  const parse = new urlParser(images_url[0]).result;
   console.log(parse);
 }
 
