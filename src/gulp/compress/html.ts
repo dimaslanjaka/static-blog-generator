@@ -1,11 +1,8 @@
-import minimatch from 'minimatch';
-import * as htmlMin from 'html-minifier-terser';
-import * as htmlMin2 from 'html-minifier';
 import { readFileSync } from 'fs';
-import writeFile from './writeFile';
+import * as htmlMin from 'html-minifier-terser';
+import minimatch from 'minimatch';
 import path from 'path';
-
-const once = false;
+import writeFile from './writeFile';
 
 export default function (files: string[]) {
   // Filter routes to select all html files.
@@ -18,13 +15,13 @@ export default function (files: string[]) {
     htmlMin
       .minify(html)
       .then((minifiedHtml) => {
-        const saved =
+        /*const saved =
           html.length === 0
             ? 0
             : (
                 ((html.length - minifiedHtml.length) / html.length) *
                 100
-              ).toFixed(2);
+              ).toFixed(2);*/
         writeFile(file, minifiedHtml);
       })
       .catch((err) => {

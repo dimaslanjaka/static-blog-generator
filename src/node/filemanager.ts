@@ -83,6 +83,7 @@ const filemanager = {
    * Write to file recursively (synchronous)
    * @param path
    * @param content
+   * @param append append to file?
    * @returns Promise.resolve(path);
    * @example
    * // write directly
@@ -92,7 +93,7 @@ const filemanager = {
    * // or log using async
    * input.then((file)=> console.log('written to', file));
    */
-  write: (path: fs.PathLike, content: any) => {
+  write: (path: fs.PathLike, content: any, append = false) => {
     const dir = modPath.dirname(path.toString());
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (typeof content != 'string') {
@@ -102,7 +103,11 @@ const filemanager = {
         content = String(content);
       }
     }
-    fs.writeFileSync(path, content);
+    if (!append) {
+      fs.writeFileSync(path, content);
+    } else {
+      fs.appendFileSync(path, content);
+    }
     return Bluebird.resolve(path);
   },
 
