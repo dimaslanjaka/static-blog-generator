@@ -1,11 +1,9 @@
 import { writeFile } from 'fs';
 import gulp from 'gulp';
-import { DynamicObject } from '../../types';
+import { sortedObject } from '../../node/object-utility';
 import config, { theme_config, tmp } from '../../types/_config';
 
 gulp.task('dump', async () => {
-  const sortedObject = (data: DynamicObject) =>
-    Object.fromEntries(Object.entries(data).sort());
   writeFile(
     tmp('config.json'),
     JSON.stringify(sortedObject(config), null, 2),
