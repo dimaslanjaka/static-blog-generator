@@ -23,6 +23,7 @@ export { root };
 /** default project config */
 export declare const default_project_config: {
     verbose: boolean;
+    env: string;
     exclude: any[];
     include: any[];
     skip_render: any[];
@@ -127,6 +128,7 @@ declare const config: ProjectConfig;
  * is verbose activated?
  */
 export declare const verbose: boolean;
+export declare const isDev: boolean;
 /**
  * Public Source Post Dir ({@link config.source_dir})
  */
