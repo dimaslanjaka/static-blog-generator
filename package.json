@@ -2,8 +2,8 @@
   "name": "static-blog-generator",
   "version": "2.0.51",
   "description": "Static Blog Generator",
-  "main": "./build/src/generator.js",
-  "types": "./build/src/generator.d.ts",
+  "main": "./dist/src/generator.js",
+  "types": "./dist/src/generator.d.ts",
   "bin": {
     "sbg": "./bin/sbg.js"
   },
@@ -16,14 +16,14 @@
     "_config.yml",
     "source/guide",
     "source/package.json",
-    "build",
+    "dist",
     "packages",
     "bin"
   ],
   "scripts": {
     "dev": "nodemon",
     "build": "run-s build:**",
-    "build:src": "fse remove build && tsc -p tsconfig.build.json",
+    "build:src": "ts-node build.ts",
     "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn install --check-files && yarn build",
     "build:safelinkify": "cd packages/safelink && yarn install --check-files && yarn build",
     "build:upgrade": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache",
