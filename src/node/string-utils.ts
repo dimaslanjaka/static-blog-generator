@@ -56,7 +56,6 @@ export function countWords(str: string) {
   return str.split(' ').length;
 }
 
-
 /**
  * Replace string by array pattern
  * @param array
@@ -82,7 +81,6 @@ export function replaceArr(
 
   return ori;
 }
-
 
 export interface String {
   /**
