@@ -1,6 +1,7 @@
+import { deepmerge } from 'deepmerge-ts';
 import { basename } from 'upath';
 import urlParse from 'url-parse';
-import { array_unique, removeEmpties } from '../node/array-utils';
+import { removeEmpties } from '../node/array-utils';
 import { DeepPartial } from '../parser/post/postMapper';
 
 /** URL Parsed Result */
@@ -24,36 +25,40 @@ export interface URLParsed extends DeepPartial<ReturnType<typeof urlParse>> {
  * @param src url string
  * @returns object parsed {@link URLParsed} combined with partial properties from {@link urlParse}
  */
-export default function urlParser(src: string): URLParsed | null {
-  if (!src) return;
-  const parser = urlParse(src);
-  const searchObject: Array<Record<any, any> | any> = [];
-  const queries: string[] = parser.query.replace(/^\?/, '').split('&');
-  let split: Array<Record<any, any> | any> = [];
-  for (let i = 0; i < queries.length; i++) {
-    split = removeEmpties(queries[i].split('='));
-    if (0 in split) {
-      searchObject[split[0]] = split[1];
-    }
+export default class urlParser {
+  result: ReturnType<urlParser['parse']>;
+  resultStr: string;
+  constructor(src: string) {
+    this.result = this.parse(src);
   }
-  const parsed: URLParsed = {
-    protocol: parser.protocol,
-    host: parser.host,
-    hostname: parser.hostname,
-    port: parser.port,
-    pathname: parser.pathname,
-    hash: parser.hash,
-    protohost: parser.protocol + '//' + parser.host,
-    search: parser.query,
-    searchObject: searchObject,
-    filename: basename(
-      array_unique(removeEmpties(parser.pathname.split('/'))).join('/')
-    )
-  };
-  /*for (const key in parser) {
-    if (Object.prototype.hasOwnProperty.call(parser, key)) {
-      parsed[key] = parser[key];
+  parse(src: string) {
+    if (!src) return;
+    this.resultStr = src;
+    const parser = new urlParse(src);
+    const searchObject: Array<Record<any, any> | any> = [];
+    const queries: string[] = parser.query.replace(/^\?/, '').split('&');
+    let split: Array<Record<any, any> | any> = [];
+    for (let i = 0; i < queries.length; i++) {
+      split = removeEmpties(queries[i].split('='));
+      if (0 in split) {
+        searchObject[split[0]] = split[1];
+      }
     }
-  }*/
-  return Object.assign(parsed, parser);
+    const parsed = {
+      protocol: parser.protocol,
+      host: parser.host,
+      hostname: parser.hostname,
+      port: parser.port,
+      pathname: parser.pathname,
+      hash: parser.hash,
+      protohost: parser.protocol + '//' + parser.host,
+      search: parser.query,
+      searchObject: searchObject,
+      filename: basename(parser.pathname)
+    };
+    return deepmerge(parsed, parser) as URLParsed;
+  }
+  toString() {
+    return this.resultStr;
+  }
 }
