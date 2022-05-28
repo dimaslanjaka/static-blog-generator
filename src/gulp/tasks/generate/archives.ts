@@ -1,14 +1,15 @@
 import gulp from 'gulp';
+import { join } from 'upath';
 import { inspect } from 'util';
-import { array_wrap } from '../../node/array-wrapper';
-import color from '../../node/color';
-import { cwd, join, write } from '../../node/filemanager';
-import { modifyPost } from '../../parser/post/modifyPost';
-import { archiveMap, post_chunks } from '../../parser/post/postMapper';
-import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
-import { getLatestDateArray } from '../../renderer/ejs/helper/date';
-import { excerpt } from '../../renderer/ejs/helper/excerpt';
-import config, { tmp } from '../../types/_config';
+import { array_wrap } from '../../../node/array-wrapper';
+import color from '../../../node/color';
+import { write } from '../../../node/filemanager';
+import modifyPost from '../../../parser/post/modifyPost';
+import { archiveMap, post_chunks } from '../../../parser/post/postMapper';
+import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
+import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
+import { excerpt } from '../../../renderer/ejs/helper/excerpt';
+import config, { cwd } from '../../../types/_config';
 import './generate-categories';
 import './generate-tags';
 
@@ -27,9 +28,7 @@ import './generate-tags';
  * generateIndex('homepage'); // only generate homepage
  * generateIndex(4); // only generate page 4
  */
-export async function generateIndex(
-  labelname: 'homepage' | 'all' | number = 'all'
-) {
+export async function generateIndex(labelname?: 'homepage' | number) {
   const postsChunks = post_chunks();
   const chunks = postsChunks.chunk;
   let logname = color['Desert Sand']('[generate][index]');
@@ -84,7 +83,7 @@ export async function generateIndex(
       content: '',
       fileTree: {
         source: saveTo,
-        public: join(tmp(), 'index.html')
+        public: join(cwd(), 'tmp', 'index.html')
       },
       posts: mapped, // mapped.map((chunks) => modifyPost(chunks)),
       total: chunks.length,

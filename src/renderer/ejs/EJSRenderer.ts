@@ -103,10 +103,14 @@ export async function EJSRenderer(
   if (typeof parsed !== 'object') {
     console.log("'parsed' argument is empty");
     return null;
-  } else if (typeof parsed.body !== 'string' || parsed.body.length === 0) {
-    console.log("'parsed.body' is empty");
-    return null;
+  } else if (!('posts' in parsed)) {
+    // check body only for posts
+    if (typeof parsed.body !== 'string' || parsed.body.length === 0) {
+      console.log("'parsed.body' is empty");
+      return null;
+    }
   }
+
   // render markdown to html
   let body = '';
   if (parsed.body) body = renderBodyMarkdown(parsed);
