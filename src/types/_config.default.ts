@@ -1,4 +1,4 @@
-export default {
+export const default_config = {
   // Site
   title: 'Hexo',
   subtitle: '',
@@ -84,5 +84,34 @@ export default {
   ignore: [],
 
   // Category & Tag
-  meta_generator: true
+  meta_generator: true,
+
+  // custom
+  exclude: [],
+  include: [],
+  /**
+   * if set = true, otherwise undefined
+   */
+  verbose: false,
+  adsense: {
+    enable: false,
+    article_ads: [] as string[],
+    multiplex_ads: [] as string[]
+  },
+  firebase: {
+    apiKey: null,
+    authDomain: null,
+    projectId: null,
+    storageBucket: null,
+    messagingSenderId: null,
+    appId: null,
+    measurementId: null
+  },
+  ngrok: {
+    token: null
+  },
+  generator: {
+    cache: true
+  }
 };
+export default default_config;

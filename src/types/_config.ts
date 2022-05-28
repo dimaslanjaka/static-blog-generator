@@ -1,4 +1,3 @@
-import { deepmerge } from 'deepmerge-ts';
 import { initializeApp } from 'firebase/app';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
@@ -9,6 +8,7 @@ import yargs from 'yargs';
 import { pcache } from '../node/cache';
 import { read, write } from '../node/filemanager';
 import { json_encode } from '../node/JSON';
+import { yamlParse } from '../parser/yaml';
 import default_config from './_config.default';
 import project_config_data from './_config_project.json';
 import theme_config_data from './_config_theme.json';
@@ -31,53 +31,7 @@ if (!existsSync(file)) {
 export { root };
 const readConfig = readFileSync(file, 'utf-8');
 /** default project config */
-export const default_project_config = deepmerge(default_config, {
-  verbose: false, // if set = true, otherwise undefined
-  exclude: [],
-  include: [],
-  skip_render: [],
-  ignore: [],
-  adsense: {
-    article_ads: []
-  },
-  firebase: {
-    apiKey: null,
-    authDomain: null,
-    projectId: null,
-    storageBucket: null,
-    messagingSenderId: null,
-    appId: null,
-    measurementId: null
-  },
-  ngrok: {
-    token: null
-  },
-  generator: {
-    cache: true
-  }
-});
-
-const project_config_merge = Object.assign(
-  default_project_config,
-  yaml.parse(readConfig)
-);
-if (project_config_merge.adsense.enable) {
-  const findads = (path: string) => {
-    let findpath = join(cwd(), path);
-    if (!existsSync(findpath)) {
-      findpath = join(root, path);
-    }
-    if (existsSync(findpath)) return String(read(findpath));
-  };
-  if (project_config_merge.adsense.article_ads.length) {
-    project_config_merge.adsense.article_ads =
-      project_config_merge.adsense.article_ads.map(findads);
-  }
-  if (project_config_merge.adsense.multiplex_ads.length) {
-    project_config_merge.adsense.multiplex_ads =
-      project_config_merge.adsense.multiplex_ads.map(findads);
-  }
-}
+export const default_project_config = default_config;
 
 type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
@@ -88,20 +42,60 @@ interface PrivateProjectConfig {
   tmp: typeof tmp;
 }
 
+const project_config_merge = Object.assign(
+  default_project_config,
+  yamlParse(readConfig)
+);
+
 export type ProjectConfig = projectImportData &
   PrivateProjectConfig &
-  typeof default_project_config;
+  typeof default_project_config & {
+    env: string;
+  };
 
-const config: ProjectConfig = project_config_merge;
+// @todo [config] set env
+project_config_merge['env'] = process.env['NODE_ENV'];
+
+// @todo [config] resolve adsense
+if ('adsense' in project_config_merge) {
+  const adsense = project_config_merge.adsense;
+  if ('enable' in adsense && adsense.enable) {
+    const findads = (path: string) => {
+      let findpath = join(cwd(), path);
+      if (!existsSync(findpath)) {
+        findpath = join(root, path);
+      }
+      if (existsSync(findpath)) return String(read(findpath));
+    };
+
+    if ('article_ads' in adsense)
+      if (adsense.article_ads.length) {
+        project_config_merge.adsense.article_ads =
+          adsense.article_ads.map(findads);
+      }
+
+    if ('multiplex_ads' in adsense)
+      if (adsense.multiplex_ads.length) {
+        adsense.multiplex_ads =
+          project_config_merge.adsense.multiplex_ads.map(findads);
+      }
+  }
+}
+
+const config: ProjectConfig = <any>project_config_merge;
 
 // @todo [config] bypass nocache if --nocache argument is set by cli
 if (argv['nocache']) config.generator.cache = false;
 // @todo [config] bypass verbose if --verbose argument is set by cli
 if (argv['verbose']) config.verbose = true;
+// @todo [config] bypass environment favor if --dev or --development argument is set by cli
+if (argv['dev'] || argv['development']) config.env = 'development';
+
 /**
  * is verbose activated?
  */
 export const verbose = config.verbose;
+export const isDev = config.env === 'development';
 
 config.url = config.url.replace(/\/+$/, '');
 

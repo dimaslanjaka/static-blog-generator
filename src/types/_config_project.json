@@ -173,7 +173,6 @@
   },
   "ignore": null,
   "meta_generator": true,
-  "verbose": false,
   "exclude": [
     "**/**.code-workspace",
     "source/page/webassembly/**",
@@ -186,6 +185,7 @@
     "**/.git*"
   ],
   "include": null,
+  "verbose": false,
   "adsense": {
     "enable": true,
     "pub": "ca-pub-1165447249910969",
@@ -266,5 +266,6 @@
     "GA4": "G-BG75CLNJZ1",
     "GA3": "UA-106238155-1",
     "cloudflare": "2157c0f3b9e74a92badffe39156166b9"
-  }
+  },
+  "env": "development"
 }

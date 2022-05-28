@@ -15,7 +15,7 @@
   ],
   "verbose": false,
   "delay": 3000,
-  "exec": "gulp copy dummy server --nocache",
+  "exec": "cross-env NODE_ENV=development gulp copy dummy server --nocache",
   "execMap": {
     "js": "node --harmony",
     "ts": "node -r ts-node/register"
