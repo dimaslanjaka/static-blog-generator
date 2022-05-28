@@ -1,0 +1,126 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - old-revision
+
+# cancel previous workflows, run only one workflow
+concurrency:
+  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    #if: {{ $false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
+      GITFLOW: true
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/dimaslanjaka.github.io
+          submodules: recursive
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          ref: old-revision
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: "npm"
+      #- run: echo "${{ secrets.GITHUB_TEST ]}"
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+      - name: Setup GitHub
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get UUID
+        id: uuid
+        run: echo "::set-output name=uid::$(cat .guid)"
+      #- run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")"
+      - name: Get Caches
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            !${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ./node_modules
+            ~/.npm
+            ./tmp
+            ./build
+            ./packages
+            ./databases
+            ./docs
+          key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+          restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node rimraf
+      - name: Remove Source And Posts
+        run: |
+          rimraf src-posts
+          rimraf source
+      - name: Clone Source And Posts
+        run: |
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.git --branch posts --single-branch src-posts
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
+      
+      - run: git checkout old-revision
+      - run: npm install
+      - run: "gulp clean"
+        if: "contains(github.event.head_commit.message, 'clean')"
+        name: "clean caches"
+      - run: "gulp copy:assets"
+        name: "copy post assets"
+      - run: "gulp copy:posts"
+        name: "copy and parse posts (shortcodes, etc)"
+      - run: "gulp copy:remove-inline-style"
+        name: "clean blogger inline styles"
+      - run: "gulp generate:assets"
+        name: "copy post and page assets"
+      - run: "gulp generate:template"
+        name: "copy template source assets"
+      - run: "gulp generate:posts"
+        name: "process posts with template"
+      - run: "gulp generate:tags"
+        name: "generate all post tags archive"
+      - run: "gulp generate:categories"
+        name: "generate all post categories archive"
+      - run: "gulp generate:index"
+        name: "generate homepage archive"
+      - run: "gulp generate:sitemap-txt"
+        name: "generate sitemap.txt"
+      - run: "gulp generate:sitemap-xml"
+        name: "generate sitemap.xml"
+      - run: "gulp generate:sitemap-news"
+        name: "generate sitemap-news.xml"
+      - run: "gulp generate:after"
+        name: "safelinkify, anonymize external links"
+      - run: "gulp generate:feeds"
+        name: "generate feeds"
+      - run: "gulp generate:minify"
+        name: "minify generated posts"
+      - run: npm run page
+        name: install public libraries
+      - run: cp -rf source/robots.txt docs/robots.txt
+      - run: cp -rf README.md docs/readme.md
+      - run: echo www.webmanajemen.com > docs/CNAME
+      - run: echo "" > docs/.nojekyll
+      - name: Deploy 🚀
+        #if: ${{ false }}
+        #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: master # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+          force: false # merge instead push --force, (keep old / non modified) files?
