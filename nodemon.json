@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/nodemon.json",
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "*.test.*",
+    ".gitignore",
+    ".vscode",
+    "__tests__/*",
+    "**/node_modules/**",
+    "docs",
+    "**/_config_data.json",
+    "tmp/",
+    "build"
+  ],
+  "verbose": false,
+  "delay": 3000,
+  "exec": "gulp server --nocache",
+  "execMap": {
+    "js": "node --harmony",
+    "ts": "node -r ts-node/register"
+  },
+  "events": {
+    "restart": "pkill -f 'gulpfile'"
+  },
+  "watch": [
+    "./src-posts/",
+    "./gulpfile.ts",
+    "./theme/",
+    "./src/",
+    "./_config.yml"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "ts,ejs,md,js"
+}
