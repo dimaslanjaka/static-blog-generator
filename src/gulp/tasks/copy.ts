@@ -74,7 +74,7 @@ export const copy_posts = copyPosts;
 scheduler.add('indexing-posts', () => {
   const logname = color.Fuchsia('[indexing]');
   if (!existsSync(post_public_dir)) return;
-  console.log(logname, 'indexing folder', post_public_dir);
+  if (config.verbose) console.log(logname, 'indexing folder', post_public_dir);
   for (const filePath of readdirSync(post_public_dir)) {
     if (!filePath.endsWith('.md')) continue;
     console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));

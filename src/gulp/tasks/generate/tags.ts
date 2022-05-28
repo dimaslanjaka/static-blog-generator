@@ -26,12 +26,17 @@ export async function generateTags(
   pagenum?: number
 ) {
   const tags = cacheTags.keysSync();
+  if (!tags.length) {
+    console.log('tags empty');
+    return;
+  }
   for (let indexTag = 0; indexTag < tags.length; indexTag++) {
     const tagName = tags[indexTag];
     const tag_posts = cacheTags.getSync<postMap[]>(tagName);
     const logname =
       color['Desert Sand']('[generate][tag]') +
       color['Wild Blue Yonder'](`[${tagName}]`);
+    console.log(logname);
 
     // specific tag label otherwise skip
     if (
@@ -46,6 +51,7 @@ export async function generateTags(
     // skip non array
     if (!tag_posts[tagName] || !Array.isArray(tag_posts[tagName])) continue;
     console.log(logname, 'start');
+
     for (
       let indexTagPost = 0;
       indexTagPost < tag_posts.length;
