@@ -4,6 +4,8 @@ import { tmp } from '../../../types/_config';
 import { generateTags } from './tags';
 
 (async () => {
+  const tagname = 'sample';
+
   const test = await generateTags();
   if (test) write(tmp('tags/index.html'), test);
   console.log(
@@ -11,15 +13,15 @@ import { generateTags } from './tags';
     typeof test == 'string' && test.length > 0
   );
 
-  const test1 = await generateTags('dummy', 4);
-  if (test1) write(tmp('tags/dummy-4.html'), test1);
+  const test1 = await generateTags(tagname, 4);
+  if (test1) write(tmp(`tags/${tagname}-4.html`), test1);
   console.log(
     color['Vivid Violet']('test1 result'),
     typeof test1 == 'string' && test1.length > 0
   );
 
-  const test2 = await generateTags('dummy');
-  if (test2) write(tmp('tags/dummy.html'), test2);
+  const test2 = await generateTags(tagname);
+  if (test2) write(tmp(`tags/${tagname}.html`), test2);
   console.log(
     color['Vivid Violet']('test2 result'),
     typeof test2 == 'string' && test2.length > 0

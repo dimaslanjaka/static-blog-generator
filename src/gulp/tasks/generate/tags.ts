@@ -14,7 +14,6 @@ import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
 import { excerpt } from '../../../renderer/ejs/helper/excerpt';
 import { thumbnail } from '../../../renderer/ejs/helper/thumbnail';
 import config, { cwd, tmp } from '../../../types/_config';
-
 //const cacheTags = new CacheFile('postTags');
 const cacheTags = pcache('tags');
 /**
@@ -40,9 +39,10 @@ export async function generateTags(
       labelname.trim().length > 0 &&
       tagName.toLowerCase() !== labelname.toLowerCase()
     ) {
-      console.log(tagName, '!==', labelname);
+      if (config.verbose) console.log(logname, tagName, '!==', labelname);
       continue;
     }
+
     // skip non array
     if (!tag_posts[tagName] || !Array.isArray(tag_posts[tagName])) continue;
     console.log(logname, 'start');
@@ -137,12 +137,14 @@ scheduler.add('add-tags', () => {
         ) {
           postTags[tagName].push(<any>post);
         }
-        if (postTags[tagName].length > 0)
+        if (postTags[tagName].length > 0) {
+          console.log(`saving ${tagName}`);
           cacheTags.putSync(tagName, postTags[tagName]);
+        }
       }
     }
     //if (indexPost == allPosts.length - 1)
   }
 });
 
-gulp.task('generate:tags', () => generateTags());
+gulp.task('generate:tags', async () => {});

@@ -1,6 +1,6 @@
 #packages/
-build
-dist
+**/build
+**/dist
 #*.test.ts
 #*.test.js
 source/
