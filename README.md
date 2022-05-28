@@ -1,11 +1,6 @@
 # SBG (Static Blog Generator) Project
 Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
 
-| Name | Repo | Coverage |
-| --- | --- | --- |
-| Stable release | https://github.com/dimaslanjaka/static-blog-generator/tree/master | - |
-| Dev | https://github.com/dimaslanjaka/static-blog-generator/tree/dev | [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/21168/branches/599935/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=21168&bid=599935) |
-
 <details>
   <summary>Walkthrough</summary>
 
@@ -18,10 +13,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 </details>
 
 ## compiler information
-[![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com)
-[![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml)
-[![Join the chat at https://gitter.im/static-blog-generator/static-blog-generator](https://badges.gitter.im/static-blog-generator/static-blog-generator.svg)](https://gitter.im/static-blog-generator/static-blog-generator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![DeepScan grade](https://deepscan.io/api/teams/17454/projects/21168/branches/599935/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=21168&bid=599935)
+[![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com) [![Build](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml/badge.svg)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/actions/workflows/page.yml) [![Join the chat at https://gitter.im/static-blog-generator/static-blog-generator](https://badges.gitter.im/static-blog-generator/static-blog-generator.svg)](https://gitter.im/static-blog-generator/static-blog-generator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/20813/branches/578444/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=20813&bid=578444)
 
 <!--### temporarily disabled
 - gulp server : because of major changes, were disabled gulp local server, use php local server instead
@@ -42,8 +34,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 - - android termux need c++
 
 ## Project Installation
-Install using `npm` recommended.
-
+Always use `npm` to install. `yarn` and `pnpm` not always compatible.
 ```bash
 # install global packages
 npm i -g npm gulp-cli typescript ts-node

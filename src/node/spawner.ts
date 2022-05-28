@@ -1,11 +1,6 @@
 // noinspection DuplicatedCode
 
-import {
-  ChildProcess,
-  ChildProcessWithoutNullStreams,
-  spawn,
-  SpawnOptions
-} from 'child_process';
+import { ChildProcess, ChildProcessWithoutNullStreams, spawn, SpawnOptions } from 'child_process';
 import process from 'process';
 import scheduler from './scheduler';
 
@@ -20,15 +15,10 @@ class spawner {
    * @param callback callback for children process
    */
   // eslint-disable-next-line no-unused-vars
-  static spawn(
-    command: string,
-    args?: string[],
-    opt: SpawnOptions = {},
-    callback?: (path: ChildProcess) => any
-  ) {
+  static spawn(command: string, args?: string[], opt: SpawnOptions = {}, callback?: (path: ChildProcess) => any) {
     const defaultOption: SpawnOptions = { stdio: 'pipe', detached: false };
     if (['npm', 'ts-node', 'tsc', 'npx', 'hexo'].includes(command)) {
-      command = /^win/i.test(process.platform) ? `${command}.cmd` : command;
+      command = /^win/.test(process.platform) ? `${command}.cmd` : command;
     }
     const child = spawn(command, args, Object.assign(defaultOption, opt));
     child.unref();
@@ -72,11 +62,7 @@ class spawner {
    * Kill all ChildProcessWithoutNullStreams[]
    */
   static children_kill() {
-    console.log(
-      'killing',
-      spawner.children.length,
-      spawner.children.length > 1 ? 'child processes' : 'child process'
-    );
+    console.log('killing', spawner.children.length, spawner.children.length > 1 ? 'child processes' : 'child process');
 
     for (let i = 0; i < spawner.children.length; i++) {
       const child = spawner.children[i];

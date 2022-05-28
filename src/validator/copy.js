@@ -10,9 +10,7 @@ async function copyDir(src, dest) {
     let srcPath = path.join(src, entry.name);
     let destPath = path.join(dest, entry.name);
 
-    entry.isDirectory()
-      ? await copyDir(srcPath, destPath)
-      : await fs.copyFile(srcPath, destPath);
+    entry.isDirectory() ? await copyDir(srcPath, destPath) : await fs.copyFile(srcPath, destPath);
   }
 }
 

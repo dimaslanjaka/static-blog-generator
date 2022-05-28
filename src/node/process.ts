@@ -60,11 +60,7 @@ class process {
    * @param options
    * @param callback
    */
-  static doProcess(
-    lockfile: string,
-    options: { verbose: boolean } | any,
-    callback: any
-  ) {
+  static doProcess(lockfile: string, options: { verbose: boolean } | any, callback: any) {
     if (typeof options.verbose == 'boolean') {
       this.verbose = options.verbose;
     }
