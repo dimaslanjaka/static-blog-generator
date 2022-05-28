@@ -103,7 +103,7 @@ export async function EJSRenderer(
 ) {
   if (!parsed) {
     const f = await write(join(__dirname, 'tmp/renderer.json'), parsed);
-    if (!parsed.body) {
+    if (typeof parsed.body !== 'string' || parsed.body.length === 0) {
       console.log('body empty');
     }
     console.log('dump', f);
