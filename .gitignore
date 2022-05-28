@@ -1,0 +1,45 @@
+*.log
+public/
+.deploy*/
+package-lock.backup
+yarn.lock.backup
+firebase.js
+*.backup.*
+*.old.*
+*.private.*
+src/**/*.backup.ts
+
+# downloaded library
+.DS_Store
+Thumbs.db
+
+# generated static files
+docs/
+
+# git filter-branch
+.git-rewrite
+
+# dependencies folders
+node_modules
+vendor
+
+# remove dynamic idea objects
+.idea/vcs.xml
+.idea/workspace.xml
+**/.idea/vcs.xml
+**/.idea/workspace.xml
+
+# typescript outdir
+build/*
+
+# temporarily folders
+tmp
+temp
+
+# archives
+*.tar.xz
+*.zip
+*.7z
+*.rar
+*.tgz
+*.gz

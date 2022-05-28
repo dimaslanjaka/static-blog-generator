@@ -1,0 +1,99 @@
+{
+  "terminal.integrated.env.linux": {
+    "PATH": "${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin:${env:PATH}"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${env:PATH}"
+  },
+  "npm.enableRunFromFolder": true,
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 30000,
+  "typescript.tsc.autoDetect": "on",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "emmet.includeLanguages": {
+    "ejs": "html",
+  },
+  "eslint.format.enable": true,
+  "eslint.trace.server": "messages",
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true // let ESLint take formating and linting
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  "[ejs]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[css]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[json]": {
+    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true
+  },
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "typescript": "node -r ts-node/register",
+    "coffeescript": "coffee",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.cwd": "${workspaceFolder}",
+  "code-runner.saveAllFilesBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.respectShebang": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.format.enable": true,
+  "typescript.tsserver.enableTracing": false,
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.trace": "off",
+  "editor.autoClosingBrackets": "always",
+  "editor.matchBrackets": "always",
+  "prettier.enableDebugLogs": true,
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.printWidth": 180,
+  "npm.packageManager": "yarn",
+  "git.enabled": true,
+  "eslint.packageManager": "yarn"
+}
