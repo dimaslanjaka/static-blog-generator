@@ -1,3 +1,11 @@
+[submodule "src-posts"]
+	path = src-posts
+	url = https://github.com/dimaslanjaka/dimaslanjaka.git
+	branch = posts
+[submodule "source"]
+	path = source
+	url = https://github.com/dimaslanjaka/dimaslanjaka.github.io.git
+	branch = source
 [submodule "packages/safelink"]
 	path = packages/safelink
 	url = https://github.com/dimaslanjaka/safelink.git
@@ -6,6 +14,3 @@
 	path = packages/hexo-post-parser
 	url = https://github.com/dimaslanjaka/hexo-post-parser.git
 	branch = main
-[submodule "packages/google-news-sitemap"]
-	path = packages/google-news-sitemap
-	url = https://github.com/dimaslanjaka/google-news-sitemap.git

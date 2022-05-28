@@ -20,13 +20,10 @@ export default function transliterate(string, options) {
 
   options = {
     customReplacements: [],
-    ...options
+    ...options,
   };
 
-  const customReplacements = new Map([
-    ...builtinReplacements,
-    ...options.customReplacements
-  ]);
+  const customReplacements = new Map([...builtinReplacements, ...options.customReplacements]);
 
   string = string.normalize();
   string = doCustomReplacements(string, customReplacements);
