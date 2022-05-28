@@ -1,0 +1,332 @@
+# SBG Configuration
+## Inspired by HexoJS, some configuration usages forked from HexoJS
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+## All the variables listed here will be used in theme/layout/layout.ejs and some will be used in `internal functions` for program reference
+## Empty value = null
+
+# debug
+verbose: false
+
+# Site title
+title: "Website Manajemen Indonesia"
+# site description
+description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others. External source WMI Github Laboratory
+# site keywords
+keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
+# site timezone
+timezone: "Asia/Jakarta"
+# site favicon from source_dir
+favicon: "/favicon.ico"
+# site logo from source_dir
+logo: "/image/logo.svg"
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://www.webmanajemen.com
+
+# Directory And Slug
+## source directory (this directory should be on public website)
+source_dir: source
+## generated directory
+public_dir: docs
+## slug archive config.url/archive_dir/ (homepage pagination)
+archive_dir: archives
+## slug category config.url/category_dir/categoryName
+category_dir: categories
+## slug tag config.url/tag_dir/tagname
+tag_dir: tags
+
+# Mapper
+
+## Default Category (empty = null)
+default_category: Uncategorized
+## Default Tag (empty = null)
+default_tag:
+
+## category mapper
+### rename category with these map
+### category $0 should be renamed to $1
+category_map:
+  php: PHP
+  js: JAVASCRIPT
+  css: CSS
+  ts: TYPESCRIPT
+  typescript: TYPESCRIPT
+  javascript: JAVASCRIPT
+  postgresql: PostgreSQL
+  mysql: MySQL
+  github: GitHub
+  xampp: XAMPP
+  nodejs: NodeJS
+
+## tag mapper
+### rename tag with these map
+### tag $0 should be renamed by $1
+tag_map:
+  js: JAVASCRIPT
+  ts: TYPESCRIPT
+  javascript: JAVASCRIPT
+  typescript: TYPESCRIPT
+  php: PHP
+### group tags with category
+### tag $0 should be grouped by $1
+tag_group:
+  js: Programming
+  ts: Programming
+  css: Programming
+  sql: Programming
+  mysql: Programming
+  postgresql: Programming
+  eslint: Programming
+  javascript: Programming
+  typescript: Programming
+  kotlin: Programming
+  java: Programming
+  nodejs: Programming
+
+## title map
+## automate add tags from matched title word boundary
+title_map:
+  xampp: XAMPP
+  guide: Tips & Tricks
+  "how to": Tips & Tricks
+  game: Games
+  javascript: JAVASCRIPT
+  typescript: TYPESCRIPT
+  eslint: ESLint
+  blogger: Blogging
+  wordpress: Blogging
+  nodejs: NodeJS
+
+## Minify generated files
+compress:
+  ## Compress size image
+  image: true
+  ## Minify CSS
+  css: true
+  ## Minify JS
+  js: true
+  ## Minify HTML
+  html: true
+
+# https://hexo.io/docs/configuration.html
+# skip render template, direct copy
+skip_render:
+  - "yandex_*"
+  - "ahrefs_*"
+  - "glx_*"
+  - "Midi"
+  - "Midi/**/*"
+  - "page"
+  - "page/**/*"
+  - "backend"
+  - "backend/**/*"
+  # https://github.com/hexojs/hexo/issues/1797
+  - "*.json"
+  - "**/*.json"
+  - "_posts/**/*.json"
+  - "_posts/**/*.js"
+  - "_posts/**/*.css"
+  - "_posts/The Legend Of Neverland/Midi/readme.md"
+  - "**/__test__/**"
+  - "_posts/Chimeraland/**/*.html"
+
+# external links
+external_link:
+  # true: Open ext in new tab, rel nofollow
+  enable: true
+  # apply resolution
+  ## site: apply to the whole site
+  ## post: apply only to post
+  field: site
+  # safelink, to encode all external links with outbound page (good for seo and ads)
+  ## see: https://github.com/dimaslanjaka/safelink
+  safelink:
+    # enable salink redirector
+    enable: true
+    # exclude url to safelinkify
+    exclude:
+      - webmanajemen.com
+      - git.webmanajemen.com
+    # safelink url
+    redirect: https://www.webmanajemen.com/page/safelink.html?url=
+    type: base64
+    password: unique-password
+  # exclude host from external link filter
+  exclude:
+    - webmanajemen.com
+    - web-manajemen.blogspot.com
+    - dimaslanjaka.github.io
+# Render Draft Posts
+render_drafts: false
+
+# Archive Settings
+index_generator:
+  # order_by: Posts order. (Order by date descending by default)
+  ## value: updated | date
+  ## example order_by:
+  ## -updated : order by updated descending
+  ## updated : order by updated ascending
+  order_by: -updated
+  # Posts displayed per page. (0 = disable pagination)
+  per_page: 10
+
+# gulp generator task options
+generator:
+  # enable cache method globally
+  ## sligthly reduce memory usages
+  cache: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Include / Exclude file(s)
+# https://hexo.io/docs/configuration.html#Include-x2F-Exclude-Files-or-Folders
+## include:/exclude: options only apply to the 'source/' folder
+include:
+## glob exclude, used by `glob(pattern, {ignore: exclude})
+## ignore pattern from config.source_dir
+exclude:
+  - "**/**.code-workspace"
+  - "source/page/webassembly/**"
+  - "source/backend/**"
+  - "source/Midi/MIDI.js/**/**"
+  - "source/page/guzzle/**/*"
+  - "**/vendor/**"
+  - "**/node_modules/**"
+  - "**/{readme,README,CHANGELOG,changelog,UPGRADING}.{md,MD}"
+  - "**/.git*"
+ignore:
+
+# https://www.npmjs.com/package/hexo-server
+## gulp server
+server:
+  port: 4000
+  log: false
+  # localhost ip (0.0.0.0, 127.0.0.1)
+  ip: 0.0.0.0
+  hostname: adsense.webmanajemen.com
+  compress: false
+  cache: false
+  header: false
+  instanceName: default
+  serveStatic:
+    extensions:
+      - html
+
+# Themes
+## dir name from themes/
+theme: bootstrap
+
+# Deployment
+deploy:
+  # deploy type git
+  type: git
+  # repo url
+  repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
+  # repo branch
+  branch: master
+  # repo user name
+  name: dimaslanjaka
+  # repo user email
+  email: dimaslanjaka@gmail.com
+  # not implemented yet
+  #message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+# Global Author Informations
+author:
+  name: "Dimas Lanjaka"
+  link: "https://www.webmanajemen.com/"
+  email: dimaslanjaka@gmail.com
+  image:
+    url: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg
+    width: 1944 # <= 600
+    height: 2592 # >= 60
+  social_links:
+    github: https://github.com/dimaslanjaka
+    youtube: https://youtube.com/p/L3n4r0x
+
+# Feed Atom
+feed:
+  # include contents in feeds
+  content: true
+  # Generate atom, rss2, and json feeds
+  type:
+    - atom
+    - rss2
+    - json
+
+# Import Platforms
+## Import from other platforms
+import:
+  platform:
+    # import from wordpress
+    wordpress:
+      # ./import/wp-all.xml
+      - wp-all.xml
+
+# Sitemap
+sitemap:
+  # generate sitemap.html page
+  html: true
+  # generate sitemap.txt
+  text: true
+  # generate sitemap.xml (yoastseo style)
+  xml: true
+  # generate google news sitemap
+  news: true
+  # exclude glob pattern or path
+  exclude:
+    - "source/ads"
+    - "**/*.min.html"
+
+# https://github.com/dimaslanjaka/hexo-adsense
+## to disable each ads, give `adsense: false` in metadata post/pages
+adsense:
+  # enable?
+  enable: true
+  # ca-pub-xxxx
+  pub: ca-pub-1165447249910969
+  # ads paths
+  ## auto read the paths to array of html contents
+  ### in-article ads source
+  article_ads:
+    - "source/ads/in_article.html"
+    - "source/ads/in_article2.html"
+  ### multplex/autorelaxed ads source
+  multiplex_ads:
+    - "source/ads/multiplex.html"
+  ### display ads source
+  display_ads:
+    - "source/ads/display.html"
+  # ads field
+  ## post=only post
+  ## site=all pages and posts
+  field: "site"
+  # block user with adblock enabled
+  adblock: false
+  # amp or javascript
+  type: amp
+  # exclude pattern, disable adding adsense
+  exclude:
+    - "*.min.html"
+    - "**/exclude/**/*"
+
+# Site analytics
+analytics:
+  # enable analytics
+  enable: true
+  # google tag manager
+  tagmanager: GTM-NJNNXSR
+  # google analytics v4
+  ## https://support.google.com/analytics/answer/9744165?hl=en
+  GA4: G-BG75CLNJZ1
+  # google analytics v1-v3
+  GA3: UA-106238155-1
+  # cloudflare web statistics
+  cloudflare: 2157c0f3b9e74a92badffe39156166b9
