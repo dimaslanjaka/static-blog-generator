@@ -1,45 +1,9 @@
 import fs from 'fs';
 import * as fse from 'fs-extra';
 import path from 'path';
-import { dirname, toUnix } from 'upath';
 import { DynamicObject } from '../types';
-import { post_source_dir } from '../types/_config';
-import { gulpRename } from './modules/rename';
 
-/**
- * Crossplatform path replacer
- * @param str
- * @param from
- * @param to
- * @returns
- */
-export function replacePath(str: string, from: string, to: string) {
-  const normalize = (x: string) => x.replace(/\\/gim, '/');
-  str = normalize(str);
-  from = normalize(from);
-  to = normalize(to);
-  return str.replace(from, to);
-}
-
-/**
- * Determine gulp.dest location
- * @param pipe
- * @returns
- */
-export function determineDirname(pipe: NodeJS.ReadWriteStream) {
-  return pipe.pipe(
-    gulpRename((file) => {
-      const dname = dirname(
-        replacePath(toUnix(file.fullpath), toUnix(post_source_dir), '')
-      )
-        .replace(toUnix(process.cwd()), '')
-        .replace('/src-posts/', '');
-      file.dirname = dname;
-      //if (file.fullpath.includes('Recipes')) console.log(dname, post_public_dir, file);
-    })
-  );
-}
-
+//console.log(loopDir(path.join(process.cwd(), "source")));
 /**
  * Loop dir recursive
  * @param destDir
@@ -118,8 +82,7 @@ export const isEmpty = (data: any) => {
   }
   if (typeof data === 'object') {
     if (Array.isArray(data) && data.length === 0) return true;
-    if (data.constructor === Object && Object.keys(data).length === 0)
-      return true;
+    if (data.constructor === Object && Object.keys(data).length === 0) return true;
   }
   return false;
 };
