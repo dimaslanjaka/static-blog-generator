@@ -7,10 +7,10 @@ import color from '../../node/color';
 import { join, write } from '../../node/filemanager';
 import { helpers } from '../../renderer/ejs';
 import {
-    author_email,
-    author_link,
-    author_name,
-    author_object
+  author_email,
+  author_link,
+  author_name,
+  author_object
 } from '../../renderer/ejs/helper/author';
 import { excerpt } from '../../renderer/ejs/helper/excerpt';
 import { thumbnail } from '../../renderer/ejs/helper/thumbnail';
