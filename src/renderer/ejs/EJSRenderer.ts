@@ -6,7 +6,6 @@ import {
   getLatestPosts,
   getRandomPosts
 } from '../../node/cache-post';
-import { write } from '../../node/filemanager';
 import { postMap } from '../../parser/post/parsePost';
 import { renderBodyMarkdown } from '../../parser/toHtml';
 import { DynamicObject } from '../../types';
@@ -101,12 +100,11 @@ export async function EJSRenderer(
   parsed: Partial<postMap>,
   override: Override = {}
 ) {
-  if (!parsed) {
-    const f = await write(join(__dirname, 'tmp/renderer.json'), parsed);
-    if (typeof parsed.body !== 'string' || parsed.body.length === 0) {
-      console.log('body empty');
-    }
-    console.log('dump', f);
+  if (typeof parsed !== 'object') {
+    console.log("'parsed' argument is empty");
+    return null;
+  } else if (typeof parsed.body !== 'string' || parsed.body.length === 0) {
+    console.log("'parsed.body' is empty");
     return null;
   }
   // render markdown to html
