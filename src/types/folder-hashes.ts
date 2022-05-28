@@ -18,6 +18,7 @@ const options = {
  */
 export async function get_src_posts_hash(): Promise<string | null> {
   try {
+    if (!existsSync(post_source_dir)) return '-'
     const hash = await hashElement(post_source_dir, options);
     return md5(hash.toString());
   } catch (error) {
