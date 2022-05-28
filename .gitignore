@@ -2,7 +2,7 @@
 public/
 .deploy*/
 #package-lock.json
-yarn.lock
+#yarn.lock
 firebase.js
 *.backup.*
 *.private.*
