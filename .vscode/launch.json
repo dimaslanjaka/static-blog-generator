@@ -5,11 +5,84 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+      "command": "ts-node src/generator.ts",
+      "name": "Generate",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "gulp",
+      "name": "gulp default",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "outFiles": [
+        "${workspaceFolder}/**/*.js",
+        "!**/node_modules/**"
+      ],
+      "pauseForSourceMap": false,
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "gulp generate:article",
+      "name": "gulp gen:article",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "npm run test",
+      "name": "npm:test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "ts-node tests/index.ts --standalone",
+      "name": "standalone:test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "gulp generate --nocache",
+      "name": "[dev] gen:no-cache",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+    },
+    {
+      "command": "gulp server --nocache",
+      "name": "[dev] server",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+    },
+    {
+      "command": "gulp --nocache",
+      "name": "[dev] gulp:no-cache",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      },
+    },
+    {
+      "command": "php -S localhost:4000 -t docs",
+      "name": "PHP SERVER",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }

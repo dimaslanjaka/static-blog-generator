@@ -1,0 +1,12 @@
+{
+    "tag": [
+        "/tags/Bar",
+        "/tags/Baz",
+        "/tags/Foo",
+        "/tags/sample"
+    ],
+    "category": [
+        "/categories/Uncategorized",
+        "/categories/post"
+    ]
+}
