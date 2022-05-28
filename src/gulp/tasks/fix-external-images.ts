@@ -1,12 +1,10 @@
-import { join } from 'upath';
 import urlParser from '../../curl/url-parser';
-import { arrayAddAll } from '../../node/array-utils';
+import { parsePost } from '../../markdown/transformPosts';
 import CacheFile from '../../node/cache';
-import { cwd, globSrc } from '../../node/filemanager';
+import { cwd, globSrc, join } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
-import { parsePost } from '../../parser/post/parsePost';
-import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
 import config from '../../types/_config';
+import { renderer } from './generate-posts';
 
 const images_url: string[] = [];
 
@@ -26,7 +24,12 @@ export default function fix2() {
     });
     dom.close();
   });
-  const parse = new urlParser(images_url[0]).result;
+  /*for (let i = 0; i < images_url.length; i++) {
+    const url = images_url[i];
+    const parse = urlParser(url);
+    console.log(parse);
+  }*/
+  const parse = urlParser(images_url[0]);
   console.log(parse);
 }
 
@@ -34,25 +37,21 @@ export async function fixExternalImages() {
   /** save directory location */
   const _dest = join(cwd(), config.source_dir, 'images/external');
   const src = join(cwd(), config.source_dir);
-  const iterate = globSrc('**/*.{md,html}', { cwd: src }).map((s) =>
-    join(src, s)
-  );
+  const iterate = globSrc('**/*.{md,html}', { cwd: src }).map((s) => join(src, s));
   iterate.each(async (file) => {
     const isMd = file.endsWith('.md');
     const imageSrc = [];
     if (isMd) {
-      const parsed = await parsePost(file);
+      const parsed = parsePost(file);
       if (parsed && Object.hasOwnProperty.call(parsed, 'metadata')) {
         const meta = parsed.metadata;
-        if (meta.thumbnail && !imageSrc.includes(meta.thumbnail))
-          imageSrc.push(meta.thumbnail);
-        if (meta.cover && !imageSrc.includes(meta.cover))
-          imageSrc.push(meta.cover);
-        if (meta.photos) arrayAddAll(imageSrc, meta.photos);
+        if (meta.thumbnail && !imageSrc.includes(meta.thumbnail)) imageSrc.push(meta.thumbnail);
+        if (meta.cover && !imageSrc.includes(meta.cover)) imageSrc.push(meta.cover);
+        if (meta.photos) imageSrc.addAll(meta.photos);
         /*const body = renderBodyMarkdown(parsed);
         const renderBody = ejs_object.render(body, Object.assign(parsed, parsed.metadata));
         console.log(renderBody.includes('<img'));*/
-        const render = await EJSRenderer(parsed);
+        const render = await renderer(parsed);
         console.log(render.includes('<img'));
       }
     }
