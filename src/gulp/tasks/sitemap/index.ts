@@ -7,8 +7,8 @@ import { getAllPosts } from '../../../node/cache-post';
 import { join, read, write } from '../../../node/filemanager';
 import { postMap } from '../../../parser/post/parsePost';
 import {
-    getLatestDateArray,
-    sortByDate
+  getLatestDateArray,
+  sortByDate
 } from '../../../renderer/ejs/helper/date';
 import config, { post_generated_dir } from '../../../types/_config';
 

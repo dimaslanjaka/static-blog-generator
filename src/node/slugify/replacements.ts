@@ -1,7 +1,7 @@
 const overridableReplacements = [
   ['&', ' and '],
   ['🦄', ' unicorn '],
-  ['♥', ' love '],
+  ['♥', ' love ']
 ];
 
 export default overridableReplacements;

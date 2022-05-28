@@ -68,7 +68,9 @@ export function filter_external_links(href: string, debug = false) {
      *  javascript anchors, dot anchors, hash header
      */
     const isExternal = href.trim().match(new RegExp('^(https?)://'));
-    const isInternal = isMatch(href.trim(), /^(\.+|#|(javascript|mailto|mail):)/i) && !isExternal;
+    const isInternal =
+      isMatch(href.trim(), /^(\.+|#|(javascript|mailto|mail):)/i) &&
+      !isExternal;
     const isLength = href.trim().length > 0;
     const isAllowed = isExternal && isLength;
     if (debug) {
@@ -125,7 +127,10 @@ gulp.task('generate:after', staticAfter);
  * @param replacement replacement string, default: https://res.cloudinary.com/practicaldev/image/fetch/
  * @returns
  */
-export function removeWordpressCDN(str: string, replacement = 'https://res.cloudinary.com/practicaldev/image/fetch/') {
+export function removeWordpressCDN(
+  str: string,
+  replacement = 'https://res.cloudinary.com/practicaldev/image/fetch/'
+) {
   const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
   return str.replace(regex, replacement);
 }
@@ -137,7 +142,10 @@ const files: string[] = [];
  * @param callback callback after processed all files
  * @returns
  */
-export const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
+export const parseAfterGen = (
+  sources?: string[],
+  callback?: CallableFunction
+) => {
   if (sources && sources.length) arrayAddAll(files, sources);
   const skip = () => {
     // if files has members, shift first file, restart function
@@ -185,7 +193,10 @@ export default function fixHtmlPost(content: string, debug = false) {
         element.setAttribute('target', '_blank');
       }
 
-      if (config.external_link.safelink && config.external_link.safelink.enable) {
+      if (
+        config.external_link.safelink &&
+        config.external_link.safelink.enable
+      ) {
         element.setAttribute('href', filter.href);
       }
     }

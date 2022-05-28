@@ -30,7 +30,7 @@ const defOpt = {
   decamelize: true,
   customReplacements: [],
   preserveLeadingUnderscore: false,
-  preserveTrailingDash: false,
+  preserveTrailingDash: false
 };
 
 export type SlugifyOpt =
@@ -46,10 +46,14 @@ export default function slugify(string, options: SlugifyOpt = {}) {
 
   options = Object.assign(defOpt, options);
 
-  const shouldPrependUnderscore = options.preserveLeadingUnderscore && string.startsWith('_');
+  const shouldPrependUnderscore =
+    options.preserveLeadingUnderscore && string.startsWith('_');
   const shouldAppendDash = options.preserveTrailingDash && string.endsWith('-');
 
-  const customReplacements = new Map([...builtinOverridableReplacements, ...options.customReplacements]);
+  const customReplacements = new Map([
+    ...builtinOverridableReplacements,
+    ...options.customReplacements
+  ]);
 
   string = transliterate(string, { customReplacements });
 
@@ -92,7 +96,8 @@ export function slugifyWithCounter() {
     }
 
     const stringLower = string.toLowerCase();
-    const numberless = occurrences.get(stringLower.replace(/(?:-\d+?)+?$/, '')) || 0;
+    const numberless =
+      occurrences.get(stringLower.replace(/(?:-\d+?)+?$/, '')) || 0;
     const counter = occurrences.get(stringLower);
     occurrences.set(stringLower, typeof counter === 'number' ? counter + 1 : 1);
     const newCounter = occurrences.get(stringLower) || 2;

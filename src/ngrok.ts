@@ -22,7 +22,11 @@ export function getNgrokUrl() {
  * @param token ngrok port
  * @param override ngrok options override
  */
-export default async function ngrokStart(port = 4000, token = '', override: ngrokc.Ngrok.Options = {}) {
+export default async function ngrokStart(
+  port = 4000,
+  token = '',
+  override: ngrokc.Ngrok.Options = {}
+) {
   let options: ngrokc.Ngrok.Options = {
     addr: port
   };
