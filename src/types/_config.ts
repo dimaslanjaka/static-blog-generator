@@ -8,6 +8,7 @@ import yargs from 'yargs';
 import { pcache } from '../node/cache';
 import { read, write } from '../node/filemanager';
 import { json_encode } from '../node/JSON';
+import { sortedObject } from '../node/object-utility';
 import { yamlParse } from '../parser/yaml';
 import default_config from './_config.default';
 import project_config_data from './_config_project.json';
@@ -147,8 +148,14 @@ export type ThemeOpt = typeof theme_config & {
 
 /** WRITE AUTO GENERATED CONFIGS */
 
-write(join(__dirname, '_config_project.json'), json_encode(config));
-write(join(__dirname, '_config_theme.json'), json_encode(theme_config));
+write(
+  join(__dirname, '_config_project.json'),
+  json_encode(sortedObject(config))
+);
+write(
+  join(__dirname, '_config_theme.json'),
+  json_encode(sortedObject(theme_config))
+);
 
 /** SETUP PRIVATE CONFIGS */
 const file_private_config = join(root, '_config.private.yml');
