@@ -10,7 +10,8 @@ import { buildPost, parsePost } from '../../parser/post/parsePost';
 import config, {
   cwd,
   post_public_dir,
-  post_source_dir
+  post_source_dir,
+  verbose
 } from '../../types/_config';
 import { determineDirname } from '../utils';
 import './copy/assets';
@@ -77,7 +78,9 @@ scheduler.add('indexing-posts', () => {
   if (config.verbose) console.log(logname, 'indexing folder', post_public_dir);
   for (const filePath of readdirSync(post_public_dir)) {
     if (!filePath.endsWith('.md')) continue;
-    console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
+    if (verbose) {
+      console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
+    }
     parsePost(filePath);
   }
 });

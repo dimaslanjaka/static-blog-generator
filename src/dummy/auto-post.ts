@@ -4,7 +4,7 @@ import { join } from 'upath';
 import { write } from '../node/filemanager';
 import { replaceArr } from '../node/string-utils';
 import parsePost, { buildPost, postMap } from '../parser/post/parsePost';
-import config, { root } from '../types/_config';
+import config, { argv, root } from '../types/_config';
 
 const destFolder = join(root, config.source_dir, '_posts');
 if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
@@ -67,4 +67,8 @@ function randomDate(
   return date;
 }
 
-gulp.task('dummy', () => generateDummyPosts(10));
+const max = parseInt(argv['m'] || argv['max'] || 10);
+gulp.task('dummy', () => {
+  console.log('generating', max, 'dummies');
+  return generateDummyPosts(max);
+});
