@@ -1,3 +1,9 @@
-# dimaslanjaka.github.io source pages and generated posts
+## These files should be automatically stored on your root public directory
 
-**COPYING THE ARTICLES HERE ARE STRICTLY PROHIBITED**
+eq: `sample.json` should be on `http://domain.com/sample.json`
+
+| folder name | usages |
+| --- | --- |
+| `_posts` | all generated posts |
+| `_data` | not implemented yet |
+| `_draft` | not implemented yet |
