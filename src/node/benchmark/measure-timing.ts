@@ -1,4 +1,4 @@
-import { varToString } from '../../parser/utility';
+import { FunctionType } from '../../parser/utility';
 import color from '../color';
 
 /**
@@ -8,35 +8,64 @@ import color from '../color';
 export class MeasureTime {
   private startTime = 0;
   private endTime = 0;
-  run(fn: any, msg?: string) {
-    if (typeof fn == 'function') {
-      if (
-        typeof fn.then === 'function' &&
-        fn[Symbol.toStringTag] === 'Promise'
-      ) {
-        this.start();
-        fn().then(console.log(color.greenBright(msg), this.end()));
-      } else {
-        this.start();
-        fn();
-        console.log(color.greenBright(msg), this.end());
-      }
-    }
-  }
+
   /**
    * measure time execution
    * @see {@link https://stackoverflow.com/a/70004960/6404439}
    * @param fn
    * @param args
    */
-  measure(fn: any, ...args: any[]) {
-    const displayName = fn.name || varToString({ func: fn });
-    console.time(displayName);
-    //const tupleArgs = [...args];
-    //func(tupleArgs);
-    fn.apply(null, ...args);
-    console.timeEnd(displayName);
+  async run<T extends FunctionType | Promise<FunctionType>, U extends any[]>(
+    msg: string = null,
+    fn: T,
+    ...args: U
+  ) {
+    const isFunc = typeof fn == 'function';
+    const isAsync =
+      isFunc &&
+      typeof fn['then'] === 'function' &&
+      String(fn[Symbol.toStringTag]) === 'Promise';
+    //console.log('cName', fn.constructor.name);
+    console.log(`---start [${isAsync ? 'async' : 'sync'}]---`);
+    if (isFunc) {
+      //console.log('then', typeof fn['then']);
+      //console.log('symbol', fn[Symbol.toStringTag]);
+      if (isAsync) {
+        this.start();
+        await fn.apply(null, ...args);
+        console.log(
+          color.Apricot('[async]'),
+          color.greenBright(msg),
+          this.end()
+        );
+      } else {
+        this.start();
+        try {
+          fn.apply(null, ...args);
+        } catch (error) {
+          await fn.call(null, ...args);
+        }
+        console.log(
+          color.Apricot('[sync]'),
+          color.greenBright(msg),
+          this.end()
+        );
+      }
+    }
+    console.log(`---end [${isAsync ? 'async' : 'sync'}]---`);
+    return this;
   }
+
+  /**
+   * @see {@link MeasureTime['run']}
+   * @param fn
+   * @param args
+   * @returns
+   */
+  measure(fn: any, ...args: any[]) {
+    return this.run(null, fn, ...args);
+  }
+
   start() {
     this.startTime = new Date().getTime();
     return this;

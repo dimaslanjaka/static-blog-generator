@@ -5,11 +5,12 @@ import { tmp } from '../../types/_config';
 import { generateIndex } from './generate-archives';
 
 const measure = new MeasureTime();
-measure.run(async () => await generateIndex('homepage'), 'generate homepage');
-measure.run(async () => await generateIndex('all'), 'generate archive');
-
+measure
+  .run('generate homepage', generateIndex, 'homepage')
+  .then(() => measure.run('generate all archive', generateIndex, 'all'))
+  .then(() => measure.run('generate archive page 1', generateIndex, 1));
 function _debugChunks() {
-  // simplify debug
+  // simplifasync y debug
   const chunks = post_chunks();
   chunks[0].map(simplifyDump);
   write(tmp('chunks', 'posts.log'), JSON.stringify(chunks[0], null, 4))
