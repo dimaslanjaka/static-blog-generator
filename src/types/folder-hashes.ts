@@ -1,5 +1,6 @@
 import Bluebird from 'bluebird';
 import { hashElement } from 'folder-hash';
+import { existsSync } from 'fs';
 import { join, write } from '../node/filemanager';
 import { md5 } from '../node/md5-file';
 import config, { post_source_dir, root } from './_config';
@@ -31,7 +32,7 @@ export async function get_src_posts_hash(): Promise<string | null> {
  */
 export async function get_source_hash() {
   try {
-    //console.log(join(root, config.source_dir));
+    if (!existsSync(join(root, config.source_dir))) return '-'
     const hash = await hashElement(join(root, config.source_dir), options);
     return md5(hash.toString());
   } catch (error) {
