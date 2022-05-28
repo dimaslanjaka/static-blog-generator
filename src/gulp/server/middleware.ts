@@ -21,9 +21,9 @@ import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
-import { generateIndex } from '../tasks/generate-archives';
-import { generateCategories } from '../tasks/generate-categories';
 import { generateTags } from '../tasks/generate-tags';
+import { generateIndex } from '../tasks/generate/archives';
+import { generateCategories } from '../tasks/generate/categories';
 import './gen-middleware';
 
 let gulpIndicator = false;
@@ -181,7 +181,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       const indexPage = isArchives ? parseInt(url.filename) : null;
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
       const str = await generateIndex(
-        isHomepage ? 'homepage' : indexPage ? indexPage : 'all'
+        isHomepage ? 'homepage' : indexPage ? indexPage : null
       );
       if (str) {
         console.log(logname, 'pre-processed', req.url, '->', sourceIndex);
