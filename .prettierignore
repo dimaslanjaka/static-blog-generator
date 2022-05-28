@@ -3,6 +3,5 @@
 **/__MACOSX/**
 html5shiv.*
 **/ie/**/*
-**/dist
+dist
 original
-**/build

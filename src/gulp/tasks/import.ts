@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* IMPORT FROM OTHER PLATFORMS */
 import { XMLParser } from 'fast-xml-parser';
-import { existsSync } from 'fs';
 import gulp from 'gulp';
-import downloadImage from '../../curl/download-image';
-import { join, read, write } from '../../node/filemanager';
+import { existsSync, join, readFileSync, write } from '../../node/filemanager';
 import config, { tmp } from '../../types/_config';
+import downloadImage from '../../curl/download-image';
 
 const homepage = new URL(config.url);
 
@@ -17,7 +15,7 @@ gulp.task('import', async () => {
     for (let i = 0; i < files.length; i++) {
       const file = join(config.root, 'import', files[i]);
       if (existsSync(file)) {
-        const XMLdata = read(file).toString();
+        const XMLdata = readFileSync(file).toString();
         const parser = new XMLParser();
         const jObj = parser.parse(XMLdata);
         if (typeof jObj === 'object' && jObj.rss) {
@@ -31,10 +29,8 @@ gulp.task('import', async () => {
             delete channel['wp:term'];
             delete channel['wp:tag'];
             delete channel['wp:category'];
-            if (wpAuthor['wp:author_email'])
-              author.email = wpAuthor['wp:author_email'];
-            if (wpAuthor['wp:author_display_name'])
-              author.name = wpAuthor['wp:author_display_name'];
+            if (wpAuthor['wp:author_email']) author.email = wpAuthor['wp:author_email'];
+            if (wpAuthor['wp:author_display_name']) author.name = wpAuthor['wp:author_display_name'];
 
             let icon: string;
             if (channel.image) {
@@ -42,11 +38,7 @@ gulp.task('import', async () => {
                 const url = new URL(channel.image.url);
                 homepage.pathname = url.pathname;
                 icon = homepage.toString();
-                const saveTo = join(
-                  config.root,
-                  config.source_dir,
-                  url.pathname
-                );
+                const saveTo = join(config.root, config.source_dir, url.pathname);
                 //console.log('[import][wordpress] saving site image');
                 await downloadImage(url.toString(), saveTo);
                 //console.log('[import][wordpress] image saved', download.path);
@@ -61,10 +53,7 @@ gulp.task('import', async () => {
                 const post = posts[i];
                 delete post['content:encoded'];
                 delete post['wp:postmeta'];
-                if (
-                  ['page', 'post'].includes(post['wp:post_type']) &&
-                  post['wp:status'] === 'publish'
-                ) {
+                if (['page', 'post'].includes(post['wp:post_type']) && post['wp:status'] === 'publish') {
                   console.log(post.title, post.link);
                 } else {
                   delete posts[i];

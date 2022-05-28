@@ -1,20 +1,14 @@
 import chalk from 'chalk';
 import { spawn } from 'child_process';
-import { existsSync } from 'fs';
 import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
-import { join, mkdirSync, resolve } from '../../../node/filemanager';
+import { existsSync, join, mkdirSync, resolve } from '../../../node/filemanager';
 import config, { post_generated_dir, root } from '../../../types/_config';
 
 const deployDir = resolve(join(root, '.deploy_git'));
 if (!existsSync(deployDir)) mkdirSync(deployDir);
 const generatedDir = post_generated_dir;
-/**
- * git command
- * @param args
- * @returns
- */
 function git(...args: string[]) {
   return new Promise(
     (
@@ -23,16 +17,12 @@ function git(...args: string[]) {
     ) => {
       const summon = spawn('git', args, {
         cwd: deployDir,
-        stdio: 'inherit'
+        stdio: 'inherit',
       });
       summon.on('close', function (code) {
         // Should probably be 'exit', not 'close'
         // *** Process completed
-        return resolve({
-          code: code,
-          stdout: String(summon.stdout),
-          stderr: String(summon.stderr)
-        });
+        return resolve({ code: code, stdout: String(summon.stdout), stderr: String(summon.stderr) });
       });
       summon.on('error', function (err) {
         // *** Process creation failed
@@ -45,30 +35,18 @@ const logname = chalk.magentaBright('[deploy][git]');
 const configDeploy = config.deploy;
 configDeploy['base'] = deployDir;
 const copyGenerated = () => {
-  return gulp
-    .src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true })
-    .pipe(gulp.dest(deployDir));
+  return gulp.src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true }).pipe(gulp.dest(deployDir));
 };
 
-/**
- * GitHub Deployer
- * @param done
- * @returns
- */
-export const deployerGit = async (done?: TaskCallback) => {
+gulp.task('deploy-git', async (done?: TaskCallback) => {
   let init = false;
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   if (!existsSync(join(deployDir, '.git'))) {
     init = true;
-    console.log(
-      logname,
-      'init new git with current configuration',
-      configDeploy
-    );
+    console.log(logname, 'init new git with current configuration', configDeploy);
     await git('init');
     if (configDeploy.name) await git('config', 'user.name', configDeploy.name);
-    if (configDeploy.email)
-      await git('config', 'user.email', configDeploy.email);
+    if (configDeploy.email) await git('config', 'user.email', configDeploy.email);
   }
 
   /*
@@ -96,22 +74,12 @@ export const deployerGit = async (done?: TaskCallback) => {
   return copyGenerated().on('end', async () => {
     await git('add', '-A');
     await git('commit', '-m', 'Update site: ' + moment().format());
-    if (
-      Object.hasOwnProperty.call(configDeploy, 'force') &&
-      configDeploy['force'] === true
-    ) {
-      await git(
-        'push',
-        '-u',
-        configDeploy.repo,
-        'origin',
-        configDeploy.branch,
-        '--force'
-      );
+    if (Object.hasOwnProperty.call(configDeploy, 'force') && configDeploy['force'] === true) {
+      await git('push', '-u', configDeploy.repo, 'origin', configDeploy.branch, '--force');
     } else {
       await git('push', '--set-upstream', 'origin', configDeploy.branch);
     }
     console.log(logname, 'deploy merged with origin successful');
     done();
   });
-};
+});

@@ -1,21 +1,20 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import chalk from 'chalk';
-import { readFileSync, writeFileSync } from 'fs';
-import gulp from 'gulp';
 import { join } from 'path';
-import safelinkify from 'safelinkify';
-import { TaskCallback } from 'undertaker';
-import { arrayAddAll, uniqueStringArray } from '../../node/array-utils';
-import { globSrc } from '../../node/filemanager';
-import jdom from '../../node/jsdom';
-import { isMatch } from '../../node/string-utils';
 import config, { root } from '../../types/_config';
+import chalk from 'chalk';
+import gulp from 'gulp';
+import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
+import 'js-prototypes';
+import { TaskCallback } from 'undertaker';
+import jdom from '../../node/jsdom';
+//import safelinkify from '../../../packages/safelink/src/index';
+import safelinkify from 'safelinkify/src/index';
 
 const safelink = new safelinkify.safelink({
   redirect: [config.external_link.safelink.redirect],
   password: config.external_link.safelink.password,
-  type: config.external_link.safelink.type
+  type: config.external_link.safelink.type,
 });
 
 /**
@@ -34,14 +33,14 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
 
 const logname = chalk.magenta('[generate]') + chalk.blue('[after]');
 const hexoURL = new URL(config.url);
-const internal_links = uniqueStringArray([
+const internal_links = [
   ...config.external_link.exclude,
   hexoURL.host,
   'www.webmanajemen.com',
   'https://github.com/dimaslanjaka',
   '/dimaslanjaka1',
-  'dimaslanjaka.github.io'
-]);
+  'dimaslanjaka.github.io',
+].uniqueStringArray();
 
 /**
  * filter external links
@@ -57,7 +56,7 @@ export function filter_external_links(href: string, debug = false) {
     /**
      * original link or safelink
      */
-    href: href
+    href: href,
   };
   if (href && href.length > 2) {
     // fix dynamic protocol urls
@@ -67,10 +66,8 @@ export function filter_external_links(href: string, debug = false) {
     /**
      *  javascript anchors, dot anchors, hash header
      */
-    const isExternal = href.trim().match(new RegExp('^(https?)://'));
-    const isInternal =
-      isMatch(href.trim(), /^(\.+|#|(javascript|mailto|mail):)/i) &&
-      !isExternal;
+    const isExternal = href.trim().isMatch(new RegExp('^(https?)://'));
+    const isInternal = href.trim().isMatch(/^(\.+|#|(javascript|mailto|mail):)/i) && !isExternal;
     const isLength = href.trim().length > 0;
     const isAllowed = isExternal && isLength;
     if (debug) {
@@ -110,7 +107,7 @@ export function filter_external_links(href: string, debug = false) {
 }
 
 const generated_dir = join(root, config.public_dir);
-export function staticAfter(done: TaskCallback) {
+function staticAfter(done: TaskCallback) {
   // iterate public_dir of _config.yml (hexo generate)
   globSrc('**/*.html', { cwd: generated_dir })
     .map((file) => join(generated_dir, file))
@@ -127,10 +124,7 @@ gulp.task('generate:after', staticAfter);
  * @param replacement replacement string, default: https://res.cloudinary.com/practicaldev/image/fetch/
  * @returns
  */
-export function removeWordpressCDN(
-  str: string,
-  replacement = 'https://res.cloudinary.com/practicaldev/image/fetch/'
-) {
+export function removeWordpressCDN(str: string, replacement = 'https://res.cloudinary.com/practicaldev/image/fetch/') {
   const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
   return str.replace(regex, replacement);
 }
@@ -142,11 +136,8 @@ const files: string[] = [];
  * @param callback callback after processed all files
  * @returns
  */
-export const parseAfterGen = (
-  sources?: string[],
-  callback?: CallableFunction
-) => {
-  if (sources && sources.length) arrayAddAll(files, sources);
+export const parseAfterGen = (sources?: string[], callback?: CallableFunction) => {
+  if (sources && sources.length) files.addAll(sources);
   const skip = () => {
     // if files has members, shift first file, restart function
     if (files.length) {
@@ -193,10 +184,7 @@ export default function fixHtmlPost(content: string, debug = false) {
         element.setAttribute('target', '_blank');
       }
 
-      if (
-        config.external_link.safelink &&
-        config.external_link.safelink.enable
-      ) {
+      if (config.external_link.safelink && config.external_link.safelink.enable) {
         element.setAttribute('href', filter.href);
       }
     }

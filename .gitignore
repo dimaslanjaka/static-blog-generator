@@ -1,11 +1,10 @@
 *.log
 public/
 .deploy*/
-package-lock.backup
-yarn.lock.backup
+#package-lock.json
+yarn.lock
 firebase.js
 *.backup.*
-*.old.*
 *.private.*
 src/**/*.backup.ts
 
