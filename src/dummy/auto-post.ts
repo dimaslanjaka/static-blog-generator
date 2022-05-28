@@ -63,4 +63,4 @@ function randomDate(
   return date;
 }
 
-gulp.task('dummy', () => generateDummyPosts());
+gulp.task('dummy', () => generateDummyPosts(10));
