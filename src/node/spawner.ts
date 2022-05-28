@@ -28,7 +28,7 @@ class spawner {
   ) {
     const defaultOption: SpawnOptions = { stdio: 'pipe', detached: false };
     if (['npm', 'ts-node', 'tsc', 'npx', 'hexo'].includes(command)) {
-      command = /^win/.test(process.platform) ? `${command}.cmd` : command;
+      command = /^win/i.test(process.platform) ? `${command}.cmd` : command;
     }
     const child = spawn(command, args, Object.assign(defaultOption, opt));
     child.unref();
