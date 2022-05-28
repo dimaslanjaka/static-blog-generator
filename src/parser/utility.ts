@@ -11,6 +11,7 @@
  * @license MIT
  */
 export type FunctionType<T = any, U = any> = (...arg0: U[]) => T;
+/*
 const _fn: FunctionType<string, number> = (n) => {
   return ['x'][n];
 };
@@ -20,6 +21,7 @@ const _fns: FunctionType<string, number | string> = (n, s) => {
 const _fa: FunctionType<string, number | string> = (n, ...s) => {
   return String([String(n), String(s)]);
 };
+*/
 
 /**
  * transform any variable type to string
