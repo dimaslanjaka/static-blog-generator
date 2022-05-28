@@ -96,7 +96,7 @@ const parsePost = async (
    */
   const isPathPost = path.includes(config.source_dir + '/_posts'); // || path.includes('src-posts/');
   const isTypePost = parse.metadata.type === 'post';
-  const cachedPosts = cachePost.getAll();
+  //const cachedPosts = cachePost.getAll();
   // @todo indexing post
   if (isTypePost && isPathPost) {
     cachePost.set(path, parse);
