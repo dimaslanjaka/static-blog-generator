@@ -3,10 +3,6 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 ## All the variables listed here will be used in theme/layout/layout.ejs and some will be used in `internal functions` for program reference
-## Empty value = null
-
-# debug
-verbose: false
 
 # Site title
 title: "Website Manajemen Indonesia"
@@ -25,90 +21,21 @@ logo: "/image/logo.svg"
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.webmanajemen.com
 
-# Directory And Slug
+# Directory
 ## source directory (this directory should be on public website)
 source_dir: source
 ## generated directory
 public_dir: docs
+## slug tag config.url/tag_dir/tagname
+tag_dir: tags
 ## slug archive config.url/archive_dir/ (homepage pagination)
 archive_dir: archives
 ## slug category config.url/category_dir/categoryName
 category_dir: categories
-## slug tag config.url/tag_dir/tagname
-tag_dir: tags
-
-# Mapper
-
 ## Default Category (empty = null)
 default_category: Uncategorized
 ## Default Tag (empty = null)
 default_tag:
-
-## category mapper
-### rename category with these map
-### category $0 should be renamed to $1
-category_map:
-  php: PHP
-  js: JAVASCRIPT
-  css: CSS
-  ts: TYPESCRIPT
-  typescript: TYPESCRIPT
-  javascript: JAVASCRIPT
-  postgresql: PostgreSQL
-  mysql: MySQL
-  github: GitHub
-  xampp: XAMPP
-  nodejs: NodeJS
-
-## tag mapper
-### rename tag with these map
-### tag $0 should be renamed by $1
-tag_map:
-  js: JAVASCRIPT
-  ts: TYPESCRIPT
-  javascript: JAVASCRIPT
-  typescript: TYPESCRIPT
-  php: PHP
-### group tags with category
-### tag $0 should be grouped by $1
-tag_group:
-  js: Programming
-  ts: Programming
-  css: Programming
-  sql: Programming
-  mysql: Programming
-  postgresql: Programming
-  eslint: Programming
-  javascript: Programming
-  typescript: Programming
-  kotlin: Programming
-  java: Programming
-  nodejs: Programming
-
-## title map
-## automate add tags from matched title word boundary
-title_map:
-  xampp: XAMPP
-  guide: Tips & Tricks
-  "how to": Tips & Tricks
-  game: Games
-  javascript: JAVASCRIPT
-  typescript: TYPESCRIPT
-  eslint: ESLint
-  blogger: Blogging
-  wordpress: Blogging
-  nodejs: NodeJS
-
-## Minify generated files
-compress:
-  ## Compress size image
-  image: true
-  ## Minify CSS
-  css: true
-  ## Minify JS
-  js: true
-  ## Minify HTML
-  html: true
 
 # https://hexo.io/docs/configuration.html
 # skip render template, direct copy
@@ -176,7 +103,7 @@ index_generator:
 generator:
   # enable cache method globally
   ## sligthly reduce memory usages
-  cache: true
+  cache: false
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
