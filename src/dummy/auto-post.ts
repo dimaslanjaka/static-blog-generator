@@ -1,5 +1,5 @@
 import { emptyDirSync, existsSync, mkdirSync } from 'fs-extra';
-import memoizee from 'memoizee';
+import gulp from 'gulp';
 import { join } from 'upath';
 import { write } from '../node/filemanager';
 import parsePost, { buildPost, postMap } from '../parser/post/parsePost';
@@ -10,8 +10,7 @@ if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
 // emptying generated dummy posts
 emptyDirSync(join(destFolder, 'dummy'));
 
-export const generateDummyPosts = memoizee(_generateDummyPosts);
-async function _generateDummyPosts(n = 5) {
+export async function generateDummyPosts(n = 5) {
   const result: string[] = [];
   for (let x = 0; x < n; x++) {
     const gen = await dummyPost(x);
@@ -63,3 +62,5 @@ function randomDate(
   date.setHours(hour);
   return date;
 }
+
+gulp.task('dummy', () => generateDummyPosts());
