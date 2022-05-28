@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* IMPORT FROM OTHER PLATFORMS */
 import { XMLParser } from 'fast-xml-parser';
 import { existsSync } from 'fs';
