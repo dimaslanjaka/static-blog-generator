@@ -68,6 +68,6 @@ JSON.stringifyWithCircularRefs = (function () {
  * @param data
  * @returns
  */
-export function json_encode(data: object) {
+export function json_encode(data: Record<string, unknown>) {
   return JSON.stringifyWithCircularRefs(data);
 }
