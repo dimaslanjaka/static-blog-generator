@@ -1,0 +1,59 @@
+<%- include('common/archive/header')  %>
+<!-- Page content-->
+<div class="container">
+  <div class="row">
+    <!-- Blog entries-->
+    <div class="col-lg-8">
+      <!-- Latest post as featured blog post-->
+      <% var latestPost = getAllCachedPosts[0] %>
+      <% if (latestPost) { %>
+      <div class="card mb-4">
+        <a href="<%- latestPost.url %>">
+          <img width="850px" height="350px" class="card-img-top" src="<%- thumbnail(latestPost) %>"
+            alt="<%- latestPost.title %>" />
+        </a>
+        <div class="card-body">
+          <div class="small text-muted"><%- date_format(latestPost.date, 'LL') %></div>
+          <h2 class="card-title"><%- latestPost.title %></h2>
+          <p class="card-text"><%- excerpt(latestPost) %></p>
+          <a class="btn btn-primary" href="<%- latestPost.url %>">Read more →</a>
+        </div>
+      </div>
+      <% } %>
+      <!-- Nested row for non-featured blog posts-->
+      <% var allposts = getAllCachedPosts %>
+      <div class="row">
+        <% page.posts.each((post) => { %>
+        <div class="col-md-6">
+          <div class="card mb-4" style="height: 35em;">
+            <a href="<%- post.url %>"><img class="card-img-top" src="<%- thumbnail(post) %>" alt="<%- post.title %>"
+                style="height: 15em;" /></a>
+            <div class="card-body">
+              <div class="small text-muted"><%- date_format(post.date, 'LL') %></div>
+              <h2 class="card-title h4"><%- post.title %></h2>
+              <p class="card-text"><%- excerpt(post) %></p>
+              <a class="btn btn-primary mb-2" href="<%- post.url %>">Read more →</a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <!-- Pagination-->
+      <nav aria-label="Pagination" class="disabled">
+        <hr class="my-0" />
+        <ul class="pagination justify-content-between my-4">
+          <% if (page.page_prev !== -1 && page.page_prev) { %>
+          <li class="page-item">
+            <a class="page-link" href="<%- page.page_prev_url %>">&laquo; Older</a>
+          </li>
+          <% } %>
+          <!--current <%- page.page_current_url %>-->
+          <% if (page.page_next) { %>
+          <li class="page-item"><a class="page-link" href="<%- page.page_next_url %>">Newer &raquo;</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+    <%- include('common/aside') %>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<!-- Page content-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <%- include('common/page/header')  %>
+        <!-- Post content-->
+        <section class="mb-5">
+          <%- page.body %>
+
+          <% if (page.keywords) { %>
+          <h5>Incoming Terms</h5>
+          <ul class="list-group">
+            <% page.keywords.forEach(kw => { %>
+            <li class="list-group-item"><%= kw %></li>
+            <% }) %>
+          </ul>
+          <% } %>
+          <% var img = thumbnail(page) %>
+          <% if (page.type == 'post' && !page.body.includes(img)) { %>
+          <!-- Preview image figure-->
+          <figure class="mb-4 mt-4">
+            <img class="img-fluid rounded" width="900px" height="400px" src="<%- thumbnail(page) %>"
+              alt="<%- page.title %>" />
+          </figure>
+          <% } %>
+        </section>
+      </article>
+
+      <% if (config.adsense.enable && config.adsense.multiplex_ads.length) { %>
+      <section class="mb-5">
+        <div class="card bg-light">
+          <%- config.adsense.multiplex_ads[0] %>
+        </div>
+      </section>
+      <% } %>
+
+      <% if (page.comments && page.type == 'post') { %>
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card bg-light">
+          <div class="card-body">
+            <%- include('common/disqus') %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+    </div>
+
+    <%- include('common/aside') %>
+  </div>
+</div>
