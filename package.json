@@ -37,7 +37,7 @@
     "page:install2": "cd docs/page && npm install --production && fse remove .git .gitignore",
     "format": "run-p format:**",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
-    "format:themes-layouts": "prettier --parser html -w ./themes/**/*.ejs",
+    "format:themes-layouts": "prettier --write --parser html -w ./themes/**/*.ejs",
     "ci": "run-s ci:**",
     "ci:self": "yarn install --check-cache --check-files --ignore-engines --ignore-platform",
     "ci:submodule": "git submodule foreach yarn install --check-files",
