@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "exclude": [
+    "**/node_modules/**",
+    "**/tests/**"
+  ],
+  "include": [
+    "./src/**/*",
+    "packages/hexo-post-parser/src/import-post.ts"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "moduleResolution": "Node",
+    }
+  }
+}
