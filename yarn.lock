@@ -4173,9 +4173,10 @@ fd-slicer@~1.1.0:
   dependencies:
     pend "~1.2.0"
 
-"feed@git+https://github.com/jpmonette/feed.git":
+feed@^4.2.2:
   version "4.2.2"
-  resolved "git+https://github.com/jpmonette/feed.git#34dbde9aa47b85ae207ba4fefe4c5794b8ca43e2"
+  resolved "https://registry.yarnpkg.com/feed/-/feed-4.2.2.tgz#865783ef6ed12579e2c44bbef3c9113bc4956a7e"
+  integrity sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==
   dependencies:
     xml-js "^1.6.11"
 
@@ -5835,7 +5836,7 @@ ip@^1.1.5:
 "iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-iridium-1.0.0-2fa70eae-db5a-4ed8-981e-f7e988d7222e-1653731543643/node_modules/iridium/libs/skeljs"
+    skeljs "file:../../../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-iridium-1.0.0-eedeb036-7b41-4050-99db-0ad1ba7f5480-1653732115925/node_modules/iridium/libs/skeljs"
 
 irregular-plurals@^3.2.0:
   version "3.3.0"
