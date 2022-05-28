@@ -4,7 +4,7 @@ import { tmp } from '../../../types/_config';
 import { generateTags } from './tags';
 
 (async () => {
-  const tagname = 'sample';
+  const tagname = 'dummy';
 
   const test = await generateTags();
   if (test) write(tmp('tags/index.html'), test);
