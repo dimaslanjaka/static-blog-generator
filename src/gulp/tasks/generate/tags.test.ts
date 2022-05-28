@@ -1,13 +1,13 @@
-import color from '../../../node/color';
+import { join } from 'upath';
 import { write } from '../../../node/filemanager';
-import { tmp } from '../../../types/_config';
 import { generateTags } from './tags';
 
 (async () => {
   const tagname = 'dummy';
 
   const test = await generateTags();
-  if (test) write(tmp('tags/index.html'), test);
+  write(join(__dirname, 'tmp/tags.json'), test);
+  /*if (test) write(tmp('tags/index.html'), test);
   console.log(
     color['Vivid Violet']('test result'),
     typeof test == 'string' && test.length > 0
@@ -25,5 +25,5 @@ import { generateTags } from './tags';
   console.log(
     color['Vivid Violet']('test2 result'),
     typeof test2 == 'string' && test2.length > 0
-  );
+  );*/
 })();

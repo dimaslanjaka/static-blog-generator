@@ -172,7 +172,9 @@ export function simplifyDump<T extends DumperType>(
       'content',
       'body',
       'sitedata',
-      'author'
+      'author',
+      'tags',
+      'category'
     ].filter(function (el) {
       if (Array.isArray(except)) {
         return except.indexOf(el) < 0;
@@ -183,19 +185,24 @@ export function simplifyDump<T extends DumperType>(
     for (const key in post) {
       if (Object.prototype.hasOwnProperty.call(post, key)) {
         if (keyToRemove.includes(key)) {
-          if (post[key]) post[key] = <any>`[${typeof post[key]}]`;
+          if (post[key])
+            post[key] = <any>(
+              `[${Array.isArray(post[key]) ? 'array' : typeof post[key]}]`
+            );
         }
       }
     }
-    for (const key in post['metadata']) {
-      if (Object.prototype.hasOwnProperty.call(post['metadata'], key)) {
-        if (keyToRemove.includes(key)) {
-          if (post['metadata'][key])
-            post['metadata'][key] =
-              '[' + <any>typeof post['metadata'][key] + ']';
+    if ('metadata' in post)
+      for (const key in post['metadata']) {
+        if (Object.prototype.hasOwnProperty.call(post['metadata'], key)) {
+          if (keyToRemove.includes(key)) {
+            if (post['metadata'][key])
+              post['metadata'][key] = Array.isArray(post['metadata'][key])
+                ? '[array]'
+                : '[' + typeof post['metadata'][key] + ']';
+          }
         }
       }
-    }
   }
   return post;
 }
