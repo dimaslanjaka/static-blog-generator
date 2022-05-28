@@ -64,7 +64,7 @@ function showPreview(str: string | Buffer) {
 }
 /** source and src-posts hashes modified indicator */
 let hashes = '';
-const copyAssets = (...fn: TaskFunction[] | string[]) => {
+export const middlewareCopyAssets = (...fn: TaskFunction[] | string[]) => {
   return new Bluebird((resolve) => {
     if (!gulpIndicator) {
       gulpIndicator = true;
@@ -100,12 +100,10 @@ const copyAssets = (...fn: TaskFunction[] | string[]) => {
     }
   });
 };
-// copy before ready
-copyAssets();
 
 const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   function (_, res, next) {
-    copyAssets(); // dont await to keep performance
+    middlewareCopyAssets(); // dont await to keep performance
     // custom headers
     res.setHeader('X-Powered-By', 'Static Blog Generator'); // send X-Powered-By
     if (!config.server.cache) {
