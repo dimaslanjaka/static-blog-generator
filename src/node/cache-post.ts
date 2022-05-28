@@ -1,65 +1,22 @@
-import modifyPost from '../parser/post/modifyPost';
-import { postMap } from '../parser/post/parsePost';
-import { mergedPostMap } from '../parser/post/postMapper';
+import modifyPost from '../markdown/transformPosts/modifyPost';
+import { postMap } from '../markdown/transformPosts/parsePost';
+import CacheFile, { defaultResovableValue } from './cache';
 import config from '../types/_config';
-import { removeEmpties } from './array-utils';
-import { defaultResovableValue, pcache } from './cache';
-import { md5 } from './md5-file';
 import memoizer from './memoize-fs';
-import { isMatch } from './string-utils';
+import { mergedPostMap } from '../markdown/transformPosts/postMapper';
 
-export type postResult = Partial<mergedPostMap>;
-
-export class CachePost {
-  set(key: string, value: any) {
-    pcache('post').putSync(md5(key), value);
-    return this;
-  }
-
-  get<T>(key: string) {
-    return pcache('post').getSync(md5(key)) as T;
-  }
-
-  getKeys() {
-    return pcache('post').keysSync();
-  }
-
-  getAll() {
-    const keys: string[] = pcache('post').keysSync();
-    return keys
-      .map((key) => {
-        const get = pcache('post').getSync<postMap>(key);
-        //console.log('get', typeof get);
-        return get;
-      })
-      .filter(
-        (post) => typeof post == 'object' && post !== null && post !== undefined
-      );
-  }
-
-  /**
-   * get total posts
-   * @returns
-   */
-  getTotal() {
-    return pcache('post').keysSync().length;
-  }
-}
-
-const postCache = new CachePost();
+export type postResult = mergedPostMap;
+const postCache = new CacheFile('posts');
 
 /**
  * fix post
  * @param post
  * @returns
  */
-function fixPost(post: Partial<postMap>) {
-  if (
-    typeof post.metadata == 'object' &&
-    typeof post.metadata.url == 'string'
-  ) {
+function fixPost(post: postMap) {
+  if (typeof post.metadata.url == 'string') {
     const url = new URL(post.metadata.url);
-    if (isMatch(url.pathname, /.md$/)) {
+    if (url.pathname.isMatch(/.md$/)) {
       url.pathname = url.pathname.replace(/.md$/, '.html');
     }
     post.metadata.url = String(url);
@@ -73,10 +30,7 @@ function fixPost(post: Partial<postMap>) {
  * @param by
  * @returns
  */
-function order_by<T extends Partial<postMap>>(
-  array: T[],
-  by: 'updated' | 'date' | '-updated' | '-date' | string
-) {
+function order_by(array: postMap[], by: 'updated' | 'date' | '-updated' | '-date' | string) {
   if (Array.isArray(array)) {
     return array
       .filter((post) => post && typeof post.metadata == 'object')
@@ -109,40 +63,28 @@ function order_by<T extends Partial<postMap>>(
  * @param max max result
  * @returns array of {@link postResult}
  */
-export function getLatestPosts(
-  by: 'date' | 'updated' | '-date' | '-updated' = '-updated',
-  max = 5
-): postResult[] {
-  const posts: Partial<postMap>[] = getAllPosts();
-  const reorderPosts = order_by(posts, by); //removeEmpties(order_by(posts, by));
-  //console.log('getLatestPosts', reorderPosts.length);
-
-  return (
-    reorderPosts
-      // dont index redirected post
-      .filter((post) => !post.metadata.redirect)
-      .splice(0, max)
-      .map((post) => fixPost(post))
-      .map((post) => {
-        return Object.assign(post, post.metadata);
-      })
-  );
+export function getLatestPosts(by: 'date' | 'updated' = 'updated', max = 5): postResult[] {
+  const posts: postMap[] = getAllPosts({ max: max, resolveValue: true });
+  return order_by(posts, by)
+    .removeEmpties()
+    .splice(0, max)
+    .map((post) => fixPost(post))
+    .map((post) => {
+      return Object.assign(post, post.metadata);
+    });
 }
 
 /**
  * get all posts
+ * @param opt {@link defaultResovableValue}
  * @returns array of posts {@link CacheFile.getValues}
  */
-export function getAllPosts() {
+export function getAllPosts(opt = defaultResovableValue) {
   if (postCache.getTotal() < 1) return [];
-  return order_by(postCache.getAll(), config.index_generator.order_by)
-    .filter((post: Partial<postMap>) => post && post.metadata.type == 'post')
+  return order_by(postCache.getValues(opt), config.index_generator.order_by)
+    .filter((post: postMap) => post && post.metadata.type == 'post')
     .map((post) => modifyPost(post))
-    .map((post) => fixPost(post))
-    .map((post: string | Partial<postMap>) => {
-      if (typeof post == 'string') return JSON.parse(post);
-      return post;
-    });
+    .map((post) => fixPost(post));
 }
 
 /**
@@ -164,12 +106,13 @@ const randoms: { [key: string]: postResult[] } = {};
 export function getRandomPosts(max = 5, identifier = 'default') {
   const result = randoms[identifier];
   if (Array.isArray(result) && result.length > 0) return result;
-
+  const opt = defaultResovableValue;
   defaultResovableValue.randomize = true;
   defaultResovableValue.max = max;
   const get: () => postResult[] = (() => {
     const fetchAll = () => {
-      return removeEmpties(getAllPosts())
+      return getAllPosts(opt)
+        .removeEmpties()
         .splice(0, max)
         .map((post) => fixPost(post))
         .map((post) => {
@@ -188,5 +131,10 @@ export function getRandomPosts(max = 5, identifier = 'default') {
   return randoms[identifier];
 }
 
+export default class CachePost extends CacheFile {
+  constructor() {
+    super('posts');
+  }
+}
+
 export const Post = CachePost;
-export default CachePost;

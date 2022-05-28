@@ -1,17 +1,14 @@
 import chalk from 'chalk';
-import { existsSync, rm } from 'fs';
-import memoizee from 'memoizee';
-import persistentCache from 'persistent-cache';
-import { TypedEmitter } from 'tiny-typed-emitter';
-import { toUnix } from 'upath';
-import { DynamicObject } from '../types';
-import { array_shuffle } from './array-utils';
-import './cache-serialize';
-import { cacheDir, join, mkdirSync, read, resolve, write } from './filemanager';
+import { cacheDir, existsSync, join, mkdirSync, read, resolve, write } from './filemanager';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
-import memoizer from './memoize-fs';
 import scheduler from './scheduler';
+import { rm } from 'fs';
+import { TypedEmitter } from 'tiny-typed-emitter';
+import { DynamicObject } from '../types';
+import './cache-serialize';
+import { toUnix } from 'upath';
+import memoizer from './memoize-fs';
 
 /**
  * default folder to save databases
@@ -51,7 +48,7 @@ export type ResovableValue = {
 export const defaultResovableValue: ResovableValue = {
   resolveValue: true,
   max: null,
-  randomize: false
+  randomize: false,
 };
 
 interface CacheFileEvent {
@@ -81,7 +78,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
   dbFile: string;
   static options: CacheOpt = {
     sync: false,
-    folder: dbFolder
+    folder: dbFolder,
   };
   private currentHash: string;
   constructor(hash = null, opt?: CacheOpt) {
@@ -92,8 +89,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       const stack = new Error().stack.split('at')[2];
       hash = md5(stack);
     }
-    if (!existsSync(CacheFile.options.folder))
-      mkdirSync(CacheFile.options.folder);
+    if (!existsSync(CacheFile.options.folder)) mkdirSync(CacheFile.options.folder);
     this.dbFile = join(CacheFile.options.folder, 'db-' + hash);
     if (!existsSync(this.dbFile)) write(this.dbFile, {});
     let db = read(this.dbFile, 'utf-8');
@@ -143,8 +139,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     // if key is long text
     if (key.length > 32) {
       // search uuid
-      const regex =
-        /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
+      const regex = /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
       const m = regex.exec(key);
       if (m && typeof m[1] == 'string') return m[1];
       // return first 32 byte text
@@ -157,35 +152,17 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * @param key
    * @returns
    */
-  locateKey = (key: string) =>
-    join(CacheFile.options.folder, this.currentHash, md5(this.resolveKey(key)));
+  locateKey = (key: string) => join(CacheFile.options.folder, this.currentHash, md5(this.resolveKey(key)));
   dump(key?: string) {
     if (key) {
       return {
         resolveKey: this.resolveKey(key),
         locateKey: this.locateKey(key),
-        db: this.dbFile
+        db: this.dbFile,
       };
     }
   }
   set(key: string, value: any): CacheFile {
-    if (!key) {
-      const e = new Error();
-      if (!e.stack) {
-        try {
-          // IE requires the Error to actually be thrown or else the
-          // Error's 'stack' property is undefined.
-          throw e;
-        } catch (e) {
-          if (!e.stack) {
-            //return 0; // IE < 10, likely
-          }
-        }
-      }
-      const stack = String(e.stack).split(/\r\n|\n/);
-      console.log('cache key empty', stack);
-      return;
-    }
     const self = this;
     // resolve key hash
     key = this.resolveKey(key);
@@ -196,14 +173,10 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
 
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
-      logger.log(
-        chalk.magentaBright(self.currentHash),
-        'saved cache',
-        self.dbFile
-      );
-      write(self.dbFile, JSON.stringify(self.md5Cache));
+      logger.log(chalk.magentaBright(self.currentHash), 'saved cache', self.dbFile);
+      write(self.dbFile, JSON.stringifyWithCircularRefs(self.md5Cache));
     });
-    if (value) write(locationCache, JSON.stringify(value));
+    if (value) write(locationCache, JSON.stringifyWithCircularRefs(value));
     this.emit('update');
     return this;
   }
@@ -213,23 +186,16 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * @returns boolean
    */
   has(key: string): boolean {
-    try {
-      key = this.resolveKey(key);
-      return (
-        Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key]
-      );
-    } catch (_) {
-      return false;
-    }
+    key = this.resolveKey(key);
+    return Object.hasOwnProperty.call(this.md5Cache, key) && this.md5Cache[key];
   }
-
   /**
    * Get cache by key
    * @param key
    * @param fallback
    * @returns
    */
-  get<T>(key: string, fallback: T = null): T {
+  get(key: string, fallback = null) {
     // resolve key hash
     key = this.resolveKey(key);
     // locate key location file
@@ -258,7 +224,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       const self = this;
       const result: DynamicObject = {};
       Object.keys(this.md5Cache).forEach((key) => {
-        if (self.has(key)) result[key] = self.get(key);
+        result[key] = self.get(key);
       });
       return result;
     }
@@ -279,7 +245,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
         result.push(self.get(key));
       });
 
-      if (opt.randomize) return array_shuffle(result);
+      if (opt.randomize) return result.shuffle();
       if (opt.max) {
         result.length = opt.max;
         return result.splice(0, opt.max);
@@ -314,16 +280,3 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     }
   }
 }
-
-/**
- * persistent cache
- * @param name cache name
- * @returns
- */
-export const pcache = memoizee((name: string) =>
-  persistentCache({
-    base: join(process.cwd(), 'tmp/persistent-cache'),
-    name: name,
-    duration: 1000 * 3600 * 24 //one day
-  })
-);

@@ -13,10 +13,7 @@ const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
  * @param callback
  * @returns
  */
-function MinifyHTML(
-  options?: htmlmin.Options,
-  callback?: CallableFunction & (() => any)
-) {
+function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (() => any)) {
   const workdir = join(cwd(), config.public_dir);
   return globSrc('**/*.html', { cwd: workdir })
     .map((path) => join(workdir, path))
@@ -33,7 +30,7 @@ function MinifyHTML(
 }
 
 gulp.task('generate:minify-html', (done?: TaskCallback) => {
-  return MinifyHTML(
+  MinifyHTML(
     {
       minifyCSS: true,
       minifyJS: true,
@@ -41,7 +38,7 @@ gulp.task('generate:minify-html', (done?: TaskCallback) => {
       removeComments: true,
       removeEmptyAttributes: true,
       ignoreCustomComments: [/^!/, /^\s*#/],
-      caseSensitive: true
+      caseSensitive: true,
     },
     done
   );

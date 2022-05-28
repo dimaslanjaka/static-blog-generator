@@ -10,9 +10,6 @@ module.exports = function (content, headers) {
 
   //https://cdn.rawgit.com/dimaslanjaka/Web-Manajemen/master/Animasi/text-animasi.html
   //replace old cdn.rawgit.com to github page
-  content = content.replace(
-    new RegExp('https://cdn.rawgit.com/dimaslanjaka', 'm'),
-    'https://www.webmanajemen.com/'
-  );
+  content = content.replace(new RegExp('https://cdn.rawgit.com/dimaslanjaka', 'm'), 'https://www.webmanajemen.com/');
   return content;
 };

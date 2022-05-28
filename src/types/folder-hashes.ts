@@ -6,30 +6,9 @@ import config, { post_source_dir, root } from './_config';
 
 const options = {
   folders: {
-    exclude: [
-      '.*',
-      'node_modules',
-      'test_coverage',
-      'tmp',
-      'test',
-      'tests',
-      '*.log',
-      '*.test.ts',
-      '*.test.js'
-    ]
+    exclude: ['.*', 'node_modules', 'test_coverage', 'tmp', 'test', 'tests', '*.log', '*.test.ts', '*.test.js'],
   },
-  files: {
-    include: [
-      '*.js',
-      '*.ts',
-      '*.md',
-      '*.css',
-      '*.scss',
-      '*.less',
-      '*.ejs',
-      '*.html'
-    ]
-  }
+  files: { include: ['*.js', '*.ts', '*.md', '*.css', '*.scss', '*.less', '*.ejs', '*.html'] },
 };
 
 /**
@@ -62,11 +41,6 @@ export async function get_source_hash() {
 }
 
 // @todo generate folder hashes every called once
-Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread(
-  (src_posts, source) => {
-    write(
-      join(__dirname, '_config_hashes.json'),
-      JSON.stringify({ 'src-posts': src_posts, source })
-    );
-  }
-);
+Bluebird.all([get_src_posts_hash(), get_source_hash()]).spread((src_posts, source) => {
+  write(join(__dirname, '_config_hashes.json'), JSON.stringify({ 'src-posts': src_posts, source }));
+});
