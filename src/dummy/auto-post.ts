@@ -2,6 +2,7 @@ import { emptyDirSync, existsSync, mkdirSync } from 'fs-extra';
 import gulp from 'gulp';
 import { join } from 'upath';
 import { write } from '../node/filemanager';
+import { replaceArr } from '../node/string-utils';
 import parsePost, { buildPost, postMap } from '../parser/post/parsePost';
 import config, { root } from '../types/_config';
 
@@ -15,7 +16,10 @@ export async function generateDummyPosts(n = 5) {
   for (let x = 0; x < n; x++) {
     const gen = await dummyPost(x);
     const file = await write(
-      join(destFolder, gen.metadata.permalink),
+      join(
+        destFolder,
+        replaceArr(gen.metadata.permalink, [/.html$/, /.md$/], '.md')
+      ),
       buildPost(gen)
     );
     result.push(String(file));

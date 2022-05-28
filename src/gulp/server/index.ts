@@ -8,7 +8,7 @@ import memoizee from 'memoizee';
 import net from 'net';
 import { join, toUnix } from 'upath';
 import config from '../../types/_config';
-import { middlewareCopyAssets, ServerMiddleWare } from './middleware';
+import { ServerMiddleWare } from './middleware';
 
 const cwd = memoizee(() => toUnix(process.cwd()));
 const browserSync = createServer();
@@ -38,10 +38,10 @@ function startServer() {
   const bsi = browserSync.init(options);
 
   // Listen for the `init` event
-  bsi.emitter.on('init', function () {
+  /*bsi.emitter.on('init', function () {
     console.log('Browsersync is running!');
     middlewareCopyAssets();
-  });
+  });*/
 
   // handling spawner to reduce memory usages
   const childs: { [key: string]: ChildProcess[] } = {

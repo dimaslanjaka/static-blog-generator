@@ -1,4 +1,14 @@
 {
-    "tag": [],
-    "category": []
+    "tag": [
+        "/tags/Bar",
+        "/tags/Baz",
+        "/tags/Foo",
+        "/tags/dummy",
+        "/tags/sample"
+    ],
+    "category": [
+        "/categories/Uncategorized",
+        "/categories/dummy",
+        "/categories/post"
+    ]
 }

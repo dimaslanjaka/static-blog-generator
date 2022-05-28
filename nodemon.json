@@ -15,7 +15,7 @@
   ],
   "verbose": false,
   "delay": 3000,
-  "exec": "gulp clean:tmp clean:db clean:posts copy dummy server --nocache",
+  "exec": "gulp copy dummy server --nocache",
   "execMap": {
     "js": "node --harmony",
     "ts": "node -r ts-node/register"
