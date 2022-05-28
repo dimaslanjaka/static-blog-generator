@@ -3,8 +3,8 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 
 | Name | Repo | Coverage |
 | --- | --- | --- |
-| Stable release | https://github.com/dimaslanjaka/static-blog-generator/tree/stable | - |
-| Dev | https://github.com/dimaslanjaka/static-blog-generator/tree/master | [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/21168/branches/599935/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=21168&bid=599935) |
+| Stable release | https://github.com/dimaslanjaka/static-blog-generator/tree/master | - |
+| Dev | https://github.com/dimaslanjaka/static-blog-generator/tree/dev | [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/21168/branches/599935/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=21168&bid=599935) |
 
 <details>
   <summary>Walkthrough</summary>
