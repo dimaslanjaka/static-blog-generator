@@ -129,6 +129,7 @@ scheduler.add('add-tags', () => {
 
       for (let indexTag = 0; indexTag < post.metadata.tags.length; indexTag++) {
         const tagName = post.metadata.tags[indexTag];
+
         if (!postTags[tagName]) postTags[tagName] = [];
         if (
           !postTags[tagName].find(
@@ -138,7 +139,6 @@ scheduler.add('add-tags', () => {
           postTags[tagName].push(<any>post);
         }
         if (postTags[tagName].length > 0) {
-          console.log(`saving ${tagName}`);
           cacheTags.putSync(tagName, postTags[tagName]);
         }
       }
