@@ -1,15 +1,15 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { join } from 'path';
-import config, { root } from '../../types/_config';
 import chalk from 'chalk';
 import gulp from 'gulp';
-import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
 import 'js-prototypes';
-import { TaskCallback } from 'undertaker';
-import jdom from '../../node/jsdom';
+import { join } from 'path';
 //import safelinkify from '../../../packages/safelink/src/index';
-import safelinkify from 'safelinkify/src/index';
+import safelinkify from 'safelinkify';
+import { TaskCallback } from 'undertaker';
+import { globSrc, readFileSync, writeFileSync } from '../../node/filemanager';
+import jdom from '../../node/jsdom';
+import config, { root } from '../../types/_config';
 
 const safelink = new safelinkify.safelink({
   redirect: [config.external_link.safelink.redirect],
