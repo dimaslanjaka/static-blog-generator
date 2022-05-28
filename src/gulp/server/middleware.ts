@@ -166,7 +166,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       }
     return next();
   },
-  // post route
+  // content route
   async function (req, res, next) {
     const url = new urlParser(config.url + req.url).result;
     const isHomepage = req.url === '/';
@@ -175,14 +175,20 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
     // @todo render homepage and archives
     if (isHomepage || isArchives) {
+      const logname = isHomepage
+        ? color.green('[homepage]')
+        : color.green('[archive]');
       const indexPage = isArchives ? parseInt(url.filename) : null;
       const sourceIndex = join(cwd(), config.public_dir, 'index.html');
       const str = await generateIndex(
         isHomepage ? 'homepage' : indexPage ? indexPage : 'all'
       );
-      if (str) return res.end(showPreview(str));
+      if (str) {
+        console.log(logname, 'pre-processed', req.url, '->', sourceIndex);
+        return res.end(showPreview(str));
+      }
       if (existsSync(sourceIndex)) {
-        console.log('[archive] pre-processed', req.url, '->', sourceIndex);
+        console.log(logname, 'processed', req.url, '->', sourceIndex);
         return res.end(showPreview(readFileSync(sourceIndex)));
       }
       return next();
