@@ -30,7 +30,7 @@
     "test": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
     "php": "php -S localhost:4002 -t docs",
     "eslint": "run-s eslint:**",
-    "eslint:fix": "eslint ./src --ext .ts --fix > dump-eslint.log",
+    "eslint:fix": "ts-node src/eslint.ts",
     "depcheck": "depcheck > dump-unused.log",
     "page": "echo 'install custom page libraries' && run-s page:**",
     "page:install": "cd docs && npm install --production && fse remove .git .gitignore",
