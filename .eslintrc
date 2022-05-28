@@ -32,51 +32,7 @@
     }
   ],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 80,
-        "tabWidth": 2,
-        "useTabs": false,
-        "bracketSameLine": true,
-        "bracketSpacing": true,
-        "semi": true,
-        "singleQuote": true,
-        "trailingComma": "none",
-        "endOfLine": "lf",
-        "quoteProps": "as-needed",
-        "overrides": [
-          {
-            "excludeFiles": [
-              "*.min.js",
-              "*.min.css",
-              "*.min.html",
-              "*.min.scss"
-            ],
-            "files": [
-              "*.js",
-              "*.css",
-              "*.sass",
-              "*.html",
-              "*.md",
-              "*.ts"
-            ],
-            "options": {
-              "semi": true
-            }
-          },
-          {
-            "files": [
-              "*.ejs",
-              "*.html"
-            ],
-            "options": {
-              "parser": "html"
-            }
-          }
-        ]
-      }
-    ],
+    "prettier/prettier": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-unused-vars": "off",
