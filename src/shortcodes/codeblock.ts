@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { trim } from 'lodash';
 import { join } from 'upath';
-import cache from '../../packages/persistent-cache';
+import cache from 'persistent-cache';
 import jdom from '../node/jsdom';
 import { md5 } from '../node/md5-file';
 import { replaceArr } from '../node/utils';
