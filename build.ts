@@ -2,7 +2,7 @@ import { spawn } from 'child_process';
 import { randomUUID } from 'crypto';
 import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
-import git from './src/bin/git';
+import { getLatestCommitHash, git } from './src/bin/git';
 
 if (!process.env['GITHUB_WORKFLOW']) {
   const uuid = randomUUID();
@@ -30,7 +30,12 @@ function build() {
   });
   summon.once('close', () => {
     git(null, 'add', 'dist').then(() => {
-      git(null, 'commit', '-m', 'build ' + new Date());
+      git(
+        null,
+        'commit',
+        '-m',
+        `[${getLatestCommitHash()}] build ${new Date()}`
+      );
     });
   });
 }
