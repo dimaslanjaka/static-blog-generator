@@ -2,6 +2,7 @@ import { postMap } from '../parser/post/parsePost';
 import { mergedPostMap } from '../parser/post/postMapper';
 export declare type postResult = Partial<mergedPostMap>;
 export declare class CachePost {
+    constructor();
     set(key: string, value: any): this;
     get<T>(key: string): T;
     getKeys(): string[];
@@ -37,4 +38,3 @@ export declare function getTotalPosts(): number;
  */
 export declare function getRandomPosts(max?: number, identifier?: string): Partial<mergedPostMap>[];
 export declare const Post: typeof CachePost;
-export default CachePost;
