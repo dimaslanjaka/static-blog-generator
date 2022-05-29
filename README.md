@@ -4,9 +4,11 @@
 Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/hexo-post-parser/blob/main/src/index.test.ts)
 
 ```js
-const {parsePost} = require('hexo-post-parser');
-const parse = parsePost('path/to/markdown/file.md');
-console.log(parse);
+(async function(){
+  const {parsePost} = require('hexo-post-parser');
+  const parse = await parsePost('path/to/markdown/file.md');
+  console.log(parse);
+})();
 ```
 
 ## Reference Repositories
