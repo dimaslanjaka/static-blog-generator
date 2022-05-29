@@ -24,7 +24,10 @@ jobs:
         cache: 'yarn'
 
     - name: Install dependencies
-      run: npm i -g gulp-cli typescript npm ts-node && yarn install
+      run: |
+        npm i -g gulp-cli typescript npm ts-node
+        yarn install --check-files
+        yarn add git+https://github.com/dimaslanjaka/persistent-cache#improve2
 
     - name: Build
       run: yarn build
