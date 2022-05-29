@@ -1,5 +1,6 @@
 import { spawn, SpawnOptions } from 'child_process';
-import { toUnix } from 'upath';
+import { Readable } from 'stream';
+import { join, toUnix } from 'upath';
 
 /**
  * git command
@@ -9,10 +10,14 @@ import { toUnix } from 'upath';
 export function git(options: null | SpawnOptions = {}, ...args: string[]) {
   return new Promise(
     (
-      resolve: (args: { code: number; stdout: any; stderr: any }) => any,
+      resolve: (args: {
+        code: number;
+        stdout: string[] | Readable;
+        stderr: any;
+      }) => any,
       reject: (args: { args: string[]; err: Error }) => any
     ) => {
-      if (typeof options !== 'object')
+      if (typeof options !== 'object' || options === null)
         options = {
           cwd: toUnix(__dirname),
           stdio: 'inherit'
@@ -50,5 +55,18 @@ export function git(options: null | SpawnOptions = {}, ...args: string[]) {
     }
   );
 }
+
+export const getLatestCommitHash = () =>
+  git(
+    {
+      cwd: join(__dirname, '../../')
+    },
+
+    'rev-parse',
+    '--short',
+    'HEAD'
+  ).then((res) => {
+    return res[0] as string;
+  });
 
 export default git;
