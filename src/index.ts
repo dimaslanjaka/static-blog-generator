@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import { join } from 'upath';
 import { localServer } from './gulp/server';
 import {
   clean_db,
@@ -10,7 +11,6 @@ import { copyPosts } from './gulp/tasks/copy';
 import { copyAssets } from './gulp/tasks/copy/assets';
 import { gulpInlineStyle } from './gulp/tasks/copy/remove-inline-style';
 import './gulp/tasks/deploy';
-import './gulp/tasks/dump';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
 
@@ -23,6 +23,10 @@ new scheduler();
 process.on('uncaughtException', function (err) {
   console.error('uncaughtException:\n' + err.stack + '\n');
 });
+
+// DEVELOPMENT TASKS
+declare function require<T>(name: string): T;
+require(join(__dirname, 'gulp/tasks/dump'));
 
 // COPY TASKS
 gulp.task('copy:assets', copyAssets);

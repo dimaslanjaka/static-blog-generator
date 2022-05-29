@@ -11,6 +11,7 @@ import { isMatch } from './string-utils';
 export type postResult = Partial<mergedPostMap>;
 
 export class CachePost {
+  constructor() {}
   set(key: string, value: any) {
     pcache('post').putSync(md5(key), value);
     return this;
@@ -45,8 +46,6 @@ export class CachePost {
     return pcache('post').keysSync().length;
   }
 }
-
-const postCache = new CachePost();
 
 /**
  * fix post
@@ -134,6 +133,7 @@ export function getLatestPosts(
  * @returns array of posts {@link CacheFile.getValues}
  */
 export function getAllPosts() {
+  const postCache = new CachePost();
   if (postCache.getTotal() < 1) return [];
   return order_by(postCache.getAll(), config.index_generator.order_by)
     .filter((post: Partial<postMap>) => post && post.metadata.type == 'post')
@@ -189,4 +189,3 @@ export function getRandomPosts(max = 5, identifier = 'default') {
 }
 
 export const Post = CachePost;
-export default CachePost;

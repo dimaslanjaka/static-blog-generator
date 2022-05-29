@@ -6,6 +6,7 @@ import { default as nodePath } from 'path';
 import { cwd as nodeCwd } from 'process';
 import upath from 'upath';
 import { removeEmpties } from './array-utils';
+import { json_encode } from './JSON';
 
 import glob = require('glob');
 /**
@@ -98,7 +99,7 @@ const filemanager = {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (typeof content != 'string') {
       if (typeof content == 'object') {
-        content = JSON.stringify(content, null, 4);
+        content = json_encode(content, 4);
       } else {
         content = String(content);
       }
