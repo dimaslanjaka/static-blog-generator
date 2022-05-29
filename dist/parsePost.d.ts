@@ -149,5 +149,5 @@ export declare type Nullable<T> = T | null | undefined;
  * @param options options parser
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
-export declare function parsePost(target: string, options?: DeepPartial<ParseOptions>): Promise<any>;
+export declare function parsePost(target: string, options?: DeepPartial<ParseOptions>): Promise<postMap>;
 export default parsePost;
