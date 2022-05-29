@@ -32,12 +32,13 @@ jobs:
       run: |
         npm i -g gulp-cli typescript npm ts-node
         yarn install --check-files
-        yarn add git+https://github.com/dimaslanjaka/persistent-cache#improve2
-        yarn add git+https://github.com/dimaslanjaka/hexo-post-parser#main
+        yarn add git+https://github.com/dimaslanjaka/persistent-cache.git#improve2
+        yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main
+        yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git
 
     - name: Build
       run: yarn build
-      
+
     - name: deploy
       run: |
         git config user.email "dimaslanjaka@gmail.com"
