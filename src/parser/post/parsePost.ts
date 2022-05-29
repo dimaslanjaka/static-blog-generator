@@ -6,7 +6,7 @@ import {
 } from '../../../packages/hexo-post-parser/src';
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
-import CachePost from '../../node/cache-post';
+import { CachePost } from '../../node/cache-post';
 import { md5 } from '../../node/md5-file';
 import config, { cwd } from '../../types/_config';
 import modifyPost from './modifyPost';

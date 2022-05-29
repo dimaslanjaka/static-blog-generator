@@ -6,16 +6,15 @@ import color from '../../../node/color';
 import { write } from '../../../node/filemanager';
 import modifyPost from '../../../parser/post/modifyPost';
 import { archiveMap, post_chunks } from '../../../parser/post/postMapper';
+import { FunctionType } from '../../../parser/utility';
 import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
 import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
 import { excerpt } from '../../../renderer/ejs/helper/excerpt';
 import config, { cwd } from '../../../types/_config';
-import './categories';
-import './tags';
 
 /**
  * generate index
- * * customized generation by param {@link labelname}
+ * * customized generation by param {@link labelNameOrObj}
  * ```properties
  * "type number"  = generate specific archive page
  * "all"          = generate all homepage and archives
@@ -23,13 +22,24 @@ import './tags';
  * "null"         = all
  * "default"      = all
  * ```
- * @param labelname
+ * @param labelNameOrObj
  * @example
  * generateIndex('homepage'); // only generate homepage
  * generateIndex(4); // only generate page 4
  */
-export async function generateIndex(labelname?: 'homepage' | number) {
-  const postsChunks = post_chunks();
+export async function generateIndex(
+  labelNameOrObj?:
+    | 'homepage'
+    | number
+    | ReturnType<typeof post_chunks>
+    | FunctionType<ReturnType<typeof post_chunks>>
+) {
+  const postsChunks =
+    typeof labelNameOrObj == 'object'
+      ? labelNameOrObj
+      : typeof labelNameOrObj == 'function'
+      ? labelNameOrObj()
+      : post_chunks();
   const chunks = postsChunks.chunk;
   let logname = color['Desert Sand']('[generate][index]');
   if (!chunks.length) {
@@ -38,12 +48,12 @@ export async function generateIndex(labelname?: 'homepage' | number) {
   }
   // setup variable for infinite scroll
   const sitedata = postsChunks.sitedata;
-  const isSpecific = typeof labelname == 'number';
+  const isSpecific = typeof labelNameOrObj == 'number';
   for (let current_page = 0; current_page < chunks.length; current_page++) {
     const isHome = current_page === 0;
-    if (isSpecific && current_page != labelname) continue;
+    if (isSpecific && current_page != labelNameOrObj) continue;
     // break only process homepage
-    if (labelname == 'homepage' && !isHome) break;
+    if (labelNameOrObj == 'homepage' && !isHome) break;
     logname = color['Desert Sand']('[generate][index]');
     let saveTo = join(cwd(), config.public_dir, 'index.html');
     if (!isHome) {
@@ -128,8 +138,8 @@ export async function generateIndex(labelname?: 'homepage' | number) {
     await write(saveTo, rendered);
     console.log(logname, saveTo);
     // immediately returns
-    if (isHome && labelname == 'homepage') return rendered;
-    if (isSpecific && labelname === current_page) return rendered;
+    if (isHome && labelNameOrObj == 'homepage') return rendered;
+    if (isSpecific && labelNameOrObj === current_page) return rendered;
     /*
 
     // dump
@@ -151,6 +161,8 @@ export async function generateIndex(labelname?: 'homepage' | number) {
   }
 }
 
+gulp.task('generate:categories', async () => {});
+gulp.task('generate:tags', async () => {});
 gulp.task('generate:index', () => generateIndex());
 gulp.task(
   'generate:label',

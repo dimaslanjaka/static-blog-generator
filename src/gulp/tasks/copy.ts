@@ -1,18 +1,9 @@
-import { existsSync } from 'fs';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
-import { readdirSync } from '../../node/filemanager';
-import scheduler from '../../node/scheduler';
-import { replaceArr } from '../../node/string-utils';
 import { buildPost, parsePost } from '../../parser/post/parsePost';
-import config, {
-  cwd,
-  post_public_dir,
-  post_source_dir,
-  verbose
-} from '../../types/_config';
+import config, { post_public_dir, post_source_dir } from '../../types/_config';
 import { determineDirname } from '../utils';
 import './copy/assets';
 
@@ -71,16 +62,3 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
  * @see {@link copyPosts}
  */
 export const copy_posts = copyPosts;
-
-scheduler.add('indexing-posts', () => {
-  const logname = color.Fuchsia('[indexing]');
-  if (!existsSync(post_public_dir)) return;
-  if (config.verbose) console.log(logname, 'indexing folder', post_public_dir);
-  for (const filePath of readdirSync(post_public_dir)) {
-    if (!filePath.endsWith('.md')) continue;
-    if (verbose) {
-      console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
-    }
-    parsePost(filePath);
-  }
-});
