@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.shortcodeCodeblock = void 0;
 const tslib_1 = require("tslib");
 const axios_1 = tslib_1.__importDefault(require("axios"));
-const lodash_1 = require("lodash");
 const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
 const upath_1 = require("upath");
 const jsdom_1 = tslib_1.__importDefault(require("../node/jsdom"));
@@ -39,7 +38,7 @@ function shortcodeCodeblock(str) {
             }
             else {
                 const build = [];
-                const splitArgs = args.split(/\s/).map(lodash_1.trim);
+                const splitArgs = args.split(/\s/).map((s) => s.trim());
                 // get title codeblock
                 const title = typeof splitArgs[0] == 'string' && !splitArgs[0].startsWith('lang:')
                     ? splitArgs[0]
