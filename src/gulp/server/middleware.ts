@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import compress from 'compression';
 import spawn from 'cross-spawn';
 import { deepmerge } from 'deepmerge-ts';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import gulp, { TaskFunction } from 'gulp';
 import memoizee from 'memoizee';
 import { join, toUnix } from 'upath';
@@ -22,8 +22,6 @@ import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
 import { generateIndex } from '../tasks/generate/archives';
-import { generateCategories } from '../tasks/generate/categories';
-import { generateTags } from '../tasks/generate/tags';
 import './gen-middleware';
 
 let gulpIndicator = false;
@@ -153,7 +151,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
             }`
           );
 
-          if (labelname && typeof labelname == 'string') {
+          /*if (labelname && typeof labelname == 'string') {
             const result =
               (await generateTags(labelname, pagenum)) ||
               (await generateCategories(labelname, pagenum));
@@ -161,7 +159,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
             if (result) {
               return res.end(showPreview(result));
             }
-          }
+          }*/
         }
       }
     return next();

@@ -1,5 +1,6 @@
 import { join } from 'upath';
-import CachePost, {
+import {
+  CachePost,
   getAllPosts,
   getLatestPosts,
   getRandomPosts

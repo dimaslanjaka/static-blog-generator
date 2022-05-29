@@ -1,29 +1,23 @@
 import { join } from 'upath';
+import color from '../../../node/color';
 import { write } from '../../../node/filemanager';
-import { generateTags } from './tags';
+import { getChunkOf } from './tags';
 
 (async () => {
   const tagname = 'dummy';
+  const saveFolder = join(__dirname, 'tmp/tags');
 
-  const test = await generateTags();
-  write(join(__dirname, 'tmp/tags.json'), test);
-  /*if (test) write(tmp('tags/index.html'), test);
+  const test = await getChunkOf();
+  write(join(saveFolder, 'all.json'), test);
   console.log(
     color['Vivid Violet']('test result'),
-    typeof test == 'string' && test.length > 0
+    typeof test == 'string' && Object.keys(test).length > 0
   );
 
-  const test1 = await generateTags(tagname, 4);
-  if (test1) write(tmp(`tags/${tagname}-4.html`), test1);
-  console.log(
-    color['Vivid Violet']('test1 result'),
-    typeof test1 == 'string' && test1.length > 0
-  );
-
-  const test2 = await generateTags(tagname);
-  if (test2) write(tmp(`tags/${tagname}.html`), test2);
+  const test2 = await getChunkOf(tagname);
   console.log(
     color['Vivid Violet']('test2 result'),
-    typeof test2 == 'string' && test2.length > 0
-  );*/
+    typeof test2 == 'string' && Object.keys(test2).length > 0
+  );
+  write(join(saveFolder, `${tagname}.json`), test2);
 })();
