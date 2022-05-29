@@ -1,4 +1,4 @@
-declare const _default: {
+export declare const default_config: {
     title: string;
     subtitle: string;
     description: string;
@@ -68,5 +68,31 @@ declare const _default: {
     deploy: {};
     ignore: any[];
     meta_generator: boolean;
+    exclude: any[];
+    include: any[];
+    /**
+     * if set = true, otherwise undefined
+     */
+    verbose: boolean;
+    adsense: {
+        enable: boolean;
+        article_ads: string[];
+        multiplex_ads: string[];
+    };
+    firebase: {
+        apiKey: any;
+        authDomain: any;
+        projectId: any;
+        storageBucket: any;
+        messagingSenderId: any;
+        appId: any;
+        measurementId: any;
+    };
+    ngrok: {
+        token: any;
+    };
+    generator: {
+        cache: boolean;
+    };
 };
-export default _default;
+export default default_config;
