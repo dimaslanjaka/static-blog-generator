@@ -1,8 +1,7 @@
 title: Markdown Style test
 date: 2018-7-24 23:31:06
 tags:
-  - Foo
-  - Bar
+  - markdown
 ---
 
 This post is originated from [here](https://gist.github.com/apackeer/4159268) and is used for testing markdown style. This post contains nearly every markdown usage. Make sure all the markdown elements below show up correctly.
@@ -80,8 +79,8 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
    You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-   To have a line break without a paragraph, you will need to use two trailing spaces.  
-   Note that this line is separate, but within the same paragraph.  
+   To have a line break without a paragraph, you will need to use two trailing spaces.
+   Note that this line is separate, but within the same paragraph.
    (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * Unordered list can use asterisks
@@ -104,8 +103,8 @@ And more text.
 
    You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-   To have a line break without a paragraph, you will need to use two trailing spaces.  
-   Note that this line is separate, but within the same paragraph.  
+   To have a line break without a paragraph, you will need to use two trailing spaces.
+   Note that this line is separate, but within the same paragraph.
    (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
 * Unordered list can use asterisks
@@ -259,7 +258,7 @@ Colons can be used to align columns.
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned |  |
 | col 2 is      | centered      |    |
-| zebra stripes | are neat      |   
+| zebra stripes | are neat      |
 ```
 
 | Tables        | Are           | Cool  |

@@ -4,6 +4,9 @@ date: 2022-05-27
 updated: 2022-05-27
 description: codeblock shortcode usage
 webtitle: Static Blog Generator
+category:
+- guide
+- sample
 ---
 
 ## first parsing
