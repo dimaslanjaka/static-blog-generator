@@ -10,7 +10,6 @@
     "format": "prettier -w src/**/*.ts",
     "ci": "yarn install --immutable --immutable-cache --check-cache --frozen-lockfile --check-files"
   },
-  "reference": ["https://github.com/LionC/persistent-cache.git"],
   "files": [
     "packages",
     "dist",
