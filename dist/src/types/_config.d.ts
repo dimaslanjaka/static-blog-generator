@@ -22,30 +22,6 @@ export declare const cwd: (() => string) & memoizee.Memoized<() => string>;
 export { root };
 /** default project config */
 export declare const default_project_config: {
-    verbose: boolean;
-    env: string;
-    exclude: any[];
-    include: any[];
-    skip_render: any[];
-    ignore: any[];
-    adsense: {
-        article_ads: any[];
-    };
-    firebase: {
-        apiKey: any;
-        authDomain: any;
-        projectId: any;
-        storageBucket: any;
-        messagingSenderId: any;
-        appId: any;
-        measurementId: any;
-    };
-    ngrok: {
-        token: any;
-    };
-    generator: {
-        cache: boolean;
-    };
     title: string;
     subtitle: string;
     description: string;
@@ -67,6 +43,7 @@ export declare const default_project_config: {
     category_dir: string;
     code_dir: string;
     i18n_dir: string;
+    skip_render: any[];
     title_map: {};
     tag_map: {};
     category_map: {};
@@ -112,7 +89,31 @@ export declare const default_project_config: {
         cache: boolean;
     };
     deploy: {};
+    ignore: any[];
     meta_generator: boolean;
+    exclude: any[];
+    include: any[];
+    verbose: boolean;
+    adsense: {
+        enable: boolean;
+        article_ads: string[];
+        multiplex_ads: string[];
+    };
+    firebase: {
+        apiKey: any;
+        authDomain: any;
+        projectId: any;
+        storageBucket: any;
+        messagingSenderId: any;
+        appId: any;
+        measurementId: any;
+    };
+    ngrok: {
+        token: any;
+    };
+    generator: {
+        cache: boolean;
+    };
 };
 declare type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
@@ -122,7 +123,9 @@ interface PrivateProjectConfig {
     root: string;
     tmp: typeof tmp;
 }
-export declare type ProjectConfig = projectImportData & PrivateProjectConfig & typeof default_project_config;
+export declare type ProjectConfig = projectImportData & PrivateProjectConfig & typeof default_project_config & {
+    env: string;
+};
 declare const config: ProjectConfig;
 /**
  * is verbose activated?

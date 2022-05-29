@@ -173,8 +173,6 @@
     },
     "ignore": null,
     "meta_generator": true,
-    "verbose": false,
-    "env": "development",
     "exclude": [
         "**/**.code-workspace",
         "source/page/webassembly/**",
@@ -187,6 +185,7 @@
         "**/.git*"
     ],
     "include": null,
+    "verbose": false,
     "adsense": {
         "enable": true,
         "pub": "ca-pub-1165447249910969",
@@ -221,7 +220,7 @@
         "token": null
     },
     "generator": {
-        "cache": false
+        "cache": true
     },
     "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
     "favicon": "/favicon.ico",
