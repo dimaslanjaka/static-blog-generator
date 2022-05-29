@@ -5823,7 +5823,7 @@ he@1.2.0, he@^1.2.0:
     jsdom "^19.0.0"
     lodash "^4.17.21"
     moment-timezone "^0.5.34"
-    persistent-cache "git+https://github.com/LionC/persistent-cache.git#master"
+    persistent-cache "git+https://github.com/dimaslanjaka/persistent-cache#improve2"
     upath "^2.0.1"
     yaml "^2.1.0"
     yargs "^17.5.1"
@@ -5850,7 +5850,7 @@ highlight.js@^11.0.1, highlight.js@^11.5.1:
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
-  integrity sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
+  integrity sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==
   dependencies:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
@@ -9124,12 +9124,13 @@ performance-now@^2.1.0:
     rmdir "^1.2.0"
     upath "^2.0.1"
 
-"persistent-cache@git+https://github.com/LionC/persistent-cache.git#master":
+"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache#improve2":
   version "1.1.2"
-  resolved "git+https://github.com/LionC/persistent-cache.git#cb6218d49917a509b1c7af803ae61c12ed685228"
+  resolved "git+https://github.com/dimaslanjaka/persistent-cache#583c4bfe871a593f90a83419ff1ea6794d857fb2"
   dependencies:
     mkdirp-no-bin "^0.5.1"
     rmdir "^1.2.0"
+    upath "^2.0.1"
 
 pg-connection-string@2.5.0:
   version "2.5.0"
@@ -10031,13 +10032,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-ec1c621b-dadb-41be-be80-b240fc96ed4c-1653738125965/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-513431c9-bbd3-40fa-affb-75933950c402-1653823793978/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-e4628c26-1efd-42cb-b175-f568e54c3a7f-1653738125960/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-e4628c26-1efd-42cb-b175-f568e54c3a7f-1653738125960/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-9689559f-0171-4a78-a617-d1b65a39f381-1653823793972/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-9689559f-0171-4a78-a617-d1b65a39f381-1653823793972/node_modules/sbg-themes/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"

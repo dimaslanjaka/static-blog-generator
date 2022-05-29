@@ -1,11 +1,19 @@
 {
   "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "sourceRoot": "./",
+    "rootDir": "./",
+    "allowJs": true,
+    "outDir": "./build"
+  },
   "exclude": [
     "**/node_modules/**",
     "**/tests/**"
   ],
   "include": [
     "./src/**/*",
+    "./build.ts",
+    "./gulpfile.ts",
     "packages/hexo-post-parser/src/import-post.ts"
   ],
   "ts-node": {

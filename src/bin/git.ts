@@ -18,19 +18,29 @@ export function git(options: null | SpawnOptions = {}, ...args: string[]) {
           stdio: 'inherit'
         };
       const stdouts: string[] = [];
+      const stderrs: string[] = [];
       const child = spawn('git', args, options);
       // use event hooks to provide a callback to execute when data are available:
       if (child.stdout !== null && child.stdout !== undefined)
         child.stdout.on('data', function (data) {
-          stdouts.push(data.toString());
+          stdouts.push(data.toString().trim());
+        });
+      if (child.stderr !== null && child.stderr !== undefined)
+        child.stderr.on('data', function (data) {
+          stderrs.push(data.toString().trim());
         });
       child.on('close', function (code) {
         // Should probably be 'exit', not 'close'
         // *** Process completed
         return resolve({
           code: code,
-          stdout: child.stdout || stdouts,
-          stderr: child.stderr
+          stdout: stdouts.length > 0 ? stdouts : child.stdout,
+          stderr:
+            stderrs.length > 0
+              ? stderrs
+              : stdouts.length === 0
+              ? child.stderr
+              : null
         });
       });
       child.on('error', function (err) {
@@ -40,3 +50,5 @@ export function git(options: null | SpawnOptions = {}, ...args: string[]) {
     }
   );
 }
+
+export default git;
