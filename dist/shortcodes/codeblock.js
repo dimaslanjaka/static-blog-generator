@@ -4,8 +4,8 @@ exports.shortcodeCodeblock = void 0;
 const tslib_1 = require("tslib");
 const axios_1 = tslib_1.__importDefault(require("axios"));
 const lodash_1 = require("lodash");
-const upath_1 = require("upath");
 const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
+const upath_1 = require("upath");
 const jsdom_1 = tslib_1.__importDefault(require("../node/jsdom"));
 const md5_file_1 = require("../node/md5-file");
 const utils_1 = require("../node/utils");
@@ -98,10 +98,13 @@ function shortcodeCodeblock(str) {
                 // get language type codeblock
                 const langs = splitArgs
                     .filter((s) => {
-                    return s.startsWith('lang:');
+                    if (typeof s == 'string')
+                        return s.startsWith('lang:');
+                    return false;
                 })
                     .map((s) => {
-                    return s.split(':')[1];
+                    if (typeof s == 'string')
+                        return s.split(':')[1];
                 });
                 let codeblockBuild = '';
                 if ((typeof title == 'string' && title.length > 0) ||
