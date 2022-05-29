@@ -35,6 +35,8 @@ jobs:
       
     - name: deploy
       run: |
+        git config user.email "dimaslanjaka@gmail.com"
+        git config user.name "dimaslanjaka"
         git add dist
         git commit -m "update $(date)"
         git push
