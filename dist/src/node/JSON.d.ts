@@ -5,4 +5,4 @@
  * @param data
  * @returns
  */
-export declare function json_encode(data: Record<string, unknown>, indent?: number): string;
+export declare function json_encode<T extends Record<string, unknown> | any[]>(data: T, indent?: number): string;
