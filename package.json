@@ -39,8 +39,8 @@
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --write --parser html -w ./themes/**/*.ejs",
     "ci": "run-s ci:**",
-    "ci:self": "yarn install --check-cache --check-files --ignore-engines --ignore-platform",
     "ci:submodule": "git submodule foreach yarn install --check-files",
+    "ci:self": "yarn install --check-cache --check-files --ignore-engines --ignore-platform",
     "rebuild": "yarn rebuild --ignore-engines --ignore-platform"
   },
   "repository": {
@@ -80,7 +80,7 @@
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
     "google-news-sitemap": "file:./packages/google-news-sitemap",
-    "hexo-post-parser": "file:./packages/hexo-post-parser",
+    "hexo-post-parser": "git+https://github.com/dimaslanjaka/hexo-post-parser.git#main",
     "hexo-util": "^2.6.1",
     "knex": "^2.0.0",
     "lodash": "^4.17.21",
@@ -89,7 +89,7 @@
     "moment-timezone": "^0.5.34",
     "node-sass": "^7.0.1",
     "nunjucks": "^3.2.3",
-    "persistent-cache": "file:./packages/hexo-post-parser/packages/persistent-cache",
+    "persistent-cache": "git+https://github.com/dimaslanjaka/persistent-cache.git#improve2",
     "safelinkify": "file:./packages/safelink",
     "sbg-themes": "file:./themes",
     "sqlite3": "^5.0.8",

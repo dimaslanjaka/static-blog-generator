@@ -5813,8 +5813,9 @@ he@1.2.0, he@^1.2.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-"hexo-post-parser@file:./packages/hexo-post-parser":
+"hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#35dc1e351cf8f7e53f40cc6d0892ff28c0bb559a"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -9117,16 +9118,17 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-"persistent-cache@file:./packages/hexo-post-parser/packages/persistent-cache":
+"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache#improve2":
   version "1.1.2"
+  resolved "git+https://github.com/dimaslanjaka/persistent-cache#583c4bfe871a593f90a83419ff1ea6794d857fb2"
   dependencies:
     mkdirp-no-bin "^0.5.1"
     rmdir "^1.2.0"
     upath "^2.0.1"
 
-"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache#improve2":
+"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache.git#improve2":
   version "1.1.2"
-  resolved "git+https://github.com/dimaslanjaka/persistent-cache#583c4bfe871a593f90a83419ff1ea6794d857fb2"
+  resolved "git+https://github.com/dimaslanjaka/persistent-cache.git#583c4bfe871a593f90a83419ff1ea6794d857fb2"
   dependencies:
     mkdirp-no-bin "^0.5.1"
     rmdir "^1.2.0"
@@ -10032,13 +10034,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-513431c9-bbd3-40fa-affb-75933950c402-1653823793978/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-789bba0f-c59c-4428-8866-77a181e7075d-1653828044610/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-9689559f-0171-4a78-a617-d1b65a39f381-1653823793972/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-9689559f-0171-4a78-a617-d1b65a39f381-1653823793972/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-97a852ca-43d1-4df5-b2ac-7bef1f98519f-1653828044598/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-97a852ca-43d1-4df5-b2ac-7bef1f98519f-1653828044598/node_modules/sbg-themes/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"
