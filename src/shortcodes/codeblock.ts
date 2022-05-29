@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { trim } from 'lodash';
-import { join } from 'upath';
 import cache from 'persistent-cache';
+import { join } from 'upath';
 import jdom from '../node/jsdom';
 import { md5 } from '../node/md5-file';
 import { replaceArr } from '../node/utils';
@@ -41,7 +40,7 @@ export async function shortcodeCodeblock(str: string) {
       str = str.replace(codeblock, plain);
     } else {
       const build = [];
-      const splitArgs = args.split(/\s/).map(trim);
+      const splitArgs = args.split(/\s/).map((s) => s.trim());
       // get title codeblock
       const title =
         typeof splitArgs[0] == 'string' && !splitArgs[0].startsWith('lang:')
@@ -104,10 +103,11 @@ export async function shortcodeCodeblock(str: string) {
       // get language type codeblock
       const langs = splitArgs
         .filter((s) => {
-          return s.startsWith('lang:');
+          if (typeof s == 'string') return s.startsWith('lang:');
+          return false;
         })
         .map((s) => {
-          return s.split(':')[1];
+          if (typeof s == 'string') return s.split(':')[1];
         });
       let codeblockBuild = '';
       if (
