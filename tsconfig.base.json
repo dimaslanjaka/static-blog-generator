@@ -5,7 +5,7 @@
       "./packages"
     ],
     "sourceRoot": "./src/",
-    "outDir": "./build",
+    "outDir": "./dist",
     "module": "CommonJS",
     "target": "ES5",
     "moduleResolution": "Node",
