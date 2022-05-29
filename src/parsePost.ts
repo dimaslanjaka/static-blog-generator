@@ -2,7 +2,7 @@ import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
 import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
-import cache from '../packages/persistent-cache';
+import cache from 'persistent-cache';
 import { dateMapper, moment } from './dateMapper';
 import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
