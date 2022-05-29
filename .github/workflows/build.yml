@@ -34,7 +34,7 @@ jobs:
         yarn install --check-files
         yarn add git+https://github.com/dimaslanjaka/persistent-cache.git#improve2
         yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main
-        yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git
+        yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git#main
 
     - name: Build
       run: yarn build
