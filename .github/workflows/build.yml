@@ -5,9 +5,9 @@ on:
     branches: [ main ]
 
 # cancel previous workflows, run only one workflow
-concurrency:
-  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+#concurrency:
+##group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+##cancel-in-progress: true
 
 jobs:
   build:
