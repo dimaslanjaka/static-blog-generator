@@ -1,19 +1,6 @@
 {
     "amp": false,
     "disqus_shortname": "dimaslanjaka",
-    "navbar": {
-        "about": "/p/about.html"
-    },
-    "nav": [
-        {
-            "url": "/page/about-me.html",
-            "title": "About Me"
-        },
-        {
-            "url": "/p/search.html",
-            "title": "Search Engine"
-        }
-    ],
     "featured": [
         {
             "url": "https://www.webmanajemen.com/The%20Legend%20Of%20Neverland/Quiz.html",
@@ -33,5 +20,18 @@
             "title": "Chimeraland Pets Information",
             "img": "https://www.webmanajemen.com/Chimeraland/Pets/cover.jpg"
         }
-    ]
+    ],
+    "nav": [
+        {
+            "url": "/page/about-me.html",
+            "title": "About Me"
+        },
+        {
+            "url": "/p/search.html",
+            "title": "Search Engine"
+        }
+    ],
+    "navbar": {
+        "about": "/p/about.html"
+    }
 }
