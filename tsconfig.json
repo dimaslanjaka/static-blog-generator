@@ -4,7 +4,8 @@
     "sourceRoot": "./",
     "rootDir": "./",
     "allowJs": true,
-    "outDir": "./build"
+    "outDir": "./build",
+    "resolveJsonModule": true
   },
   "exclude": [
     "**/node_modules/**",
