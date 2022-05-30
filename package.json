@@ -2,7 +2,7 @@
   "name": "hexo-post-parser",
   "version": "1.1.1",
   "description": "Parse Hexo Post To Object",
-  "uuid": "d5854145435821de9213287be80153ab",
+  "uuid": "13940e79b617e53b32b0d701d64a4eb6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
