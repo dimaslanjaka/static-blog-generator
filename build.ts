@@ -8,7 +8,7 @@ import { json_encode } from './src/node/JSON';
 
 if (!process.env['GITHUB_WORKFLOW']) {
   const uuid = randomUUID();
-  pkg.version = pkg.version + '-beta-' + uuid;
+  pkg.version = pkg.version.split('-')[0] + '-beta-' + uuid;
   writeFile(join(__dirname, '.guid'), uuid);
   writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2));
   // commit uuid
