@@ -7,7 +7,7 @@ import { join, toUnix } from 'upath';
  * @param args
  * @returns
  */
-export function git(options: null | SpawnOptions = {}, ...args: string[]) {
+export function git(options: null | SpawnOptions = null, ...args: string[]) {
   return new Promise(
     (
       resolve: (args: {
@@ -56,8 +56,8 @@ export function git(options: null | SpawnOptions = {}, ...args: string[]) {
   );
 }
 
-export const getLatestCommitHash = () =>
-  git(
+export const getLatestCommitHash = async () => {
+  const res = await git(
     {
       cwd: join(__dirname, '../../')
     },
@@ -65,8 +65,17 @@ export const getLatestCommitHash = () =>
     'rev-parse',
     '--short',
     'HEAD'
-  ).then((res) => {
-    return res[0] as string;
-  });
+  );
+  return res.stdout[0];
+};
+
+export async function gitAddAndCommit(
+  file: string,
+  msg: string,
+  options: null | SpawnOptions = null
+) {
+  await git(options, 'add', file);
+  return await git(options, 'commit', '-m', msg);
+}
 
 export default git;
