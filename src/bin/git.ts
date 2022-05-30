@@ -17,7 +17,7 @@ export function git(options: null | SpawnOptions = {}, ...args: string[]) {
       }) => any,
       reject: (args: { args: string[]; err: Error }) => any
     ) => {
-      if (typeof options !== 'object' || options === null)
+      if (options === null)
         options = {
           cwd: toUnix(__dirname),
           stdio: 'inherit'

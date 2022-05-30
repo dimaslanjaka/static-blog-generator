@@ -51,3 +51,13 @@ gulp.task(
 
 // DEFAULT TASK
 gulp.task('default', gulp.series('copy', 'generate'));
+
+export {
+  copyPosts,
+  copyAssets,
+  gulpInlineStyle,
+  clean_db,
+  clean_posts,
+  clean_public,
+  clean_tmp
+};
