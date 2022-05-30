@@ -3,16 +3,14 @@ import { cwd } from 'process';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import { dbFolder } from '../../node/cache';
-import config, { root, tmp } from '../../types/_config';
+import { post_generated_dir, post_public_dir, tmp } from '../../types/_config';
 
 /** clean generated folder */
 export const clean_public = (done?: TaskCallback) =>
-  rm(join(root, config.public_dir), { recursive: true }, () => done());
+  rm(post_generated_dir, { recursive: true }, () => done());
 /** clean posts from config.source_dir */
 export const clean_posts = (done?: TaskCallback) =>
-  rm(join(root, config.source_dir, '_posts'), { recursive: true }, () =>
-    done()
-  );
+  rm(post_public_dir, { recursive: true }, () => done());
 /** clean temp folder */
 export const clean_tmp = (done?: TaskCallback) => {
   rm(tmp(), { recursive: true }, () => {
