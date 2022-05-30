@@ -1,6 +1,6 @@
 {
   "name": "static-blog-generator",
-  "version": "2.0.51-beta-dc3cf14f-8923-4fa8-92ba-d1f948a317f6",
+  "version": "2.0.51-beta-41d0858630",
   "description": "Static Blog Generator",
   "main": "./dist/src/generator.js",
   "types": "./dist/src/generator.d.ts",
