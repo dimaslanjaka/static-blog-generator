@@ -5816,7 +5816,7 @@ he@1.2.0, he@^1.2.0:
 
 "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#7e1ebedf38e93123867544f7f20c01ca437bf317"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#5b706ce68bf050e641bab087d513bf00f3ea569f"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -7903,7 +7903,7 @@ minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
 minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
-  integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
+  integrity sha512-JIYlbt6g8i5jKfJ3xz7rF0LXmv2TkDxBLUkiBeZ7bAx4GnnNMr8xFpGnOxn6GhTEHx3SjRrZEoU+j04prX1ktg==
 
 "minimatch@2 || 3", minimatch@^3.0.2, minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
@@ -8024,7 +8024,7 @@ mixin-deep@^1.2.0:
 mkdirp-no-bin@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp-no-bin/-/mkdirp-no-bin-0.5.1.tgz#34c623196d36fb2ee2e561ab607305632e00619f"
-  integrity sha1-NMYjGW02+y7i5WGrYHMFYy4AYZ8=
+  integrity sha512-TXYKTFeoFPAhZZydgbBFE8iFnpDuS41hxwjG+XaQlz1YkzOjK/OfrxEsab8c3J0MLn3eZ/GPlYya1kdYex8Ing==
 
 mkdirp@^0.5.0, mkdirp@^0.5.1:
   version "0.5.6"
@@ -10037,13 +10037,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-ead38bdc-92a3-4216-8ad9-17547cdf32e5-1653896126094/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-cb787c0b-6e93-427a-9756-ea2446c26776-1653951783606/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-05058bdc-09a9-4315-8650-3e0b05c26395-1653896126089/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-05058bdc-09a9-4315-8650-3e0b05c26395-1653896126089/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-ac193a8e-94af-4c92-85b6-e7e008289c34-1653951783582/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-ac193a8e-94af-4c92-85b6-e7e008289c34-1653951783582/node_modules/sbg-themes/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"
