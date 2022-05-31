@@ -138,12 +138,12 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
 
         if (pathname.includes(path)) {
           //console.log(path, pathname);
-          const generatedTo = join(
+          /*const generatedTo = join(
             cwd(),
             config.public_dir,
             decodeURIComponent(filterPathname),
             'index.html'
-          );
+          );*/
           //console.log('[generate][label]', replace_pathname, labelname, generatedTo);
           console.log(
             `${color['Violet Red']('[generate][label]')} ${labelname} ${
@@ -339,10 +339,11 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
   }
 ];
 
-if (config.server.compress) {
-  // push compression to first index
-  ServerMiddleWare.unshift.apply(compress());
-}
+if ('server' in config && 'compress' in config.server)
+  if (config['server']['compress']) {
+    // push compression to first index
+    ServerMiddleWare.unshift.apply(compress());
+  }
 
 export default ServerMiddleWare;
 export { ServerMiddleWare };
