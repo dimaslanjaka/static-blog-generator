@@ -15,7 +15,7 @@ export {
 } from './gulp/tasks/clean';
 export { copyAssets } from './gulp/tasks/copy/assets';
 export { copyPosts } from './gulp/tasks/copy/posts';
-export { dumpEnv } from './gulp/tasks/dump';
+export { dump } from './gulp/tasks/dump';
 export {
   buildPost,
   DeepPartial,
