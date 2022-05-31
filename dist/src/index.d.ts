@@ -7,5 +7,6 @@ import './gulp/tasks/generate';
 export { clean_db, clean_posts, clean_public, clean_tmp } from './gulp/tasks/clean';
 export { copyAssets } from './gulp/tasks/copy/assets';
 export { copyPosts } from './gulp/tasks/copy/posts';
+export { parsePost } from './parser/post/parsePost';
 declare const _default: {};
 export default _default;
