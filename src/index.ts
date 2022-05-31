@@ -68,5 +68,7 @@ export {
   clean_public,
   clean_tmp
 } from './gulp/tasks/clean';
+export { copyPosts } from './gulp/tasks/copy';
+export { copyAssets } from './gulp/tasks/copy/assets';
 
 export default properties;
