@@ -45,7 +45,7 @@ jobs:
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
         yarn cache clean
-        yarn install --immutable
+        yarn install --frozen-lockfile # optional, --immutable
 
     - name: fix module resolutions
       if: ${{ false }}
