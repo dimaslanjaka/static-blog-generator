@@ -55,11 +55,9 @@ jobs:
         echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         echo "::set-output name=hash::$(git rev-parse --short HEAD)"
 
-    - name: Install dependencies
-      run: |
-        npm i -g gulp-cli typescript npm ts-node npm yarn
-        npm install
-        yarn install --frozen-lockfile # optional, --immutable
+    - run: npm i -g gulp-cli typescript npm ts-node npm yarn
+    - run: npm install
+    - run: yarn install --frozen-lockfile # optional, --immutable
 
     - name: fix module resolutions
       if: ${{ false }}
