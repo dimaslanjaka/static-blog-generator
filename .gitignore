@@ -9,6 +9,7 @@ firebase.js
 *.private.*
 src/**/*.backup.ts
 /manage-repository
+*-backup
 
 # downloaded library
 .DS_Store
