@@ -12,6 +12,6 @@ declare const properties: {
     clean_tmp: (done?: import("undertaker").TaskCallback) => void;
 };
 export { clean_db, clean_posts, clean_public, clean_tmp } from './gulp/tasks/clean';
-export { copyPosts } from './gulp/tasks/copy';
 export { copyAssets } from './gulp/tasks/copy/assets';
+export { copyPosts } from './gulp/tasks/copy/posts';
 export default properties;
