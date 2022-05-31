@@ -5824,7 +5824,7 @@ he@1.2.0, he@^1.2.0:
 
 "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#6d8a13729e40422a0e9e8734cba8ea373731a495"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#95145d07298ad640fd56aa738ba13dc74bf690e2"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
