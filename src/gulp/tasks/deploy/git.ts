@@ -71,9 +71,10 @@ export const deployerGit = async (done?: TaskCallback) => {
       configDeploy
     );
     await git('init');
-    if (configDeploy.name) await git('config', 'user.name', configDeploy.name);
-    if (configDeploy.email)
-      await git('config', 'user.email', configDeploy.email);
+    if (configDeploy['name'])
+      await git('config', 'user.name', configDeploy['name']);
+    if (configDeploy['email'])
+      await git('config', 'user.email', configDeploy['email']);
   }
 
   /*

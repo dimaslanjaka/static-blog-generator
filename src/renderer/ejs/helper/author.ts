@@ -2,6 +2,12 @@
 import { postMap } from '../../../parser/post/parsePost';
 import config from '../../../types/_config';
 
+export interface AuthorObject extends Object {
+  name?: string;
+  url?: string;
+  email?: string;
+}
+
 /**
  * get author name
  * @param page
