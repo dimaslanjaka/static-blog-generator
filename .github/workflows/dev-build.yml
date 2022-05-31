@@ -46,10 +46,6 @@ jobs:
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
         yarn install --check-files
-        yarn add git+https://github.com/dimaslanjaka/persistent-cache.git#improve2
-        yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main
-        yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git#main
-        yarn add git+https://github.com/dimaslanjaka/safelink.git#main
         git add package.json
         git add yarn.lock
         cd tests && yarn install --check-files && git add yarn.lock
