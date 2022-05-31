@@ -1,3 +1,4 @@
+import { existsSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'upath';
 import { localServer } from './gulp/server';
@@ -14,6 +15,20 @@ import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
 
+// generate empty config if not exists
+[
+  join(__dirname, 'types/_config_project.json'),
+  join(__dirname, 'types/_config_theme.json'),
+  join(__dirname, 'types/_config_hashes.json')
+].forEach((path) => {
+  if (existsSync(path)) {
+    writeFileSync(path, '{}');
+  }
+});
+
+// declare require types
+declare function require<T>(name: string): T;
+
 // register scheduler
 new scheduler();
 
@@ -25,7 +40,6 @@ process.on('uncaughtException', function (err) {
 });
 
 // DEVELOPMENT TASKS
-declare function require<T>(name: string): T;
 require(join(__dirname, 'gulp/tasks/dump'));
 
 // COPY TASKS
