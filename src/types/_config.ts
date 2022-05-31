@@ -22,15 +22,11 @@ export const argv = yargs(process.argv.slice(2)).argv;
 /**
  * process cwd unix style
  */
-let root = toUnix(process.cwd());
+const root = toUnix(process.cwd());
 export const cwd = memoizee(() => toUnix(process.cwd()));
-let file = join(root, '_config.yml');
-if (!existsSync(file)) {
-  root = join(__dirname, '../..');
-  file = join(root, '_config.yml');
-}
+const file = join(root, '_config.yml');
 export { root };
-const readConfig = readFileSync(file, 'utf-8');
+const readConfig = existsSync(file) ? readFileSync(file, 'utf-8') : '';
 /** default project config */
 export const default_project_config = default_config;
 
