@@ -71,8 +71,11 @@ jobs:
         yarn run build
         git push
 
-    - name: Test folder
-      run: yarn run test:folder
+    - name: Test local
+      run: yarn run test:local
+  
+    - name: Test git
+      run: yarn run test:git
 
     - name: Test mocha
       run: yarn run test:mocha
