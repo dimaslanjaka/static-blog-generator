@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "skeljs": "file:./libs/skeljs"
+    "skeljs": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
