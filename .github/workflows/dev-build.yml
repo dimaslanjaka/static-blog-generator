@@ -62,8 +62,11 @@ jobs:
         yarn run build
         git push
 
-    - name: Test
-      run: yarn run test
+    - name: Test folder
+      run: yarn run test:folder
+
+    - name: Test mocha
+      run: yarn run test:mocha
 
 #    - name: Re-deploy 🚀
 #      uses: JamesIves/github-pages-deploy-action@v4.3.0
