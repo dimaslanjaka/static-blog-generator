@@ -56,7 +56,7 @@ jobs:
         echo "::set-output name=hash::$(git rev-parse --short HEAD)"
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: yarn install --frozen-lockfile # optional, --immutable
+    - run: yarn install --immutable
 
     - name: fix module resolutions
       if: ${{ false }}
