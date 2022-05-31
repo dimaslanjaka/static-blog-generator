@@ -79,7 +79,7 @@ jobs:
 
     - name: Commit & Push
       run: |
-        git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
+        git commit -m "build from ${{ steps.vars.outputs.hash }}"
         git push
 
 #    - name: Re-deploy 🚀
