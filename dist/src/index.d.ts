@@ -1,4 +1,5 @@
 import './a_folder_solver';
+import './gulp/tasks/clean';
 import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
