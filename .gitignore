@@ -11,6 +11,10 @@ src/**/*.backup.ts
 /manage-repository
 *-backup
 
+# symlink as dependency
+/.bin
+/.yarn-metadata.json
+
 # downloaded library
 .DS_Store
 Thumbs.db
