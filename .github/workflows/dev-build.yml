@@ -55,11 +55,11 @@ jobs:
     - name: Build
       continue-on-error: true
       run: |
-        yarn build
+        yarn run build
         git push
 
     - name: Test
-      run: yarn test
+      run: yarn run test
 
 #    - name: Re-deploy 🚀
 #      uses: JamesIves/github-pages-deploy-action@v4.3.0
