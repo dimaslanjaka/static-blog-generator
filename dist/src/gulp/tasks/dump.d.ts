@@ -1,1 +1,1 @@
-export declare const dumpEnv: () => Promise<void>;
+export declare const dump: () => Promise<void>;
