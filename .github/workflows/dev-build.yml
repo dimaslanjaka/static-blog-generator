@@ -74,12 +74,11 @@ jobs:
         yarn run build
         git push
 
-    - name: Test local
-      run: yarn run test:local
+    - name: Test JS
+      run: yarn run test:js
 
-    - name: Test git
-      if: ${{ false }}
-      run: yarn run test:git
+    - name: Test TS
+      run: yarn run test:ts
 
     - name: Test mocha
       run: yarn run test:mocha
