@@ -1,8 +1,28 @@
 {
+<<<<<<< HEAD
     "title": "Hexo",
     "subtitle": "A fast, simple & powerful blog framework powered by Node.js.",
     "description": "Hexo is a fast, simple & powerful blog framework powered by Node.js.",
     "author": "Hexo",
+=======
+    "title": "Website Manajemen Indonesia",
+    "subtitle": "",
+    "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others. External source WMI Github Laboratory",
+    "author": {
+        "name": "Dimas Lanjaka",
+        "link": "https://www.webmanajemen.com/",
+        "email": "dimaslanjaka@gmail.com",
+        "image": {
+            "url": "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg",
+            "width": 1944,
+            "height": 2592
+        },
+        "social_links": {
+            "github": "https://github.com/dimaslanjaka",
+            "youtube": "https://youtube.com/p/L3n4r0x"
+        }
+    },
+>>>>>>> 4a17402734e5cfc46b41f9ecd0acee43b179f765
     "language": "en",
     "timezone": "UTC",
     "url": "https://hexo.io",
@@ -80,9 +100,49 @@
             "index_name": "hexo_zh-cn"
         }
     },
+<<<<<<< HEAD
     "twitter": "hexojs",
     "github": "hexojs/hexo",
     "generator": {
         "cache": true
+=======
+    "sitemap": {
+        "html": true,
+        "text": true,
+        "xml": true,
+        "news": true,
+        "exclude": [
+            "source/ads",
+            "**/*.min.html"
+        ]
+    },
+    "adsense": {
+        "enable": true,
+        "pub": "ca-pub-1165447249910969",
+        "article_ads": [
+            "source/ads/in_article.html",
+            "source/ads/in_article2.html"
+        ],
+        "multiplex_ads": [
+            "source/ads/multiplex.html"
+        ],
+        "display_ads": [
+            "source/ads/display.html"
+        ],
+        "field": "site",
+        "adblock": false,
+        "type": "amp",
+        "exclude": [
+            "*.min.html",
+            "**/exclude/**/*"
+        ]
+    },
+    "analytics": {
+        "enable": true,
+        "tagmanager": "GTM-NJNNXSR",
+        "GA4": "G-BG75CLNJZ1",
+        "GA3": "UA-106238155-1",
+        "cloudflare": "2157c0f3b9e74a92badffe39156166b9"
+>>>>>>> 4a17402734e5cfc46b41f9ecd0acee43b179f765
     }
 }
