@@ -14,7 +14,11 @@ import config, { root } from '../../types/_config';
 
 const safelink = new safelinkify.safelink({
   redirect: [
-    'external_link' in config ? config.external_link.safelink.redirect : null
+    'external_link' in config &&
+    'safelink' in config.external_link &&
+    'redirect' in config.external_link.safelink
+      ? config.external_link.safelink.redirect
+      : null
   ],
   password:
     'external_link' in config ? config.external_link.safelink.password : null,
