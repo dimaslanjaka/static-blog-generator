@@ -33,9 +33,12 @@ jobs:
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
 
-    - name: Get Hash
-      id: hash
-      run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_HASH
+    - name: Declare some variables
+      id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
 
     - name: Install dependencies
       if: always() # make it not error
@@ -49,9 +52,9 @@ jobs:
         yarn remove gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         yarn add gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         git add package.json
-        echo "${{ env.hash }}" > .guid
+        echo "${{ steps.vars.outputs.hash }}" > .guid
         git add .guid
-        git commit -m "fix module resolutions ${{ env.hash }}"
+        git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
         git push
 
     - name: Build
@@ -61,7 +64,7 @@ jobs:
       if: always()
       run: |
         git add dist
-        git commit -m "build ${{ github.ref }} $(date)"
+        git commit -m "build ${{ steps.vars.outputs.hash }} $(date)"
         git push
 
 #    - name: Re-deploy 🚀
