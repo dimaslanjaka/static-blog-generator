@@ -70,7 +70,8 @@
   "files.eol": "\n",
   "files.exclude": {
     "**/node_modules": true,
-    "**/vendor": true
+    "**/vendor": true,
+    "**/tmp/yarn": true
   },
   "code-runner.executorMap": {
     "javascript": "node",
