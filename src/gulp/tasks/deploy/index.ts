@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import config from '../../../types/_config';
 import './firebase';
-import deployFirebase from './firebase';
+import { deployFirebase } from './firebase';
 import { deployerGit } from './git';
 
 gulp.task('deploy-git', deployerGit);
