@@ -7,6 +7,7 @@ import pkg from './package.json';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/bin/git';
 import { json_encode } from './src/node/JSON';
 
+const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 if (!process.env['GITHUB_WORKFLOW']) {
   askCommitMessage('commit messages:\t').then(async (msg) => {
     await gitAddAndCommit('src', msg, { cwd: __dirname });
@@ -45,7 +46,7 @@ async function build() {
   child.once('close', async () => {
     await git({ cwd: __dirname }, 'add', 'dist');
     const id = await getLatestCommitHash();
-    const date = moment.tz('Asia/Jakarta').format('z');
+
     return await git({ cwd: __dirname }, 'commit', '-m', `build ${id} ${date}`);
   });
   return child;
