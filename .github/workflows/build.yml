@@ -27,6 +27,11 @@ jobs:
       with:
         node-version: '16'
         cache: 'yarn'
+        
+    - name: Resolve git user
+      run: |
+        git config user.email "dimaslanjaka@gmail.com"
+        git config user.name "dimaslanjaka"
 
     - name: Install dependencies
       run: |
@@ -46,8 +51,6 @@ jobs:
 
     - name: deploy
       run: |
-        git config user.email "dimaslanjaka@gmail.com"
-        git config user.name "dimaslanjaka"
         git add dist
         git commit -m "build $(date)"
         git push
