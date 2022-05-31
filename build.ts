@@ -23,18 +23,22 @@ import { json_encode } from './src/node/JSON';
 /**
  * main build function
  */
-function build() {
+async function build() {
   fse.emptyDirSync(join(__dirname, 'dist'));
   const child = spawn('tsc', ['-p', 'tsconfig.build.json'], {
     cwd: toUnix(__dirname),
     stdio: 'inherit',
     shell: true
   });
-  child.once('close', () => {
-    git({ cwd: __dirname }, 'add', 'dist').then(async () => {
-      const comitHash = await getLatestCommitHash();
-      git(null, 'commit', '-m', `[${comitHash}] build ${new Date()}`);
-    });
+  child.once('close', async () => {
+    await git({ cwd: __dirname }, 'add', 'dist');
+    const id = await getLatestCommitHash();
+    return await git(
+      { cwd: __dirname },
+      'commit',
+      '-m',
+      `[${id}] build ${new Date()}`
+    );
   });
   return child;
 }
