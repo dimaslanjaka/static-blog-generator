@@ -46,6 +46,10 @@ jobs:
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
         yarn install --check-files --update-checksums
+
+    - name: fix module resolutions
+      if: ${{ false }}
+      run: |
         git add package.json
         git add yarn.lock
         cd tests && yarn install --check-files && git add yarn.lock
