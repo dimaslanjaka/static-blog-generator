@@ -5,6 +5,7 @@ import { existsSync } from 'fs';
 import gulp from 'gulp';
 import downloadImage from '../../curl/download-image';
 import { join, read, write } from '../../node/filemanager';
+import { AuthorObject } from '../../renderer/ejs/helper/author';
 import config, { tmp } from '../../types/_config';
 
 const homepage = new URL(config.url);
@@ -26,7 +27,7 @@ gulp.task('import', async () => {
           if (rss.channel) {
             const channel = rss.channel;
             /** global author */
-            const author: Partial<typeof config.author> = {};
+            const author: Partial<AuthorObject> = {};
             const wpAuthor = channel['wp:author'];
             delete channel['wp:term'];
             delete channel['wp:tag'];
