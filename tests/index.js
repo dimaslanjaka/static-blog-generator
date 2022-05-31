@@ -1,4 +1,5 @@
 process.cwd = () => __dirname;
+process.env['NODE_ENV'] = 'development';
 
 const sbg = require('static-blog-generator');
 
