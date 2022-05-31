@@ -10036,13 +10036,13 @@ saxes@^5.0.1:
 
 "sbg-theme-bootstrap@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev#e3bf7b34cdc2826b25e2b47ea122ac6e60a6f4b4"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev#678234aaa19a4a8b0f4ed188dcc5f5fe90d48f9f"
 
 "sbg-theme-iridium@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev#038e7cc9c5f0b8d877515480ccaf5491e5cecad6"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev#5896b367ff28320a0c48be1114165ebe35f03b7d"
   dependencies:
-    skeljs "file:../../../.cache/yarn/v6/.tmp/944e388a19ca11460f24066a2c19a583/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/944e388a19ca11460f24066a2c19a583/libs/skeljs"
 
 "sbg-themes@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev":
   version "1.0.0"
@@ -10287,7 +10287,7 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-"skeljs@file:../../../.cache/yarn/v6/.tmp/944e388a19ca11460f24066a2c19a583/libs/skeljs":
+"skeljs@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/944e388a19ca11460f24066a2c19a583/libs/skeljs":
   version "3.0.2"
 
 slash@^3.0.0:
