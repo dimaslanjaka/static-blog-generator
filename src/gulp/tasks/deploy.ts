@@ -4,4 +4,6 @@ import './deploy/firebase';
 import { deployerGit } from './deploy/git';
 
 gulp.task('deploy-git', deployerGit);
-gulp.task('deploy', gulp.series('deploy-' + config.deploy.type));
+if ('deploy' in config && 'type' in config.deploy) {
+  gulp.task('deploy', gulp.series('deploy-' + config.deploy.type));
+}
