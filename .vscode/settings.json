@@ -1,9 +1,11 @@
 {
   "terminal.integrated.env.linux": {
-    "PATH": "${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin:${env:PATH}"
+    "PATH": "${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin:${env:PATH}",
+    "YARN_CACHE_FOLDER": "${workspaceFolder}/tmp/yarn"
   },
   "terminal.integrated.env.windows": {
-    "PATH": "${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${env:PATH}"
+    "PATH": "${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${env:PATH}",
+    "YARN_CACHE_FOLDER": "${workspaceFolder}/tmp/yarn"
   },
   "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
