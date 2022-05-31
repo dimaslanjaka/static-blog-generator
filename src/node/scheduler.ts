@@ -3,7 +3,6 @@
 
 import chalk from 'chalk';
 
-const logger = console;
 const logname = chalk.hex('#f542e0')('[scheduler]');
 
 const fns: { [key: string]: (data?: string) => void }[] = [];
@@ -125,7 +124,7 @@ class scheduler {
       if (deleteAfter) delete functions[key];
     } else {
       if (scheduler.verbose)
-        logger.error(`function with key: ${key} is not function`);
+        console.error(`function with key: ${key} is not function`);
     }
   }
   /**
