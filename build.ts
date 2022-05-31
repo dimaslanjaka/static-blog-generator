@@ -7,7 +7,7 @@ import { getLatestCommitHash, git, gitAddAndCommit } from './src/bin/git';
 import { json_encode } from './src/node/JSON';
 
 askCommitMessage('commit messages:\t').then(async (msg) => {
-  await gitAddAndCommit('src', msg);
+  await gitAddAndCommit('src', msg, { cwd: __dirname });
   if (!process.env['GITHUB_WORKFLOW']) {
     const id = await getLatestCommitHash();
     pkg.version = pkg.version.split('-')[0] + '-beta-' + id;
