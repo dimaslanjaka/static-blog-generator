@@ -5,7 +5,7 @@ import { json_encode } from '../../node/JSON';
 import { sortedObject } from '../../node/object-utility';
 import config, { theme_config, tmp } from '../../types/_config';
 
-export const dumpEnv = async () => {
+export const dump = async () => {
   writeFile(tmp('config.json'), json_encode(sortedObject(config), 2), (err) => {
     if (!err) console.log('project config dump on', tmp('config.json'));
   });
@@ -23,4 +23,4 @@ gulp.task('dump:posts', (done) => {
   done();
 });
 
-gulp.task('dump', dumpEnv);
+gulp.task('dump', dump);
