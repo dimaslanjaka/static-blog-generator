@@ -111,7 +111,7 @@
     "nunjucks": "^3.2.3",
     "persistent-cache": "git+https://github.com/dimaslanjaka/persistent-cache.git#improve2",
     "safelinkify": "git+https://github.com/dimaslanjaka/safelink.git#main",
-    "sbg-themes": "file:./themes",
+    "sbg-themes": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev",
     "showdown": "^2.0.3",
     "sqlite3": "^5.0.8",
     "through2": "^4.0.2",
