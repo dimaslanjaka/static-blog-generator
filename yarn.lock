@@ -10036,19 +10036,20 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-"sbg-theme-bootstrap@file:./themes/bootstrap":
+"sbg-theme-bootstrap@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/c1e6eeb0e44f4395440d302bde04bda9/bootstrap":
   version "1.0.0"
 
-"sbg-theme-iridium@file:./themes/iridium":
+"sbg-theme-iridium@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/c1e6eeb0e44f4395440d302bde04bda9/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-62f6f58b-da75-4c73-8e8c-fdb5fc44c7e4-1653959135867/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-3fb198ca-9d54-4e52-ab01-fa85f1c489dd-1653961072787/node_modules/sbg-theme-iridium/libs/skeljs"
 
-"sbg-themes@file:./themes":
+"sbg-themes@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev":
   version "1.0.0"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev#b7d264fa947179b0293c039f1ad62a4a8b694adf"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-a7192464-3272-4464-9296-97c83275f25e-1653959135850/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-a7192464-3272-4464-9296-97c83275f25e-1653959135850/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/c1e6eeb0e44f4395440d302bde04bda9/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/c1e6eeb0e44f4395440d302bde04bda9/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"
@@ -10286,7 +10287,7 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-"skeljs@file:./themes/iridium/libs/skeljs":
+"skeljs@file:../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/c1e6eeb0e44f4395440d302bde04bda9/iridium/libs/skeljs":
   version "3.0.2"
 
 slash@^3.0.0:
