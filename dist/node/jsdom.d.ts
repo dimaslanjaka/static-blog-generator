@@ -9,6 +9,6 @@ declare class jdom {
     parse: (str: string) => Document;
     serialize(): string;
     body(): HTMLElement;
-    toString(): string;
+    toString(): any;
 }
 export default jdom;
