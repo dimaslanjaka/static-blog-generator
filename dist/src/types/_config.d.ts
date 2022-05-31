@@ -17,7 +17,7 @@ export declare const argv: {
 /**
  * process cwd unix style
  */
-declare let root: string;
+declare const root: string;
 export declare const cwd: (() => string) & memoizee.Memoized<() => string>;
 export { root };
 /** default project config */
