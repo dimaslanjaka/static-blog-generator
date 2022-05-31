@@ -101,3 +101,7 @@ export async function localServer() {
     return startServer();
   });
 }
+
+// [task] LOCAL SERVER
+gulp.task('server', localServer);
+gulp.task('serve', gulp.series('server'));
