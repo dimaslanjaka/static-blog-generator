@@ -1,3 +1,5 @@
+process.cwd = () => __dirname;
+
 const sbg = require('../dist/src');
 
 // clean
