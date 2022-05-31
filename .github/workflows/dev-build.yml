@@ -78,6 +78,7 @@ jobs:
       run: yarn run test:local
 
     - name: Test git
+      if: ${{ false }}
       run: yarn run test:git
 
     - name: Test mocha
