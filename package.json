@@ -23,9 +23,9 @@
   "scripts": {
     "dev": "nodemon",
     "build": "npm-run-all -s  build:**",
-    "build:src": "ts-node build.ts",
-    "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn install --check-files && yarn build",
-    "build:safelinkify": "cd packages/safelink && yarn install --check-files && yarn refresh",
+    "build:src": "ts-node build.ts && yarn refresh",
+    "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn install --check-files",
+    "build:safelinkify": "cd packages/safelink && yarn install --check-files",
     "refresh": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache",
     "test": "npm-run-all -s  test:**",
     "test:folder": "cd tests && yarn upgrade static-blog-generator && node index.js",
