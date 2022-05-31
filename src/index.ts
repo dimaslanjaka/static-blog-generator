@@ -1,15 +1,12 @@
 import gulp from 'gulp';
 import { join } from 'upath';
 import './a-core';
-import { localServer } from './gulp/server';
+import './gulp/server';
 import './gulp/tasks/clean';
 import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
-
-// declare require types
-declare function require<T>(name: string): T;
 
 // register scheduler
 new scheduler();
@@ -23,10 +20,6 @@ process.on('uncaughtException', function (err) {
 
 // DEVELOPMENT TASKS
 require(join(__dirname, 'gulp/tasks/dump'));
-
-// LOCAL SERVER
-gulp.task('server', localServer);
-gulp.task('serve', gulp.series('server'));
 
 // DEFAULT TASK
 gulp.task('default', gulp.series('copy', 'generate'));
