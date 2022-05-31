@@ -6049,7 +6049,7 @@ stack-trace@0.0.10:
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
   version "2.0.6-beta-bccd6622f8"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#6112286636d88e94ab555c50ce75ae2e9a287a87"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#fd6f2ffdd61cc760f53571f8e182b1476c1d7bc1"
   dependencies:
     axios "^0.27.2"
     browser-sync "^2.27.10"
