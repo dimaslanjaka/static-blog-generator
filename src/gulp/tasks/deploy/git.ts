@@ -93,10 +93,10 @@ export const deployerGit = async (done?: TaskCallback) => {
   */
 
   if (!init) await git('gc'); // compress git databases
-  await git('remote', 'add', 'origin', configDeploy.repo);
-  await git('remote', 'set-url', 'origin', configDeploy.repo);
+  await git('remote', 'add', 'origin', configDeploy['repo']);
+  await git('remote', 'set-url', 'origin', configDeploy['repo']);
   await git('fetch', '--all');
-  await git('pull', 'origin', configDeploy.branch);
+  await git('pull', 'origin', configDeploy['branch']);
 
   return copyGenerated().on('end', async () => {
     await git('add', '-A');
@@ -108,9 +108,9 @@ export const deployerGit = async (done?: TaskCallback) => {
       await git(
         'push',
         '-u',
-        configDeploy.repo,
+        configDeploy['repo'],
         'origin',
-        configDeploy.branch,
+        configDeploy['branch'],
         '--force'
       );
     } else if ('branch' in configDeploy) {
