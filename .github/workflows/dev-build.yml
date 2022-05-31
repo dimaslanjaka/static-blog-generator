@@ -60,6 +60,7 @@ jobs:
       run: |
         yarn build
         git push
+        
     - name: Test
       run: yarn test
 
