@@ -57,8 +57,8 @@ git submodule update --recursive --remote
 git checkout compiler
 # delete posts (don't copy my articles)
 rm -rf src-posts/*
-# create tmp folder
-mkdir tmp
+# create required folder
+mkdir tmp themes
 # install dependencies
 npm install
 ```
