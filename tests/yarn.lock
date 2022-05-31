@@ -6069,8 +6069,8 @@ stack-trace@0.0.10:
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
-  version "2.0.6-beta-a71a012382"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#616cea66c47fb8ec799a3adf442d86e28e8e10f8"
+  version "2.0.6-beta-20d077daaa"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#ed049f419496f022c47e048ebe66695ecb07295c"
   dependencies:
     axios "^0.27.2"
     browser-sync "^2.27.10"

@@ -1,8 +1,8 @@
-const { test } = require('./test');
+process.cwd = () => __dirname;
+
 const sbg = require('../dist/src');
 
 console.log('test using local dependencies');
-test(sbg, 'clean');
 
 console.log('clean');
 sbg.clean_db(null);
