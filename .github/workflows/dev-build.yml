@@ -44,6 +44,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
+        yarn cache clean
         yarn install --immutable
 
     - name: fix module resolutions
