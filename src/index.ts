@@ -21,7 +21,7 @@ import scheduler from './node/scheduler';
   join(__dirname, 'types/_config_theme.json'),
   join(__dirname, 'types/_config_hashes.json')
 ].forEach((path) => {
-  if (existsSync(path)) {
+  if (!existsSync(path)) {
     writeFileSync(path, '{}');
   }
 });
