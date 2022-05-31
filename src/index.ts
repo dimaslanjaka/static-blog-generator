@@ -52,6 +52,16 @@ gulp.task(
 // DEFAULT TASK
 gulp.task('default', gulp.series('copy', 'generate'));
 
+const properties = {
+  copyPosts,
+  copyAssets,
+  gulpInlineStyle,
+  clean_db,
+  clean_posts,
+  clean_public,
+  clean_tmp
+};
+
 export {
   copyPosts,
   copyAssets,
@@ -61,3 +71,5 @@ export {
   clean_public,
   clean_tmp
 };
+
+export default properties;
