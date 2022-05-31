@@ -15,7 +15,14 @@ export {
 } from './gulp/tasks/clean';
 export { copyAssets } from './gulp/tasks/copy/assets';
 export { copyPosts } from './gulp/tasks/copy/posts';
-export { parsePost } from './parser/post/parsePost';
+export {
+  buildPost,
+  DeepPartial,
+  ParseOptions,
+  parsePost,
+  postMap,
+  postMeta
+} from './parser/post/parsePost';
 
 // register scheduler
 new scheduler();
