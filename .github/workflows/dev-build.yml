@@ -52,8 +52,6 @@ jobs:
         yarn remove gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         yarn add gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         git add package.json
-        echo "${{ steps.vars.outputs.hash }}" > .guid
-        git add .guid
         git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
         git push
 
