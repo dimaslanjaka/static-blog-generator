@@ -10036,17 +10036,17 @@ saxes@^5.0.1:
 
 "sbg-theme-bootstrap@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev#f93a7211af02d5703eee956033d8678749f87840"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev#83903dbd7ffe2dd55e1e55f1cf85551adbd1807f"
 
 "sbg-theme-iridium@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev#b3a7d29c6016870bcdbc53d88c583551ae60980b"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev#8fe5dfb887710b6b1c7d393a552e259d4c328bf9"
   dependencies:
     skeljs "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev"
 
 "sbg-themes@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev#2539ca827c9b25421071808a02e2ece949b36851"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev#480917f3c79e84e8686c0f475edf3cbf98740ffa"
   dependencies:
     sbg-theme-bootstrap "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev"
     sbg-theme-iridium "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev"
@@ -10289,7 +10289,7 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
 
 "skeljs@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev":
   version "3.0.2"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev#168e061a956c5deefb2dd6ded63f499b4edbba25"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev#7cb6e24903447e4048fc2fea6e499a7e39e017bb"
 
 slash@^3.0.0:
   version "3.0.0"
