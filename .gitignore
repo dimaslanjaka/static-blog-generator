@@ -43,4 +43,6 @@ temp
 *.7z
 *.rar
 *.tgz
-*.gz
+*.
+
+!static-blog-generator*.tgz
