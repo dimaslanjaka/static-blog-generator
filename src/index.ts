@@ -2,12 +2,7 @@ import gulp from 'gulp';
 import { join } from 'upath';
 import './a_folder_solver';
 import { localServer } from './gulp/server';
-import {
-  clean_db,
-  clean_posts,
-  clean_public,
-  clean_tmp
-} from './gulp/tasks/clean';
+import './gulp/tasks/clean';
 import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
@@ -32,16 +27,6 @@ require(join(__dirname, 'gulp/tasks/dump'));
 // LOCAL SERVER
 gulp.task('server', localServer);
 gulp.task('serve', gulp.series('server'));
-
-// CLEAN TASKS
-gulp.task('clean:public', clean_public);
-gulp.task('clean:posts', clean_posts);
-gulp.task('clean:db', clean_db);
-gulp.task('clean:tmp', clean_tmp);
-gulp.task(
-  'clean',
-  gulp.parallel('clean:db', 'clean:tmp', 'clean:posts', 'clean:public')
-);
 
 // DEFAULT TASK
 gulp.task('default', gulp.series('copy', 'generate'));
