@@ -33,6 +33,10 @@ jobs:
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
 
+    - name: Get Hash
+      id: hash
+      run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_HASH
+
     - name: Install dependencies
       if: always() # make it not error
       run: |
@@ -45,7 +49,9 @@ jobs:
         yarn remove gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         yarn add gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         git add package.json
-        git commit -m "fix module resolutions ${{ github.ref }}"
+        echo "${{ env.hash }}" > .guid
+        git add .guid
+        git commit -m "fix module resolutions ${{ env.hash }}"
         git push
 
     - name: Build
