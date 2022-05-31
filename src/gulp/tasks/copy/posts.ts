@@ -1,11 +1,14 @@
 import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
-import color from '../../node/color';
-import { buildPost, parsePost } from '../../parser/post/parsePost';
-import config, { post_public_dir, post_source_dir } from '../../types/_config';
-import { determineDirname } from '../utils';
-import './copy/assets';
+import color from '../../../node/color';
+import { buildPost, parsePost } from '../../../parser/post/parsePost';
+import config, {
+  post_public_dir,
+  post_source_dir
+} from '../../../types/_config';
+import { determineDirname } from '../../utils';
+import './assets';
 
 const logname = color.cyan('[copy][post]');
 
