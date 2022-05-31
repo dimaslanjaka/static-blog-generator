@@ -1,4 +1,5 @@
 import { rm } from 'fs';
+import gulp from 'gulp';
 import { cwd } from 'process';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
@@ -22,3 +23,13 @@ export const clean_tmp = (done?: TaskCallback) => {
 /** clean database folder */
 export const clean_db = (done?: TaskCallback) =>
   rm(dbFolder, { recursive: true, force: true }, () => done());
+
+// [task] CLEAN
+gulp.task('clean:public', clean_public);
+gulp.task('clean:posts', clean_posts);
+gulp.task('clean:db', clean_db);
+gulp.task('clean:tmp', clean_tmp);
+gulp.task(
+  'clean',
+  gulp.parallel('clean:db', 'clean:tmp', 'clean:posts', 'clean:public')
+);
