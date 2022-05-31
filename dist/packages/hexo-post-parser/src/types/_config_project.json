@@ -1,88 +1,88 @@
 {
-    "title": "Hexo",
-    "subtitle": "A fast, simple & powerful blog framework powered by Node.js.",
-    "description": "Hexo is a fast, simple & powerful blog framework powered by Node.js.",
-    "author": "Hexo",
-    "language": "en",
-    "timezone": "UTC",
-    "url": "https://hexo.io",
-    "root": "/",
-    "permalink": "news/:year/:month/:day/:title/",
-    "permalink_defaults": {},
-    "pretty_urls": {
-        "trailing_index": false,
-        "trailing_html": false
+  "title": "Hexo",
+  "subtitle": "A fast, simple & powerful blog framework powered by Node.js.",
+  "description": "Hexo is a fast, simple & powerful blog framework powered by Node.js.",
+  "author": "Hexo",
+  "language": "en",
+  "timezone": "UTC",
+  "url": "https://hexo.io",
+  "root": "/",
+  "permalink": "news/:year/:month/:day/:title/",
+  "permalink_defaults": {},
+  "pretty_urls": {
+    "trailing_index": false,
+    "trailing_html": false
+  },
+  "source_dir": "source",
+  "public_dir": "public",
+  "tag_dir": "tags",
+  "archive_dir": "news",
+  "category_dir": "categories",
+  "code_dir": "downloads/code",
+  "i18n_dir": ":lang",
+  "skip_render": [],
+  "title_map": {},
+  "tag_map": {},
+  "category_map": {},
+  "tag_group": {},
+  "category_group": {},
+  "new_post_name": ":year-:month-:day-:title.md",
+  "default_layout": "post",
+  "titlecase": false,
+  "external_link": {
+    "enable": true,
+    "field": "site",
+    "exclude": ""
+  },
+  "filename_case": 0,
+  "render_drafts": false,
+  "post_asset_folder": true,
+  "relative_link": false,
+  "future": true,
+  "highlight": {
+    "enable": true,
+    "line_number": false
+  },
+  "prismjs": {
+    "enable": false,
+    "preprocess": true,
+    "line_number": true,
+    "tab_replace": ""
+  },
+  "default_category": "uncategorized",
+  "default_tag": null,
+  "date_format": "YYYY-MM-DD",
+  "time_format": "HH:mm:ss",
+  "updated_option": "mtime",
+  "per_page": 0,
+  "pagination_dir": "page",
+  "theme": "navy",
+  "server": {
+    "cache": false
+  },
+  "deploy": {},
+  "ignore": [],
+  "meta_generator": true,
+  "disqus_shortname": "hexojs",
+  "google_analytics": "UA-48498357-3",
+  "fb_admins": 100000247608790,
+  "algolia": {
+    "en": {
+      "api_key": "c3d5d4c995b5e0c2ffb5623900279a66",
+      "index_name": "hexo"
     },
-    "source_dir": "source",
-    "public_dir": "public",
-    "tag_dir": "tags",
-    "archive_dir": "news",
-    "category_dir": "categories",
-    "code_dir": "downloads/code",
-    "i18n_dir": ":lang",
-    "skip_render": [],
-    "title_map": {},
-    "tag_map": {},
-    "category_map": {},
-    "tag_group": {},
-    "category_group": {},
-    "new_post_name": ":year-:month-:day-:title.md",
-    "default_layout": "post",
-    "titlecase": false,
-    "external_link": {
-        "enable": true,
-        "field": "site",
-        "exclude": ""
+    "zh-tw": {
+      "api_key": "c83d2ec3440f40aec6d0e695ecec7ef3",
+      "index_name": "hexo_zh-tw"
     },
-    "filename_case": 0,
-    "render_drafts": false,
-    "post_asset_folder": true,
-    "relative_link": false,
-    "future": true,
-    "highlight": {
-        "enable": true,
-        "line_number": false
-    },
-    "prismjs": {
-        "enable": false,
-        "preprocess": true,
-        "line_number": true,
-        "tab_replace": ""
-    },
-    "default_category": "uncategorized",
-    "default_tag": null,
-    "date_format": "YYYY-MM-DD",
-    "time_format": "HH:mm:ss",
-    "updated_option": "mtime",
-    "per_page": 0,
-    "pagination_dir": "page",
-    "theme": "navy",
-    "server": {
-        "cache": false
-    },
-    "deploy": {},
-    "ignore": [],
-    "meta_generator": true,
-    "disqus_shortname": "hexojs",
-    "google_analytics": "UA-48498357-3",
-    "fb_admins": 100000247608790,
-    "algolia": {
-        "en": {
-            "api_key": "c3d5d4c995b5e0c2ffb5623900279a66",
-            "index_name": "hexo"
-        },
-        "zh-tw": {
-            "api_key": "c83d2ec3440f40aec6d0e695ecec7ef3",
-            "index_name": "hexo_zh-tw"
-        },
-        "zh-cn": {
-            "api_key": "cdea7d4e47d84f6145b77e7f68689f35",
-            "index_name": "hexo_zh-cn"
-        }
-    },
-    "twitter": "hexojs",
-    "github": "hexojs/hexo",
-    "generator": {
-        "cache": true
+    "zh-cn": {
+      "api_key": "cdea7d4e47d84f6145b77e7f68689f35",
+      "index_name": "hexo_zh-cn"
     }
+  },
+  "twitter": "hexojs",
+  "github": "hexojs/hexo",
+  "generator": {
+    "cache": true
+  }
 }
