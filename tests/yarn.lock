@@ -3216,7 +3216,7 @@ he@1.2.0, he@^1.2.0:
 
 "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#d1c56a7071d6a1fc0c492026eee8f88645e8a260"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#40e3bd7517f7f610c235ad888630274d5e01ab94"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -5109,18 +5109,18 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache#improve2":
+persistent-cache@dimaslanjaka/persistent-cache#improve2:
   version "1.1.2"
   uid "583c4bfe871a593f90a83419ff1ea6794d857fb2"
-  resolved "git+https://github.com/dimaslanjaka/persistent-cache#583c4bfe871a593f90a83419ff1ea6794d857fb2"
+  resolved "https://codeload.github.com/dimaslanjaka/persistent-cache/tar.gz/583c4bfe871a593f90a83419ff1ea6794d857fb2"
   dependencies:
     mkdirp-no-bin "^0.5.1"
     rmdir "^1.2.0"
     upath "^2.0.1"
 
-"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache.git#improve2":
+"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache#improve2":
   version "1.1.2"
-  resolved "git+https://github.com/dimaslanjaka/persistent-cache.git#583c4bfe871a593f90a83419ff1ea6794d857fb2"
+  resolved "git+https://github.com/dimaslanjaka/persistent-cache#583c4bfe871a593f90a83419ff1ea6794d857fb2"
   dependencies:
     mkdirp-no-bin "^0.5.1"
     rmdir "^1.2.0"
@@ -5643,9 +5643,9 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-"safelinkify@git+https://github.com/dimaslanjaka/safelink.git#main":
+safelinkify@dimaslanjaka/safelink#main:
   version "1.1.3"
-  resolved "git+https://github.com/dimaslanjaka/safelink.git#786d2388c99b69d508b06c18d07283bb5532627d"
+  resolved "https://codeload.github.com/dimaslanjaka/safelink/tar.gz/786d2388c99b69d508b06c18d07283bb5532627d"
   dependencies:
     "@popperjs/core" "^2.11.5"
     bootstrap "^5.1.3"
@@ -6069,8 +6069,8 @@ stack-trace@0.0.10:
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
-  version "2.0.6-beta-20d077daaa"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#ed049f419496f022c47e048ebe66695ecb07295c"
+  version "2.0.6-beta-bccd6622f8"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#663c3b32b4a26fd748e07dda6bcd70cbe24c44d9"
   dependencies:
     axios "^0.27.2"
     browser-sync "^2.27.10"
@@ -6114,8 +6114,8 @@ stack-trace@0.0.10:
     node-libcurl "^2.3.4"
     node-sass "^7.0.1"
     nunjucks "^3.2.3"
-    persistent-cache "git+https://github.com/dimaslanjaka/persistent-cache.git#improve2"
-    safelinkify "git+https://github.com/dimaslanjaka/safelink.git#main"
+    persistent-cache dimaslanjaka/persistent-cache#improve2
+    safelinkify dimaslanjaka/safelink#main
     sbg-themes "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev"
     showdown "^2.0.3"
     sqlite3 "^5.0.8"
