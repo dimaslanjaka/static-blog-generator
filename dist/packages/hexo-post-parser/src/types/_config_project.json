@@ -84,5 +84,43 @@
     "github": "hexojs/hexo",
     "generator": {
         "cache": true
+    },
+    "sitemap": {
+        "html": true,
+        "text": true,
+        "xml": true,
+        "news": true,
+        "exclude": [
+            "source/ads",
+            "**/*.min.html"
+        ]
+    },
+    "adsense": {
+        "enable": true,
+        "pub": "ca-pub-1165447249910969",
+        "article_ads": [
+            "source/ads/in_article.html",
+            "source/ads/in_article2.html"
+        ],
+        "multiplex_ads": [
+            "source/ads/multiplex.html"
+        ],
+        "display_ads": [
+            "source/ads/display.html"
+        ],
+        "field": "site",
+        "adblock": false,
+        "type": "amp",
+        "exclude": [
+            "*.min.html",
+            "**/exclude/**/*"
+        ]
+    },
+    "analytics": {
+        "enable": true,
+        "tagmanager": "GTM-NJNNXSR",
+        "GA4": "G-BG75CLNJZ1",
+        "GA3": "UA-106238155-1",
+        "cloudflare": "2157c0f3b9e74a92badffe39156166b9"
     }
 }
