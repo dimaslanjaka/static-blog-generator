@@ -84,5 +84,5 @@ export {
 } from './gulp/tasks/clean';
 export { copyPosts } from './gulp/tasks/copy';
 export { copyAssets } from './gulp/tasks/copy/assets';
-
+export { dumpEnv } from './gulp/tasks/dump';
 export default properties;
