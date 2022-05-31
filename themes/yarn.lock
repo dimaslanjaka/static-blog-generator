@@ -2,13 +2,15 @@
 # yarn lockfile v1
 
 
-"sbg-theme-bootstrap@file:./bootstrap":
+"sbg-theme-bootstrap@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev":
   version "1.0.0"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev#f69a8c5003d7c3b666cadc362c723ea7fed65f13"
 
-"sbg-theme-iridium@file:./iridium":
+"sbg-theme-iridium@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev":
   version "1.0.0"
+  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev#47fa309c337fb41eecb241bed385f755a19d9cd0"
   dependencies:
-    skeljs "file:../../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-822c6b0e-77f7-43f8-8161-ca6a4c08bc87-1653960566759/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/944e388a19ca11460f24066a2c19a583/libs/skeljs"
 
-"skeljs@file:./iridium/libs/skeljs":
+"skeljs@file:../../../../../../home/dimaslanjaka/.cache/yarn/v6/.tmp/944e388a19ca11460f24066a2c19a583/libs/skeljs":
   version "3.0.2"
