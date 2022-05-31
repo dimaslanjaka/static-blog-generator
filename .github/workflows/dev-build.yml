@@ -27,14 +27,23 @@ jobs:
       with:
         node-version: '16'
 
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+    # https://stackoverflow.com/a/61699863/6404439
+    # ${{ steps.vars.outputs.branch }}
+    # ${{ steps.vars.outputs.hash }}
+    - name: Declare some variables
+      id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+        echo "::set-output name=yarn::$(yarn cache dir)"
+        echo "::set-output name=npm::$(npm config get cache)"
 
     - uses: actions/cache@v3
       with:
         path: |
-          ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          ${{ steps.vars.outputs.yarn }}
+          ${{ steps.vars.outputs.npm }}
           ./tmp
           ./dist
           ./node_modules
@@ -44,15 +53,8 @@ jobs:
       run: |
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
-        #git fetch --all
-        #git submodule update --init
-
-    - name: Declare some variables
-      id: vars
-      shell: bash
-      run: |
-        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+        git fetch --all
+        git submodule update --init
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: yarn install --immutable
@@ -73,7 +75,7 @@ jobs:
 
     - name: Test local
       run: yarn run test:local
-  
+
     - name: Test git
       run: yarn run test:git
 
