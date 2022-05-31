@@ -11,5 +11,5 @@ export declare function removeInlineStyle(str: string, single_element?: boolean)
  */
 export declare function gulpInlineStyle(): Promise<{
     path: string;
-    parsed: import("../../../hexo-post-parser/src/parsePost").postMap;
+    parsed: import("hexo-post-parser/dist/parsePost").postMap;
 }[]>;
