@@ -3216,7 +3216,7 @@ he@1.2.0, he@^1.2.0:
 
 "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#6d8a13729e40422a0e9e8734cba8ea373731a495"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#44b6e9dbea98cd712ed153d6fd7526382365a6b5"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -6070,7 +6070,7 @@ stack-trace@0.0.10:
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
   version "2.0.6-beta-b982a246d1"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#c5e9f11af8586d049753138c516f94c97cc96463"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#d4cbc46120bcb8f0df77c0ae8746980f6cd78ad1"
   dependencies:
     axios "^0.27.2"
     browser-sync "^2.27.10"
