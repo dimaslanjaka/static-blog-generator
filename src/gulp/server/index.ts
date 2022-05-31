@@ -28,12 +28,20 @@ const portInUse = function (port: number, callback: (arg0: boolean) => any) {
 
   server.listen(port, '127.0.0.1');
 };
+
 const options = {
   server: './' + config.public_dir,
-  port: config.server.port,
+  port:
+    config !== null &&
+    typeof config === 'object' &&
+    'server' in config &&
+    'port' in config.server
+      ? config['server']['port']
+      : 4000,
   open: false,
   middleware: ServerMiddleWare
 };
+
 function startServer() {
   const bsi = browserSync.init(options);
 
