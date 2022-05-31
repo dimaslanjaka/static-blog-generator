@@ -22,10 +22,11 @@
   ],
   "scripts": {
     "dev": "nodemon",
-    "build": "npm-run-all -s  build:**",
-    "build:src": "ts-node build.ts && yarn refresh",
+    "build": "npm-run-all -s build:**",
+    "build:src": "ts-node build.ts",
     "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn install --check-files",
     "build:safelinkify": "cd packages/safelink && yarn install --check-files",
+    "build:refresh": "yarn refresh",
     "refresh": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache",
     "test": "npm-run-all -s test:**",
     "test:js": "cd tests && npm i file:../ && node index.js",
