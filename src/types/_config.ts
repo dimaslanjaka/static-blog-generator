@@ -124,7 +124,10 @@ if (existsSync(file)) {
   });
 }
 
-writeFileSync(join(__dirname, '_config_project.json'), JSON.stringify(config, null, 2));
+writeFileSync(
+  join(__dirname, '_config_project.json'),
+  JSON.stringify(config, null, 2)
+);
 
 export default config as Config;
 export interface ProjectConfig extends Partial<typeof config> {
