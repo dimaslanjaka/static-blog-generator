@@ -41,7 +41,7 @@ jobs:
         echo "::set-output name=hash::$(git rev-parse --short HEAD)"
 
     - name: Install dependencies
-      if: always() # make it not error
+      if: ${{ always() }}
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
         yarn install --check-files
@@ -61,7 +61,7 @@ jobs:
       run: yarn build
 
     - name: deploy
-      if: always()
+      if: ${{ always() }}
       run: |
         git add dist
         git commit -m "build ${{ steps.vars.outputs.hash }} $(date)"
