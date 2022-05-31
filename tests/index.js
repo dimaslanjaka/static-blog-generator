@@ -1,6 +1,7 @@
 process.cwd = () => __dirname;
 
-const sbg = require('../dist/src');
+//const sbg = require('../dist/src');
+const sbg = require('static-blog-generator');
 
 // clean
 sbg.clean_db(null);
