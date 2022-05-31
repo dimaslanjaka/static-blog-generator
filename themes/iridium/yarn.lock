@@ -1835,9 +1835,8 @@ set-value@^2.0.0, set-value@^2.0.1:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
-"skeljs@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev":
+"skeljs@file:./libs/skeljs":
   version "3.0.2"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev#7cb6e24903447e4048fc2fea6e499a7e39e017bb"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
