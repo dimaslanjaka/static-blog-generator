@@ -8,8 +8,8 @@ import {
   clean_public,
   clean_tmp
 } from './gulp/tasks/clean';
-import { copyPosts } from './gulp/tasks/copy';
 import { copyAssets } from './gulp/tasks/copy/assets';
+import { copyPosts } from './gulp/tasks/copy/posts';
 import { gulpInlineStyle } from './gulp/tasks/copy/remove-inline-style';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
@@ -82,7 +82,7 @@ export {
   clean_public,
   clean_tmp
 } from './gulp/tasks/clean';
-export { copyPosts } from './gulp/tasks/copy';
 export { copyAssets } from './gulp/tasks/copy/assets';
-//export { dumpEnv } from './gulp/tasks/dump';
+export { copyPosts } from './gulp/tasks/copy/posts';
+
 export default properties;
