@@ -28,7 +28,7 @@
     "build:safelinkify": "cd packages/safelink && yarn install --check-files && yarn build",
     "build:upgrade": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache",
     "test": "./node_modules/.bin/npm-run-all -s  test:**",
-    "test:folder": "cd tests && yarn install --check-files && node index.js",
+    "test:folder": "cd tests && yarn upgrade static-blog-generator && node index.js",
     "test:mocha": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
     "php": "php -S localhost:4002 -t docs",
     "eslint": "./node_modules/.bin/npm-run-all -s  eslint:**",
