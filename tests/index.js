@@ -1,6 +1,6 @@
 process.cwd = () => __dirname;
 
-const sbg = require('../dist/src');
+const sbg = require('static-blog-generator');
 
 console.log('test using local dependencies');
 sbg.copyAssets();
