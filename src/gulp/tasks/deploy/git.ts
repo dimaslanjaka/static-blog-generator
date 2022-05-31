@@ -42,8 +42,7 @@ function git(...args: string[]) {
   );
 }
 const logname = chalk.magentaBright('[deploy][git]');
-const configDeploy = config.deploy;
-configDeploy['base'] = deployDir;
+
 const copyGenerated = () => {
   return gulp
     .src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true })
@@ -56,6 +55,12 @@ const copyGenerated = () => {
  * @returns
  */
 export const deployerGit = async (done?: TaskCallback) => {
+  const configDeploy = config.deploy;
+  if (typeof configDeploy !== 'object' || configDeploy === null) {
+    console.log('incorrect deploy config');
+    return;
+  }
+  configDeploy['base'] = deployDir;
   let init = false;
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   if (!existsSync(join(deployDir, '.git'))) {
@@ -108,8 +113,8 @@ export const deployerGit = async (done?: TaskCallback) => {
         configDeploy.branch,
         '--force'
       );
-    } else {
-      await git('push', '--set-upstream', 'origin', configDeploy.branch);
+    } else if ('branch' in configDeploy) {
+      await git('push', '--set-upstream', 'origin', configDeploy['branch']);
     }
     console.log(logname, 'deploy merged with origin successful');
     done();
