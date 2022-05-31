@@ -1,6 +1,6 @@
 {
   "name": "static-blog-generator",
-  "version": "2.0.7-beta-983418a96b",
+  "version": "2.0.7-beta-7582b6d62f",
   "description": "Static Blog Generator",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -27,7 +27,7 @@
     "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn install --check-files",
     "build:safelinkify": "cd packages/safelink && yarn install --check-files",
     "build:refresh": "yarn refresh",
-    "refresh": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache",
+    "refresh": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache --check-files",
     "test": "npm-run-all -s test:**",
     "test:js": "cd tests && npm i file:../ && node index.js",
     "test:ts": "cd tests && npm i file:../ && node -r ts-node/register index.ts",
