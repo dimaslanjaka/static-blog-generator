@@ -38,7 +38,7 @@ jobs:
         yarn add git+https://github.com/dimaslanjaka/safelink.git#main
         yarn remove gulp node-sass lodash.deburr
         yarn add gulp node-sass lodash.deburr
-        git add package.json
+        git add package.json lodash.deburr
         git commit -m "fix module resolutions"
 
     - name: Build
