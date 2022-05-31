@@ -47,6 +47,7 @@ jobs:
           ./tmp
           ./dist
           ./node_modules
+          ./tests
         key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
     - name: Resolve git user
