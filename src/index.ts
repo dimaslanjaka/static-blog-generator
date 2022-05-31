@@ -18,10 +18,10 @@ process.on('uncaughtException', function (err) {
   console.error('uncaughtException:\n' + err.stack + '\n');
 });
 
-// DEVELOPMENT TASKS
+// [task] DEVELOPMENT
 require(join(__dirname, 'gulp/tasks/dump'));
 
-// DEFAULT TASK
+// [task] DEFAULT
 gulp.task('default', gulp.series('copy', 'generate'));
 
 export {
