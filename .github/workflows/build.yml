@@ -45,6 +45,7 @@ jobs:
         yarn add gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         git add package.json
         git commit -m "fix module resolutions ${{ github.ref }}"
+        git push
 
     - name: Build
       run: yarn build
