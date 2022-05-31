@@ -5821,7 +5821,7 @@ he@1.2.0, he@^1.2.0:
 
 "hexo-post-parser@git+https://github.com/dimaslanjaka/hexo-post-parser.git#main":
   version "1.1.1"
-  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#5b706ce68bf050e641bab087d513bf00f3ea569f"
+  resolved "git+https://github.com/dimaslanjaka/hexo-post-parser.git#6d8a13729e40422a0e9e8734cba8ea373731a495"
   dependencies:
     axios "^0.27.2"
     chalk "^4.1.0"
@@ -10042,13 +10042,13 @@ saxes@^5.0.1:
 "sbg-theme-iridium@file:./themes/iridium":
   version "1.0.0"
   dependencies:
-    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-ac1af316-ae60-49fe-995c-5c0c5cc699b5-1653957914979/node_modules/sbg-theme-iridium/libs/skeljs"
+    skeljs "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-theme-iridium-1.0.0-c83bb2c4-f667-4032-80bd-abbc2442873a-1653958548013/node_modules/sbg-theme-iridium/libs/skeljs"
 
 "sbg-themes@file:./themes":
   version "1.0.0"
   dependencies:
-    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-bd0cf4a5-407a-48e2-9537-1e5e7cf9b8a1-1653957914966/node_modules/sbg-themes/bootstrap"
-    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-bd0cf4a5-407a-48e2-9537-1e5e7cf9b8a1-1653957914966/node_modules/sbg-themes/iridium"
+    sbg-theme-bootstrap "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-35b14ae6-d6ee-4295-8073-cfc8df72c06b-1653958547991/node_modules/sbg-themes/bootstrap"
+    sbg-theme-iridium "file:../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-sbg-themes-1.0.0-35b14ae6-d6ee-4295-8073-cfc8df72c06b-1653958547991/node_modules/sbg-themes/iridium"
 
 scss-parser@^1.0.4:
   version "1.0.5"
