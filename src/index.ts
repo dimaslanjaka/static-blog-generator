@@ -1,6 +1,6 @@
-import { existsSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'upath';
+import './a_folder_solver';
 import { localServer } from './gulp/server';
 import {
   clean_db,
@@ -8,23 +8,10 @@ import {
   clean_public,
   clean_tmp
 } from './gulp/tasks/clean';
-import { copyAssets } from './gulp/tasks/copy/assets';
-import { copyPosts } from './gulp/tasks/copy/posts';
-import { gulpInlineStyle } from './gulp/tasks/copy/remove-inline-style';
+import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
-
-// generate empty config if not exists
-[
-  join(__dirname, 'types/_config_project.json'),
-  join(__dirname, 'types/_config_theme.json'),
-  join(__dirname, 'types/_config_hashes.json')
-].forEach((path) => {
-  if (!existsSync(path)) {
-    writeFileSync(path, '{}');
-  }
-});
 
 // declare require types
 declare function require<T>(name: string): T;
@@ -41,13 +28,6 @@ process.on('uncaughtException', function (err) {
 
 // DEVELOPMENT TASKS
 require(join(__dirname, 'gulp/tasks/dump'));
-
-// COPY TASKS
-gulp.task('copy:assets', () => copyAssets());
-gulp.task('copy:posts', () => copyPosts());
-gulp.task('copy:remove-inline-style', () => gulpInlineStyle());
-gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));
-gulp.task('copy:blogger', gulp.series('copy', 'copy:remove-inline-style'));
 
 // LOCAL SERVER
 gulp.task('server', localServer);
@@ -66,16 +46,6 @@ gulp.task(
 // DEFAULT TASK
 gulp.task('default', gulp.series('copy', 'generate'));
 
-const properties = {
-  copyPosts,
-  copyAssets,
-  gulpInlineStyle,
-  clean_db,
-  clean_posts,
-  clean_public,
-  clean_tmp
-};
-
 export {
   clean_db,
   clean_posts,
@@ -85,4 +55,4 @@ export {
 export { copyAssets } from './gulp/tasks/copy/assets';
 export { copyPosts } from './gulp/tasks/copy/posts';
 
-export default properties;
+export default {};
