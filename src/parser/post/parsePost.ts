@@ -1,9 +1,6 @@
 import { deepmerge } from 'deepmerge-ts';
+import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
 import { toUnix } from 'upath';
-import {
-  parsePost as moduleParsePost,
-  postMap
-} from '../../../packages/hexo-post-parser/src';
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
 import { CachePost } from '../../node/cache-post';
@@ -11,6 +8,8 @@ import { md5 } from '../../node/md5-file';
 import config, { cwd } from '../../types/_config';
 import modifyPost from './modifyPost';
 import { DeepPartial } from './postMapper';
+
+// file:../../../packages/hexo-post-parser/src
 
 const parseCache = pcache('parsePost');
 const cachePost = new CachePost();
@@ -121,7 +120,7 @@ export {
   ParseOptions,
   postMap,
   postMeta
-} from '../../../packages/hexo-post-parser/src';
+} from 'hexo-post-parser';
 export { parsePost };
 export default parsePost;
 __g.parsePost = parsePost;
