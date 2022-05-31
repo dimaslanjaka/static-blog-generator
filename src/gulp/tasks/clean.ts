@@ -7,18 +7,18 @@ import { post_generated_dir, post_public_dir, tmp } from '../../types/_config';
 
 /** clean generated folder */
 export const clean_public = (done?: TaskCallback) =>
-  rm(post_generated_dir, { recursive: true }, () => done());
+  rm(post_generated_dir, { recursive: true, force: true }, () => done());
 /** clean posts from config.source_dir */
 export const clean_posts = (done?: TaskCallback) =>
-  rm(post_public_dir, { recursive: true }, () => done());
+  rm(post_public_dir, { recursive: true, force: true }, () => done());
 /** clean temp folder */
 export const clean_tmp = (done?: TaskCallback) => {
   rm(tmp(), { recursive: true }, () => {
-    rm(join(cwd(), 'tmp'), { recursive: true }, () => {
+    rm(join(cwd(), 'tmp'), { recursive: true, force: true }, () => {
       done();
     });
   });
 };
 /** clean database folder */
 export const clean_db = (done?: TaskCallback) =>
-  rm(dbFolder, { recursive: true }, () => done());
+  rm(dbFolder, { recursive: true, force: true }, () => done());
