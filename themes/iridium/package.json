@@ -10,7 +10,7 @@
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
   "license": "ISC",
   "dependencies": {
-    "skeljs": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev"
+    "skeljs": "file:./libs/skeljs"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
