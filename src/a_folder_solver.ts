@@ -1,7 +1,7 @@
 import { existsSync, writeFileSync } from 'fs-extra';
 import { join } from 'upath';
 
-// generate empty config if not exists
+// [task] generate empty config if not exists
 [
   join(__dirname, 'types/_config_project.json'),
   join(__dirname, 'types/_config_theme.json'),

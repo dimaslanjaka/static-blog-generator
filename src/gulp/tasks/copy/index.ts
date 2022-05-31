@@ -3,7 +3,7 @@ import { copyAssets } from './assets';
 import { copyPosts } from './posts';
 import { gulpInlineStyle } from './remove-inline-style';
 
-// COPY TASKS
+// [task] COPY
 gulp.task('copy:assets', () => copyAssets());
 gulp.task('copy:posts', () => copyPosts());
 gulp.task('copy:remove-inline-style', () => gulpInlineStyle());
