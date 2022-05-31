@@ -49,9 +49,11 @@ jobs:
         yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main
         yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git#main
         yarn add git+https://github.com/dimaslanjaka/safelink.git#main
+        yarn add npm-run-all --dev
         yarn remove gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         yarn add gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         git add package.json
+        git add yarn.lock
         git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
         git push
 
