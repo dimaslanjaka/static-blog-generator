@@ -9,7 +9,7 @@
   "author": "Dimas Lanjaka",
   "license": "ISC",
   "dependencies": {
-    "sbg-theme-bootstrap": "file:./bootstrap",
-    "sbg-theme-iridium": "file:./iridium"
+    "sbg-theme-bootstrap": "dimaslanjaka/static-blog-generator#dev/themes/bootstrap",
+    "sbg-theme-iridium": "dimaslanjaka/static-blog-generator#dev/themes/iridium"
   }
 }
