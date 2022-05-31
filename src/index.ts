@@ -7,6 +7,15 @@ import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
+export {
+  clean_db,
+  clean_posts,
+  clean_public,
+  clean_tmp
+} from './gulp/tasks/clean';
+export { copyAssets } from './gulp/tasks/copy/assets';
+export { copyPosts } from './gulp/tasks/copy/posts';
+export { parsePost } from './parser/post/parsePost';
 
 // register scheduler
 new scheduler();
@@ -23,14 +32,5 @@ require(join(__dirname, 'gulp/tasks/dump'));
 
 // [task] DEFAULT
 gulp.task('default', gulp.series('copy', 'generate'));
-
-export {
-  clean_db,
-  clean_posts,
-  clean_public,
-  clean_tmp
-} from './gulp/tasks/clean';
-export { copyAssets } from './gulp/tasks/copy/assets';
-export { copyPosts } from './gulp/tasks/copy/posts';
 
 export default {};
