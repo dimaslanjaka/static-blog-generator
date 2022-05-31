@@ -4,7 +4,7 @@ import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 declare const properties: {
     copyPosts: (_done?: import("undertaker").TaskCallback, cpath?: string) => NodeJS.ReadWriteStream;
-    copyAssets: () => NodeJS.ReadWriteStream | Promise<void>;
+    copyAssets: () => NodeJS.ReadWriteStream | Promise<string>;
     gulpInlineStyle: typeof gulpInlineStyle;
     clean_db: (done?: import("undertaker").TaskCallback) => void;
     clean_posts: (done?: import("undertaker").TaskCallback) => void;
