@@ -9,7 +9,8 @@ import { determineDirname } from '../../utils';
  * @returns
  */
 export const copyAssets = () => {
-  if (!existsSync(post_source_dir)) return Promise.resolve();
+  if (!existsSync(post_source_dir))
+    return Promise.resolve(post_source_dir + ' not found');
   console.log(
     `${color.magentaBright('[copy][assets]')} cwd=${color.Mahogany(
       post_source_dir
