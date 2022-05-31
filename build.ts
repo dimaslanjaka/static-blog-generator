@@ -6,6 +6,7 @@ import { join, toUnix } from 'upath';
 import pkg from './package.json';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/bin/git';
 import { json_encode } from './src/node/JSON';
+import fs from 'fs';
 
 const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 if (!process.env['GITHUB_WORKFLOW']) {
@@ -19,7 +20,9 @@ if (!process.env['GITHUB_WORKFLOW']) {
 
 async function start() {
   if (!process.env['GITHUB_WORKFLOW']) {
-    const id = await getLatestCommitHash();
+    let id = await getLatestCommitHash();
+    const lock = join(__dirname, 'yarn.lock');
+    if (fs.existsSync(lock)) id += '';
     pkg.version = pkg.version.split('-')[0] + '-beta-' + id;
     writeFile(join(__dirname, '.guid'), id);
     writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
