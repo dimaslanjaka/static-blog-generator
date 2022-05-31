@@ -32,10 +32,10 @@ gulp.task('import', async () => {
             delete channel['wp:tag'];
             delete channel['wp:category'];
             if (wpAuthor['wp:author_email']) {
-              author.email = wpAuthor['wp:author_email'];
+              author['email'] = wpAuthor['wp:author_email'];
             }
             if (wpAuthor['wp:author_display_name']) {
-              author.name = wpAuthor['wp:author_display_name'];
+              author['name'] = wpAuthor['wp:author_display_name'];
             }
 
             let icon: string;

@@ -15,22 +15,22 @@ import config, { root } from '../../types/_config';
 const safelink = new safelinkify.safelink({
   redirect: [
     'external_link' in config &&
-    'safelink' in config.external_link &&
-    'redirect' in config.external_link.safelink
-      ? config.external_link.safelink.redirect
+    'safelink' in config['external_link'] &&
+    'redirect' in config['external_link']['safelink']
+      ? config['external_link']['safelink']['redirect']
       : null
   ],
   password:
     'external_link' in config &&
-    'safelink' in config.external_link &&
-    'password' in config.external_link.safelink
-      ? config.external_link.safelink.password
+    'safelink' in config['external_link'] &&
+    'password' in config['external_link']['safelink']
+      ? config['external_link']['safelink']['password']
       : null,
   type:
     'external_link' in config &&
-    'safelink' in config.external_link &&
-    'type' in config.external_link.safelink
-      ? config.external_link.safelink.type
+    'safelink' in config['external_link'] &&
+    'type' in config['external_link']['safelink']
+      ? config['external_link']['safelink']['type']
       : null
 });
 
@@ -51,7 +51,7 @@ export const getDomainWithoutSubdomain = (url: string | URL) => {
 const logname = chalk.magenta('[generate]') + chalk.blue('[after]');
 const hexoURL = new URL(config.url);
 const internal_links = uniqueStringArray([
-  ...config.external_link.exclude,
+  ...config['external_link'].exclude,
   hexoURL.host,
   'www.webmanajemen.com',
   'https://github.com/dimaslanjaka',
@@ -110,7 +110,7 @@ export function filter_external_links(href: string, debug = false) {
           console.log(!matchHost, !matchHref, href);
         }
         if (!matchHost && !matchHref) {
-          const safelinkConfig = config.external_link.safelink;
+          const safelinkConfig = config['external_link']['safelink'];
           // apply safelink
           if (safelinkConfig.enable) {
             const safelinkPath = safelink.encodeURL(href);
@@ -210,8 +210,11 @@ export default function fixHtmlPost(content: string, debug = false) {
       }
 
       if (
-        config.external_link.safelink &&
-        config.external_link.safelink.enable
+        'external_link' in config &&
+        typeof config['external_link'] == 'object' &&
+        'safelink' in config['external_link'] &&
+        config['external_link']['safelink'] &&
+        config['external_link']['safelink']['enable']
       ) {
         element.setAttribute('href', filter.href);
       }
