@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import { join } from 'upath';
-import './a_folder_solver';
+import './a-core';
 import { localServer } from './gulp/server';
 import './gulp/tasks/clean';
 import './gulp/tasks/copy';
