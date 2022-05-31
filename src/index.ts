@@ -63,13 +63,10 @@ const properties = {
 };
 
 export {
-  copyPosts,
-  copyAssets,
-  gulpInlineStyle,
   clean_db,
   clean_posts,
   clean_public,
   clean_tmp
-};
+} from './gulp/tasks/clean';
 
 export default properties;
