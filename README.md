@@ -52,8 +52,6 @@ git clone --branch stable --single-branch https://github.com/dimaslanjaka/static
 cd foldername
 # fetch all submodules
 git submodule update --recursive --remote
-# checkout local branch
-git checkout compiler
 # delete posts (don't copy my articles)
 rm -rf src-posts/*
 # create required folder
