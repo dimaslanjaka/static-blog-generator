@@ -220,7 +220,7 @@
         "token": null
     },
     "generator": {
-        "cache": false
+        "cache": true
     },
     "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
     "favicon": "/favicon.ico",
