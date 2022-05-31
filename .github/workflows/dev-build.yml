@@ -64,8 +64,6 @@ jobs:
         git add package.json
         git add yarn.lock
         cd tests && yarn install --check-files && git add yarn.lock
-        git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
-        git push
 
     - name: Build
       continue-on-error: true
@@ -78,6 +76,11 @@ jobs:
 
     - name: Test mocha
       run: yarn run test:mocha
+
+    - name: Commit & Push
+      run: |
+        git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
+        git push
 
 #    - name: Re-deploy 🚀
 #      uses: JamesIves/github-pages-deploy-action@v4.3.0
