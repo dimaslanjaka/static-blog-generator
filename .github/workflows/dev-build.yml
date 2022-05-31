@@ -56,13 +56,9 @@ jobs:
         git push
 
     - name: Build
-      run: yarn build
-
-    - name: deploy
       continue-on-error: true
       run: |
-        git add dist
-        git commit -m "build ${{ steps.vars.outputs.hash }} $(date)"
+        yarn build
         git push
 
 #    - name: Re-deploy 🚀
