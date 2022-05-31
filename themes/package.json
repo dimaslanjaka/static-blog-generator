@@ -7,10 +7,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": [
-    "bootstrap",
-    "iridium"
-  ],
   "author": "Dimas Lanjaka",
   "license": "ISC",
   "dependencies": {
