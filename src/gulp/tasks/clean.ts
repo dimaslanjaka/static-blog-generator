@@ -13,7 +13,7 @@ export const clean_posts = (done?: TaskCallback) =>
   rm(post_public_dir, { recursive: true, force: true }, () => done());
 /** clean temp folder */
 export const clean_tmp = (done?: TaskCallback) => {
-  rm(tmp(), { recursive: true }, () => {
+  rm(tmp(), { recursive: true, force: true }, () => {
     rm(join(cwd(), 'tmp'), { recursive: true, force: true }, () => {
       done();
     });
