@@ -79,9 +79,9 @@ jobs:
 
     - name: Test TS
       run: |
-        fse copy dist/src/types/_config_hashes.json src/types/_config_hashes.json
-        fse copy dist/src/types/_config_project.json src/types/_config_project.json
-        fse copy dist/src/types/_config_theme.json src/types/_config_theme.json
+        echo "{}" > src/types/_config_hashes.json
+        echo "{}" > src/types/_config_project.json
+        echo "{}" > src/types/_config_theme.json
         yarn run test:ts
 
     - name: Test mocha
