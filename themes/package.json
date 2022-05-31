@@ -7,10 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "bootstrap",
+    "iridium"
+  ],
   "author": "Dimas Lanjaka",
   "license": "ISC",
   "dependencies": {
-    "sbg-theme-bootstrap": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev",
-    "sbg-theme-iridium": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev"
+    "sbg-theme-bootstrap": "file:./bootstrap",
+    "sbg-theme-iridium": "file:./iridium"
   }
 }
