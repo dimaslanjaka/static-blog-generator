@@ -58,7 +58,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
-        yarn add 'https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev'
+        npm install
         yarn install --frozen-lockfile # optional, --immutable
 
     - name: fix module resolutions
