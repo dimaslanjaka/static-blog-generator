@@ -1,5 +1,6 @@
 import { spawn } from 'child_process';
 import { writeFile } from 'fs-extra';
+import moment from 'moment-timezone';
 import readline from 'readline';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
@@ -31,7 +32,6 @@ async function start() {
   }
   build();
 }
-
 /**
  * main build function
  */
@@ -45,12 +45,8 @@ async function build() {
   child.once('close', async () => {
     await git({ cwd: __dirname }, 'add', 'dist');
     const id = await getLatestCommitHash();
-    return await git(
-      { cwd: __dirname },
-      'commit',
-      '-m',
-      `build ${id} ${new Date()}`
-    );
+    const date = moment.tz('Asia/Jakarta').format('z');
+    return await git({ cwd: __dirname }, 'commit', '-m', `build ${id} ${date}`);
   });
   return child;
 }
