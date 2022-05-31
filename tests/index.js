@@ -3,6 +3,5 @@ process.env['NODE_ENV'] = 'development';
 
 const sbg = require('static-blog-generator');
 
-console.log('test using local dependencies');
-//sbg.dump();
+console.log('[JS] cleaning generated posts');
 sbg.clean_posts();

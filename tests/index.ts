@@ -3,7 +3,7 @@ process.env['NODE_ENV'] = 'development';
 
 import { copyPosts } from '../src';
 
-console.log('test using local dependencies');
+console.log('[TS] copying source posts');
 //sbg.clean_posts();
 //sbg.copyAssets();
 copyPosts();
