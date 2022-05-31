@@ -13,9 +13,12 @@ import { isMatch } from '../../node/string-utils';
 import config, { root } from '../../types/_config';
 
 const safelink = new safelinkify.safelink({
-  redirect: [config.external_link.safelink.redirect],
-  password: config.external_link.safelink.password,
-  type: config.external_link.safelink.type
+  redirect: [
+    'external_link' in config ? config.external_link.safelink.redirect : null
+  ],
+  password:
+    'external_link' in config ? config.external_link.safelink.password : null,
+  type: 'external_link' in config ? config.external_link.safelink.type : null
 });
 
 /**
