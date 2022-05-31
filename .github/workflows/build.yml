@@ -36,9 +36,9 @@ jobs:
         yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main
         yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git#main
         yarn add git+https://github.com/dimaslanjaka/safelink.git#main
-        yarn remove gulp node-sass lodash.deburr
-        yarn add gulp node-sass lodash.deburr
-        git add package.json lodash.deburr
+        yarn remove gulp node-sass lodash.deburr lodash
+        yarn add gulp node-sass lodash.deburr lodash
+        git add package.json
         git commit -m "fix module resolutions"
 
     - name: Build
