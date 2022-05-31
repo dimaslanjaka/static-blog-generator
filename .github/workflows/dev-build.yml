@@ -52,6 +52,7 @@ jobs:
         yarn add git+https://github.com/dimaslanjaka/safelink.git#main
         git add package.json
         git add yarn.lock
+        cd tests && yarn install --check-files && git add yarn.lock
         git commit -m "fix module resolutions ${{ steps.vars.outputs.hash }}"
         git push
 
