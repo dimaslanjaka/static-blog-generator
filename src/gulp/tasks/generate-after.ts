@@ -21,8 +21,17 @@ const safelink = new safelinkify.safelink({
       : null
   ],
   password:
-    'external_link' in config ? config.external_link.safelink.password : null,
-  type: 'external_link' in config ? config.external_link.safelink.type : null
+    'external_link' in config &&
+    'safelink' in config.external_link &&
+    'password' in config.external_link.safelink
+      ? config.external_link.safelink.password
+      : null,
+  type:
+    'external_link' in config &&
+    'safelink' in config.external_link &&
+    'type' in config.external_link.safelink
+      ? config.external_link.safelink.type
+      : null
 });
 
 /**
