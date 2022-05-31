@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
   "license": "ISC",
   "dependencies": {
     "skeljs": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev"
