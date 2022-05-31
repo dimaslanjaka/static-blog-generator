@@ -10,7 +10,7 @@ import { json_encode } from './src/node/JSON';
     const id = await getLatestCommitHash();
     pkg.version = pkg.version.split('-')[0] + '-beta-' + id;
     writeFile(join(__dirname, '.guid'), id);
-    writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2));
+    writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
     // commit uuid
     await gitAddAndCommit('.guid', `update cache id ${id}`, { cwd: __dirname });
     await gitAddAndCommit('package.json', `beta-${id}`, {
