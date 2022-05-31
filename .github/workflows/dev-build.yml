@@ -45,7 +45,7 @@ jobs:
       continue-on-error: true
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
-        yarn install --check-files
+        yarn install --check-files --update-checksums
         git add package.json
         git add yarn.lock
         cd tests && yarn install --check-files && git add yarn.lock
