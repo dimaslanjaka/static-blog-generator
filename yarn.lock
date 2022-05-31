@@ -10034,23 +10034,6 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-"sbg-theme-bootstrap@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev":
-  version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev#83903dbd7ffe2dd55e1e55f1cf85551adbd1807f"
-
-"sbg-theme-iridium@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev":
-  version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev#8fe5dfb887710b6b1c7d393a552e259d4c328bf9"
-  dependencies:
-    skeljs "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev"
-
-"sbg-themes@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev":
-  version "1.0.0"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev#480917f3c79e84e8686c0f475edf3cbf98740ffa"
-  dependencies:
-    sbg-theme-bootstrap "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/bootstrap?dev"
-    sbg-theme-iridium "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium?dev"
-
 scss-parser@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/scss-parser/-/scss-parser-1.0.5.tgz#2297d688a4c300e94552f72c41fd7de092d19c4b"
@@ -10286,10 +10269,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
-
-"skeljs@https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev":
-  version "3.0.2"
-  resolved "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes/iridium/libs/skeljs?dev#7cb6e24903447e4048fc2fea6e499a7e39e017bb"
 
 slash@^3.0.0:
   version "3.0.0"
