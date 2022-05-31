@@ -45,8 +45,8 @@ jobs:
       run: |
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
-        git fetch --all
-        git submodule update --init
+        #git fetch --all
+        #git submodule update --init
 
     - name: Declare some variables
       id: vars
@@ -55,11 +55,9 @@ jobs:
         echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         echo "::set-output name=hash::$(git rev-parse --short HEAD)"
 
-    - name: Install dependencies
-      run: |
-        npm i -g gulp-cli typescript npm ts-node npm yarn
-        yarn cache clean
-        yarn install --frozen-lockfile # optional, --immutable
+    - run: npm i -g gulp-cli typescript npm ts-node npm yarn
+    - run: npm install
+    - run: yarn install --frozen-lockfile # optional, --immutable
 
     - name: fix module resolutions
       if: ${{ false }}
