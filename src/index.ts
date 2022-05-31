@@ -29,9 +29,9 @@ declare function require<T>(name: string): T;
 require(join(__dirname, 'gulp/tasks/dump'));
 
 // COPY TASKS
-gulp.task('copy:assets', copyAssets);
+gulp.task('copy:assets', () => copyAssets());
 gulp.task('copy:posts', () => copyPosts());
-gulp.task('copy:remove-inline-style', gulpInlineStyle);
+gulp.task('copy:remove-inline-style', () => gulpInlineStyle());
 gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));
 gulp.task('copy:blogger', gulp.series('copy', 'copy:remove-inline-style'));
 
