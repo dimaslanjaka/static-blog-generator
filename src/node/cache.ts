@@ -8,7 +8,6 @@ import { DynamicObject } from '../types';
 import { array_shuffle } from './array-utils';
 import './cache-serialize';
 import { cacheDir, join, mkdirSync, read, resolve, write } from './filemanager';
-import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import memoizer from './memoize-fs';
 import scheduler from './scheduler';
@@ -101,8 +100,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
       try {
         db = JSON.parse(db.toString());
       } catch (e) {
-        logger.log('cache database lost');
-        //logger.log(e);
+        console.log('cache database lost');
+        //console.log(e);
       }
     }
     if (typeof db == 'object') {
@@ -196,7 +195,7 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
 
     // save cache on process exit
     scheduler.add('writeCacheFile-' + this.currentHash, () => {
-      logger.log(
+      console.log(
         chalk.magentaBright(self.currentHash),
         'saved cache',
         self.dbFile
