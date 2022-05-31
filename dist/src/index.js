@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parsePost = exports.buildPost = exports.dumpEnv = exports.copyPosts = exports.copyAssets = exports.clean_tmp = exports.clean_public = exports.clean_posts = exports.clean_db = void 0;
+exports.parsePost = exports.buildPost = exports.dump = exports.copyPosts = exports.copyAssets = exports.clean_tmp = exports.clean_public = exports.clean_posts = exports.clean_db = void 0;
 var gulp_1 = __importDefault(require("gulp"));
 var upath_1 = require("upath");
 require("./a-core");
@@ -23,7 +23,7 @@ Object.defineProperty(exports, "copyAssets", { enumerable: true, get: function (
 var posts_1 = require("./gulp/tasks/copy/posts");
 Object.defineProperty(exports, "copyPosts", { enumerable: true, get: function () { return posts_1.copyPosts; } });
 var dump_1 = require("./gulp/tasks/dump");
-Object.defineProperty(exports, "dumpEnv", { enumerable: true, get: function () { return dump_1.dumpEnv; } });
+Object.defineProperty(exports, "dump", { enumerable: true, get: function () { return dump_1.dump; } });
 var parsePost_1 = require("./parser/post/parsePost");
 Object.defineProperty(exports, "buildPost", { enumerable: true, get: function () { return parsePost_1.buildPost; } });
 Object.defineProperty(exports, "parsePost", { enumerable: true, get: function () { return parsePost_1.parsePost; } });
@@ -40,4 +40,4 @@ require((0, upath_1.join)(__dirname, 'gulp/tasks/dump'));
 // [task] DEFAULT
 gulp_1.default.task('default', gulp_1.default.series('copy', 'generate'));
 exports.default = {};
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJzcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsOENBQXdCO0FBQ3hCLCtCQUE2QjtBQUM3QixvQkFBa0I7QUFDbEIseUJBQXVCO0FBQ3ZCLDhCQUE0QjtBQUM1Qiw2QkFBMkI7QUFDM0IsK0JBQTZCO0FBQzdCLGlDQUErQjtBQUMvQiwrREFBeUM7QUFDekMsNENBSzRCO0FBSjFCLGlHQUFBLFFBQVEsT0FBQTtBQUNSLG9HQUFBLFdBQVcsT0FBQTtBQUNYLHFHQUFBLFlBQVksT0FBQTtBQUNaLGtHQUFBLFNBQVMsT0FBQTtBQUVYLG1EQUFzRDtBQUE3QyxvR0FBQSxVQUFVLE9BQUE7QUFDbkIsaURBQW9EO0FBQTNDLGtHQUFBLFNBQVMsT0FBQTtBQUNsQiwwQ0FBNEM7QUFBbkMsK0ZBQUEsT0FBTyxPQUFBO0FBQ2hCLHFEQU9pQztBQU4vQixzR0FBQSxTQUFTLE9BQUE7QUFHVCxzR0FBQSxTQUFTLE9BQUE7QUFLWCxxQkFBcUI7QUFDckIsSUFBSSxtQkFBUyxFQUFFLENBQUM7QUFFaEI7O0dBRUc7QUFDSCxPQUFPLENBQUMsRUFBRSxDQUFDLG1CQUFtQixFQUFFLFVBQVUsR0FBRztJQUMzQyxPQUFPLENBQUMsS0FBSyxDQUFDLHNCQUFzQixHQUFHLEdBQUcsQ0FBQyxLQUFLLEdBQUcsSUFBSSxDQUFDLENBQUM7QUFDM0QsQ0FBQyxDQUFDLENBQUM7QUFFSCxxQkFBcUI7QUFDckIsT0FBTyxDQUFDLElBQUEsWUFBSSxFQUFDLFNBQVMsRUFBRSxpQkFBaUIsQ0FBQyxDQUFDLENBQUM7QUFFNUMsaUJBQWlCO0FBQ2pCLGNBQUksQ0FBQyxJQUFJLENBQUMsU0FBUyxFQUFFLGNBQUksQ0FBQyxNQUFNLENBQUMsTUFBTSxFQUFFLFVBQVUsQ0FBQyxDQUFDLENBQUM7QUFFdEQsa0JBQWUsRUFBRSxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJzcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsOENBQXdCO0FBQ3hCLCtCQUE2QjtBQUM3QixvQkFBa0I7QUFDbEIseUJBQXVCO0FBQ3ZCLDhCQUE0QjtBQUM1Qiw2QkFBMkI7QUFDM0IsK0JBQTZCO0FBQzdCLGlDQUErQjtBQUMvQiwrREFBeUM7QUFDekMsNENBSzRCO0FBSjFCLGlHQUFBLFFBQVEsT0FBQTtBQUNSLG9HQUFBLFdBQVcsT0FBQTtBQUNYLHFHQUFBLFlBQVksT0FBQTtBQUNaLGtHQUFBLFNBQVMsT0FBQTtBQUVYLG1EQUFzRDtBQUE3QyxvR0FBQSxVQUFVLE9BQUE7QUFDbkIsaURBQW9EO0FBQTNDLGtHQUFBLFNBQVMsT0FBQTtBQUNsQiwwQ0FBeUM7QUFBaEMsNEZBQUEsSUFBSSxPQUFBO0FBQ2IscURBT2lDO0FBTi9CLHNHQUFBLFNBQVMsT0FBQTtBQUdULHNHQUFBLFNBQVMsT0FBQTtBQUtYLHFCQUFxQjtBQUNyQixJQUFJLG1CQUFTLEVBQUUsQ0FBQztBQUVoQjs7R0FFRztBQUNILE9BQU8sQ0FBQyxFQUFFLENBQUMsbUJBQW1CLEVBQUUsVUFBVSxHQUFHO0lBQzNDLE9BQU8sQ0FBQyxLQUFLLENBQUMsc0JBQXNCLEdBQUcsR0FBRyxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsQ0FBQztBQUMzRCxDQUFDLENBQUMsQ0FBQztBQUVILHFCQUFxQjtBQUNyQixPQUFPLENBQUMsSUFBQSxZQUFJLEVBQUMsU0FBUyxFQUFFLGlCQUFpQixDQUFDLENBQUMsQ0FBQztBQUU1QyxpQkFBaUI7QUFDakIsY0FBSSxDQUFDLElBQUksQ0FBQyxTQUFTLEVBQUUsY0FBSSxDQUFDLE1BQU0sQ0FBQyxNQUFNLEVBQUUsVUFBVSxDQUFDLENBQUMsQ0FBQztBQUV0RCxrQkFBZSxFQUFFLENBQUMifQ==
