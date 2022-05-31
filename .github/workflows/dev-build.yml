@@ -78,7 +78,11 @@ jobs:
       run: yarn run test:js
 
     - name: Test TS
-      run: yarn run test:ts
+      run: |
+        fse copy dist/src/types/_config_hashes.json src/types/_config_hashes.json
+        fse copy dist/src/types/_config_project.json src/types/_config_project.json
+        fse copy dist/src/types/_config_theme.json src/types/_config_theme.json
+        yarn run test:ts
 
     - name: Test mocha
       run: yarn run test:mocha
