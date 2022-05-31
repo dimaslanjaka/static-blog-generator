@@ -37,7 +37,7 @@ async function build() {
       { cwd: __dirname },
       'commit',
       '-m',
-      `[${id}] build ${new Date()}`
+      `build ${id} ${new Date()}`
     );
   });
   return child;
