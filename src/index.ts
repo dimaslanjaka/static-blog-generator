@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import { join } from 'upath';
 import './a-core';
 import './gulp/server';
 import './gulp/tasks/clean';
@@ -34,9 +33,6 @@ new scheduler();
 process.on('uncaughtException', function (err) {
   console.error('uncaughtException:\n' + err.stack + '\n');
 });
-
-// [task] DEVELOPMENT
-require(join(__dirname, 'gulp/tasks/dump'));
 
 // [task] DEFAULT
 gulp.task('default', gulp.series('copy', 'generate'));
