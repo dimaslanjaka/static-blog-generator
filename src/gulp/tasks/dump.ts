@@ -18,6 +18,9 @@ export const dump = async () => {
   });
 };
 
+// [task] DEVELOPMENT
+// require(join(__dirname, 'gulp/tasks/dump'));
+
 gulp.task('dump:posts', (done) => {
   require(join(__dirname, 'src/node/cache-post.test.ts'));
   done();
