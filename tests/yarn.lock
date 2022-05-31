@@ -5686,9 +5686,6 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-"sbg-themes@file:./themes":
-  version "0.0.0"
-
 scss-tokenizer@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.3.0.tgz#ef7edc3bc438b25cd6ffacf1aa5b9ad5813bf260"
@@ -6052,7 +6049,7 @@ stack-trace@0.0.10:
 
 "static-blog-generator@git+https://github.com/dimaslanjaka/static-blog-generator.git#dev":
   version "2.0.6-beta-bccd6622f8"
-  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#7d8ba68334fb22cf679ce2bff8b06fc81bb04ad4"
+  resolved "git+https://github.com/dimaslanjaka/static-blog-generator.git#6112286636d88e94ab555c50ce75ae2e9a287a87"
   dependencies:
     axios "^0.27.2"
     browser-sync "^2.27.10"
@@ -6106,8 +6103,6 @@ stack-trace@0.0.10:
     url-parse "^1.5.10"
     yaml "^1.10.2"
     yargs "^17.4.0"
-  optionalDependencies:
-    sbg-themes "file:../../../../../../home/dimaslanjaka/.cache/yarn/v6/npm-static-blog-generator-2.0.6-beta-bccd6622f8-7d8ba68334fb22cf679ce2bff8b06fc81bb04ad4/node_modules/static-blog-generator/themes"
 
 static-extend@^0.1.1:
   version "0.1.2"
