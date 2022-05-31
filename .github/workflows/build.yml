@@ -44,7 +44,7 @@ jobs:
         yarn remove gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         yarn add gulp node-sass lodash.deburr lodash html-minifier html-minifier-terser
         git add package.json
-        git commit -m "fix module resolutions"
+        git commit -m "fix module resolutions ${{ github.ref }}"
 
     - name: Build
       run: yarn build
@@ -52,7 +52,7 @@ jobs:
     - name: deploy
       run: |
         git add dist
-        git commit -m "build $(date)"
+        git commit -m "build ${{ github.ref }} $(date)"
         git push
 
 #    - name: Re-deploy 🚀
