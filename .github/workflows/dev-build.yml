@@ -42,13 +42,13 @@ jobs:
         echo "::set-output name=hash::$(git rev-parse --short HEAD)"
 
     - name: Install dependencies
-      continue-on-error: true
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
         yarn install --check-files --update-checksums
 
     - name: fix module resolutions
       if: ${{ false }}
+      continue-on-error: true
       run: |
         git add package.json
         git add yarn.lock
