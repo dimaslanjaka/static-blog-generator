@@ -30,11 +30,11 @@ export function bindProcessExit(key: string, fn: () => void): void {
 function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
   Object.keys(fns).forEach((key) => {
     if (scheduler.verbose)
-      logger.log(logname, `executing function key: ${key}`);
+      console.log(logname, `executing function key: ${key}`);
     fns[key]();
   });
   if (options.cleanup && scheduler.verbose)
-    logger.log(logname, `clean exit(${exitCode})`);
+    console.log(logname, `clean exit(${exitCode})`);
   if (options.exit) process.exit();
 }
 
@@ -133,7 +133,7 @@ class scheduler {
    */
   static executeAll() {
     Object.keys(functions).forEach((key) => {
-      if (scheduler.verbose) logger.log(logname, 'executing', key);
+      if (scheduler.verbose) console.log(logname, 'executing', key);
       functions[key]();
     });
     scheduler.clearArray(functions);
