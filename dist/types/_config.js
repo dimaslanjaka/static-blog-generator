@@ -107,6 +107,6 @@ if ((0, fs_1.existsSync)(file)) {
         }
     });
 }
-(0, fs_1.writeFileSync)((0, upath_1.join)(__dirname, '_config_project.json'), JSON.stringify(config));
+(0, fs_1.writeFileSync)((0, upath_1.join)(__dirname, '_config_project.json'), JSON.stringify(config, null, 2));
 exports.default = config;
 //# sourceMappingURL=_config.js.map
