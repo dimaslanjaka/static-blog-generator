@@ -44,7 +44,8 @@ jobs:
     - name: Install dependencies
       run: |
         npm i -g gulp-cli typescript npm ts-node npm yarn
-        yarn install --immutable
+        yarn cache clean
+        yarn install --frozen-lockfile # optional, --immutable
 
     - name: fix module resolutions
       if: ${{ false }}
