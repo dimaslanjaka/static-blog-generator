@@ -36,6 +36,8 @@ jobs:
         yarn add git+https://github.com/dimaslanjaka/hexo-post-parser.git#main
         yarn add git+https://github.com/dimaslanjaka/google-news-sitemap.git#main
         yarn add git+https://github.com/dimaslanjaka/safelink.git#main
+        yarn remove gulp node-sass lodash.deburr
+        yarn add gulp node-sass lodash.deburr
 
     - name: Build
       run: yarn build
@@ -45,6 +47,7 @@ jobs:
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
         git add dist
+        git add package.json
         git commit -m "build $(date)"
         git push
 
