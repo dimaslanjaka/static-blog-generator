@@ -1,5 +1,5 @@
 import { spawn } from 'child_process';
-import fse, { writeFile } from 'fs-extra';
+import { writeFile } from 'fs-extra';
 import readline from 'readline';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
@@ -28,7 +28,7 @@ askCommitMessage('commit messages:\t').then(async (msg) => {
  * main build function
  */
 async function build() {
-  fse.emptyDirSync(join(__dirname, 'dist'));
+  //fse.emptyDirSync(join(__dirname, 'dist'));
   const child = spawn('tsc', ['-p', 'tsconfig.build.json'], {
     cwd: toUnix(__dirname),
     stdio: 'inherit',
