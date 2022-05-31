@@ -45,8 +45,8 @@ jobs:
       run: |
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
-        git fetch --all
-        git submodule update --init
+        #git fetch --all
+        #git submodule update --init
 
     - name: Declare some variables
       id: vars
