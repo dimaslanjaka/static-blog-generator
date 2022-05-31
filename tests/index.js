@@ -1,12 +1,9 @@
 process.cwd = () => __dirname;
 
 const sbg = require('../dist/src');
-const sbg2 = require('static-blog-generator');
 
 console.log('test using local dependencies');
 test(sbg);
-console.log('test using remote dependencies');
-test(sbg2);
 
 /**
  * test runner
@@ -23,3 +20,4 @@ function test(sbg) {
   //sbg.copyPosts();
   //sbg.copyAssets();
 }
+module.exports = { test };
