@@ -190,6 +190,6 @@
     "vinyl": "^2.2.1"
   },
   "optionalDependencies": {
-    "sbg-themes": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/themes?dev"
+    "sbg-themes": "file:./themes"
   }
 }
