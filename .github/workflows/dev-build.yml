@@ -78,6 +78,7 @@ jobs:
       run: yarn run test:mocha
 
     - name: Commit & Push
+      continue-on-error: true
       run: |
         git commit -m "build from ${{ steps.vars.outputs.hash }}"
         git push
