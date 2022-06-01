@@ -1,6 +1,3 @@
-[submodule "packages/safelink"]
-	path = packages/safelink
-	url = https://github.com/dimaslanjaka/safelink.git
 [submodule "packages/google-news-sitemap"]
 	path = packages/google-news-sitemap
 	url = https://github.com/dimaslanjaka/google-news-sitemap.git
