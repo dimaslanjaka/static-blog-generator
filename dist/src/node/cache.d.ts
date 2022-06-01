@@ -126,26 +126,30 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
  * @returns
  */
 export declare const pcache: ((name: string) => {
-    put: (name: string, data: any, callback: any) => any;
-    get: <T>(name: string, callback: (err: Error, data: T) => any) => any;
-    delete: (name: string, callback: any) => void;
-    deleteSync: (name: string) => void;
-    putSync: (name: string, data: any) => void;
-    getSync: <T_1>(name: string) => T_1;
-    keys: (callback: (keys: string[]) => any) => any;
-    keysSync: () => string[];
-    unlink: (callback: any) => any;
-    valuesSync: <T_2 extends any[]>() => T_2;
+    put: (name: any, data: any, cb: any) => any;
+    set: (name: any, data: any, cb: any) => any;
+    get: (name: string | number, cb?: (e: Error) => any) => any;
+    delete: (name: any, cb: any) => void;
+    putSync: (name: any, data: any) => void;
+    setSync: (name: any, data: any) => void;
+    getSync: (name: any) => any;
+    deleteSync: (name: any) => void;
+    keys: (cb: any) => any;
+    keysSync: () => any[];
+    valuesSync: () => any[];
+    unlink: (cb: any) => any;
 }) & memoizee.Memoized<(name: string) => {
-    put: (name: string, data: any, callback: any) => any;
-    get: <T>(name: string, callback: (err: Error, data: T) => any) => any;
-    delete: (name: string, callback: any) => void;
-    deleteSync: (name: string) => void;
-    putSync: (name: string, data: any) => void;
-    getSync: <T_1>(name: string) => T_1;
-    keys: (callback: (keys: string[]) => any) => any;
-    keysSync: () => string[];
-    unlink: (callback: any) => any;
-    valuesSync: <T_2 extends any[]>() => T_2;
+    put: (name: any, data: any, cb: any) => any;
+    set: (name: any, data: any, cb: any) => any;
+    get: (name: string | number, cb?: (e: Error) => any) => any;
+    delete: (name: any, cb: any) => void;
+    putSync: (name: any, data: any) => void;
+    setSync: (name: any, data: any) => void;
+    getSync: (name: any) => any;
+    deleteSync: (name: any) => void;
+    keys: (cb: any) => any;
+    keysSync: () => any[];
+    valuesSync: () => any[];
+    unlink: (cb: any) => any;
 }>;
 export {};
