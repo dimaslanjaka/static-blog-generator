@@ -47,7 +47,7 @@
     "ci:submodule": "git submodule foreach yarn install --check-files",
     "ci:self": "yarn install --check-cache --check-files --ignore-engines --ignore-platform",
     "rebuild": "yarn rebuild --ignore-engines --ignore-platform",
-    "postinstall": "grep url .gitmodules | sed 's/.*= //' | while read url; do git clone $url; done"
+    "preinstall": "node preinstall.js"
   },
   "repository": {
     "type": "git",
@@ -86,9 +86,9 @@
     "folder-hash": "^4.0.2",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
-    "google-news-sitemap": "dimaslanjaka/google-news-sitemap",
+    "google-news-sitemap": "file:./packages/google-news-sitemap",
     "gulp": "^4.0.2",
-    "hexo-post-parser": "dimaslanjaka/hexo-post-parser",
+    "hexo-post-parser": "file:./packages/hexo-post-parser",
     "hexo-util": "^2.6.1",
     "html-minifier": "^4.0.0",
     "html-minifier-terser": "^7.0.0-alpha.2",
@@ -114,7 +114,7 @@
     "node-sass": "^7.0.1",
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache.git#improve2",
-    "safelinkify": "https://github.com/dimaslanjaka/safelink.git",
+    "safelinkify": "file:./packages/safelink",
     "showdown": "^2.0.3",
     "sqlite3": "^5.0.8",
     "through2": "^4.0.2",
