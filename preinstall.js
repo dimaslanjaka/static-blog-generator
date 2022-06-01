@@ -5,16 +5,28 @@ const path = require('path');
 
 if (fs.existsSync(path.join(__dirname, '.git'))) {
   console.log('installing from github repository');
-  spawn('git', ['submodule', '-i', '-r'], {
+  spawn('git', ['submodule', 'update', '-i', '-r'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
   });
-  spawn('git', ['submodule', 'foreach', 'git', '-i', '-r'], {
-    cwd: __dirname,
-    shell: true,
-    stdio: 'inherit'
-  });
+  spawn(
+    'git',
+    [
+      'submodule',
+      'foreach',
+      'git',
+      'submodule',
+      'update',
+      '--init',
+      '--recursive'
+    ],
+    {
+      cwd: __dirname,
+      shell: true,
+      stdio: 'inherit'
+    }
+  );
 } else {
   console.log('installing from npm registry');
 }
