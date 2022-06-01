@@ -1,5 +1,5 @@
 import { deepmerge } from 'deepmerge-ts';
-import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
+import { parsePost as moduleParsePost, postMap } from '../../../packages/hexo-post-parser/src';
 import { toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
@@ -120,7 +120,7 @@ export {
   ParseOptions,
   postMap,
   postMeta
-} from 'hexo-post-parser';
+} from '../../../packages/hexo-post-parser/src';
 export { parsePost };
 export default parsePost;
 __g.parsePost = parsePost;
