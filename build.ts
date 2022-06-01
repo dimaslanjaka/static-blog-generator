@@ -15,7 +15,8 @@ const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
 if (!process.env['GITHUB_WORKFLOW']) {
   askCommitMessage('commit messages:\t').then(async (msg) => {
-    await gitAddAndCommit('src', msg, { cwd: __dirname });
+    if (msg.trim().length > 0)
+      await gitAddAndCommit('src', msg, { cwd: __dirname });
     await start();
   });
 } else {
@@ -24,22 +25,23 @@ if (!process.env['GITHUB_WORKFLOW']) {
 
 async function start() {
   if (!process.env['GITHUB_WORKFLOW']) {
-    let id = await getLatestCommitHash();
+    let commitHash = await getLatestCommitHash();
     const lock = join(__dirname, 'yarn.lock');
-    if (fs.existsSync(lock)) id += '';
-    pkg.version = pkg.version.split('-')[0] + '-beta-' + id;
-    writeFile(join(__dirname, '.guid'), id);
+    if (fs.existsSync(lock)) commitHash += '';
+    pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
+    writeFile(join(__dirname, '.guid'), commitHash);
     writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
     // commit uuid
-    await gitAddAndCommit('.guid', `update cache id ${id}`, {
+    await gitAddAndCommit('.guid', `update cache id ${commitHash}`, {
       cwd: __dirname
     });
-    await gitAddAndCommit('package.json', `beta-${id}`, {
+    await gitAddAndCommit('package.json', `beta-${commitHash}`, {
       cwd: __dirname
     });
   }
   build();
 }
+
 /**
  * main build function
  */
@@ -52,9 +54,14 @@ async function build() {
   });
   child.once('close', async () => {
     await git({ cwd: __dirname }, 'add', 'dist');
-    const id = await getLatestCommitHash();
+    const commitHash = await getLatestCommitHash();
 
-    return await git({ cwd: __dirname }, 'commit', '-m', `build ${id} ${date}`);
+    return await git(
+      { cwd: __dirname },
+      'commit',
+      '-m',
+      `build ${commitHash} ${date}`
+    );
   });
   return child;
 }
