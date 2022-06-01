@@ -10,23 +10,11 @@ if (fs.existsSync(path.join(__dirname, '.git'))) {
     shell: true,
     stdio: 'inherit'
   });
-  spawn(
-    'git',
-    [
-      'submodule',
-      'foreach',
-      'git',
-      'submodule',
-      'update',
-      '--init',
-      '--recursive'
-    ],
-    {
-      cwd: __dirname,
-      shell: true,
-      stdio: 'inherit'
-    }
-  );
+  spawn('git', ['submodule', 'update', '--init', '--recursive'], {
+    cwd: path.join(__dirname, 'packages/hexo-post-parser'),
+    shell: true,
+    stdio: 'inherit'
+  });
 } else {
-  console.log('installing from npm registry');
+  console.log('installing from npm registry, skipping preinstall');
 }
