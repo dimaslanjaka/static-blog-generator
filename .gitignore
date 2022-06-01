@@ -1,9 +1,15 @@
+# keep all dist files
+!dist
+!dist/*
+!dist/**/*
+
+# main excluded files
 *.log
 public/*
 .deploy*/
 package-lock.backup
 yarn.lock.backup
-firebase.js
+/firebase.js
 *.backup.*
 *.old.*
 *.private.*
