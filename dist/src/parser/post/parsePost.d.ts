@@ -1,4 +1,4 @@
-import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
+import { parsePost as moduleParsePost, postMap } from '../../../packages/hexo-post-parser/src';
 import { DeepPartial } from './postMapper';
 /**
  * Parse Markdown Post
@@ -9,6 +9,6 @@ import { DeepPartial } from './postMapper';
  * @returns
  */
 declare const parsePost: (path: string, content?: string, options?: DeepPartial<Parameters<typeof moduleParsePost>[1]>) => Promise<postMap>;
-export { buildPost, DeepPartial, ParseOptions, postMap, postMeta } from 'hexo-post-parser';
+export { buildPost, DeepPartial, ParseOptions, postMap, postMeta } from '../../../packages/hexo-post-parser/src';
 export { parsePost };
 export default parsePost;
