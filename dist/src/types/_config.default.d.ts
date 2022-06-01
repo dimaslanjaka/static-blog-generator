@@ -1,3 +1,4 @@
+import "../a-core";
 export declare const default_config: {
     title: string;
     subtitle: string;
