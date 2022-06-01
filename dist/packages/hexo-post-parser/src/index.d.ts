@@ -1,3 +1,4 @@
+import './a_index';
 import { buildPost } from './buildPost';
 import { parsePost } from './parsePost';
 export declare const obj: {
