@@ -64,7 +64,7 @@ export declare const default_project_config: {
     future: boolean;
     highlight: {
         enable: boolean;
-        auto_detect: boolean;
+        auto_detect: boolean; /** default project config */
         line_number: boolean;
         tab_replace: string;
         wrap: boolean;
@@ -130,7 +130,7 @@ declare const config: ProjectConfig;
 /**
  * is verbose activated?
  */
-export declare const verbose: any;
+export declare const verbose: boolean;
 export declare const isDev: boolean;
 /**
  * Public Source Post Dir ({@link config.source_dir})
@@ -163,4 +163,4 @@ export declare type ThemeOpt = typeof theme_config & {
 };
 /** EXPORT PRIVATE AND PUBLIC CONFIGS */
 export default config;
-export declare const project_config: any;
+export declare const project_config: ProjectConfig;
