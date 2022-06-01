@@ -1,5 +1,5 @@
-import { existsSync, writeFileSync } from 'fs-extra';
-import { join } from 'upath';
+import { existsSync, writeFileSync } from 'fs';
+import { join } from 'path';
 
 // [task] generate empty config if not exists
 [
