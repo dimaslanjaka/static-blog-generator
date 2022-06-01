@@ -11,5 +11,5 @@ if (fs.existsSync(path.join(__dirname, '.git'))) {
     stdio: 'inherit'
   });
 } else {
-  console.log('installing from npm packages');
+  console.log('installing from npm registry');
 }
