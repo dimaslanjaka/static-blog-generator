@@ -7,3 +7,7 @@
 [submodule "packages/safelink"]
 	path = packages/safelink
 	url = https://github.com/dimaslanjaka/safelink.git
+[submodule "packages/hexo-post-parser/packages/persistent-cache"]
+	path = packages/hexo-post-parser/packages/persistent-cache
+	url = https://github.com/dimaslanjaka/persistent-cache.git
+	branch = improve2
