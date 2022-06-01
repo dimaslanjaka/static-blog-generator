@@ -1,12 +1,11 @@
-import { postMap } from '../parser/post/parsePost';
 import { mergedPostMap } from '../parser/post/postMapper';
 export declare type postResult = Partial<mergedPostMap>;
 export declare class CachePost {
     constructor();
     set(key: string, value: any): this;
     get<T>(key: string): T;
-    getKeys(): string[];
-    getAll(): postMap[];
+    getKeys(): any[];
+    getAll(): any[];
     /**
      * get total posts
      * @returns
