@@ -1,4 +1,5 @@
 import { spawn } from 'child_process';
+import fs, { writeFileSync } from 'fs';
 import { writeFile } from 'fs-extra';
 import moment from 'moment-timezone';
 import readline from 'readline';
@@ -6,9 +7,12 @@ import { join, toUnix } from 'upath';
 import pkg from './package.json';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/bin/git';
 import { json_encode } from './src/node/JSON';
-import fs from 'fs';
 
+writeFileSync(join(__dirname, 'src/types/_config_project.json'), '{}');
+writeFileSync(join(__dirname, 'src/types/_config_theme.json'), '{}');
+writeFileSync(join(__dirname, 'src/types/_config_hashes.json'), '{}');
 const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
+
 if (!process.env['GITHUB_WORKFLOW']) {
   askCommitMessage('commit messages:\t').then(async (msg) => {
     await gitAddAndCommit('src', msg, { cwd: __dirname });
