@@ -1,6 +1,6 @@
 import { deepmerge } from 'deepmerge-ts';
-import { parsePost as moduleParsePost, postMap } from '../../../packages/hexo-post-parser/src';
 import { toUnix } from 'upath';
+import { parsePost as moduleParsePost, postMap } from '../../../packages/hexo-post-parser/src';
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
 import { CachePost } from '../../node/cache-post';
