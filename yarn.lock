@@ -8320,7 +8320,7 @@ node-status-codes@^1.0.0:
 node.extend@1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/node.extend/-/node.extend-1.0.8.tgz#bab04379f7383f4587990c9df07b6a7f65db772b"
-  integrity sha1-urBDefc4P0WHmQyd8Htqf2Xbdys=
+  integrity sha512-yvo/DZY0kijlDF192KqLX59/Yz0S5eUrV0GnRcjsoRXVqCGt7EVK+ONq3ZlijJvH/z/447qJaOeTgOGfyFQNPA==
   dependencies:
     is "~0.2.6"
     object-keys "~0.4.0"
@@ -8328,7 +8328,7 @@ node.extend@1.0.8:
 node.flow@1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/node.flow/-/node.flow-1.2.3.tgz#e1c44a82aeca8d78b458a77fb3dc642f2eba2649"
-  integrity sha1-4cRKgq7KjXi0WKd/s9xkLy66Jkk=
+  integrity sha512-f6bmAiB6wte7YTVWn5rWpz7Fh9OFHMmj8FwNkI3XnwIHRbg7H3nVncr1Kz8DnGS3idUFpRQ8D6lsecUAvjlqKA==
   dependencies:
     node.extend "1.0.8"
 
@@ -8566,7 +8566,7 @@ object-keys@^1.1.1:
 object-keys@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
-  integrity sha1-KKaq50KN0sOpLz2V8hM13SBOAzY=
+  integrity sha512-ncrLw+X55z7bkl5PnUvHwFK9FcGuFYo9gtjws2XtSzL+aZ8tm830P60WJ0dSmFVaSalWieW5MD7kEdnXda9yJw==
 
 object-visit@^1.0.0:
   version "1.0.1"
