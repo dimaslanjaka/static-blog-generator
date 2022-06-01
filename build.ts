@@ -1,23 +1,36 @@
-import { spawn, SpawnOptions } from 'child_process';
-import crypto from 'crypto';
+import { exec, spawn, SpawnOptions } from 'child_process';
 import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
 
 if (!process.env['GITHUB_WORKFLOW']) {
-  pkg.uuid = crypto
+  /*pkg.version = crypto
     .createHash('md5')
     .update(new Date().toDateString())
-    .digest('hex');
-  writeFile(join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2));
-  // commit uuid
-  git(null, 'add', 'package.json').then(() => {
-    git(null, 'commit', '-m', 'update ' + pkg.uuid).then(() => {
-      build();
-    });
+    .digest('hex');*/
+  exec('git rev-parse --short HEAD', function (err, hash) {
+    //if (!err) console.log('Last commit hash on this branch is:', hash);
+    if (typeof hash === 'string' && hash.length > 1) {
+      hash = hash.trim();
+      const split = pkg.version.split('-');
+
+      if (hash != split[2]) {
+        split[0] += '-beta-' + hash;
+        pkg.version = split[0];
+        writeFile(
+          join(__dirname, 'package.json'),
+          JSON.stringify(pkg, null, 2)
+        );
+        git(null, 'add', 'package.json').then(() => {
+          git(null, 'commit', '-m', 'update ' + hash).then(() => {
+            build();
+          });
+        });
+      }
+    }
   });
 } else {
-  console.log('not updating the uuid on github workflow');
+  console.log('not updating the commit hash on github workflow');
   build();
 }
 
