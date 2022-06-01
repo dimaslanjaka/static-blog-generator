@@ -47,7 +47,8 @@
     "ci:submodule": "git submodule foreach yarn install --check-files",
     "ci:self": "yarn install --check-cache --check-files --ignore-engines --ignore-platform",
     "rebuild": "yarn rebuild --ignore-engines --ignore-platform",
-    "update-version": "npm version $(git describe)"
+    "update-version": "npm version $(git describe)",
+    "preinstall": "node preinstall.js"
   },
   "repository": {
     "type": "git",
