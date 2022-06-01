@@ -10,7 +10,7 @@ declare function cache(options: any): {
     delete: (name: any, cb: any) => void;
     putSync: (name: any, data: any) => void;
     setSync: (name: any, data: any) => void;
-    getSync: (name: any) => any;
+    getSync: <T = string>(name: string) => T;
     deleteSync: (name: any) => void;
     keys: (cb: any) => any;
     keysSync: () => any[];
