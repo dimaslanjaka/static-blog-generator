@@ -113,7 +113,7 @@
     "node-libcurl": "^2.3.4",
     "node-sass": "^7.0.1",
     "nunjucks": "^3.2.3",
-    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache.git#improve2",
+    "persistent-cache": "file:./packages/hexo-post-parser/packages/persistent-cache",
     "safelinkify": "file:./packages/safelink",
     "showdown": "^2.0.3",
     "sqlite3": "^5.0.8",

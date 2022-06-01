@@ -10,6 +10,11 @@ if (fs.existsSync(path.join(__dirname, '.git'))) {
     shell: true,
     stdio: 'inherit'
   });
+  spawn('git', ['submodule', 'foreach', 'git', '-i', '-r'], {
+    cwd: __dirname,
+    shell: true,
+    stdio: 'inherit'
+  });
 } else {
   console.log('installing from npm registry');
 }
