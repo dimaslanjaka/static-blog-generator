@@ -1,3 +1,4 @@
+import "../a-core";
 export const default_config = {
   // Site
   title: 'Hexo',
