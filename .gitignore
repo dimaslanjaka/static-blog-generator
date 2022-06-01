@@ -2,6 +2,7 @@
 !dist
 !dist/*
 !dist/**/*
+dist/src/types/*.json
 
 # main excluded files
 *.log
