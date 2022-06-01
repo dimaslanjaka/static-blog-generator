@@ -1,6 +1,6 @@
 {
   "name": "static-blog-generator",
-  "version": "2.0.7-beta-e3beb0226",
+  "version": "2.0.7-beta-cf8587db46",
   "description": "Static Blog Generator",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -23,7 +23,6 @@
   "scripts": {
     "dev": "nodemon",
     "build": "npm-run-all -s build:**",
-    "build:prepare": "echo '{}' > src/types/_config_hashes.json && echo '{}' > src/types/_config_project.json && echo '{}' > src/types/_config_theme.json",
     "build:src": "ts-node build.ts",
     "build:hexo-post-parser": "cd packages/hexo-post-parser && yarn install --check-files",
     "build:safelinkify": "cd packages/safelink && yarn install --check-files",
