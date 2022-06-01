@@ -52,11 +52,12 @@ jobs:
 
     - name: Resolve git user
       run: |
+        cdir="$PWD"
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
         git fetch --all
         git submodule update -i -r
-        git submodule foreach git submodule update -i -r
+        cd packages/hexo-post-parser && git submodule update -i -r $$ cd $cdir
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: yarn install --immutable
