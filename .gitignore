@@ -1,3 +1,9 @@
+# keep all dist files
+!dist
+!dist/*
+!dist/**/*
+dist/types/*.json
+
 # Logs
 logs
 *.log
