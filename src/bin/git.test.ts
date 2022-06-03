@@ -2,7 +2,11 @@ import { join } from 'path';
 import { getLatestCommitHash, git } from './git';
 
 getLatestCommitHash().then((id) => {
-  console.log('latest', id);
+  console.log('latest all', id);
+});
+
+getLatestCommitHash('src').then((id) => {
+  console.log('latest src', id);
 });
 
 function _test() {

@@ -1,6 +1,6 @@
 import { spawn, SpawnOptions } from 'child_process';
 import { Readable } from 'stream';
-import { join, toUnix } from 'upath';
+import { toUnix } from 'upath';
 
 /**
  * git command
@@ -74,9 +74,9 @@ export const getLatestCommitHash = async (path?: string, short = true) => {
   } else {
     args.push('log');
     if (!short) {
-      args.push('--pretty=tformat:"%H"');
+      args.push('--pretty=tformat:%H');
     } else {
-      args.push('--pretty=tformat:"%h"');
+      args.push('--pretty=tformat:%h');
     }
     args.push('-n');
     args.push('1');
