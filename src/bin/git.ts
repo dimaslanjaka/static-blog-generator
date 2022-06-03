@@ -91,6 +91,20 @@ export const getLatestCommitHash = async (path?: string, short = true) => {
   return res.stdout[0];
 };
 
+/**
+ * git describe
+ * @returns
+ */
+export const gitDescribe = async () => {
+  const res = await git(
+    {
+      cwd: process.cwd() //join(__dirname, '../../')
+    },
+    'describe'
+  );
+  return res.stdout[0];
+};
+
 export async function gitAddAndCommit(
   file: string,
   msg: string,
