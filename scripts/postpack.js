@@ -1,10 +1,7 @@
-const { existsSync, writeFileSync, mkdirSync } = require('fs');
+const { existsSync, mkdirSync } = require('fs');
 const { copySync } = require('fs-extra');
 const { join } = require('path');
 const pkg = require('../package.json');
-const { hideBin } = require('yargs/helpers');
-const yargs = require('yargs');
-const argv = yargs(hideBin(process.argv)).argv;
 
 const filename = pkg.name + '-' + pkg.version + '.tgz';
 const filepath = join(process.cwd(), filename);
@@ -19,4 +16,3 @@ if (existsSync(filepath)) {
   }
   copySync(filepath, newPath, { overwrite: true });
 }
-writeFileSync(join(tmp, 'postpack.log'), JSON.stringify(argv));
