@@ -62,12 +62,11 @@ jobs:
     - run: npm install
 
     - name: fix module resolutions
-      if: ${{ false }}
       continue-on-error: true
       run: |
         git add package.json
         git add yarn.lock
-        cd tests && yarn install --check-files && git add yarn.lock
+        git add package-lock.json
 
     - name: Build
       continue-on-error: true
