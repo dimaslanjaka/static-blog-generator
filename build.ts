@@ -2,12 +2,12 @@ import { spawn } from 'child_process';
 import fs, { writeFileSync } from 'fs';
 import { writeFile } from 'fs-extra';
 import moment from 'moment-timezone';
-import { md5FileSync } from './src/node/md5-file';
 import readline from 'readline';
-import { join, toUnix } from 'upath';
+import { join } from 'upath';
 import pkg from './package.json';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/bin/git';
 import { json_encode } from './src/node/JSON';
+import { md5FileSync } from './src/node/md5-file';
 
 writeFileSync(join(__dirname, 'src/types/_config_project.json'), '{}');
 writeFileSync(join(__dirname, 'src/types/_config_theme.json'), '{}');
@@ -25,14 +25,14 @@ if (!process.env['GITHUB_WORKFLOW']) {
 }
 
 async function start() {
-  let commitHash = await getLatestCommitHash('src');
+  const commitHash = await getLatestCommitHash('src');
   const islocal = !process.env['GITHUB_WORKFLOW'];
   if (islocal) {
     let lock = join(__dirname, 'yarn.lock');
     if (!fs.existsSync(lock)) lock = join(__dirname, 'package-lock.json');
-    commitHash += ':' + md5FileSync(lock);
+    const guid = commitHash + ':' + md5FileSync(lock);
     pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
-    writeFile(join(__dirname, '.guid'), commitHash);
+    writeFile(join(__dirname, '.guid'), guid);
     writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
     // commit uuid
     await gitAddAndCommit('.guid', `update cache id ${commitHash}`, {
