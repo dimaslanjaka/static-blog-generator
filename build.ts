@@ -2,6 +2,7 @@ import { spawn } from 'child_process';
 import fs, { writeFileSync } from 'fs';
 import { writeFile } from 'fs-extra';
 import moment from 'moment-timezone';
+import { md5FileSync } from './src/node/md5-file';
 import readline from 'readline';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
@@ -24,11 +25,12 @@ if (!process.env['GITHUB_WORKFLOW']) {
 }
 
 async function start() {
-  let commitHash = await getLatestCommitHash();
+  let commitHash = await getLatestCommitHash('src');
   const islocal = !process.env['GITHUB_WORKFLOW'];
   if (islocal) {
-    const lock = join(__dirname, 'yarn.lock');
-    if (fs.existsSync(lock)) commitHash += '';
+    let lock = join(__dirname, 'yarn.lock');
+    if (!fs.existsSync(lock)) lock = join(__dirname, 'package-lock.json');
+    commitHash += ':' + md5FileSync(lock);
     pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
     writeFile(join(__dirname, '.guid'), commitHash);
     writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
@@ -43,7 +45,7 @@ async function start() {
   await build();
   if (islocal) {
     const child = spawn('npm', ['install'], {
-      cwd: toUnix(__dirname),
+      cwd: __dirname,
       stdio: 'inherit',
       shell: true
     });
@@ -65,7 +67,7 @@ async function start() {
 async function build() {
   //fse.emptyDirSync(join(__dirname, 'dist'));
   const child = spawn('tsc', ['-p', 'tsconfig.build.json'], {
-    cwd: toUnix(__dirname),
+    cwd: __dirname,
     stdio: 'inherit',
     shell: true
   });
