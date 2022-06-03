@@ -24,8 +24,8 @@ if (!process.env['GITHUB_WORKFLOW']) {
 }
 
 async function start() {
+  let commitHash = await getLatestCommitHash();
   if (!process.env['GITHUB_WORKFLOW']) {
-    let commitHash = await getLatestCommitHash();
     const lock = join(__dirname, 'yarn.lock');
     if (fs.existsSync(lock)) commitHash += '';
     pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
@@ -39,7 +39,21 @@ async function start() {
       cwd: __dirname
     });
   }
-  build();
+  await build();
+  const child = spawn('npm', ['install'], {
+    cwd: toUnix(__dirname),
+    stdio: 'inherit',
+    shell: true
+  });
+  child.once('close', async () => {
+    await gitAddAndCommit(
+      'package-lock.json',
+      `${commitHash} update module resolutions`,
+      {
+        cwd: __dirname
+      }
+    );
+  });
 }
 
 /**
