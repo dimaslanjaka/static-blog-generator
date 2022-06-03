@@ -70,8 +70,14 @@ jobs:
 
     - name: Build
       continue-on-error: true
+      run: npm run build
+
+    - name: Packaging
+      continue-on-error: true
       run: |
-        npm run build
+        npm pack
+        git add release
+        git commit -m "update release ${{ steps.vars.outputs.hash }}"
 
     - name: Test JS
       run: npm run test:js
