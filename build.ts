@@ -38,7 +38,7 @@ async function start() {
     await gitAddAndCommit('.guid', `update cache id ${commitHash}`, {
       cwd: __dirname
     });
-    await gitAddAndCommit('package.json', `beta-${commitHash}`, {
+    await gitAddAndCommit('package.json', `release beta ${commitHash}`, {
       cwd: __dirname
     });
   }
