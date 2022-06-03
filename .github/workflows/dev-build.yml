@@ -44,7 +44,6 @@ jobs:
         path: |
           ${{ steps.vars.outputs.npm }}
           ./tmp
-          ./dist
           ./node_modules
           ./tests
           ./.yarn
@@ -59,7 +58,7 @@ jobs:
         git submodule update -i -r
         git submodule foreach git submodule update -i -r
 
-    - run: npm i -g gulp-cli typescript npm ts-node npm yarn 
+    - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: npm install
 
     - name: fix module resolutions
