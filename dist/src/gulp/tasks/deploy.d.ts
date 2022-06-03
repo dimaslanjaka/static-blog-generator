@@ -1,1 +1,0 @@
-import './deploy/firebase';
