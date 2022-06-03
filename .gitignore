@@ -2,7 +2,12 @@
 !dist
 !dist/*
 !dist/**/*
-dist/src/types/*.json
+dist/**/*.json
+
+# yarn v2
+.yarn/**/*.tgz
+.yarn/**/*.gz
+.yarn/**/*.zip
 
 # main excluded files
 *.log
