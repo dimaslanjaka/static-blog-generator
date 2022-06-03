@@ -125,5 +125,27 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
  * @param name cache name
  * @returns
  */
-export declare const pcache: ((name: string) => any) & memoizee.Memoized<(name: string) => any>;
+export declare const pcache: ((name: string) => {
+    put: (name: string, data: any, callback: any) => any;
+    get: <T>(name: string, callback: (err: Error, data: T) => any) => any;
+    delete: (name: string, callback: any) => void;
+    deleteSync: (name: string) => void;
+    putSync: (name: string, data: any) => void;
+    getSync: <T_1>(name: string) => T_1;
+    keys: (callback: (keys: string[]) => any) => any;
+    keysSync: () => string[];
+    unlink: (callback: any) => any;
+    valuesSync: <T_2 extends any[]>() => T_2;
+}) & memoizee.Memoized<(name: string) => {
+    put: (name: string, data: any, callback: any) => any;
+    get: <T>(name: string, callback: (err: Error, data: T) => any) => any;
+    delete: (name: string, callback: any) => void;
+    deleteSync: (name: string) => void;
+    putSync: (name: string, data: any) => void;
+    getSync: <T_1>(name: string) => T_1;
+    keys: (callback: (keys: string[]) => any) => any;
+    keysSync: () => string[];
+    unlink: (callback: any) => any;
+    valuesSync: <T_2 extends any[]>() => T_2;
+}>;
 export {};
