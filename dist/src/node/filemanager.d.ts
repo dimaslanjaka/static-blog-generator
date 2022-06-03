@@ -60,6 +60,12 @@ declare const filemanager: {
     mkdirSync: (path: fs.PathLike, options?: fs.MakeDirectoryOptions) => string;
 };
 export declare function removeMultiSlashes(str: string): string;
+/**
+ * glob source (gulp.src like)
+ * @param pattern
+ * @param opts
+ * @returns
+ */
 export declare const globSrc: (pattern: string, opts?: glob.IOptions) => Bluebird<string[]>;
 export default filemanager;
 export declare const normalize: typeof upath.normalize;

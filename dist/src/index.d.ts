@@ -8,5 +8,6 @@ export { clean_db, clean_posts, clean_public, clean_tmp } from './gulp/tasks/cle
 export { copyAssets } from './gulp/tasks/copy/assets';
 export { copyPosts } from './gulp/tasks/copy/posts';
 export { dump } from './gulp/tasks/dump';
+export { globSrc } from './node/filemanager';
 export { buildPost, DeepPartial, ParseOptions, parsePost, postMap, postMeta } from './parser/post/parsePost';
 export { getConfig } from './types/_config';
