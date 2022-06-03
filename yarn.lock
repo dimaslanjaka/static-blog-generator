@@ -7145,12 +7145,12 @@ __metadata:
 
 "google-news-sitemap@file:./packages/google-news-sitemap::locator=static-blog-generator%40workspace%3A.":
   version: 1.0.4
-  resolution: "google-news-sitemap@file:./packages/google-news-sitemap#./packages/google-news-sitemap::hash=129ce3&locator=static-blog-generator%40workspace%3A."
+  resolution: "google-news-sitemap@file:./packages/google-news-sitemap#./packages/google-news-sitemap::hash=f300b2&locator=static-blog-generator%40workspace%3A."
   dependencies:
     moment: ^2.29.1
     tslib: ^2.3.1
     xmlbuilder: ^15.1.1
-  checksum: c5d017caf562cbbb5714b63a5c32e8eee94353252a99766690b95accac93f9fbd6784a8665a38484f449532db4123076db07a3d1d35be6fd2203017bd4ed1958
+  checksum: 4506f15ba2acf3c6e8abfb06315bf5b306fdeb7442245db75521a6b12648a1c9ec6274874dc903eb68ef107fc7287efd4ca046f78a608a6058d1ed3b25ad979f
   languageName: node
   linkType: hard
 
@@ -7631,7 +7631,7 @@ __metadata:
 
 "hexo-post-parser@file:./packages/hexo-post-parser::locator=static-blog-generator%40workspace%3A.":
   version: 1.1.1-beta-5dde8ba
-  resolution: "hexo-post-parser@file:./packages/hexo-post-parser#./packages/hexo-post-parser::hash=c40e5e&locator=static-blog-generator%40workspace%3A."
+  resolution: "hexo-post-parser@file:./packages/hexo-post-parser#./packages/hexo-post-parser::hash=ebce8f&locator=static-blog-generator%40workspace%3A."
   dependencies:
     axios: ^0.27.2
     chalk: ^4.1.0
@@ -7640,11 +7640,11 @@ __metadata:
     jsdom: ^19.0.0
     lodash: ^4.17.21
     moment-timezone: ^0.5.34
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache#improve2"
+    persistent-cache: "file:./packages/persistent-cache"
     upath: ^2.0.1
     yaml: ^2.1.0
     yargs: ^17.5.1
-  checksum: 7abbd61e0dd40dd96587f77030ec3a8ab6ec2a50e48ef2b9920ac4c3c5cc96f434597a2f796dabfba4fb57d7343a696d3c3db2a4175d044c652b9611e6058450
+  checksum: bce76b1289be80f8b2cd11c01efa4b48cac4e0addeaaf1c2aed09b3e4c06775c3c1de8966efd453a23d189d0c55d626ae94c6e78f3bd753c1faa20d320afb5b7
   languageName: node
   linkType: hard
 
@@ -12065,14 +12065,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"persistent-cache@https://github.com/dimaslanjaka/persistent-cache#improve2":
+"persistent-cache@file:./packages/persistent-cache::locator=hexo-post-parser%40file%3A.%2Fpackages%2Fhexo-post-parser%23.%2Fpackages%2Fhexo-post-parser%3A%3Ahash%3Debce8f%26locator%3Dstatic-blog-generator%2540workspace%253A.":
   version: 1.1.2
-  resolution: "persistent-cache@https://github.com/dimaslanjaka/persistent-cache.git#commit=583c4bfe871a593f90a83419ff1ea6794d857fb2"
+  resolution: "persistent-cache@file:./packages/persistent-cache#./packages/persistent-cache::hash=cb8365&locator=hexo-post-parser%40file%3A.%2Fpackages%2Fhexo-post-parser%23.%2Fpackages%2Fhexo-post-parser%3A%3Ahash%3Debce8f%26locator%3Dstatic-blog-generator%2540workspace%253A."
   dependencies:
     mkdirp-no-bin: ^0.5.1
     rmdir: ^1.2.0
     upath: ^2.0.1
-  checksum: 00227455dda44a7944b1d4a34d762d7c7a177152a731813a15b0fecd191fd8c75826ec7aabbe69d88ce4150d0fd8faffd79a25644fde433474b06dbef21b38eb
+  checksum: 027e8196f443555318d19141e3b9cdcc0b7d89e06e8ce22c3dcfb1effd3606ef6fafdac302c965186f4171d2af2858522839b9e4cfde77bf1a26f77ceb46115b
   languageName: node
   linkType: hard
 
@@ -13195,7 +13195,7 @@ __metadata:
 
 "safelinkify@file:./packages/safelink::locator=static-blog-generator%40workspace%3A.":
   version: 1.1.3
-  resolution: "safelinkify@file:./packages/safelink#./packages/safelink::hash=c17dd6&locator=static-blog-generator%40workspace%3A."
+  resolution: "safelinkify@file:./packages/safelink#./packages/safelink::hash=914179&locator=static-blog-generator%40workspace%3A."
   dependencies:
     "@popperjs/core": ^2.11.5
     bootstrap: ^5.1.3
@@ -13208,7 +13208,7 @@ __metadata:
     moment-timezone: ^0.5.34
     path-browserify: ^1.0.1
     toastr: ^2.1.4
-  checksum: b207ab2f2edcf88f0a5410d1a7f4afba01bf961da7304dec8cff33bb641c26c3f32fd5fb3f0599d774af0fb7684f6832a521ffa3977f3ee83dd6a48ab7151c4e
+  checksum: 602cb576238b68c99b3c03dc180cd23539dfad0f8f62811746a16d46babd537f7452d08203c200a608a1bbc32368860a54a40de550d61e7b1fe1630bdd1dff75
   languageName: node
   linkType: hard
 
@@ -13259,6 +13259,32 @@ __metadata:
   dependencies:
     xmlchars: ^2.2.0
   checksum: 5636b55cf15f7cf0baa73f2797bf992bdcf75d1b39d82c0aa4608555c774368f6ac321cb641fd5f3d3ceb87805122cd47540da6a7b5960fe0dbdb8f8c263f000
+  languageName: node
+  linkType: hard
+
+"sbg-theme-bootstrap@file:./bootstrap::locator=sbg-themes%40file%3A.%2Fthemes%23.%2Fthemes%3A%3Ahash%3D1e5252%26locator%3Dstatic-blog-generator%2540workspace%253A.":
+  version: 1.0.0
+  resolution: "sbg-theme-bootstrap@file:./bootstrap#./bootstrap::hash=236e78&locator=sbg-themes%40file%3A.%2Fthemes%23.%2Fthemes%3A%3Ahash%3D1e5252%26locator%3Dstatic-blog-generator%2540workspace%253A."
+  checksum: b79f8d7c746066c61ceb0ac07312439a33cc53fb28c66fd99444dc7c2024165d3194a781db15e6f7d34ff0571132c51de18270fab68b80fefcd9aa6e9e9e2209
+  languageName: node
+  linkType: hard
+
+"sbg-theme-iridium@file:./iridium::locator=sbg-themes%40file%3A.%2Fthemes%23.%2Fthemes%3A%3Ahash%3D1e5252%26locator%3Dstatic-blog-generator%2540workspace%253A.":
+  version: 1.0.0
+  resolution: "sbg-theme-iridium@file:./iridium#./iridium::hash=6ced83&locator=sbg-themes%40file%3A.%2Fthemes%23.%2Fthemes%3A%3Ahash%3D1e5252%26locator%3Dstatic-blog-generator%2540workspace%253A."
+  dependencies:
+    skeljs: "file:./libs/skeljs"
+  checksum: 29b569411e12aab3bf3c366354e6abe521a2005d2596c9fe332ec5e947a3f71782d975e7810257c8486e56e975dd9f5718ce36eab04519fffc0c81b7e6e2d7a3
+  languageName: node
+  linkType: hard
+
+"sbg-themes@file:./themes::locator=static-blog-generator%40workspace%3A.":
+  version: 1.0.0
+  resolution: "sbg-themes@file:./themes#./themes::hash=1e5252&locator=static-blog-generator%40workspace%3A."
+  dependencies:
+    sbg-theme-bootstrap: "file:./bootstrap"
+    sbg-theme-iridium: "file:./iridium"
+  checksum: 9c6f9ee641c615705f39435c16cd64e909e0a97586deb52f9f3538badc28efa50029e3177e73c83acd7884916e1d99becac8ebdc69f8f53a15aa0274fed48366
   languageName: node
   linkType: hard
 
@@ -13578,6 +13604,13 @@ __metadata:
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
+  languageName: node
+  linkType: hard
+
+"skeljs@file:./libs/skeljs::locator=sbg-theme-iridium%40file%3A.%2Firidium%23.%2Firidium%3A%3Ahash%3D6ced83%26locator%3Dsbg-themes%2540file%253A.%252Fthemes%2523.%252Fthemes%253A%253Ahash%253D1e5252%2526locator%253Dstatic-blog-generator%252540workspace%25253A.":
+  version: 3.0.2
+  resolution: "skeljs@file:./libs/skeljs#./libs/skeljs::hash=46ffbd&locator=sbg-theme-iridium%40file%3A.%2Firidium%23.%2Firidium%3A%3Ahash%3D6ced83%26locator%3Dsbg-themes%2540file%253A.%252Fthemes%2523.%252Fthemes%253A%253Ahash%253D1e5252%2526locator%253Dstatic-blog-generator%252540workspace%25253A."
+  checksum: 4e3980594444ebfba1fb23fede407c80456553a4a6de612190a54360adb1edb8056fc2fb3daccc79eb039b285efda666a5ffec252bb0c7a64f60705aa120c16f
   languageName: node
   linkType: hard
 
@@ -14074,6 +14107,7 @@ __metadata:
     plugin-error: ^1.0.1
     prettier: ^2.6.1
     safelinkify: "file:./packages/safelink"
+    sbg-themes: "file:./themes"
     showdown: ^2.0.3
     sqlite3: ^5.0.8
     through2: ^4.0.2
@@ -14087,8 +14121,9 @@ __metadata:
     vinyl: ^2.2.1
     yaml: ^1.10.2
     yargs: ^17.4.0
-  peerDependencies:
-    sbg-themes: "*"
+  dependenciesMeta:
+    sbg-themes:
+      optional: true
   bin:
     sbg: ./bin/sbg.js
   languageName: unknown
