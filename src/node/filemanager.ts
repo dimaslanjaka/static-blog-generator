@@ -128,6 +128,12 @@ export function removeMultiSlashes(str: string) {
   return str.replace(/(\/)+/g, '$1');
 }
 
+/**
+ * glob source (gulp.src like)
+ * @param pattern
+ * @param opts
+ * @returns
+ */
 export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
   return new Bluebird((resolve: (arg: string[]) => any, reject) => {
     const opt: glob.IOptions = Object.assign(
