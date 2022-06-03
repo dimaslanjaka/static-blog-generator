@@ -3,8 +3,9 @@ const { existsSync } = require('fs');
 const { join } = require('upath');
 
 const root = join(__dirname, '..');
+const islocal = !process.env['GITHUB_WORKFLOW'];
 
-if (existsSync(join(root, '.git'))) {
+if (existsSync(join(root, '.git')) && islocal) {
   ['package.json', 'yarn.lock', 'package-lock.json']
     .map((path) => join(root, path))
     .filter(existsSync)
