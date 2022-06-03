@@ -1,0 +1,9 @@
+import './generate-after';
+import './generate-assets';
+import './generate-feed';
+import './generate-posts';
+import './generate-sitemap';
+import './generate-template';
+import './generate/archives';
+import './import';
+import './minify';
