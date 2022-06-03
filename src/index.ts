@@ -6,6 +6,25 @@ import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
+export {
+  clean_db,
+  clean_posts,
+  clean_public,
+  clean_tmp
+} from './gulp/tasks/clean';
+export { copyAssets } from './gulp/tasks/copy/assets';
+export { copyPosts } from './gulp/tasks/copy/posts';
+export { dump } from './gulp/tasks/dump';
+export { globSrc } from './node/filemanager';
+export {
+  buildPost,
+  DeepPartial,
+  ParseOptions,
+  parsePost,
+  postMap,
+  postMeta
+} from './parser/post/parsePost';
+export { getConfig } from './types/_config';
 
 // register scheduler
 new scheduler();
@@ -19,23 +38,3 @@ process.on('uncaughtException', function (err) {
 
 // [task] DEFAULT
 gulp.task('default', gulp.series('copy', 'generate'));
-
-//export default {};
-export {
-  clean_db,
-  clean_posts,
-  clean_public,
-  clean_tmp
-} from './gulp/tasks/clean';
-export { copyAssets } from './gulp/tasks/copy/assets';
-export { copyPosts } from './gulp/tasks/copy/posts';
-export { dump } from './gulp/tasks/dump';
-export {
-  buildPost,
-  DeepPartial,
-  ParseOptions,
-  parsePost,
-  postMap,
-  postMeta
-} from './parser/post/parsePost';
-export { getConfig } from './types/_config';
