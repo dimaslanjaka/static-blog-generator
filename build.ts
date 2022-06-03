@@ -5,7 +5,7 @@ import moment from 'moment-timezone';
 import readline from 'readline';
 import { join } from 'upath';
 import pkg from './package.json';
-import { getLatestCommitHash, git, gitAddAndCommit } from './src/bin/git';
+import { getLatestCommitHash, git, gitAddAndCommit } from './src/node/git';
 import { json_encode } from './src/node/JSON';
 import { md5FileSync } from './src/node/md5-file';
 
