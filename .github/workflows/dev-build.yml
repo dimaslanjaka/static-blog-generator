@@ -60,7 +60,7 @@ jobs:
         git submodule foreach git submodule update -i -r
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: yarn install --immutable
+    - run: yarn install --frozen-lockfile #--immutable
 
     - name: fix module resolutions
       if: ${{ false }}
