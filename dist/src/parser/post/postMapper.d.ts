@@ -64,7 +64,7 @@ export interface archiveMap extends mergedPostMap {
  * * merge post metadata property ({@link postMap.metadata}) to root property
  * @returns
  */
-export default function postMapper(post: postMap): any;
+export default function postMapper(post: postMap): postMap & globalThis.Partial<any>;
 /**
  * transform array into an mapped chunks
  * @param chunks
@@ -88,9 +88,9 @@ export declare function simplifyDump<T extends any[]>(post: T, except?: string[]
  */
 export declare function post_chunks<T extends any[]>(arr?: T): {
     /** all posts */
-    posts: any[];
+    posts: (postMap & globalThis.Partial<any>)[];
     /** all posts chunks */
-    chunk: any[][];
+    chunk: (postMap & globalThis.Partial<any>)[][];
     /** all posts infinite scroll sitedata */
     sitedata: {
         title: any;
