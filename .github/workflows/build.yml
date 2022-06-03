@@ -21,16 +21,16 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
-        cache: 'npm'
+        cache: 'yarn'
 
     - name: Install dependencies
       run: |
         npm i -g gulp-cli typescript npm ts-node
-        npm install
-        npm install git+https://github.com/dimaslanjaka/persistent-cache#improve2
+        yarn install --check-files
+        yarn add git+https://github.com/dimaslanjaka/persistent-cache#improve2
 
     - name: Build
-      run: npm run build
+      run: yarn build
 
     - name: Re-deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.3.0
