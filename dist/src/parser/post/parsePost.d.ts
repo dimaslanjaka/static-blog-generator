@@ -1,4 +1,4 @@
-import { parsePost as moduleParsePost, postMap } from '../../../packages/hexo-post-parser/src';
+import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
 import { DeepPartial } from './postMapper';
 /**
  * Parse Markdown Post
