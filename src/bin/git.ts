@@ -56,15 +56,37 @@ export function git(options: null | SpawnOptions = null, ...args: string[]) {
   );
 }
 
-export const getLatestCommitHash = async () => {
+/**
+ * get latest commit hash
+ * * git log --pretty=tformat:"%H" -n 1 path
+ * * git log --pretty=tformat:"%h" -n 1 path
+ * * git rev-parse HEAD
+ * * git rev-parse --short HEAD
+ * @param path specific folder
+ * @returns
+ */
+export const getLatestCommitHash = async (path?: string, short = true) => {
+  const args: string[] = [];
+  if (!path) {
+    args.push('rev-parse');
+    if (short) args.push('--short');
+    args.push('HEAD');
+  } else {
+    args.push('log');
+    if (!short) {
+      args.push('--pretty=tformat:"%H"');
+    } else {
+      args.push('--pretty=tformat:"%h"');
+    }
+    args.push('-n');
+    args.push('1');
+    args.push(path);
+  }
   const res = await git(
     {
-      cwd: join(__dirname, '../../')
+      cwd: process.cwd() //join(__dirname, '../../')
     },
-
-    'rev-parse',
-    '--short',
-    'HEAD'
+    ...args
   );
   return res.stdout[0];
 };
