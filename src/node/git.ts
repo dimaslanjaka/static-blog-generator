@@ -12,8 +12,8 @@ export function git(options: null | SpawnOptions = null, ...args: string[]) {
 
 /**
  * get latest commit hash
- * * git log --pretty=tformat:"%H" -n 1 path
- * * git log --pretty=tformat:"%h" -n 1 path
+ * * git log --pretty=tformat:%H -n 1 path
+ * * git log --pretty=tformat:%h -n 1 path
  * * git rev-parse HEAD
  * * git rev-parse --short HEAD
  * @param path specific folder
