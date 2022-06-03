@@ -7145,12 +7145,12 @@ __metadata:
 
 "google-news-sitemap@file:./packages/google-news-sitemap::locator=static-blog-generator%40workspace%3A.":
   version: 1.0.4
-  resolution: "google-news-sitemap@file:./packages/google-news-sitemap#./packages/google-news-sitemap::hash=f300b2&locator=static-blog-generator%40workspace%3A."
+  resolution: "google-news-sitemap@file:./packages/google-news-sitemap#./packages/google-news-sitemap::hash=abd4cb&locator=static-blog-generator%40workspace%3A."
   dependencies:
     moment: ^2.29.1
     tslib: ^2.3.1
     xmlbuilder: ^15.1.1
-  checksum: 4506f15ba2acf3c6e8abfb06315bf5b306fdeb7442245db75521a6b12648a1c9ec6274874dc903eb68ef107fc7287efd4ca046f78a608a6058d1ed3b25ad979f
+  checksum: b64fe4c1732df5005d4ded07094c74acaf1b8e84f8aa93c3c8cb1ac2c1d1a6aecfe4360046b954724537870a2c833a0576649f7ab46bd04eb4f3ff756af0a479
   languageName: node
   linkType: hard
 
@@ -7631,7 +7631,7 @@ __metadata:
 
 "hexo-post-parser@file:./packages/hexo-post-parser::locator=static-blog-generator%40workspace%3A.":
   version: 1.1.1-beta-5dde8ba
-  resolution: "hexo-post-parser@file:./packages/hexo-post-parser#./packages/hexo-post-parser::hash=ebce8f&locator=static-blog-generator%40workspace%3A."
+  resolution: "hexo-post-parser@file:./packages/hexo-post-parser#./packages/hexo-post-parser::hash=518824&locator=static-blog-generator%40workspace%3A."
   dependencies:
     axios: ^0.27.2
     chalk: ^4.1.0
@@ -7640,11 +7640,11 @@ __metadata:
     jsdom: ^19.0.0
     lodash: ^4.17.21
     moment-timezone: ^0.5.34
-    persistent-cache: "file:./packages/persistent-cache"
+    persistent-cache: "git+https://github.com/dimaslanjaka/persistent-cache#improve2"
     upath: ^2.0.1
     yaml: ^2.1.0
     yargs: ^17.5.1
-  checksum: bce76b1289be80f8b2cd11c01efa4b48cac4e0addeaaf1c2aed09b3e4c06775c3c1de8966efd453a23d189d0c55d626ae94c6e78f3bd753c1faa20d320afb5b7
+  checksum: 752da082d05a3be0c91002f24626cd20dc46881d11826a7c7ca32b8ece308396052e94ec0f3dd42f849ad71b83ad4e008dac4fe37634bcce277aa7e274936255
   languageName: node
   linkType: hard
 
@@ -12056,23 +12056,23 @@ __metadata:
 
 "persistent-cache@file:./packages/hexo-post-parser/packages/persistent-cache::locator=static-blog-generator%40workspace%3A.":
   version: 1.1.2
-  resolution: "persistent-cache@file:./packages/hexo-post-parser/packages/persistent-cache#./packages/hexo-post-parser/packages/persistent-cache::hash=cb8365&locator=static-blog-generator%40workspace%3A."
+  resolution: "persistent-cache@file:./packages/hexo-post-parser/packages/persistent-cache#./packages/hexo-post-parser/packages/persistent-cache::hash=0059ae&locator=static-blog-generator%40workspace%3A."
   dependencies:
     mkdirp-no-bin: ^0.5.1
     rmdir: ^1.2.0
     upath: ^2.0.1
-  checksum: 027e8196f443555318d19141e3b9cdcc0b7d89e06e8ce22c3dcfb1effd3606ef6fafdac302c965186f4171d2af2858522839b9e4cfde77bf1a26f77ceb46115b
+  checksum: 69b4dfc025d3c171438cd75e2ff5a1487da655fc7ee139c0f4e7c00937574f281fa060cff9d92605bc0605d5fb9830ffc190ef70e5c18e1a6268decf76dcc42e
   languageName: node
   linkType: hard
 
-"persistent-cache@file:./packages/persistent-cache::locator=hexo-post-parser%40file%3A.%2Fpackages%2Fhexo-post-parser%23.%2Fpackages%2Fhexo-post-parser%3A%3Ahash%3Debce8f%26locator%3Dstatic-blog-generator%2540workspace%253A.":
+"persistent-cache@git+https://github.com/dimaslanjaka/persistent-cache#improve2":
   version: 1.1.2
-  resolution: "persistent-cache@file:./packages/persistent-cache#./packages/persistent-cache::hash=cb8365&locator=hexo-post-parser%40file%3A.%2Fpackages%2Fhexo-post-parser%23.%2Fpackages%2Fhexo-post-parser%3A%3Ahash%3Debce8f%26locator%3Dstatic-blog-generator%2540workspace%253A."
+  resolution: "persistent-cache@https://github.com/dimaslanjaka/persistent-cache.git#commit=4286d74fb1418154501c4aa59a7f97b7d011d8b6"
   dependencies:
     mkdirp-no-bin: ^0.5.1
     rmdir: ^1.2.0
     upath: ^2.0.1
-  checksum: 027e8196f443555318d19141e3b9cdcc0b7d89e06e8ce22c3dcfb1effd3606ef6fafdac302c965186f4171d2af2858522839b9e4cfde77bf1a26f77ceb46115b
+  checksum: c41e812240f8351a76fc5ecfd89cb35d710fbdd80778b30a1083587ca3a09aef0647aecb6f319ee999034c7aff64f6a07d85c75588f728631080945ec2dd7264
   languageName: node
   linkType: hard
 
@@ -13195,7 +13195,7 @@ __metadata:
 
 "safelinkify@file:./packages/safelink::locator=static-blog-generator%40workspace%3A.":
   version: 1.1.3
-  resolution: "safelinkify@file:./packages/safelink#./packages/safelink::hash=914179&locator=static-blog-generator%40workspace%3A."
+  resolution: "safelinkify@file:./packages/safelink#./packages/safelink::hash=babea3&locator=static-blog-generator%40workspace%3A."
   dependencies:
     "@popperjs/core": ^2.11.5
     bootstrap: ^5.1.3
@@ -13208,7 +13208,7 @@ __metadata:
     moment-timezone: ^0.5.34
     path-browserify: ^1.0.1
     toastr: ^2.1.4
-  checksum: 602cb576238b68c99b3c03dc180cd23539dfad0f8f62811746a16d46babd537f7452d08203c200a608a1bbc32368860a54a40de550d61e7b1fe1630bdd1dff75
+  checksum: 5a49d940e0aac2815bdd9c1df14128b43031e1ea8ea0702690036df9fa2c9767eeefecc3bc9c3b6e4969417cadddf4ed42a44ee4f45dcc17657d9d6d376ff201
   languageName: node
   linkType: hard
 
