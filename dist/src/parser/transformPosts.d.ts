@@ -10,5 +10,5 @@ export declare function saveParsedPost(parsed: postMap, file: string): void;
  * @param parse
  * @returns
  */
-export declare const validateParsed: (parse: postMap) => boolean;
+export declare const validateParsed: (parse: Partial<postMap>) => boolean;
 export declare function nodeListOf2Html(nodes: NodeListOf<Element>): any;
