@@ -50,8 +50,10 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
     - name: Resolve git user
+      continue-on-error: true
       run: |
         cdir="$PWD"
+        git checkout origin dev
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
         git fetch --all
