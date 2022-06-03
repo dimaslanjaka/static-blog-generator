@@ -118,7 +118,7 @@ export {
   ParseOptions,
   postMap,
   postMeta
-} from '../../../packages/hexo-post-parser/src';
+} from 'hexo-post-parser';
 export { parsePost };
 export default parsePost;
 __g.parsePost = parsePost;
