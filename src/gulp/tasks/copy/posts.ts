@@ -19,7 +19,11 @@ const logname = color.cyan('[copy][post]');
  * @param cpath custom copy, only copy post with this key
  * @returns
  */
-export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
+export const copyPosts = (
+  _done: TaskCallback = null,
+  cpath?: string,
+  options: Partial<Parameters<typeof parsePost>[2]> = {}
+) => {
   const exclude = config.exclude.map(
     (ePattern) => '!' + ePattern.replace(/^!+/, '')
   );
@@ -38,7 +42,11 @@ export const copyPosts = (_done: TaskCallback = null, cpath?: string) => {
           if (!path.includes(cpath)) return next();
         }
         const log = [logname, String(path)];
-        const parse = await parsePost(String(path), String(file.contents));
+        const parse = await parsePost(
+          String(path),
+          String(file.contents),
+          options
+        );
         if (!parse) {
           console.log(`cannot parse ${String(path)}`, parse);
           // drop this item
