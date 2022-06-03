@@ -1,4 +1,0 @@
-[submodule "packages/persistent-cache"]
-	path = packages/persistent-cache
-	url = https://github.com/dimaslanjaka/persistent-cache.git
-	branch = improve2
