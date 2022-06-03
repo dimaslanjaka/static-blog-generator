@@ -48,6 +48,7 @@ jobs:
           ./dist
           ./node_modules
           ./tests
+          ./.yarn
         key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
     - name: Resolve git user
