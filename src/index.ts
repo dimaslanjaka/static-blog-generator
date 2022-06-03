@@ -6,6 +6,21 @@ import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
+
+// register scheduler
+new scheduler();
+
+/**
+ * @see {@link https://stackoverflow.com/a/67394338/6404439}
+ */
+process.on('uncaughtException', function (err) {
+  console.error('uncaughtException:\n' + err.stack + '\n');
+});
+
+// [task] DEFAULT
+gulp.task('default', gulp.series('copy', 'generate'));
+
+//export default {};
 export {
   clean_db,
   clean_posts,
@@ -23,18 +38,3 @@ export {
   postMap,
   postMeta
 } from './parser/post/parsePost';
-
-// register scheduler
-new scheduler();
-
-/**
- * @see {@link https://stackoverflow.com/a/67394338/6404439}
- */
-process.on('uncaughtException', function (err) {
-  console.error('uncaughtException:\n' + err.stack + '\n');
-});
-
-// [task] DEFAULT
-gulp.task('default', gulp.series('copy', 'generate'));
-
-export default {};
