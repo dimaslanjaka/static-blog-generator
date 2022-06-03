@@ -94,7 +94,7 @@
   "prettier.enableDebugLogs": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.printWidth": 180,
-  "npm.packageManager": "yarn",
+  "npm.packageManager": "npm",
   "git.enabled": true,
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "npm"
 }
