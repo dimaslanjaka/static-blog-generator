@@ -57,4 +57,4 @@ temp
 *.tgz
 *.
 
-!static-blog-generator*.tgz
+!release/*.tgz
