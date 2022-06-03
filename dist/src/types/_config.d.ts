@@ -1,3 +1,4 @@
+import '../a-core';
 import { initializeApp } from 'firebase/app';
 import memoizee from 'memoizee';
 import { Ngrok } from 'ngrok';
@@ -64,7 +65,7 @@ export declare const default_project_config: {
     future: boolean;
     highlight: {
         enable: boolean;
-        auto_detect: boolean; /** default project config */
+        auto_detect: boolean;
         line_number: boolean;
         tab_replace: string;
         wrap: boolean;
@@ -161,6 +162,11 @@ export declare const theme_config: any;
 export declare type ThemeOpt = typeof theme_config & {
     [key: string]: any;
 };
+/**
+ * get config
+ * @returns
+ */
+export declare function getConfig(): ProjectConfig;
 /** EXPORT PRIVATE AND PUBLIC CONFIGS */
 export default config;
 export declare const project_config: ProjectConfig;
