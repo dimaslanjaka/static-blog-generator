@@ -42,7 +42,6 @@ jobs:
     - uses: actions/cache@v3
       with:
         path: |
-          ${{ steps.vars.outputs.yarn }}
           ${{ steps.vars.outputs.npm }}
           ./tmp
           ./dist
@@ -61,7 +60,7 @@ jobs:
         git submodule foreach git submodule update -i -r
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: yarn install #--immutable
+    - run: npm install
 
     - name: fix module resolutions
       if: ${{ false }}
@@ -74,21 +73,21 @@ jobs:
     - name: Build
       continue-on-error: true
       run: |
-        yarn run build
+        npm run build
         git push
 
     - name: Test JS
-      run: yarn run test:js
+      run: npm run test:js
 
     - name: Test TS
       run: |
         echo "{}" > src/types/_config_hashes.json
         echo "{}" > src/types/_config_project.json
         echo "{}" > src/types/_config_theme.json
-        yarn run test:ts
+        npm run test:ts
 
     - name: Test mocha
-      run: yarn run test:mocha
+      run: npm run test:mocha
 
     - name: Commit & Push
       continue-on-error: true
