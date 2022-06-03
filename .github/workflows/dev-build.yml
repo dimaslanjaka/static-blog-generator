@@ -65,7 +65,6 @@ jobs:
       continue-on-error: true
       run: |
         git add package.json
-        git add yarn.lock
         git add package-lock.json
         git commit -m "update module resolutions ${{ steps.vars.outputs.hash }}"
         git push
