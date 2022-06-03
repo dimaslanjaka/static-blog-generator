@@ -9,5 +9,3 @@ export { copyAssets } from './gulp/tasks/copy/assets';
 export { copyPosts } from './gulp/tasks/copy/posts';
 export { dump } from './gulp/tasks/dump';
 export { buildPost, DeepPartial, ParseOptions, parsePost, postMap, postMeta } from './parser/post/parsePost';
-declare const _default: {};
-export default _default;
