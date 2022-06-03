@@ -3,16 +3,17 @@ const { copySync } = require('fs-extra');
 const { join } = require('path');
 const pkg = require('../package.json');
 
+const root = join(__dirname, '..');
 const filename = pkg.name + '-' + pkg.version + '.tgz';
-const filepath = join(process.cwd(), filename);
+const filepath = join(root, filename);
 
 const tmp = join(__dirname, 'tmp');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 if (existsSync(filepath)) {
   const isbeta = filepath.includes('-beta-');
-  let newPath = join(process.cwd(), 'release/production.tgz');
+  let newPath = join(root, 'release/production.tgz');
   if (isbeta) {
-    newPath = join(process.cwd(), 'release/development.tgz');
+    newPath = join(root, 'release/development.tgz');
   }
   copySync(filepath, newPath, { overwrite: true });
 }
