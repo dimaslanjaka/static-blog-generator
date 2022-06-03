@@ -3,7 +3,7 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const root = fs.join(__dirname, '..');
+const root = path.join(__dirname, '..');
 
 if (fs.existsSync(path.join(root, '.git'))) {
   console.log('installing from github repository');
