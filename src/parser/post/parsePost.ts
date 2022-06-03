@@ -1,6 +1,9 @@
 import { deepmerge } from 'deepmerge-ts';
 import { toUnix } from 'upath';
-import { parsePost as moduleParsePost, postMap } from '../../../packages/hexo-post-parser/src';
+import {
+  parsePost as moduleParsePost,
+  postMap
+} from '../../../packages/hexo-post-parser/src';
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
 import { CachePost } from '../../node/cache-post';
@@ -25,7 +28,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  */
 const parsePost = async (
   path: string,
-  content?: string,
+  content: string = undefined,
   options: DeepPartial<Parameters<typeof moduleParsePost>[1]> = {}
 ): Promise<postMap> => {
   let cacheKey = md5(path);
@@ -44,29 +47,27 @@ const parsePost = async (
       parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
     if (get) return get;
   }
-  let parse = await moduleParsePost(
-    content || path,
-    deepmerge(
-      <Parameters<typeof moduleParsePost>[1]>{
-        shortcodes: {
-          youtube: true,
-          css: true,
-          include: true,
-          link: true,
-          now: true,
-          script: true,
-          text: true,
-          codeblock: true
-        },
-        cache: config.generator.cache,
-        config: <any>config,
-        formatDate: true,
-        fix: true,
-        sourceFile: path
-      },
-      options
-    )
-  );
+  const default_options = {
+    shortcodes: {
+      youtube: true,
+      css: true,
+      include: true,
+      link: true,
+      now: true,
+      script: true,
+      text: true,
+      codeblock: true
+    },
+    cache: config.generator.cache,
+    config: config,
+    formatDate: true,
+    fix: true,
+    sourceFile: path
+  };
+  if (typeof options === 'object' && options !== null) {
+    options = deepmerge(default_options, options);
+  }
+  let parse = await moduleParsePost(content || path, options);
 
   if (!parse) return null;
 
