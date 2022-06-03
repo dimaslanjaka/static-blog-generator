@@ -24,7 +24,7 @@
     "dev": "nodemon",
     "build": "npm-run-all -s build:**",
     "build:src": "ts-node build.ts",
-    "refresh": "yarn upgrade hexo-post-parser safelinkify google-news-sitemap persistent-cache --check-cache",
+    "refresh": "npm update hexo-post-parser safelinkify google-news-sitemap persistent-cache",
     "test": "npm-run-all -s test:**",
     "test:js": "cd tests && npm i file:../ && node index.js",
     "test:ts": "cd tests && npm i file:../ && node -r ts-node/register index.ts",
@@ -41,8 +41,8 @@
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --write --parser html -w ./themes/**/*.ejs",
     "ci": "npm-run-all -s  ci:**",
-    "ci:submodule": "git submodule foreach yarn install --check-cache",
-    "ci:self": "yarn install --check-cache --check-cache --ignore-engines --ignore-platform",
+    "ci:submodule": "git submodule foreach yarn install",
+    "ci:self": "yarn install --ignore-engines --ignore-platform",
     "rebuild": "yarn rebuild --ignore-engines --ignore-platform",
     "update-version": "npm version $(git describe)",
     "preinstall": "node preinstall.js",
@@ -192,7 +192,6 @@
     "typescript": "^4.6.3",
     "undertaker": "^1.3.0"
   },
-  "packageManager": "yarn@3.2.1",
   "optionalDependencies": {
     "sbg-themes": "file:./themes"
   }
