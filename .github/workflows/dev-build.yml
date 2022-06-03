@@ -53,7 +53,7 @@ jobs:
       continue-on-error: true
       run: |
         cdir="$PWD"
-        git checkout origin dev
+        git checkout dev
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
         git fetch --all
