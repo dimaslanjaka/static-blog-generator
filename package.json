@@ -47,7 +47,8 @@
     "rebuild": "yarn rebuild --ignore-engines --ignore-platform",
     "update-version": "npm version $(git describe)",
     "preinstall": "node scripts/preinstall.js",
-    "postpack": "node scripts/postpack.js"
+    "postpack": "node scripts/postpack.js",
+    "postinstall": "node scripts/postinstall.js"
   },
   "repository": {
     "type": "git",
