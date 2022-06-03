@@ -3,7 +3,7 @@ import { existsSync, rm } from 'fs';
 import memoizee from 'memoizee';
 import { TypedEmitter } from 'tiny-typed-emitter';
 import { toUnix } from 'upath';
-import persistentCache from '../../packages/hexo-post-parser/packages/persistent-cache/src';
+import persistentCache from 'persistent-cache';
 import { DynamicObject } from '../types';
 import { array_shuffle } from './array-utils';
 import './cache-serialize';
