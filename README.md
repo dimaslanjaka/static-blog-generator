@@ -35,6 +35,7 @@ Static Blog Generator Inspired Idea From HexoJS. because of HexoJS doesn't suppo
 
 ## Project Installation
 Always use `npm` to install. `yarn` and `pnpm` not always compatible.
+
 ```bash
 # install global packages
 npm i -g npm gulp-cli typescript ts-node
