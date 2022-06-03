@@ -150,7 +150,7 @@ export declare const post_source_dir: string;
  * @param path file path inside temp folder
  * @returns
  */
-export declare const tmp: (...path: string[]) => any;
+export declare const tmp: (...path: string[]) => string;
 /** THEME CONFIGS */
 /** theme directory */
 export declare const theme_dir: string;
