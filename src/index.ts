@@ -38,3 +38,4 @@ export {
   postMap,
   postMeta
 } from './parser/post/parsePost';
+export { getConfig } from './types/_config';

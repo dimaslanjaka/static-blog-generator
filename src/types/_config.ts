@@ -1,3 +1,4 @@
+import '../a-core';
 import { initializeApp } from 'firebase/app';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
@@ -162,6 +163,14 @@ if (existsSync(file_private_config)) {
   if (Object.hasOwnProperty.call(privateConfig, 'firebase')) {
     config.firebase = <any>privateConfig.firebase;
   }
+}
+
+/**
+ * get config
+ * @returns
+ */
+export function getConfig() {
+  return config;
 }
 
 config.root = root;
