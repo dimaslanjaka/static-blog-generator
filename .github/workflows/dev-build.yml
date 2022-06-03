@@ -59,11 +59,7 @@ jobs:
         git submodule update -i -r
         git submodule foreach git submodule update -i -r
 
-    - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: npm i git+https://github.com/dimaslanjaka/persistent-cache#improve2
-    - run: npm i git+https://github.com/dimaslanjaka/hexo-post-parser#master
-    - run: npm i git+https://github.com/dimaslanjaka/safelink#master
-    - run: npm i git+https://github.com/dimaslanjaka/google-news-sitemap#master
+    - run: npm i -g gulp-cli typescript npm ts-node npm yarn 
     - run: npm install
 
     - name: fix module resolutions
