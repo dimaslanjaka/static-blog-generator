@@ -46,8 +46,8 @@
     "ci:self": "yarn install --ignore-engines --ignore-platform",
     "rebuild": "yarn rebuild --ignore-engines --ignore-platform",
     "update-version": "npm version $(git describe)",
-    "preinstall": "node preinstall.js",
-    "postpack": "node postpack.js"
+    "preinstall": "node scripts/preinstall.js",
+    "postpack": "node scripts/postpack.js"
   },
   "repository": {
     "type": "git",
