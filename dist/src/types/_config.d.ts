@@ -1,7 +1,7 @@
-import '../a-core';
 import { initializeApp } from 'firebase/app';
 import memoizee from 'memoizee';
 import { Ngrok } from 'ngrok';
+import '../a-core';
 import project_config_data from './_config_project.json';
 /**
  * Argument CLI reader
@@ -20,7 +20,6 @@ export declare const argv: {
  */
 declare const root: string;
 export declare const cwd: (() => string) & memoizee.Memoized<() => string>;
-export { root };
 /** default project config */
 export declare const default_project_config: {
     title: string;
@@ -154,9 +153,9 @@ export declare const post_source_dir: string;
 export declare const tmp: (...path: string[]) => string;
 /** THEME CONFIGS */
 /** theme directory */
-export declare const theme_dir: string;
+declare let theme_dir: string;
 /** _config.yml object from theme directory */
-export declare const theme_yml: string;
+declare const theme_yml: string;
 /** merged theme config object */
 export declare const theme_config: any;
 export declare type ThemeOpt = typeof theme_config & {
@@ -168,5 +167,6 @@ export declare type ThemeOpt = typeof theme_config & {
  */
 export declare function getConfig(): ProjectConfig;
 /** EXPORT PRIVATE AND PUBLIC CONFIGS */
+export { root, theme_dir, theme_yml };
 export default config;
 export declare const project_config: ProjectConfig;
