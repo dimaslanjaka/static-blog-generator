@@ -134,6 +134,9 @@ if (!existsSync(tmp())) mkdirSync(tmp());
 let theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
 if (!existsSync(theme_dir)) {
   theme_dir = join(process.cwd(), 'node_modules', 'sbg-theme-' + config.theme);
+  if (!existsSync(theme_dir)) {
+    theme_dir = join(process.cwd(), 'node_modules', config.theme);
+  }
 }
 /** _config.yml object from theme directory */
 const theme_yml = join(theme_dir, '_config.yml');
