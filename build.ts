@@ -39,10 +39,6 @@ async function start() {
   if (islocal) {
     await update_guid();
     writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
-    // commit uuid
-    await gitAddAndCommit('.guid', `update cache id ${commitHash}`, {
-      cwd: __dirname
-    });
     await gitAddAndCommit('package.json', `release beta ${commitHash}`, {
       cwd: __dirname
     });
@@ -73,6 +69,10 @@ async function update_guid() {
   const guid = commitHash + ':' + md5FileSync(lock);
   pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
   writeFile(join(__dirname, '.guid'), guid);
+  // commit uuid
+  await gitAddAndCommit('.guid', `update cache id ${commitHash}`, {
+    cwd: __dirname
+  });
 }
 
 /**
