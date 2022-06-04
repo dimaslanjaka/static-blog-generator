@@ -78,8 +78,8 @@ export interface archiveMap extends mergedPostMap {
  * * merge post metadata property ({@link postMap.metadata}) to root property
  * @returns
  */
-export default function postMapper(post: postMap) {
-  let assigned: postMap & postMap['metadata'] = post;
+export default function postMapper(post: mergedPostMap) {
+  let assigned = post;
   if (typeof post == 'object' && typeof post.metadata == 'object') {
     post.metadata.date =
       typeof post.metadata.date == 'string'
