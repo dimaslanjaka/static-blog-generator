@@ -87,9 +87,11 @@ jobs:
         git push
 
     - name: Test JS
+      id: test-js
       run: npm run test:js
 
     - name: Test TS
+      id: test-ts
       run: |
         echo "{}" > src/types/_config_hashes.json
         echo "{}" > src/types/_config_project.json
@@ -98,14 +100,17 @@ jobs:
 
     - name: Test mocha
       run: npm run test:mocha
+      id: test-mocha
 
     - name: Test bin single task
       run: npm i file:../ && npx sbg copy --nocache --verbose
       working-directory: tests
+      id: test-bin-single
 
     - name: Test bin multiple task
       run: npm i file:../ && npx sbg clean copy --nocache --verbose
       working-directory: tests
+      id: test-bin-multiple
 
     - name: Commit & Push
       continue-on-error: true
