@@ -9,6 +9,9 @@ import scheduler from '../../../node/scheduler';
 import { replaceArr } from '../../../node/string-utils';
 import parsePost, { postMap } from '../../../parser/post/parsePost';
 import { cwd, post_public_dir, verbose } from '../../../types/_config';
+
+const hexodb = new HexoDB();
+
 scheduler.add('indexing-categories', () => {
   const cache = pcache('categories');
   indexingOf(cache);
@@ -36,9 +39,9 @@ scheduler.add('indexing-posts', async () => {
         true
       );
     }
-    const hexodb = new HexoDB();
     hexodb.addPost(parse);
   }
+  hexodb.save();
 });
 
 function indexingOf(cache: ReturnType<typeof pcache>) {
