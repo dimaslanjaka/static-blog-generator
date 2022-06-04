@@ -60,17 +60,43 @@ declare const filemanager: {
     mkdirSync: (path: fs.PathLike, options?: fs.MakeDirectoryOptions) => string;
 };
 export declare function removeMultiSlashes(str: string): string;
+interface GlobSrcOptions extends glob.IOptions {
+    /**
+     * ignore pattern will be processed by minimatch
+     */
+    use?: 'minimatch';
+}
+/**
+ * minimatch advanced filter single pattern
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @param pattern
+ * @param str
+ * @returns
+ */
+export declare function minimatch_filter(pattern: string | RegExp, str: string): boolean;
+/**
+ * minimatch advanced filter multiple pattern
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @param patterns
+ * @param str
+ * @returns
+ * @example
+ * ['unit/x', 'sh', 'xxx', 'shortcodes/xxx'].filter((file) => {
+ *  const patterns = ["unit", "shortcodes"];
+ *  return minimatch_array_filter(patterns, file);
+ * }); // ['sh', 'xxx']
+ */
+export declare function minimatch_array_filter(patterns: string[], str: string): boolean;
 /**
  * glob source (gulp.src like)
  * @param pattern
  * @param opts
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
  * @returns
  */
-export declare const globSrc: (pattern: string, opts?: glob.IOptions) => Bluebird<string[]>;
+export declare const globSrc: (pattern: string, opts?: GlobSrcOptions) => Bluebird<string[]>;
 export default filemanager;
 export declare const normalize: typeof upath.normalize;
-export declare const writeFileSync: (path: fs.PathLike, content: any, append?: boolean) => Bluebird<string | Buffer | import("url").URL>;
-export declare const cwd: () => string;
 export declare const dirname: (str: string) => string;
 interface ResolveOpt {
     [key: string]: any;
