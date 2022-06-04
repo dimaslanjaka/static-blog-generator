@@ -64,7 +64,7 @@ export interface archiveMap extends mergedPostMap {
  * * merge post metadata property ({@link postMap.metadata}) to root property
  * @returns
  */
-export default function postMapper(post: postMap): postMap & import("hexo-post-parser/dist/parsePost").postMeta;
+export default function postMapper(post: mergedPostMap): mergedPostMap;
 /**
  * transform array into an mapped chunks
  * @param chunks
@@ -88,9 +88,9 @@ export declare function simplifyDump<T extends any[]>(post: T, except?: string[]
  */
 export declare function post_chunks<T extends any[]>(arr?: T): {
     /** all posts */
-    posts: (postMap & import("hexo-post-parser/dist/parsePost").postMeta)[];
+    posts: mergedPostMap[];
     /** all posts chunks */
-    chunk: (postMap & import("hexo-post-parser/dist/parsePost").postMeta)[][];
+    chunk: mergedPostMap[][];
     /** all posts infinite scroll sitedata */
     sitedata: {
         title: string;
