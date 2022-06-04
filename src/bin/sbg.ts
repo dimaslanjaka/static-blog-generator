@@ -2,6 +2,7 @@
 
 import gulp from 'gulp';
 import yargs from 'yargs';
+import '../';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const tasks = argv['_'];
@@ -11,6 +12,6 @@ const tasks = argv['_'];
 for (let i = 0; i < tasks.length; i++) {
   const task = tasks[i];
 
-  const fn = gulp.series(task);
+  const fn = gulp.task(task);
   console.log(typeof fn);
 }
