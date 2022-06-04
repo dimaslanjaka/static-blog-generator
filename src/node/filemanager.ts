@@ -2,13 +2,14 @@
 import Bluebird from 'bluebird';
 import findCacheDir from 'find-cache-dir';
 import * as fs from 'fs';
+import minimatch from 'minimatch';
 import { default as nodePath } from 'path';
-import { cwd as nodeCwd } from 'process';
+import { cwd } from 'process';
 import upath from 'upath';
 import { removeEmpties } from './array-utils';
 import { json_encode } from './JSON';
-
 import glob = require('glob');
+
 /**
  * node_modules/.cache/${name}
  */
@@ -128,31 +129,85 @@ export function removeMultiSlashes(str: string) {
   return str.replace(/(\/)+/g, '$1');
 }
 
+interface GlobSrcOptions extends glob.IOptions {
+  /**
+   * ignore pattern will be processed by minimatch
+   */
+  use?: 'minimatch';
+}
+
+/**
+ * minimatch advanced filter single pattern
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @param pattern
+ * @param str
+ * @returns
+ */
+export function minimatch_filter(pattern: string | RegExp, str: string) {
+  if (typeof pattern === 'string') {
+    return (
+      minimatch(str, pattern, { matchBase: true, dot: true }) ||
+      str.includes(pattern)
+    );
+  } else if (pattern instanceof RegExp) {
+    return pattern.test(str);
+  }
+}
+
+/**
+ * minimatch advanced filter multiple pattern
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @param patterns
+ * @param str
+ * @returns
+ * @example
+ * ['unit/x', 'sh', 'xxx', 'shortcodes/xxx'].filter((file) => {
+ *  const patterns = ["unit", "shortcodes"];
+ *  return minimatch_array_filter(patterns, file);
+ * }); // ['sh', 'xxx']
+ */
+export function minimatch_array_filter(patterns: string[], str: string) {
+  const map = patterns.map((pattern) => minimatch_filter(pattern, str));
+  return map.every((v: boolean) => v === false);
+}
+
 /**
  * glob source (gulp.src like)
  * @param pattern
  * @param opts
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
  * @returns
  */
-export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
+export const globSrc = function (pattern: string, opts: GlobSrcOptions = {}) {
   return new Bluebird((resolve: (arg: string[]) => any, reject) => {
-    const opt: glob.IOptions = Object.assign(
-      { cwd: cwd(), dot: true, matchBase: true },
-      opts
-    );
+    const opt = Object.assign({ cwd: cwd(), dot: true, matchBase: true }, opts);
+    let excludePattern: Mutable<typeof opt.ignore>;
+    if (opt.use) {
+      excludePattern = opt.ignore as Mutable<typeof opt.ignore>;
+      opt.ignore = undefined;
+    }
     glob(pattern, opt, function (err, files) {
       if (err) {
         return reject(err);
       }
-      resolve(files.map(upath.toUnix));
+      let result = files.map(upath.toUnix);
+      if (opt.use) {
+        result = files.map(upath.toUnix).filter((file) => {
+          if (typeof excludePattern === 'string') {
+            return minimatch_filter(excludePattern, file);
+          } else if (Array.isArray(excludePattern)) {
+            return minimatch_array_filter(excludePattern, file);
+          }
+          return false;
+        });
+      }
+      return resolve(result);
     });
   });
 };
 
 export default filemanager;
 export const normalize = upath.normalize;
-export const writeFileSync = filemanager.write;
-export const cwd = () => upath.toUnix(nodeCwd());
 export const dirname = (str: string) =>
   removeMultiSlashes(upath.toUnix(upath.dirname(str)));
 interface ResolveOpt {
