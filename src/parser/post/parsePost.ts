@@ -1,6 +1,6 @@
 import { deepmerge } from 'deepmerge-ts';
 import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
-import { toUnix } from 'upath';
+import { basename, toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import { pcache } from '../../node/cache';
 import { CachePost } from '../../node/cache-post';
@@ -68,10 +68,10 @@ const parsePost = async (
 
   if (!parse) return null;
 
-  /*if (!validateParsed(parse)) {
-    console.log(color.redBright('[fail]'), 'at 1st parse');
-    return null;
-  }*/
+  if (parse.metadata.title === '.md') {
+    // @todo [fixed] replace no title post
+    parse.metadata.title = basename(path, '.md');
+  }
 
   parse.fileTree = {
     source: replacePath(
