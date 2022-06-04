@@ -31,11 +31,11 @@ if (!parse.models)
 export class HexoDB {
   addPost(obj: postMap) {
     const perm = parsePermalink(obj);
-    const post: Post = {
+    const post: Partial<Post> = {
       title: obj.metadata.title,
       date: String(obj.metadata.date || new Date()),
       _content: obj.body || obj.content || '',
-      source: '',
+      //source: '',
       raw: buildPost(obj),
       slug: perm,
       published: 'draft' in obj.metadata ? (obj.metadata.draft ? 1 : 0) : 1,
@@ -43,21 +43,21 @@ export class HexoDB {
       comments:
         'comments' in obj.metadata ? (obj.metadata.comments ? 1 : 0) : 1,
       layout: obj.metadata.type || '',
-      photos: [],
-      link: '',
-      _id: obj.metadata.uuid || '',
+      //photos: [],
+      //link: '',
+      //_id: '',
       content: obj.body || obj.content || '',
       site: undefined,
       cover: thumbnail(obj.metadata),
-      excerpt: excerpt(obj.metadata),
-      more: ''
+      excerpt: excerpt(obj.metadata)
+      //more: ''
     };
     if (
       !parse.models.Post.find((epost) => {
         return epost.title === post.title;
       })
     ) {
-      parse.models.Post.push(post);
+      parse.models.Post.push(<any>post);
     }
   }
   get() {
