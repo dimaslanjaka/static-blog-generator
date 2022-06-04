@@ -61,8 +61,9 @@ npm install
 ```
 
 ## project structure
+
 | folder name | description |
-| --- | --- |
+| :--- | :--- |
 | `src-posts` | contains all original posts with markdown formats (ejs shortcodes supported) |
 | `source` | (`config.source_dir` in [_config.yml](./_config.yml)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](./_config.yml)) |
 | `node_modules/.cache/dimaslanjaka` | database caches |
