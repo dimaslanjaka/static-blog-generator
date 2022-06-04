@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 const { existsSync } = require('fs');
-const { join } = require('upath');
+const { join } = require('path');
 
 const root = join(__dirname, '..');
 const islocal = !process.env['GITHUB_WORKFLOW'];
