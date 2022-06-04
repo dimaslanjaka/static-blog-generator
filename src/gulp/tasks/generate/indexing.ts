@@ -1,9 +1,10 @@
 import { existsSync } from 'fs';
+import { join } from 'upath';
 import { HexoDB } from '../../../db/hexo';
 import { pcache } from '../../../node/cache';
 import { CachePost } from '../../../node/cache-post';
 import color from '../../../node/color';
-import { readdirSync } from '../../../node/filemanager';
+import { readdirSync, write } from '../../../node/filemanager';
 import scheduler from '../../../node/scheduler';
 import { replaceArr } from '../../../node/string-utils';
 import parsePost, { postMap } from '../../../parser/post/parsePost';
@@ -28,6 +29,13 @@ scheduler.add('indexing-posts', async () => {
       console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
     }
     const parse = await parsePost(filePath);
+    if (parse.metadata.title === '.md') {
+      write(
+        join(__dirname, 'tmp/indexing/post.log'),
+        `${parse.metadata.title} ${filePath}\n`,
+        true
+      );
+    }
     const hexodb = new HexoDB();
     hexodb.addPost(parse);
   }
