@@ -1,4 +1,4 @@
-import moment from 'moment-timezone';
+import { default as momentInstance } from 'moment-timezone';
 import { postResult } from '../../../node/cache-post';
 import { postMap } from '../../../parser/post/parsePost';
 export declare function getLatestDateArray(arr: moment.MomentInput[]): string;
@@ -37,7 +37,17 @@ export declare const isDate: (value: moment.MomentInput) => boolean;
  * @param timezone
  * @returns
  */
-export declare function getMoment(date: any, lang: any, timezone: string): moment.Moment;
+export declare function getMoment(date: any, lang: any, timezone: string): momentInstance.Moment;
+/**
+ * Localized Moment
+ * @param date
+ * @returns
+ */
+export declare function moment(date?: any, format?: string): momentInstance.Moment;
+/**
+ * @see {@link moment}
+ */
+export declare const modMoment: typeof moment;
 export declare function toISOString(date: any): string;
 export declare function dateHelper(date: any, format: any): string;
 export declare function timeHelper(date: any, format: any): string;
