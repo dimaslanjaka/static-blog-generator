@@ -1,4 +1,5 @@
 import { existsSync } from 'fs';
+import { HexoDB } from '../../../db/hexo';
 import { pcache } from '../../../node/cache';
 import { CachePost } from '../../../node/cache-post';
 import color from '../../../node/color';
@@ -26,7 +27,9 @@ scheduler.add('indexing-posts', async () => {
     if (verbose) {
       console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
     }
-    await parsePost(filePath);
+    const parse = await parsePost(filePath);
+    const hexodb = new HexoDB();
+    hexodb.addPost(parse);
   }
 });
 
