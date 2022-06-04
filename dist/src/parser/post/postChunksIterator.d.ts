@@ -31,7 +31,7 @@ export default function postChunksIterator(innerChunks: ReturnType<typeof post_c
     /** setup sitedata array as json */
     sitedata: string;
     latestUpdated: string;
-    posts: (import("hexo-post-parser").postMap & import("hexo-post-parser").postMeta)[] | Partial<XArray<archiveMap>>;
+    posts: import("./postMapper").mergedPostMap[] | Partial<XArray<archiveMap>>;
     total: number;
     page_now: number;
     page_prev: number;
