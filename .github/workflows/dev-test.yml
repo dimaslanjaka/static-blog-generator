@@ -41,7 +41,7 @@ jobs:
 
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: npm install file:../
+    - run: npm install git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
     - name: Test bin single task
       run: npx sbg copy --nocache --verbose
 
