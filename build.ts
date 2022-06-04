@@ -39,7 +39,7 @@ async function start() {
   if (islocal) {
     await update_guid();
     writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
-    await gitAddAndCommit('package.json', `release beta ${commitHash}`, {
+    await gitAddAndCommit('package.json', `[${commitHash}] release beta-${commitHash}`, {
       cwd: __dirname
     });
   }
@@ -53,7 +53,7 @@ async function start() {
     child.once('close', async () => {
       await gitAddAndCommit(
         'package-lock.json',
-        `${commitHash} update module resolutions`,
+        `[${commitHash}] update module resolutions`,
         {
           cwd: __dirname
         }
@@ -93,7 +93,7 @@ async function build() {
       { cwd: __dirname },
       'commit',
       '-m',
-      `build ${commitHash} ${date}`
+      `[${commitHash}] build ${date}`
     );
   });
   return child;
