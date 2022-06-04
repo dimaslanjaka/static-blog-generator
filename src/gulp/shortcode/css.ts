@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { existsSync } from 'fs';
-import { cwd, dirname, join, read } from '../../node/filemanager';
-import { root } from '../../types/_config';
+import { dirname, join, read } from '../../node/filemanager';
+import { cwd, root } from '../../types/_config';
 
 const logname = chalk.blue('[css]');
 /**
