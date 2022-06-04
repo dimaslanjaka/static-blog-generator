@@ -2,11 +2,11 @@ import { join } from 'upath';
 import urlParser from '../../curl/url-parser';
 import { arrayAddAll } from '../../node/array-utils';
 import CacheFile from '../../node/cache';
-import { cwd, globSrc } from '../../node/filemanager';
+import { globSrc } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { parsePost } from '../../parser/post/parsePost';
 import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
-import config from '../../types/_config';
+import config, { cwd } from '../../types/_config';
 
 const images_url: string[] = [];
 
