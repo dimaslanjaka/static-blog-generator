@@ -70,7 +70,7 @@ async function update_guid() {
   pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
   writeFile(join(__dirname, '.guid'), guid);
   // commit uuid
-  await gitAddAndCommit('.guid', `update cache id ${commitHash}`, {
+  await gitAddAndCommit('.guid', `[${commitHash}] update cache`, {
     cwd: __dirname
   });
 }
