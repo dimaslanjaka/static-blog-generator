@@ -50,6 +50,10 @@ export interface Post {
    */
   raw: string;
   slug: string;
+  /**
+   * 1 = published
+   * 0 = drafted
+   */
   published: number;
   /**
    * modified date
