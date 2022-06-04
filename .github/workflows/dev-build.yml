@@ -23,6 +23,7 @@ jobs:
       with:
         submodules: recursive
         token: "${{ secrets.GITHUB_TOKEN }}"
+        ref: "dev"
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
@@ -97,12 +98,6 @@ jobs:
 
     - name: Test mocha
       run: npm run test:mocha
-
-    - name: Test bin single task
-      run: cd tests && npm i file:../ && npx sbg copy --nocache --verbose
-
-    - name: Test bin multiple task
-      run: cd tests && npm i file:../ && npx sbg clean copy --nocache --verbose
 
     - name: Commit & Push
       continue-on-error: true
