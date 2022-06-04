@@ -75,6 +75,7 @@ jobs:
     - name: Build
       continue-on-error: true
       run: |
+        rm -rf dist/*
         npm run build
         git push
 
