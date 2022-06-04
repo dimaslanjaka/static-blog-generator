@@ -99,10 +99,10 @@ jobs:
       run: npm run test:mocha
 
     - name: Test bin single task
-      run: cd tests && npm i file:../ && ./node_modules/.bin/sbg copy --nocache --verbose
+      run: cd tests && npm i file:../ && npx sbg copy --nocache --verbose
 
     - name: Test bin multiple task
-      run: cd tests && npm i file:../ && ./node_modules/.bin/sbg clean copy --nocache --verbose
+      run: cd tests && npm i file:../ && npx sbg clean copy --nocache --verbose
 
     - name: Commit & Push
       continue-on-error: true
