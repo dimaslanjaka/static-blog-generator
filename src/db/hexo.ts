@@ -1,5 +1,6 @@
 // hexo database manager
 
+import { existsSync } from 'fs';
 import { join } from 'upath';
 import { read, write } from '../node/filemanager';
 import { json_decode, json_encode } from '../node/JSON';
@@ -8,7 +9,22 @@ import { thumbnail } from '../renderer/ejs/helper/thumbnail';
 import { HexoDBType, Post } from './hexo-data';
 
 const dbpath = join(process.cwd(), 'db.json');
-const parse = json_decode<HexoDBType>(read(dbpath).toString());
+const parse = json_decode<HexoDBType>(
+  existsSync(dbpath) ? read(dbpath).toString() : '{}'
+);
+if (!parse.models)
+  parse.models = {
+    Post: [],
+    Tag: [],
+    PostTag: [],
+    PostCategory: [],
+    Asset: [],
+    Page: [],
+    Cache: [],
+    Category: [],
+    PostAsset: [],
+    Data: []
+  };
 
 export class HexoDB {
   addPost(obj: postMap) {
@@ -32,8 +48,14 @@ export class HexoDB {
       excerpt: '',
       more: ''
     };
-    parse.models.Post.push(post);
-    this.save();
+    if (
+      !parse.models.Post.find((epost) => {
+        return epost.title !== post.title;
+      })
+    ) {
+      parse.models.Post.push(post);
+      this.save();
+    }
   }
   get() {
     return parse;
