@@ -1,6 +1,6 @@
 {
   "name": "hexo-post-parser",
-  "version": "1.1.2",
+  "version": "1.1.2-beta-330dcef",
   "description": "Parse Hexo Post To Object",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
