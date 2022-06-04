@@ -33,12 +33,14 @@ scheduler.add('indexing-posts', async () => {
     }
     const parse = await parsePost(filePath);
     if (parse.metadata.title === '.md' || !parse.metadata.title) {
-      write(
+      return write(
         join(__dirname, 'tmp/indexing/post.log'),
         `${parse.metadata.title} ${filePath}\n`,
         true
       );
     }
+    // skip index page
+    if (parse.metadata.type === 'page') return;
     hexodb.addPost(parse);
   }
   hexodb.save();
