@@ -21,19 +21,14 @@ for (let i = 0; i < tasks.length; i++) {
 
 let keeprunning = true;
 while (keeprunning !== false) {
-  const run = taskswrapper[0](null);
-  taskswrapper.shift();
   if (taskswrapper.length > 0) {
-    if (typeof run['then'] === 'function') {
-      run['then'](() => {
-        console.log('done');
-      });
+    const fn = taskswrapper[0];
+    taskswrapper.shift();
+    if (taskswrapper.length > 0) {
+      fn(() => taskswrapper[0](null));
+      taskswrapper.shift();
     } else {
-      if (typeof run['on'] === 'function') {
-        run['on']('end', function () {
-          console.log('end');
-        });
-      }
+      keeprunning = false;
     }
   } else {
     keeprunning = false;
