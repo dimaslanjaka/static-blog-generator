@@ -28,6 +28,7 @@ while (keeprunning !== false) {
       fn(() => taskswrapper[0](null));
       taskswrapper.shift();
     } else {
+      fn(null);
       keeprunning = false;
     }
   } else {
