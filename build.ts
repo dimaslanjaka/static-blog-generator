@@ -15,7 +15,7 @@ writeFileSync(join(__dirname, 'src/types/_config_hashes.json'), '{}');
 const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
 if (!process.env['GITHUB_WORKFLOW']) {
-  askCommitMessage('commit messages (empty allowed):').then(async (msg) => {
+  askCommitMessage('commit messages (empty allowed):  ').then(async (msg) => {
     if (msg.trim().length > 0) {
       await gitAddAndCommit('src', msg, { cwd: __dirname });
     }
