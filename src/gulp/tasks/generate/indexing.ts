@@ -1,6 +1,5 @@
 import { existsSync } from 'fs';
 import { join } from 'upath';
-import { HexoDB } from '../../../db/hexo';
 import { pcache } from '../../../node/cache';
 import { CachePost } from '../../../node/cache-post';
 import color from '../../../node/color';
@@ -10,7 +9,7 @@ import { replaceArr } from '../../../node/string-utils';
 import parsePost, { postMap } from '../../../parser/post/parsePost';
 import { cwd, post_public_dir, verbose } from '../../../types/_config';
 
-const hexodb = new HexoDB();
+//const hexodb = new HexoDB();
 
 scheduler.add('indexing-categories', () => {
   const cache = pcache('categories');
