@@ -4,4 +4,8 @@ export declare class HexoDB {
     addPost(obj: postMap): void;
     get(): HexoDBType;
     save(): void;
+    /**
+     * dump
+     */
+    simplify(): void[];
 }
