@@ -45,9 +45,7 @@ jobs:
         path: |
           ${{ steps.vars.outputs.npm }}
           ./tmp
-          ./node_modules
-          ./tests
-          ./.yarn
+          ./node_modules 
         key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
     - name: Resolve git user
