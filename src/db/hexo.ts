@@ -56,7 +56,6 @@ export class HexoDB {
       })
     ) {
       parse.models.Post.push(post);
-      this.save();
     }
   }
   get() {
