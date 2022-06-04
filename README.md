@@ -65,7 +65,7 @@ npm install
 | folder name | description |
 | :--- | :--- |
 | `src-posts` | contains all original posts with markdown formats (ejs shortcodes supported) |
-| `source` | (`config.source_dir` in [_config.yml](./_config.yml)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](./_config.yml)) |
+| `source` | (`config.source_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)) |
 | `node_modules/.cache/dimaslanjaka` | database caches |
 
 ## runner
@@ -79,12 +79,12 @@ gulp deploy # deploy to github pages
 gulp server # development, render on-fly
 ```
 ### no cache
-you can pass argument `--nocache` (this will automatically overriden global generator cache in [_config.yml](_config.yml))
+you can pass argument `--nocache` (this will automatically overriden global generator cache in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38))
 ```bash
 gulp generate --nocache # generate all without reading cache, write new cache (fresh generate) instead
 gulp server --nocache # development without reading cache, write fresh cache instead
 ```
-or you can put global generator in `_config.yml`
+or you can put global generator in [`_config.yml`](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)
 ```yaml
 generator:
   cache: false # this will ignore any caching functions
@@ -92,8 +92,8 @@ generator:
 
 ### standalone
 Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
-- `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](./_config.yml)
-- `generate:` render all files from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](./_config.yml) then ready to publish
+- `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)
+- `generate:` render all files from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38) then ready to publish
 - read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80-L112)
 ```bash
 gulp clean # clean all caches
