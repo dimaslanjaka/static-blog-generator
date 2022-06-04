@@ -1,4 +1,3 @@
-import '../a-core';
 import { initializeApp } from 'firebase/app';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
@@ -6,6 +5,7 @@ import { Ngrok } from 'ngrok';
 import { join, resolve, toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
+import '../a-core';
 import { pcache } from '../node/cache';
 import { read, write } from '../node/filemanager';
 import { json_encode } from '../node/JSON';
@@ -26,7 +26,7 @@ export const argv = yargs(process.argv.slice(2)).argv;
 const root = toUnix(process.cwd());
 export const cwd = memoizee(() => toUnix(process.cwd()));
 const file = join(root, '_config.yml');
-export { root };
+
 const readConfig = existsSync(file) ? readFileSync(file, 'utf-8') : '';
 /** default project config */
 export const default_project_config = default_config;
@@ -131,9 +131,12 @@ if (!existsSync(tmp())) mkdirSync(tmp());
 
 /** THEME CONFIGS */
 /** theme directory */
-export const theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
+let theme_dir = toUnix(resolve(join(root, 'themes', config.theme)));
+if (!existsSync(theme_dir)) {
+  theme_dir = join(process.cwd(), 'node_modules', 'sbg-theme-' + config.theme);
+}
 /** _config.yml object from theme directory */
-export const theme_yml = join(theme_dir, '_config.yml');
+const theme_yml = join(theme_dir, '_config.yml');
 /** merged theme config object */
 export const theme_config = Object.assign(
   theme_config_data,
@@ -178,5 +181,6 @@ config.tmp = tmp;
 
 /** EXPORT PRIVATE AND PUBLIC CONFIGS */
 
+export { root, theme_dir, theme_yml };
 export default config;
 export const project_config = config;
