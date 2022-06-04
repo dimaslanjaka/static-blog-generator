@@ -9,7 +9,8 @@
     "**/*.test.*"
   ],
   "include": [
-    "./gulpfile.ts"
+    "./gulpfile.ts",
+    "./src/bin"
   ],
   "ts-node": {
     "compilerOptions": {
