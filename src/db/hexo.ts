@@ -1,7 +1,7 @@
 // hexo database manager
 
 import { existsSync } from 'fs';
-import { basename, join } from 'upath';
+import { join } from 'upath';
 import { read, write } from '../node/filemanager';
 import { json_decode, json_encode } from '../node/JSON';
 import { parsePermalink } from '../parser/permalink';
@@ -31,14 +31,13 @@ if (!parse.models)
 export class HexoDB {
   addPost(obj: postMap) {
     const perm = parsePermalink(obj);
-    const post: Partial<Post> = {
+    const post: Post = {
       title: obj.metadata.title,
       date: String(obj.metadata.date || new Date()),
       _content: obj.body || obj.content || '',
       source: '',
       raw: buildPost(obj),
-      //__permalink: perm,
-      slug: basename(perm).replace(/.(md|html)$/, ''),
+      slug: perm,
       published: 'draft' in obj.metadata ? (obj.metadata.draft ? 1 : 0) : 1,
       updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
       comments:
@@ -58,7 +57,7 @@ export class HexoDB {
         return epost.title === post.title;
       })
     ) {
-      parse.models.Post.push(<any>post);
+      parse.models.Post.push(post);
     }
   }
   get() {
