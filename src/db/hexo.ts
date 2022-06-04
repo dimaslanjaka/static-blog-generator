@@ -8,7 +8,6 @@ import { parsePermalink } from '../parser/permalink';
 import { buildPost, postMap } from '../parser/post/parsePost';
 import { excerpt } from '../renderer/ejs/helper/excerpt';
 import { thumbnail } from '../renderer/ejs/helper/thumbnail';
-import config from '../types/_config';
 import { HexoDBType, Post } from './hexo-data';
 
 const dbpath = join(process.cwd(), 'db.json');
@@ -36,18 +35,7 @@ export class HexoDB {
       title: obj.metadata.title,
       date: String(obj.metadata.date || new Date()),
       _content: obj.body || obj.content || '',
-      source: (() => {
-        const noext = join(
-          config.source_dir,
-          '_posts',
-          obj.metadata.permalink
-        ).replace(/.(md|html)$/, '');
-        const fullpath = join(process.cwd(), noext);
-        if (existsSync(fullpath + '.md')) return noext + '.md';
-        if (existsSync(fullpath + '.html')) return noext + '.html';
-        if (existsSync(fullpath + '.json')) return noext + '.json';
-        return noext;
-      })(),
+      source: '',
       raw: buildPost(obj),
       //__permalink: perm,
       slug: basename(perm).replace(/.(md|html)$/, ''),
