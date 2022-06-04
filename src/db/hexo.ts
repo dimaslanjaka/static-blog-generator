@@ -45,7 +45,7 @@ export class HexoDB {
       layout: obj.metadata.type || '',
       photos: [],
       link: '',
-      _id: '',
+      _id: '', // obj.metadata.uuid ||
       content: obj.body || obj.content || '',
       site: undefined,
       cover: thumbnail(obj.metadata),
