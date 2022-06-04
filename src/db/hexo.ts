@@ -35,7 +35,7 @@ export class HexoDB {
       source: '',
       raw: buildPost(obj),
       slug: '',
-      published: 'draft' in obj.metadata ? 0 : 1,
+      published: 'draft' in obj.metadata ? (obj.metadata.draft ? 1 : 0) : 1,
       updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
       comments:
         'comments' in obj.metadata ? (obj.metadata.comments ? 1 : 0) : 1,
