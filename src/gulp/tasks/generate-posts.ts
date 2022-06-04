@@ -7,7 +7,6 @@ import CacheFile from '../../node/cache';
 import Sitemap from '../../node/cache-sitemap';
 import color from '../../node/color';
 import {
-  cwd,
   globSrc,
   join,
   mkdirSync,
@@ -20,7 +19,7 @@ import { modifyPost } from '../../parser/post/modifyPost';
 import parsePost, { buildPost } from '../../parser/post/parsePost';
 import { validateParsed } from '../../parser/transformPosts';
 import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
-import config, { root, tmp } from '../../types/_config';
+import config, { root, tmp , cwd} from '../../types/_config';
 
 /**
  * @see {@link config.source_dir}
