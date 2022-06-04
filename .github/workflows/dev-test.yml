@@ -1,0 +1,49 @@
+name: Dev Tests
+
+on:
+  push:
+    branches: [ dev ]
+
+defaults:
+ run:
+  working-directory: ./tests
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Asia/Jakarta"
+        timezoneMacos: "Asia/Jakarta"
+        timezoneWindows: "Western Indonesia Time"
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        token: "${{ secrets.GITHUB_TOKEN }}"
+        ref: "dev"
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    # https://stackoverflow.com/a/61699863/6404439
+    # ${{ steps.vars.outputs.branch }}
+    # ${{ steps.vars.outputs.hash }}
+    - name: Declare some variables
+      id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+        echo "::set-output name=yarn::$(yarn cache dir)"
+        echo "::set-output name=npm::$(npm config get cache)"
+
+
+    - run: npm i -g gulp-cli typescript npm ts-node npm yarn
+    - run: npm install file:../
+    - name: Test bin single task
+      run: npx sbg copy --nocache --verbose
+
+    - name: Test bin multiple task
+      run: sbg clean copy --nocache --verbose
