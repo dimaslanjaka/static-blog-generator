@@ -10,8 +10,7 @@ const tasks = argv['_'];
 //console.log(getConfig().verbose, getConfig().generator.cache);
 
 for (let i = 0; i < tasks.length; i++) {
-  const task = tasks[i];
-
-  const fn = gulp.task(task);
-  console.log(typeof fn);
+  const taskname = tasks[i];
+  const taskfn = gulp.task(taskname);
+  console.log(typeof taskfn);
 }
