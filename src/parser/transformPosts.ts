@@ -1,6 +1,6 @@
 import { existsSync } from 'fs';
 import color from '../node/color';
-import { dirname, mkdirSync, writeFileSync } from '../node/filemanager';
+import { dirname, mkdirSync, write } from '../node/filemanager';
 import { buildPost, postMap } from './post/parsePost';
 
 /**
@@ -10,7 +10,7 @@ import { buildPost, postMap } from './post/parsePost';
  */
 export function saveParsedPost(parsed: postMap, file: string) {
   if (!existsSync(dirname(file))) mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, buildPost(parsed));
+  write(file, buildPost(parsed));
 }
 
 /**
