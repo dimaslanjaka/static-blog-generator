@@ -27,6 +27,7 @@
     "build:src": "ts-node build.ts",
     "refresh": "npm update hexo-post-parser safelinkify google-news-sitemap persistent-cache",
     "test": "npm-run-all -s test:**",
+    "test:bin": "",
     "test:js": "cd tests && npm i file:../ && node index.js",
     "test:ts": "cd tests && npm i file:../ && node -r ts-node/register index.ts",
     "test:git": "cd tests && npm i dimaslanjaka/static-blog-generator#dev && node index.js",
