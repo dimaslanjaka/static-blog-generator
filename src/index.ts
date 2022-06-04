@@ -1,11 +1,11 @@
 import gulp from 'gulp';
 import './a-core';
 import './gulp/server';
-import './gulp/tasks/clean';
 import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
+
 export {
   clean_db,
   clean_posts,
