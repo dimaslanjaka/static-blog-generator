@@ -36,7 +36,10 @@ export class HexoDB {
       title: obj.metadata.title,
       date: String(obj.metadata.date || new Date()),
       _content: obj.body || obj.content || '',
-      source: join(config.source_dir, '_posts', obj.metadata.permalink),
+      source: join(config.source_dir, '_posts', obj.metadata.permalink).replace(
+        /.(md|html)$/,
+        '.md'
+      ),
       raw: buildPost(obj),
       __permalink: perm,
       slug: basename(perm).replace(/.(md|html)$/, ''),
