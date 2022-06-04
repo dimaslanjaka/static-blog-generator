@@ -36,10 +36,18 @@ export class HexoDB {
       title: obj.metadata.title,
       date: String(obj.metadata.date || new Date()),
       _content: obj.body || obj.content || '',
-      source: join(config.source_dir, '_posts', obj.metadata.permalink).replace(
-        /.(md|html)$/,
-        '.md'
-      ),
+      source: (() => {
+        const noext = join(
+          config.source_dir,
+          '_posts',
+          obj.metadata.permalink
+        ).replace(/.(md|html)$/, '');
+        const fullpath = join(process.cwd(), noext);
+        if (existsSync(fullpath + '.md')) return noext + '.md';
+        if (existsSync(fullpath + '.html')) return noext + '.html';
+        if (existsSync(fullpath + '.json')) return noext + '.json';
+        return noext;
+      })(),
       raw: buildPost(obj),
       __permalink: perm,
       slug: basename(perm).replace(/.(md|html)$/, ''),
