@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-import gulp from 'gulp';
 import yargs from 'yargs';
-import '../';
+import gulp from '../../gulpfile';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const tasks = argv['_'];
