@@ -3,7 +3,8 @@
 import { join } from 'upath';
 import { read, write } from '../node/filemanager';
 import { json_decode, json_encode } from '../node/JSON';
-import { postMap } from '../parser/post/parsePost';
+import { buildPost, postMap } from '../parser/post/parsePost';
+import { thumbnail } from '../renderer/ejs/helper/thumbnail';
 import { HexoDBType, Post } from './hexo-data';
 
 const dbpath = join(process.cwd(), 'db.json');
@@ -13,25 +14,26 @@ export class HexoDB {
   addPost(obj: postMap) {
     const post: Post = {
       title: obj.metadata.title,
-      date: obj.metadata.date,
-      _content: obj.body || obj.content,
+      date: String(obj.metadata.date || new Date()),
+      _content: obj.body || obj.content || '',
       source: '',
-      raw: '',
+      raw: buildPost(obj),
       slug: '',
       published: 0,
-      updated: '',
+      updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
       comments: 0,
       layout: '',
       photos: [],
       link: '',
       _id: '',
-      content: '',
+      content: obj.body || obj.content || '',
       site: undefined,
-      cover: '',
+      cover: thumbnail(obj.metadata),
       excerpt: '',
       more: ''
     };
     parse.models.Post.push(post);
+    this.save();
   }
   get() {
     return parse;
