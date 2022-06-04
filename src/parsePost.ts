@@ -1,8 +1,8 @@
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
+import cache from 'persistent-cache';
 import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
-import cache from 'persistent-cache';
 import { dateMapper, moment } from './dateMapper';
 import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
@@ -17,7 +17,6 @@ import { parseShortCodeInclude } from './shortcodes/include';
 import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
-import { DynamicObject } from './types';
 import config from './types/_config';
 
 const _cache = cache({
@@ -35,7 +34,8 @@ const post_generated_dir = join(cwd(), config.public_dir);
 /**
  * post metadata information (title, etc)
  */
-export type postMeta = DynamicObject & {
+export interface postMeta {
+  [key: string]: any;
   /**
    * Article language code
    */
@@ -73,7 +73,8 @@ export type postMeta = DynamicObject & {
    * archive (index, tags, categories)
    */
   type?: 'post' | 'page' | 'archive';
-};
+}
+
 export interface postMap extends Object {
   [key: string]: any;
   /**
@@ -97,7 +98,7 @@ export interface postMap extends Object {
   /**
    * Article metadata
    */
-  metadata?: Partial<postMeta>;
+  metadata?: postMeta;
   /**
    * Article body
    */
@@ -225,7 +226,13 @@ export async function parsePost(
   }
 
   const mapper = async (m: RegExpMatchArray) => {
-    let meta: postMap['metadata'] = {};
+    let meta: postMap['metadata'] = {
+      title: '',
+      subtitle: '',
+      date: '',
+      tags: [],
+      category: []
+    };
     try {
       meta = yaml.parse(m[1]);
     } catch (error) {
