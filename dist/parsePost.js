@@ -4,9 +4,9 @@ exports.parsePost = void 0;
 const tslib_1 = require("tslib");
 const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
+const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
-const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
 const dateMapper_1 = require("./dateMapper");
 const utils_1 = require("./gulp/utils");
 const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
@@ -79,7 +79,13 @@ function parsePost(target, options = {}) {
             target = String((0, fs_1.readFileSync)(target, 'utf-8'));
         }
         const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let meta = {};
+            let meta = {
+                title: '',
+                subtitle: '',
+                date: '',
+                tags: [],
+                category: []
+            };
             try {
                 meta = yaml_1.default.parse(m[1]);
             }

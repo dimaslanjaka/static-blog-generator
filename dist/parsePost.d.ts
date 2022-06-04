@@ -1,10 +1,10 @@
 import { dateMapper } from './dateMapper';
-import { DynamicObject } from './types';
 import config from './types/_config';
 /**
  * post metadata information (title, etc)
  */
-export declare type postMeta = DynamicObject & {
+export interface postMeta {
+    [key: string]: any;
     /**
      * Article language code
      */
@@ -44,7 +44,7 @@ export declare type postMeta = DynamicObject & {
      * archive (index, tags, categories)
      */
     type?: 'post' | 'page' | 'archive';
-};
+}
 export interface postMap extends Object {
     [key: string]: any;
     /**
@@ -68,7 +68,7 @@ export interface postMap extends Object {
     /**
      * Article metadata
      */
-    metadata?: Partial<postMeta>;
+    metadata?: postMeta;
     /**
      * Article body
      */
