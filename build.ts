@@ -16,8 +16,9 @@ const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
 if (!process.env['GITHUB_WORKFLOW']) {
   askCommitMessage('commit messages:\t').then(async (msg) => {
-    if (msg.trim().length > 0)
+    if (msg.trim().length > 0) {
       await gitAddAndCommit('src', msg, { cwd: __dirname });
+    }
     await start();
   });
 } else {

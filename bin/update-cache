@@ -4,6 +4,6 @@ cdate=$(date +'%Y-%m-%d %H:%M:%S')
 hash=$(git rev-parse --short HEAD)
 sha=$(sha1sum package-lock.json | head -c 40)
 md5=`md5sum package-lock.json | head -c 32`
-echo "[$hash] $md5" > .guid
+echo $hash > .guid
 git add .guid
 git commit -m "update cache ${cdate}"
