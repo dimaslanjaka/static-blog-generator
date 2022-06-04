@@ -1,6 +1,7 @@
 import axios from 'axios';
 import cache from 'persistent-cache';
 import { join } from 'upath';
+import color from '../node/color';
 import jdom from '../node/jsdom';
 import { md5 } from '../node/md5-file';
 import { replaceArr } from '../node/utils';
@@ -12,6 +13,7 @@ const _cache = cache({
   name: 'shortcode/codeblock',
   duration: 1000 * 3600 * 24 // 24 hours
 });
+const logname = color.Shamrock('[codeblock]');
 
 export async function shortcodeCodeblock(str: string) {
   const regex =
@@ -82,7 +84,7 @@ export async function shortcodeCodeblock(str: string) {
               // set cache
               _cache.putSync(cacheKey, urlTitle);
               if (config.verbose)
-                console.log('resolved codeblock url', urlTitle);
+                console.log(logname, 'resolved url title', urlTitle);
             } else {
               throw new Error('Response status not !== 200');
             }
