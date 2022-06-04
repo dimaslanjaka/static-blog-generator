@@ -11,6 +11,7 @@ dist/**/*.json
 
 # main excluded files
 *.log
+/db.json
 public/*
 .deploy*/
 package-lock.backup
