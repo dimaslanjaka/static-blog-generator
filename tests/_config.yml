@@ -17,8 +17,8 @@ skip_render:
 
 url: https://hexo.io
 root: /
-permalink: :year/:month/:title.html #news/:year/:month/:day/:title/
-new_post_name: :year-:month-:day-:title.md # File name of new posts
+permalink: :title.html #:year/:month/:title.html #news/:year/:month/:day/:title/
+new_post_name: :year/:month/:title.md # File name of new posts
 post_asset_folder: true
 per_page: 0
 pretty_urls:
