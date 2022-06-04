@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import moment, { isMoment } from 'moment-timezone';
+import { default as momentInstance, isMoment, locale } from 'moment-timezone';
 import { removeEmpties } from '../../../node/array-utils';
 import { postResult } from '../../../node/cache-post';
 import color from '../../../node/color';
@@ -56,21 +56,21 @@ export function date_local(page: postResult) {
     if (Object.hasOwnProperty.call(page, 'metadata')) {
       const meta = page.metadata;
       if (meta.lang) {
-        moment.locale(toMomentLocale(meta.lang));
+        locale(toMomentLocale(meta.lang));
         return toMomentLocale(meta.lang);
       } else if (meta.language) {
-        moment.locale(toMomentLocale(meta.language));
+        locale(toMomentLocale(meta.language));
         return toMomentLocale(meta.language);
       } else if (config.lang) {
-        moment.locale(toMomentLocale(config.lang));
+        locale(toMomentLocale(config.lang));
         return toMomentLocale(config.lang);
       } else if (config.language) {
-        moment.locale(toMomentLocale(config.language));
+        locale(toMomentLocale(config.language));
         return toMomentLocale(config.language);
       }
     }
   }
-  moment.locale('en');
+  locale('en');
   return 'en';
 }
 
@@ -126,6 +126,23 @@ export function getMoment(date: any, lang: any, timezone: string) {
 
   return imoment;
 }
+
+/**
+ * Localized Moment
+ * @param date
+ * @returns
+ */
+export function moment(date: any = new Date(), format?: string) {
+  let parse = momentInstance(date, format);
+  if (config.timezone) {
+    parse = parse.tz(config.timezone);
+  }
+  return parse;
+}
+/**
+ * @see {@link moment}
+ */
+export const modMoment = moment;
 
 export function toISOString(date) {
   if (date == null) {
