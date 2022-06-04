@@ -42,7 +42,7 @@ export class HexoDB {
       updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
       comments:
         'comments' in obj.metadata ? (obj.metadata.comments ? 1 : 0) : 1,
-      layout: '',
+      layout: obj.metadata.type || '',
       photos: [],
       link: '',
       _id: obj.metadata.uuid || '',
