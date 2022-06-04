@@ -32,7 +32,7 @@ scheduler.add('indexing-posts', async () => {
       console.log(logname, 'parsing', replaceArr(filePath, [cwd(), /^\//], ''));
     }
     const parse = await parsePost(filePath);
-    if (parse.metadata.title === '.md') {
+    if (parse.metadata.title === '.md' || !parse.metadata.title) {
       write(
         join(__dirname, 'tmp/indexing/post.log'),
         `${parse.metadata.title} ${filePath}\n`,
