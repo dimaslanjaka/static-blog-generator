@@ -35,6 +35,7 @@ export interface Cache {
 }
 
 export interface Post {
+  [key: string]: any;
   title: string;
   date: string;
   /**
