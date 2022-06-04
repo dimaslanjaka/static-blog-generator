@@ -52,7 +52,7 @@ export class HexoDB {
     };
     if (
       !parse.models.Post.find((epost) => {
-        return epost.title !== post.title;
+        return epost.title === post.title;
       })
     ) {
       parse.models.Post.push(post);
@@ -64,5 +64,15 @@ export class HexoDB {
   }
   save() {
     write(dbpath, json_encode(parse, 2));
+  }
+  /**
+   * dump
+   */
+  simplify() {
+    return parse.models.Post.map((post) => {
+      post._content = '';
+      post.content = '';
+      post.raw = '';
+    });
   }
 }
