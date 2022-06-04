@@ -6,4 +6,4 @@ import { postMap } from '../../../parser/post/parsePost';
  * @example
  *     <%- thumbnail(post) %>
  */
-export declare function thumbnail(post: postMap['metadata']): any;
+export declare function thumbnail(post: postMap['metadata']): string;
