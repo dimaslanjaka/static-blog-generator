@@ -47,7 +47,7 @@ Install using `npm` recommended.
 # install global packages
 npm i -g npm gulp-cli typescript ts-node
 # clone
-git clone --branch stable --single-branch https://github.com/dimaslanjaka/static-blog-generator.git foldername
+git clone https://github.com/dimaslanjaka/static-blog-generator.git foldername
 # cd
 cd foldername
 # fetch all submodules
