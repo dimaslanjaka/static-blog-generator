@@ -5,11 +5,19 @@ author: Hexo
 language: en
 timezone: UTC
 
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
 url: https://hexo.io
 root: /
 permalink: news/:year/:month/:day/:title/
-archive_dir: news
-code_dir: downloads/code
 new_post_name: :year-:month-:day-:title.md # File name of new posts
 post_asset_folder: true
 per_page: 0
