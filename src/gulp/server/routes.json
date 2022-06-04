@@ -1,17 +1,4 @@
 {
-    "tag": [
-        "/tags/example-tag",
-        "/tags/hello-world",
-        "/tags/markdown",
-        "/tags/sample",
-        "/tags/sample-tag",
-        "/tags/this-is-tag",
-        "/tags/videos"
-    ],
-    "category": [
-        "/categories/Uncategorized",
-        "/categories/guide",
-        "/categories/post",
-        "/categories/sample"
-    ]
+    "tag": [],
+    "category": []
 }
