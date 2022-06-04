@@ -34,7 +34,8 @@ function dummyPost(counter: string | number = 0) {
       category: ['dummy'],
       tags: ['dummy', 'sample'],
       permalink: '/dummy/dummy-post-' + counter + '.md',
-      date: randomDate(new Date(2020, 0, 1), new Date(), 0, 24).toISOString()
+      date: randomDate(new Date(2020, 0, 1), new Date(), 0, 24).toISOString(),
+      subtitle: 'Dummy Post Subtitle ' + counter
     },
     body: 'Dummy Post Body ' + counter
   };
