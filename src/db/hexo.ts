@@ -1,13 +1,14 @@
 // hexo database manager
 
 import { existsSync } from 'fs';
-import { join } from 'upath';
+import { basename, join } from 'upath';
 import { read, write } from '../node/filemanager';
 import { json_decode, json_encode } from '../node/JSON';
 import { parsePermalink } from '../parser/permalink';
 import { buildPost, postMap } from '../parser/post/parsePost';
 import { excerpt } from '../renderer/ejs/helper/excerpt';
 import { thumbnail } from '../renderer/ejs/helper/thumbnail';
+import config from '../types/_config';
 import { HexoDBType, Post } from './hexo-data';
 
 const dbpath = join(process.cwd(), 'db.json');
@@ -35,10 +36,10 @@ export class HexoDB {
       title: obj.metadata.title,
       date: String(obj.metadata.date || new Date()),
       _content: obj.body || obj.content || '',
-      //source: '',
+      source: join(config.source_dir, '_posts', obj.metadata.permalink),
       raw: buildPost(obj),
       __permalink: perm,
-      //slug: perm,
+      slug: basename(perm, '.md'),
       published: 'draft' in obj.metadata ? (obj.metadata.draft ? 1 : 0) : 1,
       updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
       comments:
@@ -46,12 +47,12 @@ export class HexoDB {
       layout: obj.metadata.type || '',
       photos: [],
       link: '',
-      //_id: '',
+      _id: '',
       content: obj.body || obj.content || '',
       site: undefined,
       cover: thumbnail(obj.metadata),
-      excerpt: excerpt(obj.metadata)
-      //more: ''
+      excerpt: excerpt(obj.metadata),
+      more: ''
     };
     if (
       !parse.models.Post.find((epost) => {
