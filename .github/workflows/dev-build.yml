@@ -67,7 +67,7 @@ jobs:
       continue-on-error: true
       run: |
         git add package-lock.json
-        git commit -m "update module resolutions ${{ steps.vars.outputs.hash }}"
+        git commit -m "[${{ steps.vars.outputs.hash }}] update module resolutions"
         git push
 
     - name: Build
@@ -82,7 +82,7 @@ jobs:
       run: |
         npm pack
         git add release
-        git commit -m "update release ${{ steps.vars.outputs.hash }}"
+        git commit -m "[${{ steps.vars.outputs.hash }}] update release"
         git push
 
     - name: Test JS
@@ -115,7 +115,7 @@ jobs:
       continue-on-error: true
       run: |
         git pull
-        git commit -m "build from ${{ steps.vars.outputs.hash }}"
+        git commit -m "build from @ ${{ steps.vars.outputs.hash }}"
         git push
 
 #    - name: Re-deploy 🚀
