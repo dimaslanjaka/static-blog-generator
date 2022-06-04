@@ -5,7 +5,7 @@
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "bin": {
-    "sbg": "dist/bin/sbg.js"
+    "sbg": "dist/src/bin/sbg.js"
   },
   "files": [
     "src",
