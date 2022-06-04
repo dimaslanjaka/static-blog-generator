@@ -41,9 +41,9 @@ scheduler.add('indexing-posts', async () => {
     }
     // skip index page
     if (parse.metadata.type === 'page') continue;
-    hexodb.addPost(parse);
+    //hexodb.addPost(parse);
   }
-  hexodb.save();
+  //hexodb.save();
 });
 
 function indexingOf(cache: ReturnType<typeof pcache>) {
