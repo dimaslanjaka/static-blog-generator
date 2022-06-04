@@ -22,15 +22,8 @@ for (let i = 0; i < tasks.length; i++) {
 let keeprunning = true;
 while (keeprunning !== false) {
   if (taskswrapper.length > 0) {
-    const fn = taskswrapper[0];
+    taskswrapper[0](null);
     taskswrapper.shift();
-    if (taskswrapper.length > 0) {
-      fn(() => taskswrapper[0](null));
-      taskswrapper.shift();
-    } else {
-      fn(null);
-      keeprunning = false;
-    }
   } else {
     keeprunning = false;
   }
