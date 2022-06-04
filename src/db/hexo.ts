@@ -1,10 +1,11 @@
 // hexo database manager
 
 import { existsSync } from 'fs';
-import { join } from 'upath';
+import { basename, join } from 'upath';
 import { read, write } from '../node/filemanager';
 import { json_decode, json_encode } from '../node/JSON';
 import { buildPost, postMap } from '../parser/post/parsePost';
+import { excerpt } from '../renderer/ejs/helper/excerpt';
 import { thumbnail } from '../renderer/ejs/helper/thumbnail';
 import { HexoDBType, Post } from './hexo-data';
 
@@ -34,7 +35,7 @@ export class HexoDB {
       _content: obj.body || obj.content || '',
       source: '',
       raw: buildPost(obj),
-      slug: '',
+      slug: basename(obj.metadata.permalink).replace(/.(md|html)$/, ''),
       published: 'draft' in obj.metadata ? (obj.metadata.draft ? 1 : 0) : 1,
       updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
       comments:
@@ -46,7 +47,7 @@ export class HexoDB {
       content: obj.body || obj.content || '',
       site: undefined,
       cover: thumbnail(obj.metadata),
-      excerpt: '',
+      excerpt: excerpt(obj.metadata),
       more: ''
     };
     if (
