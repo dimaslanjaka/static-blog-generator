@@ -60,3 +60,7 @@ function indexingOf(cache: ReturnType<typeof pcache>) {
     }
   }
 }
+
+export default function indexing() {
+  return 'indexing should be run before process exited';
+}
