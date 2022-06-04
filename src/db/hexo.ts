@@ -49,7 +49,7 @@ export class HexoDB {
         return noext;
       })(),
       raw: buildPost(obj),
-      __permalink: perm,
+      //__permalink: perm,
       slug: basename(perm).replace(/.(md|html)$/, ''),
       published: 'draft' in obj.metadata ? (obj.metadata.draft ? 1 : 0) : 1,
       updated: String(obj.metadata.updated || obj.metadata.date || new Date()),
