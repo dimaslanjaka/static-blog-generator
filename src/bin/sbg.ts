@@ -3,9 +3,12 @@
 import { TaskFunctionWrapped } from 'undertaker';
 import yargs from 'yargs';
 import gulp from '../../gulpfile';
+import indexing from '../gulp/tasks/generate/indexing';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const tasks = argv['_'];
+
+indexing();
 
 //console.log(getConfig().verbose, getConfig().generator.cache);
 
