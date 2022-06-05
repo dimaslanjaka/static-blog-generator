@@ -68,9 +68,15 @@ const parsePost = async (
 
   if (!parse) return null;
 
-  if (parse.metadata.title === '.md') {
-    // @todo [fixed] replace no title post
+  // @todo [fixed] replace no title post
+  if (parse.metadata.title === '.md' && typeof path === 'string' && path.length > 0) {
     parse.metadata.title = basename(path, '.md');
+  }
+
+  // @todo [fixed] redirect -> redirect_to for jekyll plugin
+  if ('redirect' in parse.metadata) {
+    const redirect = parse.metadata.redirect;
+    parse.metadata.redirect_to = redirect
   }
 
   parse.fileTree = {
