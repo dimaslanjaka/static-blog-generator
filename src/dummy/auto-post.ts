@@ -7,11 +7,12 @@ import parsePost, { buildPost, postMap } from '../parser/post/parsePost';
 import config, { argv, root } from '../types/_config';
 
 const destFolder = join(root, config.source_dir, '_posts');
-if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
-// emptying generated dummy posts
-emptyDirSync(join(destFolder, 'dummy'));
 
 export async function generateDummyPosts(n = 5) {
+  if (!existsSync(destFolder)) mkdirSync(destFolder, { recursive: true });
+  // emptying generated dummy posts
+  emptyDirSync(join(destFolder, 'dummy'));
+
   const result: string[] = [];
   for (let x = 0; x < n; x++) {
     const gen = await dummyPost(x);
