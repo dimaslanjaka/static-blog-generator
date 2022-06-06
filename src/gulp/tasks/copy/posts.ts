@@ -4,6 +4,7 @@ import { TaskCallback } from 'undertaker';
 import color from '../../../node/color';
 import { buildPost, parsePost } from '../../../parser/post/parsePost';
 import config, {
+  argv,
   post_public_dir,
   post_source_dir
 } from '../../../types/_config';
@@ -11,17 +12,19 @@ import { determineDirname } from '../../utils';
 import './assets';
 
 const logname = color.cyan('[copy][post]');
+const paths =
+  typeof argv['paths'] === 'string' ? argv['paths'].split(',') : null;
 
 /**
  * copy posts from `src-posts` to config.source_dir {@link config.source_dir}
  * @description copy, parsing shortcodes, render html body, etc from src-posts to source_dir
  * @summary copy from src-posts to source/_posts
- * @param cpath custom copy, only copy post with this key
+ * @param customPaths custom copy, only copy post with this key
  * @returns
  */
 export const copyPosts = (
   _done: TaskCallback = null,
-  cpath?: string,
+  customPaths: string | string[] = paths,
   options: Partial<Parameters<typeof parsePost>[2]> = {}
 ) => {
   const exclude = config.exclude.map(
@@ -37,9 +40,9 @@ export const copyPosts = (
     .pipe(
       through2.obj(async function (file, _encoding, next) {
         const path = file.path;
-        if (typeof cpath == 'string' && cpath.length > 2) {
+        if (typeof customPaths == 'string' && customPaths.length > 2) {
           // copy specific post path, otherwise drop this item
-          if (!path.includes(cpath)) return next();
+          if (!path.includes(customPaths)) return next();
         }
         const log = [logname, String(path)];
         const parse = await parsePost(
@@ -69,6 +72,7 @@ export const copyPosts = (
     );
   return determineDirname(run).pipe(gulp.dest(post_public_dir));
 };
+
 /**
  * @see {@link copyPosts}
  */
