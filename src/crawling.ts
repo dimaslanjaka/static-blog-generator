@@ -1,13 +1,13 @@
 import { existsSync } from 'fs';
 import { join } from 'upath';
-import { pcache } from '../../../node/cache';
-import { CachePost } from '../../../node/cache-post';
-import color from '../../../node/color';
-import { readdirSync, write } from '../../../node/filemanager';
-import scheduler from '../../../node/scheduler';
-import { replaceArr } from '../../../node/string-utils';
-import parsePost, { postMap } from '../../../parser/post/parsePost';
-import { cwd, post_public_dir, verbose } from '../../../types/_config';
+import { pcache } from './node/cache';
+import { CachePost } from './node/cache-post';
+import color from './node/color';
+import { readdirSync, write } from './node/filemanager';
+import scheduler from './node/scheduler';
+import { replaceArr } from './node/string-utils';
+import parsePost, { postMap } from './parser/post/parsePost';
+import { cwd, post_public_dir, verbose } from './types/_config';
 
 //const hexodb = new HexoDB();
 
@@ -76,6 +76,6 @@ function indexingOf(cache: ReturnType<typeof pcache>) {
   }
 }
 
-export default function indexing() {
+export default function crawling() {
   return 'indexing should be run before process exited';
 }
