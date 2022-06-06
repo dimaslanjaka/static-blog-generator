@@ -1,6 +1,5 @@
 // noinspection DuplicatedCode
 
-import Bluebird from 'bluebird';
 import {
   ChildProcess,
   ChildProcessWithoutNullStreams,
@@ -29,7 +28,7 @@ class spawner {
     cmd: string,
     ...args: string[]
   ) {
-    return new Bluebird(
+    return new Promise(
       (
         resolve: (returnargs: {
           code: number;
