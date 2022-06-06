@@ -77,6 +77,13 @@ const parsePost = async (
     if (path.includes('src-posts')) {
       parse.metadata.source = path;
     }
+    // @todo set flag published
+    if ('published' in parse.metadata === false) {
+      parse.metadata.published = true;
+      if (/\/_drafts?\//.test(path)) {
+        parse.metadata.published = false;
+      }
+    }
   }
 
   // @todo redirect -> redirect_to for jekyll plugin
