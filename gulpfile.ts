@@ -15,7 +15,7 @@ gulp.task('sbg:docs', async () => {
     stdio: 'inherit',
     shell: true
   };
-  //fs.rmSync(join(spawnOpt, '.git'), { recursive: true });
+  //fs.rmSync(join(dest, '.git'), { recursive: true });
   if (!fs.existsSync(dest)) fs.mkdirSync(dest);
   const gitInitialized = fs.existsSync(join(dest, '.git'));
   if (!gitInitialized) {
@@ -29,17 +29,23 @@ gulp.task('sbg:docs', async () => {
   await git(spawnOpt, 'config', 'user.email', 'dimaslanjaka@gmail.com');
   await git(spawnOpt, 'config', 'user.name', 'dimaslanjaka');
 
-  await git(spawnOpt, 'fetch', '--all');
-  if (gitInitialized) await git(spawnOpt, 'reset', '--hard', 'origin/gh-pages');
+  if (gitInitialized)
+    await git({ cwd: dest }, 'reset', '--hard', 'origin/gh-pages');
   await git(spawnOpt, 'fetch', 'origin');
-  await git(spawnOpt, 'pull', repo, 'gh-pages:gh-pages');
+  await git({ cwd: dest }, 'checkout', 'gh-pages');
+  //await git(spawnOpt, 'pull', repo, 'gh-pages:gh-pages');
+  await git(spawnOpt, 'pull');
   gulp
-    .src([join(__dirname, 'src', '**/*.md'), 'readme.md'])
+    .src([join(__dirname, 'src', '**/*.md'), 'readme.md', '!**/tmp'])
     .pipe(gulp.dest(dest))
     .on('end', async () => {
-      await git(spawnOpt, 'add', '-A');
-      const latestCommit = await getLatestCommitHash();
-      await git(spawnOpt, 'commit', '-m', `update page from ${latestCommit}`);
-      await git(spawnOpt, 'push', repo, 'gh-pages:gh-pages');
+      await git({ cwd: dest }, 'add', '.');
+      await git({ cwd: dest }, 'add', '-A');
+      const latestCommit = await getLatestCommitHash(__dirname);
+      const msg = `update page from ${latestCommit}`;
+      await git({ cwd: dest }, 'commit', '-m', msg);
+      //await git(spawnOpt, 'push', '-u', repo, 'gh-pages:gh-pages');
+      //await git(spawnOpt, 'push', '-u', 'origin', 'gh-pages');
+      await git(spawnOpt, 'push', 'origin', 'gh-pages');
     });
 });
