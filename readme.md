@@ -1,5 +1,7 @@
 ---
 layout: default
+title: Homepage
+subtitle: Static Blog Generator
 ---
 
 # SBG (Static Blog Generator) Project
