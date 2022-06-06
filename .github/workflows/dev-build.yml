@@ -97,7 +97,7 @@ jobs:
 
     - name: Test mocha
       id: test-mocha
-      run: sh bin/mock-data && npm run test:mocha
+      run: npm install && npm run test:mocha
 
     - name: Test bin single task
       run: npm i file:../ && npx sbg copy --nocache --verbose
