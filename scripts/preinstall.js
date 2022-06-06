@@ -20,3 +20,14 @@ if (fs.existsSync(path.join(root, '.git'))) {
 } else {
   console.log('installing from npm registry, skipping preinstall');
 }
+
+// mock data
+fs.writeFileSync(
+  path.join(__dirname, '../src/types/_config_project.json'),
+  '{}'
+);
+fs.writeFileSync(path.join(__dirname, '../src/types/_config_theme.json'), '{}');
+fs.writeFileSync(
+  path.join(__dirname, '../src/types/_config_hashes.json'),
+  '{}'
+);
