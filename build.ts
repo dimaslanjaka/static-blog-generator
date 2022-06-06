@@ -81,7 +81,7 @@ async function update_guid() {
 async function update_version() {
   gitDescribe(join(__dirname, 'src'))
     .then((info) => {
-      console.dir(info);
+      //console.dir(info);
       //console.log(info.hash);
       //const version = `${info.semver.version}-${info.distance}-${info.hash}`;
       pkg.version = info.semver.version;
