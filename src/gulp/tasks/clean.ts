@@ -3,8 +3,13 @@ import gulp from 'gulp';
 import { cwd } from 'process';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
+import { HexoDBPath } from '../../db/hexo';
 import { dbFolder } from '../../node/cache';
-import { post_generated_dir, post_public_dir, tmp } from '../../types/_config';
+import config, {
+  post_generated_dir,
+  post_public_dir,
+  tmp
+} from '../../types/_config';
 
 /** clean generated folder */
 export const clean_public = (done?: TaskCallback) =>
@@ -12,7 +17,11 @@ export const clean_public = (done?: TaskCallback) =>
 /** clean posts from config.source_dir */
 export const clean_posts = (done?: TaskCallback) => {
   rm(post_public_dir, { recursive: true, force: true }, () => {
-    rm(join(process.cwd(), 'db.json'), () => done());
+    if ('generator' in config && config['generator']['type'] === 'hexo') {
+      rm(HexoDBPath, () => done());
+    } else {
+      done();
+    }
   });
 };
 /** clean temp folder */
