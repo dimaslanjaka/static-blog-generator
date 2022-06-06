@@ -26,6 +26,9 @@ gulp.task('sbg:docs', async () => {
     git(spawnOpt, 'remote', 'set-url', 'origin', repo);
   }
 
+  await git(spawnOpt, 'config', 'user.email', 'dimaslanjaka@gmail.com');
+  await git(spawnOpt, 'config', 'user.name', 'dimaslanjaka');
+
   await git(spawnOpt, 'fetch', '--all');
   if (gitInitialized) await git(spawnOpt, 'reset', '--hard', 'origin/gh-pages');
   await git(spawnOpt, 'fetch', 'origin');
