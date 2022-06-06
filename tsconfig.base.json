@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "rootDirs": [
-      "./src",
-      "./packages"
-    ],
-    "sourceRoot": "./src/",
-    "outDir": "./dist",
     "module": "CommonJS",
     "target": "ES5",
     "moduleResolution": "Node",
