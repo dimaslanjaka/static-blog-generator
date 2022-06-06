@@ -2,6 +2,7 @@
 import Bluebird from 'bluebird';
 import findCacheDir from 'find-cache-dir';
 import * as fs from 'fs';
+import * as fse from 'fs-extra';
 import minimatch from 'minimatch';
 import { default as nodePath } from 'path';
 import { cwd } from 'process';
@@ -127,6 +128,43 @@ const filemanager = {
 
 export function removeMultiSlashes(str: string) {
   return str.replace(/(\/)+/g, '$1');
+}
+
+/**
+ * copy dir or file recursive
+ * @param src source path of file or folder
+ * @param dest destination path
+ */
+export function copy(src: string, dest: string) {
+  if (!fs.existsSync(src)) throw new Error(`${src} not exists`);
+
+  const dirDest = dirname(dest);
+  const stat = fs.statSync(src);
+  if (!fs.existsSync(dirDest)) mkdirSync(dirDest, { recursive: true });
+  if (stat.isFile()) fs.copyFileSync(src, dest);
+  if (stat.isDirectory()) copyDir(src, dest);
+}
+
+/**
+ * copy directory recursive
+ * @param source
+ * @param dest
+ * @param callback
+ * @returns
+ */
+export function copyDir(
+  source: string,
+  dest: string,
+  callback = function (err: any | null) {
+    if (err) {
+      console.error(err);
+      console.error('error');
+    } else {
+      console.log('success!');
+    }
+  }
+) {
+  return fse.copy(source, dest, callback);
 }
 
 interface GlobSrcOptions extends glob.IOptions {
