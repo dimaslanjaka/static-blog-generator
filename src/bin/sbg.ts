@@ -4,12 +4,12 @@
 
 import yargs from 'yargs';
 import gulp from '../../gulpfile';
-import indexing from '../gulp/tasks/generate/indexing';
+import crawling from '../crawling';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const tasks = argv['_'];
 
-indexing();
+crawling();
 
 //console.log(getConfig().verbose, getConfig().generator.cache);
 //console.log(argv['paths']);
