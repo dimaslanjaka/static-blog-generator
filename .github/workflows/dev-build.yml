@@ -45,7 +45,7 @@ jobs:
         path: |
           ${{ steps.vars.outputs.npm }}
           ./tmp
-          ./node_modules 
+          ./node_modules
         key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
     - name: Resolve git user
@@ -70,6 +70,13 @@ jobs:
         git commit -m "[${{ steps.vars.outputs.hash }}] update module resolutions"
         git push
 
+    - name: Mock Data
+      run: |
+        echo "{}" > src/types/_config_hashes.json
+        echo "{}" > src/types/_config_project.json
+        echo "{}" > src/types/_config_theme.json
+        echo "{}" > src/gulp/server/routes.json
+
     - name: Build
       continue-on-error: true
       run: |
@@ -91,19 +98,11 @@ jobs:
 
     - name: Test TS
       id: test-ts
-      run: |
-        echo "{}" > src/types/_config_hashes.json
-        echo "{}" > src/types/_config_project.json
-        echo "{}" > src/types/_config_theme.json
-        npm run test:ts
+      run: npm run test:ts
 
     - name: Test mocha
       id: test-mocha
-      run: |
-          echo "{}" > src/types/_config_hashes.json
-          echo "{}" > src/types/_config_project.json
-          echo "{}" > src/types/_config_theme.json
-          npm run test:mocha
+      run: npm run test:mocha
 
     - name: Test bin single task
       run: npm i file:../ && npx sbg copy --nocache --verbose
