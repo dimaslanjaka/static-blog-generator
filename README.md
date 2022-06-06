@@ -118,9 +118,9 @@ gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 ~important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**~
 
 ## PHP Local Server
-https://askubuntu.com/questions/64095/change-xampps-htdocs-web-root-folder-to-another-one
-https://stackoverflow.com/questions/7337724/how-to-check-whether-mod-rewrite-is-enable-on-server
-https://stackoverflow.com/questions/10878284/virtual-hosts-xampp-linux-ubuntu-not-working
+- https://askubuntu.com/questions/64095/change-xampps-htdocs-web-root-folder-to-another-one
+- https://stackoverflow.com/questions/7337724/how-to-check-whether-mod-rewrite-is-enable-on-server
+- https://stackoverflow.com/questions/10878284/virtual-hosts-xampp-linux-ubuntu-not-working
 
 ## Troubleshoot
 - css and js files not found
