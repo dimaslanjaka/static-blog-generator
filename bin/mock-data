@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "{}" > src/types/_config_hashes.json
+echo "{}" > src/types/_config_project.json
+echo "{}" > src/types/_config_theme.json
+echo "{}" > src/gulp/server/routes.json
