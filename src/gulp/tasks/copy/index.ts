@@ -7,5 +7,5 @@ import { gulpInlineStyle } from './remove-inline-style';
 gulp.task('copy:assets', () => copyAssets());
 gulp.task('copy:posts', () => copyPosts());
 gulp.task('copy:remove-inline-style', () => gulpInlineStyle());
-gulp.task('copy', gulp.series('copy:assets', 'copy:posts'));
+gulp.task('copy', gulp.series('copy:posts', 'copy:assets'));
 gulp.task('copy:blogger', gulp.series('copy', 'copy:remove-inline-style'));
