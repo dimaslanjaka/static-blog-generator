@@ -181,6 +181,8 @@ generator:
   # enable cache method globally
   ## sligthly reduce memory usages
   cache: true
+  # type generator (hexo, jekyll)
+  type: hexo
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
