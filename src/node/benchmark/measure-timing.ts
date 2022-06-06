@@ -1,4 +1,3 @@
-import { FunctionType } from '../../parser/utility';
 import color from '../color';
 
 /**
@@ -15,11 +14,10 @@ export class MeasureTime {
    * @param fn
    * @param args
    */
-  async run<T extends FunctionType | Promise<FunctionType>, U extends any[]>(
-    msg: string = null,
-    fn: T,
-    ...args: U
-  ) {
+  async run<
+    T /*extends FunctionType | Promise<FunctionType>,*/,
+    U extends any[]
+  >(msg: string = null, fn: T, ...args: U) {
     const isFunc = typeof fn == 'function';
     const isAsync =
       isFunc &&
@@ -27,10 +25,14 @@ export class MeasureTime {
       String(fn[Symbol.toStringTag]) === 'Promise';
     //console.log('cName', fn.constructor.name);
     console.log(`---start [${isAsync ? 'async' : 'sync'}]---`);
+
     if (isFunc) {
+      this.start();
+      await fn.apply(null, ...args);
+      console.log(color.greenBright(msg), this.end());
       //console.log('then', typeof fn['then']);
       //console.log('symbol', fn[Symbol.toStringTag]);
-      if (isAsync) {
+      /*if (isAsync) {
         this.start();
         await fn.apply(null, ...args);
         console.log(
@@ -50,7 +52,7 @@ export class MeasureTime {
           color.greenBright(msg),
           this.end()
         );
-      }
+      }*/
     }
     console.log(`---end [${isAsync ? 'async' : 'sync'}]---`);
     return this;
