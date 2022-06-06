@@ -111,6 +111,7 @@ jobs:
       continue-on-error: true
       run: |
         git pull
+        git add dist release
         git commit -m "build from @ ${{ steps.vars.outputs.hash }}"
         git push
 
