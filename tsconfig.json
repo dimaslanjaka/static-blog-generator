@@ -5,7 +5,8 @@
     "rootDir": "./",
     "allowJs": true,
     "outDir": "./build",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "**/node_modules/**",
@@ -15,7 +16,7 @@
     "./src/**/*",
     "./build.ts",
     "./gulpfile.ts",
-    "packages/hexo-post-parser/src/import-post.ts"
+    "packages"
   ],
   "ts-node": {
     "compilerOptions": {
