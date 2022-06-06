@@ -83,7 +83,7 @@ gulp_1.default.task('sbg:docs', function () { return __awaiter(void 0, void 0, v
                     stdio: 'inherit',
                     shell: true
                 };
-                //fs.rmSync(join(spawnOpt, '.git'), { recursive: true });
+                //fs.rmSync(join(dest, '.git'), { recursive: true });
                 if (!fs.existsSync(dest))
                     fs.mkdirSync(dest);
                 gitInitialized = fs.existsSync((0, path_1.join)(dest, '.git'));
@@ -101,38 +101,48 @@ gulp_1.default.task('sbg:docs', function () { return __awaiter(void 0, void 0, v
                 return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'config', 'user.name', 'dimaslanjaka')];
             case 2:
                 _a.sent();
-                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'fetch', '--all')];
+                if (!gitInitialized) return [3 /*break*/, 4];
+                return [4 /*yield*/, (0, git_1.default)({ cwd: dest }, 'reset', '--hard', 'origin/gh-pages')];
             case 3:
                 _a.sent();
-                if (!gitInitialized) return [3 /*break*/, 5];
-                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'reset', '--hard', 'origin/gh-pages')];
-            case 4:
+                _a.label = 4;
+            case 4: return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'fetch', 'origin')];
+            case 5:
                 _a.sent();
-                _a.label = 5;
-            case 5: return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'fetch', 'origin')];
+                return [4 /*yield*/, (0, git_1.default)({ cwd: dest }, 'checkout', 'gh-pages')];
             case 6:
                 _a.sent();
-                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'pull', repo, 'gh-pages:gh-pages')];
+                //await git(spawnOpt, 'pull', repo, 'gh-pages:gh-pages');
+                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'pull')];
             case 7:
+                //await git(spawnOpt, 'pull', repo, 'gh-pages:gh-pages');
                 _a.sent();
                 gulp_1.default
-                    .src([(0, path_1.join)(__dirname, 'src', '**/*.md'), 'readme.md'])
+                    .src([(0, path_1.join)(__dirname, 'src', '**/*.md'), 'readme.md', '!**/tmp'])
                     .pipe(gulp_1.default.dest(dest))
                     .on('end', function () { return __awaiter(void 0, void 0, void 0, function () {
-                    var latestCommit;
+                    var latestCommit, msg;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
-                            case 0: return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'add', '-A')];
+                            case 0: return [4 /*yield*/, (0, git_1.default)({ cwd: dest }, 'add', '.')];
                             case 1:
                                 _a.sent();
-                                return [4 /*yield*/, (0, git_1.getLatestCommitHash)()];
+                                return [4 /*yield*/, (0, git_1.default)({ cwd: dest }, 'add', '-A')];
                             case 2:
-                                latestCommit = _a.sent();
-                                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'commit', '-m', "update page from ".concat(latestCommit))];
-                            case 3:
                                 _a.sent();
-                                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'push', repo, 'gh-pages:gh-pages')];
+                                return [4 /*yield*/, (0, git_1.getLatestCommitHash)(__dirname)];
+                            case 3:
+                                latestCommit = _a.sent();
+                                msg = "update page from ".concat(latestCommit);
+                                return [4 /*yield*/, (0, git_1.default)({ cwd: dest }, 'commit', '-m', msg)];
                             case 4:
+                                _a.sent();
+                                //await git(spawnOpt, 'push', '-u', repo, 'gh-pages:gh-pages');
+                                //await git(spawnOpt, 'push', '-u', 'origin', 'gh-pages');
+                                return [4 /*yield*/, (0, git_1.default)(spawnOpt, 'push', 'origin', 'gh-pages')];
+                            case 5:
+                                //await git(spawnOpt, 'push', '-u', repo, 'gh-pages:gh-pages');
+                                //await git(spawnOpt, 'push', '-u', 'origin', 'gh-pages');
                                 _a.sent();
                                 return [2 /*return*/];
                         }
@@ -142,4 +152,4 @@ gulp_1.default.task('sbg:docs', function () { return __awaiter(void 0, void 0, v
         }
     });
 }); });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ3VscGZpbGUuanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJndWxwZmlsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLDJDQUErQjtBQUMvQiw4Q0FBd0I7QUFJZixlQUpGLGNBQUksQ0FJRTtBQUhiLDZCQUE0QjtBQUM1QixpQkFBZTtBQUNmLG9EQUEwRDtBQUUxRCxrQkFBZSxjQUFJLENBQUM7QUFFcEIsK0VBQStFO0FBQy9FLGNBQUksQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUFFOzs7OztnQkFDZCxJQUFJLEdBQUcsSUFBQSxXQUFJLEVBQUMsU0FBUyxFQUFFLGNBQWMsQ0FBQyxDQUFDO2dCQUN2QyxJQUFJLEdBQUcsMkRBQTJELENBQUM7Z0JBQ25FLFFBQVEsR0FBOEI7b0JBQzFDLEdBQUcsRUFBRSxJQUFJO29CQUNULEtBQUssRUFBRSxTQUFTO29CQUNoQixLQUFLLEVBQUUsSUFBSTtpQkFDWixDQUFDO2dCQUNGLHlEQUF5RDtnQkFDekQsSUFBSSxDQUFDLEVBQUUsQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDO29CQUFFLEVBQUUsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUM7Z0JBQ3ZDLGNBQWMsR0FBRyxFQUFFLENBQUMsVUFBVSxDQUFDLElBQUEsV0FBSSxFQUFDLElBQUksRUFBRSxNQUFNLENBQUMsQ0FBQyxDQUFDO2dCQUN6RCxJQUFJLENBQUMsY0FBYyxFQUFFO29CQUNuQixJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsTUFBTSxDQUFDLENBQUMsSUFBSSxDQUFDO3dCQUN6QixJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsUUFBUSxFQUFFLEtBQUssRUFBRSxRQUFRLEVBQUUsSUFBSSxDQUFDLENBQUM7b0JBQ2pELENBQUMsQ0FBQyxDQUFDO2lCQUNKO3FCQUFNO29CQUNMLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLFFBQVEsRUFBRSxJQUFJLENBQUMsQ0FBQztpQkFDcEQ7Z0JBRUQscUJBQU0sSUFBQSxhQUFHLEVBQUMsUUFBUSxFQUFFLFFBQVEsRUFBRSxZQUFZLEVBQUUsd0JBQXdCLENBQUMsRUFBQTs7Z0JBQXJFLFNBQXFFLENBQUM7Z0JBQ3RFLHFCQUFNLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsV0FBVyxFQUFFLGNBQWMsQ0FBQyxFQUFBOztnQkFBMUQsU0FBMEQsQ0FBQztnQkFFM0QscUJBQU0sSUFBQSxhQUFHLEVBQUMsUUFBUSxFQUFFLE9BQU8sRUFBRSxPQUFPLENBQUMsRUFBQTs7Z0JBQXJDLFNBQXFDLENBQUM7cUJBQ2xDLGNBQWMsRUFBZCx3QkFBYztnQkFBRSxxQkFBTSxJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsT0FBTyxFQUFFLFFBQVEsRUFBRSxpQkFBaUIsQ0FBQyxFQUFBOztnQkFBekQsU0FBeUQsQ0FBQzs7b0JBQzlFLHFCQUFNLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxPQUFPLEVBQUUsUUFBUSxDQUFDLEVBQUE7O2dCQUF0QyxTQUFzQyxDQUFDO2dCQUN2QyxxQkFBTSxJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSxtQkFBbUIsQ0FBQyxFQUFBOztnQkFBdEQsU0FBc0QsQ0FBQztnQkFDdkQsY0FBSTtxQkFDRCxHQUFHLENBQUMsQ0FBQyxJQUFBLFdBQUksRUFBQyxTQUFTLEVBQUUsS0FBSyxFQUFFLFNBQVMsQ0FBQyxFQUFFLFdBQVcsQ0FBQyxDQUFDO3FCQUNyRCxJQUFJLENBQUMsY0FBSSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztxQkFDckIsRUFBRSxDQUFDLEtBQUssRUFBRTs7OztvQ0FDVCxxQkFBTSxJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsS0FBSyxFQUFFLElBQUksQ0FBQyxFQUFBOztnQ0FBaEMsU0FBZ0MsQ0FBQztnQ0FDWixxQkFBTSxJQUFBLHlCQUFtQixHQUFFLEVBQUE7O2dDQUExQyxZQUFZLEdBQUcsU0FBMkI7Z0NBQ2hELHFCQUFNLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLDJCQUFvQixZQUFZLENBQUUsQ0FBQyxFQUFBOztnQ0FBdkUsU0FBdUUsQ0FBQztnQ0FDeEUscUJBQU0sSUFBQSxhQUFHLEVBQUMsUUFBUSxFQUFFLE1BQU0sRUFBRSxJQUFJLEVBQUUsbUJBQW1CLENBQUMsRUFBQTs7Z0NBQXRELFNBQXNELENBQUM7Ozs7cUJBQ3hELENBQUMsQ0FBQzs7OztLQUNOLENBQUMsQ0FBQyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ3VscGZpbGUuanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJndWxwZmlsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLDJDQUErQjtBQUMvQiw4Q0FBd0I7QUFJZixlQUpGLGNBQUksQ0FJRTtBQUhiLDZCQUE0QjtBQUM1QixpQkFBZTtBQUNmLG9EQUEwRDtBQUUxRCxrQkFBZSxjQUFJLENBQUM7QUFFcEIsK0VBQStFO0FBQy9FLGNBQUksQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUFFOzs7OztnQkFDZCxJQUFJLEdBQUcsSUFBQSxXQUFJLEVBQUMsU0FBUyxFQUFFLGNBQWMsQ0FBQyxDQUFDO2dCQUN2QyxJQUFJLEdBQUcsMkRBQTJELENBQUM7Z0JBQ25FLFFBQVEsR0FBOEI7b0JBQzFDLEdBQUcsRUFBRSxJQUFJO29CQUNULEtBQUssRUFBRSxTQUFTO29CQUNoQixLQUFLLEVBQUUsSUFBSTtpQkFDWixDQUFDO2dCQUNGLHFEQUFxRDtnQkFDckQsSUFBSSxDQUFDLEVBQUUsQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDO29CQUFFLEVBQUUsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLENBQUM7Z0JBQ3ZDLGNBQWMsR0FBRyxFQUFFLENBQUMsVUFBVSxDQUFDLElBQUEsV0FBSSxFQUFDLElBQUksRUFBRSxNQUFNLENBQUMsQ0FBQyxDQUFDO2dCQUN6RCxJQUFJLENBQUMsY0FBYyxFQUFFO29CQUNuQixJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsTUFBTSxDQUFDLENBQUMsSUFBSSxDQUFDO3dCQUN6QixJQUFBLGFBQUcsRUFBQyxRQUFRLEVBQUUsUUFBUSxFQUFFLEtBQUssRUFBRSxRQUFRLEVBQUUsSUFBSSxDQUFDLENBQUM7b0JBQ2pELENBQUMsQ0FBQyxDQUFDO2lCQUNKO3FCQUFNO29CQUNMLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLFFBQVEsRUFBRSxJQUFJLENBQUMsQ0FBQztpQkFDcEQ7Z0JBRUQscUJBQU0sSUFBQSxhQUFHLEVBQUMsUUFBUSxFQUFFLFFBQVEsRUFBRSxZQUFZLEVBQUUsd0JBQXdCLENBQUMsRUFBQTs7Z0JBQXJFLFNBQXFFLENBQUM7Z0JBQ3RFLHFCQUFNLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsV0FBVyxFQUFFLGNBQWMsQ0FBQyxFQUFBOztnQkFBMUQsU0FBMEQsQ0FBQztxQkFFdkQsY0FBYyxFQUFkLHdCQUFjO2dCQUNoQixxQkFBTSxJQUFBLGFBQUcsRUFBQyxFQUFFLEdBQUcsRUFBRSxJQUFJLEVBQUUsRUFBRSxPQUFPLEVBQUUsUUFBUSxFQUFFLGlCQUFpQixDQUFDLEVBQUE7O2dCQUE5RCxTQUE4RCxDQUFDOztvQkFDakUscUJBQU0sSUFBQSxhQUFHLEVBQUMsUUFBUSxFQUFFLE9BQU8sRUFBRSxRQUFRLENBQUMsRUFBQTs7Z0JBQXRDLFNBQXNDLENBQUM7Z0JBQ3ZDLHFCQUFNLElBQUEsYUFBRyxFQUFDLEVBQUUsR0FBRyxFQUFFLElBQUksRUFBRSxFQUFFLFVBQVUsRUFBRSxVQUFVLENBQUMsRUFBQTs7Z0JBQWhELFNBQWdELENBQUM7Z0JBQ2pELHlEQUF5RDtnQkFDekQscUJBQU0sSUFBQSxhQUFHLEVBQUMsUUFBUSxFQUFFLE1BQU0sQ0FBQyxFQUFBOztnQkFEM0IseURBQXlEO2dCQUN6RCxTQUEyQixDQUFDO2dCQUM1QixjQUFJO3FCQUNELEdBQUcsQ0FBQyxDQUFDLElBQUEsV0FBSSxFQUFDLFNBQVMsRUFBRSxLQUFLLEVBQUUsU0FBUyxDQUFDLEVBQUUsV0FBVyxFQUFFLFNBQVMsQ0FBQyxDQUFDO3FCQUNoRSxJQUFJLENBQUMsY0FBSSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsQ0FBQztxQkFDckIsRUFBRSxDQUFDLEtBQUssRUFBRTs7OztvQ0FDVCxxQkFBTSxJQUFBLGFBQUcsRUFBQyxFQUFFLEdBQUcsRUFBRSxJQUFJLEVBQUUsRUFBRSxLQUFLLEVBQUUsR0FBRyxDQUFDLEVBQUE7O2dDQUFwQyxTQUFvQyxDQUFDO2dDQUNyQyxxQkFBTSxJQUFBLGFBQUcsRUFBQyxFQUFFLEdBQUcsRUFBRSxJQUFJLEVBQUUsRUFBRSxLQUFLLEVBQUUsSUFBSSxDQUFDLEVBQUE7O2dDQUFyQyxTQUFxQyxDQUFDO2dDQUNqQixxQkFBTSxJQUFBLHlCQUFtQixFQUFDLFNBQVMsQ0FBQyxFQUFBOztnQ0FBbkQsWUFBWSxHQUFHLFNBQW9DO2dDQUNuRCxHQUFHLEdBQUcsMkJBQW9CLFlBQVksQ0FBRSxDQUFDO2dDQUMvQyxxQkFBTSxJQUFBLGFBQUcsRUFBQyxFQUFFLEdBQUcsRUFBRSxJQUFJLEVBQUUsRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFFLEdBQUcsQ0FBQyxFQUFBOztnQ0FBN0MsU0FBNkMsQ0FBQztnQ0FDOUMsK0RBQStEO2dDQUMvRCwwREFBMEQ7Z0NBQzFELHFCQUFNLElBQUEsYUFBRyxFQUFDLFFBQVEsRUFBRSxNQUFNLEVBQUUsUUFBUSxFQUFFLFVBQVUsQ0FBQyxFQUFBOztnQ0FGakQsK0RBQStEO2dDQUMvRCwwREFBMEQ7Z0NBQzFELFNBQWlELENBQUM7Ozs7cUJBQ25ELENBQUMsQ0FBQzs7OztLQUNOLENBQUMsQ0FBQyJ9
