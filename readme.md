@@ -129,6 +129,9 @@ gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 - https://stackoverflow.com/questions/7337724/how-to-check-whether-mod-rewrite-is-enable-on-server
 - https://stackoverflow.com/questions/10878284/virtual-hosts-xampp-linux-ubuntu-not-working
 
+## References
+- https://stackoverflow.com/questions/2862590/how-to-replace-master-branch-in-git-entirely-from-another-branch
+
 ## Troubleshoot
 - css and js files not found
 > bypass using `.nojekyll`
