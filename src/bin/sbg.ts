@@ -22,7 +22,7 @@ function _loop_method() {
     const taskname = tasks[i];
     const taskfn = gulp.task(taskname);
     //console.log('typeof task', taskname, typeof taskfn);
-    if (typeof taskfn == "function") {
+    if (typeof taskfn == 'function') {
       taskswrapper.push(taskfn);
     }
   }
