@@ -2,7 +2,9 @@ import * as fs from 'fs-extra';
 import gulp from 'gulp';
 import { join } from 'path';
 import './src';
+import crawling from './src/crawling';
 import git, { getLatestCommitHash } from './src/node/git';
+crawling();
 export { gulp };
 export default gulp;
 
