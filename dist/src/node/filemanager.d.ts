@@ -60,6 +60,20 @@ declare const filemanager: {
     mkdirSync: (path: fs.PathLike, options?: fs.MakeDirectoryOptions) => string;
 };
 export declare function removeMultiSlashes(str: string): string;
+/**
+ * copy dir or file recursive
+ * @param src source path of file or folder
+ * @param dest destination path
+ */
+export declare function copy(src: string, dest: string): void;
+/**
+ * copy directory recursive
+ * @param source
+ * @param dest
+ * @param callback
+ * @returns
+ */
+export declare function copyDir(source: string, dest: string, callback?: (err: any | null) => void): void;
 interface GlobSrcOptions extends glob.IOptions {
     /**
      * ignore pattern will be processed by minimatch
