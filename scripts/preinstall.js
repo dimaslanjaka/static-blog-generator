@@ -22,13 +22,16 @@ if (fs.existsSync(path.join(root, '.git'))) {
 }
 
 // mock data
-fs.writeFileSync(
-  path.join(__dirname, '../src/types/_config_project.json'),
-  '{}'
-);
-fs.writeFileSync(path.join(__dirname, '../src/types/_config_theme.json'), '{}');
-fs.writeFileSync(
-  path.join(__dirname, '../src/types/_config_hashes.json'),
-  '{}'
-);
-fs.writeFileSync(path.join(__dirname, '../src/gulp/server/routes.json'), '{}');
+
+const paths = [
+  'src/types/_config_project.json',
+  'src/types/_config_theme.json',
+  'src/types/_config_hashes.json',
+  'src/gulp/server/routes.json'
+];
+paths.forEach((loc) => {
+  const src = path.join(__dirname, '..', loc);
+  const dist = path.join(__dirname, '../dist', loc);
+  fs.writeFileSync(src, '{}');
+  fs.writeFileSync(dist, '{}');
+});
