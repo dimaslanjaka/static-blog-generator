@@ -2,6 +2,7 @@
 layout: default
 title: Homepage
 subtitle: Static Blog Generator
+date: 2022-06-06
 ---
 
 # SBG (Static Blog Generator) Project
