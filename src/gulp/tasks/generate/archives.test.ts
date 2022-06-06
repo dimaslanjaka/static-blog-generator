@@ -1,6 +1,6 @@
 import MeasureTime from '../../../node/benchmark/measure-timing';
 import { generateIndex } from './archives';
-import getChunkOf from './getChunkOf';
+import { getChunkOf } from './getChunkOf';
 
 const measure = new MeasureTime();
 
