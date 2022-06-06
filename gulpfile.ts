@@ -3,11 +3,11 @@ import { create as createServer } from 'browser-sync';
 import { ChildProcess } from 'child_process';
 import spawn from 'cross-spawn';
 import gulp from 'gulp';
-import { cwd, join } from './src/node/filemanager';
-import ServerMiddleWare from './src/gulp/server/middleware';
-import config from './src/types/_config';
 import 'js-prototypes';
 import './src/generator';
+import ServerMiddleWare from './src/gulp/server/middleware';
+import { cwd, join } from './src/node/filemanager';
+import config from './src/types/_config';
 
 const browserSync = createServer();
 gulp.task('server', function () {
@@ -15,13 +15,13 @@ gulp.task('server', function () {
     server: './' + config.public_dir,
     port: config.server.port,
     open: false,
-    middleware: ServerMiddleWare,
+    middleware: ServerMiddleWare
   });
 
   // handling spawner to reduce memory usages
   const childs: { [key: string]: ChildProcess[] } = {
     generate: [],
-    copy: [],
+    copy: []
   };
   // watch changes on source dir
   gulp.watch(join(config.source_dir, '.guid'), function (cb) {
@@ -30,7 +30,10 @@ gulp.task('server', function () {
         if (!child.killed) child.kill('SIGKILL');
       })
       .then(() => {
-        const child = spawn('gulp', ['generate', '--nocache'], { cwd: cwd(), stdio: 'inherit' });
+        const child = spawn('gulp', ['generate', '--nocache'], {
+          cwd: cwd(),
+          stdio: 'inherit'
+        });
         childs.generate.push(child);
       })
       .finally(cb);
@@ -42,7 +45,10 @@ gulp.task('server', function () {
         if (!child.killed) child.kill('SIGKILL');
       })
       .then(() => {
-        const child = spawn('gulp', ['copy', '--nocache'], { cwd: cwd(), stdio: 'inherit' });
+        const child = spawn('gulp', ['copy', '--nocache'], {
+          cwd: cwd(),
+          stdio: 'inherit'
+        });
         childs.copy.push(child);
       })
       .finally(cb);
