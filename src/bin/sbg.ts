@@ -2,7 +2,6 @@
 
 // compiled location in dist/src/bin/sbg.js
 
-import { TaskFunctionWrapped } from 'undertaker';
 import yargs from 'yargs';
 import gulp from '../../gulpfile';
 import indexing from '../gulp/tasks/generate/indexing';
@@ -13,9 +12,11 @@ const tasks = argv['_'];
 indexing();
 
 //console.log(getConfig().verbose, getConfig().generator.cache);
+//console.log(argv['paths']);
 
 gulp.series(...tasks)(null);
 
+/*
 function _loop_method() {
   const taskswrapper: TaskFunctionWrapped[] = [];
   for (let i = 0; i < tasks.length; i++) {
@@ -37,3 +38,4 @@ function _loop_method() {
     }
   }
 }
+*/
