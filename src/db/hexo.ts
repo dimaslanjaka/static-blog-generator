@@ -34,19 +34,6 @@ export class HexoDB {
     this.parse = json_decode<HexoDBType>(
       existsSync(HexoDBPath) ? read(HexoDBPath).toString() : '{}'
     );
-    if (!this.parse.models)
-      this.parse.models = {
-        Post: [],
-        Tag: [],
-        PostTag: [],
-        PostCategory: [],
-        Asset: [],
-        Page: [],
-        Cache: [],
-        Category: [],
-        PostAsset: [],
-        Data: []
-      };
   }
   addPost(obj: postMap) {
     const perm = parsePermalink(obj);
