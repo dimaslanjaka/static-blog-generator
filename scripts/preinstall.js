@@ -31,3 +31,4 @@ fs.writeFileSync(
   path.join(__dirname, '../src/types/_config_hashes.json'),
   '{}'
 );
+fs.writeFileSync(path.join(__dirname, '../src/gulp/server/routes.json'), '{}');
