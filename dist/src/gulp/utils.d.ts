@@ -2,6 +2,7 @@
 /// <reference types="node" />
 /// <reference types="node" />
 import fs from 'fs';
+import gulp from 'gulp';
 /**
  * Crossplatform path replacer
  * @param str
@@ -11,8 +12,13 @@ import fs from 'fs';
  */
 export declare function replacePath(str: string, from: string, to: string): string;
 /**
- * Determine gulp.dest location
+ * shadow of gulp.dest
+ */
+export declare type GulpDest = gulp.DestMethod;
+/**
+ * Determine gulp.dest ({@link GulpDest}) location
  * @param pipe
+ * @see import('gulp')
  * @returns
  */
 export declare function determineDirname(pipe: NodeJS.ReadWriteStream): import("stream").Transform;
@@ -22,7 +28,6 @@ export declare function determineDirname(pipe: NodeJS.ReadWriteStream): import("
  * @param debug
  */
 export declare function loopDir(destDir: fs.PathLike | string, debug?: boolean): string[];
-export declare function copyDir(source: string, dest: string, callback?: (err: any | null) => void): void;
 /**
  * slash alternative
  * ```bash

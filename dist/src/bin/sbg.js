@@ -44,7 +44,7 @@ function _loop_method() {
         var taskname = tasks[i];
         var taskfn = gulpfile_1.default.task(taskname);
         //console.log('typeof task', taskname, typeof taskfn);
-        if (typeof taskfn == "function") {
+        if (typeof taskfn == 'function') {
             taskswrapper.push(taskfn);
         }
     }
