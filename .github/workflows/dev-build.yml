@@ -87,11 +87,13 @@ jobs:
 
     - name: Test JS
       id: test-js
-      run: npm run test:js
+      working-directory: tests
+      run: npm i file:../ && node index.js
 
     - name: Test TS
       id: test-ts
-      run: sh bin/mock-data && npm run test:ts
+      working-directory: tests
+      run: npm i file:../ && node -r ts-node/register index.ts
 
     - name: Test mocha
       id: test-mocha
