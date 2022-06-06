@@ -35,9 +35,10 @@ gulp.task('sbg:docs', async () => {
   await git({ cwd: dest }, 'checkout', 'gh-pages');
   //await git(spawnOpt, 'pull', repo, 'gh-pages:gh-pages');
   await git(spawnOpt, 'pull');
+  gulp.src(join(__dirname, 'readme.md')).pipe(gulp.dest(dest));
   gulp
-    .src([join(__dirname, 'src', '**/*.md'), 'readme.md', '!**/tmp'])
-    .pipe(gulp.dest(dest))
+    .src([join(__dirname, 'src', '**/*.md'), '!**/tmp'])
+    .pipe(gulp.dest(join(dest, '_posts')))
     .on('end', async () => {
       await git({ cwd: dest }, 'add', '.');
       await git({ cwd: dest }, 'add', '-A');
