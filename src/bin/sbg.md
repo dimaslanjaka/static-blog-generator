@@ -1,4 +1,9 @@
-# binary static blog generator
+---
+title: command line
+subtitle: static blog generator
+date: 2022-06-07
+updated: 2022-06-07
+---
 
 ## Tasks
 
