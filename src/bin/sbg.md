@@ -45,6 +45,7 @@ Standalone: is useful for low device to run one by one the tasks.
 ### Example
 
 ### Copy
+
 | usage | description |
 | :--- | :--- |
 | `sbg copy`| series of `copy:posts` and `copy:asets` |
