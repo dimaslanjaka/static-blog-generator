@@ -10,25 +10,44 @@ import { excerpt } from '../renderer/ejs/helper/excerpt';
 import { thumbnail } from '../renderer/ejs/helper/thumbnail';
 import { HexoDBType, Post } from './hexo-data';
 
-const dbpath = join(process.cwd(), 'db.json');
-const parse = json_decode<HexoDBType>(
-  existsSync(dbpath) ? read(dbpath).toString() : '{}'
-);
-if (!parse.models)
-  parse.models = {
-    Post: [],
-    Tag: [],
-    PostTag: [],
-    PostCategory: [],
-    Asset: [],
-    Page: [],
-    Cache: [],
-    Category: [],
-    PostAsset: [],
-    Data: []
-  };
-
+export const HexoDBPath = join(process.cwd(), 'db.json');
 export class HexoDB {
+  parse: HexoDBType = {
+    meta: {
+      version: 0,
+      warehouse: ''
+    },
+    models: {
+      Post: [],
+      Tag: [],
+      PostTag: [],
+      PostCategory: [],
+      Asset: [],
+      Page: [],
+      Cache: [],
+      Category: [],
+      PostAsset: [],
+      Data: []
+    }
+  };
+  constructor() {
+    this.parse = json_decode<HexoDBType>(
+      existsSync(HexoDBPath) ? read(HexoDBPath).toString() : '{}'
+    );
+    if (!this.parse.models)
+      this.parse.models = {
+        Post: [],
+        Tag: [],
+        PostTag: [],
+        PostCategory: [],
+        Asset: [],
+        Page: [],
+        Cache: [],
+        Category: [],
+        PostAsset: [],
+        Data: []
+      };
+  }
   addPost(obj: postMap) {
     const perm = parsePermalink(obj);
     const post: Post = {
@@ -53,24 +72,24 @@ export class HexoDB {
       more: ''
     };
     if (
-      !parse.models.Post.find((epost) => {
+      !this.parse.models.Post.find((epost) => {
         return epost.title === post.title;
       })
     ) {
-      parse.models.Post.push(post);
+      this.parse.models.Post.push(post);
     }
   }
   get() {
-    return parse;
+    return this.parse;
   }
   save() {
-    write(dbpath, json_encode(parse, 2));
+    write(HexoDBPath, json_encode(this.parse, 2));
   }
   /**
    * dump
    */
   simplify() {
-    return parse.models.Post.map((post) => {
+    return this.parse.models.Post.map((post) => {
       post._content = '';
       post.content = '';
       post.raw = '';
