@@ -1,5 +1,4 @@
 import fs from 'fs';
-import * as fse from 'fs-extra';
 import gulp from 'gulp';
 import path from 'path';
 import { dirname, toUnix } from 'upath';
@@ -74,22 +73,6 @@ export function loopDir(destDir: fs.PathLike | string, debug = false) {
   }
 
   return result;
-}
-
-// eslint-disable-next-line no-unused-vars
-export function copyDir(
-  source: string,
-  dest: string,
-  callback = function (err: any | null) {
-    if (err) {
-      console.error(err);
-      console.error('error');
-    } else {
-      console.log('success!');
-    }
-  }
-) {
-  return fse.copy(source, dest, callback);
 }
 
 /**
