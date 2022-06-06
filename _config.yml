@@ -176,13 +176,13 @@ index_generator:
   # Posts displayed per page. (0 = disable pagination)
   per_page: 10
 
-# gulp generator task options
+# static-blog-generator: generator task options
 generator:
   # enable cache method globally
   ## sligthly reduce memory usages
   cache: true
-  # type generator (hexo, jekyll)
-  type: hexo
+  # type generator (hexo, jekyll, sbg)
+  type: sbg
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
