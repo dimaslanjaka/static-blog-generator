@@ -45,6 +45,7 @@ jobs:
           ${{ steps.vars.outputs.npm }}
           ./tmp
           ./node_modules
+          ./.deploy_*
         key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
     - name: Resolve git user
       continue-on-error: true
