@@ -13,23 +13,23 @@ export type postResult = Partial<mergedPostMap>;
 export class CachePost {
   constructor() {}
   set(key: string, value: any) {
-    pcache('post').putSync(md5(key), value);
+    pcache('posts').putSync(md5(key), value);
     return this;
   }
 
   get<T>(key: string) {
-    return pcache('post').getSync(md5(key)) as T;
+    return pcache('posts').getSync(md5(key)) as T;
   }
 
   getKeys() {
-    return pcache('post').keysSync();
+    return pcache('posts').keysSync();
   }
 
   getAll() {
-    const keys: string[] = pcache('post').keysSync();
+    const keys: string[] = pcache('posts').keysSync();
     return keys
       .map((key) => {
-        const get = pcache('post').getSync<postMap>(key);
+        const get = pcache('posts').getSync<postMap>(key);
         //console.log('get', typeof get);
         return get;
       })
@@ -43,7 +43,7 @@ export class CachePost {
    * @returns
    */
   getTotal() {
-    return pcache('post').keysSync().length;
+    return pcache('posts').keysSync().length;
   }
 }
 
