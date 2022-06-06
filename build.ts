@@ -1,27 +1,30 @@
 import { spawn } from 'child_process';
 import fs, { writeFileSync } from 'fs';
 import { writeFile } from 'fs-extra';
+import { gitDescribe } from 'git-describe';
 import moment from 'moment-timezone';
 import readline from 'readline';
 import { join } from 'upath';
-import yargs from 'yargs';
 import pkg from './package.json';
+import { write } from './src/node/filemanager';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/node/git';
-import { json_encode } from './src/node/JSON';
 import { md5FileSync } from './src/node/md5-file';
+import { argv } from './src/types/_config';
 
-const argv = yargs(process.argv.slice(2)).argv;
-
+// mock data
 writeFileSync(join(__dirname, 'src/types/_config_project.json'), '{}');
 writeFileSync(join(__dirname, 'src/types/_config_theme.json'), '{}');
 writeFileSync(join(__dirname, 'src/types/_config_hashes.json'), '{}');
+
 const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
 (async () => {
   if (!process.env['GITHUB_WORKFLOW']) {
-    if (argv['update-cache'] || argv['update-guid']) {
-      return update_guid();
-    }
+    // --update-cache
+    if (argv['update-cache'] || argv['update-guid']) return update_guid();
+    // --update-version
+    if (argv['update-version']) return update_version();
+
     askCommitMessage('commit messages (empty allowed):  ').then(async (msg) => {
       if (msg.trim().length > 0) {
         await gitAddAndCommit('src', msg, { cwd: __dirname });
@@ -38,10 +41,7 @@ async function start() {
   const islocal = !process.env['GITHUB_WORKFLOW'];
   if (islocal) {
     await update_guid();
-    writeFile(join(__dirname, 'package.json'), json_encode(pkg, 2) + '\n');
-    await gitAddAndCommit('package.json', `[${commitHash}] release beta-${commitHash}`, {
-      cwd: __dirname
-    });
+    await update_version();
   }
   await build();
   if (islocal) {
@@ -67,12 +67,38 @@ async function update_guid() {
   let lock = join(__dirname, 'yarn.lock');
   if (!fs.existsSync(lock)) lock = join(__dirname, 'package-lock.json');
   const guid = commitHash + ':' + md5FileSync(lock);
-  pkg.version = pkg.version.split('-')[0] + '-beta-' + commitHash;
+
   writeFile(join(__dirname, '.guid'), guid);
   // commit uuid
   await gitAddAndCommit('.guid', `[${commitHash}] update cache`, {
     cwd: __dirname
   });
+}
+
+/**
+ * update version package.json
+ */
+async function update_version() {
+  gitDescribe(join(__dirname, 'src'))
+    .then((info) => {
+      //console.dir(info)
+      //console.log(info.hash);
+      const version = `${info.semver.version}-${info.distance}-${info.hash}`;
+      pkg.version = version;
+      write(
+        join(__dirname, '../package.json'),
+        JSON.stringify(pkg, null, 2) + '\n'
+      );
+
+      gitAddAndCommit(
+        'package.json',
+        `[${info.hash}] release beta-${info.hash}`,
+        {
+          cwd: __dirname
+        }
+      );
+    })
+    .catch((err) => console.error(err));
 }
 
 /**
