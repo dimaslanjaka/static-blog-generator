@@ -68,15 +68,21 @@ const parsePost = async (
 
   if (!parse) return null;
 
-  // @todo [fixed] replace no title post
-  if (parse.metadata.title === '.md' && typeof path === 'string' && path.length > 0) {
-    parse.metadata.title = basename(path, '.md');
+  if (typeof path === 'string' && path.length > 0) {
+    // @todo replace no title post
+    if (parse.metadata.title === '.md') {
+      parse.metadata.title = basename(path, '.md');
+    }
+    // @todo add source metadata
+    if (path.includes('src-posts')) {
+      parse.metadata.source = path;
+    }
   }
 
-  // @todo [fixed] redirect -> redirect_to for jekyll plugin
+  // @todo redirect -> redirect_to for jekyll plugin
   if ('redirect' in parse.metadata) {
     const redirect = parse.metadata.redirect;
-    parse.metadata.redirect_to = redirect
+    parse.metadata.redirect_to = redirect;
   }
 
   parse.fileTree = {
@@ -95,7 +101,7 @@ const parsePost = async (
   parse = modifyPost(<any>parse);
 
   /**
-   * validate if post path is post sources
+   * validate if post path is post sources from config.source_dir
    */
   const isPathPost = path.includes(config.source_dir + '/_posts'); // || path.includes('src-posts/');
   const isTypePost = parse.metadata.type === 'post';
