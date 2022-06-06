@@ -6,10 +6,11 @@ import git, { getLatestCommitHash } from './src/node/git';
 export { gulp };
 export default gulp;
 
-// deploy to https://github.com/dimaslanjaka/static-blog-generator.git#gh-pages
+// deploy to https://github.com/dimaslanjaka/static-blog-generator.git#compiler-jekyll
 gulp.task('sbg:docs', async () => {
   const dest = join(__dirname, '.deploy_docs');
   const repo = 'https://github.com/dimaslanjaka/static-blog-generator.git';
+  const branch = 'compiler-jekyll';
   const spawnOpt: Parameters<typeof git>[0] = {
     cwd: dest,
     stdio: 'inherit',
@@ -30,23 +31,20 @@ gulp.task('sbg:docs', async () => {
   await git(spawnOpt, 'config', 'user.name', 'dimaslanjaka');
 
   if (gitInitialized)
-    await git({ cwd: dest }, 'reset', '--hard', 'origin/gh-pages');
+    await git({ cwd: dest }, 'reset', '--hard', 'origin/' + branch);
   await git(spawnOpt, 'fetch', 'origin');
-  await git({ cwd: dest }, 'checkout', 'gh-pages');
-  //await git(spawnOpt, 'pull', repo, 'gh-pages:gh-pages');
+  await git({ cwd: dest }, 'checkout', branch);
   await git(spawnOpt, 'pull');
   gulp.src(join(__dirname, 'readme.md')).pipe(gulp.dest(dest));
   gulp
     .src([join(__dirname, 'src', '**/*.md'), '!**/tmp'])
-    .pipe(gulp.dest(join(dest, '_posts')))
+    .pipe(gulp.dest(join(dest, 'usages')))
     .on('end', async () => {
       await git({ cwd: dest }, 'add', '.');
       await git({ cwd: dest }, 'add', '-A');
       const latestCommit = await getLatestCommitHash(__dirname);
       const msg = `update page from ${latestCommit}`;
       await git({ cwd: dest }, 'commit', '-m', msg);
-      //await git(spawnOpt, 'push', '-u', repo, 'gh-pages:gh-pages');
-      //await git(spawnOpt, 'push', '-u', 'origin', 'gh-pages');
-      await git(spawnOpt, 'push', 'origin', 'gh-pages');
+      //await git(spawnOpt, 'push', 'origin', branch);
     });
 });
