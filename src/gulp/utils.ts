@@ -1,5 +1,6 @@
 import fs from 'fs';
 import * as fse from 'fs-extra';
+import gulp from 'gulp';
 import path from 'path';
 import { dirname, toUnix } from 'upath';
 import { DynamicObject } from '../types';
@@ -22,8 +23,14 @@ export function replacePath(str: string, from: string, to: string) {
 }
 
 /**
- * Determine gulp.dest location
+ * shadow of gulp.dest
+ */
+export type GulpDest = gulp.DestMethod;
+
+/**
+ * Determine gulp.dest ({@link GulpDest}) location
  * @param pipe
+ * @see import('gulp')
  * @returns
  */
 export function determineDirname(pipe: NodeJS.ReadWriteStream) {
