@@ -1,6 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "rootDirs": [
+      "./",
+      "./packages"
+    ],
     "sourceRoot": "./",
     "rootDir": "./",
     "allowJs": true,
@@ -16,7 +20,7 @@
     "./src/**/*",
     "./build.ts",
     "./gulpfile.ts",
-    "packages"
+    "./packages/**/*"
   ],
   "ts-node": {
     "compilerOptions": {
