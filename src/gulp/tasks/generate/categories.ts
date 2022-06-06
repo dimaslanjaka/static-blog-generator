@@ -48,10 +48,11 @@ export async function generateCategories(labelname?: string, pagenum?: number) {
         const pagemeta: postMap = {
           metadata: {
             title: 'Category: ' + catname,
+            subtitle: excerpt(config),
             description: excerpt(config),
             date: data.latestUpdated,
             updated: data.latestUpdated,
-            cover: thumbnail(data.posts[0]),
+            cover: thumbnail(<any>data.posts[0]),
             category: [],
             tags: [],
             type: 'archive'
