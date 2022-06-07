@@ -79,58 +79,57 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
         data.metadata.tags = [config.default_tag].filter((s) => s);
       }
     }
-  }
 
-  // @todo add tags from title
-  if (config.title_map) {
-    const titleLowercase = (data.metadata.title || data.title).toLowerCase();
-    for (const key in config.title_map) {
-      if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
-        const tag = config.title_map[key];
-        const regexBoundary = new RegExp(`\\b${key}\\b`, 'gmi');
-
-        if (titleLowercase.match(regexBoundary)) {
-          //console.log('found', regexBoundary, tag);
-          data.metadata.tags.push(tag);
+    // @declare tag mapper
+    const postLowerTags = data.metadata.tags.map(
+      (tag) => tag && tag.toLowerCase()
+    );
+    // @todo process config.tag_map (rename tag)
+    if (typeof config.tag_map === 'object') {
+      for (const key in config.tag_map) {
+        if (Object.prototype.hasOwnProperty.call(config.tag_map, key)) {
+          const renameTagTo = config.tag_map[key];
+          const lowerkey = key.toLowerCase();
+          const hasTag = postLowerTags.includes(lowerkey);
+          if (hasTag) {
+            const indexTag = postLowerTags.indexOf(lowerkey);
+            //console.log('original tag', parse.metadata.tags[indexTag]);
+            data.metadata.tags[indexTag] = renameTagTo;
+            //console.log('renamed tag', renameTagTo);
+          }
         }
       }
     }
-  }
 
-  // tag mapper
-  const postLowerTags = data.metadata.tags.map(
-    (tag) => tag && tag.toLowerCase()
-  );
-
-  // @todo process config.tag_map (rename tag)
-  if (typeof config.tag_map === 'object') {
-    for (const key in config.tag_map) {
-      if (Object.prototype.hasOwnProperty.call(config.tag_map, key)) {
-        const renameTagTo = config.tag_map[key];
-        const lowerkey = key.toLowerCase();
-        const hasTag = postLowerTags.includes(lowerkey);
-        if (hasTag) {
-          const indexTag = postLowerTags.indexOf(lowerkey);
-          //console.log('original tag', parse.metadata.tags[indexTag]);
-          data.metadata.tags[indexTag] = renameTagTo;
-          //console.log('renamed tag', renameTagTo);
+    // @todo grouping tag to category (config.tag_group)
+    if (typeof config.tag_group === 'object') {
+      for (const key in config.tag_group) {
+        if (Object.prototype.hasOwnProperty.call(config.tag_group, key)) {
+          const group = config.tag_group[key];
+          const lowerkey = key.toLowerCase();
+          const hasTag = postLowerTags.includes(lowerkey);
+          if (hasTag) {
+            //const indexTag = postLowerTags.indexOf(lowerkey);
+            //console.log('original tag', parse.metadata.tags[indexTag]);
+            //console.log('grouped to', group);
+            data.metadata.category.push(group);
+          }
         }
       }
     }
-  }
 
-  // @todo grouping tag to category
-  if (typeof config.tag_group === 'object') {
-    for (const key in config.tag_group) {
-      if (Object.prototype.hasOwnProperty.call(config.tag_group, key)) {
-        const group = config.tag_group[key];
-        const lowerkey = key.toLowerCase();
-        const hasTag = postLowerTags.includes(lowerkey);
-        if (hasTag) {
-          //const indexTag = postLowerTags.indexOf(lowerkey);
-          //console.log('original tag', parse.metadata.tags[indexTag]);
-          //console.log('grouped to', group);
-          data.metadata.category.push(group);
+    // @todo add tags from title
+    if (config.title_map) {
+      const titleLowercase = data.metadata.title.toLowerCase();
+      for (const key in config.title_map) {
+        if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
+          const tag = config.title_map[key];
+          const regexBoundary = new RegExp(`\\b${key}\\b`, 'gmi');
+
+          if (titleLowercase.match(regexBoundary)) {
+            //console.log('found', regexBoundary, tag);
+            data.metadata.tags.push(tag);
+          }
         }
       }
     }
