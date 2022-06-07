@@ -11,7 +11,7 @@ const logname = color.hex('#fcba03')('[render assets]');
 /**
  * copy and process assets from {@link config.source_dir} to {@link config.public_dir}
  */
-const renderAssets = async () => {
+export const generateAssets = async () => {
   const srcFolder = join(root, config.source_dir);
   const destFolder = join(root, config.public_dir);
   console.log(logname, 'copy', srcFolder, '->', destFolder);
@@ -49,4 +49,4 @@ const renderAssets = async () => {
   }
 };
 
-gulp.task('generate:assets', renderAssets);
+gulp.task('generate:assets', generateAssets);
