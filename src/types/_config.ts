@@ -6,7 +6,6 @@ import { join, resolve, toUnix } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
 import '../a-core';
-import { pcache } from '../node/cache';
 import { read, write } from '../node/filemanager';
 import { json_encode } from '../node/JSON';
 import { sortedObject } from '../node/object-utility';
@@ -111,7 +110,6 @@ export const post_generated_dir = resolve(join(root, config.public_dir));
  */
 export const post_source_dir = resolve(join(root, 'src-posts'));
 
-const pc = pcache('tmp');
 /**
  * path to temp folder
  * * cacheable
@@ -119,15 +117,15 @@ const pc = pcache('tmp');
  * @returns
  */
 export const tmp = (...path: string[]) => {
-  const key = String(path);
-  const get = pc.getSync<string>(key);
-  if (get) return get;
-  const result = join(root, 'tmp', path.filter((s) => s).join('/'));
-  pc.putSync(key, result);
-  return result;
+  return join(root, 'tmp', path.filter((s) => s).join('/'));
 };
 
-if (!existsSync(tmp())) mkdirSync(tmp());
+if (!existsSync(tmp()))
+  try {
+    mkdirSync(tmp());
+  } catch {
+    //
+  }
 
 /** THEME CONFIGS */
 /** theme directory */
