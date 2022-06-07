@@ -65,17 +65,19 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
     if (get) return get;
   }
 
-  // @todo setup empty categories when not set
-  if ('category' in data.metadata) {
-    if (!Array.isArray(data.metadata.category)) {
-      data.metadata.category = [config.default_category].filter((s) => s);
+  if ('metadata' in data) {
+    // @todo setup empty categories when not set
+    if ('category' in data.metadata) {
+      if (!Array.isArray(data.metadata.category)) {
+        data.metadata.category = [config.default_category].filter((s) => s);
+      }
     }
-  }
 
-  // @todo setup empty tags when not set
-  if ('tags' in data.metadata) {
-    if (!Array.isArray(data.metadata.tags)) {
-      data.metadata.tags = [config.default_tag].filter((s) => s);
+    // @todo setup empty tags when not set
+    if ('tags' in data.metadata) {
+      if (!Array.isArray(data.metadata.tags)) {
+        data.metadata.tags = [config.default_tag].filter((s) => s);
+      }
     }
   }
 
