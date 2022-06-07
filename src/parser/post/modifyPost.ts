@@ -10,7 +10,6 @@ import { renderBodyMarkdown } from '../toHtml';
 import { postMap } from './parsePost';
 import { archiveMap, DeepPartial } from './postMapper';
 
-const useCache = config.generator.cache;
 const modCache = pcache('modify');
 
 /*interface GroupLabel {
@@ -38,7 +37,7 @@ export interface modifyPostType extends mergedTypes {
 export function modifyPost<T = any>(data: T, merge: boolean): T;
 export function modifyPost<T extends DeepPartial<modifyPostType>>(
   data: T,
-  merge: boolean
+  merge: true
 ): T['metadata'] & T;
 export function modifyPost<T extends DeepPartial<modifyPostType>>(data: T): T;
 export function modifyPost<T extends DeepPartial<modifyPostType>>(
@@ -46,12 +45,18 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
   merge = false
 ) {
   if (!data) return null;
-  const meta = data.metadata || data;
+  if (Array.isArray(data)) throw new Error('Cannot use array on modifyPost');
+
   let title: string, date: string, updated: string, type: string;
-  if ('type' in meta) type = meta.type;
-  if ('title' in meta) title = meta.title;
-  if ('date' in meta) date = String(meta.date);
-  if ('updated' in meta) updated = String(meta.updated);
+  [data.metadata, data].forEach((meta) => {
+    if (typeof meta === 'undefined' || meta === null) return;
+    if ('type' in meta) type = meta.type;
+    if ('title' in meta) title = meta.title;
+    if ('date' in meta) date = String(meta.date);
+    if ('updated' in meta) updated = String(meta.updated);
+  });
+
+  const useCache = config.generator.cache;
   const cacheKey = md5(title + date + updated + type);
 
   if (useCache) {
@@ -60,12 +65,18 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
     if (get) return get;
   }
 
-  // @todo setup empty tags and categories when not set
-  if (!Array.isArray(data.metadata.category)) {
-    data.metadata.category = [config.default_category].filter((s) => s);
+  // @todo setup empty categories when not set
+  if ('category' in data.metadata) {
+    if (!Array.isArray(data.metadata.category)) {
+      data.metadata.category = [config.default_category].filter((s) => s);
+    }
   }
-  if (!Array.isArray(data.metadata.tags)) {
-    data.metadata.tags = [config.default_tag].filter((s) => s);
+
+  // @todo setup empty tags when not set
+  if ('tags' in data.metadata) {
+    if (!Array.isArray(data.metadata.tags)) {
+      data.metadata.tags = [config.default_tag].filter((s) => s);
+    }
   }
 
   // @todo add tags from title
