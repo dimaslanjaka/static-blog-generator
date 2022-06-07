@@ -54,20 +54,41 @@ export interface postMeta {
    * post description
    */
   description?: string;
+  /**
+   * Auto generated fixed uuid
+   */
   uuid?: string;
+  /**
+   * Post modified date
+   */
   updated?: string | dateMapper;
+  /**
+   * Author metadata
+   */
   author?: string | postAuthor;
+  /**
+   * Post published date
+   */
   date?: string | dateMapper;
   /**
-   * post tags
+   * Post tags
    */
   tags?: string[];
   /**
-   * post categories
+   * Post categories
    */
   category?: string[];
+  /**
+   * All photos of post/page
+   */
   photos?: string[];
+  /**
+   * thumbnail
+   */
   cover?: string;
+  /**
+   * thumbnail (unused when `cover` property is settled)
+   */
   thumbnail?: string;
   /**
    * Post moved indicator
@@ -94,15 +115,24 @@ export interface postMeta {
  */
 export interface postAuthor extends Object {
   [key: string]: any;
+  /**
+   * Author name
+   */
   name?: string;
+  /**
+   * Author email
+   */
   email?: string;
+  /**
+   * Author website url
+   */
   link?: string;
 }
 
 export interface postMap extends Object {
   [key: string]: any;
   /**
-   * Article metadata
+   * Article metadata as string
    */
   metadataString?: string;
   fileTree?: {
@@ -127,10 +157,16 @@ export interface postMap extends Object {
    * Article body
    */
   body?: string;
+  /**
+   * Article body (unused when property `body` is settled)
+   */
+  content?: string;
 }
+
 export interface Config extends DeepPartial<typeof config> {
   [key: string]: any;
 }
+
 export interface ParseOptions {
   shortcodes?: {
     /**
