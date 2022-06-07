@@ -8,7 +8,7 @@ import { countWords } from '../../node/string-utils';
 import config from '../../types/_config';
 import { renderBodyMarkdown } from '../toHtml';
 import { postMap } from './parsePost';
-import { archiveMap, mergedPostMap } from './postMapper';
+import { archiveMap, DeepPartial } from './postMapper';
 
 const useCache = config.generator.cache;
 const modCache = pcache('modify');
@@ -22,9 +22,7 @@ const cacheTags = new CacheFile('postTags');
 const cacheCats = new CacheFile('postCats');*/
 const _g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
-// export type modifyPostType = postMap | mergedPostMap | archiveMap;
 export type mergedTypes = Partial<postMap> &
-  Partial<mergedPostMap> &
   Partial<archiveMap> &
   Record<string, unknown>;
 
@@ -37,32 +35,31 @@ export interface modifyPostType extends mergedTypes {
  * @param data result of {@link parsePost}
  * @returns
  */
-export function modifyPost<T extends Partial<modifyPostType>>(
+export function modifyPost<T = any>(data: T, merge: boolean): T;
+export function modifyPost<T extends DeepPartial<modifyPostType>>(
   data: T,
   merge: boolean
 ): T['metadata'] & T;
-export function modifyPost<T extends Partial<modifyPostType>>(data: T): T;
-export function modifyPost<T extends Partial<modifyPostType>>(
+export function modifyPost<T extends DeepPartial<modifyPostType>>(data: T): T;
+export function modifyPost<T extends DeepPartial<modifyPostType>>(
   data: T,
   merge = false
 ) {
   if (!data) return null;
-  const cacheKey = md5(
-    data.metadata.title +
-      data.metadata.date +
-      data.metadata.updated +
-      data.metadata.type
-  );
-  /*if (parse.fileTree) {
-    if (parse.fileTree.source) {
-      cacheKey = md5(parse.fileTree.source);
-    }
-  }*/
+  const meta = data.metadata || data;
+  let title: string, date: string, updated: string, type: string;
+  if ('type' in meta) type = meta.type;
+  if ('title' in meta) title = meta.title;
+  if ('date' in meta) date = String(meta.date);
+  if ('updated' in meta) updated = String(meta.updated);
+  const cacheKey = md5(title + date + updated + type);
+
   if (useCache) {
     const get = modCache.getSync<typeof data>(cacheKey);
     if (typeof get == 'string') return JSON.parse(get);
     if (get) return get;
   }
+
   // @todo setup empty tags and categories when not set
   if (!Array.isArray(data.metadata.category)) {
     data.metadata.category = [config.default_category].filter((s) => s);
