@@ -31,9 +31,18 @@ jobs:
 
     - name: Build
       run: npm run build
+      
+    - name: remove caches
+      run: |
+        git rm --cached -r package.json
+        git rm --cached -r package-lock.json
+        git config user.name dimaslanjaka
+        git config user.email dimaslanjaka@gmail.com
+        git push origin master
 
     - name: Re-deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4.3.0
+      if: ${{ false }}
       with:
         branch: master # The branch the action should deploy to.
         folder: . # The folder the action should deploy.
