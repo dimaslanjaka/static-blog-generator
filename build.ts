@@ -19,8 +19,8 @@ if (!process.env['GITHUB_WORKFLOW']) {
           join(__dirname, 'package.json'),
           JSON.stringify(pkg, null, 2)
         );
-        git(null, 'add', 'package.json').then(() => {
-          git(null, 'commit', '-m', 'update ' + hash).then(() => {
+        git({ cwd: __dirname }, 'add', 'package.json').then(() => {
+          git({ cwd: __dirname }, 'commit', '-m', 'update ' + hash).then(() => {
             build();
           });
         });
