@@ -82,14 +82,14 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
   }
 
   // @todo add tags from title
-  if (config.title_map && typeof data.metadata.title == 'string') {
-    const title = data.metadata.title.toLowerCase();
+  if (config.title_map) {
+    const titleLowercase = (data.metadata.title || data.title).toLowerCase();
     for (const key in config.title_map) {
       if (Object.prototype.hasOwnProperty.call(config.title_map, key)) {
         const tag = config.title_map[key];
         const regexBoundary = new RegExp(`\\b${key}\\b`, 'gmi');
 
-        if (title.match(regexBoundary)) {
+        if (titleLowercase.match(regexBoundary)) {
           //console.log('found', regexBoundary, tag);
           data.metadata.tags.push(tag);
         }
