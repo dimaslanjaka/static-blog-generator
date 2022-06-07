@@ -44,14 +44,14 @@ export interface postMeta {
    * Article title
    */
   title: string;
-  subtitle: string;
+  subtitle?: string;
+  description?: string;
   uuid?: string;
   updated?: string | dateMapper;
   author?: string | { [key: string]: any };
-  date: string | dateMapper;
-  description?: string;
-  tags: string[];
-  category: string[];
+  date?: string | dateMapper;
+  tags?: string[];
+  category?: string[];
   photos?: string[];
   cover?: string;
   thumbnail?: string;
