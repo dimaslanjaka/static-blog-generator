@@ -32,7 +32,8 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: remove caches
+    - name: Manual push
+      continue-on-error: true
       run: |
         git rm --cached -r package.json
         git rm --cached -r package-lock.json
