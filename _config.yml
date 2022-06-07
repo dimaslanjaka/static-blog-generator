@@ -33,7 +33,7 @@ permalink: :title.html
 ## source directory (this directory should be on public website)
 source_dir: source
 ## generated directory
-public_dir: docs
+public_dir: public
 ## slug archive config.url/archive_dir/ (homepage pagination)
 archive_dir: archives
 ## slug category config.url/category_dir/categoryName
