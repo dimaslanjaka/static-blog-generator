@@ -3,9 +3,9 @@
 import {
   ChildProcess,
   ChildProcessWithoutNullStreams,
-  spawn,
   SpawnOptions
 } from 'child_process';
+import spawn from 'cross-spawn';
 import process from 'process';
 import { Readable } from 'stream';
 import scheduler from './scheduler';
