@@ -11,7 +11,6 @@
   "typescript.tsc.autoDetect": "on",
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
   "emmet.includeLanguages": {
     "ejs": "html",
   },
