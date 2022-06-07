@@ -13,18 +13,51 @@ export interface postMeta {
      * Article title
      */
     title: string;
-    subtitle?: string;
+    /**
+     * published indicator
+     * * 1 / true = published
+     * * 0 / false = drafted
+     */
+    published?: boolean | 1 | 0;
+    /**
+     * post description
+     */
     description?: string;
+    /**
+     * Auto generated fixed uuid
+     */
     uuid?: string;
+    /**
+     * Post modified date
+     */
     updated?: string | dateMapper;
-    author?: string | {
-        [key: string]: any;
-    };
+    /**
+     * Author metadata
+     */
+    author?: string | postAuthor;
+    /**
+     * Post published date
+     */
     date?: string | dateMapper;
+    /**
+     * Post tags
+     */
     tags?: string[];
+    /**
+     * Post categories
+     */
     category?: string[];
+    /**
+     * All photos of post/page
+     */
     photos?: string[];
+    /**
+     * thumbnail
+     */
     cover?: string;
+    /**
+     * thumbnail (unused when `cover` property is settled)
+     */
     thumbnail?: string;
     /**
      * Post moved indicator
@@ -45,10 +78,28 @@ export interface postMeta {
      */
     type?: 'post' | 'page' | 'archive';
 }
+/**
+ * Post author object type
+ */
+export interface postAuthor extends Object {
+    [key: string]: any;
+    /**
+     * Author name
+     */
+    name?: string;
+    /**
+     * Author email
+     */
+    email?: string;
+    /**
+     * Author website url
+     */
+    link?: string;
+}
 export interface postMap extends Object {
     [key: string]: any;
     /**
-     * Article metadata
+     * Article metadata as string
      */
     metadataString?: string;
     fileTree?: {
@@ -73,6 +124,10 @@ export interface postMap extends Object {
      * Article body
      */
     body?: string;
+    /**
+     * Article body (unused when property `body` is settled)
+     */
+    content?: string;
 }
 export interface Config extends DeepPartial<typeof config> {
     [key: string]: any;
