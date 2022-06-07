@@ -8,15 +8,13 @@ if (!process.env['GITHUB_WORKFLOW']) {
     .createHash('md5')
     .update(new Date().toDateString())
     .digest('hex');*/
-  exec('git rev-parse --short HEAD', function (err, hash) {
-    //if (!err) console.log('Last commit hash on this branch is:', hash);
-    if (typeof hash === 'string' && hash.length > 1) {
-      hash = hash.trim();
-      const split = pkg.version.split('-');
-
-      if (hash != split[2]) {
-        split[0] += '-beta-' + hash;
-        pkg.version = split[0];
+  exec(
+    'git describe --tags --first-parent --dirty --broken',
+    function (err, hash) {
+      //if (!err) console.log('Last commit hash on this branch is:', hash);
+      if (typeof hash === 'string' && hash.length > 1) {
+        hash = hash.trim().replace(/^v/, '');
+        pkg.version = hash;
         writeFile(
           join(__dirname, 'package.json'),
           JSON.stringify(pkg, null, 2)
@@ -28,7 +26,7 @@ if (!process.env['GITHUB_WORKFLOW']) {
         });
       }
     }
-  });
+  );
 } else {
   console.log('not updating the commit hash on github workflow');
   build();
