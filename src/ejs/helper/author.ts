@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { postMap } from '../../markdown/transformPosts/parsePost';
+import { postMap } from '../../parsePost';
 import config from '../../types/_config';
 
 /**
@@ -41,7 +41,7 @@ export function author_object(page: postMap['metadata'] | typeof config) {
   return {
     name: String(author_name(page)),
     email: String(author_email(page)),
-    link: String(author_link(page)),
+    link: String(author_link(page))
   };
 }
 
