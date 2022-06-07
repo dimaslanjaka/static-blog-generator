@@ -14,47 +14,17 @@ export class MeasureTime {
    * @param fn
    * @param args
    */
-  async run<
-    T /*extends FunctionType | Promise<FunctionType>,*/,
-    U extends any[]
-  >(msg: string = null, fn: T, ...args: U) {
+  async run<T, U extends any[]>(msg: string = null, fn: T, ...args: U) {
     const isFunc = typeof fn == 'function';
-    const isAsync =
-      isFunc &&
-      typeof fn['then'] === 'function' &&
-      String(fn[Symbol.toStringTag]) === 'Promise';
-    //console.log('cName', fn.constructor.name);
-    console.log(`---start [${isAsync ? 'async' : 'sync'}]---`);
+    console.log(`---measure start---`);
 
     if (isFunc) {
       this.start();
       await fn.apply(null, ...args);
       console.log(color.greenBright(msg), this.end());
-      //console.log('then', typeof fn['then']);
-      //console.log('symbol', fn[Symbol.toStringTag]);
-      /*if (isAsync) {
-        this.start();
-        await fn.apply(null, ...args);
-        console.log(
-          color.Apricot('[async]'),
-          color.greenBright(msg),
-          this.end()
-        );
-      } else {
-        this.start();
-        try {
-          fn.apply(null, ...args);
-        } catch (error) {
-          await fn.call(null, ...args);
-        }
-        console.log(
-          color.Apricot('[sync]'),
-          color.greenBright(msg),
-          this.end()
-        );
-      }*/
     }
-    console.log(`---end [${isAsync ? 'async' : 'sync'}]---`);
+
+    console.log(`---measure end---`);
     return this;
   }
 
