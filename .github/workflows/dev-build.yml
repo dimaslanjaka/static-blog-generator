@@ -85,30 +85,6 @@ jobs:
         git commit -m "[${{ steps.vars.outputs.hash }}] update release"
         git push
 
-    - name: Test JS
-      id: test-js
-      working-directory: tests
-      run: npm i file:../ && node index.js
-
-    - name: Test TS
-      id: test-ts
-      working-directory: tests
-      run: npm i file:../ && node -r ts-node/register index.ts
-
-    - name: Test mocha
-      id: test-mocha
-      run: npm install && npm run test:mocha
-
-    - name: Test bin single task
-      run: npm i file:../ && npx sbg copy --nocache --verbose
-      working-directory: tests
-      id: test-bin-single
-
-    - name: Test bin multiple task
-      run: npm i file:../ && npx sbg clean copy --nocache --verbose
-      working-directory: tests
-      id: test-bin-multiple
-
     - name: Commit & Push
       continue-on-error: true
       run: |
