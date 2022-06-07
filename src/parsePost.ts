@@ -44,13 +44,27 @@ export interface postMeta {
    * Article title
    */
   title: string;
-  subtitle?: string;
+  /**
+   * published indicator
+   * * 1 / true = published
+   * * 0 / false = drafted
+   */
+  published?: boolean | 1 | 0;
+  /**
+   * post description
+   */
   description?: string;
   uuid?: string;
   updated?: string | dateMapper;
-  author?: string | { [key: string]: any };
+  author?: string | postAuthor;
   date?: string | dateMapper;
+  /**
+   * post tags
+   */
   tags?: string[];
+  /**
+   * post categories
+   */
   category?: string[];
   photos?: string[];
   cover?: string;
@@ -73,6 +87,16 @@ export interface postMeta {
    * archive (index, tags, categories)
    */
   type?: 'post' | 'page' | 'archive';
+}
+
+/**
+ * Post author object type
+ */
+export interface postAuthor extends Object {
+  [key: string]: any;
+  name?: string;
+  email?: string;
+  link?: string;
 }
 
 export interface postMap extends Object {
