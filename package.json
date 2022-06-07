@@ -193,6 +193,6 @@
     "undertaker": "^1.3.0"
   },
   "optionalDependencies": {
-    "sbg-themes": "git+https://github.com/dimaslanjaka/sbg-themes.git"
+    "sbg-themes": "file:themes"
   }
 }
