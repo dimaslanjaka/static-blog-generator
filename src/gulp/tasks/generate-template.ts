@@ -7,7 +7,7 @@ import { post_generated_dir, theme_dir } from '../../types/_config';
 
 const logname = color.hex('#fcba03')('[render template]');
 
-const renderTemplate = () => {
+export const generateTemplate = () => {
   const src = join(theme_dir, 'source/**/**');
   console.log(
     logname + color.magentaBright('[template]'),
@@ -41,4 +41,4 @@ const renderTemplate = () => {
   //.on('end', () => console.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
 };
 
-gulp.task('generate:template', renderTemplate);
+gulp.task('generate:template', generateTemplate);
