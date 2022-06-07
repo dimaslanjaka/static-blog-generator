@@ -19,9 +19,19 @@ if (!process.env['GITHUB_WORKFLOW']) {
           join(__dirname, 'package.json'),
           JSON.stringify(pkg, null, 2)
         );
-        git({ cwd: __dirname }, 'add', 'package.json').then(() => {
-          git({ cwd: __dirname }, 'commit', '-m', 'update ' + hash).then(() => {
-            build();
+        exec('npm install', () => {
+          Promise.all([
+            git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'package.json'),
+            git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'package-lock.json')
+          ]).then(() => {
+            git(
+              { cwd: __dirname, stdio: 'ignore' },
+              'commit',
+              '-m',
+              'update ' + hash
+            ).then(() => {
+              build();
+            });
           });
         });
       }
@@ -43,8 +53,13 @@ function build() {
     shell: true
   });
   summon.once('close', () => {
-    git(null, 'add', 'dist').then(() => {
-      git(null, 'commit', '-m', 'build ' + new Date());
+    git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'dist').then(() => {
+      git(
+        { cwd: __dirname, stdio: 'ignore' },
+        'commit',
+        '-m',
+        'build ' + new Date()
+      );
     });
   });
 }
