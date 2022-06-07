@@ -1,9 +1,9 @@
 {
   "terminal.integrated.env.linux": {
-    "PATH": "${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin:${env:PATH}"
+    "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
   },
   "terminal.integrated.env.windows": {
-    "PATH": "${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${env:PATH}"
+    "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"
   },
   "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
