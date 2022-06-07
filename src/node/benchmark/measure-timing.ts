@@ -16,7 +16,7 @@ export class MeasureTime {
    */
   async run<T, U extends any[]>(msg: string = null, fn: T, ...args: U) {
     const isFunc = typeof fn == 'function';
-    console.log(`---measure start---`);
+    console.log(`---measure start [${msg}]---`);
 
     if (isFunc) {
       this.start();
@@ -24,7 +24,7 @@ export class MeasureTime {
       console.log(color.greenBright(msg), this.end());
     }
 
-    console.log(`---measure end---`);
+    console.log(`---measure end [${msg}]---`);
     return this;
   }
 
