@@ -4,12 +4,16 @@
 Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/hexo-post-parser/blob/main/src/index.test.ts)
 
 ```js
+const fs = require('fs');
 (async function(){
-  const {parsePost} = require('hexo-post-parser');
+  const { parsePost, buildPost } = require('hexo-post-parser');
   const parse = await parsePost('path/to/markdown/file.md');
-  console.log(parse);
+  // dump parsed post to json
+  fs.writeFileSync('path/to/file.json', JSON.stringify(parse, null, 2));
+  // build parsed post
+  fs.writeFileSync('path/to/file.md', buildPost(parse));
 })();
 ```
 
 ## Reference Repositories
-- [Static Blog Generator](https://github.com/dimaslanjaka/dimaslanjaka.github.io)
+- [Static Blog Generator](https://github.com/dimaslanjaka/static-blog-generator)
