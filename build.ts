@@ -6,6 +6,7 @@ import moment from 'moment-timezone';
 import readline from 'readline';
 import { join } from 'upath';
 import pkg from './package.json';
+import color from './src/node/color';
 import { write } from './src/node/filemanager';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/node/git';
 import { md5FileSync } from './src/node/md5-file';
@@ -84,6 +85,18 @@ async function update_version() {
       //console.dir(info);
       //console.log(info.hash);
       //const version = `${info.semver.version}-${info.distance}-${info.hash}`;
+
+      if (pkg.version !== info.semver.version) {
+        console.log(
+          color['Yellow Orange']('updating version'),
+          color.redBright(pkg.version),
+          '->',
+          color.greenBright(info.semver.version)
+        );
+      } else {
+        console.log(color.green('no update needed'), pkg.version);
+      }
+
       pkg.version = info.semver.version;
       write(
         join(__dirname, '/package.json'),
