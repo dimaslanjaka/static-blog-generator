@@ -5,6 +5,7 @@ import { pcache } from '../../node/cache';
 import { json_encode } from '../../node/JSON';
 import { md5 } from '../../node/md5-file';
 import { countWords } from '../../node/string-utils';
+import { modMoment } from '../../renderer/ejs/helper/date';
 import config from '../../types/_config';
 import { renderBodyMarkdown } from '../toHtml';
 import { postMap } from './parsePost';
@@ -29,22 +30,39 @@ export interface modifyPostType extends mergedTypes {
   [key: string]: any;
 }
 
+interface modifyPostOptions {
+  /**
+   * merge metadata to post properties?
+   */
+  merge?: boolean;
+  /**
+   * use cache? default using config.generator.cache or arguments CLI
+   */
+  cache?: boolean;
+}
+
 /**
  * Modify Post With Defined Conditions
  * @param data result of {@link parsePost}
  * @returns
  */
-export function modifyPost<T = any>(data: T, merge: boolean): T;
+export function modifyPost<T = any>(data: T, options?: modifyPostOptions): T;
 export function modifyPost<T extends DeepPartial<modifyPostType>>(
   data: T,
-  merge: true
+  options: {
+    merge: true;
+  }
 ): T['metadata'] & T;
 export function modifyPost<T extends DeepPartial<modifyPostType>>(data: T): T;
 export function modifyPost<T extends DeepPartial<modifyPostType>>(
   data: T,
-  merge = false
+  options: modifyPostOptions = {
+    merge: false,
+    cache: config.generator.cache
+  }
 ) {
-  if (!data) return null;
+  if (data === null || typeof data === 'undefined' || typeof data !== 'object')
+    return null;
   if (Array.isArray(data)) throw new Error('Cannot use array on modifyPost');
 
   let title: string, date: string, updated: string, type: string;
@@ -56,7 +74,7 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
     if ('updated' in meta) updated = String(meta.updated);
   });
 
-  const useCache = config.generator.cache;
+  const useCache = options.cache;
   const cacheKey = md5(title + date + updated + type);
 
   if (useCache) {
@@ -66,6 +84,19 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
   }
 
   if ('metadata' in data) {
+    // @declare merge metadata with default object
+    data.metadata = Object.assign(
+      {
+        tags: [],
+        category: [],
+        title: '',
+        description: '',
+        date: modMoment(),
+        updated: modMoment()
+      },
+      data.metadata
+    );
+
     // @todo setup empty categories when not set
     if ('category' in data.metadata) {
       if (!Array.isArray(data.metadata.category)) {
@@ -133,81 +164,36 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
         }
       }
     }
-  }
 
-  // @todo remove default tag when tags have more than 1 item
-  if (
-    config.default_tag &&
-    data.metadata.tags.length > 1 &&
-    data.metadata.tags.includes(config.default_tag)
-  ) {
-    data.metadata.tags = data.metadata.tags.filter(
-      (tag) => tag !== config.default_tag
-    );
-  }
+    // @todo remove default tag when tags have more than 1 item
+    if (
+      config.default_tag &&
+      data.metadata.tags.length > 1 &&
+      data.metadata.tags.includes(config.default_tag)
+    ) {
+      data.metadata.tags = data.metadata.tags.filter(
+        (tag) => tag !== config.default_tag
+      );
+    }
 
-  // @todo remove default category when categories have more than 1 item
-  if (
-    config.default_category &&
-    data.metadata.category.length > 1 &&
-    data.metadata.category.includes(config.default_category)
-  ) {
-    data.metadata.category = data.metadata.category.filter(
-      (category) => category !== config.default_category
-    );
-  }
+    // @todo remove default category when categories have more than 1 item
+    if (
+      config.default_category &&
+      data.metadata.category.length > 1 &&
+      data.metadata.category.includes(config.default_category)
+    ) {
+      data.metadata.category = data.metadata.category.filter(
+        (category) => category !== config.default_category
+      );
+    }
 
-  // @todo remove duplicate categories
-  data.metadata.category = [...new Set(data.metadata.category)];
-  // @todo remove duplicate tags
-  data.metadata.tags = [...new Set(data.metadata.tags)];
+    // @todo remove duplicate categories
+    data.metadata.category = [...new Set(data.metadata.category)];
+    // @todo remove duplicate tags
+    data.metadata.tags = [...new Set(data.metadata.tags)];
 
-  /*// @todo prepare to add post category to cache
-  parse.metadata.category.forEach((name: string) => {
-    if (!name) return;
-    // init
-    if (!postCats[name]) postCats[name] = [];
-    // prevent duplicate push
-    if (!postCats[name].find(({ title }) => title === parse.metadata.title))
-      postCats[name].push(<any>parse);
-  });
-
-  // @todo prepare to add post tag to cache
-  parse.metadata.tags.forEach((name: string) => {
-    if (!name) return;
-    let post = postTags[name];
-    // init
-    if (!post) post = [];
-    // prevent duplicate push
-    if (!postTags[name].find(({ title }) => title === parse.metadata.title))
-      postTags[name].push(<any>parse);
-  });*/
-
-  // @todo set type post when not set
-  if (!data.metadata.type) data.metadata.type = 'post';
-
-  // render post for some properties
-  let html: ReturnType<typeof parseHTML>;
-  try {
-    const renderbody = renderBodyMarkdown(<any>data);
-    html = parseHTML(renderbody);
-  } catch (error) {
-    console.log('[fail]', 'renderBodyMarkdown', error);
-    //console.log(...log);
-    //console.log(typeof parse.body);
-    return null;
-  }
-
-  // +article wordcount
-  const words = html
-    .querySelectorAll('*:not(script,style,meta,link)')
-    .map((e) => e.text)
-    .join('\n');
-  data.metadata.wordcount = countWords(words);
-  if (data.metadata.canonical) {
-    const canonical: string = data.metadata.canonical;
-    if (!isValidHttpUrl(canonical))
-      data.metadata.canonical = config.url + data.metadata.canonical;
+    // @todo set type post when not set
+    if (!data.metadata.type) data.metadata.type = 'post';
   }
 
   // move 'programming' to first index
@@ -219,24 +205,35 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
     });
   }
 
-  /*scheduler.add('add-labels', () => {
-    Bluebird.all([postCats, postTags]).each((group, index) => {
-      for (const name in group) {
-        if (Object.prototype.hasOwnProperty.call(group, name)) {
-          const posts = group[name];
-          if (index === 1) {
-            cacheTags.set(name, posts);
-          } else {
-            cacheCats.set(name, posts);
-          }
-        }
-      }
-    });
-  });*/
+  if ('body' in data || 'content' in data) {
+    // render post for some properties
+    let html: ReturnType<typeof parseHTML>;
+    try {
+      const renderbody = renderBodyMarkdown(<any>data);
+      html = parseHTML(renderbody);
+    } catch (error) {
+      console.log('[fail]', 'renderBodyMarkdown', error);
+      //console.log(...log);
+      //console.log(typeof parse.body);
+      return null;
+    }
+
+    // +article wordcount
+    const words = html
+      .querySelectorAll('*:not(script,style,meta,link)')
+      .map((e) => e.text)
+      .join('\n');
+    data.metadata.wordcount = countWords(words);
+    if (data.metadata.canonical) {
+      const canonical: string = data.metadata.canonical;
+      if (!isValidHttpUrl(canonical))
+        data.metadata.canonical = config.url + data.metadata.canonical;
+    }
+  }
 
   modCache.putSync(cacheKey, json_encode(data));
 
-  if (data.metadata && merge) return Object.assign(data, data.metadata);
+  if (data.metadata && options.merge) return Object.assign(data, data.metadata);
   return data;
 }
 
