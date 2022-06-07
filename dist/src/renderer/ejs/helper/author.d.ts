@@ -32,4 +32,4 @@ export declare function author_object(page: postMap['metadata'] | typeof config)
  * @param page
  * @returns
  */
-export declare function author_link(page: postMap['metadata'] | typeof config): any;
+export declare function author_link(page: postMap['metadata'] | typeof config): string | ((url: string) => string);
