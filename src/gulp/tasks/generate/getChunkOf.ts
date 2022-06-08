@@ -10,7 +10,7 @@ import { isDev } from '../../../types/_config';
  * @param labelname specific tag name
  */
 export function getChunkOf(
-  type: 'tag' | 'category' | 'post',
+  type: 'tag' | 'category',
   labelname?: string | null
 ) {
   const cacheInstance =
@@ -18,13 +18,18 @@ export function getChunkOf(
       ? pcache('tags')
       : type == 'category'
       ? pcache('categories')
-      : pcache('posts');
-  const cacheKeys = cacheInstance.keysSync();
-  if (type !== 'post' && !cacheKeys.length) {
-    console.log('labels empty');
-    return;
+      : null;
+
+  if (cacheInstance !== null) {
+    const cacheKeys = cacheInstance.keysSync();
+
+    if (!cacheKeys.length) {
+      console.log('labels empty');
+      return;
+    }
+
+    return getChunkOfLabels(cacheInstance, cacheKeys, labelname);
   }
-  return getChunkOfLabels(cacheInstance, cacheKeys, labelname);
 }
 
 /**
@@ -39,9 +44,13 @@ function getChunkOfLabels(
   labelname?: string
 ) {
   const result: { [key: string]: ReturnType<typeof post_chunks> } = {};
-  for (let indexTag = 0; indexTag < keys.length; indexTag++) {
-    const tagname = keys[indexTag];
+  for (let indexLabel = 0; indexLabel < keys.length; indexLabel++) {
+    const tagname = keys[indexLabel];
     const tag_posts = instance.getSync<postMap[][]>(tagname);
+    write(
+      join(__dirname, 'tmp/getChunkOf/Labels/', indexLabel + '.json'),
+      tag_posts
+    );
     if (tag_posts.length === 0) {
       console.log(`tag ${tagname} not have post`);
       continue;

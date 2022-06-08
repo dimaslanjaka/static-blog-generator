@@ -21,7 +21,7 @@ import { get_source_hash, get_src_posts_hash } from '../../types/folder-hashes';
 import config, { post_generated_dir } from '../../types/_config';
 import '../tasks/generate';
 import fixHtmlPost from '../tasks/generate-after';
-import { generateIndex } from '../tasks/generate/archives';
+import { generateIndex } from '../tasks/generate/homepage';
 import './gen-middleware';
 
 let gulpIndicator = false;
@@ -183,7 +183,7 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       );
       if (str) {
         console.log(logname, 'pre-processed', req.url, '->', sourceIndex);
-        return res.end(showPreview(str));
+        return res.end(showPreview(String(str)));
       }
       if (existsSync(sourceIndex)) {
         console.log(logname, 'processed', req.url, '->', sourceIndex);
