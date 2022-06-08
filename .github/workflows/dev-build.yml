@@ -23,7 +23,7 @@ jobs:
       with:
         submodules: recursive
         token: "${{ secrets.GITHUB_TOKEN }}"
-        ref: "dev"
+        ref: "master"
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
