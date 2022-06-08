@@ -1,9 +1,14 @@
 import gulp from 'gulp';
 import sass from 'node-sass';
 import through2 from 'through2';
-import { join } from 'upath';
+import { join, toUnix } from 'upath';
 import color from '../../node/color';
-import { post_generated_dir, theme_dir } from '../../types/_config';
+import { replaceArr } from '../../node/string-utils';
+import config, {
+  cwd,
+  post_generated_dir,
+  theme_dir
+} from '../../types/_config';
 
 const logname = color.hex('#fcba03')('[render template]');
 
@@ -23,7 +28,7 @@ export const generateTemplate = () => {
         if (file.isNull()) {
           return next(null, file);
         }
-        const path = file.path;
+        const path = toUnix(file.path);
         const ext = file.extname;
 
         if (ext == '.scss') {
@@ -32,7 +37,20 @@ export const generateTemplate = () => {
             data: String(file.contents)
           });
           file.contents = result.css;
-          console.log('[sass]', 'compiled', path);
+          console.log(
+            color.pink('[sass]'),
+            color.Red(replaceArr(path, [cwd(), /^\//], '')),
+            '->',
+            color.green(
+              join(
+                config.public_dir,
+                replaceArr(path, [theme_dir + '/source', /^\//], '').replace(
+                  /.scss$/,
+                  '.css'
+                )
+              )
+            )
+          );
         }
         next(null, file);
       })
