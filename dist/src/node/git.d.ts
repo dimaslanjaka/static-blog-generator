@@ -20,7 +20,7 @@ export declare function git(options?: null | SpawnOptions, ...args: string[]): P
  * @param path specific folder
  * @returns
  */
-export declare const getLatestCommitHash: (path?: string, short?: boolean) => Promise<any>;
+export declare const getLatestCommitHash: (path?: string, short?: boolean) => Promise<string>;
 /**
  * git describe
  * @returns
