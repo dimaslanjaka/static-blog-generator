@@ -61,7 +61,6 @@ jobs:
         git submodule foreach git submodule update -i -r
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: npm install
     - run: npm install https://github.com/dimaslanjaka/sbg-themes
 
     - name: Build
