@@ -27,26 +27,32 @@ export type DeepPartial<T> = {
 };
 
 /**
- * mapped type
+ * Merged postMap and postMap['metadata']
  */
-export type mergedPostMap = Partial<postMap> &
-  DeepPartial<postMap['metadata']> &
-  Record<string, unknown>;
+export type mergedPostMap = Partial<postMap['metadata']> & Partial<postMap>;
 
-export interface archiveMap extends mergedPostMap {
+export interface archiveMap extends Object {
   [key: string]: any;
+  /**
+   * metadata properties
+   */
+  metadata?: postMap['metadata'];
   /**
    * previous page items
    */
-  prev?: mergedPostMap[] | null;
+  prev?: archiveMap[] | null;
   /**
    * next page items
    */
-  next?: mergedPostMap[] | null;
+  next?: archiveMap[] | null;
   /**
    * current page number
    */
   page_now?: number;
+  /**
+   * current page url
+   */
+  page_now_url?: string;
   /**
    * next page number
    */
@@ -78,7 +84,7 @@ export interface archiveMap extends mergedPostMap {
  * * merge post metadata property ({@link postMap.metadata}) to root property
  * @returns
  */
-export default function postMapper(post: mergedPostMap) {
+export default function postMapper<T extends archiveMap>(post: T) {
   let assigned = post;
   if (typeof post == 'object' && typeof post.metadata == 'object') {
     post.metadata.date =
@@ -95,13 +101,15 @@ export default function postMapper(post: mergedPostMap) {
  * @param chunks
  * @returns
  */
-export function postChunksMapper<T extends any[][]>(chunks: T): T {
+export function postChunksMapper<T extends archiveMap[][]>(chunks: T): T {
   const defaultMap: archiveMap = {
     page_next: null,
     page_now: null,
     page_next_url: null,
     page_prev: null,
-    page_prev_url: null
+    page_prev_url: null,
+    title: '',
+    description: ''
   };
   chunks.map((arr_chunk, i) => {
     if (Array.isArray(arr_chunk)) {
@@ -241,7 +249,7 @@ export function post_chunks<T extends any[]>(arr?: T) {
   return {
     /** all posts */
     posts,
-    /** all posts chunks */
+    /** all posts chunks (used for pagination) */
     chunk,
     /** all posts infinite scroll sitedata */
     sitedata
