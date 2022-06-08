@@ -24,6 +24,20 @@ logo: "/image/logo.svg"
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://localhost:4000
+# Local server inspired by https://www.npmjs.com/package/hexo-server
+server:
+  port: 4000
+  log: false
+  # localhost ip (0.0.0.0, 127.0.0.1)
+  ip: 0.0.0.0
+  hostname: adsense.webmanajemen.com
+  compress: false
+  cache: false
+  header: false
+  instanceName: default
+  serveStatic:
+    extensions:
+      - html
 ## Permalink (Pathname)
 ### :title.html = will follow folder path and file name ends with html
 ### read more = https://hexo.io/docs/permalinks#Variables
@@ -205,22 +219,6 @@ exclude:
   - "**/.git*"
   - "**/exclude/**"
 ignore:
-
-# https://www.npmjs.com/package/hexo-server
-## gulp server
-server:
-  port: 4000
-  log: false
-  # localhost ip (0.0.0.0, 127.0.0.1)
-  ip: 0.0.0.0
-  hostname: adsense.webmanajemen.com
-  compress: false
-  cache: false
-  header: false
-  instanceName: default
-  serveStatic:
-    extensions:
-      - html
 
 # Themes
 ## dir name from themes/
