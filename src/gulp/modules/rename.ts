@@ -1,9 +1,8 @@
 'use strict';
 // https://www.npmjs.com/package/gulp-rename
 import Stream from 'stream';
-import { toUnix } from 'upath';
+import { basename, dirname, extname as ExtName, join, toUnix } from 'upath';
 import vinyl from 'vinyl';
-import { basename, dirname, join, extname as ExtName } from '../../node/filemanager';
 
 interface ParsedPath {
   dirname: string;
@@ -31,8 +30,11 @@ interface PluginOptions {
  * @returns NodeJS.ReadWriteStream
  * @see {@link https://www.npmjs.com/package/gulp-rename}
  */
-export default function gulpRename(
-  obj: string | Options | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void),
+export function gulpRename(
+  obj:
+    | string
+    | Options
+    | ((path: ParsedPath, file: vinyl.BufferFile) => ParsedPath | void),
   options?: PluginOptions
 ) {
   options = options || {};
@@ -40,16 +42,22 @@ export default function gulpRename(
   const stream = new Stream.Transform({ objectMode: true });
 
   function parsePath(path: string, fullpath?: string) {
-    const extname = options.multiExt ? basename(path).slice(basename(path).indexOf('.')) : ExtName(path);
+    const extname = options.multiExt
+      ? basename(path).slice(basename(path).indexOf('.'))
+      : ExtName(path);
     return {
       dirname: dirname(path),
       basename: basename(path, extname),
       extname: extname,
-      fullpath: toUnix(fullpath),
+      fullpath: toUnix(fullpath)
     };
   }
 
-  stream._transform = function (originalFile: vinyl.BufferFile, unused, callback) {
+  stream._transform = function (
+    originalFile: vinyl.BufferFile,
+    unused,
+    callback
+  ) {
     const file = originalFile.clone({ contents: false });
     let parsedPath = parsePath(file.relative, originalFile.history[0]);
     let path: string;
@@ -72,7 +80,10 @@ export default function gulpRename(
 
       path = join(dirname, prefix + basename + suffix + extname);
     } else {
-      callback(new Error('Unsupported renaming parameter type supplied'), undefined);
+      callback(
+        new Error('Unsupported renaming parameter type supplied'),
+        undefined
+      );
       return;
     }
 
@@ -89,4 +100,5 @@ export default function gulpRename(
   return stream;
 }
 
+export default gulpRename;
 //module.exports = gulpRename;

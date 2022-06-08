@@ -1,0 +1,30 @@
+{
+  "name": "hexo-site",
+  "version": "2.0.7-166-g81e84da40a-1-g0381739be2-1-g7bf765be46-69-g01f8e22410-354-g48a2c6d4d1",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean && sbg clean",
+    "copy": "sbg copy --nocache",
+    "deploy": "hexo deploy",
+    "server": "hexo server",
+    "preinstall": "npm version $(git describe)"
+  },
+  "hexo": {
+    "version": "6.2.0"
+  },
+  "dependencies": {
+    "hexo": "^6.2.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-butterfly": "file:themes/butterfly",
+    "hexo-theme-fluid": "^1.9.1",
+    "static-blog-generator": "file:.."
+  }
+}
