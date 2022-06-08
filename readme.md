@@ -153,22 +153,38 @@ gulp generate:minify # minify all html,css,js on public_dir in _config.yml
 - nodejs static blog generator
 - nodejs termux static blog generator
 - nodejs simple static blog generator
+
+## Other Packages
  
-## hexo-adsense
+### hexo-post-parser
+[![npm version](https://badge.fury.io/js/hexo-post-parser.svg?style=flat-square)](https://badge.fury.io/js/hexo-post-parser)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-post-parser?style=flat-square)](https://npmjs.com/package/hexo-post-parser)
+[![Minimum node.js version](https://badgen.net/npm/node/hexo-post-parser?style=flat-square)](https://npmjs.com/package/hexo-post-parser)
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/hexo-post-parser?label=Repository%20Size&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/hexo-post-parser?color=blue&label=Last%20Commit&style=flat-square)
+ 
+### google-news-sitemap
+[![npm version](https://badge.fury.io/js/google-news-sitemap.svg?style=flat-square)](https://badge.fury.io/js/google-news-sitemap)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/google-news-sitemap?style=flat-square)](https://npmjs.com/package/google-news-sitemap)
+[![Minimum node.js version](https://badgen.net/npm/node/google-news-sitemap?style=flat-square)](https://npmjs.com/package/google-news-sitemap)
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/google-news-sitemap?label=Repository%20Size&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/google-news-sitemap?color=blue&label=Last%20Commit&style=flat-square)
+ 
+### hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/hexo-adsense?label=Repository%20Size&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/hexo-adsense?color=blue&label=Last%20Commit&style=flat-square)
 
-## hexo-seo
+### hexo-seo
 [![npm version](https://badge.fury.io/js/hexo-seo.svg?style=flat-square)](https://badge.fury.io/js/hexo-seo)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-seo?style=flat-square)](https://npmjs.com/package/hexo-seo)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-seo?style=flat-square)](https://npmjs.com/package/hexo-seo)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/hexo-seo?label=Repository%20Size&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/hexo-seo?color=blue&label=Last%20Commit&style=flat-square)
 
-## hexo-blogger-xml
+### hexo-blogger-xml
 [![npm version](https://badge.fury.io/js/hexo-blogger-xml.svg?style=flat-square)](https://badge.fury.io/js/hexo-blogger-xml)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-blogger-xml?style=flat-square)](https://npmjs.com/package/hexo-blogger-xml)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-blogger-xml?style=flat-square)](https://npmjs.com/package/hexo-blogger-xml)
