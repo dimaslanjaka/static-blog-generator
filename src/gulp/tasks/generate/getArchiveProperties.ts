@@ -56,13 +56,17 @@ export function getArchiveProperties(
       posts: mapped,
       total: mapped.length,
       page_now: index,
-      page_now_url: 'page/' + index,
+      page_now_url: config.url + '/page/' + index,
       next: allPostChunks.chunk[index + 1] || null,
       page_next: index + 1,
-      page_next_url: 'page/' + (index + 1),
+      page_next_url: Array.isArray(allPostChunks.chunk[index + 1])
+        ? config.url + '/page/' + (index + 1)
+        : null,
       prev: allPostChunks.chunk[index - 1] || null,
       page_prev: index - 1 <= 0 ? null : index - 1,
-      page_prev_url: index - 1 <= 0 ? 'page/' : 'page/' + (index - 1)
+      page_prev_url: Array.isArray(allPostChunks.chunk[index - 1])
+        ? '/page/' + (index - 1)
+        : '/page/'
     };
     properties.push(property);
   }
