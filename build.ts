@@ -86,8 +86,8 @@ async function update_version() {
     gitDescribe(join(__dirname, 'src')),
     getLatestCommitHash(join(__dirname, 'src'))
   ])
-    .spread((info: GitInfo, srcInfo) => {
-      console.log(srcInfo, info.semver.version);
+    .spread((info: GitInfo, srcInfo: string) => {
+      console.log(srcInfo, info.semver.version, info.semver.prerelease);
       if (pkg.version !== info.semver.version) {
         console.log(
           color['Yellow Orange']('updating version'),
