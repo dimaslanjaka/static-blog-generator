@@ -14,7 +14,12 @@ Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn't suppo
 
 ## project information
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com)
-[![Join the chat at https://gitter.im/static-blog-generator/discussions](https://badges.gitter.im/static-blog-generator/discussions.svg)](https://gitter.im/static-blog-generator/discussions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+[![Join the chat at https://gitter.im/static-blog-generator/discussions](https://badges.gitter.im/static-blog-generator/discussions.svg)](https://gitter.im/static-blog-generator/discussions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm version](https://badge.fury.io/js/static-blog-generator.svg?style=flat-square)](https://badge.fury.io/js/static-blog-generator)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/static-blog-generator?style=flat-square)](https://npmjs.com/package/static-blog-generator)
+[![Minimum node.js version](https://badgen.net/npm/node/static-blog-generator?style=flat-square)](https://npmjs.com/package/static-blog-generator)
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/static-blog-generator?label=Repository%20Size&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/static-blog-generator?color=blue&label=Last%20Commit&style=flat-square)
 
 | Name | Repo | Coverage | Build |
 | --- | --- | --- | --- |
