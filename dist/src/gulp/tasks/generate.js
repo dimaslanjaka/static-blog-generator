@@ -37,7 +37,7 @@ require("./generate-feed");
 require("./generate-posts");
 require("./generate-sitemap");
 require("./generate-template");
-require("./generate/archives");
+require("./generate/homepage");
 require("./import");
 require("./minify");
 var generated_dir = (0, upath_1.toUnix)((0, upath_1.resolve)((0, upath_1.join)(_config_1.root, _config_1.default.public_dir)));

@@ -4,6 +4,6 @@ import './generate-feed';
 import './generate-posts';
 import './generate-sitemap';
 import './generate-template';
-import './generate/archives';
+import './generate/homepage';
 import './import';
 import './minify';
