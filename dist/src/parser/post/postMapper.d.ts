@@ -17,23 +17,31 @@ export declare type DeepPartial<T> = {
     [P in keyof T]?: T[P] extends Record<string, unknown> ? DeepPartial<T[P]> : T[P];
 };
 /**
- * mapped type
+ * Merged postMap and postMap['metadata']
  */
-export declare type mergedPostMap = Partial<postMap> & DeepPartial<postMap['metadata']> & Record<string, unknown>;
-export interface archiveMap extends mergedPostMap {
+export declare type mergedPostMap = Partial<postMap['metadata']> & Partial<postMap>;
+export interface archiveMap extends Object {
     [key: string]: any;
+    /**
+     * metadata properties
+     */
+    metadata?: postMap['metadata'];
     /**
      * previous page items
      */
-    prev?: mergedPostMap[] | null;
+    prev?: archiveMap[] | null;
     /**
      * next page items
      */
-    next?: mergedPostMap[] | null;
+    next?: archiveMap[] | null;
     /**
      * current page number
      */
     page_now?: number;
+    /**
+     * current page url
+     */
+    page_now_url?: string;
     /**
      * next page number
      */
@@ -64,13 +72,13 @@ export interface archiveMap extends mergedPostMap {
  * * merge post metadata property ({@link postMap.metadata}) to root property
  * @returns
  */
-export default function postMapper(post: mergedPostMap): mergedPostMap;
+export default function postMapper<T extends archiveMap>(post: T): T;
 /**
  * transform array into an mapped chunks
  * @param chunks
  * @returns
  */
-export declare function postChunksMapper<T extends any[][]>(chunks: T): T;
+export declare function postChunksMapper<T extends archiveMap[][]>(chunks: T): T;
 export declare type DumperMerged = Partial<ReturnType<typeof postChunksIterator>> & Partial<mergedPostMap> & Partial<archiveMap> & Partial<mergedPostMap> & Partial<postMap> & Record<string, unknown>;
 export interface DumperType extends DumperMerged {
     [key: string]: any;
@@ -88,14 +96,14 @@ export declare function simplifyDump<T extends any[]>(post: T, except?: string[]
  */
 export declare function post_chunks<T extends any[]>(arr?: T): {
     /** all posts */
-    posts: mergedPostMap[];
-    /** all posts chunks */
-    chunk: mergedPostMap[][];
+    posts: any[];
+    /** all posts chunks (used for pagination) */
+    chunk: any[][];
     /** all posts infinite scroll sitedata */
     sitedata: {
-        title: string;
+        title: any;
         thumbnail: string;
-        url: string;
+        url: any;
         excerpt: string;
     }[];
 };

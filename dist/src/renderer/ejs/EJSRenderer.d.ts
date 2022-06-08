@@ -1,11 +1,11 @@
 import { postMap } from '../../parser/post/parsePost';
-interface Override extends ejs.Options {
+interface OverrideEJSOptions extends ejs.Options {
     [key: string]: any;
 }
 /**
  * EJS Renderer Engine
  * @param parsed
- * @param override override {@link Override} object ejs options {@link ejs.Options}, page data {@link postMap} default empty object
+ * @param override override {@link OverrideEJSOptions} object ejs options {@link ejs.Options}, page data {@link postMap} default empty object
  * @returns rendered promise (Promise\<string\>)
  * renderer injection
  * ```js
@@ -21,5 +21,5 @@ interface Override extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export declare function EJSRenderer(parsed: Partial<postMap>, override?: Override): Promise<string>;
+export declare function EJSRenderer(parsed: Partial<postMap>, override?: OverrideEJSOptions): Promise<string>;
 export {};
