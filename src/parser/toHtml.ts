@@ -85,7 +85,9 @@ export function renderBodyMarkdown(parse: Partial<postMap>, verbose = false) {
 
   let body: string = parse.body; // || parse.content;
   if (typeof body != 'string')
-    throw new Error('cannot render undefined markdown body');
+    throw new Error(
+      'cannot render undefined markdown body. found ' + typeof body
+    );
 
   // extract code block first
   const re_code_block = /```[\s\S]*?```/gm;
