@@ -10,7 +10,7 @@ const filepath = join(root, filename);
 const tmp = join(__dirname, 'tmp');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 if (existsSync(filepath)) {
-  const isbeta = filepath.includes('-beta-');
+  const isbeta = filepath.includes('-');
   let newPath = join(root, 'release/production.tgz');
   if (isbeta) {
     newPath = join(root, 'release/development.tgz');
