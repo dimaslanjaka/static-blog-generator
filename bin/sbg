@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# binary for development only
+
+# node dist/src/bin/sbg.js "$@"
+ts-node src/bin/sbg.ts "$@"

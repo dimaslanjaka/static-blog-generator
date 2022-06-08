@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "rootDirs": [
+      "./src",
+      "./packages"
+    ],
+    "sourceRoot": "./src/",
+    "outDir": "./dist",
+  },
+  "exclude": [
+    "**/node_modules/**",
+    "**/tests/**",
+    "**/*.test.*"
+  ],
+  "include": [
+    "./gulpfile.ts",
+    "./src/bin"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "moduleResolution": "Node",
+    }
+  }
+}
