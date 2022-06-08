@@ -1,6 +1,8 @@
-import gulp from 'gulp';
+import { TaskCallback } from 'undertaker';
 
-gulp.task('deploy-firebase', (done) => {
+export const deployFirebase = (done?: TaskCallback) => {
   console.log('DEPLOY FIREBASE NOT YET IMPLEMENTED');
   if (typeof done == 'function') done();
-});
+};
+
+export default deployFirebase;
