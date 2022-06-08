@@ -1,6 +1,7 @@
+import { existsSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 import color from './color';
-import { cacheDir, existsSync, join, readFileSync, rm, write } from './filemanager';
+import { cacheDir, join, rm, write } from './filemanager';
 import { md5 } from './md5-file';
 
 type Func = (...args: any[]) => any;
@@ -25,7 +26,7 @@ class memoizer {
         const result = fn(...args);
         const content: ObjectCached = {
           type: self.determineType(result),
-          content: result,
+          content: result
         };
         write(find, content);
         return result;

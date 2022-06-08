@@ -1,12 +1,80 @@
 // noinspection DuplicatedCode
 
-import { ChildProcess, ChildProcessWithoutNullStreams, spawn, SpawnOptions } from 'child_process';
+import {
+  ChildProcess,
+  ChildProcessWithoutNullStreams,
+  SpawnOptions
+} from 'child_process';
+import spawn from 'cross-spawn';
 import process from 'process';
+import { Readable } from 'stream';
 import scheduler from './scheduler';
 
 class spawner {
   static children: ChildProcessWithoutNullStreams[] = [];
   private static onExit = false;
+
+  /**
+   * promises spawn
+   * @param options
+   * @param cmd
+   * @param args
+   * @returns
+   * @example
+   * spawner.promise({}, 'git', 'log', '-n', '1').then((res)=> console.log(res))
+   */
+  static promise(
+    options: null | SpawnOptions = null,
+    cmd: string,
+    ...args: string[]
+  ) {
+    return new Promise(
+      (
+        resolve: (returnargs: {
+          code: number;
+          stdout: string[] | Readable;
+          stderr: any;
+        }) => any,
+        reject: (returnargs: { args: string[]; err: Error }) => any
+      ) => {
+        if (options === null)
+          options = {
+            cwd: __dirname,
+            stdio: 'inherit'
+          };
+        const stdouts: string[] = [];
+        const stderrs: string[] = [];
+        const child = spawn(cmd, args, options);
+        // use event hooks to provide a callback to execute when data are available:
+        if (child.stdout !== null && child.stdout !== undefined)
+          child.stdout.on('data', function (data) {
+            stdouts.push(data.toString().trim());
+          });
+        if (child.stderr !== null && child.stderr !== undefined)
+          child.stderr.on('data', function (data) {
+            stderrs.push(data.toString().trim());
+          });
+        child.on('close', function (code) {
+          // Should probably be 'exit', not 'close'
+          // *** Process completed
+          return resolve({
+            code: code,
+            stdout: stdouts.length > 0 ? stdouts : child.stdout,
+            stderr:
+              stderrs.length > 0
+                ? stderrs
+                : stdouts.length === 0
+                ? child.stderr
+                : null
+          });
+        });
+        child.on('error', function (err) {
+          // *** Process creation failed
+          return reject({ args: args, err: err });
+        });
+      }
+    );
+  }
 
   /**
    * Spawn Commands
@@ -15,10 +83,15 @@ class spawner {
    * @param callback callback for children process
    */
   // eslint-disable-next-line no-unused-vars
-  static spawn(command: string, args?: string[], opt: SpawnOptions = {}, callback?: (path: ChildProcess) => any) {
+  static spawn(
+    command: string,
+    args?: string[],
+    opt: SpawnOptions = {},
+    callback?: (path: ChildProcess) => any
+  ) {
     const defaultOption: SpawnOptions = { stdio: 'pipe', detached: false };
     if (['npm', 'ts-node', 'tsc', 'npx', 'hexo'].includes(command)) {
-      command = /^win/.test(process.platform) ? `${command}.cmd` : command;
+      command = /^win/i.test(process.platform) ? `${command}.cmd` : command;
     }
     const child = spawn(command, args, Object.assign(defaultOption, opt));
     child.unref();
@@ -62,7 +135,11 @@ class spawner {
    * Kill all ChildProcessWithoutNullStreams[]
    */
   static children_kill() {
-    console.log('killing', spawner.children.length, spawner.children.length > 1 ? 'child processes' : 'child process');
+    console.log(
+      'killing',
+      spawner.children.length,
+      spawner.children.length > 1 ? 'child processes' : 'child process'
+    );
 
     for (let i = 0; i < spawner.children.length; i++) {
       const child = spawner.children[i];

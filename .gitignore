@@ -1,12 +1,32 @@
+# keep all dist files
+!dist
+!dist/*
+!dist/**/*
+dist/**/*.json
+
+# yarn v2
+.yarn/**/*.tgz
+.yarn/**/*.gz
+.yarn/**/*.zip
+
+# main excluded files
 *.log
-public/
+/db.json
+public/*
 .deploy*/
-#package-lock.json
-#yarn.lock
-firebase.js
+package-lock.backup
+yarn.lock.backup
+/firebase.js
 *.backup.*
+*.old.*
 *.private.*
 src/**/*.backup.ts
+/manage-repository
+*-backup
+
+# symlink as dependency
+/.bin
+/.yarn-metadata.json
 
 # downloaded library
 .DS_Store
@@ -41,4 +61,6 @@ temp
 *.7z
 *.rar
 *.tgz
-*.gz
+*.
+
+!release/*.tgz
