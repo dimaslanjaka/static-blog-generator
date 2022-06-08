@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "formulahendry.code-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "digitalbrainstem.javascript-ejs-support",
+    "iliazeus.vscode-ansi"
   ]
 }
