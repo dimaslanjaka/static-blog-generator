@@ -73,14 +73,14 @@ const helpers = {
   }
 };
 
-interface Override extends ejs.Options {
+interface OverrideEJSOptions extends ejs.Options {
   [key: string]: any;
 }
 
 /**
  * EJS Renderer Engine
  * @param parsed
- * @param override override {@link Override} object ejs options {@link ejs.Options}, page data {@link postMap} default empty object
+ * @param override override {@link OverrideEJSOptions} object ejs options {@link ejs.Options}, page data {@link postMap} default empty object
  * @returns rendered promise (Promise\<string\>)
  * renderer injection
  * ```js
@@ -98,7 +98,7 @@ interface Override extends ejs.Options {
  */
 export async function EJSRenderer(
   parsed: Partial<postMap>,
-  override: Override = {}
+  override: OverrideEJSOptions = {}
 ) {
   if (typeof parsed !== 'object') {
     console.log("'parsed' argument is empty");
