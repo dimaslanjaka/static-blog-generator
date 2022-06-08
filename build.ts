@@ -87,7 +87,9 @@ async function update_version() {
     getLatestCommitHash(join(__dirname, 'src'))
   ])
     .spread((info: GitInfo, srcInfo: string) => {
-      console.log(srcInfo, info.semver.version, info.semver.prerelease);
+      // add latest src folder commit hash as suffix
+      info.semver.version += '-' + srcInfo;
+
       if (pkg.version !== info.semver.version) {
         console.log(
           color['Yellow Orange']('updating version'),
