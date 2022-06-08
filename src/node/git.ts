@@ -42,7 +42,7 @@ export const getLatestCommitHash = async (path?: string, short = true) => {
     },
     ...args
   );
-  return res.stdout[0];
+  return res.stdout[0] as string;
 };
 
 /**
