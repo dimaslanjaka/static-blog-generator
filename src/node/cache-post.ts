@@ -4,6 +4,7 @@ import { mergedPostMap } from '../parser/post/postMapper';
 import config from '../types/_config';
 import { removeEmpties } from './array-utils';
 import { defaultResovableValue, pcache } from './cache';
+import { json_decode } from './JSON';
 import { md5 } from './md5-file';
 import memoizer from './memoize-fs';
 import { isMatch } from './string-utils';
@@ -52,7 +53,7 @@ export class CachePost {
  * @param post
  * @returns
  */
-function fixPost(post: Partial<postMap>) {
+function fixPost(post: postMap) {
   if (
     typeof post.metadata == 'object' &&
     typeof post.metadata.url == 'string'
@@ -72,7 +73,7 @@ function fixPost(post: Partial<postMap>) {
  * @param by
  * @returns
  */
-function order_by<T extends Partial<postMap>>(
+export function orderPostBy<T extends postMap>(
   array: T[],
   by: 'updated' | 'date' | '-updated' | '-date' | string
 ) {
@@ -109,11 +110,11 @@ function order_by<T extends Partial<postMap>>(
  * @returns array of {@link postResult}
  */
 export function getLatestPosts(
-  by: 'date' | 'updated' | '-date' | '-updated' = '-updated',
+  by: 'date' | 'updated' | '-date' | '-updated' | string = '-updated',
   max = 5
 ): postResult[] {
-  const posts: Partial<postMap>[] = getAllPosts();
-  const reorderPosts = order_by(posts, by); //removeEmpties(order_by(posts, by));
+  const posts: postMap[] = getAllPosts();
+  const reorderPosts = orderPostBy(posts, by); //removeEmpties(order_by(posts, by));
   //console.log('getLatestPosts', reorderPosts.length);
 
   return (
@@ -129,18 +130,19 @@ export function getLatestPosts(
 }
 
 /**
- * get all posts
- * @returns array of posts {@link CacheFile.getValues}
+ * get sorted all posts
+ * * sort options {@link config.index_generator.order_by}
+ * @returns sorted array of posts {@link CachePost.getAll}
  */
 export function getAllPosts() {
   const postCache = new CachePost();
   if (postCache.getTotal() < 1) return [];
-  return order_by(postCache.getAll(), config.index_generator.order_by)
-    .filter((post: Partial<postMap>) => post && post.metadata.type == 'post')
+  return orderPostBy(postCache.getAll(), config.index_generator.order_by)
+    .filter((post: postMap) => post && post.metadata.type == 'post')
     .map((post) => modifyPost(post))
     .map((post) => fixPost(post))
-    .map((post: string | Partial<postMap>) => {
-      if (typeof post == 'string') return JSON.parse(post);
+    .map((post: string | postMap) => {
+      if (typeof post == 'string') return json_decode<postMap>(post);
       return post;
     });
 }
