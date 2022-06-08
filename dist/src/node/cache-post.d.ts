@@ -14,17 +14,25 @@ export declare class CachePost {
     getTotal(): number;
 }
 /**
+ * order array
+ * @param array
+ * @param by
+ * @returns
+ */
+export declare function orderPostBy<T extends postMap>(array: T[], by: 'updated' | 'date' | '-updated' | '-date' | string): T[];
+/**
  * get latest posts
  * @param by order descending by `date` or default (`index_generator.order_by` in `_config.yml`)
  * @param max max result
  * @returns array of {@link postResult}
  */
-export declare function getLatestPosts(by?: 'date' | 'updated' | '-date' | '-updated', max?: number): postResult[];
+export declare function getLatestPosts(by?: 'date' | 'updated' | '-date' | '-updated' | string, max?: number): postResult[];
 /**
- * get all posts
- * @returns array of posts {@link CacheFile.getValues}
+ * get sorted all posts
+ * * sort options {@link config.index_generator.order_by}
+ * @returns sorted array of posts {@link CachePost.getAll}
  */
-export declare function getAllPosts(): any[];
+export declare function getAllPosts(): postMap[];
 /**
  * get total posts (no page)
  * @returns
