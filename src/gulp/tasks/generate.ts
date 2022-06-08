@@ -1,12 +1,15 @@
+import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { join, resolve, toUnix } from 'upath';
-import { existsSync, write } from '../../node/filemanager';
+import { write } from '../../node/filemanager';
 import config, { root } from '../../types/_config';
 import './generate-after';
-import './generate-archives';
+import './generate-assets';
 import './generate-feed';
 import './generate-posts';
 import './generate-sitemap';
+import './generate-template';
+import './generate/homepage';
 import './import';
 import './minify';
 

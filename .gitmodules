@@ -1,10 +1,3 @@
-[submodule "src-posts"]
-	path = src-posts
-	url = https://github.com/dimaslanjaka/dimaslanjaka.git
-	branch = posts
-[submodule "packages/safelink"]
-	path = packages/safelink
-	url = https://github.com/dimaslanjaka/safelink.git
-[submodule "packages/hexo-post-parser"]
-	path = packages/hexo-post-parser
-	url = https://github.com/dimaslanjaka/hexo-post-parser.git
+[submodule "themes"]
+	path = themes
+	url = https://github.com/dimaslanjaka/sbg-themes

@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import * as fs from 'fs';
-import { default as nodePath } from 'path';
-import upath from 'upath';
-import ErrnoException = NodeJS.ErrnoException;
-import { cwd as nodeCwd } from 'process';
-import 'js-prototypes';
 import Bluebird from 'bluebird';
-import glob = require('glob');
 import findCacheDir from 'find-cache-dir';
+import * as fs from 'fs';
+import * as fse from 'fs-extra';
+import minimatch from 'minimatch';
+import { default as nodePath } from 'path';
+import { cwd } from 'process';
+import upath from 'upath';
+import { removeEmpties } from './array-utils';
+import { json_encode } from './JSON';
+import glob = require('glob');
+
 /**
  * node_modules/.cache/${name}
  */
@@ -22,44 +25,32 @@ const modPath = nodePath as Mutable<typeof nodePath>;
 /**
  * Directory iterator recursive
  * @param dir
- * @param done
+ * @see {@link https://stackoverflow.com/a/66083078/6404439}
  */
-// eslint-disable-next-line no-unused-vars
-const walk = function (dir: fs.PathLike, done: (err: ErrnoException | null, results?: string[]) => any) {
-  let results = [];
-  fs.readdir(dir, function (err, list) {
-    if (err) return done(err);
-    let pending = list.length;
-    if (!pending) return done(null, results);
-    list.forEach(function (file) {
-      file = modPath.resolve(dir.toString(), file);
-      fs.stat(file, function (err, stat) {
-        if (stat && stat.isDirectory()) {
-          walk(file, function (err, res) {
-            results = results.concat(res);
-            if (!--pending) done(null, results);
-          });
-        } else {
-          results.push(file);
-          if (!--pending) done(null, results);
-        }
-      });
-    });
-  });
-};
+function* walkSync(dir: fs.PathLike): Generator<string> {
+  const files = fs.readdirSync(dir, { withFileTypes: true });
+  for (const file of files) {
+    if (file.isDirectory()) {
+      yield* walkSync(join(dir, file.name));
+    } else {
+      yield join(dir, file.name);
+    }
+  }
+}
 
 const filemanager = {
-  // eslint-disable-next-line no-unused-vars
-  readdirSync: (path: fs.PathLike, callback: (err: ErrnoException, results?: string[]) => any) => {
-    return walk(path, callback);
-  },
+  /**
+   * @see {@link walkSync}
+   */
+  readdirSync: walkSync,
 
   /**
    * Remove dir or file recursive synchronously (non-empty folders supported)
    * @param path
    */
   rmdirSync: (path: fs.PathLike, options: fs.RmOptions = {}) => {
-    if (fs.existsSync(path)) return fs.rmSync(path, Object.assign({ recursive: true }, options));
+    if (fs.existsSync(path))
+      return fs.rmSync(path, Object.assign({ recursive: true }, options));
   },
 
   /**
@@ -69,7 +60,11 @@ const filemanager = {
    * @param callback
    * @returns
    */
-  rm: (path: fs.PathLike, options: fs.RmOptions | fs.NoParamCallback = {}, callback?: fs.NoParamCallback) => {
+  rm: (
+    path: fs.PathLike,
+    options: fs.RmOptions | fs.NoParamCallback = {},
+    callback?: fs.NoParamCallback
+  ) => {
     if (fs.existsSync(path)) {
       if (typeof options == 'function') {
         return fs.rm(path, { recursive: true }, options);
@@ -91,6 +86,7 @@ const filemanager = {
    * Write to file recursively (synchronous)
    * @param path
    * @param content
+   * @param append append to file?
    * @returns Promise.resolve(path);
    * @example
    * // write directly
@@ -100,17 +96,21 @@ const filemanager = {
    * // or log using async
    * input.then((file)=> console.log('written to', file));
    */
-  write: (path: fs.PathLike, content: any) => {
+  write: (path: fs.PathLike, content: any, append = false) => {
     const dir = modPath.dirname(path.toString());
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     if (typeof content != 'string') {
       if (typeof content == 'object') {
-        content = JSON.stringifyWithCircularRefs(content, 4);
+        content = json_encode(content, 4);
       } else {
         content = String(content);
       }
     }
-    fs.writeFileSync(path, content);
+    if (!append) {
+      fs.writeFileSync(path, content);
+    } else {
+      fs.appendFileSync(path, content);
+    }
     return Bluebird.resolve(path);
   },
 
@@ -121,31 +121,133 @@ const filemanager = {
    * @returns
    */
   mkdirSync: (path: fs.PathLike, options: fs.MakeDirectoryOptions = {}) => {
-    if (!existsSync(path)) return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
-  },
+    if (!fs.existsSync(path))
+      return fs.mkdirSync(path, Object.assign({ recursive: true }, options));
+  }
 };
 
 export function removeMultiSlashes(str: string) {
   return str.replace(/(\/)+/g, '$1');
 }
 
-export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
+/**
+ * copy dir or file recursive
+ * @param src source path of file or folder
+ * @param dest destination path
+ */
+export function copy(src: string, dest: string) {
+  if (!fs.existsSync(src)) throw new Error(`${src} not exists`);
+
+  const dirDest = dirname(dest);
+  const stat = fs.statSync(src);
+  if (!fs.existsSync(dirDest)) mkdirSync(dirDest, { recursive: true });
+  if (stat.isFile()) fs.copyFileSync(src, dest);
+  if (stat.isDirectory()) copyDir(src, dest);
+}
+
+/**
+ * copy directory recursive
+ * @param source
+ * @param dest
+ * @param callback
+ * @returns
+ */
+export function copyDir(
+  source: string,
+  dest: string,
+  callback = function (err: any | null) {
+    if (err) {
+      console.error(err);
+      console.error('error');
+    } else {
+      console.log('success!');
+    }
+  }
+) {
+  return fse.copy(source, dest, callback);
+}
+
+interface GlobSrcOptions extends glob.IOptions {
+  /**
+   * ignore pattern will be processed by minimatch
+   */
+  use?: 'minimatch';
+}
+
+/**
+ * minimatch advanced filter single pattern
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @param pattern
+ * @param str
+ * @returns
+ */
+export function minimatch_filter(pattern: string | RegExp, str: string) {
+  if (typeof pattern === 'string') {
+    return (
+      minimatch(str, pattern, { matchBase: true, dot: true }) ||
+      str.includes(pattern)
+    );
+  } else if (pattern instanceof RegExp) {
+    return pattern.test(str);
+  }
+}
+
+/**
+ * minimatch advanced filter multiple pattern
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @param patterns
+ * @param str
+ * @returns
+ * @example
+ * ['unit/x', 'sh', 'xxx', 'shortcodes/xxx'].filter((file) => {
+ *  const patterns = ["unit", "shortcodes"];
+ *  return minimatch_array_filter(patterns, file);
+ * }); // ['sh', 'xxx']
+ */
+export function minimatch_array_filter(patterns: string[], str: string) {
+  const map = patterns.map((pattern) => minimatch_filter(pattern, str));
+  return map.every((v: boolean) => v === false);
+}
+
+/**
+ * glob source (gulp.src like)
+ * @param pattern
+ * @param opts
+ * @see {@link https://codesandbox.io/s/minimatch-file-list-y22tf8?file=/src/index.js}
+ * @returns
+ */
+export const globSrc = function (pattern: string, opts: GlobSrcOptions = {}) {
   return new Bluebird((resolve: (arg: string[]) => any, reject) => {
-    const opt: glob.IOptions = Object.assign({ cwd: cwd(), dot: true, matchBase: true }, opts);
+    const opt = Object.assign({ cwd: cwd(), dot: true, matchBase: true }, opts);
+    let excludePattern: Mutable<typeof opt.ignore>;
+    if (opt.use) {
+      excludePattern = opt.ignore as Mutable<typeof opt.ignore>;
+      opt.ignore = undefined;
+    }
     glob(pattern, opt, function (err, files) {
       if (err) {
         return reject(err);
       }
-      resolve(files.map(upath.toUnix));
+      let result = files.map(upath.toUnix);
+      if (opt.use) {
+        result = files.map(upath.toUnix).filter((file) => {
+          if (typeof excludePattern === 'string') {
+            return minimatch_filter(excludePattern, file);
+          } else if (Array.isArray(excludePattern)) {
+            return minimatch_array_filter(excludePattern, file);
+          }
+          return false;
+        });
+      }
+      return resolve(result);
     });
   });
 };
 
 export default filemanager;
 export const normalize = upath.normalize;
-export const writeFileSync = filemanager.write;
-export const cwd = () => upath.toUnix(nodeCwd());
-export const dirname = (str: string) => removeMultiSlashes(upath.toUnix(upath.dirname(str)));
+export const dirname = (str: string) =>
+  removeMultiSlashes(upath.toUnix(upath.dirname(str)));
 interface ResolveOpt {
   [key: string]: any;
   /**
@@ -163,12 +265,12 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
   const res = removeMultiSlashes(upath.toUnix(upath.resolve(str)));
   opt = Object.assign(
     {
-      validate: false,
+      validate: false
     },
     opt
   );
   if (opt.validate) {
-    if (existsSync(res)) return res;
+    if (fs.existsSync(res)) return res;
     return null;
   }
   return res;
@@ -179,12 +281,16 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
  * @param opt
  * @returns
  */
+export function read(path: string): Buffer;
+export function read(path: string, opt?: BufferEncoding): string;
 export function read(
   path: string,
   opt?: Parameters<typeof fs.readFileSync>[1]
 ): ReturnType<typeof fs.readFileSync> | null {
-  if (existsSync(path)) return readFileSync(path, opt);
+  if (fs.existsSync(path)) return fs.readFileSync(path, opt);
+  return null;
 }
+
 /**
  * smart join to unix path
  * * removes empty/null/undefined
@@ -192,11 +298,10 @@ export function read(
  * @returns
  */
 export const join = (...str: any[]) => {
-  str = str.map((s) => String(s)).removeEmpties();
+  str = removeEmpties(str.map((s) => String(s)));
   return removeMultiSlashes(upath.toUnix(nodePath.join(...str)));
 };
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
-export const { existsSync, readFileSync, appendFileSync, statSync } = fs;
 export const { basename, relative, extname } = upath;
 export const PATH_SEPARATOR = modPath.sep;

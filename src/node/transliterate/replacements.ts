@@ -2050,7 +2050,7 @@ const replacements = [
   ['🆆', 'W'],
   ['🆇', 'X'],
   ['🆈', 'Y'],
-  ['🆉', 'Z'],
+  ['🆉', 'Z']
 ];
 
 export default replacements;

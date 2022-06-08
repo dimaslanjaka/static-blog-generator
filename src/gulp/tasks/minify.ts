@@ -2,8 +2,8 @@ import gulp from 'gulp';
 import htmlmin from 'html-minifier-terser';
 import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
-import { cwd, globSrc, join, read, write } from '../../node/filemanager';
-import config from '../../types/_config';
+import { globSrc, join, read, write } from '../../node/filemanager';
+import config, { cwd } from '../../types/_config';
 
 const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
 /**
@@ -13,7 +13,10 @@ const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
  * @param callback
  * @returns
  */
-function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (() => any)) {
+function MinifyHTML(
+  options?: htmlmin.Options,
+  callback?: CallableFunction & (() => any)
+) {
   const workdir = join(cwd(), config.public_dir);
   return globSrc('**/*.html', { cwd: workdir })
     .map((path) => join(workdir, path))
@@ -30,7 +33,7 @@ function MinifyHTML(options?: htmlmin.Options, callback?: CallableFunction & (()
 }
 
 gulp.task('generate:minify-html', (done?: TaskCallback) => {
-  MinifyHTML(
+  return MinifyHTML(
     {
       minifyCSS: true,
       minifyJS: true,
@@ -38,7 +41,7 @@ gulp.task('generate:minify-html', (done?: TaskCallback) => {
       removeComments: true,
       removeEmptyAttributes: true,
       ignoreCustomComments: [/^!/, /^\s*#/],
-      caseSensitive: true,
+      caseSensitive: true
     },
     done
   );
