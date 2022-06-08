@@ -28,7 +28,7 @@
     "test": "npm-run-all -s test:**",
     "test:git": "cd tests && npm i dimaslanjaka/static-blog-generator#dev && node index.js",
     "test:mocha": "env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
-    "php": "php -S localhost:4002 -t docs",
+    "php": "php-server",
     "eslint": "npm-run-all -s  eslint:**",
     "eslint:fix": "ts-node src/eslint.ts",
     "depcheck": "depcheck > dump-unused.log",
