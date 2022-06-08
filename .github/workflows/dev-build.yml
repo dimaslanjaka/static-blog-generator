@@ -62,9 +62,11 @@ jobs:
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: npm install
+    - run: npm install https://github.com/dimaslanjaka/sbg-themes
 
     - name: fix module resolutions
       continue-on-error: true
+      if: ${{ disabled }}
       run: |
         git add package-lock.json
         git commit -m "[${{ steps.vars.outputs.hash }}] update module resolutions"
