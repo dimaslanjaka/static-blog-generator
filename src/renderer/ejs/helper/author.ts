@@ -61,8 +61,8 @@ export function author_link(page: postMap['metadata'] | typeof config) {
   if (typeof author == 'object') {
     if (author['link']) return author['link'];
   }
-  if (config.author) {
-    if (config.author.link) return config.author.link;
+  if (config['author']) {
+    if (config['author']['link']) return String(config['author']['link']);
   }
   return config.url;
 }
