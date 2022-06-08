@@ -1,8 +1,11 @@
 name: Docs Build
 
+# Only trigger, when the build workflow succeeded
 on:
-  push:
-    branches: [ dev ]
+  workflow_run:
+    workflows: ["Dev Build"]
+    types:
+      - completed
 
 # cancel previous workflows, run only one workflow
 #concurrency:
