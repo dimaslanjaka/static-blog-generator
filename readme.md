@@ -1,10 +1,3 @@
----
-layout: default
-title: Homepage
-subtitle: Static Blog Generator
-date: 2022-06-06
----
-
 # SBG (Static Blog Generator) Project
 Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
 
@@ -41,10 +34,10 @@ Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn't suppo
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)
 - 1000+ posts supported
 - cross-platform supported
-- > Support required packages including: node-gyp, jsdom, node-libcurl, imagemin, etc:
-- - linux recommended (used default c++)
-- - windows need msvs [[read gist](https://gist.github.com/jtrefry/fd0ea70a89e2c3b7779c)]
-- - android termux need c++
+> Support required packages including: node-gyp, jsdom, node-libcurl, imagemin, etc:
+- linux recommended (used default c++)
+- windows need msvs [[read gist](https://gist.github.com/jtrefry/fd0ea70a89e2c3b7779c)]
+- android termux need c++
 ```bash
 pkg install clang -y
 # or
