@@ -27,6 +27,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
+        cache: 'npm'
 
     # https://stackoverflow.com/a/61699863/6404439
     # ${{ steps.vars.outputs.branch }}
@@ -61,7 +62,8 @@ jobs:
         git submodule foreach git submodule update -i -r
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: npm install https://github.com/dimaslanjaka/sbg-themes
+    - run: npm install
+    - run: npm install 'dimaslanjaka/sbg-themes.git'
 
     - name: Build
       continue-on-error: true
