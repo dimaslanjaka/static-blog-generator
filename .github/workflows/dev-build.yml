@@ -27,7 +27,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16'
-        cache: 'npm'
 
     # https://stackoverflow.com/a/61699863/6404439
     # ${{ steps.vars.outputs.branch }}
