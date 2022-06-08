@@ -1,7 +1,8 @@
+import Bluebird from 'bluebird';
 import { spawn } from 'child_process';
 import fs, { writeFileSync } from 'fs';
 import { writeFile } from 'fs-extra';
-import { gitDescribe } from 'git-describe';
+import { gitDescribe, GitInfo } from 'git-describe';
 import moment from 'moment-timezone';
 import readline from 'readline';
 import { join } from 'upath';
@@ -78,15 +79,15 @@ async function update_guid() {
 
 /**
  * update version package.json
+ * * apply version by folder src latest commit
  */
 async function update_version() {
-  gitDescribe(join(__dirname, 'src'))
-    .then((info) => {
-      info['v-old'] = pkg.version;
-      const version = `${info.semver.major}.${info.semver.minor}.${info.semver.patch}-${info.distance}-${info.hash}`;
-      info['v-new'] = version;
-      console.dir(info);
-
+  Bluebird.all([
+    gitDescribe(join(__dirname, 'src')),
+    getLatestCommitHash(join(__dirname, 'src'))
+  ])
+    .spread((info: GitInfo, srcInfo) => {
+      console.log(srcInfo, info.semver.version);
       if (pkg.version !== info.semver.version) {
         console.log(
           color['Yellow Orange']('updating version'),
