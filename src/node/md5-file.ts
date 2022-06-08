@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import fs from 'fs';
+import { inspect } from 'util';
 
 export function md5FileSync(path: string) {
   let fileBuffer: Buffer = Buffer.from(path);
@@ -21,7 +22,10 @@ export function md5(data: string) {
     if (typeof data !== 'string') {
       throw new Error(
         'The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received type ' +
-          typeof data
+          typeof data +
+          ' (' +
+          inspect(data) +
+          ') '
       );
     } else {
       throw new Error("the 'data' argument is empty");
