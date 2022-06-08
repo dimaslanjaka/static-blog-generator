@@ -34,7 +34,8 @@ Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn't suppo
 - github pages deployer (merged instead clean old files to syncronize with cache strategy)
 - 1000+ posts supported
 - cross-platform supported
-> Support required packages including: node-gyp, jsdom, node-libcurl, imagemin, etc:
+
+## Requirements
 - linux recommended (used default c++)
 - windows need msvs [[read gist](https://gist.github.com/jtrefry/fd0ea70a89e2c3b7779c)]
 - android termux need c++
