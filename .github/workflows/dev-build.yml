@@ -2,7 +2,7 @@ name: Dev Build
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
 
 # cancel previous workflows, run only one workflow
 #concurrency:
