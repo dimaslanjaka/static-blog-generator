@@ -17,28 +17,28 @@ measure
   .then((m) => m.run('generate template', generateTemplate))
   .then((m) =>
     m.run('generate homepage', () => {
-      const opt = getHomepageProperties()
+      const opt = Bluebird.all(getHomepageProperties())
         .map((archive) => modifyPost(archive, { merge: true, cache: false }))
-        .filter((archive) => archive);
+        .filter(
+          (archive) => archive !== null && typeof archive !== 'undefined'
+        );
       write(join(__dirname, 'tmp/homepage/rendered-opt.log'), opt);
-      if (opt.some((archive) => archive === null)) {
-        return console.error('some archive is null');
-      } else {
-        Bluebird.all(opt).each(async (property) => {
-          const pagePath =
-            property.page_now > 0
-              ? config.archive_dir +
-                '/page/' +
-                property.page_now +
-                '/index.html'
-              : 'index.html';
-          const saveTo = join(post_generated_dir, pagePath);
-          const rendered = await EJSRenderer(property);
-          write(join(__dirname, 'tmp/homepage/rendered.html'), rendered);
-          write(saveTo, rendered);
-          console.log('saved', saveTo);
-        });
-      }
+      Bluebird.all(opt).each(async (property) => {
+        // fix title
+        if (property.page_now === 0) {
+          property.title = null;
+          property.metadata.title = null;
+        }
+        const pagePath =
+          property.page_now > 0
+            ? config.archive_dir + '/page/' + property.page_now + '/index.html'
+            : 'index.html';
+        const saveTo = join(post_generated_dir, pagePath);
+        const rendered = await EJSRenderer(property);
+        write(join(__dirname, 'tmp/homepage/rendered.html'), rendered);
+        write(saveTo, rendered);
+        console.log('saved', saveTo);
+      });
     })
   )
   //.then((m) => m.run('generate tags', generateIndex(getChunkOf('tag'))))
