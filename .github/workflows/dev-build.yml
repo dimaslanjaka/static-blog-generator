@@ -60,7 +60,7 @@ jobs:
         git submodule foreach git submodule update -i -r
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
-    - run: npm install
+    - run: npm ci
     - run: npm un sbg-themes && npm install -O https://github.com/dimaslanjaka/sbg-themes.git
     #- run: npm install -O 'https://gitpkg.now.sh/dimaslanjaka/sbg-themes.git'
 
