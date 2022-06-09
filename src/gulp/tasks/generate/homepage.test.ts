@@ -12,15 +12,15 @@ import { getHomepageProperties } from './getArchiveProperties';
 
 const measure = new MeasureTime();
 
-measure
-  .run('generate assets', generateAssets)
-  .then((m) => m.run('generate template', generateTemplate))
-  .then((m) =>
-    m.run('generate homepage', () => {
+export default async function homepageTest() {
+  try {
+    const m = await measure.run('generate assets', generateAssets);
+    await m.run('generate template', generateTemplate);
+    await m.run('generate homepage', () => {
       const opt = Bluebird.all(getHomepageProperties())
         .map((archive) => modifyPost(archive, { merge: true, cache: false }))
         .filter(
-          (archive) => archive !== null && typeof archive !== 'undefined'
+          (archive_1) => archive_1 !== null && typeof archive_1 !== 'undefined'
         );
       write(join(__dirname, 'tmp/homepage/rendered-opt.log'), opt);
       Bluebird.all(opt).each(async (property) => {
@@ -39,22 +39,12 @@ measure
         write(saveTo, rendered);
         console.log('saved', saveTo);
       });
-    })
-  )
-  //.then((m) => m.run('generate tags', generateIndex(getChunkOf('tag'))))
-  .then((m) => m.run('npm install', installNpm))
-  .catch((e) => {
+    });
+    return await m.run('npm install', installNpm);
+  } catch (e) {
     console.error(e);
-  });
-
-/*
-
-measure
-  //.run('generate homepage', generateIndex, 'homepage')
-  //.then(() => measure.run('generate all archive', generateIndex, 'all'))
-  //.then(() => measure.run('generate archive page 1', generateIndex, 1))
-  .run('generate tags', generateIndex, getChunkOf)
-  .then((c) => c.run('npm install public directory', installNpm));*/
+  }
+}
 
 function installNpm() {
   console.log('spawning on', post_generated_dir);
