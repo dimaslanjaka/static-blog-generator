@@ -11,6 +11,7 @@ import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
 import { excerpt } from '../../../renderer/ejs/helper/excerpt';
 import config, { cwd, post_generated_dir } from '../../../types/_config';
 import { getChunkOf } from './getChunkOf';
+import homepageTest from './homepage.test';
 
 let logname = color['Desert Sand']('[generate][index]');
 
@@ -195,6 +196,8 @@ export async function generateSingleIndex(
     }
   }
 }
+
+gulp.task('test:generate:index', homepageTest);
 
 gulp.task('generate:categories', async () => {});
 gulp.task('generate:tags', async () => {});
