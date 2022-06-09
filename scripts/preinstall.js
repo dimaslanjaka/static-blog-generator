@@ -31,6 +31,12 @@ if (fs.existsSync(path.join(root, '.git'))) {
 ].forEach((loc) => {
   const src = path.join(__dirname, '..', loc);
   const dist = path.join(__dirname, '../dist', loc);
-  fs.writeFileSync(src, '{}');
-  fs.writeFileSync(dist, '{}');
+  try {
+    fs.mkdirSync(path.dirname(src), { recursive: true });
+    fs.mkdirSync(path.dirname(dist), { recursive: true });
+    fs.writeFileSync(src, '{}');
+    fs.writeFileSync(dist, '{}');
+  } catch {
+    //
+  }
 });
