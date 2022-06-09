@@ -61,7 +61,7 @@ const parsePost = async (
     fix: true,
     sourceFile: path
   };
-  if (typeof options === 'object' && options !== null) {
+  if (options !== null && typeof options !== 'undefined') {
     options = deepmerge(default_options, options);
   }
   let parse = await moduleParsePost(content || path, options);
