@@ -52,9 +52,11 @@ gulp.task('sbg:docs', async () => {
     .on('end', async () => {
       await git({ cwd: dest }, 'add', '.');
       await git({ cwd: dest }, 'add', '-A');
-      const latestCommit = await getLatestCommitHash(__dirname);
+      const latestCommit = await getLatestCommitHash(__dirname, {
+        cwd: __dirname
+      });
       const msg = `update page from ${latestCommit}`;
       await git({ cwd: dest }, 'commit', '-m', msg);
-      //await git(spawnOpt, 'push', 'origin', branch);
+      await git(spawnOpt, 'push', 'origin', branch);
     });
 });
