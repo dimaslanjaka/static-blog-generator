@@ -10,9 +10,9 @@ export default gulp;
 
 // deploy to https://github.com/dimaslanjaka/static-blog-generator.git#compiler-jekyll
 gulp.task('sbg:docs', async () => {
-  const dest = join(__dirname, '.deploy_docs');
+  const dest = join(__dirname, 'public');
   const repo = 'https://github.com/dimaslanjaka/static-blog-generator.git';
-  const branch = 'compiler-jekyll';
+  const branch = 'gh-pages';
   const spawnOpt: Parameters<typeof git>[0] = {
     cwd: dest,
     stdio: 'inherit',
