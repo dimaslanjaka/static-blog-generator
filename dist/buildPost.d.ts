@@ -4,5 +4,5 @@ import { postMap } from './parsePost';
  * @param parsed parsed post return {@link parsePost}
  * @returns
  */
-export declare function buildPost(parsed: Partial<postMap>): string;
+export declare function buildPost(parsed: Partial<postMap>): any;
 export default buildPost;
