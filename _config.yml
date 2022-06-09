@@ -229,9 +229,9 @@ deploy:
   # deploy type git
   type: git
   # repo url
-  repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io
+  repo: https://github.com/dimaslanjaka/static-blog-generator.git
   # repo branch
-  branch: master
+  branch: gh-pages
   # repo user name
   name: dimaslanjaka
   # repo user email
