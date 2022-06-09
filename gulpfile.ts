@@ -32,11 +32,19 @@ gulp.task('sbg:docs', async () => {
   await git(spawnOpt, 'config', 'user.email', 'dimaslanjaka@gmail.com');
   await git(spawnOpt, 'config', 'user.name', 'dimaslanjaka');
 
-  if (gitInitialized)
+  if (gitInitialized) {
+    // reset commit as latest origin branch
     await git({ cwd: dest }, 'reset', '--hard', 'origin/' + branch);
+  }
+  // fetch origin
   await git(spawnOpt, 'fetch', 'origin');
+  // checkout origin branch
   await git({ cwd: dest }, 'checkout', branch);
+  // setup merge on pull strategy
+  await git({ cwd: dest }, 'config', 'pull.rebase', 'false');
+  // pulling
   await git(spawnOpt, 'pull');
+  // process local files
   gulp.src(join(__dirname, 'readme.md')).pipe(gulp.dest(dest));
   gulp
     .src([join(__dirname, 'src', '**/*.md'), '!**/tmp'])
