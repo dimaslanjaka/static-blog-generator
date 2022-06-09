@@ -147,12 +147,12 @@ function parsePost(target, options = {}) {
             // @todo set default category and tags
             if (!meta.category)
                 meta.category = [];
-            if (config.default_category && !meta.category.length)
-                meta.category.push(config.default_category);
+            if (options.config.default_category && !meta.category.length)
+                meta.category.push(options.config.default_category);
             if (!meta.tags)
                 meta.tags = [];
-            if (config.default_tag && !meta.tags.length)
-                meta.tags.push(config.default_tag);
+            if (options.config.default_tag && !meta.tags.length)
+                meta.tags.push(options.config.default_tag);
             // @todo set default date post
             if (!meta.date)
                 meta.date = (0, dateMapper_1.moment)().format();
@@ -186,7 +186,7 @@ function parsePost(target, options = {}) {
             }
             // @todo fix post author
             if (options.fix) {
-                const author = meta.author || config.author;
+                const author = meta.author || options.config.author;
                 if (!meta.author && author) {
                     meta.author = author;
                 }
@@ -211,7 +211,7 @@ function parsePost(target, options = {}) {
                 meta.subtitle = meta.excerpt;
             }
             else {
-                const newExcerpt = `${meta.title} - ${config.title}`;
+                const newExcerpt = `${meta.title} - ${options.config.title}`;
                 meta.description = newExcerpt;
                 meta.subtitle = newExcerpt;
                 meta.excerpt = newExcerpt;
@@ -231,15 +231,16 @@ function parsePost(target, options = {}) {
             // @todo fix default category and tags
             if (options.fix) {
                 // remove uncategorized if programming category pushed
-                if (config.default_category)
-                    if (meta.category.includes(config.default_category) &&
+                if (options.config.default_category)
+                    if (meta.category.includes(options.config.default_category) &&
                         meta.category.length > 1) {
-                        meta.category = meta.category.filter((e) => e !== config.default_category);
+                        meta.category = meta.category.filter((e) => e !== options.config.default_category);
                     }
                 // @todo remove untagged if programming category pushed
-                if (config.default_tag)
-                    if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
-                        meta.tags = meta.tags.filter((e) => e !== config.default_tag);
+                if (options.config.default_tag)
+                    if (meta.tags.includes(options.config.default_tag) &&
+                        meta.tags.length > 1) {
+                        meta.tags = meta.tags.filter((e) => e !== options.config.default_tag);
                     }
             }
             // @todo remove duplicated metadata photos
@@ -305,7 +306,7 @@ function parsePost(target, options = {}) {
                 if (!meta.url) {
                     homepage.pathname = (0, utils_2.replaceArr)(publicFile, [
                         (0, upath_1.toUnix)(process.cwd()),
-                        config.source_dir + '/_posts/',
+                        options.config.source_dir + '/_posts/',
                         'src-posts/',
                         '_posts/'
                     ], '/')
@@ -328,6 +329,9 @@ function parsePost(target, options = {}) {
                         meta.type = 'page';
                     }
                 }
+            }
+            if (meta.type && !meta.layout && options.config.generator.type) {
+                meta.layout = meta.type;
             }
             if (typeof options === 'object') {
                 // @todo format dates
@@ -356,8 +360,9 @@ function parsePost(target, options = {}) {
                     }
                     if (body) {
                         if (sourceFile) {
-                            if (shortcodes.include)
+                            if (shortcodes.include) {
                                 body = (0, include_1.parseShortCodeInclude)(sourceFile, body);
+                            }
                             if (shortcodes.now)
                                 body = (0, time_1.shortcodeNow)(sourceFile, body);
                             if (shortcodes.script)
