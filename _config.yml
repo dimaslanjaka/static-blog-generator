@@ -47,3 +47,9 @@ algolia:
     index_name: hexo_zh-cn
 twitter: hexojs
 github: hexojs/hexo
+
+## Static blog generator config
+
+generator:
+  cache: true
+  type: jekyll
