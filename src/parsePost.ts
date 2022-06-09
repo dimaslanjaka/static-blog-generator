@@ -242,11 +242,11 @@ export async function parsePost(
 
     // @todo set default category and tags
     if (!meta.category) meta.category = [];
-    if (config.default_category && !meta.category.length)
-      meta.category.push(config.default_category);
+    if (options.config.default_category && !meta.category.length)
+      meta.category.push(options.config.default_category);
     if (!meta.tags) meta.tags = [];
-    if (config.default_tag && !meta.tags.length)
-      meta.tags.push(config.default_tag);
+    if (options.config.default_tag && !meta.tags.length)
+      meta.tags.push(options.config.default_tag);
 
     // @todo set default date post
     if (!meta.date) meta.date = moment().format();
@@ -279,7 +279,7 @@ export async function parsePost(
 
     // @todo fix post author
     if (options.fix) {
-      const author = meta.author || config.author;
+      const author = meta.author || options.config.author;
       if (!meta.author && author) {
         meta.author = author;
       }
@@ -302,7 +302,7 @@ export async function parsePost(
       meta.description = meta.excerpt;
       meta.subtitle = meta.excerpt;
     } else {
-      const newExcerpt = `${meta.title} - ${config.title}`;
+      const newExcerpt = `${meta.title} - ${options.config.title}`;
       meta.description = newExcerpt;
       meta.subtitle = newExcerpt;
       meta.excerpt = newExcerpt;
@@ -324,19 +324,22 @@ export async function parsePost(
     // @todo fix default category and tags
     if (options.fix) {
       // remove uncategorized if programming category pushed
-      if (config.default_category)
+      if (options.config.default_category)
         if (
-          meta.category.includes(config.default_category) &&
+          meta.category.includes(options.config.default_category) &&
           meta.category.length > 1
         ) {
           meta.category = meta.category.filter(
-            (e) => e !== config.default_category
+            (e) => e !== options.config.default_category
           );
         }
       // @todo remove untagged if programming category pushed
-      if (config.default_tag)
-        if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
-          meta.tags = meta.tags.filter((e) => e !== config.default_tag);
+      if (options.config.default_tag)
+        if (
+          meta.tags.includes(options.config.default_tag) &&
+          meta.tags.length > 1
+        ) {
+          meta.tags = meta.tags.filter((e) => e !== options.config.default_tag);
         }
     }
 
@@ -408,7 +411,7 @@ export async function parsePost(
           publicFile,
           [
             toUnix(process.cwd()),
-            config.source_dir + '/_posts/',
+            options.config.source_dir + '/_posts/',
             'src-posts/',
             '_posts/'
           ],
@@ -435,7 +438,7 @@ export async function parsePost(
       }
     }
 
-    if (meta.type && !meta.layout) {
+    if (meta.type && !meta.layout && options.config.generator.type) {
       meta.layout = meta.type;
     }
 
