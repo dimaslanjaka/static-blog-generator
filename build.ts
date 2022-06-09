@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import { exec, spawn, SpawnOptions } from 'child_process';
 import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
@@ -20,10 +21,10 @@ if (!process.env['GITHUB_WORKFLOW']) {
           JSON.stringify(pkg, null, 2)
         );
         exec('npm install', () => {
-          Promise.all([
+          Bluebird.all([
             git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'package.json'),
             git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'package-lock.json')
-          ]).then(() => {
+          ]).spread((_pkg, _lock) => {
             git(
               { cwd: __dirname, stdio: 'ignore' },
               'commit',
