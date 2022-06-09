@@ -435,6 +435,10 @@ export async function parsePost(
       }
     }
 
+    if (meta.type && !meta.layout) {
+      meta.layout = meta.type;
+    }
+
     if (typeof options === 'object') {
       // @todo format dates
       if (options.formatDate) {
@@ -466,8 +470,9 @@ export async function parsePost(
 
         if (body) {
           if (sourceFile) {
-            if (shortcodes.include)
+            if (shortcodes.include) {
               body = parseShortCodeInclude(sourceFile, body);
+            }
             if (shortcodes.now) body = shortcodeNow(sourceFile, body);
             if (shortcodes.script) body = shortcodeScript(sourceFile, body);
             if (shortcodes.css) body = shortcodeCss(sourceFile, body);
