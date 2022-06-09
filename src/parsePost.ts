@@ -17,7 +17,8 @@ import { parseShortCodeInclude } from './shortcodes/include';
 import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
-import config from './types/_config';
+import { postMap } from './types/postMap';
+import config, { ProjectConfig } from './types/_config';
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
@@ -30,85 +31,6 @@ const cwd = () => toUnix(process.cwd());
  * Hexo Generated Dir
  */
 const post_generated_dir = join(cwd(), config.public_dir);
-
-/**
- * post metadata information (title, etc)
- */
-export interface postMeta {
-  [key: string]: any;
-  /**
-   * Article language code
-   */
-  lang?: string;
-  /**
-   * Article title
-   */
-  title: string;
-  /**
-   * published indicator
-   * * 1 / true = published
-   * * 0 / false = drafted
-   */
-  published?: boolean | 1 | 0;
-  /**
-   * post description
-   */
-  description?: string;
-  /**
-   * Auto generated fixed uuid
-   */
-  uuid?: string;
-  /**
-   * Post modified date
-   */
-  updated?: string | dateMapper;
-  /**
-   * Author metadata
-   */
-  author?: string | postAuthor;
-  /**
-   * Post published date
-   */
-  date?: string | dateMapper;
-  /**
-   * Post tags
-   */
-  tags?: string[];
-  /**
-   * Post categories
-   */
-  category?: string[];
-  /**
-   * All photos of post/page
-   */
-  photos?: string[];
-  /**
-   * thumbnail
-   */
-  cover?: string;
-  /**
-   * thumbnail (unused when `cover` property is settled)
-   */
-  thumbnail?: string;
-  /**
-   * Post moved indicator
-   * * canonical should be replaced to this url
-   * * indicate this post was moved to another url
-   */
-  redirect?: string;
-  /**
-   * full url
-   */
-  url?: string;
-  /**
-   * just pathname
-   */
-  permalink?: string;
-  /**
-   * archive (index, tags, categories)
-   */
-  type?: 'post' | 'page' | 'archive';
-}
 
 /**
  * Post author object type
@@ -127,44 +49,6 @@ export interface postAuthor extends Object {
    * Author website url
    */
   link?: string;
-}
-
-export interface postMap extends Object {
-  [key: string]: any;
-  /**
-   * Article metadata as string
-   */
-  metadataString?: string;
-  fileTree?: {
-    /**
-     * [post source] post file from `src-posts/`
-     */
-    source?: string;
-    /**
-     * [public source] post file from source_dir _config.yml
-     */
-    public?: string;
-  };
-  /**
-   * _config.yml
-   */
-  config?: DeepPartial<typeof config> | null;
-  /**
-   * Article metadata
-   */
-  metadata?: postMeta;
-  /**
-   * Article body
-   */
-  body?: string;
-  /**
-   * Article body (unused when property `body` is settled)
-   */
-  content?: string;
-}
-
-export interface Config extends DeepPartial<typeof config> {
-  [key: string]: any;
 }
 
 export interface ParseOptions {
@@ -217,7 +101,7 @@ export interface ParseOptions {
   /**
    * Site Config
    */
-  config?: Config;
+  config?: ProjectConfig;
   /**
    * run auto fixer such as thumbnail, excerpt, etc
    */
