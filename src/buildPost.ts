@@ -1,5 +1,6 @@
 import * as yaml from 'yaml';
-import { parsePost, postMap } from './parsePost';
+import { parsePost } from './parsePost';
+import { postMap } from './types/postMap';
 
 /**
  * Rebuild {@link parsePost} result to markdown post back
