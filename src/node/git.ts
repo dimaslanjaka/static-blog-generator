@@ -26,7 +26,7 @@ type GetLatestCommitHashOptions = Partial<SpawnOptions> & {
  */
 export const getLatestCommitHash = async (
   path?: string,
-  options?: Partial<GetLatestCommitHashOptions>
+  options: Partial<GetLatestCommitHashOptions> = {}
 ) => {
   const default_options: GetLatestCommitHashOptions = {
     short: true,
