@@ -3,6 +3,7 @@
     "formulahendry.code-runner",
     "dbaeumer.vscode-eslint",
     "digitalbrainstem.javascript-ejs-support",
-    "iliazeus.vscode-ansi"
+    "iliazeus.vscode-ansi",
+    "esbenp.prettier-vscode"
   ]
 }
