@@ -83,11 +83,11 @@ jobs:
       run: npm install && npm run test:mocha
 
     - name: Test bin single task
-      run: npm i file:../ && npx sbg copy --nocache --verbose
+      run: npm i file:../ && npx sbg copy --nocache --verbose --dev
       working-directory: tests
       id: test-bin-single
 
     - name: Test bin multiple task
-      run: npm i file:../ && npx sbg clean copy --nocache --verbose
+      run: npm i file:../ && npx sbg clean copy --nocache --verbose --dev
       working-directory: tests
       id: test-bin-multiple
