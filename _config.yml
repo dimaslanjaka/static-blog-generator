@@ -51,5 +51,5 @@ github: hexojs/hexo
 ## Static blog generator config
 
 generator:
-  cache: true
+  cache: false
   type: jekyll
