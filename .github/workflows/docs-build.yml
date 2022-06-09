@@ -61,7 +61,7 @@ jobs:
         git pull --all
         git submodule update -i -r
         git submodule foreach git submodule update -i -r
-        git config --global --add safe.directory /home/runner/work/static-blog-generator/static-blog-generator
+
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: npm install
     - run: gulp sbg:docs test:generate:homepage --nocache --verbose
