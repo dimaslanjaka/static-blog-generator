@@ -1,4 +1,5 @@
 import { SpawnOptions } from 'child_process';
+import { deepmerge } from 'deepmerge-ts';
 import spawner from './spawner';
 
 /**
@@ -10,6 +11,10 @@ export function git(options: null | SpawnOptions = null, ...args: string[]) {
   return spawner.promise(options, 'git', ...args);
 }
 
+type GetLatestCommitHashOptions = Partial<SpawnOptions> & {
+  short: boolean;
+};
+
 /**
  * get latest commit hash
  * * git log --pretty=tformat:%H -n 1 path
@@ -19,7 +24,16 @@ export function git(options: null | SpawnOptions = null, ...args: string[]) {
  * @param path specific folder
  * @returns
  */
-export const getLatestCommitHash = async (path?: string, short = true) => {
+export const getLatestCommitHash = async (
+  path?: string,
+  options?: Partial<GetLatestCommitHashOptions>
+) => {
+  const default_options: GetLatestCommitHashOptions = {
+    short: true,
+    cwd: process.cwd()
+  };
+  options = deepmerge(default_options, options);
+  const short = options.short;
   const args: string[] = [];
   if (!path) {
     args.push('rev-parse');
@@ -36,12 +50,7 @@ export const getLatestCommitHash = async (path?: string, short = true) => {
     args.push('1');
     args.push(path);
   }
-  const res = await git(
-    {
-      cwd: process.cwd() //join(__dirname, '../../')
-    },
-    ...args
-  );
+  const res = await git(options, ...args);
   return res.stdout[0] as string;
 };
 
