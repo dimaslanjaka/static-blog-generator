@@ -12,7 +12,7 @@ dist/**/*.json
 # main excluded files
 *.log
 /db.json
-public/*
+/public/
 .deploy*/
 package-lock.backup
 yarn.lock.backup
