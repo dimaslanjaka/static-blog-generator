@@ -1,0 +1,6 @@
+# test comments
+root:
+  # sub comments
+  subroot:
+    # nested comments
+    nestedroot: []
