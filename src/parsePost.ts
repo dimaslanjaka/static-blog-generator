@@ -429,7 +429,7 @@ export async function parsePost(
       // determine post type
       //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
       if (!meta.type) {
-        if (publicFile.match(/(_posts|src-posts)\//)) {
+        if (publicFile.match(/(_posts|_drafts|src-posts)\//)) {
           meta.type = 'post';
         } else {
           meta.type = 'page';
