@@ -63,4 +63,4 @@ jobs:
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: npm ci
-    - run: gulp sbg:docs test:generate:index --nocache --verbose --dev
+    - run: gulp test sbg:docs --nocache --verbose --dev
