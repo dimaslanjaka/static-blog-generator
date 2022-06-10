@@ -245,7 +245,15 @@ export const globSrc = function (pattern: string, opts: GlobSrcOptions = {}) {
 };
 
 export default filemanager;
-export const normalize = upath.normalize;
+/**
+ * cross-platform normalize path to fixed-case windows drive letters
+ * @see {@link https://www.npmjs.com/package/true-case-path}
+ * @param path
+ * @returns
+ */
+export function normalize(path: string) {
+  return toUnix(trueCasePathSync(path));
+}
 export const dirname = (str: string) =>
   removeMultiSlashes(upath.toUnix(upath.dirname(str)));
 interface ResolveOpt {
