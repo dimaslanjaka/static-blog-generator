@@ -3,7 +3,7 @@
 use git
 
 ```bash
-yarn add git+https://github.com/dimaslanjaka/static-blog-generator.git#dev
+yarn add git+https://github.com/dimaslanjaka/static-blog-generator.git
 ```
 
 use local
