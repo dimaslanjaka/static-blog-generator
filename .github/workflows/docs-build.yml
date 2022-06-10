@@ -48,7 +48,8 @@ jobs:
           ./tmp
           ./node_modules
           ./.deploy_*
-        key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          ./src
+        key: ${{ runner.os }}-${{ hashFiles('.guid') }}
     - name: Resolve git user
       continue-on-error: true
       run: |
