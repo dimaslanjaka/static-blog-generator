@@ -106,13 +106,9 @@ async function update_version() {
         join(__dirname, '/package.json'),
         JSON.stringify(pkg, null, 2) + '\n'
       );
-      gitAddAndCommit(
-        'package.json',
-        `[${info.hash}] release beta-${info.hash}`,
-        {
-          cwd: __dirname
-        }
-      );
+      gitAddAndCommit('package.json', `build from ${info.hash}`, {
+        cwd: __dirname
+      });
     })
     .catch((err) => console.error(err));
 }
