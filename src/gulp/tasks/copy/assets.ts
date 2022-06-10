@@ -32,11 +32,12 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
   );
   const cachePost = new CachePost();
   const postPaths = cachePost.getAll().map<string>((post) => {
-    return replaceArr(
-      post.metadata.source,
-      [post_source_dir, cwd(), /^\//],
-      ''
-    );
+    if (post.metadata.source)
+      return replaceArr(
+        post.metadata.source,
+        [post_source_dir, cwd(), /^\//],
+        ''
+      );
   });
   //console.log(postPaths);
   //const run = gulp.src(['**/*.*', `!**/*.md`], { cwd: post_source_dir });
