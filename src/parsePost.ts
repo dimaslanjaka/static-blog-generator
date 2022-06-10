@@ -25,7 +25,7 @@ const _cache = cache({
   name: 'parsePost',
   duration: 1000 * 3600 * 24 // 24 hours
 });
-const homepage = new URL(config.url);
+
 const cwd = () => toUnix(process.cwd());
 /**
  * Hexo Generated Dir
@@ -155,6 +155,7 @@ export async function parsePost(
   if (!target) return null;
   options = deepmerge(default_options, options);
   const config = options.config;
+  const homepage = new URL(config.url);
   const cacheKey = md5FileSync(options.sourceFile || target);
   if (options.cache) {
     const getCache = _cache.getSync<postMap>(cacheKey);
@@ -423,8 +424,6 @@ export async function parsePost(
           .replace(/.md$/, '.html');
         // meta url with full url
         meta.url = homepage.toString();
-        // meta permalink just pathname
-        meta.permalink = homepage.pathname;
       }
 
       // determine post type
