@@ -1,6 +1,8 @@
 name: Dev Build
 
 on:
+  pull_request: 
+    branches: [ master ]
   push:
     branches: [ master ]
 
