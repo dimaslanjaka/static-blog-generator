@@ -1,4 +1,3 @@
-import Bluebird from 'bluebird';
 import { exec, spawn, SpawnOptions } from 'child_process';
 import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
@@ -20,20 +19,24 @@ if (!process.env['GITHUB_WORKFLOW']) {
           join(__dirname, 'package.json'),
           JSON.stringify(pkg, null, 2)
         );
-        exec('npm install', () => {
-          Bluebird.all([
-            git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'package.json'),
-            git({ cwd: __dirname, stdio: 'ignore' }, 'add', 'package-lock.json')
-          ]).spread((_pkg, _lock) => {
-            git(
-              { cwd: __dirname, stdio: 'ignore' },
-              'commit',
-              '-m',
-              'update ' + hash
-            ).then(() => {
-              build();
-            });
-          });
+        exec('npm install', async () => {
+          const _pkg = await git(
+            { cwd: __dirname, stdio: 'ignore' },
+            'add',
+            'package.json'
+          );
+          const _lock = await git(
+            { cwd: __dirname, stdio: 'ignore' },
+            'add',
+            'package-lock.json'
+          );
+          await git(
+            { cwd: __dirname, stdio: 'ignore' },
+            'commit',
+            '-m',
+            'update ' + hash
+          );
+          build();
         });
       }
     }
