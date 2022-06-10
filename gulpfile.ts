@@ -43,7 +43,7 @@ gulp.task('sbg:docs', async () => {
   // setup merge on pull strategy
   await git({ cwd: dest }, 'config', 'pull.rebase', 'false');
   // pulling
-  await git(spawnOpt, 'pull');
+  await git(spawnOpt, 'pull', 'origin', branch);
   // process local files
   gulp.src(join(__dirname, 'readme.md')).pipe(gulp.dest(dest));
   gulp
