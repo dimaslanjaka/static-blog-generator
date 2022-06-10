@@ -14,9 +14,12 @@ import './import';
 import './minify';
 
 const generated_dir = toUnix(resolve(join(root, config.public_dir)));
-// .nojekyll
-const nojekyll = join(generated_dir, '.nojekyll');
-if (!existsSync(nojekyll)) write(nojekyll, '');
+
+if (config.generator.type !== 'jekyll') {
+  // @todo add .nojekyll
+  const nojekyll = join(generated_dir, '.nojekyll');
+  if (!existsSync(nojekyll)) write(nojekyll, '');
+}
 
 gulp.task(
   'generate',
