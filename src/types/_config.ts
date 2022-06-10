@@ -86,7 +86,7 @@ if ('adsense' in project_config_merge) {
 let config = project_config_merge as ProjectConfig;
 
 // @todo assign config cached to object config
-const cached_config = join(cwd(), '_config_cached.yml');
+const cached_config = join(cwd(), '_config.cached.yml');
 if (existsSync(cached_config)) {
   config = deepmerge(cached_config, yamlParse<ProjectConfig>(cached_config));
 }
