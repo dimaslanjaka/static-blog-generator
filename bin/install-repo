@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+npm un hexo-post-parser persistent-cache sbg-themes safelinkify
+npm i git+https://github.com/dimaslanjaka/persistent-cache#improve2 git+https://github.com/dimaslanjaka/safelink#master git+https://github.com/dimaslanjaka/hexo-post-parser#master git+https://github.com/dimaslanjaka/persistent-cache#improve2
+npm install -O https://github.com/dimaslanjaka/sbg-themes.git
