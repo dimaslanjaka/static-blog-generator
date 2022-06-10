@@ -48,6 +48,7 @@ jobs:
           ${{ steps.vars.outputs.npm }}
           ./tmp
           ./node_modules
+          ./.deploy_*
           ./src
         key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
