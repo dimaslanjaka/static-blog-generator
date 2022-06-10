@@ -64,6 +64,7 @@ const parsePost = async (
   if (options !== null && typeof options !== 'undefined') {
     options = deepmerge(default_options, options);
   }
+
   let parse = await moduleParsePost(content || path, options);
 
   if (!parse) return null;
@@ -105,7 +106,7 @@ const parsePost = async (
     )
   };
 
-  parse = modifyPost(<any>parse);
+  parse = modifyPost(parse);
 
   /**
    * validate if post path is post sources from config.source_dir
