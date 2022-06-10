@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
 import { Ngrok } from 'ngrok';
 import { join, resolve, toUnix } from 'upath';
+import { inspect } from 'util';
 import yaml from 'yaml';
 import yargs from 'yargs';
 import '../a-core';
@@ -88,11 +89,13 @@ let config = project_config_merge as ProjectConfig;
 // @todo assign config cached to object config
 const cached_config = join(cwd(), '_config.cached.yml');
 if (existsSync(cached_config)) {
-  config = deepmerge(cached_config, yamlParse<ProjectConfig>(cached_config));
+  config = deepmerge(config, yamlParse<ProjectConfig>(cached_config));
+  if (config.env === 'development')
+    write(join(__dirname, 'tmp/_config.log'), inspect(config));
 }
 
 // @todo [config] bypass nocache if --nocache argument is set by cli
-if (argv['nocache']) config.generator.cache = false;
+if (argv['nocache'] && 'generator' in config) config.generator.cache = false;
 // @todo [config] bypass verbose if --verbose argument is set by cli
 if (argv['verbose']) config.verbose = true;
 // @todo [config] bypass environment favor if --dev or --development argument is set by cli
