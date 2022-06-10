@@ -42,7 +42,7 @@
     "format": "run-p format:**",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --write --parser html -w ./themes/**/*.ejs",
-    "update": "npm i git+https://github.com/dimaslanjaka/persistent-cache#improve2 git+https://github.com/dimaslanjaka/safelink#master git+https://github.com/dimaslanjaka/hexo-post-parser#master git+https://github.com/dimaslanjaka/persistent-cache#improve2 && npm install",
+    "update": "npm i git+https://github.com/dimaslanjaka/persistent-cache#improve2 git+https://github.com/dimaslanjaka/safelink#master git+https://github.com/dimaslanjaka/hexo-post-parser#master git+https://github.com/dimaslanjaka/persistent-cache#improve2 && npm un sbg-themes && npm install -O https://github.com/dimaslanjaka/sbg-themes.git",
     "clean-install": "npm install --ignore-engines --ignore-platform",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "update-version": "npm version $(git describe)",

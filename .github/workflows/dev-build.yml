@@ -65,8 +65,6 @@ jobs:
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: npm run update
-    - run: npm un sbg-themes && npm install -O https://github.com/dimaslanjaka/sbg-themes.git
-    #- run: npm install -O 'https://gitpkg.now.sh/dimaslanjaka/sbg-themes.git'
 
     - name: Build
       continue-on-error: true
