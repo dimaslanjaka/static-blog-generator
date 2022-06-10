@@ -63,7 +63,7 @@ function parsePost(target, options = {}) {
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
         const config = options.config;
-        const homepage = new URL(config.url);
+        let homepage = config.url.endsWith('/') ? config.url : config.url + '/';
         const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);
         if (options.cache) {
             const getCache = _cache.getSync(cacheKey);
@@ -304,7 +304,7 @@ function parsePost(target, options = {}) {
                     }
                 }
                 if (!meta.url) {
-                    homepage.pathname = (0, utils_2.replaceArr)(publicFile, [
+                    homepage += (0, utils_2.replaceArr)(publicFile, [
                         (0, upath_1.toUnix)(process.cwd()),
                         options.config.source_dir + '/_posts/',
                         'src-posts/',
@@ -315,7 +315,7 @@ function parsePost(target, options = {}) {
                         // @todo replace .md to .html
                         .replace(/.md$/, '.html');
                     // meta url with full url
-                    meta.url = homepage.toString();
+                    meta.url = homepage;
                 }
                 // determine post type
                 //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
