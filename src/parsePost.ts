@@ -155,7 +155,7 @@ export async function parsePost(
   if (!target) return null;
   options = deepmerge(default_options, options);
   const config = options.config;
-  const homepage = new URL(config.url);
+  let homepage = config.url.endsWith('/') ? config.url : config.url + '/';
   const cacheKey = md5FileSync(options.sourceFile || target);
   if (options.cache) {
     const getCache = _cache.getSync<postMap>(cacheKey);
@@ -408,7 +408,7 @@ export async function parsePost(
       }
 
       if (!meta.url) {
-        homepage.pathname = replaceArr(
+        homepage += replaceArr(
           publicFile,
           [
             toUnix(process.cwd()),
@@ -423,7 +423,7 @@ export async function parsePost(
           // @todo replace .md to .html
           .replace(/.md$/, '.html');
         // meta url with full url
-        meta.url = homepage.toString();
+        meta.url = homepage;
       }
 
       // determine post type
