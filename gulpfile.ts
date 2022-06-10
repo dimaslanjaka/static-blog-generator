@@ -2,8 +2,11 @@ import * as fs from 'fs-extra';
 import gulp from 'gulp';
 import { join } from 'path';
 import './src';
+import { buildPost, parsePost } from './src';
 import crawling from './src/crawling';
-import git, { getLatestCommitHash } from './src/node/git';
+import { read, write } from './src/node/filemanager';
+import git from './src/node/git';
+import config from './src/types/_config';
 crawling();
 export { gulp };
 export default gulp;
@@ -37,18 +40,40 @@ gulp.task('sbg:docs', async () => {
     await git({ cwd: dest }, 'reset', '--hard', 'origin/' + branch);
   }
   // fetch origin
-  await git(spawnOpt, 'fetch', 'origin');
+  await git({ cwd: dest }, 'fetch', 'origin');
   // checkout origin branch
   await git({ cwd: dest }, 'checkout', branch);
   // setup merge on pull strategy
   await git({ cwd: dest }, 'config', 'pull.rebase', 'false');
   // pulling
-  await git(spawnOpt, 'pull', 'origin', branch);
+  await git({ cwd: dest }, 'pull', 'origin', branch);
   // process local files
-  gulp.src(join(__dirname, 'readme.md')).pipe(gulp.dest(dest));
+  const parse = await parsePost(
+    join(__dirname, 'readme.md'),
+    `
+---
+title: Readme Usages
+subtitle: Static Blog Generator
+date: 2022-06-10
+updated: 2022-06-10
+category: ['guide']
+tags: ['guide']
+---\n\n
+    ` + read(join(__dirname, 'readme.md')).toString(),
+    { cache: false }
+  );
+  const build = buildPost(parse);
+  write(join(__dirname, config.source_dir, '_posts/usages', 'index.md'), build);
+
+  //[join(__dirname, 'src', '**/*.md'), '!**/tmp']
+
+  /*
   gulp
-    .src([join(__dirname, 'src', '**/*.md'), '!**/tmp'])
-    .pipe(gulp.dest(join(dest, 'usages')))
+    .src(join(__dirname, 'readme.md'))
+    .pipe(gulp.dest(join(dest, 'src-posts')));
+  gulp
+    .src()
+    .pipe(gulp.dest(join(dest, 'src-posts', 'usages')))
     .on('end', async () => {
       await git({ cwd: dest }, 'add', '.');
       await git({ cwd: dest }, 'add', '-A');
@@ -56,7 +81,7 @@ gulp.task('sbg:docs', async () => {
         cwd: __dirname
       });
       const msg = `update page from ${latestCommit}`;
-      await git({ cwd: dest }, 'commit', '-m', msg);
+      await git(spawnOpt, 'commit', '-m', msg);
       await git(spawnOpt, 'push', 'origin', branch);
-    });
+    });*/
 });
