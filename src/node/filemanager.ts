@@ -4,11 +4,23 @@ import findCacheDir from 'find-cache-dir';
 import * as fs from 'fs';
 import { default as nodePath } from 'path';
 import { cwd as nodeCwd } from 'process';
-import upath from 'upath';
+import { trueCasePathSync } from 'true-case-path';
+import upath, { toUnix } from 'upath';
 import { json_encode } from './JSON';
 import ErrnoException = NodeJS.ErrnoException;
 
 import glob = require('glob');
+
+/**
+ * cross-platform normalize path to fixed-case windows drive letters
+ * @see {@link https://www.npmjs.com/package/true-case-path}
+ * @param path
+ * @returns
+ */
+export function normalize(path: string) {
+  return toUnix(trueCasePathSync(path));
+}
+
 /**
  * node_modules/.cache/${name}
  */
@@ -158,7 +170,6 @@ export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
 };
 
 export default filemanager;
-export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = () => upath.toUnix(nodeCwd());
 export const dirname = (str: string) =>

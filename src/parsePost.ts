@@ -6,6 +6,7 @@ import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
 import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
+import { normalize } from './node/filemanager';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
@@ -155,7 +156,7 @@ export async function parsePost(
   if (!target) return null;
   options = deepmerge(default_options, options);
   const config = options.config;
-  let homepage = config.url.endsWith('/') ? config.url : config.url + '/';
+  const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
   const cacheKey = md5FileSync(options.sourceFile || target);
   if (options.cache) {
     const getCache = _cache.getSync<postMap>(cacheKey);
@@ -359,8 +360,8 @@ export async function parsePost(
 
     if (isFile || options.sourceFile) {
       const publicFile = isFile
-        ? toUnix(originalArg)
-        : toUnix(options.sourceFile);
+        ? toUnix(normalize(originalArg))
+        : toUnix(normalize(options.sourceFile));
       // @todo fix post_asset_folder
       if (options.fix) {
         const post_assets_fixer = (str: string) => {
@@ -408,10 +409,10 @@ export async function parsePost(
       }
 
       if (!meta.url) {
-        homepage += replaceArr(
-          publicFile,
+        const url = replaceArr(
+          toUnix(normalize(publicFile)),
           [
-            toUnix(process.cwd()),
+            toUnix(normalize(process.cwd())),
             options.config.source_dir + '/_posts/',
             'src-posts/',
             '_posts/'
@@ -420,10 +421,13 @@ export async function parsePost(
         )
           // @todo remove multiple slashes
           .replace(/\/+/, '/')
+          .replace(/^\/+/, '/')
           // @todo replace .md to .html
           .replace(/.md$/, '.html');
-        // meta url with full url
-        meta.url = homepage;
+        // meta url with full url and removed multiple forward slashes
+        meta.url = new URL(homepage + url)
+          .toString()
+          .replace(/([^:]\/)\/+/g, '$1');
       }
 
       // determine post type

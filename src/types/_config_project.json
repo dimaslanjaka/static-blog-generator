@@ -90,6 +90,6 @@
   "twitter": "hexojs",
   "github": "hexojs/hexo",
   "generator": {
-    "cache": true
+    "cache": false
   }
 }
