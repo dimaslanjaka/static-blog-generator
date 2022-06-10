@@ -198,6 +198,7 @@ export async function generateSingleIndex(
 }
 
 gulp.task('test:generate:index', homepageTest);
+gulp.task('test', gulp.series('test:generate:index'));
 
 gulp.task('generate:categories', async () => {});
 gulp.task('generate:tags', async () => {});
