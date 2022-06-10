@@ -1,3 +1,4 @@
+import { deepmerge } from 'deepmerge-ts';
 import { initializeApp } from 'firebase/app';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
@@ -82,7 +83,13 @@ if ('adsense' in project_config_merge) {
   }
 }
 
-const config: ProjectConfig = <any>project_config_merge;
+let config = project_config_merge as ProjectConfig;
+
+// @todo assign config cached to object config
+const cached_config = join(cwd(), '_config_cached.yml');
+if (existsSync(cached_config)) {
+  config = deepmerge(cached_config, yamlParse<ProjectConfig>(cached_config));
+}
 
 // @todo [config] bypass nocache if --nocache argument is set by cli
 if (argv['nocache']) config.generator.cache = false;
