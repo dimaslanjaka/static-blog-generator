@@ -15,6 +15,8 @@ export declare const argv: {
     _: (string | number)[];
     $0: string;
 }>;
+/** EXPORT PRIVATE AND PUBLIC CONFIGS */
+export { root, theme_dir, theme_yml };
 /**
  * process cwd unix style
  */
@@ -68,7 +70,7 @@ export declare const default_project_config: {
         line_number: boolean;
         tab_replace: string;
         wrap: boolean;
-        exclude_languages: any[];
+        exclude_languages: any[]; /** default project config */
         hljs: boolean;
     };
     prismjs: {
@@ -126,7 +128,7 @@ interface PrivateProjectConfig {
 export declare type ProjectConfig = projectImportData & PrivateProjectConfig & typeof default_project_config & {
     env: string;
 };
-declare const config: ProjectConfig;
+declare let config: ProjectConfig;
 /**
  * is verbose activated?
  */
@@ -166,7 +168,5 @@ export declare type ThemeOpt = typeof theme_config & {
  * @returns
  */
 export declare function getConfig(): ProjectConfig;
-/** EXPORT PRIVATE AND PUBLIC CONFIGS */
-export { root, theme_dir, theme_yml };
 export default config;
 export declare const project_config: ProjectConfig;
