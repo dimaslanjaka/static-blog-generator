@@ -10,6 +10,7 @@ const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const dateMapper_1 = require("./dateMapper");
 const utils_1 = require("./gulp/utils");
 const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
+const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
 const utils_2 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
@@ -63,7 +64,7 @@ function parsePost(target, options = {}) {
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
         const config = options.config;
-        let homepage = config.url.endsWith('/') ? config.url : config.url + '/';
+        const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
         const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);
         if (options.cache) {
             const getCache = _cache.getSync(cacheKey);
@@ -254,8 +255,8 @@ function parsePost(target, options = {}) {
             }
             if (isFile || options.sourceFile) {
                 const publicFile = isFile
-                    ? (0, upath_1.toUnix)(originalArg)
-                    : (0, upath_1.toUnix)(options.sourceFile);
+                    ? (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalArg))
+                    : (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
                 // @todo fix post_asset_folder
                 if (options.fix) {
                     const post_assets_fixer = (str) => {
@@ -304,18 +305,21 @@ function parsePost(target, options = {}) {
                     }
                 }
                 if (!meta.url) {
-                    homepage += (0, utils_2.replaceArr)(publicFile, [
-                        (0, upath_1.toUnix)(process.cwd()),
+                    const url = (0, utils_2.replaceArr)((0, upath_1.toUnix)((0, filemanager_1.normalize)(publicFile)), [
+                        (0, upath_1.toUnix)((0, filemanager_1.normalize)(process.cwd())),
                         options.config.source_dir + '/_posts/',
                         'src-posts/',
                         '_posts/'
                     ], '/')
                         // @todo remove multiple slashes
                         .replace(/\/+/, '/')
+                        .replace(/^\/+/, '/')
                         // @todo replace .md to .html
                         .replace(/.md$/, '.html');
-                    // meta url with full url
-                    meta.url = homepage;
+                    // meta url with full url and removed multiple forward slashes
+                    meta.url = new URL(homepage + url)
+                        .toString()
+                        .replace(/([^:]\/)\/+/g, '$1');
                 }
                 // determine post type
                 //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
