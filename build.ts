@@ -87,26 +87,34 @@ async function update_version() {
     getLatestCommitHash(join(__dirname, 'src'))
   ])
     .spread((info: GitInfo, srcInfo: string) => {
-      // add latest src folder commit hash as suffix
-      info.semver.version += '-' + srcInfo;
+      const newVer =
+        info.semver.major +
+        '.' +
+        info.semver.minor +
+        '.' +
+        info.semver.patch +
+        '-' +
+        info.distance +
+        '-' +
+        srcInfo;
 
-      if (pkg.version !== info.semver.version) {
+      if (pkg.version !== newVer) {
         console.log(
           color['Yellow Orange']('updating version'),
           color.redBright(pkg.version),
           '->',
-          color.greenBright(info.semver.version)
+          color.greenBright(newVer)
         );
       } else {
         console.log(color.green('no update needed'), pkg.version);
       }
 
-      pkg.version = info.semver.version;
+      pkg.version = newVer;
       write(
         join(__dirname, '/package.json'),
         JSON.stringify(pkg, null, 2) + '\n'
       );
-      gitAddAndCommit('package.json', `build from ${info.hash}`, {
+      gitAddAndCommit('package.json', `build from ${srcInfo}`, {
         cwd: __dirname
       });
     })
