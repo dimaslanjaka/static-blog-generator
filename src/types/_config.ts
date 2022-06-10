@@ -19,6 +19,9 @@ import theme_config_data from './_config_theme.json';
  */
 export const argv = yargs(process.argv.slice(2)).argv;
 
+/** EXPORT PRIVATE AND PUBLIC CONFIGS */
+export { root, theme_dir, theme_yml };
+
 /**
  * process cwd unix style
  */
@@ -180,8 +183,5 @@ export function getConfig(): ProjectConfig {
 config.root = root;
 config.tmp = tmp;
 
-/** EXPORT PRIVATE AND PUBLIC CONFIGS */
-
-export { root, theme_dir, theme_yml };
 export default config;
 export const project_config = config;
