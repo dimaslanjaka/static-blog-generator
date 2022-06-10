@@ -23,6 +23,7 @@ yarn.lock.backup
 src/**/*.backup.ts
 /manage-repository
 *-backup
+/_config.cached.yml
 
 # symlink as dependency
 /.bin
