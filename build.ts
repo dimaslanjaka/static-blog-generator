@@ -3,53 +3,12 @@ import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
 import pkg from './package.json';
 
-if (!process.env['GITHUB_WORKFLOW']) {
-  /*pkg.version = crypto
-    .createHash('md5')
-    .update(new Date().toDateString())
-    .digest('hex');*/
-  exec(
-    'git describe --tags --first-parent --dirty --broken',
-    function (err, hash) {
-      //if (!err) console.log('Last commit hash on this branch is:', hash);
-      if (typeof hash === 'string' && hash.length > 1) {
-        hash = hash.trim().replace(/^v/, '');
-        pkg.version = hash;
-        writeFile(
-          join(__dirname, 'package.json'),
-          JSON.stringify(pkg, null, 2)
-        );
-        exec('npm install', async () => {
-          const _pkg = await git(
-            { cwd: __dirname, stdio: 'ignore' },
-            'add',
-            'package.json'
-          );
-          const _lock = await git(
-            { cwd: __dirname, stdio: 'ignore' },
-            'add',
-            'package-lock.json'
-          );
-          await git(
-            { cwd: __dirname, stdio: 'ignore' },
-            'commit',
-            '-m',
-            'update ' + hash
-          );
-          build();
-        });
-      }
-    }
-  );
-} else {
-  console.log('not updating the commit hash on github workflow');
-  build();
-}
+build().then(updateVersion);
 
 /**
  * main build function
  */
-function build() {
+async function build() {
   fse.emptyDirSync(join(__dirname, 'dist'));
   const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
     cwd: toUnix(__dirname),
@@ -66,6 +25,45 @@ function build() {
       );
     });
   });
+}
+
+function updateVersion() {
+  if (!process.env['GITHUB_WORKFLOW']) {
+    exec(
+      'git describe --tags --first-parent --dirty --broken',
+      function (err, hash) {
+        //if (!err) console.log('Last commit hash on this branch is:', hash);
+        if (typeof hash === 'string' && hash.length > 1) {
+          hash = hash.trim().replace(/^v/, '');
+          pkg.version = hash;
+          writeFile(
+            join(__dirname, 'package.json'),
+            JSON.stringify(pkg, null, 2)
+          );
+          exec('npm install', async () => {
+            const _pkg = await git(
+              { cwd: __dirname, stdio: 'ignore' },
+              'add',
+              'package.json'
+            );
+            const _lock = await git(
+              { cwd: __dirname, stdio: 'ignore' },
+              'add',
+              'package-lock.json'
+            );
+            await git(
+              { cwd: __dirname, stdio: 'ignore' },
+              'commit',
+              '-m',
+              'update ' + hash
+            );
+          });
+        }
+      }
+    );
+  } else {
+    console.log('not updating the commit hash on github workflow');
+  }
 }
 
 /**
