@@ -35,7 +35,7 @@ const logname = chalk.hex('#fcba03')('[render]');
 const renderCache = new CacheFile('renderArticle');
 const sitemap = new Sitemap();
 
-export const generatePosts = function () {
+export function generatePosts() {
   const log = logname + chalk.blue('[posts]');
   return new Bluebird((resolve) => {
     console.log(log, 'generating to', generated_dir);
@@ -165,6 +165,6 @@ export const generatePosts = function () {
         return runner();
       });
   });
-};
+}
 
 gulp.task('generate:posts', generatePosts);
