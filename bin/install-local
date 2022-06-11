@@ -7,3 +7,4 @@ npm i file:../hexo-post-parser
 npm i file:../persistent-cache
 npm i file:../google-news-sitemap
 npm install -O file:./themes
+node scripts/preinstall.js
