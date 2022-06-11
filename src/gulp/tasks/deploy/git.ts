@@ -97,6 +97,11 @@ export const deployerGit = async (done?: TaskCallback) => {
   await git('remote', 'add', 'origin', configDeploy['repo']);
   await git('remote', 'set-url', 'origin', configDeploy['repo']);
   await git('fetch', '--all');
+  // setup merge on pull strategy
+  await git('config', 'pull.rebase', 'false');
+  // checkout origin branch
+  await git('checkout', configDeploy['branch']);
+  // pull origin
   await git('pull', 'origin', configDeploy['branch']);
 
   return copyGenerated().on('end', async () => {
