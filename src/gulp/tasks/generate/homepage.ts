@@ -42,7 +42,7 @@ export function generateIndex(
       ? labelNameOrObj()
       : null;
 
-  if (typeof postsChunks == 'object') {
+  if (postsChunks !== null) {
     if ('chunk' in postsChunks === false) {
       return Object.keys(postsChunks)
         .map((labelKey) => {
