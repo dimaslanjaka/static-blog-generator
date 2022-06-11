@@ -109,6 +109,11 @@ if (argv['verbose']) config.verbose = true;
 if (argv['dev'] || argv['development']) config.env = 'development';
 
 /**
+ * is process using cache strategy?
+ */
+export const useCache = config.generator.cache;
+
+/**
  * is verbose activated?
  */
 export const verbose = config.verbose;
