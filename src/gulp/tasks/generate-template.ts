@@ -12,7 +12,7 @@ import config, {
 
 const logname = color.hex('#fcba03')('[render template]');
 
-export const generateTemplate = () => {
+export function generateTemplate() {
   const src = join(theme_dir, 'source/**/**');
   console.log(
     logname + color.magentaBright('[template]'),
@@ -57,6 +57,6 @@ export const generateTemplate = () => {
     )
     .pipe(gulp.dest(post_generated_dir));
   //.on('end', () => console.log(logname + chalk.magentaBright('[template]'), chalk.green('finish')));
-};
+}
 
 gulp.task('generate:template', generateTemplate);
