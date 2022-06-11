@@ -48,10 +48,16 @@ export declare function moment(date?: any, format?: string): momentInstance.Mome
  * @see {@link moment}
  */
 export declare const modMoment: typeof moment;
-export declare function toISOString(date: any): string;
-export declare function dateHelper(date: any, format: any): string;
-export declare function timeHelper(date: any, format: any): string;
-export declare function fullDateHelper(date: any, format: any): string;
+export declare function toISOString(date: string | number | Date): string;
+export declare function dateHelper(date: string | number | Date, format?: string): string;
+/**
+ * format date time based on `time_format` in `_config.yml`
+ * @param date
+ * @param format
+ * @returns
+ */
+export declare function timeHelper(date: string | number | Date, format?: string): string;
+export declare function fullDateHelper(date: string | number | Date, format?: string): string;
 export declare function relativeDateHelper(date: any): string;
 export declare function timeTagHelper(date: any, format: any): string;
 export declare function getLanguage(ctx: any): any;
