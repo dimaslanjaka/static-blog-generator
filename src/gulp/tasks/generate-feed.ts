@@ -20,7 +20,7 @@ import { isValidHttpUrl } from '../utils';
 const logname = color['Fuzzy Wuzzy']('[feeds]');
 const urlfor = helpers.url_for;
 
-function generateFeeds() {
+export function generateFeeds() {
   return new Bluebird((resolve) => {
     // https://github.com/jpmonette/feed
     const feed = new Feed({
