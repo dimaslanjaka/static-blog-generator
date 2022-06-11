@@ -83,8 +83,8 @@ tags: ['guide']
       post.build = buildPost(post.parse);
       return post;
     })
-    .each((post_1) => {
-      console.log(join(destParse, post_1.source));
+    .each((post) => {
+      write(join(destParse, post.source), post.build);
     });
   return done();
 
