@@ -1,10 +1,11 @@
+import Bluebird from 'bluebird';
 import * as fs from 'fs-extra';
 import gulp from 'gulp';
 import { join } from 'path';
 import './src';
 import { buildPost, parsePost } from './src';
 import crawling from './src/crawling';
-import { read, write } from './src/node/filemanager';
+import { globSrc, read, write } from './src/node/filemanager';
 import git from './src/node/git';
 import config from './src/types/_config';
 crawling();
@@ -12,7 +13,7 @@ export { gulp };
 export default gulp;
 
 // deploy to https://github.com/dimaslanjaka/static-blog-generator.git#compiler-jekyll
-gulp.task('sbg:docs', async () => {
+gulp.task('sbg:docs', async (done) => {
   const dest = join(__dirname, 'public');
   const repo = 'https://github.com/dimaslanjaka/static-blog-generator.git';
   const branch = 'gh-pages';
@@ -48,7 +49,8 @@ gulp.task('sbg:docs', async () => {
   // pulling
   await git({ cwd: dest }, 'pull', 'origin', branch);
   // process local files
-  const parse = await parsePost(
+  const destParse = join(__dirname, config.source_dir, '_posts');
+  const parsed = await parsePost(
     join(__dirname, 'readme.md'),
     `
 ---
@@ -62,11 +64,29 @@ tags: ['guide']
     ` + read(join(__dirname, 'readme.md')).toString(),
     { cache: false }
   );
-  const build = buildPost(parse);
-  write(join(__dirname, config.source_dir, '_posts/usages', 'index.md'), build);
-  gulp
-    .src([join(__dirname, 'src', '**/*.md'), '!**/tmp'])
-    .pipe(gulp.dest(join(__dirname, config.source_dir, '_posts/usages')));
+  await write(join(destParse, 'index.md'), buildPost(parsed));
+  await Bluebird.all(
+    globSrc('**/*.md', {
+      cwd: join(__dirname, 'src'),
+      ignore: ['**/tmp/**'],
+      use: 'minimatch'
+    })
+  )
+    .map((file) => {
+      return {
+        parse: parsePost(file, null, { cache: false }),
+        source: file,
+        build: null
+      };
+    })
+    .map((post) => {
+      post.build = buildPost(post.parse);
+      return post;
+    })
+    .each((post_1) => {
+      console.log(join(destParse, post_1.source));
+    });
+  return done();
 
   /*
   gulp
