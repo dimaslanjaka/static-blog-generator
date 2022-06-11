@@ -24,7 +24,7 @@ export const clean_posts = (done?: TaskCallback) => {
         if (typeof done === 'function') done();
       });
     } else {
-      done();
+      if (typeof done === 'function') done();
     }
   });
 };
