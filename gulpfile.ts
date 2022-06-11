@@ -85,7 +85,15 @@ tags: ['guide']
       return post;
     })
     .each((post) => {
-      write(join(destParse, post.source), post.build).then(console.log);
+      const saveTo = join(
+        destParse,
+        post.source.replace(join(__dirname, 'src'), '')
+      );
+      console.log(post.build);
+      /*write(
+        join(destParse, post.source.replace(join(__dirname, 'src'), '')),
+        post.build
+      ).then(console.log);*/
     });
   return done();
 
