@@ -5,6 +5,7 @@ import moment from 'moment';
 import { getAllPosts, getLatestPosts } from '../../node/cache-post';
 import color from '../../node/color';
 import { join, write } from '../../node/filemanager';
+import { renderBodyMarkdown } from '../../parser/toHtml';
 import { helpers } from '../../renderer/ejs';
 import {
   author_email,
@@ -62,7 +63,7 @@ export function generateFeeds() {
           content: excerpt(post.metadata)
         };
         if (config.feed.content) {
-          obj.content = post.content;
+          obj.content = renderBodyMarkdown(post);
         }
         let isImgValid = isValidHttpUrl(String(obj.image));
         if (!isImgValid) {
