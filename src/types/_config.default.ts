@@ -1,5 +1,5 @@
 import '../a-core';
-export const default_config = {
+export const default_config: Partial<SBGConfig> = {
   // Site
   title: 'Hexo',
   subtitle: '',
@@ -115,4 +115,19 @@ export const default_config = {
     cache: true
   }
 };
+
+export interface Generator {
+  cache?: boolean;
+  type?: 'hexo' | 'jekyll' | 'sbg';
+}
+
+export interface SBGConfig {
+  [key: string]: any;
+  /**
+   * Site title
+   */
+  title: string;
+  generator: Generator;
+}
+
 export default default_config;
