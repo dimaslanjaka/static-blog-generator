@@ -72,6 +72,7 @@ tags: ['guide']
       use: 'minimatch'
     })
   )
+    .map((file) => join(__dirname, 'src', file))
     .map((file) => {
       return {
         parse: parsePost(file, read(file).toString(), { cache: false }),
