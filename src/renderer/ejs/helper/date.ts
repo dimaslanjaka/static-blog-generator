@@ -134,17 +134,18 @@ export function getMoment(date: any, lang: any, timezone: string) {
  */
 export function moment(date: any = new Date(), format?: string) {
   let parse = momentInstance(date, format);
-  if (config.timezone) {
+  if ('timezone' in config) {
     parse = parse.tz(config.timezone);
   }
   return parse;
 }
+
 /**
  * @see {@link moment}
  */
 export const modMoment = moment;
 
-export function toISOString(date) {
+export function toISOString(date: string | number | Date) {
   if (date == null) {
     return new Date().toISOString();
   }
@@ -156,17 +157,23 @@ export function toISOString(date) {
   return new Date(date).toISOString();
 }
 
-export function dateHelper(date, format) {
+export function dateHelper(date: string | number | Date, format?: string) {
   const moment = getMoment(date, getLanguage(this), config.timezone);
   return moment.format(format || config.date_format);
 }
 
-export function timeHelper(date, format) {
+/**
+ * format date time based on `time_format` in `_config.yml`
+ * @param date
+ * @param format
+ * @returns
+ */
+export function timeHelper(date: string | number | Date, format?: string) {
   const moment = getMoment(date, getLanguage(this), config.timezone);
   return moment.format(format || config.time_format);
 }
 
-export function fullDateHelper(date, format) {
+export function fullDateHelper(date: string | number | Date, format?: string) {
   if (format) {
     const moment = getMoment(date, getLanguage(this), this.config.timezone);
     return moment.format(format);
