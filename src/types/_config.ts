@@ -95,7 +95,14 @@ if (existsSync(cached_config)) {
 }
 
 // @todo [config] bypass nocache if --nocache argument is set by cli
-if (argv['nocache'] && 'generator' in config) config.generator.cache = false;
+if (argv['nocache']) {
+  if ('generator' in config === false)
+    config.generator = {
+      cache: false,
+      type: null
+    };
+  if ('cache' in config.generator) config.generator.cache = false;
+}
 // @todo [config] bypass verbose if --verbose argument is set by cli
 if (argv['verbose']) config.verbose = true;
 // @todo [config] bypass environment favor if --dev or --development argument is set by cli
