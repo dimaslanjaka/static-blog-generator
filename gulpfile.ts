@@ -84,7 +84,7 @@ tags: ['guide']
       return post;
     })
     .each((post) => {
-      write(join(destParse, post.source), post.build);
+      write(join(destParse, post.source), post.build).then(console.log);
     });
   return done();
 
