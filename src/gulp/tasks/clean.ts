@@ -13,12 +13,16 @@ import config, {
 
 /** clean generated folder */
 export const clean_public = (done?: TaskCallback) =>
-  rm(post_generated_dir, { recursive: true, force: true }, () => done());
+  rm(post_generated_dir, { recursive: true, force: true }, () => {
+    if (typeof done === 'function') done();
+  });
 /** clean posts from config.source_dir */
 export const clean_posts = (done?: TaskCallback) => {
   rm(post_public_dir, { recursive: true, force: true }, () => {
     if ('generator' in config && config['generator']['type'] === 'hexo') {
-      rm(HexoDBPath, () => done());
+      rm(HexoDBPath, () => {
+        if (typeof done === 'function') done();
+      });
     } else {
       done();
     }
@@ -28,13 +32,15 @@ export const clean_posts = (done?: TaskCallback) => {
 export const clean_tmp = (done?: TaskCallback) => {
   rm(tmp(), { recursive: true, force: true }, () => {
     rm(join(cwd(), 'tmp'), { recursive: true, force: true }, () => {
-      done();
+      if (typeof done === 'function') done();
     });
   });
 };
 /** clean database folder */
 export const clean_db = (done?: TaskCallback) =>
-  rm(dbFolder, { recursive: true, force: true }, () => done());
+  rm(dbFolder, { recursive: true, force: true }, () => {
+    if (typeof done === 'function') done();
+  });
 
 // [task] CLEAN
 gulp.task('clean:public', clean_public);
