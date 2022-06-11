@@ -1,0 +1,287 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Website Manajemen Indonesia",
+    "home_page_url": "https://www.webmanajemen.com/static-blog-generator",
+    "feed_url": "https://www.webmanajemen.com/feed.json",
+    "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others. External source WMI Github Laboratory",
+    "icon": "https://www.webmanajemen.com/image/logo.svg",
+    "author": {
+        "name": "Dimas Lanjaka",
+        "url": "https://www.webmanajemen.com/"
+    },
+    "items": [
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/hello-world.html",
+            "content_html": "<p>Welcome to <a href=\"http://zespia.tw/hexo\">Hexo</a>! This is your very first post. Check <a href=\"http://zespia.tw/hexo/docs\">documentation</a> to learn how to use.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/hello-world.html",
+            "title": "Hello World",
+            "summary": "Hello World - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T10:49:32.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/elements.html",
+            "content_html": "<p>The purpose of this post is to help you make sure all of HTML elements can display properly. If you use CSS reset, don’t forget to redefine the style by yourself.</p>\n<hr>\n<h1 id=\"heading-1\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#heading-1\">Heading 1</a></h1>\n<h2 id=\"heading-2\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#heading-2\">Heading 2</a></h2>\n<h3 id=\"heading-3\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#heading-3\">Heading 3</a></h3>\n<h4 id=\"heading-4\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#heading-4\">Heading 4</a></h4>\n<h5 id=\"heading-5\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#heading-5\">Heading 5</a></h5>\n<h6 id=\"heading-6\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#heading-6\">Heading 6</a></h6>\n<hr>\n<h2 id=\"paragraph\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#paragraph\">Paragraph</a></h2>\n<p>Lorem ipsum dolor sit amet, <a href=\"\">test link</a> consectetur adipiscing elit. <strong>Strong text</strong> pellentesque ligula commodo viverra vehicula. <em>Italic text</em> at ullamcorper enim. Morbi a euismod nibh. <u>Underline text</u> non elit nisl. <s>Deleted text</s> tristique, sem id condimentum tempus, metus lectus venenatis mauris, sit amet semper lorem felis a eros. Fusce egestas nibh at sagittis auctor. Sed ultricies ac arcu quis molestie. Donec dapibus nunc in nibh egestas, vitae volutpat sem iaculis. Curabitur sem tellus, elementum nec quam id, fermentum laoreet mi. Ut mollis ullamcorper turpis, vitae facilisis velit ultricies sit amet. Etiam laoreet dui odio, id tempus justo tincidunt id. Phasellus scelerisque nunc sed nunc ultricies accumsan.</p>\n<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. <code>Sed erat diam</code>, blandit eget felis aliquam, rhoncus varius urna. Donec tellus sapien, sodales eget ante vitae, feugiat ullamcorper urna. Praesent auctor dui vitae dapibus eleifend. Proin viverra mollis neque, ut ullamcorper elit posuere eget.</p>\n<blockquote>\n<p>Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.</p>\n</blockquote>\n<p>Maecenas ornare arcu at mi suscipit, non molestie tortor ultrices. Aenean convallis, diam et congue ultricies, erat magna tincidunt orci, pulvinar posuere mi sapien ac magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent vitae placerat mauris. Nullam laoreet ante posuere tortor blandit auctor. Sed id ligula volutpat leo consequat placerat. Mauris fermentum dolor sed augue malesuada sollicitudin. Vivamus ultrices nunc felis, quis viverra orci eleifend ut. Donec et quam id urna cursus posuere. Donec elementum scelerisque laoreet.</p>\n<h2 id=\"list-types\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#list-types\">List Types</a></h2>\n<h3 id=\"definition-list-dl\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#definition-list-dl\">Definition List (dl)</a></h3>\n<dl><dt>Definition List Title</dt><dd>This is a definition list division.</dd></dl>\n<h3 id=\"ordered-list-ol\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#ordered-list-ol\">Ordered List (ol)</a></h3>\n<ol>\n<li>List Item 1</li>\n<li>List Item 2</li>\n<li>List Item 3</li>\n</ol>\n<h3 id=\"unordered-list-ul\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#unordered-list-ul\">Unordered List (ul)</a></h3>\n<ul>\n<li>List Item 1</li>\n<li>List Item 2</li>\n<li>List Item 3</li>\n</ul>\n<h3 id=\"checkbox-list-ul\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#checkbox-list-ul\">Checkbox List (ul)</a></h3>\n<ul>\n<li>[ ] List Item 1 unchecked</li>\n<li>[x] List Item 2 checked</li>\n<li>[X] List Item 3 checked</li>\n</ul>\n<h2 id=\"table\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#table\">Table</a></h2>\n<table>\n<thead>\n<tr>\n<th>Table Header 1</th>\n<th>Table Header 2</th>\n<th>Table Header 3</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Division 1</td>\n<td>Division 2</td>\n<td>Division 3</td>\n</tr>\n<tr>\n<td>Division 1</td>\n<td>Division 2</td>\n<td>Division 3</td>\n</tr>\n<tr>\n<td>Division 1</td>\n<td>Division 2</td>\n<td>Division 3</td>\n</tr>\n</tbody>\n</table>\n<h2 id=\"misc-stuff-abbr-acronym-sub-sup-kbd-etc\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#misc-stuff-abbr-acronym-sub-sup-kbd-etc\">Misc Stuff - abbr, acronym, sub, sup, kbd, etc.</a></h2>\n<p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title=\"National Basketball Association\">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title=\"Avenue\">AVE</abbr>. Use <kbd>Crtl</kbd> + <kbd>C</kbd> to stop.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/elements.html",
+            "title": "Elements",
+            "summary": "Elements - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:29:08.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/tags.html",
+            "content_html": "<p>This post contains 3 tags. Make sure your theme can display all of the tags.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/tags.html",
+            "title": "Tags",
+            "summary": "Tags - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:29:53.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/link-post.html",
+            "content_html": "<p>This is a link post. Clicking on the link should open <a href=\"http://www.google.com/\">Google</a> in a new tab or window.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/link-post.html",
+            "title": "Link Post",
+            "summary": "Link Post - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:30:04.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/categories.html",
+            "content_html": "<p>This post contains 3 categories. Make sure your theme can display all of the categories.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/categories.html",
+            "title": "Categories",
+            "summary": "Categories - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:30:09.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/long-title.html",
+            "content_html": "<p>This post has a long title. Make sure the title displayed right.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/long-title.html",
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.",
+            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id. - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:31:06.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6.html",
+            "content_html": "<p>This is a Chinese test post.</p>\n<p>善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。</p>\n<p>以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？</p>\n<p>就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。</p>\n<p>國新故。</p>\n<blockquote>\n<p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？</p>\n</blockquote>\n<p><em>From <a href=\"http://www.richyli.com/tool/loremipsum/\">亂數假文產生器 - Chinese Lorem Ipsum</a></em></p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6.html",
+            "title": "中文測試",
+            "summary": " - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:31:30.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88.html",
+            "content_html": "<p>This is a Japanese test post.</p>\n<p>私は昨日ついにその助力家というのの上よりするたなけれ。</p>\n<p>最も今をお話団はちょうどこの前後なかろでくらいに困りがいるたをは帰着考えたなかって、そうにもするでうたらない。</p>\n<p>がたを知っないはずも同時に九月をいよいよたありた。</p>\n<p>もっと槙さんにぼんやり金少し説明にえた自分大した人私か影響にというお関係たうませないが、この次第も私か兄具合に使うて、槙さんののに当人のあなたにさぞご意味と行くて私個人が小尊敬を聴いように同時に同反抗に集っだうて、いよいよまず相当へあっうからいだ事をしでなけれ。</p>\n<blockquote>\n<p>それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。</p>\n</blockquote>\n<p>この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。</p>\n<p><em>From <a href=\"http://lipsum.sugutsukaeru.jp/index.cgi\">すぐ使えるダミーテキスト - 日本語 Lorem ipsum</a></em></p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88.html",
+            "title": "日本語テスト",
+            "summary": " - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:33:26.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/link-post-without-title.html",
+            "content_html": "<p>This is a link post without a title. The title should be the link with or without protocol. Clicking on the link should open <a href=\"http://www.google.com/\">Google</a> in a new tab or window.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/link-post-without-title.html",
+            "title": "link-post-without-title.md",
+            "summary": "undefined - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T16:44:13.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/tag-plugins.html",
+            "content_html": "<p>This post is used for testing tag plugins. See <a href=\"http://zespia.tw/hexo/docs/tag-plugins.html\">docs</a> for more info.</p>\n<h2 id=\"block-quote\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#block-quote\">Block Quote</a></h2>\n<h3 id=\"normal-blockquote\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#normal-blockquote\">Normal blockquote</a></h3>\n<blockquote>\n<p>Praesent diam elit, interdum ut pulvinar placerat, imperdiet at magna.</p>\n</blockquote>\n<h3 id=\"quote-from-a-book\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#quote-from-a-book\">Quote from a book</a></h3>\n<p>{% blockquote David Levithan, Wide Awake %}\nDo not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>\n<h3 id=\"quote-from-twitter\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#quote-from-twitter\">Quote from Twitter</a></h3>\n<p>{% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}\nNEW: DevDocs now comes with syntax highlighting. http://devdocs.io</p>\n<h3 id=\"quote-from-an-article-on-the-web\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#quote-from-an-article-on-the-web\">Quote from an article on the web</a></h3>\n<p>{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}\nEvery interaction is both precious and an opportunity to delight.</p>\n<h2 id=\"code-block\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#code-block\">Code Block</a></h2>\n<h3 id=\"normal-code-block\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#normal-code-block\">Normal code block</a></h3>\n<pre><code>alert('Hello World!');\n</code></pre>\n<h3 id=\"with-caption\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#with-caption\">With caption</a></h3>\n<figure class=\"highlight plain\"><figcaption><span>Array.map</span></figcaption><pre><code><!-- prettier-ignore-start -->\narray.map(callback[, thisArg])\n<!-- prettier-ignore-end --></code></pre></figure>\n<h3 id=\"with-caption-and-url\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#with-caption-and-url\">With caption and URL</a></h3>\n<figure class=\"highlight plain\"><figcaption><span>.compact</span></figcaption><pre><code><!-- prettier-ignore-start -->\n.compact([0, 1, false, 2, ‘’, 3]);\n=> [1, 2, 3]\n<!-- prettier-ignore-end --></code></pre></figure>\n<h3 id=\"with-marked-lines\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#with-marked-lines\">With marked lines</a></h3>\n<p>Line 1,7-8,10 should be marked with different color.</p>\n<pre class=\"highlight language-js\"><code><!-- prettier-ignore-start -->\nconst http = require('http');\n\nconst hostname = '127.0.0.1';\nconst port = 1337;\n\nhttp.createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'text/plain' });\n  res.end('Hello World\\n');\n}).listen(port, hostname, () => {\n  console.log(`Server running at http://${hostname}:${port}/`);\n});\n<!-- prettier-ignore-end --></code></pre></figure>\n<p>Note: Theme’s style should support <code>.highlight.line.marked</code> (recommend to use the selection or current line color).</p>\n<h3 id=\"gist\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#gist\">Gist</a></h3>\n<p></p>\n<h3 id=\"js-fiddle\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#js-fiddle\">jsFiddle</a></h3>\n<p></p>\n<h2 id=\"pullquote\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#pullquote\">Pullquote</a></h2>\n<h3 id=\"left\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#left\">Left</a></h3>\n<p>{% pullquote left %}\nLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus molestie arcu, et fringilla mauris placerat ac. Nullam luctus bibendum risus. Ut cursus sed ipsum feugiat egestas. Suspendisse elementum, velit eu consequat consequat, augue lorem dapibus libero, eget pulvinar dolor est sit amet nulla. Suspendisse a porta tortor, et posuere mi. Pellentesque ultricies, mi quis volutpat malesuada, erat felis vulputate nisl, ac congue ante tortor ut ante. Proin aliquam sem vel mauris tincidunt, eget scelerisque tortor euismod. Nulla tincidunt enim nec commodo dictum. Mauris id sapien et orci gravida luctus id ut dui. In vel vulputate odio. Duis vel turpis molestie, scelerisque enim eu, lobortis eros. Cras at ipsum gravida, sagittis ante vel, viverra tellus. Nunc mauris turpis, elementum ullamcorper nisl pretium, ultrices cursus justo. Mauris porttitor commodo eros, ac ornare orci interdum in. Cras fermentum cursus leo sed mattis. In dignissim lorem sem, sit amet elementum mauris venenatis ac.</p>\n<h3 id=\"right\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#right\">Right</a></h3>\n<p>{% pullquote right %}\nLorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula justo, lobortis sit amet semper vel, dignissim sit amet libero. Praesent ac tempus ligula. Maecenas at gravida odio. Etiam tristique volutpat lacus eu faucibus. Donec non tempus arcu. Phasellus adipiscing, mauris nec mollis egestas, ipsum nunc auctor velit, et rhoncus lorem ipsum at ante. Praesent et sem in velit volutpat auctor. Duis vel mauris nulla. Maecenas mattis interdum ante, quis sagittis nibh cursus et. Nulla facilisi. Morbi convallis gravida tortor, ut fermentum enim gravida et. Nunc vel dictum nisl, non ultrices libero. Proin vestibulum felis eget orci consectetur lobortis. Vestibulum augue nulla, iaculis vitae augue vehicula, dignissim ultrices libero. Sed imperdiet urna et quam ultrices tincidunt nec ac magna. Etiam vel pharetra elit.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/tag-plugins.html",
+            "title": "Tag Plugins",
+            "summary": "Tag Plugins - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T17:14:39.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/gallery-post.html",
+            "content_html": "<p>This post contains 4 photos:</p>\n<ul>\n<li>Widescreen wallpaper</li>\n<li>Portrait photo</li>\n<li>Dual widescreen wallpaper</li>\n<li>Small photo</li>\n</ul>\n<p>All photos should be displayed properly.</p>\n<p><em>From <a href=\"http://wallbase.cc\">Wallbase.cc</a></em></p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/gallery-post.html",
+            "title": "Gallery Post",
+            "summary": "Gallery Post - Website Manajemen Indonesia",
+            "image": "https://www.webmanajemen.com/assets/wallpaper-2572384.jpg",
+            "date_modified": "2013-12-24T17:16:18.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/videos.html",
+            "content_html": "<p>This is a video test post.</p>\n<p><strong>Youtube</strong></p>\n<div class=\"video-container\">\n  <iframe src=\"https://www.youtube.com/embed/TIbZDRXM-Tg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" loading=\"lazy\" allowfullscreen=\"true\"></iframe>\n</div>\n<p><strong>Vimeo</strong></p>\n<p></p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/videos.html",
+            "title": "Videos",
+            "summary": "Videos - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T17:19:15.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/excerpts.html",
+            "content_html": "<p>The following contents should be invisible in home/archive page.</p>\n<!-- more -->\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget urna vitae velit eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae libero pharetra adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam. Ut nec velit dolor. Proin eget leo lobortis, aliquam est sed, mollis mauris. Fusce vitae leo pretium massa accumsan condimentum. Fusce malesuada gravida lectus vel vulputate. Donec bibendum porta nibh ut aliquam.</p>\n<p>Sed lorem felis, congue non fringilla eu, aliquam eu eros. Curabitur orci libero, mollis sed semper vitae, adipiscing in lectus. Aenean non egestas odio. Donec sollicitudin nisi quis lorem gravida, in pharetra mauris fringilla. Duis sit amet faucibus dolor, id aliquam neque. In egestas, odio gravida tempor dictum, mauris felis faucibus purus, sit amet commodo lacus diam vitae est. Ut ut quam eget massa semper sodales. Aenean non ipsum cursus, blandit lectus in, ornare odio. Curabitur ultrices porttitor vulputate.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/excerpts.html",
+            "title": "Excerpts",
+            "summary": "Excerpts - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-24T17:23:23.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/no-title.html",
+            "content_html": "<p>This post doesn’t have a title. Make sure it’s accessible.</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/no-title.html",
+            "title": "no-title.md",
+            "summary": "undefined - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-25T15:57:49.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/images.html",
+            "content_html": "<p>This is a image test post.</p>\n<p><img src=\"/assets/wallpaper-2572384.jpg\" alt=\"\"></p>\n<p><img src=\"/assets/wallpaper-2311325.jpg\" alt=\"Caption\"></p>\n<p><img src=\"/assets/wallpaper-878514.jpg\" alt=\"\"></p>\n<p><img src=\"https://placehold.it/350x150.jpg\" alt=\"Small Picture\"></p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/images.html",
+            "title": "Images",
+            "summary": "Images - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2013-12-26T15:46:49.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/markdown.html",
+            "content_html": "<p>This post is originated from <a href=\"https://gist.github.com/apackeer/4159268\">here</a> and is used for testing markdown style. This post contains nearly every markdown usage. Make sure all the markdown elements below show up correctly.</p>\n<!-- more -->\n<hr>\n<h2 id=\"headers\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#headers\">Headers</a></h2>\n<pre><code class=\"language-markdown\"># H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6\n\nAlternatively, for H1 and H2, an underline-ish style:\n\nAlt-H1\n======\n\nAlt-H2\n------\n</code></pre>\n<h1 id=\"h1\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#h1\">H1</a></h1>\n<h2 id=\"h2\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#h2\">H2</a></h2>\n<h3 id=\"h3\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#h3\">H3</a></h3>\n<h4 id=\"h4\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#h4\">H4</a></h4>\n<h5 id=\"h5\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#h5\">H5</a></h5>\n<h6 id=\"h6\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#h6\">H6</a></h6>\n<p>Alternatively, for H1 and H2, an underline-ish style:</p>\n<h1 id=\"alt-h1\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#alt-h1\">Alt-H1</a></h1>\n<h2 id=\"alt-h2\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#alt-h2\">Alt-H2</a></h2>\n<h2 id=\"emphasis\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#emphasis\">Emphasis</a></h2>\n<pre><code class=\"language-markdown\">Emphasis, aka italics, with *asterisks* or _underscores_.\n\nStrong emphasis, aka bold, with **asterisks** or __underscores__.\n\nCombined emphasis with **asterisks and _underscores_**.\n\nStrikethrough uses two tildes. ~~Scratch this.~~\n</code></pre>\n<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>\n<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>\n<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>\n<p>Strikethrough uses two tildes. <s>Scratch this.</s></p>\n<h2 id=\"lists\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#lists\">Lists</a></h2>\n<pre><code class=\"language-markdown\">1. First ordered list item\n2. Another item\n  * Unordered sub-list.\n1. Actual numbers don't matter, just that it's a number\n  1. Ordered sub-list\n4. And another item.\n\n   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).\n\n   To have a line break without a paragraph, you will need to use two trailing spaces.\n   Note that this line is separate, but within the same paragraph.\n   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)\n\n* Unordered list can use asterisks\n- Or minuses\n+ Or pluses\n- Paragraph In unordered list\n\n  For example like this.\n\nCommon Paragraph with some text.\nAnd more text.\n</code></pre>\n<ol>\n<li>First ordered list item</li>\n<li>Another item</li>\n</ol>\n<ul>\n<li>Unordered sub-list.</li>\n</ul>\n<ol>\n<li>\n<p>Actual numbers don’t matter, just that it’s a number</p>\n</li>\n<li>\n<p>Ordered sub-list</p>\n</li>\n<li>\n<p>And another item.</p>\n<p>You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we’ll use three here to also align the raw Markdown).</p>\n<p>To have a line break without a paragraph, you will need to use two trailing spaces.\nNote that this line is separate, but within the same paragraph.\n(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p>\n</li>\n</ol>\n<ul>\n<li>Unordered list can use asterisks</li>\n</ul>\n<ul>\n<li>Or minuses</li>\n</ul>\n<ul>\n<li>Or pluses</li>\n</ul>\n<ul>\n<li>\n<p>Paragraph In unordered list</p>\n<p>For example like this.</p>\n</li>\n</ul>\n<p>Common Paragraph with some text.\nAnd more text.</p>\n<h2 id=\"inline-html\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#inline-html\">Inline HTML</a></h2>\n<pre><code class=\"language-markdown\">&lt;p&gt;To reboot your computer, press &lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;alt&lt;/kbd&gt;+&lt;kbd&gt;del&lt;/kbd&gt;.&lt;/p&gt;\n</code></pre>\n<p>To reboot your computer, press <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>del</kbd>.</p>\n<pre><code class=\"language-markdown\">&lt;dl&gt;\n    &lt;dt&gt;Definition list&lt;/dt&gt;\n    &lt;dd&gt;Is something people use sometimes.&lt;/dd&gt;\n\n    &lt;dt&gt;Markdown in HTML&lt;/dt&gt;\n    &lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&lt;/dd&gt;\n&lt;/dl&gt;\n</code></pre>\n<dl>\n    <dt>Definition list</dt>\n    <dd>Is something people use sometimes.</dd>\n<pre><code>&lt;dt&gt;Markdown in HTML&lt;/dt&gt;\n&lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;/em&gt;.&lt;/dd&gt;\n</code></pre>\n</dl>\n<h2 id=\"links\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#links\">Links</a></h2>\n<pre><code class=\"language-markdown\">[I'm an inline-style link](https://www.google.com)\n\n[I'm an inline-style link with title](https://www.google.com &quot;Google's Homepage&quot;)\n\n[I'm a reference-style link][Arbitrary case-insensitive reference text]\n\n[I'm a relative reference to a repository file](../blob/master/LICENSE)\n\n[You can use numbers for reference-style link definitions][1]\n\nOr leave it empty and use the [link text itself]\n\nSome text to show that the reference links can follow later.\n\n[arbitrary case-insensitive reference text]: https://hexo.io\n[1]: https://hexo.io/docs/\n[link text itself]: https://hexo.io/api/\n</code></pre>\n<p><a href=\"https://www.google.com\">I’m an inline-style link</a></p>\n<p><a href=\"https://www.google.com\" title=\"Google's Homepage\">I’m an inline-style link with title</a></p>\n<p><a href=\"https://hexo.io\">I’m a reference-style link</a></p>\n<p><a href=\"../blob/master/LICENSE\">I’m a relative reference to a repository file</a></p>\n<p><a href=\"https://hexo.io/docs/\">You can use numbers for reference-style link definitions</a></p>\n<p>Or leave it empty and use the <a href=\"https://hexo.io/api/\">link text itself</a></p>\n<p>Some text to show that the reference links can follow later.</p>\n<h2 id=\"images\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#images\">Images</a></h2>\n<pre><code class=\"language-markdown\">hover to see the title text:\n\nInline-style:\n\n![alt text](https://hexo.io/icon/favicon-196x196.png &quot;Logo Title Text 1&quot;)\n\nReference-style:\n![alt text][logo]\n\n[logo]: https://hexo.io/icon/favicon-196x196.png &quot;Logo Title Text 2&quot;\n</code></pre>\n<p>hover to see the title text:</p>\n<p>Inline-style:</p>\n<p><img src=\"https://hexo.io/icon/favicon-196x196.png\" alt=\"alt text\" title=\"Logo Title Text 1\"></p>\n<p>Reference-style:\n<img src=\"https://hexo.io/icon/favicon-196x196.png\" alt=\"alt text\" title=\"Logo Title Text 2\"></p>\n<h2 id=\"code-and-syntax-highlighting\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#code-and-syntax-highlighting\">Code and Syntax Highlighting</a></h2>\n<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>\n<pre><code class=\"language-javascript\">var s = &quot;JavaScript syntax highlighting&quot;;\nalert(s);\n</code></pre>\n<pre><code class=\"language-python\">s = &quot;Python syntax highlighting&quot;\nprint s\n</code></pre>\n<pre><code>No language indicated, so no syntax highlighting.\nBut let's throw in a &lt;b&gt;tag&lt;/b&gt;.\n</code></pre>\n<h2 id=\"tables\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#tables\">Tables</a></h2>\n<pre><code class=\"language-markdown\">|                |ASCII                          |HTML                         |\n|----------------|-------------------------------|-----------------------------|\n|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |\n|Quotes          |`&quot;Isn't this fun?&quot;`            |&quot;Isn't this fun?&quot;            |\n|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|\n</code></pre>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>ASCII</th>\n<th>HTML</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Single backticks</td>\n<td><code>'Isn't this fun?'</code></td>\n<td>‘Isn’t this fun?’</td>\n</tr>\n<tr>\n<td>Quotes</td>\n<td><code>&quot;Isn't this fun?&quot;</code></td>\n<td>“Isn’t this fun?”</td>\n</tr>\n<tr>\n<td>Dashes</td>\n<td><code>-- is en-dash, --- is em-dash</code></td>\n<td>– is en-dash, — is em-dash</td>\n</tr>\n</tbody>\n</table>\n<p>Colons can be used to align columns.</p>\n<pre><code class=\"language-markdown\">| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned |  |\n| col 2 is      | centered      |    |\n| zebra stripes | are neat      |\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Tables</th>\n<th style=\"text-align:center\">Are</th>\n<th style=\"text-align:right\">Cool</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>col 3 is</td>\n<td style=\"text-align:center\">right-aligned</td>\n<td style=\"text-align:right\"></td>\n</tr>\n<tr>\n<td>col 2 is</td>\n<td style=\"text-align:center\">centered</td>\n<td style=\"text-align:right\"></td>\n</tr>\n<tr>\n<td>zebra stripes</td>\n<td style=\"text-align:center\">are neat</td>\n<td style=\"text-align:right\"></td>\n</tr>\n</tbody>\n</table>\n<p>The outer pipes (|) are optional, and you don’t need to make the raw Markdown line up prettily. You can also use inline Markdown.</p>\n<pre><code class=\"language-markdown\">Markdown | Less | Pretty\n--- | --- | ---\n*Still* | `renders` | **nicely**\n1 | 2 | 3\n</code></pre>\n<table>\n<thead>\n<tr>\n<th>Markdown</th>\n<th>Less</th>\n<th>Pretty</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><em>Still</em></td>\n<td><code>renders</code></td>\n<td><strong>nicely</strong></td>\n</tr>\n<tr>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>You can find more information about <strong>LaTeX</strong> mathematical expressions <a href=\"https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference\">here</a>.</p>\n</blockquote>\n<h2 id=\"blockquotes\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#blockquotes\">Blockquotes</a></h2>\n<blockquote>\n<p>Blockquotes are very handy in email to emulate reply text.\nThis line is part of the same quote.</p>\n</blockquote>\n<p>Quote break.</p>\n<blockquote>\n<p>This is a very long line that will still be quoted properly when it wraps. Oh boy let’s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p>\n</blockquote>\n<h2 id=\"horizontal-rule\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#horizontal-rule\">Horizontal Rule</a></h2>\n<p>Three or more…</p>\n<pre><code class=\"language-markdown\">---\n\nHyphens\n\n***\n\nAsterisks\n\n___\n\nUnderscores\n</code></pre>\n<hr>\n<p>Hyphens</p>\n<hr>\n<p>Asterisks</p>\n<hr>\n<p>Underscores</p>\n<h2 id=\"line-breaks\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#line-breaks\">Line Breaks</a></h2>\n<pre><code class=\"language-markdown\">Here's a line for us to start with.\n\nThis line is separated from the one above by two newlines, so it will be a *separate paragraph*.\n\nThis line is also a separate paragraph, but...\nThis line is only separated by a single newline, so it's a separate line in the *same paragraph*.\n</code></pre>\n<p>Here’s a line for us to start with.</p>\n<p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>\n<p>This line is also a separate paragraph, but…\nThis line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.</p>\n<hr>\n<pre><code class=\"language-markdown\">This is a regular paragraph.\n\n&lt;table&gt;\n    &lt;tr&gt;\n        &lt;td&gt;Foo&lt;/td&gt;\n    &lt;/tr&gt;\n&lt;/table&gt;\n\nThis is another regular paragraph.\n</code></pre>\n<p>This is a regular paragraph.</p>\n<table>\n    <tr>\n        <td>Foo</td>\n    </tr>\n</table>\n<p>This is another regular paragraph.</p>\n<h2 id=\"youtube-videos\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#youtube-videos\">Youtube videos</a></h2>\n<pre><code class=\"language-markdown\">&lt;a href=&quot;https://www.youtube.com/watch?feature=player_embedded&amp;v=ARted4RniaU\n&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/ARted4RniaU/0.jpg&quot;\nalt=&quot;IMAGE ALT TEXT HERE&quot; width=&quot;240&quot; height=&quot;180&quot; border=&quot;10&quot; /&gt;&lt;/a&gt;\n\nPure markdown version:\n\n[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ARted4RniaU/0.jpg)](https://www.youtube.com/watch?v=ARted4RniaU)\n</code></pre>\n<p><a href=\"https://www.youtube.com/watch?feature=player_embedded&v=ARted4RniaU\n\" target=\"_blank\"><img src=\"https://img.youtube.com/vi/ARted4RniaU/0.jpg\"\nalt=\"IMAGE ALT TEXT HERE\" width=\"240\" height=\"180\" border=\"10\" /></a></p>\n<p>Pure markdown version:</p>\n<p><a href=\"https://www.youtube.com/watch?v=ARted4RniaU\"><img src=\"https://img.youtube.com/vi/ARted4RniaU/0.jpg\" alt=\"IMAGE ALT TEXT HERE\"></a></p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/markdown.html",
+            "title": "Markdown Style test",
+            "summary": "Markdown Style test - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2018-07-24T16:31:06.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/code-highlight.html",
+            "content_html": "<p>Make sure all the code blocks highlighted correctly. All the code samples are come from the demo of https://highlightjs.org</p>\n<!-- more -->\n<pre><code class=\"language-plain\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n</code></pre>\n<pre><code class=\"language-rust\">#[derive(Debug)]\npub enum State {\n    Start,\n    Transient,\n    Closed,\n}\n\nimpl From&lt;&amp;'a str&gt; for State {\n    fn from(s: &amp;'a str) -&gt; Self {\n        match s {\n            &quot;start&quot; =&gt; State::Start,\n            &quot;closed&quot; =&gt; State::Closed,\n            _ =&gt; unreachable!(),\n        }\n    }\n}\n</code></pre>\n<pre><code class=\"language-json\">[\n  {\n    &quot;title&quot;: &quot;apples&quot;,\n    &quot;count&quot;: [12000, 20000],\n    &quot;description&quot;: {&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false}\n  },\n  {\n    &quot;title&quot;: &quot;oranges&quot;,\n    &quot;count&quot;: [17500, null],\n    &quot;description&quot;: {&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false}\n  }\n]\n</code></pre>\n<pre><code class=\"language-python\">@requires_authorization\ndef somefunc(param1='', param2=0):\n    r'''A docstring'''\n    if param1 &gt; param2: # interesting\n        print 'Gre\\'ater'\n    return (param2 - param1 + 1 + 0b10l) or None\n\nclass SomeClass:\n    pass\n\n&gt;&gt;&gt; message = '''interpreter\n... prompt'''\n</code></pre>\n<pre><code class=\"language-html\">&lt;!DOCTYPE html&gt;\n&lt;title&gt;Title&lt;/title&gt;\n\n&lt;style&gt;body {width: 500px;}&lt;/style&gt;\n\n&lt;script type=&quot;application/javascript&quot;&gt;\n  function $init() {return true;}\n&lt;/script&gt;\n\n&lt;body&gt;\n  &lt;p checked class=&quot;title&quot; id='title'&gt;Title&lt;/p&gt;\n  &lt;!-- here goes the rest of the page --&gt;\n&lt;/body&gt;\n</code></pre>\n<pre><code class=\"language-javascript\">function $initHighlight(block, cls) {\n  try {\n    if (cls.search(/\\bno\\-highlight\\b/) != -1)\n      return process(block, true, 0x0F) +\n             ` class=&quot;${cls}&quot;`;\n  } catch (e) {\n    /* handle exception */\n  }\n  for (var i = 0 / 2; i &lt; classes.length; i++) {\n    if (checkCondition(classes[i]) === undefined)\n      console.log('undefined');\n  }\n\n  return (\n    &lt;div&gt;\n      &lt;web-component&gt;{block}&lt;/web-component&gt;\n    &lt;/div&gt;\n  )\n}\n\nexport $initHighlight;\n</code></pre>\n<pre><code class=\"language-cpp\">#include &lt;iostream&gt;\n\nint main(int argc, char *argv[]) {\n\n  /* An annoying &quot;Hello World&quot; example */\n  for (auto i = 0; i &lt; 0xFFFF; i++)\n    cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;\n\n  char c = '\\n';\n  unordered_map &lt;string, vector&lt;string&gt; &gt; m;\n  m[&quot;key&quot;] = &quot;\\\\\\\\&quot;; // this is an error\n\n  return -2e3 + 12l;\n}\n</code></pre>\n<pre><code class=\"language-sql\">CREATE TABLE &quot;topic&quot; (\n    &quot;id&quot; serial NOT NULL PRIMARY KEY,\n    &quot;forum_id&quot; integer NOT NULL,\n    &quot;subject&quot; varchar(255) NOT NULL\n);\nALTER TABLE &quot;topic&quot;\nADD CONSTRAINT forum_id FOREIGN KEY (&quot;forum_id&quot;)\nREFERENCES &quot;forum&quot; (&quot;id&quot;);\n\n-- Initials\ninsert into &quot;topic&quot; (&quot;forum_id&quot;, &quot;subject&quot;)\nvalues (2, 'D''artagnian');\n</code></pre>\n<pre><code class=\"language-objectivec\">#import &lt;UIKit/UIKit.h&gt;\n#import &quot;Dependency.h&quot;\n\n@protocol WorldDataSource\n@optional\n- (NSString*)worldName;\n@required\n- (BOOL)allowsToLive;\n@end\n\n@property (nonatomic, readonly) NSString *title;\n- (IBAction) show;\n@end\n</code></pre>\n<pre><code class=\"language-java\">/**\n * @author John Smith &lt;john.smith@example.com&gt;\n*/\npackage l2f.gameserver.model;\n\npublic abstract class L2Char extends L2Object {\n  public static final Short ERROR = 0x0001;\n\n  public void moveTo(int x, int y, int z) {\n    _ai = null;\n    log(&quot;Should not be called&quot;);\n    if (1 &gt; 5) { // wtf!?\n      return;\n    }\n  }\n}\n</code></pre>\n<pre><code class=\"language-swift\">import Foundation\n\n@objc class Person: Entity {\n  var name: String!\n  var age:  Int!\n\n  init(name: String, age: Int) {\n    /* /* ... */ */\n  }\n\n  // Return a descriptive string for this person\n  func description(offset: Int = 0) -&gt; String {\n    return &quot;\\(name) is \\(age + offset) years old&quot;\n  }\n}\n</code></pre>\n<pre><code class=\"language-css\">@font-face {\n  font-family: Chunkfive; src: url('Chunkfive.otf');\n}\n\nbody, .usertext {\n  color: #F0F0F0; background: #600;\n  font-family: Chunkfive, sans;\n}\n\n@import url(print.css);\n@media print {\n  a[href^=http]::after {\n    content: attr(href)\n  }\n}\n</code></pre>\n<pre><code class=\"language-ruby\"># The Greeter class\nclass Greeter\n  def initialize(name)\n    @name = name.capitalize\n  end\n\n  def salute\n    puts &quot;Hello #{@name}!&quot;\n  end\nend\n\ng = Greeter.new(&quot;world&quot;)\ng.salute\n</code></pre>\n<pre><code class=\"language-makefile\"># Makefile\n\nBUILDDIR      = _build\nEXTRAS       ?= $(BUILDDIR)/extras\n\n.PHONY: main clean\n\nmain:\n\t@echo &quot;Building main facility...&quot;\n\tbuild_main $(BUILDDIR)\n\nclean:\n\trm -rf $(BUILDDIR)/*\n</code></pre>\n<pre><code class=\"language-go\">package main\n\nimport &quot;fmt&quot;\n\nfunc main() {\n    ch := make(chan float64)\n    ch &lt;- 1.0e10    // magic number\n    x, ok := &lt;- ch\n    defer fmt.Println(`exitting now\\`)\n    go println(len(&quot;hello world!&quot;))\n    return\n}\n</code></pre>\n<pre><code class=\"language-bash\">#!/bin/bash\n\n###### CONFIG\nACCEPTED_HOSTS=&quot;/root/.hag_accepted.conf&quot;\nBE_VERBOSE=false\n\nif [ &quot;$UID&quot; -ne 0 ]\nthen\n  echo &quot;Superuser rights required&quot;\n  exit 2\nfi\n\ngenApacheConf(){\n  echo -e &quot;# Host ${HOME_DIR}$1/$2 :&quot;\n}\n</code></pre>\n<pre><code class=\"language-ini\">; boilerplate\n[package]\nname = &quot;some_name&quot;\nauthors = [&quot;Author&quot;]\ndescription = &quot;This is \\\na description&quot;\n\n[[lib]]\nname = ${NAME}\ndefault = True\nauto = no\ncounter = 1_000\n</code></pre>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/unit/code-highlight.html",
+            "title": "Code Highlight Style test",
+            "summary": "Code Highlight Style test - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2019-07-25T09:43:00.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/with-description.html",
+            "content_html": "<p>post with description</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/with-description.html",
+            "title": "post with description",
+            "summary": "this is post description",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2022-05-04T17:00:00.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/shortcodes.html",
+            "content_html": "<h2 id=\"shortcode-css\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#shortcode-css\">Shortcode CSS</a></h2>\n<p>From Local Directory</p>\n<pre><code class=\"language-html\">&lt;style&gt;/*STYLE CSS SHORTCODES*/\n.just-test {\n  display: block;\n}&lt;/style&gt;\n</code></pre>\n<p>From Root/cwd Directory</p>\n<pre><code class=\"language-html\">&lt;style&gt;/*STYLE CSS SHORTCODES*/\n.just-test {\n  display: block;\n}&lt;/style&gt;\n</code></pre>\n<h2 id=\"shortcode-js\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#shortcode-js\">Shortcode JS</a></h2>\n<p>From Local Directory</p>\n<pre><code class=\"language-html\">&lt;script&gt;/* script js shortcode */\nconsole.log('hello world');\n&lt;/script&gt;\n</code></pre>\n<p>From Root/cwd Directory</p>\n<pre><code class=\"language-html\">&lt;script&gt;/* script js shortcode */\nconsole.log('hello world');\n&lt;/script&gt;\n</code></pre>\n<h2 id=\"shortcode-include\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#shortcode-include\">Shortcode Include</a></h2>\n<p>From Local Directory</p>\n<pre><code class=\"language-html\">&lt;p&gt;included html&lt;/p&gt;\n</code></pre>\n<p>From Root/cwd Directory</p>\n<pre><code class=\"language-html\">&lt;p&gt;included html&lt;/p&gt;\n</code></pre>\n<h2 id=\"shortcode-extract-text\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#shortcode-extract-text\">Shortcode extract-text</a></h2>\n<p>From Local Directory</p>\n<pre><code class=\"language-html\">include extract text\n</code></pre>\n<p>From Root/cwd Directory</p>\n<pre><code class=\"language-html\">include extract text\n</code></pre>\n<h2 id=\"shortcode-youtube\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#shortcode-youtube\">Shortcode Youtube</a></h2>\n<p>By default youtube tag will output video</p>\n<pre><code class=\"language-html\">&lt;div class=&quot;video-container&quot;&gt;\n  &lt;iframe src=&quot;https://www.youtube.com/embed/4_oXjfgQ2G4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;\n&lt;/div&gt;\n</code></pre>\n<p>Manually set type <code>video</code></p>\n<pre><code class=\"language-html\">&lt;div class=&quot;video-container&quot;&gt;\n  &lt;iframe src=&quot;https://www.youtube.com/embed/4_oXjfgQ2G4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;\n&lt;/div&gt;\n</code></pre>\n<p>Manually set type <code>playlist</code></p>\n<pre><code class=\"language-html\">&lt;div class=&quot;video-container&quot;&gt;\n  &lt;iframe src=&quot;https://www.youtube.com/embed/videoseries?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;\n&lt;/div&gt;\n</code></pre>\n<h2 id=\"shortcode-now\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#shortcode-now\">Shortcode now()</a></h2>\n<pre><code class=\"language-html\">6/12/2022, 12:21:38 AM\n</code></pre>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/shortcodes.html",
+            "title": "Parse Shortcodes",
+            "summary": "Parse Shortcodes - Website Manajemen Indonesia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2022-05-16T17:00:00.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/Tests/codeblock.html",
+            "content_html": "<h2 id=\"first-parsing\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#first-parsing\">first parsing</a></h2>\n<figure class=\"highlight plain\"><figcaption><span>Array.map</span></figcaption><pre><code><!-- prettier-ignore-start -->\nfunction mapX() {\n  return array.map(callback[, thisArg])\n}\n<!-- prettier-ignore-end --></code></pre></figure>\n<pre><code><!-- prettier-ignore-start -->\nfunction anything() {\n  console.log('hello world');\n}\n<!-- prettier-ignore-end --></code></pre>\n<figure class=\"highlight plain\"><figcaption><span>title</span><a target=\"_blank\" rel=\"noopener external nofollow noreferrer\" href=\"https://hexo.io/docs/tag-plugins.html#Code-Block\">Tag Plugins | Hexo</a></figcaption><pre class=\"highlight language-language\"><code><!-- prettier-ignore-start -->\ncode snippet\n<!-- prettier-ignore-end --></code></pre></figure>\n<pre class=\"highlight language-objc\"><code><!-- prettier-ignore-start -->\n[rectangle setX: 10 y: 10 width: 20 height: 20];\n<!-- prettier-ignore-end --></code></pre></figure>\n<h2 id=\"second-parsing\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#second-parsing\">second parsing</a></h2>\n<figure class=\"highlight plain\"><figcaption><span>Array.map</span></figcaption><pre><code><!-- prettier-ignore-start -->\nfunction mapX() {\n  return array.map(callback[, thisArg])\n}\n<!-- prettier-ignore-end --></code></pre></figure>\n<pre><code><!-- prettier-ignore-start -->\nfunction anything() {\n  console.log('hello world');\n}\n<!-- prettier-ignore-end --></code></pre>\n<figure class=\"highlight plain\"><figcaption><span>title</span><a target=\"_blank\" rel=\"noopener external nofollow noreferrer\" href=\"https://hexo.io/docs/tag-plugins.html#Code-Block\">Tag Plugins | Hexo</a></figcaption><pre class=\"highlight language-language\"><code><!-- prettier-ignore-start -->\ncode snippet\n<!-- prettier-ignore-end --></code></pre></figure>\n<pre class=\"highlight language-objc\"><code><!-- prettier-ignore-start -->\n[rectangle setX: 10 y: 10 width: 20 height: 20];\n<!-- prettier-ignore-end --></code></pre></figure>",
+            "url": "https://www.webmanajemen.com/static-blog-generator/Tests/codeblock.html",
+            "title": "codeblock shortcode",
+            "summary": "codeblock shortcode usage",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2022-05-26T17:00:00.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        },
+        {
+            "id": "https://www.webmanajemen.com/static-blog-generator/folder%20with%20space/file%20post%20with%20space.html",
+            "content_html": "<p>post body of spaces post path</p>\n",
+            "url": "https://www.webmanajemen.com/static-blog-generator/folder%20with%20space/file%20post%20with%20space.html",
+            "title": "post file with spaces",
+            "summary": "folder and post path using spaces",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+            "date_modified": "2022-06-10T17:00:00.000Z",
+            "author": {
+                "name": "Dimas Lanjaka",
+                "url": "https://www.webmanajemen.com/"
+            }
+        }
+    ]
+}
