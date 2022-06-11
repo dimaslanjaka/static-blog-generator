@@ -74,7 +74,7 @@ tags: ['guide']
   )
     .map((file) => {
       return {
-        parse: parsePost(file, null, { cache: false }),
+        parse: parsePost(file, read(file).toString(), { cache: false }),
         source: file,
         build: null
       };
