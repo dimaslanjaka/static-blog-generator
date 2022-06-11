@@ -1,2 +1,2 @@
 /// <reference types="node" />
-export declare const generateTemplate: () => NodeJS.ReadWriteStream;
+export declare function generateTemplate(): NodeJS.ReadWriteStream;
