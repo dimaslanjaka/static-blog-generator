@@ -1,2 +1,2 @@
 import Bluebird from 'bluebird';
-export declare const generatePosts: () => Bluebird<unknown>;
+export declare function generatePosts(): Bluebird<unknown>;
