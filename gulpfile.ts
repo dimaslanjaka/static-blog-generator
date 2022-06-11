@@ -53,7 +53,7 @@ gulp.task('sbg:docs', async () => {
     `
 ---
 title: Readme Usages
-subtitle: Static Blog Generator
+webtitle: Static Blog Generator
 date: 2022-06-10
 updated: 2022-06-10
 category: ['guide']
@@ -64,8 +64,9 @@ tags: ['guide']
   );
   const build = buildPost(parse);
   write(join(__dirname, config.source_dir, '_posts/usages', 'index.md'), build);
-
-  //[join(__dirname, 'src', '**/*.md'), '!**/tmp']
+  gulp
+    .src([join(__dirname, 'src', '**/*.md'), '!**/tmp'])
+    .pipe(gulp.dest(join(__dirname, config.source_dir, '_posts/usages')));
 
   /*
   gulp
