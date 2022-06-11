@@ -1,1 +1,0 @@
-cp -rf ./src-posts/* ./packages/hexo-post-parser/src-posts/
