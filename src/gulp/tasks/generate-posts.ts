@@ -111,7 +111,6 @@ export function generatePosts() {
           if (!result.length) return resolve(result.length);
           // get first item
           const parsed = result[0];
-          console.log(`${counter} generate post ${parsed.metadata.title}`);
 
           /**
            * remove first item, skip
@@ -130,6 +129,9 @@ export function generatePosts() {
            */
           const save = (rendered: string) => {
             const saveto = join(generated_dir, parsed.permalink);
+            console.log(
+              `${counter} gen post ${parsed.metadata.title} -> ${saveto}`
+            );
             //console.log(logname, chalk.greenBright('generated'), saveto);
             write(saveto, rendered);
             parsed.generated = rendered;
