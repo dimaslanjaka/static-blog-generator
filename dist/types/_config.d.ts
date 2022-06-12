@@ -1,5 +1,7 @@
 import data from './_config_project.json';
-declare const def: {
+declare const nocache: any;
+declare const verbose: any;
+declare const defaultOptions: {
     title: string;
     subtitle: string;
     description: string;
@@ -70,7 +72,7 @@ declare const def: {
     ignore: any[];
     meta_generator: boolean;
 };
-declare type MergeData = Partial<typeof data> & Partial<typeof def>;
+declare type MergeData = Partial<typeof data> & Partial<typeof defaultOptions>;
 interface Config extends Partial<MergeData> {
     verbose?: boolean;
     generator?: {
@@ -152,6 +154,7 @@ declare let config: {
     ignore: any[];
     meta_generator: boolean;
 };
+export { verbose, nocache };
 declare const _default: Config;
 export default _default;
 export interface ProjectConfig extends Partial<typeof config> {

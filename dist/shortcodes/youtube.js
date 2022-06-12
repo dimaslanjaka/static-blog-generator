@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.shortcodeYoutube = void 0;
 const tslib_1 = require("tslib");
 const color_1 = tslib_1.__importDefault(require("../node/color"));
-const _config_1 = tslib_1.__importDefault(require("../types/_config"));
+const _config_1 = tslib_1.__importStar(require("../types/_config"));
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
 const logname = color_1.default['Vivid Tangerine']('[youtube]');
@@ -58,7 +58,8 @@ layout="responsive"
 </div>
     `.trim();
         }
-        console.log(`${logname} transformed id ${ytid} type ${type}`);
+        if (_config_1.verbose)
+            console.log(`${logname} transformed id ${ytid} type ${type}`);
         content = content.replace(allmatch, () => html);
     }
     return content;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.nocache = exports.verbose = void 0;
 const tslib_1 = require("tslib");
 const fs_1 = require("fs");
 const upath_1 = require("upath");
@@ -7,8 +8,10 @@ const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const yargs_1 = tslib_1.__importDefault(require("yargs"));
 const argv = (0, yargs_1.default)(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
+exports.nocache = nocache;
 const verbose = argv['verbose'];
-const def = {
+exports.verbose = verbose;
+const defaultOptions = {
     // Site
     title: 'Hexo',
     subtitle: '',
@@ -94,13 +97,13 @@ const def = {
     // Category & Tag
     meta_generator: true
 };
-let config = def;
+let config = defaultOptions;
 // find _config.yml
 const file = (0, upath_1.join)(process.cwd(), '_config.yml');
 if ((0, fs_1.existsSync)(file)) {
     const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
     const parse = yaml_1.default.parse(readConfig);
-    config = Object.assign(def, parse, {
+    config = Object.assign(defaultOptions, parse, {
         verbose,
         generator: {
             cache: !nocache
