@@ -39,7 +39,7 @@ function updateVersion() {
     exec(
       'git describe --tags --first-parent --dirty --broken',
       function (err, hash) {
-        //if (!err) console.log('Last commit hash on this branch is:', hash);
+        if (!err) console.log('Last commit hash on this branch is:', hash);
         if (typeof hash === 'string' && hash.length > 1) {
           hash = hash.trim().replace(/^v/, '');
           pkg.version = hash;
