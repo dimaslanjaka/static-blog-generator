@@ -2,9 +2,10 @@ import chalk from 'chalk';
 import { spawn } from 'child_process';
 import { existsSync } from 'fs';
 import gulp from 'gulp';
-import moment from 'moment';
 import { TaskCallback } from 'undertaker';
 import { join, mkdirSync, resolve } from '../../../node/filemanager';
+import { getLatestCommitHash } from '../../../node/git';
+import { modMoment } from '../../../renderer/ejs/helper/date';
 import config, { post_generated_dir, root } from '../../../types/_config';
 
 const deployDir = resolve(join(root, '.deploy_git'));
@@ -106,7 +107,12 @@ export const deployerGit = async (done?: TaskCallback) => {
 
   return copyGenerated().on('end', async () => {
     await git('add', '-A');
-    await git('commit', '-m', 'Update site: ' + moment().format());
+    let msg = 'Update site';
+    if (existsSync(join(process.cwd(), '.git')))
+      msg += ' ' + (await getLatestCommitHash());
+    msg += '\ndate: ' + modMoment().format();
+    await git('commit', '-m', msg);
+
     if (
       Object.hasOwnProperty.call(configDeploy, 'force') &&
       configDeploy['force'] === true
