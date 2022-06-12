@@ -1,9 +1,16 @@
 import { exec, spawn, SpawnOptions } from 'child_process';
 import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
+import yargs from 'yargs';
 import pkg from './package.json';
 
-build().then(updateVersion);
+const argv = yargs.parse(process.argv);
+
+if (argv['update-version']) {
+  updateVersion();
+} else {
+  build().then(updateVersion);
+}
 
 /**
  * main build function
@@ -74,7 +81,11 @@ function updateVersion() {
 function git(options: null | SpawnOptions = {}, ...args: string[]) {
   return new Promise(
     (
-      resolve: (args: { code: number; stdout: string; stderr: string }) => any,
+      resolve: (args: {
+        code: number | null;
+        stdout: string | null;
+        stderr: string | null;
+      }) => any,
       reject: (args: { args: string[]; err: Error }) => any
     ) => {
       options = Object.assign(
@@ -89,7 +100,7 @@ function git(options: null | SpawnOptions = {}, ...args: string[]) {
         // Should probably be 'exit', not 'close'
         // *** Process completed
         return resolve({
-          code: code,
+          code,
           stdout: String(summon.stdout),
           stderr: String(summon.stderr)
         });
