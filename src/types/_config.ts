@@ -8,7 +8,7 @@ const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const verbose = argv['verbose'];
 
-const def = {
+const defaultOptions = {
   // Site
   title: 'Hexo',
   subtitle: '',
@@ -97,7 +97,7 @@ const def = {
   meta_generator: true
 };
 
-type MergeData = Partial<typeof data> & Partial<typeof def>;
+type MergeData = Partial<typeof data> & Partial<typeof defaultOptions>;
 interface Config extends Partial<MergeData> {
   verbose?: boolean;
   generator?: {
@@ -109,14 +109,14 @@ interface Config extends Partial<MergeData> {
   content?: string;
 }
 
-let config = def;
+let config = defaultOptions;
 
 // find _config.yml
 const file = join(process.cwd(), '_config.yml');
 if (existsSync(file)) {
   const readConfig = readFileSync(file, 'utf-8');
   const parse = yaml.parse(readConfig) as typeof data;
-  config = Object.assign(def, parse, {
+  config = Object.assign(defaultOptions, parse, {
     verbose,
     generator: {
       cache: !nocache
@@ -129,6 +129,7 @@ writeFileSync(
   JSON.stringify(config, null, 2)
 );
 
+export { verbose, nocache };
 export default config as Config;
 export interface ProjectConfig extends Partial<typeof config> {
   [key: string]: any;
