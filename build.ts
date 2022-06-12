@@ -48,7 +48,7 @@ function updateVersion() {
             join(__dirname, 'package.json'),
             JSON.stringify(pkg, null, 2)
           );
-          exec('npm install', { cwd: __dirname }, async () => {
+          exec('npm install && npm audit fix', { cwd: __dirname }, async () => {
             await git(
               { cwd: __dirname, stdio: 'ignore' },
               'add',
