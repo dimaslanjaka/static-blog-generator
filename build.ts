@@ -1,4 +1,5 @@
-import { exec, spawn, SpawnOptions } from 'child_process';
+import Bluebird from 'bluebird';
+import { exec, ExecException, spawn, SpawnOptions } from 'child_process';
 import fse, { writeFile } from 'fs-extra';
 import { join, toUnix } from 'upath';
 import yargs from 'yargs';
@@ -40,33 +41,47 @@ function updateVersion() {
       'git describe --tags --first-parent --dirty --broken',
       { cwd: __dirname },
       function (err, hash) {
-        if (!err) console.log('Last commit hash on this branch is:', hash);
-        if (typeof hash === 'string' && hash.length > 1) {
-          hash = hash.trim().replace(/^v/, '');
-          pkg.version = hash;
-          writeFile(
-            join(__dirname, 'package.json'),
-            JSON.stringify(pkg, null, 2)
-          );
-          exec('npm install && npm audit fix', { cwd: __dirname }, async () => {
-            await git(
-              { cwd: __dirname, stdio: 'ignore' },
-              'add',
-              'package.json'
+        getLatestCommitHash(join(__dirname, 'src')).then((result) => {
+          const srcErr = result.err;
+          const srcHash = result.hash;
+          if (!err) {
+            console.log('Described this branch', hash);
+          }
+          if (!srcErr) {
+            console.log('Last commit hash ./src', srcHash);
+          }
+
+          if (typeof hash === 'string' && hash.length > 1) {
+            hash = hash.trim().replace(/^v/, '');
+            pkg.version = hash;
+            writeFile(
+              join(__dirname, 'package.json'),
+              JSON.stringify(pkg, null, 2)
             );
-            await git(
-              { cwd: __dirname, stdio: 'ignore' },
-              'add',
-              'package-lock.json'
+            exec(
+              'npm install && npm audit fix',
+              { cwd: __dirname },
+              async () => {
+                await git(
+                  { cwd: __dirname, stdio: 'ignore' },
+                  'add',
+                  'package.json'
+                );
+                await git(
+                  { cwd: __dirname, stdio: 'ignore' },
+                  'add',
+                  'package-lock.json'
+                );
+                await git(
+                  { cwd: __dirname, stdio: 'ignore' },
+                  'commit',
+                  '-m',
+                  `[${srcHash}] update ${hash}`
+                );
+              }
             );
-            await git(
-              { cwd: __dirname, stdio: 'ignore' },
-              'commit',
-              '-m',
-              'update ' + hash
-            );
-          });
-        }
+          }
+        });
       }
     );
   } else {
@@ -110,6 +125,40 @@ function git(options: null | SpawnOptions = {}, ...args: string[]) {
         // *** Process creation failed
         return reject({ args: args, err: err });
       });
+    }
+  );
+}
+
+/**
+ * get latest hash of directory
+ * @param path
+ * @returns
+ */
+function getLatestCommitHash(path?: string) {
+  return new Bluebird(
+    (
+      resolve: (result: {
+        err: ExecException | null;
+        hash: string | null;
+      }) => any
+    ) => {
+      if (path) {
+        exec(
+          `git log --pretty=tformat:"%h" -n1 ${path}`,
+          { cwd: __dirname },
+          (err, hash) => {
+            resolve({ err, hash });
+          }
+        );
+      } else {
+        exec(
+          `git log --pretty=tformat:"%h" -n1 .`,
+          { cwd: __dirname },
+          (err, hash) => {
+            resolve({ err, hash });
+          }
+        );
+      }
     }
   );
 }
