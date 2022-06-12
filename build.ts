@@ -147,7 +147,7 @@ function getLatestCommitHash(path?: string) {
           `git log --pretty=tformat:"%h" -n1 ${path}`,
           { cwd: __dirname },
           (err, hash) => {
-            resolve({ err, hash });
+            resolve({ err, hash: String(hash).trim() });
           }
         );
       } else {
@@ -155,7 +155,7 @@ function getLatestCommitHash(path?: string) {
           `git log --pretty=tformat:"%h" -n1 .`,
           { cwd: __dirname },
           (err, hash) => {
-            resolve({ err, hash });
+            resolve({ err, hash: String(hash).trim() });
           }
         );
       }
