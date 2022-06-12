@@ -3,6 +3,10 @@
 
 Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/hexo-post-parser/blob/main/src/index.test.ts)
 
+## Features
+- Parsing HexoJS markdown post
+- Parsing Jekyll markdown post
+
 ```js
 const fs = require('fs');
 (async function(){
