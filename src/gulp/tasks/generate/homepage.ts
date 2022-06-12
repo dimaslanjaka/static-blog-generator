@@ -8,8 +8,8 @@ import modifyPost from '../../../parser/post/modifyPost';
 import { post_chunks } from '../../../parser/post/postMapper';
 import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
 import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
-import { excerpt } from '../../../renderer/ejs/helper/excerpt';
 import config, { cwd, post_generated_dir } from '../../../types/_config';
+import { getHomepageProperties } from './getArchiveProperties';
 import { getChunkOf } from './getChunkOf';
 import homepageTest from './homepage.test';
 
@@ -30,45 +30,26 @@ let logname = color['Desert Sand']('[generate][index]');
  * generateIndex('homepage'); // only generate homepage
  * generateIndex(4); // only generate page 4
  */
-export function generateIndex(
-  labelNameOrObj?: 'homepage' | number | string | any
-) {
-  type type_getChunkOf = ReturnType<typeof getChunkOf>;
-  type type_post_chunks = ReturnType<typeof post_chunks>;
-  const postsChunks: type_post_chunks | type_getChunkOf =
-    typeof labelNameOrObj == 'object'
-      ? labelNameOrObj
-      : typeof labelNameOrObj == 'function'
-      ? labelNameOrObj()
-      : null;
-
-  if (postsChunks !== null) {
-    if ('chunk' in postsChunks === false) {
-      return Object.keys(postsChunks)
-        .map((labelKey) => {
-          const opt = generateSingleIndex(
-            postsChunks[labelKey],
-            labelNameOrObj
-          );
-
-          write(join(__dirname, 'tmp/archive', labelKey + '.json'), opt);
-
-          return null;
-        })
-        .filter((gen) => typeof gen === 'string');
-    } else {
-      const opt = generateSingleIndex(postsChunks, labelNameOrObj, {
-        title: {
-          index: 'Homepage',
-          pagination: 'Archive Page %d'
-        },
-        description: excerpt(config),
-        base: post_generated_dir,
-        url: config.url
-      });
-
-      write(join(__dirname, 'tmp/archive', `home.json`), opt);
-      return null;
+export async function generateIndex(_?: 'homepage' | number | string | any) {
+  const properties = getHomepageProperties();
+  for (let i = 0; i < properties.length; i++) {
+    const archive = properties[i];
+    const property = modifyPost(archive, { merge: true, cache: false });
+    if (property !== null && typeof property !== 'undefined') {
+      // fix title
+      if (property.page_now === 0) {
+        property.title = null;
+        property.metadata.title = null;
+      }
+      const pagePath =
+        property.page_now > 0
+          ? config.archive_dir + '/page/' + property.page_now + '/index.html'
+          : 'index.html';
+      const saveTo = join(post_generated_dir, pagePath);
+      const rendered = await EJSRenderer(property);
+      write(join(__dirname, 'tmp/homepage/rendered.html'), rendered);
+      write(saveTo, rendered);
+      console.log('saved', saveTo);
     }
   }
 }
