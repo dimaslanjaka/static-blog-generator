@@ -11,6 +11,7 @@ import color from './src/node/color';
 import { write } from './src/node/filemanager';
 import { getLatestCommitHash, git, gitAddAndCommit } from './src/node/git';
 import { md5FileSync } from './src/node/md5-file';
+import spawner from './src/node/spawner';
 import { argv } from './src/types/_config';
 
 // mock data
@@ -110,13 +111,24 @@ async function update_version() {
       }
 
       pkg.version = newVer;
+
       write(
         join(__dirname, '/package.json'),
         JSON.stringify(pkg, null, 2) + '\n'
       );
-      gitAddAndCommit('package.json', `build from ${srcInfo}`, {
-        cwd: __dirname
-      });
+
+      spawner
+        .promise({ cwd: __dirname }, 'npm', 'install')
+        .then(() => spawner.promise({ cwd: __dirname }, 'npm', 'audit', 'fix'))
+        .then(() => {
+          gitAddAndCommit('package.json', `update from ${srcInfo}`, {
+            cwd: __dirname
+          }).then(() => {
+            gitAddAndCommit('package-lock.json', `update from ${srcInfo}`, {
+              cwd: __dirname
+            });
+          });
+        });
     })
     .catch((err) => console.error(err));
 }
