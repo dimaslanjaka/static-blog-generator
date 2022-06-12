@@ -2,6 +2,7 @@
 import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { dirname, join, toUnix } from 'upath';
+import { verbose } from '../types/_config';
 
 const root = toUnix(process.cwd());
 const logname = chalk.blue('[script]');
@@ -32,7 +33,7 @@ export function shortcodeScript(file: string, str: string) {
         const filepath = dirs[key];
         if (existsSync(filepath)) {
           log[0] += chalk.greenBright(`[${key}]`);
-          console.log(...log, file);
+          if (verbose) console.log(...log, file);
           const read = readFileSync(filepath, 'utf-8');
           str = str.replace(htmlTag, () => `<script>${read}</script>`);
           //console.log('match tag', str.match(new RegExp(htmlTag, 'm'))[0]);
