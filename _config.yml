@@ -190,13 +190,21 @@ index_generator:
   # Posts displayed per page. (0 = disable pagination)
   per_page: 5
 
-# static-blog-generator: generator task options
+# static-blog-generator
+## generator task options
 generator:
   # enable cache method globally
   ## sligthly reduce memory usages
   cache: true
   # type generator (hexo, jekyll, sbg)
   type: sbg
+  # copy task options
+  copy:
+    # copy posts options
+    posts:
+      # Space in path
+      ## transform any space in path to hypens (-)
+      space: false
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
