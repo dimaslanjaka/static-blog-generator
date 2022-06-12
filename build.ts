@@ -38,6 +38,7 @@ function updateVersion() {
   if (!process.env['GITHUB_WORKFLOW']) {
     exec(
       'git describe --tags --first-parent --dirty --broken',
+      { cwd: __dirname },
       function (err, hash) {
         if (!err) console.log('Last commit hash on this branch is:', hash);
         if (typeof hash === 'string' && hash.length > 1) {
@@ -47,7 +48,7 @@ function updateVersion() {
             join(__dirname, 'package.json'),
             JSON.stringify(pkg, null, 2)
           );
-          exec('npm install', async () => {
+          exec('npm install', { cwd: __dirname }, async () => {
             await git(
               { cwd: __dirname, stdio: 'ignore' },
               'add',
