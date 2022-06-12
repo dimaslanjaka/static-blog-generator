@@ -48,12 +48,12 @@ function updateVersion() {
             JSON.stringify(pkg, null, 2)
           );
           exec('npm install', async () => {
-            const _pkg = await git(
+            await git(
               { cwd: __dirname, stdio: 'ignore' },
               'add',
               'package.json'
             );
-            const _lock = await git(
+            await git(
               { cwd: __dirname, stdio: 'ignore' },
               'add',
               'package-lock.json'
