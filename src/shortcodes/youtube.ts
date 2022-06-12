@@ -1,5 +1,5 @@
 import color from '../node/color';
-import config from '../types/_config';
+import config, { verbose } from '../types/_config';
 
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
@@ -55,7 +55,7 @@ layout="responsive"
 </div>
     `.trim();
     }
-    console.log(`${logname} transformed id ${ytid} type ${type}`);
+    if (verbose) console.log(`${logname} transformed id ${ytid} type ${type}`);
     content = content.replace(allmatch, () => html);
   }
 
