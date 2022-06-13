@@ -91,7 +91,7 @@ export declare function read(path: string, opt?: Parameters<typeof fs.readFileSy
  * @param str
  * @returns
  */
-export declare const join: (...str: any[]) => string;
+export declare const join: typeof upath.join;
 export declare const write: (path: fs.PathLike, content: any) => Bluebird<string | Buffer | import("url").URL>, readdirSync: (path: fs.PathLike, callback: (err: ErrnoException, results?: string[]) => any) => void, rmdirSync: (path: fs.PathLike, options?: fs.RmOptions) => void, rm: (path: fs.PathLike, options?: fs.RmOptions | fs.NoParamCallback, callback?: fs.NoParamCallback) => void, mkdirSync: (path: fs.PathLike, options?: fs.MakeDirectoryOptions) => string;
 export declare const fsreadDirSync: typeof fs.readdirSync;
 export declare const existsSync: typeof fs.existsSync, readFileSync: typeof fs.readFileSync, appendFileSync: typeof fs.appendFileSync, statSync: fs.StatSyncFn;

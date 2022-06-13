@@ -192,8 +192,7 @@ exports.read = read;
  * @param str
  * @returns
  */
-const join = (...str) => upath_1.default.join(...str);
-exports.join = join;
+exports.join = upath_1.default.join;
 exports.write = filemanager.write, exports.readdirSync = filemanager.readdirSync, exports.rmdirSync = filemanager.rmdirSync, exports.rm = filemanager.rm, exports.mkdirSync = filemanager.mkdirSync;
 exports.fsreadDirSync = fs.readdirSync;
 exports.existsSync = fs.existsSync, exports.readFileSync = fs.readFileSync, exports.appendFileSync = fs.appendFileSync, exports.statSync = fs.statSync;
