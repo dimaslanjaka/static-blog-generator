@@ -181,10 +181,10 @@ const ServerMiddleWare: import('browser-sync').Options['middleware'] = [
       const str = await generateIndex(
         isHomepage ? 'homepage' : indexPage ? indexPage : null
       );
-      if (str) {
+      /* if (str) {
         console.log(logname, 'pre-processed', req.url, '->', sourceIndex);
         return res.end(showPreview(String(str)));
-      }
+      }*/
       if (existsSync(sourceIndex)) {
         console.log(logname, 'processed', req.url, '->', sourceIndex);
         return res.end(showPreview(readFileSync(sourceIndex)));

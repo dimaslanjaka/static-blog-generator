@@ -1,9 +1,11 @@
+import { deepmerge } from 'deepmerge-ts';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import color from '../../../node/color';
 import { write } from '../../../node/filemanager';
+import modifyPost from '../../../parser/post/modifyPost';
 import { buildPost, parsePost } from '../../../parser/post/parsePost';
 import config, {
   argv,
@@ -59,7 +61,7 @@ export const copyPosts = (
           return next();
         }
 
-        let buildThePost: string;
+        let buildThePost = buildPost(parse);
 
         // @todo fix post with space in path
         if ('generator' in config) {
@@ -73,7 +75,7 @@ export const copyPosts = (
                   const gulpPath = String(path);
 
                   if (/\s/.test(source)) {
-                    const modParse = parse;
+                    const modParse = deepmerge({}, parse);
                     const newUrl =
                       config.url +
                       url.replace(config.url, '').replace(/\s|%20/g, '-');
@@ -97,6 +99,15 @@ export const copyPosts = (
                     modParse.metadata.source = newSource;
                     const buildNewParse = buildPost(modParse);
 
+                    // write new redirected post
+                    write(
+                      join(
+                        post_public_dir,
+                        newUrl.replace(config.url, '').replace(/.html$/, '.md')
+                      ),
+                      buildNewParse
+                    );
+
                     if (isDev) {
                       write(
                         join(
@@ -117,26 +128,27 @@ export const copyPosts = (
                     }
 
                     parse.metadata.redirect = newUrl;
+                    buildThePost = buildPost(parse);
 
-                    write(
-                      join(
-                        __dirname,
-                        'tmp/posts-fix-hypens',
-                        parse.metadata.title + '.json'
-                      ),
-                      parsePost(null, buildPost(parse), {
-                        sourceFile: String(path)
-                      })
-                    );
+                    if (isDev) {
+                      write(
+                        join(
+                          __dirname,
+                          'tmp/posts-fix-hypens',
+                          parse.metadata.title + '.json'
+                        ),
+                        modifyPost(parse)
+                      );
 
-                    write(
-                      join(
-                        __dirname,
-                        'tmp/posts-fix-hypens',
-                        parse.metadata.title + '.md'
-                      ),
-                      buildPost(parse)
-                    );
+                      write(
+                        join(
+                          __dirname,
+                          'tmp/posts-fix-hypens',
+                          parse.metadata.title + '.md'
+                        ),
+                        buildPost(parse)
+                      );
+                    }
                   }
                 }
               }
@@ -145,7 +157,6 @@ export const copyPosts = (
         }
 
         //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
-        if (!buildThePost) buildThePost = buildPost(parse);
         if (typeof buildThePost == 'string') {
           //write(tmp(parse.metadata.uuid, 'article.md'), build);
           log.push(color.green('success'));
