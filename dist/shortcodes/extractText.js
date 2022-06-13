@@ -5,6 +5,7 @@ const tslib_1 = require("tslib");
 const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const fs = tslib_1.__importStar(require("fs"));
 const path_1 = tslib_1.__importDefault(require("path"));
+const _config_1 = require("../types/_config");
 const logname = chalk_1.default.bgMagenta.whiteBright('[extract-text]');
 function extractText(file, str) {
     const regex = /<!--\s+?extract-text\s+?(.+?)\s+?-->/gim;
@@ -26,7 +27,8 @@ function extractText(file, str) {
         }
         else {
             // search from workspace directory
-            console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + '/', '')}`);
+            if (_config_1.verbose)
+                console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + '/', '')}`);
             const rootFile = path_1.default.join(process.cwd(), bracketmatch);
             if (fs.existsSync(rootFile)) {
                 const rootRead = fs.readFileSync(rootFile).toString();
