@@ -97,6 +97,13 @@ export function modifyPost<T extends DeepPartial<modifyPostType>>(
       data.metadata
     );
 
+    // @todo redirect -> redirect_to for jekyll plugin
+    // https://github.com/jekyll/jekyll-redirect-from
+    if ('redirect' in data.metadata) {
+      const redirect = data.metadata.redirect;
+      data.metadata.redirect_to = redirect;
+    }
+
     // @todo setup empty categories when not set
     if ('category' in data.metadata) {
       if (!Array.isArray(data.metadata.category)) {
