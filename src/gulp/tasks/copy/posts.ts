@@ -38,7 +38,9 @@ export const copyPosts = (
   let sources = globSrc('**/*.md', {
     cwd: post_source_dir,
     ignore: exclude
-  }).map((file) => crossNormalize(join(post_source_dir, file)));
+  })
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => crossNormalize(join(post_source_dir, file)));
   if (customPaths) {
     sources = sources.filter((path) => {
       if (typeof customPaths === 'string') return path.includes(customPaths);

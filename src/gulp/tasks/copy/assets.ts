@@ -44,7 +44,7 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
   //return determineDirname(run).pipe(gulp.dest(post_public_dir));
   return globSrc('*/**', {
     cwd: post_source_dir,
-    ignore: config.exclude
+    ignore: config.exclude.concat(['**/*.md'])
   })
     .map((path) => join(post_source_dir, path))
     .filter(async (item) => {
@@ -60,7 +60,7 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
         isPathValid =
           isPathValid && customPaths.some((route) => item.includes(route));
       }
-      if (isPathValid) {
+      if (isPathValid && item.endsWith('.md')) {
         // @todo validate is file page
         const parse = await parsePost(item);
         if (!parse) return true;
