@@ -15,5 +15,5 @@ import { getChunkOf } from './getChunkOf';
  * generateIndex('homepage'); // only generate homepage
  * generateIndex(4); // only generate page 4
  */
-export declare function generateIndex(labelNameOrObj?: 'homepage' | number | string | any): any[];
+export declare function generateIndex(_?: 'homepage' | number | string | any): Promise<void>;
 export declare function generateSingleIndex(postsChunks: ReturnType<typeof getChunkOf> | ReturnType<typeof post_chunks>, labelNameOrObj?: string | number, meta?: Record<string, any>): Promise<string>;
