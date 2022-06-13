@@ -255,6 +255,11 @@ export default filemanager;
 export function normalize(path: string) {
   return toUnix(trueCasePathSync(path));
 }
+/**
+ * Cross platform normalizer path
+ * @see {@link normalize}
+ */
+export const crossNormalize = normalize;
 export const dirname = (str: string) =>
   removeMultiSlashes(upath.toUnix(upath.dirname(str)));
 interface ResolveOpt {
