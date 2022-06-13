@@ -54,6 +54,7 @@ const parsePost = async (
     throw new Error(
       "parameter 'path' is undefined, parameter 'options.sourceFile' also undefined. Please insert to 'options.sourceFile' when 'path' not defined (used for type validator and cache key)"
     );
+  const realPath = path || options.sourceFile;
   let cacheKey = md5(path || options.sourceFile || content);
   if (typeof path == 'string' && !/\n/.test(path)) {
     cacheKey = toUnix(path).replace(cwd(), '');
@@ -71,10 +72,13 @@ const parsePost = async (
     if (get) return get;
   }
 
+  /**
+   * parsing with `hexo-post-parser`
+   */
   let parse = await moduleParsePost(content || path, options);
 
   if (!parse) {
-    throw new Error('cannot parse post ' + parse.metadata.title);
+    throw new Error('cannot parse post ' + realPath);
   }
 
   if (typeof path === 'string' && path.length > 0) {
@@ -119,7 +123,6 @@ const parsePost = async (
   /**
    * validate if post path is post sources from config.source_dir
    */
-  const realPath = path || options.sourceFile;
   const isPathPost = realPath.includes(config.source_dir + '/_posts'); // || path.includes('src-posts/');
   const isTypePost = parse.metadata.type === 'post';
   //const cachedPosts = cachePost.getAll();
