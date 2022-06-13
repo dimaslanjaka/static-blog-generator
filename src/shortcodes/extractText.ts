@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import * as fs from 'fs';
 import path from 'path';
+import { verbose } from '../types/_config';
 
 const logname = chalk.bgMagenta.whiteBright('[extract-text]');
 
@@ -20,12 +21,23 @@ export function extractText(file: string, str: string) {
     // search from file directory
     const directFile = path.join(path.dirname(file.toString()), bracketmatch);
     if (fs.existsSync(directFile)) {
-      console.info(`${logname} found from direct ${directFile.replace(process.cwd() + '/', '')}`);
+      console.info(
+        `${logname} found from direct ${directFile.replace(
+          process.cwd() + '/',
+          ''
+        )}`
+      );
       const directRead = fs.readFileSync(directFile).toString();
       str = str.replace(allmatch, directRead);
     } else {
       // search from workspace directory
-      console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + '/', '')}`);
+      if (verbose)
+        console.info(
+          `${logname} found from workspace ${directFile.replace(
+            process.cwd() + '/',
+            ''
+          )}`
+        );
       const rootFile = path.join(process.cwd(), bracketmatch);
       if (fs.existsSync(rootFile)) {
         const rootRead = fs.readFileSync(rootFile).toString();
