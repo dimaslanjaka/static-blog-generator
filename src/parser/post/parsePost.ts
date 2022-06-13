@@ -25,7 +25,7 @@ const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
  */
 const parsePost = async (
   path: string,
-  content: string = undefined,
+  content: string | null | undefined = undefined,
   options: DeepPartial<Parameters<typeof moduleParsePost>[1]> = {}
 ): Promise<postMap> => {
   if (!path && !options.sourceFile)
@@ -113,6 +113,10 @@ const parsePost = async (
   }
 
   parse = modifyPost(parse);
+
+  if (!parse) {
+    throw new Error('cannot modify post ' + parse.metadata.title);
+  }
 
   /**
    * validate if post path is post sources from config.source_dir
