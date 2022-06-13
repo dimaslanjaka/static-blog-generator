@@ -28,26 +28,7 @@ const parsePost = async (
   content: string | null | undefined = undefined,
   options: DeepPartial<Parameters<typeof moduleParsePost>[1]> = {}
 ): Promise<postMap> => {
-  if (!path && !options.sourceFile)
-    throw new Error(
-      "parameter 'path' is undefined, parameter 'options.sourceFile' also undefined. Please insert to 'options.sourceFile' when 'path' not defined (used for type validator and cache key)"
-    );
-  let cacheKey = md5(path || options.sourceFile || content);
-  if (typeof path == 'string' && !/\n/.test(path)) {
-    cacheKey = toUnix(path).replace(cwd(), '');
-    if (cacheKey.endsWith('/')) cacheKey += 'index';
-  }
-  let useCache = config.generator.cache;
-  if ('cache' in options) {
-    // overriden cache when `cache` exist in options
-    useCache = options.cache;
-  }
-  // @todo return from cache
-  if (useCache && typeof cacheKey == 'string' && cacheKey.length > 0) {
-    const get =
-      parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
-    if (get) return get;
-  }
+  // apply default options
   const default_options = {
     shortcodes: {
       youtube: true,
@@ -68,10 +49,33 @@ const parsePost = async (
   if (options !== null && typeof options !== 'undefined') {
     options = deepmerge(default_options, options);
   }
+  // cache definer setup
+  if (!path && !options.sourceFile)
+    throw new Error(
+      "parameter 'path' is undefined, parameter 'options.sourceFile' also undefined. Please insert to 'options.sourceFile' when 'path' not defined (used for type validator and cache key)"
+    );
+  let cacheKey = md5(path || options.sourceFile || content);
+  if (typeof path == 'string' && !/\n/.test(path)) {
+    cacheKey = toUnix(path).replace(cwd(), '');
+    if (cacheKey.endsWith('/')) cacheKey += 'index';
+  }
+  let useCache = config.generator.cache;
+  if ('cache' in options) {
+    // overriden cache when `cache` exist in options
+    useCache = options.cache;
+  }
+  // @todo return from cache
+  if (useCache && typeof cacheKey == 'string' && cacheKey.length > 0) {
+    const get =
+      parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
+    if (get) return get;
+  }
 
   let parse = await moduleParsePost(content || path, options);
 
-  if (!parse) return null;
+  if (!parse) {
+    throw new Error('cannot parse post ' + parse.metadata.title);
+  }
 
   if (typeof path === 'string' && path.length > 0) {
     // @todo replace no title post
@@ -89,12 +93,6 @@ const parsePost = async (
         parse.metadata.published = false;
       }
     }
-  }
-
-  // @todo redirect -> redirect_to for jekyll plugin
-  if ('redirect' in parse.metadata) {
-    const redirect = parse.metadata.redirect;
-    parse.metadata.redirect_to = redirect;
   }
 
   if (typeof path !== 'undefined' && path !== null) {
