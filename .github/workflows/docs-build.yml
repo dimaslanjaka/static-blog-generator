@@ -64,8 +64,9 @@ jobs:
 
     - run: npm i -g gulp-cli typescript npm ts-node npm yarn
     - run: npm run update
-    - run: gulp sbg:docs generate --nocache --verbose --dev
-    - working-directory: public
+    - run: gulp sbg:docs --nocache --verbose --dev
+    - run: gulp generate --nocache --verbose --dev
+    - working-directory: .deploy_git
       run: |
         git add -A
         git commit -m "update from ${{ steps.vars.outputs.hash }}"
