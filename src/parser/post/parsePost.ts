@@ -93,18 +93,20 @@ const parsePost = async (
     parse.metadata.redirect_to = redirect;
   }
 
-  parse.fileTree = {
-    source: replacePath(
-      toUnix(path.toString()),
-      '/source/_posts/',
-      '/src-posts/'
-    ),
-    public: replacePath(
-      toUnix(path.toString()),
-      '/src-posts/',
-      '/source/_posts/'
-    )
-  };
+  if (typeof path !== 'undefined' && path !== null) {
+    parse.fileTree = {
+      source: replacePath(
+        toUnix(path.toString()),
+        '/source/_posts/',
+        '/src-posts/'
+      ),
+      public: replacePath(
+        toUnix(path.toString()),
+        '/src-posts/',
+        '/source/_posts/'
+      )
+    };
+  }
 
   parse = modifyPost(parse);
 
