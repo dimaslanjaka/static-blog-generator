@@ -1,6 +1,6 @@
 ## These files should be automatically stored on your root public directory
 
-eq: `sample.json` should be on `http://domain.com/sample.json`
+ex: `robots.txt` should be on `http://domain.com/robots.txt`
 
 | folder name | usages |
 | --- | --- |
