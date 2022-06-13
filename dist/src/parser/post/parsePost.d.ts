@@ -8,7 +8,7 @@ import { DeepPartial } from './postMapper';
  * @param options override {@link moduleParsePost} options
  * @returns
  */
-declare const parsePost: (path: string, content?: string, options?: DeepPartial<Parameters<typeof moduleParsePost>[1]>) => Promise<postMap>;
+declare const parsePost: (path: string, content?: string | null | undefined, options?: DeepPartial<Parameters<typeof moduleParsePost>[1]>) => Promise<postMap>;
 export { buildPost, DeepPartial, ParseOptions, postMap, postMeta } from 'hexo-post-parser';
 export { parsePost };
 export default parsePost;
