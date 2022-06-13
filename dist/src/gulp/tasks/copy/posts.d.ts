@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { TaskCallback } from 'undertaker';
 import { parsePost } from '../../../parser/post/parsePost';
 import './assets';
@@ -9,8 +8,14 @@ import './assets';
  * @param customPaths custom copy, only copy post with this key
  * @returns
  */
-export declare const copyPosts: (_done?: TaskCallback, customPaths?: string | string[], options?: Partial<Parameters<typeof parsePost>[2]>) => NodeJS.ReadWriteStream;
+export declare const copyPosts: (_done?: TaskCallback, customPaths?: string | string[], _options?: Partial<Parameters<typeof parsePost>[2]>) => import("bluebird")<{
+    parse: import("hexo-post-parser/dist/types/postMap").postMap;
+    file: string;
+}[]>;
 /**
  * @see {@link copyPosts}
  */
-export declare const copy_posts: (_done?: TaskCallback, customPaths?: string | string[], options?: Partial<Parameters<typeof parsePost>[2]>) => NodeJS.ReadWriteStream;
+export declare const copy_posts: (_done?: TaskCallback, customPaths?: string | string[], _options?: Partial<Parameters<typeof parsePost>[2]>) => import("bluebird")<{
+    parse: import("hexo-post-parser/dist/types/postMap").postMap;
+    file: string;
+}[]>;
