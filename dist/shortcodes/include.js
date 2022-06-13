@@ -5,6 +5,7 @@ const tslib_1 = require("tslib");
 const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const fs_1 = require("fs");
 const upath_1 = require("upath");
+const _config_1 = require("../types/_config");
 const root = (0, upath_1.toUnix)(process.cwd());
 const logname = chalk_1.default.blue('[include]');
 /**
@@ -32,7 +33,8 @@ function parseShortCodeInclude(file, str) {
                 if (Object.prototype.hasOwnProperty.call(dirs, key)) {
                     const filepath = dirs[key];
                     if ((0, fs_1.existsSync)(filepath)) {
-                        console.log(logname + chalk_1.default.greenBright(`[${key}]`), file);
+                        if (_config_1.verbose)
+                            console.log(logname + chalk_1.default.greenBright(`[${key}]`), file);
                         const read = (0, fs_1.readFileSync)(filepath).toString();
                         str = str.replace(htmlTag, () => read);
                         break;
@@ -42,43 +44,6 @@ function parseShortCodeInclude(file, str) {
         });
     }
     return str;
-    /*
-    let m: RegExpExecArray;
-    const found = false;
-    while ((m = regex.exec(str)) !== null) {
-      // This is necessary to avoid infinite loops with zero-width matches
-      if (m.index === regex.lastIndex) {
-        regex.lastIndex++;
-      }
-  
-      const allmatch = m[0];
-      const bracketmatch = m[1];
-  
-  
-      /*if (existsSync(directFile)) {
-        // search from file directory
-        console.info(logname + chalk.greenBright('[direct]'), directFile);
-        const directRead = readFileSync(directFile).toString();
-        str = str.replace(allmatch, directRead);
-        found = true;
-      } else if (existsSync(cwdFile)) {
-        // search from workspace directory
-        console.log(logname + chalk.greenBright('[root]'), cwdFile);
-        console.info(`${logname} found from direct ${cwdFile}`);
-        const rootRead = readFileSync(cwdFile).toString();
-        str = str.replace(allmatch, rootRead);
-        found = true;
-      } else {
-        console.error(chalk.redBright('[include][error]'), "couldn't find any file from root", cwdFile);
-        console.error(chalk.redBright('[include][error]'), "couldn't find any file from direct", directFile);
-        console.log(chalk.redBright('[include][error]'), chalk.magenta('1'), dirname(file.toString()));
-        console.log(chalk.redBright('[include][error]'), chalk.magenta('2'), bracketmatch);
-        console.log(chalk.redBright('[include][error]'), chalk.magenta('3'), join(dirname(file), bracketmatch));
-      }
-    }
-    // match shortcode and found otherwise repeat
-    if (found && str.match(regex)) return parseShortCodeInclude(file, str);
-    */
 }
 exports.parseShortCodeInclude = parseShortCodeInclude;
 exports.default = parseShortCodeInclude;

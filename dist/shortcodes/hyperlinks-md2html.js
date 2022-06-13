@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.replaceMD2HTML = void 0;
 const tslib_1 = require("tslib");
 const color_1 = tslib_1.__importDefault(require("../node/color"));
+const _config_1 = require("../types/_config");
 // fix all hyperlinks endsWith .md
 // [test](test.md) -> [test](test.html)
 const regex = /\[([^\]]+)\]\(([^)]+(.md))\)/gim;
@@ -19,7 +20,8 @@ function replaceMD2HTML(content) {
             //console.log(index2, index3);
             const toReplace = index2;
             const replacement = index2.replace(new RegExp(index3 + '$'), '.html');
-            console.log(logname, color_1.default.redBright(toReplace), '->', color_1.default.greenBright(replacement));
+            if (_config_1.verbose)
+                console.log(logname, color_1.default.redBright(toReplace), '->', color_1.default.greenBright(replacement));
             //return wholeMatch.replace(index3, '.html');
             return wholeMatch.replace(toReplace, replacement);
         });
