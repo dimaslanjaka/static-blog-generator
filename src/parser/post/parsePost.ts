@@ -28,7 +28,7 @@ const parsePost = async (
   content: string = undefined,
   options: DeepPartial<Parameters<typeof moduleParsePost>[1]> = {}
 ): Promise<postMap> => {
-  let cacheKey = md5(path);
+  let cacheKey = md5(path || options.sourceFile || content);
   if (typeof path == 'string' && !/\n/.test(path)) {
     cacheKey = toUnix(path).replace(cwd(), '');
     if (cacheKey.endsWith('/')) cacheKey += 'index';
