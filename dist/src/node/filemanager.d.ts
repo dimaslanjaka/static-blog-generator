@@ -117,6 +117,11 @@ export default filemanager;
  * @returns
  */
 export declare function normalize(path: string): string;
+/**
+ * Cross platform normalizer path
+ * @see {@link normalize}
+ */
+export declare const crossNormalize: typeof normalize;
 export declare const dirname: (str: string) => string;
 interface ResolveOpt {
     [key: string]: any;

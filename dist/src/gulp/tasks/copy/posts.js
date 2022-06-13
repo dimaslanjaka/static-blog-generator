@@ -58,42 +58,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.copy_posts = exports.copyPosts = void 0;
-var gulp_1 = __importDefault(require("gulp"));
-var through2_1 = __importDefault(require("through2"));
+var upath_1 = require("upath");
 var color_1 = __importDefault(require("../../../node/color"));
+var filemanager_1 = require("../../../node/filemanager");
 var parsePost_1 = require("../../../parser/post/parsePost");
 var _config_1 = __importStar(require("../../../types/_config"));
-var utils_1 = require("../../utils");
 require("./assets");
 var logname = color_1.default.cyan('[copy][post]');
 var paths = typeof _config_1.argv['paths'] === 'string' ? _config_1.argv['paths'].split(',') : null;
@@ -104,56 +78,107 @@ var paths = typeof _config_1.argv['paths'] === 'string' ? _config_1.argv['paths'
  * @param customPaths custom copy, only copy post with this key
  * @returns
  */
-var copyPosts = function (_done, customPaths, options) {
+var copyPosts = function (_done, customPaths, _options) {
     if (_done === void 0) { _done = null; }
     if (customPaths === void 0) { customPaths = paths; }
-    if (options === void 0) { options = {}; }
-    var exclude = _config_1.default.exclude.map(function (ePattern) { return '!' + ePattern.replace(/^!+/, ''); });
+    if (_options === void 0) { _options = {}; }
+    var exclude = _config_1.default.exclude.map(function (ePattern) {
+        return ePattern.replace(/^!+/, '');
+    });
     console.log("".concat(logname, " cwd=").concat(color_1.default.Mahogany(_config_1.post_source_dir), " dest=").concat(color_1.default['Granny Smith Apple'](_config_1.post_public_dir)));
-    var run = gulp_1.default
-        .src(__spreadArray(['**/*.md', '!**/.git*'], __read(exclude), false), { cwd: _config_1.post_source_dir })
-        .pipe(through2_1.default.obj(function (file, _encoding, next) {
-        return __awaiter(this, void 0, void 0, function () {
-            var path, log, parse, build;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        path = file.path;
-                        if (typeof customPaths == 'string' && customPaths.length > 2) {
-                            // copy specific post path, otherwise drop this item
-                            if (!path.includes(customPaths))
-                                return [2 /*return*/, next()];
-                        }
-                        log = [logname, String(path)];
-                        return [4 /*yield*/, (0, parsePost_1.parsePost)(String(path), String(file.contents), options)];
-                    case 1:
-                        parse = _a.sent();
-                        if (!parse) {
-                            console.log("cannot parse ".concat(String(path)), parse);
-                            // drop this item
-                            return [2 /*return*/, next()];
-                        }
-                        build = (0, parsePost_1.buildPost)(parse);
-                        if (typeof build == 'string') {
-                            //write(tmp(parse.metadata.uuid, 'article.md'), build);
-                            log.push(color_1.default.green('success'));
-                            file.contents = Buffer.from(build);
-                            //if (this) this.push(file);
-                            return [2 /*return*/, next(null, file)];
-                        }
-                        else {
-                            console.log(logname, color_1.default.Red('build not string'));
-                        }
-                        return [2 /*return*/, next()];
-                }
-            });
+    var sources = (0, filemanager_1.globSrc)('**/*.md', {
+        cwd: _config_1.post_source_dir,
+        ignore: exclude
+    }).map(function (file) { return (0, filemanager_1.crossNormalize)((0, upath_1.join)(_config_1.post_source_dir, file)); });
+    if (customPaths) {
+        sources = sources.filter(function (path) {
+            if (typeof customPaths === 'string')
+                return path.includes(customPaths);
+            // @fixme filter multiple custom paths
         });
-    }));
-    return (0, utils_1.determineDirname)(run).pipe(gulp_1.default.dest(_config_1.post_public_dir));
+    }
+    return sources
+        .map(function (file) { return __awaiter(void 0, void 0, void 0, function () {
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _a = {};
+                    return [4 /*yield*/, (0, parsePost_1.parsePost)(file)];
+                case 1: return [2 /*return*/, (_a.parse = _b.sent(), _a.file = file, _a)];
+            }
+        });
+    }); })
+        .each(function (obj) { return __awaiter(void 0, void 0, void 0, function () {
+        var parse, path, source, url, gulpPath, modParse, newUrl, newSource, newGulpPath, buildNewParse, _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    parse = obj.parse;
+                    path = obj.file;
+                    if (!('generator' in _config_1.default)) return [3 /*break*/, 2];
+                    if (!('copy' in _config_1.default.generator)) return [3 /*break*/, 2];
+                    if (!('posts' in _config_1.default.generator.copy)) return [3 /*break*/, 2];
+                    if (!('space' in _config_1.default.generator.copy.posts)) return [3 /*break*/, 2];
+                    if (!!_config_1.default.generator.copy.posts.space) return [3 /*break*/, 2];
+                    source = parse.metadata.source;
+                    url = parse.metadata.url;
+                    gulpPath = String(path);
+                    if (!/\s/.test(source)) return [3 /*break*/, 2];
+                    modParse = Object.assign({}, parse);
+                    newUrl = _config_1.default.url +
+                        url.replace(_config_1.default.url, '').replace(/\s|%20/g, '-');
+                    newSource = source.replace(/\s/g, '-');
+                    newGulpPath = gulpPath.replace(/\s/g, '-');
+                    if (_config_1.isDev) {
+                        (0, filemanager_1.write)((0, upath_1.join)(__dirname, 'tmp/posts-fix-hypens', parse.metadata.title + '.log'), [
+                            { url: url, newUrl: newUrl },
+                            { source: source, newSource: newSource },
+                            { gulpPath: gulpPath, newGulpPath: newGulpPath }
+                        ]);
+                    }
+                    modParse.metadata.url = newUrl;
+                    modParse.metadata.source = newSource;
+                    buildNewParse = (0, parsePost_1.buildPost)(modParse);
+                    // write new redirected post
+                    (0, filemanager_1.write)((0, upath_1.join)(_config_1.post_public_dir, newUrl.replace(_config_1.default.url, '').replace(/.html$/, '.md')), buildNewParse);
+                    if (_config_1.isDev) {
+                        (0, filemanager_1.write)((0, upath_1.join)(__dirname, 'tmp/posts-fix-hypens', parse.metadata.title + '-redirected.json'), modParse);
+                        (0, filemanager_1.write)((0, upath_1.join)(__dirname, 'tmp/posts-fix-hypens', parse.metadata.title + '-redirected.md'), buildNewParse);
+                    }
+                    // apply redirect
+                    parse.metadata.redirect_to = newUrl;
+                    obj.parse = parse;
+                    if (!_config_1.isDev) return [3 /*break*/, 2];
+                    _a = filemanager_1.write;
+                    _b = [(0, upath_1.join)(__dirname, 'tmp/posts-fix-hypens', parse.metadata.title + '.json')];
+                    return [4 /*yield*/, (0, parsePost_1.parsePost)(null, (0, parsePost_1.buildPost)(parse), {
+                            sourceFile: String(path),
+                            cache: false
+                        })];
+                case 1:
+                    _a.apply(void 0, _b.concat([_c.sent()]));
+                    (0, filemanager_1.write)((0, upath_1.join)(__dirname, 'tmp/posts-fix-hypens', parse.metadata.title + '.md'), (0, parsePost_1.buildPost)(parse));
+                    _c.label = 2;
+                case 2: return [2 /*return*/, obj];
+            }
+        });
+    }); })
+        .each(function (obj) { return __awaiter(void 0, void 0, void 0, function () {
+        var saveTo;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    saveTo = (0, upath_1.join)(_config_1.post_public_dir, obj.file.replace(_config_1.post_source_dir, ''));
+                    return [4 /*yield*/, (0, filemanager_1.write)(saveTo, (0, parsePost_1.buildPost)(obj.parse))];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); });
 };
 exports.copyPosts = copyPosts;
 /**
  * @see {@link copyPosts}
  */
 exports.copy_posts = exports.copyPosts;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9zdHMuanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJzcmMvZ3VscC90YXNrcy9jb3B5L3Bvc3RzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLDhDQUF3QjtBQUN4QixzREFBZ0M7QUFFaEMsOERBQXdDO0FBQ3hDLDREQUFzRTtBQUN0RSxnRUFJZ0M7QUFDaEMscUNBQStDO0FBQy9DLG9CQUFrQjtBQUVsQixJQUFNLE9BQU8sR0FBRyxlQUFLLENBQUMsSUFBSSxDQUFDLGNBQWMsQ0FBQyxDQUFDO0FBQzNDLElBQU0sS0FBSyxHQUNULE9BQU8sY0FBSSxDQUFDLE9BQU8sQ0FBQyxLQUFLLFFBQVEsQ0FBQyxDQUFDLENBQUMsY0FBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDLEtBQUssQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDO0FBRXRFOzs7Ozs7R0FNRztBQUNJLElBQU0sU0FBUyxHQUFHLFVBQ3ZCLEtBQTBCLEVBQzFCLFdBQXNDLEVBQ3RDLE9BQXNEO0lBRnRELHNCQUFBLEVBQUEsWUFBMEI7SUFDMUIsNEJBQUEsRUFBQSxtQkFBc0M7SUFDdEMsd0JBQUEsRUFBQSxZQUFzRDtJQUV0RCxJQUFNLE9BQU8sR0FBRyxpQkFBTSxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQ2hDLFVBQUMsUUFBUSxJQUFLLE9BQUEsR0FBRyxHQUFHLFFBQVEsQ0FBQyxPQUFPLENBQUMsS0FBSyxFQUFFLEVBQUUsQ0FBQyxFQUFqQyxDQUFpQyxDQUNoRCxDQUFDO0lBQ0YsT0FBTyxDQUFDLEdBQUcsQ0FDVCxVQUFHLE9BQU8sa0JBQVEsZUFBSyxDQUFDLFFBQVEsQ0FBQyx5QkFBZSxDQUFDLG1CQUFTLGVBQUssQ0FDN0Qsb0JBQW9CLENBQ3JCLENBQUMseUJBQWUsQ0FBQyxDQUFFLENBQ3JCLENBQUM7SUFDRixJQUFNLEdBQUcsR0FBRyxjQUFJO1NBQ2IsR0FBRyxnQkFBRSxTQUFTLEVBQUUsV0FBVyxVQUFLLE9BQU8sV0FBRyxFQUFFLEdBQUcsRUFBRSx5QkFBZSxFQUFFLENBQUM7U0FDbkUsSUFBSSxDQUNILGtCQUFRLENBQUMsR0FBRyxDQUFDLFVBQWdCLElBQUksRUFBRSxTQUFTLEVBQUUsSUFBSTs7Ozs7O3dCQUMxQyxJQUFJLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQzt3QkFDdkIsSUFBSSxPQUFPLFdBQVcsSUFBSSxRQUFRLElBQUksV0FBVyxDQUFDLE1BQU0sR0FBRyxDQUFDLEVBQUU7NEJBQzVELG9EQUFvRDs0QkFDcEQsSUFBSSxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDO2dDQUFFLHNCQUFPLElBQUksRUFBRSxFQUFDO3lCQUNoRDt3QkFDSyxHQUFHLEdBQUcsQ0FBQyxPQUFPLEVBQUUsTUFBTSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUM7d0JBQ3RCLHFCQUFNLElBQUEscUJBQVMsRUFDM0IsTUFBTSxDQUFDLElBQUksQ0FBQyxFQUNaLE1BQU0sQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLEVBQ3JCLE9BQU8sQ0FDUixFQUFBOzt3QkFKSyxLQUFLLEdBQUcsU0FJYjt3QkFDRCxJQUFJLENBQUMsS0FBSyxFQUFFOzRCQUNWLE9BQU8sQ0FBQyxHQUFHLENBQUMsdUJBQWdCLE1BQU0sQ0FBQyxJQUFJLENBQUMsQ0FBRSxFQUFFLEtBQUssQ0FBQyxDQUFDOzRCQUNuRCxpQkFBaUI7NEJBQ2pCLHNCQUFPLElBQUksRUFBRSxFQUFDO3lCQUNmO3dCQUdLLEtBQUssR0FBRyxJQUFBLHFCQUFTLEVBQU0sS0FBSyxDQUFDLENBQUM7d0JBQ3BDLElBQUksT0FBTyxLQUFLLElBQUksUUFBUSxFQUFFOzRCQUM1Qix1REFBdUQ7NEJBQ3ZELEdBQUcsQ0FBQyxJQUFJLENBQUMsZUFBSyxDQUFDLEtBQUssQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDOzRCQUNqQyxJQUFJLENBQUMsUUFBUSxHQUFHLE1BQU0sQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7NEJBQ25DLDRCQUE0Qjs0QkFDNUIsc0JBQU8sSUFBSSxDQUFDLElBQUksRUFBRSxJQUFJLENBQUMsRUFBQzt5QkFDekI7NkJBQU07NEJBQ0wsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsZUFBSyxDQUFDLEdBQUcsQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDLENBQUM7eUJBQ3JEO3dCQUNELHNCQUFPLElBQUksRUFBRSxFQUFDOzs7O0tBQ2YsQ0FBQyxDQUNILENBQUM7SUFDSixPQUFPLElBQUEsd0JBQWdCLEVBQUMsR0FBRyxDQUFDLENBQUMsSUFBSSxDQUFDLGNBQUksQ0FBQyxJQUFJLENBQUMseUJBQWUsQ0FBQyxDQUFDLENBQUM7QUFDaEUsQ0FBQyxDQUFDO0FBakRXLFFBQUEsU0FBUyxhQWlEcEI7QUFFRjs7R0FFRztBQUNVLFFBQUEsVUFBVSxHQUFHLGlCQUFTLENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9zdHMuanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJzcmMvZ3VscC90YXNrcy9jb3B5L3Bvc3RzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ0EsK0JBQTZCO0FBQzdCLDhEQUF3QztBQUN4Qyx5REFBMkU7QUFDM0UsNERBQXNFO0FBQ3RFLGdFQUtnQztBQUNoQyxvQkFBa0I7QUFFbEIsSUFBTSxPQUFPLEdBQUcsZUFBSyxDQUFDLElBQUksQ0FBQyxjQUFjLENBQUMsQ0FBQztBQUMzQyxJQUFNLEtBQUssR0FDVCxPQUFPLGNBQUksQ0FBQyxPQUFPLENBQUMsS0FBSyxRQUFRLENBQUMsQ0FBQyxDQUFDLGNBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxLQUFLLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQztBQUV0RTs7Ozs7O0dBTUc7QUFDSSxJQUFNLFNBQVMsR0FBRyxVQUN2QixLQUEwQixFQUMxQixXQUFzQyxFQUN0QyxRQUF1RDtJQUZ2RCxzQkFBQSxFQUFBLFlBQTBCO0lBQzFCLDRCQUFBLEVBQUEsbUJBQXNDO0lBQ3RDLHlCQUFBLEVBQUEsYUFBdUQ7SUFFdkQsSUFBTSxPQUFPLEdBQUcsaUJBQU0sQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLFVBQUMsUUFBZ0I7UUFDbEQsT0FBQSxRQUFRLENBQUMsT0FBTyxDQUFDLEtBQUssRUFBRSxFQUFFLENBQUM7SUFBM0IsQ0FBMkIsQ0FDNUIsQ0FBQztJQUNGLE9BQU8sQ0FBQyxHQUFHLENBQ1QsVUFBRyxPQUFPLGtCQUFRLGVBQUssQ0FBQyxRQUFRLENBQUMseUJBQWUsQ0FBQyxtQkFBUyxlQUFLLENBQzdELG9CQUFvQixDQUNyQixDQUFDLHlCQUFlLENBQUMsQ0FBRSxDQUNyQixDQUFDO0lBQ0YsSUFBSSxPQUFPLEdBQUcsSUFBQSxxQkFB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
