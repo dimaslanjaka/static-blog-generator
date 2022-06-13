@@ -1,10 +1,13 @@
 import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
+import { join } from 'upath';
 import color from '../../../node/color';
+import { write } from '../../../node/filemanager';
 import { buildPost, parsePost } from '../../../parser/post/parsePost';
 import config, {
   argv,
+  isDev,
   post_public_dir,
   post_source_dir
 } from '../../../types/_config';
@@ -56,12 +59,97 @@ export const copyPosts = (
           return next();
         }
 
+        let buildThePost: string;
+
+        // @todo fix post with space in path
+        if ('generator' in config) {
+          if ('copy' in config.generator) {
+            if ('posts' in config.generator.copy) {
+              if ('space' in config.generator.copy.posts) {
+                if (!config.generator.copy.posts.space) {
+                  // @todo transform post with space to hypens format
+                  const source = parse.metadata.source;
+                  const url = parse.metadata.url;
+                  const gulpPath = String(path);
+
+                  if (/\s/.test(source)) {
+                    const modParse = parse;
+                    const newUrl =
+                      config.url +
+                      url.replace(config.url, '').replace(/\s|%20/g, '-');
+                    const newSource = source.replace(/\s/g, '-');
+                    const newGulpPath = gulpPath.replace(/\s/g, '-');
+                    if (isDev) {
+                      write(
+                        join(
+                          __dirname,
+                          'tmp/posts-fix-hypens',
+                          parse.metadata.title + '.log'
+                        ),
+                        [
+                          { url, newUrl },
+                          { source, newSource },
+                          { gulpPath, newGulpPath }
+                        ]
+                      );
+                    }
+                    modParse.metadata.url = newUrl;
+                    modParse.metadata.source = newSource;
+                    const buildNewParse = buildPost(modParse);
+
+                    if (isDev) {
+                      write(
+                        join(
+                          __dirname,
+                          'tmp/posts-fix-hypens',
+                          parse.metadata.title + '-redirected.json'
+                        ),
+                        modParse
+                      );
+                      write(
+                        join(
+                          __dirname,
+                          'tmp/posts-fix-hypens',
+                          parse.metadata.title + '-redirected.md'
+                        ),
+                        buildNewParse
+                      );
+                    }
+
+                    parse.metadata.redirect = newUrl;
+
+                    write(
+                      join(
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '.json'
+                      ),
+                      parsePost(null, buildPost(parse), {
+                        sourceFile: String(path)
+                      })
+                    );
+
+                    write(
+                      join(
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '.md'
+                      ),
+                      buildPost(parse)
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+
         //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
-        const build = buildPost(<any>parse);
-        if (typeof build == 'string') {
+        if (!buildThePost) buildThePost = buildPost(parse);
+        if (typeof buildThePost == 'string') {
           //write(tmp(parse.metadata.uuid, 'article.md'), build);
           log.push(color.green('success'));
-          file.contents = Buffer.from(build);
+          file.contents = Buffer.from(buildThePost);
           //if (this) this.push(file);
           return next(null, file);
         } else {
