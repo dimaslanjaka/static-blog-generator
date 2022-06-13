@@ -7,6 +7,8 @@ Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/h
 - Parsing HexoJS markdown post
 - Parsing Jekyll markdown post
 
+## Usage Sample
+
 ```js
 const fs = require('fs');
 (async function(){
@@ -18,6 +20,10 @@ const fs = require('fs');
   fs.writeFileSync('path/to/file.md', buildPost(parse));
 })();
 ```
+
+## Argument Parameters
+- `--nocache` : disable cache
+- `--verbose` : show all console on verbose
 
 ## Reference Repositories
 - [Static Blog Generator](https://github.com/dimaslanjaka/static-blog-generator)
