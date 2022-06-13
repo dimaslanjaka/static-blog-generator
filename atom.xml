@@ -1075,7 +1075,7 @@ console.log('hello world');
 &lt;/div&gt;
 </code></pre>
 <h2 id="shortcode-now" tabindex="-1"><a class="header-anchor" href="#shortcode-now">Shortcode now()</a></h2>
-<pre><code class="language-html">6/12/2022, 12:21:38 AM
+<pre><code class="language-html">6/13/2022, 9:06:31 AM
 </code></pre>
 ]]></content>
         <author>
@@ -1132,8 +1132,22 @@ code snippet
     </entry>
     <entry>
         <title type="html"><![CDATA[post file with spaces]]></title>
-        <id>https://www.webmanajemen.com/static-blog-generator/folder%20with%20space/file%20post%20with%20space.html</id>
-        <link href="https://www.webmanajemen.com/static-blog-generator/folder%20with%20space/file%20post%20with%20space.html"/>
+        <id>https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html</id>
+        <link href="https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html"/>
+        <updated>2022-06-10T17:00:00.000Z</updated>
+        <summary type="html"><![CDATA[folder and post path using spaces]]></summary>
+        <content type="html"><![CDATA[<p>post body of spaces post path</p>
+]]></content>
+        <author>
+            <name>Dimas Lanjaka</name>
+            <email>dimaslanjaka@gmail.com</email>
+            <uri>https://www.webmanajemen.com/</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[post file with spaces]]></title>
+        <id>https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html</id>
+        <link href="https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html"/>
         <updated>2022-06-10T17:00:00.000Z</updated>
         <summary type="html"><![CDATA[folder and post path using spaces]]></summary>
         <content type="html"><![CDATA[<p>post body of spaces post path</p>

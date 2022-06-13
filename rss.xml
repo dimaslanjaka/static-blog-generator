@@ -1020,7 +1020,7 @@ console.log('hello world');
 &lt;/div&gt;
 </code></pre>
 <h2 id="shortcode-now" tabindex="-1"><a class="header-anchor" href="#shortcode-now">Shortcode now()</a></h2>
-<pre><code class="language-html">6/12/2022, 12:21:38 AM
+<pre><code class="language-html">6/13/2022, 9:06:31 AM
 </code></pre>
 ]]></content:encoded>
             <author>dimaslanjaka@gmail.com (Dimas Lanjaka)</author>
@@ -1071,8 +1071,19 @@ code snippet
         </item>
         <item>
             <title><![CDATA[post file with spaces]]></title>
-            <link>https://www.webmanajemen.com/static-blog-generator/folder%20with%20space/file%20post%20with%20space.html</link>
-            <guid>https://www.webmanajemen.com/static-blog-generator/folder%20with%20space/file%20post%20with%20space.html</guid>
+            <link>https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html</link>
+            <guid>https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html</guid>
+            <pubDate>Fri, 10 Jun 2022 17:00:00 GMT</pubDate>
+            <description><![CDATA[folder and post path using spaces]]></description>
+            <content:encoded><![CDATA[<p>post body of spaces post path</p>
+]]></content:encoded>
+            <author>dimaslanjaka@gmail.com (Dimas Lanjaka)</author>
+            <enclosure url="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" length="0" type="image/svg"/>
+        </item>
+        <item>
+            <title><![CDATA[post file with spaces]]></title>
+            <link>https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html</link>
+            <guid>https://www.webmanajemen.com/static-blog-generator/folder-with-space/file-post-with-space.html</guid>
             <pubDate>Fri, 10 Jun 2022 17:00:00 GMT</pubDate>
             <description><![CDATA[folder and post path using spaces]]></description>
             <content:encoded><![CDATA[<p>post body of spaces post path</p>
