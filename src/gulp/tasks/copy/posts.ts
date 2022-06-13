@@ -1,11 +1,9 @@
-import { deepmerge } from 'deepmerge-ts';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import color from '../../../node/color';
 import { write } from '../../../node/filemanager';
-import modifyPost from '../../../parser/post/modifyPost';
 import { buildPost, parsePost } from '../../../parser/post/parsePost';
 import config, {
   argv,
@@ -33,7 +31,7 @@ export const copyPosts = (
   options: Partial<Parameters<typeof parsePost>[2]> = {}
 ) => {
   const exclude = config.exclude.map(
-    (ePattern) => '!' + ePattern.replace(/^!+/, '')
+    (ePattern: string) => '!' + ePattern.replace(/^!+/, '')
   );
   console.log(
     `${logname} cwd=${color.Mahogany(post_source_dir)} dest=${color[
@@ -61,7 +59,7 @@ export const copyPosts = (
           return next();
         }
 
-        let buildThePost = buildPost(parse);
+        let buildThePost: string;
 
         // @todo fix post with space in path
         if ('generator' in config) {
@@ -75,7 +73,7 @@ export const copyPosts = (
                   const gulpPath = String(path);
 
                   if (/\s/.test(source)) {
-                    const modParse = deepmerge({}, parse);
+                    const modParse = Object.assign({}, parse);
                     const newUrl =
                       config.url +
                       url.replace(config.url, '').replace(/\s|%20/g, '-');
@@ -127,8 +125,8 @@ export const copyPosts = (
                       );
                     }
 
-                    parse.metadata.redirect = newUrl;
-                    buildThePost = buildPost(parse);
+                    // apply redirect
+                    parse.metadata.redirect_to = newUrl;
 
                     if (isDev) {
                       write(
@@ -137,7 +135,10 @@ export const copyPosts = (
                           'tmp/posts-fix-hypens',
                           parse.metadata.title + '.json'
                         ),
-                        modifyPost(parse)
+                        await parsePost(null, buildPost(parse), {
+                          sourceFile: String(path),
+                          cache: false
+                        })
                       );
 
                       write(
@@ -157,6 +158,7 @@ export const copyPosts = (
         }
 
         //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
+        if (!buildThePost) buildThePost = buildPost(parse);
         if (typeof buildThePost == 'string') {
           //write(tmp(parse.metadata.uuid, 'article.md'), build);
           log.push(color.green('success'));
