@@ -1,9 +1,7 @@
-import gulp from 'gulp';
-import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import color from '../../../node/color';
-import { write } from '../../../node/filemanager';
+import { crossNormalize, globSrc, write } from '../../../node/filemanager';
 import { buildPost, parsePost } from '../../../parser/post/parsePost';
 import config, {
   argv,
@@ -11,7 +9,6 @@ import config, {
   post_public_dir,
   post_source_dir
 } from '../../../types/_config';
-import { determineDirname } from '../../utils';
 import './assets';
 
 const logname = color.cyan('[copy][post]');
@@ -28,150 +25,139 @@ const paths =
 export const copyPosts = (
   _done: TaskCallback = null,
   customPaths: string | string[] = paths,
-  options: Partial<Parameters<typeof parsePost>[2]> = {}
+  _options: Partial<Parameters<typeof parsePost>[2]> = {}
 ) => {
-  const exclude = config.exclude.map(
-    (ePattern: string) => '!' + ePattern.replace(/^!+/, '')
+  const exclude = config.exclude.map((ePattern: string) =>
+    ePattern.replace(/^!+/, '')
   );
   console.log(
     `${logname} cwd=${color.Mahogany(post_source_dir)} dest=${color[
       'Granny Smith Apple'
     ](post_public_dir)}`
   );
-  const run = gulp
-    .src(['**/*.md', '!**/.git*', ...exclude], { cwd: post_source_dir })
-    .pipe(
-      through2.obj(async function (file, _encoding, next) {
-        const path = file.path;
-        if (typeof customPaths == 'string' && customPaths.length > 2) {
-          // copy specific post path, otherwise drop this item
-          if (!path.includes(customPaths)) return next();
-        }
-        const log = [logname, String(path)];
-        const parse = await parsePost(
-          String(path),
-          String(file.contents),
-          options
-        );
-        if (!parse) {
-          console.log(`cannot parse ${String(path)}`, parse);
-          // drop this item
-          return next();
-        }
+  let sources = globSrc('**/*.md', {
+    cwd: post_source_dir,
+    ignore: exclude
+  }).map((file) => crossNormalize(join(post_source_dir, file)));
+  if (customPaths) {
+    sources = sources.filter((path) => {
+      if (typeof customPaths === 'string') return path.includes(customPaths);
+      // @fixme filter multiple custom paths
+    });
+  }
 
-        let buildThePost: string;
+  return sources
+    .map(async (file) => {
+      return { parse: await parsePost(file), file };
+    })
+    .each(async (obj) => {
+      const parse = obj.parse;
+      const path = obj.file;
+      // @todo fix post with space in path
+      if ('generator' in config) {
+        if ('copy' in config.generator) {
+          if ('posts' in config.generator.copy) {
+            if ('space' in config.generator.copy.posts) {
+              if (!config.generator.copy.posts.space) {
+                // @todo transform post with space to hypens format
+                const source = parse.metadata.source;
+                const url = parse.metadata.url;
+                const gulpPath = String(path);
 
-        // @todo fix post with space in path
-        if ('generator' in config) {
-          if ('copy' in config.generator) {
-            if ('posts' in config.generator.copy) {
-              if ('space' in config.generator.copy.posts) {
-                if (!config.generator.copy.posts.space) {
-                  // @todo transform post with space to hypens format
-                  const source = parse.metadata.source;
-                  const url = parse.metadata.url;
-                  const gulpPath = String(path);
-
-                  if (/\s/.test(source)) {
-                    const modParse = Object.assign({}, parse);
-                    const newUrl =
-                      config.url +
-                      url.replace(config.url, '').replace(/\s|%20/g, '-');
-                    const newSource = source.replace(/\s/g, '-');
-                    const newGulpPath = gulpPath.replace(/\s/g, '-');
-                    if (isDev) {
-                      write(
-                        join(
-                          __dirname,
-                          'tmp/posts-fix-hypens',
-                          parse.metadata.title + '.log'
-                        ),
-                        [
-                          { url, newUrl },
-                          { source, newSource },
-                          { gulpPath, newGulpPath }
-                        ]
-                      );
-                    }
-                    modParse.metadata.url = newUrl;
-                    modParse.metadata.source = newSource;
-                    const buildNewParse = buildPost(modParse);
-
-                    // write new redirected post
+                if (/\s/.test(source)) {
+                  const modParse = Object.assign({}, parse);
+                  const newUrl =
+                    config.url +
+                    url.replace(config.url, '').replace(/\s|%20/g, '-');
+                  const newSource = source.replace(/\s/g, '-');
+                  const newGulpPath = gulpPath.replace(/\s/g, '-');
+                  if (isDev) {
                     write(
                       join(
-                        post_public_dir,
-                        newUrl.replace(config.url, '').replace(/.html$/, '.md')
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '.log'
+                      ),
+                      [
+                        { url, newUrl },
+                        { source, newSource },
+                        { gulpPath, newGulpPath }
+                      ]
+                    );
+                  }
+                  modParse.metadata.url = newUrl;
+                  modParse.metadata.source = newSource;
+                  const buildNewParse = buildPost(modParse);
+
+                  // write new redirected post
+                  write(
+                    join(
+                      post_public_dir,
+                      newUrl.replace(config.url, '').replace(/.html$/, '.md')
+                    ),
+                    buildNewParse
+                  );
+
+                  if (isDev) {
+                    write(
+                      join(
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '-redirected.json'
+                      ),
+                      modParse
+                    );
+                    write(
+                      join(
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '-redirected.md'
                       ),
                       buildNewParse
                     );
+                  }
 
-                    if (isDev) {
-                      write(
-                        join(
-                          __dirname,
-                          'tmp/posts-fix-hypens',
-                          parse.metadata.title + '-redirected.json'
-                        ),
-                        modParse
-                      );
-                      write(
-                        join(
-                          __dirname,
-                          'tmp/posts-fix-hypens',
-                          parse.metadata.title + '-redirected.md'
-                        ),
-                        buildNewParse
-                      );
-                    }
+                  // apply redirect
+                  parse.metadata.redirect_to = newUrl;
+                  obj.parse = parse;
 
-                    // apply redirect
-                    parse.metadata.redirect_to = newUrl;
+                  if (isDev) {
+                    write(
+                      join(
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '.json'
+                      ),
+                      await parsePost(null, buildPost(parse), {
+                        sourceFile: String(path),
+                        cache: false
+                      })
+                    );
 
-                    if (isDev) {
-                      write(
-                        join(
-                          __dirname,
-                          'tmp/posts-fix-hypens',
-                          parse.metadata.title + '.json'
-                        ),
-                        await parsePost(null, buildPost(parse), {
-                          sourceFile: String(path),
-                          cache: false
-                        })
-                      );
-
-                      write(
-                        join(
-                          __dirname,
-                          'tmp/posts-fix-hypens',
-                          parse.metadata.title + '.md'
-                        ),
-                        buildPost(parse)
-                      );
-                    }
+                    write(
+                      join(
+                        __dirname,
+                        'tmp/posts-fix-hypens',
+                        parse.metadata.title + '.md'
+                      ),
+                      buildPost(parse)
+                    );
                   }
                 }
               }
             }
           }
         }
-
-        //write(tmp(parse.metadata.uuid, 'article.html'), bodyHtml);
-        if (!buildThePost) buildThePost = buildPost(parse);
-        if (typeof buildThePost == 'string') {
-          //write(tmp(parse.metadata.uuid, 'article.md'), build);
-          log.push(color.green('success'));
-          file.contents = Buffer.from(buildThePost);
-          //if (this) this.push(file);
-          return next(null, file);
-        } else {
-          console.log(logname, color.Red('build not string'));
-        }
-        return next();
-      })
-    );
-  return determineDirname(run).pipe(gulp.dest(post_public_dir));
+      }
+      return obj;
+    })
+    .each(async (obj) => {
+      const saveTo = join(
+        post_public_dir,
+        obj.file.replace(post_source_dir, '')
+      );
+      return await write(saveTo, buildPost(obj.parse));
+    });
 };
 
 /**
