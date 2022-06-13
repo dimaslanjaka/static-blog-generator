@@ -1,12 +1,10 @@
 import Bluebird from 'bluebird';
-import * as fs from 'fs-extra';
 import gulp from 'gulp';
 import { join } from 'path';
 import './src';
 import { buildPost, parsePost } from './src';
 import crawling from './src/crawling';
 import { globSrc, read, write } from './src/node/filemanager';
-import git from './src/node/git';
 import config from './src/types/_config';
 crawling();
 export { gulp };
@@ -14,40 +12,6 @@ export default gulp;
 
 // deploy to https://github.com/dimaslanjaka/static-blog-generator.git#compiler-jekyll
 gulp.task('sbg:docs', async (done) => {
-  const dest = join(__dirname, 'public');
-  const repo = 'https://github.com/dimaslanjaka/static-blog-generator.git';
-  const branch = 'gh-pages';
-  const spawnOpt: Parameters<typeof git>[0] = {
-    cwd: dest,
-    stdio: 'inherit',
-    shell: true
-  };
-  //fs.rmSync(join(dest, '.git'), { recursive: true });
-  if (!fs.existsSync(dest)) fs.mkdirSync(dest);
-  const gitInitialized = fs.existsSync(join(dest, '.git'));
-  if (!gitInitialized) {
-    git(spawnOpt, 'init').then(() => {
-      git(spawnOpt, 'remote', 'add', 'origin', repo);
-    });
-  } else {
-    git(spawnOpt, 'remote', 'set-url', 'origin', repo);
-  }
-
-  await git(spawnOpt, 'config', 'user.email', 'dimaslanjaka@gmail.com');
-  await git(spawnOpt, 'config', 'user.name', 'dimaslanjaka');
-
-  if (gitInitialized) {
-    // reset commit as latest origin branch
-    await git({ cwd: dest }, 'reset', '--hard', 'origin/' + branch);
-  }
-  // fetch origin
-  await git({ cwd: dest }, 'fetch', 'origin');
-  // checkout origin branch
-  await git({ cwd: dest }, 'checkout', branch);
-  // setup merge on pull strategy
-  await git({ cwd: dest }, 'config', 'pull.rebase', 'false');
-  // pulling
-  await git({ cwd: dest }, 'pull', 'origin', branch);
   // process local files
   const destParse = join(__dirname, config.source_dir, '_posts');
   const parsed = await parsePost(
@@ -73,9 +37,11 @@ tags: ['guide']
     })
   )
     .map((file) => join(__dirname, 'src', file))
-    .map((file) => {
+    .map(async (file) => {
       return {
-        parse: parsePost(file, read(file).toString(), { cache: false }),
+        parse: await parsePost(file, null, {
+          cache: false
+        }),
         source: file,
         build: null
       };
@@ -89,11 +55,8 @@ tags: ['guide']
         destParse,
         post.source.replace(join(__dirname, 'src'), '')
       );
-      console.log(post.build);
-      /*write(
-        join(destParse, post.source.replace(join(__dirname, 'src'), '')),
-        post.build
-      ).then(console.log);*/
+      console.log(saveTo);
+      if (post.build) write(saveTo, post.build).then(console.log);
     });
   return done();
 
