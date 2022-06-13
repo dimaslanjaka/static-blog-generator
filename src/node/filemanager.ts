@@ -219,7 +219,7 @@ export function read(
  * @param str
  * @returns
  */
-export const join = (...str: any[]) => upath.join(...str);
+export const join = upath.join;
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;

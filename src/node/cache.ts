@@ -1,18 +1,20 @@
 import chalk from 'chalk';
 import { rm } from 'fs';
+import lodash from 'lodash';
 import { TypedEmitter } from 'tiny-typed-emitter';
 import { toUnix } from 'upath';
 import { DynamicObject } from '../types';
 import './cache-serialize';
 import {
-    cacheDir,
-    existsSync,
-    join,
-    mkdirSync,
-    read,
-    resolve,
-    write
+  cacheDir,
+  existsSync,
+  join,
+  mkdirSync,
+  read,
+  resolve,
+  write
 } from './filemanager';
+import { json_encode } from './JSON';
 import logger from './logger';
 import { md5, md5FileSync } from './md5-file';
 import memoizer from './memoize-fs';
@@ -213,6 +215,8 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
   get(key: string, fallback = null) {
     // resolve key hash
     key = this.resolveKey(key);
+    if (!key) throw new Error(`cannot resolve key (${key})`);
+
     // locate key location file
     const locationCache = this.locateKey(key);
     const Get = this.md5Cache[key];
@@ -251,23 +255,23 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
    * @param opt Options
    * @returns array values
    */
-  getValues(opt = defaultResovableValue) {
+  getValues<T = any>(opt = defaultResovableValue) {
     opt = Object.assign(defaultResovableValue, opt);
     if (opt.resolveValue) {
-      const result = [];
+      const result: T[] = [];
       const self = this;
       Object.keys(this.md5Cache).forEach((key) => {
         result.push(self.get(key));
       });
 
-      if (opt.randomize) return result.shuffle();
+      if (opt.randomize) return lodash.shuffle(result);
       if (opt.max) {
         result.length = opt.max;
         return result.splice(0, opt.max);
       }
       return result;
     }
-    return Object.values(this.md5Cache);
+    return Object.values(this.md5Cache) as T[];
   }
   /**
    * Check file is changed with md5 algorithm
