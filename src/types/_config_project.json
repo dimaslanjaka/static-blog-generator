@@ -11,7 +11,7 @@
   "timezone": "UTC",
   "url": "https://www.webmanajemen.com",
   "root": "/",
-  "permalink": ":year/:month/:title.html",
+  "permalink": ":title.html",
   "permalink_defaults": {},
   "pretty_urls": {
     "trailing_index": false,

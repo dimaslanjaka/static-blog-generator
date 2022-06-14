@@ -1,4 +1,3 @@
-import { basename } from 'upath';
 import { moment } from './dateMapper';
 import { postMap } from './types/postMap';
 import config from './types/_config';
@@ -19,7 +18,7 @@ export function parsePermalink(post: postMap) {
     ':hour': 'HH',
     ':minute': 'mm',
     ':second': 'ss',
-    ':title': basename(url).replace(/.(md|html)$/, ''),
+    ':title': url.replace(/.(md|html)$/, ''),
     ':post_title': post.metadata.title
   };
   // @todo [permalink] follow directory path
