@@ -2,7 +2,11 @@ import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import color from '../../../node/color';
 import { crossNormalize, globSrc, write } from '../../../node/filemanager';
-import { buildPost, parsePost } from '../../../parser/post/parsePost';
+import {
+  buildPost,
+  parsePost,
+  SBGParsePostOptions
+} from '../../../parser/post/parsePost';
 import config, {
   argv,
   isDev,
@@ -25,7 +29,7 @@ const paths =
 export const copyPosts = (
   done: TaskCallback = null,
   customPaths: string | string[] = paths,
-  options: Partial<Parameters<typeof parsePost>[2]> = {}
+  options: SBGParsePostOptions = {}
 ) => {
   const exclude = config.exclude.map((ePattern: string) =>
     ePattern.replace(/^!+/, '')
@@ -51,7 +55,10 @@ export const copyPosts = (
   return (
     sources
       .map(async (file) => {
-        return { parse: await parsePost(file), file };
+        return {
+          parse: await parsePost(file, null, options),
+          file
+        };
       })
       // fix post with space in path
       .each(async (obj) => {
