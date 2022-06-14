@@ -67,7 +67,7 @@ const parsePost = async (
     cacheKey = toUnix(path).replace(cwd(), '');
     if (cacheKey.endsWith('/')) cacheKey += 'index';
   }
-  let useCache = config.generator.cache;
+  let useCache = options.cache;
   if ('cache' in options) {
     // overriden cache when `cache` exist in options
     useCache = options.cache;
