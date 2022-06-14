@@ -8,7 +8,9 @@ author:
   url: https://www.webmanajemen.com
   email: dimaslanjaka@gmail.com
 language: en
-timezone: UTC
+# timezone: UTC
+# timezone: Asia/Jakarta
+timezone: America/Puerto_Rico
 
 url: https://www.webmanajemen.com
 root: /
