@@ -26,7 +26,7 @@ function parsePermalink(post) {
     // @todo [permalink] follow directory path
     if (pattern.startsWith(':title')) {
         const bname = pattern.replace(':title', replacer[':title']);
-        const perm = (0, upath_1.join)((0, upath_1.dirname)(post.metadata.permalink), bname);
+        const perm = (0, upath_1.join)((0, upath_1.dirname)(post.metadata.url), bname);
         //console.log(perm);
         return perm;
     }
