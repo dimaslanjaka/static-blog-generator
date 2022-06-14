@@ -15,6 +15,7 @@ import {
 import { copyAssets } from '../gulp/tasks/copy/assets';
 import { copyPosts } from '../gulp/tasks/copy/posts';
 import { gulpInlineStyle } from '../gulp/tasks/copy/remove-inline-style';
+import { safelinkifyGenerated } from '../gulp/tasks/generate-after';
 import { generateAssets } from '../gulp/tasks/generate-assets';
 import { generateFeeds } from '../gulp/tasks/generate-feed';
 import { generatePosts } from '../gulp/tasks/generate-posts';
@@ -242,6 +243,28 @@ yargs
         if ('type' in config.deploy) {
           gulp.series('deploy-' + config['deploy']['type'])(null);
         }
+    }
+  )
+  // safelinkify
+  .command(
+    'after [key]',
+    'process generated site',
+    (yargs) => {
+      yargs.positional(`safelink`, {
+        type: `string`,
+        describe: `safelinkify all generated site`
+      });
+    },
+    ({ key }) => {
+      switch (key) {
+        case 'safelink':
+          safelinkifyGenerated(null);
+          break;
+
+        default:
+          safelinkifyGenerated(null);
+          break;
+      }
     }
   )
   .option('nocache', {
