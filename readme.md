@@ -1,5 +1,5 @@
-# SBG (Static Blog Generator) Project
-Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
+# SBG (Static Blog Generator) NodeJS Project
+NodeJS Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn't support 1000 posts on 8GB RAM device, i creating this project.
 
 <details>
   <summary>Walkthrough</summary>
