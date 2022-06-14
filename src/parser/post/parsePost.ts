@@ -8,6 +8,7 @@ import { basename, toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import { CachePost } from '../../node/cache-post';
 import config from '../../types/_config';
+import { renderBodyMarkdown } from '../toHtml';
 import modifyPost from './modifyPost';
 
 // file:../../../packages/hexo-post-parser/src
@@ -101,6 +102,10 @@ const parsePost = async (
       )
     };
   }
+
+  // render markdown body
+  if (parse.body) parse.body = renderBodyMarkdown(parse);
+  if (parse.content) parse.content = renderBodyMarkdown(parse);
 
   parse = modifyPost(parse);
 
