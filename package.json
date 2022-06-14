@@ -151,7 +151,7 @@
     "@types/markdown-it-attrs": "^4.1.0",
     "@types/memoizee": "^0.4.7",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^16.11.39",
+    "@types/node": "^17.0.43",
     "@types/node-sass": "^4.11.2",
     "@types/nunjucks": "^3.2.1",
     "@types/prettier": "^2.6.3",
