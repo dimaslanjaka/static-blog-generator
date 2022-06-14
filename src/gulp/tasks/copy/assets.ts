@@ -15,6 +15,8 @@ import config, {
 const paths =
   typeof argv['paths'] === 'string' ? argv['paths'].split(',') : null;
 
+const logname = color.magentaBright('[copy][assets]');
+
 /**
  * copy src-post assets to source/_posts
  * @returns
@@ -26,9 +28,9 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
     throw new Error(msg);
   }
   console.log(
-    `${color.magentaBright('[copy][assets]')} cwd=${color.Mahogany(
-      post_source_dir
-    )} dest=${color['Granny Smith Apple'](post_public_dir)}`
+    `${logname} cwd=${color.Mahogany(post_source_dir)} dest=${color[
+      'Granny Smith Apple'
+    ](post_public_dir)}`
   );
   const cachePost = new CachePost();
   const postPaths = cachePost.getAll().map<string>((post) => {
@@ -60,16 +62,24 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
         isPathValid =
           isPathValid && customPaths.some((route) => item.includes(route));
       }
-      if (isPathValid && item.endsWith('.md')) {
-        // @todo validate is file page
-        const parse = await parsePost(item);
-        if (!parse) return true;
+      if (isPathValid) {
+        if (item.endsWith('.md')) {
+          // @todo validate is file page
+          const parse = await parsePost(item);
+          if (!parse) return true;
+        }
       }
-      return false;
+      return isPathValid;
     })
     .map((path) => {
       const src = path;
       const dest = path.replace(post_source_dir, post_public_dir);
+      console.log(
+        logname,
+        color.yellow(src).replace(cwd(), ''),
+        '->',
+        color.green(dest).replace(cwd(), '')
+      );
       copy(src, dest);
       return { src, dest };
     });
