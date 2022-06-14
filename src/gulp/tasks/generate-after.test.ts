@@ -1,10 +1,14 @@
-import { filter_external_links } from './generate-after';
+import { join } from 'path';
+import prettier from 'prettier';
+import { write } from '../../node/filemanager';
+import fixHtmlPost from './generate-after';
 
-const urls = [
-  'http://google.com',
-  'https://www.webmanajemen.com/page/about.html'
-];
-urls.forEach((str) => {
-  const filter = filter_external_links(str);
-  console.log(filter);
-});
+const body = `
+<a href="http://google.com">external</a>
+<a href="http://www.webmanajemen.com">internal</a>
+<a href="http://invalid.webmanajemen.com>invalid</a>
+`;
+
+const result = fixHtmlPost(body);
+const pretty = prettier.format(result, { semi: false, parser: 'html' });
+write(join(__dirname, 'tmp/fixHtmlPost.html'), pretty).then(console.log);
