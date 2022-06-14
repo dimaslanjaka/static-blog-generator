@@ -99,7 +99,7 @@ export function filter_external_links(href: string, debug = false) {
       if (href.trim().match(new RegExp('^(https?|ftp)://'))) {
         if (!isValidHttpUrl(href)) {
           console.log(
-            '[marked as internal] invalid url',
+            `[${color.yellow('marked as')} ${color.green('internal')}] invalid url`,
             color.redBright(String(href))
           );
           return {
