@@ -19,9 +19,7 @@ export default async function homepageTest() {
     await m.run('generate homepage', () => {
       const opt = Bluebird.all(getHomepageProperties())
         .map((archive) => modifyPost(archive, { merge: true, cache: false }))
-        .filter(
-          (archive_1) => archive_1 !== null && typeof archive_1 !== 'undefined'
-        );
+        .filter((archive_1) => archive_1 !== null);
       write(join(__dirname, 'tmp/homepage/rendered-opt.log'), opt);
       Bluebird.all(opt).each(async (property) => {
         // fix title

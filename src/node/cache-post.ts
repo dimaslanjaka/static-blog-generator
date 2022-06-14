@@ -34,9 +34,7 @@ export class CachePost {
         //console.log('get', typeof get);
         return get;
       })
-      .filter(
-        (post) => typeof post == 'object' && post !== null && post !== undefined
-      );
+      .filter((post) => typeof post == 'object' && post !== null);
   }
 
   /**
