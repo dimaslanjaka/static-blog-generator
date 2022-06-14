@@ -200,17 +200,6 @@ export async function parsePost(
       meta.id = generatePostId(meta);
     }
 
-    // sort metadata
-    meta = Object.keys(meta)
-      .sort()
-      .reduce(
-        (acc, key) => ({
-          ...acc,
-          [key]: meta[key]
-        }),
-        {}
-      ) as postMap['metadata'];
-
     if (options.fix) {
       // @todo fix date
       if (!meta.date) {
@@ -488,6 +477,17 @@ export async function parsePost(
         }
       }
     }
+
+    // sort metadata
+    meta = Object.keys(meta)
+      .sort()
+      .reduce(
+        (acc, key) => ({
+          ...acc,
+          [key]: meta[key]
+        }),
+        {}
+      ) as postMap['metadata'];
 
     const result: postMap = {
       metadata: meta,
