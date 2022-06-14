@@ -8,12 +8,12 @@ const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const dateMapper_1 = require("./dateMapper");
+const generatePostId_1 = require("./generatePostId");
 const utils_1 = require("./gulp/utils");
 const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
 const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
 const utils_2 = require("./node/utils");
-const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
 const parsePermalink_1 = require("./parsePermalink");
 const codeblock_1 = require("./shortcodes/codeblock");
 const css_1 = require("./shortcodes/css");
@@ -104,26 +104,14 @@ function parsePost(target, options = {}) {
             if (!body)
                 body = 'no content ' + (meta.title || '');
             //write(tmp('parsePost', 'original.log'), body).then(console.log);
-            if (!meta.uuid) {
-                // assign uuid
-                let uid = m[0];
-                if (meta.title && meta.webtitle) {
-                    uid = meta.title + meta.webtitle;
-                }
-                else if (meta.subtitle) {
-                    uid = meta.subtitle;
-                }
-                else if (meta.excerpt) {
-                    uid = meta.excerpt;
-                }
-                else if (meta.title) {
-                    uid = meta.title;
-                }
-                meta.uuid = (0, uuid_1.default)(uid);
-                meta = Object.keys(meta)
-                    .sort()
-                    .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
+            if (!meta.id) {
+                // assign post id
+                meta.id = (0, generatePostId_1.generatePostId)(meta);
             }
+            // sort metadata
+            meta = Object.keys(meta)
+                .sort()
+                .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
             if (options.fix) {
                 // @todo fix date
                 if (!meta.date) {

@@ -24,9 +24,9 @@ export interface postMeta {
      */
     description?: string;
     /**
-     * Auto generated fixed uuid
+     * Auto generated fixed id with uuid v4
      */
-    uuid?: string;
+    id?: string;
     /**
      * Post modified date
      */
