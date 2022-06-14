@@ -15,6 +15,13 @@ function moment(date: any = new Date(), format?: string) {
 }
 
 /**
+ * Moment check date is today
+ * @param date
+ * @returns
+ */
+export const isToday = (date: any) => moment(0, 'HH').diff(date, 'days') == 0;
+
+/**
  * HexoJS date formatter
  * * Playground Test {@link https://codepen.io/dimaslanjaka/pen/LYegjaV}
  */
