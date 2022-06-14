@@ -378,7 +378,7 @@ export async function parsePost(
                 '/'
               ).replace(/\/+/, '/');
               result = encodeURI(result);
-              console.log('[PAF][success]', result);
+            if (config.verbose)  console.log('[PAF][success]', result);
               return result;
             }
           }
