@@ -78,6 +78,6 @@ export declare type ThemeOpt = typeof theme_config & {
  * get config
  * @returns
  */
-export declare function getConfig(): ProjectConfig;
+export declare function getConfig(): typeof project_config_data;
 export default config;
 export declare const project_config: ProjectConfig;
