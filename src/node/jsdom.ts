@@ -12,6 +12,10 @@ class jdom {
     const document: Document = this.instance.window.document;
     return document;
   };
+  /**
+   * serialize html and close instance
+   * @returns
+   */
   serialize(): string {
     const result = this.instance.serialize();
     this.close();
