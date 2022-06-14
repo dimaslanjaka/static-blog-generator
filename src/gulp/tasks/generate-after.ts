@@ -11,7 +11,7 @@ import color from '../../node/color';
 import { globSrc } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { isMatch } from '../../node/string-utils';
-import config, { root } from '../../types/_config';
+import config, { post_generated_dir } from '../../types/_config';
 import { isValidHttpUrl } from '../utils';
 
 const safelink = new safelinkify.safelink({
@@ -136,11 +136,10 @@ export function filter_external_links(href: string, debug = false) {
   return result;
 }
 
-const generated_dir = join(root, config.public_dir);
 export function safelinkifyGenerated(done: TaskCallback) {
   // iterate public_dir of _config.yml (hexo generate)
-  globSrc('**/*.html', { cwd: generated_dir })
-    .map((file) => join(generated_dir, file))
+  globSrc('**/*.html', { cwd: post_generated_dir })
+    .map((file) => join(post_generated_dir, file))
     .then((files) => {
       console.log(logname, 'html files total', files.length);
       return parseAfterGen(files, done);
