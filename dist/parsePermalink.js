@@ -25,12 +25,12 @@ function parsePermalink(post) {
         ':post_title': post.metadata.title
     };
     // @todo [permalink] follow directory path
-    if (pattern.startsWith(':title')) {
-        const bname = pattern.replace(':title', replacer[':title']);
-        const perm = (0, upath_1.join)((0, upath_1.dirname)(url), bname);
-        //console.log(perm);
-        return perm;
-    }
+    /* if (pattern.startsWith(':title')) {
+      const bname = pattern.replace(':title', replacer[':title']);
+      const perm = join(dirname(url), bname);
+      //console.log(perm);
+      return perm;
+    }*/
     for (const date_pattern in replacer) {
         if (Object.prototype.hasOwnProperty.call(replacer, date_pattern)) {
             if ([':title', ':post_title', ':id', ':category', ':hash'].includes(date_pattern)) {
