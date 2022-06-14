@@ -108,10 +108,6 @@ function parsePost(target, options = {}) {
                 // assign post id
                 meta.id = (0, generatePostId_1.generatePostId)(meta);
             }
-            // sort metadata
-            meta = Object.keys(meta)
-                .sort()
-                .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
             if (options.fix) {
                 // @todo fix date
                 if (!meta.date) {
@@ -378,6 +374,10 @@ function parsePost(target, options = {}) {
                     }
                 }
             }
+            // sort metadata
+            meta = Object.keys(meta)
+                .sort()
+                .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
             const result = {
                 metadata: meta,
                 body: body,
