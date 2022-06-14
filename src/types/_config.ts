@@ -8,7 +8,7 @@ import { inspect } from 'util';
 import yaml from 'yaml';
 import yargs from 'yargs';
 import '../a-core';
-import { read, write } from '../node/filemanager';
+import { crossNormalize, read, write } from '../node/filemanager';
 import { json_encode } from '../node/JSON';
 import { sortedObject } from '../node/object-utility';
 import { yamlParse } from '../parser/yaml';
@@ -129,16 +129,20 @@ config.url = config.url.replace(/\/+$/, '');
 /**
  * Public Source Post Dir ({@link config.source_dir})
  */
-export const post_public_dir = resolve(join(root, config.source_dir, '_posts'));
+export const post_public_dir = crossNormalize(
+  resolve(join(root, config.source_dir, '_posts'))
+);
 /**
  * Generated directory ({@link config.public_dir})
  */
-export const post_generated_dir = resolve(join(root, config.public_dir));
+export const post_generated_dir = crossNormalize(
+  resolve(join(root, config.public_dir))
+);
 
 /**
  * `src-posts/` directory
  */
-export const post_source_dir = resolve(join(root, 'src-posts'));
+export const post_source_dir = crossNormalize(resolve(join(root, 'src-posts')));
 
 /**
  * path to temp folder
