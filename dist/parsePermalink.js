@@ -41,7 +41,8 @@ function parsePermalink(post) {
             }
         }
     }
-    return pattern;
+    // replace %20 to space
+    return pattern.replace(/%20/g, ' ');
 }
 exports.parsePermalink = parsePermalink;
 //# sourceMappingURL=parsePermalink.js.map
