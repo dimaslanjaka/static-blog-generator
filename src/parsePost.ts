@@ -253,6 +253,11 @@ export async function parsePost(
       } else {
         meta.updated = meta.date;
       }
+    } else {
+      if (meta.modified) {
+        // fix for hexo-blogger-xml
+        delete meta.modified;
+      }
     }
 
     // @todo fix thumbnail
