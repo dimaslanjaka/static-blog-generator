@@ -211,7 +211,9 @@ export async function parsePost(
       }
       if (!meta.updated) {
         // @todo metadata date modified based on date published
-        meta.updated = moment(String(meta.date)).format('YYYY-MM-DDTHH:mm:ssZ');
+        let date: string | Date = String(meta.date);
+        if (/\d{4}-\d-\d{2}/.test(date)) date = new Date(String(meta.date));
+        meta.updated = moment(date).format('YYYY-MM-DDTHH:mm:ssZ');
       }
 
       /*
