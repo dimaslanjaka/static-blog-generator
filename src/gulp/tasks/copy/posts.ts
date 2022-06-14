@@ -47,9 +47,14 @@ export function copyPosts(
     .map((file) => crossNormalize(join(post_source_dir, file)));
   if (customPaths) {
     sources = sources.filter((path) => {
-      if (typeof customPaths === 'string') return path.includes(customPaths);
+      if (typeof customPaths === 'string') {
+        //console.log(path, path.includes(customPaths));
+        return path.includes(customPaths);
+      }
       // @fixme filter multiple custom paths
+      return false;
     });
+    //console.log('using custom path(s)', sources);
   }
 
   return (
@@ -65,18 +70,23 @@ export function copyPosts(
         const parse = obj.parse;
         const path = obj.file;
         // @todo fix post with space in path
-        if ('generator' in config) {
-          if ('copy' in config.generator) {
-            if ('posts' in config.generator.copy) {
-              if ('space' in config.generator.copy.posts) {
-                if (!config.generator.copy.posts.space) {
-                  // @todo transform post with space to hypens format
-                  const modParse = Object.assign({}, parse);
-                  const source = modParse.metadata.source;
-                  const url = modParse.metadata.url;
-                  const gulpPath = String(path);
+        if (/\s/g.test(path)) {
+          if ('generator' in config) {
+            if ('copy' in config.generator) {
+              if ('posts' in config.generator.copy) {
+                if ('space' in config.generator.copy.posts) {
+                  if (!config.generator.copy.posts.space) {
+                    // @todo transform post with space to hypens format
+                    // re-parse post without any caches
+                    const modParse = await parsePost(
+                      path,
+                      null,
+                      Object.assign(options, { cache: false })
+                    );
+                    const source = modParse.metadata.source;
+                    const url = modParse.metadata.url;
+                    const gulpPath = String(path);
 
-                  if (/\s/.test(source)) {
                     const newUrl =
                       config.url +
                       url.replace(config.url, '').replace(/\s|%20/g, '-');
@@ -132,6 +142,7 @@ export function copyPosts(
 
                     // apply redirect
                     parse.metadata.redirect_to = newUrl;
+                    //console.log(parse.metadata);
                     obj.parse = parse;
 
                     if (isDev) {
