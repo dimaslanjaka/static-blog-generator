@@ -14,6 +14,7 @@ const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
 const utils_2 = require("./node/utils");
 const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
+const parsePermalink_1 = require("./parsePermalink");
 const codeblock_1 = require("./shortcodes/codeblock");
 const css_1 = require("./shortcodes/css");
 const extractText_1 = require("./shortcodes/extractText");
@@ -389,6 +390,7 @@ function parsePost(target, options = {}) {
                 content: body,
                 config: config
             };
+            result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
             // put fileTree
             if (isFile) {
                 result.fileTree = {
