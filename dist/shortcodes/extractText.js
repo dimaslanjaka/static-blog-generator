@@ -21,7 +21,8 @@ function extractText(file, str) {
         // search from file directory
         const directFile = path_1.default.join(path_1.default.dirname(file.toString()), bracketmatch);
         if (fs.existsSync(directFile)) {
-            console.info(`${logname} found from direct ${directFile.replace(process.cwd() + '/', '')}`);
+            if (_config_1.verbose)
+                console.info(`${logname} found from direct ${directFile.replace(process.cwd() + '/', '')}`);
             const directRead = fs.readFileSync(directFile).toString();
             str = str.replace(allmatch, directRead);
         }
