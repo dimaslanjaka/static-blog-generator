@@ -1,4 +1,4 @@
-import { TaskCallback } from "undertaker";
+import { TaskCallback } from 'undertaker';
 /**
  * get domain name without subdomain
  * @param url
