@@ -1,37 +1,37 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import chalk from 'chalk';
-import { readFileSync, writeFileSync } from 'fs';
-import gulp from 'gulp';
-import { join } from 'path';
-import safelinkify from 'safelinkify';
-import { TaskCallback } from 'undertaker';
-import { arrayAddAll, uniqueStringArray } from '../../node/array-utils';
-import { globSrc } from '../../node/filemanager';
-import jdom from '../../node/jsdom';
-import { isMatch } from '../../node/string-utils';
-import config, { root } from '../../types/_config';
+import chalk from "chalk";
+import { readFileSync, writeFileSync } from "fs";
+import gulp from "gulp";
+import { join } from "path";
+import safelinkify from "safelinkify";
+import { TaskCallback } from "undertaker";
+import { arrayAddAll, uniqueStringArray } from "../../node/array-utils";
+import { globSrc } from "../../node/filemanager";
+import jdom from "../../node/jsdom";
+import { isMatch } from "../../node/string-utils";
+import config, { root } from "../../types/_config";
 
 const safelink = new safelinkify.safelink({
   redirect: [
-    'external_link' in config &&
-    'safelink' in config['external_link'] &&
-    'redirect' in config['external_link']['safelink']
-      ? config['external_link']['safelink']['redirect']
-      : null
+    "external_link" in config &&
+    "safelink" in config["external_link"] &&
+    "redirect" in config["external_link"]["safelink"]
+      ? config["external_link"]["safelink"]["redirect"]
+      : null,
   ],
   password:
-    'external_link' in config &&
-    'safelink' in config['external_link'] &&
-    'password' in config['external_link']['safelink']
-      ? config['external_link']['safelink']['password']
+    "external_link" in config &&
+    "safelink" in config["external_link"] &&
+    "password" in config["external_link"]["safelink"]
+      ? config["external_link"]["safelink"]["password"]
       : null,
   type:
-    'external_link' in config &&
-    'safelink' in config['external_link'] &&
-    'type' in config['external_link']['safelink']
-      ? config['external_link']['safelink']['type']
-      : null
+    "external_link" in config &&
+    "safelink" in config["external_link"] &&
+    "type" in config["external_link"]["safelink"]
+      ? config["external_link"]["safelink"]["type"]
+      : null,
 });
 
 /**
@@ -40,23 +40,23 @@ const safelink = new safelinkify.safelink({
  * @returns
  */
 export const getDomainWithoutSubdomain = (url: string | URL) => {
-  const urlParts = new URL(url).hostname.split('.');
+  const urlParts = new URL(url).hostname.split(".");
 
   return urlParts
     .slice(0)
     .slice(-(urlParts.length === 4 ? 3 : 2))
-    .join('.');
+    .join(".");
 };
 
-const logname = chalk.magenta('[generate]') + chalk.blue('[after]');
+const logname = chalk.magenta("[generate]") + chalk.blue("[after]");
 const hexoURL = new URL(config.url);
 const internal_links = uniqueStringArray([
-  ...config['external_link'].exclude,
+  ...config["external_link"].exclude,
   hexoURL.host,
-  'www.webmanajemen.com',
-  'https://github.com/dimaslanjaka',
-  '/dimaslanjaka1',
-  'dimaslanjaka.github.io'
+  "www.webmanajemen.com",
+  "https://github.com/dimaslanjaka",
+  "/dimaslanjaka1",
+  "dimaslanjaka.github.io",
 ]);
 
 /**
@@ -73,17 +73,17 @@ export function filter_external_links(href: string, debug = false) {
     /**
      * original link or safelink
      */
-    href: href
+    href: href,
   };
   if (href && href.length > 2) {
     // fix dynamic protocol urls
     const homepage = new URL(config.url);
     // fix dynamic url protocol
-    if (href.startsWith('//')) href = 'http:' + href;
+    if (href.startsWith("//")) href = "http:" + href;
     /**
      *  javascript anchors, dot anchors, hash header
      */
-    const isExternal = href.trim().match(new RegExp('^(https?)://'));
+    const isExternal = href.trim().match(new RegExp("^(https?)://"));
     const isInternal =
       isMatch(href.trim(), /^(\.+|#|(javascript|mailto|mail):)/i) &&
       !isExternal;
@@ -96,7 +96,7 @@ export function filter_external_links(href: string, debug = false) {
     // skip hash and
     if (isAllowed) {
       // only get external links with protocols
-      if (href.trim().match(new RegExp('^(https?|ftp)://'))) {
+      if (href.trim().match(new RegExp("^(https?|ftp)://"))) {
         /**
          * match host
          */
@@ -110,11 +110,11 @@ export function filter_external_links(href: string, debug = false) {
           console.log(!matchHost, !matchHref, href);
         }
         if (!matchHost && !matchHref) {
-          const safelinkConfig = config['external_link']['safelink'];
+          const safelinkConfig = config["external_link"]["safelink"];
           // apply safelink
           if (safelinkConfig.enable) {
             const safelinkPath = safelink.encodeURL(href);
-            if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
+            if (typeof safelinkPath == "string" && safelinkPath.length > 0) {
               result.href = safelinkPath;
             }
           }
@@ -128,14 +128,14 @@ export function filter_external_links(href: string, debug = false) {
 const generated_dir = join(root, config.public_dir);
 export function safelinkifyGenerated(done: TaskCallback) {
   // iterate public_dir of _config.yml (hexo generate)
-  globSrc('**/*.html', { cwd: generated_dir })
+  globSrc("**/*.html", { cwd: generated_dir })
     .map((file) => join(generated_dir, file))
     .then((files) => {
-      console.log(logname, 'html files total', files.length);
+      console.log(logname, "html files total", files.length);
       return parseAfterGen(files, done);
     });
 }
-gulp.task('generate:after', safelinkifyGenerated);
+gulp.task("generate:after", safelinkifyGenerated);
 
 /**
  * remove i2.wp.com i1.wp.com etc
@@ -145,7 +145,7 @@ gulp.task('generate:after', safelinkifyGenerated);
  */
 export function removeWordpressCDN(
   str: string,
-  replacement = 'https://res.cloudinary.com/practicaldev/image/fetch/'
+  replacement = "https://res.cloudinary.com/practicaldev/image/fetch/"
 ) {
   const regex = /https?:\/\/i\d{1,4}.wp.com\//gm;
   return str.replace(regex, replacement);
@@ -169,14 +169,14 @@ export const parseAfterGen = (
       files.shift();
       //console.log(logname, 'remaining', files.length + 1);
       return parseAfterGen(null, callback);
-    } else if (typeof callback == 'function') {
-      if (typeof callback === 'function') return callback();
+    } else if (typeof callback == "function") {
+      if (typeof callback === "function") return callback();
     }
   };
   if (!files.length) return skip();
 
   const file = files[0];
-  const content = readFileSync(file, 'utf-8');
+  const content = readFileSync(file, "utf-8");
   const debug = false; //strMatch(file, 'see-blog-position-in-search');
   const result = fixHtmlPost(content, debug);
   writeFileSync(file, result);
@@ -192,32 +192,29 @@ export default function fixHtmlPost(content: string, debug = false) {
   const jd = new jdom();
   const dom = jd.parse(content);
   // fix lang attr
-  const html = dom.querySelector('html');
-  if (html && !html.hasAttribute('lang')) html.setAttribute('lang', 'en');
+  const html = dom.querySelector("html");
+  if (html && !html.hasAttribute("lang")) html.setAttribute("lang", "en");
   // external link filter
-  const hrefs = dom.querySelectorAll('a');
+  const hrefs = dom.querySelectorAll("a");
   if (hrefs && hrefs.length > 0) {
     for (let i = 0; i < hrefs.length; i++) {
       const element = hrefs[i];
-      const href = element.getAttribute('href');
+      const href = element.getAttribute("href");
       const filter = filter_external_links(href, debug);
       if (debug) {
-        if (href.includes('seoserp')) console.log(filter, href);
+        if (href.includes("seoserp")) console.log(filter, href);
       }
       if (!filter.internal) {
-        element.setAttribute('rel', 'nofollow noopener noreferer');
-        element.setAttribute('target', '_blank');
+        element.setAttribute("rel", "nofollow noopener noreferer");
+        element.setAttribute("target", "_blank");
       }
 
-      if (
-        'external_link' in config &&
-        typeof config['external_link'] == 'object' &&
-        'safelink' in config['external_link'] &&
-        config['external_link']['safelink'] &&
-        config['external_link']['safelink']['enable']
-      ) {
-        element.setAttribute('href', filter.href);
-      }
+      if ("external_link" in config)
+        if (typeof config["external_link"] == "object")
+          if ("safelink" in config["external_link"])
+            if (config["external_link"]["safelink"])
+              if (config["external_link"]["safelink"]["enable"] === true)
+                element.setAttribute("href", filter.href);
     }
   }
 
