@@ -74,12 +74,14 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
     .map((path) => {
       const src = path;
       const dest = path.replace(post_source_dir, post_public_dir);
-      console.log(
-        logname,
-        color.yellow(src).replace(cwd(), ''),
-        '->',
-        color.green(dest).replace(cwd(), '')
-      );
+      if (config.verbose) {
+        console.log(
+          logname,
+          color.yellow(src).replace(cwd(), ''),
+          '->',
+          color.green(dest).replace(cwd(), '')
+        );
+      }
       copy(src, dest);
       return { src, dest };
     });
