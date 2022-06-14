@@ -17,15 +17,15 @@ updated: 2022-06-07
 
 ### Standalone Tasks
 Standalone: is useful for low device to run one by one the tasks.
-- read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80-L112)
+- ~read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80-L112)~
+
+```bash
+sbg <command> <subcommand>
+```
 
 | task name | description |
 | :--- | :--- |
 | clean | clean all caches |
-| copy:assets | copy post assets |
-| copy:posts | copy and process posts |
-| copy:remove-inline-style | remove inline style from html source/_posts (useful for migrated from blogger) |
-| copy:blogger | `<series>`(`copy:assets`, `copy:posts`, `copy:remove-inline-style`) |
 | generate:assets | copy all assets |
 | generate:template | copy and process template |
 | generate:posts | generate posts |
@@ -47,14 +47,20 @@ Standalone: is useful for low device to run one by one the tasks.
 | --nocache | dont use cache instead create new caches | - |
 | --verbose | verbose | - |
 
-### Example
-
 ### Copy
+
+| task name | description |
+| :--- | :--- |
+| copy assets | copy post assets |
+| copy posts | copy and process posts |
+| copy remove-inline-style | remove inline style from html source/_posts (useful for migrated from blogger) |
+| copy:blogger | `<series>`(`copy assets`, `copy posts`, `copy remove-inline-style`) |
 
 | usage | description |
 | :--- | :--- |
-| `sbg copy`| series of `copy:posts` and `copy:asets` |
+| `sbg copy`| series of `copy posts` and `copy assets` |
 | `sbg copy ---paths=shortcode,unit`| copy custom paths (comma separated) |
+| `sbg copy posts` | copy all posts |
 
 ### Generate
 
