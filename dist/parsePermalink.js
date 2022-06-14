@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePermalink = void 0;
 const tslib_1 = require("tslib");
-const upath_1 = require("upath");
 const dateMapper_1 = require("./dateMapper");
 const _config_1 = tslib_1.__importDefault(require("./types/_config"));
 /**
@@ -21,7 +20,7 @@ function parsePermalink(post) {
         ':hour': 'HH',
         ':minute': 'mm',
         ':second': 'ss',
-        ':title': (0, upath_1.basename)(url).replace(/.(md|html)$/, ''),
+        ':title': url.replace(/.(md|html)$/, ''),
         ':post_title': post.metadata.title
     };
     // @todo [permalink] follow directory path
