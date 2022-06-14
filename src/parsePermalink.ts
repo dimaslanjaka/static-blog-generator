@@ -10,6 +10,7 @@ import config from './types/_config';
 export function parsePermalink(post: postMap) {
   let pattern: string = config.permalink;
   const date = moment(post.metadata.date);
+  const url = post.metadata.url.replace(config.url, '');
   const replacer = {
     ':month': 'MM',
     ':year': 'YYYY',
@@ -18,13 +19,13 @@ export function parsePermalink(post: postMap) {
     ':hour': 'HH',
     ':minute': 'mm',
     ':second': 'ss',
-    ':title': basename(post.metadata.url).replace(/.(md|html)$/, ''),
+    ':title': basename(url).replace(/.(md|html)$/, ''),
     ':post_title': post.metadata.title
   };
   // @todo [permalink] follow directory path
   if (pattern.startsWith(':title')) {
     const bname = pattern.replace(':title', replacer[':title']);
-    const perm = join(dirname(post.metadata.url), bname);
+    const perm = join(dirname(url), bname);
     //console.log(perm);
     return perm;
   }
