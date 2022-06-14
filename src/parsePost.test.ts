@@ -8,11 +8,12 @@ import parsePost from './parsePost';
 
 const files = [
   //join(__dirname, '../src-posts/with-description.md'),
+  //join(__dirname, '../src-posts/Tests/codeblock.md'),
   //join(__dirname, '../src-posts/Tests/unit/hello-world.md'),
-  join(__dirname, '../src-posts/Tests/unit/elements.md'),
-  join(__dirname, '../src-posts/Tests/unit/markdown.md'),
-  join(__dirname, '../src-posts/folder with space/file post with space.md')
-  //join(__dirname, '../src-posts/Tests/codeblock.md')
+  //join(__dirname, '../src-posts/Tests/unit/elements.md'),
+  //join(__dirname, '../src-posts/Tests/unit/markdown.md'),
+  //join(__dirname, '../src-posts/folder with space/file post with space.md'),
+  join(__dirname, '../src-posts/without-updated.md')
 ];
 
 files.forEach(async (file) => {

@@ -209,16 +209,24 @@ export async function parsePost(
       if (meta.modified && !meta.updated) {
         meta.updated = moment(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
       }
+      if (!meta.updated) {
+        // @todo metadata date modified based on date published
+        meta.updated = moment(String(meta.date)).format('YYYY-MM-DDTHH:mm:ssZ');
+      }
+
+      /*
+      // change date modified based on file modified date
       if (isFile) {
         const sourceFile = toUnix(originalArg);
         if (existsSync(sourceFile)) {
-          const stats = statSync(sourceFile);
           if (!meta.updated) {
+            const stats = statSync(sourceFile);
             const mtime = stats.mtime;
             meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
           }
         }
       }
+      */
 
       // @todo fix lang
       if (!meta.lang) meta.lang = 'en';
