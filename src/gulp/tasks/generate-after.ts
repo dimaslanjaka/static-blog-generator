@@ -83,14 +83,14 @@ export function filter_external_links(href: string, debug = false) {
     /**
      *  javascript anchors, dot anchors, hash header
      */
-    const isExternal = href.trim().match(new RegExp('^(https?)://'));
+    const isExternal = href.trim().match(new RegExp('^(https?|ftp)://'));
     const isInternal =
       isMatch(href.trim(), /^(\.+|#|(javascript|mailto|mail):)/i) &&
       !isExternal;
     const isLength = href.trim().length > 0;
     const isAllowed = isExternal && isLength;
     if (debug) {
-      console.log(isInternal, isExternal, isAllowed, href);
+      console.log({ isInternal, isExternal, isAllowed, href });
     }
 
     // skip hash and
@@ -99,33 +99,34 @@ export function filter_external_links(href: string, debug = false) {
       if (href.trim().match(new RegExp('^(https?|ftp)://'))) {
         if (!isValidHttpUrl(href)) {
           console.log(
-            `[${color.yellow('marked as')} ${color.green('internal')}] invalid url`,
+            `[${color.yellow('marked as')} ${color.green(
+              'internal'
+            )}] invalid url`,
             color.redBright(String(href))
           );
-          return {
-            internal: true,
-            href
-          };
-        }
-        /**
-         * match host
-         */
-        const matchHost = internal_links.includes(new URL(href).host);
-        /**
-         * match url
-         */
-        const matchHref = internal_links.includes(href);
-        result.internal = matchHost;
-        if (debug) {
-          console.log(!matchHost, !matchHref, href);
-        }
-        if (!matchHost && !matchHref) {
-          const safelinkConfig = config['external_link']['safelink'];
-          // apply safelink
-          if (safelinkConfig.enable) {
-            const safelinkPath = safelink.encodeURL(href);
-            if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
-              result.href = safelinkPath;
+          result.internal = true;
+          result.href = href;
+        } else {
+          /**
+           * match host
+           */
+          const matchHost = internal_links.includes(new URL(href).host);
+          /**
+           * match url
+           */
+          const matchHref = internal_links.includes(href);
+          result.internal = matchHost;
+          if (debug) {
+            console.log(!matchHost, !matchHref, href);
+          }
+          if (!matchHost && !matchHref) {
+            const safelinkConfig = config['external_link']['safelink'];
+            // apply safelink
+            if (safelinkConfig.enable) {
+              const safelinkPath = safelink.encodeURL(href);
+              if (typeof safelinkPath == 'string' && safelinkPath.length > 0) {
+                result.href = safelinkPath;
+              }
             }
           }
         }
@@ -187,8 +188,7 @@ export const parseAfterGen = (
 
   const file = files[0];
   const content = readFileSync(file, 'utf-8');
-  const debug = false; //strMatch(file, 'see-blog-position-in-search');
-  const result = fixHtmlPost(content, debug);
+  const result = fixHtmlPost(content);
   writeFileSync(file, result);
   return skip();
 };
