@@ -4,12 +4,12 @@ import cache from 'persistent-cache';
 import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
+import { generatePostId } from './generatePostId';
 import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import { normalize } from './node/filemanager';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
-import uuidv4 from './node/uuid';
 import { parsePermalink } from './parsePermalink';
 import { shortcodeCodeblock } from './shortcodes/codeblock';
 import { shortcodeCss } from './shortcodes/css';
@@ -195,29 +195,21 @@ export async function parsePost(
     let body = m[2];
     if (!body) body = 'no content ' + (meta.title || '');
     //write(tmp('parsePost', 'original.log'), body).then(console.log);
-    if (!meta.uuid) {
-      // assign uuid
-      let uid = m[0];
-      if (meta.title && meta.webtitle) {
-        uid = meta.title + meta.webtitle;
-      } else if (meta.subtitle) {
-        uid = meta.subtitle;
-      } else if (meta.excerpt) {
-        uid = meta.excerpt;
-      } else if (meta.title) {
-        uid = meta.title;
-      }
-      meta.uuid = uuidv4(uid);
-      meta = Object.keys(meta)
-        .sort()
-        .reduce(
-          (acc, key) => ({
-            ...acc,
-            [key]: meta[key]
-          }),
-          {}
-        ) as postMap['metadata'];
+    if (!meta.id) {
+      // assign post id
+      meta.id = generatePostId(meta);
     }
+
+    // sort metadata
+    meta = Object.keys(meta)
+      .sort()
+      .reduce(
+        (acc, key) => ({
+          ...acc,
+          [key]: meta[key]
+        }),
+        {}
+      ) as postMap['metadata'];
 
     if (options.fix) {
       // @todo fix date

@@ -149,9 +149,9 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
     if (existsSync(key)) return key;
     // if key is long text
     if (key.length > 32) {
-      // search uuid
+      // search post id
       const regex =
-        /uuid:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
+        /id:.*([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/gm;
       const m = regex.exec(key);
       if (m && typeof m[1] == 'string') return m[1];
       // return first 32 byte text
