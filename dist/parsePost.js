@@ -156,6 +156,12 @@ function parsePost(target, options = {}) {
                     meta.updated = meta.date;
                 }
             }
+            else {
+                if (meta.modified) {
+                    // fix for hexo-blogger-xml
+                    delete meta.modified;
+                }
+            }
             // @todo fix thumbnail
             if (options.fix) {
                 const thumbnail = meta.cover || meta.thumbnail;
