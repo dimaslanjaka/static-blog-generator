@@ -10,6 +10,7 @@ import { normalize } from './node/filemanager';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import uuidv4 from './node/uuid';
+import { parsePermalink } from './parsePermalink';
 import { shortcodeCodeblock } from './shortcodes/codeblock';
 import { shortcodeCss } from './shortcodes/css';
 import { extractText } from './shortcodes/extractText';
@@ -497,6 +498,7 @@ export async function parsePost(
       content: body,
       config: config
     };
+    result.metadata.permalink = parsePermalink(result);
 
     // put fileTree
     if (isFile) {

@@ -11,7 +11,7 @@
   "timezone": "UTC",
   "url": "https://www.webmanajemen.com",
   "root": "/",
-  "permalink": "news/:year/:month/:day/:title/",
+  "permalink": ":year/:month/:title.html",
   "permalink_defaults": {},
   "pretty_urls": {
     "trailing_index": false,
@@ -90,6 +90,6 @@
   "twitter": "hexojs",
   "github": "hexojs/hexo",
   "generator": {
-    "cache": false
+    "cache": true
   }
 }
