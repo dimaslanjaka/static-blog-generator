@@ -1,5 +1,5 @@
 import { TaskCallback } from 'undertaker';
-import { parsePost } from '../../../parser/post/parsePost';
+import { SBGParsePostOptions } from '../../../parser/post/parsePost';
 import './assets';
 /**
  * copy posts from `src-posts` to config.source_dir {@link config.source_dir}
@@ -8,14 +8,8 @@ import './assets';
  * @param customPaths custom copy, only copy post with this key
  * @returns
  */
-export declare const copyPosts: (_done?: TaskCallback, customPaths?: string | string[], _options?: Partial<Parameters<typeof parsePost>[2]>) => import("bluebird")<{
-    parse: import("hexo-post-parser/dist/types/postMap").postMap;
-    file: string;
-}[]>;
+export declare const copyPosts: (done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions) => import("bluebird")<void>;
 /**
  * @see {@link copyPosts}
  */
-export declare const copy_posts: (_done?: TaskCallback, customPaths?: string | string[], _options?: Partial<Parameters<typeof parsePost>[2]>) => import("bluebird")<{
-    parse: import("hexo-post-parser/dist/types/postMap").postMap;
-    file: string;
-}[]>;
+export declare const copy_posts: (done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions) => import("bluebird")<void>;

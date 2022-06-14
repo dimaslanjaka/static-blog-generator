@@ -1,5 +1,7 @@
-import { parsePost as moduleParsePost, postMap } from 'hexo-post-parser';
-import { DeepPartial } from './postMapper';
+import { ParseOptions, postMap } from 'hexo-post-parser';
+export interface SBGParsePostOptions extends ParseOptions {
+    [key: string]: any;
+}
 /**
  * Parse Markdown Post
  * @see {@link moduleParsePost}
@@ -8,7 +10,7 @@ import { DeepPartial } from './postMapper';
  * @param options override {@link moduleParsePost} options
  * @returns
  */
-declare const parsePost: (path: string, content?: string | null | undefined, options?: DeepPartial<Parameters<typeof moduleParsePost>[1]>) => Promise<postMap>;
+declare const parsePost: (path: string, content?: string | null | undefined, options?: SBGParsePostOptions) => Promise<postMap>;
 export { buildPost, DeepPartial, ParseOptions, postMap, postMeta } from 'hexo-post-parser';
 export { parsePost };
 export default parsePost;
