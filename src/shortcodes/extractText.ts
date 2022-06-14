@@ -21,12 +21,13 @@ export function extractText(file: string, str: string) {
     // search from file directory
     const directFile = path.join(path.dirname(file.toString()), bracketmatch);
     if (fs.existsSync(directFile)) {
-      if (verbose) console.info(
-        `${logname} found from direct ${directFile.replace(
-          process.cwd() + '/',
-          ''
-        )}`
-      );
+      if (verbose)
+        console.info(
+          `${logname} found from direct ${directFile.replace(
+            process.cwd() + '/',
+            ''
+          )}`
+        );
       const directRead = fs.readFileSync(directFile).toString();
       str = str.replace(allmatch, directRead);
     } else {
