@@ -26,11 +26,11 @@ const paths =
  * @param customPaths custom copy, only copy post with this key
  * @returns
  */
-export const copyPosts = (
+export function copyPosts(
   done: TaskCallback = null,
   customPaths: string | string[] = paths,
   options: SBGParsePostOptions = {}
-) => {
+) {
   const exclude = config.exclude.map((ePattern: string) =>
     ePattern.replace(/^!+/, '')
   );
@@ -181,7 +181,7 @@ export const copyPosts = (
         if (typeof done === 'function') done(e);
       })
   );
-};
+}
 
 /**
  * @see {@link copyPosts}
