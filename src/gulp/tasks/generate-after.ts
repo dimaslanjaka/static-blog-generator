@@ -98,8 +98,14 @@ export function filter_external_links(href: string, debug = false) {
       // only get external links with protocols
       if (href.trim().match(new RegExp('^(https?|ftp)://'))) {
         if (!isValidHttpUrl(href)) {
-          console.log('invalid url', color.redBright(href));
-          return;
+          console.log(
+            '[marked as internal] invalid url',
+            color.redBright(String(href))
+          );
+          return {
+            internal: true,
+            href
+          };
         }
         /**
          * match host
