@@ -130,7 +130,6 @@ declare const color: {
     'Wild Strawberry': chalk.Chalk;
     'Wild Watermelon': chalk.Chalk;
     Wisteria: chalk.Chalk;
-    yellow: chalk.Chalk;
     Yellow: chalk.Chalk;
     'Yellow Green': chalk.Chalk;
     'Yellow Orange': chalk.Chalk;
