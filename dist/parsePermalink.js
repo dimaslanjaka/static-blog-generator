@@ -12,6 +12,7 @@ const _config_1 = tslib_1.__importDefault(require("./types/_config"));
 function parsePermalink(post) {
     let pattern = _config_1.default.permalink;
     const date = (0, dateMapper_1.moment)(post.metadata.date);
+    const url = post.metadata.url.replace(_config_1.default.url, '');
     const replacer = {
         ':month': 'MM',
         ':year': 'YYYY',
@@ -20,13 +21,13 @@ function parsePermalink(post) {
         ':hour': 'HH',
         ':minute': 'mm',
         ':second': 'ss',
-        ':title': (0, upath_1.basename)(post.metadata.url).replace(/.(md|html)$/, ''),
+        ':title': (0, upath_1.basename)(url).replace(/.(md|html)$/, ''),
         ':post_title': post.metadata.title
     };
     // @todo [permalink] follow directory path
     if (pattern.startsWith(':title')) {
         const bname = pattern.replace(':title', replacer[':title']);
-        const perm = (0, upath_1.join)((0, upath_1.dirname)(post.metadata.url), bname);
+        const perm = (0, upath_1.join)((0, upath_1.dirname)(url), bname);
         //console.log(perm);
         return perm;
     }
