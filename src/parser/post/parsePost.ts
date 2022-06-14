@@ -50,7 +50,7 @@ const parsePost = async (
     fix: true,
     sourceFile: path
   };
-  if (options !== null && typeof options !== 'undefined') {
+  if (options !== null) {
     options = deepmerge(default_options, options);
   }
   // cache definer setup
