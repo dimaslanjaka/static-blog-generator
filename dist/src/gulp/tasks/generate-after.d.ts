@@ -20,7 +20,7 @@ export declare function filter_external_links(href: string, debug?: boolean): {
      */
     href: string;
 };
-export declare function staticAfter(done: TaskCallback): void;
+export declare function safelinkifyGenerated(done: TaskCallback): void;
 /**
  * remove i2.wp.com i1.wp.com etc
  * @param str url string
