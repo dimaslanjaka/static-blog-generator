@@ -203,7 +203,7 @@ if (existsSync(file_private_config)) {
  * get config
  * @returns
  */
-export function getConfig(): ProjectConfig {
+export function getConfig(): typeof project_config_data {
   return config;
 }
 
