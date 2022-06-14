@@ -71,12 +71,12 @@ export function copyPosts(
               if ('space' in config.generator.copy.posts) {
                 if (!config.generator.copy.posts.space) {
                   // @todo transform post with space to hypens format
-                  const source = parse.metadata.source;
-                  const url = parse.metadata.url;
+                  const modParse = Object.assign({}, parse);
+                  const source = modParse.metadata.source;
+                  const url = modParse.metadata.url;
                   const gulpPath = String(path);
 
                   if (/\s/.test(source)) {
-                    const modParse = Object.assign({}, parse);
                     const newUrl =
                       config.url +
                       url.replace(config.url, '').replace(/\s|%20/g, '-');
@@ -87,7 +87,7 @@ export function copyPosts(
                         join(
                           __dirname,
                           'tmp/posts-fix-hypens',
-                          parse.metadata.title + '.log'
+                          modParse.metadata.title + '.log'
                         ),
                         [
                           { url, newUrl },
@@ -98,6 +98,8 @@ export function copyPosts(
                     }
                     modParse.metadata.url = newUrl;
                     modParse.metadata.source = newSource;
+                    modParse.metadata.permalink =
+                      modParse.metadata.permalink.replace(/\s|%20/g, '-');
                     const buildNewParse = buildPost(modParse);
 
                     // write new redirected post
@@ -114,7 +116,7 @@ export function copyPosts(
                         join(
                           __dirname,
                           'tmp/posts-fix-hypens',
-                          parse.metadata.title + '-redirected.json'
+                          modParse.metadata.title + '-redirected.json'
                         ),
                         modParse
                       );
@@ -122,7 +124,7 @@ export function copyPosts(
                         join(
                           __dirname,
                           'tmp/posts-fix-hypens',
-                          parse.metadata.title + '-redirected.md'
+                          modParse.metadata.title + '-redirected.md'
                         ),
                         buildNewParse
                       );
@@ -130,10 +132,6 @@ export function copyPosts(
 
                     // apply redirect
                     parse.metadata.redirect_to = newUrl;
-                    parse.metadata.permalink = parse.metadata.permalink.replace(
-                      /\s|%20/g,
-                      '-'
-                    );
                     obj.parse = parse;
 
                     if (isDev) {
