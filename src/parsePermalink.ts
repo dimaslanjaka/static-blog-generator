@@ -1,4 +1,4 @@
-import { basename, dirname, join } from 'upath';
+import { basename } from 'upath';
 import { moment } from './dateMapper';
 import { postMap } from './types/postMap';
 import config from './types/_config';
@@ -23,12 +23,12 @@ export function parsePermalink(post: postMap) {
     ':post_title': post.metadata.title
   };
   // @todo [permalink] follow directory path
-  if (pattern.startsWith(':title')) {
+  /* if (pattern.startsWith(':title')) {
     const bname = pattern.replace(':title', replacer[':title']);
     const perm = join(dirname(url), bname);
     //console.log(perm);
     return perm;
-  }
+  }*/
   for (const date_pattern in replacer) {
     if (Object.prototype.hasOwnProperty.call(replacer, date_pattern)) {
       if (
