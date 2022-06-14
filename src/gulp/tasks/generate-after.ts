@@ -126,7 +126,7 @@ export function filter_external_links(href: string, debug = false) {
 }
 
 const generated_dir = join(root, config.public_dir);
-export function staticAfter(done: TaskCallback) {
+export function safelinkifyGenerated(done: TaskCallback) {
   // iterate public_dir of _config.yml (hexo generate)
   globSrc('**/*.html', { cwd: generated_dir })
     .map((file) => join(generated_dir, file))
@@ -135,7 +135,7 @@ export function staticAfter(done: TaskCallback) {
       return parseAfterGen(files, done);
     });
 }
-gulp.task('generate:after', staticAfter);
+gulp.task('generate:after', safelinkifyGenerated);
 
 /**
  * remove i2.wp.com i1.wp.com etc
@@ -170,7 +170,7 @@ export const parseAfterGen = (
       //console.log(logname, 'remaining', files.length + 1);
       return parseAfterGen(null, callback);
     } else if (typeof callback == 'function') {
-      return callback();
+      if (typeof callback === 'function') return callback();
     }
   };
   if (!files.length) return skip();
