@@ -8,8 +8,8 @@ import './assets';
  * @param customPaths custom copy, only copy post with this key
  * @returns
  */
-export declare const copyPosts: (done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions) => import("bluebird")<void>;
+export declare function copyPosts(done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions): import("bluebird")<void>;
 /**
  * @see {@link copyPosts}
  */
-export declare const copy_posts: (done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions) => import("bluebird")<void>;
+export declare const copy_posts: typeof copyPosts;
