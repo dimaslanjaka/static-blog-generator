@@ -7,6 +7,10 @@ declare class jdom {
     current: string;
     close(): void;
     parse: (str: string) => Document;
+    /**
+     * serialize html and close instance
+     * @returns
+     */
     serialize(): string;
     body(): HTMLElement;
     toString(): string;
