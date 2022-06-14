@@ -21,7 +21,7 @@ export function extractText(file: string, str: string) {
     // search from file directory
     const directFile = path.join(path.dirname(file.toString()), bracketmatch);
     if (fs.existsSync(directFile)) {
-      console.info(
+      if (verbose) console.info(
         `${logname} found from direct ${directFile.replace(
           process.cwd() + '/',
           ''
