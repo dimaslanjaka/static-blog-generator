@@ -6,15 +6,12 @@ import {
 } from 'hexo-post-parser';
 import { basename, toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
-import { pcache } from '../../node/cache';
 import { CachePost } from '../../node/cache-post';
-import { md5 } from '../../node/md5-file';
-import config, { cwd } from '../../types/_config';
+import config from '../../types/_config';
 import modifyPost from './modifyPost';
 
 // file:../../../packages/hexo-post-parser/src
 
-const parseCache = pcache('parsePost');
 const cachePost = new CachePost();
 const __g = (typeof window != 'undefined' ? window : global) /* node */ as any;
 
@@ -62,22 +59,6 @@ const parsePost = async (
       "parameter 'path' is undefined, parameter 'options.sourceFile' also undefined. Please insert to 'options.sourceFile' when 'path' not defined (used for type validator and cache key)"
     );
   const realPath = path || options.sourceFile;
-  let cacheKey = md5(path || options.sourceFile || content);
-  if (typeof path == 'string' && !/\n/.test(path)) {
-    cacheKey = toUnix(path).replace(cwd(), '');
-    if (cacheKey.endsWith('/')) cacheKey += 'index';
-  }
-  let useCache = options.cache;
-  if ('cache' in options) {
-    // overriden cache when `cache` exist in options
-    useCache = options.cache;
-  }
-  // @todo return from cache
-  if (useCache && typeof cacheKey == 'string' && cacheKey.length > 0) {
-    const get =
-      parseCache.getSync<ReturnType<typeof moduleParsePost>>(cacheKey);
-    if (get) return get;
-  }
 
   /**
    * parsing with `hexo-post-parser`
@@ -136,16 +117,6 @@ const parsePost = async (
   // @todo indexing post
   if (isTypePost && isPathPost) {
     cachePost.set(path, parse);
-  }
-
-  // @todo caching this parsePost
-  try {
-    parseCache.putSync(cacheKey, parse);
-  } catch (error) {
-    if (error instanceof Error) {
-      //console.log(error.message);
-      console.log('cannot add cache key', cacheKey);
-    }
   }
 
   return parse;
