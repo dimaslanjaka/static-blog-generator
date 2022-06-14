@@ -35,7 +35,7 @@ export async function generateIndex(_?: 'homepage' | number | string | any) {
   for (let i = 0; i < properties.length; i++) {
     const archive = properties[i];
     const property = modifyPost(archive, { merge: true, cache: false });
-    if (property !== null && typeof property !== 'undefined') {
+    if (property !== null) {
       // fix title
       if (property.page_now === 0) {
         property.title = null;

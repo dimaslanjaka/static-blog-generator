@@ -210,7 +210,7 @@ export default function fixHtmlPost(content: string, debug = false) {
       }
 
       if ('external_link' in config)
-        if (typeof config['external_link'] == 'object')
+        if (config['external_link'] !== null)
           if ('safelink' in config['external_link'])
             if (config['external_link']['safelink'])
               if (config['external_link']['safelink']['enable'] === true)
