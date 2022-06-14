@@ -116,16 +116,23 @@ function parsePost(target, options = {}) {
                 if (meta.modified && !meta.updated) {
                     meta.updated = (0, dateMapper_1.moment)(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
                 }
-                if (isFile) {
-                    const sourceFile = (0, upath_1.toUnix)(originalArg);
-                    if ((0, fs_1.existsSync)(sourceFile)) {
-                        const stats = (0, fs_1.statSync)(sourceFile);
-                        if (!meta.updated) {
-                            const mtime = stats.mtime;
-                            meta.updated = (0, dateMapper_1.moment)(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
-                        }
-                    }
+                if (!meta.updated) {
+                    // @todo metadata date modified based on date published
+                    meta.updated = (0, dateMapper_1.moment)(String(meta.date)).format('YYYY-MM-DDTHH:mm:ssZ');
                 }
+                /*
+                // change date modified based on file modified date
+                if (isFile) {
+                  const sourceFile = toUnix(originalArg);
+                  if (existsSync(sourceFile)) {
+                    if (!meta.updated) {
+                      const stats = statSync(sourceFile);
+                      const mtime = stats.mtime;
+                      meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+                    }
+                  }
+                }
+                */
                 // @todo fix lang
                 if (!meta.lang)
                     meta.lang = 'en';

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.dateMapper = exports.moment = void 0;
+exports.dateMapper = exports.isToday = exports.moment = void 0;
 const tslib_1 = require("tslib");
 const moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 const _config_1 = tslib_1.__importDefault(require("./types/_config"));
@@ -12,6 +12,13 @@ function moment(date = new Date(), format) {
     return parse;
 }
 exports.moment = moment;
+/**
+ * Moment check date is today
+ * @param date
+ * @returns
+ */
+const isToday = (date) => moment(0, 'HH').diff(date, 'days') == 0;
+exports.isToday = isToday;
 /**
  * HexoJS date formatter
  * * Playground Test {@link https://codepen.io/dimaslanjaka/pen/LYegjaV}
