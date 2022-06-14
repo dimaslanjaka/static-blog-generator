@@ -118,7 +118,10 @@ function parsePost(target, options = {}) {
                 }
                 if (!meta.updated) {
                     // @todo metadata date modified based on date published
-                    meta.updated = (0, dateMapper_1.moment)(String(meta.date)).format('YYYY-MM-DDTHH:mm:ssZ');
+                    let date = String(meta.date);
+                    if (/\d{4}-\d-\d{2}/.test(date))
+                        date = new Date(String(meta.date));
+                    meta.updated = (0, dateMapper_1.moment)(date).format('YYYY-MM-DDTHH:mm:ssZ');
                 }
                 /*
                 // change date modified based on file modified date
