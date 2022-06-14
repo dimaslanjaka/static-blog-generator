@@ -8,13 +8,16 @@ import { md5 } from './md5-file';
  * @example
  * for (let index = 0; index < 5; index++) console.log(uuidv4()); // <- will printted same id
  */
-export default function uuidv4(fromString?: string) {
+export default function uuidv4(fromString?: string): string {
   let original = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'; // length 8-4-4-4-12
   if (typeof fromString === 'string') {
     const hash = md5(fromString);
     original = original
       .replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13))
-      .replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
+      .replace(
+        /xxx-xxxxxxxxxxxx$/,
+        hash.slice(14, 17) + '-' + hash.slice(18, 30)
+      );
   } else {
     const err = new Error();
     const caller_line = err.stack.split('\n')[2];
@@ -22,6 +25,7 @@ export default function uuidv4(fromString?: string) {
     const dumpClean = caller_line.slice(index + 2, caller_line.length);
     return uuidv4(md5(dumpClean));
   }
+
   return original.replace(/[xy]/g, function (c) {
     if (typeof fromString !== 'string') {
       // if no input
@@ -48,6 +52,7 @@ export const makeid = (n = 36, prefix = '') => {
   if (n > 1) return prefix + Math.random().toString(n).slice(2);
   let text = '';
   const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < n; i++) text += charset.charAt(Math.floor(Math.random() * charset.length));
+  for (let i = 0; i < n; i++)
+    text += charset.charAt(Math.floor(Math.random() * charset.length));
   return text;
 };
