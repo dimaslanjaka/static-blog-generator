@@ -13,7 +13,8 @@ const files = [
   //join(__dirname, '../src-posts/Tests/unit/elements.md'),
   //join(__dirname, '../src-posts/Tests/unit/markdown.md'),
   //join(__dirname, '../src-posts/folder with space/file post with space.md'),
-  join(__dirname, '../src-posts/without-updated.md')
+  //join(__dirname, '../src-posts/without-updated.md'),
+  join(__dirname, '../src-posts/without-date.md')
 ];
 
 files.forEach(async (file) => {
