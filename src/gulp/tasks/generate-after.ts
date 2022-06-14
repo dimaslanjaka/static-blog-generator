@@ -7,10 +7,12 @@ import { join } from 'path';
 import safelinkify from 'safelinkify';
 import { TaskCallback } from 'undertaker';
 import { arrayAddAll, uniqueStringArray } from '../../node/array-utils';
+import color from '../../node/color';
 import { globSrc } from '../../node/filemanager';
 import jdom from '../../node/jsdom';
 import { isMatch } from '../../node/string-utils';
 import config, { root } from '../../types/_config';
+import { isValidHttpUrl } from '../utils';
 
 const safelink = new safelinkify.safelink({
   redirect: [
@@ -76,8 +78,6 @@ export function filter_external_links(href: string, debug = false) {
     href: href
   };
   if (href && href.length > 2) {
-    // fix dynamic protocol urls
-    const homepage = new URL(config.url);
     // fix dynamic url protocol
     if (href.startsWith('//')) href = 'http:' + href;
     /**
@@ -97,6 +97,10 @@ export function filter_external_links(href: string, debug = false) {
     if (isAllowed) {
       // only get external links with protocols
       if (href.trim().match(new RegExp('^(https?|ftp)://'))) {
+        if (!isValidHttpUrl(href)) {
+          console.log('invalid url', color.redBright(href));
+          return;
+        }
         /**
          * match host
          */
