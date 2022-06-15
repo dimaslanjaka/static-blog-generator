@@ -6,8 +6,8 @@ import { read, write } from '../node/filemanager';
 import { json_decode, json_encode } from '../node/JSON';
 import { parsePermalink } from '../parser/permalink';
 import { buildPost, postMap } from '../parser/post/parsePost';
-import { excerpt } from '../renderer/ejs/helper/excerpt';
-import { thumbnail } from '../renderer/ejs/helper/thumbnail';
+import { excerpt } from '../renderer/helpers/excerpt';
+import { thumbnail } from '../renderer/helpers/thumbnail';
 import { HexoDBType, Post } from './hexo-data';
 
 export const HexoDBPath = join(process.cwd(), 'db.json');

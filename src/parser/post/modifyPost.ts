@@ -5,7 +5,7 @@ import { pcache } from '../../node/cache';
 import { json_encode } from '../../node/JSON';
 import { md5 } from '../../node/md5-file';
 import { countWords } from '../../node/string-utils';
-import { modMoment } from '../../renderer/ejs/helper/date';
+import { modMoment } from '../../renderer/helpers/date';
 import config from '../../types/_config';
 import { renderBodyMarkdown } from '../toHtml';
 import { postMap } from './parsePost';
