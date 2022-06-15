@@ -47,10 +47,6 @@ export async function EJSRenderer(
     }
   }
 
-  // render markdown to html
-  let body = '';
-  if (parsed.body) body = renderBodyMarkdown(parsed);
-
   const defaultOpt: ejs.Options = {
     cache: config.generator.cache
   };
@@ -79,8 +75,12 @@ export async function EJSRenderer(
   );
 
   // render body html to ejs compiled
-  ejs_data.page.content = ejs_object.render(body, ejs_data);
-  ejs_data.page.body = ejs_data.page.content;
+  let body = '';
+  body = ejs_object.render(parsed.body, ejs_data);
+  // render markdown to html
+  if (parsed.body) body = renderBodyMarkdown(parsed);
+  // assign body
+  ejs_data.page.content = ejs_data.page.body = body;
 
   if (isDev) {
     write(
