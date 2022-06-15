@@ -1,77 +1,13 @@
-import { existsSync, readFileSync } from 'fs';
-import { cwd } from 'process';
-import { dirname, join } from 'upath';
-import {
-  getAllPosts,
-  getLatestPosts,
-  getRandomPosts
-} from '../../node/cache-post';
+import { join } from 'upath';
+import { inspect } from 'util';
+import { write } from '../../node/filemanager';
 import { postMap } from '../../parser/post/parsePost';
 import { renderBodyMarkdown } from '../../parser/toHtml';
-import { DynamicObject } from '../../types';
-import config, { theme_config, theme_dir } from '../../types/_config';
+import config, { isDev, theme_config, theme_dir } from '../../types/_config';
+import { helpers, layout } from '../helpers';
 import ejs_object from './index';
 
 const page_url = new URL(config.url);
-/**
- * layout.ejs from theme_dir
- * @see {@link theme_dir}
- */
-const layout = join(theme_dir, 'layout/layout.ejs');
-
-const helpers = {
-  /**
-   * get latest posts (non-cache)
-   */
-  getLatestPosts: getLatestPosts,
-  /**
-   * get random posts (non-cache)
-   */
-  getRandomPosts: getRandomPosts,
-  /**
-   * get all posts (non-cache)
-   */
-  getAllPosts: getAllPosts,
-  /**
-   * get all posts (cached)
-   */
-  getAllCachedPosts: (() => {
-    try {
-      return getAllPosts().map((parsed) =>
-        Object.assign(parsed, parsed.metadata)
-      );
-    } catch (error) {
-      return [];
-    }
-  })(),
-  css: (path: string, attributes: DynamicObject = {}) => {
-    const find = {
-      cwdFile: join(cwd(), path),
-      themeFile: join(theme_dir, path),
-      layoutFile: join(dirname(layout), path)
-    };
-    let cssStr: string;
-    for (const key in find) {
-      if (Object.prototype.hasOwnProperty.call(find, key)) {
-        const cssfile = find[key];
-        if (existsSync(cssfile)) {
-          cssStr = readFileSync(cssfile, 'utf-8');
-          break;
-        }
-      }
-    }
-    const build = [];
-    for (const key in attributes) {
-      if (Object.prototype.hasOwnProperty.call(attributes, key)) {
-        const v = attributes[key];
-        build.push(`${key}="${v}"`);
-      }
-    }
-    if (!cssStr) return `<!-- ${path} not found -->`;
-    if (!build.length) return `<style>${cssStr}</style>`;
-    return `<style ${build.join(' ')}>${cssStr}</style>`;
-  }
-};
 
 interface OverrideEJSOptions extends ejs.Options {
   [key: string]: any;
@@ -145,8 +81,17 @@ export async function EJSRenderer(
   // render body html to ejs compiled
   ejs_data.page.content = ejs_object.render(body, ejs_data);
   ejs_data.page.body = ejs_data.page.content;
-  //write(tmp('tests', 'parse-body.html'), parsed.body).then(console.log);
-  //write(tmp('tests', 'generate.log'), inspect(ejs_data)).then(console.log);
+
+  if (isDev) {
+    write(
+      join(__dirname, 'tmp/tests', ejs_data.page.title + '.html'),
+      parsed.body
+    ).then(console.log);
+    write(
+      join(__dirname, 'tmp/tests', ejs_data.page.title + '.log'),
+      inspect(ejs_data)
+    ).then(console.log);
+  }
 
   const rendered = await ejs_object.renderFile(layout, ejs_data);
   return rendered;
