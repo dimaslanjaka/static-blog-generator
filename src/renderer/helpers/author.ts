@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { postMap } from '../../../parser/post/parsePost';
-import config from '../../../types/_config';
+import { postMap } from '../../parser/post/parsePost';
+import config from '../../types/_config';
 
 export interface AuthorObject extends Object {
   name?: string;
