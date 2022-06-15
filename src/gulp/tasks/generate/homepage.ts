@@ -7,7 +7,7 @@ import { write } from '../../../node/filemanager';
 import modifyPost from '../../../parser/post/modifyPost';
 import { post_chunks } from '../../../parser/post/postMapper';
 import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
-import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
+import { getLatestDateArray } from '../../../renderer/helpers/date';
 import config, { cwd, post_generated_dir } from '../../../types/_config';
 import { getHomepageProperties } from './getArchiveProperties';
 import { getChunkOf } from './getChunkOf';

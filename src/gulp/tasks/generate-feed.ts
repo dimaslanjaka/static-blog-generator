@@ -12,9 +12,9 @@ import {
   author_link,
   author_name,
   author_object
-} from '../../renderer/ejs/helper/author';
-import { excerpt } from '../../renderer/ejs/helper/excerpt';
-import { thumbnail } from '../../renderer/ejs/helper/thumbnail';
+} from '../../renderer/helpers/author';
+import { excerpt } from '../../renderer/helpers/excerpt';
+import { thumbnail } from '../../renderer/helpers/thumbnail';
 import config, { post_generated_dir } from '../../types/_config';
 import { isValidHttpUrl } from '../utils';
 

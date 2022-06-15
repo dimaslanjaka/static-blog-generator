@@ -5,7 +5,7 @@ import { existsSync } from 'fs';
 import gulp from 'gulp';
 import downloadImage from '../../curl/download-image';
 import { join, read, write } from '../../node/filemanager';
-import { AuthorObject } from '../../renderer/ejs/helper/author';
+import { AuthorObject } from '../../renderer/helpers/author';
 import config, { tmp } from '../../types/_config';
 
 const homepage = new URL(config.url);

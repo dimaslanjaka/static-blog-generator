@@ -11,8 +11,8 @@ import { postMap } from '../../../parser/post/parsePost';
 import postChunksIterator from '../../../parser/post/postChunksIterator';
 import { post_chunks, simplifyDump } from '../../../parser/post/postMapper';
 import { EJSRenderer } from '../../../renderer/ejs/EJSRenderer';
-import { excerpt } from '../../../renderer/ejs/helper/excerpt';
-import { thumbnail } from '../../../renderer/ejs/helper/thumbnail';
+import { excerpt } from '../../../renderer/helpers/excerpt';
+import { thumbnail } from '../../../renderer/helpers/thumbnail';
 import config, { cwd, tmp } from '../../../types/_config';
 
 //const cacheTags = new CacheFile('postTags');

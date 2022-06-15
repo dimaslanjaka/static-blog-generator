@@ -4,8 +4,8 @@ import { array_wrap } from '../../../node/array-wrapper';
 import { getAllPosts, orderPostBy } from '../../../node/cache-post';
 import { write } from '../../../node/filemanager';
 import { archiveMap, post_chunks } from '../../../parser/post/postMapper';
-import { getLatestDateArray } from '../../../renderer/ejs/helper/date';
-import { excerpt } from '../../../renderer/ejs/helper/excerpt';
+import { getLatestDateArray } from '../../../renderer/helpers/date';
+import { excerpt } from '../../../renderer/helpers/excerpt';
 import config, { isDev } from '../../../types/_config';
 
 /**
