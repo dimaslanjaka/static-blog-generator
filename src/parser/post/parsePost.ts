@@ -7,7 +7,6 @@ import {
 import { basename, toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import { CachePost } from '../../node/cache-post';
-import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
 import config from '../../types/_config';
 import modifyPost from './modifyPost';
 
@@ -102,13 +101,6 @@ const parsePost = async (
       )
     };
   }
-
-  // render ejs shortcode in markdown body
-  ['body', 'content'].map(async (key) => {
-    if (key in parse) {
-      await EJSRenderer(parse, { body: parse[key] });
-    }
-  });
 
   parse = modifyPost(parse);
 
