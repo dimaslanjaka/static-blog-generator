@@ -9,8 +9,8 @@ Wrap `markdown -> endmarkdown` below shortcodes when used in markdown blocks
 {% markdown %}
 | name | value |
 | --- | --- |
-| Date Published | {{ page.date|date_format("LLL") }} |
-| Date Modified | {{ page.updated|date_format("LLL") }} |
+| Date Published | {{ page.date\|date_format("LLL") }} |
+| Date Modified | {{ page.updated\|date_format("LLL") }} |
 {% endmarkdown %}
 
 Below is non-markdown blocks sample
