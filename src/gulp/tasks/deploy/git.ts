@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
 import { join, mkdirSync, resolve } from '../../../node/filemanager';
 import { getLatestCommitHash } from '../../../node/git';
-import { modMoment } from '../../../renderer/ejs/helper/date';
+import { modMoment } from '../../../renderer/helpers/date';
 import config, { post_generated_dir, root } from '../../../types/_config';
 
 const deployDir = resolve(join(root, '.deploy_git'));
