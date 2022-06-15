@@ -1,5 +1,5 @@
 import { basename, dirname, join } from 'upath';
-import { modMoment } from '../renderer/ejs/helper/date';
+import { modMoment } from '../renderer/helpers/date';
 import config from '../types/_config';
 import { postMap } from './post/parsePost';
 
