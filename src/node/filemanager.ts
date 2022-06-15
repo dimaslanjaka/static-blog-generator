@@ -6,7 +6,6 @@ import * as fse from 'fs-extra';
 import minimatch from 'minimatch';
 import { default as nodePath } from 'path';
 import { cwd } from 'process';
-import { trueCasePathSync } from 'true-case-path';
 import upath, { toUnix } from 'upath';
 import { removeEmpties } from './array-utils';
 import { json_encode } from './JSON';
@@ -247,14 +246,23 @@ export const globSrc = function (pattern: string, opts: GlobSrcOptions = {}) {
 
 export default filemanager;
 /**
- * cross-platform normalize path to fixed-case windows drive letters
- * @see {@link https://www.npmjs.com/package/true-case-path}
+ * cross-platform normalize path to lowercase windows drive letters
  * @param path
  * @returns
  */
 export function normalize(path: string) {
-  return toUnix(trueCasePathSync(path));
+  const isWin = process.platform === 'win32';
+  if (isWin) {
+    if (path.includes(':')) {
+      const split = path.split(':');
+      const letter = split[0].toLowerCase();
+      const perm = split[1];
+      return toUnix(`${letter}:${perm}`);
+    }
+  }
+  return toUnix(path);
 }
+
 /**
  * Cross platform normalizer path
  * @see {@link normalize}
