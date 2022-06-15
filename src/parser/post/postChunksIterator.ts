@@ -1,6 +1,6 @@
 import { XArray } from '../../node/array-wrapper';
 import { join, write } from '../../node/filemanager';
-import { getLatestDateArray } from '../../renderer/ejs/helper/date';
+import { getLatestDateArray } from '../../renderer/helpers/date';
 import config, { tmp } from '../../types/_config';
 import { archiveMap, DeepPartial, post_chunks } from './postMapper';
 

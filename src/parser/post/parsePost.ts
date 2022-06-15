@@ -7,8 +7,8 @@ import {
 import { basename, toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import { CachePost } from '../../node/cache-post';
+import { EJSRenderer } from '../../renderer/ejs/EJSRenderer';
 import config from '../../types/_config';
-import { renderBodyMarkdown } from '../toHtml';
 import modifyPost from './modifyPost';
 
 // file:../../../packages/hexo-post-parser/src
@@ -103,9 +103,12 @@ const parsePost = async (
     };
   }
 
-  // render markdown body
-  if (parse.body) parse.body = renderBodyMarkdown(parse);
-  if (parse.content) parse.content = renderBodyMarkdown(parse);
+  // render ejs shortcode in markdown body
+  ['body', 'content'].map(async (key) => {
+    if (key in parse) {
+      await EJSRenderer(parse, { body: parse[key] });
+    }
+  });
 
   parse = modifyPost(parse);
 
