@@ -12,7 +12,8 @@ import { EJSRenderer } from './EJSRenderer';
     {},
     { page: Object.assign({}, parse, parse.metadata) }
   );
-  write(join(__dirname, 'tmp', 'data-test.log'), inspect(data));
+  await write(join(__dirname, 'tmp', 'data-test.log'), inspect(data));
   const rendered = await EJSRenderer(parse, data);
-  console.log(rendered);
+  const s = await write(join(__dirname, 'tmp', 'result-test.html'), rendered);
+  console.log(s);
 })();

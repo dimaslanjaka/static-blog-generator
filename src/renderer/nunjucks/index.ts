@@ -1,4 +1,6 @@
+import marked from 'marked';
 import nunjucks from 'nunjucks';
+import markdown from 'nunjucks-markdown';
 import { join } from 'path';
 import { inspect } from 'util';
 import { write } from '../../node/filemanager';
@@ -9,19 +11,23 @@ const env = nunjucks.configure({
   autoescape: true,
   noCache: !config.generator.cache
 });
-delete rendererHelpers.root;
-delete rendererHelpers.layout;
+markdown.register(env, marked);
+
 Object.keys(rendererHelpers).forEach((key) => {
   if (typeof rendererHelpers[key] === 'function') {
+    //console.log('adding', key);
     env.addFilter(key, rendererHelpers[key]);
-    delete rendererHelpers[key];
   }
 });
+
 // register custom helper
 // https://mozilla.github.io/nunjucks/api.html#custom-filters
 env.addFilter('shorten', function (str, count) {
   if (str) return str.slice(0, count || 5);
   return str;
+});
+env.addFilter('is_undefined', function (obj) {
+  return typeof obj === 'undefined';
 });
 
 export default function nunjucksRenderer(
@@ -49,3 +55,5 @@ export default function nunjucksRenderer(
     });
   });
 }
+
+export const nunjucksEnv = env;
