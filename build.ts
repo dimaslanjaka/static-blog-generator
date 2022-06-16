@@ -41,11 +41,11 @@ const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
 async function start() {
   const islocal = !process.env['GITHUB_WORKFLOW'];
+  await build();
   if (islocal) {
-    await update_guid();
+    //await update_guid();
     await update_version();
   }
-  await build();
 }
 
 async function update_guid() {
