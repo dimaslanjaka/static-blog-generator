@@ -39,9 +39,11 @@ export function copyPosts(
       'Granny Smith Apple'
     ](post_public_dir)}`
   );
+
   let sources = globSrc('**/*.md', {
     cwd: post_source_dir,
-    ignore: exclude
+    ignore: exclude,
+    use: 'minimatch'
   })
     .filter((file) => file.endsWith('.md'))
     .map((file) => crossNormalize(join(post_source_dir, file)));
@@ -63,7 +65,8 @@ export function copyPosts(
       .map(async (file) => {
         return {
           parse: await parsePost(file, null, options),
-          file
+          file,
+          saveTo: null as string
         };
       })
       // fix post with space in path
@@ -112,15 +115,13 @@ export function copyPosts(
                     modParse.metadata.permalink =
                       modParse.metadata.permalink.replace(/\s|%20/g, '-');
                     const buildNewParse = buildPost(modParse);
+                    const saveNewTo = join(
+                      post_public_dir,
+                      newUrl.replace(config.url, '').replace(/.html$/, '.md')
+                    );
 
                     // write new redirected post
-                    write(
-                      join(
-                        post_public_dir,
-                        newUrl.replace(config.url, '').replace(/.html$/, '.md')
-                      ),
-                      buildNewParse
-                    );
+                    write(saveNewTo, buildNewParse);
 
                     if (isDev) {
                       write(
@@ -145,6 +146,16 @@ export function copyPosts(
                     parse.metadata.redirect_to = newUrl;
                     //console.log(parse.metadata);
                     obj.parse = parse;
+
+                    const objs: typeof obj[] = [
+                      {
+                        parse: modParse,
+                        saveTo: saveNewTo,
+                        file: obj.file
+                      }
+                    ];
+                    objs.push(obj);
+                    return objs;
 
                     if (isDev) {
                       write(
@@ -178,18 +189,16 @@ export function copyPosts(
       })
       // save
       .each(async (obj) => {
-        const saveTo = join(
+        obj.saveTo = join(
           post_public_dir,
           obj.file.replace(post_source_dir, '')
         );
-        console.log(saveTo);
-        return await write(saveTo, buildPost(obj.parse));
+        await write(obj.saveTo, buildPost(obj.parse));
+        return obj;
       })
-      .then(() => {
+      .then((obj) => {
         if (typeof done === 'function') done();
-      })
-      .catch((e) => {
-        if (typeof done === 'function') done(e);
+        return obj;
       })
   );
 }
