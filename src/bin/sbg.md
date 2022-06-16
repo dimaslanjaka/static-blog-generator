@@ -58,7 +58,7 @@ sbg <command> <subcommand>
 | copy assets | copy post assets |
 | copy posts | copy and process posts |
 | copy remove-inline-style | remove inline style from html source/_posts (useful for migrated from blogger) |
-| copy:blogger | `<series>`(`copy assets`, `copy posts`, `copy remove-inline-style`) |
+| copy blogger | `<series>`(`copy assets`, `copy posts`, `copy remove-inline-style`) |
 
 | usage | description |
 | :--- | :--- |
@@ -68,6 +68,6 @@ sbg <command> <subcommand>
 
 ### Generate
 
-`sbg generate`
-
-series of `generate:assets`, `generate:template`, `generate:posts`
+| usage | description |
+| :--- | :--- |
+| `sbg generate` | `<series>`(`generate:assets`, `generate:template`, `generate:posts`) |
