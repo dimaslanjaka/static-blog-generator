@@ -21,5 +21,5 @@ interface OverrideEJSOptions extends ejs.Options {
  * <%- newhelper() %>
  * ```
  */
-export declare function EJSRenderer(parsed: Partial<postMap>, override?: OverrideEJSOptions): Promise<string>;
+export declare function EJSRenderer(parsed: Partial<postMap>, override?: OverrideEJSOptions): Promise<any>;
 export {};
