@@ -1,10 +1,11 @@
 /**
  * clean white spaces
  * @param text
+ * @param replacement replacement whitespace, default = ' '
  * @returns
  */
-export function cleanWhiteSpace(text: string) {
-  if (typeof text == 'string') return text.replace(/\s+/gm, ' ');
+export function cleanWhiteSpace(text: string, replacement = ' ') {
+  if (typeof text == 'string') return text.replace(/\s+/gm, replacement);
   return text;
 }
 
