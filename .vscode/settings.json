@@ -71,8 +71,8 @@
     "**/tmp/yarn": true
   },
   "code-runner.executorMap": {
-    "javascript": "set-dev node",
-    "typescript": "set-dev node -r ts-node/register",
+    "javascript": "node",
+    "typescript": "node -r ts-node/register",
     "coffeescript": "coffee",
     "sass": "sass --style expanded",
     "scss": "scss --style expanded",
