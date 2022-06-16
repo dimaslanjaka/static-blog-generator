@@ -1,3 +1,5 @@
+*
+!gitingore
 !development*.tgz
 !static-blog-generator-v*.tgz
 !static-blog-generator-v*.zip
