@@ -110,7 +110,13 @@ const parsePost = async (
   }
 
   // parse EJS Shortcode in body
-  parse = Object.assign(parse, processEJSMarkdownBody(parse));
+  if (parse.body) {
+    parse.body = await processEJSMarkdownBody(Object.assign({}, parse));
+    if (parse.content) parse.content = parse.body;
+  } else if (parse.content) {
+    parse.content = await processEJSMarkdownBody(Object.assign({}, parse));
+    if (parse.body) parse.body = parse.content;
+  }
 
   /**
    * validate if post path is post sources from config.source_dir
