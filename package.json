@@ -31,7 +31,7 @@
     "refresh": "npm update hexo-post-parser safelinkify google-news-sitemap persistent-cache",
     "test": "npm-run-all -s test:**",
     "test:git": "cd tests && npm i dimaslanjaka/static-blog-generator#dev && node index.js",
-    "test:mocha": "cross-env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec*.ts'",
+    "test:mocha": "cross-env TS_NODE_PROJECT='./tsconfig.mocha.json' mocha -r ts-node/register 'src/**/*.spec.ts'",
     "php": "php-server",
     "eslint": "npm-run-all -s eslint:**",
     "eslint:fix": "ts-node src/eslint.ts",
