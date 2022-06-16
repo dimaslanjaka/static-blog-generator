@@ -7,6 +7,7 @@ import {
 import { basename, toUnix } from 'upath';
 import { replacePath } from '../../gulp/utils';
 import { CachePost } from '../../node/cache-post';
+import { processEJSMarkdownBody } from '../../renderer/ejs/processEJSMarkdownBody';
 import config from '../../types/_config';
 import modifyPost from './modifyPost';
 
@@ -107,6 +108,9 @@ const parsePost = async (
   if (!parse) {
     throw new Error('cannot modify post ' + parse.metadata.title);
   }
+
+  // parse EJS Shortcode in body
+  parse = Object.assign(parse, processEJSMarkdownBody(parse));
 
   /**
    * validate if post path is post sources from config.source_dir

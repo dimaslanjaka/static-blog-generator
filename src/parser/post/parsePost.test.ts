@@ -11,7 +11,8 @@ function run() {
     'src-posts/Tests/unit/elements.md',
     'src-posts/Tests/shortcodes.md',
     'src-posts/Tests/codeblock.md',
-    'src-posts/with-nunjucks-function-in-body.md'
+    'src-posts/with-nunjucks-function-in-body.md',
+    'src-posts/with-ejs-function-in-body.md'
   ]
     .map((path) => join(cwd(), path))
     .filter(existsSync)
@@ -23,17 +24,15 @@ function run() {
         return;
       }
 
-      const md = await write(
+      write(
         join(__dirname, 'tmp/parsePost', filename + '.md'),
         buildPost(parse)
-      );
+      ).then(console.log);
 
-      const json = await write(
+      await write(
         join(__dirname, 'tmp/parsePost', filename + '.json'),
         simplifyDump(parse, 'body')
-      );
-
-      console.log('saved dump', [json, md]);
+      ).then(console.log);
     });
 }
 
