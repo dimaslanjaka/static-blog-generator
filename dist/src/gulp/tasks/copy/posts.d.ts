@@ -8,7 +8,11 @@ import './assets';
  * @param customPaths custom copy, only copy post with this key
  * @returns
  */
-export declare function copyPosts(done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions): import("bluebird")<void>;
+export declare function copyPosts(done?: TaskCallback, customPaths?: string | string[], options?: SBGParsePostOptions): import("bluebird")<{
+    parse: import("hexo-post-parser/dist/types/postMap").postMap;
+    file: string;
+    saveTo: string;
+}[]>;
 /**
  * @see {@link copyPosts}
  */
