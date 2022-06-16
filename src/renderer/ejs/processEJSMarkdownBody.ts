@@ -7,6 +7,11 @@ import parsePost, { postMap } from '../../parser/post/parsePost';
 import config, { isDev, theme_config, theme_dir } from '../../types/_config';
 import { rendererHelpers } from '../helpers';
 
+/**
+ * Process EJS shortcode in markdown body
+ * @param sourcePost
+ * @returns
+ */
 export async function processEJSMarkdownBody(sourcePost: string | postMap) {
   let parsed: postMap;
   if (typeof sourcePost === 'string') {
@@ -73,5 +78,5 @@ export async function processEJSMarkdownBody(sourcePost: string | postMap) {
       parsed.body
     ).then(console.log);
   }
-  return parsed;
+  return parsed.body || parsed.content;
 }
