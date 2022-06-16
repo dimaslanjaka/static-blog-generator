@@ -13,14 +13,14 @@ interface EJSOption extends ejs.Options, DynamicObject {
   theme?: ThemeOpt;
 }
 
-export function renderFile(file: string, opts: EJSOption = {}) {
+export function EJSRenderFile(file: string, opts: EJSOption = {}) {
   //opts._ = helpers;
   opts.root = join(theme_dir, 'layout/layout.ejs');
   opts = Object.assign(helpers, opts);
   return ejs.renderFile(file, opts);
 }
 
-function render(content: string, opts: EJSOption = {}) {
+export function EJSRenderString(content: string, opts: EJSOption = {}) {
   opts.root = join(theme_dir, 'layout/layout.ejs');
   opts = Object.assign(helpers, opts);
   const render = ejs.render(content, opts);
@@ -30,11 +30,11 @@ function render(content: string, opts: EJSOption = {}) {
 
 const ejs_object = {
   ejs,
-  helpers,
-  renderFile: renderFile,
+  ...helpers,
+  renderFile: EJSRenderFile,
   resolveInclude: ejs.resolveInclude,
   compile: ejs.compile,
-  render: render,
+  render: EJSRenderString,
   clearCache: ejs.clearCache,
   escapeXML: ejs.escapeXML,
   VERSION: ejs.VERSION,
