@@ -24,6 +24,15 @@ const _fa: FunctionType<string, number | string> = (n, ...s) => {
 */
 
 /**
+ * function wrapper runner
+ * @param fn
+ * @param args
+ */
+export async function fnWrap(fn: FunctionType, ...args: any[]) {
+  await fn.apply(null, ...args);
+}
+
+/**
  * transform any variable type to string
  * @param varObj
  * @returns
