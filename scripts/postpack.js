@@ -11,7 +11,10 @@ const tmp = join(__dirname, 'tmp');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 if (existsSync(filepath)) {
   const isbeta = filepath.includes('-');
-  let newPath = join(root, 'release/production.tgz');
+  let newPath = join(
+    root,
+    `release/static-blog-generator-v${pkg.version.split('-')[0]}.tgz`
+  );
   if (isbeta) {
     newPath = join(root, 'release/development.tgz');
   }
