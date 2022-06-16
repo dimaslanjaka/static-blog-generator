@@ -74,9 +74,25 @@ export async function EJSRenderer(
     helpers
   );
 
-  // render body html to ejs compiled
+  if (isDev) {
+    await write(
+      join(__dirname, 'tmp', 'EJSRenderer', 'data.log'),
+      inspect(ejs_data)
+    );
+  }
+
   let body = '';
   body = ejs_object.render(parsed.body, ejs_data);
+  if (isDev) {
+    await write(
+      join(__dirname, 'tmp', 'EJSRenderer', 'body-plains.md'),
+      parsed.body
+    );
+    await write(
+      join(__dirname, 'tmp', 'EJSRenderer', 'body-rendered.md'),
+      body
+    );
+  }
   // render markdown to html
   if (parsed.body) body = renderBodyMarkdown(parsed);
   // assign body
