@@ -3,6 +3,7 @@ import { cwd } from 'process';
 import { basename, join } from 'upath';
 import MeasureTime from '../../node/benchmark/measure-timing';
 import { write } from '../../node/filemanager';
+import { cleanWhiteSpace } from '../../node/string-utils';
 import parsePost, { buildPost } from './parsePost';
 import { simplifyDump } from './postMapper';
 
@@ -17,7 +18,7 @@ function run() {
     .map((path) => join(cwd(), path))
     .filter(existsSync)
     .forEach(async (path) => {
-      const filename = basename(path, '.md');
+      const filename = basename(cleanWhiteSpace(path, '-'), '.md');
       const parse = await parsePost(path, null, { cache: false });
       if (!parse) {
         console.log(`cannot parse ${path}`);
