@@ -1,9 +1,10 @@
 /**
  * clean white spaces
  * @param text
+ * @param replacement replacement whitespace, default = ' '
  * @returns
  */
-export declare function cleanWhiteSpace(text: string): string;
+export declare function cleanWhiteSpace(text: string, replacement?: string): string;
 /**
  * easy regex match
  * @param str
