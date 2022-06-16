@@ -1,20 +1,19 @@
 import { expect } from 'chai';
 import 'mocha';
-import { globSrc } from '../../../node/filemanager';
-import config, { post_source_dir } from '../../../types/_config';
+import { postMap } from '../../../parser/post/parsePost';
+import { copyPosts } from './posts';
 
-describe('Test Copy Posts', () => {
-  // the tests container
-  it(`checking glob source from ${post_source_dir}`, async () => {
-    const exclude = config.exclude.map((ePattern: string) =>
-      ePattern.replace(/^!+/, '')
-    );
-    const test = await globSrc('**/*.md', {
-      cwd: post_source_dir,
-      ignore: exclude,
-      use: 'minimatch'
+function doStuff(obj: { parse: postMap; file: string; saveTo: string }) {
+  console.log(obj.saveTo);
+  expect(obj.saveTo).to.be.an('string');
+}
+
+describe('run copy test', async function () {
+  const unitTests = await copyPosts(null);
+  unitTests.forEach(function (obj) {
+    it('does stuff with ' + obj.parse.metadata.title, function (done) {
+      doStuff.apply(null, [obj]);
+      done();
     });
-
-    expect(test).to.be.an('array').that.is.not.empty;
   });
 });
