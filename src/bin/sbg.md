@@ -7,6 +7,8 @@ type: page
 layout: page
 ---
 
+[Back to readme](https://github.com/dimaslanjaka/static-blog-generator/blob/master/readme.md)
+
 ## Tasks
 
 | task name | description |

@@ -78,52 +78,8 @@ npm install
 | `source` | (`config.source_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)) |
 | `node_modules/.cache/dimaslanjaka` | database caches |
 
-## runner
-before all, setup `_config.yml` first
-```bash
-gulp --tasks # to view all tasks
-gulp clean # clean cache, generated caches, tmp folder, databases
-gulp copy # copy and process all src-posts to source/_posts
-gulp generate # generate all source to public directory
-gulp deploy # deploy to github pages
-gulp server # development, render on-fly
-```
-### no cache
-you can pass argument `--nocache` (this will automatically overriden global generator cache in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38))
-```bash
-gulp generate --nocache # generate all without reading cache, write new cache (fresh generate) instead
-gulp server --nocache # development without reading cache, write fresh cache instead
-```
-or you can put global generator in [`_config.yml`](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)
-```yaml
-generator:
-  cache: false # this will ignore any caching functions
-```
-
-### standalone
-Standalone: is useful for low device to run one by one the tasks. more information run: `gulp --tasks`.
-- `copy:` copy and process from `src-posts` to `config.source_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)
-- `generate:` render all files from `config.source_dir` to generated folder `config.public_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38) then ready to publish
-- read more example: [page.yml#L80](https://github.com/dimaslanjaka/dimaslanjaka.github.io/blob/c9c113ed51b2a6bbe50edc0ffd3d691980776a0f/.github/workflows/page.yml#L80-L112)
-```bash
-gulp clean # clean all caches
-gulp copy:assets # copy post assets
-gulp copy:posts # copy and process posts
-gulp copy:remove-inline-style # remove inline style from html source/_posts (useful for migrated from blogger)
-gulp copy:blogger # <series>(copy:assets, copy:posts, copy:remove-inline-style)
-gulp generate:assets # copy all assets
-gulp generate:template # copy and process template
-gulp generate:posts # generate posts
-gulp generate:sitemap # generate sitemaps
-gulp generate:tags # generate tags
-gulp generate:categories # generate categories
-gulp generate:label # generate tags and categories
-gulp generate:index # generate homepage index
-gulp generate:archive # generate homepage, tags, and categories
-gulp generate:feeds # generate atom, rss
-gulp generate:after # process generated posts html including anonymize external links (safelinkify), add rel nofollow external link, etc
-gulp generate:minify # minify all html,css,js on public_dir in _config.yml
-```
+## command line
+[See Documentation static-blog-generator CLI](https://github.com/dimaslanjaka/static-blog-generator/blob/master/src/bin/sbg.md)
 
 ## Github Action
 ~important: always run `gulp clean` to prevent deleted files on origin repository **https://github.com/JamesIves/github-pages-deploy-action/discussions/1070**~
