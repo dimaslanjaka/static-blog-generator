@@ -40,29 +40,12 @@ const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 })();
 
 async function start() {
-  const commitHash = await getLatestCommitHash('src');
   const islocal = !process.env['GITHUB_WORKFLOW'];
   if (islocal) {
     await update_guid();
     await update_version();
   }
   await build();
-  if (islocal) {
-    const child = spawn('npm', ['install'], {
-      cwd: __dirname,
-      stdio: 'inherit',
-      shell: true
-    });
-    child.once('close', async () => {
-      await gitAddAndCommit(
-        'package-lock.json',
-        `[${commitHash}] update module resolutions`,
-        {
-          cwd: __dirname
-        }
-      );
-    });
-  }
 }
 
 async function update_guid() {
