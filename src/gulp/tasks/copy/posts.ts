@@ -45,6 +45,7 @@ export function copyPosts(
   })
     .filter((file) => file.endsWith('.md'))
     .map((file) => crossNormalize(join(post_source_dir, file)));
+
   if (customPaths) {
     sources = sources.filter((path) => {
       if (typeof customPaths === 'string') {
@@ -181,6 +182,7 @@ export function copyPosts(
           post_public_dir,
           obj.file.replace(post_source_dir, '')
         );
+        console.log(saveTo);
         return await write(saveTo, buildPost(obj.parse));
       })
       .then(() => {
