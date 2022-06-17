@@ -105,6 +105,11 @@ export const deployerGit = async (done?: TaskCallback) => {
   await git('checkout', '-f', configDeploy['branch']);
   // pull origin
   await git('pull', 'origin', configDeploy['branch']);
+  // check submodule
+  const hasSubmodule = existsSync(join(deployDir, '.gitmodules'));
+  if (hasSubmodule) {
+    await git('submdule', 'update', '-i', '-r');
+  }
 
   return copyGenerated().on('end', async () => {
     await git('add', '-A');
