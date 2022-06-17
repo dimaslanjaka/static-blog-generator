@@ -71,30 +71,18 @@ export const deployerGit = async (done?: TaskCallback) => {
       configDeploy
     );
     await git('init');
-    if (configDeploy['name'])
+    if (configDeploy['name']) {
       await git('config', 'user.name', configDeploy['name']);
-    if (configDeploy['email'])
+    }
+    if (configDeploy['email']) {
       await git('config', 'user.email', configDeploy['email']);
+    }
+    await git('remote', 'add', 'origin', configDeploy['repo']);
   }
 
-  /*
-  // Do compress git object databases?
-  const cache = new CacheFile('deploy');
-  let compress = false;
-  if (cache.has('compress')) {
-    const lastCompress = moment(cache.get('compress'));
-    const now = moment();
-    // do compress 1 day once
-    if (now.diff(lastCompress, 'days') >= 1) compress = true;
-  }
-  if (compress) {
+  // compress git databases
+  //if (!init) await git('gc');
 
-    cache.set('compress', new Date().toString());
-  }
-  */
-
-  //if (!init) await git('gc'); // compress git databases
-  await git('remote', 'add', 'origin', configDeploy['repo']);
   if (initialized) {
     await git('remote', 'set-url', 'origin', configDeploy['repo']);
   }
@@ -108,7 +96,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   // check submodule
   const hasSubmodule = existsSync(join(deployDir, '.gitmodules'));
   if (hasSubmodule) {
-    await git('submdule', 'update', '-i', '-r');
+    await git('submodule', 'update', '-i', '-r');
   }
 
   return copyGenerated().on('end', async () => {
