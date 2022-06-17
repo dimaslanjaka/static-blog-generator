@@ -13,7 +13,6 @@ import config, {
   post_public_dir,
   post_source_dir
 } from '../../../types/_config';
-import './assets';
 
 const logname = color.cyan('[copy][post]');
 const paths =
@@ -114,7 +113,24 @@ export function copyPosts(
                     modParse.metadata.source = newSource;
                     modParse.metadata.permalink =
                       modParse.metadata.permalink.replace(/\s|%20/g, '-');
-                    const buildNewParse = buildPost(modParse);
+                    let buildNewParse: string;
+                    try {
+                      if (modParse.config) {
+                        delete modParse.config;
+                      }
+                      if (modParse.metadata.config) {
+                        delete modParse.metadata.config;
+                      }
+                      if (modParse.metadata.body) {
+                        delete modParse.metadata.body;
+                      }
+                      if (modParse.metadata.content) {
+                        delete modParse.metadata.content;
+                      }
+                      buildNewParse = buildPost(modParse);
+                    } catch (e) {
+                      if (e instanceof Error) console.log(e.message, obj.file);
+                    }
                     const saveNewTo = join(
                       post_public_dir,
                       newUrl.replace(config.url, '').replace(/.html$/, '.md')
@@ -189,11 +205,27 @@ export function copyPosts(
       })
       // save
       .each(async (obj) => {
+        if (obj.parse.config) {
+          delete obj.parse.config;
+        }
+        if (obj.parse.metadata.config) {
+          delete obj.parse.metadata.config;
+        }
+        if (obj.parse.metadata.body) {
+          delete obj.parse.metadata.body;
+        }
+        if (obj.parse.metadata.content) {
+          delete obj.parse.metadata.content;
+        }
         obj.saveTo = join(
           post_public_dir,
           obj.file.replace(post_source_dir, '')
         );
-        await write(obj.saveTo, buildPost(obj.parse));
+        try {
+          await write(obj.saveTo, buildPost(obj.parse));
+        } catch (e) {
+          if (e instanceof Error) console.log(e.message, obj.file);
+        }
         return obj;
       })
       .then((obj) => {
