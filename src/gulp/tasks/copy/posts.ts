@@ -31,9 +31,9 @@ export function copyPosts(
   customPaths: string | string[] = paths,
   options: SBGParsePostOptions = {}
 ) {
-  const exclude = config.exclude.map((ePattern: string) =>
-    ePattern.replace(/^!+/, '')
-  );
+  const exclude = config.exclude
+    .map((ePattern: string) => ePattern.replace(/^!+/, ''))
+    .concat(['**/.git*', '**/.git/**']);
   console.log(
     `${logname} cwd=${color.Mahogany(post_source_dir)} dest=${color[
       'Granny Smith Apple'
