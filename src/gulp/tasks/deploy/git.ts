@@ -90,6 +90,8 @@ export const deployerGit = async (done?: TaskCallback) => {
   await git('fetch', '--all');
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
+  // reset latest origin https://stackoverflow.com/a/8888015/6404439
+  await git('reset', '--hard', 'origin/' + configDeploy['branch']);
   // checkout origin branch
   await git('checkout', '-f', configDeploy['branch']);
   // pull origin
