@@ -46,7 +46,7 @@ export const copyAssets = (customPaths: string | string[] = paths) => {
   //return determineDirname(run).pipe(gulp.dest(post_public_dir));
   return globSrc('*/**', {
     cwd: post_source_dir,
-    ignore: config.exclude.concat(['**/*.md'])
+    ignore: config.exclude.concat(['**/*.md', '**/.git*', '**/.git/**'])
   })
     .map((path) => join(post_source_dir, path))
     .filter(async (item) => {
