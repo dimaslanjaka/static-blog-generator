@@ -102,7 +102,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
   // checkout origin branch
-  await git('checkout', configDeploy['branch']);
+  await git('checkout', '-f', configDeploy['branch']);
   // pull origin
   await git('pull', 'origin', configDeploy['branch']);
 
