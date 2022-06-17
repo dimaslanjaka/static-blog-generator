@@ -329,5 +329,10 @@ export const fsreadDirSync = fs.readdirSync;
 export const { basename, relative, extname } = upath;
 export const PATH_SEPARATOR = modPath.sep;
 export function sanitizeFileName(name: string, replacement = '-') {
-  return sanitizefn(name, { replacement });
+  const sanitize = sanitizefn(name, { replacement })
+    // replace non-alphanumerics
+    .replace(/\W/g, '-')
+    // replace multiple hypens
+    .replace(/-+/g, '-');
+  return sanitize;
 }
