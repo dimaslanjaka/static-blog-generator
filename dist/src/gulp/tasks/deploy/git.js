@@ -117,7 +117,7 @@ var copyGenerated = function () {
  * @returns
  */
 var deployerGit = function (done) { return __awaiter(void 0, void 0, void 0, function () {
-    var configDeploy, initialized, hasSubmodule;
+    var configDeploy, init;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -127,10 +127,11 @@ var deployerGit = function (done) { return __awaiter(void 0, void 0, void 0, fun
                     return [2 /*return*/];
                 }
                 configDeploy['base'] = deployDir;
-                initialized = (0, fs_1.existsSync)((0, filemanager_1.join)(deployDir, '.git'));
+                init = false;
                 if (!(0, fs_1.existsSync)(deployDir))
                     (0, filemanager_1.mkdirSync)(deployDir);
-                if (!!initialized) return [3 /*break*/, 5];
+                if (!!(0, fs_1.existsSync)((0, filemanager_1.join)(deployDir, '.git'))) return [3 /*break*/, 5];
+                init = true;
                 console.log(logname, 'init new git with current configuration', configDeploy);
                 return [4 /*yield*/, git('init')];
             case 1:
@@ -146,112 +147,78 @@ var deployerGit = function (done) { return __awaiter(void 0, void 0, void 0, fun
             case 4:
                 _a.sent();
                 _a.label = 5;
-            case 5: 
-            /*
-            // Do compress git object databases?
-            const cache = new CacheFile('deploy');
-            let compress = false;
-            if (cache.has('compress')) {
-              const lastCompress = moment(cache.get('compress'));
-              const now = moment();
-              // do compress 1 day once
-              if (now.diff(lastCompress, 'days') >= 1) compress = true;
-            }
-            if (compress) {
-          
-              cache.set('compress', new Date().toString());
-            }
-            */
-            //if (!init) await git('gc'); // compress git databases
-            return [4 /*yield*/, git('remote', 'add', 'origin', configDeploy['repo'])];
+            case 5:
+                if (!!init) return [3 /*break*/, 7];
+                return [4 /*yield*/, git('gc')];
             case 6:
-                /*
-                // Do compress git object databases?
-                const cache = new CacheFile('deploy');
-                let compress = false;
-                if (cache.has('compress')) {
-                  const lastCompress = moment(cache.get('compress'));
-                  const now = moment();
-                  // do compress 1 day once
-                  if (now.diff(lastCompress, 'days') >= 1) compress = true;
-                }
-                if (compress) {
-              
-                  cache.set('compress', new Date().toString());
-                }
-                */
-                //if (!init) await git('gc'); // compress git databases
+                _a.sent(); // compress git databases
+                _a.label = 7;
+            case 7: // compress git databases
+            return [4 /*yield*/, git('remote', 'add', 'origin', configDeploy['repo'])];
+            case 8:
                 _a.sent();
-                if (!initialized) return [3 /*break*/, 8];
                 return [4 /*yield*/, git('remote', 'set-url', 'origin', configDeploy['repo'])];
-            case 7:
-                _a.sent();
-                _a.label = 8;
-            case 8: return [4 /*yield*/, git('fetch', '--all')];
             case 9:
+                _a.sent();
+                return [4 /*yield*/, git('fetch', '--all')];
+            case 10:
                 _a.sent();
                 // setup merge on pull strategy
                 return [4 /*yield*/, git('config', 'pull.rebase', 'false')];
-            case 10:
+            case 11:
                 // setup merge on pull strategy
                 _a.sent();
                 // checkout origin branch
-                return [4 /*yield*/, git('checkout', '-f', configDeploy['branch'])];
-            case 11:
+                return [4 /*yield*/, git('checkout', configDeploy['branch'])];
+            case 12:
                 // checkout origin branch
                 _a.sent();
                 // pull origin
                 return [4 /*yield*/, git('pull', 'origin', configDeploy['branch'])];
-            case 12:
+            case 13:
                 // pull origin
                 _a.sent();
-                hasSubmodule = (0, fs_1.existsSync)((0, filemanager_1.join)(deployDir, '.gitmodules'));
-                if (!hasSubmodule) return [3 /*break*/, 14];
-                return [4 /*yield*/, git('submdule', 'update', '-i', '-r')];
-            case 13:
-                _a.sent();
-                _a.label = 14;
-            case 14: return [2 /*return*/, copyGenerated().on('end', function () { return __awaiter(void 0, void 0, void 0, function () {
-                    var msg, _a, _b;
-                    return __generator(this, function (_c) {
-                        switch (_c.label) {
-                            case 0: return [4 /*yield*/, git('add', '-A')];
-                            case 1:
-                                _c.sent();
-                                msg = 'Update site';
-                                if (!(0, fs_1.existsSync)((0, filemanager_1.join)(process.cwd(), '.git'))) return [3 /*break*/, 3];
-                                _a = msg;
-                                _b = ' ';
-                                return [4 /*yield*/, (0, git_1.getLatestCommitHash)()];
-                            case 2:
-                                msg = _a + (_b + (_c.sent()));
-                                _c.label = 3;
-                            case 3:
-                                msg += '\ndate: ' + (0, date_1.modMoment)().format();
-                                return [4 /*yield*/, git('commit', '-m', msg)];
-                            case 4:
-                                _c.sent();
-                                if (!(Object.hasOwnProperty.call(configDeploy, 'force') &&
-                                    configDeploy['force'] === true)) return [3 /*break*/, 6];
-                                return [4 /*yield*/, git('push', '-u', configDeploy['repo'], 'origin', configDeploy['branch'], '--force')];
-                            case 5:
-                                _c.sent();
-                                return [3 /*break*/, 8];
-                            case 6:
-                                if (!('branch' in configDeploy)) return [3 /*break*/, 8];
-                                return [4 /*yield*/, git('push', '--set-upstream', 'origin', configDeploy['branch'])];
-                            case 7:
-                                _c.sent();
-                                _c.label = 8;
-                            case 8:
-                                console.log(logname, 'deploy merged with origin successful');
-                                done();
-                                return [2 /*return*/];
-                        }
-                    });
-                }); })];
+                return [2 /*return*/, copyGenerated().on('end', function () { return __awaiter(void 0, void 0, void 0, function () {
+                        var msg, _a, _b;
+                        return __generator(this, function (_c) {
+                            switch (_c.label) {
+                                case 0: return [4 /*yield*/, git('add', '-A')];
+                                case 1:
+                                    _c.sent();
+                                    msg = 'Update site';
+                                    if (!(0, fs_1.existsSync)((0, filemanager_1.join)(process.cwd(), '.git'))) return [3 /*break*/, 3];
+                                    _a = msg;
+                                    _b = ' ';
+                                    return [4 /*yield*/, (0, git_1.getLatestCommitHash)()];
+                                case 2:
+                                    msg = _a + (_b + (_c.sent()));
+                                    _c.label = 3;
+                                case 3:
+                                    msg += '\ndate: ' + (0, date_1.modMoment)().format();
+                                    return [4 /*yield*/, git('commit', '-m', msg)];
+                                case 4:
+                                    _c.sent();
+                                    if (!(Object.hasOwnProperty.call(configDeploy, 'force') &&
+                                        configDeploy['force'] === true)) return [3 /*break*/, 6];
+                                    return [4 /*yield*/, git('push', '-u', configDeploy['repo'], 'origin', configDeploy['branch'], '--force')];
+                                case 5:
+                                    _c.sent();
+                                    return [3 /*break*/, 8];
+                                case 6:
+                                    if (!('branch' in configDeploy)) return [3 /*break*/, 8];
+                                    return [4 /*yield*/, git('push', '--set-upstream', 'origin', configDeploy['branch'])];
+                                case 7:
+                                    _c.sent();
+                                    _c.label = 8;
+                                case 8:
+                                    console.log(logname, 'deploy merged with origin successful');
+                                    done();
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); })];
         }
     });
 }); };
 exports.deployerGit = deployerGit;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2l0LmpzIiwic291cmNlUm9vdCI6Ii4vc3JjLyIsInNvdXJjZXMiOlsic3JjL2d1bHAvdGFza3MvZGVwbG95L2dpdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGdEQUEwQjtBQUMxQiwrQ0FBc0M7QUFDdEMseUJBQWdDO0FBQ2hDLDhDQUF3QjtBQUV4Qix5REFBcUU7QUFDckUseUNBQXdEO0FBQ3hELHVEQUEyRDtBQUMzRCxnRUFBMEU7QUFFMUUsSUFBTSxTQUFTLEdBQUcsSUFBQSxxQkFBTyxFQUFDLElBQUEsa0JBQUksRUFBQyxjQUFJLEVBQUUsYUFBYSxDQUFDLENBQUMsQ0FBQztBQUNyRCxJQUFJLENBQUMsSUFBQSxlQUFVLEVBQUMsU0FBUyxDQUFDO0lBQUUsSUFBQSx1QkFBUyxFQUFDLFNBQVMsQ0FBQyxDQUFDO0FBQ2pELElBQU0sWUFBWSxHQUFHLDRCQUFrQixDQUFDO0FBQ3hDOzs7O0dBSUc7QUFDSCxTQUFTLEdBQUc7SUFBQyxjQUFpQjtTQUFqQixVQUFpQixFQUFqQixxQkFBaUIsRUFBakIsSUFBaUI7UUFBakIseUJBQWlCOztJQUM1QixPQUFPLElBQUksT0FBTyxDQUNoQixVQUNFLE9BQXdFLEVBQ3hFLE1BQXFEO1FBRXJELElBQU0sTUFBTSxHQUFHLElBQUEscUJBQUssRUFBQyxLQUFLLEVBQUUsSUFBSSxFQUFFO1lBQ2hDLEdBQUcsRUFBRSxTQUFTO1lBQ2QsS0FBSyxFQUFFLFNBQVM7U0FDakIsQ0FBQyxDQUFDO1FBQ0gsTUFBTSxDQUFDLEVBQUUsQ0FBQyxPQUFPLEVBQUUsVUFBVSxJQUFJO1lBQy9CLHlDQUF5QztZQUN6Qyx3QkFBd0I7WUFDeEIsT0FBTyxPQUFPLENBQUM7Z0JBQ2IsSUFBSSxFQUFFLElBQUk7Z0JBQ1YsTUFBTSxFQUFFLE1BQU0sQ0FBQyxNQUFNLENBQUMsTUFBTSxDQUFDO2dCQUM3QixN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
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2l0LmpzIiwic291cmNlUm9vdCI6Ii4vc3JjLyIsInNvdXJjZXMiOlsic3JjL2d1bHAvdGFza3MvZGVwbG95L2dpdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGdEQUEwQjtBQUMxQiwrQ0FBc0M7QUFDdEMseUJBQWdDO0FBQ2hDLDhDQUF3QjtBQUV4Qix5REFBcUU7QUFDckUseUNBQXdEO0FBQ3hELHVEQUEyRDtBQUMzRCxnRUFBMEU7QUFFMUUsSUFBTSxTQUFTLEdBQUcsSUFBQSxxQkFBTyxFQUFDLElBQUEsa0JBQUksRUFBQyxjQUFJLEVBQUUsYUFBYSxDQUFDLENBQUMsQ0FBQztBQUNyRCxJQUFJLENBQUMsSUFBQSxlQUFVLEVBQUMsU0FBUyxDQUFDO0lBQUUsSUFBQSx1QkFBUyxFQUFDLFNBQVMsQ0FBQyxDQUFDO0FBQ2pELElBQU0sWUFBWSxHQUFHLDRCQUFrQixDQUFDO0FBQ3hDOzs7O0dBSUc7QUFDSCxTQUFTLEdBQUc7SUFBQyxjQUFpQjtTQUFqQixVQUFpQixFQUFqQixxQkFBaUIsRUFBakIsSUFBaUI7UUFBakIseUJBQWlCOztJQUM1QixPQUFPLElBQUksT0FBTyxDQUNoQixVQUNFLE9BQXdFLEVBQ3hFLE1BQXFEO1FBRXJELElBQU0sTUFBTSxHQUFHLElBQUEscUJBQUssRUFBQyxLQUFLLEVBQUUsSUFBSSxFQUFFO1lBQ2hDLEdBQUcsRUFBRSxTQUFTO1lBQ2QsS0FBSyxFQUFFLFNBQVM7U0FDakIsQ0FBQyxDQUFDO1FBQ0gsTUFBTSxDQUFDLEVBQUUsQ0FBQyxPQUFPLEVBQUUsVUFBVSxJQUFJO1lBQy9CLHlDQUF5QztZQUN6Qyx3QkFBd0I7WUFDeEIsT0FBTyxPQUFPLENBQUM7Z0JBQ2IsSUFBSSxFQUFFLElBQUk7Z0JBQ1YsTUFBTSxFQUFFLE1BQU0sQ0FBQyxNQUFNLENBQUMsTUFBTSxDQUFDO2dCQUM3QixN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
