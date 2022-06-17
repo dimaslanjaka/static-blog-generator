@@ -155,3 +155,4 @@ export declare const write: (path: fs.PathLike, content: any, append?: boolean) 
 export declare const fsreadDirSync: typeof fs.readdirSync;
 export declare const basename: typeof upath.basename, relative: typeof upath.relative, extname: typeof upath.extname;
 export declare const PATH_SEPARATOR: string;
+export declare function sanitizeFileName(name: string, replacement?: string): string;
