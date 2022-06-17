@@ -1,5 +1,6 @@
 import { TaskCallback } from 'undertaker';
 import { SBGParsePostOptions } from '../../../parser/post/parsePost';
+import './assets';
 /**
  * copy posts from `src-posts` to config.source_dir {@link config.source_dir}
  * @description copy, parsing shortcodes, render html body, etc from src-posts to source_dir
