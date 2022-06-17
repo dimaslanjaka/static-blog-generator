@@ -86,6 +86,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   if (initialized) {
     await git('remote', 'set-url', 'origin', configDeploy['repo']);
   }
+  // fetch all
   await git('fetch', '--all');
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
