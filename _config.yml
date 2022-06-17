@@ -203,8 +203,9 @@ generator:
     # copy posts options
     posts:
       # Space in path
-      ## transform any space in path to hypens (-)
-      space: false
+      ## false = transform any space in path to hypens (-)
+      ## true = keep original paths with spaces
+      space: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
