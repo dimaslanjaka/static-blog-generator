@@ -109,6 +109,10 @@ async function update_version() {
           }).then(() => {
             gitAddAndCommit('package-lock.json', `update from ${srcInfo}`, {
               cwd: __dirname
+            }).then(() => {
+              gitAddAndCommit('dist', `update from ${srcInfo}`, {
+                cwd: __dirname
+              });
             });
           });
         });
