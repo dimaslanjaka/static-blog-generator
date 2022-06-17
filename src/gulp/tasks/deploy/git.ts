@@ -95,8 +95,9 @@ export const deployerGit = async (done?: TaskCallback) => {
 
   //if (!init) await git('gc'); // compress git databases
   await git('remote', 'add', 'origin', configDeploy['repo']);
-  if (initialized)
+  if (initialized) {
     await git('remote', 'set-url', 'origin', configDeploy['repo']);
+  }
   await git('fetch', '--all');
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
