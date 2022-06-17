@@ -118,6 +118,7 @@
     "nunjucks-markdown": "^2.0.1",
     "persistent-cache": "file:../persistent-cache",
     "safelinkify": "file:../safelink",
+    "sanitize-filename": "github:parshap/node-sanitize-filename",
     "showdown": "^2.0.3",
     "sqlite3": "^5.0.8",
     "tiny-typed-emitter": "^2.1.0",

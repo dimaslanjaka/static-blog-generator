@@ -6,6 +6,7 @@ import * as fse from 'fs-extra';
 import minimatch from 'minimatch';
 import { default as nodePath } from 'path';
 import { cwd } from 'process';
+import sanitizefn from 'sanitize-filename';
 import upath, { toUnix } from 'upath';
 import { removeEmpties } from './array-utils';
 import { json_encode } from './JSON';
@@ -327,3 +328,6 @@ export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { basename, relative, extname } = upath;
 export const PATH_SEPARATOR = modPath.sep;
+export function sanitizeFileName(name: string, replacement = '-') {
+  return sanitizefn(name, { replacement });
+}
