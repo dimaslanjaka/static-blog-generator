@@ -1,6 +1,6 @@
 import { join } from 'upath';
 import { inspect } from 'util';
-import { write } from '../../node/filemanager';
+import { sanitizeFileName, write } from '../../node/filemanager';
 import { postMap } from '../../parser/post/parsePost';
 import { renderBodyMarkdown } from '../../parser/toHtml';
 import config, { isDev, theme_config, theme_dir } from '../../types/_config';
@@ -100,11 +100,19 @@ export async function EJSRenderer(
 
   if (isDev) {
     write(
-      join(__dirname, 'tmp/tests', ejs_data.page.title + '.html'),
+      join(
+        __dirname,
+        'tmp/tests',
+        sanitizeFileName(ejs_data.page.title) + '.html'
+      ),
       parsed.body
     ).then(console.log);
     write(
-      join(__dirname, 'tmp/tests', ejs_data.page.title + '.log'),
+      join(
+        __dirname,
+        'tmp/tests',
+        sanitizeFileName(ejs_data.page.title) + '.log'
+      ),
       inspect(ejs_data)
     ).then(console.log);
   }
