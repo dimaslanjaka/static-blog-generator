@@ -107,21 +107,22 @@ export const deployerGit = async (done?: TaskCallback) => {
       msg += ' ' + (await getLatestCommitHash());
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
-
-    if (
-      Object.hasOwnProperty.call(configDeploy, 'force') &&
-      configDeploy['force'] === true
-    ) {
-      await git(
-        'push',
-        '-u',
-        configDeploy['repo'],
-        'origin',
-        configDeploy['branch'],
-        '--force'
-      );
-    } else if ('branch' in configDeploy) {
-      await git('push', '--set-upstream', 'origin', configDeploy['branch']);
+    if ('branch' in configDeploy) {
+      if (
+        Object.hasOwnProperty.call(configDeploy, 'force') &&
+        configDeploy['force'] === true
+      ) {
+        await git(
+          'push',
+          '-u',
+          configDeploy['repo'],
+          'origin',
+          configDeploy['branch'],
+          '--force'
+        );
+      } else {
+        await git('push', '--set-upstream', 'origin', configDeploy['branch']);
+      }
     }
     console.log(logname, 'deploy merged with origin successful');
     done();
