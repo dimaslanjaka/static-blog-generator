@@ -188,6 +188,7 @@ deploy:
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io.git
   branch: master
   message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+  hostname: www.webmanajemen.com
 
 author:
   name: "Dimas Lanjaka"
