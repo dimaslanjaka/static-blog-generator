@@ -62,10 +62,9 @@ export const deployerGit = async (done?: TaskCallback) => {
     return;
   }
   configDeploy['base'] = deployDir;
-  let init = false;
+  const initialized = existsSync(join(deployDir, '.git'));
   if (!existsSync(deployDir)) mkdirSync(deployDir);
-  if (!existsSync(join(deployDir, '.git'))) {
-    init = true;
+  if (!initialized) {
     console.log(
       logname,
       'init new git with current configuration',
@@ -96,7 +95,8 @@ export const deployerGit = async (done?: TaskCallback) => {
 
   //if (!init) await git('gc'); // compress git databases
   await git('remote', 'add', 'origin', configDeploy['repo']);
-  await git('remote', 'set-url', 'origin', configDeploy['repo']);
+  if (initialized)
+    await git('remote', 'set-url', 'origin', configDeploy['repo']);
   await git('fetch', '--all');
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
