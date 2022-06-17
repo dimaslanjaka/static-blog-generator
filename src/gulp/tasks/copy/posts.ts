@@ -127,6 +127,9 @@ export function copyPosts(
                       if (modParse.metadata.content) {
                         delete modParse.metadata.content;
                       }
+                      if (modParse.metadata.metadata) {
+                        delete modParse.metadata.metadata;
+                      }
                       buildNewParse = buildPost(modParse);
                     } catch (e) {
                       if (e instanceof Error) console.log(e.message, obj.file);
@@ -216,6 +219,9 @@ export function copyPosts(
         }
         if (obj.parse.metadata.content) {
           delete obj.parse.metadata.content;
+        }
+        if (obj.parse.metadata.metadata) {
+          delete obj.parse.metadata.metadata;
         }
         obj.saveTo = join(
           post_public_dir,
