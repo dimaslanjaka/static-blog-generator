@@ -166,16 +166,6 @@ export function copyPosts(
                     //console.log(parse.metadata);
                     obj.parse = parse;
 
-                    const objs: typeof obj[] = [
-                      {
-                        parse: modParse,
-                        saveTo: saveNewTo,
-                        file: obj.file
-                      }
-                    ];
-                    objs.push(obj);
-                    return objs;
-
                     if (isDev) {
                       write(
                         join(
