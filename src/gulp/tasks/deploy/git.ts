@@ -7,6 +7,7 @@ import { join, mkdirSync, resolve } from '../../../node/filemanager';
 import { getLatestCommitHash } from '../../../node/git';
 import { modMoment } from '../../../renderer/helpers/date';
 import config, { post_generated_dir, root } from '../../../types/_config';
+import { beforeDeploy } from './beforeDeploy';
 
 const deployDir = resolve(join(root, '.deploy_git'));
 if (!existsSync(deployDir)) mkdirSync(deployDir);
@@ -103,6 +104,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   return copyGenerated().on('end', async () => {
+    beforeDeploy();
     await git('add', '-A');
     let msg = 'Update site';
     if (existsSync(join(process.cwd(), '.git')))
