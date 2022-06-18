@@ -295,7 +295,8 @@ generator:
 # https://github.com/dimaslanjaka/hexo-adsense
 adsense:
   enable: true
-  pub: ca-pub-1165447249910969
+  #pub: ca-pub-1165447249910969 # mine
+  pub: pub-2188063137129806
   # in-article ads source
   article_ads:
     - "source/ads/in_article.html"
