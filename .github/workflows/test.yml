@@ -53,6 +53,7 @@ jobs:
             ./node_modules
             ./deploy_git
             ./db.json
+            ./public
           key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
       - name: Install dependencies
