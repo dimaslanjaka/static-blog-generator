@@ -63,6 +63,7 @@ jobs:
       - run: npx sbg copy --nocache
       - run: npx hexo generate
       - run: npx gulp safelink
+      - run: npx sbg deploy
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         if: ${{ false }}
