@@ -160,3 +160,11 @@ export default _default;
 export interface ProjectConfig extends Partial<typeof config> {
     [key: string]: any;
 }
+/**
+ * Hexo Generated Dir
+ */
+export declare const post_generated_dir: string;
+/**
+ * SBG Source Post Dir
+ */
+export declare const post_source_dir: string;

@@ -11,6 +11,7 @@ const dateMapper_1 = require("./dateMapper");
 const generatePostId_1 = require("./generatePostId");
 const utils_1 = require("./gulp/utils");
 const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
+const color_1 = tslib_1.__importDefault(require("./node/color"));
 const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
 const utils_2 = require("./node/utils");
@@ -23,17 +24,13 @@ const include_1 = require("./shortcodes/include");
 const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
-const _config_1 = tslib_1.__importDefault(require("./types/_config"));
+const _config_1 = tslib_1.__importStar(require("./types/_config"));
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
     name: 'parsePost',
     duration: 1000 * 3600 * 24 // 24 hours
 });
 const cwd = () => (0, upath_1.toUnix)(process.cwd());
-/**
- * Hexo Generated Dir
- */
-const post_generated_dir = (0, upath_1.join)(cwd(), _config_1.default.public_dir);
 const default_options = {
     shortcodes: {
         css: false,
@@ -68,17 +65,23 @@ function parsePost(target, options = {}) {
         const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
         const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);
         if (options.cache) {
+            //console.log('use cache');
             const getCache = _cache.getSync(cacheKey);
             if (getCache)
                 return getCache;
         }
+        else {
+            //console.log('rewrite cache');
+        }
         /**
          * source file if `text` is file
          */
-        const originalArg = target;
+        let originalFile = target;
         const isFile = (0, fs_1.existsSync)(target) && (0, fs_1.statSync)(target).isFile();
         if (isFile) {
             target = String((0, fs_1.readFileSync)(target, 'utf-8'));
+            if (options.sourceFile)
+                originalFile = options.sourceFile;
         }
         const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
             let meta = {
@@ -256,11 +259,12 @@ function parsePost(target, options = {}) {
             }
             if (isFile || options.sourceFile) {
                 const publicFile = isFile
-                    ? (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalArg))
+                    ? (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalFile))
                     : (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
                 // @todo fix post_asset_folder
                 if (options.fix) {
                     const post_assets_fixer = (str) => {
+                        const logname = color_1.default['Teal Blue']('[PAF]');
                         if (!publicFile)
                             return str;
                         // return base64 image
@@ -278,19 +282,19 @@ function parsePost(target, options = {}) {
                             const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), str);
                             /** search from root directory */
                             const f3 = (0, upath_1.join)(cwd(), str);
-                            const f4 = (0, upath_1.join)(post_generated_dir, str);
+                            const f4 = (0, upath_1.join)(_config_1.post_generated_dir, str);
                             [f1, f2, f3, f4].forEach((src) => {
                                 if ((0, fs_1.existsSync)(src) && !result)
                                     result = src;
                             });
                             if (!result) {
-                                console.log('[PAF][fail]', str);
+                                console.log(logname, '[fail]', str);
                             }
                             else {
-                                result = (0, utils_2.replaceArr)(result, [cwd(), 'source/', '_posts'], '/').replace(/\/+/, '/');
+                                result = (0, utils_2.replaceArr)(result, [cwd(), 'source/', '_posts', 'src-posts'], '/').replace(/\/+/, '/');
                                 result = encodeURI(result);
                                 if (config.verbose)
-                                    console.log('[PAF][success]', result);
+                                    console.log(logname, '[success]', result);
                                 return result;
                             }
                         }
@@ -304,6 +308,33 @@ function parsePost(target, options = {}) {
                     }
                     if (meta.photos) {
                         meta.photos = meta.photos.map(post_assets_fixer);
+                    }
+                    if (body && isFile) {
+                        const matchImg = Array.from(body.matchAll(/!\[.*\]\((.*)\)/gm));
+                        if (matchImg.length > 0) {
+                            for (let i = 0; i < matchImg.length; i++) {
+                                const el = matchImg[i];
+                                if (el[1]) {
+                                    const src = el[1];
+                                    // const basenameSrc = basename(src);
+                                    /*const dirnameSrc = dirname(src);
+                                    const deleteDirnameSrc = originalFile.replace(
+                                      new RegExp(`${dirnameSrc}.*$`),
+                                      ''
+                                    );
+                                    const joinDeletedDirnameSrc = join(deleteDirnameSrc, src);
+                                    if (existsSync(joinDeletedDirnameSrc)) {
+                                      const modifydeleteDirnameSrc = joinDeletedDirnameSrc.replace(
+                                        post_source_dir,
+                                        ''
+                                      );
+                                      body = body.replace(src, modifydeleteDirnameSrc);
+                                      console.log(src, modifydeleteDirnameSrc);
+                                    }*/
+                                    body = body.replace(new RegExp(`${src}`, 'gm'), post_assets_fixer(src));
+                                }
+                            }
+                        }
                     }
                 }
                 if (!meta.url) {
@@ -360,7 +391,7 @@ function parsePost(target, options = {}) {
                         sourceFile = options.sourceFile;
                     }
                     else {
-                        sourceFile = (0, upath_1.toUnix)(originalArg);
+                        sourceFile = (0, upath_1.toUnix)(originalFile);
                     }
                     if (body) {
                         if (sourceFile) {
@@ -399,8 +430,8 @@ function parsePost(target, options = {}) {
             // put fileTree
             if (isFile) {
                 result.fileTree = {
-                    source: (0, utils_2.replaceArr)((0, upath_1.toUnix)(originalArg), ['source/_posts/', '_posts/'], 'src-posts/'),
-                    public: (0, upath_1.toUnix)(originalArg).replace('/src-posts/', '/source/_posts/')
+                    source: (0, utils_2.replaceArr)((0, upath_1.toUnix)(originalFile), ['source/_posts/', '_posts/'], 'src-posts/'),
+                    public: (0, upath_1.toUnix)(originalFile).replace('/src-posts/', '/source/_posts/')
                 };
             }
             if (meta && body)

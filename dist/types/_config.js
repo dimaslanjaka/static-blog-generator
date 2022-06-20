@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.nocache = exports.verbose = void 0;
+exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = void 0;
 const tslib_1 = require("tslib");
 const fs_1 = require("fs");
+const process_1 = require("process");
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const yargs_1 = tslib_1.__importDefault(require("yargs"));
@@ -112,4 +113,12 @@ if ((0, fs_1.existsSync)(file)) {
 }
 (0, fs_1.writeFileSync)((0, upath_1.join)(__dirname, '_config_project.json'), JSON.stringify(config, null, 2));
 exports.default = config;
+/**
+ * Hexo Generated Dir
+ */
+exports.post_generated_dir = (0, upath_1.join)((0, process_1.cwd)(), config.public_dir);
+/**
+ * SBG Source Post Dir
+ */
+exports.post_source_dir = (0, upath_1.join)((0, process_1.cwd)(), 'src-posts');
 //# sourceMappingURL=_config.js.map
