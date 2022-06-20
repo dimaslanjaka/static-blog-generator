@@ -10,8 +10,7 @@ import config, { post_generated_dir, root } from '../../../types/_config';
 import { beforeDeploy } from './beforeDeploy';
 
 const deployDir = resolve(join(root, '.deploy_git'));
-if (!existsSync(deployDir)) mkdirSync(deployDir);
-const generatedDir = post_generated_dir;
+
 /**
  * git command
  * @param args
@@ -47,7 +46,7 @@ const logname = chalk.magentaBright('[deploy][git]');
 
 const copyGenerated = () => {
   return gulp
-    .src(['**/**', '!**/.git*'], { cwd: generatedDir, dot: true })
+    .src(['**/**', '!**/.git*'], { cwd: post_generated_dir, dot: true })
     .pipe(gulp.dest(deployDir));
 };
 
@@ -57,6 +56,7 @@ const copyGenerated = () => {
  * @returns
  */
 export const deployerGit = async (done?: TaskCallback) => {
+  if (!existsSync(deployDir)) mkdirSync(deployDir);
   const configDeploy = config.deploy;
   if (typeof configDeploy !== 'object' || configDeploy === null) {
     console.log('incorrect deploy config');
@@ -104,7 +104,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   return copyGenerated().on('end', async () => {
-    beforeDeploy();
+    await beforeDeploy(post_generated_dir);
     await git('add', '-A');
     let msg = 'Update site';
     if (existsSync(join(process.cwd(), '.git')))
