@@ -3,6 +3,7 @@ import { spawn } from 'child_process';
 import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
+import color from '../../../node/color';
 import { join, mkdirSync, resolve } from '../../../node/filemanager';
 import { getLatestCommitHash } from '../../../node/git';
 import { modMoment } from '../../../renderer/helpers/date';
@@ -127,8 +128,12 @@ export const deployerGit = async (done?: TaskCallback) => {
       } else {
         await git('push', '--set-upstream', 'origin', configDeploy['branch']);
       }
+
+      console.log(logname, 'deploy merged with origin successful');
+    } else {
+      console.log(color.redBright('cannot push without branch'));
     }
-    console.log(logname, 'deploy merged with origin successful');
+
     done();
   });
 };
