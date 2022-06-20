@@ -437,7 +437,7 @@ google_adsense:
   client: ca-pub-2188063137129806
   enable_page_level_ads: true
 
-# Insert ads manually (手動插入廣告)
+# Insert ads manually (手動插入廣告) (ads html)
 # ad:
 #   index:
 #   aside:
