@@ -71,7 +71,7 @@ jobs:
       - run: npx sbg deploy
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
-        #if: ${{ false }}
+        if: ${{ false }}
         #if: steps.hexo-validate.outcome == 'success' && steps.hexo-validate.conclusion == 'success'
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
