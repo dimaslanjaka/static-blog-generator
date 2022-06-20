@@ -177,7 +177,7 @@ server:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 
-theme: icarus
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -190,7 +190,8 @@ deploy:
   username: dimaslanjaka
   email: dimaslanjaka@gmail.com
 
-author:
+author: Dimas Lanjaka
+author_obj:
   name: "Dimas Lanjaka"
   link: "https://www.webmanajemen.com/"
   image:
