@@ -63,6 +63,10 @@ export const deployerGit = async (done?: TaskCallback) => {
     console.log('incorrect deploy config');
     return;
   }
+  if ('branch' in configDeploy === false) {
+    console.log(color.redBright('cannot push without branch'));
+    return;
+  }
   configDeploy['base'] = deployDir;
   const initialized = existsSync(join(deployDir, '.git'));
   if (!existsSync(deployDir)) mkdirSync(deployDir);
@@ -112,27 +116,24 @@ export const deployerGit = async (done?: TaskCallback) => {
       msg += ' ' + (await getLatestCommitHash());
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
-    if ('branch' in configDeploy) {
-      if (
-        Object.hasOwnProperty.call(configDeploy, 'force') &&
-        configDeploy['force'] === true
-      ) {
-        await git(
-          'push',
-          '-u',
-          configDeploy['repo'],
-          'origin',
-          configDeploy['branch'],
-          '--force'
-        );
-      } else {
-        await git('push', '--set-upstream', 'origin', configDeploy['branch']);
-      }
 
-      console.log(logname, 'deploy merged with origin successful');
+    if (
+      Object.hasOwnProperty.call(configDeploy, 'force') &&
+      configDeploy['force'] === true
+    ) {
+      await git(
+        'push',
+        '-u',
+        configDeploy['repo'],
+        'origin',
+        configDeploy['branch'],
+        '--force'
+      );
     } else {
-      console.log(color.redBright('cannot push without branch'));
+      await git('push', '--set-upstream', 'origin', configDeploy['branch']);
     }
+
+    console.log(logname, 'deploy merged with origin successful');
 
     done();
   });
