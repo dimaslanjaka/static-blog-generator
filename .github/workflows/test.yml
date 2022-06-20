@@ -57,7 +57,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm i -g gulp-cli typescript npm ts-node hexo-cli yarn typescript
+          npm i gulp-cli typescript npm ts-node hexo-cli yarn typescript --location=global
           npm i -D https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/development.tgz
           npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
           npm i -D https://github.com/dimaslanjaka/safelink.git
@@ -66,7 +66,7 @@ jobs:
       - run: npx sbg copy --nocache
       - run: npx hexo generate
       - run: npx gulp safelink
-      
+
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         #if: ${{ false }}
@@ -78,5 +78,5 @@ jobs:
           force: false # merge instead push --force, (keep old / non modified) files?
           token: "${{ secrets.GITHUB_TOKEN }}" # github token
           repository-name: "dimaslanjaka/dimaslanjaka.github.io" # Repostory URL
-          
+
       - run: npx sbg deploy
