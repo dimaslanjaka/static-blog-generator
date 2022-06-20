@@ -51,6 +51,7 @@ jobs:
             ./tmp
             ./node_modules
             ./deploy_git
+            ./db.json
           key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
       - name: Install dependencies
