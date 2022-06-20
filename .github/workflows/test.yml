@@ -1,4 +1,4 @@
-name: Test
+name: Test And Deploy
 
 on:
   push:
@@ -34,6 +34,7 @@ jobs:
         run: |
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
+          git config --global init.defaultBranch master
 
       - name: Declare some variables
         id: vars
