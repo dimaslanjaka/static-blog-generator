@@ -67,7 +67,7 @@ jobs:
       - run: npx hexo generate
       - run: npx gulp safelink
       - run: npm install
-        working-directory: public
+        working-directory: .deploy_git
       - run: npx sbg deploy
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
