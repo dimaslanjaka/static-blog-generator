@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "hexo": "^6.2.0",
+    "hexo-adsense": "file:../hexo-adsense",
     "hexo-asset-link": "^2.1.0",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
     "hexo-front-matter": "github:hexojs/hexo-front-matter",

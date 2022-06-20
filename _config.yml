@@ -297,7 +297,7 @@ generator:
 adsense:
   enable: true
   #pub: ca-pub-1165447249910969 # mine
-  pub: pub-2188063137129806
+  pub: ca-pub-2188063137129806
   # in-article ads source
   article_ads:
     - "source/ads/in_article.html"
@@ -309,7 +309,7 @@ adsense:
   # block user with adblock enabled
   adblock: false
   # amp or javascript
-  type: amp
+  type: javascript
   # exclude pattern, disable adding adsense
   exclude:
     - "*.min.html"
