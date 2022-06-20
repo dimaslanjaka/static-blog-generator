@@ -41,6 +41,7 @@
     "hexo-renderer-swig": "^1.1.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-butterfly": "file:themes/butterfly",
+    "hexo-theme-icarus": "^5.0.0-rc.1",
     "hexo-util": "^2.5.0",
     "warehouse": "^4.0.1"
   },
