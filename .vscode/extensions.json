@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
-    "ducfilan.pug-formatter"
+    "ducfilan.pug-formatter",
+    "yzhang.markdown-all-in-one"
   ]
 }
