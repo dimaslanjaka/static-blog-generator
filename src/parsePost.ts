@@ -7,6 +7,7 @@ import { dateMapper, moment } from './dateMapper';
 import { generatePostId } from './generatePostId';
 import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
+import color from './node/color';
 import { normalize } from './node/filemanager';
 import { md5FileSync } from './node/md5-file';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
@@ -20,7 +21,7 @@ import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { postMap } from './types/postMap';
-import config, { ProjectConfig } from './types/_config';
+import config, { post_generated_dir, ProjectConfig } from './types/_config';
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
@@ -29,10 +30,6 @@ const _cache = cache({
 });
 
 const cwd = () => toUnix(process.cwd());
-/**
- * Hexo Generated Dir
- */
-const post_generated_dir = join(cwd(), config.public_dir);
 
 /**
  * Post author object type
@@ -160,16 +157,21 @@ export async function parsePost(
   const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
   const cacheKey = md5FileSync(options.sourceFile || target);
   if (options.cache) {
+    //console.log('use cache');
     const getCache = _cache.getSync<postMap>(cacheKey);
     if (getCache) return getCache;
+  } else {
+    //console.log('rewrite cache');
   }
+
   /**
    * source file if `text` is file
    */
-  const originalArg = target;
+  let originalFile = target;
   const isFile = existsSync(target) && statSync(target).isFile();
   if (isFile) {
     target = String(readFileSync(target, 'utf-8'));
+    if (options.sourceFile) originalFile = options.sourceFile;
   }
 
   const mapper = async (m: RegExpMatchArray) => {
@@ -357,11 +359,12 @@ export async function parsePost(
 
     if (isFile || options.sourceFile) {
       const publicFile = isFile
-        ? toUnix(normalize(originalArg))
+        ? toUnix(normalize(originalFile))
         : toUnix(normalize(options.sourceFile));
       // @todo fix post_asset_folder
       if (options.fix) {
         const post_assets_fixer = (str: string) => {
+          const logname = color['Teal Blue']('[PAF]');
           if (!publicFile) return str;
           // return base64 image
           if (str.startsWith('data:image')) return str;
@@ -380,15 +383,15 @@ export async function parsePost(
               if (existsSync(src) && !result) result = src;
             });
             if (!result) {
-              console.log('[PAF][fail]', str);
+              console.log(logname, '[fail]', str);
             } else {
               result = replaceArr(
                 result,
-                [cwd(), 'source/', '_posts'],
+                [cwd(), 'source/', '_posts', 'src-posts'],
                 '/'
               ).replace(/\/+/, '/');
               result = encodeURI(result);
-              if (config.verbose) console.log('[PAF][success]', result);
+              if (config.verbose) console.log(logname, '[success]', result);
               return result;
             }
           }
@@ -402,6 +405,37 @@ export async function parsePost(
         }
         if (meta.photos) {
           meta.photos = meta.photos.map(post_assets_fixer);
+        }
+        if (body && isFile) {
+          const matchImg = Array.from(body.matchAll(/!\[.*\]\((.*)\)/gm));
+          if (matchImg.length > 0) {
+            for (let i = 0; i < matchImg.length; i++) {
+              const el = matchImg[i];
+              if (el[1]) {
+                const src = el[1];
+                // const basenameSrc = basename(src);
+                /*const dirnameSrc = dirname(src);
+                const deleteDirnameSrc = originalFile.replace(
+                  new RegExp(`${dirnameSrc}.*$`),
+                  ''
+                );
+                const joinDeletedDirnameSrc = join(deleteDirnameSrc, src);
+                if (existsSync(joinDeletedDirnameSrc)) {
+                  const modifydeleteDirnameSrc = joinDeletedDirnameSrc.replace(
+                    post_source_dir,
+                    ''
+                  );
+                  body = body.replace(src, modifydeleteDirnameSrc);
+                  console.log(src, modifydeleteDirnameSrc);
+                }*/
+
+                body = body.replace(
+                  new RegExp(`${src}`, 'gm'),
+                  post_assets_fixer(src)
+                );
+              }
+            }
+          }
         }
       }
 
@@ -468,7 +502,7 @@ export async function parsePost(
             );
           sourceFile = options.sourceFile;
         } else {
-          sourceFile = toUnix(originalArg);
+          sourceFile = toUnix(originalFile);
         }
 
         if (body) {
@@ -511,11 +545,11 @@ export async function parsePost(
     if (isFile) {
       result.fileTree = {
         source: replaceArr(
-          toUnix(originalArg),
+          toUnix(originalFile),
           ['source/_posts/', '_posts/'],
           'src-posts/'
         ),
-        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/')
+        public: toUnix(originalFile).replace('/src-posts/', '/source/_posts/')
       };
     }
 

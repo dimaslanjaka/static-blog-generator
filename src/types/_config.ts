@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { cwd } from 'process';
 import { join } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
@@ -134,3 +135,12 @@ export default config as Config;
 export interface ProjectConfig extends Partial<typeof config> {
   [key: string]: any;
 }
+
+/**
+ * Hexo Generated Dir
+ */
+export const post_generated_dir = join(cwd(), config.public_dir);
+/**
+ * SBG Source Post Dir
+ */
+export const post_source_dir = join(cwd(), 'src-posts');
