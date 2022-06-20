@@ -69,7 +69,7 @@ jobs:
       - run: npx sbg deploy
       - run: npm install
         working-directory: .deploy_git
-      - run: git init && git remote set-url https://github.com/dimaslanjaka/dimaslanjaka.github.io.git && git add -A && git commit -m "update site from ${{ steps.vars.outputs.hash }}" && git push origin master
+      #- run: git init && git remote set-url https://github.com/dimaslanjaka/dimaslanjaka.github.io.git && git add -A && git commit -m "update site from ${{ steps.vars.outputs.hash }}" && git push origin master
         working-directory: .deploy_git
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
