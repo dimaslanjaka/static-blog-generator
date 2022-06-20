@@ -3,8 +3,9 @@ if theme.Open_Graph_meta
   - let metaImage = (page.cover || theme.avatar.img) ? full_url_for(page.cover || theme.avatar.img) : ''
   - let fb_appId = theme.facebook_comments.app_id || ''
   - let fb_admins = theme.facebook_comments.user_id || ''
+  - let pageAuthor = config.email ? author_name(config) + ',' + config.email : author_name(config)
 
-  != open_graph({type: contentType, image: metaImage, fb_admins: fb_admins, fb_app_id: fb_appId})
+  != open_graph({type: contentType, image: metaImage, fb_admins: fb_admins, fb_app_id: fb_appId, author: pageAuthor})
 
 else
   meta(name="description" content=page_description())
