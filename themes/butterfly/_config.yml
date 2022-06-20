@@ -433,8 +433,8 @@ microsoft_clarity:
 google_adsense:
   enable: true
   auto_ads: true
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client: pub-2188063137129806
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2188063137129806
+  client: ca-pub-2188063137129806
   enable_page_level_ads: true
 
 # Insert ads manually (手動插入廣告)
