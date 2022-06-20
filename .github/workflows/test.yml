@@ -68,6 +68,7 @@ jobs:
       - run: npx gulp safelink
       - run: npm install
         working-directory: public
+      - run: npx sbg deploy
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         #if: ${{ false }}
@@ -75,9 +76,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: master # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
+          folder: .deploy_git # The folder the action should deploy.
           force: false # merge instead push --force, (keep old / non modified) files?
           token: "${{ secrets.GITHUB_TOKEN }}" # github token
           repository-name: "dimaslanjaka/dimaslanjaka.github.io" # Repostory URL
-
-      - run: npx sbg deploy
