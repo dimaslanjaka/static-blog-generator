@@ -189,6 +189,8 @@ deploy:
   branch: master
   message: "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}"
   hostname: www.webmanajemen.com
+  username: dimaslanjaka
+  email: dimaslanjaka@gmail.com
 
 author:
   name: "Dimas Lanjaka"
