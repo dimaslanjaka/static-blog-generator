@@ -15,8 +15,21 @@ export function buildPost(parsed: Partial<postMap>) {
     );
   }
 
-  if (parsed.metadata)
+  if (parsed.metadata) {
+    if ('metadata' in parsed.metadata) {
+      delete parsed.metadata.metadata;
+    }
+    if ('config' in parsed.metadata) {
+      delete parsed.metadata.config;
+    }
+    if ('body' in parsed.metadata) {
+      delete parsed.metadata.body;
+    }
+    if ('content' in parsed.metadata) {
+      delete parsed.metadata.content;
+    }
     return `---\n${yaml.stringify(parsed.metadata)}---\n\n${parsed.body}`;
+  }
   return parsed.body;
 }
 
