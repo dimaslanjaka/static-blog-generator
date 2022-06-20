@@ -2,9 +2,10 @@
 - page.aside = is_archive() ? theme.aside.archives : page.aside
 - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
 - var pageType = is_post() ? 'post' : 'page'
+- var clang = page.language ? page.language : (page.lang ? page.lang : (config.language && typeof config.language === 'string' ? config.language : config.language[0]));
 
 doctype html
-html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
+html(lang=clang data-theme=theme.display_mode class=htmlClassHideAside)
   head
     include ./head.pug
   body
@@ -13,7 +14,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
 
     if theme.background
       #web_bg
-      
+
     !=partial('includes/sidebar', {}, {cache: true})
 
     if page.type !== '404'
