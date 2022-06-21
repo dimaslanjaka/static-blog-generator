@@ -1,6 +1,6 @@
 {
   "name": "static-blog-generator-hexo",
-  "version": "1.0.0-106-gf4f42d4",
+  "version": "1.0.0-146-gc0c6200",
   "private": true,
   "scripts": {
     "build": "hexo generate",
