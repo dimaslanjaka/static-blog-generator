@@ -70,17 +70,22 @@ if ('adsense' in project_config_merge) {
       if (existsSync(findpath)) return String(read(findpath));
     };
 
-    if ('article_ads' in adsense)
-      if (adsense.article_ads.length) {
+    if ('article_ads' in adsense) {
+      if (Array.isArray(adsense.article_ads) && adsense.article_ads.length) {
         project_config_merge.adsense.article_ads =
           adsense.article_ads.map(findads);
       }
+    }
 
-    if ('multiplex_ads' in adsense)
-      if (adsense.multiplex_ads.length) {
+    if ('multiplex_ads' in adsense) {
+      if (
+        Array.isArray(adsense.multiplex_ads) &&
+        adsense.multiplex_ads.length
+      ) {
         adsense.multiplex_ads =
           project_config_merge.adsense.multiplex_ads.map(findads);
       }
+    }
   }
 }
 
