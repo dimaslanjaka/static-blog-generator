@@ -97,6 +97,8 @@ open_graph:
 menu:
   home: / || fa fa-home
   about: /about/ || fa fa-user
+  privacy: /p/privacy.html || fa fa-shield
+  tos: /p/tos.html || fa fa-shield
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
