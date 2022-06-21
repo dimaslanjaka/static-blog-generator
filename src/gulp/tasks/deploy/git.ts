@@ -68,30 +68,35 @@ export const deployerGit = async (done?: TaskCallback) => {
     return;
   }
   configDeploy['base'] = deployDir;
-  const initialized = existsSync(join(deployDir, '.git'));
   if (!existsSync(deployDir)) mkdirSync(deployDir);
-  if (!initialized) {
+  if (!existsSync(join(deployDir, '.git'))) {
     console.log(
       logname,
       'init new git with current configuration',
       configDeploy
     );
     await git('init');
-    if (configDeploy['name']) {
-      await git('config', 'user.name', configDeploy['name']);
-    }
-    if (configDeploy['email']) {
-      await git('config', 'user.email', configDeploy['email']);
-    }
-    await git('remote', 'add', 'origin', configDeploy['repo']);
+  }
+
+  // resolve git username
+  if (configDeploy['name']) {
+    await git('config', 'user.name', configDeploy['name']);
+  } else if (configDeploy['username']) {
+    await git('config', 'user.name', configDeploy['username']);
+  }
+  if (configDeploy['email']) {
+    await git('config', 'user.email', configDeploy['email']);
   }
 
   // compress git databases
   //if (!init) await git('gc');
 
-  if (initialized) {
+  try {
+    await git('remote', 'add', 'origin', configDeploy['repo']);
+  } catch {
     await git('remote', 'set-url', 'origin', configDeploy['repo']);
   }
+
   // fetch all
   await git('fetch', '--all');
   // setup merge on pull strategy
