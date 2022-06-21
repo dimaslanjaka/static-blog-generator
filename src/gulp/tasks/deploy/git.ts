@@ -93,8 +93,13 @@ export const deployerGit = async (done?: TaskCallback) => {
 
   try {
     await git('remote', 'add', 'origin', configDeploy['repo']);
-  } catch {
-    await git('remote', 'set-url', 'origin', configDeploy['repo']);
+  } catch (e1) {
+    try {
+      await git('remote', 'set-url', 'origin', configDeploy['repo']);
+    } catch (e2) {
+      if (e1) console.log('error add origin', e1);
+      if (e2) console.log('error set-url origin', e2);
+    }
   }
 
   // fetch all
