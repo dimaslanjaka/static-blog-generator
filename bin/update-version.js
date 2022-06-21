@@ -25,7 +25,7 @@ gitDescribe(process.cwd())
             return spawn('git', ['add', 'package-lock.json'], {
               cwd: join(__dirname, '..')
             }).then(() => {
-              return spawn('git', ['commit', '-m', 'update ' + info.hash], {
+              return spawn('git', ['commit', '-m', 'update https://github.com/dimaslanjaka/static-blog-generator-hexo/commit/' + info.hash], {
                 cwd: join(__dirname, '..')
               });
             });
