@@ -9,9 +9,9 @@ writeFileSync(join(__dirname, '../.guid'), hash);
 spawn('git', ['add', '.guid'])
   .then(() =>
     spawn('git', ['commit', '-m', 'update cache']).catch((e) => {
-      //
+      if (e instanceof Error) console.log(e.message);
     })
   )
   .catch((e) => {
-    //
+    if (e instanceof Error) console.log(e.message);
   });
