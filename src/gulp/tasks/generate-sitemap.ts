@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird';
 import chalk from 'chalk';
-import GoogleNewsSitemap, { ClassItemType } from 'google-news-sitemap';
+import GoogleNewsSitemap, { SitemapItem } from 'google-news-sitemap';
 import gulp from 'gulp';
 import moment from 'moment';
 import { TaskCallback } from 'undertaker';
@@ -29,7 +29,7 @@ async function generateGoogleNewsSitemap(done: TaskCallback) {
   try {
     const i = await Bluebird.all(removeEmpties(pages.getValues())).map(
       (item) => {
-        const val: ClassItemType = {
+        const val: SitemapItem = {
           publication_name: item.author,
           publication_language: item.lang || 'en',
           publication_date: item.date.toString(),
