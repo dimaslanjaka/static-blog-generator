@@ -1,7 +1,10 @@
 {
   "recommendations": [
+    "formulahendry.code-runner",
+    "dbaeumer.vscode-eslint",
+    "digitalbrainstem.javascript-ejs-support",
+    "iliazeus.vscode-ansi",
     "esbenp.prettier-vscode",
-    "ducfilan.pug-formatter",
-    "yzhang.markdown-all-in-one"
+    "ginfuru.better-nunjucks"
   ]
 }
