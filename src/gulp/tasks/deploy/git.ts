@@ -61,9 +61,12 @@ export const deployerGit = async (done?: TaskCallback) => {
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   // process start
   const configDeploy = config.deploy;
-  if (typeof configDeploy !== 'object' || configDeploy === null) {
-    console.log('incorrect deploy config');
-    return;
+  if (
+    typeof configDeploy !== 'object' ||
+    configDeploy === null ||
+    'repo' in configDeploy === false
+  ) {
+    throw new Error('incorrect deploy config');
   }
   if ('branch' in configDeploy === false) {
     console.log(color.redBright('cannot push without branch'));
