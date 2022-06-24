@@ -9,12 +9,18 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL"
+# ******** CRON ********
+# job run every 1:45 AM everydays '45 1 * * *'
 
+name: "CodeQL"
+ 
 on:
-  # schedule this job every 1:45 AM everydays
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
   schedule:
-    - cron: '45 1 * * *'
+    - cron: '43 22 * * 6'
 
 # cancel previous workflows, run only one workflow
 concurrency:
