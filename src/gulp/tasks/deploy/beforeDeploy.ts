@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as path from 'upath';
+import * as upath from 'upath';
 import spawner from '../../../node/spawner';
 
 /**
@@ -7,7 +7,7 @@ import spawner from '../../../node/spawner';
  * @param cwd current working directory
  */
 export async function beforeDeploy(cwd: string) {
-  const pkg = path.join(cwd, 'package.json');
+  const pkg = upath.join(cwd, 'package.json');
   if (fs.existsSync(pkg)) {
     return await spawner.promise(
       {
