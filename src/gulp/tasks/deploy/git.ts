@@ -57,7 +57,9 @@ const copyGenerated = () => {
  * @returns
  */
 export const deployerGit = async (done?: TaskCallback) => {
+  // create deploy folder
   if (!existsSync(deployDir)) mkdirSync(deployDir);
+  // process start
   const configDeploy = config.deploy;
   if (typeof configDeploy !== 'object' || configDeploy === null) {
     console.log('incorrect deploy config');
@@ -79,17 +81,27 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   // resolve git username
-  if (configDeploy['name']) {
-    await git('config', 'user.name', configDeploy['name']);
-  } else if (configDeploy['username']) {
-    await git('config', 'user.name', configDeploy['username']);
+  if ('name' in configDeploy || 'username' in configDeploy) {
+    console.log(logname, 'user name found, setting up...');
+    await git(
+      'config',
+      'user.name',
+      configDeploy['name'] || configDeploy['username']
+    );
   }
-  if (configDeploy['email']) {
+  if ('email' in configDeploy) {
+    console.log(logname, 'user email found, setting up...');
     await git('config', 'user.email', configDeploy['email']);
   }
 
   // compress git databases
-  //if (!init) await git('gc');
+  if (
+    'gc' in configDeploy &&
+    configDeploy['gc'] &&
+    existsSync(join(deployDir, '.git'))
+  ) {
+    await git('gc', '--aggressive', '--prune');
+  }
 
   try {
     await git('remote', 'add', 'origin', configDeploy['repo']);
