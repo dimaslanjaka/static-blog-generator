@@ -293,7 +293,7 @@ generator:
     posts:
       space: true
 
-# https://github.com/dimaslanjaka/hexo-adsense
+## https://github.com/dimaslanjaka/hexo-adsense
 adsense:
   enable: true
   #pub: ca-pub-1165447249910969 # mine
@@ -314,6 +314,10 @@ adsense:
   exclude:
     - "*.min.html"
     - "**/exclude/**/*"
+
+## https://github.com/dimaslanjaka/hexo-generator-redirect
+redirect:
+  enable: true
 
 # next project: hexo-analytics
 analytics:
