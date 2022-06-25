@@ -3,8 +3,8 @@ import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
 import ini from 'ini';
 import { dirname, join } from 'upath';
-import { deployDir } from '../types/_config';
-import spawner from './spawner';
+import { deployDir } from '../../types/_config';
+import spawner from '../spawner';
 
 /**
  * git command
