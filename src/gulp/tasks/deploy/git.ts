@@ -154,6 +154,10 @@ export const deployerGit = async (done?: TaskCallback) => {
     await beforeDeploy(post_generated_dir);
     console.log(logname, 'adding files...');
     await git('add', '-A');
+    if (hasSubmodule) {
+      console.log(logname, 'adding submodule files...');
+      await git('submodule', 'foreach', 'git', 'add', '-A');
+    }
     console.log(logname, 'comitting...');
     let msg = 'Update site';
     if (existsSync(join(process.cwd(), '.git')))
