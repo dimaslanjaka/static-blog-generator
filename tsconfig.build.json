@@ -22,7 +22,8 @@
       "module": "CommonJS",
       "esModuleInterop": true,
       "moduleResolution": "Node",
-      "inlineSourceMap": false
+      "inlineSourceMap": false,
+      "downlevelIteration": true
     }
   }
 }
