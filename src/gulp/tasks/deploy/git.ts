@@ -145,6 +145,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   // check submodule
   const hasSubmodule = existsSync(join(deployDir, '.gitmodules'));
   if (hasSubmodule) {
+    console.log(logname, 'submodule found, updating...');
     await git('submodule', 'update', '-i', '-r');
   }
 
@@ -159,8 +160,16 @@ export const deployerGit = async (done?: TaskCallback) => {
       msg += ' ' + (await getLatestCommitHash());
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
+    if (hasSubmodule) {
+      console.log(logname, 'comiting submodule...');
+      await git('submodule', 'foreach', 'git', 'commit', '-m', msg);
+    }
 
-    console.log(logname, 'pushing...');
+    if (hasSubmodule) {
+      console.log(logname, 'pushing submodule...');
+      await git('submodule', 'foreach', 'git', 'push');
+    }
+    console.log(logname, `pushing ${configDeploy['branch']}...`);
     if (
       Object.hasOwnProperty.call(configDeploy, 'force') &&
       configDeploy['force'] === true
