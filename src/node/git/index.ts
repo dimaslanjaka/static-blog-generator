@@ -87,7 +87,8 @@ export const gitDescribe = async () => {
     {
       cwd: process.cwd() //join(__dirname, '../../')
     },
-    'describe'
+    'describe',
+    '--tags'
   );
   return res.stdout[0];
 };
