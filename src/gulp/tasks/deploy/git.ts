@@ -87,7 +87,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   await git('config', 'pull.rebase', 'false');
   // setup end of line LF
   // https://stackoverflow.com/a/13154031
-  await git('git', 'config', 'core.autocrlf', 'false');
+  await git('config', 'core.autocrlf', 'false');
 
   if ('host' in configDeploy || 'hostname' in configDeploy) {
     const host = configDeploy['host'] || configDeploy['hostname'];
@@ -160,8 +160,9 @@ export const deployerGit = async (done?: TaskCallback) => {
     }
     console.log(logname, 'comitting...');
     let msg = 'Update site';
-    if (existsSync(join(process.cwd(), '.git')))
+    if (existsSync(join(process.cwd(), '.git'))) {
       msg += ' ' + (await getLatestCommitHash());
+    }
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
     if (hasSubmodule) {
