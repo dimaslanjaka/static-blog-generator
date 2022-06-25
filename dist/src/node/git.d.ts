@@ -3,15 +3,10 @@
 import { SpawnOptions } from 'child_process';
 /**
  * git command
- * @param options git argument or spawn options
- * @param args git variadic arguments
+ * @param args
  * @returns
- * @example
- * await git('add', '-A');
- * await git('commit', '-m', 'commit messages');
- * await git('push');
  */
-export declare function git(options?: null | string | SpawnOptions, ...args: string[]): Promise<{
+export declare function git(options?: null | SpawnOptions, ...args: string[]): Promise<{
     code: number;
     stdout: string[] | import("stream").Readable;
     stderr: any;
@@ -40,20 +35,3 @@ export declare function gitAddAndCommit(file: string, msg: string, options?: nul
     stderr: any;
 }>;
 export default git;
-export interface SubmoduleObject {
-    [key: string]: any;
-    path: string;
-    url: string;
-    branch?: string;
-    fullpath?: string;
-}
-export interface SubmoduleResult {
-    [key: string]: any;
-    hasSubmodule: boolean;
-    data: SubmoduleObject[];
-}
-/**
- * extract submodule to object
- * @param path path to .gitmodules or git directory
- */
-export declare function extractSubmodule(path: string): SubmoduleResult;
