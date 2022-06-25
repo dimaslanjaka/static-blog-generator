@@ -1,14 +1,32 @@
 import { SpawnOptions } from 'child_process';
 import { deepmerge } from 'deepmerge-ts';
+import { join, resolve } from 'upath';
 import spawner from './spawner';
 
 /**
  * git command
- * @param args
+ * @param options git argument or spawn options
+ * @param args git variadic arguments
  * @returns
  */
-export function git(options: null | SpawnOptions = null, ...args: string[]) {
-  return spawner.promise(options, 'git', ...args);
+export function git(
+  options: null | string | SpawnOptions = null,
+  ...args: string[]
+) {
+  if (typeof options === 'object') {
+    return spawner.promise(options, 'git', ...args);
+  } else {
+    const deployDir = resolve(join(process.cwd(), '.deploy_git'));
+    return spawner.promise(
+      {
+        cwd: deployDir,
+        stdio: 'inherit'
+      },
+      'git',
+      options,
+      ...args
+    );
+  }
 }
 
 type GetLatestCommitHashOptions = Partial<SpawnOptions> & {
