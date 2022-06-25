@@ -1,9 +1,9 @@
 /** SCHEDULER JOB **/
 /*** Postpone executing functions ***/
 
-import chalk from 'chalk';
+import color from './color';
 
-const logname = chalk.hex('#f542e0')('[scheduler]');
+const logname = color['Violet (Purple)']('[scheduler]');
 
 const fns: { [key: string]: (data?: string) => void }[] = [];
 let triggered: boolean;
