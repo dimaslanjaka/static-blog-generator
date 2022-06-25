@@ -118,12 +118,15 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   // fetch all
+  console.log(logname, 'fetch --all');
   await git('fetch', '--all');
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
   // reset latest origin https://stackoverflow.com/a/8888015/6404439
+  console.log(logname, 'reset from latest origin/' + configDeploy['branch']);
   await git('reset', '--hard', 'origin/' + configDeploy['branch']);
   // checkout origin branch
+  console.log(logname, 'checkout ' + configDeploy['branch']);
   await git('checkout', '-f', configDeploy['branch']);
   // pull origin
   await git('pull', 'origin', configDeploy['branch']);
