@@ -1,5 +1,6 @@
 import nodegit from 'nodegit';
 import path from 'path';
+import gitFetch from './fetch';
 
 /**
  * git pull
@@ -13,15 +14,6 @@ export default async function gitPull(
   branch = 'master'
 ) {
   const repo = await nodegit.Repository.open(gitDir);
-  await repo.fetchAll({
-    callbacks: {
-      credentials: function (_url: any, userName: string) {
-        return nodegit.Cred.sshKeyFromAgent(userName);
-      },
-      certificateCheck: function () {
-        return 0;
-      }
-    }
-  });
+  await gitFetch(gitDir, true);
   await repo.mergeBranches(branch, 'origin/' + branch);
 }
