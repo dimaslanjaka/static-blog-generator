@@ -1,8 +1,9 @@
 import { SpawnOptions } from 'child_process';
 import { deepmerge } from 'deepmerge-ts';
-import { readFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import ini from 'ini';
-import { join, resolve } from 'upath';
+import { dirname, join } from 'upath';
+import { deployDir } from '../types/_config';
 import spawner from './spawner';
 
 /**
@@ -10,6 +11,10 @@ import spawner from './spawner';
  * @param options git argument or spawn options
  * @param args git variadic arguments
  * @returns
+ * @example
+ * await git('add', '-A');
+ * await git('commit', '-m', 'commit messages');
+ * await git('push');
  */
 export function git(
   options: null | string | SpawnOptions = null,
@@ -18,7 +23,6 @@ export function git(
   if (typeof options === 'object') {
     return spawner.promise(options, 'git', ...args);
   } else {
-    const deployDir = resolve(join(process.cwd(), '.deploy_git'));
     return spawner.promise(
       {
         cwd: deployDir,
@@ -99,20 +103,42 @@ export async function gitAddAndCommit(
 
 export default git;
 
+export interface SubmoduleObject {
+  [key: string]: any;
+  path: string;
+  url: string;
+  branch?: string;
+  fullpath?: string;
+}
+
+export interface SubmoduleResult {
+  [key: string]: any;
+  hasSubmodule: boolean;
+  data: SubmoduleObject[];
+}
+
 /**
  * extract submodule to object
  * @param path path to .gitmodules or git directory
  */
-export function extractSubmodule(path: string) {
+export function extractSubmodule(path: string): SubmoduleResult {
   // fix when path is git directory
-  if (!path.endsWith('.gitmodules')) {
+  if (!path.endsWith('.gitmodules') && !path.endsWith('.ini')) {
     path = join(path, '.gitmodules');
   }
+  if (!existsSync(path)) return null;
   const config = ini.parse(readFileSync(path).toString());
+  const result: SubmoduleObject[] = [];
   Object.keys(config).forEach((key) => {
     if (key.startsWith('submodule')) {
-      const submodule = config[key];
-      console.log(submodule);
+      const submodule: SubmoduleObject = config[key];
+      submodule.fullpath = join(dirname(path), submodule.path);
+      //console.log(key, submodule);
+      result.push(submodule);
     }
   });
+  return {
+    hasSubmodule: existsSync(path),
+    data: result
+  };
 }
