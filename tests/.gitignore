@@ -1,4 +1,4 @@
 source/*
 public/*
-package-lock.json
+#package-lock.json
 db.json
