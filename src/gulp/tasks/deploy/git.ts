@@ -82,13 +82,13 @@ export const deployerGit = async (done?: TaskCallback) => {
     );
     await git('init');
   }
-  
+
   // setup merge on pull strategy
   await git('config', 'pull.rebase', 'false');
-  // setup end of line LF 
+  // setup end of line LF
   // https://stackoverflow.com/a/13154031
   await git('git', 'config', 'core.autocrlf', 'false');
-  
+
   if ('host' in configDeploy || 'hostname' in configDeploy) {
     const host = configDeploy['host'] || configDeploy['hostname'];
     if (typeof host === 'string') {
