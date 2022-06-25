@@ -93,6 +93,7 @@
     "hexo-util": "^2.6.1",
     "html-minifier": "^4.0.0",
     "html-minifier-terser": "^7.0.0-alpha.2",
+    "ini": "^3.0.0",
     "jsdom": "^20.0.0",
     "knex": "^2.0.0",
     "lodash": "^4.17.21",
