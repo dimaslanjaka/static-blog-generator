@@ -65,8 +65,12 @@ export function date_local(page: postResult) {
         locale(toMomentLocale(config.lang));
         return toMomentLocale(config.lang);
       } else if (config.language) {
-        locale(toMomentLocale(config.language));
-        return toMomentLocale(config.language);
+        let lang = 'en';
+        if (Array.isArray(typeof config.language === 'string')) {
+          lang = config.language[0];
+        }
+        locale(toMomentLocale(lang));
+        return toMomentLocale(lang);
       }
     }
   }
