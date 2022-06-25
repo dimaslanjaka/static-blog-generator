@@ -64,28 +64,76 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.beforeDeploy = void 0;
 var fs = __importStar(require("fs"));
-var path = __importStar(require("upath"));
+var upath = __importStar(require("upath"));
+var color_1 = __importDefault(require("../../../node/color"));
+var git_1 = require("../../../node/git");
 var spawner_1 = __importDefault(require("../../../node/spawner"));
+var date_1 = require("../../../renderer/helpers/date");
+var logname = color_1.default['Burnt Sienna']('[deploy][before-push]');
 /**
  * process before push
  * @param cwd current working directory
  */
 function beforeDeploy(cwd) {
     return __awaiter(this, void 0, void 0, function () {
-        var pkg;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var pkg, submoduleFile, submodule, i, sm, msg, _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
                 case 0:
-                    pkg = path.join(cwd, 'package.json');
+                    pkg = upath.join(cwd, 'package.json');
                     if (!fs.existsSync(pkg)) return [3 /*break*/, 2];
+                    console.log(logname, 'package.json found, installing...');
                     return [4 /*yield*/, spawner_1.default.promise({
                             cwd: cwd
                         }, 'npm', 'install', '--production', '--omit=dev')];
-                case 1: return [2 /*return*/, _a.sent()];
-                case 2: return [2 /*return*/];
+                case 1: return [2 /*return*/, _c.sent()];
+                case 2:
+                    submoduleFile = upath.join(cwd, '.gitmodules');
+                    if (!fs.existsSync(submoduleFile)) return [3 /*break*/, 10];
+                    submodule = (0, git_1.extractSubmodule)(submoduleFile);
+                    if (!submodule) return [3 /*break*/, 10];
+                    i = 0;
+                    _c.label = 3;
+                case 3:
+                    if (!(i < submodule.data.length)) return [3 /*break*/, 10];
+                    sm = submodule.data[i];
+                    if (!fs.existsSync(sm.fullpath)) return [3 /*break*/, 9];
+                    console.log(logname, 'adding submodule files...');
+                    return [4 /*yield*/, spawner_1.default.promise({
+                            cwd: sm.fullpath
+                        }, 'git', 'add', '-A')];
+                case 4:
+                    _c.sent();
+                    console.log(logname, 'comiting submodule...');
+                    msg = 'Update site';
+                    if (!fs.existsSync(upath.join(process.cwd(), '.git'))) return [3 /*break*/, 6];
+                    _a = msg;
+                    _b = ' ';
+                    return [4 /*yield*/, (0, git_1.getLatestCommitHash)()];
+                case 5:
+                    msg = _a + (_b + (_c.sent()));
+                    _c.label = 6;
+                case 6:
+                    msg += '\ndate: ' + (0, date_1.modMoment)().format();
+                    return [4 /*yield*/, spawner_1.default.promise({
+                            cwd: sm.fullpath
+                        }, 'git', 'commit', '-m', msg)];
+                case 7:
+                    _c.sent();
+                    console.log(logname, 'pushing submodule...');
+                    return [4 /*yield*/, spawner_1.default.promise({
+                            cwd: sm.fullpath
+                        }, 'git', 'push')];
+                case 8:
+                    _c.sent();
+                    _c.label = 9;
+                case 9:
+                    i++;
+                    return [3 /*break*/, 3];
+                case 10: return [2 /*return*/];
             }
         });
     });
 }
 exports.beforeDeploy = beforeDeploy;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmVmb3JlRGVwbG95LmpzIiwic291cmNlUm9vdCI6Ii4vc3JjLyIsInNvdXJjZXMiOlsic3JjL2d1bHAvdGFza3MvZGVwbG95L2JlZm9yZURlcGxveS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLHFDQUF5QjtBQUN6QiwwQ0FBOEI7QUFDOUIsa0VBQTRDO0FBRTVDOzs7R0FHRztBQUNILFNBQXNCLFlBQVksQ0FBQyxHQUFXOzs7Ozs7b0JBQ3RDLEdBQUcsR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLEdBQUcsRUFBRSxjQUFjLENBQUMsQ0FBQzt5QkFDdkMsRUFBRSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsRUFBbEIsd0JBQWtCO29CQUNiLHFCQUFNLGlCQUFPLENBQUMsT0FBTyxDQUMxQjs0QkFDRSxHQUFHLEtBQUE7eUJBQ0osRUFDRCxLQUFLLEVBQ0wsU0FBUyxFQUNULGNBQWMsRUFDZCxZQUFZLENBQ2IsRUFBQTt3QkFSRCxzQkFBTyxTQVFOLEVBQUM7Ozs7O0NBRUw7QUFiRCxvQ0FhQyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmVmb3JlRGVwbG95LmpzIiwic291cmNlUm9vdCI6Ii4vc3JjLyIsInNvdXJjZXMiOlsic3JjL2d1bHAvdGFza3MvZGVwbG95L2JlZm9yZURlcGxveS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLHFDQUF5QjtBQUN6QiwyQ0FBK0I7QUFDL0IsOERBQXdDO0FBQ3hDLHlDQUEwRTtBQUMxRSxrRUFBNEM7QUFDNUMsdURBQTJEO0FBRTNELElBQU0sT0FBTyxHQUFHLGVBQUssQ0FBQyxjQUFjLENBQUMsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDO0FBRS9EOzs7R0FHRztBQUNILFNBQXNCLFlBQVksQ0FBQyxHQUFXOzs7Ozs7b0JBQ3RDLEdBQUcsR0FBRyxLQUFLLENBQUMsSUFBSSxDQUFDLEdBQUcsRUFBRSxjQUFjLENBQUMsQ0FBQzt5QkFDeEMsRUFBRSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsRUFBbEIsd0JBQWtCO29CQUNwQixPQUFPLENBQUMsR0FBRyxDQUFDLE9BQU8sRUFBRSxtQ0FBbUMsQ0FBQyxDQUFDO29CQUNuRCxxQkFBTSxpQkFBTyxDQUFDLE9BQU8sQ0FDMUI7NEJBQ0UsR0FBRyxLQUFBO3lCQUNKLEVBQ0QsS0FBSyxFQUNMLFNBQVMsRUFDVCxjQUFjLEVBQ2QsWUFBWSxDQUNiLEVBQUE7d0JBUkQsc0JBQU8sU0FRTixFQUFDOztvQkFHRSxhQUFhLEdBQUcsS0FBSyxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQUUsYUFBYSxDQUFDLENBQUM7eUJBQ2pELEVBQUUsQ0FBQyxVQUFVLENBQUMsYUFBYSxDQUFDLEVBQTVCLHlCQUE0QjtvQkFDeEIsU0FBUyxHQUFHLElBQUEsc0JBQWdCLEVBQUMsYUFBYSxDQUFDLENBQUM7eUJBQzlDLFNBQVMsRUFBVCx5QkFBUztvQkFDRixDQUFDLEdBQUcsQ0FBQzs7O3lCQUFFLENBQUEsQ0FBQyxHQUFHLFNBQVMsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFBO29CQUNqQyxFQUFFLEdBQUcsU0FBUyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQzt5QkFDekIsRUFBRSxDQUFDLFVBQVUsQ0FBQyxFQUFFLENBQUMsUUFBUSxDQUFDLEVBQTFCLHdCQUEwQjtvQkFDNUIsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsMkJBQTJCLENBQUMsQ0FBQztvQkFDbEQscUJBQU0saUJBQU8sQ0FBQyxPQUFPLENBQ25COzRCQUNFLEdBQUcsRUFBRSxFQUFFLENBQUMsUUFBUTt5QkFDakIsRUFDRCxLQUFLLEVBQ0wsS0FBSyxFQUNMLElBQUksQ0FDTCxFQUFBOztvQkFQRCxTQU9DLENBQUM7b0JBQ0YsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsdUJBQXVCLENBQUMsQ0FBQztvQkFDMUMsR0FBRyxHQUFHLGFBQWEsQ0FBQzt5QkFDcEIsRUFBRSxDQUFDLFVBQVUsQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxHQUFHLEVBQUUsRUFBRSxNQUFNLENBQUMsQ0FBQyxFQUFoRCx3QkFBZ0Q7b0JBQ2xELEtBQUEsR0FBRyxDQUFBO29CQUFJLEtBQUEsR0FBRyxDQUFBO29CQUFJLHFCQUFNLElBQUEseUJBQW1CLEdBQUUsRUFBQTs7b0JBQXpDLEdBQUcsR0FBSCxNQUFPLEtBQU0sQ0FBQyxTQUEyQixDQUFDLENBQUEsQ0FBQzs7O29CQUU3QyxHQUFHLElBQUksVUFBVSxHQUFHLElBQUEsZ0JBQVMsR0FBRSxDQUFDLE1BQU0sRUFBRSxDQUFDO29CQUN6QyxxQkFBTSxpQkFBTyxDQUFDLE9BQU8sQ0FDbkI7NEJBQ0UsR0FBRyxFQUFFLEVBQUUsQ0FBQyxRQUFRO3lCQUNqQixFQUNELEtBQUssRUFDTCxRQUFRLEVBQ1IsSUFBSSxFQUNKLEdBQUcsQ0FDSixFQUFBOztvQkFSRCxTQVFDLENBQUM7b0JBQ0YsT0FBTyxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsc0JBQXNCLENBQUMsQ0FBQztvQkFDN0MscUJBQU0saUJBQU8sQ0FBQyxPQUFPLENBQ25COzRCQUNFLEdBQUcsRUFBRSxFQUFFLENBQUMsUUFBUTt5QkFDakIsRUFDRCxLQUFLLEVBQ0wsTUFBTSxDQUNQLEVBQUE7O29CQU5ELFNBTUMsQ0FBQzs7O29CQWxDcUMsQ0FBQyxFQUFFLENBQUE7Ozs7OztDQXVDbkQ7QUExREQsb0NBMERDIn0=
