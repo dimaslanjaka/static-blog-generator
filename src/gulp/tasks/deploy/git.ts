@@ -134,14 +134,18 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   return copyGenerated().on('end', async () => {
+    console.log(logname, 'processing files before deploy...');
     await beforeDeploy(post_generated_dir);
+    console.log(logname, 'adding files...');
     await git('add', '-A');
+    console.log(logname, 'comitting...');
     let msg = 'Update site';
     if (existsSync(join(process.cwd(), '.git')))
       msg += ' ' + (await getLatestCommitHash());
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
 
+    console.log(logname, 'pushing...');
     if (
       Object.hasOwnProperty.call(configDeploy, 'force') &&
       configDeploy['force'] === true
