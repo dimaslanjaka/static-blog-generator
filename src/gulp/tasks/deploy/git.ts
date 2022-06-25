@@ -1,48 +1,15 @@
 import chalk from 'chalk';
-import { spawn } from 'child_process';
 import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
 import color from '../../../node/color';
 import { join, mkdirSync, resolve, write } from '../../../node/filemanager';
-import { getLatestCommitHash } from '../../../node/git';
+import git, { getLatestCommitHash } from '../../../node/git';
 import { modMoment } from '../../../renderer/helpers/date';
-import config, { post_generated_dir, root } from '../../../types/_config';
+import config, { post_generated_dir } from '../../../types/_config';
 import { beforeDeploy } from './beforeDeploy';
 
-const deployDir = resolve(join(root, '.deploy_git'));
-
-/**
- * git command
- * @param args
- * @returns
- */
-function git(...args: string[]) {
-  return new Promise(
-    (
-      resolve: (args: { code: number; stdout: string; stderr: string }) => any,
-      reject: (args: { args: string[]; err: Error }) => any
-    ) => {
-      const summon = spawn('git', args, {
-        cwd: deployDir,
-        stdio: 'inherit'
-      });
-      summon.on('close', function (code) {
-        // Should probably be 'exit', not 'close'
-        // *** Process completed
-        return resolve({
-          code: code,
-          stdout: String(summon.stdout),
-          stderr: String(summon.stderr)
-        });
-      });
-      summon.on('error', function (err) {
-        // *** Process creation failed
-        return reject({ args: args, err: err });
-      });
-    }
-  );
-}
+const deployDir = resolve(join(process.cwd(), '.deploy_git'));
 const logname = chalk.magentaBright('[deploy][git]');
 
 const copyGenerated = () => {
