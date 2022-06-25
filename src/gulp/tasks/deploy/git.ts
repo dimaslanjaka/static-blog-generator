@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
 import color from '../../../node/color';
-import { join, mkdirSync, resolve } from '../../../node/filemanager';
+import { join, mkdirSync, resolve, write } from '../../../node/filemanager';
 import { getLatestCommitHash } from '../../../node/git';
 import { modMoment } from '../../../renderer/helpers/date';
 import config, { post_generated_dir, root } from '../../../types/_config';
@@ -88,6 +88,14 @@ export const deployerGit = async (done?: TaskCallback) => {
   // setup end of line LF 
   // https://stackoverflow.com/a/13154031
   await git('git', 'config', 'core.autocrlf', 'false');
+  
+  if ('host' in configDeploy || 'hostname' in configDeploy) {
+    const host = configDeploy['host'] || configDeploy['hostname'];
+    if (typeof host === 'string') {
+      const CNAME = join(deployDir, 'CNAME');
+      write(CNAME, host);
+    }
+  }
 
   // resolve git username
   if ('name' in configDeploy || 'username' in configDeploy) {
