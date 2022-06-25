@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird';
 import { spawn } from 'child_process';
-import fs, { writeFileSync } from 'fs';
+import fs, { existsSync, writeFileSync } from 'fs';
 import { writeFile } from 'fs-extra';
 import { gitDescribe, GitInfo } from 'git-describe';
 import moment from 'moment-timezone';
@@ -15,9 +15,14 @@ import spawner from './src/node/spawner';
 import { argv } from './src/types/_config';
 
 // mock data
-writeFileSync(join(__dirname, 'src/types/_config_project.json'), '{}');
-writeFileSync(join(__dirname, 'src/types/_config_theme.json'), '{}');
-writeFileSync(join(__dirname, 'src/types/_config_hashes.json'), '{}');
+[
+  'src/types/_config_project.json',
+  'src/types/_config_theme.json',
+  'src/types/_config_hashes.json'
+]
+  .map((path) => join(__dirname, path))
+  .filter((path) => existsSync(path))
+  .forEach((path) => writeFileSync(path, '{}'));
 
 const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
