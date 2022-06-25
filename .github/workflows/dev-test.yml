@@ -69,26 +69,36 @@ jobs:
 
     - name: Build
       run: npm run build
-
+      
+    - run: npm install
+    
     - name: Test bin single task
       run: npm i file:../ && npx sbg copy --nocache --verbose --dev
       working-directory: tests
       id: test-bin-single
+      
+    - run: npm install
 
     - name: Test bin multiple task
       run: npm i file:../ && npx sbg clean copy --nocache --verbose --dev
       working-directory: tests
       id: test-bin-multiple
+      
+    - run: npm install
 
     - name: Test JS
       id: test-js
       working-directory: tests
       run: npm i file:../ && node index.js
+      
+    - run: npm install
 
     - name: Test TS
       id: test-ts
       working-directory: tests
       run: npm i file:../ && node -r ts-node/register index.ts
+      
+    - run: npm install
 
     - name: Test mocha
       id: test-mocha
