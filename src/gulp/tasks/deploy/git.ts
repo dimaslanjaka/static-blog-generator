@@ -82,6 +82,12 @@ export const deployerGit = async (done?: TaskCallback) => {
     );
     await git('init');
   }
+  
+  // setup merge on pull strategy
+  await git('config', 'pull.rebase', 'false');
+  // setup end of line LF 
+  // https://stackoverflow.com/a/13154031
+  await git('git', 'config', 'core.autocrlf', 'false');
 
   // resolve git username
   if ('name' in configDeploy || 'username' in configDeploy) {
@@ -120,8 +126,6 @@ export const deployerGit = async (done?: TaskCallback) => {
   // fetch all
   console.log(logname, 'fetch --all');
   await git('fetch', '--all');
-  // setup merge on pull strategy
-  await git('config', 'pull.rebase', 'false');
   // reset latest origin https://stackoverflow.com/a/8888015/6404439
   console.log(logname, 'reset from latest origin/' + configDeploy['branch']);
   await git('reset', '--hard', 'origin/' + configDeploy['branch']);
