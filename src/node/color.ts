@@ -135,6 +135,7 @@ const colors = {
   'Wild Watermelon': chalk.hex('#FC6C85'),
   Wisteria: chalk.hex('#CDA4DE'),
   yellow: chalk.hex('#FFFF00'),
+  yellowBright: chalk.yellowBright,
   Yellow: chalk.hex('#FCE883'),
   'Yellow Green': chalk.hex('#C5E384'),
   'Yellow Orange': chalk.hex('#FFAE42'),
