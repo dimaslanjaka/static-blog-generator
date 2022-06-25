@@ -10,7 +10,7 @@ getLatestCommitHash('src').then((id) => {
 });
 
 gitDescribe().then((ver) => {
-  console.log('version', ver);
+  console.log('describe version', ver);
 });
 
 function _test() {
