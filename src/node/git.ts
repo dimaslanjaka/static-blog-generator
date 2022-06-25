@@ -101,7 +101,7 @@ export default git;
 
 /**
  * extract submodule to object
- * @param path
+ * @param path path to .gitmodules
  */
 export function extractSubmodule(path: fs.PathOrFileDescriptor) {
   const config = ini.parse(fs.readFileSync(path).toString());
