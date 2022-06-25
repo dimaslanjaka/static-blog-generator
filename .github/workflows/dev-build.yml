@@ -71,6 +71,8 @@ jobs:
       run: |
         rm -rf dist/*
         npm run build
+        git add dist
+        git commit -m "build from ${{ steps.vars.outputs.hash }}"
         git push
 
     - name: Packaging
