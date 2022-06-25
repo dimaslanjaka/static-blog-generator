@@ -27,6 +27,7 @@ export async function beforeDeploy(cwd: string) {
   }
 
   const submoduleFile = upath.join(cwd, '.gitmodules');
+  console.log(submoduleFile, fs.existsSync(submoduleFile));
   if (fs.existsSync(submoduleFile)) {
     const submodule = extractSubmodule(submoduleFile);
     if (submodule) {
