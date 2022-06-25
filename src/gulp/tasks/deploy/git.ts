@@ -56,6 +56,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   // https://stackoverflow.com/a/13154031
   await git('config', 'core.autocrlf', 'false');
 
+  // add CNAME if hostname settled
   if ('host' in configDeploy || 'hostname' in configDeploy) {
     const host = configDeploy['host'] || configDeploy['hostname'];
     if (typeof host === 'string') {
