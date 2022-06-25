@@ -100,6 +100,17 @@ if (existsSync(cached_config)) {
     write(join(__dirname, 'tmp/_config.log'), inspect(config));
 }
 
+/**
+ * Config Deployment
+ */
+export const configDeploy = config.deploy;
+/**
+ * Deployment Directory
+ */
+export const deployDir = resolve(
+  join(process.cwd(), '.deploy_' + config.deploy.type)
+);
+
 // @todo [config] bypass nocache if --nocache argument is set by cli
 if (argv['nocache']) {
   if ('generator' in config === false)
