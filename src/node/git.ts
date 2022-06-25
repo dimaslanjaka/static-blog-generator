@@ -1,6 +1,6 @@
 import { SpawnOptions } from 'child_process';
 import { deepmerge } from 'deepmerge-ts';
-import fs from 'fs';
+import { readFileSync } from 'fs';
 import ini from 'ini';
 import { join, resolve } from 'upath';
 import spawner from './spawner';
@@ -101,10 +101,14 @@ export default git;
 
 /**
  * extract submodule to object
- * @param path path to .gitmodules
+ * @param path path to .gitmodules or git directory
  */
-export function extractSubmodule(path: fs.PathOrFileDescriptor) {
-  const config = ini.parse(fs.readFileSync(path).toString());
+export function extractSubmodule(path: string) {
+  // fix when path is git directory
+  if (!path.endsWith('.gitmodules')) {
+    path = join(path, '.gitmodules');
+  }
+  const config = ini.parse(readFileSync(path).toString());
   Object.keys(config).forEach((key) => {
     if (key.startsWith('submodule')) {
       const submodule = config[key];
