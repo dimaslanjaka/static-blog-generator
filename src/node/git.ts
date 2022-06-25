@@ -25,8 +25,8 @@ export function git(
   } else {
     return spawner.promise(
       {
-        cwd: deployDir,
-        stdio: 'inherit'
+        cwd: deployDir
+        //stdio: 'inherit'
       },
       'git',
       options,
