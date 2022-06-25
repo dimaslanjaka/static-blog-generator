@@ -3,7 +3,7 @@ import path from 'path';
 
 /**
  * get status git
- * @param gitDir
+ * @param gitDir path location to `.git` folder
  */
 export default async function gitGetStatus(
   gitDir = path.resolve(process.cwd(), '.git')

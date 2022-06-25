@@ -4,7 +4,7 @@ import path from 'path';
 /**
  * git fetch
  * @param gitDir path location to `.git` folder
- * @param all git fetch --all
+ * @param all git fetch --all default `false`
  * @example
  * gitFetch(path.resolve(process.cwd(), '.git'))
  */
