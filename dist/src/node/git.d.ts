@@ -3,10 +3,11 @@
 import { SpawnOptions } from 'child_process';
 /**
  * git command
- * @param args
+ * @param options git argument or spawn options
+ * @param args git variadic arguments
  * @returns
  */
-export declare function git(options?: null | SpawnOptions, ...args: string[]): Promise<{
+export declare function git(options?: null | string | SpawnOptions, ...args: string[]): Promise<{
     code: number;
     stdout: string[] | import("stream").Readable;
     stderr: any;
