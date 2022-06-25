@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { getLatestCommitHash, git, gitDescribe } from './git';
+import { getLatestCommitHash, git, gitDescribe } from '.';
 
 getLatestCommitHash().then((id) => {
   console.log('latest all', id);
