@@ -79,7 +79,7 @@ export const default_config: Partial<SBGConfig> = {
     cache: false
   },
   // Deployment
-  deploy: {},
+  deploy: null,
 
   // ignore files from processing
   ignore: [],
@@ -135,6 +135,16 @@ export interface SBGConfig {
    */
   title: string;
   generator: Generator;
+  deploy: SBGDeploy;
+}
+
+export interface SBGDeploy {
+  [key: string]: any;
+  type: string;
+  repo: string;
+  branch: string;
+  name: string;
+  email: string;
 }
 
 export default default_config;
