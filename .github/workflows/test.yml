@@ -54,7 +54,7 @@ jobs:
             ./.deploy_git
             ./db.json
             ./public
-          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('.guid') }}
 
       - name: Install dependencies
         run: |
