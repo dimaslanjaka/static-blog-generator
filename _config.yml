@@ -151,6 +151,7 @@ pagination_dir: page
 include:
 exclude:
   - "**/.git"
+  - "**/backend/**"
   - "**/MIDI.js/**"
   - "**/{readme,README,changelog,CHANGELOG}.md"
   - "**/Test/**"

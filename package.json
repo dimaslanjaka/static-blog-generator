@@ -3,7 +3,7 @@
   "version": "1.0.0-158-g02c28cc",
   "private": true,
   "scripts": {
-    "build": "hexo generate && gulp safelink",
+    "build": "sbg copy --nocache && hexo generate && gulp safelink",
     "clean": "sbg clean && hexo clean",
     "deploy": "npm run build && sbg deploy",
     "server": "hexo server",
