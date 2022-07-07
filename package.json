@@ -3,9 +3,9 @@
   "version": "1.0.0-158-g02c28cc",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "build": "hexo generate && gulp safelink",
+    "clean": "sbg clean && hexo clean",
+    "deploy": "npm run build && sbg deploy",
     "server": "hexo server",
     "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
     "i-local": "npm install -D file:../static-blog-generator",
