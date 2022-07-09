@@ -93,6 +93,9 @@ render_drafts: false
 
 # https://hexo.io/docs/asset-folders
 post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 
 relative_link: false
 future: true
