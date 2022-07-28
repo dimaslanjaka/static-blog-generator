@@ -37,26 +37,6 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-# https://hexo.io/docs/configuration.html
-skip_render:
-  - "**/hexo-theme-unit-test/**"
-  - "**/node_modules/**"
-  - "yandex_*"
-  - "ahrefs_*"
-  - "glx_*"
-  - "Midi"
-  - "Midi/**/*"
-  - "backend"
-  - "backend/**/*"
-  # https://github.com/hexojs/hexo/issues/1797
-  - "*.json"
-  - "**/*.json"
-  - "_posts/**/*.json"
-  - "_posts/**/*.js"
-  - "_posts/**/*.css"
-  - "_posts/The Legend Of Neverland/Midi/readme.md"
-  - "**/__test__/**"
-  - "_posts/Chimeraland/**/*.html"
 
 # Writing
 new_post_name: :year/:month/:day/:title.md # File name of new posts
@@ -151,10 +131,12 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
+## https://hexo.io/docs/configuration.html#Include-x2F-Exclude-Files-or-Folders
+## `include` and `exclude` options only apply to the source/ folder, whereas `ignore` option applies to all folders.
 include:
 exclude:
-  - "**/.git"
   - "**/backend/**"
+  - "**/.git"
   - "**/MIDI.js/**"
   - "**/{readme,README,changelog,CHANGELOG}.md"
   - "**/Test/**"
@@ -162,6 +144,28 @@ exclude:
   - "**/exclude/**"
   - "**/hexo-post-parser/**"
 ignore:
+  - "**/.git"
+# https://hexo.io/docs/configuration.html
+skip_render:
+  - "Chimeraland/Attendants/**/*.html"
+  - "**/hexo-theme-unit-test/**"
+  - "**/node_modules/**"
+  - "yandex_*"
+  - "ahrefs_*"
+  - "glx_*"
+  - "Midi"
+  - "Midi/**/*"
+  - "backend"
+  - "backend/**/*"
+  # https://github.com/hexojs/hexo/issues/1797
+  - "*.json"
+  - "**/*.json"
+  - "_posts/**/*.json"
+  - "_posts/**/*.js"
+  - "_posts/**/*.css"
+  - "_posts/The Legend Of Neverland/Midi/readme.md"
+  - "**/__test__/**"
+  - "_posts/Chimeraland/**/*.html"
 
 # https://www.npmjs.com/package/hexo-server
 server:
