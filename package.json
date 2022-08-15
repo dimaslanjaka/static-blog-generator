@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "sbg copy --nocache && hexo generate && gulp safelink",
+    "copy": "sbg copy --nocache",
     "clean": "sbg clean && hexo clean",
     "deploy": "npm run build && sbg deploy",
     "server": "hexo server",
