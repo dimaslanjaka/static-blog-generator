@@ -148,6 +148,8 @@ ignore:
 # https://hexo.io/docs/configuration.html
 skip_render:
   - "Chimeraland/Attendants/**/*.html"
+  - "Chimeraland/Monsters/**/*.html"
+  - "Chimeraland/*.html"
   - "**/hexo-theme-unit-test/**"
   - "**/node_modules/**"
   - "yandex_*"
