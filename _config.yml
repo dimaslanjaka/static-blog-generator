@@ -149,6 +149,9 @@ ignore:
 skip_render:
   - "Chimeraland/Attendants/**/*.html"
   - "Chimeraland/Monsters/**/*.html"
+  - "Chimeraland/Attendants/*.html"
+  - "Chimeraland/Monsters/*.html"
+  - "Chimeraland/**/*.html"
   - "Chimeraland/*.html"
   - "**/hexo-theme-unit-test/**"
   - "**/node_modules/**"
@@ -167,6 +170,7 @@ skip_render:
   - "_posts/**/*.css"
   - "_posts/The Legend Of Neverland/Midi/readme.md"
   - "**/__test__/**"
+  - "**/__tests__/**"
   - "_posts/Chimeraland/**/*.html"
 
 # https://www.npmjs.com/package/hexo-server
