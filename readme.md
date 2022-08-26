@@ -26,9 +26,7 @@ NodeJS Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn'
 | Stable | [Download](https://bit.ly/3mnUiZp) | - | - |
 | Development | [GitHub](https://github.com/dimaslanjaka/static-blog-generator) | [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/21168/branches/599935/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=21168&bid=599935) | [![Dev Build](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-build.yml/badge.svg)](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-build.yml) [![Dev Tests](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-test.yml/badge.svg)](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-test.yml) |
 
-Project active and used at [https://github.com/dimaslanjaka/static-blog-generator-hexo](https://github.com/dimaslanjaka/static-blog-generator-hexo) as
-- Post Processor
-- GitHub Site Deployer
+Project active and used at [https://github.com/dimaslanjaka/static-blog-generator-hexo](https://github.com/dimaslanjaka/static-blog-generator-hexo) as **Post Processor** and **GitHub Site Deployer**. Site result at https://github.com/dimaslanjaka/dimaslanjaka.github.io
 
 <!--### temporarily disabled
 - gulp server : because of major changes, were disabled gulp local server, use php local server instead
