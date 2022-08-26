@@ -26,6 +26,10 @@ NodeJS Static Blog Generator Inspired Idea From HexoJS. Because of HexoJS doesn'
 | Stable | [Download](https://bit.ly/3mnUiZp) | - | - |
 | Development | [GitHub](https://github.com/dimaslanjaka/static-blog-generator) | [![DeepScan grade](https://deepscan.io/api/teams/17454/projects/21168/branches/599935/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=17454&pid=21168&bid=599935) | [![Dev Build](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-build.yml/badge.svg)](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-build.yml) [![Dev Tests](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-test.yml/badge.svg)](https://github.com/dimaslanjaka/static-blog-generator/actions/workflows/dev-test.yml) |
 
+Project active and used at [https://github.com/dimaslanjaka/static-blog-generator-hexo](https://github.com/dimaslanjaka/static-blog-generator-hexo) as
+- Post Processor
+- GitHub Site Deployer
+
 <!--### temporarily disabled
 - gulp server : because of major changes, were disabled gulp local server, use php local server instead
 -->
@@ -115,21 +119,21 @@ npm install
 - nodejs simple static blog generator
 
 ## Other Packages
- 
+
 ### hexo-post-parser
 [![npm version](https://badge.fury.io/js/hexo-post-parser.svg?style=flat-square)](https://badge.fury.io/js/hexo-post-parser)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-post-parser?style=flat-square)](https://npmjs.com/package/hexo-post-parser)
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-post-parser?style=flat-square)](https://npmjs.com/package/hexo-post-parser)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/hexo-post-parser?label=Repository%20Size&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/hexo-post-parser?color=blue&label=Last%20Commit&style=flat-square)
- 
+
 ### google-news-sitemap
 [![npm version](https://badge.fury.io/js/google-news-sitemap.svg?style=flat-square)](https://badge.fury.io/js/google-news-sitemap)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/google-news-sitemap?style=flat-square)](https://npmjs.com/package/google-news-sitemap)
 [![Minimum node.js version](https://badgen.net/npm/node/google-news-sitemap?style=flat-square)](https://npmjs.com/package/google-news-sitemap)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/google-news-sitemap?label=Repository%20Size&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/google-news-sitemap?color=blue&label=Last%20Commit&style=flat-square)
- 
+
 ### hexo-adsense
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
