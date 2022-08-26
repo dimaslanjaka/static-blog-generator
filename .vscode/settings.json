@@ -52,7 +52,11 @@
   },
   "[markdown]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false,
+      "source.fixAll.eslint": false
+    }
   },
   "[jsonc]": {
     "editor.formatOnSave": true,

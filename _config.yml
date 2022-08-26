@@ -147,12 +147,13 @@ ignore:
   - "**/.git"
 # https://hexo.io/docs/configuration.html
 skip_render:
-  - "Chimeraland/Attendants/**/*.html"
-  - "Chimeraland/Monsters/**/*.html"
-  - "Chimeraland/Attendants/*.html"
-  - "Chimeraland/Monsters/*.html"
-  - "Chimeraland/**/*.html"
-  - "Chimeraland/*.html"
+  - "chimeraland/attendants/**/*.html"
+  - "chimeraland/monsters/**/*.html"
+  - "chimeraland/attendants/*.html"
+  - "chimeraland/monsters/*.html"
+  - "chimeraland/**/*.html"
+  - "chimeraland/*.html"
+  - "_posts/Chimeraland/**/*.html"
   - "**/hexo-theme-unit-test/**"
   - "**/node_modules/**"
   - "yandex_*"
@@ -171,7 +172,6 @@ skip_render:
   - "_posts/The Legend Of Neverland/Midi/readme.md"
   - "**/__test__/**"
   - "**/__tests__/**"
-  - "_posts/Chimeraland/**/*.html"
 
 # https://www.npmjs.com/package/hexo-server
 server:
