@@ -1,5 +1,11 @@
 import { deepmerge } from 'deepmerge-ts';
-import { existsSync, readFileSync, statSync, writeFileSync } from 'fs';
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync
+} from 'fs';
 import cache from 'persistent-cache';
 import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
@@ -388,6 +394,8 @@ export async function parsePost(
                 __dirname,
                 '../tmp/errors/post-asset-folder/' + basename(str) + '.log'
               );
+              if (!existsSync(dirname(log)))
+                mkdirSync(dirname(log), { recursive: true });
               writeFileSync(log, JSON.stringify({ str, f1, f2, f3, f4 }));
               console.log(logname, color.redBright('[fail]'), { str, log });
             } else {
