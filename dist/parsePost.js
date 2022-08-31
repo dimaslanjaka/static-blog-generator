@@ -14,6 +14,7 @@ const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
 const color_1 = tslib_1.__importDefault(require("./node/color"));
 const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
+const sanitize_filename_1 = tslib_1.__importDefault(require("./node/sanitize-filename"));
 const utils_2 = require("./node/utils");
 const parsePermalink_1 = require("./parsePermalink");
 const codeblock_1 = require("./shortcodes/codeblock");
@@ -291,10 +292,11 @@ function parsePost(target, options = {}) {
                             });
                             if (result === null) {
                                 const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' +
-                                    (0, upath_1.basename)(str)
+                                    (0, sanitize_filename_1.default)((0, upath_1.basename)(str)
                                         .replace(/['"](.*)['"]/gim, '')
-                                        .trim() +
+                                        .trim()) +
                                     '.log');
+                                sanitize_filename_1.default;
                                 if (!(0, fs_1.existsSync)((0, upath_1.dirname)(log)))
                                     (0, fs_1.mkdirSync)((0, upath_1.dirname)(log), { recursive: true });
                                 (0, fs_1.writeFileSync)(log, JSON.stringify({ str, f1, f2, f3, f4 }));
