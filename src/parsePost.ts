@@ -373,6 +373,7 @@ export async function parsePost(
         const post_assets_fixer = (str: string) => {
           const logname = color['Teal Blue']('[PAF]');
           if (!publicFile) return str;
+          str = str.replace(/['"](.*)['"]/gim, '').trim();
           // return base64 image
           if (str.startsWith('data:image')) return str;
           if (str.startsWith('//')) str = 'http:' + str;
@@ -394,15 +395,9 @@ export async function parsePost(
               const log = join(
                 __dirname,
                 '../tmp/errors/post-asset-folder/' +
-                  sanitizeFilename(
-                    basename(str)
-                      .replace(/['"](.*)['"]/gim, '')
-                      .trim(),
-                    '-'
-                  ) +
+                  sanitizeFilename(basename(str).trim(), '-') +
                   '.log'
               );
-              sanitizeFilename;
               if (!existsSync(dirname(log)))
                 mkdirSync(dirname(log), { recursive: true });
               writeFileSync(log, JSON.stringify({ str, f1, f2, f3, f4 }));
