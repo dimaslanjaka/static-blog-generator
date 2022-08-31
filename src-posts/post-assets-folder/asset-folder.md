@@ -5,3 +5,11 @@ thumbnail: asset-folder/spinner-200px.svg
 ---
 
 ![alt img](asset-folder/spinner-200px.svg)
+
+![alt img](asset-folder/spinner-200px.svg "title img")
+
+image from root
+
+![alt img](/post-assets-folder/asset-folder/spinner-200px.svg)
+
+![alt img](/post-assets-folder/asset-folder/spinner-200px.svg "title img")
