@@ -17,14 +17,5 @@ export interface SBGConfig {
      */
     title: string;
     generator: Generator;
-    deploy: SBGDeploy;
-}
-export interface SBGDeploy {
-    [key: string]: any;
-    type: string;
-    repo: string;
-    branch: string;
-    name: string;
-    email: string;
 }
 export default default_config;
