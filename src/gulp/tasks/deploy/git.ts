@@ -123,13 +123,15 @@ export const deployerGit = async (done?: TaskCallback) => {
   const hasSubmodule =
     existsSync(join(deployDir, '.gitmodules')) ||
     (await isGitHasSubmodule(deployDir));
+
+  // fetch all
+  console.log(logname, 'fetching...');
+  await git('fetch', '--all');
   if (hasSubmodule) {
     console.log(logname, 'fetching submodules...');
     await git('submodule', 'foreach', 'git', 'fetch', '--all');
   }
-  // fetch all
-  console.log(logname, 'fetching...');
-  await git('fetch', '--all');
+
   // reset latest origin https://stackoverflow.com/a/8888015/6404439
   console.log(logname, 'reset from latest origin/' + configDeploy['branch']);
   await git('reset', '--hard', 'origin/' + configDeploy['branch']);
