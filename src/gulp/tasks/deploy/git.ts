@@ -40,7 +40,9 @@ export const deployerGit = async (done?: TaskCallback) => {
     return;
   }
   configDeploy['base'] = deployDir;
+  // create deployment working dir if not exist
   if (!existsSync(deployDir)) mkdirSync(deployDir);
+  // initialize git if not exist
   if (!existsSync(join(deployDir, '.git'))) {
     console.log(
       logname,
@@ -112,8 +114,8 @@ export const deployerGit = async (done?: TaskCallback) => {
         configDeploy['repo']
       );
     } catch (e2) {
-      if (e1 instanceof Error) console.log('error add origin', e1);
-      if (e2 instanceof Error) console.log('error set-url origin', e2);
+      if (e1 instanceof Error) console.log(logname, 'error add origin', e1);
+      if (e2 instanceof Error) console.log(logname, 'error set-url origin', e2);
     }
   }
 
