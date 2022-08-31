@@ -370,22 +370,25 @@ export async function parsePost(
         : toUnix(normalize(options.sourceFile));
       // @todo fix post_asset_folder
       if (options.fix) {
-        const post_assets_fixer = (str: string) => {
+        const post_assets_fixer = (sourcePath: string) => {
           const logname = color['Teal Blue']('[PAF]');
-          if (!publicFile) return str;
+          if (!publicFile) return sourcePath;
+          // replace extended title from source
+          sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
           // return base64 image
-          if (str.startsWith('data:image')) return str;
-          if (str.startsWith('//')) str = 'http:' + str;
-          if (str.includes('%20')) str = decodeURIComponent(str);
-          if (!isValidHttpUrl(str) && !str.startsWith('/')) {
+          if (sourcePath.startsWith('data:image')) return sourcePath;
+          if (sourcePath.startsWith('//')) sourcePath = 'http:' + sourcePath;
+          if (sourcePath.includes('%20'))
+            sourcePath = decodeURIComponent(sourcePath);
+          if (!isValidHttpUrl(sourcePath) && !sourcePath.startsWith('/')) {
             let result: string | null = null;
             /** search from same directory */
-            const f1 = join(dirname(publicFile), str);
+            const f1 = join(dirname(publicFile), sourcePath);
             /** search from parent directory */
-            const f2 = join(dirname(dirname(publicFile)), str);
+            const f2 = join(dirname(dirname(publicFile)), sourcePath);
             /** search from root directory */
-            const f3 = join(cwd(), str);
-            const f4 = join(post_generated_dir, str);
+            const f3 = join(cwd(), sourcePath);
+            const f4 = join(post_generated_dir, sourcePath);
             [f1, f2, f3, f4].forEach((src) => {
               if (result !== null) return;
               if (existsSync(src) && !result) result = src;
@@ -394,19 +397,19 @@ export async function parsePost(
               const log = join(
                 __dirname,
                 '../tmp/errors/post-asset-folder/' +
-                  sanitizeFilename(
-                    basename(str)
-                      .replace(/['"](.*)['"]/gim, '')
-                      .trim(),
-                    '-'
-                  ) +
+                  sanitizeFilename(basename(sourcePath).trim(), '-') +
                   '.log'
               );
-              sanitizeFilename;
               if (!existsSync(dirname(log)))
                 mkdirSync(dirname(log), { recursive: true });
-              writeFileSync(log, JSON.stringify({ str, f1, f2, f3, f4 }));
-              console.log(logname, color.redBright('[fail]'), { str, log });
+              writeFileSync(
+                log,
+                JSON.stringify({ str: sourcePath, f1, f2, f3, f4 })
+              );
+              console.log(logname, color.redBright('[fail]'), {
+                str: sourcePath,
+                log
+              });
             } else {
               result = replaceArr(
                 result,
@@ -418,7 +421,7 @@ export async function parsePost(
               return result;
             }
           }
-          return str;
+          return sourcePath;
         };
         if (meta.cover) {
           meta.cover = post_assets_fixer(meta.cover);
