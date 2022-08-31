@@ -290,7 +290,11 @@ function parsePost(target, options = {}) {
                                     result = src;
                             });
                             if (result === null) {
-                                const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' + (0, upath_1.basename)(str) + '.log');
+                                const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' +
+                                    (0, upath_1.basename)(str)
+                                        .replace(/['"](.*)['"]/gim, '')
+                                        .trim() +
+                                    '.log');
                                 if (!(0, fs_1.existsSync)((0, upath_1.dirname)(log)))
                                     (0, fs_1.mkdirSync)((0, upath_1.dirname)(log), { recursive: true });
                                 (0, fs_1.writeFileSync)(log, JSON.stringify({ str, f1, f2, f3, f4 }));
