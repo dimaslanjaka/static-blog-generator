@@ -51,10 +51,10 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   // setup merge on pull strategy
-  await git('config', 'pull.rebase', 'false');
+  await git({ stdio: 'ignore' }, 'config', 'pull.rebase', 'false');
   // setup end of line LF
   // https://stackoverflow.com/a/13154031
-  await git('config', 'core.autocrlf', 'false');
+  await git({ stdio: 'ignore' }, 'config', 'core.autocrlf', 'false');
 
   // add CNAME if hostname settled
   if ('host' in configDeploy || 'hostname' in configDeploy) {
@@ -69,6 +69,7 @@ export const deployerGit = async (done?: TaskCallback) => {
   if ('name' in configDeploy || 'username' in configDeploy) {
     console.log(logname, 'user name found, setting up...');
     await git(
+      { stdio: 'ignore' },
       'config',
       'user.name',
       configDeploy['name'] || configDeploy['username']
@@ -76,7 +77,12 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
   if ('email' in configDeploy) {
     console.log(logname, 'user email found, setting up...');
-    await git('config', 'user.email', configDeploy['email']);
+    await git(
+      { stdio: 'ignore' },
+      'config',
+      'user.email',
+      configDeploy['email']
+    );
   }
 
   // compress git databases
@@ -89,13 +95,25 @@ export const deployerGit = async (done?: TaskCallback) => {
   }
 
   try {
-    await git('remote', 'add', 'origin', configDeploy['repo']);
+    await git(
+      { stdio: 'ignore' },
+      'remote',
+      'add',
+      'origin',
+      configDeploy['repo']
+    );
   } catch (e1) {
     try {
-      await git('remote', 'set-url', 'origin', configDeploy['repo']);
+      await git(
+        { stdio: 'ignore' },
+        'remote',
+        'set-url',
+        'origin',
+        configDeploy['repo']
+      );
     } catch (e2) {
-      if (e1) console.log('error add origin', e1);
-      if (e2) console.log('error set-url origin', e2);
+      if (e1 instanceof Error) console.log('error add origin', e1);
+      if (e2 instanceof Error) console.log('error set-url origin', e2);
     }
   }
 
