@@ -143,6 +143,8 @@ exclude:
   - "**/guzzle/**"
   - "**/exclude/**"
   - "**/hexo-post-parser/**"
+  - "**/node_modules/**"
+  - "**/vendor/**"
 ignore:
   - "**/.git"
 # https://hexo.io/docs/configuration.html
