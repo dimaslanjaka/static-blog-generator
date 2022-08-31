@@ -4,6 +4,7 @@ import buildPost from './buildPost';
 import { simplifyDump } from './markdown/transformPosts/postMapper';
 import color from './node/color';
 import { write } from './node/filemanager';
+import { slugify } from './node/sanitize-filename';
 import parsePost from './parsePost';
 
 rmSync(join(__dirname, '../tmp'), { recursive: true, force: true });
@@ -17,7 +18,8 @@ const files = [
   //join(__dirname, '../src-posts/folder with space/file post with space.md'),
   //join(__dirname, '../src-posts/without-updated.md'),
   //join(__dirname, '../src-posts/without-date.md'),
-  join(__dirname, '../src-posts/post-assets-folder/asset-folder.md')
+  join(__dirname, '../src-posts/post-assets-folder/asset-folder.md'),
+  'D:/Repositories/static-blog-generator/tests/src-posts/Tests/post-assets.md'
 ];
 
 files.forEach(async (file) => {
@@ -41,12 +43,12 @@ files.forEach(async (file) => {
     if (parse && parse.metadata) {
       const filename = parse.metadata.title;
       const mdFile = await write(
-        join(__dirname, '../tmp/test/parsePost', filename + '.md'),
+        join(__dirname, '../tmp/test/parsePost', slugify(filename) + '.md'),
         buildPost(parse)
       );
 
       const jsonFile = await write(
-        join(__dirname, '../tmp/test/parsePost', filename + '.json'),
+        join(__dirname, '../tmp/test/parsePost', slugify(filename) + '.json'),
         simplifyDump(parse)
       );
 

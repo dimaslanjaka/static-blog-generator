@@ -39,7 +39,7 @@ const reservedRe = /^\.+$/;
 const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
 const windowsTrailingRe = /[\. ]+$/;
 
-function sanitize(input, replacement) {
+function sanitize(input: string, replacement: string) {
   if (typeof input !== 'string') {
     throw new Error('Input must be string');
   }
@@ -58,4 +58,16 @@ export default function sanitizeFilename(input: string, replacement = '') {
     return output;
   }
   return sanitize(output, '');
+}
+
+/**
+ * transform path to slugify version
+ * @param str
+ * @returns
+ */
+export function slugify(str: string) {
+  return str
+    .split(/[\s+]/)
+    .filter((str) => str.trim().length > 0)
+    .join('-');
 }

@@ -1,5 +1,5 @@
 import { deepmerge } from 'deepmerge-ts';
-import { existsSync, readFileSync, statSync } from 'fs';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'fs';
 import cache from 'persistent-cache';
 import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
@@ -371,7 +371,7 @@ export async function parsePost(
           if (str.startsWith('//')) str = 'http:' + str;
           if (str.includes('%20')) str = decodeURIComponent(str);
           if (!isValidHttpUrl(str) && !str.startsWith('/')) {
-            let result: string;
+            let result: string | null = null;
             /** search from same directory */
             const f1 = join(dirname(publicFile), str);
             /** search from parent directory */
@@ -380,10 +380,16 @@ export async function parsePost(
             const f3 = join(cwd(), str);
             const f4 = join(post_generated_dir, str);
             [f1, f2, f3, f4].forEach((src) => {
+              if (result !== null) return;
               if (existsSync(src) && !result) result = src;
             });
-            if (!result) {
-              console.log(logname, '[fail]', str);
+            if (result === null) {
+              const log = join(
+                __dirname,
+                '../tmp/errors/post-asset-folder/' + basename(str) + '.log'
+              );
+              writeFileSync(log, JSON.stringify({ str, f1, f2, f3, f4 }));
+              console.log(logname, color.redBright('[fail]'), { str, log });
             } else {
               result = replaceArr(
                 result,
