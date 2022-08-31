@@ -392,7 +392,11 @@ export async function parsePost(
             if (result === null) {
               const log = join(
                 __dirname,
-                '../tmp/errors/post-asset-folder/' + basename(str) + '.log'
+                '../tmp/errors/post-asset-folder/' +
+                  basename(str)
+                    .replace(/['"](.*)['"]/gim, '')
+                    .trim() +
+                  '.log'
               );
               if (!existsSync(dirname(log)))
                 mkdirSync(dirname(log), { recursive: true });
