@@ -2,6 +2,7 @@ var Hexo = require('hexo');
 var gulp = require('gulp');
 const { getConfig } = require('static-blog-generator');
 const { join } = require('upath');
+const { spawn } = require('hexo-util');
 const dom = require('gulp-dom');
 const sf = require('safelinkify');
 var hexo = new Hexo(process.cwd(), {});
@@ -76,4 +77,16 @@ gulp.task('default', async () => {
       });
     });
   });
+});
+
+gulp.task('commit', async () => {
+  const opt = { cwd: __dirname };
+  await spawn('git', ['add', '-A'], opt);
+  await spawn('git', ['submodule', 'foreach', 'git', 'add', '-A'], opt);
+  await spawn('git', ['commit', '-m', 'update ' + new Date()], opt);
+  await spawn(
+    'git',
+    ['submodule', 'foreach', 'git', 'commit', '-m', 'update ' + new Date()],
+    opt
+  );
 });
