@@ -264,26 +264,28 @@ function parsePost(target, options = {}) {
                     : (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
                 // @todo fix post_asset_folder
                 if (options.fix) {
-                    const post_assets_fixer = (str) => {
+                    const post_assets_fixer = (sourcePath) => {
                         const logname = color_1.default['Teal Blue']('[PAF]');
                         if (!publicFile)
-                            return str;
+                            return sourcePath;
+                        // replace extended title from source
+                        sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
                         // return base64 image
-                        if (str.startsWith('data:image'))
-                            return str;
-                        if (str.startsWith('//'))
-                            str = 'http:' + str;
-                        if (str.includes('%20'))
-                            str = decodeURIComponent(str);
-                        if (!(0, utils_1.isValidHttpUrl)(str) && !str.startsWith('/')) {
+                        if (sourcePath.startsWith('data:image'))
+                            return sourcePath;
+                        if (sourcePath.startsWith('//'))
+                            sourcePath = 'http:' + sourcePath;
+                        if (sourcePath.includes('%20'))
+                            sourcePath = decodeURIComponent(sourcePath);
+                        if (!(0, utils_1.isValidHttpUrl)(sourcePath) && !sourcePath.startsWith('/')) {
                             let result = null;
                             /** search from same directory */
-                            const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), str);
+                            const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), sourcePath);
                             /** search from parent directory */
-                            const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), str);
+                            const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), sourcePath);
                             /** search from root directory */
-                            const f3 = (0, upath_1.join)(cwd(), str);
-                            const f4 = (0, upath_1.join)(_config_1.post_generated_dir, str);
+                            const f3 = (0, upath_1.join)(cwd(), sourcePath);
+                            const f4 = (0, upath_1.join)(_config_1.post_generated_dir, sourcePath);
                             [f1, f2, f3, f4].forEach((src) => {
                                 if (result !== null)
                                     return;
@@ -292,15 +294,15 @@ function parsePost(target, options = {}) {
                             });
                             if (result === null) {
                                 const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' +
-                                    (0, sanitize_filename_1.default)((0, upath_1.basename)(str)
-                                        .replace(/['"](.*)['"]/gim, '')
-                                        .trim(), '-') +
+                                    (0, sanitize_filename_1.default)((0, upath_1.basename)(sourcePath).trim(), '-') +
                                     '.log');
-                                sanitize_filename_1.default;
                                 if (!(0, fs_1.existsSync)((0, upath_1.dirname)(log)))
                                     (0, fs_1.mkdirSync)((0, upath_1.dirname)(log), { recursive: true });
-                                (0, fs_1.writeFileSync)(log, JSON.stringify({ str, f1, f2, f3, f4 }));
-                                console.log(logname, color_1.default.redBright('[fail]'), { str, log });
+                                (0, fs_1.writeFileSync)(log, JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }));
+                                console.log(logname, color_1.default.redBright('[fail]'), {
+                                    str: sourcePath,
+                                    log
+                                });
                             }
                             else {
                                 result = (0, utils_2.replaceArr)(result, [cwd(), 'source/', '_posts', 'src-posts'], '/').replace(/\/+/, '/');
@@ -310,7 +312,7 @@ function parsePost(target, options = {}) {
                                 return result;
                             }
                         }
-                        return str;
+                        return sourcePath;
                     };
                     if (meta.cover) {
                         meta.cover = post_assets_fixer(meta.cover);
