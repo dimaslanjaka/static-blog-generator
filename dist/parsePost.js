@@ -294,7 +294,7 @@ function parsePost(target, options = {}) {
                                 const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' +
                                     (0, sanitize_filename_1.default)((0, upath_1.basename)(str)
                                         .replace(/['"](.*)['"]/gim, '')
-                                        .trim()) +
+                                        .trim(), '-') +
                                     '.log');
                                 sanitize_filename_1.default;
                                 if (!(0, fs_1.existsSync)((0, upath_1.dirname)(log)))
