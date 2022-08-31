@@ -119,8 +119,16 @@ export const deployerGit = async (done?: TaskCallback) => {
     }
   }
 
+  // check submodule
+  const hasSubmodule =
+    existsSync(join(deployDir, '.gitmodules')) ||
+    (await isGitHasSubmodule(deployDir));
+  if (hasSubmodule) {
+    console.log(logname, 'fetching submodules...');
+    await git('submodule', 'foreach', 'git', 'fetch', '--all');
+  }
   // fetch all
-  console.log(logname, 'fetch --all');
+  console.log(logname, 'fetching...');
   await git('fetch', '--all');
   // reset latest origin https://stackoverflow.com/a/8888015/6404439
   console.log(logname, 'reset from latest origin/' + configDeploy['branch']);
@@ -130,12 +138,8 @@ export const deployerGit = async (done?: TaskCallback) => {
   await git('checkout', '-f', configDeploy['branch']);
   // pull origin
   await git('pull', 'origin', configDeploy['branch']);
-  // check submodule
-  const hasSubmodule =
-    existsSync(join(deployDir, '.gitmodules')) ||
-    (await isGitHasSubmodule(deployDir));
   if (hasSubmodule) {
-    console.log(logname, 'submodule found, updating...');
+    console.log(logname, 'updating submodules...');
     await git('submodule', 'update', '-i', '-r');
   }
 
