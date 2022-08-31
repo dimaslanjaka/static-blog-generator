@@ -11,7 +11,8 @@ declare class spawner {
      * @param args
      * @returns
      * @example
-     * spawner.promise({}, 'git', 'log', '-n', '1').then((res)=> console.log(res))
+     * spawner.promise({}, 'git', 'log', '-n', '1').then(console.log);
+     * spawner.promise({stdio:'pipe'}, 'git', 'submodule', 'status').then(console.log);
      */
     static promise(options: null | SpawnOptions, cmd: string, ...args: string[]): Promise<{
         code: number;
