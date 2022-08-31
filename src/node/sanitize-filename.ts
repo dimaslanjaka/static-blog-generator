@@ -52,6 +52,12 @@ function sanitize(input: string, replacement: string) {
   return truncate(sanitized, 255);
 }
 
+/**
+ * clean string for safe filename
+ * @param input
+ * @param replacement default empty string
+ * @returns
+ */
 export default function sanitizeFilename(input: string, replacement = '') {
   const output = sanitize(input, replacement);
   if (replacement === '') {

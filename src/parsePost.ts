@@ -16,6 +16,7 @@ import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import color from './node/color';
 import { normalize } from './node/filemanager';
 import { md5FileSync } from './node/md5-file';
+import sanitizeFilename from './node/sanitize-filename';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import { parsePermalink } from './parsePermalink';
 import { shortcodeCodeblock } from './shortcodes/codeblock';
@@ -393,11 +394,14 @@ export async function parsePost(
               const log = join(
                 __dirname,
                 '../tmp/errors/post-asset-folder/' +
-                  basename(str)
-                    .replace(/['"](.*)['"]/gim, '')
-                    .trim() +
+                  sanitizeFilename(
+                    basename(str)
+                      .replace(/['"](.*)['"]/gim, '')
+                      .trim()
+                  ) +
                   '.log'
               );
+              sanitizeFilename;
               if (!existsSync(dirname(log)))
                 mkdirSync(dirname(log), { recursive: true });
               writeFileSync(log, JSON.stringify({ str, f1, f2, f3, f4 }));
