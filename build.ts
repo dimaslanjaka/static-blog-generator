@@ -65,7 +65,7 @@ function updateVersion() {
               'npm install && npm audit fix',
               { cwd: __dirname },
               async () => {
-                await git(
+                /*await git(
                   { cwd: __dirname, stdio: 'ignore' },
                   'add',
                   'package.json'
@@ -80,7 +80,7 @@ function updateVersion() {
                   'commit',
                   '-m',
                   `[${srcHash}] update ${hash}`
-                );
+                );*/
               }
             );
           }
