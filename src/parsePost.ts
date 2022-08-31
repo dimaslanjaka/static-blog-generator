@@ -397,7 +397,8 @@ export async function parsePost(
                   sanitizeFilename(
                     basename(str)
                       .replace(/['"](.*)['"]/gim, '')
-                      .trim()
+                      .trim(),
+                    '-'
                   ) +
                   '.log'
               );

@@ -45,15 +45,18 @@ function updateVersion() {
           const srcErr = result.err;
           const srcHash = result.hash;
           if (!err) {
-            console.log('Described this branch', hash);
+            //console.log('Described this branch', hash);
           }
           if (!srcErr) {
-            console.log('Last commit hash ./src', srcHash);
+            //console.log('Last commit hash ./src', srcHash);
           }
 
           if (typeof hash === 'string' && hash.length > 1) {
-            hash = hash.trim().replace(/^v/, '');
-            pkg.version = hash;
+            const parse = hash
+              .trim()
+              .replace(/^v|-dirty$/gim, '')
+              .split('-');
+            pkg.version = parse[0] + '-' + parse[1] + '-' + srcHash;
             writeFile(
               join(__dirname, 'package.json'),
               JSON.stringify(pkg, null, 2)
