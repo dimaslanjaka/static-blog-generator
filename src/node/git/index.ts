@@ -8,7 +8,7 @@ import spawner from '../spawner';
 
 /**
  * git command
- * @param options git argument or spawn options
+ * @param optionsOrCmd git argument or spawn options
  * @param args git variadic arguments
  * @returns
  * @example
@@ -17,21 +17,23 @@ import spawner from '../spawner';
  * await git('push');
  */
 export function git(
-  options: null | string | SpawnOptions = null,
+  optionsOrCmd: null | string | SpawnOptions = null,
   ...args: string[]
 ) {
-  if (typeof options === 'object') {
-    return spawner.promise(options, 'git', ...args);
-  } else {
-    return spawner.promise(
-      {
-        cwd: deployDir
-        //stdio: 'inherit'
-      },
-      'git',
-      options,
-      ...args
-    );
+  if (optionsOrCmd !== null) {
+    if (typeof optionsOrCmd === 'object') {
+      return spawner.promise(optionsOrCmd, 'git', ...args);
+    } else if (typeof optionsOrCmd === 'string') {
+      return spawner.promise(
+        {
+          cwd: deployDir
+          //stdio: 'inherit'
+        },
+        'git',
+        optionsOrCmd,
+        ...args
+      );
+    }
   }
 }
 

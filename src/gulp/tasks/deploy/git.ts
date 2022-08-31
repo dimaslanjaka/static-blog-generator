@@ -24,7 +24,7 @@ const copyGenerated = () => {
  * @returns
  */
 export const deployerGit = async (done?: TaskCallback) => {
-  // create deploy folder
+  // create deploy folder if not exist
   if (!existsSync(deployDir)) mkdirSync(deployDir);
   // process start
   const configDeploy = config.deploy;
