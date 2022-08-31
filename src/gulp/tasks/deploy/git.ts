@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import { TaskCallback } from 'undertaker';
 import color from '../../../node/color';
 import { join, mkdirSync, resolve, write } from '../../../node/filemanager';
-import git, { getLatestCommitHash } from '../../../node/git';
+import git, { getLatestCommitHash, isGitHasSubmodule } from '../../../node/git';
 import { modMoment } from '../../../renderer/helpers/date';
 import config, { post_generated_dir } from '../../../types/_config';
 import { beforeDeploy } from './beforeDeploy';
@@ -129,7 +129,9 @@ export const deployerGit = async (done?: TaskCallback) => {
   // pull origin
   await git('pull', 'origin', configDeploy['branch']);
   // check submodule
-  const hasSubmodule = existsSync(join(deployDir, '.gitmodules'));
+  const hasSubmodule =
+    existsSync(join(deployDir, '.gitmodules')) ||
+    (await isGitHasSubmodule(deployDir));
   if (hasSubmodule) {
     console.log(logname, 'submodule found, updating...');
     await git('submodule', 'update', '-i', '-r');
@@ -138,16 +140,27 @@ export const deployerGit = async (done?: TaskCallback) => {
   return copyGenerated().on('end', async () => {
     console.log(logname, 'processing files before deploy...');
     await beforeDeploy(post_generated_dir);
+
+    // add
     console.log(logname, 'adding files...');
     await git('add', '-A');
-    console.log(logname, 'comitting...');
+    if (hasSubmodule) {
+      await git('submodule', 'foreach', 'git', 'add', '-A');
+    }
+
+    // commit
+    console.log(logname, 'commiting...');
     let msg = 'Update site';
     if (existsSync(join(process.cwd(), '.git'))) {
       msg += ' ' + (await getLatestCommitHash());
     }
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
+    if (hasSubmodule) {
+      await git('submodule', 'foreach', 'git', 'commit', '-m', msg);
+    }
 
+    // push
     console.log(logname, `pushing ${configDeploy['branch']}...`);
     if (
       Object.hasOwnProperty.call(configDeploy, 'force') &&
@@ -163,6 +176,11 @@ export const deployerGit = async (done?: TaskCallback) => {
       );
     } else {
       await git('push', '--set-upstream', 'origin', configDeploy['branch']);
+    }
+
+    if (hasSubmodule) {
+      console.log(logname, 'pushing submodules...');
+      await git('submodule', 'foreach', 'git', 'push');
     }
 
     console.log(logname, 'deploy merged with origin successful');

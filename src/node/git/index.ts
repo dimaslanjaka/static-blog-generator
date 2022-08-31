@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import { SpawnOptions } from 'child_process';
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
@@ -15,6 +16,8 @@ import spawner from '../spawner';
  * await git('add', '-A');
  * await git('commit', '-m', 'commit messages');
  * await git('push');
+ * // async the result
+ * git({stdio:'pipe'}, 'submodule', 'status').then(console.log);
  */
 export function git(
   optionsOrCmd: null | string | SpawnOptions = null,
@@ -79,6 +82,29 @@ export const getLatestCommitHash = async (
   const res = await git(options, ...args);
   return res.stdout[0] as string;
 };
+
+/**
+ * check if git has submodule
+ * @param gitDir git directory
+ * @returns
+ */
+export function isGitHasSubmodule(gitDir: string) {
+  return new Bluebird((resolve: (a: boolean) => any) => {
+    git(
+      { stdio: 'pipe', cwd: gitDir },
+      'submodule',
+      'status',
+      '--recursive'
+    ).then((o) => {
+      if ('stdout' in o) {
+        if (Array.isArray(o.stdout) && o.stdout.length > 0) {
+          return resolve(true);
+        }
+      }
+      return resolve(false);
+    });
+  });
+}
 
 /**
  * git describe
