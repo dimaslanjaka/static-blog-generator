@@ -298,7 +298,7 @@ function parsePost(target, options = {}) {
                                     '.log');
                                 if (!(0, fs_1.existsSync)((0, upath_1.dirname)(log)))
                                     (0, fs_1.mkdirSync)((0, upath_1.dirname)(log), { recursive: true });
-                                (0, fs_1.writeFileSync)(log, JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }));
+                                (0, fs_1.writeFileSync)(log, JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2));
                                 console.log(logname, color_1.default.redBright('[fail]'), {
                                     str: sourcePath,
                                     log
