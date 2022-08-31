@@ -29,8 +29,8 @@ export function git(
     } else if (typeof optionsOrCmd === 'string') {
       return spawner.promise(
         {
-          cwd: deployDir
-          //stdio: 'inherit'
+          cwd: deployDir,
+          stdio: 'inherit'
         },
         'git',
         optionsOrCmd,
