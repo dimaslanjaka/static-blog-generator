@@ -135,10 +135,13 @@ export const deployerGit = async (done?: TaskCallback) => {
   // reset latest origin https://stackoverflow.com/a/8888015/6404439
   console.log(logname, 'reset from latest origin/' + configDeploy['branch']);
   await git('reset', '--hard', 'origin/' + configDeploy['branch']);
+
   // checkout origin branch
   console.log(logname, 'checkout ' + configDeploy['branch']);
   await git('checkout', '-f', configDeploy['branch']);
+
   // pull origin
+  console.log(logname, 'updating...');
   await git('pull', 'origin', configDeploy['branch']);
   if (hasSubmodule) {
     console.log(logname, 'updating submodules...');
