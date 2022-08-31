@@ -404,7 +404,7 @@ export async function parsePost(
                 mkdirSync(dirname(log), { recursive: true });
               writeFileSync(
                 log,
-                JSON.stringify({ str: sourcePath, f1, f2, f3, f4 })
+                JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2)
               );
               console.log(logname, color.redBright('[fail]'), {
                 str: sourcePath,
