@@ -275,7 +275,7 @@ function parsePost(target, options = {}) {
                         if (str.includes('%20'))
                             str = decodeURIComponent(str);
                         if (!(0, utils_1.isValidHttpUrl)(str) && !str.startsWith('/')) {
-                            let result;
+                            let result = null;
                             /** search from same directory */
                             const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), str);
                             /** search from parent directory */
@@ -284,11 +284,15 @@ function parsePost(target, options = {}) {
                             const f3 = (0, upath_1.join)(cwd(), str);
                             const f4 = (0, upath_1.join)(_config_1.post_generated_dir, str);
                             [f1, f2, f3, f4].forEach((src) => {
+                                if (result !== null)
+                                    return;
                                 if ((0, fs_1.existsSync)(src) && !result)
                                     result = src;
                             });
-                            if (!result) {
-                                console.log(logname, '[fail]', str);
+                            if (result === null) {
+                                const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' + (0, upath_1.basename)(str) + '.log');
+                                (0, fs_1.writeFileSync)(log, JSON.stringify({ str, f1, f2, f3, f4 }));
+                                console.log(logname, color_1.default.redBright('[fail]'), { str, log });
                             }
                             else {
                                 result = (0, utils_2.replaceArr)(result, [cwd(), 'source/', '_posts', 'src-posts'], '/').replace(/\/+/, '/');
