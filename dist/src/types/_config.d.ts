@@ -37,6 +37,14 @@ export declare type ProjectConfig = projectImportData & PrivateProjectConfig & t
 };
 declare let config: ProjectConfig;
 /**
+ * Config Deployment
+ */
+export declare const configDeploy: import("./_config.default").SBGDeploy;
+/**
+ * Deployment Directory
+ */
+export declare const deployDir: string;
+/**
  * is process using cache strategy?
  */
 export declare const useCache: boolean;
