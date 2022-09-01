@@ -168,6 +168,7 @@ export const deployerGit = async (done?: TaskCallback) => {
     msg += '\ndate: ' + modMoment().format();
     await git('commit', '-m', msg);
     if (hasSubmodule) {
+      console.log(logname, 'commiting submodules...');
       await git('submodule', 'foreach', 'git', 'commit', '-m', msg);
     }
 
