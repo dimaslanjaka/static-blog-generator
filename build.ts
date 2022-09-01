@@ -76,6 +76,9 @@ async function update_version() {
     getLatestCommitHash(join(__dirname, 'src'))
   ])
     .spread((info: GitInfo, srcInfo: string) => {
+      /**
+       * new version
+       */
       const newVer =
         info.semver.major +
         '.' +
@@ -109,16 +112,17 @@ async function update_version() {
         .promise({ cwd: __dirname }, 'npm', 'install')
         .then(() => spawner.promise({ cwd: __dirname }, 'npm', 'audit', 'fix'))
         .then(() => {
-          gitAddAndCommit('dist', `update from ${srcInfo}`, {
-            cwd: __dirname
-          });
-          /*gitAddAndCommit('package.json', `update from ${srcInfo}`, {
+          gitAddAndCommit('package.json', `update from ${srcInfo}`, {
             cwd: __dirname
           }).then(() => {
             gitAddAndCommit('package-lock.json', `update from ${srcInfo}`, {
               cwd: __dirname
-            })
-          });*/
+            }).then(() => {
+              gitAddAndCommit('dist', `update from ${srcInfo}`, {
+                cwd: __dirname
+              });
+            });
+          });
         });
     })
     .catch((err) => console.error(err));
