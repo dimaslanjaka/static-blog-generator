@@ -44,7 +44,7 @@
     "format": "run-p format:**",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --write --parser html -w ./themes/**/*.ejs",
-    "update": "install-repo",
+    "update": "node ./bin/install-repo.js",
     "clean-install": "npm install --ignore-engines --ignore-platform",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "update-version": "npm version $(git describe)",
