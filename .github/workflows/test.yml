@@ -74,11 +74,9 @@ jobs:
       - name: Manual push
         continue-on-error: true
         run: |
-          git config --global user.email "dimaslanjaka@gmail.com"
-          git config --global user.name "dimaslanjaka"
+          npx sbg deploy
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io.git .deploy_git
           cd .deploy_git && git add -A && git commit -m "update site from ${{ steps.vars.outputs.hash }}" && git push origin master
-      # npx sbg deploy
         #working-directory: .deploy_git
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
