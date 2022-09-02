@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import htmlmin from 'html-minifier-terser';
+import htmlmin, { Options } from 'html-minifier-terser';
 import { TaskCallback } from 'undertaker';
 import color from '../../node/color';
 import { globSrc, join, read, write } from '../../node/filemanager';
@@ -14,7 +14,7 @@ const logname = color['Blue Violet']('[generate]') + color.Indigo('[minify]');
  * @returns
  */
 function MinifyHTML(
-  options?: htmlmin.Options,
+  options?: Options,
   callback?: CallableFunction & (() => any)
 ) {
   const workdir = join(cwd(), config.public_dir);
