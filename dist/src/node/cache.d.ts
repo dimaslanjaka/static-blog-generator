@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import memoizee from 'memoizee';
 import { TypedEmitter } from 'tiny-typed-emitter';
 import { DynamicObject } from '../types';
@@ -126,26 +127,54 @@ export default class CacheFile extends TypedEmitter<CacheFileEvent> {
  * @returns
  */
 export declare const pcache: ((name: string) => {
-    put: (name: string, data: any, callback: any) => any;
-    get: <T>(name: string, callback: (err: Error, data: T) => any) => any;
-    delete: (name: string, callback: any) => void;
-    deleteSync: (name: string) => void;
+    put: (name: string, data: any, cb: {
+        (err: NodeJS.ErrnoException): void;
+        (e: Error, ...args: any[]): any;
+    }) => any;
+    set: (name: string, data: any, cb: {
+        (err: NodeJS.ErrnoException): void;
+        (e: Error, ...args: any[]): any;
+    }) => any;
+    get: (name: string, cb?: (e: Error) => any) => any;
+    delete: (name: string, cb: {
+        (e: Error, ...args: any[]): any;
+        (err: NodeJS.ErrnoException): void;
+    }) => void;
     putSync: (name: string, data: any) => void;
-    getSync: <T_1>(name: string) => T_1;
-    keys: (callback: (keys: string[]) => any) => any;
-    keysSync: () => string[];
-    unlink: (callback: any) => any;
-    valuesSync: <T_2 extends any[]>() => T_2;
+    setSync: (name: string, data: any) => void;
+    getSync: <T = string>(name: string) => T;
+    deleteSync: (name: any) => void;
+    keys: (cb: (e: Error, ...args: any[]) => any) => any;
+    keysSync: () => any[];
+    valuesSync: () => any[];
+    unlink: (cb: {
+        (e: Error, ...args: any[]): any;
+        (e: Error, ...args: any[]): any;
+    }) => any;
 }) & memoizee.Memoized<(name: string) => {
-    put: (name: string, data: any, callback: any) => any;
-    get: <T>(name: string, callback: (err: Error, data: T) => any) => any;
-    delete: (name: string, callback: any) => void;
-    deleteSync: (name: string) => void;
+    put: (name: string, data: any, cb: {
+        (err: NodeJS.ErrnoException): void;
+        (e: Error, ...args: any[]): any;
+    }) => any;
+    set: (name: string, data: any, cb: {
+        (err: NodeJS.ErrnoException): void;
+        (e: Error, ...args: any[]): any;
+    }) => any;
+    get: (name: string, cb?: (e: Error) => any) => any;
+    delete: (name: string, cb: {
+        (e: Error, ...args: any[]): any;
+        (err: NodeJS.ErrnoException): void;
+    }) => void;
     putSync: (name: string, data: any) => void;
-    getSync: <T_1>(name: string) => T_1;
-    keys: (callback: (keys: string[]) => any) => any;
-    keysSync: () => string[];
-    unlink: (callback: any) => any;
-    valuesSync: <T_2 extends any[]>() => T_2;
+    setSync: (name: string, data: any) => void;
+    getSync: <T = string>(name: string) => T;
+    deleteSync: (name: any) => void;
+    keys: (cb: (e: Error, ...args: any[]) => any) => any;
+    keysSync: () => any[];
+    valuesSync: () => any[];
+    unlink: (cb: {
+        (e: Error, ...args: any[]): any;
+        (e: Error, ...args: any[]): any;
+    }) => any;
 }>;
 export {};
