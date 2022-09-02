@@ -9,7 +9,8 @@
     "deploy": "npm run build && sbg deploy",
     "server": "hexo server",
     "server-php": "php -S localhost:4000 -t public",
-    "postinstall": "node bin/update-cache.js"
+    "postinstall": "node bin/update-cache.js",
+    "update": "npx npm-check-updates -u -x hexo,chalk"
   },
   "hexo": {
     "version": "6.2.0"
@@ -18,7 +19,7 @@
     "bluebird": "^3.7.2",
     "hexo": "^6.2.0",
     "hexo-adsense": "file:../hexo-adsense",
-    "hexo-asset-link": "^2.1.0",
+    "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
     "hexo-front-matter": "github:hexojs/hexo-front-matter",
     "hexo-fs": "^3.1.0",
@@ -33,24 +34,24 @@
     "hexo-generator-tag": "^1.0.0",
     "hexo-github-card": "^1.0.5",
     "hexo-i18n": "^1.0.0",
-    "hexo-log": "^3.0.0",
+    "hexo-log": "^3.2.0",
     "hexo-pagination": "^2.0.0",
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^5.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-util": "^2.5.0",
+    "hexo-util": "^2.7.0",
     "node-sass": "^7.0.1",
-    "warehouse": "^4.0.1"
+    "warehouse": "^4.0.2"
   },
   "devDependencies": {
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-dom": "^1.0.0",
@@ -60,7 +61,7 @@
     "safelinkify": "file:../safelink",
     "static-blog-generator": "file:../static-blog-generator",
     "through2": "^4.0.2",
-    "ts-node": "^10.8.1",
-    "typescript": "^4.7.4"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
   }
 }
