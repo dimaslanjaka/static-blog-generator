@@ -1,4 +1,4 @@
-/// <reference types="node/JSON" />
+/// <reference types="node/json" />
 /**
  * json_encode PHP equivalent
  * * support circular refs
