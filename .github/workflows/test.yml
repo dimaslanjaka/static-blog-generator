@@ -71,7 +71,12 @@ jobs:
       - run: npx sbg copy --nocache
       - run: npx hexo generate
       - run: npx gulp safelink
-      - run: npx sbg deploy
+      - name: Manual push
+        continue-on-error: true
+        run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+          npx sbg deploy
       #- run: git init && git remote set-url https://github.com/dimaslanjaka/dimaslanjaka.github.io.git && git add -A && git commit -m "update site from ${{ steps.vars.outputs.hash }}" && git push origin master
         #working-directory: .deploy_git
       - name: Deploy 🚀
