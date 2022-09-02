@@ -12,7 +12,7 @@ JSON.stringifyWithCircularRefs = (function () {
     path.length = 1;
   }
 
-  function updateParents(key, value) {
+  function updateParents(key: string, value: any) {
     let idx = parents.length - 1;
     let prev = parents[idx];
     if (prev[key] === value || idx === 0) {
@@ -34,7 +34,7 @@ JSON.stringifyWithCircularRefs = (function () {
     }
   }
 
-  function checkCircular(key, value) {
+  function checkCircular(key: string, value: any) {
     if (value != null) {
       if (typeof value === 'object') {
         if (key) {
