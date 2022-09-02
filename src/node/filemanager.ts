@@ -98,21 +98,29 @@ const filemanager = {
    * input.then((file)=> console.log('written to', file));
    */
   write: (path: fs.PathLike, content: any, append = false) => {
-    const dir = modPath.dirname(path.toString());
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (typeof content != 'string') {
-      if (typeof content == 'object') {
-        content = json_encode(content, 4);
-      } else {
-        content = String(content);
+    return new Bluebird(
+      (resolve: (arg: fs.PathLike) => any, reject: (e: Error) => any) => {
+        try {
+          const dir = modPath.dirname(path.toString());
+          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+          if (typeof content != 'string') {
+            if (typeof content == 'object') {
+              content = json_encode(content, 4);
+            } else {
+              content = String(content);
+            }
+          }
+          if (!append) {
+            fs.writeFileSync(path, content);
+          } else {
+            fs.appendFileSync(path, content);
+          }
+          resolve(path);
+        } catch (error) {
+          reject(error);
+        }
       }
-    }
-    if (!append) {
-      fs.writeFileSync(path, content);
-    } else {
-      fs.appendFileSync(path, content);
-    }
-    return Bluebird.resolve(path);
+    );
   },
 
   /**
