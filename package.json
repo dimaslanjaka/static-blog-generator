@@ -149,7 +149,7 @@
     "@types/hexo-util": "^0.6.4",
     "@types/html-minifier-terser": "^6.1.0",
     "@types/jquery": "^3.5.14",
-    "@types/jsdom": "^16.2.14",
+    "@types/jsdom": "^20.0.0",
     "@types/less": "^3.0.3",
     "@types/lodash": "^4.14.182",
     "@types/lru-cache": "^7.6.1",
