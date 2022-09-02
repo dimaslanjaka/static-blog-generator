@@ -5,7 +5,7 @@ export declare class CachePost {
     constructor();
     set(key: string, value: any): this;
     get<T>(key: string): T;
-    getKeys(): string[];
+    getKeys(): any[];
     getAll(): postMap[];
     /**
      * get total posts
