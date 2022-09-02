@@ -1,11 +1,14 @@
-@echo off
+@ECHO OFF
 
-npm un hexo-post-parser persistent-cache sbg-themes safelinkify
-npm i git+https://github.com/dimaslanjaka/persistent-cache#improve2
-npm i git+https://github.com/dimaslanjaka/safelink#master
-npm i git+https://github.com/dimaslanjaka/hexo-post-parser#master
-npm i git+https://github.com/dimaslanjaka/persistent-cache#improve2
-npm i git+https://github.com/dimaslanjaka/google-news-sitemap#master
-npm install -O https://github.com/dimaslanjaka/sbg-themes.git
-npm i -D git+https://github.com/dimaslanjaka/nodejs-package-types#through2
-node scripts/preinstall.js
+rem sample https://github.com/npm/cli/blob/latest/bin/npx.cmd
+
+SETLOCAL
+
+SET "NODE_EXE=%~dp0\node.exe"
+IF NOT EXIST "%NODE_EXE%" (
+  SET "NODE_EXE=node"
+)
+
+SET "SBG_CLI=%~dp0\install-repo.js"
+
+"%NODE_EXE%" "%SBG_CLI%" %*
