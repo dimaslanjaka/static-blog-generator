@@ -1,12 +1,11 @@
-var Hexo = require('hexo');
-var gulp = require('gulp');
-const { getConfig } = require('static-blog-generator');
-const { join } = require('upath');
-const { spawn } = require('hexo-util');
-const dom = require('gulp-dom');
-const sf = require('safelinkify');
-const Bluebird = require('bluebird');
-var hexo = new Hexo(process.cwd(), {});
+import gulp from 'gulp';
+import dom from 'gulp-dom';
+import Hexo from 'hexo';
+import { spawn } from 'hexo-util';
+import sf from 'safelinkify';
+import { getConfig } from 'static-blog-generator';
+import { join } from 'upath';
+const hexo = new Hexo(process.cwd(), {});
 
 gulp.task('safelink', async () => {
   const config = getConfig();
@@ -41,7 +40,7 @@ gulp.task('safelink', async () => {
         if (configSafelink.enable) {
           for (let i = 0; i < elements.length; i++) {
             const a = elements[i];
-            const href = String(a.href).trim();
+            const href = String(a['href']).trim();
             if (new RegExp('^https?://').test(href)) {
               /**
                * match host
@@ -70,7 +69,7 @@ gulp.task('safelink', async () => {
 
 gulp.task('default', async () => {
   hexo.init().then(function () {
-    hexo.load().then(function (err, val) {
+    hexo.load().then(function (_value) {
       //hexo.locals.invalidate();
       const posts = hexo.locals.get('posts');
       posts.forEach((post) => {
@@ -93,8 +92,10 @@ gulp.task('commit', (finish) => {
       cwd: gitDir,
       stdio: 'inherit'
     };
-    return spawn('git', ['add', '-A'], opt)
-      .then(() => spawn('git', ['commit', '-m', 'update ' + new Date()], opt))
+    return spawn('git', ['add', '-A'], <any>opt)
+      .then(() =>
+        spawn('git', ['commit', '-m', 'update ' + new Date()], <any>opt)
+      )
       .catch((e) => {
         if (e instanceof Error) console.log(e.message, gitDir);
       })
