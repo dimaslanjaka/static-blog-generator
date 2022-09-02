@@ -71,13 +71,18 @@ jobs:
       - run: npx sbg copy --nocache
       - run: npx hexo generate
       - run: npx gulp safelink
-      - name: Manual push
+      - name: Manual Build
         continue-on-error: true
         run: |
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io.git .deploy_git
           npx sbg deploy
-          cd .deploy_git && git add -A && git commit -m "update site from ${{ steps.vars.outputs.hash }}" && git push origin master
-        #working-directory: .deploy_git
+      - name: Manual Push
+        working-directory: .deploy_git
+        continue-on-error: true
+        run: |
+          git add -A
+          git commit -m "update site from ${{ steps.vars.outputs.hash }}"
+          git push origin master
       - name: Deploy 🚀
         #if: matrix.os == 'ubuntu-latest' && matrix.node == 16
         if: ${{ false }}
