@@ -74,8 +74,8 @@ jobs:
       - name: Manual push
         continue-on-error: true
         run: |
-          npx sbg deploy
           git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io.git .deploy_git
+          npx sbg deploy
           cd .deploy_git && git add -A && git commit -m "update site from ${{ steps.vars.outputs.hash }}" && git push origin master
         #working-directory: .deploy_git
       - name: Deploy 🚀
