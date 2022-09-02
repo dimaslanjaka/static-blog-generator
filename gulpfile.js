@@ -81,16 +81,16 @@ gulp.task('default', async () => {
 
 gulp.task('commit', (finish) => {
   const opt = { cwd: __dirname };
-  Promise.all([
-    spawn('git', ['add', '-A'], opt),
-    spawn('git', ['submodule', 'foreach', 'git', 'add', '-A'], opt),
-    spawn('git', ['commit', '-m', 'update ' + new Date()], opt),
-    spawn(
-      'git',
-      ['submodule', 'foreach', 'git', 'commit', '-m', 'update ' + new Date()],
-      opt
+  spawn('git', ['add', '-A'], opt)
+    .then(() => spawn('git', ['submodule', 'foreach', 'git', 'add', '-A'], opt))
+    .then(() => spawn('git', ['commit', '-m', 'update ' + new Date()], opt))
+    .then(() =>
+      spawn(
+        'git',
+        ['submodule', 'foreach', 'git', 'commit', '-m', 'update ' + new Date()],
+        opt
+      )
     )
-  ])
     .catch((_) => {
       //
     })
