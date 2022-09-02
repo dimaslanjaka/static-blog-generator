@@ -1,10 +1,10 @@
 import gulp from 'gulp';
-import dom from 'gulp-dom';
 import Hexo from 'hexo';
 import { spawn } from 'hexo-util';
 import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
 import { join } from 'upath';
+import dom from './packages/gulp-dom';
 const hexo = new Hexo(process.cwd(), {});
 
 gulp.task('safelink', async () => {

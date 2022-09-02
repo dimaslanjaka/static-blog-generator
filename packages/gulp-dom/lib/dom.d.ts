@@ -1,11 +1,9 @@
 /// <reference types="node" />
-
-import { JSDOM } from 'jsdom';
-
-declare module 'gulp-dom' {
-  export declare function gulpDomCallback(
-    this: JSDOM['window']['document']
-  ): JSDOM | string;
-  function gulpDom(mutator: typeof gulpDomCallback): import('stream').Transform;
-  export = gulpDom;
-}
+declare type cb = (this: Document) => any;
+/**
+ * gulpDom
+ * @param mutator callback
+ * @returns
+ */
+export default function gulpDom(mutator: cb): import("stream").Transform;
+export {};
