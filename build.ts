@@ -25,7 +25,7 @@ import { argv } from './src/types/_config';
   .forEach((path) => writeFileSync(path, '{}'));
 
 const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
-
+let addPkg = true;
 (async () => {
   if (!process.env['GITHUB_WORKFLOW']) {
     // --update-cache
@@ -35,11 +35,13 @@ const date = moment.tz('Asia/Jakarta').format('YYYY-MM-DD HH:mm:ss A [GMT]Z z');
 
     askCommitMessage('commit messages (empty allowed):  ').then(async (msg) => {
       if (msg.trim().length > 0) {
+        addPkg = false;
         await gitAddAndCommit('src', msg, { cwd: __dirname });
       }
       await start();
     });
   } else {
+    addPkg = false;
     start();
   }
 })();
@@ -112,16 +114,18 @@ async function update_version() {
         .promise({ cwd: __dirname }, 'npm', 'install')
         .then(() => spawner.promise({ cwd: __dirname }, 'npm', 'audit', 'fix'))
         .then(() => {
-          gitAddAndCommit('package.json', `update from ${srcInfo}`, {
+          gitAddAndCommit('dist', `update from ${srcInfo}`, {
             cwd: __dirname
           }).then(() => {
-            gitAddAndCommit('package-lock.json', `update from ${srcInfo}`, {
-              cwd: __dirname
-            }).then(() => {
-              gitAddAndCommit('dist', `update from ${srcInfo}`, {
+            if (addPkg) {
+              gitAddAndCommit('package.json', `update from ${srcInfo}`, {
                 cwd: __dirname
+              }).then(() => {
+                gitAddAndCommit('package-lock.json', `update from ${srcInfo}`, {
+                  cwd: __dirname
+                });
               });
-            });
+            }
           });
         });
     })
