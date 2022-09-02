@@ -46,7 +46,9 @@
     "warehouse": "^4.0.2"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.36",
     "@types/gulp": "^4.0.9",
+    "@types/node": "^18.7.14",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",

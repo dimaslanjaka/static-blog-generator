@@ -1,11 +1,11 @@
+import Bluebird from 'bluebird';
+import { existsSync } from 'fs';
 import gulp from 'gulp';
 import dom from 'gulp-dom';
-import Hexo from 'hexo';
 import { spawn } from 'hexo-util';
 import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
 import { join } from 'upath';
-const hexo = new Hexo(process.cwd(), {});
 
 gulp.task('safelink', async () => {
   const config = getConfig();
@@ -67,18 +67,6 @@ gulp.task('safelink', async () => {
     .pipe(gulp.dest(join(__dirname, config.public_dir)));
 });
 
-gulp.task('default', async () => {
-  hexo.init().then(function () {
-    hexo.load().then(function (_value) {
-      //hexo.locals.invalidate();
-      const posts = hexo.locals.get('posts');
-      posts.forEach((post) => {
-        console.log(post.title);
-      });
-    });
-  });
-});
-
 gulp.task('commit', (finish) => {
   const gitDirs = [
     join(__dirname, 'src-posts'),
@@ -105,4 +93,53 @@ gulp.task('commit', (finish) => {
       });
   };
   return commit();
+});
+
+gulp.task('copy-gen', (done) => {
+  const deployDir = join(__dirname, '.deploy_git');
+  const pullCheck = () => {
+    return new Bluebird((resolve) => {
+      if (!existsSync(deployDir)) {
+        spawn(
+          'git',
+          [
+            'clone',
+            'https://github.com/dimaslanjaka/dimaslanjaka.github.io.git',
+            '.deploy_git'
+          ],
+          { cwd: __dirname, stdio: 'inherit' }
+        )
+          .catch(console.trace)
+          .finally(() => resolve());
+      } else {
+        spawn('git', ['pull', 'origin', 'master'], {
+          cwd: deployDir,
+          stdio: 'inherit'
+        })
+          .catch(() =>
+            spawn('git', ['reset', '--hard', 'origin/master'], {
+              cwd: deployDir,
+              stdio: 'inherit'
+            })
+          )
+          .finally(() => resolve());
+      }
+    });
+  };
+  const copyGen = () => {
+    return new Bluebird((resolve) => {
+      gulp
+        .src(['**/**', '!**/.git*'], {
+          cwd: join(__dirname, 'public'),
+          dot: true
+        })
+        .pipe(gulp.dest(deployDir))
+        .on('error', console.trace)
+        .once('end', () => resolve());
+    });
+  };
+  pullCheck()
+    .then(() => copyGen())
+    .then(() => spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' }))
+    .finally(() => done());
 });
