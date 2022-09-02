@@ -154,10 +154,11 @@ export const deployerGit = async (done?: TaskCallback) => {
 
     // add
     console.log(logname, 'adding files...');
-    await git('add', '-A');
     if (hasSubmodule) {
+      console.log(logname, 'adding submodules files...');
       await git('submodule', 'foreach', 'git', 'add', '-A');
     }
+    await git('add', '-A');
 
     // commit
     console.log(logname, 'commiting...');
@@ -166,11 +167,11 @@ export const deployerGit = async (done?: TaskCallback) => {
       msg += ' ' + (await getLatestCommitHash());
     }
     msg += '\ndate: ' + modMoment().format();
-    await git('commit', '-m', msg);
     if (hasSubmodule) {
       console.log(logname, 'commiting submodules...');
       await git('submodule', 'foreach', 'git', 'commit', '-m', msg);
     }
+    await git('commit', '-m', msg);
 
     // push
     console.log(logname, `pushing ${configDeploy['branch']}...`);
