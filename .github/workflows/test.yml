@@ -75,7 +75,7 @@ jobs:
       - name: Manual Build
         continue-on-error: true
         run: |
-          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io.git .deploy_git
+          npx gulp copy-gen
           npx sbg deploy
       - name: Manual Push
         working-directory: .deploy_git
