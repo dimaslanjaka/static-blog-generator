@@ -9,10 +9,6 @@
     "deploy": "npm run build && sbg deploy",
     "server": "hexo server",
     "server-php": "php -S localhost:4000 -t public",
-    "i-git": "npm install -D git+https://github.com/dimaslanjaka/static-blog-generator.git#dev",
-    "i-local": "npm install -D file:../static-blog-generator",
-    "i-tgz": "npm install -D https://raw.githack.com/dimaslanjaka/static-blog-generator/dev/release/development.tgz",
-    "i-tgz2": "npm install -D https://github.com/dimaslanjaka/static-blog-generator/raw/dev/release/development.tgz",
     "postinstall": "node bin/update-cache.js"
   },
   "hexo": {
