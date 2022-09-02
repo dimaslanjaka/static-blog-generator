@@ -46,6 +46,7 @@
     "warehouse": "^4.0.2"
   },
   "devDependencies": {
+    "@types/gulp": "^4.0.9",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
@@ -54,7 +55,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
-    "gulp-dom": "^1.0.0",
+    "gulp-dom": "file:packages/gulp-dom",
     "hexo-post-parser": "file:../hexo-post-parser",
     "md5-file": "^5.0.0",
     "prettier": "^2.7.1",
