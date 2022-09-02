@@ -33,6 +33,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
+          cache-dependency-path: '.guid'
 
       - name: Resolve git user
         run: |
