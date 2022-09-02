@@ -5,6 +5,7 @@ const { join } = require('upath');
 const { spawn } = require('hexo-util');
 const dom = require('gulp-dom');
 const sf = require('safelinkify');
+const Bluebird = require('bluebird');
 var hexo = new Hexo(process.cwd(), {});
 
 gulp.task('safelink', async () => {
@@ -80,19 +81,27 @@ gulp.task('default', async () => {
 });
 
 gulp.task('commit', (finish) => {
-  const opt = { cwd: __dirname };
-  spawn('git', ['add', '-A'], opt)
-    .then(() => spawn('git', ['submodule', 'foreach', 'git', 'add', '-A'], opt))
-    .then(() => spawn('git', ['commit', '-m', 'update ' + new Date()], opt))
-    .then(() =>
-      spawn(
-        'git',
-        ['submodule', 'foreach', 'git', 'commit', '-m', 'update ' + new Date()],
-        opt
-      )
-    )
-    .catch((_) => {
-      //
-    })
-    .finally(() => finish());
+  const gitDirs = [
+    join(__dirname, 'src-posts'),
+    join(__dirname, 'source'),
+    __dirname
+  ];
+  const commit = () => {
+    if (!gitDirs.length) return finish();
+    const gitDir = gitDirs[0];
+    const opt = {
+      cwd: gitDir,
+      stdio: 'inherit'
+    };
+    return spawn('git', ['add', '-A'], opt)
+      .then(() => spawn('git', ['commit', '-m', 'update ' + new Date()], opt))
+      .catch((e) => {
+        if (e instanceof Error) console.log(e.message, gitDir);
+      })
+      .finally(() => {
+        gitDirs.shift();
+        commit();
+      });
+  };
+  return commit();
 });
