@@ -44,13 +44,14 @@
     "format": "run-p format:**",
     "format:themes-assets": "prettier --write ./themes/**/*.{ts,css,js,scss,sass,less}",
     "format:themes-layouts": "prettier --write --parser html -w ./themes/**/*.ejs",
-    "update": "sh bin/install-repo",
+    "update": "install-repo",
     "clean-install": "npm install --ignore-engines --ignore-platform",
     "rebuild": "npm rebuild --ignore-engines --ignore-platform",
     "update-version": "npm version $(git describe)",
     "preinstall": "node scripts/preinstall.js",
     "postpack": "node scripts/postpack.js",
-    "postinstall": "node scripts/postinstall.js"
+    "postinstall": "node scripts/postinstall.js",
+    "update-ncu": "npx npm-check-updates -u -x chalk"
   },
   "repository": {
     "type": "git",
