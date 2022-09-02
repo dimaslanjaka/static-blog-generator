@@ -74,11 +74,12 @@ jobs:
       - run: npx hexo generate
       - run: npx gulp safelink
       - name: Manual Build
+        if: ${{ false }}
         continue-on-error: true
         run: |
           npx gulp copy-gen
       - name: Manual Push
-        #if: ${{ false }}
+        if: ${{ false }}
         working-directory: .deploy_git
         continue-on-error: true
         run: |
