@@ -1,10 +1,14 @@
-@echo off
+@ECHO OFF
 
-npm un hexo-post-parser persistent-cache sbg-themes safelinkify
-npm i file:../persistent-cache
-npm i file:../safelink
-npm i file:../hexo-post-parser
-npm i file:../persistent-cache
-npm i file:../google-news-sitemap
-npm install -O file:./themes
-node scripts/preinstall.js
+rem sample https://github.com/npm/cli/blob/latest/bin/npx.cmd
+
+SETLOCAL
+
+SET "NODE_EXE=%~dp0\node.exe"
+IF NOT EXIST "%NODE_EXE%" (
+  SET "NODE_EXE=node"
+)
+
+SET "SBG_CLI=%~dp0\install-local.js"
+
+"%NODE_EXE%" "%SBG_CLI%" %*
