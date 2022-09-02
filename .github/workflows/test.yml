@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
