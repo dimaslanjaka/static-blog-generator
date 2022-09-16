@@ -142,7 +142,7 @@ export declare const pcache: ((name: string) => {
     }) => void;
     putSync: (name: string, data: any) => void;
     setSync: (name: string, data: any) => void;
-    getSync: <T = string>(name: string) => T;
+    getSync: <T = string>(name: string, fallback?: T) => T;
     deleteSync: (name: any) => void;
     keys: (cb: (e: Error, ...args: any[]) => any) => any;
     keysSync: () => any[];
@@ -167,7 +167,7 @@ export declare const pcache: ((name: string) => {
     }) => void;
     putSync: (name: string, data: any) => void;
     setSync: (name: string, data: any) => void;
-    getSync: <T = string>(name: string) => T;
+    getSync: <T = string>(name: string, fallback?: T) => T;
     deleteSync: (name: any) => void;
     keys: (cb: (e: Error, ...args: any[]) => any) => any;
     keysSync: () => any[];
