@@ -11,8 +11,7 @@ updates:
     interval: daily
   ignore:
       - dependency-name: "chalk"
-        # ignore all updates for version 4 and 5
-        versions: ["4.x", "5.x"]
+        versions: ["5.x"]
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
