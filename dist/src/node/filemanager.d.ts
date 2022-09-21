@@ -154,5 +154,5 @@ export declare const join: (...str: any[]) => string;
 export declare const write: (path: fs.PathLike, content: any, append?: boolean) => Bluebird<string | Buffer | import("url").URL>, readdirSync: typeof walkSync, rmdirSync: (path: fs.PathLike, options?: fs.RmOptions) => void, rm: (path: fs.PathLike, options?: fs.RmOptions | fs.NoParamCallback, callback?: fs.NoParamCallback) => void, mkdirSync: (path: fs.PathLike, options?: fs.MakeDirectoryOptions) => string;
 export declare const fsreadDirSync: typeof fs.readdirSync;
 export declare const basename: typeof upath.basename, relative: typeof upath.relative, extname: typeof upath.extname;
-export declare const PATH_SEPARATOR: string;
+export declare const PATH_SEPARATOR: "\\" | "/";
 export declare function sanitizeFileName(name: string, replacement?: string): string;
