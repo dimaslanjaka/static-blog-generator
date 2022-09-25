@@ -9,6 +9,9 @@ sbg deploy
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label=master&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/master)
 [![webmanajemen.com](https://img.shields.io/website.svg?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&label=webmanajemen.com&url=https://webmanajemen.com)](https://webmanajemen.com)
 
+## Using automatic deployment with github workflow example
+[https://github.com/dimaslanjaka/dimaslanjaka/blob/posts/.github/workflows/deploy.yml](https://github.com/dimaslanjaka/dimaslanjaka/blob/posts/.github/workflows/deploy.yml)
+
 ## static-blog-generator
 ![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square&label=last+commit+dev)
 ![types](https://badgen.net/npm/types/static-blog-generator?style=flat-square)
