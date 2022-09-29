@@ -140,9 +140,9 @@ export const deployerGit = async (done?: TaskCallback) => {
   console.log(logname, 'checkout ' + configDeploy['branch']);
   await git('checkout', '-f', configDeploy['branch']);
 
-  // pull origin
-  console.log(logname, 'updating...');
-  await git('pull', 'origin', configDeploy['branch']);
+  // pull origin with submodule and allow unrelated histories
+  console.log(logname, 'pulling...');
+  await git('pull', 'origin', configDeploy['branch'], '--recurse-submodule', '--allow-unrelated-histories');
   if (hasSubmodule) {
     console.log(logname, 'updating submodules...');
     await git('submodule', 'update', '-i', '-r');
