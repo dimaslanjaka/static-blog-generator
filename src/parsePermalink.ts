@@ -46,5 +46,7 @@ export function parsePermalink(post: postMap) {
   }
 
   // replace %20 to space
-  return pattern.replace(/%20/g, ' ').replace(/\/{2,10}/g, '/');
+  const newPattern = pattern.replace(/%20/g, ' ');
+  if (/^https?:\/\//.test(newPattern)) return newPattern;
+  return newPattern.replace(/\/{2,10}/g, '/');
 }
