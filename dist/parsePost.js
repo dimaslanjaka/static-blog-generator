@@ -81,7 +81,7 @@ function parsePost(target, options = {}) {
             //console.log('rewrite cache');
         }
         /**
-         * source file if `text` is file
+         * source file if variable `text` is file
          */
         let originalFile = target;
         const isFile = (0, fs_1.existsSync)(target) && (0, fs_1.statSync)(target).isFile();
@@ -448,7 +448,8 @@ function parsePost(target, options = {}) {
                 content: body,
                 config: config
             };
-            result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
+            if ('permalink' in result.metadata === false)
+                result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
             // put fileTree
             if (isFile) {
                 result.fileTree = {
