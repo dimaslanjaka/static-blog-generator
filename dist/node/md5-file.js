@@ -12,7 +12,8 @@ const fs = tslib_1.__importStar(require("fs"));
 function md5FileSync(path) {
     let fileBuffer = Buffer.from(path);
     if (fs.existsSync(path)) {
-        fileBuffer = fs.readFileSync(path);
+        if (fs.statSync(path).isFile())
+            fileBuffer = fs.readFileSync(path);
     }
     const hashSum = crypto_1.default.createHash('md5'); // sha256
     hashSum.update(fileBuffer);
