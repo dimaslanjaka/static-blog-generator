@@ -160,6 +160,8 @@ export async function parsePost(
 ) {
   if (!target) return null;
   options = deepmerge(default_options, options);
+  // , { sourceFile: target }
+  if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
   const config = options.config;
   const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
   const cacheKey = md5FileSync(options.sourceFile || target);
