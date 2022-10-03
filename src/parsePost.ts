@@ -177,7 +177,7 @@ export async function parsePost(
   }
 
   /**
-   * source file if `text` is file
+   * source file if variable `text` is file
    */
   let originalFile = target;
   const isFile = existsSync(target) && statSync(target).isFile();
@@ -570,9 +570,10 @@ export async function parsePost(
       metadata: meta,
       body: body,
       content: body,
-      config: config
+      config: <any>config
     };
-    result.metadata.permalink = parsePermalink(result);
+    if ('permalink' in result.metadata === false)
+      result.metadata.permalink = parsePermalink(result);
 
     // put fileTree
     if (isFile) {
