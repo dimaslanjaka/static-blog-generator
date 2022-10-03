@@ -503,8 +503,10 @@ export async function parsePost(
       }
     }
 
-    if (meta.type && !meta.layout && options.config.generator.type) {
-      meta.layout = meta.type;
+    if ('generator' in options.config) {
+      if (meta.type && !meta.layout && options.config.generator.type) {
+        meta.layout = meta.type;
+      }
     }
 
     if (typeof options === 'object') {
