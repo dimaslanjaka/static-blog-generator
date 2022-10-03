@@ -90,9 +90,9 @@
     "folder-hash": "^4.0.2",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
-    "google-news-sitemap": "file:../google-news-sitemap",
+    "google-news-sitemap": "github:dimaslanjaka/google-news-sitemap#master",
     "gulp": "^4.0.2",
-    "hexo-post-parser": "file:../hexo-post-parser",
+    "hexo-post-parser": "github:dimaslanjaka/hexo-post-parser#master",
     "hexo-util": "^2.7.0",
     "html-minifier": "^4.0.0",
     "html-minifier-terser": "^7.0.0",
@@ -120,8 +120,8 @@
     "node-sass": "^7.0.3",
     "nunjucks": "^3.2.3",
     "nunjucks-markdown": "^2.0.1",
-    "persistent-cache": "file:../persistent-cache",
-    "safelinkify": "file:../safelink",
+    "persistent-cache": "github:dimaslanjaka/persistent-cache#improve2",
+    "safelinkify": "github:dimaslanjaka/safelink#master",
     "sanitize-filename": "github:parshap/node-sanitize-filename",
     "showdown": "^2.1.0",
     "sqlite3": "^5.1.1",
@@ -206,6 +206,6 @@
   },
   "optionalDependencies": {
     "ansi-regex": "git+https://github.com/chalk/ansi-regex.git",
-    "sbg-themes": "file:themes"
+    "sbg-themes": "github:dimaslanjaka/sbg-themes"
   }
 }
