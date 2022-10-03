@@ -7,8 +7,8 @@
   "timezone": "",
   "url": "http://example.com",
   "root": "/",
-  "permalink": ":title.html",
-  "permalink_defaults": ":title.html",
+  "permalink": "/chimeraland/:title.html",
+  "permalink_defaults": "/chimeraland/:title.html",
   "pretty_urls": {
     "trailing_index": true,
     "trailing_html": true
