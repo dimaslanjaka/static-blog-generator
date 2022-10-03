@@ -19,7 +19,12 @@ exports.uniqueArray = uniqueArray;
  */
 function uniqueStringArray(arr) {
     const filter = new Map(arr.map((s) => [s.toLowerCase(), s]));
-    return [...filter.values()];
+    const values = filter.values();
+    /*
+    return [...filter.values()];*/
+    return Array.from(values).filter(function (x, i, a) {
+        return a.indexOf(x) === i;
+    });
 }
 exports.uniqueStringArray = uniqueStringArray;
 exports.default = uniqueArray;

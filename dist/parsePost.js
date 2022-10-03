@@ -67,7 +67,10 @@ function parsePost(target, options = {}) {
             options.sourceFile = target;
         const config = options.config;
         const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
-        const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);
+        const fileTarget = options.sourceFile || target;
+        const cacheKey = (0, fs_1.existsSync)(fileTarget)
+            ? (0, md5_file_1.md5FileSync)(fileTarget)
+            : (0, md5_file_1.md5)(fileTarget);
         if (options.cache) {
             //console.log('use cache');
             const getCache = _cache.getSync(cacheKey);
