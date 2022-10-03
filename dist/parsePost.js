@@ -62,6 +62,9 @@ function parsePost(target, options = {}) {
         if (!target)
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
+        // , { sourceFile: target }
+        if (!options.sourceFile && (0, fs_1.existsSync)(target))
+            options.sourceFile = target;
         const config = options.config;
         const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
         const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);

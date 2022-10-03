@@ -96,4 +96,4 @@ export declare const write: (path: fs.PathLike, content: any) => Bluebird<string
 export declare const fsreadDirSync: typeof fs.readdirSync;
 export declare const existsSync: typeof fs.existsSync, readFileSync: typeof fs.readFileSync, appendFileSync: typeof fs.appendFileSync, statSync: fs.StatSyncFn;
 export declare const basename: typeof upath.basename, relative: typeof upath.relative, extname: typeof upath.extname;
-export declare const PATH_SEPARATOR: string;
+export declare const PATH_SEPARATOR: "/" | "\\";
