@@ -15,7 +15,7 @@ import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import color from './node/color';
 import { normalize } from './node/filemanager';
-import { md5FileSync } from './node/md5-file';
+import { md5, md5FileSync } from './node/md5-file';
 import sanitizeFilename from './node/sanitize-filename';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import { parsePermalink } from './parsePermalink';
@@ -164,7 +164,10 @@ export async function parsePost(
   if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
   const config = options.config;
   const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
-  const cacheKey = md5FileSync(options.sourceFile || target);
+  const fileTarget = options.sourceFile || target;
+  const cacheKey = existsSync(fileTarget)
+    ? md5FileSync(fileTarget)
+    : md5(fileTarget);
   if (options.cache) {
     //console.log('use cache');
     const getCache = _cache.getSync<postMap>(cacheKey);

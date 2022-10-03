@@ -15,6 +15,11 @@ export function uniqueArray<T extends any[]>(array: T) {
  */
 export function uniqueStringArray(arr: Array<string>) {
   const filter = new Map(arr.map((s) => [s.toLowerCase(), s]));
-  return [...filter.values()];
+  const values = filter.values();
+  /*
+  return [...filter.values()];*/
+  return Array.from(values).filter(function (x, i, a) {
+    return a.indexOf(x) === i;
+  });
 }
 export default uniqueArray;
