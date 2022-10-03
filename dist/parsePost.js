@@ -385,8 +385,10 @@ function parsePost(target, options = {}) {
                     }
                 }
             }
-            if (meta.type && !meta.layout && options.config.generator.type) {
-                meta.layout = meta.type;
+            if ('generator' in options.config) {
+                if (meta.type && !meta.layout && options.config.generator.type) {
+                    meta.layout = meta.type;
+                }
             }
             if (typeof options === 'object') {
                 // @todo format dates
