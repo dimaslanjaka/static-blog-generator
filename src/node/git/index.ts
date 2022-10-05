@@ -24,7 +24,9 @@ export function git(
   ...args: string[]
 ) {
   if (deployDir === null)
-    throw new Error('Deploy Dir is Null, please set deploy options');
+    throw new Error(
+      'Deploy Dir is Null, please set deploy options https://github.com/dimaslanjaka/static-blog-generator/blob/master/readme-options.md#deployment'
+    );
 
   if (optionsOrCmd !== null) {
     if (typeof optionsOrCmd === 'object') {
