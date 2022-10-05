@@ -1,5 +1,5 @@
 # Options
-options _config.yml format
+options _config.yml format. [FULL EXAMPLE](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/_config.yml)
 
 ## Deployment
 Deployment Section
