@@ -14,27 +14,23 @@ import { isMatch } from '../../node/string-utils';
 import config, { post_generated_dir } from '../../types/_config';
 import { isValidHttpUrl } from '../utils';
 
+const isSafelinkSet =
+  'external_link' in config &&
+  typeof config['external_link'] == 'object' &&
+  'safelink' in config['external_link'];
+
 const safelink = new safelinkify.safelink({
   redirect: [
-    'external_link' in config &&
-    typeof config['external_link'] == 'object' &&
-    'safelink' in config['external_link'] &&
-    'redirect' in config['external_link']['safelink']
+    isSafelinkSet && 'redirect' in config['external_link']['safelink']
       ? config['external_link']['safelink']['redirect']
       : null
   ],
   password:
-    'external_link' in config &&
-    typeof config['external_link'] == 'object' &&
-    'safelink' in config['external_link'] &&
-    'password' in config['external_link']['safelink']
+    isSafelinkSet && 'password' in config['external_link']['safelink']
       ? config['external_link']['safelink']['password']
       : null,
   type:
-    'external_link' in config &&
-    typeof config['external_link'] == 'object' &&
-    'safelink' in config['external_link'] &&
-    'type' in config['external_link']['safelink']
+    isSafelinkSet && 'type' in config['external_link']['safelink']
       ? config['external_link']['safelink']['type']
       : null
 });
