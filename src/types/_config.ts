@@ -232,5 +232,8 @@ export function getConfig(): typeof project_config_data {
 config.root = root;
 config.tmp = tmp;
 
+// merge with default config
+config = deepmerge(<any>default_config, config);
+
 export default config;
 export const project_config = config;
