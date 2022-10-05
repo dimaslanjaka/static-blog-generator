@@ -174,15 +174,15 @@ export const parseAfterGen = (
   if (sources && sources.length) arrayAddAll(files, sources);
   const skip = () => {
     // if files has members, shift first file, restart function
-    if (files.length) {
+    if (files.length > 0) {
       files.shift();
       //console.log(logname, 'remaining', files.length + 1);
       return parseAfterGen(null, callback);
     } else if (typeof callback == 'function') {
-      if (typeof callback === 'function') return callback();
+      return callback();
     }
   };
-  if (!files.length) return skip();
+  if (files.length === 0) return skip();
 
   const file = files[0];
   const content = readFileSync(file, 'utf-8');
