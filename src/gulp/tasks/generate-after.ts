@@ -171,7 +171,7 @@ export const parseAfterGen = (
   sources?: string[],
   callback?: CallableFunction
 ) => {
-  if (sources && sources.length) arrayAddAll(files, sources);
+  if (Array.isArray(sources) && sources.length > 0) arrayAddAll(files, sources);
   const skip = () => {
     // if files has members, shift first file, restart function
     if (files.length > 0) {
