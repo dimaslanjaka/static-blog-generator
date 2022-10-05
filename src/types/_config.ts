@@ -232,6 +232,11 @@ export function getConfig(): typeof project_config_data {
 config.root = root;
 config.tmp = tmp;
 
+// remove null
+['include', 'exclude', 'ignore', 'skip_render'].map((key)=>{
+  if (!config[key]) config[key] = [];
+})
+
 // merge with default config
 config = deepmerge(<any>default_config, config);
 
