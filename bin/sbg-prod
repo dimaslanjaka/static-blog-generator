@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# binary for development only
-
-scriptPath=src/bin/sbg.ts
+scriptPath=dist/src/bin/sbg.js
 
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
@@ -20,5 +18,4 @@ if ! [ -x "$NODE_EXE" ]; then
   NODE_EXE=node
 fi
 
-# $NODE_EXE -r ts-node/register --downlevelIteration "$basedir/../$scriptPath" "$@"
-npx ts-node "$basedir/../$scriptPath" "$@"
+$NODE_EXE "$basedir/../$scriptPath" "$@"
