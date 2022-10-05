@@ -80,6 +80,9 @@ npm install
 | `source` | (`config.source_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)) contains all pages that should be on public directory (`config.public_dir` in [_config.yml](https://github.com/dimaslanjaka/static-blog-generator/blob/d951721d632c720727db718fd481e532c2e493f1/_config.yml#L28-L38)) |
 | `node_modules/.cache/dimaslanjaka` | database caches |
 
+## Project Configuration
+[View Full Documentation](https://github.com/dimaslanjaka/static-blog-generator/blob/master/readme-options.md)
+
 ## command line
 [See Documentation static-blog-generator CLI](https://github.com/dimaslanjaka/static-blog-generator/blob/master/src/bin/sbg.md)
 
