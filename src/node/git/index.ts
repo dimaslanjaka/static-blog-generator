@@ -23,6 +23,9 @@ export function git(
   optionsOrCmd: null | string | SpawnOptions = null,
   ...args: string[]
 ) {
+  if (deployDir === null)
+    throw new Error('Deploy Dir is Null, please set deploy options');
+
   if (optionsOrCmd !== null) {
     if (typeof optionsOrCmd === 'object') {
       return spawner.promise(optionsOrCmd, 'git', ...args);
