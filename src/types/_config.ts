@@ -108,9 +108,9 @@ export const configDeploy = config.deploy;
 /**
  * Deployment Directory
  */
-export const deployDir = resolve(
-  join(process.cwd(), '.deploy_' + config.deploy.type)
-);
+export const deployDir =
+  configDeploy !== null &&
+  resolve(join(process.cwd(), '.deploy_' + configDeploy.type));
 
 // @todo [config] bypass nocache if --nocache argument is set by cli
 if (argv['nocache']) {
