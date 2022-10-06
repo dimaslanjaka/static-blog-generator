@@ -312,14 +312,14 @@ generator:
 
 ## https://github.com/dimaslanjaka/hexo-adsense
 adsense:
-  enable: false
+  enable: true
   #pub: ca-pub-1165447249910969 # mine
   #pub: ca-pub-2188063137129806 # kiki
   pub: ca-pub-2974518380815858
   # in-article ads source
   article_ads:
-    - "source/ads/in_article.html"
-    - "source/ads/in_article2.html"
+    #- "source/ads/in_article.html"
+    #- "source/ads/in_article2.html"
   # ads field
   field: "site" # post=only post, site=all pages and posts
   # auto redirect to https
