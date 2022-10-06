@@ -1,6 +1,6 @@
 [submodule "src-posts"]
 	path = src-posts
-	url = https://github.com/dimaslanjaka/dimaslanjaka.git
+	url = https://github.com/dimaslanjaka/source-posts.git
 	branch = posts
 [submodule "source"]
 	path = source
