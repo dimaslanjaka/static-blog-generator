@@ -31,7 +31,7 @@
     "chai": "4.2.0",
     "dom-whitespace": "0.1.2",
     "gulp": "4.0.0",
-    "jshint": "2.9.6",
+    "jshint": "2.13.5",
     "mocha": "5.2.0",
     "request": "2.88.0",
     "typescript": "^4.8.2",
