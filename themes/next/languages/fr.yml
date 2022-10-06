@@ -33,8 +33,6 @@ post:
   copyright:
     author: Auteur de l'article
     link: Lien de l'article
-    post_author: Written by
-    post_link: This article originally appeared on
     license_title: Droit d'auteur
     license_content: "Tous les articles de ce blog sont sous licence %s, sauf mention contraire."
 footer:
@@ -60,9 +58,6 @@ state:
   categories: catégories
 search:
   placeholder: Recherche...
-  empty: "We didn't find any results for the search: %s"
-  hits_time: "%s results found in %s ms"
-  hits: "%s results found"
 cheers:
   um: Um..
   ok: OK
@@ -87,8 +82,6 @@ accessibility:
   nav_toggle: Basculer la barre de navigation
   prev_page: Page précédente
   next_page: Page suivante
-  back_to_top: Back to top
-  select_lang: Select language
 symbols_count_time:
   count: Caractères dans l'article
   count_total: Caractères total

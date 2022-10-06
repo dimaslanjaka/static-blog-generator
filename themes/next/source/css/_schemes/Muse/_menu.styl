@@ -1,13 +1,11 @@
 .site-nav {
   +mobile() {
-    padding-top: 30px;
-  }
-}
-
-.main-menu {
-  +mobile() {
     border-bottom: 1px solid $grey-lighter;
     border-top: 1px solid $grey-lighter;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 }
 
@@ -17,25 +15,29 @@
   }
 }
 
+.menu-item-active a {
+  background: transparent;
+  border-bottom: 1px solid var(--link-hover-color) !important;
+
+  +mobile() {
+    border-bottom: 1px dotted $grey-lighter !important;
+  }
+}
+
 .menu .menu-item {
   +mobile() {
     margin: 0 10px;
   }
 
-  a {
+  a, span.exturl {
     border-bottom: 1px solid transparent;
 
     +mobile() {
       padding: 5px 10px;
     }
 
-    &:hover, &.menu-item-active {
-      background: transparent;
-      border-bottom: 1px solid var(--link-hover-color);
-
-      +mobile() {
-        border-bottom: 1px dotted $grey-lighter;
-      }
+    &:hover {
+      @extend .menu-item-active a;
     }
   }
 
@@ -50,7 +52,6 @@
 
   .badge {
     background: $gainsboro;
-    color: $black-light;
     padding: 1px 4px;
   }
 }
