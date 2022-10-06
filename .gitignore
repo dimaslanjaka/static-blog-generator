@@ -11,3 +11,4 @@ docs/
 *-old
 *-backup
 *.backup.*
+*-private*
