@@ -1,4 +1,4 @@
 {
-  "extends": "@next-theme",
+  "extends": "theme-next",
   "root": true
 }

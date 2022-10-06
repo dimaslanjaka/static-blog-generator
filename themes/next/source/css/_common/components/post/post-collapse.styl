@@ -1,5 +1,4 @@
-.posts-collapse .post-content {
-  margin-bottom: $posts-collapse-margin;
+.posts-collapse {
   margin-left: $posts-collapse-margin;
   position: relative;
 
@@ -15,11 +14,15 @@
     &::before {
       background: $grey-dark;
       border: 1px solid white;
+      border-radius: 50%;
+      content: ' ';
+      height: 10px;
+      left: 0;
       margin-left: -6px;
       margin-top: -4px;
       position: absolute;
       top: 50%;
-      round-icon(10px);
+      width: 10px;
     }
   }
 
@@ -31,17 +34,21 @@
 
     &::before {
       background: $grey;
+      border-radius: 50%;
+      content: ' ';
+      height: 8px;
+      left: 0;
       margin-left: -4px;
       margin-top: -4px;
       position: absolute;
       top: 50%;
-      round-icon(8px);
+      width: 8px;
     }
   }
 
   .collection-header {
     display: block;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
 
     small {
       color: $grey;
@@ -51,20 +58,25 @@
 
   .post-header {
     border-bottom: 1px dashed $grey-light;
-    // 2px is equal to half the width of .posts-collapse::before
-    margin: 30px 2px 0;
+    margin: 30px 0;
     padding-left: 15px;
     position: relative;
-    transition: border $transition-ease;
+    transition-property: border;
+    the-transition();
 
     &::before {
       background: $grey;
       border: 1px solid white;
-      left: -6px;
+      border-radius: 50%;
+      content: ' ';
+      height: 6px;
+      left: 0;
+      margin-left: -4px;
       position: absolute;
       top: $font-size-smallest;
-      transition: background $transition-ease;
-      round-icon(6px);
+      transition-property: background;
+      width: 6px;
+      the-transition();
     }
 
     &:hover {
@@ -76,7 +88,7 @@
     }
   }
 
-  .post-meta-container {
+  .post-meta {
     display: inline;
     font-size: $font-size-smallest;
     margin-right: 10px;
@@ -85,8 +97,8 @@
   .post-title {
     display: inline;
 
-    a {
-      border-bottom: 0;
+    a, span.exturl {
+      border-bottom: none;
       color: var(--link-color);
     }
 
@@ -100,9 +112,9 @@
     background: $whitesmoke;
     content: ' ';
     height: 100%;
+    left: 0;
     margin-left: -2px;
     position: absolute;
-    // To do: 1.25em is inaccurate when .collection-title has line breaks on mobile
     top: 1.25em;
     width: 4px;
   }

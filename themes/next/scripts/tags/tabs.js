@@ -1,47 +1,61 @@
 /**
- * tabs.js | https://theme-next.js.org/docs/tag-plugins/tabs
+ * tabs.js | https://theme-next.org/docs/tag-plugins/tabs
  */
+
+/* global hexo */
 
 'use strict';
 
-module.exports = ctx => function(args, content = '') {
-  const tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
+function postTabs(args, content) {
+  var tabBlock = /<!--\s*tab (.*?)\s*-->\n([\w\W\s\S]*?)<!--\s*endtab\s*-->/g;
 
   args = args.join(' ').split(',');
-  const tabName = args[0];
-  const tabActive = Number(args[1]) || 0;
+  var tabName = args[0];
+  var tabActive = Number(args[1]) || 0;
 
-  let tabId = 0;
-  let tabNav = '';
-  let tabContent = '';
+  var matches = [];
+  var match;
+  var tabId = 0;
+  var tabNav = '';
+  var tabContent = '';
 
-  if (!tabName) ctx.log.warn('Tabs block must have unique name!');
-  const matches = content.matchAll(tabBlock);
+  !tabName && hexo.log.warn('Tabs block must have unique name!');
 
-  for (const match of matches) {
-    let [caption = '', icon = ''] = match[1].split('@');
-    let postContent = match[2];
+  while ((match = tabBlock.exec(content)) !== null) {
+    matches.push(match[1]);
+    matches.push(match[2]);
+  }
 
-    postContent = ctx.render.renderSync({ text: postContent, engine: 'markdown' }).trim();
+  for (var i = 0; i < matches.length; i += 2) {
+    var tabParameters = matches[i].split('@');
+    var postContent   = matches[i + 1];
+    var tabCaption    = tabParameters[0] || '';
+    var tabIcon       = tabParameters[1] || '';
+    var tabHref       = '';
 
-    const abbr = tabName + ' ' + ++tabId;
-    const href = abbr.toLowerCase().split(' ').join('-');
+    postContent = hexo.render.renderSync({text: postContent, engine: 'markdown'}).trim();
 
-    icon = icon.trim();
-    if (icon.length > 0) {
-      if (!icon.startsWith('fa')) icon = 'fa fa-' + icon;
-      icon = `<i class="${icon}"></i>`;
-    }
+    tabId += 1;
+    tabHref = (tabName + ' ' + tabId).toLowerCase().split(' ').join('-');
 
-    caption = icon + caption.trim();
+    ((tabCaption.length === 0) && (tabIcon.length === 0)) && (tabCaption = tabName + ' ' + tabId);
 
-    const isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : '';
-    tabNav += `<li class="tab${isActive}"><a href="#${href}">${caption || abbr}</a></li>`;
-    tabContent += `<div class="tab-pane${isActive}" id="${href}">${postContent}</div>`;
+    var isOnlyicon = tabIcon.length > 0 && tabCaption.length === 0 ? ' style="text-align: center;"' : '';
+    let icon = tabIcon.trim();
+    icon = icon.startsWith('fa') ? icon : 'fa fa-' + icon;
+    tabIcon.length > 0 && (tabIcon = `<i class="${icon}"${isOnlyicon}></i>`);
+
+    var isActive = (tabActive > 0 && tabActive === tabId) || (tabActive === 0 && tabId === 1) ? ' active' : '';
+    tabNav += `<li class="tab${isActive}"><a href="#${tabHref}">${tabIcon + tabCaption.trim()}</a></li>`;
+    tabContent += `<div class="tab-pane${isActive}" id="${tabHref}">${postContent}</div>`;
   }
 
   tabNav = `<ul class="nav-tabs">${tabNav}</ul>`;
   tabContent = `<div class="tab-content">${tabContent}</div>`;
 
   return `<div class="tabs" id="${tabName.toLowerCase().split(' ').join('-')}">${tabNav + tabContent}</div>`;
-};
+}
+
+hexo.extend.tag.register('tabs', postTabs, {ends: true});
+hexo.extend.tag.register('subtabs', postTabs, {ends: true});
+hexo.extend.tag.register('subsubtabs', postTabs, {ends: true});

@@ -3,66 +3,61 @@ name: Português
 title:
   archive: Arquivo
   category: Categoria
-  tag: Etiqueta
-  schedule: Programação
+  tag: Tag
+  schedule: Schedule
 menu:
   home: Home
   archives: Arquivos
   categories: Categorias
-  tags: Etiquetas
+  tags: Tags
   about: Sobre
   search: Pesquisar
-  schedule: Programação
-  sitemap: Mapa do site
+  schedule: Schedule
+  sitemap: Sitemap
   commonweal: Commonweal 404
 sidebar:
   overview: Visão geral
-  toc: Índice
+  toc: Tabela de conteúdo
 post:
   posted: Postado em
-  edited: Editado em
-  created: Criado em
-  modified: Modificado em
-  edit: Editar publicação
+  edited: Edited on
+  created: Post created
+  modified: Updated at
+  edit: Edit this post
   in: Em
   read_more: Leia mais
   untitled: Sem título
-  sticky: Fixo
-  views: Visualizações
-  related_posts: Publicações Relacionadas
+  sticky: Sticky
+  views: Views
+  related_posts: Related Posts
   copyright:
-    author: Autor da publicação
-    link: Link da publicação
-    post_author: Escrito por
-    post_link: Este artigo foi originalmente publicado em
-    license_title: Nota de Direitos Autorais
-    license_content: "Todos os artigos deste blog são licenciados sob %s, a menos que seja indicado o contrário."
+    author: Post author
+    link: Post link
+    license_title: Copyright Notice
+    license_content: "All articles in this blog are licensed under %s unless stating additionally."
 footer:
   powered: "Feito com %s"
-  total_views: Visualizações Totais
-  total_visitors: Total de visitantes
+  total_views: Total Views
+  total_visitors: Total Visitors
 counter:
   tag_cloud:
-    zero: Sem etiquetas
-    one: 1 etiqueta no total de
-    other: "%d etiquetas no total de"
+    zero: Sem tags
+    one: 1 tag no total de
+    other: "%d tags no total de"
   categories:
     zero: Sem categoria
     one: 1 categoria no total de
     other: "%d categoria no total de"
   archive_posts:
-    zero: Sem publicações.
-    one: 1 publicação.
-    other: "%d publicações no total."
+    zero: Sem posts.
+    one: 1 post.
+    other: "%d posts no total."
 state:
-  posts: publicações
-  tags: etiquetas
-  categories: categorias
+  posts: Posts
+  tags: Tags
+  categories: Categorias
 search:
-  placeholder: Pesquisando...
-  empty: "Não encontramos nenhum resultado para a pesquisa: %s"
-  hits_time: "%s resultados encontrados em %s ms"
-  hits: "%s resultados encontrados"
+  placeholder: Searching...
 cheers:
   um: Uhmmmm...
   ok: OK
@@ -70,28 +65,26 @@ cheers:
   good: Muito Bom
   great: Ótimo
   excellent: Excelente
-keep_on: Continue publicando.
+keep_on: Continuar no post.
 symbol:
   comma: ", "
   period: ". "
   colon: ": "
 reward:
-  donate: Doar
+  donate: Donate
   wechatpay: WeChat Pay
   alipay: Alipay
   paypal: PayPal
   bitcoin: Bitcoin
 follow_me:
-  welcome: Bem-vindo aos meus outros canais de publicação
+  welcome: Welcome to my other publishing channels
 accessibility:
-  nav_toggle: Alternar barra de navegação
+  nav_toggle: Toggle navigation bar
   prev_page: Página anterior
   next_page: Próxima página
-  back_to_top: Back to top
-  select_lang: Select language
 symbols_count_time:
-  count: Contagem total de caracteres no artigo
-  count_total: Contagem total de caracteres
-  time: Tempo de leitura
-  time_total: Tempo total de leitura
+  count: Symbols count in article
+  count_total: Symbols count total
+  time: Reading time
+  time_total: Reading time total
   time_minutes: mins.

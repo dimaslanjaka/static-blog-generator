@@ -1,11 +1,13 @@
 .sub-menu {
+  background: var(--content-bg-color);
+  border-bottom: 1px solid $table-border-color;
   margin: 0;
   padding: 6px 0;
 
   .menu-item {
     display: inline-block;
 
-    a {
+    a, span.exturl {
       background: transparent;
       margin: 5px 10px;
       padding: initial;
@@ -17,7 +19,7 @@
     }
   }
 
-  .menu-item-active {
+  .menu-item-active a {
     border-bottom-color: $sidebar-highlight;
     color: $sidebar-highlight;
 

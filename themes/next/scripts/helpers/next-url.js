@@ -1,13 +1,16 @@
+/* global hexo */
+
 'use strict';
 
 const { htmlTag } = require('hexo-util');
-const { parse } = require('url');
+const url = require('url');
 
-module.exports = function(path, text, options = {}) {
-  const { config, theme } = this;
-  const data = parse(path);
-  const siteHost = parse(config.url).hostname || config.url;
+hexo.extend.helper.register('next_url', function(path, text, options = {}) {
+  const { config } = this;
+  const data = url.parse(path);
+  const siteHost = url.parse(config.url).hostname || config.url;
 
+  const theme = hexo.theme.config;
   let exturl = '';
   let tag = 'a';
   let attrs = { href: this.url_for(path) };
@@ -23,7 +26,7 @@ module.exports = function(path, text, options = {}) {
     };
   }
 
-  for (const key in options) {
+  for (let key in options) {
 
     /**
      * If option have `class` attribute, add it to
@@ -34,6 +37,10 @@ module.exports = function(path, text, options = {}) {
     } else {
       attrs[key] = options[key];
     }
+  }
+
+  if (attrs.class && Array.isArray(attrs.class)) {
+    attrs.class = attrs.class.join(' ');
   }
 
   // If it's external link, rewrite attributes.
@@ -51,4 +58,4 @@ module.exports = function(path, text, options = {}) {
   }
 
   return htmlTag(tag, attrs, decodeURI(text), false);
-};
+});
