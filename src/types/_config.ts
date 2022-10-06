@@ -221,14 +221,6 @@ if (existsSync(file_private_config)) {
   }
 }
 
-/**
- * get config
- * @returns
- */
-export function getConfig(): typeof project_config_data {
-  return config;
-}
-
 config.root = root;
 config.tmp = tmp;
 
@@ -239,6 +231,14 @@ config.tmp = tmp;
 
 // merge with default config
 config = deepmerge(<any>default_config, config);
+
+/**
+ * get config
+ * @returns
+ */
+export function getConfig(): typeof project_config_data {
+  return <any>config;
+}
 
 export default config;
 export const project_config = config;
