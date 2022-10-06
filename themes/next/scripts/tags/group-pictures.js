@@ -1,18 +1,20 @@
 /**
- * group-pictures.js | https://theme-next.js.org/docs/tag-plugins/group-pictures
+ * group-pictures.js | https://theme-next.org/docs/tag-plugins/group-pictures
  */
+
+/* global hexo */
 
 'use strict';
 
-const LAYOUTS = {
+var LAYOUTS = {
   2: {
     1: [1, 1],
     2: [2]
   },
   3: {
-    1: [1, 2],
-    2: [2, 1],
-    3: [3]
+    1: [3],
+    2: [1, 2],
+    3: [2, 1]
   },
   4: {
     1: [1, 2, 1],
@@ -70,19 +72,19 @@ const LAYOUTS = {
 };
 
 function groupBy(group, data) {
-  const r = [];
-  for (const count of group) {
+  var r = [];
+  for (let count of group) {
     r.push(data.slice(0, count));
     data = data.slice(count);
   }
   return r;
 }
 
-const templates = {
+var templates = {
 
   dispatch: function(pictures, group, layout) {
-    const rule = LAYOUTS[group] ? LAYOUTS[group][layout] : null;
-    return rule ? this.getHTML(groupBy(rule, pictures)) : this.defaults(pictures);
+    var rule = LAYOUTS[group] ? LAYOUTS[group][layout] : null;
+    return rule ? this.getHTML(groupBy(rule, pictures)) : templates.defaults(pictures);
   },
 
   /**
@@ -95,11 +97,11 @@ const templates = {
    * @param pictures
    */
   defaults: function(pictures) {
-    const ROW_SIZE = 3;
-    const rows = pictures.length / ROW_SIZE;
-    const pictureArr = [];
+    var ROW_SIZE = 3;
+    var rows = pictures.length / ROW_SIZE;
+    var pictureArr = [];
 
-    for (let i = 0; i < rows; i++) {
+    for (var i = 0; i < rows; i++) {
       pictureArr.push(pictures.slice(i * ROW_SIZE, (i + 1) * ROW_SIZE));
     }
 
@@ -107,26 +109,33 @@ const templates = {
   },
 
   getHTML: function(rows) {
-    return rows.map(row => {
+    var rowHTML = rows.map(row => {
       return `<div class="group-picture-row">${this.getColumnHTML(row)}</div>`;
     }).join('');
+
+    return `<div class="group-picture-container">${rowHTML}</div>`;
   },
 
   getColumnHTML: function(pictures) {
+    var columnWidth = 100 / pictures.length;
+    var columnStyle = `style="width: ${columnWidth}%;"`;
     return pictures.map(picture => {
-      return `<div class="group-picture-column">${picture}</div>`;
+      return `<div class="group-picture-column" ${columnStyle}>${picture}</div>`;
     }).join('');
   }
 };
 
-module.exports = ctx => function(args, content) {
+function groupPicture(args, content) {
   args = args[0].split('-');
-  const group = parseInt(args[0], 10);
-  const layout = parseInt(args[1], 10);
+  var group = parseInt(args[0], 10);
+  var layout = parseInt(args[1], 10);
 
-  content = ctx.render.renderSync({ text: content, engine: 'markdown' });
+  content = hexo.render.renderSync({text: content, engine: 'markdown'});
 
-  const pictures = content.match(/(<a[^>]*>((?!<\/a)(.|\n))+<\/a>)|(<img[^>]+>)/g);
+  var pictures = content.match(/<img[\s\S]*?>/g);
 
   return `<div class="group-picture">${templates.dispatch(pictures, group, layout)}</div>`;
-};
+}
+
+hexo.extend.tag.register('grouppicture', groupPicture, {ends: true});
+hexo.extend.tag.register('gp', groupPicture, {ends: true});

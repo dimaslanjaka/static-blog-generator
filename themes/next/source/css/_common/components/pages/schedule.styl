@@ -11,9 +11,11 @@
 }
 
 .event-list {
+  padding: 0;
+
   hr {
     background: $black-deep;
-    margin: 20px 0 45px;
+    margin: 20px 0 45px 0;
 
     &::after {
       background: $black-deep;
@@ -22,44 +24,35 @@
       display: inline-block;
       font-weight: bold;
       padding: 0 5px;
+      text-align: right;
     }
   }
 
   .event {
-    --event-background: $black-deep;
-    --event-foreground: $grey;
-    --event-title: white;
-    background: var(--event-background);
-    padding: 15px;
+    background: $black-deep;
+    margin: 20px 0;
+    min-height: 40px;
+    padding: 15px 0 15px 10px;
 
     .event-summary {
-      border-bottom: 0;
-      color: var(--event-title);
+      color: white;
       margin: 0;
-      padding: 0 0 0 35px;
-      position: relative;
+      padding-bottom: 3px;
 
       &::before {
         animation: dot-flash 1s alternate infinite ease-in-out;
-        background: var(--event-title);
-        left: 0;
-        margin-top: -6px;
-        position: absolute;
-        top: 50%;
-        round-icon(12px);
+        color: white;
+        content: '\f111';
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 25px;
+        vertical-align: middle;
+        font-family-icons();
       }
     }
 
-    &:nth-of-type(odd) .event-summary::before {
-      animation-delay: .5s;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-
     .event-relative-time {
-      color: var(--event-foreground);
+      color: $grey;
       display: inline-block;
       font-size: 12px;
       font-weight: normal;
@@ -67,15 +60,20 @@
     }
 
     .event-details {
-      color: var(--event-foreground);
+      color: white;
       display: block;
       line-height: 18px;
-      padding: 6px 0 6px 35px;
+      margin-left: 56px;
+      padding-bottom: 6px;
+      padding-top: 3px;
+      text-indent: -24px;
 
       &::before {
-        color: var(--event-foreground);
+        color: white;
         display: inline-block;
         margin-right: 9px;
+        text-align: center;
+        text-indent: 0;
         width: 14px;
         font-family-icons();
       }
@@ -87,16 +85,20 @@
       &.event-duration::before {
         content: '\f017';
       }
-
-      &.event-description::before {
-        content: '\f024';
-      }
     }
   }
 
   .event-past {
-    --event-background: $whitesmoke;
-    --event-foreground: $grey-dark;
-    --event-title: $black-deep;
+    background: $whitesmoke;
+
+    .event-summary, .event-details {
+      color: $grey;
+      opacity: .9;
+
+      &::before {
+        animation: none;
+        color: $grey;
+      }
+    }
   }
 }
