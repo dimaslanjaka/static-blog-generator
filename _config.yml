@@ -145,6 +145,7 @@ exclude:
   - "**/hexo-post-parser/**"
   - "**/node_modules/**"
   - "**/vendor/**"
+  - "**/ads/**"
 ignore:
   - "**/.git"
 # https://hexo.io/docs/configuration.html
