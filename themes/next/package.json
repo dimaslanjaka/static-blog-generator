@@ -1,50 +1,41 @@
 {
   "name": "hexo-theme-next",
-  "version": "8.12.1",
+  "version": "7.8.0",
   "description": "Elegant and powerful theme for Hexo.",
-  "main": "package.json",
-  "files": [
-    "docs",
-    "languages",
-    "layout",
-    "scripts",
-    "source",
-    "_config.yml",
-    "_vendors.yml"
-  ],
+  "main": "gulpfile.js",
   "scripts": {
-    "eslint": "eslint scripts/ source/js test/",
-    "prepare": "node .githooks/install.js",
-    "stylint": "stylint source/css/",
-    "test": "mocha test/index.js",
-    "test-cov": "nyc npm test"
+    "test": "gulp"
   },
-  "repository": "next-theme/hexo-theme-next",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theme-next/hexo-theme-next.git"
+  },
   "keywords": [
     "hexo",
     "theme",
     "next"
   ],
-  "author": "NexT (https://theme-next.js.org)",
+  "author": "NexT <support@theme-next.org> (https://theme-next.org)",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/next-theme/hexo-theme-next/issues"
+    "url": "https://github.com/theme-next/hexo-theme-next/issues"
   },
-  "homepage": "https://theme-next.js.org",
+  "homepage": "https://theme-next.org",
   "devDependencies": {
-    "@next-theme/eslint-config": "0.0.3",
-    "chai": "4.3.6",
-    "eslint": "8.16.0",
-    "hexo": "6.2.0",
-    "hexo-renderer-marked": "5.0.0",
-    "js-yaml": "4.1.0",
-    "mocha": "10.0.0",
-    "nyc": "15.1.0",
-    "stylint": "2.0.0"
+    "eslint": "^6.8.0",
+    "eslint-config-theme-next": "^1.1.4",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-shell": "^0.8.0",
+    "js-yaml": "^3.13.1",
+    "stylint": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=10.9.0"
   },
   "dependencies": {
     "hexo-generator-searchdb": "^1.4.0",
-    "hexo-renderer-nunjucks": "^2.0.0",
-    "hexo-renderer-stylus": "^2.1.0"
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-renderer-swig": "^2.0.0"
   }
 }

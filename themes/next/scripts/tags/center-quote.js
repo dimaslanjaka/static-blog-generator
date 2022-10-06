@@ -1,11 +1,18 @@
 /**
- * center-quote.js | https://theme-next.js.org/docs/tag-plugins/
+ * center-quote.js | https://theme-next.org/docs/tag-plugins/
  */
+
+/* global hexo */
 
 'use strict';
 
-module.exports = ctx => function(args, content) {
+function centerQuote(args, content) {
   return `<blockquote class="blockquote-center">
-${ctx.render.renderSync({ text: content, engine: 'markdown' })}
-</blockquote>`;
-};
+            <i class="fa fa-quote-left"></i>
+            ${hexo.render.renderSync({ text: content, engine: 'markdown' })}
+            <i class="fa fa-quote-right"></i>
+          </blockquote>`;
+}
+
+hexo.extend.tag.register('centerquote', centerQuote, {ends: true});
+hexo.extend.tag.register('cq', centerQuote, {ends: true});

@@ -1,8 +1,8 @@
 // Menu
 // --------------------------------------------------
 .menu {
-  margin: 0;
-  padding: 1em 0;
+  margin-top: 20px;
+  padding-left: 0;
   text-align: center;
 }
 
@@ -20,14 +20,18 @@
     }
   }
 
-  a {
+  a, span.exturl {
     border-bottom: 0;
     display: block;
     font-size: $font-size-smaller;
-    transition: border-color $transition-ease;
+    transition-property: border-color;
+    the-transition();
 
-    &:hover, &.menu-item-active {
-      background: var(--menu-item-bg-color);
+    // To prevent hover on external links with touch devices after click.
+    @media (hover: none) {
+      &:hover {
+        border-bottom-color: transparent !important;
+      }
     }
   }
 
@@ -51,6 +55,10 @@
   }
 }
 
+.menu-item-active a {
+  background: var(--menu-item-bg-color);
+}
+
 .use-motion .menu-item {
-  visibility: hidden;
+  opacity: 0;
 }

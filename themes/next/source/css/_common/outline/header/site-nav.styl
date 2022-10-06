@@ -18,7 +18,14 @@
 }
 
 .site-nav {
+  display: block;
+
   +mobile() {
-    site-nav-hide-by-default();
+    clear: both;
+    display: none;
+  }
+
+  &.site-nav-on {
+    display: block;
   }
 }

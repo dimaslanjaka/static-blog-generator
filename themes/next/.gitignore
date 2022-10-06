@@ -1,10 +1,15 @@
 .DS_Store
 .idea/
-.vscode/
 *.log
 *.iml
 yarn.lock
 package-lock.json
 node_modules/
-.nyc_output/
-coverage/
+
+# Ignore optional external libraries
+source/lib/*
+
+# Track internal libraries & Ignore unused verdors files
+!source/lib/font-awesome/
+!source/lib/anime.min.js
+!source/lib/velocity/
