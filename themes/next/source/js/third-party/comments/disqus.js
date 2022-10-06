@@ -21,10 +21,11 @@ document.addEventListener('page:loaded', () => {
     window.disqus_config = function() {
       this.page.url = CONFIG.page.permalink.replace(/%20/g, ' ');
       this.page.identifier = decodeURIComponent(CONFIG.page.path);
-      this.page.title = CONFIG.page.title;
+      this.page.title = CONFIG.page.title || document.title;
       if (CONFIG.disqus.i18n.disqus !== 'disqus') {
         this.language = CONFIG.disqus.i18n.disqus;
       }
+      console.log(this.page);
     };
     NexT.utils.loadComments('#disqus_thread').then(() => {
       if (window.DISQUS) {
