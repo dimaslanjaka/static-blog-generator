@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { FirebaseOptions } from 'firebase/app';
 import memoizee from 'memoizee';
 import { Ngrok } from 'ngrok';
 import '../a-core';
@@ -27,7 +27,7 @@ export declare const default_project_config: Partial<import("./_config.default")
 declare type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
     [keys: string]: any;
-    firebase: Parameters<typeof initializeApp>[0];
+    firebase: FirebaseOptions;
     ngrok: Ngrok.Options;
     root: string;
     tmp: typeof tmp;
@@ -36,6 +36,14 @@ export declare type ProjectConfig = projectImportData & PrivateProjectConfig & t
     env: string;
 };
 declare let config: ProjectConfig;
+/**
+ * Config Deployment
+ */
+export declare const configDeploy: import("./_config.default").SBGDeploy;
+/**
+ * Deployment Directory
+ */
+export declare const deployDir: string;
 /**
  * is process using cache strategy?
  */
