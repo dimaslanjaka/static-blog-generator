@@ -11,7 +11,8 @@
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
     "postinstall": "node bin/update-cache.js",
-    "update": "npx npm-check-updates -u -x hexo,chalk"
+    "update": "npx npm-check-updates -u -x hexo,chalk",
+    "refresh": "npm update hexo-adsense hexo-browsersync hexo-front-matter hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
   },
   "hexo": {
     "version": "6.2.0"
