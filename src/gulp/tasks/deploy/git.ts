@@ -142,16 +142,16 @@ export const deployerGit = async (done?: TaskCallback) => {
       Object.hasOwnProperty.call(configDeploy, 'force') &&
       configDeploy['force'] === true
     ) {
-      /*await git(
+      await git(
         'push',
         '-u',
         configDeploy['repo'],
         'origin',
         configDeploy['branch'],
         '--force'
-      );*/
+      );
     } else {
-      //await git('push', '--set-upstream', 'origin', configDeploy['branch']);
+      await git('push', '--set-upstream', 'origin', configDeploy['branch']);
     }
 
     if (hasSubmodule) {
