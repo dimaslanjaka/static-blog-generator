@@ -1,3 +1,4 @@
+/// <reference types="bluebird" />
 /**
  * copy src-post assets to source/_posts
  * @returns
