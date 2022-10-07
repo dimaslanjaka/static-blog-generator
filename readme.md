@@ -72,6 +72,11 @@ mkdir tmp themes
 npm install
 ```
 
+**installing development**
+```bash
+npm i -D https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/development.tgz
+```
+
 ## project structure
 
 | folder name | description |
