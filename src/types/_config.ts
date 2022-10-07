@@ -1,5 +1,5 @@
 import { deepmerge } from 'deepmerge-ts';
-import { initializeApp } from 'firebase/app';
+import { FirebaseOptions } from 'firebase/app';
 import { existsSync, mkdirSync, readFileSync } from 'fs';
 import memoizee from 'memoizee';
 import { Ngrok } from 'ngrok';
@@ -38,7 +38,7 @@ export const default_project_config = default_config;
 type projectImportData = typeof project_config_data;
 interface PrivateProjectConfig {
   [keys: string]: any;
-  firebase: Parameters<typeof initializeApp>[0];
+  firebase: FirebaseOptions;
   ngrok: Ngrok.Options;
   root: string;
   tmp: typeof tmp;
@@ -225,9 +225,9 @@ config.root = root;
 config.tmp = tmp;
 
 // remove null
-['include', 'exclude', 'ignore', 'skip_render'].map((key)=>{
+['include', 'exclude', 'ignore', 'skip_render'].map((key) => {
   if (!config[key]) config[key] = [];
-})
+});
 
 // merge with default config
 config = deepmerge(<any>default_config, config);
