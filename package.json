@@ -50,7 +50,7 @@
     "update-version": "npm version $(git describe)",
     "preinstall": "node scripts/preinstall.js",
     "postpack": "node scripts/postpack.js",
-    "postinstall": "node scripts/postinstall.js",
+    "postinstall": "node scripts/postinstall.js && npm run refresh",
     "update-ncu": "npx npm-check-updates -u -x chalk"
   },
   "repository": {
