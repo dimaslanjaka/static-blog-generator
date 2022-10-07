@@ -1,4 +1,3 @@
-/// <reference types="bluebird" />
 import { TaskCallback } from 'undertaker';
 import { SBGParsePostOptions } from '../../../parser/post/parsePost';
 /**
