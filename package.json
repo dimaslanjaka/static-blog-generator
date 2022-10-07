@@ -89,7 +89,7 @@
     "firebase": "^9.10.0",
     "folder-hash": "^4.0.2",
     "fs-extra": "^10.1.0",
-    "git-command-helper": "file:../git-command-helper",
+    "git-command-helper": "github:dimaslanjaka/git-command-helper",
     "glob": "^8.0.3",
     "google-news-sitemap": "github:dimaslanjaka/google-news-sitemap#master",
     "gulp": "^4.0.2",
