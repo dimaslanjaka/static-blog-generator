@@ -17,26 +17,38 @@ document.addEventListener('page:loaded', () => {
   }
   if (CONFIG.page.comments) {
     const pageUrl = CONFIG.page.permalink.replace(/%20/g, ' ');
-    let frame = document.createElement('iframe');
-    frame.src
-      = '/page/disqus-comment.html?url=' + pageUrl;
+    const frame = document.createElement('iframe');
+    frame.src = '/page/disqus-comment.html?url=' + pageUrl;
     frame.setAttribute('data-timestamp', +new Date());
     frame.id = 'disqus-frame';
     frame.setAttribute('frameborder', 0);
-    frame.width = '100%';
-    //frame.setAttribute('style', 'width:100%;min-height:500px;');
+    frame.setAttribute('style', 'width:100%;min-height:500px;');
     frame.onload = function() {
-      frame = document.getElementById('disqus-frame');
-      frame.height = frame.contentWindow.document.body.scrollHeight + 'px';
-      console.log('height', frame.contentWindow.document.body.scrollHeight);
+      const hash = window.location.hash;
+      if (hash.length > 0) {
+        const distanceFromTop = document
+          .querySelector(hash)
+          .getBoundingClientRect().top;
+        window.scrollTo({
+          top     : distanceFromTop,
+          behavior: 'smooth'
+        });
+      }
     };
     document.getElementById('disqus_thread').appendChild(frame);
 
     window.addEventListener(
       'message',
       event => {
-        if (/webmanajemen\.com/i.test(event.origin)) {
-          console.log(event);
+        if (/webmanajemen\.com|^localhost/i.test(event.origin)) {
+          const data = event.data;
+          if (typeof data === 'object') {
+            if ('type' in data) {
+              if (data.type === 'embed-size') {
+                document.getElementById('disqus-frame').height = data.height;
+              }
+            }
+          }
         }
       },
       false
