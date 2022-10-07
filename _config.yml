@@ -146,17 +146,15 @@ exclude:
   - "**/node_modules/**"
   - "**/vendor/**"
   - "**/ads/**"
+  - "**/tmp/**"
 ignore:
   - "**/.git"
 # https://hexo.io/docs/configuration.html
 skip_render:
-  - "chimeraland/attendants/**/*.html"
-  - "chimeraland/monsters/**/*.html"
-  - "chimeraland/attendants/*.html"
-  - "chimeraland/monsters/*.html"
-  - "chimeraland/**/*.html"
-  - "chimeraland/*.html"
-  - "_posts/Chimeraland/**/*.html"
+  - "*.html"
+  - "page/*.html"
+  - "comment.html"
+  - "source/comment.html"
   - "**/hexo-theme-unit-test/**"
   - "**/node_modules/**"
   - "yandex_*"
@@ -164,8 +162,6 @@ skip_render:
   - "glx_*"
   - "Midi"
   - "Midi/**/*"
-  - "backend"
-  - "backend/**/*"
   # https://github.com/hexojs/hexo/issues/1797
   - "*.json"
   - "**/*.json"
