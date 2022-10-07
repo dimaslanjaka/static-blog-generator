@@ -59,7 +59,7 @@ jobs:
         git config user.email "dimaslanjaka@gmail.com"
         git config user.name "dimaslanjaka"
         git fetch --all
-        git pull --all
+        git pull --recurse-submodule
         git submodule update -i -r
         git submodule foreach git submodule update -i -r
 
@@ -68,6 +68,7 @@ jobs:
       run: |
         echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
         npm run update
+        npm i https://github.com/dimaslanjaka/git-command-helper.git
 
     - name: Build
       continue-on-error: true
