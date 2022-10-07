@@ -308,7 +308,7 @@ generator:
 
 ## https://github.com/dimaslanjaka/hexo-adsense
 adsense:
-  enable: true
+  enable: false
   #pub: ca-pub-1165447249910969 # mine
   #pub: ca-pub-2188063137129806 # kiki
   pub: ca-pub-2974518380815858
