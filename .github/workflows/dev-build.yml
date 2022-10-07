@@ -68,7 +68,12 @@ jobs:
       run: |
         echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
         npm run update
-        npm i https://github.com/dimaslanjaka/git-command-helper.git
+        npm install 'dimaslanjaka/git-command-helper.git'
+        npm install 'dimaslanjaka/persistent-cache#improve2'
+        npm install 'dimaslanjaka/safelink'
+        npm install -D 'dimaslanjaka/nodejs-package-types#through2'
+        npm install -D 'dimaslanjaka/nodejs-package-types'
+        npm install 'dimaslanjaka/hexo-post-parser#maste'
 
     - name: Build
       continue-on-error: true
