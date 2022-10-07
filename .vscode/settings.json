@@ -11,9 +11,13 @@
   "typescript.tsc.autoDetect": "on",
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
+  "files.associations": {
+    "*.njk": "html",
+  },
   "emmet.includeLanguages": {
     "ejs": "html",
     "njk": "html",
+    "nunjucks": "html"
   },
   "emmet.syntaxProfiles": {
     "njk": "html",
@@ -32,6 +36,10 @@
     "javascript",
     "typescript"
   ],
+  "[nunjucks]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "[ejs]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "vscode.html-language-features"
