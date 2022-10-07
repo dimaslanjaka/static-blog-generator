@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* global NexT, CONFIG, DISQUS */
 
 document.addEventListener('page:loaded', () => {
@@ -14,8 +15,34 @@ document.addEventListener('page:loaded', () => {
     // defer loading until the whole page loading is completed
     window.addEventListener('load', loadCount, false);
   }
-
   if (CONFIG.page.comments) {
+    const pageUrl = CONFIG.page.permalink.replace(/%20/g, ' ');
+    let frame = document.createElement('iframe');
+    frame.src
+      = '/page/disqus-comment.html?url=' + pageUrl;
+    frame.setAttribute('data-timestamp', +new Date());
+    frame.id = 'disqus-frame';
+    frame.setAttribute('frameborder', 0);
+    frame.width = '100%';
+    //frame.setAttribute('style', 'width:100%;min-height:500px;');
+    frame.onload = function() {
+      frame = document.getElementById('disqus-frame');
+      frame.height = frame.contentWindow.document.body.scrollHeight + 'px';
+      console.log('height', frame.contentWindow.document.body.scrollHeight);
+    };
+    document.getElementById('disqus_thread').appendChild(frame);
+
+    window.addEventListener(
+      'message',
+      event => {
+        if (/webmanajemen\.com/i.test(event.origin)) {
+          console.log(event);
+        }
+      },
+      false
+    );
+
+    /*
     // `disqus_config` should be a global variable
     // See https://help.disqus.com/en/articles/1717084-javascript-configuration-variables
     window.disqus_config = function() {
@@ -25,7 +52,7 @@ document.addEventListener('page:loaded', () => {
       if (CONFIG.disqus.i18n.disqus !== 'disqus') {
         this.language = CONFIG.disqus.i18n.disqus;
       }
-      console.log(this.page);
+      return this.page;
     };
     NexT.utils.loadComments('#disqus_thread').then(() => {
       if (window.DISQUS) {
@@ -42,5 +69,6 @@ document.addEventListener('page:loaded', () => {
         );
       }
     });
+    */
   }
 });
