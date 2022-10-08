@@ -1,7 +1,6 @@
 import Bluebird from 'bluebird';
 import { existsSync } from 'fs';
 import { gitHelper } from 'git-command-helper';
-import { Submodule } from 'git-command-helper/dist/extract-submodule';
 import gulp from 'gulp';
 import dom from 'gulp-dom';
 import { spawn } from 'hexo-util';
@@ -9,6 +8,7 @@ import moment from 'moment-timezone';
 import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
 import { join } from 'upath';
+import { deployConfig } from './deploy';
 
 gulp.task('safelink', async () => {
   const config = getConfig();
@@ -101,20 +101,6 @@ gulp.task('commit', (finish) => {
   return commit();
 });
 
-function deployConfig() {
-  const deployDir = join(__dirname, '.deploy_git');
-  const config = getConfig();
-  const github = new gitHelper(deployDir);
-  return { deployDir, config, github };
-}
-
-async function setupGit({ branch, url, baseDir }) {
-  const github = new gitHelper(baseDir);
-  await github.setremote(url);
-  await github.setbranch(branch);
-  return github;
-}
-
 gulp.task('copy-gen', async () => {
   const { deployDir, github, config } = deployConfig();
   const pull = async () => {
@@ -148,8 +134,8 @@ gulp.task('copy-gen', async () => {
   const commit = async () => {
     const now = moment().format('LLL');
     if (github.submodule.hasSubmodule()) {
-      const info = await github.submodule.get();
-      const commitSubmodule = async (sub: Submodule) => {
+      const info = github.submodule.get();
+      const commitSubmodule = async (sub: typeof info[number]) => {
         const submodule = new gitHelper(sub.root);
         await submodule.addAndCommit('-A', `update ${sub.path} ${now}`);
         submodule.status().then(console.log);
@@ -172,4 +158,18 @@ gulp.task('copy-gen', async () => {
   await spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' });
 });
 
-import './deploy';
+const copyGen = () => {
+  const { deployDir } = deployConfig();
+  return new Bluebird((resolve) => {
+    gulp
+      .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
+        cwd: join(__dirname, 'public'),
+        dot: true
+      })
+      .pipe(gulp.dest(deployDir))
+      .on('error', console.trace)
+      .once('end', () => resolve());
+  });
+};
+
+gulp.task('copy', copyGen);
