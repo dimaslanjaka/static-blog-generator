@@ -66,17 +66,25 @@ async function commit() {
     const info = github.submodule.get();
     const commitSubmodule = async (sub: typeof info[number]) => {
       const submodule = new gitHelper(sub.root);
-      await submodule.addAndCommit('-A', `update ${sub.path} ${now}`, 'am');
-      submodule.status().then(console.log);
-    };
-    while (info.length > 0) {
-      try {
-        commitSubmodule(info[0]);
-      } catch {
-        //
+      const items = await submodule.status();
+      if (items.length > 0) {
+        await submodule.addAndCommit('-A', `update ${sub.path} ${now}`, 'am');
       }
-      info.shift();
-    }
+    };
+    const iterate = function () {
+      return new Promise((resolve) => {
+        // resolve directly when submodule items no made changes
+        if (info.length === 0) return resolve(null);
+        commitSubmodule(info[0]).then(() => {
+          info.shift();
+          // re-iterate when submodule items not committed
+          if (info.length > 0) return iterate();
+          // resolves all
+          resolve(null);
+        });
+      });
+    };
+    await iterate();
   }
   await github.add('-A');
   await github.commit('update site ' + now);
