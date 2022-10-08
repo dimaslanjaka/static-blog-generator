@@ -1,8 +1,11 @@
 import Bluebird from 'bluebird';
 import { existsSync } from 'fs';
+import { gitHelper } from 'git-command-helper';
+import { Submodule } from 'git-command-helper/dist/extract-submodule';
 import gulp from 'gulp';
 import dom from 'gulp-dom';
 import { spawn } from 'hexo-util';
+import moment from 'moment-timezone';
 import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
 import { join } from 'upath';
@@ -28,8 +31,8 @@ gulp.task('safelink', async () => {
   ];
   gulp
     .src(
-      ['*/*.html', '**/*.html', '**/**/*.html'].map((path) =>
-        join(__dirname, config.public_dir, path)
+      ['*/*.html', '**/*.html', '**/**/*.html'].map((pattern) =>
+        join(__dirname, config.public_dir, pattern)
       )
     )
     .pipe(
@@ -50,6 +53,9 @@ gulp.task('safelink', async () => {
                * match url
                */
               const matchHref = internal_links.includes(href);
+              if (!matchHref) {
+                a.setAttribute('rel', 'nofollow noopener noreferer');
+              }
               if (!matchHost && !matchHref) {
                 const safelinkPath = safelink.encodeURL(href);
                 if (
@@ -95,36 +101,34 @@ gulp.task('commit', (finish) => {
   return commit();
 });
 
-gulp.task('copy-gen', (done) => {
+function deployConfig() {
   const deployDir = join(__dirname, '.deploy_git');
-  const pullCheck = () => {
-    return new Bluebird((resolve) => {
-      if (!existsSync(deployDir)) {
-        spawn(
-          'git',
-          [
-            'clone',
-            'https://github.com/dimaslanjaka/dimaslanjaka.github.io.git',
-            '.deploy_git'
-          ],
-          { cwd: __dirname, stdio: 'inherit' }
-        )
-          .catch(console.trace)
-          .finally(() => resolve());
-      } else {
-        spawn('git', ['pull', 'origin', 'master'], {
-          cwd: deployDir,
-          stdio: 'inherit'
-        })
-          .catch(() =>
-            spawn('git', ['reset', '--hard', 'origin/master'], {
-              cwd: deployDir,
-              stdio: 'inherit'
-            })
-          )
-          .finally(() => resolve());
-      }
-    });
+  const config = getConfig();
+  const github = new gitHelper(deployDir);
+  return { deployDir, config, github };
+}
+
+async function setupGit({ branch, url, baseDir }) {
+  const github = new gitHelper(baseDir);
+  await github.setremote(url);
+  await github.setbranch(branch);
+  return github;
+}
+
+gulp.task('copy-gen', async () => {
+  const { deployDir, github, config } = deployConfig();
+  const pull = async () => {
+    await github.setremote(config.deploy.repo);
+    if (!existsSync(deployDir)) await github.init();
+    await github.setuser(config.deploy.username);
+    await github.setemail(config.deploy.email);
+    await github.reset(config.deploy.branch);
+
+    if (github.submodule.hasSubmodule()) {
+      await github.submodule.safeUpdate(true);
+    }
+
+    await github.pull(['--recurse-submodule']);
   };
   const copyGen = () => {
     return new Bluebird((resolve) => {
@@ -138,8 +142,32 @@ gulp.task('copy-gen', (done) => {
         .once('end', () => resolve());
     });
   };
-  pullCheck()
-    .then(() => copyGen())
-    .then(() => spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' }))
-    .finally(() => done());
+  const commit = async () => {
+    const now = moment().format('LLL');
+    if (github.submodule.hasSubmodule()) {
+      const info = await github.submodule.get();
+      const commitSubmodule = async (sub: Submodule) => {
+        const submodule = new gitHelper(sub.root);
+        await submodule.addAndCommit('-A', `update ${sub.path} ${now}`);
+        submodule.status().then(console.log);
+      };
+      while (info.length > 0) {
+        try {
+          commitSubmodule(info[0]);
+        } catch {
+          //
+        }
+        info.shift();
+      }
+    }
+    await github.add('-A');
+    await github.commit('update site ' + now);
+  };
+  await pull();
+  //await copyGen();
+  //await commit();
+  //await spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' });
+  /*await github.status().then((statuses) => {
+    console.log(statuses);
+  });*/
 });
