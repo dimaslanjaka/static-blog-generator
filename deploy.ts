@@ -35,7 +35,7 @@ async function status(done?: TaskCallback) {
 gulp.task('status', status);
 gulp.task('pull', pull);
 
-function deployConfig() {
+export function deployConfig() {
   const deployDir = join(__dirname, '.deploy_git');
   const config = getConfig();
   const github = new gitHelper(deployDir);
