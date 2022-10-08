@@ -62,7 +62,7 @@ async function status(done?: TaskCallback) {
 async function commit() {
   const { github, config } = deployConfig();
   const now = moment().tz(config.timezone).format('LLL');
-  if (github.submodule.hasSubmodule()) {
+  /*if (github.submodule.hasSubmodule()) {
     const info = github.submodule.get();
     const commitSubmodule = async (sub: typeof info[number]) => {
       const submodule = new gitHelper(sub.root);
@@ -85,9 +85,9 @@ async function commit() {
       });
     };
     await iterate();
-  }
+  }*/
   github.status().then((changes) => {
-    console.log(changes.length);
+    console.log(changes.length, github.cwd);
   });
   //await github.add('-A');
   //await github.commit('update site ' + now);
