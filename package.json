@@ -45,6 +45,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "file:themes/next",
     "hexo-util": "^2.7.0",
+    "moment-timezone": "^0.5.37",
     "node-sass": "^7.0.3",
     "warehouse": "^4.0.2"
   },
@@ -59,6 +60,7 @@
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "git-command-helper": "file:../git-command-helper",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-dom": "file:packages/gulp-dom",
