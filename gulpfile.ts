@@ -1,15 +1,13 @@
 import Bluebird from 'bluebird';
-import { existsSync } from 'fs';
-import { gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
 import dom from 'gulp-dom';
 import { spawn } from 'hexo-util';
-import moment from 'moment-timezone';
 import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
 
+// safelinkify the public folder
 gulp.task('safelink', async () => {
   const config = getConfig();
   const configSafelink = Object.assign(
@@ -73,7 +71,8 @@ gulp.task('safelink', async () => {
     .pipe(gulp.dest(join(__dirname, config.public_dir)));
 });
 
-gulp.task('commit', (finish) => {
+// commit current project
+gulp.task('project-commit', (finish) => {
   const gitDirs = [
     join(__dirname, 'src-posts'),
     join(__dirname, 'source'),
@@ -101,63 +100,6 @@ gulp.task('commit', (finish) => {
   return commit();
 });
 
-gulp.task('copy-gen', async () => {
-  const { deployDir, github, config } = deployConfig();
-  const pull = async () => {
-    await github.setremote(config.deploy.repo);
-    if (!existsSync(deployDir)) await github.init();
-    await github.setuser(config.deploy.username);
-    await github.setemail(config.deploy.email);
-    await github.reset(config.deploy.branch);
-
-    if (github.submodule.hasSubmodule()) {
-      await github.submodule.safeUpdate(true);
-    }
-
-    await github.pull(['--recurse-submodule']);
-    await github.status().then((statuses) => {
-      console.log(statuses);
-    });
-  };
-  const copyGen = () => {
-    return new Bluebird((resolve) => {
-      gulp
-        .src(['**/**', '!**/.git*'], {
-          cwd: join(__dirname, 'public'),
-          dot: true
-        })
-        .pipe(gulp.dest(deployDir))
-        .on('error', console.trace)
-        .once('end', () => resolve());
-    });
-  };
-  const commit = async () => {
-    const now = moment().format('LLL');
-    if (github.submodule.hasSubmodule()) {
-      const info = github.submodule.get();
-      const commitSubmodule = async (sub: typeof info[number]) => {
-        const submodule = new gitHelper(sub.root);
-        await submodule.addAndCommit('-A', `update ${sub.path} ${now}`);
-        submodule.status().then(console.log);
-      };
-      while (info.length > 0) {
-        try {
-          commitSubmodule(info[0]);
-        } catch {
-          //
-        }
-        info.shift();
-      }
-    }
-    await github.add('-A');
-    await github.commit('update site ' + now);
-  };
-  await pull();
-  await copyGen();
-  await commit();
-  await spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' });
-});
-
 const copyGen = () => {
   const { deployDir } = deployConfig();
   return new Bluebird((resolve) => {
@@ -171,5 +113,5 @@ const copyGen = () => {
       .once('end', () => resolve());
   });
 };
-
+// copy public to .deploy_git
 gulp.task('copy', copyGen);
