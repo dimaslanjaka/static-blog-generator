@@ -26,7 +26,7 @@ async function pull(done?: TaskCallback) {
   }
 }
 
-async function status(done?: TaskCallback) {
+function status(done?: TaskCallback) {
   const { github } = deployConfig();
   github.status().then((statuses) => {
     statuses.map((item) => {
@@ -120,6 +120,13 @@ function commit() {
       .then(commitSubmodule)
       .then(() => resolve(null));
   });
+}
+
+function push() {
+  const { github } = deployConfig();
+  if (github.submodule.hasSubmodule()) {
+    const info = github.submodule.get();
+  }
 }
 
 gulp.task('status', status);
