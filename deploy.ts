@@ -86,8 +86,11 @@ async function commit() {
     };
     await iterate();
   }
-  await github.add('-A');
-  await github.commit('update site ' + now);
+  github.status().then((changes) => {
+    console.log(changes.length);
+  });
+  //await github.add('-A');
+  //await github.commit('update site ' + now);
 }
 
 gulp.task('status', status);
