@@ -88,7 +88,7 @@
   },
   "code-runner.executorMap": {
     "javascript": "node",
-    "typescript": "node -r ts-node/register",
+    "typescript": "cross-env-shell DEBUG=git-command-helper,chimera-* ts-node",
     "coffeescript": "coffee",
     "sass": "sass --style expanded",
     "scss": "scss --style expanded",

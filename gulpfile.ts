@@ -129,6 +129,9 @@ gulp.task('copy-gen', async () => {
     }
 
     await github.pull(['--recurse-submodule']);
+    await github.status().then((statuses) => {
+      console.log(statuses);
+    });
   };
   const copyGen = () => {
     return new Bluebird((resolve) => {
@@ -164,10 +167,9 @@ gulp.task('copy-gen', async () => {
     await github.commit('update site ' + now);
   };
   await pull();
-  //await copyGen();
-  //await commit();
-  //await spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' });
-  /*await github.status().then((statuses) => {
-    console.log(statuses);
-  });*/
+  await copyGen();
+  await commit();
+  await spawn('git', ['status'], { cwd: deployDir, stdio: 'inherit' });
 });
+
+import './deploy';

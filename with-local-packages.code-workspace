@@ -25,6 +25,11 @@
 		"typescript.format.enable": true,
 		"typescript.tsserver.enableTracing": false,
 		"typescript.tsserver.log": "off",
-		"typescript.tsserver.trace": "off"
+		"typescript.tsserver.trace": "off",
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true,
+			"source.fixAll.eslint": true,
+			"source.organizeImports": true
+		}
 	}
 }
