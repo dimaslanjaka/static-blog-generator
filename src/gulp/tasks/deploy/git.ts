@@ -14,14 +14,9 @@ const deployDir = resolve(join(process.cwd(), '.deploy_git'));
 const logname = chalk.magentaBright('[deploy][git]');
 
 const copyGenerated = () => {
-  return new Promise(resolve => {
-    gulp
-      .src(['**/**', '!**/.git*'], { cwd: post_generated_dir, dot: true })
-      .pipe(gulp.dest(deployDir))
-      .once('end', function(){
-        resolve();
-      });
-  });
+  return gulp
+    .src(['**/**', '!**/.git*'], { cwd: post_generated_dir, dot: true })
+    .pipe(gulp.dest(deployDir));
 };
 
 /**
@@ -115,55 +110,57 @@ export const deployerGit = async (done?: TaskCallback) => {
     await github.submodule.update();
   }
   */
-  
-  await copyGenerated();
-  
-  console.log(logname, 'processing files before deploy...');
-  await beforeDeploy(post_generated_dir);
-  
-  // add
-  console.log(logname, 'adding files...');
-  if (hasSubmodule) {
-    console.log(logname, 'adding submodules files...');
-    await github.submodule.addAll('-A');
-  }
-  await github.add('-A');
-  
-  // commit
-  console.log(logname, 'commiting...');
-  let msg = 'Update site';
-  if (existsSync(join(process.cwd(), '.git'))) {
-    msg += ' ' + (await getLatestCommitHash());
-  }
-  msg += '\ndate: ' + modMoment().format();
-  if (hasSubmodule) {
-    console.log(logname, 'commiting submodules...');
-    await github.submodule.commitAll(msg);
-  }
-  await github.commit(msg, '-am');
-  
-  // push
-  console.log(logname, `pushing ${configDeploy['branch']}...`);
-  if (
-    Object.hasOwnProperty.call(configDeploy, 'force') &&
-    configDeploy['force'] === true
-  ) {
-    await git(
-      'push',
-      '-u',
-      configDeploy['repo'],
-      'origin',
-      configDeploy['branch'],
-      '--force'
-    );
-  } else {
-    await git('push', '--set-upstream', 'origin', configDeploy['branch']);
-  }
 
-  if (hasSubmodule) {
-    console.log(logname, 'pushing submodules...');
-    //await git('submodule', 'foreach', 'git', 'push');
-  }
+  return copyGenerated().on('end', async () => {
+    console.log(logname, 'processing files before deploy...');
+    await beforeDeploy(post_generated_dir);
 
-  console.log(logname, 'deploy merged with origin successful'); 
+    // add
+    console.log(logname, 'adding files...');
+    if (hasSubmodule) {
+      console.log(logname, 'adding submodules files...');
+      await github.submodule.addAll('-A');
+    }
+    await github.add('-A');
+
+    // commit
+    console.log(logname, 'commiting...');
+    let msg = 'Update site';
+    if (existsSync(join(process.cwd(), '.git'))) {
+      msg += ' ' + (await getLatestCommitHash());
+    }
+    msg += '\ndate: ' + modMoment().format();
+    if (hasSubmodule) {
+      console.log(logname, 'commiting submodules...');
+      await github.submodule.commitAll(msg);
+    }
+    await github.commit(msg, '-am');
+
+    // push
+    console.log(logname, `pushing ${configDeploy['branch']}...`);
+    if (
+      Object.hasOwnProperty.call(configDeploy, 'force') &&
+      configDeploy['force'] === true
+    ) {
+      await git(
+        'push',
+        '-u',
+        configDeploy['repo'],
+        'origin',
+        configDeploy['branch'],
+        '--force'
+      );
+    } else {
+      await git('push', '--set-upstream', 'origin', configDeploy['branch']);
+    }
+
+    if (hasSubmodule) {
+      console.log(logname, 'pushing submodules...');
+      //await git('submodule', 'foreach', 'git', 'push');
+    }
+
+    console.log(logname, 'deploy merged with origin successful');
+
+    done();
+  });
 };
