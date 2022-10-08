@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import moment from 'moment-timezone';
 import { getConfig } from 'static-blog-generator';
 import { TaskCallback } from 'undertaker';
-import { join } from 'upath';
+import { join, toUnix } from 'upath';
 
 async function pull(done?: TaskCallback) {
   const { deployDir, github, config } = deployConfig();
@@ -59,38 +59,67 @@ async function status(done?: TaskCallback) {
   });
 }
 
-async function commit() {
+function commit() {
   const { github, config } = deployConfig();
   const now = moment().tz(config.timezone).format('LLL');
-  /*if (github.submodule.hasSubmodule()) {
-    const info = github.submodule.get();
-    const commitSubmodule = async (sub: typeof info[number]) => {
-      const submodule = new gitHelper(sub.root);
-      const items = await submodule.status();
-      if (items.length > 0) {
-        await submodule.addAndCommit('-A', `update ${sub.path} ${now}`, 'am');
-      }
-    };
-    const iterate = function () {
-      return new Promise((resolve) => {
-        // resolve directly when submodule items no made changes
-        if (info.length === 0) return resolve(null);
-        commitSubmodule(info[0]).then(() => {
-          info.shift();
-          // re-iterate when submodule items not committed
-          if (info.length > 0) return iterate();
-          // resolves all
+  const commitRoot = function () {
+    return new Promise((resolve) => {
+      github.status().then((changes) => {
+        console.log(
+          'changes',
+          changes.length,
+          toUnix(github.cwd).replace(toUnix(process.cwd()), '')
+        );
+        if (changes.length > 0) {
+          github.add('-A').then(() => {
+            github.commit('update site ' + now).then(() => {
+              resolve(null);
+            });
+          });
+        }
+      });
+    });
+  };
+  const commitSubmodule = function () {
+    return new Promise((resolve) => {
+      if (github.submodule.hasSubmodule()) {
+        const info = github.submodule.get();
+        const commitSubmodule = async (sub: typeof info[number]) => {
+          const submodule = new gitHelper(sub.root);
+          const items = await submodule.status();
+          if (items.length > 0) {
+            await submodule.addAndCommit(
+              '-A',
+              `update ${sub.path} ${now}`,
+              'am'
+            );
+          }
+        };
+        const iterate = function () {
+          return new Promise((resolveIt) => {
+            // resolve directly when submodule items no made changes
+            if (info.length === 0) return resolveIt(null);
+            commitSubmodule(info[0]).then(() => {
+              info.shift();
+              // re-iterate when submodule items not committed
+              if (info.length > 0) return iterate();
+              // resolves all
+              resolveIt(null);
+            });
+          });
+        };
+        iterate().then(() => {
           resolve(null);
         });
-      });
-    };
-    await iterate();
-  }*/
-  github.status().then((changes) => {
-    console.log(changes.length, github.cwd);
+      }
+    });
+  };
+
+  return new Promise((resolve) => {
+    commitRoot()
+      .then(commitSubmodule)
+      .then(() => resolve(null));
   });
-  //await github.add('-A');
-  //await github.commit('update site ' + now);
 }
 
 gulp.task('status', status);
