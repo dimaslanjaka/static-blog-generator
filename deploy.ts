@@ -178,7 +178,16 @@ function push() {
   };
   return new Promise((resolve) => {
     iterateSubmodule()
-      .then(function () {})
+      .then(function () {
+        return new Promise((resolvePush) => {
+          github.canPush().then((allowed) => {
+            console.log(workspace(github.cwd), 'can push', allowed);
+            if (allowed) {
+              github.push().then(resolvePush);
+            }
+          });
+        });
+      })
       .then(resolve);
     //pushSubmodule(submodules[1]).then(resolve);
   });
