@@ -124,11 +124,67 @@ function commit() {
 
 function push() {
   const { github } = deployConfig();
-  if (github.submodule.hasSubmodule()) {
-    const info = github.submodule.get();
-  }
+  const submodules = github.submodule.hasSubmodule()
+    ? github.submodule.get()
+    : [];
+  const pushSubmodule = function (submodule: typeof submodules[number]) {
+    const { url, branch, root } = submodule;
+    if (!submodule.github) {
+      submodule.github = new gitHelper(root);
+    }
+    const { github } = submodule;
+    return new Promise((resolvePush) => {
+      const setR = () => github.setremote(url);
+      const setB = () => github.setbranch(branch);
+      Promise.all([setR(), setB()]).then(() => {
+        github.canPush().then((allowed) => {
+          console.log(workspace(root), 'can push', allowed);
+          if (allowed) {
+            // push then resolve
+            github.push(false, { stdio: 'pipe' }).then(resolvePush);
+          } else {
+            github.status().then((changes) => {
+              if (changes.length > 0) {
+                console.log('submodule', workspace(root), 'changes not staged');
+                // resolve changes not staged
+                resolvePush(null);
+              } else {
+                github.isUpToDate().then((updated) => {
+                  console.log('submodule', workspace(root), 'updated', updated);
+                  // resolve is up to date
+                  resolvePush(null);
+                });
+              }
+            });
+          }
+        });
+      });
+    });
+  };
+  const iterateSubmodule = function () {
+    return new Promise((resolve) => {
+      if (submodules.length === 0) {
+        resolve(null);
+      } else {
+        pushSubmodule(submodules.shift()).then(() => {
+          if (submodules.length > 0) {
+            iterateSubmodule().then(resolve);
+          } else {
+            resolve(null);
+          }
+        });
+      }
+    });
+  };
+  return new Promise((resolve) => {
+    iterateSubmodule()
+      .then(function () {})
+      .then(resolve);
+    //pushSubmodule(submodules[1]).then(resolve);
+  });
 }
 
+gulp.task('push', push);
 gulp.task('status', status);
 gulp.task('commit', commit);
 gulp.task('pull', pull);
@@ -138,4 +194,13 @@ export function deployConfig() {
   const config = getConfig();
   const github = new gitHelper(deployDir);
   return { deployDir, config, github };
+}
+
+/**
+ * get relative path from workspace
+ * @param str
+ * @returns
+ */
+function workspace(str: string) {
+  return toUnix(str).replace(toUnix(process.cwd()), '');
 }
