@@ -75,7 +75,7 @@ function status(done?: TaskCallback) {
 
 function getUntrackedSitemap() {
   const crawler = sitemapCrawler;
-  crawler('https://www.webmanajemen.com/chimeraland', (err, res) => {
+  crawler('https://www.webmanajemen.com/chimeraland', null, (err, res) => {
     console.log('error:', err);
     console.log('siteMap:', res); // Print the siteMap from link
   });
