@@ -115,3 +115,4 @@ const copyGen = () => {
 };
 // copy public to .deploy_git
 gulp.task('copy', copyGen);
+gulp.task('deploy', gulp.series('pull', 'copy', 'commit', 'push'));

@@ -7,23 +7,36 @@ import { getConfig } from 'static-blog-generator';
 import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
 
-async function pull(done?: TaskCallback) {
-  const { deployDir, github, config } = deployConfig();
-  await github.setremote(config.deploy.repo);
-  if (!existsSync(deployDir)) await github.init();
-  await github.setuser(config.deploy.username);
-  await github.setemail(config.deploy.email);
-  //await github.reset(config.deploy.branch);
-
-  await github.pull(['--recurse-submodule']);
-  if (github.submodule.hasSubmodule()) {
-    console.log('safe update submodule');
-    github.submodule.safeUpdate(true).then(() => {
-      if (typeof done === 'function') done();
-    });
-  } else {
-    if (typeof done === 'function') done();
-  }
+function pull() {
+  return new Promise((resolve) => {
+    const { deployDir, github, config } = deployConfig();
+    github
+      .setremote(config.deploy.repo)
+      .then(() => {
+        return new Promise((resolveInit) => {
+          if (!existsSync(deployDir)) {
+            github.init().then(resolveInit);
+          } else {
+            resolveInit(null);
+          }
+        });
+      })
+      .then(() => github.setuser(config.deploy.username))
+      .then(() => github.setemail(config.deploy.email))
+      // reset repository to latest commit
+      .then(() => github.reset(config.deploy.branch))
+      // pull any changes inside submodule from their latest commit
+      .then(() => {
+        github.pull(['--recurse-submodule']).then(() => {
+          if (github.submodule.hasSubmodule()) {
+            console.log('safe update submodule');
+            github.submodule.safeUpdate(true).then(resolve);
+          } else {
+            resolve(null);
+          }
+        });
+      });
+  });
 }
 
 function status(done?: TaskCallback) {
@@ -84,7 +97,7 @@ function commit() {
     return new Promise((resolve) => {
       if (github.submodule.hasSubmodule()) {
         const info = github.submodule.get();
-        const commitSubmodule = async (sub: typeof info[number]) => {
+        const commitSubmoduleChild = async (sub: typeof info[number]) => {
           const submodule = new gitHelper(sub.root);
           const items = await submodule.status();
           if (items.length > 0) {
@@ -99,7 +112,7 @@ function commit() {
           return new Promise((resolveIt) => {
             // resolve directly when submodule items no made changes
             if (info.length === 0) return resolveIt(null);
-            commitSubmodule(info[0]).then(() => {
+            commitSubmoduleChild(info[0]).then(() => {
               info.shift();
               // re-iterate when submodule items not committed
               if (info.length > 0) return iterate();
