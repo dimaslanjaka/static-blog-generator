@@ -7,7 +7,7 @@
     "build": "sbg copy --nocache && hexo generate && gulp safelink",
     "copy": "sbg copy --nocache",
     "clean": "sbg clean && hexo clean",
-    "deploy": "npm run build && sbg deploy",
+    "deploy": "npm run build && gulp deploy",
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
     "postinstall": "node bin/update-cache.js",
