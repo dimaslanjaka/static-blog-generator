@@ -14,6 +14,6 @@ const opts = {
         if (!fs_1.default.existsSync((0, path_1.join)(__dirname, '../tmp')))
             fs_1.default.mkdirSync((0, path_1.join)(__dirname, '../tmp'));
         fs_1.default.writeFileSync((0, path_1.join)(__dirname, '../tmp/test.json'), JSON.stringify(res, null, 2));
-        console.log('finish');
+        console.log('finish', (0, path_1.join)(__dirname, '../tmp/test.json'));
     }
 });
