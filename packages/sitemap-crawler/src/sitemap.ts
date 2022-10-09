@@ -59,6 +59,7 @@ class SiteMapCrawler {
 
           const arrayLinks = Array.from(filteredLinks).map((url) => {
             if (url.endsWith('/')) url += 'index.html';
+            return url;
           });
 
           if (arrayLinks.length > 0) {
@@ -130,14 +131,16 @@ const attachProtocol = (link: string) => {
   return link;
 };
 
-const siteMap = (
-  link: string | string[],
-  opts = { isProgress: false, isLog: false },
-  callback?: cb
-) => {
+interface Opt {
+  isProgress: boolean;
+  isLog: boolean;
+}
+
+const siteMap = (link: string | string[], opts?: Opt, callback?: cb) => {
   let isProgress = false,
     isLog = false,
     isCounting = true;
+  opts = Object.assign({ isProgress: false, isLog: false }, opts || {});
 
   if (typeof opts === 'function') {
     callback = opts;
