@@ -6,6 +6,7 @@ import moment from 'moment-timezone';
 import { getConfig } from 'static-blog-generator';
 import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
+import sitemapCrawler from './packages/sitemap-crawler';
 
 function pull() {
   return new Promise((resolve) => {
@@ -69,6 +70,14 @@ function status(done?: TaskCallback) {
     });
 
     if (typeof done === 'function') done();
+  });
+}
+
+function getUntrackedSitemap() {
+  const crawler = sitemapCrawler;
+  crawler('https://www.webmanajemen.com/chimeraland', (err, res) => {
+    console.log('error:', err);
+    console.log('siteMap:', res); // Print the siteMap from link
   });
 }
 
