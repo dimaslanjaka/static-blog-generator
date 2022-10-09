@@ -16,6 +16,6 @@ sitemap(links, opts, (err, res) => {
       join(__dirname, '../tmp/test.json'),
       JSON.stringify(res, null, 2)
     );
-    console.log('finish');
+    console.log('finish', join(__dirname, '../tmp/test.json'));
   }
 });
