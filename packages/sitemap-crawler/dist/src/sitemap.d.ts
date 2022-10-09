@@ -1,6 +1,7 @@
 declare type cb = (arg0: Error | null, arg1?: any) => void;
-declare const siteMap: (link: string | string[], opts?: {
+interface Opt {
     isProgress: boolean;
     isLog: boolean;
-}, callback?: cb) => void;
+}
+declare const siteMap: (link: string | string[], opts?: Opt, callback?: cb) => void;
 export default siteMap;
