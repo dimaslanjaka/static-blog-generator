@@ -40,8 +40,14 @@ class SiteMapCrawler {
                     }
                 });
                 const arrayLinks = Array.from(filteredLinks).map((url) => {
-                    if (url.endsWith('/'))
+                    if (url.endsWith('/')) {
+                        // url ends with. / -> /index.html
                         url += 'index.html';
+                    }
+                    else if (!/(\w+\.\w+)$/.test(url)) {
+                        // url doesnt have extension. /path -> /path/index.html
+                        url += '/index.html';
+                    }
                     return url;
                 });
                 if (arrayLinks.length > 0) {
@@ -71,6 +77,8 @@ class SiteMapCrawler {
             '^$',
             '@',
             'png',
+            'svg',
+            'manifest.json',
             'pdf$',
             '^tel',
             '^sms',
