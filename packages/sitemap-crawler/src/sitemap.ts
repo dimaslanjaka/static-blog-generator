@@ -57,7 +57,9 @@ class SiteMapCrawler {
             }
           });
 
-          const arrayLinks = Array.from(filteredLinks);
+          const arrayLinks = Array.from(filteredLinks).map((url) => {
+            if (url.endsWith('/')) url += 'index.html';
+          });
 
           if (arrayLinks.length > 0) {
             siteMap[link] = arrayLinks;
@@ -101,7 +103,7 @@ class SiteMapCrawler {
     ];
     const rIgnores = new RegExp(ignores.join('|'), 'i');
 
-    if (href.startsWith('http')) {
+    if (isValidHttpUrl(href)) {
       const parentHostName = new URL(parent).hostname;
       const hrefHostName = new URL(href).hostname;
 
@@ -161,4 +163,16 @@ export default siteMap;
 
 function noop() {
   //
+}
+
+function isValidHttpUrl(string: string | URL) {
+  let url: URL;
+
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+
+  return url.protocol === 'http:' || url.protocol === 'https:';
 }

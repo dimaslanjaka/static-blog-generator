@@ -8,7 +8,7 @@ Generate sitemap just throw any link.
 const siteMap = require('sitemap-crawler');
 const link = 'http://www.npmjs.com';
 
-siteMap(link, (err, res) => {
+siteMap(link, {}, (err, res) => {
   console.log('error:', err);
   console.log('siteMap:', res); // Print the siteMap from link
 });
@@ -39,7 +39,7 @@ const links = [
   'www.amazon.com'
 ]
 
-siteMap(links, (err, res) => {
+siteMap(links, {}, (err, res) => {
   console.log('error:', err);
   console.log('siteMap:', res); // Print the siteMap from link
 });
