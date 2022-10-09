@@ -70,6 +70,7 @@
     "md5-file": "^5.0.0",
     "prettier": "^2.7.1",
     "safelinkify": "file:../safelink",
+    "sitemap-crawler": "file:packages/sitemap-crawler",
     "static-blog-generator": "file:../static-blog-generator",
     "through2": "^4.0.2",
     "ts-node": "^10.9.1",
