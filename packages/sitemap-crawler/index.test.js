@@ -1,6 +1,6 @@
-const siteMap = require('./index');
 const fs = require('fs');
 const { join } = require('path');
+const { default: sitemap } = require('./dist');
 const links = ['http://www.amazon.com/', 'https://en.wikipedia.org/'];
 
 const opts = {
@@ -8,7 +8,7 @@ const opts = {
   isLog: true
 };
 
-siteMap(links, opts, (err, res) => {
+sitemap(links, opts, (err, res) => {
   if (!fs.existsSync(join(__dirname, 'tmp')))
     fs.mkdirSync(join(__dirname, 'tmp'));
   fs.writeFileSync(
