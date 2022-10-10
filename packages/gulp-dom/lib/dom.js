@@ -24,7 +24,7 @@ function gulpDom(mutator) {
         }
         if (file.isBuffer()) {
             const dom = new jsdom_1.default.JSDOM(file.contents.toString('utf8'));
-            const mutated = mutator.call(dom.window.document);
+            const mutated = mutator.call(dom.window.document, file.path);
             file.contents = Buffer.from(typeof mutated === 'string' ? mutated : dom.serialize());
             callback(null, file);
             dom.window.close();
