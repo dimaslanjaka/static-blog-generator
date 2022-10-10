@@ -13,6 +13,7 @@
   "editor.fontLigatures": true,
   "files.associations": {
     "*.njk": "html",
+    "*.ejs": "html"
   },
   "emmet.includeLanguages": {
     "ejs": "html",
@@ -47,7 +48,7 @@
   "[scss]": {
     "editor.suggest.insertMode": "replace",
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
     "editor.suggest.insertMode": "replace",

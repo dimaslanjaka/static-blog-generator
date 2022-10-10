@@ -134,6 +134,7 @@ pagination_dir: page
 ## https://hexo.io/docs/configuration.html#Include-x2F-Exclude-Files-or-Folders
 ## `include` and `exclude` options only apply to the source/ folder, whereas `ignore` option applies to all folders.
 include:
+  - "assets/adblock-notify/readme.md"
 exclude:
   - "**/backend/**"
   - "**/.git"
@@ -153,7 +154,7 @@ ignore:
 # https://hexo.io/docs/configuration.html
 skip_render:
   - "*.html"
-  - "assets/adblock-notify/*"
+  - "assets/adblock-notify/*.html"
   - "page/*.html"
   - "comment.html"
   - "source/comment.html"
