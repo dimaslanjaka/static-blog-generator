@@ -1,5 +1,5 @@
 /// <reference types="node" />
-declare type cb = (this: Document) => any;
+declare type cb = (this: Document, path: string) => any;
 /**
  * gulpDom
  * @param mutator callback
