@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "lib": [
+      "ES2017",
+      "ES2019",
+      "DOM"
+    ],
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
