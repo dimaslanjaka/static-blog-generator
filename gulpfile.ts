@@ -32,9 +32,13 @@ gulp.task('safelink', async () => {
   ];
   gulp
     .src(
-      ['*/*.html', '**/*.html', '**/**/*.html'].map((pattern) =>
-        join(__dirname, deployDir, pattern)
-      )
+      [
+        '*.{html,htm}',
+        '*/*.{html,htm}',
+        '**/*.{html,htm}',
+        '**/**/*.{html,htm}'
+      ],
+      { cwd: deployDir }
     )
     .pipe(
       dom(function () {
