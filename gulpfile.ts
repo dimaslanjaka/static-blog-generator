@@ -6,6 +6,7 @@ import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
+import { sitemapCrawlerAsync } from './packages/sitemap-crawler/dist';
 
 // safelinkify the public folder
 gulp.task('safelink', async () => {
@@ -99,7 +100,11 @@ gulp.task('project-commit', (finish) => {
   };
   return commit();
 });
-
+function getUntrackedSitemap() {
+  sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
+    deep: 2
+  });
+}
 const copyGen = () => {
   const { deployDir } = deployConfig();
   return new Bluebird((resolve) => {
