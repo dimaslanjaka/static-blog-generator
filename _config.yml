@@ -147,11 +147,13 @@ exclude:
   - "**/vendor/**"
   - "**/ads/**"
   - "**/tmp/**"
+  - "**/hexo-theme-unit-test/**"
 ignore:
   - "**/.git"
 # https://hexo.io/docs/configuration.html
 skip_render:
   - "*.html"
+  - "assets/adblock-notify/*"
   - "page/*.html"
   - "comment.html"
   - "source/comment.html"
