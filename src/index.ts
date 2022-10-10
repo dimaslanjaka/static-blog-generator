@@ -25,6 +25,7 @@ export {
   postMeta
 } from './parser/post/parsePost';
 export { getConfig } from './types/_config';
+export { EJSRenderer } from './renderer/ejs/EJSRenderer';
 
 // register scheduler
 new scheduler();
