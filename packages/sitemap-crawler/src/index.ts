@@ -1,5 +1,8 @@
-import siteMap from './sitemap';
+import * as siteMap from './sitemap';
 
-// export { default as siteMap } from './sitemap';
-const sitemap = siteMap;
-export default sitemap;
+export {
+  sitemapCrawler,
+  sitemapCrawlerAsync,
+  SiteMapCrawlerCore as SiteMapCrawler
+} from './sitemap';
+export default siteMap.sitemapCrawler;
