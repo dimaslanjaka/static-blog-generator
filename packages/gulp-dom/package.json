@@ -2,8 +2,12 @@
   "name": "gulp-dom",
   "version": "1.0.1",
   "description": "Gulp plugin for generic DOM manipulation",
-  "main": "lib/dom.js",
-  "types": "lib/dom.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:trygve-lie/gulp-dom.git"

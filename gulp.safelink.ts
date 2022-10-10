@@ -1,6 +1,6 @@
 import { readdirSync, statSync } from 'fs';
 import gulp from 'gulp';
-import dom from 'gulp-dom';
+import dom from 'gulp-dom/src';
 import { join } from 'path';
 import sf from 'safelinkify';
 import { getConfig } from 'static-blog-generator';
@@ -53,25 +53,29 @@ function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
               const a = elements[i];
               const href = String(a['href']).trim();
               if (new RegExp('^https?://').test(href)) {
-                /**
-                 * match host
-                 */
-                const matchHost = internal_links.includes(new URL(href).host);
-                /**
-                 * match url
-                 */
-                const matchHref = internal_links.includes(href);
-                if (!matchHref) {
-                  a.setAttribute('rel', 'nofollow noopener noreferer');
-                }
-                if (!matchHost && !matchHref) {
-                  const safelinkPath = safelink.encodeURL(href);
-                  if (
-                    typeof safelinkPath == 'string' &&
-                    safelinkPath.length > 0
-                  ) {
-                    a.setAttribute('href', safelinkPath);
+                if (isValidHttpUrl(href)) {
+                  /**
+                   * match host
+                   */
+                  const matchHost = internal_links.includes(new URL(href).host);
+                  /**
+                   * match url
+                   */
+                  const matchHref = internal_links.includes(href);
+                  if (!matchHref) {
+                    a.setAttribute('rel', 'nofollow noopener noreferer');
                   }
+                  if (!matchHost && !matchHref) {
+                    const safelinkPath = safelink.encodeURL(href);
+                    if (
+                      typeof safelinkPath == 'string' &&
+                      safelinkPath.length > 0
+                    ) {
+                      a.setAttribute('href', safelinkPath);
+                    }
+                  }
+                } else {
+                  console.log('invalid url', href);
                 }
               }
             }
@@ -81,4 +85,16 @@ function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
       .pipe(gulp.dest(cwd))
       .once('end', () => resolve(null));
   });
+}
+
+function isValidHttpUrl(string: string | URL) {
+  let url: URL;
+
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+
+  return url.protocol === 'http:' || url.protocol === 'https:';
 }
