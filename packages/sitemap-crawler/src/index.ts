@@ -1,5 +1,7 @@
 import * as siteMap from './sitemap';
 
+//module 'sitemap-crawler'
+
 export {
   sitemapCrawler,
   sitemapCrawlerAsync,
