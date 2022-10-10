@@ -30,7 +30,7 @@ const internal_links = [
 // safelinkify the deploy folder
 gulp.task('safelink', iterate);
 
-function iterate(_done?: TaskCallback) {
+export function iterate(_done?: TaskCallback) {
   const paths = readdirSync(deployDir)
     .map((path) => join(deployDir, path))
     .filter((path) => statSync(path).isDirectory())
@@ -38,13 +38,13 @@ function iterate(_done?: TaskCallback) {
   return Promise.all(paths);
 }
 
-function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
+export function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
   return new Promise((resolve) => {
     cwd = cwd || deployDir;
     gulp
       .src(['**/*.{html,htm}'], { cwd })
       .pipe(
-        dom(function () {
+        dom(function (filePath) {
           //https://github.com/trygve-lie/gulp-dom
           //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
           const elements = Array.from(this.querySelectorAll('a'));
@@ -75,7 +75,7 @@ function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
                     }
                   }
                 } else {
-                  console.log('invalid url', href);
+                  console.log('invalid url', href, filePath);
                 }
               }
             }
