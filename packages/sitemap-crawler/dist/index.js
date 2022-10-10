@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SiteMapCrawler = exports.sitemapCrawlerAsync = exports.sitemapCrawler = void 0;
 const tslib_1 = require("tslib");
-const sitemap_1 = tslib_1.__importDefault(require("./sitemap"));
-// export { default as siteMap } from './sitemap';
-const sitemap = sitemap_1.default;
-exports.default = sitemap;
+const siteMap = tslib_1.__importStar(require("./sitemap"));
+var sitemap_1 = require("./sitemap");
+Object.defineProperty(exports, "sitemapCrawler", { enumerable: true, get: function () { return sitemap_1.sitemapCrawler; } });
+Object.defineProperty(exports, "sitemapCrawlerAsync", { enumerable: true, get: function () { return sitemap_1.sitemapCrawlerAsync; } });
+Object.defineProperty(exports, "SiteMapCrawler", { enumerable: true, get: function () { return sitemap_1.SiteMapCrawlerCore; } });
+exports.default = siteMap.sitemapCrawler;
