@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { readFileSync } from 'fs';
+import { readFileSync, writeFile } from 'fs';
 import gulp from 'gulp';
 import dom from 'gulp-dom';
 import { spawn } from 'hexo-util';
@@ -105,13 +105,22 @@ gulp.task('project-commit', (finish) => {
 function getUntrackedSitemap() {
   return new Bluebird((resolve) => {
     const { deployDir } = deployConfig();
-    const originfile = join(deployDir, 'sitemap.txt');
-    const sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
+    const originfile = join(__dirname, 'public/sitemap.txt');
+    const outfile = join(deployDir, 'sitemap.txt');
+    let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
     sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
       deep: 2
     }).then((results) => {
-      console.log(results);
-      resolve();
+      sitemaps = Object.values(results)
+        .flat(1)
+        .concat(sitemaps)
+        .filter(function (x, i, a) {
+          return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
+        })
+        .sort(function (a, b) {
+          return a === b ? 0 : a < b ? -1 : 1;
+        });
+      writeFile(outfile, sitemaps.join('\n'), resolve);
     });
   });
 }
@@ -128,9 +137,10 @@ const copyGen = () => {
       })
       .pipe(gulp.dest(deployDir))
       .on('error', console.trace)
-      .once('end', () => resolve());
+      .once('end', () => getUntrackedSitemap().then(resolve));
   });
 };
+
 // copy public to .deploy_git
 gulp.task('copy', copyGen);
 gulp.task('deploy', gulp.series('pull', 'copy', 'commit', 'push'));
