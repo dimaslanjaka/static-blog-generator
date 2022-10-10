@@ -58,5 +58,8 @@
     "**/themes/**",
     "**/source/**",
     "**/packages/**"
-  ]
+  ],
+  "typeAcquisition": {
+    "enable": true
+  }
 }
