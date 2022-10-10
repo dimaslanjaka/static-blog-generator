@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.sitemapAsync = void 0;
 const tslib_1 = require("tslib");
 const async_1 = tslib_1.__importDefault(require("async"));
+const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 const cheerio_1 = tslib_1.__importDefault(require("cheerio"));
 const progress_1 = tslib_1.__importDefault(require("progress"));
 const request_1 = tslib_1.__importDefault(require("request"));
@@ -131,6 +133,21 @@ const siteMap = (link, opts, callback) => {
     }
     SiteMapCrawler.start(link, isProgress, isLog, isCounting, callback || noop);
 };
+function sitemapAsync(link, opts) {
+    return new bluebird_1.default((resolve) => {
+        const results = [];
+        const crawl = (url) => {
+            siteMap(url, opts, function (e, links) {
+                if (!e) {
+                    console.log(links);
+                }
+            });
+        };
+        if (typeof link === 'string')
+            crawl(link);
+    });
+}
+exports.sitemapAsync = sitemapAsync;
 exports.default = siteMap;
 function noop() {
     //
