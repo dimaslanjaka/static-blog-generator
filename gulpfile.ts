@@ -1,4 +1,5 @@
 import Bluebird from 'bluebird';
+import { readFileSync } from 'fs';
 import gulp from 'gulp';
 import dom from 'gulp-dom';
 import { spawn } from 'hexo-util';
@@ -100,11 +101,23 @@ gulp.task('project-commit', (finish) => {
   };
   return commit();
 });
+
 function getUntrackedSitemap() {
-  sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
-    deep: 2
+  return new Bluebird((resolve) => {
+    const { deployDir } = deployConfig();
+    const originfile = join(deployDir, 'sitemap.txt');
+    const sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
+    sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
+      deep: 2
+    }).then((results) => {
+      console.log(results);
+      resolve();
+    });
   });
 }
+
+gulp.task('sitemap', getUntrackedSitemap);
+
 const copyGen = () => {
   const { deployDir } = deployConfig();
   return new Bluebird((resolve) => {
