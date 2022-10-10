@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.sitemapAsync = void 0;
 const tslib_1 = require("tslib");
 const async_1 = tslib_1.__importDefault(require("async"));
+const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 const cheerio_1 = tslib_1.__importDefault(require("cheerio"));
 const progress_1 = tslib_1.__importDefault(require("progress"));
 const request_1 = tslib_1.__importDefault(require("request"));
-const url_1 = tslib_1.__importDefault(require("url"));
 class SiteMapCrawler {
     static start(links, isProgress, isLog, isCounting, callback) {
         const siteMap = {};
@@ -40,7 +41,17 @@ class SiteMapCrawler {
                         filteredLinks.add(href);
                     }
                 });
-                const arrayLinks = Array.from(filteredLinks);
+                const arrayLinks = Array.from(filteredLinks).map((url) => {
+                    if (url.endsWith('/')) {
+                        // url ends with. / -> /index.html
+                        url += 'index.html';
+                    }
+                    else if (!/(\w+\.\w+)$/.test(url)) {
+                        // url doesnt have extension. /path -> /path/index.html
+                        url += '/index.html';
+                    }
+                    return url;
+                });
                 if (arrayLinks.length > 0) {
                     siteMap[link] = arrayLinks;
                 }
@@ -51,7 +62,9 @@ class SiteMapCrawler {
                 return callback(err);
             }
             const count = Object.keys(siteMap).length;
-            const siteMapObj = isCounting ? { count, siteMap } : siteMap; //siteMap[links];
+            const siteMapObj = isCounting
+                ? { count, siteMap }
+                : siteMap[links];
             callback(null, siteMapObj);
         });
     }
@@ -66,6 +79,8 @@ class SiteMapCrawler {
             '^$',
             '@',
             'png',
+            'svg',
+            'manifest.json',
             'pdf$',
             '^tel',
             '^sms',
@@ -75,7 +90,7 @@ class SiteMapCrawler {
             'register'
         ];
         const rIgnores = new RegExp(ignores.join('|'), 'i');
-        if (href.startsWith('http')) {
+        if (isValidHttpUrl(href)) {
             const parentHostName = new URL(parent).hostname;
             const hrefHostName = new URL(href).hostname;
             if (parentHostName === hrefHostName && !href.match(rIgnores)) {
@@ -83,7 +98,9 @@ class SiteMapCrawler {
             }
         }
         if (!href.match(rIgnores) && !href.includes('//')) {
-            return url_1.default.resolve(parent, href);
+            const resolvedUrl = String(new URL(parent + href));
+            //console.log(parent, href, resolvedUrl);
+            return resolvedUrl;
         }
         return null;
     }
@@ -96,6 +113,7 @@ const attachProtocol = (link) => {
 };
 const siteMap = (link, opts, callback) => {
     let isProgress = false, isLog = false, isCounting = true;
+    opts = Object.assign({ isProgress: false, isLog: false }, opts || {});
     if (typeof opts === 'function') {
         callback = opts;
     }
@@ -103,17 +121,44 @@ const siteMap = (link, opts, callback) => {
         isProgress = opts.isProgress || false;
         isLog = opts.isLog || false;
     }
-    let links = [];
     if (typeof link === 'string') {
         link = attachProtocol(link);
-        links.push(link);
+        link = [link];
         isCounting = false;
     }
     else {
-        links = links.map((l) => {
+        link = link.map((l) => {
             return attachProtocol(l);
         });
     }
-    SiteMapCrawler.start(links, isProgress, isLog, isCounting, callback);
+    SiteMapCrawler.start(link, isProgress, isLog, isCounting, callback || noop);
 };
+function sitemapAsync(link, opts) {
+    return new bluebird_1.default((resolve) => {
+        const results = [];
+        const crawl = (url) => {
+            siteMap(url, opts, function (e, links) {
+                if (!e) {
+                    console.log(links);
+                }
+            });
+        };
+        if (typeof link === 'string')
+            crawl(link);
+    });
+}
+exports.sitemapAsync = sitemapAsync;
 exports.default = siteMap;
+function noop() {
+    //
+}
+function isValidHttpUrl(string) {
+    let url;
+    try {
+        url = new URL(string);
+    }
+    catch (_) {
+        return false;
+    }
+    return url.protocol === 'http:' || url.protocol === 'https:';
+}
