@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm run server",
-    "build": "sbg copy --nocache && hexo generate && gulp safelink",
+    "build": "sbg copy --nocache && hexo generate",
     "copy": "sbg copy --nocache",
     "clean": "sbg clean && hexo clean",
     "deploy": "npm run build && gulp deploy",
@@ -20,6 +20,8 @@
   "dependencies": {
     "ansi-colors": "^4.1.3",
     "bluebird": "^3.7.2",
+    "ejs": "^3.1.8",
+    "front-matter": "^4.0.2",
     "hexo": "^6.2.0",
     "hexo-adsense": "file:../hexo-adsense",
     "hexo-asset-link": "^2.2.1",
@@ -46,15 +48,19 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "file:themes/next",
     "hexo-util": "^2.7.0",
+    "markdown-it": "^13.0.1",
     "moment-timezone": "^0.5.37",
     "node-sass": "^7.0.3",
+    "sass": "^1.55.0",
     "warehouse": "^4.0.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.37",
+    "@types/ejs": "^3.1.1",
     "@types/gh-pages": "^3.2.1",
     "@types/gulp": "^4.0.9",
     "@types/jquery": "^3.5.14",
+    "@types/markdown-it": "^12.2.3",
     "@types/node": "^18.8.2",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "@typescript-eslint/eslint-plugin": "^5.39.0",

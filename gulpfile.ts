@@ -9,9 +9,10 @@ import { join } from 'upath';
 import { deployConfig } from './deploy';
 import { sitemapCrawlerAsync } from './packages/sitemap-crawler/dist';
 
-// safelinkify the public folder
+// safelinkify the deploy folder
 gulp.task('safelink', async () => {
   const config = getConfig();
+  const { deployDir } = deployConfig();
   const configSafelink = Object.assign(
     { enable: false },
     config.external_link.safelink
@@ -32,7 +33,7 @@ gulp.task('safelink', async () => {
   gulp
     .src(
       ['*/*.html', '**/*.html', '**/**/*.html'].map((pattern) =>
-        join(__dirname, config.public_dir, pattern)
+        join(__dirname, deployDir, pattern)
       )
     )
     .pipe(
@@ -70,7 +71,7 @@ gulp.task('safelink', async () => {
         }
       })
     )
-    .pipe(gulp.dest(join(__dirname, config.public_dir)));
+    .pipe(gulp.dest(join(__dirname, deployDir)));
 });
 
 // commit current project
@@ -143,4 +144,4 @@ const copyGen = () => {
 
 // copy public to .deploy_git
 gulp.task('copy', copyGen);
-gulp.task('deploy', gulp.series('pull', 'copy', 'commit', 'push'));
+gulp.task('deploy', gulp.series('pull', 'copy', 'safelink', 'commit', 'push'));
