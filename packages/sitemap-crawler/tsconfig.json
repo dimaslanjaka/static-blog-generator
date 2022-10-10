@@ -3,11 +3,8 @@
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "strictBindCallApply": true,
-    "noImplicitThis": true,
-    "noImplicitReturns": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
     "importHelpers": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
@@ -21,5 +18,11 @@
   },
   "typeAcquisition": {
     "enable": true
-  }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
