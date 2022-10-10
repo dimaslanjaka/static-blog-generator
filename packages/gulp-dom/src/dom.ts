@@ -8,7 +8,7 @@ import PluginError from 'plugin-error';
 import through2 from 'through2';
 const pluginName = 'gulp-dom';
 
-type cb = (this: Document) => any;
+type cb = (this: Document, path: string) => any;
 
 /**
  * gulpDom
@@ -30,7 +30,7 @@ export default function gulpDom(mutator: cb) {
 
     if (file.isBuffer()) {
       const dom = new jsdom.JSDOM(file.contents.toString('utf8'));
-      const mutated = mutator.call(dom.window.document);
+      const mutated = mutator.call(dom.window.document, file.path);
 
       file.contents = Buffer.from(
         typeof mutated === 'string' ? mutated : dom.serialize()
