@@ -32,10 +32,12 @@
     "allowUnusedLabels": true,
     "noImplicitThis": false,
     "typeRoots": [
-      "./node_modules/@types"
+      "./node_modules/@types",
+      "./node_modules/nodejs-package-types/typings"
     ],
     "types": [
       "node",
+      "nodejs-package-types",
       "gulp-dom"
     ],
     "lib": [
