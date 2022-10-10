@@ -5,6 +5,7 @@
   "scripts": {
     "start": "npm run server",
     "build": "sbg copy --nocache && hexo generate",
+    "postbuild": "gulp copy && gulp safelink",
     "copy": "sbg copy --nocache",
     "clean": "sbg clean && hexo clean",
     "deploy": "npm run build && gulp deploy",
