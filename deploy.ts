@@ -89,6 +89,8 @@ function commit() {
               resolve(null);
             });
           });
+        } else {
+          resolve(null);
         }
       });
     });
@@ -101,24 +103,23 @@ function commit() {
           const submodule = new gitHelper(sub.root);
           const items = await submodule.status();
           if (items.length > 0) {
-            await submodule.addAndCommit(
-              '-A',
-              `update ${sub.path} ${now}`,
-              'am'
-            );
+            await submodule.add('-A');
+            await submodule.commit(`update ${sub.path} ${now}`, 'am');
           }
         };
         const iterate = function () {
           return new Promise((resolveIt) => {
             // resolve directly when submodule items no made changes
             if (info.length === 0) return resolveIt(null);
-            commitSubmoduleChild(info[0]).then(() => {
-              info.shift();
-              // re-iterate when submodule items not committed
-              if (info.length > 0) return iterate();
-              // resolves all
-              resolveIt(null);
-            });
+            commitSubmoduleChild(info[0])
+              .catch(noop)
+              .finally(() => {
+                info.shift();
+                // re-iterate when submodule items not committed
+                if (info.length > 0) return iterate();
+                // resolves all
+                resolveIt(null);
+              });
           });
         };
         iterate().then(() => {
@@ -129,10 +130,14 @@ function commit() {
   };
 
   return new Promise((resolve) => {
-    commitRoot()
-      .then(commitSubmodule)
+    commitSubmodule()
+      .then(commitRoot)
       .then(() => resolve(null));
   });
+}
+
+function noop() {
+  //
 }
 
 function push() {

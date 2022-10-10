@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.37",
+    "@types/gh-pages": "^3.2.1",
     "@types/gulp": "^4.0.9",
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.8.2",
@@ -62,6 +63,7 @@
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "gh-pages": "^4.0.0",
     "git-command-helper": "file:../git-command-helper",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
