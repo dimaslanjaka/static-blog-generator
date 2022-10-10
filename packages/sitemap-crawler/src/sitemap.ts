@@ -1,4 +1,5 @@
 import async from 'async';
+import Bluebird from 'bluebird';
 import cheerio from 'cheerio';
 import ProgressBar from 'progress';
 import request from 'request';
@@ -169,6 +170,20 @@ const siteMap = (link: string | string[], opts?: Opt, callback?: cb) => {
 
   SiteMapCrawler.start(link, isProgress, isLog, isCounting, callback || noop);
 };
+
+export function sitemapAsync(link: string | string[], opts?: Opt) {
+  return new Bluebird((resolve) => {
+    const results = [];
+    const crawl = (url: string) => {
+      siteMap(url, opts, function (e, links) {
+        if (!e) {
+          console.log(links);
+        }
+      });
+    };
+    if (typeof link === 'string') crawl(link);
+  });
+}
 
 export default siteMap;
 
