@@ -4,16 +4,25 @@ import cheerio from 'cheerio';
 import ProgressBar from 'progress';
 import request from 'request';
 
-type cb = (arg0: Error | null, arg1?: any) => void;
+type cb = (arg0: Error | null, arg1?: string[]) => void;
 
-class SiteMapCrawler {
+export interface Opt {
+  isProgress: boolean;
+  isLog: boolean;
+  /**
+   * keep query url ?key=value
+   */
+  keepQuery?: boolean;
+}
+
+export class SiteMapCrawlerCore {
   static start(
     links: string[],
-    isProgress: any,
-    isLog: any,
+    core_opt: Opt,
     isCounting: boolean,
     callback: cb
   ) {
+    const { isProgress, isLog } = core_opt;
     const siteMap: Record<string, any> = {};
     let bar: ProgressBar;
 
@@ -54,7 +63,12 @@ class SiteMapCrawler {
             )?.trim();
 
             if (typeof href === 'string' && href.length > 0) {
-              filteredLinks.add(href);
+              const dirUrl = link.substring(0, link.lastIndexOf('/'));
+              if (/^https?:\/\//i.test(href.trim())) {
+                filteredLinks.add(href);
+              } else {
+                filteredLinks.add(dirUrl + '/' + href);
+              }
             }
           });
 
@@ -66,6 +80,7 @@ class SiteMapCrawler {
               // url doesnt have extension. /path -> /path/index.html
               url += '/index.html';
             }
+            if (!core_opt.keepQuery) return url.split('?')[0];
             return url;
           });
 
@@ -123,7 +138,10 @@ class SiteMapCrawler {
     }
 
     if (!href.match(rIgnores) && !href.includes('//')) {
-      const resolvedUrl = String(new URL(parent + href));
+      const base = new URL(parent);
+      const resolvedUrl = fixUrl([
+        String(new URL(base.origin + '/' + href))
+      ])[0];
       //console.log(parent, href, resolvedUrl);
       return resolvedUrl;
     }
@@ -140,12 +158,11 @@ const attachProtocol = (link: string) => {
   return link;
 };
 
-interface Opt {
-  isProgress: boolean;
-  isLog: boolean;
-}
-
-const siteMap = (link: string | string[], opts?: Opt, callback?: cb) => {
+export const sitemapCrawler = (
+  link: string | string[],
+  opts?: Opt,
+  callback?: cb
+) => {
   let isProgress = false,
     isLog = false,
     isCounting = true;
@@ -168,24 +185,106 @@ const siteMap = (link: string | string[], opts?: Opt, callback?: cb) => {
     });
   }
 
-  SiteMapCrawler.start(link, isProgress, isLog, isCounting, callback || noop);
+  SiteMapCrawlerCore.start(
+    link,
+    {
+      isProgress,
+      isLog
+    },
+    isCounting,
+    callback || noop
+  );
 };
 
-export function sitemapAsync(link: string | string[], opts?: Opt) {
-  return new Bluebird((resolve) => {
-    const results = [];
+export interface SitemapAsyncOpt extends Opt {
+  /**
+   * Crawl internal links [n] times
+   * * **WARNING** dont put `Infinite`
+   */
+  deep?: number | null;
+}
+
+const asyncResults: Record<string, string[]> = {};
+type resolveAsync = (o: typeof asyncResults) => any;
+export function sitemapCrawlerAsync(
+  link: string | string[],
+  opts?: SitemapAsyncOpt
+) {
+  return new Bluebird((resolve: resolveAsync) => {
+    // assign with default option
+    opts = Object.assign(
+      { deep: 0, isLog: false, keepQuery: false, isProgress: false },
+      opts || {}
+    );
+    // crawler
     const crawl = (url: string) => {
-      siteMap(url, opts, function (e, links) {
-        if (!e) {
-          console.log(links);
-        }
+      return new Bluebird((resolveCrawl: resolveAsync) => {
+        sitemapCrawler(url, opts, function (e, links) {
+          if (!e) {
+            const key = new URL(url).origin;
+            // append to asyncResult
+            asyncResults[key] = fixUrl(links || []).concat(
+              asyncResults[key] || []
+            );
+          } else {
+            console.log('err', e);
+          }
+          resolveCrawl(asyncResults);
+        });
       });
     };
-    if (typeof link === 'string') crawl(link);
+
+    let linkArr: string[] = [];
+    const crawled: string[] = [];
+    const schedule = () => {
+      return new Bluebird((resolveSchedule) => {
+        const url = linkArr.shift() as string;
+        if (crawled.includes(url)) return resolveSchedule();
+        crawled.push(url);
+        crawl(url).then(() => {
+          if (linkArr.length > 0) {
+            schedule().then(resolveSchedule);
+          } else {
+            resolveSchedule();
+          }
+        });
+      });
+    };
+
+    if (typeof link === 'string') {
+      linkArr.push(link);
+    } else {
+      linkArr = link;
+    }
+
+    const deepIterate = () => {
+      return new Promise((resolveLoop) => {
+        schedule().then(() => {
+          if (typeof opts?.deep === 'number') {
+            if (opts.deep > 0) {
+              opts.deep = opts.deep - 1;
+              linkArr = Object.values(asyncResults).flat(1);
+              deepIterate().then(resolveLoop);
+            } else {
+              resolveLoop(null);
+            }
+          } else {
+            resolveLoop(null);
+          }
+        });
+      });
+    };
+
+    deepIterate().then(() => {
+      Object.keys(asyncResults).forEach((key) => {
+        asyncResults[key] = fixUrl(asyncResults[key]);
+      });
+      resolve(asyncResults);
+    });
   });
 }
 
-export default siteMap;
+export default sitemapCrawler;
 
 function noop() {
   //
@@ -201,4 +300,25 @@ function isValidHttpUrl(string: string | URL) {
   }
 
   return url.protocol === 'http:' || url.protocol === 'https:';
+}
+
+function fixUrl(links: string[]) {
+  return (
+    links
+      .map((url) => {
+        //const parse = new URL(url);
+        //url = parse.toString();
+        // remove double slash from pathname
+        url = url.replace(/(https?:\/\/)|(\/)+/gim, '$1$2');
+        return url;
+      })
+      // remove duplicated urls
+      .filter(function (x, i, a) {
+        return a.indexOf(x) === i;
+      })
+      // sort alphabetically
+      .sort(function (a, b) {
+        return a === b ? 0 : a < b ? -1 : 1;
+      })
+  );
 }

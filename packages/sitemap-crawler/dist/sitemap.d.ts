@@ -1,9 +1,16 @@
 import Bluebird from 'bluebird';
 declare type cb = (arg0: Error | null, arg1?: any) => void;
-interface Opt {
+export declare class SiteMapCrawlerCore {
+    static start(links: string[], isProgress: any, isLog: any, isCounting: boolean, callback: cb): void;
+    static filterLink(parent: string, href: string): string | null;
+}
+export interface Opt {
     isProgress: boolean;
     isLog: boolean;
 }
-declare const siteMap: (link: string | string[], opts?: Opt, callback?: cb) => void;
-export declare function sitemapAsync(link: string | string[], opts?: Opt): Bluebird<unknown>;
-export default siteMap;
+export declare const sitemapCrawler: (link: string | string[], opts?: Opt, callback?: cb) => void;
+export interface SitemapAsyncOpt extends Opt {
+    deep?: boolean;
+}
+export declare function sitemapCrawlerAsync(link: string | string[], opts?: SitemapAsyncOpt): Bluebird<unknown>;
+export default sitemapCrawler;

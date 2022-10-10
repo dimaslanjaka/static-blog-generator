@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sitemapAsync = void 0;
+exports.sitemapCrawlerAsync = exports.sitemapCrawler = exports.SiteMapCrawlerCore = void 0;
 const tslib_1 = require("tslib");
 const async_1 = tslib_1.__importDefault(require("async"));
 const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 const cheerio_1 = tslib_1.__importDefault(require("cheerio"));
 const progress_1 = tslib_1.__importDefault(require("progress"));
 const request_1 = tslib_1.__importDefault(require("request"));
-class SiteMapCrawler {
+class SiteMapCrawlerCore {
     static start(links, isProgress, isLog, isCounting, callback) {
         const siteMap = {};
         let bar;
@@ -105,13 +105,14 @@ class SiteMapCrawler {
         return null;
     }
 }
+exports.SiteMapCrawlerCore = SiteMapCrawlerCore;
 const attachProtocol = (link) => {
     if (!link.startsWith('http')) {
         return 'http://' + link;
     }
     return link;
 };
-const siteMap = (link, opts, callback) => {
+const sitemapCrawler = (link, opts, callback) => {
     let isProgress = false, isLog = false, isCounting = true;
     opts = Object.assign({ isProgress: false, isLog: false }, opts || {});
     if (typeof opts === 'function') {
@@ -131,24 +132,50 @@ const siteMap = (link, opts, callback) => {
             return attachProtocol(l);
         });
     }
-    SiteMapCrawler.start(link, isProgress, isLog, isCounting, callback || noop);
+    SiteMapCrawlerCore.start(link, isProgress, isLog, isCounting, callback || noop);
 };
-function sitemapAsync(link, opts) {
+exports.sitemapCrawler = sitemapCrawler;
+function sitemapCrawlerAsync(link, opts) {
     return new bluebird_1.default((resolve) => {
-        const results = [];
+        let results = [];
         const crawl = (url) => {
-            siteMap(url, opts, function (e, links) {
-                if (!e) {
-                    console.log(links);
-                }
+            return new bluebird_1.default((resolveCrawl) => {
+                (0, exports.sitemapCrawler)(url, opts, function (e, links) {
+                    if (!e) {
+                        results = results.concat(links);
+                        console.log({ links });
+                    }
+                    else {
+                        console.log('err', e);
+                    }
+                    resolveCrawl();
+                });
             });
         };
-        if (typeof link === 'string')
-            crawl(link);
+        let linkArr = [];
+        const schedule = () => {
+            return new bluebird_1.default((resolveSchedule) => {
+                crawl(linkArr.shift()).then(() => {
+                    if (linkArr.length > 0) {
+                        schedule().then(resolveSchedule);
+                    }
+                    else {
+                        resolveSchedule();
+                    }
+                });
+            });
+        };
+        if (typeof link === 'string') {
+            linkArr.push(link);
+        }
+        else {
+            linkArr = link;
+        }
+        schedule().then(() => resolve(results));
     });
 }
-exports.sitemapAsync = sitemapAsync;
-exports.default = siteMap;
+exports.sitemapCrawlerAsync = sitemapCrawlerAsync;
+exports.default = exports.sitemapCrawler;
 function noop() {
     //
 }
