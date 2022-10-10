@@ -7,8 +7,8 @@ import request from 'request';
 type cb = (arg0: Error | null, arg1?: string[]) => void;
 
 export interface Opt {
-  isProgress: boolean;
-  isLog: boolean;
+  isProgress?: boolean;
+  isLog?: boolean;
   /**
    * keep query url ?key=value
    */
