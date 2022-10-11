@@ -10,3 +10,4 @@ export { dump } from './gulp/tasks/dump';
 export { globSrc } from './node/filemanager';
 export { buildPost, DeepPartial, ParseOptions, parsePost, postMap, postMeta } from './parser/post/parsePost';
 export { getConfig } from './types/_config';
+export { EJSRenderer } from './renderer/ejs/EJSRenderer';
