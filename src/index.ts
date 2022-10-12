@@ -6,6 +6,7 @@ import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
 import scheduler from './node/scheduler';
 
+export { scheduler }
 export { bindProcessExit } from './node/scheduler';
 export {
   clean_db,
