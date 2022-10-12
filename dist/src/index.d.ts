@@ -3,6 +3,8 @@ import './gulp/server';
 import './gulp/tasks/copy';
 import './gulp/tasks/deploy';
 import './gulp/tasks/generate';
+import scheduler from './node/scheduler';
+export { scheduler };
 export { bindProcessExit } from './node/scheduler';
 export { clean_db, clean_posts, clean_public, clean_tmp } from './gulp/tasks/clean';
 export { copyAssets } from './gulp/tasks/copy/assets';
