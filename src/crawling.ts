@@ -1,3 +1,4 @@
+/*
 import { existsSync } from 'fs';
 import { join } from 'upath';
 import { pcache } from './node/cache';
@@ -75,7 +76,7 @@ function indexingOf(cache: ReturnType<typeof pcache>) {
     }
   }
 }
-
+*/
 export default function crawling() {
   return 'indexing should be run before process exited';
 }
