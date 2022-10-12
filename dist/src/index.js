@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EJSRenderer = exports.getConfig = exports.parsePost = exports.buildPost = exports.globSrc = exports.dump = exports.copyPosts = exports.copyAssets = exports.clean_tmp = exports.clean_public = exports.clean_posts = exports.clean_db = exports.bindProcessExit = void 0;
+exports.EJSRenderer = exports.getConfig = exports.parsePost = exports.buildPost = exports.globSrc = exports.dump = exports.copyPosts = exports.copyAssets = exports.clean_tmp = exports.clean_public = exports.clean_posts = exports.clean_db = exports.bindProcessExit = exports.scheduler = void 0;
 var gulp_1 = __importDefault(require("gulp"));
 require("./a-core");
 require("./gulp/server");
@@ -11,6 +11,7 @@ require("./gulp/tasks/copy");
 require("./gulp/tasks/deploy");
 require("./gulp/tasks/generate");
 var scheduler_1 = __importDefault(require("./node/scheduler"));
+exports.scheduler = scheduler_1.default;
 var scheduler_2 = require("./node/scheduler");
 Object.defineProperty(exports, "bindProcessExit", { enumerable: true, get: function () { return scheduler_2.bindProcessExit; } });
 var clean_1 = require("./gulp/tasks/clean");
@@ -43,4 +44,4 @@ process.on('uncaughtException', function (err) {
 });
 // [task] DEFAULT
 gulp_1.default.task('default', gulp_1.default.series('copy', 'generate'));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJzcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsOENBQXdCO0FBQ3hCLG9CQUFrQjtBQUNsQix5QkFBdUI7QUFDdkIsNkJBQTJCO0FBQzNCLCtCQUE2QjtBQUM3QixpQ0FBK0I7QUFDL0IsK0RBQXlDO0FBRXpDLDhDQUFtRDtBQUExQyw0R0FBQSxlQUFlLE9BQUE7QUFDeEIsNENBSzRCO0FBSjFCLGlHQUFBLFFBQVEsT0FBQTtBQUNSLG9HQUFBLFdBQVcsT0FBQTtBQUNYLHFHQUFBLFlBQVksT0FBQTtBQUNaLGtHQUFBLFNBQVMsT0FBQTtBQUVYLG1EQUFzRDtBQUE3QyxvR0FBQSxVQUFVLE9BQUE7QUFDbkIsaURBQW9EO0FBQTNDLGtHQUFBLFNBQVMsT0FBQTtBQUNsQiwwQ0FBeUM7QUFBaEMsNEZBQUEsSUFBSSxPQUFBO0FBQ2Isa0RBQTZDO0FBQXBDLHNHQUFBLE9BQU8sT0FBQTtBQUNoQixxREFPaUM7QUFOL0Isc0dBQUEsU0FBUyxPQUFBO0FBR1Qsc0dBQUEsU0FBUyxPQUFBO0FBSVgsMkNBQTRDO0FBQW5DLG9HQUFBLFNBQVMsT0FBQTtBQUNsQiwwREFBeUQ7QUFBaEQsMEdBQUEsV0FBVyxPQUFBO0FBRXBCLHFCQUFxQjtBQUNyQixJQUFJLG1CQUFTLEVBQUUsQ0FBQztBQUVoQjs7R0FFRztBQUNILE9BQU8sQ0FBQyxFQUFFLENBQUMsbUJBQW1CLEVBQUUsVUFBVSxHQUFHO0lBQzNDLE9BQU8sQ0FBQyxLQUFLLENBQUMsc0JBQXNCLEdBQUcsR0FBRyxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsQ0FBQztBQUMzRCxDQUFDLENBQUMsQ0FBQztBQUVILGlCQUFpQjtBQUNqQixjQUFJLENBQUMsSUFBSSxDQUFDLFNBQVMsRUFBRSxjQUFJLENBQUMsTUFBTSxDQUFDLE1BQU0sRUFBRSxVQUFVLENBQUMsQ0FBQyxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiLi9zcmMvIiwic291cmNlcyI6WyJzcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsOENBQXdCO0FBQ3hCLG9CQUFrQjtBQUNsQix5QkFBdUI7QUFDdkIsNkJBQTJCO0FBQzNCLCtCQUE2QjtBQUM3QixpQ0FBK0I7QUFDL0IsK0RBQXlDO0FBRWhDLG9CQUZGLG1CQUFTLENBRUU7QUFDbEIsOENBQW1EO0FBQTFDLDRHQUFBLGVBQWUsT0FBQTtBQUN4Qiw0Q0FLNEI7QUFKMUIsaUdBQUEsUUFBUSxPQUFBO0FBQ1Isb0dBQUEsV0FBVyxPQUFBO0FBQ1gscUdBQUEsWUFBWSxPQUFBO0FBQ1osa0dBQUEsU0FBUyxPQUFBO0FBRVgsbURBQXNEO0FBQTdDLG9HQUFBLFVBQVUsT0FBQTtBQUNuQixpREFBb0Q7QUFBM0Msa0dBQUEsU0FBUyxPQUFBO0FBQ2xCLDBDQUF5QztBQUFoQyw0RkFBQSxJQUFJLE9BQUE7QUFDYixrREFBNkM7QUFBcEMsc0dBQUEsT0FBTyxPQUFBO0FBQ2hCLHFEQU9pQztBQU4vQixzR0FBQSxTQUFTLE9BQUE7QUFHVCxzR0FBQSxTQUFTLE9BQUE7QUFJWCwyQ0FBNEM7QUFBbkMsb0dBQUEsU0FBUyxPQUFBO0FBQ2xCLDBEQUF5RDtBQUFoRCwwR0FBQSxXQUFXLE9BQUE7QUFFcEIscUJBQXFCO0FBQ3JCLElBQUksbUJBQVMsRUFBRSxDQUFDO0FBRWhCOztHQUVHO0FBQ0gsT0FBTyxDQUFDLEVBQUUsQ0FBQyxtQkFBbUIsRUFBRSxVQUFVLEdBQUc7SUFDM0MsT0FBTyxDQUFDLEtBQUssQ0FBQyxzQkFBc0IsR0FBRyxHQUFHLENBQUMsS0FBSyxHQUFHLElBQUksQ0FBQyxDQUFDO0FBQzNELENBQUMsQ0FBQyxDQUFDO0FBRUgsaUJBQWlCO0FBQ2pCLGNBQUksQ0FBQyxJQUFJLENBQUMsU0FBUyxFQUFFLGNBQUksQ0FBQyxNQUFNLENBQUMsTUFBTSxFQUFFLFVBQVUsQ0FBQyxDQUFDLENBQUMifQ==
