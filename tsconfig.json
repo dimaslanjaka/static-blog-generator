@@ -31,6 +31,7 @@
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
     "noImplicitThis": false,
+    "noEmit": true,
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/nodejs-package-types/typings"
