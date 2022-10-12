@@ -74,6 +74,9 @@ const _copySingle = (identifier: string, callback?: CallableFunction) => {
             }
             post.attributes.updated = parse.metadata.updated;
             post.attributes.date = parse.metadata.date;
+            if ('modified' in parse.metadata) {
+              post.attributes.modified = parse.metadata.modified;
+            }
             const rBuild: postMap = {
               metadata: <any>post.attributes,
               body: post.body,
