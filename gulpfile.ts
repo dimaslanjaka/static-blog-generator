@@ -5,6 +5,7 @@ import { spawn } from 'hexo-util';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
 import './gulp.safelink';
+import './gulp.watch-post';
 import { sitemapCrawlerAsync } from './packages/sitemap-crawler/dist';
 
 // commit current project
