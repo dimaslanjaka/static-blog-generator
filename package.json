@@ -24,7 +24,6 @@
     "ejs": "^3.1.8",
     "front-matter": "^4.0.2",
     "hexo": "^6.2.0",
-    "hexo-adsense": "file:../hexo-adsense",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "github:hexojs/hexo-browsersync",
     "hexo-filter-mathjax": "^0.9.0",
