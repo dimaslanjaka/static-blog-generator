@@ -42,7 +42,17 @@ export function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
   return new Promise((resolve) => {
     cwd = cwd || deployDir;
     gulp
-      .src(['**/*.{html,htm}'], { cwd })
+      .src(['**/*.{html,htm}'], {
+        cwd,
+        ignore: [
+          // skip react project
+          '**/chimeraland/monsters/**/*',
+          '**/chimeraland/attendants/**/*',
+          '**/chimeraland/recipes/**/*',
+          '**/chimeraland/materials/**/*',
+          '**/chimeraland/scenic-spots/**/*'
+        ]
+      })
       .pipe(
         dom(function (filePath) {
           //https://github.com/trygve-lie/gulp-dom
