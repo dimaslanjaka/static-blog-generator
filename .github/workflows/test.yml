@@ -68,6 +68,7 @@ jobs:
           npm i -D https://github.com/dimaslanjaka/static-blog-generator/raw/master/release/development.tgz
           npm i -D https://github.com/dimaslanjaka/hexo-post-parser.git
           npm i -D https://github.com/dimaslanjaka/safelink.git
+          npm i -D https://github.com/dimaslanjaka/git-command-helper.git
           npm i https://github.com/dimaslanjaka/hexo-adsense.git
 
       - run: npx sbg copy --nocache
