@@ -25,7 +25,10 @@ const safelink = new sf.safelink({
     'https://facebook.com/dimaslanjaka1',
     'dimaslanjaka.github.io',
     ...configSafelink.exclude
-  ],
+  ].filter(function (x, i, a) {
+    // remove duplicate
+    return a.indexOf(x) === i;
+  }),
   redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
   password: configSafelink.password || config.external_link.safelink.password,
   type: configSafelink.type || config.external_link.safelink.type
