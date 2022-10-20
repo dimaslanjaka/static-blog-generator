@@ -22,12 +22,13 @@ const safelink = new sf.safelink({
     new URL(config.url).host,
     'www.webmanajemen.com',
     'https://github.com/dimaslanjaka',
-    '/dimaslanjaka1',
-    'dimaslanjaka.github.io'
+    'https://facebook.com/dimaslanjaka1',
+    'dimaslanjaka.github.io',
+    ...configSafelink.exclude
   ],
-  redirect: [config.external_link.safelink.redirect],
-  password: config.external_link.safelink.password,
-  type: config.external_link.safelink.type
+  redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
+  password: configSafelink.password || config.external_link.safelink.password,
+  type: configSafelink.type || config.external_link.safelink.type
 });
 
 // safelinkify the deploy folder
@@ -49,11 +50,11 @@ export function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
         cwd,
         ignore: [
           // skip react project
-          '**/chimeraland/monsters/**/*',
-          '**/chimeraland/attendants/**/*',
-          '**/chimeraland/recipes/**/*',
-          '**/chimeraland/materials/**/*',
-          '**/chimeraland/scenic-spots/**/*'
+          '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
+          // skip tools
+          '**/embed.html',
+          '**/tools.html',
+          '**/safelink.html'
         ]
       })
       .pipe(
