@@ -68,14 +68,7 @@ jobs:
           npm i -D https://github.com/dimaslanjaka/git-command-helper.git
           npm i https://github.com/dimaslanjaka/hexo-adsense.git
 
-      - run: npx sbg copy --nocache
-      - run: npx hexo generate
-      - run: npx gulp safelink
-      - name: Manual Build
-        if: ${{ false }}
-        continue-on-error: true
-        run: |
-          npx gulp copy-gen
+      - run: npm run build
       - name: Manual Push
         if: ${{ false }}
         working-directory: .deploy_git

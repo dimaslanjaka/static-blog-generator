@@ -8,3 +8,5 @@
 [submodule "packages/hexo-generator-redirect"]
 	path = packages/hexo-generator-redirect
 	url = https://github.com/dimaslanjaka/hexo-generator-redirect
+
+
