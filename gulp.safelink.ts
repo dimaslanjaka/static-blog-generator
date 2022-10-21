@@ -1,4 +1,4 @@
-import { readdirSync, statSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'path';
 import sf from 'safelinkify';
@@ -35,22 +35,13 @@ const safelink = new sf.safelink({
 });
 
 // safelinkify the deploy folder
-gulp.task('safelink', iterate);
+gulp.task('safelink', safelinkProcess);
 
-export function iterate(_done?: TaskCallback) {
-  const paths = readdirSync(deployDir)
-    .map((path) => join(deployDir, path))
-    .filter((path) => statSync(path).isDirectory())
-    .map((path) => safelinkProcess(null, path));
-  return Promise.all(paths);
-}
-
-export function safelinkProcess(_done?: TaskCallback, cwd?: string) {
+export function safelinkProcess(_done?: TaskCallback) {
   return new Promise((resolve) => {
-    cwd = cwd || deployDir;
     gulp
       .src(['**/*.{html,htm}'], {
-        cwd,
+        cwd: deployDir,
         ignore: [
           // skip react project
           '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
@@ -75,7 +66,7 @@ export function safelinkProcess(_done?: TaskCallback, cwd?: string) {
           next();
         })
       )
-      .pipe(gulp.dest(cwd))
+      .pipe(gulp.dest(deployDir))
       .once('end', () => resolve(null));
   });
 }
@@ -88,6 +79,7 @@ gulp.task('get-files', function () {
       ignore: [
         // skip react project
         '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
+        '**/chimeraland/recipes.html',
         // skip tools
         '**/embed.html',
         '**/tools.html',
