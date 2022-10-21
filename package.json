@@ -64,7 +64,7 @@
     "@types/gulp": "^4.0.9",
     "@types/jquery": "^3.5.14",
     "@types/markdown-it": "^12.2.3",
-    "@types/node": "^18.11.2",
+    "@types/node": "^18.11.3",
     "@types/through2": "github:dimaslanjaka/nodejs-package-types#through2",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
