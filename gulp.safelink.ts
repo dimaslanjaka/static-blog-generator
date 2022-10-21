@@ -45,6 +45,7 @@ export function safelinkProcess(_done?: TaskCallback) {
         ignore: [
           // skip react project
           '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
+          '**/chimeraland/recipes.html',
           // skip tools
           '**/embed.html',
           '**/tools.html',
