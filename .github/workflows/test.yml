@@ -37,8 +37,8 @@ jobs:
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
           git config --global init.defaultBranch master
-          git fetch --all
-          git pull --all
+          #git fetch --all
+          #git pull --all
           #git submodule update -i -r
           #git submodule foreach git submodule update -i -r
 
