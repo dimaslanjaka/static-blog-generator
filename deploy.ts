@@ -1,6 +1,6 @@
 import ansiColors from 'ansi-colors';
 import { existsSync } from 'fs';
-import { gitHelper } from 'git-command-helper/src';
+import { gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
 import moment from 'moment-timezone';
 import { getConfig } from 'static-blog-generator';
