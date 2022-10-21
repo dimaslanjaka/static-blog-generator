@@ -1,4 +1,4 @@
-import { readdirSync, statSync } from 'fs';
+import { readdirSync, statSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'path';
 import sf from 'safelinkify';
@@ -45,7 +45,7 @@ export function iterate(_done?: TaskCallback) {
   return Promise.all(paths);
 }
 
-export function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
+export function safelinkProcess(_done?: TaskCallback, cwd?: string) {
   return new Promise((resolve) => {
     cwd = cwd || deployDir;
     gulp
@@ -79,3 +79,33 @@ export function safelinkProcess(_done?: TaskCallback, cwd = deployDir) {
       .once('end', () => resolve(null));
   });
 }
+
+gulp.task('get-files', function () {
+  const paths = new Set<string>();
+  return gulp
+    .src(['**/*.{html,htm}'], {
+      cwd: deployDir,
+      ignore: [
+        // skip react project
+        '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
+        // skip tools
+        '**/embed.html',
+        '**/tools.html',
+        '**/safelink.html'
+      ]
+    })
+    .pipe(
+      through2.obj((file, _, next) => {
+        if (/chimeraland/i.test(file.path)) {
+          paths.add(file.path.replace(process.cwd(), ''));
+        }
+        next(null);
+      })
+    )
+    .once('end', function () {
+      writeFileSync(
+        join(__dirname, 'tmp/debug.txt'),
+        Array.from(paths.values()).join('\n')
+      );
+    });
+});
