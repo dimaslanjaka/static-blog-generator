@@ -37,6 +37,7 @@ const _copySingle = (identifier: string, callback?: CallableFunction) => {
       through2.obj(async function (file, _enc, next) {
         ///fileList.push(file.path);
         if (file.isNull()) return next();
+        // process markdown
         if (file.extname === '.md') {
           const config = <any>getConfig();
           const parse = await parsePost(file.path, {
@@ -105,8 +106,6 @@ const _copySingle = (identifier: string, callback?: CallableFunction) => {
             console.log('cannot parse', file.path);
             return next(null);
           }
-        } else if (file.isDirectory()) {
-          return next(null, file);
         }
         next(null, file);
       })
