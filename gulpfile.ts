@@ -4,6 +4,7 @@ import gulp from 'gulp';
 import { spawn } from 'hexo-util';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
+import './gulp.feed';
 import './gulp.safelink';
 import './gulp.watch-post';
 import { sitemapCrawlerAsync } from './packages/sitemap-crawler/dist';
