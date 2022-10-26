@@ -211,7 +211,7 @@ gulp.task('commit', commit);
 gulp.task('pull', pull);
 
 export function deployConfig() {
-  const deployDir = join(__dirname, '.deploy_git');
+  const deployDir = join(process.cwd(), '.deploy_git');
   const config = ProjectConfig;
   const github = new gitHelper(deployDir);
   return { deployDir, config, github };
