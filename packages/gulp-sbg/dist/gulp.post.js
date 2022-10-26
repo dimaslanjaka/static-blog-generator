@@ -167,9 +167,9 @@ function copyAllPosts() {
     return gulp_1.default
         .src('**/*', { cwd: sourceDir, ignore: excludes })
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
-        var config, parse, _a, updated, date, title, build;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
+        var config, parse, build;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
                     if (file.isNull())
                         return [2 /*return*/, callback()];
@@ -193,12 +193,8 @@ function copyAllPosts() {
                             sourceFile: file.path
                         })];
                 case 1:
-                    parse = _b.sent();
+                    parse = _a.sent();
                     if (parse && parse.metadata) {
-                        if (/standard/i.test(file.path)) {
-                            _a = parse.metadata, updated = _a.updated, date = _a.date, title = _a.title;
-                            console.log({ updated: updated, date: date, title: title, destDir: destDir });
-                        }
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         file.contents = Buffer.from(build);
                         return [2 /*return*/, callback(null, file)];
@@ -206,7 +202,7 @@ function copyAllPosts() {
                     else {
                         console.log('cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                     }
-                    _b.label = 2;
+                    _a.label = 2;
                 case 2:
                     callback(null, file);
                     return [2 /*return*/];
