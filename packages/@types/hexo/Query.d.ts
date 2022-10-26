@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 export = Query;
 declare class Query<T> {
   /**
@@ -151,7 +150,7 @@ declare class Query<T> {
    * @param {*} [initial] By default, the initial value is the first document.
    * @return {*}
    */
-  reduce(iterator: Function, initial?: any): any;
+  reduce(iterator: CallableFunction, initial?: any): any;
   /**
    * Reduces a collection to a value which is the accumulated result of iterating
    * each element in the collection from right to left.
@@ -160,7 +159,7 @@ declare class Query<T> {
    * @param {*} [initial] By default, the initial value is the last document.
    * @return {*}
    */
-  reduceRight(iterator: Function, initial?: any): any;
+  reduceRight(iterator: CallableFunction, initial?: any): any;
   /**
    * Creates a new array with all documents that pass the test implemented by the
    * provided function.
@@ -176,7 +175,7 @@ declare class Query<T> {
    * @param {Function} iterator
    * @return {Boolean}
    */
-  every(iterator: Function): boolean;
+  every(iterator: CallableFunction): boolean;
   /**
    * Tests whether some documents pass the test implemented by the provided
    * function.
@@ -184,7 +183,7 @@ declare class Query<T> {
    * @param {Function} iterator
    * @return {Boolean}
    */
-  some(iterator: Function): boolean;
+  some(iterator: CallableFunction): boolean;
   /**
    * Update all documents.
    *
@@ -192,7 +191,7 @@ declare class Query<T> {
    * @param {Function} [callback]
    * @return {Promise}
    */
-  update(data: any, callback?: Function): Promise<any>;
+  update(data: any, callback?: CallableFunction): Promise<any>;
   /**
    * Replace all documents.
    *
@@ -200,14 +199,14 @@ declare class Query<T> {
    * @param {Function} [callback]
    * @return {Promise}
    */
-  replace(data: any, callback?: Function): Promise<any>;
+  replace(data: any, callback?: CallableFunction): Promise<any>;
   /**
    * Remove all documents.
    *
    * @param {Function} [callback]
    * @return {Promise}
    */
-  remove(callback?: Function): Promise<any>;
+  remove(callback?: CallableFunction): Promise<any>;
   /**
    * Populates document references.
    *
@@ -216,9 +215,9 @@ declare class Query<T> {
    */
   populate(expr: string | any): Query<T>;
   size: () => number;
-  each: (iterator: Function) => void;
+  each: (iterator: CallableFunction) => void;
   random: () => Query<T>;
 }
+
 import Promise = require('bluebird');
-import Document = require('./document');
-//# sourceMappingURL=query.d.ts.map
+import Document = require('./Document');

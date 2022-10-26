@@ -4,12 +4,12 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 3.0
 
-import Bluebird from 'bluebird';
+import Bluebird = require('bluebird');
 import { EventEmitter } from 'events';
 import { ParsedArgs } from 'minimist';
-import moment from 'moment';
-import underscore from 'underscore';
-import Query from '../warehouse/query';
+import moment = require('moment');
+import Query = require('./Query');
+import underscore = require('underscore');
 import Logger = require('bunyan');
 import connect = require('connect');
 import Stream = require('stream');
@@ -825,7 +825,7 @@ declare namespace Hexo {
      */
     set(
       path: string,
-      data: string | Buffer | util.Pattern<boolean> | Router.Data
+      data: string | Buffer | typeof util.Pattern | Router.Data
     ): this;
 
     /**
@@ -893,7 +893,7 @@ declare namespace Hexo {
      * Register a new processor with the `addProcessor` method.
      */
     addProcessor(
-      pattern: string | RegExp | util.Pattern<boolean>,
+      pattern: string | RegExp | typeof util.Pattern,
       fn: (file: Box.File) => void
     ): void;
   }
@@ -1137,6 +1137,4 @@ interface TagPage extends IndexPage {
   tag: string;
 }
 
-declare module 'hexo' {
-  export = Hexo;
-}
+export = Hexo;
