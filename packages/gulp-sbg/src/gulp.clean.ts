@@ -22,9 +22,12 @@ export async function cleanDb() {
 
 function del(path: string) {
   return new Promise((resolve) => {
-    rm(path, { recursive: true }, function (err) {
-      resolve(err);
-    });
+    if (existsSync(path)) {
+      rm(path, { recursive: true }, function (err) {
+        resolve(err);
+      });
+    }
+    resolve(new Error(path + ' not found'));
   });
 }
 
