@@ -33,12 +33,10 @@
     "noImplicitThis": false,
     "noEmit": true,
     "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules/nodejs-package-types/typings"
+      "./node_modules/@types"
     ],
     "types": [
       "node",
-      "nodejs-package-types",
       "gulp-dom"
     ],
     "lib": [
