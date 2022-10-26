@@ -1,4 +1,7 @@
 const prettier = require('prettier');
+const { join } = require('path');
+const { writeFileSync } = require('fs');
+
 /** @type {prettier.Config} */
 const config = {
   printWidth: 80,
@@ -27,5 +30,8 @@ const config = {
     }
   ]
 };
-writeFileSync(join(__dirname, '.prettierrc.json'), JSON.stringify(config,null,2))
+writeFileSync(
+  join(__dirname, '.prettierrc.json'),
+  JSON.stringify(config, null, 2)
+);
 module.exports = config;
