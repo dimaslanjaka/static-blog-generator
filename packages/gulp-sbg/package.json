@@ -2,10 +2,9 @@
   "name": "gulp-sbg",
   "version": "1.0.0",
   "description": "Static Blog Generator Utility",
-  "main": "dist/gulpfile.js",
-  "types": "dist/gulpfile.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "index.js",
     "dist",
     "src"
   ],

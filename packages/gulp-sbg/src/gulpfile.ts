@@ -3,17 +3,15 @@ import { readFileSync, writeFile } from 'fs';
 import gulp from 'gulp';
 import { spawn } from 'hexo-util';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
+import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
-import scheduler from './utils/scheduler';
-
-scheduler.register();
 
 // commit current project
-gulp.task('project-commit', (finish) => {
+export function commitProject(finish: TaskCallback) {
   const gitDirs = [join(process.cwd(), 'src-posts'), join(process.cwd(), 'source'), process.cwd()];
   const commit = () => {
     if (!gitDirs.length) return finish();
@@ -33,9 +31,11 @@ gulp.task('project-commit', (finish) => {
       });
   };
   return commit();
-});
+}
 
-function getUntrackedSitemap() {
+gulp.task('project-commit', commitProject);
+
+export function getUntrackedSitemap() {
   return new Bluebird((resolve) => {
     const { deployDir } = deployConfig();
     const originfile = join(process.cwd(), 'public/sitemap.txt');
