@@ -27,7 +27,7 @@ gulp.task('feed', function (done) {
       env.addFilter('formatUrl', (str) => {
         return full_url_for.call(instance, str);
       });
-      const config = instance.config as typeof ProjectConfig;
+      const config = ProjectConfig;
 
       function build(tmplSrc: PathOrFileDescriptor, dest: PathOrFileDescriptor) {
         const template = nunjucks.compile(readFileSync(tmplSrc, 'utf8'), env);
