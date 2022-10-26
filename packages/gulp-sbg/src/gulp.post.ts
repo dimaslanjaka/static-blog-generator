@@ -60,7 +60,7 @@ function copyPost() {
           codeblock: true
         },
         cache: false,
-        config,
+        config: config as any,
         formatDate: true,
         fix: true,
         sourceFile: file.path
@@ -88,7 +88,7 @@ function copyPost() {
           metadata: <any>post.attributes,
           body: post.body,
           content: post.body,
-          config
+          config: config as any
         };
 
         // update original source post after process ends
