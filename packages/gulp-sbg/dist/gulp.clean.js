@@ -91,9 +91,12 @@ function cleanDb() {
 exports.cleanDb = cleanDb;
 function del(path) {
     return new Promise(function (resolve) {
-        (0, fs_1.rm)(path, { recursive: true }, function (err) {
-            resolve(err);
-        });
+        if ((0, fs_1.existsSync)(path)) {
+            (0, fs_1.rm)(path, { recursive: true }, function (err) {
+                resolve(err);
+            });
+        }
+        resolve(new Error(path + ' not found'));
     });
 }
 gulp_1.default.task('clean', cleanDb);
