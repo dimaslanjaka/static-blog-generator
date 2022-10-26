@@ -7,6 +7,7 @@
 import Bluebird = require('bluebird');
 import { EventEmitter } from 'events';
 import { ParsedArgs } from 'minimist';
+import './warehouse';
 import moment = require('moment');
 import Query = require('./Query');
 import underscore = require('underscore');
