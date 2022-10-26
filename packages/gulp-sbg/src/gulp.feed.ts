@@ -29,7 +29,7 @@ instance.init().then(() => {
     const template = nunjucks.compile(readFileSync(tmplSrc, 'utf8'), env);
 
     let posts = instance.locals.get('posts');
-    //posts = posts.sort('-date');
+    posts = posts.sort('-date');
     posts = posts.filter((post) => {
       return post.draft !== true;
     });
