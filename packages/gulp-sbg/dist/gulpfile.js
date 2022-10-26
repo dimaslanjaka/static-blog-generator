@@ -4,35 +4,35 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUntrackedSitemap = exports.commitProject = void 0;
-const bluebird_1 = __importDefault(require("bluebird"));
-const fs_1 = require("fs");
-const gulp_1 = __importDefault(require("gulp"));
-const hexo_util_1 = require("hexo-util");
-const sitemap_crawler_1 = require("sitemap-crawler");
-const upath_1 = require("upath");
-const deploy_1 = require("./deploy");
+var bluebird_1 = __importDefault(require("bluebird"));
+var fs_1 = require("fs");
+var gulp_1 = __importDefault(require("gulp"));
+var hexo_util_1 = require("hexo-util");
+var sitemap_crawler_1 = require("sitemap-crawler");
+var upath_1 = require("upath");
+var deploy_1 = require("./deploy");
 require("./gulp.clean");
 require("./gulp.feed");
 require("./gulp.post");
 require("./gulp.safelink");
 // commit current project
 function commitProject(finish) {
-    const gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];
-    const commit = () => {
+    var gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];
+    var commit = function () {
         if (!gitDirs.length)
             return finish();
-        const gitDir = gitDirs[0];
-        const opt = {
+        var gitDir = gitDirs[0];
+        var opt = {
             cwd: gitDir,
             stdio: 'inherit'
         };
         return (0, hexo_util_1.spawn)('git', ['add', '-A'], opt)
-            .then(() => (0, hexo_util_1.spawn)('git', ['commit', '-m', 'update ' + new Date()], opt))
-            .catch((e) => {
+            .then(function () { return (0, hexo_util_1.spawn)('git', ['commit', '-m', 'update ' + new Date()], opt); })
+            .catch(function (e) {
             if (e instanceof Error)
                 console.log(e.message, gitDir);
         })
-            .finally(() => {
+            .finally(function () {
             gitDirs.shift();
             commit();
         });
@@ -42,14 +42,14 @@ function commitProject(finish) {
 exports.commitProject = commitProject;
 gulp_1.default.task('project-commit', commitProject);
 function getUntrackedSitemap() {
-    return new bluebird_1.default((resolve) => {
-        const { deployDir } = (0, deploy_1.deployConfig)();
-        const originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
-        const outfile = (0, upath_1.join)(deployDir, 'sitemap.txt');
-        let sitemaps = (0, fs_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
+    return new bluebird_1.default(function (resolve) {
+        var deployDir = (0, deploy_1.deployConfig)().deployDir;
+        var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
+        var outfile = (0, upath_1.join)(deployDir, 'sitemap.txt');
+        var sitemaps = (0, fs_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
         (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com/chimeraland', {
             deep: 2
-        }).then((results) => {
+        }).then(function (results) {
             sitemaps = Object.values(results)
                 .flat(1)
                 .concat(sitemaps)
@@ -65,9 +65,9 @@ function getUntrackedSitemap() {
 }
 exports.getUntrackedSitemap = getUntrackedSitemap;
 gulp_1.default.task('sitemap', getUntrackedSitemap);
-const copyGen = () => {
-    const { deployDir } = (0, deploy_1.deployConfig)();
-    return new bluebird_1.default((resolve) => {
+var copyGen = function () {
+    var deployDir = (0, deploy_1.deployConfig)().deployDir;
+    return new bluebird_1.default(function (resolve) {
         gulp_1.default
             .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
             cwd: (0, upath_1.join)(process.cwd(), 'public'),
@@ -75,7 +75,7 @@ const copyGen = () => {
         })
             .pipe(gulp_1.default.dest(deployDir))
             .on('error', console.trace)
-            .once('end', () => getUntrackedSitemap().then(resolve));
+            .once('end', function () { return getUntrackedSitemap().then(resolve); });
     });
 };
 // copy public to .deploy_git

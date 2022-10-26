@@ -67,7 +67,7 @@ export function copyPost(bind = false) {
         fix: true,
         sourceFile: file.path
       });
-      if (parse) {
+      if (parse && parse.metadata) {
         // update post modified
         const oriUp = parse.metadata.updated;
         const oriPath = file.path;
