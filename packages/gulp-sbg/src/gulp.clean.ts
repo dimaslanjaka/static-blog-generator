@@ -12,8 +12,10 @@ export function cleanDb() {
     if (existsSync(post)) rmdirSync(post, { recursive: true });
     if (existsSync(publicDir)) rmdirSync(publicDir, { recursive: true });
     const hexo = new hexoLib(process.cwd());
-    hexo.call('clean').then(() => {
-      resolve(null);
+    hexo.init().then(() => {
+      hexo.call('clean').then(() => {
+        resolve(null);
+      });
     });
   });
 }
