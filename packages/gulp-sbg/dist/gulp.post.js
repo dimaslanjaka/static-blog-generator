@@ -42,7 +42,7 @@ const copySinglePost = (identifier, callback) => {
         .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
         cwd: sourceDir
     })
-        .pipe(copyPost())
+        .pipe(copyPost(true))
         .pipe(gulp_1.default.dest(destDir))
         .on('end', function () {
         //console.log(fileList);
@@ -51,7 +51,12 @@ const copySinglePost = (identifier, callback) => {
     });
 };
 exports.copySinglePost = copySinglePost;
-function copyPost() {
+/**
+ * copy function
+ * @param bind bind update date modified on process exit
+ * @returns
+ */
+function copyPost(bind = false) {
     return through2_1.default.obj(function (file, _enc, next) {
         return __awaiter(this, void 0, void 0, function* () {
             ///fileList.push(file.path);
@@ -103,12 +108,14 @@ function copyPost() {
                         config: config
                     };
                     // update original source post after process ends
-                    scheduler_1.default.add(oriPath, function () {
-                        const rebuild = (0, hexo_post_parser_1.buildPost)(rBuild);
-                        //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-                        console.log('write to', (0, upath_1.toUnix)(oriPath).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp, '->', post.attributes.updated);
-                        (0, fs_1.writeFileSync)(oriPath, rebuild); // write original post
-                    });
+                    if (bind) {
+                        scheduler_1.default.add(oriPath, function () {
+                            const rebuild = (0, hexo_post_parser_1.buildPost)(rBuild);
+                            //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
+                            console.log('write to', (0, upath_1.toUnix)(oriPath).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp, '->', post.attributes.updated);
+                            (0, fs_1.writeFileSync)(oriPath, rebuild); // write original post
+                        });
+                    }
                     const build = (0, hexo_post_parser_1.buildPost)(parse);
                     file.contents = Buffer.from(build);
                     return next(null, file);
@@ -127,7 +134,7 @@ exports.copyPost = copyPost;
 // copy all posts from src-posts to source/_posts
 function copyAllPosts() {
     const excludes = [...gulp_config_1.default.exclude];
-    return gulp_1.default.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost()).pipe(gulp_1.default.dest(destDir));
+    return gulp_1.default.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost(false)).pipe(gulp_1.default.dest(destDir));
 }
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('copy-all-post', copyAllPosts);
