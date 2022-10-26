@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUntrackedSitemap = exports.commitProject = exports.watchPost = exports.copySinglePost = exports.copyPost = exports.copyAllPosts = void 0;
 require("./gulpfile");
-const scheduler_1 = __importDefault(require("./utils/scheduler"));
+var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var gulp_post_1 = require("./gulp.post");
 Object.defineProperty(exports, "copyAllPosts", { enumerable: true, get: function () { return gulp_post_1.copyAllPosts; } });
 Object.defineProperty(exports, "copyPost", { enumerable: true, get: function () { return gulp_post_1.copyPost; } });

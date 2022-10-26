@@ -4,26 +4,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanDb = void 0;
-const fs_1 = require("fs");
-const gulp_1 = __importDefault(require("gulp"));
-const hexo_1 = __importDefault(require("hexo"));
-const path_1 = require("path");
-const gulp_config_1 = __importDefault(require("./gulp.config"));
+var fs_1 = require("fs");
+var gulp_1 = __importDefault(require("gulp"));
+var hexo_1 = __importDefault(require("hexo"));
+var path_1 = require("path");
+var gulp_config_1 = __importDefault(require("./gulp.config"));
 function cleanDb() {
-    return new Promise((resolve) => {
-        const config = gulp_config_1.default;
-        const post = (0, path_1.join)(process.cwd(), config.source_dir, '_posts');
-        const publicDir = (0, path_1.join)(process.cwd(), config.public_dir);
-        const tmpDir = (0, path_1.join)(process.cwd(), 'tmp');
+    return new Promise(function (resolve) {
+        var config = gulp_config_1.default;
+        var post = (0, path_1.join)(process.cwd(), config.source_dir, '_posts');
+        var publicDir = (0, path_1.join)(process.cwd(), config.public_dir);
+        var tmpDir = (0, path_1.join)(process.cwd(), 'tmp');
         if ((0, fs_1.existsSync)(tmpDir))
             (0, fs_1.rmdirSync)(tmpDir, { recursive: true });
         if ((0, fs_1.existsSync)(post))
             (0, fs_1.rmdirSync)(post, { recursive: true });
         if ((0, fs_1.existsSync)(publicDir))
             (0, fs_1.rmdirSync)(publicDir, { recursive: true });
-        const hexo = new hexo_1.default(process.cwd());
-        hexo.init().then(() => {
-            hexo.call('clean').then(() => {
+        var hexo = new hexo_1.default(process.cwd());
+        hexo.init().then(function () {
+            hexo.call('clean').then(function () {
                 resolve(null);
             });
         });

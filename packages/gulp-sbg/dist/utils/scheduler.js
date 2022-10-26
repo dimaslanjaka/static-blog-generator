@@ -6,10 +6,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.bindProcessExit = void 0;
-const ansi_colors_1 = __importDefault(require("ansi-colors"));
-const logname = ansi_colors_1.default.magentaBright('[scheduler]');
-const fns = [];
-let triggered;
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
+var logname = ansi_colors_1.default.magentaBright('[scheduler]');
+var fns = [];
+var triggered;
 /**
  * Bind functions to exit handler
  * @param key
@@ -30,13 +30,13 @@ exports.bindProcessExit = bindProcessExit;
  * @param exitCode
  */
 function exitHandler(options, exitCode) {
-    Object.keys(fns).forEach((key) => {
+    Object.keys(fns).forEach(function (key) {
         if (scheduler.verbose)
-            console.log(logname, `executing function key: ${key}`);
+            console.log(logname, "executing function key: ".concat(key));
         fns[key]();
     });
     if (options.cleanup && scheduler.verbose)
-        console.log(logname, `clean exit(${exitCode})`);
+        console.log(logname, "clean exit(".concat(exitCode, ")"));
     if (options.exit)
         process.exit();
 }
@@ -55,7 +55,7 @@ function triggerProcess() {
     process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
 }
 ///// task queue manager
-const functions = [];
+var functions = [];
 /**
  * @example
  * ```js
@@ -69,52 +69,53 @@ const functions = [];
  * scheduler.register();
  * ```
  */
-class scheduler {
-    constructor() {
+var scheduler = /** @class */ (function () {
+    function scheduler() {
         if (!scheduler.registered)
             scheduler.register();
     }
     /**
      * Register scheduler to process system
      */
-    static register() {
+    scheduler.register = function () {
         if (scheduler.registered)
             return;
         scheduler.registered = true;
         bindProcessExit('scheduler_on_exit', function () {
             scheduler.executeAll();
         });
-    }
+    };
     /**
      * Add function with key to list
      * @param key existing key (duplicate) will be overwritten
      * @param value
      */
-    static add(key, value) {
+    scheduler.add = function (key, value) {
         functions[key] = value;
-        const self = this;
-        new Promise((resolve) => {
-            setTimeout(() => {
+        var self = this;
+        new Promise(function (resolve) {
+            setTimeout(function () {
                 resolve(self.register());
             }, 3000);
         });
-    }
+    };
     /**
      * Add function to postpone, the functions will be executed every 5 items added
      */
-    static postpone(key, value) {
+    scheduler.postpone = function (key, value) {
         functions['postpone-' + key] = value;
         scheduler.postponeCounter += 1;
         if (scheduler.postponeCounter == 5) {
             scheduler.executeAll();
             scheduler.postponeCounter = 0;
         }
-    }
+    };
     /**
      * Execute functon in key and delete
      * @param key
      */
-    static execute(key, deleteAfter = true) {
+    scheduler.execute = function (key, deleteAfter) {
+        if (deleteAfter === void 0) { deleteAfter = true; }
         if (typeof functions[key] == 'function') {
             functions[key]();
             if (deleteAfter)
@@ -122,31 +123,32 @@ class scheduler {
         }
         else {
             if (scheduler.verbose)
-                console.error(`function with key: ${key} is not function`);
+                console.error("function with key: ".concat(key, " is not function"));
         }
-    }
+    };
     /**
      * Execute all function lists
      */
-    static executeAll() {
-        Object.keys(functions).forEach((key) => {
+    scheduler.executeAll = function () {
+        Object.keys(functions).forEach(function (key) {
             if (scheduler.verbose)
                 console.log(logname, 'executing', key);
             functions[key]();
         });
         scheduler.clearArray(functions);
-    }
+    };
     /**
      * Clear Array
      * @param array
      */
-    static clearArray(array) {
+    scheduler.clearArray = function (array) {
         while (array.length) {
             array.pop();
         }
-    }
-}
-scheduler.verbose = true;
-scheduler.registered = false;
-scheduler.postponeCounter = 0;
+    };
+    scheduler.verbose = true;
+    scheduler.registered = false;
+    scheduler.postponeCounter = 0;
+    return scheduler;
+}());
 exports.default = scheduler;
