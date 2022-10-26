@@ -9,8 +9,8 @@ import { extname, join, toUnix } from 'upath';
 import ProjectConfig from './gulp.config';
 import scheduler from './utils/scheduler';
 
-const sourceDir = join(__dirname, 'src-posts');
-const destDir = join(__dirname, 'source/_posts');
+const sourceDir = join(process.cwd(), 'src-posts');
+const destDir = join(process.cwd(), 'source/_posts');
 
 function watchPost(done: TaskCallback) {
   const watcher = gulp.watch(['**/*'], { cwd: sourceDir });
@@ -94,7 +94,7 @@ function copyPost() {
         // update original source post after process ends
         scheduler.add(oriPath, function () {
           const rebuild = buildPost(rBuild);
-          //writeFileSync(join(__dirname, 'tmp/rebuild.md'), rebuild);
+          //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
           console.log(
             'write to',
             toUnix(oriPath).replace(toUnix(process.cwd()), ''),

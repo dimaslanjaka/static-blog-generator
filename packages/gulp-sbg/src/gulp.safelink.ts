@@ -2,17 +2,14 @@ import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { join } from 'path';
 import sf from 'safelinkify';
-import { getConfig } from 'static-blog-generator';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { deployConfig } from './deploy';
+import ProjectConfig from './gulp.config';
 
-const config = getConfig();
+const config = ProjectConfig;
 const { deployDir } = deployConfig();
-const configSafelink = Object.assign(
-  { enable: false },
-  config.external_link.safelink
-);
+const configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
 const safelink = new sf.safelink({
   // exclude patterns (dont anonymize these patterns)
   exclude: [
@@ -96,9 +93,6 @@ gulp.task('get-files', function () {
       })
     )
     .once('end', function () {
-      writeFileSync(
-        join(__dirname, 'tmp/debug.txt'),
-        Array.from(paths.values()).join('\n')
-      );
+      writeFileSync(join(process.cwd(), 'tmp/debug.txt'), Array.from(paths.values()).join('\n'));
     });
 });
