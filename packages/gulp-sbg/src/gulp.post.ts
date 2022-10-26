@@ -30,7 +30,7 @@ export const copySinglePost = (identifier: string, callback?: CallableFunction) 
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
       cwd: sourceDir
     })
-    .pipe(copyPost(true))
+    .pipe(updatePost())
     .pipe(gulp.dest(destDir))
     .on('end', function () {
       //console.log(fileList);
@@ -39,11 +39,10 @@ export const copySinglePost = (identifier: string, callback?: CallableFunction) 
 };
 
 /**
- * copy function
- * @param bind bind update date modified on process exit (only for watch)
+ * copy watched post
  * @returns
  */
-export function copyPost(bind = false) {
+export function updatePost() {
   return through2.obj(async function (file, _enc, next) {
     ///fileList.push(file.path);
     if (file.isNull()) return next();
@@ -94,20 +93,18 @@ export function copyPost(bind = false) {
         };
 
         // update original source post after process ends
-        if (bind) {
-          scheduler.add(oriPath, function () {
-            const rebuild = buildPost(rBuild);
-            //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-            console.log(
-              'write to',
-              toUnix(oriPath).replace(toUnix(process.cwd()), ''),
-              oriUp,
-              '->',
-              post.attributes.updated
-            );
-            writeFileSync(oriPath, rebuild); // write original post
-          });
-        }
+        scheduler.add(oriPath, function () {
+          const rebuild = buildPost(rBuild);
+          //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
+          console.log(
+            'write to',
+            toUnix(oriPath).replace(toUnix(process.cwd()), ''),
+            oriUp,
+            '->',
+            post.attributes.updated
+          );
+          writeFileSync(oriPath, rebuild); // write original post
+        });
 
         const build = buildPost(parse);
         file.contents = Buffer.from(build);
@@ -124,8 +121,48 @@ export function copyPost(bind = false) {
 
 // copy all posts from src-posts to source/_posts
 export function copyAllPosts() {
-  const excludes = [...ProjectConfig.exclude];
-  return gulp.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost(false)).pipe(gulp.dest(destDir));
+  const excludes = Array.isArray(ProjectConfig.exclude) ? ProjectConfig.exclude : [];
+  return gulp
+    .src('**/*', { cwd: sourceDir, ignore: excludes })
+    .pipe(
+      through2.obj(async (file, _enc, callback) => {
+        if (file.isNull()) return callback();
+        // process markdown files
+        if (file.extname === '.md') {
+          const config = ProjectConfig;
+          const parse = await parsePost(file.path, {
+            shortcodes: {
+              youtube: true,
+              css: true,
+              include: true,
+              link: true,
+              now: true,
+              script: true,
+              text: true,
+              codeblock: true
+            },
+            cache: false,
+            config: config as any,
+            formatDate: true,
+            fix: true,
+            sourceFile: file.path
+          });
+          if (parse && parse.metadata) {
+            if (/standard/i.test(file.path)) {
+              const { updated, date, title } = parse.metadata;
+              console.log({ updated, date, title, destDir });
+            }
+            const build = buildPost(parse);
+            file.contents = Buffer.from(build);
+            return callback(null, file);
+          } else {
+            console.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+          }
+        }
+        callback(null, file);
+      })
+    )
+    .pipe(gulp.dest(destDir));
 }
 
 gulp.task('copy-all-post', copyAllPosts);

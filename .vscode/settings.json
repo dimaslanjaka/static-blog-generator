@@ -112,5 +112,6 @@
   "prettier.printWidth": 180,
   "npm.packageManager": "npm",
   "git.enabled": true,
-  "eslint.packageManager": "npm"
+  "eslint.packageManager": "npm",
+  "explorer.autoReveal": false
 }

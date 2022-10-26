@@ -1,8 +1,9 @@
-import { existsSync, rmdirSync } from 'fs';
+import { existsSync, rm } from 'fs';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { join } from 'path';
 import ProjectConfig from './gulp.config';
+import noop from './utils/noop';
 
 export function cleanDb() {
   return new Promise((resolve) => {
@@ -10,9 +11,9 @@ export function cleanDb() {
     const post = join(process.cwd(), config.source_dir, '_posts');
     const publicDir = join(process.cwd(), config.public_dir);
     const tmpDir = join(process.cwd(), 'tmp');
-    if (existsSync(tmpDir)) rmdirSync(tmpDir, { recursive: true });
-    if (existsSync(post)) rmdirSync(post, { recursive: true });
-    if (existsSync(publicDir)) rmdirSync(publicDir, { recursive: true });
+    if (existsSync(tmpDir)) rm(tmpDir, { recursive: true }, noop);
+    if (existsSync(post)) rm(post, { recursive: true }, noop);
+    if (existsSync(publicDir)) rm(publicDir, { recursive: true }, noop);
     const hexo = new hexoLib(process.cwd());
     hexo.init().then(() => {
       hexo.call('clean').then(() => {

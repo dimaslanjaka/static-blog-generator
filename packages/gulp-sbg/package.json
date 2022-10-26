@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "update": "npx npm-check-updates -u",
-    "build": "tsc -p tsconfig.build.json"
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json -w"
   },
   "keywords": [],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
