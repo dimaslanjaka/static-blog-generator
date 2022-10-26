@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "npm run server",
-    "build": "sbg copy --nocache && hexo generate",
+    "build": "npm run copy && hexo generate",
     "postbuild": "gulp copy && gulp safelink",
-    "copy": "sbg copy --nocache",
+    "copy": "gulp copy-all-post",
     "clean": "sbg clean && hexo clean",
     "deploy": "npm run build && gulp deploy",
     "server": "hexo server -p 4000",
