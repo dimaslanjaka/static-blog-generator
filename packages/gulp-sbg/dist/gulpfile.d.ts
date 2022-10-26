@@ -1,5 +1,6 @@
 import Bluebird from 'bluebird';
 import { TaskCallback } from 'undertaker';
+import './gulp.clean';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
