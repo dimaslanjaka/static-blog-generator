@@ -27,5 +27,5 @@ const config = {
     }
   ]
 };
-
+writeFileSync(join(__dirname, '.prettierrc.json'), JSON.stringify(config,null,2))
 module.exports = config;
