@@ -42,10 +42,6 @@
     "hexo-util": "^2.7.0"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.37",
-    "@types/gulp": "^4.0.9",
-    "@types/hexo": "^3.8.8",
-    "@types/node": "^18.11.3",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "cross-env": "^7.0.3",
@@ -54,11 +50,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "git-describe": "^4.1.1",
     "gulp": "^4.0.2",
-    "gulp-dom": "file:packages/gulp-dom",
     "md5-file": "^5.0.0",
     "prettier": "^2.7.1",
-    "sitemap-crawler": "file:packages/sitemap-crawler",
-    "through2": "^4.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   }
