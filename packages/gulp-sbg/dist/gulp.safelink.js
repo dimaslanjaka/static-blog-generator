@@ -49,9 +49,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.safelinkProcess = void 0;
-var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
-var path_1 = require("path");
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
 var deploy_1 = require("./deploy");
@@ -122,28 +120,3 @@ function safelinkProcess(_done) {
     });
 }
 exports.safelinkProcess = safelinkProcess;
-gulp_1.default.task('get-files', function () {
-    var paths = new Set();
-    return gulp_1.default
-        .src(['**/*.{html,htm}'], {
-        cwd: deployDir,
-        ignore: [
-            // skip react project
-            '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
-            '**/chimeraland/recipes.html',
-            // skip tools
-            '**/embed.html',
-            '**/tools.html',
-            '**/safelink.html'
-        ]
-    })
-        .pipe(through2_1.default.obj(function (file, _, next) {
-        if (/chimeraland/i.test(file.path)) {
-            paths.add(file.path.replace(process.cwd(), ''));
-        }
-        next(null);
-    }))
-        .once('end', function () {
-        (0, fs_1.writeFileSync)((0, path_1.join)(process.cwd(), 'tmp/debug.txt'), Array.from(paths.values()).join('\n'));
-    });
-});
