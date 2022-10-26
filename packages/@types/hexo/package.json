@@ -1,13 +1,11 @@
 {
   "name": "@types/hexo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Definition files for hexo",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "Dimas lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
   "license": "ISC",
   "types": "./index.d.ts",
   "dependencies": {

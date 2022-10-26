@@ -9,6 +9,8 @@ export function cleanDb() {
     const config = ProjectConfig;
     const post = join(process.cwd(), config.source_dir, '_posts');
     const publicDir = join(process.cwd(), config.public_dir);
+    const tmpDir = join(process.cwd(), 'tmp');
+    if (existsSync(tmpDir)) rmdirSync(tmpDir, { recursive: true });
     if (existsSync(post)) rmdirSync(post, { recursive: true });
     if (existsSync(publicDir)) rmdirSync(publicDir, { recursive: true });
     const hexo = new hexoLib(process.cwd());
