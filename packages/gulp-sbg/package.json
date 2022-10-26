@@ -36,7 +36,10 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.37",
     "@types/gulp": "^4.0.9",
+    "@types/hexo": "file:../@types/hexo",
+    "@types/hexo-util": "file:../@types/hexo-util",
     "@types/node": "^18.11.3",
+    "@types/warehouse": "file:../@types/warehouse",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "eslint": "^8.26.0",
