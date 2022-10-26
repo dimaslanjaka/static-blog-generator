@@ -35,20 +35,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.copyAllPosts = exports.copyPost = exports.copySinglePost = exports.watchPost = void 0;
+exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
 var front_matter_1 = __importDefault(require("front-matter"));
 var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
@@ -78,7 +69,7 @@ var copySinglePost = function (identifier, callback) {
         .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
         cwd: sourceDir
     })
-        .pipe(copyPost(true))
+        .pipe(updatePost())
         .pipe(gulp_1.default.dest(destDir))
         .on('end', function () {
         //console.log(fileList);
@@ -88,12 +79,10 @@ var copySinglePost = function (identifier, callback) {
 };
 exports.copySinglePost = copySinglePost;
 /**
- * copy function
- * @param bind bind update date modified on process exit (only for watch)
+ * copy watched post
  * @returns
  */
-function copyPost(bind) {
-    if (bind === void 0) { bind = false; }
+function updatePost() {
     return through2_1.default.obj(function (file, _enc, next) {
         return __awaiter(this, void 0, void 0, function () {
             var config, parse, oriUp_1, oriPath_1, post_1, rBuild_1, build;
@@ -146,14 +135,12 @@ function copyPost(bind) {
                                 config: config
                             };
                             // update original source post after process ends
-                            if (bind) {
-                                scheduler_1.default.add(oriPath_1, function () {
-                                    var rebuild = (0, hexo_post_parser_1.buildPost)(rBuild_1);
-                                    //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-                                    console.log('write to', (0, upath_1.toUnix)(oriPath_1).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp_1, '->', post_1.attributes.updated);
-                                    (0, fs_1.writeFileSync)(oriPath_1, rebuild); // write original post
-                                });
-                            }
+                            scheduler_1.default.add(oriPath_1, function () {
+                                var rebuild = (0, hexo_post_parser_1.buildPost)(rBuild_1);
+                                //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
+                                console.log('write to', (0, upath_1.toUnix)(oriPath_1).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp_1, '->', post_1.attributes.updated);
+                                (0, fs_1.writeFileSync)(oriPath_1, rebuild); // write original post
+                            });
                             build = (0, hexo_post_parser_1.buildPost)(parse);
                             file.contents = Buffer.from(build);
                             return [2 /*return*/, next(null, file)];
@@ -172,11 +159,61 @@ function copyPost(bind) {
         });
     });
 }
-exports.copyPost = copyPost;
+exports.updatePost = updatePost;
 // copy all posts from src-posts to source/_posts
 function copyAllPosts() {
-    var excludes = __spreadArray([], gulp_config_1.default.exclude, true);
-    return gulp_1.default.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost(false)).pipe(gulp_1.default.dest(destDir));
+    var _this = this;
+    var excludes = Array.isArray(gulp_config_1.default.exclude) ? gulp_config_1.default.exclude : [];
+    return gulp_1.default
+        .src('**/*', { cwd: sourceDir, ignore: excludes })
+        .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
+        var config, parse, _a, updated, date, title, build;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (file.isNull())
+                        return [2 /*return*/, callback()];
+                    if (!(file.extname === '.md')) return [3 /*break*/, 2];
+                    config = gulp_config_1.default;
+                    return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(file.path, {
+                            shortcodes: {
+                                youtube: true,
+                                css: true,
+                                include: true,
+                                link: true,
+                                now: true,
+                                script: true,
+                                text: true,
+                                codeblock: true
+                            },
+                            cache: false,
+                            config: config,
+                            formatDate: true,
+                            fix: true,
+                            sourceFile: file.path
+                        })];
+                case 1:
+                    parse = _b.sent();
+                    if (parse && parse.metadata) {
+                        if (/standard/i.test(file.path)) {
+                            _a = parse.metadata, updated = _a.updated, date = _a.date, title = _a.title;
+                            console.log({ updated: updated, date: date, title: title, destDir: destDir });
+                        }
+                        build = (0, hexo_post_parser_1.buildPost)(parse);
+                        file.contents = Buffer.from(build);
+                        return [2 /*return*/, callback(null, file)];
+                    }
+                    else {
+                        console.log('cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
+                    }
+                    _b.label = 2;
+                case 2:
+                    callback(null, file);
+                    return [2 /*return*/];
+            }
+        });
+    }); }))
+        .pipe(gulp_1.default.dest(destDir));
 }
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('copy-all-post', copyAllPosts);

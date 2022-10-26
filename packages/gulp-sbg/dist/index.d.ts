@@ -1,3 +1,3 @@
 import './gulpfile';
-export { copyAllPosts, copyPost, copySinglePost, watchPost } from './gulp.post';
+export { copyAllPosts, copySinglePost, updatePost as copyPost, watchPost } from './gulp.post';
 export { commitProject, getUntrackedSitemap } from './gulpfile';
