@@ -1,4 +1,4 @@
-const { writeFileSync } = require('hexo-fs');
+const { writeFileSync } = require('fs');
 const md5File = require('md5-file');
 const { join } = require('path');
 const { spawn } = require('hexo-util');

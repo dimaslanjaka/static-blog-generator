@@ -3,9 +3,9 @@ import { existsSync } from 'fs';
 import { gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
 import moment from 'moment-timezone';
-import { getConfig } from 'static-blog-generator';
 import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
+import ProjectConfig from './gulp.config';
 
 function pull() {
   return new Promise((resolve) => {
@@ -78,11 +78,7 @@ function commit() {
   const commitRoot = function () {
     return new Promise((resolve) => {
       github.status().then((changes) => {
-        console.log(
-          'changes',
-          changes.length,
-          toUnix(github.cwd).replace(toUnix(process.cwd()), '')
-        );
+        console.log('changes', changes.length, toUnix(github.cwd).replace(toUnix(process.cwd()), ''));
         if (changes.length > 0) {
           github.add('-A').then(() => {
             github.commit('update site ' + now).then(() => {
@@ -142,9 +138,7 @@ function noop() {
 
 function push() {
   const { github } = deployConfig();
-  const submodules = github.submodule.hasSubmodule()
-    ? github.submodule.get()
-    : [];
+  const submodules = github.submodule.hasSubmodule() ? github.submodule.get() : [];
   const pushSubmodule = function (submodule: typeof submodules[number]) {
     const { url, branch, root } = submodule;
     if (!submodule.github) {
@@ -218,7 +212,7 @@ gulp.task('pull', pull);
 
 export function deployConfig() {
   const deployDir = join(__dirname, '.deploy_git');
-  const config = getConfig();
+  const config = ProjectConfig;
   const github = new gitHelper(deployDir);
   return { deployDir, config, github };
 }

@@ -221,6 +221,7 @@ social_links:
 
 # Feed Atom https://github.com/hexojs/hexo-generator-feed
 feed:
+  icon: "/logo.png"
   # include contents in feeds
   content: true
   # Generate both atom and rss2 feeds
