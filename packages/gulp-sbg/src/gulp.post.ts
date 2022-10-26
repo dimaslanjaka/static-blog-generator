@@ -148,10 +148,6 @@ export function copyAllPosts() {
             sourceFile: file.path
           });
           if (parse && parse.metadata) {
-            if (/standard/i.test(file.path)) {
-              const { updated, date, title } = parse.metadata;
-              console.log({ updated, date, title, destDir });
-            }
             const build = buildPost(parse);
             file.contents = Buffer.from(build);
             return callback(null, file);
