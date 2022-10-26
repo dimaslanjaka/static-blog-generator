@@ -77,7 +77,7 @@ class scheduler {
   }
   private static registered = false;
   /**
-   * Register scheduler
+   * Register scheduler to process system
    */
   static register(): void {
     if (scheduler.registered) return;
