@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/// <reference path="./types/hexo-util/index.d.ts" />
+
 import { readFileSync, writeFileSync } from 'fs';
 import hexo from 'hexo';
 import { encodeURL, full_url_for, gravatar } from 'hexo-util';
@@ -25,7 +28,7 @@ instance.init().then(() => {
     const tmplSrc = join(__dirname, '_config_template_rss.xml');
     const template = nunjucks.compile(readFileSync(tmplSrc, 'utf8'), env);
 
-    let posts = instance.locals.get('posts').toArray();
+    let posts = instance.locals.get('posts');
     //posts = posts.sort('-date');
     posts = posts.filter((post) => {
       return post.draft !== true;
