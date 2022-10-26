@@ -1,5 +1,7 @@
 import gulp from 'gulp';
-import 'gulp-sbg';
-//import './packages/gulp-sbg/src/gulpfile';
+import { commitProject, getUntrackedSitemap } from 'gulp-sbg';
+
+gulp.task('sitemap', getUntrackedSitemap);
+gulp.task('project-commit', commitProject);
 
 export default gulp;

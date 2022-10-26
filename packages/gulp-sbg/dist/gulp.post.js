@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.copyAllPosts = exports.copyPost = exports.copySinglePost = exports.watchPost = void 0;
 const front_matter_1 = __importDefault(require("front-matter"));
 const fs_1 = require("fs");
 const gulp_1 = __importDefault(require("gulp"));
@@ -26,16 +27,15 @@ const destDir = (0, upath_1.join)(process.cwd(), 'source/_posts');
 function watchPost(done) {
     const watcher = gulp_1.default.watch(['**/*'], { cwd: sourceDir });
     watcher.on('change', (path) => {
-        _copySingle(path);
+        (0, exports.copySinglePost)(path);
     });
     watcher.on('add', (path) => {
-        _copySingle(path);
+        (0, exports.copySinglePost)(path);
     });
     watcher.once('close', done);
 }
-gulp_1.default.task('watch-post', watchPost);
-gulp_1.default.task('watch-posts', watchPost);
-const _copySingle = (identifier, callback) => {
+exports.watchPost = watchPost;
+const copySinglePost = (identifier, callback) => {
     identifier = identifier.replace((0, upath_1.extname)(identifier), '');
     ///const fileList = [];
     gulp_1.default
@@ -50,6 +50,7 @@ const _copySingle = (identifier, callback) => {
             callback();
     });
 };
+exports.copySinglePost = copySinglePost;
 function copyPost() {
     return through2_1.default.obj(function (file, _enc, next) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -122,7 +123,12 @@ function copyPost() {
         });
     });
 }
+exports.copyPost = copyPost;
 // copy all posts from src-posts to source/_posts
-gulp_1.default.task('copy-all-post', function () {
+function copyAllPosts() {
     return gulp_1.default.src('**/*', { cwd: sourceDir }).pipe(copyPost()).pipe(gulp_1.default.dest(destDir));
-});
+}
+exports.copyAllPosts = copyAllPosts;
+gulp_1.default.task('copy-all-post', copyAllPosts);
+gulp_1.default.task('watch-post', watchPost);
+gulp_1.default.task('watch-posts', watchPost);
