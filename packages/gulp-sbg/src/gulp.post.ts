@@ -30,7 +30,7 @@ export const copySinglePost = (identifier: string, callback?: CallableFunction) 
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
       cwd: sourceDir
     })
-    .pipe(copyPost())
+    .pipe(copyPost(true))
     .pipe(gulp.dest(destDir))
     .on('end', function () {
       //console.log(fileList);
@@ -38,7 +38,12 @@ export const copySinglePost = (identifier: string, callback?: CallableFunction) 
     });
 };
 
-export function copyPost() {
+/**
+ * copy function
+ * @param bind bind update date modified on process exit
+ * @returns
+ */
+export function copyPost(bind = false) {
   return through2.obj(async function (file, _enc, next) {
     ///fileList.push(file.path);
     if (file.isNull()) return next();
@@ -89,18 +94,20 @@ export function copyPost() {
         };
 
         // update original source post after process ends
-        scheduler.add(oriPath, function () {
-          const rebuild = buildPost(rBuild);
-          //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-          console.log(
-            'write to',
-            toUnix(oriPath).replace(toUnix(process.cwd()), ''),
-            oriUp,
-            '->',
-            post.attributes.updated
-          );
-          writeFileSync(oriPath, rebuild); // write original post
-        });
+        if (bind) {
+          scheduler.add(oriPath, function () {
+            const rebuild = buildPost(rBuild);
+            //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
+            console.log(
+              'write to',
+              toUnix(oriPath).replace(toUnix(process.cwd()), ''),
+              oriUp,
+              '->',
+              post.attributes.updated
+            );
+            writeFileSync(oriPath, rebuild); // write original post
+          });
+        }
 
         const build = buildPost(parse);
         file.contents = Buffer.from(build);
@@ -118,7 +125,7 @@ export function copyPost() {
 // copy all posts from src-posts to source/_posts
 export function copyAllPosts() {
   const excludes = [...ProjectConfig.exclude];
-  return gulp.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost()).pipe(gulp.dest(destDir));
+  return gulp.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost(false)).pipe(gulp.dest(destDir));
 }
 
 gulp.task('copy-all-post', copyAllPosts);
