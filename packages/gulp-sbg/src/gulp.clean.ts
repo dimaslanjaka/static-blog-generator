@@ -3,22 +3,27 @@ import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { join } from 'path';
 import ProjectConfig from './gulp.config';
-import noop from './utils/noop';
 
-export function cleanDb() {
+/**
+ * Clean Project Databases
+ */
+export async function cleanDb() {
+  const config = ProjectConfig;
+  const post = join(process.cwd(), config.source_dir, '_posts');
+  const publicDir = join(process.cwd(), config.public_dir);
+  const tmpDir = join(process.cwd(), 'tmp');
+  if (existsSync(tmpDir)) await del(tmpDir);
+  if (existsSync(post)) await del(post);
+  if (existsSync(publicDir)) await del(publicDir);
+  const hexo = new hexoLib(process.cwd());
+  await hexo.init();
+  await hexo.call('clean');
+}
+
+function del(path: string) {
   return new Promise((resolve) => {
-    const config = ProjectConfig;
-    const post = join(process.cwd(), config.source_dir, '_posts');
-    const publicDir = join(process.cwd(), config.public_dir);
-    const tmpDir = join(process.cwd(), 'tmp');
-    if (existsSync(tmpDir)) rm(tmpDir, { recursive: true }, noop);
-    if (existsSync(post)) rm(post, { recursive: true }, noop);
-    if (existsSync(publicDir)) rm(publicDir, { recursive: true }, noop);
-    const hexo = new hexoLib(process.cwd());
-    hexo.init().then(() => {
-      hexo.call('clean').then(() => {
-        resolve(null);
-      });
+    rm(path, { recursive: true }, function (err) {
+      resolve(err);
     });
   });
 }
