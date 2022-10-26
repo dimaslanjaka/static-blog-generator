@@ -2,20 +2,19 @@ import Bluebird from 'bluebird';
 import { readFileSync, writeFile } from 'fs';
 import gulp from 'gulp';
 import { spawn } from 'hexo-util';
+import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
 import './gulp.feed';
 import './gulp.safelink';
 import './gulp.watch-post';
-import { sitemapCrawlerAsync } from './packages/sitemap-crawler/dist';
+import scheduler from './utils/scheduler';
+
+scheduler.register();
 
 // commit current project
 gulp.task('project-commit', (finish) => {
-  const gitDirs = [
-    join(__dirname, 'src-posts'),
-    join(__dirname, 'source'),
-    __dirname
-  ];
+  const gitDirs = [join(process.cwd(), 'src-posts'), join(process.cwd(), 'source'), process.cwd()];
   const commit = () => {
     if (!gitDirs.length) return finish();
     const gitDir = gitDirs[0];
@@ -24,9 +23,7 @@ gulp.task('project-commit', (finish) => {
       stdio: 'inherit'
     };
     return spawn('git', ['add', '-A'], <any>opt)
-      .then(() =>
-        spawn('git', ['commit', '-m', 'update ' + new Date()], <any>opt)
-      )
+      .then(() => spawn('git', ['commit', '-m', 'update ' + new Date()], <any>opt))
       .catch((e) => {
         if (e instanceof Error) console.log(e.message, gitDir);
       })
@@ -41,7 +38,7 @@ gulp.task('project-commit', (finish) => {
 function getUntrackedSitemap() {
   return new Bluebird((resolve) => {
     const { deployDir } = deployConfig();
-    const originfile = join(__dirname, 'public/sitemap.txt');
+    const originfile = join(process.cwd(), 'public/sitemap.txt');
     const outfile = join(deployDir, 'sitemap.txt');
     let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
     sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
@@ -68,7 +65,7 @@ const copyGen = () => {
   return new Bluebird((resolve) => {
     gulp
       .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
-        cwd: join(__dirname, 'public'),
+        cwd: join(process.cwd(), 'public'),
         dot: true
       })
       .pipe(gulp.dest(deployDir))
@@ -79,4 +76,6 @@ const copyGen = () => {
 
 // copy public to .deploy_git
 gulp.task('copy', copyGen);
+
+// deploy
 gulp.task('deploy', gulp.series('pull', 'copy', 'safelink', 'commit', 'push'));
