@@ -1,1 +1,4 @@
-export declare function cleanDb(): Promise<unknown>;
+/**
+ * Clean Project Databases
+ */
+export declare function cleanDb(): Promise<void>;
