@@ -9,6 +9,7 @@ var gulp_1 = __importDefault(require("gulp"));
 var hexo_1 = __importDefault(require("hexo"));
 var path_1 = require("path");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
+var noop_1 = __importDefault(require("./utils/noop"));
 function cleanDb() {
     return new Promise(function (resolve) {
         var config = gulp_config_1.default;
@@ -16,11 +17,11 @@ function cleanDb() {
         var publicDir = (0, path_1.join)(process.cwd(), config.public_dir);
         var tmpDir = (0, path_1.join)(process.cwd(), 'tmp');
         if ((0, fs_1.existsSync)(tmpDir))
-            (0, fs_1.rmdirSync)(tmpDir, { recursive: true });
+            (0, fs_1.rm)(tmpDir, { recursive: true }, noop_1.default);
         if ((0, fs_1.existsSync)(post))
-            (0, fs_1.rmdirSync)(post, { recursive: true });
+            (0, fs_1.rm)(post, { recursive: true }, noop_1.default);
         if ((0, fs_1.existsSync)(publicDir))
-            (0, fs_1.rmdirSync)(publicDir, { recursive: true });
+            (0, fs_1.rm)(publicDir, { recursive: true }, noop_1.default);
         var hexo = new hexo_1.default(process.cwd());
         hexo.init().then(function () {
             hexo.call('clean').then(function () {

@@ -136,6 +136,7 @@ pagination_dir: page
 include:
   - "assets/adblock-notify/readme.md"
 exclude:
+  - "**/bin/**"
   - "**/backend/**"
   - "**/.git"
   - "**/MIDI.js/**"
