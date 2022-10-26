@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getUntrackedSitemap = exports.commitProject = void 0;
 const bluebird_1 = __importDefault(require("bluebird"));
 const fs_1 = require("fs");
 const gulp_1 = __importDefault(require("gulp"));
@@ -13,10 +14,8 @@ const deploy_1 = require("./deploy");
 require("./gulp.feed");
 require("./gulp.post");
 require("./gulp.safelink");
-const scheduler_1 = __importDefault(require("./utils/scheduler"));
-scheduler_1.default.register();
 // commit current project
-gulp_1.default.task('project-commit', (finish) => {
+function commitProject(finish) {
     const gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];
     const commit = () => {
         if (!gitDirs.length)
@@ -38,7 +37,9 @@ gulp_1.default.task('project-commit', (finish) => {
         });
     };
     return commit();
-});
+}
+exports.commitProject = commitProject;
+gulp_1.default.task('project-commit', commitProject);
 function getUntrackedSitemap() {
     return new bluebird_1.default((resolve) => {
         const { deployDir } = (0, deploy_1.deployConfig)();
@@ -61,6 +62,7 @@ function getUntrackedSitemap() {
         });
     });
 }
+exports.getUntrackedSitemap = getUntrackedSitemap;
 gulp_1.default.task('sitemap', getUntrackedSitemap);
 const copyGen = () => {
     const { deployDir } = (0, deploy_1.deployConfig)();
