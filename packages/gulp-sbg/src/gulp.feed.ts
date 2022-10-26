@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/triple-slash-reference */
-/// <reference path="./types/hexo-util/index.d.ts" />
-
 import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';

@@ -6,22 +6,19 @@ interface DatabaseOptions {
    * * default 0
    */
   version: number;
+  /** Database path */
   path: string;
+  /** Triggered when the database is upgraded */
   onUpgrade: CallableFunction;
+  /** Triggered when the database is downgraded */
   onDowngrade: CallableFunction;
 }
 
 declare class Database {
   /**
    * Database constructor.
-   *
-   * @param {object} [options]
-   *   @param {number} [options.version=0] Database version
-   *   @param {string} [options.path] Database path
-   *   @param {function} [options.onUpgrade] Triggered when the database is upgraded
-   *   @param {function} [options.onDowngrade] Triggered when the database is downgraded
    */
-  constructor(data: object);
+  constructor(data: DatabaseOptions);
 
   /**
    * Creates a new model.
@@ -50,19 +47,22 @@ declare class Database {
       version: any;
       warehouse: any;
     };
-    models: {};
+    models: Model;
   };
   Schema: typeof Schema;
   SchemaType: typeof SchemaType;
 }
+
+import Schema_1 from './schema';
+import SchemaType_1 from './schematype';
+
 declare namespace Database {
-  import Schema_1 = Database.Schema;
   export { Schema_1 as Schema };
-  import SchemaType_1 = Database.SchemaType;
   export { SchemaType_1 as SchemaType };
   export const version: any;
 }
-import Schema = require('./schema');
-import Model = require('./model');
-import SchemaType = require('./schematype');
+
+import Model from './model';
+import Schema from './schema';
+import SchemaType from './schematype';
 //# sourceMappingURL=database.d.ts.map
