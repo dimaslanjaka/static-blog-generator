@@ -19,8 +19,10 @@ function cleanDb() {
         if ((0, fs_1.existsSync)(publicDir))
             (0, fs_1.rmdirSync)(publicDir, { recursive: true });
         const hexo = new hexo_1.default(process.cwd());
-        hexo.call('clean').then(() => {
-            resolve(null);
+        hexo.init().then(() => {
+            hexo.call('clean').then(() => {
+                resolve(null);
+            });
         });
     });
 }
