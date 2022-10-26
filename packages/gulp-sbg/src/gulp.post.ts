@@ -12,21 +12,18 @@ import scheduler from './utils/scheduler';
 const sourceDir = join(process.cwd(), 'src-posts');
 const destDir = join(process.cwd(), 'source/_posts');
 
-function watchPost(done: TaskCallback) {
+export function watchPost(done: TaskCallback) {
   const watcher = gulp.watch(['**/*'], { cwd: sourceDir });
   watcher.on('change', (path) => {
-    _copySingle(path);
+    copySinglePost(path);
   });
   watcher.on('add', (path) => {
-    _copySingle(path);
+    copySinglePost(path);
   });
   watcher.once('close', done);
 }
 
-gulp.task('watch-post', watchPost);
-gulp.task('watch-posts', watchPost);
-
-const _copySingle = (identifier: string, callback?: CallableFunction) => {
+export const copySinglePost = (identifier: string, callback?: CallableFunction) => {
   identifier = identifier.replace(extname(identifier), '');
   ///const fileList = [];
   gulp
@@ -41,7 +38,7 @@ const _copySingle = (identifier: string, callback?: CallableFunction) => {
     });
 };
 
-function copyPost() {
+export function copyPost() {
   return through2.obj(async function (file, _enc, next) {
     ///fileList.push(file.path);
     if (file.isNull()) return next();
@@ -119,6 +116,10 @@ function copyPost() {
 }
 
 // copy all posts from src-posts to source/_posts
-gulp.task('copy-all-post', function () {
+export function copyAllPosts() {
   return gulp.src('**/*', { cwd: sourceDir }).pipe(copyPost()).pipe(gulp.dest(destDir));
-});
+}
+
+gulp.task('copy-all-post', copyAllPosts);
+gulp.task('watch-post', watchPost);
+gulp.task('watch-posts', watchPost);
