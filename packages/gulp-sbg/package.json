@@ -1,7 +1,7 @@
 {
   "name": "gulp-sbg",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static Blog Generator Utility",
   "main": "index.js",
   "scripts": {
     "update": "npx npm-check-updates -u"

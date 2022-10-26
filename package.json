@@ -31,15 +31,14 @@
     "hexo-generator-searchdb": "^1.4.0",
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-github-card": "^1.0.5",
+    "hexo-github-card": "file:packages/hexo-github-card",
     "hexo-i18n": "^1.0.0",
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "file:themes/next",
-    "hexo-util": "^2.7.0"
+    "hexo-theme-next": "file:themes/next"
   },
   "devDependencies": {
     "@types/node": "^18.11.5",

@@ -3,10 +3,11 @@ import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
-import { getConfig, scheduler } from 'static-blog-generator';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { extname, join, toUnix } from 'upath';
+import ProjectConfig from './gulp.config';
+import scheduler from './utils/scheduler';
 
 const sourceDir = join(__dirname, 'src-posts');
 const destDir = join(__dirname, 'source/_posts');
@@ -40,20 +41,13 @@ const _copySingle = (identifier: string, callback?: CallableFunction) => {
     });
 };
 
-gulp.task('copy-all-post', function () {
-  return gulp
-    .src('**/*', { cwd: sourceDir })
-    .pipe(copyPost())
-    .pipe(gulp.dest(destDir));
-});
-
 function copyPost() {
   return through2.obj(async function (file, _enc, next) {
     ///fileList.push(file.path);
     if (file.isNull()) return next();
     // process markdown files
     if (file.extname === '.md') {
-      const config = <any>getConfig();
+      const config = ProjectConfig;
       const parse = await parsePost(file.path, {
         shortcodes: {
           youtube: true,
@@ -123,3 +117,8 @@ function copyPost() {
     next(null, file);
   });
 }
+
+// copy all posts from src-posts to source/_posts
+gulp.task('copy-all-post', function () {
+  return gulp.src('**/*', { cwd: sourceDir }).pipe(copyPost()).pipe(gulp.dest(destDir));
+});
