@@ -100,5 +100,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "dist"
   ]
 }

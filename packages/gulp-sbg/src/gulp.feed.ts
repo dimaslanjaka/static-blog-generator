@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="./types/hexo-util/index.d.ts" />
 
-import { readFileSync, writeFileSync } from 'fs';
+import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
+import gulp from 'gulp';
+import gulpDom from 'gulp-dom';
 import hexo from 'hexo';
 import { encodeURL, full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { join } from 'upath';
+import ProjectConfig from './gulp.config';
 
 const env = new nunjucks.Environment();
 env.addFilter('uriencode', (str) => {
@@ -23,38 +26,56 @@ instance.init().then(() => {
     env.addFilter('formatUrl', (str) => {
       return full_url_for.call(instance, str);
     });
-    const config = instance.config;
+    const config = instance.config as typeof ProjectConfig;
 
-    const tmplSrc = join(__dirname, '_config_template_rss.xml');
-    const template = nunjucks.compile(readFileSync(tmplSrc, 'utf8'), env);
+    function build(tmplSrc: PathOrFileDescriptor, dest: PathOrFileDescriptor) {
+      const template = nunjucks.compile(readFileSync(tmplSrc, 'utf8'), env);
 
-    let posts = instance.locals.get('posts');
-    posts = posts.sort('-date');
-    posts = posts.filter((post) => {
-      return post.draft !== true;
-    });
+      let posts = instance.locals.get('posts');
+      posts = posts.sort('-date');
+      posts = posts.filter((post) => {
+        return post.draft !== true;
+      });
 
-    const { email, feed, url: urlCfg } = config;
-    const { icon: iconCfg } = feed;
+      const { email, feed, url: urlCfg } = config;
+      const { icon: iconCfg } = feed;
 
-    let url = urlCfg;
-    if (url[url.length - 1] !== '/') url += '/';
+      let url = urlCfg;
+      if (url[url.length - 1] !== '/') url += '/';
 
-    let icon = '';
-    if (iconCfg) icon = full_url_for.call(instance, iconCfg);
-    else if (email) icon = gravatar(email, {});
+      let icon = '';
+      if (iconCfg) icon = full_url_for.call(instance, iconCfg);
+      else if (email) icon = gravatar(email, {});
 
-    const feed_url = full_url_for.call(instance, 'rss.xml');
+      const feed_url = full_url_for.call(instance, 'rss.xml');
 
-    const data = template.render({
-      config,
-      url,
-      icon,
-      posts,
-      feed_url
-    });
+      const data = template.render({
+        config,
+        url,
+        icon,
+        posts,
+        feed_url
+      });
 
-    //writeFileSync(join(__dirname, 'public/atom.xml'), feed.atom1());
-    writeFileSync(join(process.cwd(), 'public/rss.xml'), data);
+      writeFileSync(dest, data);
+    }
+
+    const templateRSS = join(__dirname, '_config_template_rss.xml');
+    const destRSS = join(process.cwd(), 'public/rss.xml');
+    build(templateRSS, destRSS);
+
+    const templateATOM = join(__dirname, '_config_template_atom.xml');
+    const destATOM = join(process.cwd(), 'public/atom.xml');
+    build(templateATOM, destATOM);
+
+    const publicDir = join(process.cwd(), 'public');
+    gulp
+      .src('**/*.html', { cwd: publicDir })
+      .pipe(
+        gulpDom(function () {
+          this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+        })
+      )
+      .pipe(gulp.dest(publicDir));
   });
 });
