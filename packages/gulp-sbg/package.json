@@ -27,6 +27,10 @@
     "yaml": "^2.1.3"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.37",
+    "@types/gulp": "^4.0.9",
+    "@types/hexo": "^3.8.8",
+    "@types/node": "^18.11.3",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "eslint": "^8.26.0",
