@@ -178,13 +178,18 @@ function push() {
       if (submodules.length === 0) {
         resolve(null);
       } else {
-        pushSubmodule(submodules.shift()).then(() => {
-          if (submodules.length > 0) {
-            iterateSubmodule().then(resolve);
-          } else {
-            resolve(null);
-          }
-        });
+        const submodule = submodules.shift();
+        if (submodule) {
+          pushSubmodule(submodule).then(() => {
+            if (submodules.length > 0) {
+              iterateSubmodule().then(resolve);
+            } else {
+              resolve(null);
+            }
+          });
+        } else {
+          resolve(null);
+        }
       }
     });
   };
