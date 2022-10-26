@@ -6,6 +6,7 @@ import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
+import './gulp.clean';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
