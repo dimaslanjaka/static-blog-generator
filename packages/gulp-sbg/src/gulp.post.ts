@@ -40,7 +40,7 @@ export const copySinglePost = (identifier: string, callback?: CallableFunction) 
 
 /**
  * copy function
- * @param bind bind update date modified on process exit
+ * @param bind bind update date modified on process exit (only for watch)
  * @returns
  */
 export function copyPost(bind = false) {
