@@ -236,7 +236,7 @@ interface HexoConfig {
   readonly ignore: string[];
 }
 
-// packages/gulp-sbg/src/types/warehouse/model.d.ts
+// warehouse/model.d.ts
 interface Model<T> extends Query<T> {
   /**
    * Warehouse method
