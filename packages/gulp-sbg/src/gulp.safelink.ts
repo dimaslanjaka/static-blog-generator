@@ -1,6 +1,4 @@
-import { writeFileSync } from 'fs';
 import gulp from 'gulp';
-import { join } from 'path';
 import sf from 'safelinkify';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
@@ -68,31 +66,3 @@ export function safelinkProcess(_done?: TaskCallback) {
       .once('end', () => resolve(null));
   });
 }
-
-gulp.task('get-files', function () {
-  const paths = new Set<string>();
-  return gulp
-    .src(['**/*.{html,htm}'], {
-      cwd: deployDir,
-      ignore: [
-        // skip react project
-        '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
-        '**/chimeraland/recipes.html',
-        // skip tools
-        '**/embed.html',
-        '**/tools.html',
-        '**/safelink.html'
-      ]
-    })
-    .pipe(
-      through2.obj((file, _, next) => {
-        if (/chimeraland/i.test(file.path)) {
-          paths.add(file.path.replace(process.cwd(), ''));
-        }
-        next(null);
-      })
-    )
-    .once('end', function () {
-      writeFileSync(join(process.cwd(), 'tmp/debug.txt'), Array.from(paths.values()).join('\n'));
-    });
-});
