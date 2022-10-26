@@ -11,6 +11,7 @@ const hexo_util_1 = require("hexo-util");
 const sitemap_crawler_1 = require("sitemap-crawler");
 const upath_1 = require("upath");
 const deploy_1 = require("./deploy");
+require("./gulp.clean");
 require("./gulp.feed");
 require("./gulp.post");
 require("./gulp.safelink");
