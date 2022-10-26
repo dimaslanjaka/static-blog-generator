@@ -14,6 +14,9 @@ function cleanDb() {
         const config = gulp_config_1.default;
         const post = (0, path_1.join)(process.cwd(), config.source_dir, '_posts');
         const publicDir = (0, path_1.join)(process.cwd(), config.public_dir);
+        const tmpDir = (0, path_1.join)(process.cwd(), 'tmp');
+        if ((0, fs_1.existsSync)(tmpDir))
+            (0, fs_1.rmdirSync)(tmpDir, { recursive: true });
         if ((0, fs_1.existsSync)(post))
             (0, fs_1.rmdirSync)(post, { recursive: true });
         if ((0, fs_1.existsSync)(publicDir))
