@@ -6,8 +6,8 @@ import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { join } from 'upath';
 import { deployConfig } from './deploy';
 import './gulp.feed';
+import './gulp.post';
 import './gulp.safelink';
-import './gulp.watch-post';
 import scheduler from './utils/scheduler';
 
 scheduler.register();
