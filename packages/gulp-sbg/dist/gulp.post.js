@@ -126,7 +126,8 @@ function copyPost() {
 exports.copyPost = copyPost;
 // copy all posts from src-posts to source/_posts
 function copyAllPosts() {
-    return gulp_1.default.src('**/*', { cwd: sourceDir }).pipe(copyPost()).pipe(gulp_1.default.dest(destDir));
+    const excludes = [...gulp_config_1.default.exclude];
+    return gulp_1.default.src('**/*', { cwd: sourceDir, ignore: excludes }).pipe(copyPost()).pipe(gulp_1.default.dest(destDir));
 }
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('copy-all-post', copyAllPosts);
