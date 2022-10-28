@@ -12,6 +12,9 @@ language: en
 # timezone: Asia/Jakarta
 timezone: America/Puerto_Rico
 
+# verbose
+verbose: true
+
 url: https://www.webmanajemen.com
 root: /
 # permalink: :year/:month/:title.html

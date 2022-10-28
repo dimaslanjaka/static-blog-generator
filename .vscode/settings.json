@@ -3,7 +3,8 @@
     "**/node_modules": true
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll": true,
+    "source.organizeImports": true
   },
   "[typescript]": {
     "editor.formatOnSave": false

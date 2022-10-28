@@ -1,24 +1,16 @@
 import { deepmerge } from 'deepmerge-ts';
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  statSync,
-  writeFileSync
-} from 'fs';
+import { existsSync, readFileSync, statSync } from 'fs';
 import cache from 'persistent-cache';
-import { basename, dirname, join, toUnix } from 'upath';
+import { basename, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
 import { generatePostId } from './generatePostId';
-import { isValidHttpUrl } from './gulp/utils';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
-import color from './node/color';
 import { normalize } from './node/filemanager';
 import { md5, md5FileSync } from './node/md5-file';
-import sanitizeFilename from './node/sanitize-filename';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import { parsePermalink } from './parsePermalink';
+import post_assets_fixer from './post_assets_fixer';
 import { shortcodeCodeblock } from './shortcodes/codeblock';
 import { shortcodeCss } from './shortcodes/css';
 import { extractText } from './shortcodes/extractText';
@@ -28,15 +20,13 @@ import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { postMap } from './types/postMap';
-import config, { post_generated_dir, ProjectConfig } from './types/_config';
+import config, { ProjectConfig } from './types/_config';
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'parsePost',
   duration: 1000 * 3600 * 24 // 24 hours
 });
-
-const cwd = () => toUnix(process.cwd());
 
 /**
  * Post author object type
@@ -162,8 +152,11 @@ export async function parsePost(
   options = deepmerge(default_options, options);
   // , { sourceFile: target }
   if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
-  const config = options.config;
-  const homepage = config.url.endsWith('/') ? config.url : config.url + '/';
+  if (!options.config) options.config = config;
+  const HexoConfig = options.config;
+  const homepage = HexoConfig.url.endsWith('/')
+    ? HexoConfig.url
+    : HexoConfig.url + '/';
   const fileTarget = options.sourceFile || target;
   const cacheKey = existsSync(fileTarget)
     ? md5FileSync(fileTarget)
@@ -375,98 +368,46 @@ export async function parsePost(
         : toUnix(normalize(options.sourceFile));
       // @todo fix post_asset_folder
       if (options.fix) {
-        const post_assets_fixer = (sourcePath: string) => {
-          const logname = color['Teal Blue']('[PAF]');
-          if (!publicFile) return sourcePath;
-          // replace extended title from source
-          sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
-          // return base64 image
-          if (sourcePath.startsWith('data:image')) return sourcePath;
-          if (sourcePath.startsWith('//')) sourcePath = 'http:' + sourcePath;
-          if (sourcePath.includes('%20'))
-            sourcePath = decodeURIComponent(sourcePath);
-          if (!isValidHttpUrl(sourcePath) && !sourcePath.startsWith('/')) {
-            let result: string | null = null;
-            /** search from same directory */
-            const f1 = join(dirname(publicFile), sourcePath);
-            /** search from parent directory */
-            const f2 = join(dirname(dirname(publicFile)), sourcePath);
-            /** search from root directory */
-            const f3 = join(cwd(), sourcePath);
-            const f4 = join(post_generated_dir, sourcePath);
-            [f1, f2, f3, f4].forEach((src) => {
-              if (result !== null) return;
-              if (existsSync(src) && !result) result = src;
-            });
-            if (result === null) {
-              const log = join(
-                __dirname,
-                '../tmp/errors/post-asset-folder/' +
-                  sanitizeFilename(basename(sourcePath).trim(), '-') +
-                  '.log'
-              );
-              if (!existsSync(dirname(log)))
-                mkdirSync(dirname(log), { recursive: true });
-              writeFileSync(
-                log,
-                JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2)
-              );
-              console.log(logname, color.redBright('[fail]'), {
-                str: sourcePath,
-                log
-              });
-            } else {
-              result = replaceArr(
-                result,
-                [cwd(), 'source/', '_posts', 'src-posts'],
-                '/'
-              ).replace(/\/+/, '/');
-              result = encodeURI(result);
-              if (config.verbose) console.log(logname, '[success]', result);
-              return result;
-            }
-          }
-          return sourcePath;
-        };
         if (meta.cover) {
-          meta.cover = post_assets_fixer(meta.cover);
+          meta.cover = post_assets_fixer(target, options, meta.cover);
         }
         if (meta.thumbnail) {
-          meta.thumbnail = post_assets_fixer(meta.thumbnail);
+          meta.thumbnail = post_assets_fixer(target, options, meta.thumbnail);
         }
         if (meta.photos) {
-          meta.photos = meta.photos.map(post_assets_fixer);
+          meta.photos = meta.photos.map((photo) =>
+            post_assets_fixer(target, options, photo)
+          );
         }
         if (body && isFile) {
-          const matchImg = Array.from(body.matchAll(/!\[.*\]\((.*)\)/gm));
+          // get all images from post body
+          /*const matchImg = Array.from(body.matchAll(/!\[.*\]\((.*)\)/gm));
           if (matchImg.length > 0) {
             for (let i = 0; i < matchImg.length; i++) {
               const el = matchImg[i];
               if (el[1]) {
                 const src = el[1];
-                // const basenameSrc = basename(src);
-                /*const dirnameSrc = dirname(src);
-                const deleteDirnameSrc = originalFile.replace(
-                  new RegExp(`${dirnameSrc}.*$`),
-                  ''
-                );
-                const joinDeletedDirnameSrc = join(deleteDirnameSrc, src);
-                if (existsSync(joinDeletedDirnameSrc)) {
-                  const modifydeleteDirnameSrc = joinDeletedDirnameSrc.replace(
-                    post_source_dir,
-                    ''
-                  );
-                  body = body.replace(src, modifydeleteDirnameSrc);
-                  console.log(src, modifydeleteDirnameSrc);
-                }*/
+
+                console.log({ src });
 
                 body = body.replace(
                   new RegExp(`${src}`, 'gm'),
-                  post_assets_fixer(src)
+                  post_assets_fixer(target, options, src)
                 );
               }
             }
-          }
+          }*/
+          body = body.replace(/!\[.*\]\((.*)\)/gm, function (whole, m1) {
+            const regex = /(?:".*")/;
+            if (regex.test(m1)) {
+              const repl = m1.replace(regex, '').trim();
+              return whole.replace(
+                repl,
+                post_assets_fixer(target, options, repl)
+              );
+            }
+            return whole.replace(m1, post_assets_fixer(target, options, m1));
+          });
         }
       }
 
@@ -570,7 +511,7 @@ export async function parsePost(
       metadata: meta,
       body: body,
       content: body,
-      config: <any>config
+      config: <any>HexoConfig
     };
     if ('permalink' in result.metadata === false)
       result.metadata.permalink = parsePermalink(result);

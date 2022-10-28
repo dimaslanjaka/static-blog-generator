@@ -6,8 +6,10 @@ import color from './node/color';
 import { write } from './node/filemanager';
 import { slugify } from './node/sanitize-filename';
 import parsePost from './parsePost';
+import config from './types/_config';
 
-rmSync(join(__dirname, '../tmp'), { recursive: true, force: true });
+const tmpDir = join(__dirname, '../tmp');
+if (existsSync(tmpDir)) rmSync(tmpDir, { recursive: true, force: true });
 
 const files = [
   //join(__dirname, '../src-posts/with-description.md'),
@@ -24,39 +26,62 @@ const files = [
 
 files.forEach(async (file) => {
   if (existsSync(file)) {
-    const parse = await parsePost(file, {
-      formatDate: true,
-      shortcodes: {
-        youtube: true,
-        include: true,
-        css: true,
-        script: true,
-        link: true,
-        text: true,
-        now: true,
-        codeblock: true
-      },
-      cache: false,
-      fix: true,
-      sourceFile: file
-    });
-    if (parse && parse.metadata) {
-      const filename = parse.metadata.title;
-      const mdFile = await write(
-        join(__dirname, '../tmp/test/parsePost', slugify(filename) + '.md'),
-        buildPost(parse)
-      );
-
-      const jsonFile = await write(
-        join(__dirname, '../tmp/test/parsePost', slugify(filename) + '.json'),
-        simplifyDump(parse)
-      );
-
-      console.log(color.green('success parse'), [jsonFile, mdFile]);
-    } else {
-      console.log(color.redBright('fail parse'), file);
-    }
+    await startParse(file, config);
+    // test within subfolder
+    await startParse(
+      file,
+      Object.assign({}, config, {
+        url: 'https://www.webmanajemen.com/chimeraland',
+        root: '/chimeraland/'
+      })
+    );
   } else {
     console.log(`${file} not found`);
   }
 });
+
+async function startParse(file: string, config: Record<string, any>) {
+  const parse = await parsePost(file, {
+    formatDate: true,
+    shortcodes: {
+      youtube: true,
+      include: true,
+      css: true,
+      script: true,
+      link: true,
+      text: true,
+      now: true,
+      codeblock: true
+    },
+    cache: false,
+    fix: true,
+    sourceFile: file,
+    config
+  });
+  if (parse && parse.metadata) {
+    const filename = parse.metadata.title;
+    const mdFile = await write(
+      join(
+        __dirname,
+        '../tmp/test/parsePost',
+        config.root,
+        slugify(filename) + '.md'
+      ),
+      buildPost(parse)
+    );
+
+    const jsonFile = await write(
+      join(
+        __dirname,
+        '../tmp/test/parsePost',
+        config.root,
+        slugify(filename) + '.json'
+      ),
+      simplifyDump(parse)
+    );
+
+    console.log(color.green('success parse'), [jsonFile, mdFile]);
+  } else {
+    console.log(color.redBright('fail parse'), file);
+  }
+}
