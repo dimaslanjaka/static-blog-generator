@@ -6,6 +6,9 @@ Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/h
 ## Features
 - Parsing HexoJS markdown post
 - Parsing Jekyll markdown post
+- Post Asset Folder Auto Fix for HexoJS
+- Parse shortcodes
+- Include partials files with html comments
 
 ## Usage Sample
 
