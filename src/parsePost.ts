@@ -371,43 +371,47 @@ export async function parsePost(
         if (meta.cover) {
           meta.cover = post_assets_fixer(target, options, meta.cover);
         }
+        // fix thumbnail
         if (meta.thumbnail) {
           meta.thumbnail = post_assets_fixer(target, options, meta.thumbnail);
         }
-        if (meta.photos) {
-          meta.photos = meta.photos.map((photo) =>
-            post_assets_fixer(target, options, photo)
-          );
-        }
+
+        // add property photos by default
+        if (!meta.photos) meta.photos = [];
+
         if (body && isFile) {
           // get all images from post body
-          /*const matchImg = Array.from(body.matchAll(/!\[.*\]\((.*)\)/gm));
-          if (matchImg.length > 0) {
-            for (let i = 0; i < matchImg.length; i++) {
-              const el = matchImg[i];
-              if (el[1]) {
-                const src = el[1];
-
-                console.log({ src });
-
-                body = body.replace(
-                  new RegExp(`${src}`, 'gm'),
-                  post_assets_fixer(target, options, src)
-                );
-              }
-            }
-          }*/
           body = body.replace(/!\[.*\]\((.*)\)/gm, function (whole, m1) {
             const regex = /(?:".*")/;
+            let replacementResult: string;
+            let img: string;
             if (regex.test(m1)) {
               const repl = m1.replace(regex, '').trim();
-              return whole.replace(
-                repl,
-                post_assets_fixer(target, options, repl)
-              );
+              img = post_assets_fixer(target, options, repl);
+              replacementResult = whole.replace(repl, img);
             }
-            return whole.replace(m1, post_assets_fixer(target, options, m1));
+            if (!replacementResult) {
+              img = post_assets_fixer(target, options, m1);
+              replacementResult = whole.replace(m1, img);
+            }
+            // push image to photos metadata
+            meta.photos.push(img);
+            return replacementResult;
           });
+        }
+
+        // fix photos
+        if (meta.photos) {
+          meta.photos = meta.photos
+            .map((photo) => post_assets_fixer(target, options, photo))
+            // unique
+            .filter(function (x, i, a) {
+              return a.indexOf(x) === i;
+            });
+          // add thumbnail if not exist and photos length > 0
+          if (!meta.thumbnail && meta.photos.length > 0) {
+            meta.thumbnail = meta.photos[0];
+          }
         }
       }
 
