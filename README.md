@@ -12,6 +12,8 @@ Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/h
 
 ## Usage Sample
 
+- [Usages with GULP](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/src/gulp.post.ts)
+
 ```js
 const fs = require('fs');
 (async function(){
