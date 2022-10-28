@@ -20,7 +20,8 @@ const files = [
   //join(__dirname, '../src-posts/folder with space/file post with space.md'),
   //join(__dirname, '../src-posts/without-updated.md'),
   //join(__dirname, '../src-posts/without-date.md'),
-  join(__dirname, '../src-posts/post-assets-folder/asset-folder.md')
+  join(__dirname, '../src-posts/post-assets-folder/asset-folder.md'),
+  join(__dirname, '../src-posts/with-custom-permalink.md')
   //'D:/Repositories/static-blog-generator/tests/src-posts/Tests/post-assets.md'
 ];
 

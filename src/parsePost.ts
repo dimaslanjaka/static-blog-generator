@@ -517,8 +517,12 @@ export async function parsePost(
       content: body,
       config: <any>HexoConfig
     };
-    if ('permalink' in result.metadata === false)
+
+    if ('permalink' in result.metadata === false) {
       result.metadata.permalink = parsePermalink(result);
+    }
+
+    result.metadata.slug = result.metadata.permalink;
 
     // put fileTree
     if (isFile) {
