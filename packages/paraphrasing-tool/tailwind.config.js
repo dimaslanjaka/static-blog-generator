@@ -20,15 +20,13 @@ module.exports = {
       cyan: colors.cyan,
       blue: colors.blue,
       indigo: colors.indigo,
-      violet: colors.violet,
+      violet: colors.violet
     }
   },
   variants: {
     extend: {
-      opacity: ['disabled'],
+      opacity: ['disabled']
     }
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')]
 };
