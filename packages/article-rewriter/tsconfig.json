@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "include": [
+    "src"
+  ]
+}
