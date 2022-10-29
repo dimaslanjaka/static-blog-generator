@@ -1,1 +1,0 @@
-// https://api.funtranslations.com/translate/article_rewrite.json?text=The%20result%20may%20not%20be%20in%20a%20polished%20state.
