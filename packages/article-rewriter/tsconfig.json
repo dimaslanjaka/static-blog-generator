@@ -1,8 +1,14 @@
 {
+  "ts-node": {
+    "esm": true,
+    "transpileOnly": true
+  },
   "compilerOptions": {
     "outDir": "dist",
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "module": "ESNext",
+    "moduleResolution": "node"
   },
   "typeAcquisition": {
     "enable": true
