@@ -1,13 +1,14 @@
 import escapeStringRegexp from 'escape-string-regexp';
+import lodash from 'lodash';
 
-main();
+main().then(console.info);
 
 interface Thesaurus {
   [key: string]: string[];
 }
 
 async function main() {
-  const text = 'install and activate VSCode ESLint extension for auto Linter And Formatter';
+  let text = 'install and activate VSCode ESLint extension for auto Linter And Formatter';
   const { default: thesaurus }: { default: Thesaurus } = await import('./thesaurus-en.json', {
     assert: {
       type: 'json'
@@ -24,10 +25,11 @@ async function main() {
     .forEach(({ regex, thesaurus }) => {
       const has = regex.test(text);
       if (has) {
-        text.replace(regex, function (whole, match) {
-          console.log({ whole, match, thesaurus });
-          return whole;
+        text = text.replace(regex, function (whole, match) {
+          // console.log({ whole, match, thesaurus: lodash.sample(thesaurus) });
+          return whole.replace(match, lodash.sample(thesaurus));
         });
       }
     });
+  return text;
 }
