@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { commitProject, getUntrackedSitemap } from 'gulp-sbg';
+import { commitProject, getUntrackedSitemap } from './packages/gulp-sbg/src';
 
 gulp.task('sitemap', getUntrackedSitemap);
 gulp.task('project-commit', commitProject);

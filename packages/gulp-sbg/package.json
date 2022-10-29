@@ -13,7 +13,12 @@
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsc -p tsconfig.build.json -w"
   },
-  "keywords": [],
+  "keywords": [
+    "static-blog-generator",
+    "static",
+    "blog",
+    "generator"
+  ],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "ISC",
   "dependencies": {
@@ -24,7 +29,7 @@
     "gulp": "^4.0.2",
     "gulp-dom": "file:../gulp-dom",
     "hexo": "^6.3.0",
-    "hexo-post-parser": "^1.1.7",
+    "hexo-post-parser": "git+https://github.com/dimaslanjaka/hexo-post-parser.git#master",
     "hexo-util": "^2.7.0",
     "moment-timezone": "^0.5.38",
     "nunjucks": "^3.2.3",
@@ -40,7 +45,7 @@
     "@types/gulp": "^4.0.9",
     "@types/hexo": "file:../@types/hexo",
     "@types/hexo-util": "file:../@types/hexo-util",
-    "@types/node": "^18.11.3",
+    "@types/node": "^18.11.7",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "cross-env": "^7.0.3",
