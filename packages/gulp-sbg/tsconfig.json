@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "composite": false,
+    "incremental": true,
+    "declaration": true,
+    "stripInternal": true,
+    "outDir": "./dist"
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "dist",
+    "*.test.js",
+    "*.test.ts"
+  ]
+}

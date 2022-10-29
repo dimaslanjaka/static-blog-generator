@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<ptype name="Arts And Humanities">
+		<ctype name="Books And Authors" />
+		<ctype name="History" />
+		<ctype name="Philosophy" />
+		<ctype name="Theater And Acting" />
+		<ctype name="Dancing" />
+		<ctype name="Other - Arts And Humanities" />
+		<ctype name="Poetry" />
+		<ctype name="Visual Arts" />
+		<ctype name="Genealogy" />
+		<ctype name="Performing Arts" />
+	</ptype>
+	<ptype name="Education And Reference">
+		<ctype name="Financial Aid" />
+		<ctype name="Other - Education" />
+		<ctype name="Special Education" />
+		<ctype name="Teaching" />
+		<ctype name="Higher Education (University +)" />
+		<ctype name="Preschool" />
+		<ctype name="Standards And Testing" />
+		<ctype name="Trivia" />
+		<ctype name="Home Schooling" />
+		<ctype name="Primary And Secondary Education" />
+		<ctype name="Studying Abroad" />
+		<ctype name="Words And Wordplay" />
+		<ctype name="Homework Help" />
+		<ctype name="Quotations" />
+	</ptype>
+	<ptype name="Home And Garden">
+		<ctype name="Cleaning And Laundry" />
+		<ctype name="Do It Yourself (DIY)" />
+		<ctype name="Maintenance And Repairs" />
+		<ctype name="Decorating And Remodeling" />
+		<ctype name="Garden And Landscape" />
+		<ctype name="Other - Home And Garden" />
+	</ptype>
+	<ptype name="Science And Mathematics">
+		<ctype name="Agriculture" />
+		<ctype name="Botany" />
+		<ctype name="Geography" />
+		<ctype name="Physics" />
+		<ctype name="Alternative" />
+		<ctype name="Chemistry" />
+		<ctype name="Mathematics" />
+		<ctype name="Weather" />
+		<ctype name="Astronomy And Space" />
+		<ctype name="Earth Sciences And Geology" />
+		<ctype name="Medicine" />
+		<ctype name="Zoology" />
+		<ctype name="Biology" />
+		<ctype name="Engineering" />
+		<ctype name="Other - Science" />
+	</ptype>
+</root>
