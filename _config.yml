@@ -379,3 +379,23 @@ seo:
       - web-manajemen.blogspot.com
       - dimaslanjaka.github.io
   sitemap: true
+
+## Categories and Tags mapper
+### Assign existing tag to new tag
+tag_assign:
+### Assign existing category to new category
+category_assign:
+  TS: Programming
+  JS: Programming
+  Typescript: Programming
+  Javascript: Programming
+  GitHub: Programming
+### Replace Tag to New Tag
+tag_mapper:
+  JS: Javascript
+  TS: Typescript
+### Replace Category to New Category
+category_mapper:
+  JS: Javascript
+  TS: Typescript
+  
