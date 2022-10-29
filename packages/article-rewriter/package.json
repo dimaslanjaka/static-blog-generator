@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "ts-mocha test/*.spec.ts"
+    "test": "ts-mocha test/*.spec.ts",
+    "test:html": "mocha --reporter doc > reports/report.html"
   },
   "keywords": [],
   "author": "",
