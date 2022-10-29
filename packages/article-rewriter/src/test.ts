@@ -1,9 +1,10 @@
-import axios from 'axios';
+import escapeStringRegexp from 'escape-string-regexp';
+import thesaurus from './thesaurus-en.json' assert { type: 'json' };
 
 const text = 'install and activate VSCode ESLint extension for auto Linter And Formatter';
-const base = 'https://api.funtranslations.com/translate/article_rewrite.json?text=';
-
-const url = base + encodeURI(text);
-axios.get(url).then((response) => {
-  console.log(response.data);
-});
+Object.keys(thesaurus)
+  .map((str) => new RegExp(escapeStringRegexp('\b' + str + '\b'), 'i'))
+  .forEach((regex) => {
+    const has = regex.test(text);
+    console.log({ regex, has });
+  });

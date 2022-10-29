@@ -1,5 +1,10 @@
 {
   "code-runner.clearPreviousOutput": true,
   "code-runner.saveAllFilesBeforeRun": true,
-  "code-runner.runInTerminal": true
+  "code-runner.runInTerminal": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  }
 }
