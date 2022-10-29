@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>MyRewriter-English</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <!--Javascript-->
+        <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#tombol").click(function(){
+                    //ambil animasi loading...
+                    $("#loading").show();
+        
+                    //ambil teks dari textarea
+                    var artikel = $("#artikel").val();
+                    
+                    //kirim teks artikel ke server
+                    $.ajax({
+                        type: "POST",
+                        url: "rewriter.php",
+                        data: "artikel="+artikel,
+                        success: function(msg){
+                            //yen wes dikirim ditampilnow,...
+                            $("#re-articel").html(msg);
+                            $("#loading").hide();
+                        }
+                    });
+                });
+                
+                $("#reset").click(function(){
+                    $("#re-articel").html("");
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="centerbox">
+            <div class="title">
+                Input Text Max 1000 Character (English Mode)
+            </div>
+
+            <form>
+                <script type="text/javascript" >
+                    function textCounter(field,counter,maxlimit,linecounter) {
+                        // text width//
+                        var fieldWidth =  parseInt(field.offsetWidth);
+                        var charcnt = field.value.length;
+
+                        // limit
+                        if (charcnt > maxlimit) {
+                            field.value = field.value.substring(0, maxlimit);
+                        }
+
+                        else {
+                            // progres limit
+                            var percentage = parseInt(100 - (( maxlimit - charcnt) * 100)/maxlimit) ;
+                            document.getElementById(counter).style.width =  parseInt((fieldWidth*percentage)/100)+"px";
+                            document.getElementById(counter).innerHTML="Limit: "+percentage+"%"
+                            // warna on style from CCFFF -> CC0000
+                            setcolor(document.getElementById(counter),percentage,"background-color");
+                        }
+                    }
+
+                    function setcolor(obj,percentage,prop){
+                        obj.style[prop] = "rgb(80%,"+(100-percentage)+"%,"+(100-percentage)+"%)";
+                    }
+                </script>
+
+                <div class="left">
+                    <!--input -->
+                    <textarea name="komentar" id="artikel" 
+                              OnKeyDown="textCounter(this, 'progressbar1', 1000 )"
+                              OnKeyUp="textCounter(this, 'progressbar1', 1000 )"
+                              OnKeyFocus="textCounter(this, 'progressbar1', 1000 )">
+                    </textarea>
+                    <!--persen naik ketika bertambah kata-->
+                    <div id="progressbar1" class="progress"></div>
+                    <script>textCounter(document.getElementById("artikel"),"progressbar1",1000)</script><br>
+                    <input type=button value="Rewrite" id=tombol>
+                    <input type=reset id="reset" value="Clear">
+                </div>
+
+                <div class="right">
+                    <div id="re-articel">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
