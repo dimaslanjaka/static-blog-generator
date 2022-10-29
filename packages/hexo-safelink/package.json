@@ -1,0 +1,26 @@
+{
+  "name": "hexo-safelink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "safelinkify": "github:dimaslanjaka/safelink"
+  },
+  "devDependencies": {
+    "@types/hexo": "^3.8.8",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "eslint-config-hexo": "^5.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "hexo": "^6.3.0",
+    "prettier": "^2.7.1"
+  }
+}

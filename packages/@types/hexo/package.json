@@ -1,0 +1,19 @@
+{
+  "name": "@types/hexo",
+  "version": "1.0.0",
+  "description": "Definition files for hexo",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Dimas lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
+  "license": "ISC",
+  "types": "./index.d.ts",
+  "dependencies": {
+    "@types/bluebird": "^3.5.37",
+    "@types/hexo-util": "file:../hexo-util",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.11.5",
+    "minimist": "^1.2.7",
+    "moment": "^2.29.4"
+  }
+}

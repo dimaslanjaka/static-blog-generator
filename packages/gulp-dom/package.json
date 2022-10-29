@@ -1,0 +1,51 @@
+{
+  "name": "gulp-dom",
+  "version": "1.0.1",
+  "description": "Gulp plugin for generic DOM manipulation",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:trygve-lie/gulp-dom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trygve-lie/gulp-dom/issues"
+  },
+  "scripts": {
+    "pretest": "jshint ./lib/*.js ./test/*.js",
+    "test": "mocha ./test/*.js --reporter spec"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "jsdom",
+    "dom",
+    "html"
+  ],
+  "author": "Trygve Lie <github@trygve-lie.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jsdom": "^20.0.0",
+    "@types/node": "^18.7.14",
+    "@types/through2": "git+https://github.com/dimaslanjaka/nodejs-package-types#through2",
+    "chai": "4.2.0",
+    "gulp": "4.0.0",
+    "gulp-concat": "^2.6.1",
+    "jshint": "2.13.5",
+    "mocha": "10.0.0",
+    "request": "2.88.0",
+    "typescript": "^4.8.2",
+    "vinyl": "^3.0.0",
+    "vinyl-buffer": "1.0.1",
+    "vinyl-source-stream": "2.0.0"
+  },
+  "dependencies": {
+    "jsdom": "^16.5.0",
+    "plugin-error": "1.0.1",
+    "through2": "^2.0.3"
+  }
+}
