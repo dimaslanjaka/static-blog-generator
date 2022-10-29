@@ -40,18 +40,35 @@ async function getContent(url: string) {
 
   const scrapper = await page.evaluate((resultsSelector: string) => {
     // remove unwanted html
-    document.querySelector('.social-share-single')?.remove();
+    document
+      .querySelectorAll('.social-share-single,.idmuvi-social-share,.idmuvi-banner-beforecontent')
+      .forEach((el) => el.remove());
+    // modify non-internal links
+    Array.from(document.querySelectorAll('.content-moviedata'))
+      .concat(Array.from(document.querySelectorAll('.tags-links-content')))
+      .forEach((el) => {
+        Array.from(el.querySelectorAll('a')).forEach((a) => {
+          //const href = a.getAttribute('href');
+          a.setAttribute('href', '/p/search.html?q=' + a.textContent.trim());
+        });
+      });
 
     // extract contents
     const content = Array.from(document.querySelectorAll(resultsSelector)).map((anchor) => {
-      return anchor.innerHTML.replace('KAWANFILM21', 'WMI').trim();
+      //return anchor.querySelector('.entry-content-single').innerHTML
+      const inner = anchor.querySelector('.entry-content-single');
+      const allElements = Array.from(inner.getElementsByTagName('h1'));
+      for (const element of allElements) {
+        element.innerHTML = element.innerHTML.replace(/nonton (drama|film)/i, 'Download Movie').trim();
+      }
+      return inner.innerHTML.replace('KAWANFILM21', 'WMI').trim();
     });
     const title = document.title
       .replace(/-\s+KAWANFILM21/gm, '')
-      .replace(/nonton film/i, 'Download')
+      .replace(/nonton (drama|film)/i, 'Download')
       .trim();
     const date = document.querySelector('meta[property="article:published_time"]')?.getAttribute('content').trim();
-    const thumbnail = document.querySelector('.attachment-thumbnail')?.getAttribute('src');
+    const thumbnail = document.querySelector('.attachment-thumbnail')?.getAttribute('src').replace('-60x90', '');
 
     return { content, title, date, thumbnail };
   }, resultsSelector);
@@ -61,6 +78,7 @@ async function getContent(url: string) {
   if (scrapper.title) {
     const date = String(scrapper.date);
     const permalink =
+      '/' +
       moment(date).format('YYYY') +
       '/' +
       moment(date).format('MM') +
@@ -74,14 +92,17 @@ async function getContent(url: string) {
       '.html';
     const metadata = {
       title: scrapper.title,
+      type: 'post',
       date,
       updated: moment().format(),
       thumbnail: String(scrapper.thumbnail),
-      permalink
+      permalink,
+      tags: ['Download', 'Drama', 'Movie'],
+      categories: ['Download']
     };
 
     const build = hpost.buildPost({
-      metadata,
+      metadata: metadata as any,
       body: prettier.format(scrapper.content.join('\n').trim(), { parser: 'html' })
     });
 
