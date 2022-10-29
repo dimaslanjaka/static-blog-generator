@@ -1,0 +1,35 @@
+/* 
+    Document   : style-header
+    Created on : Apr 3, 2013, 11:09:13 PM
+    Author     : yussan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+p.header-text {
+    font-family: arial;
+    font-size: 13px;
+    margin-top : 17px;
+    margin-left :35px;
+}
+
+.selectChangeLanguage select {
+    float : right;
+    margin : 10px 5px auto;
+    width : 100px;
+    height : 30px;
+    background : #FFFFFF;
+    border : #FFFFFF 1px solid;
+}
+.selectChangeLanguage input {
+    float : right;
+    margin : 10px 5px auto;
+    width : 35px;
+    height : 30px;
+    background : #FFFFFF;
+    border : #FFFFFF 1px solid;
+}
+
+.selectChangeLanguage a {
+    color : #FFFFFF;
+}
