@@ -15,7 +15,8 @@
   },
   "include": [
     "src",
-    "test"
+    "test",
+    "scraper"
   ],
   "exclude": [
     "node_modules"
