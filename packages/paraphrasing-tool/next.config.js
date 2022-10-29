@@ -1,6 +1,4 @@
-const {
-  PHASE_PRODUCTION_BUILD,
-} = require('next/constants');
+const { PHASE_PRODUCTION_BUILD } = require('next/constants');
 
 module.exports = (phase) => {
   const isProd = phase === PHASE_PRODUCTION_BUILD;
@@ -10,13 +8,13 @@ module.exports = (phase) => {
       if (isProd) {
         return 'https://paraphraser.prod.hipcv.com';
       }
-    })(),
+    })()
   };
 
   // next.config.js object
   return {
     basePath: '/paraphrasing-tool',
     assetPrefix: '/paraphrasing-tool/',
-    env,
+    env
   };
 };
