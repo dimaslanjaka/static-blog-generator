@@ -5,21 +5,31 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-mocha test/*.spec.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.1.3",
-    "escape-string-regexp": "^5.0.0"
+    "escape-string-regexp": "^5.0.0",
+    "lodash": "^4.17.21",
+    "underscore": "^1.13.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.186",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.7",
+    "@types/underscore": "^1.11.4",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
+    "chai": "^4.3.6",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1"
+    "mocha": "^10.1.0",
+    "prettier": "^2.7.1",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
   }
 }
