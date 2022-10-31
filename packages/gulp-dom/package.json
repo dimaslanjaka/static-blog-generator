@@ -17,7 +17,9 @@
   },
   "scripts": {
     "pretest": "jshint ./lib/*.js ./test/*.js",
-    "test": "mocha ./test/*.js --reporter spec"
+    "test": "mocha ./test/*.js --reporter spec",
+    "build": "tsc",
+    "update": "npx npm-check-updates -u"
   },
   "keywords": [
     "gulpplugin",
