@@ -12,7 +12,8 @@
     "enable": true
   },
   "include": [
-    "./src"
+    "./src",
+    "test"
   ],
   "exclude": [
     "dist",
