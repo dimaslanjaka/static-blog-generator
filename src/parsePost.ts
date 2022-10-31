@@ -1,10 +1,12 @@
 import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync, statSync } from 'fs';
+import { JSDOM } from 'jsdom';
 import cache from 'persistent-cache';
 import { basename, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
 import { generatePostId } from './generatePostId';
+import { renderMarkdownIt } from './markdown/toHtml';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
 import { normalize } from './node/filemanager';
 import { md5, md5FileSync } from './node/md5-file';
@@ -21,6 +23,7 @@ import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { postMap } from './types/postMap';
 import config, { ProjectConfig } from './types/_config';
+import { countWords } from './utils/string';
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
@@ -296,9 +299,6 @@ export async function parsePost(
       meta.comments = true;
     // @todo set default wordcount to 0
     if (!meta.wordcount) meta.wordcount = 0;
-    if (meta.wordcount === 0) {
-      //
-    }
 
     // @todo set default excerpt/description
     if (meta.subtitle) {
@@ -502,6 +502,22 @@ export async function parsePost(
           if (shortcodes.codeblock) body = await shortcodeCodeblock(body);
         }
       }
+    }
+
+    // @todo count words when wordcount is 0
+    if (
+      meta.wordcount === 0 &&
+      typeof body === 'string' &&
+      body.trim().length > 0
+    ) {
+      const render = renderMarkdownIt(body);
+      const dom = new JSDOM(render);
+      const words = Array.from(
+        dom.window.document.querySelectorAll('*:not(script,style,meta,link)')
+      )
+        .map((e) => e.textContent)
+        .join('\n');
+      meta.wordcount = countWords(words);
     }
 
     // sort metadata
