@@ -8,13 +8,21 @@ export function uniqueArray<T extends any[]>(array: T) {
   }
   return array;
 }
+
 /**
  * Unique Array Of Strings
+ * @description Lowercase all string and filter duplicated from them
  * @param arr
  * @returns
  */
 export function uniqueStringArray(arr: Array<string>) {
-  const filter = new Map(arr.map((s) => [s.toLowerCase(), s]));
+  const filter = new Map(
+    arr
+      .filter((s) => typeof s === 'string')
+      .map((s) => {
+        return [s.toLowerCase(), s];
+      })
+  );
   const values = filter.values();
   /*
   return [...filter.values()];*/
