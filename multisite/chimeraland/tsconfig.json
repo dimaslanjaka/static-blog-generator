@@ -6,7 +6,8 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "allowJs": true,
-    "checkJs": false
+    "checkJs": false,
+    "jsx": "react-jsx"
   },
   "include": [
     "chimeraland",
