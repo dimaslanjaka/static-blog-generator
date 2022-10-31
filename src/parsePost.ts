@@ -353,7 +353,12 @@ export async function parsePost(
     }
 
     // @todo remove duplicated metadata photos
-    if (options.fix && 'photos' in meta && meta.photos.length > 0) {
+    if (
+      options.fix &&
+      'photos' in meta &&
+      Array.isArray(meta.photos) &&
+      meta.photos.length > 0
+    ) {
       try {
         meta.photos = uniqueStringArray(
           meta.photos.filter((str) => str.trim().length > 0)
