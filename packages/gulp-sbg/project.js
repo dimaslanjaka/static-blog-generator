@@ -1,7 +1,7 @@
-const { join } = require('upath')
+const { join } = require('upath');
 
-const hexoProject = join(__dirname, '../../')
+const hexoProject = join(__dirname, '../../');
 
 module.exports = {
   hexoProject
-}
+};
