@@ -353,8 +353,12 @@ export async function parsePost(
     }
 
     // @todo remove duplicated metadata photos
-    if (options.fix && meta.photos && meta.photos.length) {
-      meta.photos = uniqueStringArray(meta.photos);
+    if (options.fix && 'photos' in meta && meta.photos.length > 0) {
+      try {
+        meta.photos = uniqueStringArray(meta.photos);
+      } catch (_e) {
+        console.error('cannot unique photos', meta.title);
+      }
     }
 
     // @todo delete location
