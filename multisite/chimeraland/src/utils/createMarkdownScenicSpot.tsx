@@ -3,13 +3,11 @@ import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
 import yaml from 'yaml'
+import { hexoProject } from '../../project'
 import { ScenicData } from './chimeraland'
 import { capitalizer } from './string'
 
-const publicDir = join(
-  __dirname,
-  '../../source/_posts/auto-generated/scenic-spot'
-)
+const publicDir = join(hexoProject, 'src-posts/chimeraland/scenic-spot')
 
 const siteMetadata = {
   title: 'Scenic Spot Locations',
