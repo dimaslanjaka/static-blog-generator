@@ -35,10 +35,6 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "types": [
-      "node",
-      "gulp-dom"
-    ],
     "lib": [
       "DOM",
       "ES5",
