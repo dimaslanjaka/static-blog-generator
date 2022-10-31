@@ -45,7 +45,7 @@
     "@types/gulp": "^4.0.9",
     "@types/hexo": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/@types/hexo?master",
     "@types/hexo-util": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/@types/hexo-util?master",
-    "@types/node": "^18.11.7",
+    "@types/node": "^18.11.8",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "cross-env": "^7.0.3",
