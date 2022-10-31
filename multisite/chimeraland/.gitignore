@@ -1,0 +1,4 @@
+/chimeraland
+/.vscode/sftp*.json
+node_modules
+tmp
