@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "tmp/dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": [
+    "chimeraland",
+    "src",
+    "project.js",
+    "package.json"
+  ]
+}
