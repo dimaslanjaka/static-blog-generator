@@ -148,7 +148,9 @@ export function copyAllPosts() {
             sourceFile: file.path
           });
           if (parse && parse.metadata) {
-            if (file.dirname.includes('scrapped')) console.log(parse.metadata.permalink, file.dirname);
+            if (file.dirname.includes('scrapped')) {
+              console.log(parse.metadata.permalink, file.dirname);
+            }
             const build = buildPost(parse);
             file.contents = Buffer.from(build);
             return callback(null, file);
