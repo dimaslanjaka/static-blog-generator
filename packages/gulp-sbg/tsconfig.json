@@ -1,5 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "declarationMap": false,
     "composite": false,
@@ -13,11 +18,9 @@
   },
   "include": [
     "./src",
-    "test"
+    "./test"
   ],
   "exclude": [
-    "dist",
-    "*.test.js",
-    "*.test.ts"
+    "dist"
   ]
 }

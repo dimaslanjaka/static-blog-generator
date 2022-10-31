@@ -6,6 +6,9 @@
       "es2015.generator",
       "es5"
     ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "target": "es5",
     "moduleResolution": "node",
     "outDir": "./dist",
