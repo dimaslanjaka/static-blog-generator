@@ -15,7 +15,12 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
     "newLine": "lf",
     "types": []
-  }
+  },
+  "include": [
+    "project.js"
+  ]
 }
