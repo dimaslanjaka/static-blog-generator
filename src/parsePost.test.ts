@@ -4,7 +4,7 @@ import buildPost from './buildPost';
 import { simplifyDump } from './markdown/transformPosts/postMapper';
 import color from './node/color';
 import { write } from './node/filemanager';
-import { slugify } from './node/sanitize-filename';
+import { slugifySanitizeFilename } from './node/sanitize-filename';
 import parsePost from './parsePost';
 import config from './types/_config';
 
@@ -66,7 +66,7 @@ async function startParse(file: string, config: Record<string, any>) {
         __dirname,
         '../tmp/test/parsePost',
         config.root,
-        slugify(filename) + '.md'
+        slugifySanitizeFilename(filename) + '.md'
       ),
       buildPost(parse)
     );
@@ -76,7 +76,7 @@ async function startParse(file: string, config: Record<string, any>) {
         __dirname,
         '../tmp/test/parsePost',
         config.root,
-        slugify(filename) + '.json'
+        slugifySanitizeFilename(filename) + '.json'
       ),
       simplifyDump(parse)
     );

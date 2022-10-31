@@ -11,36 +11,48 @@ const logname = chalk.blue('[include]');
  * ```html
  * <!-- include file.ext -->
  * ```
- * @param file
- * @param str
+ * @param sourceFile
+ * @param bodyString
  * @returns
  */
-export function parseShortCodeInclude(file: string, str: string) {
+export function parseShortCodeInclude(sourceFile: string, bodyString: string) {
   const regex = /<!--\s+?include\s+?(.+?)\s+?-->/gim;
-  const execs = Array.from(str.matchAll(regex));
-  if (execs.length) {
-    execs.forEach((m) => {
-      const htmlTag = m[0];
-      const includefile = m[1];
-      const dirs = {
-        directFile: join(dirname(file.toString()), includefile),
+  let modified = false;
+  let execs = Array.from(bodyString.matchAll(regex));
+  while (execs.length > 0) {
+    for (let i = 0; i < execs.length; i++) {
+      const match = execs.shift();
+
+      const htmlTag = match[0];
+      const includefile = match[1];
+      const dirs: Record<string, string> = {
+        directFile: join(dirname(sourceFile.toString()), includefile),
         //cwdFile: join(cwd(), includefile),
         rootFile: join(root, includefile)
       };
+      dirs.assetFolder = join(sourceFile.replace(/.md$/, ''), includefile);
+
       for (const key in dirs) {
         if (Object.prototype.hasOwnProperty.call(dirs, key)) {
           const filepath = dirs[key];
           if (existsSync(filepath)) {
-            if (verbose)
-              console.log(logname + chalk.greenBright(`[${key}]`), file);
+            if (verbose) {
+              console.log(logname + chalk.greenBright(`[${key}]`), sourceFile);
+            }
             const read = readFileSync(filepath).toString();
-            str = str.replace(htmlTag, () => read);
+            bodyString = bodyString.replace(htmlTag, () => read);
+            execs = Array.from(bodyString.matchAll(regex));
+            modified = true;
             break;
           }
         }
       }
-    });
+    }
   }
-  return str;
+  // @todo include nested shortcodes when modified occurs
+  if (regex.test(bodyString) && modified) {
+    return parseShortCodeInclude(sourceFile, bodyString);
+  }
+  return bodyString;
 }
 export default parseShortCodeInclude;

@@ -71,7 +71,7 @@ export default function sanitizeFilename(input: string, replacement = '') {
  * @param str
  * @returns
  */
-export function slugify(str: string) {
+export function slugifySanitizeFilename(str: string) {
   return str
     .split(/[\s+]/)
     .filter((str) => str.trim().length > 0)

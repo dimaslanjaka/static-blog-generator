@@ -296,6 +296,9 @@ export async function parsePost(
       meta.comments = true;
     // @todo set default wordcount to 0
     if (!meta.wordcount) meta.wordcount = 0;
+    if (meta.wordcount === 0) {
+      //
+    }
 
     // @todo set default excerpt/description
     if (meta.subtitle) {
@@ -486,6 +489,7 @@ export async function parsePost(
         if (body) {
           if (sourceFile) {
             if (shortcodes.include) {
+              // @todo parse shortcode include
               body = parseShortCodeInclude(sourceFile, body);
             }
             if (shortcodes.now) body = shortcodeNow(sourceFile, body);
