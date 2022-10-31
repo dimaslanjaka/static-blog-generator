@@ -24,6 +24,10 @@ export interface postMeta {
      */
     description?: string;
     /**
+     * word count
+     */
+    wordcount?: number;
+    /**
      * Auto generated fixed id with uuid v4
      */
     id?: string;
