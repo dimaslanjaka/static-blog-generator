@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/triple-slash-reference */
 /* jshint node: true, strict: true */
 'use strict';
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const jsdom_1 = __importDefault(require("jsdom"));
-const plugin_error_1 = __importDefault(require("plugin-error"));
-const through2_1 = __importDefault(require("through2"));
+const tslib_1 = require("tslib");
+const jsdom_1 = tslib_1.__importDefault(require("jsdom"));
+const plugin_error_1 = tslib_1.__importDefault(require("plugin-error"));
+const through2_1 = tslib_1.__importDefault(require("through2"));
 const pluginName = 'gulp-dom';
 /**
  * gulpDom
