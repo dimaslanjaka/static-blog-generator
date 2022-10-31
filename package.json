@@ -1,6 +1,6 @@
 {
   "name": "static-blog-generator-hexo",
-  "version": "1.0.0-158-g02c28cc",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "npm run server",
