@@ -195,8 +195,6 @@ function copyAllPosts() {
                 case 1:
                     parse = _a.sent();
                     if (parse && parse.metadata) {
-                        if (file.dirname.includes('scrapped'))
-                            console.log(parse.metadata.permalink, file.dirname);
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         file.contents = Buffer.from(build);
                         return [2 /*return*/, callback(null, file)];
