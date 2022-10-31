@@ -155,6 +155,7 @@ ignore:
 # https://hexo.io/docs/configuration.html
 skip_render:
   - "*.html"
+  - "chimeraland/recipes.html"
   - "assets/adblock-notify/*.html"
   - "page/*.html"
   - "comment.html"
