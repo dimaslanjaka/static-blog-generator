@@ -4,14 +4,12 @@ import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
 import yaml from 'yaml'
+import { hexoProject } from '../../project'
 import { MaterialsData } from './chimeraland'
 import { capitalizer } from './string'
 import { removeChimera } from './url'
 
-const publicDir = join(
-  __dirname,
-  '../../source/_posts/auto-generated/materials'
-)
+const publicDir = join(hexoProject, 'source/_posts/auto-generated/materials')
 
 MaterialsData.forEach((item) => {
   const attr: Record<string, any> = {}
