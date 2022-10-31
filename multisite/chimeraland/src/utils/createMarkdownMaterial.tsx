@@ -7,9 +7,8 @@ import yaml from 'yaml'
 import { hexoProject } from '../../project'
 import { MaterialsData } from './chimeraland'
 import { capitalizer } from './string'
-import { removeChimera } from './url'
 
-const publicDir = join(hexoProject, 'source/_posts/auto-generated/materials')
+const publicDir = join(hexoProject, 'src-posts/chimeraland/materials')
 
 MaterialsData.forEach((item) => {
   const attr: Record<string, any> = {}
@@ -19,16 +18,15 @@ MaterialsData.forEach((item) => {
   attr.updated = moment().format()
   attr.date = item.datePublished
   attr.author = 'L3n4r0x'
-  attr.permalink = removeChimera(item.pathname)
+  attr.permalink = item.pathname
   attr.photos = item.images.map(
-    (image: { absolutePath: string; pathname: string }) =>
-      removeChimera(image.pathname)
+    (image: { absolutePath: string; pathname: string }) => image.pathname
   )
   if (item.images.length > 0) {
     const featured = item.images.find((image) =>
       /feature/i.test(image.filename)
     )
-    attr.thumbnail = removeChimera((featured || item.images[0]).pathname)
+    attr.thumbnail = (featured || item.images[0]).pathname
   }
   attr.tags = ['Material']
   attr.categories = ['Games', 'Chimeraland', 'Materials']
@@ -164,4 +162,6 @@ ${yaml.stringify(attr).trim()}
 ${html}
   `.trim()
   )
+
+  //console.log(output)
 })
