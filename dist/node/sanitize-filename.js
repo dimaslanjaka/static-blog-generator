@@ -4,7 +4,7 @@
 /*jshint node:true*/
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.slugify = void 0;
+exports.slugifySanitizeFilename = void 0;
 const tslib_1 = require("tslib");
 /**
  * Replaces characters in strings that are illegal/unsafe for filenames.
@@ -69,11 +69,11 @@ exports.default = sanitizeFilename;
  * @param str
  * @returns
  */
-function slugify(str) {
+function slugifySanitizeFilename(str) {
     return str
         .split(/[\s+]/)
         .filter((str) => str.trim().length > 0)
         .join('-');
 }
-exports.slugify = slugify;
+exports.slugifySanitizeFilename = slugifySanitizeFilename;
 //# sourceMappingURL=sanitize-filename.js.map

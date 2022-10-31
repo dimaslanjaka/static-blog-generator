@@ -210,6 +210,9 @@ function parsePost(target, options = {}) {
             // @todo set default wordcount to 0
             if (!meta.wordcount)
                 meta.wordcount = 0;
+            if (meta.wordcount === 0) {
+                //
+            }
             // @todo set default excerpt/description
             if (meta.subtitle) {
                 meta.excerpt = meta.subtitle;
@@ -376,6 +379,7 @@ function parsePost(target, options = {}) {
                     if (body) {
                         if (sourceFile) {
                             if (shortcodes.include) {
+                                // @todo parse shortcode include
                                 body = (0, include_1.parseShortCodeInclude)(sourceFile, body);
                             }
                             if (shortcodes.now)
@@ -406,8 +410,10 @@ function parsePost(target, options = {}) {
                 content: body,
                 config: HexoConfig
             };
-            if ('permalink' in result.metadata === false)
+            if ('permalink' in result.metadata === false) {
                 result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
+            }
+            result.metadata.slug = result.metadata.permalink;
             // put fileTree
             if (isFile) {
                 result.fileTree = {
