@@ -14,11 +14,16 @@ function uniqueArray(array) {
 exports.uniqueArray = uniqueArray;
 /**
  * Unique Array Of Strings
+ * @description Lowercase all string and filter duplicated from them
  * @param arr
  * @returns
  */
 function uniqueStringArray(arr) {
-    const filter = new Map(arr.map((s) => [s.toLowerCase(), s]));
+    const filter = new Map(arr
+        .filter((s) => typeof s === 'string')
+        .map((s) => {
+        return [s.toLowerCase(), s];
+    }));
     const values = filter.values();
     /*
     return [...filter.values()];*/

@@ -262,10 +262,10 @@ function parsePost(target, options = {}) {
             // @todo remove duplicated metadata photos
             if (options.fix && 'photos' in meta && meta.photos.length > 0) {
                 try {
-                    meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos);
+                    meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos.filter((str) => str.trim().length > 0));
                 }
-                catch (_e) {
-                    console.error('cannot unique photos', meta.title);
+                catch (e) {
+                    console.error('cannot unique photos', meta.title, e.message);
                 }
             }
             // @todo delete location
