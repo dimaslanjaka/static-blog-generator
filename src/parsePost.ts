@@ -358,8 +358,8 @@ export async function parsePost(
         meta.photos = uniqueStringArray(
           meta.photos.filter((str) => str.trim().length > 0)
         );
-      } catch (_e) {
-        console.error('cannot unique photos', meta.title);
+      } catch (e) {
+        console.error('cannot unique photos', meta.title, e.message);
       }
     }
 
