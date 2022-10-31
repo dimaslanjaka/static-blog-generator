@@ -260,7 +260,10 @@ function parsePost(target, options = {}) {
                     }
             }
             // @todo remove duplicated metadata photos
-            if (options.fix && 'photos' in meta && meta.photos.length > 0) {
+            if (options.fix &&
+                'photos' in meta &&
+                Array.isArray(meta.photos) &&
+                meta.photos.length > 0) {
                 try {
                     meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos.filter((str) => str.trim().length > 0));
                 }
