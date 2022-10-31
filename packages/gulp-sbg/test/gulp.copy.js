@@ -1,5 +1,5 @@
-const { spawn } = require("child_process");
-const { hexoProject } = require('../project')
+const spawn = require('cross-spawn');
+const { hexoProject } = require('../project');
 
 const cwd = hexoProject;
 
