@@ -19,6 +19,7 @@
     // Removing this would place the .d.ts files
     // next to the .js files
     "outDir": "lib",
+    "importHelpers": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -35,7 +36,9 @@
       "./node_modules/@types"
     ],
     "types": [
-      "node"
+      "node",
+      "through2",
+      "jsdom"
     ],
     "lib": [
       "DOM",
