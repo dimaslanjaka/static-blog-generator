@@ -260,8 +260,13 @@ function parsePost(target, options = {}) {
                     }
             }
             // @todo remove duplicated metadata photos
-            if (options.fix && meta.photos && meta.photos.length) {
-                meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos);
+            if (options.fix && 'photos' in meta && meta.photos.length > 0) {
+                try {
+                    meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos);
+                }
+                catch (_e) {
+                    console.error('cannot unique photos', meta.title);
+                }
             }
             // @todo delete location
             if (Object.prototype.hasOwnProperty.call(meta, 'location') &&
