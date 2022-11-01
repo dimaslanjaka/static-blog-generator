@@ -29,10 +29,10 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   attr.tags = []
   attr.categories = ['Games', 'Chimeraland']
   if (item.type === 'monsters') {
-    attr.tags = ['Monster', 'Pet']
+    attr.tags = ['Chimeraland', 'Monster', 'Pet']
     attr.categories.push('Monsters')
   } else {
-    attr.tags.push('Attendant')
+    attr.tags = ['Chimeraland', 'Attendant']
     attr.categories.push('Attendants')
   }
 
