@@ -1,0 +1,437 @@
+{
+  "data": [
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Lunar Aquatine",
+      "qty": "GRADE B ATK 70 HP 70 DEF 70",
+      "buff": [
+        "Attack 40",
+        "HP 400",
+        "Monster EXP Bonus 40%",
+        "Joint Firearm DMG +20%"
+      ],
+      "delicacies": [
+        "Smoked Eleboar Meat",
+        "Flame Roasted Horn",
+        "Stir-Fried Browtelope"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shaman Regni",
+      "qty": "GRADE C ATK 60 HP 60 DEF 60",
+      "buff": [
+        "Attack 30",
+        "HP 300",
+        "Monster EXP Bonus 40%"
+      ],
+      "delicacies": [
+        "Rustic Preserved Deer Roll",
+        "Exotic Herbal Jelly",
+        "Hot Stone Icefox Meat"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Rosary Twinkel",
+      "qty": "GRADE C ATK 50 HP 50 DEF 50",
+      "buff": [
+        "Attack 20",
+        "HP 200",
+        "Monster EXP Bonus 40%"
+      ],
+      "delicacies": [
+        "Aromatic Litiger Ball",
+        "Hot 'n Sour Jelly",
+        "Stir-Fried Browtelope"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Lunar Regni",
+      "qty": "GRADE B ATK 70 HP 70 DEF 70",
+      "buff": [
+        "Attack 40",
+        "HP 400",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Rustic Preserved Deer Roll",
+        "Exotic Herbal Jelly",
+        "Hot Stone Icefox Meat"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shaji",
+      "qty": "GRADE C ATK 53 HP 51 DEF 46",
+      "buff": [
+        "Attack 20",
+        "HP 200",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Tasty Exotic Crab",
+        "Tasty Wing Trip",
+        "Bear Ball Pot"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shahoragai",
+      "qty": "GRADE C ATK 58 HP 63 DEF 59",
+      "buff": [
+        "Attack 30",
+        "HP 300",
+        "Monster EXP Bonus 40%"
+      ],
+      "delicacies": [
+        "3-Flavor Braised Wing",
+        "Pepper Salt Scorpion Pincer",
+        "Stir-Fried Browtelope"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shaman Twinkle",
+      "qty": "GRADE C ATK 60 HP 60 DEF 60",
+      "buff": [
+        "Attack 30",
+        "HP 300",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Aromatic Litiger Ball",
+        "Hot 'n Sour Jelly",
+        "Stir-Fried Browtelope"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shaman Astra",
+      "qty": "GRADE C ATK 60 HP 60 DEF 60",
+      "buff": [
+        "Attack 30",
+        "HP 300",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Horse Stew Hotpot",
+        "Hot 'n Sour Jelly",
+        "Hot Stone Icefox Meat"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Remetrog",
+      "qty": "GRADE C ATK 51 HP 52 DEF 47",
+      "buff": [
+        "Attack 20",
+        "HP 200",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Aged Butterfly Wing Broth",
+        "Yurlunggur Mixed Vegetables",
+        "Dragon Serpent Combo"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Crosoo",
+      "qty": "GRADE C ATK 53 HP 54 DEF 43",
+      "buff": [
+        "Attack 20",
+        "HP 200",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Scorpion King Broth",
+        "Soy Braised Dragon Bone",
+        "Flamebug Meat Claypot"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Lok-Aqui",
+      "qty": "GRADE C ATK 47 HP 55 DEF 48",
+      "buff": [
+        "Attack 20",
+        "HP 200",
+        "Monster EXP Bonus 40.0%"
+      ],
+      "delicacies": [
+        "Braised Lobcray Meat",
+        "Pepper Salt Scorpion Pincer",
+        "Dragon Serpent Combo"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Draco Violentine",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Letoo",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Lunar Shiren",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Makoo",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Mantiguard",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Mantitrack",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Ocygatha",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Reisiger",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Rhijin",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Rosary Aquatine",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Rosary Fortuna",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shaman Joya",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Shaman Luna",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Versamelaar",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Vulamber",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    },
+    {
+      "datePublished": "2022-01-06T20:56:03+07:00",
+      "dateModified": "2022-09-28T20:26:37+07:00",
+      "name": "Vuloneer",
+      "qty": "Need admin to write this (auto build)",
+      "buff": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ],
+      "delicacies": [
+        "undefined",
+        "undefined",
+        "undefined"
+      ]
+    }
+  ]
+}
