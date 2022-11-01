@@ -1,18 +1,26 @@
 import { deepmerge } from 'deepmerge-ts';
-import { existsSync, readFileSync, statSync } from 'fs';
+import {
+  existsSync,
+  mkdirpSync,
+  readFileSync,
+  statSync,
+  writeFileSync
+} from 'fs-extra';
 import { JSDOM } from 'jsdom';
 import cache from 'persistent-cache';
-import { basename, join, toUnix } from 'upath';
+import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
 import { generatePostId } from './generatePostId';
+import { isValidHttpUrl } from './gulp/utils';
 import { renderMarkdownIt } from './markdown/toHtml';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
+import color from './node/color';
 import { normalize } from './node/filemanager';
 import { md5, md5FileSync } from './node/md5-file';
+import sanitizeFilename from './node/sanitize-filename';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
 import { parsePermalink } from './parsePermalink';
-import post_assets_fixer from './post_assets_fixer';
 import { shortcodeCodeblock } from './shortcodes/codeblock';
 import { shortcodeCss } from './shortcodes/css';
 import { extractText } from './shortcodes/extractText';
@@ -22,8 +30,8 @@ import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { postMap } from './types/postMap';
-import config, { ProjectConfig } from './types/_config';
-import { countWords } from './utils/string';
+import config, { post_generated_dir, ProjectConfig } from './types/_config';
+import { countWords, removeDoubleSlashes } from './utils/string';
 
 const _cache = cache({
   base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
@@ -272,7 +280,7 @@ export async function parsePost(
     // @todo fix thumbnail
     if (options.fix) {
       const thumbnail = meta.cover || meta.thumbnail;
-      if (thumbnail) {
+      if (typeof thumbnail === 'string' && thumbnail.trim().length > 0) {
         if (!meta.thumbnail) meta.thumbnail = thumbnail;
         if (!meta.cover) meta.cover = thumbnail;
         if (!meta.photos) {
@@ -280,8 +288,10 @@ export async function parsePost(
         }
         meta.photos.push(meta.cover);
       }
-      if (meta.photos) {
-        const photos: string[] = meta.photos;
+      if (Array.isArray(meta.photos)) {
+        const photos: string[] = meta.photos.filter(
+          (str) => typeof str === 'string' && str.trim().length > 0
+        );
         meta.photos = uniqueArray(photos);
       }
     }
@@ -380,14 +390,80 @@ export async function parsePost(
       const publicFile = isFile
         ? toUnix(normalize(originalFile))
         : toUnix(normalize(options.sourceFile));
+      /**
+       * Post Asset Fixer
+       * @param sourcePath
+       * @returns
+       */
+      const post_assets_fixer = (sourcePath: string) => {
+        const logname = color.Blue('[PAF]');
+        if (!publicFile) return sourcePath;
+        // replace extended title from source
+        sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
+        // return base64 image
+        if (sourcePath.startsWith('data:image')) return sourcePath;
+        if (sourcePath.startsWith('//')) sourcePath = 'http:' + sourcePath;
+        if (sourcePath.includes('%20'))
+          sourcePath = decodeURIComponent(sourcePath);
+        if (!isValidHttpUrl(sourcePath) && !sourcePath.startsWith('/')) {
+          let result: string | null = null;
+          /** search from same directory */
+          const f1 = join(dirname(publicFile), sourcePath);
+          /** search from parent directory */
+          const f2 = join(dirname(dirname(publicFile)), sourcePath);
+          /** search from root directory */
+          const f3 = join(process.cwd(), sourcePath);
+          const f4 = join(post_generated_dir, sourcePath);
+          [f1, f2, f3, f4].forEach((src) => {
+            if (result !== null) return;
+            if (existsSync(src) && !result) result = src;
+          });
+
+          if (result === null) {
+            const log = join(
+              __dirname,
+              '../tmp/errors/post-asset-folder/' +
+                sanitizeFilename(basename(sourcePath).trim(), '-') +
+                '.log'
+            );
+            if (!existsSync(dirname(log))) {
+              mkdirpSync(dirname(log));
+            }
+            writeFileSync(
+              log,
+              JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2)
+            );
+            console.log(logname, color.redBright('[fail]'), {
+              str: sourcePath,
+              log
+            });
+          } else {
+            result = replaceArr(
+              result,
+              [toUnix(process.cwd()), 'source/', '_posts', 'src-posts'],
+              '/'
+            );
+            result = encodeURI((options.config?.root || '') + result);
+
+            result = removeDoubleSlashes(result);
+
+            if (options.config['verbose'])
+              console.log(logname, '[success]', result);
+
+            return result;
+          }
+        }
+        return sourcePath;
+      };
+
       // @todo fix post_asset_folder
       if (options.fix) {
         if (meta.cover) {
-          meta.cover = post_assets_fixer(target, options, meta.cover);
+          meta.cover = post_assets_fixer(meta.cover);
         }
         // fix thumbnail
         if (meta.thumbnail) {
-          meta.thumbnail = post_assets_fixer(target, options, meta.thumbnail);
+          meta.thumbnail = post_assets_fixer(meta.thumbnail);
         }
 
         // add property photos by default
@@ -400,24 +476,25 @@ export async function parsePost(
             let replacementResult: string;
             let img: string;
             if (regex.test(m1)) {
-              const repl = m1.replace(regex, '').trim();
-              img = post_assets_fixer(target, options, repl);
-              replacementResult = whole.replace(repl, img);
+              const replacement = m1.replace(regex, '').trim();
+              img = post_assets_fixer(replacement);
+              replacementResult = whole.replace(replacement, img);
             }
             if (!replacementResult) {
-              img = post_assets_fixer(target, options, m1);
+              img = post_assets_fixer(m1);
               replacementResult = whole.replace(m1, img);
             }
             // push image to photos metadata
-            meta.photos.push(img);
+            if (typeof img === 'string') meta.photos.push(img);
             return replacementResult;
           });
         }
 
         // fix photos
-        if (meta.photos) {
+        if (Array.isArray(meta.photos)) {
           meta.photos = meta.photos
-            .map((photo) => post_assets_fixer(target, options, photo))
+            .filter((str) => typeof str === 'string' && str.trim().length > 0)
+            .map((photo) => post_assets_fixer(photo))
             // unique
             .filter(function (x, i, a) {
               return a.indexOf(x) === i;
