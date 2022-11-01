@@ -1,5 +1,4 @@
 import { existsSync, mkdirpSync, writeFileSync } from 'fs-extra'
-import moment from 'moment-timezone'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
@@ -8,6 +7,7 @@ import { hexoProject } from '../../project'
 import { AttendantsData, MonstersData, RecipesData } from './chimeraland'
 import { removeChimera } from './url'
 
+// create markdown for attendants and monsters
 MonstersData.concat(AttendantsData as any).forEach((item) => {
   const publicDir = join(hexoProject, 'src-posts/chimeraland', item.type)
 
@@ -15,8 +15,8 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   attr.title = item.name
   attr.webtitle = 'Chimeraland'
   attr.author = 'L3n4r0x'
-  ///attr.updated = item.dateModified
-  attr.updated = moment().format()
+  attr.updated = item.dateModified
+  //attr.updated = moment().format()
   attr.date = item.datePublished
   attr.permalink = removeChimera(item.pathname)
   attr.photos = item.images.map((image) => removeChimera(image.pathname))
