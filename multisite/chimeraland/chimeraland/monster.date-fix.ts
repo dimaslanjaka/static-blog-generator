@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { writeFile } from 'fs'
 import moment from 'moment'
 import { join } from 'upath'
 import monsters from './monsters.json'
@@ -9,28 +9,40 @@ const dates: string[] = []
 monsters.data = monsters.data.map((data) => {
   let updated = data.dateModified
   let date = data.datePublished
-  while (updates.includes(date)) {
+  while (dates.includes(date)) {
     // add 1 hour to date published
     date = moment(date)
-      .add(Math.floor(Math.random() * 10), 'hour')
+      .add(Math.floor(Math.random() * 10), 'hours')
       .format()
     console.log({ date })
   }
-  dates.push(date)
+
   while (updates.includes(updated)) {
     // add 1 hour to updated
-    updated = moment(updated)
-      .add(Math.floor(Math.random() * 10), 'hour')
+    const newUpdated = moment(updated)
+      .add(Math.floor(Math.random() * 10), 'hours')
       .format()
-    console.log({ updated })
+    console.log({ updated, newUpdated })
+    updated = newUpdated
   }
+
   updates.push(updated)
+  dates.push(date)
+
+  data.datePublished = date
+  data.dateModified = updated
+
   return data
 })
 
-export function writenow() {
-  writeFileSync(
-    join(__dirname, 'monsters.json'),
-    JSON.stringify(monsters, null, 2)
-  )
-}
+writeFile(
+  join(__dirname, 'monsters.json'),
+  JSON.stringify(monsters, null, 2),
+  function (e) {
+    if (e instanceof Error) {
+      console.log(e.message)
+    } else {
+      console.log('written succesful')
+    }
+  }
+)
