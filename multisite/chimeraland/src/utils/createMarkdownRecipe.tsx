@@ -173,6 +173,11 @@ RecipesData.forEach((item) => {
     publicDir,
     slugify(item.name, { trim: true, lower: true }) + '.md'
   )
+
+  if (/tenderloin/i.test(item.name)) {
+    console.log(output)
+  }
+
   if (!existsSync(dirname(output))) mkdirpSync(dirname(output))
   writeFileSync(
     output,
