@@ -5,7 +5,6 @@ import { dirname, join } from 'upath'
 import yaml from 'yaml'
 import { hexoProject } from '../../project'
 import { MaterialsData, RecipesData } from './chimeraland'
-import { removeChimera } from './url'
 
 const publicDir = join(hexoProject, 'src-posts/chimeraland/recipes')
 
@@ -17,16 +16,17 @@ RecipesData.forEach((item) => {
   attr.updated = item.dateModified
   //attr.updated = moment().format()
   attr.date = item.datePublished
-  attr.permalink = removeChimera(item.pathname)
+  attr.permalink = item.pathname
   attr.photos = [
-    removeChimera(item.images.name?.pathname),
-    removeChimera(item.images.icon?.pathname),
-    removeChimera(item.images.material?.pathname)
+    item.images.pathname,
+    item.images.name?.pathname,
+    item.images.icon?.pathname,
+    item.images.material?.pathname
   ]
   attr.thumbnail =
-    removeChimera(item.images.icon?.pathname) ||
+    item.images.pathname ||
     'https://via.placeholder.com/550x50/FFFFFF/000000/?text=' + item.name
-  attr.tags = ['Recipe', 'Buff', 'Food']
+  attr.tags = ['Chimeraland', 'Recipe', 'Buff', 'Food']
   attr.categories = ['Games', 'Chimeraland', 'Recipes']
 
   const mdC = (
