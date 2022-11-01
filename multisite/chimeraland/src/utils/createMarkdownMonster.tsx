@@ -5,7 +5,6 @@ import { dirname, join } from 'upath'
 import yaml from 'yaml'
 import { hexoProject } from '../../project'
 import { AttendantsData, MonstersData, RecipesData } from './chimeraland'
-import { removeChimera } from './url'
 
 // create markdown for attendants and monsters
 MonstersData.concat(AttendantsData as any).forEach((item) => {
@@ -18,13 +17,15 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   attr.updated = item.dateModified
   //attr.updated = moment().format()
   attr.date = item.datePublished
-  attr.permalink = removeChimera(item.pathname)
-  attr.photos = item.images.map((image) => removeChimera(image.pathname))
+  attr.permalink = item.pathname
+  attr.photos = item.images.map((image) => image.pathname)
   if (item.images.length > 0) {
     const featured = item.images.find((image) =>
       /feature/i.test(image.filename)
     )
-    attr.thumbnail = removeChimera((featured || item.images[0]).pathname)
+    attr.thumbnail =
+      (featured || item.images[0])?.pathname ||
+      'https://via.placeholder.com/550x50/FFFFFF/000000/?text=' + item.name
   }
   attr.tags = []
   attr.categories = ['Games', 'Chimeraland']
