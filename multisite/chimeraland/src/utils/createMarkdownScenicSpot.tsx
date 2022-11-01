@@ -1,4 +1,5 @@
 import { existsSync, mkdirpSync, writeFileSync } from 'fs-extra'
+import moment from 'moment'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
@@ -12,11 +13,11 @@ const publicDir = join(hexoProject, 'src-posts/chimeraland/scenic-spot')
 const siteMetadata = {
   title: 'Scenic Spot Locations',
   webtitel: 'Chimeraland',
-  permalink: '/scenic-spots/',
-  tags: ['Scenic-Spot'],
-  categories: ['Games', 'Chimeraland', 'Scenic-Spot'],
-  //datePublished: props.datePublished,
-  //dateModified: props.dateModified,
+  permalink: '/chimeraland/scenic-spots/',
+  tags: ['Chimeraland', 'Scenic', 'Spot'],
+  categories: ['Games', 'Chimeraland', 'Scenic', 'Spot'],
+  date: moment('2022-09-10').format(),
+  updated: '2022-11-01T16:05:02+07:00',
   description: 'Scenic Spot Locations - Chimeraland',
   language: 'en-US,id',
   image: 'https://i.ytimg.com/vi/vk8Nz2AiKe8/maxresdefault.jpg',
@@ -26,6 +27,7 @@ const siteMetadata = {
     image: 'https://avatars.githubusercontent.com/u/12471057?v=4'
   }
 }
+
 const gallery = ScenicData.map((item) => {
   if (item.pathname)
     return (
