@@ -1,3 +1,4 @@
+import ansiColors from 'ansi-colors'
 import Bluebird from 'bluebird'
 import {
   existsSync,
@@ -61,7 +62,7 @@ const getData = () => {
           while (dirs.length > 0) {
             const toProcess = dirs[0]
             const inputFile = toProcess.originalPath
-            if (existsSync(inputFile)) {
+            if (existsSync(inputFile) && /.(jpe?g|png)$/.test(inputFile)) {
               const input = readFileSync(inputFile)
               const output = join(
                 publicDir,
@@ -71,11 +72,24 @@ const getData = () => {
                 if (!existsSync(dirname(output))) {
                   mkdirSync(dirname(output), { recursive: true })
                 }
-                await sharp(input).webp().toFile(output)
+                try {
+                  await sharp(input).webp().toFile(output)
+                } catch (e) {
+                  if (e instanceof Error) {
+                    console.error(
+                      ansiColors.redBright(item.name),
+                      { inputFile, ext: extname(inputFile) },
+                      e.message
+                    )
+                  }
+                }
               }
               results.push(toProcess)
             } else {
-              console.log('cannot process', toProcess.originalPath)
+              console.log(
+                ansiColors.redBright('cannot process'),
+                toProcess.originalPath
+              )
             }
             dirs.shift()
           }
