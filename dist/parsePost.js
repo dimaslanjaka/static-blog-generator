@@ -3,20 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePost = void 0;
 const tslib_1 = require("tslib");
 const deepmerge_ts_1 = require("deepmerge-ts");
-const fs_1 = require("fs");
+const fs_extra_1 = require("fs-extra");
 const jsdom_1 = require("jsdom");
 const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
 const upath_1 = require("upath");
 const yaml_1 = tslib_1.__importDefault(require("yaml"));
 const dateMapper_1 = require("./dateMapper");
 const generatePostId_1 = require("./generatePostId");
+const utils_1 = require("./gulp/utils");
 const toHtml_1 = require("./markdown/toHtml");
 const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
+const color_1 = tslib_1.__importDefault(require("./node/color"));
 const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
-const utils_1 = require("./node/utils");
+const sanitize_filename_1 = tslib_1.__importDefault(require("./node/sanitize-filename"));
+const utils_2 = require("./node/utils");
 const parsePermalink_1 = require("./parsePermalink");
-const post_assets_fixer_1 = tslib_1.__importDefault(require("./post_assets_fixer"));
 const codeblock_1 = require("./shortcodes/codeblock");
 const css_1 = require("./shortcodes/css");
 const extractText_1 = require("./shortcodes/extractText");
@@ -25,7 +27,7 @@ const include_1 = require("./shortcodes/include");
 const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
-const _config_1 = tslib_1.__importDefault(require("./types/_config"));
+const _config_1 = tslib_1.__importStar(require("./types/_config"));
 const string_1 = require("./utils/string");
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
@@ -63,7 +65,7 @@ function parsePost(target, options = {}) {
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
         // , { sourceFile: target }
-        if (!options.sourceFile && (0, fs_1.existsSync)(target))
+        if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
         if (!options.config)
             options.config = _config_1.default;
@@ -72,7 +74,7 @@ function parsePost(target, options = {}) {
             ? HexoConfig.url
             : HexoConfig.url + '/';
         const fileTarget = options.sourceFile || target;
-        const cacheKey = (0, fs_1.existsSync)(fileTarget)
+        const cacheKey = (0, fs_extra_1.existsSync)(fileTarget)
             ? (0, md5_file_1.md5FileSync)(fileTarget)
             : (0, md5_file_1.md5)(fileTarget);
         if (options.cache) {
@@ -88,9 +90,9 @@ function parsePost(target, options = {}) {
          * source file if variable `text` is file
          */
         let originalFile = target;
-        const isFile = (0, fs_1.existsSync)(target) && (0, fs_1.statSync)(target).isFile();
+        const isFile = (0, fs_extra_1.existsSync)(target) && (0, fs_extra_1.statSync)(target).isFile();
         if (isFile) {
-            target = String((0, fs_1.readFileSync)(target, 'utf-8'));
+            target = String((0, fs_extra_1.readFileSync)(target, 'utf-8'));
             if (options.sourceFile)
                 originalFile = options.sourceFile;
         }
@@ -185,7 +187,7 @@ function parsePost(target, options = {}) {
             // @todo fix thumbnail
             if (options.fix) {
                 const thumbnail = meta.cover || meta.thumbnail;
-                if (thumbnail) {
+                if (typeof thumbnail === 'string' && thumbnail.trim().length > 0) {
                     if (!meta.thumbnail)
                         meta.thumbnail = thumbnail;
                     if (!meta.cover)
@@ -195,8 +197,8 @@ function parsePost(target, options = {}) {
                     }
                     meta.photos.push(meta.cover);
                 }
-                if (meta.photos) {
-                    const photos = meta.photos;
+                if (Array.isArray(meta.photos)) {
+                    const photos = meta.photos.filter((str) => typeof str === 'string' && str.trim().length > 0);
                     meta.photos = (0, array_unique_1.default)(photos);
                 }
             }
@@ -239,10 +241,10 @@ function parsePost(target, options = {}) {
                     meta.title = (0, upath_1.basename)(options.sourceFile);
                 }
                 // fix special char in metadata
-                meta.title = (0, utils_1.cleanString)(meta.title);
-                meta.subtitle = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.subtitle));
-                meta.excerpt = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.excerpt));
-                meta.description = (0, utils_1.cleanWhiteSpace)((0, utils_1.cleanString)(meta.description));
+                meta.title = (0, utils_2.cleanString)(meta.title);
+                meta.subtitle = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.subtitle));
+                meta.excerpt = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.excerpt));
+                meta.description = (0, utils_2.cleanWhiteSpace)((0, utils_2.cleanString)(meta.description));
             }
             // @todo fix default category and tags
             if (options.fix) {
@@ -280,14 +282,72 @@ function parsePost(target, options = {}) {
                 const publicFile = isFile
                     ? (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalFile))
                     : (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
+                /**
+                 * Post Asset Fixer
+                 * @param sourcePath
+                 * @returns
+                 */
+                const post_assets_fixer = (sourcePath) => {
+                    var _a;
+                    const logname = color_1.default.Blue('[PAF]');
+                    if (!publicFile)
+                        return sourcePath;
+                    // replace extended title from source
+                    sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
+                    // return base64 image
+                    if (sourcePath.startsWith('data:image'))
+                        return sourcePath;
+                    if (sourcePath.startsWith('//'))
+                        sourcePath = 'http:' + sourcePath;
+                    if (sourcePath.includes('%20'))
+                        sourcePath = decodeURIComponent(sourcePath);
+                    if (!(0, utils_1.isValidHttpUrl)(sourcePath) && !sourcePath.startsWith('/')) {
+                        let result = null;
+                        /** search from same directory */
+                        const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), sourcePath);
+                        /** search from parent directory */
+                        const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), sourcePath);
+                        /** search from root directory */
+                        const f3 = (0, upath_1.join)(process.cwd(), sourcePath);
+                        const f4 = (0, upath_1.join)(_config_1.post_generated_dir, sourcePath);
+                        [f1, f2, f3, f4].forEach((src) => {
+                            if (result !== null)
+                                return;
+                            if ((0, fs_extra_1.existsSync)(src) && !result)
+                                result = src;
+                        });
+                        if (result === null) {
+                            const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' +
+                                (0, sanitize_filename_1.default)((0, upath_1.basename)(sourcePath).trim(), '-') +
+                                '.log');
+                            if (!(0, fs_extra_1.existsSync)((0, upath_1.dirname)(log))) {
+                                (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(log));
+                            }
+                            (0, fs_extra_1.writeFileSync)(log, JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2));
+                            console.log(logname, color_1.default.redBright('[fail]'), {
+                                str: sourcePath,
+                                log
+                            });
+                        }
+                        else {
+                            result = (0, utils_2.replaceArr)(result, [(0, upath_1.toUnix)(process.cwd()), 'source/', '_posts', 'src-posts'], '/');
+                            result = encodeURI((((_a = options.config) === null || _a === void 0 ? void 0 : _a.root) || '') + result);
+                            result = (0, string_1.removeDoubleSlashes)(result);
+                            if (options.config['verbose'])
+                                console.log(logname, '[success]', result);
+                            return result;
+                        }
+                    }
+                    return sourcePath;
+                };
                 // @todo fix post_asset_folder
                 if (options.fix) {
                     if (meta.cover) {
-                        meta.cover = (0, post_assets_fixer_1.default)(target, options, meta.cover);
+                        meta.cover = post_assets_fixer(meta.cover);
                     }
                     // fix thumbnail
                     if (meta.thumbnail) {
-                        meta.thumbnail = (0, post_assets_fixer_1.default)(target, options, meta.thumbnail);
+                        meta.thumbnail = post_assets_fixer(meta.thumbnail);
                     }
                     // add property photos by default
                     if (!meta.photos)
@@ -299,23 +359,25 @@ function parsePost(target, options = {}) {
                             let replacementResult;
                             let img;
                             if (regex.test(m1)) {
-                                const repl = m1.replace(regex, '').trim();
-                                img = (0, post_assets_fixer_1.default)(target, options, repl);
-                                replacementResult = whole.replace(repl, img);
+                                const replacement = m1.replace(regex, '').trim();
+                                img = post_assets_fixer(replacement);
+                                replacementResult = whole.replace(replacement, img);
                             }
                             if (!replacementResult) {
-                                img = (0, post_assets_fixer_1.default)(target, options, m1);
+                                img = post_assets_fixer(m1);
                                 replacementResult = whole.replace(m1, img);
                             }
                             // push image to photos metadata
-                            meta.photos.push(img);
+                            if (typeof img === 'string')
+                                meta.photos.push(img);
                             return replacementResult;
                         });
                     }
                     // fix photos
-                    if (meta.photos) {
+                    if (Array.isArray(meta.photos)) {
                         meta.photos = meta.photos
-                            .map((photo) => (0, post_assets_fixer_1.default)(target, options, photo))
+                            .filter((str) => typeof str === 'string' && str.trim().length > 0)
+                            .map((photo) => post_assets_fixer(photo))
                             // unique
                             .filter(function (x, i, a) {
                             return a.indexOf(x) === i;
@@ -327,7 +389,7 @@ function parsePost(target, options = {}) {
                     }
                 }
                 if (!meta.url) {
-                    const url = (0, utils_1.replaceArr)((0, upath_1.toUnix)((0, filemanager_1.normalize)(publicFile)), [
+                    const url = (0, utils_2.replaceArr)((0, upath_1.toUnix)((0, filemanager_1.normalize)(publicFile)), [
                         (0, upath_1.toUnix)((0, filemanager_1.normalize)(process.cwd())),
                         options.config.source_dir + '/_posts/',
                         'src-posts/',
@@ -436,7 +498,7 @@ function parsePost(target, options = {}) {
             // put fileTree
             if (isFile) {
                 result.fileTree = {
-                    source: (0, utils_1.replaceArr)((0, upath_1.toUnix)(originalFile), ['source/_posts/', '_posts/'], 'src-posts/'),
+                    source: (0, utils_2.replaceArr)((0, upath_1.toUnix)(originalFile), ['source/_posts/', '_posts/'], 'src-posts/'),
                     public: (0, upath_1.toUnix)(originalFile).replace('/src-posts/', '/source/_posts/')
                 };
             }
