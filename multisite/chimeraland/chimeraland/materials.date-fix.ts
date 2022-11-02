@@ -1,12 +1,12 @@
 import { writeFile } from 'fs'
 import moment from 'moment'
 import { join } from 'upath'
-import recipes from './recipes.json'
+import materials from './materials.json'
 
 const updates: string[] = []
 const dates: string[] = []
 
-recipes.data = recipes.data.map((data) => {
+materials.data = materials.data.map((data) => {
   let updated = data.dateModified
   let date = data.datePublished
   while (dates.includes(date)) {
@@ -17,7 +17,9 @@ recipes.data = recipes.data.map((data) => {
 
   while (updates.includes(updated)) {
     // add 1 hour to updated
-    updated = moment(updated).add(1, 'hour').format()
+    updated = moment(updated)
+      .add(Math.floor(Math.random() * 10), 'hours')
+      .format()
     console.log({ updated })
   }
 
@@ -31,8 +33,8 @@ recipes.data = recipes.data.map((data) => {
 })
 
 writeFile(
-  join(__dirname, 'recipes.json'),
-  JSON.stringify(recipes, null, 2),
+  join(__dirname, 'monsters.json'),
+  JSON.stringify(materials, null, 2),
   function (e) {
     if (e instanceof Error) {
       console.log(e.message)
