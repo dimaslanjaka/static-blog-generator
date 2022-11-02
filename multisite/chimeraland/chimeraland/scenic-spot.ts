@@ -29,10 +29,13 @@ async function main() {
     })
     const input = readFileSync(target)
     const outputImg = join(publicDir, filename + '.webp')
-    const pathname = outputImg.replace(
-      toUnix(process.cwd() + '/source'),
-      '/chimeraland'
-    )
+    let pathname = outputImg
+    ;[
+      (toUnix(join(process.cwd(), 'source')),
+      toUnix(join(hexoProject, 'source')))
+    ].map((str) => {
+      pathname = pathname.replace(str, '')
+    })
 
     // console.log({ name, output, pathname })
     result.push({ pathname, name, output: outputImg })
