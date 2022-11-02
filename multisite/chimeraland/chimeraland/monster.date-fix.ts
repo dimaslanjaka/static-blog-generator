@@ -11,9 +11,7 @@ monsters.data = monsters.data.map((data) => {
   let date = data.datePublished
   while (dates.includes(date)) {
     // add 1 hour to date published
-    date = moment(date)
-      .add(Math.floor(Math.random() * 10), 'hours')
-      .format()
+    date = moment(date).add(1, 'hour').format()
     console.log({ date })
   }
 
