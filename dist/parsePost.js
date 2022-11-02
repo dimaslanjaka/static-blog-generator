@@ -387,11 +387,16 @@ function parsePost(target, options = {}) {
                         // markdown image
                         body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
                         // html image
-                        const regex = /<img [^>]*src="[^"]*"[^>]*>/gm;
-                        if (regex.test(body)) {
-                            body.match(regex).map((x) => {
-                                return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
-                            });
+                        try {
+                            const regex = /<img [^>]*src="[^"]*"[^>]*>/gm;
+                            if (regex.test(body)) {
+                                body.match(regex).map((x) => {
+                                    return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
+                                });
+                            }
+                        }
+                        catch (_b) {
+                            console.log('cannot find image html from', meta.title);
                         }
                     }
                     // fix photos
