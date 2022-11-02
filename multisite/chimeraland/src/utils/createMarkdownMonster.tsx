@@ -12,7 +12,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   const publicDir = join(hexoProject, 'src-posts/chimeraland', item.type)
 
   const attr: Record<string, any> = {}
-  attr.title = item.name
+  attr.title = 'Monster ' + item.name
   attr.webtitle = 'Chimeraland'
   attr.author = 'L3n4r0x'
   attr.updated = item.dateModified
@@ -122,7 +122,15 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
       {gallery}
     </section>
   )
-  const html = ReactDOMServer.renderToStaticMarkup(mdC).toString()
+  let html = ReactDOMServer.renderToStaticMarkup(mdC).toString()
+
+  try {
+    html = prettier.format(html, { parser: 'html' })
+  } catch (e) {
+    if (e instanceof Error) {
+      console.log('cannot prettify', item.name)
+    }
+  }
 
   const output = join(
     publicDir,
@@ -136,7 +144,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
 ${yaml.stringify(attr).trim()}
 ---
 
-${prettier.format(html, { parser: 'html' })}
+${html}
   `.trim()
   )
 })
