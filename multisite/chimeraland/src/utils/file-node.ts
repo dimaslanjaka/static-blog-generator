@@ -1,14 +1,13 @@
 import Bluebird from 'bluebird'
 import {
   existsSync,
-  mkdirSync,
+  mkdirpSync,
   readdirSync,
   Stats,
   statSync,
   writeFileSync
-} from 'fs'
-import { dirname } from 'path'
-import { join } from 'upath'
+} from 'fs-extra'
+import { dirname, join } from 'upath'
 
 /**
  * read dir sync recursive
@@ -34,8 +33,9 @@ export function walkDir(folderPath: string) {
 
 export function save(file: string, content: string) {
   return new Bluebird((resolve: (file: string) => any) => {
-    if (!existsSync(dirname(file)))
-      mkdirSync(dirname(file), { recursive: true })
+    if (!existsSync(dirname(file))) {
+      mkdirpSync(dirname(file))
+    }
     writeFileSync(file, content)
     resolve(file)
   })
