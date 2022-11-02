@@ -1,5 +1,11 @@
 import axios from 'axios'
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs-extra'
+import {
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  writeFileSync
+} from 'fs-extra'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
@@ -22,12 +28,12 @@ const results: any[] = []
       .replace(/[\s\-_]+/g, '-')
       // replace multiple hypens with single hypens
       .replace(/-+/g, '-')
-    const localDir = join(__dirname, 'recipes', slugname + '.jpg')
+    const localImage = join(__dirname, 'recipes', slugname + '.jpg')
     const info = {}
     const pathname = '/' + join('chimeraland', 'recipes', slugname + '.html')
     if ('buff' in item) item.buff = array_unique(<any>item.buff) as string[]
-    if (existsSync(localDir)) {
-      const input = readFileSync(localDir)
+    if (existsSync(localImage)) {
+      const input = readFileSync(localImage)
       const info = {
         filename: slugname + '.webp',
         pathname:
@@ -61,6 +67,16 @@ const results: any[] = []
             )
         }
       }
+
+      // copy main image
+      const dest_image = joinp(
+        publicDir,
+        info.pathname.replace(/chimeraland\//, '')
+      )
+
+      if (!existsSync(dest_image)) copyFileSync(localImage, dest_image)
+
+      // copy icon image
 
       const dest_icon = joinp(
         publicDir,
