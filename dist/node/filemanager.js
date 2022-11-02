@@ -14,7 +14,7 @@ const JSON_1 = require("./JSON");
 const glob = require("glob");
 /**
  * cross-platform normalize path to fixed-case windows drive letters
- * @see {@link https://www.npmjs.com/package/true-case-path}
+ * @link https://www.npmjs.com/package/true-case-path
  * @param path
  * @returns
  */
@@ -47,7 +47,7 @@ const walk = function (dir, done) {
             fs.stat(file, function (err, stat) {
                 if (stat && stat.isDirectory()) {
                     walk(file, function (err, res) {
-                        results = results.concat(res);
+                        results = results.concat(res || []);
                         if (!--pending)
                             done(null, results);
                     });
@@ -184,6 +184,7 @@ exports.resolve = resolve;
 function read(path, opt) {
     if ((0, exports.existsSync)(path))
         return (0, exports.readFileSync)(path, opt);
+    return null;
 }
 exports.read = read;
 /**

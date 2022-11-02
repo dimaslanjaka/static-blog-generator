@@ -97,6 +97,7 @@ function parsePost(target, options = {}) {
                 originalFile = options.sourceFile;
         }
         const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+            var _a, _b;
             if (!m) {
                 throw new Error(originalFile + ' cannot be mapped');
             }
@@ -282,9 +283,16 @@ function parsePost(target, options = {}) {
                 delete meta.location;
             }
             if (isFile || options.sourceFile) {
-                const publicFile = isFile
-                    ? (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalFile))
-                    : (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
+                let publicFile;
+                if (isFile) {
+                    publicFile = (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalFile));
+                }
+                else if (options.sourceFile) {
+                    publicFile = (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
+                }
+                else {
+                    throw new Error('cannot find public file of ' + meta.title);
+                }
                 /**
                  * Post Asset Fixer
                  * @param sourcePath
@@ -336,7 +344,7 @@ function parsePost(target, options = {}) {
                             result = (0, utils_2.replaceArr)(result, [(0, upath_1.toUnix)(process.cwd()), 'source/', '_posts', 'src-posts'], '/');
                             result = encodeURI((((_a = options.config) === null || _a === void 0 ? void 0 : _a.root) || '') + result);
                             result = (0, string_1.removeDoubleSlashes)(result);
-                            if (options.config['verbose'])
+                            if (options.config && options.config['verbose'])
                                 console.log(logname, '[success]', result);
                             return result;
                         }
@@ -379,7 +387,7 @@ function parsePost(target, options = {}) {
                         // markdown image
                         body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
                         // html image
-                        body.match(/<img [^>]*src="[^"]*"[^>]*>/gm).map((x) => {
+                        (_a = body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)) === null || _a === void 0 ? void 0 : _a.map((x) => {
                             return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
                         });
                     }
@@ -401,7 +409,7 @@ function parsePost(target, options = {}) {
                 if (!meta.url) {
                     const url = (0, utils_2.replaceArr)((0, upath_1.toUnix)((0, filemanager_1.normalize)(publicFile)), [
                         (0, upath_1.toUnix)((0, filemanager_1.normalize)(process.cwd())),
-                        options.config.source_dir + '/_posts/',
+                        ((_b = options.config) === null || _b === void 0 ? void 0 : _b.source_dir) + '/_posts/',
                         'src-posts/',
                         '_posts/'
                     ], '/')
@@ -426,7 +434,7 @@ function parsePost(target, options = {}) {
                     }
                 }
             }
-            if ('generator' in options.config) {
+            if (options.config && 'generator' in options.config) {
                 if (meta.type && !meta.layout && options.config.generator.type) {
                     meta.layout = meta.type;
                 }

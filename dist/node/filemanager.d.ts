@@ -9,7 +9,7 @@ import ErrnoException = NodeJS.ErrnoException;
 import glob = require('glob');
 /**
  * cross-platform normalize path to fixed-case windows drive letters
- * @see {@link https://www.npmjs.com/package/true-case-path}
+ * @link https://www.npmjs.com/package/true-case-path
  * @param path
  * @returns
  */
@@ -84,7 +84,7 @@ export declare const resolve: (str: string, opt?: ResolveOpt | any) => string;
  * @param opt
  * @returns
  */
-export declare function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]): ReturnType<typeof fs.readFileSync> | null;
+export declare function read(path: string, opt?: Parameters<typeof fs.readFileSync>[1]): string | Buffer;
 /**
  * smart join to unix path
  * * removes empty/null/undefined
