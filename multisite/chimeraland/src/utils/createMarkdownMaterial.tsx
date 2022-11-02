@@ -15,9 +15,9 @@ MaterialsData.forEach((item) => {
   const attr: Record<string, any> = {}
   attr.title = item.name
   attr.webtitle = 'Chimeraland'
+  attr.date = item.datePublished
   attr.updated = item.dateModified
   //attr.updated = moment().format()
-  attr.date = item.datePublished
   attr.author = 'L3n4r0x'
   attr.permalink = item.pathname
   attr.photos = item.images.map(
@@ -152,6 +152,7 @@ MaterialsData.forEach((item) => {
     publicDir,
     slugify(item.name, { trim: true, lower: true }) + '.md'
   )
+  console.log(output)
   if (!existsSync(dirname(output))) mkdirpSync(dirname(output))
   writeFileSync(
     output,
