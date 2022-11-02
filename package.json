@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "prestart": "npm run copy",
     "start": "npm run server",
-    "build": "npm run copy && hexo generate",
+    "prebuild": "npm run copy",
+    "build": "hexo generate",
     "postbuild": "gulp copy && gulp safelink",
     "copy": "gulp copy-all-post",
     "clean": "gulp clean",
