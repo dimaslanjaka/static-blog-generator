@@ -9,6 +9,7 @@ Parse Hexo Posts To Object [READ FULL EXAMPLE](https://github.com/dimaslanjaka/h
 - Post Asset Folder Auto Fix for HexoJS
 - Parse shortcodes
 - Include partials files with html comments
+- Get all images from post body and push them to metadata.photos
 
 ## Usage Sample
 
@@ -25,6 +26,12 @@ const fs = require('fs');
   fs.writeFileSync('path/to/file.md', buildPost(parse));
 })();
 ```
+
+## Project Sample
+[https://github.com/dimaslanjaka/static-blog-generator-hexo](https://github.com/dimaslanjaka/static-blog-generator-hexo)
+[https://github.com/dimaslanjaka/chimeraland](https://github.com/dimaslanjaka/chimeraland)
+
+deployed to: [www.webmanajemen.com](https://www.webmanajemen.com)
 
 ## Argument Parameters
 - `--nocache` : disable cache
