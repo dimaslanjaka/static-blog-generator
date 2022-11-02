@@ -387,9 +387,12 @@ function parsePost(target, options = {}) {
                         // markdown image
                         body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
                         // html image
-                        Array.from(body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)).map((x) => {
-                            return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
-                        });
+                        const regex = /<img [^>]*src="[^"]*"[^>]*>/gm;
+                        if (regex.test(body)) {
+                            body.match(regex).map((x) => {
+                                return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
+                            });
+                        }
                     }
                     // fix photos
                     if (Array.isArray(meta.photos)) {
