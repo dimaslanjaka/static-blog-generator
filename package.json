@@ -8,7 +8,10 @@
     "build": "ts-node build.ts",
     "format": "prettier -w src/**/*.ts",
     "ci": "yarn install --immutable --immutable-cache --check-cache --frozen-lockfile --check-files",
-    "update": "npx npm-check-updates -u -x chalk"
+    "update": "npx npm-check-updates -u -x chalk",
+    "patch": "npm version patch",
+    "postpatch": "npm run push",
+    "push": "git push -u origin master --follow-tags"
   },
   "files": [
     "packages",
