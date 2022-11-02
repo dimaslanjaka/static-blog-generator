@@ -97,6 +97,9 @@ function parsePost(target, options = {}) {
                 originalFile = options.sourceFile;
         }
         const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+            if (!m) {
+                throw new Error(originalFile + ' cannot be mapped');
+            }
             let meta = {
                 title: '',
                 subtitle: '',
@@ -354,7 +357,8 @@ function parsePost(target, options = {}) {
                         meta.photos = [];
                     if (body && isFile) {
                         // get all images from post body
-                        body = body.replace(/!\[.*\]\((.*)\)/gm, function (whole, m1) {
+                        const imagefinderreplacement = function (whole, m1) {
+                            //console.log('get all images', m1);
                             const regex = /(?:".*")/;
                             let replacementResult;
                             let img;
@@ -371,6 +375,12 @@ function parsePost(target, options = {}) {
                             if (typeof img === 'string')
                                 meta.photos.push(img);
                             return replacementResult;
+                        };
+                        // markdown image
+                        body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
+                        // html image
+                        body.match(/<img [^>]*src="[^"]*"[^>]*>/gm).map((x) => {
+                            return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
                         });
                     }
                     // fix photos
