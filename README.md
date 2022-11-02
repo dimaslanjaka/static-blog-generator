@@ -1,7 +1,7 @@
 # hexo-post-parser
 [![Build](https://github.com/dimaslanjaka/hexo-post-parser/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/dimaslanjaka/hexo-post-parser/actions/workflows/build.yml)
 
-Parse Hexo Posts To Object 
+Parse Hexo Posts To Object
 
 [READ FULL EXAMPLE](https://github.com/dimaslanjaka/hexo-post-parser/tree/master/tests)
 
@@ -33,6 +33,7 @@ const fs = require('fs');
 
 ## Project Sample
 [https://github.com/dimaslanjaka/static-blog-generator-hexo](https://github.com/dimaslanjaka/static-blog-generator-hexo)
+
 [https://github.com/dimaslanjaka/chimeraland](https://github.com/dimaslanjaka/chimeraland)
 
 deployed to: [www.webmanajemen.com](https://www.webmanajemen.com)
