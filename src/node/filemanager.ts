@@ -13,7 +13,7 @@ import glob = require('glob');
 
 /**
  * cross-platform normalize path to fixed-case windows drive letters
- * @see {@link https://www.npmjs.com/package/true-case-path}
+ * @link https://www.npmjs.com/package/true-case-path
  * @param path
  * @returns
  */
@@ -42,7 +42,7 @@ const walk = function (
   dir: fs.PathLike,
   done: (err: ErrnoException | null, results?: string[]) => any
 ) {
-  let results = [];
+  let results: string[] = [];
   fs.readdir(dir, function (err, list) {
     if (err) return done(err);
     let pending = list.length;
@@ -52,7 +52,7 @@ const walk = function (
       fs.stat(file, function (err, stat) {
         if (stat && stat.isDirectory()) {
           walk(file, function (err, res) {
-            results = results.concat(res);
+            results = results.concat(res || []);
             if (!--pending) done(null, results);
           });
         } else {
@@ -210,8 +210,9 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
 export function read(
   path: string,
   opt?: Parameters<typeof fs.readFileSync>[1]
-): ReturnType<typeof fs.readFileSync> | null {
+) {
   if (existsSync(path)) return readFileSync(path, opt);
+  return null;
 }
 /**
  * smart join to unix path

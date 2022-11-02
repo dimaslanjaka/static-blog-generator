@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "allowJs": true,
     "esModuleInterop": true,
+    "strictNullChecks": false,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,

@@ -390,9 +390,14 @@ export async function parsePost(
     }
 
     if (isFile || options.sourceFile) {
-      const publicFile = isFile
-        ? toUnix(normalize(originalFile))
-        : toUnix(normalize(options.sourceFile));
+      let publicFile: string;
+      if (isFile) {
+        publicFile = toUnix(normalize(originalFile));
+      } else if (options.sourceFile) {
+        publicFile = toUnix(normalize(options.sourceFile));
+      } else {
+        throw new Error('cannot find public file of ' + meta.title);
+      }
       /**
        * Post Asset Fixer
        * @param sourcePath
@@ -450,7 +455,7 @@ export async function parsePost(
 
             result = removeDoubleSlashes(result);
 
-            if (options.config['verbose'])
+            if (options.config && options.config['verbose'])
               console.log(logname, '[success]', result);
 
             return result;
@@ -495,7 +500,7 @@ export async function parsePost(
           // markdown image
           body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
           // html image
-          body.match(/<img [^>]*src="[^"]*"[^>]*>/gm).map((x) => {
+          body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)?.map((x) => {
             return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
           });
         }
@@ -521,7 +526,7 @@ export async function parsePost(
           toUnix(normalize(publicFile)),
           [
             toUnix(normalize(process.cwd())),
-            options.config.source_dir + '/_posts/',
+            options.config?.source_dir + '/_posts/',
             'src-posts/',
             '_posts/'
           ],
@@ -549,7 +554,7 @@ export async function parsePost(
       }
     }
 
-    if ('generator' in options.config) {
+    if (options.config && 'generator' in options.config) {
       if (meta.type && !meta.layout && options.config.generator.type) {
         meta.layout = meta.type;
       }
