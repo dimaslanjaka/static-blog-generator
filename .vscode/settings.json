@@ -88,6 +88,7 @@
     "**/tmp/yarn": true
   },
   "code-runner.executorMap": {
+    "typescriptreact": "cross-env-shell DEBUG=chimera-* ts-node",
     "javascript": "node",
     "typescript": "cross-env-shell DEBUG=git-command-helper,chimera-* ts-node",
     "coffeescript": "coffee",
