@@ -315,29 +315,35 @@ function parsePost(target, options = {}) {
                     if (!(0, utils_1.isValidHttpUrl)(sourcePath) && !sourcePath.startsWith('/')) {
                         let result = null;
                         /** search from same directory */
-                        const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), sourcePath);
+                        const find1st = (0, upath_1.join)((0, upath_1.dirname)(publicFile), sourcePath);
                         /** search from parent directory */
-                        const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), sourcePath);
+                        const find2nd = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), sourcePath);
                         /** search from root directory */
-                        const f3 = (0, upath_1.join)(process.cwd(), sourcePath);
-                        const f4 = (0, upath_1.join)(_config_1.post_generated_dir, sourcePath);
-                        [f1, f2, f3, f4].forEach((src) => {
+                        const find3rd = (0, upath_1.join)(process.cwd(), sourcePath);
+                        const find4th = (0, upath_1.join)(_config_1.post_generated_dir, sourcePath);
+                        [find1st, find2nd, find3rd, find4th].forEach((src) => {
                             if (result !== null)
                                 return;
                             if ((0, fs_extra_1.existsSync)(src) && !result)
                                 result = src;
                         });
                         if (result === null) {
-                            const log = (0, upath_1.join)(__dirname, '../tmp/errors/post-asset-folder/' +
+                            const logfile = (0, upath_1.join)(process.cwd(), 'tmp/hexo-post-parser/errors/post-asset-folder/' +
                                 (0, sanitize_filename_1.default)((0, upath_1.basename)(sourcePath).trim(), '-') +
                                 '.log');
-                            if (!(0, fs_extra_1.existsSync)((0, upath_1.dirname)(log))) {
-                                (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(log));
+                            if (!(0, fs_extra_1.existsSync)((0, upath_1.dirname)(logfile))) {
+                                (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(logfile));
                             }
-                            (0, fs_extra_1.writeFileSync)(log, JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2));
+                            (0, fs_extra_1.writeFileSync)(logfile, JSON.stringify({
+                                str: sourcePath,
+                                f1: find1st,
+                                f2: find2nd,
+                                f3: find3rd,
+                                f4: find4th
+                            }, null, 2));
                             console.log(logname, color_1.default.redBright('[fail]'), {
                                 str: sourcePath,
-                                log
+                                log: logfile
                             });
                         }
                         else {
