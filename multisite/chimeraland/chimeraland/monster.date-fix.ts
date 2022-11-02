@@ -17,9 +17,7 @@ monsters.data = monsters.data.map((data) => {
 
   while (updates.includes(updated)) {
     // add 1 hour to updated
-    updated = moment(updated)
-      .add(Math.floor(Math.random() * 10), 'hours')
-      .format()
+    updated = moment(updated).add(1, 'hour').format()
     console.log({ updated })
   }
 
