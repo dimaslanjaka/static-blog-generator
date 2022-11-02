@@ -20,7 +20,7 @@ const siteMetadata = {
   updated: '2022-11-01T16:05:02+07:00',
   description: 'Scenic Spot Locations - Chimeraland',
   language: 'en-US,id',
-  image: 'https://i.ytimg.com/vi/vk8Nz2AiKe8/maxresdefault.jpg',
+  thumbnail: 'https://i.ytimg.com/vi/vk8Nz2AiKe8/maxresdefault.jpg',
   author: {
     email: 'dimaslanjaka@gmail.com',
     name: 'Dimas Lanjaka',
