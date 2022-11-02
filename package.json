@@ -15,7 +15,7 @@
     "server-php": "php -S localhost:4000 -t public",
     "postinstall": "node bin/update-cache.js",
     "update": "npx npm-check-updates -u -x hexo,chalk && npm install",
-    "refresh": "npm update hexo-front-matter hexo-browsersync hexo-front-matter hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
+    "refresh": "npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
   },
   "hexo": {
     "version": "6.3.0"
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@types/hexo": "file:packages/@types/hexo",
     "@types/hexo-util": "file:packages/@types/hexo-util",
-    "@types/node": "^18.11.8",
+    "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "cross-env": "^7.0.3",
