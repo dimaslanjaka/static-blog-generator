@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs-extra'
 import moment from 'moment-timezone'
-import { join } from 'path'
+import { join } from 'upath'
 
 moment.tz('Asia/Jakarta')
 
