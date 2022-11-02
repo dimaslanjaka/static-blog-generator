@@ -97,7 +97,7 @@ function parsePost(target, options = {}) {
                 originalFile = options.sourceFile;
         }
         const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-            var _a, _b;
+            var _a;
             if (!m) {
                 throw new Error(originalFile + ' cannot be mapped');
             }
@@ -387,7 +387,7 @@ function parsePost(target, options = {}) {
                         // markdown image
                         body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
                         // html image
-                        (_a = body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)) === null || _a === void 0 ? void 0 : _a.map((x) => {
+                        Array.from(body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)).map((x) => {
                             return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
                         });
                     }
@@ -409,7 +409,7 @@ function parsePost(target, options = {}) {
                 if (!meta.url) {
                     const url = (0, utils_2.replaceArr)((0, upath_1.toUnix)((0, filemanager_1.normalize)(publicFile)), [
                         (0, upath_1.toUnix)((0, filemanager_1.normalize)(process.cwd())),
-                        ((_b = options.config) === null || _b === void 0 ? void 0 : _b.source_dir) + '/_posts/',
+                        ((_a = options.config) === null || _a === void 0 ? void 0 : _a.source_dir) + '/_posts/',
                         'src-posts/',
                         '_posts/'
                     ], '/')
