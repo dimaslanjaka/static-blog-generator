@@ -122,6 +122,7 @@ export function updatePost() {
 // copy all posts from src-posts to source/_posts
 export function copyAllPosts() {
   const excludes = Array.isArray(ProjectConfig.exclude) ? ProjectConfig.exclude : [];
+  excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
   return gulp
     .src('**/*', { cwd: sourceDir, ignore: excludes })
     .pipe(
