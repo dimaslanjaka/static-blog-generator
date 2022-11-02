@@ -1,5 +1,6 @@
 import { existsSync, mkdirpSync, writeFileSync } from 'fs-extra'
 import moment from 'moment'
+import prettier from 'prettier'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
@@ -159,7 +160,7 @@ MaterialsData.forEach((item) => {
 ${yaml.stringify(attr).trim()}
 ---
 
-${html}
+${prettier.format(html, { parser: 'html' })}
   `.trim()
   )
 
