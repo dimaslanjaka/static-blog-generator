@@ -500,7 +500,7 @@ export async function parsePost(
           // markdown image
           body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
           // html image
-          body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)?.map((x) => {
+          Array.from(body.match(/<img [^>]*src="[^"]*"[^>]*>/gm)).map((x) => {
             return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
           });
         }
