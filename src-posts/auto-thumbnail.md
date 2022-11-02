@@ -1,6 +1,7 @@
 ---
 title: Post auto thumbnail
 description: Get all images from body and put them in metadata
+author: L3n4r0x
 ---
 
 ## MARKDOWN IMAGES

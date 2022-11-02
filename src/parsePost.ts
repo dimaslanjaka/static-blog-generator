@@ -191,6 +191,9 @@ export async function parsePost(
   }
 
   const mapper = async (m: RegExpMatchArray) => {
+    if (!m) {
+      throw new Error(originalFile + ' cannot be mapped');
+    }
     let meta: postMap['metadata'] = {
       title: '',
       subtitle: '',
@@ -471,7 +474,8 @@ export async function parsePost(
 
         if (body && isFile) {
           // get all images from post body
-          body = body.replace(/!\[.*\]\((.*)\)/gm, function (whole, m1) {
+          const imagefinderreplacement = function (whole: string, m1: string) {
+            //console.log('get all images', m1);
             const regex = /(?:".*")/;
             let replacementResult: string;
             let img: string;
@@ -487,6 +491,12 @@ export async function parsePost(
             // push image to photos metadata
             if (typeof img === 'string') meta.photos.push(img);
             return replacementResult;
+          };
+          // markdown image
+          body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
+          // html image
+          body.match(/<img [^>]*src="[^"]*"[^>]*>/gm).map((x) => {
+            return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
           });
         }
 
