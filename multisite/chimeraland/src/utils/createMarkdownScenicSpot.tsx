@@ -17,9 +17,9 @@ const siteMetadata = {
   tags: ['Chimeraland', 'Scenic', 'Spot'],
   categories: ['Games', 'Chimeraland', 'Scenic', 'Spot'],
   date: moment('2022-09-10').format(),
-  updated: '2022-11-01T16:05:02+07:00',
+  updated: '2022-11-02T15:58:09+07:00',
   description: 'Scenic Spot Locations - Chimeraland',
-  language: 'en-US,id',
+  language: 'en-US,id', 
   thumbnail: 'https://i.ytimg.com/vi/vk8Nz2AiKe8/maxresdefault.jpg',
   author: {
     email: 'dimaslanjaka@gmail.com',
@@ -62,7 +62,8 @@ const mdC = (
           from fiery volcanoes to snow-capped peaks and even outer space!
         </p>
         <p>
-          Steam also has World Info Achievements (Total achievements: 33){' '}
+          Chimeraland global on Steam also has World Info Achievements (Total
+          achievements: 33){' '}
           <a
             href="https://steamcommunity.com/stats/1913730/achievements"
             rel="nofollow noopener noreferer noreferrer"
@@ -111,6 +112,7 @@ const output = join(
   slugify('scenic-index', { trim: true, lower: true }) + '.md'
 )
 if (!existsSync(dirname(output))) mkdirpSync(dirname(output))
+console.log({ output })
 writeFileSync(
   output,
   `
