@@ -428,22 +428,22 @@ export async function parsePost(
           });
 
           if (result === null) {
-            const log = join(
-              __dirname,
-              '../tmp/errors/post-asset-folder/' +
+            const logfile = join(
+              process.cwd(),
+              'tmp/hexo-post-parser/errors/post-asset-folder/' +
                 sanitizeFilename(basename(sourcePath).trim(), '-') +
                 '.log'
             );
-            if (!existsSync(dirname(log))) {
-              mkdirpSync(dirname(log));
+            if (!existsSync(dirname(logfile))) {
+              mkdirpSync(dirname(logfile));
             }
             writeFileSync(
-              log,
+              logfile,
               JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2)
             );
             console.log(logname, color.redBright('[fail]'), {
               str: sourcePath,
-              log
+              log: logfile
             });
           } else {
             result = replaceArr(
