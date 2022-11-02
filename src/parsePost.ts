@@ -416,13 +416,13 @@ export async function parsePost(
         if (!isValidHttpUrl(sourcePath) && !sourcePath.startsWith('/')) {
           let result: string | null = null;
           /** search from same directory */
-          const f1 = join(dirname(publicFile), sourcePath);
+          const find1st = join(dirname(publicFile), sourcePath);
           /** search from parent directory */
-          const f2 = join(dirname(dirname(publicFile)), sourcePath);
+          const find2nd = join(dirname(dirname(publicFile)), sourcePath);
           /** search from root directory */
-          const f3 = join(process.cwd(), sourcePath);
-          const f4 = join(post_generated_dir, sourcePath);
-          [f1, f2, f3, f4].forEach((src) => {
+          const find3rd = join(process.cwd(), sourcePath);
+          const find4th = join(post_generated_dir, sourcePath);
+          [find1st, find2nd, find3rd, find4th].forEach((src) => {
             if (result !== null) return;
             if (existsSync(src) && !result) result = src;
           });
@@ -439,7 +439,17 @@ export async function parsePost(
             }
             writeFileSync(
               logfile,
-              JSON.stringify({ str: sourcePath, f1, f2, f3, f4 }, null, 2)
+              JSON.stringify(
+                {
+                  str: sourcePath,
+                  f1: find1st,
+                  f2: find2nd,
+                  f3: find3rd,
+                  f4: find4th
+                },
+                null,
+                2
+              )
             );
             console.log(logname, color.redBright('[fail]'), {
               str: sourcePath,
