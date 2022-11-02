@@ -93,7 +93,9 @@ Bluebird.all(RecipesData).each((item) => {
                   )}
                 </ul>
               </div>
-              <span className="badge rounded-pill bg-dark">recipe</span>
+              <span className="badge rounded-pill bg-dark text-white">
+                recipe
+              </span>
             </div>
 
             <div className="card-footer text-end text-muted">
@@ -123,6 +125,7 @@ Bluebird.all(RecipesData).each((item) => {
                 .trim()
                 .split('/')
                 .map((cleanstr) => {
+                  if (cleanstr.includes('/')) console.log(cleanstr)
                   const findmat = MaterialsData.find(
                     (mat) =>
                       slugify(mat.name, { lower: true, trim: true }) ===
@@ -134,12 +137,12 @@ Bluebird.all(RecipesData).each((item) => {
                         className="text-decoration-none"
                         href={findmat.pathname}
                         key={'material' + ri + mi}>
-                        {str}
+                        {cleanstr}
                       </a>
                     )
                   } else {
                     //console.log(cleanstr)
-                    return <>{str}</>
+                    return <>{cleanstr}</>
                   }
                 })
                 .reduce((prev, curr) => (
@@ -189,9 +192,7 @@ Bluebird.all(RecipesData).each((item) => {
     slugify(item.name, { trim: true, lower: true }) + '.md'
   )
 
-  if (/egg/i.test(item.name)) {
-    console.log(output)
-  }
+  //if (/egg/i.test(item.name)) console.log(output)
 
   if (!existsSync(dirname(output))) mkdirpSync(dirname(output))
   writeFileSync(
