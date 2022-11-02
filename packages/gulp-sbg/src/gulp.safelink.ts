@@ -39,12 +39,15 @@ export function safelinkProcess(_done?: TaskCallback) {
         cwd: deployDir,
         ignore: [
           // skip react project
-          '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
+          //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
           '**/chimeraland/recipes.html',
           // skip tools
           '**/embed.html',
           '**/tools.html',
-          '**/safelink.html'
+          '**/safelink.html',
+          // package registry
+          '**/node_modules/**',
+          '**/vendor/**'
         ]
       })
       .pipe(
