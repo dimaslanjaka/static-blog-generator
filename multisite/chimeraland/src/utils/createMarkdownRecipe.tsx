@@ -1,4 +1,6 @@
+import Bluebird from 'bluebird'
 import { existsSync, mkdirpSync, writeFileSync } from 'fs-extra'
+import prettier from 'prettier'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
@@ -8,13 +10,14 @@ import { MaterialsData, RecipesData } from './chimeraland'
 
 const publicDir = join(hexoProject, 'src-posts/chimeraland/recipes')
 
-RecipesData.forEach((item) => {
+Bluebird.all(RecipesData).each((item) => {
   const attr: Record<string, any> = {}
-  attr.title = item.name
+  attr.title = 'Recipe ' + item.name
   attr.webtitle = 'Chimeraland'
   attr.author = 'L3n4r0x'
   attr.updated = item.dateModified
   //attr.updated = moment().format()
+  attr.lang = 'en'
   attr.date = item.datePublished
   attr.permalink = item.pathname
   attr.photos = [
@@ -109,31 +112,43 @@ RecipesData.forEach((item) => {
           if (split) {
             device = split[1]
           }
-          const replace = recipe
+          const recipeMaterials = recipe
             .replace(rg, '')
             .trim()
             .split('+')
             .map((str) => str.trim())
             .map((str, mi) => {
-              const cleanstr = str.replace(/\[\d\]/, '').trim()
-              const findmat = MaterialsData.find(
-                (mat) =>
-                  slugify(mat.name, { lower: true, trim: true }) ===
-                  slugify(cleanstr, { lower: true, trim: true })
-              )
-              if (findmat) {
-                return (
-                  <a
-                    className="text-decoration-none"
-                    href={findmat.pathname}
-                    key={'material' + ri + mi}>
-                    {str}
-                  </a>
-                )
-              } else {
-                //console.log(cleanstr)
-                return <>{str}</>
-              }
+              return str
+                .replace(/\[\d\]/, '')
+                .trim()
+                .split('/')
+                .map((cleanstr) => {
+                  const findmat = MaterialsData.find(
+                    (mat) =>
+                      slugify(mat.name, { lower: true, trim: true }) ===
+                      slugify(cleanstr, { lower: true, trim: true })
+                  )
+                  if (findmat) {
+                    return (
+                      <a
+                        className="text-decoration-none"
+                        href={findmat.pathname}
+                        key={'material' + ri + mi}>
+                        {str}
+                      </a>
+                    )
+                  } else {
+                    //console.log(cleanstr)
+                    return <>{str}</>
+                  }
+                })
+                .reduce((prev, curr) => (
+                  <>
+                    {prev}
+                    <span> / </span>
+                    {curr}
+                  </>
+                ))
             })
             .reduce((prev, curr) => (
               <>
@@ -154,8 +169,8 @@ RecipesData.forEach((item) => {
                   </h2>
                   <div className="card-text">
                     <ul>
-                      <li>{replace}</li>
-                      {device && <li>Device: {device}</li>}
+                      <li>{recipeMaterials}</li>
+                      {<li>Device: {device || 'Stove or Camp'}</li>}
                     </ul>
                   </div>
                 </div>
@@ -174,7 +189,7 @@ RecipesData.forEach((item) => {
     slugify(item.name, { trim: true, lower: true }) + '.md'
   )
 
-  if (/tenderloin/i.test(item.name)) {
+  if (/egg/i.test(item.name)) {
     console.log(output)
   }
 
@@ -186,7 +201,7 @@ RecipesData.forEach((item) => {
 ${yaml.stringify(attr).trim()}
 ---
 
-${html}
+${prettier.format(html, { parser: 'html' })}
   `.trim()
   )
 })
