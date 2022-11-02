@@ -1,5 +1,6 @@
 import { existsSync, mkdirpSync, writeFileSync } from 'fs-extra'
 import moment from 'moment'
+import prettier from 'prettier'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
@@ -120,7 +121,7 @@ writeFileSync(
 ${yaml.stringify(siteMetadata).trim()}
 ---
 
-${html}
+${prettier.format(html, { parser: 'html' })}
   `.trim()
 )
 
