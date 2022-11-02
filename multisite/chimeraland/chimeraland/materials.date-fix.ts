@@ -17,9 +17,7 @@ materials.data = materials.data.map((data) => {
 
   while (updates.includes(updated)) {
     // add 1 hour to updated
-    updated = moment(updated)
-      .add(Math.floor(Math.random() * 10), 'hours')
-      .format()
+    updated = moment(updated).add(1, 'hour').format()
     console.log({ updated })
   }
 
@@ -33,7 +31,7 @@ materials.data = materials.data.map((data) => {
 })
 
 writeFile(
-  join(__dirname, 'monsters.json'),
+  join(__dirname, 'materials.json'),
   JSON.stringify(materials, null, 2),
   function (e) {
     if (e instanceof Error) {
