@@ -165,7 +165,7 @@ Bluebird.all(MaterialsData)
       publicDir,
       slugify(item.name, { trim: true, lower: true }) + '.md'
     )
-    if (/icebug/i.test(item.name)) console.log(output)
+    //if (/icebug/i.test(item.name)) console.log(output)
     if (!existsSync(dirname(output))) mkdirpSync(dirname(output))
     writeFileSync(
       output,
@@ -197,9 +197,12 @@ function findRecipe(matname: string) {
       })
     return (
       <div id={id('recipe-')} key={item.name + i + matname}>
-        <h5 id={id('item-')}>{item.name}</h5>
+        <h3 id={id('item-')}>{item.name}</h3>
         {item.recipes.map((recipe, ri) => {
-          let device = ''
+          let device = 'Stove or Camp'
+          if (/slushie|sauce|veggie paste/gi.test(item.name)) {
+            device = 'Mixer - Jam'
+          }
           const rg = /--device: (.*)--/i
           const split = recipe.match(rg)
           if (split) {
@@ -217,10 +220,20 @@ function findRecipe(matname: string) {
                 .split('/')
                 .map((cleanstr) => {
                   if (cleanstr.includes('/')) console.log(cleanstr)
-                  const findmat = MaterialsData.find(
+                  const findmat = MaterialsData.concat(RecipesData as any).find(
                     (mat) =>
-                      slugify(mat.name, { lower: true, trim: true }) ===
-                      slugify(cleanstr, { lower: true, trim: true })
+                      slugify(mat.name, {
+                        lower: true,
+                        trim: true,
+                        replacement: '-',
+                        strict: true
+                      }) ===
+                      slugify(cleanstr, {
+                        lower: true,
+                        trim: true,
+                        replacement: '-',
+                        strict: true
+                      })
                   )
                   if (findmat) {
                     return (
@@ -232,7 +245,7 @@ function findRecipe(matname: string) {
                       </a>
                     )
                   } else {
-                    //console.log(cleanstr)
+                    console.log('cannot find material recipe', cleanstr)
                     return <>{cleanstr}</>
                   }
                 })
@@ -242,19 +255,22 @@ function findRecipe(matname: string) {
           //console.log(replace)
           return (
             <div className="mb-2" key={id('recipe-' + ri + '-')}>
-              <div className="card">
-                <div className="card-body">
-                  <h2 className="card-title fs-5">
-                    Recipe {item.name} {ri + 1}
-                  </h2>
-                  <div className="card-text">
-                    <ul>
-                      <li>{jsxJoin(recipeMaterials, <span> / </span>)}</li>
-                      {<li>Device: {device || 'Stove or Camp'}</li>}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <table className="table">
+                <tr>
+                  <th>Recipe Name</th>
+                  <td>
+                    <b>{item.name}</b> {ri + 1}
+                  </td>
+                </tr>
+                <tr>
+                  <th>Material</th>
+                  <td>{jsxJoin(recipeMaterials, <span> / </span>)}</td>
+                </tr>
+                <tr>
+                  <th>Device</th>
+                  <td>{device}</td>
+                </tr>
+              </table>
             </div>
           )
         })}
