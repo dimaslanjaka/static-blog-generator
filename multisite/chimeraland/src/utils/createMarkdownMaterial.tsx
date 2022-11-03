@@ -168,7 +168,7 @@ Bluebird.all(MaterialsData)
       publicDir,
       slugify(item.name, { trim: true, lower: true }) + '.md'
     )
-    //if (/icebug/i.test(item.name)) console.log(output)
+    if (/buckt/gi.test(item.name)) console.log(output)
     if (!existsSync(dirname(output))) mkdirpSync(dirname(output))
     writeFileSync(
       output,
@@ -197,8 +197,24 @@ ${prettier.format(html, { parser: 'html' })}
 
 function findRecipe(matname: string) {
   const find = RecipesData.filter((item) =>
-    item.recipes.some((str) => str.includes(matname))
-  ).map((item, i) => {
+    item.recipes.some((str) =>
+      slugify(str, {
+        trim: true,
+        lower: true,
+        strict: true,
+        replacement: '-'
+      }).includes(
+        slugify(matname, {
+          trim: true,
+          lower: true,
+          strict: true,
+          replacement: '-'
+        })
+      )
+    )
+  )
+
+  const map = find.map((item, i) => {
     const id = (prefix: string) =>
       slugify(prefix + item.name, {
         lower: true,
@@ -248,26 +264,33 @@ function findRecipe(matname: string) {
                 .map((cleanstr) => {
                   if (cleanstr.includes('/')) console.log(cleanstr)
                   const findmat = MaterialsData.concat(RecipesData as any).find(
-                    (mat) =>
-                      slugify(mat.name, {
-                        lower: true,
-                        trim: true,
-                        replacement: '-',
-                        strict: true
-                      }) ===
-                      slugify(cleanstr, {
+                    (mat) => {
+                      const matName = slugify(mat.name, {
                         lower: true,
                         trim: true,
                         replacement: '-',
                         strict: true
                       })
+                      const cstr = slugify(cleanstr, {
+                        lower: true,
+                        trim: true,
+                        replacement: '-',
+                        strict: true
+                      })
+                      if (
+                        [cleanstr, mat.name].every((str) => /buckt/gi.test(str))
+                      ) {
+                        console.log(matName, cstr, matName === cstr)
+                      }
+                      return matName === cstr
+                    }
                   )
                   if (findmat) {
                     return (
                       <a
                         className="text-decoration-none"
                         href={findmat.pathname}
-                        key={'material' + ri + mi}>
+                        key={id('material' + ri + mi + '-')}>
                         {cleanstr}
                       </a>
                     )
@@ -306,8 +329,9 @@ function findRecipe(matname: string) {
       </div>
     )
   })
+
   if (find) {
-    return jsxJoin(find, <br />)
+    return jsxJoin(map, <br />)
   }
   return null
 }
