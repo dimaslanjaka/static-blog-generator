@@ -18,3 +18,15 @@ export function array_jsx_join(
     </>
   ))
 }
+
+export function jsxJoin(array: JSX.Element[], separator: string | JSX.Element) {
+  return array.length > 0
+    ? array.reduce((result, item) => (
+        <>
+          {result}
+          {separator}
+          {item}
+        </>
+      ))
+    : null
+}
