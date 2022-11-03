@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "files": [
+    "dist",
+    "packer.js"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "types": "./index.d.ts"
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^10.1.0",
+    "gulp": "^4.0.2",
+    "upath": "^2.0.1"
+  }
 }

@@ -46,7 +46,7 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.37",
     "@types/gulp": "^4.0.9",
-    "@types/hexo": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
+    "@types/hexo": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/@types/hexo?master",
     "@types/hexo-util": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/@types/hexo-util?master",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
