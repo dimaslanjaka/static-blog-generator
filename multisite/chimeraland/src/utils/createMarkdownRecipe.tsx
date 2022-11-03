@@ -147,8 +147,8 @@ Bluebird.all(RecipesData)
                     if (cleanstr.includes('/')) console.log(cleanstr)
                     const findmat = MaterialsData.concat(
                       RecipesData as any
-                    ).find(
-                      (mat) =>
+                    ).find((mat) => {
+                      return (
                         slugify(mat.name, {
                           lower: true,
                           trim: true,
@@ -161,7 +161,8 @@ Bluebird.all(RecipesData)
                           replacement: '-',
                           strict: true
                         })
-                    )
+                      )
+                    })
                     if (findmat) {
                       return (
                         <a
