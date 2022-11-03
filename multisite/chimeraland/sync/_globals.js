@@ -127,5 +127,5 @@ class ConfigParser {
 module.exports.ConfigParser = ConfigParser
 module.exports.ConfigFilesFinder = ConfigFilesFinder
 module.exports.getCacheDir = function () {
-  return path.join(__dirname, '../tmp')
+  return path.join(__dirname, '../.cache')
 }
