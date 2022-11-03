@@ -20,6 +20,7 @@
     "pretest": "jshint ./lib/*.js ./test/*.js",
     "test": "mocha ./test/*.js --reporter spec",
     "build": "tsc",
+    "postbuild": "node packer.js",
     "update": "npx npm-check-updates -u"
   },
   "keywords": [
@@ -33,22 +34,22 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jsdom": "^20.0.0",
-    "@types/node": "^18.7.14",
+    "@types/node": "^18.11.9",
     "@types/through2": "git+https://github.com/dimaslanjaka/nodejs-package-types#through2",
-    "chai": "4.2.0",
-    "gulp": "4.0.0",
+    "chai": "4.3.6",
+    "gulp": "4.0.2",
     "gulp-concat": "^2.6.1",
     "jshint": "2.13.5",
-    "mocha": "10.0.0",
+    "mocha": "10.1.0",
     "request": "2.88.0",
-    "typescript": "^4.8.2",
+    "typescript": "^4.8.4",
     "vinyl": "^3.0.0",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
   },
   "dependencies": {
-    "jsdom": "^16.5.0",
-    "plugin-error": "1.0.1",
-    "through2": "^2.0.3"
+    "jsdom": "^20.0.2",
+    "plugin-error": "2.0.0",
+    "through2": "^4.0.2"
   }
 }
