@@ -6,9 +6,11 @@ const packagejson = require('./package.json');
 
 const child = spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
 child.on('exit', function () {
-  const filename = `${packagejson.name}-${packagejson.version}.tgz`;
+  const filename = slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
   const tgz = join(__dirname, filename);
-  const tgzlatest = join(__dirname, 'release', `${packagejson.name}.tgz`);
+  const tgzlatest = join(__dirname, 'release', slugifyPkgName(`${packagejson.name}.tgz`));
+
+  console.log({ tgz, tgzlatest });
 
   if (!existsSync(dirname(tgzlatest))) {
     mkdirpSync(dirname(tgzlatest));
@@ -25,3 +27,7 @@ child.on('exit', function () {
       });
   }
 });
+
+function slugifyPkgName(str) {
+  return str.replace(/\//g, '-').replace(/@/g, '');
+}
