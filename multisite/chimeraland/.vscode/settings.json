@@ -25,7 +25,10 @@
     "editor.formatOnSave": false
   },
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
   },
   "[css]": {
     "editor.formatOnSave": true

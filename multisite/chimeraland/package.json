@@ -20,6 +20,7 @@
     "front-matter": "^4.0.2",
     "fs-extra": "^10.1.0",
     "git-command-helper": "^1.0.9",
+    "googleapis": "^109.0.0",
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "hexo-post-parser": "^1.1.16",
