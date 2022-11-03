@@ -10,7 +10,7 @@ import yaml from 'yaml'
 import { copyPost, hexoProject } from '../../project'
 import { jsxJoin } from './array-jsx'
 import { MaterialsData, RecipesData } from './chimeraland'
-import { capitalizer } from './string'
+import { capitalizer, strIsSame } from './string'
 
 const publicDir = join(hexoProject, 'src-posts/chimeraland/materials')
 
@@ -197,21 +197,7 @@ ${prettier.format(html, { parser: 'html' })}
 
 function findRecipe(matname: string) {
   const find = RecipesData.filter((item) =>
-    item.recipes.some((str) =>
-      slugify(str, {
-        trim: true,
-        lower: true,
-        strict: true,
-        replacement: '-'
-      }).includes(
-        slugify(matname, {
-          trim: true,
-          lower: true,
-          strict: true,
-          replacement: '-'
-        })
-      )
-    )
+    item.recipes.some((str) => strIsSame(str, matname, false))
   )
 
   const map = find.map((item, i) => {
