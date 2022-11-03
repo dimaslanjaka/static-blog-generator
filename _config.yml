@@ -156,6 +156,7 @@ ignore:
 skip_render:
   - "*.html"
   - "chimeraland/recipes.html"
+  - "_posts/chimeraland/recipes.html"
   - "assets/adblock-notify/*.html"
   - "page/*.html"
   - "comment.html"
