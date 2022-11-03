@@ -3,7 +3,7 @@ const readline = require('readline')
 const fs = require('fs')
 const fsProm = fs.promises
 const path = require('upath')
-
+const open = require('open')
 const globals = require('./_globals')
 
 const CACHE_PATH = globals.getCacheDir()
@@ -50,6 +50,7 @@ class Authenticator {
           })
 
           console.log('Please open the following url in the browser: ' + url)
+          open(url)
 
           const rl = readline.createInterface({
             input: process.stdin,
