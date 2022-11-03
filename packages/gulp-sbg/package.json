@@ -37,7 +37,7 @@
     "moment-timezone": "^0.5.38",
     "nunjucks": "^3.2.3",
     "safelinkify": "^1.1.5",
-    "sitemap-crawler": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/sitemap-crawler?master",
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "through2": "^4.0.2",
     "undertaker": "^1.3.0",
     "upath": "^2.0.1",
