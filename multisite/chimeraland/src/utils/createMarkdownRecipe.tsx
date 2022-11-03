@@ -140,10 +140,11 @@ Bluebird.all(RecipesData)
               })
               // flat chunk
               .flat(1)
+              // get internal links
               .map((str, mi) => {
                 return str
                   .trim()
-                  .split('/')
+                  .split(/\/|\sor\s/gi)
                   .map((cleanstr) => {
                     if (cleanstr.includes('/')) console.log(cleanstr)
                     const findmat = MaterialsData.concat(
