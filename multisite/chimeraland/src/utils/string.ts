@@ -1,3 +1,5 @@
+import slugify from 'slugify'
+
 /**
  * escape regex string
  * @param string
@@ -65,4 +67,27 @@ export function bufferToString(array: Buffer) {
   } else {
     return array.toString()
   }
+}
+
+/**
+ * Is string same
+ * @param first
+ * @param second
+ * @returns
+ */
+export function strIsSame(first: string, second: string, exactMatch = true) {
+  const slug1 = slugify(first, {
+    trim: true,
+    lower: true,
+    strict: true,
+    replacement: '-'
+  })
+  const slug2 = slugify(second, {
+    trim: true,
+    lower: true,
+    strict: true,
+    replacement: '-'
+  })
+  if (exactMatch) return slug1 == slug2
+  return slug1.includes(slug2)
 }
