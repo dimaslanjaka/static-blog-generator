@@ -50,3 +50,11 @@ sbg deploy
 [![Minimum node.js version](https://badgen.net/npm/node/hexo-post-parser?style=flat-square)](https://npmjs.com/package/hexo-post-parser)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/hexo-post-parser?label=Repository%20Size&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/hexo-post-parser?color=blue&label=Last%20Commit&style=flat-square)
+
+### safelinkify
+[![npm version](https://badge.fury.io/js/safelinkify.svg?style=flat-square)](https://badge.fury.io/js/safelinkify)
+![types](https://badgen.net/npm/types/safelinkify?style=flat-square)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/safelinkify?style=flat-square)](https://npmjs.com/package/safelinkify)
+[![Minimum node.js version](https://badgen.net/npm/node/safelinkify?style=flat-square)](https://npmjs.com/package/safelinkify)
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/safelink?label=Repository%20Size&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/safelink?color=blue&label=Last%20Commit&style=flat-square)
