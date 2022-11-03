@@ -5,7 +5,7 @@ import { spawn } from 'hexo-util';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
-import { deployConfig } from './deploy';
+import { deployConfig } from './gulp.deploy';
 import './gulp.clean';
 import './gulp.feed';
 import './gulp.post';
