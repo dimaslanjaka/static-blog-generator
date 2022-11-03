@@ -22,10 +22,14 @@
     "email": "gisonrg@gmail.com",
     "url": "https://gisonrg.me"
   },
+  "contributors": [
+    {
+      "email": "dimaslanjaka@gmail.com",
+      "name": "Dimas Lanjaka",
+      "url": "https://www.webmanajemen.com"
+    }
+  ],
   "license": "MIT",
-  "peerDependencies": {
-    "hexo": ">= 3.0.0"
-  },
   "dependencies": {
     "bluebird": "^3.7.2",
     "hexo-fs": "^4.0.0",
