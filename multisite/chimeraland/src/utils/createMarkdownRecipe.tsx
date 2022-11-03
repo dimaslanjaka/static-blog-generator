@@ -122,10 +122,25 @@ Bluebird.all(RecipesData)
               .replace(rg, '')
               .trim()
               .split('+')
+              // trim splitted string
               .map((str) => str.trim())
+              // repeat count with clean string
+              .map((str) => {
+                const count = parseInt(str.match(/\[(\d)\]/)?.[1] || '0')
+                const cleanstr = str.replace(/\[(\d)\]/, '').trim()
+                if (count > 0) {
+                  const build: string[] = []
+                  for (let i = 0; i < count; i++) {
+                    build.push(cleanstr)
+                  }
+                  return build
+                }
+                return [str]
+              })
+              // flat chunk
+              .flat(1)
               .map((str, mi) => {
                 return str
-                  .replace(/\[\d\]/, '')
                   .trim()
                   .split('/')
                   .map((cleanstr) => {
