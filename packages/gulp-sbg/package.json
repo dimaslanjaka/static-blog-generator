@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "update": "npx npm-check-updates -u",
+    "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsc -p tsconfig.build.json -w"
   },
@@ -24,12 +25,14 @@
   "dependencies": {
     "ansi-colors": "^4.1.3",
     "bluebird": "^3.7.2",
+    "cross-spawn": "7.0.3",
     "front-matter": "^4.0.2",
+    "fs-extra": "10.1.0",
     "git-command-helper": "^1.0.9",
     "gulp": "^4.0.2",
     "gulp-dom": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/gulp-dom?master",
     "hexo": "^6.3.0",
-    "hexo-post-parser": "^1.1.15",
+    "hexo-post-parser": "^1.1.16",
     "hexo-util": "^2.7.0",
     "moment-timezone": "^0.5.38",
     "nunjucks": "^3.2.3",
@@ -43,7 +46,7 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.37",
     "@types/gulp": "^4.0.9",
-    "@types/hexo": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/@types/hexo?master",
+    "@types/hexo": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "@types/hexo-util": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/@types/hexo-util?master",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
@@ -53,6 +56,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2"
   }
 }
