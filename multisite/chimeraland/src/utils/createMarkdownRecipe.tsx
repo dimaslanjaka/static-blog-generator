@@ -109,7 +109,10 @@ Bluebird.all(RecipesData)
         {/** recipes */}
         <div className="row mb-2">
           {item.recipes.map((recipe, ri) => {
-            let device = ''
+            let device = 'Stove or Camp'
+            if (/slushie|sauce|veggie paste|powder/gi.test(item.name)) {
+              device = 'Mixer - Jam'
+            }
             const rg = /--device: (.*)--/i
             const split = recipe.match(rg)
             if (split) {

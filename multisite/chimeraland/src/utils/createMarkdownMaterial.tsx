@@ -5,6 +5,7 @@ import prettier from 'prettier'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
+import { inspect } from 'util'
 import yaml from 'yaml'
 import { copyPost, hexoProject } from '../../project'
 import { jsxJoin } from './array-jsx'
@@ -12,6 +13,8 @@ import { MaterialsData, RecipesData } from './chimeraland'
 import { capitalizer } from './string'
 
 const publicDir = join(hexoProject, 'src-posts/chimeraland/materials')
+
+const errors: Error[] = []
 
 Bluebird.all(MaterialsData)
   .each((item) => {
@@ -50,7 +53,7 @@ Bluebird.all(MaterialsData)
             <strong className="d-inline-block mb-2 text-success">
               {item.type}
             </strong>
-            <h3 className="mb-0">{item.name}</h3>
+            <h2 className="mb-0">{item.name}</h2>
             <div className="mb-1 text-muted">
               {moment(item.dateModified).format('LLL')}
             </div>
@@ -79,9 +82,9 @@ Bluebird.all(MaterialsData)
             {'details' in item && (
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">
+                  <h3 className="card-title">
                     What is the use of the {item.name}
-                  </h5>
+                  </h3>
                   <div className="card-text">
                     <ul>
                       {(item.details as string[]).map((str, i) => (
@@ -98,7 +101,7 @@ Bluebird.all(MaterialsData)
             {'howto' in item && (
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">How to get {item.name}</h5>
+                  <h3 className="card-title">How to get {item.name}</h3>
                   <div className="card-text">
                     <ul>
                       {(item.howto as string[]).map((str, i) => (
@@ -120,7 +123,7 @@ Bluebird.all(MaterialsData)
           )}
 
           <div className="col-12 mb-2">
-            <h5>{item.name} Spawn Locations</h5>
+            <h2>{item.name} Spawn Locations</h2>
             {item.images.length > 1 ? (
               (
                 item.images as {
@@ -181,6 +184,14 @@ ${prettier.format(html, { parser: 'html' })}
     //console.log(output)
   })
   .then(() => {
+    const errorfile = join(
+      process.cwd(),
+      'tmp/errors/chimeraland',
+      'material.log'
+    )
+    mkdirpSync(dirname(errorfile))
+    writeFileSync(errorfile, errors.map((e) => inspect(e)).join('\n\n'))
+
     copyPost()
   })
 
@@ -200,7 +211,7 @@ function findRecipe(matname: string) {
         <h3 id={id('item-')}>{item.name}</h3>
         {item.recipes.map((recipe, ri) => {
           let device = 'Stove or Camp'
-          if (/slushie|sauce|veggie paste/gi.test(item.name)) {
+          if (/slushie|sauce|veggie paste|powder/gi.test(item.name)) {
             device = 'Mixer - Jam'
           }
           const rg = /--device: (.*)--/i
@@ -245,7 +256,9 @@ function findRecipe(matname: string) {
                       </a>
                     )
                   } else {
-                    console.log('cannot find material recipe', cleanstr)
+                    errors.push(
+                      new Error('cannot find material recipe ' + cleanstr)
+                    )
                     return <>{cleanstr}</>
                   }
                 })
@@ -264,7 +277,7 @@ function findRecipe(matname: string) {
                 </tr>
                 <tr>
                   <th>Material</th>
-                  <td>{jsxJoin(recipeMaterials, <span> / </span>)}</td>
+                  <td>{jsxJoin(recipeMaterials, <br />)}</td>
                 </tr>
                 <tr>
                   <th>Device</th>
