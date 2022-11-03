@@ -13,7 +13,7 @@ const publicDir = join(hexoProject, 'src-posts/chimeraland/materials')
 
 MaterialsData.forEach((item) => {
   const attr: Record<string, any> = {}
-  attr.title = item.name
+  attr.title = 'Material ' + item.name
   attr.webtitle = 'Chimeraland'
   attr.date = item.datePublished
   attr.updated = item.dateModified
