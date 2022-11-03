@@ -58,3 +58,11 @@ sbg deploy
 [![Minimum node.js version](https://badgen.net/npm/node/safelinkify?style=flat-square)](https://npmjs.com/package/safelinkify)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/safelink?label=Repository%20Size&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/safelink?color=blue&label=Last%20Commit&style=flat-square)
+
+### google-news-sitemap
+[![npm version](https://badge.fury.io/js/google-news-sitemap.svg?style=flat-square)](https://badge.fury.io/js/google-news-sitemap)
+![types](https://badgen.net/npm/types/google-news-sitemap?style=flat-square)
+[![Npm package yearly downloads](https://badgen.net/npm/dy/google-news-sitemap?style=flat-square)](https://npmjs.com/package/google-news-sitemap)
+[![Minimum node.js version](https://badgen.net/npm/node/google-news-sitemap?style=flat-square)](https://npmjs.com/package/google-news-sitemap)
+![GitHub repo size](https://img.shields.io/github/repo-size/dimaslanjaka/google-news-sitemap?label=Repository%20Size&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/dimaslanjaka/google-news-sitemap?color=blue&label=Last%20Commit&style=flat-square)
