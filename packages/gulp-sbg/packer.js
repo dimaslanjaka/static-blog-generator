@@ -1,9 +1,27 @@
 const spawn = require('cross-spawn').spawn;
-const { existsSync } = require('fs-extra');
-const { join } = require('upath');
+const { existsSync, renameSync, rmSync, mkdirpSync } = require('fs-extra');
+const GulpClient = require('gulp');
+const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
 
-spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
+const child = spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
+child.on('exit', function () {
+  const filename = `${packagejson.name}-${packagejson.version}.tgz`;
+  const tgz = join(__dirname, filename);
+  const tgzlatest = join(__dirname, 'release', `${packagejson.name}.tgz`);
 
-const tgz = join(__dirname, `${packagejson.name}-${packagejson.version}.tgz`);
-if (existsSync)
+  if (!existsSync(dirname(tgzlatest))) {
+    mkdirpSync(dirname(tgzlatest));
+  }
+
+  if (existsSync(tgz)) {
+    GulpClient.src(tgz)
+      .pipe(GulpClient.dest(join(__dirname, 'release')))
+      .once('end', function () {
+        if (existsSync(tgzlatest)) {
+          rmSync(tgzlatest);
+        }
+        renameSync(tgz, tgzlatest);
+      });
+  }
+});

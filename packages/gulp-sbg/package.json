@@ -30,7 +30,7 @@
     "fs-extra": "10.1.0",
     "git-command-helper": "^1.0.9",
     "gulp": "^4.0.2",
-    "gulp-dom": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator-hexo/packages/gulp-dom?master",
+    "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "hexo": "^6.3.0",
     "hexo-post-parser": "^1.1.16",
     "hexo-util": "^2.7.0",
