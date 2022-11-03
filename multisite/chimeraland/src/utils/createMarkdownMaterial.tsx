@@ -242,10 +242,11 @@ function findRecipe(matname: string) {
             })
             // flat chunk
             .flat(1)
+            // get internal links
             .map((str, mi) => {
               const replacement = str
                 .trim()
-                .split('/')
+                .split(/\/|\sor\s/gi)
                 .map((str) => str.trim())
                 .map((cleanstr) => {
                   if (cleanstr.includes('/')) console.log(cleanstr)
@@ -263,11 +264,13 @@ function findRecipe(matname: string) {
                         replacement: '-',
                         strict: true
                       })
+                      /*
                       if (
                         [cleanstr, mat.name].every((str) => /buckt/gi.test(str))
                       ) {
                         console.log(matName, cstr, matName === cstr)
                       }
+                      */
                       return matName === cstr
                     }
                   )
