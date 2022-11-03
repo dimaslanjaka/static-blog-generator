@@ -7,6 +7,7 @@ import { dirname, join } from 'upath'
 import yaml from 'yaml'
 import { copyPost, hexoProject } from '../../project'
 import { MaterialsData, RecipesData } from './chimeraland'
+import { strIsSame } from './string'
 
 const publicDir = join(hexoProject, 'src-posts/chimeraland/recipes')
 
@@ -147,22 +148,7 @@ Bluebird.all(RecipesData)
                     if (cleanstr.includes('/')) console.log(cleanstr)
                     const findmat = MaterialsData.concat(
                       RecipesData as any
-                    ).find((mat) => {
-                      return (
-                        slugify(mat.name, {
-                          lower: true,
-                          trim: true,
-                          replacement: '-',
-                          strict: true
-                        }) ===
-                        slugify(cleanstr, {
-                          lower: true,
-                          trim: true,
-                          replacement: '-',
-                          strict: true
-                        })
-                      )
-                    })
+                    ).find((mat) => strIsSame(mat.name, cleanstr))
                     if (findmat) {
                       return (
                         <a
