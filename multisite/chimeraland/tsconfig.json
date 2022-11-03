@@ -13,6 +13,7 @@
     "chimeraland",
     "src",
     "project.js",
-    "package.json"
+    "package.json",
+    "sync"
   ]
 }
