@@ -9,7 +9,8 @@
   },
   "scripts": {
     "update": "npx npm-check-updates -u -x hexo && npm install --cache tmp/npm",
-    "patch": "npm version patch"
+    "patch": "npm version patch",
+    "build": "node build.js"
   },
   "dependencies": {
     "@googleapis/docs": "^2.0.0",
