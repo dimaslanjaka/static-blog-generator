@@ -5,7 +5,8 @@
     "declaration": true,
     "baseUrl": ".",
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
