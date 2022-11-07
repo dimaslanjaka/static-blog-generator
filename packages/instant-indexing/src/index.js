@@ -28,12 +28,13 @@ class InstantIndexing {
             let list
             if (url.endsWith('.txt')) list = extractSitemapTXT(response.data)
             if (Array.isArray(list)) {
+                const currentURL = new URL(
+                    'https://www.webmanajemen.com/chimeraland/scenic-spots/'
+                )
                 // self.notifier.batch(list)
                 /* self.notifier.jwtClient.authorize(function (err, tokens) {
                     if (!err) {
-                        const url = new URL(
-                            'https://www.webmanajemen.com/chimeraland/scenic-spots/'
-                        )
+
                         const options = {
                             url: 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect',
                             method: 'POST',
@@ -58,10 +59,24 @@ class InstantIndexing {
                 }) */
                 const auth = new Auth.GoogleAuth({
                     keyFile: self.key.keyFile,
-                    scopes: 'https://www.googleapis.com/auth/webmasters',
+                    scopes: [
+                        'https://www.googleapis.com/auth/webmasters',
+                        'https://www.googleapis.com/auth/webmasters.readonly',
+                    ],
                 })
+
                 auth.getClient().then((client) => {
-                    const searchconsole = google.searchconsole('v1')
+                    google.options({ auth: client })
+                    const searchconsole = google.searchconsole({
+                        version: 'v1',
+                        auth: client,
+                    })
+                    const webmasters = google.webmasters('v3')
+                    searchconsole.sites
+                        .get({ siteUrl: currentURL.origin + '/' })
+                        .then((result) => {
+                            console.log(result.data)
+                        })
                 })
             }
         })
