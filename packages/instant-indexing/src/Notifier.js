@@ -6,6 +6,10 @@ class Notifier {
    * @type {import('googleapis').Auth.JWT}
    */
   jwtClient;
+  /**
+   *
+   * @param {import('./globals').Key} key
+   */
   constructor(key) {
     this.jwtClient = new google.auth.JWT(
       key.client_email,

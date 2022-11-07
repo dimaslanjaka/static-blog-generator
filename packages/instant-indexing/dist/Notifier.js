@@ -1,6 +1,10 @@
 var google = require('googleapis').google;
 var request = require('request');
 var Notifier = /** @class */ (function () {
+    /**
+     *
+     * @param {import('./globals').Key} key
+     */
     function Notifier(key) {
         this.jwtClient = new google.auth.JWT(key.client_email, null, key.private_key, ['https://www.googleapis.com/auth/indexing'], null);
     }

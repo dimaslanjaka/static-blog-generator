@@ -1,6 +1,10 @@
 export = Notifier;
 declare class Notifier {
-    constructor(key: any);
+    /**
+     *
+     * @param {import('./globals').Key} key
+     */
+    constructor(key: import('./globals').Key);
     /**
      * @type {import('googleapis').Auth.JWT}
      */
