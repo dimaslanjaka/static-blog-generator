@@ -6,15 +6,35 @@ const readDir = readdirSync(__dirname)
     .map((str) => join(__dirname, str))
 
 /**
- *
+ * @type {import('../globals').ServiceConfig}
  */
 let serviceConfig
 
 if (readDir.length > 0) {
-    serviceConfig = Object.assign(
-        { keyFile: readDir[0] },
-        JSON.parse(readFileSync(readDir[0], 'utf-8'))
-    )
+    serviceConfig = readDir
+        .map((keyFile) =>
+            Object.assign(
+                { keyFile },
+                JSON.parse(readFileSync(keyFile, 'utf-8'))
+            )
+        )
+        .filter((o) => 'project_id' in o)
+}
+
+function getApiConfig(index = 0) {
+    return readDir
+        .map((path) =>
+            Object.assign(
+                { keyFile: path },
+                JSON.parse(readFileSync(path, 'utf-8'))
+            )
+        )
+        .filter((o) => 'web' in o)[index]
+}
+
+module.exports = {
+    default: serviceConfig,
+    getApiConfig,
 }
 
 module.exports = serviceConfig
