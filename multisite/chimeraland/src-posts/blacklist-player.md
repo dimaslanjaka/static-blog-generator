@@ -14,6 +14,7 @@ categories: ["Games", "Chimeraland"]
 | Nama Player | Keterangan |
 | :--- | :--- |
 | ASTER | SCAMMER MAP ILLUS 16 |
+| arkep | SCAMMER MAP ILLUS 16 |
 | Nesamiko | scam 6000 ruby tukar akun **Mobile Legends** |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
