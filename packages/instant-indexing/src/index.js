@@ -26,9 +26,6 @@ class InstantIndexing {
             let list
             if (url.endsWith('.txt')) list = extractSitemapTXT(response.data)
             if (Array.isArray(list)) {
-                const currentURL = new URL(
-                    'https://www.webmanajemen.com/chimeraland/scenic-spots/'
-                )
                 // self.notifier.batch(list)
                 /* self.notifier.jwtClient.authorize(function (err, tokens) {
                     if (!err) {

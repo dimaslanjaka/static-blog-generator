@@ -1,7 +1,12 @@
 import { Auth, google } from 'googleapis'
+import serViceConfig from './config'
+
+const currentURL = new URL(
+    'https://www.webmanajemen.com/chimeraland/scenic-spots/'
+)
 
 const auth = new Auth.GoogleAuth({
-    keyFile: self.key.keyFile,
+    keyFile: serViceConfig.keyFile,
     scopes: [
         'https://www.googleapis.com/auth/webmasters',
         'https://www.googleapis.com/auth/webmasters.readonly',
@@ -10,13 +15,5 @@ const auth = new Auth.GoogleAuth({
 
 auth.getClient().then((client) => {
     google.options({ auth: client })
-    const searchconsole = google.searchconsole({
-        version: 'v1',
-        auth: client,
-    })
-    searchconsole.sites
-        .get({ siteUrl: currentURL.origin + '/' })
-        .then((result) => {
-            console.log(result.data)
-        })
+    auth.genera
 })
