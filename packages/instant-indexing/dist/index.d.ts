@@ -1,2 +1,8 @@
-declare const _exports: typeof import("./Notifier");
-export = _exports;
+export = InstantIndexing;
+declare class InstantIndexing {
+    /**
+     *
+     * @param {import('./globals').Key} key
+     */
+    constructor(key: import('./globals').Key);
+}
