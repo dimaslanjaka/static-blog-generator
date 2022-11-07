@@ -15,9 +15,20 @@ class Notifier {
             key.client_email,
             null,
             key.private_key,
-            ['https://www.googleapis.com/auth/indexing'],
+            [
+                'https://www.googleapis.com/auth/indexing',
+                'https://www.googleapis.com/auth/webmasters',
+            ],
             null
         )
+    }
+
+    /**
+     * get jwt client
+     * @returns
+     */
+    client() {
+        return this.jwtClient
     }
 
     /**
