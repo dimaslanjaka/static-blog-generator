@@ -58,31 +58,37 @@ var Notifier = /** @class */ (function () {
      * @param {string[]} list
      */
     Notifier.prototype.batch = function (list) {
-        var items = list.map(function (line) {
-            return {
-                'Content-Type': 'application/http',
-                'Content-ID': '',
-                body: 'POST /v3/urlNotifications:publish HTTP/1.1\n' +
-                    'Content-Type: application/json\n\n' +
-                    JSON.stringify({
-                        url: line,
-                        type: 'URL_UPDATED'
-                    })
-            };
-        });
-        var options = {
-            url: 'https://indexing.googleapis.com/batch',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'multipart/mixed'
-            },
-            auth: { bearer: tokens.access_token },
-            multipart: items
-        };
-        request(options, function (err, _resp, body) {
-            if (!err) {
-                console.log(body);
+        this.jwtClient.authorize(function (err, tokens) {
+            if (err) {
+                console.log(err);
+                return;
             }
+            var items = list.map(function (line) {
+                return {
+                    'Content-Type': 'application/http',
+                    'Content-ID': '',
+                    body: 'POST /v3/urlNotifications:publish HTTP/1.1\n' +
+                        'Content-Type: application/json\n\n' +
+                        JSON.stringify({
+                            url: line,
+                            type: 'URL_UPDATED'
+                        })
+                };
+            });
+            var options = {
+                url: 'https://indexing.googleapis.com/batch',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'multipart/mixed'
+                },
+                auth: { bearer: tokens.access_token },
+                multipart: items
+            };
+            request(options, function (err, _resp, body) {
+                if (!err) {
+                    console.log(body);
+                }
+            });
         });
     };
     return Notifier;
