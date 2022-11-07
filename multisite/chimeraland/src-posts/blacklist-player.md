@@ -14,4 +14,4 @@ full_url: https://www.webmanajemen.com/chimeraland/blacklist-player.html
 | ASTER | SCAMMER MAP ILLUS 16 |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
-- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menend
+- Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
