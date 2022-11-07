@@ -5,6 +5,9 @@ const readDir = readdirSync(__dirname)
     .filter((str) => str.endsWith('.json'))
     .map((str) => join(__dirname, str))
 
+/**
+ *
+ */
 let serviceConfig
 
 if (readDir.length > 0) {
