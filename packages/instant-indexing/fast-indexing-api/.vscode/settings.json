@@ -1,0 +1,20 @@
+{
+    "liveSassCompile.settings.formats":[
+        {
+            "format": "compressed",
+            "extensionName": ".css",
+            "savePath": "~/../css/"
+        }
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "assets/**/*.scss",
+
+    ],
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "liveSassCompile.settings.generateMap": false,
+    //"vscode-php-cs-fixer.rules": "",
+    //"vscode-php-cs-fixer.config": ".php_cs",
+}
