@@ -1,0 +1,405 @@
+# Copyright (C) 2022 Rank Math
+# This file is distributed under the GPL v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Instant Indexing 1.1.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fast-indexing-api\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-01-26T20:43:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: fast-indexing-api\n"
+
+#. Plugin Name of the plugin
+#: includes/class-instant-indexing.php:576
+#: includes/class-instant-indexing.php:581
+#: includes/class-instant-indexing.php:892
+#: views/dashboard.php:208
+msgid "Instant Indexing"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://rankmath.com/wordpress/plugin/instant-indexing/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Get your website crawled immediately by Google using their NEW Indexing APIs."
+msgstr ""
+
+#. Author of the plugin
+msgid "Rank Math"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://s.rankmath.com/home"
+msgstr ""
+
+#: includes/class-instant-indexing.php:119
+msgid "Google API Settings"
+msgstr ""
+
+#: includes/class-instant-indexing.php:120
+#: views/bing-settings.php:10
+msgid "IndexNow API Settings"
+msgstr ""
+
+#: includes/class-instant-indexing.php:121
+#: includes/class-instant-indexing.php:134
+#: includes/class-instant-indexing.php:141
+msgid "Console"
+msgstr ""
+
+#: includes/class-instant-indexing.php:204
+#: includes/class-instant-indexing.php:304
+msgid "Instant Indexing: Google Update"
+msgstr ""
+
+#: includes/class-instant-indexing.php:205
+#: includes/class-instant-indexing.php:305
+msgid "Instant Indexing: Google Get Status"
+msgstr ""
+
+#: includes/class-instant-indexing.php:217
+msgid "Instant Indexing: Bing Submit"
+msgstr ""
+
+#: includes/class-instant-indexing.php:308
+msgid "Instant Indexing: Submit to IndexNow"
+msgstr ""
+
+#: includes/class-instant-indexing.php:575
+#: views/dashboard.php:19
+msgid "Dashboard"
+msgstr ""
+
+#: includes/class-instant-indexing.php:670
+msgid "Success"
+msgstr ""
+
+#: includes/class-instant-indexing.php:671
+msgid "Error"
+msgstr ""
+
+#: includes/class-instant-indexing.php:672
+msgid "Last updated "
+msgstr ""
+
+#: includes/class-instant-indexing.php:673
+msgid "See response for details."
+msgstr ""
+
+#: includes/class-instant-indexing.php:707
+#: includes/class-instant-indexing.php:711
+#: includes/class-instant-indexing.php:723
+msgid "Settings could not be updated."
+msgstr ""
+
+#: includes/class-instant-indexing.php:728
+msgid "Settings updated."
+msgstr ""
+
+#: includes/class-instant-indexing.php:893
+msgid "Directly notify search engines when pages are added, updated or removed."
+msgstr ""
+
+#: includes/class-instant-indexing.php:898
+msgid "You cannot deactivate this module because the Instant Indexing plugin is active on this site."
+msgstr ""
+
+#. translators: %s is a link to Rank Math plugin page
+#: includes/class-instant-indexing.php:951
+msgid "It is recommended to use %s along with the Instant Indexing plugin."
+msgstr ""
+
+#: includes/class-instant-indexing.php:983
+#: includes/class-instant-indexing.php:1011
+msgid "A recently published post has been automatically submitted to the Instant Indexing API."
+msgstr ""
+
+#: includes/class-instant-indexing.php:1036
+msgid "A deleted post has been automatically submitted to the Instant Indexing for deletion."
+msgstr ""
+
+#: includes/class-instant-indexing.php:1046
+#: views/console.php:21
+#: views/dashboard.php:49
+#: views/dashboard.php:119
+#: views/dashboard.php:189
+#: views/dashboard.php:213
+#: views/dashboard.php:260
+#: views/dashboard.php:284
+#: views/dashboard.php:308
+#: views/dashboard.php:332
+#: views/dashboard.php:356
+msgid "Settings"
+msgstr ""
+
+#: views/bing-settings.php:11
+msgid "The IndexNow API allows you to submit URLs to Bing and Yandex for indexing."
+msgstr ""
+
+#: views/bing-settings.php:17
+msgid "Submit Posts IndexNow:"
+msgstr ""
+
+#: views/bing-settings.php:18
+msgid "Submit posts from these post types automatically to the IndexNow API when a post is published or edited."
+msgstr ""
+
+#. translators: %s is a link to the plugin settings tab.
+#: views/console.php:20
+msgid "Please navigate to the %s tab to configure the plugin."
+msgstr ""
+
+#: views/console.php:34
+msgid "Google API Remaining Quota:"
+msgstr ""
+
+#: views/console.php:35
+msgid "PublishRequestsPerDayPerProject"
+msgstr ""
+
+#: views/console.php:36
+msgid "RequestsPerMinutePerProject"
+msgstr ""
+
+#: views/console.php:37
+msgid "MetadataRequestsPerMinutePerProject"
+msgstr ""
+
+#: views/console.php:42
+msgid "URLs (one per line, up to 100 for Google and 10,000 for IndexNow):"
+msgstr ""
+
+#: views/console.php:45
+msgid "Action:"
+msgstr ""
+
+#: views/console.php:47
+msgid "<strong>Google</strong>: Publish/update URL"
+msgstr ""
+
+#: views/console.php:48
+msgid "<strong>Google</strong>: Remove URL"
+msgstr ""
+
+#: views/console.php:49
+msgid "<strong>Google</strong>: Get URL status"
+msgstr ""
+
+#: views/console.php:52
+msgid "<strong>IndexNow</strong>: Submit URL"
+msgstr ""
+
+#: views/console.php:55
+msgid "Send to API"
+msgstr ""
+
+#: views/console.php:65
+msgid "Show Raw Response"
+msgstr ""
+
+#: views/console.php:69
+msgid "Response..."
+msgstr ""
+
+#: views/dashboard.php:15
+msgid "Rank Math Knowledge Base"
+msgstr ""
+
+#: views/dashboard.php:21
+#: views/dashboard.php:27
+#: views/dashboard.php:28
+msgid "Modules"
+msgstr ""
+
+#: views/dashboard.php:30
+#: views/dashboard.php:31
+msgid "Help"
+msgstr ""
+
+#: views/dashboard.php:33
+#: views/dashboard.php:34
+msgid "Setup Wizard"
+msgstr ""
+
+#: views/dashboard.php:36
+#: views/dashboard.php:37
+msgid "Import &amp; Export"
+msgstr ""
+
+#: views/dashboard.php:45
+msgid "404 Monitor"
+msgstr ""
+
+#: views/dashboard.php:46
+msgid "Records the URLs on which visitors &amp; search engines run into 404 Errors. You can also turn on Redirections to redirect the error causing URLs to other URLs."
+msgstr ""
+
+#: views/dashboard.php:68
+msgid "ACF"
+msgstr ""
+
+#: views/dashboard.php:70
+msgid "ACF support helps Rank Math SEO read and analyze content written in the Advanced Custom Fields. If your theme uses ACF, you should enable this option."
+msgstr ""
+
+#: views/dashboard.php:91
+msgid "AMP"
+msgstr ""
+
+#: views/dashboard.php:93
+msgid "Install an AMP plugin to make Rank Math work with Accelerated Mobile Pages. Rank Math automatically adds required meta tags in all the AMP pages."
+msgstr ""
+
+#: views/dashboard.php:114
+msgid "Analytics"
+msgstr ""
+
+#: views/dashboard.php:116
+msgid "Connect Rank Math with Google Search Console to see the most important information from Google directly in your WordPress dashboard."
+msgstr ""
+
+#: views/dashboard.php:138
+msgid "bbPress"
+msgstr ""
+
+#: views/dashboard.php:140
+msgid "Add proper Meta tags to your bbPress forum posts, categories, profiles, etc. Get more options to take control of what search engines see and how they see it."
+msgstr ""
+
+#: views/dashboard.php:161
+msgid "BuddyPress"
+msgstr ""
+
+#: views/dashboard.php:163
+msgid "Enable the BuddyPress module for Rank Math SEO to make your BuddyPress forum SEO friendly by adding proper meta tags to all forum pages."
+msgstr ""
+
+#: views/dashboard.php:184
+msgid "Image SEO"
+msgstr ""
+
+#: views/dashboard.php:186
+msgid "Advanced Image SEO options to supercharge your website. Automate the task of adding the ALT and Title tags to your images on the fly."
+msgstr ""
+
+#: views/dashboard.php:210
+msgid "Directly notify search engines(Bing) when pages are added, updated or removed."
+msgstr ""
+
+#: views/dashboard.php:232
+msgid "Link Counter"
+msgstr ""
+
+#: views/dashboard.php:234
+msgid "Counts the total number of internal, external links, to and from links inside your posts. You can also see the same count in the Posts List Page."
+msgstr ""
+
+#: views/dashboard.php:255
+msgid "Local SEO &amp; Knowledge Graph"
+msgstr ""
+
+#: views/dashboard.php:257
+msgid "Dominate the search results for the local audiences by optimizing your website for Local SEO and it also helps you to add code related to Knowledge Graph."
+msgstr ""
+
+#: views/dashboard.php:279
+msgid "Redirections"
+msgstr ""
+
+#: views/dashboard.php:281
+msgid "Redirect non-existent content easily with 301 and 302 status code. This can help improve your site ranking. Also supports many other response codes."
+msgstr ""
+
+#: views/dashboard.php:303
+msgid "Schema (Structured Data)"
+msgstr ""
+
+#: views/dashboard.php:305
+msgid "Enable support for the structured data, which adds Schema code in your website, resulting in rich search results, better CTR and more traffic."
+msgstr ""
+
+#: views/dashboard.php:327
+msgid "Role Manager"
+msgstr ""
+
+#: views/dashboard.php:329
+msgid "The Role Manager allows you to use WordPress roles to control which of your site users can have edit or view access to Rank Math's settings."
+msgstr ""
+
+#: views/dashboard.php:351
+msgid "SEO Analysis"
+msgstr ""
+
+#: views/dashboard.php:353
+msgid "Let Rank Math analyze your website and your website's content using 70+ different tests to provide tailor-made SEO Analysis to you."
+msgstr ""
+
+#: views/dashboard.php:375
+msgid "Sitemap"
+msgstr ""
+
+#: views/dashboard.php:377
+msgid "Enable Rank Math's sitemap feature, which helps search engines intelligently crawl your website's content. It also supports hreflang tag."
+msgstr ""
+
+#: views/dashboard.php:399
+msgid "Google Web Stories"
+msgstr ""
+
+#: views/dashboard.php:401
+msgid "Make any Story created with the Web Stories WordPress plugin SEO-Ready with automatic support for Schema and Meta tags."
+msgstr ""
+
+#: views/dashboard.php:422
+msgid "WooCommerce"
+msgstr ""
+
+#: views/dashboard.php:424
+msgid "Optimize WooCommerce Pages for Search Engines by adding required metadata and Product Schema which will make your site stand out in the SERPs."
+msgstr ""
+
+#: views/dashboard.php:448
+msgid "Activate Now"
+msgstr ""
+
+#: views/dashboard.php:453
+msgid "Install for Free"
+msgstr ""
+
+#: views/google-settings.php:10
+msgid "Google Instant Indexing API Settings"
+msgstr ""
+
+#: views/google-settings.php:16
+msgid "Google JSON Key:"
+msgstr ""
+
+#: views/google-settings.php:17
+msgid "Upload the Service Account JSON key file you obtained from Google API Console or paste its contents in the field."
+msgstr ""
+
+#: views/google-settings.php:18
+msgid "Read our setup guide"
+msgstr ""
+
+#: views/google-settings.php:24
+msgid "<code>rank-math-835b6feb842b.json</code> file found in the plugin folder. You cannot change the JSON key from here until you delete or remame this file."
+msgstr ""
+
+#: views/google-settings.php:29
+msgid "Or upload JSON file: "
+msgstr ""
+
+#: views/google-settings.php:37
+msgid "Submit Posts to Google:"
+msgstr ""
+
+#: views/google-settings.php:38
+msgid "Submit posts from these post types automatically to the Google Instant Indexing API when a post is published, edited, or deleted."
+msgstr ""
