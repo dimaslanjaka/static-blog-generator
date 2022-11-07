@@ -1,7 +1,5 @@
 const Notifier = require('./Notifier')
 const axios = require('axios')
-const request = require('request')
-const { google, Auth } = require('googleapis')
 
 class InstantIndexing {
     /**
@@ -57,27 +55,6 @@ class InstantIndexing {
                         })
                     }
                 }) */
-                const auth = new Auth.GoogleAuth({
-                    keyFile: self.key.keyFile,
-                    scopes: [
-                        'https://www.googleapis.com/auth/webmasters',
-                        'https://www.googleapis.com/auth/webmasters.readonly',
-                    ],
-                })
-
-                auth.getClient().then((client) => {
-                    google.options({ auth: client })
-                    const searchconsole = google.searchconsole({
-                        version: 'v1',
-                        auth: client,
-                    })
-                    const webmasters = google.webmasters('v3')
-                    searchconsole.sites
-                        .get({ siteUrl: currentURL.origin + '/' })
-                        .then((result) => {
-                            console.log(result.data)
-                        })
-                })
             }
         })
     }
