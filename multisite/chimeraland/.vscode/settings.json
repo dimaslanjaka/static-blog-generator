@@ -1,7 +1,6 @@
 {
   "files.autoSave": "onWindowChange",
   "files.exclude": {
-    "**/.cache": true,
     "**/node_modules": true
   },
   "editor.codeActionsOnSave": {

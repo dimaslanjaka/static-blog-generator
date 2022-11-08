@@ -5,3 +5,4 @@ tmp
 package-lock.json
 .cache
 *.rar
+google-api-key*.json
