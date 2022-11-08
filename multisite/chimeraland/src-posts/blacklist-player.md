@@ -9,6 +9,8 @@ tags: ["Chimeraland", "Blacklist", "Player"]
 categories: ["Games", "Chimeraland"]
 ---
 
+<!-- include blacklist-player/translator.html -->
+
 ## Daftar blacklist player Server 101-116
 
 | Nama Player | Keterangan |
