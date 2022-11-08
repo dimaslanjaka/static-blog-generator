@@ -36,6 +36,7 @@
     "safelinkify": "^1.1.5",
     "sharp": "^0.31.1",
     "slugify": "^1.6.5",
+    "termux-chimeraland": "file:chimeraland",
     "through2": "^4.0.2",
     "upath": "^2.0.1",
     "validate": "^5.2.0",
