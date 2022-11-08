@@ -111,6 +111,40 @@ class Authenticator {
       keys.client_secret,
       redirectUri
     )
+
+    //ensure that always the latest tokens are stored in the cache
+    oauth2Client.on('tokens', async (newTokens) => {
+      //if no token is stored yet: return
+      if (!fs.existsSync(TOKEN_PATH)) {
+        return
+      }
+
+      let tokens = JSON.parse(await fsProm.readFile(TOKEN_PATH))
+      tokens.access_token = newTokens.access_token
+
+      if (newTokens.refresh_token) {
+        tokens.refresh_token = newTokens.refresh_token
+      }
+
+      //save new tokens
+      await fsProm.writeFile(TOKEN_PATH, JSON.stringify(tokens))
+      console.log('Updated cached oAuth Tokens')
+    })
+
+    if (fs.existsSync(TOKEN_PATH)) {
+      /**
+       * @type {import('googleapis').Auth.Credentials}
+       */
+      const tokens = JSON.parse(await fsProm.readFile(TOKEN_PATH))
+      const tokenInfo = await oauth2Client.getTokenInfo(tokens.access_token)
+
+      //console.log(tokenInfo.expiry_date)
+      //console.log(Date.now())
+      //console.log('DIFFERENT IN TIMES', tokenInfo.expiry_date , Date.now())
+      if (tokenInfo.expiry_date > Date.now()) return oauth2Client
+    }
+
+    // resolve new tokens
     const localAuth = await authenticate({
       scopes: [
         'https://www.googleapis.com/auth/blogger',
