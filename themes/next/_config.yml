@@ -99,8 +99,8 @@ menu:
   about: /about/ || fa fa-user
   privacy: /p/privacy.html || fa fa-shield
   tos: /p/tos.html || fa fa-shield
-  tags: /tags/ || fa fa-tags
-  categories: /categories/ || fa fa-th
+  #tags: /tags/ || fa fa-tags
+  #categories: /categories/ || fa fa-th
   chimeraland: /chimeraland || fa fa-archive
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
