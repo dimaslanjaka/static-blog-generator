@@ -1,7 +1,7 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-08T11:44:45+07:00
+updated: 2022-11-08T18:00:51+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 full_url: https://www.webmanajemen.com/chimeraland/blacklist-player.html
@@ -22,6 +22,11 @@ categories: ["Games", "Chimeraland"]
 | Ryujin | SCAMMER ruby |
 | Ryuukendo | SCAMMER ruby |
 | Shelby | SCAMMER ruby |
+
+## Daftar player tukang roll drop item
+
+| Nama Player | Keterangan |
+| :--- | :--- |
 | Corleonx | Roll drops items |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
