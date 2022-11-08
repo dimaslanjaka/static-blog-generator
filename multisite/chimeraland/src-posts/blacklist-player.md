@@ -1,7 +1,7 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-08T00:37:57+07:00
+updated: 2022-11-08T11:44:45+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 full_url: https://www.webmanajemen.com/chimeraland/blacklist-player.html
@@ -15,7 +15,12 @@ categories: ["Games", "Chimeraland"]
 | :--- | :--- |
 | ASTER | SCAMMER MAP ILLUS 16 |
 | arkep | SCAMMER MAP ILLUS 16 |
-| Nesamiko | scam 6000 ruby tukar akun **Mobile Legends** |
+| NesaMiko | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
+| Tusboll | SCAMMER ruby dengan alasan **harga pensi** |
+| Ryujin | SCAMMER ruby |
+| Ryuukendo | SCAMMER ruby |
+| Shelby | SCAMMER ruby |
+| Corleonx | Roll drops items |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
