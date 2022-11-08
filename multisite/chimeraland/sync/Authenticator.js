@@ -10,6 +10,17 @@ const CACHE_PATH = globals.getCacheDir()
 const TOKEN_PATH = path.join(CACHE_PATH, '.token')
 
 class Authenticator {
+  /**
+   *
+   * @returns {Promise<import('googleapis').Auth.OAuth2Client>}
+   * @example
+   * Authenticator.authenticate().then((oAuth) => {
+    const drive = google.drive({
+      version: 'v3',
+      auth: oAuth
+    })
+  })
+   */
   static authenticate() {
     return new Promise((resolveAuth) => {
       const oauth2Client = new google.auth.OAuth2(
@@ -74,6 +85,45 @@ class Authenticator {
         resolveAuth(oauth2Client)
       })
     })
+  }
+  /**
+   * Auth using `@google-cloud/local-auth`
+   * @returns
+   */
+  static async localAuth() {
+    const { authenticate } = await import('@google-cloud/local-auth')
+    const keyfilePath = [
+      path.join(process.cwd(), 'google-api-key.json'),
+      path.join(process.cwd(), 'google-api-keys.json')
+    ].filter((loc) => fs.existsSync(loc))[0]
+    if (!keyfilePath)
+      throw new Error(
+        'Google Api Key JSON not found. add google-api-key.json to your root project'
+      )
+    let keys = { redirect_uris: [''] }
+    if (fs.existsSync(keyfilePath)) {
+      const keyFile = require(keyfilePath)
+      keys = keyFile.installed || keyFile.web
+    }
+    const redirectUri = keys.redirect_uris[keys.redirect_uris.length - 1]
+    const oauth2Client = new google.auth.OAuth2(
+      keys.client_id,
+      keys.client_secret,
+      redirectUri
+    )
+    const localAuth = await authenticate({
+      scopes: [
+        'https://www.googleapis.com/auth/blogger',
+        'https://www.googleapis.com/auth/drive',
+        'https://www.googleapis.com/auth/youtube'
+      ],
+      keyfilePath
+    })
+    // console.log('Tokens:', localAuth.credentials)
+
+    fs.writeFileSync(TOKEN_PATH, JSON.stringify(localAuth.credentials))
+    oauth2Client.setCredentials(localAuth.credentials)
+    return oauth2Client
   }
 }
 
