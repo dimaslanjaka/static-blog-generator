@@ -5,7 +5,7 @@ updated: 2022-11-08T11:44:45+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 full_url: https://www.webmanajemen.com/chimeraland/blacklist-player.html
-tags: ["Blacklist", "Player", "Chimeraland"]
+tags: ["Chimeraland", "Blacklist", "Player"]
 categories: ["Games", "Chimeraland"]
 ---
 
