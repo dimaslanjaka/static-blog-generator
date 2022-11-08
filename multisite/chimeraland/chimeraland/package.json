@@ -1,5 +1,5 @@
 {
-  "name": "chimeraland",
+  "name": "termux-chimeraland",
   "version": "0.0.1",
   "private": true,
   "homepage": "https://www.webmanajemen.com/chimeraland/",
@@ -8,7 +8,7 @@
     "type": "git"
   },
   "scripts": {
-    "update": "npx npm-check-updates -u -x hexo && npm install --cache tmp/npm",
+    "update": "npx npm-check-updates -u -x hexo,chalk && npm install --cache tmp/npm",
     "patch": "npm version patch"
   },
   "dependencies": {
