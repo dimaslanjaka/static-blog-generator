@@ -20,7 +20,7 @@
     "cross-spawn": "^7.0.3",
     "debug": "^4.3.4",
     "front-matter": "^4.0.2",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "latest",
     "git-command-helper": "^1.0.9",
     "googleapis": "^109.0.0",
     "gulp": "^4.0.2",
@@ -38,7 +38,7 @@
     "slugify": "^1.6.5",
     "termux-chimeraland": "file:chimeraland",
     "through2": "^4.0.2",
-    "upath": "^2.0.1",
+    "upath": "latest",
     "validate": "^5.2.0",
     "yaml": "^2.1.3"
   },
