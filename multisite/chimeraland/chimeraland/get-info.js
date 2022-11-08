@@ -8,7 +8,7 @@ const { join, toUnix } = require('upath')
 
 const info = []
 
-GulpClient.src(['**/*.{jpg,jpeg,png,webp}'], { cwd: __dirname }).pipe(
+GulpClient.src(['**/*.{jpg,jpeg,png,webp}'], { cwd: __dirname, ignore: ["**/node_modules/**","**/tmp/**", "**/.vscode/**", "**/tmp/**"] }).pipe(
   through2.obj((file, _enc, callback) => {
     if (!file.isDirectory()) {
       const stats = statSync(file.path)
