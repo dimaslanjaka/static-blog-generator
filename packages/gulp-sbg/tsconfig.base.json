@@ -2,6 +2,7 @@
   "compilerOptions": {
     "pretty": true,
     "lib": [
+      "DOM",
       "es2015.iterable",
       "es2015.generator",
       "es5"
