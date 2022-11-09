@@ -73,7 +73,7 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
             if (crawled.has(url) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url)) continue;
 
             crawled.add(url);
-            console.log('depth crawling', url);
+            console.log('[depth]', ii, url);
             await generateSitemap(url, depth);
           }
         }
