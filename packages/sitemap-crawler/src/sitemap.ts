@@ -206,6 +206,7 @@ export interface SitemapAsyncOpt extends Opt {
 
 const asyncResults: Record<string, string[]> = {};
 type resolveAsync = (o: typeof asyncResults) => any;
+
 export function sitemapCrawlerAsync(
   link: string | string[],
   opts?: SitemapAsyncOpt
