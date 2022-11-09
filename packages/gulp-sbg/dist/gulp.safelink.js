@@ -52,8 +52,8 @@ exports.safelinkProcess = void 0;
 var gulp_1 = __importDefault(require("gulp"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
-var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_deploy_1 = require("./gulp.deploy");
 var config = gulp_config_1.default;
 var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
 var configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
@@ -113,6 +113,7 @@ function safelinkProcess(_done) {
                             return [2 /*return*/, next(null, file)];
                         }
                         console.log('cannot parse', file.path);
+                        // drop fails
                         next();
                         return [2 /*return*/];
                 }
