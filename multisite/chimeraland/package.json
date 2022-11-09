@@ -8,6 +8,7 @@
     "type": "git"
   },
   "scripts": {
+    "start": "node start.js",
     "update": "npx npm-check-updates -u -x hexo && npm install --cache tmp/npm",
     "patch": "npm version patch",
     "build": "node build.js"
