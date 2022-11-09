@@ -1,8 +1,8 @@
 import Bluebird from 'bluebird';
-import { readFileSync, writeFile, writeFileSync } from 'fs-extra';
+import { mkdirpSync, readFileSync, writeFile, writeFileSync } from 'fs-extra';
 import gulp from 'gulp';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
-import { join } from 'upath';
+import { dirname, join } from 'upath';
 import { deployConfig } from './gulp.deploy';
 
 export function generateSitemap() {
@@ -19,7 +19,9 @@ export function generateSitemap() {
         deep: 2
       })
     ]).then((results) => {
-      writeFileSync(join(__dirname, '../tmp/sitemap.json'), JSON.stringify(results.flat(), null, 2));
+      const saveto = join(__dirname, '../tmp/sitemap.json');
+      mkdirpSync(dirname(saveto));
+      writeFileSync(saveto, JSON.stringify(results.flat(), null, 2));
     });
     sitemapCrawlerAsync('https://www.webmanajemen.com', {
       deep: 2
