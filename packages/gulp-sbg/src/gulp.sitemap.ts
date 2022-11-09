@@ -11,8 +11,9 @@ const { deployDir } = deployConfig();
 const originfile = join(process.cwd(), 'public/sitemap.txt');
 const outfile = join(deployDir, 'sitemap.txt');
 let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
+const crawled: string[] = [];
 
-export function generateSitemap(url?: string, depth = 0) {
+export function generateSitemap(url?: string | null | undefined, depth = 0) {
   return new Bluebird((resolve: (sitemaps: string[]) => any) => {
     const promises: Bluebird<Record<string, string[]>>[] = [];
     if (typeof url === 'string') {
@@ -60,7 +61,10 @@ export function generateSitemap(url?: string, depth = 0) {
         for (let i = 0; i < depth; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {
             const url = sitemaps[ii];
-            console.log(url);
+            if (crawled.includes(url)) continue;
+
+            crawled.push(url);
+            generateSitemap(url, depth);
           }
         }
 
@@ -70,4 +74,4 @@ export function generateSitemap(url?: string, depth = 0) {
   });
 }
 
-gulp.task('sitemap', () => generateSitemap());
+gulp.task('sitemap', () => generateSitemap(null, 2));
