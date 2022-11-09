@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.array_unique = exports.array_random = void 0;
+exports.array_remove_empty = exports.array_unique = exports.array_random = void 0;
 /**
  * pick random items from array
  * @param items
@@ -46,3 +46,20 @@ function array_unique(arr, field) {
     }
 }
 exports.array_unique = array_unique;
+/**
+ * Remove empties from array
+ * @param arr
+ * @returns
+ */
+function array_remove_empty(arr) {
+    return arr.filter(function (target) {
+        if (typeof target === 'string')
+            return target.trim().length > 0;
+        if (Array.isArray(target))
+            return target.length > 0;
+        if (typeof target === 'object')
+            return Object.keys(target).length > 0;
+        return true;
+    });
+}
+exports.array_remove_empty = array_remove_empty;

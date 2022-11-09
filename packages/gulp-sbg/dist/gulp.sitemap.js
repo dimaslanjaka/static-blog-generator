@@ -52,7 +52,7 @@ var noop_1 = __importDefault(require("./utils/noop"));
 var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
 var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
 var sitemapTXT = (0, upath_1.join)(deployDir, 'sitemap.txt');
-var sitemaps = (0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
+var sitemaps = (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm));
 var crawled = new Set();
 /**
  * Sitemap Generator
@@ -101,12 +101,7 @@ function generateSitemap(url, deep) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        sitemaps = (0, array_1.array_unique)(Object.values(results)
-                            .flat(1)
-                            .concat(sitemaps)
-                            .filter(function (x, i, a) {
-                            return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
-                        })).sort(function (a, b) {
+                        sitemaps = (0, array_1.array_unique)((0, array_1.array_remove_empty)(Object.values(results).flat(1).concat(sitemaps))).sort(function (a, b) {
                             return a === b ? 0 : a < b ? -1 : 1;
                         });
                         i = 0;
@@ -149,7 +144,7 @@ function writeSitemap(callback) {
     var cb = noop_1.default;
     if (callback)
         cb = function () { return callback(sitemaps); };
-    (0, fs_extra_1.writeFile)(sitemapTXT, sitemaps.join('\n'), function () { return cb(); });
+    (0, fs_extra_1.writeFile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join('\n'), function () { return cb(); });
 }
 gulp_1.default.task('sitemap', function () {
     return new bluebird_1.default(function (resolve) {
