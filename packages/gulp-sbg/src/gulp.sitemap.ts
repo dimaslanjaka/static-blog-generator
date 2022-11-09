@@ -73,6 +73,7 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
             if (crawled.has(url)) continue;
 
             crawled.add(url);
+            console.log('depth crawling', url);
             await generateSitemap(url, depth);
           }
         }
@@ -83,4 +84,10 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
   });
 }
 
-gulp.task('sitemap', () => generateSitemap(null, 2));
+gulp.task('sitemap', () => {
+  return new Bluebird((resolve) => {
+    generateSitemap(null, 1).then(function () {
+      resolve();
+    });
+  });
+});
