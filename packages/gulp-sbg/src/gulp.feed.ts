@@ -59,16 +59,16 @@ gulp.task('feed', function (done) {
       }
 
       const templateRSS = join(__dirname, '_config_template_rss.xml');
-      const destRSS = join(process.cwd(), 'public/rss.xml');
+      const destRSS = join(process.cwd(), config.public_dir, 'rss.xml');
       build(templateRSS, destRSS);
 
       const templateATOM = join(__dirname, '_config_template_atom.xml');
-      const destATOM = join(process.cwd(), 'public/atom.xml');
+      const destATOM = join(process.cwd(), config.public_dir, 'atom.xml');
       build(templateATOM, destATOM);
 
       const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
 
-      const publicDir = join(process.cwd(), 'public');
+      const publicDir = join(process.cwd(), config.public_dir);
       gulp
         .src('**/*.html', { cwd: publicDir })
         .pipe(
