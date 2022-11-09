@@ -52,10 +52,10 @@ exports.safelinkProcess = void 0;
 var gulp_1 = __importDefault(require("gulp"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
-var deploy_1 = require("./deploy");
+var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
 var config = gulp_config_1.default;
-var deployDir = (0, deploy_1.deployConfig)().deployDir;
+var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
 var configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
 var safelink = new safelinkify_1.default.safelink({
     // exclude patterns (dont anonymize these patterns)
@@ -85,12 +85,15 @@ function safelinkProcess(_done) {
             cwd: deployDir,
             ignore: [
                 // skip react project
-                '**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
+                //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
                 '**/chimeraland/recipes.html',
                 // skip tools
                 '**/embed.html',
                 '**/tools.html',
-                '**/safelink.html'
+                '**/safelink.html',
+                // package registry
+                '**/node_modules/**',
+                '**/vendor/**'
             ]
         })
             .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {

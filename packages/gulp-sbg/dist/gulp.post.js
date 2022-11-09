@@ -164,6 +164,7 @@ exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
     var excludes = Array.isArray(gulp_config_1.default.exclude) ? gulp_config_1.default.exclude : [];
+    excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
     return gulp_1.default
         .src('**/*', { cwd: sourceDir, ignore: excludes })
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
