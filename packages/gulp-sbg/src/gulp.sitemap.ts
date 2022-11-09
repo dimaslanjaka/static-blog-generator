@@ -21,7 +21,7 @@ export function generateSitemap() {
     ]).then((results) => {
       const saveto = join(__dirname, '../tmp/sitemap.json');
       mkdirpSync(dirname(saveto));
-      writeFileSync(saveto, JSON.stringify(results.flat(), null, 2));
+      writeFileSync(saveto, JSON.stringify(results, null, 2));
     });
     sitemapCrawlerAsync('https://www.webmanajemen.com', {
       deep: 2
