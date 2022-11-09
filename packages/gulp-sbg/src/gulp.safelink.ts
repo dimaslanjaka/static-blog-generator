@@ -2,8 +2,8 @@ import gulp from 'gulp';
 import sf from 'safelinkify';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
-import { deployConfig } from './gulp.deploy';
 import ProjectConfig from './gulp.config';
+import { deployConfig } from './gulp.deploy';
 
 const config = ProjectConfig;
 const { deployDir } = deployConfig();
@@ -62,6 +62,7 @@ export function safelinkProcess(_done?: TaskCallback) {
             return next(null, file);
           }
           console.log('cannot parse', file.path);
+          // drop fails
           next();
         })
       )
