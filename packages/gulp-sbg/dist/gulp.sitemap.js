@@ -39,10 +39,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateSitemap = void 0;
+exports.hexoGenerateSitemap = exports.generateSitemap = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
+var hexo_1 = __importDefault(require("hexo"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
@@ -146,6 +147,15 @@ function writeSitemap(callback) {
         cb = function () { return callback(sitemaps); };
     (0, fs_extra_1.writeFile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join('\n'), function () { return cb(); });
 }
+function hexoGenerateSitemap() {
+    var instance = new hexo_1.default(process.cwd());
+    instance.init().then(function () {
+        instance.load().then(function () {
+            //
+        });
+    });
+}
+exports.hexoGenerateSitemap = hexoGenerateSitemap;
 gulp_1.default.task('sitemap', function () {
     return new bluebird_1.default(function (resolve) {
         generateSitemap(null, 1).then(function () {
