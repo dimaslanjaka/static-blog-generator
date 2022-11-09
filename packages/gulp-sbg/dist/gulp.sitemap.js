@@ -16,6 +16,7 @@ var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
 var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
 var outfile = (0, upath_1.join)(deployDir, 'sitemap.txt');
 var sitemaps = (0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
+var crawled = [];
 function generateSitemap(url, depth) {
     if (depth === void 0) { depth = 0; }
     return new bluebird_1.default(function (resolve) {
@@ -62,7 +63,10 @@ function generateSitemap(url, depth) {
             for (var i = 0; i < depth; i++) {
                 for (var ii = 0; ii < sitemaps.length; ii++) {
                     var url_1 = sitemaps[ii];
-                    console.log(url_1);
+                    if (crawled.includes(url_1))
+                        continue;
+                    crawled.push(url_1);
+                    generateSitemap(url_1, depth);
                 }
             }
             return sitemaps;
@@ -71,4 +75,4 @@ function generateSitemap(url, depth) {
     });
 }
 exports.generateSitemap = generateSitemap;
-gulp_1.default.task('sitemap', function () { return generateSitemap(); });
+gulp_1.default.task('sitemap', function () { return generateSitemap(null, 2); });
