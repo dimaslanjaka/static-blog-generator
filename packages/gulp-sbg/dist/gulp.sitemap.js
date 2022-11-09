@@ -68,6 +68,9 @@ var sitemapTXT = (0, upath_1.join)(deployDir, 'sitemap.txt');
 var sitemaps = (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm));
 var crawled = new Set();
 var env = new nunjucks_1.default.Environment();
+env.addFilter('uriencode', function (str) {
+    return (0, hexo_util_1.encodeURL)(str);
+});
 /**
  * Sitemap Generator
  * @param url url to crawl
@@ -170,7 +173,7 @@ function hexoGenerateSitemap() {
                 });
                 var config = instance.config;
                 var locals = instance.locals;
-                var skip_render = config.skip_render;
+                var skip_render = config.skip_render, sitemap = config.sitemap;
                 var skipRenderList = ['**/*.js', '**/*.css'];
                 if (Array.isArray(skip_render)) {
                     skipRenderList.push.apply(skipRenderList, skip_render);
@@ -193,12 +196,13 @@ function hexoGenerateSitemap() {
                 }
                 var tmplSrc = (0, upath_1.join)(__dirname, '_config_template_sitemap.xml');
                 var template = nunjucks_1.default.compile((0, fs_extra_1.readFileSync)(tmplSrc, 'utf-8'), env);
+                var tagsCfg = sitemap.tags, catsCfg = sitemap.categories;
                 var data = template.render({
                     config: config,
                     posts: posts,
                     sNow: new Date(),
-                    tags: locals.get('tags').toArray(),
-                    categories: locals.get('categories').toArray()
+                    tags: tagsCfg ? locals.get('tags').toArray() : [],
+                    categories: catsCfg ? locals.get('categories').toArray() : []
                 });
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
