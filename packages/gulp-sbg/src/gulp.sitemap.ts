@@ -1,51 +1,50 @@
 import Bluebird from 'bluebird';
-import { mkdirpSync, readFileSync, writeFile, writeFileSync } from 'fs-extra';
+import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
+import ProjectConfig from './gulp.config';
 import { deployConfig } from './gulp.deploy';
 import { array_unique } from './utils/array';
 
-export function generateSitemap() {
-  return new Bluebird((resolve) => {
-    const { deployDir } = deployConfig();
-    const originfile = join(process.cwd(), 'public/sitemap.txt');
-    const outfile = join(deployDir, 'sitemap.txt');
-    let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
-    Bluebird.all([
-      sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
-        deep: 2
-      }),
-      sitemapCrawlerAsync('https://www.webmanajemen.com', {
-        deep: 2
-      })
-    ]).then((results) => {
-      const saveto = join(__dirname, '../tmp/sitemap.json');
-      mkdirpSync(dirname(saveto));
-      const mapped = {};
-      results.forEach((sitemap) => {
-        for (const key in sitemap) {
-          const values = sitemap[key];
-          if (key in mapped === false) {
-            mapped[key] = values;
-          } else {
-            mapped[key] = array_unique(values.concat(mapped[key]));
-          }
-        }
-      });
-      writeFileSync(saveto, JSON.stringify(mapped, null, 2));
-    });
-    sitemapCrawlerAsync('https://www.webmanajemen.com', {
-      deep: 2
-    })
+const { deployDir } = deployConfig();
+const originfile = join(process.cwd(), 'public/sitemap.txt');
+const outfile = join(deployDir, 'sitemap.txt');
+let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
+
+export function generateSitemap(url?: string, depth = 0) {
+  return new Bluebird((resolve: (sitemaps: string[]) => any) => {
+    const promises: Bluebird<Record<string, string[]>>[] = [];
+    if (typeof url === 'string') {
+      promises.push(
+        sitemapCrawlerAsync(url, {
+          deep: 2
+        })
+      );
+    } else {
+      promises.push(
+        sitemapCrawlerAsync(ProjectConfig.url, {
+          deep: 2
+        })
+      );
+    }
+    Bluebird.all(promises)
       .then((results) => {
-        return new Bluebird((resolve: (sitemap: Record<string, any>) => any) => {
-          sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
-            deep: 2
-          }).then((chimera) => {
-            resolve(Object.assign(chimera, results));
-          });
+        const saveto = join(__dirname, '../tmp/sitemap.json');
+        mkdirpSync(dirname(saveto));
+        const mapped = {} as ReturnType<typeof sitemapCrawlerAsync>;
+        results.forEach((sitemap) => {
+          for (const key in sitemap) {
+            const values = sitemap[key];
+            if (key in mapped === false) {
+              mapped[key] = values;
+            } else {
+              mapped[key] = array_unique(values.concat(mapped[key]));
+            }
+          }
         });
+        // writeFileSync(saveto, JSON.stringify(mapped, null, 2));
+        return mapped;
       })
       .then((results) => {
         sitemaps = Object.values(results)
@@ -57,9 +56,18 @@ export function generateSitemap() {
           .sort(function (a, b) {
             return a === b ? 0 : a < b ? -1 : 1;
           });
-        writeFile(outfile, sitemaps.join('\n'), resolve);
-      });
+
+        for (let i = 0; i < depth; i++) {
+          for (let ii = 0; ii < sitemaps.length; ii++) {
+            const url = sitemaps[ii];
+            console.log(url);
+          }
+        }
+
+        return sitemaps;
+      })
+      .then(() => writeFile(outfile, sitemaps.join('\n'), () => resolve(sitemaps)));
   });
 }
 
-gulp.task('sitemap', generateSitemap);
+gulp.task('sitemap', () => generateSitemap());
