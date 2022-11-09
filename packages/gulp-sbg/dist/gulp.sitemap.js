@@ -10,6 +10,7 @@ var gulp_1 = __importDefault(require("gulp"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_deploy_1 = require("./gulp.deploy");
+var array_1 = require("./utils/array");
 function generateSitemap() {
     return new bluebird_1.default(function (resolve) {
         var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
@@ -26,7 +27,19 @@ function generateSitemap() {
         ]).then(function (results) {
             var saveto = (0, upath_1.join)(__dirname, '../tmp/sitemap.json');
             (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(saveto));
-            (0, fs_extra_1.writeFileSync)(saveto, JSON.stringify(results, null, 2));
+            var mapped = {};
+            results.forEach(function (sitemap) {
+                for (var key in sitemap) {
+                    var values = sitemap[key];
+                    if (key in mapped === false) {
+                        mapped[key] = values;
+                    }
+                    else {
+                        mapped[key] = (0, array_1.array_unique)(values.concat(mapped[key]));
+                    }
+                }
+            });
+            (0, fs_extra_1.writeFileSync)(saveto, JSON.stringify(mapped, null, 2));
         });
         (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com', {
             deep: 2
