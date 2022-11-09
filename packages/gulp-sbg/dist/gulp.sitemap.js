@@ -200,7 +200,7 @@ function hexoGenerateSitemap() {
                     tags: locals.get('tags').toArray(),
                     categories: locals.get('categories').toArray()
                 });
-                (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data);
+                (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
             });
         });
