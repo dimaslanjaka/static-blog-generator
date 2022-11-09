@@ -18,3 +18,9 @@ export declare function array_random<T extends any[]>(items: T): T[number];
  * @link https://stackoverflow.com/a/67322087/6404439
  */
 export declare function array_unique<T extends any[]>(arr: T, field?: string): T;
+/**
+ * Remove empties from array
+ * @param arr
+ * @returns
+ */
+export declare function array_remove_empty<T extends any[]>(arr: T): any[];
