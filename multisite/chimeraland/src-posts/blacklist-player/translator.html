@@ -171,13 +171,7 @@
       translateBtn = document.getElementById('translate-me'),
       canonical = document.querySelector('link[rel="canonical"]');
     // get href
-    if (canonical) {
-      console.log('get href of canonical')
-      canonical = canonical.getAttribute('href').toString().trim();
-    }
-    console.log({
-      canonical
-    });
+    if (canonical) canonical = canonical.getAttribute('href').toString().trim();
     translateBtn.onclick = function () {
       var toLang = document
         .querySelector('select#translate-language')
