@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 /**
  * Sitemap Generator
  * @param url url to crawl
- * @param depth crawl deeper n times
+ * @param deep crawl deeper n times
  * @returns
  */
-export declare function generateSitemap(url?: string | null | undefined, depth?: number): Bluebird<string[]>;
+export declare function generateSitemap(url?: string | null | undefined, deep?: number): Bluebird<string[]>;
