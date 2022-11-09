@@ -6,13 +6,14 @@ import { dirname, join } from 'upath'
 import yaml from 'yaml'
 import { hexoProject } from '../../project'
 import { AttendantsData, MonstersData, RecipesData } from './chimeraland'
+import { capitalizer } from './string'
 
 // create markdown for attendants and monsters
 MonstersData.concat(AttendantsData as any).forEach((item) => {
   const publicDir = join(hexoProject, 'src-posts/chimeraland', item.type)
 
   const attr: Record<string, any> = {}
-  attr.title = 'Monster ' + item.name
+  attr.title = capitalizer(item.type) + ' ' + item.name
   attr.webtitle = 'Chimeraland'
   attr.author = 'L3n4r0x'
   attr.updated = item.dateModified
