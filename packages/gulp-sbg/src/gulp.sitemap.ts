@@ -4,6 +4,7 @@ import gulp from 'gulp';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import { deployConfig } from './gulp.deploy';
+import { array_unique } from './utils/array';
 
 export function generateSitemap() {
   return new Bluebird((resolve) => {
@@ -21,7 +22,18 @@ export function generateSitemap() {
     ]).then((results) => {
       const saveto = join(__dirname, '../tmp/sitemap.json');
       mkdirpSync(dirname(saveto));
-      writeFileSync(saveto, JSON.stringify(results, null, 2));
+      const mapped = {};
+      results.forEach((sitemap) => {
+        for (const key in sitemap) {
+          const values = sitemap[key];
+          if (key in mapped === false) {
+            mapped[key] = values;
+          } else {
+            mapped[key] = array_unique(values.concat(mapped[key]));
+          }
+        }
+      });
+      writeFileSync(saveto, JSON.stringify(mapped, null, 2));
     });
     sitemapCrawlerAsync('https://www.webmanajemen.com', {
       deep: 2
