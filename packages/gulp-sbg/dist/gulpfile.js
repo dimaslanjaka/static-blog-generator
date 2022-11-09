@@ -10,7 +10,7 @@ var gulp_1 = __importDefault(require("gulp"));
 var hexo_util_1 = require("hexo-util");
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
-var deploy_1 = require("./deploy");
+var gulp_deploy_1 = require("./gulp.deploy");
 require("./gulp.clean");
 require("./gulp.feed");
 require("./gulp.post");
@@ -43,7 +43,7 @@ exports.commitProject = commitProject;
 gulp_1.default.task('project-commit', commitProject);
 function getUntrackedSitemap() {
     return new bluebird_1.default(function (resolve) {
-        var deployDir = (0, deploy_1.deployConfig)().deployDir;
+        var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
         var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
         var outfile = (0, upath_1.join)(deployDir, 'sitemap.txt');
         var sitemaps = (0, fs_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
@@ -66,7 +66,7 @@ function getUntrackedSitemap() {
 exports.getUntrackedSitemap = getUntrackedSitemap;
 gulp_1.default.task('sitemap', getUntrackedSitemap);
 var copyGen = function () {
-    var deployDir = (0, deploy_1.deployConfig)().deployDir;
+    var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
     return new bluebird_1.default(function (resolve) {
         gulp_1.default
             .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
