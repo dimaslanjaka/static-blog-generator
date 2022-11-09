@@ -11,7 +11,7 @@
   "scripts": {
     "update": "npx npm-check-updates -u",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && gulp copy",
     "postbuild": "node packer.js",
     "dev": "tsc -p tsconfig.build.json -w"
   },
