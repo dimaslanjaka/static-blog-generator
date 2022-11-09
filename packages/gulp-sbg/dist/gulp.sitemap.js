@@ -24,7 +24,9 @@ function generateSitemap() {
                 deep: 2
             })
         ]).then(function (results) {
-            (0, fs_extra_1.writeFileSync)((0, upath_1.join)(__dirname, '../tmp/sitemap.json'), JSON.stringify(results.flat(), null, 2));
+            var saveto = (0, upath_1.join)(__dirname, '../tmp/sitemap.json');
+            (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(saveto));
+            (0, fs_extra_1.writeFileSync)(saveto, JSON.stringify(results.flat(), null, 2));
         });
         (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com', {
             deep: 2
