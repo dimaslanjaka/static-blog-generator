@@ -120,6 +120,7 @@ function generateSitemap(url, depth) {
                         if (crawled.has(url_1))
                             return [3 /*break*/, 4];
                         crawled.add(url_1);
+                        console.log('depth crawling', url_1);
                         return [4 /*yield*/, generateSitemap(url_1, depth)];
                     case 3:
                         _a.sent();
@@ -138,4 +139,10 @@ function generateSitemap(url, depth) {
     });
 }
 exports.generateSitemap = generateSitemap;
-gulp_1.default.task('sitemap', function () { return generateSitemap(null, 2); });
+gulp_1.default.task('sitemap', function () {
+    return new bluebird_1.default(function (resolve) {
+        generateSitemap(null, 1).then(function () {
+            resolve();
+        });
+    });
+});
