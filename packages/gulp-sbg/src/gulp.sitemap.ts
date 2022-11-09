@@ -21,6 +21,9 @@ const env = new nunjucks.Environment();
 env.addFilter('uriencode', (str) => {
   return encodeURL(str);
 });
+env.addFilter('noControlChars', (str) => {
+  return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
+});
 
 /**
  * Sitemap Generator
