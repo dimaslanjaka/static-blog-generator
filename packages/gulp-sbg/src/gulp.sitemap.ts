@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
 import { default as hexo } from 'hexo';
-import { full_url_for } from 'hexo-util';
+import { encodeURL, full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
@@ -18,6 +18,9 @@ const sitemapTXT = join(deployDir, 'sitemap.txt');
 let sitemaps = array_remove_empty(readFileSync(originfile, 'utf-8').split(/\r?\n/gm));
 const crawled = new Set<string>();
 const env = new nunjucks.Environment();
+env.addFilter('uriencode', (str) => {
+  return encodeURL(str);
+});
 
 /**
  * Sitemap Generator
@@ -105,7 +108,7 @@ export function hexoGenerateSitemap() {
         });
         const config = instance.config;
         const locals = instance.locals;
-        const { skip_render } = config;
+        const { skip_render, sitemap } = config;
         const skipRenderList = ['**/*.js', '**/*.css'];
 
         if (Array.isArray(skip_render)) {
@@ -131,12 +134,13 @@ export function hexoGenerateSitemap() {
 
         const tmplSrc = join(__dirname, '_config_template_sitemap.xml');
         const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
+        const { tags: tagsCfg, categories: catsCfg } = sitemap;
         const data = template.render({
           config,
           posts,
           sNow: new Date(),
-          tags: locals.get('tags').toArray(),
-          categories: locals.get('categories').toArray()
+          tags: tagsCfg ? locals.get('tags').toArray() : [],
+          categories: catsCfg ? locals.get('categories').toArray() : []
         });
 
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
