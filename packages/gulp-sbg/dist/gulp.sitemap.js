@@ -117,7 +117,7 @@ function generateSitemap(url, depth) {
                     case 2:
                         if (!(ii < sitemaps.length)) return [3 /*break*/, 5];
                         url_1 = sitemaps[ii];
-                        if (crawled.has(url_1))
+                        if (crawled.has(url_1) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url_1))
                             return [3 /*break*/, 4];
                         crawled.add(url_1);
                         console.log('depth crawling', url_1);

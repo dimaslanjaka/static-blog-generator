@@ -70,7 +70,7 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
         for (let i = 0; i < depth; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {
             const url = sitemaps[ii];
-            if (crawled.has(url)) continue;
+            if (crawled.has(url) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url)) continue;
 
             crawled.add(url);
             console.log('depth crawling', url);
