@@ -54,13 +54,13 @@ gulp_1.default.task('feed', function (done) {
                 (0, fs_1.writeFileSync)(dest, data);
             }
             var templateRSS = (0, upath_1.join)(__dirname, '_config_template_rss.xml');
-            var destRSS = (0, upath_1.join)(process.cwd(), 'public/rss.xml');
+            var destRSS = (0, upath_1.join)(process.cwd(), config.public_dir, 'rss.xml');
             build(templateRSS, destRSS);
             var templateATOM = (0, upath_1.join)(__dirname, '_config_template_atom.xml');
-            var destATOM = (0, upath_1.join)(process.cwd(), 'public/atom.xml');
+            var destATOM = (0, upath_1.join)(process.cwd(), config.public_dir, 'atom.xml');
             build(templateATOM, destATOM);
             var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
-            var publicDir = (0, upath_1.join)(process.cwd(), 'public');
+            var publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
             gulp_1.default
                 .src('**/*.html', { cwd: publicDir })
                 .pipe((0, gulp_dom_1.default)(function () {
