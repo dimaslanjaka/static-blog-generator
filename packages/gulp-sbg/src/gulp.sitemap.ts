@@ -1,4 +1,3 @@
-import xmlplugin from '@prettier/plugin-xml';
 import Bluebird from 'bluebird';
 import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
@@ -6,7 +5,6 @@ import { default as hexo } from 'hexo';
 import { encodeURL, full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
-import prettier from 'prettier';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig from './gulp.config';
@@ -152,7 +150,10 @@ export function hexoGenerateSitemap() {
           categories: catsCfg ? locals.get('categories').toArray() : []
         });
 
-        data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin] });
+        // remove blank newlines
+        data = data.replace(/^\s*[\r\n]/gm, '\n');
+
+        //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
         writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
