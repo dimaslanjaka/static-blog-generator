@@ -9,22 +9,29 @@ var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
+var gulp_config_1 = __importDefault(require("./gulp.config"));
 var gulp_deploy_1 = require("./gulp.deploy");
 var array_1 = require("./utils/array");
-function generateSitemap() {
+var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
+var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
+var outfile = (0, upath_1.join)(deployDir, 'sitemap.txt');
+var sitemaps = (0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
+function generateSitemap(url, depth) {
+    if (depth === void 0) { depth = 0; }
     return new bluebird_1.default(function (resolve) {
-        var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
-        var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
-        var outfile = (0, upath_1.join)(deployDir, 'sitemap.txt');
-        var sitemaps = (0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm);
-        bluebird_1.default.all([
-            (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com/chimeraland', {
+        var promises = [];
+        if (typeof url === 'string') {
+            promises.push((0, sitemap_crawler_1.sitemapCrawlerAsync)(url, {
                 deep: 2
-            }),
-            (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com', {
+            }));
+        }
+        else {
+            promises.push((0, sitemap_crawler_1.sitemapCrawlerAsync)(gulp_config_1.default.url, {
                 deep: 2
-            })
-        ]).then(function (results) {
+            }));
+        }
+        bluebird_1.default.all(promises)
+            .then(function (results) {
             var saveto = (0, upath_1.join)(__dirname, '../tmp/sitemap.json');
             (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(saveto));
             var mapped = {};
@@ -39,19 +46,8 @@ function generateSitemap() {
                     }
                 }
             });
-            (0, fs_extra_1.writeFileSync)(saveto, JSON.stringify(mapped, null, 2));
-        });
-        (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com', {
-            deep: 2
-        })
-            .then(function (results) {
-            return new bluebird_1.default(function (resolve) {
-                (0, sitemap_crawler_1.sitemapCrawlerAsync)('https://www.webmanajemen.com/chimeraland', {
-                    deep: 2
-                }).then(function (chimera) {
-                    resolve(Object.assign(chimera, results));
-                });
-            });
+            // writeFileSync(saveto, JSON.stringify(mapped, null, 2));
+            return mapped;
         })
             .then(function (results) {
             sitemaps = Object.values(results)
@@ -63,9 +59,16 @@ function generateSitemap() {
                 .sort(function (a, b) {
                 return a === b ? 0 : a < b ? -1 : 1;
             });
-            (0, fs_extra_1.writeFile)(outfile, sitemaps.join('\n'), resolve);
-        });
+            for (var i = 0; i < depth; i++) {
+                for (var ii = 0; ii < sitemaps.length; ii++) {
+                    var url_1 = sitemaps[ii];
+                    console.log(url_1);
+                }
+            }
+            return sitemaps;
+        })
+            .then(function () { return (0, fs_extra_1.writeFile)(outfile, sitemaps.join('\n'), function () { return resolve(sitemaps); }); });
     });
 }
 exports.generateSitemap = generateSitemap;
-gulp_1.default.task('sitemap', generateSitemap);
+gulp_1.default.task('sitemap', function () { return generateSitemap(); });
