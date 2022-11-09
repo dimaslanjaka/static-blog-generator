@@ -1,6 +1,7 @@
 import Bluebird from 'bluebird';
 import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
+import gulpDom from 'gulp-dom';
 import { default as hexo } from 'hexo';
 import { encodeURL, full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
@@ -156,7 +157,23 @@ export function hexoGenerateSitemap() {
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
-        writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
+        writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, noop);
+
+        const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
+        const publicDir = join(process.cwd(), config.public_dir);
+        gulp
+          .src('**/*.html', { cwd: publicDir })
+          .pipe(
+            gulpDom(function () {
+              // auto discovery sitemap
+              if (this.querySelectorAll(`link[href="${baseURL}sitemap.xml"]`).length === 0) {
+                this.head.innerHTML += `<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="${baseURL}sitemap.xml" />`;
+              }
+              //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+            })
+          )
+          .pipe(gulp.dest(publicDir))
+          .once('end', () => resolve());
       });
     });
   });
