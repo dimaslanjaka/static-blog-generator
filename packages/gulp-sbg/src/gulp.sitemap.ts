@@ -56,15 +56,16 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
         return mapped;
       })
       .then(async (results) => {
-        sitemaps = Object.values(results)
-          .flat(1)
-          .concat(sitemaps)
-          .filter(function (x, i, a) {
-            return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
-          })
-          .sort(function (a, b) {
-            return a === b ? 0 : a < b ? -1 : 1;
-          });
+        sitemaps = array_unique(
+          Object.values(results)
+            .flat(1)
+            .concat(sitemaps)
+            .filter(function (x, i, a) {
+              return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
+            })
+        ).sort(function (a, b) {
+          return a === b ? 0 : a < b ? -1 : 1;
+        });
 
         for (let i = 0; i < depth; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {

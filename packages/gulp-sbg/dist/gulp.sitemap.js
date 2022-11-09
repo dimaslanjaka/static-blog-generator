@@ -100,13 +100,12 @@ function generateSitemap(url, depth) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        sitemaps = Object.values(results)
+                        sitemaps = (0, array_1.array_unique)(Object.values(results)
                             .flat(1)
                             .concat(sitemaps)
                             .filter(function (x, i, a) {
                             return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
-                        })
-                            .sort(function (a, b) {
+                        })).sort(function (a, b) {
                             return a === b ? 0 : a < b ? -1 : 1;
                         });
                         i = 0;
