@@ -6,4 +6,4 @@ import Bluebird from 'bluebird';
  * @returns
  */
 export declare function generateSitemap(url?: string | null | undefined, deep?: number): Bluebird<string[]>;
-export declare function hexoGenerateSitemap(): void;
+export declare function hexoGenerateSitemap(): Bluebird<unknown>;
