@@ -52,6 +52,7 @@ exports.hexoGenerateSitemap = exports.generateSitemap = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
+var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
 var micromatch_1 = __importDefault(require("micromatch"));
@@ -215,7 +216,20 @@ function hexoGenerateSitemap() {
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
                 //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
-                (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
+                (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, noop_1.default);
+                var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
+                var publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
+                gulp_1.default
+                    .src('**/*.html', { cwd: publicDir })
+                    .pipe((0, gulp_dom_1.default)(function () {
+                    // auto discovery sitemap
+                    if (this.querySelectorAll("link[href=\"".concat(baseURL, "sitemap.xml\"]")).length === 0) {
+                        this.head.innerHTML += "<link id=\"sitemap-site-url\" type=\"application/text+xml\" rel=\"sitemap\" href=\"".concat(baseURL, "sitemap.xml\" />");
+                    }
+                    //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+                }))
+                    .pipe(gulp_1.default.dest(publicDir))
+                    .once('end', function () { return resolve(); });
             });
         });
     });
