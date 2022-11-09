@@ -71,6 +71,13 @@ var env = new nunjucks_1.default.Environment();
 env.addFilter('uriencode', function (str) {
     return (0, hexo_util_1.encodeURL)(str);
 });
+env.addFilter('noControlChars', function (str) {
+    return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
+});
+// Extract date from datetime
+env.addFilter('formatDate', function (input) {
+    return input.toISOString().substring(0, 10);
+});
 /**
  * Sitemap Generator
  * @param url url to crawl
