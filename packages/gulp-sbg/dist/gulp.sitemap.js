@@ -211,6 +211,7 @@ function hexoGenerateSitemap() {
                     tags: tagsCfg ? locals.get('tags').toArray() : [],
                     categories: catsCfg ? locals.get('categories').toArray() : []
                 });
+                // remove blank newlines
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
                 //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
