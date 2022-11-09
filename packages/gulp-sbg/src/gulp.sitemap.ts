@@ -136,6 +136,7 @@ export function hexoGenerateSitemap() {
           posts
         });
 
+        writeFile(join(__dirname, '../tmp/sitemap.xml'), data);
         writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
       });
     });

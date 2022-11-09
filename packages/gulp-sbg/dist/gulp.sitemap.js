@@ -197,6 +197,7 @@ function hexoGenerateSitemap() {
                     config: config,
                     posts: posts
                 });
+                (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data);
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
             });
         });
