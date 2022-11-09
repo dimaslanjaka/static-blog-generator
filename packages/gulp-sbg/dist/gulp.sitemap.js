@@ -35,6 +35,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -44,6 +53,9 @@ var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_1 = __importDefault(require("hexo"));
+var hexo_util_1 = require("hexo-util");
+var micromatch_1 = __importDefault(require("micromatch"));
+var nunjucks_1 = __importDefault(require("nunjucks"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
@@ -55,6 +67,7 @@ var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
 var sitemapTXT = (0, upath_1.join)(deployDir, 'sitemap.txt');
 var sitemaps = (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm));
 var crawled = new Set();
+var env = new nunjucks_1.default.Environment();
 /**
  * Sitemap Generator
  * @param url url to crawl
@@ -148,17 +161,54 @@ function writeSitemap(callback) {
     (0, fs_extra_1.writeFile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join('\n'), function () { return cb(); });
 }
 function hexoGenerateSitemap() {
-    var instance = new hexo_1.default(process.cwd());
-    instance.init().then(function () {
-        instance.load().then(function () {
-            //
+    return new bluebird_1.default(function (resolve) {
+        var instance = new hexo_1.default(process.cwd());
+        instance.init().then(function () {
+            instance.load().then(function () {
+                env.addFilter('formatUrl', function (str) {
+                    return hexo_util_1.full_url_for.call(instance, str);
+                });
+                var config = instance.config;
+                var locals = instance.locals;
+                var skip_render = config.skip_render;
+                var skipRenderList = ['**/*.js', '**/*.css'];
+                if (Array.isArray(skip_render)) {
+                    skipRenderList.push.apply(skipRenderList, skip_render);
+                }
+                else if (typeof skip_render === 'string') {
+                    if (skip_render.length > 0) {
+                        skipRenderList.push(skip_render);
+                    }
+                }
+                var posts = __spreadArray(__spreadArray([], locals.get('pages').toArray(), true), locals.get('posts').toArray(), true).filter(function (post) {
+                    return post.sitemap !== false && !isMatch(post.source, skipRenderList);
+                })
+                    .sort(function (a, b) {
+                    if (b.updated && a.updated)
+                        return b.updated.toDate().getTime() - a.updated.toDate().getTime();
+                    return 0;
+                });
+                if (posts.length <= 0) {
+                    return resolve();
+                }
+                var tmplSrc = (0, upath_1.join)(__dirname, '_config_template_sitemap.xml');
+                var template = nunjucks_1.default.compile((0, fs_extra_1.readFileSync)(tmplSrc, 'utf-8'), env);
+                var data = template.render({
+                    config: config,
+                    posts: posts
+                });
+                (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
+            });
         });
     });
 }
 exports.hexoGenerateSitemap = hexoGenerateSitemap;
+function isMatch(path, patterns) {
+    return micromatch_1.default.isMatch(path, patterns);
+}
 gulp_1.default.task('sitemap', function () {
     return new bluebird_1.default(function (resolve) {
-        generateSitemap(null, 1).then(function () {
+        hexoGenerateSitemap().then(function () {
             resolve();
         });
     });

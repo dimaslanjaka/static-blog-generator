@@ -1,7 +1,10 @@
 import Bluebird from 'bluebird';
 import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
-import hexo from 'hexo';
+import { default as hexo } from 'hexo';
+import { full_url_for } from 'hexo-util';
+import micromatch from 'micromatch';
+import nunjucks from 'nunjucks';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig from './gulp.config';
@@ -14,6 +17,7 @@ const originfile = join(process.cwd(), 'public/sitemap.txt');
 const sitemapTXT = join(deployDir, 'sitemap.txt');
 let sitemaps = array_remove_empty(readFileSync(originfile, 'utf-8').split(/\r?\n/gm));
 const crawled = new Set<string>();
+const env = new nunjucks.Environment();
 
 /**
  * Sitemap Generator
@@ -92,17 +96,59 @@ function writeSitemap(callback?: CallableFunction) {
 }
 
 export function hexoGenerateSitemap() {
-  const instance = new hexo(process.cwd());
-  instance.init().then(() => {
-    instance.load().then(() => {
-      //
+  return new Bluebird((resolve) => {
+    const instance = new hexo(process.cwd());
+    instance.init().then(() => {
+      instance.load().then(function () {
+        env.addFilter('formatUrl', (str) => {
+          return full_url_for.call(instance, str);
+        });
+        const config = instance.config;
+        const locals = instance.locals;
+        const { skip_render } = config;
+        const skipRenderList = ['**/*.js', '**/*.css'];
+
+        if (Array.isArray(skip_render)) {
+          skipRenderList.push(...skip_render);
+        } else if (typeof skip_render === 'string') {
+          if (skip_render.length > 0) {
+            skipRenderList.push(skip_render);
+          }
+        }
+
+        const posts = [...locals.get('pages').toArray(), ...locals.get('posts').toArray()]
+          .filter((post) => {
+            return post.sitemap !== false && !isMatch(post.source, skipRenderList);
+          })
+          .sort((a, b) => {
+            if (b.updated && a.updated) return b.updated.toDate().getTime() - a.updated.toDate().getTime();
+            return 0;
+          });
+
+        if (posts.length <= 0) {
+          return resolve();
+        }
+
+        const tmplSrc = join(__dirname, '_config_template_sitemap.xml');
+        const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
+        const data = template.render({
+          config,
+          posts
+        });
+
+        writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
+      });
     });
   });
 }
 
+function isMatch(path: string, patterns: string | readonly string[]) {
+  return micromatch.isMatch(path, patterns);
+}
+
 gulp.task('sitemap', () => {
   return new Bluebird((resolve) => {
-    generateSitemap(null, 1).then(function () {
+    hexoGenerateSitemap().then(function () {
       resolve();
     });
   });
