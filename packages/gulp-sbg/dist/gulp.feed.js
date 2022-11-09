@@ -27,7 +27,7 @@ gulp_1.default.task('feed', function (done) {
             });
             var config = gulp_config_1.default;
             function build(tmplSrc, dest) {
-                var template = nunjucks_1.default.compile((0, fs_1.readFileSync)(tmplSrc, 'utf8'), env);
+                var template = nunjucks_1.default.compile((0, fs_1.readFileSync)(tmplSrc, 'utf-8'), env);
                 var posts = instance.locals.get('posts');
                 posts = posts.sort('-date');
                 posts = posts.filter(function (post) {
@@ -64,10 +64,13 @@ gulp_1.default.task('feed', function (done) {
             gulp_1.default
                 .src('**/*.html', { cwd: publicDir })
                 .pipe((0, gulp_dom_1.default)(function () {
-                if (!this.getElementById('rss-site-url')) {
-                    this.head.innerHTML += "<link id=\"rss-site-url\" type=\"application/rss+xml\" rel=\"alternate\" href=\"".concat(baseURL, "rss.xml\" /><link id=\"atom-site-url\" type=\"application/rss+xml\" rel=\"alternate\" href=\"").concat(baseURL, "atom.xml\" />");
+                if (this.querySelectorAll("link[href=\"".concat(baseURL, "rss.xml\"]")).length === 0) {
+                    this.head.innerHTML += "<link id=\"rss-site-url\" type=\"application/rss+xml\" rel=\"alternate\" href=\"".concat(baseURL, "rss.xml\" />");
                 }
-                this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+                if (this.querySelectorAll("link[href=\"".concat(baseURL, "atom.xml\"]")).length === 0) {
+                    this.head.innerHTML += "<link id=\"atom-site-url\" type=\"application/atom+xml\" rel=\"alternate\" href=\"".concat(baseURL, "atom.xml\" />");
+                }
+                //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
             }))
                 .pipe(gulp_1.default.dest(publicDir))
                 .once('end', function () { return done(); });
