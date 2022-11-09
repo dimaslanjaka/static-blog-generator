@@ -64,9 +64,11 @@ gulp_1.default.task('feed', function (done) {
             gulp_1.default
                 .src('**/*.html', { cwd: publicDir })
                 .pipe((0, gulp_dom_1.default)(function () {
+                // auto discovery rss
                 if (this.querySelectorAll("link[href=\"".concat(baseURL, "rss.xml\"]")).length === 0) {
                     this.head.innerHTML += "<link id=\"rss-site-url\" type=\"application/rss+xml\" rel=\"alternate\" href=\"".concat(baseURL, "rss.xml\" />");
                 }
+                // auto discovery atom
                 if (this.querySelectorAll("link[href=\"".concat(baseURL, "atom.xml\"]")).length === 0) {
                     this.head.innerHTML += "<link id=\"atom-site-url\" type=\"application/atom+xml\" rel=\"alternate\" href=\"".concat(baseURL, "atom.xml\" />");
                 }
