@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "postbuild": "node packer.js",
+    "update": "npx npm-check-updates -u && npm install --cache tmp/npm"
   },
   "keywords": [
     "sitemap",
@@ -17,6 +19,13 @@
     "email": "baram991103@gmail.com",
     "url": "https://wlsdml1103.blog.me"
   },
+  "contributors": [
+    {
+      "email": "dimaslanjaka@gmail.com",
+      "name": "Dimas Lanjaka",
+      "url": "https://www.webmanajemen.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/tinyjin/sitemap-crawler.git"
