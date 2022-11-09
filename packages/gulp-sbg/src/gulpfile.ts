@@ -1,12 +1,9 @@
-import Bluebird from 'bluebird';
-import { readFileSync, writeFile } from 'fs';
 import gulp from 'gulp';
 import { spawn } from 'hexo-util';
-import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
-import { deployConfig } from './gulp.deploy';
 import './gulp.clean';
+import { deployConfig } from './gulp.deploy';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
@@ -36,43 +33,15 @@ export function commitProject(finish: TaskCallback) {
 
 gulp.task('project-commit', commitProject);
 
-export function getUntrackedSitemap() {
-  return new Bluebird((resolve) => {
-    const { deployDir } = deployConfig();
-    const originfile = join(process.cwd(), 'public/sitemap.txt');
-    const outfile = join(deployDir, 'sitemap.txt');
-    let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
-    sitemapCrawlerAsync('https://www.webmanajemen.com/chimeraland', {
-      deep: 2
-    }).then((results) => {
-      sitemaps = Object.values(results)
-        .flat(1)
-        .concat(sitemaps)
-        .filter(function (x, i, a) {
-          return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
-        })
-        .sort(function (a, b) {
-          return a === b ? 0 : a < b ? -1 : 1;
-        });
-      writeFile(outfile, sitemaps.join('\n'), resolve);
-    });
-  });
-}
-
-gulp.task('sitemap', getUntrackedSitemap);
-
 const copyGen = () => {
   const { deployDir } = deployConfig();
-  return new Bluebird((resolve) => {
-    gulp
-      .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
-        cwd: join(process.cwd(), 'public'),
-        dot: true
-      })
-      .pipe(gulp.dest(deployDir))
-      .on('error', console.trace)
-      .once('end', () => getUntrackedSitemap().then(resolve));
-  });
+  return gulp
+    .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
+      cwd: join(process.cwd(), 'public'),
+      dot: true
+    })
+    .pipe(gulp.dest(deployDir))
+    .on('error', console.trace);
 };
 
 // copy public to .deploy_git
