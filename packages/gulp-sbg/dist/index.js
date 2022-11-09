@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = void 0;
+exports.array_unique = exports.array_remove_empty = exports.array_random = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = void 0;
 require("./gulpfile");
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var gulp_post_1 = require("./gulp.post");
@@ -16,4 +16,8 @@ Object.defineProperty(exports, "generateSitemap", { enumerable: true, get: funct
 Object.defineProperty(exports, "hexoGenerateSitemap", { enumerable: true, get: function () { return gulp_sitemap_1.hexoGenerateSitemap; } });
 var gulpfile_1 = require("./gulpfile");
 Object.defineProperty(exports, "commitProject", { enumerable: true, get: function () { return gulpfile_1.commitProject; } });
+var array_1 = require("./utils/array");
+Object.defineProperty(exports, "array_random", { enumerable: true, get: function () { return array_1.array_random; } });
+Object.defineProperty(exports, "array_remove_empty", { enumerable: true, get: function () { return array_1.array_remove_empty; } });
+Object.defineProperty(exports, "array_unique", { enumerable: true, get: function () { return array_1.array_unique; } });
 scheduler_1.default.register();
