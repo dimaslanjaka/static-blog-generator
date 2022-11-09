@@ -6,6 +6,7 @@ import { dirname, join } from 'upath';
 import ProjectConfig from './gulp.config';
 import { deployConfig } from './gulp.deploy';
 import { array_unique } from './utils/array';
+import noop from './utils/noop';
 
 const { deployDir } = deployConfig();
 const originfile = join(process.cwd(), 'public/sitemap.txt');
@@ -16,24 +17,24 @@ const crawled = new Set<string>();
 /**
  * Sitemap Generator
  * @param url url to crawl
- * @param depth crawl deeper n times
+ * @param deep crawl deeper n times
  * @returns
  */
-export function generateSitemap(url?: string | null | undefined, depth = 0) {
+export function generateSitemap(url?: string | null | undefined, deep = 0) {
   return new Bluebird((resolve: (sitemaps: string[]) => any) => {
     const promises: Bluebird<Record<string, string[]>>[] = [];
     if (typeof url === 'string') {
       crawled.add(url);
       promises.push(
         sitemapCrawlerAsync(url, {
-          deep: 2
+          deep
         })
       );
     } else {
       crawled.add(ProjectConfig.url);
       promises.push(
         sitemapCrawlerAsync(ProjectConfig.url, {
-          deep: 2
+          deep
         })
       );
     }
@@ -67,20 +68,30 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
           return a === b ? 0 : a < b ? -1 : 1;
         });
 
-        for (let i = 0; i < depth; i++) {
+        for (let i = 0; i < deep; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {
             const url = sitemaps[ii];
             if (crawled.has(url) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url)) continue;
 
             crawled.add(url);
             console.log('[depth]', ii, url);
-            await generateSitemap(url, depth);
+            await generateSitemap(url, deep).then(() => writeSitemap());
           }
         }
 
-        writeFile(sitemapTXT, sitemaps.join('\n'), () => resolve(sitemaps));
+        writeSitemap(resolve);
       });
   });
+}
+
+/**
+ * write the sitemap
+ * @param callback
+ */
+function writeSitemap(callback?: CallableFunction) {
+  let cb: CallableFunction = noop;
+  if (callback) cb = () => callback(sitemaps);
+  writeFile(sitemapTXT, sitemaps.join('\n'), () => cb());
 }
 
 gulp.task('sitemap', () => {

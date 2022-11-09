@@ -48,6 +48,7 @@ var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
 var gulp_deploy_1 = require("./gulp.deploy");
 var array_1 = require("./utils/array");
+var noop_1 = __importDefault(require("./utils/noop"));
 var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
 var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
 var sitemapTXT = (0, upath_1.join)(deployDir, 'sitemap.txt');
@@ -56,24 +57,24 @@ var crawled = new Set();
 /**
  * Sitemap Generator
  * @param url url to crawl
- * @param depth crawl deeper n times
+ * @param deep crawl deeper n times
  * @returns
  */
-function generateSitemap(url, depth) {
+function generateSitemap(url, deep) {
     var _this = this;
-    if (depth === void 0) { depth = 0; }
+    if (deep === void 0) { deep = 0; }
     return new bluebird_1.default(function (resolve) {
         var promises = [];
         if (typeof url === 'string') {
             crawled.add(url);
             promises.push((0, sitemap_crawler_1.sitemapCrawlerAsync)(url, {
-                deep: 2
+                deep: deep
             }));
         }
         else {
             crawled.add(gulp_config_1.default.url);
             promises.push((0, sitemap_crawler_1.sitemapCrawlerAsync)(gulp_config_1.default.url, {
-                deep: 2
+                deep: deep
             }));
         }
         bluebird_1.default.all(promises)
@@ -111,7 +112,7 @@ function generateSitemap(url, depth) {
                         i = 0;
                         _a.label = 1;
                     case 1:
-                        if (!(i < depth)) return [3 /*break*/, 6];
+                        if (!(i < deep)) return [3 /*break*/, 6];
                         ii = 0;
                         _a.label = 2;
                     case 2:
@@ -121,7 +122,7 @@ function generateSitemap(url, depth) {
                             return [3 /*break*/, 4];
                         crawled.add(url_1);
                         console.log('[depth]', ii, url_1);
-                        return [4 /*yield*/, generateSitemap(url_1, depth)];
+                        return [4 /*yield*/, generateSitemap(url_1, deep).then(function () { return writeSitemap(); })];
                     case 3:
                         _a.sent();
                         _a.label = 4;
@@ -132,7 +133,7 @@ function generateSitemap(url, depth) {
                         i++;
                         return [3 /*break*/, 1];
                     case 6:
-                        (0, fs_extra_1.writeFile)(sitemapTXT, sitemaps.join('\n'), function () { return resolve(sitemaps); });
+                        writeSitemap(resolve);
                         return [2 /*return*/];
                 }
             });
@@ -140,6 +141,16 @@ function generateSitemap(url, depth) {
     });
 }
 exports.generateSitemap = generateSitemap;
+/**
+ * write the sitemap
+ * @param callback
+ */
+function writeSitemap(callback) {
+    var cb = noop_1.default;
+    if (callback)
+        cb = function () { return callback(sitemaps); };
+    (0, fs_extra_1.writeFile)(sitemapTXT, sitemaps.join('\n'), function () { return cb(); });
+}
 gulp_1.default.task('sitemap', function () {
     return new bluebird_1.default(function (resolve) {
         generateSitemap(null, 1).then(function () {
