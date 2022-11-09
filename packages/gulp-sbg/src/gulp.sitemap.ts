@@ -5,13 +5,13 @@ import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig from './gulp.config';
 import { deployConfig } from './gulp.deploy';
-import { array_unique } from './utils/array';
+import { array_remove_empty, array_unique } from './utils/array';
 import noop from './utils/noop';
 
 const { deployDir } = deployConfig();
 const originfile = join(process.cwd(), 'public/sitemap.txt');
 const sitemapTXT = join(deployDir, 'sitemap.txt');
-let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
+let sitemaps = array_remove_empty(readFileSync(originfile, 'utf-8').split(/\r?\n/gm));
 const crawled = new Set<string>();
 
 /**
@@ -57,14 +57,10 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
         return mapped;
       })
       .then(async (results) => {
-        sitemaps = array_unique(
-          Object.values(results)
-            .flat(1)
-            .concat(sitemaps)
-            .filter(function (x, i, a) {
-              return a.indexOf(x) === i && typeof x == 'string' && x.length > 0;
-            })
-        ).sort(function (a, b) {
+        sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(function (
+          a,
+          b
+        ) {
           return a === b ? 0 : a < b ? -1 : 1;
         });
 
@@ -91,7 +87,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
 function writeSitemap(callback?: CallableFunction) {
   let cb: CallableFunction = noop;
   if (callback) cb = () => callback(sitemaps);
-  writeFile(sitemapTXT, sitemaps.join('\n'), () => cb());
+  writeFile(sitemapTXT, array_remove_empty(sitemaps).join('\n'), () => cb());
 }
 
 gulp.task('sitemap', () => {
