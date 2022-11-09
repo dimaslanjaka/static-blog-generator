@@ -133,7 +133,10 @@ export function hexoGenerateSitemap() {
         const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
         const data = template.render({
           config,
-          posts
+          posts,
+          sNow: new Date(),
+          tags: locals.get('tags').toArray(),
+          categories: locals.get('categories').toArray()
         });
 
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data);
