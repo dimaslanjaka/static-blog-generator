@@ -243,7 +243,7 @@ sitemap:
   # https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.xml
   # template: ./sitemap_template.xml
   # https://github.com/hexojs/hexo-generator-sitemap/blob/master/sitemap.txt
-  template_txt: ./_config_template_sitemap.txt
+  # template_txt: ./_config_template_sitemap.txt
   rel: true
   tags: true
   categories: true
@@ -400,4 +400,4 @@ tag_mapper:
 category_mapper:
   JS: Javascript
   TS: Typescript
-  
+
