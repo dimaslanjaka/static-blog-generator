@@ -120,7 +120,7 @@ function generateSitemap(url, depth) {
                         if (crawled.has(url_1) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url_1))
                             return [3 /*break*/, 4];
                         crawled.add(url_1);
-                        console.log('depth crawling', url_1);
+                        console.log('[depth]', ii, url_1);
                         return [4 /*yield*/, generateSitemap(url_1, depth)];
                     case 3:
                         _a.sent();
