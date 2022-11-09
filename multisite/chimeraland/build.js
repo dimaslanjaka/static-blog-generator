@@ -1,2 +1,7 @@
 require('ts-node').register()
-require('./src/copy-src-posts')
+const { copyPost } = require('./project')
+const copySrcPost = require('./src/copy-src-posts').default
+
+copySrcPost().on('end', function () {
+  copyPost()
+})
