@@ -131,11 +131,12 @@ function generateSitemap(url, depth) {
                     case 5:
                         i++;
                         return [3 /*break*/, 1];
-                    case 6: return [2 /*return*/, sitemaps];
+                    case 6:
+                        (0, fs_extra_1.writeFile)(sitemapTXT, sitemaps.join('\n'), function () { return resolve(sitemaps); });
+                        return [2 /*return*/];
                 }
             });
-        }); })
-            .then(function () { return (0, fs_extra_1.writeFile)(sitemapTXT, sitemaps.join('\n'), function () { return resolve(sitemaps); }); });
+        }); });
     });
 }
 exports.generateSitemap = generateSitemap;

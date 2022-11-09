@@ -78,9 +78,8 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
           }
         }
 
-        return sitemaps;
-      })
-      .then(() => writeFile(sitemapTXT, sitemaps.join('\n'), () => resolve(sitemaps)));
+        writeFile(sitemapTXT, sitemaps.join('\n'), () => resolve(sitemaps));
+      });
   });
 }
 
