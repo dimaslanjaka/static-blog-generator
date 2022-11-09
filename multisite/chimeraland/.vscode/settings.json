@@ -35,6 +35,9 @@
   "[scss]": {
     "editor.formatOnSave": true
   },
+  "[html]": {
+    "editor.formatOnSave": true
+  },
   "prettier.endOfLine": "lf",
   "eslint.validate": [
     "javascript",

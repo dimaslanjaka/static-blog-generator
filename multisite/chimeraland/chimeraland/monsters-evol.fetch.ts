@@ -7,7 +7,7 @@ import prettier from 'prettier'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { basename, dirname, extname, join, toUnix } from 'upath'
-import { Logger } from '../utils/debug'
+import { Logger } from '../src/utils/debug'
 import materialData from './materials.json'
 
 const publicDir = join(__dirname, '../../public')
