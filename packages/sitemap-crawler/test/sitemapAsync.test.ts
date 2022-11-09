@@ -2,7 +2,10 @@ import fs from 'fs';
 import { join } from 'path';
 import { sitemapCrawlerAsync } from '../src';
 
-const links = ['https://www.webmanajemen.com/chimeraland'];
+const links = [
+  'https://www.webmanajemen.com/chimeraland',
+  'https://www.webmanajemen.com'
+];
 sitemapCrawlerAsync(links, {
   isProgress: true,
   isLog: true,
