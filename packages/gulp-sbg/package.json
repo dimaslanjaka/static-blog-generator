@@ -39,7 +39,7 @@
     "micromatch": "^4.0.5",
     "moment-timezone": "^0.5.38",
     "nunjucks": "^3.2.3",
-    "safelinkify": "^1.1.5",
+    "safelinkify": "^1.1.6",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "through2": "^4.0.2",
     "undertaker": "^1.3.0",
