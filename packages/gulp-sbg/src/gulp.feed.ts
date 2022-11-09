@@ -27,7 +27,7 @@ gulp.task('feed', function (done) {
       const config = ProjectConfig;
 
       function build(tmplSrc: PathOrFileDescriptor, dest: PathOrFileDescriptor) {
-        const template = nunjucks.compile(readFileSync(tmplSrc, 'utf8'), env);
+        const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
 
         let posts = instance.locals.get('posts');
         posts = posts.sort('-date');
@@ -73,10 +73,13 @@ gulp.task('feed', function (done) {
         .src('**/*.html', { cwd: publicDir })
         .pipe(
           gulpDom(function () {
-            if (!this.getElementById('rss-site-url')) {
-              this.head.innerHTML += `<link id="rss-site-url" type="application/rss+xml" rel="alternate" href="${baseURL}rss.xml" /><link id="atom-site-url" type="application/rss+xml" rel="alternate" href="${baseURL}atom.xml" />`;
+            if (this.querySelectorAll(`link[href="${baseURL}rss.xml"]`).length === 0) {
+              this.head.innerHTML += `<link id="rss-site-url" type="application/rss+xml" rel="alternate" href="${baseURL}rss.xml" />`;
             }
-            this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+            if (this.querySelectorAll(`link[href="${baseURL}atom.xml"]`).length === 0) {
+              this.head.innerHTML += `<link id="atom-site-url" type="application/atom+xml" rel="alternate" href="${baseURL}atom.xml" />`;
+            }
+            //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
           })
         )
         .pipe(gulp.dest(publicDir))
