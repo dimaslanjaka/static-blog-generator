@@ -13,7 +13,7 @@
     "deploy": "npm run build && gulp deploy",
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
-    "postinstall": "node bin/update-cache.js",
+    "postinstall": "node postinstalljs",
     "update": "npx npm-check-updates -u -x hexo,chalk && npm install --cache tmp/npm",
     "refresh": "npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
   },
