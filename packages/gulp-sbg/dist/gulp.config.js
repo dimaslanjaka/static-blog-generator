@@ -10,7 +10,7 @@ var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
 var parse = {};
 if ((0, fs_1.existsSync)(fileYML)) {
     parse = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-    (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(parse));
+    (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(parse, null, 2));
 }
 var ProjectConfig = parse;
 exports.default = ProjectConfig;
