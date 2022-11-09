@@ -1,4 +1,5 @@
 const gulp = require('gulp');
-require('gulp-sbg');
+const sbg = require('gulp-sbg');
 
+exports.sbg = sbg;
 exports = gulp;
