@@ -9,20 +9,28 @@ import { array_unique } from './utils/array';
 
 const { deployDir } = deployConfig();
 const originfile = join(process.cwd(), 'public/sitemap.txt');
-const outfile = join(deployDir, 'sitemap.txt');
+const sitemapTXT = join(deployDir, 'sitemap.txt');
 let sitemaps = readFileSync(originfile, 'utf-8').split(/\r?\n/gm);
-const crawled: string[] = [];
+const crawled = new Set<string>();
 
+/**
+ * Sitemap Generator
+ * @param url url to crawl
+ * @param depth crawl deeper n times
+ * @returns
+ */
 export function generateSitemap(url?: string | null | undefined, depth = 0) {
   return new Bluebird((resolve: (sitemaps: string[]) => any) => {
     const promises: Bluebird<Record<string, string[]>>[] = [];
     if (typeof url === 'string') {
+      crawled.add(url);
       promises.push(
         sitemapCrawlerAsync(url, {
           deep: 2
         })
       );
     } else {
+      crawled.add(ProjectConfig.url);
       promises.push(
         sitemapCrawlerAsync(ProjectConfig.url, {
           deep: 2
@@ -47,7 +55,7 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
         // writeFileSync(saveto, JSON.stringify(mapped, null, 2));
         return mapped;
       })
-      .then((results) => {
+      .then(async (results) => {
         sitemaps = Object.values(results)
           .flat(1)
           .concat(sitemaps)
@@ -61,16 +69,16 @@ export function generateSitemap(url?: string | null | undefined, depth = 0) {
         for (let i = 0; i < depth; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {
             const url = sitemaps[ii];
-            if (crawled.includes(url)) continue;
+            if (crawled.has(url)) continue;
 
-            crawled.push(url);
-            generateSitemap(url, depth);
+            crawled.add(url);
+            await generateSitemap(url, depth);
           }
         }
 
         return sitemaps;
       })
-      .then(() => writeFile(outfile, sitemaps.join('\n'), () => resolve(sitemaps)));
+      .then(() => writeFile(sitemapTXT, sitemaps.join('\n'), () => resolve(sitemaps)));
   });
 }
 
