@@ -139,7 +139,7 @@ export function hexoGenerateSitemap() {
           categories: locals.get('categories').toArray()
         });
 
-        writeFile(join(__dirname, '../tmp/sitemap.xml'), data);
+        writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
         writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
       });
     });

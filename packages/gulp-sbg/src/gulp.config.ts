@@ -7,7 +7,7 @@ let parse: Record<string, any> = {};
 
 if (existsSync(fileYML)) {
   parse = yaml.parse(readFileSync(fileYML, 'utf-8'));
-  writeFileSync(join(__dirname, '_config.json'), JSON.stringify(parse));
+  writeFileSync(join(__dirname, '_config.json'), JSON.stringify(parse, null, 2));
 }
 
 type importConfig = typeof import('./_config.json');
