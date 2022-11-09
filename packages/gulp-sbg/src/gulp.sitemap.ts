@@ -1,6 +1,7 @@
 import Bluebird from 'bluebird';
 import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
+import hexo from 'hexo';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig from './gulp.config';
@@ -88,6 +89,15 @@ function writeSitemap(callback?: CallableFunction) {
   let cb: CallableFunction = noop;
   if (callback) cb = () => callback(sitemaps);
   writeFile(sitemapTXT, array_remove_empty(sitemaps).join('\n'), () => cb());
+}
+
+export function hexoGenerateSitemap() {
+  const instance = new hexo(process.cwd());
+  instance.init().then(() => {
+    instance.load().then(() => {
+      //
+    });
+  });
 }
 
 gulp.task('sitemap', () => {
