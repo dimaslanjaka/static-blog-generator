@@ -49,7 +49,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hexoGenerateSitemap = exports.generateSitemap = void 0;
-var plugin_xml_1 = __importDefault(require("@prettier/plugin-xml"));
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
@@ -57,7 +56,6 @@ var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
 var micromatch_1 = __importDefault(require("micromatch"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
-var prettier_1 = __importDefault(require("prettier"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
@@ -213,7 +211,8 @@ function hexoGenerateSitemap() {
                     tags: tagsCfg ? locals.get('tags').toArray() : [],
                     categories: catsCfg ? locals.get('categories').toArray() : []
                 });
-                data = prettier_1.default.format(data, { parser: 'xml', plugins: [plugin_xml_1.default] });
+                data = data.replace(/^\s*[\r\n]/gm, '\n');
+                //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(process.cwd(), config.public_dir, 'sitemap.xml'), data, resolve);
             });
