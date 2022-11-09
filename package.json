@@ -14,7 +14,7 @@
     "server": "hexo server -p 4000",
     "server-php": "php -S localhost:4000 -t public",
     "postinstall": "node bin/update-cache.js",
-    "update": "npx npm-check-updates -u -x hexo,chalk && npm install",
+    "update": "npx npm-check-updates -u -x hexo,chalk && npm install --cache tmp/npm",
     "refresh": "npm update hexo-front-matter hexo-browsersync hexo-generator-redirect static-blog-generator safelinkify hexo-post-parser"
   },
   "hexo": {
@@ -34,7 +34,7 @@
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-github-card": "file:packages/hexo-github-card",
-    "hexo-i18n": "^1.0.0",
+    "hexo-i18n": "^2.0.0",
     "hexo-pagination": "^3.0.0",
     "hexo-pdf": "^1.1.1",
     "hexo-renderer-marked": "^6.0.0",
@@ -47,7 +47,7 @@
     "@types/hexo-util": "file:packages/@types/hexo-util",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
-    "@typescript-eslint/parser": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
