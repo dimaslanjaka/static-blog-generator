@@ -7,8 +7,17 @@ title: "WMI"
 subtitle: "Website Management Indonesia"
 description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.
 keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
-language: en
+language:
+  - en # Default language
+  - id
 timezone: "Asia/Jakarta"
+
+# https://github.com/Jamling/hexo-generator-i18n
+# config hexo-generator-i18n option (optional, this is default option)
+## issues: ['https://github.com/hexojs/hexo/issues/4701']
+i18n:
+  type: [page, post]
+  generator: [archive, category, tag, index]
 
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb
@@ -23,7 +32,9 @@ search:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.webmanajemen.com/
 root: /
-permalink: :title.html #:year/:month/:day/:title.html
+#permalink: :title.html #:year/:month/:day/:title.html
+permalink: :lang/:title.html
+new_post_name: :lang/:year/:month/:title.md
 permalink_defaults: :title.html
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
