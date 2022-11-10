@@ -45,6 +45,7 @@
     "@types/find-cache-dir": "^3.2.1",
     "@types/fs-extra": "^9.0.13",
     "@types/glob": "^8.0.0",
+    "@types/gulp": "^4.0.9",
     "@types/jsdom": "^20.0.1",
     "@types/lodash": "^4.14.188",
     "@types/lodash.deburr": "^4.1.7",

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Bluebird from 'bluebird';
-import findCacheDir from 'find-cache-dir';
-import * as fs from 'fs';
+import * as fs from 'fs-extra';
 import { default as nodePath } from 'path';
 import { cwd as nodeCwd } from 'process';
 import { trueCasePathSync } from 'true-case-path';
@@ -24,7 +23,9 @@ export function normalize(path: string) {
 /**
  * node_modules/.cache/${name}
  */
-export const cacheDir = findCacheDir({ name: 'dimaslanjaka' });
+export const cacheDir = upath.join(process.cwd(), 'tmp/hexo-post-parser');
+if (!fs.existsSync(upath.dirname(cacheDir)))
+  fs.mkdirpSync(upath.dirname(cacheDir));
 
 export type Mutable<T> = {
   -readonly [k in keyof T]: T[k];
@@ -95,18 +96,11 @@ const filemanager = {
     callback?: fs.NoParamCallback
   ) => {
     if (fs.existsSync(path)) {
+      fs.rm(path, Object.assign({ recursive: true }, options));
       if (typeof options == 'function') {
-        return fs.rm(path, { recursive: true }, options);
-      } else if (typeof options == 'object') {
-        return fs.rm(
-          path,
-          Object.assign({ recursive: true }, options),
-          typeof callback == 'function'
-            ? callback
-            : () => {
-                // no callback? do nothing
-              }
-        );
+        options(null);
+      } else if (typeof callback === 'function') {
+        callback(null);
       }
     }
   },
