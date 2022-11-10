@@ -215,7 +215,10 @@ export async function parsePost(
 
     let body = m[2];
     if (!body) body = 'no content ' + (meta.title || '');
-    //write(tmp('parsePost', 'original.log'), body).then(console.log);
+
+    const bodyHtml = renderMarkdownIt(body);
+    const dom = new JSDOM(bodyHtml);
+
     if (!meta.id) {
       // assign post id
       meta.id = generatePostId(meta);
@@ -251,8 +254,12 @@ export async function parsePost(
       }
       */
 
-      // @todo fix lang
-      if (!meta.lang) meta.lang = 'en';
+      // @todo fix meta language
+      const lang = meta.lang || meta.language;
+      if (!lang) {
+        meta.lang = 'en';
+        meta.language = 'en';
+      }
     }
 
     // @todo set default category and tags
@@ -315,16 +322,27 @@ export async function parsePost(
 
     // @todo set default excerpt/description
     if (meta.subtitle) {
+      // check if meta.subtitle exist
       meta.excerpt = meta.subtitle;
       meta.description = meta.subtitle;
     } else if (meta.description && !meta.excerpt) {
+      // check if meta.description exist
       meta.subtitle = meta.description;
       meta.excerpt = meta.description;
     } else if (meta.excerpt && !meta.description) {
+      // check if meta.excerpt exist
       meta.description = meta.excerpt;
       meta.subtitle = meta.excerpt;
     } else {
-      const newExcerpt = `${meta.title} - ${options.config.title}`;
+      // @todo fix meta description
+      const tags = Array.from(
+        dom.window.document.body.getElementsByTagName('*')
+      );
+      const newExcerpt = [meta.title]
+        .concat(uniqueArray(tags.map((el) => el.textContent?.trim())))
+        .flat()
+        .join(' ')
+        .substring(0, 300);
       meta.description = newExcerpt;
       meta.subtitle = newExcerpt;
       meta.excerpt = newExcerpt;
@@ -636,8 +654,6 @@ export async function parsePost(
       typeof body === 'string' &&
       body.trim().length > 0
     ) {
-      const render = renderMarkdownIt(body);
-      const dom = new JSDOM(render);
       const words = Array.from(
         dom.window.document.querySelectorAll('*:not(script,style,meta,link)')
       )
