@@ -20,12 +20,15 @@ export async function cleanDb() {
   await hexo.call('clean');
 }
 
+/**
+ * delete folder async for gulp
+ * @param path
+ * @returns
+ */
 function del(path: string) {
   return new Promise((resolve) => {
     if (existsSync(path)) {
-      rm(path, { recursive: true }, function (err) {
-        resolve(err);
-      });
+      return rm(path, { recursive: true }, resolve);
     }
     resolve(new Error(path + ' not found'));
   });
