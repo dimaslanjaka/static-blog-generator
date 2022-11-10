@@ -27,7 +27,7 @@ export async function cleanDb() {
  * @param path
  * @returns
  */
-function del(path: string) {
+export function del(path: string) {
   return new Promise((resolve) => {
     if (existsSync(path)) {
       readdir(path, function (err, files) {

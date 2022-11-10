@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cleanDb = void 0;
+exports.del = exports.cleanDb = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
@@ -120,4 +120,5 @@ function del(path) {
         }
     });
 }
+exports.del = del;
 gulp_1.default.task('clean', cleanDb);
