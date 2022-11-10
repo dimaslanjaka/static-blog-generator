@@ -60,25 +60,13 @@ var nunjucks_1 = __importDefault(require("nunjucks"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
-var gulp_deploy_1 = require("./gulp.deploy");
 var array_1 = require("./utils/array");
 var noop_1 = __importDefault(require("./utils/noop"));
-var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
-var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
-var sitemapTXT = (0, upath_1.join)(deployDir, 'sitemap.txt');
-var sitemaps = (0, fs_extra_1.existsSync)(originfile) ? (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm)) : [];
+var nunjucks_env_1 = __importDefault(require("./utils/nunjucks-env"));
+var sitemapTXT = (0, upath_1.join)(process.cwd(), gulp_config_1.default.public_dir, 'sitemap.txt');
+var sitemaps = (0, fs_extra_1.existsSync)(sitemapTXT) ? (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
 var crawled = new Set();
-var env = new nunjucks_1.default.Environment();
-env.addFilter('uriencode', function (str) {
-    return (0, hexo_util_1.encodeURL)(str);
-});
-env.addFilter('noControlChars', function (str) {
-    return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
-});
-// Extract date from datetime
-env.addFilter('formatDate', function (input) {
-    return input.toISOString().substring(0, 10);
-});
+var env = (0, nunjucks_env_1.default)();
 /**
  * Sitemap Generator
  * @param url url to crawl
