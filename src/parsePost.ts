@@ -334,7 +334,7 @@ export async function parsePost(
       meta.description = meta.excerpt;
       meta.subtitle = meta.excerpt;
     } else {
-      // @todo fix meta description
+      // @todo fix no meta description
       const tags = Array.from(
         dom.window.document.body.getElementsByTagName('*')
       );
