@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import moment from 'moment-timezone';
 import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
-import { del } from './gulp.clean';
+import './gulp.clean';
 import ProjectConfig, { deployConfig } from './gulp.config';
 import './gulp.safelink';
 
@@ -27,22 +27,6 @@ export function copyGen() {
 
 // copy public to .deploy_git
 gulp.task('copy', copyGen);
-
-/**
- * clean old archives (categories, tags, pagination)
- */
-export async function cleanOldArchives() {
-  // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
-  const { deployDir } = deployConfig();
-  const archives = join(deployDir, ProjectConfig.archive_dir);
-  if (existsSync(archives)) await del(archives).catch(noop);
-  const categories = join(deployDir, ProjectConfig.category_dir);
-  if (existsSync(categories)) await del(categories).catch(noop);
-  const tags = join(deployDir, ProjectConfig.tag_dir);
-  if (existsSync(tags)) await del(tags).catch(noop);
-}
-
-gulp.task('clean-archives', cleanOldArchives);
 
 function pull() {
   return new Promise((resolve) => {
