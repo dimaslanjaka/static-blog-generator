@@ -42,7 +42,6 @@
   "homepage": "https://github.com/dimaslanjaka/hexo-post-parser#readme",
   "devDependencies": {
     "@types/bluebird": "^3.5.37",
-    "@types/find-cache-dir": "^3.2.1",
     "@types/fs-extra": "^9.0.13",
     "@types/glob": "^8.0.0",
     "@types/gulp": "^4.0.9",
@@ -68,7 +67,6 @@
     "bluebird": "^3.7.2",
     "chalk": "^4.1.2",
     "deepmerge-ts": "^4.2.2",
-    "find-cache-dir": "^4.0.0",
     "fs-extra": "^10.1.0",
     "jsdom": "^20.0.2",
     "lodash": "^4.17.21",
