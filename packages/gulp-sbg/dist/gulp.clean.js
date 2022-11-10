@@ -190,10 +190,11 @@ function cleanOldArchives(done) {
             //
         }
     }
-    return bluebird_1.default.all(promises).then(function () {
+    var finishNow = function () {
         if (typeof done === 'function')
             done();
-    });
+    };
+    return bluebird_1.default.all(promises).then(finishNow).catch(finishNow);
 }
 exports.cleanOldArchives = cleanOldArchives;
 gulp_1.default.task('clean-archives', cleanOldArchives);
