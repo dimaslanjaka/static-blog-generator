@@ -4,3 +4,8 @@ export interface ProjConf extends importConfig {
 }
 declare const ProjectConfig: ProjConf;
 export default ProjectConfig;
+export declare function deployConfig(): {
+    deployDir: string;
+    config: ProjConf;
+    github: import("git-command-helper").default;
+};

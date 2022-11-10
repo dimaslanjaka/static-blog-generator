@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,7 +62,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deployConfig = exports.cleanOldArchives = exports.copyGen = void 0;
+exports.cleanOldArchives = exports.copyGen = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var fs_1 = require("fs");
 var git_command_helper_1 = require("git-command-helper");
@@ -47,14 +70,14 @@ var gulp_1 = __importDefault(require("gulp"));
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
-var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_config_1 = __importStar(require("./gulp.config"));
 require("./gulp.safelink");
 /**
  * copy generated files to deploy dir
  * @returns
  */
 function copyGen() {
-    var deployDir = deployConfig().deployDir;
+    var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
     var publicDir = (0, upath_1.join)(process.cwd(), gulp_config_1.default.public_dir);
     return gulp_1.default
         .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
@@ -76,7 +99,7 @@ function cleanOldArchives() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    deployDir = deployConfig().deployDir;
+                    deployDir = (0, gulp_config_1.deployConfig)().deployDir;
                     archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
                     if (!(0, fs_1.existsSync)(archives)) return [3 /*break*/, 2];
                     return [4 /*yield*/, (0, gulp_clean_1.del)(archives).catch(noop)];
@@ -106,7 +129,7 @@ exports.cleanOldArchives = cleanOldArchives;
 gulp_1.default.task('clean-archives', cleanOldArchives);
 function pull() {
     return new Promise(function (resolve) {
-        var _a = deployConfig(), deployDir = _a.deployDir, github = _a.github, config = _a.config;
+        var _a = (0, gulp_config_1.deployConfig)(), deployDir = _a.deployDir, github = _a.github, config = _a.config;
         github
             .setremote(config.deploy.repo)
             .then(function () {
@@ -138,7 +161,7 @@ function pull() {
     });
 }
 function status(done) {
-    var github = deployConfig().github;
+    var github = (0, gulp_config_1.deployConfig)().github;
     github.status().then(function (statuses) {
         statuses.map(function (item) {
             var str = '';
@@ -168,7 +191,7 @@ function status(done) {
     });
 }
 function commit() {
-    var _a = deployConfig(), github = _a.github, config = _a.config;
+    var _a = (0, gulp_config_1.deployConfig)(), github = _a.github, config = _a.config;
     var now = (0, moment_timezone_1.default)().tz(config.timezone).format('LLL');
     var commitRoot = function () {
         return new Promise(function (resolve) {
@@ -246,7 +269,7 @@ function noop() {
     //
 }
 function push() {
-    var github = deployConfig().github;
+    var github = (0, gulp_config_1.deployConfig)().github;
     var submodules = github.submodule.hasSubmodule() ? github.submodule.get() : [];
     var pushSubmodule = function (submodule) {
         var url = submodule.url, branch = submodule.branch, root = submodule.root;
@@ -327,13 +350,6 @@ gulp_1.default.task('push', push);
 gulp_1.default.task('status', status);
 gulp_1.default.task('commit', commit);
 gulp_1.default.task('pull', pull);
-function deployConfig() {
-    var deployDir = (0, upath_1.join)(process.cwd(), '.deploy_git');
-    var config = gulp_config_1.default;
-    var github = new git_command_helper_1.gitHelper(deployDir);
-    return { deployDir: deployDir, config: config, github: github };
-}
-exports.deployConfig = deployConfig;
 /**
  * get relative path from workspace
  * @param str
