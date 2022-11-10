@@ -6,7 +6,7 @@ import moment from 'moment-timezone';
 import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
 import { del } from './gulp.clean';
-import ProjectConfig from './gulp.config';
+import ProjectConfig, { deployConfig } from './gulp.config';
 import './gulp.safelink';
 
 /**
@@ -251,13 +251,6 @@ gulp.task('push', push);
 gulp.task('status', status);
 gulp.task('commit', commit);
 gulp.task('pull', pull);
-
-export function deployConfig() {
-  const deployDir = join(process.cwd(), '.deploy_git');
-  const config = ProjectConfig;
-  const github = new gitHelper(deployDir);
-  return { deployDir, config, github };
-}
 
 /**
  * get relative path from workspace
