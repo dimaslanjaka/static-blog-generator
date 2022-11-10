@@ -7,6 +7,7 @@ import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
 import { del } from './gulp.clean';
 import ProjectConfig from './gulp.config';
+import './gulp.safelink';
 
 /**
  * copy generated files to deploy dir
