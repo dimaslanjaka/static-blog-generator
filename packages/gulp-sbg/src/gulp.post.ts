@@ -12,6 +12,10 @@ import scheduler from './utils/scheduler';
 const sourceDir = join(process.cwd(), 'src-posts');
 const destDir = join(process.cwd(), 'source/_posts');
 
+/**
+ * Watch post while you writing new or modify posts from src-posts folder
+ * @param done
+ */
 export function watchPost(done: TaskCallback) {
   const watcher = gulp.watch(['**/*'], { cwd: sourceDir });
   watcher.on('change', (path) => {
@@ -23,6 +27,11 @@ export function watchPost(done: TaskCallback) {
   watcher.once('close', done);
 }
 
+/**
+ * Copy single post from src-posts folder to source/_posts
+ * @param identifier
+ * @param callback
+ */
 export const copySinglePost = (identifier: string, callback?: CallableFunction) => {
   identifier = identifier.replace(extname(identifier), '');
   ///const fileList = [];
