@@ -33,3 +33,18 @@ hexo.extend.helper.register('i18n_post_meta', function (name, link, path) {
   }
   return postMeta;
 });
+
+/**
+ * Get page path given a certain language tag
+ */
+hexo.extend.helper.register('i18n_path', function (language) {
+  const { path, lang, layout } = this.page;
+  const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;
+  return this.url_for(
+    `${
+      this.languages.indexOf(language) === 0 && layout !== 'post'
+        ? ''
+        : '/' + language
+    }/${base}`
+  );
+});
