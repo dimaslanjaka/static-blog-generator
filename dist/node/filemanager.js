@@ -4,8 +4,7 @@ exports.PATH_SEPARATOR = exports.extname = exports.relative = exports.basename =
 const tslib_1 = require("tslib");
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
-const find_cache_dir_1 = tslib_1.__importDefault(require("find-cache-dir"));
-const fs = tslib_1.__importStar(require("fs"));
+const fs = tslib_1.__importStar(require("fs-extra"));
 const path_1 = tslib_1.__importDefault(require("path"));
 const process_1 = require("process");
 const true_case_path_1 = require("true-case-path");
@@ -25,7 +24,9 @@ exports.normalize = normalize;
 /**
  * node_modules/.cache/${name}
  */
-exports.cacheDir = (0, find_cache_dir_1.default)({ name: 'dimaslanjaka' });
+exports.cacheDir = upath_1.default.join(process.cwd(), 'tmp/hexo-post-parser');
+if (!fs.existsSync(upath_1.default.dirname(exports.cacheDir)))
+    fs.mkdirpSync(upath_1.default.dirname(exports.cacheDir));
 const modPath = path_1.default;
 //modPath.sep = '/';
 /**
@@ -83,15 +84,12 @@ const filemanager = {
      */
     rm: (path, options = {}, callback) => {
         if (fs.existsSync(path)) {
+            fs.rm(path, Object.assign({ recursive: true }, options));
             if (typeof options == 'function') {
-                return fs.rm(path, { recursive: true }, options);
+                options(null);
             }
-            else if (typeof options == 'object') {
-                return fs.rm(path, Object.assign({ recursive: true }, options), typeof callback == 'function'
-                    ? callback
-                    : () => {
-                        // no callback? do nothing
-                    });
+            else if (typeof callback === 'function') {
+                callback(null);
             }
         }
     },
