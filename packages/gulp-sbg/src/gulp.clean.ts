@@ -95,9 +95,10 @@ export function cleanOldArchives(done?: TaskCallback) {
     }
   }
 
-  return Bluebird.all(promises).then(function () {
+  const finishNow = function () {
     if (typeof done === 'function') done();
-  });
+  };
+  return Bluebird.all(promises).then(finishNow).catch(finishNow);
 }
 
 gulp.task('clean-archives', cleanOldArchives);
