@@ -1,9 +1,9 @@
 import Bluebird from 'bluebird';
-import { existsSync, readdir, rm } from 'fs-extra';
+import { existsSync, readdir, rm, statSync } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { join } from 'upath';
-import ProjectConfig from './gulp.config';
+import ProjectConfig, { deployConfig } from './gulp.config';
 import noop from './utils/noop';
 
 /**
@@ -44,20 +44,24 @@ export async function cleanDb() {
 export function del(path: string) {
   return new Promise((resolve) => {
     if (existsSync(path)) {
-      readdir(path, function (err, files) {
-        if (!err) {
-          Bluebird.all(files)
-            .map((file) => join(path, file))
-            .map((file) => {
-              rm(file, { recursive: true });
-            })
-            .then(() => {
-              rm(path, { recursive: true }).then(resolve).catch(noop);
-            });
-        } else {
-          rm(path, { recursive: true }).then(resolve).catch(noop);
-        }
-      });
+      if (statSync(path).isDirectory()) {
+        readdir(path, function (err, files) {
+          if (!err) {
+            Bluebird.all(files)
+              .map((file) => join(path, file))
+              .map((file) => {
+                rm(file, { recursive: true });
+              })
+              .then(() => {
+                rm(path, { recursive: true }).then(resolve).catch(noop);
+              });
+          } else {
+            rm(path, { recursive: true }).then(resolve).catch(noop);
+          }
+        });
+      } else {
+        rm(path, { recursive: true }).then(resolve).catch(noop);
+      }
     } else {
       resolve(new Error(path + ' not found'));
     }
@@ -65,3 +69,26 @@ export function del(path: string) {
 }
 
 gulp.task('clean', cleanDb);
+
+/**
+ * clean old archives (categories, tags, pagination)
+ */
+export async function cleanOldArchives() {
+  // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
+  const { deployDir } = deployConfig();
+  const archives = join(deployDir, ProjectConfig.archive_dir);
+  const categories = join(deployDir, ProjectConfig.category_dir);
+  const tags = join(deployDir, ProjectConfig.tag_dir);
+  const folders = [archives, tags, categories];
+
+  for (let i = 0; i < folders.length; i++) {
+    const pathStr = folders[i];
+    try {
+      if (existsSync(pathStr)) await del(pathStr).catch(noop);
+    } catch {
+      //
+    }
+  }
+}
+
+gulp.task('clean-archives', cleanOldArchives);
