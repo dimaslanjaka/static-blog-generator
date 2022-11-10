@@ -24,7 +24,8 @@
     "Cygwin": {
       "path": "C:\\cygwin64\\bin\\bash.exe",
       "args": [
-        "--login"
+        "--login",
+        "-i"
       ],
       "env": {
         "CHERE_INVOKING": "1"
