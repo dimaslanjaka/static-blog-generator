@@ -66,7 +66,7 @@ var noop_1 = __importDefault(require("./utils/noop"));
 var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
 var originfile = (0, upath_1.join)(process.cwd(), 'public/sitemap.txt');
 var sitemapTXT = (0, upath_1.join)(deployDir, 'sitemap.txt');
-var sitemaps = (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm));
+var sitemaps = (0, fs_extra_1.existsSync)(originfile) ? (0, array_1.array_remove_empty)((0, fs_extra_1.readFileSync)(originfile, 'utf-8').split(/\r?\n/gm)) : [];
 var crawled = new Set();
 var env = new nunjucks_1.default.Environment();
 env.addFilter('uriencode', function (str) {
