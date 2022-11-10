@@ -180,7 +180,9 @@ function cleanOldArchives() {
                     archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
                     categories = (0, upath_1.join)(deployDir, gulp_config_1.default.category_dir);
                     tags = (0, upath_1.join)(deployDir, gulp_config_1.default.tag_dir);
-                    folders = [archives, tags, categories];
+                    folders = [archives, tags, categories]
+                        .concat(gulp_config_1.default.language.map(function (str) { return (0, upath_1.join)(deployDir, str); }))
+                        .filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
                     i = 0;
                     _b.label = 1;
                 case 1:
