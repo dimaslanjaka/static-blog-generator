@@ -3,8 +3,23 @@
   "subtitle": "Website Management Indonesia",
   "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.",
   "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
-  "language": "en",
+  "language": [
+    "en",
+    "id"
+  ],
   "timezone": "Asia/Jakarta",
+  "i18n": {
+    "type": [
+      "page",
+      "post"
+    ],
+    "generator": [
+      "archive",
+      "category",
+      "tag",
+      "index"
+    ]
+  },
   "search": {
     "path": "search.xml",
     "field": "post",
@@ -13,7 +28,7 @@
   },
   "url": "https://www.webmanajemen.com/",
   "root": "/",
-  "permalink": ":title.html",
+  "permalink": ":lang/:title.html",
   "permalink_defaults": ":title.html",
   "pretty_urls": {
     "trailing_index": true,
@@ -26,7 +41,7 @@
   "category_dir": "categories",
   "code_dir": "downloads/code",
   "i18n_dir": ":lang",
-  "new_post_name": ":year/:month/:day/:title.md",
+  "new_post_name": ":lang/:year/:month/:title.md",
   "default_layout": "post",
   "titlecase": false,
   "external_link": {
