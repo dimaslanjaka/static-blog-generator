@@ -5,7 +5,7 @@ import hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { join } from 'upath';
-import ProjectConfig from './gulp.config';
+import ProjectConfig, { commonIgnore } from './gulp.config';
 import envNunjucks from './utils/nunjucks-env';
 
 const env = envNunjucks();
@@ -64,7 +64,7 @@ gulp.task('feed', function (done) {
 
       const publicDir = join(process.cwd(), config.public_dir);
       gulp
-        .src('**/*.html', { cwd: publicDir })
+        .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
         .pipe(
           gulpDom(function () {
             // auto discovery rss

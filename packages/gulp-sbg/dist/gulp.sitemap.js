@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -59,7 +82,7 @@ var micromatch_1 = __importDefault(require("micromatch"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
-var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_config_1 = __importStar(require("./gulp.config"));
 var array_1 = require("./utils/array");
 var noop_1 = __importDefault(require("./utils/noop"));
 var nunjucks_env_1 = __importDefault(require("./utils/nunjucks-env"));
@@ -208,7 +231,7 @@ function hexoGenerateSitemap() {
                 var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
                 var publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
                 gulp_1.default
-                    .src('**/*.html', { cwd: publicDir })
+                    .src('**/*.html', { cwd: publicDir, ignore: gulp_config_1.commonIgnore })
                     .pipe((0, gulp_dom_1.default)(function () {
                     // auto discovery sitemap
                     if (this.querySelectorAll("link[href=\"".concat(baseURL, "sitemap.xml\"]")).length === 0) {

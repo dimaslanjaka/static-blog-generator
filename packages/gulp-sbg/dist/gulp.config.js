@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deployConfig = void 0;
+exports.commonIgnore = exports.deployConfig = void 0;
 var fs_1 = require("fs");
 var git_command_helper_1 = require("git-command-helper");
 var path_1 = require("path");
@@ -23,3 +23,11 @@ function deployConfig() {
     return { deployDir: deployDir, config: config, github: github };
 }
 exports.deployConfig = deployConfig;
+exports.commonIgnore = [
+    '**/yandex_*.html',
+    '**/comments.html',
+    '**/disqus-comments.html',
+    '**/comment.html',
+    '**/favicon.html',
+    '**/404.html'
+];
