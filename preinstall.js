@@ -9,7 +9,8 @@ summon(
 function summon(cmd, args = [], opt = {}) {
   // *** Return the promise
   return new Promise(function (resolve, reject) {
-    if (typeof cmd !== 'string' || cmd.trim().length === 0) return reject('cmd empty');
+    if (typeof cmd !== 'string' || cmd.trim().length === 0)
+      return reject('cmd empty');
     const process = spawn(cmd, args, opt);
     process.on('close', function (code) {
       // Should probably be 'exit', not 'close'
