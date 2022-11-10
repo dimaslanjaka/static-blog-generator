@@ -6,6 +6,13 @@ summon(
   spawnOpt({ cwd: __dirname })
 );
 
+/**
+ *
+ * @param {string} cmd
+ * @param {string[]} args
+ * @param {Parameters<typeof spawn>[2]} opt
+ * @returns
+ */
 function summon(cmd, args = [], opt = {}) {
   // *** Return the promise
   return new Promise(function (resolve, reject) {
