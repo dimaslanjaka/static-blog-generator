@@ -34,7 +34,7 @@
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "hexo": "^6.3.0",
-    "hexo-post-parser": "^1.1.16",
+    "hexo-post-parser": "^1.1.17",
     "hexo-util": "^2.7.0",
     "micromatch": "^4.0.5",
     "moment-timezone": "^0.5.38",
