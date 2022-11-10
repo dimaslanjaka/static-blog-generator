@@ -14,9 +14,23 @@ export async function cleanDb() {
   const post = join(process.cwd(), config.source_dir, '_posts');
   const publicDir = join(process.cwd(), config.public_dir);
   const tmpDir = join(process.cwd(), 'tmp');
-  if (existsSync(tmpDir)) await del(tmpDir).catch(noop);
-  if (existsSync(post)) await del(post).catch(noop);
-  if (existsSync(publicDir)) await del(publicDir).catch(noop);
+
+  try {
+    if (existsSync(tmpDir)) await del(tmpDir).catch(noop);
+  } catch {
+    //
+  }
+  try {
+    if (existsSync(publicDir)) await del(publicDir).catch(noop);
+  } catch {
+    //
+  }
+  try {
+    if (existsSync(post)) await del(post).catch(noop);
+  } catch {
+    //
+  }
+
   const hexo = new hexoLib(process.cwd());
   await hexo.init().catch(noop);
   await hexo.call('clean').catch(noop);
