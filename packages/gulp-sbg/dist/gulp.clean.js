@@ -40,10 +40,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanDb = void 0;
-var fs_1 = require("fs");
+var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_1 = __importDefault(require("hexo"));
-var path_1 = require("path");
+var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
 /**
  * Clean Project Databases
@@ -55,22 +55,22 @@ function cleanDb() {
             switch (_a.label) {
                 case 0:
                     config = gulp_config_1.default;
-                    post = (0, path_1.join)(process.cwd(), config.source_dir, '_posts');
-                    publicDir = (0, path_1.join)(process.cwd(), config.public_dir);
-                    tmpDir = (0, path_1.join)(process.cwd(), 'tmp');
-                    if (!(0, fs_1.existsSync)(tmpDir)) return [3 /*break*/, 2];
+                    post = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
+                    publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
+                    tmpDir = (0, upath_1.join)(process.cwd(), 'tmp');
+                    if (!(0, fs_extra_1.existsSync)(tmpDir)) return [3 /*break*/, 2];
                     return [4 /*yield*/, del(tmpDir)];
                 case 1:
                     _a.sent();
                     _a.label = 2;
                 case 2:
-                    if (!(0, fs_1.existsSync)(post)) return [3 /*break*/, 4];
+                    if (!(0, fs_extra_1.existsSync)(post)) return [3 /*break*/, 4];
                     return [4 /*yield*/, del(post)];
                 case 3:
                     _a.sent();
                     _a.label = 4;
                 case 4:
-                    if (!(0, fs_1.existsSync)(publicDir)) return [3 /*break*/, 6];
+                    if (!(0, fs_extra_1.existsSync)(publicDir)) return [3 /*break*/, 6];
                     return [4 /*yield*/, del(publicDir)];
                 case 5:
                     _a.sent();
@@ -96,10 +96,12 @@ exports.cleanDb = cleanDb;
  */
 function del(path) {
     return new Promise(function (resolve) {
-        if ((0, fs_1.existsSync)(path)) {
-            return (0, fs_1.rm)(path, { recursive: true }, resolve);
+        if ((0, fs_extra_1.existsSync)(path)) {
+            (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve);
         }
-        resolve(new Error(path + ' not found'));
+        else {
+            resolve(new Error(path + ' not found'));
+        }
     });
 }
 gulp_1.default.task('clean', cleanDb);

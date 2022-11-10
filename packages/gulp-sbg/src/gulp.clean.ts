@@ -1,7 +1,7 @@
-import { existsSync, rm } from 'fs';
+import { existsSync, rm } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
-import { join } from 'path';
+import { join } from 'upath';
 import ProjectConfig from './gulp.config';
 
 /**
@@ -28,9 +28,10 @@ export async function cleanDb() {
 function del(path: string) {
   return new Promise((resolve) => {
     if (existsSync(path)) {
-      return rm(path, { recursive: true }, resolve);
+      rm(path, { recursive: true }).then(resolve);
+    } else {
+      resolve(new Error(path + ' not found'));
     }
-    resolve(new Error(path + ' not found'));
   });
 }
 
