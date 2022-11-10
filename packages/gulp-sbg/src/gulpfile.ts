@@ -3,7 +3,7 @@ import { spawn } from 'hexo-util';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import './gulp.clean';
-import { deployConfig } from './gulp.deploy';
+import './gulp.deploy';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
@@ -32,20 +32,3 @@ export function commitProject(finish: TaskCallback) {
 }
 
 gulp.task('project-commit', commitProject);
-
-const copyGen = () => {
-  const { deployDir } = deployConfig();
-  return gulp
-    .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
-      cwd: join(process.cwd(), 'public'),
-      dot: true
-    })
-    .pipe(gulp.dest(deployDir))
-    .on('error', console.trace);
-};
-
-// copy public to .deploy_git
-gulp.task('copy', copyGen);
-
-// deploy
-gulp.task('deploy', gulp.series('pull', 'copy', 'safelink', 'commit', 'push'));
