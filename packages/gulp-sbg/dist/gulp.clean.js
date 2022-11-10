@@ -89,12 +89,15 @@ function cleanDb() {
     });
 }
 exports.cleanDb = cleanDb;
+/**
+ * delete folder async for gulp
+ * @param path
+ * @returns
+ */
 function del(path) {
     return new Promise(function (resolve) {
         if ((0, fs_1.existsSync)(path)) {
-            (0, fs_1.rm)(path, { recursive: true }, function (err) {
-                resolve(err);
-            });
+            return (0, fs_1.rm)(path, { recursive: true }, resolve);
         }
         resolve(new Error(path + ' not found'));
     });
