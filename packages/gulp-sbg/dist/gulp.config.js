@@ -32,5 +32,7 @@ exports.commonIgnore = [
     '**/404.html',
     '**/node_modules/**',
     '**/tmp/**',
-    '**/.cache/**'
+    '**/.cache/**',
+    '**/.vscode/**',
+    '**/pinterest-*.html'
 ];

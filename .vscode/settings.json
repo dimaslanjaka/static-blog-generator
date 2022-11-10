@@ -32,7 +32,7 @@
       }
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Cygwin",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
