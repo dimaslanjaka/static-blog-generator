@@ -56,6 +56,9 @@ gulp_1.default.task('feed', function (done) {
                 var url = urlCfg;
                 if (url[url.length - 1] !== '/')
                     url += '/';
+                // remove broken hexo lang shortcode
+                if (url.includes(':lang/'))
+                    url = url.replace('/:lang/', '/');
                 var icon = '';
                 if (iconCfg)
                     icon = hexo_util_1.full_url_for.call(instance, iconCfg);
