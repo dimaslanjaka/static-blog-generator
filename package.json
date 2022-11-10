@@ -7,7 +7,7 @@
     "start": "npm run server",
     "prebuild": "npm run copy",
     "build": "hexo generate",
-    "postbuild": "gulp clean-archives && gulp sitemap && gulp feed && gulp copy && gulp safelink",
+    "postbuild": "gulp sitemap && gulp feed && gulp copy && gulp safelink",
     "copy": "gulp copy-all-post",
     "clean": "gulp clean",
     "deploy": "npm run build && gulp deploy",
