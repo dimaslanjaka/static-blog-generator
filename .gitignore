@@ -117,3 +117,7 @@ typings/
 
 # TernJS port file
 .tern-port
+
+# include release
+!release/
+!release/*.tgz
