@@ -1,1 +1,3 @@
 *.zip
+src/config/*.json
+node_modules
