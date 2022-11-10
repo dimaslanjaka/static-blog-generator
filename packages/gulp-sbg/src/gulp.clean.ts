@@ -101,3 +101,5 @@ export function cleanOldArchives(done?: TaskCallback) {
 }
 
 gulp.task('clean-archives', cleanOldArchives);
+
+gulp.task('clean-all', gulp.series('clean', 'clean-archives'));
