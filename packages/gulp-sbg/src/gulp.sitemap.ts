@@ -8,7 +8,7 @@ import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
-import ProjectConfig from './gulp.config';
+import ProjectConfig, { commonIgnore } from './gulp.config';
 import { array_remove_empty, array_unique } from './utils/array';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
@@ -150,7 +150,7 @@ export function hexoGenerateSitemap() {
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
         const publicDir = join(process.cwd(), config.public_dir);
         gulp
-          .src('**/*.html', { cwd: publicDir })
+          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
           .pipe(
             gulpDom(function () {
               // auto discovery sitemap

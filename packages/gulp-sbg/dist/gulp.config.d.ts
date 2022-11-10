@@ -9,3 +9,4 @@ export declare function deployConfig(): {
     config: ProjConf;
     github: import("git-command-helper").default;
 };
+export declare const commonIgnore: string[];

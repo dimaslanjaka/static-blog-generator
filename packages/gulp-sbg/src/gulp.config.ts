@@ -25,3 +25,12 @@ export function deployConfig() {
   const github = new gitCommandHelper(deployDir);
   return { deployDir, config, github };
 }
+
+export const commonIgnore = [
+  '**/yandex_*.html',
+  '**/comments.html',
+  '**/disqus-comments.html',
+  '**/comment.html',
+  '**/favicon.html',
+  '**/404.html'
+];
