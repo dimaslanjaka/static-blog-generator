@@ -123,7 +123,8 @@ function parsePost(target, options = {}) {
             let body = m[2];
             if (!body)
                 body = 'no content ' + (meta.title || '');
-            //write(tmp('parsePost', 'original.log'), body).then(console.log);
+            const bodyHtml = (0, toHtml_1.renderMarkdownIt)(body);
+            const dom = new jsdom_1.JSDOM(bodyHtml);
             if (!meta.id) {
                 // assign post id
                 meta.id = (0, generatePostId_1.generatePostId)(meta);
@@ -156,9 +157,12 @@ function parsePost(target, options = {}) {
                   }
                 }
                 */
-                // @todo fix lang
-                if (!meta.lang)
+                // @todo fix meta language
+                const lang = meta.lang || meta.language;
+                if (!lang) {
                     meta.lang = 'en';
+                    meta.language = 'en';
+                }
             }
             // @todo set default category and tags
             if (!meta.category)
@@ -221,19 +225,28 @@ function parsePost(target, options = {}) {
                 meta.wordcount = 0;
             // @todo set default excerpt/description
             if (meta.subtitle) {
+                // check if meta.subtitle exist
                 meta.excerpt = meta.subtitle;
                 meta.description = meta.subtitle;
             }
             else if (meta.description && !meta.excerpt) {
+                // check if meta.description exist
                 meta.subtitle = meta.description;
                 meta.excerpt = meta.description;
             }
             else if (meta.excerpt && !meta.description) {
+                // check if meta.excerpt exist
                 meta.description = meta.excerpt;
                 meta.subtitle = meta.excerpt;
             }
             else {
-                const newExcerpt = `${meta.title} - ${options.config.title}`;
+                // @todo fix meta description
+                const tags = Array.from(dom.window.document.body.getElementsByTagName('*'));
+                const newExcerpt = [meta.title]
+                    .concat((0, array_unique_1.default)(tags.map((el) => { var _a; return (_a = el.textContent) === null || _a === void 0 ? void 0 : _a.trim(); })))
+                    .flat()
+                    .join(' ')
+                    .substring(0, 300);
                 meta.description = newExcerpt;
                 meta.subtitle = newExcerpt;
                 meta.excerpt = newExcerpt;
@@ -513,8 +526,6 @@ function parsePost(target, options = {}) {
             if (meta.wordcount === 0 &&
                 typeof body === 'string' &&
                 body.trim().length > 0) {
-                const render = (0, toHtml_1.renderMarkdownIt)(body);
-                const dom = new jsdom_1.JSDOM(render);
                 const words = Array.from(dom.window.document.querySelectorAll('*:not(script,style,meta,link)'))
                     .map((e) => e.textContent)
                     .join('\n');
