@@ -6,9 +6,15 @@ const packagejson = require('./package.json');
 
 const child = spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
 child.on('exit', function () {
-  const filename = slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
+  const filename = slugifyPkgName(
+    `${packagejson.name}-${packagejson.version}.tgz`
+  );
   const tgz = join(__dirname, filename);
-  const tgzlatest = join(__dirname, 'release', slugifyPkgName(`${packagejson.name}.tgz`));
+  const tgzlatest = join(
+    __dirname,
+    'release',
+    slugifyPkgName(`${packagejson.name}.tgz`)
+  );
 
   console.log({ tgz, tgzlatest });
 
