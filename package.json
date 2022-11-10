@@ -21,6 +21,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "fs-extra": "^10.1.0",
     "hexo": "^6.2.0",
     "hexo-asset-link": "^2.2.1",
     "hexo-browsersync": "git+https://github.com/hexojs/hexo-browsersync",
@@ -42,7 +43,8 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-next": "file:themes/next"
+    "hexo-theme-next": "file:themes/next",
+    "upath": "^2.0.1"
   },
   "devDependencies": {
     "@types/hexo": "file:packages/@types/hexo",
