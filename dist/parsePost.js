@@ -240,7 +240,7 @@ function parsePost(target, options = {}) {
                 meta.subtitle = meta.excerpt;
             }
             else {
-                // @todo fix meta description
+                // @todo fix no meta description
                 const tags = Array.from(dom.window.document.body.getElementsByTagName('*'));
                 const newExcerpt = [meta.title]
                     .concat((0, array_unique_1.default)(tags.map((el) => { var _a; return (_a = el.textContent) === null || _a === void 0 ? void 0 : _a.trim(); })))
