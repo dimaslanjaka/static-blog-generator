@@ -34,5 +34,6 @@ exports.commonIgnore = [
     '**/tmp/**',
     '**/.cache/**',
     '**/.vscode/**',
+    '**/.frontmatter/**',
     '**/pinterest-*.html'
 ];
