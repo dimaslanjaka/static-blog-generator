@@ -11,13 +11,8 @@ var hexo_util_1 = require("hexo-util");
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
-var env = new nunjucks_1.default.Environment();
-env.addFilter('uriencode', function (str) {
-    return (0, hexo_util_1.encodeURL)(str);
-});
-env.addFilter('noControlChars', function (str) {
-    return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
-});
+var nunjucks_env_1 = __importDefault(require("./utils/nunjucks-env"));
+var env = (0, nunjucks_env_1.default)();
 gulp_1.default.task('feed', function (done) {
     var instance = new hexo_1.default(process.cwd());
     instance.init().then(function () {
