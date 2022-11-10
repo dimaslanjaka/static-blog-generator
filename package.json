@@ -81,7 +81,7 @@
     "markdown-it-sup": "^1.0.0",
     "moment-timezone": "^0.5.38",
     "nodejs-package-types": "github:dimaslanjaka/nodejs-package-types",
-    "persistent-cache": "github:dimaslanjaka/persistent-cache#improve2",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
     "showdown": "^2.1.0",
     "tiny-typed-emitter": "^2.1.0",
     "true-case-path": "^2.2.1",
