@@ -1,4 +1,5 @@
 /// <reference types="node" />
+import './gulp.safelink';
 /**
  * copy generated files to deploy dir
  * @returns

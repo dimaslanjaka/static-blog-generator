@@ -48,6 +48,7 @@ var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
+require("./gulp.safelink");
 /**
  * copy generated files to deploy dir
  * @returns
