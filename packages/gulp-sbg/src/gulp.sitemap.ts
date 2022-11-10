@@ -122,6 +122,13 @@ export function hexoGenerateSitemap() {
           .sort((a, b) => {
             if (b.updated && a.updated) return b.updated.toDate().getTime() - a.updated.toDate().getTime();
             return 0;
+          })
+          .map((post) => {
+            let url = post.permalink;
+            // remove broken hexo lang shortcode
+            if (url.includes(':lang/')) url = url.replace('/:lang/', '/');
+            post.permalink = url;
+            return post;
           });
 
         if (posts.length <= 0) {
