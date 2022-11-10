@@ -1,1 +1,1 @@
-require('./bin/update-cache')
+require('./bin/update-cache.js');
