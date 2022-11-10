@@ -170,42 +170,29 @@ gulp_1.default.task('clean', cleanDb);
 /**
  * clean old archives (categories, tags, pagination)
  */
-function cleanOldArchives() {
-    return __awaiter(this, void 0, void 0, function () {
-        var deployDir, archives, categories, tags, folders, i, pathStr, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    deployDir = (0, gulp_config_1.deployConfig)().deployDir;
-                    archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
-                    categories = (0, upath_1.join)(deployDir, gulp_config_1.default.category_dir);
-                    tags = (0, upath_1.join)(deployDir, gulp_config_1.default.tag_dir);
-                    folders = [archives, tags, categories]
-                        .concat(gulp_config_1.default.language.map(function (str) { return (0, upath_1.join)(deployDir, str); }))
-                        .filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
-                    i = 0;
-                    _b.label = 1;
-                case 1:
-                    if (!(i < folders.length)) return [3 /*break*/, 7];
-                    pathStr = folders[i];
-                    _b.label = 2;
-                case 2:
-                    _b.trys.push([2, 5, , 6]);
-                    if (!(0, fs_extra_1.existsSync)(pathStr)) return [3 /*break*/, 4];
-                    return [4 /*yield*/, del(pathStr).catch(noop_1.default)];
-                case 3:
-                    _b.sent();
-                    _b.label = 4;
-                case 4: return [3 /*break*/, 6];
-                case 5:
-                    _a = _b.sent();
-                    return [3 /*break*/, 6];
-                case 6:
-                    i++;
-                    return [3 /*break*/, 1];
-                case 7: return [2 /*return*/];
-            }
-        });
+function cleanOldArchives(done) {
+    // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
+    var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
+    var archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
+    var categories = (0, upath_1.join)(deployDir, gulp_config_1.default.category_dir);
+    var tags = (0, upath_1.join)(deployDir, gulp_config_1.default.tag_dir);
+    var folders = [archives, tags, categories]
+        .concat(gulp_config_1.default.language.map(function (str) { return (0, upath_1.join)(deployDir, str); }))
+        .filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
+    var promises = [];
+    for (var i = 0; i < folders.length; i++) {
+        var pathStr = folders[i];
+        try {
+            if ((0, fs_extra_1.existsSync)(pathStr))
+                promises.push(del(pathStr).catch(noop_1.default));
+        }
+        catch (_a) {
+            //
+        }
+    }
+    return bluebird_1.default.all(promises).then(function () {
+        if (typeof done === 'function')
+            done();
     });
 }
 exports.cleanOldArchives = cleanOldArchives;

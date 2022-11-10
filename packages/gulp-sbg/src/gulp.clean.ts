@@ -2,6 +2,7 @@ import Bluebird from 'bluebird';
 import { existsSync, readdir, rm, statSync } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
+import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
 import ProjectConfig, { deployConfig } from './gulp.config';
 import noop from './utils/noop';
@@ -73,7 +74,7 @@ gulp.task('clean', cleanDb);
 /**
  * clean old archives (categories, tags, pagination)
  */
-export async function cleanOldArchives() {
+export function cleanOldArchives(done?: TaskCallback) {
   // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
   const { deployDir } = deployConfig();
   const archives = join(deployDir, ProjectConfig.archive_dir);
@@ -83,14 +84,20 @@ export async function cleanOldArchives() {
     .concat(ProjectConfig.language.map((str) => join(deployDir, str)))
     .filter((str) => existsSync(str));
 
+  const promises: Promise<any>[] = [];
+
   for (let i = 0; i < folders.length; i++) {
     const pathStr = folders[i];
     try {
-      if (existsSync(pathStr)) await del(pathStr).catch(noop);
+      if (existsSync(pathStr)) promises.push(del(pathStr).catch(noop));
     } catch {
       //
     }
   }
+
+  return Bluebird.all(promises).then(function () {
+    if (typeof done === 'function') done();
+  });
 }
 
 gulp.task('clean-archives', cleanOldArchives);
