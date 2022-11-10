@@ -13,6 +13,8 @@ language:
   - zh-TW # Traditional Chinese
   - zh-CN # Simplified Chinese
   - zh-HK
+  - th # Thailand
+  - tl # Filipino
 timezone: "Asia/Jakarta"
 
 # https://github.com/Jamling/hexo-generator-i18n
