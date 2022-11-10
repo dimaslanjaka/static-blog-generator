@@ -40,11 +40,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanDb = void 0;
+var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
+var noop_1 = __importDefault(require("./utils/noop"));
 /**
  * Clean Project Databases
  */
@@ -59,28 +61,28 @@ function cleanDb() {
                     publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
                     tmpDir = (0, upath_1.join)(process.cwd(), 'tmp');
                     if (!(0, fs_extra_1.existsSync)(tmpDir)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, del(tmpDir)];
+                    return [4 /*yield*/, del(tmpDir).catch(noop_1.default)];
                 case 1:
                     _a.sent();
                     _a.label = 2;
                 case 2:
                     if (!(0, fs_extra_1.existsSync)(post)) return [3 /*break*/, 4];
-                    return [4 /*yield*/, del(post)];
+                    return [4 /*yield*/, del(post).catch(noop_1.default)];
                 case 3:
                     _a.sent();
                     _a.label = 4;
                 case 4:
                     if (!(0, fs_extra_1.existsSync)(publicDir)) return [3 /*break*/, 6];
-                    return [4 /*yield*/, del(publicDir)];
+                    return [4 /*yield*/, del(publicDir).catch(noop_1.default)];
                 case 5:
                     _a.sent();
                     _a.label = 6;
                 case 6:
                     hexo = new hexo_1.default(process.cwd());
-                    return [4 /*yield*/, hexo.init()];
+                    return [4 /*yield*/, hexo.init().catch(noop_1.default)];
                 case 7:
                     _a.sent();
-                    return [4 /*yield*/, hexo.call('clean')];
+                    return [4 /*yield*/, hexo.call('clean').catch(noop_1.default)];
                 case 8:
                     _a.sent();
                     return [2 /*return*/];
@@ -97,7 +99,21 @@ exports.cleanDb = cleanDb;
 function del(path) {
     return new Promise(function (resolve) {
         if ((0, fs_extra_1.existsSync)(path)) {
-            (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve);
+            (0, fs_extra_1.readdir)(path, function (err, files) {
+                if (!err) {
+                    bluebird_1.default.all(files)
+                        .map(function (file) { return (0, upath_1.join)(path, file); })
+                        .map(function (file) {
+                        (0, fs_extra_1.rm)(file, { recursive: true });
+                    })
+                        .then(function () {
+                        (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
+                    });
+                }
+                else {
+                    (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
+                }
+            });
         }
         else {
             resolve(new Error(path + ' not found'));
