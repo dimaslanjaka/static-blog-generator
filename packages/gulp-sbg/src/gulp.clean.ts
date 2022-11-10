@@ -79,7 +79,9 @@ export async function cleanOldArchives() {
   const archives = join(deployDir, ProjectConfig.archive_dir);
   const categories = join(deployDir, ProjectConfig.category_dir);
   const tags = join(deployDir, ProjectConfig.tag_dir);
-  const folders = [archives, tags, categories];
+  const folders = [archives, tags, categories]
+    .concat(ProjectConfig.language.map((str) => join(deployDir, str)))
+    .filter((str) => existsSync(str));
 
   for (let i = 0; i < folders.length; i++) {
     const pathStr = folders[i];
