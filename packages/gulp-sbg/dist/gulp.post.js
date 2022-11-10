@@ -51,6 +51,10 @@ var gulp_config_1 = __importDefault(require("./gulp.config"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourceDir = (0, upath_1.join)(process.cwd(), 'src-posts');
 var destDir = (0, upath_1.join)(process.cwd(), 'source/_posts');
+/**
+ * Watch post while you writing new or modify posts from src-posts folder
+ * @param done
+ */
 function watchPost(done) {
     var watcher = gulp_1.default.watch(['**/*'], { cwd: sourceDir });
     watcher.on('change', function (path) {
@@ -62,6 +66,11 @@ function watchPost(done) {
     watcher.once('close', done);
 }
 exports.watchPost = watchPost;
+/**
+ * Copy single post from src-posts folder to source/_posts
+ * @param identifier
+ * @param callback
+ */
 var copySinglePost = function (identifier, callback) {
     identifier = identifier.replace((0, upath_1.extname)(identifier), '');
     ///const fileList = [];
