@@ -3,9 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.array_unique = exports.array_remove_empty = exports.array_random = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = void 0;
+exports.array_unique = exports.array_remove_empty = exports.array_random = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.deployConfig = exports.ProjectConfig = void 0;
 require("./gulpfile");
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
+var gulp_config_1 = require("./gulp.config");
+Object.defineProperty(exports, "ProjectConfig", { enumerable: true, get: function () { return __importDefault(gulp_config_1).default; } });
+Object.defineProperty(exports, "deployConfig", { enumerable: true, get: function () { return gulp_config_1.deployConfig; } });
 var gulp_post_1 = require("./gulp.post");
 Object.defineProperty(exports, "copyAllPosts", { enumerable: true, get: function () { return gulp_post_1.copyAllPosts; } });
 Object.defineProperty(exports, "copySinglePost", { enumerable: true, get: function () { return gulp_post_1.copySinglePost; } });
