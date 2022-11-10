@@ -36,5 +36,6 @@ export const commonIgnore = [
   '**/node_modules/**',
   '**/tmp/**',
   '**/.cache/**',
-  '**/.vscode/**'
+  '**/.vscode/**',
+  '**/pinterest-*.html'
 ];
