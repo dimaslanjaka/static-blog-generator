@@ -29,5 +29,8 @@ exports.commonIgnore = [
     '**/disqus-comments.html',
     '**/comment.html',
     '**/favicon.html',
-    '**/404.html'
+    '**/404.html',
+    '**/node_modules/**',
+    '**/tmp/**',
+    '**/.cache/**'
 ];
