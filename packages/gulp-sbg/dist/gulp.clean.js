@@ -52,39 +52,56 @@ var noop_1 = __importDefault(require("./utils/noop"));
  */
 function cleanDb() {
     return __awaiter(this, void 0, void 0, function () {
-        var config, post, publicDir, tmpDir, hexo;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var config, post, publicDir, tmpDir, _a, _b, _c, hexo;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
                 case 0:
                     config = gulp_config_1.default;
                     post = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
                     publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
                     tmpDir = (0, upath_1.join)(process.cwd(), 'tmp');
-                    if (!(0, fs_extra_1.existsSync)(tmpDir)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, del(tmpDir).catch(noop_1.default)];
+                    _d.label = 1;
                 case 1:
-                    _a.sent();
-                    _a.label = 2;
+                    _d.trys.push([1, 4, , 5]);
+                    if (!(0, fs_extra_1.existsSync)(tmpDir)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, del(tmpDir).catch(noop_1.default)];
                 case 2:
-                    if (!(0, fs_extra_1.existsSync)(post)) return [3 /*break*/, 4];
-                    return [4 /*yield*/, del(post).catch(noop_1.default)];
-                case 3:
-                    _a.sent();
-                    _a.label = 4;
+                    _d.sent();
+                    _d.label = 3;
+                case 3: return [3 /*break*/, 5];
                 case 4:
-                    if (!(0, fs_extra_1.existsSync)(publicDir)) return [3 /*break*/, 6];
-                    return [4 /*yield*/, del(publicDir).catch(noop_1.default)];
+                    _a = _d.sent();
+                    return [3 /*break*/, 5];
                 case 5:
-                    _a.sent();
-                    _a.label = 6;
+                    _d.trys.push([5, 8, , 9]);
+                    if (!(0, fs_extra_1.existsSync)(publicDir)) return [3 /*break*/, 7];
+                    return [4 /*yield*/, del(publicDir).catch(noop_1.default)];
                 case 6:
+                    _d.sent();
+                    _d.label = 7;
+                case 7: return [3 /*break*/, 9];
+                case 8:
+                    _b = _d.sent();
+                    return [3 /*break*/, 9];
+                case 9:
+                    _d.trys.push([9, 12, , 13]);
+                    if (!(0, fs_extra_1.existsSync)(post)) return [3 /*break*/, 11];
+                    return [4 /*yield*/, del(post).catch(noop_1.default)];
+                case 10:
+                    _d.sent();
+                    _d.label = 11;
+                case 11: return [3 /*break*/, 13];
+                case 12:
+                    _c = _d.sent();
+                    return [3 /*break*/, 13];
+                case 13:
                     hexo = new hexo_1.default(process.cwd());
                     return [4 /*yield*/, hexo.init().catch(noop_1.default)];
-                case 7:
-                    _a.sent();
+                case 14:
+                    _d.sent();
                     return [4 /*yield*/, hexo.call('clean').catch(noop_1.default)];
-                case 8:
-                    _a.sent();
+                case 15:
+                    _d.sent();
                     return [2 /*return*/];
             }
         });
