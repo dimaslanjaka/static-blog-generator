@@ -1,4 +1,4 @@
-const spawn = require('cross-spawn').spawn;
+const { spawn } = require('cross-spawn');
 const { existsSync, renameSync, rmSync, mkdirpSync } = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
