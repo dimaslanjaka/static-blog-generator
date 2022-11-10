@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,13 +62,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.del = exports.cleanDb = void 0;
+exports.cleanOldArchives = exports.del = exports.cleanDb = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
-var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_config_1 = __importStar(require("./gulp.config"));
 var noop_1 = __importDefault(require("./utils/noop"));
 /**
  * Clean Project Databases
@@ -116,21 +139,26 @@ exports.cleanDb = cleanDb;
 function del(path) {
     return new Promise(function (resolve) {
         if ((0, fs_extra_1.existsSync)(path)) {
-            (0, fs_extra_1.readdir)(path, function (err, files) {
-                if (!err) {
-                    bluebird_1.default.all(files)
-                        .map(function (file) { return (0, upath_1.join)(path, file); })
-                        .map(function (file) {
-                        (0, fs_extra_1.rm)(file, { recursive: true });
-                    })
-                        .then(function () {
+            if ((0, fs_extra_1.statSync)(path).isDirectory()) {
+                (0, fs_extra_1.readdir)(path, function (err, files) {
+                    if (!err) {
+                        bluebird_1.default.all(files)
+                            .map(function (file) { return (0, upath_1.join)(path, file); })
+                            .map(function (file) {
+                            (0, fs_extra_1.rm)(file, { recursive: true });
+                        })
+                            .then(function () {
+                            (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
+                        });
+                    }
+                    else {
                         (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
-                    });
-                }
-                else {
-                    (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
-                }
-            });
+                    }
+                });
+            }
+            else {
+                (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
+            }
         }
         else {
             resolve(new Error(path + ' not found'));
@@ -139,3 +167,44 @@ function del(path) {
 }
 exports.del = del;
 gulp_1.default.task('clean', cleanDb);
+/**
+ * clean old archives (categories, tags, pagination)
+ */
+function cleanOldArchives() {
+    return __awaiter(this, void 0, void 0, function () {
+        var deployDir, archives, categories, tags, folders, i, pathStr, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    deployDir = (0, gulp_config_1.deployConfig)().deployDir;
+                    archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
+                    categories = (0, upath_1.join)(deployDir, gulp_config_1.default.category_dir);
+                    tags = (0, upath_1.join)(deployDir, gulp_config_1.default.tag_dir);
+                    folders = [archives, tags, categories];
+                    i = 0;
+                    _b.label = 1;
+                case 1:
+                    if (!(i < folders.length)) return [3 /*break*/, 7];
+                    pathStr = folders[i];
+                    _b.label = 2;
+                case 2:
+                    _b.trys.push([2, 5, , 6]);
+                    if (!(0, fs_extra_1.existsSync)(pathStr)) return [3 /*break*/, 4];
+                    return [4 /*yield*/, del(pathStr).catch(noop_1.default)];
+                case 3:
+                    _b.sent();
+                    _b.label = 4;
+                case 4: return [3 /*break*/, 6];
+                case 5:
+                    _a = _b.sent();
+                    return [3 /*break*/, 6];
+                case 6:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 7: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.cleanOldArchives = cleanOldArchives;
+gulp_1.default.task('clean-archives', cleanOldArchives);
