@@ -2,19 +2,13 @@ import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import hexo from 'hexo';
-import { encodeURL, full_url_for, gravatar } from 'hexo-util';
+import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { join } from 'upath';
 import ProjectConfig from './gulp.config';
+import envNunjucks from './utils/nunjucks-env';
 
-const env = new nunjucks.Environment();
-env.addFilter('uriencode', (str) => {
-  return encodeURL(str);
-});
-
-env.addFilter('noControlChars', (str) => {
-  return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
-});
+const env = envNunjucks();
 
 gulp.task('feed', function (done) {
   const instance = new hexo(process.cwd());

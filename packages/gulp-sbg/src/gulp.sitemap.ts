@@ -3,32 +3,20 @@ import { existsSync, mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { default as hexo } from 'hexo';
-import { encodeURL, full_url_for } from 'hexo-util';
+import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig from './gulp.config';
-import { deployConfig } from './gulp.deploy';
 import { array_remove_empty, array_unique } from './utils/array';
 import noop from './utils/noop';
+import envNunjucks from './utils/nunjucks-env';
 
-const { deployDir } = deployConfig();
-const originfile = join(process.cwd(), 'public/sitemap.txt');
-const sitemapTXT = join(deployDir, 'sitemap.txt');
-let sitemaps = existsSync(originfile) ? array_remove_empty(readFileSync(originfile, 'utf-8').split(/\r?\n/gm)) : [];
+const sitemapTXT = join(process.cwd(), ProjectConfig.public_dir, 'sitemap.txt');
+let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
 const crawled = new Set<string>();
-const env = new nunjucks.Environment();
-env.addFilter('uriencode', (str) => {
-  return encodeURL(str);
-});
-env.addFilter('noControlChars', (str) => {
-  return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex
-});
-// Extract date from datetime
-env.addFilter('formatDate', (input: import('moment-timezone').Moment) => {
-  return input.toISOString().substring(0, 10);
-});
+const env = envNunjucks();
 
 /**
  * Sitemap Generator
