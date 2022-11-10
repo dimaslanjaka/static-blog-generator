@@ -7,6 +7,8 @@ title: "WMI"
 subtitle: "Website Management Indonesia"
 description: Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.
 keywords: the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce
+timezone: "Asia/Jakarta"
+
 language:
   - en # Default language
   - id # Bahasa Indonesia
@@ -15,16 +17,16 @@ language:
   - zh-HK
   - th # Thailand
   - tl # Filipino
-# hexo-post-parser multilingual ability
+# static-blog-generator multilingual ability
 multilingual: true
-timezone: "Asia/Jakarta"
 
 # https://github.com/Jamling/hexo-generator-i18n
 # config hexo-generator-i18n option (optional, this is default option)
 ## issues: ['https://github.com/hexojs/hexo/issues/4701']
 i18n:
   type: [page, post]
-  generator: [archive, category, tag, index]
+  #generator: [archive, category, tag, index]
+  generator: []
 
 # https://github.com/wzpan/hexo-generator-search
 # https://github.com/next-theme/hexo-generator-searchdb
