@@ -197,3 +197,4 @@ function cleanOldArchives(done) {
 }
 exports.cleanOldArchives = cleanOldArchives;
 gulp_1.default.task('clean-archives', cleanOldArchives);
+gulp_1.default.task('clean-all', gulp_1.default.series('clean', 'clean-archives'));
