@@ -11,9 +11,17 @@ Parse Hexo Posts To Object
 - Parsing HexoJS markdown post
 - Parsing Jekyll markdown post
 - Post Asset Folder Auto Fix for HexoJS
-- Parse shortcodes
+- Parse shortcodes - ([Show all Shortcodes](#shortcodes))
 - Include partials files with html comments
 - Get all images from post body and push them to metadata.photos
+- Auto find meta description when not set
+
+## Shortcodes
+
+| Shortcode | Description |
+| :--- | :--- |
+| `<!-- include folder/path.txt -->` | Include partial files |
+| `<!-- script folder/script.js -->` | Include JS file as html script `<script>codes</script>` |
 
 ## Usage Sample
 
