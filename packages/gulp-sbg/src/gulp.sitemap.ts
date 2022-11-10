@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { mkdirpSync, readFileSync, writeFile } from 'fs-extra';
+import { existsSync, mkdirpSync, readFileSync, writeFile } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { default as hexo } from 'hexo';
@@ -16,7 +16,7 @@ import noop from './utils/noop';
 const { deployDir } = deployConfig();
 const originfile = join(process.cwd(), 'public/sitemap.txt');
 const sitemapTXT = join(deployDir, 'sitemap.txt');
-let sitemaps = array_remove_empty(readFileSync(originfile, 'utf-8').split(/\r?\n/gm));
+let sitemaps = existsSync(originfile) ? array_remove_empty(readFileSync(originfile, 'utf-8').split(/\r?\n/gm)) : [];
 const crawled = new Set<string>();
 const env = new nunjucks.Environment();
 env.addFilter('uriencode', (str) => {
