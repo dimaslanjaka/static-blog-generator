@@ -77,7 +77,10 @@
   },
   "[javascript]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
   },
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
