@@ -39,14 +39,70 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deployConfig = void 0;
+exports.deployConfig = exports.cleanOldArchives = exports.copyGen = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var fs_1 = require("fs");
 var git_command_helper_1 = require("git-command-helper");
 var gulp_1 = __importDefault(require("gulp"));
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var upath_1 = require("upath");
+var gulp_clean_1 = require("./gulp.clean");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
+/**
+ * copy generated files to deploy dir
+ * @returns
+ */
+function copyGen() {
+    var deployDir = deployConfig().deployDir;
+    var publicDir = (0, upath_1.join)(process.cwd(), gulp_config_1.default.public_dir);
+    return gulp_1.default
+        .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
+        cwd: publicDir,
+        dot: true
+    })
+        .pipe(gulp_1.default.dest(deployDir))
+        .on('error', console.trace);
+}
+exports.copyGen = copyGen;
+// copy public to .deploy_git
+gulp_1.default.task('copy', copyGen);
+/**
+ * clean old archives (categories, tags, pagination)
+ */
+function cleanOldArchives() {
+    return __awaiter(this, void 0, void 0, function () {
+        var deployDir, archives, categories, tags;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    deployDir = deployConfig().deployDir;
+                    archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
+                    if (!(0, fs_1.existsSync)(archives)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, (0, gulp_clean_1.del)(archives).catch(noop)];
+                case 1:
+                    _a.sent();
+                    _a.label = 2;
+                case 2:
+                    categories = (0, upath_1.join)(deployDir, gulp_config_1.default.category_dir);
+                    if (!(0, fs_1.existsSync)(categories)) return [3 /*break*/, 4];
+                    return [4 /*yield*/, (0, gulp_clean_1.del)(categories).catch(noop)];
+                case 3:
+                    _a.sent();
+                    _a.label = 4;
+                case 4:
+                    tags = (0, upath_1.join)(deployDir, gulp_config_1.default.tag_dir);
+                    if (!(0, fs_1.existsSync)(tags)) return [3 /*break*/, 6];
+                    return [4 /*yield*/, (0, gulp_clean_1.del)(tags).catch(noop)];
+                case 5:
+                    _a.sent();
+                    _a.label = 6;
+                case 6: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.cleanOldArchives = cleanOldArchives;
+gulp_1.default.task('clean-archives', cleanOldArchives);
 function pull() {
     return new Promise(function (resolve) {
         var _a = deployConfig(), deployDir = _a.deployDir, github = _a.github, config = _a.config;
@@ -285,3 +341,5 @@ exports.deployConfig = deployConfig;
 function workspace(str) {
     return (0, upath_1.toUnix)(str).replace((0, upath_1.toUnix)(process.cwd()), '');
 }
+// deploy
+gulp_1.default.task('deploy', gulp_1.default.series('pull', 'clean-archives', 'copy', 'safelink', 'commit', 'push'));

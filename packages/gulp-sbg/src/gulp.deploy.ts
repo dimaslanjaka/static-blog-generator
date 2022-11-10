@@ -5,7 +5,43 @@ import gulp from 'gulp';
 import moment from 'moment-timezone';
 import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
+import { del } from './gulp.clean';
 import ProjectConfig from './gulp.config';
+
+/**
+ * copy generated files to deploy dir
+ * @returns
+ */
+export function copyGen() {
+  const { deployDir } = deployConfig();
+  const publicDir = join(process.cwd(), ProjectConfig.public_dir);
+  return gulp
+    .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
+      cwd: publicDir,
+      dot: true
+    })
+    .pipe(gulp.dest(deployDir))
+    .on('error', console.trace);
+}
+
+// copy public to .deploy_git
+gulp.task('copy', copyGen);
+
+/**
+ * clean old archives (categories, tags, pagination)
+ */
+export async function cleanOldArchives() {
+  // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
+  const { deployDir } = deployConfig();
+  const archives = join(deployDir, ProjectConfig.archive_dir);
+  if (existsSync(archives)) await del(archives).catch(noop);
+  const categories = join(deployDir, ProjectConfig.category_dir);
+  if (existsSync(categories)) await del(categories).catch(noop);
+  const tags = join(deployDir, ProjectConfig.tag_dir);
+  if (existsSync(tags)) await del(tags).catch(noop);
+}
+
+gulp.task('clean-archives', cleanOldArchives);
 
 function pull() {
   return new Promise((resolve) => {
@@ -230,3 +266,6 @@ export function deployConfig() {
 function workspace(str: string) {
   return toUnix(str).replace(toUnix(process.cwd()), '');
 }
+
+// deploy
+gulp.task('deploy', gulp.series('pull', 'clean-archives', 'copy', 'safelink', 'commit', 'push'));

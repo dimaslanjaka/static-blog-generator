@@ -8,7 +8,7 @@ var gulp_1 = __importDefault(require("gulp"));
 var hexo_util_1 = require("hexo-util");
 var upath_1 = require("upath");
 require("./gulp.clean");
-var gulp_deploy_1 = require("./gulp.deploy");
+require("./gulp.deploy");
 require("./gulp.feed");
 require("./gulp.post");
 require("./gulp.safelink");
@@ -38,17 +38,3 @@ function commitProject(finish) {
 }
 exports.commitProject = commitProject;
 gulp_1.default.task('project-commit', commitProject);
-var copyGen = function () {
-    var deployDir = (0, gulp_deploy_1.deployConfig)().deployDir;
-    return gulp_1.default
-        .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
-        cwd: (0, upath_1.join)(process.cwd(), 'public'),
-        dot: true
-    })
-        .pipe(gulp_1.default.dest(deployDir))
-        .on('error', console.trace);
-};
-// copy public to .deploy_git
-gulp_1.default.task('copy', copyGen);
-// deploy
-gulp_1.default.task('deploy', gulp_1.default.series('pull', 'copy', 'safelink', 'commit', 'push'));
