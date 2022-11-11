@@ -178,13 +178,6 @@ export function copyAllPosts() {
   );
 }
 
-export function gulpDebug() {
-  return through2.obj(function (file, _enc, cb) {
-    console.log(file.path);
-    cb(null, file);
-  });
-}
-
 gulp.task('copy-all-post', copyAllPosts);
 gulp.task('copy-all-posts', gulp.series('copy-all-post'));
 gulp.task('watch-post', watchPost);
