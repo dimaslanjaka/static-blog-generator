@@ -34,6 +34,8 @@ export function gulpCached(options: Parameters<typeof persistentCache>[0] = {}) 
     const hasCache = caches.getSync(cacheKey);
     const sha1sum = getShaFile(file.path);
 
+    console.log({ hasCache });
+
     if (!hasCache) {
       caches.setSync(cacheKey, sha1sum);
       return next(null, file);
