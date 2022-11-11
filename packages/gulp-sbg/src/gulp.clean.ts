@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { TaskCallback } from 'undertaker';
 import { join } from 'upath';
-import ProjectConfig, { deployConfig } from './gulp.config';
+import ProjectConfig, { deployDir } from './gulp.config';
 import noop from './utils/noop';
 
 /**
@@ -75,8 +75,6 @@ gulp.task('clean', cleanDb);
  * clean old archives (categories, tags, pagination)
  */
 export function cleanOldArchives(done?: TaskCallback) {
-  // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
-  const { deployDir } = deployConfig();
   const archives = join(deployDir, ProjectConfig.archive_dir);
   const categories = join(deployDir, ProjectConfig.category_dir);
   const tags = join(deployDir, ProjectConfig.tag_dir);

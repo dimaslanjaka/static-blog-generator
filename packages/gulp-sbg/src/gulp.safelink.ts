@@ -2,10 +2,10 @@ import gulp from 'gulp';
 import sf from 'safelinkify';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
-import ProjectConfig, { deployConfig } from './gulp.config';
+import ProjectConfig, { deployDir } from './gulp.config';
 
 const config = ProjectConfig;
-const { deployDir } = deployConfig();
+
 const configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
 const safelink = new sf.safelink({
   // exclude patterns (dont anonymize these patterns)
