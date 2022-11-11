@@ -4,4 +4,4 @@ import './gulp.deploy';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
-export declare function commitProject(finish: TaskCallback): any;
+export declare function commitProject(finish: TaskCallback): void | import("bluebird")<any>;
