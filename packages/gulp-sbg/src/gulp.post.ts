@@ -146,7 +146,10 @@ export function copyAllPosts() {
           // process markdown files
           if (file.extname === '.md') {
             const config = ProjectConfig;
-            const parse = await parsePost(file.path, {
+            const contents = file.contents?.toString() || '';
+            // drop empty body
+            if (contents.trim().length === 0) return callback();
+            const parse = await parsePost(contents, {
               shortcodes: {
                 youtube: true,
                 css: true,
