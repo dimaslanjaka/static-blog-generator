@@ -47,9 +47,9 @@ export function del(path: string) {
     const rmOpt: RmOptions = { recursive: true, force: true };
     if (existsSync(path)) {
       if (statSync(path).isDirectory()) {
-        rmdir(path, rmOpt).then(resolve).catch(noop);
+        rmdir(path, { maxRetries: 10 }).then(resolve).catch(resolve);
       } else {
-        rm(path, rmOpt).then(resolve).catch(noop);
+        rm(path, rmOpt).then(resolve).catch(resolve);
       }
     } else {
       resolve(new Error(path + ' not found'));
