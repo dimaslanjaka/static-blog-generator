@@ -5,7 +5,8 @@ import { persistentCache } from 'persistent-cache';
  * @param file
  * @returns
  */
-export declare function calculateHash(file: string): string;
+export declare function getShaFile(file: string): string | null;
+export declare const md5: (data: string) => string;
 /**
  *
  * @param options
