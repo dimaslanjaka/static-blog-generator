@@ -38,17 +38,19 @@ function gulpCached(options) {
         if (file.isDirectory())
             return next(null, file);
         var cacheKey = (0, exports.md5)(file.path);
-        var hasCache = caches.getSync(cacheKey);
+        var getCache = caches.getSync(cacheKey);
         var sha1sum = getShaFile(file.path);
-        console.log({ hasCache: hasCache });
-        if (!hasCache) {
+        if (!getCache) {
             caches.setSync(cacheKey, sha1sum);
             return next(null, file);
         }
-        else {
-            console.log('cached');
+        else if (sha1sum !== getCache) {
+            return next(null, file);
         }
-        return next(null, file);
+        else {
+            // drop non-modified data
+            return next();
+        }
     });
 }
 exports.gulpCached = gulpCached;

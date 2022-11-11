@@ -137,27 +137,14 @@ exports.cleanDb = cleanDb;
  * @returns
  */
 function del(path) {
-    return new Promise(function (resolve) {
+    return new bluebird_1.default(function (resolve) {
+        var rmOpt = { recursive: true, force: true };
         if ((0, fs_extra_1.existsSync)(path)) {
             if ((0, fs_extra_1.statSync)(path).isDirectory()) {
-                (0, fs_extra_1.readdir)(path, function (err, files) {
-                    if (!err) {
-                        bluebird_1.default.all(files)
-                            .map(function (file) { return (0, upath_1.join)(path, file); })
-                            .map(function (file) {
-                            (0, fs_extra_1.rm)(file, { recursive: true });
-                        })
-                            .then(function () {
-                            (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
-                        });
-                    }
-                    else {
-                        (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
-                    }
-                });
+                (0, fs_extra_1.rmdir)(path, rmOpt).then(resolve).catch(noop_1.default);
             }
             else {
-                (0, fs_extra_1.rm)(path, { recursive: true }).then(resolve).catch(noop_1.default);
+                (0, fs_extra_1.rm)(path, rmOpt).then(resolve).catch(noop_1.default);
             }
         }
         else {
