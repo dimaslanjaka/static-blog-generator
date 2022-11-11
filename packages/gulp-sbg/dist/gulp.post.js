@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpDebug = exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
+exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
 var front_matter_1 = __importDefault(require("front-matter"));
 var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
@@ -227,13 +227,6 @@ function copyAllPosts() {
         .pipe(gulp_1.default.dest(destDir)));
 }
 exports.copyAllPosts = copyAllPosts;
-function gulpDebug() {
-    return through2_1.default.obj(function (file, _enc, cb) {
-        console.log(file.path);
-        cb(null, file);
-    });
-}
-exports.gulpDebug = gulpDebug;
 gulp_1.default.task('copy-all-post', copyAllPosts);
 gulp_1.default.task('copy-all-posts', gulp_1.default.series('copy-all-post'));
 gulp_1.default.task('watch-post', watchPost);

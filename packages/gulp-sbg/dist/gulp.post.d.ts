@@ -18,4 +18,3 @@ export declare const copySinglePost: (identifier: string, callback?: CallableFun
  */
 export declare function updatePost(): import("stream").Transform;
 export declare function copyAllPosts(): NodeJS.ReadWriteStream;
-export declare function gulpDebug(): import("stream").Transform;
