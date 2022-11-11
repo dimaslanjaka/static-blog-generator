@@ -31,17 +31,17 @@ export function gulpCached(options: Parameters<typeof persistentCache>[0] = {}) 
     if (file.isDirectory()) return next(null, file);
 
     const cacheKey = md5(file.path);
-    const hasCache = caches.getSync(cacheKey);
+    const getCache = caches.getSync(cacheKey);
     const sha1sum = getShaFile(file.path);
 
-    console.log({ hasCache });
-
-    if (!hasCache) {
+    if (!getCache) {
       caches.setSync(cacheKey, sha1sum);
       return next(null, file);
+    } else if (sha1sum !== getCache) {
+      return next(null, file);
     } else {
-      console.log('cached');
+      // drop non-modified data
+      return next();
     }
-    return next(null, file);
   });
 }
