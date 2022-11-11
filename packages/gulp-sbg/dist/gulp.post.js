@@ -182,15 +182,20 @@ function copyAllPosts() {
         .pipe((0, gulp_cache_1.gulpCached)())
         //.pipe(gulpDebug())
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
-        var config, parse, build;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var config, contents, parse, build;
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
                     if (file.isNull())
                         return [2 /*return*/, callback()];
                     if (!(file.extname === '.md')) return [3 /*break*/, 2];
                     config = gulp_config_1.default;
-                    return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(file.path, {
+                    contents = ((_a = file.contents) === null || _a === void 0 ? void 0 : _a.toString()) || '';
+                    // drop empty body
+                    if (contents.trim().length === 0)
+                        return [2 /*return*/, callback()];
+                    return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(contents, {
                             shortcodes: {
                                 youtube: true,
                                 css: true,
@@ -208,7 +213,7 @@ function copyAllPosts() {
                             sourceFile: file.path
                         })];
                 case 1:
-                    parse = _a.sent();
+                    parse = _b.sent();
                     if (parse && parse.metadata) {
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         file.contents = Buffer.from(build);
@@ -217,7 +222,7 @@ function copyAllPosts() {
                     else {
                         console.log('cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                     }
-                    _a.label = 2;
+                    _b.label = 2;
                 case 2:
                     callback(null, file);
                     return [2 /*return*/];
