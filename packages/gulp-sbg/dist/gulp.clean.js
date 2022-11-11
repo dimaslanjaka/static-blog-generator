@@ -171,13 +171,11 @@ gulp_1.default.task('clean', cleanDb);
  * clean old archives (categories, tags, pagination)
  */
 function cleanOldArchives(done) {
-    // const publicDir = join(process.cwd(), ProjectConfig.public_dir);
-    var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
-    var archives = (0, upath_1.join)(deployDir, gulp_config_1.default.archive_dir);
-    var categories = (0, upath_1.join)(deployDir, gulp_config_1.default.category_dir);
-    var tags = (0, upath_1.join)(deployDir, gulp_config_1.default.tag_dir);
+    var archives = (0, upath_1.join)(gulp_config_1.deployDir, gulp_config_1.default.archive_dir);
+    var categories = (0, upath_1.join)(gulp_config_1.deployDir, gulp_config_1.default.category_dir);
+    var tags = (0, upath_1.join)(gulp_config_1.deployDir, gulp_config_1.default.tag_dir);
     var folders = [archives, tags, categories]
-        .concat(gulp_config_1.default.language.map(function (str) { return (0, upath_1.join)(deployDir, str); }))
+        .concat(gulp_config_1.default.language.map(function (str) { return (0, upath_1.join)(gulp_config_1.deployDir, str); }))
         .filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
     var promises = [];
     for (var i = 0; i < folders.length; i++) {
