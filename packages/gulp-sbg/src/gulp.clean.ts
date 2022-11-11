@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { existsSync, readdir, rm, statSync } from 'fs-extra';
+import { existsSync, rm, rmdir, RmOptions, statSync } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { TaskCallback } from 'undertaker';
@@ -43,25 +43,13 @@ export async function cleanDb() {
  * @returns
  */
 export function del(path: string) {
-  return new Promise((resolve) => {
+  return new Bluebird((resolve) => {
+    const rmOpt: RmOptions = { recursive: true, force: true };
     if (existsSync(path)) {
       if (statSync(path).isDirectory()) {
-        readdir(path, function (err, files) {
-          if (!err) {
-            Bluebird.all(files)
-              .map((file) => join(path, file))
-              .map((file) => {
-                rm(file, { recursive: true });
-              })
-              .then(() => {
-                rm(path, { recursive: true }).then(resolve).catch(noop);
-              });
-          } else {
-            rm(path, { recursive: true }).then(resolve).catch(noop);
-          }
-        });
+        rmdir(path, rmOpt).then(resolve).catch(noop);
       } else {
-        rm(path, { recursive: true }).then(resolve).catch(noop);
+        rm(path, rmOpt).then(resolve).catch(noop);
       }
     } else {
       resolve(new Error(path + ' not found'));

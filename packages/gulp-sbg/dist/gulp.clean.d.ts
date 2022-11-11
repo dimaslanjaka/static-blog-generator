@@ -9,7 +9,7 @@ export declare function cleanDb(): Promise<void>;
  * @param path
  * @returns
  */
-export declare function del(path: string): Promise<unknown>;
+export declare function del(path: string): Bluebird<unknown>;
 /**
  * clean old archives (categories, tags, pagination)
  */
