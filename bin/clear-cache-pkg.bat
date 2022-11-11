@@ -3,4 +3,4 @@
 SETLOCAL
 
 rem remove folder package from node_modules
-del /F /Q %*
+del /F /Q node_modules\%*
