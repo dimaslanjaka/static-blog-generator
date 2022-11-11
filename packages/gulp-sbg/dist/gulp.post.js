@@ -234,5 +234,7 @@ function copyAllPosts() {
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('copy-all-post', copyAllPosts);
 gulp_1.default.task('copy-all-posts', gulp_1.default.series('copy-all-post'));
+gulp_1.default.task('copy-posts', gulp_1.default.series('copy-all-post'));
+gulp_1.default.task('copy-post', gulp_1.default.series('copy-all-post'));
 gulp_1.default.task('watch-post', watchPost);
 gulp_1.default.task('watch-posts', watchPost);
