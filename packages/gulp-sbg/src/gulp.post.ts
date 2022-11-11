@@ -186,5 +186,6 @@ export function gulpDebug() {
 }
 
 gulp.task('copy-all-post', copyAllPosts);
+gulp.task('copy-all-posts', gulp.series('copy-all-post'));
 gulp.task('watch-post', watchPost);
 gulp.task('watch-posts', watchPost);
