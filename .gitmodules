@@ -8,5 +8,7 @@
 [submodule "packages/hexo-generator-redirect"]
 	path = packages/hexo-generator-redirect
 	url = https://github.com/dimaslanjaka/hexo-generator-redirect
-
-
+[submodule "packages/hexo-generator-i18n"]
+	path = packages/hexo-generator-i18n
+	url = https://github.com/dimaslanjaka/hexo-generator-i18n.git
+	branch = optimize
