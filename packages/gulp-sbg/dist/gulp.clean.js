@@ -141,10 +141,10 @@ function del(path) {
         var rmOpt = { recursive: true, force: true };
         if ((0, fs_extra_1.existsSync)(path)) {
             if ((0, fs_extra_1.statSync)(path).isDirectory()) {
-                (0, fs_extra_1.rmdir)(path, rmOpt).then(resolve).catch(noop_1.default);
+                (0, fs_extra_1.rmdir)(path, { maxRetries: 10 }).then(resolve).catch(resolve);
             }
             else {
-                (0, fs_extra_1.rm)(path, rmOpt).then(resolve).catch(noop_1.default);
+                (0, fs_extra_1.rm)(path, rmOpt).then(resolve).catch(resolve);
             }
         }
         else {
