@@ -39,12 +39,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
+exports.gulpDebug = exports.gulpCached = exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
 var front_matter_1 = __importDefault(require("front-matter"));
 var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_post_parser_1 = require("hexo-post-parser");
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
+var persistent_cache_1 = __importDefault(require("persistent-cache"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
@@ -174,8 +175,11 @@ function copyAllPosts() {
     var _this = this;
     var excludes = Array.isArray(gulp_config_1.default.exclude) ? gulp_config_1.default.exclude : [];
     excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-    return gulp_1.default
-        .src('**/*', { cwd: sourceDir, ignore: excludes })
+    console.log({ sourceDir: sourceDir });
+    return (gulp_1.default
+        .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
+        //.pipe(gulpCached())
+        .pipe(gulpDebug())
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
         var config, parse, build;
         return __generator(this, function (_a) {
@@ -183,6 +187,7 @@ function copyAllPosts() {
                 case 0:
                     if (file.isNull())
                         return [2 /*return*/, callback()];
+                    console.log({ ext: file.extname });
                     if (!(file.extname === '.md')) return [3 /*break*/, 2];
                     config = gulp_config_1.default;
                     return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(file.path, {
@@ -219,9 +224,30 @@ function copyAllPosts() {
             }
         });
     }); }))
-        .pipe(gulp_1.default.dest(destDir));
+        .pipe(gulp_1.default.dest(destDir)));
 }
 exports.copyAllPosts = copyAllPosts;
+/**
+ *
+ * @param options
+ * @returns
+ */
+function gulpCached(options) {
+    if (options === void 0) { options = {}; }
+    var caches = (0, persistent_cache_1.default)(options);
+    return through2_1.default.obj(function (file, _enc, next) {
+        console.log('cache', caches.getSync(file.path));
+        return next(null, file);
+    });
+}
+exports.gulpCached = gulpCached;
+function gulpDebug() {
+    return through2_1.default.obj(function (file, _enc, cb) {
+        console.log(file.path);
+        cb(null, file);
+    });
+}
+exports.gulpDebug = gulpDebug;
 gulp_1.default.task('copy-all-post', copyAllPosts);
 gulp_1.default.task('watch-post', watchPost);
 gulp_1.default.task('watch-posts', watchPost);
