@@ -183,5 +183,7 @@ export function copyAllPosts() {
 
 gulp.task('copy-all-post', copyAllPosts);
 gulp.task('copy-all-posts', gulp.series('copy-all-post'));
+gulp.task('copy-posts', gulp.series('copy-all-post'));
+gulp.task('copy-post', gulp.series('copy-all-post'));
 gulp.task('watch-post', watchPost);
 gulp.task('watch-posts', watchPost);
