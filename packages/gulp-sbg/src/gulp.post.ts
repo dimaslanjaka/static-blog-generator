@@ -3,10 +3,10 @@ import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
-import PersistentCache from 'persistent-cache';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { extname, join, toUnix } from 'upath';
+import { gulpCached } from './gulp-utils/gulp.cache';
 import ProjectConfig from './gulp.config';
 import scheduler from './utils/scheduler';
 
@@ -138,8 +138,8 @@ export function copyAllPosts() {
   return (
     gulp
       .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
-      //.pipe(gulpCached())
-      .pipe(gulpDebug())
+      .pipe(gulpCached())
+      //.pipe(gulpDebug())
       .pipe(
         through2.obj(async (file, _enc, callback) => {
           if (file.isNull()) return callback();
@@ -176,20 +176,6 @@ export function copyAllPosts() {
       )
       .pipe(gulp.dest(destDir))
   );
-}
-
-/**
- *
- * @param options
- * @returns
- */
-export function gulpCached(options: Parameters<typeof PersistentCache>[0] = {}) {
-  const caches = PersistentCache(options);
-  return through2.obj(function (file, _enc, next) {
-    console.log('cache', caches.getSync(file.path));
-
-    return next(null, file);
-  });
 }
 
 export function gulpDebug() {
