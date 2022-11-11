@@ -175,7 +175,8 @@ function copyAllPosts() {
     var _this = this;
     var excludes = Array.isArray(gulp_config_1.default.exclude) ? gulp_config_1.default.exclude : [];
     excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-    console.log({ sourceDir: sourceDir });
+    console.log('cwd', (0, upath_1.toUnix)(process.cwd()));
+    console.log('copying source posts from', sourceDir.replace((0, upath_1.toUnix)(process.cwd()), ''));
     return (gulp_1.default
         .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
         //.pipe(gulpCached())
@@ -187,7 +188,6 @@ function copyAllPosts() {
                 case 0:
                     if (file.isNull())
                         return [2 /*return*/, callback()];
-                    console.log({ ext: file.extname });
                     if (!(file.extname === '.md')) return [3 /*break*/, 2];
                     config = gulp_config_1.default;
                     return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(file.path, {

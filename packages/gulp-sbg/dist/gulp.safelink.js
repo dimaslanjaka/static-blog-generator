@@ -77,7 +77,6 @@ var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
 var gulp_config_1 = __importStar(require("./gulp.config"));
 var config = gulp_config_1.default;
-var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
 var configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
 var safelink = new safelinkify_1.default.safelink({
     // exclude patterns (dont anonymize these patterns)
@@ -104,7 +103,7 @@ function safelinkProcess(_done) {
     return new Promise(function (resolve) {
         gulp_1.default
             .src(['**/*.{html,htm}'], {
-            cwd: deployDir,
+            cwd: gulp_config_1.deployDir,
             ignore: [
                 // skip react project
                 //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
@@ -141,7 +140,7 @@ function safelinkProcess(_done) {
                 }
             });
         }); }))
-            .pipe(gulp_1.default.dest(deployDir))
+            .pipe(gulp_1.default.dest(gulp_config_1.deployDir))
             .once('end', function () { return resolve(null); });
     });
 }
