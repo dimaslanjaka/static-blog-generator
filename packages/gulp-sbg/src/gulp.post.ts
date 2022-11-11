@@ -3,6 +3,7 @@ import { writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
+import PersistentCache from 'persistent-cache';
 import through2 from 'through2';
 import { TaskCallback } from 'undertaker';
 import { extname, join, toUnix } from 'upath';
@@ -132,43 +133,70 @@ export function updatePost() {
 export function copyAllPosts() {
   const excludes = Array.isArray(ProjectConfig.exclude) ? ProjectConfig.exclude : [];
   excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-  return gulp
-    .src('**/*', { cwd: sourceDir, ignore: excludes })
-    .pipe(
-      through2.obj(async (file, _enc, callback) => {
-        if (file.isNull()) return callback();
-        // process markdown files
-        if (file.extname === '.md') {
-          const config = ProjectConfig;
-          const parse = await parsePost(file.path, {
-            shortcodes: {
-              youtube: true,
-              css: true,
-              include: true,
-              link: true,
-              now: true,
-              script: true,
-              text: true,
-              codeblock: true
-            },
-            cache: false,
-            config: config as any,
-            formatDate: true,
-            fix: true,
-            sourceFile: file.path
-          });
-          if (parse && parse.metadata) {
-            const build = buildPost(parse);
-            file.contents = Buffer.from(build);
-            return callback(null, file);
-          } else {
-            console.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+  console.log({ sourceDir });
+  return (
+    gulp
+      .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
+      //.pipe(gulpCached())
+      .pipe(gulpDebug())
+      .pipe(
+        through2.obj(async (file, _enc, callback) => {
+          if (file.isNull()) return callback();
+          console.log({ ext: file.extname });
+          // process markdown files
+          if (file.extname === '.md') {
+            const config = ProjectConfig;
+            const parse = await parsePost(file.path, {
+              shortcodes: {
+                youtube: true,
+                css: true,
+                include: true,
+                link: true,
+                now: true,
+                script: true,
+                text: true,
+                codeblock: true
+              },
+              cache: false,
+              config: config as any,
+              formatDate: true,
+              fix: true,
+              sourceFile: file.path
+            });
+            if (parse && parse.metadata) {
+              const build = buildPost(parse);
+              file.contents = Buffer.from(build);
+              return callback(null, file);
+            } else {
+              console.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+            }
           }
-        }
-        callback(null, file);
-      })
-    )
-    .pipe(gulp.dest(destDir));
+          callback(null, file);
+        })
+      )
+      .pipe(gulp.dest(destDir))
+  );
+}
+
+/**
+ *
+ * @param options
+ * @returns
+ */
+export function gulpCached(options: Parameters<typeof PersistentCache>[0] = {}) {
+  const caches = PersistentCache(options);
+  return through2.obj(function (file, _enc, next) {
+    console.log('cache', caches.getSync(file.path));
+
+    return next(null, file);
+  });
+}
+
+export function gulpDebug() {
+  return through2.obj(function (file, _enc, cb) {
+    console.log(file.path);
+    cb(null, file);
+  });
 }
 
 gulp.task('copy-all-post', copyAllPosts);
