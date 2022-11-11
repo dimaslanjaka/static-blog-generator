@@ -133,7 +133,8 @@ export function updatePost() {
 export function copyAllPosts() {
   const excludes = Array.isArray(ProjectConfig.exclude) ? ProjectConfig.exclude : [];
   excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-  console.log({ sourceDir });
+  console.log('cwd', toUnix(process.cwd()));
+  console.log('copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
   return (
     gulp
       .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
@@ -142,7 +143,6 @@ export function copyAllPosts() {
       .pipe(
         through2.obj(async (file, _enc, callback) => {
           if (file.isNull()) return callback();
-          console.log({ ext: file.extname });
           // process markdown files
           if (file.extname === '.md') {
             const config = ProjectConfig;

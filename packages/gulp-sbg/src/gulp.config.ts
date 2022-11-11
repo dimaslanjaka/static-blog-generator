@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
-import { gitCommandHelper } from 'git-command-helper';
+import git from 'git-command-helper';
 import { join } from 'path';
 import yaml from 'yaml';
 
@@ -19,10 +19,10 @@ export interface ProjConf extends importConfig {
 const ProjectConfig = parse as ProjConf;
 
 export default ProjectConfig;
+export const deployDir = join(process.cwd(), '.deploy_git');
 export function deployConfig() {
-  const deployDir = join(process.cwd(), '.deploy_git');
   const config = ProjectConfig;
-  const github = new gitCommandHelper(deployDir);
+  const github = new git(deployDir);
   return { deployDir, config, github };
 }
 
