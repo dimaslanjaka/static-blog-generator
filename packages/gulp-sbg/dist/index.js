@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.deployConfig = exports.ProjectConfig = exports.gulpDebug = exports.gulpCached = void 0;
 require("./gulpfile");
+var noop_1 = __importDefault(require("./utils/noop"));
+exports.noop = noop_1.default;
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
 Object.defineProperty(exports, "gulpCached", { enumerable: true, get: function () { return gulp_cache_1.gulpCached; } });
@@ -27,6 +29,4 @@ var array_1 = require("./utils/array");
 Object.defineProperty(exports, "array_random", { enumerable: true, get: function () { return array_1.array_random; } });
 Object.defineProperty(exports, "array_remove_empty", { enumerable: true, get: function () { return array_1.array_remove_empty; } });
 Object.defineProperty(exports, "array_unique", { enumerable: true, get: function () { return array_1.array_unique; } });
-var noop_1 = require("./utils/noop");
-Object.defineProperty(exports, "noop", { enumerable: true, get: function () { return __importDefault(noop_1).default; } });
 scheduler_1.default.register();
