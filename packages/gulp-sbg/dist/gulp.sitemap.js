@@ -209,14 +209,6 @@ function hexoGenerateSitemap() {
                     if (b.updated && a.updated)
                         return b.updated.toDate().getTime() - a.updated.toDate().getTime();
                     return 0;
-                })
-                    .map(function (post) {
-                    var url = post.permalink;
-                    // remove broken hexo lang shortcode
-                    if (url.includes(':lang/'))
-                        url = url.replace('/:lang/', '/');
-                    post.permalink = url;
-                    return post;
                 });
                 if (posts.length <= 0) {
                     return resolve();
