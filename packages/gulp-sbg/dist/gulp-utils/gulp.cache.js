@@ -25,13 +25,13 @@ exports.getShaFile = getShaFile;
 var md5 = function (data) { return crypto_1.default.createHash('md5').update(data).digest('hex'); };
 exports.md5 = md5;
 /**
- *
+ * * [source idea](https://github.com/gulp-community/gulp-cached/blob/8e8d13cb07b17113ff94700e87f136eeaa1f1340/index.js#L35-L44)
  * @param options
  * @returns
  */
 function gulpCached(options) {
     if (options === void 0) { options = {}; }
-    options = Object.assign(options, { name: 'gulp-cached', base: (0, upath_1.join)(process.cwd(), 'tmp') });
+    options = Object.assign(options, { name: 'gulp-cached', base: (0, upath_1.join)(process.cwd(), 'tmp'), prefix: '' });
     var caches = (0, persistent_cache_1.persistentCache)(options);
     return through2_1.default.obj(function (file, _enc, next) {
         // skip directory
@@ -42,9 +42,10 @@ function gulpCached(options) {
         var sha1sum = getShaFile(file.path);
         if (!getCache || sha1sum !== getCache) {
             caches.setSync(cacheKey, sha1sum);
+            // push modified file
             if (typeof this.push === 'function')
                 this.push(file);
-            return next(null, file);
+            return next();
         }
         else {
             // drop non-modified data
