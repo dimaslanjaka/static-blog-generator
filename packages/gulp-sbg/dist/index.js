@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.deployConfig = exports.ProjectConfig = exports.gulpDebug = exports.gulpCached = void 0;
+exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.deployConfig = exports.ProjectConfig = exports.deleteDir = exports.del = exports.gulpDebug = exports.gulpCached = void 0;
 require("./gulpfile");
 var noop_1 = __importDefault(require("./utils/noop"));
 exports.noop = noop_1.default;
@@ -12,6 +12,9 @@ var gulp_cache_1 = require("./gulp-utils/gulp.cache");
 Object.defineProperty(exports, "gulpCached", { enumerable: true, get: function () { return gulp_cache_1.gulpCached; } });
 var gulp_debug_1 = require("./gulp-utils/gulp.debug");
 Object.defineProperty(exports, "gulpDebug", { enumerable: true, get: function () { return gulp_debug_1.gulpDebug; } });
+var gulp_clean_1 = require("./gulp.clean");
+Object.defineProperty(exports, "del", { enumerable: true, get: function () { return gulp_clean_1.del; } });
+Object.defineProperty(exports, "deleteDir", { enumerable: true, get: function () { return gulp_clean_1.del; } });
 var gulp_config_1 = require("./gulp.config");
 Object.defineProperty(exports, "ProjectConfig", { enumerable: true, get: function () { return __importDefault(gulp_config_1).default; } });
 Object.defineProperty(exports, "deployConfig", { enumerable: true, get: function () { return gulp_config_1.deployConfig; } });
