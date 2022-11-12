@@ -18,13 +18,17 @@ export function getShaFile(file: string) {
 
 export const md5 = (data: string) => crypto.createHash('md5').update(data).digest('hex');
 
+export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
+  prefix?: string;
+};
+
 /**
- *
+ * * [source idea](https://github.com/gulp-community/gulp-cached/blob/8e8d13cb07b17113ff94700e87f136eeaa1f1340/index.js#L35-L44)
  * @param options
  * @returns
  */
-export function gulpCached(options: Parameters<typeof persistentCache>[0] = {}) {
-  options = Object.assign(options, { name: 'gulp-cached', base: join(process.cwd(), 'tmp') });
+export function gulpCached(options: gulpCachedOpt = {}) {
+  options = Object.assign(options, { name: 'gulp-cached', base: join(process.cwd(), 'tmp'), prefix: '' });
   const caches = persistentCache(options);
   return through2.obj(function (file, _enc, next) {
     // skip directory
@@ -36,8 +40,9 @@ export function gulpCached(options: Parameters<typeof persistentCache>[0] = {}) 
 
     if (!getCache || sha1sum !== getCache) {
       caches.setSync(cacheKey, sha1sum);
+      // push modified file
       if (typeof this.push === 'function') this.push(file);
-      return next(null, file);
+      return next();
     } else {
       // drop non-modified data
       return next();
