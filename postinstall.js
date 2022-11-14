@@ -18,7 +18,10 @@ const { summon } = require('./preinstall.js');
         rmSync(nodeModule, { recursive: true });
       }
       */
-      await summon('npm', ['install', version], { cwd: __dirname });
+      await summon('npm', ['install', version], {
+        cwd: __dirname,
+        stdio: 'inherit'
+      });
     }
   }
 })();
