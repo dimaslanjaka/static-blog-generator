@@ -1,13 +1,29 @@
 const { spawn } = require('cross-spawn');
+const { existsSync, rmSync } = require('fs');
+const { join } = require('path');
+const pjson = require('./package.json');
 
 summon(
   'git',
   ['submodule', 'sync', '--recursive'],
-  spawnOpt({ cwd: __dirname })
-);
+  spawnOpt({ cwd: __dirname, stdio: 'inherit' })
+).then(() => {
+  // @todo clear cache local packages
+  const packages = Object.assign(pjson.dependencies, pjson.devDependencies);
+  for (const pkgname in packages) {
+    /**
+     * @type {string}
+     */
+    const version = packages[pkgname];
+    if (version.startsWith('file:')) {
+      const nodeModule = join(__dirname, 'node_modules', pkgname);
+      if (existsSync(nodeModule)) rmSync(nodeModule, { recursive: true });
+    }
+  }
+});
 
 /**
- *
+ * spawn command prompt
  * @param {string} cmd
  * @param {string[]} args
  * @param {Parameters<typeof spawn>[2]} opt
