@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.trycatchnoop = void 0;
+exports.trycatchnoop = exports.noop = void 0;
 /**
  * no operations
  * @param _args
@@ -13,6 +13,7 @@ function noop() {
     }
     return;
 }
+exports.noop = noop;
 exports.default = noop;
 /**
  * try catch nooperation

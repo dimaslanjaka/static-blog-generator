@@ -10,7 +10,7 @@ const { summon } = require('./preinstall.js');
      * @type {string}
      */
     const version = packages[pkgname];
-    if (version.startsWith('file:')) {
+    if (/^((file|github):|(git|ssh)\+|http)/.test(version)) {
       /*
       const nodeModule = join(__dirname, 'node_modules', pkgname);
       if (existsSync(nodeModule)) {
