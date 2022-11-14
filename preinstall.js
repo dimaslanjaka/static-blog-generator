@@ -1,14 +1,14 @@
 const { spawn } = require('cross-spawn');
 
 if (require.main === module) {
-  //console.log('called directly');
+  // console.log('called directly');
   summon(
     'git',
     ['submodule', 'sync', '--recursive'],
     spawnOpt({ cwd: __dirname, stdio: 'inherit' })
   );
 } else {
-  //console.log('required as a module');
+  // console.log('required as a module');
 }
 
 /**
