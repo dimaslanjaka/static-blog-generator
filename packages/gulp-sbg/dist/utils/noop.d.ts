@@ -3,7 +3,8 @@
  * @param _args
  * @returns
  */
-export default function noop(..._args: any[]): void;
+export declare function noop(..._args: any[]): void;
+export default noop;
 interface FN extends CallableFunction {
     then: CallableFunction;
     catch: CallableFunction;
@@ -14,4 +15,3 @@ interface FN extends CallableFunction {
  * @returns
  */
 export declare function trycatchnoop(fn: FN): any;
-export {};

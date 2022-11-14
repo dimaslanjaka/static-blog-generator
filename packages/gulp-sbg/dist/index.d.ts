@@ -1,5 +1,4 @@
 import './gulpfile';
-import noop from './utils/noop';
 export { gulpCached } from './gulp-utils/gulp.cache';
 export { gulpDebug } from './gulp-utils/gulp.debug';
 export { del, del as deleteDir } from './gulp.clean';
@@ -8,4 +7,4 @@ export { copyAllPosts, copySinglePost, updatePost as copyPost, watchPost } from 
 export { generateSitemap, hexoGenerateSitemap } from './gulp.sitemap';
 export { commitProject } from './gulpfile';
 export { array_random, array_remove_empty, array_unique } from './utils/array';
-export { noop };
+export { noop, trycatchnoop } from './utils/noop';
