@@ -3,9 +3,11 @@
  * @param _args
  * @returns
  */
-export default function noop(..._args: any[]) {
+export function noop(..._args: any[]) {
   return;
 }
+
+export default noop;
 
 interface FN extends CallableFunction {
   then: CallableFunction;
