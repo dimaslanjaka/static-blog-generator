@@ -10,6 +10,7 @@ const { summon } = require('./preinstall.js');
      * @type {string}
      */
     const version = packages[pkgname];
+    // installing local and monorepo
     if (/^((file|github):|(git|ssh)\+|http)/.test(version)) {
       /*
       const nodeModule = join(__dirname, 'node_modules', pkgname);
