@@ -12,7 +12,8 @@
     "update": "npx npm-check-updates -u -x hexo && npm install --cache tmp/npm",
     "patch": "npm version patch",
     "build": "node build.js",
-    "copy": "node test/copy.js"
+    "copy": "node test/copy.js",
+    "deploy": "node deploy.js"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.1",
