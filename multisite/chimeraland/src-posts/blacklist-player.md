@@ -1,10 +1,9 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-10T09:34:19+07:00
+updated: 2022-11-19T14:46:24+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
-full_url: https://www.webmanajemen.com/chimeraland/blacklist-player.html
 tags: ["Chimeraland", "Blacklist", "Player"]
 categories: ["Games", "Chimeraland"]
 thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/3e/The_Blacklist_logo.svg
@@ -22,7 +21,8 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/3e/The_Blacklist_log
 | NesaMiko | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
 | Tusboll | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi ||
+| Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
+| Suvi | SCAMMER MAP ILLUS 16 as LEADER PARTY |
 
 ## Daftar player tukang roll drop item
 
