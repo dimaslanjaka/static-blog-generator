@@ -84,10 +84,14 @@
       const baseURL = new URL('{{ config.url }}')
       const results = Array.from(root.children).map(el => {
         baseURL.pathname = el.querySelector('url').innerHTML.trim().replace(/^\/+/, '/')
+        const title = el.querySelector('title').innerHTML.trim()
         return {
-          title: el.querySelector('title').innerHTML.trim(),
+          title,
           content: el.querySelector('content').innerHTML.trim(),
-          url: baseURL.toString()
+          url: baseURL.toString(),
+          card: document.querySelector(
+            'div.card[title="' + title + '"]'
+          )
         }
       })
 
@@ -99,9 +103,7 @@
       }
 
       results.forEach(item => {
-        const card = document.querySelector(
-          'div[title="' + item.title + '"]'
-        )
+        const card = item.card
         if (card) {
           // supress image error
           const checkImageBroken = function () {
