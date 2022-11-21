@@ -8,14 +8,14 @@ import PluginError from 'plugin-error';
 import through2 from 'through2';
 const pluginName = 'gulp-dom';
 
-export type cb = (this: Document, path: string) => any;
+export type GulpDomCallback = (this: Document, path: string) => any;
 
 /**
  * gulpDom
  * @param mutator callback
  * @returns
  */
-export default function gulpDom(mutator: cb) {
+export default function gulpDom(mutator: GulpDomCallback) {
   const stream = through2.obj(function (file, _enc, callback) {
     if (file.isNull()) {
       return callback(null, file);
