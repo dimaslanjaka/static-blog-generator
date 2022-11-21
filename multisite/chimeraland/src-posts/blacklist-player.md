@@ -1,7 +1,7 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-19T14:46:24+07:00
+updated: 2022-11-21T22:50:30+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 tags: ["Chimeraland", "Blacklist", "Player"]
@@ -23,6 +23,7 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/3e/The_Blacklist_log
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Suvi | SCAMMER MAP ILLUS 16 as LEADER PARTY |
+| PrimalHunter | SCAMMER MAP ILLUS 16 |
 
 ## Daftar player tukang roll drop item
 
@@ -30,6 +31,7 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/3e/The_Blacklist_log
 | :--- | :--- |
 | Corleonx | Roll drops items |
 | Shelby | Roll drops items |
+| PrimalHunter | Roll drops items |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
