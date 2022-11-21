@@ -1,7 +1,7 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-19T14:46:24+07:00
+updated: 2022-11-21T22:50:30+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 tags: ["Chimeraland", "Blacklist", "Player"]
