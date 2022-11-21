@@ -19,7 +19,7 @@
   "scripts": {
     "pretest": "jshint ./lib/*.js ./test/*.js",
     "test": "mocha ./test/*.js --reporter spec",
-    "build": "tsc",
+    "build": "rimraf lib && tsc",
     "postbuild": "node packer.js",
     "update": "npx npm-check-updates -u"
   },
@@ -31,24 +31,36 @@
     "html"
   ],
   "author": "Trygve Lie <github@trygve-lie.com>",
+  "contributors": [
+    {
+      "email": "dimaslanjaka@gmail.com",
+      "name": "Dimas Lanjaka",
+      "url": "https://www.webmanajemen.com"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
-    "@types/jsdom": "^20.0.0",
+    "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.9",
     "@types/through2": "git+https://github.com/dimaslanjaka/nodejs-package-types#through2",
-    "chai": "4.3.6",
+    "chai": "4.3.7",
+    "depcheck": "^1.4.3",
     "gulp": "4.0.2",
     "gulp-concat": "^2.6.1",
-    "jshint": "2.13.5",
+    "jshint": "2.13.6",
     "mocha": "10.1.0",
+    "npkill": "^0.10.0",
+    "npm-check-updates": "^16.4.1",
+    "npm-run-all": "^4.1.5",
     "request": "2.88.0",
-    "typescript": "^4.8.4",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3",
     "vinyl": "^3.0.0",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
   },
   "dependencies": {
-    "jsdom": "^20.0.2",
+    "jsdom": "^20.0.3",
     "plugin-error": "2.0.0",
     "through2": "^4.0.2"
   }
