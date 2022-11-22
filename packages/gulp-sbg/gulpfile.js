@@ -10,7 +10,7 @@ const copy = function () {
   );
 };
 
-const docs = typedocGenerator;
+const docs = typedocGenerator.run;
 
 function tsc(done) {
   const child = spawn('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' });
@@ -19,5 +19,6 @@ function tsc(done) {
 
 exports.copy = copy;
 exports.docs = docs;
+exports.watch = typedocGenerator.watch;
 exports.tsc = tsc;
 exports.default = GulpClient.series(tsc, docs);
