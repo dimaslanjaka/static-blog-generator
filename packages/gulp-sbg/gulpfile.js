@@ -7,13 +7,13 @@ const { default: git } = require('git-command-helper');
 const { mkdirSync, existsSync } = require('fs');
 
 // copy non-javascript assets from src folder
-exports.copy = function () {
+const copy = function () {
   return GulpClient.src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] }).pipe(
     GulpClient.dest(join(__dirname, 'dist'))
   );
 };
 
-exports.docs = async function () {
+const docs = async function () {
   const outDir = join(__dirname, 'docs');
   if (!existsSync(join(outDir, '.git'))) mkdirSync(join(outDir, '.git'));
 
@@ -46,6 +46,10 @@ exports.docs = async function () {
     //
   }
 };
+
+exports.copy = copy;
+exports.docs = docs;
+exports.default = GulpClient.series(copy, docs);
 
 function noop() {
   //
