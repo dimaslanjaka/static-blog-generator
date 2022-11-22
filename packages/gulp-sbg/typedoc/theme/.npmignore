@@ -1,9 +1,0 @@
-.sass-cache/
-.tscache/
-git-presubmit-linter/
-resources/
-scripts/
-test/
-cloudbuild.yaml
-tslint.json
-*.tgz
