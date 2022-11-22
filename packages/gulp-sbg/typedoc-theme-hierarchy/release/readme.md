@@ -17,4 +17,4 @@ npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/pack
 ```
 
 ## URL Parts Explanations
-> https://github.com/&lt;github-username&gt;/&lt;github-repo-name&gt;/raw/&lt;github-branch-name&gt;/&lt;path-to-file-with-extension&gt;
+> https://github.com/&lt;github-username>/&lt;github-repo-name>/raw/&lt;github-branch-name>/&lt;path-to-file-with-extension>
