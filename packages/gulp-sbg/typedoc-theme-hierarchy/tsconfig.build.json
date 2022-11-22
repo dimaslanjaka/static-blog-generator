@@ -1,10 +1,13 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "dist",
     "declarationDir": "dist",
-    "composite": true
+    "composite": true,
+    "noEmit": false
   },
-  "include": ["src/**/*.*"]
+  "include": [
+    "src"
+  ]
 }
