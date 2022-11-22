@@ -1,4 +1,5 @@
 # Release Tarball
+
 ## Get URL of Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
@@ -10,3 +11,10 @@
 ```bash
 npm i https://....url-tgz
 ```
+for example
+```bash
+npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-sbg/release/gulp-sbg.tgz
+```
+
+## URL Parts Explanations
+> https://github.com/<github-username>/<github-repo-name>/raw/<github-branch-name>/<path-to-file-with-extension>
