@@ -19,7 +19,9 @@
     "url": "https://github.com/DiFuks"
   },
   "scripts": {
-    "build": "rimraf dist && webpack && tsc --project tsconfig.build.json",
+    "prebuild": "rimraf dist",
+    "build": "webpack",
+    "postbuild": "tsc --project tsconfig.build.json",
     "lint": "eslint \"./**/*.{ts,tsx,js}\"",
     "prepublishOnly": "yarn lint && yarn build",
     "update": "npx npm-check-updates -u"
