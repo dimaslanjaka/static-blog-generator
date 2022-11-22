@@ -1,4 +1,4 @@
-# Sitemap Crawler
+# Sitemap Crawler (Monorepo Package)
 Generate sitemap just throw any link.
 
 ## Intro
