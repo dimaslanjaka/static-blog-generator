@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
 const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
