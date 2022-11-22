@@ -29,7 +29,7 @@ const typedocOptions = {
   tsconfig: join(__dirname, 'tsconfig.json'),
   exclude: ['*.test.ts'],
   htmlLang: 'en',
-  gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
+  //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
   gitRevision: 'master',
   githubPages: true
 };
