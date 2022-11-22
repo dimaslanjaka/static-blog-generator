@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable"
+    ],
     "baseUrl": ".",
     "target": "es2016",
     "module": "commonjs",
@@ -14,7 +17,13 @@
     "jsx": "react",
     "jsxFactory": "JSX.createElement",
     "jsxFragmentFactory": "JSX.Fragment",
-    "isolatedModules": false
+    "isolatedModules": false,
+    "outDir": "dist"
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", ".eslintrc.js"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    ".eslintrc.js"
+  ]
 }
