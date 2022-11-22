@@ -1,4 +1,4 @@
-bin/
+#bin/
 node_modules/
 .sass-cache/
 .tscache/
