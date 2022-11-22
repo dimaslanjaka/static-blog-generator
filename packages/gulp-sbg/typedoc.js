@@ -1,5 +1,5 @@
-const { readdirSync } = require('fs-extra');
-const { join } = require('path');
+const { readdirSync } = require('fs');
+const { join } = require('path/posix');
 
 /**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
@@ -21,7 +21,9 @@ module.exports = {
   searchInComments: true,
   cleanOutputDir: true,
   navigationLinks: {
-    Blog: 'https://www.webmanajemen.com'
+    Homepage: 'https://www.webmanajemen.com',
+    GitHub: 'https://github.com/dimaslanjaka'
   },
-  inlineTags: ['@link']
+  inlineTags: ['@link'],
+  readme: join(__dirname, 'readme.md')
 };
