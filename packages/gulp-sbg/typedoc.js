@@ -3,6 +3,10 @@ const { join } = require('path');
 const pkgjson = require('./package.json');
 
 /**
+ * THEME: https://github.com/google/typedoc-neo-theme.git
+ */
+
+/**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
  */
 const entryPoints = readdirSync(join(__dirname, 'src'))
@@ -34,7 +38,7 @@ const typedocOptions = {
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
   gitRevision: 'master',
   githubPages: true,
-  theme: './node_modules/typedoc-neo-theme/bin/default',
+  theme: join(__dirname, 'node_modules/typedoc-neo-theme/bin/default'),
   plugin: ['typedoc-neo-theme']
 };
 module.exports = typedocOptions;

@@ -24,8 +24,8 @@ const compile = async function () {
   app.bootstrap(options);
   const project = app.convert();
   if (typeof project !== 'undefined') {
-    await app.generateDocs(project, join(outDir, 'gulp-sbg'));
-    await app.generateJson(project, join(outDir, 'gulp-sbg/info.json'));
+    await app.generateDocs(project, join(outDir, pkgjson.name));
+    await app.generateJson(project, join(outDir, pkgjson.name, 'info.json'));
   }
 };
 
