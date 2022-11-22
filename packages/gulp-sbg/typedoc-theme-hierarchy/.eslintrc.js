@@ -4,7 +4,7 @@ module.exports = {
   //extends: ['eslint-config-fuks'],
   parserOptions: {
     project: './tsconfig.json',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
     'no-relative-imports/no-relative-imports': 'off',
@@ -16,14 +16,14 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'react/button-has-type': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'no-underscore-dangle': 'off',
+    'no-underscore-dangle': 'off'
   },
   overrides: [
     {
       files: ['*.json'],
       parserOptions: {
-        project: false,
-      },
-    },
-  ],
+        project: false
+      }
+    }
+  ]
 };
