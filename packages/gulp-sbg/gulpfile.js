@@ -1,3 +1,4 @@
+const spawn = require('cross-spawn');
 const GulpClient = require('gulp');
 const { join } = require('upath');
 const typedocGenerator = require('./typedoc-runner');
@@ -11,6 +12,12 @@ const copy = function () {
 
 const docs = typedocGenerator;
 
+function tsc(done) {
+  const child = spawn('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' });
+  child.once('exit', () => done());
+}
+
 exports.copy = copy;
 exports.docs = docs;
-exports.default = GulpClient.series(copy, docs);
+exports.tsc = tsc;
+exports.default = GulpClient.series(tsc, docs);
