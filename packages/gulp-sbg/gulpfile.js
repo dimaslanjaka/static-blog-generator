@@ -26,6 +26,9 @@ exports.docs = async function () {
     await app.generateJson(project, join(outDir, 'gulp-sbg/info.json'));
   }
   const github = new git(outDir);
+  await github.setremote('https://github.com/dimaslanjaka/docs.git');
+  await github.setbranch('master');
+  await github.reset('master');
   await github.addAndCommit('gulp-sbg');
   await github.push();
 };
