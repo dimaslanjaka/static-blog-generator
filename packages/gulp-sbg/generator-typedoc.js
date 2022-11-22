@@ -30,7 +30,11 @@ const typedocOptions = {
   inlineTags: ['@link'],
   readme: join(__dirname, 'readme.md'),
   tsconfig: join(__dirname, 'tsconfig.json'),
-  exclude: ['*.test.ts']
+  exclude: ['*.test.ts'],
+  htmlLang: 'en',
+  gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
+  gitRevision: 'master',
+  githubPages: true
 };
 
 const run = async function () {
