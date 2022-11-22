@@ -3,6 +3,17 @@ Generate sitemap just throw any link.
 
 ## Intro
 ``sitemap-crawler`` collect directly accessible url through resolve with href value.
+
+## Installation
+```bash
+npm install https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz
+```
+
+## Update
+```bash
+npm update sitemap-crawler
+```
+
 ## Basic Usage
 ```js
 const siteMap = require('sitemap-crawler');
