@@ -1,0 +1,14 @@
+import git from 'git-command-helper';
+type importConfig = typeof import('./_config.json');
+export interface ProjConf extends importConfig {
+    [key: string]: any;
+}
+declare const ProjectConfig: ProjConf;
+export default ProjectConfig;
+export declare const deployDir: string;
+export declare function deployConfig(): {
+    deployDir: string;
+    config: ProjConf;
+    github: git;
+};
+export declare const commonIgnore: string[];
