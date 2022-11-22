@@ -24,6 +24,7 @@ class SiteMapCrawlerCore {
                 }
                 callback();
             };
+            const self = this;
             (0, request_1.default)(link, (err, res, body) => {
                 if (err) {
                     if (isLog) {
@@ -35,9 +36,14 @@ class SiteMapCrawlerCore {
                 const $ = cheerio_1.default.load(body);
                 const hrefs = $('[href]');
                 const filteredLinks = new Set();
-                hrefs.each((i) => {
-                    var _a;
-                    const href = (_a = this.filterLink(link, hrefs.eq(i).attr('href') || '')) === null || _a === void 0 ? void 0 : _a.trim();
+                hrefs.each(function (i) {
+                    var _a, _b;
+                    if (((_a = hrefs.eq(i).get(0)) === null || _a === void 0 ? void 0 : _a.tagName.toLowerCase()) !== 'a') {
+                        const href = hrefs.eq(i).attr('href');
+                        if (!href || !/(\/|.html)$/gi.test(href))
+                            return;
+                    }
+                    const href = (_b = self.filterLink(link, hrefs.eq(i).attr('href') || '')) === null || _b === void 0 ? void 0 : _b.trim();
                     if (typeof href === 'string' && href.length > 0) {
                         const dirUrl = link.substring(0, link.lastIndexOf('/'));
                         if (/^https?:\/\//i.test(href.trim())) {
@@ -71,9 +77,7 @@ class SiteMapCrawlerCore {
                 return callback(err);
             }
             const count = Object.keys(siteMap).length;
-            const siteMapObj = isCounting
-                ? { count, siteMap }
-                : siteMap[links];
+            const siteMapObj = isCounting ? { count, siteMap } : siteMap[links];
             callback(null, siteMapObj);
         });
     }
@@ -108,9 +112,7 @@ class SiteMapCrawlerCore {
         }
         if (!href.match(rIgnores) && !href.includes('//')) {
             const base = new URL(parent);
-            const resolvedUrl = fixUrl([
-                String(new URL(base.origin + '/' + href))
-            ])[0];
+            const resolvedUrl = fixUrl([String(new URL(base.origin + '/' + href))])[0];
             //console.log(parent, href, resolvedUrl);
             return resolvedUrl;
         }
@@ -118,12 +120,12 @@ class SiteMapCrawlerCore {
     }
 }
 exports.SiteMapCrawlerCore = SiteMapCrawlerCore;
-const attachProtocol = (link) => {
-    if (!link.startsWith('http')) {
-        return 'http://' + link;
+function attachProtocol(link, base) {
+    if (!/^https?:/i.test(link)) {
+        return base + link;
     }
     return link;
-};
+}
 const sitemapCrawler = (link, opts, callback) => {
     let isProgress = false, isLog = false, isCounting = true;
     opts = Object.assign({ isProgress: false, isLog: false }, opts || {});
@@ -135,13 +137,13 @@ const sitemapCrawler = (link, opts, callback) => {
         isLog = opts.isLog || false;
     }
     if (typeof link === 'string') {
-        link = attachProtocol(link);
+        link = attachProtocol(link, link);
         link = [link];
         isCounting = false;
     }
     else {
         link = link.map((l) => {
-            return attachProtocol(l);
+            return attachProtocol(l, l);
         });
     }
     SiteMapCrawlerCore.start(link, {
