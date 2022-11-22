@@ -22,8 +22,7 @@ siteMap(link, {}, (err, res) => {
   "https://npmjs.com/signup",
   "https://npmjs.com/signup?next=/org/create",
   "https://npmjs.com/get-npm",
-  "https://npmjs.com/enterprise",
-  ...
+  "https://npmjs.com/enterprise"
 ]
 ```
 
