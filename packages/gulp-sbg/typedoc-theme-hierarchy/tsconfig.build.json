@@ -5,7 +5,16 @@
     "outDir": "dist",
     "declarationDir": "dist",
     "composite": true,
-    "noEmit": false
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "moduleResolution": "node",
+    "noEmit": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src"
