@@ -1,5 +1,6 @@
 const { readdirSync } = require('fs');
 const { join } = require('path');
+const pkgjson = require('./package.json');
 
 /**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
@@ -15,7 +16,7 @@ const entryPoints = readdirSync(join(__dirname, 'src'))
  */
 const typedocOptions = {
   entryPoints,
-  out: 'docs/gulp-sbg',
+  out: 'docs/' + pkgjson.name,
   gaID: 'UA-106238155-1',
   commentStyle: 'all',
   hideGenerator: true,
