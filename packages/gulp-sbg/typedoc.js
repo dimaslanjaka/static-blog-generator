@@ -21,6 +21,7 @@ const entryPoints = readdirSync(join(__dirname, 'src'))
 const typedocOptions = {
   entryPoints,
   out: 'docs/' + pkgjson.name,
+  "entryPointStrategy": "Expand",
   gaID: 'UA-106238155-1',
   commentStyle: 'all',
   hideGenerator: true,
