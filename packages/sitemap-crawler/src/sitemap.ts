@@ -13,6 +13,12 @@ export interface Opt {
    * keep query url ?key=value
    */
   keepQuery?: boolean;
+
+  /**
+   * Crawl internal links [n] times
+   * * **WARNING** dont put `Infinite`
+   */
+  deep?: number | null;
 }
 
 export class SiteMapCrawlerCore {
@@ -185,18 +191,10 @@ export const sitemapCrawler = (link: string | string[], opts?: Opt, callback?: c
   );
 };
 
-export interface SitemapAsyncOpt extends Opt {
-  /**
-   * Crawl internal links [n] times
-   * * **WARNING** dont put `Infinite`
-   */
-  deep?: number | null;
-}
-
 const asyncResults: Record<string, string[]> = {};
 type resolveAsync = (o: typeof asyncResults) => any;
 
-export function sitemapCrawlerAsync(link: string | string[], opts?: SitemapAsyncOpt) {
+export function sitemapCrawlerAsync(link: string | string[], opts?: Opt) {
   return new Bluebird((resolve: resolveAsync) => {
     // assign with default option
     opts = Object.assign({ deep: 0, isLog: false, keepQuery: false, isProgress: false }, opts || {});
