@@ -1,7 +1,7 @@
 {
   "name": "gulp-sbg",
-  "version": "1.0.1",
-  "description": "Static Blog Generator Utility",
+  "version": "1.0.2",
+  "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -66,6 +66,7 @@
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "semver": "^7.3.8",
-    "typedoc": "^0.23.21"
+    "typedoc": "^0.23.21",
+    "typedoc-neo-theme": "github:google/typedoc-neo-theme"
   }
 }
