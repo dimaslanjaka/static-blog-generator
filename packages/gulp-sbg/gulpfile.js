@@ -4,6 +4,7 @@ const typedocModule = require('typedoc');
 const semver = require('semver');
 const typedocOptions = require('./typedoc');
 const { default: git } = require('git-command-helper');
+const { mkdirSync, existsSync } = require('fs');
 
 // copy non-javascript assets from src folder
 exports.copy = function () {
@@ -14,9 +15,11 @@ exports.copy = function () {
 
 exports.docs = async function () {
   const outDir = join(__dirname, 'docs');
+  if (!existsSync(join(outDir, '.git'))) mkdirSync(join(outDir, '.git'));
 
   const github = new git(outDir);
   try {
+    //await github.init();
     await github.setremote('https://github.com/dimaslanjaka/docs.git').catch(noop);
     await github.setbranch('master').catch(noop);
     await github.reset('master').catch(noop);
