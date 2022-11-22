@@ -14,6 +14,16 @@ exports.copy = function () {
 
 exports.docs = async function () {
   const outDir = join(__dirname, 'docs');
+
+  const github = new git(outDir);
+  try {
+    await github.setremote('https://github.com/dimaslanjaka/docs.git').catch(noop);
+    await github.setbranch('master').catch(noop);
+    await github.reset('master').catch(noop);
+  } catch {
+    //
+  }
+
   const app = new typedocModule.Application();
   if (semver.gte(typedocModule.Application.VERSION, '0.16.1')) {
     app.options.addReader(new typedocModule.TSConfigReader());
@@ -25,11 +35,8 @@ exports.docs = async function () {
     await app.generateDocs(project, join(outDir, 'gulp-sbg'));
     await app.generateJson(project, join(outDir, 'gulp-sbg/info.json'));
   }
-  const github = new git(outDir);
+
   try {
-    await github.setremote('https://github.com/dimaslanjaka/docs.git').catch(noop);
-    await github.setbranch('master').catch(noop);
-    await github.reset('master').catch(noop);
     await github.addAndCommit('gulp-sbg', 'update gulp-sbg docs\nat ' + new Date()).catch(noop);
     await github.push().catch(noop);
   } catch {
