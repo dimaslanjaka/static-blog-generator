@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
 const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
@@ -62,9 +63,9 @@ function addReadMe() {
   writeFileSync(
     join(releaseDir, 'readme.md'),
     `
-# Release Tarball
+# Release \`${packagejson.name}\` Tarball
 
-## Get URL of Release Tarball
+## Get URL of \`${packagejson.name}\` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url
@@ -81,7 +82,7 @@ npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/pack
 \`\`\`
 
 ## URL Parts Explanations
-> https://github.com/\`<github-username>\`/\`<github-repo-name>\`/raw/\`<github-branch-name>\`/\`<path-to-file-with-extension>\`
+> https://github.com/github-username/github-repo-name/raw/github-branch-name/path-to-file-with-extension
   `.trim()
   );
 }
