@@ -17,6 +17,7 @@ export interface Opt {
   /**
    * Crawl internal links [n] times
    * * **WARNING** dont put `Infinite`
+   * * only works with async
    */
   deep?: number | null;
 }
