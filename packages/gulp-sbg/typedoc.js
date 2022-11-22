@@ -25,5 +25,7 @@ module.exports = {
     GitHub: 'https://github.com/dimaslanjaka'
   },
   inlineTags: ['@link'],
-  readme: join(__dirname, 'readme.md')
+  readme: join(__dirname, 'readme.md'),
+  tsconfig: join(__dirname, 'tsconfig.json'),
+  exclude: ['*.test.ts']
 };
