@@ -120,9 +120,9 @@ class SiteMapCrawlerCore {
     }
 }
 exports.SiteMapCrawlerCore = SiteMapCrawlerCore;
-function attachProtocol(link, base) {
+function attachProtocol(link) {
     if (!/^https?:/i.test(link)) {
-        return base + link;
+        return 'http://' + link;
     }
     return link;
 }
@@ -137,13 +137,13 @@ const sitemapCrawler = (link, opts, callback) => {
         isLog = opts.isLog || false;
     }
     if (typeof link === 'string') {
-        link = attachProtocol(link, link);
+        link = attachProtocol(link);
         link = [link];
         isCounting = false;
     }
     else {
         link = link.map((l) => {
-            return attachProtocol(l, l);
+            return attachProtocol(l);
         });
     }
     SiteMapCrawlerCore.start(link, {

@@ -149,9 +149,9 @@ export class SiteMapCrawlerCore {
   }
 }
 
-function attachProtocol(link: string, base: string) {
+function attachProtocol(link: string) {
   if (!/^https?:/i.test(link)) {
-    return base + link;
+    return 'http://' + link;
   }
 
   return link;
@@ -171,12 +171,12 @@ export const sitemapCrawler = (link: string | string[], opts?: Opt, callback?: c
   }
 
   if (typeof link === 'string') {
-    link = attachProtocol(link, link);
+    link = attachProtocol(link);
     link = [link];
     isCounting = false;
   } else {
     link = link.map((l) => {
-      return attachProtocol(l, l);
+      return attachProtocol(l);
     });
   }
 
