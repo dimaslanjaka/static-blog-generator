@@ -34,7 +34,11 @@ const run = async function () {
   }
 
   try {
-    await github.addAndCommit('gulp-sbg', 'update gulp-sbg docs\nat ' + new Date());
+    const commit = await new git(__dirname).latestCommit();
+    await github.addAndCommit(
+      'gulp-sbg',
+      `${commit} update gulp-sbg docs \nat ${new Date()}\nsource: https://github.com/dimaslanjaka/static-blog-generator-hexo/commit/${commit}`
+    );
     if (await github.canPush()) await github.push();
   } catch {
     //
