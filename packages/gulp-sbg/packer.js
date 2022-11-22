@@ -1,9 +1,10 @@
 const { spawn } = require('cross-spawn');
-const { existsSync, renameSync, rmSync, mkdirpSync } = require('fs-extra');
+const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
 
+const releaseDir = join(__dirname, 'release');
 const child = spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
 let version = (function () {
   const v = parseVersion(packagejson.version);
@@ -13,11 +14,7 @@ let version = (function () {
 child.on('exit', function () {
   const filename = slugifyPkgName(`${packagejson.name}-${version}.tgz`);
   const tgz = join(__dirname, filename);
-  const tgzlatest = join(
-    __dirname,
-    'release',
-    slugifyPkgName(`${packagejson.name}.tgz`)
-  );
+  const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
 
   console.log({ tgz, tgzlatest });
 
@@ -27,12 +24,13 @@ child.on('exit', function () {
 
   if (existsSync(tgz)) {
     GulpClient.src(tgz)
-      .pipe(GulpClient.dest(join(__dirname, 'release')))
+      .pipe(GulpClient.dest(releaseDir))
       .once('end', function () {
         if (existsSync(tgzlatest)) {
           rmSync(tgzlatest);
         }
         renameSync(tgz, tgzlatest);
+        addReadMe();
       });
   }
 });
@@ -58,4 +56,13 @@ function parseVersion(versionString) {
   };
 
   return version;
+}
+
+function addReadMe() {
+  writeFileSync(
+    join(releaseDir, 'readme.md'),
+    `
+  # Release Tarball
+  `
+  );
 }
