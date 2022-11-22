@@ -6,7 +6,9 @@
     "declarationDir": "dist",
     "composite": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
+    "jsx": "react",
+    "jsxFactory": "JSX.createElement",
+    "jsxFragmentFactory": "JSX.Fragment",
     "lib": [
       "dom",
       "esnext"

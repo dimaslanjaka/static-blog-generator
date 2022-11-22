@@ -7,8 +7,8 @@ const OverrideTheme_1 = require("./themes/OverrideTheme");
  * Инициализирует плагин с темой.
  */
 const load = (app) => {
-    app.renderer.hooks.on('head.end', (context) => (<link rel='stylesheet' href={context.relativeURL('assets/custom.css')}/>));
-    app.renderer.hooks.on('body.end', (context) => (<script src={context.relativeURL('assets/custom.js')}/>));
+    app.renderer.hooks.on('head.end', (context) => (typedoc_1.JSX.createElement("link", { rel: 'stylesheet', href: context.relativeURL('assets/custom.css') })));
+    app.renderer.hooks.on('body.end', (context) => (typedoc_1.JSX.createElement("script", { src: context.relativeURL('assets/custom.js') })));
     app.renderer.defineTheme('hierarchy', OverrideTheme_1.OverrideTheme);
 };
 exports.load = load;
