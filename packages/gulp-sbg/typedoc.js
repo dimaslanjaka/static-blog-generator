@@ -19,8 +19,10 @@ const entryPoints = readdirSync(join(__dirname, 'src'))
  * @type {import('typedoc').TypeDocOptions}
  */
 const typedocOptions = {
+  name: "Static Blog Generator Gulp",
   entryPoints,
   out: 'docs/' + pkgjson.name,
+  "entryPointStrategy": "Expand",
   gaID: 'UA-106238155-1',
   commentStyle: 'all',
   hideGenerator: true,
