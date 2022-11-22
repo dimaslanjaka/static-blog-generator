@@ -1,6 +1,8 @@
 # Static Blog Generator Gulp
 
-Static Blog Generator using Gulp System
+Static Blog Generator using Gulp System.
+
+Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.
 
 ## Copy source posts to hexo source dir
 Compiling and Copying all source posts including shortcodes etc to hexo source post directory
