@@ -1,0 +1,36 @@
+const { readdirSync } = require('fs');
+const { join } = require('path');
+
+/**
+ * @type {import('typedoc').TypeDocOptions['entryPoints']}
+ */
+const entryPoints = readdirSync(join(__dirname, 'src'))
+  .map((path) => './src/' + path)
+  .filter((path) => /.ts$/.test(path));
+
+//console.log(entryPoints);
+
+/**
+ * @type {import('typedoc').TypeDocOptions}
+ */
+const typedocOptions = {
+  entryPoints,
+  out: 'docs/gulp-sbg',
+  gaID: 'UA-106238155-1',
+  hideGenerator: true,
+  searchInComments: true,
+  cleanOutputDir: true,
+  navigationLinks: {
+    Homepage: 'https://www.webmanajemen.com',
+    GitHub: 'https://github.com/dimaslanjaka'
+  },
+  inlineTags: ['@link'],
+  readme: join(__dirname, 'readme.md'),
+  tsconfig: join(__dirname, 'tsconfig.json'),
+  exclude: ['*.test.ts'],
+  htmlLang: 'en',
+  gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
+  gitRevision: 'master',
+  githubPages: true
+};
+module.exports = typedocOptions;
