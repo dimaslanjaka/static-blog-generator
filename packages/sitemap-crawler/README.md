@@ -88,5 +88,8 @@ siteMap(link, {isProgress : true, isLog : true}, (err, res) => {
 ## Authors
 tinyjin - [Github](https:github.com/tinyjin), [Blog](https://wlsdml1103.blog.me)
 
+## Contributors
+dimaslanjaka - [Github](https:github.com/dimaslanjaka), [Blog](https://webmanajemen.com)
+
 ## License
 This project has MIT License.
