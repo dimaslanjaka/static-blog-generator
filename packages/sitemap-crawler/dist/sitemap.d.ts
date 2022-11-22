@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-declare type cb = (arg0: Error | null, arg1?: string[]) => void;
+type cb = (arg0: Error | null, arg1?: string[]) => void;
 export interface Opt {
     isProgress?: boolean;
     isLog?: boolean;
