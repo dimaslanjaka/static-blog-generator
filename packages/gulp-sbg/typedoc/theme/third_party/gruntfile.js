@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         /**
          * @type {import('typescript').CompilerOptions}
          */
-        options: Object.assign(tsconfig, {
+        options: Object.assign(tsconfig || {}, {
           sourceMap: false,
           module: 'amd',
           basePath: 'themes',
