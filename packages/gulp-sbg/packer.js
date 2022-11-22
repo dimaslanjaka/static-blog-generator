@@ -75,6 +75,15 @@ function addReadMe() {
 \`\`\`bash
 npm i https://....url-tgz
 \`\`\`
+for example
+\`\`\`bash
+npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-sbg/release/gulp-sbg.tgz
+\`\`\`
+
+## URL Parts Explanations
+> ${encodeURI(
+      'https://github.com/<github-username>/<github-repo-name>/raw/<github-branch-name>/<path-to-file-with-extension>'
+    )}
   `.trim()
   );
 }
