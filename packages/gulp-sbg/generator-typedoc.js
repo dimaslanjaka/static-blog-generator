@@ -14,7 +14,7 @@ const entryPoints = readdirSync(join(__dirname, 'src'))
 //console.log(entryPoints);
 
 /**
- * @type {import('typedoc').TypeDocOptions & { run: CallableFunction }}
+ * @type {import('typedoc').TypeDocOptions}
  */
 const typedocOptions = {
   entryPoints,
@@ -30,13 +30,13 @@ const typedocOptions = {
   inlineTags: ['@link'],
   readme: join(__dirname, 'readme.md'),
   tsconfig: join(__dirname, 'tsconfig.json'),
-  exclude: ['*.test.ts'],
-  run: null
+  exclude: ['*.test.ts']
 };
 
 const run = async function () {
   const outDir = join(__dirname, 'docs');
   if (!existsSync(join(outDir, '.git'))) mkdirSync(join(outDir, '.git'));
+  const options = Object.assign({}, typedocOptions);
 
   const github = new git(outDir);
   try {
@@ -53,7 +53,8 @@ const run = async function () {
     app.options.addReader(new typedocModule.TSConfigReader());
     app.options.addReader(new typedocModule.TypeDocReader());
   }
-  app.bootstrap(typedocOptions);
+  //delete options.run;
+  app.bootstrap(options);
   const project = app.convert();
   if (typeof project !== 'undefined') {
     await app.generateDocs(project, join(outDir, 'gulp-sbg'));
@@ -62,15 +63,19 @@ const run = async function () {
 
   try {
     await github.addAndCommit('gulp-sbg', 'update gulp-sbg docs\nat ' + new Date());
-    await github.push();
+    if (await github.canPush()) await github.push();
   } catch {
     //
   }
 };
 
-typedocOptions.run = run;
+if (require.main === module) {
+  //console.log('called directly');
+  run();
+} else {
+  //console.log('required as a module');
+}
 
-module.exports = typedocOptions;
 module.exports = {
   default: typedocOptions,
   run
