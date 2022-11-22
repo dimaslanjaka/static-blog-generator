@@ -1,3 +1,5 @@
+const tsconfig = require('./tsconfig.json')
+
 /**
  * Copyright 2015 Sebastian Lenz. All Rights Reserved.
  *
@@ -12,18 +14,24 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * @param {import('grunt')} grunt
  */
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     ts: {
       themeDefault: {
-        options: {
+        /**
+         * @type {import('typescript').CompilerOptions}
+         */
+        options: Object.assign(tsconfig, {
           sourceMap: false,
           module: 'amd',
           basePath: 'themes',
-          declaration: false
-        },
+          declaration: false,
+          skipLibCheck: true,
+          skipDefaultLibCheck: true
+        }),
         src: [
           'third_party/src/default/assets/js/src/lib/**/*.ts',
           'third_party/src/default/assets/js/src/typedoc/Application.ts',
