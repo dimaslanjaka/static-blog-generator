@@ -7,3 +7,7 @@
 ![gambar](https://user-images.githubusercontent.com/12471057/203216508-7590cbb9-a1ce-47d6-96ca-8d82149f0762.png)
 - or copy download url
 ![gambar](https://user-images.githubusercontent.com/12471057/203216541-3807d2c3-5213-49f3-b93d-c626dbae3b2e.png)
+- then run installation from command line
+```bash
+npm i https://....url-tgz
+```
