@@ -1,0 +1,14 @@
+import './gulpfile';
+import scheduler from './utils/scheduler';
+
+export { gulpCached } from './gulp-utils/gulp.cache';
+export { gulpDebug } from './gulp-utils/gulp.debug';
+export { del, del as deleteDir } from './gulp.clean';
+export { default as ProjectConfig, deployConfig } from './gulp.config';
+export { copyAllPosts, copySinglePost, updatePost as copyPost, watchPost } from './gulp.post';
+export { generateSitemap, hexoGenerateSitemap } from './gulp.sitemap';
+export { commitProject } from './gulpfile';
+export { array_random, array_remove_empty, array_unique } from './utils/array';
+export { noop, trycatchnoop } from './utils/noop';
+
+scheduler.register();
