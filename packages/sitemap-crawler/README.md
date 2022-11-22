@@ -43,6 +43,7 @@ siteMap(links, {}, (err, res) => {
   console.log('siteMap:', res); // Print the siteMap from link
 });
 ```
+
 **Result**
 ```json
 {
@@ -53,6 +54,21 @@ siteMap(links, {}, (err, res) => {
     "http://github.com": [...]
   }
 }
+```
+
+## Async with depth crawler
+```js
+const siteMap = require('sitemap-crawler').sitemapCrawlerAsync;
+const links = [
+  'http://www.npmjs.com',
+  'http://github.com',
+  'www.amazon.com'
+]
+
+siteMap(links, {}, (err, res) => {
+  console.log('error:', err);
+  console.log('siteMap:', res); // Print the siteMap from link
+});
 ```
 
 ## Options
