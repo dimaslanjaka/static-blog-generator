@@ -1,0 +1,73 @@
+{
+  "name": "gulp-sbg",
+  "version": "1.0.2",
+  "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "update": "npx npm-check-updates -u && npm update @types/gulp-util gulp-dom sitemap-crawler @types/hexo",
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json && gulp copy",
+    "postbuild": "node packer.js",
+    "dev": "tsc -p tsconfig.build.json -w"
+  },
+  "keywords": [
+    "static-blog-generator",
+    "static",
+    "blog",
+    "generator"
+  ],
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
+  "license": "ISC",
+  "dependencies": {
+    "@prettier/plugin-xml": "^2.2.0",
+    "ansi-colors": "^4.1.3",
+    "bluebird": "^3.7.2",
+    "cross-spawn": "^7.0.3",
+    "front-matter": "^4.0.2",
+    "fs-extra": "10.1.0",
+    "git-command-helper": "^1.0.9",
+    "gulp": "^4.0.2",
+    "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
+    "hexo": "^6.3.0",
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz",
+    "hexo-util": "^2.7.0",
+    "micromatch": "^4.0.5",
+    "moment-timezone": "^0.5.38",
+    "nunjucks": "^3.2.3",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
+    "safelinkify": "^1.1.6",
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
+    "through2": "^4.0.2",
+    "undertaker": "^1.3.0",
+    "upath": "^2.0.1",
+    "yaml": "^2.1.3"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.37",
+    "@types/gulp": "^4.0.9",
+    "@types/hexo": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/%40types/hexo/release/types-hexo.tgz",
+    "@types/hexo-util": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/%40types/hexo-util/release/types-hexo-util.tgz",
+    "@types/node": "^18.11.9",
+    "@types/through2": "dimaslanjaka/nodejs-package-types#through2",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "npkill": "^0.9.0",
+    "npm-check-updates": "^16.3.18",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "semver": "^7.3.8",
+    "typedoc": "^0.23.21",
+    "typedoc-neo-theme": "file:typedoc/theme",
+    "typedoc-theme-hierarchy": "file:typedoc-theme-hierarchy"
+  }
+}

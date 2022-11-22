@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "pretty": true,
+    "lib": [
+      "DOM",
+      "es2015.iterable",
+      "es2015.generator",
+      "es5"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "target": "es5",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "declaration": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "newLine": "lf",
+    "types": []
+  },
+  "include": [
+    "project.js"
+  ]
+}
