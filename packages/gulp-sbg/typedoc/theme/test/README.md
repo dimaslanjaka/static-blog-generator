@@ -1,1 +1,0 @@
-This is an example project for integration and regression testing.
