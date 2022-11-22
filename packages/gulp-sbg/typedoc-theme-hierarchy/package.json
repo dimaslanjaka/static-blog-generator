@@ -34,7 +34,6 @@
     "css-loader": "^6.7.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.28.0",
-    "eslint-config-fuks": "^1.9.2",
     "mini-css-extract-plugin": "^2.7.0",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.1",
