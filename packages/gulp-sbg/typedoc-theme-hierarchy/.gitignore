@@ -1,6 +1,6 @@
 dist
 tsconfig.*tsbuildinfo
-docs
+#docs
 .idea/
 .pnp.*
 .yarn/*
