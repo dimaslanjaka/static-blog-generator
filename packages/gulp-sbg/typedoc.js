@@ -3,7 +3,7 @@ const { join } = require('path');
 const pkgjson = require('./package.json');
 
 /**
- * THEME: https://github.com/google/typedoc-neo-theme.git
+ * THEME: https://github.com/google/typedoc-neo-theme.git -> typedoc/theme
  */
 
 /**
@@ -38,7 +38,7 @@ const typedocOptions = {
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
   gitRevision: 'master',
   githubPages: true,
-  theme: join(__dirname, 'node_modules/typedoc-neo-theme/bin/default'),
-  plugin: ['typedoc-neo-theme']
+  theme: 'hierarchy',
+  plugin: [join(__dirname, 'node_modules/@youlin/typedoc-theme-hierarchy/dist/index.js')]
 };
 module.exports = typedocOptions;

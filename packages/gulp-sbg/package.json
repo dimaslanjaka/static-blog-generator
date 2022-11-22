@@ -67,6 +67,7 @@
     "rimraf": "^3.0.2",
     "semver": "^7.3.8",
     "typedoc": "^0.23.21",
-    "typedoc-neo-theme": "file:typedoc/theme"
+    "typedoc-neo-theme": "file:typedoc/theme",
+    "typedoc-theme-hierarchy": "^3.0.0"
   }
 }
