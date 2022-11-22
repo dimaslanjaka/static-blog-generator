@@ -75,7 +75,7 @@ const watch = function (done) {
 
 if (require.main === module) {
   //console.log('called directly');
-  publish();
+  compile();
 } else {
   //console.log('required as a module');
 }
