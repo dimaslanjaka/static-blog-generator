@@ -1,7 +1,7 @@
 require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
-  extends: ['eslint-config-fuks'],
+  //extends: ['eslint-config-fuks'],
   parserOptions: {
     project: './tsconfig.json',
     sourceType: 'module',
