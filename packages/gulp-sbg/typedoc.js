@@ -38,7 +38,7 @@ const typedocOptions = {
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
   gitRevision: 'master',
   githubPages: true,
-  theme: 'hierarchy',
-  plugin: [join(__dirname, 'node_modules/@youlin/typedoc-theme-hierarchy/dist/index.js')]
+  "theme": "hierarchy",
+  "plugin": ["typedoc-theme-hierarchy"]
 };
 module.exports = typedocOptions;
