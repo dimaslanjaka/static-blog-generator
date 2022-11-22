@@ -1,6 +1,6 @@
 const GulpClient = require('gulp');
 const { join } = require('upath');
-const typedocOptions = require('./typedoc');
+const generator = require('./generator-typedoc');
 
 // copy non-javascript assets from src folder
 const copy = function () {
@@ -9,7 +9,7 @@ const copy = function () {
   );
 };
 
-const docs = typedocOptions.run;
+const docs = generator.run;
 
 exports.copy = copy;
 exports.docs = docs;
