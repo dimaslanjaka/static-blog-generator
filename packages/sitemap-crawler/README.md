@@ -64,8 +64,8 @@ const links = [
   'http://github.com',
   'www.amazon.com'
 ]
-
-siteMap(links, {}, (err, res) => {
+// crawl site with depth 2
+siteMap(links, { deep: 2 }, (err, res) => {
   console.log('error:', err);
   console.log('siteMap:', res); // Print the siteMap from link
 });
