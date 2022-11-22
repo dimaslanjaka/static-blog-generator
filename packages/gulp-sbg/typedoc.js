@@ -17,6 +17,7 @@ const typedocOptions = {
   entryPoints,
   out: 'docs/gulp-sbg',
   gaID: 'UA-106238155-1',
+  commentStyle: 'all',
   hideGenerator: true,
   searchInComments: true,
   cleanOutputDir: true,
@@ -31,6 +32,8 @@ const typedocOptions = {
   htmlLang: 'en',
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
   gitRevision: 'master',
-  githubPages: true
+  githubPages: true,
+  theme: './node_modules/typedoc-neo-theme/bin/default',
+  plugin: ['typedoc-neo-theme']
 };
 module.exports = typedocOptions;
