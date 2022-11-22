@@ -19,7 +19,7 @@
     "url": "https://github.com/DiFuks"
   },
   "scripts": {
-    "build": "webpack && tsc --project tsconfig.build.json",
+    "build": "rimraf dist && webpack && tsc --project tsconfig.build.json",
     "lint": "eslint \"./**/*.{ts,tsx,js}\"",
     "prepublishOnly": "yarn lint && yarn build",
     "update": "npx npm-check-updates -u"
@@ -35,6 +35,7 @@
     "css-minimizer-webpack-plugin": "^4.2.2",
     "eslint": "^8.28.0",
     "mini-css-extract-plugin": "^2.7.0",
+    "rimraf": "^3.0.2",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.1",
     "ts-node": "^10.9.1",
