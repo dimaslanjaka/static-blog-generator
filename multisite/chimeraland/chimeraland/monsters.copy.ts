@@ -16,6 +16,7 @@ import monsters from './monsters.json'
 
 const outputJSON = join(__dirname, '../src/utils/chimeraland-monsters.json')
 const publicDir = join(hexoProject, 'source/chimeraland')
+const inputJSON = join(__dirname, 'monsters.json')
 
 type Extended = typeof monsters['data'][number] & {
   images: any[]
@@ -61,8 +62,11 @@ const fixData = function () {
           if (!item.skill) item.skill = []
           if (!item.buff) item.buff = []
           if (!item.delicacies) item.delicacies = []
+          monsters.data[index] = item
         }
       })
+
+    writeFileSync(inputJSON, JSON.stringify(monsters, null, 2))
     resolve(null)
   })
 }
