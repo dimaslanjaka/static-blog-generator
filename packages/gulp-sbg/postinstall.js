@@ -8,7 +8,7 @@ const { spawn } = require('cross-spawn');
   const packages = [pjson.dependencies, pjson.devDependencies];
   for (let i = 0; i < packages.length; i++) {
     const pkgs = packages[i];
-    //const isDev = i === 1; // <-- index devDependencies
+    const isDev = i === 1; // <-- index devDependencies
     for (const pkgname in pkgs) {
       /**
        * @type {string}
@@ -17,16 +17,16 @@ const { spawn } = require('cross-spawn');
       // re-installing local and monorepo package
       if (/^((file|github):|(git|ssh)\+|http)/.test(version)) {
         const isYarn = fs.existsSync(path.join(__dirname, 'yarn.lock'));
-        //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
+        const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
         if (isYarn) {
           // yarn upgrade package
-          await summon('yarn', ['upgrade'].concat(pkgname), {
+          await summon('yarn', ['upgrade'].concat(arg), {
             cwd: __dirname,
             stdio: 'inherit'
           });
         } else {
           // npm update package
-          await summon('npm', ['update'].concat(pkgname), {
+          await summon('npm', ['update'].concat(arg), {
             cwd: __dirname,
             stdio: 'inherit'
           });

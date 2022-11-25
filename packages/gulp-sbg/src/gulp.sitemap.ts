@@ -154,7 +154,10 @@ export function hexoGenerateSitemap() {
           .pipe(
             gulpDom(function () {
               // auto discovery sitemap
-              if (this.querySelectorAll(`link[href="${baseURL}sitemap.xml"]`).length === 0) {
+              if (
+                this.querySelectorAll(`link[href="${baseURL}sitemap.xml"]`).length === 0 &&
+                this.querySelectorAll(`link[href="/sitemap.xml"]`).length === 0
+              ) {
                 this.head.innerHTML += `<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="${baseURL}sitemap.xml" />`;
               }
               //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
