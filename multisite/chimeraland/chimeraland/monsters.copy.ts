@@ -40,23 +40,25 @@ const getData = () => {
         const imagesDir = join(__dirname, 'monsters', item.name.toLowerCase())
         const type = 'monsters'
         if (existsSync(imagesDir)) {
-          const dirs = readdirSync(imagesDir).map((filename) => {
-            const outputfn = basename(filename, extname(filename)) + '.webp'
-            return {
-              filename: outputfn,
-              folder: imagesDir,
-              originalPath: join(imagesDir, filename),
-              originalFilename: filename,
-              pathname:
-                '/' +
-                [
-                  'chimeraland',
-                  type,
-                  slugify(item.name, { lower: true, trim: true }),
-                  outputfn
-                ].join('/')
-            }
-          })
+          const dirs = readdirSync(imagesDir)
+            .filter((str) => str !== 'desktop.ini')
+            .map((filename) => {
+              const outputfn = basename(filename, extname(filename)) + '.webp'
+              return {
+                filename: outputfn,
+                folder: imagesDir,
+                originalPath: join(imagesDir, filename),
+                originalFilename: filename,
+                pathname:
+                  '/' +
+                  [
+                    'chimeraland',
+                    type,
+                    slugify(item.name, { lower: true, trim: true }),
+                    outputfn
+                  ].join('/')
+              }
+            })
 
           const results: typeof dirs = []
           while (dirs.length > 0) {
