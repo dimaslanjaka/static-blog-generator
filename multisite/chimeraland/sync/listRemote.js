@@ -2,8 +2,13 @@ const Authenticator = require('./Authenticator.js')
 const { google } = require('googleapis')
 const bluebird = require('bluebird')
 
+/**
+ * list remote files
+ * @param {string} folderPath folder path or folder name
+ * @returns
+ */
 function listRemote(folderPath) {
-  return new bluebird((resolveList) => {
+  return new bluebird(function (resolveList) {
     new Authenticator.local()
       .authorizeApi({ scopes: ['https://www.googleapis.com/auth/drive'] })
       .then((oAuth) => {
