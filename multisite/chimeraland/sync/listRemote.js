@@ -4,32 +4,34 @@ const bluebird = require('bluebird')
 
 function listRemote(folderPath) {
   return new bluebird((resolveList) => {
-    Authenticator.authenticate().then((oAuth) => {
-      const drive = google.drive({
-        version: 'v3',
-        auth: oAuth
-      })
-      this.drive = drive
-      getRemoteFolderID
-        .bind(this)(folderPath)
-        .then((fileId) => {
-          drive.files.list(
-            {
-              includeRemoved: false,
-              spaces: 'drive',
-              fileId: fileId,
-              fields:
-                'nextPageToken, files(id, name, parents, mimeType, modifiedTime)',
-              q: `'${fileId}' in parents`
-            },
-            function (err, response) {
-              if (!err) {
-                resolveList(response.data)
-              }
-            }
-          )
+    new Authenticator.local()
+      .authorizeApi({ scopes: ['https://www.googleapis.com/auth/drive'] })
+      .then((oAuth) => {
+        const drive = google.drive({
+          version: 'v3',
+          auth: oAuth
         })
-    })
+        this.drive = drive
+        getRemoteFolderID
+          .bind(this)(folderPath)
+          .then((fileId) => {
+            drive.files.list(
+              {
+                includeRemoved: false,
+                spaces: 'drive',
+                fileId: fileId,
+                fields:
+                  'nextPageToken, files(id, name, parents, mimeType, modifiedTime)',
+                q: `'${fileId}' in parents`
+              },
+              function (err, response) {
+                if (!err) {
+                  resolveList(response.data)
+                }
+              }
+            )
+          })
+      })
   })
 }
 
