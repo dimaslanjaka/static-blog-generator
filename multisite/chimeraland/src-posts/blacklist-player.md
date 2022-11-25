@@ -1,31 +1,37 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-25T20:21:00+07:00
+updated: 2022-11-25T20:45:50+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 tags: ["Chimeraland", "Blacklist", "Player"]
 categories: ["Games", "Chimeraland"]
 thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.palmassgames.ru/wp-content/uploads/2021/07/screenshot_6-1-1024x504.png
+author: L3n4r0x
 ---
 
 <!-- include blacklist-player/translator.html -->
 
-## Daftar blacklist player Server 101-116
-
+## Daftar blacklist player kategori SCAMMER MAP ILLUS 16 PARTY
 | Nama Player | Keterangan |
 | :--- | :--- |
 | ASTER | SCAMMER MAP ILLUS 16 |
 | arkep | SCAMMER MAP ILLUS 16 |
-| Shelby | SCAMMER MAP ILLUS 16, SCAMMER ruby |
+| Shelby | SCAMMER MAP ILLUS 16 |
+| Suvi | SCAMMER MAP ILLUS 16 sebagai LEADER PARTY |
+| PrimalHunter | SCAMMER MAP ILLUS 16 |
+
+## Daftar blacklist player kategori SCAMMER RUBY
+
+| Nama Player | Keterangan |
+| :--- | :--- |
+| Shelby | SCAMMER ruby |
 | NesaMiko | SCAMMER 6000 ruby tukar akun **Mobile Legends** |
 | Tusboll | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
-| Suvi | SCAMMER MAP ILLUS 16 as LEADER PARTY |
-| PrimalHunter | SCAMMER MAP ILLUS 16 |
 
-## Daftar player tukang roll drop item
+## Daftar player kategori tukang roll drop item
 
 | Nama Player | Keterangan |
 | :--- | :--- |
