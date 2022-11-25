@@ -15,8 +15,9 @@ import { hexoProject } from '../project'
 import monsters from './monsters.json'
 
 const outputJSON = join(__dirname, '../src/utils/chimeraland-monsters.json')
-const publicDir = join(hexoProject, 'source/chimeraland')
+const publicDIR = join(hexoProject, 'source/chimeraland')
 const inputJSON = join(__dirname, 'monsters.json')
+const inputDIR = join(__dirname, 'monsters')
 
 type Extended = typeof monsters['data'][number] & {
   images: any[]
@@ -31,7 +32,7 @@ type Extended = typeof monsters['data'][number] & {
  */
 const fixData = function () {
   return new Bluebird((resolve) => {
-    readdirSync(join(__dirname, 'monsters'))
+    readdirSync(inputDIR)
       .filter((str) => str !== 'desktop.ini')
       .forEach((monsterName) => {
         const index = monsters.data.findIndex(
@@ -115,7 +116,7 @@ const getData = () => {
             if (existsSync(inputFile) && /.(jpe?g|png)$/.test(inputFile)) {
               const input = readFileSync(inputFile)
               const output = join(
-                publicDir,
+                publicDIR,
                 toProcess.pathname.replace('/chimeraland/', '/')
               )
               if (!existsSync(output)) {

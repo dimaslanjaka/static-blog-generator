@@ -1,12 +1,12 @@
 ---
 title: Blacklist Player Chimeraland
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-11-21T22:50:30+07:00
+updated: 2022-11-25T20:21:00+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 tags: ["Chimeraland", "Blacklist", "Player"]
 categories: ["Games", "Chimeraland"]
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/3/3e/The_Blacklist_logo.svg
+thumbnail: https://res.cloudinary.com/dimaslanjaka/image/fetch/https://www.palmassgames.ru/wp-content/uploads/2021/07/screenshot_6-1-1024x504.png
 ---
 
 <!-- include blacklist-player/translator.html -->
