@@ -13,7 +13,8 @@
       "buff": [
         "Attributes Conversion Rate 4.0%",
         "PvP Damage Reduction 4.8%"
-      ]
+      ],
+      "skill": []
     },
     {
       "datePublished": "2022-01-06T20:56:03+07:00",
@@ -1517,6 +1518,33 @@
       "delicacies": [],
       "skill": [],
       "buff": []
+    },
+    {
+      "name": "hermit crab",
+      "datePublished": "2022-11-25T20:17:54+07:00",
+      "dateModified": "2022-11-25T20:28:54+07:00",
+      "qty": "",
+      "skill": [],
+      "buff": [],
+      "delicacies": []
+    },
+    {
+      "name": "lusterewt",
+      "datePublished": "2022-11-25T20:17:54+07:00",
+      "dateModified": "2022-11-25T20:28:54+07:00",
+      "qty": "",
+      "skill": [],
+      "buff": [],
+      "delicacies": []
+    },
+    {
+      "name": "spike rhino",
+      "datePublished": "2022-11-25T20:17:54+07:00",
+      "dateModified": "2022-11-25T20:28:54+07:00",
+      "qty": "",
+      "skill": [],
+      "buff": [],
+      "delicacies": []
     }
   ]
 }
