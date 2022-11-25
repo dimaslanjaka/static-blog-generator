@@ -234,7 +234,8 @@ function hexoGenerateSitemap() {
                     .src('**/*.html', { cwd: publicDir, ignore: gulp_config_1.commonIgnore })
                     .pipe((0, gulp_dom_1.default)(function () {
                     // auto discovery sitemap
-                    if (this.querySelectorAll("link[href=\"".concat(baseURL, "sitemap.xml\"]")).length === 0) {
+                    if (this.querySelectorAll("link[href=\"".concat(baseURL, "sitemap.xml\"]")).length === 0 &&
+                        this.querySelectorAll("link[href=\"/sitemap.xml\"]").length === 0) {
                         this.head.innerHTML += "<link id=\"sitemap-site-url\" type=\"application/text+xml\" rel=\"sitemap\" href=\"".concat(baseURL, "sitemap.xml\" />");
                     }
                     //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');

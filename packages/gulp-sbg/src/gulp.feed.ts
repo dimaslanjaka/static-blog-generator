@@ -70,11 +70,17 @@ gulp.task('feed', function (done) {
         .pipe(
           gulpDom(function () {
             // auto discovery rss
-            if (this.querySelectorAll(`link[href="${baseURL}rss.xml"]`).length === 0) {
+            if (
+              this.querySelectorAll(`link[href="${baseURL}rss.xml"]`).length === 0 &&
+              this.querySelectorAll(`link[href="/rss.xml"]`).length === 0
+            ) {
               this.head.innerHTML += `<link id="rss-site-url" type="application/rss+xml" rel="alternate" href="${baseURL}rss.xml" />`;
             }
             // auto discovery atom
-            if (this.querySelectorAll(`link[href="${baseURL}atom.xml"]`).length === 0) {
+            if (
+              this.querySelectorAll(`link[href="${baseURL}atom.xml"]`).length === 0 &&
+              this.querySelectorAll(`link[href="/atom.xml"]`).length === 0
+            ) {
               this.head.innerHTML += `<link id="atom-site-url" type="application/atom+xml" rel="alternate" href="${baseURL}atom.xml" />`;
             }
             //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');

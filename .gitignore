@@ -12,3 +12,6 @@ docs/
 *-backup
 *.backup.*
 *-private*
+**/.yarn/cache/**
+**/.yarn/*.gz
+.pnp.*
