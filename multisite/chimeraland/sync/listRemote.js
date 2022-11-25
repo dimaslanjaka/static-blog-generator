@@ -5,7 +5,7 @@ const bluebird = require('bluebird')
 /**
  * list remote files
  * @param {string} folderPath folder path or folder name
- * @returns
+ * @returns {Promise<import('./globals').ResponseListRemote>}
  */
 function listRemote(folderPath) {
   return new bluebird(function (resolveList) {

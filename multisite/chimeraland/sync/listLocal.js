@@ -1,7 +1,14 @@
 const fs = require('fs').promises
-const path = require('path')
+const minimatch = require('minimatch')
+const path = require('path/posix')
+const { ignores } = require('./_globals')
 
-async function listLocalFiles(localPath) {
+/**
+ * list local files
+ * @param {string} localPath
+ * @returns {Promise<string[]>}
+ */
+async function listLocal(localPath) {
   try {
     await fs.access(localPath)
   } catch (e) {
@@ -17,15 +24,19 @@ async function listLocalFiles(localPath) {
     const isFolder = (await fs.stat(fullPath)).isDirectory()
 
     if (isFolder) {
-      files = files.concat(await listLocalFiles(fullPath))
+      files = files.concat(await listLocal(fullPath))
     } else {
       files.push(fullPath)
     }
   }
 
-  return files
+  return files.filter((file) => {
+    return ignores.some(
+      (pattern) => !minimatch(file, pattern, { dot: true, matchBase: true })
+    )
+  })
 }
 
 module.exports = {
-  listLocalFiles
+  listLocal
 }

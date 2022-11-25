@@ -4,6 +4,18 @@ const yaml = require('js-yaml')
 const Schema = require('validate')
 const { google } = require('googleapis')
 
+/**
+ * ignore file patterns
+ */
+const ignores = [
+  '**/tmp/**',
+  '**/node_modules/**',
+  '.git*',
+  'desktop.ini',
+  '**/.git*',
+  '**/desktop.ini'
+]
+
 const configSchema = new Schema({
   remotePath: {
     type: 'string',
@@ -129,3 +141,4 @@ module.exports.ConfigFilesFinder = ConfigFilesFinder
 module.exports.getCacheDir = function () {
   return path.join(__dirname, '../.cache')
 }
+module.exports.ignores = ignores
