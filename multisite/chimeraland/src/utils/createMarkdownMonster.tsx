@@ -69,7 +69,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
     )
   }
 
-  let gallery = <></>
+  let gallery: null | JSX.Element = null
   if (item.images) {
     gallery = (
       <div id="gallery">
@@ -96,7 +96,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
         rel="stylesheet"
         href="https://cdn.statically.io/gh/dimaslanjaka/Web-Manajemen/40ac3225/css/bootstrap-4.5-wrapper.css"
       />
-      <h1>{item.name} Information from Chimeraland</h1>
+      <h2>{item.name} Information from Chimeraland</h2>
       <p>
         <b>{item.name}</b> default attribute {item.qty}
         {qtyhtm}
@@ -120,7 +120,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
           )
         })}
       <hr />
-      {gallery}
+      {gallery && gallery}
     </section>
   )
   let html = ReactDOMServer.renderToStaticMarkup(mdC).toString()
