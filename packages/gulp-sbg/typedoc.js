@@ -3,10 +3,6 @@ const { join } = require('path');
 const pkgjson = require('./package.json');
 
 /**
- * THEME: https://github.com/google/typedoc-neo-theme.git -> typedoc/theme
- */
-
-/**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
  */
 const entryPoints = readdirSync(join(__dirname, 'src'))
