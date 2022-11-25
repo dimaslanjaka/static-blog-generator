@@ -13,7 +13,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   const publicDir = join(hexoProject, 'src-posts/chimeraland', item.type)
 
   const attr: Record<string, any> = {}
-  attr.title = capitalizer(item.type).replace(/s$/,'') + ' ' + item.name
+  attr.title = capitalizer(item.type).replace(/s$/, '') + ' ' + item.name
   attr.webtitle = 'Chimeraland'
   attr.author = 'L3n4r0x'
   attr.updated = item.dateModified
