@@ -52,7 +52,6 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
-    "chimeraland": "file:multisite/chimeraland",
     "cross-env": "^7.0.3",
     "cross-spawn": "^7.0.3",
     "eslint": "^8.28.0",
