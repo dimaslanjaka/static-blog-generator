@@ -7,6 +7,7 @@ import {
   readFileSync,
   writeFileSync
 } from 'fs'
+import moment from 'moment-timezone'
 import sharp from 'sharp'
 import slugify from 'slugify'
 import { basename, dirname, extname, join } from 'upath'
@@ -21,6 +22,49 @@ type Extended = typeof monsters['data'][number] & {
   videos: any[]
   pathname: string
   type: 'monsters'
+}
+
+/**
+ * fix non-indexed data from json and local folder
+ * @returns
+ */
+const fixData = function () {
+  return new Bluebird((resolve) => {
+    readdirSync(join(__dirname, 'monsters'))
+      .filter((str) => str !== 'desktop.ini')
+      .forEach((monsterName) => {
+        const index = monsters.data.findIndex(
+          (item) =>
+            item.name === monsterName ||
+            slugify(item.name, { lower: true }) ===
+              slugify(monsterName, { lower: true })
+        )
+        const hasData = index !== -1
+        if (!hasData) {
+          // process new data
+          console.log('adding', monsterName)
+          const newItem: Required<typeof monsters.data[number]> = {
+            name: monsterName,
+            datePublished: moment().tz('Asia/Jakarta').format(),
+            dateModified: moment()
+              .tz('Asia/Jakarta')
+              .add(11, 'minutes')
+              .format(),
+            qty: '',
+            skill: [],
+            buff: [],
+            delicacies: []
+          }
+          monsters.data.push(newItem)
+        } else {
+          const item = monsters.data[index]
+          if (!item.skill) item.skill = []
+          if (!item.buff) item.buff = []
+          if (!item.delicacies) item.delicacies = []
+        }
+      })
+    resolve(null)
+  })
 }
 
 const getData = () => {
@@ -105,7 +149,9 @@ const getData = () => {
   })
 }
 
-getData().then((data) => {
-  writeFileSync(outputJSON, JSON.stringify(data, null, 2))
-  console.log('json written', outputJSON)
-})
+fixData().then(() =>
+  getData().then((data) => {
+    writeFileSync(outputJSON, JSON.stringify(data, null, 2))
+    console.log('json written', outputJSON)
+  })
+)
