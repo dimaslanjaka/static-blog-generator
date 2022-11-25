@@ -3,6 +3,7 @@ import prettier from 'prettier'
 import ReactDOMServer from 'react-dom/server'
 import slugify from 'slugify'
 import { dirname, join } from 'upath'
+import { inspect } from 'util'
 import yaml from 'yaml'
 import { hexoProject } from '../../project'
 import { AttendantsData, MonstersData, RecipesData } from './chimeraland'
@@ -130,6 +131,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   } catch (e) {
     if (e instanceof Error) {
       console.log('cannot prettify', item.name)
+      writeFileSync(join(process.cwd(), 'tmp/prettier-error.log'), inspect(e))
     }
   }
 
