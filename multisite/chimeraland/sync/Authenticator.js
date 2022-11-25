@@ -8,9 +8,132 @@ const globals = require('./_globals')
 const { glob } = require('glob')
 
 const CACHE_PATH = globals.getCacheDir()
-const TOKEN_PATH = path.join(CACHE_PATH, '.token')
+const TOKEN_PATH = path.join(CACHE_PATH, '.token.json')
+
+const CREDENTIAL_PATH = [
+  path.join(process.cwd(), 'google-api-key.json'),
+  path.join(process.cwd(), 'google-api-keys.json')
+]
+  .concat(...glob.sync('client_secret_*.json', { cwd: process.cwd() }))
+  .filter((loc) => fs.existsSync(loc))[0]
+let credential = { redirect_uris: [''] }
+
+if (!CREDENTIAL_PATH) {
+  throw new Error(
+    'Google Api Key JSON not found. add google-api-key.json to your root project'
+  )
+} else if (fs.existsSync(CREDENTIAL_PATH)) {
+  const keyFile = require(CREDENTIAL_PATH)
+  credential = keyFile.installed || keyFile.web
+}
+
+class AuthenticatorLocal {
+  /**
+   * Serializes credentials to a file comptible with GoogleAUth.fromJSON.
+   * @link https://developers.google.com/people/quickstart/nodejs
+   * @param {import('googleapis').Auth.OAuth2Client} client
+   * @return {Promise<void>}
+   */
+  async saveCredentials(client) {
+    const content = await fsProm.readFile(CREDENTIAL_PATH)
+    const keys = JSON.parse(content)
+    const key = keys.installed || keys.web
+    const payload = JSON.stringify({
+      type: 'authorized_user',
+      client_id: key.client_id,
+      client_secret: key.client_secret,
+      refresh_token: client.credentials.refresh_token
+    })
+
+    client.on('tokens', async function (newTokens) {
+      //ensure that always the latest tokens are stored in the cache
+
+      //if no token is stored yet: return
+      if (!fs.existsSync(TOKEN_PATH)) {
+        return
+      }
+
+      let tokens = JSON.parse(await fsProm.readFile(TOKEN_PATH))
+      tokens.access_token = newTokens.access_token
+      tokens.type = 'authorized_user'
+
+      if (newTokens.refresh_token) {
+        tokens.refresh_token = newTokens.refresh_token
+      }
+
+      //save new tokens
+      await fsProm.writeFile(TOKEN_PATH, JSON.stringify(tokens))
+      console.log('Updated cached oAuth Tokens')
+    })
+
+    await fsProm.writeFile(TOKEN_PATH, payload)
+  }
+
+  /**
+   * Reads previously authorized credentials from the save file.
+   * @link https://developers.google.com/people/quickstart/nodejs
+   * @return {Promise<import('googleapis').Auth.OAuth2Client|null>}
+   */
+  async loadSavedCredentialsIfExist() {
+    try {
+      const content = await fsProm.readFile(TOKEN_PATH)
+      const credentials = JSON.parse(content)
+      return google.auth.fromJSON(credentials)
+    } catch (err) {
+      return null
+    }
+  }
+
+  /**
+   * Load or request or authorization to call APIs.
+   * @returns {Promise<import('googleapis').Auth.OAuth2Client>}
+   */
+  async authorizeApi(options = { scopes: [] }) {
+    const { authenticate } = require('@google-cloud/local-auth')
+
+    let client = await this.loadSavedCredentialsIfExist()
+    if (client) {
+      return client
+    }
+    client = await authenticate({
+      scopes: options.scopes || [],
+      keyfilePath: CREDENTIAL_PATH
+    })
+    if (client.credentials) {
+      await this.saveCredentials(client)
+    }
+    return client
+  }
+}
 
 class Authenticator {
+  /**
+   * Auth using `@google-cloud/local-auth`
+   * * download api json file then rename and put `google-api-key.json` to root project
+   * @returns
+   */
+  static local = AuthenticatorLocal
+
+  /**
+   * Check expiry dates of token
+   * @param {import('googleapis').Auth.OAuth2Client} oauth2Client
+   * @returns {import('googleapis').Auth.OAuth2Client|undefined}
+   */
+  async validateToken(oauth2Client) {
+    if (fs.existsSync(TOKEN_PATH)) {
+      /**
+       * @type {import('googleapis').Auth.Credentials}
+       */
+      const tokens = JSON.parse(await fsProm.readFile(TOKEN_PATH))
+      const tokenInfo = await oauth2Client.getTokenInfo(tokens.access_token)
+
+      //console.log(tokenInfo.expiry_date)
+      //console.log(Date.now())
+      //console.log('DIFFERENT IN TIMES', tokenInfo.expiry_date , Date.now())
+      if (tokenInfo.expiry_date > Date.now()) return oauth2Client
+    }
+  }
+
   /**
    *
    * @returns {Promise<import('googleapis').Auth.OAuth2Client>}
@@ -88,85 +211,12 @@ class Authenticator {
     })
   }
 
-  /**
-   * Auth using `@google-cloud/local-auth`
-   * * download api json file then rename and put `google-api-key.json` to root project
-   * @returns
-   */
-  static async localAuth() {
-    const { authenticate } = await import('@google-cloud/local-auth')
-    console.log('glob', glob.sync(path.join(process.cwd(), 'client_secret_*')))
-    const keyfilePath = [
-      path.join(process.cwd(), 'google-api-key.json'),
-      path.join(process.cwd(), 'google-api-keys.json')
-    ]
-      .concat(...glob.sync('client_secret_*.json', { cwd: process.cwd() }))
-      .filter((loc) => fs.existsSync(loc))[0]
-
-    if (!keyfilePath) {
-      throw new Error(
-        'Google Api Key JSON not found. add google-api-key.json to your root project'
-      )
-    }
-    let keys = { redirect_uris: [''] }
-    if (fs.existsSync(keyfilePath)) {
-      const keyFile = require(keyfilePath)
-      keys = keyFile.installed || keyFile.web
-    }
-    const redirectUri = keys.redirect_uris[keys.redirect_uris.length - 1]
-    const oauth2Client = new google.auth.OAuth2(
-      keys.client_id,
-      keys.client_secret,
-      redirectUri
-    )
-
-    //ensure that always the latest tokens are stored in the cache
-    oauth2Client.on('tokens', async (newTokens) => {
-      //if no token is stored yet: return
-      if (!fs.existsSync(TOKEN_PATH)) {
-        return
-      }
-
-      let tokens = JSON.parse(await fsProm.readFile(TOKEN_PATH))
-      tokens.access_token = newTokens.access_token
-
-      if (newTokens.refresh_token) {
-        tokens.refresh_token = newTokens.refresh_token
-      }
-
-      //save new tokens
-      await fsProm.writeFile(TOKEN_PATH, JSON.stringify(tokens))
-      console.log('Updated cached oAuth Tokens')
-    })
-
-    if (fs.existsSync(TOKEN_PATH)) {
-      /**
-       * @type {import('googleapis').Auth.Credentials}
-       */
-      const tokens = JSON.parse(await fsProm.readFile(TOKEN_PATH))
-      const tokenInfo = await oauth2Client.getTokenInfo(tokens.access_token)
-
-      //console.log(tokenInfo.expiry_date)
-      //console.log(Date.now())
-      //console.log('DIFFERENT IN TIMES', tokenInfo.expiry_date , Date.now())
-      if (tokenInfo.expiry_date > Date.now()) return oauth2Client
-    }
-
-    // resolve new tokens
-    const localAuth = await authenticate({
-      scopes: [
-        'https://www.googleapis.com/auth/blogger',
-        'https://www.googleapis.com/auth/drive',
-        'https://www.googleapis.com/auth/youtube'
-      ],
-      keyfilePath
-    })
-    // console.log('Tokens:', localAuth.credentials)
-
-    fs.writeFileSync(TOKEN_PATH, JSON.stringify(localAuth.credentials))
-    oauth2Client.setCredentials(localAuth.credentials)
-    return oauth2Client
-  }
+  static scopes = [
+    'https://www.googleapis.com/auth/blogger',
+    'https://www.googleapis.com/auth/drive',
+    'https://www.googleapis.com/auth/youtube',
+    'https://www.googleapis.com/auth/contacts.readonly'
+  ]
 }
 
 module.exports = Authenticator
