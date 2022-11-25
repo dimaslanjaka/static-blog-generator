@@ -5,6 +5,7 @@ const fsProm = fs.promises
 const path = require('upath')
 const open = require('open')
 const globals = require('./_globals')
+const { glob } = require('glob')
 
 const CACHE_PATH = globals.getCacheDir()
 const TOKEN_PATH = path.join(CACHE_PATH, '.token')
@@ -86,20 +87,27 @@ class Authenticator {
       })
     })
   }
+
   /**
    * Auth using `@google-cloud/local-auth`
+   * * download api json file then rename and put `google-api-key.json` to root project
    * @returns
    */
   static async localAuth() {
     const { authenticate } = await import('@google-cloud/local-auth')
+    console.log('glob', glob.sync(path.join(process.cwd(), 'client_secret_*')))
     const keyfilePath = [
       path.join(process.cwd(), 'google-api-key.json'),
       path.join(process.cwd(), 'google-api-keys.json')
-    ].filter((loc) => fs.existsSync(loc))[0]
-    if (!keyfilePath)
+    ]
+      .concat(...glob.sync('client_secret_*.json', { cwd: process.cwd() }))
+      .filter((loc) => fs.existsSync(loc))[0]
+
+    if (!keyfilePath) {
       throw new Error(
         'Google Api Key JSON not found. add google-api-key.json to your root project'
       )
+    }
     let keys = { redirect_uris: [''] }
     if (fs.existsSync(keyfilePath)) {
       const keyFile = require(keyfilePath)
