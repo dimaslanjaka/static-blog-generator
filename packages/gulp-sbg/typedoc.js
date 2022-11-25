@@ -37,7 +37,7 @@ const typedocOptions = {
   gitRevision: 'master',
   githubPages: true,
   //theme: 'hierarchy',
-  //plugin: ['typedoc-theme-hierarchy'],
+  //plugin: ['typedoc-plugin-missing-exports'],
   ignoreCompilerErrors: true,
   logger: 'none'
 };
