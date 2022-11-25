@@ -1,3 +1,3 @@
 const { listRemote } = require('./listRemote')
 
-listRemote('/')
+listRemote('chimeraland').then(console.log)
