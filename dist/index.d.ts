@@ -8,8 +8,8 @@ export { DeepPartial, Nullable, ParseOptions } from './parsePost';
 export { postMap } from './types/postMap';
 export { postMeta } from './types/postMeta';
 export { parsePost, buildPost };
-declare const obj: {
+declare const hexoPostParser: {
     parsePost: typeof parsePost;
     buildPost: typeof buildPost;
 };
-export default obj;
+export default hexoPostParser;

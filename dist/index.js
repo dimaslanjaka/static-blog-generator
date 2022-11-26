@@ -12,6 +12,6 @@ var toHtml_1 = require("./markdown/toHtml");
 Object.defineProperty(exports, "renderMarkdown", { enumerable: true, get: function () { return toHtml_1.renderMarkdownIt; } });
 var parsePermalink_1 = require("./parsePermalink");
 Object.defineProperty(exports, "parsePermalink", { enumerable: true, get: function () { return parsePermalink_1.parsePermalink; } });
-const obj = { parsePost: parsePost_1.parsePost, buildPost: buildPost_1.buildPost };
-exports.default = obj;
+const hexoPostParser = { parsePost: parsePost_1.parsePost, buildPost: buildPost_1.buildPost };
+exports.default = hexoPostParser;
 //# sourceMappingURL=index.js.map
