@@ -1,6 +1,12 @@
 /* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
-const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
+const {
+  existsSync,
+  renameSync,
+  rmSync,
+  mkdirpSync,
+  writeFileSync
+} = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
@@ -32,6 +38,7 @@ child.on('exit', function () {
         }
         renameSync(tgz, tgzlatest);
         addReadMe();
+        rmSync(tgz);
       });
   }
 });
