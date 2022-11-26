@@ -11,6 +11,10 @@ const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
 
+console.log('='.repeat(19));
+console.log('= packing started =');
+console.log('='.repeat(19));
+
 const releaseDir = join(__dirname, 'release');
 const child = spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
 let version = (function () {
@@ -21,6 +25,14 @@ let version = (function () {
 child.on('exit', function () {
   const filename = slugifyPkgName(`${packagejson.name}-${version}.tgz`);
   const tgz = join(__dirname, filename);
+
+  if (!existsSync(tgz)) {
+    const filename2 = slugifyPkgName(
+      `${packagejson.name}-${packagejson.version}.tgz`
+    );
+    const origintgz = join(__dirname, filename2);
+    renameSync(origintgz, tgz);
+  }
   const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
 
   console.log({ tgz, tgzlatest });
@@ -38,7 +50,10 @@ child.on('exit', function () {
         }
         renameSync(tgz, tgzlatest);
         addReadMe();
-        rmSync(tgz);
+        if (existsSync(tgz)) rmSync(tgz);
+        console.log('='.repeat(20));
+        console.log('= packing finished =');
+        console.log('='.repeat(20));
       });
   }
 });
