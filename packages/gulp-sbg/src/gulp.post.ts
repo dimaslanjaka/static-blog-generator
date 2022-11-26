@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import through2 from 'through2';
-import { TaskCallback } from 'undertaker';
+
 import { extname, join, toUnix } from 'upath';
 import { gulpCached } from './gulp-utils/gulp.cache';
 import ProjectConfig from './gulp.config';
@@ -17,7 +17,7 @@ const destDir = join(process.cwd(), 'source/_posts');
  * Watch post while you writing new or modify posts from src-posts folder
  * @param done
  */
-export function watchPost(done: TaskCallback) {
+export function watchPost(done: gulp.TaskFunctionCallback) {
   const watcher = gulp.watch(['**/*'], { cwd: sourceDir });
   watcher.on('change', (path) => {
     copySinglePost(path);

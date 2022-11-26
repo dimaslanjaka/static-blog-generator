@@ -1,7 +1,8 @@
-import { TaskCallback } from 'undertaker';
+/// <reference types="node" />
+import gulp from 'gulp';
 import './gulp.clean';
 import './gulp.deploy';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
-export declare function commitProject(finish: TaskCallback): void | import("bluebird")<any>;
+export declare function commitProject(finish: gulp.TaskFunctionCallback): void | import("bluebird")<string | void | Buffer>;
