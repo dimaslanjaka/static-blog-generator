@@ -11,6 +11,12 @@ const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
 
+// auto create tarball (tgz) on release folder
+// raw: https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
+// github: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
+// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js > packer.js
+// usage: node packer.js
+
 console.log('='.repeat(19));
 console.log('= packing started =');
 console.log('='.repeat(19));
@@ -107,9 +113,4 @@ npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/pack
 > https://github.com/github-username/github-repo-name/raw/github-branch-name/path-to-file-with-extension
   `.trim()
   );
-}
-
-function _update() {
-  // https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
-  // https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
 }
