@@ -1,9 +1,19 @@
 /* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
-const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
+const {
+  existsSync,
+  renameSync,
+  rmSync,
+  mkdirpSync,
+  writeFileSync
+} = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
+
+console.log('='.repeat(19));
+console.log('= packing started =');
+console.log('='.repeat(19));
 
 const releaseDir = join(__dirname, 'release');
 const child = spawn('npm', ['pack'], { cwd: __dirname, stdio: 'ignore' });
@@ -15,6 +25,14 @@ let version = (function () {
 child.on('exit', function () {
   const filename = slugifyPkgName(`${packagejson.name}-${version}.tgz`);
   const tgz = join(__dirname, filename);
+
+  if (!existsSync(tgz)) {
+    const filename2 = slugifyPkgName(
+      `${packagejson.name}-${packagejson.version}.tgz`
+    );
+    const origintgz = join(__dirname, filename2);
+    renameSync(origintgz, tgz);
+  }
   const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
 
   console.log({ tgz, tgzlatest });
@@ -32,6 +50,10 @@ child.on('exit', function () {
         }
         renameSync(tgz, tgzlatest);
         addReadMe();
+        if (existsSync(tgz)) rmSync(tgz);
+        console.log('='.repeat(20));
+        console.log('= packing finished =');
+        console.log('='.repeat(20));
       });
   }
 });
@@ -89,4 +111,5 @@ npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/pack
 
 function _update() {
   // https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
+  // https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
 }
