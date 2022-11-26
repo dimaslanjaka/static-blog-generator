@@ -96,4 +96,5 @@ npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/pack
 
 function _update() {
   // https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
+  // https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
 }
