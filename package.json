@@ -2,15 +2,6 @@
   "name": "static-blog-generator-hexo",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "packages/gulp-dom",
-    "packages/gulp-sbg",
-    "packages/hexo-generator-redirect",
-    "packages/hexo-github-card",
-    "packages/@types/hexo",
-    "packages/@types/hexo-util",
-    "packages/sitemap-crawler"
-  ],
   "scripts": {
     "prestart": "npm run copy",
     "start": "npm run server",
