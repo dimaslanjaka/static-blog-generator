@@ -7,10 +7,15 @@ import { deployConfig } from './gulp.config';
  * @param cwd directory to scan htmls
  */
 export function autoSeo(cwd: string) {
-  return GulpClient.src('**/*.{htm,html}', { cwd })
+  return GulpClient.src(['**/*.{htm,html}', '*.{html,htm}'], { cwd })
     .pipe(
-      gulpDom(function (path) {
-        console.log(path);
+      gulpDom(function () {
+        // fix alt images
+        const images = Array.from(this.querySelectorAll('img[src]'));
+        images.forEach((el) => {
+          const alt = el.getAttribute('alt');
+          console.log({ alt });
+        });
       })
     )
     .pipe(GulpClient.dest(cwd));

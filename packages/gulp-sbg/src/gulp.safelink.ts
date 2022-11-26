@@ -6,30 +6,33 @@ import ProjectConfig, { deployDir } from './gulp.config';
 
 const config = ProjectConfig;
 
-const configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
+const configSafelink = Object.assign({ enable: false }, config.external_link?.safelink || {});
+let baseURL = '';
+try {
+  baseURL = new URL(config.url).host;
+} catch {
+  //
+}
 const safelink = new sf.safelink({
   // exclude patterns (dont anonymize these patterns)
   exclude: [
-    ...config.external_link.exclude,
+    ...(config.external_link?.exclude || []),
     /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
     /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
-    new URL(config.url).host,
+    baseURL,
     'www.webmanajemen.com',
     'https://github.com/dimaslanjaka',
     'https://facebook.com/dimaslanjaka1',
     'dimaslanjaka.github.io',
     ...configSafelink.exclude
   ].filter(function (x, i, a) {
-    // remove duplicate
-    return a.indexOf(x) === i;
+    // remove duplicate and empties
+    return a.indexOf(x) === i && x.toString().trim().length !== 0;
   }),
   redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
   password: configSafelink.password || config.external_link.safelink.password,
   type: configSafelink.type || config.external_link.safelink.type
 });
-
-// safelinkify the deploy folder
-gulp.task('safelink', safelinkProcess);
 
 export function safelinkProcess(_done?: gulp.TaskFunctionCallback) {
   return new Promise((resolve) => {
@@ -52,13 +55,15 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback) {
       .pipe(
         through2.obj(async (file, _enc, next) => {
           // drop null
-          if (file.isNull()) return next();
-          // do safelinkify
-          const content = String(file.contents);
-          const parsed = await safelink.parse(content);
-          if (parsed) {
-            file.contents = Buffer.from(parsed);
-            return next(null, file);
+          if (file.isNull() || file.isDirectory() || !file) return next();
+          if (file.isBuffer()) {
+            // do safelinkify
+            const content = file.contents.toString('utf-8');
+            const parsed = await safelink.parse(content);
+            if (parsed) {
+              file.contents = Buffer.from(parsed);
+              return next(null, file);
+            }
           }
           console.log('cannot parse', file.path);
           // drop fails
@@ -69,3 +74,6 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback) {
       .once('end', () => resolve(null));
   });
 }
+
+// safelinkify the deploy folder
+gulp.task('safelink', safelinkProcess);

@@ -1,3 +1,4 @@
 source/_posts/**/*.md
 tmp
 .cache
+.deploy_git
