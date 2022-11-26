@@ -1,5 +1,5 @@
-import { existsSync, writeFileSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import { dirname, join } from 'path';
 
 // [task] generate empty config if not exists
 [
@@ -8,7 +8,8 @@ import { join, dirname } from 'path';
   join(__dirname, 'types/_config_hashes.json')
 ].forEach((path) => {
   if (!existsSync(path)) {
-    if (!existsSync(dirname(path))) mkdirSync(dirname(path), { recursive: true });
+    if (!existsSync(dirname(path)))
+      mkdirSync(dirname(path), { recursive: true });
     writeFileSync(path, '{}');
   }
 });
