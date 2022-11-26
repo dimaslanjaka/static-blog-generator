@@ -70,6 +70,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.safelinkProcess = void 0;
 var gulp_1 = __importDefault(require("gulp"));
@@ -77,27 +78,32 @@ var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
 var gulp_config_1 = __importStar(require("./gulp.config"));
 var config = gulp_config_1.default;
-var configSafelink = Object.assign({ enable: false }, config.external_link.safelink);
+var configSafelink = Object.assign({ enable: false }, ((_a = config.external_link) === null || _a === void 0 ? void 0 : _a.safelink) || {});
+var baseURL = '';
+try {
+    baseURL = new URL(config.url).host;
+}
+catch (_c) {
+    //
+}
 var safelink = new safelinkify_1.default.safelink({
     // exclude patterns (dont anonymize these patterns)
-    exclude: __spreadArray(__spreadArray(__spreadArray([], config.external_link.exclude, true), [
+    exclude: __spreadArray(__spreadArray(__spreadArray([], (((_b = config.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || []), true), [
         /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
         /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
-        new URL(config.url).host,
+        baseURL,
         'www.webmanajemen.com',
         'https://github.com/dimaslanjaka',
         'https://facebook.com/dimaslanjaka1',
         'dimaslanjaka.github.io'
     ], false), configSafelink.exclude, true).filter(function (x, i, a) {
-        // remove duplicate
-        return a.indexOf(x) === i;
+        // remove duplicate and empties
+        return a.indexOf(x) === i && x.toString().trim().length !== 0;
     }),
     redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
     password: configSafelink.password || config.external_link.safelink.password,
     type: configSafelink.type || config.external_link.safelink.type
 });
-// safelinkify the deploy folder
-gulp_1.default.task('safelink', safelinkProcess);
 function safelinkProcess(_done) {
     var _this = this;
     return new Promise(function (resolve) {
@@ -123,9 +129,10 @@ function safelinkProcess(_done) {
                 switch (_a.label) {
                     case 0:
                         // drop null
-                        if (file.isNull())
+                        if (file.isNull() || file.isDirectory() || !file)
                             return [2 /*return*/, next()];
-                        content = String(file.contents);
+                        if (!file.isBuffer()) return [3 /*break*/, 2];
+                        content = file.contents.toString('utf-8');
                         return [4 /*yield*/, safelink.parse(content)];
                     case 1:
                         parsed = _a.sent();
@@ -133,6 +140,8 @@ function safelinkProcess(_done) {
                             file.contents = Buffer.from(parsed);
                             return [2 /*return*/, next(null, file)];
                         }
+                        _a.label = 2;
+                    case 2:
                         console.log('cannot parse', file.path);
                         // drop fails
                         next();
@@ -145,3 +154,5 @@ function safelinkProcess(_done) {
     });
 }
 exports.safelinkProcess = safelinkProcess;
+// safelinkify the deploy folder
+gulp_1.default.task('safelink', safelinkProcess);

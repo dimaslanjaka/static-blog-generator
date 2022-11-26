@@ -13,6 +13,7 @@ import '../src/gulp.safelink';
 
 const publicDIR = join(__dirname, 'public');
 const postDIR = join(__dirname, 'source/_posts');
+const deployDIR = join(__dirname, '.deploy_git');
 
 export function renderHtmlToSource() {
   return gulp
@@ -34,3 +35,5 @@ export function renderHtmlToSource() {
     )
     .pipe(gulp.dest(publicDIR));
 }
+
+export const copyToDeployDir = () => gulp.src(['*.html', '**/*.html'], { cwd: publicDIR }).pipe(gulp.dest(deployDIR));
