@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import { spawn } from 'hexo-util';
-import { TaskCallback } from 'undertaker';
+
 import { join } from 'upath';
 import './gulp.clean';
 import './gulp.deploy';
@@ -9,7 +9,7 @@ import './gulp.post';
 import './gulp.safelink';
 
 // commit current project
-export function commitProject(finish: TaskCallback) {
+export function commitProject(finish: gulp.TaskFunctionCallback) {
   const gitDirs = [join(process.cwd(), 'src-posts'), join(process.cwd(), 'source'), process.cwd()];
   const commit = () => {
     if (!gitDirs.length) return finish();
