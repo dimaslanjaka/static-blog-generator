@@ -3,7 +3,6 @@ import { existsSync } from 'fs';
 import { gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
 import moment from 'moment-timezone';
-import { TaskCallback } from 'undertaker';
 import { join, toUnix } from 'upath';
 import './gulp.clean';
 import ProjectConfig, { deployConfig } from './gulp.config';
@@ -60,7 +59,7 @@ function pull() {
   });
 }
 
-function status(done?: TaskCallback) {
+function status(done?: gulp.TaskFunctionCallback) {
   const { github } = deployConfig();
   github.status().then((statuses) => {
     statuses.map((item) => {

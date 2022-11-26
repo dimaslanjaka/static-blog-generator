@@ -11,7 +11,11 @@
     "incremental": true,
     "declaration": true,
     "stripInternal": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "typeAcquisition": {
     "enable": true

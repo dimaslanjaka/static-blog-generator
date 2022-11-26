@@ -1,11 +1,11 @@
 /// <reference types="node" />
 /// <reference types="node" />
-import { TaskCallback } from 'undertaker';
+import gulp from 'gulp';
 /**
  * Watch post while you writing new or modify posts from src-posts folder
  * @param done
  */
-export declare function watchPost(done: TaskCallback): void;
+export declare function watchPost(done: gulp.TaskFunctionCallback): void;
 /**
  * Copy single post from src-posts folder to source/_posts
  * @param identifier

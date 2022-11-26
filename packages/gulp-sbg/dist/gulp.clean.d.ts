@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { TaskCallback } from 'undertaker';
+import gulp from 'gulp';
 /**
  * Clean Project Databases
  */
@@ -13,4 +13,4 @@ export declare function del(path: string): Bluebird<unknown>;
 /**
  * clean old archives (categories, tags, pagination)
  */
-export declare function cleanOldArchives(done?: TaskCallback): Bluebird<void>;
+export declare function cleanOldArchives(done?: gulp.TaskFunctionCallback): Bluebird<void>;

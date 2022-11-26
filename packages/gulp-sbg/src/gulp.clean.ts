@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import { existsSync, rm, rmdir, RmOptions, statSync } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
-import { TaskCallback } from 'undertaker';
+
 import { join } from 'upath';
 import ProjectConfig, { deployDir } from './gulp.config';
 import noop from './utils/noop';
@@ -62,7 +62,7 @@ gulp.task('clean', cleanDb);
 /**
  * clean old archives (categories, tags, pagination)
  */
-export function cleanOldArchives(done?: TaskCallback) {
+export function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
   const archives = join(deployDir, ProjectConfig.archive_dir);
   const categories = join(deployDir, ProjectConfig.category_dir);
   const tags = join(deployDir, ProjectConfig.tag_dir);
