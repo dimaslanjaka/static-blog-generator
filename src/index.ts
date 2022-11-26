@@ -9,6 +9,6 @@ export { postMap } from './types/postMap';
 export { postMeta } from './types/postMeta';
 export { parsePost, buildPost };
 
-const obj = { parsePost, buildPost };
+const hexoPostParser = { parsePost, buildPost };
 
-export default obj;
+export default hexoPostParser;
