@@ -20,13 +20,13 @@ const { spawn } = require('cross-spawn');
         //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
         if (isYarn) {
           // yarn upgrade package
-          await summon('yarn', ['upgrade'].concat(pkgname), {
+          await summon('yarn', ['upgrade'].concat(pkgname, '--save'), {
             cwd: __dirname,
             stdio: 'inherit'
           });
         } else {
           // npm update package
-          await summon('npm', ['update'].concat(pkgname), {
+          await summon('npm', ['update'].concat(pkgname, '--save'), {
             cwd: __dirname,
             stdio: 'inherit'
           });

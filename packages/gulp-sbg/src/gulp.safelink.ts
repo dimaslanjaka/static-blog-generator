@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import sf from 'safelinkify';
 import through2 from 'through2';
-import { TaskCallback } from 'undertaker';
+
 import ProjectConfig, { deployDir } from './gulp.config';
 
 const config = ProjectConfig;
@@ -31,7 +31,7 @@ const safelink = new sf.safelink({
 // safelinkify the deploy folder
 gulp.task('safelink', safelinkProcess);
 
-export function safelinkProcess(_done?: TaskCallback) {
+export function safelinkProcess(_done?: gulp.TaskFunctionCallback) {
   return new Promise((resolve) => {
     gulp
       .src(['**/*.{html,htm}'], {
