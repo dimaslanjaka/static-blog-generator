@@ -6,7 +6,7 @@ declare const defOpt: {
     preserveLeadingUnderscore: boolean;
     preserveTrailingDash: boolean;
 };
-export declare type SlugifyOpt = typeof defOpt | {
+export type SlugifyOpt = typeof defOpt | {
     [key: string]: any;
 };
 export default function slugify(string: string, options?: SlugifyOpt): string;

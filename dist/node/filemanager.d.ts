@@ -18,7 +18,7 @@ export declare function normalize(path: string): string;
  * node_modules/.cache/${name}
  */
 export declare const cacheDir: string;
-export declare type Mutable<T> = {
+export type Mutable<T> = {
     -readonly [k in keyof T]: T[k];
 };
 declare const filemanager: {

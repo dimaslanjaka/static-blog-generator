@@ -12,14 +12,14 @@ export declare const converterOpt: {
 export default function renderShowdown(str: string): any;
 /**
  * Render markdown to html using `markdown-it`, `markdown-it-attrs`, `markdown-it-anchors`, `markdown-it-sup`, `markdown-it-sub`, `markdown-it-mark`, `markdown-it-footnote`, `markdown-it-abbr`
- * @see {@link https://www.npmjs.com/package/markdown-it-attrs}
- * @see {@link https://www.npmjs.com/package/markdown-it-attrs}
- * @see {@link https://www.npmjs.com/package/markdown-it-anchors}
- * @see {@link https://www.npmjs.com/package/markdown-it-sup}
- * @see {@link https://www.npmjs.com/package/markdown-it-sub}
- * @see {@link https://www.npmjs.com/package/markdown-it-mark}
- * @see {@link https://www.npmjs.com/package/markdown-it-footnote}
- * @see {@link https://www.npmjs.com/package/markdown-it-abbr}
+ * * {@link https://www.npmjs.com/package/markdown-it-attrs}
+ * * {@link https://www.npmjs.com/package/markdown-it-attrs}
+ * * {@link https://www.npmjs.com/package/markdown-it-anchors}
+ * * {@link https://www.npmjs.com/package/markdown-it-sup}
+ * * {@link https://www.npmjs.com/package/markdown-it-sub}
+ * * {@link https://www.npmjs.com/package/markdown-it-mark}
+ * * {@link https://www.npmjs.com/package/markdown-it-footnote}
+ * * {@link https://www.npmjs.com/package/markdown-it-abbr}
  * @param str
  * @returns
  */

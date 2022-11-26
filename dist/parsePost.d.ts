@@ -75,13 +75,13 @@ export interface ParseOptions {
 /**
  * make all properties as optional recursively
  */
-export declare type DeepPartial<T> = T extends object ? {
+export type DeepPartial<T> = T extends object ? {
     [P in keyof T]?: DeepPartial<T[P]>;
 } : T;
 /**
  * null | type
  */
-export declare type Nullable<T> = T | null | undefined;
+export type Nullable<T> = T | null | undefined;
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body

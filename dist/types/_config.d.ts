@@ -72,7 +72,7 @@ declare const defaultOptions: {
     ignore: any[];
     meta_generator: boolean;
 };
-declare type MergeData = Partial<typeof data> & Partial<typeof defaultOptions>;
+type MergeData = Partial<typeof data> & Partial<typeof defaultOptions>;
 interface Config extends Partial<MergeData> {
     verbose?: boolean;
     generator?: {
