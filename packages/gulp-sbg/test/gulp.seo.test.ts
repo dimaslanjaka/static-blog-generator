@@ -13,7 +13,7 @@ gulp
       if (file.isBuffer()) {
         const md = file.contents.toString('utf-8');
         const parse = fm(md);
-        console.log(parse.attributes);
+
         file.extname = '.html';
       }
       next(null, file);
