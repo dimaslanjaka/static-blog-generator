@@ -24,11 +24,15 @@ let version = (function () {
 
 child.on('exit', function () {
   const filename = slugifyPkgName(`${packagejson.name}-${version}.tgz`);
-  const filename2 = slugifyPkgName(
-    `${packagejson.name}-${packagejson.version}.tgz`
-  );
-  let tgz = join(__dirname, filename);
-  if (!existsSync(tgz)) tgz = join(__dirname, filename2);
+  const tgz = join(__dirname, filename);
+
+  if (!existsSync(tgz)) {
+    const filename2 = slugifyPkgName(
+      `${packagejson.name}-${packagejson.version}.tgz`
+    );
+    const origintgz = join(__dirname, filename2);
+    renameSync(origintgz, tgz);
+  }
   const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
 
   console.log({ tgz, tgzlatest });
