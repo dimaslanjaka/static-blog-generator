@@ -58,6 +58,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -195,14 +211,14 @@ function hexoGenerateSitemap() {
                 var skip_render = config.skip_render, sitemap = config.sitemap;
                 var skipRenderList = ['**/*.js', '**/*.css'];
                 if (Array.isArray(skip_render)) {
-                    skipRenderList.push.apply(skipRenderList, skip_render);
+                    skipRenderList.push.apply(skipRenderList, __spreadArray([], __read(skip_render), false));
                 }
                 else if (typeof skip_render === 'string') {
                     if (skip_render.length > 0) {
                         skipRenderList.push(skip_render);
                     }
                 }
-                var posts = __spreadArray(__spreadArray([], locals.get('pages').toArray(), true), locals.get('posts').toArray(), true).filter(function (post) {
+                var posts = __spreadArray(__spreadArray([], __read(locals.get('pages').toArray()), false), __read(locals.get('posts').toArray()), false).filter(function (post) {
                     return post.sitemap !== false && !isMatch(post.source, skipRenderList);
                 })
                     .sort(function (a, b) {
