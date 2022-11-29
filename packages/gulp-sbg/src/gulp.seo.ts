@@ -1,6 +1,9 @@
 import GulpClient from 'gulp';
 import gulpDom from 'gulp-dom';
 import { deployConfig } from './gulp.config';
+import Logger from './utils/logger';
+
+const console = Logger;
 
 /**
  * Auto seo runner
@@ -33,7 +36,9 @@ export function autoSeo(cwd: string) {
         // WARNING MAKER
         // count H1
         const h1 = this.querySelectorAll('h1');
-        if (h1.length > 1) console.log(`[WARN] H1 (${h1.length}) ${path}`);
+        if (h1.length > 1) {
+          console.log(`[WARN] H1 (${h1.length}) ${path}`);
+        }
       })
     )
     .pipe(GulpClient.dest(cwd));
