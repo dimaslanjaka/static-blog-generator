@@ -3,7 +3,11 @@ import slugify from 'slugify';
 import { basename, dirname, join } from 'upath';
 
 const FOLDER = join(process.cwd(), 'tmp/logs/gulp-sbg');
-
+/**
+ * @example
+ * const console = Logger
+ * console.log('hello world'); // should be written in ./tmp/logs/gulp-sbg/[trace-name].log
+ */
 class Logger {
   static log(...args: any[]) {
     console.log(...args);
