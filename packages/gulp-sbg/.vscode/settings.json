@@ -6,5 +6,11 @@
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
   "code-runner.runInTerminal": true,
-  "code-runner.saveAllFilesBeforeRun": true
+  "code-runner.saveAllFilesBeforeRun": true,
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/tmp/**": true
+  }
 }

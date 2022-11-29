@@ -22,7 +22,9 @@
     "allowJs": true,
     "checkJs": false,
     "newLine": "lf",
-    "types": []
+    "types": [],
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "project.js"

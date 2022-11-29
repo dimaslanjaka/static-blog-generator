@@ -44,6 +44,7 @@
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
     "safelinkify": "^1.1.6",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
+    "slugify": "^1.6.5",
     "through2": "^4.0.2",
     "upath": "^2.0.1",
     "yaml": "^2.1.3"

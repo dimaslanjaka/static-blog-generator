@@ -58,6 +58,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -88,7 +104,7 @@ catch (_c) {
 }
 var safelink = new safelinkify_1.default.safelink({
     // exclude patterns (dont anonymize these patterns)
-    exclude: __spreadArray(__spreadArray(__spreadArray([], (((_b = config.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || []), true), [
+    exclude: __spreadArray(__spreadArray(__spreadArray([], __read((((_b = config.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || [])), false), [
         /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
         /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
         baseURL,
@@ -96,7 +112,7 @@ var safelink = new safelinkify_1.default.safelink({
         'https://github.com/dimaslanjaka',
         'https://facebook.com/dimaslanjaka1',
         'dimaslanjaka.github.io'
-    ], false), configSafelink.exclude, true).filter(function (x, i, a) {
+    ], false), __read(configSafelink.exclude), false).filter(function (x, i, a) {
         // remove duplicate and empties
         return a.indexOf(x) === i && x.toString().trim().length !== 0;
     }),
