@@ -40,9 +40,14 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
     attr.categories.push('Attendants')
   }
 
+  // remove undefineds
+  item.delicacies = item.delicacies.filter(
+    (str) => str.length > 0 && str !== 'undefined'
+  )
+  // add description when quality and delicacies written
   if (item.delicacies.length > 0 && item.qty.length > 0) {
     attr.description =
-      `${item.name} default quality ${item.qty} ${item.buff} delicacies/tasty ${item.delicacies}`.substring(
+      `${item.name} default quality ${item.qty} ${item.buff} delicacies/tasty ${item.delicacies} ${attr.categories} ${attr.tags}`.substring(
         0,
         300
       )
