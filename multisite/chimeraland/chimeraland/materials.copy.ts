@@ -78,7 +78,9 @@ Bluebird.all(materials.data)
           return regexs.some(Boolean)
         })
         .map((loc) => loc.path)
+
       if (location.length > 0) {
+        console.log(mat.name, location)
         location.forEach((loc) => imgFiles.push(loc))
       }
     }
