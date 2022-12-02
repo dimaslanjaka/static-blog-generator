@@ -21,13 +21,19 @@ const bodyfile = join(__dirname, 'body.md')
 const bodymd = readFileSync(bodyfile, 'utf-8')
 const bodyhtml = renderMarkdown(bodymd)
 const dom = new JSDOM(bodyhtml)
-Array.from(dom.window.document.querySelectorAll('tr')).forEach((tr) => {
-  const player = tr.querySelector('td:nth-child(1)')
-  if (player) {
-    // console.log(player.innerHTML)
-    player.setAttribute('notranslate', '')
-  }
+Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
+  table
+) {
+  table.setAttribute('style', 'width:100%;')
+  Array.from(table.querySelectorAll('tr')).forEach((tr) => {
+    const player = tr.querySelector('td:nth-child(1)')
+    if (player && !/nama player/gim.test(player.innerHTML)) {
+      // console.log(player.innerHTML)
+      player.setAttribute('notranslate', '')
+    }
+  })
 })
+
 const body = dom.window.document.body.innerHTML
 dom.window.close()
 // console.log(body)

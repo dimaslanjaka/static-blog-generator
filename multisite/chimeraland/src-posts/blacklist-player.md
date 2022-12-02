@@ -211,7 +211,7 @@ author: L3n4r0x
 </script>
 
 <h2 id="daftar-blacklist-player-kategori-scammer-map-illus-16-party" tabindex="-1"><a class="header-anchor" href="#daftar-blacklist-player-kategori-scammer-map-illus-16-party">Daftar blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</a></h2>
-<table>
+<table style="width:100%;">
 <thead>
 <tr>
 <th style="text-align:left">Nama Player</th>
@@ -242,7 +242,7 @@ author: L3n4r0x
 </tbody>
 </table>
 <h2 id="daftar-blacklist-player-kategori-scammer-ruby" tabindex="-1"><a class="header-anchor" href="#daftar-blacklist-player-kategori-scammer-ruby">Daftar blacklist player kategori SCAMMER RUBY</a></h2>
-<table>
+<table style="width:100%;">
 <thead>
 <tr>
 <th style="text-align:left">Nama Player</th>
@@ -273,7 +273,7 @@ author: L3n4r0x
 </tbody>
 </table>
 <h2 id="daftar-player-kategori-tukang-roll-drop-item" tabindex="-1"><a class="header-anchor" href="#daftar-player-kategori-tukang-roll-drop-item">Daftar player kategori tukang roll drop item</a></h2>
-<table>
+<table style="width:100%;">
 <thead>
 <tr>
 <th style="text-align:left">Nama Player</th>
