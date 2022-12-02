@@ -1,6 +1,13 @@
 import './a_index';
 import { buildPost } from './buildPost';
+import { generatePostId } from './generatePostId';
+import { renderMarkdownIt as renderMarkdown } from './markdown/toHtml';
+import { parsePermalink } from './parsePermalink';
 import { parsePost } from './parsePost';
+
+const hexoPostParser = { parsePost, buildPost, generatePostId, renderMarkdown, parsePermalink };
+
+export default hexoPostParser;
 
 // exports
 export { generatePostId } from './generatePostId';
@@ -11,7 +18,3 @@ export { postMap } from './types/postMap';
 export { postMeta } from './types/postMeta';
 export { parsePost, buildPost };
 // /exports
-
-const hexoPostParser = { parsePost, buildPost, generatePostId, renderMarkdown, parsePermalink, DeepPartial, Nullable, ParseOptions, postMap, postMeta };
-
-export default hexoPostParser;

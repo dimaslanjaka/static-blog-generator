@@ -1,12 +1,6 @@
 /* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
-const {
-  existsSync,
-  renameSync,
-  rmSync,
-  mkdirpSync,
-  writeFileSync
-} = require('fs-extra');
+const { existsSync, renameSync, rmSync, mkdirpSync, writeFileSync } = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
 const packagejson = require('./package.json');
@@ -33,9 +27,7 @@ child.on('exit', function () {
   const tgz = join(__dirname, filename);
 
   if (!existsSync(tgz)) {
-    const filename2 = slugifyPkgName(
-      `${packagejson.name}-${packagejson.version}.tgz`
-    );
+    const filename2 = slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
     const origintgz = join(__dirname, filename2);
     renameSync(origintgz, tgz);
   }
