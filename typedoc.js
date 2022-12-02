@@ -32,7 +32,7 @@ entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) =
  * @type {import('typedoc').TypeDocOptions}
  */
 const typedocOptions = {
-  name: 'Static Blog Generator Gulp',
+  name: pkgjson.projectName || 'Static Blog Generator Gulp',
   entryPoints,
   out: 'docs/' + pkgjson.name,
   entryPointStrategy: 'Expand',
