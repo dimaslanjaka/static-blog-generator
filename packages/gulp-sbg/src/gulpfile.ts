@@ -1,12 +1,12 @@
 import gulp from 'gulp';
 import { spawn } from 'hexo-util';
-
 import { join } from 'upath';
 import './gulp.clean';
 import './gulp.deploy';
 import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
+import './gulp.seo';
 
 // commit current project
 export function commitProject(finish: gulp.TaskFunctionCallback) {
