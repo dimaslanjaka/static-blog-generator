@@ -3,7 +3,7 @@ title: Blacklist Player Chimeraland
 description: Blacklist player chimeraland (scammer list meliputi ruby trader,
   map illus 16 party, roll drop item, dan lain-lain)
 date: 2022-11-07T19:54:01+07:00
-updated: 2022-12-02T16:31:16+07:00
+updated: 2022-12-03T06:22:25+07:00
 lang: id
 permalink: /chimeraland/blacklist-player.html
 tags:
@@ -222,23 +222,23 @@ author: L3n4r0x
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left" notranslate="">ASTER</td>
+<td style="text-align:left" notranslate="" id="ASTER">ASTER</td>
 <td style="text-align:left">SCAMMER MAP ILLUS 16</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">arkep</td>
+<td style="text-align:left" notranslate="" id="arkep">arkep</td>
 <td style="text-align:left">SCAMMER MAP ILLUS 16</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">Shelby</td>
+<td style="text-align:left" notranslate="" id="Shelby">Shelby</td>
 <td style="text-align:left">SCAMMER MAP ILLUS 16</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">Suvi</td>
+<td style="text-align:left" notranslate="" id="Suvi">Suvi</td>
 <td style="text-align:left">SCAMMER MAP ILLUS 16 sebagai LEADER PARTY</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">PrimalHunter</td>
+<td style="text-align:left" notranslate="" id="PrimalHunter">PrimalHunter</td>
 <td style="text-align:left">SCAMMER MAP ILLUS 16</td>
 </tr>
 </tbody>
@@ -253,24 +253,32 @@ author: L3n4r0x
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left" notranslate="">Shelby</td>
+<td style="text-align:left" notranslate="" id="Shelby">Shelby</td>
 <td style="text-align:left">SCAMMER ruby</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">NesaMiko</td>
+<td style="text-align:left" notranslate="" id="NesaMiko">NesaMiko</td>
 <td style="text-align:left">SCAMMER 6000 ruby tukar akun <strong>Mobile Legends</strong></td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">Tusboll</td>
+<td style="text-align:left" notranslate="" id="Tusboll">Tusboll</td>
 <td style="text-align:left">SCAMMER ruby dengan alasan <strong>harga pensi</strong> / rate pensi</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">Ryujin</td>
+<td style="text-align:left" notranslate="" id="Ryujin">Ryujin</td>
 <td style="text-align:left">SCAMMER ruby dengan alasan <strong>harga pensi</strong> / rate pensi</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">Ryuukendo</td>
+<td style="text-align:left" notranslate="" id="Ryuukendo">Ryuukendo</td>
 <td style="text-align:left">SCAMMER ruby dengan alasan <strong>harga pensi</strong> / rate pensi</td>
+</tr>
+<tr>
+<td style="text-align:left" notranslate="" id="hella">hella</td>
+<td style="text-align:left">SCAMMER sebagai penjual telur rare, scam player <strong>oishitamango</strong></td>
+</tr>
+<tr>
+<td style="text-align:left" notranslate="" id="LORD">LORD</td>
+<td style="text-align:left">AKUN KEDUA <strong>hella</strong></td>
 </tr>
 </tbody>
 </table>
@@ -284,22 +292,38 @@ author: L3n4r0x
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left" notranslate="">Corleonx</td>
+<td style="text-align:left" notranslate="" id="Corleonx">Corleonx</td>
 <td style="text-align:left">Roll drops items</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">Shelby</td>
+<td style="text-align:left" notranslate="" id="Shelby">Shelby</td>
 <td style="text-align:left">Roll drops items</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="">PrimalHunter</td>
+<td style="text-align:left" notranslate="" id="PrimalHunter">PrimalHunter</td>
 <td style="text-align:left">Roll drops items</td>
+</tr>
+</tbody>
+</table>
+<h2 id="daftar-player-yang-dicurigai-sebagai-scammer" tabindex="-1"><a href="#daftar-player-yang-dicurigai-sebagai-scammer">Daftar player yang dicurigai sebagai scammer</a></h2>
+<table style="width:100%;">
+<thead>
+<tr>
+<th style="text-align:left">Nama Player</th>
+<th style="text-align:left">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left" notranslate="" id="ChipsChips">ChipsChips</td>
+<td style="text-align:left">dicurigai sebagai scammer map illus 16 party</td>
 </tr>
 </tbody>
 </table>
 <h2 id="hindari-hal-hal-berikut-agar-tidak-kena-scam" tabindex="-1"><a href="#hindari-hal-hal-berikut-agar-tidak-kena-scam">Hindari Hal-Hal Berikut Agar Tidak Kena Scam</a></h2>
 <ul>
 <li>Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).</li>
+<li>Jangan melakukan transaksi dengan <strong>AKUN SMURF</strong>, 90% merupakan scammer.</li>
 </ul>
 <blockquote>
 <p>shortlink halaman ini: <a href="http://bit.ly/chimeraland-blacklist">http://bit.ly/chimeraland-blacklist</a></p>

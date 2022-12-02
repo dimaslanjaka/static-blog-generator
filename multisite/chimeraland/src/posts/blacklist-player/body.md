@@ -37,5 +37,6 @@
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
+- Jangan melakukan transaksi dengan **AKUN SMURF**, 90% merupakan scammer.
 
 > shortlink halaman ini: [http://bit.ly/chimeraland-blacklist](http://bit.ly/chimeraland-blacklist)

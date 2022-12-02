@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs-extra'
 import { buildPost, postMap, postMeta, renderMarkdown } from 'hexo-post-parser'
 import { JSDOM } from 'jsdom'
+import slugify from 'slugify'
 import { join } from 'upath'
 import { sbgProject } from '../../../project'
 
@@ -32,6 +33,7 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
     if (player && !/nama player/gim.test(player.innerHTML)) {
       // console.log(player.innerHTML)
       player.setAttribute('notranslate', '')
+      player.setAttribute('id', slugify(player.innerHTML))
     }
   })
 })
