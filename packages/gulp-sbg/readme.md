@@ -16,6 +16,8 @@ gulp copy-all-posts
 ```
 
 API documentation: [https://www.webmanajemen.com/docs/gulp-sbg/modules/](https://www.webmanajemen.com/docs/gulp-sbg/modules/)
+Usages:
+  - [https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/gulpfile.js](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/gulpfile.js)
 
 ## Anonymize External Links
 Cloaking all external links to outbound page redirector, useful for SEO.
