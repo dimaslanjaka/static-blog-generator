@@ -1,9 +1,7 @@
 ## static blog generator with hexo compiler
 
 ```bash
-sbg copy --nocache
-hexo generate
-sbg deploy
+npm run build
 ```
 
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label=master&style=flat-square)](https://github.com/dimaslanjaka/dimaslanjaka.github.io/tree/master)
