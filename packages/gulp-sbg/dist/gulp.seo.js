@@ -14,7 +14,8 @@ var console = logger_1.default;
  * @param cwd directory to scan htmls
  */
 function autoSeo(cwd) {
-    return gulp_1.default.src(['**/*.{htm,html}', '*.{html,htm}'], { cwd: cwd })
+    return gulp_1.default
+        .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd: cwd })
         .pipe((0, gulp_dom_1.default)(function (path) {
         var _this = this;
         // fix alt images
@@ -49,3 +50,4 @@ gulp_1.default.task('seo', function () {
     var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
     return autoSeo(deployDir);
 });
+exports.default = gulp_1.default;
