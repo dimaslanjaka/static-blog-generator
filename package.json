@@ -1,6 +1,6 @@
 {
   "name": "hexo-post-parser",
-  "version": "1.1.19-9-e7852ed",
+  "version": "1.1.19",
   "description": "Parse Hexo Post To Object (Automated SEO)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
