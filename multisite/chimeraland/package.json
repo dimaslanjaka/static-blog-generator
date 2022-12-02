@@ -15,6 +15,7 @@
     "copy": "node test/copy.js",
     "deploy": "node deploy.js",
     "lint": "npm run lint:sync",
+    "lint:src": "npx eslint --fix src/**/*",
     "lint:sync": "npx eslint --fix sync/**/*"
   },
   "dependencies": {
