@@ -1,17 +1,31 @@
-const { readdirSync } = require('fs');
-const { join } = require('path');
+const fs = require('fs');
+const path = require('upath');
 const pkgjson = require('./package.json');
 
+// required: npm i upath
 // update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc.js > typedoc.js
+// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc.js
 
 /**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
  */
-const entryPoints = readdirSync(join(__dirname, 'src'))
-  .map((path) => './src/' + path)
-  .filter((path) => /.ts$/.test(path));
+let entryPoints = fs.readdirSync(path.join(__dirname, 'src')).map((path) => './src/' + path);
+const getFilesRecursively = (directory) => {
+  const filesInDirectory = fs.readdirSync(directory);
+  for (const file of filesInDirectory) {
+    const absolute = path.join(directory, file);
+    if (fs.statSync(absolute).isDirectory()) {
+      getFilesRecursively(absolute);
+    } else {
+      entryPoints.push('.' + absolute.replace(path.toUnix(__dirname), ''));
+    }
+  }
+};
 
-//console.log(entryPoints);
+getFilesRecursively(path.join(__dirname, 'src'));
+entryPoints = entryPoints.filter((path) => /.ts$/.test(path));
+
+// console.log(entryPoints);
 
 /**
  * @type {import('typedoc').TypeDocOptions}
@@ -31,8 +45,8 @@ const typedocOptions = {
     GitHub: 'https://github.com/dimaslanjaka'
   },
   inlineTags: ['@link'],
-  readme: join(__dirname, 'readme.md'),
-  tsconfig: join(__dirname, 'tsconfig.json'),
+  readme: path.join(__dirname, 'readme.md'),
+  tsconfig: path.join(__dirname, 'tsconfig.json'),
   exclude: ['*.test.ts'],
   htmlLang: 'en',
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
