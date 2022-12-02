@@ -27,8 +27,7 @@
 | Shelby | Roll drops items |
 | PrimalHunter | Roll drops items |
 
-## Daftar player yang dicurigai sebagai blacklist
-
+## Daftar player yang dicurigai sebagai scammer
 
 | Nama Player | Keterangan |
 | :--- | :--- |
