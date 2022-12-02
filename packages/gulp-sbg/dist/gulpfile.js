@@ -39,3 +39,4 @@ function commitProject(finish) {
 }
 exports.commitProject = commitProject;
 gulp_1.default.task('project-commit', commitProject);
+exports.default = gulp_1.default;
