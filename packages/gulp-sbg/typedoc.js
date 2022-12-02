@@ -1,80 +1,117 @@
-const fs = require('fs');
-const path = require('upath');
+const { join } = require('upath');
+const typedocModule = require('typedoc');
+const semver = require('semver');
+const { default: git } = require('git-command-helper');
+const { mkdirSync, existsSync } = require('fs');
+const typedocOptions = require('./typedoc');
+const gulp = require('gulp');
 const pkgjson = require('./package.json');
+const { spawn } = require('cross-spawn');
 
 // required: npm i upath
-// required: npm i -D typedoc typedoc-plugin-missing-exports
-// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc.js > typedoc.js
-// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc.js
+// required: npm i -D semver typedoc git-command-helper gulp cross-spawn
+// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
+// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
+
+const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
 /**
- * @type {import('typedoc').TypeDocOptions['entryPoints']}
+ * Compile typedocs
  */
-let entryPoints = fs.readdirSync(path.join(__dirname, 'src')).map((path) => './src/' + path);
-const getFilesRecursively = (directory) => {
-  const filesInDirectory = fs.readdirSync(directory);
-  for (const file of filesInDirectory) {
-    const absolute = path.join(directory, file);
-    if (fs.statSync(absolute).isDirectory()) {
-      getFilesRecursively(absolute);
-    } else {
-      entryPoints.push('.' + absolute.replace(path.toUnix(__dirname), ''));
-    }
+const compile = async function () {
+  const outDir = join(__dirname, 'docs');
+  const projectDocsDir = join(outDir, pkgjson.name);
+
+  if (!existsSync(outDir)) {
+    spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
+  }
+
+  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
+  const options = Object.assign({}, typedocOptions);
+
+  const app = new typedocModule.Application();
+  if (semver.gte(typedocModule.Application.VERSION, '0.16.1')) {
+    app.options.addReader(new typedocModule.TSConfigReader());
+    app.options.addReader(new typedocModule.TypeDocReader());
+  }
+
+  //console.log(options);
+  //delete options.run;
+
+  app.bootstrap(options);
+  const project = app.convert();
+  if (typeof project !== 'undefined') {
+    await app.generateDocs(project, projectDocsDir);
+    await app.generateJson(project, join(projectDocsDir, 'info.json'));
+  } else {
+    console.error('[error]', 'project undefined');
   }
 };
 
-getFilesRecursively(path.join(__dirname, 'src'));
-// filter ts only and remove duplicates
-entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) => a.indexOf(v) === i);
-
-// console.log(entryPoints);
-
 /**
- * TypeDoc options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
- * @type {import('typedoc').TypeDocOptions}
+ * Compile and publish to github pages
  */
-const typedocOptions = {
-  name: pkgjson.projectName || 'Static Blog Generator Gulp',
-  entryPoints,
-  // Output options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
-  // NOTE: the out option and the json option cannot share the same directory
-  out: './docs/' + pkgjson.name,
-  json: './docs/' + pkgjson.name + '/info.json',
-  entryPointStrategy: 'expand',
-  gaID: 'UA-106238155-1',
-  commentStyle: 'all',
-  hideGenerator: true,
-  searchInComments: true,
-  cleanOutputDir: true,
-  navigationLinks: {
-    Homepage: 'https://www.webmanajemen.com',
-    GitHub: 'https://github.com/dimaslanjaka'
-  },
-  inlineTags: ['@link'],
-  readme: './readme.md',
-  tsconfig: './tsconfig.json',
-  exclude: ['*.test.ts'],
-  htmlLang: 'en',
-  //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
-  gitRevision: 'master',
-  githubPages: true,
-  //theme: 'hierarchy',
-  plugin: ['typedoc-plugin-missing-exports'],
-  ignoreCompilerErrors: true,
-  logger: 'none',
-  version: true,
-  includeVersion: true
+const publish = async function () {
+  const outDir = join(__dirname, 'docs');
+  if (!existsSync(join(outDir, '.git'))) mkdirSync(join(outDir, '.git'), { recursive: true });
+
+  const github = new git(outDir);
+  try {
+    //await github.init();
+    await github.setremote(REPO_URL);
+    await github.setbranch('master');
+    await github.reset('master');
+  } catch {
+    //
+  }
+
+  await compile();
+
+  try {
+    const commit = await new git(__dirname).latestCommit().catch(noop);
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
+    if (remote.length > 0) {
+      console.log('current git project', remote);
+      await github
+        .addAndCommit(
+          pkgjson.name,
+          `${commit} update ${pkgjson.name} docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
+        )
+        .catch(noop);
+      if (await github.canPush().catch(noop)) {
+        await github.push().catch(noop);
+      }
+    }
+  } catch {
+    //
+  }
 };
 
-const cjson = path.join(__dirname, 'typedoc.json');
-const scriptName = path.basename(__filename);
-
-// run json creation when filename endswith -config.js
-if (scriptName.endsWith('-config.js')) {
-  typedocOptions['$schema'] = 'https://typedoc.org/schema.json';
-  fs.writeFileSync(cjson, JSON.stringify(typedocOptions, null, 2));
-} else {
-  if (fs.existsSync(cjson)) fs.rm(cjson);
+function noop(..._) {
+  //
 }
 
-module.exports = typedocOptions;
+/**
+ * Watch sources
+ * @param {gulp.TaskFunctionCallback} done
+ */
+const watch = function (done) {
+  const watcher = gulp.watch([join(__dirname, 'src/**/*')]);
+  watcher.on('change', function (_event, filename) {
+    console.log(filename);
+  });
+  watcher.on('close', done);
+};
+
+if (require.main === module) {
+  (async () => {
+    console.log('[compile] start');
+    await compile();
+    console.log('[compile] finish');
+  })();
+} else {
+  //console.log('required as a module');
+}
+
+module.exports = publish;
+module.exports = { run: publish, watch, compile };
