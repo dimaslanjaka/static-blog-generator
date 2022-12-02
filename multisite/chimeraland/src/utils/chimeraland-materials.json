@@ -30,13 +30,15 @@
   {
     "dateModified": "2022-09-28T21:26:37+07:00",
     "datePublished": "2022-01-06T21:56:03+07:00",
-    "details": ["Used for Evolve Duahawk"],
+    "details": [
+      "Used for Evolve Duahawk"
+    ],
     "howto": [
       "Obtain by purchase Pinning Feather from Pendant Merchant or from home."
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pining-feather/pining-feather.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pining-feather/pining-feather.webp",
         "pathname": "/chimeraland/materials/pining-feather/pining-feather.webp"
       }
     ],
@@ -49,10 +51,12 @@
     "dateModified": "2022-09-28T22:26:37+07:00",
     "datePublished": "2022-01-06T22:56:03+07:00",
     "details": [],
-    "howto": ["Purchase from Clan Shop for 500 Clan Contribution"],
+    "howto": [
+      "Purchase from Clan Shop for 500 Clan Contribution"
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/minkrat-evolution-powder/minkrat-evolution-powder.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/minkrat-evolution-powder/minkrat-evolution-powder.webp",
         "pathname": "/chimeraland/materials/minkrat-evolution-powder/minkrat-evolution-powder.webp"
       }
     ],
@@ -70,7 +74,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/clan-contribution/clan-contribution.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/clan-contribution/clan-contribution.webp",
         "pathname": "/chimeraland/materials/clan-contribution/clan-contribution.webp"
       }
     ],
@@ -82,7 +86,9 @@
   {
     "dateModified": "2022-09-29T00:26:37+07:00",
     "datePublished": "2022-01-07T00:56:03+07:00",
-    "details": ["Used to fuse Sheep Ring."],
+    "details": [
+      "Used to fuse Sheep Ring."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Hunt and search for the illustrious giant beast Browtelope to obtain it",
@@ -90,7 +96,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bone-sheep-primal-spirit/bone-sheep-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bone-sheep-primal-spirit/bone-sheep-primal-spirit.webp",
         "pathname": "/chimeraland/materials/bone-sheep-primal-spirit/bone-sheep-primal-spirit.webp"
       }
     ],
@@ -115,14 +121,16 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chimeraland-beast-hide/chimeraland-beast-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chimeraland-beast-hide/chimeraland-beast-hide.webp",
         "pathname": "/chimeraland/materials/chimeraland-beast-hide/chimeraland-beast-hide.webp"
       }
     ],
     "name": "Chimeraland Beast Hide",
     "pathname": "/chimeraland/materials/chimeraland-beast-hide.html",
     "type": "materials",
-    "usages": ["Exchanged for beast sets in the clan shop"],
+    "usages": [
+      "Exchanged for beast sets in the clan shop"
+    ],
     "videos": []
   },
   {
@@ -141,38 +149,40 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade.webp",
         "pathname": "/chimeraland/materials/precious-jade/precious-jade.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade-eastmount.webp",
-        "pathname": "/chimeraland/materials/precious-jade/precious-jade-eastmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/eastmount-3.webp",
+        "pathname": "/chimeraland/materials/precious-jade/eastmount-3.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade-southmount.webp",
-        "pathname": "/chimeraland/materials/precious-jade/precious-jade-southmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/eastmount.webp",
+        "pathname": "/chimeraland/materials/precious-jade/eastmount.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade-westmount.webp",
-        "pathname": "/chimeraland/materials/precious-jade/precious-jade-westmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/southmount.webp",
+        "pathname": "/chimeraland/materials/precious-jade/southmount.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade-2-westmount.webp",
-        "pathname": "/chimeraland/materials/precious-jade/precious-jade-2-westmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/westmount-2.webp",
+        "pathname": "/chimeraland/materials/precious-jade/westmount-2.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade-3-eastmount.webp",
-        "pathname": "/chimeraland/materials/precious-jade/precious-jade-3-eastmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/westmount-3.webp",
+        "pathname": "/chimeraland/materials/precious-jade/westmount-3.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/precious-jade-3-westmount.webp",
-        "pathname": "/chimeraland/materials/precious-jade/precious-jade-3-westmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/precious-jade/westmount.webp",
+        "pathname": "/chimeraland/materials/precious-jade/westmount.webp"
       }
     ],
     "name": "Precious Jade",
     "pathname": "/chimeraland/materials/precious-jade.html",
     "type": "materials",
-    "usages": ["Used for crafting processed materials"],
+    "usages": [
+      "Used for crafting processed materials"
+    ],
     "videos": []
   },
   {
@@ -191,18 +201,20 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pale-jade/pale-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pale-jade/pale-jade.webp",
         "pathname": "/chimeraland/materials/pale-jade/pale-jade.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pale-jade/pale-jade-eastmount.webp",
-        "pathname": "/chimeraland/materials/pale-jade/pale-jade-eastmount.webp"
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pale-jade/eastmount.webp",
+        "pathname": "/chimeraland/materials/pale-jade/eastmount.webp"
       }
     ],
     "name": "Pale Jade",
     "pathname": "/chimeraland/materials/pale-jade.html",
     "type": "materials",
-    "usages": ["Used for crafting processed materials"],
+    "usages": [
+      "Used for crafting processed materials"
+    ],
     "videos": []
   },
   {
@@ -220,21 +232,25 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/brilliant-jade/brilliant-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/brilliant-jade/brilliant-jade.webp",
         "pathname": "/chimeraland/materials/brilliant-jade/brilliant-jade.webp"
       }
     ],
     "name": "Brilliant Jade",
     "pathname": "/chimeraland/materials/brilliant-jade.html",
     "type": "materials",
-    "usages": ["Used for crafting processed materials"],
+    "usages": [
+      "Used for crafting processed materials"
+    ],
     "videos": []
   },
   {
     "background-info": "Stone often come in Large chunks with a wide range of uses, various types are typically product from large veins.",
     "dateModified": "2022-09-29T05:26:37+07:00",
     "datePublished": "2022-01-07T05:56:03+07:00",
-    "details": ["Mine any ore to obtain this basic Mining product."],
+    "details": [
+      "Mine any ore to obtain this basic Mining product."
+    ],
     "howto": [
       "Purchase from: Grocer, Home Shop, Newbie Resource Pack, or Prosperous Year (Small).",
       "Mine Ore.",
@@ -243,7 +259,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stone/stone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stone/stone.webp",
         "pathname": "/chimeraland/materials/stone/stone.webp"
       }
     ],
@@ -264,7 +280,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hoof-sinew/hoof-sinew.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hoof-sinew/hoof-sinew.webp",
         "pathname": "/chimeraland/materials/hoof-sinew/hoof-sinew.webp"
       }
     ],
@@ -287,7 +303,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/silver/silver.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/silver/silver.webp",
         "pathname": "/chimeraland/materials/silver/silver.webp"
       }
     ],
@@ -311,7 +327,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/copper/copper.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/copper/copper.webp",
         "pathname": "/chimeraland/materials/copper/copper.webp"
       }
     ],
@@ -334,7 +350,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/iron/iron.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/iron/iron.webp",
         "pathname": "/chimeraland/materials/iron/iron.webp"
       }
     ],
@@ -356,7 +372,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/crystal/crystal.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/crystal/crystal.webp",
         "pathname": "/chimeraland/materials/crystal/crystal.webp"
       }
     ],
@@ -380,7 +396,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-gold/red-gold.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-gold/red-gold.webp",
         "pathname": "/chimeraland/materials/red-gold/red-gold.webp"
       }
     ],
@@ -404,12 +420,8 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gold/gold.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gold/gold.webp",
         "pathname": "/chimeraland/materials/gold/gold.webp"
-      },
-      {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gold/golden-desire-eastmount.webp",
-        "pathname": "/chimeraland/materials/gold/golden-desire-eastmount.webp"
       }
     ],
     "name": "Gold",
@@ -430,7 +442,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/siderite/siderite.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/siderite/siderite.webp",
         "pathname": "/chimeraland/materials/siderite/siderite.webp"
       }
     ],
@@ -454,7 +466,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dark-jade/dark-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dark-jade/dark-jade.webp",
         "pathname": "/chimeraland/materials/dark-jade/dark-jade.webp"
       }
     ],
@@ -477,7 +489,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lux-gold/lux-gold.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lux-gold/lux-gold.webp",
         "pathname": "/chimeraland/materials/lux-gold/lux-gold.webp"
       }
     ],
@@ -501,7 +513,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/first-jade/first-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/first-jade/first-jade.webp",
         "pathname": "/chimeraland/materials/first-jade/first-jade.webp"
       }
     ],
@@ -513,7 +525,9 @@
   {
     "dateModified": "2022-09-29T17:26:37+07:00",
     "datePublished": "2022-01-07T17:56:03+07:00",
-    "details": ["Found around the stars, makes for a good craft material."],
+    "details": [
+      "Found around the stars, makes for a good craft material."
+    ],
     "howto": [
       "Mine Star Stone in the starry sky.",
       "Auction House.",
@@ -521,7 +535,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/star-stone/star-stone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/star-stone/star-stone.webp",
         "pathname": "/chimeraland/materials/star-stone/star-stone.webp"
       }
     ],
@@ -545,11 +559,11 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/find-jade/find-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/find-jade/find-jade.webp",
         "pathname": "/chimeraland/materials/find-jade/find-jade.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/find-jade/fine-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/find-jade/fine-jade.webp",
         "pathname": "/chimeraland/materials/find-jade/fine-jade.webp"
       }
     ],
@@ -568,7 +582,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chunk-of-fat/chunk-of-fat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chunk-of-fat/chunk-of-fat.webp",
         "pathname": "/chimeraland/materials/chunk-of-fat/chunk-of-fat.webp"
       }
     ],
@@ -588,7 +602,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vulture-meat/vulture-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vulture-meat/vulture-meat.webp",
         "pathname": "/chimeraland/materials/vulture-meat/vulture-meat.webp"
       }
     ],
@@ -608,7 +622,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flatsnout-meat/flatsnout-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flatsnout-meat/flatsnout-meat.webp",
         "pathname": "/chimeraland/materials/flatsnout-meat/flatsnout-meat.webp"
       }
     ],
@@ -628,7 +642,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gratoise-meat/gratoise-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gratoise-meat/gratoise-meat.webp",
         "pathname": "/chimeraland/materials/gratoise-meat/gratoise-meat.webp"
       }
     ],
@@ -648,7 +662,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moose-meat/moose-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moose-meat/moose-meat.webp",
         "pathname": "/chimeraland/materials/moose-meat/moose-meat.webp"
       }
     ],
@@ -668,7 +682,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/warcrab-meat/warcrab-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/warcrab-meat/warcrab-meat.webp",
         "pathname": "/chimeraland/materials/warcrab-meat/warcrab-meat.webp"
       }
     ],
@@ -688,11 +702,11 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/winnow-meat/winnow-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/winnow-meat/winnow-meat.webp",
         "pathname": "/chimeraland/materials/winnow-meat/winnow-meat.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/winnow-meat/winnor-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/winnow-meat/winnor-meat.webp",
         "pathname": "/chimeraland/materials/winnow-meat/winnor-meat.webp"
       }
     ],
@@ -712,7 +726,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/newt-meat/newt-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/newt-meat/newt-meat.webp",
         "pathname": "/chimeraland/materials/newt-meat/newt-meat.webp"
       }
     ],
@@ -732,7 +746,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/condor-meat/condor-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/condor-meat/condor-meat.webp",
         "pathname": "/chimeraland/materials/condor-meat/condor-meat.webp"
       }
     ],
@@ -752,7 +766,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/litiger-meat/litiger-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/litiger-meat/litiger-meat.webp",
         "pathname": "/chimeraland/materials/litiger-meat/litiger-meat.webp"
       }
     ],
@@ -772,11 +786,11 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/leoparbeak-meat/leoparbeak-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/leoparbeak-meat/leoparbeak-meat.webp",
         "pathname": "/chimeraland/materials/leoparbeak-meat/leoparbeak-meat.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/leoparbeak-meat/leaoparbeak-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/leoparbeak-meat/leaoparbeak-meat.webp",
         "pathname": "/chimeraland/materials/leoparbeak-meat/leaoparbeak-meat.webp"
       }
     ],
@@ -796,7 +810,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grizzly-meat/grizzly-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grizzly-meat/grizzly-meat.webp",
         "pathname": "/chimeraland/materials/grizzly-meat/grizzly-meat.webp"
       }
     ],
@@ -816,7 +830,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vuldo-meat/vuldo-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vuldo-meat/vuldo-meat.webp",
         "pathname": "/chimeraland/materials/vuldo-meat/vuldo-meat.webp"
       }
     ],
@@ -836,7 +850,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhino-meat/rhino-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhino-meat/rhino-meat.webp",
         "pathname": "/chimeraland/materials/rhino-meat/rhino-meat.webp"
       }
     ],
@@ -856,7 +870,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fortuphant-meat/fortuphant-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fortuphant-meat/fortuphant-meat.webp",
         "pathname": "/chimeraland/materials/fortuphant-meat/fortuphant-meat.webp"
       }
     ],
@@ -876,7 +890,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/prowler-meat/prowler-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/prowler-meat/prowler-meat.webp",
         "pathname": "/chimeraland/materials/prowler-meat/prowler-meat.webp"
       }
     ],
@@ -896,7 +910,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/alligon-meat/alligon-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/alligon-meat/alligon-meat.webp",
         "pathname": "/chimeraland/materials/alligon-meat/alligon-meat.webp"
       }
     ],
@@ -916,7 +930,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beetlefly-meat/beetlefly-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beetlefly-meat/beetlefly-meat.webp",
         "pathname": "/chimeraland/materials/beetlefly-meat/beetlefly-meat.webp"
       }
     ],
@@ -936,7 +950,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scorab-meat/scorab-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scorab-meat/scorab-meat.webp",
         "pathname": "/chimeraland/materials/scorab-meat/scorab-meat.webp"
       }
     ],
@@ -956,7 +970,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bosalo-meat/bosalo-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bosalo-meat/bosalo-meat.webp",
         "pathname": "/chimeraland/materials/bosalo-meat/bosalo-meat.webp"
       }
     ],
@@ -976,7 +990,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stoneppo-meat/stoneppo-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stoneppo-meat/stoneppo-meat.webp",
         "pathname": "/chimeraland/materials/stoneppo-meat/stoneppo-meat.webp"
       }
     ],
@@ -996,7 +1010,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grouguana-meat/grouguana-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grouguana-meat/grouguana-meat.webp",
         "pathname": "/chimeraland/materials/grouguana-meat/grouguana-meat.webp"
       }
     ],
@@ -1016,7 +1030,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wolfspider-meat/wolfspider-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wolfspider-meat/wolfspider-meat.webp",
         "pathname": "/chimeraland/materials/wolfspider-meat/wolfspider-meat.webp"
       }
     ],
@@ -1041,7 +1055,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-hide/beast-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-hide/beast-hide.webp",
         "pathname": "/chimeraland/materials/beast-hide/beast-hide.webp"
       }
     ],
@@ -1060,7 +1074,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/kidney/kidney.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/kidney/kidney.webp",
         "pathname": "/chimeraland/materials/kidney/kidney.webp"
       }
     ],
@@ -1079,7 +1093,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-intestines/beast-intestines.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-intestines/beast-intestines.webp",
         "pathname": "/chimeraland/materials/beast-intestines/beast-intestines.webp"
       }
     ],
@@ -1098,7 +1112,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-brain/beast-brain.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-brain/beast-brain.webp",
         "pathname": "/chimeraland/materials/beast-brain/beast-brain.webp"
       }
     ],
@@ -1117,7 +1131,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-liver/beast-liver.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-liver/beast-liver.webp",
         "pathname": "/chimeraland/materials/beast-liver/beast-liver.webp"
       }
     ],
@@ -1136,7 +1150,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-heart/beast-heart.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-heart/beast-heart.webp",
         "pathname": "/chimeraland/materials/beast-heart/beast-heart.webp"
       }
     ],
@@ -1157,7 +1171,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/insect-ichor/insect-ichor.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/insect-ichor/insect-ichor.webp",
         "pathname": "/chimeraland/materials/insect-ichor/insect-ichor.webp"
       }
     ],
@@ -1179,7 +1193,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/small-beast-meat/small-beast-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/small-beast-meat/small-beast-meat.webp",
         "pathname": "/chimeraland/materials/small-beast-meat/small-beast-meat.webp"
       }
     ],
@@ -1200,7 +1214,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/crab-claw-meat/crab-claw-meat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/crab-claw-meat/crab-claw-meat.webp",
         "pathname": "/chimeraland/materials/crab-claw-meat/crab-claw-meat.webp"
       }
     ],
@@ -1221,7 +1235,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bear-paw/bear-paw.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bear-paw/bear-paw.webp",
         "pathname": "/chimeraland/materials/bear-paw/bear-paw.webp"
       }
     ],
@@ -1242,7 +1256,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bird-wing/bird-wing.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bird-wing/bird-wing.webp",
         "pathname": "/chimeraland/materials/bird-wing/bird-wing.webp"
       }
     ],
@@ -1266,7 +1280,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-tendon/strange-beast-tendon.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-tendon/strange-beast-tendon.webp",
         "pathname": "/chimeraland/materials/strange-beast-tendon/strange-beast-tendon.webp"
       }
     ],
@@ -1290,7 +1304,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-horn/strange-beast-horn.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-horn/strange-beast-horn.webp",
         "pathname": "/chimeraland/materials/strange-beast-horn/strange-beast-horn.webp"
       }
     ],
@@ -1314,7 +1328,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-tooth/strange-beast-tooth.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-tooth/strange-beast-tooth.webp",
         "pathname": "/chimeraland/materials/strange-beast-tooth/strange-beast-tooth.webp"
       }
     ],
@@ -1338,7 +1352,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-bone/strange-beast-bone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/strange-beast-bone/strange-beast-bone.webp",
         "pathname": "/chimeraland/materials/strange-beast-bone/strange-beast-bone.webp"
       }
     ],
@@ -1350,7 +1364,9 @@
   {
     "dateModified": "2022-10-01T09:26:37+07:00",
     "datePublished": "2022-01-09T09:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Glow Deer Hide from Ursalton.",
@@ -1361,7 +1377,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/glow-deer-hide/glow-deer-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/glow-deer-hide/glow-deer-hide.webp",
         "pathname": "/chimeraland/materials/glow-deer-hide/glow-deer-hide.webp"
       }
     ],
@@ -1374,7 +1390,9 @@
     "background-info": "A giant Snake's skin. It's simply fascinating.",
     "dateModified": "2022-10-01T10:26:37+07:00",
     "datePublished": "2022-01-09T10:56:03+07:00",
-    "details": ["Obtained when searching fro Wyrm. Used in Creation."],
+    "details": [
+      "Obtained when searching fro Wyrm. Used in Creation."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Obtain from hunting Wyrms.",
@@ -1382,7 +1400,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/coiled-snake-scale/coiled-snake-scale.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/coiled-snake-scale/coiled-snake-scale.webp",
         "pathname": "/chimeraland/materials/coiled-snake-scale/coiled-snake-scale.webp"
       }
     ],
@@ -1394,7 +1412,9 @@
   {
     "dateModified": "2022-10-01T11:26:37+07:00",
     "datePublished": "2022-01-09T11:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusion."],
+    "details": [
+      "An extremely uncommon material used in advanced fusion."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Trileaf Skin from Ursalton.",
@@ -1405,7 +1425,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/trileaf-skin/trileaf-skin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/trileaf-skin/trileaf-skin.webp",
         "pathname": "/chimeraland/materials/trileaf-skin/trileaf-skin.webp"
       }
     ],
@@ -1418,7 +1438,9 @@
     "background-info": "Direwolf fur, provides camouflage.",
     "dateModified": "2022-10-01T12:26:37+07:00",
     "datePublished": "2022-01-09T12:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Ambusher Hair from Ursalton.",
@@ -1429,7 +1451,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ambusher-hair/ambusher-hair.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ambusher-hair/ambusher-hair.webp",
         "pathname": "/chimeraland/materials/ambusher-hair/ambusher-hair.webp"
       }
     ],
@@ -1441,7 +1463,9 @@
   {
     "dateModified": "2022-10-01T13:26:37+07:00",
     "datePublished": "2022-01-09T13:56:03+07:00",
-    "details": ["A specialty of the Centralmount mainland."],
+    "details": [
+      "A specialty of the Centralmount mainland."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Blood Jade from Handelaar.",
@@ -1450,7 +1474,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/blood-jade/blood-jade.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/blood-jade/blood-jade.webp",
         "pathname": "/chimeraland/materials/blood-jade/blood-jade.webp"
       }
     ],
@@ -1462,7 +1486,9 @@
   {
     "dateModified": "2022-10-01T14:26:37+07:00",
     "datePublished": "2022-01-09T14:56:03+07:00",
-    "details": ["A specialty of the Centralmount mainland."],
+    "details": [
+      "A specialty of the Centralmount mainland."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Beast Vital Qi Pill from Handelaar.",
@@ -1471,7 +1497,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-vital-qi-pill/beast-vital-qi-pill.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beast-vital-qi-pill/beast-vital-qi-pill.webp",
         "pathname": "/chimeraland/materials/beast-vital-qi-pill/beast-vital-qi-pill.webp"
       }
     ],
@@ -1484,7 +1510,9 @@
     "background-info": "Viper Scale, worn to not sink.",
     "dateModified": "2022-10-01T15:26:37+07:00",
     "datePublished": "2022-01-09T15:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Grouguana Scales from Handelaar.",
@@ -1495,7 +1523,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grouguana-scales/grouguana-scales.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grouguana-scales/grouguana-scales.webp",
         "pathname": "/chimeraland/materials/grouguana-scales/grouguana-scales.webp"
       }
     ],
@@ -1507,7 +1535,9 @@
   {
     "dateModified": "2022-10-01T16:26:37+07:00",
     "datePublished": "2022-01-09T16:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Bone Sheep Skin from Shaho.",
@@ -1518,7 +1548,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bone-sheep-skin/bone-sheep-skin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bone-sheep-skin/bone-sheep-skin.webp",
         "pathname": "/chimeraland/materials/bone-sheep-skin/bone-sheep-skin.webp"
       }
     ],
@@ -1531,7 +1561,9 @@
     "background-info": "Litiger mane, born from the water, so it resists water.",
     "dateModified": "2022-10-01T17:26:37+07:00",
     "datePublished": "2022-01-09T17:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Litiger Mane from Shaho.",
@@ -1542,7 +1574,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/litiger-mane/litiger-mane.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/litiger-mane/litiger-mane.webp",
         "pathname": "/chimeraland/materials/litiger-mane/litiger-mane.webp"
       }
     ],
@@ -1554,7 +1586,9 @@
   {
     "dateModified": "2022-10-01T18:26:37+07:00",
     "datePublished": "2022-01-09T18:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Flying Wolf Hide from Ursalton.",
@@ -1565,7 +1599,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flying-wolf-hide/flying-wolf-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flying-wolf-hide/flying-wolf-hide.webp",
         "pathname": "/chimeraland/materials/flying-wolf-hide/flying-wolf-hide.webp"
       }
     ],
@@ -1578,7 +1612,9 @@
     "background-info": "Ox Mane, fortifies clothes against cold.",
     "dateModified": "2022-10-01T19:26:37+07:00",
     "datePublished": "2022-01-09T19:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Ox Mane Hair from Handelaar.",
@@ -1589,7 +1625,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ox-mane-hair/ox-mane-hair.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ox-mane-hair/ox-mane-hair.webp",
         "pathname": "/chimeraland/materials/ox-mane-hair/ox-mane-hair.webp"
       }
     ],
@@ -1602,7 +1638,9 @@
     "background-info": "Condor Claw, no trace in the snow, can overcome the strong stone, wear to be unblockable.",
     "dateModified": "2022-10-01T20:26:37+07:00",
     "datePublished": "2022-01-09T20:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Snow Goose Claw from Shaho.",
@@ -1613,7 +1651,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/snow-goose-claw/snow-goose-claw.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/snow-goose-claw/snow-goose-claw.webp",
         "pathname": "/chimeraland/materials/snow-goose-claw/snow-goose-claw.webp"
       }
     ],
@@ -1626,7 +1664,9 @@
     "background-info": "Stoneppo bone, worn for excellent swimming.",
     "dateModified": "2022-10-01T21:26:37+07:00",
     "datePublished": "2022-01-09T21:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Watery Bone from Handelaar.",
@@ -1637,7 +1677,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/watery-bone/watery-bone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/watery-bone/watery-bone.webp",
         "pathname": "/chimeraland/materials/watery-bone/watery-bone.webp"
       }
     ],
@@ -1650,7 +1690,9 @@
     "background-info": "Warcrab shell, resembles a fan or plate, can command soldiers.",
     "dateModified": "2022-10-01T22:26:37+07:00",
     "datePublished": "2022-01-09T22:56:03+07:00",
-    "details": ["Extremely uncommon. Can be used for Creation and Refining."],
+    "details": [
+      "Extremely uncommon. Can be used for Creation and Refining."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Hunt Giant Coracrab to obtain it.",
@@ -1659,7 +1701,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/warcrab-shell/warcrab-shell.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/warcrab-shell/warcrab-shell.webp",
         "pathname": "/chimeraland/materials/warcrab-shell/warcrab-shell.webp"
       }
     ],
@@ -1672,7 +1714,9 @@
     "background-info": "Wolfspider shell, worn to repel bugs.",
     "dateModified": "2022-10-01T23:26:37+07:00",
     "datePublished": "2022-01-09T23:56:03+07:00",
-    "details": ["Extremely uncommon. Can be used for Creation and Refiner."],
+    "details": [
+      "Extremely uncommon. Can be used for Creation and Refiner."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Obtained from Mountspiders.",
@@ -1681,7 +1725,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wolfspider-carapace/wolfspider-carapace.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wolfspider-carapace/wolfspider-carapace.webp",
         "pathname": "/chimeraland/materials/wolfspider-carapace/wolfspider-carapace.webp"
       }
     ],
@@ -1693,7 +1737,9 @@
   {
     "dateModified": "2022-10-02T00:26:37+07:00",
     "datePublished": "2022-01-10T00:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Embergator Skin from Ursalton.",
@@ -1703,7 +1749,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/embergator-skin/embergator-skin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/embergator-skin/embergator-skin.webp",
         "pathname": "/chimeraland/materials/embergator-skin/embergator-skin.webp"
       }
     ],
@@ -1715,7 +1761,9 @@
   {
     "dateModified": "2022-10-02T01:26:37+07:00",
     "datePublished": "2022-01-10T01:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Hunt a Noble Giant Beast to get this.",
@@ -1725,7 +1773,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/noble-beast-soul/noble-beast-soul.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/noble-beast-soul/noble-beast-soul.webp",
         "pathname": "/chimeraland/materials/noble-beast-soul/noble-beast-soul.webp"
       }
     ],
@@ -1737,7 +1785,9 @@
   {
     "dateModified": "2022-10-02T02:26:37+07:00",
     "datePublished": "2022-01-10T02:56:03+07:00",
-    "details": ["An extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Eleboar Hide from Handelaar.",
@@ -1748,7 +1798,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/eleboar-hide/eleboar-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/eleboar-hide/eleboar-hide.webp",
         "pathname": "/chimeraland/materials/eleboar-hide/eleboar-hide.webp"
       }
     ],
@@ -1761,7 +1811,9 @@
     "background-info": "Vuldo feather, strength may fall, but wear to not be slowed.",
     "dateModified": "2022-10-02T03:26:37+07:00",
     "datePublished": "2022-01-10T03:56:03+07:00",
-    "details": ["Extremely uncommon. Can be used for Creation and Refiner."],
+    "details": [
+      "Extremely uncommon. Can be used for Creation and Refiner."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Obtained from Sprinowls.",
@@ -1770,7 +1822,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vuldo-wing/vuldo-wing.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vuldo-wing/vuldo-wing.webp",
         "pathname": "/chimeraland/materials/vuldo-wing/vuldo-wing.webp"
       }
     ],
@@ -1783,7 +1835,9 @@
     "background-info": "Alligon scale, resists weapons.",
     "dateModified": "2022-10-02T04:26:37+07:00",
     "datePublished": "2022-01-10T04:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Alligon Scales from Shaho.",
@@ -1794,7 +1848,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/alligon-scales/alligon-scales.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/alligon-scales/alligon-scales.webp",
         "pathname": "/chimeraland/materials/alligon-scales/alligon-scales.webp"
       }
     ],
@@ -1806,7 +1860,9 @@
   {
     "dateModified": "2022-10-02T05:26:37+07:00",
     "datePublished": "2022-01-10T05:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Stiffler Hide from Ursalton.",
@@ -1817,7 +1873,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stiffler-hide/stiffler-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stiffler-hide/stiffler-hide.webp",
         "pathname": "/chimeraland/materials/stiffler-hide/stiffler-hide.webp"
       }
     ],
@@ -1829,7 +1885,9 @@
   {
     "dateModified": "2022-10-02T06:26:37+07:00",
     "datePublished": "2022-01-10T06:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Centipede Skin from Ursalton.",
@@ -1840,7 +1898,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/centipede-skin/centipede-skin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/centipede-skin/centipede-skin.webp",
         "pathname": "/chimeraland/materials/centipede-skin/centipede-skin.webp"
       }
     ],
@@ -1852,7 +1910,9 @@
   {
     "dateModified": "2022-10-02T07:26:37+07:00",
     "datePublished": "2022-01-10T07:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Deerbull Hide from Shaho.",
@@ -1863,7 +1923,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/deerbull-hide/deerbull-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/deerbull-hide/deerbull-hide.webp",
         "pathname": "/chimeraland/materials/deerbull-hide/deerbull-hide.webp"
       }
     ],
@@ -1876,7 +1936,9 @@
     "background-info": "Rigidm indestrucible, and filled with venom that is difficult to cure.",
     "dateModified": "2022-10-02T08:26:37+07:00",
     "datePublished": "2022-01-10T08:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Scorpion King Stinger from Shaho.",
@@ -1887,7 +1949,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scorpion-king-stinger/scorpion-king-stinger.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scorpion-king-stinger/scorpion-king-stinger.webp",
         "pathname": "/chimeraland/materials/scorpion-king-stinger/scorpion-king-stinger.webp"
       }
     ],
@@ -1911,7 +1973,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mist-wings/mist-wings.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mist-wings/mist-wings.webp",
         "pathname": "/chimeraland/materials/mist-wings/mist-wings.webp"
       }
     ],
@@ -1924,7 +1986,9 @@
     "background-info": "Rhino tusk. Heaven may be fickle, but wearing it can help avoid adversity.",
     "dateModified": "2022-10-02T10:26:37+07:00",
     "datePublished": "2022-01-10T10:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Rhino Tusk from Handelaar.",
@@ -1935,7 +1999,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhino-tusk/rhino-tusk.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhino-tusk/rhino-tusk.webp",
         "pathname": "/chimeraland/materials/rhino-tusk/rhino-tusk.webp"
       }
     ],
@@ -1957,7 +2021,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fire-repelling-bead/fire-repelling-bead.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fire-repelling-bead/fire-repelling-bead.webp",
         "pathname": "/chimeraland/materials/fire-repelling-bead/fire-repelling-bead.webp"
       }
     ],
@@ -1979,7 +2043,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/water-repelling-bead/water-repelling-bead.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/water-repelling-bead/water-repelling-bead.webp",
         "pathname": "/chimeraland/materials/water-repelling-bead/water-repelling-bead.webp"
       }
     ],
@@ -2001,7 +2065,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cold-repelling-bead/cold-repelling-bead.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cold-repelling-bead/cold-repelling-bead.webp",
         "pathname": "/chimeraland/materials/cold-repelling-bead/cold-repelling-bead.webp"
       }
     ],
@@ -2025,7 +2089,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/storrow-claw/storrow-claw.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/storrow-claw/storrow-claw.webp",
         "pathname": "/chimeraland/materials/storrow-claw/storrow-claw.webp"
       }
     ],
@@ -2050,7 +2114,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fine-jade-liquid/fine-jade-liquid.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fine-jade-liquid/fine-jade-liquid.webp",
         "pathname": "/chimeraland/materials/fine-jade-liquid/fine-jade-liquid.webp"
       }
     ],
@@ -2062,7 +2126,9 @@
   {
     "dateModified": "2022-10-02T16:26:37+07:00",
     "datePublished": "2022-01-10T16:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Rhino Hide from Shaho.",
@@ -2073,7 +2139,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhino-hide/rhino-hide.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhino-hide/rhino-hide.webp",
         "pathname": "/chimeraland/materials/rhino-hide/rhino-hide.webp"
       }
     ],
@@ -2086,7 +2152,9 @@
     "background-info": "Grizzly thorn, Wearer does not need to eat or drink and can rest on the ground.",
     "dateModified": "2022-10-02T17:26:37+07:00",
     "datePublished": "2022-01-10T17:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Vangard Bear Thorn from Shaho.",
@@ -2097,7 +2165,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vangard-bear-thorn/vangard-bear-thorn.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/vangard-bear-thorn/vangard-bear-thorn.webp",
         "pathname": "/chimeraland/materials/vangard-bear-thorn/vangard-bear-thorn.webp"
       }
     ],
@@ -2109,7 +2177,9 @@
   {
     "dateModified": "2022-10-02T18:26:37+07:00",
     "datePublished": "2022-01-10T18:56:03+07:00",
-    "details": ["An Extremely uncommon material used in advanced fusions."],
+    "details": [
+      "An Extremely uncommon material used in advanced fusions."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Vangard Bear Thorn from Shaho.",
@@ -2120,7 +2190,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/newt-fat/newt-fat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/newt-fat/newt-fat.webp",
         "pathname": "/chimeraland/materials/newt-fat/newt-fat.webp"
       }
     ],
@@ -2131,7 +2201,9 @@
   },
   {
     "background-info": "It's agile and powerful. It can crush wood and stones and can even control water to form pearls.",
-    "category": ["searching"],
+    "category": [
+      "searching"
+    ],
     "dateModified": "2022-10-02T19:26:37+07:00",
     "datePublished": "2022-01-10T19:56:03+07:00",
     "details": [
@@ -2145,7 +2217,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/winnow-tail/winnow-tail.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/winnow-tail/winnow-tail.webp",
         "pathname": "/chimeraland/materials/winnow-tail/winnow-tail.webp"
       }
     ],
@@ -2169,7 +2241,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beetlefly-wing/beetlefly-wing.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beetlefly-wing/beetlefly-wing.webp",
         "pathname": "/chimeraland/materials/beetlefly-wing/beetlefly-wing.webp"
       }
     ],
@@ -2192,7 +2264,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/primal-fluid/primal-fluid.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/primal-fluid/primal-fluid.webp",
         "pathname": "/chimeraland/materials/primal-fluid/primal-fluid.webp"
       }
     ],
@@ -2213,7 +2285,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/primal-bones/primal-bones.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/primal-bones/primal-bones.webp",
         "pathname": "/chimeraland/materials/primal-bones/primal-bones.webp"
       }
     ],
@@ -2225,7 +2297,9 @@
   {
     "dateModified": "2022-10-02T23:26:37+07:00",
     "datePublished": "2022-01-10T23:56:03+07:00",
-    "details": ["A specialty of the Centralmount mainland."],
+    "details": [
+      "A specialty of the Centralmount mainland."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Goldscale Shell from Handelaar.",
@@ -2234,7 +2308,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/goldscale-shell/goldscale-shell.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/goldscale-shell/goldscale-shell.webp",
         "pathname": "/chimeraland/materials/goldscale-shell/goldscale-shell.webp"
       }
     ],
@@ -2246,7 +2320,9 @@
   {
     "dateModified": "2022-10-03T00:26:37+07:00",
     "datePublished": "2022-01-11T00:56:03+07:00",
-    "details": ["A specialty of the Centralmount mainland."],
+    "details": [
+      "A specialty of the Centralmount mainland."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Fleet Feather from Handelaar.",
@@ -2255,7 +2331,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fleet-feather/fleet-feather.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fleet-feather/fleet-feather.webp",
         "pathname": "/chimeraland/materials/fleet-feather/fleet-feather.webp"
       }
     ],
@@ -2277,7 +2353,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/magnificent-horn/magnificent-horn.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/magnificent-horn/magnificent-horn.webp",
         "pathname": "/chimeraland/materials/magnificent-horn/magnificent-horn.webp"
       }
     ],
@@ -2299,7 +2375,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/nirvana-feather/nirvana-feather.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/nirvana-feather/nirvana-feather.webp",
         "pathname": "/chimeraland/materials/nirvana-feather/nirvana-feather.webp"
       }
     ],
@@ -2322,7 +2398,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stoatle-shell/stoatle-shell.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stoatle-shell/stoatle-shell.webp",
         "pathname": "/chimeraland/materials/stoatle-shell/stoatle-shell.webp"
       }
     ],
@@ -2344,7 +2420,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ancient-bone/ancient-bone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ancient-bone/ancient-bone.webp",
         "pathname": "/chimeraland/materials/ancient-bone/ancient-bone.webp"
       }
     ],
@@ -2365,11 +2441,11 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/skyshark-primal-spirit/skyshark-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/skyshark-primal-spirit/skyshark-primal-spirit.webp",
         "pathname": "/chimeraland/materials/skyshark-primal-spirit/skyshark-primal-spirit.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/skyshark-primal-spirit/skyshard-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/skyshark-primal-spirit/skyshard-primal-spirit.webp",
         "pathname": "/chimeraland/materials/skyshark-primal-spirit/skyshard-primal-spirit.webp"
       }
     ],
@@ -2393,7 +2469,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beetlefly-stinger/beetlefly-stinger.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/beetlefly-stinger/beetlefly-stinger.webp",
         "pathname": "/chimeraland/materials/beetlefly-stinger/beetlefly-stinger.webp"
       }
     ],
@@ -2406,7 +2482,9 @@
     "background-info": "A giant snake's fang. It's sure to give you fever.",
     "dateModified": "2022-10-03T07:26:37+07:00",
     "datePublished": "2022-01-11T07:56:03+07:00",
-    "details": ["Obtained when searching for Noble Wyrm. Used in Creation."],
+    "details": [
+      "Obtained when searching for Noble Wyrm. Used in Creation."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Obtained from hunting Noble Wyrms.",
@@ -2414,7 +2492,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yurlungg's-fang/yurlunggurs-fang.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yurlungg's-fang/yurlunggurs-fang.webp",
         "pathname": "/chimeraland/materials/yurlungg's-fang/yurlunggurs-fang.webp"
       }
     ],
@@ -2438,7 +2516,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scorpion-claw/scorpion-claw.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scorpion-claw/scorpion-claw.webp",
         "pathname": "/chimeraland/materials/scorpion-claw/scorpion-claw.webp"
       }
     ],
@@ -2461,7 +2539,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pombug-wing/pombug-wing.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pombug-wing/pombug-wing.webp",
         "pathname": "/chimeraland/materials/pombug-wing/pombug-wing.webp"
       }
     ],
@@ -2487,7 +2565,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moddly-wings/moddly-wings.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moddly-wings/moddly-wings.webp",
         "pathname": "/chimeraland/materials/moddly-wings/moddly-wings.webp"
       }
     ],
@@ -2511,7 +2589,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spear-beak/spear-beak.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spear-beak/spear-beak.webp",
         "pathname": "/chimeraland/materials/spear-beak/spear-beak.webp"
       }
     ],
@@ -2533,7 +2611,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spirit-fox-fur/spirit-fox-fur.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spirit-fox-fur/spirit-fox-fur.webp",
         "pathname": "/chimeraland/materials/spirit-fox-fur/spirit-fox-fur.webp"
       }
     ],
@@ -2555,7 +2633,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-and-white-beak/red-and-white-beak.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-and-white-beak/red-and-white-beak.webp",
         "pathname": "/chimeraland/materials/red-and-white-beak/red-and-white-beak.webp"
       }
     ],
@@ -2578,7 +2656,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/magma-armor/magma-armor.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/magma-armor/magma-armor.webp",
         "pathname": "/chimeraland/materials/magma-armor/magma-armor.webp"
       }
     ],
@@ -2600,7 +2678,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fortuphant-primal-spirit/fortuphant-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fortuphant-primal-spirit/fortuphant-primal-spirit.webp",
         "pathname": "/chimeraland/materials/fortuphant-primal-spirit/fortuphant-primal-spirit.webp"
       }
     ],
@@ -2613,7 +2691,9 @@
     "background-info": "The legs of the Octofish are flexible and strong.",
     "dateModified": "2022-10-03T16:26:37+07:00",
     "datePublished": "2022-01-11T16:56:03+07:00",
-    "details": ["Material obtained from hunting Octofish. Used in Creation."],
+    "details": [
+      "Material obtained from hunting Octofish. Used in Creation."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Obtained from hunting Giant Octofish.",
@@ -2621,7 +2701,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/octofish-tentacle/octofish-tentacle.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/octofish-tentacle/octofish-tentacle.webp",
         "pathname": "/chimeraland/materials/octofish-tentacle/octofish-tentacle.webp"
       }
     ],
@@ -2634,7 +2714,9 @@
     "background-info": "Death Scale. A death scale from the Miragon's throat, and it hunts those with an infant.",
     "dateModified": "2022-10-03T17:26:37+07:00",
     "datePublished": "2022-01-11T17:56:03+07:00",
-    "details": ["Material obtained from hunting Miragon. Used in Creation."],
+    "details": [
+      "Material obtained from hunting Miragon. Used in Creation."
+    ],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Obtained from hunting Giant Miragon.",
@@ -2642,7 +2724,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scale-of-reversal/scale-of-reversal.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scale-of-reversal/scale-of-reversal.webp",
         "pathname": "/chimeraland/materials/scale-of-reversal/scale-of-reversal.webp"
       }
     ],
@@ -2665,7 +2747,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spirit-fox-primal-spirit/spirit-fox-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spirit-fox-primal-spirit/spirit-fox-primal-spirit.webp",
         "pathname": "/chimeraland/materials/spirit-fox-primal-spirit/spirit-fox-primal-spirit.webp"
       }
     ],
@@ -2687,7 +2769,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grizzly-primal-spirit/grizzly-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grizzly-primal-spirit/grizzly-primal-spirit.webp",
         "pathname": "/chimeraland/materials/grizzly-primal-spirit/grizzly-primal-spirit.webp"
       }
     ],
@@ -2714,7 +2796,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/illustrious-beast-soul/illustrious-beast-soul.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/illustrious-beast-soul/illustrious-beast-soul.webp",
         "pathname": "/chimeraland/materials/illustrious-beast-soul/illustrious-beast-soul.webp"
       }
     ],
@@ -2738,7 +2820,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flamebug-primal-spirit/flamebug-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flamebug-primal-spirit/flamebug-primal-spirit.webp",
         "pathname": "/chimeraland/materials/flamebug-primal-spirit/flamebug-primal-spirit.webp"
       }
     ],
@@ -2762,7 +2844,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/icebug-primal-spirit/icebug-primal-spirit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/icebug-primal-spirit/icebug-primal-spirit.webp",
         "pathname": "/chimeraland/materials/icebug-primal-spirit/icebug-primal-spirit.webp"
       }
     ],
@@ -2775,10 +2857,13 @@
     "dateModified": "2022-10-03T23:26:37+07:00",
     "datePublished": "2022-01-11T23:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather peanuts to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather peanuts to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/peanut/peanut.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/peanut/peanut.webp",
         "pathname": "/chimeraland/materials/peanut/peanut.webp"
       }
     ],
@@ -2791,10 +2876,13 @@
     "dateModified": "2022-10-04T00:26:37+07:00",
     "datePublished": "2022-01-12T00:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Bok Choy to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Bok Choy to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bok-choy/bok-choy.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bok-choy/bok-choy.webp",
         "pathname": "/chimeraland/materials/bok-choy/bok-choy.webp"
       }
     ],
@@ -2807,10 +2895,13 @@
     "dateModified": "2022-10-04T01:26:37+07:00",
     "datePublished": "2022-01-12T01:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Gourd to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Gourd to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gourd/gourd.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gourd/gourd.webp",
         "pathname": "/chimeraland/materials/gourd/gourd.webp"
       }
     ],
@@ -2829,7 +2920,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sweet-potato/sweet-potato.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sweet-potato/sweet-potato.webp",
         "pathname": "/chimeraland/materials/sweet-potato/sweet-potato.webp"
       }
     ],
@@ -2842,10 +2933,13 @@
     "dateModified": "2022-10-04T03:26:37+07:00",
     "datePublished": "2022-01-12T03:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Sowthisle to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Sowthisle to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sowthistle/sowthistle.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sowthistle/sowthistle.webp",
         "pathname": "/chimeraland/materials/sowthistle/sowthistle.webp"
       }
     ],
@@ -2858,10 +2952,13 @@
     "dateModified": "2022-10-04T04:26:37+07:00",
     "datePublished": "2022-01-12T04:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Scallion to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Scallion to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scallion/scallion.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scallion/scallion.webp",
         "pathname": "/chimeraland/materials/scallion/scallion.webp"
       }
     ],
@@ -2874,10 +2971,13 @@
     "dateModified": "2022-10-04T05:26:37+07:00",
     "datePublished": "2022-01-12T05:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Broccoli to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Broccoli to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/broccoli/broccoli.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/broccoli/broccoli.webp",
         "pathname": "/chimeraland/materials/broccoli/broccoli.webp"
       }
     ],
@@ -2890,10 +2990,13 @@
     "dateModified": "2022-10-04T06:26:37+07:00",
     "datePublished": "2022-01-12T06:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Amaranth to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Amaranth to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/amaranth/amaranth.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/amaranth/amaranth.webp",
         "pathname": "/chimeraland/materials/amaranth/amaranth.webp"
       }
     ],
@@ -2906,10 +3009,13 @@
     "dateModified": "2022-10-04T07:26:37+07:00",
     "datePublished": "2022-01-12T07:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Sesame to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Sesame to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sesame/sesame.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sesame/sesame.webp",
         "pathname": "/chimeraland/materials/sesame/sesame.webp"
       }
     ],
@@ -2922,10 +3028,13 @@
     "dateModified": "2022-10-04T08:26:37+07:00",
     "datePublished": "2022-01-12T08:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Pumpkin to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Pumpkin to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pumpkin/pumpkin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pumpkin/pumpkin.webp",
         "pathname": "/chimeraland/materials/pumpkin/pumpkin.webp"
       }
     ],
@@ -2938,10 +3047,13 @@
     "dateModified": "2022-10-04T09:26:37+07:00",
     "datePublished": "2022-01-12T09:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Chives to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Chives to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chives/chives.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chives/chives.webp",
         "pathname": "/chimeraland/materials/chives/chives.webp"
       }
     ],
@@ -2960,7 +3072,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pure-wood-genio/pure-wood-genio.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pure-wood-genio/pure-wood-genio.webp",
         "pathname": "/chimeraland/materials/pure-wood-genio/pure-wood-genio.webp"
       }
     ],
@@ -2979,7 +3091,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mixed-wood-essence/mixed-wood-essence.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mixed-wood-essence/mixed-wood-essence.webp",
         "pathname": "/chimeraland/materials/mixed-wood-essence/mixed-wood-essence.webp"
       }
     ],
@@ -2998,7 +3110,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pure-wood-essence/pure-wood-essence.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pure-wood-essence/pure-wood-essence.webp",
         "pathname": "/chimeraland/materials/pure-wood-essence/pure-wood-essence.webp"
       }
     ],
@@ -3017,7 +3129,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/uncommon-wood-essence/uncommon-wood-essence.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/uncommon-wood-essence/uncommon-wood-essence.webp",
         "pathname": "/chimeraland/materials/uncommon-wood-essence/uncommon-wood-essence.webp"
       }
     ],
@@ -3036,7 +3148,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/uncommon-wood-genio/uncommon-wood-genio.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/uncommon-wood-genio/uncommon-wood-genio.webp",
         "pathname": "/chimeraland/materials/uncommon-wood-genio/uncommon-wood-genio.webp"
       }
     ],
@@ -3055,7 +3167,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/honeydew-melon/honeydew-melon.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/honeydew-melon/honeydew-melon.webp",
         "pathname": "/chimeraland/materials/honeydew-melon/honeydew-melon.webp"
       }
     ],
@@ -3074,7 +3186,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flat-cabbage/flat-cabbage.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/flat-cabbage/flat-cabbage.webp",
         "pathname": "/chimeraland/materials/flat-cabbage/flat-cabbage.webp"
       }
     ],
@@ -3087,10 +3199,13 @@
     "dateModified": "2022-10-04T17:26:37+07:00",
     "datePublished": "2022-01-12T17:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather coriander to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather coriander to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/coriander/coriander.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/coriander/coriander.webp",
         "pathname": "/chimeraland/materials/coriander/coriander.webp"
       }
     ],
@@ -3103,10 +3218,13 @@
     "dateModified": "2022-10-04T18:26:37+07:00",
     "datePublished": "2022-01-12T18:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Watermelon to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Watermelon to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/watermelon/watermelon.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/watermelon/watermelon.webp",
         "pathname": "/chimeraland/materials/watermelon/watermelon.webp"
       }
     ],
@@ -3125,7 +3243,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/purple-choy/purple-choy.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/purple-choy/purple-choy.webp",
         "pathname": "/chimeraland/materials/purple-choy/purple-choy.webp"
       }
     ],
@@ -3144,7 +3262,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/common-wood-essence/common-wood-essence.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/common-wood-essence/common-wood-essence.webp",
         "pathname": "/chimeraland/materials/common-wood-essence/common-wood-essence.webp"
       }
     ],
@@ -3157,10 +3275,13 @@
     "dateModified": "2022-10-04T21:26:37+07:00",
     "datePublished": "2022-01-12T21:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Turnip to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Turnip to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/turnip/turnip.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/turnip/turnip.webp",
         "pathname": "/chimeraland/materials/turnip/turnip.webp"
       }
     ],
@@ -3173,10 +3294,13 @@
     "dateModified": "2022-10-04T22:26:37+07:00",
     "datePublished": "2022-01-12T22:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Tomato to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Tomato to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tomato/tomato.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tomato/tomato.webp",
         "pathname": "/chimeraland/materials/tomato/tomato.webp"
       }
     ],
@@ -3189,10 +3313,13 @@
     "dateModified": "2022-10-04T23:26:37+07:00",
     "datePublished": "2022-01-12T23:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Lettuce to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Lettuce to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lettuce/lettuce.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lettuce/lettuce.webp",
         "pathname": "/chimeraland/materials/lettuce/lettuce.webp"
       }
     ],
@@ -3205,10 +3332,13 @@
     "dateModified": "2022-10-05T00:26:37+07:00",
     "datePublished": "2022-01-13T00:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather Spinach to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather Spinach to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spinach/spinach.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spinach/spinach.webp",
         "pathname": "/chimeraland/materials/spinach/spinach.webp"
       }
     ],
@@ -3221,10 +3351,13 @@
     "dateModified": "2022-10-05T01:26:37+07:00",
     "datePublished": "2022-01-13T01:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain", "Gather cucumber to get."],
+    "howto": [
+      "Go to the Auction House to obtain",
+      "Gather cucumber to get."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cucumber/cucumber.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cucumber/cucumber.webp",
         "pathname": "/chimeraland/materials/cucumber/cucumber.webp"
       }
     ],
@@ -3237,10 +3370,12 @@
     "dateModified": "2022-10-05T02:26:37+07:00",
     "datePublished": "2022-01-13T02:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain"],
+    "howto": [
+      "Go to the Auction House to obtain"
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cyathea/cyathea.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cyathea/cyathea.webp",
         "pathname": "/chimeraland/materials/cyathea/cyathea.webp"
       }
     ],
@@ -3253,10 +3388,12 @@
     "dateModified": "2022-10-05T03:26:37+07:00",
     "datePublished": "2022-01-13T03:56:03+07:00",
     "details": [],
-    "howto": ["Go to the Auction House to obtain"],
+    "howto": [
+      "Go to the Auction House to obtain"
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhododendron/rhododendron.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhododendron/rhododendron.webp",
         "pathname": "/chimeraland/materials/rhododendron/rhododendron.webp"
       }
     ],
@@ -3275,7 +3412,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rare-wood-essence/rare-wood-essence.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rare-wood-essence/rare-wood-essence.webp",
         "pathname": "/chimeraland/materials/rare-wood-essence/rare-wood-essence.webp"
       }
     ],
@@ -3294,7 +3431,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rare-wood-genio/rare-wood-genio.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rare-wood-genio/rare-wood-genio.webp",
         "pathname": "/chimeraland/materials/rare-wood-genio/rare-wood-genio.webp"
       }
     ],
@@ -3313,7 +3450,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/superb-wood-essence/superb-wood-essence.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/superb-wood-essence/superb-wood-essence.webp",
         "pathname": "/chimeraland/materials/superb-wood-essence/superb-wood-essence.webp"
       }
     ],
@@ -3332,7 +3469,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/superb-wood-genio/superb-wood-genio.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/superb-wood-genio/superb-wood-genio.webp",
         "pathname": "/chimeraland/materials/superb-wood-genio/superb-wood-genio.webp"
       }
     ],
@@ -3353,7 +3490,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dung/dung.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dung/dung.webp",
         "pathname": "/chimeraland/materials/dung/dung.webp"
       }
     ],
@@ -3365,7 +3502,9 @@
   {
     "dateModified": "2022-10-05T09:26:37+07:00",
     "datePublished": "2022-01-13T09:56:03+07:00",
-    "details": ["Fossils quarried in the wild make for good materials."],
+    "details": [
+      "Fossils quarried in the wild make for good materials."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3373,7 +3512,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-skull/fossilized-skull.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-skull/fossilized-skull.webp",
         "pathname": "/chimeraland/materials/fossilized-skull/fossilized-skull.webp"
       }
     ],
@@ -3385,7 +3524,9 @@
   {
     "dateModified": "2022-10-05T10:26:37+07:00",
     "datePublished": "2022-01-13T10:56:03+07:00",
-    "details": ["Fossils quarried in the wild make for good materials."],
+    "details": [
+      "Fossils quarried in the wild make for good materials."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3393,7 +3534,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-tailbone/fossilized-tailbone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-tailbone/fossilized-tailbone.webp",
         "pathname": "/chimeraland/materials/fossilized-tailbone/fossilized-tailbone.webp"
       }
     ],
@@ -3405,7 +3546,9 @@
   {
     "dateModified": "2022-10-05T11:26:37+07:00",
     "datePublished": "2022-01-13T11:56:03+07:00",
-    "details": ["Fossils quarried in the wild make for good materials."],
+    "details": [
+      "Fossils quarried in the wild make for good materials."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3413,7 +3556,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-pelvis/fossilized-pelvis.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-pelvis/fossilized-pelvis.webp",
         "pathname": "/chimeraland/materials/fossilized-pelvis/fossilized-pelvis.webp"
       }
     ],
@@ -3425,7 +3568,9 @@
   {
     "dateModified": "2022-10-05T12:26:37+07:00",
     "datePublished": "2022-01-13T12:56:03+07:00",
-    "details": ["Fossils quarried in the wild make for good materials."],
+    "details": [
+      "Fossils quarried in the wild make for good materials."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3433,7 +3578,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-leg/fossilized-leg.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-leg/fossilized-leg.webp",
         "pathname": "/chimeraland/materials/fossilized-leg/fossilized-leg.webp"
       }
     ],
@@ -3445,7 +3590,9 @@
   {
     "dateModified": "2022-10-05T13:26:37+07:00",
     "datePublished": "2022-01-13T13:56:03+07:00",
-    "details": ["Fossils quarried in the wild make for good materials."],
+    "details": [
+      "Fossils quarried in the wild make for good materials."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3453,7 +3600,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-rib/fossilized-rib.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-rib/fossilized-rib.webp",
         "pathname": "/chimeraland/materials/fossilized-rib/fossilized-rib.webp"
       }
     ],
@@ -3465,7 +3612,9 @@
   {
     "dateModified": "2022-10-05T14:26:37+07:00",
     "datePublished": "2022-01-13T14:56:03+07:00",
-    "details": ["Fossils quarried in the wild make for good materials."],
+    "details": [
+      "Fossils quarried in the wild make for good materials."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3473,7 +3622,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-spine/fossilized-spine.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fossilized-spine/fossilized-spine.webp",
         "pathname": "/chimeraland/materials/fossilized-spine/fossilized-spine.webp"
       }
     ],
@@ -3485,7 +3634,9 @@
   {
     "dateModified": "2022-10-05T15:26:37+07:00",
     "datePublished": "2022-01-13T15:56:03+07:00",
-    "details": ["Contains a great amount of energy and is a craft material."],
+    "details": [
+      "Contains a great amount of energy and is a craft material."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3494,7 +3645,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/phosphorus/phosphorus.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/phosphorus/phosphorus.webp",
         "pathname": "/chimeraland/materials/phosphorus/phosphorus.webp"
       }
     ],
@@ -3516,7 +3667,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bluewater-pearl/bluewater-pearl.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bluewater-pearl/bluewater-pearl.webp",
         "pathname": "/chimeraland/materials/bluewater-pearl/bluewater-pearl.webp"
       }
     ],
@@ -3529,7 +3680,9 @@
     "background-info": "Wood on the edge of the trunk. Its sow texture makes it vulnerable to rot.",
     "dateModified": "2022-10-05T17:26:37+07:00",
     "datePublished": "2022-01-13T17:56:03+07:00",
-    "details": ["Base product obtained by chopping down certain trees."],
+    "details": [
+      "Base product obtained by chopping down certain trees."
+    ],
     "howto": [
       "Purchase from: Home Shop, Newbie Resource Pack, Prosperpous Year (Small)",
       "Chop down trees",
@@ -3538,7 +3691,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/logs/logs.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/logs/logs.webp",
         "pathname": "/chimeraland/materials/logs/logs.webp"
       }
     ],
@@ -3561,7 +3714,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cane/cane.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cane/cane.webp",
         "pathname": "/chimeraland/materials/cane/cane.webp"
       }
     ],
@@ -3583,7 +3736,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bamboo-leaf/bamboo-leaf.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bamboo-leaf/bamboo-leaf.webp",
         "pathname": "/chimeraland/materials/bamboo-leaf/bamboo-leaf.webp"
       }
     ],
@@ -3595,7 +3748,9 @@
   {
     "dateModified": "2022-10-05T20:26:37+07:00",
     "datePublished": "2022-01-13T20:56:03+07:00",
-    "details": ["Can be used for Creation."],
+    "details": [
+      "Can be used for Creation."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Chop down lemon trees to get",
@@ -3604,7 +3759,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lemon-tree-leaf/lemon-tree-leaf.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lemon-tree-leaf/lemon-tree-leaf.webp",
         "pathname": "/chimeraland/materials/lemon-tree-leaf/lemon-tree-leaf.webp"
       }
     ],
@@ -3616,7 +3771,9 @@
   {
     "dateModified": "2022-10-05T21:26:37+07:00",
     "datePublished": "2022-01-13T21:56:03+07:00",
-    "details": ["Can be used for Creation."],
+    "details": [
+      "Can be used for Creation."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Chop down oak trees to get",
@@ -3624,7 +3781,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/oak-tree-leaf/oak-tree-leaf.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/oak-tree-leaf/oak-tree-leaf.webp",
         "pathname": "/chimeraland/materials/oak-tree-leaf/oak-tree-leaf.webp"
       }
     ],
@@ -3648,7 +3805,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-apricot-wood/red-apricot-wood.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-apricot-wood/red-apricot-wood.webp",
         "pathname": "/chimeraland/materials/red-apricot-wood/red-apricot-wood.webp"
       }
     ],
@@ -3672,7 +3829,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/binge-cherry-leaf/binge-cherry-leaf.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/binge-cherry-leaf/binge-cherry-leaf.webp",
         "pathname": "/chimeraland/materials/binge-cherry-leaf/binge-cherry-leaf.webp"
       }
     ],
@@ -3696,7 +3853,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mulberry-root/mulberry-root.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mulberry-root/mulberry-root.webp",
         "pathname": "/chimeraland/materials/mulberry-root/mulberry-root.webp"
       }
     ],
@@ -3720,7 +3877,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/longleaf/longleaf.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/longleaf/longleaf.webp",
         "pathname": "/chimeraland/materials/longleaf/longleaf.webp"
       }
     ],
@@ -3744,7 +3901,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ironwood-stem/ironwood-stem.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ironwood-stem/ironwood-stem.webp",
         "pathname": "/chimeraland/materials/ironwood-stem/ironwood-stem.webp"
       }
     ],
@@ -3768,7 +3925,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/thorny-pipfruit/thorny-pipfruit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/thorny-pipfruit/thorny-pipfruit.webp",
         "pathname": "/chimeraland/materials/thorny-pipfruit/thorny-pipfruit.webp"
       }
     ],
@@ -3792,7 +3949,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tree-bark/tree-bark.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tree-bark/tree-bark.webp",
         "pathname": "/chimeraland/materials/tree-bark/tree-bark.webp"
       }
     ],
@@ -3816,7 +3973,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ancient-coconut/ancient-coconut.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ancient-coconut/ancient-coconut.webp",
         "pathname": "/chimeraland/materials/ancient-coconut/ancient-coconut.webp"
       }
     ],
@@ -3840,7 +3997,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/poplar-sap/poplar-sap.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/poplar-sap/poplar-sap.webp",
         "pathname": "/chimeraland/materials/poplar-sap/poplar-sap.webp"
       }
     ],
@@ -3864,7 +4021,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pine-resin/pine-resin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pine-resin/pine-resin.webp",
         "pathname": "/chimeraland/materials/pine-resin/pine-resin.webp"
       }
     ],
@@ -3887,7 +4044,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/palm-leaf/palm-leaf.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/palm-leaf/palm-leaf.webp",
         "pathname": "/chimeraland/materials/palm-leaf/palm-leaf.webp"
       }
     ],
@@ -3900,7 +4057,9 @@
     "background-info": "Just a small chunk of this divine tree's wood can weigh over 30 pounds.",
     "dateModified": "2022-10-06T09:26:37+07:00",
     "datePublished": "2022-01-14T09:56:03+07:00",
-    "details": ["A magical wood that can be used in Creation."],
+    "details": [
+      "A magical wood that can be used in Creation."
+    ],
     "howto": [
       "Go to the Auction House to obtain",
       "Chop down Laurel Wood, Traveler's Blessing Wood, Longevity Wood, and Boundless Wood",
@@ -3908,7 +4067,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/30-catties-of-logs/30-catties-of-logs.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/30-catties-of-logs/30-catties-of-logs.webp",
         "pathname": "/chimeraland/materials/30-catties-of-logs/30-catties-of-logs.webp"
       }
     ],
@@ -3920,11 +4079,15 @@
   {
     "dateModified": "2022-10-06T10:26:37+07:00",
     "datePublished": "2022-01-14T10:56:03+07:00",
-    "details": ["The spirit of a divine tree, it can be used in Creation."],
-    "howto": ["Go to the Auction House to obtain"],
+    "details": [
+      "The spirit of a divine tree, it can be used in Creation."
+    ],
+    "howto": [
+      "Go to the Auction House to obtain"
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grand-tree-soul/grand-tree-soul.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grand-tree-soul/grand-tree-soul.webp",
         "pathname": "/chimeraland/materials/grand-tree-soul/grand-tree-soul.webp"
       }
     ],
@@ -3944,7 +4107,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-starefish/red-starefish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-starefish/red-starefish.webp",
         "pathname": "/chimeraland/materials/red-starefish/red-starefish.webp"
       }
     ],
@@ -3964,7 +4127,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/archerfish/archerfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/archerfish/archerfish.webp",
         "pathname": "/chimeraland/materials/archerfish/archerfish.webp"
       }
     ],
@@ -3984,7 +4147,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/black-carp/black-carp.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/black-carp/black-carp.webp",
         "pathname": "/chimeraland/materials/black-carp/black-carp.webp"
       }
     ],
@@ -4004,7 +4167,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/greensuit-fish/greensuit-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/greensuit-fish/greensuit-fish.webp",
         "pathname": "/chimeraland/materials/greensuit-fish/greensuit-fish.webp"
       }
     ],
@@ -4024,7 +4187,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moonfish/moonfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moonfish/moonfish.webp",
         "pathname": "/chimeraland/materials/moonfish/moonfish.webp"
       }
     ],
@@ -4044,7 +4207,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pufferfish/pufferfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pufferfish/pufferfish.webp",
         "pathname": "/chimeraland/materials/pufferfish/pufferfish.webp"
       }
     ],
@@ -4064,7 +4227,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/peacock-fish/peacock-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/peacock-fish/peacock-fish.webp",
         "pathname": "/chimeraland/materials/peacock-fish/peacock-fish.webp"
       }
     ],
@@ -4084,7 +4247,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/zebrafish/zebrafish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/zebrafish/zebrafish.webp",
         "pathname": "/chimeraland/materials/zebrafish/zebrafish.webp"
       }
     ],
@@ -4105,11 +4268,11 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hairtail/hairtail.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hairtail/hairtail.webp",
         "pathname": "/chimeraland/materials/hairtail/hairtail.webp"
       },
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hairtail/barbled-dragonfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hairtail/barbled-dragonfish.webp",
         "pathname": "/chimeraland/materials/hairtail/barbled-dragonfish.webp"
       }
     ],
@@ -4129,7 +4292,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/nibea/nibea.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/nibea/nibea.webp",
         "pathname": "/chimeraland/materials/nibea/nibea.webp"
       }
     ],
@@ -4149,7 +4312,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/purple-snapper/purple-snapper.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/purple-snapper/purple-snapper.webp",
         "pathname": "/chimeraland/materials/purple-snapper/purple-snapper.webp"
       }
     ],
@@ -4169,7 +4332,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/freshwater-carp/freshwater-carp.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/freshwater-carp/freshwater-carp.webp",
         "pathname": "/chimeraland/materials/freshwater-carp/freshwater-carp.webp"
       }
     ],
@@ -4189,7 +4352,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dace/dace.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dace/dace.webp",
         "pathname": "/chimeraland/materials/dace/dace.webp"
       }
     ],
@@ -4209,7 +4372,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pomfret/pomfret.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pomfret/pomfret.webp",
         "pathname": "/chimeraland/materials/pomfret/pomfret.webp"
       }
     ],
@@ -4229,7 +4392,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tang/tang.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tang/tang.webp",
         "pathname": "/chimeraland/materials/tang/tang.webp"
       }
     ],
@@ -4249,7 +4412,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mola/mola.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mola/mola.webp",
         "pathname": "/chimeraland/materials/mola/mola.webp"
       }
     ],
@@ -4269,7 +4432,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/black-kingfish/black-kingfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/black-kingfish/black-kingfish.webp",
         "pathname": "/chimeraland/materials/black-kingfish/black-kingfish.webp"
       }
     ],
@@ -4288,7 +4451,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/slimfish/slimfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/slimfish/slimfish.webp",
         "pathname": "/chimeraland/materials/slimfish/slimfish.webp"
       }
     ],
@@ -4308,7 +4471,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/silvercut-fish/silvercut-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/silvercut-fish/silvercut-fish.webp",
         "pathname": "/chimeraland/materials/silvercut-fish/silvercut-fish.webp"
       }
     ],
@@ -4328,7 +4491,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stonespot-fish/stonespot-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stonespot-fish/stonespot-fish.webp",
         "pathname": "/chimeraland/materials/stonespot-fish/stonespot-fish.webp"
       }
     ],
@@ -4348,7 +4511,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mackerel/mackerel.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mackerel/mackerel.webp",
         "pathname": "/chimeraland/materials/mackerel/mackerel.webp"
       }
     ],
@@ -4368,7 +4531,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gurnard/gurnard.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gurnard/gurnard.webp",
         "pathname": "/chimeraland/materials/gurnard/gurnard.webp"
       }
     ],
@@ -4388,7 +4551,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/black-scraper/black-scraper.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/black-scraper/black-scraper.webp",
         "pathname": "/chimeraland/materials/black-scraper/black-scraper.webp"
       }
     ],
@@ -4408,7 +4571,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/frost-silver-carp/frost-silver-carp.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/frost-silver-carp/frost-silver-carp.webp",
         "pathname": "/chimeraland/materials/frost-silver-carp/frost-silver-carp.webp"
       }
     ],
@@ -4428,7 +4591,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spotted-scat/spotted-scat.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spotted-scat/spotted-scat.webp",
         "pathname": "/chimeraland/materials/spotted-scat/spotted-scat.webp"
       }
     ],
@@ -4448,7 +4611,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/frontosa/frontosa.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/frontosa/frontosa.webp",
         "pathname": "/chimeraland/materials/frontosa/frontosa.webp"
       }
     ],
@@ -4468,7 +4631,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/catfish/catfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/catfish/catfish.webp",
         "pathname": "/chimeraland/materials/catfish/catfish.webp"
       }
     ],
@@ -4488,7 +4651,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/firemouth-fish/firemouth-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/firemouth-fish/firemouth-fish.webp",
         "pathname": "/chimeraland/materials/firemouth-fish/firemouth-fish.webp"
       }
     ],
@@ -4507,7 +4670,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/blue-butterflyfish/blue-butterflyfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/blue-butterflyfish/blue-butterflyfish.webp",
         "pathname": "/chimeraland/materials/blue-butterflyfish/blue-butterflyfish.webp"
       }
     ],
@@ -4527,7 +4690,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bullet-mackerel/bullet-mackerel.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bullet-mackerel/bullet-mackerel.webp",
         "pathname": "/chimeraland/materials/bullet-mackerel/bullet-mackerel.webp"
       }
     ],
@@ -4547,7 +4710,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moorish-idol/moorish-idol.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moorish-idol/moorish-idol.webp",
         "pathname": "/chimeraland/materials/moorish-idol/moorish-idol.webp"
       }
     ],
@@ -4567,7 +4730,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/titan-triggerfish/titan-triggerfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/titan-triggerfish/titan-triggerfish.webp",
         "pathname": "/chimeraland/materials/titan-triggerfish/titan-triggerfish.webp"
       }
     ],
@@ -4586,7 +4749,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gourami/gourami.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gourami/gourami.webp",
         "pathname": "/chimeraland/materials/gourami/gourami.webp"
       }
     ],
@@ -4606,7 +4769,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yellow-boxfish/yellow-boxfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yellow-boxfish/yellow-boxfish.webp",
         "pathname": "/chimeraland/materials/yellow-boxfish/yellow-boxfish.webp"
       }
     ],
@@ -4625,7 +4788,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yellowfin/yellowfin.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yellowfin/yellowfin.webp",
         "pathname": "/chimeraland/materials/yellowfin/yellowfin.webp"
       }
     ],
@@ -4645,7 +4808,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/clownfish/clownfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/clownfish/clownfish.webp",
         "pathname": "/chimeraland/materials/clownfish/clownfish.webp"
       }
     ],
@@ -4665,7 +4828,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/porgies/porgies.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/porgies/porgies.webp",
         "pathname": "/chimeraland/materials/porgies/porgies.webp"
       }
     ],
@@ -4685,7 +4848,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gold-barb/gold-barb.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gold-barb/gold-barb.webp",
         "pathname": "/chimeraland/materials/gold-barb/gold-barb.webp"
       }
     ],
@@ -4704,7 +4867,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/eyebiter/eyebiter.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/eyebiter/eyebiter.webp",
         "pathname": "/chimeraland/materials/eyebiter/eyebiter.webp"
       }
     ],
@@ -4724,7 +4887,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bigeye/bigeye.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bigeye/bigeye.webp",
         "pathname": "/chimeraland/materials/bigeye/bigeye.webp"
       }
     ],
@@ -4744,7 +4907,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pirarucu/pirarucu.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pirarucu/pirarucu.webp",
         "pathname": "/chimeraland/materials/pirarucu/pirarucu.webp"
       }
     ],
@@ -4763,7 +4926,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cod/cod.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cod/cod.webp",
         "pathname": "/chimeraland/materials/cod/cod.webp"
       }
     ],
@@ -4783,7 +4946,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/perciformes/perciformes.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/perciformes/perciformes.webp",
         "pathname": "/chimeraland/materials/perciformes/perciformes.webp"
       }
     ],
@@ -4803,7 +4966,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/goldfin-carp/goldfin-carp.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/goldfin-carp/goldfin-carp.webp",
         "pathname": "/chimeraland/materials/goldfin-carp/goldfin-carp.webp"
       }
     ],
@@ -4823,7 +4986,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/boxfish/boxfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/boxfish/boxfish.webp",
         "pathname": "/chimeraland/materials/boxfish/boxfish.webp"
       }
     ],
@@ -4842,7 +5005,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stingray/stingray.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/stingray/stingray.webp",
         "pathname": "/chimeraland/materials/stingray/stingray.webp"
       }
     ],
@@ -4862,7 +5025,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/eleotris/eleotris.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/eleotris/eleotris.webp",
         "pathname": "/chimeraland/materials/eleotris/eleotris.webp"
       }
     ],
@@ -4881,7 +5044,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/titanfish/titanfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/titanfish/titanfish.webp",
         "pathname": "/chimeraland/materials/titanfish/titanfish.webp"
       }
     ],
@@ -4901,7 +5064,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bluewirl-fish/bluewirl-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bluewirl-fish/bluewirl-fish.webp",
         "pathname": "/chimeraland/materials/bluewirl-fish/bluewirl-fish.webp"
       }
     ],
@@ -4920,7 +5083,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/blamprey/blamprey.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/blamprey/blamprey.webp",
         "pathname": "/chimeraland/materials/blamprey/blamprey.webp"
       }
     ],
@@ -4940,7 +5103,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hilsa-herring/hilsa-herring.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hilsa-herring/hilsa-herring.webp",
         "pathname": "/chimeraland/materials/hilsa-herring/hilsa-herring.webp"
       }
     ],
@@ -4960,7 +5123,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mousefish/mousefish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/mousefish/mousefish.webp",
         "pathname": "/chimeraland/materials/mousefish/mousefish.webp"
       }
     ],
@@ -4980,7 +5143,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tigerfish/tigerfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tigerfish/tigerfish.webp",
         "pathname": "/chimeraland/materials/tigerfish/tigerfish.webp"
       }
     ],
@@ -5000,7 +5163,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/luna-lionfish/luna-lionfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/luna-lionfish/luna-lionfish.webp",
         "pathname": "/chimeraland/materials/luna-lionfish/luna-lionfish.webp"
       }
     ],
@@ -5020,7 +5183,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/leopardfish/leopardfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/leopardfish/leopardfish.webp",
         "pathname": "/chimeraland/materials/leopardfish/leopardfish.webp"
       }
     ],
@@ -5040,7 +5203,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wrasse/wrasse.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wrasse/wrasse.webp",
         "pathname": "/chimeraland/materials/wrasse/wrasse.webp"
       }
     ],
@@ -5060,7 +5223,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spinibarbus/spinibarbus.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spinibarbus/spinibarbus.webp",
         "pathname": "/chimeraland/materials/spinibarbus/spinibarbus.webp"
       }
     ],
@@ -5080,7 +5243,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/shovefish/shovefish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/shovefish/shovefish.webp",
         "pathname": "/chimeraland/materials/shovefish/shovefish.webp"
       }
     ],
@@ -5100,7 +5263,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/swallowfish/swallowfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/swallowfish/swallowfish.webp",
         "pathname": "/chimeraland/materials/swallowfish/swallowfish.webp"
       }
     ],
@@ -5120,7 +5283,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/shark/shark.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/shark/shark.webp",
         "pathname": "/chimeraland/materials/shark/shark.webp"
       }
     ],
@@ -5140,7 +5303,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/barramunkun/barramunkun.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/barramunkun/barramunkun.webp",
         "pathname": "/chimeraland/materials/barramunkun/barramunkun.webp"
       }
     ],
@@ -5160,7 +5323,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/great-white-shark/great-white-shark.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/great-white-shark/great-white-shark.webp",
         "pathname": "/chimeraland/materials/great-white-shark/great-white-shark.webp"
       }
     ],
@@ -5180,7 +5343,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/skewerfish/skewerfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/skewerfish/skewerfish.webp",
         "pathname": "/chimeraland/materials/skewerfish/skewerfish.webp"
       }
     ],
@@ -5200,7 +5363,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bluejade-fish/bluejade-fish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bluejade-fish/bluejade-fish.webp",
         "pathname": "/chimeraland/materials/bluejade-fish/bluejade-fish.webp"
       }
     ],
@@ -5220,7 +5383,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/muddled-catfish/muddled-catfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/muddled-catfish/muddled-catfish.webp",
         "pathname": "/chimeraland/materials/muddled-catfish/muddled-catfish.webp"
       }
     ],
@@ -5240,7 +5403,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bream/bream.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bream/bream.webp",
         "pathname": "/chimeraland/materials/bream/bream.webp"
       }
     ],
@@ -5260,7 +5423,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/butterflyfish/butterflyfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/butterflyfish/butterflyfish.webp",
         "pathname": "/chimeraland/materials/butterflyfish/butterflyfish.webp"
       }
     ],
@@ -5280,7 +5443,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/phoenixfish/phoenixfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/phoenixfish/phoenixfish.webp",
         "pathname": "/chimeraland/materials/phoenixfish/phoenixfish.webp"
       }
     ],
@@ -5300,7 +5463,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-bellied-piranha/red-bellied-piranha.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-bellied-piranha/red-bellied-piranha.webp",
         "pathname": "/chimeraland/materials/red-bellied-piranha/red-bellied-piranha.webp"
       }
     ],
@@ -5320,7 +5483,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/viperfish/viperfish.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/viperfish/viperfish.webp",
         "pathname": "/chimeraland/materials/viperfish/viperfish.webp"
       }
     ],
@@ -5342,7 +5505,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wild-garlic/wild-garlic.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/wild-garlic/wild-garlic.webp",
         "pathname": "/chimeraland/materials/wild-garlic/wild-garlic.webp"
       }
     ],
@@ -5365,7 +5528,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dew/dew.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dew/dew.webp",
         "pathname": "/chimeraland/materials/dew/dew.webp"
       }
     ],
@@ -5387,7 +5550,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ice-piece/ice-piece.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/ice-piece/ice-piece.webp",
         "pathname": "/chimeraland/materials/ice-piece/ice-piece.webp"
       }
     ],
@@ -5410,7 +5573,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/apple/apple.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/apple/apple.webp",
         "pathname": "/chimeraland/materials/apple/apple.webp"
       }
     ],
@@ -5425,10 +5588,13 @@
     "details": [
       "Eating restores 60 Fullness and gives a little bit of EXP, but inflicts cold. Feed to pets to increase Fullness and EXP."
     ],
-    "howto": ["Explore the world to gather.", "Auction House."],
+    "howto": [
+      "Explore the world to gather.",
+      "Auction House."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cauliflower/cauliflower.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cauliflower/cauliflower.webp",
         "pathname": "/chimeraland/materials/cauliflower/cauliflower.webp"
       }
     ],
@@ -5452,7 +5618,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/orchid/orchid.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/orchid/orchid.webp",
         "pathname": "/chimeraland/materials/orchid/orchid.webp"
       }
     ],
@@ -5464,7 +5630,9 @@
   {
     "dateModified": "2022-10-09T15:26:37+07:00",
     "datePublished": "2022-01-17T15:56:03+07:00",
-    "details": ["Gather any plants to obtain this basic gathering items."],
+    "details": [
+      "Gather any plants to obtain this basic gathering items."
+    ],
     "howto": [
       "Gather medicinal materials to get Parasitic Grass.",
       "Hunt Grand Venus Flytrap to obtain it.",
@@ -5473,7 +5641,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/parasitic-grass/parasitic-grass.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/parasitic-grass/parasitic-grass.webp",
         "pathname": "/chimeraland/materials/parasitic-grass/parasitic-grass.webp"
       }
     ],
@@ -5488,10 +5656,13 @@
     "details": [
       "Eating restores 60 Fullness and gives a little bit of EXP, but inflicts cold. Feed to pets to increase Fullness and EXP."
     ],
-    "howto": ["Explore the world to gather.", "Auction House."],
+    "howto": [
+      "Explore the world to gather.",
+      "Auction House."
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/melon/melon.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/melon/melon.webp",
         "pathname": "/chimeraland/materials/melon/melon.webp"
       }
     ],
@@ -5515,7 +5686,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/anise/anise.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/anise/anise.webp",
         "pathname": "/chimeraland/materials/anise/anise.webp"
       }
     ],
@@ -5540,7 +5711,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fiber/fiber.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fiber/fiber.webp",
         "pathname": "/chimeraland/materials/fiber/fiber.webp"
       }
     ],
@@ -5562,7 +5733,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/job's-tears/jobs-tears.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/job's-tears/jobs-tears.webp",
         "pathname": "/chimeraland/materials/job's-tears/jobs-tears.webp"
       }
     ],
@@ -5584,7 +5755,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/waterproof-mushroom/waterproof-mushroom.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/waterproof-mushroom/waterproof-mushroom.webp",
         "pathname": "/chimeraland/materials/waterproof-mushroom/waterproof-mushroom.webp"
       }
     ],
@@ -5606,7 +5777,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gilled-mushroom/gilled-mushroom.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gilled-mushroom/gilled-mushroom.webp",
         "pathname": "/chimeraland/materials/gilled-mushroom/gilled-mushroom.webp"
       }
     ],
@@ -5628,7 +5799,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sea-buckthorn/sea-buckthorn.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sea-buckthorn/sea-buckthorn.webp",
         "pathname": "/chimeraland/materials/sea-buckthorn/sea-buckthorn.webp"
       }
     ],
@@ -5650,7 +5821,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hot-pepper/hot-pepper.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/hot-pepper/hot-pepper.webp",
         "pathname": "/chimeraland/materials/hot-pepper/hot-pepper.webp"
       }
     ],
@@ -5674,7 +5845,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/royle's-spurge/royles-spurge.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/royle's-spurge/royles-spurge.webp",
         "pathname": "/chimeraland/materials/royle's-spurge/royles-spurge.webp"
       }
     ],
@@ -5697,7 +5868,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bodhi-fruit/bodhi-fruit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bodhi-fruit/bodhi-fruit.webp",
         "pathname": "/chimeraland/materials/bodhi-fruit/bodhi-fruit.webp"
       }
     ],
@@ -5720,7 +5891,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-goodfruit/red-goodfruit.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/red-goodfruit/red-goodfruit.webp",
         "pathname": "/chimeraland/materials/red-goodfruit/red-goodfruit.webp"
       }
     ],
@@ -5744,7 +5915,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/honor-grass/honor-grass.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/honor-grass/honor-grass.webp",
         "pathname": "/chimeraland/materials/honor-grass/honor-grass.webp"
       }
     ],
@@ -5768,7 +5939,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yellow-grass/yellow-grass.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/yellow-grass/yellow-grass.webp",
         "pathname": "/chimeraland/materials/yellow-grass/yellow-grass.webp"
       }
     ],
@@ -5792,7 +5963,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lingzhi/lingzhi.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lingzhi/lingzhi.webp",
         "pathname": "/chimeraland/materials/lingzhi/lingzhi.webp"
       }
     ],
@@ -5804,13 +5975,15 @@
   {
     "dateModified": "2022-10-10T06:26:37+07:00",
     "datePublished": "2022-01-18T06:56:03+07:00",
-    "details": ["Used for Evolve White Maiden"],
+    "details": [
+      "Used for Evolve White Maiden"
+    ],
     "howto": [
       "Moon Resin Dew Obtain from smelting Illustrious giant beast materials."
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moon-resin-dew/moon-resin-dew.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/moon-resin-dew/moon-resin-dew.webp",
         "pathname": "/chimeraland/materials/moon-resin-dew/moon-resin-dew.webp"
       }
     ],
@@ -5822,13 +5995,15 @@
   {
     "dateModified": "2022-10-10T07:26:37+07:00",
     "datePublished": "2022-01-18T07:56:03+07:00",
-    "details": ["Used for Evolve White Maiden"],
+    "details": [
+      "Used for Evolve White Maiden"
+    ],
     "howto": [
       "Dragon Pill Obtain by Auction House, Hunt the Illustrious Wyrm Greenie, and Explore the world."
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dragon-pill/dragon-pill.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/dragon-pill/dragon-pill.webp",
         "pathname": "/chimeraland/materials/dragon-pill/dragon-pill.webp"
       }
     ],
@@ -5850,7 +6025,7 @@
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/primal/primal.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/primal/primal.webp",
         "pathname": "/chimeraland/materials/primal/primal.webp"
       }
     ],
@@ -5862,13 +6037,15 @@
   {
     "dateModified": "2022-10-10T09:26:37+07:00",
     "datePublished": "2022-01-18T09:56:03+07:00",
-    "details": ["Used for Evolve Noble Golden Crow"],
+    "details": [
+      "Used for Evolve Noble Golden Crow"
+    ],
     "howto": [
       "Dragon Pill Obtain by Auction House, Hunt the ocean beast Noble Cray, and Explore the world."
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cray-pill/cray-pill.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cray-pill/cray-pill.webp",
         "pathname": "/chimeraland/materials/cray-pill/cray-pill.webp"
       }
     ],
@@ -5880,13 +6057,15 @@
   {
     "dateModified": "2022-10-10T10:26:37+07:00",
     "datePublished": "2022-01-18T10:56:03+07:00",
-    "details": ["Used for Evolve Noble Serpent"],
+    "details": [
+      "Used for Evolve Noble Serpent"
+    ],
     "howto": [
       "Frost Dragon Primal Element Obtain Hunt a Noble Ice Whale, and Explore the world."
     ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/frost-dragon-primal-element/frost-dragon-primal-element.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/frost-dragon-primal-element/frost-dragon-primal-element.webp",
         "pathname": "/chimeraland/materials/frost-dragon-primal-element/frost-dragon-primal-element.webp"
       }
     ],
@@ -5898,10 +6077,12 @@
   {
     "dateModified": "2022-10-10T11:26:37+07:00",
     "datePublished": "2022-01-18T11:56:03+07:00",
-    "details": ["Used for Evolve Bony Sabretooth"],
+    "details": [
+      "Used for Evolve Bony Sabretooth"
+    ],
     "images": [
       {
-        "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fallen-snow-bone/fallen-snow-bone.webp",
+        "absolutePath": "d:/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fallen-snow-bone/fallen-snow-bone.webp",
         "pathname": "/chimeraland/materials/fallen-snow-bone/fallen-snow-bone.webp"
       }
     ],

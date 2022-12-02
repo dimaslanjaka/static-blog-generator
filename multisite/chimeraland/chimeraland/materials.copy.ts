@@ -3,7 +3,7 @@ import Bluebird from 'bluebird'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import sharp from 'sharp'
 import slugify from 'slugify'
-import { basename, dirname, extname, join } from 'upath'
+import { basename, dirname, extname, join, toUnix } from 'upath'
 import { hexoProject } from '../project'
 import { array_unique } from '../src/utils/array'
 import { walkDir } from '../src/utils/file-node'
@@ -63,6 +63,8 @@ Bluebird.all(materials.data)
       const location = walkDir(spot)
         .filter((map) => {
           const filename = map.filename.toLowerCase()
+          // remove desktop.ini
+          if (extname(filename) === '.ini') return false
           const filenameToMatch = result.name.toLowerCase()
           const filepath = map.path
           const regexs = [
@@ -73,14 +75,15 @@ Bluebird.all(materials.data)
             ),
             new RegExp('/' + filenameToMatch + '/', 'gi').test(filepath)
           ]
+
           //if (/maiden/i.test(o.name)) console.log(regexs, filename);
           //if (/maiden/i.test(o.name)) console.log(regexs.some(Boolean));
           return regexs.some(Boolean)
         })
-        .map((loc) => loc.path)
+        .map((loc) => toUnix(loc.path))
 
       if (location.length > 0) {
-        console.log(mat.name, location)
+        // console.log(mat.name, location)
         location.forEach((loc) => imgFiles.push(loc))
       }
     }
