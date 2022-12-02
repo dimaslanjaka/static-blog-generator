@@ -1,4 +1,4 @@
-import GulpClient from 'gulp';
+import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { deployConfig } from './gulp.config';
 import Logger from './utils/logger';
@@ -10,7 +10,8 @@ const console = Logger;
  * @param cwd directory to scan htmls
  */
 export function autoSeo(cwd: string) {
-  return GulpClient.src(['**/*.{htm,html}', '*.{html,htm}'], { cwd })
+  return gulp
+    .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd })
     .pipe(
       gulpDom(function (path) {
         // fix alt images
@@ -41,10 +42,12 @@ export function autoSeo(cwd: string) {
         }
       })
     )
-    .pipe(GulpClient.dest(cwd));
+    .pipe(gulp.dest(cwd));
 }
 
-GulpClient.task('seo', function () {
+gulp.task('seo', function () {
   const { deployDir } = deployConfig();
   return autoSeo(deployDir);
 });
+
+export default gulp;
