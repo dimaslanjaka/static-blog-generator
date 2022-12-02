@@ -27,6 +27,14 @@
 | Shelby | Roll drops items |
 | PrimalHunter | Roll drops items |
 
+## Daftar player yang dicurigai sebagai blacklist
+
+
+| Nama Player | Keterangan |
+| :--- | :--- |
+| hella | dicurigai sebagai scammer |
+| ChipsChips | dicurigai sebagai scammer map illus 16 party |
+
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
 - Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).
 
