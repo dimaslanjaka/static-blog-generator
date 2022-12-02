@@ -7,6 +7,8 @@ const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
 
+// required: npm i upath
+// required: npm i -D semver typedoc git-command-helper gulp
 // update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
 
 /**
@@ -14,6 +16,8 @@ const pkgjson = require('./package.json');
  */
 const compile = async function () {
   const outDir = join(__dirname, 'docs');
+  const projectDocsDir = join(outDir, pkgjson.name);
+  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
   if (!existsSync(join(outDir, '.git'))) mkdirSync(join(outDir, '.git'), { recursive: true });
   const options = Object.assign({}, typedocOptions);
 
@@ -26,8 +30,8 @@ const compile = async function () {
   app.bootstrap(options);
   const project = app.convert();
   if (typeof project !== 'undefined') {
-    await app.generateDocs(project, join(outDir, pkgjson.name));
-    await app.generateJson(project, join(outDir, pkgjson.name, 'info.json'));
+    await app.generateDocs(project, projectDocsDir);
+    await app.generateJson(project, join(projectDocsDir, 'info.json'));
   }
 };
 
@@ -76,8 +80,11 @@ const watch = function (done) {
 };
 
 if (require.main === module) {
-  //console.log('called directly');
-  compile();
+  (async () => {
+    console.log('[compile] start');
+    await compile();
+    console.log('[compile] finish');
+  })();
 } else {
   //console.log('required as a module');
 }
