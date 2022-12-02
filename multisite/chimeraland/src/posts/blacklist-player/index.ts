@@ -36,6 +36,12 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
   })
 })
 
+Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
+  if (/anchor/gim.test(el.getAttribute('class') || '')) {
+    el.removeAttribute('class')
+  }
+})
+
 const body = dom.window.document.body.innerHTML
 dom.window.close()
 // console.log(body)
