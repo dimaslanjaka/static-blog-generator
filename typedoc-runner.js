@@ -6,11 +6,14 @@ const { mkdirSync, existsSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
+const { spawn } = require('cross-spawn');
 
 // required: npm i upath
-// required: npm i -D semver typedoc git-command-helper gulp
+// required: npm i -D semver typedoc git-command-helper gulp cross-spawn
 // update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
 // repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
+
+const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
 /**
  * Compile typedocs
@@ -18,8 +21,12 @@ const pkgjson = require('./package.json');
 const compile = async function () {
   const outDir = join(__dirname, 'docs');
   const projectDocsDir = join(outDir, pkgjson.name);
+
+  if (!existsSync(outDir)) {
+    spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
+  }
+
   if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
-  if (!existsSync(join(outDir, '.git'))) mkdirSync(join(outDir, '.git'), { recursive: true });
   const options = Object.assign({}, typedocOptions);
 
   const app = new typedocModule.Application();
@@ -46,7 +53,7 @@ const publish = async function () {
   const github = new git(outDir);
   try {
     //await github.init();
-    await github.setremote('https://github.com/dimaslanjaka/docs.git');
+    await github.setremote(REPO_URL);
     await github.setbranch('master');
     await github.reset('master');
   } catch {
