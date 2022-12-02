@@ -32,3 +32,5 @@ export function commitProject(finish: gulp.TaskFunctionCallback) {
 }
 
 gulp.task('project-commit', commitProject);
+
+export default gulp;
