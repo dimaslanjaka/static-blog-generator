@@ -4,9 +4,7 @@
     "dateModified": "2022-10-05T07:46:53+07:00",
     "name": "Stir Fried Vegetables",
     "device": "Stove II",
-    "recipes": [
-      "Any Lv.6 Crop + Any Lv.6 Crop + Any Spicy Sauce/Any Spice"
-    ],
+    "recipes": ["Any Lv.6 Crop + Any Lv.6 Crop + Any Spicy Sauce/Any Spice"],
     "images": {
       "filename": "stir-fried-vegetables.webp",
       "pathname": "/chimeraland/recipes/stir-fried-vegetables/stir-fried-vegetables.webp",
@@ -23,25 +21,16 @@
         "pathname": "/chimeraland/recipes/stir-fried-vegetables/stir-fried-vegetables-name.webp"
       }
     },
-    "buff": [
-      "+10% Crit DMG",
-      "Great Focus"
-    ],
+    "buff": ["+10% Crit DMG", "Great Focus"],
     "pathname": "/chimeraland/recipes/stir-fried-vegetables.html"
   },
   {
     "datePublished": "2022-01-07T05:56:03+07:00",
     "dateModified": "2022-09-28T20:26:37+07:00",
     "name": "Apple Sauce",
-    "recipes": [
-      "Apple + Any Wild Fruit",
-      "Apple [2]"
-    ],
+    "recipes": ["Apple + Any Wild Fruit", "Apple [2]"],
     "device": "Mixer",
-    "buff": [
-      "+180 fullness",
-      "Heat Resistance +5"
-    ],
+    "buff": ["+180 fullness", "Heat Resistance +5"],
     "additional": "-",
     "images": {
       "filename": "apple-sauce.webp",
@@ -65,14 +54,9 @@
     "datePublished": "2022-01-07T14:56:03+07:00",
     "dateModified": "2022-10-05T16:46:53+07:00",
     "name": "Apple Slushie",
-    "recipes": [
-      "Ice Piece + Apple"
-    ],
+    "recipes": ["Ice Piece + Apple"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness",
-      "Heat Resistance +10"
-    ],
+    "buff": ["180 Fullness", "Heat Resistance +10"],
     "images": {
       "filename": "apple-slushie.webp",
       "pathname": "/chimeraland/recipes/apple-slushie/apple-slushie.webp",
@@ -95,14 +79,9 @@
     "datePublished": "2022-01-06T21:56:03+07:00",
     "dateModified": "2022-10-05T07:46:55+07:00",
     "name": "Arowana Slices",
-    "recipes": [
-      "Barbled Dragonfish + Lemon Tree Leaf + Barbled Dragonfish"
-    ],
+    "recipes": ["Barbled Dragonfish + Lemon Tree Leaf + Barbled Dragonfish"],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "Protect from Drowning"
-    ],
+    "buff": ["540 Fullness", "Protect from Drowning"],
     "images": {
       "filename": "arowana-slices.webp",
       "pathname": "/chimeraland/recipes/arowana-slices/arowana-slices.webp",
@@ -129,10 +108,7 @@
       "Ice Piece/Dew + Any Meat + Any High Quality Seasoning + Any Flower/Any Mutant Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+200 ATK"
-    ],
+    "buff": ["540 Fullness", "+200 ATK"],
     "images": {
       "filename": "bak-kut-teh.webp",
       "pathname": "/chimeraland/recipes/bak-kut-teh/bak-kut-teh.webp",
@@ -155,14 +131,9 @@
     "datePublished": "2022-01-07T02:56:03+07:00",
     "dateModified": "2022-10-05T14:46:53+07:00",
     "name": "Beggar's Chicken",
-    "recipes": [
-      "Watermelon + Vuldo Meat"
-    ],
+    "recipes": ["Watermelon + Vuldo Meat"],
     "device": "Stove II",
-    "buff": [
-      "300 Fullness",
-      "+4% Critical Damage Dealt"
-    ],
+    "buff": ["300 Fullness", "+4% Critical Damage Dealt"],
     "images": {
       "filename": "beggars-chicken.webp",
       "pathname": "/chimeraland/recipes/beggars-chicken/beggars-chicken.webp",
@@ -190,11 +161,7 @@
       "Vuldo Meat + Ice Piece + Any Seasoning + Any Lv.5 / Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+8% CRIT Damage Dealt",
-      "Great Focus"
-    ],
+    "buff": ["540 Fullness", "+8% CRIT Damage Dealt", "Great Focus"],
     "images": {
       "filename": "bird-soup.webp",
       "pathname": "/chimeraland/recipes/bird-soup/bird-soup.webp",
@@ -222,10 +189,7 @@
       "Ice Piece + Any Lv.6 Crop + Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+80 Armor Pierce"
-    ],
+    "buff": ["660 Fullness", "+80 Armor Pierce"],
     "images": {
       "filename": "blanched-greens.webp",
       "pathname": "/chimeraland/recipes/blanched-greens/blanched-greens.webp",
@@ -248,14 +212,9 @@
     "datePublished": "2022-01-07T00:56:03+07:00",
     "dateModified": "2022-09-29T02:26:37+07:00",
     "name": "Bodhi Fruit Sauce",
-    "recipes": [
-      "Bodhi Fruit + Any Wild Fruit"
-    ],
+    "recipes": ["Bodhi Fruit + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness",
-      "Heat Resistance +5"
-    ],
+    "buff": ["180 Fullness", "Heat Resistance +5"],
     "images": {
       "filename": "bodhi-fruit-sauce.webp",
       "pathname": "/chimeraland/recipes/bodhi-fruit-sauce/bodhi-fruit-sauce.webp",
@@ -281,10 +240,7 @@
     "recipes": [
       "Grizzly Meat + Peanut Oil + Any Sweet Sauce + Any Sweet Sauce"
     ],
-    "buff": [
-      "420 Fullness",
-      "+150 ATK"
-    ],
+    "buff": ["420 Fullness", "+150 ATK"],
     "images": {
       "filename": "braised-bear-meat.webp",
       "pathname": "/chimeraland/recipes/braised-bear-meat/braised-bear-meat.webp",
@@ -307,12 +263,8 @@
     "datePublished": "2022-01-07T03:56:03+07:00",
     "dateModified": "2022-10-05T07:46:56+07:00",
     "name": "Braised Meat Cubes",
-    "recipes": [
-      "Any Meat + Dew/Insect Ichor"
-    ],
-    "buff": [
-      "180 Fullness"
-    ],
+    "recipes": ["Any Meat + Dew/Insect Ichor"],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "braised-meat-cubes.webp",
       "pathname": "/chimeraland/recipes/braised-meat-cubes/braised-meat-cubes.webp",
@@ -339,10 +291,7 @@
       "Scorab Meat + Any Mixed Sauce + Any High Quality Seasoning + Peanut Oil"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+100 ATK"
-    ],
+    "buff": ["540 Fullness", "+100 ATK"],
     "images": {
       "filename": "braised-scorpion.webp",
       "pathname": "/chimeraland/recipes/braised-scorpion/braised-scorpion.webp",
@@ -365,13 +314,8 @@
     "datePublished": "2022-01-07T09:56:03+07:00",
     "dateModified": "2022-10-05T15:46:56+07:00",
     "name": "Braised Tendons",
-    "recipes": [
-      "Hoof Sinew + Hoof Sinew"
-    ],
-    "buff": [
-      "300 Fullness",
-      "15 RES"
-    ],
+    "recipes": ["Hoof Sinew + Hoof Sinew"],
+    "buff": ["300 Fullness", "15 RES"],
     "images": {
       "filename": "braised-tendons.webp",
       "pathname": "/chimeraland/recipes/braised-tendons/braised-tendons.webp",
@@ -394,14 +338,9 @@
     "datePublished": "2022-01-07T12:56:03+07:00",
     "dateModified": "2022-10-05T07:46:57+07:00",
     "name": "Braised Wings",
-    "recipes": [
-      "Dew + Ice Piece + Dew + Any Lv.5 Crop/Any Lv.6 Crop"
-    ],
+    "recipes": ["Dew + Ice Piece + Dew + Any Lv.5 Crop/Any Lv.6 Crop"],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "8% CRIT damage deal"
-    ],
+    "buff": ["540 Fullness", "8% CRIT damage deal"],
     "images": {
       "filename": "braised-wings.webp",
       "pathname": "/chimeraland/recipes/braised-wings/braised-wings.webp",
@@ -424,15 +363,9 @@
     "datePublished": "2022-01-07T07:56:03+07:00",
     "dateModified": "2022-10-05T15:46:53+07:00",
     "name": "Broiled Meat",
-    "recipes": [
-      "Any Seasoning + Any Fish",
-      "Any Spice + Any Fish"
-    ],
+    "recipes": ["Any Seasoning + Any Fish", "Any Spice + Any Fish"],
     "device": "Camp II",
-    "buff": [
-      "300 Fullness",
-      "Strengthen Underwater Effect"
-    ],
+    "buff": ["300 Fullness", "Strengthen Underwater Effect"],
     "images": {
       "filename": "broiled-meat.webp",
       "pathname": "/chimeraland/recipes/broiled-meat/broiled-meat.webp",
@@ -459,10 +392,7 @@
       "Ice Piece/Dew + Any Mixed Sauce + Any Meat + Any Meat + Any High Quality Seasoning"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+200 ATK"
-    ],
+    "buff": ["540 Fullness", "+200 ATK"],
     "images": {
       "filename": "bubbling-stew.webp",
       "pathname": "/chimeraland/recipes/bubbling-stew/bubbling-stew.webp",
@@ -489,10 +419,7 @@
       "Hoof Sinew + Crab Claw Meat + Bird Wing + Coriander Powder + Any Mushroom"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+250 ATK"
-    ],
+    "buff": ["660 Fullness", "+250 ATK"],
     "images": {},
     "pathname": "/chimeraland/recipes/buddhas-temptation.html"
   },
@@ -504,11 +431,7 @@
       "Peanut Oil + Bok Choy + Any Lv.6 Crop + Any High Quality Seasoning + Any Meat"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+160 DEF",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+160 DEF", "Great Focus"],
     "images": {
       "filename": "cabbage-meat-rolls.webp",
       "pathname": "/chimeraland/recipes/cabbage-meat-rolls/cabbage-meat-rolls.webp",
@@ -535,11 +458,7 @@
       "Cantaloupe + Fruit & Veggie Paste + Any Meat + Any Lv.6 Crop + Dew"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "80 Armor Pierce",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "80 Armor Pierce", "Great Focus"],
     "images": {
       "filename": "cantaloupe-claypot.webp",
       "pathname": "/chimeraland/recipes/cantaloupe-claypot/cantaloupe-claypot.webp",
@@ -562,15 +481,9 @@
     "datePublished": "2022-01-07T16:56:03+07:00",
     "dateModified": "2022-10-05T22:46:53+07:00",
     "name": "Cantaloupe Slushie",
-    "recipes": [
-      "Ice Piece + Cantaloupe",
-      "Cantaloupe + Ice Piece"
-    ],
+    "recipes": ["Ice Piece + Cantaloupe", "Cantaloupe + Ice Piece"],
     "device": "Mixer",
-    "buff": [
-      "+300 fullness",
-      "Heat Resistance +15"
-    ],
+    "buff": ["+300 fullness", "Heat Resistance +15"],
     "additional": "-",
     "images": {
       "filename": "cantaloupe-slushie.webp",
@@ -598,10 +511,7 @@
       "Peanut Oil + Grouguana Meat + Pumpkin + Any Flower/Any Mutant Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "+25 Armor Pierce"
-    ],
+    "buff": ["420 Fullness", "+25 Armor Pierce"],
     "images": {
       "filename": "chargrilled-pumpkin-and-iguana.webp",
       "pathname": "/chimeraland/recipes/chargrilled-pumpkin-and-iguana/chargrilled-pumpkin-and-iguana.webp",
@@ -624,12 +534,8 @@
     "datePublished": "2022-01-07T18:56:03+07:00",
     "dateModified": "2022-10-05T16:46:55+07:00",
     "name": "Chargrilled Skewers",
-    "recipes": [
-      "Any Meat + Any Meat/Any Seasoning/Any Spice"
-    ],
-    "buff": [
-      "240 Fullness"
-    ],
+    "recipes": ["Any Meat + Any Meat/Any Seasoning/Any Spice"],
+    "buff": ["240 Fullness"],
     "images": {
       "filename": "chargrilled-skewers.webp",
       "pathname": "/chimeraland/recipes/chargrilled-skewers/chargrilled-skewers.webp",
@@ -658,9 +564,7 @@
       "Any Lv.4 Crop + Any Lv.4 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "180 Fullness"
-    ],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "chargrilled-vegetable-kabob.webp",
       "pathname": "/chimeraland/recipes/chargrilled-vegetable-kabob/chargrilled-vegetable-kabob.webp",
@@ -687,10 +591,7 @@
       "Any Wild Fruit + Any Lv.6 Crop + Any Mixed Sauce + Any Mixed Sauce + Any Meat"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "250 ATK"
-    ],
+    "buff": ["660 Fullness", "250 ATK"],
     "images": {
       "filename": "cherry-braised-meat.webp",
       "pathname": "/chimeraland/recipes/cherry-braised-meat/cherry-braised-meat.webp",
@@ -713,13 +614,8 @@
     "datePublished": "2022-01-08T07:56:03+07:00",
     "dateModified": "2022-10-05T19:46:53+07:00",
     "name": "Cold Lime Broth",
-    "recipes": [
-      "Bodhi Fruit + Ice Piece + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "Heat Resistance +15"
-    ],
+    "recipes": ["Bodhi Fruit + Ice Piece + Any Meat"],
+    "buff": ["300 Fullness", "Heat Resistance +15"],
     "images": {},
     "pathname": "/chimeraland/recipes/cold-lime-broth.html"
   },
@@ -727,13 +623,8 @@
     "datePublished": "2022-01-08T02:56:03+07:00",
     "dateModified": "2022-10-05T13:46:57+07:00",
     "name": "Cold Lime Soup",
-    "recipes": [
-      "Bodhi Fruit + Ice Piece"
-    ],
-    "buff": [
-      "180 Fullness",
-      "Heat Resistance +10"
-    ],
+    "recipes": ["Bodhi Fruit + Ice Piece"],
+    "buff": ["180 Fullness", "Heat Resistance +10"],
     "images": {},
     "pathname": "/chimeraland/recipes/cold-lime-soup.html"
   },
@@ -741,13 +632,9 @@
     "datePublished": "2022-01-08T01:56:03+07:00",
     "dateModified": "2022-09-29T04:26:37+07:00",
     "name": "Cucumber Sauce",
-    "recipes": [
-      "Cucumber + Job's Tears + Any Wild Fruit"
-    ],
+    "recipes": ["Cucumber + Job's Tears + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "300 Fullness"
-    ],
+    "buff": ["300 Fullness"],
     "images": {
       "filename": "cucumber-sauce.webp",
       "pathname": "/chimeraland/recipes/cucumber-sauce/cucumber-sauce.webp",
@@ -770,13 +657,8 @@
     "datePublished": "2022-01-07T13:56:03+07:00",
     "dateModified": "2022-10-05T07:46:54+07:00",
     "name": "Curry Grilled Meat",
-    "recipes": [
-      "Any Meat + Any Seasoning + Any Spice"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+150 ATK"
-    ],
+    "recipes": ["Any Meat + Any Seasoning + Any Spice"],
+    "buff": ["420 Fullness", "+150 ATK"],
     "images": {
       "filename": "curry-grilled-meat.webp",
       "pathname": "/chimeraland/recipes/curry-grilled-meat/curry-grilled-meat.webp",
@@ -807,9 +689,7 @@
       "Any Meat [1] --Device: Stove/Camp--",
       "Insect Ichor [1] --Device: Stove/Camp--"
     ],
-    "buff": [
-      "Component for making fertilizer"
-    ],
+    "buff": ["Component for making fertilizer"],
     "additional": "-",
     "images": {
       "filename": "dark-cuisine.webp",
@@ -833,14 +713,9 @@
     "datePublished": "2022-01-08T00:56:03+07:00",
     "dateModified": "2022-10-05T16:46:57+07:00",
     "name": "Deep Fried Liver",
-    "recipes": [
-      "Beast Liver + Chunk of Fat + Chunk of Fat + Beast Liver"
-    ],
+    "recipes": ["Beast Liver + Chunk of Fat + Chunk of Fat + Beast Liver"],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "+25 Armor Pierce"
-    ],
+    "buff": ["420 Fullness", "+25 Armor Pierce"],
     "images": {
       "filename": "deep-fried-liver.webp",
       "pathname": "/chimeraland/recipes/deep-fried-liver/deep-fried-liver.webp",
@@ -863,14 +738,9 @@
     "datePublished": "2022-01-08T12:56:03+07:00",
     "dateModified": "2022-10-05T16:46:54+07:00",
     "name": "Deep Fried Meat",
-    "recipes": [
-      "Any Meat + Any Meat + Any Meat"
-    ],
+    "recipes": ["Any Meat + Any Meat + Any Meat"],
     "device": "Camp II",
-    "buff": [
-      "300 Fullness",
-      "12 Armor Pierce"
-    ],
+    "buff": ["300 Fullness", "12 Armor Pierce"],
     "images": {
       "filename": "deep-fried-meat.webp",
       "pathname": "/chimeraland/recipes/deep-fried-meat/deep-fried-meat.webp",
@@ -893,14 +763,9 @@
     "datePublished": "2022-01-07T20:56:03+07:00",
     "dateModified": "2022-10-05T10:46:57+07:00",
     "name": "Dragon Meat Stew",
-    "recipes": [
-      "Croc Meat + Dew/Ice Piece + Any Lv.6 Crop + Any Lv.6 Crop"
-    ],
+    "recipes": ["Croc Meat + Dew/Ice Piece + Any Lv.6 Crop + Any Lv.6 Crop"],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+150 ATK"
-    ],
+    "buff": ["660 Fullness", "+150 ATK"],
     "images": {
       "filename": "dragon-meat-stew.webp",
       "pathname": "/chimeraland/recipes/dragon-meat-stew/dragon-meat-stew.webp",
@@ -923,13 +788,8 @@
     "datePublished": "2022-01-08T06:56:03+07:00",
     "dateModified": "2022-09-29T05:26:37+07:00",
     "name": "Drunken Fish",
-    "recipes": [
-      "Any Sweet Sauce + Any Fish + Any Lv.2 Crop"
-    ],
-    "buff": [
-      "300 Fullness",
-      "+30 CRIT"
-    ],
+    "recipes": ["Any Sweet Sauce + Any Fish + Any Lv.2 Crop"],
+    "buff": ["300 Fullness", "+30 CRIT"],
     "images": {
       "filename": "drunken-fish.webp",
       "pathname": "/chimeraland/recipes/drunken-fish/drunken-fish.webp",
@@ -952,12 +812,8 @@
     "datePublished": "2022-01-08T04:56:03+07:00",
     "dateModified": "2022-10-05T11:46:54+07:00",
     "name": "Egg Soup",
-    "recipes": [
-      "Egg White + Dew/Ice Piece"
-    ],
-    "buff": [
-      "180 Fullness"
-    ],
+    "recipes": ["Egg White + Dew/Ice Piece"],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "egg-soup.webp",
       "pathname": "/chimeraland/recipes/egg-soup/egg-soup.webp",
@@ -980,14 +836,9 @@
     "datePublished": "2022-01-08T09:56:03+07:00",
     "dateModified": "2022-10-05T15:46:54+07:00",
     "name": "Eggs With Gourd",
-    "recipes": [
-      "Watermelon + Egg White + Peanut Oil"
-    ],
+    "recipes": ["Watermelon + Egg White + Peanut Oil"],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+100 CRIT"
-    ],
+    "buff": ["540 Fullness", "+100 CRIT"],
     "images": {
       "filename": "eggs-with-gourd.webp",
       "pathname": "/chimeraland/recipes/eggs-with-gourd/eggs-with-gourd.webp",
@@ -1014,10 +865,7 @@
       "Dew/Ice Piece + Any Lv.6 Crop + Any Spice + Orange grade fish/Red grade fish"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+80 Armor Pierce"
-    ],
+    "buff": ["660 Fullness", "+80 Armor Pierce"],
     "images": {
       "filename": "fish-and-vegetable-stew.webp",
       "pathname": "/chimeraland/recipes/fish-and-vegetable-stew/fish-and-vegetable-stew.webp",
@@ -1074,9 +922,7 @@
       "Job's Tears Powder + Any Wild Fruit + Any Mutant Flower/Any Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "300 Fullness"
-    ],
+    "buff": ["300 Fullness"],
     "images": {
       "filename": "flower-pancake.webp",
       "pathname": "/chimeraland/recipes/flower-pancake/flower-pancake.webp",
@@ -1103,11 +949,7 @@
       "Dew/Ice Piece + Any High Quality Seasoning + Any Meat + Any Spice + Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+160 DEF",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+160 DEF", "Great Focus"],
     "images": {
       "filename": "fragrant-meat-stew.webp",
       "pathname": "/chimeraland/recipes/fragrant-meat-stew/fragrant-meat-stew.webp",
@@ -1134,11 +976,7 @@
       "Job's Tears Powder + Egg White + Any Lv.6 Crop + Any Meat + Any Meat"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+150 CRIT",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+150 CRIT", "Great Focus"],
     "images": {
       "filename": "fragrant-steamed-buns.webp",
       "pathname": "/chimeraland/recipes/fragrant-steamed-buns/fragrant-steamed-buns.webp",
@@ -1165,10 +1003,7 @@
       "Peanut Oil + Any High Quality Seasoning + Red grade Fish + Peanut Oil"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+80 Armor Pierce"
-    ],
+    "buff": ["660 Fullness", "+80 Armor Pierce"],
     "images": {
       "filename": "fried-fish.webp",
       "pathname": "/chimeraland/recipes/fried-fish/fried-fish.webp",
@@ -1196,10 +1031,7 @@
       "Kidney + Peanut Oil + Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop/Any Flower/Any Mutant Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "+60 Crit"
-    ],
+    "buff": ["420 Fullness", "+60 Crit"],
     "images": {
       "filename": "fried-intestines.webp",
       "pathname": "/chimeraland/recipes/fried-intestines/fried-intestines.webp",
@@ -1222,13 +1054,8 @@
     "datePublished": "2022-01-08T21:56:03+07:00",
     "dateModified": "2022-10-05T09:46:55+07:00",
     "name": "Fried Liver",
-    "recipes": [
-      "Beast Liver + Beast Liver"
-    ],
-    "buff": [
-      "300 Fullness",
-      "50 DEF"
-    ],
+    "recipes": ["Beast Liver + Beast Liver"],
+    "buff": ["300 Fullness", "50 DEF"],
     "images": {
       "filename": "fried-liver.webp",
       "pathname": "/chimeraland/recipes/fried-liver/fried-liver.webp",
@@ -1281,11 +1108,7 @@
       "Any Meat + Any High Quality Seasoning + Any Lv.5 or Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+120 DEF",
-      "Great Focus"
-    ],
+    "buff": ["540 Fullness", "+120 DEF", "Great Focus"],
     "images": {
       "filename": "fried-melon-and-meat.webp",
       "pathname": "/chimeraland/recipes/fried-melon-and-meat/fried-melon-and-meat.webp",
@@ -1312,11 +1135,7 @@
       "Job's Tears Powder + Coriander + Any Meat + Any Lv.5 or Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+100 RES",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+100 RES", "Great Focus"],
     "images": {
       "filename": "fried-pork-in-scoop.webp",
       "pathname": "/chimeraland/recipes/fried-pork-in-scoop/fried-pork-in-scoop.webp",
@@ -1373,10 +1192,7 @@
     "recipes": [
       "Job's Tears Powder + Any Lv.1 Crop/Any Lv.2 Crop/Any Lv.3 Crop/Any Lv.4 Crop"
     ],
-    "buff": [
-      "300 Fullness",
-      "+30 CRIT"
-    ],
+    "buff": ["300 Fullness", "+30 CRIT"],
     "images": {
       "filename": "fried-vegetarian-balls.webp",
       "pathname": "/chimeraland/recipes/fried-vegetarian-balls/fried-vegetarian-balls.webp",
@@ -1403,10 +1219,7 @@
       "Peanut Oil + Beetlefly Meat + Any High Quality Seasoning + Any Mixed Sauce + Any Mixed Sauce"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+160 DEF"
-    ],
+    "buff": ["660 Fullness", "+160 DEF"],
     "images": {
       "filename": "frog-honey-sauce.webp",
       "pathname": "/chimeraland/recipes/frog-honey-sauce/frog-honey-sauce.webp",
@@ -1444,11 +1257,7 @@
       "Any Meat + Dew/Ice Piece + Any Seasoning + Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+60 RES",
-      "Great Focus"
-    ],
+    "buff": ["540 Fullness", "+60 RES", "Great Focus"],
     "images": {},
     "pathname": "/chimeraland/recipes/fruit-and-vegetable-stew.html"
   },
@@ -1467,13 +1276,8 @@
     "datePublished": "2022-01-08T18:56:03+07:00",
     "dateModified": "2022-10-05T09:46:54+07:00",
     "name": "Fruity Grilled Meat",
-    "recipes": [
-      "Any Meat + Any Wild Fruit + Any Sweet Sauce + Peanut Oil"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+80 DEF"
-    ],
+    "recipes": ["Any Meat + Any Wild Fruit + Any Sweet Sauce + Peanut Oil"],
+    "buff": ["420 Fullness", "+80 DEF"],
     "images": {
       "filename": "fruity-grilled-meat.webp",
       "pathname": "/chimeraland/recipes/fruity-grilled-meat/fruity-grilled-meat.webp",
@@ -1500,9 +1304,7 @@
       "Any Meat + Any Wild Fruit/Any Seasoning/Beast Heart/Beast Liver/Beast Brain/Beast Insentines/Kidney/Hoof Sinew/Chunk Of Fat/Any Spice",
       "Any Lv.1 Crop/Any Lv.2 Crop/Any Lv.3 Crop/Any Lv.4 Crop + Any Meat"
     ],
-    "buff": [
-      "240 Fullness"
-    ],
+    "buff": ["240 Fullness"],
     "images": {
       "filename": "fruity-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/fruity-meat-skewers/fruity-meat-skewers.webp",
@@ -1532,10 +1334,7 @@
       "Garlic Powder + Wild Garlic + Beetlefly Meat"
     ],
     "device": "Camp II",
-    "buff": [
-      "300 Fullness",
-      "100 ATK"
-    ],
+    "buff": ["300 Fullness", "100 ATK"],
     "images": {
       "filename": "garlic-braised-meat.webp",
       "pathname": "/chimeraland/recipes/garlic-braised-meat/garlic-braised-meat.webp",
@@ -1558,13 +1357,8 @@
     "datePublished": "2022-01-09T04:56:03+07:00",
     "dateModified": "2022-10-06T06:46:54+07:00",
     "name": "Garlic Meat Skewers",
-    "recipes": [
-      "Garlic Powder + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "50 DEF"
-    ],
+    "recipes": ["Garlic Powder + Any Meat"],
+    "buff": ["300 Fullness", "50 DEF"],
     "images": {
       "filename": "garlic-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/garlic-meat-skewers/garlic-meat-skewers.webp",
@@ -1587,14 +1381,9 @@
     "datePublished": "2022-01-09T00:56:03+07:00",
     "dateModified": "2022-10-05T14:46:55+07:00",
     "name": "Garlic Steak",
-    "recipes": [
-      "Garlic Powder + Job's Tears Powder + Bosalo Meat"
-    ],
+    "recipes": ["Garlic Powder + Job's Tears Powder + Bosalo Meat"],
     "device": "Camp II",
-    "buff": [
-      "300 Fullness",
-      "50 DEF"
-    ],
+    "buff": ["300 Fullness", "50 DEF"],
     "images": {
       "filename": "garlic-steak.webp",
       "pathname": "/chimeraland/recipes/garlic-steak/garlic-steak.webp",
@@ -1617,14 +1406,9 @@
     "datePublished": "2022-01-09T01:56:03+07:00",
     "dateModified": "2022-09-29T08:26:37+07:00",
     "name": "Garlic Sauce",
-    "recipes": [
-      "Wild Garlic + Any Wild Fruit"
-    ],
+    "recipes": ["Wild Garlic + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness",
-      "Reduces Toxins by 30"
-    ],
+    "buff": ["180 Fullness", "Reduces Toxins by 30"],
     "images": {
       "filename": "garlic-sauce.webp",
       "pathname": "/chimeraland/recipes/garlic-sauce/garlic-sauce.webp",
@@ -1647,9 +1431,7 @@
     "datePublished": "2022-01-09T08:56:03+07:00",
     "dateModified": "2022-10-05T23:46:54+07:00",
     "name": "Garlic Thighs",
-    "recipes": [
-      "Scallion + Any Meat + Peanut Oil"
-    ],
+    "recipes": ["Scallion + Any Meat + Peanut Oil"],
     "images": {
       "filename": "garlic-thighs.webp",
       "pathname": "/chimeraland/recipes/garlic-thighs/garlic-thighs.webp",
@@ -1672,14 +1454,9 @@
     "datePublished": "2022-01-09T14:56:03+07:00",
     "dateModified": "2022-09-28T21:26:37+07:00",
     "name": "Goodfruit Sauce",
-    "recipes": [
-      "Red Goodfruit + Any Wild Fruit"
-    ],
+    "recipes": ["Red Goodfruit + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness",
-      "Cold Resistance +5"
-    ],
+    "buff": ["180 Fullness", "Cold Resistance +5"],
     "images": {
       "filename": "goodfruit-sauce.webp",
       "pathname": "/chimeraland/recipes/goodfruit-sauce/goodfruit-sauce.webp",
@@ -1702,14 +1479,9 @@
     "datePublished": "2022-01-09T06:56:03+07:00",
     "dateModified": "2022-10-05T08:46:55+07:00",
     "name": "Goodfruit Slushie",
-    "recipes": [
-      "Ice Piece + Red Goodfruit"
-    ],
+    "recipes": ["Ice Piece + Red Goodfruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness",
-      "Heat Resistance +10"
-    ],
+    "buff": ["180 Fullness", "Heat Resistance +10"],
     "images": {
       "filename": "goodfruit-slushie.webp",
       "pathname": "/chimeraland/recipes/goodfruit-slushie/goodfruit-slushie.webp",
@@ -1735,10 +1507,7 @@
     "recipes": [
       "Gourd + Any Meat + Any Seasoning/Any Spice/Any Sweet Sauce/Any Spicy Sauce"
     ],
-    "buff": [
-      "420 Fullness",
-      "+6% Crit Damage Dealt"
-    ],
+    "buff": ["420 Fullness", "+6% Crit Damage Dealt"],
     "images": {
       "filename": "gourd-braised-meat.webp",
       "pathname": "/chimeraland/recipes/gourd-braised-meat/gourd-braised-meat.webp",
@@ -1765,10 +1534,7 @@
       "Bear Paw + Any Seasoning/Any Spice/Any High Quality Seasoning"
     ],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "150 ATK"
-    ],
+    "buff": ["420 Fullness", "150 ATK"],
     "images": {
       "filename": "grilled-bear-paw.webp",
       "pathname": "/chimeraland/recipes/grilled-bear-paw/grilled-bear-paw.webp",
@@ -1791,14 +1557,8 @@
     "datePublished": "2022-01-09T19:56:03+07:00",
     "dateModified": "2022-10-05T18:46:56+07:00",
     "name": "Grilled Bird",
-    "recipes": [
-      "Vuldo Meat + Any Wild Fruit + Any Lv.4 Crop"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+60 CRIT",
-      "Medium Focus"
-    ],
+    "recipes": ["Vuldo Meat + Any Wild Fruit + Any Lv.4 Crop"],
+    "buff": ["420 Fullness", "+60 CRIT", "Medium Focus"],
     "images": {
       "filename": "grilled-bird.webp",
       "pathname": "/chimeraland/recipes/grilled-bird/grilled-bird.webp",
@@ -1821,9 +1581,7 @@
     "datePublished": "2022-01-09T10:56:03+07:00",
     "dateModified": "2022-10-05T10:46:54+07:00",
     "name": "Grilled Brains",
-    "recipes": [
-      "Beast Brain + Beast Brain"
-    ],
+    "recipes": ["Beast Brain + Beast Brain"],
     "images": {
       "filename": "grilled-brains.webp",
       "pathname": "/chimeraland/recipes/grilled-brains/grilled-brains.webp",
@@ -1850,10 +1608,7 @@
       "Crab Claw Meat + Any Seasoning/Any Spice/Any High Quality Seasoning"
     ],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "150 ATK"
-    ],
+    "buff": ["420 Fullness", "150 ATK"],
     "images": {},
     "pathname": "/chimeraland/recipes/grilled-crab-claws.html"
   },
@@ -1865,10 +1620,7 @@
       "Any Seasoning + Purple grade fish/Orange grade fish/Red grade fish"
     ],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "Strenghten Underwater Effect"
-    ],
+    "buff": ["420 Fullness", "Strenghten Underwater Effect"],
     "images": {
       "filename": "grilled-fish.webp",
       "pathname": "/chimeraland/recipes/grilled-fish/grilled-fish.webp",
@@ -1891,13 +1643,8 @@
     "datePublished": "2022-01-10T03:56:03+07:00",
     "dateModified": "2022-10-06T05:46:54+07:00",
     "name": "Grilled Frog Legs",
-    "recipes": [
-      "Small Beast Meat + Small Beast Meat + Small Beast Meat"
-    ],
-    "buff": [
-      "180 Fullness",
-      "Strengthen Underwater Effect"
-    ],
+    "recipes": ["Small Beast Meat + Small Beast Meat + Small Beast Meat"],
+    "buff": ["180 Fullness", "Strengthen Underwater Effect"],
     "images": {
       "filename": "grilled-frog-legs.webp",
       "pathname": "/chimeraland/recipes/grilled-frog-legs/grilled-frog-legs.webp",
@@ -1920,13 +1667,8 @@
     "datePublished": "2022-01-09T05:56:03+07:00",
     "dateModified": "2022-10-05T12:46:56+07:00",
     "name": "Grilled Heart",
-    "recipes": [
-      "Beast Heart + Beast Heart"
-    ],
-    "buff": [
-      "300 Fullness",
-      "100 ATK"
-    ],
+    "recipes": ["Beast Heart + Beast Heart"],
+    "buff": ["300 Fullness", "100 ATK"],
     "images": {
       "filename": "grilled-heart.webp",
       "pathname": "/chimeraland/recipes/grilled-heart/grilled-heart.webp",
@@ -1949,13 +1691,8 @@
     "datePublished": "2022-01-09T16:56:03+07:00",
     "dateModified": "2022-10-05T17:46:56+07:00",
     "name": "Grilled Kidneys",
-    "recipes": [
-      "Kidney + Kidney"
-    ],
-    "buff": [
-      "300 Fullness",
-      "15 RES"
-    ],
+    "recipes": ["Kidney + Kidney"],
+    "buff": ["300 Fullness", "15 RES"],
     "images": {
       "filename": "grilled-kidneys.webp",
       "pathname": "/chimeraland/recipes/grilled-kidneys/grilled-kidneys.webp",
@@ -1978,14 +1715,9 @@
     "datePublished": "2022-01-09T18:56:03+07:00",
     "dateModified": "2022-10-05T22:46:54+07:00",
     "name": "Grilled Meat And Mushrooms",
-    "recipes": [
-      "Any Mushroom + Any Meat"
-    ],
+    "recipes": ["Any Mushroom + Any Meat"],
     "device": "Camp II",
-    "buff": [
-      "240 Fullness",
-      "Cold Resistance +10"
-    ],
+    "buff": ["240 Fullness", "Cold Resistance +10"],
     "images": {
       "filename": "grilled-meat-and-mushrooms.webp",
       "pathname": "/chimeraland/recipes/grilled-meat-and-mushrooms/grilled-meat-and-mushrooms.webp",
@@ -2011,9 +1743,7 @@
     "recipes": [
       "Any Meat + Any Meat/Any Seasoning/Any Spice/Beast Heart/Beast Liver/Beast Brain/Beast Insentines/Kidney/Hoof Sinew/Chunk Of Fat"
     ],
-    "buff": [
-      "180 Fullness"
-    ],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "grilled-meat-cubes.webp",
       "pathname": "/chimeraland/recipes/grilled-meat-cubes/grilled-meat-cubes.webp",
@@ -2036,13 +1766,8 @@
     "datePublished": "2022-01-09T20:56:03+07:00",
     "dateModified": "2022-10-05T08:46:56+07:00",
     "name": "Grilled Offal",
-    "recipes": [
-      "Beast Intestines + Beast Intestines"
-    ],
-    "buff": [
-      "300 Fullness",
-      "30 Crit"
-    ],
+    "recipes": ["Beast Intestines + Beast Intestines"],
+    "buff": ["300 Fullness", "30 Crit"],
     "images": {
       "filename": "grilled-offal.webp",
       "pathname": "/chimeraland/recipes/grilled-offal/grilled-offal.webp",
@@ -2065,12 +1790,8 @@
     "datePublished": "2022-01-09T22:56:03+07:00",
     "dateModified": "2022-10-06T09:46:54+07:00",
     "name": "Grilled Rabbit",
-    "recipes": [
-      "Any Meat + Any Meat"
-    ],
-    "buff": [
-      "180 Fullness"
-    ],
+    "recipes": ["Any Meat + Any Meat"],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "grilled-rabbit.webp",
       "pathname": "/chimeraland/recipes/grilled-rabbit/grilled-rabbit.webp",
@@ -2093,12 +1814,8 @@
     "datePublished": "2022-01-10T05:56:03+07:00",
     "dateModified": "2022-10-06T14:46:54+07:00",
     "name": "Grilled Venison",
-    "recipes": [
-      "Moose Meat + Moose Meat"
-    ],
-    "buff": [
-      "240 Fullness"
-    ],
+    "recipes": ["Moose Meat + Moose Meat"],
+    "buff": ["240 Fullness"],
     "images": {
       "filename": "grilled-venison.webp",
       "pathname": "/chimeraland/recipes/grilled-venison/grilled-venison.webp",
@@ -2125,10 +1842,7 @@
       "Bird Wing + Any Seasoning/Any Spice/Any High Quality Seasoning"
     ],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "80 DEF"
-    ],
+    "buff": ["420 Fullness", "80 DEF"],
     "images": {
       "filename": "grilled-wings.webp",
       "pathname": "/chimeraland/recipes/grilled-wings/grilled-wings.webp",
@@ -2151,14 +1865,8 @@
     "datePublished": "2022-01-09T15:56:03+07:00",
     "dateModified": "2022-10-06T16:46:54+07:00",
     "name": "Grilled Wolf",
-    "recipes": [
-      "Peanut Oil + Prowler Meat + Prowler Meat + Any Seasoning"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+60Crit",
-      "Medium Focus"
-    ],
+    "recipes": ["Peanut Oil + Prowler Meat + Prowler Meat + Any Seasoning"],
+    "buff": ["420 Fullness", "+60Crit", "Medium Focus"],
     "images": {
       "filename": "grilled-wolf.webp",
       "pathname": "/chimeraland/recipes/grilled-wolf/grilled-wolf.webp",
@@ -2181,13 +1889,8 @@
     "datePublished": "2022-01-09T11:56:03+07:00",
     "dateModified": "2022-10-05T17:46:54+07:00",
     "name": "Herb Grilled Crab",
-    "recipes": [
-      "Crab Claw Meat + Orchid + Any Seasoning/Any Spice"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+150 ATK"
-    ],
+    "recipes": ["Crab Claw Meat + Orchid + Any Seasoning/Any Spice"],
+    "buff": ["420 Fullness", "+150 ATK"],
     "images": {
       "filename": "herb-grilled-crab.webp",
       "pathname": "/chimeraland/recipes/herb-grilled-crab/herb-grilled-crab.webp",
@@ -2215,10 +1918,7 @@
       "Vulture Meat + Vulture Meat + Any Sweet Sauce + Peanut Oil",
       "Vuldo Meat + Vuldo Meat + Any Sweet Sauce + Peanut Oil"
     ],
-    "buff": [
-      "420 Fullness",
-      "+80 DEF"
-    ],
+    "buff": ["420 Fullness", "+80 DEF"],
     "images": {
       "filename": "honey-grilled-chicken.webp",
       "pathname": "/chimeraland/recipes/honey-grilled-chicken/honey-grilled-chicken.webp",
@@ -2241,13 +1941,8 @@
     "datePublished": "2022-01-10T08:56:03+07:00",
     "dateModified": "2022-10-06T08:46:54+07:00",
     "name": "Honeybee Jerky",
-    "recipes": [
-      "Beetlefly Meat + Any Meat + Any Sweet Sauce + Peanut Oil"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+6% Crit Damage Dealt"
-    ],
+    "recipes": ["Beetlefly Meat + Any Meat + Any Sweet Sauce + Peanut Oil"],
+    "buff": ["420 Fullness", "+6% Crit Damage Dealt"],
     "images": {
       "filename": "honeybee-jerky.webp",
       "pathname": "/chimeraland/recipes/honeybee-jerky/honeybee-jerky.webp",
@@ -2270,14 +1965,9 @@
     "datePublished": "2022-01-09T23:56:03+07:00",
     "dateModified": "2022-10-05T17:46:55+07:00",
     "name": "Honeydew Melon Slushie",
-    "recipes": [
-      "Ice Piece + Honeydew Melon + Ice Piece"
-    ],
+    "recipes": ["Ice Piece + Honeydew Melon + Ice Piece"],
     "device": "Mixer",
-    "buff": [
-      "+540 fullness",
-      "Heat Resistance +15"
-    ],
+    "buff": ["+540 fullness", "Heat Resistance +15"],
     "grade": "Legendary",
     "additional": "-",
     "images": {
@@ -2302,14 +1992,8 @@
     "datePublished": "2022-01-10T11:56:03+07:00",
     "dateModified": "2022-10-06T12:46:54+07:00",
     "name": "Hot Oil",
-    "recipes": [
-      "Peanut Oil + Peanut Oil",
-      "Chunk of Fat + Chunk of Fat"
-    ],
-    "buff": [
-      "240 Fullness",
-      "Cold Resistance +10"
-    ],
+    "recipes": ["Peanut Oil + Peanut Oil", "Chunk of Fat + Chunk of Fat"],
+    "buff": ["240 Fullness", "Cold Resistance +10"],
     "images": {
       "filename": "hot-oil.webp",
       "pathname": "/chimeraland/recipes/hot-oil/hot-oil.webp",
@@ -2335,10 +2019,7 @@
     "recipes": [
       "Dew/Ice Piece + Dew/Ice Piece/Any Seasoning/Any Spice/Insect Ichor"
     ],
-    "buff": [
-      "60 Fullness",
-      "Cold Resistance +5"
-    ],
+    "buff": ["60 Fullness", "Cold Resistance +5"],
     "images": {
       "filename": "hot-water.webp",
       "pathname": "/chimeraland/recipes/hot-water/hot-water.webp",
@@ -2361,15 +2042,9 @@
     "datePublished": "2022-01-10T12:56:03+07:00",
     "dateModified": "2022-10-05T21:46:55+07:00",
     "name": "Ice Block",
-    "recipes": [
-      "Ice Piece + Ice Piece",
-      "Ice Piece [2]"
-    ],
+    "recipes": ["Ice Piece + Ice Piece", "Ice Piece [2]"],
     "device": "Mixer",
-    "buff": [
-      "+180 fullness",
-      "Heat Resistance +10"
-    ],
+    "buff": ["+180 fullness", "Heat Resistance +10"],
     "additional": "-",
     "images": {
       "filename": "ice-block.webp",
@@ -2393,13 +2068,8 @@
     "datePublished": "2022-01-10T04:56:03+07:00",
     "dateModified": "2022-10-05T20:46:55+07:00",
     "name": "Job's Tears Broth",
-    "recipes": [
-      "Job's Tears + Dew/Ice Piece + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "-50 Humidity (decreased over time)"
-    ],
+    "recipes": ["Job's Tears + Dew/Ice Piece + Any Meat"],
+    "buff": ["300 Fullness", "-50 Humidity (decreased over time)"],
     "images": {
       "filename": "jobs-tears-broth.webp",
       "pathname": "/chimeraland/recipes/jobs-tears-broth/jobs-tears-broth.webp",
@@ -2422,13 +2092,8 @@
     "datePublished": "2022-01-10T00:56:03+07:00",
     "dateModified": "2022-10-05T19:46:55+07:00",
     "name": "Job's Tears Porridge",
-    "recipes": [
-      "Job's Tears + Dew/Ice Piece"
-    ],
-    "buff": [
-      "180 Fullness",
-      "-40 Humidity (decreased over time)"
-    ],
+    "recipes": ["Job's Tears + Dew/Ice Piece"],
+    "buff": ["180 Fullness", "-40 Humidity (decreased over time)"],
     "images": {
       "filename": "jobs-tears-porridge.webp",
       "pathname": "/chimeraland/recipes/jobs-tears-porridge/jobs-tears-porridge.webp",
@@ -2451,13 +2116,9 @@
     "datePublished": "2022-01-10T18:56:03+07:00",
     "dateModified": "2022-09-29T10:26:37+07:00",
     "name": "Job's Tears Sauce",
-    "recipes": [
-      "Job's Tears + Any Wild Fruit"
-    ],
+    "recipes": ["Job's Tears + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness"
-    ],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "jobs-tears-sauce.webp",
       "pathname": "/chimeraland/recipes/jobs-tears-sauce/jobs-tears-sauce.webp",
@@ -2480,14 +2141,8 @@
     "datePublished": "2022-01-10T07:56:03+07:00",
     "dateModified": "2022-10-06T05:46:55+07:00",
     "name": "Job's Tears Stew",
-    "recipes": [
-      "Job's Tears + Any Meat + Any Lv.4 Crop"
-    ],
-    "buff": [
-      "420 Fullness",
-      "Medium Focus",
-      "+25 Armor Pierce"
-    ],
+    "recipes": ["Job's Tears + Any Meat + Any Lv.4 Crop"],
+    "buff": ["420 Fullness", "Medium Focus", "+25 Armor Pierce"],
     "images": {
       "filename": "jobs-tears-stew.webp",
       "pathname": "/chimeraland/recipes/jobs-tears-stew/jobs-tears-stew.webp",
@@ -2516,9 +2171,7 @@
       "Dew/Ice Piece + Any Lv.1 Crop/Any Lv.2 Crop/Any Lv.3 Crop/Any Lv.4 Crop/Any Mutant Flower/Any Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "240 Fullness"
-    ],
+    "buff": ["240 Fullness"],
     "images": {
       "filename": "large-fruit-stew.webp",
       "pathname": "/chimeraland/recipes/large-fruit-stew/large-fruit-stew.webp",
@@ -2548,11 +2201,7 @@
       "Any Meat + Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "Medium Focus",
-      "+25 Armor Pierce"
-    ],
+    "buff": ["420 Fullness", "Medium Focus", "+25 Armor Pierce"],
     "images": {
       "filename": "meat-and-vegetable.webp",
       "pathname": "/chimeraland/recipes/meat-and-vegetable/meat-and-vegetable.webp",
@@ -2580,10 +2229,7 @@
       "dew + crop level 6 + Any Meat + crop level 6"
     ],
     "device": "Camp II",
-    "buff": [
-      "+600 fullness",
-      "+250 atk"
-    ],
+    "buff": ["+600 fullness", "+250 atk"],
     "additional": "-",
     "images": {
       "filename": "meat-noodles.webp",
@@ -2611,11 +2257,7 @@
       "Any Meat + Any Meat + Any Meat + Any High Quality Seasoning + Job's Tears Powder"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+60 RES",
-      "Great Focus"
-    ],
+    "buff": ["540 Fullness", "+60 RES", "Great Focus"],
     "images": {
       "filename": "meat-pie.webp",
       "pathname": "/chimeraland/recipes/meat-pie/meat-pie.webp",
@@ -2638,13 +2280,9 @@
     "datePublished": "2022-01-10T13:56:03+07:00",
     "dateModified": "2022-10-05T22:46:55+07:00",
     "name": "Mushroom Broth",
-    "recipes": [
-      "Any Mushroom + Any Meat + Dew/Ice Piece"
-    ],
+    "recipes": ["Any Mushroom + Any Meat + Dew/Ice Piece"],
     "device": "Camp II",
-    "buff": [
-      "Unlock Stove II"
-    ],
+    "buff": ["Unlock Stove II"],
     "additional": "<a href=\"#unlock-stove-ii\">Watch Tutorial</a>",
     "images": {
       "filename": "mushroom-broth.webp",
@@ -2672,11 +2310,7 @@
       "Job's Tears Powder + Job's Tears Powder + Any Lv.6 Crop + Any Meat + Peanut Oil"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+100 RES",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+100 RES", "Great Focus"],
     "images": {
       "filename": "new-year-dumplings.webp",
       "pathname": "/chimeraland/recipes/new-year-dumplings/new-year-dumplings.webp",
@@ -2699,13 +2333,8 @@
     "datePublished": "2022-01-10T20:56:03+07:00",
     "dateModified": "2022-10-06T23:46:54+07:00",
     "name": "Omelette",
-    "recipes": [
-      "Egg White + Egg White"
-    ],
-    "buff": [
-      "300 Fullness",
-      "+15 RES"
-    ],
+    "recipes": ["Egg White + Egg White"],
+    "buff": ["300 Fullness", "+15 RES"],
     "images": {
       "filename": "omelette.webp",
       "pathname": "/chimeraland/recipes/omelette/omelette.webp",
@@ -2732,10 +2361,7 @@
       "Egg White + Any Meat + Any Wild Fruit + Any Lv.6 Crop + Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+80 Armor Pierce"
-    ],
+    "buff": ["660 Fullness", "+80 Armor Pierce"],
     "images": {
       "filename": "one-pot-stew.webp",
       "pathname": "/chimeraland/recipes/one-pot-stew/one-pot-stew.webp",
@@ -2758,13 +2384,8 @@
     "datePublished": "2022-01-10T19:56:03+07:00",
     "dateModified": "2022-10-05T22:46:56+07:00",
     "name": "Orchid Soup",
-    "recipes": [
-      "Orchid + Dew/Ice Piece + Any Wild Fruit"
-    ],
-    "buff": [
-      "180 Fullness",
-      "Restore 500 HP within 15 seconds"
-    ],
+    "recipes": ["Orchid + Dew/Ice Piece + Any Wild Fruit"],
+    "buff": ["180 Fullness", "Restore 500 HP within 15 seconds"],
     "images": {
       "filename": "orchid-soup.webp",
       "pathname": "/chimeraland/recipes/orchid-soup/orchid-soup.webp",
@@ -2787,13 +2408,8 @@
     "datePublished": "2022-01-11T04:56:03+07:00",
     "dateModified": "2022-10-05T15:46:55+07:00",
     "name": "Peanut Ball Soup",
-    "recipes": [
-      "Peanut + Dew/ce Piece + Any Meat"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+6% CRIT Damage Dealt"
-    ],
+    "recipes": ["Peanut + Dew/ce Piece + Any Meat"],
+    "buff": ["420 Fullness", "+6% CRIT Damage Dealt"],
     "images": {
       "filename": "peanut-ball-soup.webp",
       "pathname": "/chimeraland/recipes/peanut-ball-soup/peanut-ball-soup.webp",
@@ -2821,11 +2437,7 @@
       "Peanut + Gourd + Dew/Ice Piece + Cantaloupe/Mutant Flower/Equonix Flower/Lv6 Vegetable"
     ],
     "device": "Stove II",
-    "buff": [
-      "-540",
-      "+8% Crit DMG",
-      "Anotrog Attendant Recruitment."
-    ],
+    "buff": ["-540", "+8% Crit DMG", "Anotrog Attendant Recruitment."],
     "grade": "Legendary",
     "additional": "-",
     "images": {
@@ -2854,11 +2466,7 @@
       "Peanut Oil + Hot Pepper + Dew or Ice Piece + Any Meat + Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+50 Armor Pierce",
-      "Great Focus"
-    ],
+    "buff": ["540 Fullness", "+50 Armor Pierce", "Great Focus"],
     "images": {
       "filename": "poached-meat-fillets.webp",
       "pathname": "/chimeraland/recipes/poached-meat-fillets/poached-meat-fillets.webp",
@@ -2885,11 +2493,7 @@
       "Pumpkin + Any Lv.6 Crop + Any Meat + Any Meat + Any Lv.3 Crop/Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+10% CRIT DMG",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+10% CRIT DMG", "Great Focus"],
     "images": {
       "filename": "pumpkin-bowl.webp",
       "pathname": "/chimeraland/recipes/pumpkin-bowl/pumpkin-bowl.webp",
@@ -2916,10 +2520,7 @@
       "Tomato + Dew/Ice Piece + Any Lv.6 Crop + Any Mixed Sauce + Dew/Ice Piece"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+250 ATK"
-    ],
+    "buff": ["660 Fullness", "+250 ATK"],
     "images": {
       "filename": "red-cabbage-soup.webp",
       "pathname": "/chimeraland/recipes/red-cabbage-soup/red-cabbage-soup.webp",
@@ -2942,13 +2543,9 @@
     "datePublished": "2022-01-11T09:56:03+07:00",
     "dateModified": "2022-09-29T11:26:37+07:00",
     "name": "Red Hot Sauce",
-    "recipes": [
-      "Hot Pepper + Apple + Any Wild Fruit"
-    ],
+    "recipes": ["Hot Pepper + Apple + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "300 Fullness"
-    ],
+    "buff": ["300 Fullness"],
     "images": {
       "filename": "red-hot-sauce.webp",
       "pathname": "/chimeraland/recipes/red-hot-sauce/red-hot-sauce.webp",
@@ -2976,10 +2573,7 @@
       "Wild Garlic + Veggie Paste"
     ],
     "device": "Mixer",
-    "buff": [
-      "+180 fullness",
-      "-40 toxins/s"
-    ],
+    "buff": ["+180 fullness", "-40 toxins/s"],
     "additional": "-",
     "images": {
       "filename": "refreshing-pill.webp",
@@ -3003,13 +2597,8 @@
     "datePublished": "2022-01-10T23:56:03+07:00",
     "dateModified": "2022-10-06T04:46:55+07:00",
     "name": "Refreshing Soup",
-    "recipes": [
-      "Wild Garlic + Dew or Ice Piece + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "-40 Toxin Reduction"
-    ],
+    "recipes": ["Wild Garlic + Dew or Ice Piece + Any Meat"],
+    "buff": ["300 Fullness", "-40 Toxin Reduction"],
     "images": {
       "filename": "refreshing-soup.webp",
       "pathname": "/chimeraland/recipes/refreshing-soup/refreshing-soup.webp",
@@ -3032,14 +2621,8 @@
     "datePublished": "2022-01-11T01:56:03+07:00",
     "dateModified": "2022-10-06T11:46:54+07:00",
     "name": "Rice Patty",
-    "recipes": [
-      "Job's Tears Powder + Any Meat + Lv.3/4 Crop"
-    ],
-    "buff": [
-      "420 Fullness",
-      "Medium Focus",
-      "+35 RES"
-    ],
+    "recipes": ["Job's Tears Powder + Any Meat + Lv.3/4 Crop"],
+    "buff": ["420 Fullness", "Medium Focus", "+35 RES"],
     "images": {
       "filename": "rice-patty.webp",
       "pathname": "/chimeraland/recipes/rice-patty/rice-patty.webp",
@@ -3062,9 +2645,7 @@
     "datePublished": "2022-01-11T02:56:03+07:00",
     "dateModified": "2022-10-06T06:46:55+07:00",
     "name": "Salt-Baked Fish",
-    "recipes": [
-      "Any Fish + Any Fish"
-    ],
+    "recipes": ["Any Fish + Any Fish"],
     "device": "Camp II",
     "buff": [
       "300 Fullness",
@@ -3092,13 +2673,8 @@
     "datePublished": "2022-01-11T03:56:03+07:00",
     "dateModified": "2022-10-06T08:46:55+07:00",
     "name": "Scallion Meat Skewers",
-    "recipes": [
-      "Scallion Powder + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "12 Armor Pierce"
-    ],
+    "recipes": ["Scallion Powder + Any Meat"],
+    "buff": ["300 Fullness", "12 Armor Pierce"],
     "images": {
       "filename": "scallion-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/scallion-meat-skewers/scallion-meat-skewers.webp",
@@ -3121,12 +2697,8 @@
     "datePublished": "2022-01-11T06:56:03+07:00",
     "dateModified": "2022-10-06T12:46:55+07:00",
     "name": "Scraps Claypot",
-    "recipes": [
-      "Add Dung [4]"
-    ],
-    "buff": [
-      "180 Fullness"
-    ],
+    "recipes": ["Add Dung [4]"],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "scraps-claypot.webp",
       "pathname": "/chimeraland/recipes/scraps-claypot/scraps-claypot.webp",
@@ -3149,13 +2721,8 @@
     "datePublished": "2022-01-11T08:56:03+07:00",
     "dateModified": "2022-10-06T20:46:54+07:00",
     "name": "Sea-Buckthorn Broth",
-    "recipes": [
-      "Sea-Buckthorn + Dew or Ice Piece + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "Lv 3 Sandstorm Resistance"
-    ],
+    "recipes": ["Sea-Buckthorn + Dew or Ice Piece + Any Meat"],
+    "buff": ["300 Fullness", "Lv 3 Sandstorm Resistance"],
     "images": {
       "filename": "sea-buckthorn-broth.webp",
       "pathname": "/chimeraland/recipes/sea-buckthorn-broth/sea-buckthorn-broth.webp",
@@ -3178,9 +2745,7 @@
     "datePublished": "2022-01-11T17:56:03+07:00",
     "dateModified": "2022-10-05T09:46:56+07:00",
     "name": "Sea-Buckthorn Mixed Juice",
-    "recipes": [
-      "Sea-Buckthorn + Any Wild Fruit"
-    ],
+    "recipes": ["Sea-Buckthorn + Any Wild Fruit"],
     "device": "Mixer - Jam",
     "images": {
       "filename": "sea-buckthorn-mixed-juice.webp",
@@ -3204,13 +2769,9 @@
     "datePublished": "2022-01-11T14:56:03+07:00",
     "dateModified": "2022-09-29T07:26:37+07:00",
     "name": "Sea-Buckthorn Sauce",
-    "recipes": [
-      "Sea-Buckthorn + Any Wild Fruit"
-    ],
+    "recipes": ["Sea-Buckthorn + Any Wild Fruit"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness"
-    ],
+    "buff": ["180 Fullness"],
     "images": {
       "filename": "sea-buckthorn-sauce.webp",
       "pathname": "/chimeraland/recipes/sea-buckthorn-sauce/sea-buckthorn-sauce.webp",
@@ -3233,14 +2794,9 @@
     "datePublished": "2022-01-11T19:56:03+07:00",
     "dateModified": "2022-10-06T14:46:55+07:00",
     "name": "Sea-Buckthorn Slushie",
-    "recipes": [
-      "Ice Piece + Sea-Buckthorn"
-    ],
+    "recipes": ["Ice Piece + Sea-Buckthorn"],
     "device": "Mixer - Jam",
-    "buff": [
-      "180 Fullness",
-      "Heat Resistance +10"
-    ],
+    "buff": ["180 Fullness", "Heat Resistance +10"],
     "images": {
       "filename": "sea-buckthorn-slushie.webp",
       "pathname": "/chimeraland/recipes/sea-buckthorn-slushie/sea-buckthorn-slushie.webp",
@@ -3267,11 +2823,7 @@
       "Job's Tears + Crab Claw Meat + Job's Tears + Any High Quality Seasoning + Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+150 CRIT",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+150 CRIT", "Great Focus"],
     "images": {
       "filename": "seafood-rice.webp",
       "pathname": "/chimeraland/recipes/seafood-rice/seafood-rice.webp",
@@ -3294,13 +2846,8 @@
     "datePublished": "2022-01-11T23:56:03+07:00",
     "dateModified": "2022-10-06T03:46:55+07:00",
     "name": "Seasonal Vegetables Fried With Garlic",
-    "recipes": [
-      "Wild Garlic + Garlic Powder + Any Lv.2, Lv.3 and Lv.4 Crop"
-    ],
-    "buff": [
-      "300 Fullness",
-      "+100 ATK"
-    ],
+    "recipes": ["Wild Garlic + Garlic Powder + Any Lv.2, Lv.3 and Lv.4 Crop"],
+    "buff": ["300 Fullness", "+100 ATK"],
     "images": {
       "filename": "seasonal-vegetables-fried-with-garlic.webp",
       "pathname": "/chimeraland/recipes/seasonal-vegetables-fried-with-garlic/seasonal-vegetables-fried-with-garlic.webp",
@@ -3326,10 +2873,7 @@
     "recipes": [
       "Peanut Oil + Sesame + Any Seasoning/Any Spice/Any Sweet Sauce/Any Spicy Sauce"
     ],
-    "buff": [
-      "420 Fullness",
-      "+35 RES"
-    ],
+    "buff": ["420 Fullness", "+35 RES"],
     "images": {
       "filename": "sesame-soup.webp",
       "pathname": "/chimeraland/recipes/sesame-soup/sesame-soup.webp",
@@ -3389,10 +2933,7 @@
       "Any Mushroom + Any Wild Fruit + Dew/Ice Piece + Any Seasoning"
     ],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "Cold Resistance +15"
-    ],
+    "buff": ["420 Fullness", "Cold Resistance +15"],
     "images": {
       "filename": "sliced-mushrooms.webp",
       "pathname": "/chimeraland/recipes/sliced-mushrooms/sliced-mushrooms.webp",
@@ -3415,10 +2956,7 @@
     "datePublished": "2022-01-11T12:56:03+07:00",
     "dateModified": "2022-10-06T07:46:55+07:00",
     "name": "Slushie",
-    "recipes": [
-      "Dew/Ice Piece [3]",
-      "Ice Piece + Any Wild Fruit"
-    ],
+    "recipes": ["Dew/Ice Piece [3]", "Ice Piece + Any Wild Fruit"],
     "device": "Mixer - Jam",
     "images": {
       "filename": "slushie.webp",
@@ -3442,13 +2980,8 @@
     "datePublished": "2022-01-11T21:56:03+07:00",
     "dateModified": "2022-10-06T02:46:56+07:00",
     "name": "Soy-Braised Pork",
-    "recipes": [
-      "Peanut Oil + Spicy Powder + Any Wild Fruit + Any Meat"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+35 RES"
-    ],
+    "recipes": ["Peanut Oil + Spicy Powder + Any Wild Fruit + Any Meat"],
+    "buff": ["420 Fullness", "+35 RES"],
     "images": {
       "filename": "soy-braised-pork.webp",
       "pathname": "/chimeraland/recipes/soy-braised-pork/soy-braised-pork.webp",
@@ -3471,13 +3004,8 @@
     "datePublished": "2022-01-11T16:56:03+07:00",
     "dateModified": "2022-10-06T16:46:55+07:00",
     "name": "Spiced Meat",
-    "recipes": [
-      "Any Seasoning + Any Meat + Any Seasoning"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+150 ATK"
-    ],
+    "recipes": ["Any Seasoning + Any Meat + Any Seasoning"],
+    "buff": ["420 Fullness", "+150 ATK"],
     "images": {
       "filename": "spiced-meat.webp",
       "pathname": "/chimeraland/recipes/spiced-meat/spiced-meat.webp",
@@ -3500,14 +3028,9 @@
     "datePublished": "2022-01-11T07:56:03+07:00",
     "dateModified": "2022-10-06T15:46:55+07:00",
     "name": "Spiced Meat Skewers",
-    "recipes": [
-      "Five Spice Powder + Any Meat + Any Meat"
-    ],
+    "recipes": ["Five Spice Powder + Any Meat + Any Meat"],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "80 DEF"
-    ],
+    "buff": ["420 Fullness", "80 DEF"],
     "images": {
       "filename": "spiced-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/spiced-meat-skewers/spiced-meat-skewers.webp",
@@ -3530,14 +3053,9 @@
     "datePublished": "2022-01-11T22:56:03+07:00",
     "dateModified": "2022-10-06T13:46:55+07:00",
     "name": "Spiced Mushrooms",
-    "recipes": [
-      "Any Mushroom + Any Seasoning"
-    ],
+    "recipes": ["Any Mushroom + Any Seasoning"],
     "device": "Camp II",
-    "buff": [
-      "300 Fullness",
-      "-50 Humidity (decreased over time)"
-    ],
+    "buff": ["300 Fullness", "-50 Humidity (decreased over time)"],
     "images": {
       "filename": "spiced-mushrooms.webp",
       "pathname": "/chimeraland/recipes/spiced-mushrooms/spiced-mushrooms.webp",
@@ -3563,10 +3081,7 @@
     "recipes": [
       "Peanut Oil + Any Spicy Sauce + Blue grade fish/Purple grade fish/Orange grade fish/Red grade fish"
     ],
-    "buff": [
-      "420 Fullness",
-      "+35 RES"
-    ],
+    "buff": ["420 Fullness", "+35 RES"],
     "images": {
       "filename": "spicy-grilled-fish.webp",
       "pathname": "/chimeraland/recipes/spicy-grilled-fish/spicy-grilled-fish.webp",
@@ -3589,14 +3104,9 @@
     "datePublished": "2022-01-12T02:56:03+07:00",
     "dateModified": "2022-10-06T02:46:55+07:00",
     "name": "Spicy Meat Skewers",
-    "recipes": [
-      "Any Spice + Any Meat + Any Meat"
-    ],
+    "recipes": ["Any Spice + Any Meat + Any Meat"],
     "device": "Camp II",
-    "buff": [
-      "300 Fullness",
-      "Crit Damage Deals 4%"
-    ],
+    "buff": ["300 Fullness", "Crit Damage Deals 4%"],
     "images": {
       "filename": "spicy-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/spicy-meat-skewers/spicy-meat-skewers.webp",
@@ -3619,9 +3129,7 @@
     "datePublished": "2022-01-12T04:56:03+07:00",
     "dateModified": "2022-09-29T14:26:37+07:00",
     "name": "Spicy Pepper Sauce",
-    "recipes": [
-      "Hot Pepper + Any Wild Fruit"
-    ],
+    "recipes": ["Hot Pepper + Any Wild Fruit"],
     "device": "Mixer - Jam",
     "images": {
       "filename": "spicy-pepper-sauce.webp",
@@ -3645,13 +3153,8 @@
     "datePublished": "2022-01-12T03:56:03+07:00",
     "dateModified": "2022-10-06T11:46:55+07:00",
     "name": "Spicy Red Goodfruit Broth",
-    "recipes": [
-      "Red Goodfruit + Hot Pepper + Dew or Ice Piece + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "Cold Resistance +15"
-    ],
+    "recipes": ["Red Goodfruit + Hot Pepper + Dew or Ice Piece + Any Meat"],
+    "buff": ["300 Fullness", "Cold Resistance +15"],
     "images": {},
     "pathname": "/chimeraland/recipes/spicy-red-goodfruit-broth.html"
   },
@@ -3659,13 +3162,8 @@
     "datePublished": "2022-01-12T05:56:03+07:00",
     "dateModified": "2022-10-06T20:46:55+07:00",
     "name": "Spicy Red Goodfruit Soup",
-    "recipes": [
-      "Red Goodfruit + Dew/Ice Piece"
-    ],
-    "buff": [
-      "180 Fullness",
-      "Cold Resistance +10"
-    ],
+    "recipes": ["Red Goodfruit + Dew/Ice Piece"],
+    "buff": ["180 Fullness", "Cold Resistance +10"],
     "images": {},
     "pathname": "/chimeraland/recipes/spicy-red-goodfruit-soup.html"
   },
@@ -3673,13 +3171,8 @@
     "datePublished": "2022-01-12T11:56:03+07:00",
     "dateModified": "2022-10-06T19:46:55+07:00",
     "name": "Spicy Smoked Meat",
-    "recipes": [
-      "Any Meat + Peanut Oil + Spicy Powder"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+60 CRIT"
-    ],
+    "recipes": ["Any Meat + Peanut Oil + Spicy Powder"],
+    "buff": ["420 Fullness", "+60 CRIT"],
     "images": {
       "filename": "spicy-smoked-meat.webp",
       "pathname": "/chimeraland/recipes/spicy-smoked-meat/spicy-smoked-meat.webp",
@@ -3707,10 +3200,7 @@
       "Beast Brain + Peanut + Dew/Ice Piece + Garlic Powder/Job's Tears Powder"
     ],
     "device": "Stove II",
-    "buff": [
-      "+540 fullness",
-      "+120 def"
-    ],
+    "buff": ["+540 fullness", "+120 def"],
     "grade": "Legendary",
     "additional": "-",
     "images": {
@@ -3770,10 +3260,7 @@
       "Bear Paw + Orchid + Five Spice Powder + Apple + Ice Piece/Dew"
     ],
     "device": "Stove II",
-    "buff": [
-      "+540 fullness",
-      "+200 atk"
-    ],
+    "buff": ["+540 fullness", "+200 atk"],
     "grade": "Legendary",
     "additional": "-",
     "images": {
@@ -3802,10 +3289,7 @@
       "Egg White + Peanut Oil + Fruit & Veggie Paste + Any Lv.3 Crop/Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop/Any Flower/Any Mutant Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "+25 Armor Pierce"
-    ],
+    "buff": ["420 Fullness", "+25 Armor Pierce"],
     "images": {},
     "pathname": "/chimeraland/recipes/steamed-vegetarian-patty.html"
   },
@@ -3817,10 +3301,7 @@
       "Beast Brain + Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop/Any Flower/Any Mutant Flower / Peanut Oil"
     ],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "+60 Crit"
-    ],
+    "buff": ["420 Fullness", "+60 Crit"],
     "images": {
       "filename": "stewed-brains.webp",
       "pathname": "/chimeraland/recipes/stewed-brains/stewed-brains.webp",
@@ -3847,10 +3328,7 @@
       "Ice Piece/Dew, Beast Heart/Beast Liver/Beast Brain/Beast Insentines/Kidney/Hoof Sinew/Chunk Of Fat [4]"
     ],
     "device": "Stove II",
-    "buff": [
-      "+540 fullness",
-      "+50 Armor Pierce"
-    ],
+    "buff": ["+540 fullness", "+50 Armor Pierce"],
     "grade": "Legendary",
     "additional": "-",
     "images": {
@@ -3875,14 +3353,9 @@
     "datePublished": "2022-01-12T17:56:03+07:00",
     "dateModified": "2022-10-05T07:47:00+07:00",
     "name": "Stinky Tofu",
-    "recipes": [
-      "Hot Pepper + Dung + Peanut"
-    ],
+    "recipes": ["Hot Pepper + Dung + Peanut"],
     "device": "Stove II",
-    "buff": [
-      "300 Fullness",
-      "+4% Crit Damage Dealt"
-    ],
+    "buff": ["300 Fullness", "+4% Crit Damage Dealt"],
     "images": {
       "filename": "stinky-tofu.webp",
       "pathname": "/chimeraland/recipes/stinky-tofu/stinky-tofu.webp",
@@ -3905,13 +3378,8 @@
     "datePublished": "2022-01-12T15:56:03+07:00",
     "dateModified": "2022-10-06T21:46:55+07:00",
     "name": "Stir-Fried Tomato With Eggs",
-    "recipes": [
-      "Egg White + Tomato + Any Lv.3 Crop/Any Lv.4 Crop"
-    ],
-    "buff": [
-      "420 Fullness",
-      "+6% Crit Damage Dealt"
-    ],
+    "recipes": ["Egg White + Tomato + Any Lv.3 Crop/Any Lv.4 Crop"],
+    "buff": ["420 Fullness", "+6% Crit Damage Dealt"],
     "images": {
       "filename": "stir-fried-tomato-with-eggs.webp",
       "pathname": "/chimeraland/recipes/stir-fried-tomato-with-eggs/stir-fried-tomato-with-eggs.webp",
@@ -3934,14 +3402,9 @@
     "datePublished": "2022-01-12T18:56:03+07:00",
     "dateModified": "2022-10-05T10:46:56+07:00",
     "name": "Strange Meat Skewers",
-    "recipes": [
-      "Any Meat + Any Meat + Coriander Powder"
-    ],
+    "recipes": ["Any Meat + Any Meat + Coriander Powder"],
     "device": "Camp II",
-    "buff": [
-      "420 Fullness",
-      "25 Armor Pierce"
-    ],
+    "buff": ["420 Fullness", "25 Armor Pierce"],
     "images": {
       "filename": "strange-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/strange-meat-skewers/strange-meat-skewers.webp",
@@ -3964,13 +3427,8 @@
     "datePublished": "2022-01-12T16:56:03+07:00",
     "dateModified": "2022-10-05T16:46:56+07:00",
     "name": "Stuffed Eggs",
-    "recipes": [
-      "Egg White + Dew/Ice Piece + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "+30 CRIT"
-    ],
+    "recipes": ["Egg White + Dew/Ice Piece + Any Meat"],
+    "buff": ["300 Fullness", "+30 CRIT"],
     "images": {
       "filename": "stuffed-eggs.webp",
       "pathname": "/chimeraland/recipes/stuffed-eggs/stuffed-eggs.webp",
@@ -3997,10 +3455,7 @@
       "Any Wild Fruit + Dew/Ice Piece + Any Meat + Orange grade fish/Red grade fish"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+60 RES"
-    ],
+    "buff": ["540 Fullness", "+60 RES"],
     "images": {
       "filename": "sweet-and-sour-fish.webp",
       "pathname": "/chimeraland/recipes/sweet-and-sour-fish/sweet-and-sour-fish.webp",
@@ -4026,10 +3481,7 @@
     "recipes": [
       "Moose Meat + Peanut Oil + Any Sweet Sauce + Any Spicy Sauce/Any Spice"
     ],
-    "buff": [
-      "420 Fullness",
-      "80 DEF"
-    ],
+    "buff": ["420 Fullness", "80 DEF"],
     "images": {
       "filename": "sweet-and-spicy-venison.webp",
       "pathname": "/chimeraland/recipes/sweet-and-spicy-venison/sweet-and-spicy-venison.webp",
@@ -4075,10 +3527,7 @@
       "Any Meat + Any Lv.2 Crop + Any Spice + Any Flower/Any Mutant Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "420 Fullness",
-      "+35 Res"
-    ],
+    "buff": ["420 Fullness", "+35 Res"],
     "images": {
       "filename": "tomahawk-steak.webp",
       "pathname": "/chimeraland/recipes/tomahawk-steak/tomahawk-steak.webp",
@@ -4130,10 +3579,7 @@
     "recipes": [
       "Gratoise Meat + Any Meat + Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop"
     ],
-    "buff": [
-      "420 Fullness",
-      "+80 Def"
-    ],
+    "buff": ["420 Fullness", "+80 Def"],
     "images": {
       "filename": "ultimate-meat-dish.webp",
       "pathname": "/chimeraland/recipes/ultimate-meat-dish/ultimate-meat-dish.webp",
@@ -4160,11 +3606,7 @@
       "Chives + Job's Tears Powder + Any Meat + Any Lv.6 Crop + Any Meat"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+100 &nbsp;RES",
-      "Great Focus"
-    ],
+    "buff": ["660 Fullness", "+100 &nbsp;RES", "Great Focus"],
     "images": {
       "filename": "vegetable-dumplings.webp",
       "pathname": "/chimeraland/recipes/vegetable-dumplings/vegetable-dumplings.webp",
@@ -4191,11 +3633,7 @@
       "Job's Tears Powder + Any Meat + Any Meat + Any Lv.4 Crop/Any Lv.5 Crop/Any Lv.6 Crop"
     ],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "+100 CRIT",
-      "Great Focus"
-    ],
+    "buff": ["540 Fullness", "+100 CRIT", "Great Focus"],
     "images": {
       "filename": "vegetable-patty.webp",
       "pathname": "/chimeraland/recipes/vegetable-patty/vegetable-patty.webp",
@@ -4218,9 +3656,7 @@
     "datePublished": "2022-01-13T04:56:03+07:00",
     "dateModified": "2022-10-06T05:46:56+07:00",
     "name": "Verdura Slushie",
-    "recipes": [
-      "Ice Piece + Bodhi Fruit"
-    ],
+    "recipes": ["Ice Piece + Bodhi Fruit"],
     "device": "Mixer - Jam",
     "images": {},
     "pathname": "/chimeraland/recipes/verdura-slushie.html"
@@ -4229,13 +3665,8 @@
     "datePublished": "2022-01-13T03:56:03+07:00",
     "dateModified": "2022-10-07T08:46:55+07:00",
     "name": "Very Spicy Meat Skewers",
-    "recipes": [
-      "Any Spice + Any Meat"
-    ],
-    "buff": [
-      "300 Fullness",
-      "100 ATK"
-    ],
+    "recipes": ["Any Spice + Any Meat"],
+    "buff": ["300 Fullness", "100 ATK"],
     "images": {
       "filename": "very-spicy-meat-skewers.webp",
       "pathname": "/chimeraland/recipes/very-spicy-meat-skewers/very-spicy-meat-skewers.webp",
@@ -4258,14 +3689,9 @@
     "datePublished": "2022-01-12T23:56:03+07:00",
     "dateModified": "2022-10-06T06:46:56+07:00",
     "name": "Viperfish Slices",
-    "recipes": [
-      "Viperfish + Lemon Tree Leaf + Viperfish"
-    ],
+    "recipes": ["Viperfish + Lemon Tree Leaf + Viperfish"],
     "device": "Stove II",
-    "buff": [
-      "540 Fullness",
-      "Protect from Drowning"
-    ],
+    "buff": ["540 Fullness", "Protect from Drowning"],
     "images": {
       "filename": "viperfish-slices.webp",
       "pathname": "/chimeraland/recipes/viperfish-slices/viperfish-slices.webp",
@@ -4288,15 +3714,9 @@
     "datePublished": "2022-01-13T02:56:03+07:00",
     "dateModified": "2022-10-06T19:46:56+07:00",
     "name": "Watermelon Slushie",
-    "recipes": [
-      "Ice Piece + Watermelon",
-      "Watermelon + Ice Piece"
-    ],
+    "recipes": ["Ice Piece + Watermelon", "Watermelon + Ice Piece"],
     "device": "Mixer",
-    "buff": [
-      "+420 fullness",
-      "Heat Resistance +15"
-    ],
+    "buff": ["+420 fullness", "Heat Resistance +15"],
     "grade": "Epic",
     "additional": "-",
     "images": {
@@ -4347,12 +3767,8 @@
     "datePublished": "2022-01-13T06:56:03+07:00",
     "dateModified": "2022-09-29T00:26:37+07:00",
     "name": "Chimeraland One Pot Dish",
-    "recipes": [
-      "Buy From Shop / Event"
-    ],
-    "buff": [
-      "This food can be given to all pets and attendants"
-    ],
+    "recipes": ["Buy From Shop / Event"],
+    "buff": ["This food can be given to all pets and attendants"],
     "grade": "Legendary",
     "images": {},
     "pathname": "/chimeraland/recipes/chimeraland-one-pot-dish.html"
@@ -4365,10 +3781,7 @@
       "Job's Tears Powder + Job's Tears Powder + Dew/Ice Piece + Any Lv.6 Crop + Any Meat"
     ],
     "device": "Stove II",
-    "buff": [
-      "660 Fullness",
-      "+10% CRIT DMG"
-    ],
+    "buff": ["660 Fullness", "+10% CRIT DMG"],
     "images": {
       "filename": "wonton-noodles.webp",
       "pathname": "/chimeraland/recipes/wonton-noodles/wonton-noodles.webp",
@@ -4391,12 +3804,8 @@
     "datePublished": "2022-01-13T12:56:03+07:00",
     "dateModified": "2022-10-06T22:46:55+07:00",
     "name": "Wormy Soup",
-    "recipes": [
-      "Insect Ichor + Dew/Ice Piece"
-    ],
-    "buff": [
-      "240 Fullness"
-    ],
+    "recipes": ["Insect Ichor + Dew/Ice Piece"],
+    "buff": ["240 Fullness"],
     "images": {
       "filename": "wormy-soup.webp",
       "pathname": "/chimeraland/recipes/wormy-soup/wormy-soup.webp",
@@ -4419,9 +3828,7 @@
     "datePublished": "2022-01-13T09:56:03+07:00",
     "dateModified": "2022-09-29T06:26:37+07:00",
     "name": "Veggie Paste",
-    "recipes": [
-      "Apple [1]"
-    ],
+    "recipes": ["Apple [1]"],
     "device": "Mixer",
     "buff": [],
     "grade": "Common",
@@ -4448,14 +3855,9 @@
     "datePublished": "2022-01-13T01:56:03+07:00",
     "dateModified": "2022-10-07T00:46:55+07:00",
     "name": "Sea-Buckthorn Mixed Juice",
-    "recipes": [
-      "Sea-Buckthorn + Apple"
-    ],
+    "recipes": ["Sea-Buckthorn + Apple"],
     "device": "Mixer",
-    "buff": [
-      "+180 fullness",
-      "Lv.2 Sandstrom Resistance"
-    ],
+    "buff": ["+180 fullness", "Lv.2 Sandstrom Resistance"],
     "additional": "-",
     "images": {
       "filename": "sea-buckthorn-mixed-juice.webp",
@@ -4479,13 +3881,9 @@
     "datePublished": "2022-01-13T08:56:03+07:00",
     "dateModified": "2022-10-06T03:46:56+07:00",
     "name": "Veggie Cake",
-    "recipes": [
-      "Egg White + Peanut Oil + Veggie Paste + Equinox Flower"
-    ],
+    "recipes": ["Egg White + Peanut Oil + Veggie Paste + Equinox Flower"],
     "device": "Stove II",
-    "buff": [
-      "Windoo Attendant Recruitment"
-    ],
+    "buff": ["Windoo Attendant Recruitment"],
     "grade": "Epic",
     "additional": "<a href=\"#windoo\">Watch Tutorial</a>",
     "images": {
@@ -4510,13 +3908,9 @@
     "datePublished": "2022-01-13T18:56:03+07:00",
     "dateModified": "2022-10-07T09:46:55+07:00",
     "name": "Grilled Mushrooms",
-    "recipes": [
-      "Any Mushroom [1]"
-    ],
+    "recipes": ["Any Mushroom [1]"],
     "device": "Camp II",
-    "buff": [
-      "Unlock Stove II"
-    ],
+    "buff": ["Unlock Stove II"],
     "additional": "<a href=\"#unlock-stove-ii\">Watch Tutorial</a>",
     "images": {
       "filename": "grilled-mushrooms.webp",
@@ -4545,11 +3939,7 @@
       "Peanut Oil + Any Mixed Sauce + Any Meat + Any Flower/Any Mutant Flower"
     ],
     "device": "Stove II",
-    "buff": [
-      "+540 fullness",
-      "+120 Def",
-      "Vulorman Attendant Recruitment"
-    ],
+    "buff": ["+540 fullness", "+120 Def", "Vulorman Attendant Recruitment"],
     "grade": "Legendary",
     "additional": "<a href=\"#vulorman\">Watch Tutorial</a>",
     "images": {
