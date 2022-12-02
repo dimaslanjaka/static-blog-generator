@@ -29,12 +29,16 @@ entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) =
 // console.log(entryPoints);
 
 /**
+ * TypeDoc options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
  * @type {import('typedoc').TypeDocOptions}
  */
 const typedocOptions = {
-  name: 'Static Blog Generator Gulp',
+  name: pkgjson.projectName || 'Static Blog Generator Gulp',
   entryPoints,
-  out: 'docs/' + pkgjson.name,
+  // Output options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
+  // NOTE: the out option and the json option cannot share the same directory
+  out: './docs/' + pkgjson.name,
+  json: './docs/' + pkgjson.name + '/info.json',
   entryPointStrategy: 'Expand',
   gaID: 'UA-106238155-1',
   commentStyle: 'all',
@@ -56,6 +60,8 @@ const typedocOptions = {
   //theme: 'hierarchy',
   plugin: ['typedoc-plugin-missing-exports'],
   ignoreCompilerErrors: true,
-  logger: 'none'
+  logger: 'none',
+  version: true,
+  includeVersion: true
 };
 module.exports = typedocOptions;
