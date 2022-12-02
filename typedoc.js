@@ -71,9 +71,9 @@ const typedocOptions = {
   //theme: 'hierarchy',
   plugin: ['typedoc-plugin-missing-exports'],
   ignoreCompilerErrors: true,
-  logger: 'none',
-  version: true,
-  includeVersion: true
+  logger: 'none'
+  //version: true,
+  //includeVersion: true
 };
 
 const cjson = path.join(__dirname, 'typedoc.json');
