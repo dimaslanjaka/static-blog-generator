@@ -2,6 +2,8 @@ const { readdirSync } = require('fs');
 const { join } = require('path');
 const pkgjson = require('./package.json');
 
+// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc.js > typedoc.js
+
 /**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
  */
