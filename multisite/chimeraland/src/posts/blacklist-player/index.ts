@@ -6,6 +6,8 @@ import { sbgProject } from '../../../project'
 
 const metadata: postMeta = {
   title: 'Blacklist Player Chimeraland',
+  description:
+    'Blacklist player chimeraland (scammer list including ruby trader, map illus 16 party)',
   date: '2022-11-07T19:54:01+07:00',
   updated: '2022-12-02T16:31:16+07:00',
   lang: 'id',

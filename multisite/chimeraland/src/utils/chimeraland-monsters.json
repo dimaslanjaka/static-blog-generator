@@ -9,7 +9,10 @@
       "Sparrow Beak",
       "Overlord Hide Jelly"
     ],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP Damage Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP Damage Reduction 4.8%"
+    ],
     "skill": [],
     "images": [
       {
@@ -80,7 +83,9 @@
     "qty": "GRADE B ATK 61 HP 56 DEF 64",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -97,7 +102,10 @@
       "Overlord Hide Jelly"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit 328"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit 328"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-00-31-17-87_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -164,7 +172,10 @@
       "Hot Stone Icefox Meat"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-16-18-59-34-77_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -224,7 +235,10 @@
       "Flamebug Meat Claypot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Bonus 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Bonus 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-15-17-03-52-59_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -284,7 +298,10 @@
       "Stir-Fried Browtelope"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-19-20-41-34-96_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -354,7 +371,10 @@
     "qty": "GRADE B ATK 60 HP 56 DEF 64",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG Reduction 6.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG Reduction 6.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -367,7 +387,10 @@
     "qty": "GRADE C ATK 35 HP 35 DEF 50",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -380,7 +403,10 @@
     "qty": "GRADE C ATK 50 HP 50 DEF 50",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -393,7 +419,10 @@
     "qty": "Grade B ATK 60 HP 61 DEF 59",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Reslience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Reslience 257"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -406,7 +435,10 @@
     "qty": "GRADE A ATK 73 HP 71 DEF 69",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -423,7 +455,10 @@
       "Steamed Sweet & Sour Icebug"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-16-18-48-17-75_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -479,7 +514,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -496,7 +534,10 @@
       "Stir-Fried Browtelope"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Attack 60"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Attack 60"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-02-14-53-32_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -552,7 +593,10 @@
     "qty": "GRADE A ATK 71 HP 72 DEF 67",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged Damage Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged Damage Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -565,7 +609,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee damage increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee damage increase 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -578,7 +625,9 @@
     "qty": "GRADE C ATK 45 HP 45 DEF 45",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 1.0%"],
+    "buff": [
+      "Attributes Conversion Rate 1.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -595,7 +644,10 @@
       "Hot Stone Icefox Meat"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Bonus +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Bonus +4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-00-34-49-01_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -665,7 +717,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-12-23-36-53-61_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -728,7 +783,10 @@
     "qty": "GRADE B ATK 61 HP 63 DEF 56",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-11-14-11-05-48-78_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -798,7 +856,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG +4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -830,7 +891,10 @@
     "qty": "GRADE B ATK 62 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Bonus 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Bonus 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -843,7 +907,10 @@
     "qty": "GRADE B ATK 60 HP 63 DEF 57",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -856,7 +923,10 @@
     "qty": "GRADE C ATK 45 HP 45 DEF 45",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit 328"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit 328"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -869,7 +939,10 @@
     "qty": "GRADE B ATK 62 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG +4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -882,7 +955,10 @@
     "qty": "GRADE A ATK 70 HP 68 DEF 72",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-12-23-37-52-41_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -952,7 +1028,10 @@
     "qty": "GRADE B ATK 61 HP 63 DEF 57",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -965,7 +1044,10 @@
     "qty": "GRADE C ATK 50 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 5.0%", "Melee DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 5.0%",
+      "Melee DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -982,7 +1064,10 @@
       "Steamed Sweet & Sour Icebug"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged Dmg +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged Dmg +4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-14-02-17-37-94_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1056,7 +1141,10 @@
       "Overlord Hide Jelly"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1073,7 +1161,10 @@
       "Flamebug Meat Claypot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-15-18-34-26-65_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1143,7 +1234,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1154,9 +1248,16 @@
     "dateModified": "2022-09-30T06:18:27+07:00",
     "name": "Gold Horsedeer",
     "qty": "GRADE C ATK 48 HP 60 DEF 56",
-    "delicacies": ["Spiced Alligon", "Exotic Herbal Jelly", "Bear Ball Pot"],
+    "delicacies": [
+      "Spiced Alligon",
+      "Exotic Herbal Jelly",
+      "Bear Ball Pot"
+    ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP Damage Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP Damage Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-00-20-10-68_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1219,7 +1320,10 @@
     "qty": "GRADE C ATK 49 HP 48 DEF 53",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1232,7 +1336,10 @@
     "qty": "GRADE C ATK 40 HP 60 DEF 70",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG +4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1245,7 +1352,10 @@
     "qty": "GRADE C ATK 45 HP 45 DEF 45",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1262,7 +1372,10 @@
       "Steamed Sweet & Sour Icebug"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-16-18-47-32-16_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1318,7 +1431,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Bonus 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Bonus 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1331,7 +1447,9 @@
     "qty": "GRADE B ATK 62 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1348,7 +1466,10 @@
       "Dragon Serpent Combo"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Armor Pierce 188"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Armor Pierce 188"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-13-02-42-52-25_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1418,7 +1539,10 @@
     "qty": "GRADE C ATK 48 HP 45 DEF 20",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit 328"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit 328"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1435,7 +1559,10 @@
       "Flamebug Meat Claypot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit 328"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit 328"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-00-43-52-80_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1502,7 +1629,10 @@
       "Stir-Fried Browtelope"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 5.0%", "Melee DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 5.0%",
+      "Melee DMG Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-16-07-20-44-57_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1562,7 +1692,10 @@
       "Dragon Serpent Combo"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Hp 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Hp 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-15-17-00-24-81_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1622,7 +1755,10 @@
       "Hot Stone Icefox Meat"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee Damage Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee Damage Increase 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-14-22-21-04-22_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1678,7 +1814,9 @@
     "qty": "GRADE C ATK 53 HP 63 DEF 63",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1695,7 +1833,10 @@
       "Bear Ball Pot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-26-00-28-56-40_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1758,7 +1899,10 @@
     "qty": "GRADE C ATK 45 HP 57 DEF 53",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-15-17-10-17-04_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1814,7 +1958,10 @@
     "qty": "GRADE B ATK 62 HP 61 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Melee DMG Increase 4.8%", "Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Melee DMG Increase 4.8%",
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [
       {
         "filename": "Screenshot 2022-08-09 191911.webp",
@@ -1884,7 +2031,10 @@
     "qty": "GRADE B ATK 60 HP 65 DEF 55",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 5.0%", "PvP DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 5.0%",
+      "PvP DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1897,7 +2047,10 @@
     "qty": "GRADE C ATK 57 HP 35 DEF 50",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Attack 60"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Attack 60"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1910,7 +2063,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1923,7 +2079,10 @@
     "qty": "GRADE B ATK 62 HP 61 DEF 58",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit 328"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit 328"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1936,7 +2095,10 @@
     "qty": "GRADE C ATK 46 HP 58 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1949,7 +2111,10 @@
     "qty": "GRADE C ATK 57 HP 55 DEF 50",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1962,7 +2127,10 @@
     "qty": "GRADE B ATK 62 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG Reduction 6.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG Reduction 6.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -1975,7 +2143,10 @@
     "qty": "GRADE C ATK 49 HP 48 DEF 53",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Armor Pierce 188"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Armor Pierce 188"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2011,7 +2182,10 @@
       "Overlord Hide Jelly"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-28-01-02-45-47_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2067,7 +2241,10 @@
     "qty": "GRADE B ATK 62 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2080,7 +2257,10 @@
     "qty": "GRADE C ATK 45 HP 45 DEF 45",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2097,7 +2277,10 @@
       "Flamebug Meat Claypot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-14-16-01-10-20_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2157,7 +2340,9 @@
       "Stir-Fried Browtelope"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-30-16-35-20-26_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2231,7 +2416,10 @@
       "Bear Ball Pot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-14-02-18-30-15_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2354,7 +2542,10 @@
     "qty": "GRADE B ATK 62 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 5.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 5.0%",
+      "HP 339"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2367,7 +2558,10 @@
     "qty": "GRADE B ATK 63 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2384,7 +2578,10 @@
       "Overlord Hide Jelly"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Reduction 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot 2022-08-09 191501.webp",
@@ -2447,7 +2644,10 @@
     "qty": "GRADE B ATK 61 HP 56 DEF 64",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-15-16-59-18-13_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2503,7 +2703,10 @@
     "qty": "GRADE C ATK 55 HP 65 DEF 65",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2516,7 +2719,10 @@
     "qty": "GRADE C ATK 58 HP 55 DEF 53",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-16-18-55-53-75_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2572,7 +2778,10 @@
     "qty": "GRADE C ATK 51 HP 62 DEF 58",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 5.0%", "Attack 60"],
+    "buff": [
+      "Attributes Conversion Rate 5.0%",
+      "Attack 60"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2585,7 +2794,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2598,7 +2810,10 @@
     "qty": "GRADE B ATK 62 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2611,7 +2826,10 @@
     "qty": "GRADE C ATK 50 HP 58 DEF 58",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Armor Pierce 188"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Armor Pierce 188"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2624,7 +2842,10 @@
     "qty": "GRADE C ATK 50 HP 50 DEF 50",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Attack 60"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Attack 60"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2637,7 +2858,10 @@
     "qty": "GRADE C ATK 57 HP 51 DEF 52",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG Reduction 6.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG Reduction 6.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2706,7 +2930,10 @@
     "qty": "GRADE B ATK 63 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2719,7 +2946,10 @@
     "qty": "Grade B ATK 63 HP 67 DEF 53",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2732,7 +2962,10 @@
     "qty": "GRADE C ATK 58 HP 56 DEF 51",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Attack 60"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Attack 60"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2745,7 +2978,10 @@
     "qty": "GRADE C ATK 65 HP 69 DEF 63",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 5.0%", "Ranged DMG + 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 5.0%",
+      "Ranged DMG + 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2758,7 +2994,10 @@
     "qty": "GRADE B ATK 58 HP 58 DEF 58",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Bonus 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Bonus 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2771,7 +3010,10 @@
     "qty": "GRADE C ATK 55 HP 50 DEF 55",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP Damage Bonus 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP Damage Bonus 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2784,7 +3026,10 @@
     "qty": "GRADE C ATK 54 HP 65 DEF 61",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit 328"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit 328"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2801,7 +3046,10 @@
       "Flamebug Meat Claypot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP Damage Bonus +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP Damage Bonus +4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-16-09-08-02-83_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2871,7 +3119,10 @@
     "qty": "GRADE C ATK 55 HP 50 DEF 55",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG Red. 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG Red. 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2888,7 +3139,10 @@
       "Dragon Serpent Combo"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-26-00-29-34-71_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -2944,7 +3198,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG +4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2957,7 +3214,10 @@
     "qty": "GRADE B ATK 62 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2970,7 +3230,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -2987,7 +3250,10 @@
       "Bear Ball Pot"
     ],
     "skill": [],
-    "buff": ["PvP Damage Bonus 4.8%", "Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "PvP Damage Bonus 4.8%",
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-18-02-51-13-46_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3061,7 +3327,10 @@
       "Hot Stone Icefox Meat"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-13-19-08-52-04_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3128,7 +3397,10 @@
       "Overlord Hide Jelly"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Armor Pierce 188"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Armor Pierce 188"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-12-23-38-42-38_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3198,7 +3470,10 @@
     "qty": "Grade A ATK 72 HP 67 DEF 73",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3211,7 +3486,9 @@
     "qty": "GRADE A ATK 73 HP 76 DEF 74",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3224,7 +3501,10 @@
     "qty": "GRADE C ATK 51 HP 55 DEF 52",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3237,7 +3517,10 @@
     "qty": "GRADE C ATK 45 HP 45 DEF 45",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG +4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3250,7 +3533,10 @@
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3267,7 +3553,10 @@
       "Bear Ball Pot"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-15-16-58-29-98_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3321,9 +3610,16 @@
     "dateModified": "2022-10-02T17:18:27+07:00",
     "name": "Verdypterid",
     "qty": "GRADE B ATK 60 HP 60 DEF 60",
-    "delicacies": ["Aromatic Litiger Ball", "Sparrow Beak", "Bear Ball Pot"],
+    "delicacies": [
+      "Aromatic Litiger Ball",
+      "Sparrow Beak",
+      "Bear Ball Pot"
+    ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Defense 44"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Defense 44"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-12-23-34-53-01_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3386,7 +3682,10 @@
     "qty": "GRADE C ATK 50 HP 60 DEF 55",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-18-01-10-33-55_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3449,7 +3748,10 @@
     "qty": "GRADE C ATK 55 HP 51 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "HP 339"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "HP 339"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-15-11-58-33-16_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3505,7 +3807,10 @@
     "qty": "GRADE B ATK 63 HP 59 DEF 61",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "PvP DMG Bonus 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "PvP DMG Bonus 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3518,7 +3823,10 @@
     "qty": "GRADE C ATK 67 HP 32 DEF 60",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG Reduction 6.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG Reduction 6.0%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3531,7 +3839,10 @@
     "qty": "GRADE A ATK 72 HP 76 DEF 64",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged DMG Reduction 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged DMG Reduction 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3684,7 +3995,9 @@
       "Steamed Sweet & Sour Icebug"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-14-15-53-09-57_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -3740,7 +4053,10 @@
     "qty": "GRADE C ATK 59 HP 60 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Crit DMG 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Crit DMG 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3753,7 +4069,10 @@
     "qty": "GRADE B ATK 63 HP 66 DEF 54",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Melee DMG Increase 4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Melee DMG Increase 4.8%"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3766,7 +4085,10 @@
     "qty": "GRADE B ATK 61 HP 66 DEF 53",
     "delicacies": [],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Resilience 257"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Resilience 257"
+    ],
     "images": [],
     "videos": [],
     "type": "monsters",
@@ -3783,7 +4105,10 @@
       "Overlord Hide Jelly"
     ],
     "skill": [],
-    "buff": ["Attributes Conversion Rate 4.0%", "Ranged Dmg +4.8%"],
+    "buff": [
+      "Attributes Conversion Rate 4.0%",
+      "Ranged Dmg +4.8%"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-00-22-00-74_f4fc9fb10454fc3a3dacb99dff89b568.webp",
