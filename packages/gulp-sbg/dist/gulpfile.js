@@ -12,6 +12,7 @@ require("./gulp.deploy");
 require("./gulp.feed");
 require("./gulp.post");
 require("./gulp.safelink");
+require("./gulp.seo");
 // commit current project
 function commitProject(finish) {
     var gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];
