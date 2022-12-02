@@ -40,6 +40,14 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
     attr.categories.push('Attendants')
   }
 
+  if (item.delicacies.length > 0 && item.qty.length > 0) {
+    attr.description =
+      `${item.name} default quality ${item.qty} ${item.buff} delicacies/tasty ${item.delicacies}`.substring(
+        0,
+        300
+      )
+  }
+
   // GRADE A ATK 75 HP 60 DEF 75
   const regex = /GRADE (\w{1}) ATK (\d{1,5}) HP (\d{1,5}) DEF (\d{1,5})/gim
   const qty = regex.exec(item.qty) || []
