@@ -39,7 +39,7 @@ const typedocOptions = {
   // NOTE: the out option and the json option cannot share the same directory
   out: './docs/' + pkgjson.name,
   json: './docs/' + pkgjson.name + '/info.json',
-  entryPointStrategy: 'Expand',
+  entryPointStrategy: 'expand',
   gaID: 'UA-106238155-1',
   commentStyle: 'all',
   hideGenerator: true,
@@ -50,8 +50,8 @@ const typedocOptions = {
     GitHub: 'https://github.com/dimaslanjaka'
   },
   inlineTags: ['@link'],
-  readme: path.join(__dirname, 'readme.md'),
-  tsconfig: path.join(__dirname, 'tsconfig.json'),
+  readme: './readme.md',
+  tsconfig: './tsconfig.json',
   exclude: ['*.test.ts'],
   htmlLang: 'en',
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
@@ -64,4 +64,20 @@ const typedocOptions = {
   version: true,
   includeVersion: true
 };
+
+const cjson = path.join(__dirname, 'typedoc.json');
+if (require.main === module) {
+  const scriptName = path.basename(__filename);
+
+  // run json creation when filename endswith -config.js
+  if (scriptName.endsWith('-config.js')) {
+    typedocOptions['$schema'] = 'https://typedoc.org/schema.json';
+    fs.writeFileSync(cjson, JSON.stringify(typedocOptions, null, 2));
+  } else {
+    if (fs.existsSync(cjson)) fs.rm(cjson);
+  }
+} else {
+  if (fs.existsSync(cjson)) fs.rm(cjson);
+}
+
 module.exports = typedocOptions;
