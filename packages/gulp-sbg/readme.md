@@ -15,7 +15,7 @@ Compiling and Copying all source posts including shortcodes etc to hexo source p
 gulp copy-all-posts
 ```
 
-API documentation: [https://www.webmanajemen.com/docs/gulp-sbg/functions/gulp_post.copyAllPosts.html](https://www.webmanajemen.com/docs/gulp-sbg/functions/gulp_post.copyAllPosts.html)
+API documentation: [https://www.webmanajemen.com/docs/gulp-sbg/modules/](https://www.webmanajemen.com/docs/gulp-sbg/modules/)
 
 ## Anonymize External Links
 Cloaking all external links to outbound page redirector, useful for SEO.
