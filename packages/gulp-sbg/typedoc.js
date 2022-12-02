@@ -35,6 +35,7 @@ entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) =
  */
 const typedocOptions = {
   name: pkgjson.projectName || 'Static Blog Generator Gulp',
+  //entryPoints: pkgjson.main.replace('dist', 'src'),
   entryPoints,
   // Output options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
   // NOTE: the out option and the json option cannot share the same directory
@@ -52,8 +53,13 @@ const typedocOptions = {
   },
   inlineTags: ['@link'],
   readme: './readme.md',
-  tsconfig: './tsconfig.json',
-  exclude: ['*.test.ts'],
+  tsconfig: fs.existsSync(path.join(__dirname, 'tsconfig.build.json'))
+    ? './tsconfig.build.json'
+    : fs.existsSync(path.join(__dirname, 'tsconfig-build.json'))
+    ? './tsconfig-build.json'
+    : './tsconfig.json',
+  //includes: ['src'],
+  exclude: ['*.test.ts', '*.test.js'],
   htmlLang: 'en',
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
   gitRevision: 'master',
