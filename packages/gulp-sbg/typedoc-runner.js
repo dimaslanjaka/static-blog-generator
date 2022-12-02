@@ -26,8 +26,7 @@ const compile = async function () {
     spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
-  if (!existsSync(projectDocsDir))
-    mkdirSync(projectDocsDir, { recursive: true });
+  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
   const options = Object.assign({}, typedocOptions);
 
   const app = new typedocModule.Application();
@@ -73,18 +72,12 @@ const publish = async function () {
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url
-      .replace(/.git$/, '')
-      .trim();
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
       await github
-        .commit(
-          `${commit} update ${
-            pkgjson.name
-          } docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
-        )
+        .commit(`update ${pkgjson.name} docs [${commit}] \nat ${new Date()}\nsource: ${remote}/commit/${commit}`)
         .catch(noop);
       if (await github.canPush().catch(noop)) {
         await github.push().catch(noop);
