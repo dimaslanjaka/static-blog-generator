@@ -44,7 +44,7 @@ const compile = async function () {
     await app.generateDocs(project, projectDocsDir);
     await app.generateJson(project, join(projectDocsDir, 'info.json'));
   } else {
-    console.error('project undefined');
+    console.error('[error]', 'project undefined');
   }
 };
 
