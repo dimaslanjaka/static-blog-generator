@@ -9,7 +9,6 @@ const hexoPostParser = { parsePost, buildPost, generatePostId, renderMarkdown, p
 
 export default hexoPostParser;
 
-// exports
 export { generatePostId } from './generatePostId';
 export { renderMarkdownIt as renderMarkdown } from './markdown/toHtml';
 export { parsePermalink } from './parsePermalink';
@@ -17,4 +16,4 @@ export { DeepPartial, Nullable, ParseOptions } from './parsePost';
 export { postMap } from './types/postMap';
 export { postMeta } from './types/postMeta';
 export { parsePost, buildPost };
-// /exports
+//
