@@ -1,8 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs-extra'
 import { buildPost, postMap, postMeta, renderMarkdown } from 'hexo-post-parser'
 import { JSDOM } from 'jsdom'
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
 import { join } from 'upath'
 import { sbgProject } from '../../../project'
 
@@ -39,10 +37,3 @@ const build = buildPost(post)
 const saveTo = join(sbgProject, 'src-posts/blacklist-player.md')
 
 writeFileSync(saveTo, build)
-
-export function renderJSXtoHTML(
-  content: React.ReactElement<any, string | React.JSXElementConstructor<any>>
-) {
-  const html = ReactDOMServer.renderToStaticMarkup(content).toString()
-  return html
-}
