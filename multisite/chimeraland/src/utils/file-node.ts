@@ -19,14 +19,17 @@ export function walkDir(folderPath: string) {
   readdirSync(folderPath).map((filename) => {
     const path = join(folderPath, filename)
     const stat = statSync(path)
+    // console.log(path, stat.isDirectory())
     if (stat.isDirectory()) {
-      return walkDir(path)
+      const reWalk = walkDir(path)
+      results.push(...reWalk)
+    } else {
+      results.push({
+        path,
+        filename,
+        stat
+      })
     }
-    results.push({
-      path,
-      filename,
-      stat
-    })
   })
   return results
 }
