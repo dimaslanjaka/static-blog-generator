@@ -155,6 +155,9 @@ pagination_dir: page
 include:
   - "assets/adblock-notify/readme.md"
 exclude:
+  - "License.md"
+  - "frontmatter.json"
+  - "License"
   - "**/bin/**"
   - "**/backend/**"
   - "**/.git"
