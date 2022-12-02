@@ -61,6 +61,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "git-command-helper": "^1.0.9",
     "gulp": "^4.0.2",
+    "gulp-typedoc": "^3.0.2",
     "minimatch": "^5.1.1",
     "prettier": "^2.8.0",
     "semver": "^7.3.8",

@@ -29,13 +29,17 @@ entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) =
 // console.log(entryPoints);
 
 /**
+ * TypeDoc options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
  * @type {import('typedoc').TypeDocOptions}
  */
 const typedocOptions = {
   name: pkgjson.projectName || 'Static Blog Generator Gulp',
   entryPoints,
-  out: 'docs/' + pkgjson.name,
-  entryPointStrategy: 'Expand',
+  // Output options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
+  // NOTE: the out option and the json option cannot share the same directory
+  out: './docs/' + pkgjson.name,
+  json: './docs/' + pkgjson.name + '/info.json',
+  entryPointStrategy: 'expand',
   gaID: 'UA-106238155-1',
   commentStyle: 'all',
   hideGenerator: true,
@@ -46,8 +50,8 @@ const typedocOptions = {
     GitHub: 'https://github.com/dimaslanjaka'
   },
   inlineTags: ['@link'],
-  readme: path.join(__dirname, 'readme.md'),
-  tsconfig: path.join(__dirname, 'tsconfig.json'),
+  readme: './readme.md',
+  tsconfig: './tsconfig.json',
   exclude: ['*.test.ts'],
   htmlLang: 'en',
   //gitRemote: 'https://github.com/dimaslanjaka/static-blog-generator-hexo.git',
@@ -56,6 +60,15 @@ const typedocOptions = {
   //theme: 'hierarchy',
   plugin: ['typedoc-plugin-missing-exports'],
   ignoreCompilerErrors: true,
-  logger: 'none'
+  logger: 'none',
+  version: true,
+  includeVersion: true
 };
+if (require.main === module) {
+  const scriptName = path.basename(__filename);
+  if (scriptName.endsWith('-config.js')) {
+    typedocOptions['$schema'] = 'https://typedoc.org/schema.json';
+    fs.writeFileSync(path.join(__dirname, 'typedoc.json'), JSON.stringify(typedocOptions, null, 2));
+  }
+}
 module.exports = typedocOptions;
