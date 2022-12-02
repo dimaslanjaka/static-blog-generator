@@ -25,7 +25,11 @@
     "dateModified": "2022-09-29T04:26:37+07:00",
     "name": "Shaman Regni",
     "qty": "GRADE C ATK 60 HP 60 DEF 60",
-    "buff": ["Attack 30", "HP 300", "Monster EXP Bonus 40%"],
+    "buff": [
+      "Attack 30",
+      "HP 300",
+      "Monster EXP Bonus 40%"
+    ],
     "delicacies": [
       "Rustic Preserved Deer Roll",
       "Exotic Herbal Jelly",
@@ -41,7 +45,11 @@
     "dateModified": "2022-09-29T03:26:37+07:00",
     "name": "Rosary Twinkel",
     "qty": "GRADE C ATK 50 HP 50 DEF 50",
-    "buff": ["Attack 20", "HP 200", "Monster EXP Bonus 40%"],
+    "buff": [
+      "Attack 20",
+      "HP 200",
+      "Monster EXP Bonus 40%"
+    ],
     "delicacies": [
       "Aromatic Litiger Ball",
       "Hot 'n Sour Jelly",
@@ -57,7 +65,11 @@
     "dateModified": "2022-09-28T22:26:37+07:00",
     "name": "Lunar Regni",
     "qty": "GRADE B ATK 70 HP 70 DEF 70",
-    "buff": ["Attack 40", "HP 400", "Monster EXP Bonus 40.0%"],
+    "buff": [
+      "Attack 40",
+      "HP 400",
+      "Monster EXP Bonus 40.0%"
+    ],
     "delicacies": [
       "Rustic Preserved Deer Roll",
       "Exotic Herbal Jelly",
@@ -73,8 +85,16 @@
     "dateModified": "2022-09-29T12:26:37+07:00",
     "name": "Shaji",
     "qty": "GRADE C ATK 53 HP 51 DEF 46",
-    "buff": ["Attack 20", "HP 200", "Monster EXP Bonus 40.0%"],
-    "delicacies": ["Tasty Exotic Crab", "Tasty Wing Trip", "Bear Ball Pot"],
+    "buff": [
+      "Attack 20",
+      "HP 200",
+      "Monster EXP Bonus 40.0%"
+    ],
+    "delicacies": [
+      "Tasty Exotic Crab",
+      "Tasty Wing Trip",
+      "Bear Ball Pot"
+    ],
     "images": [],
     "videos": [],
     "type": "attendants",
@@ -85,7 +105,11 @@
     "dateModified": "2022-09-29T10:26:37+07:00",
     "name": "Shahoragai",
     "qty": "GRADE C ATK 58 HP 63 DEF 59",
-    "buff": ["Attack 30", "HP 300", "Monster EXP Bonus 40%"],
+    "buff": [
+      "Attack 30",
+      "HP 300",
+      "Monster EXP Bonus 40%"
+    ],
     "delicacies": [
       "3-Flavor Braised Wing",
       "Pepper Salt Scorpion Pincer",
@@ -144,7 +168,11 @@
     "dateModified": "2022-09-29T05:26:37+07:00",
     "name": "Shaman Twinkle",
     "qty": "GRADE C ATK 60 HP 60 DEF 60",
-    "buff": ["Attack 30", "HP 300", "Monster EXP Bonus 40.0%"],
+    "buff": [
+      "Attack 30",
+      "HP 300",
+      "Monster EXP Bonus 40.0%"
+    ],
     "delicacies": [
       "Aromatic Litiger Ball",
       "Hot 'n Sour Jelly",
@@ -160,7 +188,11 @@
     "dateModified": "2022-09-28T21:26:37+07:00",
     "name": "Shaman Astra",
     "qty": "GRADE C ATK 60 HP 60 DEF 60",
-    "buff": ["Attack 30", "HP 300", "Monster EXP Bonus 40.0%"],
+    "buff": [
+      "Attack 30",
+      "HP 300",
+      "Monster EXP Bonus 40.0%"
+    ],
     "delicacies": [
       "Horse Stew Hotpot",
       "Hot 'n Sour Jelly",
@@ -219,7 +251,11 @@
     "dateModified": "2022-09-28T23:26:37+07:00",
     "name": "Remetrog",
     "qty": "GRADE C ATK 51 HP 52 DEF 47",
-    "buff": ["Attack 20", "HP 200", "Monster EXP Bonus 40.0%"],
+    "buff": [
+      "Attack 20",
+      "HP 200",
+      "Monster EXP Bonus 40.0%"
+    ],
     "delicacies": [
       "Aged Butterfly Wing Broth",
       "Yurlunggur Mixed Vegetables",
@@ -278,7 +314,11 @@
     "dateModified": "2022-09-29T00:26:37+07:00",
     "name": "Crosoo",
     "qty": "GRADE C ATK 53 HP 54 DEF 43",
-    "buff": ["Attack 20", "HP 200", "Monster EXP Bonus 40.0%"],
+    "buff": [
+      "Attack 20",
+      "HP 200",
+      "Monster EXP Bonus 40.0%"
+    ],
     "delicacies": [
       "Scorpion King Broth",
       "Soy Braised Dragon Bone",
@@ -337,7 +377,11 @@
     "dateModified": "2022-09-29T02:26:37+07:00",
     "name": "Lok-Aqui",
     "qty": "GRADE C ATK 47 HP 55 DEF 48",
-    "buff": ["Attack 20", "HP 200", "Monster EXP Bonus 40.0%"],
+    "buff": [
+      "Attack 20",
+      "HP 200",
+      "Monster EXP Bonus 40.0%"
+    ],
     "delicacies": [
       "Braised Lobcray Meat",
       "Pepper Salt Scorpion Pincer",
@@ -396,8 +440,16 @@
     "dateModified": "2022-09-29T06:26:37+07:00",
     "name": "Draco Violentine",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-08-31-21-04-41-30_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -430,8 +482,16 @@
     "dateModified": "2022-09-29T08:26:37+07:00",
     "name": "Letoo",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-24-12-17-40-29_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -485,8 +545,16 @@
     "dateModified": "2022-09-29T09:26:37+07:00",
     "name": "Lunar Shiren",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-17-22-35-55-13_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -540,8 +608,16 @@
     "dateModified": "2022-09-29T11:26:37+07:00",
     "name": "Makoo",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-24-12-18-18-18_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -595,8 +671,16 @@
     "dateModified": "2022-09-29T07:26:37+07:00",
     "name": "Mantiguard",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-17-22-28-18-61_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -650,8 +734,16 @@
     "dateModified": "2022-09-29T20:26:37+07:00",
     "name": "Mantitrack",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-17-22-37-18-70_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -705,8 +797,16 @@
     "dateModified": "2022-09-29T21:26:37+07:00",
     "name": "Ocygatha",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-30-14-35-24-99_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -760,8 +860,16 @@
     "dateModified": "2022-09-29T13:26:37+07:00",
     "name": "Reisiger",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-17-13-52-06-52_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -815,8 +923,16 @@
     "dateModified": "2022-09-30T02:26:37+07:00",
     "name": "Rhijin",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-21-50-16-49_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -870,8 +986,16 @@
     "dateModified": "2022-09-30T04:26:37+07:00",
     "name": "Rosary Aquatine",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-21-52-49-03_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -925,8 +1049,16 @@
     "dateModified": "2022-09-29T15:26:37+07:00",
     "name": "Rosary Fortuna",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-29-21-52-16-73_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -980,8 +1112,16 @@
     "dateModified": "2022-09-29T01:26:37+07:00",
     "name": "Shaman Joya",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-26-01-05-16-92_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1035,8 +1175,16 @@
     "dateModified": "2022-09-29T18:26:37+07:00",
     "name": "Shaman Luna",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [],
     "videos": [],
     "type": "attendants",
@@ -1047,8 +1195,16 @@
     "dateModified": "2022-09-29T17:26:37+07:00",
     "name": "Versamelaar",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-17-22-37-52-97_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1102,8 +1258,16 @@
     "dateModified": "2022-09-29T14:26:37+07:00",
     "name": "Vulamber",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-14-00-55-12-41_f4fc9fb10454fc3a3dacb99dff89b568.webp",
@@ -1171,8 +1335,16 @@
     "dateModified": "2022-09-30T07:26:37+07:00",
     "name": "Vuloneer",
     "qty": "Need admin to write this (auto build)",
-    "buff": ["undefined", "undefined", "undefined"],
-    "delicacies": ["undefined", "undefined", "undefined"],
+    "buff": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
+    "delicacies": [
+      "undefined",
+      "undefined",
+      "undefined"
+    ],
     "images": [
       {
         "filename": "Screenshot_2022-07-30-14-34-42-15_f4fc9fb10454fc3a3dacb99dff89b568.webp",
