@@ -8,6 +8,9 @@
   },
   "include": [
     "./src/index.ts",
+    "./src/gulp.*.ts"
+  ],
+  "exclude": [
     "*.test.js",
     "*.test.ts"
   ]
