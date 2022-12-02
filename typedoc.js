@@ -10,7 +10,9 @@ const pkgjson = require('./package.json');
 /**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
  */
-let entryPoints = fs.readdirSync(path.join(__dirname, 'src')).map((path) => './src/' + path);
+let entryPoints = fs
+  .readdirSync(path.join(__dirname, 'src'))
+  .map((path) => './src/' + path);
 const getFilesRecursively = (directory) => {
   const filesInDirectory = fs.readdirSync(directory);
   for (const file of filesInDirectory) {
@@ -25,7 +27,9 @@ const getFilesRecursively = (directory) => {
 
 getFilesRecursively(path.join(__dirname, 'src'));
 // filter ts only and remove duplicates
-entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) => a.indexOf(v) === i);
+entryPoints = entryPoints
+  .filter((path) => /.ts$/.test(path))
+  .filter((v, i, a) => a.indexOf(v) === i);
 
 // console.log(entryPoints);
 
