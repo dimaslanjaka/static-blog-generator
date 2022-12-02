@@ -27,6 +27,8 @@ if (!CREDENTIAL_PATH) {
   credential = keyFile.installed || keyFile.web
 }
 
+console.log({ credential })
+
 class AuthenticatorLocal {
   /**
    * Serializes credentials to a file comptible with GoogleAUth.fromJSON.
