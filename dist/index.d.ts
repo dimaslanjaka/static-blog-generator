@@ -11,5 +11,13 @@ export { parsePost, buildPost };
 declare const hexoPostParser: {
     parsePost: typeof parsePost;
     buildPost: typeof buildPost;
+    generatePostId: any;
+    renderMarkdown: any;
+    parsePermalink: any;
+    DeepPartial: any;
+    Nullable: any;
+    ParseOptions: any;
+    postMap: any;
+    postMeta: any;
 };
 export default hexoPostParser;
