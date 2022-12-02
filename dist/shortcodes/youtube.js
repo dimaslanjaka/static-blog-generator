@@ -7,6 +7,10 @@ const _config_1 = tslib_1.__importStar(require("../types/_config"));
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
 const logname = color_1.default['Vivid Tangerine']('[youtube]');
+/**
+ * Parse shortcode youtube
+ * * `{% youtube video_id [type] [cookie] %}` will compiled to `<div class="video-container"><iframe src="youtube url"></iframe></div>`
+ */
 function shortcodeYoutube(content) {
     let m;
     let count = 0;
