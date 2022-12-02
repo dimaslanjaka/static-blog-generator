@@ -34,12 +34,17 @@ const compile = async function () {
     app.options.addReader(new typedocModule.TSConfigReader());
     app.options.addReader(new typedocModule.TypeDocReader());
   }
+
+  //console.log(options);
   //delete options.run;
+
   app.bootstrap(options);
   const project = app.convert();
   if (typeof project !== 'undefined') {
     await app.generateDocs(project, projectDocsDir);
     await app.generateJson(project, join(projectDocsDir, 'info.json'));
+  } else {
+    console.error('project undefined');
   }
 };
 
@@ -63,18 +68,28 @@ const publish = async function () {
   await compile();
 
   try {
-    const commit = await new git(__dirname).latestCommit();
-    const remote = (await new git(__dirname).getremote()).push.url.replace(/.git$/, '').trim();
-    console.log('current git project', remote);
-    await github.addAndCommit(
-      pkgjson.name,
-      `${commit} update ${pkgjson.name} docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
-    );
-    if (await github.canPush()) await github.push();
+    const commit = await new git(__dirname).latestCommit().catch(noop);
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
+    if (remote.length > 0) {
+      console.log('current git project', remote);
+      await github
+        .addAndCommit(
+          pkgjson.name,
+          `${commit} update ${pkgjson.name} docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
+        )
+        .catch(noop);
+      if (await github.canPush().catch(noop)) {
+        await github.push().catch(noop);
+      }
+    }
   } catch {
     //
   }
 };
+
+function noop(..._) {
+  //
+}
 
 /**
  * Watch sources
@@ -91,7 +106,7 @@ const watch = function (done) {
 if (require.main === module) {
   (async () => {
     console.log('[compile] start');
-    await publish();
+    await compile();
     console.log('[compile] finish');
   })();
 } else {
