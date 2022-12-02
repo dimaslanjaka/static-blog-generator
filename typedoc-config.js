@@ -64,11 +64,19 @@ const typedocOptions = {
   version: true,
   includeVersion: true
 };
+
+const cjson = path.join(__dirname, 'typedoc.json');
 if (require.main === module) {
   const scriptName = path.basename(__filename);
+
   if (scriptName.endsWith('-config.js')) {
     typedocOptions['$schema'] = 'https://typedoc.org/schema.json';
-    fs.writeFileSync(path.join(__dirname, 'typedoc.json'), JSON.stringify(typedocOptions, null, 2));
+    fs.writeFileSync(cjson, JSON.stringify(typedocOptions, null, 2));
+  } else {
+    if (fs.existsSync(cjson)) fs.rm(cjson);
   }
+} else {
+  if (fs.existsSync(cjson)) fs.rm(cjson);
 }
+
 module.exports = typedocOptions;
