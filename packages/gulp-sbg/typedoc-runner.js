@@ -34,12 +34,17 @@ const compile = async function () {
     app.options.addReader(new typedocModule.TSConfigReader());
     app.options.addReader(new typedocModule.TypeDocReader());
   }
+
+  //console.log(options);
   //delete options.run;
+
   app.bootstrap(options);
   const project = app.convert();
   if (typeof project !== 'undefined') {
     await app.generateDocs(project, projectDocsDir);
     await app.generateJson(project, join(projectDocsDir, 'info.json'));
+  } else {
+    console.error('project undefined');
   }
 };
 
