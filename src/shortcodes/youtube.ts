@@ -5,6 +5,10 @@ import config, { verbose } from '../types/_config';
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
 const logname = color['Vivid Tangerine']('[youtube]');
 
+/**
+ * Parse shortcode youtube
+ * * `{% youtube video_id [type] [cookie] %}` will compiled to `<div class="video-container"><iframe src="youtube url"></iframe></div>`
+ */
 export function shortcodeYoutube(content: string) {
   let m: RegExpExecArray;
   let count = 0;
