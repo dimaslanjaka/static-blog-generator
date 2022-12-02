@@ -6,6 +6,7 @@ Parse Hexo Posts To Object
 - [READ FULL EXAMPLE](https://github.com/dimaslanjaka/hexo-post-parser/tree/master/tests)
 - [Typescript Source Code](https://github.com/dimaslanjaka/hexo-post-parser/tree/master/src)
 - [AUTO LINTER](https://www.webmanajemen.com/NodeJS/eslint-prettier-typescript-vscode.html)
+- [API DOCUMENTATIONS](https://www.webmanajemen.com/docs/hexo-post-parser/modules.html)
 
 ## Features
 - Parsing HexoJS markdown post
