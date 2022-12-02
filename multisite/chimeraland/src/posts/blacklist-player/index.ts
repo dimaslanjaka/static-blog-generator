@@ -7,7 +7,7 @@ import { sbgProject } from '../../../project'
 const metadata: postMeta = {
   title: 'Blacklist Player Chimeraland',
   date: '2022-11-07T19:54:01+07:00',
-  updated: '2022-11-25T20:45:50+07:00',
+  updated: '2022-12-02T16:31:16+07:00',
   lang: 'id',
   permalink: '/chimeraland/blacklist-player.html',
   tags: ['Chimeraland', 'Blacklist', 'Player'],
