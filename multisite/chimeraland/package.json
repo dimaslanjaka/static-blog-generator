@@ -15,8 +15,8 @@
     "copy": "node test/copy.js",
     "deploy": "node deploy.js",
     "lint": "run-s lint:**",
-    "lint:src": "npx eslint --fix src/**/*",
-    "lint:sync": "npx eslint --fix sync/**/*"
+    "lint:src": "npx eslint --fix src/**/*.{ts,tsx,js,json}",
+    "lint:sync": "npx eslint --fix sync/**/*.{ts,tsx,js,json}"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^2.1.1",
