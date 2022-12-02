@@ -1,12 +1,5 @@
 import axios from 'axios';
-import {
-  createWriteStream,
-  existsSync,
-  readFileSync,
-  statSync,
-  writeFile,
-  writeFileSync
-} from 'fs-extra';
+import { createWriteStream, existsSync, readFileSync, statSync, writeFile, writeFileSync } from 'fs-extra';
 import { cacheDir, join, write } from '../node/filemanager';
 import { md5 } from '../node/md5-file';
 import config from '../types/_config';
@@ -56,17 +49,10 @@ export default async function downloadImage(
         line: `${split[1]}:${split[2]}`
       };
     });
-  const cacheLocation = join(
-    cacheDir,
-    md5(stack[1].path),
-    md5(stack[1].line),
-    md5(saveTo)
-  );
+  const cacheLocation = join(cacheDir, md5(stack[1].path), md5(stack[1].line), md5(saveTo));
   if (cache) {
     if (existsSync(cacheLocation)) {
-      const parse = JSON.parse(
-        readFileSync(cacheLocation).toString()
-      ) as cacheDownloadImageData;
+      const parse = JSON.parse(readFileSync(cacheLocation).toString()) as cacheDownloadImageData;
       const parseB64 = parse_base64_image(parse.content);
       const convert = base64_to_image(parseB64.base64, parse.path, null, null);
 
@@ -88,9 +74,7 @@ export default async function downloadImage(
 
       // get content disposition information
       if (Object.hasOwnProperty.call(response.headers, 'content-disposition')) {
-        filename = response.headers['content-disposition']
-          .match(new RegExp('filename=(.*)'))[1]
-          .replaceAll('"', '');
+        filename = response.headers['content-disposition'].match(new RegExp('filename=(.*)'))[1].replace(/["]/gm, '');
       }
       // no content-disposition
       if (filename === null) {
@@ -120,9 +104,7 @@ export default async function downloadImage(
           result.path = pipe['path'];
         }
         if (result.path) {
-          const b64 =
-            `data:${mime};base64,` +
-            readFileSync(result.path).toString('base64');
+          const b64 = `data:${mime};base64,` + readFileSync(result.path).toString('base64');
           write(cacheLocation, {
             path: result.path,
             content: b64
@@ -192,27 +174,17 @@ function base64_to_image(
       const result = parse_base64_image(data);
       filepath = join(destpath, name + result.extname);
       if (typeof callback === 'function') {
-        return writeFile(
-          filepath,
-          result.base64,
-          { encoding: 'base64' },
-          function (err) {
-            callback(err, filepath);
-          }
-        );
+        return writeFile(filepath, result.base64, { encoding: 'base64' }, function (err) {
+          callback(err, filepath);
+        });
       }
       writeFileSync(filepath, result.base64, { encoding: 'base64' });
     } else {
       filepath = destpath;
       if (typeof callback === 'function') {
-        return writeFile(
-          filepath,
-          data,
-          { encoding: 'base64' },
-          function (err) {
-            callback(err, filepath);
-          }
-        );
+        return writeFile(filepath, data, { encoding: 'base64' }, function (err) {
+          callback(err, filepath);
+        });
       }
       writeFileSync(filepath, data, { encoding: 'base64' });
     }

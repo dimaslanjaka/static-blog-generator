@@ -1,5 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "tmp/tsc",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
   "include": [
     "src",
     "tests"
