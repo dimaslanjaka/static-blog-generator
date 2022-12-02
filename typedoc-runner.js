@@ -65,8 +65,9 @@ const publish = async function () {
   try {
     const commit = await new git(__dirname).latestCommit();
     const remote = (await new git(__dirname).getremote()).push.url.replace(/.git$/, '').trim();
+    console.log('current git project', remote);
     await github.addAndCommit(
-      'gulp-sbg',
+      pkgjson.name,
       `${commit} update ${pkgjson.name} docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
     );
     if (await github.canPush()) await github.push();
