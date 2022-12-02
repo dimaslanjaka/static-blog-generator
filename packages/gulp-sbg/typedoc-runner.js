@@ -105,9 +105,17 @@ const watch = function (done) {
 
 if (require.main === module) {
   (async () => {
-    console.log('[compile] start');
-    await compile();
-    console.log('[compile] finish');
+    const argv = process.argv;
+    // node typedoc-runner.js --publish
+    if (argv.includes('--publish')) {
+      console.log('[publish] start');
+      await publish();
+      console.log('[publish] finish');
+    } else {
+      console.log('[compile] start');
+      await compile();
+      console.log('[compile] finish');
+    }
   })();
 } else {
   //console.log('required as a module');
