@@ -30,9 +30,7 @@
   {
     "dateModified": "2022-09-28T21:26:37+07:00",
     "datePublished": "2022-01-06T21:56:03+07:00",
-    "details": [
-      "Used for Evolve Duahawk"
-    ],
+    "details": ["Used for Evolve Duahawk"],
     "howto": [
       "Obtain by purchase Pinning Feather from Pendant Merchant or from home."
     ],
@@ -51,9 +49,7 @@
     "dateModified": "2022-09-28T22:26:37+07:00",
     "datePublished": "2022-01-06T22:56:03+07:00",
     "details": [],
-    "howto": [
-      "Purchase from Clan Shop for 500 Clan Contribution"
-    ],
+    "howto": ["Purchase from Clan Shop for 500 Clan Contribution"],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/minkrat-evolution-powder/minkrat-evolution-powder.webp",
@@ -86,9 +82,7 @@
   {
     "dateModified": "2022-09-29T00:26:37+07:00",
     "datePublished": "2022-01-07T00:56:03+07:00",
-    "details": [
-      "Used to fuse Sheep Ring."
-    ],
+    "details": ["Used to fuse Sheep Ring."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Hunt and search for the illustrious giant beast Browtelope to obtain it",
@@ -128,9 +122,7 @@
     "name": "Chimeraland Beast Hide",
     "pathname": "/chimeraland/materials/chimeraland-beast-hide.html",
     "type": "materials",
-    "usages": [
-      "Exchanged for beast sets in the clan shop"
-    ],
+    "usages": ["Exchanged for beast sets in the clan shop"],
     "videos": []
   },
   {
@@ -180,9 +172,7 @@
     "name": "Precious Jade",
     "pathname": "/chimeraland/materials/precious-jade.html",
     "type": "materials",
-    "usages": [
-      "Used for crafting processed materials"
-    ],
+    "usages": ["Used for crafting processed materials"],
     "videos": []
   },
   {
@@ -212,9 +202,7 @@
     "name": "Pale Jade",
     "pathname": "/chimeraland/materials/pale-jade.html",
     "type": "materials",
-    "usages": [
-      "Used for crafting processed materials"
-    ],
+    "usages": ["Used for crafting processed materials"],
     "videos": []
   },
   {
@@ -239,18 +227,14 @@
     "name": "Brilliant Jade",
     "pathname": "/chimeraland/materials/brilliant-jade.html",
     "type": "materials",
-    "usages": [
-      "Used for crafting processed materials"
-    ],
+    "usages": ["Used for crafting processed materials"],
     "videos": []
   },
   {
     "background-info": "Stone often come in Large chunks with a wide range of uses, various types are typically product from large veins.",
     "dateModified": "2022-09-29T05:26:37+07:00",
     "datePublished": "2022-01-07T05:56:03+07:00",
-    "details": [
-      "Mine any ore to obtain this basic Mining product."
-    ],
+    "details": ["Mine any ore to obtain this basic Mining product."],
     "howto": [
       "Purchase from: Grocer, Home Shop, Newbie Resource Pack, or Prosperous Year (Small).",
       "Mine Ore.",
@@ -529,9 +513,7 @@
   {
     "dateModified": "2022-09-29T17:26:37+07:00",
     "datePublished": "2022-01-07T17:56:03+07:00",
-    "details": [
-      "Found around the stars, makes for a good craft material."
-    ],
+    "details": ["Found around the stars, makes for a good craft material."],
     "howto": [
       "Mine Star Stone in the starry sky.",
       "Auction House.",
@@ -1368,9 +1350,7 @@
   {
     "dateModified": "2022-10-01T09:26:37+07:00",
     "datePublished": "2022-01-09T09:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Glow Deer Hide from Ursalton.",
@@ -1394,9 +1374,7 @@
     "background-info": "A giant Snake's skin. It's simply fascinating.",
     "dateModified": "2022-10-01T10:26:37+07:00",
     "datePublished": "2022-01-09T10:56:03+07:00",
-    "details": [
-      "Obtained when searching fro Wyrm. Used in Creation."
-    ],
+    "details": ["Obtained when searching fro Wyrm. Used in Creation."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Obtain from hunting Wyrms.",
@@ -1416,9 +1394,7 @@
   {
     "dateModified": "2022-10-01T11:26:37+07:00",
     "datePublished": "2022-01-09T11:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusion."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusion."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Trileaf Skin from Ursalton.",
@@ -1442,9 +1418,7 @@
     "background-info": "Direwolf fur, provides camouflage.",
     "dateModified": "2022-10-01T12:26:37+07:00",
     "datePublished": "2022-01-09T12:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Ambusher Hair from Ursalton.",
@@ -1467,9 +1441,7 @@
   {
     "dateModified": "2022-10-01T13:26:37+07:00",
     "datePublished": "2022-01-09T13:56:03+07:00",
-    "details": [
-      "A specialty of the Centralmount mainland."
-    ],
+    "details": ["A specialty of the Centralmount mainland."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Blood Jade from Handelaar.",
@@ -1490,9 +1462,7 @@
   {
     "dateModified": "2022-10-01T14:26:37+07:00",
     "datePublished": "2022-01-09T14:56:03+07:00",
-    "details": [
-      "A specialty of the Centralmount mainland."
-    ],
+    "details": ["A specialty of the Centralmount mainland."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Beast Vital Qi Pill from Handelaar.",
@@ -1514,9 +1484,7 @@
     "background-info": "Viper Scale, worn to not sink.",
     "dateModified": "2022-10-01T15:26:37+07:00",
     "datePublished": "2022-01-09T15:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Grouguana Scales from Handelaar.",
@@ -1539,9 +1507,7 @@
   {
     "dateModified": "2022-10-01T16:26:37+07:00",
     "datePublished": "2022-01-09T16:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Bone Sheep Skin from Shaho.",
@@ -1565,9 +1531,7 @@
     "background-info": "Litiger mane, born from the water, so it resists water.",
     "dateModified": "2022-10-01T17:26:37+07:00",
     "datePublished": "2022-01-09T17:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Litiger Mane from Shaho.",
@@ -1590,9 +1554,7 @@
   {
     "dateModified": "2022-10-01T18:26:37+07:00",
     "datePublished": "2022-01-09T18:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Flying Wolf Hide from Ursalton.",
@@ -1616,9 +1578,7 @@
     "background-info": "Ox Mane, fortifies clothes against cold.",
     "dateModified": "2022-10-01T19:26:37+07:00",
     "datePublished": "2022-01-09T19:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Ox Mane Hair from Handelaar.",
@@ -1642,9 +1602,7 @@
     "background-info": "Condor Claw, no trace in the snow, can overcome the strong stone, wear to be unblockable.",
     "dateModified": "2022-10-01T20:26:37+07:00",
     "datePublished": "2022-01-09T20:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Snow Goose Claw from Shaho.",
@@ -1668,9 +1626,7 @@
     "background-info": "Stoneppo bone, worn for excellent swimming.",
     "dateModified": "2022-10-01T21:26:37+07:00",
     "datePublished": "2022-01-09T21:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Watery Bone from Handelaar.",
@@ -1694,9 +1650,7 @@
     "background-info": "Warcrab shell, resembles a fan or plate, can command soldiers.",
     "dateModified": "2022-10-01T22:26:37+07:00",
     "datePublished": "2022-01-09T22:56:03+07:00",
-    "details": [
-      "Extremely uncommon. Can be used for Creation and Refining."
-    ],
+    "details": ["Extremely uncommon. Can be used for Creation and Refining."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Hunt Giant Coracrab to obtain it.",
@@ -1718,9 +1672,7 @@
     "background-info": "Wolfspider shell, worn to repel bugs.",
     "dateModified": "2022-10-01T23:26:37+07:00",
     "datePublished": "2022-01-09T23:56:03+07:00",
-    "details": [
-      "Extremely uncommon. Can be used for Creation and Refiner."
-    ],
+    "details": ["Extremely uncommon. Can be used for Creation and Refiner."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Obtained from Mountspiders.",
@@ -1741,9 +1693,7 @@
   {
     "dateModified": "2022-10-02T00:26:37+07:00",
     "datePublished": "2022-01-10T00:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Embergator Skin from Ursalton.",
@@ -1765,9 +1715,7 @@
   {
     "dateModified": "2022-10-02T01:26:37+07:00",
     "datePublished": "2022-01-10T01:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Hunt a Noble Giant Beast to get this.",
@@ -1789,9 +1737,7 @@
   {
     "dateModified": "2022-10-02T02:26:37+07:00",
     "datePublished": "2022-01-10T02:56:03+07:00",
-    "details": [
-      "An extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Eleboar Hide from Handelaar.",
@@ -1815,9 +1761,7 @@
     "background-info": "Vuldo feather, strength may fall, but wear to not be slowed.",
     "dateModified": "2022-10-02T03:26:37+07:00",
     "datePublished": "2022-01-10T03:56:03+07:00",
-    "details": [
-      "Extremely uncommon. Can be used for Creation and Refiner."
-    ],
+    "details": ["Extremely uncommon. Can be used for Creation and Refiner."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Obtained from Sprinowls.",
@@ -1839,9 +1783,7 @@
     "background-info": "Alligon scale, resists weapons.",
     "dateModified": "2022-10-02T04:26:37+07:00",
     "datePublished": "2022-01-10T04:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Alligon Scales from Shaho.",
@@ -1864,9 +1806,7 @@
   {
     "dateModified": "2022-10-02T05:26:37+07:00",
     "datePublished": "2022-01-10T05:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Stiffler Hide from Ursalton.",
@@ -1889,9 +1829,7 @@
   {
     "dateModified": "2022-10-02T06:26:37+07:00",
     "datePublished": "2022-01-10T06:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Centipede Skin from Ursalton.",
@@ -1914,9 +1852,7 @@
   {
     "dateModified": "2022-10-02T07:26:37+07:00",
     "datePublished": "2022-01-10T07:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Deerbull Hide from Shaho.",
@@ -1940,9 +1876,7 @@
     "background-info": "Rigidm indestrucible, and filled with venom that is difficult to cure.",
     "dateModified": "2022-10-02T08:26:37+07:00",
     "datePublished": "2022-01-10T08:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Got to the Auction House to obtain it.",
       "Purchase Scorpion King Stinger from Shaho.",
@@ -1990,9 +1924,7 @@
     "background-info": "Rhino tusk. Heaven may be fickle, but wearing it can help avoid adversity.",
     "dateModified": "2022-10-02T10:26:37+07:00",
     "datePublished": "2022-01-10T10:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Rhino Tusk from Handelaar.",
@@ -2130,9 +2062,7 @@
   {
     "dateModified": "2022-10-02T16:26:37+07:00",
     "datePublished": "2022-01-10T16:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Rhino Hide from Shaho.",
@@ -2156,9 +2086,7 @@
     "background-info": "Grizzly thorn, Wearer does not need to eat or drink and can rest on the ground.",
     "dateModified": "2022-10-02T17:26:37+07:00",
     "datePublished": "2022-01-10T17:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Vangard Bear Thorn from Shaho.",
@@ -2181,9 +2109,7 @@
   {
     "dateModified": "2022-10-02T18:26:37+07:00",
     "datePublished": "2022-01-10T18:56:03+07:00",
-    "details": [
-      "An Extremely uncommon material used in advanced fusions."
-    ],
+    "details": ["An Extremely uncommon material used in advanced fusions."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Vangard Bear Thorn from Shaho.",
@@ -2205,9 +2131,7 @@
   },
   {
     "background-info": "It's agile and powerful. It can crush wood and stones and can even control water to form pearls.",
-    "category": [
-      "searching"
-    ],
+    "category": ["searching"],
     "dateModified": "2022-10-02T19:26:37+07:00",
     "datePublished": "2022-01-10T19:56:03+07:00",
     "details": [
@@ -2301,9 +2225,7 @@
   {
     "dateModified": "2022-10-02T23:26:37+07:00",
     "datePublished": "2022-01-10T23:56:03+07:00",
-    "details": [
-      "A specialty of the Centralmount mainland."
-    ],
+    "details": ["A specialty of the Centralmount mainland."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Goldscale Shell from Handelaar.",
@@ -2324,9 +2246,7 @@
   {
     "dateModified": "2022-10-03T00:26:37+07:00",
     "datePublished": "2022-01-11T00:56:03+07:00",
-    "details": [
-      "A specialty of the Centralmount mainland."
-    ],
+    "details": ["A specialty of the Centralmount mainland."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Purchase Fleet Feather from Handelaar.",
@@ -2486,9 +2406,7 @@
     "background-info": "A giant snake's fang. It's sure to give you fever.",
     "dateModified": "2022-10-03T07:26:37+07:00",
     "datePublished": "2022-01-11T07:56:03+07:00",
-    "details": [
-      "Obtained when searching for Noble Wyrm. Used in Creation."
-    ],
+    "details": ["Obtained when searching for Noble Wyrm. Used in Creation."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Obtained from hunting Noble Wyrms.",
@@ -2695,9 +2613,7 @@
     "background-info": "The legs of the Octofish are flexible and strong.",
     "dateModified": "2022-10-03T16:26:37+07:00",
     "datePublished": "2022-01-11T16:56:03+07:00",
-    "details": [
-      "Material obtained from hunting Octofish. Used in Creation."
-    ],
+    "details": ["Material obtained from hunting Octofish. Used in Creation."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Obtained from hunting Giant Octofish.",
@@ -2718,9 +2634,7 @@
     "background-info": "Death Scale. A death scale from the Miragon's throat, and it hunts those with an infant.",
     "dateModified": "2022-10-03T17:26:37+07:00",
     "datePublished": "2022-01-11T17:56:03+07:00",
-    "details": [
-      "Material obtained from hunting Miragon. Used in Creation."
-    ],
+    "details": ["Material obtained from hunting Miragon. Used in Creation."],
     "howto": [
       "Go to the Auction House to obtain it.",
       "Obtained from hunting Giant Miragon.",
@@ -2861,10 +2775,7 @@
     "dateModified": "2022-10-03T23:26:37+07:00",
     "datePublished": "2022-01-11T23:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather peanuts to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather peanuts to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/peanut/peanut.webp",
@@ -2880,10 +2791,7 @@
     "dateModified": "2022-10-04T00:26:37+07:00",
     "datePublished": "2022-01-12T00:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Bok Choy to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Bok Choy to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/bok-choy/bok-choy.webp",
@@ -2899,10 +2807,7 @@
     "dateModified": "2022-10-04T01:26:37+07:00",
     "datePublished": "2022-01-12T01:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Gourd to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Gourd to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/gourd/gourd.webp",
@@ -2937,10 +2842,7 @@
     "dateModified": "2022-10-04T03:26:37+07:00",
     "datePublished": "2022-01-12T03:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Sowthisle to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Sowthisle to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sowthistle/sowthistle.webp",
@@ -2956,10 +2858,7 @@
     "dateModified": "2022-10-04T04:26:37+07:00",
     "datePublished": "2022-01-12T04:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Scallion to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Scallion to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/scallion/scallion.webp",
@@ -2975,10 +2874,7 @@
     "dateModified": "2022-10-04T05:26:37+07:00",
     "datePublished": "2022-01-12T05:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Broccoli to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Broccoli to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/broccoli/broccoli.webp",
@@ -2994,10 +2890,7 @@
     "dateModified": "2022-10-04T06:26:37+07:00",
     "datePublished": "2022-01-12T06:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Amaranth to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Amaranth to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/amaranth/amaranth.webp",
@@ -3013,10 +2906,7 @@
     "dateModified": "2022-10-04T07:26:37+07:00",
     "datePublished": "2022-01-12T07:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Sesame to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Sesame to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/sesame/sesame.webp",
@@ -3032,10 +2922,7 @@
     "dateModified": "2022-10-04T08:26:37+07:00",
     "datePublished": "2022-01-12T08:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Pumpkin to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Pumpkin to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/pumpkin/pumpkin.webp",
@@ -3051,10 +2938,7 @@
     "dateModified": "2022-10-04T09:26:37+07:00",
     "datePublished": "2022-01-12T09:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Chives to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Chives to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/chives/chives.webp",
@@ -3203,10 +3087,7 @@
     "dateModified": "2022-10-04T17:26:37+07:00",
     "datePublished": "2022-01-12T17:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather coriander to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather coriander to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/coriander/coriander.webp",
@@ -3222,10 +3103,7 @@
     "dateModified": "2022-10-04T18:26:37+07:00",
     "datePublished": "2022-01-12T18:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Watermelon to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Watermelon to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/watermelon/watermelon.webp",
@@ -3279,10 +3157,7 @@
     "dateModified": "2022-10-04T21:26:37+07:00",
     "datePublished": "2022-01-12T21:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Turnip to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Turnip to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/turnip/turnip.webp",
@@ -3298,10 +3173,7 @@
     "dateModified": "2022-10-04T22:26:37+07:00",
     "datePublished": "2022-01-12T22:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Tomato to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Tomato to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/tomato/tomato.webp",
@@ -3317,10 +3189,7 @@
     "dateModified": "2022-10-04T23:26:37+07:00",
     "datePublished": "2022-01-12T23:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Lettuce to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Lettuce to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/lettuce/lettuce.webp",
@@ -3336,10 +3205,7 @@
     "dateModified": "2022-10-05T00:26:37+07:00",
     "datePublished": "2022-01-13T00:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather Spinach to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather Spinach to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/spinach/spinach.webp",
@@ -3355,10 +3221,7 @@
     "dateModified": "2022-10-05T01:26:37+07:00",
     "datePublished": "2022-01-13T01:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain",
-      "Gather cucumber to get."
-    ],
+    "howto": ["Go to the Auction House to obtain", "Gather cucumber to get."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cucumber/cucumber.webp",
@@ -3374,9 +3237,7 @@
     "dateModified": "2022-10-05T02:26:37+07:00",
     "datePublished": "2022-01-13T02:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain"
-    ],
+    "howto": ["Go to the Auction House to obtain"],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cyathea/cyathea.webp",
@@ -3392,9 +3253,7 @@
     "dateModified": "2022-10-05T03:26:37+07:00",
     "datePublished": "2022-01-13T03:56:03+07:00",
     "details": [],
-    "howto": [
-      "Go to the Auction House to obtain"
-    ],
+    "howto": ["Go to the Auction House to obtain"],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/rhododendron/rhododendron.webp",
@@ -3506,9 +3365,7 @@
   {
     "dateModified": "2022-10-05T09:26:37+07:00",
     "datePublished": "2022-01-13T09:56:03+07:00",
-    "details": [
-      "Fossils quarried in the wild make for good materials."
-    ],
+    "details": ["Fossils quarried in the wild make for good materials."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3528,9 +3385,7 @@
   {
     "dateModified": "2022-10-05T10:26:37+07:00",
     "datePublished": "2022-01-13T10:56:03+07:00",
-    "details": [
-      "Fossils quarried in the wild make for good materials."
-    ],
+    "details": ["Fossils quarried in the wild make for good materials."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3550,9 +3405,7 @@
   {
     "dateModified": "2022-10-05T11:26:37+07:00",
     "datePublished": "2022-01-13T11:56:03+07:00",
-    "details": [
-      "Fossils quarried in the wild make for good materials."
-    ],
+    "details": ["Fossils quarried in the wild make for good materials."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3572,9 +3425,7 @@
   {
     "dateModified": "2022-10-05T12:26:37+07:00",
     "datePublished": "2022-01-13T12:56:03+07:00",
-    "details": [
-      "Fossils quarried in the wild make for good materials."
-    ],
+    "details": ["Fossils quarried in the wild make for good materials."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3594,9 +3445,7 @@
   {
     "dateModified": "2022-10-05T13:26:37+07:00",
     "datePublished": "2022-01-13T13:56:03+07:00",
-    "details": [
-      "Fossils quarried in the wild make for good materials."
-    ],
+    "details": ["Fossils quarried in the wild make for good materials."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3616,9 +3465,7 @@
   {
     "dateModified": "2022-10-05T14:26:37+07:00",
     "datePublished": "2022-01-13T14:56:03+07:00",
-    "details": [
-      "Fossils quarried in the wild make for good materials."
-    ],
+    "details": ["Fossils quarried in the wild make for good materials."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3638,9 +3485,7 @@
   {
     "dateModified": "2022-10-05T15:26:37+07:00",
     "datePublished": "2022-01-13T15:56:03+07:00",
-    "details": [
-      "Contains a great amount of energy and is a craft material."
-    ],
+    "details": ["Contains a great amount of energy and is a craft material."],
     "howto": [
       "Go to the Auction House to obtain",
       "Mine wild fossils to get",
@@ -3684,9 +3529,7 @@
     "background-info": "Wood on the edge of the trunk. Its sow texture makes it vulnerable to rot.",
     "dateModified": "2022-10-05T17:26:37+07:00",
     "datePublished": "2022-01-13T17:56:03+07:00",
-    "details": [
-      "Base product obtained by chopping down certain trees."
-    ],
+    "details": ["Base product obtained by chopping down certain trees."],
     "howto": [
       "Purchase from: Home Shop, Newbie Resource Pack, Prosperpous Year (Small)",
       "Chop down trees",
@@ -3752,9 +3595,7 @@
   {
     "dateModified": "2022-10-05T20:26:37+07:00",
     "datePublished": "2022-01-13T20:56:03+07:00",
-    "details": [
-      "Can be used for Creation."
-    ],
+    "details": ["Can be used for Creation."],
     "howto": [
       "Go to the Auction House to obtain",
       "Chop down lemon trees to get",
@@ -3775,9 +3616,7 @@
   {
     "dateModified": "2022-10-05T21:26:37+07:00",
     "datePublished": "2022-01-13T21:56:03+07:00",
-    "details": [
-      "Can be used for Creation."
-    ],
+    "details": ["Can be used for Creation."],
     "howto": [
       "Go to the Auction House to obtain",
       "Chop down oak trees to get",
@@ -4061,9 +3900,7 @@
     "background-info": "Just a small chunk of this divine tree's wood can weigh over 30 pounds.",
     "dateModified": "2022-10-06T09:26:37+07:00",
     "datePublished": "2022-01-14T09:56:03+07:00",
-    "details": [
-      "A magical wood that can be used in Creation."
-    ],
+    "details": ["A magical wood that can be used in Creation."],
     "howto": [
       "Go to the Auction House to obtain",
       "Chop down Laurel Wood, Traveler's Blessing Wood, Longevity Wood, and Boundless Wood",
@@ -4083,12 +3920,8 @@
   {
     "dateModified": "2022-10-06T10:26:37+07:00",
     "datePublished": "2022-01-14T10:56:03+07:00",
-    "details": [
-      "The spirit of a divine tree, it can be used in Creation."
-    ],
-    "howto": [
-      "Go to the Auction House to obtain"
-    ],
+    "details": ["The spirit of a divine tree, it can be used in Creation."],
+    "howto": ["Go to the Auction House to obtain"],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/grand-tree-soul/grand-tree-soul.webp",
@@ -5592,10 +5425,7 @@
     "details": [
       "Eating restores 60 Fullness and gives a little bit of EXP, but inflicts cold. Feed to pets to increase Fullness and EXP."
     ],
-    "howto": [
-      "Explore the world to gather.",
-      "Auction House."
-    ],
+    "howto": ["Explore the world to gather.", "Auction House."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/cauliflower/cauliflower.webp",
@@ -5634,9 +5464,7 @@
   {
     "dateModified": "2022-10-09T15:26:37+07:00",
     "datePublished": "2022-01-17T15:56:03+07:00",
-    "details": [
-      "Gather any plants to obtain this basic gathering items."
-    ],
+    "details": ["Gather any plants to obtain this basic gathering items."],
     "howto": [
       "Gather medicinal materials to get Parasitic Grass.",
       "Hunt Grand Venus Flytrap to obtain it.",
@@ -5660,10 +5488,7 @@
     "details": [
       "Eating restores 60 Fullness and gives a little bit of EXP, but inflicts cold. Feed to pets to increase Fullness and EXP."
     ],
-    "howto": [
-      "Explore the world to gather.",
-      "Auction House."
-    ],
+    "howto": ["Explore the world to gather.", "Auction House."],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/melon/melon.webp",
@@ -5979,9 +5804,7 @@
   {
     "dateModified": "2022-10-10T06:26:37+07:00",
     "datePublished": "2022-01-18T06:56:03+07:00",
-    "details": [
-      "Used for Evolve White Maiden"
-    ],
+    "details": ["Used for Evolve White Maiden"],
     "howto": [
       "Moon Resin Dew Obtain from smelting Illustrious giant beast materials."
     ],
@@ -5999,9 +5822,7 @@
   {
     "dateModified": "2022-10-10T07:26:37+07:00",
     "datePublished": "2022-01-18T07:56:03+07:00",
-    "details": [
-      "Used for Evolve White Maiden"
-    ],
+    "details": ["Used for Evolve White Maiden"],
     "howto": [
       "Dragon Pill Obtain by Auction House, Hunt the Illustrious Wyrm Greenie, and Explore the world."
     ],
@@ -6041,9 +5862,7 @@
   {
     "dateModified": "2022-10-10T09:26:37+07:00",
     "datePublished": "2022-01-18T09:56:03+07:00",
-    "details": [
-      "Used for Evolve Noble Golden Crow"
-    ],
+    "details": ["Used for Evolve Noble Golden Crow"],
     "howto": [
       "Dragon Pill Obtain by Auction House, Hunt the ocean beast Noble Cray, and Explore the world."
     ],
@@ -6061,9 +5880,7 @@
   {
     "dateModified": "2022-10-10T10:26:37+07:00",
     "datePublished": "2022-01-18T10:56:03+07:00",
-    "details": [
-      "Used for Evolve Noble Serpent"
-    ],
+    "details": ["Used for Evolve Noble Serpent"],
     "howto": [
       "Frost Dragon Primal Element Obtain Hunt a Noble Ice Whale, and Explore the world."
     ],
@@ -6081,9 +5898,7 @@
   {
     "dateModified": "2022-10-10T11:26:37+07:00",
     "datePublished": "2022-01-18T11:56:03+07:00",
-    "details": [
-      "Used for Evolve Bony Sabretooth"
-    ],
+    "details": ["Used for Evolve Bony Sabretooth"],
     "images": [
       {
         "absolutePath": "/media/dimaslanjaka/DATA/Repositories/static-blog-generator-hexo/source/chimeraland/materials/fallen-snow-bone/fallen-snow-bone.webp",

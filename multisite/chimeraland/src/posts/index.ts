@@ -1,2 +1,1 @@
-import './blacklist-player';
-
+import './blacklist-player'
