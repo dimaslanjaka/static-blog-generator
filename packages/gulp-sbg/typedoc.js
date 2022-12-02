@@ -23,7 +23,8 @@ const getFilesRecursively = (directory) => {
 };
 
 getFilesRecursively(path.join(__dirname, 'src'));
-entryPoints = entryPoints.filter((path) => /.ts$/.test(path));
+// filter ts only and remove duplicates
+entryPoints = entryPoints.filter((path) => /.ts$/.test(path)).filter((v, i, a) => a.indexOf(v) === i);
 
 // console.log(entryPoints);
 
