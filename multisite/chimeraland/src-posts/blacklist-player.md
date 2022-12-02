@@ -212,7 +212,7 @@ author: L3n4r0x
   document.addEventListener('DOMContentLoaded', translatorWidgetStart);
 </script>
 
-<h2 id="daftar-blacklist-player-kategori-scammer-map-illus-16-party" tabindex="-1"><a class="header-anchor" href="#daftar-blacklist-player-kategori-scammer-map-illus-16-party">Daftar blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</a></h2>
+<h2 id="daftar-blacklist-player-kategori-scammer-map-illus-16-party" tabindex="-1"><a href="#daftar-blacklist-player-kategori-scammer-map-illus-16-party">Daftar blacklist player kategori SCAMMER MAP ILLUS 16 PARTY</a></h2>
 <table style="width:100%;">
 <thead>
 <tr>
@@ -243,7 +243,7 @@ author: L3n4r0x
 </tr>
 </tbody>
 </table>
-<h2 id="daftar-blacklist-player-kategori-scammer-ruby" tabindex="-1"><a class="header-anchor" href="#daftar-blacklist-player-kategori-scammer-ruby">Daftar blacklist player kategori SCAMMER RUBY</a></h2>
+<h2 id="daftar-blacklist-player-kategori-scammer-ruby" tabindex="-1"><a href="#daftar-blacklist-player-kategori-scammer-ruby">Daftar blacklist player kategori SCAMMER RUBY</a></h2>
 <table style="width:100%;">
 <thead>
 <tr>
@@ -274,7 +274,7 @@ author: L3n4r0x
 </tr>
 </tbody>
 </table>
-<h2 id="daftar-player-kategori-tukang-roll-drop-item" tabindex="-1"><a class="header-anchor" href="#daftar-player-kategori-tukang-roll-drop-item">Daftar player kategori tukang roll drop item</a></h2>
+<h2 id="daftar-player-kategori-tukang-roll-drop-item" tabindex="-1"><a href="#daftar-player-kategori-tukang-roll-drop-item">Daftar player kategori tukang roll drop item</a></h2>
 <table style="width:100%;">
 <thead>
 <tr>
@@ -297,7 +297,7 @@ author: L3n4r0x
 </tr>
 </tbody>
 </table>
-<h2 id="hindari-hal-hal-berikut-agar-tidak-kena-scam" tabindex="-1"><a class="header-anchor" href="#hindari-hal-hal-berikut-agar-tidak-kena-scam">Hindari Hal-Hal Berikut Agar Tidak Kena Scam</a></h2>
+<h2 id="hindari-hal-hal-berikut-agar-tidak-kena-scam" tabindex="-1"><a href="#hindari-hal-hal-berikut-agar-tidak-kena-scam">Hindari Hal-Hal Berikut Agar Tidak Kena Scam</a></h2>
 <ul>
 <li>Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).</li>
 </ul>
