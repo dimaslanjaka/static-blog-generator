@@ -47,7 +47,7 @@ MonstersData.concat(AttendantsData as any).forEach((item) => {
   // add description when quality and delicacies written
   if (item.delicacies.length > 0 && item.qty.length > 0) {
     attr.description =
-      `${item.name} default quality ${item.qty} ${item.buff} delicacies/tasty ${item.delicacies} ${attr.categories} ${attr.tags}`.substring(
+      `${item.type.replace(/s$/, '')} ${item.name} default quality ${item.qty} ${item.buff} delicacies/tasty ${item.delicacies} ${attr.categories} ${attr.tags}`.substring(
         0,
         300
       )
