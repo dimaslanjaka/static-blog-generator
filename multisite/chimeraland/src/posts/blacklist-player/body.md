@@ -18,6 +18,8 @@
 | Tusboll | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
+| hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
+| LORD | AKUN KEDUA **hella** |
 
 ## Daftar player kategori tukang roll drop item
 
@@ -31,7 +33,6 @@
 
 | Nama Player | Keterangan |
 | :--- | :--- |
-| hella | dicurigai sebagai scammer |
 | ChipsChips | dicurigai sebagai scammer map illus 16 party |
 
 ## Hindari Hal-Hal Berikut Agar Tidak Kena Scam
