@@ -3,6 +3,7 @@ const path = require('upath');
 const pkgjson = require('./package.json');
 
 // required: npm i upath
+// required: npm i -D typedoc typedoc-plugin-missing-exports
 // update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc.js > typedoc.js
 // repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc.js
 
@@ -66,16 +67,12 @@ const typedocOptions = {
 };
 
 const cjson = path.join(__dirname, 'typedoc.json');
-if (require.main === module) {
-  const scriptName = path.basename(__filename);
+const scriptName = path.basename(__filename);
 
-  // run json creation when filename endswith -config.js
-  if (scriptName.endsWith('-config.js')) {
-    typedocOptions['$schema'] = 'https://typedoc.org/schema.json';
-    fs.writeFileSync(cjson, JSON.stringify(typedocOptions, null, 2));
-  } else {
-    if (fs.existsSync(cjson)) fs.rm(cjson);
-  }
+// run json creation when filename endswith -config.js
+if (scriptName.endsWith('-config.js')) {
+  typedocOptions['$schema'] = 'https://typedoc.org/schema.json';
+  fs.writeFileSync(cjson, JSON.stringify(typedocOptions, null, 2));
 } else {
   if (fs.existsSync(cjson)) fs.rm(cjson);
 }
