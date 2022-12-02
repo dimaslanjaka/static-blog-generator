@@ -1,7 +1,7 @@
 {
   "name": "hexo-post-parser",
   "projectName": "Hexo Post Parser",
-  "version": "1.1.20-17-9cc452b",
+  "version": "1.1.20-18-9cc452b",
   "description": "Parse Hexo Post To Object and pre-process all markdown posts for Automated SEO",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

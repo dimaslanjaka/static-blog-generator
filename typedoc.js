@@ -34,6 +34,32 @@ entryPoints = entryPoints
 // console.log(entryPoints);
 
 /**
+ * Build Readme
+ */
+const readme = [
+  path.join(__dirname, 'readme.md'),
+  path.join(__dirname, 'README.md')
+].filter((str) => fs.existsSync(str))[0];
+if (typeof readme === 'string') {
+  if (fs.existsSync(readme)) {
+    let content = fs.readFileSync(readme, 'utf-8');
+
+    // add changelog if exist
+    const changelog = [
+      path.join(__dirname, 'changelog.md'),
+      path.join(__dirname, 'CHANGELOG.md')
+    ].filter((str) => fs.existsSync(str))[0];
+    if (typeof changelog === 'string') {
+      content += '\n\n' + fs.readFileSync(changelog, 'utf-8');
+    }
+
+    const tmp = path.join(__dirname, 'tmp');
+    if (!fs.existsSync(tmp)) fs.mkdirSync(tmp);
+    fs.writeFileSync(path.join(tmp, 'readme.md'), content);
+  }
+}
+
+/**
  * TypeDoc options (see TypeDoc docs http://typedoc.org/api/interfaces/typedocoptionmap.html)
  * @type {import('typedoc').TypeDocOptions}
  */
@@ -56,7 +82,7 @@ const typedocOptions = {
     GitHub: 'https://github.com/dimaslanjaka'
   },
   inlineTags: ['@link'],
-  readme: './readme.md',
+  readme: './tmp/readme.md',
   tsconfig: fs.existsSync(path.join(__dirname, 'tsconfig.build.json'))
     ? './tsconfig.build.json'
     : fs.existsSync(path.join(__dirname, 'tsconfig-build.json'))

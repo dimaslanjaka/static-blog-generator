@@ -78,9 +78,9 @@ const publish = async function () {
       .trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
+      await github.add(pkgjson.name).catch(noop);
       await github
-        .addAndCommit(
-          pkgjson.name,
+        .commit(
           `${commit} update ${
             pkgjson.name
           } docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
