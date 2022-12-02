@@ -10,6 +10,7 @@ const pkgjson = require('./package.json');
 // required: npm i upath
 // required: npm i -D semver typedoc git-command-helper gulp
 // update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
+// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
 
 /**
  * Compile typedocs
