@@ -1,7 +1,15 @@
 const pjson = require('./package.json');
 const fs = require('fs');
-const path = require('path/posix');
+const path = require('upath');
 const { spawn } = require('cross-spawn');
+
+// postinstall scripts
+// run this script after `npm install`
+// requirements: npm i -D cross-spawn upath
+// update: curl https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/postinstall.js > postinstall.js
+// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/postinstall.js
+// raw: https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/postinstall.js
+// usages: node postinstall.js
 
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
