@@ -61,19 +61,22 @@ var SBG = /** @class */ (function () {
          */
         this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.base, gulp_config_1.default.public_dir)); };
         /**
-         * Copy all **src-post** to **source/_posts**
+         * Copy all **src-post** to **source/_posts** (run before generate)
          * * see the method {@link copyAllPosts}
          * @returns
          */
         this.copy = function () { return (0, gulp_post_1.copyAllPosts)(); };
         /**
-         * Anonymize external links
+         * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
-        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(); };
+        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.base, gulp_config_1.default.public_dir)); };
         if (typeof base === 'string')
             this.base = base;
     }
+    /**
+     * generate site with hexo
+     */
     SBG.prototype.generate = function () {
         return __awaiter(this, void 0, void 0, function () {
             var instance;
