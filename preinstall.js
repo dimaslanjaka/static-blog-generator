@@ -1,4 +1,32 @@
 const { spawn } = require('cross-spawn');
+const pjson = require('./package.json');
+const fs = require('fs');
+const path = require('path/posix');
+
+// cache file
+const cacheJSON = path.join(__dirname, 'tmp/cache/npm-install.json');
+if (!fs.existsSync(path.dirname(cacheJSON))) {
+  fs.mkdirSync(path.dirname(cacheJSON), { recursive: true });
+}
+if (!fs.existsSync(cacheJSON)) {
+  fs.writeFileSync(cacheJSON, '{}');
+}
+/**
+ * Get cache
+ * @returns {import('./tmp/cache/npm-install.json')}
+ */
+const getCache = () => require('./tmp/cache/npm-install.json');
+/**
+ * Save cache
+ * @param {any} data
+ * @returns
+ * @example
+ * const data = getCache()
+ * data['key']='value';
+ * saveCache(data)
+ */
+const saveCache = (data) =>
+  fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
 
 if (require.main === module) {
   // console.log('called directly');
@@ -7,6 +35,35 @@ if (require.main === module) {
     ['submodule', 'sync', '--recursive'],
     spawnOpt({ cwd: __dirname, stdio: 'inherit' })
   );
+
+  const packages = [pjson.dependencies, pjson.devDependencies];
+  for (let i = 0; i < packages.length; i++) {
+    const pkgs = packages[i];
+    //const isDev = i === 1; // <-- index devDependencies
+    for (const pkgname in pkgs) {
+      /**
+       * @type {string}
+       */
+      const version = pkgs[pkgname];
+
+      // delete node_modules/package folder of local packages
+      if (/^file:/i.test(version)) {
+        const nodeModules = path.join(__dirname, 'node_modules', pkgname);
+        if (fs.existsSync(nodeModules)) {
+          fs.rmSync(nodeModules, {
+            maxRetries: 3,
+            recursive: true,
+            force: true
+          });
+          const data = getCache();
+          data[pkgname] = Object.assign(data[pkgname] || {}, {
+            lastDelete: new Date().getTime()
+          });
+          saveCache(data);
+        }
+      }
+    }
+  }
 } else {
   // console.log('required as a module');
 }
