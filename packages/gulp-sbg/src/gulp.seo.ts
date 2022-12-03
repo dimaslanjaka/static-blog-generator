@@ -1,3 +1,4 @@
+import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { deployConfig } from './gulp.config';
@@ -38,7 +39,7 @@ export function autoSeo(cwd: string) {
         // count H1
         const h1 = this.querySelectorAll('h1');
         if (h1.length > 1) {
-          console.log(`[WARN] H1 (${h1.length}) ${path}`);
+          console.log(ansiColors.yellowBright('[WARN]'), `H1 (${h1.length}) ${path}`);
         }
       })
     )
