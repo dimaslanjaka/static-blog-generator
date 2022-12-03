@@ -19,7 +19,7 @@
 | Ryujin | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | Ryuukendo | SCAMMER ruby dengan alasan **harga pensi** / rate pensi |
 | hella | SCAMMER sebagai penjual telur rare, scam player **oishitamango** |
-| LORD | AKUN KEDUA **hella** |
+| LORD | AKUN KEDUA **[#hella](hella)** |
 
 ## Daftar player kategori tukang roll drop item
 
