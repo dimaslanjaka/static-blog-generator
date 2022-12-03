@@ -17,4 +17,8 @@ export declare const copySinglePost: (identifier: string, callback?: CallableFun
  * @returns
  */
 export declare function updatePost(): import("stream").Transform;
+/**
+ * copy all posts from src-posts to source/_posts
+ * @returns
+ */
 export declare function copyAllPosts(): NodeJS.ReadWriteStream;

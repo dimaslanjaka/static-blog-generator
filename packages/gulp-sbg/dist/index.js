@@ -3,7 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scheduler = exports.trycatchnoop = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.gulp = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.deployConfig = exports.ProjectConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = void 0;
+exports.scheduler = exports.trycatchnoop = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.gulp = exports.commitProject = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.deployConfig = exports.ProjectConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
+var api_1 = require("./api");
+Object.defineProperty(exports, "Application", { enumerable: true, get: function () { return __importDefault(api_1).default; } });
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
 Object.defineProperty(exports, "gulpCached", { enumerable: true, get: function () { return gulp_cache_1.gulpCached; } });
 var gulp_debug_1 = require("./gulp-utils/gulp.debug");
