@@ -23,18 +23,21 @@ class SBG {
   seo = () => autoSeo(join(this.base, ProjectConfig.public_dir));
 
   /**
-   * Copy all **src-post** to **source/_posts**
+   * Copy all **src-post** to **source/_posts** (run before generate)
    * * see the method {@link copyAllPosts}
    * @returns
    */
   copy = () => copyAllPosts();
 
   /**
-   * Anonymize external links
+   * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  safelink = () => safelinkProcess();
+  safelink = () => safelinkProcess(noop, join(this.base, ProjectConfig.public_dir));
 
+  /**
+   * generate site with hexo
+   */
   async generate() {
     const instance = new Hexo(this.base);
     await instance.init().catch(noop);
