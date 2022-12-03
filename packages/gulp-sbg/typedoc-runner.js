@@ -2,7 +2,7 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const { mkdirSync, existsSync } = require('fs');
+const { mkdirSync, existsSync, writeFileSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
@@ -71,6 +71,7 @@ const publish = async function () {
     await github.setbranch('master');
     //await github.reset('master');
     await github.pull(['--recurse-submodule']);
+    await github.spawn('git', 'config core.eol lf'.split(' '));
   } catch {
     //
   }
@@ -78,6 +79,24 @@ const publish = async function () {
   for (let i = 0; i < 2; i++) {
     await compile();
   }
+
+  writeFileSync(
+    join(outDir, '.gitattributes'),
+    `
+*           text=auto
+*.txt       text eol=lf
+*.json      text eol=lf
+*.txt       text
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
+*.ts        text eol=lf
+*.js        text eol=lf
+*.png       binary diff
+*.jpg       binary diff
+*.ico       binary diff
+*.pdf       binary diff
+`.trim()
+  );
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
