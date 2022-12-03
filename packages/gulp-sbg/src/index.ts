@@ -1,3 +1,4 @@
+export { default as Application } from './api';
 export { gulpCached } from './gulp-utils/gulp.cache';
 export { gulpDebug } from './gulp-utils/gulp.debug';
 export { cleanDb, del, del as deleteDir } from './gulp.clean';

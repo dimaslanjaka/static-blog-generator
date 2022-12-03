@@ -1,2 +1,8 @@
 import gulp from 'gulp';
-export declare function safelinkProcess(_done?: gulp.TaskFunctionCallback): Promise<unknown>;
+/**
+ * Process Safelink on Deploy Dir
+ * @param _done callback function
+ * @param cwd run on folder
+ * @returns
+ */
+export declare function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string): Promise<unknown>;

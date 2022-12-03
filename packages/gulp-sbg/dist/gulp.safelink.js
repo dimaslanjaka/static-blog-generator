@@ -120,12 +120,18 @@ var safelink = new safelinkify_1.default.safelink({
     password: configSafelink.password || config.external_link.safelink.password,
     type: configSafelink.type || config.external_link.safelink.type
 });
-function safelinkProcess(_done) {
+/**
+ * Process Safelink on Deploy Dir
+ * @param _done callback function
+ * @param cwd run on folder
+ * @returns
+ */
+function safelinkProcess(_done, cwd) {
     var _this = this;
     return new Promise(function (resolve) {
         gulp_1.default
             .src(['**/*.{html,htm}'], {
-            cwd: gulp_config_1.deployDir,
+            cwd: cwd || gulp_config_1.deployDir,
             ignore: [
                 // skip react project
                 //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',

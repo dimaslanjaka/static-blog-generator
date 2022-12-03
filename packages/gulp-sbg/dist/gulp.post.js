@@ -170,7 +170,10 @@ function updatePost() {
     });
 }
 exports.updatePost = updatePost;
-// copy all posts from src-posts to source/_posts
+/**
+ * copy all posts from src-posts to source/_posts
+ * @returns
+ */
 function copyAllPosts() {
     var _this = this;
     var excludes = Array.isArray(gulp_config_1.default.exclude) ? gulp_config_1.default.exclude : [];
