@@ -4,7 +4,7 @@ Static Blog Generator using Gulp System.
 
 Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.
 
-API documentation: [https://www.webmanajemen.com/docs/gulp-sbg/modules/](https://www.webmanajemen.com/docs/gulp-sbg/modules/)
+API documentation: [https://www.webmanajemen.com/docs/static-blog-generator/modules/](https://www.webmanajemen.com/docs/static-blog-generator/modules/)
 
 Usages:
   - [https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/gulpfile.js](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/gulpfile.js)
