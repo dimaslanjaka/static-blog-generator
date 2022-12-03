@@ -129,21 +129,12 @@ var safelink = new safelinkify_1.default.safelink({
 function safelinkProcess(_done, cwd) {
     var _this = this;
     return new Promise(function (resolve) {
+        var _a;
+        var _b, _c, _d;
         gulp_1.default
             .src(['**/*.{html,htm}'], {
             cwd: cwd || gulp_config_1.deployDir,
-            ignore: [
-                // skip react project
-                //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
-                '**/chimeraland/recipes.html',
-                // skip tools
-                '**/embed.html',
-                '**/tools.html',
-                '**/safelink.html',
-                // package registry
-                '**/node_modules/**',
-                '**/vendor/**'
-            ]
+            ignore: (_a = []).concat.apply(_a, __spreadArray(__spreadArray([], __read((((_b = gulp_config_1.default.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || [])), false), __read((((_d = (_c = gulp_config_1.default.external_link) === null || _c === void 0 ? void 0 : _c.safelink) === null || _d === void 0 ? void 0 : _d.exclude) || [])), false))
         })
             .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
             var content, parsed;
