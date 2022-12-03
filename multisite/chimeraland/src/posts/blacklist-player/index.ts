@@ -33,11 +33,14 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
     if (player && !/nama player/gim.test(player.innerHTML)) {
       // console.log(player.innerHTML)
       player.setAttribute('notranslate', '')
-      player.setAttribute('id', slugify(player.innerHTML))
+      // add attribute id to player nickname
+      const id = slugify(player.innerHTML)
+      if (!dom.window.document.getElementById(id)) player.setAttribute('id', id)
     }
   })
 })
 
+// remove .header-ancor
 Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
   if (/anchor/gim.test(el.getAttribute('class') || '')) {
     el.removeAttribute('class')
