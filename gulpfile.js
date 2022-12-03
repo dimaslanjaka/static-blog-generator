@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sbg = require('gulp-sbg');
+const sbg = require('static-blog-generator');
 
 exports.sbg = sbg;
 exports = gulp;
