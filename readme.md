@@ -12,12 +12,12 @@ npm run build
 
 ## My other packages
 
-### static-blog-generator
+### [static-blog-generator](https://github.com/dimaslanjaka/static-blog-generator)
 ![sbg](https://badgen.net/github/last-commit/dimaslanjaka/static-blog-generator?style=flat-square&label=last+commit+dev)
 ![types](https://badgen.net/npm/types/static-blog-generator?style=flat-square)
 ![version](https://badgen.net/npm/v/static-blog-generator?style=flat-square)
 
-### hexo-adsense
+### [hexo-adsense](https://github.com/dimaslanjaka/hexo-adsense)
 [![npm version](https://badge.fury.io/js/hexo-adsense.svg?style=flat-square)](https://badge.fury.io/js/hexo-adsense)
 ![types](https://badgen.net/npm/types/hexo-adsense?style=flat-square)
 [![Npm package yearly downloads](https://badgen.net/npm/dy/hexo-adsense?style=flat-square)](https://npmjs.com/package/hexo-adsense)
