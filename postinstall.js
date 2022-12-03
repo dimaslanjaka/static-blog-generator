@@ -4,7 +4,8 @@ const path = require('path/posix');
 const { spawn } = require('cross-spawn');
 
 // cache file
-const cacheJSON = path.join(__dirname, 'tmp/cache/npm-install.json');
+const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
+console.log('cache json', cacheJSON);
 if (!fs.existsSync(path.dirname(cacheJSON))) {
   fs.mkdirSync(path.dirname(cacheJSON), { recursive: true });
 }
@@ -13,9 +14,9 @@ if (!fs.existsSync(cacheJSON)) {
 }
 /**
  * Get cache
- * @returns {import('./tmp/cache/npm-install.json')}
+ * @returns {import('./node_modules/cache/npm-install.json')}
  */
-const getCache = () => require('./tmp/cache/npm-install.json');
+const getCache = () => require('./node_modules/.cache/npm-install.json');
 
 /**
  * Save cache

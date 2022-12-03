@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path/posix');
 
 // cache file
-const cacheJSON = path.join(__dirname, 'tmp/cache/npm-install.json');
+const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
+console.log('cache json', cacheJSON);
 if (!fs.existsSync(path.dirname(cacheJSON))) {
   fs.mkdirSync(path.dirname(cacheJSON), { recursive: true });
 }
@@ -13,9 +14,10 @@ if (!fs.existsSync(cacheJSON)) {
 }
 /**
  * Get cache
- * @returns {import('./tmp/cache/npm-install.json')}
+ * @returns {import('./node_modules/cache/npm-install.json')}
  */
-const getCache = () => require('./tmp/cache/npm-install.json');
+const getCache = () => require('./node_modules/.cache/npm-install.json');
+
 /**
  * Save cache
  * @param {any} data
@@ -47,6 +49,17 @@ if (require.main === module) {
       const version = pkgs[pkgname];
 
       // delete node_modules/package folder of local packages
+      const pkgdatacache = getCache()[pkgname] || {};
+      if ('lastDelete' in pkgdatacache) {
+        const lastDelete = pkgdatacache.lastDelete;
+        const now = new Date();
+        const msBetweenDates = Math.abs(lastDelete - now.getTime());
+        // 👇️ convert ms to hours                  min  sec   ms
+        const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000);
+
+        // skip if already deleted in 24 hours
+        if (hoursBetweenDates < 24) continue;
+      }
       if (/^file:/i.test(version)) {
         const nodeModules = path.join(__dirname, 'node_modules', pkgname);
         if (fs.existsSync(nodeModules)) {
@@ -56,8 +69,9 @@ if (require.main === module) {
             force: true
           });
           const data = getCache();
-          data[pkgname] = Object.assign(data[pkgname] || {}, {
-            lastDelete: new Date().getTime()
+          data[pkgname] = Object.assign(pkgdatacache, {
+            lastDelete: new Date().getTime(),
+            nodeModules
           });
           saveCache(data);
         }
