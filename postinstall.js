@@ -41,6 +41,12 @@ const saveCache = (data) =>
 (async () => {
   // @todo clear cache local packages
   const packages = [pjson.dependencies, pjson.devDependencies];
+  /**
+   * list packages to update
+   * @type {string[]}
+   */
+  const toUpdate = [];
+
   for (let i = 0; i < packages.length; i++) {
     const pkgs = packages[i];
     //const isDev = i === 1; // <-- index devDependencies
@@ -51,38 +57,61 @@ const saveCache = (data) =>
       const version = pkgs[pkgname];
       // re-installing local and monorepo package
       if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
-        const isYarn = fs.existsSync(path.join(__dirname, 'yarn.lock'));
         //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-
-        if (isYarn) {
-          // yarn upgrade package
-          await summon('yarn', ['upgrade'].concat(pkgname), {
-            cwd: __dirname,
-            stdio: 'inherit'
-          }).finally(function () {
-            // save to cache
-            const data = getCache();
-            data[pkgname] = Object.assign(data[pkgname] || {}, {
-              lastInstall: new Date().getTime()
-            });
-            saveCache(data);
-          });
-        } else {
-          // npm update package
-          await summon('npm', ['update'].concat(pkgname), {
-            cwd: __dirname,
-            stdio: 'inherit'
-          }).finally(function () {
-            // save to cache
-            const data = getCache();
-            data[pkgname] = Object.assign(data[pkgname] || {}, {
-              lastInstall: new Date().getTime()
-            });
-            saveCache(data);
-          });
-        }
+        toUpdate.push(pkgname);
       }
     }
+  }
+
+  // do update
+
+  const isYarn = fs.existsSync(path.join(__dirname, 'yarn.lock'));
+
+  const updateCache = () => {
+    // save to cache
+    const data = getCache();
+    for (let i = 0; i < toUpdate.length; i++) {
+      const pkgname = toUpdate[i];
+      data[pkgname] = Object.assign(data[pkgname] || {}, {
+        lastInstall: new Date().getTime()
+      });
+    }
+
+    saveCache(data);
+  };
+
+  /**
+   * check if all packages exists
+   * @returns
+   */
+  const checkNodeModules = () => {
+    const exists = toUpdate.map(
+      (pkgname) =>
+        fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
+        fs.existsSync(
+          path.join(__dirname, 'node_modules', pkgname, 'package.json')
+        )
+    );
+    //console.log({ exists });
+    return exists.every((exist) => exist === true);
+  };
+
+  if (checkNodeModules()) {
+    if (isYarn) {
+      // yarn upgrade package
+      await summon('yarn', ['upgrade'].concat(...toUpdate), {
+        cwd: __dirname,
+        stdio: 'inherit'
+      }).finally(updateCache);
+    } else {
+      // npm update package
+      await summon('npm', ['update'].concat(...toUpdate), {
+        cwd: __dirname,
+        stdio: 'inherit'
+      }).finally(updateCache);
+    }
+  } else {
+    console.log('some packages already deleted from node_modules');
   }
 })();
 
