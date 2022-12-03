@@ -40,6 +40,14 @@ Array.from(dom.window.document.querySelectorAll('table')).forEach(function (
   })
 })
 
+Array.from(dom.window.document.querySelectorAll('*')).forEach(function (el){
+  let style = el.getAttribute('style')||'';
+  if (!style.includes('vertical-align')){
+    if (!style.endsWith(';')) style += ';';
+    style += 'vertical-align: unset;';
+  }
+});
+
 // remove .header-ancor
 Array.from(dom.window.document.querySelectorAll('a')).forEach((el) => {
   if (/anchor/gim.test(el.getAttribute('class') || '')) {
