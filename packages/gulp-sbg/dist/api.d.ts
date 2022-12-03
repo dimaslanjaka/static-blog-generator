@@ -7,7 +7,7 @@ declare class SBG {
      */
     constructor(base?: null | string);
     /**
-     * Auto seo on public dir (run after generated)
+     * Auto seo on public dir (_config_yml.public_dir) (run after generated)
      * @returns
      */
     seo: () => NodeJS.ReadWriteStream;
@@ -22,5 +22,6 @@ declare class SBG {
      * @returns
      */
     safelink: () => Promise<unknown>;
+    generate(): Promise<void>;
 }
 export default SBG;
