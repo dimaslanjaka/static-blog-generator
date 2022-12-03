@@ -63,12 +63,15 @@ const publish = async function () {
     }
     await github.setremote(REPO_URL);
     await github.setbranch('master');
-    await github.reset('master');
+    //await github.reset('master');
+    await github.pull(['--recurse-submodule']);
   } catch {
     //
   }
 
-  await compile();
+  for (let i = 0; i < 2; i++) {
+    await compile();
+  }
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
