@@ -45,18 +45,10 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
     gulp
       .src(['**/*.{html,htm}'], {
         cwd: cwd || deployDir,
-        ignore: [
-          // skip react project
-          //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
-          '**/chimeraland/recipes.html',
-          // skip tools
-          '**/embed.html',
-          '**/tools.html',
-          '**/safelink.html',
-          // package registry
-          '**/node_modules/**',
-          '**/vendor/**'
-        ]
+        ignore: ([] as string[]).concat(
+          ...(ProjectConfig.external_link?.exclude || []),
+          ...(ProjectConfig.external_link?.safelink?.exclude || [])
+        )
       })
       .pipe(
         through2.obj(async (file, _enc, next) => {
