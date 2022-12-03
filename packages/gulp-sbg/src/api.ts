@@ -1,5 +1,7 @@
+import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { join, toUnix } from 'upath';
+import { cleanDb } from './gulp.clean';
 import ProjectConfig from './gulp.config';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
@@ -27,7 +29,13 @@ class SBG {
    * * see the method {@link copyAllPosts}
    * @returns
    */
-  copy = () => copyAllPosts();
+  copy = () => {
+    return new Bluebird((resolve) => {
+      copyAllPosts().once('end', function () {
+        resolve.bind(this)();
+      });
+    });
+  };
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
@@ -43,6 +51,11 @@ class SBG {
     await instance.init().catch(noop);
     await instance.call('generate').catch(noop);
   }
+
+  /**
+   * clean cache, auto generated posts, etc
+   */
+  clean = cleanDb();
 }
 
 export default SBG;

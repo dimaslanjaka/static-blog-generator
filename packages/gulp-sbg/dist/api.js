@@ -39,8 +39,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var bluebird_1 = __importDefault(require("bluebird"));
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
+var gulp_clean_1 = require("./gulp.clean");
 var gulp_config_1 = __importDefault(require("./gulp.config"));
 var gulp_post_1 = require("./gulp.post");
 var gulp_safelink_1 = require("./gulp.safelink");
@@ -65,12 +67,22 @@ var SBG = /** @class */ (function () {
          * * see the method {@link copyAllPosts}
          * @returns
          */
-        this.copy = function () { return (0, gulp_post_1.copyAllPosts)(); };
+        this.copy = function () {
+            return new bluebird_1.default(function (resolve) {
+                (0, gulp_post_1.copyAllPosts)().once('end', function () {
+                    resolve.bind(this)();
+                });
+            });
+        };
         /**
          * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
         this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.base, gulp_config_1.default.public_dir)); };
+        /**
+         * clean cache, auto generated posts, etc
+         */
+        this.clean = (0, gulp_clean_1.cleanDb)();
         if (typeof base === 'string')
             this.base = base;
     }
