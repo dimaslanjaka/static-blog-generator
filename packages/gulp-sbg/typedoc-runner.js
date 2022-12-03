@@ -15,6 +15,8 @@ const { spawn } = require('cross-spawn');
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
+let compiled = 0;
+
 /**
  * Compile typedocs
  */
@@ -28,6 +30,10 @@ const compile = async function () {
 
   if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
   const options = Object.assign({}, typedocOptions);
+
+  // disable delete dir while running twice
+  if (compiled > 0) options.cleanOutputDir = false;
+  compiled++;
 
   const app = new typedocModule.Application();
   if (semver.gte(typedocModule.Application.VERSION, '0.16.1')) {
@@ -82,7 +88,8 @@ const publish = async function () {
       await github
         .commit(`update ${pkgjson.name} docs [${commit}] \nat ${new Date()}\nsource: ${remote}/commit/${commit}`)
         .catch(noop);
-      if (await github.canPush().catch(noop)) {
+      const isCanPush = await github.canPush().catch(noop);
+      if (isCanPush) {
         await github.push().catch(noop);
       }
     }
