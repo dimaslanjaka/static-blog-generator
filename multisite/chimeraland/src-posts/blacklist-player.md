@@ -33,6 +33,8 @@ author: L3n4r0x
     border: 1px solid #e0e0e0;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 
   #translator-wrapper img {
@@ -114,6 +116,7 @@ author: L3n4r0x
   }
 </style>
 <div id="translator-wrapper" notranslate>
+  <center>Translate</center>
   <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png" alt="Translate" id="t-icon">
   <select id="translate-language">
     <option value="en" selected="selected">English</option>
@@ -253,7 +256,7 @@ author: L3n4r0x
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left" notranslate="" id="Shelby">Shelby</td>
+<td style="text-align:left" notranslate="">Shelby</td>
 <td style="text-align:left">SCAMMER ruby</td>
 </tr>
 <tr>
@@ -278,7 +281,7 @@ author: L3n4r0x
 </tr>
 <tr>
 <td style="text-align:left" notranslate="" id="LORD">LORD</td>
-<td style="text-align:left">AKUN KEDUA <strong>hella</strong></td>
+<td style="text-align:left">AKUN KEDUA <strong><a href="hella">#hella</a></strong></td>
 </tr>
 </tbody>
 </table>
@@ -296,11 +299,11 @@ author: L3n4r0x
 <td style="text-align:left">Roll drops items</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="" id="Shelby">Shelby</td>
+<td style="text-align:left" notranslate="">Shelby</td>
 <td style="text-align:left">Roll drops items</td>
 </tr>
 <tr>
-<td style="text-align:left" notranslate="" id="PrimalHunter">PrimalHunter</td>
+<td style="text-align:left" notranslate="">PrimalHunter</td>
 <td style="text-align:left">Roll drops items</td>
 </tr>
 </tbody>
@@ -323,7 +326,7 @@ author: L3n4r0x
 <h2 id="hindari-hal-hal-berikut-agar-tidak-kena-scam" tabindex="-1"><a href="#hindari-hal-hal-berikut-agar-tidak-kena-scam">Hindari Hal-Hal Berikut Agar Tidak Kena Scam</a></h2>
 <ul>
 <li>Jangan ikut map illus dengan tiket telur grand (kebanyakan orang-orang ini hanya akan mengambil telur grand anda saja lalu menendang anda dari tim).</li>
-<li>Jangan melakukan transaksi dengan <strong>AKUN SMURF</strong>, 90% merupakan scammer.</li>
+<li>Jangan melakukan transaksi dengan <strong>AKUN SMURF</strong> (orang indonesia menyebutnya <strong>AKUN TUYUL</strong>), 90% merupakan scammer.</li>
 </ul>
 <blockquote>
 <p>shortlink halaman ini: <a href="http://bit.ly/chimeraland-blacklist">http://bit.ly/chimeraland-blacklist</a></p>
