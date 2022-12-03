@@ -1,8 +1,10 @@
+import Hexo from 'hexo';
 import { join, toUnix } from 'upath';
 import ProjectConfig from './gulp.config';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
 import { autoSeo } from './gulp.seo';
+import noop from './utils/noop';
 
 class SBG {
   base: string = toUnix(process.cwd());
@@ -15,7 +17,7 @@ class SBG {
   }
 
   /**
-   * Auto seo on public dir (run after generated)
+   * Auto seo on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
   seo = () => autoSeo(join(this.base, ProjectConfig.public_dir));
@@ -32,6 +34,12 @@ class SBG {
    * @returns
    */
   safelink = () => safelinkProcess();
+
+  async generate() {
+    const instance = new Hexo(this.base);
+    await instance.init().catch(noop);
+    await instance.call('generate').catch(noop);
+  }
 }
 
 export default SBG;
