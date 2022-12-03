@@ -30,6 +30,8 @@ declare module 'hexo-util' {
   export const unescapeHTML: (str: any) => string;
   export const url_for: typeof import('./url_for');
   export const wordWrap: typeof import('./word_wrap');
-  export { createSha1Hash, hash };
+  export const hash: typeof import('./hash').hash
+  export const createSha1Hash: typeof import('./hash').createSha1Hash
   //# sourceMappingURL=index.d.ts.map
 }
+
