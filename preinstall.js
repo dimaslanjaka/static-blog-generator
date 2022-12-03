@@ -1,7 +1,15 @@
 const { spawn } = require('cross-spawn');
 const pjson = require('./package.json');
 const fs = require('fs');
-const path = require('path/posix');
+const path = require('upath');
+
+// preinstall scripts
+// run this script after `npm install`
+// requirements: npm i -D cross-spawn upath
+// update: curl https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js > preinstall.js
+// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/preinstall.js
+// raw: https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js
+// usages: node preinstall.js
 
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
