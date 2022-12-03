@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.autoSeo = void 0;
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var gulp_1 = __importDefault(require("gulp"));
 var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var gulp_config_1 = require("./gulp.config");
@@ -40,7 +41,7 @@ function autoSeo(cwd) {
         // count H1
         var h1 = this.querySelectorAll('h1');
         if (h1.length > 1) {
-            console.log("[WARN] H1 (".concat(h1.length, ") ").concat(path));
+            console.log(ansi_colors_1.default.yellowBright('[WARN]'), "H1 (".concat(h1.length, ") ").concat(path));
         }
     }))
         .pipe(gulp_1.default.dest(cwd));
