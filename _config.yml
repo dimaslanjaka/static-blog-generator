@@ -78,6 +78,14 @@ external_link:
     exclude:
       - webmanajemen.com
       - git.webmanajemen.com
+      - '**/chimeraland/recipes.html'
+      # skip tools
+      - '**/embed.html'
+      - '**/tools.html'
+      - '**/safelink.html'
+      # package registry
+      - '**/node_modules/**'
+      - '**/vendor/**'
     # safelink url
     redirect: https://www.webmanajemen.com/page/safelink.html?url=
     type: base64

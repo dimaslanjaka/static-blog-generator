@@ -34,11 +34,17 @@ const safelink = new sf.safelink({
   type: configSafelink.type || config.external_link.safelink.type
 });
 
-export function safelinkProcess(_done?: gulp.TaskFunctionCallback) {
+/**
+ * Process Safelink on Deploy Dir
+ * @param _done callback function
+ * @param cwd run on folder
+ * @returns
+ */
+export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string) {
   return new Promise((resolve) => {
     gulp
       .src(['**/*.{html,htm}'], {
-        cwd: deployDir,
+        cwd: cwd || deployDir,
         ignore: [
           // skip react project
           //'**/chimeraland/{monsters,attendants,recipes,materials,scenic-spots}/**/*.html',
