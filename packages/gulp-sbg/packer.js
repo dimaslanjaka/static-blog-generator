@@ -106,7 +106,7 @@ npm i https://....url-tgz
 \`\`\`
 for example
 \`\`\`bash
-npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-sbg/release/gulp-sbg.tgz
+npm i https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-sbg/release/static-blog-generator.tgz
 \`\`\`
 
 ## URL Parts Explanations
