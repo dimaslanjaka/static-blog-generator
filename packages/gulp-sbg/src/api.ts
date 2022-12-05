@@ -7,6 +7,7 @@ import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
 import { autoSeo } from './gulp.seo';
 import noop from './utils/noop';
+import { asyncCopyGen } from './gulp.deploy';
 
 class SBG {
   base: string = toUnix(process.cwd());
@@ -50,6 +51,7 @@ class SBG {
     const instance = new Hexo(this.base);
     await instance.init().catch(noop);
     await instance.call('generate').catch(noop);
+    await asyncCopyGen();
   }
 
   /**
