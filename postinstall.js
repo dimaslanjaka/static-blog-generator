@@ -6,7 +6,7 @@ const { spawn } = require('cross-spawn');
 // postinstall scripts
 // run this script after `npm install`
 // requirements: npm i -D cross-spawn upath
-// update: curl https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/postinstall.js > postinstall.js
+// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/postinstall.js > postinstall.js
 // repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/postinstall.js
 // raw: https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/postinstall.js
 // usages: node postinstall.js
