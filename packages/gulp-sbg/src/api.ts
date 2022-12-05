@@ -49,8 +49,11 @@ class SBG {
    */
   async generate() {
     const instance = new Hexo(this.base);
+    // hexo init
     await instance.init().catch(noop);
+    // hexo generate
     await instance.call('generate').catch(noop);
+    // copy generated files to deployment directory
     await asyncCopyGen();
   }
 
