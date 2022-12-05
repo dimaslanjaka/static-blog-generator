@@ -21,7 +21,7 @@ const ProjectConfig = parse as ProjConf;
 export default ProjectConfig;
 export const deployDir = join(process.cwd(), '.deploy_' + ProjectConfig.deploy?.type || 'git');
 export function deployConfig() {
-  const config = ProjectConfig;
+  const config = ProjectConfig.deploy || {};
   const github = new git(deployDir);
   return { deployDir, config, github };
 }
