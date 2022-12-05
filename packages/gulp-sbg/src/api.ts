@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { join, toUnix } from 'upath';
 import { cleanDb } from './gulp.clean';
-import ProjectConfig from './gulp.config';
+import ProjectConfig, { deployConfig } from './gulp.config';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
 import { autoSeo } from './gulp.seo';
@@ -55,6 +55,17 @@ class SBG {
     await instance.call('generate').catch(noop);
     // copy generated files to deployment directory
     await asyncCopyGen();
+  }
+  
+  async deploy() {
+    // run generate task
+    await generate();
+    const { github, config } = deployConfig();
+    await github.init().catch(noop);
+    await github.setremote(config.repo).catch(noop);
+    await github.setuser(config.username).catch(noop);
+    await github.setemail(config.email).catch(noop);
+    await github.setbranch(config.branch).catch(noop);
   }
 
   /**
