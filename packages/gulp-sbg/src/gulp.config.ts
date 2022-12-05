@@ -19,7 +19,7 @@ export interface ProjConf extends importConfig {
 const ProjectConfig = parse as ProjConf;
 
 export default ProjectConfig;
-export const deployDir = join(process.cwd(), '.deploy_git');
+export const deployDir = join(process.cwd(), '.deploy_' + ProjectConfig.deploy?.type || 'git');
 export function deployConfig() {
   const config = ProjectConfig;
   const github = new git(deployDir);
