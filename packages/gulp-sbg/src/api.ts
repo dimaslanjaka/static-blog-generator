@@ -53,13 +53,14 @@ class SBG {
     await instance.init().catch(noop);
     // hexo generate
     await instance.call('generate').catch(noop);
-    // copy generated files to deployment directory
-    await asyncCopyGen();
   }
   
   async deploy() {
     // run generate task
     await generate();
+    // copy generated files to deployment directory
+    await asyncCopyGen();
+    // deployment start
     const { github, config } = deployConfig();
     await github.init().catch(noop);
     await github.setremote(config.repo).catch(noop);
