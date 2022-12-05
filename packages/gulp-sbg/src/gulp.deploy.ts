@@ -44,7 +44,7 @@ function pull() {
   return new Promise((resolve) => {
     const { deployDir, github, config } = deployConfig();
     github
-      .setremote(config.deploy.repo)
+      .setremote(config.repo)
       .then(() => {
         return new Promise((resolveInit) => {
           if (!existsSync(deployDir)) {
@@ -54,10 +54,10 @@ function pull() {
           }
         });
       })
-      .then(() => github.setuser(config.deploy.username))
-      .then(() => github.setemail(config.deploy.email))
+      .then(() => github.setuser(config.username))
+      .then(() => github.setemail(config.email))
       // reset repository to latest commit
-      .then(() => github.reset(config.deploy.branch))
+      .then(() => github.reset(config.branch))
       // pull any changes inside submodule from their latest commit
       .then(() => {
         github.pull(['--recurse-submodule']).then(() => {
@@ -107,7 +107,7 @@ function status(done?: gulp.TaskFunctionCallback) {
 
 function commit() {
   const { github, config } = deployConfig();
-  const now = moment().tz(config.timezone).format('LLL');
+  const now = moment().tz(ProjectConfig.timezone).format('LLL');
   const commitRoot = function () {
     return new Promise((resolve) => {
       github.status().then((changes) => {
