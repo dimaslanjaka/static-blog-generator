@@ -7,9 +7,10 @@ import { join, toUnix } from 'upath';
 import './gulp.clean';
 import ProjectConfig, { deployConfig } from './gulp.config';
 import './gulp.safelink';
+import Bluebird from 'bluebird';
 
 /**
- * copy generated files to deploy dir
+ * copy generated files (_config_yml.public_dir) to deploy dir (run after generated)
  * @returns
  */
 export function copyGen() {
@@ -22,6 +23,18 @@ export function copyGen() {
     })
     .pipe(gulp.dest(deployDir))
     .on('error', console.trace);
+}
+
+/**
+ * asynchronous copy generated files (_config_yml.public_dir) to deploy dir (run after generated)
+ * @returns
+ */
+export function asyncCopyGen() {
+  return new Bluebird(function(resolve){
+    copyGen().once('end', function(){
+      resolve(null);
+    });
+  });
 }
 
 // copy public to .deploy_git
