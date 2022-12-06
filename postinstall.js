@@ -120,6 +120,7 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
       await updateCache();
 
       const argv = process.argv;
+      // node postinstall.js --commit
       if (fs.existsSync(path.join(__dirname, '.git')) && argv.includes('--commit')) {
         await summon('git', ['add', 'package.json'], { cwd: __dirname });
         await summon('git', ['add', 'package-lock.json'], { cwd: __dirname });
