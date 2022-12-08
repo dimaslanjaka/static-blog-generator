@@ -27,6 +27,7 @@ declare class SBG {
      * generate site with hexo
      */
     generate(): Promise<void>;
+    deploy(): Promise<void>;
     /**
      * clean cache, auto generated posts, etc
      */

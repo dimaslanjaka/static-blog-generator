@@ -2,38 +2,7 @@ import { existsSync } from 'fs';
 import gulp from 'gulp';
 import sf from 'safelinkify';
 import through2 from 'through2';
-
 import ProjectConfig, { deployDir } from './gulp.config';
-
-const config = ProjectConfig;
-
-const configSafelink = Object.assign({ enable: false }, config.external_link?.safelink || {});
-let baseURL = '';
-try {
-  baseURL = new URL(config.url).host;
-} catch {
-  //
-}
-const safelink = new sf.safelink({
-  // exclude patterns (dont anonymize these patterns)
-  exclude: [
-    ...(config.external_link?.exclude || []),
-    /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
-    /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
-    baseURL,
-    'www.webmanajemen.com',
-    'https://github.com/dimaslanjaka',
-    'https://facebook.com/dimaslanjaka1',
-    'dimaslanjaka.github.io',
-    ...configSafelink.exclude
-  ].filter(function (x, i, a) {
-    // remove duplicate and empties
-    return a.indexOf(x) === i && x.toString().trim().length !== 0;
-  }),
-  redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
-  password: configSafelink.password || config.external_link.safelink.password,
-  type: configSafelink.type || config.external_link.safelink.type
-});
 
 /**
  * Process Safelink on Deploy Dir
@@ -43,6 +12,36 @@ const safelink = new sf.safelink({
  */
 export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string) {
   return new Promise((resolve) => {
+    const config = ProjectConfig;
+
+    const configSafelink = Object.assign({ enable: false }, config.external_link?.safelink || {});
+    let baseURL = '';
+    try {
+      baseURL = new URL(config.url).host;
+    } catch {
+      //
+    }
+    const safelink = new sf.safelink({
+      // exclude patterns (dont anonymize these patterns)
+      exclude: [
+        ...(config.external_link?.exclude || []),
+        /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
+        /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
+        baseURL,
+        'www.webmanajemen.com',
+        'https://github.com/dimaslanjaka',
+        'https://facebook.com/dimaslanjaka1',
+        'dimaslanjaka.github.io',
+        ...configSafelink.exclude
+      ].filter(function (x, i, a) {
+        // remove duplicate and empties
+        return a.indexOf(x) === i && x.toString().trim().length !== 0;
+      }),
+      redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
+      password: configSafelink.password || config.external_link.safelink.password,
+      type: configSafelink.type || config.external_link.safelink.type
+    });
+
     const folder = cwd || deployDir;
     if (existsSync(folder)) {
       return gulp

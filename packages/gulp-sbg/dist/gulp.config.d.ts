@@ -8,7 +8,15 @@ export default ProjectConfig;
 export declare const deployDir: string;
 export declare function deployConfig(): {
     deployDir: string;
-    config: ProjConf;
+    config: {
+        type: string;
+        repo: string;
+        branch: string;
+        message: string;
+        hostname: string;
+        username: string;
+        email: string;
+    };
     github: git;
 };
 export declare const commonIgnore: string[];

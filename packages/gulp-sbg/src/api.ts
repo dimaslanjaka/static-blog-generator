@@ -54,10 +54,10 @@ class SBG {
     // hexo generate
     await instance.call('generate').catch(noop);
   }
-  
+
   async deploy() {
     // run generate task
-    await generate();
+    await this.generate();
     // copy generated files to deployment directory
     await asyncCopyGen();
     // deployment start
