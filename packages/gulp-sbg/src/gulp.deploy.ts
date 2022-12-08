@@ -1,4 +1,5 @@
 import ansiColors from 'ansi-colors';
+import Bluebird from 'bluebird';
 import { existsSync } from 'fs';
 import { gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
@@ -7,7 +8,6 @@ import { join, toUnix } from 'upath';
 import './gulp.clean';
 import ProjectConfig, { deployConfig } from './gulp.config';
 import './gulp.safelink';
-import Bluebird from 'bluebird';
 
 /**
  * copy generated files (_config_yml.public_dir) to deploy dir (run after generated)
@@ -30,8 +30,8 @@ export function copyGen() {
  * @returns
  */
 export function asyncCopyGen() {
-  return new Bluebird(function(resolve){
-    copyGen().once('end', function(){
+  return new Bluebird(function (resolve) {
+    copyGen().once('end', function () {
       resolve(null);
     });
   });
@@ -106,7 +106,7 @@ function status(done?: gulp.TaskFunctionCallback) {
 }
 
 function commit() {
-  const { github, config } = deployConfig();
+  const { github } = deployConfig();
   const now = moment().tz(ProjectConfig.timezone).format('LLL');
   const commitRoot = function () {
     return new Promise((resolve) => {
