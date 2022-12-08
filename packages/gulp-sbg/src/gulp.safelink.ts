@@ -1,3 +1,4 @@
+import { existsSync } from 'fs';
 import gulp from 'gulp';
 import sf from 'safelinkify';
 import through2 from 'through2';
@@ -42,34 +43,39 @@ const safelink = new sf.safelink({
  */
 export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string) {
   return new Promise((resolve) => {
-    gulp
-      .src(['**/*.{html,htm}'], {
-        cwd: cwd || deployDir,
-        ignore: ([] as string[]).concat(
-          ...(ProjectConfig.external_link?.exclude || []),
-          ...(ProjectConfig.external_link?.safelink?.exclude || [])
-        )
-      })
-      .pipe(
-        through2.obj(async (file, _enc, next) => {
-          // drop null
-          if (file.isNull() || file.isDirectory() || !file) return next();
-          if (file.isBuffer()) {
-            // do safelinkify
-            const content = file.contents.toString('utf-8');
-            const parsed = await safelink.parse(content);
-            if (parsed) {
-              file.contents = Buffer.from(parsed);
-              return next(null, file);
-            }
-          }
-          console.log('cannot parse', file.path);
-          // drop fails
-          next();
+    const folder = cwd || deployDir;
+    if (existsSync(folder)) {
+      return gulp
+        .src(['**/*.{html,htm}'], {
+          cwd: folder,
+          ignore: ([] as string[]).concat(
+            ...(ProjectConfig.external_link?.exclude || []),
+            ...(ProjectConfig.external_link?.safelink?.exclude || [])
+          )
         })
-      )
-      .pipe(gulp.dest(deployDir))
-      .once('end', () => resolve(null));
+        .pipe(
+          through2.obj(async (file, _enc, next) => {
+            // drop null
+            if (file.isNull() || file.isDirectory() || !file) return next();
+            if (file.isBuffer() && Buffer.isBuffer(file.contents)) {
+              // do safelinkify
+              const content = file.contents.toString('utf-8');
+              const parsed = await safelink.parse(content);
+              if (typeof parsed === 'string') {
+                // console.log(parsed);
+                file.contents = Buffer.from(parsed);
+                return next(null, file);
+              }
+            }
+            console.log('cannot parse', file.path);
+            // drop fails
+            next();
+          })
+        )
+        .pipe(gulp.dest(deployDir))
+        .once('end', () => resolve(null));
+    }
+    return resolve(null);
   });
 }
 
