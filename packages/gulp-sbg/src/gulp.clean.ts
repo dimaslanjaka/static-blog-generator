@@ -15,7 +15,7 @@ export async function cleanDb() {
   const publicDir = join(process.cwd(), config.public_dir);
   const tmpDir = join(process.cwd(), 'tmp');
 
-  console.log({ tmpDir, postDir, publicDir });
+  console.log('[clean]', { tmpDir, postDir, publicDir });
 
   try {
     if (existsSync(tmpDir)) await del(tmpDir);

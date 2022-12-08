@@ -1,4 +1,4 @@
-source/_posts/**/*.md
+source/_posts/**/*
 tmp
 .cache
 .deploy_git
