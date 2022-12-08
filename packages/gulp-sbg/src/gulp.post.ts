@@ -136,8 +136,8 @@ export function updatePost() {
 export function copyAllPosts() {
   const excludes = Array.isArray(ProjectConfig.exclude) ? ProjectConfig.exclude : [];
   excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-  console.log('cwd', toUnix(process.cwd()));
-  console.log('copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
+  console.log('[copy] cwd', toUnix(process.cwd()));
+  console.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
   return (
     gulp
       .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
