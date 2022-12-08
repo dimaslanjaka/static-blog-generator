@@ -89,6 +89,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.safelinkProcess = void 0;
+var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
@@ -131,39 +132,44 @@ function safelinkProcess(_done, cwd) {
     return new Promise(function (resolve) {
         var _a;
         var _b, _c, _d;
-        gulp_1.default
-            .src(['**/*.{html,htm}'], {
-            cwd: cwd || gulp_config_1.deployDir,
-            ignore: (_a = []).concat.apply(_a, __spreadArray(__spreadArray([], __read((((_b = gulp_config_1.default.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || [])), false), __read((((_d = (_c = gulp_config_1.default.external_link) === null || _c === void 0 ? void 0 : _c.safelink) === null || _d === void 0 ? void 0 : _d.exclude) || [])), false))
-        })
-            .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
-            var content, parsed;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        // drop null
-                        if (file.isNull() || file.isDirectory() || !file)
-                            return [2 /*return*/, next()];
-                        if (!file.isBuffer()) return [3 /*break*/, 2];
-                        content = file.contents.toString('utf-8');
-                        return [4 /*yield*/, safelink.parse(content)];
-                    case 1:
-                        parsed = _a.sent();
-                        if (parsed) {
-                            file.contents = Buffer.from(parsed);
-                            return [2 /*return*/, next(null, file)];
-                        }
-                        _a.label = 2;
-                    case 2:
-                        console.log('cannot parse', file.path);
-                        // drop fails
-                        next();
-                        return [2 /*return*/];
-                }
-            });
-        }); }))
-            .pipe(gulp_1.default.dest(gulp_config_1.deployDir))
-            .once('end', function () { return resolve(null); });
+        var folder = cwd || gulp_config_1.deployDir;
+        if ((0, fs_1.existsSync)(folder)) {
+            return gulp_1.default
+                .src(['**/*.{html,htm}'], {
+                cwd: folder,
+                ignore: (_a = []).concat.apply(_a, __spreadArray(__spreadArray([], __read((((_b = gulp_config_1.default.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || [])), false), __read((((_d = (_c = gulp_config_1.default.external_link) === null || _c === void 0 ? void 0 : _c.safelink) === null || _d === void 0 ? void 0 : _d.exclude) || [])), false))
+            })
+                .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
+                var content, parsed;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            // drop null
+                            if (file.isNull() || file.isDirectory() || !file)
+                                return [2 /*return*/, next()];
+                            if (!(file.isBuffer() && Buffer.isBuffer(file.contents))) return [3 /*break*/, 2];
+                            content = file.contents.toString('utf-8');
+                            return [4 /*yield*/, safelink.parse(content)];
+                        case 1:
+                            parsed = _a.sent();
+                            if (typeof parsed === 'string') {
+                                // console.log(parsed);
+                                file.contents = Buffer.from(parsed);
+                                return [2 /*return*/, next(null, file)];
+                            }
+                            _a.label = 2;
+                        case 2:
+                            console.log('cannot parse', file.path);
+                            // drop fails
+                            next();
+                            return [2 /*return*/];
+                    }
+                });
+            }); }))
+                .pipe(gulp_1.default.dest(gulp_config_1.deployDir))
+                .once('end', function () { return resolve(null); });
+        }
+        return resolve(null);
     });
 }
 exports.safelinkProcess = safelinkProcess;

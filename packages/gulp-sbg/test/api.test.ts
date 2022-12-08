@@ -1,7 +1,10 @@
 import { toUnix } from 'upath';
-import SBG from '../src/api';
-process.cwd = () => toUnix(__dirname);
+import { Application } from '..';
+const cwd = toUnix(__dirname);
+process.cwd = () => cwd;
 
-const c = new SBG(__dirname);
-c.copy();
-c.generate();
+(async function () {
+  const c = new Application(cwd);
+  // await c.copy();
+  // await c.generate();
+})();
