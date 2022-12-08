@@ -31,6 +31,6 @@ declare class SBG {
     /**
      * clean cache, auto generated posts, etc
      */
-    clean: Promise<void>;
+    clean: () => Promise<void>;
 }
 export default SBG;

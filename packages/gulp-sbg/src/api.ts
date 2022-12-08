@@ -3,11 +3,11 @@ import Hexo from 'hexo';
 import { join, toUnix } from 'upath';
 import { cleanDb } from './gulp.clean';
 import ProjectConfig, { deployConfig } from './gulp.config';
+import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
 import { autoSeo } from './gulp.seo';
 import noop from './utils/noop';
-import { asyncCopyGen } from './gulp.deploy';
 
 class SBG {
   base: string = toUnix(process.cwd());
@@ -72,7 +72,7 @@ class SBG {
   /**
    * clean cache, auto generated posts, etc
    */
-  clean = cleanDb();
+  clean = () => cleanDb();
 }
 
 export default SBG;
