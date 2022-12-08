@@ -75,47 +75,51 @@ var noop_1 = __importDefault(require("./utils/noop"));
  */
 function cleanDb() {
     return __awaiter(this, void 0, void 0, function () {
-        var config, post, publicDir, tmpDir, _a, _b, _c, hexo;
+        var config, postDir, publicDir, tmpDir, _a, _b, _c, hexo;
         return __generator(this, function (_d) {
             switch (_d.label) {
                 case 0:
                     config = gulp_config_1.default;
-                    post = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
+                    postDir = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
                     publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
                     tmpDir = (0, upath_1.join)(process.cwd(), 'tmp');
+                    console.log({ tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
                     _d.label = 1;
                 case 1:
                     _d.trys.push([1, 4, , 5]);
                     if (!(0, fs_extra_1.existsSync)(tmpDir)) return [3 /*break*/, 3];
-                    return [4 /*yield*/, del(tmpDir).catch(noop_1.default)];
+                    return [4 /*yield*/, del(tmpDir)];
                 case 2:
                     _d.sent();
                     _d.label = 3;
                 case 3: return [3 /*break*/, 5];
                 case 4:
                     _a = _d.sent();
+                    console.log('[clean]', 'cannot delete', tmpDir);
                     return [3 /*break*/, 5];
                 case 5:
                     _d.trys.push([5, 8, , 9]);
                     if (!(0, fs_extra_1.existsSync)(publicDir)) return [3 /*break*/, 7];
-                    return [4 /*yield*/, del(publicDir).catch(noop_1.default)];
+                    return [4 /*yield*/, del(publicDir)];
                 case 6:
                     _d.sent();
                     _d.label = 7;
                 case 7: return [3 /*break*/, 9];
                 case 8:
                     _b = _d.sent();
+                    console.log('[clean]', 'cannot delete', publicDir);
                     return [3 /*break*/, 9];
                 case 9:
                     _d.trys.push([9, 12, , 13]);
-                    if (!(0, fs_extra_1.existsSync)(post)) return [3 /*break*/, 11];
-                    return [4 /*yield*/, del(post).catch(noop_1.default)];
+                    if (!(0, fs_extra_1.existsSync)(postDir)) return [3 /*break*/, 11];
+                    return [4 /*yield*/, del(postDir)];
                 case 10:
                     _d.sent();
                     _d.label = 11;
                 case 11: return [3 /*break*/, 13];
                 case 12:
                     _c = _d.sent();
+                    console.log('[clean]', 'cannot delete', postDir);
                     return [3 /*break*/, 13];
                 case 13:
                     hexo = new hexo_1.default(process.cwd());
@@ -140,12 +144,12 @@ function del(path) {
     return new bluebird_1.default(function (resolve) {
         var rmOpt = { recursive: true, force: true };
         if ((0, fs_extra_1.existsSync)(path)) {
-            if ((0, fs_extra_1.statSync)(path).isDirectory()) {
-                (0, fs_extra_1.rmdir)(path, { maxRetries: 10 }).then(resolve).catch(resolve);
-            }
-            else {
-                (0, fs_extra_1.rm)(path, rmOpt).then(resolve).catch(resolve);
-            }
+            (0, fs_extra_1.rm)(path, rmOpt).then(resolve).catch(resolve);
+            /*if (statSync(path).isDirectory()) {
+              rmdir(path, { maxRetries: 10 }).then(resolve).catch(resolve);
+            } else {
+              rm(path, rmOpt).then(resolve).catch(resolve);
+            }*/
         }
         else {
             resolve(new Error(path + ' not found'));

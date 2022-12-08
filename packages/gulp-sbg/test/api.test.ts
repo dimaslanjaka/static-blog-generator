@@ -6,6 +6,6 @@ process.cwd = () => cwd;
 (async function () {
   const app = new Application(cwd);
   await app.clean();
-  await app.copy();
+  //await app.copy();
   // await c.generate();
 })();

@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { join, toUnix } from 'upath';
-import { cleanDb } from './gulp.clean';
+import { cleanDb, cleanOldArchives } from './gulp.clean';
 import ProjectConfig, { deployConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
@@ -71,8 +71,16 @@ class SBG {
 
   /**
    * clean cache, auto generated posts, etc
+   * @see {@link cleanDb}
+   * @see {@link cleanOldArchives}
    */
-  clean = () => cleanDb();
+  clean(opt?: 'all') {
+    if (opt !== 'all') {
+      return cleanDb();
+    } else {
+      return cleanOldArchives();
+    }
+  }
 }
 
 export default SBG;

@@ -30,7 +30,9 @@ declare class SBG {
     deploy(): Promise<void>;
     /**
      * clean cache, auto generated posts, etc
+     * @see {@link cleanDb}
+     * @see {@link cleanOldArchives}
      */
-    clean: () => Promise<void>;
+    clean(opt?: 'all'): Promise<void>;
 }
 export default SBG;
