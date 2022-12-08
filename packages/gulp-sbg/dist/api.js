@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -43,11 +66,12 @@ var bluebird_1 = __importDefault(require("bluebird"));
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
-var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_config_1 = __importStar(require("./gulp.config"));
 var gulp_post_1 = require("./gulp.post");
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var noop_1 = __importDefault(require("./utils/noop"));
+var gulp_deploy_1 = require("./gulp.deploy");
 var SBG = /** @class */ (function () {
     /**
      * Static blog generator
@@ -96,12 +120,53 @@ var SBG = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         instance = new hexo_1.default(this.base);
+                        // hexo init
                         return [4 /*yield*/, instance.init().catch(noop_1.default)];
                     case 1:
+                        // hexo init
                         _a.sent();
+                        // hexo generate
                         return [4 /*yield*/, instance.call('generate').catch(noop_1.default)];
                     case 2:
+                        // hexo generate
                         _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    SBG.prototype.deploy = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a, github, config;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: 
+                    // run generate task
+                    return [4 /*yield*/, this.generate()];
+                    case 1:
+                        // run generate task
+                        _b.sent();
+                        // copy generated files to deployment directory
+                        return [4 /*yield*/, (0, gulp_deploy_1.asyncCopyGen)()];
+                    case 2:
+                        // copy generated files to deployment directory
+                        _b.sent();
+                        _a = (0, gulp_config_1.deployConfig)(), github = _a.github, config = _a.config;
+                        return [4 /*yield*/, github.init().catch(noop_1.default)];
+                    case 3:
+                        _b.sent();
+                        return [4 /*yield*/, github.setremote(config.repo).catch(noop_1.default)];
+                    case 4:
+                        _b.sent();
+                        return [4 /*yield*/, github.setuser(config.username).catch(noop_1.default)];
+                    case 5:
+                        _b.sent();
+                        return [4 /*yield*/, github.setemail(config.email).catch(noop_1.default)];
+                    case 6:
+                        _b.sent();
+                        return [4 /*yield*/, github.setbranch(config.branch).catch(noop_1.default)];
+                    case 7:
+                        _b.sent();
                         return [2 /*return*/];
                 }
             });

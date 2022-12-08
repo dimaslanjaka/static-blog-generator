@@ -2,6 +2,7 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.commonIgnore = exports.deployConfig = exports.deployDir = void 0;
 var fs_1 = require("fs");
@@ -16,9 +17,9 @@ if ((0, fs_1.existsSync)(fileYML)) {
 }
 var ProjectConfig = parse;
 exports.default = ProjectConfig;
-exports.deployDir = (0, path_1.join)(process.cwd(), '.deploy_git');
+exports.deployDir = (0, path_1.join)(process.cwd(), '.deploy_' + ((_a = ProjectConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
 function deployConfig() {
-    var config = ProjectConfig;
+    var config = ProjectConfig.deploy || {};
     var github = new git_command_helper_1.default(exports.deployDir);
     return { deployDir: exports.deployDir, config: config, github: github };
 }

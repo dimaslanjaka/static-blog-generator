@@ -86,7 +86,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.safelinkProcess = void 0;
 var fs_1 = require("fs");
@@ -94,33 +93,6 @@ var gulp_1 = __importDefault(require("gulp"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
 var gulp_config_1 = __importStar(require("./gulp.config"));
-var config = gulp_config_1.default;
-var configSafelink = Object.assign({ enable: false }, ((_a = config.external_link) === null || _a === void 0 ? void 0 : _a.safelink) || {});
-var baseURL = '';
-try {
-    baseURL = new URL(config.url).host;
-}
-catch (_c) {
-    //
-}
-var safelink = new safelinkify_1.default.safelink({
-    // exclude patterns (dont anonymize these patterns)
-    exclude: __spreadArray(__spreadArray(__spreadArray([], __read((((_b = config.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || [])), false), [
-        /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
-        /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
-        baseURL,
-        'www.webmanajemen.com',
-        'https://github.com/dimaslanjaka',
-        'https://facebook.com/dimaslanjaka1',
-        'dimaslanjaka.github.io'
-    ], false), __read(configSafelink.exclude), false).filter(function (x, i, a) {
-        // remove duplicate and empties
-        return a.indexOf(x) === i && x.toString().trim().length !== 0;
-    }),
-    redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
-    password: configSafelink.password || config.external_link.safelink.password,
-    type: configSafelink.type || config.external_link.safelink.type
-});
 /**
  * Process Safelink on Deploy Dir
  * @param _done callback function
@@ -131,13 +103,40 @@ function safelinkProcess(_done, cwd) {
     var _this = this;
     return new Promise(function (resolve) {
         var _a;
-        var _b, _c, _d;
+        var _b, _c, _d, _e, _f;
+        var config = gulp_config_1.default;
+        var configSafelink = Object.assign({ enable: false }, ((_b = config.external_link) === null || _b === void 0 ? void 0 : _b.safelink) || {});
+        var baseURL = '';
+        try {
+            baseURL = new URL(config.url).host;
+        }
+        catch (_g) {
+            //
+        }
+        var safelink = new safelinkify_1.default.safelink({
+            // exclude patterns (dont anonymize these patterns)
+            exclude: __spreadArray(__spreadArray(__spreadArray([], __read((((_c = config.external_link) === null || _c === void 0 ? void 0 : _c.exclude) || [])), false), [
+                /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
+                /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
+                baseURL,
+                'www.webmanajemen.com',
+                'https://github.com/dimaslanjaka',
+                'https://facebook.com/dimaslanjaka1',
+                'dimaslanjaka.github.io'
+            ], false), __read(configSafelink.exclude), false).filter(function (x, i, a) {
+                // remove duplicate and empties
+                return a.indexOf(x) === i && x.toString().trim().length !== 0;
+            }),
+            redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
+            password: configSafelink.password || config.external_link.safelink.password,
+            type: configSafelink.type || config.external_link.safelink.type
+        });
         var folder = cwd || gulp_config_1.deployDir;
         if ((0, fs_1.existsSync)(folder)) {
             return gulp_1.default
                 .src(['**/*.{html,htm}'], {
                 cwd: folder,
-                ignore: (_a = []).concat.apply(_a, __spreadArray(__spreadArray([], __read((((_b = gulp_config_1.default.external_link) === null || _b === void 0 ? void 0 : _b.exclude) || [])), false), __read((((_d = (_c = gulp_config_1.default.external_link) === null || _c === void 0 ? void 0 : _c.safelink) === null || _d === void 0 ? void 0 : _d.exclude) || [])), false))
+                ignore: (_a = []).concat.apply(_a, __spreadArray(__spreadArray([], __read((((_d = gulp_config_1.default.external_link) === null || _d === void 0 ? void 0 : _d.exclude) || [])), false), __read((((_f = (_e = gulp_config_1.default.external_link) === null || _e === void 0 ? void 0 : _e.safelink) === null || _f === void 0 ? void 0 : _f.exclude) || [])), false))
             })
                 .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
                 var content, parsed;
