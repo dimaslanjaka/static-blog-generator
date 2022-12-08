@@ -62,8 +62,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.copyGen = void 0;
+exports.asyncCopyGen = exports.copyGen = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
+var bluebird_1 = __importDefault(require("bluebird"));
 var fs_1 = require("fs");
 var git_command_helper_1 = require("git-command-helper");
 var gulp_1 = __importDefault(require("gulp"));
@@ -73,7 +74,7 @@ require("./gulp.clean");
 var gulp_config_1 = __importStar(require("./gulp.config"));
 require("./gulp.safelink");
 /**
- * copy generated files to deploy dir
+ * copy generated files (_config_yml.public_dir) to deploy dir (run after generated)
  * @returns
  */
 function copyGen() {
@@ -88,13 +89,25 @@ function copyGen() {
         .on('error', console.trace);
 }
 exports.copyGen = copyGen;
+/**
+ * asynchronous copy generated files (_config_yml.public_dir) to deploy dir (run after generated)
+ * @returns
+ */
+function asyncCopyGen() {
+    return new bluebird_1.default(function (resolve) {
+        copyGen().once('end', function () {
+            resolve(null);
+        });
+    });
+}
+exports.asyncCopyGen = asyncCopyGen;
 // copy public to .deploy_git
 gulp_1.default.task('copy', copyGen);
 function pull() {
     return new Promise(function (resolve) {
         var _a = (0, gulp_config_1.deployConfig)(), deployDir = _a.deployDir, github = _a.github, config = _a.config;
         github
-            .setremote(config.deploy.repo)
+            .setremote(config.repo)
             .then(function () {
             return new Promise(function (resolveInit) {
                 if (!(0, fs_1.existsSync)(deployDir)) {
@@ -105,10 +118,10 @@ function pull() {
                 }
             });
         })
-            .then(function () { return github.setuser(config.deploy.username); })
-            .then(function () { return github.setemail(config.deploy.email); })
+            .then(function () { return github.setuser(config.username); })
+            .then(function () { return github.setemail(config.email); })
             // reset repository to latest commit
-            .then(function () { return github.reset(config.deploy.branch); })
+            .then(function () { return github.reset(config.branch); })
             // pull any changes inside submodule from their latest commit
             .then(function () {
             github.pull(['--recurse-submodule']).then(function () {
@@ -154,8 +167,8 @@ function status(done) {
     });
 }
 function commit() {
-    var _a = (0, gulp_config_1.deployConfig)(), github = _a.github, config = _a.config;
-    var now = (0, moment_timezone_1.default)().tz(config.timezone).format('LLL');
+    var github = (0, gulp_config_1.deployConfig)().github;
+    var now = (0, moment_timezone_1.default)().tz(gulp_config_1.default.timezone).format('LLL');
     var commitRoot = function () {
         return new Promise(function (resolve) {
             github.status().then(function (changes) {
