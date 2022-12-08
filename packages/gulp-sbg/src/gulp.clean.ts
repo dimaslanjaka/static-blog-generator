@@ -1,8 +1,7 @@
 import Bluebird from 'bluebird';
-import { existsSync, rm, rmdir, RmOptions, statSync } from 'fs-extra';
+import { existsSync, rm, RmOptions } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
-
 import { join } from 'upath';
 import ProjectConfig, { deployDir } from './gulp.config';
 import noop from './utils/noop';
@@ -12,24 +11,26 @@ import noop from './utils/noop';
  */
 export async function cleanDb() {
   const config = ProjectConfig;
-  const post = join(process.cwd(), config.source_dir, '_posts');
+  const postDir = join(process.cwd(), config.source_dir, '_posts');
   const publicDir = join(process.cwd(), config.public_dir);
   const tmpDir = join(process.cwd(), 'tmp');
 
+  console.log({ tmpDir, postDir, publicDir });
+
   try {
-    if (existsSync(tmpDir)) await del(tmpDir).catch(noop);
+    if (existsSync(tmpDir)) await del(tmpDir);
   } catch {
-    //
+    console.log('[clean]', 'cannot delete', tmpDir);
   }
   try {
-    if (existsSync(publicDir)) await del(publicDir).catch(noop);
+    if (existsSync(publicDir)) await del(publicDir);
   } catch {
-    //
+    console.log('[clean]', 'cannot delete', publicDir);
   }
   try {
-    if (existsSync(post)) await del(post).catch(noop);
+    if (existsSync(postDir)) await del(postDir);
   } catch {
-    //
+    console.log('[clean]', 'cannot delete', postDir);
   }
 
   const hexo = new hexoLib(process.cwd());
@@ -46,11 +47,12 @@ export function del(path: string) {
   return new Bluebird((resolve) => {
     const rmOpt: RmOptions = { recursive: true, force: true };
     if (existsSync(path)) {
-      if (statSync(path).isDirectory()) {
+      rm(path, rmOpt).then(resolve).catch(resolve);
+      /*if (statSync(path).isDirectory()) {
         rmdir(path, { maxRetries: 10 }).then(resolve).catch(resolve);
       } else {
         rm(path, rmOpt).then(resolve).catch(resolve);
-      }
+      }*/
     } else {
       resolve(new Error(path + ' not found'));
     }

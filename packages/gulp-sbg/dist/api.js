@@ -103,10 +103,6 @@ var SBG = /** @class */ (function () {
          * @returns
          */
         this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.base, gulp_config_1.default.public_dir)); };
-        /**
-         * clean cache, auto generated posts, etc
-         */
-        this.clean = function () { return (0, gulp_clean_1.cleanDb)(); };
         if (typeof base === 'string')
             this.base = base;
     }
@@ -171,6 +167,19 @@ var SBG = /** @class */ (function () {
                 }
             });
         });
+    };
+    /**
+     * clean cache, auto generated posts, etc
+     * @see {@link cleanDb}
+     * @see {@link cleanOldArchives}
+     */
+    SBG.prototype.clean = function (opt) {
+        if (opt !== 'all') {
+            return (0, gulp_clean_1.cleanDb)();
+        }
+        else {
+            return (0, gulp_clean_1.cleanOldArchives)();
+        }
     };
     return SBG;
 }());
