@@ -67,11 +67,11 @@ var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
 var gulp_config_1 = __importStar(require("./gulp.config"));
+var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_post_1 = require("./gulp.post");
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var noop_1 = __importDefault(require("./utils/noop"));
-var gulp_deploy_1 = require("./gulp.deploy");
 var SBG = /** @class */ (function () {
     /**
      * Static blog generator
@@ -106,7 +106,7 @@ var SBG = /** @class */ (function () {
         /**
          * clean cache, auto generated posts, etc
          */
-        this.clean = (0, gulp_clean_1.cleanDb)();
+        this.clean = function () { return (0, gulp_clean_1.cleanDb)(); };
         if (typeof base === 'string')
             this.base = base;
     }

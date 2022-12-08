@@ -13,7 +13,7 @@ import { array_remove_empty, array_unique } from './utils/array';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
 
-const sitemapTXT = join(process.cwd(), ProjectConfig.public_dir, 'sitemap.txt');
+const sitemapTXT = join(process.cwd(), ProjectConfig.public_dir || 'public', 'sitemap.txt');
 let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
 const crawled = new Set<string>();
 const env = envNunjucks();
