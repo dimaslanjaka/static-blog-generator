@@ -83,7 +83,7 @@ function cleanDb() {
                     postDir = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
                     publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
                     tmpDir = (0, upath_1.join)(process.cwd(), 'tmp');
-                    console.log({ tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
+                    console.log('[clean]', { tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
                     _d.label = 1;
                 case 1:
                     _d.trys.push([1, 4, , 5]);
