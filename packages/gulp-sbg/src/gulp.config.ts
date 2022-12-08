@@ -14,9 +14,13 @@ if (existsSync(fileYML)) {
 type importConfig = typeof import('./_config.json');
 export interface ProjConf extends importConfig {
   [key: string]: any;
+  /**
+   * Source posts
+   */
+  post_dir: string;
 }
 
-const ProjectConfig = parse as ProjConf;
+const ProjectConfig = Object.assign({ post_dir: 'src-posts' }, parse) as ProjConf;
 
 export default ProjectConfig;
 export const deployDir = join(process.cwd(), '.deploy_' + ProjectConfig.deploy?.type || 'git');
