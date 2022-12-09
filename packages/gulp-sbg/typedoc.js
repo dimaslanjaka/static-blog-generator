@@ -21,6 +21,10 @@ const getFilesRecursively = (directory) => {
       getFilesRecursively(absolute);
     } else {
       entryPoints.push('.' + absolute.replace(path.toUnix(__dirname), ''));
+      // unique
+      entryPoints = entryPoints.filter(function (x, i, a) {
+        return a.indexOf(x) === i;
+      });
     }
   }
 };
