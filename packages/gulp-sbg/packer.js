@@ -96,7 +96,8 @@ child.on("exit", function () {
 
         // write hashes info
         getPackageHashes().then((hashes) => {
-          writeFileSync(join(releaseDir, "metadata.json"), JSON.stringify(hashes));
+          writeFileSync(join(releaseDir, "metadata.json"), JSON.stringify(hashes, null, 2));
+          console.log(hashes);
         });
 
         console.log("=".repeat(20));
