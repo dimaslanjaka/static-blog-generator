@@ -6,7 +6,7 @@ const path = require('upath');
 // preinstall scripts
 // run this script after `npm install`
 // requirements: npm i -D cross-spawn upath
-// update: curl https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js > preinstall.js
+// update: curl -L https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js > preinstall.js
 // repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/preinstall.js
 // raw: https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/preinstall.js
 // usages: node preinstall.js
