@@ -1,0 +1,20 @@
+{
+  "/release/hexo-post-parser-1.1.20.tgz": {
+    "hash": "15e3e797c926b5a1862deb33dc97589422a385bb"
+  },
+  "/release/hexo-post-parser.tgz": {
+    "hash": "15e3e797c926b5a1862deb33dc97589422a385bb"
+  },
+  "/package-lock.json": {
+    "hash": "14decaf5caa427c62850cd36343942997d6584f1"
+  },
+  "/release/hexo-post-parser-1.1.16.tgz": {
+    "hash": "cc5ffbbf79152d18fc78ba1ca6784b0dceef98fb"
+  },
+  "/release/hexo-post-parser-1.1.18.tgz": {
+    "hash": "b1508e1df53c0a3b8c62dacc7d76eb5dc6423787"
+  },
+  "/release/hexo-post-parser-1.1.19.tgz": {
+    "hash": "371248cf30f4c7caf898aee243981d4fb397e159"
+  }
+}

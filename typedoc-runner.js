@@ -2,7 +2,7 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const { mkdirSync, existsSync } = require('fs');
+const { mkdirSync, existsSync, writeFileSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
@@ -15,6 +15,8 @@ const { spawn } = require('cross-spawn');
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
+let compiled = 0;
+
 /**
  * Compile typedocs
  */
@@ -26,9 +28,12 @@ const compile = async function () {
     spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
-  if (!existsSync(projectDocsDir))
-    mkdirSync(projectDocsDir, { recursive: true });
+  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
   const options = Object.assign({}, typedocOptions);
+
+  // disable delete dir while running twice
+  if (compiled > 0) options.cleanOutputDir = false;
+  compiled++;
 
   const app = new typedocModule.Application();
   if (semver.gte(typedocModule.Application.VERSION, '0.16.1')) {
@@ -64,29 +69,46 @@ const publish = async function () {
     }
     await github.setremote(REPO_URL);
     await github.setbranch('master');
-    await github.reset('master');
+    //await github.reset('master');
+    await github.pull(['--recurse-submodule']);
+    await github.spawn('git', 'config core.eol lf'.split(' '));
   } catch {
     //
   }
 
-  await compile();
+  for (let i = 0; i < 2; i++) {
+    await compile();
+  }
+
+  writeFileSync(
+    join(outDir, '.gitattributes'),
+    `
+*           text=auto
+*.txt       text eol=lf
+*.json      text eol=lf
+*.txt       text
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
+*.ts        text eol=lf
+*.js        text eol=lf
+*.png       binary diff
+*.jpg       binary diff
+*.ico       binary diff
+*.pdf       binary diff
+`.trim()
+  );
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url
-      .replace(/.git$/, '')
-      .trim();
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
       await github
-        .commit(
-          `${commit} update ${
-            pkgjson.name
-          } docs \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
-        )
+        .commit(`update ${pkgjson.name} docs [${commit}] \nat ${new Date()}\nsource: ${remote}/commit/${commit}`)
         .catch(noop);
-      if (await github.canPush().catch(noop)) {
+      const isCanPush = await github.canPush().catch(noop);
+      if (isCanPush) {
         await github.push().catch(noop);
       }
     }
