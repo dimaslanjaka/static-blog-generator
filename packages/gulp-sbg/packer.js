@@ -8,10 +8,11 @@ const packagejson = require("./package.json");
 const crypto = require("crypto");
 
 // auto create tarball (tgz) on release folder
-// raw: https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
-// github: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
-// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js > packer.js
-// usage: node packer.js
+// raw            : https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js
+// github         : https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/packer.js
+// update         : curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/packer.js > packer.js
+// usage          : node packer.js
+// github actions : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
 
 console.log("=".repeat(19));
 console.log("= packing started =");
