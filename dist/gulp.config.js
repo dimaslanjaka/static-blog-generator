@@ -1,0 +1,40 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var _a;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.commonIgnore = exports.deployConfig = exports.deployDir = void 0;
+var fs_1 = require("fs");
+var git_command_helper_1 = __importDefault(require("git-command-helper"));
+var path_1 = require("path");
+var yaml_1 = __importDefault(require("yaml"));
+var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
+var parse = {};
+if ((0, fs_1.existsSync)(fileYML)) {
+    parse = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
+    (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(parse, null, 2));
+}
+var ProjectConfig = Object.assign({ post_dir: 'src-posts' }, parse);
+exports.default = ProjectConfig;
+exports.deployDir = (0, path_1.join)(process.cwd(), '.deploy_' + ((_a = ProjectConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+function deployConfig() {
+    var config = ProjectConfig.deploy || {};
+    var github = new git_command_helper_1.default(exports.deployDir);
+    return { deployDir: exports.deployDir, config: config, github: github };
+}
+exports.deployConfig = deployConfig;
+exports.commonIgnore = [
+    '**/yandex_*.html',
+    '**/comments.html',
+    '**/disqus-comments.html',
+    '**/comment.html',
+    '**/favicon.html',
+    '**/404.html',
+    '**/node_modules/**',
+    '**/tmp/**',
+    '**/.cache/**',
+    '**/.vscode/**',
+    '**/.frontmatter/**',
+    '**/pinterest-*.html'
+];
