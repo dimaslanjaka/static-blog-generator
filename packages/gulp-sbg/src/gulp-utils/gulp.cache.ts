@@ -28,7 +28,7 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
  * @returns
  */
 export function gulpCached(options: gulpCachedOpt = {}) {
-  options = Object.assign(options, { name: 'gulp-cached', base: join(process.cwd(), 'tmp'), prefix: '' });
+  options = Object.assign({ name: 'gulp-cached', base: join(process.cwd(), 'tmp'), prefix: '' }, options);
   const caches = persistentCache(options);
   return through2.obj(function (file, _enc, next) {
     // skip directory
@@ -49,3 +49,5 @@ export function gulpCached(options: gulpCachedOpt = {}) {
     }
   });
 }
+
+export default gulpCached;
