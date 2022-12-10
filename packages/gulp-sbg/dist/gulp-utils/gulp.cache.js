@@ -31,7 +31,7 @@ exports.md5 = md5;
  */
 function gulpCached(options) {
     if (options === void 0) { options = {}; }
-    options = Object.assign(options, { name: 'gulp-cached', base: (0, upath_1.join)(process.cwd(), 'tmp'), prefix: '' });
+    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(process.cwd(), 'tmp'), prefix: '' }, options);
     var caches = (0, persistent_cache_1.persistentCache)(options);
     return through2_1.default.obj(function (file, _enc, next) {
         // skip directory
@@ -54,3 +54,4 @@ function gulpCached(options) {
     });
 }
 exports.gulpCached = gulpCached;
+exports.default = gulpCached;
