@@ -1,6 +1,6 @@
-# Static Blog Generator Gulp
+# Static Blog Generator v3
 
-Static Blog Generator using Gulp System.
+Static Blog Generator v3 using Gulp System.
 
 Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.
 
