@@ -54,6 +54,7 @@ jobs:
           echo "branch      : $GITHUB_BRANCH"
           echo "commit hash : $GITHUB_SHA_SHORT"
           echo "commit url  : $GITHUB_COMMIT_URL"
+          echo "https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}"
 
       - name: Git setup user email
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
