@@ -37,5 +37,11 @@ gulp safelink
 
 | X | command | Description |
 | :--- | :--- | :--- |
-| [] | sbg copy post | copy post from src-posts to source/_posts |
+| &#9744; | sbg copy post | copy post from src-posts to `source/_posts` |
 
+<!--
+Checkboxed inside markdown table
+| Unchecked | Checked |
+| --------- | ------- |
+| &#9744;   | &#9745; |
+-->
