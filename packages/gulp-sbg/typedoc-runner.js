@@ -6,12 +6,11 @@ const { mkdirSync, existsSync, writeFileSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
-const { spawn } = require('cross-spawn');
+const spawn = require('cross-spawn');
 
-// required: npm i upath
-// required: npm i -D semver typedoc git-command-helper gulp cross-spawn
-// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
-// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
+// required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
+// update   : curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
+// repo     : https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
