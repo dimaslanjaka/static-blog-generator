@@ -16,9 +16,9 @@ name: 'CodeQL'
 
 on:
   push:
-    branches: [master, main, protected]
+    branches: [ master, main, protected ]
   pull_request:
-    branches: [master, main]
+    branches: [ master, main ]
     paths-ignore:
       - '**/*.md'
       - '**/*.txt'
