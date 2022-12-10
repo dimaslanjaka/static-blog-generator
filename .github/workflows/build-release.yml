@@ -1,0 +1,67 @@
+name: Build Release
+
+# automated packer.js
+# repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
+# raw     : https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml
+# update  : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/.github/workflows/build-release.yml > .github/workflows/build-release.yml
+
+on:
+  push:
+    branches: [ "master", "main" ]
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest" # ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest", "macos-latest", "windows-latest" ]
+        node-version: [ 14.x, 16.x, 18.x ]
+        architecture: [ x64, x86 ]
+
+    name: Node ${{ matrix.node_version }} - ${{ matrix.architecture }} # on ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/nodejs-package-types
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull & update submodules recursively
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Set env
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/dimaslanjaka/nodejs-package-types/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+      - name: Get env
+        run: |
+          echo "branch      : $GITHUB_BRANCH"
+          echo "commit hash : $GITHUB_SHA_SHORT"
+          echo "commit url  : $GITHUB_COMMIT_URL"
+
+      - name: Push
+        #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
+        continue-on-error: true
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add release
+          git commit -m "Update build from $GITHUB_COMMIT_URL"
+          git push
