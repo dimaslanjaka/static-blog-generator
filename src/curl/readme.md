@@ -1,7 +1,0 @@
----
-title: curl docs
-description: static-blog-generator curl docs
----
-
-- nodejs http requests https://nodejs.org/api/http.html#http_http_request_options_callback
-- axios https://github.com/axios/axios
