@@ -15,7 +15,7 @@ if ((0, fs_1.existsSync)(fileYML)) {
     parse = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
     (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(parse, null, 2));
 }
-var ProjectConfig = parse;
+var ProjectConfig = Object.assign({ post_dir: 'src-posts' }, parse);
 exports.default = ProjectConfig;
 exports.deployDir = (0, path_1.join)(process.cwd(), '.deploy_' + ((_a = ProjectConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
 function deployConfig() {
