@@ -2,6 +2,10 @@ import git from 'git-command-helper';
 type importConfig = typeof import('./_config.json');
 export interface ProjConf extends importConfig {
     [key: string]: any;
+    /**
+     * Source posts
+     */
+    post_dir: string;
 }
 declare const ProjectConfig: ProjConf;
 export default ProjectConfig;
