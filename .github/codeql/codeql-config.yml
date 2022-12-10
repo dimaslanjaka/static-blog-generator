@@ -6,6 +6,6 @@ paths-ignore:
   - '**/node_modules/**'
   - '**/*.test*.ts'
   - '**/*.spec*.ts'
-  - '**/*.html'
+  - '**/*.{html,ejs,njk}' # skip non-source files
   - '**/dist/**'
   - '**/node_modules/**'
