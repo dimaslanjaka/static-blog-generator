@@ -24,11 +24,12 @@ function deployConfig() {
     return { deployDir: exports.deployDir, config: config, github: github };
 }
 exports.deployConfig = deployConfig;
+/** common ignore files */
 exports.commonIgnore = [
     '**/yandex_*.html',
-    '**/comments.html',
-    '**/disqus-comments.html',
-    '**/comment.html',
+    // '**/comments.html',
+    // '**/disqus-comments.html',
+    // '**/comment.html', // skip comment.html
     '**/favicon.html',
     '**/404.html',
     '**/node_modules/**',
@@ -36,5 +37,6 @@ exports.commonIgnore = [
     '**/.cache/**',
     '**/.vscode/**',
     '**/.frontmatter/**',
-    '**/pinterest-*.html'
+    '**/pinterest-*.html',
+    '**/_*.standalone.{js,ts}' // skip _filename.standalone.js
 ];
