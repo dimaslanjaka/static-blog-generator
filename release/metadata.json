@@ -10,5 +10,11 @@
   },
   "/package-lock.json": {
     "hash": "4b84bc00f1a79e82c2098945e5163ee6c98b7379"
+  },
+  "/release/static-blog-generator-3.0.0.tgz": {
+    "hash": "8153dc87cfaf5048c1463f0521c7fcca012ca28a"
+  },
+  "/release/static-blog-generator.tgz": {
+    "hash": "8153dc87cfaf5048c1463f0521c7fcca012ca28a"
   }
 }
