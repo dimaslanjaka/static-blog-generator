@@ -48,13 +48,14 @@ jobs:
         run: |
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
           echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-          echo "GITHUB_COMMIT_URL=https://github.com/dimaslanjaka/nodejs-package-types/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
       - name: Get env
         run: |
           echo "branch      : $GITHUB_BRANCH"
           echo "commit hash : $GITHUB_SHA_SHORT"
           echo "commit url  : $GITHUB_COMMIT_URL"
-          echo "https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}"
+          echo "runner url  : $GITHUB_RUNNER_URL"
 
       - name: Git setup user email
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
