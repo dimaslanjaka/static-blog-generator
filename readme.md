@@ -37,5 +37,5 @@ gulp safelink
 
 | X | command | Description |
 | :--- | :--- | :--- |
-| [ ] | sbg copy post | copy post from src-posts to source/_posts |
+| [] | sbg copy post | copy post from src-posts to source/_posts |
 
