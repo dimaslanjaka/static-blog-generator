@@ -1,0 +1,109 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - compiler
+      - posts
+      - source
+
+# cancel previous workflows, run only one workflow
+concurrency:
+  group: build-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    #if: {{ $false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      NODE_OPTIONS: "--max_old_space_size=8192" #8192 4096 --expose-gc
+      GITFLOW: true
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/dimaslanjaka.github.io
+          submodules: recursive
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: "npm"
+      #- run: echo "${{ secrets.GITHUB_TEST ]}"
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+      - name: Setup GitHub
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Get UUID
+        id: uuid
+        run: echo "::set-output name=uid::$(cat .guid)"
+      #- run: echo "git_hash=$(git rev-parse --short "$GITHUB_SHA")"
+      - name: Get Caches
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.npm-cache-dir.outputs.dir }}
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ./node_modules
+            ~/.npm
+            ./deploy_git
+            ./docs
+          key: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+          restore-keys: ${{ runner.os }}-${{ steps.uuid.outputs.uid }}
+      - run: |
+          git checkout compiler
+          rm -rf src-posts
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch posts --single-branch src-posts
+          rm -rf source
+          git clone https://github.com/dimaslanjaka/dimaslanjaka.github.io --branch source --single-branch source
+        name: Pull & Update Submodules Recursively
+      - run: npm i -g npm hexo-cli gulp-cli typescript ts-node
+        # run global install when cache not written
+        # if: steps.npm-cache.outputs.cache-hit != 'true'
+      - run: npm install
+      - run: "gulp clean"
+        if: "contains(github.event.head_commit.message, 'clean')"
+      - run: "gulp copy:assets"
+      - run: "gulp copy:posts"
+      - run: "gulp copy:remove-inline-style"
+      - run: "gulp generate:assets"
+      - run: "gulp generate:template"
+      - run: "gulp generate:posts"
+      - run: "gulp generate:tags"
+      - run: "gulp generate:categories"
+      - run: "gulp generate:index"
+      - run: "gulp generate:sitemap-txt"
+      - run: "gulp generate:sitemap-xml"
+      - run: "gulp generate:sitemap-news"
+      - run: "gulp generate:after"
+      - run: "gulp generate:feeds"
+      - run: "gulp generate:minify"
+      - run: cd docs && npm install && rm -rf .git .gitignore
+        name: install public root libraries
+      - run: cd docs/page && npm install && rm -rf .git .gitignore
+        name: install public page libraries
+      - run: cp -rfi source/robots.txt docs/robots.txt
+      - run: cp -rfi README.md docs/readme.md
+      - run: echo www.webmanajemen.com > docs/CNAME
+      - run: mkdir -p .deploy_git && cd .deploy_git && git init
+      - run: cd .deploy_git && git remote add origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
+      - run: cd .deploy_git && git remote set-url origin https://github.com/dimaslanjaka/dimaslanjaka.github.io
+      - run: cd .deploy_git && git pull origin master
+      - run: cd .deploy_git && git checkout master
+      - run: cp -rfi docs/* .deploy_git/
+      - run: cd .deploy_git && git add -A
+      - run: cd .deploy_git && git commit -m "Update Site ${{ steps.dateoutputs.date }}"
+      - run: cd .deploy_git && git push --set-upstream origin master
