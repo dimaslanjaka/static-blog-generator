@@ -23,4 +23,5 @@ export declare function deployConfig(): {
     };
     github: git;
 };
+/** common ignore files */
 export declare const commonIgnore: string[];
