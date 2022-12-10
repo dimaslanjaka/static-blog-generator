@@ -9,6 +9,14 @@ API documentation: [https://www.webmanajemen.com/docs/static-blog-generator/modu
 Usages:
   - [https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/gulpfile.js](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/gulpfile.js)
 
+## Configuration
+Configuration setup for `_config.yml` that required for this package (you can change the values)
+```yaml
+public_dir: "public"
+source_dir: "source"
+source_post: "src-posts"
+```
+
 ## Copy source posts to hexo source dir
 Compiling and Copying all source posts including shortcodes etc to hexo source post directory
 
