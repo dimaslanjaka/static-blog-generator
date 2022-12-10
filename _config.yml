@@ -163,12 +163,13 @@ pagination_dir: page
 include:
   - "assets/adblock-notify/readme.md"
 exclude:
-  - "License.md"
-  - "frontmatter.json"
-  - "License"
+  - "**/.git*"
+  - "**/.git"
+  - "**/License.md"
+  - "**/frontmatter.json"
+  - "**/License"
   - "**/bin/**"
   - "**/backend/**"
-  - "**/.git"
   - "**/MIDI.js/**"
   - "**/{readme,README,changelog,CHANGELOG}.md"
   - "**/Test/**"
