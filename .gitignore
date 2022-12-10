@@ -8,12 +8,13 @@ temp
 .env.development
 
 # branch v2
-build
-public
-source
-tests
-src/types/_*
-src/gulp/
-src/validator/
-.deploy_git
-src-posts/
+/build
+/public
+/source
+/tests
+/src/types/_*
+/src/gulp/
+/src/validator/
+/.deploy_git
+/src-posts/
+/import/
