@@ -55,13 +55,22 @@ jobs:
           echo "commit hash : $GITHUB_SHA_SHORT"
           echo "commit url  : $GITHUB_COMMIT_URL"
 
-      - name: Push
-        #if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      - name: Git setup user email
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
         continue-on-error: true
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Git add
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
+        continue-on-error: true
+        run: |
           git add release
+          git add dist
+          git add lib
+      - name: Git push
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
+        continue-on-error: true
+        run: |
           git commit -m "Update build from $GITHUB_COMMIT_URL"
           git push
