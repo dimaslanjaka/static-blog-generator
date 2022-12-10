@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+scriptPath=dist/src/bin/sbg.js
+
+(set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
+
+basedir=`dirname "$0"`
+
+case `uname` in
+  *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+esac
+
+NODE_EXE="$basedir/node.exe"
+if ! [ -x "$NODE_EXE" ]; then
+  NODE_EXE="$basedir/node"
+fi
+if ! [ -x "$NODE_EXE" ]; then
+  NODE_EXE=node
+fi
+
+$NODE_EXE "$basedir/../$scriptPath" "$@"
