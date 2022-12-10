@@ -1,13 +1,6 @@
 {
   "recommendations": [
     "formulahendry.code-runner",
-    "dbaeumer.vscode-eslint",
-    "digitalbrainstem.javascript-ejs-support",
-    "iliazeus.vscode-ansi",
-    "esbenp.prettier-vscode",
-    "ginfuru.better-nunjucks",
-    "formulahendry.auto-rename-tag",
-    "yzhang.markdown-all-in-one",
-    "k--kato.intellij-idea-keybindings"
+    "dbaeumer.vscode-eslint"
   ]
 }
