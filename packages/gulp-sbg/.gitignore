@@ -1,8 +1,0 @@
-node_modules
-dist/*.tsbuildinfo
-.yarn
-*.log
-tmp
-temp
-.cache
-.env.development
