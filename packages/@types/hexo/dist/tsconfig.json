@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "esModuleInterop": true
-  },
-  "include": [
-    "index.d.ts"
-  ]
-}
