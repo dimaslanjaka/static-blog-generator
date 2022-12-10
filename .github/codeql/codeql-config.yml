@@ -7,3 +7,5 @@ paths-ignore:
   - '**/*.test*.ts'
   - '**/*.spec*.ts'
   - '**/*.html'
+  - '**/dist/**'
+  - '**/node_modules/**'
