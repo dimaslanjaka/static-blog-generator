@@ -16,3 +16,4 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
  * @returns
  */
 export declare function gulpCached(options?: gulpCachedOpt): import("stream").Transform;
+export default gulpCached;
