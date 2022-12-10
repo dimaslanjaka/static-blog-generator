@@ -35,7 +35,7 @@ gulp safelink
 
 - creating CLI
 
-| X | command | Description |
+| :heavy_check_mark: | command | Description |
 | :--- | :--- | :--- |
 | &#9744; | sbg copy post | copy post from src-posts to `source/_posts` |
 
