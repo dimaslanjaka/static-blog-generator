@@ -22,6 +22,11 @@ function getShaFile(file) {
     return sha1sum;
 }
 exports.getShaFile = getShaFile;
+/**
+ * MD5 hash generator
+ * @param data
+ * @returns
+ */
 var md5 = function (data) { return crypto_1.default.createHash('md5').update(data).digest('hex'); };
 exports.md5 = md5;
 /**

@@ -16,6 +16,11 @@ export function getShaFile(file: string) {
   return sha1sum;
 }
 
+/**
+ * MD5 hash generator
+ * @param data
+ * @returns
+ */
 export const md5 = (data: string) => crypto.createHash('md5').update(data).digest('hex');
 
 export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {

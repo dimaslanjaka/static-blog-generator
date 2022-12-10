@@ -6,6 +6,11 @@ import { persistentCache } from 'persistent-cache';
  * @returns
  */
 export declare function getShaFile(file: string): string | null;
+/**
+ * MD5 hash generator
+ * @param data
+ * @returns
+ */
 export declare const md5: (data: string) => string;
 export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
     prefix?: string;
