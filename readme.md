@@ -30,3 +30,16 @@ Cloaking all external links to outbound page redirector, useful for SEO.
 ```bash
 gulp safelink
 ```
+
+## todo
+
+- creating CLI
+
+```bash
+sbg copy post
+sbg copy asset
+sbg deploy copy
+sbg deploy safelink
+sbg deploy seo
+sbg deploy publish
+```
