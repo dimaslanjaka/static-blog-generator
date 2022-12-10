@@ -35,11 +35,7 @@ gulp safelink
 
 - creating CLI
 
-```bash
-sbg copy post
-sbg copy asset
-sbg deploy copy
-sbg deploy safelink
-sbg deploy seo
-sbg deploy publish
-```
+| X | command | Description |
+| :--- | :--- | :--- |
+| [ ] | sbg copy post | copy post from src-posts to source/_posts |
+
