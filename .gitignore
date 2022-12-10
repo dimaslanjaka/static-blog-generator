@@ -15,3 +15,4 @@ tests
 src/types/_*
 src/gulp/
 src/validator/
+.deploy_git
