@@ -63,13 +63,15 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: Git add
+      - run: git add release
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
         continue-on-error: true
-        run: |
-          git add release
-          git add dist
-          git add lib
+      - run: git add dist
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
+        continue-on-error: true
+      - run: git add lib
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
+        continue-on-error: true
       - name: Git push
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
         continue-on-error: true
