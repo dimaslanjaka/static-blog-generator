@@ -33,7 +33,7 @@ jobs:
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
       - name: Cleanup caches
         if: ${{ false }}
-        # if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
+        # if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
         run: |
           gh extension install actions/gh-actions-cache
 
