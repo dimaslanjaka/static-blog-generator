@@ -6,6 +6,7 @@ tmp
 temp
 .cache
 .env.development
+/coverage
 
 # branch v2
 /build
