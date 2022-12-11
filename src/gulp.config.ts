@@ -1,11 +1,12 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import git from 'git-command-helper';
 import { join } from 'path';
+import { toUnix } from 'upath';
 import yaml from 'yaml';
 
-const fileYML = join(process.cwd(), '_config.yml');
 let originalConfig: Record<string, any> = {};
 
+const fileYML = join(process.cwd(), '_config.yml');
 if (existsSync(fileYML)) {
   originalConfig = yaml.parse(readFileSync(fileYML, 'utf-8'));
   writeFileSync(join(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
@@ -18,15 +19,20 @@ export interface ProjConf extends importConfig {
    * Source posts
    */
   post_dir: string;
+  /**
+   * Project CWD
+   */
+  cwd: string;
 }
 
-const ProjectConfig = Object.assign({ post_dir: 'src-posts' }, originalConfig) as ProjConf;
+const ProjectConfig = Object.assign({ post_dir: 'src-posts', cwd: toUnix(process.cwd()) }, originalConfig) as ProjConf;
 writeFileSync(
   join(__dirname, '_config.auto-generated.json'),
-  JSON.stringify(Object.assign({}, ProjectConfig, { fileYML, cwd: process.cwd() }), null, 2)
+  JSON.stringify(Object.assign({}, ProjectConfig, { fileYML }), null, 2)
 );
+
 export default ProjectConfig;
-export const deployDir = join(process.cwd(), '.deploy_' + ProjectConfig.deploy?.type || 'git');
+export const deployDir = join(ProjectConfig.cwd, '.deploy_' + ProjectConfig.deploy?.type || 'git');
 export function deployConfig() {
   const config = ProjectConfig.deploy || {};
   const github = new git(deployDir);
