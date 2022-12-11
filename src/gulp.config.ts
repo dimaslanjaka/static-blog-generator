@@ -4,11 +4,11 @@ import { join } from 'path';
 import yaml from 'yaml';
 
 const fileYML = join(process.cwd(), '_config.yml');
-let parse: Record<string, any> = {};
+let originalConfig: Record<string, any> = {};
 
 if (existsSync(fileYML)) {
-  parse = yaml.parse(readFileSync(fileYML, 'utf-8'));
-  writeFileSync(join(__dirname, '_config.json'), JSON.stringify(parse, null, 2));
+  originalConfig = yaml.parse(readFileSync(fileYML, 'utf-8'));
+  writeFileSync(join(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
 }
 
 type importConfig = typeof import('./_config.json');
@@ -20,8 +20,11 @@ export interface ProjConf extends importConfig {
   post_dir: string;
 }
 
-const ProjectConfig = Object.assign({ post_dir: 'src-posts' }, parse) as ProjConf;
-
+const ProjectConfig = Object.assign({ post_dir: 'src-posts' }, originalConfig) as ProjConf;
+writeFileSync(
+  join(__dirname, '_config.auto-generated.json'),
+  JSON.stringify(Object.assign({}, ProjectConfig, { fileYML, cwd: process.cwd() }), null, 2)
+);
 export default ProjectConfig;
 export const deployDir = join(process.cwd(), '.deploy_' + ProjectConfig.deploy?.type || 'git');
 export function deployConfig() {

@@ -11,6 +11,8 @@ import noop from './utils/noop';
  */
 export async function cleanDb() {
   const config = ProjectConfig;
+  if (typeof config.source_dir !== 'string') throw new Error('config.source_dir must be configured');
+
   const postDir = join(process.cwd(), config.source_dir, '_posts');
   const publicDir = join(process.cwd(), config.public_dir);
   const tmpDir = join(process.cwd(), 'tmp');

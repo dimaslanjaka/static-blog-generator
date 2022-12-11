@@ -11,6 +11,7 @@ import noop from './utils/noop';
 
 class SBG {
   base: string = toUnix(process.cwd());
+  config = ProjectConfig;
   /**
    * Static blog generator
    * @param base base folder
