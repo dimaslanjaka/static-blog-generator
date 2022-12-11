@@ -6,6 +6,8 @@ import { existsSync } from 'fs';
 import { join } from 'upath';
 import { Application, ProjectConfig } from '../src';
 
+jest.setTimeout(10000);
+
 describe('API', function () {
   jest.spyOn(process, 'cwd');
   const app = new Application(__dirname);
