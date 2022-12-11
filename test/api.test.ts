@@ -1,13 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 process.cwd = () => require('upath').toUnix(__dirname);
 
-import { describe, expect, test } from '@jest/globals';
+import { describe, expect, jest, test } from '@jest/globals';
 import { existsSync } from 'fs';
 import { join } from 'upath';
 import { Application, ProjectConfig } from '../src';
 
 describe('API', function () {
-  const app = new Application(process.cwd());
+  jest.spyOn(process, 'cwd');
+  const app = new Application(__dirname);
+
+  test('cwd is test', function () {
+    expect(process.cwd()).toBe(require('upath').toUnix(__dirname));
+  });
 
   test('Clean', async function () {
     await app.clean();
