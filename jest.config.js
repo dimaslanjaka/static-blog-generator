@@ -8,8 +8,9 @@ const { join } = require('path');
 const config = {
   verbose: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  collectCoverageFrom: ['**/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/']
+  collectCoverageFrom: ['src/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/'],
+  testMatch: ['<rootDir>/test/**']
 };
 
 module.exports = config;
