@@ -13,9 +13,9 @@ export async function cleanDb() {
   const config = ProjectConfig;
   if (typeof config.source_dir !== 'string') throw new Error('config.source_dir must be configured');
 
-  const postDir = join(process.cwd(), config.source_dir, '_posts');
-  const publicDir = join(process.cwd(), config.public_dir);
-  const tmpDir = join(process.cwd(), 'tmp');
+  const postDir = join(ProjectConfig.cwd, config.source_dir, '_posts');
+  const publicDir = join(ProjectConfig.cwd, config.public_dir);
+  const tmpDir = join(ProjectConfig.cwd, 'tmp');
 
   console.log('[clean]', { tmpDir, postDir, publicDir });
 
@@ -35,7 +35,7 @@ export async function cleanDb() {
     console.log('[clean]', 'cannot delete', postDir);
   }
 
-  const hexo = new hexoLib(process.cwd());
+  const hexo = new hexoLib(ProjectConfig.cwd);
   await hexo.init().catch(noop);
   await hexo.call('clean').catch(noop);
 }
