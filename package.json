@@ -60,8 +60,6 @@
     "@jest/globals": "^29.3.1",
     "@types/bluebird": "^3.5.38",
     "@types/gulp": "^4.0.10",
-    "@types/hexo": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/@types/hexo/release/types-hexo.tgz",
-    "@types/hexo-util": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/@types/hexo-util/release/types-hexo-util.tgz",
     "@types/node": "^18.11.13",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
     "@typescript-eslint/eslint-plugin": "^5.46.1",

@@ -15,7 +15,8 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["nodejs-package-types"]
   },
   "typeAcquisition": {
     "enable": true
