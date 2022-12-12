@@ -19,7 +19,7 @@ let compiled = 0;
 /**
  * Compile typedocs
  */
-const compile = async function () {
+const compile = async function (options) {
   const outDir = join(__dirname, 'docs');
   const projectDocsDir = join(outDir, pkgjson.name);
 
@@ -28,7 +28,7 @@ const compile = async function () {
   }
 
   if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
-  const options = Object.assign({}, typedocOptions);
+  options = Object.assign(getTypedocOptions(), options || {});
 
   // disable delete dir while running twice
   if (compiled > 0) options.cleanOutputDir = false;
@@ -56,7 +56,7 @@ const compile = async function () {
 /**
  * Compile and publish to github pages
  */
-const publish = async function () {
+const publish = async function (options) {
   const outDir = join(__dirname, 'docs');
 
   const github = new git(outDir);
@@ -76,7 +76,7 @@ const publish = async function () {
   }
 
   for (let i = 0; i < 2; i++) {
-    await compile();
+    await compile(options);
   }
 
   writeFileSync(
@@ -120,6 +120,22 @@ function noop(..._) {
   return;
 }
 
+let opt = typedocOptions;
+/**
+ * Get typedoc options
+ * @returns {typedocOptions}
+ */
+function getTypedocOptions() {
+  return opt;
+}
+/**
+ * Set typedoc options
+ * @param {typedocOptions} newOpt
+ */
+function setTypedocOptions(newOpt) {
+  opt = Object.assign(opt, newOpt || {});
+}
+
 /**
  * Watch sources
  * @param {gulp.TaskFunctionCallback} done
@@ -150,5 +166,10 @@ if (require.main === module) {
   //console.log('required as a module');
 }
 
-module.exports = publish;
-module.exports = { run: publish, watch, compile };
+module.exports = {
+  watch,
+  compile,
+  publish,
+  getTypedocOptions,
+  setTypedocOptions
+};
