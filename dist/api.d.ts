@@ -2,6 +2,7 @@
 import Bluebird from 'bluebird';
 declare class SBG {
     base: string;
+    config: import("./gulp.config").ProjConf;
     /**
      * Static blog generator
      * @param base base folder
