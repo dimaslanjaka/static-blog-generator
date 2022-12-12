@@ -145,5 +145,5 @@ jobs:
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
         continue-on-error: true
         run: |
-          git commit -m "Update build from $GITHUB_SHA_SHORT\ncommit url: $GITHUB_COMMIT_URL\nrunner: $GITHUB_RUNNER_URL"
+          git commit -m "Update build from $GITHUB_SHA_SHORT" -m "commit url: $GITHUB_COMMIT_URL" -m "runner: $GITHUB_RUNNER_URL"
           git push
