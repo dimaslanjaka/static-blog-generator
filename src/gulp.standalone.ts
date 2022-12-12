@@ -5,11 +5,16 @@ import { join } from 'upath';
 import ProjectConfig from './gulp.config';
 import { replacePath } from './utils/string';
 
+/**
+ * run all _*.standalone.js inside src-posts (_config_yml.post_dir)
+ * @returns
+ */
 function standaloneRunner() {
   console.log('[standalone] Running scripts...');
-  gulp.src(join(ProjectConfig.cwd, '**/_*.standalone.js')).pipe(
-    through2
-      .obj(async function (file, _enc, next) {
+  return gulp
+    .src(join(ProjectConfig.cwd, '**/_*.standalone.js'), { cwd: ProjectConfig.cwd, ignore: ['**/tmp/**'] })
+    .pipe(
+      through2.obj(async function (file, _enc, next) {
         console.log('='.repeat(10) + ' input ' + '='.repeat(10));
         console.log(`node ${await replacePath(file.path, ProjectConfig.cwd, '')}`);
         console.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
@@ -19,11 +24,13 @@ function standaloneRunner() {
           next();
         });
       })
-      .pipe(gulp.dest(join(ProjectConfig.cwd, 'tmp/standalone')))
-      .once('end', function () {
-        console.log('[standalone] stopped');
-      })
-  );
+    )
+    .pipe(gulp.dest(join(ProjectConfig.cwd, 'tmp/standalone')))
+    .once('end', function () {
+      console.log('[standalone] stopped');
+    });
 }
+
+gulp.task('post:standalone', standaloneRunner);
 
 export default standaloneRunner;
