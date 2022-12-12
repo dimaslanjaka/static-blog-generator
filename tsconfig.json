@@ -24,7 +24,8 @@
   "include": [
     "./src",
     "./test",
-    "*.js"
+    "typedoc.js",
+    "typedoc-runner.js"
   ],
   "exclude": [
     "dist"
