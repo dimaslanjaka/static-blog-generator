@@ -3,7 +3,7 @@ const { existsSync, mkdirSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
-const { run, watch, setTypedocOptions, getTypedocOptions } = require('./typedoc-runner');
+const { watch, setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
 
 // copy non-javascript assets from src folder
 const copy = function () {
@@ -52,20 +52,22 @@ ${output.join('\n')}
   });
 };
 exports.dumptasks = dumptasks;
-const docs = function () {
-  dumptasks().then(async function () {
-    const readme = await readFile(join(__dirname, 'readme.md'), 'utf-8');
-    const tasks = await readFile(join(__dirname, 'tmp/tasks.md'), 'utf-8');
-    await writeFile(
-      join(__dirname, 'tmp/build-readme.md'),
-      `
+const docs = async function () {
+  await dumptasks();
+  const readme = await readFile(join(__dirname, 'readme.md'), 'utf-8');
+  const tasks = await readFile(join(__dirname, 'tmp/tasks.md'), 'utf-8');
+  await writeFile(
+    join(__dirname, 'tmp/build-readme.md'),
+    `
 ${readme}
 ${tasks}
-`
-    ).finally(function () {
-      setTypedocOptions(getTypedocOptions());
-    });
-  });
+
+## CHANGELOG
+> all changelog at https://github.com/dimaslanjaka/static-blog-generator/commits/master
+`.trim()
+  );
+  const opt = setTypedocOptions(Object.assign(getTypedocOptions(), { readme: './tmp/build-readme.md' }));
+  await publish(opt);
 };
 
 function tsc(done) {

@@ -8,6 +8,7 @@ temp
 .env.development
 /coverage
 /src/_config.auto*.json
+/docs
 
 # branch v2
 /build
