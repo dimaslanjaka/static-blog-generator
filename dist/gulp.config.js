@@ -8,16 +8,18 @@ exports.commonIgnore = exports.deployConfig = exports.deployDir = void 0;
 var fs_1 = require("fs");
 var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var path_1 = require("path");
+var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
+var originalConfig = {};
 var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
-var parse = {};
 if ((0, fs_1.existsSync)(fileYML)) {
-    parse = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-    (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(parse, null, 2));
+    originalConfig = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
+    (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
 }
-var ProjectConfig = Object.assign({ post_dir: 'src-posts' }, parse);
+var ProjectConfig = Object.assign({ post_dir: 'src-posts', cwd: (0, upath_1.toUnix)(process.cwd()) }, originalConfig);
+(0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.auto-generated.json'), JSON.stringify(Object.assign({}, ProjectConfig, { fileYML: fileYML }), null, 2));
 exports.default = ProjectConfig;
-exports.deployDir = (0, path_1.join)(process.cwd(), '.deploy_' + ((_a = ProjectConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+exports.deployDir = (0, path_1.join)(ProjectConfig.cwd, '.deploy_' + ((_a = ProjectConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
 function deployConfig() {
     var config = ProjectConfig.deploy || {};
     var github = new git_command_helper_1.default(exports.deployDir);

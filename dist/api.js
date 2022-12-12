@@ -80,7 +80,8 @@ var SBG = /** @class */ (function () {
     function SBG(base) {
         if (base === void 0) { base = null; }
         var _this = this;
-        this.base = (0, upath_1.toUnix)(process.cwd());
+        this.base = (0, upath_1.toUnix)(gulp_config_1.default.base_dir);
+        this.config = gulp_config_1.default;
         /**
          * Auto seo on public dir (_config_yml.public_dir) (run after generated)
          * @returns

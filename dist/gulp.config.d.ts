@@ -6,6 +6,10 @@ export interface ProjConf extends importConfig {
      * Source posts
      */
     post_dir: string;
+    /**
+     * Project CWD
+     */
+    cwd: string;
 }
 declare const ProjectConfig: ProjConf;
 export default ProjectConfig;

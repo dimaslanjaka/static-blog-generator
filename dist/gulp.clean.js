@@ -80,9 +80,11 @@ function cleanDb() {
             switch (_d.label) {
                 case 0:
                     config = gulp_config_1.default;
-                    postDir = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
-                    publicDir = (0, upath_1.join)(process.cwd(), config.public_dir);
-                    tmpDir = (0, upath_1.join)(process.cwd(), 'tmp');
+                    if (typeof config.source_dir !== 'string')
+                        throw new Error('config.source_dir must be configured');
+                    postDir = (0, upath_1.join)(gulp_config_1.default.base_dir, config.source_dir, '_posts');
+                    publicDir = (0, upath_1.join)(gulp_config_1.default.base_dir, config.public_dir);
+                    tmpDir = (0, upath_1.join)(gulp_config_1.default.base_dir, 'tmp');
                     console.log('[clean]', { tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
                     _d.label = 1;
                 case 1:
@@ -122,7 +124,7 @@ function cleanDb() {
                     console.log('[clean]', 'cannot delete', postDir);
                     return [3 /*break*/, 13];
                 case 13:
-                    hexo = new hexo_1.default(process.cwd());
+                    hexo = new hexo_1.default(gulp_config_1.default.base_dir);
                     return [4 /*yield*/, hexo.init().catch(noop_1.default)];
                 case 14:
                     _d.sent();
