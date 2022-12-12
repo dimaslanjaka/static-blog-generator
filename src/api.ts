@@ -10,7 +10,7 @@ import { autoSeo } from './gulp.seo';
 import noop from './utils/noop';
 
 class SBG {
-  base: string = toUnix(ProjectConfig.cwd);
+  base: string = toUnix(ProjectConfig.base_dir);
   config = ProjectConfig;
   /**
    * Static blog generator
