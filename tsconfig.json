@@ -23,7 +23,8 @@
   },
   "include": [
     "./src",
-    "./test"
+    "./test",
+    "*.js"
   ],
   "exclude": [
     "dist"
