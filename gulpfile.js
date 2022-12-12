@@ -3,7 +3,7 @@ const { existsSync, mkdirSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
 const GulpClient = require('gulp');
 const { join, dirname } = require('upath');
-const { run, watch } = require('./typedoc-runner');
+const { run, watch, setTypedocOptions, getTypedocOptions } = require('./typedoc-runner');
 
 // copy non-javascript assets from src folder
 const copy = function () {
@@ -56,13 +56,15 @@ const docs = function () {
   dumptasks().then(async function () {
     const readme = await readFile(join(__dirname, 'readme.md'), 'utf-8');
     const tasks = await readFile(join(__dirname, 'tmp/tasks.md'), 'utf-8');
-    writeFile(
+    await writeFile(
       join(__dirname, 'tmp/build-readme.md'),
       `
 ${readme}
 ${tasks}
 `
-    ).finally(typedocOptions);
+    ).finally(function () {
+      setTypedocOptions(getTypedocOptions());
+    });
   });
 };
 

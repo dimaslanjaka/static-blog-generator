@@ -123,14 +123,14 @@ function noop(..._) {
 let opt = typedocOptions;
 /**
  * Get typedoc options
- * @returns {typedocOptions}
+ * @returns {typeof import('./typedoc')}
  */
 function getTypedocOptions() {
   return opt;
 }
 /**
  * Set typedoc options
- * @param {typedocOptions} newOpt
+ * @param {import('./typedoc.js')} newOpt
  */
 function setTypedocOptions(newOpt) {
   opt = Object.assign(opt, newOpt || {});
