@@ -130,7 +130,7 @@ function getTypedocOptions() {
 }
 /**
  * Set typedoc options
- * @param {import('./typedoc.js')} newOpt
+ * @param {import('./typedoc')} newOpt
  */
 function setTypedocOptions(newOpt) {
   opt = Object.assign(opt, newOpt || {});
