@@ -22,3 +22,16 @@ exports.docs = docs;
 exports.watch = typedocGenerator.watch;
 exports.tsc = tsc;
 exports.default = GulpClient.series(tsc, docs);
+/**
+ * Dump Tasks from dist folder
+ * @param {import('gulp').TaskFunctionCallback} done
+ */
+exports.dumptasks = function (done) {
+  const child = spawn('gulp', ['--tasks'], { cwd: join(__dirname, 'dist') });
+  let stdout = '';
+  child.on('data', (data) => (stdout += data));
+  child.on('close', () => {
+    console.log(stdout);
+    if (typeof done === 'function') done.apply();
+  });
+};
