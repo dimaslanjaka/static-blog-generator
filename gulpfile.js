@@ -29,7 +29,10 @@ exports.default = GulpClient.series(tsc, docs);
 exports.dumptasks = function (done) {
   const child = spawn('gulp', ['--tasks'], { cwd: join(__dirname, 'dist') });
   let stdout = '';
-  child.on('data', (data) => (stdout += data));
+  child.on('data', (data) => (stdout += data.toString()));
+  child.stdout.on('data', function (data) {
+    stdout += data.toString();
+  });
   child.on('close', () => {
     console.log(stdout);
     if (typeof done === 'function') done.apply();
