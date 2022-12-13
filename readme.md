@@ -41,7 +41,7 @@ gulp safelink
 
 ## todo
 
-- creating CLI
+- CLI
 
 | :heavy_check_mark: | command | Description |
 | :--- | :--- | :--- |
