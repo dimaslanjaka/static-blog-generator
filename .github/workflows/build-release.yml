@@ -8,9 +8,17 @@ name: Build Release
 on:
   push:
     branches: [ "master", "main" ]
+    paths-ignore:
+      - '**/*.tgz'
+      - '**/*.gz'
+      - '**/release/**'
   pull_request:
     types:
       - closed
+    paths-ignore:
+      - '**/release/**'
+      - '**/*.tgz'
+      - '**/*.gz'
   workflow_dispatch:
 
 jobs:
@@ -32,8 +40,7 @@ jobs:
 
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
       - name: Cleanup caches
-        if: ${{ false }}
-        # if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
+        if: matrix.node-version == '14.x' && matrix.architecture == 'x86' && runner.os == 'Linux' && contains(github.event.head_commit.message, 'clean')
         run: |
           gh extension install actions/gh-actions-cache
 
@@ -56,11 +63,11 @@ jobs:
 
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#improving-cache-restore-performance-on-windows-using-cross-os-caching
       - if: ${{ runner.os == 'Windows' }}
-        name: Use GNU tar
-        shell: cmd
+        name: Use GNU tar 
         run: |
           echo "Adding GNU tar to PATH"
           echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+        shell: cmd
 
       - name: Set env
         id: set-env
@@ -79,6 +86,7 @@ jobs:
       - name: Get env
         run: |
           echo "branch      : $GITHUB_BRANCH"
+          echo "commit msg  : ${{ github.event.head_commit.message }}"
           echo "commit hash : $GITHUB_SHA_SHORT"
           echo "commit url  : $GITHUB_COMMIT_URL"
           echo "runner url  : $GITHUB_RUNNER_URL"
@@ -145,5 +153,5 @@ jobs:
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64'
         continue-on-error: true
         run: |
-          git commit -m "Update build from $GITHUB_SHA_SHORT" -m "commit url: $GITHUB_COMMIT_URL" -m "runner: $GITHUB_RUNNER_URL"
+          git commit -m "Update build from $GITHUB_COMMIT_URL" -m "commit hash: $GITHUB_SHA_SHORT" -m "commit url: $GITHUB_COMMIT_URL" -m "runner: $GITHUB_RUNNER_URL"
           git push
