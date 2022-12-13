@@ -14,7 +14,7 @@ Configuration setup for `_config.yml` that required for this package (you can ch
 ```yaml
 public_dir: "public"
 source_dir: "source"
-source_post: "src-posts"
+post_dir: "src-posts"
 ```
 
 ## Copy source posts to hexo source dir
