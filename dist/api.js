@@ -71,6 +71,7 @@ var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_post_1 = require("./gulp.post");
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
+var gulp_standalone_1 = __importDefault(require("./gulp.standalone"));
 var noop_1 = __importDefault(require("./utils/noop"));
 var SBG = /** @class */ (function () {
     /**
@@ -81,6 +82,7 @@ var SBG = /** @class */ (function () {
         if (cwd === void 0) { cwd = null; }
         var _this = this;
         this.config = (0, gulp_config_1.getConfig)();
+        this.standalone = function () { return (0, gulp_standalone_1.default)(); };
         /**
          * Auto seo on public dir (_config_yml.public_dir) (run after generated)
          * @returns
