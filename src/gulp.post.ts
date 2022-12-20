@@ -34,7 +34,7 @@ export function watchPost(done: gulp.TaskFunctionCallback) {
  * @param identifier
  * @param callback
  */
-export const copySinglePost = (identifier: string, callback?: CallableFunction) => {
+export const copySinglePost = (identifier: string, callback?: (...args: any[]) => any) => {
   identifier = identifier.replace(extname(identifier), '');
   ///const fileList = [];
   gulp
