@@ -11,7 +11,6 @@ const config = {
   collectCoverageFrom: ['src/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**', '!**/test/**'],
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/'],
   testMatch: ['<rootDir>/test/**/*.spec.{ts,js}'],
-  lastCommit: true,
   collectCoverage: true,
   runTestsByPath: true
 };
