@@ -8,6 +8,7 @@ declare class SBG {
      * @param cwd base folder
      */
     constructor(cwd?: null | string);
+    standalone: () => NodeJS.ReadWriteStream;
     /**
      * Auto seo on public dir (_config_yml.public_dir) (run after generated)
      * @returns
