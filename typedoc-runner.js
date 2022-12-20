@@ -18,8 +18,10 @@ let compiled = 0;
 
 /**
  * Compile typedocs
+ * @param {import('typedoc').TypeDocOptions} options
+ * @param {CallableFunction} callback
  */
-const compile = async function (options) {
+const compile = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
   const projectDocsDir = join(outDir, pkgjson.name);
 
@@ -51,12 +53,16 @@ const compile = async function (options) {
   } else {
     console.error('[error]', 'project undefined');
   }
+
+  if (typeof callback === 'function') await callback.apply(app);
 };
 
 /**
  * Compile and publish to github pages
+ * @param {import('typedoc').TypeDocOptions} options
+ * @param {CallableFunction} callback
  */
-const publish = async function (options) {
+const publish = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
 
   const github = new git(outDir);
@@ -76,7 +82,7 @@ const publish = async function (options) {
   }
 
   for (let i = 0; i < 2; i++) {
-    await compile(options);
+    await compile(options, callback);
   }
 
   writeFileSync(
