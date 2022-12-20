@@ -9,16 +9,16 @@ export async function chain(
     /**
      * function to call inside chains
      */
-    callback: CallableFunction;
+    callback: (...args: any[]) => any;
     opt?: {
       /**
        * run before callback called
        */
-      before?: CallableFunction;
+      before?: (...args: any[]) => any;
       /**
        * run after callback called
        */
-      after?: CallableFunction;
+      after?: (...args: any[]) => any;
     };
   }[]
 ) {
