@@ -32,7 +32,7 @@ export declare function deployConfig(): {
  * * useful for jest
  * @param obj
  */
-export declare function setConfig(obj: Record<string, any> | ProjConf): void;
+export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
 /**
  * Config getter
  * * useful for jest

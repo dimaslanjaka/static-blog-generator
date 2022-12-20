@@ -48,6 +48,7 @@ var upath_1 = require("upath");
 var util_1 = require("util");
 var gulp_config_1 = require("./gulp.config");
 var fm_1 = require("./utils/fm");
+var logger_1 = __importDefault(require("./utils/logger"));
 var noop_1 = __importDefault(require("./utils/noop"));
 /**
  * Clean Project Databases
@@ -63,10 +64,10 @@ function cleanDb() {
                         (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
                         throw new Error('config.source_dir must be configured');
                     }
-                    postDir = (0, upath_1.join)(config.base_dir, config.source_dir, '_posts');
-                    publicDir = (0, upath_1.join)(config.base_dir, config.public_dir);
-                    tmpDir = (0, upath_1.join)(config.base_dir, 'tmp');
-                    console.log('[clean]', { tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
+                    postDir = (0, upath_1.join)(config.cwd, config.source_dir, '_posts');
+                    publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
+                    tmpDir = (0, upath_1.join)(config.cwd, 'tmp');
+                    logger_1.default.log('[clean]', { tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
                     _d.label = 1;
                 case 1:
                     _d.trys.push([1, 4, , 5]);
@@ -78,7 +79,7 @@ function cleanDb() {
                 case 3: return [3 /*break*/, 5];
                 case 4:
                     _a = _d.sent();
-                    console.log('[clean]', 'cannot delete', tmpDir);
+                    logger_1.default.log('[clean]', 'cannot delete', tmpDir);
                     return [3 /*break*/, 5];
                 case 5:
                     _d.trys.push([5, 8, , 9]);
@@ -90,7 +91,7 @@ function cleanDb() {
                 case 7: return [3 /*break*/, 9];
                 case 8:
                     _b = _d.sent();
-                    console.log('[clean]', 'cannot delete', publicDir);
+                    logger_1.default.log('[clean]', 'cannot delete', publicDir);
                     return [3 /*break*/, 9];
                 case 9:
                     _d.trys.push([9, 12, , 13]);
@@ -102,7 +103,7 @@ function cleanDb() {
                 case 11: return [3 /*break*/, 13];
                 case 12:
                     _c = _d.sent();
-                    console.log('[clean]', 'cannot delete', postDir);
+                    logger_1.default.log('[clean]', 'cannot delete', postDir);
                     return [3 /*break*/, 13];
                 case 13:
                     hexo = new hexo_1.default(config.base_dir);
