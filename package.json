@@ -60,6 +60,9 @@
     "@jest/globals": "^29.3.1",
     "@types/bluebird": "^3.5.38",
     "@types/gulp": "^4.0.10",
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz",
+    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
+    "@types/jest": "^29.2.4",
     "@types/node": "^18.11.17",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
@@ -75,6 +78,8 @@
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "semver": "^7.3.8",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
     "typedoc": "^0.23.23",
     "typedoc-plugin-missing-exports": "^1.0.0"
   }
