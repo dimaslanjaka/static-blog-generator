@@ -6,9 +6,12 @@ const { join } = require('path');
  * * how to run single test {@link https://stackoverflow.com/questions/28725955/how-do-i-test-a-single-file-using-jest}
  */
 const config = {
-  verbose: true,
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  verbose: false,
+  cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  collectCoverageFrom: ['src/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**', '!**/test/**'],
+  collectCoverageFrom: ['src/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**', '!**/test/**', '!**/*.test.{js,ts}'],
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/'],
   testMatch: ['<rootDir>/test/**/*.spec.{ts,js}'],
   collectCoverage: true,

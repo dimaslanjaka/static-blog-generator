@@ -1,5 +1,6 @@
 process.cwd = () => __dirname;
 
-import { hexoGenerateSitemap } from '../src';
+import { copyAllPosts, hexoGenerateSitemap } from '../src';
+import { chain } from '../src/utils/chain';
 
-hexoGenerateSitemap();
+chain([{ callback: copyAllPosts }, { callback: hexoGenerateSitemap }]);
