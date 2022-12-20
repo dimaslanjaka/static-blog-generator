@@ -149,7 +149,7 @@
       ]
     }
   },
-  "theme": "next",
+  "theme": "hexo-theme-landscape",
   "deploy": {
     "type": "git",
     "repo": "https://github.com/dimaslanjaka/dimaslanjaka.github.io.git",
