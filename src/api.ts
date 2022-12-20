@@ -1,4 +1,3 @@
-import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { cleanDb, cleanOldArchives } from './gulp.clean';
@@ -37,11 +36,9 @@ class SBG {
    * * see the method {@link copyAllPosts}
    * @returns
    */
-  copy = () => {
-    return new Bluebird((resolve) => {
-      copyAllPosts().once('end', function () {
-        resolve(null);
-      });
+  copy = function () {
+    return new Promise((resolve) => {
+      copyAllPosts().once('end', resolve);
     });
   };
 
