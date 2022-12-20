@@ -2,11 +2,12 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const { mkdirSync, existsSync, writeFileSync } = require('fs');
+const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
 const spawn = require('cross-spawn');
+const { EOL } = require('os');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
 // update   : curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
@@ -55,6 +56,7 @@ const compile = async function (options = {}, callback = null) {
   }
 
   if (typeof callback === 'function') await callback.apply(app);
+  await createIndex();
 };
 
 /**
@@ -75,7 +77,7 @@ const publish = async function (options = {}, callback = null) {
     await github.setremote(REPO_URL);
     await github.setbranch('master');
     //await github.reset('master');
-    await github.pull(['--recurse-submodule']);
+    await github.pull(['--recurse-submodule', '-X', 'theirs']);
     await github.spawn('git', 'config core.eol lf'.split(' '));
   } catch {
     //
@@ -171,6 +173,30 @@ if (require.main === module) {
   })();
 } else {
   //console.log('required as a module');
+}
+
+/**
+ * create docs/readme.md
+ */
+async function createIndex() {
+  let body =
+    `
+# Monorepo Documentation Site
+  `.trim() + EOL;
+
+  readdirSync(join(__dirname, 'docs')).forEach((filename) => {
+    const path = join(__dirname, 'docs', filename);
+    const stat = statSync(path);
+
+    if (stat.isDirectory() && filename !== '.git') {
+      body +=
+        `
+- [${filename}](./${filename})
+      `.trim() + EOL;
+    }
+  });
+
+  writeFileSync(join(__dirname, 'docs/readme.md'), body.trim());
 }
 
 module.exports = {
