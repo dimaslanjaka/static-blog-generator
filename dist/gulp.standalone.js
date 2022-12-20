@@ -50,7 +50,7 @@ var string_1 = require("./utils/string");
  * @returns
  */
 function standaloneRunner() {
-    console.log('[standalone] Running scripts...');
+    console.log('[standalone] Running scripts...\n');
     return gulp_1.default
         .src((0, upath_1.join)(gulp_config_1.default.cwd, '**/_*.standalone.js'), { cwd: gulp_config_1.default.cwd, ignore: ['**/tmp/**'] })
         .pipe(through2_1.default.obj(function (file, _enc, next) {
@@ -78,7 +78,7 @@ function standaloneRunner() {
     }))
         .pipe(gulp_1.default.dest((0, upath_1.join)(gulp_config_1.default.cwd, 'tmp/standalone')))
         .once('end', function () {
-        console.log('[standalone] stopped');
+        console.log('\n[standalone] stopped');
     });
 }
 gulp_1.default.task('post:standalone', standaloneRunner);
