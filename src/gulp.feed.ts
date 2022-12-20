@@ -5,7 +5,7 @@ import hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { join } from 'upath';
-import ProjectConfig, { commonIgnore } from './gulp.config';
+import { commonIgnore, getConfig } from './gulp.config';
 import envNunjucks from './utils/nunjucks-env';
 
 const env = envNunjucks();
@@ -18,7 +18,7 @@ gulp.task('feed', function (done) {
       env.addFilter('formatUrl', (str) => {
         return full_url_for.call(instance, str);
       });
-      const config = ProjectConfig;
+      const config = getConfig();
 
       function build(tmplSrc: PathOrFileDescriptor, dest: PathOrFileDescriptor) {
         const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
