@@ -143,7 +143,7 @@ export function copyAllPosts() {
   return (
     gulp
       .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
-      .pipe(gulpCached())
+      .pipe(gulpCached({ name: 'post' }))
       //.pipe(gulpDebug())
       .pipe(
         through2.obj(async (file, _enc, callback) => {

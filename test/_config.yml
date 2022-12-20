@@ -132,7 +132,7 @@ server:
   serveStatic:
     extensions:
     - html
-theme: next
+theme: hexo-theme-landscape
 
 deploy:
   type: git
