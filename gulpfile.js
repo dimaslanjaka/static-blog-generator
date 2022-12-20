@@ -45,13 +45,37 @@ const dumptasks = function () {
 \`\`\`text
 ${output.join('\n')}
 \`\`\`
+
+## Coverage
+> [Coverage Here](./coverage)
     `.trim()
       );
       resolve(output);
     });
   });
 };
+
 exports.dumptasks = dumptasks;
+
+/**
+ * Copy coverage/lcov-report to docs/static-blog-generator/coverage
+ * @returns
+ */
+const coverage = function () {
+  return new Promise((resolve) => {
+    const coverageDir = join(__dirname, 'coverage/lcov-report');
+    if (existsSync(coverageDir)) {
+      GulpClient.src('**/*/*.*', { cwd: coverageDir })
+        .pipe(GulpClient.dest(join(__dirname, 'docs/static-blog-generator/coverage')))
+        .once('end', () => resolve(null));
+    } else {
+      resolve(null);
+    }
+  });
+};
+
+exports.coverage = coverage;
+
 const docs = async function () {
   await dumptasks();
   const readme = await readFile(join(__dirname, 'readme.md'), 'utf-8');
@@ -67,7 +91,7 @@ ${tasks}
 `.trim()
   );
   const opt = setTypedocOptions(Object.assign(getTypedocOptions(), { readme: './tmp/build-readme.md' }));
-  await publish(opt);
+  await publish(opt, coverage);
 };
 
 function tsc(done) {
