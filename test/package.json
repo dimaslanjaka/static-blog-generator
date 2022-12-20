@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "site test ```bash git clone https://github.com/dimaslanjaka/site.git demo cd demo && npm install ```",
+  "main": "gulp.copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hexo": "^6.3.0",
+    "hexo-server": "^3.0.0",
+    "static-blog-generator": "file:.."
+  }
+}
