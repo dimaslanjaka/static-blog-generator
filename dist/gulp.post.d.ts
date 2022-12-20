@@ -11,7 +11,7 @@ export declare function watchPost(done: gulp.TaskFunctionCallback): void;
  * @param identifier
  * @param callback
  */
-export declare const copySinglePost: (identifier: string, callback?: CallableFunction) => void;
+export declare const copySinglePost: (identifier: string, callback?: (...args: any[]) => any) => void;
 /**
  * copy watched post
  * @returns

@@ -11,6 +11,7 @@ import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig, { commonIgnore } from './gulp.config';
 import { array_remove_empty, array_unique } from './utils/array';
+import { writefile } from './utils/fm';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
 
@@ -89,10 +90,11 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
  * write the sitemap
  * @param callback
  */
-function writeSitemap(callback?: CallableFunction) {
-  let cb: CallableFunction = noop;
+function writeSitemap(callback?: (...args: any[]) => any) {
+  let cb = noop;
   if (callback) cb = () => callback(sitemaps);
-  writeFile(sitemapTXT, array_remove_empty(sitemaps).join(EOL), () => cb());
+  writefile(sitemapTXT, array_remove_empty(sitemaps).join(EOL));
+  cb.apply(this);
 }
 
 export function hexoGenerateSitemap() {
