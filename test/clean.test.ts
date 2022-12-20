@@ -1,5 +1,4 @@
-import { toUnix } from 'upath';
-process.cwd = () => toUnix(__dirname);
+process.cwd = () => __dirname;
 
 import { cleanDb } from '../src';
 
