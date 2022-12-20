@@ -46,7 +46,7 @@ function autoSeo(cwd) {
     ignore.push.apply(ignore, __spreadArray([], __read(gulp_config_1.commonIgnore), false));
     return gulp_1.default
         .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd: cwd, ignore: ignore })
-        .pipe((0, gulp_cache_1.default)())
+        .pipe((0, gulp_cache_1.default)({ name: 'seo' }))
         .pipe((0, gulp_dom_1.default)(function (path) {
         var _this = this;
         // fix alt images
