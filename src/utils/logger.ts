@@ -1,8 +1,13 @@
 import { appendFileSync, existsSync, mkdirpSync, writeFileSync } from 'fs-extra';
 import slugify from 'slugify';
 import { basename, dirname, join } from 'upath';
+import { areWeTestingWithJest } from './jest';
+import noop from './noop';
 
 const FOLDER = join(process.cwd(), 'tmp/logs/gulp-sbg');
+
+// disable console.log on jest
+if (areWeTestingWithJest()) console.log = noop;
 
 /**
  * @example

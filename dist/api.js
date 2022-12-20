@@ -105,7 +105,7 @@ var SBG = /** @class */ (function () {
         this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.cwd, gulp_config_1.default.public_dir)); };
         if (typeof cwd === 'string') {
             this.cwd = cwd;
-            (0, gulp_config_1.setConfig)({ cwd: cwd });
+            this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
         }
     }
     /**
