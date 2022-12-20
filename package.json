@@ -12,7 +12,7 @@
   "scripts": {
     "update": "npx npm-check-updates -u",
     "postinstall": "node postinstall.js",
-    "prebuild": "rimraf dist && npm run lint",
+    "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.build.json && gulp copy",
     "postbuild": "node packer.js",
     "dev": "tsc -p tsconfig.build.json -w",
