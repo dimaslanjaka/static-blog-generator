@@ -96,7 +96,7 @@ var SBG = /** @class */ (function () {
         this.copy = function () {
             return new bluebird_1.default(function (resolve) {
                 (0, gulp_post_1.copyAllPosts)().once('end', function () {
-                    resolve.bind(this)();
+                    resolve(null);
                 });
             });
         };
