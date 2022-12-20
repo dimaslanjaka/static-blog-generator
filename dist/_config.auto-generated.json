@@ -1,5 +1,332 @@
 {
   "post_dir": "src-posts",
-  "cwd": "D:/Repositories/static-blog-generator-hexo/packages/static-blog-generator/dist",
-  "fileYML": "D:\\Repositories\\static-blog-generator-hexo\\packages\\static-blog-generator\\dist\\_config.yml"
+  "cwd": "d:/Repositories/static-blog-generator-hexo/packages/static-blog-generator/test",
+  "title": "WMI",
+  "subtitle": "Website Management Indonesia",
+  "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.",
+  "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
+  "language": [
+    "en",
+    "id"
+  ],
+  "timezone": "Asia/Jakarta",
+  "search": {
+    "path": "search.xml",
+    "field": "post",
+    "content": true,
+    "format": "html"
+  },
+  "url": "https://www.webmanajemen.com/",
+  "root": "/",
+  "permalink": ":title.html",
+  "permalink_defaults": ":title.html",
+  "pretty_urls": {
+    "trailing_index": true,
+    "trailing_html": true
+  },
+  "source_dir": "source",
+  "public_dir": "public",
+  "tag_dir": "tags",
+  "archive_dir": "archives",
+  "category_dir": "categories",
+  "code_dir": "downloads/code",
+  "i18n_dir": ":lang",
+  "new_post_name": ":year/:month/:day/:title.md",
+  "default_layout": "post",
+  "titlecase": false,
+  "external_link": {
+    "enable": true,
+    "field": "site",
+    "safelink": {
+      "enable": true,
+      "exclude": [
+        "webmanajemen.com",
+        "git.webmanajemen.com"
+      ],
+      "redirect": "https://www.webmanajemen.com/page/safelink.html?url=",
+      "type": "base64",
+      "password": "unique-password"
+    },
+    "exclude": [
+      "webmanajemen.com",
+      "web-manajemen.blogspot.com",
+      "dimaslanjaka.github.io"
+    ]
+  },
+  "filename_case": 0,
+  "render_drafts": false,
+  "post_asset_folder": true,
+  "marked": {
+    "prependRoot": true,
+    "postAsset": true
+  },
+  "relative_link": false,
+  "future": true,
+  "highlight": {
+    "enable": true,
+    "line_number": false,
+    "auto_detect": false,
+    "tab_replace": "  ",
+    "wrap": false,
+    "hljs": false
+  },
+  "prismjs": {
+    "enable": false,
+    "preprocess": true,
+    "line_number": true,
+    "tab_replace": ""
+  },
+  "index_generator": {
+    "path": "",
+    "per_page": 10,
+    "order_by": "-updated"
+  },
+  "default_category": "uncategorized",
+  "default_tag": null,
+  "category_map": null,
+  "tag_map": null,
+  "meta_generator": true,
+  "date_format": "YYYY-MM-DD",
+  "time_format": "HH:mm:ss",
+  "updated_option": false,
+  "per_page": 10,
+  "pagination_dir": "page",
+  "include": [
+    "assets/adblock-notify/readme.md"
+  ],
+  "exclude": [
+    "**/bin/**",
+    "**/backend/**",
+    "**/.git",
+    "**/MIDI.js/**",
+    "**/{readme,README,changelog,CHANGELOG}.md",
+    "**/Test/**",
+    "**/guzzle/**",
+    "**/exclude/**",
+    "**/hexo-post-parser/**",
+    "**/node_modules/**",
+    "**/vendor/**",
+    "**/ads/**",
+    "**/tmp/**",
+    "**/hexo-theme-unit-test/**"
+  ],
+  "ignore": [
+    "**/.git"
+  ],
+  "skip_render": [
+    "*.html",
+    "chimeraland/recipes.html",
+    "_posts/chimeraland/recipes.html",
+    "assets/adblock-notify/*.html",
+    "page/*.html",
+    "comment.html",
+    "source/comment.html",
+    "**/hexo-theme-unit-test/**",
+    "**/node_modules/**",
+    "yandex_*",
+    "ahrefs_*",
+    "glx_*",
+    "Midi",
+    "Midi/**/*",
+    "*.json",
+    "**/*.json",
+    "_posts/**/*.json",
+    "_posts/**/*.js",
+    "_posts/**/*.css",
+    "_posts/The Legend Of Neverland/Midi/readme.md",
+    "**/__test__/**",
+    "**/__tests__/**"
+  ],
+  "server": {
+    "port": 4000,
+    "log": false,
+    "ip": "0.0.0.0",
+    "compress": false,
+    "cache": false,
+    "header": false,
+    "serveStatic": {
+      "extensions": [
+        "html"
+      ]
+    }
+  },
+  "theme": "hexo-theme-landscape",
+  "deploy": {
+    "type": "git",
+    "repo": "https://github.com/dimaslanjaka/dimaslanjaka.github.io.git",
+    "branch": "master",
+    "message": "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}",
+    "hostname": "www.webmanajemen.com",
+    "username": "dimaslanjaka",
+    "email": "dimaslanjaka@gmail.com"
+  },
+  "author": "Dimas Lanjaka",
+  "author_obj": {
+    "name": "Dimas Lanjaka",
+    "link": "https://www.webmanajemen.com/",
+    "image": {
+      "url": "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg",
+      "width": 1944,
+      "height": 2592
+    }
+  },
+  "social_links": {
+    "github": "https://github.com/dimaslanjaka",
+    "youtube": "https://youtube.com/p/L3n4r0x"
+  },
+  "feed": {
+    "icon": "/logo.png",
+    "content": true,
+    "type": [
+      "atom",
+      "rss2"
+    ],
+    "path": [
+      "atom.xml",
+      "rss.xml"
+    ]
+  },
+  "sitemap": {
+    "path": [
+      "sitemap.xml",
+      "sitemap.txt"
+    ],
+    "rel": true,
+    "tags": true,
+    "categories": true
+  },
+  "related_posts": {
+    "enabled": true,
+    "enable_env_name": "prod",
+    "filter_threshold": 0.3,
+    "related_count": 3,
+    "weight": {
+      "title": 0.05,
+      "description": 0.05,
+      "keywords": 0.01,
+      "tags": 0.005,
+      "categories": 0.005,
+      "text": 1
+    },
+    "stemmers": [
+      "en",
+      "ru",
+      "id"
+    ],
+    "reserved": [
+      "asp.net",
+      "vs.net",
+      "ado.net",
+      ".net",
+      "games",
+      "js",
+      "ts"
+    ]
+  },
+  "markdown_it_plus": {
+    "highlight": true,
+    "html": true,
+    "xhtmlOut": true,
+    "breaks": true,
+    "langPrefix": null,
+    "linkify": true,
+    "typographer": null,
+    "pre_class": "highlight",
+    "plugins": [
+      {
+        "plugin": {
+          "name": "markdown-it-attrs",
+          "enable": true,
+          "options": {
+            "leftDelimiter": "{",
+            "rightDelimiter": "}",
+            "allowedAttributes": []
+          }
+        }
+      }
+    ]
+  },
+  "browsersync": {
+    "logLevel": "warn",
+    "ghostMode": {
+      "scroll": true
+    },
+    "instanceName": "customInstance",
+    "port": 3001,
+    "browser": "firefox",
+    "open": false
+  },
+  "generator": {
+    "cache": true,
+    "type": "hexo",
+    "copy": {
+      "posts": {
+        "space": true
+      }
+    }
+  },
+  "adsense": {
+    "enable": false,
+    "pub": "ca-pub-2974518380815858",
+    "article_ads": null,
+    "field": "site",
+    "https": false,
+    "adblock": false,
+    "type": "javascript",
+    "exclude": [
+      "*.min.html",
+      "**/exclude/**/*"
+    ]
+  },
+  "redirect": {
+    "enable": true
+  },
+  "analytics": {
+    "tagmanager": "GTM-NJNNXSR",
+    "GA4": "G-BG75CLNJZ1",
+    "GA3": "UA-106238155-1",
+    "cloudflare": "2157c0f3b9e74a92badffe39156166b9"
+  },
+  "seo": {
+    "html": {
+      "fix": true,
+      "exclude": [
+        "*.min.{htm,html}"
+      ]
+    },
+    "css": true,
+    "js": true,
+    "schema": false,
+    "img": {
+      "broken": false,
+      "default": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+      "onerror": "serverside"
+    },
+    "links": {
+      "enable": true,
+      "exclude": [
+        "webmanajemen.com",
+        "web-manajemen.blogspot.com",
+        "dimaslanjaka.github.io"
+      ]
+    },
+    "sitemap": true
+  },
+  "tag_assign": null,
+  "category_assign": {
+    "TS": "Programming",
+    "JS": "Programming",
+    "Typescript": "Programming",
+    "Javascript": "Programming",
+    "GitHub": "Programming"
+  },
+  "tag_mapper": {
+    "JS": "Javascript",
+    "TS": "Typescript"
+  },
+  "category_mapper": {
+    "JS": "Javascript",
+    "TS": "Typescript"
+  },
+  "fileYML": "d:\\Repositories\\static-blog-generator-hexo\\packages\\static-blog-generator\\test\\_config.yml"
 }
