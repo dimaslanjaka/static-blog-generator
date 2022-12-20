@@ -3,7 +3,10 @@
     "subtitle": "Website Management Indonesia",
     "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.",
     "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
-    "language": ["en", "id"],
+    "language": [
+        "en",
+        "id"
+    ],
     "timezone": "Asia/Jakarta",
     "search": {
         "path": "search.xml",
@@ -35,12 +38,19 @@
         "field": "site",
         "safelink": {
             "enable": true,
-            "exclude": ["webmanajemen.com", "git.webmanajemen.com"],
+            "exclude": [
+                "webmanajemen.com",
+                "git.webmanajemen.com"
+            ],
             "redirect": "https://www.webmanajemen.com/page/safelink.html?url=",
             "type": "base64",
             "password": "unique-password"
         },
-        "exclude": ["webmanajemen.com", "web-manajemen.blogspot.com", "dimaslanjaka.github.io"]
+        "exclude": [
+            "webmanajemen.com",
+            "web-manajemen.blogspot.com",
+            "dimaslanjaka.github.io"
+        ]
     },
     "filename_case": 0,
     "render_drafts": false,
@@ -80,7 +90,9 @@
     "updated_option": false,
     "per_page": 10,
     "pagination_dir": "page",
-    "include": ["assets/adblock-notify/readme.md"],
+    "include": [
+        "assets/adblock-notify/readme.md"
+    ],
     "exclude": [
         "**/bin/**",
         "**/backend/**",
@@ -97,7 +109,9 @@
         "**/tmp/**",
         "**/hexo-theme-unit-test/**"
     ],
-    "ignore": ["**/.git"],
+    "ignore": [
+        "**/.git"
+    ],
     "skip_render": [
         "*.html",
         "chimeraland/recipes.html",
@@ -130,7 +144,9 @@
         "cache": false,
         "header": false,
         "serveStatic": {
-            "extensions": ["html"]
+            "extensions": [
+                "html"
+            ]
         }
     },
     "theme": "next",
@@ -160,11 +176,20 @@
     "feed": {
         "icon": "/logo.png",
         "content": true,
-        "type": ["atom", "rss2"],
-        "path": ["atom.xml", "rss.xml"]
+        "type": [
+            "atom",
+            "rss2"
+        ],
+        "path": [
+            "atom.xml",
+            "rss.xml"
+        ]
     },
     "sitemap": {
-        "path": ["sitemap.xml", "sitemap.txt"],
+        "path": [
+            "sitemap.xml",
+            "sitemap.txt"
+        ],
         "rel": true,
         "tags": true,
         "categories": true
@@ -182,8 +207,20 @@
             "categories": 0.005,
             "text": 1
         },
-        "stemmers": ["en", "ru", "id"],
-        "reserved": ["asp.net", "vs.net", "ado.net", ".net", "games", "js", "ts"]
+        "stemmers": [
+            "en",
+            "ru",
+            "id"
+        ],
+        "reserved": [
+            "asp.net",
+            "vs.net",
+            "ado.net",
+            ".net",
+            "games",
+            "js",
+            "ts"
+        ]
     },
     "markdown_it_plus": {
         "highlight": true,
@@ -235,7 +272,10 @@
         "https": false,
         "adblock": false,
         "type": "javascript",
-        "exclude": ["*.min.html", "**/exclude/**/*"]
+        "exclude": [
+            "*.min.html",
+            "**/exclude/**/*"
+        ]
     },
     "redirect": {
         "enable": true
@@ -249,7 +289,9 @@
     "seo": {
         "html": {
             "fix": true,
-            "exclude": ["*.min.{htm,html}"]
+            "exclude": [
+                "*.min.{htm,html}"
+            ]
         },
         "css": true,
         "js": true,
@@ -261,7 +303,11 @@
         },
         "links": {
             "enable": true,
-            "exclude": ["webmanajemen.com", "web-manajemen.blogspot.com", "dimaslanjaka.github.io"]
+            "exclude": [
+                "webmanajemen.com",
+                "web-manajemen.blogspot.com",
+                "dimaslanjaka.github.io"
+            ]
         },
         "sitemap": true
     },
