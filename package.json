@@ -38,7 +38,7 @@
     "cross-spawn": "^7.0.3",
     "front-matter": "^4.0.2",
     "fs-extra": "^11.1.0",
-    "git-command-helper": "^1.0.12",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz",
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz",
