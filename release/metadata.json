@@ -1,11 +1,11 @@
 {
   "/release/static-blog-generator-3.0.0.tgz": {
-    "hash": "7b883df7c3361f2fa8a372e0c47add450491c4b6"
+    "hash": "705fa654c9a64a6841fa8a931b23ca1f5fc6825d"
   },
   "/release/static-blog-generator.tgz": {
-    "hash": "7b883df7c3361f2fa8a372e0c47add450491c4b6"
+    "hash": "705fa654c9a64a6841fa8a931b23ca1f5fc6825d"
   },
   "/package-lock.json": {
-    "hash": "b1162b2261fdeb4dc73f02526842ec0926b27e6f"
+    "hash": "d008d3370fa0334be79fad989a5e1823fca13aec"
   }
 }
