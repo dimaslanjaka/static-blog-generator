@@ -3,7 +3,9 @@ import { existsSync, rm, RmOptions } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { join } from 'upath';
+import { inspect } from 'util';
 import { deployDir, getConfig } from './gulp.config';
+import { writefile } from './utils/fm';
 import noop from './utils/noop';
 
 /**
@@ -11,7 +13,10 @@ import noop from './utils/noop';
  */
 export async function cleanDb() {
   const config = getConfig();
-  if (typeof config.source_dir !== 'string') throw new Error('config.source_dir must be configured');
+  if (typeof config.source_dir !== 'string') {
+    writefile(join(config.cwd, 'tmp/errors/clean.log'), inspect(config));
+    throw new Error('config.source_dir must be configured');
+  }
 
   const postDir = join(config.base_dir, config.source_dir, '_posts');
   const publicDir = join(config.base_dir, config.public_dir);
