@@ -3,19 +3,19 @@ import { existsSync, rm, RmOptions } from 'fs-extra';
 import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { join } from 'upath';
-import ProjectConfig, { deployDir } from './gulp.config';
+import { deployDir, getConfig } from './gulp.config';
 import noop from './utils/noop';
 
 /**
  * Clean Project Databases
  */
 export async function cleanDb() {
-  const config = ProjectConfig;
+  const config = getConfig();
   if (typeof config.source_dir !== 'string') throw new Error('config.source_dir must be configured');
 
-  const postDir = join(ProjectConfig.base_dir, config.source_dir, '_posts');
-  const publicDir = join(ProjectConfig.base_dir, config.public_dir);
-  const tmpDir = join(ProjectConfig.base_dir, 'tmp');
+  const postDir = join(config.base_dir, config.source_dir, '_posts');
+  const publicDir = join(config.base_dir, config.public_dir);
+  const tmpDir = join(config.base_dir, 'tmp');
 
   console.log('[clean]', { tmpDir, postDir, publicDir });
 
@@ -35,7 +35,7 @@ export async function cleanDb() {
     console.log('[clean]', 'cannot delete', postDir);
   }
 
-  const hexo = new hexoLib(ProjectConfig.base_dir);
+  const hexo = new hexoLib(config.base_dir);
   await hexo.init().catch(noop);
   await hexo.call('clean').catch(noop);
 }
@@ -67,11 +67,12 @@ gulp.task('clean', cleanDb);
  * clean old archives (categories, tags, pagination)
  */
 export function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
-  const archives = join(deployDir, ProjectConfig.archive_dir);
-  const categories = join(deployDir, ProjectConfig.category_dir);
-  const tags = join(deployDir, ProjectConfig.tag_dir);
+  const config = getConfig();
+  const archives = join(deployDir, config.archive_dir);
+  const categories = join(deployDir, config.category_dir);
+  const tags = join(deployDir, config.tag_dir);
   const folders = [archives, tags, categories]
-    .concat(ProjectConfig.language.map((str) => join(deployDir, str)))
+    .concat(config.language.map((str) => join(deployDir, str)))
     .filter((str) => existsSync(str));
 
   const promises: Promise<any>[] = [];

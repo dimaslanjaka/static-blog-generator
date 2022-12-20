@@ -1,8 +1,8 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
-import { join, toUnix } from 'upath';
+import { join } from 'upath';
 import { cleanDb, cleanOldArchives } from './gulp.clean';
-import ProjectConfig, { deployConfig } from './gulp.config';
+import ProjectConfig, { deployConfig, getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
@@ -10,14 +10,17 @@ import { autoSeo } from './gulp.seo';
 import noop from './utils/noop';
 
 class SBG {
-  base: string = toUnix(ProjectConfig.base_dir);
-  config = ProjectConfig;
+  base: string;
+  config = getConfig();
   /**
    * Static blog generator
    * @param base base folder
    */
   constructor(base: null | string = null) {
-    if (typeof base === 'string') this.base = base;
+    if (typeof base === 'string') {
+      this.base = base;
+      setConfig({ cwd: base });
+    }
   }
 
   /**
