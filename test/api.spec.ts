@@ -4,7 +4,7 @@ process.cwd = () => __dirname;
 import { describe, expect, jest, test } from '@jest/globals';
 import { existsSync } from 'fs';
 import { join, toUnix } from 'upath';
-import { Application, getConfig } from '../dist';
+import { Application, getConfig } from '../src';
 
 jest.setTimeout(10000);
 
