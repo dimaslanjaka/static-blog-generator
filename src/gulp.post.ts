@@ -184,10 +184,11 @@ export function copyAllPosts() {
   );
 }
 
-gulp.task('copy-all-post', copyAllPosts);
-gulp.task('copy-all-posts', copyAllPosts);
-gulp.task('copy-posts', copyAllPosts);
-gulp.task('copy-post', copyAllPosts);
 gulp.task('post:copy', copyAllPosts);
+gulp.task('copy-all-post', gulp.series('post:copy'));
+gulp.task('copy-all-posts', gulp.series('post:copy'));
+gulp.task('copy-posts', gulp.series('post:copy'));
+gulp.task('copy-post', gulp.series('post:copy'));
+
 gulp.task('watch-post', watchPost);
 gulp.task('watch-posts', watchPost);

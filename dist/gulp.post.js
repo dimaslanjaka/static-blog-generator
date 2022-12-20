@@ -235,10 +235,10 @@ function copyAllPosts() {
         .pipe(gulp_1.default.dest(destDir)));
 }
 exports.copyAllPosts = copyAllPosts;
-gulp_1.default.task('copy-all-post', copyAllPosts);
-gulp_1.default.task('copy-all-posts', copyAllPosts);
-gulp_1.default.task('copy-posts', copyAllPosts);
-gulp_1.default.task('copy-post', copyAllPosts);
 gulp_1.default.task('post:copy', copyAllPosts);
+gulp_1.default.task('copy-all-post', gulp_1.default.series('post:copy'));
+gulp_1.default.task('copy-all-posts', gulp_1.default.series('post:copy'));
+gulp_1.default.task('copy-posts', gulp_1.default.series('post:copy'));
+gulp_1.default.task('copy-post', gulp_1.default.series('post:copy'));
 gulp_1.default.task('watch-post', watchPost);
 gulp_1.default.task('watch-posts', watchPost);
