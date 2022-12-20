@@ -1,8 +1,0 @@
-source/_posts/**/*
-tmp
-.cache
-.deploy_git
-results
-node_modules
-db.json
-public
