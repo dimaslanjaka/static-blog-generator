@@ -9,8 +9,11 @@ const config = {
   verbose: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
   collectCoverageFrom: ['src/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**', '!**/test/**'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/'],
-  testMatch: ['<rootDir>/test/**/*.spec.{ts,js}']
+  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/'],
+  testMatch: ['<rootDir>/test/**/*.spec.{ts,js}'],
+  lastCommit: true,
+  collectCoverage: true,
+  runTestsByPath: true
 };
 
 module.exports = config;
