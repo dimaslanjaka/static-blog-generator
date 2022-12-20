@@ -6,6 +6,7 @@ import { default as hexo } from 'hexo';
 import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
+import { EOL } from 'os';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import ProjectConfig, { commonIgnore } from './gulp.config';
@@ -91,7 +92,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
 function writeSitemap(callback?: CallableFunction) {
   let cb: CallableFunction = noop;
   if (callback) cb = () => callback(sitemaps);
-  writeFile(sitemapTXT, array_remove_empty(sitemaps).join('\n'), () => cb());
+  writeFile(sitemapTXT, array_remove_empty(sitemaps).join(EOL), () => cb());
 }
 
 export function hexoGenerateSitemap() {

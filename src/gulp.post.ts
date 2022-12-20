@@ -8,6 +8,7 @@ import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { gulpCached } from './gulp-utils/gulp.cache';
 import { getConfig } from './gulp.config';
+import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
 
 const sourceDir = join(process.cwd(), 'src-posts');
@@ -43,7 +44,7 @@ export const copySinglePost = (identifier: string, callback?: CallableFunction) 
     .pipe(updatePost())
     .pipe(gulp.dest(destDir))
     .on('end', function () {
-      //console.log(fileList);
+      //Logger.log(fileList);
       if (typeof callback === 'function') callback();
     });
 };
@@ -106,7 +107,7 @@ export function updatePost() {
         scheduler.add(oriPath, function () {
           const rebuild = buildPost(rBuild);
           //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-          console.log(
+          Logger.log(
             'write to',
             toUnix(oriPath).replace(toUnix(process.cwd()), ''),
             oriUp,
@@ -120,7 +121,7 @@ export function updatePost() {
         file.contents = Buffer.from(build);
         return next(null, file);
       } else {
-        console.log('cannot parse', file.path);
+        Logger.log('cannot parse', file.path);
         return next(null);
       }
     }
@@ -137,8 +138,8 @@ export function copyAllPosts() {
   const config = getConfig();
   const excludes = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-  console.log('[copy] cwd', toUnix(process.cwd()));
-  console.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
+  Logger.log('[copy] cwd', toUnix(process.cwd()));
+  Logger.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
   return (
     gulp
       .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
@@ -175,7 +176,7 @@ export function copyAllPosts() {
               file.contents = Buffer.from(build);
               return callback(null, file);
             } else {
-              console.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+              Logger.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
             }
           }
           callback(null, file);

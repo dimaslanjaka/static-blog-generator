@@ -2,6 +2,7 @@ const spawn = require('cross-spawn');
 const { existsSync, mkdirSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
 const GulpClient = require('gulp');
+const { EOL } = require('os');
 const { join, dirname, toUnix } = require('upath');
 const { watch, setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
 
@@ -43,7 +44,7 @@ const dumptasks = function () {
 ## Gulp Tasks
 
 \`\`\`text
-${output.join('\n')}
+${output.join(EOL)}
 \`\`\`
 
 ## Coverage

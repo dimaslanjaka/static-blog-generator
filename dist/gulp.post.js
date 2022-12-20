@@ -49,6 +49,7 @@ var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
 var gulp_config_1 = require("./gulp.config");
+var logger_1 = __importDefault(require("./utils/logger"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourceDir = (0, upath_1.join)(process.cwd(), 'src-posts');
 var destDir = (0, upath_1.join)(process.cwd(), 'source/_posts');
@@ -82,7 +83,7 @@ var copySinglePost = function (identifier, callback) {
         .pipe(updatePost())
         .pipe(gulp_1.default.dest(destDir))
         .on('end', function () {
-        //console.log(fileList);
+        //Logger.log(fileList);
         if (typeof callback === 'function')
             callback();
     });
@@ -148,7 +149,7 @@ function updatePost() {
                             scheduler_1.default.add(oriPath_1, function () {
                                 var rebuild = (0, hexo_post_parser_1.buildPost)(rBuild_1);
                                 //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-                                console.log('write to', (0, upath_1.toUnix)(oriPath_1).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp_1, '->', post_1.attributes.updated);
+                                logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath_1).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp_1, '->', post_1.attributes.updated);
                                 (0, fs_1.writeFileSync)(oriPath_1, rebuild); // write original post
                             });
                             build = (0, hexo_post_parser_1.buildPost)(parse);
@@ -156,7 +157,7 @@ function updatePost() {
                             return [2 /*return*/, next(null, file)];
                         }
                         else {
-                            console.log('cannot parse', file.path);
+                            logger_1.default.log('cannot parse', file.path);
                             return [2 /*return*/, next(null)];
                         }
                         _a.label = 2;
@@ -179,8 +180,8 @@ function copyAllPosts() {
     var config = (0, gulp_config_1.getConfig)();
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
-    console.log('[copy] cwd', (0, upath_1.toUnix)(process.cwd()));
-    console.log('[copy] copying source posts from', sourceDir.replace((0, upath_1.toUnix)(process.cwd()), ''));
+    logger_1.default.log('[copy] cwd', (0, upath_1.toUnix)(process.cwd()));
+    logger_1.default.log('[copy] copying source posts from', sourceDir.replace((0, upath_1.toUnix)(process.cwd()), ''));
     return (gulp_1.default
         .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
         .pipe((0, gulp_cache_1.gulpCached)())
@@ -224,7 +225,7 @@ function copyAllPosts() {
                         return [2 /*return*/, callback(null, file)];
                     }
                     else {
-                        console.log('cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
+                        logger_1.default.log('cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                     }
                     _b.label = 2;
                 case 2:

@@ -29,14 +29,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_extra_1 = require("fs-extra");
+var os_1 = require("os");
 var slugify_1 = __importDefault(require("slugify"));
 var upath_1 = require("upath");
+var gulp_config_1 = require("../gulp.config");
+var fm_1 = require("./fm");
 var jest_1 = require("./jest");
-var noop_1 = __importDefault(require("./noop"));
 var FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs/gulp-sbg');
 // disable console.log on jest
-if ((0, jest_1.areWeTestingWithJest)())
-    console.log = noop_1.default;
+if ((0, jest_1.areWeTestingWithJest)()) {
+    // const log = console.log;
+    console.log = function () {
+        var _a;
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var config = (0, gulp_config_1.getConfig)();
+        var stack = (_a = new Error('').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gm);
+        var msg = (stack || [])[3] || '';
+        if (msg.includes(__filename)) {
+            msg = (stack || [])[4] || '';
+        }
+        var filename = (0, slugify_1.default)((0, upath_1.toUnix)(msg).replace((0, upath_1.toUnix)(config.cwd), ''), {
+            lower: true,
+            trim: true,
+            replacement: '-',
+            strict: true
+        });
+        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
+    };
+}
 /**
  * @example
  * const console = Logger
