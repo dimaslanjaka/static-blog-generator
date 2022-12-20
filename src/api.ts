@@ -40,7 +40,7 @@ class SBG {
   copy = () => {
     return new Bluebird((resolve) => {
       copyAllPosts().once('end', function () {
-        resolve.bind(this)();
+        resolve(null);
       });
     });
   };
