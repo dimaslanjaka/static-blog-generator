@@ -58,13 +58,16 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
  * @returns
  */
 export function getConfig() {
+  let fileYML = '';
   if ('cwd' in settledConfig) {
-    const fileYML = join(settledConfig.cwd, '_config.yml');
-    if (existsSync(fileYML)) {
-      const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-      settledConfig = Object.assign({}, configYML, settledConfig);
-      writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
-    }
+    fileYML = join(settledConfig.cwd, '_config.yml');
+  } else {
+    fileYML = join(process.cwd(), '_config.yml');
+  }
+  if (existsSync(fileYML)) {
+    const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
+    settledConfig = Object.assign({}, configYML, settledConfig);
+    writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
   }
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
