@@ -108,7 +108,7 @@ export function hexoGenerateSitemap() {
         const config = instance.config;
         const locals = instance.locals;
         const { skip_render, sitemap } = config;
-        const skipRenderList = ['**/*.js', '**/*.css'];
+        const skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
 
         if (Array.isArray(skip_render)) {
           skipRenderList.push(...skip_render);

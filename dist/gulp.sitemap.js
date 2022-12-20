@@ -101,6 +101,7 @@ var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = __importStar(require("./gulp.config"));
 var array_1 = require("./utils/array");
+var fm_1 = require("./utils/fm");
 var noop_1 = __importDefault(require("./utils/noop"));
 var nunjucks_env_1 = __importDefault(require("./utils/nunjucks-env"));
 var sitemapTXT = (0, upath_1.join)(process.cwd(), gulp_config_1.default.public_dir || 'public', 'sitemap.txt');
@@ -197,7 +198,8 @@ function writeSitemap(callback) {
     var cb = noop_1.default;
     if (callback)
         cb = function () { return callback(sitemaps); };
-    (0, fs_extra_1.writeFile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join(os_1.EOL), function () { return cb(); });
+    (0, fm_1.writefile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join(os_1.EOL));
+    cb.apply(this);
 }
 function hexoGenerateSitemap() {
     return new bluebird_1.default(function (resolve) {
@@ -210,7 +212,7 @@ function hexoGenerateSitemap() {
                 var config = instance.config;
                 var locals = instance.locals;
                 var skip_render = config.skip_render, sitemap = config.sitemap;
-                var skipRenderList = ['**/*.js', '**/*.css'];
+                var skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
                 if (Array.isArray(skip_render)) {
                     skipRenderList.push.apply(skipRenderList, __spreadArray([], __read(skip_render), false));
                 }
