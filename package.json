@@ -12,13 +12,11 @@
   "scripts": {
     "update": "npx npm-check-updates -u",
     "postinstall": "node postinstall.js",
-    "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.build.json && gulp copy",
     "postbuild": "node packer.js",
     "docs": "gulp docs",
     "dev": "tsc -p tsconfig.build.json -w",
     "lint": "npx eslint --fix src/**/*.{ts,js,json}",
-    "pretest": "npm run build",
     "test": "jest --env node --coverage --maxConcurrency=1 --maxWorkers=50%"
   },
   "keywords": [
