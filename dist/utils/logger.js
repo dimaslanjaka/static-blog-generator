@@ -31,7 +31,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs_extra_1 = require("fs-extra");
 var slugify_1 = __importDefault(require("slugify"));
 var upath_1 = require("upath");
+var jest_1 = require("./jest");
+var noop_1 = __importDefault(require("./noop"));
 var FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs/gulp-sbg');
+// disable console.log on jest
+if ((0, jest_1.areWeTestingWithJest)())
+    console.log = noop_1.default;
 /**
  * @example
  * const console = Logger

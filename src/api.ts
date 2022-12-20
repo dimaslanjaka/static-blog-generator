@@ -19,7 +19,7 @@ class SBG {
   constructor(cwd: null | string = null) {
     if (typeof cwd === 'string') {
       this.cwd = cwd;
-      setConfig({ cwd });
+      this.config = setConfig({ cwd });
     }
   }
 
