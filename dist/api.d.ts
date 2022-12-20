@@ -1,13 +1,13 @@
 /// <reference types="node" />
 import Bluebird from 'bluebird';
 declare class SBG {
-    base: string;
+    cwd: string;
     config: import("./gulp.config").ProjConf;
     /**
      * Static blog generator
-     * @param base base folder
+     * @param cwd base folder
      */
-    constructor(base?: null | string);
+    constructor(cwd?: null | string);
     /**
      * Auto seo on public dir (_config_yml.public_dir) (run after generated)
      * @returns
