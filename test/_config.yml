@@ -133,6 +133,7 @@ server:
     extensions:
     - html
 theme: next
+
 deploy:
   type: git
   repo: https://github.com/dimaslanjaka/dimaslanjaka.github.io.git

@@ -70,7 +70,13 @@ export function getConfig() {
   return settledConfig as ProjConf;
 }
 
-/** common ignore files */
+/**
+ * common ignore files
+ * @example
+ * const config = getConfig();
+ * const excludes = Array.isArray(config.exclude) ? config.exclude : [];
+ * excludes.push(...commonIgnore);
+ */
 export const commonIgnore = [
   '**/yandex_*.html', // skip yandex verification file
   // '**/comments.html',
@@ -84,5 +90,9 @@ export const commonIgnore = [
   '**/.vscode/**', // skip vscode configuration folder
   '**/.frontmatter/**', // skip frontmatter vscode extension
   '**/pinterest-*.html', // skip pinterest verification file
-  '**/_*.standalone.{js,ts}' // skip _filename.standalone.js
+  '**/_*.standalone.{js,ts}', // skip _filename.standalone.js
+  '**/desktop.ini', // windows desktop.ini
+  '**/node_modules/**', // node_modules
+  '**/.frontmatter/**', // vscode frontmatter plugin
+  '**/.git*/**' // any git configs
 ];

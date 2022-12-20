@@ -1,7 +1,8 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
-import { deployConfig } from './gulp.config';
+import gulpCached from './gulp-utils/gulp.cache';
+import { commonIgnore, deployConfig, getConfig } from './gulp.config';
 import Logger from './utils/logger';
 
 const console = Logger;
@@ -11,8 +12,12 @@ const console = Logger;
  * @param cwd directory to scan htmls
  */
 export function autoSeo(cwd: string) {
+  const config = getConfig();
+  const ignore = Array.isArray(config.exclude) ? config.exclude : [];
+  ignore.push(...commonIgnore);
   return gulp
-    .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd })
+    .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd, ignore })
+    .pipe(gulpCached())
     .pipe(
       gulpDom(function (path) {
         // fix alt images

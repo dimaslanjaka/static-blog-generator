@@ -7,7 +7,7 @@ import through2 from 'through2';
 
 import { extname, join, toUnix } from 'upath';
 import { gulpCached } from './gulp-utils/gulp.cache';
-import { getConfig } from './gulp.config';
+import { commonIgnore, getConfig } from './gulp.config';
 import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
 
@@ -137,7 +137,7 @@ export function updatePost() {
 export function copyAllPosts() {
   const config = getConfig();
   const excludes = Array.isArray(config.exclude) ? config.exclude : [];
-  excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
+  excludes.push(...commonIgnore);
   Logger.log('[copy] cwd', toUnix(process.cwd()));
   Logger.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
   return (
