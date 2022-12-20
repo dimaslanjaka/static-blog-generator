@@ -6,6 +6,7 @@ import { join } from 'upath';
 import { inspect } from 'util';
 import { deployDir, getConfig } from './gulp.config';
 import { writefile } from './utils/fm';
+import Logger from './utils/logger';
 import noop from './utils/noop';
 
 /**
@@ -18,26 +19,26 @@ export async function cleanDb() {
     throw new Error('config.source_dir must be configured');
   }
 
-  const postDir = join(config.base_dir, config.source_dir, '_posts');
-  const publicDir = join(config.base_dir, config.public_dir);
-  const tmpDir = join(config.base_dir, 'tmp');
+  const postDir = join(config.cwd, config.source_dir, '_posts');
+  const publicDir = join(config.cwd, config.public_dir);
+  const tmpDir = join(config.cwd, 'tmp');
 
-  console.log('[clean]', { tmpDir, postDir, publicDir });
+  Logger.log('[clean]', { tmpDir, postDir, publicDir });
 
   try {
     if (existsSync(tmpDir)) await del(tmpDir);
   } catch {
-    console.log('[clean]', 'cannot delete', tmpDir);
+    Logger.log('[clean]', 'cannot delete', tmpDir);
   }
   try {
     if (existsSync(publicDir)) await del(publicDir);
   } catch {
-    console.log('[clean]', 'cannot delete', publicDir);
+    Logger.log('[clean]', 'cannot delete', publicDir);
   }
   try {
     if (existsSync(postDir)) await del(postDir);
   } catch {
-    console.log('[clean]', 'cannot delete', postDir);
+    Logger.log('[clean]', 'cannot delete', postDir);
   }
 
   const hexo = new hexoLib(config.base_dir);

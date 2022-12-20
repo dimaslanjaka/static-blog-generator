@@ -1,8 +1,9 @@
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
 import { join } from 'path';
 import { toUnix } from 'upath';
 import yaml from 'yaml';
+import { writefile } from './utils/fm';
 
 let originalConfig: Record<string, any> = {};
 
@@ -10,7 +11,7 @@ let originalConfig: Record<string, any> = {};
 const fileYML = join(process.cwd(), '_config.yml');
 if (existsSync(fileYML)) {
   originalConfig = yaml.parse(readFileSync(fileYML, 'utf-8'));
-  writeFileSync(join(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
+  writefile(join(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
 }
 
 type importConfig = typeof import('./_config.json') & Record<string, any>;
@@ -27,7 +28,7 @@ export interface ProjConf extends importConfig {
 }
 
 const ProjectConfig = Object.assign({ post_dir: 'src-posts', cwd: toUnix(process.cwd()) }, originalConfig) as ProjConf;
-writeFileSync(
+writefile(
   join(__dirname, '_config.auto-generated.json'),
   JSON.stringify(Object.assign({}, ProjectConfig, { fileYML }), null, 2)
 );
@@ -48,6 +49,7 @@ let settledConfig = ProjectConfig as Record<string, any>;
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign({}, settledConfig, obj);
+  return getConfig();
 }
 
 /**
@@ -61,9 +63,10 @@ export function getConfig() {
     if (existsSync(fileYML)) {
       const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
       settledConfig = Object.assign({}, configYML, settledConfig);
-      writeFileSync(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+      writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     }
   }
+  //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
 }
 
