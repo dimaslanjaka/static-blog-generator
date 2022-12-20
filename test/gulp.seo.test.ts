@@ -1,17 +1,18 @@
-import { toUnix } from 'upath';
-process.cwd = () => toUnix(__dirname);
+process.cwd = () => __dirname;
 
-// stay here
+// stay here - VSCode auto organize import
+import '../src';
 import '../src/gulp.post';
 import '../src/gulp.seo';
-// stay here
+import '../src/gulpfile';
+// stay here - VSCode auto organize import
 
 import gulp from 'gulp';
 import { renderHtmlToSource } from './utils';
 
 import { copyToDeployDir } from './utils';
 
-gulp.series('copy-posts')(function () {
+gulp.series('post:copy')(function () {
   console.log('[copy] done');
   renderHtmlToSource().once('end', function () {
     copyToDeployDir().once('end', function () {

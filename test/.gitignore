@@ -3,3 +3,5 @@ tmp
 .cache
 .deploy_git
 results
+node_modules
+db.json
