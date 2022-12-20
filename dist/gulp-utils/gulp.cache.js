@@ -9,6 +9,7 @@ var fs_1 = __importDefault(require("fs"));
 var persistent_cache_1 = require("persistent-cache");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
+var gulp_config_1 = require("../gulp.config");
 /**
  * calculate sha1sum of file
  * @param file
@@ -36,7 +37,8 @@ exports.md5 = md5;
  */
 function gulpCached(options) {
     if (options === void 0) { options = {}; }
-    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(process.cwd(), 'tmp'), prefix: '' }, options);
+    var config = (0, gulp_config_1.getConfig)();
+    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
     var caches = (0, persistent_cache_1.persistentCache)(options);
     return through2_1.default.obj(function (file, _enc, next) {
         // skip directory

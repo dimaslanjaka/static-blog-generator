@@ -3,6 +3,7 @@ import fs from 'fs';
 import { persistentCache } from 'persistent-cache';
 import through2 from 'through2';
 import { join } from 'upath';
+import { getConfig } from '../gulp.config';
 
 /**
  * calculate sha1sum of file
@@ -33,7 +34,8 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
  * @returns
  */
 export function gulpCached(options: gulpCachedOpt = {}) {
-  options = Object.assign({ name: 'gulp-cached', base: join(process.cwd(), 'tmp'), prefix: '' }, options);
+  const config = getConfig();
+  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'tmp'), prefix: '' }, options);
   const caches = persistentCache(options);
   return through2.obj(function (file, _enc, next) {
     // skip directory
