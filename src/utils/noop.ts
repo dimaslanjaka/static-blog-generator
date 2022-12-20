@@ -9,9 +9,9 @@ export function noop(..._args: any[]) {
 
 export default noop;
 
-interface FN extends CallableFunction {
-  then: CallableFunction;
-  catch: CallableFunction;
+interface FN extends (...args: any[]) => any {
+  then: (...args: any[]) => any;
+  catch: (...args: any[]) => any;
 }
 
 /**
