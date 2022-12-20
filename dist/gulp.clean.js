@@ -1,27 +1,4 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -68,7 +45,9 @@ var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
-var gulp_config_1 = __importStar(require("./gulp.config"));
+var util_1 = require("util");
+var gulp_config_1 = require("./gulp.config");
+var fm_1 = require("./utils/fm");
 var noop_1 = __importDefault(require("./utils/noop"));
 /**
  * Clean Project Databases
@@ -79,12 +58,14 @@ function cleanDb() {
         return __generator(this, function (_d) {
             switch (_d.label) {
                 case 0:
-                    config = gulp_config_1.default;
-                    if (typeof config.source_dir !== 'string')
+                    config = (0, gulp_config_1.getConfig)();
+                    if (typeof config.source_dir !== 'string') {
+                        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
                         throw new Error('config.source_dir must be configured');
-                    postDir = (0, upath_1.join)(gulp_config_1.default.base_dir, config.source_dir, '_posts');
-                    publicDir = (0, upath_1.join)(gulp_config_1.default.base_dir, config.public_dir);
-                    tmpDir = (0, upath_1.join)(gulp_config_1.default.base_dir, 'tmp');
+                    }
+                    postDir = (0, upath_1.join)(config.base_dir, config.source_dir, '_posts');
+                    publicDir = (0, upath_1.join)(config.base_dir, config.public_dir);
+                    tmpDir = (0, upath_1.join)(config.base_dir, 'tmp');
                     console.log('[clean]', { tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
                     _d.label = 1;
                 case 1:
@@ -124,7 +105,7 @@ function cleanDb() {
                     console.log('[clean]', 'cannot delete', postDir);
                     return [3 /*break*/, 13];
                 case 13:
-                    hexo = new hexo_1.default(gulp_config_1.default.base_dir);
+                    hexo = new hexo_1.default(config.base_dir);
                     return [4 /*yield*/, hexo.init().catch(noop_1.default)];
                 case 14:
                     _d.sent();
@@ -164,11 +145,12 @@ gulp_1.default.task('clean', cleanDb);
  * clean old archives (categories, tags, pagination)
  */
 function cleanOldArchives(done) {
-    var archives = (0, upath_1.join)(gulp_config_1.deployDir, gulp_config_1.default.archive_dir);
-    var categories = (0, upath_1.join)(gulp_config_1.deployDir, gulp_config_1.default.category_dir);
-    var tags = (0, upath_1.join)(gulp_config_1.deployDir, gulp_config_1.default.tag_dir);
+    var config = (0, gulp_config_1.getConfig)();
+    var archives = (0, upath_1.join)(gulp_config_1.deployDir, config.archive_dir);
+    var categories = (0, upath_1.join)(gulp_config_1.deployDir, config.category_dir);
+    var tags = (0, upath_1.join)(gulp_config_1.deployDir, config.tag_dir);
     var folders = [archives, tags, categories]
-        .concat(gulp_config_1.default.language.map(function (str) { return (0, upath_1.join)(gulp_config_1.deployDir, str); }))
+        .concat(config.language.map(function (str) { return (0, upath_1.join)(gulp_config_1.deployDir, str); }))
         .filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
     var promises = [];
     for (var i = 0; i < folders.length; i++) {

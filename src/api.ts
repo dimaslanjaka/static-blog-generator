@@ -10,16 +10,16 @@ import { autoSeo } from './gulp.seo';
 import noop from './utils/noop';
 
 class SBG {
-  base: string;
+  cwd: string;
   config = getConfig();
   /**
    * Static blog generator
-   * @param base base folder
+   * @param cwd base folder
    */
-  constructor(base: null | string = null) {
-    if (typeof base === 'string') {
-      this.base = base;
-      setConfig({ cwd: base });
+  constructor(cwd: null | string = null) {
+    if (typeof cwd === 'string') {
+      this.cwd = cwd;
+      setConfig({ cwd });
     }
   }
 
@@ -27,7 +27,7 @@ class SBG {
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  seo = () => autoSeo(join(this.base, ProjectConfig.public_dir));
+  seo = () => autoSeo(join(this.cwd, ProjectConfig.public_dir));
 
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
@@ -46,13 +46,13 @@ class SBG {
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  safelink = () => safelinkProcess(noop, join(this.base, ProjectConfig.public_dir));
+  safelink = () => safelinkProcess(noop, join(this.cwd, ProjectConfig.public_dir));
 
   /**
    * generate site with hexo
    */
   async generate() {
-    const instance = new Hexo(this.base);
+    const instance = new Hexo(this.cwd);
     // hexo init
     await instance.init().catch(noop);
     // hexo generate

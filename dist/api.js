@@ -75,18 +75,17 @@ var noop_1 = __importDefault(require("./utils/noop"));
 var SBG = /** @class */ (function () {
     /**
      * Static blog generator
-     * @param base base folder
+     * @param cwd base folder
      */
-    function SBG(base) {
-        if (base === void 0) { base = null; }
+    function SBG(cwd) {
+        if (cwd === void 0) { cwd = null; }
         var _this = this;
-        this.base = (0, upath_1.toUnix)(gulp_config_1.default.base_dir);
-        this.config = gulp_config_1.default;
+        this.config = (0, gulp_config_1.getConfig)();
         /**
          * Auto seo on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
-        this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.base, gulp_config_1.default.public_dir)); };
+        this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.cwd, gulp_config_1.default.public_dir)); };
         /**
          * Copy all **src-post** to **source/_posts** (run before generate)
          * * see the method {@link copyAllPosts}
@@ -103,9 +102,11 @@ var SBG = /** @class */ (function () {
          * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
-        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.base, gulp_config_1.default.public_dir)); };
-        if (typeof base === 'string')
-            this.base = base;
+        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.cwd, gulp_config_1.default.public_dir)); };
+        if (typeof cwd === 'string') {
+            this.cwd = cwd;
+            (0, gulp_config_1.setConfig)({ cwd: cwd });
+        }
     }
     /**
      * generate site with hexo
@@ -116,7 +117,7 @@ var SBG = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        instance = new hexo_1.default(this.base);
+                        instance = new hexo_1.default(this.cwd);
                         // hexo init
                         return [4 /*yield*/, instance.init().catch(noop_1.default)];
                     case 1:

@@ -6,6 +6,7 @@ import yaml from 'yaml';
 
 let originalConfig: Record<string, any> = {};
 
+// auto parse _config.yml from process.cwd()
 const fileYML = join(process.cwd(), '_config.yml');
 if (existsSync(fileYML)) {
   originalConfig = yaml.parse(readFileSync(fileYML, 'utf-8'));
@@ -55,6 +56,14 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
  * @returns
  */
 export function getConfig() {
+  if ('cwd' in settledConfig) {
+    const fileYML = join(settledConfig.cwd, '_config.yml');
+    if (existsSync(fileYML)) {
+      const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
+      settledConfig = Object.assign({}, configYML, settledConfig);
+      writeFileSync(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+    }
+  }
   return settledConfig as ProjConf;
 }
 

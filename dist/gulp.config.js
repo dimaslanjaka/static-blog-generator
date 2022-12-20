@@ -4,13 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.commonIgnore = exports.deployConfig = exports.deployDir = void 0;
+exports.commonIgnore = exports.getConfig = exports.setConfig = exports.deployConfig = exports.deployDir = void 0;
 var fs_1 = require("fs");
 var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var path_1 = require("path");
 var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
 var originalConfig = {};
+// auto parse _config.yml from process.cwd()
 var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
 if ((0, fs_1.existsSync)(fileYML)) {
     originalConfig = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
@@ -26,6 +27,33 @@ function deployConfig() {
     return { deployDir: exports.deployDir, config: config, github: github };
 }
 exports.deployConfig = deployConfig;
+var settledConfig = ProjectConfig;
+/**
+ * Config setter
+ * * useful for jest
+ * @param obj
+ */
+function setConfig(obj) {
+    settledConfig = Object.assign({}, settledConfig, obj);
+}
+exports.setConfig = setConfig;
+/**
+ * Config getter
+ * * useful for jest
+ * @returns
+ */
+function getConfig() {
+    if ('cwd' in settledConfig) {
+        var fileYML_1 = (0, path_1.join)(settledConfig.cwd, '_config.yml');
+        if ((0, fs_1.existsSync)(fileYML_1)) {
+            var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML_1, 'utf-8'));
+            settledConfig = Object.assign({}, configYML, settledConfig);
+            (0, fs_1.writeFileSync)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+        }
+    }
+    return settledConfig;
+}
+exports.getConfig = getConfig;
 /** common ignore files */
 exports.commonIgnore = [
     '**/yandex_*.html',
