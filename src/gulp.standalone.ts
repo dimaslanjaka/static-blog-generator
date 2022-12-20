@@ -10,7 +10,7 @@ import { replacePath } from './utils/string';
  * @returns
  */
 function standaloneRunner() {
-  console.log('[standalone] Running scripts...');
+  console.log('[standalone] Running scripts...\n');
   return gulp
     .src(join(ProjectConfig.cwd, '**/_*.standalone.js'), { cwd: ProjectConfig.cwd, ignore: ['**/tmp/**'] })
     .pipe(
@@ -27,7 +27,7 @@ function standaloneRunner() {
     )
     .pipe(gulp.dest(join(ProjectConfig.cwd, 'tmp/standalone')))
     .once('end', function () {
-      console.log('[standalone] stopped');
+      console.log('\n[standalone] stopped');
     });
 }
 
