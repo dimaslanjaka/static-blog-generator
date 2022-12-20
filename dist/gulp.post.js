@@ -209,7 +209,7 @@ function copyAllPosts() {
     logger_1.default.log('[copy] copying source posts from', sourceDir.replace((0, upath_1.toUnix)(process.cwd()), ''));
     return (gulp_1.default
         .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
-        .pipe((0, gulp_cache_1.gulpCached)())
+        .pipe((0, gulp_cache_1.gulpCached)({ name: 'post' }))
         //.pipe(gulpDebug())
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
         var config_1, contents, parse, build;
