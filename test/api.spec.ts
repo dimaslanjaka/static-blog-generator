@@ -13,7 +13,7 @@ describe('API', function () {
   const app = new Application(__dirname);
 
   test('cwd is test', function () {
-    expect(process.cwd()).toBe(require('upath').toUnix(__dirname));
+    expect(require('upath').toUnix(process.cwd())).toBe(require('upath').toUnix(__dirname));
   });
 
   test('Clean', async function () {
