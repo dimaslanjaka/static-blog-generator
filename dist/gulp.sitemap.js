@@ -96,6 +96,7 @@ var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
 var micromatch_1 = __importDefault(require("micromatch"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
+var os_1 = require("os");
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = __importStar(require("./gulp.config"));
@@ -196,7 +197,7 @@ function writeSitemap(callback) {
     var cb = noop_1.default;
     if (callback)
         cb = function () { return callback(sitemaps); };
-    (0, fs_extra_1.writeFile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join('\n'), function () { return cb(); });
+    (0, fs_extra_1.writeFile)(sitemapTXT, (0, array_1.array_remove_empty)(sitemaps).join(os_1.EOL), function () { return cb(); });
 }
 function hexoGenerateSitemap() {
     return new bluebird_1.default(function (resolve) {

@@ -1,13 +1,32 @@
 import { appendFileSync, existsSync, mkdirpSync, writeFileSync } from 'fs-extra';
+import { EOL } from 'os';
 import slugify from 'slugify';
-import { basename, dirname, join } from 'upath';
+import { basename, dirname, join, toUnix } from 'upath';
+import { getConfig } from '../gulp.config';
+import { writefile } from './fm';
 import { areWeTestingWithJest } from './jest';
-import noop from './noop';
 
 const FOLDER = join(process.cwd(), 'tmp/logs/gulp-sbg');
 
 // disable console.log on jest
-if (areWeTestingWithJest()) console.log = noop;
+if (areWeTestingWithJest()) {
+  // const log = console.log;
+  console.log = function (...args: any[]) {
+    const config = getConfig();
+    const stack = new Error('').stack?.split(/\r?\n/gm);
+    let msg = (stack || [])[3] || '';
+    if (msg.includes(__filename)) {
+      msg = (stack || [])[4] || '';
+    }
+    const filename = slugify(toUnix(msg).replace(toUnix(config.cwd), ''), {
+      lower: true,
+      trim: true,
+      replacement: '-',
+      strict: true
+    });
+    writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join(EOL), { append: true });
+  };
+}
 
 /**
  * @example
