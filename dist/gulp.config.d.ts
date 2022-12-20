@@ -39,5 +39,11 @@ export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf
  * @returns
  */
 export declare function getConfig(): ProjConf;
-/** common ignore files */
+/**
+ * common ignore files
+ * @example
+ * const config = getConfig();
+ * const excludes = Array.isArray(config.exclude) ? config.exclude : [];
+ * excludes.push(...commonIgnore);
+ */
 export declare const commonIgnore: string[];
