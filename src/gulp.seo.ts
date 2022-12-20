@@ -17,7 +17,7 @@ export function autoSeo(cwd: string) {
   ignore.push(...commonIgnore);
   return gulp
     .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd, ignore })
-    .pipe(gulpCached())
+    .pipe(gulpCached({ name: 'seo' }))
     .pipe(
       gulpDom(function (path) {
         // fix alt images
