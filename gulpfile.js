@@ -2,7 +2,7 @@ const spawn = require('cross-spawn');
 const { existsSync, mkdirSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
 const GulpClient = require('gulp');
-const { join, dirname } = require('upath');
+const { join, dirname, toUnix } = require('upath');
 const { watch, setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
 
 // copy non-javascript assets from src folder
@@ -65,7 +65,8 @@ const coverage = function () {
   return new Promise((resolve) => {
     const coverageDir = join(__dirname, 'coverage/lcov-report');
     if (existsSync(coverageDir)) {
-      GulpClient.src('**/*/*.*', { cwd: coverageDir })
+      console.log('copying coverage', coverageDir.replace(toUnix(__dirname), ''));
+      GulpClient.src(['*.*', '**/*.*'], { cwd: coverageDir })
         .pipe(GulpClient.dest(join(__dirname, 'docs/static-blog-generator/coverage')))
         .once('end', () => resolve(null));
     } else {
