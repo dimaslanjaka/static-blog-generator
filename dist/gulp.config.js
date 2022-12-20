@@ -57,7 +57,13 @@ function getConfig() {
     return settledConfig;
 }
 exports.getConfig = getConfig;
-/** common ignore files */
+/**
+ * common ignore files
+ * @example
+ * const config = getConfig();
+ * const excludes = Array.isArray(config.exclude) ? config.exclude : [];
+ * excludes.push(...commonIgnore);
+ */
 exports.commonIgnore = [
     '**/yandex_*.html',
     // '**/comments.html',
@@ -71,5 +77,9 @@ exports.commonIgnore = [
     '**/.vscode/**',
     '**/.frontmatter/**',
     '**/pinterest-*.html',
-    '**/_*.standalone.{js,ts}' // skip _filename.standalone.js
+    '**/_*.standalone.{js,ts}',
+    '**/desktop.ini',
+    '**/node_modules/**',
+    '**/.frontmatter/**',
+    '**/.git*/**' // any git configs
 ];
