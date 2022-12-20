@@ -12,7 +12,7 @@ if (existsSync(fileYML)) {
   writeFileSync(join(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
 }
 
-type importConfig = typeof import('./_config.json');
+type importConfig = typeof import('./_config.json') & Record<string, any>;
 export interface ProjConf extends importConfig {
   [key: string]: any;
   /**
@@ -37,6 +37,25 @@ export function deployConfig() {
   const config = ProjectConfig.deploy || {};
   const github = new git(deployDir);
   return { deployDir, config, github };
+}
+
+let settledConfig = ProjectConfig as Record<string, any>;
+/**
+ * Config setter
+ * * useful for jest
+ * @param obj
+ */
+export function setConfig(obj: Record<string, any> | ProjConf) {
+  settledConfig = Object.assign({}, settledConfig, obj);
+}
+
+/**
+ * Config getter
+ * * useful for jest
+ * @returns
+ */
+export function getConfig() {
+  return settledConfig as ProjConf;
 }
 
 /** common ignore files */
