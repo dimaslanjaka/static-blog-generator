@@ -1,5 +1,5 @@
 import git from 'git-command-helper';
-type importConfig = typeof import('./_config.json');
+type importConfig = typeof import('./_config.json') & Record<string, any>;
 export interface ProjConf extends importConfig {
     [key: string]: any;
     /**
@@ -27,5 +27,17 @@ export declare function deployConfig(): {
     };
     github: git;
 };
+/**
+ * Config setter
+ * * useful for jest
+ * @param obj
+ */
+export declare function setConfig(obj: Record<string, any> | ProjConf): void;
+/**
+ * Config getter
+ * * useful for jest
+ * @returns
+ */
+export declare function getConfig(): ProjConf;
 /** common ignore files */
 export declare const commonIgnore: string[];
