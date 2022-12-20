@@ -20,7 +20,7 @@ let compiled = 0;
 /**
  * Compile typedocs
  * @param {import('typedoc').TypeDocOptions} options
- * @param {CallableFunction} callback
+ * @param {(...args: any[]) => any} callback
  */
 const compile = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
@@ -62,7 +62,7 @@ const compile = async function (options = {}, callback = null) {
 /**
  * Compile and publish to github pages
  * @param {import('typedoc').TypeDocOptions} options
- * @param {CallableFunction} callback
+ * @param {(...args: any[]) => any} callback
  */
 const publish = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
