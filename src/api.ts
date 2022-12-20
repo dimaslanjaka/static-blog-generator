@@ -7,6 +7,7 @@ import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
 import { autoSeo } from './gulp.seo';
+import standaloneRunner from './gulp.standalone';
 import noop from './utils/noop';
 
 class SBG {
@@ -22,6 +23,8 @@ class SBG {
       this.config = setConfig({ cwd });
     }
   }
+
+  standalone = () => standaloneRunner();
 
   /**
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)

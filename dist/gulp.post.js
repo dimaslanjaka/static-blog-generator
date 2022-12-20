@@ -48,7 +48,7 @@ var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
-var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_config_1 = require("./gulp.config");
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourceDir = (0, upath_1.join)(process.cwd(), 'src-posts');
 var destDir = (0, upath_1.join)(process.cwd(), 'source/_posts');
@@ -103,7 +103,7 @@ function updatePost() {
                         if (file.isNull())
                             return [2 /*return*/, next()];
                         if (!(file.extname === '.md')) return [3 /*break*/, 2];
-                        config = gulp_config_1.default;
+                        config = (0, gulp_config_1.getConfig)();
                         return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(file.path, {
                                 shortcodes: {
                                     youtube: true,
@@ -176,7 +176,8 @@ exports.updatePost = updatePost;
  */
 function copyAllPosts() {
     var _this = this;
-    var excludes = Array.isArray(gulp_config_1.default.exclude) ? gulp_config_1.default.exclude : [];
+    var config = (0, gulp_config_1.getConfig)();
+    var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
     console.log('[copy] cwd', (0, upath_1.toUnix)(process.cwd()));
     console.log('[copy] copying source posts from', sourceDir.replace((0, upath_1.toUnix)(process.cwd()), ''));
@@ -185,7 +186,7 @@ function copyAllPosts() {
         .pipe((0, gulp_cache_1.gulpCached)())
         //.pipe(gulpDebug())
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
-        var config, contents, parse, build;
+        var config_1, contents, parse, build;
         var _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
@@ -193,7 +194,7 @@ function copyAllPosts() {
                     if (file.isNull())
                         return [2 /*return*/, callback()];
                     if (!(file.extname === '.md')) return [3 /*break*/, 2];
-                    config = gulp_config_1.default;
+                    config_1 = (0, gulp_config_1.getConfig)();
                     contents = ((_a = file.contents) === null || _a === void 0 ? void 0 : _a.toString()) || '';
                     // drop empty body
                     if (contents.trim().length === 0)
@@ -210,7 +211,7 @@ function copyAllPosts() {
                                 codeblock: true
                             },
                             cache: false,
-                            config: config,
+                            config: config_1,
                             formatDate: true,
                             fix: true,
                             sourceFile: file.path

@@ -12,7 +12,7 @@ const config = {
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/'],
   testMatch: ['<rootDir>/test/**/*.spec.{ts,js}'],
   collectCoverage: true,
-  runTestsByPath: true
+  detectLeaks: true
 };
 
 module.exports = config;

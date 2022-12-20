@@ -7,7 +7,7 @@ import through2 from 'through2';
 
 import { extname, join, toUnix } from 'upath';
 import { gulpCached } from './gulp-utils/gulp.cache';
-import ProjectConfig from './gulp.config';
+import { getConfig } from './gulp.config';
 import scheduler from './utils/scheduler';
 
 const sourceDir = join(process.cwd(), 'src-posts');
@@ -58,7 +58,7 @@ export function updatePost() {
     if (file.isNull()) return next();
     // process markdown files
     if (file.extname === '.md') {
-      const config = ProjectConfig;
+      const config = getConfig();
       const parse = await parsePost(file.path, {
         shortcodes: {
           youtube: true,
@@ -134,7 +134,8 @@ export function updatePost() {
  * @returns
  */
 export function copyAllPosts() {
-  const excludes = Array.isArray(ProjectConfig.exclude) ? ProjectConfig.exclude : [];
+  const config = getConfig();
+  const excludes = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push('**/.vscode/**', '**/desktop.ini', '**/node_modules/**', '**/.frontmatter/**', '**/.git*/**');
   console.log('[copy] cwd', toUnix(process.cwd()));
   console.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
@@ -148,7 +149,7 @@ export function copyAllPosts() {
           if (file.isNull()) return callback();
           // process markdown files
           if (file.extname === '.md') {
-            const config = ProjectConfig;
+            const config = getConfig();
             const contents = file.contents?.toString() || '';
             // drop empty body
             if (contents.trim().length === 0) return callback();
