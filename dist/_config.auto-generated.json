@@ -1,5 +1,5 @@
 {
   "post_dir": "src-posts",
-  "cwd": "D:/Repositories/static-blog-generator-hexo/packages/static-blog-generator",
-  "fileYML": "D:\\Repositories\\static-blog-generator-hexo\\packages\\static-blog-generator\\_config.yml"
+  "cwd": "D:/Repositories/static-blog-generator-hexo/packages/static-blog-generator/dist",
+  "fileYML": "D:\\Repositories\\static-blog-generator-hexo\\packages\\static-blog-generator\\dist\\_config.yml"
 }

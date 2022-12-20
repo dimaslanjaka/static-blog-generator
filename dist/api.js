@@ -62,7 +62,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var bluebird_1 = __importDefault(require("bluebird"));
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
@@ -94,10 +93,8 @@ var SBG = /** @class */ (function () {
          * @returns
          */
         this.copy = function () {
-            return new bluebird_1.default(function (resolve) {
-                (0, gulp_post_1.copyAllPosts)().once('end', function () {
-                    resolve(null);
-                });
+            return new Promise(function (resolve) {
+                (0, gulp_post_1.copyAllPosts)().once('end', resolve);
             });
         };
         /**

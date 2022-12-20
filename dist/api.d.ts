@@ -1,5 +1,4 @@
 /// <reference types="node" />
-import Bluebird from 'bluebird';
 declare class SBG {
     cwd: string;
     config: import("./gulp.config").ProjConf;
@@ -19,7 +18,7 @@ declare class SBG {
      * * see the method {@link copyAllPosts}
      * @returns
      */
-    copy: () => Bluebird<unknown>;
+    copy: () => Promise<unknown>;
     /**
      * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
      * @returns
