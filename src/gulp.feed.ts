@@ -11,14 +11,14 @@ import envNunjucks from './utils/nunjucks-env';
 const env = envNunjucks();
 
 gulp.task('feed', function (done) {
-  const instance = new hexo(process.cwd());
+  const config = getConfig();
+  const instance = new hexo(config.cwd);
 
   instance.init().then(() => {
     instance.load().then(() => {
       env.addFilter('formatUrl', (str) => {
         return full_url_for.call(instance, str);
       });
-      const config = getConfig();
 
       function build(tmplSrc: PathOrFileDescriptor, dest: PathOrFileDescriptor) {
         const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
@@ -55,16 +55,16 @@ gulp.task('feed', function (done) {
       }
 
       const templateRSS = join(__dirname, '_config_template_rss.xml');
-      const destRSS = join(process.cwd(), config.public_dir, 'rss.xml');
+      const destRSS = join(config.cwd, config.public_dir, 'rss.xml');
       build(templateRSS, destRSS);
 
       const templateATOM = join(__dirname, '_config_template_atom.xml');
-      const destATOM = join(process.cwd(), config.public_dir, 'atom.xml');
+      const destATOM = join(config.cwd, config.public_dir, 'atom.xml');
       build(templateATOM, destATOM);
 
       const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
 
-      const publicDir = join(process.cwd(), config.public_dir);
+      const publicDir = join(config.cwd, config.public_dir);
       gulp
         .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
         .pipe(
