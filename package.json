@@ -18,7 +18,7 @@
     "docs": "gulp docs",
     "dev": "tsc -p tsconfig.build.json -w",
     "lint": "npx eslint --fix src/**/*.{ts,js,json}",
-    "test": "jest --env node --coverage"
+    "test": "jest --env node --coverage --maxConcurrency=1 --maxWorkers=50%"
   },
   "keywords": [
     "static-blog-generator",
