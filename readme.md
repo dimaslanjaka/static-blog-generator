@@ -45,7 +45,7 @@ gulp safelink
 
 - CLI
 
-| :heavy_check_mark: | command | Description |
+| &#9745; | command | Description |
 | :--- | :--- | :--- |
 | &#9744; | sbg copy post | process and copy post from `src-posts` to `source/_posts` |
 | &#9745; | gulp --tasks | list all tasks |
