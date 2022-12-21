@@ -1,7 +1,7 @@
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { cleanDb, cleanOldArchives } from './gulp.clean';
-import { deployConfig, getConfig, setConfig } from './gulp.config';
+import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
@@ -65,7 +65,8 @@ class SBG {
     // copy generated files to deployment directory
     await asyncCopyGen();
     // deployment start
-    const { github, config } = deployConfig();
+    const config = getConfig();
+    const { github } = config.deploy;
     await github.init().catch(noop);
     await github.setremote(config.repo).catch(noop);
     await github.setuser(config.username).catch(noop);

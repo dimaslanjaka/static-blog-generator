@@ -16,13 +16,20 @@ export interface ProjConf extends importConfig {
    * Project CWD
    */
   cwd: string;
+  /**
+   * Deployment options
+   */
+  deploy: importConfig['deploy'] & ReturnType<typeof deployConfig>;
+  /**
+   * Language
+   */
+  language: importConfig['language'] & string;
 }
 
-export const deployDir = join(getConfig().cwd, '.deploy_' + getConfig().deploy?.type || 'git');
 export function deployConfig() {
-  const config = getConfig().deploy || {};
+  const deployDir = join(getConfig().cwd, '.deploy_' + getConfig().deploy?.type || 'git');
   const github = new git(deployDir);
-  return { deployDir, config, github };
+  return { deployDir, github };
 }
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
@@ -43,7 +50,7 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
  */
 export function getConfig() {
   let fileYML = '';
-  if ('cwd' in settledConfig) {
+  if (settledConfig && 'cwd' in settledConfig) {
     fileYML = join(settledConfig.cwd, '_config.yml');
   } else {
     fileYML = join(process.cwd(), '_config.yml');
@@ -52,7 +59,10 @@ export function getConfig() {
     const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
     settledConfig = Object.assign({}, configYML, settledConfig);
     writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+  } else {
+    throw new Error('_config.yml not found');
   }
+  settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
 }
