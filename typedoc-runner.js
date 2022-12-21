@@ -14,6 +14,7 @@ const gulp = require('gulp');
 const pkgjson = require('./package.json');
 const spawn = require('cross-spawn');
 const { EOL } = require('os');
+const { spawnAsync } = require('git-command-helper/dist/spawn');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
 // update   : curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc-runner.js > typedoc-runner.js
@@ -120,13 +121,13 @@ const publish = async function (options = {}, callback = null) {
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
-      await github
-        .commit(
-          `update ${
-            pkgjson.name
-          } docs [${remote}/commit/${commit}] \nat ${new Date()}`
-        )
-        .catch(noop);
+      await spawnAsync('git', [
+        'commit',
+        '-m',
+        `update ${pkgjson.name} docs [${remote}/commit/${commit}]`,
+        '-m',
+        `at ${new Date()}`
+      ]);
       const isCanPush = await github.canPush().catch(noop);
       if (isCanPush) {
         await github.push().catch(noop);
