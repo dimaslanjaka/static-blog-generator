@@ -2,7 +2,7 @@ import { existsSync } from 'fs';
 import gulp from 'gulp';
 import sf from 'safelinkify';
 import through2 from 'through2';
-import ProjectConfig, { deployDir } from './gulp.config';
+import { deployDir, getConfig } from './gulp.config';
 
 /**
  * Process Safelink on Deploy Dir
@@ -12,7 +12,7 @@ import ProjectConfig, { deployDir } from './gulp.config';
  */
 export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string) {
   return new Promise((resolve) => {
-    const config = ProjectConfig;
+    const config = getConfig();
 
     const configSafelink = Object.assign({ enable: false }, config.external_link?.safelink || {});
     let baseURL = '';
@@ -48,8 +48,8 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
         .src(['**/*.{html,htm}'], {
           cwd: folder,
           ignore: ([] as string[]).concat(
-            ...(ProjectConfig.external_link?.exclude || []),
-            ...(ProjectConfig.external_link?.safelink?.exclude || [])
+            ...(getConfig().external_link?.exclude || []),
+            ...(getConfig().external_link?.safelink?.exclude || [])
           )
         })
         .pipe(
