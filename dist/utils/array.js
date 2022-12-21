@@ -1,28 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.array_remove_empty = exports.array_unique = exports.array_random = void 0;
-/**
- * pick random items from array
- * @param items
- * @returns
- */
 function array_random(items) {
     return items[Math.floor(Math.random() * items.length)];
 }
 exports.array_random = array_random;
-/**
- * unique array
- * * array of string,number
- * * array of object by object key
- * @param arr
- * @param field key name (for array of object)
- * @returns
- *
- * @example
- * arrayOfObjUniq({p:'x',n:'x'},{p:'23',n:'x'},{p:'x',n:'5g'}, 'p'); // [{p:'x',n:'x'},{p:'23',n:'x'}]
- *
- * @link https://stackoverflow.com/a/67322087/6404439
- */
 function array_unique(arr, field) {
     if (Array.isArray(arr)) {
         if (typeof field !== 'string') {
@@ -46,11 +28,6 @@ function array_unique(arr, field) {
     }
 }
 exports.array_unique = array_unique;
-/**
- * Remove empties from array
- * @param arr
- * @returns
- */
 function array_remove_empty(arr) {
     return arr.filter(function (target) {
         if (typeof target === 'string')
