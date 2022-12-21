@@ -93,12 +93,17 @@ exports.del = del;
 gulp_1.default.task('clean', cleanDb);
 function cleanOldArchives(done) {
     var config = (0, gulp_config_1.getConfig)();
-    var archives = (0, upath_1.join)(gulp_config_1.deployDir, config.archive_dir);
-    var categories = (0, upath_1.join)(gulp_config_1.deployDir, config.category_dir);
-    var tags = (0, upath_1.join)(gulp_config_1.deployDir, config.tag_dir);
-    var folders = [archives, tags, categories]
-        .concat(config.language.map(function (str) { return (0, upath_1.join)(gulp_config_1.deployDir, str); }))
-        .filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
+    var archives = (0, upath_1.join)(config.deploy.deployDir, config.archive_dir);
+    var categories = (0, upath_1.join)(config.deploy.deployDir, config.category_dir);
+    var tags = (0, upath_1.join)(config.deploy.deployDir, config.tag_dir);
+    var folders = [archives, tags, categories].filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
+    if (Array.isArray(config.language)) {
+        var langDir = config.language.map(function (path) { return (0, upath_1.join)(config.deploy.deployDir, path); });
+        folders.push.apply(folders, tslib_1.__spreadArray([], tslib_1.__read(langDir), false));
+    }
+    else if (typeof config.language === 'string' && String(config.language).trim().length > 0) {
+        folders.push((0, upath_1.join)(config.deploy.deployDir, String(config.language)));
+    }
     var promises = [];
     for (var i = 0; i < folders.length; i++) {
         var pathStr = folders[i];
