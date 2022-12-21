@@ -24,6 +24,9 @@ export interface ProjConf extends importConfig {
    * Language
    */
   language: importConfig['language'] & string;
+  external_link: importConfig['external_link'] & {
+    safelink?: import('safelinkify').SafelinkOptions;
+  };
 }
 
 export function deployConfig() {
