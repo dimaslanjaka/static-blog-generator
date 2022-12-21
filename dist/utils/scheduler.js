@@ -1,34 +1,19 @@
 "use strict";
-/** SCHEDULER JOB **/
-/*** Postpone executing functions ***/
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.bindProcessExit = void 0;
-var ansi_colors_1 = __importDefault(require("ansi-colors"));
+var tslib_1 = require("tslib");
+var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var logname = ansi_colors_1.default.magentaBright('[scheduler]');
 var fns = [];
 var triggered;
-/**
- * Bind functions to exit handler
- * @param key
- * @param fn
- */
 function bindProcessExit(key, fn) {
     fns[key] = fn;
-    // trigger once
     if (!triggered) {
         triggered = true;
         triggerProcess();
     }
 }
 exports.bindProcessExit = bindProcessExit;
-/**
- * Handler function on process exit
- * @param options
- * @param exitCode
- */
 function exitHandler(options, exitCode) {
     Object.keys(fns).forEach(function (key) {
         if (scheduler.verbose)
@@ -40,43 +25,19 @@ function exitHandler(options, exitCode) {
     if (options.exit)
         process.exit();
 }
-/**
- * Trigger Process Bindings
- */
 function triggerProcess() {
-    //do something when app is closing
     process.on('exit', exitHandler.bind(null, { cleanup: true }));
-    //catches ctrl+c event
     process.on('SIGINT', exitHandler.bind(null, { exit: true }));
-    // catches "kill pid" (for example: nodemon restart)
     process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
     process.on('SIGUSR2', exitHandler.bind(null, { exit: true }));
-    //catches uncaught exceptions
     process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
 }
-///// task queue manager
 var functions = [];
-/**
- * @example
- * ```js
- * bindProcessExit("scheduler_on_exit", function () {
- *    console.log("executing scheduled functions");
- *    scheduler.executeAll();
- * });
- * ```
- * or
- * ```js
- * scheduler.register();
- * ```
- */
-var scheduler = /** @class */ (function () {
+var scheduler = (function () {
     function scheduler() {
         if (!scheduler.registered)
             scheduler.register();
     }
-    /**
-     * Register scheduler to process system
-     */
     scheduler.register = function () {
         if (scheduler.registered)
             return;
@@ -85,11 +46,6 @@ var scheduler = /** @class */ (function () {
             scheduler.executeAll();
         });
     };
-    /**
-     * Add function with key to list
-     * @param key existing key (duplicate) will be overwritten
-     * @param value
-     */
     scheduler.add = function (key, value) {
         functions[key] = value;
         var self = this;
@@ -99,9 +55,6 @@ var scheduler = /** @class */ (function () {
             }, 3000);
         });
     };
-    /**
-     * Add function to postpone, the functions will be executed every 5 items added
-     */
     scheduler.postpone = function (key, value) {
         functions['postpone-' + key] = value;
         scheduler.postponeCounter += 1;
@@ -110,10 +63,6 @@ var scheduler = /** @class */ (function () {
             scheduler.postponeCounter = 0;
         }
     };
-    /**
-     * Execute functon in key and delete
-     * @param key
-     */
     scheduler.execute = function (key, deleteAfter) {
         if (deleteAfter === void 0) { deleteAfter = true; }
         if (typeof functions[key] == 'function') {
@@ -126,9 +75,6 @@ var scheduler = /** @class */ (function () {
                 console.error("function with key: ".concat(key, " is not function"));
         }
     };
-    /**
-     * Execute all function lists
-     */
     scheduler.executeAll = function () {
         Object.keys(functions).forEach(function (key) {
             if (scheduler.verbose)
@@ -137,10 +83,6 @@ var scheduler = /** @class */ (function () {
         });
         scheduler.clearArray(functions);
     };
-    /**
-     * Clear Array
-     * @param array
-     */
     scheduler.clearArray = function (array) {
         while (array.length) {
             array.pop();
