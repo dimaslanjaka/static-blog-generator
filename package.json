@@ -1,7 +1,7 @@
 {
   "name": "hexo-post-parser",
   "projectName": "Hexo Post Parser",
-  "version": "1.1.20-27-46b90c0",
+  "version": "1.1.20-38-46b90c0",
   "description": "Parse Hexo Post To Object and pre-process all markdown posts for Automated SEO",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,17 +13,15 @@
     "update": "npx npm-check-updates -u -x chalk",
     "patch": "npm version patch",
     "postpatch": "npm run push",
-    "push": "git push -u origin master --follow-tags"
+    "push": "git push -u origin master --follow-tags",
+    "postinstall": "node postinstall.js"
   },
   "files": [
     "packages",
     "src",
     "dist",
     "_config.yml",
-    "*.json",
-    "*.js",
-    "postinstall.js",
-    "preinstall.js"
+    "*.{json,js,md}"
   ],
   "repository": {
     "type": "git",

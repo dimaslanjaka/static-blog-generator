@@ -2,16 +2,16 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const { mkdirSync, existsSync, writeFileSync } = require('fs');
+const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
-const { spawn } = require('cross-spawn');
+const spawn = require('cross-spawn');
+const { EOL } = require('os');
 
-// required: npm i upath
-// required: npm i -D semver typedoc git-command-helper gulp cross-spawn
-// update: curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
-// repo: https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
+// required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
+// update   : curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc-runner.js > typedoc-runner.js
+// repo     : https://github.com/dimaslanjaka/static-blog-generator/blob/master/typedoc-runner.js
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
@@ -19,8 +19,10 @@ let compiled = 0;
 
 /**
  * Compile typedocs
+ * @param {import('typedoc').TypeDocOptions} options
+ * @param {(...args: any[]) => any} callback
  */
-const compile = async function () {
+const compile = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
   const projectDocsDir = join(outDir, pkgjson.name);
 
@@ -29,7 +31,7 @@ const compile = async function () {
   }
 
   if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
-  const options = Object.assign({}, typedocOptions);
+  options = Object.assign(getTypedocOptions(), options || {});
 
   // disable delete dir while running twice
   if (compiled > 0) options.cleanOutputDir = false;
@@ -52,12 +54,17 @@ const compile = async function () {
   } else {
     console.error('[error]', 'project undefined');
   }
+
+  if (typeof callback === 'function') await callback.apply(app);
+  await createIndex();
 };
 
 /**
  * Compile and publish to github pages
+ * @param {import('typedoc').TypeDocOptions} options
+ * @param {(...args: any[]) => any} callback
  */
-const publish = async function () {
+const publish = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
 
   const github = new git(outDir);
@@ -70,14 +77,14 @@ const publish = async function () {
     await github.setremote(REPO_URL);
     await github.setbranch('master');
     //await github.reset('master');
-    await github.pull(['--recurse-submodule']);
+    await github.pull(['--recurse-submodule', '-X', 'theirs']);
     await github.spawn('git', 'config core.eol lf'.split(' '));
   } catch {
     //
   }
 
   for (let i = 0; i < 2; i++) {
-    await compile();
+    await compile(options, callback);
   }
 
   writeFileSync(
@@ -121,6 +128,23 @@ function noop(..._) {
   return;
 }
 
+let opt = typedocOptions;
+/**
+ * Get typedoc options
+ * @returns {typeof import('./typedoc')}
+ */
+function getTypedocOptions() {
+  return opt;
+}
+/**
+ * Set typedoc options
+ * @param {typeof import('./typedoc')} newOpt
+ */
+function setTypedocOptions(newOpt) {
+  opt = Object.assign(opt, newOpt || {});
+  return opt;
+}
+
 /**
  * Watch sources
  * @param {gulp.TaskFunctionCallback} done
@@ -151,5 +175,34 @@ if (require.main === module) {
   //console.log('required as a module');
 }
 
-module.exports = publish;
-module.exports = { run: publish, watch, compile };
+/**
+ * create docs/readme.md
+ */
+async function createIndex() {
+  let body =
+    `
+# Monorepo Documentation Site
+  `.trim() + EOL;
+
+  readdirSync(join(__dirname, 'docs')).forEach((filename) => {
+    const path = join(__dirname, 'docs', filename);
+    const stat = statSync(path);
+
+    if (stat.isDirectory() && filename !== '.git') {
+      body +=
+        `
+- [${filename}](./${filename})
+      `.trim() + EOL;
+    }
+  });
+
+  writeFileSync(join(__dirname, 'docs/readme.md'), body.trim());
+}
+
+module.exports = {
+  watch,
+  compile,
+  publish,
+  getTypedocOptions,
+  setTypedocOptions
+};
