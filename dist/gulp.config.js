@@ -8,8 +8,8 @@ exports.commonIgnore = exports.getConfig = exports.setConfig = exports.deployCon
 var fs_1 = require("fs");
 var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var path_1 = require("path");
-var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
+var defaults_1 = require("./defaults");
 var fm_1 = require("./utils/fm");
 exports.deployDir = (0, path_1.join)(getConfig().cwd, '.deploy_' + ((_a = getConfig().deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
 function deployConfig() {
@@ -44,11 +44,11 @@ function getConfig() {
     }
     if ((0, fs_1.existsSync)(fileYML)) {
         var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-        settledConfig = Object.assign({}, configYML, settledConfig);
+        settledConfig = Object.assign((0, defaults_1.getDefaultConfig)(), configYML, settledConfig);
         (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     }
     //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-    return Object.assign({ post_dir: 'src-posts', cwd: (0, upath_1.toUnix)(process.cwd()) }, settledConfig);
+    return settledConfig;
 }
 exports.getConfig = getConfig;
 /**
