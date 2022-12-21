@@ -10,11 +10,11 @@ export interface ProjConf extends importConfig {
         safelink?: import('safelinkify').SafelinkOptions;
     };
 }
+export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
+export declare function getConfig(): ProjConf;
 export declare function deployConfig(): {
     deployDir: string;
     github: git;
 };
-export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
-export declare function getConfig(): ProjConf;
 export declare const commonIgnore: string[];
 export {};
