@@ -7,7 +7,8 @@
   "files": [
     "dist",
     "*.js",
-    "readme.md"
+    "readme.md",
+    "LICENSE"
   ],
   "scripts": {
     "update": "npx npm-check-updates -u",
