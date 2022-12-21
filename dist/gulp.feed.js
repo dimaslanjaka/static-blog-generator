@@ -1,17 +1,15 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var fs_1 = require("fs");
-var gulp_1 = __importDefault(require("gulp"));
-var gulp_dom_1 = __importDefault(require("gulp-dom"));
-var hexo_1 = __importDefault(require("hexo"));
+var gulp_1 = tslib_1.__importDefault(require("gulp"));
+var gulp_dom_1 = tslib_1.__importDefault(require("gulp-dom"));
+var hexo_1 = tslib_1.__importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
-var nunjucks_1 = __importDefault(require("nunjucks"));
+var nunjucks_1 = tslib_1.__importDefault(require("nunjucks"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("./gulp.config");
-var nunjucks_env_1 = __importDefault(require("./utils/nunjucks-env"));
+var nunjucks_env_1 = tslib_1.__importDefault(require("./utils/nunjucks-env"));
 var env = (0, nunjucks_env_1.default)();
 gulp_1.default.task('feed', function (done) {
     var config = (0, gulp_config_1.getConfig)();
@@ -33,7 +31,6 @@ gulp_1.default.task('feed', function (done) {
                 var url = urlCfg;
                 if (url[url.length - 1] !== '/')
                     url += '/';
-                // remove broken hexo lang shortcode
                 if (url.includes(':lang/'))
                     url = url.replace('/:lang/', '/');
                 var icon = '';
@@ -62,17 +59,14 @@ gulp_1.default.task('feed', function (done) {
             gulp_1.default
                 .src('**/*.html', { cwd: publicDir, ignore: gulp_config_1.commonIgnore })
                 .pipe((0, gulp_dom_1.default)(function () {
-                // auto discovery rss
                 if (this.querySelectorAll("link[href=\"".concat(baseURL, "rss.xml\"]")).length === 0 &&
                     this.querySelectorAll("link[href=\"/rss.xml\"]").length === 0) {
                     this.head.innerHTML += "<link id=\"rss-site-url\" type=\"application/rss+xml\" rel=\"alternate\" href=\"".concat(baseURL, "rss.xml\" />");
                 }
-                // auto discovery atom
                 if (this.querySelectorAll("link[href=\"".concat(baseURL, "atom.xml\"]")).length === 0 &&
                     this.querySelectorAll("link[href=\"/atom.xml\"]").length === 0) {
                     this.head.innerHTML += "<link id=\"atom-site-url\" type=\"application/atom+xml\" rel=\"alternate\" href=\"".concat(baseURL, "atom.xml\" />");
                 }
-                //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
             }))
                 .pipe(gulp_1.default.dest(publicDir))
                 .once('end', function () { return done(); });

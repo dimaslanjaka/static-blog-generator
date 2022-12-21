@@ -1,7 +1,3 @@
-/**
- * get default configuration
- * @returns
- */
 export declare function getDefaultConfig(): {
     title: string;
     subtitle: string;
@@ -246,8 +242,4 @@ export declare function getDefaultConfig(): {
         TS: string;
     };
 };
-/**
- * get default _config.yml
- * @returns
- */
 export declare function getDefaultConfigYaml(): string;

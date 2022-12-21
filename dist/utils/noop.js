@@ -1,11 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.trycatchnoop = exports.noop = void 0;
-/**
- * no operations
- * @param _args
- * @returns
- */
 function noop() {
     var _args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -15,11 +10,6 @@ function noop() {
 }
 exports.noop = noop;
 exports.default = noop;
-/**
- * try catch nooperation
- * @param fn
- * @returns
- */
 function trycatchnoop(fn) {
     try {
         if (typeof fn.catch === 'function')
@@ -28,7 +18,6 @@ function trycatchnoop(fn) {
             fn();
     }
     catch (_a) {
-        //
     }
 }
 exports.trycatchnoop = trycatchnoop;

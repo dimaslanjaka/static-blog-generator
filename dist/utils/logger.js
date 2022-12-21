@@ -1,44 +1,15 @@
 "use strict";
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var fs_extra_1 = require("fs-extra");
 var os_1 = require("os");
-var slugify_1 = __importDefault(require("slugify"));
+var slugify_1 = tslib_1.__importDefault(require("slugify"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("../gulp.config");
 var fm_1 = require("./fm");
 var jest_1 = require("./jest");
 var FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs/gulp-sbg');
-// disable console.log on jest
 if ((0, jest_1.areWeTestingWithJest)()) {
-    // const log = console.log;
     console.log = function () {
         var _a;
         var args = [];
@@ -60,12 +31,7 @@ if ((0, jest_1.areWeTestingWithJest)()) {
         (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
     };
 }
-/**
- * @example
- * const console = Logger
- * console.log('hello world'); // should be written in ./tmp/logs/gulp-sbg/[trace-name].log
- */
-var Logger = /** @class */ (function () {
+var Logger = (function () {
     function Logger() {
     }
     Logger.log = function () {
@@ -73,8 +39,8 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        console.log.apply(console, __spreadArray([], __read(args), false));
-        this.tracer.apply(this, __spreadArray([], __read(args), false));
+        console.log.apply(console, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.tracer = function () {
         var _a;
@@ -89,14 +55,12 @@ var Logger = /** @class */ (function () {
             return {
                 name: split2[1],
                 path: (_a = split2[2]) === null || _a === void 0 ? void 0 : _a.replace(/\\+/gm, '/').replace(/^\(/, '').replace(/\)$/, '')
-                //trace: error.stack
             };
         });
         if (split) {
             split.splice(0, 3);
             var logfile = void 0;
             var templ_1;
-            // anonymous caller
             if (typeof split[0].path === 'undefined' && split[1].path.includes('anonymous')) {
                 var id = split[1].name;
                 var path = split[0].name;
@@ -115,14 +79,12 @@ var Logger = /** @class */ (function () {
                             o = JSON.stringify(o, null, 2);
                         }
                         catch (_a) {
-                            //
                         }
                     }
                     templ_1 += String(o) + '\n\n';
                 });
                 (0, fs_extra_1.appendFileSync)(logfile, templ_1);
             }
-            // console.log(split);
         }
     };
     return Logger;
