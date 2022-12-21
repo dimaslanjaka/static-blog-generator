@@ -35,9 +35,9 @@ exports.asyncCopyGen = asyncCopyGen;
 gulp_1.default.task('copy', copyGen);
 function pull() {
     return new Promise(function (resolve) {
-        var _a = (0, gulp_config_1.deployConfig)(), deployDir = _a.deployDir, github = _a.github, config = _a.config;
+        var _a = (0, gulp_config_1.getConfig)().deploy, deployDir = _a.deployDir, github = _a.github, repo = _a.repo, username = _a.username, email = _a.email, branch = _a.branch;
         github
-            .setremote(config.repo)
+            .setremote(repo)
             .then(function () {
             return new Promise(function (resolveInit) {
                 if (!(0, fs_1.existsSync)(deployDir)) {
@@ -48,9 +48,9 @@ function pull() {
                 }
             });
         })
-            .then(function () { return github.setuser(config.username); })
-            .then(function () { return github.setemail(config.email); })
-            .then(function () { return github.reset(config.branch); })
+            .then(function () { return github.setuser(username); })
+            .then(function () { return github.setemail(email); })
+            .then(function () { return github.reset(branch); })
             .then(function () {
             github.pull(['--recurse-submodule']).then(function () {
                 if (github.submodule.hasSubmodule()) {

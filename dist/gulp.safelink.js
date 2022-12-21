@@ -10,18 +10,21 @@ var gulp_config_1 = require("./gulp.config");
 function safelinkProcess(_done, cwd) {
     var _this = this;
     return new Promise(function (resolve) {
-        var _a;
-        var _b, _c, _d, _e, _f;
+        var _a, _b, _c;
         var config = (0, gulp_config_1.getConfig)();
-        var configSafelink = Object.assign({ enable: false }, ((_b = config.external_link) === null || _b === void 0 ? void 0 : _b.safelink) || {});
+        if (!config.external_link.safelink)
+            return resolve(new Error('config safelink not configured'));
+        if (!config.external_link.safelink.redirect)
+            return resolve(new Error('safelink redirector not configured'));
+        var configSafelink = Object.assign({ enable: false }, config.external_link.safelink || {});
         var baseURL = '';
         try {
             baseURL = new URL(config.url).host;
         }
-        catch (_g) {
+        catch (_d) {
         }
-        var safelink = new safelinkify_1.default.safelink({
-            exclude: tslib_1.__spreadArray(tslib_1.__spreadArray(tslib_1.__spreadArray([], tslib_1.__read((((_c = config.external_link) === null || _c === void 0 ? void 0 : _c.exclude) || [])), false), [
+        var opt = {
+            exclude: tslib_1.__spreadArray(tslib_1.__spreadArray(tslib_1.__spreadArray([], tslib_1.__read((((_a = config.external_link) === null || _a === void 0 ? void 0 : _a.exclude) || [])), false), [
                 /https?:\/\/?(?:([^*]+)\.)?webmanajemen\.com/,
                 /([a-z0-9](?:[a-z0-9-]{1,61}[a-z0-9])?[.])*webmanajemen\.com/,
                 baseURL,
@@ -32,17 +35,34 @@ function safelinkProcess(_done, cwd) {
             ], false), tslib_1.__read(configSafelink.exclude), false).filter(function (x, i, a) {
                 return a.indexOf(x) === i && x.toString().trim().length !== 0;
             }),
-            redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
+            redirect: [],
             password: configSafelink.password || config.external_link.safelink.password,
             type: configSafelink.type || config.external_link.safelink.type
-        });
-        var folder = cwd || gulp_config_1.deployDir;
+        };
+        if (configSafelink.redirect) {
+            opt.redirect = configSafelink.redirect;
+        }
+        var safelink = new safelinkify_1.default.safelink(opt);
+        var folder = cwd || config.deploy.deployDir;
+        var gulpopt = {
+            cwd: folder,
+            ignore: []
+        };
+        if (Array.isArray(config.external_link.exclude)) {
+            (_b = gulpopt.ignore) === null || _b === void 0 ? void 0 : _b.concat.apply(_b, tslib_1.__spreadArray([], tslib_1.__read(config.external_link.exclude), false));
+        }
+        if (Array.isArray(configSafelink.exclude)) {
+            var ignore = configSafelink.exclude.filter(function (str) {
+                if (typeof str === 'string') {
+                    return !/^(https?:\/|www.)/.test(str);
+                }
+                return false;
+            });
+            (_c = gulpopt.ignore) === null || _c === void 0 ? void 0 : _c.concat.apply(_c, tslib_1.__spreadArray([], tslib_1.__read(ignore), false));
+        }
         if ((0, fs_1.existsSync)(folder)) {
             return gulp_1.default
-                .src(['**/*.{html,htm}'], {
-                cwd: folder,
-                ignore: (_a = []).concat.apply(_a, tslib_1.__spreadArray(tslib_1.__spreadArray([], tslib_1.__read((((_d = (0, gulp_config_1.getConfig)().external_link) === null || _d === void 0 ? void 0 : _d.exclude) || [])), false), tslib_1.__read((((_f = (_e = (0, gulp_config_1.getConfig)().external_link) === null || _e === void 0 ? void 0 : _e.safelink) === null || _f === void 0 ? void 0 : _f.exclude) || [])), false))
-            })
+                .src(['**/*.{html,htm}'], gulpopt)
                 .pipe(through2_1.default.obj(function (file, _enc, next) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
                 var content, parsed;
                 return tslib_1.__generator(this, function (_a) {
@@ -67,7 +87,7 @@ function safelinkProcess(_done, cwd) {
                     }
                 });
             }); }))
-                .pipe(gulp_1.default.dest(gulp_config_1.deployDir))
+                .pipe(gulp_1.default.dest(config.deploy.deployDir))
                 .once('end', function () { return resolve(null); });
         }
         return resolve(null);

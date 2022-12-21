@@ -1,8 +1,9 @@
 import { existsSync } from 'fs';
 import gulp from 'gulp';
-import sf from 'safelinkify';
+import sf, { SafelinkOptions } from 'safelinkify';
 import through2 from 'through2';
-import { deployDir, getConfig } from './gulp.config';
+import { SrcOptions } from 'vinyl-fs';
+import { getConfig } from './gulp.config';
 
 /**
  * Process Safelink on Deploy Dir
@@ -13,15 +14,19 @@ import { deployDir, getConfig } from './gulp.config';
 export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string) {
   return new Promise((resolve) => {
     const config = getConfig();
+    // skip process safelink
+    if (!config.external_link.safelink) return resolve(new Error('config safelink not configured'));
+    if (!config.external_link.safelink.redirect) return resolve(new Error('safelink redirector not configured'));
 
-    const configSafelink = Object.assign({ enable: false }, config.external_link?.safelink || {});
+    const configSafelink = Object.assign({ enable: false }, config.external_link.safelink || {});
     let baseURL = '';
     try {
       baseURL = new URL(config.url).host;
     } catch {
       //
     }
-    const safelink = new sf.safelink({
+
+    const opt: Partial<SafelinkOptions> = {
       // exclude patterns (dont anonymize these patterns)
       exclude: [
         ...(config.external_link?.exclude || []),
@@ -37,21 +42,39 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
         // remove duplicate and empties
         return a.indexOf(x) === i && x.toString().trim().length !== 0;
       }),
-      redirect: [config.external_link.safelink.redirect, configSafelink.redirect],
+      redirect: [],
+      //redirect: [, configSafelink.redirect],
       password: configSafelink.password || config.external_link.safelink.password,
       type: configSafelink.type || config.external_link.safelink.type
-    });
+    };
 
-    const folder = cwd || deployDir;
+    if (configSafelink.redirect) {
+      opt.redirect = configSafelink.redirect;
+    }
+
+    const safelink = new sf.safelink(opt);
+
+    const folder = cwd || config.deploy.deployDir;
+    const gulpopt: SrcOptions = {
+      cwd: folder,
+      ignore: []
+    };
+
+    if (Array.isArray(config.external_link.exclude)) {
+      gulpopt.ignore?.concat(...config.external_link.exclude);
+    }
+    if (Array.isArray(configSafelink.exclude)) {
+      const ignore = configSafelink.exclude.filter((str) => {
+        if (typeof str === 'string') {
+          return !/^(https?:\/|www.)/.test(str);
+        }
+        return false;
+      }) as string[];
+      gulpopt.ignore?.concat(...ignore);
+    }
     if (existsSync(folder)) {
       return gulp
-        .src(['**/*.{html,htm}'], {
-          cwd: folder,
-          ignore: ([] as string[]).concat(
-            ...(getConfig().external_link?.exclude || []),
-            ...(getConfig().external_link?.safelink?.exclude || [])
-          )
-        })
+        .src(['**/*.{html,htm}'], gulpopt)
         .pipe(
           through2.obj(async (file, _enc, next) => {
             // drop null
@@ -71,7 +94,7 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
             next();
           })
         )
-        .pipe(gulp.dest(deployDir))
+        .pipe(gulp.dest(config.deploy.deployDir))
         .once('end', () => resolve(null));
     }
     return resolve(null);

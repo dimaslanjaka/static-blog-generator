@@ -49,31 +49,32 @@ var SBG = (function () {
     };
     SBG.prototype.deploy = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
-            var _a, github, config;
-            return tslib_1.__generator(this, function (_b) {
-                switch (_b.label) {
+            var config, github;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
                     case 0: return [4, this.generate()];
                     case 1:
-                        _b.sent();
+                        _a.sent();
                         return [4, (0, gulp_deploy_1.asyncCopyGen)()];
                     case 2:
-                        _b.sent();
-                        _a = (0, gulp_config_1.deployConfig)(), github = _a.github, config = _a.config;
+                        _a.sent();
+                        config = (0, gulp_config_1.getConfig)();
+                        github = config.deploy.github;
                         return [4, github.init().catch(noop_1.default)];
                     case 3:
-                        _b.sent();
+                        _a.sent();
                         return [4, github.setremote(config.repo).catch(noop_1.default)];
                     case 4:
-                        _b.sent();
+                        _a.sent();
                         return [4, github.setuser(config.username).catch(noop_1.default)];
                     case 5:
-                        _b.sent();
+                        _a.sent();
                         return [4, github.setemail(config.email).catch(noop_1.default)];
                     case 6:
-                        _b.sent();
+                        _a.sent();
                         return [4, github.setbranch(config.branch).catch(noop_1.default)];
                     case 7:
-                        _b.sent();
+                        _a.sent();
                         return [2];
                 }
             });

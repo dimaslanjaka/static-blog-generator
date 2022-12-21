@@ -4,19 +4,14 @@ export interface ProjConf extends importConfig {
     [key: string]: any;
     post_dir: string;
     cwd: string;
+    deploy: importConfig['deploy'] & ReturnType<typeof deployConfig>;
+    language: importConfig['language'] & string;
+    external_link: importConfig['external_link'] & {
+        safelink?: import('safelinkify').SafelinkOptions;
+    };
 }
-export declare const deployDir: string;
 export declare function deployConfig(): {
     deployDir: string;
-    config: {
-        type: string;
-        repo: string;
-        branch: string;
-        message: string;
-        hostname: string;
-        username: string;
-        email: string;
-    };
     github: git;
 };
 export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
