@@ -10,8 +10,8 @@ const spawn = require('cross-spawn');
 const { EOL } = require('os');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
-// update   : curl https://raw.githubusercontent.com/dimaslanjaka/static-blog-generator-hexo/master/packages/gulp-sbg/typedoc-runner.js > typedoc-runner.js
-// repo     : https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/master/packages/gulp-sbg/typedoc-runner.js
+// update   : curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc-runner.js > typedoc-runner.js
+// repo     : https://github.com/dimaslanjaka/static-blog-generator/blob/master/typedoc-runner.js
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
