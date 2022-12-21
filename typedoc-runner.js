@@ -124,7 +124,7 @@ const publish = async function (options = {}, callback = null) {
         .commit(
           `update ${
             pkgjson.name
-          } docs [${commit}] \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
+          } docs [${remote}/commit/${commit}] \nat ${new Date()}`
         )
         .catch(noop);
       const isCanPush = await github.canPush().catch(noop);
