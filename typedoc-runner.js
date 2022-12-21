@@ -2,7 +2,13 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
+const {
+  mkdirSync,
+  existsSync,
+  writeFileSync,
+  readdirSync,
+  statSync
+} = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
@@ -30,7 +36,8 @@ const compile = async function (options = {}, callback = null) {
     spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
-  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
+  if (!existsSync(projectDocsDir))
+    mkdirSync(projectDocsDir, { recursive: true });
   options = Object.assign(getTypedocOptions(), options || {});
 
   // disable delete dir while running twice
@@ -107,12 +114,18 @@ const publish = async function (options = {}, callback = null) {
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url
+      .replace(/.git$/, '')
+      .trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
       await github
-        .commit(`update ${pkgjson.name} docs [${commit}] \nat ${new Date()}\nsource: ${remote}/commit/${commit}`)
+        .commit(
+          `update ${
+            pkgjson.name
+          } docs [${commit}] \nat ${new Date()}\nsource: ${remote}/commit/${commit}`
+        )
         .catch(noop);
       const isCanPush = await github.canPush().catch(noop);
       if (isCanPush) {

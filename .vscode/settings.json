@@ -9,6 +9,9 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
   "files.eol": "\n",
   "eslint.packageManager": "yarn",
   "eslint.run": "onSave",
