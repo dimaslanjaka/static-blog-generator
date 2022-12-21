@@ -25,7 +25,7 @@ export function deployConfig() {
   return { deployDir, config, github };
 }
 
-let settledConfig = getConfig() as Record<string, any>;
+let settledConfig = getDefaultConfig() as Record<string, any>;
 /**
  * Config setter
  * * useful for jest
@@ -50,7 +50,7 @@ export function getConfig() {
   }
   if (existsSync(fileYML)) {
     const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-    settledConfig = Object.assign(getDefaultConfig(), configYML, settledConfig);
+    settledConfig = Object.assign({}, configYML, settledConfig);
     writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
   }
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
