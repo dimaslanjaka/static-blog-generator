@@ -1,7 +1,18 @@
 # default config static-blog-generator
+# Generator options
 generator:
   ## Enable caching (gulp cache, post cache)
   cache: true
+
+# Deployment options
+deploy:
+  type: "git"
+  repo: ""
+  branch: "gh-pages"
+  user: ""
+  email: ""
+  message: "{{ now('YYYY-MM-DD HH:mm:ss') }}"
+
 ## Categories and Tags
 tags:
   lowercase: true # turn all terms to be lowercase
