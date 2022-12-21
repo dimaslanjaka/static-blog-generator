@@ -52,7 +52,7 @@
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "through2": "^4.0.2",
     "upath": "^2.0.1",
-    "yaml": "^2.1.3"
+    "yaml": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
