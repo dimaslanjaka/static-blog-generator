@@ -8,7 +8,7 @@ export interface writefileOpt extends MakeDirectoryOptions {
 }
 
 /**
- * write to file recursively
+ * write to file recursively (auto create dirname)
  * @param file
  * @param content
  * @param opt
