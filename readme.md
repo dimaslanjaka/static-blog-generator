@@ -27,7 +27,7 @@ Compiling and Copying all source posts including shortcodes etc to hexo source p
 | ./src-posts | ./source/_posts |
 
 ```bash
-gulp copy-all-posts
+gulp post:copy
 ```
 
 ## Anonymize External Links
@@ -48,6 +48,7 @@ gulp safelink
 | :heavy_check_mark: | command | Description |
 | :--- | :--- | :--- |
 | &#9744; | sbg copy post | process and copy post from `src-posts` to `source/_posts` |
+| &#9745; | gulp --tasks | list all tasks |
 
 <!--
 Checkboxed inside markdown table
