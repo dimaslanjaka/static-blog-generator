@@ -13,7 +13,7 @@ const console = Logger;
  */
 export function autoSeo(cwd: string) {
   const config = getConfig();
-  const ignore = Array.isArray(config.exclude) ? config.exclude : [];
+  const ignore: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   ignore.push(...commonIgnore);
   return gulp
     .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd, ignore })
