@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "*.js"
+    "*.js",
+    "readme.md"
   ],
   "scripts": {
     "update": "npx npm-check-updates -u",
