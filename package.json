@@ -7,7 +7,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "ts-node build.ts",
-    "postbuild": "node packer.js && node typedoc-runner.js --publish",
+    "postbuild": "node packer.js",
+    "docs": "node typedoc-runner.js --publish",
     "format": "prettier -w src/**/*.ts",
     "ci": "yarn install --immutable --immutable-cache --check-cache --frozen-lockfile --check-files",
     "update": "npx npm-check-updates -u -x chalk",
