@@ -1,8 +1,8 @@
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
 import { join } from 'path';
-import { toUnix } from 'upath';
 import yaml from 'yaml';
+import { getDefaultConfig } from './defaults';
 import { writefile } from './utils/fm';
 
 type importConfig = typeof import('./_config.json') & Record<string, any>;
@@ -50,11 +50,11 @@ export function getConfig() {
   }
   if (existsSync(fileYML)) {
     const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-    settledConfig = Object.assign({}, configYML, settledConfig);
+    settledConfig = Object.assign(getDefaultConfig(), configYML, settledConfig);
     writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
   }
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-  return Object.assign({ post_dir: 'src-posts', cwd: toUnix(process.cwd()) }, settledConfig) as ProjConf;
+  return settledConfig as ProjConf;
 }
 
 /**
