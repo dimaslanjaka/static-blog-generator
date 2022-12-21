@@ -11,24 +11,14 @@ var path_1 = require("path");
 var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
 var fm_1 = require("./utils/fm");
-var originalConfig = {};
-// auto parse _config.yml from process.cwd()
-var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
-if ((0, fs_1.existsSync)(fileYML)) {
-    originalConfig = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-    (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
-}
-var ProjectConfig = Object.assign({ post_dir: 'src-posts', cwd: (0, upath_1.toUnix)(process.cwd()) }, originalConfig);
-(0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.auto-generated.json'), JSON.stringify(Object.assign({}, ProjectConfig, { fileYML: fileYML }), null, 2));
-exports.default = ProjectConfig;
-exports.deployDir = (0, path_1.join)(ProjectConfig.cwd, '.deploy_' + ((_a = ProjectConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+exports.deployDir = (0, path_1.join)(getConfig().cwd, '.deploy_' + ((_a = getConfig().deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
 function deployConfig() {
-    var config = ProjectConfig.deploy || {};
+    var config = getConfig().deploy || {};
     var github = new git_command_helper_1.default(exports.deployDir);
     return { deployDir: exports.deployDir, config: config, github: github };
 }
 exports.deployConfig = deployConfig;
-var settledConfig = ProjectConfig;
+var settledConfig = getConfig();
 /**
  * Config setter
  * * useful for jest
@@ -45,16 +35,20 @@ exports.setConfig = setConfig;
  * @returns
  */
 function getConfig() {
+    var fileYML = '';
     if ('cwd' in settledConfig) {
-        var fileYML_1 = (0, path_1.join)(settledConfig.cwd, '_config.yml');
-        if ((0, fs_1.existsSync)(fileYML_1)) {
-            var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML_1, 'utf-8'));
-            settledConfig = Object.assign({}, configYML, settledConfig);
-            (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
-        }
+        fileYML = (0, path_1.join)(settledConfig.cwd, '_config.yml');
+    }
+    else {
+        fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
+    }
+    if ((0, fs_1.existsSync)(fileYML)) {
+        var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
+        settledConfig = Object.assign({}, configYML, settledConfig);
+        (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     }
     //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-    return settledConfig;
+    return Object.assign({ post_dir: 'src-posts', cwd: (0, upath_1.toUnix)(process.cwd()) }, settledConfig);
 }
 exports.getConfig = getConfig;
 /**
