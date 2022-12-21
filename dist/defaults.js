@@ -7,7 +7,7 @@ var upath_1 = require("upath");
 var yaml_1 = tslib_1.__importDefault(require("yaml"));
 function getDefaultConfig() {
     var defaultConfig = { post_dir: 'src-posts', cwd: (0, upath_1.toUnix)(process.cwd()) };
-    var configYML = yaml_1.default.parse((0, fs_1.readFileSync)((0, upath_1.join)(__dirname, '_config.yml'), 'utf-8'));
+    var configYML = yaml_1.default.parse(getDefaultConfigYaml());
     return Object.assign(defaultConfig, configYML);
 }
 exports.getDefaultConfig = getDefaultConfig;

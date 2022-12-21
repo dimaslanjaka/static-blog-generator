@@ -105,7 +105,7 @@
     "type": "git",
     "repo": "",
     "branch": "gh-pages",
-    "user": "",
+    "username": "",
     "email": "",
     "message": "{{ now('YYYY-MM-DD HH:mm:ss') }}"
   },
