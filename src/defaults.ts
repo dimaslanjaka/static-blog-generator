@@ -8,7 +8,7 @@ import yaml from 'yaml';
  */
 export function getDefaultConfig() {
   const defaultConfig = { post_dir: 'src-posts', cwd: toUnix(process.cwd()) };
-  const configYML = yaml.parse(readFileSync(join(__dirname, '_config.yml'), 'utf-8'));
+  const configYML = yaml.parse(getDefaultConfigYaml());
   return Object.assign(defaultConfig, configYML) as typeof import('./_config.json');
 }
 
