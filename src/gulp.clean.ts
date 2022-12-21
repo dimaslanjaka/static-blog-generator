@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import hexoLib from 'hexo';
 import { join } from 'upath';
 import { inspect } from 'util';
-import { deployDir, getConfig } from './gulp.config';
+import { getConfig } from './gulp.config';
 import { writefile } from './utils/fm';
 import Logger from './utils/logger';
 import noop from './utils/noop';
@@ -74,12 +74,18 @@ gulp.task('clean', cleanDb);
  */
 export function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
   const config = getConfig();
-  const archives = join(deployDir, config.archive_dir);
-  const categories = join(deployDir, config.category_dir);
-  const tags = join(deployDir, config.tag_dir);
-  const folders = [archives, tags, categories]
-    .concat(config.language.map((str) => join(deployDir, str)))
-    .filter((str) => existsSync(str));
+  const archives = join(config.deploy.deployDir, config.archive_dir);
+  const categories = join(config.deploy.deployDir, config.category_dir);
+  const tags = join(config.deploy.deployDir, config.tag_dir);
+  const folders = [archives, tags, categories].filter((str) => existsSync(str));
+
+  // push language folder to be deleted from deploy dir
+  if (Array.isArray(config.language)) {
+    const langDir = config.language.map((path) => join(config.deploy.deployDir, path));
+    folders.push(...langDir);
+  } else if (typeof config.language === 'string' && String(config.language).trim().length > 0) {
+    folders.push(join(config.deploy.deployDir, String(config.language)));
+  }
 
   const promises: Promise<any>[] = [];
 

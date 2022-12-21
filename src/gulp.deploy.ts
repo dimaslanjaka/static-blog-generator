@@ -42,9 +42,9 @@ gulp.task('copy', copyGen);
 
 function pull() {
   return new Promise((resolve) => {
-    const { deployDir, github, config } = deployConfig();
+    const { deployDir, github, repo, username, email, branch } = getConfig().deploy;
     github
-      .setremote(config.repo)
+      .setremote(repo)
       .then(() => {
         return new Promise((resolveInit) => {
           if (!existsSync(deployDir)) {
@@ -54,10 +54,10 @@ function pull() {
           }
         });
       })
-      .then(() => github.setuser(config.username))
-      .then(() => github.setemail(config.email))
+      .then(() => github.setuser(username))
+      .then(() => github.setemail(email))
       // reset repository to latest commit
-      .then(() => github.reset(config.branch))
+      .then(() => github.reset(branch))
       // pull any changes inside submodule from their latest commit
       .then(() => {
         github.pull(['--recurse-submodule']).then(() => {
