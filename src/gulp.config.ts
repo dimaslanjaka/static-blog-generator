@@ -5,15 +5,6 @@ import { toUnix } from 'upath';
 import yaml from 'yaml';
 import { writefile } from './utils/fm';
 
-let originalConfig: Record<string, any> = {};
-
-// auto parse _config.yml from process.cwd()
-const fileYML = join(process.cwd(), '_config.yml');
-if (existsSync(fileYML)) {
-  originalConfig = yaml.parse(readFileSync(fileYML, 'utf-8'));
-  writefile(join(__dirname, '_config.json'), JSON.stringify(originalConfig, null, 2));
-}
-
 type importConfig = typeof import('./_config.json') & Record<string, any>;
 export interface ProjConf extends importConfig {
   [key: string]: any;
@@ -27,21 +18,14 @@ export interface ProjConf extends importConfig {
   cwd: string;
 }
 
-const ProjectConfig = Object.assign({ post_dir: 'src-posts', cwd: toUnix(process.cwd()) }, originalConfig) as ProjConf;
-writefile(
-  join(__dirname, '_config.auto-generated.json'),
-  JSON.stringify(Object.assign({}, ProjectConfig, { fileYML }), null, 2)
-);
-
-export default ProjectConfig;
-export const deployDir = join(ProjectConfig.cwd, '.deploy_' + ProjectConfig.deploy?.type || 'git');
+export const deployDir = join(getConfig().cwd, '.deploy_' + getConfig().deploy?.type || 'git');
 export function deployConfig() {
-  const config = ProjectConfig.deploy || {};
+  const config = getConfig().deploy || {};
   const github = new git(deployDir);
   return { deployDir, config, github };
 }
 
-let settledConfig = ProjectConfig as Record<string, any>;
+let settledConfig = getConfig() as Record<string, any>;
 /**
  * Config setter
  * * useful for jest
@@ -70,7 +54,7 @@ export function getConfig() {
     writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
   }
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-  return settledConfig as ProjConf;
+  return Object.assign({ post_dir: 'src-posts', cwd: toUnix(process.cwd()) }, settledConfig) as ProjConf;
 }
 
 /**

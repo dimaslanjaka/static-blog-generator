@@ -9,13 +9,13 @@ import nunjucks from 'nunjucks';
 import { EOL } from 'os';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
-import ProjectConfig, { commonIgnore } from './gulp.config';
+import { commonIgnore, getConfig } from './gulp.config';
 import { array_remove_empty, array_unique } from './utils/array';
 import { writefile } from './utils/fm';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
 
-const sitemapTXT = join(process.cwd(), ProjectConfig.public_dir || 'public', 'sitemap.txt');
+const sitemapTXT = join(process.cwd(), getConfig().public_dir || 'public', 'sitemap.txt');
 let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
 const crawled = new Set<string>();
 const env = envNunjucks();
@@ -37,9 +37,9 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
         })
       );
     } else {
-      crawled.add(ProjectConfig.url);
+      crawled.add(getConfig().url);
       promises.push(
-        sitemapCrawlerAsync(ProjectConfig.url, {
+        sitemapCrawlerAsync(getConfig().url, {
           deep
         })
       );

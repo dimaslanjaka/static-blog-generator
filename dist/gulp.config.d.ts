@@ -11,8 +11,6 @@ export interface ProjConf extends importConfig {
      */
     cwd: string;
 }
-declare const ProjectConfig: ProjConf;
-export default ProjectConfig;
 export declare const deployDir: string;
 export declare function deployConfig(): {
     deployDir: string;
@@ -47,3 +45,4 @@ export declare function getConfig(): ProjConf;
  * excludes.push(...commonIgnore);
  */
 export declare const commonIgnore: string[];
+export {};

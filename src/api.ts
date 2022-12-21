@@ -1,7 +1,7 @@
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { cleanDb, cleanOldArchives } from './gulp.clean';
-import ProjectConfig, { deployConfig, getConfig, setConfig } from './gulp.config';
+import { deployConfig, getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
 import { safelinkProcess } from './gulp.safelink';
@@ -29,7 +29,7 @@ class SBG {
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  seo = () => autoSeo(join(this.cwd, ProjectConfig.public_dir));
+  seo = () => autoSeo(join(this.cwd, getConfig().public_dir));
 
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
@@ -46,7 +46,7 @@ class SBG {
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  safelink = () => safelinkProcess(noop, join(this.cwd, ProjectConfig.public_dir));
+  safelink = () => safelinkProcess(noop, join(this.cwd, getConfig().public_dir));
 
   /**
    * generate site with hexo

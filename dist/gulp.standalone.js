@@ -43,7 +43,7 @@ var cross_spawn_1 = __importDefault(require("cross-spawn"));
 var gulp_1 = __importDefault(require("gulp"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
-var gulp_config_1 = __importDefault(require("./gulp.config"));
+var gulp_config_1 = require("./gulp.config");
 var string_1 = require("./utils/string");
 /**
  * run all _*.standalone.js inside src-posts (_config_yml.post_dir)
@@ -52,7 +52,7 @@ var string_1 = require("./utils/string");
 function standaloneRunner() {
     console.log('[standalone] Running scripts...\n');
     return gulp_1.default
-        .src((0, upath_1.join)(gulp_config_1.default.cwd, '**/_*.standalone.js'), { cwd: gulp_config_1.default.cwd, ignore: ['**/tmp/**'] })
+        .src((0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, '**/_*.standalone.js'), { cwd: (0, gulp_config_1.getConfig)().cwd, ignore: ['**/tmp/**'] })
         .pipe(through2_1.default.obj(function (file, _enc, next) {
         return __awaiter(this, void 0, void 0, function () {
             var _a, _b, _c, child;
@@ -62,7 +62,7 @@ function standaloneRunner() {
                         console.log('='.repeat(10) + ' input ' + '='.repeat(10));
                         _b = (_a = console).log;
                         _c = "node ".concat;
-                        return [4 /*yield*/, (0, string_1.replacePath)(file.path, gulp_config_1.default.cwd, '')];
+                        return [4 /*yield*/, (0, string_1.replacePath)(file.path, (0, gulp_config_1.getConfig)().cwd, '')];
                     case 1:
                         _b.apply(_a, [_c.apply("node ", [_d.sent()])]);
                         console.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
@@ -76,7 +76,7 @@ function standaloneRunner() {
             });
         });
     }))
-        .pipe(gulp_1.default.dest((0, upath_1.join)(gulp_config_1.default.cwd, 'tmp/standalone')))
+        .pipe(gulp_1.default.dest((0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, 'tmp/standalone')))
         .once('end', function () {
         console.log('\n[standalone] stopped');
     });
