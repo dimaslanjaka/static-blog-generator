@@ -18,7 +18,7 @@ function deployConfig() {
     return { deployDir: exports.deployDir, config: config, github: github };
 }
 exports.deployConfig = deployConfig;
-var settledConfig = getConfig();
+var settledConfig = (0, defaults_1.getDefaultConfig)();
 /**
  * Config setter
  * * useful for jest
@@ -44,7 +44,7 @@ function getConfig() {
     }
     if ((0, fs_1.existsSync)(fileYML)) {
         var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-        settledConfig = Object.assign((0, defaults_1.getDefaultConfig)(), configYML, settledConfig);
+        settledConfig = Object.assign({}, configYML, settledConfig);
         (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     }
     //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
