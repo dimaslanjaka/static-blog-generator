@@ -6,7 +6,7 @@ import gulp from 'gulp';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
 import './gulp.clean';
-import ProjectConfig, { deployConfig } from './gulp.config';
+import { deployConfig, getConfig } from './gulp.config';
 import './gulp.safelink';
 
 /**
@@ -15,7 +15,7 @@ import './gulp.safelink';
  */
 export function copyGen() {
   const { deployDir } = deployConfig();
-  const publicDir = join(process.cwd(), ProjectConfig.public_dir);
+  const publicDir = join(process.cwd(), getConfig().public_dir);
   return gulp
     .src(['**/**', '!**/.git*', '!**/tmp/**', '!**/node_modules/**'], {
       cwd: publicDir,
@@ -107,7 +107,7 @@ function status(done?: gulp.TaskFunctionCallback) {
 
 function commit() {
   const { github } = deployConfig();
-  const now = moment().tz(ProjectConfig.timezone).format('LLL');
+  const now = moment().tz(getConfig().timezone).format('LLL');
   const commitRoot = function () {
     return new Promise((resolve) => {
       github.status().then((changes) => {

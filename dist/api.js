@@ -1,27 +1,4 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -65,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
-var gulp_config_1 = __importStar(require("./gulp.config"));
+var gulp_config_1 = require("./gulp.config");
 var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_post_1 = require("./gulp.post");
 var gulp_safelink_1 = require("./gulp.safelink");
@@ -86,7 +63,7 @@ var SBG = /** @class */ (function () {
          * Auto seo on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
-        this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.cwd, gulp_config_1.default.public_dir)); };
+        this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
         /**
          * Copy all **src-post** to **source/_posts** (run before generate)
          * * see the method {@link copyAllPosts}
@@ -101,7 +78,7 @@ var SBG = /** @class */ (function () {
          * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
-        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.cwd, gulp_config_1.default.public_dir)); };
+        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
         if (typeof cwd === 'string') {
             this.cwd = cwd;
             this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
