@@ -136,7 +136,7 @@ export function updatePost() {
  */
 export function copyAllPosts() {
   const config = getConfig();
-  const excludes = Array.isArray(config.exclude) ? config.exclude : [];
+  const excludes: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push(...commonIgnore);
   Logger.log('[copy] cwd', toUnix(process.cwd()));
   Logger.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));

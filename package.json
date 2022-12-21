@@ -6,7 +6,6 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src",
     "*.js"
   ],
   "scripts": {
@@ -47,7 +46,7 @@
     "moment-timezone": "^0.5.40",
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
-    "safelinkify": "^1.1.6",
+    "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "through2": "^4.0.2",
     "upath": "^2.0.1",
