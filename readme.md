@@ -41,6 +41,18 @@ Cloaking all external links to outbound page redirector, useful for SEO.
 gulp safelink
 ```
 
+## Automatic SEO
+- adds an alt tag to an image element when none exists
+- adds an title tag to an iframe element when none exists
+
+| Source | Destination |
+| :--- | :--- |
+| ./.deploy_git | ./.deploy_git |
+
+```bash
+gulp seo
+```
+
 ## todo
 
 - CLI
