@@ -1,12 +1,17 @@
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
+import HexoConfig from 'hexo/HexoConfig';
 import { join } from 'path';
+import truecasepath from 'true-case-path';
+import { toUnix } from 'upath';
 import yaml from 'yaml';
 import { getDefaultConfig } from './defaults';
 import { writefile } from './utils/fm';
 
-type importConfig = typeof import('./_config.json') & Record<string, any>;
-export interface ProjConf extends importConfig {
+//typeof import('./_config.json') & Record<string, any> &
+export type importConfig = typeof import('./_config.json');
+
+export interface ProjConf extends HexoConfig {
   [key: string]: any;
   /**
    * Source posts
@@ -20,13 +25,10 @@ export interface ProjConf extends importConfig {
    * Deployment options
    */
   deploy: importConfig['deploy'] & ReturnType<typeof deployConfig>;
-  /**
-   * Language
-   */
-  language: importConfig['language'] & string;
-  external_link: importConfig['external_link'] & {
-    safelink?: import('safelinkify').SafelinkOptions;
-  };
+  external_link: importConfig['external_link'] &
+    boolean & {
+      safelink?: import('safelinkify').SafelinkOptions;
+    };
 }
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
@@ -52,6 +54,8 @@ export function getConfig() {
       fileYML = join(settledConfig.cwd, '_config.yml');
     } else {
       fileYML = join(process.cwd(), '_config.yml');
+      // set cwd
+      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(process.cwd()));
     }
     if (existsSync(fileYML)) {
       const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
