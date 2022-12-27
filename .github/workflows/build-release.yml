@@ -126,6 +126,10 @@ jobs:
             ${{ runner.os }}-${{ matrix.node-version }}-
             ${{ runner.os }}-
 
+
+      - name: Install Global Packages
+        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
+
       - name: Install
         run: npm install --legacy-peer-deps
 
