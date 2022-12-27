@@ -1,14 +1,14 @@
 {
   "/release/static-blog-generator-3.0.0.tgz": {
-    "hash": "541c62dbba13fd149c74466f3d4e2cb2bbcaf625",
-    "size": "34.22 KB"
+    "hash": "93a809d88c659c0c40d46c599e3152b51cdb2dc2",
+    "size": "34.87 KB"
   },
   "/release/static-blog-generator.tgz": {
-    "hash": "541c62dbba13fd149c74466f3d4e2cb2bbcaf625",
-    "size": "34.22 KB"
+    "hash": "93a809d88c659c0c40d46c599e3152b51cdb2dc2",
+    "size": "34.87 KB"
   },
   "/package-lock.json": {
-    "hash": "65471cf8c1748cfb14d1b3d2312c932d1e74851b",
+    "hash": "5943ace0b318b5278364be022a8a07832c4268e2",
     "size": "394.45 KB"
   }
 }
