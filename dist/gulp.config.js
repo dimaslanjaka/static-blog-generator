@@ -5,6 +5,8 @@ var tslib_1 = require("tslib");
 var fs_1 = require("fs");
 var git_command_helper_1 = tslib_1.__importDefault(require("git-command-helper"));
 var path_1 = require("path");
+var true_case_path_1 = tslib_1.__importDefault(require("true-case-path"));
+var upath_1 = require("upath");
 var yaml_1 = tslib_1.__importDefault(require("yaml"));
 var defaults_1 = require("./defaults");
 var fm_1 = require("./utils/fm");
@@ -15,22 +17,22 @@ function setConfig(obj) {
 }
 exports.setConfig = setConfig;
 function getConfig() {
-    if (Object.keys(settledConfig).length < 5) {
-        var fileYML = '';
-        if (settledConfig && 'cwd' in settledConfig) {
-            fileYML = (0, path_1.join)(settledConfig.cwd, '_config.yml');
-        }
-        else {
-            fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
-        }
-        if ((0, fs_1.existsSync)(fileYML)) {
-            var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-            settledConfig = Object.assign({}, configYML, settledConfig);
-            (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
-        }
-        else {
-            throw new Error('_config.yml not found');
-        }
+    var fileYML = '';
+    if (settledConfig && 'cwd' in settledConfig) {
+        fileYML = (0, path_1.join)(settledConfig.cwd, '_config.yml');
+        settledConfig.cwd = (0, upath_1.toUnix)(true_case_path_1.default.trueCasePathSync(settledConfig.cwd));
+    }
+    else {
+        fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
+        settledConfig.cwd = (0, upath_1.toUnix)(true_case_path_1.default.trueCasePathSync(process.cwd()));
+    }
+    if ((0, fs_1.existsSync)(fileYML)) {
+        var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
+        settledConfig = Object.assign({}, configYML, settledConfig);
+        (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+    }
+    else {
+        throw new Error('_config.yml not found');
     }
     settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
     return settledConfig;

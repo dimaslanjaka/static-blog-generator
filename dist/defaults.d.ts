@@ -107,6 +107,10 @@ export declare function getDefaultConfig(): {
         email: string;
         message: string;
     };
+    sitemap: {
+        tags: boolean;
+        categories: boolean;
+    };
     tags: {
         lowercase: boolean;
         assign: null;
