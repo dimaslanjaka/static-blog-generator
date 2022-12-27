@@ -117,9 +117,11 @@ function hexoGenerateSitemap() {
                 if (!config.sitemap)
                     return console.log('[sitemap] config.sitemap not configured in _config.yml');
                 var locals = instance.locals;
-                var skip_render = config.skip_render, sitemap = config.sitemap;
-                if (!sitemap.tags || !sitemap.categories)
+                var skip_render = config.skip_render;
+                var sitemap = Object.assign({ rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] }, config.sitemap);
+                if (!sitemap.tags || !sitemap.categories) {
                     return console.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
+                }
                 var skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
                 if (Array.isArray(skip_render)) {
                     skipRenderList.push.apply(skipRenderList, tslib_1.__spreadArray([], tslib_1.__read(skip_render), false));
@@ -142,7 +144,7 @@ function hexoGenerateSitemap() {
                 }
                 var tmplSrc = (0, upath_1.join)(__dirname, '_config_template_sitemap.xml');
                 var template = nunjucks_1.default.compile((0, fs_extra_1.readFileSync)(tmplSrc, 'utf-8'), env);
-                var tagsCfg = sitemap.tags, catsCfg = sitemap.categories;
+                var tagsCfg = sitemap.tags, catsCfg = sitemap.categories, relCfg = sitemap.rel;
                 var data = template.render({
                     config: config,
                     posts: posts,
@@ -153,6 +155,8 @@ function hexoGenerateSitemap() {
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
                 (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
                 (0, fs_extra_1.writeFile)((0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, config.public_dir, 'sitemap.xml'), data, noop_1.default);
+                if (!relCfg)
+                    return resolve();
                 var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
                 var publicDir = (0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, config.public_dir);
                 gulp_1.default
