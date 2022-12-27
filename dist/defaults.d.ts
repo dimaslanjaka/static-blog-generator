@@ -110,6 +110,8 @@ export declare function getDefaultConfig(): {
     sitemap: {
         tags: boolean;
         categories: boolean;
+        rel: boolean;
+        path: string[];
     };
     tags: {
         lowercase: boolean;
