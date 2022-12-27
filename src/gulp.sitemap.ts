@@ -105,7 +105,7 @@ export function hexoGenerateSitemap() {
         env.addFilter('formatUrl', (str) => {
           return full_url_for.call(instance, str);
         });
-        const config = instance.config;
+        const config = getConfig();
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render, sitemap } = config;
