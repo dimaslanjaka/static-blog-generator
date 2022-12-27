@@ -105,7 +105,8 @@ export function hexoGenerateSitemap() {
         env.addFilter('formatUrl', (str) => {
           return full_url_for.call(instance, str);
         });
-        const config = getConfig();
+        const config = instance.config;
+        writefile(join(process.cwd(), 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render, sitemap } = config;
@@ -153,10 +154,10 @@ export function hexoGenerateSitemap() {
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
-        writeFile(join(config.cwd, config.public_dir, 'sitemap.xml'), data, noop);
+        writeFile(join(getConfig().cwd, config.public_dir, 'sitemap.xml'), data, noop);
 
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
-        const publicDir = join(config.cwd, config.public_dir);
+        const publicDir = join(getConfig().cwd, config.public_dir);
         gulp
           .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
           .pipe(

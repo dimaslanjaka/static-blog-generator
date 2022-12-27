@@ -6,8 +6,8 @@
   "author": "Dimas Lanjaka",
   "language": "en",
   "timezone": "Asia/Jakarta",
-  "url": "http://www.webmanajemen.com/hexo-seo",
-  "root": "/hexo-seo",
+  "url": "http://www.webmanajemen.com/static-blog-generator",
+  "root": "/static-blog-generator/",
   "permalink": ":title.html",
   "permalink_defaults": null,
   "pretty_urls": {
@@ -108,6 +108,10 @@
     "username": "",
     "email": "",
     "message": "{{ now('YYYY-MM-DD HH:mm:ss') }}"
+  },
+  "sitemap": {
+    "tags": true,
+    "categories": true
   },
   "tags": {
     "lowercase": true,
