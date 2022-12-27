@@ -2,23 +2,19 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const {
-  mkdirSync,
-  existsSync,
-  writeFileSync,
-  readdirSync,
-  statSync
-} = require('fs');
+const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
-const spawn = require('cross-spawn');
 const { EOL } = require('os');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
-// update   : curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc-runner.js > typedoc-runner.js
-// repo     : https://github.com/dimaslanjaka/static-blog-generator/blob/master/typedoc-runner.js
+// update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
+// repo     : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/typedoc-runner.js
+// usages
+// - git clone https://github.com/dimaslanjaka/docs.git
+// - node typedoc-runner.js
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
@@ -34,11 +30,10 @@ const compile = async function (options = {}, callback = null) {
   const projectDocsDir = join(outDir, pkgjson.name);
 
   if (!existsSync(outDir)) {
-    spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
+    await spawnAsync('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
-  if (!existsSync(projectDocsDir))
-    mkdirSync(projectDocsDir, { recursive: true });
+  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
   options = Object.assign(getTypedocOptions(), options || {});
 
   // disable delete dir while running twice
@@ -115,9 +110,7 @@ const publish = async function (options = {}, callback = null) {
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url
-      .replace(/.git$/, '')
-      .trim();
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
@@ -195,7 +188,7 @@ if (require.main === module) {
 async function createIndex() {
   let body =
     `
-# Monorepo Documentation Site
+<h1 id="headline">Monorepo Documentation Site</h1>
   `.trim() + EOL;
 
   readdirSync(join(__dirname, 'docs')).forEach((filename) => {
@@ -205,12 +198,12 @@ async function createIndex() {
     if (stat.isDirectory() && filename !== '.git') {
       body +=
         `
-- [${filename}](./${filename})
+<li><a href="./${filename}">${filename}</a></li>
       `.trim() + EOL;
     }
   });
 
-  writeFileSync(join(__dirname, 'docs/readme.md'), body.trim());
+  writeFileSync(join(__dirname, 'docs/index.html'), body.trim());
 }
 
 module.exports = {
