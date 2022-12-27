@@ -111,7 +111,12 @@
   },
   "sitemap": {
     "tags": true,
-    "categories": true
+    "categories": true,
+    "rel": true,
+    "path": [
+      "sitemap.xml",
+      "sitemap.txt"
+    ]
   },
   "tags": {
     "lowercase": true,
