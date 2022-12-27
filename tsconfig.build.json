@@ -18,7 +18,8 @@
   },
   "include": [
     "./src/index.ts",
-    "./src/gulp.*.ts"
+    "./src/gulp.*.ts",
+    "./src/utils"
   ],
   "exclude": [
     "*.test.js",
