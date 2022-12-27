@@ -4,8 +4,8 @@ const pkgjson = require('./package.json');
 
 // required: npm i upath
 // required: npm i -D typedoc typedoc-plugin-missing-exports
-// update: curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc.js > typedoc.js
-// repo: https://github.com/dimaslanjaka/static-blog-generator/blob/master/typedoc.js
+// update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc.js > typedoc.js
+// repo     : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/typedoc.js
 
 /**
  * @type {import('typedoc').TypeDocOptions['entryPoints']}
