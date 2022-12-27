@@ -15,7 +15,7 @@ import { writefile } from './utils/fm';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
 
-const sitemapTXT = join(process.cwd(), getConfig().public_dir || 'public', 'sitemap.txt');
+const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
 let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
 const crawled = new Set<string>();
 const env = envNunjucks();
@@ -99,15 +99,20 @@ function writeSitemap(callback?: (...args: any[]) => any) {
 
 export function hexoGenerateSitemap() {
   return new Bluebird((resolve) => {
-    const instance = new hexo(process.cwd());
+    const instance = new hexo(getConfig().cwd);
     instance.init().then(() => {
       instance.load().then(function () {
         env.addFilter('formatUrl', (str) => {
           return full_url_for.call(instance, str);
         });
         const config = instance.config;
+        if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render, sitemap } = config;
+        if (!sitemap.tags || !sitemap.categories)
+          return console.log(
+            '[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml'
+          );
         const skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
 
         if (Array.isArray(skip_render)) {
@@ -148,10 +153,10 @@ export function hexoGenerateSitemap() {
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
-        writeFile(join(process.cwd(), config.public_dir, 'sitemap.xml'), data, noop);
+        writeFile(join(config.cwd, config.public_dir, 'sitemap.xml'), data, noop);
 
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
-        const publicDir = join(process.cwd(), config.public_dir);
+        const publicDir = join(config.cwd, config.public_dir);
         gulp
           .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
           .pipe(
