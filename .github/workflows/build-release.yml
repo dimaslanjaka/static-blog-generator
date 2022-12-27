@@ -42,7 +42,7 @@ jobs:
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
       - name: Cleanup caches
         shell: bash
-        if: matrix.node-version == '14.x' && matrix.architecture == 'x86' && runner.os == 'Linux' && contains(github.event.head_commit.message, 'clean')
+        if: matrix.node-version == '14.x' && matrix.architecture == 'x86' && runner.os == 'Linux' && ( contains(github.event.head_commit.message, 'clean') || contains(github.event.head_commit.message, 'update deps') || contains(github.event.head_commit.message, 'update dependencies') )
         run: |
           gh extension install actions/gh-actions-cache
 
@@ -154,6 +154,10 @@ jobs:
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
         continue-on-error: true
       - run: git add lib
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
+        continue-on-error: true
+      - run: git pull -X theirs
+        name: Pull before push
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux'
         continue-on-error: true
       - name: Git push
