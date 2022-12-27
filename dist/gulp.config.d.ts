@@ -1,12 +1,12 @@
 import git from 'git-command-helper';
-type importConfig = typeof import('./_config.json') & Record<string, any>;
-export interface ProjConf extends importConfig {
+import HexoConfig from 'hexo/HexoConfig';
+export type importConfig = typeof import('./_config.json');
+export interface ProjConf extends HexoConfig {
     [key: string]: any;
     post_dir: string;
     cwd: string;
     deploy: importConfig['deploy'] & ReturnType<typeof deployConfig>;
-    language: importConfig['language'] & string;
-    external_link: importConfig['external_link'] & {
+    external_link: importConfig['external_link'] & boolean & {
         safelink?: import('safelinkify').SafelinkOptions;
     };
 }
@@ -17,4 +17,3 @@ export declare function deployConfig(): {
     github: git;
 };
 export declare const commonIgnore: string[];
-export {};
