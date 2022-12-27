@@ -54,7 +54,7 @@
     "@types/node": "^18.11.17",
     "@types/yargs": "^17.0.17",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.1",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
