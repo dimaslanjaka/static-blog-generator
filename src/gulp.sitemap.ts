@@ -109,11 +109,17 @@ export function hexoGenerateSitemap() {
         writefile(join(process.cwd(), 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
-        const { skip_render, sitemap } = config;
-        if (!sitemap.tags || !sitemap.categories)
+        const { skip_render } = config;
+        // assign default config
+        const sitemap = Object.assign(
+          { rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] },
+          config.sitemap
+        );
+        if (!sitemap.tags || !sitemap.categories) {
           return console.log(
             '[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml'
           );
+        }
         const skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
 
         if (Array.isArray(skip_render)) {
@@ -139,7 +145,7 @@ export function hexoGenerateSitemap() {
 
         const tmplSrc = join(__dirname, '_config_template_sitemap.xml');
         const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
-        const { tags: tagsCfg, categories: catsCfg } = sitemap;
+        const { tags: tagsCfg, categories: catsCfg, rel: relCfg } = sitemap;
         let data = template.render({
           config,
           posts,
@@ -156,6 +162,7 @@ export function hexoGenerateSitemap() {
         writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
         writeFile(join(getConfig().cwd, config.public_dir, 'sitemap.xml'), data, noop);
 
+        if (!relCfg) return resolve();
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
         const publicDir = join(getConfig().cwd, config.public_dir);
         gulp
