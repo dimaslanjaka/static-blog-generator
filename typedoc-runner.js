@@ -7,7 +7,14 @@ const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
 const { EOL } = require('os');
-const { spawnAsync } = require('git-command-helper/dist/spawn');
+const axios = require('axios');
+const { writeFile } = require('fs/promises');
+
+/**
+ * @type {import('git-command-helper/dist/spawn').spawnAsync}
+ */
+const spawnAsync =
+  pkgjson.name === 'git-command-helper' ? require('./dist').spawnAsync : require('git-command-helper').spawnAsync;
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
 // update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
@@ -58,7 +65,14 @@ const compile = async function (options = {}, callback = null) {
     console.error('[error]', 'project undefined');
   }
 
+  // call API callback
   if (typeof callback === 'function') await callback.apply(app);
+  // call standalone callback
+  const callback_script = join(__dirname, 'typedoc-callback.js');
+  if (existsSync(callback_script)) {
+    await spawnAsync('node', [callback_script], { cwd: __dirname, stdio: 'inherit' });
+  }
+  // generate readme.md and index.html
   await createIndex();
 };
 
@@ -79,9 +93,8 @@ const publish = async function (options = {}, callback = null) {
     }
     await github.setremote(REPO_URL);
     await github.setbranch('master');
-    //await github.reset('master');
-    await github.pull(['--recurse-submodule', '-X', 'theirs']);
     await github.spawn('git', 'config core.eol lf'.split(' '));
+    await github.pull(['--recurse-submodule', '-X', 'theirs']);
   } catch {
     //
   }
@@ -90,30 +103,24 @@ const publish = async function (options = {}, callback = null) {
     await compile(options, callback);
   }
 
-  writeFileSync(
-    join(outDir, '.gitattributes'),
-    `
-*           text=auto
-*.txt       text eol=lf
-*.json      text eol=lf
-*.txt       text
-*.vcproj    text eol=crlf
-*.sh        text eol=lf
-*.ts        text eol=lf
-*.js        text eol=lf
-*.png       binary diff
-*.jpg       binary diff
-*.ico       binary diff
-*.pdf       binary diff
-`.trim()
+  const response = await axios.default.get(
+    'https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.gitattributes',
+    {
+      responseType: 'blob'
+    }
   );
+  writeFile(join(outDir, '.gitattributes'), response.data, (err) => {
+    if (err) throw err;
+    console.log('.gitattributes has been saved!');
+  });
 
   try {
-    const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
+    const commit = await new git(__dirname).latestCommit();
+    const remote = (await new git(__dirname).getremote()).push.url.replace(/.git$/, '').trim();
     if (remote.length > 0) {
-      console.log('current git project', remote);
-      await github.add(pkgjson.name).catch(noop);
+      console.log('project', remote);
+      console.log('commit', `${remote}/commit/${commit}`);
+      await github.add(pkgjson.name);
       await spawnAsync('git', [
         'commit',
         '-m',
@@ -121,19 +128,15 @@ const publish = async function (options = {}, callback = null) {
         '-m',
         `at ${new Date()}`
       ]);
-      const isCanPush = await github.canPush().catch(noop);
+      const isCanPush = await github.canPush();
       if (isCanPush) {
-        await github.push().catch(noop);
+        await github.push();
       }
     }
   } catch {
     //
   }
 };
-
-function noop(..._) {
-  return;
-}
 
 let opt = typedocOptions;
 /**
@@ -143,6 +146,7 @@ let opt = typedocOptions;
 function getTypedocOptions() {
   return opt;
 }
+
 /**
  * Set typedoc options
  * @param {typeof import('./typedoc')} newOpt
@@ -209,6 +213,7 @@ async function createIndex() {
 module.exports = {
   watch,
   compile,
+  compileDocs: compile,
   publish,
   getTypedocOptions,
   setTypedocOptions
