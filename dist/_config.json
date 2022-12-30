@@ -1,7 +1,6 @@
 {
-    "title": "Hexo SEO Auto",
-    "subtitle": "",
-    "description": "Automated SEO HexoJS plugin",
+    "title": "Static Blog Generator Demo",
+    "description": "Static Blog Generator Demo",
     "keywords": null,
     "author": "Dimas Lanjaka",
     "language": "en",
@@ -113,6 +112,7 @@
         "tags": true,
         "categories": true,
         "rel": true,
+        "yoast": true,
         "path": [
             "sitemap.xml",
             "sitemap.txt"
