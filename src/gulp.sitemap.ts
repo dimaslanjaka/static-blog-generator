@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { existsSync, mkdirpSync, readFileSync, writeFile } from 'fs-extra';
+import { existsSync, mkdirpSync, readFileSync } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { default as hexo } from 'hexo';
@@ -9,7 +9,7 @@ import nunjucks from 'nunjucks';
 import { EOL } from 'os';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
-import { commonIgnore, getConfig } from './gulp.config';
+import { commonIgnore, getConfig, setConfig } from './gulp.config';
 import { array_remove_empty, array_unique } from './utils/array';
 import { writefile } from './utils/fm';
 import noop from './utils/noop';
@@ -105,8 +105,8 @@ export function hexoGenerateSitemap() {
         env.addFilter('formatUrl', (str) => {
           return full_url_for.call(instance, str);
         });
-        const config = instance.config;
-        writefile(join(config.cwd, 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
+        const config = setConfig(instance.config);
+
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render } = config;
@@ -159,8 +159,10 @@ export function hexoGenerateSitemap() {
 
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
-        writeFile(join(__dirname, '../tmp/sitemap.xml'), data, noop);
-        writeFile(join(getConfig().cwd, config.public_dir, 'sitemap.xml'), data, noop);
+        writefile(join(__dirname, '../tmp/sitemap.xml'), data);
+        const sitemapXml = join(getConfig().cwd, config.public_dir, 'sitemap.xml');
+        writefile(sitemapXml, data);
+        instance.log.info('sitemap written', sitemapXml);
 
         if (!relCfg) return resolve();
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
