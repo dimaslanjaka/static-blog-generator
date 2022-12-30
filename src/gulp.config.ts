@@ -39,7 +39,7 @@ let settledConfig = getDefaultConfig() as Record<string, any>;
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign({}, settledConfig, obj);
-  return getConfig();
+  return getConfig(false);
 }
 
 /**
@@ -47,23 +47,25 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
  * * useful for jest
  * @returns
  */
-export function getConfig() {
-  let fileYML = '';
-  if (settledConfig && 'cwd' in settledConfig) {
-    fileYML = join(settledConfig.cwd, '_config.yml');
-    // fix cwd
-    settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(settledConfig.cwd));
-  } else {
-    fileYML = join(process.cwd(), '_config.yml');
-    // set cwd
-    settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(process.cwd()));
-  }
-  if (existsSync(fileYML)) {
-    const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-    settledConfig = Object.assign({}, configYML, settledConfig);
-    writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
-  } else {
-    throw new Error('_config.yml not found');
+export function getConfig(get = true) {
+  if (get) {
+    let fileYML = '';
+    if (settledConfig && 'cwd' in settledConfig) {
+      fileYML = join(settledConfig.cwd, '_config.yml');
+      // fix cwd
+      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(settledConfig.cwd));
+    } else {
+      fileYML = join(process.cwd(), '_config.yml');
+      // set cwd
+      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(process.cwd()));
+    }
+    if (existsSync(fileYML)) {
+      const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
+      settledConfig = Object.assign({}, configYML, settledConfig);
+      writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+    } else {
+      throw new Error('_config.yml not found');
+    }
   }
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
