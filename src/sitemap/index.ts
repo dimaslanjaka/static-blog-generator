@@ -1,14 +1,19 @@
 import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync } from 'fs';
-import Hexo, { PageData, TemplateLocals } from 'hexo';
+import Hexo from 'hexo';
 import hexoIs from 'hexo-is';
 import moment from 'moment';
 import { HTMLElement } from 'node-html-parser';
+import 'nodejs-package-types/hexo';
 import { dirname, join } from 'path';
 import { create as createXML } from 'xmlbuilder2';
 import { getConfig } from '../gulp.config';
 import { writefile } from '../utils/fm';
 import scheduler from '../utils/scheduler';
 import getCategoryTags, { getLatestFromArrayDates } from './archive';
+
+type PageData = Hexo.PageData;
+type TemplateLocals = Hexo.TemplateLocals;
+const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 
 interface sitemapItem {
   loc: string;
@@ -86,12 +91,19 @@ const postUpdateDates: string[] = [];
 const pageUpdateDates: string[] = [];
 // const cache = new CacheFile("sitemap");
 let turnError = false;
-export function sitemap(dom: HTMLElement, data: TemplateLocals) {
+
+/**
+ * yoast seo sitemap builder
+ * @param dom
+ * @param data
+ * @returns
+ */
+export function yoastSeoSitemap(dom: HTMLElement, data: TemplateLocals) {
   const HSconfig = getConfig();
   if (!HSconfig.sitemap) {
     if (!turnError) {
       turnError = true;
-      console.error('[hexo-seo][sitemap] config sitemap not set');
+      _log.error('[hexo-seo][sitemap] config sitemap not set');
     }
     return;
   }
@@ -155,37 +167,40 @@ export function sitemap(dom: HTMLElement, data: TemplateLocals) {
         const sourceXSL = join(__dirname, 'views/sitemap.xsl');
         if (existsSync(sourceXSL)) {
           copyFileSync(sourceXSL, destXSL);
-          console.log('XSL sitemap copied to ' + destXSL);
+          _log.info('XSL sitemap copied to ' + destXSL);
         } else {
-          console.error('XSL sitemap not found');
+          _log.error('XSL sitemap not found');
         }
 
         const destPostSitemap = join(hexo.public_dir, 'post-sitemap.xml');
         writefile(destPostSitemap, createXML(sitemapGroup['post']).end({ prettyPrint: true }));
-        console.log('post sitemap saved', destPostSitemap);
+        _log.info('post sitemap saved', destPostSitemap);
 
         const destPageSitemap = join(hexo.public_dir, 'page-sitemap.xml');
         writefile(destPageSitemap, createXML(sitemapGroup['page']).end({ prettyPrint: true }));
-        console.log('page sitemap saved', destPageSitemap);
+        _log.info('page sitemap saved', destPageSitemap);
 
-        sitemapIndex(hexo);
+        yoastSitemapIndex(hexo);
       });
     }
   }
 }
 
-export function sitemapIndex(hexoinstance: Hexo) {
+/**
+ * generate yoast
+ * * path /sitemap.xml
+ * @param hexoinstance
+ */
+export function yoastSitemapIndex(hexoinstance: Hexo) {
   const sourceIndexXML = join(__dirname, 'views/sitemap.xml');
   const sitemapIndexDoc = createXML(readFileSync(sourceIndexXML).toString());
   const sitemapIndex = <SitemapIndex>new Object(sitemapIndexDoc.end({ format: 'object' }));
   sitemapIndex.sitemapindex.sitemap = [];
-  if (!hexoinstance && typeof hexo != 'undefined') {
-    hexoinstance = hexo;
-  }
+  const hexo = hexoinstance;
 
   // push post-sitemap.xml to sitemapindex
   const latestPostDate = getLatestFromArrayDates(postUpdateDates);
-  console.log('latest updated post', latestPostDate);
+  _log.info('latest updated post', latestPostDate);
   sitemapIndex.sitemapindex.sitemap.push({
     loc: hexo.config.url.toString() + '/post-sitemap.xml',
     lastmod: moment(latestPostDate).format('YYYY-MM-DDTHH:mm:ssZ')
@@ -193,7 +208,7 @@ export function sitemapIndex(hexoinstance: Hexo) {
 
   // push page-sitemap.xml to sitemapindex
   const latestPageDate = getLatestFromArrayDates(pageUpdateDates);
-  console.log('latest updated page', latestPageDate);
+  _log.info('latest updated page', latestPageDate);
   if (moment(latestPageDate).isValid())
     sitemapIndex.sitemapindex.sitemap.push({
       loc: hexo.config.url.toString() + '/page-sitemap.xml',
@@ -213,7 +228,7 @@ export function sitemapIndex(hexoinstance: Hexo) {
   });
   const destTagSitemap = join(hexo.public_dir, 'tag-sitemap.xml');
   writefile(destTagSitemap, createXML(sitemapGroup['tag']).end({ prettyPrint: true }));
-  console.log('tag sitemap saved', destTagSitemap);
+  _log.info('tag sitemap saved', destTagSitemap);
 
   // push tag-sitemap.xml to sitemapindex
   const latestTagDate = getLatestFromArrayDates(
@@ -221,7 +236,7 @@ export function sitemapIndex(hexoinstance: Hexo) {
       return tag.latest;
     })
   );
-  console.log('latest updated tag', latestTagDate);
+  _log.info('latest updated tag', latestTagDate);
   sitemapIndex.sitemapindex.sitemap.push({
     loc: hexo.config.url.toString() + '/tag-sitemap.xml',
     lastmod: moment(latestTagDate).format('YYYY-MM-DDTHH:mm:ssZ')
@@ -240,7 +255,7 @@ export function sitemapIndex(hexoinstance: Hexo) {
   });
   const destCategorySitemap = join(hexo.public_dir, 'category-sitemap.xml');
   writefile(destCategorySitemap, createXML(sitemapGroup['category']).end({ prettyPrint: true }));
-  console.log('category sitemap saved', destCategorySitemap);
+  _log.info('category sitemap saved', destCategorySitemap);
 
   // push category-sitemap.xml to sitemapindex
   const latestCategoryDate = getLatestFromArrayDates(
@@ -248,7 +263,7 @@ export function sitemapIndex(hexoinstance: Hexo) {
       return category.latest;
     })
   );
-  console.log('latest updated category', latestCategoryDate);
+  _log.info('latest updated category', latestCategoryDate);
   sitemapIndex.sitemapindex.sitemap.push({
     loc: hexo.config.url.toString() + '/category-sitemap.xml',
     lastmod: moment(latestCategoryDate).format('YYYY-MM-DDTHH:mm:ssZ')
@@ -256,5 +271,5 @@ export function sitemapIndex(hexoinstance: Hexo) {
 
   const destIndexSitemap = join(hexo.public_dir, 'sitemap.xml');
   writefile(destIndexSitemap, createXML(sitemapIndex).end({ prettyPrint: true }));
-  console.log('index sitemap saved', destIndexSitemap);
+  _log.info('index sitemap saved', destIndexSitemap);
 }

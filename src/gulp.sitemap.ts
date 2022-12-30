@@ -97,6 +97,14 @@ function writeSitemap(callback?: (...args: any[]) => any) {
   cb.apply(this);
 }
 
+export interface SitemapOptions {
+  path: string[];
+  tags: boolean;
+  categories: boolean;
+  rel: boolean;
+  yoast: boolean;
+}
+
 export function hexoGenerateSitemap() {
   return new Bluebird((resolve) => {
     const instance = new hexo(getConfig().cwd);
@@ -106,15 +114,22 @@ export function hexoGenerateSitemap() {
           return full_url_for.call(instance, str);
         });
         const config = setConfig(instance.config);
+        // assign default config
+        const sitemap: SitemapOptions = Object.assign(
+          { rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] },
+          config.sitemap
+        );
+
+        // Build Yoast SEO sitemap
+        // when config.yoast defined
+        if (sitemap.yoast) {
+          return;
+        }
 
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render } = config;
-        // assign default config
-        const sitemap = Object.assign(
-          { rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] },
-          config.sitemap
-        );
+
         if (!sitemap.tags || !sitemap.categories) {
           return console.log(
             '[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml'

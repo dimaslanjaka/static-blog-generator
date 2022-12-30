@@ -4,7 +4,7 @@
 
 import color from 'ansi-colors';
 
-const _log = typeof hexo !== 'undefined' ? hexo.log.info : console.log;
+const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 
 const logname = color.magentaBright('[scheduler]');
 
@@ -31,10 +31,10 @@ export function bindProcessExit(key: string, fn: () => void): void {
  */
 function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
   Object.keys(fns).forEach((key) => {
-    if (scheduler.verbose) _log(logname, `executing function key: ${key}`);
+    if (scheduler.verbose) _log.info(logname, `executing function key: ${key}`);
     fns[key]();
   });
-  if (options.cleanup && scheduler.verbose) _log(logname, `clean exit(${exitCode})`);
+  if (options.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
   if (options.exit) process.exit();
 }
 
@@ -64,7 +64,7 @@ const functions: { [key: string]: () => any }[] = [];
  * @example
  * ```js
  * bindProcessExit("scheduler_on_exit", function () {
- *    _log("executing scheduled functions");
+ *    _log.info("executing scheduled functions");
  *    scheduler.executeAll();
  * });
  * ```
@@ -132,7 +132,7 @@ class scheduler {
    */
   static executeAll() {
     Object.keys(functions).forEach((key) => {
-      if (scheduler.verbose) _log(logname, 'executing', key);
+      if (scheduler.verbose) _log.info(logname, 'executing', key);
       functions[key]();
     });
     scheduler.clearArray(functions);
