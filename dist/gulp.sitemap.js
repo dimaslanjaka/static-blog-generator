@@ -113,9 +113,7 @@ function hexoGenerateSitemap() {
                     return hexo_util_1.full_url_for.call(instance, str);
                 });
                 var config = instance.config;
-                (0, fm_1.writefile)((0, upath_1.join)(process.cwd(), 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2), {
-                    async: true
-                }).then(console.log);
+                (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
                 if (!config.sitemap)
                     return console.log('[sitemap] config.sitemap not configured in _config.yml');
                 var locals = instance.locals;
