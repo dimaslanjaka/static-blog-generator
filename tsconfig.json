@@ -16,6 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "checkJs": false,
     "types": ["nodejs-package-types"]
   },
   "typeAcquisition": {
