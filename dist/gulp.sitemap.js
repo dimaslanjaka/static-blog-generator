@@ -113,11 +113,14 @@ function hexoGenerateSitemap() {
                     return hexo_util_1.full_url_for.call(instance, str);
                 });
                 var config = (0, gulp_config_1.setConfig)(instance.config);
+                var sitemap = Object.assign({ rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] }, config.sitemap);
+                if (sitemap.yoast) {
+                    return;
+                }
                 if (!config.sitemap)
                     return console.log('[sitemap] config.sitemap not configured in _config.yml');
                 var locals = instance.locals;
                 var skip_render = config.skip_render;
-                var sitemap = Object.assign({ rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] }, config.sitemap);
                 if (!sitemap.tags || !sitemap.categories) {
                     return console.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
                 }
