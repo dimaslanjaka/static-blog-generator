@@ -10,6 +10,7 @@ import { EOL } from 'os';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { dirname, join } from 'upath';
 import { commonIgnore, getConfig, setConfig } from './gulp.config';
+import { yoastSeo } from './sitemap';
 import { array_remove_empty, array_unique } from './utils/array';
 import { writefile } from './utils/fm';
 import noop from './utils/noop';
@@ -123,7 +124,7 @@ export function hexoGenerateSitemap() {
         // Build Yoast SEO sitemap
         // when config.yoast defined
         if (sitemap.yoast) {
-          return;
+          return yoastSeo(instance);
         }
 
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
