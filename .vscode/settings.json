@@ -10,7 +10,9 @@
   "files.exclude": {
     "**/node_modules": true,
     "dist": true,
-    "coverage": true
+    "coverage": true,
+    "test/public": true,
+    "test/.deploy_git": true
   },
   "files.watcherExclude": {
     "**/tmp/**": true,
