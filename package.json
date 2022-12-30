@@ -39,6 +39,7 @@
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
     "hexo": "^6.3.0",
+    "hexo-is": "^1.0.4",
     "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz",
     "hexo-util": "^3.0.1",
     "micromatch": "^4.0.5",
