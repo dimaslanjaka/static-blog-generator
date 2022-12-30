@@ -1,4 +1,5 @@
 const prettier = require('./.prettierrc');
+
 /**
  * @type {import('eslint').ESLint.ConfigData}
  */
@@ -9,6 +10,9 @@ const config = {
     browser: true, // add support for browser js (window,document,location,etc)
     amd: true, // add amd support
     node: true // add node support (module.export,etc)
+  },
+  globals: {
+    hexo: true
   },
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
