@@ -9,18 +9,19 @@ import { getConfig } from '../gulp.config';
 import { writefile } from '../utils/fm';
 import scheduler from '../utils/scheduler';
 import getCategoryTags, { getLatestFromArrayDates } from './archive';
+import yoastSeoSitemapPages from './pages';
 
 type PageData = Hexo.PageData;
 type TemplateLocals = Hexo.TemplateLocals;
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 
-interface sitemapItem {
+export interface sitemapItem {
   loc: string;
   lastmod: string;
   changefreq: string;
   priority: string;
 }
-interface sitemapObj {
+export interface sitemapObj {
   urlset: {
     url: sitemapItem[];
   };
@@ -32,6 +33,7 @@ interface sitemapGroup {
   category: sitemapObj;
 }
 const sitemapGroup = {} as sitemapGroup;
+
 interface SitemapIndex {
   sitemapindex: {
     sitemap: SitemapIndexItem[];
@@ -180,21 +182,20 @@ export function yoastSeo(hexo: Hexo) {
   const { locals } = hexo;
   const emptySite = ['posts', 'pages'].every((info) => locals.get(info).length === 0);
   if (emptySite) return;
-  const is = hexoIs(locals.get('posts'));
-  console.log(is);
+  // yoastSitemapIndex(hexo);
+  yoastSeoSitemapPages(hexo);
 }
 
 /**
  * generate yoast
  * * path /sitemap.xml
- * @param hexoinstance
+ * @param hexo
  */
-export function yoastSitemapIndex(hexoinstance: Hexo) {
+export function yoastSitemapIndex(hexo: Hexo) {
   const sourceIndexXML = join(__dirname, 'views/sitemap.xml');
   const sitemapIndexDoc = createXML(readFileSync(sourceIndexXML).toString());
   const sitemapIndex = <SitemapIndex>new Object(sitemapIndexDoc.end({ format: 'object' }));
   sitemapIndex.sitemapindex.sitemap = [];
-  const hexo = hexoinstance;
 
   // push post-sitemap.xml to sitemapindex
   const latestPostDate = getLatestFromArrayDates(postUpdateDates);
@@ -212,6 +213,11 @@ export function yoastSitemapIndex(hexoinstance: Hexo) {
       loc: hexo.config.url.toString() + '/page-sitemap.xml',
       lastmod: moment(latestPageDate).format('YYYY-MM-DDTHH:mm:ssZ')
     });
+
+  // set category and tag information of posts
+  if (!categoryTagsInfo) {
+    categoryTagsInfo = getCategoryTags(hexo);
+  }
 
   // build tag-sitemap.xml
   const tags = categoryTagsInfo.tags;
