@@ -2,8 +2,7 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync } from 'fs'
 import Hexo from 'hexo';
 import hexoIs from 'hexo-is';
 import moment from 'moment';
-import { HTMLElement } from 'node-html-parser';
-import 'nodejs-package-types/hexo';
+import 'nodejs-package-types';
 import { dirname, join } from 'path';
 import { create as createXML } from 'xmlbuilder2';
 import { getConfig } from '../gulp.config';
@@ -72,19 +71,24 @@ export function getPageData(data: TemplateLocals) {
   }
 }
 
-// init each sitemap
-const groups = ['post', 'page', 'category', 'tag'];
-groups.forEach((group) => {
-  if (!sitemapGroup[group]) initSitemap(group);
-  if (sitemapGroup[group].urlset.url.length === 0) {
-    sitemapGroup[group].urlset.url.push({
-      loc: hexo.config.url,
-      lastmod: moment(Date.now()).format('YYYY-MM-DDTHH:mm:ssZ'),
-      priority: '1',
-      changefreq: 'daily'
-    });
-  }
-});
+/**
+ * init each sitemap
+ * @param hexo
+ */
+function initEachSitemap(hexo: Hexo) {
+  const groups = ['post', 'page', 'category', 'tag'];
+  groups.forEach((group) => {
+    if (!sitemapGroup[group]) initSitemap(group);
+    if (sitemapGroup[group].urlset.url.length === 0) {
+      sitemapGroup[group].urlset.url.push({
+        loc: hexo.config.url,
+        lastmod: moment(Date.now()).format('YYYY-MM-DDTHH:mm:ssZ'),
+        priority: '1',
+        changefreq: 'daily'
+      });
+    }
+  });
+}
 
 let categoryTagsInfo: ReturnType<typeof getCategoryTags>;
 const postUpdateDates: string[] = [];
@@ -92,13 +96,7 @@ const pageUpdateDates: string[] = [];
 // const cache = new CacheFile("sitemap");
 let turnError = false;
 
-/**
- * yoast seo sitemap builder
- * @param dom
- * @param data
- * @returns
- */
-export function yoastSeoSitemap(dom: HTMLElement, data: TemplateLocals) {
+export function yoastSeoSitemap(data: TemplateLocals) {
   const HSconfig = getConfig();
   if (!HSconfig.sitemap) {
     if (!turnError) {
@@ -116,19 +114,6 @@ export function yoastSeoSitemap(dom: HTMLElement, data: TemplateLocals) {
   // return if posts and pages empty
   if (['posts', 'pages'].every((info) => locals.get(info).length === 0)) {
     return;
-  }
-
-  // parse html
-  const linksitemap = dom.querySelector('link[rel="sitemap"]');
-  if (linksitemap) {
-    linksitemap.setAttribute('href', '/sitemap.xml');
-    linksitemap.setAttribute('type', 'application/xml');
-    linksitemap.setAttribute('rel', 'sitemap');
-    linksitemap.setAttribute('title', 'Sitemap');
-  } else {
-    const head = dom.getElementsByTagName('head');
-    if (head.length)
-      head[0].innerHTML += '<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />';
   }
 
   const post = getPageData(data);
@@ -184,6 +169,19 @@ export function yoastSeoSitemap(dom: HTMLElement, data: TemplateLocals) {
       });
     }
   }
+}
+
+/**
+ * yoast seo sitemap builder
+ * @param hexo
+ */
+export function yoastSeo(hexo: Hexo) {
+  initEachSitemap(hexo);
+  const { locals } = hexo;
+  const emptySite = ['posts', 'pages'].every((info) => locals.get(info).length === 0);
+  if (emptySite) return;
+  const is = hexoIs(locals.get('posts'));
+  console.log(is);
 }
 
 /**
