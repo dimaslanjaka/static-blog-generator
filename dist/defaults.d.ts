@@ -1,6 +1,5 @@
 export declare function getDefaultConfig(): {
     title: string;
-    subtitle: string;
     description: string;
     keywords: null;
     author: string;
@@ -111,6 +110,7 @@ export declare function getDefaultConfig(): {
         tags: boolean;
         categories: boolean;
         rel: boolean;
+        yoast: boolean;
         path: string[];
     };
     tags: {
