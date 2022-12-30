@@ -112,8 +112,7 @@ function hexoGenerateSitemap() {
                 env.addFilter('formatUrl', function (str) {
                     return hexo_util_1.full_url_for.call(instance, str);
                 });
-                var config = instance.config;
-                (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
+                var config = (0, gulp_config_1.setConfig)(instance.config);
                 if (!config.sitemap)
                     return console.log('[sitemap] config.sitemap not configured in _config.yml');
                 var locals = instance.locals;
@@ -153,8 +152,10 @@ function hexoGenerateSitemap() {
                     categories: catsCfg ? locals.get('categories').toArray() : []
                 });
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
-                (0, fs_extra_1.writeFile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data, noop_1.default);
-                (0, fs_extra_1.writeFile)((0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, config.public_dir, 'sitemap.xml'), data, noop_1.default);
+                (0, fm_1.writefile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data);
+                var sitemapXml = (0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, config.public_dir, 'sitemap.xml');
+                (0, fm_1.writefile)(sitemapXml, data);
+                instance.log.info('sitemap written', sitemapXml);
                 if (!relCfg)
                     return resolve();
                 var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';

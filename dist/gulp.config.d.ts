@@ -11,7 +11,7 @@ export interface ProjConf extends HexoConfig {
     };
 }
 export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
-export declare function getConfig(): ProjConf;
+export declare function getConfig(get?: boolean): ProjConf;
 export declare function deployConfig(): {
     deployDir: string;
     github: git;
