@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.bindProcessExit = void 0;
 var tslib_1 = require("tslib");
 var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
-var _log = typeof hexo !== 'undefined' ? hexo.log.info : console.log;
+var _log = typeof hexo !== 'undefined' ? hexo.log : console;
 var logname = ansi_colors_1.default.magentaBright('[scheduler]');
 var fns = [];
 var triggered;
@@ -18,11 +18,11 @@ exports.bindProcessExit = bindProcessExit;
 function exitHandler(options, exitCode) {
     Object.keys(fns).forEach(function (key) {
         if (scheduler.verbose)
-            _log(logname, "executing function key: ".concat(key));
+            _log.info(logname, "executing function key: ".concat(key));
         fns[key]();
     });
     if (options.cleanup && scheduler.verbose)
-        _log(logname, "clean exit(".concat(exitCode, ")"));
+        _log.info(logname, "clean exit(".concat(exitCode, ")"));
     if (options.exit)
         process.exit();
 }
@@ -79,7 +79,7 @@ var scheduler = (function () {
     scheduler.executeAll = function () {
         Object.keys(functions).forEach(function (key) {
             if (scheduler.verbose)
-                _log(logname, 'executing', key);
+                _log.info(logname, 'executing', key);
             functions[key]();
         });
         scheduler.clearArray(functions);
