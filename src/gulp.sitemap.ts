@@ -106,7 +106,7 @@ export function hexoGenerateSitemap() {
           return full_url_for.call(instance, str);
         });
         const config = instance.config;
-        writefile(join(process.cwd(), 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
+        writefile(join(config.cwd, 'tmp/dump/hexoGenerateSitemap/config.json'), JSON.stringify(config, null, 2));
         if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render } = config;
