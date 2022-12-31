@@ -1,6 +1,5 @@
 import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
-import { existsSync } from 'fs';
 import { gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
 import moment from 'moment-timezone';
@@ -38,38 +37,43 @@ export function asyncCopyGen() {
 }
 
 // copy public to .deploy_git
-gulp.task('copy', copyGen);
+gulp.task('deploy:copy', copyGen);
 
-function pull() {
-  return new Promise((resolve) => {
-    const { deployDir, github, repo, username, email, branch } = getConfig().deploy;
-    github
-      .setremote(repo)
-      .then(() => {
-        return new Promise((resolveInit) => {
-          if (!existsSync(deployDir)) {
-            github.init().then(resolveInit);
-          } else {
-            resolveInit(null);
-          }
-        });
-      })
-      .then(() => github.setuser(username))
-      .then(() => github.setemail(email))
-      // reset repository to latest commit
-      .then(() => github.reset(branch))
-      // pull any changes inside submodule from their latest commit
-      .then(() => {
-        github.pull(['--recurse-submodule']).then(() => {
-          if (github.submodule.hasSubmodule()) {
-            console.log('safe update submodule');
-            github.submodule.safeUpdate(true).then(resolve);
-          } else {
-            resolve(null);
-          }
-        });
+/**
+ * git pull on deploy dir
+ * @param done
+ */
+async function pull(done: gulp.TaskFunctionCallback) {
+  const config = getConfig();
+  const cwd = config.deploy.deployDir;
+  const gh = config.deploy.github;
+  const doPull = async (cwd: string) => {
+    try {
+      await gh.spawn('git', ['config', 'pull.rebase', 'false'], {
+        cwd
       });
-  });
+    } catch (e) {
+      // console.log(e.message, sub.root);
+    }
+
+    try {
+      console.log('pulling', cwd);
+      await gh.spawn('git', ['pull', '-X', 'theirs'], {
+        cwd,
+        stdio: 'pipe'
+      });
+    } catch (e) {
+      console.log('cannot pull', cwd);
+    }
+  };
+  doPull(cwd);
+  const submodules = await gh.submodule.get();
+  for (let i = 0; i < submodules.length; i++) {
+    const sub = submodules[i];
+
+    doPull(sub.root);
+  }
+  done();
 }
 
 function status(done?: gulp.TaskFunctionCallback) {
@@ -243,10 +247,10 @@ function push() {
   });
 }
 
-gulp.task('push', push);
-gulp.task('status', status);
-gulp.task('commit', commit);
-gulp.task('pull', pull);
+gulp.task('deploy:push', push);
+gulp.task('deploy:status', status);
+gulp.task('deploy:commit', commit);
+gulp.task('deploy:pull', pull);
 
 /**
  * get relative path from workspace
