@@ -17,7 +17,12 @@ const isAllPackagesInstalled = [
 });
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   const names = isAllPackagesInstalled.map((o) => o.name);
-  console.log('package', names.join(', '), 'is not installed', 'skipping postinstall script');
+  console.log(
+    'package',
+    names.join(', '),
+    'is not installed',
+    'skipping postinstall script'
+  );
   return;
 }
 
@@ -64,7 +69,8 @@ const getCache = () => require('./node_modules/.cache/npm-install.json');
  * data['key']='value';
  * saveCache(data)
  */
-const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
+const saveCache = (data) =>
+  fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
 
 // @todo clear cache local packages
 const packages = [pjson.dependencies, pjson.devDependencies];
@@ -110,7 +116,9 @@ const toUpdate = [];
       /**
        * @type {import('./package-lock.json')}
        */
-      const lockfile = fs.existsSync(locks) ? JSON.parse(fs.readFileSync(locks, 'utf-8')) : {};
+      const lockfile = fs.existsSync(locks)
+        ? JSON.parse(fs.readFileSync(locks, 'utf-8'))
+        : {};
 
       const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
       /**
@@ -140,7 +148,10 @@ const toUpdate = [];
       const installedLock = lockfile.packages['node_modules/' + pkgname];
       installedLock.name = pkgname;
       const { integrity, resolved } = installedLock;
-      let original = typeof resolved === 'string' && !/^https?/i.test(String(resolved)) ? resolved : null;
+      let original =
+        typeof resolved === 'string' && !/^https?/i.test(String(resolved))
+          ? resolved
+          : null;
       if (typeof original === 'string') {
         original = String(original).replace(/^file:/, '');
         original = path.resolve(path.join(__dirname, original));
@@ -149,7 +160,8 @@ const toUpdate = [];
       // checksum remote package
       if (isUrlPkg) {
         // console.log({ pkgname, integrity, resolved, original });
-        const hash = 'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
+        const hash =
+          'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
         if (integrity !== hash) {
           console.log('remote package', pkgname, 'has different integrity');
           // fs.rmSync(node_modules_path, { recursive: true, force: true });
@@ -160,7 +172,8 @@ const toUpdate = [];
 
       // checksum local package
       if (original && isLocalPkg) {
-        let originalHash = 'sha512-' + (await file_to_hash('sha512', original, 'base64'));
+        let originalHash =
+          'sha512-' + (await file_to_hash('sha512', original, 'base64'));
 
         // check sum tarball
         if (/\/tarball\/|.(tgz|zip|tar|tar.gz)$/i.test(version)) {
@@ -189,12 +202,25 @@ const toUpdate = [];
         try {
           if (isBranchPkg) {
             const branch = String(version).split('#')[1];
-            const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
+            const api =
+              'https://api.github.com/repos/' +
+              githubPath +
+              '/commits/' +
+              branch;
             const getApi = await axiosGet(api);
             // skip when get api failure
             if (!getApi) continue;
-            if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-              console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
+            if (
+              getApi.data.sha != githubHash &&
+              fs.existsSync(node_modules_path)
+            ) {
+              console.log(
+                'github package',
+                pkgname,
+                'from branch',
+                branch,
+                'has different commit hash'
+              );
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.push(pkgname);
               continue;
@@ -204,13 +230,26 @@ const toUpdate = [];
             // skip when get api failure
             if (!getApiRoot) continue;
             const branch = getApiRoot.data.default_branch;
-            const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
+            const api =
+              'https://api.github.com/repos/' +
+              githubPath +
+              '/commits/' +
+              branch;
             const getApi = await axiosGet(api);
             // skip when get api failure
             if (!getApi) continue;
             console.log({ version, githubPathHash, data: getApi.data.sha });
-            if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-              console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
+            if (
+              getApi.data.sha != githubHash &&
+              fs.existsSync(node_modules_path)
+            ) {
+              console.log(
+                'github package',
+                pkgname,
+                'from branch',
+                branch,
+                'has different commit hash'
+              );
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.push(pkgname);
               continue;
@@ -249,7 +288,9 @@ const toUpdate = [];
 
   if (checkNodeModules()) {
     // filter duplicates package names
-    const filterUpdates = toUpdate.filter((item, index) => toUpdate.indexOf(item) === index);
+    const filterUpdates = toUpdate.filter(
+      (item, index) => toUpdate.indexOf(item) === index
+    );
     if (filterUpdates.length > 0) {
       // do update
       try {
@@ -294,7 +335,10 @@ const toUpdate = [];
 
         const argv = process.argv;
         // node postinstall.js --commit
-        if (fs.existsSync(path.join(__dirname, '.git')) && argv.includes('--commit')) {
+        if (
+          fs.existsSync(path.join(__dirname, '.git')) &&
+          argv.includes('--commit')
+        ) {
           await summon('git', ['add', 'package.json'], { cwd: __dirname });
           await summon('git', ['add', 'package-lock.json'], { cwd: __dirname });
           const status = await summon('git', ['status', '--porcelain'], {
@@ -303,21 +347,34 @@ const toUpdate = [];
 
           if (
             status.stdout &&
-            (status.stdout.includes('package.json') || status.stdout.includes('package-lock.json'))
+            (status.stdout.includes('package.json') ||
+              status.stdout.includes('package-lock.json'))
           ) {
             await summon('git', ['add', 'package.json', 'package-lock.json'], {
               cwd: __dirname
             });
-            await summon('git', ['commit', '-m', 'Update dependencies', '-m', 'Date: ' + new Date()], {
-              cwd: __dirname
-            });
+            await summon(
+              'git',
+              [
+                'commit',
+                '-m',
+                'Update dependencies',
+                '-m',
+                'Date: ' + new Date()
+              ],
+              {
+                cwd: __dirname
+              }
+            );
           }
         }
       } catch (e) {
         if (e instanceof Error) console.error(e.message);
       }
     } else {
-      console.log('[postinstall] all monorepo packages already at latest version');
+      console.log(
+        '[postinstall] all monorepo packages already at latest version'
+      );
     }
   } else {
     console.log('some packages already deleted from node_modules');
@@ -387,7 +444,8 @@ function summon(cmd, args = [], opt = {}) {
   const spawnopt = Object.assign({ cwd: __dirname }, opt || {});
   // *** Return the promise
   return new Promise(function (resolve) {
-    if (typeof cmd !== 'string' || cmd.trim().length === 0) return resolve(new Error('cmd empty'));
+    if (typeof cmd !== 'string' || cmd.trim().length === 0)
+      return resolve(new Error('cmd empty'));
     let stdout = '';
     let stderr = '';
     const child = spawn(cmd, args, spawnopt);
@@ -414,7 +472,8 @@ function summon(cmd, args = [], opt = {}) {
 
     child.on('close', function (code) {
       // Should probably be 'exit', not 'close'
-      if (code !== 0) console.log('[ERROR]', cmd, ...args, 'dies with code', code);
+      if (code !== 0)
+        console.log('[ERROR]', cmd, ...args, 'dies with code', code);
       // *** Process completed
       resolve({ stdout, stderr });
     });
@@ -479,7 +538,16 @@ function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
  */
 async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
   return new Promise((resolve, reject) => {
-    let outputLocationPath = path.join(__dirname, 'tmp/postinstall', path.basename(url));
+    let outputLocationPath = path.join(
+      __dirname,
+      'tmp/postinstall',
+      path.basename(url)
+    );
+    // remove slashes when url ends with slash
+    if (!path.basename(url).endsWith('/')) {
+      outputLocationPath = outputLocationPath.replace(/\/$/, '');
+    }
+    // add extension when dot not exist
     if (!path.basename(url).includes('.')) {
       outputLocationPath += '.tgz';
     }
@@ -498,9 +566,11 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
       writer.on('close', async () => {
         if (!error) {
           // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
-          file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
-            resolve(checksum);
-          });
+          file_to_hash(alogarithm, outputLocationPath, encoding).then(
+            (checksum) => {
+              resolve(checksum);
+            }
+          );
         }
       });
     });
@@ -514,7 +584,10 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
  */
 function isPackageInstalled(x) {
   try {
-    return process.moduleLoadList.indexOf('NativeModule ' + x) >= 0 || require('fs').existsSync(require.resolve(x));
+    return (
+      process.moduleLoadList.indexOf('NativeModule ' + x) >= 0 ||
+      require('fs').existsSync(require.resolve(x))
+    );
   } catch (e) {
     return false;
   }
@@ -528,7 +601,9 @@ function checkNodeModules() {
   const exists = toUpdate.map(
     (pkgname) =>
       fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
-      fs.existsSync(path.join(__dirname, 'node_modules', pkgname, 'package.json'))
+      fs.existsSync(
+        path.join(__dirname, 'node_modules', pkgname, 'package.json')
+      )
   );
   //console.log({ exists });
   return exists.every((exist) => exist === true);
