@@ -13,6 +13,7 @@ var fm_1 = require("../utils/fm");
 var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 var archive_1 = tslib_1.__importStar(require("./archive"));
 var pages_1 = tslib_1.__importDefault(require("./pages"));
+var posts_1 = tslib_1.__importDefault(require("./posts"));
 var _log = typeof hexo !== 'undefined' ? hexo.log : console;
 var sitemapGroup = {};
 function initSitemap(type) {
@@ -128,6 +129,7 @@ function yoastSeo(hexo) {
     if (emptySite)
         return;
     (0, pages_1.default)(hexo);
+    (0, posts_1.default)(hexo);
 }
 exports.yoastSeo = yoastSeo;
 function yoastSitemapIndex(hexo) {
