@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import moment from 'moment-timezone';
 import { join } from 'path';
@@ -9,8 +10,8 @@ const pageUpdateDates: string[] = [];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 const sitemapPagesList: sitemapItem[] = [];
 
-export default function yoastSeoSitemapPages(hexo: Hexo) {
-  hexo.locals.get('pages').forEach(function (data) {
+export default async function yoastSeoSitemapPages(hexo: Hexo) {
+  await Bluebird.all(hexo.locals.get('pages').toArray()).each(function (data) {
     const lastmod = data.updated?.format('YYYY-MM-DDTHH:mm:ssZ') || moment().format();
     pageUpdateDates.push(lastmod);
     const info = {
@@ -20,17 +21,18 @@ export default function yoastSeoSitemapPages(hexo: Hexo) {
       priority: '0.8'
     };
     sitemapPagesList.push(info);
-    const destSitemap = join(hexo.public_dir, 'page-sitemap.xml');
-    writefile(
-      destSitemap,
-      createXML({
-        urlset: {
-          url: sitemapPagesList
-        }
-      }).end({ prettyPrint: true })
-    );
-    _log.info('page sitemap saved', destSitemap);
   });
+
+  const destSitemap = join(hexo.public_dir, 'page-sitemap.xml');
+  writefile(
+    destSitemap,
+    createXML({
+      urlset: {
+        url: sitemapPagesList
+      }
+    }).end({ prettyPrint: true })
+  );
+  _log.info('page sitemap saved', destSitemap);
 }
 
 export function getAllpageUpdateDates() {
