@@ -91,12 +91,21 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
       const installedLock = lock.packages['node_modules/' + pkgname];
       installedLock.name = pkgname;
       const { integrity, resolved } = installedLock;
-      let original = resolved;
-      if (original) {
+      let original = typeof resolved === 'string' && !/^https?/i.test(String(resolved)) ? resolved : null;
+      if (typeof original === 'string') {
         original = String(original).replace(/^file:/, '');
         original = path.resolve(path.join(__dirname, original));
       }
 
+      if (isUrlPkg) {
+        // console.log({ pkgname, integrity, resolved, original });
+        const hash = 'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
+        if (integrity !== hash) {
+          console.log('updating url remote package', pkgname, 'caused by different integrity');
+          // fs.rmSync(node_modules_path, { recursive: true, force: true });
+          toUpdate.push(pkgname);
+        }
+      }
       // checksum local package
       if (original && isLocalPkg) {
         let originalHash = 'sha512-' + (await file_to_hash('sha512', original, 'base64'));
@@ -105,11 +114,11 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
         if (/\/tarball\/|.tgz$/i.test(version)) {
           // console.log(value);
           if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
-            console.log('removing local package', pkgname, 'caused by different integrity');
-            fs.rmSync(node_modules_path, { recursive: true, force: true });
+            console.log('updating local package', pkgname, 'caused by different integrity');
+            // fs.rmSync(node_modules_path, { recursive: true, force: true });
+            toUpdate.push(pkgname);
           }
         }
-        // console.log({ pkgName, integrity, resolved, original, originalHash });
       }
 
       // checksum github package
@@ -132,8 +141,9 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
             // skip when get api failure
             if (!getApi) continue;
             if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-              console.log('removing github package', pkgname, 'caused by different hash');
-              fs.rmSync(node_modules_path, { recursive: true, force: true });
+              console.log('updating github package', pkgname, 'caused by different hash');
+              // fs.rmSync(node_modules_path, { recursive: true, force: true });
+              toUpdate.push(pkgname);
             }
           } else {
             const getApiRoot = await axiosGet(apiRoot);
@@ -191,6 +201,9 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
   };
 
   if (checkNodeModules()) {
+    // filter duplicates package names
+    const filterUpdates = toUpdate.filter((item, index) => toUpdate.indexOf(item) === index);
+    // do update
     try {
       if (isYarn) {
         const version = await summon('yarn', ['--version']);
@@ -198,31 +211,31 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
 
         if (typeof version.stdout === 'string') {
           if (version.stdout.includes('3.2.4')) {
-            toUpdate.push('--check-cache');
+            filterUpdates.push('--check-cache');
           }
         }
         // yarn cache clean
-        if (toUpdate.find((str) => str.startsWith('file:'))) {
+        if (filterUpdates.find((str) => str.startsWith('file:'))) {
           await summon('yarn', ['cache', 'clean'], {
             cwd: __dirname,
             stdio: 'inherit'
           });
         }
         // yarn upgrade package
-        await summon('yarn', ['upgrade'].concat(...toUpdate), {
+        await summon('yarn', ['upgrade'].concat(...filterUpdates), {
           cwd: __dirname,
           stdio: 'inherit'
         });
       } else {
         // npm cache clean package
-        if (toUpdate.find((str) => str.startsWith('file:'))) {
-          await summon('npm', ['cache', 'clean'].concat(...toUpdate), {
+        if (filterUpdates.find((str) => str.startsWith('file:'))) {
+          await summon('npm', ['cache', 'clean'].concat(...filterUpdates), {
             cwd: __dirname,
             stdio: 'inherit'
           });
         }
         // npm update package
-        await summon('npm', ['update'].concat(...toUpdate), {
+        await summon('npm', ['update'].concat(...filterUpdates), {
           cwd: __dirname,
           stdio: 'inherit'
         });
@@ -366,12 +379,12 @@ function _noop(..._) {
 
 /**
  * convert file to hash
- * @param {'sha1' | 'sha256' | 'sha384' | 'sha512', 'md5'} alogarithm
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
  * @param {string} path
  * @param {import('crypto').BinaryToTextEncoding} encoding
  * @returns
  */
-function file_to_hash(alogarithm = 'sha1', path, encoding = 'hex') {
+function file_to_hash(alogarithm, path, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     const hash = crypto.createHash(alogarithm);
     const rs = fs.createReadStream(path);
@@ -383,12 +396,13 @@ function file_to_hash(alogarithm = 'sha1', path, encoding = 'hex') {
 
 /**
  * convert data to hash
- * @param {'sha1' | 'sha256' | 'sha384' | 'sha512', 'md5'} alogarithm
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
  * @param {string} path
  * @param {import('crypto').BinaryToTextEncoding} encoding
  * @returns
  */
-function _data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     try {
       const hash = crypto.createHash(alogarithm).update(data).digest(encoding);
@@ -396,5 +410,42 @@ function _data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
     } catch (e) {
       reject(e);
     }
+  });
+}
+
+/**
+ * convert data to hash
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
+ * @param {string} url
+ * @param {import('crypto').BinaryToTextEncoding} encoding
+ * @returns
+ */
+async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
+  return new Promise((resolve, reject) => {
+    let outputLocationPath = path.join(__dirname, 'tmp/postinstall', path.basename(url));
+    if (!path.basename(url).includes('.')) {
+      outputLocationPath += '.tgz';
+    }
+    if (!fs.existsSync(path.dirname(outputLocationPath))) {
+      fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
+    }
+    const writer = fs.createWriteStream(outputLocationPath);
+    Axios.default(url, { responseType: 'stream' }).then((response) => {
+      response.data.pipe(writer);
+      let error = null;
+      writer.on('error', (err) => {
+        error = err;
+        writer.close();
+        reject(err);
+      });
+      writer.on('close', async () => {
+        if (!error) {
+          // console.log('package downloaded', outputLocationPath.replace(path.toUnix(__dirname), ''));
+          file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
+            resolve(checksum);
+          });
+        }
+      });
+    });
   });
 }
