@@ -9,6 +9,9 @@ const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 // const persistentCache = require('persistent-cache');
 
+/**
+ * @type {import('./package-lock.json')}
+ */
 const lock = JSON.parse(
   fs.readFileSync(
     ['./node_modules/.package-lock.json', './package-lock.json']
