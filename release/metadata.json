@@ -1,29 +1,29 @@
 {
   "/release/static-blog-generator-3.0.0.tgz": {
     "integrity": {
-      "sha1": "580e7afd2c1c18616722b582ef8bf94af524b676",
-      "sha256": "WKD5gWOEk43w5F5iphHIfmDp6FgTywL1Qa7Xp6EJ/D0=",
-      "md5": "90fe6350a9ad3dac7a3078d06ea9ac5d",
-      "sha512": "fEv1vywaKuVd9pndN6QWOUI+2W/evrv24NxZbBnta7oPuftXMpQkzXbyZhhShe58mKMFQR6b12vCfs4CxZxseA=="
+      "sha1": "c2128440e53b22a8f423c7356591fd1d3c98f7ed",
+      "sha256": "C7XRl3SyvcZJIONKOK3FUJPgmNDvzzNOJWiYu0pyM60=",
+      "md5": "fde31c6680927039ff373100ef19d286",
+      "sha512": "bOdRoHov5dmQS39UKh4U88xlSUMglyViHmXo6So9UQ4PUFr1HiCqMqrWYuxvtTGXldPXCuHzsLaRNw5uhAK1wQ=="
     },
-    "size": "39.68 KB"
+    "size": "39.76 KB"
   },
   "/release/static-blog-generator.tgz": {
     "integrity": {
-      "sha1": "580e7afd2c1c18616722b582ef8bf94af524b676",
-      "sha256": "WKD5gWOEk43w5F5iphHIfmDp6FgTywL1Qa7Xp6EJ/D0=",
-      "md5": "90fe6350a9ad3dac7a3078d06ea9ac5d",
-      "sha512": "fEv1vywaKuVd9pndN6QWOUI+2W/evrv24NxZbBnta7oPuftXMpQkzXbyZhhShe58mKMFQR6b12vCfs4CxZxseA=="
+      "sha1": "c2128440e53b22a8f423c7356591fd1d3c98f7ed",
+      "sha256": "C7XRl3SyvcZJIONKOK3FUJPgmNDvzzNOJWiYu0pyM60=",
+      "md5": "fde31c6680927039ff373100ef19d286",
+      "sha512": "bOdRoHov5dmQS39UKh4U88xlSUMglyViHmXo6So9UQ4PUFr1HiCqMqrWYuxvtTGXldPXCuHzsLaRNw5uhAK1wQ=="
     },
-    "size": "39.68 KB"
+    "size": "39.76 KB"
   },
   "/package-lock.json": {
     "integrity": {
-      "sha1": "1ad56ae045afd08e28632254975940e540650fbd",
-      "sha256": "lZ9S0L3SDrkj9OJm8XzzGfxCcalT/huWQUjAHOyh7d8=",
-      "md5": "7ee9f99cc92a25ca34d09a07dbb17952",
-      "sha512": "PuRFf3AfywgiBka5M/FLRwiAWcwdSGwWPrgjM+EX82wzOMGgTiHDQLrZDZv6tbgD8KxrlEPZULWh68tgp26GLQ=="
+      "sha1": "3859828a401cb5f37ee2d93ae89d3d0e64626bca",
+      "sha256": "EdKZe6AP9oLFMI7CZbXQIlIuBpChuw2zEG+U6NUaJZo=",
+      "md5": "87a5c17307c70a26f46596b3d0a96388",
+      "sha512": "huO+R++cxKEFfgMtf3INfyrr2ARxnMlhNAaO+HK+JXWqGpni7h2wVeQHnJIfiIM40foVlWNmBvzYHV3n1Z5OMA=="
     },
-    "size": "581.10 KB"
+    "size": "590.47 KB"
   }
 }
