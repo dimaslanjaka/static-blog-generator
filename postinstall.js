@@ -17,7 +17,7 @@ const isAllPackagesInstalled = [
 });
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   const names = isAllPackagesInstalled.map((o) => o.name);
-  console.log('package', names, 'is not installed', 'skipping postinstall script');
+  console.log('package', names.join(', '), 'is not installed', 'skipping postinstall script');
   return;
 }
 
