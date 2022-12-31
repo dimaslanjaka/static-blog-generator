@@ -63,7 +63,7 @@ const getCache = JSON.parse(readfile(cacheJSON, 'utf-8'));
 const saveCache = (data) => writefile(cacheJSON, JSON.stringify(data, null, 2));
 
 // @todo clear cache local packages
-const packages = [pjson.dependencies, pjson.devDependencies];
+const packages = [pjson.dependencies || {}, pjson.devDependencies || {}, pjson.optionalDependencies || {}];
 
 /**
  * list packages to update
