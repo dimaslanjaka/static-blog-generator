@@ -145,7 +145,9 @@ jobs:
       - name: Check Updates
         shell: bash
         continue-on-error: true
-        run: npm run update
+        run: |
+          curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+          npm run update
 
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
