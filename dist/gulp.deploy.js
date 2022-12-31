@@ -4,6 +4,7 @@ exports.asyncCopyGen = exports.copyGen = void 0;
 var tslib_1 = require("tslib");
 var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
+var fs_1 = require("fs");
 var git_command_helper_1 = tslib_1.__importDefault(require("git-command-helper"));
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
@@ -34,7 +35,7 @@ exports.asyncCopyGen = asyncCopyGen;
 gulp_1.default.task('deploy:copy', copyGen);
 function pull(done) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
-        var config, cwd, gh, doPull, submodules, i, sub;
+        var config, cwd, gh, doPull, clone, submodules, i, sub;
         var _this = this;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
@@ -42,6 +43,8 @@ function pull(done) {
                     config = (0, gulp_config_1.getConfig)();
                     cwd = config.deploy.deployDir;
                     gh = config.deploy.github;
+                    if (!gh)
+                        return [2];
                     doPull = function (cwd) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
                         var e_1, e_2;
                         return tslib_1.__generator(this, function (_a) {
@@ -75,9 +78,27 @@ function pull(done) {
                             }
                         });
                     }); };
+                    clone = function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+                        return tslib_1.__generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    if (!!(0, fs_1.existsSync)(cwd)) return [3, 2];
+                                    return [4, gh.spawn('git', tslib_1.__spreadArray(tslib_1.__spreadArray([], tslib_1.__read('clone -b master --single-branch'.split(' ')), false), [config.deploy.repo, '.deploy_git'], false), {
+                                            cwd: __dirname
+                                        })];
+                                case 1:
+                                    _a.sent();
+                                    _a.label = 2;
+                                case 2: return [2];
+                            }
+                        });
+                    }); };
+                    return [4, clone()];
+                case 1:
+                    _a.sent();
                     doPull(cwd);
                     return [4, gh.submodule.get()];
-                case 1:
+                case 2:
                     submodules = _a.sent();
                     for (i = 0; i < submodules.length; i++) {
                         sub = submodules[i];
@@ -91,6 +112,8 @@ function pull(done) {
 }
 function status(done) {
     var github = (0, gulp_config_1.deployConfig)().github;
+    if (!github)
+        return;
     github.status().then(function (statuses) {
         statuses.map(function (item) {
             var str = '';
@@ -121,6 +144,8 @@ function status(done) {
 }
 function commit() {
     var github = (0, gulp_config_1.deployConfig)().github;
+    if (!github)
+        return Promise.resolve(null);
     var now = (0, moment_timezone_1.default)().tz((0, gulp_config_1.getConfig)().timezone).format('LLL');
     var commitRoot = function () {
         return new Promise(function (resolve) {
@@ -195,6 +220,9 @@ function noop() {
 }
 function push() {
     var github = (0, gulp_config_1.deployConfig)().github;
+    if (!github) {
+        return;
+    }
     var submodules = github.submodule.hasSubmodule() ? github.submodule.get() : [];
     var pushSubmodule = function (submodule) {
         var url = submodule.url, branch = submodule.branch, root = submodule.root;
