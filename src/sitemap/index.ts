@@ -10,6 +10,7 @@ import { writefile } from '../utils/fm';
 import scheduler from '../utils/scheduler';
 import getCategoryTags, { getLatestFromArrayDates } from './archive';
 import yoastSeoSitemapPages from './pages';
+import yoastSeoSitemapPosts from './posts';
 
 type PageData = Hexo.PageData;
 type TemplateLocals = Hexo.TemplateLocals;
@@ -184,6 +185,7 @@ export function yoastSeo(hexo: Hexo) {
   if (emptySite) return;
   // yoastSitemapIndex(hexo);
   yoastSeoSitemapPages(hexo);
+  yoastSeoSitemapPosts(hexo);
 }
 
 /**
