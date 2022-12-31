@@ -60,6 +60,8 @@ var SBG = (function () {
                         _a.sent();
                         config = (0, gulp_config_1.getConfig)();
                         github = config.deploy.github;
+                        if (!github)
+                            return [2];
                         return [4, github.init().catch(noop_1.default)];
                     case 3:
                         _a.sent();

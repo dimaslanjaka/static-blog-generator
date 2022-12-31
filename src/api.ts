@@ -67,6 +67,7 @@ class SBG {
     // deployment start
     const config = getConfig();
     const { github } = config.deploy;
+    if (!github) return;
     await github.init().catch(noop);
     await github.setremote(config.repo).catch(noop);
     await github.setuser(config.username).catch(noop);
