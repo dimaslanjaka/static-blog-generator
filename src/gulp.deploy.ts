@@ -1,7 +1,8 @@
 import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
+import { existsSync } from 'fs';
 import { default as gitHelper } from 'git-command-helper';
-import gulp from 'gulp';
+import gulp, { TaskFunctionCallback } from 'gulp';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
 import './gulp.clean';
@@ -43,11 +44,12 @@ gulp.task('deploy:copy', copyGen);
  * git pull on deploy dir
  * @param done
  */
-async function pull(done: gulp.TaskFunctionCallback) {
+async function pull(done: TaskFunctionCallback) {
   const config = getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
-  const doPull = async (cwd: string) => {
+  if (!gh) return;
+  const doPull = async (cwd) => {
     try {
       await gh.spawn('git', ['config', 'pull.rebase', 'false'], {
         cwd
@@ -66,6 +68,16 @@ async function pull(done: gulp.TaskFunctionCallback) {
       console.log('cannot pull', cwd);
     }
   };
+
+  const clone = async () => {
+    if (!existsSync(cwd)) {
+      await gh.spawn('git', [...'clone -b master --single-branch'.split(' '), config.deploy.repo, '.deploy_git'], {
+        cwd: __dirname
+      });
+    }
+  };
+
+  await clone();
   doPull(cwd);
   const submodules = await gh.submodule.get();
   for (let i = 0; i < submodules.length; i++) {
@@ -78,6 +90,7 @@ async function pull(done: gulp.TaskFunctionCallback) {
 
 function status(done?: gulp.TaskFunctionCallback) {
   const { github } = deployConfig();
+  if (!github) return;
   github.status().then((statuses) => {
     statuses.map((item) => {
       let str = '';
@@ -111,6 +124,7 @@ function status(done?: gulp.TaskFunctionCallback) {
 
 function commit() {
   const { github } = deployConfig();
+  if (!github) return Promise.resolve(null);
   const now = moment().tz(getConfig().timezone).format('LLL');
   const commitRoot = function () {
     return new Promise((resolve) => {
@@ -175,6 +189,9 @@ function noop() {
 
 function push() {
   const { github } = deployConfig();
+  if (!github) {
+    return;
+  }
   const submodules = github.submodule.hasSubmodule() ? github.submodule.get() : [];
   const pushSubmodule = function (submodule: typeof submodules[number]) {
     const { url, branch, root } = submodule;
