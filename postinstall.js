@@ -1,21 +1,44 @@
 const pjson = require('./package.json');
 const fs = require('fs');
-const path = require('upath');
+const path = require('path');
+
+const isAllPackagesInstalled = [
+  'cross-spawn',
+  'upath',
+  'axios-cache-interceptor',
+  'axios',
+  'hpagent',
+  'persistent-cache'
+].map((name) => {
+  return {
+    name,
+    installed: isPackageInstalled(name)
+  };
+});
+if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
+  const names = isAllPackagesInstalled.map((o) => o.name);
+  console.log('package', names, 'is not installed', 'skipping postinstall script');
+  return;
+}
+
+// postinstall scripts
+// run this script after `npm install`
+// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
+// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
+// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
+// usages		: node postinstall.js
+
+// imports start
 const { spawn } = require('cross-spawn');
 const Axios = require('axios');
+// const upath = require('upath');
 const crypto = require('crypto');
 const { setupCache } = require('axios-cache-interceptor');
 const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 // const persistentCache = require('persistent-cache');
-
-// postinstall scripts
-// run this script after `npm install`
-// required	: cross-spawn upath axios-cache-interceptor axios hpagent
-// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
-// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
-// usages		: node postinstall.js
+// imports ends
 
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
@@ -477,7 +500,7 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
       });
       writer.on('close', async () => {
         if (!error) {
-          // console.log('package downloaded', outputLocationPath.replace(path.toUnix(__dirname), ''));
+          // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
           file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
             resolve(checksum);
           });
@@ -485,4 +508,17 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
       });
     });
   });
+}
+
+/**
+ * check package installed
+ * @param {string} x
+ * @returns
+ */
+function isPackageInstalled(x) {
+  try {
+    return process.moduleLoadList.indexOf('NativeModule ' + x) >= 0 || require('fs').existsSync(require.resolve(x));
+  } catch (e) {
+    return false;
+  }
 }
