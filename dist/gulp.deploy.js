@@ -4,7 +4,6 @@ exports.asyncCopyGen = exports.copyGen = void 0;
 var tslib_1 = require("tslib");
 var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
-var fs_1 = require("fs");
 var git_command_helper_1 = require("git-command-helper");
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
@@ -32,35 +31,61 @@ function asyncCopyGen() {
     });
 }
 exports.asyncCopyGen = asyncCopyGen;
-gulp_1.default.task('copy', copyGen);
-function pull() {
-    return new Promise(function (resolve) {
-        var _a = (0, gulp_config_1.getConfig)().deploy, deployDir = _a.deployDir, github = _a.github, repo = _a.repo, username = _a.username, email = _a.email, branch = _a.branch;
-        github
-            .setremote(repo)
-            .then(function () {
-            return new Promise(function (resolveInit) {
-                if (!(0, fs_1.existsSync)(deployDir)) {
-                    github.init().then(resolveInit);
-                }
-                else {
-                    resolveInit(null);
-                }
-            });
-        })
-            .then(function () { return github.setuser(username); })
-            .then(function () { return github.setemail(email); })
-            .then(function () { return github.reset(branch); })
-            .then(function () {
-            github.pull(['--recurse-submodule']).then(function () {
-                if (github.submodule.hasSubmodule()) {
-                    console.log('safe update submodule');
-                    github.submodule.safeUpdate(true).then(resolve);
-                }
-                else {
-                    resolve(null);
-                }
-            });
+gulp_1.default.task('deploy:copy', copyGen);
+function pull(done) {
+    return tslib_1.__awaiter(this, void 0, void 0, function () {
+        var config, cwd, gh, doPull, submodules, i, sub;
+        var _this = this;
+        return tslib_1.__generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    config = (0, gulp_config_1.getConfig)();
+                    cwd = config.deploy.deployDir;
+                    gh = config.deploy.github;
+                    doPull = function (cwd) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+                        var e_1, e_2;
+                        return tslib_1.__generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    _a.trys.push([0, 2, , 3]);
+                                    return [4, gh.spawn('git', ['config', 'pull.rebase', 'false'], {
+                                            cwd: cwd
+                                        })];
+                                case 1:
+                                    _a.sent();
+                                    return [3, 3];
+                                case 2:
+                                    e_1 = _a.sent();
+                                    return [3, 3];
+                                case 3:
+                                    _a.trys.push([3, 5, , 6]);
+                                    console.log('pulling', cwd);
+                                    return [4, gh.spawn('git', ['pull', '-X', 'theirs'], {
+                                            cwd: cwd,
+                                            stdio: 'pipe'
+                                        })];
+                                case 4:
+                                    _a.sent();
+                                    return [3, 6];
+                                case 5:
+                                    e_2 = _a.sent();
+                                    console.log('cannot pull', cwd);
+                                    return [3, 6];
+                                case 6: return [2];
+                            }
+                        });
+                    }); };
+                    doPull(cwd);
+                    return [4, gh.submodule.get()];
+                case 1:
+                    submodules = _a.sent();
+                    for (i = 0; i < submodules.length; i++) {
+                        sub = submodules[i];
+                        doPull(sub.root);
+                    }
+                    done();
+                    return [2];
+            }
         });
     });
 }
@@ -242,10 +267,10 @@ function push() {
             .then(resolve);
     });
 }
-gulp_1.default.task('push', push);
-gulp_1.default.task('status', status);
-gulp_1.default.task('commit', commit);
-gulp_1.default.task('pull', pull);
+gulp_1.default.task('deploy:push', push);
+gulp_1.default.task('deploy:status', status);
+gulp_1.default.task('deploy:commit', commit);
+gulp_1.default.task('deploy:pull', pull);
 function workspace(str) {
     return (0, upath_1.toUnix)(str).replace((0, upath_1.toUnix)(process.cwd()), '');
 }

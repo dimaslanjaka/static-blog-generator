@@ -1,19 +1,19 @@
 {
   "/release/static-blog-generator-3.0.0.tgz": {
     "integrity": {
-      "sha1": "dcec119ad4c640f1c9631d3597f5d59035f06d96",
-      "sha256": "XwdBgsFpG8dsmv16el1yuraicAVNyBR7/wm0egYhbiY=",
-      "md5": "9aa6df9d88382665ff53009e54162196"
+      "sha1": "3ea3e5eceb6ca314a8445d564c02c0b111a3cba1",
+      "sha256": "URnDPD8JI0bLdeBnqQLgQHKbuzS9JRVxmfSlqsQPr2o=",
+      "md5": "ba8de836be499bd148609b1d5bcc3be6"
     },
-    "size": "39.78 KB"
+    "size": "39.94 KB"
   },
   "/release/static-blog-generator.tgz": {
     "integrity": {
-      "sha1": "dcec119ad4c640f1c9631d3597f5d59035f06d96",
-      "sha256": "XwdBgsFpG8dsmv16el1yuraicAVNyBR7/wm0egYhbiY=",
-      "md5": "9aa6df9d88382665ff53009e54162196"
+      "sha1": "3ea3e5eceb6ca314a8445d564c02c0b111a3cba1",
+      "sha256": "URnDPD8JI0bLdeBnqQLgQHKbuzS9JRVxmfSlqsQPr2o=",
+      "md5": "ba8de836be499bd148609b1d5bcc3be6"
     },
-    "size": "39.78 KB"
+    "size": "39.94 KB"
   },
   "/package-lock.json": {
     "integrity": {
