@@ -262,4 +262,7 @@ function workspace(str: string) {
 }
 
 // deploy
-gulp.task('deploy', gulp.series('pull', 'clean-archives', 'copy', 'safelink', 'commit', 'push'));
+gulp.task(
+  'deploy',
+  gulp.series('deploy:pull', 'clean-archives', 'deploy:copy', 'safelink', 'deploy:commit', 'deploy:push')
+);
