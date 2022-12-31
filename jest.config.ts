@@ -27,7 +27,7 @@ const config: Config = {
     ]
   },
 
-  detectLeaks: true,
+  // detectLeaks: true,
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
