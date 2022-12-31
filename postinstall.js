@@ -122,6 +122,7 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
         original = path.resolve(path.join(__dirname, original));
       }
 
+      // checksum remote package
       if (isUrlPkg) {
         // console.log({ pkgname, integrity, resolved, original });
         const hash = 'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
@@ -129,19 +130,22 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
           console.log('remote package', pkgname, 'has different integrity');
           // fs.rmSync(node_modules_path, { recursive: true, force: true });
           toUpdate.push(pkgname);
+          continue;
         }
       }
+
       // checksum local package
       if (original && isLocalPkg) {
         let originalHash = 'sha512-' + (await file_to_hash('sha512', original, 'base64'));
 
         // check sum tarball
-        if (/\/tarball\/|.tgz$/i.test(version)) {
+        if (/\/tarball\/|.(tgz|zip|tar|tar.gz)$/i.test(version)) {
           // console.log(value);
           if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
             console.log('local package', pkgname, 'has different integrity');
             // fs.rmSync(node_modules_path, { recursive: true, force: true });
             toUpdate.push(pkgname);
+            continue;
           }
         }
       }
@@ -169,6 +173,7 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
               console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.push(pkgname);
+              continue;
             }
           } else {
             const getApiRoot = await axiosGet(apiRoot);
@@ -184,6 +189,7 @@ const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, nul
               console.log('github package', pkgname, 'from branch', branch, 'has different commit hash');
               // fs.rmSync(node_modules_path, { recursive: true, force: true });
               toUpdate.push(pkgname);
+              continue;
             }
           }
         } catch (e) {
