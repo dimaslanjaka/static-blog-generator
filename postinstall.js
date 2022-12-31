@@ -1,14 +1,26 @@
+// postinstall scripts
+// run this script after `npm install`
+// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
+// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
+// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
+// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
+// usages		: node postinstall.js
+
 const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
 
+//// CHECK REQUIRED PACKAGES
+
+const scriptname = `[postinstall]`;
 const isAllPackagesInstalled = [
   'cross-spawn',
   'upath',
   'axios-cache-interceptor',
   'axios',
   'hpagent',
-  'persistent-cache'
+  'persistent-cache',
+  'ansi-colors'
 ].map((name) => {
   return {
     name,
@@ -18,6 +30,7 @@ const isAllPackagesInstalled = [
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   const names = isAllPackagesInstalled.map((o) => o.name);
   console.log(
+    scriptname,
     'package',
     names.join(', '),
     'is not installed',
@@ -26,13 +39,7 @@ if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
   return;
 }
 
-// postinstall scripts
-// run this script after `npm install`
-// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
-// update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-// repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
-// raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
-// usages		: node postinstall.js
+//// POSTINSTALL START
 
 // imports start
 const { spawn } = require('cross-spawn');
@@ -42,6 +49,7 @@ const crypto = require('crypto');
 const { setupCache } = require('axios-cache-interceptor');
 const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
+const colors = require('ansi-colors');
 // const persistentCache = require('persistent-cache');
 // imports ends
 
@@ -80,8 +88,23 @@ const packages = [pjson.dependencies, pjson.devDependencies];
  * @type {string[]}
  */
 const toUpdate = [];
+let hasNotInstalled = false;
+const coloredScriptName = colors.grey(scriptname);
+/**
+ * argument value
+ */
+const argv = process.argv.slice(2);
 
 (async () => {
+  // dump file
+  const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
+  if (!fs.existsSync(path.dirname(jsonfile))) {
+    fs.mkdirSync(path.dirname(jsonfile), { recursive: true });
+  }
+  const json = fs.existsSync(jsonfile)
+    ? JSON.parse(fs.readFileSync(jsonfile, 'utf-8'))
+    : {};
+
   for (let i = 0; i < packages.length; i++) {
     const pkgs = packages[i];
     //const isDev = i === 1; // <-- index devDependencies
@@ -90,19 +113,21 @@ const toUpdate = [];
        * @type {string}
        */
       const version = pkgs[pkgname];
+      /**
+       * colored package name
+       */
+      const coloredPkgname = colors.magenta(pkgname);
 
-      // skip when not exist in node_modules
-      if (!fs.existsSync(path.join(__dirname, pkgname))) {
-        continue;
+      // node postinstall.js --simple
+      // add all monorepos packages to be updated without checking
+      if (argv.includes('--simple')) {
+        // push update local and monorepo package
+        if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
+          //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
+          toUpdate.push(pkgname);
+          continue;
+        }
       }
-
-      /*
-      // push update local and monorepo package
-			if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
-				//const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-				toUpdate.push(pkgname);
-			}
-      */
 
       // push update for private ssh package
       if (/^(ssh+|git+ssh)/i.test(version)) {
@@ -120,31 +145,7 @@ const toUpdate = [];
         ? JSON.parse(fs.readFileSync(locks, 'utf-8'))
         : {};
 
-      const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
-      /**
-       * is remote url package
-       */
-      const isUrlPkg =
-        /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version) &&
-        // check link to github directly
-        !/.git$/i.test(version);
-      /**
-       * is github package
-       */
-      const isGitPkg =
-        /^(git+|github:|https?:\/\/github.com\/)/i.test(version) &&
-        // check tarball path
-        !/\/tarball\//i.test(version);
-      /**
-       * is local package
-       */
-      const isLocalPkg = /^(file):/i.test(version);
-      if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
-        delete pkgs[pkgname];
-        continue;
-      }
-
-      // existing lock
+      // parse existing lock file
       const installedLock = lockfile.packages['node_modules/' + pkgname];
       installedLock.name = pkgname;
       const { integrity, resolved } = installedLock;
@@ -157,13 +158,76 @@ const toUpdate = [];
         original = path.resolve(path.join(__dirname, original));
       }
 
+      const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
+      /**
+       * is remote url package
+       */
+      let isUrlPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(
+        version
+      );
+
+      /**
+       * is github package
+       */
+      let isGitPkg = /^(git+|github:|https?:\/\/github.com\/)/i.test(version);
+
+      // fix conflict type package url and git
+      if (/^https?:\/\/github.com\//i.test(version)) {
+        // is tarball path
+        const isTarball = /\/tarball\//i.test(version);
+        isGitPkg = isGitPkg && !isTarball;
+        if (isUrlPkg) {
+          // is link to github directly
+          const isPkgGit =
+            /.git$/i.test(version) ||
+            /^git\+ssh:\/\/git@github.com\//i.test(resolved);
+          isUrlPkg = isUrlPkg && !isPkgGit;
+        }
+      }
+
+      /**
+       * is local package
+       */
+      const isLocalPkg = /^(file):/i.test(version);
+      if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
+        delete pkgs[pkgname];
+        continue;
+      }
+
+      // dump
+      json[pkgname] = Object.assign(json[pkgname], {
+        isLocalPkg,
+        isGitPkg,
+        isUrlPkg,
+        resolved,
+        version
+      });
+
+      // skip checking when not exist in node_modules
+      // npm will automate installing these packages
+      if (!fs.existsSync(path.join(__dirname, pkgname))) {
+        hasNotInstalled = true;
+        console.log(
+          coloredScriptName,
+          coloredPkgname,
+          colors.red('not installed.'),
+          'skipping...'
+        );
+        continue;
+      }
+
       // checksum remote package
       if (isUrlPkg) {
         // console.log({ pkgname, integrity, resolved, original });
         const hash =
           'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
         if (integrity !== hash) {
-          console.log('remote package', pkgname, 'has different integrity');
+          console.log(
+            coloredScriptName,
+            'remote package',
+            pkgname,
+            'has different integrity'
+          );
           // fs.rmSync(node_modules_path, { recursive: true, force: true });
           toUpdate.push(pkgname);
           continue;
@@ -179,7 +243,12 @@ const toUpdate = [];
         if (/\/tarball\/|.(tgz|zip|tar|tar.gz)$/i.test(version)) {
           // console.log(value);
           if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
-            console.log('local package', pkgname, 'has different integrity');
+            console.log(
+              coloredScriptName,
+              'local package',
+              pkgname,
+              'has different integrity'
+            );
             // fs.rmSync(node_modules_path, { recursive: true, force: true });
             toUpdate.push(pkgname);
             continue;
@@ -215,6 +284,7 @@ const toUpdate = [];
               fs.existsSync(node_modules_path)
             ) {
               console.log(
+                coloredScriptName,
                 'github package',
                 pkgname,
                 'from branch',
@@ -244,6 +314,7 @@ const toUpdate = [];
               fs.existsSync(node_modules_path)
             ) {
               console.log(
+                coloredScriptName,
                 'github package',
                 pkgname,
                 'from branch',
@@ -261,6 +332,9 @@ const toUpdate = [];
       }
     }
   }
+
+  // dump write
+  fs.writeFileSync(jsonfile, JSON.stringify(json, null, 2));
 
   // do update
 
@@ -372,12 +446,24 @@ const toUpdate = [];
         if (e instanceof Error) console.error(e.message);
       }
     } else {
-      console.log(
-        '[postinstall] all monorepo packages already at latest version'
-      );
+      if (hasNotInstalled) {
+        console.log(
+          coloredScriptName,
+          colors.green('some packages not yet installed')
+        );
+      } else {
+        console.log(
+          coloredScriptName,
+          'all monorepo packages already at latest version'
+        );
+      }
     }
   } else {
-    console.log('some packages already deleted from node_modules');
+    if (hasNotInstalled) {
+      console.log(coloredScriptName, 'some packages not yet installed');
+    } else {
+      console.log(coloredScriptName, 'some packages deleted from node_modules');
+    }
   }
 })();
 
