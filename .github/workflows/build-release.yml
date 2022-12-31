@@ -34,6 +34,8 @@ jobs:
         os: [ "windows-latest", "macos-11", "ubuntu-latest" ]
         node-version: [ 14.x, 16.x, 18.x ]
         architecture: [ x86, x64 ]
+      fail-fast: true
+      max-parallel: 1
 
     runs-on: ${{ matrix.os }}
 
