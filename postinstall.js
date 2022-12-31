@@ -1,6 +1,6 @@
 // postinstall scripts
 // run this script after `npm install`
-// required	: cross-spawn upath axios-cache-interceptor axios hpagent persistent-cache
+// required	: cross-spawn axios ansi-colors
 // update		: curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
 // repo			: https://github.com/dimaslanjaka/nodejs-package-types/blob/main/postinstall.js
 // raw			: https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js
@@ -13,15 +13,7 @@ const path = require('path');
 //// CHECK REQUIRED PACKAGES
 
 const scriptname = `[postinstall]`;
-const isAllPackagesInstalled = [
-  'cross-spawn',
-  'upath',
-  'axios-cache-interceptor',
-  'axios',
-  'hpagent',
-  'persistent-cache',
-  'ansi-colors'
-].map((name) => {
+const isAllPackagesInstalled = ['cross-spawn', 'axios', 'ansi-colors'].map((name) => {
   return {
     name,
     installed: isPackageInstalled(name)
@@ -40,9 +32,6 @@ const { spawn } = require('cross-spawn');
 const Axios = require('axios');
 // const upath = require('upath');
 const crypto = require('crypto');
-const { setupCache } = require('axios-cache-interceptor');
-const axios = setupCache(Axios);
-const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 const colors = require('ansi-colors');
 // const persistentCache = require('persistent-cache');
 // imports ends
@@ -60,7 +49,7 @@ if (!fs.existsSync(cacheJSON)) {
  * Get cache
  * @returns {import('./node_modules/cache/npm-install.json')}
  */
-const getCache = () => require('./node_modules/.cache/npm-install.json');
+const getCache = JSON.parse(readfile(cacheJSON, 'utf-8'));
 
 /**
  * Save cache
@@ -71,7 +60,7 @@ const getCache = () => require('./node_modules/.cache/npm-install.json');
  * data['key']='value';
  * saveCache(data)
  */
-const saveCache = (data) => fs.writeFileSync(cacheJSON, JSON.stringify(data, null, 2));
+const saveCache = (data) => writefile(cacheJSON, JSON.stringify(data, null, 2));
 
 // @todo clear cache local packages
 const packages = [pjson.dependencies, pjson.devDependencies];
@@ -94,16 +83,6 @@ const coloredScriptName = colors.grey(scriptname);
       return;
     }
 
-    // dump file
-    const jsonfile = path.join(__dirname, 'tmp/postinstall/monorepos.json');
-    if (!fs.existsSync(path.dirname(jsonfile))) {
-      fs.mkdirSync(path.dirname(jsonfile), { recursive: true });
-    }
-    let json = {};
-    if (fs.existsSync(jsonfile)) {
-      json = JSON.parse(fs.readFileSync(jsonfile, 'utf-8'));
-    }
-
     for (let i = 0; i < packages.length; i++) {
       const pkgs = packages[i];
       //const isDev = i === 1; // <-- index devDependencies
@@ -121,188 +100,10 @@ const coloredScriptName = colors.grey(scriptname);
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
           //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
           toUpdate.add(pkgname);
-        }
-
-        const locks = ['./node_modules/.package-lock.json', './package-lock.json']
-          .map((str) => path.join(__dirname, str))
-          .filter((str) => {
-            try {
-              return fs.existsSync(str);
-            } catch {
-              console.log(coloredScriptName, 'cannot access', str);
-            }
-            return false;
-          })[0];
-        /**
-         * @type {import('./package-lock.json')}
-         */
-        const lockfile = fs.existsSync(locks)
-          ? JSON.parse(fs.readFileSync(locks, 'utf-8'))
-          : {
-              packages: {}
-            };
-
-        // parse existing lock file
-        const installedLock = lockfile.packages['node_modules/' + pkgname];
-        if (!installedLock) continue;
-        installedLock.name = pkgname;
-        const { integrity, resolved } = installedLock;
-        let original = typeof resolved === 'string' && !/^https?/i.test(String(resolved)) ? resolved : null;
-        if (typeof original === 'string') {
-          original = String(original).replace(/^file:/, '');
-          original = path.resolve(path.join(__dirname, original));
-        }
-
-        const node_modules_path = path.join(__dirname, 'node_modules', pkgname);
-        /**
-         * is remote url package
-         */
-        let isUrlPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version);
-
-        /**
-         * is github package
-         */
-        let isGitPkg = /^(git+|github:|https?:\/\/github.com\/)/i.test(version);
-
-        // fix conflict type package url and git
-        if (/^https?:\/\/github.com\//i.test(version)) {
-          // is tarball path
-          const isTarball = /\/tarball\//i.test(version) || /.(tgz|zip|tar|tar.gz)$/i.test(version);
-          isGitPkg = isGitPkg && !isTarball;
-          if (isUrlPkg) {
-            // is link to github directly
-            const isPkgGit = /.git$/i.test(version) || /^git\+ssh:\/\/git@github.com\//i.test(resolved);
-            isUrlPkg = isUrlPkg && !isPkgGit;
-          }
-        }
-
-        /**
-         * is local package
-         */
-        const isLocalPkg = /^(file):/i.test(version);
-        if (!isLocalPkg && !isGitPkg && !isUrlPkg) {
-          delete pkgs[pkgname];
-          continue;
-        }
-
-        // dump
-        json[pkgname] = Object.assign(json[pkgname] ? json[pkgname] : {}, {
-          isLocalPkg,
-          isGitPkg,
-          isUrlPkg,
-          resolved,
-          version
-        });
-
-        // skip checking when not exist in node_modules
-        // npm will automate installing these packages
-        if (!fs.existsSync(path.join(__dirname, 'node_modules', pkgname))) {
-          hasNotInstalled = true;
-          console.log(coloredScriptName, coloredPkgname, colors.red('not installed.'), 'skipping...');
-          continue;
-        }
-
-        // checksum remote package
-        if (isUrlPkg) {
-          // console.log({ pkgname, integrity, resolved, original });
-          const hash = 'sha512-' + (await url_to_hash('sha512', resolved, 'base64'));
-          if (integrity !== hash) {
-            console.log(coloredScriptName, 'remote package', pkgname, 'has different integrity');
-            // fs.rmSync(node_modules_path, { recursive: true, force: true });
-            toUpdate.add(pkgname);
-            continue;
-          } else {
-            console.log(coloredScriptName, coloredPkgname, 'already at latest version');
-            toUpdate.delete(pkgname);
-          }
-        }
-
-        // checksum local package
-        if (original && isLocalPkg) {
-          let originalHash = 'sha512-' + (await file_to_hash('sha512', original, 'base64'));
-
-          // check sum tarball
-          if (/\/tarball\/|.(tgz|zip|tar|tar.gz)$/i.test(version)) {
-            // console.log(value);
-            if (originalHash !== integrity && fs.existsSync(node_modules_path)) {
-              console.log(coloredScriptName, 'local package', pkgname, 'has different integrity');
-              // fs.rmSync(node_modules_path, { recursive: true, force: true });
-              toUpdate.add(pkgname);
-              continue;
-            } else {
-              console.log(coloredScriptName, coloredPkgname, 'already at latest version');
-              toUpdate.delete(pkgname);
-            }
-          }
-        }
-
-        // checksum github package
-        if (isGitPkg) {
-          const githubPathHash = String(resolved)
-            .replace(/git\+ssh:\/\/git@github.com\/|.git/gim, '')
-            .split('#')
-            .map((str) => str.trim());
-          const githubPath = githubPathHash[0];
-          const githubHash = githubPathHash[1];
-          const isBranchPkg = String(version).includes('#');
-
-          const apiRoot = 'https://api.github.com/repos/' + githubPath;
-
-          try {
-            if (isBranchPkg) {
-              const branch = String(version).split('#')[1];
-              const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
-              console.log(coloredScriptName, 'accessing', api);
-              const getApi = await axiosGet(api);
-              // skip when get api failure
-              if (!getApi) continue;
-              if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-                console.log(
-                  coloredScriptName,
-                  'github package',
-                  pkgname,
-                  'from branch',
-                  branch,
-                  'has different commit hash'
-                );
-                // fs.rmSync(node_modules_path, { recursive: true, force: true });
-                toUpdate.add(pkgname);
-                continue;
-              }
-            } else {
-              console.log(coloredScriptName, 'accessing', apiRoot);
-              const getApiRoot = await axiosGet(apiRoot);
-              // skip when get api failure
-              if (!getApiRoot) continue;
-              const branch = getApiRoot.data.default_branch;
-              const api = 'https://api.github.com/repos/' + githubPath + '/commits/' + branch;
-              const getApi = await axiosGet(api);
-              // skip when get api failure
-              if (!getApi) continue;
-              console.log({ version, githubPathHash, data: getApi.data.sha });
-              if (getApi.data.sha != githubHash && fs.existsSync(node_modules_path)) {
-                console.log(
-                  coloredScriptName,
-                  'github package',
-                  pkgname,
-                  'from branch',
-                  branch,
-                  'has different commit hash'
-                );
-                // fs.rmSync(node_modules_path, { recursive: true, force: true });
-                toUpdate.add(pkgname);
-                continue;
-              }
-            }
-          } catch (e) {
-            if (e instanceof Error) console.log(e.code, e.message);
-          }
+          console.log(coloredScriptName, 'adding', coloredPkgname);
         }
       }
     }
-
-    // dump write
-    fs.writeFileSync(jsonfile, JSON.stringify(json, null, 2));
 
     // do update
 
@@ -331,6 +132,7 @@ const coloredScriptName = colors.grey(scriptname);
     if (checkNodeModules()) {
       // filter duplicates package names
       const filterUpdates = Array.from(toUpdate).filter((item, index) => Array.from(toUpdate).indexOf(item) === index);
+
       if (filterUpdates.length > 0) {
         // do update
         try {
@@ -414,61 +216,9 @@ const coloredScriptName = colors.grey(scriptname);
       }
     }
   } catch (e) {
-    console.trace(e);
+    console.log(e.message);
   }
 })();
-
-/**
- * axios.get with cache ability
- * @param {string} url
- * @returns {Promise<import('axios').AxiosResponse<any, any>|undefined>}
- */
-async function axiosGet(url) {
-  Array.prototype.sample = function () {
-    return this[Math.floor(Math.random() * this.length)];
-  };
-
-  /**
-   * @type {import('hpagent').HttpsProxyAgentOptions}
-   */
-  const agentConfig = {
-    // proxy: '',
-    keepAlive: true
-    // keepAliveMsecs: 2000,
-    // maxSockets: 256,
-    // maxFreeSockets: 256,
-  };
-  const proxy = ['51.158.154.173:3128', '20.121.184.238:9401'].sample();
-  if (url.includes('//api.github.com')) {
-    agentConfig.proxy = 'http://' + proxy;
-  }
-  try {
-    return await axios.get(url, {
-      cache: {
-        cachePredicate: {
-          // Only cache if the response comes with a "good" status code
-          statusCheck: (status_1) => status_1 === 200,
-
-          // Check custom response body
-          responseMatch: ({ data }) => {
-            // Sample that only caches if the response contains condition
-            if (url.includes('//api.github.com')) {
-              return typeof data.sha === 'string';
-            }
-            // skip cache
-            return false;
-          }
-        }
-      },
-      timeout: 10000,
-      maxRedirects: 5,
-      httpAgent: new HttpProxyAgent(agentConfig),
-      httpsAgent: new HttpsProxyAgent(agentConfig)
-    });
-  } catch (_) {
-    return _noop(_);
-  }
-}
 
 /**
  * spawn command prompt
@@ -571,6 +321,7 @@ function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
  * @param {import('crypto').BinaryToTextEncoding} encoding
  * @returns
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     let outputLocationPath = path.join(__dirname, 'tmp/postinstall', path.basename(url));
@@ -632,4 +383,35 @@ function checkNodeModules() {
   );
   //console.log({ exists });
   return exists.every((exist) => exist === true);
+}
+
+/**
+ * read file with validation
+ * @param {string} str
+ * @param {import('fs').EncodingOption} encoding
+ * @returns
+ */
+function readfile(str, encoding = 'utf-8') {
+  if (fs.existsSync(str)) {
+    if (fs.statSync(str).isFile()) {
+      return fs.readFileSync(str, encoding);
+    } else {
+      throw str + ' is directory';
+    }
+  } else {
+    throw str + ' not found';
+  }
+}
+
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
 }
