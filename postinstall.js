@@ -16,7 +16,8 @@ const lock = JSON.parse(
   fs.readFileSync(
     ['./node_modules/.package-lock.json', './package-lock.json']
       .map((str) => path.join(__dirname, str))
-      .filter(fs.existsSync)[0]
+      .filter(fs.existsSync)[0],
+    'utf-8'
   )
 );
 
