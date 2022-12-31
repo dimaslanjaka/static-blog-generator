@@ -1,6 +1,6 @@
 import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
-import { gitHelper } from 'git-command-helper';
+import { default as gitHelper } from 'git-command-helper';
 import gulp from 'gulp';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
