@@ -2,13 +2,20 @@ const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('upath');
 const { spawn } = require('cross-spawn');
-const lock = require('./node_modules/.package-lock.json');
 const Axios = require('axios');
 const crypto = require('crypto');
 const { setupCache } = require('axios-cache-interceptor');
 const axios = setupCache(Axios);
 const { HttpProxyAgent, HttpsProxyAgent } = require('hpagent');
 // const persistentCache = require('persistent-cache');
+
+const lock = JSON.parse(
+  fs.readFileSync(
+    ['./node_modules/.package-lock.json', './package-lock.json']
+      .map((str) => path.join(__dirname, str))
+      .filter(fs.existsSync)[0]
+  )
+);
 
 // postinstall scripts
 // run this script after `npm install`
