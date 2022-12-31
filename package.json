@@ -53,7 +53,7 @@
     "through2": "^4.0.2",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
-    "yaml": "^2.2.0"
+    "yaml": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
@@ -64,7 +64,7 @@
     "@types/gulp": "^4.0.10",
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/raw/hexo/release/types-hexo.tgz",
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
-    "@types/jest": "^29.2.4",
+    "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
@@ -73,7 +73,7 @@
     "axios-cache-interceptor": "^1.0.0",
     "babel-jest": "^29.3.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.30.0",
+    "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "hpagent": "^1.2.0",
