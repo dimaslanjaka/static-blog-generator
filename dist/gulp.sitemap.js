@@ -14,6 +14,7 @@ var os_1 = require("os");
 var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var gulp_config_1 = require("./gulp.config");
+var sitemap_1 = require("./sitemap");
 var array_1 = require("./utils/array");
 var fm_1 = require("./utils/fm");
 var noop_1 = tslib_1.__importDefault(require("./utils/noop"));
@@ -115,7 +116,7 @@ function hexoGenerateSitemap() {
                 var config = (0, gulp_config_1.setConfig)(instance.config);
                 var sitemap = Object.assign({ rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] }, config.sitemap);
                 if (sitemap.yoast) {
-                    return;
+                    return (0, sitemap_1.yoastSeo)(instance);
                 }
                 if (!config.sitemap)
                     return console.log('[sitemap] config.sitemap not configured in _config.yml');
