@@ -44,6 +44,8 @@ export async function cleanDb() {
   const hexo = new hexoLib(config.base_dir);
   await hexo.init().catch(noop);
   await hexo.call('clean').catch(noop);
+
+  return undefined;
 }
 
 /**
@@ -100,7 +102,9 @@ export function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
 
   const finishNow = function () {
     if (typeof done === 'function') done();
+    return undefined;
   };
+
   return Bluebird.all(promises).then(finishNow).catch(finishNow);
 }
 
