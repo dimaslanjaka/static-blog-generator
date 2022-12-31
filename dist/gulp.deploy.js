@@ -4,7 +4,7 @@ exports.asyncCopyGen = exports.copyGen = void 0;
 var tslib_1 = require("tslib");
 var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
-var git_command_helper_1 = require("git-command-helper");
+var git_command_helper_1 = tslib_1.__importDefault(require("git-command-helper"));
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 var upath_1 = require("upath");
@@ -149,7 +149,7 @@ function commit() {
                     return tslib_1.__generator(this, function (_a) {
                         switch (_a.label) {
                             case 0:
-                                submodule = new git_command_helper_1.gitHelper(sub.root);
+                                submodule = new git_command_helper_1.default(sub.root);
                                 return [4, submodule.status()];
                             case 1:
                                 items = _a.sent();
@@ -199,7 +199,7 @@ function push() {
     var pushSubmodule = function (submodule) {
         var url = submodule.url, branch = submodule.branch, root = submodule.root;
         if (!submodule.github) {
-            submodule.github = new git_command_helper_1.gitHelper(root);
+            submodule.github = new git_command_helper_1.default(root);
         }
         var github = submodule.github;
         return new Promise(function (resolvePush) {
@@ -274,4 +274,4 @@ gulp_1.default.task('deploy:pull', pull);
 function workspace(str) {
     return (0, upath_1.toUnix)(str).replace((0, upath_1.toUnix)(process.cwd()), '');
 }
-gulp_1.default.task('deploy', gulp_1.default.series('pull', 'clean-archives', 'copy', 'safelink', 'commit', 'push'));
+gulp_1.default.task('deploy', gulp_1.default.series('deploy:pull', 'clean-archives', 'deploy:copy', 'safelink', 'deploy:commit', 'deploy:push'));
