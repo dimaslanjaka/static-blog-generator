@@ -72,7 +72,7 @@ function cleanDb() {
                     return [4, hexo.call('clean').catch(noop_1.default)];
                 case 15:
                     _d.sent();
-                    return [2];
+                    return [2, undefined];
             }
         });
     });
@@ -117,6 +117,7 @@ function cleanOldArchives(done) {
     var finishNow = function () {
         if (typeof done === 'function')
             done();
+        return undefined;
     };
     return bluebird_1.default.all(promises).then(finishNow).catch(finishNow);
 }

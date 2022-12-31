@@ -9,6 +9,6 @@ declare class SBG {
     safelink: () => Promise<unknown>;
     generate(): Promise<void>;
     deploy(): Promise<void>;
-    clean(opt?: 'all'): Promise<void>;
+    clean(opt?: 'all'): Promise<undefined>;
 }
 export default SBG;
