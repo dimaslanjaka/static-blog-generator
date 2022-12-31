@@ -35,7 +35,7 @@ jobs:
         node-version: [ 14.x, 16.x, 18.x ]
         architecture: [ x86, x64 ]
       fail-fast: true
-      max-parallel: 1
+      max-parallel: 6
 
     runs-on: ${{ matrix.os }}
 
@@ -105,16 +105,18 @@ jobs:
           echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
 
       - name: Set EOL git configs
+        continue-on-error: true
         run: |
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
 
       - name: Pull & update submodules recursively
+        continue-on-error: true
         run: |
-          git pull -X theirs
           git submodule update --init --recursive
           git submodule update --recursive --remote
+          git pull -X theirs
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -228,6 +230,9 @@ jobs:
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
       - run: git add lib
+        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
+        continue-on-error: true
+      - run: git add postinstall.js packer.js .github
         if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
       - run: git pull -X theirs

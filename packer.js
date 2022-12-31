@@ -78,7 +78,8 @@ child.on('exit', function () {
           integrity: {
             sha1: await file_to_hash('sha1', file),
             sha256: await file_to_hash('sha256', file, 'base64'),
-            md5: await file_to_hash('md5', file)
+            md5: await file_to_hash('md5', file),
+            sha512: await file_to_hash('sha512', file, 'base64')
           },
           size
         }
