@@ -6,43 +6,43 @@ import { create as createXML } from 'xmlbuilder2';
 import { sitemapItem } from '.';
 import { writefile } from '../utils/fm';
 
-const pageUpdateDates: string[] = [];
+const postUpdateDates: string[] = [];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
-const sitemapPagesList: sitemapItem[] = [];
+const sitemapPostsList: sitemapItem[] = [];
 
 /**
- * build page-sitemap.xml
+ * build post-sitemap.xml
  * @param hexo
  */
-export default async function yoastSeoSitemapPages(hexo: Hexo) {
-  await Bluebird.all(hexo.locals.get('pages').toArray()).each(function (data) {
+export default async function yoastSeoSitemapPosts(hexo: Hexo) {
+  await Bluebird.all(hexo.locals.get('posts').toArray()).each(function (data) {
     const lastmod = data.updated?.format('YYYY-MM-DDTHH:mm:ssZ') || moment().format();
-    pageUpdateDates.push(lastmod);
+    postUpdateDates.push(lastmod);
     const info = {
       loc: data.permalink,
       lastmod,
       changefreq: 'weekly',
       priority: '0.8'
     };
-    sitemapPagesList.push(info);
+    sitemapPostsList.push(info);
   });
 
-  const destSitemap = join(hexo.public_dir, 'page-sitemap.xml');
+  const destSitemap = join(hexo.public_dir, 'post-sitemap.xml');
   writefile(
     destSitemap,
     createXML({
       urlset: {
-        url: sitemapPagesList
+        url: sitemapPostsList
       }
     }).end({ prettyPrint: true })
   );
-  _log.info('page sitemap saved', destSitemap);
+  _log.info('post sitemap saved', destSitemap);
 }
 
 /**
- * get all page updated dates
+ * get all post updated dates
  * @returns
  */
-export function getAllpageUpdateDates() {
-  return pageUpdateDates;
+export function getAllpostUpdateDates() {
+  return postUpdateDates;
 }
