@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var fs_extra_1 = require("fs-extra");
+require("nodejs-package-types");
 var os_1 = require("os");
 var slugify_1 = tslib_1.__importDefault(require("slugify"));
 var upath_1 = require("upath");
@@ -31,6 +32,7 @@ if ((0, jest_1.areWeTestingWithJest)()) {
         (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
     };
 }
+var _log = typeof hexo === 'undefined' ? console : hexo.log;
 var Logger = (function () {
     function Logger() {
     }
@@ -39,7 +41,7 @@ var Logger = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        console.log.apply(console, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        _log.info.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
         this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.tracer = function () {
@@ -67,8 +69,7 @@ var Logger = (function () {
                 var base = (0, upath_1.basename)(path.split(':')[0].length === 1 ? path.split(':')[0] + ':' + path.split(':')[1] : path.split(':')[0]);
                 logfile = (0, upath_1.join)(FOLDER, (0, slugify_1.default)(id, { trim: true }) + '-' + (0, slugify_1.default)(base, { trim: true }) + '.log');
                 if (!(0, fs_extra_1.existsSync)(logfile)) {
-                    (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(logfile));
-                    (0, fs_extra_1.writeFileSync)(logfile, '');
+                    (0, fm_1.writefile)(logfile, '');
                 }
                 templ_1 = "".concat('='.repeat(20), "\nfile: ").concat(path, "\ndate: ").concat(new Date(), "\n").concat('='.repeat(20), "\n\n");
                 args.forEach(function (o) {

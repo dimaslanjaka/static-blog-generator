@@ -11,6 +11,7 @@ require("./gulp.feed");
 require("./gulp.post");
 require("./gulp.safelink");
 require("./gulp.seo");
+var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
 function commitProject(finish) {
     var gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];
     var commit = function () {
@@ -25,7 +26,7 @@ function commitProject(finish) {
             .then(function () { return (0, hexo_util_1.spawn)('git', ['commit', '-m', 'update ' + new Date()], opt); })
             .catch(function (e) {
             if (e instanceof Error)
-                console.log(e.message, gitDir);
+                logger_1.default.log(e.message, gitDir);
         })
             .finally(function () {
             gitDirs.shift();

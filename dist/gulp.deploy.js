@@ -13,6 +13,7 @@ var upath_1 = require("upath");
 require("./gulp.clean");
 var gulp_config_1 = require("./gulp.config");
 require("./gulp.safelink");
+var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
 function copyGen() {
     var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
     var publicDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().public_dir);
@@ -61,7 +62,7 @@ function pull(done) {
                                     return [3, 3];
                                 case 3:
                                     _a.trys.push([3, 5, , 6]);
-                                    console.log('pulling', cwd);
+                                    logger_1.default.log('pulling', cwd);
                                     return [4, (0, spawn_1.spawnAsync)('git', ['pull', '-X', 'theirs'], {
                                             cwd: cwd,
                                             stdio: 'pipe'
@@ -71,7 +72,7 @@ function pull(done) {
                                     return [3, 6];
                                 case 5:
                                     e_2 = _a.sent();
-                                    console.log('cannot pull', cwd);
+                                    logger_1.default.log('cannot pull', cwd);
                                     return [3, 6];
                                 case 6: return [2];
                             }
@@ -135,7 +136,7 @@ function status(done) {
             }
             str += ' ';
             str += item.path;
-            console.log(str);
+            logger_1.default.log(str);
         });
         if (typeof done === 'function')
             done();
@@ -149,7 +150,7 @@ function commit() {
     var commitRoot = function () {
         return new Promise(function (resolve) {
             github.status().then(function (changes) {
-                console.log('changes', changes.length, (0, upath_1.toUnix)(github.cwd).replace((0, upath_1.toUnix)(process.cwd()), ''));
+                logger_1.default.log('changes', changes.length, (0, upath_1.toUnix)(github.cwd).replace((0, upath_1.toUnix)(process.cwd()), ''));
                 if (changes.length > 0) {
                     github.add('-A').then(function () {
                         github.commit('update site ' + now).then(function () {
@@ -234,19 +235,19 @@ function push() {
             var setB = function () { return github.setbranch(branch); };
             Promise.all([setR(), setB()]).then(function () {
                 github.canPush().then(function (allowed) {
-                    console.log(workspace(root), 'can push', allowed);
+                    logger_1.default.log(workspace(root), 'can push', allowed);
                     if (allowed) {
                         github.push(false, { stdio: 'pipe' }).then(resolvePush);
                     }
                     else {
                         github.status().then(function (changes) {
                             if (changes.length > 0) {
-                                console.log('submodule', workspace(root), 'changes not staged');
+                                logger_1.default.log('submodule', workspace(root), 'changes not staged');
                                 resolvePush(null);
                             }
                             else {
                                 github.isUpToDate().then(function (updated) {
-                                    console.log('submodule', workspace(root), 'updated', updated);
+                                    logger_1.default.log('submodule', workspace(root), 'updated', updated);
                                     resolvePush(null);
                                 });
                             }
@@ -284,7 +285,7 @@ function push() {
             .then(function () {
             return new Promise(function (resolvePush) {
                 github.canPush().then(function (allowed) {
-                    console.log(workspace(github.cwd), 'can push', allowed);
+                    logger_1.default.log(workspace(github.cwd), 'can push', allowed);
                     if (allowed) {
                         github.push().then(resolvePush);
                     }
