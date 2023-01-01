@@ -50,7 +50,7 @@ export interface postMeta {
     /**
      * Post categories
      */
-    category?: string[];
+    categories?: string[];
     /**
      * All photos of post/page
      */
@@ -81,4 +81,8 @@ export interface postMeta {
      * archive (index, tags, categories)
      */
     type?: 'post' | 'page' | 'archive';
+    /**
+     * Custom layout (hexo)
+     */
+    layout?: string;
 }

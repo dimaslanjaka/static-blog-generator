@@ -165,10 +165,10 @@ function parsePost(target, options = {}) {
                 }
             }
             // @todo set default category and tags
-            if (!meta.category)
-                meta.category = [];
-            if (options.config.default_category && !meta.category.length)
-                meta.category.push(options.config.default_category);
+            if (!meta.categories)
+                meta.categories = [];
+            if (options.config.default_category && !meta.categories.length)
+                meta.categories.push(options.config.default_category);
             if (!meta.tags)
                 meta.tags = [];
             if (options.config.default_tag && !meta.tags.length)
@@ -267,9 +267,9 @@ function parsePost(target, options = {}) {
             if (options.fix) {
                 // remove uncategorized if programming category pushed
                 if (options.config.default_category)
-                    if (meta.category.includes(options.config.default_category) &&
-                        meta.category.length > 1) {
-                        meta.category = meta.category.filter((e) => e !== options.config.default_category);
+                    if (meta.categories.includes(options.config.default_category) &&
+                        meta.categories.length > 1) {
+                        meta.categories = meta.categories.filter((e) => e !== options.config.default_category);
                     }
                 // @todo remove untagged if programming category pushed
                 if (options.config.default_tag)
