@@ -137,17 +137,18 @@ export function updatePost() {
  */
 export function copyAllPosts() {
   // lock runner
-  const lockfolder = join(process.cwd(), 'tmp/static-blog-generator/', arguments.callee.name);
+  const lockfolder = join(process.cwd(), 'tmp/static-blog-generator/', copyAllPosts.name);
   const lockfile = join(lockfolder, 'index.lock');
+  // skip process when found
   if (existsSync(lockfile)) {
-    console.log('another process still running');
+    Logger.log('another process still running');
     const writeStream = createWriteStream(join(lockfolder, 'pid-' + process.pid), { flags: 'a' });
     writeStream.write(new Date());
     writeStream.close();
-
     return writeStream;
   }
-  if (!existsSync(lockfile)) writefile(lockfile, '');
+  // write new lock
+  writefile(lockfile, '');
 
   // function start
   const config = getConfig();
@@ -199,6 +200,7 @@ export function copyAllPosts() {
       )
       .pipe(gulp.dest(destDir))
       .once('end', () => {
+        // delete lock file
         rmSync(lockfile);
       })
   );
