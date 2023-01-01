@@ -1,5 +1,5 @@
 import frontMatter from 'front-matter';
-import { createWriteStream, existsSync, rmSync, writeFileSync } from 'fs';
+import { createWriteStream, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
@@ -8,7 +8,7 @@ import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { gulpCached } from './gulp-utils/gulp.cache';
 import { commonIgnore, getConfig } from './gulp.config';
-import { writefile } from './utils/fm';
+import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
 
@@ -137,18 +137,17 @@ export function updatePost() {
  */
 export function copyAllPosts() {
   // lock runner
-  const lockfolder = join(process.cwd(), 'tmp/static-blog-generator/', copyAllPosts.name);
-  const lockfile = join(lockfolder, 'index.lock');
+  const lm = new LockManager(copyAllPosts.name);
   // skip process when found
-  if (existsSync(lockfile)) {
+  if (lm.exist()) {
     Logger.log('another process still running');
-    const writeStream = createWriteStream(join(lockfolder, 'pid-' + process.pid), { flags: 'a' });
+    const writeStream = createWriteStream(join(lm.folder, 'pid-' + process.pid), { flags: 'a' });
     writeStream.write(new Date());
     writeStream.close();
     return writeStream;
   }
   // write new lock
-  writefile(lockfile, '');
+  lm.lock();
 
   // function start
   const config = getConfig();
@@ -158,7 +157,7 @@ export function copyAllPosts() {
   Logger.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
   return (
     gulp
-      .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes })
+      .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes, dot: true })
       .pipe(gulpCached({ name: 'post' }))
       //.pipe(gulpDebug())
       .pipe(
@@ -166,7 +165,6 @@ export function copyAllPosts() {
           if (file.isNull()) return callback();
           // process markdown files
           if (file.extname === '.md') {
-            const config = getConfig();
             const contents = file.contents?.toString() || '';
             // drop empty body
             if (contents.trim().length === 0) return callback();
@@ -188,6 +186,9 @@ export function copyAllPosts() {
               sourceFile: file.path
             });
             if (parse && parse.metadata) {
+              if (config.tags) {
+                //
+              }
               const build = buildPost(parse);
               file.contents = Buffer.from(build);
               return callback(null, file);
@@ -201,7 +202,7 @@ export function copyAllPosts() {
       .pipe(gulp.dest(destDir))
       .once('end', () => {
         // delete lock file
-        rmSync(lockfile);
+        lm.release();
       })
   );
 }
