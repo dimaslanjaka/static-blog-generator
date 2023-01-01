@@ -106,7 +106,7 @@ function parsePost(target, options = {}) {
                 subtitle: '',
                 date: '',
                 tags: [],
-                category: []
+                categories: []
             };
             try {
                 meta = yaml_1.default.parse(m[1]);
@@ -163,6 +163,17 @@ function parsePost(target, options = {}) {
                     meta.lang = 'en';
                     meta.language = 'en';
                 }
+            }
+            // @todo fix meta.category to meta.categories
+            if (meta.category) {
+                if (!meta.categories || meta.categories.length === 0) {
+                    meta.categories = meta.category;
+                }
+                else if (Array.isArray(meta.category)) {
+                    meta.categories = meta.categories.concat(...meta.category);
+                }
+                // delete meta.category
+                delete meta.category;
             }
             // @todo set default category and tags
             if (!meta.categories)
