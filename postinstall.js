@@ -96,11 +96,64 @@ const coloredScriptName = colors.grey(scriptname);
          */
         const coloredPkgname = colors.magenta(pkgname);
 
+        /**
+         * is remote url package
+         */
+        let isTarballPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version);
+
+        /**
+         * is github package
+         */
+        let isGitPkg = /^(git+|github:|https?:\/\/github.com\/)/i.test(version);
+
+        // fix conflict type package url and git
+        if (/^https?:\/\/github.com\//i.test(version)) {
+          // is tarball path
+          const isTarball = /\/tarball\//i.test(version) || /.(tgz|zip|tar|tar.gz)$/i.test(version);
+          isGitPkg = isGitPkg && !isTarball;
+          if (isTarballPkg) {
+            // is link to github directly
+            let isPkgGit = /.git$/i.test(version);
+            try {
+              const lock = require('./package-lock.json');
+              /**
+               * @type {import('./package-lock.json')['packages']['node_modules/prettier']['dependencies']}
+               */
+              const lockdeps = lock.packages['node_modules/' + pkgname].dependencies;
+              const { /*integrity,*/ resolved } = lockdeps;
+              isPkgGit = isPkgGit || /^git\+ssh:\/\/git@github.com\//i.test(String(resolved));
+            } catch {
+              //
+            }
+            isTarballPkg = isTarballPkg && !isPkgGit;
+          }
+        }
+
+        /**
+         * is local package
+         */
+        const isLocalPkg = /^(file):/i.test(version);
+        if (!isLocalPkg && !isGitPkg && !isTarballPkg) {
+          delete pkgs[pkgname];
+          continue;
+        }
+
         // add all monorepos and private ssh packages to be updated without checking
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
           //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
           toUpdate.add(pkgname);
-          console.log(coloredScriptName, 'adding', coloredPkgname);
+          console.log(
+            coloredScriptName,
+            'updating',
+            coloredPkgname,
+            isGitPkg
+              ? colors.blueBright('git')
+              : isLocalPkg
+              ? colors.greenBright('local')
+              : isTarballPkg
+              ? colors.yellow('tarball')
+              : ''
+          );
         }
       }
     }
@@ -160,10 +213,16 @@ const coloredScriptName = colors.grey(scriptname);
           } else {
             // npm cache clean package
             if (filterUpdates.find((str) => str.startsWith('file:'))) {
-              await summon('npm', ['cache', 'clean'].concat(...filterUpdates), {
+              const localPkg = filterUpdates.filter((str) => str.startsWith('file:'));
+              await summon('npm', ['cache', 'clean'].concat(...localPkg), {
                 cwd: __dirname,
                 stdio: 'inherit'
               });
+              console.log(
+                coloredScriptName,
+                'local package cache cleaned',
+                ...localPkg.map((str) => colors.yellow(str))
+              );
             }
             // npm update package
             await summon('npm', ['update'].concat(...filterUpdates), {
