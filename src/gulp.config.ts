@@ -29,6 +29,30 @@ export interface ProjConf extends HexoConfig {
     boolean & {
       safelink?: import('safelinkify').SafelinkOptions;
     };
+
+  /**
+   * Tags mapper
+   */
+  tags: LabelMapper;
+  /**
+   * Categories mapper
+   */
+  categories: LabelMapper;
+}
+
+export interface LabelMapper {
+  /**
+   * turn label to lower case
+   */
+  lowercase: boolean;
+  /**
+   * add old label with new label
+   */
+  assign: Record<string, string> | undefined;
+  /**
+   * replace old label with new label
+   */
+  mapper: Record<string, string> | undefined;
 }
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
