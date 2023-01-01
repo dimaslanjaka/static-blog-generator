@@ -7,6 +7,7 @@ import './gulp.feed';
 import './gulp.post';
 import './gulp.safelink';
 import './gulp.seo';
+import Logger from './utils/logger';
 
 // commit current project
 export function commitProject(finish: gulp.TaskFunctionCallback) {
@@ -21,7 +22,7 @@ export function commitProject(finish: gulp.TaskFunctionCallback) {
     return spawn('git', ['add', '-A'], <any>opt)
       .then(() => spawn('git', ['commit', '-m', 'update ' + new Date()], <any>opt))
       .catch((e) => {
-        if (e instanceof Error) console.log(e.message, gitDir);
+        if (e instanceof Error) Logger.log(e.message, gitDir);
       })
       .finally(() => {
         gitDirs.shift();

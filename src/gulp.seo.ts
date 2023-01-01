@@ -44,7 +44,7 @@ export function autoSeo(cwd: string) {
         // count H1
         const h1 = this.querySelectorAll('h1');
         if (h1.length > 1) {
-          console.log(ansiColors.yellowBright('[WARN]'), `H1 (${h1.length}) ${path}`);
+          Logger.log(ansiColors.yellowBright('[WARN]'), `H1 (${h1.length}) ${path}`);
         }
       })
     )

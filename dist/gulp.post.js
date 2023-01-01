@@ -117,17 +117,16 @@ function updatePost() {
 exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
-    var lockfolder = (0, upath_1.join)(process.cwd(), 'tmp/static-blog-generator/', arguments.callee.name);
+    var lockfolder = (0, upath_1.join)(process.cwd(), 'tmp/static-blog-generator/', copyAllPosts.name);
     var lockfile = (0, upath_1.join)(lockfolder, 'index.lock');
     if ((0, fs_1.existsSync)(lockfile)) {
-        console.log('another process still running');
+        logger_1.default.log('another process still running');
         var writeStream = (0, fs_1.createWriteStream)((0, upath_1.join)(lockfolder, 'pid-' + process.pid), { flags: 'a' });
         writeStream.write(new Date());
         writeStream.close();
         return writeStream;
     }
-    if (!(0, fs_1.existsSync)(lockfile))
-        (0, fm_1.writefile)(lockfile, '');
+    (0, fm_1.writefile)(lockfile, '');
     var config = (0, gulp_config_1.getConfig)();
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push.apply(excludes, tslib_1.__spreadArray([], tslib_1.__read(gulp_config_1.commonIgnore), false));
