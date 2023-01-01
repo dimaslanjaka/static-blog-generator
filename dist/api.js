@@ -16,6 +16,8 @@ var SBG = (function () {
         if (cwd === void 0) { cwd = null; }
         var _this = this;
         this.config = (0, gulp_config_1.getConfig)();
+        this.setConfig = gulp_config_1.setConfig;
+        this.getConfig = gulp_config_1.getConfig;
         this.standalone = function () { return (0, gulp_standalone_1.default)(); };
         this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
         this.copy = function () {
