@@ -45,11 +45,12 @@ if (!fs.existsSync(path.dirname(cacheJSON))) {
 if (!fs.existsSync(cacheJSON)) {
   fs.writeFileSync(cacheJSON, '{}');
 }
+
 /**
  * Get cache
  * @returns {import('./node_modules/cache/npm-install.json')}
  */
-const getCache = JSON.parse(readfile(cacheJSON, 'utf-8'));
+const getCache = () => JSON.parse(readfile(cacheJSON, 'utf-8'));
 
 /**
  * Save cache
