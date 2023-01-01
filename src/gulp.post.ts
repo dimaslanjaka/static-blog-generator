@@ -192,7 +192,8 @@ export function copyAllPosts() {
               }
               // category mapper
               if (config.categories?.lowercase) {
-                parse.metadata.categories = parse.metadata.categories?.map((str) => str.toLowerCase()) || [];
+                parse.metadata.categories =
+                  (<string[]>parse.metadata.categories)?.map((str) => str.toLowerCase()) || [];
               }
               const build = buildPost(parse);
               file.contents = Buffer.from(build);
