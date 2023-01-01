@@ -110,12 +110,12 @@
   },
   "tags": {
     "lowercase": false,
-    "assign": null,
-    "mapper": null
+    "assign": {},
+    "mapper": {}
   },
   "categories": {
     "lowercase": false,
-    "assign": null,
-    "mapper": null
+    "assign": {},
+    "mapper": {}
   }
 }

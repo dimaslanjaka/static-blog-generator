@@ -1,6 +1,6 @@
 export { default as Application } from './api';
-export { gulpCached } from './gulp-utils/gulp.cache';
-export { gulpDebug } from './gulp-utils/gulp.debug';
+export { default as gulpCached } from './gulp-utils/gulp.cache';
+export { default as gulpDebug } from './gulp-utils/gulp.debug';
 export { cleanDb, del, del as deleteDir } from './gulp.clean';
 export { deployConfig, getConfig, setConfig } from './gulp.config';
 export { copyAllPosts, copySinglePost, updatePost as copyPost, watchPost } from './gulp.post';
