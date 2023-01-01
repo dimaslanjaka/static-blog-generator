@@ -14,8 +14,8 @@ export interface ProjConf extends HexoConfig {
 }
 export interface LabelMapper {
     lowercase: boolean;
-    assign: Record<string, string> | undefined;
-    mapper: Record<string, string> | undefined;
+    assign: Record<string, string> | undefined | null;
+    mapper: Record<string, string> | undefined | null;
 }
 export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
 export declare function getConfig(get?: boolean): ProjConf;
