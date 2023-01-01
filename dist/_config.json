@@ -108,36 +108,14 @@
         "email": "",
         "message": "{{ now('YYYY-MM-DD HH:mm:ss') }}"
     },
-    "sitemap": {
-        "tags": true,
-        "categories": true,
-        "rel": true,
-        "yoast": true,
-        "path": [
-            "sitemap.xml",
-            "sitemap.txt"
-        ]
-    },
     "tags": {
-        "lowercase": true,
+        "lowercase": false,
         "assign": null,
-        "mapper": {
-            "JS": "Javascript",
-            "TS": "Typescript"
-        }
+        "mapper": null
     },
     "categories": {
-        "lowercase": true,
-        "assign": {
-            "TS": "Programming",
-            "JS": "Programming",
-            "Typescript": "Programming",
-            "Javascript": "Programming",
-            "GitHub": "Programming"
-        },
-        "mapper": {
-            "JS": "Javascript",
-            "TS": "Typescript"
-        }
+        "lowercase": false,
+        "assign": null,
+        "mapper": null
     }
 }
