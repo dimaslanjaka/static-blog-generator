@@ -121,3 +121,5 @@ typings/
 # include release
 !release/
 !release/*.tgz
+
+/docs
