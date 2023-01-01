@@ -151,6 +151,7 @@ jobs:
 
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
+        if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Install Legacy Peer Dependencies
         run: npm install --legacy-peer-deps

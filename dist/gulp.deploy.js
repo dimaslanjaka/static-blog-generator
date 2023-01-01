@@ -6,6 +6,7 @@ var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 var fs_1 = require("fs");
 var git_command_helper_1 = tslib_1.__importDefault(require("git-command-helper"));
+var spawn_1 = require("git-command-helper/dist/spawn");
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 var upath_1 = require("upath");
@@ -43,15 +44,13 @@ function pull(done) {
                     config = (0, gulp_config_1.getConfig)();
                     cwd = config.deploy.deployDir;
                     gh = config.deploy.github;
-                    if (!gh)
-                        return [2];
                     doPull = function (cwd) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
                         var e_1, e_2;
                         return tslib_1.__generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
                                     _a.trys.push([0, 2, , 3]);
-                                    return [4, gh.spawn('git', ['config', 'pull.rebase', 'false'], {
+                                    return [4, (0, spawn_1.spawnAsync)('git', ['config', 'pull.rebase', 'false'], {
                                             cwd: cwd
                                         })];
                                 case 1:
@@ -63,7 +62,7 @@ function pull(done) {
                                 case 3:
                                     _a.trys.push([3, 5, , 6]);
                                     console.log('pulling', cwd);
-                                    return [4, gh.spawn('git', ['pull', '-X', 'theirs'], {
+                                    return [4, (0, spawn_1.spawnAsync)('git', ['pull', '-X', 'theirs'], {
                                             cwd: cwd,
                                             stdio: 'pipe'
                                         })];
@@ -83,7 +82,7 @@ function pull(done) {
                             switch (_a.label) {
                                 case 0:
                                     if (!!(0, fs_1.existsSync)(cwd)) return [3, 2];
-                                    return [4, gh.spawn('git', tslib_1.__spreadArray(tslib_1.__spreadArray([], tslib_1.__read('clone -b master --single-branch'.split(' ')), false), [config.deploy.repo, '.deploy_git'], false), {
+                                    return [4, (0, spawn_1.spawnAsync)('git', tslib_1.__spreadArray(tslib_1.__spreadArray([], tslib_1.__read('clone -b master --single-branch'.split(' ')), false), [config.deploy.repo, '.deploy_git'], false), {
                                             cwd: __dirname
                                         })];
                                 case 1:
@@ -97,12 +96,12 @@ function pull(done) {
                 case 1:
                     _a.sent();
                     doPull(cwd);
-                    return [4, gh.submodule.get()];
-                case 2:
-                    submodules = _a.sent();
-                    for (i = 0; i < submodules.length; i++) {
-                        sub = submodules[i];
-                        doPull(sub.root);
+                    if (gh) {
+                        submodules = gh.submodule.get();
+                        for (i = 0; i < submodules.length; i++) {
+                            sub = submodules[i];
+                            doPull(sub.root);
+                        }
                     }
                     done();
                     return [2];
