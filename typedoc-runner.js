@@ -2,23 +2,21 @@ const { join } = require('upath');
 const typedocModule = require('typedoc');
 const semver = require('semver');
 const { default: git } = require('git-command-helper');
-const {
-  mkdirSync,
-  existsSync,
-  writeFileSync,
-  readdirSync,
-  statSync
-} = require('fs');
+const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
 const typedocOptions = require('./typedoc');
 const gulp = require('gulp');
 const pkgjson = require('./package.json');
-const spawn = require('cross-spawn');
 const { EOL } = require('os');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
+const axios = require('axios');
+const { writeFile } = require('fs/promises');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
-// update   : curl -L https://github.com/dimaslanjaka/static-blog-generator/raw/master/typedoc-runner.js > typedoc-runner.js
-// repo     : https://github.com/dimaslanjaka/static-blog-generator/blob/master/typedoc-runner.js
+// update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
+// repo     : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/typedoc-runner.js
+// usages
+// - git clone https://github.com/dimaslanjaka/docs.git
+// - node typedoc-runner.js
 
 const REPO_URL = 'https://github.com/dimaslanjaka/docs.git';
 
@@ -32,17 +30,16 @@ let compiled = 0;
 const compile = async function (options = {}, callback = null) {
   const outDir = join(__dirname, 'docs');
   const projectDocsDir = join(outDir, pkgjson.name);
+  if (options) setTypedocOptions(options);
 
   if (!existsSync(outDir)) {
-    spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
+    await spawnAsync('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname });
   }
 
-  if (!existsSync(projectDocsDir))
-    mkdirSync(projectDocsDir, { recursive: true });
-  options = Object.assign(getTypedocOptions(), options || {});
+  if (!existsSync(projectDocsDir)) mkdirSync(projectDocsDir, { recursive: true });
 
   // disable delete dir while running twice
-  if (compiled > 0) options.cleanOutputDir = false;
+  if (compiled > 0) setTypedocOptions({ cleanOutputDir: false });
   compiled++;
 
   const app = new typedocModule.Application();
@@ -54,7 +51,7 @@ const compile = async function (options = {}, callback = null) {
   //console.log(options);
   //delete options.run;
 
-  app.bootstrap(options);
+  app.bootstrap(getTypedocOptions());
   const project = app.convert();
   if (typeof project !== 'undefined') {
     await app.generateDocs(project, projectDocsDir);
@@ -63,7 +60,13 @@ const compile = async function (options = {}, callback = null) {
     console.error('[error]', 'project undefined');
   }
 
+  // call API callback
   if (typeof callback === 'function') await callback.apply(app);
+  // call standalone callback
+  const callback_script = join(__dirname, 'typedoc-callback.js');
+  if (existsSync(callback_script)) {
+    await spawnAsync('node', [callback_script], { cwd: __dirname, stdio: 'inherit' });
+  }
   await createIndex();
 };
 
@@ -95,29 +98,20 @@ const publish = async function (options = {}, callback = null) {
     await compile(options, callback);
   }
 
-  writeFileSync(
-    join(outDir, '.gitattributes'),
-    `
-*           text=auto
-*.txt       text eol=lf
-*.json      text eol=lf
-*.txt       text
-*.vcproj    text eol=crlf
-*.sh        text eol=lf
-*.ts        text eol=lf
-*.js        text eol=lf
-*.png       binary diff
-*.jpg       binary diff
-*.ico       binary diff
-*.pdf       binary diff
-`.trim()
+  const response = await axios.default.get(
+    'https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.gitattributes',
+    {
+      responseType: 'blob'
+    }
   );
+  writeFile(join(outDir, '.gitattributes'), response.data, (err) => {
+    if (err) throw err;
+    console.log('.gitattributes has been saved!');
+  });
 
   try {
     const commit = await new git(__dirname).latestCommit().catch(noop);
-    const remote = (await new git(__dirname).getremote().catch(noop)).push.url
-      .replace(/.git$/, '')
-      .trim();
+    const remote = (await new git(__dirname).getremote().catch(noop)).push.url.replace(/.git$/, '').trim();
     if (remote.length > 0) {
       console.log('current git project', remote);
       await github.add(pkgjson.name).catch(noop);
@@ -150,12 +144,14 @@ let opt = typedocOptions;
 function getTypedocOptions() {
   return opt;
 }
+
 /**
  * Set typedoc options
  * @param {typeof import('./typedoc')} newOpt
  */
 function setTypedocOptions(newOpt) {
   opt = Object.assign(opt, newOpt || {});
+  writefile(join(__dirname, 'tmp/typedocs/options.json'), JSON.stringify(opt));
   return opt;
 }
 
@@ -195,7 +191,7 @@ if (require.main === module) {
 async function createIndex() {
   let body =
     `
-# Monorepo Documentation Site
+<h1 id="headline">Monorepo Documentation Site</h1>
   `.trim() + EOL;
 
   readdirSync(join(__dirname, 'docs')).forEach((filename) => {
@@ -205,17 +201,49 @@ async function createIndex() {
     if (stat.isDirectory() && filename !== '.git') {
       body +=
         `
-- [${filename}](./${filename})
+<li><a href="./${filename}">${filename}</a></li>
       `.trim() + EOL;
     }
   });
 
-  writeFileSync(join(__dirname, 'docs/readme.md'), body.trim());
+  writeFileSync(join(__dirname, 'docs/index.html'), body.trim());
+}
+
+/**
+ * read file with validation
+ * @param {string} str
+ * @param {import('fs').EncodingOption} encoding
+ * @returns
+ */
+function readfile(str, encoding = 'utf-8') {
+  if (fs.existsSync(str)) {
+    if (fs.statSync(str).isFile()) {
+      return fs.readFileSync(str, encoding);
+    } else {
+      throw str + ' is directory';
+    }
+  } else {
+    throw str + ' not found';
+  }
+}
+
+/**
+ * write to file recursively
+ * @param {string} dest
+ * @param {any} data
+ */
+function writefile(dest, data) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(dest)) {
+    if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
+  }
+  fs.writeFileSync(dest, data);
 }
 
 module.exports = {
   watch,
   compile,
+  compileDocs: compile,
   publish,
   getTypedocOptions,
   setTypedocOptions
