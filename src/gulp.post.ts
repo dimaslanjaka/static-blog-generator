@@ -186,8 +186,13 @@ export function copyAllPosts() {
               sourceFile: file.path
             });
             if (parse && parse.metadata) {
-              if (config.tags) {
-                //
+              // tag mapper
+              if (config.tags?.lowercase) {
+                parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+              }
+              // category mapper
+              if (config.categories?.lowercase) {
+                parse.metadata.categories = parse.metadata.categories?.map((str) => str.toLowerCase()) || [];
               }
               const build = buildPost(parse);
               file.contents = Buffer.from(build);
