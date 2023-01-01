@@ -34,11 +34,11 @@ export interface ProjConf extends HexoConfig {
   /**
    * Tags mapper
    */
-  tags: LabelMapper;
+  tags?: LabelMapper;
   /**
    * Categories mapper
    */
-  categories: LabelMapper;
+  categories?: LabelMapper;
 }
 
 export interface LabelMapper {
