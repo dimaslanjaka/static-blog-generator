@@ -1,4 +1,5 @@
 import stream from 'stream';
+import Logger from './logger';
 
 /**
  * Chainable function runner
@@ -32,7 +33,7 @@ export async function chain(
       const obj = instance.callback();
 
       if (isReadableStream(obj) && obj instanceof stream.Stream) {
-        // console.log('readable stream');
+        // Logger.log('readable stream');
         return obj.once('end', async function () {
           if (instance.opt?.after) {
             await instance.opt.after();
@@ -42,9 +43,9 @@ export async function chain(
           }
         });
       } else if (obj instanceof stream.Writable) {
-        console.log('writable stream');
+        Logger.log('writable stream');
       } else if (isPromise(obj)) {
-        //console.log('promises');
+        //Logger.log('promises');
         return obj.then(async function () {
           if (instance.opt?.after) {
             await instance.opt.after();
@@ -54,7 +55,7 @@ export async function chain(
           }
         });
       } else {
-        console.log('cannot determine method instances');
+        Logger.log('cannot determine method instances');
       }
 
       resolve.bind(this)(chain.bind(this));

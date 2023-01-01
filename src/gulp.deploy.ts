@@ -9,6 +9,7 @@ import { join, toUnix } from 'upath';
 import './gulp.clean';
 import { deployConfig, getConfig } from './gulp.config';
 import './gulp.safelink';
+import Logger from './utils/logger';
 
 /**
  * copy generated files (_config_yml.public_dir) to deploy dir (run after generated)
@@ -55,17 +56,17 @@ async function pull(done: TaskFunctionCallback) {
         cwd
       });
     } catch (e) {
-      // console.log(e.message, sub.root);
+      // Logger.log(e.message, sub.root);
     }
 
     try {
-      console.log('pulling', cwd);
+      Logger.log('pulling', cwd);
       await spawnAsync('git', ['pull', '-X', 'theirs'], {
         cwd,
         stdio: 'pipe'
       });
     } catch (e) {
-      console.log('cannot pull', cwd);
+      Logger.log('cannot pull', cwd);
     }
   };
 
@@ -117,7 +118,7 @@ function status(done?: gulp.TaskFunctionCallback) {
 
       str += ' ';
       str += item.path;
-      console.log(str);
+      Logger.log(str);
     });
 
     if (typeof done === 'function') done();
@@ -131,7 +132,7 @@ function commit() {
   const commitRoot = function () {
     return new Promise((resolve) => {
       github.status().then((changes) => {
-        console.log('changes', changes.length, toUnix(github.cwd).replace(toUnix(process.cwd()), ''));
+        Logger.log('changes', changes.length, toUnix(github.cwd).replace(toUnix(process.cwd()), ''));
         if (changes.length > 0) {
           github.add('-A').then(() => {
             github.commit('update site ' + now).then(() => {
@@ -206,19 +207,19 @@ function push() {
       const setB = () => github.setbranch(branch);
       Promise.all([setR(), setB()]).then(() => {
         github.canPush().then((allowed) => {
-          console.log(workspace(root), 'can push', allowed);
+          Logger.log(workspace(root), 'can push', allowed);
           if (allowed) {
             // push then resolve
             github.push(false, { stdio: 'pipe' }).then(resolvePush);
           } else {
             github.status().then((changes) => {
               if (changes.length > 0) {
-                console.log('submodule', workspace(root), 'changes not staged');
+                Logger.log('submodule', workspace(root), 'changes not staged');
                 // resolve changes not staged
                 resolvePush(null);
               } else {
                 github.isUpToDate().then((updated) => {
-                  console.log('submodule', workspace(root), 'updated', updated);
+                  Logger.log('submodule', workspace(root), 'updated', updated);
                   // resolve is up to date
                   resolvePush(null);
                 });
@@ -254,7 +255,7 @@ function push() {
       .then(function () {
         return new Promise((resolvePush) => {
           github.canPush().then((allowed) => {
-            console.log(workspace(github.cwd), 'can push', allowed);
+            Logger.log(workspace(github.cwd), 'can push', allowed);
             if (allowed) {
               github.push().then(resolvePush);
             }

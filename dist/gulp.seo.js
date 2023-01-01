@@ -36,7 +36,7 @@ function autoSeo(cwd) {
         });
         var h1 = this.querySelectorAll('h1');
         if (h1.length > 1) {
-            console.log(ansi_colors_1.default.yellowBright('[WARN]'), "H1 (".concat(h1.length, ") ").concat(path));
+            logger_1.default.log(ansi_colors_1.default.yellowBright('[WARN]'), "H1 (".concat(h1.length, ") ").concat(path));
         }
     }))
         .pipe(gulp_1.default.dest(cwd));

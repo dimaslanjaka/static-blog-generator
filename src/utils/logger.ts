@@ -1,7 +1,8 @@
-import { appendFileSync, existsSync, mkdirpSync, writeFileSync } from 'fs-extra';
+import { appendFileSync, existsSync } from 'fs-extra';
+import 'nodejs-package-types';
 import { EOL } from 'os';
 import slugify from 'slugify';
-import { basename, dirname, join, toUnix } from 'upath';
+import { basename, join, toUnix } from 'upath';
 import { getConfig } from '../gulp.config';
 import { writefile } from './fm';
 import { areWeTestingWithJest } from './jest';
@@ -28,16 +29,19 @@ if (areWeTestingWithJest()) {
   };
 }
 
+const _log = typeof hexo === 'undefined' ? console : hexo.log;
+
 /**
  * @example
  * const console = Logger
- * console.log('hello world'); // should be written in ./tmp/logs/gulp-sbg/[trace-name].log
+ * Logger.log('hello world'); // should be written in ./tmp/logs/gulp-sbg/[trace-name].log
  */
 class Logger {
   static log(...args: any[]) {
-    console.log(...args);
+    _log.info(...args);
     this.tracer(...args);
   }
+
   private static tracer(...args: any[]) {
     const error = new Error();
     const split = error.stack?.split(/\r?\n/gm).map((str) => {
@@ -65,8 +69,7 @@ class Logger {
 
         logfile = join(FOLDER, slugify(id, { trim: true }) + '-' + slugify(base, { trim: true }) + '.log');
         if (!existsSync(logfile)) {
-          mkdirpSync(dirname(logfile));
-          writeFileSync(logfile, '');
+          writefile(logfile, '');
         }
         templ = `${'='.repeat(20)}\nfile: ${path}\ndate: ${new Date()}\n${'='.repeat(20)}\n\n`;
         args.forEach((o) => {
@@ -82,7 +85,7 @@ class Logger {
         });
         appendFileSync(logfile, templ);
       }
-      // console.log(split);
+      // Logger.log(split);
     }
   }
 }

@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.chain = void 0;
 var tslib_1 = require("tslib");
 var stream_1 = tslib_1.__importDefault(require("stream"));
+var logger_1 = tslib_1.__importDefault(require("./logger"));
 function chain(schedule) {
     return tslib_1.__awaiter(this, void 0, void 0, function () {
         var run, instance;
@@ -35,7 +36,7 @@ function chain(schedule) {
                                 });
                             }
                             else if (obj instanceof stream_1.default.Writable) {
-                                console.log('writable stream');
+                                logger_1.default.log('writable stream');
                             }
                             else if (isPromise(obj)) {
                                 return obj.then(function () {
@@ -56,7 +57,7 @@ function chain(schedule) {
                                 });
                             }
                             else {
-                                console.log('cannot determine method instances');
+                                logger_1.default.log('cannot determine method instances');
                             }
                             resolve.bind(this)(chain.bind(this));
                         });
