@@ -191,6 +191,10 @@ export function copyAllPosts() {
               for (let i = 0; i < array.length; i++) {
                 const label = array[i];
                 if (parse.metadata[label]) {
+                  // label assign
+                  if (config[label]?.assign) {
+                    console.log(config[label].assign);
+                  }
                   // label mapper
                   if (config[label]?.mapper) {
                     for (const oldLabel in config[label].mapper) {

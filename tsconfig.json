@@ -11,6 +11,7 @@
     "incremental": true,
     "declaration": true,
     "stripInternal": true,
+    "strict": true,
     "outDir": "./dist",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
