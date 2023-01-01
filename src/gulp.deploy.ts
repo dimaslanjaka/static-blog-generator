@@ -2,6 +2,7 @@ import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
 import { existsSync } from 'fs';
 import { default as gitHelper } from 'git-command-helper';
+import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp, { TaskFunctionCallback } from 'gulp';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
@@ -48,10 +49,9 @@ async function pull(done: TaskFunctionCallback) {
   const config = getConfig();
   const cwd = config.deploy.deployDir;
   const gh = config.deploy.github;
-  if (!gh) return;
-  const doPull = async (cwd) => {
+  const doPull = async (cwd: string) => {
     try {
-      await gh.spawn('git', ['config', 'pull.rebase', 'false'], {
+      await spawnAsync('git', ['config', 'pull.rebase', 'false'], {
         cwd
       });
     } catch (e) {
@@ -60,7 +60,7 @@ async function pull(done: TaskFunctionCallback) {
 
     try {
       console.log('pulling', cwd);
-      await gh.spawn('git', ['pull', '-X', 'theirs'], {
+      await spawnAsync('git', ['pull', '-X', 'theirs'], {
         cwd,
         stdio: 'pipe'
       });
@@ -71,7 +71,7 @@ async function pull(done: TaskFunctionCallback) {
 
   const clone = async () => {
     if (!existsSync(cwd)) {
-      await gh.spawn('git', [...'clone -b master --single-branch'.split(' '), config.deploy.repo, '.deploy_git'], {
+      await spawnAsync('git', [...'clone -b master --single-branch'.split(' '), config.deploy.repo, '.deploy_git'], {
         cwd: __dirname
       });
     }
@@ -79,11 +79,13 @@ async function pull(done: TaskFunctionCallback) {
 
   await clone();
   doPull(cwd);
-  const submodules = await gh.submodule.get();
-  for (let i = 0; i < submodules.length; i++) {
-    const sub = submodules[i];
+  if (gh) {
+    const submodules = gh.submodule.get();
+    for (let i = 0; i < submodules.length; i++) {
+      const sub = submodules[i];
 
-    doPull(sub.root);
+      doPull(sub.root);
+    }
   }
   done();
 }
