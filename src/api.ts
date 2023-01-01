@@ -10,7 +10,7 @@ import standaloneRunner from './gulp.standalone';
 import noop from './utils/noop';
 
 class SBG {
-  cwd: string;
+  cwd = process.cwd();
   config = getConfig();
   setConfig = setConfig;
   getConfig = getConfig;
