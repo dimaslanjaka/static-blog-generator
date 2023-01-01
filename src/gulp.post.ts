@@ -1,5 +1,5 @@
 import frontMatter from 'front-matter';
-import { writeFileSync } from 'fs';
+import { createWriteStream, existsSync, rmSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
@@ -8,6 +8,7 @@ import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { gulpCached } from './gulp-utils/gulp.cache';
 import { commonIgnore, getConfig } from './gulp.config';
+import { writefile } from './utils/fm';
 import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
 
@@ -135,6 +136,20 @@ export function updatePost() {
  * @returns
  */
 export function copyAllPosts() {
+  // lock runner
+  const lockfolder = join(process.cwd(), 'tmp/static-blog-generator/', arguments.callee.name);
+  const lockfile = join(lockfolder, 'index.lock');
+  if (existsSync(lockfile)) {
+    console.log('another process still running');
+    const writeStream = createWriteStream(join(lockfolder, 'pid-' + process.pid), { flags: 'a' });
+    writeStream.write(new Date());
+    writeStream.close();
+
+    return writeStream;
+  }
+  if (!existsSync(lockfile)) writefile(lockfile, '');
+
+  // function start
   const config = getConfig();
   const excludes: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push(...commonIgnore);
@@ -183,6 +198,9 @@ export function copyAllPosts() {
         })
       )
       .pipe(gulp.dest(destDir))
+      .once('end', () => {
+        rmSync(lockfile);
+      })
   );
 }
 

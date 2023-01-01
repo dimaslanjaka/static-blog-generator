@@ -11,6 +11,7 @@ var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
 var gulp_config_1 = require("./gulp.config");
+var fm_1 = require("./utils/fm");
 var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
 var scheduler_1 = tslib_1.__importDefault(require("./utils/scheduler"));
 var sourceDir = (0, upath_1.join)(process.cwd(), 'src-posts');
@@ -116,6 +117,17 @@ function updatePost() {
 exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
+    var lockfolder = (0, upath_1.join)(process.cwd(), 'tmp/static-blog-generator/', arguments.callee.name);
+    var lockfile = (0, upath_1.join)(lockfolder, 'index.lock');
+    if ((0, fs_1.existsSync)(lockfile)) {
+        console.log('another process still running');
+        var writeStream = (0, fs_1.createWriteStream)((0, upath_1.join)(lockfolder, 'pid-' + process.pid), { flags: 'a' });
+        writeStream.write(new Date());
+        writeStream.close();
+        return writeStream;
+    }
+    if (!(0, fs_1.existsSync)(lockfile))
+        (0, fm_1.writefile)(lockfile, '');
     var config = (0, gulp_config_1.getConfig)();
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push.apply(excludes, tslib_1.__spreadArray([], tslib_1.__read(gulp_config_1.commonIgnore), false));
@@ -171,7 +183,10 @@ function copyAllPosts() {
             }
         });
     }); }))
-        .pipe(gulp_1.default.dest(destDir)));
+        .pipe(gulp_1.default.dest(destDir))
+        .once('end', function () {
+        (0, fs_1.rmSync)(lockfile);
+    }));
 }
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('post:copy', copyAllPosts);
