@@ -9,6 +9,13 @@ export interface ProjConf extends HexoConfig {
     external_link: importConfig['external_link'] & boolean & {
         safelink?: import('safelinkify').SafelinkOptions;
     };
+    tags: LabelMapper;
+    categories: LabelMapper;
+}
+export interface LabelMapper {
+    lowercase: boolean;
+    assign: Record<string, string> | undefined;
+    mapper: Record<string, string> | undefined;
 }
 export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
 export declare function getConfig(get?: boolean): ProjConf;
