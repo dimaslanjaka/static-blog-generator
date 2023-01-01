@@ -32,7 +32,7 @@ if ((0, jest_1.areWeTestingWithJest)()) {
         (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
     };
 }
-var _log = typeof hexo === 'undefined' ? console : hexo.log;
+var _log = typeof hexo === 'undefined' ? console.log : hexo.log.info;
 var Logger = (function () {
     function Logger() {
     }
@@ -41,7 +41,7 @@ var Logger = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.info.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        _log.apply(void 0, tslib_1.__spreadArray([], tslib_1.__read(args), false));
         this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.tracer = function () {

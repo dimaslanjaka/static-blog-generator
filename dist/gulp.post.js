@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
 var tslib_1 = require("tslib");
+var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var front_matter_1 = tslib_1.__importDefault(require("front-matter"));
 var fs_1 = require("fs");
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
@@ -9,7 +10,8 @@ var hexo_post_parser_1 = require("hexo-post-parser");
 var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
 var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
-var gulp_cache_1 = require("./gulp-utils/gulp.cache");
+var gulp_cache_1 = tslib_1.__importDefault(require("./gulp-utils/gulp.cache"));
+var gulp_debug_1 = tslib_1.__importDefault(require("./gulp-utils/gulp.debug"));
 var gulp_config_1 = require("./gulp.config");
 var lockmanager_1 = tslib_1.__importDefault(require("./utils/lockmanager"));
 var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
@@ -129,11 +131,12 @@ function copyAllPosts() {
     var config = (0, gulp_config_1.getConfig)();
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push.apply(excludes, tslib_1.__spreadArray([], tslib_1.__read(gulp_config_1.commonIgnore), false));
-    logger_1.default.log('[copy] cwd', (0, upath_1.toUnix)(process.cwd()));
-    logger_1.default.log('[copy] copying source posts from', sourceDir.replace((0, upath_1.toUnix)(process.cwd()), ''));
-    return (gulp_1.default
-        .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes, dot: true })
-        .pipe((0, gulp_cache_1.gulpCached)({ name: 'post' }))
+    logger_1.default.log(ansi_colors_1.default.whiteBright('post:copy'), 'cwd', (0, upath_1.toUnix)(process.cwd()));
+    logger_1.default.log(ansi_colors_1.default.whiteBright('post:copy'), 'copying source posts from', sourceDir);
+    return gulp_1.default
+        .src('**/*.*', { cwd: (0, upath_1.toUnix)(sourceDir), ignore: excludes })
+        .pipe((0, gulp_cache_1.default)({ name: 'post' }))
+        .pipe((0, gulp_debug_1.default)())
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
         var contents, parse, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build;
         var _a, _b, _c, _d, _e;
@@ -172,10 +175,9 @@ function copyAllPosts() {
                             if (parse.metadata[groupLabel]) {
                                 if ((_b = config[groupLabel]) === null || _b === void 0 ? void 0 : _b.assign) {
                                     _loop_1 = function (oldLabel) {
-                                        var newLabel = config[groupLabel].assign[oldLabel];
                                         var index = parse.metadata[groupLabel].findIndex(function (str) { return str == oldLabel; });
                                         if (index !== -1) {
-                                            parse.metadata[groupLabel] = newLabel;
+                                            parse.metadata[groupLabel] = config[groupLabel].assign[oldLabel];
                                         }
                                     };
                                     for (oldLabel in config[groupLabel].assign) {
@@ -184,10 +186,9 @@ function copyAllPosts() {
                                 }
                                 if ((_c = config[groupLabel]) === null || _c === void 0 ? void 0 : _c.mapper) {
                                     _loop_2 = function (oldLabel) {
-                                        var newLabel = config[groupLabel].mapper[oldLabel];
                                         var index = parse.metadata[groupLabel].findIndex(function (str) { return str == oldLabel; });
                                         if (index !== -1) {
-                                            parse.metadata[groupLabel][index] = newLabel;
+                                            parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
                                         }
                                     };
                                     for (oldLabel in config[groupLabel].mapper) {
@@ -216,7 +217,7 @@ function copyAllPosts() {
         .pipe(gulp_1.default.dest(destDir))
         .once('end', function () {
         lm.release();
-    }));
+    });
 }
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('post:copy', copyAllPosts);

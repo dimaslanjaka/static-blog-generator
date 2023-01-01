@@ -29,7 +29,7 @@ if (areWeTestingWithJest()) {
   };
 }
 
-const _log = typeof hexo === 'undefined' ? console : hexo.log;
+const _log = typeof hexo === 'undefined' ? console.log : hexo.log.info;
 
 /**
  * @example
@@ -38,7 +38,7 @@ const _log = typeof hexo === 'undefined' ? console : hexo.log;
  */
 class Logger {
   static log(...args: any[]) {
-    _log.info(...args);
+    _log(...args);
     this.tracer(...args);
   }
 

@@ -1,12 +1,13 @@
+import ansiColors from 'ansi-colors';
 import frontMatter from 'front-matter';
 import { createWriteStream, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import through2 from 'through2';
-
 import { extname, join, toUnix } from 'upath';
-import { gulpCached } from './gulp-utils/gulp.cache';
+import gulpCached from './gulp-utils/gulp.cache';
+import gulpDebug from './gulp-utils/gulp.debug';
 import { commonIgnore, getConfig } from './gulp.config';
 import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
@@ -153,89 +154,86 @@ export function copyAllPosts() {
   const config = getConfig();
   const excludes: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push(...commonIgnore);
-  Logger.log('[copy] cwd', toUnix(process.cwd()));
-  Logger.log('[copy] copying source posts from', sourceDir.replace(toUnix(process.cwd()), ''));
-  return (
-    gulp
-      .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes, dot: true })
-      .pipe(gulpCached({ name: 'post' }))
-      //.pipe(gulpDebug())
-      .pipe(
-        through2.obj(async (file, _enc, callback) => {
-          if (file.isNull()) return callback();
-          // process markdown files
-          if (file.extname === '.md') {
-            const contents = file.contents?.toString() || '';
-            // drop empty body
-            if (contents.trim().length === 0) return callback();
-            const parse = await parsePost(contents, {
-              shortcodes: {
-                youtube: true,
-                css: true,
-                include: true,
-                link: true,
-                now: true,
-                script: true,
-                text: true,
-                codeblock: true
-              },
-              cache: false,
-              config: config as any,
-              formatDate: true,
-              fix: true,
-              sourceFile: file.path
-            });
-            if (parse && parse.metadata) {
-              // process tags and categories
-              const array = ['tags', 'categories'];
-              for (let i = 0; i < array.length; i++) {
-                const groupLabel = array[i];
-                if (parse.metadata[groupLabel]) {
-                  // label assign
-                  if (config[groupLabel]?.assign) {
-                    for (const oldLabel in config[groupLabel].assign) {
-                      const newLabel = config[groupLabel].assign[oldLabel];
-                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+  Logger.log(ansiColors.whiteBright('post:copy'), 'cwd', toUnix(process.cwd()));
+  Logger.log(ansiColors.whiteBright('post:copy'), 'copying source posts from', sourceDir);
 
-                      if (index !== -1) {
-                        parse.metadata[groupLabel] = newLabel;
-                      }
-                    }
-                  }
-                  // label mapper
-                  if (config[groupLabel]?.mapper) {
-                    for (const oldLabel in config[groupLabel].mapper) {
-                      const newLabel = config[groupLabel].mapper[oldLabel];
-                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+  return gulp
+    .src('**/*.*', { cwd: toUnix(sourceDir), ignore: excludes })
+    .pipe(gulpCached({ name: 'post' }))
+    .pipe(gulpDebug())
+    .pipe(
+      through2.obj(async (file, _enc, callback) => {
+        if (file.isNull()) return callback();
+        // process markdown files
+        if (file.extname === '.md') {
+          const contents = file.contents?.toString() || '';
+          // drop empty body
+          if (contents.trim().length === 0) return callback();
+          const parse = await parsePost(contents, {
+            shortcodes: {
+              youtube: true,
+              css: true,
+              include: true,
+              link: true,
+              now: true,
+              script: true,
+              text: true,
+              codeblock: true
+            },
+            cache: false,
+            config: config as any,
+            formatDate: true,
+            fix: true,
+            sourceFile: file.path
+          });
+          if (parse && parse.metadata) {
+            // process tags and categories
+            const array = ['tags', 'categories'];
+            for (let i = 0; i < array.length; i++) {
+              const groupLabel = array[i];
+              if (parse.metadata[groupLabel]) {
+                // label assign
+                if (config[groupLabel]?.assign) {
+                  for (const oldLabel in config[groupLabel].assign) {
+                    const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
-                      if (index !== -1) {
-                        parse.metadata[groupLabel][index] = newLabel;
-                      }
+                    if (index !== -1) {
+                      parse.metadata[groupLabel] = config[groupLabel].assign[oldLabel];
                     }
-                  }
-                  // label lowercase
-                  if (config.tags?.lowercase) {
-                    parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
                   }
                 }
-              }
+                // label mapper
+                if (config[groupLabel]?.mapper) {
+                  for (const oldLabel in config[groupLabel].mapper) {
+                    const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
-              const build = buildPost(parse);
-              file.contents = Buffer.from(build);
-              return callback(null, file);
-            } else {
-              Logger.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+                    if (index !== -1) {
+                      parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
+                    }
+                  }
+                }
+                // label lowercase
+                if (config.tags?.lowercase) {
+                  parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+                }
+              }
             }
+
+            const build = buildPost(parse);
+            file.contents = Buffer.from(build);
+            return callback(null, file);
+          } else {
+            Logger.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
           }
-          callback(null, file);
-        })
-      )
-      .pipe(gulp.dest(destDir))
-      .once('end', () => {
-        // delete lock file
-        lm.release();
+        }
+        callback(null, file);
       })
-  );
+    )
+    .pipe(gulp.dest(destDir))
+    .once('end', () => {
+      // delete lock file
+      lm.release();
+    });
 }
 
 gulp.task('post:copy', copyAllPosts);

@@ -1,143 +1,121 @@
 {
-    "title": "Static Blog Generator Demo",
-    "description": "Static Blog Generator Demo",
-    "keywords": null,
-    "author": "Dimas Lanjaka",
-    "language": "en",
-    "timezone": "Asia/Jakarta",
-    "url": "http://www.webmanajemen.com/static-blog-generator",
-    "root": "/static-blog-generator/",
-    "permalink": ":title.html",
-    "permalink_defaults": null,
-    "pretty_urls": {
-        "trailing_index": true,
-        "trailing_html": true
-    },
-    "source_dir": "source",
-    "public_dir": "public",
-    "tag_dir": "tags",
-    "archive_dir": "archives",
-    "category_dir": "categories",
-    "code_dir": "downloads/code",
-    "i18n_dir": ":lang",
-    "skip_render": null,
-    "new_post_name": ":title.md",
-    "default_layout": "post",
-    "titlecase": false,
-    "external_link": {
-        "enable": true,
-        "field": "site",
-        "exclude": [
-            "webmanajemen.com"
-        ]
-    },
-    "filename_case": 0,
-    "render_drafts": false,
-    "post_asset_folder": false,
-    "relative_link": false,
-    "future": true,
-    "highlight": {
-        "enable": true,
-        "line_number": true,
-        "auto_detect": false,
-        "tab_replace": "  ",
-        "wrap": false,
-        "hljs": false
-    },
-    "prismjs": {
-        "enable": false
-    },
-    "index_generator": {
-        "path": "",
-        "per_page": 10,
-        "order_by": "-date"
-    },
-    "default_category": "uncategorized",
-    "category_map": null,
-    "tag_map": null,
-    "meta_generator": true,
-    "date_format": "YYYY-MM-DD",
-    "time_format": "HH:mm:ss",
-    "updated_option": "mtime",
+  "title": "Static Blog Generator Demo",
+  "description": "Static Blog Generator Demo",
+  "keywords": null,
+  "author": "Dimas Lanjaka",
+  "language": "en",
+  "timezone": "Asia/Jakarta",
+  "url": "http://www.webmanajemen.com/static-blog-generator",
+  "root": "/static-blog-generator/",
+  "permalink": ":title.html",
+  "permalink_defaults": null,
+  "pretty_urls": {
+    "trailing_index": true,
+    "trailing_html": true
+  },
+  "source_dir": "source",
+  "public_dir": "public",
+  "tag_dir": "tags",
+  "archive_dir": "archives",
+  "category_dir": "categories",
+  "code_dir": "downloads/code",
+  "i18n_dir": ":lang",
+  "skip_render": null,
+  "new_post_name": ":title.md",
+  "default_layout": "post",
+  "titlecase": false,
+  "external_link": {
+    "enable": true,
+    "field": "site",
+    "exclude": [
+      "webmanajemen.com"
+    ]
+  },
+  "filename_case": 0,
+  "render_drafts": false,
+  "post_asset_folder": false,
+  "relative_link": false,
+  "future": true,
+  "highlight": {
+    "enable": true,
+    "line_number": true,
+    "auto_detect": false,
+    "tab_replace": "  ",
+    "wrap": false,
+    "hljs": false
+  },
+  "prismjs": {
+    "enable": false
+  },
+  "index_generator": {
+    "path": "",
     "per_page": 10,
-    "pagination_dir": "page",
-    "include": null,
-    "exclude": null,
-    "ignore": null,
-    "theme": "butterfly",
-    "markdown": {
-        "preset": "default",
-        "render": {
-            "html": true,
-            "xhtmlOut": false,
-            "langPrefix": "language-",
-            "breaks": true,
-            "linkify": true,
-            "typographer": true,
-            "quotes": "“”‘’"
-        },
-        "enable_rules": null,
-        "disable_rules": null,
-        "plugins": null,
-        "anchors": {
-            "level": 2,
-            "collisionSuffix": "",
-            "permalink": false,
-            "permalinkClass": "header-anchor",
-            "permalinkSide": "left",
-            "permalinkSymbol": "¶",
-            "case": 0,
-            "separator": "-"
-        }
+    "order_by": "-date"
+  },
+  "default_category": "uncategorized",
+  "category_map": null,
+  "tag_map": null,
+  "meta_generator": true,
+  "date_format": "YYYY-MM-DD",
+  "time_format": "HH:mm:ss",
+  "updated_option": "mtime",
+  "per_page": 10,
+  "pagination_dir": "page",
+  "include": null,
+  "exclude": null,
+  "ignore": null,
+  "theme": "butterfly",
+  "markdown": {
+    "preset": "default",
+    "render": {
+      "html": true,
+      "xhtmlOut": false,
+      "langPrefix": "language-",
+      "breaks": true,
+      "linkify": true,
+      "typographer": true,
+      "quotes": "“”‘’"
     },
-    "browsersync": {
-        "logLevel": "warn",
-        "ghostMode": {
-            "scroll": true
-        },
-        "instanceName": "uniqueString"
-    },
-    "generator": {
-        "cache": true
-    },
-    "deploy": {
-        "type": "git",
-        "repo": "",
-        "branch": "gh-pages",
-        "username": "",
-        "email": "",
-        "message": "{{ now('YYYY-MM-DD HH:mm:ss') }}"
-    },
-    "sitemap": {
-        "tags": true,
-        "categories": true,
-        "rel": true,
-        "yoast": true,
-        "path": [
-            "sitemap.xml",
-            "sitemap.txt"
-        ]
-    },
-    "tags": {
-        "lowercase": true,
-        "assign": null,
-        "mapper": {
-            "JS": "Javascript",
-            "TS": "Typescript"
-        }
-    },
-    "categories": {
-        "lowercase": true,
-        "assign": {
-            "TS": "Programming",
-            "JS": "Programming",
-            "Typescript": "Programming",
-            "Javascript": "Programming",
-            "GitHub": "Programming"
-        },
-        "mapper": {
-            "JS": "Javascript",
-            "TS": "Typescript"
-        }
+    "enable_rules": null,
+    "disable_rules": null,
+    "plugins": null,
+    "anchors": {
+      "level": 2,
+      "collisionSuffix": "",
+      "permalink": false,
+      "permalinkClass": "header-anchor",
+      "permalinkSide": "left",
+      "permalinkSymbol": "¶",
+      "case": 0,
+      "separator": "-"
     }
+  },
+  "browsersync": {
+    "logLevel": "warn",
+    "ghostMode": {
+      "scroll": true
+    },
+    "instanceName": "uniqueString"
+  },
+  "generator": {
+    "cache": true
+  },
+  "deploy": {
+    "type": "git",
+    "repo": "",
+    "branch": "gh-pages",
+    "username": "",
+    "email": "",
+    "message": "{{ now('YYYY-MM-DD HH:mm:ss') }}"
+  },
+  "tags": {
+    "lowercase": false,
+    "assign": {},
+    "mapper": {}
+  },
+  "categories": {
+    "lowercase": false,
+    "assign": {},
+    "mapper": {}
+  }
 }
