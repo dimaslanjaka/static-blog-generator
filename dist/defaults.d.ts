@@ -106,34 +106,15 @@ export declare function getDefaultConfig(): {
         email: string;
         message: string;
     };
-    sitemap: {
-        tags: boolean;
-        categories: boolean;
-        rel: boolean;
-        yoast: boolean;
-        path: string[];
-    };
     tags: {
         lowercase: boolean;
-        assign: null;
-        mapper: {
-            JS: string;
-            TS: string;
-        };
+        assign: {};
+        mapper: {};
     };
     categories: {
         lowercase: boolean;
-        assign: {
-            TS: string;
-            JS: string;
-            Typescript: string;
-            Javascript: string;
-            GitHub: string;
-        };
-        mapper: {
-            JS: string;
-            TS: string;
-        };
+        assign: {};
+        mapper: {};
     };
 };
 export declare function getDefaultConfigYaml(): string;

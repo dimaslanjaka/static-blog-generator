@@ -1,2 +1,2 @@
 /// <reference types="node" />
-export declare function gulpDebug(): import("stream").Transform;
+export default function gulpDebug(): import("stream").Transform;
