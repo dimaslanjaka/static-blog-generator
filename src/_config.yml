@@ -15,25 +15,16 @@ deploy:
 
 ## Categories and Tags
 tags:
-  lowercase: true # turn all terms to be lowercase
+  lowercase: false # turn all terms to be lowercase
   ## Assign existing tag to new tag
   assign:
   ### Replace Tag to New Tag
   mapper:
-    JS: Javascript
-    TS: Typescript
 
 categories:
-  lowercase: true # turn all terms to be lowercase
+  lowercase: false # turn all terms to be lowercase
   ## Assign existing category to new category
   ### Auto add category on existing category
   assign:
-    TS: Programming
-    JS: Programming
-    Typescript: Programming
-    Javascript: Programming
-    GitHub: Programming
   ### Replace Category to New Category
   mapper:
-    JS: Javascript
-    TS: Typescript
