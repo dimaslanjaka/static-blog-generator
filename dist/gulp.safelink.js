@@ -7,6 +7,7 @@ var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var safelinkify_1 = tslib_1.__importDefault(require("safelinkify"));
 var through2_1 = tslib_1.__importDefault(require("through2"));
 var gulp_config_1 = require("./gulp.config");
+var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
 function safelinkProcess(_done, cwd) {
     var _this = this;
     return new Promise(function (resolve) {
@@ -81,7 +82,7 @@ function safelinkProcess(_done, cwd) {
                             }
                             _a.label = 2;
                         case 2:
-                            console.log('cannot parse', file.path);
+                            logger_1.default.log('cannot parse', file.path);
                             next();
                             return [2];
                     }

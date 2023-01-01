@@ -4,6 +4,7 @@ import sf, { SafelinkOptions } from 'safelinkify';
 import through2 from 'through2';
 import { SrcOptions } from 'vinyl-fs';
 import { getConfig } from './gulp.config';
+import Logger from './utils/logger';
 
 /**
  * Process Safelink on Deploy Dir
@@ -84,12 +85,12 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
               const content = file.contents.toString('utf-8');
               const parsed = await safelink.parse(content);
               if (typeof parsed === 'string') {
-                // console.log(parsed);
+                // Logger.log(parsed);
                 file.contents = Buffer.from(parsed);
                 return next(null, file);
               }
             }
-            console.log('cannot parse', file.path);
+            Logger.log('cannot parse', file.path);
             // drop fails
             next();
           })

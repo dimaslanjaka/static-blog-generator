@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import through2 from 'through2';
 import { join } from 'upath';
 import { getConfig } from './gulp.config';
+import Logger from './utils/logger';
 import { replacePath } from './utils/string';
 
 /**
@@ -10,14 +11,14 @@ import { replacePath } from './utils/string';
  * @returns
  */
 function standaloneRunner() {
-  console.log('[standalone] Running scripts...\n');
+  Logger.log('[standalone] Running scripts...\n');
   return gulp
     .src(join(getConfig().cwd, '**/_*.standalone.js'), { cwd: getConfig().cwd, ignore: ['**/tmp/**'] })
     .pipe(
       through2.obj(async function (file, _enc, next) {
-        console.log('='.repeat(10) + ' input ' + '='.repeat(10));
-        console.log(`node ${await replacePath(file.path, getConfig().cwd, '')}`);
-        console.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
+        Logger.log('='.repeat(10) + ' input ' + '='.repeat(10));
+        Logger.log(`node ${await replacePath(file.path, getConfig().cwd, '')}`);
+        Logger.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
         const child = spawn('node', [file.path], { stdio: 'inherit' });
         child.on('close', () => {
           // drop file
@@ -27,7 +28,7 @@ function standaloneRunner() {
     )
     .pipe(gulp.dest(join(getConfig().cwd, 'tmp/standalone')))
     .once('end', function () {
-      console.log('\n[standalone] stopped');
+      Logger.log('\n[standalone] stopped');
     });
 }
 

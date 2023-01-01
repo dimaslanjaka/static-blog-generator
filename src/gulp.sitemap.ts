@@ -13,6 +13,7 @@ import { commonIgnore, getConfig, setConfig } from './gulp.config';
 import { yoastSeo } from './sitemap';
 import { array_remove_empty, array_unique } from './utils/array';
 import { writefile } from './utils/fm';
+import Logger from './utils/logger';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
 
@@ -77,7 +78,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
             if (crawled.has(url) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url)) continue;
 
             crawled.add(url);
-            console.log('[depth]', ii, url);
+            Logger.log('[depth]', ii, url);
             await generateSitemap(url, deep).then(() => writeSitemap());
           }
         }
@@ -127,14 +128,12 @@ export function hexoGenerateSitemap() {
           return yoastSeo(instance);
         }
 
-        if (!config.sitemap) return console.log('[sitemap] config.sitemap not configured in _config.yml');
+        if (!config.sitemap) return Logger.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
         const { skip_render } = config;
 
         if (!sitemap.tags || !sitemap.categories) {
-          return console.log(
-            '[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml'
-          );
+          return Logger.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
         }
         const skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
 

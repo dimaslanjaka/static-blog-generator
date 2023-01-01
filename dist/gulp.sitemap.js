@@ -17,6 +17,7 @@ var gulp_config_1 = require("./gulp.config");
 var sitemap_1 = require("./sitemap");
 var array_1 = require("./utils/array");
 var fm_1 = require("./utils/fm");
+var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
 var noop_1 = tslib_1.__importDefault(require("./utils/noop"));
 var nunjucks_env_1 = tslib_1.__importDefault(require("./utils/nunjucks-env"));
 var sitemapTXT = (0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, (0, gulp_config_1.getConfig)().public_dir || 'public', 'sitemap.txt');
@@ -78,7 +79,7 @@ function generateSitemap(url, deep) {
                         if (crawled.has(url_1) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url_1))
                             return [3, 4];
                         crawled.add(url_1);
-                        console.log('[depth]', ii, url_1);
+                        logger_1.default.log('[depth]', ii, url_1);
                         return [4, generateSitemap(url_1, deep).then(function () { return writeSitemap(); })];
                     case 3:
                         _a.sent();
@@ -119,11 +120,11 @@ function hexoGenerateSitemap() {
                     return (0, sitemap_1.yoastSeo)(instance);
                 }
                 if (!config.sitemap)
-                    return console.log('[sitemap] config.sitemap not configured in _config.yml');
+                    return logger_1.default.log('[sitemap] config.sitemap not configured in _config.yml');
                 var locals = instance.locals;
                 var skip_render = config.skip_render;
                 if (!sitemap.tags || !sitemap.categories) {
-                    return console.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
+                    return logger_1.default.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
                 }
                 var skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
                 if (Array.isArray(skip_render)) {
