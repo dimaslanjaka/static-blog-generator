@@ -189,19 +189,27 @@ export function copyAllPosts() {
               // process tags and categories
               const array = ['tags', 'categories'];
               for (let i = 0; i < array.length; i++) {
-                const label = array[i];
-                if (parse.metadata[label]) {
+                const groupLabel = array[i];
+                if (parse.metadata[groupLabel]) {
                   // label assign
-                  if (config[label]?.assign) {
-                    console.log(config[label].assign);
-                  }
-                  // label mapper
-                  if (config[label]?.mapper) {
-                    for (const oldLabel in config[label].mapper) {
-                      const index = parse.metadata[label].findIndex((str: string) => str == oldLabel);
+                  if (config[groupLabel]?.assign) {
+                    for (const oldLabel in config[groupLabel].assign) {
+                      const newLabel = config[groupLabel].assign[oldLabel];
+                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
                       if (index !== -1) {
-                        parse.metadata[label][index] = config[label].mapper[oldLabel];
+                        parse.metadata[groupLabel] = newLabel;
+                      }
+                    }
+                  }
+                  // label mapper
+                  if (config[groupLabel]?.mapper) {
+                    for (const oldLabel in config[groupLabel].mapper) {
+                      const newLabel = config[groupLabel].mapper[oldLabel];
+                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+
+                      if (index !== -1) {
+                        parse.metadata[groupLabel][index] = newLabel;
                       }
                     }
                   }
