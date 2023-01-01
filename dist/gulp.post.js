@@ -135,7 +135,7 @@ function copyAllPosts() {
         .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes, dot: true })
         .pipe((0, gulp_cache_1.gulpCached)({ name: 'post' }))
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-        var contents, parse, array, i, label, _loop_1, oldLabel, build;
+        var contents, parse, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build;
         var _a, _b, _c, _d, _e;
         return tslib_1.__generator(this, function (_f) {
             switch (_f.label) {
@@ -168,20 +168,30 @@ function copyAllPosts() {
                     if (parse && parse.metadata) {
                         array = ['tags', 'categories'];
                         for (i = 0; i < array.length; i++) {
-                            label = array[i];
-                            if (parse.metadata[label]) {
-                                if ((_b = config[label]) === null || _b === void 0 ? void 0 : _b.mapper) {
+                            groupLabel = array[i];
+                            if (parse.metadata[groupLabel]) {
+                                if ((_b = config[groupLabel]) === null || _b === void 0 ? void 0 : _b.assign) {
                                     _loop_1 = function (oldLabel) {
-                                        var index = parse.metadata[label].findIndex(function (str) { return str == oldLabel; });
-                                        if ((_c = parse.metadata) === null || _c === void 0 ? void 0 : _c.title.includes('Mapper')) {
-                                            console.log(parse.metadata.tags, index);
-                                        }
+                                        var newLabel = config[groupLabel].assign[oldLabel];
+                                        var index = parse.metadata[groupLabel].findIndex(function (str) { return str == oldLabel; });
                                         if (index !== -1) {
-                                            parse.metadata[label][index] = config[label].mapper[oldLabel];
+                                            parse.metadata[groupLabel] = newLabel;
                                         }
                                     };
-                                    for (oldLabel in config[label].mapper) {
+                                    for (oldLabel in config[groupLabel].assign) {
                                         _loop_1(oldLabel);
+                                    }
+                                }
+                                if ((_c = config[groupLabel]) === null || _c === void 0 ? void 0 : _c.mapper) {
+                                    _loop_2 = function (oldLabel) {
+                                        var newLabel = config[groupLabel].mapper[oldLabel];
+                                        var index = parse.metadata[groupLabel].findIndex(function (str) { return str == oldLabel; });
+                                        if (index !== -1) {
+                                            parse.metadata[groupLabel][index] = newLabel;
+                                        }
+                                    };
+                                    for (oldLabel in config[groupLabel].mapper) {
+                                        _loop_2(oldLabel);
                                     }
                                 }
                                 if ((_d = config.tags) === null || _d === void 0 ? void 0 : _d.lowercase) {
