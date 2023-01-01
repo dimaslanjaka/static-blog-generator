@@ -135,7 +135,7 @@ function copyAllPosts() {
         .src(['**/*', '**/*.*', '*.*'], { cwd: sourceDir, ignore: excludes, dot: true })
         .pipe((0, gulp_cache_1.gulpCached)({ name: 'post' }))
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-        var contents, parse, build;
+        var contents, parse, array, i, label, _loop_1, oldLabel, build;
         var _a, _b, _c, _d, _e;
         return tslib_1.__generator(this, function (_f) {
             switch (_f.label) {
@@ -166,12 +166,28 @@ function copyAllPosts() {
                 case 1:
                     parse = _f.sent();
                     if (parse && parse.metadata) {
-                        if ((_b = config.tags) === null || _b === void 0 ? void 0 : _b.lowercase) {
-                            parse.metadata.tags = ((_c = parse.metadata.tags) === null || _c === void 0 ? void 0 : _c.map(function (str) { return str.toLowerCase(); })) || [];
-                        }
-                        if ((_d = config.categories) === null || _d === void 0 ? void 0 : _d.lowercase) {
-                            parse.metadata.categories =
-                                ((_e = parse.metadata.categories) === null || _e === void 0 ? void 0 : _e.map(function (str) { return str.toLowerCase(); })) || [];
+                        array = ['tags', 'categories'];
+                        for (i = 0; i < array.length; i++) {
+                            label = array[i];
+                            if (parse.metadata[label]) {
+                                if ((_b = config[label]) === null || _b === void 0 ? void 0 : _b.mapper) {
+                                    _loop_1 = function (oldLabel) {
+                                        var index = parse.metadata[label].findIndex(function (str) { return str == oldLabel; });
+                                        if ((_c = parse.metadata) === null || _c === void 0 ? void 0 : _c.title.includes('Mapper')) {
+                                            console.log(parse.metadata.tags, index);
+                                        }
+                                        if (index !== -1) {
+                                            parse.metadata[label][index] = config[label].mapper[oldLabel];
+                                        }
+                                    };
+                                    for (oldLabel in config[label].mapper) {
+                                        _loop_1(oldLabel);
+                                    }
+                                }
+                                if ((_d = config.tags) === null || _d === void 0 ? void 0 : _d.lowercase) {
+                                    parse.metadata.tags = ((_e = parse.metadata.tags) === null || _e === void 0 ? void 0 : _e.map(function (str) { return str.toLowerCase(); })) || [];
+                                }
+                            }
                         }
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         file.contents = Buffer.from(build);
