@@ -15,7 +15,6 @@ var SBG = (function () {
     function SBG(cwd) {
         if (cwd === void 0) { cwd = null; }
         var _this = this;
-        this.cwd = process.cwd();
         this.config = (0, gulp_config_1.getConfig)();
         this.setConfig = gulp_config_1.setConfig;
         this.getConfig = gulp_config_1.getConfig;
