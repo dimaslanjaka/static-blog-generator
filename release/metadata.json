@@ -3,10 +3,10 @@
     "hash": "cd47424f1823086cd3b0b6e1b95a0d7ec79fded8"
   },
   "/release/hexo-post-parser.tgz": {
-    "hash": "eba1d0b6338b77a84c023408184737f42925b66d"
+    "hash": "2e2565567040076c3a59fe06142ab456bdead348"
   },
   "/package-lock.json": {
-    "hash": "961c38b39188680ef4ff72855052a0be966368a8"
+    "hash": "afdc9bb81bc73d82e2fb8754b0a9e1d68ea7cc15"
   },
   "/release/hexo-post-parser-1.1.16.tgz": {
     "hash": "cc5ffbbf79152d18fc78ba1ca6784b0dceef98fb"
@@ -19,5 +19,8 @@
   },
   "/release/hexo-post-parser-1.1.21.tgz": {
     "hash": "eba1d0b6338b77a84c023408184737f42925b66d"
+  },
+  "/release/hexo-post-parser-1.1.22.tgz": {
+    "hash": "2e2565567040076c3a59fe06142ab456bdead348"
   }
 }
