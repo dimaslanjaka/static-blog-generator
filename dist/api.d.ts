@@ -1,7 +1,10 @@
 /// <reference types="node" />
+import { getConfig, setConfig } from './gulp.config';
 declare class SBG {
     cwd: string;
     config: import("./gulp.config").ProjConf;
+    setConfig: typeof setConfig;
+    getConfig: typeof getConfig;
     constructor(cwd?: null | string);
     standalone: () => NodeJS.ReadWriteStream;
     seo: () => NodeJS.ReadWriteStream;
