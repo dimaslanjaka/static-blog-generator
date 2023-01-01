@@ -1,3 +1,4 @@
+import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
 import HexoConfig from 'hexo/HexoConfig';
@@ -48,11 +49,11 @@ export interface LabelMapper {
   /**
    * add old label with new label
    */
-  assign: Record<string, string> | undefined;
+  assign: Record<string, string> | undefined | null;
   /**
    * replace old label with new label
    */
-  mapper: Record<string, string> | undefined;
+  mapper: Record<string, string> | undefined | null;
 }
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
@@ -62,7 +63,7 @@ let settledConfig = getDefaultConfig() as Record<string, any>;
  * @param obj
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
-  settledConfig = Object.assign({}, settledConfig, obj);
+  settledConfig = deepmerge({}, settledConfig, obj);
   return getConfig(false);
 }
 

@@ -12,6 +12,9 @@ import noop from './utils/noop';
 class SBG {
   cwd: string;
   config = getConfig();
+  setConfig = setConfig;
+  getConfig = getConfig;
+
   /**
    * Static blog generator
    * @param cwd base folder
