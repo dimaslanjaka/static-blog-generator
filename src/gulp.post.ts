@@ -194,10 +194,8 @@ export function copyAllPosts() {
                   // label mapper
                   if (config[label]?.mapper) {
                     for (const oldLabel in config[label].mapper) {
-                      const index = parse.metadata[label].findIndex((str) => str == oldLabel);
-                      if (parse.metadata?.title.includes('Mapper')) {
-                        console.log(parse.metadata.tags, index);
-                      }
+                      const index = parse.metadata[label].findIndex((str: string) => str == oldLabel);
+
                       if (index !== -1) {
                         parse.metadata[label][index] = config[label].mapper[oldLabel];
                       }
