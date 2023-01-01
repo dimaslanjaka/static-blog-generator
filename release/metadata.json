@@ -19,11 +19,11 @@
   },
   "/package-lock.json": {
     "integrity": {
-      "sha1": "5bab90745db3f035629ca6cbb563cac065eceede",
-      "sha256": "00DH4t/cAGfiON+03/6bX+3ygesLZExIKupxAgeDSS8=",
-      "md5": "7e491a05e845b88661ce23d6a3653848",
-      "sha512": "wT52HPvhRz4619vXe6M1Kh88wPp6TLfnUH4NL7yolJQSV65BmrrLQ0h81Hr1Qf4SHjnN7uoXr37Dzqd1MOdQPQ=="
+      "sha1": "30473456b4ac547cdca6853909c5a46e8208dc36",
+      "sha256": "uA7LuOq6UcqzFr/SLc8brKtZMFZeifyRkrNNe14fuWo=",
+      "md5": "7407cd4b740d71b744cd75c4db21ac84",
+      "sha512": "Oio+L6UnT8mMgyahqYBdvyCzfkpFqXGzyHHIeGMFq6t+mny8JPo/m84kzGX7Pr9fKUQ/Sh1XbqOYdiuCbOYlpA=="
     },
-    "size": "590.76 KB"
+    "size": "589.73 KB"
   }
 }
