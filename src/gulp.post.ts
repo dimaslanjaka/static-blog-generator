@@ -186,15 +186,30 @@ export function copyAllPosts() {
               sourceFile: file.path
             });
             if (parse && parse.metadata) {
-              // tag mapper
-              if (config.tags?.lowercase) {
-                parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+              // process tags and categories
+              const array = ['tags', 'categories'];
+              for (let i = 0; i < array.length; i++) {
+                const label = array[i];
+                if (parse.metadata[label]) {
+                  // label mapper
+                  if (config[label]?.mapper) {
+                    for (const oldLabel in config[label].mapper) {
+                      const index = parse.metadata[label].findIndex((str) => str == oldLabel);
+                      if (parse.metadata?.title.includes('Mapper')) {
+                        console.log(parse.metadata.tags, index);
+                      }
+                      if (index !== -1) {
+                        parse.metadata[label][index] = config[label].mapper[oldLabel];
+                      }
+                    }
+                  }
+                  // label lowercase
+                  if (config.tags?.lowercase) {
+                    parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+                  }
+                }
               }
-              // category mapper
-              if (config.categories?.lowercase) {
-                parse.metadata.categories =
-                  (<string[]>parse.metadata.categories)?.map((str) => str.toLowerCase()) || [];
-              }
+
               const build = buildPost(parse);
               file.contents = Buffer.from(build);
               return callback(null, file);
