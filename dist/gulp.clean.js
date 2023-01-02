@@ -158,7 +158,7 @@ exports.del = del;
 gulp_1.default.task('clean', cleanDb);
 function cleanOldArchives(done) {
     return __awaiter(this, void 0, void 0, function () {
-        var config, logname, archives, categories, tags, folders, langDir, pagesDir, pages, hexo, count, promises, dumpfile, i, pathStr, finishNow;
+        var config, logname, archives, categories, tags, folders, langDir, pagesDir, pages, promises, dumpfile, i, pathStr, finishNow;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -183,15 +183,6 @@ function cleanOldArchives(done) {
                     folders.push.apply(folders, __spreadArray([], __read(pages), false));
                     _a.label = 2;
                 case 2:
-                    hexo = new hexo_1.default(config.base_dir);
-                    return [4, hexo.init().catch(noop_1.default)];
-                case 3:
-                    _a.sent();
-                    return [4, hexo.load().catch(noop_1.default)];
-                case 4:
-                    _a.sent();
-                    count = hexo.locals.get('posts').count();
-                    console.log(count);
                     promises = [];
                     dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/clean/dump.txt');
                     (0, fm_1.writefile)(dumpfile, folders.join(os_1.EOL));
@@ -214,7 +205,7 @@ function cleanOldArchives(done) {
                         return undefined;
                     };
                     return [4, bluebird_1.default.all(promises).then(finishNow).catch(finishNow)];
-                case 5:
+                case 3:
                     _a.sent();
                     return [2];
             }
