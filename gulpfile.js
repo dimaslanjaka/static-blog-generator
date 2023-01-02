@@ -136,15 +136,19 @@ gulp.task('compile', build);
 
 function buildWatch(done) {
   const watcher = gulp.watch(
-    'src/**/*.*',
-    { ignored: ['**/*.json', '**/dist', '**/release', '**/node_modules', '**/*.tgz', '**/tmp'], cwd: __dirname },
+    ['**/*.*', '*.*'],
+    {
+      ignored: ['**/*.json', '**/dist', '**/release', '**/node_modules', '*.tgz', '**/*.tgz', '**/tmp'],
+      cwd: join(__dirname, 'src'),
+      delay: 3000
+    },
     gulp.series(['compile'])
   );
   watcher.on('change', (filename) => {
     console.log('changed', filename);
     build();
   });
-  watcher.on('error', done);
+  watcher.on('error', console.log);
   watcher.once('close', done);
 }
 
