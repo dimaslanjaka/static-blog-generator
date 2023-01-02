@@ -110,7 +110,7 @@ gulp.task('default', gulp.series(tsc, docs));
 const build = async function () {
   const tmp = join(__dirname, 'tmp/gulp/watch');
   if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
-  const child = spawn('npm', ['run', 'build'], { cwd: __dirname });
+  const child = spawn('npm', ['run', 'build:nopack'], { cwd: __dirname });
 
   let data = '';
   for await (const chunk of child.stdout) {
