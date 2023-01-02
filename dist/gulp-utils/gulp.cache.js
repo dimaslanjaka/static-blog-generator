@@ -31,7 +31,7 @@ function gulpCached(options) {
         var cacheKey = (0, exports.md5)(file.path);
         var getCache = caches.getSync(cacheKey, '');
         var sha1sum = getShaFile(file.path);
-        var isCached = getCache.trim().length > 0 && sha1sum === getCache;
+        var isCached = typeof getCache === 'string' && getCache.trim().length > 0 && sha1sum === getCache;
         var paths = {
             dest: (0, upath_1.toUnix)(((_a = options.dest) === null || _a === void 0 ? void 0 : _a.replace(process.cwd(), '')) || ''),
             cwd: (0, upath_1.toUnix)(((_b = options.cwd) === null || _b === void 0 ? void 0 : _b.replace(process.cwd(), '')) || ''),
@@ -41,7 +41,7 @@ function gulpCached(options) {
             var destPath = (0, upath_1.join)((0, upath_1.toUnix)(options.dest), (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(options.cwd), ''));
             if (!(0, fs_1.existsSync)(destPath))
                 isCached = false;
-            logger_1.default.log(destPath);
+            logger_1.default.log('dest', destPath, 'cached', isCached);
         }
         logger_1.default.log(paths.source, 'cached', isCached);
         if (!isCached) {
