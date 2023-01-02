@@ -1,17 +1,44 @@
 "use strict";
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.autoSeo = void 0;
-var tslib_1 = require("tslib");
-var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
-var gulp_1 = tslib_1.__importDefault(require("gulp"));
-var gulp_dom_1 = tslib_1.__importDefault(require("gulp-dom"));
-var gulp_cache_1 = tslib_1.__importDefault(require("./gulp-utils/gulp.cache"));
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
+var gulp_1 = __importDefault(require("gulp"));
+var gulp_dom_1 = __importDefault(require("gulp-dom"));
+var gulp_cache_1 = __importDefault(require("./gulp-utils/gulp.cache"));
 var gulp_config_1 = require("./gulp.config");
-var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
+var logger_1 = __importDefault(require("./utils/logger"));
 function autoSeo(cwd) {
     var config = (0, gulp_config_1.getConfig)();
     var ignore = Array.isArray(config.exclude) ? config.exclude : [];
-    ignore.push.apply(ignore, tslib_1.__spreadArray([], tslib_1.__read(gulp_config_1.commonIgnore), false));
+    ignore.push.apply(ignore, __spreadArray([], __read(gulp_config_1.commonIgnore), false));
     return gulp_1.default
         .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd: cwd, ignore: ignore })
         .pipe((0, gulp_cache_1.default)({ name: 'seo' }))

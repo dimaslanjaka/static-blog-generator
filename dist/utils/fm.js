@@ -1,9 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createWriteStream = exports.writefile = void 0;
-var tslib_1 = require("tslib");
-var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
-var path_1 = tslib_1.__importDefault(require("path"));
+var fs_extra_1 = __importDefault(require("fs-extra"));
+var path_1 = __importDefault(require("path"));
 function writefile(file, content, opt) {
     if (opt === void 0) { opt = {}; }
     if (!fs_extra_1.default.existsSync(path_1.default.dirname(file)))
