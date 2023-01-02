@@ -1,11 +1,10 @@
 import crypto from 'crypto';
-import fs, { existsSync } from 'fs';
+import fs, { appendFileSync, existsSync } from 'fs';
 import { persistentCache } from 'persistent-cache';
 import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { getConfig } from '../gulp.config';
-import Logger from '../utils/logger';
 
 /**
  * calculate sha1sum of file
@@ -75,10 +74,16 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     if (options.dest && options.cwd) {
       const destPath = join(toUnix(options.dest), toUnix(file.path).replace(toUnix(options.cwd), ''));
       if (!existsSync(destPath)) isCached = false;
-      Logger.log('dest', destPath, 'cached', isCached);
+      // Logger.log('dest', destPath, 'cached', isCached);
     }
 
-    Logger.log(paths.source, 'cached', isCached);
+    // Logger.log(paths.source, 'cached', isCached);
+    // dump
+    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-cache.txt');
+    appendFileSync(
+      dumpfile,
+      `${paths.source} is cached ${isCached} with dest validation ${options.dest && options.cwd}`
+    );
 
     if (!isCached) {
       // not cached
