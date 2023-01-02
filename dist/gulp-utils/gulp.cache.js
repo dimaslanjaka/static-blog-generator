@@ -29,7 +29,7 @@ function gulpCached(options) {
     var _a;
     if (options === void 0) { options = {}; }
     var config = (0, gulp_config_1.getConfig)();
-    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
+    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'build'), prefix: '' }, options);
     var caches = (0, persistent_cache_1.persistentCache)(options);
     var caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter(function (str) { return /(dist|src)/i.test(str); })[1]) || '').slice(0, 5);
     var pid = process.pid;
@@ -51,7 +51,7 @@ function gulpCached(options) {
             if (!fs_extra_1.default.existsSync(destPath))
                 isCached = false;
         }
-        var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cache', "".concat(caller, "-").concat(pid, ".log"));
+        var dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/gulp-cache', "".concat(caller, "-").concat(pid, ".log"));
         (0, fm_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') +
             os_1.EOL, {
             append: true
