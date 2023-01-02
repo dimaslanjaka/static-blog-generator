@@ -9,6 +9,7 @@ var persistent_cache_1 = require("persistent-cache");
 var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("../gulp.config");
+var fm_1 = require("../utils/fm");
 var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 function getShaFile(file) {
     if (fs_1.default.statSync(file).isDirectory())
@@ -44,7 +45,9 @@ function gulpCached(options) {
                 isCached = false;
         }
         var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cache.txt');
-        (0, fs_1.appendFileSync)(dumpfile, "".concat(paths.source, " is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd));
+        (0, fm_1.writefile)(dumpfile, "".concat(paths.source, " is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd), {
+            append: true
+        });
         scheduler_1.default.add('dump gulp-cache', function () { return console.log(ansi_colors_1.default.yellowBright('gulp-cache'), dumpfile); });
         if (!isCached) {
             caches.setSync(cacheKey, sha1sum);
