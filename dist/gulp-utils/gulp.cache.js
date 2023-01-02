@@ -2,13 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gulpCached = exports.md5 = exports.getShaFile = void 0;
 var tslib_1 = require("tslib");
+var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var crypto_1 = tslib_1.__importDefault(require("crypto"));
 var fs_1 = tslib_1.__importStar(require("fs"));
 var persistent_cache_1 = require("persistent-cache");
 var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("../gulp.config");
-var logger_1 = tslib_1.__importDefault(require("../utils/logger"));
+var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 function getShaFile(file) {
     if (fs_1.default.statSync(file).isDirectory())
         return null;
@@ -41,9 +42,10 @@ function gulpCached(options) {
             var destPath = (0, upath_1.join)((0, upath_1.toUnix)(options.dest), (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(options.cwd), ''));
             if (!(0, fs_1.existsSync)(destPath))
                 isCached = false;
-            logger_1.default.log('dest', destPath, 'cached', isCached);
         }
-        logger_1.default.log(paths.source, 'cached', isCached);
+        var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cache.txt');
+        (0, fs_1.appendFileSync)(dumpfile, "".concat(paths.source, " is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd));
+        scheduler_1.default.add('dump gulp-cache', function () { return console.log(ansi_colors_1.default.yellowBright('gulp-cache'), dumpfile); });
         if (!isCached) {
             caches.setSync(cacheKey, sha1sum);
             if (typeof this.push === 'function')
