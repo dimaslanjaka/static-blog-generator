@@ -66,6 +66,7 @@ export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: strin
  */
 export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
   const caches = cacheLib(options);
+  const logname = 'gulp-' + ansiColors.grey('cached');
 
   const caller = data_to_hash_sync(
     'md5',
@@ -117,7 +118,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     };
 
     // dump
-    const dumpfile = join(process.cwd(), 'build/dump/gulp-cache', `${caller}-${pid}.log`);
+    const dumpfile = join(process.cwd(), 'build/dump/gulp-cached', `${caller}-${pid}.log`);
     writefile(
       dumpfile,
       `"${paths.source}" is cached ${isChanged()} with dest validation ${
@@ -128,8 +129,8 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
       }
     );
 
-    scheduler.add(`dump gulp-cache ${caller} ${pid}`, () =>
-      console.log(ansiColors.yellowBright('gulp-cache'), dumpfile)
+    scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
+      console.log(logname, dumpfile)
     );
 
     if (isChanged()) {

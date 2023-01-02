@@ -12,6 +12,7 @@ export default function gulpDebug() {
     new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || ''
   ).slice(0, 5);
   const pid = process.pid;
+  const logname = 'gulp-' + ansiColors.gray('debug');
 
   return through2.obj(function (file, _enc, cb) {
     // Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
@@ -22,8 +23,8 @@ export default function gulpDebug() {
       append: true
     });
 
-    scheduler.add(`dump gulp-debug ${caller} ${pid}`, () =>
-      console.log(ansiColors.yellowBright('gulp-debug'), dumpfile)
+    scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
+      console.log(logname, dumpfile)
     );
 
     if (typeof this.push === 'function') this.push(file);
