@@ -64,7 +64,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     const cacheKey = md5(file.path);
     const getCache = caches.getSync(cacheKey, '');
     const sha1sum = getShaFile(file.path);
-    let isCached = getCache.trim().length > 0 && sha1sum === getCache;
+    let isCached = typeof getCache === 'string' && getCache.trim().length > 0 && sha1sum === getCache;
     const paths = {
       dest: toUnix(options.dest?.replace(process.cwd(), '') || ''),
       cwd: toUnix(options.cwd?.replace(process.cwd(), '') || ''),
@@ -75,7 +75,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     if (options.dest && options.cwd) {
       const destPath = join(toUnix(options.dest), toUnix(file.path).replace(toUnix(options.cwd), ''));
       if (!existsSync(destPath)) isCached = false;
-      Logger.log(destPath);
+      Logger.log('dest', destPath, 'cached', isCached);
     }
 
     Logger.log(paths.source, 'cached', isCached);
