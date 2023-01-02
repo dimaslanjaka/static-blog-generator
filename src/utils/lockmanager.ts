@@ -7,7 +7,7 @@ import scheduler from './scheduler';
 const locks: LockManager[] = [];
 
 export default class LockManager {
-  folder = path.join(process.cwd(), 'tmp/cache/lock');
+  folder = path.join(process.cwd(), 'build/cache/lock');
   file: string;
   constructor(name: string) {
     this.file = path.join(this.folder, name, os.platform() + '-index.lock');

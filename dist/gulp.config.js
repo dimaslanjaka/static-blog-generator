@@ -57,6 +57,7 @@ exports.commonIgnore = [
     '**/404.html',
     '**/node_modules/**',
     '**/tmp/**',
+    '**/build/**',
     '**/.cache/**',
     '**/.vscode/**',
     '**/.frontmatter/**',
