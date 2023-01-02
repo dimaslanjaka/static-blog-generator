@@ -120,7 +120,7 @@ exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
     var lm = new lockmanager_1.default(copyAllPosts.name);
-    var logname = ansi_colors_1.default.whiteBright('post:copy');
+    var logname = 'post:' + ansi_colors_1.default.grey('copy');
     if (lm.exist()) {
         logger_1.default.log('another process still running');
         var writeStream = fm.createWriteStream((0, upath_1.join)(lm.folder, 'dummy.txt'), { flags: 'a' });
