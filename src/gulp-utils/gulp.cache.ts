@@ -1,6 +1,6 @@
 import ansiColors from 'ansi-colors';
 import crypto from 'crypto';
-import fs, { existsSync } from 'fs';
+import fs from 'fs-extra';
 import { EOL } from 'os';
 import { persistentCache } from 'persistent-cache';
 import internal from 'stream';
@@ -8,6 +8,7 @@ import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { getConfig } from '../gulp.config';
 import { writefile } from '../utils/fm';
+import { data_to_hash_sync } from '../utils/hash';
 import scheduler from '../utils/scheduler';
 
 /**
@@ -60,6 +61,13 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
   const config = getConfig();
   options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'tmp'), prefix: '' }, options);
   const caches = persistentCache(options);
+
+  const caller = data_to_hash_sync(
+    'md5',
+    new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || ''
+  ).slice(0, 5);
+  const pid = process.pid;
+
   return through2.obj(function (file, _enc, next) {
     // skip directory
     if (file.isDirectory()) return next(null, file);
@@ -77,22 +85,23 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     // check destination
     if (options.dest && options.cwd) {
       const destPath = join(toUnix(options.dest), toUnix(file.path).replace(toUnix(options.cwd), ''));
-      if (!existsSync(destPath)) isCached = false;
-      // Logger.log('dest', destPath, 'cached', isCached);
+      if (!fs.existsSync(destPath)) isCached = false;
     }
 
-    // Logger.log(paths.source, 'cached', isCached);
     // dump
-    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-cache.txt');
+    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-cache', `${caller}-${pid}.log`);
     writefile(
       dumpfile,
-      `${paths.source} is cached ${isCached} with dest validation ${options.dest && options.cwd}` + EOL,
+      `"${paths.source}" is cached ${isCached} with dest validation ${options.dest && options.cwd ? 'true' : 'false'}` +
+        EOL,
       {
         append: true
       }
     );
 
-    scheduler.add('dump gulp-cache', () => console.log(ansiColors.yellowBright('gulp-cache'), dumpfile));
+    scheduler.add(`dump gulp-cache ${caller} ${pid}`, () =>
+      console.log(ansiColors.yellowBright('gulp-cache'), dumpfile)
+    );
 
     if (!isCached) {
       // not cached
