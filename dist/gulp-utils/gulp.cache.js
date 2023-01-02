@@ -34,6 +34,7 @@ function gulpCached(options) {
     var _a;
     if (options === void 0) { options = {}; }
     var caches = cacheLib(options);
+    var logname = 'gulp-' + ansi_colors_1.default.grey('cached');
     var caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter(function (str) { return /(dist|src)/i.test(str); })[1]) || '').slice(0, 5);
     var pid = process.pid;
     return through2_1.default.obj(function (file, _enc, next) {
@@ -62,12 +63,12 @@ function gulpCached(options) {
             cwd: (0, upath_1.toUnix)(((_b = options.cwd) === null || _b === void 0 ? void 0 : _b.replace(process.cwd(), '')) || ''),
             source: (0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))
         };
-        var dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/gulp-cache', "".concat(caller, "-").concat(pid, ".log"));
+        var dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/gulp-cached', "".concat(caller, "-").concat(pid, ".log"));
         (0, fm_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isChanged(), " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') + os_1.EOL, {
             append: true
         });
-        scheduler_1.default.add("dump gulp-cache ".concat(caller, " ").concat(pid), function () {
-            return console.log(ansi_colors_1.default.yellowBright('gulp-cache'), dumpfile);
+        scheduler_1.default.add("".concat(logname, " dump ").concat(ansi_colors_1.default.cyan(caller), " pid ").concat(ansi_colors_1.default.yellow(String(pid))), function () {
+            return console.log(logname, dumpfile);
         });
         if (isChanged()) {
             caches.setSync(cacheKey, sha1sum);
