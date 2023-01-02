@@ -73,7 +73,7 @@ export function del(path: string) {
 gulp.task('clean', cleanDb);
 
 /**
- * clean old archives (categories, tags, pagination)
+ * clean old archives (categories, tags, pagination) from deployment directory
  */
 export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
   const config = getConfig();
