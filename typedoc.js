@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { join } = require('path');
 const path = require('upath');
 const pkgjson = require('./package.json');
 
@@ -101,7 +100,7 @@ const defaultOptions = {
   //includeVersion: true
 };
 
-const generatedOptionFile = join(__dirname, 'tmp/typedocs/options.json');
+const generatedOptionFile = path.join(__dirname, 'tmp/typedocs/options.json');
 let typedocOptions = defaultOptions;
 if (fs.existsSync(generatedOptionFile)) {
   typedocOptions = JSON.parse(readfile(generatedOptionFile, 'utf-8'));
@@ -142,6 +141,7 @@ function readfile(str, encoding = 'utf-8') {
  * @param {string} dest
  * @param {any} data
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function writefile(dest, data) {
   if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
   if (fs.existsSync(dest)) {

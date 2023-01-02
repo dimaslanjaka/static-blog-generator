@@ -422,9 +422,9 @@ export async function parsePost(
     if (isFile || options.sourceFile) {
       let publicFile: string;
       if (isFile) {
-        publicFile = toUnix(normalize(originalFile));
+        publicFile = normalize(originalFile);
       } else if (options.sourceFile) {
-        publicFile = toUnix(normalize(options.sourceFile));
+        publicFile = normalize(options.sourceFile);
       } else {
         throw new Error('cannot find public file of ' + meta.title);
       }
@@ -576,9 +576,9 @@ export async function parsePost(
 
       if (!meta.url) {
         const url = replaceArr(
-          toUnix(normalize(publicFile)),
+          normalize(publicFile),
           [
-            toUnix(normalize(process.cwd())),
+            normalize(process.cwd()),
             options.config?.source_dir + '/_posts/',
             'src-posts/',
             '_posts/'

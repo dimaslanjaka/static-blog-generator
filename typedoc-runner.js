@@ -10,6 +10,8 @@ const { EOL } = require('os');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const axios = require('axios');
 const { writeFile } = require('fs/promises');
+const fs = require('fs');
+const path = require('path');
 
 // required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
 // update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
