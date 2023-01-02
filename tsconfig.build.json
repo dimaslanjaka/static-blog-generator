@@ -5,7 +5,7 @@
     "declaration": true,
     "stripInternal": true,
     "outDir": "./dist",
-    "importHelpers": true,
+    "importHelpers": false,
     "esModuleInterop": true,
     "allowJs": true,
     "pretty": true,
@@ -16,13 +16,6 @@
     "allowUnreachableCode": true,
     "allowUnusedLabels": true
   },
-  "include": [
-    "./src/index.ts",
-    "./src/gulp.*.ts",
-    "./src/utils"
-  ],
-  "exclude": [
-    "*.test.js",
-    "*.test.ts"
-  ]
+  "include": ["./src/index.ts", "./src/gulp.*.ts", "./src/utils"],
+  "exclude": ["*.test.js", "*.test.ts"]
 }
