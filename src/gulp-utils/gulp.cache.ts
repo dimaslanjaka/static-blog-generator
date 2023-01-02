@@ -59,7 +59,7 @@ export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: strin
  */
 export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
   const config = getConfig();
-  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'tmp'), prefix: '' }, options);
+  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'build'), prefix: '' }, options);
   const caches = persistentCache(options);
 
   const caller = data_to_hash_sync(
@@ -89,7 +89,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     }
 
     // dump
-    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-cache', `${caller}-${pid}.log`);
+    const dumpfile = join(process.cwd(), 'build/dump/gulp-cache', `${caller}-${pid}.log`);
     writefile(
       dumpfile,
       `"${paths.source}" is cached ${isCached} with dest validation ${options.dest && options.cwd ? 'true' : 'false'}` +

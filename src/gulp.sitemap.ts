@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { existsSync, mkdirpSync, readFileSync } from 'fs-extra';
+import { existsSync, readFileSync } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { default as hexo } from 'hexo';
@@ -8,7 +8,7 @@ import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
 import { EOL } from 'os';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
-import { dirname, join } from 'upath';
+import { join } from 'upath';
 import { commonIgnore, getConfig, setConfig } from './gulp.config';
 import { yoastSeo } from './sitemap';
 import { array_remove_empty, array_unique } from './utils/array';
@@ -48,8 +48,6 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
     }
     Bluebird.all(promises)
       .then((results) => {
-        const saveto = join(__dirname, '../tmp/sitemap.json');
-        mkdirpSync(dirname(saveto));
         const mapped = {} as ReturnType<typeof sitemapCrawlerAsync>;
         results.forEach((sitemap) => {
           for (const key in sitemap) {
@@ -61,7 +59,12 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
             }
           }
         });
-        // writeFileSync(saveto, JSON.stringify(mapped, null, 2));
+
+        // dump
+        const saveto = join(process.cwd(), 'build/dump/sitemap/sitemap.json');
+        writefile(saveto, JSON.stringify(mapped, null, 2));
+
+        // return
         return mapped;
       })
       .then(async (results) => {
@@ -174,7 +177,10 @@ export function hexoGenerateSitemap() {
 
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
-        writefile(join(__dirname, '../tmp/sitemap.xml'), data);
+        // dump
+        writefile(join(process.cwd(), 'build/dump/sitemap/sitemap.xml'), data);
+
+        // write
         const sitemapXml = join(getConfig().cwd, config.public_dir, 'sitemap.xml');
         writefile(sitemapXml, data);
         instance.log.info('sitemap written', sitemapXml);

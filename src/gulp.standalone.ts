@@ -26,7 +26,7 @@ function standaloneRunner() {
         });
       })
     )
-    .pipe(gulp.dest(join(getConfig().cwd, 'tmp/standalone')))
+    .pipe(gulp.dest(join(getConfig().cwd, 'build/standalone')))
     .once('end', function () {
       Logger.log('\n[standalone] stopped');
     });

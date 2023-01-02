@@ -106,8 +106,6 @@ function generateSitemap(url, deep) {
         }
         bluebird_1.default.all(promises)
             .then(function (results) {
-            var saveto = (0, upath_1.join)(__dirname, '../tmp/sitemap.json');
-            (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(saveto));
             var mapped = {};
             results.forEach(function (sitemap) {
                 for (var key in sitemap) {
@@ -120,6 +118,8 @@ function generateSitemap(url, deep) {
                     }
                 }
             });
+            var saveto = (0, upath_1.join)(process.cwd(), 'build/dump/sitemap/sitemap.json');
+            (0, fm_1.writefile)(saveto, JSON.stringify(mapped, null, 2));
             return mapped;
         })
             .then(function (results) { return __awaiter(_this, void 0, void 0, function () {
@@ -220,7 +220,7 @@ function hexoGenerateSitemap() {
                     categories: catsCfg ? locals.get('categories').toArray() : []
                 });
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
-                (0, fm_1.writefile)((0, upath_1.join)(__dirname, '../tmp/sitemap.xml'), data);
+                (0, fm_1.writefile)((0, upath_1.join)(process.cwd(), 'build/dump/sitemap/sitemap.xml'), data);
                 var sitemapXml = (0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, config.public_dir, 'sitemap.xml');
                 (0, fm_1.writefile)(sitemapXml, data);
                 instance.log.info('sitemap written', sitemapXml);

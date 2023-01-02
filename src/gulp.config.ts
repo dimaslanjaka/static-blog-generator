@@ -119,6 +119,7 @@ export const commonIgnore = [
   '**/404.html', // skip 404
   '**/node_modules/**', // skip node_modules
   '**/tmp/**', // skip tmp
+  '**/build/**', // skip build
   '**/.cache/**', // skip common cache folder
   '**/.vscode/**', // skip vscode configuration folder
   '**/.frontmatter/**', // skip frontmatter vscode extension
