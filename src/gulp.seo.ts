@@ -5,8 +5,6 @@ import gulpCached from './gulp-utils/gulp.cache';
 import { commonIgnore, deployConfig, getConfig } from './gulp.config';
 import Logger from './utils/logger';
 
-const console = Logger;
-
 /**
  * Auto seo runner
  * @param cwd directory to scan htmls
