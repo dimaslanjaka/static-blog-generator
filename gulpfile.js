@@ -4,7 +4,7 @@ const { writeFile, readFile } = require('fs/promises');
 const GulpClient = require('gulp');
 const { EOL } = require('os');
 const { join, dirname, toUnix } = require('upath');
-const { watch, setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
+const { setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
 
 // copy non-javascript assets from src folder
 const copy = function () {
@@ -103,6 +103,40 @@ function tsc(done) {
 
 exports.copy = copy;
 exports.docs = docs;
-exports.watch = watch;
 exports.tsc = tsc;
 exports.default = GulpClient.series(tsc, docs);
+
+async function buildWatch(done) {
+  const build = async function () {
+    const child = spawn('npm', ['run', 'build'], { cwd: __dirname });
+
+    let data = '';
+    for await (const chunk of child.stdout) {
+      console.log('stdout chunk:');
+      console.log(String(chunk));
+      data += chunk;
+    }
+    let error = '';
+    for await (const chunk of child.stderr) {
+      console.error('stderr chunk:');
+      console.log(String(chunk));
+      error += chunk;
+    }
+    const exitCode = await new Promise((resolve, reject) => {
+      child.on('close', resolve);
+      child.on('error', reject);
+    });
+
+    if (exitCode) {
+      throw new Error(`subprocess error exit ${exitCode}, ${error}`);
+    }
+    return data;
+  };
+  await build();
+  const watcher = GulpClient.watch('src/**/*.*', { ignored: ['**/*.json'], cwd: __dirname });
+  watcher.on('close', done);
+  watcher.on('change', build);
+  watcher.on('error', done);
+  return watcher;
+}
+exports.watch = buildWatch;

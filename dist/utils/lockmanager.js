@@ -17,6 +17,7 @@ var LockManager = (function () {
         return (0, fm_1.writefile)(this.file, '');
     };
     LockManager.prototype.release = function () {
+        console.log(path_1.default.dirname(this.file), 'released');
         (0, fs_1.rmSync)(this.file);
     };
     LockManager.prototype.exist = function () {
