@@ -1,8 +1,9 @@
 import ansiColors from 'ansi-colors';
 import crypto from 'crypto';
 import fs from 'fs-extra';
+import { Nullable } from 'hexo-post-parser';
 import { EOL } from 'os';
-import { persistentCache } from 'persistent-cache';
+import { Opt, persistentCache } from 'persistent-cache';
 import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
@@ -50,6 +51,12 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
   verbose?: boolean;
 };
 
+function cacheLib(options: Partial<Opt> | undefined) {
+  const config = getConfig();
+  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'build'), prefix: '' }, options);
+  return persistentCache(options);
+}
+
 export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: string }): internal.Transform;
 
 /**
@@ -58,9 +65,7 @@ export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: strin
  * @returns
  */
 export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
-  const config = getConfig();
-  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'build'), prefix: '' }, options);
-  const caches = persistentCache(options);
+  const caches = cacheLib(options);
 
   const caller = data_to_hash_sync(
     'md5',
@@ -73,27 +78,51 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     if (file.isDirectory()) return next(null, file);
 
     const cacheKey = md5(file.path);
-    const getCache = caches.getSync(cacheKey, '');
     const sha1sum = getShaFile(file.path);
-    let isCached = typeof getCache === 'string' && getCache.trim().length > 0 && sha1sum === getCache;
+
+    /**
+     * Checks if file has been changed by comparing its current SHA1
+     * hash with the one in cache, if present. Returns true if the
+     * file hasChanged, false if not.
+     */
+    const isChanged = () => {
+      const currentHash = caches.getSync(cacheKey, '' as Nullable<string>);
+      const newHash = getShaFile(file.path);
+
+      // If no hash exists for file, consider file has changed
+      // cache has expired or cache file has been deleted
+      if (!currentHash) {
+        return true;
+      }
+
+      // Cache exists and hashes differ
+      if (currentHash && currentHash !== newHash) {
+        return true;
+      }
+
+      // check destination when cache exist
+      if (options.dest && options.cwd) {
+        const destPath = join(toUnix(options.dest), toUnix(file.path).replace(toUnix(options.cwd), ''));
+        return fs.existsSync(destPath);
+      }
+
+      // File has not changed, leave cache as-
+      return false;
+    };
+
     const paths = {
       dest: toUnix(options.dest?.replace(process.cwd(), '') || ''),
       cwd: toUnix(options.cwd?.replace(process.cwd(), '') || ''),
       source: toUnix(file.path.replace(process.cwd(), ''))
     };
 
-    // check destination
-    if (options.dest && options.cwd) {
-      const destPath = join(toUnix(options.dest), toUnix(file.path).replace(toUnix(options.cwd), ''));
-      if (!fs.existsSync(destPath)) isCached = false;
-    }
-
     // dump
     const dumpfile = join(process.cwd(), 'build/dump/gulp-cache', `${caller}-${pid}.log`);
     writefile(
       dumpfile,
-      `"${paths.source}" is cached ${isCached} with dest validation ${options.dest && options.cwd ? 'true' : 'false'}` +
-        EOL,
+      `"${paths.source}" is cached ${isChanged()} with dest validation ${
+        options.dest && options.cwd ? 'true' : 'false'
+      }` + EOL,
       {
         append: true
       }
@@ -103,7 +132,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
       console.log(ansiColors.yellowBright('gulp-cache'), dumpfile)
     );
 
-    if (!isCached) {
+    if (isChanged()) {
       // not cached
       caches.setSync(cacheKey, sha1sum);
       // push modified file
