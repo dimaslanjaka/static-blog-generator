@@ -19,6 +19,7 @@ export default class LockManager {
   }
 
   release() {
+    console.log(path.dirname(this.file), 'released');
     rmSync(this.file);
   }
 

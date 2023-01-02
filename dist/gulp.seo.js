@@ -8,7 +8,6 @@ var gulp_dom_1 = tslib_1.__importDefault(require("gulp-dom"));
 var gulp_cache_1 = tslib_1.__importDefault(require("./gulp-utils/gulp.cache"));
 var gulp_config_1 = require("./gulp.config");
 var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
-var console = logger_1.default;
 function autoSeo(cwd) {
     var config = (0, gulp_config_1.getConfig)();
     var ignore = Array.isArray(config.exclude) ? config.exclude : [];
