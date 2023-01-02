@@ -1,14 +1,16 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.commonIgnore = exports.deployConfig = exports.getConfig = exports.setConfig = void 0;
-var tslib_1 = require("tslib");
 var deepmerge_ts_1 = require("deepmerge-ts");
 var fs_1 = require("fs");
-var git_command_helper_1 = tslib_1.__importDefault(require("git-command-helper"));
+var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var path_1 = require("path");
-var true_case_path_1 = tslib_1.__importDefault(require("true-case-path"));
+var true_case_path_1 = __importDefault(require("true-case-path"));
 var upath_1 = require("upath");
-var yaml_1 = tslib_1.__importDefault(require("yaml"));
+var yaml_1 = __importDefault(require("yaml"));
 var defaults_1 = require("./defaults");
 var fm_1 = require("./utils/fm");
 var settledConfig = (0, defaults_1.getDefaultConfig)();
