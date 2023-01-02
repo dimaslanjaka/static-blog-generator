@@ -1,4 +1,5 @@
 import ansiColors from 'ansi-colors';
+import { EOL } from 'os';
 import path from 'path';
 import through2 from 'through2';
 import { toUnix } from 'upath';
@@ -11,7 +12,7 @@ export default function gulpDebug() {
 
     // dump
     const dumpfile = path.join(process.cwd(), 'tmp/dump/gulp-cache.txt');
-    writefile(dumpfile, `${toUnix(file.path.replace(process.cwd(), ''))}`, { append: true });
+    writefile(dumpfile, `${toUnix(file.path.replace(process.cwd(), ''))}` + EOL, { append: true });
 
     scheduler.add('dump gulp-debug', () => console.log(ansiColors.yellowBright('gulp-debug'), dumpfile));
 
