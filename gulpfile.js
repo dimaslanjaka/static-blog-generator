@@ -1,5 +1,6 @@
 const spawn = require('cross-spawn');
 const { existsSync, mkdirSync, appendFileSync } = require('fs');
+const { copyFile } = require('fs-extra');
 const { writeFile, readFile } = require('fs/promises');
 const gulp = require('gulp');
 const { EOL } = require('os');
@@ -7,10 +8,15 @@ const { join, dirname, toUnix } = require('upath');
 const { setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
 
 // copy non-javascript assets from src folder
-const copy = function () {
-  return gulp
+const copy = function (done) {
+  gulp
     .src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(join(__dirname, 'dist')));
+    .pipe(gulp.dest(join(__dirname, 'dist')))
+    .once('end', async function () {
+      // copy src/_config.json to dist/_config.json (prevent git changing values of dist)
+      await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.json'));
+      done();
+    });
 };
 
 /**
@@ -107,7 +113,7 @@ gulp.task('copy', copy);
 gulp.task('tsc', tsc);
 gulp.task('default', gulp.series(tsc, docs));
 
-const build = async function () {
+const buildNopack = async function () {
   const tmp = join(__dirname, 'tmp/gulp/watch');
   if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
   const child = spawn('npm', ['run', 'build:nopack'], { cwd: __dirname });
@@ -132,7 +138,7 @@ const build = async function () {
   }
   return data;
 };
-gulp.task('compile', build);
+gulp.task('compile', buildNopack);
 
 function buildWatch(done) {
   const watcher = gulp.watch(
@@ -146,7 +152,7 @@ function buildWatch(done) {
   );
   watcher.on('change', (filename) => {
     console.log('changed', filename);
-    build();
+    buildNopack();
   });
   watcher.on('error', console.log);
   watcher.once('close', done);
