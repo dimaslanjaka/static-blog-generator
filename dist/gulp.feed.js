@@ -1,15 +1,17 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
 var fs_1 = require("fs");
-var gulp_1 = tslib_1.__importDefault(require("gulp"));
-var gulp_dom_1 = tslib_1.__importDefault(require("gulp-dom"));
-var hexo_1 = tslib_1.__importDefault(require("hexo"));
+var gulp_1 = __importDefault(require("gulp"));
+var gulp_dom_1 = __importDefault(require("gulp-dom"));
+var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
-var nunjucks_1 = tslib_1.__importDefault(require("nunjucks"));
+var nunjucks_1 = __importDefault(require("nunjucks"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("./gulp.config");
-var nunjucks_env_1 = tslib_1.__importDefault(require("./utils/nunjucks-env"));
+var nunjucks_env_1 = __importDefault(require("./utils/nunjucks-env"));
 var env = (0, nunjucks_env_1.default)();
 gulp_1.default.task('feed', function (done) {
     var config = (0, gulp_config_1.getConfig)();

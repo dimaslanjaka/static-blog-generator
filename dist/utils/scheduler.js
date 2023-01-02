@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.bindProcessExit = void 0;
-var tslib_1 = require("tslib");
-var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var _log = typeof hexo !== 'undefined' ? hexo.log : console;
 var logname = ansi_colors_1.default.magentaBright('[scheduler]');
 var fns = [];

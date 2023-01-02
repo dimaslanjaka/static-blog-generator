@@ -1,10 +1,37 @@
 "use strict";
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = require("tslib");
 var fs_extra_1 = require("fs-extra");
 require("nodejs-package-types");
 var os_1 = require("os");
-var slugify_1 = tslib_1.__importDefault(require("slugify"));
+var slugify_1 = __importDefault(require("slugify"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("../gulp.config");
 var fm_1 = require("./fm");
@@ -41,8 +68,8 @@ var Logger = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.apply(void 0, tslib_1.__spreadArray([], tslib_1.__read(args), false));
-        this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        _log.apply(void 0, __spreadArray([], __read(args), false));
+        this.tracer.apply(this, __spreadArray([], __read(args), false));
     };
     Logger.tracer = function () {
         var _a;
