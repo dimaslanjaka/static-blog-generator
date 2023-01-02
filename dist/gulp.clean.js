@@ -6,6 +6,7 @@ var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var hexo_1 = tslib_1.__importDefault(require("hexo"));
+var os_1 = require("os");
 var upath_1 = require("upath");
 var util_1 = require("util");
 var gulp_config_1 = require("./gulp.config");
@@ -92,35 +93,70 @@ function del(path) {
 exports.del = del;
 gulp_1.default.task('clean', cleanDb);
 function cleanOldArchives(done) {
-    var config = (0, gulp_config_1.getConfig)();
-    var archives = (0, upath_1.join)(config.deploy.deployDir, config.archive_dir);
-    var categories = (0, upath_1.join)(config.deploy.deployDir, config.category_dir);
-    var tags = (0, upath_1.join)(config.deploy.deployDir, config.tag_dir);
-    var folders = [archives, tags, categories].filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
-    if (Array.isArray(config.language)) {
-        var langDir = config.language.map(function (path) { return (0, upath_1.join)(config.deploy.deployDir, path); });
-        folders.push.apply(folders, tslib_1.__spreadArray([], tslib_1.__read(langDir), false));
-    }
-    else if (typeof config.language === 'string' && String(config.language).trim().length > 0) {
-        folders.push((0, upath_1.join)(config.deploy.deployDir, String(config.language)));
-    }
-    var promises = [];
-    for (var i = 0; i < folders.length; i++) {
-        var pathStr = folders[i];
-        try {
-            if ((0, fs_extra_1.existsSync)(pathStr))
-                promises.push(del(pathStr).catch(noop_1.default));
-        }
-        catch (_a) {
-        }
-    }
-    var finishNow = function () {
-        if (typeof done === 'function')
-            done();
-        return undefined;
-    };
-    return bluebird_1.default.all(promises).then(finishNow).catch(finishNow);
+    return tslib_1.__awaiter(this, void 0, void 0, function () {
+        var config, archives, categories, tags, folders, langDir, pagesDir, pages, hexo, count, promises, dumpfile, i, pathStr, finishNow;
+        return tslib_1.__generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    config = (0, gulp_config_1.getConfig)();
+                    archives = (0, upath_1.join)(config.deploy.deployDir, config.archive_dir);
+                    categories = (0, upath_1.join)(config.deploy.deployDir, config.category_dir);
+                    tags = (0, upath_1.join)(config.deploy.deployDir, config.tag_dir);
+                    folders = [archives, tags, categories].filter(function (str) { return (0, fs_extra_1.existsSync)(str); });
+                    if (Array.isArray(config.language)) {
+                        langDir = config.language.map(function (path) { return (0, upath_1.join)(config.deploy.deployDir, path); });
+                        folders.push.apply(folders, tslib_1.__spreadArray([], tslib_1.__read(langDir), false));
+                    }
+                    else if (typeof config.language === 'string' && String(config.language).trim().length > 0) {
+                        folders.push((0, upath_1.join)(config.deploy.deployDir, String(config.language)));
+                    }
+                    pagesDir = (0, upath_1.join)(config.deploy.deployDir, 'page');
+                    if (!(0, fs_extra_1.existsSync)(pagesDir)) return [3, 2];
+                    return [4, (0, fs_extra_1.readdir)(pagesDir)];
+                case 1:
+                    pages = (_a.sent()).filter(function (str) { return /^\d+$/.test(str); }).map(function (str) { return (0, upath_1.join)(pagesDir, str); });
+                    folders.push.apply(folders, tslib_1.__spreadArray([], tslib_1.__read(pages), false));
+                    _a.label = 2;
+                case 2:
+                    hexo = new hexo_1.default(config.base_dir);
+                    return [4, hexo.init().catch(noop_1.default)];
+                case 3:
+                    _a.sent();
+                    return [4, hexo.load().catch(noop_1.default)];
+                case 4:
+                    _a.sent();
+                    count = hexo.locals.get('posts').count();
+                    console.log(count);
+                    promises = [];
+                    dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/clean/dump.txt');
+                    (0, fm_1.writefile)(dumpfile, folders.join(os_1.EOL));
+                    logger_1.default.log('list deleted files', dumpfile);
+                    for (i = 0; i < folders.length; i++) {
+                        pathStr = folders[i];
+                        try {
+                            if ((0, fs_extra_1.existsSync)(pathStr))
+                                promises.push(del(pathStr).catch(noop_1.default));
+                        }
+                        catch (_b) {
+                        }
+                    }
+                    finishNow = function (e) {
+                        if (e instanceof Error) {
+                            console.log('clean archives has some erros');
+                        }
+                        if (typeof done === 'function')
+                            done();
+                        return undefined;
+                    };
+                    return [4, bluebird_1.default.all(promises).then(finishNow).catch(finishNow)];
+                case 5:
+                    _a.sent();
+                    return [2];
+            }
+        });
+    });
 }
 exports.cleanOldArchives = cleanOldArchives;
 gulp_1.default.task('clean-archives', cleanOldArchives);
+gulp_1.default.task('clean-archive', cleanOldArchives);
 gulp_1.default.task('clean-all', gulp_1.default.series('clean', 'clean-archives'));
