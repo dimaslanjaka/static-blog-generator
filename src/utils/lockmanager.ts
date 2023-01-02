@@ -1,5 +1,5 @@
-import { existsSync, rmSync } from 'fs';
-import { platform } from 'os';
+import fs from 'fs-extra';
+import os from 'os';
 import path from 'path';
 import { writefile } from './fm';
 import scheduler from './scheduler';
@@ -10,7 +10,7 @@ export default class LockManager {
   folder = path.join(process.cwd(), 'tmp/cache/lock');
   file: string;
   constructor(name: string) {
-    this.file = path.join(this.folder, name, platform() + 'index.lock');
+    this.file = path.join(this.folder, name, os.platform() + '-index.lock');
     locks.push(this);
   }
 
@@ -20,11 +20,18 @@ export default class LockManager {
 
   release() {
     console.log(path.dirname(this.file), 'released');
-    rmSync(this.file);
+    if (!fs.existsSync(this.file)) return;
+    return fs.rmSync(this.file, { recursive: true });
+  }
+
+  releaseAsync() {
+    console.log(path.dirname(this.file), 'released');
+    if (!fs.existsSync(this.file)) return Promise.resolve();
+    return fs.rm(this.file, { recursive: true });
   }
 
   exist() {
-    return existsSync(this.file);
+    return fs.existsSync(this.file);
   }
 }
 
