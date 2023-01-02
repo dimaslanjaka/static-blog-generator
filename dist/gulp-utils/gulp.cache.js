@@ -35,7 +35,13 @@ function gulpCached(options) {
     if (options === void 0) { options = {}; }
     var caches = cacheLib(options);
     var logname = 'gulp-' + ansi_colors_1.default.grey('cached');
-    var caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter(function (str) { return /(dist|src)/i.test(str); })[1]) || '').slice(0, 5);
+    var caller;
+    if (options.name) {
+        caller = options.name;
+    }
+    else {
+        caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter(function (str) { return /(dist|src)/i.test(str); })[1]) || '').slice(0, 5);
+    }
     var pid = process.pid;
     return through2_1.default.obj(function (file, _enc, next) {
         var _a, _b;
