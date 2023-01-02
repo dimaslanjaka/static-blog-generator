@@ -25,12 +25,15 @@ function getShaFile(file) {
 exports.getShaFile = getShaFile;
 var md5 = function (data) { return crypto_1.default.createHash('md5').update(data).digest('hex'); };
 exports.md5 = md5;
+function cacheLib(options) {
+    var config = (0, gulp_config_1.getConfig)();
+    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'build'), prefix: '' }, options);
+    return (0, persistent_cache_1.persistentCache)(options);
+}
 function gulpCached(options) {
     var _a;
     if (options === void 0) { options = {}; }
-    var config = (0, gulp_config_1.getConfig)();
-    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'build'), prefix: '' }, options);
-    var caches = (0, persistent_cache_1.persistentCache)(options);
+    var caches = cacheLib(options);
     var caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter(function (str) { return /(dist|src)/i.test(str); })[1]) || '').slice(0, 5);
     var pid = process.pid;
     return through2_1.default.obj(function (file, _enc, next) {
@@ -38,28 +41,35 @@ function gulpCached(options) {
         if (file.isDirectory())
             return next(null, file);
         var cacheKey = (0, exports.md5)(file.path);
-        var getCache = caches.getSync(cacheKey, '');
         var sha1sum = getShaFile(file.path);
-        var isCached = typeof getCache === 'string' && getCache.trim().length > 0 && sha1sum === getCache;
+        var isChanged = function () {
+            var currentHash = caches.getSync(cacheKey, '');
+            var newHash = getShaFile(file.path);
+            if (!currentHash) {
+                return true;
+            }
+            if (currentHash && currentHash !== newHash) {
+                return true;
+            }
+            if (options.dest && options.cwd) {
+                var destPath = (0, upath_1.join)((0, upath_1.toUnix)(options.dest), (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(options.cwd), ''));
+                return fs_extra_1.default.existsSync(destPath);
+            }
+            return false;
+        };
         var paths = {
             dest: (0, upath_1.toUnix)(((_a = options.dest) === null || _a === void 0 ? void 0 : _a.replace(process.cwd(), '')) || ''),
             cwd: (0, upath_1.toUnix)(((_b = options.cwd) === null || _b === void 0 ? void 0 : _b.replace(process.cwd(), '')) || ''),
             source: (0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))
         };
-        if (options.dest && options.cwd) {
-            var destPath = (0, upath_1.join)((0, upath_1.toUnix)(options.dest), (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(options.cwd), ''));
-            if (!fs_extra_1.default.existsSync(destPath))
-                isCached = false;
-        }
         var dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/gulp-cache', "".concat(caller, "-").concat(pid, ".log"));
-        (0, fm_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') +
-            os_1.EOL, {
+        (0, fm_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isChanged(), " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') + os_1.EOL, {
             append: true
         });
         scheduler_1.default.add("dump gulp-cache ".concat(caller, " ").concat(pid), function () {
             return console.log(ansi_colors_1.default.yellowBright('gulp-cache'), dumpfile);
         });
-        if (!isCached) {
+        if (isChanged()) {
             caches.setSync(cacheKey, sha1sum);
             if (typeof this.push === 'function')
                 this.push(file);
