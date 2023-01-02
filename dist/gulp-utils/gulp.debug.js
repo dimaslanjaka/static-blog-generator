@@ -20,8 +20,8 @@ function gulpDebug() {
         (0, fm_1.writefile)(dumpfile, "".concat((0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))) + os_1.EOL, {
             append: true
         });
-        scheduler_1.default.add("dump gulp-debug ".concat(caller, " ").concat(pid), function () {
-            return console.log(ansi_colors_1.default.yellowBright('gulp-debug'), dumpfile);
+        scheduler_1.default.add("".concat(logname, " dump ").concat(ansi_colors_1.default.cyan(caller), " pid ").concat(ansi_colors_1.default.yellow(String(pid))), function () {
+            return console.log(logname, dumpfile);
         });
         if (typeof this.push === 'function')
             this.push(file);
