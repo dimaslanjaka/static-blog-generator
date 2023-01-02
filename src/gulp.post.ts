@@ -139,7 +139,7 @@ export function updatePost() {
 export function copyAllPosts() {
   // lock runner
   const lm = new LockManager(copyAllPosts.name);
-  const logname = ansiColors.whiteBright('post:copy');
+  const logname = 'post:' + ansiColors.grey('copy');
   // skip process when found
   if (lm.exist()) {
     Logger.log('another process still running');
