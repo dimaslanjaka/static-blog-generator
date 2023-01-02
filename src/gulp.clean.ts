@@ -101,12 +101,6 @@ export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
     folders.push(...pages);
   }
 
-  const hexo = new hexoLib(config.base_dir);
-  await hexo.init().catch(noop);
-  await hexo.load().catch(noop);
-  const count = hexo.locals.get('posts').count();
-  console.log(count);
-
   const promises: Promise<any>[] = [];
 
   // dump to file
