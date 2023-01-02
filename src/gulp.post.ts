@@ -1,6 +1,5 @@
 import ansiColors from 'ansi-colors';
 import frontMatter from 'front-matter';
-import { createWriteStream, writeFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
@@ -9,6 +8,7 @@ import { extname, join, toUnix } from 'upath';
 import gulpCached from './gulp-utils/gulp.cache';
 import gulpDebug from './gulp-utils/gulp.debug';
 import { commonIgnore, getConfig } from './gulp.config';
+import * as fm from './utils/fm';
 import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
@@ -108,7 +108,7 @@ export function updatePost() {
         // update original source post after process ends
         scheduler.add(oriPath, function () {
           const rebuild = buildPost(rBuild);
-          //writeFileSync(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
+          //writefile(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
           Logger.log(
             'write to',
             toUnix(oriPath).replace(toUnix(process.cwd()), ''),
@@ -116,7 +116,7 @@ export function updatePost() {
             '->',
             post.attributes.updated
           );
-          writeFileSync(oriPath, rebuild); // write original post
+          fm.writefile(oriPath, rebuild); // write original post
         });
 
         const build = buildPost(parse);
@@ -139,10 +139,11 @@ export function updatePost() {
 export function copyAllPosts() {
   // lock runner
   const lm = new LockManager(copyAllPosts.name);
+  const logname = ansiColors.whiteBright('post:copy');
   // skip process when found
   if (lm.exist()) {
     Logger.log('another process still running');
-    const writeStream = createWriteStream(join(lm.folder, 'dummy.txt'), { flags: 'a' });
+    const writeStream = fm.createWriteStream(join(lm.folder, 'dummy.txt'), { flags: 'a' });
     writeStream.write(String(new Date()));
     writeStream.close();
     return writeStream;
@@ -154,8 +155,8 @@ export function copyAllPosts() {
   const config = getConfig();
   const excludes: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push(...commonIgnore);
-  Logger.log(ansiColors.whiteBright('post:copy'), 'cwd', toUnix(process.cwd()));
-  Logger.log(ansiColors.whiteBright('post:copy'), 'copying source posts from', sourceDir);
+  Logger.log(logname, 'cwd', toUnix(process.cwd()));
+  Logger.log(logname, 'copying source posts from', sourceDir);
 
   return gulp
     .src('**/*.*', { cwd: toUnix(sourceDir), ignore: excludes })
@@ -223,7 +224,7 @@ export function copyAllPosts() {
             file.contents = Buffer.from(build);
             return callback(null, file);
           } else {
-            Logger.log('cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+            Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
           }
         }
         callback(null, file);
