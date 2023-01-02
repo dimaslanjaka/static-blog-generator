@@ -10,7 +10,7 @@ const argv = yargs.parse(process.argv);
 if (argv['update-version']) {
   updateVersion();
 } else {
-  build().then(updateVersion);
+  build(); //.then(updateVersion);
 }
 
 /**
