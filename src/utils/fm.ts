@@ -1,7 +1,7 @@
 // filemanager
 
-import { appendFileSync, existsSync, MakeDirectoryOptions, mkdirSync, writeFileSync } from 'fs';
-import { dirname } from 'path';
+import fs, { MakeDirectoryOptions } from 'fs-extra';
+import path from 'path';
 
 export interface writefileOpt extends MakeDirectoryOptions {
   append?: boolean;
@@ -45,17 +45,28 @@ export function writefile(file: string, content: string, opt: { async?: false } 
  */
 export function writefile(file: string, content: string, opt: writefileOpt = {}) {
   // create dirname when not exist
-  if (!existsSync(dirname(file))) mkdirSync(dirname(file), Object.assign({ recursive: true }, opt));
+  if (!fs.existsSync(path.dirname(file))) fs.mkdirSync(path.dirname(file), Object.assign({ recursive: true }, opt));
   const result = {
     file,
     append: false
   };
   if (opt.append) {
     result.append = true;
-    appendFileSync(file, content);
+    fs.appendFileSync(file, content);
   } else {
-    writeFileSync(file, content);
+    fs.writeFileSync(file, content);
   }
   if (opt.async) return Promise.resolve(result);
   return result;
+}
+
+/**
+ * create writestream (auto create dirname)
+ * @param dest
+ * @param options
+ * @returns
+ */
+export function createWriteStream(dest: string, options?: Parameters<typeof fs['createWriteStream']>[1]) {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest));
+  return fs.createWriteStream(dest, options);
 }
