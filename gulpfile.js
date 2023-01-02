@@ -113,7 +113,11 @@ gulp.task('copy', copy);
 gulp.task('tsc', tsc);
 gulp.task('default', gulp.series(tsc, docs));
 
+let running = false;
 const buildNopack = async function () {
+  if (running) return console.log('another build still running');
+  running = true;
+
   const tmp = join(__dirname, 'tmp/gulp/watch');
   if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
   const child = spawn('npm', ['run', 'build:nopack'], { cwd: __dirname });
@@ -134,8 +138,10 @@ const buildNopack = async function () {
   });
 
   if (exitCode) {
-    throw new Error(`subprocess error exit ${exitCode}, ${error}`);
+    console.log(`subprocess error exit ${exitCode}, ${error}`); // throw
   }
+
+  running = false;
   return data;
 };
 gulp.task('compile', buildNopack);
