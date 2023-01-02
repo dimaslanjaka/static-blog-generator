@@ -141,6 +141,7 @@ const buildNopack = async function () {
 gulp.task('compile', buildNopack);
 
 function buildWatch(done) {
+  gulp.series(['compile'])(null);
   const watcher = gulp.watch(
     ['**/*.*', '*.*'],
     {
@@ -152,7 +153,7 @@ function buildWatch(done) {
   );
   watcher.on('change', (filename) => {
     console.log('changed', filename);
-    buildNopack();
+    gulp.series(['compile'])(null);
   });
   watcher.on('error', console.log);
   watcher.once('close', done);
