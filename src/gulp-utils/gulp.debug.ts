@@ -1,8 +1,8 @@
 import ansiColors from 'ansi-colors';
-import fs from 'fs-extra';
 import path from 'path';
 import through2 from 'through2';
 import { toUnix } from 'upath';
+import { writefile } from '../utils/fm';
 import scheduler from '../utils/scheduler';
 
 export default function gulpDebug() {
@@ -11,7 +11,7 @@ export default function gulpDebug() {
 
     // dump
     const dumpfile = path.join(process.cwd(), 'tmp/dump/gulp-cache.txt');
-    fs.appendFileSync(dumpfile, `${toUnix(file.path.replace(process.cwd(), ''))}`);
+    writefile(dumpfile, `${toUnix(file.path.replace(process.cwd(), ''))}`, { append: true });
 
     scheduler.add('dump gulp-debug', () => console.log(ansiColors.yellowBright('gulp-debug'), dumpfile));
 
