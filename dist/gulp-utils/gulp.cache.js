@@ -1,16 +1,42 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gulpCached = exports.md5 = exports.getShaFile = void 0;
-var tslib_1 = require("tslib");
-var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
-var crypto_1 = tslib_1.__importDefault(require("crypto"));
-var fs_1 = tslib_1.__importStar(require("fs"));
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
+var crypto_1 = __importDefault(require("crypto"));
+var fs_1 = __importStar(require("fs"));
+var os_1 = require("os");
 var persistent_cache_1 = require("persistent-cache");
-var through2_1 = tslib_1.__importDefault(require("through2"));
+var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var gulp_config_1 = require("../gulp.config");
 var fm_1 = require("../utils/fm");
-var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
+var scheduler_1 = __importDefault(require("../utils/scheduler"));
 function getShaFile(file) {
     if (fs_1.default.statSync(file).isDirectory())
         return null;
@@ -45,7 +71,7 @@ function gulpCached(options) {
                 isCached = false;
         }
         var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cache.txt');
-        (0, fm_1.writefile)(dumpfile, "".concat(paths.source, " is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd), {
+        (0, fm_1.writefile)(dumpfile, "".concat(paths.source, " is cached ").concat(isCached, " with dest validation ").concat(options.dest && options.cwd) + os_1.EOL, {
             append: true
         });
         scheduler_1.default.add('dump gulp-cache', function () { return console.log(ansi_colors_1.default.yellowBright('gulp-cache'), dumpfile); });

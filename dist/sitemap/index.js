@@ -1,19 +1,44 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.yoastSitemapIndex = exports.yoastSeo = exports.yoastSeoSitemap = exports.getPageData = void 0;
-var tslib_1 = require("tslib");
 var fs_1 = require("fs");
-var hexo_is_1 = tslib_1.__importDefault(require("hexo-is"));
-var moment_1 = tslib_1.__importDefault(require("moment"));
+var hexo_is_1 = __importDefault(require("hexo-is"));
+var moment_1 = __importDefault(require("moment"));
 require("nodejs-package-types");
 var path_1 = require("path");
 var xmlbuilder2_1 = require("xmlbuilder2");
 var gulp_config_1 = require("../gulp.config");
 var fm_1 = require("../utils/fm");
-var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
-var archive_1 = tslib_1.__importStar(require("./archive"));
-var pages_1 = tslib_1.__importDefault(require("./pages"));
-var posts_1 = tslib_1.__importDefault(require("./posts"));
+var scheduler_1 = __importDefault(require("../utils/scheduler"));
+var archive_1 = __importStar(require("./archive"));
+var pages_1 = __importDefault(require("./pages"));
+var posts_1 = __importDefault(require("./posts"));
 var _log = typeof hexo !== 'undefined' ? hexo.log : console;
 var sitemapGroup = {};
 function initSitemap(type) {
