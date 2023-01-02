@@ -15,10 +15,12 @@ const glob = require("glob");
  * cross-platform normalize path to fixed-case windows drive letters
  * @link https://www.npmjs.com/package/true-case-path
  * @param path
- * @returns
+ * @returns unix-style path separator
  */
 function normalize(path) {
-    return (0, upath_1.toUnix)((0, true_case_path_1.trueCasePathSync)(path));
+    if ((0, exports.existsSync)(path) && process.platform === 'win32')
+        return (0, upath_1.toUnix)((0, true_case_path_1.trueCasePathSync)(path));
+    return (0, upath_1.toUnix)(path);
 }
 exports.normalize = normalize;
 /**

@@ -309,10 +309,10 @@ function parsePost(target, options = {}) {
             if (isFile || options.sourceFile) {
                 let publicFile;
                 if (isFile) {
-                    publicFile = (0, upath_1.toUnix)((0, filemanager_1.normalize)(originalFile));
+                    publicFile = (0, filemanager_1.normalize)(originalFile);
                 }
                 else if (options.sourceFile) {
-                    publicFile = (0, upath_1.toUnix)((0, filemanager_1.normalize)(options.sourceFile));
+                    publicFile = (0, filemanager_1.normalize)(options.sourceFile);
                 }
                 else {
                     throw new Error('cannot find public file of ' + meta.title);
@@ -452,8 +452,8 @@ function parsePost(target, options = {}) {
                     }
                 }
                 if (!meta.url) {
-                    const url = (0, utils_2.replaceArr)((0, upath_1.toUnix)((0, filemanager_1.normalize)(publicFile)), [
-                        (0, upath_1.toUnix)((0, filemanager_1.normalize)(process.cwd())),
+                    const url = (0, utils_2.replaceArr)((0, filemanager_1.normalize)(publicFile), [
+                        (0, filemanager_1.normalize)(process.cwd()),
                         ((_a = options.config) === null || _a === void 0 ? void 0 : _a.source_dir) + '/_posts/',
                         'src-posts/',
                         '_posts/'
