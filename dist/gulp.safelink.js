@@ -69,6 +69,7 @@ var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
+var gulp_cache_1 = __importDefault(require("./gulp-utils/gulp.cache"));
 var gulp_config_1 = require("./gulp.config");
 var logger_1 = __importDefault(require("./utils/logger"));
 function safelinkProcess(_done, cwd) {
@@ -127,6 +128,7 @@ function safelinkProcess(_done, cwd) {
         if ((0, fs_1.existsSync)(folder)) {
             return gulp_1.default
                 .src(['**/*.{html,htm}'], gulpopt)
+                .pipe((0, gulp_cache_1.default)({ name: 'safelink' }))
                 .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
                 var content, parsed;
                 return __generator(this, function (_a) {
