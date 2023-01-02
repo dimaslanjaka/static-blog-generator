@@ -1,5 +1,4 @@
-/// <reference types="node" />
-import { MakeDirectoryOptions } from 'fs';
+import fs, { MakeDirectoryOptions } from 'fs-extra';
 export interface writefileOpt extends MakeDirectoryOptions {
     append?: boolean;
     async?: boolean;
@@ -15,3 +14,4 @@ export declare function writefile(file: string, content: string, opt: {
 export declare function writefile(file: string, content: string, opt: {
     async?: false;
 } & writefileOpt): writefileResult;
+export declare function createWriteStream(dest: string, options?: Parameters<typeof fs['createWriteStream']>[1]): any;

@@ -4,7 +4,6 @@ exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.wat
 var tslib_1 = require("tslib");
 var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var front_matter_1 = tslib_1.__importDefault(require("front-matter"));
-var fs_1 = require("fs");
 var gulp_1 = tslib_1.__importDefault(require("gulp"));
 var hexo_post_parser_1 = require("hexo-post-parser");
 var moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
@@ -13,6 +12,7 @@ var upath_1 = require("upath");
 var gulp_cache_1 = tslib_1.__importDefault(require("./gulp-utils/gulp.cache"));
 var gulp_debug_1 = tslib_1.__importDefault(require("./gulp-utils/gulp.debug"));
 var gulp_config_1 = require("./gulp.config");
+var fm = tslib_1.__importStar(require("./utils/fm"));
 var lockmanager_1 = tslib_1.__importDefault(require("./utils/lockmanager"));
 var logger_1 = tslib_1.__importDefault(require("./utils/logger"));
 var scheduler_1 = tslib_1.__importDefault(require("./utils/scheduler"));
@@ -97,7 +97,7 @@ function updatePost() {
                             scheduler_1.default.add(oriPath_1, function () {
                                 var rebuild = (0, hexo_post_parser_1.buildPost)(rBuild_1);
                                 logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath_1).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp_1, '->', post_1.attributes.updated);
-                                (0, fs_1.writeFileSync)(oriPath_1, rebuild);
+                                fm.writefile(oriPath_1, rebuild);
                             });
                             build = (0, hexo_post_parser_1.buildPost)(parse);
                             file.contents = Buffer.from(build);
@@ -120,9 +120,10 @@ exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
     var lm = new lockmanager_1.default(copyAllPosts.name);
+    var logname = ansi_colors_1.default.whiteBright('post:copy');
     if (lm.exist()) {
         logger_1.default.log('another process still running');
-        var writeStream = (0, fs_1.createWriteStream)((0, upath_1.join)(lm.folder, 'dummy.txt'), { flags: 'a' });
+        var writeStream = fm.createWriteStream((0, upath_1.join)(lm.folder, 'dummy.txt'), { flags: 'a' });
         writeStream.write(String(new Date()));
         writeStream.close();
         return writeStream;
@@ -131,8 +132,8 @@ function copyAllPosts() {
     var config = (0, gulp_config_1.getConfig)();
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push.apply(excludes, tslib_1.__spreadArray([], tslib_1.__read(gulp_config_1.commonIgnore), false));
-    logger_1.default.log(ansi_colors_1.default.whiteBright('post:copy'), 'cwd', (0, upath_1.toUnix)(process.cwd()));
-    logger_1.default.log(ansi_colors_1.default.whiteBright('post:copy'), 'copying source posts from', sourceDir);
+    logger_1.default.log(logname, 'cwd', (0, upath_1.toUnix)(process.cwd()));
+    logger_1.default.log(logname, 'copying source posts from', sourceDir);
     return gulp_1.default
         .src('**/*.*', { cwd: (0, upath_1.toUnix)(sourceDir), ignore: excludes })
         .pipe((0, gulp_cache_1.default)({ name: 'post' }))
@@ -205,7 +206,7 @@ function copyAllPosts() {
                         return [2, callback(null, file)];
                     }
                     else {
-                        logger_1.default.log('cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
+                        logger_1.default.log(logname, 'cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                     }
                     _f.label = 2;
                 case 2:
