@@ -1,3 +1,4 @@
+import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
 import { existsSync, readdir, rm, RmOptions } from 'fs-extra';
 import gulp from 'gulp';
@@ -77,6 +78,7 @@ gulp.task('clean', cleanDb);
  */
 export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
   const config = getConfig();
+  const logname = 'clean:' + ansiColors.grey('archives');
 
   // clean archives, tags, categories
   const archives = join(config.deploy.deployDir, config.archive_dir);
@@ -110,7 +112,7 @@ export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
   // dump to file
   const dumpfile = join(process.cwd(), 'tmp/clean/dump.txt');
   writefile(dumpfile, folders.join(EOL));
-  Logger.log('list deleted files', dumpfile);
+  Logger.log(logname, 'list deleted files', dumpfile);
 
   for (let i = 0; i < folders.length; i++) {
     const pathStr = folders[i];
