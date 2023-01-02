@@ -23,7 +23,7 @@ export function file_to_hash(
 }
 
 /**
- * convert data to hash
+ * convert data to hash (async)
  * @param alogarithm
  * @param data
  * @param encoding
@@ -36,10 +36,24 @@ export function data_to_hash(
 ) {
   return new Promise((resolve, reject) => {
     try {
-      const hash = crypto.createHash(alogarithm).update(data).digest(encoding);
-      resolve(hash);
+      resolve(data_to_hash_sync(alogarithm, data, encoding));
     } catch (e) {
       reject(e);
     }
   });
+}
+
+/**
+ * convert data to hash (sync)
+ * @param alogarithm
+ * @param data
+ * @param encoding
+ * @returns
+ */
+export function data_to_hash_sync(
+  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  data: crypto.BinaryLike,
+  encoding: import('crypto').BinaryToTextEncoding = 'hex'
+) {
+  return crypto.createHash(alogarithm).update(data).digest(encoding);
 }
