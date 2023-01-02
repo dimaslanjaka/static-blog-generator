@@ -68,10 +68,15 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
   const caches = cacheLib(options);
   const logname = 'gulp-' + ansiColors.grey('cached');
 
-  const caller = data_to_hash_sync(
-    'md5',
-    new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || ''
-  ).slice(0, 5);
+  let caller: string;
+  if (options.name) {
+    caller = options.name;
+  } else {
+    caller = data_to_hash_sync(
+      'md5',
+      new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || ''
+    ).slice(0, 5);
+  }
   const pid = process.pid;
 
   return through2.obj(function (file, _enc, next) {
