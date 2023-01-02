@@ -3,6 +3,7 @@ import gulp from 'gulp';
 import sf, { SafelinkOptions } from 'safelinkify';
 import through2 from 'through2';
 import { SrcOptions } from 'vinyl-fs';
+import gulpCached from './gulp-utils/gulp.cache';
 import { getConfig } from './gulp.config';
 import Logger from './utils/logger';
 
@@ -76,6 +77,7 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
     if (existsSync(folder)) {
       return gulp
         .src(['**/*.{html,htm}'], gulpopt)
+        .pipe(gulpCached({ name: 'safelink' }))
         .pipe(
           through2.obj(async (file, _enc, next) => {
             // drop null
