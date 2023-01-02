@@ -143,7 +143,7 @@ export function copyAllPosts() {
   if (lm.exist()) {
     Logger.log('another process still running');
     const writeStream = createWriteStream(join(lm.folder, 'dummy.txt'), { flags: 'a' });
-    writeStream.write(new Date());
+    writeStream.write(String(new Date()));
     writeStream.close();
     return writeStream;
   }

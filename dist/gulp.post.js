@@ -123,7 +123,7 @@ function copyAllPosts() {
     if (lm.exist()) {
         logger_1.default.log('another process still running');
         var writeStream = (0, fs_1.createWriteStream)((0, upath_1.join)(lm.folder, 'dummy.txt'), { flags: 'a' });
-        writeStream.write(new Date());
+        writeStream.write(String(new Date()));
         writeStream.close();
         return writeStream;
     }
