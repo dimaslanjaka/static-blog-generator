@@ -108,7 +108,7 @@ export function updatePost() {
         // update original source post after process ends
         scheduler.add(oriPath, function () {
           const rebuild = buildPost(rBuild);
-          //writefile(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
+          //writefile(join(process.cwd(), 'build/rebuild.md'), rebuild);
           Logger.log(
             'write to',
             toUnix(oriPath).replace(toUnix(process.cwd()), ''),
