@@ -5,6 +5,7 @@ import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { getConfig } from '../gulp.config';
+import scheduler from '../utils/scheduler';
 
 /**
  * calculate sha1sum of file
@@ -84,6 +85,8 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
       dumpfile,
       `${paths.source} is cached ${isCached} with dest validation ${options.dest && options.cwd}`
     );
+
+    scheduler.add('dump gulp-cache', () => console.log('dump gulp-cache', dumpfile));
 
     if (!isCached) {
       // not cached
