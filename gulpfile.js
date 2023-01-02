@@ -1,16 +1,16 @@
 const spawn = require('cross-spawn');
-const { existsSync, mkdirSync } = require('fs');
+const { existsSync, mkdirSync, appendFileSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
-const GulpClient = require('gulp');
+const gulp = require('gulp');
 const { EOL } = require('os');
 const { join, dirname, toUnix } = require('upath');
 const { setTypedocOptions, getTypedocOptions, publish } = require('./typedoc-runner');
 
 // copy non-javascript assets from src folder
 const copy = function () {
-  return GulpClient.src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] }).pipe(
-    GulpClient.dest(join(__dirname, 'dist'))
-  );
+  return gulp
+    .src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
+    .pipe(gulp.dest(join(__dirname, 'dist')));
 };
 
 /**
@@ -67,8 +67,9 @@ const coverage = function () {
     const coverageDir = join(__dirname, 'coverage/lcov-report');
     if (existsSync(coverageDir)) {
       console.log('copying coverage', coverageDir.replace(toUnix(__dirname), ''));
-      GulpClient.src(['*.*', '**/*.*'], { cwd: coverageDir })
-        .pipe(GulpClient.dest(join(__dirname, 'docs/static-blog-generator/coverage')))
+      gulp
+        .src(['*.*', '**/*.*'], { cwd: coverageDir })
+        .pipe(gulp.dest(join(__dirname, 'docs/static-blog-generator/coverage')))
         .once('end', () => resolve(null));
     } else {
       resolve(null);
@@ -101,42 +102,50 @@ function tsc(done) {
   child.once('exit', () => done());
 }
 
-exports.copy = copy;
-exports.docs = docs;
-exports.tsc = tsc;
-exports.default = GulpClient.series(tsc, docs);
+gulp.task('docs', docs);
+gulp.task('copy', copy);
+gulp.task('tsc', tsc);
+gulp.task('default', gulp.series(tsc, docs));
 
-async function buildWatch(done) {
-  const build = async function () {
-    const child = spawn('npm', ['run', 'build'], { cwd: __dirname });
+const build = async function () {
+  const tmp = join(__dirname, 'tmp/gulp/watch');
+  if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
+  const child = spawn('npm', ['run', 'build'], { cwd: __dirname });
 
-    let data = '';
-    for await (const chunk of child.stdout) {
-      console.log('stdout chunk:');
-      console.log(String(chunk));
-      data += chunk;
-    }
-    let error = '';
-    for await (const chunk of child.stderr) {
-      console.error('stderr chunk:');
-      console.log(String(chunk));
-      error += chunk;
-    }
-    const exitCode = await new Promise((resolve, reject) => {
-      child.on('close', resolve);
-      child.on('error', reject);
-    });
+  let data = '';
+  for await (const chunk of child.stdout) {
+    appendFileSync(join(tmp, 'stdout.txt'), chunk);
+    data += chunk;
+  }
+  let error = '';
+  for await (const chunk of child.stderr) {
+    appendFileSync(join(tmp, 'stderr.txt'), chunk);
+    error += chunk;
+  }
+  const exitCode = await new Promise((resolve, reject) => {
+    child.on('close', resolve);
+    child.on('error', reject);
+  });
 
-    if (exitCode) {
-      throw new Error(`subprocess error exit ${exitCode}, ${error}`);
-    }
-    return data;
-  };
-  await build();
-  const watcher = GulpClient.watch('src/**/*.*', { ignored: ['**/*.json'], cwd: __dirname });
-  watcher.on('close', done);
-  watcher.on('change', build);
+  if (exitCode) {
+    throw new Error(`subprocess error exit ${exitCode}, ${error}`);
+  }
+  return data;
+};
+gulp.task('compile', build);
+
+function buildWatch(done) {
+  const watcher = gulp.watch(
+    'src/**/*.*',
+    { ignored: ['**/*.json', '**/dist', '**/release', '**/node_modules', '**/*.tgz', '**/tmp'], cwd: __dirname },
+    gulp.series(['compile'])
+  );
+  watcher.on('change', (filename) => {
+    console.log('changed', filename);
+    build();
+  });
   watcher.on('error', done);
-  return watcher;
+  watcher.once('close', done);
 }
-exports.watch = buildWatch;
+
+gulp.task('watch', buildWatch);
