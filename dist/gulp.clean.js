@@ -65,6 +65,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanOldArchives = exports.del = exports.cleanDb = void 0;
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
@@ -157,11 +158,12 @@ exports.del = del;
 gulp_1.default.task('clean', cleanDb);
 function cleanOldArchives(done) {
     return __awaiter(this, void 0, void 0, function () {
-        var config, archives, categories, tags, folders, langDir, pagesDir, pages, hexo, count, promises, dumpfile, i, pathStr, finishNow;
+        var config, logname, archives, categories, tags, folders, langDir, pagesDir, pages, hexo, count, promises, dumpfile, i, pathStr, finishNow;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     config = (0, gulp_config_1.getConfig)();
+                    logname = 'clean:' + ansi_colors_1.default.grey('archives');
                     archives = (0, upath_1.join)(config.deploy.deployDir, config.archive_dir);
                     categories = (0, upath_1.join)(config.deploy.deployDir, config.category_dir);
                     tags = (0, upath_1.join)(config.deploy.deployDir, config.tag_dir);
@@ -193,7 +195,7 @@ function cleanOldArchives(done) {
                     promises = [];
                     dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/clean/dump.txt');
                     (0, fm_1.writefile)(dumpfile, folders.join(os_1.EOL));
-                    logger_1.default.log('list deleted files', dumpfile);
+                    logger_1.default.log(logname, 'list deleted files', dumpfile);
                     for (i = 0; i < folders.length; i++) {
                         pathStr = folders[i];
                         try {
