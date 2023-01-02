@@ -1,3 +1,4 @@
+import ansiColors from 'ansi-colors';
 import crypto from 'crypto';
 import fs, { appendFileSync, existsSync } from 'fs';
 import { persistentCache } from 'persistent-cache';
@@ -86,7 +87,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
       `${paths.source} is cached ${isCached} with dest validation ${options.dest && options.cwd}`
     );
 
-    scheduler.add('dump gulp-cache', () => console.log('dump gulp-cache', dumpfile));
+    scheduler.add('dump gulp-cache', () => console.log(ansiColors.yellowBright('gulp-cache'), dumpfile));
 
     if (!isCached) {
       // not cached
