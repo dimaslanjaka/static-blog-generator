@@ -28,14 +28,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.autoSeo = void 0;
+exports.taskSeo = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var gulp_1 = __importDefault(require("gulp"));
 var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var gulp_cache_1 = __importDefault(require("./gulp-utils/gulp.cache"));
 var gulp_config_1 = require("./gulp.config");
 var logger_1 = __importDefault(require("./utils/logger"));
-function autoSeo(cwd) {
+function taskSeo(_done, cwd) {
     var config = (0, gulp_config_1.getConfig)();
     var ignore = Array.isArray(config.exclude) ? config.exclude : [];
     ignore.push.apply(ignore, __spreadArray([], __read(gulp_config_1.commonIgnore), false));
@@ -67,9 +67,9 @@ function autoSeo(cwd) {
     }))
         .pipe(gulp_1.default.dest(cwd));
 }
-exports.autoSeo = autoSeo;
+exports.taskSeo = taskSeo;
 gulp_1.default.task('seo', function () {
     var deployDir = (0, gulp_config_1.deployConfig)().deployDir;
-    return autoSeo(deployDir);
+    return taskSeo(null, deployDir);
 });
 exports.default = gulp_1.default;

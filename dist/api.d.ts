@@ -8,8 +8,8 @@ declare class SBG {
     constructor(cwd?: null | string);
     standalone: () => NodeJS.ReadWriteStream;
     seo: () => NodeJS.ReadWriteStream;
-    copy: () => Promise<unknown>;
-    safelink: () => Promise<unknown>;
+    copy: () => Promise<any>;
+    safelink: () => any;
     generate(): Promise<void>;
     deploy(): Promise<void>;
     clean(opt?: 'all'): Promise<void>;
