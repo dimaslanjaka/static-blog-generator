@@ -64,23 +64,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.safelinkProcess = void 0;
+exports.taskSafelink = void 0;
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
+var path_1 = __importDefault(require("path"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
 var through2_1 = __importDefault(require("through2"));
 var gulp_cache_1 = __importDefault(require("./gulp-utils/gulp.cache"));
 var gulp_config_1 = require("./gulp.config");
+var fm_1 = require("./utils/fm");
 var logger_1 = __importDefault(require("./utils/logger"));
-function safelinkProcess(_done, cwd) {
+function taskSafelink(_done, cwd) {
     var _this = this;
-    return new Promise(function (resolve) {
-        var _a, _b, _c;
-        var config = (0, gulp_config_1.getConfig)();
-        if (!config.external_link.safelink)
-            return resolve(new Error('config safelink not configured'));
-        if (!config.external_link.safelink.redirect)
-            return resolve(new Error('safelink redirector not configured'));
+    var _a, _b, _c;
+    var config = (0, gulp_config_1.getConfig)();
+    var workingDir = typeof cwd === 'string' ? cwd : config.deploy.deployDir;
+    var logname = ansi_colors_1.default.greenBright('safelink');
+    var hasError = false;
+    if (!config.external_link.safelink) {
+        hasError = true;
+        logger_1.default.log(logname, 'config safelink', ansi_colors_1.default.red('not configured'));
+    }
+    if (!config.external_link.safelink.redirect) {
+        hasError = true;
+        logger_1.default.log(logname, 'safelink redirector', ansi_colors_1.default.red('not configured'));
+    }
+    if (!config.external_link.safelink.enable) {
+        hasError = true;
+        logger_1.default.log(logname, ansi_colors_1.default.red('disabled'));
+    }
+    if ((0, fs_1.existsSync)(workingDir) && !hasError) {
         var configSafelink = Object.assign({ enable: false }, config.external_link.safelink || {});
         var baseURL = '';
         try {
@@ -107,10 +121,9 @@ function safelinkProcess(_done, cwd) {
         if (configSafelink.redirect) {
             opt.redirect = configSafelink.redirect;
         }
-        var safelink = new safelinkify_1.default.safelink(opt);
-        var folder = cwd || config.deploy.deployDir;
+        var safelink_1 = new safelinkify_1.default.safelink(opt);
         var gulpopt = {
-            cwd: folder,
+            cwd: workingDir,
             ignore: []
         };
         if (Array.isArray(config.external_link.exclude)) {
@@ -125,39 +138,39 @@ function safelinkProcess(_done, cwd) {
             });
             (_c = gulpopt.ignore) === null || _c === void 0 ? void 0 : _c.concat.apply(_c, __spreadArray([], __read(ignore), false));
         }
-        if ((0, fs_1.existsSync)(folder)) {
-            return gulp_1.default
-                .src(['**/*.{html,htm}'], gulpopt)
-                .pipe((0, gulp_cache_1.default)({ name: 'safelink' }))
-                .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
-                var content, parsed;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            if (file.isNull() || file.isDirectory() || !file)
-                                return [2, next()];
-                            if (!(file.isBuffer() && Buffer.isBuffer(file.contents))) return [3, 2];
-                            content = file.contents.toString('utf-8');
-                            return [4, safelink.parse(content)];
-                        case 1:
-                            parsed = _a.sent();
-                            if (typeof parsed === 'string') {
-                                file.contents = Buffer.from(parsed);
-                                return [2, next(null, file)];
-                            }
-                            _a.label = 2;
-                        case 2:
-                            logger_1.default.log('cannot parse', file.path);
-                            next();
-                            return [2];
-                    }
-                });
-            }); }))
-                .pipe(gulp_1.default.dest(config.deploy.deployDir))
-                .once('end', function () { return resolve(null); });
-        }
-        return resolve(null);
-    });
+        return gulp_1.default
+            .src(['**/*.{html,htm}'], gulpopt)
+            .pipe((0, gulp_cache_1.default)({ name: 'safelink' }))
+            .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
+            var content, parsed;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (file.isNull() || file.isDirectory() || !file || file.isStream())
+                            return [2, next()];
+                        if (!(file.isBuffer() && Buffer.isBuffer(file.contents))) return [3, 2];
+                        content = file.contents.toString('utf-8');
+                        return [4, safelink_1.parse(content)];
+                    case 1:
+                        parsed = _a.sent();
+                        if (typeof parsed === 'string') {
+                            file.contents = Buffer.from(parsed);
+                            return [2, next(null, file)];
+                        }
+                        _a.label = 2;
+                    case 2:
+                        logger_1.default.log('cannot parse', file.path);
+                        next();
+                        return [2];
+                }
+            });
+        }); }))
+            .pipe(gulp_1.default.dest(workingDir));
+    }
+    else {
+        var wstream = (0, fm_1.createWriteStream)(path_1.default.join(config.cwd, 'build/errors/safelink.log'));
+        return wstream;
+    }
 }
-exports.safelinkProcess = safelinkProcess;
-gulp_1.default.task('safelink', safelinkProcess);
+exports.taskSafelink = taskSafelink;
+gulp_1.default.task('safelink', taskSafelink);
