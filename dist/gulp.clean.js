@@ -102,6 +102,7 @@ function cleanDb() {
                 case 2:
                     _b.trys.push([2, 5, , 6]);
                     if (!(0, fs_extra_1.existsSync)(dir)) return [3, 4];
+                    logger_1.default.log(logname, 'claning', dir);
                     return [4, del(dir)];
                 case 3:
                     _b.sent();

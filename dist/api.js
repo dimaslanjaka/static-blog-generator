@@ -57,13 +57,15 @@ var SBG = (function () {
         this.setConfig = gulp_config_1.setConfig;
         this.getConfig = gulp_config_1.getConfig;
         this.standalone = function () { return (0, gulp_standalone_1.default)(); };
-        this.seo = function () { return (0, gulp_seo_1.autoSeo)((0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
+        this.seo = function () { return (0, gulp_seo_1.taskSeo)(null, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
         this.copy = function () {
-            return new Promise(function (resolve) {
-                (0, gulp_post_1.copyAllPosts)().once('end', resolve);
+            return __awaiter(this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    return [2, (0, gulp_post_1.copyAllPosts)()];
+                });
             });
         };
-        this.safelink = function () { return (0, gulp_safelink_1.safelinkProcess)(noop_1.default, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
+        this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(noop_1.default, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
         if (typeof cwd === 'string') {
             this.cwd = cwd;
             this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
@@ -71,16 +73,22 @@ var SBG = (function () {
     }
     SBG.prototype.generate = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var instance;
+            var hexo;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        instance = new hexo_1.default(this.cwd);
-                        return [4, instance.init().catch(noop_1.default)];
+                        hexo = new hexo_1.default(this.cwd);
+                        return [4, hexo.init().catch(noop_1.default)];
                     case 1:
                         _a.sent();
-                        return [4, instance.call('generate').catch(noop_1.default)];
+                        return [4, hexo.load().catch(noop_1.default)];
                     case 2:
+                        _a.sent();
+                        return [4, hexo.call('generate').catch(noop_1.default)];
+                    case 3:
+                        _a.sent();
+                        return [4, hexo.exit()];
+                    case 4:
                         _a.sent();
                         return [2];
                 }

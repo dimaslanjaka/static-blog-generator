@@ -24,7 +24,7 @@ Object.defineProperty(exports, "copySinglePost", { enumerable: true, get: functi
 Object.defineProperty(exports, "copyPost", { enumerable: true, get: function () { return gulp_post_1.updatePost; } });
 Object.defineProperty(exports, "watchPost", { enumerable: true, get: function () { return gulp_post_1.watchPost; } });
 var gulp_seo_1 = require("./gulp.seo");
-Object.defineProperty(exports, "autoSeo", { enumerable: true, get: function () { return gulp_seo_1.autoSeo; } });
+Object.defineProperty(exports, "autoSeo", { enumerable: true, get: function () { return gulp_seo_1.taskSeo; } });
 var gulp_sitemap_1 = require("./gulp.sitemap");
 Object.defineProperty(exports, "generateSitemap", { enumerable: true, get: function () { return gulp_sitemap_1.generateSitemap; } });
 Object.defineProperty(exports, "hexoGenerateSitemap", { enumerable: true, get: function () { return gulp_sitemap_1.hexoGenerateSitemap; } });
