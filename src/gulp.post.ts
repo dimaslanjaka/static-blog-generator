@@ -7,7 +7,7 @@ import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import gulpCached from './gulp-utils/gulp.cache';
 import gulpDebug from './gulp-utils/gulp.debug';
-import { commonIgnore, getConfig } from './gulp.config';
+import { commonIgnore, getConfig, projectIgnores } from './gulp.config';
 import * as fm from './utils/fm';
 import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
@@ -21,7 +21,7 @@ const destDir = join(process.cwd(), getConfig().source_dir, '_posts');
  * @param done
  */
 export function watchPost(done: gulp.TaskFunctionCallback) {
-  const watcher = gulp.watch(['**/*'], { cwd: sourceDir });
+  const watcher = gulp.watch(['**/*'], { cwd: sourceDir, ignored: commonIgnore.concat(...projectIgnores) });
   watcher.on('change', (path) => {
     copySinglePost(path);
   });

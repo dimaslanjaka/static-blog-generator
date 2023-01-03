@@ -105,7 +105,7 @@ var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourceDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var destDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function watchPost(done) {
-    var watcher = gulp_1.default.watch(['**/*'], { cwd: sourceDir });
+    var watcher = gulp_1.default.watch(['**/*'], { cwd: sourceDir, ignored: gulp_config_1.commonIgnore.concat.apply(gulp_config_1.commonIgnore, __spreadArray([], __read(gulp_config_1.projectIgnores), false)) });
     watcher.on('change', function (path) {
         copySinglePost(path);
     });
