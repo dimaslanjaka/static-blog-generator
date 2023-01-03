@@ -20,8 +20,11 @@ const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
  * Watch post while you writing new or modify posts from src-posts folder
  * @param done
  */
-export function watchPost(done: gulp.TaskFunctionCallback) {
-  const watcher = gulp.watch(['**/*'], { cwd: sourcePostDir, ignored: commonIgnore.concat(...projectIgnores) });
+export function watchPost(done: gulp.TaskFunctionCallback, options?: gulp.WatchOptions) {
+  const watcher = gulp.watch(
+    ['**/*'],
+    Object.assign({ cwd: sourcePostDir, ignored: commonIgnore.concat(...projectIgnores) }, options)
+  );
   console.log({ sourcePostDir, generatedPostDir });
   watcher.on('change', (path) => {
     Logger.info('changed', path.replace(getConfig().cwd, ''));
