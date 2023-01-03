@@ -24,3 +24,4 @@ export declare function deployConfig(): {
     github: git | null;
 };
 export declare const commonIgnore: string[];
+export declare const projectIgnores: string[];

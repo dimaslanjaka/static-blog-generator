@@ -86,7 +86,9 @@ const coloredScriptName = colors.grey(scriptname);
 
     for (let i = 0; i < packages.length; i++) {
       const pkgs = packages[i];
-      //const isDev = i === 1; // <-- index devDependencies
+      // detect index
+      const isDevPkg = i === 1;
+      const isOptionalPkg = i === 2;
       for (const pkgname in pkgs) {
         /**
          * @type {string}
@@ -134,6 +136,13 @@ const coloredScriptName = colors.grey(scriptname);
          * is local package
          */
         const isLocalPkg = /^(file):/i.test(version);
+
+        /**
+         * is local tarball package
+         */
+        const isLocalTarballpkg = isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
+
+        // delete package from npm registry from index
         if (!isLocalPkg && !isGitPkg && !isTarballPkg) {
           delete pkgs[pkgname];
           continue;
@@ -141,20 +150,26 @@ const coloredScriptName = colors.grey(scriptname);
 
         // add all monorepos and private ssh packages to be updated without checking
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
-          //const arg = [version, isDev ? '-D' : ''].filter((str) => str.trim().length > 0);
-          toUpdate.add(pkgname);
           console.log(
             coloredScriptName,
             'updating',
             coloredPkgname,
             isGitPkg
               ? colors.blueBright('git')
+              : isLocalTarballpkg
+              ? colors.bold(colors.greenBright('local tarball'))
               : isLocalPkg
               ? colors.greenBright('local')
               : isTarballPkg
-              ? colors.yellow('tarball')
+              ? colors.yellowBright('tarball')
               : ''
           );
+          if (isLocalPkg && !isLocalTarballpkg) {
+            const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : ''].filter((str) => str.length > 0);
+            await summon('npm', ['install', ...arg], { cwd: __dirname });
+          } else {
+            toUpdate.add(pkgname);
+          }
         }
       }
     }
