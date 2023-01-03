@@ -79,10 +79,11 @@ var logger_1 = __importDefault(require("./utils/logger"));
 var noop_1 = __importDefault(require("./utils/noop"));
 function cleanDb() {
     return __awaiter(this, void 0, void 0, function () {
-        var config, postDir, publicDir, tmpDir, _a, _b, _c, hexo;
-        return __generator(this, function (_d) {
-            switch (_d.label) {
+        var logname, config, postDir, publicDir, tmpDir, dirs, i, dir, _a, hexo;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
+                    logname = 'clean-' + ansi_colors_1.default.redBright('database');
                     config = (0, gulp_config_1.getConfig)();
                     if (typeof config.source_dir !== 'string') {
                         (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'build/errors/clean.log'), (0, util_1.inspect)(config));
@@ -91,52 +92,36 @@ function cleanDb() {
                     postDir = (0, upath_1.join)(config.cwd, config.source_dir, '_posts');
                     publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
                     tmpDir = (0, upath_1.join)(config.cwd, 'build');
-                    logger_1.default.log('[clean]', { tmpDir: tmpDir, postDir: postDir, publicDir: publicDir });
-                    _d.label = 1;
+                    dirs = [tmpDir, postDir, publicDir];
+                    i = 0;
+                    _b.label = 1;
                 case 1:
-                    _d.trys.push([1, 4, , 5]);
-                    if (!(0, fs_extra_1.existsSync)(tmpDir)) return [3, 3];
-                    return [4, del(tmpDir)];
+                    if (!(i < dirs.length)) return [3, 7];
+                    dir = dirs[i];
+                    _b.label = 2;
                 case 2:
-                    _d.sent();
-                    _d.label = 3;
-                case 3: return [3, 5];
-                case 4:
-                    _a = _d.sent();
-                    logger_1.default.log('[clean]', 'cannot delete', tmpDir);
-                    return [3, 5];
+                    _b.trys.push([2, 5, , 6]);
+                    if (!(0, fs_extra_1.existsSync)(dir)) return [3, 4];
+                    return [4, del(dir)];
+                case 3:
+                    _b.sent();
+                    _b.label = 4;
+                case 4: return [3, 6];
                 case 5:
-                    _d.trys.push([5, 8, , 9]);
-                    if (!(0, fs_extra_1.existsSync)(publicDir)) return [3, 7];
-                    return [4, del(publicDir)];
+                    _a = _b.sent();
+                    logger_1.default.log(logname, 'cannot delete', dir);
+                    return [3, 6];
                 case 6:
-                    _d.sent();
-                    _d.label = 7;
-                case 7: return [3, 9];
-                case 8:
-                    _b = _d.sent();
-                    logger_1.default.log('[clean]', 'cannot delete', publicDir);
-                    return [3, 9];
-                case 9:
-                    _d.trys.push([9, 12, , 13]);
-                    if (!(0, fs_extra_1.existsSync)(postDir)) return [3, 11];
-                    return [4, del(postDir)];
-                case 10:
-                    _d.sent();
-                    _d.label = 11;
-                case 11: return [3, 13];
-                case 12:
-                    _c = _d.sent();
-                    logger_1.default.log('[clean]', 'cannot delete', postDir);
-                    return [3, 13];
-                case 13:
+                    i++;
+                    return [3, 1];
+                case 7:
                     hexo = new hexo_1.default(config.base_dir);
                     return [4, hexo.init().catch(noop_1.default)];
-                case 14:
-                    _d.sent();
+                case 8:
+                    _b.sent();
                     return [4, hexo.call('clean').catch(noop_1.default)];
-                case 15:
-                    _d.sent();
+                case 9:
+                    _b.sent();
                     return [2, undefined];
             }
         });
