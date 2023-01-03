@@ -102,20 +102,20 @@ var fm = __importStar(require("./utils/fm"));
 var lockmanager_1 = __importDefault(require("./utils/lockmanager"));
 var logger_1 = __importDefault(require("./utils/logger"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
-var sourceDir = (0, upath_1.join)(process.cwd(), 'src-posts');
-var destDir = (0, upath_1.join)(process.cwd(), 'source/_posts');
+var sourceDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
+var destDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function watchPost(done) {
     var watcher = gulp_1.default.watch(['**/*'], { cwd: sourceDir });
     watcher.on('change', function (path) {
-        (0, exports.copySinglePost)(path);
+        copySinglePost(path);
     });
     watcher.on('add', function (path) {
-        (0, exports.copySinglePost)(path);
+        copySinglePost(path);
     });
     watcher.once('close', done);
 }
 exports.watchPost = watchPost;
-var copySinglePost = function (identifier, callback) {
+function copySinglePost(identifier, callback) {
     identifier = identifier.replace((0, upath_1.extname)(identifier), '');
     gulp_1.default
         .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
@@ -127,7 +127,7 @@ var copySinglePost = function (identifier, callback) {
         if (typeof callback === 'function')
             callback();
     });
-};
+}
 exports.copySinglePost = copySinglePost;
 function updatePost() {
     return through2_1.default.obj(function (file, _enc, next) {

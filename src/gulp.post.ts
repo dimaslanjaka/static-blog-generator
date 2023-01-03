@@ -13,8 +13,8 @@ import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
 
-const sourceDir = join(process.cwd(), 'src-posts');
-const destDir = join(process.cwd(), 'source/_posts');
+const sourceDir = join(process.cwd(), getConfig().post_dir);
+const destDir = join(process.cwd(), getConfig().source_dir, '_posts');
 
 /**
  * Watch post while you writing new or modify posts from src-posts folder
@@ -36,7 +36,7 @@ export function watchPost(done: gulp.TaskFunctionCallback) {
  * @param identifier
  * @param callback
  */
-export const copySinglePost = (identifier: string, callback?: (...args: any[]) => any) => {
+export function copySinglePost(identifier: string, callback?: (...args: any[]) => any) {
   identifier = identifier.replace(extname(identifier), '');
   ///const fileList = [];
   gulp
@@ -49,7 +49,7 @@ export const copySinglePost = (identifier: string, callback?: (...args: any[]) =
       //Logger.log(fileList);
       if (typeof callback === 'function') callback();
     });
-};
+}
 
 /**
  * copy watched post
