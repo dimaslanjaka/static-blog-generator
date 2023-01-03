@@ -106,7 +106,9 @@ var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function watchPost(done) {
     var watcher = gulp_1.default.watch(['**/*'], { cwd: sourcePostDir, ignored: gulp_config_1.commonIgnore.concat.apply(gulp_config_1.commonIgnore, __spreadArray([], __read(gulp_config_1.projectIgnores), false)) });
+    console.log({ sourcePostDir: sourcePostDir, generatedPostDir: generatedPostDir });
     watcher.on('change', function (path) {
+        logger_1.default.info('changed', path.replace((0, gulp_config_1.getConfig)().cwd, ''));
         copySinglePost(path);
     });
     watcher.on('add', function (path) {
