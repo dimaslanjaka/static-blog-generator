@@ -10,8 +10,9 @@ const copy = function (done) {
     .src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
     .pipe(gulp.dest(join(__dirname, 'dist')))
     .once('end', async function () {
-      // copy src/_config.json to dist/_config.json (prevent git changing values of dist)
+      // copy src/_config.json to dist (prevent git changing values of dist)
       await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.json'));
+      await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.auto-generated.json'));
       done();
     });
 };
