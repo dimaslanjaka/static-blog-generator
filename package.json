@@ -18,7 +18,7 @@
     "update:typedoc-server": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-server.js > typedoc-server.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
     "update:ncu": "npx npm-check-updates -u -x chalk",
-    "update:test": "cd test && npm run update",
+    "xupdate:test": "cd test && npm run update",
     "update": "run-s update:**",
     "postupdate": "npm install --cache tmp/npm",
     "postinstall": "node postinstall.js",
