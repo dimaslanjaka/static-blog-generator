@@ -102,10 +102,10 @@ var fm = __importStar(require("./utils/fm"));
 var lockmanager_1 = __importDefault(require("./utils/lockmanager"));
 var logger_1 = __importDefault(require("./utils/logger"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
-var sourceDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
-var destDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
+var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
+var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function watchPost(done) {
-    var watcher = gulp_1.default.watch(['**/*'], { cwd: sourceDir, ignored: gulp_config_1.commonIgnore.concat.apply(gulp_config_1.commonIgnore, __spreadArray([], __read(gulp_config_1.projectIgnores), false)) });
+    var watcher = gulp_1.default.watch(['**/*'], { cwd: sourcePostDir, ignored: gulp_config_1.commonIgnore.concat.apply(gulp_config_1.commonIgnore, __spreadArray([], __read(gulp_config_1.projectIgnores), false)) });
     watcher.on('change', function (path) {
         copySinglePost(path);
     });
@@ -119,10 +119,10 @@ function copySinglePost(identifier, callback) {
     identifier = identifier.replace((0, upath_1.extname)(identifier), '');
     gulp_1.default
         .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
-        cwd: sourceDir
+        cwd: sourcePostDir
     })
         .pipe(updatePost())
-        .pipe(gulp_1.default.dest(destDir))
+        .pipe(gulp_1.default.dest(generatedPostDir))
         .on('end', function () {
         if (typeof callback === 'function')
             callback();
@@ -219,9 +219,9 @@ function copyAllPosts() {
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push.apply(excludes, __spreadArray([], __read(gulp_config_1.commonIgnore), false));
     logger_1.default.log(logname, 'cwd', (0, upath_1.toUnix)(process.cwd()));
-    logger_1.default.log(logname, 'copying source posts from', sourceDir);
+    logger_1.default.log(logname, 'copying source posts from', sourcePostDir);
     return gulp_1.default
-        .src('**/*.*', { cwd: (0, upath_1.toUnix)(sourceDir), ignore: excludes })
+        .src('**/*.*', { cwd: (0, upath_1.toUnix)(sourcePostDir), ignore: excludes })
         .pipe((0, gulp_cache_1.default)({ name: 'post' }))
         .pipe((0, gulp_debug_1.default)())
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
@@ -301,7 +301,7 @@ function copyAllPosts() {
             }
         });
     }); }))
-        .pipe(gulp_1.default.dest(destDir))
+        .pipe(gulp_1.default.dest(generatedPostDir))
         .once('end', function () {
         lm.release();
     });

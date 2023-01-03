@@ -13,15 +13,15 @@ import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
 import scheduler from './utils/scheduler';
 
-const sourceDir = join(process.cwd(), getConfig().post_dir);
-const destDir = join(process.cwd(), getConfig().source_dir, '_posts');
+const sourcePostDir = join(process.cwd(), getConfig().post_dir);
+const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
 
 /**
  * Watch post while you writing new or modify posts from src-posts folder
  * @param done
  */
 export function watchPost(done: gulp.TaskFunctionCallback) {
-  const watcher = gulp.watch(['**/*'], { cwd: sourceDir, ignored: commonIgnore.concat(...projectIgnores) });
+  const watcher = gulp.watch(['**/*'], { cwd: sourcePostDir, ignored: commonIgnore.concat(...projectIgnores) });
   watcher.on('change', (path) => {
     copySinglePost(path);
   });
@@ -41,10 +41,10 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
   ///const fileList = [];
   gulp
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
-      cwd: sourceDir
+      cwd: sourcePostDir
     })
     .pipe(updatePost())
-    .pipe(gulp.dest(destDir))
+    .pipe(gulp.dest(generatedPostDir))
     .on('end', function () {
       //Logger.log(fileList);
       if (typeof callback === 'function') callback();
@@ -156,10 +156,10 @@ export function copyAllPosts() {
   const excludes: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push(...commonIgnore);
   Logger.log(logname, 'cwd', toUnix(process.cwd()));
-  Logger.log(logname, 'copying source posts from', sourceDir);
+  Logger.log(logname, 'copying source posts from', sourcePostDir);
 
   return gulp
-    .src('**/*.*', { cwd: toUnix(sourceDir), ignore: excludes })
+    .src('**/*.*', { cwd: toUnix(sourcePostDir), ignore: excludes })
     .pipe(gulpCached({ name: 'post' }))
     .pipe(gulpDebug())
     .pipe(
@@ -230,7 +230,7 @@ export function copyAllPosts() {
         callback(null, file);
       })
     )
-    .pipe(gulp.dest(destDir))
+    .pipe(gulp.dest(generatedPostDir))
     .once('end', () => {
       // delete lock file
       lm.release();
