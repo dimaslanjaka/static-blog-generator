@@ -7,9 +7,9 @@ import Logger from './utils/logger';
 
 /**
  * Auto seo runner
- * @param cwd directory to scan htmls
+ * @param cwd working directory to scan html's
  */
-export function autoSeo(cwd: string) {
+export function taskSeo(_done: gulp.TaskFunctionCallback | null | undefined, cwd: string) {
   const config = getConfig();
   const ignore: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   ignore.push(...commonIgnore);
@@ -51,7 +51,7 @@ export function autoSeo(cwd: string) {
 
 gulp.task('seo', function () {
   const { deployDir } = deployConfig();
-  return autoSeo(deployDir);
+  return taskSeo(null, deployDir);
 });
 
 export default gulp;

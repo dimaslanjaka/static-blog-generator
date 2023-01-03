@@ -30,7 +30,10 @@ export async function cleanDb() {
   for (let i = 0; i < dirs.length; i++) {
     const dir = dirs[i];
     try {
-      if (existsSync(dir)) await del(dir);
+      if (existsSync(dir)) {
+        Logger.log(logname, 'claning', dir);
+        await del(dir);
+      }
     } catch {
       Logger.log(logname, 'cannot delete', dir);
     }
