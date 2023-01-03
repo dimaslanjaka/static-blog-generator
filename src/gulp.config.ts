@@ -130,3 +130,8 @@ export const commonIgnore = [
   '**/.frontmatter/**', // vscode frontmatter plugin
   '**/.git*/**' // any git configs
 ];
+
+/**
+ * array of config.exclude, config.ignore
+ */
+export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
