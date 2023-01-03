@@ -23,7 +23,7 @@ const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
 export function watchPost(done: gulp.TaskFunctionCallback, options?: gulp.WatchOptions) {
   const watcher = gulp.watch(
     ['**/*'],
-    Object.assign({ cwd: sourcePostDir, ignored: commonIgnore.concat(...projectIgnores) }, options)
+    Object.assign({ cwd: sourcePostDir, ignored: commonIgnore.concat(...projectIgnores) }, options || {})
   );
   console.log({ sourcePostDir, generatedPostDir });
   watcher.on('change', (path) => {
