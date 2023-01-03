@@ -4,8 +4,8 @@ import { cleanDb, cleanOldArchives } from './gulp.clean';
 import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { copyAllPosts } from './gulp.post';
-import { safelinkProcess } from './gulp.safelink';
-import { autoSeo } from './gulp.seo';
+import { taskSafelink } from './gulp.safelink';
+import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
 import noop from './utils/noop';
 
@@ -32,34 +32,34 @@ class SBG {
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  seo = () => autoSeo(join(this.cwd, getConfig().public_dir));
+  seo = () => taskSeo(null, join(this.cwd, getConfig().public_dir));
 
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
    * * see the method {@link copyAllPosts}
    * @returns
    */
-  copy = function () {
-    return new Promise((resolve) => {
-      copyAllPosts().once('end', resolve);
-    });
+  copy = async function () {
+    return copyAllPosts();
   };
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  safelink = () => safelinkProcess(noop, join(this.cwd, getConfig().public_dir));
+  safelink = () => taskSafelink(noop, join(this.cwd, getConfig().public_dir));
 
   /**
    * generate site with hexo
    */
   async generate() {
-    const instance = new Hexo(this.cwd);
+    const hexo = new Hexo(this.cwd);
     // hexo init
-    await instance.init().catch(noop);
+    await hexo.init().catch(noop);
+    await hexo.load().catch(noop);
     // hexo generate
-    await instance.call('generate').catch(noop);
+    await hexo.call('generate').catch(noop);
+    await hexo.exit();
   }
 
   async deploy() {
