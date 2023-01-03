@@ -1,21 +1,21 @@
 {
   "/release/static-blog-generator-3.0.0.tgz": {
     "integrity": {
-      "sha1": "8b3db057b9ea7f084a1ff94e73cdfdb336f6b6ab",
-      "sha256": "kZeLd2JHtyVVXQWrx3a5rxozd51IR+P/xHCYJsSPF8k=",
-      "md5": "9a0a38fe48cf6d403cd658e2c9874083",
-      "sha512": "IUsGaEBclv6a+3Yn5JeAPmpqimfaQn9smCW0egGF+HWG1kJKlI6do5QIt7W1FcGgn8Zu8ktFcYGXVCXg/toYCw=="
+      "sha1": "52267c440cfc0986169a46563254405a0a623c56",
+      "sha256": "8cuLrCaviuIPTFWxX2bWH6yvBe9HkfAggB826Q92m3I=",
+      "md5": "5ab742012580547dcc8451ef56a427fb",
+      "sha512": "Uneh+WWXV6FEPJs/xunGH0gUl/FSuXJfSIuggmEBCj4SsoYsqH4YgPQYE/I/Rx9D/kSktJobK3CjG2MLKc9dKw=="
     },
-    "size": "48.49 KB"
+    "size": "49.35 KB"
   },
   "/release/static-blog-generator.tgz": {
     "integrity": {
-      "sha1": "8b3db057b9ea7f084a1ff94e73cdfdb336f6b6ab",
-      "sha256": "kZeLd2JHtyVVXQWrx3a5rxozd51IR+P/xHCYJsSPF8k=",
-      "md5": "9a0a38fe48cf6d403cd658e2c9874083",
-      "sha512": "IUsGaEBclv6a+3Yn5JeAPmpqimfaQn9smCW0egGF+HWG1kJKlI6do5QIt7W1FcGgn8Zu8ktFcYGXVCXg/toYCw=="
+      "sha1": "52267c440cfc0986169a46563254405a0a623c56",
+      "sha256": "8cuLrCaviuIPTFWxX2bWH6yvBe9HkfAggB826Q92m3I=",
+      "md5": "5ab742012580547dcc8451ef56a427fb",
+      "sha512": "Uneh+WWXV6FEPJs/xunGH0gUl/FSuXJfSIuggmEBCj4SsoYsqH4YgPQYE/I/Rx9D/kSktJobK3CjG2MLKc9dKw=="
     },
-    "size": "48.49 KB"
+    "size": "49.35 KB"
   },
   "/package-lock.json": {
     "integrity": {
