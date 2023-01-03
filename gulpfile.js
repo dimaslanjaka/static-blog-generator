@@ -26,10 +26,16 @@ gulp.task('copy', copy);
 gulp.task('tsc', tsc);
 gulp.task('default', gulp.series(tsc));
 
-let running = false;
+/**
+ * @type {'false' | 'true' | 'postpone'}
+ */
+let running = 'false';
 const buildNopack = async function () {
-  if (running) return console.log('another build still running');
-  running = true;
+  if (/true|postpone/i.test(running)) {
+    running = 'postpone';
+    return console.log('another build still running');
+  }
+  if (/false|postpone/i.test(running)) running = 'true';
 
   const tmp = join(__dirname, 'tmp/gulp/watch');
   if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
@@ -54,7 +60,10 @@ const buildNopack = async function () {
     console.log(`subprocess error exit ${exitCode}, ${error}`); // throw
   }
 
-  running = false;
+  if (running === 'postpone') {
+    await buildNopack();
+  }
+  running = 'false';
   return data;
 };
 gulp.task('compile', buildNopack);
