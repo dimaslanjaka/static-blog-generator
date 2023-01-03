@@ -1,25 +1,42 @@
+import ansiColors from 'ansi-colors';
 import { existsSync } from 'fs';
 import gulp from 'gulp';
+import path from 'path';
 import sf, { SafelinkOptions } from 'safelinkify';
 import through2 from 'through2';
 import { SrcOptions } from 'vinyl-fs';
 import gulpCached from './gulp-utils/gulp.cache';
 import { getConfig } from './gulp.config';
+import { createWriteStream } from './utils/fm';
 import Logger from './utils/logger';
 
 /**
  * Process Safelink on Deploy Dir
  * @param _done callback function
- * @param cwd run on folder
+ * @param cwd working directory to scan html's
  * @returns
  */
-export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefined | null | string) {
-  return new Promise((resolve) => {
-    const config = getConfig();
-    // skip process safelink
-    if (!config.external_link.safelink) return resolve(new Error('config safelink not configured'));
-    if (!config.external_link.safelink.redirect) return resolve(new Error('safelink redirector not configured'));
+export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefined, cwd?: undefined | null | string) {
+  const config = getConfig();
+  const workingDir = typeof cwd === 'string' ? cwd : config.deploy.deployDir;
+  const logname = ansiColors.greenBright('safelink');
 
+  // skip process safelink
+  let hasError = false;
+  if (!config.external_link.safelink) {
+    hasError = true;
+    Logger.log(logname, 'config safelink', ansiColors.red('not configured'));
+  }
+  if (!config.external_link.safelink.redirect) {
+    hasError = true;
+    Logger.log(logname, 'safelink redirector', ansiColors.red('not configured'));
+  }
+  if (!config.external_link.safelink.enable) {
+    hasError = true;
+    Logger.log(logname, ansiColors.red('disabled'));
+  }
+
+  if (existsSync(workingDir) && !hasError) {
     const configSafelink = Object.assign({ enable: false }, config.external_link.safelink || {});
     let baseURL = '';
     try {
@@ -56,9 +73,8 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
 
     const safelink = new sf.safelink(opt);
 
-    const folder = cwd || config.deploy.deployDir;
     const gulpopt: SrcOptions = {
-      cwd: folder,
+      cwd: workingDir,
       ignore: []
     };
 
@@ -74,35 +90,36 @@ export function safelinkProcess(_done?: gulp.TaskFunctionCallback, cwd?: undefin
       }) as string[];
       gulpopt.ignore?.concat(...ignore);
     }
-    if (existsSync(folder)) {
-      return gulp
-        .src(['**/*.{html,htm}'], gulpopt)
-        .pipe(gulpCached({ name: 'safelink' }))
-        .pipe(
-          through2.obj(async (file, _enc, next) => {
-            // drop null
-            if (file.isNull() || file.isDirectory() || !file) return next();
-            if (file.isBuffer() && Buffer.isBuffer(file.contents)) {
-              // do safelinkify
-              const content = file.contents.toString('utf-8');
-              const parsed = await safelink.parse(content);
-              if (typeof parsed === 'string') {
-                // Logger.log(parsed);
-                file.contents = Buffer.from(parsed);
-                return next(null, file);
-              }
+
+    return gulp
+      .src(['**/*.{html,htm}'], gulpopt)
+      .pipe(gulpCached({ name: 'safelink' }))
+      .pipe(
+        through2.obj(async (file, _enc, next) => {
+          // drops
+          if (file.isNull() || file.isDirectory() || !file || file.isStream()) return next();
+          // process
+          if (file.isBuffer() && Buffer.isBuffer(file.contents)) {
+            // do safelinkify
+            const content = file.contents.toString('utf-8');
+            const parsed = await safelink.parse(content);
+            if (typeof parsed === 'string') {
+              // Logger.log(parsed);
+              file.contents = Buffer.from(parsed);
+              return next(null, file);
             }
-            Logger.log('cannot parse', file.path);
-            // drop fails
-            next();
-          })
-        )
-        .pipe(gulp.dest(config.deploy.deployDir))
-        .once('end', () => resolve(null));
-    }
-    return resolve(null);
-  });
+          }
+          Logger.log('cannot parse', file.path);
+          // drop fails
+          next();
+        })
+      )
+      .pipe(gulp.dest(workingDir));
+  } else {
+    const wstream = createWriteStream(path.join(config.cwd, 'build/errors/safelink.log'));
+    return wstream;
+  }
 }
 
 // safelinkify the deploy folder
-gulp.task('safelink', safelinkProcess);
+gulp.task('safelink', taskSafelink);
