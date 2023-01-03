@@ -15,6 +15,7 @@ import noop from './utils/noop';
  * Clean Project Databases
  */
 export async function cleanDb() {
+  const logname = 'clean-' + ansiColors.redBright('database');
   const config = getConfig();
   if (typeof config.source_dir !== 'string') {
     writefile(join(config.cwd, 'build/errors/clean.log'), inspect(config));
@@ -25,22 +26,14 @@ export async function cleanDb() {
   const publicDir = join(config.cwd, config.public_dir);
   const tmpDir = join(config.cwd, 'build');
 
-  Logger.log('[clean]', { tmpDir, postDir, publicDir });
-
-  try {
-    if (existsSync(tmpDir)) await del(tmpDir);
-  } catch {
-    Logger.log('[clean]', 'cannot delete', tmpDir);
-  }
-  try {
-    if (existsSync(publicDir)) await del(publicDir);
-  } catch {
-    Logger.log('[clean]', 'cannot delete', publicDir);
-  }
-  try {
-    if (existsSync(postDir)) await del(postDir);
-  } catch {
-    Logger.log('[clean]', 'cannot delete', postDir);
+  const dirs = [tmpDir, postDir, publicDir];
+  for (let i = 0; i < dirs.length; i++) {
+    const dir = dirs[i];
+    try {
+      if (existsSync(dir)) await del(dir);
+    } catch {
+      Logger.log(logname, 'cannot delete', dir);
+    }
   }
 
   const hexo = new hexoLib(config.base_dir);
