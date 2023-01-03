@@ -1,15 +1,26 @@
 {
-  "post_dir": "src-posts",
-  "cwd": "d:/Repositories/static-blog-generator-hexo/packages/static-blog-generator/test",
   "title": "WMI",
   "subtitle": "Website Management Indonesia",
   "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.",
   "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
+  "timezone": "Asia/Jakarta",
   "language": [
     "en",
-    "id"
+    "id",
+    "zh-TW",
+    "zh-CN",
+    "zh-HK",
+    "th",
+    "tl"
   ],
-  "timezone": "Asia/Jakarta",
+  "multilingual": true,
+  "i18n": {
+    "type": [
+      "page",
+      "post"
+    ],
+    "generator": []
+  },
   "search": {
     "path": "search.xml",
     "field": "post",
@@ -31,7 +42,7 @@
   "category_dir": "categories",
   "code_dir": "downloads/code",
   "i18n_dir": ":lang",
-  "new_post_name": ":year/:month/:day/:title.md",
+  "new_post_name": ":year/:month/:title.md",
   "default_layout": "post",
   "titlecase": false,
   "external_link": {
@@ -41,7 +52,13 @@
       "enable": true,
       "exclude": [
         "webmanajemen.com",
-        "git.webmanajemen.com"
+        "git.webmanajemen.com",
+        "**/chimeraland/recipes.html",
+        "**/embed.html",
+        "**/tools.html",
+        "**/safelink.html",
+        "**/node_modules/**",
+        "**/vendor/**"
       ],
       "redirect": "https://www.webmanajemen.com/page/safelink.html?url=",
       "type": "base64",
@@ -95,11 +112,15 @@
     "assets/adblock-notify/readme.md"
   ],
   "exclude": [
+    "**/.git*",
+    "**/.git",
+    "**/License.md",
+    "**/frontmatter.json",
+    "**/License",
     "**/bin/**",
     "**/backend/**",
-    "**/.git",
     "**/MIDI.js/**",
-    "**/{readme,README,changelog,CHANGELOG}.md",
+    "**/{readme,README,changelog,CHANGELOG,license,LICENSE,License}.md",
     "**/Test/**",
     "**/guzzle/**",
     "**/exclude/**",
@@ -111,7 +132,7 @@
     "**/hexo-theme-unit-test/**"
   ],
   "ignore": [
-    "**/.git"
+    "**/.git*"
   ],
   "skip_render": [
     "*.html",
@@ -145,12 +166,18 @@
     "cache": false,
     "header": false,
     "serveStatic": {
+      "dotfiles": "allow",
       "extensions": [
-        "html"
+        "html",
+        "js",
+        "css",
+        "png",
+        "jpg",
+        "jpeg"
       ]
     }
   },
-  "theme": "hexo-theme-landscape",
+  "theme": "next",
   "deploy": {
     "type": "git",
     "repo": "https://github.com/dimaslanjaka/dimaslanjaka.github.io.git",
@@ -191,6 +218,7 @@
       "sitemap.xml",
       "sitemap.txt"
     ],
+    "template_txt": "./_config_template_sitemap.txt",
     "rel": true,
     "tags": true,
     "categories": true
@@ -265,6 +293,12 @@
       }
     }
   },
+  "excerpt": {
+    "depth": 10,
+    "excerpt_excludes": [],
+    "more_excludes": [],
+    "hideWholePostExcerpts": false
+  },
   "adsense": {
     "enable": false,
     "pub": "ca-pub-2974518380815858",
@@ -312,21 +346,28 @@
     },
     "sitemap": true
   },
-  "tag_assign": null,
-  "category_assign": {
-    "TS": "Programming",
-    "JS": "Programming",
-    "Typescript": "Programming",
-    "Javascript": "Programming",
-    "GitHub": "Programming"
+  "tags": {
+    "lowercase": true,
+    "mapper": {
+      "JS": "javascript",
+      "TS": "javascript"
+    },
+    "assign": {
+      "JS": "programming",
+      "TS": "programming",
+      "GitHub": "Programming"
+    }
   },
-  "tag_mapper": {
-    "JS": "Javascript",
-    "TS": "Typescript"
-  },
-  "category_mapper": {
-    "JS": "Javascript",
-    "TS": "Typescript"
-  },
-  "fileYML": "d:\\Repositories\\static-blog-generator-hexo\\packages\\static-blog-generator\\test\\_config.yml"
+  "categories": {
+    "lowercase": true,
+    "mapper": {
+      "JS": "javascript",
+      "TS": "typescript"
+    },
+    "assign": {
+      "GitHub": "Programming",
+      "JS": "programming",
+      "TS": "programming"
+    }
+  }
 }
