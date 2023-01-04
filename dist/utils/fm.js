@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createWriteStream = exports.writefile = void 0;
+exports.isMarkdown = exports.isAsset = exports.createWriteStream = exports.writefile = void 0;
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var path_1 = __importDefault(require("path"));
 function writefile(file, content, opt) {
@@ -32,3 +32,7 @@ function createWriteStream(dest, options) {
     return fs_extra_1.default.createWriteStream(dest, options);
 }
 exports.createWriteStream = createWriteStream;
+var isAsset = function (path) { return /.(js|css|scss|njk|ejs|png|jpe?g|gif|svg|webp|json|html|txt)$/.test(String(path)); };
+exports.isAsset = isAsset;
+var isMarkdown = function (path) { return /.(md)$/i.test(String(path)); };
+exports.isMarkdown = isMarkdown;
