@@ -3,12 +3,13 @@
 /* global hexo */
 
 import color from 'ansi-colors';
+import { chain } from './chain';
 
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 
 const logname = color.magentaBright('[scheduler]');
 
-const fns: { [key: string]: (data?: string) => void }[] = [];
+const fns: { [key: string]: (data?: string) => void } = {};
 let triggered: boolean;
 /**
  * Bind functions to exit handler
@@ -29,14 +30,21 @@ export function bindProcessExit(key: string, fn: (...args: any[]) => any) {
  * @param options
  * @param exitCode
  */
-function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
+async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
+  const funcs: Parameters<typeof chain>[0] = [];
   for (const key in fns) {
     if (Object.prototype.hasOwnProperty.call(fns, key)) {
-      const fun = fns[key];
-      if (scheduler.verbose) _log.info(logname, `executing function key: ${key}`);
-      fun.apply('null');
+      funcs.push({
+        callback: fns[key],
+        opt: {
+          before: () => {
+            if (scheduler.verbose) _log.info(logname, `executing function key: ${key}`);
+          }
+        }
+      });
     }
   }
+  chain(funcs);
   if (options.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
   if (options.exit) process.exit();
 }
