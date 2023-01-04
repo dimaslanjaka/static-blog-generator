@@ -90,6 +90,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.copyAllPosts = exports.updatePost = exports.copySinglePost = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var front_matter_1 = __importDefault(require("front-matter"));
+var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_post_parser_1 = require("hexo-post-parser");
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
@@ -101,7 +102,6 @@ var gulp_config_1 = require("./gulp.config");
 var fm = __importStar(require("./utils/fm"));
 var lockmanager_1 = __importDefault(require("./utils/lockmanager"));
 var logger_1 = __importDefault(require("./utils/logger"));
-var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function copySinglePost(identifier, callback) {
@@ -110,7 +110,6 @@ function copySinglePost(identifier, callback) {
         .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
         cwd: sourcePostDir
     })
-        .pipe(updatePost())
         .pipe(gulp_1.default.dest(generatedPostDir))
         .on('end', function () {
         if (typeof callback === 'function')
@@ -118,76 +117,64 @@ function copySinglePost(identifier, callback) {
     });
 }
 exports.copySinglePost = copySinglePost;
-function updatePost() {
-    return through2_1.default.obj(function (file, _enc, next) {
-        return __awaiter(this, void 0, void 0, function () {
-            var config, parse, oriUp_1, oriPath_1, post_1, rBuild_1, build;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (file.isNull())
-                            return [2, next()];
-                        if (!(file.extname === '.md')) return [3, 2];
-                        config = (0, gulp_config_1.getConfig)();
-                        return [4, (0, hexo_post_parser_1.parsePost)(file.path, {
-                                shortcodes: {
-                                    youtube: true,
-                                    css: true,
-                                    include: true,
-                                    link: true,
-                                    now: true,
-                                    script: true,
-                                    text: true,
-                                    codeblock: true
-                                },
-                                cache: false,
-                                config: config,
-                                formatDate: true,
-                                fix: true,
-                                sourceFile: file.path
-                            })];
-                    case 1:
-                        parse = _a.sent();
-                        if (parse && parse.metadata) {
-                            oriUp_1 = parse.metadata.updated;
-                            oriPath_1 = file.path;
-                            parse.metadata.updated = (0, moment_timezone_1.default)()
-                                .tz(config.timezone || 'UTC')
-                                .format();
-                            post_1 = (0, front_matter_1.default)(String(file.contents));
-                            if ('updated' in post_1.attributes === false) {
-                                post_1.attributes.updated = parse.metadata.updated;
-                            }
-                            post_1.attributes.updated = parse.metadata.updated;
-                            post_1.attributes.date = parse.metadata.date;
-                            if ('modified' in parse.metadata) {
-                                post_1.attributes.modified = parse.metadata.modified;
-                            }
-                            rBuild_1 = {
-                                metadata: post_1.attributes,
-                                body: post_1.body,
-                                content: post_1.body,
-                                config: config
-                            };
-                            scheduler_1.default.add(oriPath_1, function () {
-                                var rebuild = (0, hexo_post_parser_1.buildPost)(rBuild_1);
-                                logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath_1).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp_1, '->', post_1.attributes.updated);
-                                fm.writefile(oriPath_1, rebuild);
-                            });
-                            build = (0, hexo_post_parser_1.buildPost)(parse);
-                            file.contents = Buffer.from(build);
-                            return [2, next(null, file)];
+function updatePost(postPath) {
+    return __awaiter(this, void 0, void 0, function () {
+        var config, parse, oriUp, oriPath, post, rBuild, rebuild, build;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    config = (0, gulp_config_1.getConfig)();
+                    return [4, (0, hexo_post_parser_1.parsePost)(postPath, {
+                            shortcodes: {
+                                youtube: true,
+                                css: true,
+                                include: true,
+                                link: true,
+                                now: true,
+                                script: true,
+                                text: true,
+                                codeblock: true
+                            },
+                            cache: false,
+                            config: config,
+                            formatDate: true,
+                            fix: true,
+                            sourceFile: postPath
+                        })];
+                case 1:
+                    parse = _a.sent();
+                    if (parse && parse.metadata) {
+                        oriUp = parse.metadata.updated;
+                        oriPath = postPath;
+                        parse.metadata.updated = (0, moment_timezone_1.default)()
+                            .tz(config.timezone || 'UTC')
+                            .format();
+                        post = (0, front_matter_1.default)((0, fs_1.readFileSync)(postPath, 'utf-8'));
+                        if ('updated' in post.attributes === false) {
+                            post.attributes.updated = parse.metadata.updated;
                         }
-                        else {
-                            logger_1.default.log('cannot parse', file.path);
-                            return [2, next(null)];
+                        post.attributes.updated = parse.metadata.updated;
+                        post.attributes.date = parse.metadata.date;
+                        if ('modified' in parse.metadata) {
+                            post.attributes.modified = parse.metadata.modified;
                         }
-                        _a.label = 2;
-                    case 2:
-                        next(null, file);
-                        return [2];
-                }
-            });
+                        rBuild = {
+                            metadata: post.attributes,
+                            body: post.body,
+                            content: post.body,
+                            config: config
+                        };
+                        rebuild = (0, hexo_post_parser_1.buildPost)(rBuild);
+                        logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp, '->', post.attributes.updated);
+                        fm.writefile(oriPath, rebuild);
+                        build = (0, hexo_post_parser_1.buildPost)(parse);
+                        fm.writefile(postPath, build);
+                    }
+                    else {
+                        logger_1.default.log('cannot parse', postPath);
+                    }
+                    return [2];
+            }
         });
     });
 }

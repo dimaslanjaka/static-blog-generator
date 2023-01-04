@@ -1,5 +1,6 @@
 import ansiColors from 'ansi-colors';
 import frontMatter from 'front-matter';
+import { readFileSync } from 'fs';
 import gulp from 'gulp';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
@@ -11,7 +12,6 @@ import { commonIgnore, getConfig } from './gulp.config';
 import * as fm from './utils/fm';
 import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
-import scheduler from './utils/scheduler';
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
 const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
@@ -28,7 +28,6 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
       cwd: sourcePostDir
     })
-    .pipe(updatePost())
     .pipe(gulp.dest(generatedPostDir))
     .on('end', function () {
       //Logger.log(fileList);
@@ -37,84 +36,65 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
 }
 
 /**
- * copy watched post
+ * update metadata.updated post
  * @returns
  */
-export function updatePost() {
-  return through2.obj(async function (file, _enc, next) {
-    ///fileList.push(file.path);
-    if (file.isNull()) return next();
-    // process markdown files
-    if (file.extname === '.md') {
-      const config = getConfig();
-      const parse = await parsePost(file.path, {
-        shortcodes: {
-          youtube: true,
-          css: true,
-          include: true,
-          link: true,
-          now: true,
-          script: true,
-          text: true,
-          codeblock: true
-        },
-        cache: false,
-        config: config as any,
-        formatDate: true,
-        fix: true,
-        sourceFile: file.path
-      });
-      if (parse && parse.metadata) {
-        // update post modified
-        const oriUp = parse.metadata.updated;
-        const oriPath = file.path;
-        parse.metadata.updated = moment()
-          .tz(config.timezone || 'UTC')
-          .format();
-        /*parse.metadata.date = moment(String(parse.metadata.date))
-          .tz(config.timezone || 'UTC')
-          .format();*/
-        const post = frontMatter<Record<string, any>>(String(file.contents));
-        if ('updated' in post.attributes === false) {
-          post.attributes.updated = parse.metadata.updated;
-        }
-        post.attributes.updated = parse.metadata.updated;
-        post.attributes.date = parse.metadata.date;
-        if ('modified' in parse.metadata) {
-          post.attributes.modified = parse.metadata.modified;
-        }
-        const rBuild: postMap = {
-          metadata: <any>post.attributes,
-          body: post.body,
-          content: post.body,
-          config: config as any
-        };
-
-        // update original source post after process ends
-        scheduler.add(oriPath, function () {
-          const rebuild = buildPost(rBuild);
-          //writefile(join(process.cwd(), 'build/rebuild.md'), rebuild);
-          Logger.log(
-            'write to',
-            toUnix(oriPath).replace(toUnix(process.cwd()), ''),
-            oriUp,
-            '->',
-            post.attributes.updated
-          );
-          fm.writefile(oriPath, rebuild); // write original post
-        });
-
-        const build = buildPost(parse);
-        file.contents = Buffer.from(build);
-        return next(null, file);
-      } else {
-        Logger.log('cannot parse', file.path);
-        return next(null);
-      }
-    }
-    // keep copy other files
-    next(null, file);
+export async function updatePost(postPath: string) {
+  const config = getConfig();
+  const parse = await parsePost(postPath, {
+    shortcodes: {
+      youtube: true,
+      css: true,
+      include: true,
+      link: true,
+      now: true,
+      script: true,
+      text: true,
+      codeblock: true
+    },
+    cache: false,
+    config: config as any,
+    formatDate: true,
+    fix: true,
+    sourceFile: postPath
   });
+  if (parse && parse.metadata) {
+    // update post modified
+    const oriUp = parse.metadata.updated;
+    const oriPath = postPath;
+    parse.metadata.updated = moment()
+      .tz(config.timezone || 'UTC')
+      .format();
+    /*parse.metadata.date = moment(String(parse.metadata.date))
+      .tz(config.timezone || 'UTC')
+      .format();*/
+    const post = frontMatter<Record<string, any>>(readFileSync(postPath, 'utf-8'));
+    if ('updated' in post.attributes === false) {
+      post.attributes.updated = parse.metadata.updated;
+    }
+    post.attributes.updated = parse.metadata.updated;
+    post.attributes.date = parse.metadata.date;
+    if ('modified' in parse.metadata) {
+      post.attributes.modified = parse.metadata.modified;
+    }
+    const rBuild: postMap = {
+      metadata: <any>post.attributes,
+      body: post.body,
+      content: post.body,
+      config: config as any
+    };
+
+    // update original source post after process ends
+    const rebuild = buildPost(rBuild);
+    //writefile(join(process.cwd(), 'build/rebuild.md'), rebuild);
+    Logger.log('write to', toUnix(oriPath).replace(toUnix(process.cwd()), ''), oriUp, '->', post.attributes.updated);
+    fm.writefile(oriPath, rebuild); // write original post
+
+    const build = buildPost(parse);
+    fm.writefile(postPath, build);
+  } else {
+    Logger.log('cannot parse', postPath);
+  }
 }
 
 /**
