@@ -117,12 +117,16 @@ function copySinglePost(identifier, callback) {
     });
 }
 exports.copySinglePost = copySinglePost;
+var processingUpdate = {};
 function updatePost(postPath, callback) {
     return __awaiter(this, void 0, void 0, function () {
         var config, parse, oriUp, oriPath, post, rBuild, rebuild, build, hasError;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    if (processingUpdate[postPath])
+                        return [2, false];
+                    processingUpdate[postPath] = true;
                     config = (0, gulp_config_1.getConfig)();
                     return [4, (0, hexo_post_parser_1.parsePost)(postPath, {
                             shortcodes: {
@@ -186,6 +190,7 @@ function updatePost(postPath, callback) {
                     hasError = typeof (parse && parse.metadata) === 'undefined';
                     if (typeof callback === 'function')
                         callback(hasError, postPath);
+                    delete processingUpdate[postPath];
                     return [2, hasError];
             }
         });
