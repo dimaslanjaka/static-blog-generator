@@ -2,7 +2,7 @@
 
 paths:
   - src
-paths-ignore: 
+paths-ignore:
   - '**/*.test*.{ts,js}' # skip test unit
   - '**/*.spec*.{ts,js}' # skip test unit
   - '**/*.{html,ejs,njk}' # skip non-source files
