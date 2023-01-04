@@ -91,6 +91,7 @@ exports.commonIgnore = [
     '**/desktop.ini',
     '**/node_modules/**',
     '**/.frontmatter/**',
-    '**/.git*/**'
+    '**/.git*/**',
+    '**/.*'
 ];
 exports.projectIgnores = __spreadArray(__spreadArray([], __read((getConfig().skip_render || [])), false), __read((getConfig().ignore || [])), false);

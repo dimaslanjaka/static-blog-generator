@@ -13,7 +13,7 @@ const path = require('path');
 //// CHECK REQUIRED PACKAGES
 
 const scriptname = `[postinstall]`;
-const isAllPackagesInstalled = ['cross-spawn', 'axios', 'ansi-colors'].map((name) => {
+const isAllPackagesInstalled = ['cross-spawn', 'axios', 'ansi-colors', 'glob'].map((name) => {
   return {
     name,
     installed: isPackageInstalled(name)
@@ -30,7 +30,8 @@ if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
 // imports start
 const { spawn } = require('cross-spawn');
 const Axios = require('axios');
-// const upath = require('upath');
+const glob = require('glob');
+const upath = require('upath');
 const crypto = require('crypto');
 const colors = require('ansi-colors');
 // const persistentCache = require('persistent-cache');
@@ -166,7 +167,40 @@ const coloredScriptName = colors.grey(scriptname);
           );
           if (isLocalPkg && !isLocalTarballpkg) {
             const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : ''].filter((str) => str.length > 0);
-            await summon('npm', ['install', ...arg], { cwd: __dirname });
+            const folderHash = await folder_to_hash('sha1', version, {
+              ignored: [
+                '**/.*',
+                '**/_*.json',
+                '**/tmp/**',
+                '**/build/**',
+                '**/test*/**',
+                '**/dist/**',
+                '**/.cache/**',
+                '**/temp/**'
+              ],
+              pattern: '**/src/**'
+            });
+            const existingHash = ((getCache().folder || {})[pkgname] || {}).hash;
+            if (!existingHash || folderHash.hash !== existingHash) {
+              saveCache({
+                folder: {
+                  [pkgname]: {
+                    hash: folderHash.hash
+                  }
+                }
+              });
+              console.log(
+                'uninstalling',
+                coloredPkgname,
+                'and reinstalling with argument',
+                colors.blueBright(...arg.filter((str) => str.startsWith('-')))
+              );
+              await summon('npm', ['un', pkgname], { cwd: __dirname });
+              await summon('npm', ['install', ...arg], { cwd: __dirname });
+            } else {
+              //console.log(folderHash.hash, existingHash, folderHash.hash == existingHash);
+              console.log(coloredScriptName, 'no changes found', coloredPkgname);
+            }
           } else {
             toUpdate.add(pkgname);
           }
@@ -377,7 +411,6 @@ function file_to_hash(alogarithm, path, encoding = 'hex') {
  * @param {import('crypto').BinaryToTextEncoding} encoding
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     try {
@@ -399,7 +432,7 @@ function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
   return new Promise((resolve, reject) => {
-    let outputLocationPath = path.join(__dirname, 'tmp/postinstall', path.basename(url));
+    let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
     // remove slashes when url ends with slash
     if (!path.basename(url).endsWith('/')) {
       outputLocationPath = outputLocationPath.replace(/\/$/, '');
@@ -489,4 +522,67 @@ function writefile(dest, data) {
     if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
   }
   fs.writeFileSync(dest, data);
+}
+
+/**
+ * get hashes from folder
+ * @param {'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5'} alogarithm
+ * @param {string} folder
+ * @param {{ ignored: string[], encoding: import('crypto').BinaryToTextEncoding, pattern: string }} options
+ * @returns {Promise<{ filesWithHash: Record<string, string>, hash: string }>}
+ */
+async function folder_to_hash(alogarithm, folder, options) {
+  return new Promise((resolve, reject) => {
+    options = Object.assign({ encoding: 'hex', ignored: [] }, options || {});
+    if (folder.startsWith('file:')) folder = folder.replace('file:', '');
+    // fix non exist
+    if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
+    // run only if exist
+    if (fs.existsSync(folder)) {
+      glob(
+        options.pattern || '**/*',
+        {
+          cwd: folder,
+          ignore: (
+            options.ignored || [
+              '**/tmp/**',
+              '**/build/**',
+              '**/.cache/**',
+              '**/dist/**',
+              '**/.vscode/**',
+              '**/coverage/**',
+              '**/release/**',
+              '**/bin/**',
+              '**/*.json'
+            ]
+          ).concat('**/.git*/**', '**/node_modules/**'),
+          dot: true,
+          noext: true
+        },
+        async function (err, matches) {
+          if (!err) {
+            const filesWithHash = {};
+            for (let i = 0; i < matches.length; i++) {
+              const item = matches[i];
+              const fullPath = upath.join(folder, item);
+              const statInfo = fs.statSync(fullPath);
+              if (statInfo.isFile()) {
+                const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
+                const hash = await data_to_hash(alogarithm, fileInfo, options.encoding);
+                filesWithHash[fullPath] = hash;
+              }
+            }
+            resolve({
+              filesWithHash,
+              hash: await data_to_hash(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+            });
+          } else {
+            reject(err);
+          }
+        }
+      );
+    } else {
+      console.log(coloredScriptName, folder + ' not found');
+    }
+  });
 }
