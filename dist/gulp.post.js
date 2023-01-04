@@ -87,7 +87,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.copyAllPosts = exports.updatePost = exports.copySinglePost = exports.watchPost = void 0;
+exports.copyAllPosts = exports.updatePost = exports.copySinglePost = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var front_matter_1 = __importDefault(require("front-matter"));
 var gulp_1 = __importDefault(require("gulp"));
@@ -104,19 +104,6 @@ var logger_1 = __importDefault(require("./utils/logger"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
-function watchPost(done, options) {
-    var watcher = gulp_1.default.watch(['**/*'], Object.assign({ cwd: sourcePostDir, ignored: gulp_config_1.commonIgnore.concat.apply(gulp_config_1.commonIgnore, __spreadArray([], __read(gulp_config_1.projectIgnores), false)) }, options || {}));
-    console.log({ sourcePostDir: sourcePostDir, generatedPostDir: generatedPostDir });
-    watcher.on('change', function (path) {
-        logger_1.default.info('changed', path.replace((0, gulp_config_1.getConfig)().cwd, ''));
-        copySinglePost(path);
-    });
-    watcher.on('add', function (path) {
-        copySinglePost(path);
-    });
-    watcher.once('close', done);
-}
-exports.watchPost = watchPost;
 function copySinglePost(identifier, callback) {
     identifier = identifier.replace((0, upath_1.extname)(identifier), '');
     gulp_1.default
@@ -314,5 +301,3 @@ gulp_1.default.task('copy-all-post', gulp_1.default.series('post:copy'));
 gulp_1.default.task('copy-all-posts', gulp_1.default.series('post:copy'));
 gulp_1.default.task('copy-posts', gulp_1.default.series('post:copy'));
 gulp_1.default.task('copy-post', gulp_1.default.series('post:copy'));
-gulp_1.default.task('watch-post', watchPost);
-gulp_1.default.task('watch-posts', watchPost);
