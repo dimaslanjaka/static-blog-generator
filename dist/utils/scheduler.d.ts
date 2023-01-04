@@ -1,4 +1,4 @@
-export declare function bindProcessExit(key: string, fn: () => void): void;
+export declare function bindProcessExit(key: string, fn: (...args: any[]) => any): void;
 declare class scheduler {
     static verbose: boolean;
     constructor();

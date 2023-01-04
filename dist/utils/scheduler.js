@@ -18,19 +18,25 @@ function bindProcessExit(key, fn) {
 }
 exports.bindProcessExit = bindProcessExit;
 function exitHandler(options, exitCode) {
-    Object.keys(fns).forEach(function (key) {
-        if (scheduler.verbose)
-            _log.info(logname, "executing function key: ".concat(key));
-        fns[key]();
-    });
+    for (var key in fns) {
+        if (Object.prototype.hasOwnProperty.call(fns, key)) {
+            var fun = fns[key];
+            if (scheduler.verbose)
+                _log.info(logname, "executing function key: ".concat(key));
+            fun.apply('null');
+        }
+    }
     if (options.cleanup && scheduler.verbose)
         _log.info(logname, "clean exit(".concat(exitCode, ")"));
     if (options.exit)
         process.exit();
 }
 function triggerProcess() {
+    process.on('beforeExit', exitHandler.bind(null, { exit: true }));
     process.on('exit', exitHandler.bind(null, { cleanup: true }));
+    process.on('disconnect', exitHandler.bind(null, { exit: true }));
     process.on('SIGINT', exitHandler.bind(null, { exit: true }));
+    process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
     process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
     process.on('SIGUSR2', exitHandler.bind(null, { exit: true }));
     process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
