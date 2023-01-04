@@ -97,7 +97,7 @@ function chain(schedule) {
                                 });
                             }
                             else {
-                                logger_1.default.log('cannot determine method instances');
+                                logger_1.default.log(logname, 'cannot determine method instances');
                             }
                             resolve.bind(this)(chain.bind(this));
                         });
