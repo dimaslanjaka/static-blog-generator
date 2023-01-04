@@ -8,6 +8,7 @@ import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
 import noop from './utils/noop';
+import scheduler from './utils/scheduler';
 
 class SBG {
   cwd: string;
@@ -24,6 +25,7 @@ class SBG {
       this.cwd = cwd;
       this.config = setConfig({ cwd });
     }
+    scheduler.register();
   }
 
   standalone = () => standaloneRunner();

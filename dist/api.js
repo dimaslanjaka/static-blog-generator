@@ -49,6 +49,7 @@ var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var gulp_standalone_1 = __importDefault(require("./gulp.standalone"));
 var noop_1 = __importDefault(require("./utils/noop"));
+var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var SBG = (function () {
     function SBG(cwd) {
         if (cwd === void 0) { cwd = null; }
@@ -70,6 +71,7 @@ var SBG = (function () {
             this.cwd = cwd;
             this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
         }
+        scheduler_1.default.register();
     }
     SBG.prototype.generate = function () {
         return __awaiter(this, void 0, void 0, function () {
