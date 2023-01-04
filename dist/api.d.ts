@@ -1,5 +1,4 @@
 /// <reference types="node" />
-/// <reference types="node" />
 import { getConfig, setConfig } from './gulp.config';
 declare class SBG {
     cwd: string;
@@ -12,8 +11,8 @@ declare class SBG {
     static getApi(): SBG;
     standalone: () => NodeJS.ReadWriteStream;
     seo: () => NodeJS.ReadWriteStream;
-    copy: () => Promise<import("fs").WriteStream | NodeJS.ReadWriteStream>;
-    safelink: () => import("fs").WriteStream | NodeJS.ReadWriteStream;
+    copy: () => Promise<any>;
+    safelink: () => any;
     generate(): Promise<void>;
     deploy(): Promise<void>;
     clean(opt?: 'all'): Promise<void>;
