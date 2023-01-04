@@ -73,6 +73,12 @@ var SBG = (function () {
         }
         scheduler_1.default.register();
     }
+    SBG.setApi = function (api) {
+        this.currentApI = api;
+    };
+    SBG.getApi = function () {
+        return this.currentApI;
+    };
     SBG.prototype.generate = function () {
         return __awaiter(this, void 0, void 0, function () {
             var hexo;
