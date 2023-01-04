@@ -1,0 +1,4 @@
+#!/bin/sh
+
+gulp tsc
+gulp copy
