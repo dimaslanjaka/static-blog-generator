@@ -128,7 +128,8 @@ export const commonIgnore = [
   '**/desktop.ini', // windows desktop.ini
   '**/node_modules/**', // node_modules
   '**/.frontmatter/**', // vscode frontmatter plugin
-  '**/.git*/**' // any git configs
+  '**/.git*/**', // any git configs
+  '**/.*' // skip dots
 ];
 
 /**
