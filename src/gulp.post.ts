@@ -7,7 +7,7 @@ import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import gulpCached from './gulp-utils/gulp.cache';
 import gulpDebug from './gulp-utils/gulp.debug';
-import { commonIgnore, getConfig, projectIgnores } from './gulp.config';
+import { commonIgnore, getConfig } from './gulp.config';
 import * as fm from './utils/fm';
 import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
@@ -15,26 +15,6 @@ import scheduler from './utils/scheduler';
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
 const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
-
-/**
- * Watch post while you writing new or modify posts from src-posts folder
- * @param done
- */
-export function watchPost(done: gulp.TaskFunctionCallback, options?: gulp.WatchOptions) {
-  const watcher = gulp.watch(
-    ['**/*'],
-    Object.assign({ cwd: sourcePostDir, ignored: commonIgnore.concat(...projectIgnores) }, options || {})
-  );
-  console.log({ sourcePostDir, generatedPostDir });
-  watcher.on('change', (path) => {
-    Logger.info('changed', path.replace(getConfig().cwd, ''));
-    copySinglePost(path);
-  });
-  watcher.on('add', (path) => {
-    copySinglePost(path);
-  });
-  watcher.once('close', done);
-}
 
 /**
  * Copy single post from src-posts folder to source/_posts
@@ -248,5 +228,5 @@ gulp.task('copy-all-posts', gulp.series('post:copy'));
 gulp.task('copy-posts', gulp.series('post:copy'));
 gulp.task('copy-post', gulp.series('post:copy'));
 
-gulp.task('watch-post', watchPost);
-gulp.task('watch-posts', watchPost);
+//gulp.task('watch-post', watchPost);
+//gulp.task('watch-posts', watchPost);
