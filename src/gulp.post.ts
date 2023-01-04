@@ -113,6 +113,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     await fm.writefile(postPath, build, { async: true });
   } else {
     Logger.log('cannot parse', postPath);
+    fm.writefile(join(process.cwd(), 'build/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
   }
 
   const hasError = typeof (parse && parse.metadata) === 'undefined';
