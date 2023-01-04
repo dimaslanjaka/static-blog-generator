@@ -117,9 +117,9 @@ function copySinglePost(identifier, callback) {
     });
 }
 exports.copySinglePost = copySinglePost;
-function updatePost(postPath) {
+function updatePost(postPath, callback) {
     return __awaiter(this, void 0, void 0, function () {
-        var config, parse, oriUp, oriPath, post, rBuild, rebuild, build;
+        var config, parse, oriUp, oriPath, post, rBuild, rebuild, build, hasError;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -143,42 +143,50 @@ function updatePost(postPath) {
                         })];
                 case 1:
                     parse = _a.sent();
-                    if (parse && parse.metadata) {
-                        oriUp = parse.metadata.updated;
-                        oriPath = postPath;
-                        parse.metadata.updated = (0, moment_timezone_1.default)()
-                            .tz(config.timezone || 'UTC')
-                            .format();
-                        post = (0, front_matter_1.default)((0, fs_1.readFileSync)(postPath, 'utf-8'));
-                        if ('updated' in post.attributes === false) {
-                            post.attributes.updated = parse.metadata.updated;
-                        }
+                    if (!(parse && parse.metadata)) return [3, 4];
+                    oriUp = parse.metadata.updated;
+                    oriPath = postPath;
+                    parse.metadata.updated = (0, moment_timezone_1.default)()
+                        .tz(config.timezone || 'UTC')
+                        .format();
+                    post = (0, front_matter_1.default)((0, fs_1.readFileSync)(postPath, 'utf-8'));
+                    if ('updated' in post.attributes === false) {
                         post.attributes.updated = parse.metadata.updated;
-                        post.attributes.date = parse.metadata.date;
-                        if ('modified' in parse.metadata) {
-                            post.attributes.modified = parse.metadata.modified;
-                        }
-                        if (post.attributes.description &&
-                            post.attributes.subtitle &&
-                            post.attributes.description == post.attributes.subtitle) {
-                            delete post.attributes.subtitle;
-                        }
-                        rBuild = {
-                            metadata: post.attributes,
-                            body: post.body,
-                            content: post.body,
-                            config: config
-                        };
-                        rebuild = (0, hexo_post_parser_1.buildPost)(rBuild);
-                        logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp, '->', post.attributes.updated);
-                        fm.writefile(oriPath, rebuild);
-                        build = (0, hexo_post_parser_1.buildPost)(parse);
-                        fm.writefile(postPath, build);
                     }
-                    else {
-                        logger_1.default.log('cannot parse', postPath);
+                    post.attributes.updated = parse.metadata.updated;
+                    post.attributes.date = parse.metadata.date;
+                    if ('modified' in parse.metadata) {
+                        post.attributes.modified = parse.metadata.modified;
                     }
-                    return [2];
+                    if (post.attributes.description &&
+                        post.attributes.subtitle &&
+                        post.attributes.description == post.attributes.subtitle) {
+                        delete post.attributes.subtitle;
+                    }
+                    rBuild = {
+                        metadata: post.attributes,
+                        body: post.body,
+                        content: post.body,
+                        config: config
+                    };
+                    rebuild = (0, hexo_post_parser_1.buildPost)(rBuild);
+                    logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp, '->', post.attributes.updated);
+                    return [4, fm.writefile(oriPath, rebuild, { async: true })];
+                case 2:
+                    _a.sent();
+                    build = (0, hexo_post_parser_1.buildPost)(parse);
+                    return [4, fm.writefile(postPath, build, { async: true })];
+                case 3:
+                    _a.sent();
+                    return [3, 5];
+                case 4:
+                    logger_1.default.log('cannot parse', postPath);
+                    _a.label = 5;
+                case 5:
+                    hasError = typeof (parse && parse.metadata) === 'undefined';
+                    if (typeof callback === 'function')
+                        callback(hasError, postPath);
+                    return [2, hasError];
             }
         });
     });

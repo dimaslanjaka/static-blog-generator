@@ -39,7 +39,7 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
  * update metadata.updated post
  * @returns
  */
-export async function updatePost(postPath: string) {
+export async function updatePost(postPath: string, callback?: (result: boolean, postPath: string) => any) {
   const config = getConfig();
   const parse = await parsePost(postPath, {
     shortcodes: {
@@ -58,6 +58,7 @@ export async function updatePost(postPath: string) {
     fix: true,
     sourceFile: postPath
   });
+
   if (parse && parse.metadata) {
     // update post modified
     const oriUp = parse.metadata.updated;
@@ -86,6 +87,8 @@ export async function updatePost(postPath: string) {
     ) {
       delete post.attributes.subtitle;
     }
+
+    // prepare rebuild post
     const rBuild: postMap = {
       metadata: <any>post.attributes,
       body: post.body,
@@ -97,13 +100,17 @@ export async function updatePost(postPath: string) {
     const rebuild = buildPost(rBuild);
     //writefile(join(process.cwd(), 'build/rebuild.md'), rebuild);
     Logger.log('write to', toUnix(oriPath).replace(toUnix(process.cwd()), ''), oriUp, '->', post.attributes.updated);
-    fm.writefile(oriPath, rebuild); // write original post
+    await fm.writefile(oriPath, rebuild, { async: true }); // write original post
 
     const build = buildPost(parse);
-    fm.writefile(postPath, build);
+    await fm.writefile(postPath, build, { async: true });
   } else {
     Logger.log('cannot parse', postPath);
   }
+
+  const hasError = typeof (parse && parse.metadata) === 'undefined';
+  if (typeof callback === 'function') callback(hasError, postPath);
+  return hasError;
 }
 
 /**
