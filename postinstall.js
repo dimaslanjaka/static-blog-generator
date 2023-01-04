@@ -150,6 +150,7 @@ const coloredScriptName = colors.grey(scriptname);
 
         // add all monorepos and private ssh packages to be updated without checking
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
+          const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : ''].filter((str) => str.length > 0);
           console.log(
             coloredScriptName,
             'updating',
@@ -165,7 +166,8 @@ const coloredScriptName = colors.grey(scriptname);
               : ''
           );
           if (isLocalPkg && !isLocalTarballpkg) {
-            const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : ''].filter((str) => str.length > 0);
+            console.log('uninstalling', pkgname, 'and reinstalling', ...arg);
+            await summon('npm', ['un', pkgname], { cwd: __dirname });
             await summon('npm', ['install', ...arg], { cwd: __dirname });
           } else {
             toUpdate.add(pkgname);
