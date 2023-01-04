@@ -77,6 +77,15 @@ export async function updatePost(postPath: string) {
     if ('modified' in parse.metadata) {
       post.attributes.modified = parse.metadata.modified;
     }
+
+    // remove meta subtitle when description is same
+    if (
+      post.attributes.description &&
+      post.attributes.subtitle &&
+      post.attributes.description == post.attributes.subtitle
+    ) {
+      delete post.attributes.subtitle;
+    }
     const rBuild: postMap = {
       metadata: <any>post.attributes,
       body: post.body,
