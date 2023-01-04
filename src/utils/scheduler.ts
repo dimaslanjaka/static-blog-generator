@@ -15,7 +15,7 @@ let triggered: boolean;
  * @param key
  * @param fn
  */
-export function bindProcessExit(key: string, fn: () => void): void {
+export function bindProcessExit(key: string, fn: (...args: any[]) => any) {
   fns[key] = fn;
   // trigger once
   if (!triggered) {
@@ -30,10 +30,13 @@ export function bindProcessExit(key: string, fn: () => void): void {
  * @param exitCode
  */
 function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
-  Object.keys(fns).forEach((key) => {
-    if (scheduler.verbose) _log.info(logname, `executing function key: ${key}`);
-    fns[key]();
-  });
+  for (const key in fns) {
+    if (Object.prototype.hasOwnProperty.call(fns, key)) {
+      const fun = fns[key];
+      if (scheduler.verbose) _log.info(logname, `executing function key: ${key}`);
+      fun.apply('null');
+    }
+  }
   if (options.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
   if (options.exit) process.exit();
 }
@@ -42,11 +45,16 @@ function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
  * Trigger Process Bindings
  */
 function triggerProcess() {
+  // before exit
+  process.on('beforeExit', exitHandler.bind(null, { exit: true }));
+
   //do something when app is closing
   process.on('exit', exitHandler.bind(null, { cleanup: true }));
+  process.on('disconnect', exitHandler.bind(null, { exit: true }));
 
   //catches ctrl+c event
   process.on('SIGINT', exitHandler.bind(null, { exit: true }));
+  process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
 
   // catches "kill pid" (for example: nodemon restart)
   process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
