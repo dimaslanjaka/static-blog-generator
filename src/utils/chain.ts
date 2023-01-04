@@ -1,3 +1,4 @@
+import ansiColors from 'ansi-colors';
 import stream from 'stream';
 import Logger from './logger';
 
@@ -27,6 +28,7 @@ export async function chain(
 
   const run = (instance: typeof schedule[number]) =>
     new Promise(function (resolve) {
+      const logname = ansiColors.blueBright('chain') + '.' + ansiColors.yellowBright('run');
       if (instance.opt?.before) {
         instance.opt.before();
       }
@@ -55,7 +57,7 @@ export async function chain(
           }
         });
       } else {
-        Logger.log('cannot determine method instances');
+        Logger.log(logname, 'cannot determine method instances');
       }
 
       resolve.bind(this)(chain.bind(this));
