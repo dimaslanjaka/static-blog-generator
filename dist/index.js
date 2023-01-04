@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scheduler = exports.trycatchnoop = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.watchPost = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.setConfig = exports.getConfig = exports.deployConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
+exports.scheduler = exports.trycatchnoop = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.setConfig = exports.getConfig = exports.deployConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
 var api_1 = require("./api");
 Object.defineProperty(exports, "Application", { enumerable: true, get: function () { return __importDefault(api_1).default; } });
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
@@ -22,7 +22,6 @@ var gulp_post_1 = require("./gulp.post");
 Object.defineProperty(exports, "copyAllPosts", { enumerable: true, get: function () { return gulp_post_1.copyAllPosts; } });
 Object.defineProperty(exports, "copySinglePost", { enumerable: true, get: function () { return gulp_post_1.copySinglePost; } });
 Object.defineProperty(exports, "copyPost", { enumerable: true, get: function () { return gulp_post_1.updatePost; } });
-Object.defineProperty(exports, "watchPost", { enumerable: true, get: function () { return gulp_post_1.watchPost; } });
 var gulp_seo_1 = require("./gulp.seo");
 Object.defineProperty(exports, "autoSeo", { enumerable: true, get: function () { return gulp_seo_1.taskSeo; } });
 var gulp_sitemap_1 = require("./gulp.sitemap");
@@ -42,5 +41,3 @@ Object.defineProperty(exports, "noop", { enumerable: true, get: function () { re
 Object.defineProperty(exports, "trycatchnoop", { enumerable: true, get: function () { return noop_1.trycatchnoop; } });
 var scheduler_1 = require("./utils/scheduler");
 Object.defineProperty(exports, "scheduler", { enumerable: true, get: function () { return __importDefault(scheduler_1).default; } });
-var scheduler_2 = __importDefault(require("./utils/scheduler"));
-scheduler_2.default.register();
