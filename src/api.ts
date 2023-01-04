@@ -28,6 +28,18 @@ class SBG {
     scheduler.register();
   }
 
+  static currentApI: SBG;
+  static setApi(api: SBG) {
+    this.currentApI = api;
+  }
+  static getApi() {
+    return this.currentApI;
+  }
+
+  /**
+   * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
+   * @returns
+   */
   standalone = () => standaloneRunner();
 
   /**
