@@ -40,6 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.chain = void 0;
+var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var stream_1 = __importDefault(require("stream"));
 var logger_1 = __importDefault(require("./logger"));
 function chain(schedule) {
@@ -51,6 +52,7 @@ function chain(schedule) {
                     run = function (instance) {
                         return new Promise(function (resolve) {
                             var _a;
+                            var logname = ansi_colors_1.default.blueBright('chain') + '.' + ansi_colors_1.default.yellowBright('run');
                             if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.before) {
                                 instance.opt.before();
                             }
