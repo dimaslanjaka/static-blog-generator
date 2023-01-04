@@ -82,4 +82,4 @@ export const isAsset = (path: any) => /.(js|css|scss|njk|ejs|png|jpe?g|gif|svg|w
  * @param path
  * @returns
  */
-export const isMarkdown = (path: any) => !/.(md)$/i.test(String(path));
+export const isMarkdown = (path: any) => /.(md)$/i.test(String(path));
