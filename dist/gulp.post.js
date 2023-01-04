@@ -158,6 +158,11 @@ function updatePost(postPath) {
                         if ('modified' in parse.metadata) {
                             post.attributes.modified = parse.metadata.modified;
                         }
+                        if (post.attributes.description &&
+                            post.attributes.subtitle &&
+                            post.attributes.description == post.attributes.subtitle) {
+                            delete post.attributes.subtitle;
+                        }
                         rBuild = {
                             metadata: post.attributes,
                             body: post.body,
