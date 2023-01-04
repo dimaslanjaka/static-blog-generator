@@ -24,7 +24,6 @@ function tsc(done) {
 
 gulp.task('copy', copy);
 gulp.task('tsc', tsc);
-gulp.task('default', gulp.series(tsc));
 
 /**
  * @type {'false' | 'true' | 'postpone'}
@@ -88,3 +87,5 @@ function buildWatch(done) {
 }
 
 gulp.task('watch', buildWatch);
+
+gulp.task('default', gulp.series(['tsc', 'copy']));
