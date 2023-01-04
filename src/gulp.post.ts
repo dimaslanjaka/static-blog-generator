@@ -35,11 +35,18 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
     });
 }
 
+const processingUpdate = {};
+
 /**
  * update metadata.updated post
  * @returns
  */
 export async function updatePost(postPath: string, callback?: (result: boolean, postPath: string) => any) {
+  // immediately return without callback
+  if (processingUpdate[postPath]) return false;
+  // add to index
+  processingUpdate[postPath] = true;
+
   const config = getConfig();
   const parse = await parsePost(postPath, {
     shortcodes: {
@@ -110,6 +117,8 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
 
   const hasError = typeof (parse && parse.metadata) === 'undefined';
   if (typeof callback === 'function') callback(hasError, postPath);
+  // remove from index
+  delete processingUpdate[postPath];
   return hasError;
 }
 
