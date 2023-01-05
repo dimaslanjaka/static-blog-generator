@@ -118,7 +118,7 @@ exports.getConfig = getConfig;
 /**
  * Hexo Generated Dir
  */
-exports.post_generated_dir = (0, upath_1.join)((0, process_1.cwd)(), config.public_dir);
+exports.post_generated_dir = (0, upath_1.join)((0, process_1.cwd)(), getConfig().public_dir);
 /**
  * SBG Source Post Dir
  */
