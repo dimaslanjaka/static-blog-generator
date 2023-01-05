@@ -1,4 +1,4 @@
-import { DeepPartial } from '../parsePost';
+import { DeepPartial } from '../globals';
 import { postMeta } from './postMeta';
 import config from './_config';
 export interface postMap extends Object {
