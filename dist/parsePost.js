@@ -27,7 +27,7 @@ const include_1 = require("./shortcodes/include");
 const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
-const _config_1 = tslib_1.__importStar(require("./types/_config"));
+const _config_1 = require("./types/_config");
 const string_1 = require("./utils/string");
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp'),
@@ -47,7 +47,7 @@ const default_options = {
     },
     sourceFile: null,
     formatDate: false,
-    config: _config_1.default,
+    config,
     cache: false,
     fix: false
 };
@@ -64,10 +64,10 @@ function parsePost(target, options = {}) {
         if (!target)
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
-        const siteConfig = _config_1.default;
+        const siteConfig = (0, _config_1.getConfig)();
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
-        options.config = Object.assign(_config_1.default, options.config || {});
+        options.config = Object.assign(siteConfig, options.config || {});
         const homepage = siteConfig.url.endsWith('/')
             ? siteConfig.url
             : siteConfig.url + '/';
@@ -549,7 +549,7 @@ function parsePost(target, options = {}) {
             if ('permalink' in result.metadata === false) {
                 result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
             }
-            if (((_b = _config_1.default.generator) === null || _b === void 0 ? void 0 : _b.type) === 'jekyll') {
+            if (((_b = config.generator) === null || _b === void 0 ? void 0 : _b.type) === 'jekyll') {
                 result.metadata.slug = result.metadata.permalink;
             }
             // put fileTree
