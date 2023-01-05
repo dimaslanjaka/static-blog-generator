@@ -1,3 +1,5 @@
+process.cwd = () => __dirname;
+
 import { join } from 'path';
 import config from '../src/types/_config';
 import { startParse } from './startParse';
