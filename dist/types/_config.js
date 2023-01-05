@@ -108,6 +108,7 @@ const defaultSiteOptions = {
 function getConfig() {
     // find _config.yml
     const file = (0, upath_1.join)(process.cwd(), '_config.yml');
+    console.log('finding', file);
     if ((0, fs_1.existsSync)(file)) {
         const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
         const parse = yaml_1.default.parse(readConfig);
