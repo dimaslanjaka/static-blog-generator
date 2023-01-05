@@ -91,8 +91,10 @@
     "instanceName": "uniqueString"
   },
   "generator": {
-    "cache": true
+    "cache": true,
+    "verbose": false
   },
+  "post_dir": "src-posts",
   "deploy": {
     "type": "git",
     "repo": "",

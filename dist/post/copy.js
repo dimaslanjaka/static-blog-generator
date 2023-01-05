@@ -161,6 +161,8 @@ function copyAllPosts() {
                         return [2, callback()];
                     }
                     if (file.isStream()) {
+                        if (verbose)
+                            writeVerbose(file.path + ' is stream');
                         return [2, callback()];
                     }
                     if (!(file.extname === '.md')) return [3, 2];
@@ -217,6 +219,10 @@ function copyAllPosts() {
                                     parse.metadata.tags = ((_e = parse.metadata.tags) === null || _e === void 0 ? void 0 : _e.map(function (str) { return str.toLowerCase(); })) || [];
                                 }
                             }
+                        }
+                        console.log(parse.metadata.permalink);
+                        if (verbose) {
+                            fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/dump.json'), parse);
                         }
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         file.contents = Buffer.from(build);

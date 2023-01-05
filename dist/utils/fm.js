@@ -14,6 +14,9 @@ function writefile(file, content, opt) {
         file: file,
         append: false
     };
+    if (typeof content === 'object') {
+        content = JSON.stringify(content, null, 2);
+    }
     if (opt.append) {
         result.append = true;
         fs_extra_1.default.appendFileSync(file, content);

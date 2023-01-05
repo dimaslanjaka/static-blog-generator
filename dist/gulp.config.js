@@ -62,7 +62,8 @@ function getConfig(get) {
             (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
         }
         else {
-            throw new Error('_config.yml not found');
+            console.log(fileYML);
+            throw new Error(fileYML + ' not found');
         }
     }
     settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
