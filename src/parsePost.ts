@@ -12,6 +12,7 @@ import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
 import { generatePostId } from './generatePostId';
+import { DeepPartial } from './globals';
 import { isValidHttpUrl } from './gulp/utils';
 import { renderMarkdownIt } from './markdown/toHtml';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';

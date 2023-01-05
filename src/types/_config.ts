@@ -99,18 +99,6 @@ const defaultOptions = {
   meta_generator: true
 };
 
-type MergeData = Partial<typeof data> & Partial<typeof defaultOptions>;
-interface Config extends Partial<MergeData> {
-  verbose?: boolean;
-  generator?: {
-    cache: boolean;
-  };
-  amp?: any;
-  default_tag?: string;
-  default_category?: string;
-  content?: string;
-}
-
 let config = defaultOptions;
 
 // find _config.yml
@@ -132,7 +120,7 @@ writeFileSync(
 );
 
 export { verbose, nocache };
-export default config as Config;
+
 export interface ProjectConfig extends HexoConfig {
   [key: string]: any;
   /**
@@ -144,6 +132,8 @@ export interface ProjectConfig extends HexoConfig {
    */
   cwd: string;
 }
+
+export default config as unknown as ProjectConfig;
 
 /**
  * Hexo Generated Dir
