@@ -72,11 +72,6 @@ export declare function getConfig(): {
         type: string;
         verbose: boolean;
     };
-} | {
-    verbose: any;
-    generator: {
-        cache: boolean;
-    };
 };
 export { verbose, nocache };
 export interface ProjectConfig extends HexoConfig {
