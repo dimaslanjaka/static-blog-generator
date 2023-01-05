@@ -118,6 +118,9 @@ function getConfig() {
             }
         });
     }
+    else {
+        console.log(file, 'not found');
+    }
     return defaultSiteOptions;
 }
 exports.getConfig = getConfig;
