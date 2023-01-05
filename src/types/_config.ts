@@ -113,6 +113,7 @@ export function getConfig() {
         cache: !nocache
       }
     }) as unknown as typeof defaultSiteOptions;
+    //console.log(defaultSiteOptions.url);
   } else {
     console.log(file, 'not found');
   }

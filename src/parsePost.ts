@@ -146,7 +146,7 @@ export async function parsePost(target: string, options: ParseOptions = {}) {
   options = deepmerge(default_options, options);
   const siteConfig = getConfig();
   if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
-  options.config = Object.assign(siteConfig, options.config || {});
+
   const homepage = siteConfig.url.endsWith('/')
     ? siteConfig.url
     : siteConfig.url + '/';
