@@ -53,7 +53,7 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
 
 function cacheLib(options: Partial<Opt> | undefined) {
   const config = getConfig();
-  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'build'), prefix: '' }, options);
+  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'tmp'), prefix: '' }, options);
   return persistentCache(options);
 }
 
@@ -123,7 +123,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
     };
 
     // dump
-    const dumpfile = join(process.cwd(), 'build/dump/gulp-cached', `${caller}-${pid}.log`);
+    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-cached', `${caller}-${pid}.log`);
     writefile(
       dumpfile,
       `"${paths.source}" is cached ${isChanged()} with dest validation ${

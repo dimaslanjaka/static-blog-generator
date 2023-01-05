@@ -185,7 +185,7 @@ function updatePost(postPath, callback) {
                     return [3, 5];
                 case 4:
                     logger_1.default.log('cannot parse', postPath);
-                    fm.writefile((0, upath_1.join)(process.cwd(), 'build/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
+                    fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
                     _a.label = 5;
                 case 5:
                     hasError = typeof (parse && parse.metadata) === 'undefined';

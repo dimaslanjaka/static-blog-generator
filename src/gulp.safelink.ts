@@ -116,7 +116,7 @@ export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefine
       )
       .pipe(gulp.dest(workingDir));
   } else {
-    const wstream = createWriteStream(path.join(config.cwd, 'build/errors/safelink.log'));
+    const wstream = createWriteStream(path.join(config.cwd, 'tmp/errors/safelink.log'));
     return wstream;
   }
 }
