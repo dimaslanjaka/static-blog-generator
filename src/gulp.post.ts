@@ -12,6 +12,7 @@ import { commonIgnore, getConfig } from './gulp.config';
 import * as fm from './utils/fm';
 import LockManager from './utils/lockmanager';
 import Logger from './utils/logger';
+import scheduler from './utils/scheduler';
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
 const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
@@ -149,13 +150,34 @@ export function copyAllPosts() {
   Logger.log(logname, 'cwd', toUnix(process.cwd()));
   Logger.log(logname, 'copying source posts from', sourcePostDir);
 
-  return gulp
-    .src('**/*.*', { cwd: toUnix(sourcePostDir), ignore: excludes })
-    .pipe(gulpCached({ name: 'post' }))
-    .pipe(gulpDebug())
+  const streamer = gulp.src('**/*.*', { cwd: toUnix(sourcePostDir), ignore: excludes });
+  streamer.once('end', () => {
+    // delete lock file
+    lm.release();
+  });
+
+  // apply cache
+  if (config.generator?.cache) streamer.pipe(gulpCached({ name: 'post-copy' }));
+  // apply verbose
+  const verbose = config.generator?.verbose;
+  const writeVerbose = (msg: string) => {
+    const write = fm.writefile(join(process.cwd(), 'tmp/logs/post-copy', process.pid + '.log'), msg, {
+      append: true
+    });
+    scheduler.add('verbose', () => console.log(write.file));
+  };
+  if (verbose) streamer.pipe(gulpDebug());
+  // transform start
+  streamer
     .pipe(
       through2.obj(async (file, _enc, callback) => {
-        if (file.isNull()) return callback();
+        if (file.isNull()) {
+          if (verbose) writeVerbose(file.path + ' is null');
+          return callback();
+        }
+        if (file.isStream()) {
+          return callback();
+        }
         // process markdown files
         if (file.extname === '.md') {
           const contents = file.contents?.toString() || '';
@@ -221,11 +243,9 @@ export function copyAllPosts() {
         callback(null, file);
       })
     )
-    .pipe(gulp.dest(generatedPostDir))
-    .once('end', () => {
-      // delete lock file
-      lm.release();
-    });
+    .pipe(gulp.dest(generatedPostDir));
+
+  return streamer;
 }
 
 gulp.task('post:copy', copyAllPosts);
