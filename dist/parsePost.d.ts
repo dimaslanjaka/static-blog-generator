@@ -1,5 +1,5 @@
 import { postMap } from './types/postMap';
-import { ProjectConfig } from './types/_config';
+import { getConfig } from './types/_config';
 /**
  * Post author object type
  */
@@ -66,7 +66,7 @@ export interface ParseOptions {
     /**
      * Site Config
      */
-    config?: ProjectConfig;
+    config?: ReturnType<typeof getConfig>;
     /**
      * run auto fixer such as thumbnail, excerpt, etc
      */
