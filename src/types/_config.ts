@@ -1,4 +1,5 @@
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { deepmerge } from 'deepmerge-ts';
+import { existsSync, readFileSync } from 'fs';
 import HexoConfig from 'hexo/HexoConfig';
 import { cwd } from 'process';
 import { join } from 'upath';
@@ -10,7 +11,7 @@ const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const verbose = argv['verbose'];
 
-const defaultOptions = {
+const defaultSiteOptions = {
   // Site
   title: 'Hexo',
   subtitle: '',
@@ -96,28 +97,31 @@ const defaultOptions = {
   ignore: [],
 
   // Category & Tag
-  meta_generator: true
+  meta_generator: true,
+
+  // hexo-post-parser cache indicator
+  generator: {
+    cache: true,
+    type: 'hexo',
+    verbose: false
+  }
 };
 
-let config = defaultOptions;
-
-// find _config.yml
-const file = join(process.cwd(), '_config.yml');
-if (existsSync(file)) {
-  const readConfig = readFileSync(file, 'utf-8');
-  const parse = yaml.parse(readConfig) as typeof data;
-  config = Object.assign(defaultOptions, parse, {
-    verbose,
-    generator: {
-      cache: !nocache
-    }
-  });
+export function getConfig() {
+  // find _config.yml
+  const file = join(process.cwd(), '_config.yml');
+  if (existsSync(file)) {
+    const readConfig = readFileSync(file, 'utf-8');
+    const parse = yaml.parse(readConfig) as typeof data;
+    return deepmerge(defaultSiteOptions, parse, {
+      verbose,
+      generator: {
+        cache: !nocache
+      }
+    });
+  }
+  return defaultSiteOptions;
 }
-
-writeFileSync(
-  join(__dirname, '_config_project.json'),
-  JSON.stringify(config, null, 2)
-);
 
 export { verbose, nocache };
 
@@ -133,12 +137,10 @@ export interface ProjectConfig extends HexoConfig {
   cwd: string;
 }
 
-export default config as unknown as ProjectConfig;
-
 /**
  * Hexo Generated Dir
  */
-export const post_generated_dir = join(cwd(), config.public_dir);
+export const post_generated_dir = join(cwd(), getConfig().public_dir);
 /**
  * SBG Source Post Dir
  */

@@ -30,7 +30,7 @@ import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { postMap } from './types/postMap';
-import config, { post_generated_dir, ProjectConfig } from './types/_config';
+import { getConfig, post_generated_dir } from './types/_config';
 import { countWords, removeDoubleSlashes } from './utils/string';
 
 const _cache = cache({
@@ -108,7 +108,7 @@ export interface ParseOptions {
   /**
    * Site Config
    */
-  config?: ProjectConfig;
+  config?: ReturnType<typeof getConfig>;
   /**
    * run auto fixer such as thumbnail, excerpt, etc
    */
@@ -128,7 +128,7 @@ const default_options: ParseOptions = {
   },
   sourceFile: null,
   formatDate: false,
-  config,
+  config: getConfig(),
   cache: false,
   fix: false
 };
@@ -144,13 +144,13 @@ const default_options: ParseOptions = {
 export async function parsePost(target: string, options: ParseOptions = {}) {
   if (!target) return null;
   options = deepmerge(default_options, options);
-  const siteConfig = config;
+  const siteConfig = getConfig();
   if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
-  options.config = Object.assign(config, options.config || {});
+  options.config = Object.assign(siteConfig, options.config || {});
   const homepage = siteConfig.url.endsWith('/')
     ? siteConfig.url
     : siteConfig.url + '/';
-  console.log([homepage, siteConfig.root]);
+  console.log([siteConfig.url, siteConfig.root]);
   const fileTarget = options.sourceFile || target;
   const cacheKey = existsSync(fileTarget)
     ? md5FileSync(fileTarget)
@@ -585,11 +585,12 @@ export async function parsePost(target: string, options: ParseOptions = {}) {
       }
     }
 
-    if (options.config && 'generator' in options.config) {
+    // set layout metadata
+    /*if (options.config && 'generator' in options.config) {
       if (meta.type && !meta.layout && options.config.generator.type) {
         meta.layout = meta.type;
       }
-    }
+    }*/
 
     if (typeof options === 'object') {
       // @todo format dates
@@ -675,7 +676,7 @@ export async function parsePost(target: string, options: ParseOptions = {}) {
       result.metadata.permalink = parsePermalink(result);
     }
 
-    if (config.generator?.type === 'jekyll') {
+    if (siteConfig.generator?.type === 'jekyll') {
       result.metadata.slug = result.metadata.permalink;
     }
 
