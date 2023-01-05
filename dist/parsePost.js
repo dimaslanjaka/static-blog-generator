@@ -64,11 +64,10 @@ function parsePost(target, options = {}) {
         if (!target)
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
-        // , { sourceFile: target }
+        const HexoConfig = _config_1.default;
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
         options.config = Object.assign(_config_1.default, options.config || {});
-        const HexoConfig = _config_1.default;
         const homepage = HexoConfig.url.endsWith('/')
             ? HexoConfig.url
             : HexoConfig.url + '/';
