@@ -16,6 +16,6 @@ declare class SBG {
     safelink: () => any;
     generate(): Promise<void>;
     deploy(): Promise<void>;
-    clean(opt?: 'all'): Promise<void>;
+    clean(opt?: 'all' | 'archives' | 'database'): Promise<void>;
 }
 export default SBG;
