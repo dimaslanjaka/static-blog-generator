@@ -92,7 +92,9 @@ export declare function getDefaultConfig(): {
     };
     generator: {
         cache: boolean;
+        verbose: boolean;
     };
+    post_dir: string;
     deploy: {
         type: string;
         repo: string;

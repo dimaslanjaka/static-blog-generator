@@ -75,9 +75,11 @@ function getDefaultConfig() {
         ignore: [],
         meta_generator: true
     };
-    var defaultConfig = { post_dir: 'src-posts', cwd: (0, upath_1.toUnix)(process.cwd()) };
+    var sbgDefaultConfig = {
+        cwd: (0, upath_1.toUnix)(process.cwd())
+    };
     var configYML = yaml_1.default.parse(getDefaultConfigYaml());
-    return Object.assign(hexoDefaultConfig, defaultConfig, configYML);
+    return Object.assign(hexoDefaultConfig, sbgDefaultConfig, configYML);
 }
 exports.getDefaultConfig = getDefaultConfig;
 function getDefaultConfigYaml() {

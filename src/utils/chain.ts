@@ -57,7 +57,7 @@ export async function chain(
           }
         });
       } else {
-        Logger.log(logname, 'cannot determine method instances');
+        Logger.log(logname, instance.callback.name, 'cannot determine method instances');
       }
 
       resolve.bind(this)(chain.bind(this));

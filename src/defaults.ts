@@ -89,9 +89,11 @@ export function getDefaultConfig() {
     // Category & Tag
     meta_generator: true
   };
-  const defaultConfig = { post_dir: 'src-posts', cwd: toUnix(process.cwd()) };
+  const sbgDefaultConfig = {
+    cwd: toUnix(process.cwd())
+  };
   const configYML = yaml.parse(getDefaultConfigYaml());
-  return Object.assign(hexoDefaultConfig, defaultConfig, configYML) as typeof import('./_config.json');
+  return Object.assign(hexoDefaultConfig, sbgDefaultConfig, configYML) as typeof import('./_config.json');
 }
 
 /**
