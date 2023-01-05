@@ -85,6 +85,7 @@ export function copyAllPosts() {
           return callback();
         }
         if (file.isStream()) {
+          if (verbose) writeVerbose(file.path + ' is stream');
           return callback();
         }
         // process markdown files
@@ -140,6 +141,12 @@ export function copyAllPosts() {
                   parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
                 }
               }
+            }
+
+            console.log(parse.metadata.permalink);
+
+            if (verbose) {
+              fm.writefile(join(process.cwd(), 'tmp/dump.json'), parse);
             }
 
             const build = buildPost(parse);
