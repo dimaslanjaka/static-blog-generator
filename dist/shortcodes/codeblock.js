@@ -12,7 +12,7 @@ const utils_1 = require("../node/utils");
 const _config_1 = tslib_1.__importDefault(require("../types/_config"));
 const dom = new jsdom_1.default();
 const _cache = (0, persistent_cache_1.default)({
-    base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
+    base: (0, upath_1.join)(process.cwd(), 'tmp'),
     name: 'shortcode/codeblock',
     duration: 1000 * 3600 * 24 // 24 hours
 });
