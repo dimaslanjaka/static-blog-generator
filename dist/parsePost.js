@@ -30,7 +30,7 @@ const youtube_1 = require("./shortcodes/youtube");
 const _config_1 = tslib_1.__importStar(require("./types/_config"));
 const string_1 = require("./utils/string");
 const _cache = (0, persistent_cache_1.default)({
-    base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
+    base: (0, upath_1.join)(process.cwd(), 'tmp'),
     name: 'parsePost',
     duration: 1000 * 3600 * 24 // 24 hours
 });
