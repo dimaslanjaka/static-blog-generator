@@ -108,7 +108,7 @@ export interface ParseOptions {
   /**
    * Site Config
    */
-  config?: ReturnType<typeof getConfig>;
+  config?: ReturnType<typeof getConfig> & Record<string, any>;
   /**
    * run auto fixer such as thumbnail, excerpt, etc
    */
