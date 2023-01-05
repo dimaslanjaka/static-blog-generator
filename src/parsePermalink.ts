@@ -21,6 +21,9 @@ export function parsePermalink(post: postMap) {
     ':title': url.replace(/.(md|html)$/, ''),
     ':post_title': post.metadata.title
   };
+
+  //console.log({ url, curl: config.url });
+
   // @todo [permalink] follow directory path
   /* if (pattern.startsWith(':title')) {
     const bname = pattern.replace(':title', replacer[':title']);
@@ -28,6 +31,7 @@ export function parsePermalink(post: postMap) {
     //console.log(perm);
     return perm;
   }*/
+
   for (const date_pattern in replacer) {
     if (Object.prototype.hasOwnProperty.call(replacer, date_pattern)) {
       if (
@@ -48,5 +52,7 @@ export function parsePermalink(post: postMap) {
   // replace %20 to space
   const newPattern = pattern.replace(/%20/g, ' ');
   if (/^https?:\/\//.test(newPattern)) return newPattern;
-  return newPattern.replace(/\/{2,10}/g, '/');
+  const result = newPattern.replace(/\/{2,10}/g, '/');
+  //console.log({ result });
+  return result;
 }

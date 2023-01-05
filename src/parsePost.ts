@@ -12,7 +12,6 @@ import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
 import { dateMapper, moment } from './dateMapper';
 import { generatePostId } from './generatePostId';
-import { DeepPartial } from './globals';
 import { isValidHttpUrl } from './gulp/utils';
 import { renderMarkdownIt } from './markdown/toHtml';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
@@ -142,19 +141,16 @@ const default_options: ParseOptions = {
  * @param options options parser
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
-export async function parsePost(
-  target: string,
-  options: DeepPartial<ParseOptions> = {}
-) {
+export async function parsePost(target: string, options: ParseOptions = {}) {
   if (!target) return null;
   options = deepmerge(default_options, options);
-  // , { sourceFile: target }
+  const siteConfig = config;
   if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
-  if (!options.config) options.config = config;
-  const HexoConfig = options.config;
-  const homepage = HexoConfig.url.endsWith('/')
-    ? HexoConfig.url
-    : HexoConfig.url + '/';
+  options.config = Object.assign(config, options.config || {});
+  const homepage = siteConfig.url.endsWith('/')
+    ? siteConfig.url
+    : siteConfig.url + '/';
+  console.log([homepage, siteConfig.root]);
   const fileTarget = options.sourceFile || target;
   const cacheKey = existsSync(fileTarget)
     ? md5FileSync(fileTarget)
@@ -671,9 +667,10 @@ export async function parsePost(
       metadata: meta,
       body: body,
       content: body,
-      config: <any>HexoConfig
+      config: <any>siteConfig
     };
 
+    //console.log('hpp permalink in metadata', 'permalink' in result.metadata);
     if ('permalink' in result.metadata === false) {
       result.metadata.permalink = parsePermalink(result);
     }

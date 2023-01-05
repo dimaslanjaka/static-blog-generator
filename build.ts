@@ -17,7 +17,7 @@ if (argv['update-version']) {
  * main build function
  */
 async function build() {
-  fse.emptyDirSync(join(__dirname, 'dist'));
+  if (argv['clean']) fse.emptyDirSync(join(__dirname, 'dist'));
   const summon = spawn('tsc', ['-p', 'tsconfig.build.json'], {
     cwd: toUnix(__dirname),
     stdio: 'inherit',
