@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scheduler = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.setConfig = exports.getConfig = exports.deployConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
+exports.scheduler = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.updatePost = exports.copySinglePost = exports.copyAllPosts = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.setConfig = exports.getConfig = exports.deployConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
 var api_1 = require("./api");
 Object.defineProperty(exports, "Application", { enumerable: true, get: function () { return __importDefault(api_1).default; } });
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
@@ -31,7 +31,8 @@ Object.defineProperty(exports, "gulp", { enumerable: true, get: function () { re
 var copy_1 = require("./post/copy");
 Object.defineProperty(exports, "copyAllPosts", { enumerable: true, get: function () { return copy_1.copyAllPosts; } });
 Object.defineProperty(exports, "copySinglePost", { enumerable: true, get: function () { return copy_1.copySinglePost; } });
-Object.defineProperty(exports, "copyPost", { enumerable: true, get: function () { return copy_1.updatePost; } });
+var update_1 = require("./post/update");
+Object.defineProperty(exports, "updatePost", { enumerable: true, get: function () { return update_1.updatePost; } });
 var array_1 = require("./utils/array");
 Object.defineProperty(exports, "array_random", { enumerable: true, get: function () { return array_1.array_random; } });
 Object.defineProperty(exports, "array_remove_empty", { enumerable: true, get: function () { return array_1.array_remove_empty; } });
