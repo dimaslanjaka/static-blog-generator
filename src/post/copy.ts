@@ -1,18 +1,15 @@
 import ansiColors from 'ansi-colors';
-import frontMatter from 'front-matter';
-import { readFileSync } from 'fs';
 import gulp from 'gulp';
-import { buildPost, parsePost, postMap } from 'hexo-post-parser';
-import moment from 'moment-timezone';
+import { buildPost, parsePost } from 'hexo-post-parser';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
-import gulpCached from './gulp-utils/gulp.cache';
-import gulpDebug from './gulp-utils/gulp.debug';
-import { commonIgnore, getConfig } from './gulp.config';
-import * as fm from './utils/fm';
-import LockManager from './utils/lockmanager';
-import Logger from './utils/logger';
-import scheduler from './utils/scheduler';
+import gulpCached from '../gulp-utils/gulp.cache';
+import gulpDebug from '../gulp-utils/gulp.debug';
+import { commonIgnore, getConfig } from '../gulp.config';
+import * as fm from '../utils/fm';
+import LockManager from '../utils/lockmanager';
+import Logger from '../utils/logger';
+import scheduler from '../utils/scheduler';
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
 const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
@@ -34,94 +31,6 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
       //Logger.log(fileList);
       if (typeof callback === 'function') callback();
     });
-}
-
-const processingUpdate = {};
-
-/**
- * update metadata.updated post
- * @returns
- */
-export async function updatePost(postPath: string, callback?: (result: boolean, postPath: string) => any) {
-  // immediately return without callback
-  if (processingUpdate[postPath]) return false;
-  // add to index
-  processingUpdate[postPath] = true;
-
-  const config = getConfig();
-  const parse = await parsePost(postPath, {
-    shortcodes: {
-      youtube: true,
-      css: true,
-      include: true,
-      link: true,
-      now: true,
-      script: true,
-      text: true,
-      codeblock: true
-    },
-    cache: false,
-    config: config as any,
-    formatDate: true,
-    fix: true,
-    sourceFile: postPath
-  });
-
-  if (parse && parse.metadata) {
-    // update post modified
-    const oriUp = parse.metadata.updated;
-    const oriPath = postPath;
-    parse.metadata.updated = moment()
-      .tz(config.timezone || 'UTC')
-      .format();
-    /*parse.metadata.date = moment(String(parse.metadata.date))
-      .tz(config.timezone || 'UTC')
-      .format();*/
-    const post = frontMatter<Record<string, any>>(readFileSync(postPath, 'utf-8'));
-    if ('updated' in post.attributes === false) {
-      post.attributes.updated = parse.metadata.updated;
-    }
-    post.attributes.updated = parse.metadata.updated;
-    post.attributes.date = parse.metadata.date;
-    if ('modified' in parse.metadata) {
-      post.attributes.modified = parse.metadata.modified;
-    }
-
-    // remove meta subtitle when description is same
-    if (
-      post.attributes.description &&
-      post.attributes.subtitle &&
-      post.attributes.description == post.attributes.subtitle
-    ) {
-      delete post.attributes.subtitle;
-    }
-
-    // prepare rebuild post
-    const rBuild: postMap = {
-      metadata: <any>post.attributes,
-      body: post.body,
-      content: post.body,
-      config: config as any
-    };
-
-    // update original source post after process ends
-    const rebuild = buildPost(rBuild);
-    //writefile(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-    Logger.log('write to', toUnix(oriPath).replace(toUnix(process.cwd()), ''), oriUp, '->', post.attributes.updated);
-    await fm.writefile(oriPath, rebuild, { async: true }); // write original post
-
-    const build = buildPost(parse);
-    await fm.writefile(postPath, build, { async: true });
-  } else {
-    Logger.log('cannot parse', postPath);
-    fm.writefile(join(process.cwd(), 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
-  }
-
-  const hasError = typeof (parse && parse.metadata) === 'undefined';
-  if (typeof callback === 'function') callback(hasError, postPath);
-  // remove from index
-  delete processingUpdate[postPath];
-  return hasError;
 }
 
 /**
