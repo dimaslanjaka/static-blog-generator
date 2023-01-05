@@ -23,7 +23,7 @@ function parsePermalink(post) {
         ':title': url.replace(/.(md|html)$/, ''),
         ':post_title': post.metadata.title
     };
-    console.log({ url, curl: _config_1.default.url });
+    //console.log({ url, curl: config.url });
     // @todo [permalink] follow directory path
     /* if (pattern.startsWith(':title')) {
       const bname = pattern.replace(':title', replacer[':title']);
@@ -46,7 +46,7 @@ function parsePermalink(post) {
     if (/^https?:\/\//.test(newPattern))
         return newPattern;
     const result = newPattern.replace(/\/{2,10}/g, '/');
-    console.log({ result });
+    //console.log({ result });
     return result;
 }
 exports.parsePermalink = parsePermalink;
