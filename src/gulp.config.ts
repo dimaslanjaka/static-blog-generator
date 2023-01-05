@@ -57,6 +57,7 @@ export interface LabelMapper {
 }
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
+
 /**
  * Config setter
  * * useful for jest
