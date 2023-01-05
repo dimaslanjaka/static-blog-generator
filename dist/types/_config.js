@@ -39,12 +39,6 @@ const defaultSiteOptions = {
     code_dir: 'downloads/code',
     i18n_dir: ':lang',
     skip_render: [],
-    // Mapper
-    title_map: {},
-    tag_map: {},
-    category_map: {},
-    tag_group: {},
-    category_group: {},
     // Writing
     new_post_name: ':title.md',
     default_layout: 'post',
@@ -59,30 +53,30 @@ const defaultSiteOptions = {
     post_asset_folder: false,
     relative_link: false,
     future: true,
+    syntax_highlighter: 'highlight.js',
     highlight: {
-        enable: true,
         auto_detect: false,
         line_number: true,
         tab_replace: '',
         wrap: true,
         exclude_languages: [],
+        language_attr: false,
         hljs: false
     },
     prismjs: {
-        enable: false,
         preprocess: true,
         line_number: true,
         tab_replace: ''
     },
     // Category & Tag
     default_category: 'uncategorized',
-    default_tag: null,
+    category_map: {},
+    tag_map: {},
     // Date / Time format
     date_format: 'YYYY-MM-DD',
     time_format: 'HH:mm:ss',
     updated_option: 'mtime',
     // * mtime: file modification date (default)
-    // * date: use_date_for_updated
     // * empty: no more update
     // Pagination
     per_page: 10,

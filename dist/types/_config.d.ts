@@ -24,11 +24,6 @@ export declare function getConfig(): {
     code_dir: string;
     i18n_dir: string;
     skip_render: any[];
-    title_map: {};
-    tag_map: {};
-    category_map: {};
-    tag_group: {};
-    category_group: {};
     new_post_name: string;
     default_layout: string;
     titlecase: boolean;
@@ -42,23 +37,24 @@ export declare function getConfig(): {
     post_asset_folder: boolean;
     relative_link: boolean;
     future: boolean;
+    syntax_highlighter: string;
     highlight: {
-        enable: boolean;
         auto_detect: boolean;
         line_number: boolean;
         tab_replace: string;
         wrap: boolean;
         exclude_languages: any[];
+        language_attr: boolean;
         hljs: boolean;
     };
     prismjs: {
-        enable: boolean;
         preprocess: boolean;
         line_number: boolean;
         tab_replace: string;
     };
     default_category: string;
-    default_tag: any;
+    category_map: {};
+    tag_map: {};
     date_format: string;
     time_format: string;
     updated_option: string;
