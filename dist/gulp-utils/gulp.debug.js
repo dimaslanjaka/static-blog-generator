@@ -16,7 +16,7 @@ function gulpDebug() {
     var pid = process.pid;
     var logname = 'gulp-' + ansi_colors_1.default.gray('debug');
     return through2_1.default.obj(function (file, _enc, cb) {
-        var dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/gulp-debug', "".concat(caller, "-").concat(pid, ".log"));
+        var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-debug', "".concat(caller, "-").concat(pid, ".log"));
         (0, fm_1.writefile)(dumpfile, "".concat((0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))) + os_1.EOL, {
             append: true
         });

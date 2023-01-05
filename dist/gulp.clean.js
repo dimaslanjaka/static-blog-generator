@@ -86,12 +86,12 @@ function cleanDb() {
                     logname = 'clean-' + ansi_colors_1.default.redBright('database');
                     config = (0, gulp_config_1.getConfig)();
                     if (typeof config.source_dir !== 'string') {
-                        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'build/errors/clean.log'), (0, util_1.inspect)(config));
+                        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
                         throw new Error('config.source_dir must be configured');
                     }
                     postDir = (0, upath_1.join)(config.cwd, config.source_dir, '_posts');
                     publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
-                    tmpDir = (0, upath_1.join)(config.cwd, 'build');
+                    tmpDir = (0, upath_1.join)(config.cwd, 'tmp');
                     dirs = [tmpDir, postDir, publicDir];
                     i = 0;
                     _b.label = 1;
@@ -170,7 +170,7 @@ function cleanOldArchives(done) {
                     _a.label = 2;
                 case 2:
                     promises = [];
-                    dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/clean.txt');
+                    dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/clean.txt');
                     (0, fm_1.writefile)(dumpfile, folders.join(os_1.EOL));
                     logger_1.default.log(logname, 'list deleted files', dumpfile);
                     for (i = 0; i < folders.length; i++) {

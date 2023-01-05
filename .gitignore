@@ -21,3 +21,4 @@ temp
 /.deploy_git
 /src-posts/
 /import/
+/dist/validator

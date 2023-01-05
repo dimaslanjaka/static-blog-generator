@@ -7,7 +7,7 @@ import { getConfig } from '../gulp.config';
 import { writefile } from './fm';
 import { areWeTestingWithJest } from './jest';
 
-const FOLDER = join(process.cwd(), 'build/logs');
+const FOLDER = join(process.cwd(), 'tmp/logs');
 
 // disable console.log on jest
 if (areWeTestingWithJest()) {
@@ -25,7 +25,7 @@ if (areWeTestingWithJest()) {
       replacement: '-',
       strict: true
     });
-    writefile(join(config.cwd, 'build/logs/', filename + '.log'), args.join(EOL), { append: true });
+    writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join(EOL), { append: true });
   };
 }
 
@@ -34,7 +34,7 @@ const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: consol
 /**
  * @example
  * const console = Logger
- * Logger.log('hello world'); // should be written in ./build/logs/[trace-name].log
+ * Logger.log('hello world'); // should be written in ./tmp/logs/[trace-name].log
  */
 class Logger {
   static log(...args: any[]) {
