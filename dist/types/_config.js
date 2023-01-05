@@ -99,7 +99,6 @@ const defaultHexoOptions = {
     // Category & Tag
     meta_generator: true
 };
-const config = defaultHexoOptions;
 function getConfig() {
     // find _config.yml
     const file = (0, upath_1.join)(process.cwd(), '_config.yml');
