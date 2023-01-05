@@ -9,7 +9,7 @@ import config from '../types/_config';
 
 const dom = new jdom();
 const _cache = cache({
-  base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
+  base: join(process.cwd(), 'tmp'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'shortcode/codeblock',
   duration: 1000 * 3600 * 24 // 24 hours
 });

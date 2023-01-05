@@ -5,6 +5,12 @@ import color from '../src/node/color';
 import { write } from '../src/node/filemanager';
 import slugify from '../src/node/slugify';
 
+/**
+ * start parse post
+ * @param file
+ * @param config  overriden config
+ * @returns
+ */
 export async function startParse(file: string, config: Record<string, any>) {
   const parse = await parsePost(file, {
     formatDate: true,
