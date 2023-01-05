@@ -4,9 +4,9 @@ import { join } from 'upath';
 import './gulp.clean';
 import './gulp.deploy';
 import './gulp.feed';
-import './gulp.post';
 import './gulp.safelink';
 import './gulp.seo';
+import './post/copy';
 import Logger from './utils/logger';
 
 // commit current project
