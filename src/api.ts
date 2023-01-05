@@ -1,5 +1,6 @@
 import Hexo from 'hexo';
 import { join } from 'upath';
+import { Nullable } from './globals';
 import { cleanDb, cleanOldArchives } from './gulp.clean';
 import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
@@ -20,11 +21,11 @@ class SBG {
    * Static blog generator
    * @param cwd base folder
    */
-  constructor(cwd: null | string = null) {
-    if (typeof cwd === 'string') {
-      this.cwd = cwd;
-      this.config = setConfig({ cwd });
-    }
+  constructor(cwd: Nullable<string>) {
+    if (!cwd) cwd = process.cwd();
+    this.cwd = cwd;
+    this.config = setConfig({ cwd });
+    SBG.setApi(this);
     scheduler.register();
   }
 
