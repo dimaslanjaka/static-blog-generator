@@ -462,7 +462,7 @@ function parsePost(target, options = {}) {
                         .toString()
                         .replace(/([^:]\/)\/+/g, '$1');
                 }
-                console.log({ url: meta.url });
+                console.log({ url: meta.url, homepage });
                 // determine post type
                 //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
                 if (!meta.type) {
