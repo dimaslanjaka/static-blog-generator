@@ -473,7 +473,7 @@ function parsePost(target, options = {}) {
                 }
             }
             if (options.config && 'generator' in options.config) {
-                if (meta.type && !meta.layout && options.config.generator.type) {
+                if (meta.type && !meta.layout && siteConfig.generator.type) {
                     meta.layout = meta.type;
                 }
             }
