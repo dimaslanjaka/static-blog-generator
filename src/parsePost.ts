@@ -150,7 +150,7 @@ export async function parsePost(target: string, options: ParseOptions = {}) {
   const homepage = siteConfig.url.endsWith('/')
     ? siteConfig.url
     : siteConfig.url + '/';
-  console.log([siteConfig.url, siteConfig.root]);
+  //console.log([siteConfig.url, siteConfig.root]);
   const fileTarget = options.sourceFile || target;
   const cacheKey = existsSync(fileTarget)
     ? md5FileSync(fileTarget)
