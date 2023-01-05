@@ -1,4 +1,4 @@
-import { DeepPartial } from './globals';
+import HexoConfig from 'hexo/HexoConfig';
 import { postMap } from './types/postMap';
 import { ProjectConfig } from './types/_config';
 /**
@@ -81,5 +81,5 @@ export interface ParseOptions {
  * @param options options parser
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
-export declare function parsePost(target: string, options?: DeepPartial<ParseOptions>): Promise<postMap>;
+export declare function parsePost(target: string, options?: ParseOptions & HexoConfig): Promise<postMap>;
 export default parsePost;
