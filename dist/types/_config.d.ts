@@ -84,8 +84,6 @@ export interface ProjectConfig extends HexoConfig {
      */
     cwd: string;
 }
-declare const _default: ProjectConfig;
-export default _default;
 /**
  * Hexo Generated Dir
  */
