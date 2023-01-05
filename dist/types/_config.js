@@ -112,6 +112,7 @@ function getConfig() {
                 cache: !nocache
             }
         });
+        console.log(defaultSiteOptions.url);
     }
     else {
         console.log(file, 'not found');
