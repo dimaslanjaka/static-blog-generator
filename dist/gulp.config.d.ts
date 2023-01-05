@@ -9,6 +9,10 @@ export interface ProjConf extends HexoConfig {
     external_link: importConfig['external_link'] & boolean & {
         safelink?: import('safelinkify').SafelinkOptions;
     };
+    generator: {
+        cache: boolean;
+        verbose: boolean;
+    };
     tags?: LabelMapper;
     categories?: LabelMapper;
 }

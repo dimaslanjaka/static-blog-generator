@@ -31,6 +31,11 @@ export interface ProjConf extends HexoConfig {
       safelink?: import('safelinkify').SafelinkOptions;
     };
 
+  generator: {
+    cache: boolean;
+    verbose: boolean;
+  };
+
   /**
    * Tags mapper
    */
@@ -90,7 +95,8 @@ export function getConfig(get = true) {
       settledConfig = Object.assign({}, configYML, settledConfig);
       writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     } else {
-      throw new Error('_config.yml not found');
+      console.log(fileYML);
+      throw new Error(fileYML + ' not found');
     }
   }
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());

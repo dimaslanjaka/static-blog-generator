@@ -7,19 +7,20 @@ export interface writefileResult {
     file: string;
     append: boolean;
 }
-export declare function writefile(file: string, content: string): writefileResult;
-export declare function writefile(file: string, content: string, opt: {
+export type strORobj = string | Record<string, any>;
+export declare function writefile(file: string, content: strORobj): writefileResult;
+export declare function writefile(file: string, content: strORobj, opt: {
     append: boolean;
     async: undefined | null;
 }): writefileResult;
-export declare function writefile(file: string, content: string, opt: {
+export declare function writefile(file: string, content: strORobj, opt: {
     async: true;
 }): Promise<writefileResult>;
-export declare function writefile(file: string, content: string, opt: {
+export declare function writefile(file: string, content: strORobj, opt: {
     async: true;
     append: boolean | undefined | null;
 }): Promise<writefileResult>;
-export declare function writefile(file: string, content: string, opt: {
+export declare function writefile(file: string, content: strORobj, opt: {
     async?: false | undefined | null;
     append?: boolean;
 }): writefileResult;

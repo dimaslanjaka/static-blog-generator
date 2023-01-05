@@ -7,7 +7,7 @@ import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
-import { copyAllPosts } from './post/copy';
+import * as pcopy from './post/copy';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
 
@@ -51,11 +51,11 @@ class SBG {
 
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
-   * * see the method {@link copyAllPosts}
+   * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
   copy = async function () {
-    return copyAllPosts();
+    return pcopy.copyAllPosts();
   };
 
   /**
