@@ -102,6 +102,7 @@ var gulp_config_1 = require("./gulp.config");
 var fm = __importStar(require("./utils/fm"));
 var lockmanager_1 = __importDefault(require("./utils/lockmanager"));
 var logger_1 = __importDefault(require("./utils/logger"));
+var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function copySinglePost(identifier, callback) {
@@ -200,6 +201,7 @@ function updatePost(postPath, callback) {
 exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
+    var _a, _b;
     var lm = new lockmanager_1.default(copyAllPosts.name);
     var logname = 'post:' + ansi_colors_1.default.grey('copy');
     if (lm.exist()) {
@@ -215,18 +217,36 @@ function copyAllPosts() {
     excludes.push.apply(excludes, __spreadArray([], __read(gulp_config_1.commonIgnore), false));
     logger_1.default.log(logname, 'cwd', (0, upath_1.toUnix)(process.cwd()));
     logger_1.default.log(logname, 'copying source posts from', sourcePostDir);
-    return gulp_1.default
-        .src('**/*.*', { cwd: (0, upath_1.toUnix)(sourcePostDir), ignore: excludes })
-        .pipe((0, gulp_cache_1.default)({ name: 'post' }))
-        .pipe((0, gulp_debug_1.default)())
+    var streamer = gulp_1.default.src('**/*.*', { cwd: (0, upath_1.toUnix)(sourcePostDir), ignore: excludes });
+    streamer.once('end', function () {
+        lm.release();
+    });
+    if ((_a = config.generator) === null || _a === void 0 ? void 0 : _a.cache)
+        streamer.pipe((0, gulp_cache_1.default)({ name: 'post-copy' }));
+    var verbose = (_b = config.generator) === null || _b === void 0 ? void 0 : _b.verbose;
+    var writeVerbose = function (msg) {
+        var write = fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/logs/post-copy', process.pid + '.log'), msg, {
+            append: true
+        });
+        scheduler_1.default.add('verbose', function () { return console.log(write.file); });
+    };
+    if (verbose)
+        streamer.pipe((0, gulp_debug_1.default)());
+    streamer
         .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
         var contents, parse, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build;
         var _a, _b, _c, _d, _e;
         return __generator(this, function (_f) {
             switch (_f.label) {
                 case 0:
-                    if (file.isNull())
+                    if (file.isNull()) {
+                        if (verbose)
+                            writeVerbose(file.path + ' is null');
                         return [2, callback()];
+                    }
+                    if (file.isStream()) {
+                        return [2, callback()];
+                    }
                     if (!(file.extname === '.md')) return [3, 2];
                     contents = ((_a = file.contents) === null || _a === void 0 ? void 0 : _a.toString()) || '';
                     if (contents.trim().length === 0)
@@ -296,10 +316,8 @@ function copyAllPosts() {
             }
         });
     }); }))
-        .pipe(gulp_1.default.dest(generatedPostDir))
-        .once('end', function () {
-        lm.release();
-    });
+        .pipe(gulp_1.default.dest(generatedPostDir));
+    return streamer;
 }
 exports.copyAllPosts = copyAllPosts;
 gulp_1.default.task('post:copy', copyAllPosts);
