@@ -1,3 +1,4 @@
+import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
 import HexoConfig from 'hexo/HexoConfig';
 import { cwd } from 'process';
@@ -9,7 +10,7 @@ const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 const verbose = argv['verbose'];
 
-const defaultSiteOptions = {
+let defaultSiteOptions = {
   // Site
   title: 'Hexo',
   subtitle: '',
@@ -106,7 +107,7 @@ export function getConfig() {
   if (existsSync(file)) {
     const readConfig = readFileSync(file, 'utf-8');
     const parse = yaml.parse(readConfig);
-    return Object.assign(defaultSiteOptions, parse, {
+    defaultSiteOptions = deepmerge(defaultSiteOptions, parse, {
       verbose,
       generator: {
         cache: !nocache
