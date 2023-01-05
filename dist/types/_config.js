@@ -13,7 +13,7 @@ const nocache = argv['nocache'];
 exports.nocache = nocache;
 const verbose = argv['verbose'];
 exports.verbose = verbose;
-const defaultHexoOptions = {
+const defaultSiteOptions = {
     // Site
     title: 'Hexo',
     subtitle: '',
@@ -105,14 +105,14 @@ function getConfig() {
     if ((0, fs_1.existsSync)(file)) {
         const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
         const parse = yaml_1.default.parse(readConfig);
-        return (0, deepmerge_ts_1.deepmerge)(defaultHexoOptions, parse, {
+        return (0, deepmerge_ts_1.deepmerge)(defaultSiteOptions, parse, {
             verbose,
             generator: {
                 cache: !nocache
             }
         });
     }
-    return defaultHexoOptions;
+    return defaultSiteOptions;
 }
 exports.getConfig = getConfig;
 /**
