@@ -64,7 +64,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
-var gulp_clean_1 = require("./gulp.clean");
+var cleaner = __importStar(require("./gulp.clean"));
 var gulp_config_1 = require("./gulp.config");
 var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_safelink_1 = require("./gulp.safelink");
@@ -162,12 +162,32 @@ var SBG = (function () {
         });
     };
     SBG.prototype.clean = function (opt) {
-        if (opt !== 'all') {
-            return (0, gulp_clean_1.cleanDb)();
-        }
-        else {
-            return (0, gulp_clean_1.cleanOldArchives)();
-        }
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(opt === 'all')) return [3, 3];
+                        return [4, cleaner.cleanDb()];
+                    case 1:
+                        _a.sent();
+                        return [4, cleaner.cleanOldArchives()];
+                    case 2:
+                        _a.sent();
+                        return [3, 7];
+                    case 3:
+                        if (!(opt === 'archives')) return [3, 5];
+                        return [4, cleaner.cleanOldArchives()];
+                    case 4:
+                        _a.sent();
+                        return [3, 7];
+                    case 5: return [4, cleaner.cleanDb()];
+                    case 6:
+                        _a.sent();
+                        _a.label = 7;
+                    case 7: return [2];
+                }
+            });
+        });
     };
     return SBG;
 }());
