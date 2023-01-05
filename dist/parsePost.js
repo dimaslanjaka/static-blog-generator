@@ -546,7 +546,7 @@ function parsePost(target, options = {}) {
                 content: body,
                 config: HexoConfig
             };
-            console.log('hpp', 'permalink' in result.metadata);
+            console.log('hpp permalink in metadata', 'permalink' in result.metadata);
             if ('permalink' in result.metadata === false) {
                 result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
             }
