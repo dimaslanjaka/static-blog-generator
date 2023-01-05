@@ -71,7 +71,7 @@ function parsePost(target, options = {}) {
         const homepage = siteConfig.url.endsWith('/')
             ? siteConfig.url
             : siteConfig.url + '/';
-        console.log([homepage, siteConfig.root]);
+        console.log([siteConfig.url, siteConfig.root]);
         const fileTarget = options.sourceFile || target;
         const cacheKey = (0, fs_extra_1.existsSync)(fileTarget)
             ? (0, md5_file_1.md5FileSync)(fileTarget)
