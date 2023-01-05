@@ -13,7 +13,7 @@ const nocache = argv['nocache'];
 exports.nocache = nocache;
 const verbose = argv['verbose'];
 exports.verbose = verbose;
-const defaultOptions = {
+const defaultHexoOptions = {
     // Site
     title: 'Hexo',
     subtitle: '',
@@ -99,14 +99,14 @@ const defaultOptions = {
     // Category & Tag
     meta_generator: true
 };
-let config = defaultOptions;
+let config = defaultHexoOptions;
 function getConfig() {
     // find _config.yml
     const file = (0, upath_1.join)(process.cwd(), '_config.yml');
     if ((0, fs_1.existsSync)(file)) {
         const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
         const parse = yaml_1.default.parse(readConfig);
-        config = (0, deepmerge_ts_1.deepmerge)(defaultOptions, parse, {
+        config = (0, deepmerge_ts_1.deepmerge)(defaultHexoOptions, parse, {
             verbose,
             generator: {
                 cache: !nocache
