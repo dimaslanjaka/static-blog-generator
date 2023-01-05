@@ -97,7 +97,7 @@ function parsePost(target, options = {}) {
                 originalFile = options.sourceFile;
         }
         const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-            var _a;
+            var _a, _b;
             if (!m) {
                 throw new Error(originalFile + ' cannot be mapped');
             }
@@ -432,7 +432,7 @@ function parsePost(target, options = {}) {
                                 });
                             }
                         }
-                        catch (_b) {
+                        catch (_c) {
                             console.log('cannot find image html from', meta.title);
                         }
                     }
@@ -555,7 +555,9 @@ function parsePost(target, options = {}) {
             if ('permalink' in result.metadata === false) {
                 result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
             }
-            result.metadata.slug = result.metadata.permalink;
+            if (((_b = _config_1.default.generator) === null || _b === void 0 ? void 0 : _b.type) === 'jekyll') {
+                result.metadata.slug = result.metadata.permalink;
+            }
             // put fileTree
             if (isFile) {
                 result.fileTree = {
