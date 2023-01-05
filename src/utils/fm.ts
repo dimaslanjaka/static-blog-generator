@@ -4,8 +4,8 @@ import fs, { MakeDirectoryOptions } from 'fs-extra';
 import path from 'path';
 
 export interface writefileOpt extends MakeDirectoryOptions {
-  append?: boolean;
-  async?: boolean;
+  append?: boolean | undefined | null;
+  async?: boolean | undefined | null;
 }
 
 export interface writefileResult {
@@ -19,8 +19,26 @@ export interface writefileResult {
  * @param content
  */
 export function writefile(file: string, content: string): writefileResult;
+export function writefile(
+  file: string,
+  content: string,
+  opt: { append: boolean; async: undefined | null }
+): writefileResult;
 /**
  * async write to file recursively (auto create dirname)
+ * @param file
+ * @param content
+ * @param opt
+ */
+export function writefile(file: string, content: string, opt: { async: true }): Promise<writefileResult>;
+export function writefile(
+  file: string,
+  content: string,
+  opt: { async: true; append: boolean | undefined | null }
+): Promise<writefileResult>;
+
+/**
+ * sync write to file recursively (auto create dirname)
  * @param file
  * @param content
  * @param opt
@@ -28,15 +46,8 @@ export function writefile(file: string, content: string): writefileResult;
 export function writefile(
   file: string,
   content: string,
-  opt: { async?: true } & writefileOpt
-): Promise<writefileResult>;
-/**
- * sync write to file recursively (auto create dirname)
- * @param file
- * @param content
- * @param opt
- */
-export function writefile(file: string, content: string, opt: { async?: false } & writefileOpt): writefileResult;
+  opt: { async?: false | undefined | null; append?: boolean }
+): writefileResult;
 /**
  * sync write to file recursively (auto create dirname)
  * @param file
