@@ -11,7 +11,7 @@ var scheduler_1 = __importDefault(require("./scheduler"));
 var locks = [];
 var LockManager = (function () {
     function LockManager(name) {
-        this.folder = path_1.default.join(process.cwd(), 'build/cache/lock');
+        this.folder = path_1.default.join(process.cwd(), 'tmp/cache/lock');
         this.file = path_1.default.join(this.folder, name, os_1.default.platform() + '-index.lock');
         locks.push(this);
     }

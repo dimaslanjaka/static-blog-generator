@@ -168,7 +168,7 @@ function taskSafelink(_done, cwd) {
             .pipe(gulp_1.default.dest(workingDir));
     }
     else {
-        var wstream = (0, fm_1.createWriteStream)(path_1.default.join(config.cwd, 'build/errors/safelink.log'));
+        var wstream = (0, fm_1.createWriteStream)(path_1.default.join(config.cwd, 'tmp/errors/safelink.log'));
         return wstream;
     }
 }

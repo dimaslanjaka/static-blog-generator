@@ -72,7 +72,7 @@ function standaloneRunner() {
             });
         });
     }))
-        .pipe(gulp_1.default.dest((0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, 'build/standalone')))
+        .pipe(gulp_1.default.dest((0, upath_1.join)((0, gulp_config_1.getConfig)().cwd, 'tmp/standalone')))
         .once('end', function () {
         logger_1.default.log('\n[standalone] stopped');
     });

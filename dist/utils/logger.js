@@ -36,7 +36,7 @@ var upath_1 = require("upath");
 var gulp_config_1 = require("../gulp.config");
 var fm_1 = require("./fm");
 var jest_1 = require("./jest");
-var FOLDER = (0, upath_1.join)(process.cwd(), 'build/logs');
+var FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs');
 if ((0, jest_1.areWeTestingWithJest)()) {
     console.log = function () {
         var _a;
@@ -56,7 +56,7 @@ if ((0, jest_1.areWeTestingWithJest)()) {
             replacement: '-',
             strict: true
         });
-        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'build/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
+        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/logs/', filename + '.log'), args.join(os_1.EOL), { append: true });
     };
 }
 var _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);
