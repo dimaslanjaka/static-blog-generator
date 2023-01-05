@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildPost = exports.parsePost = exports.Nullable = exports.DeepPartial = exports.parsePermalink = exports.renderMarkdown = exports.generatePostId = void 0;
+exports.buildPost = exports.parsePost = exports.parsePermalink = exports.renderMarkdown = exports.generatePostId = void 0;
 require("./a_index");
 const buildPost_1 = require("./buildPost");
 Object.defineProperty(exports, "buildPost", { enumerable: true, get: function () { return buildPost_1.buildPost; } });
@@ -23,8 +23,5 @@ var toHtml_2 = require("./markdown/toHtml");
 Object.defineProperty(exports, "renderMarkdown", { enumerable: true, get: function () { return toHtml_2.renderMarkdownIt; } });
 var parsePermalink_2 = require("./parsePermalink");
 Object.defineProperty(exports, "parsePermalink", { enumerable: true, get: function () { return parsePermalink_2.parsePermalink; } });
-var parsePost_2 = require("./parsePost");
-Object.defineProperty(exports, "DeepPartial", { enumerable: true, get: function () { return parsePost_2.DeepPartial; } });
-Object.defineProperty(exports, "Nullable", { enumerable: true, get: function () { return parsePost_2.Nullable; } });
 //
 //# sourceMappingURL=index.js.map
