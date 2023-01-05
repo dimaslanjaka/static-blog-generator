@@ -90,9 +90,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.copyAllPosts = exports.copySinglePost = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var gulp_1 = __importDefault(require("gulp"));
-var hexo_post_parser_1 = require("hexo-post-parser");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
+var hexo_post_parser_1 = require("../../packages/hexo-post-parser");
 var gulp_cache_1 = __importDefault(require("../gulp-utils/gulp.cache"));
 var gulp_debug_1 = __importDefault(require("../gulp-utils/gulp.debug"));
 var gulp_config_1 = require("../gulp.config");
@@ -225,8 +225,14 @@ function copyAllPosts() {
                             fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/dump.json'), parse);
                         }
                         build = (0, hexo_post_parser_1.buildPost)(parse);
-                        file.contents = Buffer.from(build);
-                        return [2, callback(null, file)];
+                        if (typeof build === 'string') {
+                            file.contents = Buffer.from(build);
+                            return [2, callback(null, file)];
+                        }
+                        else {
+                            logger_1.default.log(logname, 'cannot rebuild', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
+                            return [2, callback()];
+                        }
                     }
                     else {
                         logger_1.default.log(logname, 'cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
