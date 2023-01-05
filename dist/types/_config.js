@@ -97,7 +97,10 @@ const defaultSiteOptions = {
     // ignore files from processing
     ignore: [],
     // Category & Tag
-    meta_generator: true
+    meta_generator: true,
+    generator: {
+        cache: true
+    }
 };
 function getConfig() {
     // find _config.yml

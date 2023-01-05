@@ -71,6 +71,9 @@ export declare function getConfig(): {
     deploy: {};
     ignore: any[];
     meta_generator: boolean;
+    generator: {
+        cache: boolean;
+    };
 };
 export { verbose, nocache };
 export interface ProjectConfig extends HexoConfig {
