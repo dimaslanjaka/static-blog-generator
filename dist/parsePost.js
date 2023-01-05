@@ -472,6 +472,7 @@ function parsePost(target, options = {}) {
                     }
                 }
             }
+            // set layout metadata
             /*if (options.config && 'generator' in options.config) {
               if (meta.type && !meta.layout && options.config.generator.type) {
                 meta.layout = meta.type;
