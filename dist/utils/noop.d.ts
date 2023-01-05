@@ -5,4 +5,3 @@ export interface FN extends Func {
     then: (...args: any[]) => any;
     catch: (...args: any[]) => any;
 }
-export declare function trycatchnoop(fn: FN): any;
