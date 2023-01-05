@@ -99,21 +99,21 @@ const defaultHexoOptions = {
     // Category & Tag
     meta_generator: true
 };
-let config = defaultHexoOptions;
+const config = defaultHexoOptions;
 function getConfig() {
     // find _config.yml
     const file = (0, upath_1.join)(process.cwd(), '_config.yml');
     if ((0, fs_1.existsSync)(file)) {
         const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
         const parse = yaml_1.default.parse(readConfig);
-        config = (0, deepmerge_ts_1.deepmerge)(defaultHexoOptions, parse, {
+        return (0, deepmerge_ts_1.deepmerge)(defaultHexoOptions, parse, {
             verbose,
             generator: {
                 cache: !nocache
             }
         });
     }
-    return config;
+    return defaultHexoOptions;
 }
 exports.getConfig = getConfig;
 (0, fs_1.writeFileSync)((0, upath_1.join)(__dirname, '_config_project.json'), JSON.stringify(config, null, 2));
