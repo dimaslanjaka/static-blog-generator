@@ -3,8 +3,8 @@ import path from 'path';
 import { PassThrough } from 'stream';
 
 export function createDuplexStream() {
-  const readStream = fs.createReadStream(path.join(process.cwd(), `build/streams/read-${process.pid}.txt`));
-  const writeStream = fs.createWriteStream(path.join(process.cwd(), `build/streams/write-${process.pid}.txt`));
+  const readStream = fs.createReadStream(path.join(process.cwd(), `tmp/streams/read-${process.pid}.txt`));
+  const writeStream = fs.createWriteStream(path.join(process.cwd(), `tmp/streams/write-${process.pid}.txt`));
   const tunnel = new PassThrough(); // simply...
 
   //tunnel.pipe(writeStream, { end: false }); // pipe without closing the target stream on end

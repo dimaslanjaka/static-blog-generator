@@ -18,13 +18,13 @@ export async function cleanDb() {
   const logname = 'clean-' + ansiColors.redBright('database');
   const config = getConfig();
   if (typeof config.source_dir !== 'string') {
-    writefile(join(config.cwd, 'build/errors/clean.log'), inspect(config));
+    writefile(join(config.cwd, 'tmp/errors/clean.log'), inspect(config));
     throw new Error('config.source_dir must be configured');
   }
 
   const postDir = join(config.cwd, config.source_dir, '_posts');
   const publicDir = join(config.cwd, config.public_dir);
-  const tmpDir = join(config.cwd, 'build');
+  const tmpDir = join(config.cwd, 'tmp');
 
   const dirs = [tmpDir, postDir, publicDir];
   for (let i = 0; i < dirs.length; i++) {
@@ -100,7 +100,7 @@ export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
   const promises: Promise<any>[] = [];
 
   // dump to file
-  const dumpfile = join(process.cwd(), 'build/dump/clean.txt');
+  const dumpfile = join(process.cwd(), 'tmp/dump/clean.txt');
   writefile(dumpfile, folders.join(EOL));
   Logger.log(logname, 'list deleted files', dumpfile);
 

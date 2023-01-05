@@ -27,7 +27,7 @@ var md5 = function (data) { return crypto_1.default.createHash('md5').update(dat
 exports.md5 = md5;
 function cacheLib(options) {
     var config = (0, gulp_config_1.getConfig)();
-    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'build'), prefix: '' }, options);
+    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
     return (0, persistent_cache_1.persistentCache)(options);
 }
 function gulpCached(options) {
@@ -69,7 +69,7 @@ function gulpCached(options) {
             cwd: (0, upath_1.toUnix)(((_b = options.cwd) === null || _b === void 0 ? void 0 : _b.replace(process.cwd(), '')) || ''),
             source: (0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))
         };
-        var dumpfile = (0, upath_1.join)(process.cwd(), 'build/dump/gulp-cached', "".concat(caller, "-").concat(pid, ".log"));
+        var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cached', "".concat(caller, "-").concat(pid, ".log"));
         (0, fm_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isChanged(), " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') + os_1.EOL, {
             append: true
         });
