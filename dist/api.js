@@ -52,7 +52,6 @@ var noop_1 = __importDefault(require("./utils/noop"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var SBG = (function () {
     function SBG(cwd) {
-        if (cwd === void 0) { cwd = null; }
         var _this = this;
         this.config = (0, gulp_config_1.getConfig)();
         this.setConfig = gulp_config_1.setConfig;
@@ -67,10 +66,11 @@ var SBG = (function () {
             });
         };
         this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(noop_1.default, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
-        if (typeof cwd === 'string') {
-            this.cwd = cwd;
-            this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
-        }
+        if (!cwd)
+            cwd = process.cwd();
+        this.cwd = cwd;
+        this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
+        SBG.setApi(this);
         scheduler_1.default.register();
     }
     SBG.setApi = function (api) {
