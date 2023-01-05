@@ -44,7 +44,9 @@ function parsePermalink(post) {
     const newPattern = pattern.replace(/%20/g, ' ');
     if (/^https?:\/\//.test(newPattern))
         return newPattern;
-    return newPattern.replace(/\/{2,10}/g, '/');
+    const result = newPattern.replace(/\/{2,10}/g, '/');
+    console.log({ result });
+    return result;
 }
 exports.parsePermalink = parsePermalink;
 //# sourceMappingURL=parsePermalink.js.map
