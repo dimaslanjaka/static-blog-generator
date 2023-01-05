@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = void 0;
+exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = exports.getConfig = void 0;
 const tslib_1 = require("tslib");
 const fs_1 = require("fs");
 const process_1 = require("process");
@@ -99,18 +99,22 @@ const defaultOptions = {
     meta_generator: true
 };
 let config = defaultOptions;
-// find _config.yml
-const file = (0, upath_1.join)(process.cwd(), '_config.yml');
-if ((0, fs_1.existsSync)(file)) {
-    const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
-    const parse = yaml_1.default.parse(readConfig);
-    config = Object.assign(defaultOptions, parse, {
-        verbose,
-        generator: {
-            cache: !nocache
-        }
-    });
+function getConfig() {
+    // find _config.yml
+    const file = (0, upath_1.join)(process.cwd(), '_config.yml');
+    if ((0, fs_1.existsSync)(file)) {
+        const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
+        const parse = yaml_1.default.parse(readConfig);
+        config = Object.assign(defaultOptions, parse, {
+            verbose,
+            generator: {
+                cache: !nocache
+            }
+        });
+    }
+    return config;
 }
+exports.getConfig = getConfig;
 (0, fs_1.writeFileSync)((0, upath_1.join)(__dirname, '_config_project.json'), JSON.stringify(config, null, 2));
 exports.default = config;
 /**
