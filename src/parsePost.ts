@@ -34,7 +34,7 @@ import config, { post_generated_dir, ProjectConfig } from './types/_config';
 import { countWords, removeDoubleSlashes } from './utils/string';
 
 const _cache = cache({
-  base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
+  base: join(process.cwd(), 'tmp'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'parsePost',
   duration: 1000 * 3600 * 24 // 24 hours
 });
@@ -114,20 +114,6 @@ export interface ParseOptions {
    */
   fix?: boolean;
 }
-
-/**
- * make all properties as optional recursively
- */
-export type DeepPartial<T> = T extends object
-  ? {
-      [P in keyof T]?: DeepPartial<T[P]>;
-    }
-  : T;
-
-/**
- * null | type
- */
-export type Nullable<T> = T | null | undefined;
 
 const default_options: ParseOptions = {
   shortcodes: {

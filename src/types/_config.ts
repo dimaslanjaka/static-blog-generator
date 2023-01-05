@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
+import HexoConfig from 'hexo/HexoConfig';
 import { cwd } from 'process';
 import { join } from 'upath';
 import yaml from 'yaml';
@@ -132,8 +133,16 @@ writeFileSync(
 
 export { verbose, nocache };
 export default config as Config;
-export interface ProjectConfig extends Partial<typeof config> {
+export interface ProjectConfig extends HexoConfig {
   [key: string]: any;
+  /**
+   * Source posts
+   */
+  post_dir: string;
+  /**
+   * Project CWD
+   */
+  cwd: string;
 }
 
 /**

@@ -4,7 +4,6 @@ const semver = require('semver');
 const { default: git } = require('git-command-helper');
 const { mkdirSync, existsSync, writeFileSync, readdirSync, statSync } = require('fs');
 const typedocOptions = require('./typedoc');
-const gulp = require('gulp');
 const pkgjson = require('./package.json');
 const { EOL } = require('os');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
@@ -13,7 +12,7 @@ const { writeFile } = require('fs/promises');
 const fs = require('fs');
 const path = require('path');
 
-// required : npm i upath && npm i -D semver typedoc git-command-helper gulp cross-spawn
+// required : upath semver typedoc git-command-helper gulp cross-spawn
 // update   : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-runner.js > typedoc-runner.js
 // repo     : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/typedoc-runner.js
 // usages
@@ -82,19 +81,17 @@ const publish = async function (options = {}, callback = null) {
 
   const github = new git(outDir);
 
-  try {
-    if (!existsSync(join(outDir, '.git'))) {
-      mkdirSync(join(outDir, '.git'), { recursive: true });
-      await github.init();
-    }
-    await github.setremote(REPO_URL);
-    await github.setbranch('master');
-    //await github.reset('master');
-    await github.pull(['--recurse-submodule', '-X', 'theirs']);
-    await github.spawn('git', 'config core.eol lf'.split(' '));
-  } catch {
-    //
+  if (!existsSync(join(outDir, '.git'))) {
+    mkdirSync(join(outDir, '.git'), { recursive: true });
+    await github
+      .spawn('git', ['clone', REPO_URL, 'docs'], { cwd: __dirname })
+      .catch(() => console.log('fail clone to /docs'));
   }
+  await github.setremote(REPO_URL).catch(() => console.log('fail set remote', REPO_URL));
+  await github.setbranch('master').catch(() => console.log('fail set branch master'));
+  //await github.reset('master');
+  await github.pull(['--recurse-submodule', '-X', 'theirs']).catch(() => console.log('fail pull'));
+  await github.spawn('git', 'config core.eol lf'.split(' ')).catch(() => console.log('fail set EOL LF'));
 
   for (let i = 0; i < 2; i++) {
     await compile(options, callback);
@@ -157,18 +154,6 @@ function setTypedocOptions(newOpt) {
   return opt;
 }
 
-/**
- * Watch sources
- * @param {gulp.TaskFunctionCallback} done
- */
-const watch = function (done) {
-  const watcher = gulp.watch([join(__dirname, 'src/**/*')]);
-  watcher.on('change', function (_event, filename) {
-    console.log(filename);
-  });
-  watcher.on('close', done);
-};
-
 if (require.main === module) {
   (async () => {
     const argv = process.argv;
@@ -217,6 +202,7 @@ async function createIndex() {
  * @param {import('fs').EncodingOption} encoding
  * @returns
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function readfile(str, encoding = 'utf-8') {
   if (fs.existsSync(str)) {
     if (fs.statSync(str).isFile()) {
@@ -243,7 +229,6 @@ function writefile(dest, data) {
 }
 
 module.exports = {
-  watch,
   compile,
   compileDocs: compile,
   publish,
