@@ -1,8 +1,8 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
+import { buildPost, parsePost } from 'hexo-post-parser';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
-import { buildPost, parsePost } from '../../packages/hexo-post-parser';
 import gulpCached from '../gulp-utils/gulp.cache';
 import gulpDebug from '../gulp-utils/gulp.debug';
 import { commonIgnore, getConfig } from '../gulp.config';
