@@ -1,11 +1,9 @@
-import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
 import HexoConfig from 'hexo/HexoConfig';
 import { cwd } from 'process';
 import { join } from 'upath';
 import yaml from 'yaml';
 import yargs from 'yargs';
-import data from './_config_project.json';
 
 const argv = yargs(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
@@ -37,12 +35,6 @@ const defaultSiteOptions = {
   code_dir: 'downloads/code',
   i18n_dir: ':lang',
   skip_render: [],
-  // Mapper
-  title_map: {},
-  tag_map: {},
-  category_map: {},
-  tag_group: {},
-  category_group: {},
   // Writing
   new_post_name: ':title.md',
   default_layout: 'post',
@@ -57,30 +49,30 @@ const defaultSiteOptions = {
   post_asset_folder: false,
   relative_link: false,
   future: true,
+  syntax_highlighter: 'highlight.js',
   highlight: {
-    enable: true,
     auto_detect: false,
     line_number: true,
     tab_replace: '',
     wrap: true,
     exclude_languages: [],
+    language_attr: false,
     hljs: false
   },
   prismjs: {
-    enable: false,
     preprocess: true,
     line_number: true,
     tab_replace: ''
   },
   // Category & Tag
   default_category: 'uncategorized',
-  default_tag: null,
+  category_map: {},
+  tag_map: {},
   // Date / Time format
   date_format: 'YYYY-MM-DD',
   time_format: 'HH:mm:ss',
   updated_option: 'mtime',
   // * mtime: file modification date (default)
-  // * date: use_date_for_updated
   // * empty: no more update
   // Pagination
   per_page: 10,
@@ -110,15 +102,16 @@ const defaultSiteOptions = {
 export function getConfig() {
   // find _config.yml
   const file = join(process.cwd(), '_config.yml');
+  // console.log('finding', file);
   if (existsSync(file)) {
     const readConfig = readFileSync(file, 'utf-8');
-    const parse = yaml.parse(readConfig) as typeof data;
-    return deepmerge(defaultSiteOptions, parse, {
+    const parse = yaml.parse(readConfig);
+    return Object.assign(defaultSiteOptions, parse, {
       verbose,
       generator: {
         cache: !nocache
       }
-    });
+    }) as unknown as typeof defaultSiteOptions;
   } else {
     console.log(file, 'not found');
   }
