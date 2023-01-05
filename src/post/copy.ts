@@ -105,7 +105,7 @@ export function copyAllPosts() {
               codeblock: true
             },
             cache: false,
-            config,
+            config: <any>config,
             formatDate: true,
             fix: true,
             sourceFile: file.path
