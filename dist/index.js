@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scheduler = exports.trycatchnoop = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.setConfig = exports.getConfig = exports.deployConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
+exports.scheduler = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.copyPost = exports.copySinglePost = exports.copyAllPosts = exports.setConfig = exports.getConfig = exports.deployConfig = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
 var api_1 = require("./api");
 Object.defineProperty(exports, "Application", { enumerable: true, get: function () { return __importDefault(api_1).default; } });
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
@@ -38,6 +38,5 @@ Object.defineProperty(exports, "array_remove_empty", { enumerable: true, get: fu
 Object.defineProperty(exports, "array_unique", { enumerable: true, get: function () { return array_1.array_unique; } });
 var noop_1 = require("./utils/noop");
 Object.defineProperty(exports, "noop", { enumerable: true, get: function () { return noop_1.noop; } });
-Object.defineProperty(exports, "trycatchnoop", { enumerable: true, get: function () { return noop_1.trycatchnoop; } });
 var scheduler_1 = require("./utils/scheduler");
 Object.defineProperty(exports, "scheduler", { enumerable: true, get: function () { return __importDefault(scheduler_1).default; } });
