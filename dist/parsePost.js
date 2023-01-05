@@ -68,7 +68,7 @@ function parsePost(target, options = {}) {
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
         options.config = Object.assign(_config_1.default, options.config || {});
-        const HexoConfig = options.config;
+        const HexoConfig = _config_1.default;
         const homepage = HexoConfig.url.endsWith('/')
             ? HexoConfig.url
             : HexoConfig.url + '/';
