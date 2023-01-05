@@ -73,6 +73,8 @@ export declare function getConfig(): {
     meta_generator: boolean;
     generator: {
         cache: boolean;
+        type: string;
+        verbose: boolean;
     };
 };
 export { verbose, nocache };

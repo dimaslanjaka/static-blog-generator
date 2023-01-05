@@ -99,7 +99,9 @@ const defaultSiteOptions = {
     // Category & Tag
     meta_generator: true,
     generator: {
-        cache: true
+        cache: true,
+        type: 'hexo',
+        verbose: false
     }
 };
 function getConfig() {
