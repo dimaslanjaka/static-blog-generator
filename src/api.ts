@@ -4,10 +4,10 @@ import { Nullable } from './globals';
 import { cleanDb, cleanOldArchives } from './gulp.clean';
 import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
-import { copyAllPosts } from './gulp.post';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
+import { copyAllPosts } from './post/copy';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
 
