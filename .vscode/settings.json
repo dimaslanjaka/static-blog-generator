@@ -13,9 +13,5 @@
     "coverage": true,
     "test/public": true,
     "test/.deploy_git": true
-  },
-  "files.watcherExclude": {
-    "**/tmp/**": true,
-    "**/dist/**": true
   }
 }
