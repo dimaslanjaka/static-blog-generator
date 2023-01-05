@@ -683,7 +683,9 @@ export async function parsePost(
       result.metadata.permalink = parsePermalink(result);
     }
 
-    result.metadata.slug = result.metadata.permalink;
+    if (config.generator?.type === 'jekyll') {
+      result.metadata.slug = result.metadata.permalink;
+    }
 
     // put fileTree
     if (isFile) {
