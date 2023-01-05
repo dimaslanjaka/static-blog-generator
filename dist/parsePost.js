@@ -63,13 +63,11 @@ function parsePost(target, options = {}) {
     return tslib_1.__awaiter(this, void 0, void 0, function* () {
         if (!target)
             return null;
-        const siteConfig = _config_1.default;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
         // , { sourceFile: target }
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
-        if (!options.config)
-            options.config = _config_1.default;
+        options.config = Object.assign(_config_1.default, options.config || {});
         const HexoConfig = options.config;
         const homepage = HexoConfig.url.endsWith('/')
             ? HexoConfig.url
