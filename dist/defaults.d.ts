@@ -1,25 +1,14 @@
 export declare function getDefaultConfig(): {
     title: string;
-    subtitle: string;
     description: string;
-    keywords: string;
+    keywords: null;
+    author: string;
+    language: string;
     timezone: string;
-    language: string[];
-    multilingual: boolean;
-    i18n: {
-        type: string[];
-        generator: never[];
-    };
-    search: {
-        path: string;
-        field: string;
-        content: boolean;
-        format: string;
-    };
     url: string;
     root: string;
     permalink: string;
-    permalink_defaults: string;
+    permalink_defaults: null;
     pretty_urls: {
         trailing_index: boolean;
         trailing_html: boolean;
@@ -31,28 +20,13 @@ export declare function getDefaultConfig(): {
     category_dir: string;
     code_dir: string;
     i18n_dir: string;
+    skip_render: null;
     new_post_name: string;
     default_layout: string;
     titlecase: boolean;
-    external_link: {
-        enable: boolean;
-        field: string;
-        safelink: {
-            enable: boolean;
-            exclude: string[];
-            redirect: string;
-            type: string;
-            password: string;
-        };
-        exclude: string[];
-    };
     filename_case: number;
     render_drafts: boolean;
     post_asset_folder: boolean;
-    marked: {
-        prependRoot: boolean;
-        postAsset: boolean;
-    };
     relative_link: boolean;
     future: boolean;
     highlight: {
@@ -65,9 +39,6 @@ export declare function getDefaultConfig(): {
     };
     prismjs: {
         enable: boolean;
-        preprocess: boolean;
-        line_number: boolean;
-        tab_replace: string;
     };
     index_generator: {
         path: string;
@@ -75,104 +46,42 @@ export declare function getDefaultConfig(): {
         order_by: string;
     };
     default_category: string;
-    default_tag: null;
     category_map: null;
     tag_map: null;
     meta_generator: boolean;
     date_format: string;
     time_format: string;
-    updated_option: boolean;
+    updated_option: string;
     per_page: number;
     pagination_dir: string;
-    include: string[];
-    exclude: string[];
-    ignore: string[];
-    skip_render: string[];
-    server: {
-        port: number;
-        log: boolean;
-        ip: string;
-        compress: boolean;
-        cache: boolean;
-        header: boolean;
-        serveStatic: {
-            dotfiles: string;
-            extensions: string[];
-        };
-    };
+    include: null;
+    exclude: null;
+    ignore: null;
     theme: string;
-    deploy: {
-        type: string;
-        repo: string;
-        branch: string;
-        message: string;
-        hostname: string;
-        username: string;
-        email: string;
-    };
-    author: string;
-    author_obj: {
-        name: string;
-        link: string;
-        image: {
-            url: string;
-            width: number;
-            height: number;
+    markdown: {
+        preset: string;
+        render: {
+            html: boolean;
+            xhtmlOut: boolean;
+            langPrefix: string;
+            breaks: boolean;
+            linkify: boolean;
+            typographer: boolean;
+            quotes: string;
         };
-    };
-    social_links: {
-        github: string;
-        youtube: string;
-    };
-    feed: {
-        icon: string;
-        content: boolean;
-        type: string[];
-        path: string[];
-    };
-    sitemap: {
-        path: string[];
-        template_txt: string;
-        rel: boolean;
-        tags: boolean;
-        categories: boolean;
-    };
-    related_posts: {
-        enabled: boolean;
-        enable_env_name: string;
-        filter_threshold: number;
-        related_count: number;
-        weight: {
-            title: number;
-            description: number;
-            keywords: number;
-            tags: number;
-            categories: number;
-            text: number;
+        enable_rules: null;
+        disable_rules: null;
+        plugins: null;
+        anchors: {
+            level: number;
+            collisionSuffix: string;
+            permalink: boolean;
+            permalinkClass: string;
+            permalinkSide: string;
+            permalinkSymbol: string;
+            case: number;
+            separator: string;
         };
-        stemmers: string[];
-        reserved: string[];
-    };
-    markdown_it_plus: {
-        highlight: boolean;
-        html: boolean;
-        xhtmlOut: boolean;
-        breaks: boolean;
-        langPrefix: null;
-        linkify: boolean;
-        typographer: null;
-        pre_class: string;
-        plugins: {
-            plugin: {
-                name: string;
-                enable: boolean;
-                options: {
-                    leftDelimiter: string;
-                    rightDelimiter: string;
-                    allowedAttributes: never[];
-                };
-            };
-        }[];
     };
     browsersync: {
         logLevel: string;
@@ -180,86 +89,39 @@ export declare function getDefaultConfig(): {
             scroll: boolean;
         };
         instanceName: string;
-        port: number;
-        browser: string;
-        open: boolean;
     };
     generator: {
         cache: boolean;
+    };
+    deploy: {
         type: string;
-        copy: {
-            posts: {
-                space: boolean;
-            };
-        };
-    };
-    excerpt: {
-        depth: number;
-        excerpt_excludes: never[];
-        more_excludes: never[];
-        hideWholePostExcerpts: boolean;
-    };
-    adsense: {
-        enable: boolean;
-        pub: string;
-        article_ads: null;
-        field: string;
-        https: boolean;
-        adblock: boolean;
-        type: string;
-        exclude: string[];
-    };
-    redirect: {
-        enable: boolean;
-    };
-    analytics: {
-        tagmanager: string;
-        GA4: string;
-        GA3: string;
-        cloudflare: string;
-    };
-    seo: {
-        html: {
-            fix: boolean;
-            exclude: string[];
-        };
-        css: boolean;
-        js: boolean;
-        schema: boolean;
-        img: {
-            broken: boolean;
-            default: string;
-            onerror: string;
-        };
-        links: {
-            enable: boolean;
-            exclude: string[];
-        };
-        sitemap: boolean;
+        repo: string;
+        branch: string;
+        username: string;
+        email: string;
+        message: string;
     };
     tags: {
         lowercase: boolean;
-        mapper: {
-            JS: string;
-            TS: string;
-        };
-        assign: {
-            JS: string;
-            TS: string;
-            GitHub: string;
-        };
+        assign: null;
+        mapper: null;
     };
     categories: {
         lowercase: boolean;
-        mapper: {
-            JS: string;
-            TS: string;
+        assign: null;
+        mapper: null;
+    };
+    external_link: {
+        enable: boolean;
+        field: string;
+        safelink: {
+            enable: boolean;
+            exclude: string[];
+            redirect: string[];
+            type: string;
+            password: string;
         };
-        assign: {
-            GitHub: string;
-            JS: string;
-            TS: string;
-        };
+        exclude: string[];
     };
 };
 export declare function getDefaultConfigYaml(): string;
