@@ -64,14 +64,14 @@ function parsePost(target, options = {}) {
         if (!target)
             return null;
         options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
-        const HexoConfig = _config_1.default;
+        const siteConfig = _config_1.default;
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
         options.config = Object.assign(_config_1.default, options.config || {});
-        const homepage = HexoConfig.url.endsWith('/')
-            ? HexoConfig.url
-            : HexoConfig.url + '/';
-        console.log([homepage, HexoConfig.root]);
+        const homepage = siteConfig.url.endsWith('/')
+            ? siteConfig.url
+            : siteConfig.url + '/';
+        console.log([homepage, siteConfig.root]);
         const fileTarget = options.sourceFile || target;
         const cacheKey = (0, fs_extra_1.existsSync)(fileTarget)
             ? (0, md5_file_1.md5FileSync)(fileTarget)
@@ -543,7 +543,7 @@ function parsePost(target, options = {}) {
                 metadata: meta,
                 body: body,
                 content: body,
-                config: HexoConfig
+                config: siteConfig
             };
             //console.log('hpp permalink in metadata', 'permalink' in result.metadata);
             if ('permalink' in result.metadata === false) {
