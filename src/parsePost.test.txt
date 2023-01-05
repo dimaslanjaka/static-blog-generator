@@ -8,7 +8,7 @@ import { slugifySanitizeFilename } from './node/sanitize-filename';
 import parsePost from './parsePost';
 import config from './types/_config';
 
-const tmpDir = join(__dirname, '../tmp');
+const tmpDir = join(process.cwd(), 'tmp');
 if (existsSync(tmpDir)) rmSync(tmpDir, { recursive: true, force: true });
 
 const files = [
@@ -63,8 +63,8 @@ async function startParse(file: string, config: Record<string, any>) {
     const filename = parse.metadata.title;
     const mdFile = await write(
       join(
-        __dirname,
-        '../tmp/test/parsePost',
+        process.cwd(),
+        'tmp/test/parsePost',
         config.root,
         slugifySanitizeFilename(filename) + '.md'
       ),
@@ -73,8 +73,8 @@ async function startParse(file: string, config: Record<string, any>) {
 
     const jsonFile = await write(
       join(
-        __dirname,
-        '../tmp/test/parsePost',
+        process.cwd(),
+        'tmp/test/parsePost',
         config.root,
         slugifySanitizeFilename(filename) + '.json'
       ),
