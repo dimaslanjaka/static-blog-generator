@@ -1,7 +1,7 @@
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { Nullable } from './globals';
-import { cleanDb, cleanOldArchives } from './gulp.clean';
+import * as cleaner from './gulp.clean';
 import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
@@ -95,14 +95,17 @@ class SBG {
 
   /**
    * clean cache, auto generated posts, etc
-   * @see {@link cleanDb}
-   * @see {@link cleanOldArchives}
+   * @see {@link cleaner.cleanDb}
+   * @see {@link cleaner.cleanOldArchives}
    */
-  clean(opt?: 'all') {
-    if (opt !== 'all') {
-      return cleanDb();
+  async clean(opt?: 'all' | 'archives' | 'database') {
+    if (opt === 'all') {
+      await cleaner.cleanDb();
+      await cleaner.cleanOldArchives();
+    } else if (opt === 'archives') {
+      await cleaner.cleanOldArchives();
     } else {
-      return cleanOldArchives();
+      await cleaner.cleanDb();
     }
   }
 }
