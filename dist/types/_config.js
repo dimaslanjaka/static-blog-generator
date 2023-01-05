@@ -98,6 +98,7 @@ const defaultSiteOptions = {
     ignore: [],
     // Category & Tag
     meta_generator: true,
+    // hexo-post-parser cache indicator
     generator: {
         cache: true,
         type: 'hexo',
