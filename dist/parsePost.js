@@ -47,7 +47,7 @@ const default_options = {
     },
     sourceFile: null,
     formatDate: false,
-    config,
+    config: (0, _config_1.getConfig)(),
     cache: false,
     fix: false
 };
