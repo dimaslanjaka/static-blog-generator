@@ -8,7 +8,8 @@ import { dirname, join } from 'path';
   join(__dirname, 'types/_config_hashes.json')
 ].forEach((path) => {
   if (!existsSync(path)) {
-    if (!existsSync(dirname(path))) mkdirSync(dirname(path), { recursive: true });
+    if (!existsSync(dirname(path)))
+      mkdirSync(dirname(path), { recursive: true });
     writeFileSync(path, '{}');
   }
 });

@@ -1,3 +1,5 @@
+process.cwd = () => __dirname;
+
 import { join } from 'upath';
 import { buildPost, parsePost } from '../src';
 import { simplifyDump } from '../src/markdown/transformPosts/postMapper';

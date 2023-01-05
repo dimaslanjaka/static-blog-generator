@@ -352,13 +352,7 @@ function parsePost(target, options = {}) {
                                 result = src;
                         });
                         if (result === null) {
-                            let tempFolder;
-                            if (/dev/i.test(process.env.NODE_ENV || '')) {
-                                tempFolder = (0, upath_1.join)(__dirname, '../tmp');
-                            }
-                            else {
-                                tempFolder = (0, upath_1.join)(process.cwd(), 'tmp/');
-                            }
+                            const tempFolder = (0, upath_1.join)(process.cwd(), 'tmp');
                             const logfile = (0, upath_1.join)(tempFolder, 'hexo-post-parser/errors/post-asset-folder/' +
                                 (0, sanitize_filename_1.default)((0, upath_1.basename)(sourcePath).trim(), '-') +
                                 '.log');

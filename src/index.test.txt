@@ -12,13 +12,18 @@ import buildPost from './buildPost';
 import config from './types/_config';
 
 const files = walkSync(join(__dirname, '../src-posts')).filter((path) => {
-  const haveExclusion = config.skip_render.some((pattern) =>
+  const skip_render =
+    typeof config.skip_render === 'string'
+      ? [config.skip_render]
+      : config.skip_render;
+  const haveExclusion = skip_render.some((pattern) =>
     minimatch(path, pattern, { matchBase: true, dot: true })
   );
   //if (path.includes('README')) console.log(have, path);
   return path.endsWith('.md') && !haveExclusion;
 });
-const tmp = join(__dirname, '../tmp/test');
+
+const tmp = join(process.cwd(), 'tmp/test');
 if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
 
 // parse single sample post

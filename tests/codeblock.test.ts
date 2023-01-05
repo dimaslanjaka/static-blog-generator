@@ -1,8 +1,10 @@
+process.cwd = () => __dirname;
+
 import { cwd } from 'process';
 import { join } from 'upath';
-import { write } from '../node/filemanager';
-import parsePost from '../parsePost';
-import { shortcodeCodeblock } from './codeblock';
+import { write } from '../src/node/filemanager';
+import parsePost from '../src/parsePost';
+import { shortcodeCodeblock } from '../src/shortcodes/codeblock';
 
 (async () => {
   const file = join(cwd(), 'src-posts/Tests/codeblock.md');

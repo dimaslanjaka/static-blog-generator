@@ -445,12 +445,7 @@ export async function parsePost(
           });
 
           if (result === null) {
-            let tempFolder: string;
-            if (/dev/i.test(process.env.NODE_ENV || '')) {
-              tempFolder = join(__dirname, '../tmp');
-            } else {
-              tempFolder = join(process.cwd(), 'tmp/');
-            }
+            const tempFolder = join(process.cwd(), 'tmp');
             const logfile = join(
               tempFolder,
               'hexo-post-parser/errors/post-asset-folder/' +
