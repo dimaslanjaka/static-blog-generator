@@ -44,10 +44,10 @@ var upath_1 = require("upath");
 var gulp_clean_1 = require("./gulp.clean");
 var gulp_config_1 = require("./gulp.config");
 var gulp_deploy_1 = require("./gulp.deploy");
-var gulp_post_1 = require("./gulp.post");
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var gulp_standalone_1 = __importDefault(require("./gulp.standalone"));
+var copy_1 = require("./post/copy");
 var noop_1 = __importDefault(require("./utils/noop"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var SBG = (function () {
@@ -61,7 +61,7 @@ var SBG = (function () {
         this.copy = function () {
             return __awaiter(this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    return [2, (0, gulp_post_1.copyAllPosts)()];
+                    return [2, (0, copy_1.copyAllPosts)()];
                 });
             });
         };
