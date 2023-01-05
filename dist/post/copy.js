@@ -87,22 +87,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.copyAllPosts = exports.updatePost = exports.copySinglePost = void 0;
+exports.copyAllPosts = exports.copySinglePost = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
-var front_matter_1 = __importDefault(require("front-matter"));
-var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_post_parser_1 = require("hexo-post-parser");
-var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
-var gulp_cache_1 = __importDefault(require("./gulp-utils/gulp.cache"));
-var gulp_debug_1 = __importDefault(require("./gulp-utils/gulp.debug"));
-var gulp_config_1 = require("./gulp.config");
-var fm = __importStar(require("./utils/fm"));
-var lockmanager_1 = __importDefault(require("./utils/lockmanager"));
-var logger_1 = __importDefault(require("./utils/logger"));
-var scheduler_1 = __importDefault(require("./utils/scheduler"));
+var gulp_cache_1 = __importDefault(require("../gulp-utils/gulp.cache"));
+var gulp_debug_1 = __importDefault(require("../gulp-utils/gulp.debug"));
+var gulp_config_1 = require("../gulp.config");
+var fm = __importStar(require("../utils/fm"));
+var lockmanager_1 = __importDefault(require("../utils/lockmanager"));
+var logger_1 = __importDefault(require("../utils/logger"));
+var scheduler_1 = __importDefault(require("../utils/scheduler"));
 var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function copySinglePost(identifier, callback) {
@@ -118,87 +115,6 @@ function copySinglePost(identifier, callback) {
     });
 }
 exports.copySinglePost = copySinglePost;
-var processingUpdate = {};
-function updatePost(postPath, callback) {
-    return __awaiter(this, void 0, void 0, function () {
-        var config, parse, oriUp, oriPath, post, rBuild, rebuild, build, hasError;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    if (processingUpdate[postPath])
-                        return [2, false];
-                    processingUpdate[postPath] = true;
-                    config = (0, gulp_config_1.getConfig)();
-                    return [4, (0, hexo_post_parser_1.parsePost)(postPath, {
-                            shortcodes: {
-                                youtube: true,
-                                css: true,
-                                include: true,
-                                link: true,
-                                now: true,
-                                script: true,
-                                text: true,
-                                codeblock: true
-                            },
-                            cache: false,
-                            config: config,
-                            formatDate: true,
-                            fix: true,
-                            sourceFile: postPath
-                        })];
-                case 1:
-                    parse = _a.sent();
-                    if (!(parse && parse.metadata)) return [3, 4];
-                    oriUp = parse.metadata.updated;
-                    oriPath = postPath;
-                    parse.metadata.updated = (0, moment_timezone_1.default)()
-                        .tz(config.timezone || 'UTC')
-                        .format();
-                    post = (0, front_matter_1.default)((0, fs_1.readFileSync)(postPath, 'utf-8'));
-                    if ('updated' in post.attributes === false) {
-                        post.attributes.updated = parse.metadata.updated;
-                    }
-                    post.attributes.updated = parse.metadata.updated;
-                    post.attributes.date = parse.metadata.date;
-                    if ('modified' in parse.metadata) {
-                        post.attributes.modified = parse.metadata.modified;
-                    }
-                    if (post.attributes.description &&
-                        post.attributes.subtitle &&
-                        post.attributes.description == post.attributes.subtitle) {
-                        delete post.attributes.subtitle;
-                    }
-                    rBuild = {
-                        metadata: post.attributes,
-                        body: post.body,
-                        content: post.body,
-                        config: config
-                    };
-                    rebuild = (0, hexo_post_parser_1.buildPost)(rBuild);
-                    logger_1.default.log('write to', (0, upath_1.toUnix)(oriPath).replace((0, upath_1.toUnix)(process.cwd()), ''), oriUp, '->', post.attributes.updated);
-                    return [4, fm.writefile(oriPath, rebuild, { async: true })];
-                case 2:
-                    _a.sent();
-                    build = (0, hexo_post_parser_1.buildPost)(parse);
-                    return [4, fm.writefile(postPath, build, { async: true })];
-                case 3:
-                    _a.sent();
-                    return [3, 5];
-                case 4:
-                    logger_1.default.log('cannot parse', postPath);
-                    fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
-                    _a.label = 5;
-                case 5:
-                    hasError = typeof (parse && parse.metadata) === 'undefined';
-                    if (typeof callback === 'function')
-                        callback(hasError, postPath);
-                    delete processingUpdate[postPath];
-                    return [2, hasError];
-            }
-        });
-    });
-}
-exports.updatePost = updatePost;
 function copyAllPosts() {
     var _this = this;
     var _a, _b;
