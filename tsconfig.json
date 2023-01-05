@@ -18,18 +18,12 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "checkJs": false,
-    "types": ["nodejs-package-types"]
+    "types": ["nodejs-package-types"],
+    "rootDirs": ["src", "packages"]
   },
   "typeAcquisition": {
     "enable": true
   },
-  "include": [
-    "./src",
-    "./test",
-    "typedoc.js",
-    "typedoc-runner.js"
-  ],
-  "exclude": [
-    "dist"
-  ]
+  "include": ["./src", "./test", "typedoc.js", "typedoc-runner.js"],
+  "exclude": ["dist"]
 }

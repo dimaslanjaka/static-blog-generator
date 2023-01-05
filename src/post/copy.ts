@@ -1,8 +1,8 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
-import { buildPost, parsePost } from 'hexo-post-parser';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
+import { buildPost, parsePost } from '../../packages/hexo-post-parser';
 import gulpCached from '../gulp-utils/gulp.cache';
 import gulpDebug from '../gulp-utils/gulp.debug';
 import { commonIgnore, getConfig } from '../gulp.config';
@@ -105,7 +105,7 @@ export function copyAllPosts() {
               codeblock: true
             },
             cache: false,
-            config: config as any,
+            config,
             formatDate: true,
             fix: true,
             sourceFile: file.path
@@ -150,8 +150,13 @@ export function copyAllPosts() {
             }
 
             const build = buildPost(parse);
-            file.contents = Buffer.from(build);
-            return callback(null, file);
+            if (typeof build === 'string') {
+              file.contents = Buffer.from(build);
+              return callback(null, file);
+            } else {
+              Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+              return callback();
+            }
           } else {
             Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
           }
