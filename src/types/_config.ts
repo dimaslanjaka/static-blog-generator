@@ -119,6 +119,8 @@ export function getConfig() {
         cache: !nocache
       }
     });
+  } else {
+    console.log(file, 'not found');
   }
   return defaultSiteOptions;
 }
