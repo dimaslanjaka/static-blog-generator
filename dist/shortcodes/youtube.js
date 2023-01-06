@@ -15,7 +15,7 @@ const logname = color_1.default['Vivid Tangerine']('[youtube]');
  */
 function shortcodeYoutube(content) {
     const config = (0, _config_1.getConfig)();
-    const { verbose } = config.generator;
+    const { verbose, amp } = config.generator;
     let m;
     let count = 0;
     while ((m = regex.exec(content)) !== null) {
