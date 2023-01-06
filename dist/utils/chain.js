@@ -56,7 +56,7 @@ function chain(schedule) {
                             if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.before) {
                                 instance.opt.before();
                             }
-                            var obj = instance.callback();
+                            var obj = instance.callback.call && instance.callback.call(null);
                             if (isReadableStream(obj) && obj instanceof stream_1.default.Stream) {
                                 return obj.once('end', function () {
                                     var _a;
@@ -97,7 +97,9 @@ function chain(schedule) {
                                 });
                             }
                             else {
-                                logger_1.default.log(logname, instance.callback.name, 'cannot determine method instances');
+                                if (typeof instance.callback !== 'function') {
+                                    logger_1.default.log(logname, 'cannot determine method instances');
+                                }
                             }
                             resolve.bind(this)(chain.bind(this));
                         });
