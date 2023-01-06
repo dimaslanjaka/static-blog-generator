@@ -47,15 +47,16 @@ function extractText(file, str) {
         // search from file directory
         const directFile = path_1.default.join(path_1.default.dirname(file.toString()), bracketmatch);
         if (fs.existsSync(directFile)) {
-            if (verbose)
+            if (config.generator.verbose)
                 console.info(`${logname} found from direct ${directFile.replace(process.cwd() + '/', '')}`);
             const directRead = fs.readFileSync(directFile).toString();
             str = str.replace(allmatch, directRead);
         }
         else {
             // search from workspace directory
-            if (verbose)
+            if (config.generator.verbose) {
                 console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + '/', '')}`);
+            }
             const rootFile = path_1.default.join(process.cwd(), bracketmatch);
             if (fs.existsSync(rootFile)) {
                 const rootRead = fs.readFileSync(rootFile).toString();
