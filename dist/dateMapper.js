@@ -3,11 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.dateMapper = exports.isToday = exports.moment = void 0;
 const tslib_1 = require("tslib");
 const moment_timezone_1 = tslib_1.__importDefault(require("moment-timezone"));
-const _config_1 = tslib_1.__importDefault(require("./types/_config"));
+const _config_1 = require("./types/_config");
 function moment(date = new Date(), format) {
     let parse = (0, moment_timezone_1.default)(date, format);
-    if (_config_1.default.timezone) {
-        parse = parse.tz(_config_1.default.timezone);
+    const config = (0, _config_1.getConfig)();
+    if (config.timezone) {
+        parse = parse.tz(config.timezone);
     }
     return parse;
 }
@@ -33,7 +34,7 @@ class dateMapper {
                 // process date for spaced data format
                 try {
                     // format di configured pattern
-                    this.data = moment(date, `${_config_1.default.date_format} ${_config_1.default.time_format}`);
+                    this.data = moment(date, `${config.date_format} ${config.time_format}`);
                 }
                 catch (error) {
                     // format with default pattern
