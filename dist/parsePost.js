@@ -67,23 +67,6 @@ const _cache = (0, persistent_cache_1.default)({
     name: 'parsePost',
     duration: 1000 * 3600 * 24 // 24 hours
 });
-const default_options = {
-    shortcodes: {
-        css: false,
-        script: false,
-        include: false,
-        youtube: false,
-        link: false,
-        text: false,
-        now: false,
-        codeblock: false
-    },
-    sourceFile: null,
-    formatDate: false,
-    config: (0, _config_1.getConfig)(),
-    cache: false,
-    fix: false
-};
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
@@ -96,6 +79,23 @@ function parsePost(target, options = {}) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!target)
             return null;
+        const default_options = {
+            shortcodes: {
+                css: false,
+                script: false,
+                include: false,
+                youtube: false,
+                link: false,
+                text: false,
+                now: false,
+                codeblock: false
+            },
+            sourceFile: null,
+            formatDate: false,
+            config: (0, _config_1.getConfig)(),
+            cache: false,
+            fix: false
+        };
         options = Object.assign(default_options, options);
         const siteConfig = (0, _config_1.getConfig)();
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
