@@ -29,6 +29,7 @@ class dateMapper {
         this.format = (pattern) => this.data.format(pattern);
         this.year = () => this.data.format('YYYY');
         this.toString = () => this.data.format('YYYY-MM-DDTHH:mm:ssZ');
+        const config = (0, _config_1.getConfig)();
         if (typeof date == 'string' && date.length > 0) {
             if (/\s/.test(date)) {
                 // process date for spaced data format
