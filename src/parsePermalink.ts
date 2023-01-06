@@ -1,12 +1,13 @@
 import { moment } from './dateMapper';
 import { postMap } from './types/postMap';
-import config from './types/_config';
+import { getConfig } from './types/_config';
 
 /**
  * transform permalink format in `_config.yml`
  * @param post
  */
 export function parsePermalink(post: postMap) {
+  const config = getConfig();
   let pattern: string = config.permalink;
   const date = moment(post.metadata.date);
   const url = post.metadata.url.replace(config.url, '');

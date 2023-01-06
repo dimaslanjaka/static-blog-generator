@@ -1,5 +1,5 @@
 import { default as momentInstance } from 'moment-timezone';
-import config from './types/_config';
+import { getConfig } from './types/_config';
 
 export /**
  * Localized Moment
@@ -8,6 +8,7 @@ export /**
  */
 function moment(date: any = new Date(), format?: string) {
   let parse = momentInstance(date, format);
+  const config = getConfig();
   if (config.timezone) {
     parse = parse.tz(config.timezone);
   }
@@ -28,6 +29,7 @@ export const isToday = (date: any) => moment(0, 'HH').diff(date, 'days') == 0;
 export class dateMapper {
   data: moment.Moment;
   constructor(date: moment.MomentInput) {
+    const config = getConfig();
     if (typeof date == 'string' && date.length > 0) {
       if (/\s/.test(date)) {
         // process date for spaced data format
