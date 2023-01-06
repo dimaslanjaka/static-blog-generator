@@ -65,7 +65,7 @@ class SBG {
       }
       const streamer = gulp.src(['**/*.*', '*.*'], {
         cwd: path.toUnix(sourcePostDir),
-        ignore: this.config.excludes,
+        //ignore: this.config.excludes,
         dot: true
       });
       streamer.pipe(processPost(this.config));
