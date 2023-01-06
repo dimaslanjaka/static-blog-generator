@@ -1,13 +1,15 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = exports.getConfig = void 0;
-const tslib_1 = require("tslib");
 const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
 const process_1 = require("process");
 const upath_1 = require("upath");
-const yaml_1 = tslib_1.__importDefault(require("yaml"));
-const yargs_1 = tslib_1.__importDefault(require("yargs"));
+const yaml_1 = __importDefault(require("yaml"));
+const yargs_1 = __importDefault(require("yargs"));
 const argv = (0, yargs_1.default)(process.argv.slice(2)).argv;
 const nocache = argv['nocache'];
 exports.nocache = nocache;

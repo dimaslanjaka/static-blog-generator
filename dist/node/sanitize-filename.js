@@ -3,9 +3,11 @@
 // forked from module `sanitize-filename`
 /*jshint node:true*/
 'use strict';
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.slugifySanitizeFilename = void 0;
-const tslib_1 = require("tslib");
 /**
  * Replaces characters in strings that are illegal/unsafe for filenames.
  * Unsafe characters are either removed or replaced by a substitute set
@@ -32,7 +34,7 @@ const tslib_1 = require("tslib");
  * @param  {Object} options {replacement: String | Function }
  * @return {String}         Sanitized filename
  */
-const truncate_utf8_bytes_1 = tslib_1.__importDefault(require("./truncate-utf8-bytes"));
+const truncate_utf8_bytes_1 = __importDefault(require("./truncate-utf8-bytes"));
 const illegalRe = /[\/\?<>\\:\*\|"]/g;
 const controlRe = /[\x00-\x1f\x80-\x9f]/g;
 const reservedRe = /^\.+$/;

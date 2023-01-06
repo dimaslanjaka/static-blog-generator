@@ -1,12 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.slugifyWithCounter = void 0;
-const tslib_1 = require("tslib");
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // https://github.com/sindresorhus/slugify
-const escape_string_regexp_1 = tslib_1.__importDefault(require("../escape-string-regexp"));
-const index_1 = tslib_1.__importDefault(require("../transliterate/index"));
-const replacements_1 = tslib_1.__importDefault(require("./replacements"));
+const escape_string_regexp_1 = __importDefault(require("../escape-string-regexp"));
+const index_1 = __importDefault(require("../transliterate/index"));
+const replacements_1 = __importDefault(require("./replacements"));
 const decamelize = (string) => {
     return (string
         // Separate capitalized words.

@@ -1,19 +1,21 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.renderBodyMarkdown = exports.renderMarkdownIt = exports.converterOpt = void 0;
-const tslib_1 = require("tslib");
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-const markdown_it_1 = tslib_1.__importDefault(require("markdown-it"));
-const markdown_it_abbr_1 = tslib_1.__importDefault(require("markdown-it-abbr"));
-const markdown_it_anchor_1 = tslib_1.__importDefault(require("markdown-it-anchor"));
-const markdown_it_attrs_1 = tslib_1.__importDefault(require("markdown-it-attrs"));
-const markdown_it_footnote_1 = tslib_1.__importDefault(require("markdown-it-footnote"));
-const markdown_it_mark_1 = tslib_1.__importDefault(require("markdown-it-mark"));
-const markdown_it_sub_1 = tslib_1.__importDefault(require("markdown-it-sub"));
-const markdown_it_sup_1 = tslib_1.__importDefault(require("markdown-it-sup"));
-const showdown_1 = tslib_1.__importDefault(require("showdown"));
+const markdown_it_1 = __importDefault(require("markdown-it"));
+const markdown_it_abbr_1 = __importDefault(require("markdown-it-abbr"));
+const markdown_it_anchor_1 = __importDefault(require("markdown-it-anchor"));
+const markdown_it_attrs_1 = __importDefault(require("markdown-it-attrs"));
+const markdown_it_footnote_1 = __importDefault(require("markdown-it-footnote"));
+const markdown_it_mark_1 = __importDefault(require("markdown-it-mark"));
+const markdown_it_sub_1 = __importDefault(require("markdown-it-sub"));
+const markdown_it_sup_1 = __importDefault(require("markdown-it-sup"));
+const showdown_1 = __importDefault(require("showdown"));
 const filemanager_1 = require("../node/filemanager");
-const index_1 = tslib_1.__importDefault(require("../node/slugify/index"));
+const index_1 = __importDefault(require("../node/slugify/index"));
 exports.converterOpt = {
     strikethrough: true,
     tables: true,

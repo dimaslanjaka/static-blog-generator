@@ -1,15 +1,26 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shortcodeCodeblock = void 0;
-const tslib_1 = require("tslib");
-const axios_1 = tslib_1.__importDefault(require("axios"));
-const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
+const axios_1 = __importDefault(require("axios"));
+const persistent_cache_1 = __importDefault(require("persistent-cache"));
 const upath_1 = require("upath");
-const color_1 = tslib_1.__importDefault(require("../node/color"));
-const jsdom_1 = tslib_1.__importDefault(require("../node/jsdom"));
+const color_1 = __importDefault(require("../node/color"));
+const jsdom_1 = __importDefault(require("../node/jsdom"));
 const md5_file_1 = require("../node/md5-file");
 const utils_1 = require("../node/utils");
-const _config_1 = tslib_1.__importDefault(require("../types/_config"));
+const _config_1 = __importDefault(require("../types/_config"));
 const dom = new jsdom_1.default();
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp'),
@@ -18,7 +29,7 @@ const _cache = (0, persistent_cache_1.default)({
 });
 const logname = color_1.default.Shamrock('[codeblock]');
 function shortcodeCodeblock(str) {
-    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+    return __awaiter(this, void 0, void 0, function* () {
         const regex = /(\{% codeblock (.*?) %\}|\{% codeblock %\})((.*?|\n)+?)(\{% endcodeblock %\})/gim;
         let m;
         while ((m = regex.exec(str)) !== null) {

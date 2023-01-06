@@ -1,9 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shortcodeScript = void 0;
-const tslib_1 = require("tslib");
 /* eslint-disable no-useless-escape */
-const chalk_1 = tslib_1.__importDefault(require("chalk"));
+const chalk_1 = __importDefault(require("chalk"));
 const fs_1 = require("fs");
 const upath_1 = require("upath");
 const _config_1 = require("../types/_config");

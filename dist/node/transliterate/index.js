@@ -1,11 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // https://github.com/sindresorhus/transliterate
-const lodash_deburr_1 = tslib_1.__importDefault(require("lodash.deburr"));
-const escape_string_regexp_1 = tslib_1.__importDefault(require("../escape-string-regexp"));
-const replacements_1 = tslib_1.__importDefault(require("./replacements"));
+const lodash_deburr_1 = __importDefault(require("lodash.deburr"));
+const escape_string_regexp_1 = __importDefault(require("../escape-string-regexp"));
+const replacements_1 = __importDefault(require("./replacements"));
 const doCustomReplacements = (string, replacements) => {
     for (const [key, value] of replacements) {
         // TODO: Use `String#replaceAll()` when targeting Node.js 16.
