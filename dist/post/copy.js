@@ -168,11 +168,16 @@ function processPost(config) {
                             logger_1.default.log(file.path + ' is stream');
                         return [2, callback()];
                     }
+                    console.log('processing', file.path.replace(process.cwd(), ''));
                     if (!config) return [3, 3];
                     if (!(file.extname === '.md')) return [3, 2];
                     contents = ((_a = file.contents) === null || _a === void 0 ? void 0 : _a.toString()) || '';
-                    if (contents.trim().length === 0)
+                    if (contents.trim().length === 0) {
+                        if (config.generator.verbose) {
+                            logger_1.default.log('content empty', file.path);
+                        }
                         return [2];
+                    }
                     return [4, (0, hexo_post_parser_1.parsePost)(contents, {
                             shortcodes: {
                                 youtube: true,
@@ -192,6 +197,7 @@ function processPost(config) {
                         })];
                 case 1:
                     parse = _f.sent();
+                    logger_1.default.log(parse);
                     if (parse && parse.metadata) {
                         array = ['tags', 'categories'];
                         for (i = 0; i < array.length; i++) {
@@ -224,19 +230,20 @@ function processPost(config) {
                                 }
                             }
                         }
-                        console.log(parse.metadata.permalink);
+                        logger_1.default.log(parse.metadata.permalink);
                         if (config.verbose) {
-                            fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/dump.json'), parse);
+                            fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/dump.json'), parse, { async: true }).then(function (o) { return logger_1.default.log(o.file); });
                         }
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         if (typeof build === 'string') {
                             file.contents = Buffer.from(build);
+                            return [2, callback(null, file)];
                         }
                         else {
                             logger_1.default.log(logname, 'cannot rebuild', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                         }
                     }
-                    else {
+                    else if (config.generator.verbose) {
                         logger_1.default.log(logname, 'cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                     }
                     _f.label = 2;
@@ -244,6 +251,7 @@ function processPost(config) {
                     callback(null, file);
                     return [3, 4];
                 case 3:
+                    logger_1.default.log('options not configured');
                     callback();
                     _f.label = 4;
                 case 4: return [2];
