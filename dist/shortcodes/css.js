@@ -36,8 +36,9 @@ function shortcodeCss(file, str) {
             if (Object.prototype.hasOwnProperty.call(dirs, key)) {
                 const filepath = dirs[key];
                 if ((0, fs_1.existsSync)(filepath)) {
-                    if (verbose)
+                    if (config.generator.verbose) {
                         console.log(...log, chalk_1.default.greenBright(`[${key}]`), file);
+                    }
                     const read = (0, fs_1.readFileSync)(filepath, 'utf-8');
                     str = str.replace(htmlTag, () => `<style>${read}</style>`);
                     //console.log('match tag', str.match(new RegExp(htmlTag, 'm'))[0]);
