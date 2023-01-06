@@ -1,4 +1,3 @@
-import { DeepPartial } from '../globals';
 import { postMeta } from './postMeta';
 import { getConfig } from './_config';
 export interface postMap extends Object {
@@ -20,7 +19,7 @@ export interface postMap extends Object {
     /**
      * _config.yml
      */
-    config?: DeepPartial<typeof getConfig> | null;
+    config?: ReturnType<typeof getConfig> | null;
     /**
      * Article metadata
      */
