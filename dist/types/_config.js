@@ -103,7 +103,7 @@ let defaultSiteOptions = {
 };
 let fetched = false;
 /**
- * get site config.yml
+ * get site _config.yml
  * @returns
  */
 function getConfig() {
@@ -130,6 +130,11 @@ function getConfig() {
     return defaultSiteOptions;
 }
 exports.getConfig = getConfig;
+/**
+ * assign new option
+ * @param obj
+ * @returns
+ */
 function setConfig(obj) {
     defaultSiteOptions = Object.assign(defaultSiteOptions, obj);
     return defaultSiteOptions;

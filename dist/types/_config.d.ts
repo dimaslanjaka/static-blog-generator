@@ -2,7 +2,7 @@ import HexoConfig from 'hexo/HexoConfig';
 declare const nocache: any;
 declare const verbose: any;
 /**
- * get site config.yml
+ * get site _config.yml
  * @returns
  */
 export declare function getConfig(): {
@@ -78,6 +78,11 @@ export declare function getConfig(): {
         amp: boolean;
     };
 };
+/**
+ * assign new option
+ * @param obj
+ * @returns
+ */
 export declare function setConfig(obj: Record<string, any>): {
     title: string;
     subtitle: string;
