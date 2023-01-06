@@ -11,7 +11,7 @@ function now() {
     return (new Date()
         //.toISOString()
         .toLocaleString('en-US', {
-        timeZone: _config_1.default.timezone
+        timeZone: _config_1.default.timezone || 'UTC'
     })
         .replace(/T/, ' ') // replace T with a space
         .replace(/\..+/, '')); // delete the dot and everything after
