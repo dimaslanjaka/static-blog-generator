@@ -9,6 +9,7 @@ export interface ProjConf extends HexoConfig {
     external_link: importConfig['external_link'] & boolean & {
         safelink?: import('safelinkify').SafelinkOptions;
     };
+    exclude: string[];
     generator: {
         cache: boolean;
         verbose: boolean;
@@ -22,7 +23,7 @@ export interface LabelMapper {
     mapper: Record<string, string> | undefined | null;
 }
 export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf;
-export declare function getConfig(get?: boolean): ProjConf;
+export declare function getConfig(): ProjConf;
 export declare function deployConfig(): {
     deployDir: string;
     github: git | null;
