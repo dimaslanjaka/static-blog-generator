@@ -23,6 +23,7 @@ Parse Hexo Posts To Object
 | :--- | :--- |
 | `<!-- include folder/path.txt -->` | Include partial files |
 | `<!-- script folder/script.js -->` | Include JS file as html script `<script>codes</script>` |
+| `{% youtube video_id %}` | transform youtube tag (AMP Supported) |
 
 ## Usage Sample
 
