@@ -20,7 +20,7 @@ let defaultSiteOptions = {
     description: '',
     author: 'John Doe',
     language: 'en',
-    timezone: '',
+    timezone: 'UTC',
     // URL
     url: 'http://example.com',
     root: '/',
