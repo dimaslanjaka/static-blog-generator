@@ -1,19 +1,17 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePermalink = void 0;
 const dateMapper_1 = require("./dateMapper");
-const _config_1 = __importDefault(require("./types/_config"));
+const _config_1 = require("./types/_config");
 /**
  * transform permalink format in `_config.yml`
  * @param post
  */
 function parsePermalink(post) {
-    let pattern = _config_1.default.permalink;
+    const config = (0, _config_1.getConfig)();
+    let pattern = config.permalink;
     const date = (0, dateMapper_1.moment)(post.metadata.date);
-    const url = post.metadata.url.replace(_config_1.default.url, '');
+    const url = post.metadata.url.replace(config.url, '');
     const replacer = {
         ':month': 'MM',
         ':year': 'YYYY',
