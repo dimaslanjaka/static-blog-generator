@@ -102,6 +102,10 @@ let defaultSiteOptions = {
     }
 };
 let fetched = false;
+/**
+ * get site config.yml
+ * @returns
+ */
 function getConfig() {
     if (!fetched) {
         fetched = true;

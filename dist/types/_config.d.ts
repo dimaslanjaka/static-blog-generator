@@ -1,6 +1,10 @@
 import HexoConfig from 'hexo/HexoConfig';
 declare const nocache: any;
 declare const verbose: any;
+/**
+ * get site config.yml
+ * @returns
+ */
 export declare function getConfig(): {
     title: string;
     subtitle: string;
