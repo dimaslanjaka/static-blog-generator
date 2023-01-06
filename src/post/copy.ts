@@ -194,7 +194,7 @@ export function processPost(config: ReturnType<typeof getConfig>) {
               Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
             }
           })
-          .catch((e) => Logger.error(e))
+          .catch((e) => Logger.log(e.message))
           .finally(callback);
       } else {
         callback(null, file);
