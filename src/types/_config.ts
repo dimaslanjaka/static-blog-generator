@@ -15,9 +15,9 @@ let defaultSiteOptions = {
   title: 'Hexo',
   subtitle: '',
   description: '',
-  author: 'John Doe',
+  author: 'L3n4r0x',
   language: 'en',
-  timezone: '',
+  timezone: 'UTC',
   // URL
   url: 'http://example.com',
   root: '/',
