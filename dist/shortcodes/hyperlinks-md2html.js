@@ -16,13 +16,14 @@ const logname = color_1.default['Blizzard Blue']('[replaceMD2HTML]');
  * @returns
  */
 function replaceMD2HTML(content) {
+    const config = (0, _config_1.getConfig)();
     if (content.match(regex)) {
         content = content.replace(regex, function (wholeMatch, _index1, index2, index3) {
             // act here or after the loop...
             //console.log(index2, index3);
             const toReplace = index2;
             const replacement = index2.replace(new RegExp(index3 + '$'), '.html');
-            if (_config_1.verbose)
+            if (verbose)
                 console.log(logname, color_1.default.redBright(toReplace), '->', color_1.default.greenBright(replacement));
             //return wholeMatch.replace(index3, '.html');
             return wholeMatch.replace(toReplace, replacement);
