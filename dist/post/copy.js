@@ -57,10 +57,6 @@ var gulp_1 = __importDefault(require("gulp"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var __1 = require("..");
-<<<<<<< HEAD
-=======
-var hexo_post_parser_1 = require("hexo-post-parser");
->>>>>>> 81a83e2da8d32326353bc17054fdffe6156dd5b5
 var gulp_cache_1 = __importDefault(require("../gulp-utils/gulp.cache"));
 var gulp_debug_1 = __importDefault(require("../gulp-utils/gulp.debug"));
 var gulp_config_1 = require("../gulp.config");
@@ -217,7 +213,7 @@ function processPost(config) {
                         logger_1.default.log(logname, 'cannot parse', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
                     }
                 })
-                    .catch(callback)
+                    .catch(function (e) { return logger_1.default.error(e); })
                     .finally(callback);
             }
             else {
