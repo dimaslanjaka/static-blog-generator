@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = exports.setConfig = exports.getConfig = void 0;
-const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
 const process_1 = require("process");
 const upath_1 = require("upath");
@@ -112,7 +111,7 @@ function getConfig() {
         if ((0, fs_1.existsSync)(file)) {
             const readConfig = (0, fs_1.readFileSync)(file, 'utf-8');
             const parse = yaml_1.default.parse(readConfig);
-            defaultSiteOptions = (0, deepmerge_ts_1.deepmerge)(defaultSiteOptions, parse, {
+            defaultSiteOptions = Object.assign(defaultSiteOptions, parse, {
                 verbose,
                 generator: {
                     cache: !nocache
