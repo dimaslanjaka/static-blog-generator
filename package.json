@@ -86,6 +86,7 @@
     "axios-cache-interceptor": "^1.0.0",
     "babel-jest": "^29.3.1",
     "cross-env": "^7.0.3",
+    "debug": "^4.3.4",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
