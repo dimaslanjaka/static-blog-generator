@@ -63,7 +63,7 @@ var gulp_config_1 = require("../gulp.config");
 var fm = __importStar(require("../utils/fm"));
 var lockmanager_1 = __importDefault(require("../utils/lockmanager"));
 var logger_1 = __importDefault(require("../utils/logger"));
-var hexo_post_parser_1 = require("hexo-post-parser");
+var src_1 = require("../../packages/hexo-post-parser/src");
 var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function copySinglePost(identifier, callback) {
@@ -146,7 +146,7 @@ function processPost(config) {
                     }
                     return callback();
                 }
-                (0, hexo_post_parser_1.parsePost)(file.path, {
+                (0, src_1.parsePost)(file.path, {
                     shortcodes: {
                         youtube: true,
                         css: true,
@@ -199,7 +199,7 @@ function processPost(config) {
                             }
                         }
                         logger_1.default.log(parse.metadata.permalink);
-                        var build = (0, hexo_post_parser_1.buildPost)(parse);
+                        var build = (0, src_1.buildPost)(parse);
                         if (typeof build === 'string') {
                             file.contents = Buffer.from(build);
                             logger_1.default.log(logname, 'rebuild', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));

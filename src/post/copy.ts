@@ -3,7 +3,6 @@ import gulp from 'gulp';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { Application } from '..';
-import { buildPost, parsePost } from 'hexo-post-parser';
 import gulpCached from '../gulp-utils/gulp.cache';
 import gulpDebug from '../gulp-utils/gulp.debug';
 import { commonIgnore, getConfig } from '../gulp.config';
@@ -11,7 +10,10 @@ import * as fm from '../utils/fm';
 import LockManager from '../utils/lockmanager';
 import Logger from '../utils/logger';
 
-// import { buildPost, parsePost } from '../../packages/hexo-post-parser';
+//
+// import { buildPost, parsePost } from '../../packages/hexo-post-parser/src';
+import { buildPost, parsePost } from 'hexo-post-parser';
+//
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
 const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
@@ -61,9 +63,14 @@ export function copyAllPosts(callback?: ((...args: any[]) => any) | null | undef
   excludes.push(...commonIgnore);
   Logger.log(logname, 'cwd', toUnix(process.cwd()));
   Logger.log(logname, 'copying source posts from', sourcePostDir);
-  Logger.log(logname, excludes);
+  if (config.generator.verbose) Logger.log(logname, { excludes });
 
-  const streamer = gulp.src(['**/*.*', '*.*'], { cwd: toUnix(sourcePostDir), ignore: excludes, dot: true });
+  const streamer = gulp.src(['**/*.*', '*.*', '**/*'], {
+    cwd: toUnix(sourcePostDir),
+    ignore: excludes,
+    dot: true,
+    noext: true
+  });
   streamer.once('end', () => {
     // delete lock file
     lm.release();
@@ -90,8 +97,14 @@ export function copyAllPosts(callback?: ((...args: any[]) => any) | null | undef
  */
 export function processPost(config: ReturnType<typeof getConfig>) {
   const logname = processPost.name;
+  if (config.generator.verbose) {
+    Logger.log(
+      'post:process',
+      'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false'))
+    );
+  }
 
-  return through2.obj(async (file, _enc, callback) => {
+  return through2.obj((file, _enc, callback) => {
     if (file.isNull()) {
       if (config.generator.verbose) Logger.log(file.path + ' is null');
       return callback();
@@ -100,19 +113,22 @@ export function processPost(config: ReturnType<typeof getConfig>) {
       if (config.generator.verbose) Logger.log(file.path + ' is stream');
       return callback();
     }
-    console.log('processing', file.path.replace(process.cwd(), ''));
+
     if (config) {
       // process markdown files
       if (file.extname === '.md') {
+        Logger.log('post:processing', ansiColors.greenBright(toUnix(file.path.replace(process.cwd(), ''))));
         const contents = file.contents?.toString() || '';
+
         // drop empty body
         if (contents.trim().length === 0) {
           if (config.generator.verbose) {
-            Logger.log('content empty', file.path);
+            Logger.log('content empty', ansiColors.redBright(toUnix(file.path.replace(process.cwd(), ''))));
           }
-          return;
+          return callback();
         }
-        const parse = await parsePost(contents, {
+
+        parsePost(file.path, {
           shortcodes: {
             youtube: true,
             css: true,
@@ -128,59 +144,61 @@ export function processPost(config: ReturnType<typeof getConfig>) {
           formatDate: true,
           fix: true,
           sourceFile: file.path
-        });
-        Logger.log(parse);
-        if (parse && parse.metadata) {
-          // process tags and categories
-          const array = ['tags', 'categories'];
-          for (let i = 0; i < array.length; i++) {
-            const groupLabel = array[i];
-            if (parse.metadata[groupLabel]) {
-              // label assign
-              if (config[groupLabel]?.assign) {
-                for (const oldLabel in config[groupLabel].assign) {
-                  const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+        })
+          .then((parse) => {
+            console.log(parse);
+            if (parse && parse.metadata) {
+              // process tags and categories
+              const array = ['tags', 'categories'];
+              for (let i = 0; i < array.length; i++) {
+                const groupLabel = array[i];
+                if (parse.metadata[groupLabel]) {
+                  // label assign
+                  if (config[groupLabel]?.assign) {
+                    for (const oldLabel in config[groupLabel].assign) {
+                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
-                  if (index !== -1) {
-                    parse.metadata[groupLabel] = config[groupLabel].assign[oldLabel];
+                      if (index !== -1) {
+                        parse.metadata[groupLabel] = config[groupLabel].assign[oldLabel];
+                      }
+                    }
+                  }
+                  // label mapper
+                  if (config[groupLabel]?.mapper) {
+                    for (const oldLabel in config[groupLabel].mapper) {
+                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+
+                      if (index !== -1) {
+                        parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
+                      }
+                    }
+                  }
+                  // label lowercase
+                  if (config.tags?.lowercase) {
+                    parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
                   }
                 }
               }
-              // label mapper
-              if (config[groupLabel]?.mapper) {
-                for (const oldLabel in config[groupLabel].mapper) {
-                  const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
-                  if (index !== -1) {
-                    parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
-                  }
-                }
+              Logger.log(parse.metadata.permalink);
+
+              const build = buildPost(parse);
+              if (typeof build === 'string') {
+                file.contents = Buffer.from(build);
+                Logger.log(logname, 'rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+                return callback(null, file);
+              } else {
+                Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
               }
-              // label lowercase
-              if (config.tags?.lowercase) {
-                parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
-              }
+            } else if (config.generator.verbose) {
+              Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
             }
-          }
-
-          Logger.log(parse.metadata.permalink);
-
-          if (config.verbose) {
-            fm.writefile(join(process.cwd(), 'tmp/dump.json'), parse, { async: true }).then((o) => Logger.log(o.file));
-          }
-
-          const build = buildPost(parse);
-          if (typeof build === 'string') {
-            file.contents = Buffer.from(build);
-            return callback(null, file);
-          } else {
-            Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
-          }
-        } else if (config.generator.verbose) {
-          Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
-        }
+          })
+          .catch(callback)
+          .finally(callback);
+      } else {
+        callback(null, file);
       }
-      callback(null, file);
     } else {
       Logger.log('options not configured');
       callback();
