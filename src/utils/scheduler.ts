@@ -44,7 +44,7 @@ async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) 
       });
     }
   }
-  chain(funcs);
+  if (options.cleanup) chain(funcs);
   if (options.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
   if (options.exit) process.exit();
 }
@@ -54,15 +54,15 @@ async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) 
  */
 function triggerProcess() {
   // before exit
-  process.on('beforeExit', exitHandler.bind(null, { exit: true }));
+  //process.on('beforeExit', exitHandler.bind(null, { exit: true }));
 
   //do something when app is closing
   process.on('exit', exitHandler.bind(null, { cleanup: true }));
-  process.on('disconnect', exitHandler.bind(null, { exit: true }));
+  // process.on('disconnect', exitHandler.bind(null, { exit: true }));
 
   //catches ctrl+c event
   process.on('SIGINT', exitHandler.bind(null, { exit: true }));
-  process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
+  //process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
 
   // catches "kill pid" (for example: nodemon restart)
   process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
