@@ -36,7 +36,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePost = void 0;
-const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_extra_1 = require("fs-extra");
 const jsdom_1 = require("jsdom");
 const persistent_cache_1 = __importDefault(require("persistent-cache"));
@@ -97,7 +96,7 @@ function parsePost(target, options = {}) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!target)
             return null;
-        options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
+        options = Object.assign(default_options, options);
         const siteConfig = (0, _config_1.getConfig)();
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
