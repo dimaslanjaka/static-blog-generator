@@ -1,6 +1,7 @@
 const spawn = require('cross-spawn');
 const { existsSync, mkdirSync, appendFileSync } = require('fs');
 const { copyFile } = require('fs-extra');
+const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { join } = require('upath');
 
@@ -18,8 +19,23 @@ const copy = function (done) {
 };
 
 function tsc(done) {
-  const child = spawn('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' });
-  child.once('exit', () => done());
+  const doCompile = () => {
+    spawnAsync('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
+  };
+  if (process.env.GITHUB_WORKFLOWS) {
+    // install from remote on github workflows
+    spawnAsync(
+      'npm',
+      [
+        'i',
+        'https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz',
+        'https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz'
+      ],
+      { cwd: __dirname }
+    ).finally(doCompile);
+  } else {
+    doCompile();
+  }
 }
 
 gulp.task('copy', copy);
