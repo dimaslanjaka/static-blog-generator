@@ -20,7 +20,7 @@ const color_1 = __importDefault(require("../node/color"));
 const jsdom_1 = __importDefault(require("../node/jsdom"));
 const md5_file_1 = require("../node/md5-file");
 const utils_1 = require("../node/utils");
-const _config_1 = __importDefault(require("../types/_config"));
+const _config_1 = require("../types/_config");
 const dom = new jsdom_1.default();
 const _cache = (0, persistent_cache_1.default)({
     base: (0, upath_1.join)(process.cwd(), 'tmp'),
@@ -30,6 +30,7 @@ const _cache = (0, persistent_cache_1.default)({
 const logname = color_1.default.Shamrock('[codeblock]');
 function shortcodeCodeblock(str) {
     return __awaiter(this, void 0, void 0, function* () {
+        const config = (0, _config_1.getConfig)();
         const regex = /(\{% codeblock (.*?) %\}|\{% codeblock %\})((.*?|\n)+?)(\{% endcodeblock %\})/gim;
         let m;
         while ((m = regex.exec(str)) !== null) {
@@ -88,7 +89,7 @@ function shortcodeCodeblock(str) {
                                 dom.close();
                                 // set cache
                                 _cache.putSync(cacheKey, urlTitle);
-                                if (_config_1.default.verbose)
+                                if (config.generator.verbose)
                                     console.log(logname, 'resolved url title', urlTitle);
                             }
                             else {
@@ -96,7 +97,7 @@ function shortcodeCodeblock(str) {
                             }
                         }
                         catch (error) {
-                            if (_config_1.default.verbose) {
+                            if (config.generator.verbose) {
                                 if (error instanceof Error)
                                     console.log(error.message);
                                 console.log('cannot resolve', url);
