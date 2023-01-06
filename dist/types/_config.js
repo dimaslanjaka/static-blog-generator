@@ -98,7 +98,8 @@ let defaultSiteOptions = {
     generator: {
         cache: true,
         type: 'hexo',
-        verbose: false
+        verbose: false,
+        amp: false
     }
 };
 function getConfig() {

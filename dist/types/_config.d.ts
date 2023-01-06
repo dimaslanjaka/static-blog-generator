@@ -71,6 +71,7 @@ export declare function getConfig(): {
         cache: boolean;
         type: string;
         verbose: boolean;
+        amp: boolean;
     };
 };
 export { verbose, nocache };
