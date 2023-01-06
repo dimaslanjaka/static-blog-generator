@@ -11,8 +11,8 @@ import LockManager from '../utils/lockmanager';
 import Logger from '../utils/logger';
 
 //
-// import { buildPost, parsePost } from '../../packages/hexo-post-parser/src';
-import { buildPost, parsePost } from 'hexo-post-parser';
+import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
+// import { buildPost, parsePost } from 'hexo-post-parser';
 //
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
@@ -194,7 +194,7 @@ export function processPost(config: ReturnType<typeof getConfig>) {
               Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
             }
           })
-          .catch((e) => Logger.log(e.message))
+          .catch((e) => Logger.log(e))
           .finally(callback);
       } else {
         callback(null, file);
