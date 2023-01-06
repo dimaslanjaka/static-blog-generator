@@ -1,5 +1,5 @@
 import color from '../node/color';
-import { verbose } from '../types/_config';
+import { getConfig } from '../types/_config';
 // fix all hyperlinks endsWith .md
 // [test](test.md) -> [test](test.html)
 const regex = /\[([^\]]+)\]\(([^)]+(.md))\)/gim;
@@ -11,6 +11,8 @@ const logname = color['Blizzard Blue']('[replaceMD2HTML]');
  * @returns
  */
 export function replaceMD2HTML(content: string) {
+  const config = getConfig();
+  const { verbose } = config.generator;
   if (content.match(regex)) {
     content = content.replace(
       regex,

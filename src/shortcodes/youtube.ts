@@ -1,5 +1,5 @@
 import color from '../node/color';
-import config, { verbose } from '../types/_config';
+import { getConfig } from '../types/_config';
 
 /* eslint-disable no-useless-escape */
 const regex = /\{\%\s+youtube\s+(.*)\s+\%\}/gm;
@@ -10,6 +10,8 @@ const logname = color['Vivid Tangerine']('[youtube]');
  * * `{% youtube video_id [type] [cookie] %}` will compiled to `<div class="video-container"><iframe src="youtube url"></iframe></div>`
  */
 export function shortcodeYoutube(content: string) {
+  const config = getConfig();
+  const { verbose, amp } = config.generator;
   let m: RegExpExecArray;
   let count = 0;
 
@@ -35,7 +37,7 @@ export function shortcodeYoutube(content: string) {
     }
 
     let html: string;
-    if (typeof config.amp === 'boolean' && config.amp) {
+    if (amp === true) {
       html = `
 <amp-youtube
 id="video-container-${count}"

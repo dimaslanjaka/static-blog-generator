@@ -2,7 +2,7 @@
 import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { dirname, join, toUnix } from 'upath';
-import { verbose } from '../types/_config';
+import { getConfig } from '../types/_config';
 
 const root = toUnix(process.cwd());
 const logname = chalk.blue('[script]');
@@ -17,6 +17,8 @@ const logname = chalk.blue('[script]');
  * @returns
  */
 export function shortcodeScript(file: string, str: string) {
+  const config = getConfig();
+  const { verbose } = config.generator;
   const log = [logname];
   const regex = /<!--\s+?script\s+?(.+?)\s+?-->/gim;
   const execs = Array.from(str.matchAll(regex));

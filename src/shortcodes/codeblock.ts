@@ -5,7 +5,7 @@ import color from '../node/color';
 import jdom from '../node/jsdom';
 import { md5 } from '../node/md5-file';
 import { replaceArr } from '../node/utils';
-import config from '../types/_config';
+import { getConfig } from '../types/_config';
 
 const dom = new jdom();
 const _cache = cache({
@@ -16,6 +16,7 @@ const _cache = cache({
 const logname = color.Shamrock('[codeblock]');
 
 export async function shortcodeCodeblock(str: string) {
+  const config = getConfig();
   const regex =
     /(\{% codeblock (.*?) %\}|\{% codeblock %\})((.*?|\n)+?)(\{% endcodeblock %\})/gim;
   let m: RegExpExecArray;
@@ -83,13 +84,13 @@ export async function shortcodeCodeblock(str: string) {
               dom.close();
               // set cache
               _cache.putSync(cacheKey, urlTitle);
-              if (config.verbose)
+              if (config.generator.verbose)
                 console.log(logname, 'resolved url title', urlTitle);
             } else {
               throw new Error('Response status not !== 200');
             }
           } catch (error) {
-            if (config.verbose) {
+            if (config.generator.verbose) {
               if (error instanceof Error) console.log(error.message);
               console.log('cannot resolve', url);
             }

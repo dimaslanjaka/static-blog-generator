@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { dirname, join, toUnix } from 'upath';
-import { verbose } from '../types/_config';
+import { getConfig } from '../types/_config';
 
 const root = toUnix(process.cwd());
 const logname = chalk.blue('[include]');
@@ -16,6 +16,8 @@ const logname = chalk.blue('[include]');
  * @returns
  */
 export function parseShortCodeInclude(sourceFile: string, bodyString: string) {
+  const config = getConfig();
+  const { verbose } = config.generator;
   const regex = /<!--\s+?include\s+?(.+?)\s+?-->/gim;
   let modified = false;
   let execs = Array.from(bodyString.matchAll(regex));
