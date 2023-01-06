@@ -546,11 +546,13 @@ function parsePost(target, options = {}) {
                 config: siteConfig
             };
             //console.log('hpp permalink in metadata', 'permalink' in result.metadata);
-            if ('permalink' in result.metadata === false) {
-                result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
-            }
-            if (((_b = siteConfig.generator) === null || _b === void 0 ? void 0 : _b.type) === 'jekyll') {
-                result.metadata.slug = result.metadata.permalink;
+            if (result.metadata) {
+                if ('permalink' in result.metadata === false) {
+                    result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
+                }
+                if (((_b = siteConfig.generator) === null || _b === void 0 ? void 0 : _b.type) === 'jekyll') {
+                    result.metadata.slug = result.metadata.permalink;
+                }
             }
             // put fileTree
             if (isFile) {
