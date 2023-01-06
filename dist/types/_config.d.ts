@@ -74,6 +74,7 @@ export declare function getConfig(): {
         amp: boolean;
     };
 };
+export declare function setConfig(obj: Record<string, any>): void;
 export { verbose, nocache };
 export interface ProjectConfig extends HexoConfig {
     [key: string]: any;

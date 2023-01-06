@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = exports.getConfig = void 0;
+exports.post_source_dir = exports.post_generated_dir = exports.nocache = exports.verbose = exports.setConfig = exports.getConfig = void 0;
 const deepmerge_ts_1 = require("deepmerge-ts");
 const fs_1 = require("fs");
 const process_1 = require("process");
@@ -127,6 +127,10 @@ function getConfig() {
     return defaultSiteOptions;
 }
 exports.getConfig = getConfig;
+function setConfig(obj) {
+    //
+}
+exports.setConfig = setConfig;
 /**
  * Hexo Generated Dir
  */
