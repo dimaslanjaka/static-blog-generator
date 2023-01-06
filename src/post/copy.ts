@@ -3,13 +3,15 @@ import gulp from 'gulp';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { Application } from '..';
-import { buildPost, parsePost } from '../../packages/hexo-post-parser';
+import { buildPost, parsePost } from 'hexo-post-parser';
 import gulpCached from '../gulp-utils/gulp.cache';
 import gulpDebug from '../gulp-utils/gulp.debug';
 import { commonIgnore, getConfig } from '../gulp.config';
 import * as fm from '../utils/fm';
 import LockManager from '../utils/lockmanager';
 import Logger from '../utils/logger';
+
+// import { buildPost, parsePost } from '../../packages/hexo-post-parser';
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
 const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
@@ -98,12 +100,18 @@ export function processPost(config: ReturnType<typeof getConfig>) {
       if (config.generator.verbose) Logger.log(file.path + ' is stream');
       return callback();
     }
+    console.log('processing', file.path.replace(process.cwd(), ''));
     if (config) {
       // process markdown files
       if (file.extname === '.md') {
         const contents = file.contents?.toString() || '';
         // drop empty body
-        if (contents.trim().length === 0) return;
+        if (contents.trim().length === 0) {
+          if (config.generator.verbose) {
+            Logger.log('content empty', file.path);
+          }
+          return;
+        }
         const parse = await parsePost(contents, {
           shortcodes: {
             youtube: true,
@@ -121,6 +129,7 @@ export function processPost(config: ReturnType<typeof getConfig>) {
           fix: true,
           sourceFile: file.path
         });
+        Logger.log(parse);
         if (parse && parse.metadata) {
           // process tags and categories
           const array = ['tags', 'categories'];
@@ -154,24 +163,26 @@ export function processPost(config: ReturnType<typeof getConfig>) {
             }
           }
 
-          console.log(parse.metadata.permalink);
+          Logger.log(parse.metadata.permalink);
 
           if (config.verbose) {
-            fm.writefile(join(process.cwd(), 'tmp/dump.json'), parse);
+            fm.writefile(join(process.cwd(), 'tmp/dump.json'), parse, { async: true }).then((o) => Logger.log(o.file));
           }
 
           const build = buildPost(parse);
           if (typeof build === 'string') {
             file.contents = Buffer.from(build);
+            return callback(null, file);
           } else {
             Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
           }
-        } else {
+        } else if (config.generator.verbose) {
           Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
         }
       }
       callback(null, file);
     } else {
+      Logger.log('options not configured');
       callback();
     }
   });
