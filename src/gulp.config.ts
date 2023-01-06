@@ -8,6 +8,7 @@ import { toUnix } from 'upath';
 import yaml from 'yaml';
 import { getDefaultConfig } from './defaults';
 import { writefile } from './utils/fm';
+import { orderKeys } from './utils/object';
 
 //typeof import('./_config.json') & Record<string, any> &
 export type importConfig = typeof import('./_config.json');
@@ -70,16 +71,18 @@ let settledConfig = getDefaultConfig() as Record<string, any>;
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = deepmerge({}, settledConfig, obj);
-  return getConfig(false);
+  return getConfig();
 }
+
+let fetched = false;
 
 /**
  * Config getter
  * * useful for jest
  * @returns
  */
-export function getConfig(get = true) {
-  if (get) {
+export function getConfig() {
+  if (!fetched) {
     let fileYML = '';
     if (settledConfig && 'cwd' in settledConfig) {
       fileYML = join(settledConfig.cwd, '_config.yml');
@@ -94,10 +97,13 @@ export function getConfig(get = true) {
       const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
       settledConfig = Object.assign({}, configYML, settledConfig);
       writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+      fetched = true;
     } else {
-      console.log(fileYML);
+      // console.log(fileYML);
       throw new Error(fileYML + ' not found');
     }
+
+    settledConfig = orderKeys(settledConfig);
   }
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
