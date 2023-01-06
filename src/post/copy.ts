@@ -96,12 +96,9 @@ export function copyAllPosts(callback?: ((...args: any[]) => any) | null | undef
  * @returns
  */
 export function processPost(config: ReturnType<typeof getConfig>) {
-  const logname = processPost.name;
+  const logname = 'post:' + ansiColors.blueBright('processing');
   if (config.generator.verbose) {
-    Logger.log(
-      'post:process',
-      'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false'))
-    );
+    Logger.log(logname, 'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false')));
   }
 
   return through2.obj((file, _enc, callback) => {
@@ -117,7 +114,7 @@ export function processPost(config: ReturnType<typeof getConfig>) {
     if (config) {
       // process markdown files
       if (file.extname === '.md') {
-        Logger.log('post:processing', ansiColors.greenBright(toUnix(file.path.replace(process.cwd(), ''))));
+        Logger.log(logname, ansiColors.greenBright(toUnix(file.path.replace(process.cwd(), ''))));
         const contents = file.contents?.toString() || '';
 
         // drop empty body
@@ -146,7 +143,6 @@ export function processPost(config: ReturnType<typeof getConfig>) {
           sourceFile: file.path
         })
           .then((parse) => {
-            console.log(parse);
             if (parse && parse.metadata) {
               // process tags and categories
               const array = ['tags', 'categories'];
@@ -159,17 +155,36 @@ export function processPost(config: ReturnType<typeof getConfig>) {
                       const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
                       if (index !== -1) {
-                        parse.metadata[groupLabel] = config[groupLabel].assign[oldLabel];
+                        if (config.generator.verbose) {
+                          Logger.log(
+                            logname,
+                            ansiColors.blueBright('-'),
+                            parse.metadata[groupLabel],
+                            ansiColors.yellowBright('+'),
+                            config[groupLabel].assign[oldLabel]
+                          );
+                        }
+                        parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(
+                          config[groupLabel].assign[oldLabel]
+                        );
                       }
                     }
                   }
                   // label mapper
                   if (config[groupLabel]?.mapper) {
                     for (const oldLabel in config[groupLabel].mapper) {
-                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+                      const index = parse.metadata[groupLabel].findIndex((str: string) => str === oldLabel);
 
                       if (index !== -1) {
                         parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
+                        if (config.generator.verbose) {
+                          Logger.log(
+                            logname,
+                            ansiColors.redBright(parse.metadata[groupLabel][index]),
+                            '~>',
+                            ansiColors.greenBright(config[groupLabel].mapper[oldLabel])
+                          );
+                        }
                       }
                     }
                   }
@@ -177,15 +192,25 @@ export function processPost(config: ReturnType<typeof getConfig>) {
                   if (config.tags?.lowercase) {
                     parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
                   }
+                } else if (config.generator.verbose) {
+                  Logger.log(logname, groupLabel, 'not found');
+                }
+
+                if (i == array.length - 1) {
+                  if (config.generator.verbose) {
+                    Logger.log(
+                      logname,
+                      groupLabel + '-' + ansiColors.greenBright('assign'),
+                      parse.metadata[groupLabel]
+                    );
+                  }
                 }
               }
-
-              Logger.log(parse.metadata.permalink);
 
               const build = buildPost(parse);
               if (typeof build === 'string') {
                 file.contents = Buffer.from(build);
-                Logger.log(logname, 'rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+                Logger.log(logname, 'success', toUnix(file.path).replace(toUnix(process.cwd()), ''));
                 return callback(null, file);
               } else {
                 Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
@@ -194,8 +219,7 @@ export function processPost(config: ReturnType<typeof getConfig>) {
               Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
             }
           })
-          .catch((e) => Logger.log(e))
-          .finally(callback);
+          .catch((e) => Logger.log(e));
       } else {
         callback(null, file);
       }
