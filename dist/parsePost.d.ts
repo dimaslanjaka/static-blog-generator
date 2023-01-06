@@ -1,3 +1,4 @@
+import { ParseOptions } from '.';
 import { postMap } from './types/postMap';
 import { getConfig } from './types/_config';
 /**
