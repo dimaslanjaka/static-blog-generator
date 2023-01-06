@@ -6,7 +6,7 @@ import { writefile } from '../utils/fm';
 import { data_to_hash_sync } from '../utils/hash';
 import scheduler from '../utils/scheduler';
 
-export default function gulpDebug() {
+export default function gulpDebug(filename?: string) {
   const caller = data_to_hash_sync(
     'md5',
     new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || ''
@@ -18,7 +18,7 @@ export default function gulpDebug() {
     // Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
 
     // dump
-    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-debug', `${caller}-${pid}.log`);
+    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-debug', filename || `${caller}-${pid}.log`);
     writefile(dumpfile, `${toUnix(file.path.replace(process.cwd(), ''))}` + EOL, {
       append: true
     });
