@@ -2,6 +2,7 @@ import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
+import { Application } from '..';
 import { buildPost, parsePost } from '../../packages/hexo-post-parser';
 import gulpCached from '../gulp-utils/gulp.cache';
 import gulpDebug from '../gulp-utils/gulp.debug';
@@ -36,10 +37,7 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
  * copy all posts from src-posts to source/_posts
  * @returns
  */
-export function copyAllPosts(
-  callback?: ((...args: any[]) => any) | null | undefined,
-  config?: ReturnType<typeof getConfig>
-) {
+export function copyAllPosts(callback?: ((...args: any[]) => any) | null | undefined) {
   // lock runner
   const lm = new LockManager(copyAllPosts.name);
   const logname = 'post:' + ansiColors.grey('copy');
@@ -55,7 +53,8 @@ export function copyAllPosts(
   lm.lock();
 
   // function start
-  if (!config) config = getConfig();
+  const api = new Application(process.cwd());
+  const config = api.getConfig();
   const excludes: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   excludes.push(...commonIgnore);
   Logger.log(logname, 'cwd', toUnix(process.cwd()));
@@ -82,6 +81,11 @@ export function copyAllPosts(
   });
 }
 
+/**
+ * pipeable function to process post
+ * @param config
+ * @returns
+ */
 export function processPost(config: ReturnType<typeof getConfig>) {
   const logname = processPost.name;
 

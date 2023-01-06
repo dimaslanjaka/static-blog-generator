@@ -32,6 +32,11 @@ export interface ProjConf extends HexoConfig {
       safelink?: import('safelinkify').SafelinkOptions;
     };
 
+  /**
+   * global ignore
+   */
+  exclude: string[];
+
   generator: {
     cache: boolean;
     verbose: boolean;
