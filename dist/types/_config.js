@@ -127,7 +127,8 @@ function getConfig() {
 }
 exports.getConfig = getConfig;
 function setConfig(obj) {
-    //
+    defaultSiteOptions = Object.assign(defaultSiteOptions, obj);
+    return defaultSiteOptions;
 }
 exports.setConfig = setConfig;
 /**
