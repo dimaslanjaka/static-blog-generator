@@ -1,4 +1,3 @@
-import { deepmerge } from 'deepmerge-ts';
 import {
   existsSync,
   mkdirpSync,
@@ -30,7 +29,7 @@ import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
 import { postMap } from './types/postMap';
-import { getConfig, post_generated_dir } from './types/_config';
+import { getConfig, post_generated_dir, setConfig } from './types/_config';
 import { countWords, removeDoubleSlashes } from './utils/string';
 
 const _cache = cache({
@@ -115,24 +114,6 @@ export interface ParseOptions {
   fix?: boolean;
 }
 
-const default_options: ParseOptions = {
-  shortcodes: {
-    css: false,
-    script: false,
-    include: false,
-    youtube: false,
-    link: false,
-    text: false,
-    now: false,
-    codeblock: false
-  },
-  sourceFile: null,
-  formatDate: false,
-  config: getConfig(),
-  cache: false,
-  fix: false
-};
-
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
@@ -143,8 +124,26 @@ const default_options: ParseOptions = {
  */
 export async function parsePost(target: string, options: ParseOptions = {}) {
   if (!target) return null;
-  options = deepmerge(default_options, options);
-  const siteConfig = getConfig();
+  const default_options: ParseOptions = {
+    shortcodes: {
+      css: false,
+      script: false,
+      include: false,
+      youtube: false,
+      link: false,
+      text: false,
+      now: false,
+      codeblock: false
+    },
+    sourceFile: null,
+    formatDate: false,
+    config: getConfig(),
+    cache: false,
+    fix: false
+  };
+
+  options = Object.assign(default_options, options);
+  const siteConfig = options.config ? setConfig(options.config) : getConfig();
   if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
 
   const homepage = siteConfig.url.endsWith('/')
