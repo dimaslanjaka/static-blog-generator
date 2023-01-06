@@ -41,7 +41,7 @@ function shortcodeYoutube(content) {
             src = 'https://www.youtube.com/embed/videoseries?list=' + ytid;
         }
         let html;
-        if (typeof config.amp === 'boolean' && config.amp) {
+        if (amp === true) {
             html = `
 <amp-youtube
 id="video-container-${count}"
