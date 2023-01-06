@@ -79,6 +79,14 @@ var Logger = (function () {
         _log.info.apply(_log, __spreadArray([], __read(args), false));
         this.tracer.apply(this, __spreadArray([], __read(args), false));
     };
+    Logger.error = function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        _log.error.apply(_log, __spreadArray([], __read(args), false));
+        this.tracer.apply(this, __spreadArray([], __read(args), false));
+    };
     Logger.tracer = function () {
         var _a;
         var args = [];

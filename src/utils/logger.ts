@@ -34,7 +34,7 @@ const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: consol
 /**
  * @example
  * const console = Logger
- * Logger.log('hello world'); // should be written in ./tmp/logs/[trace-name].log
+ * Logger.log('hello world'); // should be written in <temp folder>/logs/[trace-name].log
  */
 class Logger {
   static log(...args: any[]) {
@@ -44,6 +44,11 @@ class Logger {
 
   static info(...args: any[]) {
     _log.info(...args);
+    this.tracer(...args);
+  }
+
+  static error(...args: any[]) {
+    _log.error(...args);
     this.tracer(...args);
   }
 
