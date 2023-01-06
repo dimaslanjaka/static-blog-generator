@@ -33,6 +33,7 @@ const path_1 = __importDefault(require("path"));
 const _config_1 = require("../types/_config");
 const logname = chalk_1.default.bgMagenta.whiteBright('[extract-text]');
 function extractText(file, str) {
+    const config = (0, _config_1.getConfig)();
     const regex = /<!--\s+?extract-text\s+?(.+?)\s+?-->/gim;
     let m;
     while ((m = regex.exec(str)) !== null) {
@@ -46,14 +47,14 @@ function extractText(file, str) {
         // search from file directory
         const directFile = path_1.default.join(path_1.default.dirname(file.toString()), bracketmatch);
         if (fs.existsSync(directFile)) {
-            if (_config_1.verbose)
+            if (verbose)
                 console.info(`${logname} found from direct ${directFile.replace(process.cwd() + '/', '')}`);
             const directRead = fs.readFileSync(directFile).toString();
             str = str.replace(allmatch, directRead);
         }
         else {
             // search from workspace directory
-            if (_config_1.verbose)
+            if (verbose)
                 console.info(`${logname} found from workspace ${directFile.replace(process.cwd() + '/', '')}`);
             const rootFile = path_1.default.join(process.cwd(), bracketmatch);
             if (fs.existsSync(rootFile)) {
