@@ -29,7 +29,7 @@ export default function urlParser(src: string): URLParsed | null {
   const queries: string[] = parser.query.replace(/^\?/, '').split('&');
   let split: Array<Record<any, any> | any> = [];
   for (let i = 0; i < queries.length; i++) {
-    split = queries[i].split('=').removeEmpties();
+    split = queries[i].split('=').map((str) => str.length > 0);
     if (0 in split) {
       searchObject[split[0]] = split[1];
     }
@@ -44,7 +44,7 @@ export default function urlParser(src: string): URLParsed | null {
     protohost: parser.protocol + '//' + parser.host,
     search: parser.query,
     searchObject: searchObject,
-    filename: parser.href.split('/').removeEmpties().unique().last(1)[0],
+    filename: parser.href.split('/').removeEmpties().unique().last(1)[0]
   };
   /*for (const key in parser) {
     if (Object.prototype.hasOwnProperty.call(parser, key)) {

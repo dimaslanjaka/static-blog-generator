@@ -1,19 +1,22 @@
 import axios from 'axios';
 import cache from 'persistent-cache';
 import { join } from 'upath';
+import color from '../node/color';
 import jdom from '../node/jsdom';
 import { md5 } from '../node/md5-file';
 import { replaceArr } from '../node/utils';
-import config from '../types/_config';
+import { getConfig } from '../types/_config';
 
 const dom = new jdom();
 const _cache = cache({
-  base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
+  base: join(process.cwd(), 'tmp'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'shortcode/codeblock',
   duration: 1000 * 3600 * 24 // 24 hours
 });
+const logname = color.Shamrock('[codeblock]');
 
 export async function shortcodeCodeblock(str: string) {
+  const config = getConfig();
   const regex =
     /(\{% codeblock (.*?) %\}|\{% codeblock %\})((.*?|\n)+?)(\{% endcodeblock %\})/gim;
   let m: RegExpExecArray;
@@ -81,13 +84,13 @@ export async function shortcodeCodeblock(str: string) {
               dom.close();
               // set cache
               _cache.putSync(cacheKey, urlTitle);
-              if (config.verbose)
-                console.log('resolved codeblock url', urlTitle);
+              if (config.generator.verbose)
+                console.log(logname, 'resolved url title', urlTitle);
             } else {
               throw new Error('Response status not !== 200');
             }
           } catch (error) {
-            if (config.verbose) {
+            if (config.generator.verbose) {
               if (error instanceof Error) console.log(error.message);
               console.log('cannot resolve', url);
             }

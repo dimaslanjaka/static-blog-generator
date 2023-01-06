@@ -1,5 +1,11 @@
-import data from './_config_project.json';
-declare const def: {
+import HexoConfig from 'hexo/HexoConfig';
+declare const nocache: any;
+declare const verbose: any;
+/**
+ * get site _config.yml
+ * @returns
+ */
+export declare function getConfig(): {
     title: string;
     subtitle: string;
     description: string;
@@ -22,11 +28,6 @@ declare const def: {
     code_dir: string;
     i18n_dir: string;
     skip_render: any[];
-    title_map: {};
-    tag_map: {};
-    category_map: {};
-    tag_group: {};
-    category_group: {};
     new_post_name: string;
     default_layout: string;
     titlecase: boolean;
@@ -40,23 +41,24 @@ declare const def: {
     post_asset_folder: boolean;
     relative_link: boolean;
     future: boolean;
+    syntax_highlighter: string;
     highlight: {
-        enable: boolean;
         auto_detect: boolean;
         line_number: boolean;
         tab_replace: string;
         wrap: boolean;
         exclude_languages: any[];
+        language_attr: boolean;
         hljs: boolean;
     };
     prismjs: {
-        enable: boolean;
         preprocess: boolean;
         line_number: boolean;
         tab_replace: string;
     };
     default_category: string;
-    default_tag: any;
+    category_map: {};
+    tag_map: {};
     date_format: string;
     time_format: string;
     updated_option: string;
@@ -69,19 +71,19 @@ declare const def: {
     deploy: {};
     ignore: any[];
     meta_generator: boolean;
-};
-declare type MergeData = Partial<typeof data> & Partial<typeof def>;
-interface Config extends Partial<MergeData> {
-    verbose?: boolean;
-    generator?: {
+    generator: {
         cache: boolean;
+        type: string;
+        verbose: boolean;
+        amp: boolean;
     };
-    amp?: any;
-    default_tag?: string;
-    default_category?: string;
-    content?: string;
-}
-declare let config: {
+};
+/**
+ * assign new option
+ * @param obj
+ * @returns
+ */
+export declare function setConfig(obj: Record<string, any>): {
     title: string;
     subtitle: string;
     description: string;
@@ -104,11 +106,6 @@ declare let config: {
     code_dir: string;
     i18n_dir: string;
     skip_render: any[];
-    title_map: {};
-    tag_map: {};
-    category_map: {};
-    tag_group: {};
-    category_group: {};
     new_post_name: string;
     default_layout: string;
     titlecase: boolean;
@@ -122,23 +119,24 @@ declare let config: {
     post_asset_folder: boolean;
     relative_link: boolean;
     future: boolean;
+    syntax_highlighter: string;
     highlight: {
-        enable: boolean;
         auto_detect: boolean;
         line_number: boolean;
         tab_replace: string;
         wrap: boolean;
         exclude_languages: any[];
+        language_attr: boolean;
         hljs: boolean;
     };
     prismjs: {
-        enable: boolean;
         preprocess: boolean;
         line_number: boolean;
         tab_replace: string;
     };
     default_category: string;
-    default_tag: any;
+    category_map: {};
+    tag_map: {};
     date_format: string;
     time_format: string;
     updated_option: string;
@@ -151,9 +149,30 @@ declare let config: {
     deploy: {};
     ignore: any[];
     meta_generator: boolean;
+    generator: {
+        cache: boolean;
+        type: string;
+        verbose: boolean;
+        amp: boolean;
+    };
 };
-declare const _default: Config;
-export default _default;
-export interface ProjectConfig extends Partial<typeof config> {
+export { verbose, nocache };
+export interface ProjectConfig extends HexoConfig {
     [key: string]: any;
+    /**
+     * Source posts
+     */
+    post_dir: string;
+    /**
+     * Project CWD
+     */
+    cwd: string;
 }
+/**
+ * Hexo Generated Dir
+ */
+export declare const post_generated_dir: string;
+/**
+ * SBG Source Post Dir
+ */
+export declare const post_source_dir: string;

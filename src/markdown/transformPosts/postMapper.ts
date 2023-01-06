@@ -1,5 +1,5 @@
 import moment from 'moment-timezone';
-import { postMap } from '../../parsePost';
+import { postMap } from '../../types/postMap';
 
 /**
  * Partializing properties

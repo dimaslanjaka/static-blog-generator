@@ -1,0 +1,1 @@
+{"version":3,"file":"replacements.js","sourceRoot":"","sources":["../../../src/node/slugify/replacements.ts"],"names":[],"mappings":";;AAAA,MAAM,uBAAuB,GAAG;IAC9B,CAAC,GAAG,EAAE,OAAO,CAAC;IACd,CAAC,IAAI,EAAE,WAAW,CAAC;IACnB,CAAC,GAAG,EAAE,QAAQ,CAAC;CAChB,CAAC;AAEF,kBAAe,uBAAuB,CAAC"}

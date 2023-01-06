@@ -1,4 +1,4 @@
-import { postMap } from './parsePost';
+import { postMap } from './types/postMap';
 /**
  * Rebuild {@link parsePost} result to markdown post back
  * @param parsed parsed post return {@link parsePost}

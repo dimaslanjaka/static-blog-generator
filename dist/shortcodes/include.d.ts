@@ -3,9 +3,9 @@
  * ```html
  * <!-- include file.ext -->
  * ```
- * @param file
- * @param str
+ * @param sourceFile
+ * @param bodyString
  * @returns
  */
-export declare function parseShortCodeInclude(file: string, str: string): string;
+export declare function parseShortCodeInclude(sourceFile: string, bodyString: string): any;
 export default parseShortCodeInclude;

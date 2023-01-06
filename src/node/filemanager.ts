@@ -1,18 +1,33 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Bluebird from 'bluebird';
-import findCacheDir from 'find-cache-dir';
-import * as fs from 'fs';
+import * as fs from 'fs-extra';
 import { default as nodePath } from 'path';
 import { cwd as nodeCwd } from 'process';
-import upath from 'upath';
+import { trueCasePathSync } from 'true-case-path';
+import upath, { toUnix } from 'upath';
 import { json_encode } from './JSON';
 import ErrnoException = NodeJS.ErrnoException;
 
 import glob = require('glob');
+
+/**
+ * cross-platform normalize path to fixed-case windows drive letters
+ * @link https://www.npmjs.com/package/true-case-path
+ * @param path
+ * @returns unix-style path separator
+ */
+export function normalize(path: string) {
+  if (existsSync(path) && process.platform === 'win32')
+    return toUnix(trueCasePathSync(path));
+  return toUnix(path);
+}
+
 /**
  * node_modules/.cache/${name}
  */
-export const cacheDir = findCacheDir({ name: 'dimaslanjaka' });
+export const cacheDir = upath.join(process.cwd(), 'tmp/hexo-post-parser');
+if (!fs.existsSync(upath.dirname(cacheDir)))
+  fs.mkdirpSync(upath.dirname(cacheDir));
 
 export type Mutable<T> = {
   -readonly [k in keyof T]: T[k];
@@ -30,7 +45,7 @@ const walk = function (
   dir: fs.PathLike,
   done: (err: ErrnoException | null, results?: string[]) => any
 ) {
-  let results = [];
+  let results: string[] = [];
   fs.readdir(dir, function (err, list) {
     if (err) return done(err);
     let pending = list.length;
@@ -40,7 +55,7 @@ const walk = function (
       fs.stat(file, function (err, stat) {
         if (stat && stat.isDirectory()) {
           walk(file, function (err, res) {
-            results = results.concat(res);
+            results = results.concat(res || []);
             if (!--pending) done(null, results);
           });
         } else {
@@ -83,18 +98,11 @@ const filemanager = {
     callback?: fs.NoParamCallback
   ) => {
     if (fs.existsSync(path)) {
+      fs.rm(path, Object.assign({ recursive: true }, options));
       if (typeof options == 'function') {
-        return fs.rm(path, { recursive: true }, options);
-      } else if (typeof options == 'object') {
-        return fs.rm(
-          path,
-          Object.assign({ recursive: true }, options),
-          typeof callback == 'function'
-            ? callback
-            : () => {
-                // no callback? do nothing
-              }
-        );
+        options(null);
+      } else if (typeof callback === 'function') {
+        callback(null);
       }
     }
   },
@@ -158,7 +166,6 @@ export const globSrc = function (pattern: string, opts: glob.IOptions = {}) {
 };
 
 export default filemanager;
-export const normalize = upath.normalize;
 export const writeFileSync = filemanager.write;
 export const cwd = () => upath.toUnix(nodeCwd());
 export const dirname = (str: string) =>
@@ -199,8 +206,9 @@ export const resolve = (str: string, opt: ResolveOpt | any = {}) => {
 export function read(
   path: string,
   opt?: Parameters<typeof fs.readFileSync>[1]
-): ReturnType<typeof fs.readFileSync> | null {
+) {
   if (existsSync(path)) return readFileSync(path, opt);
+  return null;
 }
 /**
  * smart join to unix path
@@ -208,7 +216,7 @@ export function read(
  * @param str
  * @returns
  */
-export const join = (...str: any[]) => upath.join(...str);
+export const join = upath.join;
 export const { write, readdirSync, rmdirSync, rm, mkdirSync } = filemanager;
 export const fsreadDirSync = fs.readdirSync;
 export const { existsSync, readFileSync, appendFileSync, statSync } = fs;

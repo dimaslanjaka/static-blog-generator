@@ -9,7 +9,7 @@ import * as fs from 'fs';
 export function md5FileSync(path: string) {
   let fileBuffer = Buffer.from(path);
   if (fs.existsSync(path)) {
-    fileBuffer = fs.readFileSync(path);
+    if (fs.statSync(path).isFile()) fileBuffer = fs.readFileSync(path);
   }
   const hashSum = crypto.createHash('md5'); // sha256
   hashSum.update(fileBuffer);

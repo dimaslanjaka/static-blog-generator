@@ -82,7 +82,8 @@ export const isEmpty = (data: any) => {
   }
   if (typeof data === 'object') {
     if (Array.isArray(data) && data.length === 0) return true;
-    if (data.constructor === Object && Object.keys(data).length === 0) return true;
+    if (data.constructor === Object && Object.keys(data).length === 0)
+      return true;
   }
   return false;
 };

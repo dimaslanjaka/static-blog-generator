@@ -1,81 +1,22 @@
-import { dateMapper } from './dateMapper';
-import { DynamicObject } from './types';
-import config from './types/_config';
+import { postMap } from './types/postMap';
+import { getConfig } from './types/_config';
 /**
- * post metadata information (title, etc)
+ * Post author object type
  */
-export declare type postMeta = DynamicObject & {
-    /**
-     * Article language code
-     */
-    lang?: string;
-    /**
-     * Article title
-     */
-    title: string;
-    subtitle: string;
-    uuid?: string;
-    updated?: string | dateMapper;
-    author?: string | {
-        [key: string]: any;
-    };
-    date: string | dateMapper;
-    description?: string;
-    tags: string[];
-    category: string[];
-    photos?: string[];
-    cover?: string;
-    thumbnail?: string;
-    /**
-     * Post moved indicator
-     * * canonical should be replaced to this url
-     * * indicate this post was moved to another url
-     */
-    redirect?: string;
-    /**
-     * full url
-     */
-    url?: string;
-    /**
-     * just pathname
-     */
-    permalink?: string;
-    /**
-     * archive (index, tags, categories)
-     */
-    type?: 'post' | 'page' | 'archive';
-};
-export interface postMap extends Object {
+export interface postAuthor extends Object {
     [key: string]: any;
     /**
-     * Article metadata
+     * Author name
      */
-    metadataString?: string;
-    fileTree?: {
-        /**
-         * [post source] post file from `src-posts/`
-         */
-        source?: string;
-        /**
-         * [public source] post file from source_dir _config.yml
-         */
-        public?: string;
-    };
+    name?: string;
     /**
-     * _config.yml
+     * Author email
      */
-    config?: DeepPartial<typeof config> | null;
+    email?: string;
     /**
-     * Article metadata
+     * Author website url
      */
-    metadata?: Partial<postMeta>;
-    /**
-     * Article body
-     */
-    body?: string;
-}
-export interface Config extends DeepPartial<typeof config> {
-    [key: string]: any;
+    link?: string;
 }
 export interface ParseOptions {
     shortcodes?: {
@@ -125,22 +66,12 @@ export interface ParseOptions {
     /**
      * Site Config
      */
-    config?: Config;
+    config?: ReturnType<typeof getConfig> & Record<string, any>;
     /**
      * run auto fixer such as thumbnail, excerpt, etc
      */
     fix?: boolean;
 }
-/**
- * make all properties as optional recursively
- */
-export declare type DeepPartial<T> = T extends object ? {
-    [P in keyof T]?: DeepPartial<T[P]>;
-} : T;
-/**
- * null | type
- */
-export declare type Nullable<T> = T | null | undefined;
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
@@ -149,5 +80,5 @@ export declare type Nullable<T> = T | null | undefined;
  * @param options options parser
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
-export declare function parsePost(target: string, options?: DeepPartial<ParseOptions>): Promise<postMap>;
+export declare function parsePost(target: string, options?: ParseOptions): Promise<postMap>;
 export default parsePost;

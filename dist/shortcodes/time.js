@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shortcodeNow = exports.now = void 0;
-const tslib_1 = require("tslib");
-const _config_1 = tslib_1.__importDefault(require("../types/_config"));
+const _config_1 = require("../types/_config");
 /**
  * Current date time
  * @return string ex> '2012-11-04 14:55:45'
@@ -11,7 +10,7 @@ function now() {
     return (new Date()
         //.toISOString()
         .toLocaleString('en-US', {
-        timeZone: _config_1.default.timezone
+        timeZone: (0, _config_1.getConfig)().timezone || 'UTC'
     })
         .replace(/T/, ' ') // replace T with a space
         .replace(/\..+/, '')); // delete the dot and everything after

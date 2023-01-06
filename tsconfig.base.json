@@ -6,19 +6,14 @@
     "moduleResolution": "node",
     "allowJs": true,
     "esModuleInterop": true,
+    "strictNullChecks": false,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "declaration": true,
-    "importHelpers": true,
     "skipLibCheck": true,
-    "lib": [
-      "ES6",
-      "DOM"
-    ]
+    "downlevelIteration": true,
+    "lib": ["ES6", "DOM"]
   },
-  "exclude": [
-    "node_modules",
-    ".vscode"
-  ]
+  "exclude": ["node_modules", ".vscode"]
 }

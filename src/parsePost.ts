@@ -1,14 +1,25 @@
-import { deepmerge } from 'deepmerge-ts';
-import { existsSync, readFileSync, statSync } from 'fs';
+import {
+  existsSync,
+  mkdirpSync,
+  readFileSync,
+  statSync,
+  writeFileSync
+} from 'fs-extra';
+import { JSDOM } from 'jsdom';
+import cache from 'persistent-cache';
 import { basename, dirname, join, toUnix } from 'upath';
 import yaml from 'yaml';
-import cache from 'persistent-cache';
 import { dateMapper, moment } from './dateMapper';
+import { generatePostId } from './generatePostId';
 import { isValidHttpUrl } from './gulp/utils';
+import { renderMarkdownIt } from './markdown/toHtml';
 import uniqueArray, { uniqueStringArray } from './node/array-unique';
-import { md5FileSync } from './node/md5-file';
+import color from './node/color';
+import { normalize } from './node/filemanager';
+import { md5, md5FileSync } from './node/md5-file';
+import sanitizeFilename from './node/sanitize-filename';
 import { cleanString, cleanWhiteSpace, replaceArr } from './node/utils';
-import uuidv4 from './node/uuid';
+import { parsePermalink } from './parsePermalink';
 import { shortcodeCodeblock } from './shortcodes/codeblock';
 import { shortcodeCss } from './shortcodes/css';
 import { extractText } from './shortcodes/extractText';
@@ -17,95 +28,35 @@ import { parseShortCodeInclude } from './shortcodes/include';
 import { shortcodeScript } from './shortcodes/script';
 import { shortcodeNow } from './shortcodes/time';
 import { shortcodeYoutube } from './shortcodes/youtube';
-import { DynamicObject } from './types';
-import config from './types/_config';
+import { postMap } from './types/postMap';
+import { getConfig, post_generated_dir, setConfig } from './types/_config';
+import { countWords, removeDoubleSlashes } from './utils/string';
 
 const _cache = cache({
-  base: join(process.cwd(), 'tmp/persistent-cache'), //join(process.cwd(), 'node_modules/.cache/persistent'),
+  base: join(process.cwd(), 'tmp'), //join(process.cwd(), 'node_modules/.cache/persistent'),
   name: 'parsePost',
   duration: 1000 * 3600 * 24 // 24 hours
 });
-const homepage = new URL(config.url);
-const cwd = () => toUnix(process.cwd());
-/**
- * Hexo Generated Dir
- */
-const post_generated_dir = join(cwd(), config.public_dir);
 
 /**
- * post metadata information (title, etc)
+ * Post author object type
  */
-export type postMeta = DynamicObject & {
-  /**
-   * Article language code
-   */
-  lang?: string;
-  /**
-   * Article title
-   */
-  title: string;
-  subtitle: string;
-  uuid?: string;
-  updated?: string | dateMapper;
-  author?: string | { [key: string]: any };
-  date: string | dateMapper;
-  description?: string;
-  tags: string[];
-  category: string[];
-  photos?: string[];
-  cover?: string;
-  thumbnail?: string;
-  /**
-   * Post moved indicator
-   * * canonical should be replaced to this url
-   * * indicate this post was moved to another url
-   */
-  redirect?: string;
-  /**
-   * full url
-   */
-  url?: string;
-  /**
-   * just pathname
-   */
-  permalink?: string;
-  /**
-   * archive (index, tags, categories)
-   */
-  type?: 'post' | 'page' | 'archive';
-};
-export interface postMap extends Object {
+export interface postAuthor extends Object {
   [key: string]: any;
   /**
-   * Article metadata
+   * Author name
    */
-  metadataString?: string;
-  fileTree?: {
-    /**
-     * [post source] post file from `src-posts/`
-     */
-    source?: string;
-    /**
-     * [public source] post file from source_dir _config.yml
-     */
-    public?: string;
-  };
+  name?: string;
   /**
-   * _config.yml
+   * Author email
    */
-  config?: DeepPartial<typeof config> | null;
+  email?: string;
   /**
-   * Article metadata
+   * Author website url
    */
-  metadata?: Partial<postMeta>;
-  /**
-   * Article body
-   */
-  body?: string;
+  link?: string;
 }
-export interface Config extends DeepPartial<typeof config> {
-  [key: string]: any;
-}
+
 export interface ParseOptions {
   shortcodes?: {
     /**
@@ -156,44 +107,12 @@ export interface ParseOptions {
   /**
    * Site Config
    */
-  config?: Config;
+  config?: ReturnType<typeof getConfig> & Record<string, any>;
   /**
    * run auto fixer such as thumbnail, excerpt, etc
    */
   fix?: boolean;
 }
-
-/**
- * make all properties as optional recursively
- */
-export type DeepPartial<T> = T extends object
-  ? {
-      [P in keyof T]?: DeepPartial<T[P]>;
-    }
-  : T;
-
-/**
- * null | type
- */
-export type Nullable<T> = T | null | undefined;
-
-const default_options: ParseOptions = {
-  shortcodes: {
-    css: false,
-    script: false,
-    include: false,
-    youtube: false,
-    link: false,
-    text: false,
-    now: false,
-    codeblock: false
-  },
-  sourceFile: null,
-  formatDate: false,
-  config,
-  cache: false,
-  fix: false
-};
 
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
@@ -203,29 +122,67 @@ const default_options: ParseOptions = {
  * @param options options parser
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
-export async function parsePost(
-  target: string,
-  options: DeepPartial<ParseOptions> = {}
-) {
+export async function parsePost(target: string, options: ParseOptions = {}) {
   if (!target) return null;
-  options = deepmerge(default_options, options);
-  const config = options.config;
-  const cacheKey = md5FileSync(options.sourceFile || target);
+  const default_options: ParseOptions = {
+    shortcodes: {
+      css: false,
+      script: false,
+      include: false,
+      youtube: false,
+      link: false,
+      text: false,
+      now: false,
+      codeblock: false
+    },
+    sourceFile: null,
+    formatDate: false,
+    config: getConfig(),
+    cache: false,
+    fix: false
+  };
+
+  options = Object.assign(default_options, options);
+  const siteConfig = options.config ? setConfig(options.config) : getConfig();
+  if (!options.sourceFile && existsSync(target)) options.sourceFile = target;
+
+  const homepage = siteConfig.url.endsWith('/')
+    ? siteConfig.url
+    : siteConfig.url + '/';
+  //console.log([siteConfig.url, siteConfig.root]);
+  const fileTarget = options.sourceFile || target;
+  const cacheKey = existsSync(fileTarget)
+    ? md5FileSync(fileTarget)
+    : md5(fileTarget);
   if (options.cache) {
+    //console.log('use cache');
     const getCache = _cache.getSync<postMap>(cacheKey);
     if (getCache) return getCache;
+  } else {
+    //console.log('rewrite cache');
   }
+
   /**
-   * source file if `text` is file
+   * source file if variable `text` is file
    */
-  const originalArg = target;
+  let originalFile = target;
   const isFile = existsSync(target) && statSync(target).isFile();
   if (isFile) {
     target = String(readFileSync(target, 'utf-8'));
+    if (options.sourceFile) originalFile = options.sourceFile;
   }
 
   const mapper = async (m: RegExpMatchArray) => {
-    let meta: postMap['metadata'] = {};
+    if (!m) {
+      throw new Error(originalFile + ' cannot be mapped');
+    }
+    let meta: postMap['metadata'] = {
+      title: '',
+      subtitle: '',
+      date: '',
+      tags: [],
+      categories: []
+    };
     try {
       meta = yaml.parse(m[1]);
     } catch (error) {
@@ -240,29 +197,13 @@ export async function parsePost(
 
     let body = m[2];
     if (!body) body = 'no content ' + (meta.title || '');
-    //write(tmp('parsePost', 'original.log'), body).then(console.log);
-    if (!meta.uuid) {
-      // assign uuid
-      let uid = m[0];
-      if (meta.title && meta.webtitle) {
-        uid = meta.title + meta.webtitle;
-      } else if (meta.subtitle) {
-        uid = meta.subtitle;
-      } else if (meta.excerpt) {
-        uid = meta.excerpt;
-      } else if (meta.title) {
-        uid = meta.title;
-      }
-      meta.uuid = uuidv4(uid);
-      meta = Object.keys(meta)
-        .sort()
-        .reduce(
-          (acc, key) => ({
-            ...acc,
-            [key]: meta[key]
-          }),
-          {}
-        ) as postMap['metadata'];
+
+    const bodyHtml = renderMarkdownIt(body);
+    const dom = new JSDOM(bodyHtml);
+
+    if (!meta.id) {
+      // assign post id
+      meta.id = generatePostId(meta);
     }
 
     if (options.fix) {
@@ -274,28 +215,54 @@ export async function parsePost(
       if (meta.modified && !meta.updated) {
         meta.updated = moment(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
       }
+      if (!meta.updated) {
+        // @todo metadata date modified based on date published
+        let date: string | Date = String(meta.date);
+        if (/\d{4}-\d-\d{2}/.test(date)) date = new Date(String(meta.date));
+        meta.updated = moment(date).format('YYYY-MM-DDTHH:mm:ssZ');
+      }
+
+      /*
+      // change date modified based on file modified date
       if (isFile) {
         const sourceFile = toUnix(originalArg);
         if (existsSync(sourceFile)) {
-          const stats = statSync(sourceFile);
           if (!meta.updated) {
+            const stats = statSync(sourceFile);
             const mtime = stats.mtime;
             meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
           }
         }
       }
+      */
 
-      // @todo fix lang
-      if (!meta.lang) meta.lang = 'en';
+      // @todo fix meta language
+      const lang = meta.lang || meta.language;
+      if (!lang) {
+        meta.lang = 'en';
+        meta.language = 'en';
+      }
+    }
+
+    // @todo fix meta.category to meta.categories
+    if (meta.category) {
+      if (!meta.categories || meta.categories.length === 0) {
+        meta.categories = meta.category;
+      } else if (Array.isArray(meta.category)) {
+        meta.categories = meta.categories.concat(...meta.category);
+      }
+
+      // delete meta.category
+      delete meta.category;
     }
 
     // @todo set default category and tags
-    if (!meta.category) meta.category = [];
-    if (config.default_category && !meta.category.length)
-      meta.category.push(config.default_category);
+    if (!meta.categories) meta.categories = [];
+    if (options.config.default_category && !meta.categories.length)
+      meta.categories.push(options.config.default_category);
     if (!meta.tags) meta.tags = [];
-    if (config.default_tag && !meta.tags.length)
-      meta.tags.push(config.default_tag);
+    if (options.config.default_tag && !meta.tags.length)
+      meta.tags.push(options.config.default_tag);
 
     // @todo set default date post
     if (!meta.date) meta.date = moment().format();
@@ -307,12 +274,17 @@ export async function parsePost(
       } else {
         meta.updated = meta.date;
       }
+    } else {
+      if (meta.modified) {
+        // fix for hexo-blogger-xml
+        delete meta.modified;
+      }
     }
 
     // @todo fix thumbnail
     if (options.fix) {
       const thumbnail = meta.cover || meta.thumbnail;
-      if (thumbnail) {
+      if (typeof thumbnail === 'string' && thumbnail.trim().length > 0) {
         if (!meta.thumbnail) meta.thumbnail = thumbnail;
         if (!meta.cover) meta.cover = thumbnail;
         if (!meta.photos) {
@@ -320,15 +292,17 @@ export async function parsePost(
         }
         meta.photos.push(meta.cover);
       }
-      if (meta.photos) {
-        const photos: string[] = meta.photos;
+      if (Array.isArray(meta.photos)) {
+        const photos: string[] = meta.photos.filter(
+          (str) => typeof str === 'string' && str.trim().length > 0
+        );
         meta.photos = uniqueArray(photos);
       }
     }
 
     // @todo fix post author
     if (options.fix) {
-      const author = meta.author || config.author;
+      const author = meta.author || options.config.author;
       if (!meta.author && author) {
         meta.author = author;
       }
@@ -342,16 +316,27 @@ export async function parsePost(
 
     // @todo set default excerpt/description
     if (meta.subtitle) {
+      // check if meta.subtitle exist
       meta.excerpt = meta.subtitle;
       meta.description = meta.subtitle;
     } else if (meta.description && !meta.excerpt) {
+      // check if meta.description exist
       meta.subtitle = meta.description;
       meta.excerpt = meta.description;
     } else if (meta.excerpt && !meta.description) {
+      // check if meta.excerpt exist
       meta.description = meta.excerpt;
       meta.subtitle = meta.excerpt;
     } else {
-      const newExcerpt = `${meta.title} - ${config.title}`;
+      // @todo fix no meta description
+      const tags = Array.from(
+        dom.window.document.body.getElementsByTagName('*')
+      );
+      const newExcerpt = [meta.title]
+        .concat(uniqueArray(tags.map((el) => el.textContent?.trim())))
+        .flat()
+        .join(' ')
+        .substring(0, 300);
       meta.description = newExcerpt;
       meta.subtitle = newExcerpt;
       meta.excerpt = newExcerpt;
@@ -373,25 +358,39 @@ export async function parsePost(
     // @todo fix default category and tags
     if (options.fix) {
       // remove uncategorized if programming category pushed
-      if (config.default_category)
+      if (options.config.default_category)
         if (
-          meta.category.includes(config.default_category) &&
-          meta.category.length > 1
+          meta.categories.includes(options.config.default_category) &&
+          meta.categories.length > 1
         ) {
-          meta.category = meta.category.filter(
-            (e) => e !== config.default_category
+          meta.categories = meta.categories.filter(
+            (e) => e !== options.config.default_category
           );
         }
       // @todo remove untagged if programming category pushed
-      if (config.default_tag)
-        if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
-          meta.tags = meta.tags.filter((e) => e !== config.default_tag);
+      if (options.config.default_tag)
+        if (
+          meta.tags.includes(options.config.default_tag) &&
+          meta.tags.length > 1
+        ) {
+          meta.tags = meta.tags.filter((e) => e !== options.config.default_tag);
         }
     }
 
     // @todo remove duplicated metadata photos
-    if (options.fix && meta.photos && meta.photos.length) {
-      meta.photos = uniqueStringArray(meta.photos);
+    if (
+      options.fix &&
+      'photos' in meta &&
+      Array.isArray(meta.photos) &&
+      meta.photos.length > 0
+    ) {
+      try {
+        meta.photos = uniqueStringArray(
+          meta.photos.filter((str) => str.trim().length > 0)
+        );
+      } catch (e) {
+        console.error('cannot unique photos', meta.title, e.message);
+      }
     }
 
     // @todo delete location
@@ -403,61 +402,161 @@ export async function parsePost(
     }
 
     if (isFile || options.sourceFile) {
-      const publicFile = isFile
-        ? toUnix(originalArg)
-        : toUnix(options.sourceFile);
+      let publicFile: string;
+      if (isFile) {
+        publicFile = normalize(originalFile);
+      } else if (options.sourceFile) {
+        publicFile = normalize(options.sourceFile);
+      } else {
+        throw new Error('cannot find public file of ' + meta.title);
+      }
+      /**
+       * Post Asset Fixer
+       * @param sourcePath
+       * @returns
+       */
+      const post_assets_fixer = (sourcePath: string) => {
+        const logname = color.Blue('[PAF]');
+        if (!publicFile) return sourcePath;
+        // replace extended title from source
+        sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
+        // return base64 image
+        if (sourcePath.startsWith('data:image')) return sourcePath;
+        if (sourcePath.startsWith('//')) sourcePath = 'http:' + sourcePath;
+        if (sourcePath.includes('%20'))
+          sourcePath = decodeURIComponent(sourcePath);
+        if (!isValidHttpUrl(sourcePath) && !sourcePath.startsWith('/')) {
+          let result: string | null = null;
+          /** search from same directory */
+          const find1st = join(dirname(publicFile), sourcePath);
+          /** search from parent directory */
+          const find2nd = join(dirname(dirname(publicFile)), sourcePath);
+          /** search from root directory */
+          const find3rd = join(process.cwd(), sourcePath);
+          const find4th = join(post_generated_dir, sourcePath);
+          [find1st, find2nd, find3rd, find4th].forEach((src) => {
+            if (result !== null) return;
+            if (existsSync(src) && !result) result = src;
+          });
+
+          if (result === null) {
+            const tempFolder = join(process.cwd(), 'tmp');
+            const logfile = join(
+              tempFolder,
+              'hexo-post-parser/errors/post-asset-folder/' +
+                sanitizeFilename(basename(sourcePath).trim(), '-') +
+                '.log'
+            );
+            if (!existsSync(dirname(logfile))) {
+              mkdirpSync(dirname(logfile));
+            }
+            writeFileSync(
+              logfile,
+              JSON.stringify(
+                {
+                  str: sourcePath,
+                  f1: find1st,
+                  f2: find2nd,
+                  f3: find3rd,
+                  f4: find4th
+                },
+                null,
+                2
+              )
+            );
+            console.log(logname, color.redBright('[fail]'), {
+              str: sourcePath,
+              log: logfile
+            });
+          } else {
+            result = replaceArr(
+              result,
+              [toUnix(process.cwd()), 'source/', '_posts', 'src-posts'],
+              '/'
+            );
+            result = encodeURI((options.config?.root || '') + result);
+
+            result = removeDoubleSlashes(result);
+
+            if (options.config && options.config['verbose'])
+              console.log(logname, '[success]', result);
+
+            return result;
+          }
+        }
+        return sourcePath;
+      };
+
       // @todo fix post_asset_folder
       if (options.fix) {
-        const post_assets_fixer = (str: string) => {
-          if (!publicFile) return str;
-          // return base64 image
-          if (str.startsWith('data:image')) return str;
-          if (str.startsWith('//')) str = 'http:' + str;
-          if (str.includes('%20')) str = decodeURIComponent(str);
-          if (!isValidHttpUrl(str) && !str.startsWith('/')) {
-            let result: string;
-            /** search from same directory */
-            const f1 = join(dirname(publicFile), str);
-            /** search from parent directory */
-            const f2 = join(dirname(dirname(publicFile)), str);
-            /** search from root directory */
-            const f3 = join(cwd(), str);
-            const f4 = join(post_generated_dir, str);
-            [f1, f2, f3, f4].forEach((src) => {
-              if (existsSync(src) && !result) result = src;
-            });
-            if (!result) {
-              console.log('[PAF][fail]', str);
-            } else {
-              result = replaceArr(
-                result,
-                [cwd(), 'source/', '_posts'],
-                '/'
-              ).replace(/\/+/, '/');
-              result = encodeURI(result);
-              console.log('[PAF][success]', result);
-              return result;
-            }
-          }
-          return str;
-        };
         if (meta.cover) {
           meta.cover = post_assets_fixer(meta.cover);
         }
+        // fix thumbnail
         if (meta.thumbnail) {
           meta.thumbnail = post_assets_fixer(meta.thumbnail);
         }
-        if (meta.photos) {
-          meta.photos = meta.photos.map(post_assets_fixer);
+
+        // add property photos by default
+        if (!meta.photos) meta.photos = [];
+
+        if (body && isFile) {
+          // get all images from post body
+          const imagefinderreplacement = function (whole: string, m1: string) {
+            //console.log('get all images', m1);
+            const regex = /(?:".*")/;
+            let replacementResult: string;
+            let img: string;
+            if (regex.test(m1)) {
+              const replacement = m1.replace(regex, '').trim();
+              img = post_assets_fixer(replacement);
+              replacementResult = whole.replace(replacement, img);
+            }
+            if (!replacementResult) {
+              img = post_assets_fixer(m1);
+              replacementResult = whole.replace(m1, img);
+            }
+            // push image to photos metadata
+            if (typeof img === 'string') meta.photos.push(img);
+            return replacementResult;
+          };
+          // markdown image
+          body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
+          // html image
+          try {
+            const regex = /<img [^>]*src="[^"]*"[^>]*>/gm;
+            if (regex.test(body)) {
+              body.match(regex).map((x) => {
+                return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
+              });
+            }
+          } catch {
+            console.log('cannot find image html from', meta.title);
+          }
+        }
+
+        // fix photos
+        if (Array.isArray(meta.photos)) {
+          meta.photos = meta.photos
+            .filter((str) => typeof str === 'string' && str.trim().length > 0)
+            .map((photo) => post_assets_fixer(photo))
+            // unique
+            .filter(function (x, i, a) {
+              return a.indexOf(x) === i;
+            });
+          // add thumbnail if not exist and photos length > 0
+          if (!meta.thumbnail && meta.photos.length > 0) {
+            meta.thumbnail = meta.photos[0];
+          }
         }
       }
 
       if (!meta.url) {
-        homepage.pathname = replaceArr(
-          publicFile,
+        const url = replaceArr(
+          normalize(publicFile),
           [
-            toUnix(process.cwd()),
-            config.source_dir + '/_posts/',
+            normalize(process.cwd()),
+            options.config?.source_dir + '/_posts/',
             'src-posts/',
             '_posts/'
           ],
@@ -465,24 +564,32 @@ export async function parsePost(
         )
           // @todo remove multiple slashes
           .replace(/\/+/, '/')
+          .replace(/^\/+/, '/')
           // @todo replace .md to .html
           .replace(/.md$/, '.html');
-        // meta url with full url
-        meta.url = homepage.toString();
-        // meta permalink just pathname
-        meta.permalink = homepage.pathname;
+        // meta url with full url and removed multiple forward slashes
+        meta.url = new URL(homepage + url)
+          .toString()
+          .replace(/([^:]\/)\/+/g, '$1');
       }
 
       // determine post type
       //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
       if (!meta.type) {
-        if (publicFile.match(/(_posts|src-posts)\//)) {
+        if (publicFile.match(/(_posts|_drafts|src-posts)\//)) {
           meta.type = 'post';
         } else {
           meta.type = 'page';
         }
       }
     }
+
+    // set layout metadata
+    /*if (options.config && 'generator' in options.config) {
+      if (meta.type && !meta.layout && options.config.generator.type) {
+        meta.layout = meta.type;
+      }
+    }*/
 
     if (typeof options === 'object') {
       // @todo format dates
@@ -510,13 +617,15 @@ export async function parsePost(
             );
           sourceFile = options.sourceFile;
         } else {
-          sourceFile = toUnix(originalArg);
+          sourceFile = toUnix(originalFile);
         }
 
         if (body) {
           if (sourceFile) {
-            if (shortcodes.include)
+            if (shortcodes.include) {
+              // @todo parse shortcode include
               body = parseShortCodeInclude(sourceFile, body);
+            }
             if (shortcodes.now) body = shortcodeNow(sourceFile, body);
             if (shortcodes.script) body = shortcodeScript(sourceFile, body);
             if (shortcodes.css) body = shortcodeCss(sourceFile, body);
@@ -529,22 +638,56 @@ export async function parsePost(
       }
     }
 
+    // @todo count words when wordcount is 0
+    if (
+      meta.wordcount === 0 &&
+      typeof body === 'string' &&
+      body.trim().length > 0
+    ) {
+      const words = Array.from(
+        dom.window.document.querySelectorAll('*:not(script,style,meta,link)')
+      )
+        .map((e) => e.textContent)
+        .join('\n');
+      meta.wordcount = countWords(words);
+    }
+
+    // sort metadata
+    meta = Object.keys(meta)
+      .sort()
+      .reduce(
+        (acc, key) => ({
+          ...acc,
+          [key]: meta[key]
+        }),
+        {}
+      ) as postMap['metadata'];
+
     const result: postMap = {
       metadata: meta,
       body: body,
       content: body,
-      config: config
+      config: <any>siteConfig
     };
+
+    //console.log('hpp permalink in metadata', 'permalink' in result.metadata);
+    if ('permalink' in result.metadata === false) {
+      result.metadata.permalink = parsePermalink(result);
+    }
+
+    if (siteConfig.generator?.type === 'jekyll') {
+      result.metadata.slug = result.metadata.permalink;
+    }
 
     // put fileTree
     if (isFile) {
       result.fileTree = {
         source: replaceArr(
-          toUnix(originalArg),
+          toUnix(originalFile),
           ['source/_posts/', '_posts/'],
           'src-posts/'
         ),
-        public: toUnix(originalArg).replace('/src-posts/', '/source/_posts/')
+        public: toUnix(originalFile).replace('/src-posts/', '/source/_posts/')
       };
     }
 

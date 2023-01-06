@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import { existsSync, readFileSync } from 'fs';
 import { dirname, join, toUnix } from 'upath';
+import { getConfig } from '../types/_config';
 
 const root = toUnix(process.cwd());
 const logname = chalk.blue('[include]');
@@ -10,73 +11,50 @@ const logname = chalk.blue('[include]');
  * ```html
  * <!-- include file.ext -->
  * ```
- * @param file
- * @param str
+ * @param sourceFile
+ * @param bodyString
  * @returns
  */
-export function parseShortCodeInclude(file: string, str: string) {
+export function parseShortCodeInclude(sourceFile: string, bodyString: string) {
+  const config = getConfig();
+  const { verbose } = config.generator;
   const regex = /<!--\s+?include\s+?(.+?)\s+?-->/gim;
-  const execs = Array.from(str.matchAll(regex));
-  if (execs.length) {
-    execs.forEach((m) => {
-      const htmlTag = m[0];
-      const includefile = m[1];
-      const dirs = {
-        directFile: join(dirname(file.toString()), includefile),
+  let modified = false;
+  let execs = Array.from(bodyString.matchAll(regex));
+  while (execs.length > 0) {
+    for (let i = 0; i < execs.length; i++) {
+      const match = execs.shift();
+
+      const htmlTag = match[0];
+      const includefile = match[1];
+      const dirs: Record<string, string> = {
+        directFile: join(dirname(sourceFile.toString()), includefile),
         //cwdFile: join(cwd(), includefile),
         rootFile: join(root, includefile)
       };
+      dirs.assetFolder = join(sourceFile.replace(/.md$/, ''), includefile);
+
       for (const key in dirs) {
         if (Object.prototype.hasOwnProperty.call(dirs, key)) {
           const filepath = dirs[key];
           if (existsSync(filepath)) {
-            console.log(logname + chalk.greenBright(`[${key}]`), file);
+            if (verbose) {
+              console.log(logname + chalk.greenBright(`[${key}]`), sourceFile);
+            }
             const read = readFileSync(filepath).toString();
-            str = str.replace(htmlTag, () => read);
+            bodyString = bodyString.replace(htmlTag, () => read);
+            execs = Array.from(bodyString.matchAll(regex));
+            modified = true;
             break;
           }
         }
       }
-    });
-  }
-  return str;
-
-  /*
-  let m: RegExpExecArray;
-  const found = false;
-  while ((m = regex.exec(str)) !== null) {
-    // This is necessary to avoid infinite loops with zero-width matches
-    if (m.index === regex.lastIndex) {
-      regex.lastIndex++;
-    }
-
-    const allmatch = m[0];
-    const bracketmatch = m[1];
-
-
-    /*if (existsSync(directFile)) {
-      // search from file directory
-      console.info(logname + chalk.greenBright('[direct]'), directFile);
-      const directRead = readFileSync(directFile).toString();
-      str = str.replace(allmatch, directRead);
-      found = true;
-    } else if (existsSync(cwdFile)) {
-      // search from workspace directory
-      console.log(logname + chalk.greenBright('[root]'), cwdFile);
-      console.info(`${logname} found from direct ${cwdFile}`);
-      const rootRead = readFileSync(cwdFile).toString();
-      str = str.replace(allmatch, rootRead);
-      found = true;
-    } else {
-      console.error(chalk.redBright('[include][error]'), "couldn't find any file from root", cwdFile);
-      console.error(chalk.redBright('[include][error]'), "couldn't find any file from direct", directFile);
-      console.log(chalk.redBright('[include][error]'), chalk.magenta('1'), dirname(file.toString()));
-      console.log(chalk.redBright('[include][error]'), chalk.magenta('2'), bracketmatch);
-      console.log(chalk.redBright('[include][error]'), chalk.magenta('3'), join(dirname(file), bracketmatch));
     }
   }
-  // match shortcode and found otherwise repeat
-  if (found && str.match(regex)) return parseShortCodeInclude(file, str);
-  */
+  // @todo include nested shortcodes when modified occurs
+  if (regex.test(bodyString) && modified) {
+    return parseShortCodeInclude(sourceFile, bodyString);
+  }
+  return bodyString;
 }
 export default parseShortCodeInclude;

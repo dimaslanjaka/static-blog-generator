@@ -1,5 +1,5 @@
 import fs from 'fs';
-import config from '../types/_config';
+import { getConfig } from '../types/_config';
 
 /**
  * Current date time
@@ -10,7 +10,7 @@ export function now() {
     new Date()
       //.toISOString()
       .toLocaleString('en-US', {
-        timeZone: config.timezone
+        timeZone: getConfig().timezone || 'UTC'
       })
       .replace(/T/, ' ') // replace T with a space
       .replace(/\..+/, '')

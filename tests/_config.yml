@@ -1,0 +1,8 @@
+deploy:
+  repo: https://github.com/dimaslanjaka/source-posts
+  branch: posts
+exclude:
+  - '**/readme.md'
+skip_render:
+  - '**/readme.md'
+post_dir: posts

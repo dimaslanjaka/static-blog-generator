@@ -6,10 +6,10 @@
 // GET https://9f9f7cf85cf1-ngrok-io.translate.goog/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html?_x_tr_sl=id&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=ajax
 // GET https://translate.google.com/translate_un?sl=id&tl=en&u=https://9f9f7cf85cf1.ngrok.io/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA
 
-import { Curl, HeaderInfo } from 'node-libcurl';
-import path from 'path';
 import fs from 'fs';
 import jsdom from 'jsdom';
+import { Curl, HeaderInfo } from 'node-libcurl';
+import path from 'path';
 const { JSDOM } = jsdom;
 const cookieJarFile = path.join(__dirname, '/../../build/cookiejar.txt');
 

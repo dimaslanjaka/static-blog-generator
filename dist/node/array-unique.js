@@ -14,12 +14,22 @@ function uniqueArray(array) {
 exports.uniqueArray = uniqueArray;
 /**
  * Unique Array Of Strings
+ * @description Lowercase all string and filter duplicated from them
  * @param arr
  * @returns
  */
 function uniqueStringArray(arr) {
-    const filter = new Map(arr.map((s) => [s.toLowerCase(), s]));
-    return [...filter.values()];
+    const filter = new Map(arr
+        .filter((s) => typeof s === 'string')
+        .map((s) => {
+        return [s.toLowerCase(), s];
+    }));
+    const values = filter.values();
+    /*
+    return [...filter.values()];*/
+    return Array.from(values).filter(function (x, i, a) {
+        return a.indexOf(x) === i;
+    });
 }
 exports.uniqueStringArray = uniqueStringArray;
 exports.default = uniqueArray;

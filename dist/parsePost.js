@@ -1,18 +1,57 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePost = void 0;
-const tslib_1 = require("tslib");
-const deepmerge_ts_1 = require("deepmerge-ts");
-const fs_1 = require("fs");
+const fs_extra_1 = require("fs-extra");
+const jsdom_1 = require("jsdom");
+const persistent_cache_1 = __importDefault(require("persistent-cache"));
 const upath_1 = require("upath");
-const yaml_1 = tslib_1.__importDefault(require("yaml"));
-const persistent_cache_1 = tslib_1.__importDefault(require("persistent-cache"));
+const yaml_1 = __importDefault(require("yaml"));
 const dateMapper_1 = require("./dateMapper");
+const generatePostId_1 = require("./generatePostId");
 const utils_1 = require("./gulp/utils");
-const array_unique_1 = tslib_1.__importStar(require("./node/array-unique"));
+const toHtml_1 = require("./markdown/toHtml");
+const array_unique_1 = __importStar(require("./node/array-unique"));
+const color_1 = __importDefault(require("./node/color"));
+const filemanager_1 = require("./node/filemanager");
 const md5_file_1 = require("./node/md5-file");
+const sanitize_filename_1 = __importDefault(require("./node/sanitize-filename"));
 const utils_2 = require("./node/utils");
-const uuid_1 = tslib_1.__importDefault(require("./node/uuid"));
+const parsePermalink_1 = require("./parsePermalink");
 const codeblock_1 = require("./shortcodes/codeblock");
 const css_1 = require("./shortcodes/css");
 const extractText_1 = require("./shortcodes/extractText");
@@ -21,35 +60,13 @@ const include_1 = require("./shortcodes/include");
 const script_1 = require("./shortcodes/script");
 const time_1 = require("./shortcodes/time");
 const youtube_1 = require("./shortcodes/youtube");
-const _config_1 = tslib_1.__importDefault(require("./types/_config"));
+const _config_1 = require("./types/_config");
+const string_1 = require("./utils/string");
 const _cache = (0, persistent_cache_1.default)({
-    base: (0, upath_1.join)(process.cwd(), 'tmp/persistent-cache'),
+    base: (0, upath_1.join)(process.cwd(), 'tmp'),
     name: 'parsePost',
     duration: 1000 * 3600 * 24 // 24 hours
 });
-const homepage = new URL(_config_1.default.url);
-const cwd = () => (0, upath_1.toUnix)(process.cwd());
-/**
- * Hexo Generated Dir
- */
-const post_generated_dir = (0, upath_1.join)(cwd(), _config_1.default.public_dir);
-const default_options = {
-    shortcodes: {
-        css: false,
-        script: false,
-        include: false,
-        youtube: false,
-        link: false,
-        text: false,
-        now: false,
-        codeblock: false
-    },
-    sourceFile: null,
-    formatDate: false,
-    config: _config_1.default,
-    cache: false,
-    fix: false
-};
 /**
  * Parse Hexo markdown post (structured with yaml and universal markdown blocks)
  * * return {@link postMap} metadata {string & object} and body
@@ -59,27 +76,69 @@ const default_options = {
  * * {@link ParseOptions.sourceFile} used for cache key when `target` is file contents
  */
 function parsePost(target, options = {}) {
-    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+    return __awaiter(this, void 0, void 0, function* () {
         if (!target)
             return null;
-        options = (0, deepmerge_ts_1.deepmerge)(default_options, options);
-        const config = options.config;
-        const cacheKey = (0, md5_file_1.md5FileSync)(options.sourceFile || target);
+        const default_options = {
+            shortcodes: {
+                css: false,
+                script: false,
+                include: false,
+                youtube: false,
+                link: false,
+                text: false,
+                now: false,
+                codeblock: false
+            },
+            sourceFile: null,
+            formatDate: false,
+            config: (0, _config_1.getConfig)(),
+            cache: false,
+            fix: false
+        };
+        options = Object.assign(default_options, options);
+        const siteConfig = options.config ? (0, _config_1.setConfig)(options.config) : (0, _config_1.getConfig)();
+        if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
+            options.sourceFile = target;
+        const homepage = siteConfig.url.endsWith('/')
+            ? siteConfig.url
+            : siteConfig.url + '/';
+        //console.log([siteConfig.url, siteConfig.root]);
+        const fileTarget = options.sourceFile || target;
+        const cacheKey = (0, fs_extra_1.existsSync)(fileTarget)
+            ? (0, md5_file_1.md5FileSync)(fileTarget)
+            : (0, md5_file_1.md5)(fileTarget);
         if (options.cache) {
+            //console.log('use cache');
             const getCache = _cache.getSync(cacheKey);
             if (getCache)
                 return getCache;
         }
-        /**
-         * source file if `text` is file
-         */
-        const originalArg = target;
-        const isFile = (0, fs_1.existsSync)(target) && (0, fs_1.statSync)(target).isFile();
-        if (isFile) {
-            target = String((0, fs_1.readFileSync)(target, 'utf-8'));
+        else {
+            //console.log('rewrite cache');
         }
-        const mapper = (m) => tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let meta = {};
+        /**
+         * source file if variable `text` is file
+         */
+        let originalFile = target;
+        const isFile = (0, fs_extra_1.existsSync)(target) && (0, fs_extra_1.statSync)(target).isFile();
+        if (isFile) {
+            target = String((0, fs_extra_1.readFileSync)(target, 'utf-8'));
+            if (options.sourceFile)
+                originalFile = options.sourceFile;
+        }
+        const mapper = (m) => __awaiter(this, void 0, void 0, function* () {
+            var _a, _b;
+            if (!m) {
+                throw new Error(originalFile + ' cannot be mapped');
+            }
+            let meta = {
+                title: '',
+                subtitle: '',
+                date: '',
+                tags: [],
+                categories: []
+            };
             try {
                 meta = yaml_1.default.parse(m[1]);
             }
@@ -95,26 +154,11 @@ function parsePost(target, options = {}) {
             let body = m[2];
             if (!body)
                 body = 'no content ' + (meta.title || '');
-            //write(tmp('parsePost', 'original.log'), body).then(console.log);
-            if (!meta.uuid) {
-                // assign uuid
-                let uid = m[0];
-                if (meta.title && meta.webtitle) {
-                    uid = meta.title + meta.webtitle;
-                }
-                else if (meta.subtitle) {
-                    uid = meta.subtitle;
-                }
-                else if (meta.excerpt) {
-                    uid = meta.excerpt;
-                }
-                else if (meta.title) {
-                    uid = meta.title;
-                }
-                meta.uuid = (0, uuid_1.default)(uid);
-                meta = Object.keys(meta)
-                    .sort()
-                    .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
+            const bodyHtml = (0, toHtml_1.renderMarkdownIt)(body);
+            const dom = new jsdom_1.JSDOM(bodyHtml);
+            if (!meta.id) {
+                // assign post id
+                meta.id = (0, generatePostId_1.generatePostId)(meta);
             }
             if (options.fix) {
                 // @todo fix date
@@ -124,29 +168,53 @@ function parsePost(target, options = {}) {
                 if (meta.modified && !meta.updated) {
                     meta.updated = (0, dateMapper_1.moment)(meta.modified).format('YYYY-MM-DDTHH:mm:ssZ');
                 }
-                if (isFile) {
-                    const sourceFile = (0, upath_1.toUnix)(originalArg);
-                    if ((0, fs_1.existsSync)(sourceFile)) {
-                        const stats = (0, fs_1.statSync)(sourceFile);
-                        if (!meta.updated) {
-                            const mtime = stats.mtime;
-                            meta.updated = (0, dateMapper_1.moment)(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
-                        }
-                    }
+                if (!meta.updated) {
+                    // @todo metadata date modified based on date published
+                    let date = String(meta.date);
+                    if (/\d{4}-\d-\d{2}/.test(date))
+                        date = new Date(String(meta.date));
+                    meta.updated = (0, dateMapper_1.moment)(date).format('YYYY-MM-DDTHH:mm:ssZ');
                 }
-                // @todo fix lang
-                if (!meta.lang)
+                /*
+                // change date modified based on file modified date
+                if (isFile) {
+                  const sourceFile = toUnix(originalArg);
+                  if (existsSync(sourceFile)) {
+                    if (!meta.updated) {
+                      const stats = statSync(sourceFile);
+                      const mtime = stats.mtime;
+                      meta.updated = moment(mtime).format('YYYY-MM-DDTHH:mm:ssZ');
+                    }
+                  }
+                }
+                */
+                // @todo fix meta language
+                const lang = meta.lang || meta.language;
+                if (!lang) {
                     meta.lang = 'en';
+                    meta.language = 'en';
+                }
+            }
+            // @todo fix meta.category to meta.categories
+            if (meta.category) {
+                if (!meta.categories || meta.categories.length === 0) {
+                    meta.categories = meta.category;
+                }
+                else if (Array.isArray(meta.category)) {
+                    meta.categories = meta.categories.concat(...meta.category);
+                }
+                // delete meta.category
+                delete meta.category;
             }
             // @todo set default category and tags
-            if (!meta.category)
-                meta.category = [];
-            if (config.default_category && !meta.category.length)
-                meta.category.push(config.default_category);
+            if (!meta.categories)
+                meta.categories = [];
+            if (options.config.default_category && !meta.categories.length)
+                meta.categories.push(options.config.default_category);
             if (!meta.tags)
                 meta.tags = [];
-            if (config.default_tag && !meta.tags.length)
-                meta.tags.push(config.default_tag);
+            if (options.config.default_tag && !meta.tags.length)
+                meta.tags.push(options.config.default_tag);
             // @todo set default date post
             if (!meta.date)
                 meta.date = (0, dateMapper_1.moment)().format();
@@ -160,10 +228,16 @@ function parsePost(target, options = {}) {
                     meta.updated = meta.date;
                 }
             }
+            else {
+                if (meta.modified) {
+                    // fix for hexo-blogger-xml
+                    delete meta.modified;
+                }
+            }
             // @todo fix thumbnail
             if (options.fix) {
                 const thumbnail = meta.cover || meta.thumbnail;
-                if (thumbnail) {
+                if (typeof thumbnail === 'string' && thumbnail.trim().length > 0) {
                     if (!meta.thumbnail)
                         meta.thumbnail = thumbnail;
                     if (!meta.cover)
@@ -173,14 +247,14 @@ function parsePost(target, options = {}) {
                     }
                     meta.photos.push(meta.cover);
                 }
-                if (meta.photos) {
-                    const photos = meta.photos;
+                if (Array.isArray(meta.photos)) {
+                    const photos = meta.photos.filter((str) => typeof str === 'string' && str.trim().length > 0);
                     meta.photos = (0, array_unique_1.default)(photos);
                 }
             }
             // @todo fix post author
             if (options.fix) {
-                const author = meta.author || config.author;
+                const author = meta.author || options.config.author;
                 if (!meta.author && author) {
                     meta.author = author;
                 }
@@ -193,19 +267,28 @@ function parsePost(target, options = {}) {
                 meta.wordcount = 0;
             // @todo set default excerpt/description
             if (meta.subtitle) {
+                // check if meta.subtitle exist
                 meta.excerpt = meta.subtitle;
                 meta.description = meta.subtitle;
             }
             else if (meta.description && !meta.excerpt) {
+                // check if meta.description exist
                 meta.subtitle = meta.description;
                 meta.excerpt = meta.description;
             }
             else if (meta.excerpt && !meta.description) {
+                // check if meta.excerpt exist
                 meta.description = meta.excerpt;
                 meta.subtitle = meta.excerpt;
             }
             else {
-                const newExcerpt = `${meta.title} - ${config.title}`;
+                // @todo fix no meta description
+                const tags = Array.from(dom.window.document.body.getElementsByTagName('*'));
+                const newExcerpt = [meta.title]
+                    .concat((0, array_unique_1.default)(tags.map((el) => { var _a; return (_a = el.textContent) === null || _a === void 0 ? void 0 : _a.trim(); })))
+                    .flat()
+                    .join(' ')
+                    .substring(0, 300);
                 meta.description = newExcerpt;
                 meta.subtitle = newExcerpt;
                 meta.excerpt = newExcerpt;
@@ -225,20 +308,29 @@ function parsePost(target, options = {}) {
             // @todo fix default category and tags
             if (options.fix) {
                 // remove uncategorized if programming category pushed
-                if (config.default_category)
-                    if (meta.category.includes(config.default_category) &&
-                        meta.category.length > 1) {
-                        meta.category = meta.category.filter((e) => e !== config.default_category);
+                if (options.config.default_category)
+                    if (meta.categories.includes(options.config.default_category) &&
+                        meta.categories.length > 1) {
+                        meta.categories = meta.categories.filter((e) => e !== options.config.default_category);
                     }
                 // @todo remove untagged if programming category pushed
-                if (config.default_tag)
-                    if (meta.tags.includes(config.default_tag) && meta.tags.length > 1) {
-                        meta.tags = meta.tags.filter((e) => e !== config.default_tag);
+                if (options.config.default_tag)
+                    if (meta.tags.includes(options.config.default_tag) &&
+                        meta.tags.length > 1) {
+                        meta.tags = meta.tags.filter((e) => e !== options.config.default_tag);
                     }
             }
             // @todo remove duplicated metadata photos
-            if (options.fix && meta.photos && meta.photos.length) {
-                meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos);
+            if (options.fix &&
+                'photos' in meta &&
+                Array.isArray(meta.photos) &&
+                meta.photos.length > 0) {
+                try {
+                    meta.photos = (0, array_unique_1.uniqueStringArray)(meta.photos.filter((str) => str.trim().length > 0));
+                }
+                catch (e) {
+                    console.error('cannot unique photos', meta.title, e.message);
+                }
             }
             // @todo delete location
             if (Object.prototype.hasOwnProperty.call(meta, 'location') &&
@@ -246,76 +338,165 @@ function parsePost(target, options = {}) {
                 delete meta.location;
             }
             if (isFile || options.sourceFile) {
-                const publicFile = isFile
-                    ? (0, upath_1.toUnix)(originalArg)
-                    : (0, upath_1.toUnix)(options.sourceFile);
+                let publicFile;
+                if (isFile) {
+                    publicFile = (0, filemanager_1.normalize)(originalFile);
+                }
+                else if (options.sourceFile) {
+                    publicFile = (0, filemanager_1.normalize)(options.sourceFile);
+                }
+                else {
+                    throw new Error('cannot find public file of ' + meta.title);
+                }
+                /**
+                 * Post Asset Fixer
+                 * @param sourcePath
+                 * @returns
+                 */
+                const post_assets_fixer = (sourcePath) => {
+                    var _a;
+                    const logname = color_1.default.Blue('[PAF]');
+                    if (!publicFile)
+                        return sourcePath;
+                    // replace extended title from source
+                    sourcePath = sourcePath.replace(/['"](.*)['"]/gim, '').trim();
+                    // return base64 image
+                    if (sourcePath.startsWith('data:image'))
+                        return sourcePath;
+                    if (sourcePath.startsWith('//'))
+                        sourcePath = 'http:' + sourcePath;
+                    if (sourcePath.includes('%20'))
+                        sourcePath = decodeURIComponent(sourcePath);
+                    if (!(0, utils_1.isValidHttpUrl)(sourcePath) && !sourcePath.startsWith('/')) {
+                        let result = null;
+                        /** search from same directory */
+                        const find1st = (0, upath_1.join)((0, upath_1.dirname)(publicFile), sourcePath);
+                        /** search from parent directory */
+                        const find2nd = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), sourcePath);
+                        /** search from root directory */
+                        const find3rd = (0, upath_1.join)(process.cwd(), sourcePath);
+                        const find4th = (0, upath_1.join)(_config_1.post_generated_dir, sourcePath);
+                        [find1st, find2nd, find3rd, find4th].forEach((src) => {
+                            if (result !== null)
+                                return;
+                            if ((0, fs_extra_1.existsSync)(src) && !result)
+                                result = src;
+                        });
+                        if (result === null) {
+                            const tempFolder = (0, upath_1.join)(process.cwd(), 'tmp');
+                            const logfile = (0, upath_1.join)(tempFolder, 'hexo-post-parser/errors/post-asset-folder/' +
+                                (0, sanitize_filename_1.default)((0, upath_1.basename)(sourcePath).trim(), '-') +
+                                '.log');
+                            if (!(0, fs_extra_1.existsSync)((0, upath_1.dirname)(logfile))) {
+                                (0, fs_extra_1.mkdirpSync)((0, upath_1.dirname)(logfile));
+                            }
+                            (0, fs_extra_1.writeFileSync)(logfile, JSON.stringify({
+                                str: sourcePath,
+                                f1: find1st,
+                                f2: find2nd,
+                                f3: find3rd,
+                                f4: find4th
+                            }, null, 2));
+                            console.log(logname, color_1.default.redBright('[fail]'), {
+                                str: sourcePath,
+                                log: logfile
+                            });
+                        }
+                        else {
+                            result = (0, utils_2.replaceArr)(result, [(0, upath_1.toUnix)(process.cwd()), 'source/', '_posts', 'src-posts'], '/');
+                            result = encodeURI((((_a = options.config) === null || _a === void 0 ? void 0 : _a.root) || '') + result);
+                            result = (0, string_1.removeDoubleSlashes)(result);
+                            if (options.config && options.config['verbose'])
+                                console.log(logname, '[success]', result);
+                            return result;
+                        }
+                    }
+                    return sourcePath;
+                };
                 // @todo fix post_asset_folder
                 if (options.fix) {
-                    const post_assets_fixer = (str) => {
-                        if (!publicFile)
-                            return str;
-                        // return base64 image
-                        if (str.startsWith('data:image'))
-                            return str;
-                        if (str.startsWith('//'))
-                            str = 'http:' + str;
-                        if (str.includes('%20'))
-                            str = decodeURIComponent(str);
-                        if (!(0, utils_1.isValidHttpUrl)(str) && !str.startsWith('/')) {
-                            let result;
-                            /** search from same directory */
-                            const f1 = (0, upath_1.join)((0, upath_1.dirname)(publicFile), str);
-                            /** search from parent directory */
-                            const f2 = (0, upath_1.join)((0, upath_1.dirname)((0, upath_1.dirname)(publicFile)), str);
-                            /** search from root directory */
-                            const f3 = (0, upath_1.join)(cwd(), str);
-                            const f4 = (0, upath_1.join)(post_generated_dir, str);
-                            [f1, f2, f3, f4].forEach((src) => {
-                                if ((0, fs_1.existsSync)(src) && !result)
-                                    result = src;
-                            });
-                            if (!result) {
-                                console.log('[PAF][fail]', str);
-                            }
-                            else {
-                                result = (0, utils_2.replaceArr)(result, [cwd(), 'source/', '_posts'], '/').replace(/\/+/, '/');
-                                result = encodeURI(result);
-                                console.log('[PAF][success]', result);
-                                return result;
-                            }
-                        }
-                        return str;
-                    };
                     if (meta.cover) {
                         meta.cover = post_assets_fixer(meta.cover);
                     }
+                    // fix thumbnail
                     if (meta.thumbnail) {
                         meta.thumbnail = post_assets_fixer(meta.thumbnail);
                     }
-                    if (meta.photos) {
-                        meta.photos = meta.photos.map(post_assets_fixer);
+                    // add property photos by default
+                    if (!meta.photos)
+                        meta.photos = [];
+                    if (body && isFile) {
+                        // get all images from post body
+                        const imagefinderreplacement = function (whole, m1) {
+                            //console.log('get all images', m1);
+                            const regex = /(?:".*")/;
+                            let replacementResult;
+                            let img;
+                            if (regex.test(m1)) {
+                                const replacement = m1.replace(regex, '').trim();
+                                img = post_assets_fixer(replacement);
+                                replacementResult = whole.replace(replacement, img);
+                            }
+                            if (!replacementResult) {
+                                img = post_assets_fixer(m1);
+                                replacementResult = whole.replace(m1, img);
+                            }
+                            // push image to photos metadata
+                            if (typeof img === 'string')
+                                meta.photos.push(img);
+                            return replacementResult;
+                        };
+                        // markdown image
+                        body = body.replace(/!\[.*\]\((.*)\)/gm, imagefinderreplacement);
+                        // html image
+                        try {
+                            const regex = /<img [^>]*src="[^"]*"[^>]*>/gm;
+                            if (regex.test(body)) {
+                                body.match(regex).map((x) => {
+                                    return x.replace(/.*src="([^"]*)".*/, imagefinderreplacement);
+                                });
+                            }
+                        }
+                        catch (_c) {
+                            console.log('cannot find image html from', meta.title);
+                        }
+                    }
+                    // fix photos
+                    if (Array.isArray(meta.photos)) {
+                        meta.photos = meta.photos
+                            .filter((str) => typeof str === 'string' && str.trim().length > 0)
+                            .map((photo) => post_assets_fixer(photo))
+                            // unique
+                            .filter(function (x, i, a) {
+                            return a.indexOf(x) === i;
+                        });
+                        // add thumbnail if not exist and photos length > 0
+                        if (!meta.thumbnail && meta.photos.length > 0) {
+                            meta.thumbnail = meta.photos[0];
+                        }
                     }
                 }
                 if (!meta.url) {
-                    homepage.pathname = (0, utils_2.replaceArr)(publicFile, [
-                        (0, upath_1.toUnix)(process.cwd()),
-                        config.source_dir + '/_posts/',
+                    const url = (0, utils_2.replaceArr)((0, filemanager_1.normalize)(publicFile), [
+                        (0, filemanager_1.normalize)(process.cwd()),
+                        ((_a = options.config) === null || _a === void 0 ? void 0 : _a.source_dir) + '/_posts/',
                         'src-posts/',
                         '_posts/'
                     ], '/')
                         // @todo remove multiple slashes
                         .replace(/\/+/, '/')
+                        .replace(/^\/+/, '/')
                         // @todo replace .md to .html
                         .replace(/.md$/, '.html');
-                    // meta url with full url
-                    meta.url = homepage.toString();
-                    // meta permalink just pathname
-                    meta.permalink = homepage.pathname;
+                    // meta url with full url and removed multiple forward slashes
+                    meta.url = new URL(homepage + url)
+                        .toString()
+                        .replace(/([^:]\/)\/+/g, '$1');
                 }
                 // determine post type
                 //meta.type = toUnix(originalArg).isMatch(/(_posts|src-posts)\//) ? 'post' : 'page';
                 if (!meta.type) {
-                    if (publicFile.match(/(_posts|src-posts)\//)) {
+                    if (publicFile.match(/(_posts|_drafts|src-posts)\//)) {
                         meta.type = 'post';
                     }
                     else {
@@ -323,6 +504,12 @@ function parsePost(target, options = {}) {
                     }
                 }
             }
+            // set layout metadata
+            /*if (options.config && 'generator' in options.config) {
+              if (meta.type && !meta.layout && options.config.generator.type) {
+                meta.layout = meta.type;
+              }
+            }*/
             if (typeof options === 'object') {
                 // @todo format dates
                 if (options.formatDate) {
@@ -346,12 +533,14 @@ function parsePost(target, options = {}) {
                         sourceFile = options.sourceFile;
                     }
                     else {
-                        sourceFile = (0, upath_1.toUnix)(originalArg);
+                        sourceFile = (0, upath_1.toUnix)(originalFile);
                     }
                     if (body) {
                         if (sourceFile) {
-                            if (shortcodes.include)
+                            if (shortcodes.include) {
+                                // @todo parse shortcode include
                                 body = (0, include_1.parseShortCodeInclude)(sourceFile, body);
+                            }
                             if (shortcodes.now)
                                 body = (0, time_1.shortcodeNow)(sourceFile, body);
                             if (shortcodes.script)
@@ -370,17 +559,37 @@ function parsePost(target, options = {}) {
                     }
                 }
             }
+            // @todo count words when wordcount is 0
+            if (meta.wordcount === 0 &&
+                typeof body === 'string' &&
+                body.trim().length > 0) {
+                const words = Array.from(dom.window.document.querySelectorAll('*:not(script,style,meta,link)'))
+                    .map((e) => e.textContent)
+                    .join('\n');
+                meta.wordcount = (0, string_1.countWords)(words);
+            }
+            // sort metadata
+            meta = Object.keys(meta)
+                .sort()
+                .reduce((acc, key) => (Object.assign(Object.assign({}, acc), { [key]: meta[key] })), {});
             const result = {
                 metadata: meta,
                 body: body,
                 content: body,
-                config: config
+                config: siteConfig
             };
+            //console.log('hpp permalink in metadata', 'permalink' in result.metadata);
+            if ('permalink' in result.metadata === false) {
+                result.metadata.permalink = (0, parsePermalink_1.parsePermalink)(result);
+            }
+            if (((_b = siteConfig.generator) === null || _b === void 0 ? void 0 : _b.type) === 'jekyll') {
+                result.metadata.slug = result.metadata.permalink;
+            }
             // put fileTree
             if (isFile) {
                 result.fileTree = {
-                    source: (0, utils_2.replaceArr)((0, upath_1.toUnix)(originalArg), ['source/_posts/', '_posts/'], 'src-posts/'),
-                    public: (0, upath_1.toUnix)(originalArg).replace('/src-posts/', '/source/_posts/')
+                    source: (0, utils_2.replaceArr)((0, upath_1.toUnix)(originalFile), ['source/_posts/', '_posts/'], 'src-posts/'),
+                    public: (0, upath_1.toUnix)(originalFile).replace('/src-posts/', '/source/_posts/')
                 };
             }
             if (meta && body)
