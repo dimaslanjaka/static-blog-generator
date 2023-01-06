@@ -63,44 +63,58 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var hexo_1 = __importDefault(require("hexo"));
-var upath_1 = require("upath");
+var upath_1 = __importStar(require("upath"));
 var cleaner = __importStar(require("./gulp.clean"));
 var gulp_config_1 = require("./gulp.config");
 var gulp_deploy_1 = require("./gulp.deploy");
 var gulp_safelink_1 = require("./gulp.safelink");
-var gulp_seo_1 = require("./gulp.seo");
+var gulp_seo_1 = __importStar(require("./gulp.seo"));
 var gulp_standalone_1 = __importDefault(require("./gulp.standalone"));
-var pcopy = __importStar(require("./post/copy"));
+var copy_1 = require("./post/copy");
 var noop_1 = __importDefault(require("./utils/noop"));
 var scheduler_1 = __importDefault(require("./utils/scheduler"));
 var SBG = (function () {
-    function SBG(cwd) {
+    function SBG(cwd, options) {
         var _this = this;
         this.config = (0, gulp_config_1.getConfig)();
         this.setConfig = gulp_config_1.setConfig;
         this.getConfig = gulp_config_1.getConfig;
         this.standalone = function () { return (0, gulp_standalone_1.default)(); };
         this.seo = function () { return (0, gulp_seo_1.taskSeo)(null, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
-        this.copy = function () {
-            return __awaiter(this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    return [2, pcopy.copyAllPosts()];
-                });
-            });
-        };
         this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(noop_1.default, (0, upath_1.join)(_this.cwd, (0, gulp_config_1.getConfig)().public_dir)); };
         if (!cwd)
             cwd = process.cwd();
+        if (!options)
+            options = {};
         this.cwd = cwd;
-        this.config = (0, gulp_config_1.setConfig)({ cwd: cwd });
+        options.cwd = cwd;
+        this.config = (0, gulp_config_1.setConfig)(options);
         SBG.setApi(this);
-        scheduler_1.default.register();
+        new scheduler_1.default();
     }
     SBG.setApi = function (api) {
         this.currentApI = api;
     };
     SBG.getApi = function () {
         return this.currentApI;
+    };
+    SBG.prototype.copy = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var sourcePostDir = (0, upath_1.join)(process.cwd(), _this.config.post_dir);
+            var generatedPostDir = (0, upath_1.join)(process.cwd(), _this.config.source_dir, '_posts');
+            if (_this.config.generator.verbose) {
+                console.log('copy posts from', sourcePostDir, 'to', generatedPostDir);
+            }
+            var streamer = gulp_seo_1.default.src(['**/*.*', '*.*'], {
+                cwd: upath_1.default.toUnix(sourcePostDir),
+                ignore: _this.config.excludes,
+                dot: true
+            });
+            streamer.pipe((0, copy_1.processPost)(_this.config));
+            streamer.pipe(gulp_seo_1.default.dest(generatedPostDir));
+            streamer.once('end', function () { return resolve; });
+        });
     };
     SBG.prototype.generate = function () {
         return __awaiter(this, void 0, void 0, function () {

@@ -75,7 +75,8 @@ function exitHandler(options, exitCode) {
             for (key in fns) {
                 _loop_1(key);
             }
-            (0, chain_1.chain)(funcs);
+            if (options.cleanup)
+                (0, chain_1.chain)(funcs);
             if (options.cleanup && scheduler.verbose)
                 _log.info(logname, "clean exit(".concat(exitCode, ")"));
             if (options.exit)
@@ -85,11 +86,8 @@ function exitHandler(options, exitCode) {
     });
 }
 function triggerProcess() {
-    process.on('beforeExit', exitHandler.bind(null, { exit: true }));
     process.on('exit', exitHandler.bind(null, { cleanup: true }));
-    process.on('disconnect', exitHandler.bind(null, { exit: true }));
     process.on('SIGINT', exitHandler.bind(null, { exit: true }));
-    process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
     process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
     process.on('SIGUSR2', exitHandler.bind(null, { exit: true }));
     process.on('uncaughtException', exitHandler.bind(null, { exit: true }));

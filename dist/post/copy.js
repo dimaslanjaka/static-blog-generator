@@ -87,11 +87,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.copyAllPosts = exports.copySinglePost = void 0;
+exports.processPost = exports.copyAllPosts = exports.copySinglePost = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var gulp_1 = __importDefault(require("gulp"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
+var __1 = require("..");
 var hexo_post_parser_1 = require("../../packages/hexo-post-parser");
 var gulp_cache_1 = __importDefault(require("../gulp-utils/gulp.cache"));
 var gulp_debug_1 = __importDefault(require("../gulp-utils/gulp.debug"));
@@ -99,7 +100,6 @@ var gulp_config_1 = require("../gulp.config");
 var fm = __importStar(require("../utils/fm"));
 var lockmanager_1 = __importDefault(require("../utils/lockmanager"));
 var logger_1 = __importDefault(require("../utils/logger"));
-var scheduler_1 = __importDefault(require("../utils/scheduler"));
 var sourcePostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().post_dir);
 var generatedPostDir = (0, upath_1.join)(process.cwd(), (0, gulp_config_1.getConfig)().source_dir, '_posts');
 function copySinglePost(identifier, callback) {
@@ -115,8 +115,7 @@ function copySinglePost(identifier, callback) {
     });
 }
 exports.copySinglePost = copySinglePost;
-function copyAllPosts() {
-    var _this = this;
+function copyAllPosts(callback) {
     var _a, _b;
     var lm = new lockmanager_1.default(copyAllPosts.name);
     var logname = 'post:' + ansi_colors_1.default.grey('copy');
@@ -128,47 +127,52 @@ function copyAllPosts() {
         return writeStream;
     }
     lm.lock();
-    var config = (0, gulp_config_1.getConfig)();
+    var api = new __1.Application(process.cwd());
+    var config = api.getConfig();
     var excludes = Array.isArray(config.exclude) ? config.exclude : [];
     excludes.push.apply(excludes, __spreadArray([], __read(gulp_config_1.commonIgnore), false));
     logger_1.default.log(logname, 'cwd', (0, upath_1.toUnix)(process.cwd()));
     logger_1.default.log(logname, 'copying source posts from', sourcePostDir);
-    var streamer = gulp_1.default.src('**/*.*', { cwd: (0, upath_1.toUnix)(sourcePostDir), ignore: excludes });
+    logger_1.default.log(logname, excludes);
+    var streamer = gulp_1.default.src(['**/*.*', '*.*'], { cwd: (0, upath_1.toUnix)(sourcePostDir), ignore: excludes, dot: true });
     streamer.once('end', function () {
         lm.release();
     });
     if ((_a = config.generator) === null || _a === void 0 ? void 0 : _a.cache)
         streamer.pipe((0, gulp_cache_1.default)({ name: 'post-copy' }));
     var verbose = (_b = config.generator) === null || _b === void 0 ? void 0 : _b.verbose;
-    var writeVerbose = function (msg) {
-        var write = fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/logs/post-copy', process.pid + '.log'), msg, {
-            append: true
-        });
-        scheduler_1.default.add('verbose', function () { return console.log(write.file); });
-    };
     if (verbose)
-        streamer.pipe((0, gulp_debug_1.default)());
-    streamer
-        .pipe(through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
+        streamer.pipe((0, gulp_debug_1.default)('post-copy'));
+    streamer.pipe(processPost(config)).pipe(gulp_1.default.dest(generatedPostDir));
+    return streamer.once('end', function () {
+        typeof callback == 'function' && callback();
+    });
+}
+exports.copyAllPosts = copyAllPosts;
+function processPost(config) {
+    var _this = this;
+    var logname = processPost.name;
+    return through2_1.default.obj(function (file, _enc, callback) { return __awaiter(_this, void 0, void 0, function () {
         var contents, parse, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build;
         var _a, _b, _c, _d, _e;
         return __generator(this, function (_f) {
             switch (_f.label) {
                 case 0:
                     if (file.isNull()) {
-                        if (verbose)
-                            writeVerbose(file.path + ' is null');
+                        if (config.generator.verbose)
+                            logger_1.default.log(file.path + ' is null');
                         return [2, callback()];
                     }
                     if (file.isStream()) {
-                        if (verbose)
-                            writeVerbose(file.path + ' is stream');
+                        if (config.generator.verbose)
+                            logger_1.default.log(file.path + ' is stream');
                         return [2, callback()];
                     }
+                    if (!config) return [3, 3];
                     if (!(file.extname === '.md')) return [3, 2];
                     contents = ((_a = file.contents) === null || _a === void 0 ? void 0 : _a.toString()) || '';
                     if (contents.trim().length === 0)
-                        return [2, callback()];
+                        return [2];
                     return [4, (0, hexo_post_parser_1.parsePost)(contents, {
                             shortcodes: {
                                 youtube: true,
@@ -221,17 +225,15 @@ function copyAllPosts() {
                             }
                         }
                         console.log(parse.metadata.permalink);
-                        if (verbose) {
+                        if (config.verbose) {
                             fm.writefile((0, upath_1.join)(process.cwd(), 'tmp/dump.json'), parse);
                         }
                         build = (0, hexo_post_parser_1.buildPost)(parse);
                         if (typeof build === 'string') {
                             file.contents = Buffer.from(build);
-                            return [2, callback(null, file)];
                         }
                         else {
                             logger_1.default.log(logname, 'cannot rebuild', (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(process.cwd()), ''));
-                            return [2, callback()];
                         }
                     }
                     else {
@@ -240,16 +242,14 @@ function copyAllPosts() {
                     _f.label = 2;
                 case 2:
                     callback(null, file);
-                    return [2];
+                    return [3, 4];
+                case 3:
+                    callback();
+                    _f.label = 4;
+                case 4: return [2];
             }
         });
-    }); }))
-        .pipe(gulp_1.default.dest(generatedPostDir));
-    return streamer;
+    }); });
 }
-exports.copyAllPosts = copyAllPosts;
+exports.processPost = processPost;
 gulp_1.default.task('post:copy', copyAllPosts);
-gulp_1.default.task('copy-all-post', gulp_1.default.series('post:copy'));
-gulp_1.default.task('copy-all-posts', gulp_1.default.series('post:copy'));
-gulp_1.default.task('copy-posts', gulp_1.default.series('post:copy'));
-gulp_1.default.task('copy-post', gulp_1.default.series('post:copy'));
