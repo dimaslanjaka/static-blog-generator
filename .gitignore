@@ -10,6 +10,9 @@ temp
 /src/_config.auto*.json
 /docs
 
+# disable dist
+/dist
+
 # branch v2
 /build
 /public
