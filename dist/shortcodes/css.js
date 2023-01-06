@@ -20,6 +20,7 @@ const logname = chalk_1.default.blue('[css]');
  * @returns
  */
 function shortcodeCss(file, str) {
+    const config = (0, _config_1.getConfig)();
     const log = [logname];
     const regex = /<!--\s+?css\s+?(.+?)\s+?-->/gim;
     const execs = Array.from(str.matchAll(regex));
@@ -35,7 +36,7 @@ function shortcodeCss(file, str) {
             if (Object.prototype.hasOwnProperty.call(dirs, key)) {
                 const filepath = dirs[key];
                 if ((0, fs_1.existsSync)(filepath)) {
-                    if (_config_1.verbose)
+                    if (verbose)
                         console.log(...log, chalk_1.default.greenBright(`[${key}]`), file);
                     const read = (0, fs_1.readFileSync)(filepath, 'utf-8');
                     str = str.replace(htmlTag, () => `<style>${read}</style>`);
