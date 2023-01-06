@@ -1,13 +1,13 @@
 import Hexo from 'hexo';
-import { join } from 'upath';
+import path, { join } from 'upath';
 import { Nullable } from './globals';
 import * as cleaner from './gulp.clean';
 import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
-import { taskSeo } from './gulp.seo';
+import gulp, { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
-import * as pcopy from './post/copy';
+import { processPost } from './post/copy';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
 
@@ -21,12 +21,14 @@ class SBG {
    * Static blog generator
    * @param cwd base folder
    */
-  constructor(cwd: Nullable<string>) {
+  constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = process.cwd();
+    if (!options) options = {};
     this.cwd = cwd;
-    this.config = setConfig({ cwd });
+    options.cwd = cwd;
+    this.config = setConfig(options);
     SBG.setApi(this);
-    scheduler.register();
+    new scheduler();
   }
 
   static currentApI: SBG;
@@ -54,9 +56,23 @@ class SBG {
    * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
-  copy = async function () {
-    return pcopy.copyAllPosts();
-  };
+  copy() {
+    return new Promise((resolve) => {
+      const sourcePostDir = join(process.cwd(), this.config.post_dir);
+      const generatedPostDir = join(process.cwd(), this.config.source_dir, '_posts');
+      if (this.config.generator.verbose) {
+        console.log('copy posts from', sourcePostDir, 'to', generatedPostDir);
+      }
+      const streamer = gulp.src(['**/*.*', '*.*'], {
+        cwd: path.toUnix(sourcePostDir),
+        ignore: this.config.excludes,
+        dot: true
+      });
+      streamer.pipe(processPost(this.config));
+      streamer.pipe(gulp.dest(generatedPostDir));
+      streamer.once('end', () => resolve);
+    });
+  }
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
