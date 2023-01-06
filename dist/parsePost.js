@@ -97,7 +97,7 @@ function parsePost(target, options = {}) {
             fix: false
         };
         options = Object.assign(default_options, options);
-        const siteConfig = (0, _config_1.getConfig)();
+        const siteConfig = options.config ? (0, _config_1.setConfig)(options.config) : (0, _config_1.getConfig)();
         if (!options.sourceFile && (0, fs_extra_1.existsSync)(target))
             options.sourceFile = target;
         const homepage = siteConfig.url.endsWith('/')
