@@ -32,7 +32,7 @@ export async function chain(
       if (instance.opt?.before) {
         instance.opt.before();
       }
-      const obj = instance.callback();
+      const obj = instance.callback.call && instance.callback.call(null);
 
       if (isReadableStream(obj) && obj instanceof stream.Stream) {
         // Logger.log('readable stream');
@@ -57,7 +57,9 @@ export async function chain(
           }
         });
       } else {
-        Logger.log(logname, instance.callback.name, 'cannot determine method instances');
+        if (typeof instance.callback !== 'function') {
+          Logger.log(logname, 'cannot determine method instances');
+        }
       }
 
       resolve.bind(this)(chain.bind(this));
