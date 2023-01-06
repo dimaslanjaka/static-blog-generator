@@ -20,6 +20,8 @@ const logname = chalk_1.default.blue('[include]');
  * @returns
  */
 function parseShortCodeInclude(sourceFile, bodyString) {
+    const config = (0, _config_1.getConfig)();
+    const { verbose } = config.generator;
     const regex = /<!--\s+?include\s+?(.+?)\s+?-->/gim;
     let modified = false;
     let execs = Array.from(bodyString.matchAll(regex));
@@ -38,7 +40,7 @@ function parseShortCodeInclude(sourceFile, bodyString) {
                 if (Object.prototype.hasOwnProperty.call(dirs, key)) {
                     const filepath = dirs[key];
                     if ((0, fs_1.existsSync)(filepath)) {
-                        if (_config_1.verbose) {
+                        if (verbose) {
                             console.log(logname + chalk_1.default.greenBright(`[${key}]`), sourceFile);
                         }
                         const read = (0, fs_1.readFileSync)(filepath).toString();

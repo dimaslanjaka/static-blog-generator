@@ -17,6 +17,7 @@ const logname = color_1.default['Blizzard Blue']('[replaceMD2HTML]');
  */
 function replaceMD2HTML(content) {
     const config = (0, _config_1.getConfig)();
+    const { verbose } = config.generator;
     if (content.match(regex)) {
         content = content.replace(regex, function (wholeMatch, _index1, index2, index3) {
             // act here or after the loop...
