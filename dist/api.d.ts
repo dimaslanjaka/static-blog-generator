@@ -6,13 +6,13 @@ declare class SBG {
     config: import("./gulp.config").ProjConf;
     setConfig: typeof setConfig;
     getConfig: typeof getConfig;
-    constructor(cwd: Nullable<string>);
+    constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]);
     static currentApI: SBG;
     static setApi(api: SBG): void;
     static getApi(): SBG;
     standalone: () => NodeJS.ReadWriteStream;
     seo: () => NodeJS.ReadWriteStream;
-    copy: () => Promise<any>;
+    copy(): Promise<unknown>;
     safelink: () => any;
     generate(): Promise<void>;
     deploy(): Promise<void>;

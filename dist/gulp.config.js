@@ -38,15 +38,16 @@ var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
 var defaults_1 = require("./defaults");
 var fm_1 = require("./utils/fm");
+var object_1 = require("./utils/object");
 var settledConfig = (0, defaults_1.getDefaultConfig)();
 function setConfig(obj) {
     settledConfig = (0, deepmerge_ts_1.deepmerge)({}, settledConfig, obj);
-    return getConfig(false);
+    return getConfig();
 }
 exports.setConfig = setConfig;
-function getConfig(get) {
-    if (get === void 0) { get = true; }
-    if (get) {
+var fetched = false;
+function getConfig() {
+    if (!fetched) {
         var fileYML = '';
         if (settledConfig && 'cwd' in settledConfig) {
             fileYML = (0, path_1.join)(settledConfig.cwd, '_config.yml');
@@ -60,11 +61,12 @@ function getConfig(get) {
             var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
             settledConfig = Object.assign({}, configYML, settledConfig);
             (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+            fetched = true;
         }
         else {
-            console.log(fileYML);
             throw new Error(fileYML + ' not found');
         }
+        settledConfig = (0, object_1.orderKeys)(settledConfig);
     }
     settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
     return settledConfig;
