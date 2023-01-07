@@ -9,11 +9,13 @@ import Logger from '../utils/logger';
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import { buildPost, parsePost } from 'hexo-post-parser';
-import { Application } from '..';
+import { Application, gulpCached } from '..';
 import debug from '../utils/debug';
 //
 
 const log = debug('post');
+const logerr = log.extend('error');
+const logLabel = log.extend('label');
 
 /**
  * Copy single post from src-posts folder to source/_posts
@@ -56,7 +58,7 @@ export function copyAllPosts() {
         dot: true,
         noext: true
       })
-      //.pipe(gulpLog('before'))
+      .pipe(gulpCached({ name: 'post-copy' }))
       .pipe(pipeProcessPost(config))
       //.pipe(gulpLog('after'))
       .pipe(gulp.dest(generatedPostDir))
@@ -80,11 +82,11 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
         return callback();
       }
       if (file.isNull()) {
-        log.extend('error')(file.path + ' is null');
+        logerr(file.path + ' is null');
         return callback();
       }
       if (file.isStream()) {
-        log.extend('error')(file.path + ' is stream');
+        logerr(file.path + ' is stream');
         return callback();
       }
 
@@ -121,7 +123,7 @@ export async function processSinglePost(file: string) {
   log('processing', dfile);
   // drop empty body
   if (contents.trim().length === 0) {
-    log.extend('error')('content empty', dfile);
+    logerr('content empty', dfile);
     return;
   }
 
@@ -160,15 +162,14 @@ export async function processSinglePost(file: string) {
             const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
             if (index !== -1) {
-              const l = log.extend('label-assign');
-              l(
+              logLabel(
                 groupLabel,
                 parse.metadata[groupLabel],
                 ansiColors.yellowBright('+'),
                 config[groupLabel].assign[oldLabel]
               );
               parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(config[groupLabel].assign[oldLabel]);
-              l.extend('result')(groupLabel, parse.metadata[groupLabel]);
+              logLabel.extend('result')(groupLabel, parse.metadata[groupLabel]);
             }
           }
         }
@@ -205,5 +206,7 @@ export async function processSinglePost(file: string) {
     if (typeof build === 'string') {
       return build;
     }
+  } else {
+    logerr('cannot parse', file);
   }
 }
