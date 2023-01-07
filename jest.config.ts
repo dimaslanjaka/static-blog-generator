@@ -47,7 +47,18 @@ const config: Config = {
   coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: ['json', 'text', 'lcov', 'clover']
+  coverageReporters: ['json', 'text', 'lcov', 'clover'],
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: './coverage/html-report',
+        filename: 'report.html',
+        openReport: false
+      }
+    ]
+  ]
 };
 
 export default config;
