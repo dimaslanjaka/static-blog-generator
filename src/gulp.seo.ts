@@ -53,5 +53,3 @@ gulp.task('seo', function () {
   const { deployDir } = deployConfig();
   return taskSeo(null, deployDir);
 });
-
-export default gulp;
