@@ -1,5 +1,5 @@
 import Bluebird from 'bluebird';
-import { existsSync, readFileSync } from 'fs-extra';
+import { readFileSync } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { default as hexo } from 'hexo';
@@ -17,8 +17,12 @@ import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
 import { commonIgnore, getConfig, setConfig } from './_config';
 
+/*
+// read existing sitemap.txt
 const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
 let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
+*/
+let sitemaps = [] as string[];
 const crawled = new Set<string>();
 const env = envNunjucks();
 
@@ -98,6 +102,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
 function writeSitemap(callback?: (...args: any[]) => any) {
   let cb = noop;
   if (callback) cb = () => callback(sitemaps);
+  const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
   writefile(sitemapTXT, array_remove_empty(sitemaps).join(EOL));
   cb.apply(this);
 }
