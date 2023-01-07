@@ -7,7 +7,7 @@ import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
-import { copyAllPosts } from './post/copy';
+import * as pcopy from './post/copy';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
 
@@ -58,7 +58,7 @@ class SBG {
    */
   copy() {
     return new Promise((resolve) => {
-      copyAllPosts().once('end', () => resolve);
+      pcopy.copyAllPosts().once('end', () => resolve(null));
     });
   }
 
