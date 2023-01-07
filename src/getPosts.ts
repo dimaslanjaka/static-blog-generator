@@ -1,7 +1,7 @@
 import Hexo from 'hexo';
 import { join, toUnix } from 'upath';
-import { getConfig } from './gulp.config';
 import noop from './utils/noop';
+import { getConfig } from './_config';
 
 /**
  * get all posts (hexo)

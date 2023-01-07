@@ -5,8 +5,8 @@ import hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { join } from 'upath';
-import { commonIgnore, getConfig } from './gulp.config';
 import envNunjucks from './utils/nunjucks-env';
+import { commonIgnore, getConfig } from './_config';
 
 const env = envNunjucks();
 

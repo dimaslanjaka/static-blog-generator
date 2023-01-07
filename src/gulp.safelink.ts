@@ -6,9 +6,9 @@ import sf, { SafelinkOptions } from 'safelinkify';
 import through2 from 'through2';
 import { SrcOptions } from 'vinyl-fs';
 import gulpCached from './gulp-utils/gulp.cache';
-import { getConfig } from './gulp.config';
 import { createWriteStream } from './utils/fm';
 import Logger from './utils/logger';
+import { getConfig } from './_config';
 
 /**
  * Process Safelink on Deploy Dir

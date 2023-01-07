@@ -6,11 +6,11 @@ import hexoLib from 'hexo';
 import { EOL } from 'os';
 import { join } from 'upath';
 import { inspect } from 'util';
-import { getConfig } from './gulp.config';
 import debug from './utils/debug';
 import { writefile } from './utils/fm';
 import Logger from './utils/logger';
 import noop from './utils/noop';
+import { getConfig } from './_config';
 
 /**
  * Clean Project Databases
