@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { Nullable } from './globals';
@@ -56,9 +57,12 @@ class SBG {
    * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
-  copy(): Promise<void> {
-    return new Promise((resolve) => {
-      pcopy.copyAllPosts().once('end', () => resolve());
+  copy() {
+    return new Bluebird((resolve: () => any, reject: (err: Error) => any) => {
+      pcopy
+        .copyAllPosts()
+        .once('end', () => resolve())
+        .once('error', reject);
     });
   }
 
