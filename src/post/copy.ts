@@ -1,4 +1,5 @@
 import ansiColors from 'ansi-colors';
+import fs from 'fs';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
@@ -9,7 +10,6 @@ import Logger from '../utils/logger';
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import { buildPost, parsePost } from 'hexo-post-parser';
 import { Application } from '..';
-import { gulpLog } from '../gulp-utils/gulp.debug';
 import debug from '../utils/debug';
 //
 
@@ -46,17 +46,19 @@ export function copyAllPosts() {
   const sourcePostDir = join(process.cwd(), config.post_dir);
   const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
   // console.log(excludes);
-  return gulp
-    .src(['**/*.*', '*.*', '**/*'], {
-      cwd: toUnix(sourcePostDir),
-      ignore: excludes,
-      dot: true,
-      noext: true
-    })
-    .pipe(gulpLog('before'))
-    .pipe(processPost(config))
-    .pipe(gulpLog('after'))
-    .pipe(gulp.dest(generatedPostDir));
+  return (
+    gulp
+      .src(['**/*.*', '*.*', '**/*'], {
+        cwd: toUnix(sourcePostDir),
+        ignore: excludes,
+        dot: true,
+        noext: true
+      })
+      //.pipe(gulpLog('before'))
+      .pipe(pipeProcessPost(config))
+      //.pipe(gulpLog('after'))
+      .pipe(gulp.dest(generatedPostDir))
+  );
 }
 
 /**
@@ -64,7 +66,7 @@ export function copyAllPosts() {
  * @param config
  * @returns
  */
-export function processPost(config: ReturnType<typeof getConfig>) {
+export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
   const logname = 'post:' + ansiColors.blueBright('processing');
   if (config.generator.verbose) {
     Logger.log(logname, 'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false')));
@@ -72,139 +74,137 @@ export function processPost(config: ReturnType<typeof getConfig>) {
 
   const log = debug('post');
 
-  return through2.obj(function (file, _enc, callback) {
-    const self = this;
-    const success = function (file: import('vinyl')) {
-      if (self.push) self.push(file);
-      callback();
-    };
-    const drop = function () {
-      callback();
-    };
-
-    if (file.isNull()) {
-      if (config.generator.verbose) Logger.log(file.path + ' is null');
-      return drop();
-    }
-    if (file.isStream()) {
-      if (config.generator.verbose) Logger.log(file.path + ' is stream');
-      return drop();
-    }
-
-    if (config) {
-      // process markdown files
-      if (file.extname === '.md') {
-        if (config.generator.verbose) {
-          Logger.log(logname, ansiColors.greenBright(toUnix(file.path.replace(process.cwd(), ''))));
-        }
-        const contents = file.contents?.toString() || '';
-
-        // drop empty body
-        if (contents.trim().length === 0) {
-          if (config.generator.verbose) {
-            Logger.log('content empty', ansiColors.redBright(toUnix(file.path.replace(process.cwd(), ''))));
-          }
-          return drop();
-        }
-
-        parsePost(file.path, {
-          shortcodes: {
-            youtube: true,
-            css: true,
-            include: true,
-            link: true,
-            now: true,
-            script: true,
-            text: true,
-            codeblock: true
-          },
-          cache: false,
-          config: <any>config,
-          formatDate: true,
-          fix: true,
-          sourceFile: file.path
-        })
-          .then(function (parse) {
-            if (parse && parse.metadata) {
-              // process tags and categories
-              const array = ['tags', 'categories'];
-              for (let i = 0; i < array.length; i++) {
-                const groupLabel = array[i];
-                if (parse.metadata[groupLabel]) {
-                  // label assign
-                  if (config[groupLabel]?.assign) {
-                    for (const oldLabel in config[groupLabel].assign) {
-                      const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
-
-                      if (index !== -1) {
-                        const l = log.extend('label-assign');
-                        l(
-                          groupLabel,
-                          parse.metadata[groupLabel],
-                          ansiColors.yellowBright('+'),
-                          config[groupLabel].assign[oldLabel]
-                        );
-                        parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(
-                          config[groupLabel].assign[oldLabel]
-                        );
-                        l.extend('result')(groupLabel, parse.metadata[groupLabel]);
-                      }
-                    }
-                  }
-                  // label mapper
-                  if (config[groupLabel]?.mapper) {
-                    for (const oldLabel in config[groupLabel].mapper) {
-                      const index = parse.metadata[groupLabel].findIndex((str: string) => str === oldLabel);
-
-                      if (index !== -1) {
-                        parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
-                        if (config.generator.verbose) {
-                          Logger.log(
-                            logname,
-                            ansiColors.redBright(parse.metadata[groupLabel][index]),
-                            '~>',
-                            ansiColors.greenBright(config[groupLabel].mapper[oldLabel])
-                          );
-                        }
-                      }
-                    }
-                  }
-                  // label lowercase
-                  if (config.tags?.lowercase) {
-                    parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
-                  }
-                } else if (config.generator.verbose) {
-                  Logger.log(logname, groupLabel, 'not found');
-                }
-
-                if (config.generator.verbose) {
-                  Logger.log(logname, groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
-                }
-              }
-
-              const build = buildPost(parse);
-              if (typeof build === 'string') {
-                file.contents = Buffer.from(build);
-                if (config.generator.verbose) {
-                  Logger.log(logname, 'success', toUnix(file.path).replace(toUnix(process.cwd()), ''));
-                }
-                success(file);
-              } else {
-                Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
-              }
-            } else if (config.generator.verbose) {
-              Logger.log(logname, 'cannot parse', toUnix(file.path).replace(toUnix(process.cwd()), ''));
-            }
-          })
-          .catch((e) => Logger.log(e));
-      } else {
-        success(file);
+  return through2.obj(
+    async function (file, _enc, callback) {
+      if (file.isDirectory()) {
+        return callback();
       }
-    } else {
-      Logger.log('options not configured');
-      drop();
+      if (file.isNull()) {
+        log.extend('error')(file.path + ' is null');
+        return callback();
+      }
+      if (file.isStream()) {
+        log.extend('error')(file.path + ' is stream');
+        return callback();
+      }
+
+      if (config) {
+        // process markdown files
+        if (file.extname === '.md') {
+          const compile = await processSinglePost(file.path);
+          if (compile) {
+            file.contents = Buffer.from(compile);
+            this.push(file);
+            callback();
+          }
+        } else {
+          this.push(file);
+          callback();
+        }
+      } else {
+        Logger.log('options not configured');
+        callback();
+      }
+    },
+    function (cb) {
+      this.emit('end', 2);
+      cb();
     }
-  });
+  );
+}
+
+export async function processSinglePost(file: string) {
+  const contents = fs.readFileSync(file, 'utf-8');
+  const log = debug('post');
+  const config = getConfig();
+  // drop empty body
+  if (contents.trim().length === 0) {
+    // debug file
+    const dfile = ansiColors.redBright(toUnix(file.replace(process.cwd(), '')));
+    log.extend('error')('content empty', dfile);
+    return;
+  }
+
+  const parse = await parsePost(file, {
+    shortcodes: {
+      youtube: true,
+      css: true,
+      include: true,
+      link: true,
+      now: true,
+      script: true,
+      text: true,
+      codeblock: true
+    },
+    cache: false,
+    config: <any>config,
+    formatDate: true,
+    fix: true,
+    sourceFile: file
+  }).catch((e) => Logger.log(e));
+
+  if (parse && parse.metadata) {
+    // fix uuid and id
+    if (parse.metadata.uuid) {
+      if (!parse.metadata.id) parse.metadata.id = parse.metadata.uuid;
+      delete parse.metadata.uuid;
+    }
+    // process tags and categories
+    const array = ['tags', 'categories'];
+    for (let i = 0; i < array.length; i++) {
+      const groupLabel = array[i];
+      if (parse.metadata[groupLabel]) {
+        // label assign
+        if (config[groupLabel]?.assign) {
+          for (const oldLabel in config[groupLabel].assign) {
+            const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+
+            if (index !== -1) {
+              const l = log.extend('label-assign');
+              l(
+                groupLabel,
+                parse.metadata[groupLabel],
+                ansiColors.yellowBright('+'),
+                config[groupLabel].assign[oldLabel]
+              );
+              parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(config[groupLabel].assign[oldLabel]);
+              l.extend('result')(groupLabel, parse.metadata[groupLabel]);
+            }
+          }
+        }
+        // label mapper
+        if (config[groupLabel]?.mapper) {
+          for (const oldLabel in config[groupLabel].mapper) {
+            const index = parse.metadata[groupLabel].findIndex((str: string) => str === oldLabel);
+
+            if (index !== -1) {
+              parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
+              if (config.generator.verbose) {
+                Logger.log(
+                  ansiColors.redBright(parse.metadata[groupLabel][index]),
+                  '~>',
+                  ansiColors.greenBright(config[groupLabel].mapper[oldLabel])
+                );
+              }
+            }
+          }
+        }
+        // label lowercase
+        if (config.tags?.lowercase) {
+          parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+        }
+      } else if (config.generator.verbose) {
+        Logger.log(groupLabel, 'not found');
+      }
+
+      Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
+    }
+
+    const build = buildPost(parse);
+    if (typeof build === 'string') {
+      return build;
+    }
+  }
 }
 
 gulp.task('post:copy', copyAllPosts);
