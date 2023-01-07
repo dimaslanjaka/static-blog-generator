@@ -194,7 +194,8 @@ export async function processSinglePost(file: string) {
           }
           // label lowercase
           if (config.tags?.lowercase) {
-            parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+            parse.metadata[groupLabel] =
+              (parse.metadata[groupLabel] as string[])?.map((str) => str.toLowerCase()) || [];
             log.extend('label').extend('lowercase')(groupLabel, parse.metadata[groupLabel]);
           }
         } else if (config.generator.verbose) {
@@ -209,7 +210,7 @@ export async function processSinglePost(file: string) {
         return build;
       }
     } else {
-      logerr('cannot parse', file);
+      logerr(String(parse), file);
     }
   } catch (e) {
     Logger.log(e);
