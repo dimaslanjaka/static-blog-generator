@@ -3,7 +3,7 @@ import 'nodejs-package-types';
 import { EOL } from 'os';
 import slugify from 'slugify';
 import { basename, join, toUnix } from 'upath';
-import { getConfig } from '../gulp.config';
+import { getConfig } from '../_config';
 import { writefile } from './fm';
 import { areWeTestingWithJest } from './jest';
 

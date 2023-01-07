@@ -10,8 +10,8 @@ import debug from '../utils/debug';
 //
 
 import { extname, join, toUnix } from 'upath';
-import { getConfig } from '../gulp.config';
 import Logger from '../utils/logger';
+import { getConfig } from '../_config';
 
 const log = debug('post');
 const logerr = log.extend('error');

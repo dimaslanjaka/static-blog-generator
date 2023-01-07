@@ -7,9 +7,9 @@ import gulp, { TaskFunctionCallback } from 'gulp';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
 import './gulp.clean';
-import { deployConfig, getConfig } from './gulp.config';
 import './gulp.safelink';
 import Logger from './utils/logger';
+import { deployConfig, getConfig } from './_config';
 
 /**
  * copy generated files (_config_yml.public_dir) to deploy dir (run after generated)

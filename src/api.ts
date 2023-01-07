@@ -4,7 +4,6 @@ import Hexo from 'hexo';
 import { join } from 'upath';
 import { Nullable } from './globals';
 import * as cleaner from './gulp.clean';
-import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
@@ -12,6 +11,7 @@ import standaloneRunner from './gulp.standalone';
 import * as pcopy from './post/copy';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
+import { getConfig, setConfig } from './_config';
 
 class SBG {
   cwd: string;
