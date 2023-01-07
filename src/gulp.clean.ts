@@ -23,11 +23,9 @@ export async function cleanDb() {
     throw new Error('config.source_dir must be configured');
   }
 
-  const postDir = join(config.cwd, config.source_dir, '_posts');
-  const publicDir = join(config.cwd, config.public_dir);
-  const tmpDir = join(config.cwd, 'tmp');
+  // const publicDir = join(config.cwd, config.public_dir);
 
-  const dirs = [tmpDir, postDir, publicDir];
+  const dirs = [join(config.cwd, config.source_dir, '_posts'), join(config.cwd, 'tmp/cache')];
   for (let i = 0; i < dirs.length; i++) {
     const dir = dirs[i];
     try {
