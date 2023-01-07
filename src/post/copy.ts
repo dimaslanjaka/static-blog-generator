@@ -8,6 +8,7 @@ import Logger from '../utils/logger';
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import { buildPost, parsePost } from 'hexo-post-parser';
+import { gulpLog } from '../gulp-utils/gulp.debug';
 import debug from '../utils/debug';
 //
 
@@ -18,9 +19,9 @@ import debug from '../utils/debug';
  */
 export function copySinglePost(identifier: string, callback?: (...args: any[]) => any) {
   identifier = identifier.replace(extname(identifier), '');
-
-  const sourcePostDir = join(process.cwd(), getConfig().post_dir);
-  const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
+  const config = getConfig();
+  const sourcePostDir = join(process.cwd(), config.post_dir);
+  const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
   ///const fileList = [];
   gulp
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
@@ -40,8 +41,8 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
 export function copyAllPosts() {
   const config = getConfig();
   const { excludes } = config;
-  const sourcePostDir = join(process.cwd(), getConfig().post_dir);
-  const generatedPostDir = join(process.cwd(), getConfig().source_dir, '_posts');
+  const sourcePostDir = join(process.cwd(), config.post_dir);
+  const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
   return gulp
     .src(['**/*.*', '*.*', '**/*'], {
       cwd: toUnix(sourcePostDir),
@@ -49,6 +50,7 @@ export function copyAllPosts() {
       dot: true,
       noext: true
     })
+    .pipe(gulpLog())
     .pipe(processPost(config))
     .pipe(gulp.dest(generatedPostDir));
 }
