@@ -206,5 +206,3 @@ export async function processSinglePost(file: string) {
     }
   }
 }
-
-gulp.task('post:copy', copyAllPosts);
