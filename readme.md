@@ -23,6 +23,11 @@ Configuration setup for `_config.yml` that required for this package (you can ch
 public_dir: "public"
 source_dir: "source"
 post_dir: "src-posts"
+generator:
+  # enable global cache
+  cache: true
+  # transform shortcodes result to amp html
+  amp: false
 ```
 
 ## Copy source posts to hexo source dir
