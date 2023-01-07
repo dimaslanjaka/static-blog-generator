@@ -1,4 +1,3 @@
-import { deepmerge } from 'deepmerge-ts';
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
 import HexoConfig from 'hexo/HexoConfig';
@@ -75,7 +74,7 @@ let settledConfig = getDefaultConfig() as Record<string, any>;
  * @param obj
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
-  settledConfig = deepmerge({}, settledConfig, obj);
+  settledConfig = Object.assign({}, settledConfig, obj);
   return getConfig();
 }
 
