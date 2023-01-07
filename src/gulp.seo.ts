@@ -2,8 +2,8 @@ import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import gulpCached from './gulp-utils/gulp.cache';
-import { commonIgnore, deployConfig, getConfig } from './gulp.config';
 import Logger from './utils/logger';
+import { commonIgnore, deployConfig, getConfig } from './_config';
 
 /**
  * Auto seo runner

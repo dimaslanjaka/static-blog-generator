@@ -3,9 +3,9 @@ import { readFileSync } from 'fs';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
-import { getConfig } from '../gulp.config';
 import * as fm from '../utils/fm';
 import Logger from '../utils/logger';
+import { getConfig } from '../_config';
 
 const processingUpdate = {};
 
