@@ -2,7 +2,6 @@ import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
 import { existsSync, readdir, rm, RmOptions } from 'fs-extra';
 import gulp from 'gulp';
-import hexoLib from 'hexo';
 import { EOL } from 'os';
 import { join } from 'upath';
 import { inspect } from 'util';
@@ -25,7 +24,12 @@ export async function cleanDb() {
 
   // const publicDir = join(config.cwd, config.public_dir);
 
-  const dirs = [join(config.cwd, config.source_dir, '_posts'), join(config.cwd, 'tmp/cache')];
+  const dirs = [
+    join(config.cwd, config.source_dir, '_posts'),
+    join(config.cwd, 'tmp/cache'),
+    join(config.cwd, 'tmp/dump'),
+    join(config.cwd, 'tmp/logs')
+  ];
   for (let i = 0; i < dirs.length; i++) {
     const dir = dirs[i];
     try {
@@ -38,9 +42,9 @@ export async function cleanDb() {
     }
   }
 
-  const hexo = new hexoLib(config.base_dir);
+  /*const hexo = new hexoLib(config.cwd);
   await hexo.init().catch(noop);
-  await hexo.call('clean').catch(noop);
+  await hexo.call('clean').catch(noop);*/
 
   return undefined;
 }
