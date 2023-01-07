@@ -107,11 +107,11 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
         Logger.log('options not configured');
         callback();
       }
-    },
-    function (cb) {
+    }
+    /*function (cb) {
       this.emit('end', 2);
       cb();
-    }
+    }*/
   );
 }
 
