@@ -24,19 +24,8 @@ function tsc(done) {
   };
   if (process.env.GITHUB_WORKFLOWS) {
     console.log('running in github workflows');
-    // install from remote on github workflows
-    spawnAsync(
-      'npm',
-      [
-        'i',
-        'https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz',
-        'https://github.com/dimaslanjaka/git-command-helper/raw/master/release/git-command-helper.tgz'
-      ],
-      { cwd: __dirname }
-    ).finally(doCompile);
-  } else {
-    doCompile();
   }
+  doCompile();
 }
 
 gulp.task('copy', copy);
