@@ -28,7 +28,8 @@ export async function cleanDb() {
     join(config.cwd, config.source_dir, '_posts'),
     join(config.cwd, 'tmp/cache'),
     join(config.cwd, 'tmp/dump'),
-    join(config.cwd, 'tmp/logs')
+    join(config.cwd, 'tmp/logs'),
+    join(config.cwd, 'db.json')
   ];
   for (let i = 0; i < dirs.length; i++) {
     const dir = dirs[i];
