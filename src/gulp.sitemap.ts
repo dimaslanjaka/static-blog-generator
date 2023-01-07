@@ -9,13 +9,13 @@ import nunjucks from 'nunjucks';
 import { EOL } from 'os';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { join } from 'upath';
-import { commonIgnore, getConfig, setConfig } from './gulp.config';
 import { yoastSeo } from './sitemap';
 import { array_remove_empty, array_unique } from './utils/array';
 import { writefile } from './utils/fm';
 import Logger from './utils/logger';
 import noop from './utils/noop';
 import envNunjucks from './utils/nunjucks-env';
+import { commonIgnore, getConfig, setConfig } from './_config';
 
 const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
 let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
