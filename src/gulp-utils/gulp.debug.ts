@@ -39,7 +39,7 @@ export default function gulpDebug(filename?: string) {
  */
 export function gulpLog() {
   return through2.obj(function (file, _enc, cb) {
-    Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
+    Logger.log(ansiColors.yellowBright('gulp-log'), toUnix(file.path.replace(process.cwd(), '')));
     if (typeof this.push === 'function') this.push(file);
     cb(null, file);
   });
