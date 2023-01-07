@@ -65,6 +65,7 @@
     "through2": "^4.0.2",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
+    "vinyl": "^3.0.0",
     "xmlbuilder2": "^3.0.2",
     "yaml": "^2.2.1"
   },
