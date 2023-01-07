@@ -127,86 +127,90 @@ export async function processSinglePost(file: string) {
     return;
   }
 
-  const parse = await parsePost(file, {
-    shortcodes: {
-      youtube: true,
-      css: true,
-      include: true,
-      link: true,
-      now: true,
-      script: true,
-      text: true,
-      codeblock: true
-    },
-    cache: false,
-    config: <any>config,
-    formatDate: true,
-    fix: true,
-    sourceFile: file
-  }).catch((e) => Logger.log(e));
+  try {
+    const parse = await parsePost(file, {
+      shortcodes: {
+        youtube: true,
+        css: true,
+        include: true,
+        link: true,
+        now: true,
+        script: true,
+        text: true,
+        codeblock: true
+      },
+      cache: false,
+      config: <any>config,
+      formatDate: true,
+      fix: true,
+      sourceFile: file
+    }).catch((e) => Logger.log(e));
 
-  if (parse && parse.metadata) {
-    // fix uuid and id
-    if (parse.metadata.uuid) {
-      if (!parse.metadata.id) parse.metadata.id = parse.metadata.uuid;
-      delete parse.metadata.uuid;
-    }
-    // process tags and categories
-    const array = ['tags', 'categories'];
-    for (let i = 0; i < array.length; i++) {
-      const groupLabel = array[i];
-      if (parse.metadata[groupLabel]) {
-        // label assign
-        if (config[groupLabel]?.assign) {
-          for (const oldLabel in config[groupLabel].assign) {
-            const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
+    if (parse && parse.metadata) {
+      // fix uuid and id
+      if (parse.metadata.uuid) {
+        if (!parse.metadata.id) parse.metadata.id = parse.metadata.uuid;
+        delete parse.metadata.uuid;
+      }
+      // process tags and categories
+      const array = ['tags', 'categories'];
+      for (let i = 0; i < array.length; i++) {
+        const groupLabel = array[i];
+        if (parse.metadata[groupLabel]) {
+          // label assign
+          if (config[groupLabel]?.assign) {
+            for (const oldLabel in config[groupLabel].assign) {
+              const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
-            if (index !== -1) {
-              logLabel(
-                groupLabel,
-                parse.metadata[groupLabel],
-                ansiColors.yellowBright('+'),
-                config[groupLabel].assign[oldLabel]
-              );
-              parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(config[groupLabel].assign[oldLabel]);
-              logLabel.extend('result')(groupLabel, parse.metadata[groupLabel]);
-            }
-          }
-        }
-        // label mapper
-        if (config[groupLabel]?.mapper) {
-          for (const oldLabel in config[groupLabel].mapper) {
-            const index = parse.metadata[groupLabel].findIndex((str: string) => str === oldLabel);
-
-            if (index !== -1) {
-              parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
-              if (config.generator.verbose) {
-                Logger.log(
-                  ansiColors.redBright(parse.metadata[groupLabel][index]),
-                  '~>',
-                  ansiColors.greenBright(config[groupLabel].mapper[oldLabel])
+              if (index !== -1) {
+                logLabel(
+                  groupLabel,
+                  parse.metadata[groupLabel],
+                  ansiColors.yellowBright('+'),
+                  config[groupLabel].assign[oldLabel]
                 );
+                parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(config[groupLabel].assign[oldLabel]);
+                logLabel.extend('result')(groupLabel, parse.metadata[groupLabel]);
               }
             }
           }
+          // label mapper
+          if (config[groupLabel]?.mapper) {
+            for (const oldLabel in config[groupLabel].mapper) {
+              const index = parse.metadata[groupLabel].findIndex((str: string) => str === oldLabel);
+
+              if (index !== -1) {
+                parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
+                if (config.generator.verbose) {
+                  Logger.log(
+                    ansiColors.redBright(parse.metadata[groupLabel][index]),
+                    '~>',
+                    ansiColors.greenBright(config[groupLabel].mapper[oldLabel])
+                  );
+                }
+              }
+            }
+          }
+          // label lowercase
+          if (config.tags?.lowercase) {
+            parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+            log.extend('label').extend('lowercase')(groupLabel, parse.metadata[groupLabel]);
+          }
+        } else if (config.generator.verbose) {
+          Logger.log(groupLabel, 'not found');
         }
-        // label lowercase
-        if (config.tags?.lowercase) {
-          parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
-          log.extend('label').extend('lowercase')(groupLabel, parse.metadata[groupLabel]);
-        }
-      } else if (config.generator.verbose) {
-        Logger.log(groupLabel, 'not found');
+
+        // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
       }
 
-      // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
+      const build = buildPost(parse);
+      if (typeof build === 'string') {
+        return build;
+      }
+    } else {
+      logerr('cannot parse', file);
     }
-
-    const build = buildPost(parse);
-    if (typeof build === 'string') {
-      return build;
-    }
-  } else {
-    logerr('cannot parse', file);
+  } catch (e) {
+    Logger.log(e);
   }
 }
