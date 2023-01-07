@@ -2,16 +2,16 @@ import ansiColors from 'ansi-colors';
 import fs from 'fs';
 import gulp from 'gulp';
 import through2 from 'through2';
-import { extname, join, toUnix } from 'upath';
-import { getConfig } from '../gulp.config';
-import Logger from '../utils/logger';
-
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import { buildPost, parsePost } from 'hexo-post-parser';
 import { Application, gulpCached } from '..';
 import debug from '../utils/debug';
 //
+
+import { extname, join, toUnix } from 'upath';
+import { getConfig } from '../gulp.config';
+import Logger from '../utils/logger';
 
 const log = debug('post');
 const logerr = log.extend('error');
