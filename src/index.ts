@@ -1,6 +1,3 @@
-import gulp from 'gulp';
-import SBG from './api';
-
 export { default as Application } from './api';
 export { default as gulpCached } from './gulp-utils/gulp.cache';
 export { default as gulpDebug } from './gulp-utils/gulp.debug';
@@ -16,7 +13,4 @@ export { array_random, array_remove_empty, array_unique } from './utils/array';
 export { noop } from './utils/noop';
 export { default as scheduler } from './utils/scheduler';
 
-gulp.task('post:copy', function (done) {
-  const api = new SBG(process.cwd());
-  api.copy().then(() => done());
-});
+//
