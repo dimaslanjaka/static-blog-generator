@@ -15,7 +15,7 @@ import { getConfig, setConfig } from './_config';
 
 class SBG {
   cwd: string;
-  config = getConfig();
+  config = {} as ReturnType<typeof getConfig>;
   setConfig = setConfig;
   getConfig = getConfig;
 
