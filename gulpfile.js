@@ -23,6 +23,7 @@ function tsc(done) {
     spawnAsync('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
   };
   if (process.env.GITHUB_WORKFLOWS) {
+    console.log('running in github workflows');
     // install from remote on github workflows
     spawnAsync(
       'npm',
