@@ -4,6 +4,7 @@ import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { writefile } from '../utils/fm';
 import { data_to_hash_sync } from '../utils/hash';
+import Logger from '../utils/logger';
 import scheduler from '../utils/scheduler';
 
 export default function gulpDebug(filename?: string) {
@@ -27,6 +28,18 @@ export default function gulpDebug(filename?: string) {
       console.log(logname, dumpfile)
     );
 
+    if (typeof this.push === 'function') this.push(file);
+    cb(null, file);
+  });
+}
+
+/**
+ * log all files
+ * @returns
+ */
+export function gulpLog() {
+  return through2.obj(function (file, _enc, cb) {
+    Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
     if (typeof this.push === 'function') this.push(file);
     cb(null, file);
   });
