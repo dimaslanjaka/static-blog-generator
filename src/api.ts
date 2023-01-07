@@ -26,7 +26,7 @@ class SBG {
     if (!options) options = {};
     this.cwd = cwd;
     options.cwd = cwd;
-    this.config = setConfig(options);
+    this.config = this.setConfig(options);
     SBG.setApi(this);
     new scheduler();
   }
