@@ -7,6 +7,7 @@ import './gulp.feed';
 import './gulp.safelink';
 import './gulp.seo';
 import './post/copy';
+import './gulp.standalone';
 import Logger from './utils/logger';
 
 // commit current project
