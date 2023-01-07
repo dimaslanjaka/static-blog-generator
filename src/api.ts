@@ -1,13 +1,13 @@
 import Hexo from 'hexo';
-import path, { join } from 'upath';
+import { join } from 'upath';
 import { Nullable } from './globals';
 import * as cleaner from './gulp.clean';
 import { getConfig, setConfig } from './gulp.config';
 import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
-import gulp, { taskSeo } from './gulp.seo';
+import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
-import { processPost } from './post/copy';
+import { copyAllPosts } from './post/copy';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
 
@@ -58,19 +58,7 @@ class SBG {
    */
   copy() {
     return new Promise((resolve) => {
-      const sourcePostDir = join(process.cwd(), this.config.post_dir);
-      const generatedPostDir = join(process.cwd(), this.config.source_dir, '_posts');
-      if (this.config.generator.verbose) {
-        console.log('copy posts from', sourcePostDir, 'to', generatedPostDir);
-      }
-      const streamer = gulp.src(['**/*.*', '*.*'], {
-        cwd: path.toUnix(sourcePostDir),
-        //ignore: this.config.excludes,
-        dot: true
-      });
-      streamer.pipe(processPost(this.config));
-      streamer.pipe(gulp.dest(generatedPostDir));
-      streamer.once('end', () => resolve);
+      copyAllPosts().once('end', () => resolve);
     });
   }
 
@@ -116,12 +104,12 @@ class SBG {
    */
   async clean(opt?: 'all' | 'archives' | 'database') {
     if (opt === 'all') {
-      await cleaner.cleanDb();
-      await cleaner.cleanOldArchives();
+      await cleaner.cleanDb().catch(console.log);
+      await cleaner.cleanOldArchives().catch(console.log);
     } else if (opt === 'archives') {
-      await cleaner.cleanOldArchives();
+      await cleaner.cleanOldArchives().catch(console.log);
     } else {
-      await cleaner.cleanDb();
+      await cleaner.cleanDb().catch(console.log);
     }
   }
 }
