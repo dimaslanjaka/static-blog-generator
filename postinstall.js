@@ -166,7 +166,7 @@ const coloredScriptName = colors.grey(scriptname);
               : ''
           );
           if (isLocalPkg && !isLocalTarballpkg) {
-            const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : ''].filter((str) => str.length > 0);
+            const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : '--save'].filter((str) => str.length > 0);
             const folderHash = await folder_to_hash('sha1', version, {
               ignored: [
                 '**/.*',
