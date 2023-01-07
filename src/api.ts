@@ -1,4 +1,5 @@
 import Bluebird from 'bluebird';
+import gulp from 'gulp';
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { Nullable } from './globals';
@@ -119,3 +120,8 @@ class SBG {
 }
 
 export default SBG;
+
+gulp.task('post:copy', function (done) {
+  const api = new SBG(process.cwd());
+  api.copy().then(() => done());
+});
