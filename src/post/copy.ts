@@ -13,6 +13,8 @@ import { Application } from '..';
 import debug from '../utils/debug';
 //
 
+const log = debug('post');
+
 /**
  * Copy single post from src-posts folder to source/_posts
  * @param identifier
@@ -72,8 +74,6 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
     Logger.log(logname, 'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false')));
   }
 
-  const log = debug('post');
-
   return through2.obj(
     async function (file, _enc, callback) {
       if (file.isDirectory()) {
@@ -115,12 +115,12 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
 
 export async function processSinglePost(file: string) {
   const contents = fs.readFileSync(file, 'utf-8');
-  const log = debug('post');
   const config = getConfig();
+  // debug file
+  const dfile = ansiColors.yellowBright(toUnix(file.replace(process.cwd(), '')));
+  log('processing', dfile);
   // drop empty body
   if (contents.trim().length === 0) {
-    // debug file
-    const dfile = ansiColors.redBright(toUnix(file.replace(process.cwd(), '')));
     log.extend('error')('content empty', dfile);
     return;
   }
@@ -192,12 +192,13 @@ export async function processSinglePost(file: string) {
         // label lowercase
         if (config.tags?.lowercase) {
           parse.metadata.tags = parse.metadata.tags?.map((str) => str.toLowerCase()) || [];
+          log.extend('label').extend('lowercase')(groupLabel, parse.metadata[groupLabel]);
         }
       } else if (config.generator.verbose) {
         Logger.log(groupLabel, 'not found');
       }
 
-      Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
+      // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
     }
 
     const build = buildPost(parse);
