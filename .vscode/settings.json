@@ -9,5 +9,12 @@
   "code-runner.saveAllFilesBeforeRun": true,
   "files.exclude": {
     "**/node_modules": true
-  }
+  },
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package",
+    "*.test.ts": "npm test -- $fileNameWithoutExt"
+  },
+  "code-runner.showRunIconInEditorTitleMenu": false,
+  "code-runner.showRunCommandInExplorerContextMenu": false,
+  "code-runner.respectShebang": true
 }
