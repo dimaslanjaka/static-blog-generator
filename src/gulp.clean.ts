@@ -7,6 +7,7 @@ import { EOL } from 'os';
 import { join } from 'upath';
 import { inspect } from 'util';
 import { getConfig } from './gulp.config';
+import debug from './utils/debug';
 import { writefile } from './utils/fm';
 import Logger from './utils/logger';
 import noop from './utils/noop';
@@ -15,7 +16,7 @@ import noop from './utils/noop';
  * Clean Project Databases
  */
 export async function cleanDb() {
-  const logname = 'clean-' + ansiColors.redBright('database');
+  const log = debug('clean');
   const config = getConfig();
   if (typeof config.source_dir !== 'string') {
     writefile(join(config.cwd, 'tmp/errors/clean.log'), inspect(config));
@@ -31,11 +32,11 @@ export async function cleanDb() {
     const dir = dirs[i];
     try {
       if (existsSync(dir)) {
-        Logger.log(logname, 'claning', dir);
+        log('claning', dir);
         await del(dir);
       }
     } catch {
-      Logger.log(logname, 'cannot delete', dir);
+      log('cannot delete', dir);
     }
   }
 
