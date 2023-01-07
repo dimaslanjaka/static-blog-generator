@@ -5,7 +5,7 @@ import through2 from 'through2';
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import { buildPost, parsePost } from 'hexo-post-parser';
-import { Application, gulpCached } from '..';
+import { gulpCached } from '..';
 import debug from '../utils/debug';
 //
 
@@ -44,12 +44,11 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
  * @returns
  */
 export function copyAllPosts() {
-  const api = new Application(process.cwd());
-  const config = api.getConfig();
+  const config = getConfig();
   const excludes = config.exclude || [];
   const sourcePostDir = join(process.cwd(), config.post_dir);
   const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
-  // console.log(excludes);
+  // console.log(excludes, sourcePostDir);
   return (
     gulp
       .src(['**/*.*', '*.*', '**/*'], {
@@ -58,9 +57,9 @@ export function copyAllPosts() {
         dot: true,
         noext: true
       })
+      //.pipe(gulpLog('before'))
       .pipe(gulpCached({ name: 'post-copy' }))
       .pipe(pipeProcessPost(config))
-      //.pipe(gulpLog('after'))
       .pipe(gulp.dest(generatedPostDir))
   );
 }
@@ -94,9 +93,11 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
         // process markdown files
         if (file.extname === '.md') {
           const compile = await processSinglePost(file.path);
-          if (compile) {
+          if (typeof compile === 'string') {
             file.contents = Buffer.from(compile);
             this.push(file);
+            callback();
+          } else {
             callback();
           }
         } else {
