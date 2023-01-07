@@ -176,8 +176,10 @@ const coloredScriptName = colors.grey(scriptname);
                 '**/test*/**',
                 '**/dist/**',
                 '**/docs/**',
+                '**/release/**',
                 '**/.cache/**',
-                '**/temp/**'
+                '**/temp/**',
+                '**/*.{tgz,gz,tar,zip,rar,exe}'
               ],
               pattern: '**/{src,dist,lib}/**'
             });
