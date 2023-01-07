@@ -37,7 +37,14 @@ export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefine
   }
 
   if (existsSync(workingDir) && !hasError) {
-    const configSafelink = Object.assign({ enable: false }, config.external_link.safelink || {});
+    const defaultConfigSafelink: SafelinkOptions & Record<string, any> = {
+      enable: false,
+      exclude: [] as string[],
+      redirect: 'https://www.webmanajemen.com/page/safelink.html?url=',
+      password: 'root',
+      type: 'base64'
+    };
+    const configSafelink = Object.assign(defaultConfigSafelink, config.external_link.safelink || {});
     let baseURL = '';
     try {
       baseURL = new URL(config.url).host;
