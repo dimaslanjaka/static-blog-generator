@@ -11,8 +11,9 @@ import LockManager from '../utils/lockmanager';
 import Logger from '../utils/logger';
 
 //
-import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
-// import { buildPost, parsePost } from 'hexo-post-parser';
+// import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
+import { buildPost, parsePost } from 'hexo-post-parser';
+import debug from '../utils/debug';
 //
 
 const sourcePostDir = join(process.cwd(), getConfig().post_dir);
@@ -101,6 +102,8 @@ export function processPost(config: ReturnType<typeof getConfig>) {
     Logger.log(logname, 'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false')));
   }
 
+  const log = debug('post');
+
   return through2.obj((file, _enc, callback) => {
     if (file.isNull()) {
       if (config.generator.verbose) Logger.log(file.path + ' is null');
@@ -114,7 +117,9 @@ export function processPost(config: ReturnType<typeof getConfig>) {
     if (config) {
       // process markdown files
       if (file.extname === '.md') {
-        Logger.log(logname, ansiColors.greenBright(toUnix(file.path.replace(process.cwd(), ''))));
+        if (config.generator.verbose) {
+          Logger.log(logname, ansiColors.greenBright(toUnix(file.path.replace(process.cwd(), ''))));
+        }
         const contents = file.contents?.toString() || '';
 
         // drop empty body
@@ -155,18 +160,17 @@ export function processPost(config: ReturnType<typeof getConfig>) {
                       const index = parse.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
                       if (index !== -1) {
-                        if (config.generator.verbose) {
-                          Logger.log(
-                            logname,
-                            ansiColors.blueBright('-'),
-                            parse.metadata[groupLabel],
-                            ansiColors.yellowBright('+'),
-                            config[groupLabel].assign[oldLabel]
-                          );
-                        }
+                        const l = log.extend('label-assign');
+                        l(
+                          groupLabel,
+                          parse.metadata[groupLabel],
+                          ansiColors.yellowBright('+'),
+                          config[groupLabel].assign[oldLabel]
+                        );
                         parse.metadata[groupLabel] = parse.metadata[groupLabel].concat(
                           config[groupLabel].assign[oldLabel]
                         );
+                        l.extend('result')(groupLabel, parse.metadata[groupLabel]);
                       }
                     }
                   }
@@ -196,21 +200,16 @@ export function processPost(config: ReturnType<typeof getConfig>) {
                   Logger.log(logname, groupLabel, 'not found');
                 }
 
-                if (i == array.length - 1) {
-                  if (config.generator.verbose) {
-                    Logger.log(
-                      logname,
-                      groupLabel + '-' + ansiColors.greenBright('assign'),
-                      parse.metadata[groupLabel]
-                    );
-                  }
+                if (config.generator.verbose) {
+                  Logger.log(logname, groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
                 }
               }
 
               const build = buildPost(parse);
               if (typeof build === 'string') {
                 file.contents = Buffer.from(build);
-                Logger.log(logname, 'success', toUnix(file.path).replace(toUnix(process.cwd()), ''));
+                if (config.generator.verbose)
+                  Logger.log(logname, 'success', toUnix(file.path).replace(toUnix(process.cwd()), ''));
                 return callback(null, file);
               } else {
                 Logger.log(logname, 'cannot rebuild', toUnix(file.path).replace(toUnix(process.cwd()), ''));
