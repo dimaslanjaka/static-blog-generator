@@ -56,9 +56,9 @@ class SBG {
    * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
-  copy() {
+  copy(): Promise<void> {
     return new Promise((resolve) => {
-      pcopy.copyAllPosts().once('end', () => resolve(null));
+      pcopy.copyAllPosts().once('end', () => resolve());
     });
   }
 
