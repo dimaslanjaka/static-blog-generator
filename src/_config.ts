@@ -153,3 +153,6 @@ export const commonIgnore = [
  * array of config.exclude, config.ignore
  */
 export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
+
+// first fetch
+if (!fetched) getConfig();
