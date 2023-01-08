@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
-import HexoConfig from 'hexo/HexoConfig';
+import Hexo from 'hexo';
 import { join } from 'path';
 import truecasepath from 'true-case-path';
 import { toUnix } from 'upath';
@@ -12,7 +12,7 @@ import { orderKeys } from './utils/object';
 //typeof import('./_config.json') & Record<string, any> &
 export type importConfig = typeof import('./_config.json');
 
-export interface ProjConf extends HexoConfig {
+export interface ProjConf extends Hexo.HexoConfig {
   [key: string]: any;
   /**
    * Source posts
