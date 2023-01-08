@@ -187,6 +187,9 @@ const coloredScriptName = colors.grey(scriptname);
             if (pkgname.startsWith('@types/')) {
               hoption.pattern = '**/*.d.ts';
             }
+            if (pkgname.startsWith('hexo-theme-')) {
+              hoption.pattern = '**/{package,package-lock}.json';
+            }
             const folderHash = await folder_to_hash('sha1', version, hoption);
             const existingHash = ((getCache().folder || {})[pkgname] || {}).hash;
             if (!existingHash || folderHash.hash !== existingHash) {
