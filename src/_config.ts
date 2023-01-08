@@ -83,11 +83,24 @@ let fetched = false;
 /**
  * Config getter
  * * useful for jest
+ * @param customFolder load from custom folder and apply to current config
  * @returns
  */
-export function getConfig() {
+export function getConfig(customFolder?: string) {
+  let fileYML = '_config.yml';
+  const loadYml = function () {
+    if (existsSync(fileYML)) {
+      const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
+      settledConfig = Object.assign({}, configYML, settledConfig);
+      writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+    }
+  };
+  if (typeof customFolder === 'string') {
+    fileYML = join(customFolder, '_config.yml');
+    loadYml();
+    fetched = true;
+  }
   if (!fetched) {
-    let fileYML = '';
     if (settledConfig && 'cwd' in settledConfig) {
       fileYML = join(settledConfig.cwd, '_config.yml');
       // fix cwd
@@ -97,15 +110,8 @@ export function getConfig() {
       // set cwd
       settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(process.cwd()));
     }
-    if (existsSync(fileYML)) {
-      const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-      settledConfig = Object.assign({}, configYML, settledConfig);
-      writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
-      fetched = true;
-    } else {
-      // console.log(fileYML);
-      throw new Error(fileYML + ' not found');
-    }
+    loadYml();
+    fetched = true;
 
     settledConfig = orderKeys(settledConfig);
   }
@@ -113,6 +119,9 @@ export function getConfig() {
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
 }
+
+// first fetch
+if (!fetched) getConfig();
 
 export function deployConfig() {
   const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
@@ -153,6 +162,3 @@ export const commonIgnore = [
  * array of config.exclude, config.ignore
  */
 export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
-
-// first fetch
-if (!fetched) getConfig();
