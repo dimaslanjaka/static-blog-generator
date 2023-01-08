@@ -135,6 +135,6 @@ export async function cleanGeneratedPosts(callback?: gulp.TaskFunctionCallback |
 }
 
 gulp.task('clean:archive', cleanOldArchives);
-gulp.task('clean:all', gulp.series('clean', 'clean-archives'));
 gulp.task('clean:db', cleanDb);
 gulp.task('clean:post', cleanGeneratedPosts);
+gulp.task('clean:all', gulp.series('clean:db', 'clean:archive'));
