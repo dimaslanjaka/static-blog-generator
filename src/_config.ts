@@ -37,6 +37,7 @@ export interface ProjConf extends Hexo.HexoConfig {
   exclude: string[];
 
   generator: {
+    [key: string]: any;
     cache: boolean;
     verbose: boolean;
   };
