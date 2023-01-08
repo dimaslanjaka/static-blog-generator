@@ -141,13 +141,17 @@ export async function processSinglePost(file: string) {
         codeblock: true
       },
       cache: false,
-      config: <any>config,
+      config: <any>getConfig(),
       formatDate: true,
       fix: true,
       sourceFile: file
     }).catch((e) => Logger.log(e));
 
     if (parse && parse.metadata) {
+      if (parse.metadata.permalink?.startsWith('/')) {
+        parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
+      }
+      log.extend('permalink')(parse.metadata.permalink);
       // fix uuid and id
       if (parse.metadata.uuid) {
         if (!parse.metadata.id) parse.metadata.id = parse.metadata.uuid;
@@ -216,3 +220,5 @@ export async function processSinglePost(file: string) {
     Logger.log(e);
   }
 }
+
+gulp.task('post:copy', copyAllPosts);
