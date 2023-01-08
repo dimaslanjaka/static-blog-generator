@@ -149,7 +149,7 @@ function commit() {
     return new Promise((resolve) => {
       if (github.submodule.hasSubmodule()) {
         const info = github.submodule.get();
-        const commitSubmoduleChild = async (sub: typeof info[number]) => {
+        const commitSubmoduleChild = async (sub: (typeof info)[number]) => {
           const submodule = new gitHelper(sub.root);
           const items = await submodule.status();
           if (items.length > 0) {
@@ -196,7 +196,7 @@ function push() {
     return;
   }
   const submodules = github.submodule.hasSubmodule() ? github.submodule.get() : [];
-  const pushSubmodule = function (submodule: typeof submodules[number]) {
+  const pushSubmodule = function (submodule: (typeof submodules)[number]) {
     const { url, branch, root } = submodule;
     if (!submodule.github) {
       submodule.github = new gitHelper(root);
@@ -282,7 +282,4 @@ function workspace(str: string) {
 }
 
 // deploy
-gulp.task(
-  'deploy',
-  gulp.series('deploy:pull', 'clean-archives', 'deploy:copy', 'safelink', 'deploy:commit', 'deploy:push')
-);
+gulp.task('deploy', gulp.series('deploy:pull', 'deploy:copy', 'safelink', 'deploy:commit', 'deploy:push'));
