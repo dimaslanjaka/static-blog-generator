@@ -14,7 +14,7 @@ import { getConfig } from './_config';
 /**
  * Clean Project Databases
  */
-export async function cleanDb() {
+export async function cleanDb(callback?: gulp.TaskFunctionCallback | (() => any), files?: string[]) {
   const log = debug('clean');
   const config = getConfig();
   if (typeof config.source_dir !== 'string') {
@@ -24,13 +24,14 @@ export async function cleanDb() {
 
   // const publicDir = join(config.cwd, config.public_dir);
 
-  const dirs = [
+  let dirs = [
     join(config.cwd, config.source_dir, '_posts'),
     join(config.cwd, 'tmp/cache'),
     join(config.cwd, 'tmp/dump'),
     join(config.cwd, 'tmp/logs'),
     join(config.cwd, 'db.json')
   ];
+  if (Array.isArray(files)) dirs = dirs.concat(files);
   for (let i = 0; i < dirs.length; i++) {
     const dir = dirs[i];
     try {
@@ -47,11 +48,13 @@ export async function cleanDb() {
   await hexo.init().catch(noop);
   await hexo.call('clean').catch(noop);*/
 
+  if (typeof callback === 'function') return callback();
+
   return undefined;
 }
 
 /**
- * delete folder async for gulp
+ * delete folder async
  * @param path
  * @returns
  */
@@ -71,12 +74,10 @@ export function del(path: string) {
   });
 }
 
-gulp.task('clean', cleanDb);
-
 /**
  * clean old archives (categories, tags, pagination) from deployment directory
  */
-export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
+export async function cleanOldArchives(callback?: gulp.TaskFunctionCallback | (() => any)) {
   const config = getConfig();
   const logname = 'clean:' + ansiColors.grey('archives');
 
@@ -121,13 +122,19 @@ export async function cleanOldArchives(done?: gulp.TaskFunctionCallback) {
     if (e instanceof Error) {
       console.log('clean archives has some erros');
     }
-    if (typeof done === 'function') done();
+    if (typeof callback === 'function') callback();
     return undefined;
   };
 
   await Bluebird.all(promises).then(finishNow).catch(finishNow);
 }
 
-gulp.task('clean-archives', cleanOldArchives);
-gulp.task('clean-archive', cleanOldArchives);
-gulp.task('clean-all', gulp.series('clean', 'clean-archives'));
+export async function cleanGeneratedPosts(callback?: gulp.TaskFunctionCallback | (() => any)) {
+  const config = getConfig();
+  return cleanDb(callback, [join(config.cwd, config.source_dir, '_posts')]);
+}
+
+gulp.task('clean:archive', cleanOldArchives);
+gulp.task('clean:all', gulp.series('clean', 'clean-archives'));
+gulp.task('clean:db', cleanDb);
+gulp.task('clean:post', cleanGeneratedPosts);
