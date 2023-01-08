@@ -1,5 +1,4 @@
 import Bluebird from 'bluebird';
-import gulp from 'gulp';
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { Nullable } from './globals';
@@ -25,7 +24,7 @@ class SBG {
    */
   constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = process.cwd();
-    if (!options) options = {};
+    if (!options) options = getConfig();
     this.cwd = cwd;
     options.cwd = cwd;
     this.config = this.setConfig(options);
@@ -120,8 +119,3 @@ class SBG {
 }
 
 export default SBG;
-
-gulp.task('post:copy', function (done) {
-  const api = new SBG(process.cwd());
-  api.copy().then(() => done());
-});
