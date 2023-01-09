@@ -12,6 +12,7 @@ import debug from '../utils/debug';
 import { extname, join, toUnix } from 'upath';
 import Logger from '../utils/logger';
 import { getConfig } from '../_config';
+import { parsePermalink } from './permalink';
 
 const log = debug('post');
 const logerr = log.extend('error');
@@ -151,13 +152,20 @@ export async function processSinglePost(file: string) {
 
     if (parse && parse.metadata) {
       // fix permalink
-      //log.extend('permalink').extend('pattern')(config.permalink);
+      log.extend('permalink').extend('pattern')(config.permalink);
       //parse.metadata.permalink = hexoPostParser.parsePermalink(parse);
+      if (!parse.metadata.permalink) {
+        parse.metadata.permalink = parsePermalink(file, {
+          title: parse.metadata.title,
+          date: String(parse.metadata.date || new Date()),
+          permalink_pattern: getConfig().permalink
+        });
+      }
       if (parse.metadata.permalink?.startsWith('/')) {
         parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
       }
 
-      //log.extend('permalink')(parse.metadata.permalink);
+      log.extend('permalink')(parse.metadata.permalink);
       // fix uuid and id
       if (parse.metadata.uuid) {
         if (!parse.metadata.id) parse.metadata.id = parse.metadata.uuid;
