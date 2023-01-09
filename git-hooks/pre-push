@@ -1,4 +1,3 @@
 #!/bin/sh
 
 npm run build:nopack
-node postinstall.js --commit
