@@ -1,4 +1,5 @@
 import momentlib, { tz } from 'moment-timezone';
+import { trueCasePathSync } from 'true-case-path';
 import * as path from 'upath';
 import debug from '../utils/debug';
 import { getConfig } from '../_config';
@@ -7,6 +8,8 @@ const moment = (input: momentlib.MomentInput) => {
   tz.setDefault(getConfig().timezone || 'UTC');
   return momentlib(input).tz(getConfig().timezone || 'UTC');
 };
+
+const normalizePath = (str: string) => path.toUnix(trueCasePathSync(str));
 
 /**
  * transform permalink format in `_config.yml`
@@ -31,9 +34,26 @@ export function parsePermalink(
   }
 ) {
   debug('permalink').extend('source')(post);
-  let pattern = config.permalink_pattern || getConfig().permalink;
+  const siteConfig = getConfig();
+  let pattern = config.permalink_pattern || siteConfig.permalink;
   const date = config.date;
-  const cleanPathname = post.replace(/.md$/, '');
+  let cleanPathname = normalizePath(post).replace(/.md$/, '');
+  const toReplace = [
+    normalizePath(process.cwd()),
+    siteConfig.source_dir + '/_posts/',
+    `${siteConfig.post_dir || 'src-posts'}/`,
+    '_posts/'
+  ];
+  for (let i = 0; i < toReplace.length; i++) {
+    const str = toReplace[i];
+    cleanPathname = cleanPathname
+      .replace(str, '/')
+      // @todo remove multiple slashes
+      .replace(/\/+/, '/')
+      .replace(/^\/+/, '/');
+    // @todo remove .md
+    //.replace(/.md$/, '');
+  }
 
   /**
    * @see {@link https://hexo.io/docs/permalinks.html}
@@ -53,15 +73,13 @@ export function parsePermalink(
     ':post_title': config.title
   };
 
-  //console.log({ url, curl: config.url });
-
   // @todo [permalink] follow directory path
-  /*if (pattern.startsWith(':title')) {
+  if (pattern.startsWith(':title')) {
     const bname = pattern.replace(':title', replacer[':title']);
-    const perm = path.join(path.dirname(String(url)), bname);
-    debug('permalink')(perm);
+    const perm = path.join(path.dirname(normalizePath(post)), bname);
+    debug('permalink').extend('result')(perm);
     return perm;
-  }*/
+  }
 
   for (const date_pattern in replacer) {
     if ([':title', ':post_title', ':id', ':category', ':hash', ':name'].includes(date_pattern)) {

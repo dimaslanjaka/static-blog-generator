@@ -28,6 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePermalink = void 0;
 var moment_timezone_1 = __importStar(require("moment-timezone"));
+var true_case_path_1 = require("true-case-path");
 var path = __importStar(require("upath"));
 var debug_1 = __importDefault(require("../utils/debug"));
 var _config_1 = require("../_config");
@@ -35,11 +36,26 @@ var moment = function (input) {
     moment_timezone_1.tz.setDefault((0, _config_1.getConfig)().timezone || 'UTC');
     return (0, moment_timezone_1.default)(input).tz((0, _config_1.getConfig)().timezone || 'UTC');
 };
+var normalizePath = function (str) { return path.toUnix((0, true_case_path_1.trueCasePathSync)(str)); };
 function parsePermalink(post, config) {
     (0, debug_1.default)('permalink').extend('source')(post);
-    var pattern = config.permalink_pattern || (0, _config_1.getConfig)().permalink;
+    var siteConfig = (0, _config_1.getConfig)();
+    var pattern = config.permalink_pattern || siteConfig.permalink;
     var date = config.date;
-    var cleanPathname = post.replace(/.md$/, '');
+    var cleanPathname = normalizePath(post).replace(/.md$/, '');
+    var toReplace = [
+        normalizePath(process.cwd()),
+        siteConfig.source_dir + '/_posts/',
+        "".concat(siteConfig.post_dir || 'src-posts', "/"),
+        '_posts/'
+    ];
+    for (var i = 0; i < toReplace.length; i++) {
+        var str = toReplace[i];
+        cleanPathname = cleanPathname
+            .replace(str, '/')
+            .replace(/\/+/, '/')
+            .replace(/^\/+/, '/');
+    }
     var replacer = {
         ':month': 'MM',
         ':year': 'YYYY',
@@ -52,6 +68,12 @@ function parsePermalink(post, config) {
         ':name': path.basename(cleanPathname),
         ':post_title': config.title
     };
+    if (pattern.startsWith(':title')) {
+        var bname = pattern.replace(':title', replacer[':title']);
+        var perm = path.join(path.dirname(normalizePath(post)), bname);
+        (0, debug_1.default)('permalink').extend('result')(perm);
+        return perm;
+    }
     for (var date_pattern in replacer) {
         if ([':title', ':post_title', ':id', ':category', ':hash', ':name'].includes(date_pattern)) {
             pattern = pattern.replace(date_pattern, replacer[date_pattern]);
