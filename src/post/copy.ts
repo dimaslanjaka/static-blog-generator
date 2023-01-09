@@ -44,8 +44,8 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
  * copy all posts from src-posts to source/_posts
  * @returns
  */
-export function copyAllPosts() {
-  const config = getConfig();
+export function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
+  if (!config) config = getConfig();
   const excludes = config.exclude || [];
   const sourcePostDir = join(process.cwd(), config.post_dir);
   const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
