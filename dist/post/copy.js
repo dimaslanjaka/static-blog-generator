@@ -73,6 +73,7 @@ var debug_1 = __importDefault(require("../utils/debug"));
 var upath_1 = require("upath");
 var logger_1 = __importDefault(require("../utils/logger"));
 var _config_1 = require("../_config");
+var permalink_1 = require("./permalink");
 var log = (0, debug_1.default)('post');
 var logerr = log.extend('error');
 var logLabel = log.extend('label');
@@ -200,9 +201,18 @@ function processSinglePost(file) {
                 case 2:
                     parse = _f.sent();
                     if (parse && parse.metadata) {
+                        log.extend('permalink').extend('pattern')(config.permalink);
+                        if (!parse.metadata.permalink) {
+                            parse.metadata.permalink = (0, permalink_1.parsePermalink)(file, {
+                                title: parse.metadata.title,
+                                date: String(parse.metadata.date || new Date()),
+                                permalink_pattern: (0, _config_1.getConfig)().permalink
+                            });
+                        }
                         if ((_a = parse.metadata.permalink) === null || _a === void 0 ? void 0 : _a.startsWith('/')) {
                             parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
                         }
+                        log.extend('permalink')(parse.metadata.permalink);
                         if (parse.metadata.uuid) {
                             if (!parse.metadata.id)
                                 parse.metadata.id = parse.metadata.uuid;
