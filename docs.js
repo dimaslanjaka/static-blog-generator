@@ -1,16 +1,19 @@
 const spawn = require('cross-spawn');
 const { existsSync, mkdirSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
+const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { EOL } = require('os');
 const { join, dirname, toUnix } = require('upath');
-const { setTypedocOptions, publish } = require('./typedoc-runner');
+const { setTypedocOptions, publish, compile } = require('./typedoc-runner');
+
+const isGithubActions = typeof process.env.GITHUB_WORKFLOWS === 'string';
 
 /**
  * Dump Tasks from dist folder
  * @returns {Promise<string>}
  */
-const dumptasks = function () {
+const dumpTasks = function () {
   return new Promise((resolve) => {
     const child = spawn('gulp', ['--tasks', '--json'], { cwd: join(__dirname, 'dist') });
     /**
@@ -53,25 +56,31 @@ ${output.join(EOL)}
  * Copy coverage/lcov-report to docs/static-blog-generator/coverage
  * @returns
  */
-const coverage = function () {
-  return new Promise((resolve) => {
-    const coverageDir = join(__dirname, 'coverage/lcov-report');
-    if (existsSync(coverageDir)) {
-      console.log('copying coverage', coverageDir.replace(toUnix(__dirname), ''));
-      gulp
-        .src(['*.*', '**/*.*'], { cwd: coverageDir })
-        .pipe(gulp.dest(join(__dirname, 'docs/static-blog-generator/coverage')))
-        .once('end', () => resolve(null));
-    } else {
-      resolve(null);
-    }
-  });
+const copyCoverageResult = async function () {
+  const dirs = ['coverage/lcov-report', 'coverage/html-report'];
+  const copyStream = (dirPath) => {
+    return new Promise((res) => {
+      const coverageDir = join(__dirname, dirPath);
+      if (existsSync(coverageDir)) {
+        console.log('copying coverage', coverageDir.replace(toUnix(__dirname), ''));
+        gulp
+          .src(['*.*', '**/*.*'], { cwd: coverageDir })
+          .pipe(gulp.dest(join(__dirname, 'docs/static-blog-generator/coverage')))
+          .once('finish', () => res(null))
+          .once('end', () => res(null));
+      }
+    });
+  };
+
+  for (let i = 0; i < dirs.length; i++) {
+    await copyStream(dirs[i]);
+  }
 };
 
-exports.coverage = coverage;
+// exports.coverage = coverage;
 
-const docs = async function () {
-  await dumptasks();
+const buildDocs = async function () {
+  await dumpTasks();
   const readme = await readFile(join(__dirname, 'readme.md'), 'utf-8');
   const tasks = await readFile(join(__dirname, 'tmp/tasks.md'), 'utf-8');
   await writeFile(
@@ -85,7 +94,18 @@ ${tasks}
 `.trim()
   );
   const opt = setTypedocOptions({ readme: './tmp/build-readme.md', cleanOutputDir: false });
-  await publish(opt, coverage);
+  if (!isGithubActions) {
+    await publish(opt, copyCoverageResult);
+  } else {
+    await compile(opt, copyCoverageResult);
+  }
 };
 
-docs();
+const clone = function () {
+  if (!existsSync(__dirname + '/docs')) {
+    return spawnAsync('git', ['clone', 'https://github.com/dimaslanjaka/docs', 'docs'], { cwd: __dirname });
+  }
+  return Promise.resolve(null);
+};
+
+clone().then(buildDocs);
