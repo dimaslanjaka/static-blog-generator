@@ -1,9 +1,32 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setConfig = exports.getConfig = exports.deployConfig = exports.scheduler = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.updatePost = exports.copySinglePost = exports.copyAllPosts = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
+exports.setConfig = exports.getConfig = exports.deployConfig = exports.scheduler = exports.noop = exports.array_unique = exports.array_remove_empty = exports.array_random = exports.util = exports.updatePost = exports.copySinglePost = exports.copyAllPosts = exports.gulp = exports.commitProject = exports.standaloneRunner = exports.hexoGenerateSitemap = exports.generateSitemap = exports.autoSeo = exports.deleteDir = exports.del = exports.cleanDb = exports.gulpDebug = exports.gulpCached = exports.Application = void 0;
 var api_1 = require("./api");
 Object.defineProperty(exports, "Application", { enumerable: true, get: function () { return __importDefault(api_1).default; } });
 var gulp_cache_1 = require("./gulp-utils/gulp.cache");
@@ -29,6 +52,7 @@ Object.defineProperty(exports, "copyAllPosts", { enumerable: true, get: function
 Object.defineProperty(exports, "copySinglePost", { enumerable: true, get: function () { return copy_1.copySinglePost; } });
 var update_1 = require("./post/update");
 Object.defineProperty(exports, "updatePost", { enumerable: true, get: function () { return update_1.updatePost; } });
+exports.util = __importStar(require("./utils"));
 var array_1 = require("./utils/array");
 Object.defineProperty(exports, "array_random", { enumerable: true, get: function () { return array_1.array_random; } });
 Object.defineProperty(exports, "array_remove_empty", { enumerable: true, get: function () { return array_1.array_remove_empty; } });
