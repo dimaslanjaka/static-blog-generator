@@ -1,16 +1,6 @@
 /* eslint-disable no-useless-escape */
 const { spawn } = require('cross-spawn');
-const {
-  existsSync,
-  renameSync,
-  rmSync,
-  mkdirpSync,
-  writeFileSync,
-  readdirSync,
-  createReadStream,
-  readFileSync,
-  statSync
-} = require('fs-extra');
+const fs = require('fs-extra');
 const GulpClient = require('gulp');
 const { join, dirname, toUnix } = require('upath');
 const packagejson = require('./package.json');
@@ -24,6 +14,21 @@ const crypto = require('crypto');
 // update         : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js
 // usage          : node packer.js
 // github actions : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
+
+//// CHECK REQUIRED PACKAGES
+
+const scriptname = `[packer]`;
+const isAllPackagesInstalled = ['cross-spawn', 'axios', 'ansi-colors', 'glob'].map((name) => {
+  return {
+    name,
+    installed: isPackageInstalled(name)
+  };
+});
+if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
+  const names = isAllPackagesInstalled.filter((o) => o.installed === false).map((o) => o.name);
+  console.log(scriptname, 'package', names.join(', '), 'is not installed', 'skipping postinstall script');
+  process.exit(0);
+}
 
 console.log('='.repeat(19));
 console.log('= packing started =');
@@ -40,10 +45,10 @@ child.on('exit', function () {
   const filename = slugifyPkgName(`${packagejson.name}-${version}.tgz`);
   const tgz = join(__dirname, filename);
 
-  if (!existsSync(tgz)) {
+  if (!fs.existsSync(tgz)) {
     const filename2 = slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
     const origintgz = join(__dirname, filename2);
-    renameSync(origintgz, tgz);
+    fs.renameSync(origintgz, tgz);
   }
   const tgzlatest = join(releaseDir, slugifyPkgName(`${packagejson.name}.tgz`));
 
@@ -51,26 +56,27 @@ child.on('exit', function () {
     let hashes = {};
     const metafile = join(releaseDir, 'metadata.json');
     // read old meta
-    if (existsSync(metafile)) {
+    if (fs.existsSync(metafile)) {
       try {
-        hashes = Object.assign(hashes, JSON.parse(readFileSync(metafile, 'utf-8')));
+        hashes = Object.assign(hashes, JSON.parse(fs.readFileSync(metafile, 'utf-8')));
       } catch {
         hashes = {};
       }
     }
     let pkglock = [join(__dirname, 'package-lock.json'), join(__dirname, 'yarn.lock')].filter((str) =>
-      existsSync(str)
+      fs.existsSync(str)
     )[0];
-    const readDir = readdirSync(releaseDir)
+    const readDir = fs
+      .readdirSync(releaseDir)
       .filter((path) => path.endsWith('tgz'))
       .map((path) => join(releaseDir, path));
 
-    if (typeof pkglock === 'string' && existsSync(pkglock)) {
+    if (typeof pkglock === 'string' && fs.existsSync(pkglock)) {
       readDir.push(pkglock);
     }
     for (let i = 0; i < readDir.length; i++) {
       const file = readDir[i];
-      const stat = statSync(file);
+      const stat = fs.statSync(file);
       const size = parseFloat(stat.size / Math.pow(1024, 1)).toFixed(2) + ' KB';
       // assign to existing object
       hashes = Object.assign({}, hashes, {
@@ -87,25 +93,25 @@ child.on('exit', function () {
       //console.log("Last callback call at index " + index + " with value " + file);
 
       //hashes = { [os.type()]: { [os.arch()]: hashes } };
-      writeFileSync(metafile, JSON.stringify(hashes, null, 2));
+      fs.writeFileSync(metafile, JSON.stringify(hashes, null, 2));
       console.log(hashes);
     }
   };
 
-  if (!existsSync(dirname(tgzlatest))) {
-    mkdirpSync(dirname(tgzlatest));
+  if (!fs.existsSync(dirname(tgzlatest))) {
+    fs.mkdirpSync(dirname(tgzlatest));
   }
 
-  if (existsSync(tgz)) {
+  if (fs.existsSync(tgz)) {
     GulpClient.src(tgz)
       .pipe(GulpClient.dest(releaseDir))
       .once('end', function () {
-        if (existsSync(tgzlatest)) {
-          rmSync(tgzlatest);
+        if (fs.existsSync(tgzlatest)) {
+          fs.rmSync(tgzlatest);
         }
-        renameSync(tgz, tgzlatest);
+        fs.renameSync(tgz, tgzlatest);
         addReadMe();
-        if (existsSync(tgz)) rmSync(tgz);
+        if (fs.existsSync(tgz)) fs.rmSync(tgz);
 
         // write hashes info
         getPackageHashes().then(function () {
@@ -141,7 +147,7 @@ function parseVersion(versionString) {
 }
 
 function addReadMe() {
-  writeFileSync(
+  fs.writeFileSync(
     join(releaseDir, 'readme.md'),
     `
 # Release \`${packagejson.name}\` Tarball
@@ -178,9 +184,23 @@ npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/node
 function file_to_hash(alogarithm = 'sha1', path, encoding = 'hex') {
   return new Promise((resolve, reject) => {
     const hash = crypto.createHash(alogarithm);
-    const rs = createReadStream(path);
+    const rs = fs.createReadStream(path);
     rs.on('error', reject);
     rs.on('data', (chunk) => hash.update(chunk));
     rs.on('end', () => resolve(hash.digest(encoding)));
   });
+}
+
+/**
+ * check package installed
+ * @param {string} packageName
+ * @returns
+ */
+function isPackageInstalled(packageName) {
+  try {
+    const modules = Array.from(process.moduleLoadList).filter((str) => !str.startsWith('NativeModule internal/'));
+    return modules.indexOf('NativeModule ' + packageName) >= 0 || fs.existsSync(require.resolve(packageName));
+  } catch (e) {
+    return false;
+  }
 }
