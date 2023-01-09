@@ -27,11 +27,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePermalink = void 0;
-var momentlib = __importStar(require("moment-timezone"));
+var moment_timezone_1 = __importStar(require("moment-timezone"));
 var path = __importStar(require("upath"));
 var debug_1 = __importDefault(require("../utils/debug"));
 var _config_1 = require("../_config");
-var moment = function (input) { return momentlib.default(input).tz((0, _config_1.getConfig)().timezone); };
+var moment = function (input) {
+    moment_timezone_1.tz.setDefault((0, _config_1.getConfig)().timezone || 'UTC');
+    return (0, moment_timezone_1.default)(input).tz((0, _config_1.getConfig)().timezone || 'UTC');
+};
 function parsePermalink(post, config) {
     (0, debug_1.default)('permalink').extend('source')(post);
     var pattern = config.permalink_pattern || (0, _config_1.getConfig)().permalink;
