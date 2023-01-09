@@ -130,7 +130,7 @@ export async function processSinglePost(file: string) {
 
   try {
     const parse = await hexoPostParser
-      .parsePost(file, {
+      .parsePost(fs.readFileSync(file, 'utf-8'), {
         shortcodes: {
           youtube: true,
           css: true,
