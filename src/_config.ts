@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
-import hexoPostParser from 'hexo-post-parser';
+import * as hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
 import truecasepath from 'true-case-path';
 import { toUnix } from 'upath';
