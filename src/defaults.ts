@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import { trueCasePathSync } from 'true-case-path';
 import { join, toUnix } from 'upath';
 import yaml from 'yaml';
 
@@ -90,7 +91,7 @@ export function getDefaultConfig() {
     meta_generator: true
   };
   const sbgDefaultConfig = {
-    cwd: toUnix(process.cwd())
+    cwd: toUnix(trueCasePathSync(process.cwd()))
   };
   const configYML = yaml.parse(getDefaultConfigYaml());
   return Object.assign(hexoDefaultConfig, sbgDefaultConfig, configYML) as typeof import('./_config.json');
