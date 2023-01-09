@@ -30,7 +30,9 @@ const dumpTasks = function () {
     }
 
     child.on('close', async () => {
-      const output = stdout.map((str) => str.replace(/\[.*\]\s/gm, '').trim()).filter((str) => str.length > 0);
+      const output = stdout
+        .map((str) => str.replace(/\[.*\]\s/gm, '').trim())
+        .filter((str) => str.length > 0 && !str.includes('[scheduler]'));
       output[0] = 'Gulp tasks of static-blog-generator';
       const file = join(__dirname, 'tmp/tasks.md');
       if (!existsSync(dirname(file))) mkdirSync(dirname(file));
