@@ -1,13 +1,12 @@
-import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { join } from 'upath';
 import { Nullable } from './globals';
 import * as cleaner from './gulp.clean';
-import { asyncCopyGen } from './gulp.deploy';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';
 import * as pcopy from './post/copy';
+import { chain } from './utils/chain';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
 import { getConfig, setConfig } from './_config';
@@ -44,7 +43,7 @@ class SBG {
    * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
    * @returns
    */
-  standalone = () => standaloneRunner();
+  standalone = () => chain([{ callback: standaloneRunner }]);
 
   /**
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
@@ -57,14 +56,7 @@ class SBG {
    * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
-  copy() {
-    return new Bluebird((resolve: () => any, reject: (err: Error) => any) => {
-      pcopy
-        .copyAllPosts()
-        .once('end', () => resolve())
-        .once('error', reject);
-    });
-  }
+  copy = () => chain([{ callback: pcopy.copyAllPosts }]);
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
@@ -83,22 +75,6 @@ class SBG {
     // hexo generate
     await hexo.call('generate').catch(noop);
     await hexo.exit();
-  }
-
-  async deploy() {
-    // run generate task
-    await this.generate();
-    // copy generated files to deployment directory
-    await asyncCopyGen();
-    // deployment start
-    const config = getConfig();
-    const { github } = config.deploy;
-    if (!github) return;
-    await github.init().catch(noop);
-    await github.setremote(config.repo).catch(noop);
-    await github.setuser(config.username).catch(noop);
-    await github.setemail(config.email).catch(noop);
-    await github.setbranch(config.branch).catch(noop);
   }
 
   /**
