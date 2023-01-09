@@ -151,6 +151,8 @@ export async function processSinglePost(file: string) {
 
     if (parse && parse.metadata) {
       // fix permalink
+      log.extend('permalink').extend('pattern')(config.permalink);
+      parse.metadata.permalink = hexoPostParser.parsePermalink(parse);
       if (parse.metadata.permalink?.startsWith('/')) {
         parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
       }
