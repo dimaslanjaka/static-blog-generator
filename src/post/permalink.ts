@@ -1,9 +1,12 @@
-import * as momentlib from 'moment-timezone';
+import momentlib, { tz } from 'moment-timezone';
 import * as path from 'upath';
 import debug from '../utils/debug';
 import { getConfig } from '../_config';
 
-const moment = (input: momentlib.MomentInput) => momentlib.default(input).tz(getConfig().timezone);
+const moment = (input: momentlib.MomentInput) => {
+  tz.setDefault(getConfig().timezone || 'UTC');
+  return momentlib(input).tz(getConfig().timezone || 'UTC');
+};
 
 /**
  * transform permalink format in `_config.yml`
