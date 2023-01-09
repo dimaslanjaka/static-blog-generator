@@ -134,8 +134,10 @@ jobs:
         working-directory: ./docs
       - run: npm test
         name: run test
+        shell: bash
       - run: npm run docs
         name: run docs
+        shell: bash
       - name: Git push
         continue-on-error: true
         working-directory: ./docs
