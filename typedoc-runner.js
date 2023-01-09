@@ -80,14 +80,14 @@ const publish = async function (options = {}, callback = null) {
   console.log('publishing docs');
   const outDir = join(__dirname, 'docs');
 
-  const github = new git(outDir);
-
   if (!existsSync(join(outDir))) {
     console.log('cloning', REPO_URL);
     await new git(__dirname)
       .spawn('git', ['clone', REPO_URL, 'docs', '-b', 'master', '--single-branch'], { cwd: __dirname })
       .catch(() => console.log('fail clone to /docs'));
   }
+
+  const github = new git(outDir);
   //await github.reset('master');
   await github
     .pull(['-X', 'theirs'])
