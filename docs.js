@@ -1,13 +1,12 @@
-const spawn = require('cross-spawn');
 const { existsSync, mkdirSync } = require('fs');
 const { writeFile, readFile } = require('fs/promises');
-const { spawnAsync } = require('git-command-helper/dist/spawn');
+const { spawn } = require('cross-spawn');
 const gulp = require('gulp');
 const { EOL } = require('os');
 const { join, dirname, toUnix } = require('upath');
 const { setTypedocOptions, publish, compile } = require('./typedoc-runner');
 
-const isGithubActions = typeof process.env.GITHUB_WORKFLOWS === 'string';
+const isGithubActions = typeof process.env.GITHUB_WORKFLOWS !== 'undefined';
 
 /**
  * Dump Tasks from dist folder
@@ -106,10 +105,4 @@ ${tasks}
   }
 };
 
-const clone = async function () {
-  if (!existsSync(__dirname + '/docs')) {
-    await spawnAsync('git', ['clone', 'https://github.com/dimaslanjaka/docs', 'docs'], { cwd: __dirname });
-  }
-};
-
-clone().then(() => buildDocs());
+buildDocs();
