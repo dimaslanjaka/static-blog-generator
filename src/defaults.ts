@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { trueCasePathSync } from 'true-case-path';
 import { join, toUnix } from 'upath';
-import yaml from 'yaml';
+import * as yaml from 'yaml';
 
 /**
  * get default configuration
