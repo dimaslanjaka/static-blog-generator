@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import through2 from 'through2';
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
-import { buildPost, parsePost } from 'hexo-post-parser';
+import hexoPostParser from 'hexo-post-parser';
 import { gulpCached } from '..';
 import debug from '../utils/debug';
 //
@@ -129,28 +129,32 @@ export async function processSinglePost(file: string) {
   }
 
   try {
-    const parse = await parsePost(file, {
-      shortcodes: {
-        youtube: true,
-        css: true,
-        include: true,
-        link: true,
-        now: true,
-        script: true,
-        text: true,
-        codeblock: true
-      },
-      cache: false,
-      config: <any>getConfig(),
-      formatDate: true,
-      fix: true,
-      sourceFile: file
-    }).catch((e) => Logger.log(e));
+    const parse = await hexoPostParser
+      .parsePost(file, {
+        shortcodes: {
+          youtube: true,
+          css: true,
+          include: true,
+          link: true,
+          now: true,
+          script: true,
+          text: true,
+          codeblock: true
+        },
+        cache: false,
+        config: <any>getConfig(),
+        formatDate: true,
+        fix: true,
+        sourceFile: file
+      })
+      .catch((e) => Logger.log(e));
 
     if (parse && parse.metadata) {
+      // fix permalink
       if (parse.metadata.permalink?.startsWith('/')) {
         parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
       }
+
       log.extend('permalink')(parse.metadata.permalink);
       // fix uuid and id
       if (parse.metadata.uuid) {
@@ -209,7 +213,7 @@ export async function processSinglePost(file: string) {
         // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
       }
 
-      const build = buildPost(parse);
+      const build = hexoPostParser.buildPost(parse);
       if (typeof build === 'string') {
         return build;
       }
