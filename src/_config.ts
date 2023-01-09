@@ -3,8 +3,6 @@ import git from 'git-command-helper';
 import Hexo from 'hexo';
 import * as hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
-import truecasepath from 'true-case-path';
-import { toUnix } from 'upath';
 import yaml from 'yaml';
 import { getDefaultConfig } from './defaults';
 import { writefile } from './utils/fm';
@@ -92,15 +90,6 @@ loadYml();
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign({}, settledConfig, obj);
-  fileYML = join(settledConfig.cwd, '_config.yml');
-  if (!fetched[fileYML]) {
-    if (settledConfig.cwd) {
-      // fix cwd
-      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(settledConfig.cwd));
-    }
-    loadYml();
-    fetched[fileYML] = true;
-  }
 
   return getConfig();
 }
