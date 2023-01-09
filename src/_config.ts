@@ -5,6 +5,7 @@ import * as hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
 import yaml from 'yaml';
 import { getDefaultConfig } from './defaults';
+import debug from './utils/debug';
 import { writefile } from './utils/fm';
 import { orderKeys } from './utils/object';
 
@@ -71,12 +72,21 @@ let settledConfig = getDefaultConfig() as Record<string, any>;
 const fetched = {};
 let fileYML = join(process.cwd(), '_config.yml');
 const loadYml = function () {
-  if (existsSync(fileYML)) {
+  if (existsSync(fileYML) && !fetched[fileYML]) {
     fetched[fileYML] = true;
     const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
     settledConfig = Object.assign({}, configYML, settledConfig);
+    settledConfig = orderKeys(settledConfig);
     // update hexo-post-parser config
     hexoPostParser.setConfig(settledConfig);
+    debug('config').extend('changed')(
+      new Error().stack
+        ?.split(/\r?\n/gm)
+        .filter((str) => {
+          return !str.includes('node:internal');
+        })
+        .join('\n')
+    );
     writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
   }
 };
@@ -106,7 +116,7 @@ export function getConfig(customFolder?: string) {
     loadYml();
     fetched[fileYML] = true;
   }
-  settledConfig = orderKeys(settledConfig);
+
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;

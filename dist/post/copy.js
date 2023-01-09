@@ -93,8 +93,9 @@ function copySinglePost(identifier, callback) {
     });
 }
 exports.copySinglePost = copySinglePost;
-function copyAllPosts() {
-    var config = (0, _config_1.getConfig)();
+function copyAllPosts(_callback, config) {
+    if (!config)
+        config = (0, _config_1.getConfig)();
     var excludes = config.exclude || [];
     var sourcePostDir = (0, upath_1.join)(process.cwd(), config.post_dir);
     var generatedPostDir = (0, upath_1.join)(process.cwd(), config.source_dir, '_posts');
