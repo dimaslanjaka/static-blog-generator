@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
+import hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
 import truecasepath from 'true-case-path';
 import { toUnix } from 'upath';
@@ -76,6 +77,8 @@ const loadYml = function () {
     fetched[fileYML] = true;
     const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
     settledConfig = Object.assign({}, configYML, settledConfig);
+    // update hexo-post-parser config
+    hexoPostParser.setConfig(settledConfig);
     writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
   }
 };
