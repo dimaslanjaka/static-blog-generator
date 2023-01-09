@@ -61,6 +61,7 @@ jobs:
           echo "cache-yarn2=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
           echo "/home/runner/node_modules/.bin" >> $GITHUB_PATH
           echo "/home/runner/bin" >> $GITHUB_PATH
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH
 
       - name: Get env
         run: |
