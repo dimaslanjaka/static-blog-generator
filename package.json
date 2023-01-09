@@ -76,6 +76,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@jest/globals": "^29.3.1",
     "@types/bluebird": "^3.5.38",
+    "@types/fs-extra": "^11.0.0",
     "@types/gulp": "^4.0.10",
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
