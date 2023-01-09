@@ -1,0 +1,9 @@
+#!/bin/sh
+
+git submodule deinit -f packages/hexo-post-parser
+
+# Remove the submodule directory from the superproject's .git/modules directory
+rm -rf .git/modules/packages/hexo-post-parser
+
+# Remove the entry in .gitmodules and remove the submodule directory located at packages/hexo-post-parser
+git rm -f packages/hexo-post-parser
