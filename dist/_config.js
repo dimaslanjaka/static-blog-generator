@@ -56,8 +56,6 @@ var fs_1 = require("fs");
 var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
 var path_1 = require("path");
-var true_case_path_1 = __importDefault(require("true-case-path"));
-var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
 var defaults_1 = require("./defaults");
 var fm_1 = require("./utils/fm");
@@ -77,14 +75,6 @@ var loadYml = function () {
 loadYml();
 function setConfig(obj) {
     settledConfig = Object.assign({}, settledConfig, obj);
-    fileYML = (0, path_1.join)(settledConfig.cwd, '_config.yml');
-    if (!fetched[fileYML]) {
-        if (settledConfig.cwd) {
-            settledConfig.cwd = (0, upath_1.toUnix)(true_case_path_1.default.trueCasePathSync(settledConfig.cwd));
-        }
-        loadYml();
-        fetched[fileYML] = true;
-    }
     return getConfig();
 }
 exports.setConfig = setConfig;
