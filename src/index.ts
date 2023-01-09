@@ -8,6 +8,7 @@ export { default as standaloneRunner } from './gulp.standalone';
 export { commitProject, default as gulp } from './gulpfile';
 export { copyAllPosts, copySinglePost } from './post/copy';
 export { updatePost } from './post/update';
+export * as util from './utils';
 export { array_random, array_remove_empty, array_unique } from './utils/array';
 export { noop } from './utils/noop';
 export { default as scheduler } from './utils/scheduler';
