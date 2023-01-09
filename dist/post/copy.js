@@ -200,11 +200,9 @@ function processSinglePost(file) {
                 case 2:
                     parse = _f.sent();
                     if (parse && parse.metadata) {
-                        log.extend('permalink').extend('pattern')(config.permalink);
                         if ((_a = parse.metadata.permalink) === null || _a === void 0 ? void 0 : _a.startsWith('/')) {
                             parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
                         }
-                        log.extend('permalink')(parse.metadata.permalink);
                         if (parse.metadata.uuid) {
                             if (!parse.metadata.id)
                                 parse.metadata.id = parse.metadata.uuid;
