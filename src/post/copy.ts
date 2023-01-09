@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import through2 from 'through2';
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
-import hexoPostParser from 'hexo-post-parser';
+import * as hexoPostParser from 'hexo-post-parser';
 import { gulpCached } from '..';
 import debug from '../utils/debug';
 //
@@ -152,7 +152,7 @@ export async function processSinglePost(file: string) {
     if (parse && parse.metadata) {
       // fix permalink
       log.extend('permalink').extend('pattern')(config.permalink);
-      parse.metadata.permalink = hexoPostParser.parsePermalink(parse);
+      //parse.metadata.permalink = hexoPostParser.parsePermalink(parse);
       if (parse.metadata.permalink?.startsWith('/')) {
         parse.metadata.permalink = parse.metadata.permalink.replace(/^\//, '');
       }
