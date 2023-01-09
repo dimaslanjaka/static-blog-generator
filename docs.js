@@ -14,6 +14,7 @@ const isGithubActions = typeof process.env.GITHUB_WORKFLOWS === 'string';
  * @returns {Promise<string>}
  */
 const dumpTasks = function () {
+  console.log('dumping gulp tasks');
   return new Promise((resolve) => {
     const child = spawn('gulp', ['--tasks', '--json'], { cwd: join(__dirname, 'dist') });
     /**
@@ -59,6 +60,7 @@ ${output.join(EOL)}
  * @returns
  */
 const copyCoverageResult = async function () {
+  console.log('copying coverage result');
   const dirs = ['coverage/lcov-report', 'coverage/html-report'];
   const copyStream = (dirPath) => {
     return new Promise((res) => {
@@ -82,6 +84,7 @@ const copyCoverageResult = async function () {
 // exports.coverage = coverage;
 
 const buildDocs = async function () {
+  console.log('building docs');
   await dumpTasks();
   const readme = await readFile(join(__dirname, 'readme.md'), 'utf-8');
   const tasks = await readFile(join(__dirname, 'tmp/tasks.md'), 'utf-8');
@@ -103,11 +106,10 @@ ${tasks}
   }
 };
 
-const clone = function () {
+const clone = async function () {
   if (!existsSync(__dirname + '/docs')) {
-    return spawnAsync('git', ['clone', 'https://github.com/dimaslanjaka/docs', 'docs'], { cwd: __dirname });
+    await spawnAsync('git', ['clone', 'https://github.com/dimaslanjaka/docs', 'docs'], { cwd: __dirname });
   }
-  return Promise.resolve(null);
 };
 
-clone().then(buildDocs);
+clone().then(() => buildDocs());
