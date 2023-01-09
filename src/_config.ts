@@ -12,7 +12,7 @@ import { orderKeys } from './utils/object';
 //typeof import('./_config.json') & Record<string, any> &
 export type importConfig = typeof import('./_config.json');
 
-export interface ProjConf extends Hexo.HexoConfig {
+export interface ProjConf extends Hexo.Config {
   [key: string]: any;
   /**
    * Source posts
@@ -69,6 +69,19 @@ export interface LabelMapper {
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
 
+const fetched = {};
+let fileYML = join(process.cwd(), '_config.yml');
+const loadYml = function () {
+  if (existsSync(fileYML)) {
+    fetched[fileYML] = true;
+    const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
+    settledConfig = Object.assign({}, configYML, settledConfig);
+    writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+  }
+};
+
+loadYml();
+
 /**
  * Config setter
  * * useful for jest
@@ -76,10 +89,18 @@ let settledConfig = getDefaultConfig() as Record<string, any>;
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign({}, settledConfig, obj);
+  fileYML = join(settledConfig.cwd, '_config.yml');
+  if (!fetched[fileYML]) {
+    if (settledConfig.cwd) {
+      // fix cwd
+      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(settledConfig.cwd));
+    }
+    loadYml();
+    fetched[fileYML] = true;
+  }
+
   return getConfig();
 }
-
-let fetched = false;
 
 /**
  * Config getter
@@ -88,34 +109,12 @@ let fetched = false;
  * @returns
  */
 export function getConfig(customFolder?: string) {
-  let fileYML = '_config.yml';
-  const loadYml = function () {
-    if (existsSync(fileYML)) {
-      const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-      settledConfig = Object.assign({}, configYML, settledConfig);
-      writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
-    }
-  };
   if (typeof customFolder === 'string') {
     fileYML = join(customFolder, '_config.yml');
     loadYml();
-    fetched = true;
+    fetched[fileYML] = true;
   }
-  if (!fetched) {
-    if (settledConfig && 'cwd' in settledConfig) {
-      fileYML = join(settledConfig.cwd, '_config.yml');
-      // fix cwd
-      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(settledConfig.cwd));
-    } else {
-      fileYML = join(process.cwd(), '_config.yml');
-      // set cwd
-      settledConfig.cwd = toUnix(truecasepath.trueCasePathSync(process.cwd()));
-    }
-    loadYml();
-    fetched = true;
-
-    settledConfig = orderKeys(settledConfig);
-  }
+  settledConfig = orderKeys(settledConfig);
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
   //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
