@@ -106,12 +106,14 @@ class SBG {
    * @see {@link cleaner.cleanDb}
    * @see {@link cleaner.cleanOldArchives}
    */
-  async clean(opt?: 'all' | 'archives' | 'database') {
+  async clean(opt?: 'all' | 'archive' | 'database' | 'post') {
     if (opt === 'all') {
       await cleaner.cleanDb().catch(console.log);
       await cleaner.cleanOldArchives().catch(console.log);
-    } else if (opt === 'archives') {
+    } else if (opt === 'archive') {
       await cleaner.cleanOldArchives().catch(console.log);
+    } else if (opt === 'post') {
+      await cleaner.cleanGeneratedPosts().catch(console.log);
     } else {
       await cleaner.cleanDb().catch(console.log);
     }
