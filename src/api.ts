@@ -26,7 +26,7 @@ class SBG {
     if (!options) options = getConfig();
     this.cwd = cwd;
     options.cwd = cwd;
-    this.config = this.setConfig(options);
+    this.config = setConfig(options);
     SBG.setApi(this);
     new scheduler();
   }
@@ -49,14 +49,14 @@ class SBG {
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
    * @returns
    */
-  seo = () => taskSeo(null, join(this.cwd, getConfig().public_dir));
+  seo = () => taskSeo(null, join(this.cwd, this.config.public_dir));
 
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
    * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
-  copy = () => chain([{ callback: pcopy.copyAllPosts }]);
+  copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)

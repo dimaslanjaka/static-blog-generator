@@ -58,17 +58,23 @@ var hexoPostParser = __importStar(require("hexo-post-parser"));
 var path_1 = require("path");
 var yaml_1 = __importDefault(require("yaml"));
 var defaults_1 = require("./defaults");
+var debug_1 = __importDefault(require("./utils/debug"));
 var fm_1 = require("./utils/fm");
 var object_1 = require("./utils/object");
 var settledConfig = (0, defaults_1.getDefaultConfig)();
 var fetched = {};
 var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
 var loadYml = function () {
-    if ((0, fs_1.existsSync)(fileYML)) {
+    var _a;
+    if ((0, fs_1.existsSync)(fileYML) && !fetched[fileYML]) {
         fetched[fileYML] = true;
         var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
         settledConfig = Object.assign({}, configYML, settledConfig);
+        settledConfig = (0, object_1.orderKeys)(settledConfig);
         hexoPostParser.setConfig(settledConfig);
+        (0, debug_1.default)('config').extend('changed')((_a = new Error().stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gm).filter(function (str) {
+            return !str.includes('node:internal');
+        }).join('\n'));
         (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     }
 };
@@ -84,7 +90,6 @@ function getConfig(customFolder) {
         loadYml();
         fetched[fileYML] = true;
     }
-    settledConfig = (0, object_1.orderKeys)(settledConfig);
     settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
     return settledConfig;
 }

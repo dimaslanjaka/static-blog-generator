@@ -19,7 +19,7 @@ export function getDefaultConfig() {
     // URL
     url: 'http://example.com',
     root: '/',
-    permalink: ':year/:month/:day/:title/',
+    permalink: ':year/:month/:day/:name/',
     permalink_defaults: {},
     pretty_urls: {
       trailing_index: true,
