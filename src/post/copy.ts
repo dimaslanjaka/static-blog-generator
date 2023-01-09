@@ -142,7 +142,7 @@ export async function processSinglePost(file: string) {
           codeblock: true
         },
         cache: false,
-        config: <any>getConfig(),
+        //config: <any>getConfig(),
         formatDate: true,
         fix: true,
         sourceFile: file
