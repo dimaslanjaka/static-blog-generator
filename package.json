@@ -105,8 +105,8 @@
     "typescript": "^4.9.4"
   },
   "workspaces": [
-    "packages\\server",
-    "packages\\shared",
-    "packages\\internal-api"
+    "packages\\sbg-server",
+    "packages\\sbg-utility",
+    "packages\\sbg-api"
   ]
 }

@@ -1,9 +1,14 @@
 {
-  "name": "internal-api",
-  "version": "3.0.0",
-  "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
+  "name": "sbg-utility",
+  "version": "1.0.0",
+  "description": "static-blog-generator utility",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
+    "@types/nunjucks": "^3.2.1",
+    "debug": "^4.3.4"
+  },
   "scripts": {
     "test": "jest --runInBand",
     "lint": "eslint \"src/**/*.ts\" --fix",
@@ -14,21 +19,17 @@
     "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
   },
   "keywords": [
-    "static-blog-generator"
+    "static-blog-generator",
+    "utility"
   ],
-  "author": "Dimas Lanjaka",
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
-    "cross-spawn": "^7.0.3",
     "gulp": "^4.0.2",
-    "nunjucks": "^3.2.3",
-    "sbg-utility": "file:../shared"
-  },
-  "devDependencies": {
-    "@types/cross-spawn": "^6.0.2"
+    "nunjucks": "^3.2.3"
   }
 }
