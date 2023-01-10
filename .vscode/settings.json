@@ -16,5 +16,7 @@
   },
   "code-runner.showRunIconInEditorTitleMenu": false,
   "code-runner.showRunCommandInExplorerContextMenu": false,
-  "code-runner.respectShebang": true
+  "code-runner.respectShebang": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative"
 }
