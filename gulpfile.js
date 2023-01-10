@@ -1,21 +1,42 @@
 const spawn = require('cross-spawn');
 const { existsSync, mkdirSync, appendFileSync } = require('fs');
-const { copyFile } = require('fs-extra');
+const fs = require('fs-extra');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { join } = require('upath');
 
 // copy non-javascript assets from src folder
-const copy = function (done) {
-  gulp
-    .src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(join(__dirname, 'dist')))
-    .once('end', async function () {
-      // copy src/_config.json to dist (prevent git changing values of dist)
-      await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.json'));
-      await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.auto-generated.json'));
-      done();
-    });
+const copyDist = function (done) {
+  const packages = {
+    'packages/sbg-utility': false,
+    'packages/sbg-api': false,
+    'packages/sbg-server': false
+  };
+  Object.keys(packages).map((p) => {
+    const cwd = join(__dirname, p);
+    const dest = join(__dirname, 'dist', p);
+    const pkj = join(__dirname, p, 'package.json');
+    if (!fs.existsSync(dest)) {
+      fs.mkdirSync(dest, { recursive: true });
+    } else {
+      fs.emptyDirSync(dest);
+    }
+
+    fs.copyFileSync(pkj, join(dest, 'package.json'));
+    //console.log('copying', cwd, '->', dest);
+    gulp
+      .src(['dist/*.*'], { cwd })
+      .pipe(gulp.dest(dest + '/dist'))
+      .once('end', () => {
+        packages[p] = true;
+        //console.log('copying', p, 'end');
+        if (Object.values(packages).every(Boolean)) done();
+      })
+      .once('error', () => {
+        packages[p] = true;
+        console.log('copying', p, 'error');
+      });
+  });
 };
 
 function build(done) {
@@ -26,9 +47,10 @@ function eslint(done) {
   spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
 }
 
-gulp.task('eslint', eslint);
-gulp.task('copy', copy);
-gulp.task('build', gulp.series(eslint, build));
+gulp.task('eslint', gulp.series(eslint));
+gulp.task('copy', gulp.series(copyDist));
+gulp.task('build', gulp.series(eslint, build, copyDist));
+gulp.task('default', gulp.series(['build']));
 
 /**
  * @type {'false' | 'true' | 'postpone'}
@@ -92,5 +114,3 @@ function buildWatch(done) {
 }
 
 gulp.task('watch', buildWatch);
-
-gulp.task('default', gulp.series(['build', 'copy']));
