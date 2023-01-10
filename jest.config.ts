@@ -14,7 +14,7 @@ const config: Config = {
   verbose: false,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  // roots: [`<rootDir>/test`],
+  roots: [`<rootDir>/test`],
 
   testMatch: [`**/__tests__/**/*.+(ts|tsx|js)`, `**/?(*.)+(spec|test).+(ts|tsx|js)`],
 
@@ -36,7 +36,7 @@ const config: Config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    'src/*.{js,ts}',
+    '**/*.{js,ts}',
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/test/**',

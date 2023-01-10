@@ -6,7 +6,7 @@ const gulp = require('gulp');
 const { join } = require('upath');
 
 // copy non-javascript assets from src folder
-const copyDist = function (done) {
+function copyWorkspaceDist(done) {
   const packages = {
     'packages/sbg-utility': false,
     'packages/sbg-api': false,
@@ -37,7 +37,7 @@ const copyDist = function (done) {
         console.log('copying', p, 'error');
       });
   });
-};
+}
 
 function build(done) {
   spawnAsync('npm', ['run', 'build', '--workspaces'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
@@ -47,9 +47,36 @@ function eslint(done) {
   spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
 }
 
+function buildDist(done) {
+  const pkgc = require('./package.json');
+  delete pkgc.workspaces;
+  pkgc.dependencies = {};
+  pkgc.devDependencies = {};
+  pkgc.scripts = {};
+  pkgc.dependencies['sbg-api'] = 'file:packages/sbg-api';
+  pkgc.dependencies['sbg-server'] = 'file:packages/sbg-server';
+  pkgc.dependencies['sbg-utility'] = 'file:packages/sbg-utility';
+  delete pkgc.files;
+  const dest = join(__dirname, 'dist');
+  fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
+
+  spawnAsync('npm', ['pack'], {
+    cwd: dest
+  }).then(() => {
+    // packing to release
+    const filepack = `${pkgc.name}-${pkgc.version}.tgz`;
+    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
+    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${pkgc.name}.tgz`));
+    fs.rmSync(join(dest, filepack));
+    // copy readme.md
+    fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
+    done();
+  });
+}
+
 gulp.task('eslint', gulp.series(eslint));
-gulp.task('copy', gulp.series(copyDist));
-gulp.task('build', gulp.series(eslint, build, copyDist));
+gulp.task('copy', gulp.series(copyWorkspaceDist));
+gulp.task('build', gulp.series(eslint, build, copyWorkspaceDist, buildDist));
 gulp.task('default', gulp.series(['build']));
 
 /**
