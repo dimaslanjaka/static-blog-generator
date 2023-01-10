@@ -2,7 +2,8 @@
   "name": "sbg-server",
   "version": "0.0.1",
   "description": "static-blog-generator server workspace",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --runInBand",
     "lint": "eslint \"src/**/*.ts\" --fix",
