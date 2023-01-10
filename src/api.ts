@@ -13,7 +13,7 @@ import { getConfig, setConfig } from './_config';
 
 class SBG {
   cwd: string;
-  config = {} as ReturnType<typeof getConfig>;
+  config = getConfig();
   setConfig = setConfig;
   getConfig = getConfig;
 
@@ -23,10 +23,10 @@ class SBG {
    */
   constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = process.cwd();
-    if (!options) options = getConfig();
     this.cwd = cwd;
-    options.cwd = cwd;
-    this.config = setConfig(options);
+    options = Object.assign(this.config, options || {}, { cwd });
+    setConfig(options);
+    this.config = options as any;
     SBG.setApi(this);
     new scheduler();
   }
