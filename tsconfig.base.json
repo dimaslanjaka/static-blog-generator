@@ -20,7 +20,8 @@
     "newLine": "lf",
     "types": [],
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "rootDirs": ["src", "packages"]
   },
   "include": ["project.js"],
   "plugins": [
