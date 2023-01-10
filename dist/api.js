@@ -64,7 +64,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var hexo_1 = __importDefault(require("hexo"));
 var upath_1 = require("upath");
-var cleaner = __importStar(require("./gulp.clean"));
+var cleaner = __importStar(require("./clean"));
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var gulp_standalone_1 = __importDefault(require("./gulp.standalone"));

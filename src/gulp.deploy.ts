@@ -6,7 +6,7 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp, { TaskFunctionCallback } from 'gulp';
 import moment from 'moment-timezone';
 import { join, toUnix } from 'upath';
-import './gulp.clean';
+import './clean';
 import './gulp.safelink';
 import Logger from './utils/logger';
 import { deployConfig, getConfig } from './_config';
