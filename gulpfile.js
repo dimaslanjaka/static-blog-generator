@@ -1,4 +1,5 @@
 const spawn = require('cross-spawn');
+const { deepmerge } = require('deepmerge-ts');
 const { existsSync, mkdirSync, appendFileSync } = require('fs');
 const fs = require('fs-extra');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
@@ -51,17 +52,20 @@ function eslint(done) {
 }
 
 function buildDist(done) {
-  const pkgc = require('./package.json');
+  const pkgroot = require('./package.json');
   const pkgmain = require('./packages/main/package.json');
+  const pkgc = deepmerge(pkgroot, pkgmain, { main: 'main/dist/index.js', types: 'main/dist/index.d.ts' });
+  delete pkgc.workspaces;
+  delete pkgc.private;
   pkgc.name = 'static-blog-generator';
   pkgc.description = pkgmain.description;
-  delete pkgc.workspaces;
   pkgc.dependencies = {};
   pkgc.devDependencies = {};
   pkgc.scripts = {};
   pkgc.dependencies['sbg-api'] = 'file:sbg-api';
   pkgc.dependencies['sbg-server'] = 'file:sbg-server';
   pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
+  pkgc.dependencies['sbg-main'] = 'file:main';
   delete pkgc.files;
   const dest = join(__dirname, 'dist');
   fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
