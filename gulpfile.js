@@ -9,7 +9,7 @@ const { join } = require('upath');
 // copy non-javascript assets from src folder
 function copyWorkspaceDist(done) {
   const dist = join(__dirname, 'dist');
-  // if (fs.existsSync(dist)) fs.emptyDirSync(dist);
+  if (fs.existsSync(dist)) fs.emptyDirSync(dist);
   const packages = {
     'packages/sbg-utility': false,
     'packages/sbg-api': false,
@@ -29,7 +29,7 @@ function copyWorkspaceDist(done) {
     fs.copyFileSync(pkj, join(dest, 'package.json'));
     //console.log('copying', cwd, '->', dest);
     gulp
-      .src(['dist/*.*'], { cwd })
+      .src(['dist/*.*'], { cwd, ignore: ['*.tsbuildinfo'] })
       .pipe(gulp.dest(dest + '/dist'))
       .once('end', () => {
         packages[p] = true;
