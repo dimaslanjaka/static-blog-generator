@@ -4,9 +4,12 @@
     "module": "commonjs",
     "target": "es5",
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
-      "src": ["./src"]
+      "src": ["./src"],
+      "sbg-shared": ["../shared/src"]
     }
   },
-  "include": ["./src", "./src/**/*.json"]
+  "include": ["./src", "./src/**/*.json"],
+  "references": [{ "path": "../shared" }]
 }
