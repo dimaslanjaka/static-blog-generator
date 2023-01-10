@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import { getConfig } from 'sbg-utility/dist/config/_config';
-import { cleanDb } from 'src/clean/cleanDb';
 import { join } from 'upath';
+import { cleanDb } from './cleanDb';
 
 /**
  * remove source/_posts
