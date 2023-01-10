@@ -1,5 +1,5 @@
 {
-  "name": "static-blog-generator",
+  "name": "internal-api",
   "version": "3.0.0",
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "main": "dist/index.js",
