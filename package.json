@@ -20,16 +20,8 @@
     "test": "jest --env node --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js"
   },
-  "keywords": [
-    "static-blog-generator",
-    "hexo",
-    "hexo-post",
-    "hexo-generator",
-    "hexo-admin",
-    "hexo-gui"
-  ],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@prettier/plugin-xml": "^2.2.0",
     "ansi-colors": "^4.1.3",

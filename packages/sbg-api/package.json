@@ -17,7 +17,7 @@
     "static-blog-generator"
   ],
   "author": "Dimas Lanjaka",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
   },

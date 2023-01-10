@@ -7,14 +7,17 @@ const { join } = require('upath');
 
 // copy non-javascript assets from src folder
 function copyWorkspaceDist(done) {
+  const dist = join(__dirname, 'dist');
+  // if (fs.existsSync(dist)) fs.emptyDirSync(dist);
   const packages = {
     'packages/sbg-utility': false,
     'packages/sbg-api': false,
-    'packages/sbg-server': false
+    'packages/sbg-server': false,
+    'packages/main': false
   };
   Object.keys(packages).map((p) => {
     const cwd = join(__dirname, p);
-    const dest = join(__dirname, 'dist', p);
+    const dest = join(dist, p.replace('packages/', ''));
     const pkj = join(__dirname, p, 'package.json');
     if (!fs.existsSync(dest)) {
       fs.mkdirSync(dest, { recursive: true });
@@ -49,13 +52,16 @@ function eslint(done) {
 
 function buildDist(done) {
   const pkgc = require('./package.json');
+  const pkgmain = require('./packages/main/package.json');
+  pkgc.name = 'static-blog-generator';
+  pkgc.description = pkgmain.description;
   delete pkgc.workspaces;
   pkgc.dependencies = {};
   pkgc.devDependencies = {};
   pkgc.scripts = {};
-  pkgc.dependencies['sbg-api'] = 'file:packages/sbg-api';
-  pkgc.dependencies['sbg-server'] = 'file:packages/sbg-server';
-  pkgc.dependencies['sbg-utility'] = 'file:packages/sbg-utility';
+  pkgc.dependencies['sbg-api'] = 'file:sbg-api';
+  pkgc.dependencies['sbg-server'] = 'file:sbg-server';
+  pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
   delete pkgc.files;
   const dest = join(__dirname, 'dist');
   fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
