@@ -1,8 +1,8 @@
 import { existsSync } from 'fs-extra';
 import gulp from 'gulp';
-import { getConfig } from 'sbg-utility/dist/config/_config';
-import debug from 'sbg-utility/dist/utils/debug';
-import { del, writefile } from 'sbg-utility/dist/utils/fm';
+import { getConfig } from 'sbg-utility/src/config/_config';
+import debug from 'sbg-utility/src/utils/debug';
+import { del, writefile } from 'sbg-utility/src/utils/fm';
 import { join } from 'upath';
 import { inspect } from 'util';
 

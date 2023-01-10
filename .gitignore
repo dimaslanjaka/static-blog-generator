@@ -13,6 +13,7 @@ temp
 # disable dist
 /dist
 /packages/**/dist/
+/src
 
 # branch v2
 /build
