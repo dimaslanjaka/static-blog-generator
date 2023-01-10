@@ -18,7 +18,7 @@
   "code-runner.showRunCommandInExplorerContextMenu": false,
   "code-runner.respectShebang": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
   "search.exclude": {
     "**/dist/**": true,
     "**/tmp/**": true
