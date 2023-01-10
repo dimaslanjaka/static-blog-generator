@@ -131,10 +131,6 @@
       "type": "base64",
       "password": "unique-password"
     },
-    "exclude": [
-      "webmanajemen.com",
-      "web-manajemen.blogspot.com",
-      "dimaslanjaka.github.io"
-    ]
+    "exclude": ["webmanajemen.com", "web-manajemen.blogspot.com", "dimaslanjaka.github.io"]
   }
 }
