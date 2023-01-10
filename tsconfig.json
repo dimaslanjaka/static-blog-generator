@@ -24,6 +24,6 @@
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["./src", "./test", "typedoc.js", "typedoc-runner.js"],
+  "include": ["typedoc.js", "typedoc-runner.js"],
   "exclude": ["dist"]
 }
