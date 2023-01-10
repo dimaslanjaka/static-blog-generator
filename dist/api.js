@@ -86,9 +86,9 @@ var SBG = (function () {
         if (!cwd)
             cwd = process.cwd();
         this.cwd = cwd;
+        (0, _config_1.fetchConfig)(cwd);
         options = Object.assign(this.config, options || {}, { cwd: cwd });
-        (0, _config_1.setConfig)(options);
-        this.config = options;
+        this.config = (0, _config_1.setConfig)(options);
         SBG.setApi(this);
         new scheduler_1.default();
     }

@@ -68,14 +68,14 @@ export interface LabelMapper {
 
 let settledConfig = getDefaultConfig() as Record<string, any>;
 
-const fileYML = join(process.cwd(), '_config.yml');
-console.log('loading config', fileYML);
-const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-settledConfig = Object.assign(configYML, settledConfig);
-settledConfig = orderKeys(settledConfig);
-// update hexo-post-parser config
-hexoPostParser.setConfig(settledConfig);
-writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+export function fetchConfig(fileYML: string) {
+  // const fileYML = join(process.cwd(), '_config.yml');
+  const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
+  setConfig(orderKeys(configYML));
+  writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+}
+
+fetchConfig(join(process.cwd(), '_config.yml'));
 
 /**
  * Config setter
@@ -85,6 +85,8 @@ writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign(settledConfig || {}, obj);
 
+  // update hexo-post-parser config
+  hexoPostParser.setConfig(settledConfig);
   return getConfig();
 }
 
