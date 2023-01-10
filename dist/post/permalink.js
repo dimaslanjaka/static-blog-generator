@@ -68,12 +68,6 @@ function parsePermalink(post, config) {
         ':name': path.basename(cleanPathname),
         ':post_title': config.title
     };
-    if (pattern.startsWith(':title')) {
-        var bname = pattern.replace(':title', replacer[':title']);
-        var perm = path.join(path.dirname(normalizePath(post)), bname);
-        (0, debug_1.default)('permalink').extend('result')(perm);
-        return perm;
-    }
     for (var date_pattern in replacer) {
         if ([':title', ':post_title', ':id', ':category', ':hash', ':name'].includes(date_pattern)) {
             pattern = pattern.replace(date_pattern, replacer[date_pattern]);
