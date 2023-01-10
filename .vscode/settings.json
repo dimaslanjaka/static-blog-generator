@@ -20,6 +20,7 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "search.exclude": {
-    "**/dist/**": true
+    "**/dist/**": true,
+    "**/tmp/**": true
   }
 }
