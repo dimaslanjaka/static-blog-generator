@@ -76,20 +76,19 @@ var _config_1 = require("./_config");
 var SBG = (function () {
     function SBG(cwd, options) {
         var _this = this;
-        this.config = {};
+        this.config = (0, _config_1.getConfig)();
         this.setConfig = _config_1.setConfig;
         this.getConfig = _config_1.getConfig;
         this.standalone = function () { return (0, chain_1.chain)([{ callback: gulp_standalone_1.default }]); };
-        this.seo = function () { return (0, gulp_seo_1.taskSeo)(null, (0, upath_1.join)(_this.cwd, (0, _config_1.getConfig)().public_dir)); };
-        this.copy = function () { return (0, chain_1.chain)([{ callback: pcopy.copyAllPosts }]); };
+        this.seo = function () { return (0, gulp_seo_1.taskSeo)(null, (0, upath_1.join)(_this.cwd, _this.config.public_dir)); };
+        this.copy = function () { return (0, chain_1.chain)([{ callback: function () { return pcopy.copyAllPosts(undefined, _this.config); } }]); };
         this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(noop_1.default, (0, upath_1.join)(_this.cwd, (0, _config_1.getConfig)().public_dir)); };
         if (!cwd)
             cwd = process.cwd();
-        if (!options)
-            options = (0, _config_1.getConfig)();
         this.cwd = cwd;
-        options.cwd = cwd;
-        this.config = (0, _config_1.setConfig)(options);
+        options = Object.assign(this.config, options || {}, { cwd: cwd });
+        (0, _config_1.setConfig)(options);
+        this.config = options;
         SBG.setApi(this);
         new scheduler_1.default();
     }
