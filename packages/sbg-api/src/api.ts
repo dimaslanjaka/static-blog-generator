@@ -97,3 +97,4 @@ class SBG {
 }
 
 export default SBG;
+export { SBG };

@@ -12,7 +12,7 @@
   "scripts": {
     "test": "jest --runInBand",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "tsc --build tsconfig.build.json"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",

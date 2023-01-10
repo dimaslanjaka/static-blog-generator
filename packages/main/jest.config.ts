@@ -9,6 +9,6 @@ module.exports = {
       }
     }
   }),
-  rootDir: 'src',
+  rootDir: 'test',
   testRegex: [/.*\.spec\.ts$/]
 };
