@@ -1,0 +1,27 @@
+{
+  "name": "sbg-utility",
+  "version": "1.0.0",
+  "description": "static-blog-generator utility",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
+    "debug": "^4.3.4"
+  },
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
+  "keywords": [
+    "static-blog-generator",
+    "utility"
+  ],
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme"
+}
