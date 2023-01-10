@@ -3,10 +3,11 @@ import 'nodejs-package-types';
 import { EOL } from 'os';
 import slugify from 'slugify';
 import { basename, join, toUnix } from 'upath';
-import { getConfig } from '../_config';
+import { config as configs } from '../config';
 import { writefile } from './fm';
 import { areWeTestingWithJest } from './jest';
 
+const { getConfig } = configs;
 const FOLDER = join(process.cwd(), 'tmp/logs');
 
 // disable console.log on jest
