@@ -1,281 +1,226 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync } from 'fs';
-import Hexo from 'hexo';
-import hexoIs from 'hexo-is';
-import moment from 'moment';
-import 'nodejs-package-types';
-import { dirname, join } from 'path';
-import { getConfig } from 'sbg-utility/dist/config/_config';
+import Bluebird from 'bluebird';
+import { readFileSync } from 'fs-extra';
+import gulp from 'gulp';
+import gulpDom from 'gulp-dom';
+import { default as hexo } from 'hexo';
+import { full_url_for } from 'hexo-util';
+import micromatch from 'micromatch';
+import nunjucks from 'nunjucks';
+import { EOL } from 'os';
+import { commonIgnore, getConfig, setConfig } from 'sbg-utility/dist/config/_config';
+import { envNunjucks, noop } from 'sbg-utility/dist/utils';
+import { array_remove_empty, array_unique } from 'sbg-utility/dist/utils/array';
 import { writefile } from 'sbg-utility/dist/utils/fm';
-import scheduler from 'sbg-utility/dist/utils/scheduler';
-import { create as createXML } from 'xmlbuilder2';
-import getCategoryTags, { getLatestFromArrayDates } from './archive';
-import yoastSeoSitemapPages from './pages';
-import yoastSeoSitemapPosts from './posts';
+import Logger from 'sbg-utility/dist/utils/logger';
+import { sitemapCrawlerAsync } from 'sitemap-crawler';
+import { join } from 'upath';
+import { yoastSeo } from './yoast-sitemap';
 
-type PageData = Hexo.PageData;
-type TemplateLocals = Hexo.TemplateLocals;
-const _log = typeof hexo !== 'undefined' ? hexo.log : console;
-
-export interface sitemapItem {
-  loc: string;
-  lastmod: string;
-  changefreq: string;
-  priority: string;
-}
-export interface sitemapObj {
-  urlset: {
-    url: sitemapItem[];
-  };
-}
-interface sitemapGroup {
-  post: sitemapObj;
-  page: sitemapObj;
-  tag: sitemapObj;
-  category: sitemapObj;
-}
-const sitemapGroup = {} as sitemapGroup;
-
-interface SitemapIndex {
-  sitemapindex: {
-    sitemap: SitemapIndexItem[];
-  };
-}
-interface SitemapIndexItem {
-  loc: string;
-  lastmod: string;
-}
-
-function initSitemap(type: string | 'post' | 'page' | 'category' | 'tag') {
-  if (!sitemapGroup[type]) {
-    const sourceXML = join(__dirname, 'views/' + type + '-sitemap.xml');
-    if (!existsSync(sourceXML)) throw 'Source ' + sourceXML + ' Not Found';
-    const doc = createXML(readFileSync(sourceXML).toString());
-    sitemapGroup[type] = <sitemapObj>new Object(doc.end({ format: 'object' }));
-    sitemapGroup[type].urlset.url = [];
-  }
-}
-
-export interface returnPageData extends PageData {
-  [key: string]: any;
-  is: ReturnType<typeof hexoIs>;
-}
+/*
+// read existing sitemap.txt
+const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
+let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
+*/
+let sitemaps = [] as string[];
+const crawled = new Set<string>();
+const env = envNunjucks();
 
 /**
- * Extract Page Data
- * @param data
+ * Sitemap Generator
+ * @param url url to crawl
+ * @param deep crawl deeper n times
  * @returns
  */
-export function getPageData(data: TemplateLocals) {
-  const is = hexoIs(data);
-  if (data['page']) {
-    const page = <returnPageData>data['page'];
-    page.is = is;
-    return page;
-  }
-}
-
-/**
- * init each sitemap
- * @param hexo
- */
-function initEachSitemap(hexo: Hexo) {
-  const groups = ['post', 'page', 'category', 'tag'];
-  groups.forEach((group) => {
-    if (!sitemapGroup[group]) initSitemap(group);
-    if (sitemapGroup[group].urlset.url.length === 0) {
-      sitemapGroup[group].urlset.url.push({
-        loc: hexo.config.url,
-        lastmod: moment(Date.now()).format('YYYY-MM-DDTHH:mm:ssZ'),
-        priority: '1',
-        changefreq: 'daily'
-      });
+export function generateSitemap(url?: string | null | undefined, deep = 0) {
+  return new Bluebird((resolve: (sitemaps: string[]) => any) => {
+    const promises: Bluebird<Record<string, string[]>>[] = [];
+    if (typeof url === 'string') {
+      crawled.add(url);
+      promises.push(
+        sitemapCrawlerAsync(url, {
+          deep
+        })
+      );
+    } else {
+      crawled.add(getConfig().url);
+      promises.push(
+        sitemapCrawlerAsync(getConfig().url, {
+          deep
+        })
+      );
     }
-  });
-}
+    Bluebird.all(promises)
+      .then((results) => {
+        const mapped = {} as ReturnType<typeof sitemapCrawlerAsync>;
+        results.forEach((sitemap) => {
+          for (const key in sitemap) {
+            const values = sitemap[key];
+            if (key in mapped === false) {
+              mapped[key] = values;
+            } else {
+              mapped[key] = array_unique(values.concat(mapped[key]));
+            }
+          }
+        });
 
-let categoryTagsInfo: ReturnType<typeof getCategoryTags>;
-const postUpdateDates: string[] = [];
-const pageUpdateDates: string[] = [];
-// const cache = new CacheFile("sitemap");
-let turnError = false;
+        // dump
+        const saveto = join(process.cwd(), 'tmp/dump/sitemap/sitemap.json');
+        writefile(saveto, JSON.stringify(mapped, null, 2));
 
-export function yoastSeoSitemap(data: TemplateLocals) {
-  const HSconfig = getConfig();
-  if (!HSconfig.sitemap) {
-    if (!turnError) {
-      turnError = true;
-      _log.error('[hexo-seo][sitemap] config sitemap not set');
-    }
-    return;
-  }
-  // set category and tag information of posts
-  if (!categoryTagsInfo) {
-    categoryTagsInfo = getCategoryTags(hexo);
-  }
-  // cast locals
-  const locals = hexo.locals;
-  // return if posts and pages empty
-  if (['posts', 'pages'].every((info) => locals.get(info).length === 0)) {
-    return;
-  }
+        // return
+        return mapped;
+      })
+      .then(async (results) => {
+        sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(function (
+          a,
+          b
+        ) {
+          return a === b ? 0 : a < b ? -1 : 1;
+        });
 
-  const post = getPageData(data);
-  if (post) {
-    const isPagePost = post.is.post || post.is.page;
-    if (isPagePost) {
-      // if post updated not found, get source file last modified time
-      if (!post.updated) {
-        const stats = statSync(post.full_source);
-        post.updated = moment(stats.mtime);
-      }
-    }
-    if (post.is.post && post.updated) {
-      postUpdateDates.push(post.updated.format('YYYY-MM-DDTHH:mm:ssZ'));
-      sitemapGroup['post'].urlset.url.push({
-        loc: post.permalink,
-        lastmod: post.updated.format('YYYY-MM-DDTHH:mm:ssZ'),
-        changefreq: 'weekly',
-        priority: '0.6'
-      });
-    } else if (post.is.page && post.updated) {
-      pageUpdateDates.push(post.updated.format('YYYY-MM-DDTHH:mm:ssZ'));
-      sitemapGroup['page'].urlset.url.push({
-        loc: post.permalink,
-        lastmod: post.updated.format('YYYY-MM-DDTHH:mm:ssZ'),
-        changefreq: 'weekly',
-        priority: '0.8'
-      });
-    }
+        for (let i = 0; i < deep; i++) {
+          for (let ii = 0; ii < sitemaps.length; ii++) {
+            const url = sitemaps[ii];
+            if (crawled.has(url) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url)) continue;
 
-    if (isPagePost) {
-      scheduler.add('writeSitemap', () => {
-        // copy xsl
-        const destXSL = join(hexo.public_dir, 'sitemap.xsl');
-        if (!existsSync(dirname(destXSL))) mkdirSync(dirname(destXSL), { recursive: true });
-        const sourceXSL = join(__dirname, 'views/sitemap.xsl');
-        if (existsSync(sourceXSL)) {
-          copyFileSync(sourceXSL, destXSL);
-          _log.info('XSL sitemap copied to ' + destXSL);
-        } else {
-          _log.error('XSL sitemap not found');
+            crawled.add(url);
+            Logger.log('[depth]', ii, url);
+            await generateSitemap(url, deep).then(() => writeSitemap());
+          }
         }
 
-        const destPostSitemap = join(hexo.public_dir, 'post-sitemap.xml');
-        writefile(destPostSitemap, createXML(sitemapGroup['post']).end({ prettyPrint: true }));
-        _log.info('post sitemap saved', destPostSitemap);
-
-        const destPageSitemap = join(hexo.public_dir, 'page-sitemap.xml');
-        writefile(destPageSitemap, createXML(sitemapGroup['page']).end({ prettyPrint: true }));
-        _log.info('page sitemap saved', destPageSitemap);
-
-        yoastSitemapIndex(hexo);
+        writeSitemap(resolve);
       });
-    }
-  }
+  });
 }
 
 /**
- * yoast seo sitemap builder
- * @param hexo
+ * write the sitemap
+ * @param callback
  */
-export function yoastSeo(hexo: Hexo) {
-  initEachSitemap(hexo);
-  const { locals } = hexo;
-  const emptySite = ['posts', 'pages'].every((info) => locals.get(info).length === 0);
-  if (emptySite) return;
-  // yoastSitemapIndex(hexo);
-  yoastSeoSitemapPages(hexo);
-  yoastSeoSitemapPosts(hexo);
+function writeSitemap(callback?: (...args: any[]) => any) {
+  let cb = noop;
+  if (callback) cb = () => callback(sitemaps);
+  const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
+  writefile(sitemapTXT, array_remove_empty(sitemaps).join(EOL));
+  cb.apply(this);
 }
 
-/**
- * generate yoast
- * * path /sitemap.xml
- * @param hexo
- */
-export function yoastSitemapIndex(hexo: Hexo) {
-  const sourceIndexXML = join(__dirname, 'views/sitemap.xml');
-  const sitemapIndexDoc = createXML(readFileSync(sourceIndexXML).toString());
-  const sitemapIndex = <SitemapIndex>new Object(sitemapIndexDoc.end({ format: 'object' }));
-  sitemapIndex.sitemapindex.sitemap = [];
-
-  // push post-sitemap.xml to sitemapindex
-  const latestPostDate = getLatestFromArrayDates(postUpdateDates);
-  _log.info('latest updated post', latestPostDate);
-  sitemapIndex.sitemapindex.sitemap.push({
-    loc: hexo.config.url.toString() + '/post-sitemap.xml',
-    lastmod: moment(latestPostDate).format('YYYY-MM-DDTHH:mm:ssZ')
-  });
-
-  // push page-sitemap.xml to sitemapindex
-  const latestPageDate = getLatestFromArrayDates(pageUpdateDates);
-  _log.info('latest updated page', latestPageDate);
-  if (moment(latestPageDate).isValid())
-    sitemapIndex.sitemapindex.sitemap.push({
-      loc: hexo.config.url.toString() + '/page-sitemap.xml',
-      lastmod: moment(latestPageDate).format('YYYY-MM-DDTHH:mm:ssZ')
-    });
-
-  // set category and tag information of posts
-  if (!categoryTagsInfo) {
-    categoryTagsInfo = getCategoryTags(hexo);
-  }
-
-  // build tag-sitemap.xml
-  const tags = categoryTagsInfo.tags;
-  tags.map((tag) => {
-    sitemapGroup['tag'].urlset.url.push({
-      loc: tag.permalink.toString(),
-      // set latest post updated from this tag
-      lastmod: moment(tag.latest).format('YYYY-MM-DDTHH:mm:ssZ'),
-      changefreq: 'weekly',
-      priority: '0.2'
-    });
-  });
-  const destTagSitemap = join(hexo.public_dir, 'tag-sitemap.xml');
-  writefile(destTagSitemap, createXML(sitemapGroup['tag']).end({ prettyPrint: true }));
-  _log.info('tag sitemap saved', destTagSitemap);
-
-  // push tag-sitemap.xml to sitemapindex
-  const latestTagDate = getLatestFromArrayDates(
-    tags.map((tag) => {
-      return tag.latest;
-    })
-  );
-  _log.info('latest updated tag', latestTagDate);
-  sitemapIndex.sitemapindex.sitemap.push({
-    loc: hexo.config.url.toString() + '/tag-sitemap.xml',
-    lastmod: moment(latestTagDate).format('YYYY-MM-DDTHH:mm:ssZ')
-  });
-
-  // build category-sitemap.xml
-  const categories = categoryTagsInfo.categories;
-  categories.map((category) => {
-    sitemapGroup['category'].urlset.url.push({
-      loc: category.permalink.toString(),
-      // set latest post updated from this tag
-      lastmod: moment(category.latest).format('YYYY-MM-DDTHH:mm:ssZ'),
-      changefreq: 'weekly',
-      priority: '0.2'
-    });
-  });
-  const destCategorySitemap = join(hexo.public_dir, 'category-sitemap.xml');
-  writefile(destCategorySitemap, createXML(sitemapGroup['category']).end({ prettyPrint: true }));
-  _log.info('category sitemap saved', destCategorySitemap);
-
-  // push category-sitemap.xml to sitemapindex
-  const latestCategoryDate = getLatestFromArrayDates(
-    categories.map((category) => {
-      return category.latest;
-    })
-  );
-  _log.info('latest updated category', latestCategoryDate);
-  sitemapIndex.sitemapindex.sitemap.push({
-    loc: hexo.config.url.toString() + '/category-sitemap.xml',
-    lastmod: moment(latestCategoryDate).format('YYYY-MM-DDTHH:mm:ssZ')
-  });
-
-  const destIndexSitemap = join(hexo.public_dir, 'sitemap.xml');
-  writefile(destIndexSitemap, createXML(sitemapIndex).end({ prettyPrint: true }));
-  _log.info('index sitemap saved', destIndexSitemap);
+export interface SitemapOptions {
+  path: string[];
+  tags: boolean;
+  categories: boolean;
+  rel: boolean;
+  yoast: boolean;
 }
+
+export function hexoGenerateSitemap() {
+  return new Bluebird((resolve) => {
+    const instance = new hexo(getConfig().cwd);
+    instance.init().then(() => {
+      instance.load().then(function () {
+        env.addFilter('formatUrl', (str) => {
+          return full_url_for.call(instance, str);
+        });
+        const config = setConfig(instance.config);
+        // assign default config
+        const sitemap: SitemapOptions = Object.assign(
+          { rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] },
+          config.sitemap
+        );
+
+        // Build Yoast SEO sitemap
+        // when config.yoast defined
+        if (sitemap.yoast) {
+          return yoastSeo(instance);
+        }
+
+        if (!config.sitemap) return Logger.log('[sitemap] config.sitemap not configured in _config.yml');
+        const locals = instance.locals;
+        const { skip_render } = config;
+
+        if (!sitemap.tags || !sitemap.categories) {
+          return Logger.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
+        }
+        const skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
+
+        if (Array.isArray(skip_render)) {
+          skipRenderList.push(...skip_render);
+        } else if (typeof skip_render === 'string') {
+          if (skip_render.length > 0) {
+            skipRenderList.push(skip_render);
+          }
+        }
+
+        const posts = [...locals.get('pages').toArray(), ...locals.get('posts').toArray()]
+          .filter((post) => {
+            return post.sitemap !== false && !isMatch(post.source, skipRenderList);
+          })
+          .sort((a, b) => {
+            if (b.updated && a.updated) return b.updated.toDate().getTime() - a.updated.toDate().getTime();
+            return 0;
+          });
+
+        if (posts.length <= 0) {
+          return resolve();
+        }
+
+        const tmplSrc = join(__dirname, '_config_template_sitemap.xml');
+        const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
+        const { tags: tagsCfg, categories: catsCfg, rel: relCfg } = sitemap;
+        let data = template.render({
+          config,
+          posts,
+          sNow: new Date(),
+          tags: tagsCfg ? locals.get('tags').toArray() : [],
+          categories: catsCfg ? locals.get('categories').toArray() : []
+        });
+
+        // remove blank newlines
+        data = data.replace(/^\s*[\r\n]/gm, '\n');
+
+        //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
+
+        // dump
+        writefile(join(process.cwd(), 'tmp/dump/sitemap/sitemap.xml'), data);
+
+        // write
+        const sitemapXml = join(getConfig().cwd, config.public_dir, 'sitemap.xml');
+        writefile(sitemapXml, data);
+        instance.log.info('sitemap written', sitemapXml);
+
+        if (!relCfg) return resolve();
+        const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
+        const publicDir = join(getConfig().cwd, config.public_dir);
+        gulp
+          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
+          .pipe(
+            gulpDom(function () {
+              // auto discovery sitemap
+              if (
+                this.querySelectorAll(`link[href="${baseURL}sitemap.xml"]`).length === 0 &&
+                this.querySelectorAll(`link[href="/sitemap.xml"]`).length === 0
+              ) {
+                this.head.innerHTML += `<link id="sitemap-site-url" type="application/text+xml" rel="sitemap" href="${baseURL}sitemap.xml" />`;
+              }
+              //this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+            })
+          )
+          .pipe(gulp.dest(publicDir))
+          .once('end', () => resolve());
+      });
+    });
+  });
+}
+
+function isMatch(path: string, patterns: string | readonly string[]) {
+  return micromatch.isMatch(path, patterns);
+}
+
+gulp.task('sitemap', () => {
+  return new Bluebird((resolve) => {
+    hexoGenerateSitemap().then(function () {
+      resolve();
+    });
+  });
+});
