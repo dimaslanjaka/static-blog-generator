@@ -6,8 +6,8 @@
     }
   },
   "compilerOptions": {
-    "declarationMap": false,
-    "composite": false,
+    "declarationMap": true,
+    "composite": true,
     "incremental": true,
     "declaration": true,
     "stripInternal": true,
