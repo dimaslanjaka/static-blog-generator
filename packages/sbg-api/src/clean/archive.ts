@@ -61,5 +61,3 @@ export default async function cleanArchive(callback?: gulp.TaskFunctionCallback 
 
   await Bluebird.all(promises).then(finishNow).catch(finishNow);
 }
-
-gulp.task('clean:archive', cleanArchive);
