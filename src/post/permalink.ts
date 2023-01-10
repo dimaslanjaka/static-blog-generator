@@ -73,14 +73,6 @@ export function parsePermalink(
     ':post_title': config.title
   };
 
-  // @todo [permalink] follow directory path
-  if (pattern.startsWith(':title')) {
-    const bname = pattern.replace(':title', replacer[':title']);
-    const perm = path.join(path.dirname(normalizePath(post)), bname);
-    debug('permalink').extend('result')(perm);
-    return perm;
-  }
-
   for (const date_pattern in replacer) {
     if ([':title', ':post_title', ':id', ':category', ':hash', ':name'].includes(date_pattern)) {
       // direct replace without moment for non-moment-pattern
