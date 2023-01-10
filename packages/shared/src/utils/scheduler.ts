@@ -166,3 +166,4 @@ class scheduler {
 }
 
 export default scheduler;
+export { scheduler };
