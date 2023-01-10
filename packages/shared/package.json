@@ -8,7 +8,9 @@
     "debug": "^4.3.4"
   },
   "scripts": {
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "build": "tsc --build tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
   },
-  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme"
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
 }
