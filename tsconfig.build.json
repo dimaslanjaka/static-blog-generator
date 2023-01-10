@@ -5,17 +5,20 @@
     "declaration": true,
     "stripInternal": true,
     "outDir": "./dist",
+    "rootDirs": ["src", "packages"],
     "importHelpers": false,
     "esModuleInterop": true,
     "allowJs": true,
+    "resolveJsonModule": true,
     "pretty": true,
     "removeComments": true,
     "checkJs": false,
     "allowUmdGlobalAccess": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
-    "allowUnusedLabels": true
+    "allowUnusedLabels": true,
+    "paths": {}
   },
-  "include": ["./src/index.ts", "./src/gulp.*.ts", "./src/utils"],
-  "exclude": ["*.test.js", "*.test.ts"]
+  "include": ["./packages/**/src", "./packages/**/package.json", "./packages/**/src/**/*.json"],
+  "exclude": ["*.test.js", "*.test.ts", "*.spec.ts"]
 }
