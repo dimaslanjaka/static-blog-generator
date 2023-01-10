@@ -1,0 +1,27 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnSave": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveAllFilesBeforeRun": true,
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package",
+    "*.test.ts": "npm test -- $fileNameWithoutExt",
+    "*.spec.ts": "npm test -- $fileNameWithoutExt"
+  },
+  "code-runner.showRunIconInEditorTitleMenu": false,
+  "code-runner.showRunCommandInExplorerContextMenu": false,
+  "code-runner.respectShebang": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "search.exclude": {
+    "**/dist/**": true,
+    "**/tmp/**": true
+  }
+}
