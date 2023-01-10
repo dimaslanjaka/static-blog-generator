@@ -62,6 +62,8 @@ var fm_1 = require("./utils/fm");
 var object_1 = require("./utils/object");
 var settledConfig = (0, defaults_1.getDefaultConfig)();
 function fetchConfig(fileYML) {
+    if (!fileYML.endsWith('_config.yml'))
+        fileYML += '/_config.yml';
     var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
     setConfig((0, object_1.orderKeys)(configYML));
     (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
