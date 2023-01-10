@@ -12,8 +12,8 @@ require("./gulp.deploy");
 require("./gulp.feed");
 require("./gulp.safelink");
 require("./gulp.seo");
-require("./gulp.standalone");
 require("./post/copy");
+require("./post/standalone");
 var logger_1 = __importDefault(require("./utils/logger"));
 function commitProject(finish) {
     var gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];

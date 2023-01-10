@@ -1,20 +1,14 @@
-import gulpCached from './gulp-utils/gulp.cache';
-import gulpDebug, { gulpLog } from './gulp-utils/gulp.debug';
+import SBG from './api';
 export { default as Application } from './api';
 export * as clean from './clean';
+export * as gulpUtils from './gulp-utils';
 export { taskSeo as autoSeo } from './gulp.seo';
 export { generateSitemap, hexoGenerateSitemap } from './gulp.sitemap';
-export { default as standaloneRunner } from './gulp.standalone';
 export { commitProject, default as gulp } from './gulpfile';
-export { copyAllPosts, copySinglePost } from './post/copy';
-export { updatePost } from './post/update';
+export * as post from './post';
 export * as util from './utils';
-export { array_random, array_remove_empty, array_unique } from './utils/array';
+export * as array from './utils/array';
 export { noop } from './utils/noop';
 export { default as scheduler } from './utils/scheduler';
-export { deployConfig, getConfig, setConfig } from './_config';
-export declare const gulpUtils: {
-    debug: typeof gulpDebug;
-    cached: typeof gulpCached;
-    log: typeof gulpLog;
-};
+export * as config from './_config';
+export default SBG;

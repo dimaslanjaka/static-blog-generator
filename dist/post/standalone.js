@@ -43,9 +43,9 @@ var cross_spawn_1 = __importDefault(require("cross-spawn"));
 var gulp_1 = __importDefault(require("gulp"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
-var logger_1 = __importDefault(require("./utils/logger"));
-var string_1 = require("./utils/string");
-var _config_1 = require("./_config");
+var logger_1 = __importDefault(require("../utils/logger"));
+var string_1 = require("../utils/string");
+var _config_1 = require("../_config");
 function standaloneRunner() {
     logger_1.default.log('[standalone] Running scripts...\n');
     return gulp_1.default
