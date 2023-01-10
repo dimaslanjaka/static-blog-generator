@@ -1,10 +1,10 @@
 // filemanager
 
 import Bluebird from 'bluebird';
-import fs, { MakeDirectoryOptions } from 'fs-extra';
+import fs from 'fs-extra';
 import path from 'upath';
 
-export interface writefileOpt extends MakeDirectoryOptions {
+export interface writefileOpt extends fs.MakeDirectoryOptions {
   append?: boolean | undefined | null;
   async?: boolean | undefined | null;
 }
