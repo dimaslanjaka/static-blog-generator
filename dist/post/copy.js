@@ -68,9 +68,9 @@ var fs_1 = __importDefault(require("fs"));
 var gulp_1 = __importDefault(require("gulp"));
 var through2_1 = __importDefault(require("through2"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
-var __1 = require("..");
 var debug_1 = __importDefault(require("../utils/debug"));
 var upath_1 = require("upath");
+var gulp_cache_1 = __importDefault(require("../gulp-utils/gulp.cache"));
 var logger_1 = __importDefault(require("../utils/logger"));
 var _config_1 = require("../_config");
 var permalink_1 = require("./permalink");
@@ -106,7 +106,7 @@ function copyAllPosts(_callback, config) {
         dot: true,
         noext: true
     })
-        .pipe((0, __1.gulpCached)({ name: 'post-copy' }))
+        .pipe((0, gulp_cache_1.default)({ name: 'post-copy' }))
         .pipe(pipeProcessPost(config))
         .pipe(gulp_1.default.dest(generatedPostDir)));
 }
