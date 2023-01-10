@@ -4,7 +4,6 @@
     "module": "commonjs",
     "target": "es5",
     "baseUrl": "./",
-    "resolveJsonModule": true,
     "paths": {
       "src": ["./src"]
     }
