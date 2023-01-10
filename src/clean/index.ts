@@ -1,15 +1,15 @@
 import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
-import { existsSync, readdir, rm, RmOptions } from 'fs-extra';
+import { existsSync, readdir } from 'fs-extra';
 import gulp from 'gulp';
 import { EOL } from 'os';
 import { join } from 'upath';
 import { inspect } from 'util';
-import debug from './utils/debug';
-import { writefile } from './utils/fm';
-import Logger from './utils/logger';
-import noop from './utils/noop';
-import { getConfig } from './_config';
+import debug from '../utils/debug';
+import { del, writefile } from '../utils/fm';
+import Logger from '../utils/logger';
+import noop from '../utils/noop';
+import { getConfig } from '../_config';
 
 /**
  * Clean Project Databases
@@ -51,27 +51,6 @@ export async function cleanDb(callback?: gulp.TaskFunctionCallback | (() => any)
   if (typeof callback === 'function') return callback();
 
   return undefined;
-}
-
-/**
- * delete folder async
- * @param path
- * @returns
- */
-export function del(path: string) {
-  return new Bluebird((resolve) => {
-    const rmOpt: RmOptions = { recursive: true, force: true };
-    if (existsSync(path)) {
-      rm(path, rmOpt).then(resolve).catch(resolve);
-      /*if (statSync(path).isDirectory()) {
-        rmdir(path, { maxRetries: 10 }).then(resolve).catch(resolve);
-      } else {
-        rm(path, rmOpt).then(resolve).catch(resolve);
-      }*/
-    } else {
-      resolve(new Error(path + ' not found'));
-    }
-  });
 }
 
 /**

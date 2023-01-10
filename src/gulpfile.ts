@@ -1,13 +1,13 @@
 import gulp from 'gulp';
 import { spawn } from 'hexo-util';
 import { join } from 'upath';
-import './gulp.clean';
+import './clean';
 import './gulp.deploy';
 import './gulp.feed';
 import './gulp.safelink';
 import './gulp.seo';
-import './post/copy';
 import './gulp.standalone';
+import './post/copy';
 import Logger from './utils/logger';
 
 // commit current project
