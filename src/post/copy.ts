@@ -5,11 +5,11 @@ import through2 from 'through2';
 //
 // import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import * as hexoPostParser from 'hexo-post-parser';
-import { gulpCached } from '..';
 import debug from '../utils/debug';
 //
 
 import { extname, join, toUnix } from 'upath';
+import gulpCached from '../gulp-utils/gulp.cache';
 import Logger from '../utils/logger';
 import { getConfig } from '../_config';
 import { parsePermalink } from './permalink';
