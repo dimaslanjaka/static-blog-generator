@@ -6,7 +6,6 @@ import { default as hexo } from 'hexo';
 import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
-import { EOL } from 'os';
 import { commonIgnore, getConfig, setConfig } from 'sbg-utility/dist/config/_config';
 import { envNunjucks, noop } from 'sbg-utility/dist/utils';
 import { array_remove_empty, array_unique } from 'sbg-utility/dist/utils/array';
@@ -102,7 +101,7 @@ function writeSitemap(callback?: (...args: any[]) => any) {
   let cb = noop;
   if (callback) cb = () => callback(sitemaps);
   const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
-  writefile(sitemapTXT, array_remove_empty(sitemaps).join(EOL));
+  writefile(sitemapTXT, array_remove_empty(sitemaps).join('\n'));
   cb.apply(this);
 }
 
