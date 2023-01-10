@@ -9,7 +9,7 @@ import * as pcopy from './post/copy';
 import { chain } from './utils/chain';
 import noop from './utils/noop';
 import scheduler from './utils/scheduler';
-import { getConfig, setConfig } from './_config';
+import { fetchConfig, getConfig, setConfig } from './_config';
 
 class SBG {
   cwd: string;
@@ -24,9 +24,10 @@ class SBG {
   constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = process.cwd();
     this.cwd = cwd;
+    fetchConfig(cwd);
     options = Object.assign(this.config, options || {}, { cwd });
-    setConfig(options);
-    this.config = options as any;
+
+    this.config = setConfig(options);
     SBG.setApi(this);
     new scheduler();
   }
