@@ -5,7 +5,7 @@ import { cleanGeneratedPosts } from './generated-post';
 
 gulp.task('clean:db', cleanDb);
 gulp.task('clean:post', cleanGeneratedPosts);
-gulp.task('clean:all', gulp.series('clean:db', 'clean:archive'));
 gulp.task('clean:archive', cleanArchive);
+gulp.task('clean:all', gulp.series('clean:db', 'clean:archive'));
 
 export { cleanDb, cleanArchive, cleanGeneratedPosts };
