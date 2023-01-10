@@ -7,13 +7,13 @@ exports.commitProject = void 0;
 var gulp_1 = __importDefault(require("gulp"));
 var hexo_util_1 = require("hexo-util");
 var upath_1 = require("upath");
-require("./gulp.clean");
+require("./clean");
 require("./gulp.deploy");
 require("./gulp.feed");
 require("./gulp.safelink");
 require("./gulp.seo");
-require("./post/copy");
 require("./gulp.standalone");
+require("./post/copy");
 var logger_1 = __importDefault(require("./utils/logger"));
 function commitProject(finish) {
     var gitDirs = [(0, upath_1.join)(process.cwd(), 'src-posts'), (0, upath_1.join)(process.cwd(), 'source'), process.cwd()];

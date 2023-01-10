@@ -73,7 +73,7 @@ var spawn_1 = require("git-command-helper/dist/spawn");
 var gulp_1 = __importDefault(require("gulp"));
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var upath_1 = require("upath");
-require("./gulp.clean");
+require("./clean");
 require("./gulp.safelink");
 var logger_1 = __importDefault(require("./utils/logger"));
 var _config_1 = require("./_config");
