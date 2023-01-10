@@ -1,3 +1,4 @@
+export { default as Application } from './api';
 export * as clean from './clean';
 export * as feed from './feed';
 export * as safelink from './gulp.safelink';
