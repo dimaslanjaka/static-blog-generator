@@ -4,7 +4,7 @@ import './gulp.deploy';
 import './gulp.feed';
 import './gulp.safelink';
 import './gulp.seo';
-import './gulp.standalone';
 import './post/copy';
+import './post/standalone';
 export declare function commitProject(finish: gulp.TaskFunctionCallback): void | import("bluebird")<any>;
 export default gulp;
