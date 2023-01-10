@@ -30,9 +30,11 @@
   },
   "keywords": [
     "static-blog-generator",
-    "static",
-    "blog",
-    "generator"
+    "hexo",
+    "hexo-post",
+    "hexo-generator",
+    "hexo-admin",
+    "hexo-gui"
   ],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "ISC",
@@ -105,8 +107,8 @@
     "typescript": "^4.9.4"
   },
   "workspaces": [
-    "packages\\sbg-server",
     "packages\\sbg-utility",
-    "packages\\sbg-api"
+    "packages\\sbg-api",
+    "packages\\sbg-server"
   ]
 }
