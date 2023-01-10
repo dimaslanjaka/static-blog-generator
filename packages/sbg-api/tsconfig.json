@@ -7,10 +7,9 @@
     "outDir": "./dist",
     "paths": {
       "src": ["./src"],
-      "sbg-shared": ["../shared/src"],
-      "sbg-server": ["../server/src"]
+      "sbg-*": ["../packages/sbg-*"]
     }
   },
   "include": ["./src", "./src/**/*.json"],
-  "references": [{ "path": "../shared" }, { "path": "../server" }]
+  "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-server" }]
 }

@@ -3,11 +3,11 @@ import { readFileSync } from 'fs';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import * as sbgUtils from 'sbg-utility';
-import Logger from 'sbg-utility/dist/utils/logger';
 import { join, toUnix } from 'upath';
 
 const processingUpdate = {};
 const fm = sbgUtils.utils.filemanager;
+const Logger = sbgUtils.utils.logger.default;
 
 /**
  * update metadata.updated post
