@@ -64,84 +64,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cleanGeneratedPosts = exports.cleanOldArchives = exports.del = exports.cleanDb = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
-var os_1 = require("os");
 var upath_1 = require("upath");
-var util_1 = require("util");
-var debug_1 = __importDefault(require("./utils/debug"));
-var fm_1 = require("./utils/fm");
-var logger_1 = __importDefault(require("./utils/logger"));
-var noop_1 = __importDefault(require("./utils/noop"));
-var _config_1 = require("./_config");
-function cleanDb(callback, files) {
-    return __awaiter(this, void 0, void 0, function () {
-        var log, config, dirs, i, dir, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    log = (0, debug_1.default)('clean');
-                    config = (0, _config_1.getConfig)();
-                    if (typeof config.source_dir !== 'string') {
-                        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
-                        throw new Error('config.source_dir must be configured');
-                    }
-                    dirs = [
-                        (0, upath_1.join)(config.cwd, config.source_dir, '_posts'),
-                        (0, upath_1.join)(config.cwd, 'tmp/cache'),
-                        (0, upath_1.join)(config.cwd, 'tmp/dump'),
-                        (0, upath_1.join)(config.cwd, 'tmp/logs'),
-                        (0, upath_1.join)(config.cwd, 'db.json')
-                    ];
-                    if (Array.isArray(files))
-                        dirs = dirs.concat(files);
-                    i = 0;
-                    _b.label = 1;
-                case 1:
-                    if (!(i < dirs.length)) return [3, 7];
-                    dir = dirs[i];
-                    _b.label = 2;
-                case 2:
-                    _b.trys.push([2, 5, , 6]);
-                    if (!(0, fs_extra_1.existsSync)(dir)) return [3, 4];
-                    log('claning', dir);
-                    return [4, del(dir)];
-                case 3:
-                    _b.sent();
-                    _b.label = 4;
-                case 4: return [3, 6];
-                case 5:
-                    _a = _b.sent();
-                    log('cannot delete', dir);
-                    return [3, 6];
-                case 6:
-                    i++;
-                    return [3, 1];
-                case 7:
-                    if (typeof callback === 'function')
-                        return [2, callback()];
-                    return [2, undefined];
-            }
-        });
-    });
-}
-exports.cleanDb = cleanDb;
-function del(path) {
-    return new bluebird_1.default(function (resolve) {
-        var rmOpt = { recursive: true, force: true };
-        if ((0, fs_extra_1.existsSync)(path)) {
-            (0, fs_extra_1.rm)(path, rmOpt).then(resolve).catch(resolve);
-        }
-        else {
-            resolve(new Error(path + ' not found'));
-        }
-    });
-}
-exports.del = del;
-function cleanOldArchives(callback) {
+var fm_1 = require("../utils/fm");
+var logger_1 = __importDefault(require("../utils/logger"));
+var _config_1 = require("../_config");
+function cleanArchive(callback) {
     return __awaiter(this, void 0, void 0, function () {
         var config, logname, archives, categories, tags, folders, langDir, pagesDir, pages, promises, dumpfile, i, pathStr, finishNow;
         return __generator(this, function (_a) {
@@ -170,13 +101,13 @@ function cleanOldArchives(callback) {
                 case 2:
                     promises = [];
                     dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/clean.txt');
-                    (0, fm_1.writefile)(dumpfile, folders.join(os_1.EOL));
+                    (0, fm_1.writefile)(dumpfile, folders.join('\n'));
                     logger_1.default.log(logname, 'list deleted files', dumpfile);
                     for (i = 0; i < folders.length; i++) {
                         pathStr = folders[i];
                         try {
                             if ((0, fs_extra_1.existsSync)(pathStr))
-                                promises.push(del(pathStr).catch(noop_1.default));
+                                promises.push((0, fm_1.del)(pathStr));
                         }
                         catch (_b) {
                         }
@@ -197,18 +128,5 @@ function cleanOldArchives(callback) {
         });
     });
 }
-exports.cleanOldArchives = cleanOldArchives;
-function cleanGeneratedPosts(callback) {
-    return __awaiter(this, void 0, void 0, function () {
-        var config;
-        return __generator(this, function (_a) {
-            config = (0, _config_1.getConfig)();
-            return [2, cleanDb(callback, [(0, upath_1.join)(config.cwd, config.source_dir, '_posts')])];
-        });
-    });
-}
-exports.cleanGeneratedPosts = cleanGeneratedPosts;
-gulp_1.default.task('clean:archive', cleanOldArchives);
-gulp_1.default.task('clean:db', cleanDb);
-gulp_1.default.task('clean:post', cleanGeneratedPosts);
-gulp_1.default.task('clean:all', gulp_1.default.series('clean:db', 'clean:archive'));
+exports.default = cleanArchive;
+gulp_1.default.task('clean:archive', cleanArchive);
