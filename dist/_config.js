@@ -51,7 +51,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.projectIgnores = exports.commonIgnore = exports.deployConfig = exports.getConfig = exports.setConfig = void 0;
+exports.projectIgnores = exports.commonIgnore = exports.deployConfig = exports.getConfig = exports.setConfig = exports.fetchConfig = void 0;
 var fs_1 = require("fs");
 var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
@@ -61,14 +61,16 @@ var defaults_1 = require("./defaults");
 var fm_1 = require("./utils/fm");
 var object_1 = require("./utils/object");
 var settledConfig = (0, defaults_1.getDefaultConfig)();
-var fileYML = (0, path_1.join)(process.cwd(), '_config.yml');
-var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
-settledConfig = Object.assign(configYML, settledConfig);
-settledConfig = (0, object_1.orderKeys)(settledConfig);
-hexoPostParser.setConfig(settledConfig);
-(0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+function fetchConfig(fileYML) {
+    var configYML = yaml_1.default.parse((0, fs_1.readFileSync)(fileYML, 'utf-8'));
+    setConfig((0, object_1.orderKeys)(configYML));
+    (0, fm_1.writefile)((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+}
+exports.fetchConfig = fetchConfig;
+fetchConfig((0, path_1.join)(process.cwd(), '_config.yml'));
 function setConfig(obj) {
     settledConfig = Object.assign(settledConfig || {}, obj);
+    hexoPostParser.setConfig(settledConfig);
     return getConfig();
 }
 exports.setConfig = setConfig;
