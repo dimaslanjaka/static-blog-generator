@@ -1,7 +1,7 @@
 import Hexo from 'hexo';
 import { join } from 'upath';
+import * as cleaner from './clean';
 import { Nullable } from './globals';
-import * as cleaner from './gulp.clean';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import standaloneRunner from './gulp.standalone';

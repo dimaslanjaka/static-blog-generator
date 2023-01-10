@@ -1,7 +1,7 @@
 export { default as Application } from './api';
+export * as clean from './clean';
 export { default as gulpCached } from './gulp-utils/gulp.cache';
 export { default as gulpDebug } from './gulp-utils/gulp.debug';
-export { cleanDb, del, del as deleteDir } from './gulp.clean';
 export { taskSeo as autoSeo } from './gulp.seo';
 export { generateSitemap, hexoGenerateSitemap } from './gulp.sitemap';
 export { default as standaloneRunner } from './gulp.standalone';
