@@ -1,0 +1,31 @@
+{
+  "name": "static-blog-generator",
+  "version": "3.0.0",
+  "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "readme.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "jest --runInBand",
+    "build": "tsc --build tsconfig.build.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
+  "dependencies": {
+    "sbg-api": "file:../sbg-api",
+    "sbg-server": "file:../sbg-server",
+    "sbg-utility": "file:../sbg-utility"
+  }
+}

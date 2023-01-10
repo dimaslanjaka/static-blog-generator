@@ -14,6 +14,7 @@ temp
 /dist
 /packages/**/dist/
 /src
+/release
 
 # branch v2
 /build
