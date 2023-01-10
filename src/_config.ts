@@ -69,7 +69,7 @@ export interface LabelMapper {
 let settledConfig = getDefaultConfig() as Record<string, any>;
 
 export function fetchConfig(fileYML: string) {
-  // const fileYML = join(process.cwd(), '_config.yml');
+  if (!fileYML.endsWith('_config.yml')) fileYML += '/_config.yml';
   const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
   setConfig(orderKeys(configYML));
   writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
