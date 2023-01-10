@@ -1,7 +1,8 @@
+import gulpCached from './gulp-utils/gulp.cache';
+import gulpDebug, { gulpLog } from './gulp-utils/gulp.debug';
+
 export { default as Application } from './api';
 export * as clean from './clean';
-export { default as gulpCached } from './gulp-utils/gulp.cache';
-export { default as gulpDebug } from './gulp-utils/gulp.debug';
 export { taskSeo as autoSeo } from './gulp.seo';
 export { generateSitemap, hexoGenerateSitemap } from './gulp.sitemap';
 export { default as standaloneRunner } from './gulp.standalone';
@@ -14,4 +15,18 @@ export { noop } from './utils/noop';
 export { default as scheduler } from './utils/scheduler';
 export { deployConfig, getConfig, setConfig } from './_config';
 
+export const gulpUtils = {
+  /**
+   * gulp debug
+   */
+  debug: gulpDebug,
+  /**
+   * gulp cached
+   */
+  cached: gulpCached,
+  /**
+   * gulp log
+   */
+  log: gulpLog
+};
 //
