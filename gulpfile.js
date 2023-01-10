@@ -63,13 +63,13 @@ function buildDist(done) {
   spawnAsync('npm', ['pack'], {
     cwd: dest
   }).then(() => {
+    // copy readme.md
+    fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
     // packing to release
     const filepack = `${pkgc.name}-${pkgc.version}.tgz`;
     fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
     fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${pkgc.name}.tgz`));
     fs.rmSync(join(dest, filepack));
-    // copy readme.md
-    fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
     done();
   });
 }
