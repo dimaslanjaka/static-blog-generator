@@ -1,6 +1,6 @@
 #!/bin/sh
 
-npm run build:nopack
+npm run build
 #gulp copy
 #eslint --fix --quiet postinstall.js
 #eslint --fix --quiet packer.js
