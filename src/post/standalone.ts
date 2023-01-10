@@ -2,9 +2,9 @@ import spawn from 'cross-spawn';
 import gulp from 'gulp';
 import through2 from 'through2';
 import { join } from 'upath';
-import Logger from './utils/logger';
-import { replacePath } from './utils/string';
-import { getConfig } from './_config';
+import Logger from '../utils/logger';
+import { replacePath } from '../utils/string';
+import { getConfig } from '../_config';
 
 /**
  * run all _*.standalone.js inside src-posts (_config_yml.post_dir)
