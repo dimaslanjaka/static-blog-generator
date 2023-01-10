@@ -28,7 +28,7 @@ export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf
 export declare function getConfig(): ProjConf;
 export declare function deployConfig(): {
     deployDir: string;
-    github: git | null;
+    github: git;
 };
 export declare const commonIgnore: string[];
 export declare const projectIgnores: string[];

@@ -103,7 +103,7 @@ export function getConfig() {
 
 export function deployConfig() {
   const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-  const github = existsSync(deployDir) ? new git(deployDir) : null;
+  const github = existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
   return { deployDir, github };
 }
 
