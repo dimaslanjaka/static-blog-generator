@@ -131,13 +131,13 @@ var SBG = (function () {
                         return [4, cleaner.cleanDb().catch(console.log)];
                     case 1:
                         _a.sent();
-                        return [4, cleaner.cleanOldArchives().catch(console.log)];
+                        return [4, cleaner.cleanArchive().catch(console.log)];
                     case 2:
                         _a.sent();
                         return [3, 9];
                     case 3:
                         if (!(opt === 'archive')) return [3, 5];
-                        return [4, cleaner.cleanOldArchives().catch(console.log)];
+                        return [4, cleaner.cleanArchive().catch(console.log)];
                     case 4:
                         _a.sent();
                         return [3, 9];
