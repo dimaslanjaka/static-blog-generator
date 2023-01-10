@@ -1,0 +1,1 @@
+process.cwd = () => __dirname;
