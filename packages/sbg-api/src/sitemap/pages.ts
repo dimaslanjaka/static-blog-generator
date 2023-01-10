@@ -4,7 +4,7 @@ import moment from 'moment-timezone';
 import { join } from 'path';
 import { writefile } from 'sbg-utility/dist/utils/fm';
 import { create as createXML } from 'xmlbuilder2';
-import { sitemapItem } from '.';
+import { sitemapItem } from './yoast-sitemap';
 
 const pageUpdateDates: string[] = [];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
