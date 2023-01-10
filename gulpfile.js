@@ -14,7 +14,7 @@ function copyWorkspaceDist(done) {
     'packages/sbg-utility': false,
     'packages/sbg-api': false,
     'packages/sbg-server': false,
-    'packages/main': false
+    'packages/sbg-main': false
   };
   Object.keys(packages).map((p) => {
     const cwd = join(__dirname, p);
@@ -53,19 +53,19 @@ function eslint(done) {
 
 function buildDist(done) {
   const pkgroot = require('./package.json');
-  const pkgmain = require('./packages/main/package.json');
-  const pkgc = deepmerge(pkgroot, pkgmain, { main: 'main/dist/index.js', types: 'main/dist/index.d.ts' });
+  const pkgmain = require('./packages/sbg-main/package.json');
+  const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
   delete pkgc.workspaces;
   delete pkgc.private;
   pkgc.name = 'static-blog-generator';
-  pkgc.description = pkgmain.description;
+  pkgc.description = pkgroot.description;
   pkgc.dependencies = {};
   pkgc.devDependencies = {};
   pkgc.scripts = {};
   pkgc.dependencies['sbg-api'] = 'file:sbg-api';
   pkgc.dependencies['sbg-server'] = 'file:sbg-server';
   pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
-  pkgc.dependencies['sbg-main'] = 'file:main';
+  pkgc.dependencies['sbg-main'] = 'file:sbg-main';
   delete pkgc.files;
   const dest = join(__dirname, 'dist');
   fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
@@ -73,8 +73,9 @@ function buildDist(done) {
   spawnAsync('npm', ['pack'], {
     cwd: dest
   }).then(() => {
-    // copy readme.md
+    // copy files
     fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
+    fs.copyFileSync(join(__dirname, 'LICENSE'), join(dest, 'LICENSE'));
     // packing to release
     const filepack = `${pkgc.name}-${pkgc.version}.tgz`;
     fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
