@@ -1,0 +1,59 @@
+import { existsSync } from 'fs-extra';
+import gulp from 'gulp';
+import { getConfig } from 'sbg-utility/dist/config/_config';
+import debug from 'sbg-utility/dist/utils/debug';
+import { del, writefile } from 'sbg-utility/dist/utils/fm';
+import { join } from 'upath';
+import { inspect } from 'util';
+
+/**
+ * Clean Project Databases
+ */
+export async function cleanDb(callback?: gulp.TaskFunctionCallback | (() => any), files?: string[]) {
+  const log = debug('clean');
+  const config = getConfig();
+  if (typeof config.source_dir !== 'string') {
+    writefile(join(config.cwd, 'tmp/errors/clean.log'), inspect(config));
+    throw new Error('config.source_dir must be configured');
+  }
+
+  // const publicDir = join(config.cwd, config.public_dir);
+
+  let dirs = [
+    join(config.cwd, config.source_dir, '_posts'),
+    join(config.cwd, 'tmp/cache'),
+    join(config.cwd, 'tmp/dump'),
+    join(config.cwd, 'tmp/logs'),
+    join(config.cwd, 'db.json')
+  ];
+  if (Array.isArray(files)) dirs = dirs.concat(files);
+  for (let i = 0; i < dirs.length; i++) {
+    const dir = dirs[i];
+    try {
+      if (existsSync(dir)) {
+        log('claning', dir);
+        await del(dir);
+      }
+    } catch {
+      log('cannot delete', dir);
+    }
+  }
+
+  /*const hexo = new hexoLib(config.cwd);
+  await hexo.init().catch(noop);
+  await hexo.call('clean').catch(noop);*/
+
+  if (typeof callback === 'function') return callback();
+
+  return undefined;
+}
+
+export async function cleanGeneratedPosts(callback?: gulp.TaskFunctionCallback | (() => any)) {
+  const config = getConfig();
+  return cleanDb(callback, [join(config.cwd, config.source_dir, '_posts')]);
+}
+
+gulp.task('clean:db', cleanDb);
+gulp.task('clean:post', cleanGeneratedPosts);
+gulp.task('clean:all', gulp.series('clean:db', 'clean:archive'));
+export { default as cleanArchive } from './archive';

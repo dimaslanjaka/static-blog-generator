@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "src": ["./src"],
+      "sbg-*": ["../packages/sbg-*"]
+    }
+  },
+  "include": ["./src", "./src/**/*.json"],
+  "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-server" }]
+}
