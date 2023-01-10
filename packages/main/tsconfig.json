@@ -9,13 +9,10 @@
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
     "paths": {
       "src": ["./src"],
+      "test": ["./test"],
       "sbg-*": ["../sbg-*"]
     }
   },
-  "include": ["src/index.ts"],
-  "references": [
-    { "path": "../sbg-utility" },
-    { "path": "../sbg-server" },
-    { "path": "../sbg-api" }
-  ]
+  "include": ["./src/index.ts", "./test"],
+  "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-server" }, { "path": "../sbg-api" }]
 }

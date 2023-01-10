@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
+    "deepmerge-ts": "^4.2.2",
     "sbg-api": "file:../sbg-api",
     "sbg-server": "file:../sbg-server",
     "sbg-utility": "file:../sbg-utility"
