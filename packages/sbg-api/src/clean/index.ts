@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import cleanArchive from 'src/clean/archive';
+import cleanArchive from './archive';
 import { cleanDb } from './cleanDb';
 import { cleanGeneratedPosts } from './generated-post';
 
