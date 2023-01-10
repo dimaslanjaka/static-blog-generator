@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import Bluebird from 'bluebird';
-import fs, { MakeDirectoryOptions } from 'fs-extra';
-export interface writefileOpt extends MakeDirectoryOptions {
+import fs from 'fs-extra';
+export interface writefileOpt extends fs.MakeDirectoryOptions {
     append?: boolean | undefined | null;
     async?: boolean | undefined | null;
 }
