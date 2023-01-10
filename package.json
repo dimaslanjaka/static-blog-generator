@@ -22,9 +22,8 @@
     "update": "run-s update:**",
     "postupdate": "npm install",
     "postinstall": "node postinstall.js",
-    "build": "npm run build --workspaces",
+    "build": "gulp build",
     "docs": "node docs.js",
-    "dev": "tsc -p tsconfig.build.json -w",
     "lint": "npx eslint --fix src/**/*.{ts,js,json}",
     "test": "jest --env node --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js"

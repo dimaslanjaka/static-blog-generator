@@ -18,18 +18,17 @@ const copy = function (done) {
     });
 };
 
-function tsc(done) {
-  const doCompile = () => {
-    spawnAsync('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
-  };
-  if (process.env.GITHUB_WORKFLOWS) {
-    console.log('running in github workflows');
-  }
-  doCompile();
+function build(done) {
+  spawnAsync('npm', ['run', 'build', '--workspaces'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
 }
 
+function eslint(done) {
+  spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
+}
+
+gulp.task('eslint', eslint);
 gulp.task('copy', copy);
-gulp.task('tsc', tsc);
+gulp.task('build', gulp.series(eslint, build));
 
 /**
  * @type {'false' | 'true' | 'postpone'}
@@ -94,4 +93,4 @@ function buildWatch(done) {
 
 gulp.task('watch', buildWatch);
 
-gulp.task('default', gulp.series(['tsc', 'copy']));
+gulp.task('default', gulp.series(['build', 'copy']));
