@@ -17,8 +17,16 @@
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "static-blog-generator",
+    "hexo",
+    "hexo-post",
+    "hexo-generator",
+    "hexo-admin",
+    "hexo-gui"
+  ],
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
   },
