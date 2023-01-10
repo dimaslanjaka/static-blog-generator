@@ -14,7 +14,7 @@ const config: Config = {
   verbose: false,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  roots: [`<rootDir>/test`],
+  // roots: [`<rootDir>/test`],
 
   testMatch: [`**/__tests__/**/*.+(ts|tsx|js)`, `**/?(*.)+(spec|test).+(ts|tsx|js)`],
 
@@ -35,7 +35,13 @@ const config: Config = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['src/*.{js,ts}', '!**/node_modules/**', '!**/vendor/**', '!**/test/**', '!**/*.test.{js,ts}'],
+  collectCoverageFrom: [
+    'src/*.{js,ts}',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+    '!**/test/**',
+    '!**/*.{test,spec}.{js,ts}'
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
