@@ -84,7 +84,7 @@ exports.getConfig = getConfig;
 function deployConfig() {
     var _a;
     var deployDir = (0, path_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
-    var github = (0, fs_1.existsSync)(deployDir) ? new git_command_helper_1.default(deployDir) : null;
+    var github = (0, fs_1.existsSync)(deployDir) ? new git_command_helper_1.default(deployDir) : { submodule: [] };
     return { deployDir: deployDir, github: github };
 }
 exports.deployConfig = deployConfig;
