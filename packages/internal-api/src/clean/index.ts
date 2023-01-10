@@ -1,11 +1,10 @@
 import { existsSync } from 'fs-extra';
 import gulp from 'gulp';
+import { getConfig } from 'sbg-utility/dist/config/_config';
+import debug from 'sbg-utility/dist/utils/debug';
+import { del, writefile } from 'sbg-utility/dist/utils/fm';
 import { join } from 'upath';
 import { inspect } from 'util';
-import debug from '../utils/debug';
-import { del, writefile } from '../utils/fm';
-import { getConfig } from '../_config';
-export { default as cleanArchive } from './archive';
 
 /**
  * Clean Project Databases
@@ -57,3 +56,4 @@ export async function cleanGeneratedPosts(callback?: gulp.TaskFunctionCallback |
 gulp.task('clean:db', cleanDb);
 gulp.task('clean:post', cleanGeneratedPosts);
 gulp.task('clean:all', gulp.series('clean:db', 'clean:archive'));
+export { default as cleanArchive } from './archive';
