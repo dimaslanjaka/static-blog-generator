@@ -12,7 +12,7 @@
     "declaration": true,
     "stripInternal": true,
     "strict": false,
-    "outDir": "./dist",
+    "outDir": "./tmp/dist",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipDefaultLibCheck": true,
