@@ -1,0 +1,37 @@
+import spawn from 'cross-spawn';
+import gulp from 'gulp';
+import * as sbgUtils from 'sbg-utility';
+import { getConfig } from 'sbg-utility/dist/config/_config';
+import Logger from 'sbg-utility/dist/utils/logger';
+import through2 from 'through2';
+import { join } from 'upath';
+
+/**
+ * run all _*.standalone.js inside src-posts (_config_yml.post_dir)
+ * @returns
+ */
+function standaloneRunner() {
+  Logger.log('[standalone] Running scripts...\n');
+  return gulp
+    .src(join(getConfig().cwd, '**/_*.standalone.js'), { cwd: getConfig().cwd, ignore: ['**/tmp/**'] })
+    .pipe(
+      through2.obj(async function (file, _enc, next) {
+        Logger.log('='.repeat(10) + ' input ' + '='.repeat(10));
+        Logger.log(`node ${await sbgUtils.utils.string.replacePath(file.path, getConfig().cwd, '')}`);
+        Logger.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
+        const child = spawn('node', [file.path], { stdio: 'inherit' });
+        child.on('close', () => {
+          // drop file
+          next();
+        });
+      })
+    )
+    .pipe(gulp.dest(join(getConfig().cwd, 'tmp/standalone')))
+    .once('end', function () {
+      Logger.log('\n[standalone] stopped');
+    });
+}
+
+gulp.task('post:standalone', standaloneRunner);
+
+export default standaloneRunner;
