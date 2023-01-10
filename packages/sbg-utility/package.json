@@ -23,7 +23,7 @@
     "utility"
   ],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
   },
