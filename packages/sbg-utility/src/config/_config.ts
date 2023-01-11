@@ -143,7 +143,9 @@ export const commonIgnore = [
 export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
 
 const configWrapperFile = join(__dirname, '_config_wrapper.json');
-const configWrapper: Record<string, any> = fs.existsSync(configWrapperFile) ? JSON.parse(configWrapperFile) : {};
+const configWrapper: Record<string, any> = fs.existsSync(fs.readFileSync(configWrapperFile, 'utf-8'))
+  ? JSON.parse(configWrapperFile)
+  : {};
 
 interface createConfigEvents {
   add: (obj: Record<string, any>) => void;
