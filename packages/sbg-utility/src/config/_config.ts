@@ -1,10 +1,12 @@
-import { existsSync, readFileSync } from 'fs';
+import EventEmitter from 'events';
+import fs from 'fs-extra';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
 import * as hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
 import yaml from 'yaml';
 import * as utils from '../utils';
+import { writefile } from '../utils/fm';
 import * as defaults from './defaults';
 
 export interface ProjConf extends Hexo.Config {
@@ -66,9 +68,11 @@ let settledConfig = defaults.getDefaultConfig() as Record<string, any>;
 
 export function fetchConfig(fileYML: string) {
   if (!fileYML.endsWith('_config.yml')) fileYML += '/_config.yml';
-  const configYML = yaml.parse(readFileSync(fileYML, 'utf-8'));
-  setConfig(utils.object.orderKeys(configYML));
-  utils.filemanager.writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+  if (fs.existsSync(fileYML)) {
+    const configYML = yaml.parse(fs.readFileSync(fileYML, 'utf-8'));
+    setConfig(utils.object.orderKeys(configYML));
+    utils.filemanager.writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+  }
 }
 
 // fetch _config.yml first init
@@ -100,7 +104,7 @@ export function getConfig() {
 
 export function deployConfig() {
   const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-  const github = existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
+  const github = fs.existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
   return { deployDir, github };
 }
 
@@ -138,18 +142,49 @@ export const commonIgnore = [
  */
 export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
 
-const configWrapper: Record<string, any> = {};
+const configWrapperFile = join(__dirname, '_config_wrapper.json');
+const configWrapper: Record<string, any> = fs.existsSync(configWrapperFile) ? JSON.parse(configWrapperFile) : {};
+
+interface createConfigEvents {
+  add: (obj: Record<string, any>) => void;
+  delete: (changedCount: number) => void;
+  update: () => void;
+}
+export declare interface createConfig<T extends Record<string, any>> {
+  on<U extends keyof createConfigEvents>(event: U, listener: createConfigEvents[U]): this;
+  emit<U extends keyof createConfigEvents>(event: U, ...args: Parameters<createConfigEvents[U]>): boolean;
+  get<U extends Record<string, any>>(): T & U;
+}
+
 /**
  * Create/Update config wrapper
  * @param name
  * @param value
  * @returns
  */
-export function createConfig<T>(name: string, value: Record<string, any>): T {
-  if (!configWrapper[name]) {
-    configWrapper[name] = value;
-  } else {
-    configWrapper[name] = Object.assign(configWrapper[name], value);
+export class createConfig<T extends Record<string, any>> extends EventEmitter {
+  cname: string;
+  constructor(name: string, value: Record<string, any>) {
+    super();
+    // assign config name
+    this.cname = name;
+    // add config
+    if (!configWrapper[name]) {
+      configWrapper[name] = value;
+      this.emit('add', value);
+    } else {
+      // update config
+      this.update(value);
+    }
   }
-  return configWrapper[name];
+  get<U extends Record<string, any>>() {
+    return configWrapper[this.cname] as T & U;
+  }
+  update(value: Record<string, any>) {
+    configWrapper[this.cname] = Object.assign(configWrapper[this.cname], value);
+    if ((fs.access(configWrapperFile), fs.constants.W_OK)) {
+      writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
+      this.emit('update');
+    }
+  }
 }
