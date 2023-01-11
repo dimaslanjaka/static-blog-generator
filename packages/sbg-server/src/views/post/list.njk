@@ -1,0 +1,8 @@
+{% extends  layout %}
+{% block  content %}
+  {% for post in posts %}
+    <ul>
+      <li>{{ post.title }}</li>
+    </ul>
+  {% endfor %}
+{% endblock %}
