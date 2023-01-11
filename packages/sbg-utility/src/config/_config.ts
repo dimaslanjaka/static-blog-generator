@@ -4,8 +4,8 @@ import Hexo from 'hexo';
 import * as hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
 import yaml from 'yaml';
-import * as defaults from './defaults';
 import * as utils from '../utils';
+import * as defaults from './defaults';
 
 export interface ProjConf extends Hexo.Config {
   [key: string]: any;
@@ -137,3 +137,19 @@ export const commonIgnore = [
  * array of config.exclude, config.ignore
  */
 export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
+
+const configWrapper: Record<string, any> = {};
+/**
+ * Create/Update config wrapper
+ * @param name
+ * @param value
+ * @returns
+ */
+export function createConfig<T>(name: string, value: Record<string, any>): T {
+  if (!configWrapper[name]) {
+    configWrapper[name] = value;
+  } else {
+    configWrapper[name] = Object.assign(configWrapper[name], value);
+  }
+  return configWrapper[name];
+}
