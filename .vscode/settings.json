@@ -23,5 +23,17 @@
   "search.exclude": {
     "**/dist/**": true,
     "**/tmp/**": true
+  },
+  "files.associations": {
+    "*.njk": "html",
+    "*.ejs": "html"
+  },
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "njk": "html",
+    "nunjucks": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "njk": "html",
   }
 }
