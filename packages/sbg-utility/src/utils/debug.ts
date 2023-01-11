@@ -8,3 +8,11 @@ import debuglib from 'debug';
 export default function debug(name: string) {
   return debuglib(name);
 }
+
+/**
+ * debug with default name `sbg`
+ * @returns
+ */
+export function sbgDebug() {
+  return debuglib('sbg');
+}
