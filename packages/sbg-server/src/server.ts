@@ -5,6 +5,7 @@ import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 import path from 'upath';
 import serverConfig from './config';
+import routePost from './post';
 
 export default interface SBGServer {
   config: {
@@ -40,6 +41,8 @@ export default class SBGServer {
     this.server.use(express.static(path.join(__dirname, 'public')));
     this.server.use(express.static(path.join(config.root, 'public')));
     this.server.use(express.static(path.join(config.root, 'node_modules')));
+    // register router
+    this.server.use('/post', () => routePost(this.api));
   }
   /**
    * get the configured server
