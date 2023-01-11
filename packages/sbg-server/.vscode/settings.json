@@ -1,4 +1,13 @@
 {
+  "files.associations": { "*.njk": "njk", "*.nj": "njk" },
+  "emmet.syntaxProfiles": {
+    "njk": "html"
+  },
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "njk": "html",
+    "nunjucks": "html"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": true
