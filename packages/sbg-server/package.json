@@ -27,7 +27,8 @@
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
     "nunjucks": "^3.2.3",
-    "sbg-utility": "file:../sbg-utility"
+    "sbg-utility": "file:../sbg-utility",
+    "serve-index": "file:libs/serve-index"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
