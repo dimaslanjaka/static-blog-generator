@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/nodemon",
-  "exec": "npm run build && ts-node src/index.ts",
+  "exec": "npm run build && ts-node src/index.test.ts",
   "watch": ["./src/**/*.ts", "./tsconfig.json", "./package.json"],
   "ignore": [
     "*.test.js",
