@@ -1,5 +1,8 @@
+import Axios from 'axios';
 import crypto from 'crypto';
 import fs from 'fs-extra';
+import glob from 'glob';
+import path from 'upath';
 
 /**
  * convert file to hash
@@ -12,7 +15,7 @@ export function file_to_hash(
   alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5',
   path: fs.PathLike,
   encoding: import('crypto').BinaryToTextEncoding = 'hex'
-) {
+): Promise<string> {
   return new Promise((resolve, reject) => {
     const hash = crypto.createHash(alogarithm);
     const rs = fs.createReadStream(path);
@@ -33,7 +36,7 @@ export function data_to_hash(
   alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
   data: crypto.BinaryLike,
   encoding: import('crypto').BinaryToTextEncoding = 'hex'
-) {
+): Promise<string> {
   return new Promise((resolve, reject) => {
     try {
       resolve(data_to_hash_sync(alogarithm, data, encoding));
@@ -56,4 +59,130 @@ export function data_to_hash_sync(
   encoding: import('crypto').BinaryToTextEncoding = 'hex'
 ) {
   return crypto.createHash(alogarithm).update(data).digest(encoding);
+}
+
+/**
+ * get hashes from folder
+ * @param alogarithm
+ * @param folder
+ * @param options
+ * @returns
+ */
+export async function folder_to_hash(
+  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5',
+  folder: string,
+  options: {
+    /**
+     * override pattern to search files
+     */
+    pattern: string;
+    /**
+     * ignore files by patterns from search
+     */
+    ignored: string[];
+    /**
+     * encoding type
+     */
+    encoding: crypto.BinaryToTextEncoding;
+  }
+): Promise<{ filesWithHash: Record<string, string>; hash: string }> {
+  return new Promise((resolve, reject) => {
+    options = Object.assign({ encoding: 'hex', ignored: [] }, options || {});
+    if (folder.startsWith('file:')) folder = folder.replace('file:', '');
+    // fix non exist
+    if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
+    // run only if exist
+    if (fs.existsSync(folder)) {
+      glob(
+        options.pattern || '**/*',
+        {
+          cwd: folder,
+          ignore: (
+            options.ignored || [
+              '**/tmp/**',
+              '**/build/**',
+              '**/.cache/**',
+              '**/dist/**',
+              '**/.vscode/**',
+              '**/coverage/**',
+              '**/release/**',
+              '**/bin/**',
+              '**/*.json'
+            ]
+          ).concat('**/.git*/**', '**/node_modules/**'),
+          dot: true,
+          noext: true
+        },
+        function (err, matches) {
+          if (!err) {
+            const filesWithHash = {};
+            for (let i = 0; i < matches.length; i++) {
+              const item = matches[i];
+              const fullPath = path.join(folder, item);
+              const statInfo = fs.statSync(fullPath);
+              if (statInfo.isFile()) {
+                const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
+                const hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
+                filesWithHash[fullPath] = hash;
+              }
+            }
+            resolve({
+              filesWithHash,
+              hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+            });
+          } else {
+            reject(err);
+          }
+        }
+      );
+    } else {
+      console.log(folder + ' not found');
+    }
+  });
+}
+
+/**
+ * convert data to hash
+ * @param alogarithm
+ * @param url
+ * @param encoding
+ * @returns
+ */
+export async function url_to_hash(
+  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  url: string,
+  encoding: crypto.BinaryToTextEncoding = 'hex'
+) {
+  return new Promise((resolve, reject) => {
+    let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
+    // remove slashes when url ends with slash
+    if (!path.basename(url).endsWith('/')) {
+      outputLocationPath = outputLocationPath.replace(/\/$/, '');
+    }
+    // add extension when dot not exist
+    if (!path.basename(url).includes('.')) {
+      outputLocationPath += '.tgz';
+    }
+    if (!fs.existsSync(path.dirname(outputLocationPath))) {
+      fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
+    }
+    const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
+    Axios(url, { responseType: 'stream' }).then((response) => {
+      response.data.pipe(writer);
+      let error: Error | undefined;
+      writer.on('error', (err) => {
+        error = err;
+        writer.close();
+        reject(err);
+      });
+      writer.on('close', async () => {
+        if (!error) {
+          // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
+          file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
+            resolve(checksum);
+          });
+        }
+      });
+    });
+  });
 }
