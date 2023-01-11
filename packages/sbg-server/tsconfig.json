@@ -5,6 +5,8 @@
     "target": "es5",
     "baseUrl": "./",
     "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
     "paths": { "sbg-*": ["../packages/sbg-*"], "src": ["./src"] }
   },
   "include": ["./src", "./src/**/*.json"],
