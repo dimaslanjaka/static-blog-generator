@@ -4,6 +4,6 @@ module.exports = {
     'tailwindcss/nesting': {},
     tailwindcss: {},
     autoprefixer: {},
-    fontawesome: './source/styles/fontawesome'
+    flowbite: {}
   }
 };

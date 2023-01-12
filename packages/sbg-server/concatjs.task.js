@@ -7,7 +7,7 @@ const path = require('upath');
 const fs = require('fs-extra');
 
 const dest = path.join(__dirname, 'src/public');
-if (!fs.existsSync(dest + '/css/app.css')) {
+if (!fs.existsSync(dest + '/css/app.css') || !fs.existsSync(dest + '/js/app.js')) {
   startCompile();
 }
 

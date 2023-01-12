@@ -78,6 +78,7 @@ export default class SBGServer {
     this.server.use(express.static(path.join(__dirname, 'public')));
     this.server.use(express.static(path.join(this.config.root, 'public')));
     this.server.use(express.static(path.join(this.config.root, 'node_modules')));
+    this.server.use(express.static(path.join(__dirname,'/../node_modules')));
     // register router
     this.server.get('/', function (_, res) {
       const data = {
