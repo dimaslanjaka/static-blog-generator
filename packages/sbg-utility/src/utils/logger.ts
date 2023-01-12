@@ -7,7 +7,7 @@ import * as configs from '../config';
 import { writefile } from './fm';
 import { areWeTestingWithJest } from './jest';
 
-const getConfig = configs.config.getConfig;
+const getConfig = configs.getConfig;
 const FOLDER = join(process.cwd(), 'tmp/logs');
 
 // disable console.log on jest
