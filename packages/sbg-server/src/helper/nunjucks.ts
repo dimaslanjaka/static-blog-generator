@@ -3,6 +3,7 @@ import moment from 'moment-timezone';
 import { Environment } from 'nunjucks';
 
 export function getAuthorName(obj: postAuthor) {
+  if (!obj) return 'unknown';
   if (obj.name) return obj.name;
   if (obj.nick) return obj.nick;
   if (obj.nickname) return obj.nickname;
@@ -14,6 +15,6 @@ export function parseDate(input: moment.MomentInput, pattern = 'LLL') {
 }
 
 export default function setupNunjuckHelper(env: Environment) {
-  env.addGlobal(getAuthorName.name, getAuthorName);
-  env.addGlobal(parseDate.name, parseDate);
+  env.addGlobal('getAuthorName', getAuthorName);
+  env.addGlobal('parseDate', parseDate);
 }
