@@ -5,6 +5,7 @@ const terserlib = require('terser');
 const sourcemaps = require('gulp-sourcemaps');
 const path = require('upath');
 const fs = require('fs-extra');
+const utility = require('sbg-utility');
 
 const dest = path.join(__dirname, 'src/public');
 
@@ -14,12 +15,14 @@ const copyfa = () =>
     .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf}', {
       cwd: __dirname
     })
+    .pipe(utility.gutils.gulpCached())
     .pipe(gulp.dest(dest));
 
 const concatenate = () =>
   gulp
     .src('./source/scripts/**/*.js', { cwd: __dirname, ignore: ['**/*.min.js'] })
     .pipe(concat('app.js'))
+    .pipe(utility.gutils.gulpCached())
     .pipe(sourcemaps.init())
     .pipe(
       terser(
