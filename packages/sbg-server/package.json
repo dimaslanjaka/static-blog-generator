@@ -8,7 +8,9 @@
     "test": "jest --runInBand",
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp build"
+    "build": "npm run tw && npm run purge && gulp build",
+    "tw": "tailwind build -i source/styles/app.css -o ./src/public/app.css",
+    "purge": "purgecss -c purgecss.config.js -o ./src/public"
   },
   "repository": {
     "type": "git",
@@ -31,10 +33,13 @@
     "front-matter": "^4.0.2",
     "fs-extra": "^11.1.0",
     "glob": "^8.0.3",
+    "helmet": "^6.0.1",
     "nunjucks": "^3.2.3",
+    "purgecss": "^5.0.0",
     "sbg-api": "file:../sbg-api",
     "sbg-utility": "file:../sbg-utility",
     "serve-index": "file:libs/serve-index",
+    "tailwindcss": "^3.2.4",
     "upath": "^2.0.1"
   },
   "devDependencies": {

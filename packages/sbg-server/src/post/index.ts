@@ -42,9 +42,13 @@ interface FMResult extends postMeta {
 }
 
 function FMParse(file: string) {
+  let content: string;
   if (fs.existsSync(file)) {
-    file = fs.readFileSync(file, 'utf-8');
+    content = fs.readFileSync(file, 'utf-8');
+  } else {
+    // file is njk string
+    content = file;
   }
-  const result = fm<FMResult>(file);
-  return Object.assign(result.attributes, result);
+  const result = fm<FMResult>(content);
+  return Object.assign(result.attributes, result, { full_source: file });
 }
