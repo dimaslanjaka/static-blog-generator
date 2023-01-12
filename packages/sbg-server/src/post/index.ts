@@ -54,7 +54,7 @@ function FMParse(file: string) {
   const result = fm<FMResult>(content);
   return Object.assign(
     // assign default property photos
-    { photos: [] as string[] },
+    { photos: [] as string[], wordcount: result.body.replace(/\s+/gim, '').length },
     result.attributes,
     result,
     // assign full path
