@@ -1,7 +1,8 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "./fontawesome/css/all.css";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './fontawesome/css/all.css';
+@import 'flowbite';
 
 .mobile-menu {
   left: -200%;
@@ -9,13 +10,13 @@
 }
 
 .mobile-menu.active {
- left: 0;
+  left: 0;
 }
 
 .mobile-menu ul li ul {
   display: none;
 }
 
- .mobile-menu ul li:hover ul {
+.mobile-menu ul li:hover ul {
   display: block;
 }
