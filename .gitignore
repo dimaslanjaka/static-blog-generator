@@ -28,3 +28,6 @@ temp
 /src-posts/
 /import/
 /dist/validator
+
+# git management
+**/.git-rewrite
