@@ -2,6 +2,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import { Express } from 'express-serve-static-core';
+import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
@@ -75,10 +76,15 @@ export default class SBGServer {
       }
     });
     // init default express static
-    this.server.use(express.static(path.join(__dirname, 'public')));
-    this.server.use(express.static(path.join(this.config.root, 'public')));
-    this.server.use(express.static(path.join(this.config.root, 'node_modules')));
-    this.server.use(express.static(path.join(__dirname,'/../node_modules')));
+    [
+      path.join(__dirname, 'public'),
+      path.join(__dirname, '/../node_modules'),
+      //path.join(this.config.root, 'node_modules'),
+      //path.join(this.config.root, 'public'),
+      path.join(__dirname, '/../../../node_modules')
+    ]
+      .filter(fs.existsSync)
+      .forEach((p) => this.server.use(express.static(p)));
     // register router
     this.server.get('/', function (_, res) {
       const data = {
