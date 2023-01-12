@@ -84,7 +84,10 @@ export default class SBGServer {
       path.join(__dirname, '/../../../node_modules')
     ]
       .filter(fs.existsSync)
-      .forEach((p) => this.server.use(express.static(p)));
+      .forEach((p) => {
+        console.log('init static', p);
+        this.server.use(express.static(p));
+      });
     // register router
     this.server.get('/', function (_, res) {
       const data = {

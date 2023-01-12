@@ -3,6 +3,7 @@ const { spawn } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const path = require('upath');
 const fs = require('fs-extra');
+require('./gulpfile-compile-js.task');
 
 const cmd = (commandName) => {
   const cmdPath = [

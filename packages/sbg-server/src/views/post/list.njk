@@ -1,25 +1,55 @@
 {% extends "layout.njk" %}
 {% block content %}
-  <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-    {% for post in posts %}
-      <li class="py-3 sm:py-4">
-        <div class="flex items-center space-x-4">
-          <div class="flex-shrink-0">
-            <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Neil image"></div>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                {{ post.title|safe }}
-              </p>
-              <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                <i class="fas fa-author"></i>
-                {{ getAuthorName(post.author) }}
-              </p>
+  <form>
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <svg
+          aria-hidden="true"
+          class="w-5 h-5 text-gray-500 dark:text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+      <input
+        type="search"
+        id="default-search"
+        class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500
+          focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+          dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="Search Mockups, Logos..."
+        required>
+        <button
+          type="submit"
+          class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+            focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700
+            dark:focus:ring-blue-800">
+        Search</button>
+      </div>
+    </form>
+    <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+      {% for post in posts %}
+        <li class="py-3 sm:py-4">
+          <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0">
+              <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Neil image"></div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                  {{ post.title|safe }}
+                </p>
+                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                  <i class="fal fa-user"></i>
+                  {{ getAuthorName(post.author) }}
+                </p>
+              </div>
+              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                {{ post.wordcount }}
+              </div>
             </div>
-            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-              {{ post.wordcount }}
-            </div>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endblock %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endblock %}
