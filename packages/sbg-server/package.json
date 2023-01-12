@@ -9,7 +9,7 @@
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "npm run tw && npm run purge && gulp build",
-    "tw": "tailwind build -i source/styles/app.css -o ./src/public/app.css",
+    "tw": "tailwind -c tailwind.config.js -i source/styles/app.css -o ./src/public/app.css",
     "purge": "purgecss -c purgecss.config.js -o ./src/public"
   },
   "repository": {
@@ -33,7 +33,6 @@
     "front-matter": "^4.0.2",
     "fs-extra": "^11.1.0",
     "glob": "^8.0.3",
-    "helmet": "^6.0.1",
     "nunjucks": "^3.2.3",
     "purgecss": "^5.0.0",
     "sbg-api": "file:../sbg-api",

@@ -1,4 +1,17 @@
-{% extends layout or "layout.njk" %}
-{% block  content %}
-  <h1>{{message}}</h1>
+{% extends "layout.njk" %}
+{% block content %}
+  <section class="w-full mx-auto mt-10 pt-10 container">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-6">
+      <p class="text-md mb-4">
+        Express Nunjucks Tailwind Starter
+      </p>
+      <div class="flex items-center justify-between">
+        <a
+          href="/about"
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Go to About
+        </a>
+      </div>
+    </div>
+  </section>
 {% endblock %}

@@ -2,7 +2,6 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import { Express } from 'express-serve-static-core';
-import helmet from 'helmet';
 import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
@@ -48,7 +47,6 @@ export default class SBGServer {
       web: { useCache: isDev, async: true }
     });
     // init default middleware
-    this.server.use(helmet());
     this.server.use(express.json());
     this.server.use(cors());
     this.server.use(express.urlencoded({ extended: true }));
