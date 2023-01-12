@@ -9,7 +9,7 @@
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "npm run terser && npm run tw && npm run purge && gulp build",
-    "terser": "node concatjs.task.js",
+    "terser": "gulp compile:js",
     "tw": "tailwind -c tailwind.config.js -i source/styles/app.css -o ./src/public/css/app.css",
     "purge": "purgecss -c purgecss.config.js -o ./src/public/css"
   },
