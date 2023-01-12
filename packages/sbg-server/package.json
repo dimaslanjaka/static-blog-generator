@@ -18,7 +18,8 @@
   },
   "keywords": [
     "static-blog-generator",
-    "express"
+    "express",
+    "server"
   ],
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
   "license": "MIT",
