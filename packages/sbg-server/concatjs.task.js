@@ -27,8 +27,7 @@ gulp
 
 // copy font-awesome assets
 gulp
-  .src('./source/styles/fontawesome/**/*.*', {
-    cwd: __dirname,
-    ignore: ['**/*.{scss,less,md,zip,json,zip,map,css,js,yml}']
+  .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf}', {
+    cwd: __dirname
   })
   .pipe(gulp.dest(dest));
