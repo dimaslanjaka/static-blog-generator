@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/nodemon",
-  "exec": "npm run dev:server",
-  "watch": ["./src/**/*.ts", "./tsconfig.json", "./package.json"],
+  "exec": "npm run build && npm run dev:server",
+  "watch": ["./src/**/*.{ts,njk}", "./tsconfig.json", "./package.json"],
   "ignore": [
     "*.test.js",
     ".vscode",
@@ -13,9 +13,9 @@
     "temp",
     "./src/tmp",
     "docs",
-    "release"
+    "release",
+    "./src/public"
   ],
   "delay": 3000,
-  "ext": "ts,js",
-  "verbose": true
+  "verbose": false
 }
