@@ -8,6 +8,7 @@ import * as apis from 'sbg-api';
 import { sbgDebug } from 'sbg-utility/dist/utils/debug';
 import path from 'upath';
 import serverConfig from './config';
+import setupNunjuckHelper from './helper/nunjucks';
 import routePost from './post';
 
 export default interface SBGServer {
@@ -46,6 +47,7 @@ export default class SBGServer {
       express: this.server,
       web: { useCache: isDev, async: true }
     });
+    setupNunjuckHelper(this.env);
     // init default middleware
     this.server.use(express.json());
     this.server.use(cors());
