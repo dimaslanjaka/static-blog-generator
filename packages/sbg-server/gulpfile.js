@@ -20,11 +20,13 @@ const cmd = (commandName) => {
   return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
 };
 
+const dist = path.join(__dirname, 'dist');
+
 // copy non-javascript assets from src folder
 const copy = function () {
   return gulp
     .src(['**/*.*'], { cwd: path.join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(path.join(__dirname, 'dist')));
+    .pipe(gulp.dest(dist));
 };
 
 gulp.task('copy', gulp.series(copy));
@@ -35,4 +37,10 @@ function tsc(done) {
     .catch(done);
 }
 
-gulp.task('build', gulp.series(tsc, copy));
+gulp.task('clean', (done) => {
+  if (fs.existsSync(dist)) {
+    fs.emptyDir(dist, done);
+  } else done();
+});
+
+gulp.task('build', gulp.series('clean', tsc, copy));
