@@ -37,11 +37,16 @@ const concatenate = () =>
     .pipe(gulp.dest(dest + '/js'));
 
 function clean(done) {
-  if (fs.existsSync(dest)) fs.emptyDir(dest, done);
+  if (fs.existsSync(dest)) {
+    fs.emptyDir(dest, done);
+  } else {
+    done();
+  }
 }
 
 gulp.task('clean', clean);
 gulp.task('compile:js', gulp.series(concatenate, copyfa));
-gulp.task('watch', function () {
-  gulp.watch('**/*.njk', { cwd: __dirname + '/src/views' }, gulp.series('compile:js'));
+gulp.task('watch', function (done) {
+  const watcher = gulp.watch('**/*.njk', { cwd: __dirname + '/src/views' }, gulp.series('compile:js'));
+  watcher.on('close', () => done());
 });
