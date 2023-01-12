@@ -1,5 +1,8 @@
 {
-  "files.associations": { "*.njk": "njk", "*.nj": "njk" },
+  "files.associations": { "*.njk": "njk", "*.nj": "njk", "*.css": "tailwindcss" },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "emmet.syntaxProfiles": {
     "njk": "html"
   },
