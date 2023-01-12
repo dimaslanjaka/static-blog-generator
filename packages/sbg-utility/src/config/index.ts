@@ -1,1 +1,4 @@
-export * as config from './_config';
+export * from './defaults';
+export * from './_config';
+
+//
