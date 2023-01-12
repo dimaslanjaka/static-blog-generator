@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
+    "@types/debug": "^4.1.7",
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
-    "@types/nunjucks": "^3.2.1",
-    "debug": "^4.3.4"
+    "@types/nunjucks": "^3.2.1"
   },
   "scripts": {
     "test": "jest --runInBand",
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
+    "debug": "^4.3.4",
     "fs-extra": "^11.1.0",
     "glob": "^8.0.3",
     "gulp": "^4.0.2",
