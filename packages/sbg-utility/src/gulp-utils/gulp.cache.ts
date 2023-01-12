@@ -7,10 +7,10 @@ import { Opt, persistentCache } from 'persistent-cache';
 import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
+import * as projectConfig from '../config';
 import { writefile } from '../utils/fm';
 import { data_to_hash_sync } from '../utils/hash';
 import scheduler from '../utils/scheduler';
-import { config as projectConfig } from '../config';
 
 const { getConfig } = projectConfig;
 
