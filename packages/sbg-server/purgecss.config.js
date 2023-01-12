@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['src/views/**/*.njk'],
+  content: ['src/views/**/*.njk', 'src/public/**/*.js'],
   css: ['src/public/app.css'],
   extractors: [
     {

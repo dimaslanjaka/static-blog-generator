@@ -24,16 +24,14 @@
         <div
           class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
           <!-- Replace with your content -->
-          <div class="px-4 py-6 sm:px-0">
-            <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div>
+          <div class="px-4 py-6 sm:px-0"> {% block content %}{% endblock %}
+            </div>
+            <!-- /End replace -->
           </div>
-          <!-- /End replace -->
-        </div>
-      </main>
-    </div>
-    <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
-    href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
-    -->
-    {% block content %}{% endblock %}
-  </body>
-</html>
+        </main>
+      </div>
+      <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+      href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
+      -->
+    </body>
+  </html>
