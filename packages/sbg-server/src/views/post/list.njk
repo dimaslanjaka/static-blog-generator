@@ -1,5 +1,5 @@
-{% extends  layout %}
-{% block  content %}
+{% extends "layout.njk" %}
+{% block content %}
   {% for post in posts %}
     <ul>
       <li>{{ post.title or post.full_source }}</li>
