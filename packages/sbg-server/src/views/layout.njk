@@ -17,22 +17,21 @@
       {% include "partials/nav.njk" %}
       <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ section or "Dashboard" }}</h1>
         </div>
       </header>
       <main>
         <div
           class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
           <!-- Replace with your content -->
-          <div class="px-4 py-6 sm:px-0"> {% block content %}{% endblock %}
-            </div>
-            <!-- /End replace -->
-          </div>
-        </main>
-      </div>
-      <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
-      href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
-      -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.9.5/cdn.js"></script>
-    </body>
-  </html>
+          {% block content %}{% endblock %}
+          <!-- /End replace -->
+        </div>
+      </main>
+    </div>
+    <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+    href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.9.5/cdn.js"></script>
+  </body>
+</html>
