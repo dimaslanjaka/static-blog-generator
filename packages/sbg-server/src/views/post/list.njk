@@ -2,7 +2,7 @@
 {% block  content %}
   {% for post in posts %}
     <ul>
-      <li>{{ post.title }}</li>
+      <li>{{ post.title or post.full_source }}</li>
     </ul>
   {% endfor %}
 {% endblock %}
