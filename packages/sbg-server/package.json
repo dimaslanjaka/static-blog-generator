@@ -41,7 +41,8 @@
     "glob": "^8.0.3",
     "nunjucks": "^3.2.3",
     "sbg-api": "file:../sbg-api",
-    "sbg-utility": "file:../sbg-utility",    "serve-index": "^1.9.1",
+    "sbg-utility": "file:../sbg-utility",
+    "serve-index": "^1.9.1",
     "upath": "^2.0.1"
   },
   "devDependencies": {
