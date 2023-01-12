@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
+    "update": "npm run update:postinstall && npx npm-check-updates -u && npm install",
+    "postinstall": "node postinstall.js",
     "test": "jest --runInBand",
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
@@ -38,8 +41,7 @@
     "glob": "^8.0.3",
     "nunjucks": "^3.2.3",
     "sbg-api": "file:../sbg-api",
-    "sbg-utility": "file:../sbg-utility",
-    "serve-index": "^1.9.1",
+    "sbg-utility": "file:../sbg-utility",    "serve-index": "^1.9.1",
     "upath": "^2.0.1"
   },
   "devDependencies": {
