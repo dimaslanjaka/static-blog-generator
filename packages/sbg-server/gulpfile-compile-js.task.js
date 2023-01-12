@@ -7,13 +7,16 @@ const path = require('upath');
 const fs = require('fs-extra');
 
 const dest = path.join(__dirname, 'src/public');
-if (!fs.existsSync(dest + '/css/app.css') || !fs.existsSync(dest + '/js/app.js')) {
-  startCompile();
-}
 
-function startCompile() {
-  if (fs.existsSync(dest)) fs.emptyDirSync(dest);
+// copy font-awesome assets
+const copyfa = () =>
+  gulp
+    .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf}', {
+      cwd: __dirname
+    })
+    .pipe(gulp.dest(dest));
 
+const concatenate = () =>
   gulp
     .src('./source/scripts/**/*.js', { cwd: __dirname, ignore: ['**/*.min.js'] })
     .pipe(concat('app.js'))
@@ -30,10 +33,12 @@ function startCompile() {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(dest + '/js'));
 
-  // copy font-awesome assets
-  gulp
-    .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf}', {
-      cwd: __dirname
-    })
-    .pipe(gulp.dest(dest));
+function clean(done) {
+  if (fs.existsSync(dest)) fs.emptyDir(dest, done);
 }
+
+gulp.task('clean', clean);
+gulp.task('compile:js', gulp.series(concatenate, copyfa));
+gulp.task('watch', function () {
+  gulp.watch('**/*.njk', { cwd: __dirname + '/src/views' }, gulp.series('compile:js'));
+});
