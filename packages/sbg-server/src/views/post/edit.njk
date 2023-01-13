@@ -1,13 +1,10 @@
 {% extends "layout.njk" %}
 {% block content %}
+  {% set page = post %}
   {% include "partials/post/edit.njk" %}
 {% endblock content %}
 {% block script %}
-  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.59.2/lib/codemirror.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.59.2/mode/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/turndown@7.0.0/dist/turndown.min.js"></script>
   <script src="https://unpkg.com/marked@0.3.6/lib/marked.js"></script>
-  <script>
-    _initPostEditor()
-  </script>
+  <script src="/js/post/editor.js"></script>
 {% endblock script %}
