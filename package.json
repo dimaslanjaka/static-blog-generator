@@ -101,7 +101,7 @@
     "prettier": "^2.8.2",
     "rimraf": "^3.0.2",
     "semver": "^7.3.8",
-    "ts-jest": "^29.0.3",
+    "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
     "typedoc": "^0.23.24",
     "typedoc-plugin-missing-exports": "^1.0.0",
