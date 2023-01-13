@@ -8,7 +8,7 @@ import { processSinglePost } from './copy';
 export function getSourcePosts() {
   return new Bluebird((resolve: (arg: hexoPostParser.postMap[]) => any) => {
     const config = getConfig();
-    const sourcePostDir = path.join(process.cwd(), config.post_dir);
+    const sourcePostDir = path.join(config.cwd, config.post_dir);
     glob('**/*.md', { cwd: sourcePostDir }, function (_err, matches) {
       if (!_err) {
         matches = matches.map((p) => path.join(sourcePostDir, p));

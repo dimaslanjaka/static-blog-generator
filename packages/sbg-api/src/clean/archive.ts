@@ -38,7 +38,7 @@ export default async function cleanArchive(callback?: gulp.TaskFunctionCallback 
   const promises: Promise<any>[] = [];
 
   // dump to file
-  const dumpfile = join(process.cwd(), 'tmp/dump/clean.txt');
+  const dumpfile = join(config.cwd, 'tmp/dump/clean.txt');
   writefile(dumpfile, folders.join('\n'));
   Logger.log(logname, 'list deleted files', dumpfile);
 

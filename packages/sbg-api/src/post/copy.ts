@@ -21,8 +21,8 @@ const logLabel = log.extend('label');
 export function copySinglePost(identifier: string, callback?: (...args: any[]) => any) {
   identifier = identifier.replace(extname(identifier), '');
   const config = getConfig();
-  const sourcePostDir = join(process.cwd(), config.post_dir);
-  const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
+  const sourcePostDir = join(config.cwd, config.post_dir);
+  const generatedPostDir = join(config.cwd, config.source_dir, '_posts');
   ///const fileList = [];
   gulp
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
@@ -42,8 +42,8 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
 export function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
   if (!config) config = getConfig();
   const excludes = config.exclude || [];
-  const sourcePostDir = join(process.cwd(), config.post_dir);
-  const generatedPostDir = join(process.cwd(), config.source_dir, '_posts');
+  const sourcePostDir = join(config.cwd, config.post_dir);
+  const generatedPostDir = join(config.cwd, config.source_dir, '_posts');
   // console.log(excludes, sourcePostDir);
   return (
     gulp
@@ -116,7 +116,7 @@ export async function processSinglePost(file: string, callback?: (parsed: hexoPo
   const contents = fs.readFileSync(file, 'utf-8');
   const config = getConfig();
   // debug file
-  const dfile = ansiColors.yellowBright(toUnix(file.replace(process.cwd(), '')));
+  const dfile = ansiColors.yellowBright(toUnix(file.replace(config.cwd, '')));
   log('processing', dfile);
   // drop empty body
   if (contents.trim().length === 0) {
