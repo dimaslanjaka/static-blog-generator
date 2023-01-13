@@ -1,5 +1,9 @@
 {
-  "files.associations": { "*.njk": "njk", "*.nj": "njk", "*.css": "tailwindcss" },
+  "files.associations": {
+    "*.njk": "njk",
+    "*.nj": "njk",
+    "*.css": "tailwindcss"
+  },
   "editor.quickSuggestions": {
     "strings": true
   },
@@ -14,6 +18,7 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
+  "auto-rename-tag.activationOnLanguage": ["html", "xml", "php", "javascript", "njk", "nunjucks"],
   "eslint.codeActionsOnSave.mode": "all",
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
