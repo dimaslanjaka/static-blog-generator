@@ -3,13 +3,12 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "emmet.syntaxProfiles": {
-    "njk": "html"
-  },
+  "emmet.showExpandedAbbreviation": "always",
   "emmet.includeLanguages": {
     "ejs": "html",
     "njk": "html",
-    "nunjucks": "html"
+    "nunjucks": "html",
+    "Nunjucks": "html"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
