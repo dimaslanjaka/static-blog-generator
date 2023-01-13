@@ -5,14 +5,18 @@ import { getConfig } from 'sbg-utility';
 import path from 'upath';
 import { processSinglePost } from './copy';
 
+export interface ResultSourcePosts extends hexoPostParser.postMap {
+  full_source: string;
+}
+
 export function getSourcePosts() {
-  return new Bluebird((resolve: (arg: hexoPostParser.postMap[]) => any) => {
+  return new Bluebird((resolve: (arg: ResultSourcePosts[]) => any) => {
     const config = getConfig();
     const sourcePostDir = path.join(config.cwd, config.post_dir);
     glob('**/*.md', { cwd: sourcePostDir }, function (_err, matches) {
       if (!_err) {
         matches = matches.map((p) => path.join(sourcePostDir, p));
-        const results: hexoPostParser.postMap[] = [];
+        const results: ResultSourcePosts[] = [];
         matches.forEach((p) =>
           processSinglePost(p, function (parsed) {
             results.push(Object.assign(parsed, { full_source: p }));
