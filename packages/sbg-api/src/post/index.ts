@@ -1,5 +1,6 @@
-export * as copy from './copy';
-export * as standalone from './standalone';
-export * as update from './update';
+export * from './copy';
+export * from './get-source-posts';
+export * from './standalone';
+export * from './update';
 
 //
