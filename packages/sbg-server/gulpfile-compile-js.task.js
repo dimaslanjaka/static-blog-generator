@@ -7,6 +7,9 @@ const { spawnAsync } = require('git-command-helper/dist/spawn');
 const webpackConfig = require('./webpack.config');
 const webpack = require('webpack-stream');
 
+// webpack-stream not require entry
+delete webpackConfig.entry;
+// dest folder
 const dest = path.join(__dirname, 'src/public');
 
 /**
@@ -15,7 +18,7 @@ const dest = path.join(__dirname, 'src/public');
  */
 const copyfa = () =>
   gulp
-    .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf}', {
+    .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
       cwd: __dirname
     })
     .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
@@ -25,14 +28,15 @@ const copyfa = () =>
  * compile js using webpack
  * @returns
  */
-const webpackCompile = () =>
-  gulp
+gulp.task('compile:webpack', () => {
+  return gulp
     .src('./source/scripts/**/*.js', { cwd: __dirname, ignore: ['**/*.min.js'] })
     .pipe(utility.gutils.gulpCached({ name: 'webpack-compile' }))
     .pipe(sourcemaps.init())
     .pipe(webpack(webpackConfig))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(dest + '/js'));
+});
 
 function clean(done) {
   if (fs.existsSync(dest)) {
@@ -43,7 +47,7 @@ function clean(done) {
 }
 
 gulp.task('clean', clean);
-gulp.task('compile:js', gulp.series(webpackCompile, copyfa));
+gulp.task('compile:js', gulp.series('compile:webpack', copyfa));
 
 // npm run build separated with npm run dev:server
 gulp.task('watch', function (done) {

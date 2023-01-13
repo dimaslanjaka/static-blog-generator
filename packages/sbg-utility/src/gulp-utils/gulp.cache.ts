@@ -51,6 +51,10 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
    * verbose
    */
   verbose?: boolean;
+  /**
+   * delete after process.exit
+   */
+  deleteOnExit?: boolean;
 };
 
 function cacheLib(options: Partial<Opt> | undefined) {

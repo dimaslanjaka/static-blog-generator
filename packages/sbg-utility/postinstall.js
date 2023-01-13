@@ -207,7 +207,7 @@ const coloredScriptName = colors.grey(scriptname);
                 colors.blueBright(...arg.filter((str) => str.startsWith('-')))
               );
               await summon('npm', ['un', pkgname], { cwd: __dirname });
-              await summon('npm', ['install', ...arg, '--ignore-scripts'], { cwd: __dirname, stdio: 'inherit' });
+              await summon('npm', ['install', ...arg], { cwd: __dirname, stdio: 'inherit' });
             } else {
               //console.log(folderHash.hash, existingHash, folderHash.hash == existingHash);
               console.log(coloredScriptName, 'no changes found', coloredPkgname);

@@ -3,6 +3,8 @@
 @import 'tailwindcss/utilities';
 @import './fontawesome/css/all.css';
 @import 'flowbite';
+@import './codemirror/lib/codemirror.css';
+@import './codemirror/theme/monokai.css';
 
 .mobile-menu {
   left: -200%;
