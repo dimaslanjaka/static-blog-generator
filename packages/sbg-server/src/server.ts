@@ -79,8 +79,10 @@ export default class SBGServer {
     [
       path.join(__dirname, 'public'),
       path.join(__dirname, '/../node_modules'),
-      //path.join(this.config.root, 'node_modules'),
-      //path.join(this.config.root, 'public'),
+      path.join(this.config.root, 'node_modules'),
+      path.join(this.config.root, this.api.config.public_dir),
+      path.join(this.config.root, this.api.config.post_dir),
+      path.join(this.config.root, this.api.config.source_dir),
       path.join(__dirname, '/../../../node_modules')
     ]
       .filter(fs.existsSync)
@@ -92,7 +94,6 @@ export default class SBGServer {
     this.server.get('/', function (_, res) {
       const data = {
         message: 'Hello world!',
-        layout: 'layout.njk',
         title: 'Nunjucks example'
       };
 
