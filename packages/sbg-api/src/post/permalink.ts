@@ -33,13 +33,15 @@ export function parsePermalink(
     title: string;
   }
 ) {
+  if (!post) throw new Error('parameter post is ' + typeof post);
+
   debug('permalink').extend('source')(post);
   const siteConfig = getConfig();
   let pattern = config.permalink_pattern || siteConfig.permalink;
   const date = config.date;
   let cleanPathname = normalizePath(post).replace(/.md$/, '');
   const toReplace = [
-    normalizePath(config.cwd),
+    normalizePath(siteConfig.cwd),
     siteConfig.source_dir + '/_posts/',
     `${siteConfig.post_dir || 'src-posts'}/`,
     '_posts/'
