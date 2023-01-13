@@ -22,8 +22,9 @@ class SBG {
    */
   constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = process.cwd();
-    this.cwd = cwd;
     fetchConfig(cwd);
+    this.cwd = cwd;
+    this.config.cwd = cwd;
     options = Object.assign(this.config, options || {}, { cwd });
 
     this.config = setConfig(options);
@@ -44,6 +45,9 @@ class SBG {
    * @returns
    */
   async core() {
+    // apply current config
+    setConfig(this.config);
+    // recall index
     return await import('./index');
   }
 
