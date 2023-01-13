@@ -74,15 +74,15 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
 
     // update original source post after process ends
     const rebuild = buildPost(rBuild);
-    //writefile(join(process.cwd(), 'tmp/rebuild.md'), rebuild);
-    Logger.log('write to', toUnix(oriPath).replace(toUnix(process.cwd()), ''), oriUp, '->', post.attributes.updated);
+    //writefile(join(config.cwd, 'tmp/rebuild.md'), rebuild);
+    Logger.log('write to', toUnix(oriPath).replace(toUnix(config.cwd), ''), oriUp, '->', post.attributes.updated);
     await fm.writefile(oriPath, rebuild, { async: true }); // write original post
 
     const build = buildPost(parse);
     await fm.writefile(postPath, build, { async: true });
   } else {
     Logger.log('cannot parse', postPath);
-    fm.writefile(join(process.cwd(), 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
+    fm.writefile(join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
   }
 
   const hasError = typeof (parse && parse.metadata) === 'undefined';
