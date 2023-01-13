@@ -15,7 +15,7 @@ export function getSourcePosts() {
         const results: hexoPostParser.postMap[] = [];
         matches.forEach((p) =>
           processSinglePost(p, function (parsed) {
-            results.push(parsed);
+            results.push(Object.assign(parsed, { full_source: p }));
           })
         );
         resolve(results);
