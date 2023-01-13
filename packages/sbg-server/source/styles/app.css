@@ -20,3 +20,9 @@
 .mobile-menu ul li:hover ul {
   display: block;
 }
+
+#search-dropdown-submit {
+  width: 50px;
+  height: 100%;
+  padding-left: 5px;
+}
