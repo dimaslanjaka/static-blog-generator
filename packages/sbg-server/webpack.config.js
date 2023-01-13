@@ -1,12 +1,13 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require('upath');
 const webpack = require('webpack');
+const glob = require('glob');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-  entry: {
-    app: path.resolve(__dirname + '/source/scripts/app.js')
-  },
+  entry: Object.fromEntries(
+    glob.sync(path.resolve(__dirname, 'source/scripts/**/*.js')).map((v) => [v.split('source/scripts/')[1], v])
+  ),
   plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: [
@@ -23,7 +24,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: '[name].js',
+    filename: '[name]',
     path: path.resolve(__dirname, 'src/public/js'),
     sourceMapFilename: '[name].[ext].map',
     library: 'safelinkify',
