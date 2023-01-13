@@ -84,25 +84,37 @@
               <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Neil image"></div>
               <div class="flex-1 min-w-0">
                 <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  {{ post.title|safe }}
+                  {{ post.title or "No title" |safe }}
                 </p>
-                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  <i class="fa-light fa-user w-2.5" data-tooltip-target="tooltip-author-{{ post.id }}"></i>
-                  <span class="min-w-16" data-tooltip-target="tooltip-author-{{ post.id }}">{{ getAuthorName(post.author) }}</span>
-                  <i class="fa-light fa-chart-gantt w-2.5" data-tooltip-target="tooltip-wordcount-{{ post.id }}"></i>
-                  <span class="min-w-16" data-tooltip-target="tooltip-wordcount-{{ post.id }}">{{ post.wordcount }}</span>
-                  <i class="fa-light fa-folder-open w-2.5"></i>
-                  <span class="min-w-16">{{ post.full_source }}</span>
-                </p>
-                <!-- tooltips -->
-                <div
-                  id="tooltip-author-{{ post.id }}"
-                  role="tooltip"
-                  class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300
-                    bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  Post Author
-                  <div class="tooltip-arrow" data-popper-arrow></div>
+                <div class="text-sm text-gray-500 truncate dark:text-gray-400 grid gap-px grid-cols-3">
+                  <div>
+                    <i class="fa-light fa-user w-2.5" data-tooltip-target="tooltip-author-{{ post.id }}"></i>
+                    {{ getAuthorName(post.author) }}</div>
+                  <div data-tooltip-target="tooltip-wordcount-{{ post.id }}">
+                    <i class="fa-light fa-chart-gantt w-2.5" data-tooltip-target="tooltip-wordcount-{{ post.id }}"></i>
+                    {{ post.wordcount }}</div>
+                  <div>
+                    <i class="fa-light fa-folder-open"></i>
+                    {% if post.categories and post.categories.length %}
+                      <span>{{ post.categories }}</span>
+                    {% else %}
+                      <span>uncategorized</span>
+                    {% endif %}
+                  </div>
+                  <div>
+                    <i class="fa-light fa-tag"></i>
+                    {% if post.tags and post.tags.length %}
+                      <span>{{ post.tags }}</span>
+                    {% else %}
+                      <span>-</span>
+                    {% endif %}
+                  </div>
+                  <div>
+                    <i class="fa-light fa-folder-open w-2.5"></i>
+                    <span>{{ post.relative_source }}</span>
+                  </div>
                 </div>
+                <!-- tooltips -->
                 <div
                   id="tooltip-wordcount-{{ post.id }}"
                   role="tooltip"
