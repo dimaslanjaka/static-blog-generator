@@ -37,7 +37,7 @@ export default function routePost(api: apis.Application) {
     const postid = req.params['id'];
     const findPost = req.data.find((post) => post.metadata?.id === postid) || new Error(postid + ' not found');
     if (findPost instanceof Error) return res.json(findPost);
-    res.render('post/edit.njk', { post: findPost });
+    res.render('post/edit2.html', { post: findPost });
   });
 
   return router;

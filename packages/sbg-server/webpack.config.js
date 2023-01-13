@@ -2,22 +2,53 @@ const TerserPlugin = require('terser-webpack-plugin');
 const path = require('upath');
 const webpack = require('webpack');
 const glob = require('glob');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const entry = {
+  ['markdownit.js']: 'markdown-it',
+  ['hljs.js']: 'highlight.js',
+  ['lodash.js']: 'lodash',
+  ['codemirror.js']: './source/styles/codemirror',
+  ['axios.js']: 'axios'
+};
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-  entry: Object.fromEntries(
-    glob.sync(path.resolve(__dirname, 'source/scripts/**/*.js')).map((v) => [v.split('source/scripts/')[1], v])
+  entry: Object.assign(
+    entry,
+    Object.fromEntries(
+      glob
+        .sync(path.resolve(__dirname, 'source/scripts/**/*.js'))
+        .map((v) => [
+          v.split('source/scripts/')[1],
+          { import: v, dependOn: ['markdownit.js', 'axios.js', 'hljs.js', 'codemirror.js', 'lodash.js'] }
+        ])
+    )
   ),
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin(), new MiniCssExtractPlugin()],
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components|.test.(m?js|ts)$)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            exclude: [
+              // \\ for Windows, / for macOS and Linux
+              /node_modules[\\/]core-js/,
+              /node_modules[\\/]webpack[\\/]buildin/
+            ],
+            presets: [
+              [
+                '@babel/preset-env',
+                { modules: false, useBuiltIns: 'entry', targets: { chrome: '58', ie: '11' }, corejs: 2 }
+              ]
+            ]
           }
         }
       }
@@ -26,13 +57,17 @@ module.exports = {
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'src/public/js'),
-    sourceMapFilename: '[name].[ext].map',
-    library: 'safelinkify',
     libraryTarget: 'umd',
+    library: 'SBGServer',
+    libraryExport: 'default',
     globalObject: 'this'
   },
   mode: 'production',
   optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all'
+    },
     minimize: true,
     minimizer: [new TerserPlugin()]
   }

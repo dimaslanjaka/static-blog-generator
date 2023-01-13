@@ -66,7 +66,7 @@ gulp.task('watch', function (done) {
   };
 
   gulp.series(doCompile)(function () {
-    const watcher = gulp.watch(['src/views/**/*.njk', 'source/**/*'], { cwd: __dirname }, doCompile);
+    const watcher = gulp.watch(['src/views/**/*.{njk,html}', 'source/**/*'], { cwd: __dirname }, doCompile);
     watcher.on('close', () => done());
   });
 });
