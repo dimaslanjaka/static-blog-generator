@@ -1,16 +1,11 @@
 import ansiColors from 'ansi-colors';
 import fs from 'fs';
 import gulp from 'gulp';
-import through2 from 'through2';
-//
-// import { buildPost, parsePost } from '../../packages/hexo-post-parser/dist';
 import * as hexoPostParser from 'hexo-post-parser';
-//
-
-import { getConfig } from 'sbg-utility/dist/config/_config';
-import { gulpCached } from 'sbg-utility/dist/gulp-utils';
+import { getConfig, gulpCached } from 'sbg-utility';
 import debug from 'sbg-utility/dist/utils/debug';
 import Logger from 'sbg-utility/dist/utils/logger';
+import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { parsePermalink } from './permalink';
 
@@ -117,7 +112,7 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
   );
 }
 
-export async function processSinglePost(file: string) {
+export async function processSinglePost(file: string, callback?: (parsed: hexoPostParser.postMap) => any) {
   const contents = fs.readFileSync(file, 'utf-8');
   const config = getConfig();
   // debug file
@@ -221,6 +216,10 @@ export async function processSinglePost(file: string) {
         }
 
         // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
+      }
+
+      if (typeof callback === 'function') {
+        callback(parse);
       }
 
       const build = hexoPostParser.buildPost(parse);
