@@ -36,6 +36,7 @@
     "glob": "^8.0.3",
     "gulp": "^4.0.2",
     "nunjucks": "^3.2.3",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
     "upath": "^2.0.1"
   }
 }
