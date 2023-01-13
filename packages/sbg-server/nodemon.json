@@ -3,6 +3,7 @@
   "exec": "node nodemon.runner.js",
   "watch": [
     "./src/**/*.{njk,html,ts,js}",
+    "./source/**/*.{njk,html,ts,js}",
     "./tsconfig.json",
     "./package.json"
   ],
