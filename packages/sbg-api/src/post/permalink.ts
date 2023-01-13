@@ -39,7 +39,7 @@ export function parsePermalink(
   const date = config.date;
   let cleanPathname = normalizePath(post).replace(/.md$/, '');
   const toReplace = [
-    normalizePath(process.cwd()),
+    normalizePath(config.cwd),
     siteConfig.source_dir + '/_posts/',
     `${siteConfig.post_dir || 'src-posts'}/`,
     '_posts/'

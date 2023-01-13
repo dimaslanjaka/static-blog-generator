@@ -63,7 +63,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
         });
 
         // dump
-        const saveto = join(process.cwd(), 'tmp/dump/sitemap/sitemap.json');
+        const saveto = join(getConfig().cwd, 'tmp/dump/sitemap/sitemap.json');
         writefile(saveto, JSON.stringify(mapped, null, 2));
 
         // return
@@ -181,7 +181,7 @@ export function hexoGenerateSitemap() {
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
         // dump
-        writefile(join(process.cwd(), 'tmp/dump/sitemap/sitemap.xml'), data);
+        writefile(join(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data);
 
         // write
         const sitemapXml = join(getConfig().cwd, config.public_dir, 'sitemap.xml');
