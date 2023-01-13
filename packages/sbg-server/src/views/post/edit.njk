@@ -8,18 +8,6 @@
   <script src="https://cdn.jsdelivr.net/npm/turndown@7.0.0/dist/turndown.min.js"></script>
   <script src="https://unpkg.com/marked@0.3.6/lib/marked.js"></script>
   <script>
-    const input = document.getElementById('post-editor')
-    const codeMirrorEditor = CodeMirror.fromTextArea(input, {
-      mode: 'markdown',
-      theme: 'default',
-      lineWrapping: true
-    });
-    const content = `{{ post.body }}`;
-    codeMirrorEditor.setValue(content);
-    codeMirrorEditor.setSize('100%', height);
-    setTimeout(function () {
-      codeMirrorEditor.refresh();
-    }, 1);
-    codeMirrorEditor.on('change', () => content = codeMirrorEditor.getValue())
+    _initPostEditor()
   </script>
 {% endblock script %}

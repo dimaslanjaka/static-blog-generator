@@ -18,7 +18,7 @@ const copyfa = () =>
     .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
       cwd: __dirname
     })
-    .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome', duration: 60000 }))
+    .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
     .pipe(gulp.dest(dest));
 
 /**
