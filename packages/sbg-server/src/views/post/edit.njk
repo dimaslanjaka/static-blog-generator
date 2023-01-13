@@ -2,3 +2,24 @@
 {% block content %}
   {% include "partials/post/edit.njk" %}
 {% endblock content %}
+{% block script %}
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.59.2/lib/codemirror.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.59.2/mode/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turndown@7.0.0/dist/turndown.min.js"></script>
+  <script src="https://unpkg.com/marked@0.3.6/lib/marked.js"></script>
+  <script>
+    const input = document.getElementById('post-editor')
+    const codeMirrorEditor = CodeMirror.fromTextArea(input, {
+      mode: 'markdown',
+      theme: 'default',
+      lineWrapping: true
+    });
+    const content = `{{ post.body }}`;
+    codeMirrorEditor.setValue(content);
+    codeMirrorEditor.setSize('100%', height);
+    setTimeout(function () {
+      codeMirrorEditor.refresh();
+    }, 1);
+    codeMirrorEditor.on('change', () => content = codeMirrorEditor.getValue())
+  </script>
+{% endblock script %}

@@ -1,10 +1,7 @@
 import debug from 'debug';
 import express from 'express';
-import fm from 'front-matter';
-import fs from 'fs-extra';
-import glob from 'glob';
-import { postMeta } from 'hexo-post-parser';
 import * as apis from 'sbg-api';
+import { getSourcePosts } from 'sbg-api/dist/post';
 import serveIndex from 'serve-index';
 import path from 'upath';
 
@@ -17,47 +14,31 @@ export default function routePost(api: apis.Application) {
   const POST_ROOT = path.join(api.cwd, api.config.post_dir);
   log('root<post>', POST_ROOT);
   // list all posts
-  router.use('/debug', express.static(POST_ROOT), serveIndex(POST_ROOT, { icons: true }));
-  router.use('/list', function (_req, res) {
-    glob('**/*.md', { cwd: POST_ROOT }, function (err, matches) {
-      if (!err) {
-        const data = {
-          title: 'Post List',
-          layout: 'layout.njk',
-          posts: matches.map((file) => path.join(POST_ROOT, file)).map((postMd) => FMParse(postMd))
-        };
-        res.render('post/list.njk', data);
-      } else {
-        res.send(String(err));
-      }
-    });
+  router.get('/debug', express.static(POST_ROOT), serveIndex(POST_ROOT, { icons: true }));
+  interface PostRequestMiddleware extends express.Request {
+    data: (apis.post.ResultSourcePosts & Record<string, any>)[];
+  }
+  const middleware = async function (req: PostRequestMiddleware, _res: express.Response, next: express.NextFunction) {
+    const posts = await getSourcePosts();
+    req.data = posts.map((parsed) => Object.assign(parsed, parsed.metadata, { body: parsed.body }));
+    next(null);
+  };
+  router.get('/list', middleware, async function (req: PostRequestMiddleware, res) {
+    const data = {
+      title: 'Post List',
+      section: 'Post',
+      // merge metadata
+      posts: req.data
+    };
+    res.render('post/list.njk', data);
+  });
+
+  router.get('/edit/:id', middleware, function (req: PostRequestMiddleware, res) {
+    const postid = req.params['id'];
+    const findPost = req.data.find((post) => post.metadata?.id === postid) || new Error(postid + ' not found');
+    if (findPost instanceof Error) return res.json(findPost);
+    res.render('post/edit.njk', { post: findPost });
   });
 
   return router;
-}
-
-interface FMResult extends Required<postMeta> {
-  attributes: Required<postMeta>;
-  body: string;
-  bodyBegin: number;
-  frontmatter: string;
-}
-
-function FMParse(file: string) {
-  let content: string;
-  if (fs.existsSync(file)) {
-    content = fs.readFileSync(file, 'utf-8');
-  } else {
-    // file is njk string
-    content = file;
-  }
-  const result = fm<FMResult>(content);
-  return Object.assign(
-    // assign default property photos
-    { photos: [] as string[], wordcount: result.body.replace(/\s+/gim, '').length },
-    result.attributes,
-    result,
-    // assign full path
-    { full_source: file }
-  );
 }
