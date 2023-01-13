@@ -14,6 +14,7 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
+  "eslint.codeActionsOnSave.mode": "all",
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
   "code-runner.runInTerminal": true,
@@ -34,5 +35,10 @@
   "search.exclude": {
     "**/dist/**": true,
     "**/tmp/**": true
+  },
+  "tailwindCSS.codeActions": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
   }
 }

@@ -1,14 +1,11 @@
 const gulp = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
 const path = require('upath');
 const fs = require('fs-extra');
 const utility = require('sbg-utility');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const webpackConfig = require('./webpack.config');
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
 
-// webpack-stream not require entry
-delete webpackConfig.entry;
 // dest folder
 const dest = path.join(__dirname, 'src/public');
 
@@ -21,21 +18,22 @@ const copyfa = () =>
     .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
       cwd: __dirname
     })
-    .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
+    .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome', duration: 60000 }))
     .pipe(gulp.dest(dest));
 
 /**
  * compile js using webpack
  * @returns
  */
-gulp.task('compile:webpack', () => {
-  return gulp
-    .src('./source/scripts/**/*.js', { cwd: __dirname, ignore: ['**/*.min.js'] })
-    .pipe(utility.gutils.gulpCached({ name: 'webpack-compile' }))
-    .pipe(sourcemaps.init())
-    .pipe(webpack(webpackConfig))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(dest + '/js'));
+gulp.task('compile:webpack', (done) => {
+  webpack(webpackConfig, (err, stats) => {
+    if (err || stats.hasErrors()) {
+      done(err);
+    } else {
+      console.log(stats.toString());
+      done();
+    }
+  });
 });
 
 function clean(done) {
