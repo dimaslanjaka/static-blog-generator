@@ -17,15 +17,25 @@ module.exports = {
   entry: Object.assign(
     entry,
     Object.fromEntries(
-      glob
-        .sync(path.resolve(__dirname, 'source/scripts/**/*.js'))
-        .map((v) => [
-          v.split('source/scripts/')[1],
-          { import: v, dependOn: ['markdownit.js', 'axios.js', 'hljs.js', 'codemirror.js', 'lodash.js'] }
-        ])
+      glob.sync(path.resolve(__dirname, 'source/scripts/**/*.js')).map((v) => [
+        v.split('source/scripts/')[1],
+        {
+          import: v,
+          dependOn: [
+            'markdownit.js',
+            'axios.js',
+            'hljs.js',
+            'codemirror.js',
+            'lodash.js'
+          ]
+        }
+      ])
     )
   ),
-  plugins: [new webpack.HotModuleReplacementPlugin(), new MiniCssExtractPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin()
+  ],
   module: {
     rules: [
       {
@@ -46,7 +56,12 @@ module.exports = {
             presets: [
               [
                 '@babel/preset-env',
-                { modules: false, useBuiltIns: 'entry', targets: { chrome: '58', ie: '11' }, corejs: 2 }
+                {
+                  modules: false,
+                  useBuiltIns: 'entry',
+                  targets: { chrome: '58', ie: '11' },
+                  corejs: 3
+                }
               ]
             ]
           }
