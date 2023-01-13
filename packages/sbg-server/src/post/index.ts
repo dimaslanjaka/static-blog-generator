@@ -36,7 +36,13 @@ export default function routePost(api: apis.Application) {
       title: 'Post List',
       section: 'Post',
       // merge metadata
-      posts: req.data
+      posts: req.data.map((item) => {
+        item.relative_source = item.full_source.replace(
+          api.config.cwd,
+          '<root>'
+        );
+        return item;
+      })
     };
     res.render('post/index.njk', data);
   });
