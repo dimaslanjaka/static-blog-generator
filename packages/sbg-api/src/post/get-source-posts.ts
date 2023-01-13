@@ -5,7 +5,7 @@ import { getConfig } from 'sbg-utility';
 import path from 'upath';
 import { processSinglePost } from './copy';
 
-export default function getSourcePosts() {
+export function getSourcePosts() {
   return new Bluebird((resolve: (arg: hexoPostParser.postMap[]) => any) => {
     const config = getConfig();
     const sourcePostDir = path.join(process.cwd(), config.post_dir);
@@ -23,3 +23,5 @@ export default function getSourcePosts() {
     });
   });
 }
+
+export default getSourcePosts;

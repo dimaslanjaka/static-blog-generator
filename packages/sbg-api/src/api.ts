@@ -40,6 +40,14 @@ class SBG {
   }
 
   /**
+   * get index packages
+   * @returns
+   */
+  async core() {
+    return await import('./index');
+  }
+
+  /**
    * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
    * @returns
    */
