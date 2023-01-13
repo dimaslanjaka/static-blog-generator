@@ -1,16 +1,18 @@
 const gulp = require('gulp');
-const concat = require('gulp-concat');
-const terser = require('gulp-terser');
-const terserlib = require('terser');
 const sourcemaps = require('gulp-sourcemaps');
 const path = require('upath');
 const fs = require('fs-extra');
 const utility = require('sbg-utility');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
+const webpackConfig = require('./webpack.config');
+const webpack = require('webpack-stream');
 
 const dest = path.join(__dirname, 'src/public');
 
-// copy font-awesome assets
+/**
+ * copy font-awesome assets
+ * @returns
+ */
 const copyfa = () =>
   gulp
     .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf}', {
@@ -19,21 +21,16 @@ const copyfa = () =>
     .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
     .pipe(gulp.dest(dest));
 
-const concatenate = () =>
+/**
+ * compile js using webpack
+ * @returns
+ */
+const webpackCompile = () =>
   gulp
     .src('./source/scripts/**/*.js', { cwd: __dirname, ignore: ['**/*.min.js'] })
-    .pipe(concat('app.js'))
-    .pipe(utility.gutils.gulpCached({ name: 'concat-js' }))
+    .pipe(utility.gutils.gulpCached({ name: 'webpack-compile' }))
     .pipe(sourcemaps.init())
-    .pipe(
-      terser(
-        {
-          keep_fnames: true,
-          mangle: false
-        },
-        terserlib.minify
-      )
-    )
+    .pipe(webpack(webpackConfig))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(dest + '/js'));
 
@@ -46,7 +43,7 @@ function clean(done) {
 }
 
 gulp.task('clean', clean);
-gulp.task('compile:js', gulp.series(concatenate, copyfa));
+gulp.task('compile:js', gulp.series(webpackCompile, copyfa));
 
 // npm run build separated with npm run dev:server
 gulp.task('watch', function (done) {
