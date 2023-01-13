@@ -48,7 +48,26 @@ function clean(done) {
 gulp.task('clean', clean);
 gulp.task('compile:js', gulp.series(concatenate, copyfa));
 
+// npm run build separated with npm run dev:server
 gulp.task('watch', function (done) {
-  const watcher = gulp.watch('**/*.njk', { cwd: __dirname + '/src/views' }, () => spawnAsync('npm', ['run', 'build']));
-  watcher.on('close', () => done());
+  let indicator = false;
+  const doCompile = async (compileDone) => {
+    if (indicator) return Promise.resolve(undefined);
+    indicator = true;
+    try {
+      try {
+        await spawnAsync('npm', ['run', 'build'], { cwd: __dirname });
+      } catch (message) {
+        console.log(message);
+      }
+    } finally {
+      indicator = false;
+      if (typeof compileDone === 'function') compileDone();
+    }
+  };
+
+  gulp.series(doCompile)(function () {
+    const watcher = gulp.watch(['src/views/**/*.njk', 'source/**/*'], { cwd: __dirname }, doCompile);
+    watcher.on('close', () => done());
+  });
 });
