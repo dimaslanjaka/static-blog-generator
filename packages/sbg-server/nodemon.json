@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/nodemon",
-  "exec": "npm run build && npm run dev:server",
+  "exec": "node nodemon.runner.js",
   "watch": [
     "./src/**/*.ts",
     "./tsconfig.json",
