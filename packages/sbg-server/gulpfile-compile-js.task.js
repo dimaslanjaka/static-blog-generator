@@ -28,10 +28,10 @@ const copyfa = () =>
 gulp.task('compile:webpack', (done) => {
   webpack(webpackConfig, (err, stats) => {
     if (err || stats.hasErrors()) {
-      console.log(stats.toString());
+      console.log(stats.toString({ colors: true }));
       done();
     } else {
-      console.log(stats.toString());
+      console.log(stats.toString({ colors: true }));
       done();
     }
   });
@@ -52,7 +52,7 @@ gulp.task('compile:js', gulp.series('compile:webpack', copyfa));
 gulp.task('watch', function (done) {
   let indicator = false;
   const doCompile = async (compileDone) => {
-    if (indicator) return Promise.resolve(undefined);
+    if (indicator) return;
     indicator = true;
     try {
       try {
