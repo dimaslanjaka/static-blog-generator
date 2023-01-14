@@ -26,12 +26,49 @@ const copyfa = () =>
  * @returns
  */
 gulp.task('compile:webpack', (done) => {
-  webpack(webpackConfig, (err, stats) => {
+  let clonecfg = webpackConfig;
+  clonecfg = {
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          enforce: 'pre',
+          use: ['source-map-loader']
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        }
+      ]
+    },
+    output: {
+      filename: '[name]',
+      path: path.resolve(__dirname, 'src/public/js'),
+      scriptType: 'text/javascript',
+      library: 'SBGServer',
+      libraryTarget: 'umd',
+      umdNamedDefine: true,
+      globalObject: 'this'
+    },
+    optimization: {
+      minimize: false
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js', '.jsx', '.css']
+    },
+    mode: 'production'
+  };
+  webpack(clonecfg, (err, stats) => {
     if (err || stats.hasErrors()) {
-      console.log(stats.toString({ colors: true }));
+      if (typeof stats !== 'undefined') {
+        console.log(stats.toString({ colors: true }));
+      }
+      if (err) console.log(err.toString());
       done();
     } else {
-      console.log(stats.toString({ colors: true }));
+      if (typeof stats !== 'undefined') {
+        console.log(stats.toString({ colors: true }));
+      }
       done();
     }
   });

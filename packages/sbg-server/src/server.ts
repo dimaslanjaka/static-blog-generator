@@ -99,6 +99,13 @@ export default class SBGServer {
 
       res.render('index.njk', data);
     });
+    this.server.get('/test', function (_, res) {
+      const data = {
+        title: 'Nunjucks example'
+      };
+
+      res.render('test.html', data);
+    });
     const router = express.Router();
     router.use('/post', routePost(this.api));
     this.server.use(router);

@@ -55,8 +55,7 @@
     "**/node_modules/*/**": true,
     "**/.hg/store/**": true,
     "**/dist/**": true,
-    "**/tmp/**": true,
-    "src/public/**": true
+    "**/tmp/**": true
   },
   "tailwindCSS.codeActions": false,
   "tailwindCSS.emmetCompletions": true,
