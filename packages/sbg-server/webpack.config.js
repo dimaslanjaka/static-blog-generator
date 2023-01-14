@@ -10,7 +10,7 @@ const entry = {
   ['markdownit.js']: 'markdown-it',
   ['hljs.js']: 'highlight.js',
   ['lodash.js']: 'lodash',
-  ['codemirror.js']: './source/styles/codemirror',
+  ['codemirror.js']: './source/libs/codemirror',
   ['axios.js']: 'axios'
 };
 
@@ -144,5 +144,8 @@ module.exports = {
         }
       })
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.css']
   }
 };

@@ -15,7 +15,7 @@ const dest = path.join(__dirname, 'src/public');
  */
 const copyfa = () =>
   gulp
-    .src('./source/styles/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
+    .src('./source/libs/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
       cwd: __dirname
     })
     .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
@@ -56,7 +56,18 @@ gulp.task('watch', function (done) {
     indicator = true;
     try {
       try {
-        await spawnAsync('npm', ['run', 'build'], { cwd: __dirname });
+        await spawnAsync('npm', ['run', 'terser'], {
+          cwd: __dirname,
+          stdio: 'inherit'
+        });
+        await spawnAsync('npm', ['run', 'tw'], {
+          cwd: __dirname,
+          stdio: 'inherit'
+        });
+        await spawnAsync('npm', ['run', 'purge'], {
+          cwd: __dirname,
+          stdio: 'inherit'
+        });
       } catch (message) {
         console.log(message);
       }

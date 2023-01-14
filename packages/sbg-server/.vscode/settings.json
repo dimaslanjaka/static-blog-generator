@@ -18,7 +18,14 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "auto-rename-tag.activationOnLanguage": ["html", "xml", "php", "javascript", "njk", "nunjucks"],
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "php",
+    "javascript",
+    "njk",
+    "nunjucks"
+  ],
   "eslint.codeActionsOnSave.mode": "all",
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
@@ -39,7 +46,17 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "search.exclude": {
     "**/dist/**": true,
-    "**/tmp/**": true
+    "**/tmp/**": true,
+    "src/public/**": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
+    "**/dist/**": true,
+    "**/tmp/**": true,
+    "src/public/**": true
   },
   "tailwindCSS.codeActions": false,
   "tailwindCSS.emmetCompletions": true,
