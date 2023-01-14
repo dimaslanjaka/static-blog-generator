@@ -51,6 +51,25 @@ const bundle = (done) => {
 };
 
 gulp.task('compile:js', gulp.series(bundle));
+
+const pids = [];
+/** @type {import('child_process').ChildProcess[]} */
+const childs = [];
+const killPids = function () {
+  for (let i = 0; i < pids.length; i++) {
+    const pid = pids[i];
+    try {
+      kill(pid);
+      // process.kill(-pid);
+      // const index = pids.indexOf(pid);
+      // if (index !== -1) pids.splice(index, 1);
+    } catch (e) {
+      console.log(String(e));
+      console.log('pid', pid, 'not found');
+    }
+  }
+};
+
 gulp.task('watch', function () {
   gulp.watch(
     'scripts/**/*',
@@ -68,22 +87,8 @@ gulp.task('watch', function () {
     });
   });
 
-  const pids = [];
-  /** @type {import('child_process').ChildProcess[]} */
-  const childs = [];
   const startServer = function (done) {
-    for (let i = 0; i < pids.length; i++) {
-      const pid = pids[i];
-      try {
-        kill(pid);
-        // process.kill(-pid);
-        // const index = pids.indexOf(pid);
-        // if (index !== -1) pids.splice(index, 1);
-      } catch (e) {
-        console.log(String(e));
-        console.log('pid', pid, 'not found');
-      }
-    }
+    killPids();
 
     const child = spawn('npm', ['run', 'dev:server'], {
       cwd: __dirname,
@@ -93,13 +98,9 @@ gulp.task('watch', function () {
     child.once('exit', (code, signal) => {
       console.log('subprocess', child.pid, 'exit', { code, signal });
     });
-    child.once('spawn', () => {
-      pids.push(child.pid);
-      childs.push(child);
-      // typeof done === 'function' && done();
-    });
-    // child.once('message', () => pids.push(child.pid));
     child.once('close', () => typeof done === 'function' && done());
+    pids.push(child.pid);
+    childs.push(child);
   };
   gulp.watch(
     '**/*.ts',
@@ -110,4 +111,24 @@ gulp.task('watch', function () {
     startServer
   );
   gulp.series(startServer)(null);
+});
+
+process.on('SIGTERM', function () {
+  console.info('SIGTERM signal received.');
+  killPids();
+  return this;
+});
+process.on('SIGHUP', function () {
+  console.log('SIGHUP signal received');
+  killPids();
+  return this;
+});
+process.on('exit', function () {
+  killPids();
+  return this;
+});
+process.on('SIGINT', function () {
+  console.log('SIGINT signal received');
+  killPids();
+  process.exit(1);
 });
