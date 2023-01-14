@@ -30,6 +30,7 @@ const bundle = (done) => {
     new Bluebird((resolve) => {
       browserify(entry.input)
         .transform('babelify', {
+          global: true,
           presets: ['@babel/preset-env']
         })
         .bundle()
@@ -70,47 +71,58 @@ const killPids = function () {
   }
 };
 
-gulp.task('watch', function () {
-  gulp.watch(
+const startServer = function (done) {
+  killPids();
+
+  const child = spawn('npm', ['run', 'dev:server'], {
+    cwd: __dirname,
+    shell: true,
+    detached: true
+  });
+  child.once('exit', (code, signal) => {
+    console.log('subprocess', child.pid, 'exit', { code, signal });
+  });
+  pids.push(child.pid);
+  childs.push(child);
+  typeof done === 'function' && done();
+};
+
+gulp.task('compile:css', async function (done) {
+  await spawnAsync('npm', ['run', 'tw'], {
+    cwd: __dirname,
+    stdio: 'inherit'
+  });
+  await spawnAsync('npm', ['run', 'purge'], {
+    cwd: __dirname,
+    stdio: 'inherit'
+  });
+  typeof done === 'function' && done();
+});
+
+gulp.task('watch', function (done) {
+  const x = gulp.watch(
     'scripts/**/*',
     { cwd: __dirname + '/source' },
     gulp.series('compile:js')
   );
-  gulp.watch('styles/**/*', { cwd: __dirname + '/source' }, async function () {
-    await spawnAsync('npm', ['run', 'tw'], {
-      cwd: __dirname,
-      stdio: 'inherit'
-    });
-    await spawnAsync('npm', ['run', 'purge'], {
-      cwd: __dirname,
-      stdio: 'inherit'
-    });
-  });
-
-  const startServer = function (done) {
-    killPids();
-
-    const child = spawn('npm', ['run', 'dev:server'], {
-      cwd: __dirname,
-      shell: true,
-      detached: true
-    });
-    child.once('exit', (code, signal) => {
-      console.log('subprocess', child.pid, 'exit', { code, signal });
-    });
-    child.once('close', () => typeof done === 'function' && done());
-    pids.push(child.pid);
-    childs.push(child);
-  };
-  gulp.watch(
+  const y = gulp.watch(
+    'styles/**/*',
+    { cwd: __dirname + '/source' },
+    gulp.series('compile:css')
+  );
+  const z = gulp.watch(
     '**/*.ts',
     {
       ignored: ['**/public/**'],
       cwd: __dirname + '/src'
     },
-    startServer
+    gulp.series(startServer)
   );
-  gulp.series(startServer)(null);
+
+  [x, y, z].forEach((p) => {
+    p.once('close', () => done());
+  });
+  gulp.parallel('compile:js', 'compile:css', startServer)(null);
 });
 
 process.on('SIGTERM', function () {
