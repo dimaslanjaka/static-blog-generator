@@ -118,7 +118,7 @@ module.exports = {
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'src/public/js'),
-    libraryTarget: 'var',
+    libraryTarget: 'this',
     library: 'SBGServer',
     pathinfo: true,
     globalObject: 'this',

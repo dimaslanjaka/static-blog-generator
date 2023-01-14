@@ -64,7 +64,7 @@
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "debug": "^4.3.4",
