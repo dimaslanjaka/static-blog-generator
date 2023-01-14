@@ -1,6 +1,0 @@
-#!/bin/sh
-
-#npm run build
-#eslint --fix --quiet postinstall.js
-#eslint --fix --quiet packer.js
-#eslint --fix --quiet typedoc*.js
