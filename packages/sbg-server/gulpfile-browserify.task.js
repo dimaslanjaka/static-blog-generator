@@ -5,6 +5,9 @@ const glob = require('glob');
 const gulp = require('gulp');
 const Bluebird = require('bluebird');
 const utility = require('sbg-utility');
+const { spawnAsync } = require('git-command-helper/dist/spawn');
+const spawn = require('child_process').spawn;
+const kill = require('tree-kill');
 
 const createWriteStream = (p) => {
   if (!fs.existsSync(path.dirname(p)))
@@ -48,3 +51,63 @@ const bundle = (done) => {
 };
 
 gulp.task('compile:js', gulp.series(bundle));
+gulp.task('watch', function () {
+  gulp.watch(
+    'scripts/**/*',
+    { cwd: __dirname + '/source' },
+    gulp.series('compile:js')
+  );
+  gulp.watch('styles/**/*', { cwd: __dirname + '/source' }, async function () {
+    await spawnAsync('npm', ['run', 'tw'], {
+      cwd: __dirname,
+      stdio: 'inherit'
+    });
+    await spawnAsync('npm', ['run', 'purge'], {
+      cwd: __dirname,
+      stdio: 'inherit'
+    });
+  });
+
+  const pids = [];
+  /** @type {import('child_process').ChildProcess[]} */
+  const childs = [];
+  const startServer = function (done) {
+    for (let i = 0; i < pids.length; i++) {
+      const pid = pids[i];
+      try {
+        kill(pid);
+        // process.kill(-pid);
+        // const index = pids.indexOf(pid);
+        // if (index !== -1) pids.splice(index, 1);
+      } catch (e) {
+        console.log(String(e));
+        console.log('pid', pid, 'not found');
+      }
+    }
+
+    const child = spawn('npm', ['run', 'dev:server'], {
+      cwd: __dirname,
+      shell: true,
+      detached: true
+    });
+    child.once('exit', (code, signal) => {
+      console.log('subprocess', child.pid, 'exit', { code, signal });
+    });
+    child.once('spawn', () => {
+      pids.push(child.pid);
+      childs.push(child);
+      // typeof done === 'function' && done();
+    });
+    // child.once('message', () => pids.push(child.pid));
+    child.once('close', () => typeof done === 'function' && done());
+  };
+  gulp.watch(
+    '**/*.ts',
+    {
+      ignored: ['**/public/**'],
+      cwd: __dirname + '/src'
+    },
+    startServer
+  );
+  gulp.series(startServer)(null);
+});
