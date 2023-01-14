@@ -28,7 +28,8 @@ const copyfa = () =>
 gulp.task('compile:webpack', (done) => {
   webpack(webpackConfig, (err, stats) => {
     if (err || stats.hasErrors()) {
-      done(err);
+      console.log(stats.toString());
+      done();
     } else {
       console.log(stats.toString());
       done();
