@@ -14,8 +14,8 @@
     "lib": "./lib"
   },
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -w -c",
+    "build": "npx rollup -c",
+    "watch": "npx rollup -w -c",
     "prepare": "npm run-script build",
     "test": "node ./test/run.js",
     "lint": "bin/lint"
