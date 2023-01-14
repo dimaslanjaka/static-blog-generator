@@ -2,9 +2,9 @@ const gulp = require('gulp');
 const path = require('upath');
 const fs = require('fs-extra');
 const utility = require('sbg-utility');
-const { spawnAsync } = require('git-command-helper/dist/spawn');
 const webpackConfig = require('./webpack.config');
 const webpack = require('webpack');
+const { spawnAsync } = require('git-command-helper/dist/spawn');
 
 // dest folder
 const dest = path.join(__dirname, 'src/public');
@@ -55,24 +55,21 @@ gulp.task('watch', function (done) {
     if (indicator) return;
     indicator = true;
     try {
-      try {
-        await spawnAsync('npm', ['run', 'terser'], {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
-        await spawnAsync('npm', ['run', 'tw'], {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
-        await spawnAsync('npm', ['run', 'purge'], {
-          cwd: __dirname,
-          stdio: 'inherit'
-        });
-      } catch (message) {
-        console.log(message);
-      }
+      await spawnAsync('npm', ['run', 'terser'], {
+        cwd: __dirname,
+        stdio: 'inherit'
+      });
+      await spawnAsync('npm', ['run', 'tw'], {
+        cwd: __dirname,
+        stdio: 'inherit'
+      });
+      await spawnAsync('npm', ['run', 'purge'], {
+        cwd: __dirname,
+        stdio: 'inherit'
+      });
+    } catch (message) {
+      console.log(message);
     } finally {
-      indicator = false;
       if (typeof compileDone === 'function') compileDone();
     }
   };
