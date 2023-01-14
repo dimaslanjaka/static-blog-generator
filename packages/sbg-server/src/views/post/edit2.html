@@ -61,6 +61,7 @@
     <div id="editor"></div>
     <div class="markdown-body" id="preview"></div>
     <div id="default-value">{{ post.rawbody|safe }}</div>
+    <script id="post-data" type="application/json">{{ post | json(2) }}</script>
   </main>
 
   <div class="fixed bottom-1 right-1 w-max">
@@ -71,11 +72,14 @@
     </button>
   </div>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.js"></script>
+  <!--
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/mode/markdown/markdown.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.0/markdown-it.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js"></script>
+  -->
+
+  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js"></script>-->
   <script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
   <script src="/js/post/edit2.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">

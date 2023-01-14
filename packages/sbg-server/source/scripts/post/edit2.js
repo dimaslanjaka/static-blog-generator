@@ -1,6 +1,10 @@
-/* global markdownit, CodeMirror, hljs */
+import axios from 'axios';
+import CodeMirror from 'codemirror';
+import 'codemirror/mode/markdown/markdown';
+import hljs from 'highlight.js';
+import MarkdownIt from 'markdown-it';
 
-let md = markdownit({
+let md = MarkdownIt({
   html: true, // Enable HTML tags in source
   xhtmlOut: true, // Use '/' to close single tags (<br />).
   // This is only for full CommonMark compatibility.
@@ -29,7 +33,12 @@ let md = markdownit({
 
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return open + hljs.highlight(lang, str, true).value + close;
+        // return open + hljs.highlight(lang, str, true).value + close;
+        return (
+          open +
+          hljs.highlight(str, { language: lang, ignoreIllegals: true }) +
+          close
+        );
       } catch (__) {
         //
       }
@@ -83,12 +92,13 @@ editor.on('scroll', (editor) => {
   let scrollTop = editor.getScrollInfo().top / 100;
   let line = editor.lineAtHeight(scrollTop);
   let el = null;
+  let ic = 0;
 
   while (!el) {
-    if (window.CP.shouldStopExecution(0)) break;
     el = document.querySelector(`#preview *[data-line-start="${line--}"]`);
+    ic++;
+    if (ic > 3000) return console.log('cannot find data-line-start');
   }
-  window.CP.exitedLoop(0);
 
   let lineStart = +el.dataset.lineStart;
   let lineEnd = +el.dataset.lineEnd;
@@ -152,10 +162,47 @@ document.querySelector('#preview').addEventListener('scroll', (_e) => {
   });
 });
 
-editor.setValue(document.querySelector('#default-value').innerHTML);
+// default value from router data
+const defv = document.querySelector('#default-value').innerHTML;
+// dump for test
+if (location.pathname.endsWith('bd1f4ddf-e5d8-4888-87df-fba933b37faa')) {
+  axios
+    .get('https://raw.githubusercontent.com/axios/axios/master/README.md')
+    .then(({ data }) => editor.setValue(defv + '\n\n' + data));
+} else {
+  editor.setValue(defv);
+}
 
-document.querySelector('#btn-save').addEventListener('click', function (e) {
-  e.preventDefault();
+// handle form
+const submitForm = function (e) {
+  if (e && e.preventDefault) e.preventDefault();
   const body = editor.getValue();
-  console.log(body);
-});
+  const pageData = JSON.parse(document.getElementById('post-data').textContent);
+
+  [('config', 'metadata', 'content', 'rawbody')].forEach(
+    (key) => delete pageData[key]
+  );
+
+  const options = {
+    url: '/post/save',
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8'
+    },
+    data: {
+      body,
+      id: pageData.id
+    }
+  };
+
+  axios(options)
+    .then((response) => {
+      console.log(response.status);
+    })
+    .catch(console.error);
+};
+setTimeout(() => {
+  submitForm();
+}, 3000);
+document.querySelector('#btn-save').addEventListener('click', submitForm);
