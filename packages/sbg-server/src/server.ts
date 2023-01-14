@@ -101,7 +101,7 @@ export default class SBGServer {
     });
     this.server.get('/test', function (_, res) {
       const data = {
-        title: 'Nunjucks example'
+        title: 'Test'
       };
 
       res.render('test.html', data);
