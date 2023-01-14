@@ -50,9 +50,9 @@ export default class SBGServer {
     });
     setupNunjuckHelper(this.env);
     // init default middleware
-    this.server.use(express.json());
     this.server.use(cors());
-    this.server.use(express.urlencoded({ extended: true }));
+    this.server.use(express.urlencoded({ extended: true, limit: '50mb' }));
+    this.server.use(express.json({ limit: '50mb' }));
     this.server.use(cookieParser());
     // https://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-globally-in-express
     this.server.use((req, res, next) => {
