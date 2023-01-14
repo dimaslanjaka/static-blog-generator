@@ -60,5 +60,9 @@ export default function routePost(api: apis.Application) {
     }
   );
 
+  router.post('/save', function () {
+    //
+  });
+
   return router;
 }
