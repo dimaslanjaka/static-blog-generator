@@ -1,239 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="//cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
 
-  <link rel="apple-touch-icon" type="image/png"
-    href="//cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-  <meta name="apple-mobile-web-app-title" content="CodePen" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="//cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
 
-  <link rel="shortcut icon" type="image/x-icon"
-    href="//cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link
+      rel="mask-icon"
+      type="image/x-icon"
+      href="//cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111"
+    />
+    <title>{{ post.title }} - Post Editor</title>
+    <link rel="canonical" href="//codepen.io/storyn26383/pen/OxgzaE" />
 
-  <link rel="mask-icon" type="image/x-icon"
-    href="//cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-    color="#111" />
-  <title>{{ post.title }} - Post Editor</title>
-  <link rel="canonical" href="//codepen.io/storyn26383/pen/OxgzaE">
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/theme/monokai.min.css" />
-  <link rel="stylesheet"
-    href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.9.0/github-markdown.min.css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  <link rel="stylesheet" href="/css/app.css" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    main {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    main>* {
-      width: 50%;
-      height: 100vh;
-    }
-
-    main #editor .CodeMirror {
-      height: 100vh;
-      font-size: 16px;
-    }
-
-    main #preview {
-      overflow: auto;
-      padding: 1rem;
-    }
-
-    #default-value {
-      display: none;
-    }
-  </style>
-</head>
-
-<body class="antialiasing">
-  <main>
-    <div id="editor"></div>
-    <div class="markdown-body" id="preview"></div>
-    <div id="default-value">{{ post.rawbody|safe }}</div>
-  </main>
-
-  <div class="fixed bottom-1 right-1 w-max">
-    <button type="button"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 p-1">
-      <i class="fa-light fa-floppy-disk"></i> <span class="sr-only">Save</span></button>
-  </div>
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/mode/markdown/markdown.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.0/markdown-it.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
-  <script>
-    let md = markdownit({
-      html: true, // Enable HTML tags in source
-      xhtmlOut: true, // Use '/' to close single tags (<br />).
-      // This is only for full CommonMark compatibility.
-      breaks: false, // Convert '\n' in paragraphs into <br>
-      langPrefix: 'language-', // CSS language prefix for fenced blocks. Can be
-      // useful for external highlighters.
-      linkify: false, // Autoconvert URL-like text to links
-
-      // Enable some language-neutral replacement + quotes beautification
-      typographer: false,
-
-      // Double + single quotes replacement pairs, when typographer enabled,
-      // and smartquotes on. Could be either a String or an Array.
-      //
-      // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-      // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-      quotes: '“”‘’',
-
-      // Highlighter function. Should return escaped HTML,
-      // or '' if the source string is not changed and should be escaped externaly.
-      // If result starts with <pre... internal wrapper is skipped.
-      highlight(str, info) {
-        let [lang, start, end] = info.split(':');
-        let open = `<pre class="hljs" data-line-start="${start}" data-line-end="${end}"><code>`;
-        let close = '</code></pre>';
-
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return open + hljs.highlight(lang, str, true).value + close;
-          } catch (__) { }
-        }
-
-        return open + md.utils.escapeHtml(str) + close;
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/theme/monokai.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.9.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"
+    />
+    <link rel="stylesheet" href="/css/app.css" />
+    <style>
+      * {
+        box-sizing: border-box;
       }
-    });
 
-    md.core.ruler.push('line', (state) => {
-      state.tokens.map((token) => {
-        if (token.map) {
-          let [start, end] = token.map;
+      main {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+      }
 
-          token.attrSet('data-line-start', start);
-          token.attrSet('data-line-end', end);
+      main > * {
+        width: 50%;
+        height: 100vh;
+      }
 
-          if (token.type === 'fence') {
-            token.info += `:${start}:${end}`;
-          }
-        }
+      main #editor .CodeMirror {
+        height: 100vh;
+        font-size: 16px;
+      }
 
-        return token;
+      main #preview {
+        overflow: auto;
+        padding: 1rem;
+      }
+
+      #default-value {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="antialiasing">
+    <main>
+      <div id="editor"></div>
+      <div class="markdown-body" id="preview"></div>
+      <div id="default-value">{{ post.rawbody|safe }}</div>
+    </main>
+
+    <div class="fixed bottom-1 right-1 w-max">
+      <button
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 p-1"
+      >
+        <i class="fa-light fa-floppy-disk"></i>
+        <span class="sr-only">Save</span>
+      </button>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/mode/markdown/markdown.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.0/markdown-it.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/post/edit2.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('loaded', EntryPoint);
       });
-
-      return state;
-    });
-
-    let editor = CodeMirror(document.querySelector('#editor'), {
-      mode: 'markdown',
-      theme: 'monokai',
-      tabSize: 2,
-      lineNumbers: true,
-      lineWrapping: true,
-      value: 'Loading...'
-    });
-
-    let ignoreEvent = false;
-
-    editor.on('change', (editor, diff) => {
-      document.querySelector('#preview').innerHTML = md.render(
-        editor.getValue()
-      );
-    });
-
-    editor.on('scroll', (editor) => {
-      if (ignoreEvent) {
-        return;
-      }
-
-      ignoreEvent = true;
-
-      let scrollTop = editor.getScrollInfo().top / 100;
-      let line = editor.lineAtHeight(scrollTop);
-      let el = null;
-
-      while (!el) {
-        if (window.CP.shouldStopExecution(0)) break;
-        el = document.querySelector(
-          `#preview *[data-line-start="${line--}"]`
-        );
-      }
-      window.CP.exitedLoop(0);
-
-      let lineStart = +el.dataset.lineStart;
-      let lineEnd = +el.dataset.lineEnd;
-      let lineStartTop = editor.heightAtLine(lineStart);
-      let lineEndBottom = editor.heightAtLine(lineEnd + 1) - 1;
-      let lineHeight = lineEndBottom - lineStartTop;
-      let ratio = (scrollTop - lineStartTop) / lineHeight;
-
-      let preview = document.querySelector('#preview');
-      let rect = el.getBoundingClientRect();
-      let style = window.getComputedStyle(el);
-      let margin = parseInt(style.marginTop) + parseInt(style.marginBottom);
-      let elTop = preview.scrollTop + rect.top;
-      let elHeight = margin + rect.height;
-      let scrollTo = Math.max(0, elTop + elHeight * ratio);
-
-      preview.scrollTop = scrollTo;
-
-      setTimeout(() => {
-        ignoreEvent = false;
-      });
-    });
-
-    document.querySelector('#preview').addEventListener('scroll', (e) => {
-      if (ignoreEvent) {
-        return;
-      }
-
-      ignoreEvent = true;
-
-      let el, prev;
-
-      for (let dom of document.querySelectorAll('#preview > *')) {
-        if (dom.getBoundingClientRect().top > 0) {
-          el = prev || dom;
-
-          break;
-        }
-
-        prev = dom;
-      }
-
-      let rect = el.getBoundingClientRect();
-      let style = window.getComputedStyle(el);
-      let margin = parseInt(style.marginTop) + parseInt(style.marginBottom);
-      let elHeight = margin + rect.height;
-      let ratio = 1 - (elHeight + rect.top) / elHeight;
-
-      let lineStart = +el.dataset.lineStart;
-      let lineEnd = +el.dataset.lineEnd;
-      let lineStartTop = editor.heightAtLine(lineStart);
-      let lineEndBottom = editor.heightAtLine(lineEnd + 1) - 1;
-      let lineHeight = lineEndBottom - lineStartTop;
-
-      let scrollTo =
-        editor.getScrollInfo().top + lineStartTop + lineHeight * ratio;
-
-      editor.scrollTo(null, scrollTo);
-
-      setTimeout(() => {
-        ignoreEvent = false;
-      });
-    });
-
-    editor.setValue(document.querySelector('#default-value').innerHTML);
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

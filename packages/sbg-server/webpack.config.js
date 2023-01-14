@@ -20,7 +20,7 @@ module.exports = {
       glob.sync(path.resolve(__dirname, 'source/scripts/**/*.js')).map((v) => [
         v.split('source/scripts/')[1],
         {
-          import: v,
+          import: ['babel-polyfill', v],
           dependOn: [
             'markdownit.js',
             'axios.js',
@@ -69,12 +69,13 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map',
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'src/public/js'),
-    libraryTarget: 'umd',
-    library: 'SBGServer',
-    libraryExport: 'default',
+    libraryTarget: 'var',
+    library: 'EntryPoint',
+    pathinfo: true,
     globalObject: 'this'
   },
   mode: 'production',

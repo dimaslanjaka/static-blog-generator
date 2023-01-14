@@ -5,7 +5,8 @@
     "./src/**/*.{njk,html,ts,js}",
     "./source/**/*.{njk,html,ts,js}",
     "./tsconfig.json",
-    "./package.json"
+    "./package.json",
+    "./*.js"
   ],
   "ignore": [
     "*.test.js",
