@@ -23,12 +23,6 @@
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-merge": "node postinstall.js --commit"
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
