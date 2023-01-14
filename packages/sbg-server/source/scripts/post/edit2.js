@@ -73,7 +73,18 @@ let editor = CodeMirror(document.querySelector('#editor'), {
   tabSize: 2,
   lineNumbers: true,
   lineWrapping: true,
-  value: 'Loading...'
+  value: 'Loading...',
+  extraKeys: {
+    F11: function (cm) {
+      cm.setOption('fullScreen', !cm.getOption('fullScreen'));
+    },
+    Esc: function (cm) {
+      if (cm.getOption('fullScreen')) cm.setOption('fullScreen', false);
+    },
+    'Ctrl-S': function (_editor) {
+      submitForm();
+    }
+  }
 });
 
 let ignoreEvent = false;
@@ -164,17 +175,18 @@ document.querySelector('#preview').addEventListener('scroll', (_e) => {
 
 // default value from router data
 const defv = document.querySelector('#default-value').innerHTML;
+editor.setValue(defv);
 // dump for test
-if (location.pathname.endsWith('bd1f4ddf-e5d8-4888-87df-fba933b37faa')) {
+/*if (location.pathname.endsWith('bd1f4ddf-e5d8-4888-87df-fba933b37faa')) {
   axios
     .get('https://raw.githubusercontent.com/axios/axios/master/README.md')
     .then(({ data }) => editor.setValue(defv + '\n\n' + data));
 } else {
   editor.setValue(defv);
-}
+}*/
 
 // handle form
-const submitForm = function (e) {
+function submitForm(e) {
   if (e && e.preventDefault) e.preventDefault();
   const body = editor.getValue();
   const pageData = JSON.parse(document.getElementById('post-data').textContent);
@@ -201,8 +213,6 @@ const submitForm = function (e) {
       console.log(response.status);
     })
     .catch(console.error);
-};
-setTimeout(() => {
-  submitForm();
-}, 3000);
+}
+
 document.querySelector('#btn-save').addEventListener('click', submitForm);
