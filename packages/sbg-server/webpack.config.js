@@ -147,5 +147,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.css']
+  },
+  cache: {
+    type: 'filesystem',
+    idleTimeout: 5000
   }
 };

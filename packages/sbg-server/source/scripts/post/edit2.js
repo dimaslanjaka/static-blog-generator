@@ -1,16 +1,8 @@
 /* global markdownit, CodeMirror, hljs */
 
-(function () {
-  'use strict';
-})();
+export default function main() {
+  console.log('run from library');
 
-require.ensure([], function () {
-  window.require = function (module) {
-    return require(module);
-  };
-});
-
-export default function edit() {
   let md = markdownit({
     html: true, // Enable HTML tags in source
     xhtmlOut: true, // Use '/' to close single tags (<br />).
@@ -166,11 +158,3 @@ export default function edit() {
 
   editor.setValue(document.querySelector('#default-value').innerHTML);
 }
-
-if (typeof window === 'object') {
-  window.edit = edit;
-}
-
-module.exports = {
-  run: edit
-};
