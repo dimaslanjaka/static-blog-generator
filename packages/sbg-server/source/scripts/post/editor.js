@@ -1,4 +1,5 @@
-import CodeMirror from '../../styles/codemirror/lib/codemirror';
+// import CodeMirror from '../../styles/codemirror/lib/codemirror';
+import CodeMirror from 'codemirror';
 
 function _initPostEditor() {
   const input = document.getElementById('post-editor');
