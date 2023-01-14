@@ -75,11 +75,14 @@ export default function routePost(api: apis.Application) {
     if (findPost instanceof Error) return res.json(findPost);
     findPost.body = data.body;
     if (data.metadata) findPost.metadata = data.metadata;
-    writefile(
-      path.join(__dirname, '../../tmp/post-save.md'),
-      buildPost(findPost)
+    const build = buildPost(findPost);
+    writefile(path.join(__dirname, '../../tmp/post-save.md'), build);
+    console.log(findPost.full_source);
+    res.setHeader(
+      'content-type',
+      'text/markdown; charset=UTF-8; variant=CommonMark'
     );
-    res.end(buildPost(findPost));
+    res.end(build);
   });
 
   return router;
