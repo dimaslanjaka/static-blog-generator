@@ -3,6 +3,8 @@ const path = require('upath');
 const webpack = require('webpack');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const postcssConfig = require('./postcss.config');
 
 const entry = {
   ['markdownit.js']: 'markdown-it',
@@ -33,14 +35,57 @@ module.exports = {
     )
   ),
   plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.SourceMapDevToolPlugin({
+      filename: '[file].map'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader']
+      },
+      {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: postcssConfig
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff|woff2|otf|eot|ttf)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1000,
+              name: 'assets/fonts/[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)(\?[a-z0-9=.]+)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1000,
+              name: 'assets/img/[name].[ext]'
+            }
+          }
+        ]
       },
       {
         test: /\.m?js$/,
@@ -69,15 +114,18 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   output: {
     filename: '[name]',
     path: path.resolve(__dirname, 'src/public/js'),
     libraryTarget: 'var',
-    library: 'EntryPoint',
+    library: 'SBGServer',
     pathinfo: true,
-    globalObject: 'this'
+    globalObject: 'this',
+    chunkFilename: 'chunks/[name].[chunkhash].js',
+    assetModuleFilename: 'media/[name][hash][ext][query]'
   },
+  target: ['web', 'es5'],
   mode: 'production',
   optimization: {
     runtimeChunk: 'single',
@@ -85,6 +133,16 @@ module.exports = {
       chunks: 'all'
     },
     minimize: process.env.NODE_ENV === 'development' ? false : true,
-    minimizer: [new TerserPlugin()]
+    minimizer: [
+      new TerserPlugin({
+        include: /\.min\.(css|js)$/,
+        extractComments: false,
+        terserOptions: {
+          format: {
+            comments: false
+          }
+        }
+      })
+    ]
   }
 };
