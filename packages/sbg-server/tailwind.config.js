@@ -5,7 +5,7 @@ module.exports = {
     'src/views/**/*.html',
     './source/scripts/**/*.js',
     './node_modules/flowbite/**/*.js',
-    './source/styles/codemirror/**/*.js'
+    './source/libs/codemirror/**/*.js'
   ],
   theme: {
     colors: {
