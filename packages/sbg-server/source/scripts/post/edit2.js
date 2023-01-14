@@ -4,6 +4,12 @@
   'use strict';
 })();
 
+require.ensure([], function () {
+  window.require = function (module) {
+    return require(module);
+  };
+});
+
 export default function edit() {
   let md = markdownit({
     html: true, // Enable HTML tags in source
@@ -159,6 +165,10 @@ export default function edit() {
   });
 
   editor.setValue(document.querySelector('#default-value').innerHTML);
+}
+
+if (typeof window === 'object') {
+  window.edit = edit;
 }
 
 module.exports = {
