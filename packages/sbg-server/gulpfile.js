@@ -124,32 +124,36 @@ gulp.task('compile:css', async function (done) {
 });
 
 gulp.task('watch', function (done) {
-  const v = gulp.watch(
-    '**/*',
-    { cwd: __dirname + '/src/views' },
-    gulp.series('compile:css')
-  );
-  const x = gulp.watch(
-    'scripts/**/*',
-    { cwd: __dirname + '/source' },
-    gulp.series('compile:js')
-  );
-  const y = gulp.watch(
-    'styles/**/*',
-    { cwd: __dirname + '/source' },
-    gulp.series('compile:css')
-  );
-
-  const z = gulp.watch(
-    '**/*.ts',
-    {
-      ignored: ['**/public/**'],
-      cwd: __dirname + '/src'
-    },
-    gulp.series(startServer)
-  );
-
-  [v, x, y, z].forEach((p) => {
+  [
+    gulp.watch(
+      '**/*',
+      { cwd: __dirname + '/src/views' },
+      gulp.series('compile:css')
+    ),
+    gulp.watch(
+      'scripts/**/*',
+      { cwd: __dirname + '/source' },
+      gulp.series('compile:js')
+    ),
+    gulp.watch(
+      'libs/**/*',
+      { cwd: __dirname + '/source' },
+      gulp.series('compile:js', 'compile:css')
+    ),
+    gulp.watch(
+      'styles/**/*',
+      { cwd: __dirname + '/source' },
+      gulp.series('compile:css')
+    ),
+    gulp.watch(
+      '**/*.ts',
+      {
+        ignored: ['**/public/**'],
+        cwd: __dirname + '/src'
+      },
+      gulp.series(startServer)
+    )
+  ].forEach((p) => {
     p.once('close', () => done());
   });
   gulp.parallel('compile:js', 'compile:css', startServer)(null);
