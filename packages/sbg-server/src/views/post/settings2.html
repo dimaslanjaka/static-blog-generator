@@ -1,5 +1,12 @@
-{% extends "layout.njk" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
   <form class="ajax-handling">
     <label for="editor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Post Metadata</label>
     <textarea id="editor" rows="8">{{ metadata }}</textarea>
@@ -11,7 +18,6 @@
         dark:focus:ring-blue-800">
       Submit</button>
   </form>
-{% endblock content %}
-{% block script %}
   <script src="/js/post/settings.js" type="text/javascript" charset="utf-8"></script>
-{% endblock script %}
+</body>
+</html>
