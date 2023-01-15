@@ -124,6 +124,7 @@ function updatePost(postPath, callback) {
                     rBuild = {
                         metadata: post.attributes,
                         body: post.body,
+                        rawbody: post.body,
                         content: post.body,
                         config: config
                     };
