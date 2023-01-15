@@ -1,3 +1,3 @@
 @echo off
 
-npx cross-env NODE_ENV="development" npx nodemon
+npx cross-env NODE_ENV="development" npx nodemon %*
