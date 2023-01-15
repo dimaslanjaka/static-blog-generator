@@ -111,7 +111,7 @@ export default function routePost(api: apis.Application) {
         req.post_data.find((post) => post.metadata?.id === postid) ||
         new Error(postid + ' not found');
       if (findPost instanceof Error) return res.json(findPost);
-      res.render('post/settings.njk', {
+      res.render('post/settings2.html', {
         post: findPost,
         metadata: yaml.stringify(findPost.metadata),
         section: 'Post settings',

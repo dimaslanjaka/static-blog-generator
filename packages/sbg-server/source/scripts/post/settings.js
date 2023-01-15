@@ -1,8 +1,14 @@
 import CodeMirror from 'codemirror';
+import 'codemirror/addon/mode/overlay';
+import 'codemirror/mode/gfm/gfm';
+import 'codemirror/mode/markdown/markdown';
 import 'codemirror/mode/yaml-frontmatter/yaml-frontmatter';
+import 'codemirror/mode/yaml/yaml';
 // import hljs from 'highlight.js';
 
-let editor = CodeMirror(document.querySelector('#editor'), {
+console.log('post metadata settings');
+
+const editor = CodeMirror(document.getElementById('editor'), {
   mode: 'yaml-frontmatter',
   theme: 'monokai',
   tabSize: 2,
@@ -16,15 +22,14 @@ let editor = CodeMirror(document.querySelector('#editor'), {
     Esc: function (cm) {
       if (cm.getOption('fullScreen')) cm.setOption('fullScreen', false);
     },
-    'Ctrl-S': function (_editor) {
+    'Ctrl-S': function (_cm) {
       submitForm();
     }
   }
 });
-
-const defv = document.querySelector('#default-value');
-editor.setValue(defv.textContent);
-
+editor.on('contextmenu', function (cm, e) {
+  console.log(e);
+});
 function submitForm() {
   //
 }
