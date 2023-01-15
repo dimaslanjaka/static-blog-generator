@@ -25,7 +25,10 @@ const entries = scan.map((str) => {
 const bundle = (done) => {
   const bundler = (entry) =>
     new Bluebird((resolve) => {
-      browserify(entry.input)
+      browserify(entry.input, {
+        detectGlobals: true,
+        bundleExternal: true
+      })
         .transform('babelify', {
           global: true,
           presets: ['@babel/preset-env']
