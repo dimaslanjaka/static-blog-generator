@@ -10,29 +10,30 @@
     name="viewport" content="width=device-width, initial-scale=1"> {# <link rel="manifest" href="site.webmanifest"> #}
     <link rel="apple-touch-icon" href="//avrasys.hu/logoipsum-logo-54.svg">
     <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="/css/app.css">
-  </head>
-  <body class="h-full">
-    <div class="min-h-full">
-      {% include "partials/nav.njk" %}
-      <header class="bg-white shadow">
-        <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ section or "Dashboard" }}</h1>
-        </div>
-      </header>
-      <main>
-        <div
-          class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <!-- Replace with your content -->
-          {% block content %}{% endblock %}
-          <!-- /End replace -->
-        </div>
-      </main>
-    </div>
-    <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
-    href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
-    -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
-    {% block script %}{% endblock %}
-  </body>
-</html>
+    <link rel="stylesheet" href="/css/app.css"> {% block head %}{% endblock %}
+    </head>
+    <body class="h-full">
+      <div class="min-h-full">
+        {% include "partials/nav.njk" %}
+        <header class="bg-white shadow">
+          <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ section or "Dashboard" }}</h1>
+          </div>
+        </header>
+        <main>
+          <div
+            class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <!-- Replace with your content -->
+            {% block content %}{% endblock %}
+            <!-- /End replace -->
+          </div>
+        </main>
+      </div>
+      <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+      href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
+      -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+      <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+      {% block script %}{% endblock %}
+    </body>
+  </html>
