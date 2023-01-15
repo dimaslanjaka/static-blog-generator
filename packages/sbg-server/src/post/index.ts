@@ -76,14 +76,29 @@ export default function routePost(api: apis.Application) {
     findPost.body = data.body;
     if (data.metadata) findPost.metadata = data.metadata;
     const build = buildPost(findPost);
-    writefile(path.join(__dirname, '../../tmp/post-save.md'), build);
-    console.log(findPost.full_source);
+    [
+      path.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
+      findPost.full_source
+    ].forEach((f) => writefile(f, build));
     res.setHeader(
       'content-type',
       'text/markdown; charset=UTF-8; variant=CommonMark'
     );
     res.end(build);
   });
+
+  router.post(
+    '/settings/:id',
+    middleware,
+    function (req: PostRequestMiddleware, res) {
+      const postid = req.params['id'];
+      const findPost =
+        req.post_data.find((post) => post.metadata?.id === postid) ||
+        new Error(postid + ' not found');
+      if (findPost instanceof Error) return res.json(findPost);
+      res.send('');
+    }
+  );
 
   return router;
 }
