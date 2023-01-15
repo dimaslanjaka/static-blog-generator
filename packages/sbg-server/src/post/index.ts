@@ -65,7 +65,14 @@ export default function routePost(api: apis.Application) {
       const findPost =
         req.post_data.find((post) => post.metadata?.id === postid) ||
         new Error(postid + ' not found');
-      if (findPost instanceof Error) return res.json(findPost);
+      // show errors
+      if (findPost instanceof Error) {
+        return res.json({
+          error: true,
+          message: findPost.message,
+          stack: findPost.stack
+        });
+      }
       res.render('post/edit2.html', { post: findPost });
     }
   );
@@ -77,9 +84,17 @@ export default function routePost(api: apis.Application) {
     const findPost =
       req.origin_post_data.find((post) => post.metadata?.id === postid) ||
       new Error(postid + ' not found');
-    if (findPost instanceof Error) return res.json(findPost);
-    findPost.body = data.body;
-    // assign new metadata
+    // show errors
+    if (findPost instanceof Error) {
+      return res.json({
+        error: true,
+        message: findPost.message,
+        stack: findPost.stack
+      });
+    }
+    // assign new post body
+    if (data.body) findPost.body = data.body;
+    // assign new post metadata
     if (data.metadata) findPost.metadata = data.metadata;
     // update post.metadata.updated with timezone on config.timezone
     if (findPost.metadata) {
@@ -89,16 +104,15 @@ export default function routePost(api: apis.Application) {
     }
     // rebuild post to markdown
     const build = buildPost(findPost);
-    [
-      path.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
-      findPost.full_source
-    ].forEach((f) => writefile(f, build));
-    // set header
-    res.setHeader(
-      'content-type',
-      'text/markdown; charset=UTF-8; variant=CommonMark'
-    );
-    res.end(build);
+    if (typeof build === 'string') {
+      [
+        path.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
+        findPost.full_source
+      ].forEach((f) => writefile(f, build));
+      res.json({ error: false, message: postid + ' saved successfully' });
+    } else {
+      res.json({ error: true, message: 'fail to build post ' + postid });
+    }
   });
 
   // post metadata settings
@@ -111,7 +125,18 @@ export default function routePost(api: apis.Application) {
         req.post_data.find((post) => post.metadata?.id === postid) ||
         new Error(postid + ' not found');
       if (findPost instanceof Error) return res.json(findPost);
-      res.render('post/settings2.html', {
+      if (findPost.metadata) {
+        if (findPost.metadata.description === findPost.metadata.excerpt) {
+          delete findPost.metadata.excerpt;
+        }
+        if (findPost.metadata.description === findPost.metadata.subtitle) {
+          delete findPost.metadata.subtitle;
+        }
+        if (findPost.metadata.thumbnail === findPost.metadata.cover) {
+          delete findPost.metadata.cover;
+        }
+      }
+      res.render('post/settings.njk', {
         post: findPost,
         metadata: yaml.stringify(findPost.metadata),
         section: 'Post settings',

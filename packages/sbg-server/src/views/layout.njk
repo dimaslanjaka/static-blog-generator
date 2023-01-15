@@ -17,7 +17,7 @@
         {% include "partials/nav.njk" %}
         <header class="bg-white shadow">
           <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ section or "Dashboard" }}</h1>
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900"><a href="/" title="go back" class="mr-1" id="go-back" onClick="history.go(-1); return false;"><i class="fa-light fa-angle-left"></i></a> <span>{{ section or "Dashboard" }}</span></h1>
           </div>
         </header>
         <main>
@@ -35,5 +35,6 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
       <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
       {% block script %}{% endblock %}
+      {% include "partials/toast.njk" %}
     </body>
   </html>
