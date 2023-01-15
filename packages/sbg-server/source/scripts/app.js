@@ -14,3 +14,9 @@ function changeIcon(icon) {
 }
 
 mobile_icon.addEventListener('click', openCloseMenu);
+
+// disable submit form.ajax-handling
+
+document.querySelectorAll('form.ajax-handling').forEach((form) => {
+  form.addEventListener('submit', (e) => e.preventDefault());
+});
