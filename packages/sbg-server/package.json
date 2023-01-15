@@ -10,9 +10,9 @@
     "test": "jest --runInBand",
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "npm run terser && npm run tw && npm run purge && gulp build",
-    "terser": "gulp compile:js",
-    "tw": "tailwind -c tailwind.config.js -i source/styles/app.css -o ./src/public/css/app.css",
+    "build": "npm run terser && npm run tw && npm run purge && npx gulp build",
+    "terser": "npx gulp compile:js",
+    "tw": "npx gulp compile:tailwind",
     "purge": "purgecss -c purgecss.config.js -o ./src/public/css"
   },
   "repository": {
@@ -48,7 +48,8 @@
     "sbg-api": "file:../sbg-api",
     "sbg-utility": "file:../sbg-utility",
     "serve-index": "^1.9.1",
-    "upath": "^2.0.1"
+    "upath": "^2.0.1",
+    "yaml": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
