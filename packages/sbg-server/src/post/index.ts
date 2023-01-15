@@ -1,11 +1,13 @@
 import debug from 'debug';
 import express from 'express';
 import { buildPost } from 'hexo-post-parser';
+import { moment } from 'hexo-post-parser/dist/dateMapper';
 import * as apis from 'sbg-api';
 import { getSourcePosts } from 'sbg-api/dist/post';
 import { writefile } from 'sbg-utility/dist/utils/fm';
 import serveIndex from 'serve-index';
 import path from 'upath';
+import yaml from 'yaml';
 
 const log = debug('sbg').extend('server').extend('route').extend('post');
 const router = express.Router();
@@ -13,12 +15,7 @@ const router = express.Router();
 export default function routePost(api: apis.Application) {
   const POST_ROOT = path.join(api.cwd, api.config.post_dir);
   log('root<post>', POST_ROOT);
-  // list all posts
-  router.get(
-    '/debug',
-    express.static(POST_ROOT),
-    serveIndex(POST_ROOT, { icons: true })
-  );
+
   interface PostRequestMiddleware extends express.Request {
     origin_post_data: apis.post.ResultSourcePosts[];
     post_data: (apis.post.ResultSourcePosts &
@@ -37,6 +34,13 @@ export default function routePost(api: apis.Application) {
     );
     next(null);
   };
+
+  // list all posts
+  router.get(
+    '/debug',
+    express.static(POST_ROOT),
+    serveIndex(POST_ROOT, { icons: true })
+  );
   router.get('/', middleware, async function (req: PostRequestMiddleware, res) {
     const data = {
       title: 'Post List',
@@ -66,6 +70,7 @@ export default function routePost(api: apis.Application) {
     }
   );
 
+  // post saver
   router.post('/save', middleware, function (req: PostRequestMiddleware, res) {
     const data = req.body;
     const postid = data['id'];
@@ -74,12 +79,21 @@ export default function routePost(api: apis.Application) {
       new Error(postid + ' not found');
     if (findPost instanceof Error) return res.json(findPost);
     findPost.body = data.body;
+    // assign new metadata
     if (data.metadata) findPost.metadata = data.metadata;
+    // update post.metadata.updated with timezone on config.timezone
+    if (findPost.metadata) {
+      findPost.metadata.updated = moment()
+        .tz(api.config.timezone || 'UTC')
+        .format();
+    }
+    // rebuild post to markdown
     const build = buildPost(findPost);
     [
       path.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
       findPost.full_source
     ].forEach((f) => writefile(f, build));
+    // set header
     res.setHeader(
       'content-type',
       'text/markdown; charset=UTF-8; variant=CommonMark'
@@ -87,7 +101,8 @@ export default function routePost(api: apis.Application) {
     res.end(build);
   });
 
-  router.post(
+  // post metadata settings
+  router.get(
     '/settings/:id',
     middleware,
     function (req: PostRequestMiddleware, res) {
@@ -96,7 +111,12 @@ export default function routePost(api: apis.Application) {
         req.post_data.find((post) => post.metadata?.id === postid) ||
         new Error(postid + ' not found');
       if (findPost instanceof Error) return res.json(findPost);
-      res.send('');
+      res.render('post/settings.njk', {
+        post: findPost,
+        metadata: yaml.stringify(findPost.metadata),
+        section: 'Post settings',
+        title: 'Post settings'
+      });
     }
   );
 
