@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    'src/views/**/*.njk',
-    'src/views/**/*.html',
+    './src/views/**/*.njk',
+    './src/views/**/*.html',
     './source/scripts/**/*.js',
     './node_modules/flowbite/**/*.js',
-    './source/libs/codemirror/**/*.js'
+    './node_modules/codemirror/**/*.js'
   ],
   theme: {
     colors: {
