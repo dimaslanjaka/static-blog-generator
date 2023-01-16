@@ -5,6 +5,8 @@ const utility = require('sbg-utility');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const spawn = require('child_process').spawn;
 const kill = require('tree-kill');
+const through2 = require('through2');
+const sharp = require('sharp');
 require('./gulpfile-browserify.task');
 require('./gulpfile-tailwind.task');
 
@@ -123,6 +125,25 @@ gulp.task('compile:css', async function (done) {
   typeof done === 'function' && done();
 });
 
+gulp.task('compile:images', function () {
+  return gulp
+    .src(['**/*'], { cwd: __dirname + '/source/images' })
+    .pipe(
+      through2.obj(async function (file, _enc, next) {
+        if (file.isNull() || file.isStream() || file.isDirectory())
+          return next();
+        if (/.(svg|jpe?g|png)$/gim.test(file.extname)) {
+          file.contents = await sharp(file.contents).webp().toBuffer();
+          file.extname = '.webp';
+          next(null, file);
+        } else {
+          next();
+        }
+      })
+    )
+    .pipe(gulp.dest('src/public/images'));
+});
+
 gulp.task('watch', function (done) {
   [
     gulp.watch(
@@ -141,6 +162,11 @@ gulp.task('watch', function (done) {
       gulp.series('compile:js', 'compile:css')
     ),
     gulp.watch(
+      'libs/**/*',
+      { cwd: __dirname + '/source' },
+      gulp.series('compile:images')
+    ),
+    gulp.watch(
       'styles/**/*',
       { cwd: __dirname + '/source' },
       gulp.series('compile:css')
@@ -156,7 +182,12 @@ gulp.task('watch', function (done) {
   ].forEach((p) => {
     p.once('close', () => done());
   });
-  gulp.parallel('compile:js', 'compile:css', startServer)(null);
+  gulp.parallel(
+    'compile:js',
+    'compile:css',
+    'compile:images',
+    startServer
+  )(null);
 });
 
 process.on('SIGTERM', function () {
