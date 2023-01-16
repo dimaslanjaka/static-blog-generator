@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+import '../libs/flowbite';
+
 const mobile_icon = document.getElementById('mobile-icon');
 const mobile_menu = document.getElementById('mobile-menu');
 const hamburger_icon = document.querySelector('#mobile-icon i');

@@ -29,12 +29,14 @@
           </div>
         </main>
       </div>
+
+      {% include "partials/toast.njk" %}
+
       <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
       href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
       -->
-      <script src="//cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+      <!--<script src="//cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>-->
       <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
       {% block script %}{% endblock %}
-      {% include "partials/toast.njk" %}
     </body>
   </html>

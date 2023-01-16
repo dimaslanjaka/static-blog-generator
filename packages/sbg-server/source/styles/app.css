@@ -30,9 +30,9 @@
 }
 
 /* toast */
-#toast-btn {
-  padding: 5px;
-}
-#toast-message {
+.toast-message {
   width: -moz-available;
+}
+[data-dismiss-target] {
+  padding: 5px;
 }
