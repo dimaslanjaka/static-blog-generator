@@ -43,30 +43,49 @@ function copyWorkspaceDist(done) {
   });
 }
 
+/**
+ * npm run build --workspaces
+ * @param {gulp.TaskFunctionCallback} done
+ */
 function build(done) {
   spawnAsync('npm', ['run', 'build', '--workspaces'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
 }
 
+/**
+ * fix eslint all src folder subpackages
+ * @param {gulp.TaskFunctionCallback} done
+ */
 function eslint(done) {
   spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
 }
 
+/**
+ * build dist
+ * @param {gulp.TaskFunctionCallback} done
+ */
 function buildDist(done) {
   const pkgroot = require('./package.json');
   const pkgmain = require('./packages/sbg-main/package.json');
   const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
+  // delete workspaces property
   delete pkgc.workspaces;
+  // delete private property
   delete pkgc.private;
+  // delete files property
+  delete pkgc.files;
+  // replace properties from root properties
   pkgc.name = 'static-blog-generator';
   pkgc.description = pkgroot.description;
+  // emptying some properties
   pkgc.dependencies = {};
   pkgc.devDependencies = {};
   pkgc.scripts = {};
+  // assign sub packages as production dependencies
   pkgc.dependencies['sbg-api'] = 'file:sbg-api';
   pkgc.dependencies['sbg-server'] = 'file:sbg-server';
   pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
   pkgc.dependencies['sbg-main'] = 'file:sbg-main';
-  delete pkgc.files;
+
   const dest = join(__dirname, 'dist');
   fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
 
@@ -87,7 +106,8 @@ function buildDist(done) {
 
 gulp.task('eslint', gulp.series(eslint));
 gulp.task('copy', gulp.series(copyWorkspaceDist));
-gulp.task('build', gulp.series(eslint, build, copyWorkspaceDist, buildDist));
+gulp.task('build-dist', gulp.series(build, copyWorkspaceDist, buildDist));
+gulp.task('build', gulp.series('eslint', build, copyWorkspaceDist, buildDist));
 gulp.task('default', gulp.series(['build']));
 
 /**
