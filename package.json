@@ -83,7 +83,7 @@
     "@types/jest": "^29.2.5",
     "@types/node": "^18.11.18",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.1",
     "axios": "^1.2.2",
     "axios-cache-interceptor": "^1.0.0",
