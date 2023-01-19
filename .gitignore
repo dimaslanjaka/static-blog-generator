@@ -9,6 +9,7 @@ temp
 /coverage
 /src/_config.auto*.json
 /docs
+/src-old
 
 # disable dist
 /packages/**/dist/
