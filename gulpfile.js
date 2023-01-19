@@ -6,7 +6,10 @@ const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { join, toUnix } = require('upath');
 
-// copy dist from all subpackages
+/**
+ * copy dist from all subpackages
+ * @param {gulp.TaskFunctionCallback} done
+ */
 function copyWorkspaceDist(done) {
   const dist = join(__dirname, 'dist');
   if (fs.existsSync(dist)) fs.emptyDirSync(dist);
@@ -55,7 +58,7 @@ function build(done) {
  * fix eslint all src folder subpackages
  * @param {gulp.TaskFunctionCallback} done
  */
-function eslint(done) {
+function runEslint(done) {
   spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
 }
 
@@ -103,9 +106,9 @@ function buildDistPackageJson(done) {
   });
 }
 
-gulp.task('eslint', gulp.series(eslint));
-gulp.task('build-copy', gulp.series(copyWorkspaceDist));
-gulp.task('build', gulp.series(build));
+gulp.task('eslint', runEslint);
+gulp.task('build-copy', copyWorkspaceDist);
+gulp.task('build', build);
 gulp.task('build-dist-package', gulp.series(buildDistPackageJson));
 gulp.task('build-dist', gulp.series('build', 'build-copy', 'build-dist-package'));
 gulp.task('build-all', gulp.series('eslint', 'build-dist'));
