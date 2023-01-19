@@ -2,7 +2,7 @@ name: Clean Caches
 
 on:
   push:
-    branches: [ "master", "main" ]
+    branches: [ "master", "main", "monorepo" ]
     paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
