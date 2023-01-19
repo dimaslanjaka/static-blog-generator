@@ -124,13 +124,13 @@ function buildDistPackageJson(done) {
   });
 }
 
-gulp.task('eslint', runEslint);
+gulp.task('lint', runEslint);
 gulp.task('build-copy', copyWorkspaceDist);
 gulp.task('build', build);
 gulp.task('build-dist-package', gulp.series(buildDistPackageJson));
 gulp.task('build-dist', gulp.series('build', 'build-copy', 'build-dist-package'));
-gulp.task('build-all', gulp.series('eslint', 'build-dist'));
-gulp.task('default', gulp.series(['build-all']));
+gulp.task('build-all', gulp.series('lint', 'build-dist'));
+gulp.task('default', gulp.series(['build-dist']));
 
 /**
  * @type {'false' | 'true' | 'postpone'}
