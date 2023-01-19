@@ -68,6 +68,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     const rBuild: postMap = {
       metadata: <any>post.attributes,
       body: post.body,
+      rawbody: post.body,
       content: post.body,
       config: config as any
     };
