@@ -7,6 +7,7 @@ import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 import { sbgDebug } from 'sbg-utility/dist/utils/debug';
+import favicon from 'serve-favicon';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
@@ -54,6 +55,7 @@ export default class SBGServer {
     this.server.use(express.urlencoded({ extended: true, limit: '50mb' }));
     this.server.use(express.json({ limit: '50mb' }));
     this.server.use(cookieParser());
+    this.server.use(favicon(__dirname + '/public/images/nodejs.webp'));
     // https://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-globally-in-express
     this.server.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
