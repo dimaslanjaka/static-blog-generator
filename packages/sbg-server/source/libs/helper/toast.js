@@ -7,13 +7,19 @@ export default class TToast {
   wrapper = document.querySelector('#toast-wrapper');
   defaultClass =
     'inline-flex items-center justify-center flex-shrink-0 w-8 h-8';
+  /**
+   * @type {number}
+   */
+  timeout;
 
   /**
    * Tailwind Toast Helper
    * @param {string} message
    * @param {'danger'|'success'|'warning'} type
+   * @param {number} timeout
    */
-  constructor(type, message) {
+  constructor(type, message, timeout) {
+    if (typeof timeout === 'number') this.timeout = timeout;
     let c = 0;
     while (!this.wrapper) {
       this.wrapper = document.querySelector('#toast-wrapper');
@@ -49,7 +55,12 @@ export default class TToast {
     el.querySelectorAll('[id]').forEach((sl) => {
       sl.id = sl.id + '-' + unique;
     });
-    el.querySelectorAll('[_data-dismiss-target]').forEach((sl) => {
+    for (
+      let i = 0;
+      i < el.querySelectorAll('[_data-dismiss-target]').length;
+      i++
+    ) {
+      const sl = el.querySelectorAll('[_data-dismiss-target]')[i];
       $triggerEl = sl;
       // dismiss options object
       const options = {
@@ -77,7 +88,12 @@ export default class TToast {
       sl.addEventListener('click', () => {
         dismiss.hide();
       });
-    });
+      if (typeof this.timeout === 'number') {
+        setTimeout(() => {
+          dismiss.hide();
+        }, this.timeout);
+      }
+    }
 
     return el;
   }
