@@ -1,21 +1,9 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "declarationMap": false,
-    "declaration": true,
-    "stripInternal": true,
-    "outDir": "./dist",
-    "importHelpers": false,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "pretty": true,
-    "removeComments": true,
-    "checkJs": false,
-    "allowUmdGlobalAccess": true,
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": true,
-    "allowUnusedLabels": true
-  },
-  "include": ["./src/index.ts", "./src/gulp.*.ts", "./src/utils"],
-  "exclude": ["*.test.js", "*.test.ts"]
+  "files": [],
+  "references": [
+    { "path": "packages/sbg-utility" },
+    { "path": "packages/sbg-api" },
+    { "path": "packages/sbg-server" },
+    { "path": "packages/sbg-main" }
+  ]
 }

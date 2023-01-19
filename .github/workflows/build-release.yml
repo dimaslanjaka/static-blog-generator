@@ -7,7 +7,7 @@ name: Build Release
 
 on:
   push:
-    branches: [ "master", "main" ]
+    branches: [ "monorepo" ]
     paths-ignore:
       - '**/*.tgz'
       - '**/*.gz'
@@ -26,36 +26,23 @@ on:
 
 # run single job
 concurrency:
-  group: actions-${{ github.head_ref }}
+  group: build
   cancel-in-progress: true
 
 jobs:
   build:
     strategy:
-      matrix:
-        #os: [ "windows-latest", "macos-11", "ubuntu-latest" ]
-        os: [ "ubuntu-latest" ]
-        node-version: [ 14.x, 16.x, 18.x ]
-        architecture: [ x86, x64 ]
       fail-fast: true
-      max-parallel: 6
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
-    name: Node ${{ matrix.node-version }} - ${{ matrix.os }}-${{ matrix.architecture }}
+    name: Checkout
     steps:
       - uses: actions/checkout@v3
         with:
-          # repository: dimaslanjaka/nodejs-package-types
+          repository: dimaslanjaka/static-blog-generator
+          ref: monorepo
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#improving-cache-restore-performance-on-windows-using-cross-os-caching
-      - if: ${{ runner.os == 'Windows' }}
-        name: Use GNU tar
-        run: |
-          echo "Adding GNU tar to PATH"
-          echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
-        shell: cmd
 
       - name: Set env
         id: set-env
@@ -97,13 +84,13 @@ jobs:
           git submodule update --recursive --remote
           git pull -X theirs
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18.x
           token: ${{ secrets.GITHUB_TOKEN }}
-          #cache: 'npm'
-          #cache-dependency-path: '**/package-lock.json'
+          architecture: x64
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Enable corepack
         run: corepack enable
@@ -115,114 +102,53 @@ jobs:
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-${{ matrix.architecture }}-
-            ${{ runner.os }}-${{ matrix.node-version }}-
+            ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
             ${{ runner.os }}-
-
-      - name: Check Updates
-        shell: bash
-        continue-on-error: true
-        run: |
-          curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js
-          npm run update
 
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
-        if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: Install Legacy Peer Dependencies
-        run: npm install --legacy-peer-deps
-        id: install-legacy
-        shell: bash
+      - run: node postinstall.js
         continue-on-error: true
+      - run: npm install
 
-      - name: Install Verbose
-        if: steps.install-legacy.outcome == 'failure'
-        id: install-verbose
-        continue-on-error: true
-        shell: bash
-        run: |
-          rm -rf node_modules
-          npm install --verbose
-
-      - name: Install Update Binary
-        id: install-update
-        if: steps.install-verbose.outcome == 'failure'
-        shell: bash
-        run: |
-          rm -rf node_modules
-          npm install --no-shrinkwrap --update-binary
-        continue-on-error: true
-
-      - name: Clean Install
-        id: install-clean
-        shell: bash
-        if: steps.install-update.outcome == 'failure'
-        run: rm -rf node_modules package-lock.json && npm install
-
-      - name: Dump Installations
-        run: |
-          echo "install-legacy.outcome ${{ steps.install-legacy.outcome }}"
-          echo "install-legacy.conclusion ${{ steps.install-legacy.conclusion }}"
-          echo "install-verbose.outcome ${{ steps.install-verbose.outcome }}"
-          echo "install-verbose.conclusion ${{ steps.install-verbose.conclusion }}"
-          echo "install-update.outcome ${{ steps.install-update.outcome }}"
-          echo "install-update.conclusion ${{ steps.install-update.conclusion }}"
-          echo "install-clean.outcome ${{ steps.install-clean.outcome }}"
-          echo "install-clean.conclusion ${{ steps.install-clean.conclusion }}"
-
-      - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        shell: bash
-        continue-on-error: true
-        run: npm list
-
-      - name: Build
-        run: npm run build
-
-      # https://github.com/marketplace/actions/verify-changed-files
-      - name: Check if there are changes
-        id: changes
-        uses: tj-actions/verify-changed-files@v13
-        with:
-          files: |
-            release
-            dist
-            lib
-            !node_modules
-            !tmp
-
-      - shell: bash
-        name: "What's changed?"
-        run: |
-          echo "Changed files: ${{ steps.changes.outputs.changed_files }}"
+      - name: build sbg-utility
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-utility
+      - name: build sbg-api
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-api
+      - name: build sbg-server
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-server
+      - name: build sbg-main
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-main
+      - name: build workspace
+        run: gulp build-dist
+      - run: npm install
+        name: installing dist
+        working-directory: ./dist
 
       - name: Git setup user email
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - run: git add release
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
       - run: git add dist
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
       - run: git add lib
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
-      - run: git add postinstall.js packer.js .github
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
+      - run: git add postinstall.js .github
         continue-on-error: true
       - run: git pull -X theirs
         name: Pull before push
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
       - name: Git push
-        if: matrix.node-version == '18.x' && matrix.architecture == 'x64' && runner.os == 'Linux' && steps.changes.outputs.files_changed == 'true'
         continue-on-error: true
         run: |
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"

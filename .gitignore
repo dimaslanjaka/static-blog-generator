@@ -9,9 +9,12 @@ temp
 /coverage
 /src/_config.auto*.json
 /docs
+/src-old
 
 # disable dist
+/packages/**/dist/
 # /dist
+# /release
 
 # branch v2
 /build
@@ -25,3 +28,6 @@ temp
 /src-posts/
 /import/
 /dist/validator
+
+# git management
+**/.git-rewrite
