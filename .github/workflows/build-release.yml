@@ -7,7 +7,7 @@ name: Build Release
 
 on:
   push:
-    branches: [ "monorepo" ]
+    branches: [ "master" ]
     paths-ignore:
       - '**/*.tgz'
       - '**/*.gz'
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/static-blog-generator
-          ref: monorepo
+          ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set env
