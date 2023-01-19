@@ -1,4 +1,4 @@
-[submodule "packages/main/test"]
-	path = packages/main/test
+[submodule "test"]
+	path = test
 	url = https://github.com/dimaslanjaka/site.git
 	branch = static-blog-generator
