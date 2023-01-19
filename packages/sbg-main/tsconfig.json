@@ -5,7 +5,6 @@
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
     "paths": {
       "src": ["./src"],
-      "test": ["./test"],
       "sbg-*": ["../sbg-*"]
     }
   },
