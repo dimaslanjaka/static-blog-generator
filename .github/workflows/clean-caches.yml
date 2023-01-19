@@ -2,7 +2,7 @@ name: Clean Caches
 
 on:
   push:
-    branches: [ "master", "main", "monorepo" ]
+    branches: [ "master" ]
     paths:
       - '**/package-lock.json'
       - '**/yarn.lock'
@@ -16,7 +16,7 @@ on:
 
 # run single job
 concurrency:
-  group: clean-actions-${{ github.head_ref }}
+  group: clean-caches
   cancel-in-progress: true
 
 jobs:
@@ -48,4 +48,4 @@ jobs:
           done
           echo "Done"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
