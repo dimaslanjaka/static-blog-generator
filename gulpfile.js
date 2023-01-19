@@ -6,6 +6,19 @@ const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { join, toUnix } = require('upath');
 
+gulp.task('check-dist', function () {
+  return spawnAsync('npm', ['pack', '--json', '--dry-run'], { cwd: __dirname + '/dist' }).then((result) => {
+    const parse = JSON.parse(result.stdout)[0];
+    const { files } = parse;
+    // uncomment for log to file
+    //const output = join(__dirname, 'tmp/listpack.txt');
+    //writeFileSync(output, files.map((o) => o && o.path).join('\n'));
+    //console.log(output);
+
+    console.log(files);
+  });
+});
+
 /**
  * copy dist from all subpackages
  * @param {gulp.TaskFunctionCallback} done
@@ -86,7 +99,7 @@ function buildDistPackageJson(done) {
   pkgc.dependencies['sbg-server'] = 'file:sbg-server';
   pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
   pkgc.dependencies['sbg-main'] = 'file:sbg-main';
-  pkgc.files = ['sbg-*', 'LICENSE', '*.json', '!node_modules'];
+  pkgc.files = ['sbg-*/**/*', 'LICENSE', '*.json', '!node_modules'];
 
   const dest = join(__dirname, 'dist');
   fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
