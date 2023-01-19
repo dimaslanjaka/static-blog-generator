@@ -40,7 +40,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          # repository: dimaslanjaka/nodejs-package-types
+          repository: dimaslanjaka/static-blog-generator
+          ref: monorepo
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set env
