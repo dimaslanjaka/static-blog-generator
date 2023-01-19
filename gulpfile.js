@@ -75,8 +75,8 @@ function buildDistPackageJson(done) {
   pkgc.name = 'static-blog-generator';
   pkgc.description = pkgroot.description;
   // emptying some properties
-  pkgc.dependencies = {};
-  pkgc.devDependencies = {};
+  //pkgc.dependencies = {};
+  //pkgc.devDependencies = {};
   pkgc.scripts = {};
   // assign sub packages as production dependencies
   pkgc.dependencies['sbg-api'] = 'file:sbg-api';
