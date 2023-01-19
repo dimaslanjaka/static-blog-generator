@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
-    "update": "npm run update:postinstall && npx npm-check-updates -u && npm install && node postinstall.js",
+    "update": "npm run update:postinstall && npx npm-check-updates -u -x chalk,codemirror && npm install && node postinstall.js",
     "test": "jest --runInBand",
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
@@ -32,7 +32,7 @@
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
     "axios": "^1.2.2",
-    "codemirror": "file:source/libs/codemirror",
+    "codemirror": "5.65.11",
     "cookie-parser": "^1.4.6",
     "core-js": "^3.27.1",
     "cors": "^2.8.5",
