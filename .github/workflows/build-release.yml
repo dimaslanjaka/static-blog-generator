@@ -7,7 +7,7 @@ name: Build Release
 
 on:
   push:
-    branches: [ "monorepo" ]
+    branches: [ "master" ]
     paths-ignore:
       - '**/*.tgz'
       - '**/*.gz'
