@@ -6,18 +6,18 @@ const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { join, toUnix } = require('upath');
 
-gulp.task('check-dist', function () {
-  return spawnAsync('npm', ['pack', '--json', '--dry-run'], { cwd: __dirname + '/dist' }).then((result) => {
-    const parse = JSON.parse(result.stdout)[0];
-    const { files } = parse;
-    // uncomment for log to file
-    //const output = join(__dirname, 'tmp/listpack.txt');
-    //writeFileSync(output, files.map((o) => o && o.path).join('\n'));
-    //console.log(output);
+async function checkPacked(cwd) {
+  const result = await spawnAsync('npm', ['pack', '--json', '--dry-run'], { cwd });
+  const parse = JSON.parse(result.stdout)[0];
+  const { files } = parse;
+  // uncomment for log to file
+  //const output = join(__dirname, 'tmp/listpack.txt');
+  //writeFileSync(output, files.map((o) => o && o.path).join('\n'));
+  //console.log(output);
+  console.log(files);
+}
 
-    console.log(files);
-  });
-});
+gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
 
 /**
  * copy dist from all subpackages
