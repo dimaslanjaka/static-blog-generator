@@ -5,11 +5,12 @@
     "target": "es5",
     "baseUrl": "./",
     "lib": ["ES2020", "DOM", "ES6", "ES2021", "ES2021.String"],
-    "outDir": "./dist",
     "allowJs": true,
     "checkJs": false,
     "paths": { "sbg-*": ["../packages/sbg-*"], "src": ["./src"] },
-    "types": ["node"]
+    "types": ["node"],
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
   },
   "include": ["./src/**/*", "./src/**/*.json"],
   "exclude": ["./src/public/**/*"],

@@ -1,29 +1,19 @@
 {
   "compilerOptions": {
-    "declarationMap": true,
-    "composite": true,
     "incremental": true,
+    "target": "es2020",
+    "module": "commonjs",
     "declaration": true,
-    "pretty": true,
-    "lib": ["DOM", "es2015.iterable", "es2015.generator", "es5"],
-    "typeRoots": ["node_modules/@types"],
-    "target": "es5",
+    "sourceMap": true,
+    "strict": false,
     "moduleResolution": "node",
-    "outDir": "./dist",
-    "strictNullChecks": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "checkJs": false,
-    "newLine": "lf",
-    "types": [],
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true,
-    "rootDirs": ["src", "packages"]
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "composite": true
   },
-  "include": ["project.js"],
   "plugins": [
     {
       "transform": "typescript-transform-paths"

@@ -2,10 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "declarationMap": true,
-    "composite": true,
-    "incremental": true,
-    "declaration": true,
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
     "paths": {
       "src": ["./src"],
