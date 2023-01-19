@@ -6,6 +6,11 @@ const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const { join, toUnix } = require('upath');
 
+/**
+ * dump list files from `npm pack`
+ * @see {@link https://www.webmanajemen.com/NodeJS/snippet/get-list-files-from-npm-pack.html}
+ * @param {string} cwd
+ */
 async function checkPacked(cwd) {
   const result = await spawnAsync('npm', ['pack', '--json', '--dry-run'], { cwd });
   const parse = JSON.parse(result.stdout)[0];
