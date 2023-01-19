@@ -13,7 +13,7 @@
     "update:ncu": "npx npm-check-updates -u -x chalk",
     "update": "run-s update:**",
     "postupdate": "node postinstall.js",
-    "build": "gulp build",
+    "build": "gulp",
     "docs": "node docs.js",
     "lint": "npx eslint --fix src/**/*.{ts,js,json}",
     "test": "jest --env node --coverage --runInBand --detectOpenHandles",
