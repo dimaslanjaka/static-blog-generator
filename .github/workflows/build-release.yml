@@ -109,8 +109,9 @@ jobs:
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli
 
-      - run: npm install
       - run: node postinstall.js
+        continue-on-error: true
+      - run: npm install
 
       - name: Build
         run: npm run build
