@@ -88,9 +88,8 @@ function buildDistPackageJson(done) {
   const pkgroot = require('./package.json');
   const pkgmain = require('./packages/sbg-main/package.json');
   const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
-  // delete workspaces property
+  // delete some property
   delete pkgc.workspaces;
-  // delete private property
   delete pkgc.private;
   // replace properties from root properties
   pkgc.name = 'static-blog-generator';
@@ -100,9 +99,9 @@ function buildDistPackageJson(done) {
   //pkgc.devDependencies = {};
   pkgc.scripts = {};
   // assign sub packages as production dependencies
+  pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
   pkgc.dependencies['sbg-api'] = 'file:sbg-api';
   pkgc.dependencies['sbg-server'] = 'file:sbg-server';
-  pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
   pkgc.dependencies['sbg-main'] = 'file:sbg-main';
   pkgc.files = ['sbg-*/**/*', 'LICENSE', '*.json', '!node_modules'];
 
