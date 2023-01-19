@@ -1,97 +1,129 @@
-const spawn = require('cross-spawn');
-const { existsSync, mkdirSync, appendFileSync } = require('fs');
-const { copyFile } = require('fs-extra');
+const { deepmerge } = require('deepmerge-ts');
+const fs = require('fs-extra');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
-const { join } = require('upath');
-
-// copy non-javascript assets from src folder
-const copy = function (done) {
-  gulp
-    .src(['**/*.*'], { cwd: join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(join(__dirname, 'dist')))
-    .once('end', async function () {
-      // copy src/_config.json to dist (prevent git changing values of dist)
-      await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.json'));
-      await copyFile(join(__dirname, 'src/_config.json'), join(__dirname, 'dist/_config.auto-generated.json'));
-      done();
-    });
-};
-
-function tsc(done) {
-  const doCompile = () => {
-    spawnAsync('npm', ['run', 'build'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
-  };
-  if (process.env.GITHUB_WORKFLOWS) {
-    console.log('running in github workflows');
-  }
-  doCompile();
-}
-
-gulp.task('copy', copy);
-gulp.task('tsc', tsc);
+const { join, toUnix, resolve: resolvePath } = require('upath');
+const Bluebird = require('bluebird');
 
 /**
- * @type {'false' | 'true' | 'postpone'}
+ * dump list files from `npm pack`
+ * @see {@link https://www.webmanajemen.com/NodeJS/snippet/get-list-files-from-npm-pack.html}
+ * @param {string} cwd
  */
-let running = 'false';
-const buildNopack = async function () {
-  if (/true|postpone/i.test(running)) {
-    running = 'postpone';
-    return console.log('another build still running');
-  }
-  if (/false|postpone/i.test(running)) running = 'true';
-
-  const tmp = join(__dirname, 'tmp/gulp/watch');
-  if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
-  const child = spawn('npm', ['run', 'build:nopack'], { cwd: __dirname });
-
-  let data = '';
-  for await (const chunk of child.stdout) {
-    appendFileSync(join(tmp, 'stdout.txt'), chunk);
-    data += chunk;
-  }
-  let error = '';
-  for await (const chunk of child.stderr) {
-    appendFileSync(join(tmp, 'stderr.txt'), chunk);
-    error += chunk;
-  }
-  const exitCode = await new Promise((resolve, reject) => {
-    child.on('close', resolve);
-    child.on('error', reject);
-  });
-
-  if (exitCode) {
-    console.log(`subprocess error exit ${exitCode}, ${error}`); // throw
-  }
-
-  if (running === 'postpone') {
-    await buildNopack();
-  }
-  running = 'false';
-  return data;
-};
-gulp.task('compile', buildNopack);
-
-function buildWatch(done) {
-  gulp.series(['compile'])(null);
-  const watcher = gulp.watch(
-    ['**/*.*', '*.*'],
-    {
-      ignored: ['**/*.json', '**/dist', '**/release', '**/node_modules', '*.tgz', '**/*.tgz', '**/tmp'],
-      cwd: join(__dirname, 'src'),
-      delay: 3000
-    },
-    gulp.series(['compile'])
-  );
-  watcher.on('change', (filename) => {
-    console.log('changed', filename);
-    gulp.series(['compile'])(null);
-  });
-  watcher.on('error', console.log);
-  watcher.once('close', done);
+async function checkPacked(cwd) {
+  const result = await spawnAsync('npm', ['pack', '--json', '--dry-run'], { cwd });
+  const parse = JSON.parse(result.stdout)[0];
+  const { files } = parse;
+  // uncomment for log to file
+  //const output = join(__dirname, 'tmp/listpack.txt');
+  //writeFileSync(output, files.map((o) => o && o.path).join('\n'));
+  //console.log(output);
+  console.log(files);
 }
 
-gulp.task('watch', buildWatch);
+gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
 
-gulp.task('default', gulp.series(['tsc', 'copy']));
+const packages = {
+  'packages/sbg-utility': false,
+  'packages/sbg-api': false,
+  'packages/sbg-server': false,
+  'packages/sbg-main': false
+};
+
+gulp.task('clean', function (done) {
+  Bluebird.all(Object.keys(packages))
+    .each((pkg) => {
+      const source_dist = resolvePath(join(__dirname, pkg, 'dist'));
+      const production_dist = resolvePath(join(__dirname, 'dist', pkg.split('/')[1]));
+      console.log(
+        'emptying',
+        source_dist.replace(toUnix(__dirname), ''),
+        production_dist.replace(toUnix(__dirname), '')
+      );
+      return Bluebird.all([fs.emptyDir(source_dist), fs.emptyDir(production_dist)]);
+    })
+    .then(() => done());
+});
+
+/**
+ * copy all <package>/dist to /dist/<package>/dist
+ * @param {gulp.TaskFunctionCallback} done
+ */
+function copyWorkspaceDist(done) {
+  const dist = join(__dirname, 'dist');
+  Bluebird.all(packages).map((p) => {
+    const cwd = join(__dirname, p);
+    const dest = join(dist, p.replace('packages/', ''));
+    const pkj = join(__dirname, p, 'package.json');
+    if (!fs.existsSync(dest)) {
+      fs.mkdirSync(dest, { recursive: true });
+    } else {
+      fs.emptyDirSync(dest);
+    }
+
+    fs.copyFileSync(pkj, join(dest, 'package.json'));
+    console.log('copying', cwd.replace(toUnix(__dirname), ''), '->', dest.replace(toUnix(__dirname), ''));
+    gulp
+      .src(['dist/*.*', 'dist/**/*'], { cwd, ignore: ['**/*.tsbuildinfo'] })
+      .pipe(gulp.dest(dest + '/dist'))
+      .once('end', () => {
+        packages[p] = true;
+        console.log('copying', p, 'end');
+        if (Object.values(packages).every(Boolean)) done();
+      })
+      .once('error', () => {
+        packages[p] = true;
+        console.log('copying', p, 'error');
+      });
+  });
+}
+
+/**
+ * npm run build --workspaces
+ * @param {gulp.TaskFunctionCallback} done
+ */
+function build(done) {
+  spawnAsync('npm', ['run', 'build', '--workspaces'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
+}
+
+/**
+ * fix eslint all src folder subpackages
+ * @param {gulp.TaskFunctionCallback} done
+ */
+function runEslint(done) {
+  spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
+}
+
+/**
+ * build dist package.json
+ * @param {gulp.TaskFunctionCallback} done
+ */
+function buildDistPackageJson(done) {
+  const pkgroot = require('./package.json');
+  const pkgmain = require('./packages/sbg-main/package.json');
+  const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
+
+  const dest = join(__dirname, 'dist');
+
+  spawnAsync('npm', ['pack'], {
+    cwd: dest
+  }).then(() => {
+    // copy files
+    fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
+    fs.copyFileSync(join(__dirname, 'LICENSE'), join(dest, 'LICENSE'));
+    // packing to release
+    const filepack = `${pkgc.name}-${pkgc.version}.tgz`;
+    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
+    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${pkgc.name}.tgz`));
+    fs.rmSync(join(dest, filepack));
+    done();
+  });
+}
+
+gulp.task('lint', runEslint);
+gulp.task('build-copy', copyWorkspaceDist);
+gulp.task('build', build);
+gulp.task('build-dist-package', gulp.series(buildDistPackageJson));
+gulp.task('build-dist', gulp.series('build', 'build-copy', 'build-dist-package'));
+gulp.task('build-all', gulp.series('lint', 'build-dist'));
+gulp.task('default', gulp.series(['build-dist']));

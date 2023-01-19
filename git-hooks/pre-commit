@@ -1,7 +1,0 @@
-#!/bin/sh
-
-npm run build:nopack
-#gulp copy
-#eslint --fix --quiet postinstall.js
-#eslint --fix --quiet packer.js
-#eslint --fix --quiet typedoc*.js

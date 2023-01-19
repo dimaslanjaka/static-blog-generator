@@ -3,27 +3,17 @@
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
-    }
+    },
+    "transpileOnly": true,
+    "require": [ "typescript-transform-paths/register" ],
   },
   "compilerOptions": {
-    "declarationMap": false,
-    "composite": false,
-    "incremental": true,
-    "declaration": true,
-    "stripInternal": true,
-    "strict": false,
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "checkJs": false,
+    "outDir": "./tmp/dist",
     "types": ["nodejs-package-types"],
     "rootDirs": ["src", "packages"]
   },
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["./src", "./test", "typedoc.js", "typedoc-runner.js"],
   "exclude": ["dist"]
 }

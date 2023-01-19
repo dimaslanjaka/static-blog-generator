@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
+    "paths": {
+      "src": ["./src"],
+      "sbg-*": ["../sbg-*"]
+    }
+  },
+  "include": ["./src/index.ts", "./test"],
+  "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-server" }, { "path": "../sbg-api" }]
+}
