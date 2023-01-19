@@ -11,10 +11,10 @@ temp
 /docs
 
 # disable dist
-#/dist
+/dist
 /packages/**/dist/
 /src
-/release
+# /release
 
 # branch v2
 /build
