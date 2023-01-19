@@ -33,7 +33,7 @@
   "dependencies": {
     "debug": "^4.3.4",
     "fs-extra": "^11.1.0",
-    "glob": "^8.0.3",
+    "glob": "^8.1.0",
     "gulp": "^4.0.2",
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
