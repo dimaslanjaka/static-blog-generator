@@ -30,9 +30,6 @@ const cmd = (commandName) => {
     : cmdPath;
 };
 
-// dest folder
-const dist = path.join(__dirname, 'src/public');
-
 /**
  * copy font-awesome assets
  * @returns
@@ -43,20 +40,32 @@ gulp.task('copy:fa', function () {
       cwd: __dirname
     })
     .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
-    .pipe(gulp.dest(dist));
+    .pipe(gulp.dest(path.join(__dirname, 'src/public')));
 });
 
-// copy non-javascript assets from src folder
-const copy = function () {
-  return gulp
+/**
+ * copy non-javascript assets from src folder to dist
+ * @returns
+ */
+const copyNonJS = () =>
+  gulp
     .src(['**/*.*'], {
       cwd: path.join(__dirname, 'src'),
       ignore: ['**/*.{ts,js,json}']
     })
-    .pipe(gulp.dest(dist));
-};
+    .pipe(gulp.dest(path.join(__dirname, 'dist')));
+/**
+ * copy src/public to dist/public
+ * @returns
+ */
+const copyPublic = () =>
+  gulp
+    .src(['**/*.*'], {
+      cwd: path.join(__dirname, 'src/public')
+    })
+    .pipe(gulp.dest(path.join(__dirname, 'dist/public')));
 
-gulp.task('copy', gulp.series(copy));
+gulp.task('copy', gulp.series(copyPublic, copyNonJS));
 
 function tsc(done) {
   spawnAsync(cmd('tsc'), ['-p', 'tsconfig.build.json'], {
@@ -68,15 +77,7 @@ function tsc(done) {
     .catch(done);
 }
 
-gulp.task('clean', (done) => {
-  if (fs.existsSync(dist)) {
-    fs.emptyDir(dist, done);
-  } else {
-    done();
-  }
-});
-
-gulp.task('build', gulp.series('copy:fa', tsc, copy));
+gulp.task('build', gulp.series('copy:fa', tsc, 'copy'));
 
 // dev
 const pids = [];
