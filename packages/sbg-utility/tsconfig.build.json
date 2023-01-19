@@ -2,9 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./dist",
-    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
+    "outDir": "./dist"
   },
-  "include": ["./src/**/*.*", "./src/**/*.json"],
   "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/*.runner.ts", "**/*.test.js", "**/*.spec.js", "**/*.runner.js"]
 }
