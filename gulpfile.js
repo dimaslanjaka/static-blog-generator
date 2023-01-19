@@ -1,10 +1,9 @@
-const spawn = require('cross-spawn');
 const { deepmerge } = require('deepmerge-ts');
-const { existsSync, mkdirSync, appendFileSync } = require('fs');
 const fs = require('fs-extra');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
-const { join, toUnix } = require('upath');
+const { join, toUnix, resolve: resolvePath } = require('upath');
+const Bluebird = require('bluebird');
 
 /**
  * dump list files from `npm pack`
@@ -24,20 +23,35 @@ async function checkPacked(cwd) {
 
 gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
 
+const packages = {
+  'packages/sbg-utility': false,
+  'packages/sbg-api': false,
+  'packages/sbg-server': false,
+  'packages/sbg-main': false
+};
+
+gulp.task('clean', function (done) {
+  Bluebird.all(Object.keys(packages))
+    .each((pkg) => {
+      const source_dist = resolvePath(join(__dirname, pkg, 'dist'));
+      const production_dist = resolvePath(join(__dirname, 'dist', pkg.split('/')[1]));
+      console.log(
+        'emptying',
+        source_dist.replace(toUnix(__dirname), ''),
+        production_dist.replace(toUnix(__dirname), '')
+      );
+      return Bluebird.all([fs.emptyDir(source_dist), fs.emptyDir(production_dist)]);
+    })
+    .then(() => done());
+});
+
 /**
- * copy dist from all subpackages
+ * copy all <package>/dist to /dist/<package>/dist
  * @param {gulp.TaskFunctionCallback} done
  */
 function copyWorkspaceDist(done) {
   const dist = join(__dirname, 'dist');
-  if (fs.existsSync(dist)) fs.emptyDirSync(dist);
-  const packages = {
-    'packages/sbg-utility': false,
-    'packages/sbg-api': false,
-    'packages/sbg-server': false,
-    'packages/sbg-main': false
-  };
-  Object.keys(packages).map((p) => {
+  Bluebird.all(packages).map((p) => {
     const cwd = join(__dirname, p);
     const dest = join(dist, p.replace('packages/', ''));
     const pkj = join(__dirname, p, 'package.json');
@@ -50,11 +64,11 @@ function copyWorkspaceDist(done) {
     fs.copyFileSync(pkj, join(dest, 'package.json'));
     console.log('copying', cwd.replace(toUnix(__dirname), ''), '->', dest.replace(toUnix(__dirname), ''));
     gulp
-      .src(['dist/*.*', 'dist/**/*'], { cwd, ignore: ['*.tsbuildinfo'] })
+      .src(['dist/*.*', 'dist/**/*'], { cwd, ignore: ['**/*.tsbuildinfo'] })
       .pipe(gulp.dest(dest + '/dist'))
       .once('end', () => {
         packages[p] = true;
-        //console.log('copying', p, 'end');
+        console.log('copying', p, 'end');
         if (Object.values(packages).every(Boolean)) done();
       })
       .once('error', () => {
@@ -88,25 +102,8 @@ function buildDistPackageJson(done) {
   const pkgroot = require('./package.json');
   const pkgmain = require('./packages/sbg-main/package.json');
   const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
-  // delete some property
-  delete pkgc.workspaces;
-  delete pkgc.private;
-  // replace properties from root properties
-  pkgc.name = 'static-blog-generator';
-  pkgc.description = pkgroot.description;
-  // emptying some properties
-  //pkgc.dependencies = {};
-  //pkgc.devDependencies = {};
-  pkgc.scripts = {};
-  // assign sub packages as production dependencies
-  pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
-  pkgc.dependencies['sbg-api'] = 'file:sbg-api';
-  pkgc.dependencies['sbg-server'] = 'file:sbg-server';
-  pkgc.dependencies['sbg-main'] = 'file:sbg-main';
-  pkgc.files = ['sbg-*/**/*', 'LICENSE', '*.json', '!node_modules'];
 
   const dest = join(__dirname, 'dist');
-  fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
 
   spawnAsync('npm', ['pack'], {
     cwd: dest
@@ -130,66 +127,3 @@ gulp.task('build-dist-package', gulp.series(buildDistPackageJson));
 gulp.task('build-dist', gulp.series('build', 'build-copy', 'build-dist-package'));
 gulp.task('build-all', gulp.series('lint', 'build-dist'));
 gulp.task('default', gulp.series(['build-dist']));
-
-/**
- * @type {'false' | 'true' | 'postpone'}
- */
-let running = 'false';
-const buildNopack = async function () {
-  if (/true|postpone/i.test(running)) {
-    running = 'postpone';
-    return console.log('another build still running');
-  }
-  if (/false|postpone/i.test(running)) running = 'true';
-
-  const tmp = join(__dirname, 'tmp/gulp/watch');
-  if (!existsSync(tmp)) mkdirSync(tmp, { recursive: true });
-  const child = spawn('npm', ['run', 'build:nopack'], { cwd: __dirname });
-
-  let data = '';
-  for await (const chunk of child.stdout) {
-    appendFileSync(join(tmp, 'stdout.txt'), chunk);
-    data += chunk;
-  }
-  let error = '';
-  for await (const chunk of child.stderr) {
-    appendFileSync(join(tmp, 'stderr.txt'), chunk);
-    error += chunk;
-  }
-  const exitCode = await new Promise((resolve, reject) => {
-    child.on('close', resolve);
-    child.on('error', reject);
-  });
-
-  if (exitCode) {
-    console.log(`subprocess error exit ${exitCode}, ${error}`); // throw
-  }
-
-  if (running === 'postpone') {
-    await buildNopack();
-  }
-  running = 'false';
-  return data;
-};
-gulp.task('compile', buildNopack);
-
-function buildWatch(done) {
-  gulp.series(['compile'])(null);
-  const watcher = gulp.watch(
-    ['**/*.*', '*.*'],
-    {
-      ignored: ['**/*.json', '**/dist', '**/release', '**/node_modules', '*.tgz', '**/*.tgz', '**/tmp'],
-      cwd: join(__dirname, 'src'),
-      delay: 3000
-    },
-    gulp.series(['compile'])
-  );
-  watcher.on('change', (filename) => {
-    console.log('changed', filename);
-    gulp.series(['compile'])(null);
-  });
-  watcher.on('error', console.log);
-  watcher.once('close', done);
-}
-
-gulp.task('watch', buildWatch);
