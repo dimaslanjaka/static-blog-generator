@@ -11,7 +11,7 @@ temp
 /docs
 
 # disable dist
-/dist
+#/dist
 /packages/**/dist/
 /src
 /release
