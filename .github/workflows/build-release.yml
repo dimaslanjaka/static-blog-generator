@@ -114,7 +114,19 @@ jobs:
         continue-on-error: true
       - run: npm install
 
-      - name: Build
+      - name: build sbg-utility
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-utility
+      - name: build sbg-api
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-api
+      - name: build sbg-server
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-server
+      - name: build sbg-main
+        run: npm install && npm run build
+        working-directory: ./packages/sbg-main
+      - name: build workspace
         run: npm run build
 
       - name: Git setup user email
