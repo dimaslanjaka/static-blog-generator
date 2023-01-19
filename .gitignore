@@ -11,9 +11,8 @@ temp
 /docs
 
 # disable dist
-/dist
 /packages/**/dist/
-/src
+# /dist
 # /release
 
 # branch v2
