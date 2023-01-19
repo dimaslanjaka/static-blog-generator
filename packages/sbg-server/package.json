@@ -32,7 +32,7 @@
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
     "axios": "^1.2.3",
-    "codemirror": "5.65.11",
+    "codemirror": "6.0.1",
     "cookie-parser": "^1.4.6",
     "core-js": "^3.27.2",
     "cors": "^2.8.5",
