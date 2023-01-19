@@ -87,7 +87,10 @@ export async function folder_to_hash(
   }
 ): Promise<{ filesWithHash: Record<string, string>; hash: string }> {
   return new Promise((resolve, reject) => {
-    options = Object.assign({ encoding: 'hex', ignored: [] }, options || {});
+    options = Object.assign(
+      { encoding: 'hex' as crypto.BinaryToTextEncoding, ignored: [] as string[], pattern: '' },
+      options || {}
+    );
     if (folder.startsWith('file:')) folder = folder.replace('file:', '');
     // fix non exist
     if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);

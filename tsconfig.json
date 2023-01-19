@@ -8,24 +8,12 @@
     "require": [ "typescript-transform-paths/register" ],
   },
   "compilerOptions": {
-    "declarationMap": true,
-    "composite": true,
-    "incremental": true,
-    "declaration": true,
-    "stripInternal": true,
-    "strict": false,
     "outDir": "./tmp/dist",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "checkJs": false,
     "types": ["nodejs-package-types"],
     "rootDirs": ["src", "packages"]
   },
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["typedoc.js", "typedoc-runner.js"],
   "exclude": ["dist"]
 }

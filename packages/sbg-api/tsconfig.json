@@ -11,5 +11,5 @@
     }
   },
   "include": ["./src", "./src/**/*.json"],
-  "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-server" }]
+  "references": [{ "path": "../sbg-utility" }]
 }
