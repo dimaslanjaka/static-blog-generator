@@ -12,9 +12,28 @@
   },
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
-    "*.test.ts": "npm test -- $fileNameWithoutExt"
+    "*.test.ts": "npm test -- $fileNameWithoutExt",
+    "*.spec.ts": "npm test -- $fileNameWithoutExt"
   },
   "code-runner.showRunIconInEditorTitleMenu": false,
   "code-runner.showRunCommandInExplorerContextMenu": false,
-  "code-runner.respectShebang": true
+  "code-runner.respectShebang": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "search.exclude": {
+    "**/dist/**": true,
+    "**/tmp/**": true
+  },
+  "files.associations": {
+    "*.njk": "njk",
+    "*.ejs": "html"
+  },
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "njk": "html",
+    "nunjucks": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "njk": "html",
+  }
 }
