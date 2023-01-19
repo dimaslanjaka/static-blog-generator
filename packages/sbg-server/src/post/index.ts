@@ -89,7 +89,7 @@ export default function routePost(api: apis.Application) {
       return res.json({
         error: true,
         message: findPost.message,
-        stack: findPost.stack
+        stack: findPost.stack?.split('\n')
       });
     }
     // assign new post body
@@ -136,9 +136,15 @@ export default function routePost(api: apis.Application) {
           delete findPost.metadata.cover;
         }
       }
+      // clone meta for edit
+      const meta = findPost.metadata;
+      // remove meta id and wordcount
+      delete meta?.id;
+      delete meta?.wordcount;
+      // render
       res.render('post/settings.njk', {
         post: findPost,
-        metadata: yaml.stringify(findPost.metadata),
+        metadata: yaml.stringify(meta),
         section: 'Post settings',
         title: 'Post settings'
       });

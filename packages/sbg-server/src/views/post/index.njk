@@ -1,12 +1,12 @@
 {% extends "layout.njk" %}
 {% block content %}
-  <form>
+  <form class="ajax-handling">
     <div class="flex">
-      <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
+      <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Enter Keywords</label>
       <button
         id="dropdown-button"
         data-dropdown-toggle="dropdown"
-        class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100
+        class="hidden flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100
           border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100
           dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
         type="button">All categories
@@ -28,22 +28,12 @@
           <li>
             <button
               type="button"
-              class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mockups</button>
+              class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Tags</button>
           </li>
           <li>
             <button
               type="button"
-              class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Templates</button>
-          </li>
-          <li>
-            <button
-              type="button"
-              class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
-          </li>
-          <li>
-            <button
-              type="button"
-              class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logos</button>
+              class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Category</button>
           </li>
         </ul>
       </div>
@@ -76,74 +66,71 @@
         </div>
       </div>
     </form>
-    <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-      {% for post in posts %}
-        <li class="py-3 sm:py-4">
-          <div class="flex items-center space-x-4">
-            <div class="flex-shrink-0">
-              <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Neil image"></div>
-              <div class="flex-1 min-w-0">
-                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  {{ post.title or "No title" |safe }}
-                </p>
-                <div class="text-sm text-gray-500 truncate dark:text-gray-400 grid gap-px grid-cols-3">
-                  <div>
-                    <i class="fa-light fa-user w-2.5"></i>
-                    {{ getAuthorName(post.author) }}</div>
-                  <div data-tooltip-target="tooltip-wordcount-{{ post.id }}">
-                    <i class="fa-light fa-chart-gantt w-2.5" data-tooltip-target="tooltip-wordcount-{{ post.id }}"></i>
-                    {{ post.wordcount }}</div>
-                  <div>
-                    <i class="fa-light fa-folder-open"></i>
-                    {% if post.categories and post.categories.length %}
-                      <span>{{ post.categories }}</span>
-                    {% else %}
-                      <span>uncategorized</span>
-                    {% endif %}
-                  </div>
-                  <div>
-                    <i class="fa-light fa-tag"></i>
-                    {% if post.tags and post.tags.length %}
-                      <span>{{ post.tags }}</span>
-                    {% else %}
-                      <span>-</span>
-                    {% endif %}
-                  </div>
-                  <div>
-                    <i class="fa-light fa-folder-open w-2.5"></i>
-                    <span>{{ post.relative_source }}</span>
+    <div>
+      <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+        {% for post in posts %}
+          <li class="py-3 sm:py-4" aria-find="post">
+            <div class="flex items-center space-x-4">
+              <div class="flex-shrink-0">
+                <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Neil image"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white" aria-find="title">
+                    {{ post.title or "No title" |safe }}
+                  </p>
+                  <div class="text-sm text-gray-500 truncate dark:text-gray-400 grid gap-px grid-cols-3">
+                    <div>
+                      <i class="fa-light fa-user w-2.5"></i>
+                      {{ getAuthorName(post.author) }}</div>
+                    <div>
+                      <i class="fa-light fa-chart-gantt w-2.5"></i>
+                      <span>total words {{ post.wordcount }}</span>
+                    </div>
+                    <div aria-find="categories">
+                      <i class="fa-light fa-folder-open"></i>
+                      {% if post.categories and post.categories.length %}
+                        <span>{{ post.categories }}</span>
+                      {% else %}
+                        <span>uncategorized</span>
+                      {% endif %}
+                    </div>
+                    <div aria-find="tags">
+                      <i class="fa-light fa-tag"></i>
+                      {% if post.tags and post.tags.length %}
+                        <span>{{ post.tags }}</span>
+                      {% else %}
+                        <span>-</span>
+                      {% endif %}
+                    </div>
+                    <div>
+                      <i class="fa-light fa-folder-open w-2.5"></i>
+                      <span>{{ post.relative_source }}</span>
+                    </div>
                   </div>
                 </div>
-                <!-- tooltips -->
-                <div
-                  id="tooltip-wordcount-{{ post.id }}"
-                  role="tooltip"
-                  class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300
-                    bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  Post Word Count
-                  <div class="tooltip-arrow" data-popper-arrow></div>
-                </div>
-              </div>
-              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                <div class="inline-flex rounded-md shadow-sm">
-                  <a
-                    href="/post/edit/{{ post.id }}"
-                    class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100
-                      hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600
-                      dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                    Edit
-                  </a>
-                  <a
-                    href="/post/settings/{{ post.id }}"
-                    class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100
-                      hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600
-                      dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                    Settings
-                  </a>
+                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="inline-flex rounded-md shadow-sm">
+                    <a
+                      href="/post/edit/{{ post.id }}"
+                      class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100
+                        hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600
+                        dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                      Edit
+                    </a>
+                    <a
+                      href="/post/settings/{{ post.id }}"
+                      class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100
+                        hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600
+                        dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                      Settings
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endblock %}
+    {% block script %}
+     <script src="/js/post/index.js" type="text/javascript" charset="utf-8"></script>
+    {% endblock script %}
