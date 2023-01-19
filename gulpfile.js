@@ -4,9 +4,9 @@ const { existsSync, mkdirSync, appendFileSync } = require('fs');
 const fs = require('fs-extra');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
-const { join } = require('upath');
+const { join, toUnix } = require('upath');
 
-// copy non-javascript assets from src folder
+// copy dist from all subpackages
 function copyWorkspaceDist(done) {
   const dist = join(__dirname, 'dist');
   if (fs.existsSync(dist)) fs.emptyDirSync(dist);
@@ -27,9 +27,9 @@ function copyWorkspaceDist(done) {
     }
 
     fs.copyFileSync(pkj, join(dest, 'package.json'));
-    //console.log('copying', cwd, '->', dest);
+    console.log('copying', cwd.replace(toUnix(__dirname), ''), '->', dest.replace(toUnix(__dirname), ''));
     gulp
-      .src(['dist/*.*'], { cwd, ignore: ['*.tsbuildinfo'] })
+      .src(['dist/*.*', 'dist/**/*'], { cwd, ignore: ['*.tsbuildinfo'] })
       .pipe(gulp.dest(dest + '/dist'))
       .once('end', () => {
         packages[p] = true;
@@ -60,10 +60,10 @@ function eslint(done) {
 }
 
 /**
- * build dist
+ * build dist package.json
  * @param {gulp.TaskFunctionCallback} done
  */
-function buildDist(done) {
+function buildDistPackageJson(done) {
   const pkgroot = require('./package.json');
   const pkgmain = require('./packages/sbg-main/package.json');
   const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
@@ -71,8 +71,6 @@ function buildDist(done) {
   delete pkgc.workspaces;
   // delete private property
   delete pkgc.private;
-  // delete files property
-  delete pkgc.files;
   // replace properties from root properties
   pkgc.name = 'static-blog-generator';
   pkgc.description = pkgroot.description;
@@ -85,6 +83,7 @@ function buildDist(done) {
   pkgc.dependencies['sbg-server'] = 'file:sbg-server';
   pkgc.dependencies['sbg-utility'] = 'file:sbg-utility';
   pkgc.dependencies['sbg-main'] = 'file:sbg-main';
+  pkgc.files = ['sbg-*', 'LICENSE', '*.json', '!node_modules'];
 
   const dest = join(__dirname, 'dist');
   fs.writeFileSync(join(dest, 'package.json'), JSON.stringify(pkgc, null, 2));
@@ -105,10 +104,12 @@ function buildDist(done) {
 }
 
 gulp.task('eslint', gulp.series(eslint));
-gulp.task('copy', gulp.series(copyWorkspaceDist));
-gulp.task('build-dist', gulp.series(build, copyWorkspaceDist, buildDist));
-gulp.task('build', gulp.series('eslint', build, copyWorkspaceDist, buildDist));
-gulp.task('default', gulp.series(['build']));
+gulp.task('build-copy', gulp.series(copyWorkspaceDist));
+gulp.task('build', gulp.series(build));
+gulp.task('build-dist-package', gulp.series(buildDistPackageJson));
+gulp.task('build-dist', gulp.series('build', 'build-copy', 'build-dist-package'));
+gulp.task('build-all', gulp.series('eslint', 'build-dist'));
+gulp.task('default', gulp.series(['build-all']));
 
 /**
  * @type {'false' | 'true' | 'postpone'}
