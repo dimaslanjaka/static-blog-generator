@@ -51,7 +51,7 @@ gulp.task('clean', function (done) {
  */
 function copyWorkspaceDist(done) {
   const dist = join(__dirname, 'dist');
-  Bluebird.all(packages).map((p) => {
+  Bluebird.all(Object.keys(packages)).map((p) => {
     const cwd = join(__dirname, p);
     const dest = join(dist, p.replace('packages/', ''));
     const pkj = join(__dirname, p, 'package.json');
