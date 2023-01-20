@@ -1,6 +1,7 @@
 import type { Config } from 'jest';
 import { defaults } from 'jest-config';
 import { join } from 'path';
+import sbgApiConfig from './packages/sbg-api/jest.config';
 import sbgMainConfig from './packages/sbg-main/jest.config';
 
 /**
@@ -67,13 +68,14 @@ const config: Config = {
     ]
   ],
 
-  testPathIgnorePatterns: ['<rootDir>/node_modules'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist', '**/tmp/**', '**/node_modules/**', '**/dist/**'],
   projects: [
     {
       displayName: 'CLI',
       testMatch: ['<rootDir>/packages/sbg-main/test/**/*.{test,spec}.{ts,js}'],
       ...sbgMainConfig
-    }
+    },
+    { displayName: 'API', testMatch: ['<rootDir>/packages/sbg-api/test/**/*.{test,spec}.{ts,js}'], ...sbgApiConfig }
   ]
 };
 
