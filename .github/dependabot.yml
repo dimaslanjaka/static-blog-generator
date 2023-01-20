@@ -12,6 +12,8 @@ updates:
   ignore:
       - dependency-name: "chalk"
         versions: ["5.x"]
+      - dependency-name: "codemirror"
+        versions: ["6.x"]
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
