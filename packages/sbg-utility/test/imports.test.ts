@@ -1,3 +1,4 @@
+import { describe, expect, test } from '@jest/globals';
 import defaults, * as wilcards from '../src';
 
 describe('check method', () => {
