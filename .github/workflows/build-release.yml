@@ -103,6 +103,8 @@ jobs:
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
             ./dist
+            ./packages/sbg-server/src/public
+            **/tmp/**
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
