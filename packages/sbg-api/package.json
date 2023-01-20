@@ -9,7 +9,8 @@
     "update": "npm run update:postinstall && npx npm-check-updates -u && npm install && node postinstall.js",
     "test": "jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp build"
+    "build": "gulp build",
+    "prep": "cd ../sbg-utility && npm install && npm run build"
   },
   "repository": {
     "type": "git",
