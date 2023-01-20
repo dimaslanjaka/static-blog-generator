@@ -1,3 +1,8 @@
+///
+import { testCwd } from '../env';
+process.cwd = () => testCwd;
+///
+
 import { spawn } from 'child_process';
 import path from 'upath';
 
@@ -8,7 +13,7 @@ import path from 'upath';
  * @returns
  */
 export default function cmd(...args: string[]): Promise<string> {
-  const p = spawn('npx', ['ts-node', path.resolve(__dirname + '/../src/cli.ts'), ...args], {
+  const p = spawn('npx', ['ts-node', path.resolve(__dirname + '/../../src/cli.ts'), ...args], {
     cwd: __dirname,
     shell: true
   });
