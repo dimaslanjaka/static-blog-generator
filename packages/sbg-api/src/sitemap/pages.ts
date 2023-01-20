@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import moment from 'moment-timezone';
 import { join } from 'path';
-import { writefile } from 'sbg-utility/dist/utils/fm';
+import { writefile } from 'sbg-utility';
 import { create as createXML } from 'xmlbuilder2';
 import { sitemapItem } from './yoast-sitemap';
 
