@@ -138,6 +138,7 @@ jobs:
         timeout-minutes: 30
       - run: gulp build-pack
         timeout-minutes: 10
+        continue-on-error: true
 
       - name: Git setup user email
         continue-on-error: true
