@@ -6,11 +6,14 @@
   "types": "sbg-main/dist/index.d.ts",
   "files": [
     "packages",
-    "**/sbg-*/**/*",
-    "**/sbg-*/package.json",
+    "packages/sbg-*/**/*",
+    "packages/sbg-*/package.json",
     "LICENSE",
     "*.json",
-    "!**/node_modules"
+    "!**/node_modules/**",
+    "!packages/**/node_modules/**",
+    "!**/tmp/**",
+    "!packages/**/tmp/**"
   ],
   "scripts": {},
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
