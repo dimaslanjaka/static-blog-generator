@@ -10,6 +10,6 @@
       "sbg-*": ["../packages/sbg-*"]
     }
   },
-  "include": ["./src", "./src/**/*.json"],
+  "include": ["./src", "./src/**/*.json", "./test"],
   "references": [{ "path": "../sbg-utility" }]
 }
