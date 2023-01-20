@@ -1,4 +1,3 @@
-const { deepmerge } = require('deepmerge-ts');
 const fs = require('fs-extra');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
@@ -30,6 +29,20 @@ const packages = {
   'packages/sbg-main': false
 };
 
+gulp.task('install-dist', function () {
+  return Bluebird.all(Object.keys(packages))
+    .each((pkg) => {
+      const pkgPath = resolvePath(__dirname, 'dist', pkg.replace('packages/', ''));
+      console.log('installing', pkgPath);
+      return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
+    })
+    .then(() => {
+      const pkgPath = resolvePath(__dirname, 'dist');
+      console.log('installing', pkgPath);
+      return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
+    });
+});
+
 gulp.task('clean', function (done) {
   Bluebird.all(Object.keys(packages))
     .each((pkg) => {
@@ -51,28 +64,35 @@ gulp.task('clean', function (done) {
  */
 function copyWorkspaceDist(done) {
   const dist = join(__dirname, 'dist');
+  /**
+   * @type {Record<string, boolean>}
+   */
+  const streams = {};
   Bluebird.all(Object.keys(packages)).map((p) => {
     const cwd = join(__dirname, p);
     const dest = join(dist, p.replace('packages/', ''));
     const pkj = join(__dirname, p, 'package.json');
-    if (!fs.existsSync(dest)) {
-      fs.mkdirSync(dest, { recursive: true });
-    } else {
-      fs.emptyDirSync(dest);
-    }
+    // mkdir /dist/<package>
+    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
 
+    // copy /packages/<package>/package.json to /dist/<package>/
     fs.copyFileSync(pkj, join(dest, 'package.json'));
     console.log('copying', cwd.replace(toUnix(__dirname), ''), '->', dest.replace(toUnix(__dirname), ''));
+    // copy dist files to /dist/<package>/dist
     gulp
       .src(['dist/*.*', 'dist/**/*'], { cwd, ignore: ['**/*.tsbuildinfo'] })
       .pipe(gulp.dest(dest + '/dist'))
       .once('end', () => {
-        packages[p] = true;
+        streams[p] = true;
         console.log('copying', p, 'end');
-        if (Object.values(packages).every(Boolean)) done();
+        if (Object.values(streams).length === 4) {
+          if (Object.values(streams).every((value) => value === true)) done();
+        } else {
+          //
+        }
       })
       .once('error', () => {
-        packages[p] = true;
+        streams[p] = true;
         console.log('copying', p, 'error');
       });
   });
@@ -99,9 +119,7 @@ function runEslint(done) {
  * @param {gulp.TaskFunctionCallback} done
  */
 function buildDistPackageJson(done) {
-  const pkgroot = require('./package.json');
-  const pkgmain = require('./packages/sbg-main/package.json');
-  const pkgc = deepmerge(pkgroot, pkgmain, { main: 'sbg-main/dist/index.js', types: 'sbg-main/dist/index.d.ts' });
+  const pkgc = require('./package.json');
 
   const dest = join(__dirname, 'dist');
 
@@ -112,9 +130,10 @@ function buildDistPackageJson(done) {
     fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
     fs.copyFileSync(join(__dirname, 'LICENSE'), join(dest, 'LICENSE'));
     // packing to release
-    const filepack = `${pkgc.name}-${pkgc.version}.tgz`;
+    const packageName = 'static-blog-generator';
+    const filepack = `${packageName}-${pkgc.version}.tgz`;
     fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
-    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${pkgc.name}.tgz`));
+    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${packageName}.tgz`));
     fs.rmSync(join(dest, filepack));
     done();
   });

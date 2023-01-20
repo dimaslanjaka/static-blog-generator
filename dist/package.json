@@ -6,10 +6,7 @@
   "types": "sbg-main/dist/index.d.ts",
   "files": [
     "sbg-*/**/*",
-    "sbg-main",
-    "sbg-utility",
-    "sbg-server",
-    "sbg-api",
+    "sbg-*/package.json",
     "LICENSE",
     "*.json",
     "!node_modules"
