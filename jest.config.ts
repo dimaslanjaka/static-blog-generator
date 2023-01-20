@@ -14,7 +14,7 @@ const config: Config = {
   verbose: false,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  roots: [`<rootDir>/packages/main/test`],
+  roots: [`<rootDir>/packages/sbg-main/test`],
 
   testMatch: [`**/__tests__/**/*.+(ts|tsx|js)`, `**/?(*.)+(spec|test).+(ts|tsx|js)`],
 
