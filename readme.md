@@ -1,6 +1,6 @@
 # Static Blog Generator v3
 
-Static Blog Generator v3 using Gulp System.
+Static Blog Generator v3 using Gulp System. (under development)
 
 Pre-processing all source posts before rendering from hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using large number of hexo plugins, because some function (runner) separated by task, so memory friendly.
 
