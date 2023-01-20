@@ -22,7 +22,7 @@ describe('permalink', function () {
   }
 
   describe(':title.html', function () {
-    const api = new Application(__dirname, {
+    const api = new Application(process.cwd(), {
       generator: {
         cache: false,
         verbose: false,
@@ -40,12 +40,12 @@ describe('permalink', function () {
     describe('validate', function () {
       test('post with custom permalink', () =>
         validatePermalink(
-          join(__dirname, '/source/_posts/with-permalink.md'),
+          join(api.config.cwd, '/source/_posts/with-permalink.md'),
           moment().format('YYYY/MM/') + 'with-permalink.html'
         ));
 
       test('post without permalink', () =>
-        validatePermalink(join(__dirname, '/source/_posts/without-permalink.md'), 'without-permalink.html'));
+        validatePermalink(join(api.config.cwd, '/source/_posts/without-permalink.md'), 'without-permalink.html'));
     });
   });
 });
