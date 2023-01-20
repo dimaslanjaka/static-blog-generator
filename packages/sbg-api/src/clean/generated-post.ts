@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { getConfig } from 'sbg-utility/dist/config/_config';
+import { getConfig } from 'sbg-utility';
 import { join } from 'upath';
 import { cleanDb } from './cleanDb';
 

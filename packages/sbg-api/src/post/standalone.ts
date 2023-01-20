@@ -1,8 +1,7 @@
 import spawn from 'cross-spawn';
 import gulp from 'gulp';
 import * as sbgUtils from 'sbg-utility';
-import { getConfig } from 'sbg-utility/dist/config/_config';
-import Logger from 'sbg-utility/dist/utils/logger';
+import { getConfig, Logger } from 'sbg-utility';
 import through2 from 'through2';
 import { join } from 'upath';
 
