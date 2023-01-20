@@ -5,12 +5,9 @@
   "main": "sbg-main/dist/index.js",
   "types": "sbg-main/dist/index.d.ts",
   "files": [
-    "sbg-*/**/*",
-    "sbg-*/package.json",
-    "sbg-main/**/*",
-    "sbg-utility/**/*",
-    "sbg-server/**/*",
-    "sbg-api/**/*",
+    "packages",
+    "**/sbg-*/**/*",
+    "**/sbg-*/package.json",
     "LICENSE",
     "*.json",
     "!**/node_modules"
@@ -19,10 +16,10 @@
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
   "dependencies": {
-    "sbg-api": "file:sbg-api",
-    "sbg-server": "file:sbg-server",
-    "sbg-utility": "file:sbg-utility",
-    "sbg-main": "file:sbg-main"
+    "sbg-api": "file:packages/sbg-api",
+    "sbg-server": "file:packages/sbg-server",
+    "sbg-utility": "file:packages/sbg-utility",
+    "sbg-main": "file:packages/sbg-main"
   },
   "devDependencies": {},
   "repository": {

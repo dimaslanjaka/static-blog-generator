@@ -32,7 +32,7 @@ const packages = {
 gulp.task('install-dist', function (done) {
   Bluebird.all(Object.keys(packages))
     .each((pkg) => {
-      const pkgPath = resolvePath(__dirname, 'dist', pkg.replace('packages/', ''));
+      const pkgPath = resolvePath(__dirname, 'dist', pkg);
       console.log('installing', pkgPath);
       return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
     })
@@ -72,7 +72,7 @@ function copyWorkspaceDist(done) {
   const streams = {};
   Bluebird.all(Object.keys(packages)).map((p) => {
     const cwd = join(__dirname, p);
-    const dest = join(dist, p.replace('packages/', ''));
+    const dest = join(dist, p);
     const pkj = join(__dirname, p, 'package.json');
     // mkdir /dist/<package>
     if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
