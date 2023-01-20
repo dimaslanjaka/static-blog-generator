@@ -126,7 +126,8 @@ function buildPack(done) {
   const dest = join(__dirname, 'dist');
 
   spawnAsync('npm', ['pack'], {
-    cwd: dest
+    cwd: dest,
+    stdio: 'inherit'
   }).then(() => {
     // copy files
     fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
