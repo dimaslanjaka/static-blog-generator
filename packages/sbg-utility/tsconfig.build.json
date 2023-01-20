@@ -4,5 +4,5 @@
     "rootDir": "./src",
     "outDir": "./dist"
   },
-  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/*.runner.ts", "**/*.test.js", "**/*.spec.js", "**/*.runner.js"]
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/*.runner.ts", "**/*.test.js", "**/*.spec.js", "**/*.runner.js", "./test"]
 }
