@@ -6,7 +6,7 @@
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
   },
   "include": ["./src", "./src/**/*.json"],
-  "exclude": ["**/*.spec.ts"],
+  "exclude": ["**/*.spec.ts", "./test"],
   "references": [
     { "path": "../sbg-api/tsconfig.build.json" },
     { "path": "../sbg-utility/tsconfig.build.json" },
