@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { Config } from 'jest';
+import path from 'upath';
 import base from '../../jest.config';
 import tsconfigTest from './tsconfig.test.json';
 
@@ -12,7 +13,9 @@ const config: Config = {
       { tsconfig: tsconfigTest.compilerOptions }
     ]
   },
-  rootDir: 'test'
+  rootDir: 'test',
+  // coverage directory
+  coverageDirectory: path.join(__dirname, 'coverage')
 };
 
 const merged = Object.assign(base, config);
