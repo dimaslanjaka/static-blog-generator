@@ -1,7 +1,7 @@
 # documentation https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-a-custom-configuration-file
 
 paths:
-  - src
+  - 'packages/**/src/**/*'
 paths-ignore:
   - '**/*.test*.{ts,js}' # skip test unit
   - '**/*.spec*.{ts,js}' # skip test unit
