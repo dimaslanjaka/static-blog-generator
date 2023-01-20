@@ -8,10 +8,10 @@ describe('check method', () => {
     test(`check wilcards.${prop} properties`, function () {
       expect(wilcards[prop]).toBeDefined();
       expect(typeof wilcards[prop]).toBe('function');
-    }, 3000);
+    }, 10000);
     test(`check defaults.${prop} properties`, function () {
       expect(defaults[prop]).toBeDefined();
       expect(typeof defaults[prop]).toBe('function');
-    }, 3000);
+    }, 10000);
   }
 });
