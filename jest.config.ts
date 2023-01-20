@@ -14,7 +14,7 @@ const config: Config = {
   verbose: false,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  roots: [`<rootDir>/packages/sbg-main/test`],
+  rootDir: './',
 
   testMatch: [`**/__tests__/**/*.+(ts|tsx|js)`, `**/?(*.)+(spec|test).+(ts|tsx|js)`],
 
@@ -36,8 +36,7 @@ const config: Config = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '**/*.{js,ts}',
-    './packages/**/src/**/*.{ts,js}',
+    '<rootDir>/packages/sbg-*/src/**/*.{ts,js}',
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/test/**',
@@ -45,7 +44,7 @@ const config: Config = {
   ],
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
+  coverageDirectory: '<rootDir>/coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\', '/node_modules/', '/dist/', '/tmp/', '/test/'],
