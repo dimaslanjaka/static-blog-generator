@@ -13,7 +13,8 @@ on:
       - '**/*.gz'
       - '**/release/**'
       - '**garbage-collector**'
-      - '**codeql**'
+      - '**/.github/**/**codeql**'
+      - '**/.github/**/**clean**'
   pull_request:
     types:
       - closed
