@@ -131,12 +131,13 @@ jobs:
         run: npm install && npm run build
         working-directory: ./packages/sbg-main
       - run: gulp build
+        timeout-minutes: 10
       - run: gulp build-copy
+        timeout-minutes: 10
       - run: gulp install-dist
+        timeout-minutes: 30
       - run: gulp build-pack
-      - run: npm install
-        name: installing dist
-        working-directory: ./dist
+        timeout-minutes: 10
 
       - name: Git setup user email
         continue-on-error: true
