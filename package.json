@@ -5,6 +5,7 @@
   "main": "dist/packages/sbg-main/dist/index.js",
   "types": "dist/packages/sbg-main/dist/index.d.ts",
   "files": [
+    "dist",
     "readme.md",
     "LICENSE"
   ],
