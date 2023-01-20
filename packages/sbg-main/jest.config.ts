@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { Config } from 'jest';
 import base from '../../jest.config';
 import tsconfigTest from './tsconfig.test.json';
@@ -17,5 +18,8 @@ const config: Config = {
 const merged = Object.assign(base, config);
 merged.roots?.push(__dirname + '/test');
 merged.roots?.push(__dirname);
+if (merged.roots) {
+  merged.roots = merged.roots.filter(fs.existsSync);
+}
 
 export default merged;
