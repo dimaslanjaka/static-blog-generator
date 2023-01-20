@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.envNunjucks = void 0;
 var hexo_util_1 = require("hexo-util");
 var nunjucks_1 = __importDefault(require("nunjucks"));
 function envNunjucks() {
@@ -19,5 +20,6 @@ function envNunjucks() {
     });
     return env;
 }
+exports.envNunjucks = envNunjucks;
 exports.default = envNunjucks;
 //# sourceMappingURL=nunjucks-env.js.map

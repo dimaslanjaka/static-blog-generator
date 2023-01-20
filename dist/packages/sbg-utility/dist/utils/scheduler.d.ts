@@ -19,7 +19,7 @@ export declare function bindProcessExit(key: string, fn: (...args: any[]) => any
  * scheduler.register();
  * ```
  */
-declare class scheduler {
+export declare class scheduler {
     static verbose: boolean;
     constructor();
     private static registered;
@@ -54,4 +54,3 @@ declare class scheduler {
     private static clearArray;
 }
 export default scheduler;
-export { scheduler };

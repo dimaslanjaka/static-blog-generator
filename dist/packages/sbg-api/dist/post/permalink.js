@@ -22,19 +22,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parsePermalink = void 0;
 var moment_timezone_1 = __importStar(require("moment-timezone"));
-var _config_1 = require("sbg-utility/dist/config/_config");
-var debug_1 = __importDefault(require("sbg-utility/dist/utils/debug"));
+var sbg_utility_1 = require("sbg-utility");
 var true_case_path_1 = require("true-case-path");
 var path = __importStar(require("upath"));
 var moment = function (input) {
-    moment_timezone_1.tz.setDefault((0, _config_1.getConfig)().timezone || 'UTC');
-    return (0, moment_timezone_1.default)(input).tz((0, _config_1.getConfig)().timezone || 'UTC');
+    moment_timezone_1.tz.setDefault((0, sbg_utility_1.getConfig)().timezone || 'UTC');
+    return (0, moment_timezone_1.default)(input).tz((0, sbg_utility_1.getConfig)().timezone || 'UTC');
 };
 var normalizePath = function (str) { return path.toUnix((0, true_case_path_1.trueCasePathSync)(str)); };
 /**
@@ -44,8 +40,8 @@ var normalizePath = function (str) { return path.toUnix((0, true_case_path_1.tru
 function parsePermalink(post, config) {
     if (!post)
         throw new Error('parameter post is ' + typeof post);
-    (0, debug_1.default)('permalink').extend('source')(post);
-    var siteConfig = (0, _config_1.getConfig)();
+    (0, sbg_utility_1.debug)('permalink').extend('source')(post);
+    var siteConfig = (0, sbg_utility_1.getConfig)();
     var pattern = config.permalink_pattern || siteConfig.permalink;
     var date = config.date;
     var cleanPathname = normalizePath(post).replace(/.md$/, '');
@@ -94,7 +90,7 @@ function parsePermalink(post, config) {
     // replace %20 to space
     var newPattern = pattern.replace(/%20/g, ' ');
     var result = newPattern.replace(/\/{2,10}/g, '/').replace(config.url, '');
-    (0, debug_1.default)('permalink').extend('result')(result);
+    (0, sbg_utility_1.debug)('permalink').extend('result')(result);
     return result;
 }
 exports.parsePermalink = parsePermalink;

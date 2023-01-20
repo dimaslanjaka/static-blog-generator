@@ -26,21 +26,17 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var wildcards = __importStar(require("./wildcards"));
-exports.default = wildcards;
-__exportStar(require("./wildcards"), exports);
-/*
-const sbgUtils = {
-  ...utils,
-  ...config,
-  ...globals,
-  ...gutils,
-  ...utils.logger,
-  ...utils.array,
-  ...utils.string,
-  ...utils.chain
-};
-export default sbgUtils;
-*/
+exports.globals = exports.gutils = exports.config = exports.utils = void 0;
+var config = __importStar(require("./config"));
+exports.config = config;
+var globals = __importStar(require("./globals"));
+exports.globals = globals;
+var gutils = __importStar(require("./gulp-utils"));
+exports.gutils = gutils;
+var utils = __importStar(require("./utils"));
+exports.utils = utils;
+__exportStar(require("./config"), exports);
+__exportStar(require("./gulp-utils"), exports);
+__exportStar(require("./utils"), exports);
 //
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=wildcards.js.map

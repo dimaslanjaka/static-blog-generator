@@ -1,10 +1,10 @@
 /// <reference types="node" />
 /// <reference types="node" />
 import { Nullable } from 'hexo-post-parser';
-import { getConfig, setConfig } from 'sbg-utility/dist/config/_config';
+import { getConfig, setConfig } from 'sbg-utility';
 declare class SBG {
     cwd: string;
-    config: import("sbg-utility/dist/config/_config").ProjConf;
+    config: import("sbg-utility").ProjConf;
     setConfig: typeof setConfig;
     getConfig: typeof getConfig;
     /**

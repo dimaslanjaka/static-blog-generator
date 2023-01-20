@@ -65,8 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var cross_spawn_1 = __importDefault(require("cross-spawn"));
 var gulp_1 = __importDefault(require("gulp"));
 var sbgUtils = __importStar(require("sbg-utility"));
-var _config_1 = require("sbg-utility/dist/config/_config");
-var logger_1 = __importDefault(require("sbg-utility/dist/utils/logger"));
+var sbg_utility_1 = require("sbg-utility");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 /**
@@ -74,22 +73,22 @@ var upath_1 = require("upath");
  * @returns
  */
 function standaloneRunner() {
-    logger_1.default.log('[standalone] Running scripts...\n');
+    sbg_utility_1.Logger.log('[standalone] Running scripts...\n');
     return gulp_1.default
-        .src((0, upath_1.join)((0, _config_1.getConfig)().cwd, '**/_*.standalone.js'), { cwd: (0, _config_1.getConfig)().cwd, ignore: ['**/tmp/**'] })
+        .src((0, upath_1.join)((0, sbg_utility_1.getConfig)().cwd, '**/_*.standalone.js'), { cwd: (0, sbg_utility_1.getConfig)().cwd, ignore: ['**/tmp/**'] })
         .pipe(through2_1.default.obj(function (file, _enc, next) {
         return __awaiter(this, void 0, void 0, function () {
             var _a, _b, _c, child;
             return __generator(this, function (_d) {
                 switch (_d.label) {
                     case 0:
-                        logger_1.default.log('='.repeat(10) + ' input ' + '='.repeat(10));
-                        _b = (_a = logger_1.default).log;
+                        sbg_utility_1.Logger.log('='.repeat(10) + ' input ' + '='.repeat(10));
+                        _b = (_a = sbg_utility_1.Logger).log;
                         _c = "node ".concat;
-                        return [4 /*yield*/, sbgUtils.utils.string.replacePath(file.path, (0, _config_1.getConfig)().cwd, '')];
+                        return [4 /*yield*/, sbgUtils.utils.string.replacePath(file.path, (0, sbg_utility_1.getConfig)().cwd, '')];
                     case 1:
                         _b.apply(_a, [_c.apply("node ", [_d.sent()])]);
-                        logger_1.default.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
+                        sbg_utility_1.Logger.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
                         child = (0, cross_spawn_1.default)('node', [file.path], { stdio: 'inherit' });
                         child.on('close', function () {
                             // drop file
@@ -100,9 +99,9 @@ function standaloneRunner() {
             });
         });
     }))
-        .pipe(gulp_1.default.dest((0, upath_1.join)((0, _config_1.getConfig)().cwd, 'tmp/standalone')))
+        .pipe(gulp_1.default.dest((0, upath_1.join)((0, sbg_utility_1.getConfig)().cwd, 'tmp/standalone')))
         .once('end', function () {
-        logger_1.default.log('\n[standalone] stopped');
+        sbg_utility_1.Logger.log('\n[standalone] stopped');
     });
 }
 gulp_1.default.task('post:standalone', standaloneRunner);

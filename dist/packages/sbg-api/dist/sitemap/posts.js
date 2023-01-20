@@ -43,7 +43,7 @@ exports.getAllpostUpdateDates = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var path_1 = require("path");
-var fm_1 = require("sbg-utility/dist/utils/fm");
+var sbg_utility_1 = require("sbg-utility");
 var xmlbuilder2_1 = require("xmlbuilder2");
 var postUpdateDates = [];
 var _log = typeof hexo !== 'undefined' ? hexo.log : console;
@@ -72,7 +72,7 @@ function yoastSeoSitemapPosts(hexo) {
                 case 1:
                     _a.sent();
                     destSitemap = (0, path_1.join)(hexo.public_dir, 'post-sitemap.xml');
-                    (0, fm_1.writefile)(destSitemap, (0, xmlbuilder2_1.create)({
+                    (0, sbg_utility_1.writefile)(destSitemap, (0, xmlbuilder2_1.create)({
                         urlset: {
                             url: sitemapPostsList
                         }

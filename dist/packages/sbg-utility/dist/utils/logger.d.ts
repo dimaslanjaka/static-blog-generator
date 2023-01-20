@@ -4,7 +4,7 @@ import 'nodejs-package-types';
  * const console = Logger
  * Logger.log('hello world'); // should be written in <temp folder>/logs/[trace-name].log
  */
-declare class Logger {
+export declare class Logger {
     static log(...args: any[]): void;
     static info(...args: any[]): void;
     static error(...args: any[]): void;

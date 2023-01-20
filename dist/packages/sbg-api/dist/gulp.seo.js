@@ -32,20 +32,18 @@ exports.taskSeo = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var gulp_1 = __importDefault(require("gulp"));
 var gulp_dom_1 = __importDefault(require("gulp-dom"));
-var _config_1 = require("sbg-utility/dist/config/_config");
-var gulp_cache_1 = __importDefault(require("sbg-utility/dist/gulp-utils/gulp.cache"));
-var logger_1 = __importDefault(require("sbg-utility/dist/utils/logger"));
+var sbg_utility_1 = require("sbg-utility");
 /**
  * Auto seo runner
  * @param cwd working directory to scan html's
  */
 function taskSeo(_done, cwd) {
-    var config = (0, _config_1.getConfig)();
+    var config = (0, sbg_utility_1.getConfig)();
     var ignore = Array.isArray(config.exclude) ? config.exclude : [];
-    ignore.push.apply(ignore, __spreadArray([], __read(_config_1.commonIgnore), false));
+    ignore.push.apply(ignore, __spreadArray([], __read(sbg_utility_1.commonIgnore), false));
     return gulp_1.default
         .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd: cwd, ignore: ignore })
-        .pipe((0, gulp_cache_1.default)({ name: 'seo' }))
+        .pipe((0, sbg_utility_1.gulpCached)({ name: 'seo' }))
         .pipe((0, gulp_dom_1.default)(function (path) {
         var _this = this;
         // fix alt images
@@ -70,14 +68,14 @@ function taskSeo(_done, cwd) {
         // count H1
         var h1 = this.querySelectorAll('h1');
         if (h1.length > 1) {
-            logger_1.default.log(ansi_colors_1.default.yellowBright('[WARN]'), "H1 (".concat(h1.length, ") ").concat(path));
+            sbg_utility_1.Logger.log(ansi_colors_1.default.yellowBright('[WARN]'), "H1 (".concat(h1.length, ") ").concat(path));
         }
     }))
         .pipe(gulp_1.default.dest(cwd));
 }
 exports.taskSeo = taskSeo;
 gulp_1.default.task('seo', function () {
-    var deployDir = (0, _config_1.deployConfig)().deployDir;
+    var deployDir = (0, sbg_utility_1.deployConfig)().deployDir;
     return taskSeo(null, deployDir);
 });
 //# sourceMappingURL=gulp.seo.js.map

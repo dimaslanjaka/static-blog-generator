@@ -32,9 +32,7 @@ var hexo_is_1 = __importDefault(require("hexo-is"));
 var moment_1 = __importDefault(require("moment"));
 require("nodejs-package-types");
 var path_1 = require("path");
-var _config_1 = require("sbg-utility/dist/config/_config");
-var fm_1 = require("sbg-utility/dist/utils/fm");
-var scheduler_1 = __importDefault(require("sbg-utility/dist/utils/scheduler"));
+var sbg_utility_1 = require("sbg-utility");
 var xmlbuilder2_1 = require("xmlbuilder2");
 var archive_1 = __importStar(require("./archive"));
 var pages_1 = __importDefault(require("./pages"));
@@ -90,7 +88,7 @@ var pageUpdateDates = [];
 // const cache = new CacheFile("sitemap");
 var turnError = false;
 function yoastSeoSitemap(data) {
-    var HSconfig = (0, _config_1.getConfig)();
+    var HSconfig = (0, sbg_utility_1.getConfig)();
     if (!HSconfig.sitemap) {
         if (!turnError) {
             turnError = true;
@@ -137,7 +135,7 @@ function yoastSeoSitemap(data) {
             });
         }
         if (isPagePost) {
-            scheduler_1.default.add('writeSitemap', function () {
+            sbg_utility_1.scheduler.add('writeSitemap', function () {
                 // copy xsl
                 var destXSL = (0, path_1.join)(hexo.public_dir, 'sitemap.xsl');
                 if (!(0, fs_1.existsSync)((0, path_1.dirname)(destXSL)))
@@ -151,10 +149,10 @@ function yoastSeoSitemap(data) {
                     _log.error('XSL sitemap not found');
                 }
                 var destPostSitemap = (0, path_1.join)(hexo.public_dir, 'post-sitemap.xml');
-                (0, fm_1.writefile)(destPostSitemap, (0, xmlbuilder2_1.create)(sitemapGroup['post']).end({ prettyPrint: true }));
+                (0, sbg_utility_1.writefile)(destPostSitemap, (0, xmlbuilder2_1.create)(sitemapGroup['post']).end({ prettyPrint: true }));
                 _log.info('post sitemap saved', destPostSitemap);
                 var destPageSitemap = (0, path_1.join)(hexo.public_dir, 'page-sitemap.xml');
-                (0, fm_1.writefile)(destPageSitemap, (0, xmlbuilder2_1.create)(sitemapGroup['page']).end({ prettyPrint: true }));
+                (0, sbg_utility_1.writefile)(destPageSitemap, (0, xmlbuilder2_1.create)(sitemapGroup['page']).end({ prettyPrint: true }));
                 _log.info('page sitemap saved', destPageSitemap);
                 yoastSitemapIndex(hexo);
             });
@@ -218,7 +216,7 @@ function yoastSitemapIndex(hexo) {
         });
     });
     var destTagSitemap = (0, path_1.join)(hexo.public_dir, 'tag-sitemap.xml');
-    (0, fm_1.writefile)(destTagSitemap, (0, xmlbuilder2_1.create)(sitemapGroup['tag']).end({ prettyPrint: true }));
+    (0, sbg_utility_1.writefile)(destTagSitemap, (0, xmlbuilder2_1.create)(sitemapGroup['tag']).end({ prettyPrint: true }));
     _log.info('tag sitemap saved', destTagSitemap);
     // push tag-sitemap.xml to sitemapindex
     var latestTagDate = (0, archive_1.getLatestFromArrayDates)(tags.map(function (tag) {
@@ -241,7 +239,7 @@ function yoastSitemapIndex(hexo) {
         });
     });
     var destCategorySitemap = (0, path_1.join)(hexo.public_dir, 'category-sitemap.xml');
-    (0, fm_1.writefile)(destCategorySitemap, (0, xmlbuilder2_1.create)(sitemapGroup['category']).end({ prettyPrint: true }));
+    (0, sbg_utility_1.writefile)(destCategorySitemap, (0, xmlbuilder2_1.create)(sitemapGroup['category']).end({ prettyPrint: true }));
     _log.info('category sitemap saved', destCategorySitemap);
     // push category-sitemap.xml to sitemapindex
     var latestCategoryDate = (0, archive_1.getLatestFromArrayDates)(categories.map(function (category) {
@@ -253,7 +251,7 @@ function yoastSitemapIndex(hexo) {
         lastmod: (0, moment_1.default)(latestCategoryDate).format('YYYY-MM-DDTHH:mm:ssZ')
     });
     var destIndexSitemap = (0, path_1.join)(hexo.public_dir, 'sitemap.xml');
-    (0, fm_1.writefile)(destIndexSitemap, (0, xmlbuilder2_1.create)(sitemapIndex).end({ prettyPrint: true }));
+    (0, sbg_utility_1.writefile)(destIndexSitemap, (0, xmlbuilder2_1.create)(sitemapIndex).end({ prettyPrint: true }));
     _log.info('index sitemap saved', destIndexSitemap);
 }
 exports.yoastSitemapIndex = yoastSitemapIndex;

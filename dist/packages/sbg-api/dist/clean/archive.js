@@ -67,9 +67,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
-var _config_1 = require("sbg-utility/dist/config/_config");
-var fm_1 = require("sbg-utility/dist/utils/fm");
-var logger_1 = __importDefault(require("sbg-utility/dist/utils/logger"));
+var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
 /**
  * clean old archives (categories, tags, pagination) from deployment directory
@@ -80,7 +78,7 @@ function cleanArchive(callback) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    config = (0, _config_1.getConfig)();
+                    config = (0, sbg_utility_1.getConfig)();
                     logname = 'clean:' + ansi_colors_1.default.grey('archives');
                     archives = (0, upath_1.join)(config.deploy.deployDir, config.archive_dir);
                     categories = (0, upath_1.join)(config.deploy.deployDir, config.category_dir);
@@ -104,13 +102,13 @@ function cleanArchive(callback) {
                 case 2:
                     promises = [];
                     dumpfile = (0, upath_1.join)(config.cwd, 'tmp/dump/clean.txt');
-                    (0, fm_1.writefile)(dumpfile, folders.join('\n'));
-                    logger_1.default.log(logname, 'list deleted files', dumpfile);
+                    (0, sbg_utility_1.writefile)(dumpfile, folders.join('\n'));
+                    sbg_utility_1.Logger.log(logname, 'list deleted files', dumpfile);
                     for (i = 0; i < folders.length; i++) {
                         pathStr = folders[i];
                         try {
                             if ((0, fs_extra_1.existsSync)(pathStr))
-                                promises.push((0, fm_1.del)(pathStr));
+                                promises.push((0, sbg_utility_1.del)(pathStr));
                         }
                         catch (_b) {
                             //s

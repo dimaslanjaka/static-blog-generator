@@ -64,9 +64,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SBG = void 0;
 var hexo_1 = __importDefault(require("hexo"));
-var _config_1 = require("sbg-utility/dist/config/_config");
-var utils_1 = require("sbg-utility/dist/utils");
-var chain_1 = require("sbg-utility/dist/utils/chain");
+var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
 var cleaner = __importStar(require("./clean"));
 var gulp_safelink_1 = require("./gulp.safelink");
@@ -80,14 +78,14 @@ var SBG = /** @class */ (function () {
      */
     function SBG(cwd, options) {
         var _this = this;
-        this.config = (0, _config_1.getConfig)();
-        this.setConfig = _config_1.setConfig;
-        this.getConfig = _config_1.getConfig;
+        this.config = (0, sbg_utility_1.getConfig)();
+        this.setConfig = sbg_utility_1.setConfig;
+        this.getConfig = sbg_utility_1.getConfig;
         /**
          * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
          * @returns
          */
-        this.standalone = function () { return (0, chain_1.chain)([{ callback: standalone_1.default }]); };
+        this.standalone = function () { return (0, sbg_utility_1.chain)([{ callback: standalone_1.default }]); };
         /**
          * Auto seo on public dir (_config_yml.public_dir) (run after generated)
          * @returns
@@ -97,16 +95,16 @@ var SBG = /** @class */ (function () {
          * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
-        this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(utils_1.noop, (0, upath_1.join)(_this.cwd, (0, _config_1.getConfig)().public_dir)); };
+        this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(sbg_utility_1.noop, (0, upath_1.join)(_this.cwd, (0, sbg_utility_1.getConfig)().public_dir)); };
         if (!cwd)
             cwd = process.cwd();
-        (0, _config_1.fetchConfig)(cwd);
+        (0, sbg_utility_1.fetchConfig)(cwd);
         this.cwd = cwd;
         this.config.cwd = cwd;
         options = Object.assign(this.config, options || {}, { cwd: cwd });
-        this.config = (0, _config_1.setConfig)(options);
+        this.config = (0, sbg_utility_1.setConfig)(options);
         SBG.setApi(this);
-        new utils_1.scheduler();
+        new sbg_utility_1.scheduler();
     }
     SBG.setApi = function (api) {
         this.currentApI = api;
@@ -124,7 +122,7 @@ var SBG = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         // apply current config
-                        (0, _config_1.setConfig)(this.config);
+                        (0, sbg_utility_1.setConfig)(this.config);
                         return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require('./index')); })];
                     case 1: 
                     // recall index
@@ -162,15 +160,15 @@ var SBG = /** @class */ (function () {
                     case 0:
                         hexo = new hexo_1.default(this.cwd);
                         // hexo init
-                        return [4 /*yield*/, hexo.init().catch(utils_1.noop)];
+                        return [4 /*yield*/, hexo.init().catch(sbg_utility_1.noop)];
                     case 1:
                         // hexo init
                         _a.sent();
-                        return [4 /*yield*/, hexo.load().catch(utils_1.noop)];
+                        return [4 /*yield*/, hexo.load().catch(sbg_utility_1.noop)];
                     case 2:
                         _a.sent();
                         // hexo generate
-                        return [4 /*yield*/, hexo.call('generate').catch(utils_1.noop)];
+                        return [4 /*yield*/, hexo.call('generate').catch(sbg_utility_1.noop)];
                     case 3:
                         // hexo generate
                         _a.sent();

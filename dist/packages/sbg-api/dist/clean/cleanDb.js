@@ -35,15 +35,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanDb = void 0;
 var fs_extra_1 = require("fs-extra");
-var _config_1 = require("sbg-utility/dist/config/_config");
-var debug_1 = __importDefault(require("sbg-utility/dist/utils/debug"));
-var fm_1 = require("sbg-utility/dist/utils/fm");
+var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
 var util_1 = require("util");
 /**
@@ -55,10 +50,10 @@ function cleanDb(callback, files) {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    log = (0, debug_1.default)('clean');
-                    config = (0, _config_1.getConfig)();
+                    log = (0, sbg_utility_1.debug)('clean');
+                    config = (0, sbg_utility_1.getConfig)();
                     if (typeof config.source_dir !== 'string') {
-                        (0, fm_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
+                        (0, sbg_utility_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
                         throw new Error('config.source_dir must be configured');
                     }
                     dirs = [
@@ -80,7 +75,7 @@ function cleanDb(callback, files) {
                     _b.trys.push([2, 5, , 6]);
                     if (!(0, fs_extra_1.existsSync)(dir)) return [3 /*break*/, 4];
                     log('claning', dir);
-                    return [4 /*yield*/, (0, fm_1.del)(dir)];
+                    return [4 /*yield*/, (0, sbg_utility_1.del)(dir)];
                 case 3:
                     _b.sent();
                     _b.label = 4;

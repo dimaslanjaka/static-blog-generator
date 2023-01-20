@@ -1,2 +1,3 @@
 import nunjucks from 'nunjucks';
-export default function envNunjucks(): nunjucks.Environment;
+export declare function envNunjucks(): nunjucks.Environment;
+export default envNunjucks;

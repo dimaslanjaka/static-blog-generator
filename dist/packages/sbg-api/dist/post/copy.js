@@ -68,12 +68,10 @@ var fs_1 = __importDefault(require("fs"));
 var gulp_1 = __importDefault(require("gulp"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
 var sbg_utility_1 = require("sbg-utility");
-var debug_1 = __importDefault(require("sbg-utility/dist/utils/debug"));
-var logger_1 = __importDefault(require("sbg-utility/dist/utils/logger"));
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var permalink_1 = require("./permalink");
-var log = (0, debug_1.default)('post');
+var log = (0, sbg_utility_1.debug)('post');
 var logerr = log.extend('error');
 var logLabel = log.extend('label');
 /**
@@ -131,7 +129,7 @@ exports.copyAllPosts = copyAllPosts;
 function pipeProcessPost(config) {
     var logname = 'post:' + ansi_colors_1.default.blueBright('processing');
     if (config.generator.verbose) {
-        logger_1.default.log(logname, 'cache=' + (config.generator.cache ? ansi_colors_1.default.green('true') : ansi_colors_1.default.red('false')));
+        sbg_utility_1.Logger.log(logname, 'cache=' + (config.generator.cache ? ansi_colors_1.default.green('true') : ansi_colors_1.default.red('false')));
     }
     return through2_1.default.obj(function (file, _enc, callback) {
         return __awaiter(this, void 0, void 0, function () {
@@ -170,7 +168,7 @@ function pipeProcessPost(config) {
                         _a.label = 3;
                     case 3: return [3 /*break*/, 5];
                     case 4:
-                        logger_1.default.log('options not configured');
+                        sbg_utility_1.Logger.log('options not configured');
                         callback();
                         _a.label = 5;
                     case 5: return [2 /*return*/];
@@ -222,7 +220,7 @@ function processSinglePost(file, callback) {
                             fix: true,
                             sourceFile: file
                         })
-                            .catch(function (e) { return logger_1.default.log(e); })];
+                            .catch(function (e) { return sbg_utility_1.Logger.log(e); })];
                 case 2:
                     parse = _f.sent();
                     if (parse && parse.metadata) {
@@ -271,7 +269,7 @@ function processSinglePost(file, callback) {
                                         if (index !== -1) {
                                             parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
                                             if (config.generator.verbose) {
-                                                logger_1.default.log(ansi_colors_1.default.redBright(parse.metadata[groupLabel][index]), '~>', ansi_colors_1.default.greenBright(config[groupLabel].mapper[oldLabel]));
+                                                sbg_utility_1.Logger.log(ansi_colors_1.default.redBright(parse.metadata[groupLabel][index]), '~>', ansi_colors_1.default.greenBright(config[groupLabel].mapper[oldLabel]));
                                             }
                                         }
                                     };
@@ -287,7 +285,7 @@ function processSinglePost(file, callback) {
                                 }
                             }
                             else if (config.generator.verbose) {
-                                logger_1.default.log(groupLabel, 'not found');
+                                sbg_utility_1.Logger.log(groupLabel, 'not found');
                             }
                             // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
                         }
@@ -305,7 +303,7 @@ function processSinglePost(file, callback) {
                     return [3 /*break*/, 4];
                 case 3:
                     e_1 = _f.sent();
-                    logger_1.default.log(e_1);
+                    sbg_utility_1.Logger.log(e_1);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }

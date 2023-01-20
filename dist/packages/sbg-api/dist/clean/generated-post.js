@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cleanGeneratedPosts = void 0;
-var _config_1 = require("sbg-utility/dist/config/_config");
+var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
 var cleanDb_1 = require("./cleanDb");
 /**
@@ -49,7 +49,7 @@ function cleanGeneratedPosts(callback) {
     return __awaiter(this, void 0, void 0, function () {
         var config;
         return __generator(this, function (_a) {
-            config = (0, _config_1.getConfig)();
+            config = (0, sbg_utility_1.getConfig)();
             return [2 /*return*/, (0, cleanDb_1.cleanDb)(callback, [(0, upath_1.join)(config.cwd, config.source_dir, '_posts')])];
         });
     });

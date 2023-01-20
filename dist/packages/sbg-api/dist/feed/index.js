@@ -9,12 +9,11 @@ var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
 var nunjucks_1 = __importDefault(require("nunjucks"));
-var _config_1 = require("sbg-utility/dist/config/_config");
-var utils_1 = require("sbg-utility/dist/utils");
+var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
-var env = (0, utils_1.envNunjucks)();
+var env = (0, sbg_utility_1.envNunjucks)();
 gulp_1.default.task('feed', function (done) {
-    var config = (0, _config_1.getConfig)();
+    var config = (0, sbg_utility_1.getConfig)();
     var instance = new hexo_1.default(config.cwd);
     instance.init().then(function () {
         instance.load().then(function () {
@@ -60,7 +59,7 @@ gulp_1.default.task('feed', function (done) {
             var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
             var publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
             gulp_1.default
-                .src('**/*.html', { cwd: publicDir, ignore: _config_1.commonIgnore })
+                .src('**/*.html', { cwd: publicDir, ignore: sbg_utility_1.commonIgnore })
                 .pipe((0, gulp_dom_1.default)(function () {
                 // auto discovery rss
                 if (this.querySelectorAll("link[href=\"".concat(baseURL, "rss.xml\"]")).length === 0 &&

@@ -70,10 +70,7 @@ var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
 var path_1 = __importDefault(require("path"));
 var safelinkify_1 = __importDefault(require("safelinkify"));
-var _config_1 = require("sbg-utility/dist/config/_config");
-var gulp_utils_1 = require("sbg-utility/dist/gulp-utils");
-var fm_1 = require("sbg-utility/dist/utils/fm");
-var logger_1 = __importDefault(require("sbg-utility/dist/utils/logger"));
+var sbg_utility_1 = require("sbg-utility");
 var through2_1 = __importDefault(require("through2"));
 /**
  * Process Safelink on Deploy Dir
@@ -84,22 +81,22 @@ var through2_1 = __importDefault(require("through2"));
 function taskSafelink(_done, cwd) {
     var _this = this;
     var _a, _b, _c;
-    var config = (0, _config_1.getConfig)();
+    var config = (0, sbg_utility_1.getConfig)();
     var workingDir = typeof cwd === 'string' ? cwd : config.deploy.deployDir;
     var logname = ansi_colors_1.default.greenBright('safelink');
     // skip process safelink
     var hasError = false;
     if (!config.external_link.safelink) {
         hasError = true;
-        logger_1.default.log(logname, 'config safelink', ansi_colors_1.default.red('not configured'));
+        sbg_utility_1.Logger.log(logname, 'config safelink', ansi_colors_1.default.red('not configured'));
     }
     if (!config.external_link.safelink.redirect) {
         hasError = true;
-        logger_1.default.log(logname, 'safelink redirector', ansi_colors_1.default.red('not configured'));
+        sbg_utility_1.Logger.log(logname, 'safelink redirector', ansi_colors_1.default.red('not configured'));
     }
     if (!config.external_link.safelink.enable) {
         hasError = true;
-        logger_1.default.log(logname, ansi_colors_1.default.red('disabled'));
+        sbg_utility_1.Logger.log(logname, ansi_colors_1.default.red('disabled'));
     }
     if ((0, fs_1.existsSync)(workingDir) && !hasError) {
         var defaultConfigSafelink = {
@@ -158,7 +155,7 @@ function taskSafelink(_done, cwd) {
         }
         return gulp_1.default
             .src(['**/*.{html,htm}'], gulpopt)
-            .pipe((0, gulp_utils_1.gulpCached)({ name: 'safelink' }))
+            .pipe((0, sbg_utility_1.gulpCached)({ name: 'safelink' }))
             .pipe(through2_1.default.obj(function (file, _enc, next) { return __awaiter(_this, void 0, void 0, function () {
             var content, parsed;
             return __generator(this, function (_a) {
@@ -179,7 +176,7 @@ function taskSafelink(_done, cwd) {
                         }
                         _a.label = 2;
                     case 2:
-                        logger_1.default.log('cannot parse', file.path);
+                        sbg_utility_1.Logger.log('cannot parse', file.path);
                         // drop fails
                         next();
                         return [2 /*return*/];
@@ -189,7 +186,7 @@ function taskSafelink(_done, cwd) {
             .pipe(gulp_1.default.dest(workingDir));
     }
     else {
-        var wstream = (0, fm_1.createWriteStream)(path_1.default.join(config.cwd, 'tmp/errors/safelink.log'));
+        var wstream = (0, sbg_utility_1.createWriteStream)(path_1.default.join(config.cwd, 'tmp/errors/safelink.log'));
         return wstream;
     }
 }

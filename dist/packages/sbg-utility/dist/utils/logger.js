@@ -51,6 +51,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Logger = void 0;
 var fs_extra_1 = require("fs-extra");
 require("nodejs-package-types");
 var os_1 = require("os");
@@ -168,5 +169,6 @@ var Logger = /** @class */ (function () {
     };
     return Logger;
 }());
+exports.Logger = Logger;
 exports.default = Logger;
 //# sourceMappingURL=logger.js.map
