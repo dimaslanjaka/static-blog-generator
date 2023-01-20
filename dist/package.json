@@ -30,12 +30,16 @@
     "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
   },
   "keywords": [
-    "static-blog-generator",
+    "gulp",
+    "blog",
+    "static-site-generator",
     "hexo",
-    "hexo-post",
-    "hexo-generator",
+    "static-site",
+    "blog-nodejs",
     "hexo-admin",
-    "hexo-gui"
+    "hexo-seo",
+    "hexo-gui",
+    "gulp-blog"
   ],
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
