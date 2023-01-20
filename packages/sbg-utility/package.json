@@ -4,14 +4,6 @@
   "description": "static-blog-generator utility",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "devDependencies": {
-    "@types/debug": "^4.1.7",
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
-    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
-    "@types/nunjucks": "^3.2.1",
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-  },
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update": "npm run update:postinstall && npx npm-check-updates -u && npm install && node postinstall.js",
@@ -53,5 +45,13 @@
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
     "yaml": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
+    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
+    "@types/nunjucks": "^3.2.1",
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
+    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
   }
 }
