@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
+    "ansi-colors": "^4.1.3",
     "bluebird": "^3.7.2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "deepmerge-ts": "^4.2.2",
