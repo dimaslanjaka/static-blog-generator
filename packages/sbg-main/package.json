@@ -34,8 +34,10 @@
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "deepmerge-ts": "^4.2.2",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/tarball/master",
     "sbg-api": "file:../sbg-api",
     "sbg-server": "file:../sbg-server",
     "sbg-utility": "file:../sbg-utility",
