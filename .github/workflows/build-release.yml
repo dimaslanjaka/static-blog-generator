@@ -127,8 +127,10 @@ jobs:
       - name: build sbg-main
         run: npm install && npm run build
         working-directory: ./packages/sbg-main
-      - name: build workspace
-        run: gulp build-dist
+      - run: gulp build
+      - run: gulp build-copy
+      - run: gulp install-dist
+      - run: gulp build-pack
       - run: npm install
         name: installing dist
         working-directory: ./dist
