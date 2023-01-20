@@ -5,6 +5,14 @@
     "outDir": "./dist",
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
   },
-  "include": ["./src/**/*.*", "./src/**/*.json"],
-  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/*.runner.ts", "**/*.test.js", "**/*.spec.js", "**/*.runner.js"]
+  "include": ["./src/**/*", "./src/**/*.json"],
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.runner.ts",
+    "**/*.test.js",
+    "**/*.spec.js",
+    "**/*.runner.js",
+    "./test"
+  ]
 }
