@@ -29,8 +29,8 @@ const packages = {
   'packages/sbg-main': false
 };
 
-gulp.task('install-dist', function () {
-  return Bluebird.all(Object.keys(packages))
+gulp.task('install-dist', function (done) {
+  Bluebird.all(Object.keys(packages))
     .each((pkg) => {
       const pkgPath = resolvePath(__dirname, 'dist', pkg.replace('packages/', ''));
       console.log('installing', pkgPath);
@@ -40,7 +40,8 @@ gulp.task('install-dist', function () {
       const pkgPath = resolvePath(__dirname, 'dist');
       console.log('installing', pkgPath);
       return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
-    });
+    })
+    .then(() => done());
 });
 
 gulp.task('clean', function (done) {
@@ -118,7 +119,7 @@ function runEslint(done) {
  * build dist package.json
  * @param {gulp.TaskFunctionCallback} done
  */
-function buildDistPackageJson(done) {
+function buildPack(done) {
   const pkgc = require('./package.json');
 
   const dest = join(__dirname, 'dist');
@@ -142,7 +143,7 @@ function buildDistPackageJson(done) {
 gulp.task('lint', runEslint);
 gulp.task('build-copy', copyWorkspaceDist);
 gulp.task('build', build);
-gulp.task('build-dist-package', gulp.series(buildDistPackageJson));
-gulp.task('build-dist', gulp.series('build', 'build-copy', 'build-dist-package'));
+gulp.task('build-pack', buildPack);
+gulp.task('build-dist', gulp.series('build', 'build-copy', 'install-dist', 'build-pack'));
 gulp.task('build-all', gulp.series('lint', 'build-dist'));
 gulp.task('default', gulp.series(['build-dist']));
