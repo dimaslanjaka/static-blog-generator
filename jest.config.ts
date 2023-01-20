@@ -1,6 +1,7 @@
 import type { Config } from 'jest';
 import { defaults } from 'jest-config';
 import { join } from 'path';
+import sbgMainConfig from './packages/sbg-main/jest.config';
 
 /**
  * @type {import('jest').Config}
@@ -64,6 +65,15 @@ const config: Config = {
         openReport: false
       }
     ]
+  ],
+
+  testPathIgnorePatterns: ['<rootDir>/node_modules'],
+  projects: [
+    {
+      displayName: 'CLI',
+      testMatch: ['<rootDir>/packages/sbg-main/test/**/*.{test,spec}.{ts,js}'],
+      ...sbgMainConfig
+    }
   ]
 };
 

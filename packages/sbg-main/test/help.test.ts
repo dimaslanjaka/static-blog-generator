@@ -3,6 +3,7 @@ import { testCwd } from './env';
 process.cwd = () => testCwd;
 ///
 
+import { describe, expect, it } from '@jest/globals';
 import cmd from './utils/cmd';
 
 describe('mock CLI usage', () => {
