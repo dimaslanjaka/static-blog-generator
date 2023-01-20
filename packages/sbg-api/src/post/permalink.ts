@@ -1,6 +1,5 @@
 import momentlib, { tz } from 'moment-timezone';
-import { getConfig } from 'sbg-utility/dist/config/_config';
-import debug from 'sbg-utility/dist/utils/debug';
+import { debug, getConfig } from 'sbg-utility';
 import { trueCasePathSync } from 'true-case-path';
 import * as path from 'upath';
 

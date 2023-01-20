@@ -6,11 +6,17 @@ import { default as hexo } from 'hexo';
 import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
-import { commonIgnore, getConfig, setConfig } from 'sbg-utility/dist/config/_config';
-import { envNunjucks, noop } from 'sbg-utility/dist/utils';
-import { array_remove_empty, array_unique } from 'sbg-utility/dist/utils/array';
-import { writefile } from 'sbg-utility/dist/utils/fm';
-import Logger from 'sbg-utility/dist/utils/logger';
+import {
+  array_remove_empty,
+  array_unique,
+  commonIgnore,
+  envNunjucks,
+  getConfig,
+  Logger,
+  noop,
+  setConfig,
+  writefile
+} from 'sbg-utility';
 import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { join } from 'upath';
 import { yoastSeo } from './yoast-sitemap';

@@ -1,8 +1,6 @@
 import Hexo from 'hexo';
 import { Nullable } from 'hexo-post-parser';
-import { fetchConfig, getConfig, setConfig } from 'sbg-utility/dist/config/_config';
-import { noop, scheduler } from 'sbg-utility/dist/utils';
-import { chain } from 'sbg-utility/dist/utils/chain';
+import { chain, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
 import { join } from 'upath';
 import * as cleaner from './clean';
 import { taskSafelink } from './gulp.safelink';

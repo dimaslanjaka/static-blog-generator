@@ -3,10 +3,7 @@ import { existsSync } from 'fs';
 import gulp from 'gulp';
 import path from 'path';
 import sf, { SafelinkOptions } from 'safelinkify';
-import { getConfig } from 'sbg-utility/dist/config/_config';
-import { gulpCached } from 'sbg-utility/dist/gulp-utils';
-import { createWriteStream } from 'sbg-utility/dist/utils/fm';
-import Logger from 'sbg-utility/dist/utils/logger';
+import { createWriteStream, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
 import { SrcOptions } from 'vinyl-fs';
 

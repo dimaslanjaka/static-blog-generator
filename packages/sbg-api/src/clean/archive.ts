@@ -2,9 +2,7 @@ import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
 import { existsSync, readdir } from 'fs-extra';
 import gulp from 'gulp';
-import { getConfig } from 'sbg-utility/dist/config/_config';
-import { del, writefile } from 'sbg-utility/dist/utils/fm';
-import Logger from 'sbg-utility/dist/utils/logger';
+import { del, getConfig, Logger, writefile } from 'sbg-utility';
 import { join } from 'upath';
 
 /**

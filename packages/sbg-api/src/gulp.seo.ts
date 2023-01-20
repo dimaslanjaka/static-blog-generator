@@ -1,9 +1,7 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
-import { commonIgnore, deployConfig, getConfig } from 'sbg-utility/dist/config/_config';
-import gulpCached from 'sbg-utility/dist/gulp-utils/gulp.cache';
-import Logger from 'sbg-utility/dist/utils/logger';
+import { commonIgnore, deployConfig, getConfig, gulpCached, Logger } from 'sbg-utility';
 
 /**
  * Auto seo runner

@@ -4,8 +4,7 @@ import gulpDom from 'gulp-dom';
 import hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
-import { commonIgnore, getConfig } from 'sbg-utility/dist/config/_config';
-import { envNunjucks } from 'sbg-utility/dist/utils';
+import { commonIgnore, envNunjucks, getConfig } from 'sbg-utility';
 import { join } from 'upath';
 
 const env = envNunjucks();
