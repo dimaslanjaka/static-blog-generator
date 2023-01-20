@@ -137,7 +137,7 @@ jobs:
       - run: gulp install-dist
         timeout-minutes: 30
       - run: gulp build-pack
-        timeout-minutes: 10
+        # timeout-minutes: 30
 
       - name: Git setup user email
         continue-on-error: true
