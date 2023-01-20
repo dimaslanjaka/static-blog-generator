@@ -94,12 +94,6 @@ var SBG = /** @class */ (function () {
          */
         this.seo = function () { return (0, gulp_seo_1.taskSeo)(null, (0, upath_1.join)(_this.cwd, _this.config.public_dir)); };
         /**
-         * Copy all **src-post** to **source/_posts** (run before generate)
-         * * see the method {@link pcopy.copyAllPosts}
-         * @returns
-         */
-        this.copy = function () { return (0, chain_1.chain)([{ callback: function () { return pcopy.copyAllPosts(undefined, _this.config); } }]); };
-        /**
          * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
          * @returns
          */
@@ -136,6 +130,24 @@ var SBG = /** @class */ (function () {
                     // recall index
                     return [2 /*return*/, _a.sent()];
                 }
+            });
+        });
+    };
+    /**
+     * Copy all **src-post** to **source/_posts** (run before generate)
+     * * see the method {@link pcopy.copyAllPosts}
+     * @returns
+     */
+    // copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
+    SBG.prototype.copy = function () {
+        var config = this.config;
+        return new Promise(function (resolve) {
+            var streamer = pcopy.copyAllPosts(undefined, config);
+            streamer.on('end', function () {
+                // wait all handler to be closed
+                setTimeout(function () {
+                    resolve(null);
+                }, 3000);
             });
         });
     };
