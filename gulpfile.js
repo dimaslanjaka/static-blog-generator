@@ -133,7 +133,7 @@ function buildPack(done) {
     fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
     fs.copyFileSync(join(__dirname, 'LICENSE'), join(dest, 'LICENSE'));
     // packing to release
-    const packageName = 'static-blog-generator';
+    const packageName = pkgc.name;
     const filepack = `${packageName}-${pkgc.version}.tgz`;
     fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
     fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${packageName}.tgz`));
