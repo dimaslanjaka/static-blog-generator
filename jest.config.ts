@@ -1,15 +1,20 @@
-import type { Config } from 'jest';
 import { defaults } from 'jest-config';
 import { join } from 'path';
 import sbgApiConfig from './packages/sbg-api/jest.config';
 import sbgMainConfig from './packages/sbg-main/jest.config';
+import sbgUtilityConfig from './packages/sbg-utility/jest.config';
+
+const globalIgnores: import('jest').Config = {
+  transformIgnorePatterns: ['**/dist/**', '**/tmp/**'],
+  modulePathIgnorePatterns: ['**/dist/**', '**/tmp/**'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist', '**/tmp/**', '**/node_modules/**', '**/dist/**']
+};
 
 /**
- * @type {import('jest').Config}
  * @see {@link https://jestjs.io/docs/configuration}
  * * how to run single test {@link https://stackoverflow.com/questions/28725955/how-do-i-test-a-single-file-using-jest}
  */
-const config: Config = {
+const config: import('jest').Config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'mts'],
@@ -17,6 +22,12 @@ const config: Config = {
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
   rootDir: './',
+  roots: [
+    '<rootDir>/packages/sbg-main',
+    '<rootDir>/packages/sbg-api',
+    '<rootDir>/packages/sbg-utility',
+    '<rootDir>/packages/sbg-server'
+  ],
 
   testMatch: [`**/__tests__/**/*.+(ts|tsx|js)`, `**/?(*.)+(spec|test).+(ts|tsx|js)`],
 
@@ -68,14 +79,23 @@ const config: Config = {
     ]
   ],
 
-  testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist', '**/tmp/**', '**/node_modules/**', '**/dist/**'],
+  ...globalIgnores,
   projects: [
     {
       displayName: 'CLI',
       testMatch: ['<rootDir>/packages/sbg-main/test/**/*.{test,spec}.{ts,js}'],
       ...sbgMainConfig
     },
-    { displayName: 'API', testMatch: ['<rootDir>/packages/sbg-api/test/**/*.{test,spec}.{ts,js}'], ...sbgApiConfig }
+    {
+      displayName: 'API',
+      testMatch: ['<rootDir>/packages/sbg-api/test/**/*.{test,spec}.{ts,js}'],
+      ...sbgApiConfig
+    },
+    {
+      displayName: 'UTILS',
+      testMatch: ['<rootDir>/packages/sbg-utility/test/**/*.{test,spec}.{ts,js}'],
+      ...sbgUtilityConfig
+    }
   ]
 };
 
