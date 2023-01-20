@@ -7,9 +7,13 @@
   "files": [
     "sbg-*/**/*",
     "sbg-*/package.json",
+    "sbg-main/**/*",
+    "sbg-utility/**/*",
+    "sbg-server/**/*",
+    "sbg-api/**/*",
     "LICENSE",
     "*.json",
-    "!node_modules"
+    "!**/node_modules"
   ],
   "scripts": {},
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
