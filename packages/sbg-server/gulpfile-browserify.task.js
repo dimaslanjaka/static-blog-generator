@@ -48,7 +48,7 @@ const bundle = (done) => {
   // push finish gulp task
   callbacks.push({ callback: done });
 
-  return utility.chain.chain(callbacks);
+  return utility.chain(callbacks);
 };
 
 gulp.task('compile:js', gulp.series(bundle));
