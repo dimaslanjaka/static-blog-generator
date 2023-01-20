@@ -44,6 +44,7 @@ gulp.task('install-dist', function (done) {
     .then(() => done());
 });
 
+// emptying all dist/<package>, packages/<package>/dist
 gulp.task('clean', function (done) {
   Bluebird.all(Object.keys(packages))
     .each((pkg) => {
