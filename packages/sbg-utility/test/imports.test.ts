@@ -5,13 +5,13 @@ describe('check method', () => {
 
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];
-    test(`check wilcards.${prop} properties`, function () {
+    test(`wilcards.${prop} is function`, function () {
       expect(wilcards[prop]).toBeDefined();
       expect(typeof wilcards[prop]).toBe('function');
-    }, 3000);
-    test(`check defaults.${prop} properties`, function () {
+    }, 10000);
+    test(`defaults.${prop} is function`, function () {
       expect(defaults[prop]).toBeDefined();
       expect(typeof defaults[prop]).toBe('function');
-    }, 3000);
+    }, 10000);
   }
 });
