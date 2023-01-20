@@ -1,14 +1,20 @@
+export * from './array';
 export * as array from './array';
 export * from './chain';
 export * from './debug';
 export { default as debug } from './debug';
+export * from './fm';
 export * as filemanager from './fm';
+export * from './logger';
 export * as logger from './logger';
 export { default as noop } from './noop';
 export { default as envNunjucks } from './nunjucks-env';
 export * as object from './object';
+export * from './scheduler';
 export { default as scheduler } from './scheduler';
+export * from './stream';
 export * as stream from './stream';
+export * from './string';
 export * as string from './string';
 
 //

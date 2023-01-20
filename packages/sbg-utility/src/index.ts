@@ -1,13 +1,9 @@
-import * as config from './config';
-import * as globals from './globals';
-import * as gutils from './gulp-utils';
-import * as utils from './utils';
+import * as wildcards from './wildcards';
+export default wildcards;
 
-export * from './config';
-export * from './gulp-utils';
-export * from './utils';
-export { utils, config, gutils };
-//
+export * from './wildcards';
+
+/*
 const sbgUtils = {
   ...utils,
   ...config,
@@ -19,5 +15,6 @@ const sbgUtils = {
   ...utils.chain
 };
 export default sbgUtils;
+*/
 
 //
