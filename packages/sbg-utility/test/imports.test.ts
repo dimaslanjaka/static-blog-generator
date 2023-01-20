@@ -2,7 +2,19 @@ import { describe, expect, test } from '@jest/globals';
 import defaults, * as wilcards from '../src';
 
 describe('check method', () => {
-  const props = ['chain', 'debug'];
+  const props = [
+    'chain',
+    'debug',
+    'createWriteStream',
+    'debug',
+    'Logger',
+    'scheduler',
+    'noop',
+    'envNunjucks',
+    'array_random',
+    'array_unique',
+    'array_remove_empty'
+  ];
 
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];

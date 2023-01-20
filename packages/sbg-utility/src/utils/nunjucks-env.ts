@@ -1,7 +1,7 @@
 import { encodeURL } from 'hexo-util';
 import nunjucks from 'nunjucks';
 
-export default function envNunjucks() {
+export function envNunjucks() {
   const env = new nunjucks.Environment();
   env.addFilter('uriencode', (str) => {
     return encodeURL(str);
@@ -15,3 +15,5 @@ export default function envNunjucks() {
   });
   return env;
 }
+
+export default envNunjucks;
