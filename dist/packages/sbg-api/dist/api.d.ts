@@ -35,7 +35,7 @@ declare class SBG {
      * * see the method {@link pcopy.copyAllPosts}
      * @returns
      */
-    copy: () => Promise<void>;
+    copy(): Promise<void>;
     /**
      * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
      * @returns
