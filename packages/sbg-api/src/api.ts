@@ -68,7 +68,19 @@ class SBG {
    * * see the method {@link pcopy.copyAllPosts}
    * @returns
    */
-  copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
+  // copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
+  copy(): Promise<void> {
+    const config = this.config;
+    return new Promise(function (resolve) {
+      const streamer = pcopy.copyAllPosts(undefined, config);
+      streamer.on('end', function () {
+        // wait all handler to be closed
+        setTimeout(() => {
+          resolve(null);
+        }, 3000);
+      });
+    });
+  }
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)

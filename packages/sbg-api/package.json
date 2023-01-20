@@ -7,7 +7,7 @@
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update": "npm run update:postinstall && npx npm-check-updates -u && npm install && node postinstall.js",
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp build"
   },
