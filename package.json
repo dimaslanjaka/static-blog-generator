@@ -9,6 +9,18 @@
     "readme.md",
     "LICENSE"
   ],
+  "keywords": [
+    "gulp",
+    "blog",
+    "static-site-generator",
+    "hexo",
+    "static-site",
+    "blog-nodejs",
+    "hexo-admin",
+    "hexo-seo",
+    "hexo-gui",
+    "gulp-blog"
+  ],
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:ncu": "npx npm-check-updates -u -x chalk",
