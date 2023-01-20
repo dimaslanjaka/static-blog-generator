@@ -89,7 +89,7 @@ const functions: { [key: string]: () => any }[] = [];
  * scheduler.register();
  * ```
  */
-class scheduler {
+export class scheduler {
   static verbose = true;
   constructor() {
     if (!scheduler.registered) scheduler.register();
@@ -166,4 +166,3 @@ class scheduler {
 }
 
 export default scheduler;
-export { scheduler };
