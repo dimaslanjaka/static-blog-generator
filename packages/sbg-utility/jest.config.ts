@@ -1,7 +1,6 @@
-import { Config } from 'jest';
 import tsconfigTest from './tsconfig.json';
 
-const config: Config = {
+const config: Extract<NonNullable<import('jest').Config['projects']>[number], Record<string, any>> = {
   transform: {
     '^.+\\.(ts|tsx)$': [
       'ts-jest',
