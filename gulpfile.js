@@ -148,4 +148,5 @@ gulp.task('build', build);
 gulp.task('build-pack', buildPack);
 gulp.task('build-dist', gulp.series('build', 'build-copy', 'install-dist', 'build-pack'));
 gulp.task('build-all', gulp.series('lint', 'build-dist'));
+gulp.task('build-clean', gulp.series('clean', 'build-dist'));
 gulp.task('default', gulp.series(['build-dist']));
