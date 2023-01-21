@@ -8,8 +8,7 @@
     "sbg": "dist/packages/sbg-main/dist/cli.js"
   },
   "files": [
-    "packages",
-    "packages/sbg-*/**/*",
+    "packages/sbg-*/dist/**/*",
     "packages/sbg-*/package.json",
     "LICENSE",
     "*.json",
