@@ -46,7 +46,7 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
-          submodule: 'recursive'
+          submodules: 'recursive'
       - uses: actions/checkout@v3
         name: checkout dist
         with:
