@@ -134,6 +134,9 @@
     "packages/sbg-utility",
     "packages/sbg-api",
     "packages/sbg-server",
-    "packages/sbg-main"
+    "packages/sbg-main",
+    "packages/hexo-post-parser",
+    "packages/git-command-helper",
+    "packages/safelinkify"
   ]
 }
