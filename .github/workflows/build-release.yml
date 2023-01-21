@@ -168,19 +168,12 @@ jobs:
           git add .
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           git push
-      - run: git add release
-        continue-on-error: true
-      - run: git add dist
-        continue-on-error: true
-      - run: git add lib
-        continue-on-error: true
-      - run: git add postinstall.js .github
-        continue-on-error: true
       - run: git pull -X theirs
         name: Pull before push
         continue-on-error: true
       - name: commit and push
         continue-on-error: true
         run: |
+          git add -A
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           git push
