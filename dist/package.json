@@ -13,7 +13,9 @@
     "!**/node_modules/**",
     "!packages/**/node_modules/**",
     "!**/tmp/**",
-    "!packages/**/tmp/**"
+    "!packages/**/tmp/**",
+    "!test",
+    "!**/test/**"
   ],
   "scripts": {},
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",

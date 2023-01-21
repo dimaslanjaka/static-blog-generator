@@ -8,9 +8,18 @@
     "sbg": "dist/packages/sbg-main/dist/cli.js"
   },
   "files": [
-    "dist",
-    "readme.md",
-    "LICENSE"
+    "packages",
+    "packages/sbg-*/**/*",
+    "packages/sbg-*/package.json",
+    "LICENSE",
+    "*.json",
+    "!**/node_modules/**",
+    "!packages/**/node_modules/**",
+    "!**/tmp/**",
+    "!packages/**/tmp/**",
+    "!test",
+    "!**/test/**",
+    "!**/src/**"
   ],
   "keywords": [
     "gulp",
