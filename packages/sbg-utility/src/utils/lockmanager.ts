@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import os from 'os';
 import path from 'path';
-import { writefile } from './fm';
+import { writefile } from './filemanager';
 import scheduler from './scheduler';
 
 const locks: LockManager[] = [];

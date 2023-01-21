@@ -1,6 +1,3 @@
-// filemanager
-
-import Bluebird from 'bluebird';
 import fs from 'fs-extra';
 import path from 'upath';
 
@@ -76,49 +73,4 @@ export function writefile(file: string, content: strORobj, opt: writefileOpt = {
   }
   if (opt.async) return Promise.resolve(result);
   return result;
-}
-
-/**
- * create writestream (auto create dirname)
- * @param dest
- * @param options
- * @returns
- */
-export function createWriteStream(dest: string, options?: Parameters<(typeof fs)['createWriteStream']>[1]) {
-  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest));
-  return fs.createWriteStream(dest, options);
-}
-
-/**
- * is non-markdown file
- * @param path
- * @returns
- */
-export const isAsset = (path: any) => /.(js|css|scss|njk|ejs|png|jpe?g|gif|svg|webp|json|html|txt)$/.test(String(path));
-/**
- * is markdown file
- * @param path
- * @returns
- */
-export const isMarkdown = (path: any) => /.(md)$/i.test(String(path));
-
-/**
- * delete folder async
- * @param path
- * @returns
- */
-export function del(path: string) {
-  return new Bluebird((resolve) => {
-    const rmOpt: fs.RmOptions = { recursive: true, force: true };
-    if (fs.existsSync(path)) {
-      fs.rm(path, rmOpt).then(resolve).catch(resolve);
-      /*if (statSync(path).isDirectory()) {
-        rmdir(path, { maxRetries: 10 }).then(resolve).catch(resolve);
-      } else {
-        rm(path, rmOpt).then(resolve).catch(resolve);
-      }*/
-    } else {
-      resolve(new Error(path + ' not found'));
-    }
-  });
 }
