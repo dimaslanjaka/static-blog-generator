@@ -139,6 +139,7 @@ jobs:
       - run: gulp build-pack
         timeout-minutes: 10
         continue-on-error: true
+      - run: node packer.js
 
       - name: Git setup user email
         continue-on-error: true
