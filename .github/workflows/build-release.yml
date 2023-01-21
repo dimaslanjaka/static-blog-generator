@@ -8,21 +8,12 @@ name: Build Release
 on:
   push:
     branches: [ "master" ]
-    paths-ignore:
-      - '**/*.tgz'
-      - '**/*.gz'
-      - '**/release/**'
-      - '**garbage-collector**'
-      - '**/.github/**/**codeql**'
-      - '**/.github/**/**clean**'
+    paths:
+      - '**/src/**'
+      - '**/build-release.yml'
   pull_request:
     types:
       - closed
-    paths-ignore:
-      - '**/release/**'
-      - '**/*.tgz'
-      - '**/*.gz'
-      - '**/test*/**'
   workflow_dispatch:
 
 # run single job
