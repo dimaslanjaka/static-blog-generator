@@ -3,7 +3,7 @@ const packlist = require('npm-packlist');
 const tar = require('tar');
 const path = require('upath');
 const packageDir = path.join(__dirname, 'packages');
-const packageTarball = path.join(__dirname, 'release/static-blog-generator.tgz');
+const packageTarball = path.join(__dirname, 'release/static-blog-generator-bundle.tgz');
 
 const arborist = new Arborist({ path: packageDir });
 arborist.loadActual().then((tree) => {
