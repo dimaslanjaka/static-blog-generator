@@ -28,9 +28,17 @@ yargs
         type: `string`,
         describe: `copy ${rootColor}/${api.config.post_dir} to ${rootColor}/${api.config.source_dir}/_posts`
       });
+      yargs.positional(`standalone`, {
+        type: `string`,
+        describe: `run all *.standalone.js inside ${rootColor}/${api.config.post_dir}`
+      });
     },
     async ({ key }) => {
-      console.log(key);
+      if (key) {
+        console.log('running:', 'sbg post', key);
+      } else {
+        yargs.showHelp();
+      }
     }
   )
   .help('help')
