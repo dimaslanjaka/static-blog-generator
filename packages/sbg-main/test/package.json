@@ -1,3 +1,6 @@
 {
-  "name": "sbg-main-test"
+  "name": "sbg-main-test",
+  "devDependencies": {
+    "sbg-main": "file:../sbg-main-3.0.0.tgz"
+  }
 }
