@@ -121,7 +121,7 @@ jobs:
       - run: npm run update
       - run: npm install
       - run: npx lerna bootstrap
-      - run: npm update
+      #- run: npm update
 
       - run: npm install --workspaces
       - run: npm run build --workspaces
