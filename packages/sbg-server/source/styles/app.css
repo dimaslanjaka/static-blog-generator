@@ -1,10 +1,10 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import '../libs/fontawesome/css/all.css';
 @import 'flowbite';
-@import '../libs/codemirror/lib/codemirror.css';
-@import '../libs/codemirror/theme/monokai.css';
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/monokai.css';
+@import url("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/cb8d4c9a99c2950886ab182ddbf69149bce3ce02/fontawesome-pro/web/css/all.css");
 
 .mobile-menu {
   left: -200%;
