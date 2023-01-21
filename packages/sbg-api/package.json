@@ -49,7 +49,8 @@
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
     "sbg-utility": "*",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
-    "upath": "^2.0.1"
+    "upath": "^2.0.1",
+    "xmlbuilder2": "^3.0.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
