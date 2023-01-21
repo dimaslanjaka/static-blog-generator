@@ -52,12 +52,12 @@ gulp.task('clean', function (done) {
  * copy all <package>/dist to /dist/<package>/dist
  * @param {gulp.TaskFunctionCallback} done
  */
-function copyWorkspaceDist(done) {
+function copyWorkspaceDist(done: gulp.TaskFunctionCallback) {
   const dist = join(__dirname, 'dist');
   /**
    * @type {Record<string, boolean>}
    */
-  const streams = {};
+  const streams: Record<string, boolean> = {};
   Bluebird.all(Object.keys(packages)).map((p) => {
     const cwd = join(__dirname, p);
     const dest = join(dist, p);
@@ -92,7 +92,7 @@ function copyWorkspaceDist(done) {
  * npm run build --workspaces
  * @param {gulp.TaskFunctionCallback} done
  */
-function build(done) {
+function build(done: gulp.TaskFunctionCallback) {
   spawnAsync('npm', ['run', 'build', '--workspaces'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
 }
 
@@ -100,7 +100,7 @@ function build(done) {
  * fix eslint all src folder subpackages
  * @param {gulp.TaskFunctionCallback} done
  */
-function runEslint(done) {
+function runEslint(done: gulp.TaskFunctionCallback) {
   spawnAsync('eslint', ['packages/**/src/**/*.{ts,js,json}', '--fix'], { cwd: __dirname }).then(() => done());
 }
 
@@ -108,7 +108,7 @@ function runEslint(done) {
  * build dist package.json
  * @param {gulp.TaskFunctionCallback} done
  */
-async function buildPack(done) {
+async function buildPack(done: gulp.TaskFunctionCallback) {
   const pkgc = await import('./package.json');
 
   const dest = join(__dirname, 'dist');
