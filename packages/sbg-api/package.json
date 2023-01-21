@@ -44,7 +44,7 @@
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
-    "sbg-utility": "file:../sbg-utility",
+    "sbg-utility": "dimaslanjaka/static-blog-generator#master/packages/sbg-utility",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "upath": "^2.0.1"
   },
