@@ -11,6 +11,8 @@ on:
     paths:
       - '**/src/**'
       - '**/build-release.yml'
+      - '**/package-lock.json'
+      - '**/yarn.lock'
   pull_request:
     types:
       - closed
