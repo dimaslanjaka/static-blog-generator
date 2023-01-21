@@ -121,7 +121,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Global Packages
-        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna
+        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: npm run update
 
