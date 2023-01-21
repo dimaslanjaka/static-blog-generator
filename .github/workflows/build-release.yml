@@ -105,7 +105,7 @@ jobs:
       - name: Enable corepack
         run: corepack enable
 
-      - uses: actions/cache@v3
+      - uses: pat-s/always-upload-cache@v3.0.11 # actions/cache@v3
         id: cache
         with:
           path: |
