@@ -28,7 +28,12 @@ yargs_1.default
     });
 }, async ({ key }) => {
     if (key) {
-        console.log('running:', 'sbg post', key);
+        if (key === 'copy') {
+            await api.copy();
+        }
+        else if (key === 'standalone') {
+            await api.standalone();
+        }
     }
     else {
         yargs_1.default.showHelp();
