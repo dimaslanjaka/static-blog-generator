@@ -66,13 +66,12 @@ const options = {
 };
 
 depcheck(__dirname, options).then((unused) => {
-  fs.mkdirpSync(__dirname + '/tmp');
   let content = '';
   content += `install missing dependencies ${tripleTicks('bash')}${Object.keys(
     unused.missing
   ).join(' ')}${tripleTicks()}\n`;
   content += '```json\n' + JSON.stringify(unused, null, 2) + '\n```\n\n';
-  fs.writeFileSync(path.join(__dirname, 'tmp/unused.md'), content);
+  fs.writeFileSync(path.join(__dirname, 'unused.md'), content);
 });
 
 function tripleTicks(lang = '') {
