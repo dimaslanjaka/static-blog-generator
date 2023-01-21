@@ -117,6 +117,7 @@ jobs:
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: npm run update
+      - run: npm install
 
       - name: build sbg-utility
         run: npm install && npm run build
