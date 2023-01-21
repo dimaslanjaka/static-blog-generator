@@ -10,6 +10,8 @@ var nunjucks_1 = __importDefault(require("nunjucks"));
 function getAuthorName(obj) {
     if (!obj)
         return 'unknown';
+    if (typeof obj === 'string')
+        return obj;
     if (obj.name)
         return obj.name;
     if (obj.nick)

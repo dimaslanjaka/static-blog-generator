@@ -5,7 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var _config_1 = require("sbg-utility/dist/config/_config");
-var DEV_SITE_ROOT = 'D:/Repositories/static-blog-generator/packages/sbg-main/test';
+var upath_1 = __importDefault(require("upath"));
+var DEV_SITE_ROOT = upath_1.default.join(__dirname, '../../../test'); // 'D:/Repositories/static-blog-generator/test';
 // set default config
 var serverConfig = new _config_1.createConfig('sbg-server', {
     root: fs_extra_1.default.existsSync(DEV_SITE_ROOT) ? DEV_SITE_ROOT : process.cwd(),
