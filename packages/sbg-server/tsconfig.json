@@ -12,7 +12,7 @@
     "outDir": "./dist",
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
   },
-  "include": ["./src/**/*", "./src/**/*.json"],
+  "include": ["./src/**/*", "./src/**/*.json", "./*.js"],
   "exclude": ["./src/public/**/*"],
   "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-api" }]
 }
