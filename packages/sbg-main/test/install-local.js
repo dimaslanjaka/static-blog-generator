@@ -1,12 +1,19 @@
 const { spawn } = require('child_process');
 const path = require('path');
 const pkg = require('../package.json');
+const fs = require('fs');
 
 (async () => {
   console.info('build dist');
   await spawnParent(undefined, 'npm', 'run', 'build');
   console.info('build tarball');
   await spawnParent(undefined, 'npm', 'pack');
+  fs.writeFileSync(
+    __dirname + '/package.json',
+    JSON.stringify({
+      name: 'sbg-main-test'
+    })
+  );
   console.info('installing tarball');
   await spawnParent({ cwd: __dirname }, 'npm', 'install', '-D', `file:../${pkg.name}-${pkg.version}.tgz`);
 })();
