@@ -36,3 +36,16 @@
 [data-dismiss-target] {
   padding: 5px;
 }
+
+/* disable element */
+.disable {
+  /* Note: pointer-events not supported by IE10 and under */
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Disable scrolling on child elements */
+.disable div,
+.disable textarea {
+  overflow: hidden;
+}
