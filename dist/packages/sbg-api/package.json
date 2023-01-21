@@ -4,6 +4,7 @@
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": ["dist", "!**/*.tsbuildinfo"],
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update": "npm run update:postinstall && npx npm-check-updates -u && npm install && node postinstall.js",
