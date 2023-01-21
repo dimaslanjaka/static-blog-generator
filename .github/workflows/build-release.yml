@@ -108,6 +108,7 @@ jobs:
             ./dist
             ./packages/sbg-server/src/public
             **/tmp/**
+            **/node_modules/**
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -133,15 +134,10 @@ jobs:
         run: npm install && npm run build
         working-directory: ./packages/sbg-main
       - run: gulp build
-        timeout-minutes: 10
       - run: gulp build-copy
         timeout-minutes: 10
       - run: gulp install-dist
-        timeout-minutes: 30
       - run: gulp build-pack
-        timeout-minutes: 10
-        continue-on-error: true
-      - run: node packer.js
 
       - name: Git setup user email
         continue-on-error: true
