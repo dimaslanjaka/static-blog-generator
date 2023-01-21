@@ -10,6 +10,7 @@ temp
 /src/_config.auto*.json
 /docs
 /src-old
+unused.md
 
 # disable dist
 /packages/**/dist/
