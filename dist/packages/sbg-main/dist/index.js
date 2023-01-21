@@ -22,9 +22,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.utility = exports.server = exports.api = void 0;
 exports.api = __importStar(require("sbg-api"));
-exports.server = __importStar(require("sbg-server"));
+var sbg_server_1 = require("sbg-server");
+Object.defineProperty(exports, "server", { enumerable: true, get: function () { return __importDefault(sbg_server_1).default; } });
 exports.utility = __importStar(require("sbg-utility"));
+//
 //# sourceMappingURL=index.js.map
