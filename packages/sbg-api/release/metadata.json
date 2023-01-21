@@ -1,0 +1,20 @@
+{
+  "/release/sbg-api-3.0.0.tgz": {
+    "integrity": {
+      "sha1": "9a6c775c88ef293c329f239a058ce39759cdf6d3",
+      "sha256": "IlmelynoLvfWBxz0V5BBflF0ZBrV483OrvcbEY7aUP8=",
+      "md5": "5ad713d26eb677328025ba5e9ea858fa",
+      "sha512": "ETVrbEI8yPUknVeetodeQ76kb7I+KZO4Ft+okzJQfyWg9zYB/8V6LDkHai+nYQ8U6dg7pn9HGcuS066buUWO8w=="
+    },
+    "size": "35.54 KB"
+  },
+  "/release/sbg-api.tgz": {
+    "integrity": {
+      "sha1": "9a6c775c88ef293c329f239a058ce39759cdf6d3",
+      "sha256": "IlmelynoLvfWBxz0V5BBflF0ZBrV483OrvcbEY7aUP8=",
+      "md5": "5ad713d26eb677328025ba5e9ea858fa",
+      "sha512": "ETVrbEI8yPUknVeetodeQ76kb7I+KZO4Ft+okzJQfyWg9zYB/8V6LDkHai+nYQ8U6dg7pn9HGcuS066buUWO8w=="
+    },
+    "size": "35.54 KB"
+  }
+}
