@@ -120,11 +120,12 @@ jobs:
 
       - run: npm run update
       - run: npm install
+      - run: npx lerna bootstrap
 
       - run: npm install --workspaces
       - run: npm run build --workspaces
       - run: gulp clean
-      - run: gulp build
+      - run: npx lerna run build
       - run: gulp build-copy
         timeout-minutes: 10
       - run: gulp install-dist
