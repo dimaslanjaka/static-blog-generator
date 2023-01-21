@@ -143,7 +143,7 @@ jobs:
       - run: gulp build-copy
         timeout-minutes: 10
       - run: gulp install-dist
-      - run: gulp build-pack
+      #- run: gulp build-pack
 
       - name: Git setup user email
         continue-on-error: true
