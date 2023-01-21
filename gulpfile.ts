@@ -12,15 +12,40 @@ const packages = {
   'packages/sbg-utility': false,
   'packages/sbg-api': false,
   'packages/sbg-server': false,
-  'packages/sbg-main': false
+  'packages/sbg-main': false,
+  'packages/safelinkify': false,
+  'packages/hexo-post-parser': false,
+  'packages/git-command-helper': false
 };
+
+gulp.task('pre-install-dist', function (done) {
+  const list = Object.keys(packages);
+  const listDistPath = list.map((p) => {
+    return {
+      absolutePath: join(__dirname, 'dist', p),
+      packagejson: join(__dirname, 'dist', p, 'package.json'),
+      parsedPackageJson: JSON.parse(
+        fs.readFileSync(join(__dirname, 'dist', p, 'package.json'), 'utf-8')
+      ) as typeof import('./package.json')
+    };
+  });
+  for (let i = 0; i < listDistPath.length; i++) {
+    const lib = listDistPath[i];
+    const filterLocalPkg = Object.keys(lib.parsedPackageJson.dependencies).filter(
+      (str) =>
+        str.startsWith('sbg') || ['git-command-helper', 'safelinkify', 'hexo-post-parser'].some((pkg) => str === pkg)
+    );
+    console.log(filterLocalPkg);
+  }
+  done();
+});
 
 gulp.task('install-dist', function (done) {
   Bluebird.all(Object.keys(packages))
     .each((pkg) => {
       const pkgPath = resolvePath(__dirname, 'dist', pkg);
       console.log('installing', pkgPath);
-      return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
+      return spawnAsync('npm', ['run', 'update'], { cwd: pkgPath, stdio: 'inherit' });
     })
     .then(() => {
       const pkgPath = resolvePath(__dirname, 'dist');
@@ -75,7 +100,7 @@ function copyWorkspaceDist(done: gulp.TaskFunctionCallback) {
       .once('end', () => {
         streams[p] = true;
         console.log('copying', p, 'end');
-        if (Object.values(streams).length === 4) {
+        if (Object.values(streams).length === Object.keys(packages).length) {
           if (Object.values(streams).every((value) => value === true)) done();
         } else {
           //
