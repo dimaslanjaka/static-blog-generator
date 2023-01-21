@@ -1,0 +1,35 @@
+import fs from 'fs-extra';
+import path from 'upath';
+
+interface readDirDone {
+  (err: Error, results?: string[]): any;
+}
+
+const readDir = function (dir: fs.PathLike, done: readDirDone) {
+  let results = [];
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err);
+    let i = 0;
+    (function next() {
+      let file = list[i++];
+      if (!file) return done(null, results);
+      file = path.resolve(dir, file);
+      fs.stat(file, function (err, stat) {
+        if (!err && stat && stat.isDirectory()) {
+          readDir(file, function (err, res) {
+            if (!err) results = results.concat(res);
+            next();
+          });
+        } else {
+          results.push(file);
+          next();
+        }
+      });
+    })();
+  });
+};
+
+readDir(path.join(__dirname, '../..'), function (err, results) {
+  if (err) throw err;
+  console.log(results);
+});

@@ -6,7 +6,7 @@ import * as hexoPostParser from 'hexo-post-parser';
 import { join } from 'path';
 import yaml from 'yaml';
 import * as utils from '../utils';
-import { writefile } from '../utils/fm';
+import { writefile } from '../utils/filemanager';
 import * as defaults from './defaults';
 
 export interface ProjConf extends Hexo.Config {

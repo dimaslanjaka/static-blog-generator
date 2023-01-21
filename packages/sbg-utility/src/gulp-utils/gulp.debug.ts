@@ -2,7 +2,7 @@ import ansiColors from 'ansi-colors';
 import { EOL } from 'os';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
-import { writefile } from '../utils/fm';
+import { writefile } from '../utils/filemanager';
 import { data_to_hash_sync } from '../utils/hash';
 import Logger from '../utils/logger';
 import scheduler from '../utils/scheduler';

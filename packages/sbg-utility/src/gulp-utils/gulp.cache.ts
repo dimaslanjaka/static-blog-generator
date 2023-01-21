@@ -8,7 +8,7 @@ import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import * as projectConfig from '../config';
-import { writefile } from '../utils/fm';
+import { writefile } from '../utils/filemanager';
 import { data_to_hash_sync } from '../utils/hash';
 import scheduler from '../utils/scheduler';
 
