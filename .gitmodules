@@ -1,5 +1,5 @@
 [submodule "test"]
-	path = dist/test
+	path = test
 	url = https://github.com/dimaslanjaka/site.git
 	branch = static-blog-generator
 [submodule "dist"]
