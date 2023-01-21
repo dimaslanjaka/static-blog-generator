@@ -60,7 +60,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
-    "@babel/standalone": "^7.20.12",
+    "@babel/standalone": "^7.20.13",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
     "@types/debug": "^4.1.7",
