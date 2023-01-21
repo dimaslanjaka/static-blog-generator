@@ -1,8 +1,5 @@
-const { join } = require('path');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const fs = require('fs-extra');
-
-checkPacked(__dirname, join(__dirname, 'tmp/packed.txt'));
 
 /**
  * dump list files from `npm pack`

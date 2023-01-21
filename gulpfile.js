@@ -6,6 +6,7 @@ const Bluebird = require('bluebird');
 const { checkPacked } = require('./check-packed.js');
 
 gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
+gulp.task('check-root', () => checkPacked(__dirname + '/dist'), join(__dirname, 'tmp/packed.txt'));
 
 const packages = {
   'packages/sbg-utility': false,
@@ -34,13 +35,15 @@ gulp.task('clean', function (done) {
   Bluebird.all(Object.keys(packages))
     .each((pkg) => {
       const source_dist = resolvePath(join(__dirname, pkg, 'dist'));
-      const production_dist = resolvePath(join(__dirname, 'dist', pkg.split('/')[1]));
+      const source_tmp = resolvePath(join(__dirname, pkg, 'tmp'));
+      const production_dist = resolvePath(join(__dirname, 'dist', pkg));
       console.log(
         'emptying',
         source_dist.replace(toUnix(__dirname), ''),
+        source_tmp.replace(toUnix(__dirname), ''),
         production_dist.replace(toUnix(__dirname), '')
       );
-      return Bluebird.all([fs.emptyDir(source_dist), fs.emptyDir(production_dist)]);
+      return Bluebird.all([fs.emptyDir(source_dist), fs.emptyDir(production_dist), fs.emptyDir(source_tmp)]);
     })
     .then(() => done());
 });
