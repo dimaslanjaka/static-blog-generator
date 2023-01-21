@@ -43,7 +43,8 @@
     "lint": "npx eslint --fix src/**/*.{ts,js,json}",
     "test": "jest --env node --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "gulp clean && npm run clean --workspaces"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",

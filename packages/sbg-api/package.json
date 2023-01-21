@@ -14,7 +14,7 @@
     "test": "jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp build",
-    "prep": "cd ../sbg-utility && npm install && npm run build"
+    "clean": "rm -rf dist tmp"
   },
   "repository": {
     "type": "git",
