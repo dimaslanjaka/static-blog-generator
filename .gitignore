@@ -1,0 +1,5 @@
+readme.md
+LICENSE
+**/tmp/**
+**/node_modules/**
+*.tgz
