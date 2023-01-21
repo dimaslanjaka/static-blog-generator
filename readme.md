@@ -14,3 +14,4 @@ Features:
 - Finding broken images
 - Finding broken links
 - External link anonymizer using [safelinkify](https://www.npmjs.com/package/safelinkify)
+- YoastSEO Sitemap
