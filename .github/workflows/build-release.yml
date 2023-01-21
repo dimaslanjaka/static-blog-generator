@@ -45,7 +45,7 @@ jobs:
         with:
           repository: dimaslanjaka/static-blog-generator
           ref: master
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           submodules: 'recursive'
       - uses: actions/checkout@v3
         name: checkout dist
@@ -53,14 +53,14 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: release
           path: dist
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
       - uses: actions/checkout@v3
         name: checkout test
         with:
           repository: dimaslanjaka/site
           ref: static-blog-generator
           path: test
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
       - name: Set env
         id: set-env
         shell: bash
