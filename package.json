@@ -17,7 +17,12 @@
     "!test",
     "!**/test/**"
   ],
-  "scripts": {},
+  "scripts": {
+    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
+    "update:ncu": "npx npm-check-updates -u -x chalk",
+    "update": "run-s update:**",
+    "postupdate": "node postinstall.js"
+  },
   "author": {
     "name": "Dimas Lanjaka",
     "email": "dimaslanjaka@gmail.com",
@@ -25,12 +30,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "sbg-utility": "file:packages/sbg-utility",
     "sbg-api": "file:packages/sbg-api",
+    "sbg-main": "file:packages/sbg-main",
     "sbg-server": "file:packages/sbg-server",
-    "sbg-main": "file:packages/sbg-main"
+    "sbg-utility": "file:packages/sbg-utility"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
