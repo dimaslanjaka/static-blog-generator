@@ -13,6 +13,7 @@ temp
 
 # disable dist
 /packages/**/dist/
+/*.tgz
 # /dist
 # /release
 
