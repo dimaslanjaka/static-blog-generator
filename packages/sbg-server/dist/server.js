@@ -33,7 +33,7 @@ var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var apis = __importStar(require("sbg-api"));
-var debug_1 = require("sbg-utility/dist/utils/debug");
+var sbg_utility_1 = require("sbg-utility");
 var serve_favicon_1 = __importDefault(require("serve-favicon"));
 var upath_1 = __importDefault(require("upath"));
 var config_1 = __importDefault(require("./config"));
@@ -143,9 +143,9 @@ var SBGServer = /** @class */ (function () {
             console.log('Listening on http://localhost:' + _this.config.port);
         });
         process.on('SIGTERM', function () {
-            (0, debug_1.sbgDebug)()('SIGTERM signal received: closing HTTP server');
+            (0, sbg_utility_1.sbgDebug)()('SIGTERM signal received: closing HTTP server');
             server.close(function () {
-                (0, debug_1.sbgDebug)()('HTTP server closed');
+                (0, sbg_utility_1.sbgDebug)()('HTTP server closed');
             });
         });
     };

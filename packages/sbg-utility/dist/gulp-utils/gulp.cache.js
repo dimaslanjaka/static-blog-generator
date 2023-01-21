@@ -35,7 +35,7 @@ var persistent_cache_1 = require("persistent-cache");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var projectConfig = __importStar(require("../config"));
-var fm_1 = require("../utils/fm");
+var filemanager_1 = require("../utils/filemanager");
 var hash_1 = require("../utils/hash");
 var scheduler_1 = __importDefault(require("../utils/scheduler"));
 var getConfig = projectConfig.getConfig;
@@ -124,7 +124,7 @@ function gulpCached(options) {
         };
         // dump
         var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cached', "".concat(caller, ".log"));
-        (0, fm_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isChanged(), " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') + os_1.EOL, {
+        (0, filemanager_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isChanged(), " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') + os_1.EOL, {
             append: true
         });
         scheduler_1.default.add("".concat(logname, " dump ").concat(ansi_colors_1.default.cyan(caller), " pid ").concat(ansi_colors_1.default.yellow(String(pid))), function () {

@@ -44,7 +44,7 @@ var express_1 = __importDefault(require("express"));
 var hexo_post_parser_1 = require("hexo-post-parser");
 var dateMapper_1 = require("hexo-post-parser/dist/dateMapper");
 var post_1 = require("sbg-api/dist/post");
-var fm_1 = require("sbg-utility/dist/utils/fm");
+var sbg_utility_1 = require("sbg-utility");
 var serve_index_1 = __importDefault(require("serve-index"));
 var upath_1 = __importDefault(require("upath"));
 var yaml_1 = __importDefault(require("yaml"));
@@ -138,7 +138,7 @@ function routePost(api) {
             [
                 upath_1.default.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
                 findPost.full_source
-            ].forEach(function (f) { return (0, fm_1.writefile)(f, build); });
+            ].forEach(function (f) { return (0, sbg_utility_1.writefile)(f, build); });
             res.json({ error: false, message: postid + ' saved successfully' });
         }
         else {

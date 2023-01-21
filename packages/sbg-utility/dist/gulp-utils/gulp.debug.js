@@ -8,7 +8,7 @@ var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var os_1 = require("os");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
-var fm_1 = require("../utils/fm");
+var filemanager_1 = require("../utils/filemanager");
 var hash_1 = require("../utils/hash");
 var logger_1 = __importDefault(require("../utils/logger"));
 var scheduler_1 = __importDefault(require("../utils/scheduler"));
@@ -21,7 +21,7 @@ function gulpDebug(filename) {
         // Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
         // dump
         var dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-debug', filename || "".concat(caller, "-").concat(pid, ".log"));
-        (0, fm_1.writefile)(dumpfile, "".concat((0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))) + os_1.EOL, {
+        (0, filemanager_1.writefile)(dumpfile, "".concat((0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))) + os_1.EOL, {
             append: true
         });
         scheduler_1.default.add("".concat(logname, " dump ").concat(ansi_colors_1.default.cyan(caller), " pid ").concat(ansi_colors_1.default.yellow(String(pid))), function () {

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var os_1 = __importDefault(require("os"));
 var path_1 = __importDefault(require("path"));
-var fm_1 = require("./fm");
+var filemanager_1 = require("./filemanager");
 var scheduler_1 = __importDefault(require("./scheduler"));
 var locks = [];
 var LockManager = /** @class */ (function () {
@@ -16,7 +16,7 @@ var LockManager = /** @class */ (function () {
         locks.push(this);
     }
     LockManager.prototype.lock = function () {
-        return (0, fm_1.writefile)(this.file, '');
+        return (0, filemanager_1.writefile)(this.file, '');
     };
     LockManager.prototype.release = function () {
         console.log(path_1.default.dirname(this.file), 'released');

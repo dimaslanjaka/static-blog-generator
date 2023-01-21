@@ -1,0 +1,25 @@
+/// <reference types="node" />
+import fs from 'fs-extra';
+export * from './del';
+export * from './emptyDir';
+export * from './readDir';
+export * from './writefile';
+/**
+ * create writestream (auto create dirname)
+ * @param dest
+ * @param options
+ * @returns
+ */
+export declare function createWriteStream(dest: string, options?: Parameters<(typeof fs)['createWriteStream']>[1]): fs.WriteStream;
+/**
+ * is non-markdown file
+ * @param path
+ * @returns
+ */
+export declare const isAsset: (path: any) => boolean;
+/**
+ * is markdown file
+ * @param path
+ * @returns
+ */
+export declare const isMarkdown: (path: any) => boolean;

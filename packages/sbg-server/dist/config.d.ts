@@ -1,4 +1,4 @@
-import { createConfig } from 'sbg-utility/dist/config/_config';
+import { createConfig } from 'sbg-utility';
 declare const serverConfig: createConfig<{
     root: string;
     port: number;

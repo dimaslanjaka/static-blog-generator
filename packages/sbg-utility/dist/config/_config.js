@@ -74,7 +74,7 @@ var hexoPostParser = __importStar(require("hexo-post-parser"));
 var path_1 = require("path");
 var yaml_1 = __importDefault(require("yaml"));
 var utils = __importStar(require("../utils"));
-var fm_1 = require("../utils/fm");
+var filemanager_1 = require("../utils/filemanager");
 var defaults = __importStar(require("./defaults"));
 var settledConfig = defaults.getDefaultConfig();
 function fetchConfig(fileYML) {
@@ -184,7 +184,7 @@ var createConfig = /** @class */ (function (_super) {
     createConfig.prototype.update = function (value) {
         configWrapper[this.cname] = Object.assign(configWrapper[this.cname], value);
         if ((fs_extra_1.default.access(configWrapperFile), fs_extra_1.default.constants.W_OK)) {
-            (0, fm_1.writefile)(configWrapperFile, JSON.stringify(configWrapper, null, 2));
+            (0, filemanager_1.writefile)(configWrapperFile, JSON.stringify(configWrapper, null, 2));
             this.emit('update');
         }
     };

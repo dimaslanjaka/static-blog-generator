@@ -4,7 +4,10 @@
   "description": "static-blog-generator utility",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "!**/*.tsbuildinfo"],
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update": "npm run update:postinstall && npx npm-check-updates -u && npm install && node postinstall.js",
@@ -39,6 +42,7 @@
     "hexo": "^6.3.0",
     "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/master/release/hexo-post-parser.tgz",
     "hexo-util": "^3.0.1",
+    "minimatch": "^6.1.5",
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
     "slugify": "^1.6.5",
