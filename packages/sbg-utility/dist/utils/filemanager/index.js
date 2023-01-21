@@ -23,6 +23,7 @@ var fs_extra_1 = __importDefault(require("fs-extra"));
 var upath_1 = __importDefault(require("upath"));
 __exportStar(require("./del"), exports);
 __exportStar(require("./emptyDir"), exports);
+__exportStar(require("./normalizePath"), exports);
 __exportStar(require("./readDir"), exports);
 __exportStar(require("./writefile"), exports);
 /**

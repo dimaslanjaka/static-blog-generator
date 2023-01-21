@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 export * from './del';
 export * from './emptyDir';
+export * from './normalizePath';
 export * from './readDir';
 export * from './writefile';
 /**

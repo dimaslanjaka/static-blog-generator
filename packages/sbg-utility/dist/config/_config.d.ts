@@ -1,5 +1,3 @@
-/// <reference types="node" />
-import EventEmitter from 'events';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
 import * as defaults from './defaults';
@@ -81,25 +79,3 @@ export declare const commonIgnore: string[];
  * array of config.exclude, config.ignore
  */
 export declare const projectIgnores: string[];
-interface createConfigEvents {
-    add: (obj: Record<string, any>) => void;
-    delete: (changedCount: number) => void;
-    update: () => void;
-}
-export declare interface createConfig<T extends Record<string, any>> {
-    on<U extends keyof createConfigEvents>(event: U, listener: createConfigEvents[U]): this;
-    emit<U extends keyof createConfigEvents>(event: U, ...args: Parameters<createConfigEvents[U]>): boolean;
-    get<U extends Record<string, any>>(): T & U;
-}
-/**
- * Create/Update config wrapper
- * @param name
- * @param value
- * @returns
- */
-export declare class createConfig<T extends Record<string, any>> extends EventEmitter {
-    cname: string;
-    constructor(name: string, value: Record<string, any>);
-    update(value: Record<string, any>): void;
-}
-export {};

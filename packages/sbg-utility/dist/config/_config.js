@@ -1,19 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -66,15 +51,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createConfig = exports.projectIgnores = exports.commonIgnore = exports.deployConfig = exports.getConfig = exports.setConfig = exports.fetchConfig = void 0;
-var events_1 = __importDefault(require("events"));
+exports.projectIgnores = exports.commonIgnore = exports.deployConfig = exports.getConfig = exports.setConfig = exports.fetchConfig = void 0;
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var git_command_helper_1 = __importDefault(require("git-command-helper"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
-var path_1 = require("path");
+var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
 var utils = __importStar(require("../utils"));
-var filemanager_1 = require("../utils/filemanager");
 var defaults = __importStar(require("./defaults"));
 var settledConfig = defaults.getDefaultConfig();
 function fetchConfig(fileYML) {
@@ -83,12 +66,12 @@ function fetchConfig(fileYML) {
     if (fs_extra_1.default.existsSync(fileYML)) {
         var configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync(fileYML, 'utf-8'));
         setConfig(utils.object.orderKeys(configYML));
-        utils.filemanager.writefile((0, path_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+        utils.filemanager.writefile((0, upath_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
     }
 }
 exports.fetchConfig = fetchConfig;
 // fetch _config.yml first init
-fetchConfig((0, path_1.join)(process.cwd(), '_config.yml'));
+fetchConfig((0, upath_1.join)(process.cwd(), '_config.yml'));
 /**
  * Config setter
  * * useful for jest
@@ -114,7 +97,7 @@ function getConfig() {
 exports.getConfig = getConfig;
 function deployConfig() {
     var _a;
-    var deployDir = (0, path_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+    var deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
     var github = fs_extra_1.default.existsSync(deployDir) ? new git_command_helper_1.default(deployDir) : { submodule: [] };
     return { deployDir: deployDir, github: github };
 }
@@ -151,44 +134,4 @@ exports.commonIgnore = [
  * array of config.exclude, config.ignore
  */
 exports.projectIgnores = __spreadArray(__spreadArray([], __read((getConfig().skip_render || [])), false), __read((getConfig().ignore || [])), false);
-var configWrapperFile = (0, path_1.join)(__dirname, '_config_wrapper.json');
-var configWrapper = fs_extra_1.default.existsSync(fs_extra_1.default.readFileSync(configWrapperFile, 'utf-8'))
-    ? JSON.parse(configWrapperFile)
-    : {};
-/**
- * Create/Update config wrapper
- * @param name
- * @param value
- * @returns
- */
-var createConfig = /** @class */ (function (_super) {
-    __extends(createConfig, _super);
-    function createConfig(name, value) {
-        var _this = _super.call(this) || this;
-        // assign config name
-        _this.cname = name;
-        // add config
-        if (!configWrapper[name]) {
-            configWrapper[name] = value;
-            _this.emit('add', value);
-        }
-        else {
-            // update config
-            _this.update(value);
-        }
-        return _this;
-    }
-    createConfig.prototype.get = function () {
-        return configWrapper[this.cname];
-    };
-    createConfig.prototype.update = function (value) {
-        configWrapper[this.cname] = Object.assign(configWrapper[this.cname], value);
-        if ((fs_extra_1.default.access(configWrapperFile), fs_extra_1.default.constants.W_OK)) {
-            (0, filemanager_1.writefile)(configWrapperFile, JSON.stringify(configWrapper, null, 2));
-            this.emit('update');
-        }
-    };
-    return createConfig;
-}(events_1.default));
-exports.createConfig = createConfig;
 //# sourceMappingURL=_config.js.map
