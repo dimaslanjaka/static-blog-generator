@@ -4,7 +4,7 @@ import { EOL } from 'os';
 import slugify from 'slugify';
 import { basename, join, toUnix } from 'upath';
 import * as configs from '../config';
-import { writefile } from './fm';
+import { writefile } from './filemanager';
 import { areWeTestingWithJest } from './jest';
 
 const getConfig = configs.getConfig;
