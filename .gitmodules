@@ -1,4 +1,8 @@
-[submodule "dist/test"]
+[submodule "test"]
 	path = dist/test
 	url = https://github.com/dimaslanjaka/site.git
 	branch = static-blog-generator
+[submodule "dist"]
+	path = dist
+	url = https://github.com/dimaslanjaka/static-blog-generator.git
+	branch = release
