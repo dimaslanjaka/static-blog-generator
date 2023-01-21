@@ -5,9 +5,9 @@ const fs = require('fs-extra');
  * dump list files from `npm pack`
  * @see {@link https://www.webmanajemen.com/NodeJS/snippet/get-list-files-from-npm-pack.html}
  * @param {string} cwd
- * @param {string} output output result to file
+ * @param {string|null|undefined} output output result to file
  */
-async function checkPacked(cwd, output) {
+async function checkPacked(cwd, output = null) {
   const result = await spawnAsync('npm', ['pack', '--json', '--dry-run'], { cwd });
   const parse = JSON.parse(result.stdout)[0];
   const { files } = parse;
