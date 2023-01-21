@@ -17,7 +17,8 @@
     "build": "npm run terser && npm run tw && npm run purge && npx gulp build",
     "terser": "npx gulp compile:js",
     "tw": "npx gulp compile:tailwind",
-    "purge": "purgecss -c purgecss.config.js -o ./src/public/css"
+    "purge": "purgecss -c purgecss.config.js -o ./src/public/css",
+    "clean": "rm -rf dist tmp src/public"
   },
   "repository": {
     "type": "git",
