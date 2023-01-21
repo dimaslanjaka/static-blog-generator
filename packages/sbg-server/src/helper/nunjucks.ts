@@ -5,6 +5,7 @@ import nunjucks, { Environment } from 'nunjucks';
 
 export function getAuthorName(obj: postAuthor) {
   if (!obj) return 'unknown';
+  if (typeof obj === 'string') return obj;
   if (obj.name) return obj.name;
   if (obj.nick) return obj.nick;
   if (obj.nickname) return obj.nickname;
