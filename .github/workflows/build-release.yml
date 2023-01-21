@@ -151,6 +151,16 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      
+      - name: commit and push ./dist
+        continue-on-error: true
+        working-directory: ./dist
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          git push
       - run: git add release
         continue-on-error: true
       - run: git add dist
@@ -162,13 +172,6 @@ jobs:
       - run: git pull -X theirs
         name: Pull before push
         continue-on-error: true
-      - name: commit and push release
-        continue-on-error: true
-        working-directory: ./dist
-        run: |
-          git add .
-          git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push
       - name: commit and push
         continue-on-error: true
         run: |
