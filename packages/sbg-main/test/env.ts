@@ -1,3 +1,3 @@
-import { toUnix } from 'upath';
+import { join, resolve } from 'upath';
 
-export const testCwd = toUnix(__dirname);
+export const testCwd = resolve(join(__dirname, '/../../../test'));
