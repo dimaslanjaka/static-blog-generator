@@ -17,6 +17,6 @@
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["./packages/sbg-*/*", "./packages/sbg-*/*.json", "*.js"],
+  "include": ["./packages/sbg-*/*", "./packages/sbg-*/*.json", "*.js", "gulpfile.ts"],
   "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**", "**/fontawesome/**"]
 }

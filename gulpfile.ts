@@ -1,12 +1,12 @@
-const fs = require('fs-extra');
-const { spawnAsync } = require('git-command-helper/dist/spawn');
-const gulp = require('gulp');
-const { join, toUnix, resolve: resolvePath } = require('upath');
-const Bluebird = require('bluebird');
-const { checkPacked } = require('./check-packed.js');
+import Bluebird from 'bluebird';
+import fs from 'fs-extra';
+import { spawnAsync } from 'git-command-helper/dist/spawn';
+import gulp from 'gulp';
+import { join, resolve as resolvePath, toUnix } from 'upath';
+import { checkPacked } from './check-packed.js';
 
 gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
-gulp.task('check-root', () => checkPacked(__dirname + '/dist'), join(__dirname, 'tmp/packed.txt'));
+gulp.task('check-root', () => checkPacked(__dirname + '/dist', join(__dirname, 'tmp/packed.txt')));
 
 const packages = {
   'packages/sbg-utility': false,
@@ -108,26 +108,25 @@ function runEslint(done) {
  * build dist package.json
  * @param {gulp.TaskFunctionCallback} done
  */
-function buildPack(done) {
-  const pkgc = require('./package.json');
+async function buildPack(done) {
+  const pkgc = await import('./package.json');
 
   const dest = join(__dirname, 'dist');
 
-  spawnAsync('npm', ['pack'], {
+  await spawnAsync('npm', ['pack'], {
     cwd: dest,
     stdio: 'inherit'
-  }).then(() => {
-    // copy files
-    fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
-    fs.copyFileSync(join(__dirname, 'LICENSE'), join(dest, 'LICENSE'));
-    // packing to release
-    const packageName = pkgc.name;
-    const filepack = `${packageName}-${pkgc.version}.tgz`;
-    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
-    fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${packageName}.tgz`));
-    fs.rmSync(join(dest, filepack));
-    done();
   });
+  // copy files
+  fs.copyFileSync(join(__dirname, 'readme.md'), join(dest, 'readme.md'));
+  fs.copyFileSync(join(__dirname, 'LICENSE'), join(dest, 'LICENSE'));
+  // packing to release
+  const packageName = pkgc.name;
+  const filepack = `${packageName}-${pkgc.version}.tgz`;
+  fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', filepack));
+  fs.copyFileSync(join(dest, filepack), join(__dirname, 'release', `${packageName}.tgz`));
+  fs.rmSync(join(dest, filepack));
+  done();
 }
 
 gulp.task('lint', runEslint);
