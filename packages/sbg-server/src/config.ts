@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
-import { createConfig } from 'sbg-utility/dist/config/_config';
-import SBGServer from './server';
+import { createConfig } from 'sbg-utility';
 import path from 'upath';
+import SBGServer from './server';
 
 const DEV_SITE_ROOT = path.join(__dirname, '../../../test'); // 'D:/Repositories/static-blog-generator/test';
 
