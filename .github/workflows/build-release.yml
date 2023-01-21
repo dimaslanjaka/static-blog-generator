@@ -94,13 +94,6 @@ jobs:
           git config core.autocrlf input
           git checkout-index --force --all
 
-      - name: Pull & update submodules recursively
-        continue-on-error: true
-        run: |
-          git submodule update --init --recursive
-          git submodule update --recursive --remote
-          git pull -X theirs
-
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
