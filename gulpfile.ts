@@ -25,7 +25,7 @@ gulp.task('install-dist', function (done) {
     .then(() => {
       const pkgPath = resolvePath(__dirname, 'dist');
       console.log('installing', pkgPath);
-      return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
+      return spawnAsync('npm', ['run', 'update'], { cwd: pkgPath, stdio: 'inherit' });
     })
     .then(() => done());
 });
