@@ -34,6 +34,8 @@ jobs:
   build:
     strategy:
       fail-fast: true
+    env:
+      NODE_OPTIONS: "--max-old-space-size=8192"
 
     runs-on: ubuntu-latest
 
