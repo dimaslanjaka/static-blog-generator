@@ -132,6 +132,7 @@ jobs:
       - name: build sbg-main
         run: npm install && npm run build
         working-directory: ./packages/sbg-main
+      - run: gulp clean
       - run: gulp build
       - run: gulp build-copy
         timeout-minutes: 10
