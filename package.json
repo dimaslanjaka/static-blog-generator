@@ -13,6 +13,7 @@
     "packages/sbg-*/package.json",
     "LICENSE",
     "*.json",
+    "!/dist",
     "!**/node_modules/**",
     "!packages/**/node_modules/**",
     "!**/tmp/**",
