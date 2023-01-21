@@ -1,12 +1,10 @@
-import EventEmitter from 'events';
 import fs from 'fs-extra';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
 import * as hexoPostParser from 'hexo-post-parser';
-import { join } from 'path';
+import { join } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
-import { writefile } from '../utils/filemanager';
 import * as defaults from './defaults';
 
 export interface ProjConf extends Hexo.Config {
@@ -141,52 +139,3 @@ export const commonIgnore = [
  * array of config.exclude, config.ignore
  */
 export const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
-
-const configWrapperFile = join(__dirname, '_config_wrapper.json');
-const configWrapper: Record<string, any> = fs.existsSync(fs.readFileSync(configWrapperFile, 'utf-8'))
-  ? JSON.parse(configWrapperFile)
-  : {};
-
-interface createConfigEvents {
-  add: (obj: Record<string, any>) => void;
-  delete: (changedCount: number) => void;
-  update: () => void;
-}
-export declare interface createConfig<T extends Record<string, any>> {
-  on<U extends keyof createConfigEvents>(event: U, listener: createConfigEvents[U]): this;
-  emit<U extends keyof createConfigEvents>(event: U, ...args: Parameters<createConfigEvents[U]>): boolean;
-  get<U extends Record<string, any>>(): T & U;
-}
-
-/**
- * Create/Update config wrapper
- * @param name
- * @param value
- * @returns
- */
-export class createConfig<T extends Record<string, any>> extends EventEmitter {
-  cname: string;
-  constructor(name: string, value: Record<string, any>) {
-    super();
-    // assign config name
-    this.cname = name;
-    // add config
-    if (!configWrapper[name]) {
-      configWrapper[name] = value;
-      this.emit('add', value);
-    } else {
-      // update config
-      this.update(value);
-    }
-  }
-  get<U extends Record<string, any>>() {
-    return configWrapper[this.cname] as T & U;
-  }
-  update(value: Record<string, any>) {
-    configWrapper[this.cname] = Object.assign(configWrapper[this.cname], value);
-    if ((fs.access(configWrapperFile), fs.constants.W_OK)) {
-      writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
-      this.emit('update');
-    }
-  }
-}
