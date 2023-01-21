@@ -6,7 +6,7 @@ import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
-import { sbgDebug } from 'sbg-utility/dist/utils/debug';
+import { sbgDebug } from 'sbg-utility';
 import favicon from 'serve-favicon';
 import path from 'upath';
 import serverConfig from './config';
