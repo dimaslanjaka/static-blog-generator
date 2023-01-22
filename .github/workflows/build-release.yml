@@ -130,7 +130,7 @@ jobs:
           npm install
         if: steps.install.outcome != 'success'
         shell: bash
-      - run: npx lerna bootstrap
+      - run: npx lerna bootstrap --no-ci
 
       #- run: npm install --workspaces
       #- run: npm run build --workspaces
