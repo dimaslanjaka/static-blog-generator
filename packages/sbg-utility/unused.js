@@ -55,7 +55,7 @@ const options = {
   package: {
     // may specify dependencies instead of parsing package.json
     dependencies: {
-      lodash: '^4.17.15'
+      // lodash: '^4.17.15'
     },
     devDependencies: {
       eslint: '^6.6.0'
@@ -67,9 +67,9 @@ const options = {
 
 depcheck(__dirname, options).then((unused) => {
   let content = '';
-  content += `install missing dependencies ${tripleTicks('bash')}${Object.keys(
-    unused.missing
-  ).join(' ')}${tripleTicks()}\n`;
+  content += `install missing dependencies ${tripleTicks('bash')}${Object.keys(unused.missing).join(
+    ' '
+  )}${tripleTicks()}\n`;
   content += '```json\n' + JSON.stringify(unused, null, 2) + '\n```\n\n';
   fs.writeFileSync(path.join(__dirname, 'unused.md'), content);
 });
