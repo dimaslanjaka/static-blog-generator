@@ -62,6 +62,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
     "gulp": "^4.0.2",
     "hpagent": "^1.2.0",
     "html-minifier-terser": "^7.1.0",
