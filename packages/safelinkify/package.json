@@ -16,8 +16,8 @@
     "pack": "node packer.js",
     "docs": "node docs.js && webpack",
     "dev": "nodemon",
-    "preupdate": "curl -L https://github.com/microsoft/TypeScript/raw/main/lib/lib.dom.d.ts > src/lib/lib.dom.ts && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-server.js > typedoc-server.js",
-    "update": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/.github/workflows/build-release.yml > .github/workflows/build-release.yml && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && npx npm-check-updates -u -x chalk,hexo && node postinstall.js"
+    "lib-dom": "curl -L https://github.com/microsoft/TypeScript/raw/main/lib/lib.dom.d.ts > src/lib/lib.dom.ts",
+    "update": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/.github/workflows/build-release.yml > .github/workflows/build-release.yml && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js && curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-server.js > typedoc-server.js && npx npm-check-updates -u -x chalk,hexo && node postinstall.js"
   },
   "repository": {
     "type": "git",
