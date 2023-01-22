@@ -145,7 +145,7 @@ jobs:
         name: build submodules
       - run: |
           sh scripts/commit.sh "feat: update build from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
-          git push --recurse-submodules=on-demand
+          sh scripts/push.sh
         if: steps.build.outcome == 'success'
         name: commit compiled
       - run: gulp build-copy
