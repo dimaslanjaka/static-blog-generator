@@ -117,11 +117,18 @@ jobs:
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
+      - run: npm install
+        continue-on-error: true
+        id: install
       - run: npm run update
         continue-on-error: true
-      - run: npm install
+      - run: |
+          npm remove node_modules --workspaces
+          npm remove package-lock.json --workspaces
+          npm remove node_modules
+          npm remove package-lock.json
+          npm install
       - run: npx lerna bootstrap
-      #- run: npm update
 
       - run: npm install --workspaces
       - run: npm run build --workspaces
