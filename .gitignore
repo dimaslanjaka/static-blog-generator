@@ -11,6 +11,7 @@ temp
 /docs
 /src-old
 unused.md
+*.lerna_backup
 
 # disable dist
 /packages/**/dist/
