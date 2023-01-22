@@ -5,7 +5,7 @@
 [submodule "dist"]
 	path = dist
 	url = https://github.com/dimaslanjaka/static-blog-generator.git
-	branch = release
+	branch = master
 [submodule "packages/git-command-helper"]
 	path = packages/git-command-helper
 	url = https://github.com/dimaslanjaka/git-command-helper.git
