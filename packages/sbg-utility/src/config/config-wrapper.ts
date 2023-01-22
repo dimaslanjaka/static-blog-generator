@@ -46,7 +46,7 @@ export class createConfig<T extends Record<string, any>> extends EventEmitter {
   }
   update(value: Record<string, any>) {
     configWrapper[this.cname] = Object.assign({}, this.get(), value);
-    if ((fs.access(configWrapperFile), fs.constants.W_OK)) {
+    if (fs.access(configWrapperFile, fs.constants.W_OK)) {
       writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
       this.emit('update');
     }
