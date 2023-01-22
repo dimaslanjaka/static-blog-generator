@@ -48,6 +48,7 @@
     "minimatch": "^6.1.5",
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
+    "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
     "slugify": "^1.6.5",
     "through2": "^4.0.2",
     "true-case-path": "^2.2.1",
