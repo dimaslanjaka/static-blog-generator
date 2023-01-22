@@ -45,7 +45,7 @@
     "hexo": "^6.3.0",
     "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz",
     "hexo-util": "^3.0.1",
-    "minimatch": "^6.1.5",
+    "minimatch": "^6.1.6",
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
