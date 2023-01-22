@@ -17,7 +17,7 @@ Features:
 - YoastSEO Sitemap
 
 ## Roadmap
-[x] Separate with monorepo
-[x] Test each module
-[ ] Create single bundle tarball
-[ ] Create CI
+- [x] Separate with monorepo
+- [x] Test each module
+- [ ] Create single bundle tarball
+- [ ] Create CI
