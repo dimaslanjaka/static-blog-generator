@@ -90,6 +90,7 @@
     "jest-config": "^29.3.1",
     "jest-html-reporters": "^3.0.11",
     "lerna": "^6.4.1",
+    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "nx": "^15.5.3",
@@ -102,5 +103,12 @@
     "typedoc-plugin-missing-exports": "^1.0.0",
     "typescript": "^4.9.4",
     "typescript-transform-paths": "^3.4.6"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "fs-extra": "^11.1.0",
+    "upath": "^2.0.1",
+    "vinyl": "^3.0.0",
+    "vinyl-fs": "^3.0.3"
   }
 }
