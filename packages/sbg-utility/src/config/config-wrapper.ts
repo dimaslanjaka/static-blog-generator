@@ -41,11 +41,11 @@ export class createConfig<T extends Record<string, any>> extends EventEmitter {
     }
   }
   get<U extends Record<string, any>>() {
+    if (!configWrapper[this.cname]) configWrapper[this.cname] = {};
     return configWrapper[this.cname] as T & U;
   }
   update(value: Record<string, any>) {
-    if (!configWrapper[this.cname]) configWrapper[this.cname] = {};
-    configWrapper[this.cname] = Object.assign(configWrapper[this.cname], value);
+    configWrapper[this.cname] = Object.assign({}, this.get(), value);
     if ((fs.access(configWrapperFile), fs.constants.W_OK)) {
       writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
       this.emit('update');
