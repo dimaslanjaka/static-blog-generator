@@ -119,8 +119,17 @@ jobs:
 
       - run: npm install
         continue-on-error: true
+        id: install
       - run: npm run update
         continue-on-error: true
+        id: update
+      - run: |
+          find . -name "tmp" -type d -prune -exec rm -rf '{}' +
+          find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+          find . -name "package-lock.json" -exec rm -rf '{}' +; 
+          npm install
+        if: steps.install.outcome != 'success'
+        shell: bash
       - run: npx lerna bootstrap
 
       - run: npm install --workspaces
