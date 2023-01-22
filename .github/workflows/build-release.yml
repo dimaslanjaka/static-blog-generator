@@ -7,7 +7,7 @@ name: Build Release
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "beta" ]
     paths:
       - '**/src/**'
       - '**/build-release.yml'
@@ -38,14 +38,14 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/static-blog-generator
-          ref: master
+          ref: beta
           token: ${{ secrets.ACCESS_TOKEN }}
           submodules: 'recursive'
       - uses: actions/checkout@v3
         name: checkout dist
         with:
           repository: dimaslanjaka/static-blog-generator
-          ref: release
+          ref: master
           path: dist
           token: ${{ secrets.ACCESS_TOKEN }}
       - uses: actions/checkout@v3
