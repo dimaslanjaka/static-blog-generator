@@ -15,3 +15,9 @@ Features:
 - Finding broken links
 - External link anonymizer using [safelinkify](https://www.npmjs.com/package/safelinkify)
 - YoastSEO Sitemap
+
+## Roadmap
+- [x] Separate with monorepo
+- [x] Test each module
+- [ ] Create single bundle tarball
+- [ ] Create CI
