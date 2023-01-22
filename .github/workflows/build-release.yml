@@ -126,21 +126,22 @@ jobs:
       - run: |
           find . -name "tmp" -type d -prune -exec rm -rf '{}' +
           find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
-          find . -name "package-lock.json" -exec rm -rf '{}' +; 
+          find . -name "package-lock.json" -exec rm -rf '{}' +;
           npm install
         if: steps.install.outcome != 'success'
         shell: bash
-      #- run: npx lerna bootstrap
+      - run: npx lerna bootstrap
 
-      - run: npm install --workspaces
-      - run: npm run build --workspaces
+      #- run: npm install --workspaces
+      #- run: npm run build --workspaces
       #- run: gulp clean
       - run: npx lerna run build
       - run: gulp build-copy
         timeout-minutes: 10
       - run: gulp install-dist
       #- run: gulp build-pack
-      - run: npm run pack --workspaces
+      #- run: npm run pack --workspaces
+      - run: npx lerna run pack
 
       - name: Git setup user email
         continue-on-error: true
@@ -154,7 +155,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add .
+          git add -A
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           git push
       - run: git pull -X theirs
