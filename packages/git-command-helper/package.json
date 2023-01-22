@@ -11,9 +11,8 @@
     "postinstall.js"
   ],
   "scripts": {
-    "prebuild": "git pull -X theirs",
     "build": "tsc -p tsconfig.build.json",
-    "postbuild": "node packer.js",
+    "pack": "node packer.js",
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:build-release": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/.github/workflows/build-release.yml > .github/workflows/build-release.yml",
     "update:typedoc": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc.js > typedoc.js",
@@ -21,8 +20,7 @@
     "update:typedoc-server": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/typedoc-server.js > typedoc-server.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
     "update:ncu": "npx npm-check-updates -u -x chalk",
-    "update": "run-s update:**",
-    "postupdate": "node postinstall.js",
+    "update": "run-s update:** && node postinstall.js",
     "patch": "npm version patch",
     "test": "jest --runInBand",
     "docs": "gulp docs"
@@ -89,9 +87,12 @@
     "typescript": "^4.9.4"
   },
   "optionalDependencies": {
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "git-command-helper": "latest",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
+  },
+  "directories": {
+    "test": "test"
   }
 }
