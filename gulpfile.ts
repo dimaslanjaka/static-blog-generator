@@ -24,9 +24,10 @@ gulp.task('pre-install-dist', function (done) {
     return {
       absolutePath: join(__dirname, 'dist', p),
       packagejson: join(__dirname, 'dist', p, 'package.json'),
-      parsedPackageJson: JSON.parse(
-        fs.readFileSync(join(__dirname, 'dist', p, 'package.json'), 'utf-8')
-      ) as typeof import('./package.json')
+      parsedPackageJson: JSON.parse(fs.readFileSync(join(__dirname, 'dist', p, 'package.json'), 'utf-8')) as Record<
+        string,
+        any
+      >
     };
   });
   for (let i = 0; i < listDistPath.length; i++) {
@@ -114,14 +115,6 @@ function copyWorkspaceDist(done: gulp.TaskFunctionCallback) {
 }
 
 /**
- * npm run build --workspaces
- * @param {gulp.TaskFunctionCallback} done
- */
-function build(done: gulp.TaskFunctionCallback) {
-  spawnAsync('npm', ['run', 'build', '--workspaces'], { cwd: __dirname, stdio: 'inherit' }).then(() => done());
-}
-
-/**
  * fix eslint all src folder subpackages
  * @param {gulp.TaskFunctionCallback} done
  */
@@ -156,9 +149,8 @@ async function buildPack(done: gulp.TaskFunctionCallback) {
 
 gulp.task('lint', runEslint);
 gulp.task('build-copy', copyWorkspaceDist);
-gulp.task('build', build);
 gulp.task('build-pack', buildPack);
-gulp.task('build-dist', gulp.series('build', 'build-copy', 'install-dist', 'build-pack'));
+gulp.task('build-dist', gulp.series('build-copy', 'install-dist', 'build-pack'));
 gulp.task('build-all', gulp.series('lint', 'build-dist'));
 gulp.task('build-clean', gulp.series('clean', 'build-dist'));
 gulp.task('default', gulp.series(['build-dist']));
