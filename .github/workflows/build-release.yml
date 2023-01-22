@@ -119,15 +119,8 @@ jobs:
 
       - run: npm install
         continue-on-error: true
-        id: install
       - run: npm run update
         continue-on-error: true
-      - run: |
-          npm remove node_modules --workspaces
-          npm remove package-lock.json --workspaces
-          npm remove node_modules
-          npm remove package-lock.json
-          npm install
       - run: npx lerna bootstrap
 
       - run: npm install --workspaces
