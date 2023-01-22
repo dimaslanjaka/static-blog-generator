@@ -5,5 +5,5 @@
   ],
   "npmClient": "npm",
   "version": "independent",
-  "useWorkspaces": false
+  "useWorkspaces": true
 }

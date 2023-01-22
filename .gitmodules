@@ -9,16 +9,16 @@
 [submodule "packages/git-command-helper"]
 	path = packages/git-command-helper
 	url = https://github.com/dimaslanjaka/git-command-helper.git
-	branch = master
+	branch = monorepo
 [submodule "packages/hexo-post-parser"]
 	path = packages/hexo-post-parser
 	url = https://github.com/dimaslanjaka/hexo-post-parser.git
-	branch = master
+	branch = monorepo
 [submodule "packages/safelinkify"]
 	path = packages/safelinkify
 	url = https://github.com/dimaslanjaka/safelink.git
-	branch = master
+	branch = monorepo
 [submodule "packages/google-news-sitemap"]
 	path = packages/google-news-sitemap
 	url = https://github.com/dimaslanjaka/google-news-sitemap.git
-	branch = master
+	branch = monorepo
