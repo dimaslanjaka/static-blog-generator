@@ -29,12 +29,14 @@ var configWrapper = fs_extra_1.default.existsSync(fs_extra_1.default.readFileSyn
     : {};
 /**
  * Create/Update config wrapper
- * @param name
- * @param value
- * @returns
  */
 var createConfig = /** @class */ (function (_super) {
     __extends(createConfig, _super);
+    /**
+     * Create/Update config wrapper
+     * @param name config name
+     * @param value initial config value
+     */
     function createConfig(name, value) {
         var _this = _super.call(this) || this;
         // assign config name
@@ -50,14 +52,22 @@ var createConfig = /** @class */ (function (_super) {
         }
         return _this;
     }
+    /**
+     * get config
+     * @returns
+     */
     createConfig.prototype.get = function () {
-        return configWrapper[this.cname];
-    };
-    createConfig.prototype.update = function (value) {
         if (!configWrapper[this.cname])
             configWrapper[this.cname] = {};
-        configWrapper[this.cname] = Object.assign(configWrapper[this.cname], value);
-        if ((fs_extra_1.default.access(configWrapperFile), fs_extra_1.default.constants.W_OK)) {
+        return configWrapper[this.cname];
+    };
+    /**
+     * update config
+     * @param value new values should be merged with old values using shallow object merge
+     */
+    createConfig.prototype.update = function (value) {
+        configWrapper[this.cname] = Object.assign({}, this.get(), value);
+        if (fs_extra_1.default.access(configWrapperFile, fs_extra_1.default.constants.W_OK)) {
             (0, filemanager_1.writefile)(configWrapperFile, JSON.stringify(configWrapper, null, 2));
             this.emit('update');
         }
