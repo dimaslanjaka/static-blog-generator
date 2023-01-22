@@ -38,15 +38,15 @@
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
     "update:ncu": "npx npm-check-updates -u -x chalk",
     "update": "run-s update:**",
-    "postupdate": "node postinstall.js && npm run update --workspaces",
+    "postupdate": "node postinstall.js && lerna run update",
     "build": "npx lerna run build && npx gulp",
     "docs": "node docs.js",
     "lint": "npm run lint --workspaces",
     "test": "npx jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
     "prepare": "npx husky install",
-    "clean": "gulp clean && npm run clean --workspaces",
-    "pack": "node packer.js && npm run pack --workspaces"
+    "clean": "gulp clean && lerna run clean",
+    "pack": "node packer.js && lerna run pack"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
