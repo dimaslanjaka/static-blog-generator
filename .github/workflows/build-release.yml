@@ -40,6 +40,7 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
+          submodule: 'recursive'
       - uses: actions/checkout@v3
         name: checkout dist
         with:
