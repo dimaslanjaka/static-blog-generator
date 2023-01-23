@@ -50,7 +50,7 @@
     "nunjucks": "^3.2.3",
     "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
     "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/master/release/safelinkify.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-utility/release/sbg-utility.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
