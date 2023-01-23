@@ -15,7 +15,7 @@ unused.md
 ___*
 
 # disable dist
-/packages/**/dist/
+# /packages/**/dist/
 /*.tgz
 # /dist
 # /release
