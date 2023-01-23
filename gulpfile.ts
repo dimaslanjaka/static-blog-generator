@@ -46,12 +46,12 @@ gulp.task('install-dist', function (done) {
     .each((pkg) => {
       const pkgPath = resolvePath(__dirname, 'dist', pkg);
       console.log('installing', pkgPath);
-      return spawnAsync('npm', ['run', 'update'], { cwd: pkgPath, stdio: 'inherit' });
+      return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
     })
     .then(() => {
       const pkgPath = resolvePath(__dirname, 'dist');
       console.log('installing', pkgPath);
-      return spawnAsync('npm', ['run', 'update'], { cwd: pkgPath, stdio: 'inherit' });
+      return spawnAsync('npm', ['install'], { cwd: pkgPath, stdio: 'inherit' });
     })
     .then(() => done());
 });
