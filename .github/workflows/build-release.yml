@@ -127,7 +127,7 @@ jobs:
         id: bootstrap
         continue-on-error: true
         name: bootstrap submodules
-      - run: lerna run update
+      - run:  npx lerna exec npm run update
         id: update
         continue-on-error: true
         name: update
