@@ -132,11 +132,11 @@ jobs:
       #- run: npm install --workspaces
       #- run: npm run build --workspaces
       #- run: gulp clean
-      - run: npx lerna run build
+      - run: npx lerna exec npm run build
         id: build
         name: build submodules
 
-      - run: npx lerna run pack
+      - run: npx lerna exec npm run pack
         id: pack
         name: create tarballs
         if: steps.build.outcome == 'success'
