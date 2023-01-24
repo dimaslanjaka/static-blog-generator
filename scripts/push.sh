@@ -10,6 +10,15 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
         # cd git root dir
         cd ${ROOT}
 
+        NAME="$(echo "${KEY}" | sed 's/^submodule\.\(.*\)\.path$/\1/')"
+
+        url_key="$(echo "${KEY}" | sed 's/\.path$/.url/')"
+        branch_key="$(echo "${KEY}" | sed 's/\.path$/.branch/')"
+
+        URL="$(git config -f .gitmodules --get "${url_key}")"
+        BRANCH="$(git config -f .gitmodules --get "${branch_key}" || echo "master")"
+
+        repo=${URL#"https://github.com/"}
 
         cd "${MODULE_PATH}"
         if [ -z $(git status --porcelain) ];
@@ -20,3 +29,5 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
             git push origin "${BRANCH}"
         fi
     done
+
+git push
