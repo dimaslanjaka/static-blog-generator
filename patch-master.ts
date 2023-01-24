@@ -7,6 +7,7 @@ const branch = 'master';
 const base = path.join(__dirname, 'dist');
 
 (async function () {
+  // clone when not exist
   if (!fs.existsSync(base)) {
     await git.ext.spawnAsync('git', ['clone', '-b', branch, '--single-branch', repo, base], {
       cwd: __dirname,
@@ -14,4 +15,6 @@ const base = path.join(__dirname, 'dist');
     });
   }
   const gh = new git.default(base);
+  const info = await gh.info();
+  console.log(info);
 })();
