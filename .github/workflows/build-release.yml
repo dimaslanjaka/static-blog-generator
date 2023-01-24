@@ -141,11 +141,9 @@ jobs:
         name: create tarballs
         if: steps.build.outcome == 'success'
 
-      - run: git pull -X theirs
-        name: Pull before push
-        continue-on-error: true
       - name: commit and push
         continue-on-error: true
+        if: steps.build.outcome == 'success'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
