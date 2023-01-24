@@ -31,12 +31,11 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
         repo=${URL#"https://github.com/"}
         URL_WITH_TOKEN="https://${ACCESS_TOKEN}@github.com/${repo}"
 
-        echo "apply token at ${MODULE_PATH} branch ${BRANCH}"
+        echo "apply token for ${repo} at ${MODULE_PATH} branch ${BRANCH}"
         cd "${MODULE_PATH}"
         git remote set-url origin "${URL_WITH_TOKEN}"
         git fetch --all
         git pull origin "${BRANCH}" -X theirs
-        #git checkout --track "origin/${BRANCH}" ||
     done
 
 git -C "${REPO_PATH}" submodule update --init --recursive
