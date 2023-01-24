@@ -55,6 +55,8 @@ jobs:
           ref: static-blog-generator
           path: test
           token: ${{ secrets.ACCESS_TOKEN }}
+      - run: sh scripts/install-submodules.sh
+        name: clone submodules
       - name: Set env
         id: set-env
         shell: bash
