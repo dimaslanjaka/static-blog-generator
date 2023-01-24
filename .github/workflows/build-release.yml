@@ -12,7 +12,7 @@ on:
       - '**/src/**'
       - '**/build-release.yml'
       #- '**/package-lock.json'
-      #- '**/package.json'
+      - '**/package.json'
       - '**/yarn.lock'
       - '**/gulpfile*'
   pull_request:
