@@ -181,6 +181,7 @@ jobs:
           sh scripts/push.sh
         if: steps.build.outcome == 'success' && steps.build-copy.outcome == 'success' && steps.install-dist.outcome == 'success'
         name: commit compiled
+        if: ${{ false }}
 
       - name: Git setup user email
         continue-on-error: true
