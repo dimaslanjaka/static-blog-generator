@@ -45,7 +45,7 @@
     "bluebird": "^3.7.2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "deepmerge-ts": "^4.2.2",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
+    "git-command-helper": "*",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
