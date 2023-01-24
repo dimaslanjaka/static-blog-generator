@@ -139,10 +139,12 @@ jobs:
       - run: gulp build-copy
         timeout-minutes: 10
         id: build-copy
+        if: ${{ disable }}
 
       - run: gulp install-dist
         id: install-dist
         continue-on-error: true
+        if: ${{ disable }}
 
       - run: |
           find . -name "tmp" -type d -prune -exec rm -rf '{}' +
@@ -153,6 +155,7 @@ jobs:
         if: steps.install-dist.outcome != 'success'
         shell: bash
         working-directory: ./dist
+        if: ${{ disable }}
 
       - run: npx lerna run pack
         id: pack
@@ -174,6 +177,7 @@ jobs:
           git add -A
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           git push
+        if: ${{ disable }}
       - run: git pull -X theirs
         name: Pull before push
         continue-on-error: true
