@@ -122,7 +122,7 @@ jobs:
         if: ${{ false }}
       - run: |
           npm install
-          npx ts-node clean-install.ts
+          npx ts-node remove-node-temp.ts
         working-directory: scripts
         if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
         name: clean install with typescript
