@@ -174,14 +174,6 @@ jobs:
         name: create tarballs
         if: steps.build.outcome == 'success'
 
-      - run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          sh scripts/commit.sh "feat: update build from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
-          sh scripts/push.sh
-        if: steps.build.outcome == 'success' && steps.build-copy.outcome == 'success' && steps.install-dist.outcome == 'success'
-        name: commit compiled
-
       - name: Git setup user email
         continue-on-error: true
         run: |
@@ -203,6 +195,7 @@ jobs:
       - name: commit and push
         continue-on-error: true
         run: |
+          sh scripts/commit.sh "feat: update build from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
           git add -A
           git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-          git push --recurse-submodules=on-demand
+          sh scripts/push.sh
