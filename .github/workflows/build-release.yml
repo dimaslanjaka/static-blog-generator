@@ -121,7 +121,12 @@ jobs:
         #if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
         if: ${{ false }}
       - run: |
-          npx ts-node scripts/clean-install.ts
+          npm install
+          npx ts-node clean-install.ts
+        working-directory: scripts
+        if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
+        name: clean install with typescript
+      - run: |
           npm install
           npx lerna exec npm install && lerna link
         #if: steps.update.outcome != 'success'
