@@ -4,7 +4,7 @@ const { spawn } = require('cross-spawn');
 const gulp = require('gulp');
 const { EOL } = require('os');
 const { join, dirname, toUnix } = require('upath');
-const { setTypedocOptions, publish, compile } = require('./typedoc-runner');
+const { setTypedocOptions, publish, compile } = require('../typedoc-runner');
 
 const isGithubActions = typeof process.env.GITHUB_WORKFLOWS !== 'undefined';
 
