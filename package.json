@@ -112,6 +112,7 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
     "upath": "^2.0.1",
     "vinyl": "^3.0.0",
     "vinyl-fs": "^3.0.3"
