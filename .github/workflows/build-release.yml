@@ -121,9 +121,7 @@ jobs:
         #if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
         if: ${{ false }}
       - run: |
-          find . -name "tmp" -type d -prune -exec rm -rf '{}' +
-          find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
-          find . -name "package-lock.json" -exec rm -rf '{}' +;
+          npx ts-node scripts/clean-install.ts
           npm install
           npx lerna exec npm install && lerna link
         #if: steps.update.outcome != 'success'
