@@ -15,6 +15,8 @@ on:
       - '**/package.json'
       - '**/yarn.lock'
       - '**/gulpfile*'
+      - '**/.github/build-*.yml'
+      - '**/test-*.yml'
   pull_request:
     types:
       - closed
