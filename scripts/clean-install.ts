@@ -1,8 +1,8 @@
-import fs from 'fs';
+import fs from 'fs-extra';
 import glob from 'glob';
-import path from 'path';
+import path from 'upath';
 
-const base = path.join(__dirname);
+const base = path.join(__dirname, '..');
 const dirs = glob
   .sync('**/node_modules/**', { cwd: base })
   .concat(glob.sync('**/tmp/**', { cwd: base }))
