@@ -17,7 +17,7 @@ ___*
 # disable dist
 # /packages/**/dist/
 /*.tgz
-# /dist
+/dist
 # /release
 
 # branch v2
