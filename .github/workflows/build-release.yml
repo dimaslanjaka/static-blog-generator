@@ -11,8 +11,8 @@ on:
     paths:
       - '**/src/**'
       - '**/build-release.yml'
-      - '**/package-lock.json'
-      - '**/package.json'
+      #- '**/package-lock.json'
+      #- '**/package.json'
       - '**/yarn.lock'
       - '**/gulpfile*'
   pull_request:
@@ -118,14 +118,16 @@ jobs:
         id: update
         continue-on-error: true
         name: update
-        if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
+        #if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
+        if: ${{ false }}
       - run: |
           find . -name "tmp" -type d -prune -exec rm -rf '{}' +
           find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
           find . -name "package-lock.json" -exec rm -rf '{}' +;
           npm install
           npx lerna exec npm install && lerna link
-        if: steps.update.outcome != 'success'
+        #if: steps.update.outcome != 'success'
+        if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
         shell: bash
         name: clean install
 
