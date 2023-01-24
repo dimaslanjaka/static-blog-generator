@@ -40,21 +40,6 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: beta
           token: ${{ secrets.ACCESS_TOKEN }}
-          submodules: 'recursive'
-      - uses: actions/checkout@v3
-        name: checkout dist
-        with:
-          repository: dimaslanjaka/static-blog-generator
-          ref: master
-          path: dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-      - uses: actions/checkout@v3
-        name: checkout test
-        with:
-          repository: dimaslanjaka/site
-          ref: static-blog-generator
-          path: test
-          token: ${{ secrets.ACCESS_TOKEN }}
       - run: sh scripts/install-submodules.sh
         name: clone submodules
       - name: Set env
