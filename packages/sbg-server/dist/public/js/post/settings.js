@@ -22136,7 +22136,7 @@ var Carousel = /** @class */function () {
   Carousel.prototype._init = function () {
     var _this = this;
     this._items.map(function (item) {
-      item.el.classList.add('absolute', 'inset-0', 'transition-all', 'transform');
+      item.el.classList.add('absolute', 'inset-0', 'transition-transform', 'transform');
     });
     // if no active item is set then first position is default
     if (this._getActiveItem()) {
@@ -22380,7 +22380,7 @@ var Collapse = /** @class */function () {
         this._visible = !this._targetEl.classList.contains('hidden');
       }
       this._triggerEl.addEventListener('click', function () {
-        _this._visible ? _this.collapse() : _this.expand();
+        _this.toggle();
       });
     }
   };
@@ -22408,6 +22408,8 @@ var Collapse = /** @class */function () {
     } else {
       this.expand();
     }
+    // callback function
+    this._options.onToggle(this);
   };
   return Collapse;
 }();
@@ -22481,7 +22483,7 @@ var Dial = /** @class */function () {
     var _this = this;
     if (this._triggerEl) {
       var triggerEventTypes = this._getTriggerEventTypes(this._options.triggerType);
-      triggerEventTypes.show.forEach(function (ev) {
+      triggerEventTypes.showEvents.forEach(function (ev) {
         _this._triggerEl.addEventListener(ev, function () {
           _this.show();
         });
@@ -22489,13 +22491,11 @@ var Dial = /** @class */function () {
           _this.show();
         });
       });
-      triggerEventTypes.hide.forEach(function (ev) {
+      triggerEventTypes.hideEvents.forEach(function (ev) {
         _this._parentEl.addEventListener(ev, function () {
-          setTimeout(function () {
-            if (!_this._parentEl.matches(':hover')) {
-              _this.hide();
-            }
-          }, 100);
+          if (!_this._parentEl.matches(':hover')) {
+            _this.hide();
+          }
         });
       });
     }
@@ -22535,18 +22535,23 @@ var Dial = /** @class */function () {
     switch (triggerType) {
       case 'hover':
         return {
-          show: ['mouseenter', 'focus'],
-          hide: ['mouseleave', 'blur']
+          showEvents: ['mouseenter', 'focus'],
+          hideEvents: ['mouseleave', 'blur']
         };
       case 'click':
         return {
-          show: ['click', 'focus'],
-          hide: ['focusout', 'blur']
+          showEvents: ['click', 'focus'],
+          hideEvents: ['focusout', 'blur']
+        };
+      case 'none':
+        return {
+          showEvents: [],
+          hideEvents: []
         };
       default:
         return {
-          show: ['mouseenter', 'focus'],
-          hide: ['mouseleave', 'blur']
+          showEvents: ['mouseenter', 'focus'],
+          hideEvents: ['mouseleave', 'blur']
         };
     }
   };
@@ -22994,8 +22999,10 @@ var Default = {
   triggerType: 'click',
   offsetSkidding: 0,
   offsetDistance: 10,
+  delay: 300,
   onShow: function onShow() {},
-  onHide: function onHide() {}
+  onHide: function onHide() {},
+  onToggle: function onToggle() {}
 };
 var Dropdown = /** @class */function () {
   function Dropdown(targetElement, triggerElement, options) {
@@ -23016,10 +23023,52 @@ var Dropdown = /** @class */function () {
     this._init();
   }
   Dropdown.prototype._init = function () {
-    var _this = this;
     if (this._triggerEl) {
-      this._triggerEl.addEventListener('click', function () {
-        _this.toggle();
+      this._setupEventListeners();
+    }
+  };
+  Dropdown.prototype._setupEventListeners = function () {
+    var _this = this;
+    var triggerEvents = this._getTriggerEvents();
+    // click event handling for trigger element
+    if (this._options.triggerType === 'click') {
+      triggerEvents.showEvents.forEach(function (ev) {
+        _this._triggerEl.addEventListener(ev, function () {
+          _this.toggle();
+        });
+      });
+    }
+    // hover event handling for trigger element
+    if (this._options.triggerType === 'hover') {
+      triggerEvents.showEvents.forEach(function (ev) {
+        _this._triggerEl.addEventListener(ev, function () {
+          if (ev === 'click') {
+            _this.toggle();
+          } else {
+            setTimeout(function () {
+              _this.show();
+            }, _this._options.delay);
+          }
+        });
+        _this._targetEl.addEventListener(ev, function () {
+          _this.show();
+        });
+      });
+      triggerEvents.hideEvents.forEach(function (ev) {
+        _this._triggerEl.addEventListener(ev, function () {
+          setTimeout(function () {
+            if (!_this._targetEl.matches(':hover')) {
+              _this.hide();
+            }
+          }, _this._options.delay);
+        });
+        _this._targetEl.addEventListener(ev, function () {
+          setTimeout(function () {
+            if (!_this._triggerEl.matches(':hover')) {
+              _this.hide();
+            }
+          }, _this._options.delay);
+        });
       });
     }
   };
@@ -23046,16 +23095,44 @@ var Dropdown = /** @class */function () {
   };
   Dropdown.prototype._handleClickOutside = function (ev, targetEl) {
     var clickedEl = ev.target;
-    if (clickedEl !== targetEl && !targetEl.contains(clickedEl) && !this._triggerEl.contains(clickedEl) && this._visible) {
+    if (clickedEl !== targetEl && !targetEl.contains(clickedEl) && !this._triggerEl.contains(clickedEl) && this.isVisible()) {
       this.hide();
     }
   };
+  Dropdown.prototype._getTriggerEvents = function () {
+    switch (this._options.triggerType) {
+      case 'hover':
+        return {
+          showEvents: ['mouseenter', 'click'],
+          hideEvents: ['mouseleave']
+        };
+      case 'click':
+        return {
+          showEvents: ['click'],
+          hideEvents: []
+        };
+      case 'none':
+        return {
+          showEvents: [],
+          hideEvents: []
+        };
+      default:
+        return {
+          showEvents: ['click'],
+          hideEvents: []
+        };
+    }
+  };
   Dropdown.prototype.toggle = function () {
-    if (this._visible) {
+    if (this.isVisible()) {
       this.hide();
     } else {
       this.show();
     }
+    this._options.onToggle(this);
+  };
+  Dropdown.prototype.isVisible = function () {
+    return this._visible;
   };
   Dropdown.prototype.show = function () {
     this._targetEl.classList.remove('hidden');
@@ -23106,10 +23183,14 @@ function initDropdowns() {
       var placement = $triggerEl.getAttribute('data-dropdown-placement');
       var offsetSkidding = $triggerEl.getAttribute('data-dropdown-offset-skidding');
       var offsetDistance = $triggerEl.getAttribute('data-dropdown-offset-distance');
+      var triggerType = $triggerEl.getAttribute('data-dropdown-trigger');
+      var delay = $triggerEl.getAttribute('data-dropdown-delay');
       new Dropdown($dropdownEl, $triggerEl, {
         placement: placement ? placement : Default.placement,
+        triggerType: triggerType ? triggerType : Default.triggerType,
         offsetSkidding: offsetSkidding ? parseInt(offsetSkidding) : Default.offsetSkidding,
-        offsetDistance: offsetDistance ? parseInt(offsetDistance) : Default.offsetDistance
+        offsetDistance: offsetDistance ? parseInt(offsetDistance) : Default.offsetDistance,
+        delay: delay ? parseInt(delay) : Default.delay
       });
     } else {
       console.error("The dropdown element with id \"".concat(dropdownId, "\" does not exist. Please check the data-dropdown-toggle attribute."));
@@ -23144,6 +23225,7 @@ var Default = {
   placement: 'center',
   backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
   backdrop: 'dynamic',
+  closable: true,
   onHide: function onHide() {},
   onShow: function onShow() {},
   onToggle: function onToggle() {}
@@ -23259,7 +23341,9 @@ var Modal = /** @class */function () {
       // prevent body scroll
       document.body.classList.add('overflow-hidden');
       // Add keyboard event listener to the document
-      this._setupModalCloseEventListeners();
+      if (this._options.closable) {
+        this._setupModalCloseEventListeners();
+      }
       // callback function
       this._options.onShow(this);
     }
@@ -23275,7 +23359,9 @@ var Modal = /** @class */function () {
       this._isHidden = true;
       // re-apply body scroll
       document.body.classList.remove('overflow-hidden');
-      this._removeModalCloseEventListeners();
+      if (this._options.closable) {
+        this._removeModalCloseEventListeners();
+      }
       // callback function
       this._options.onHide(this);
     }
@@ -23427,7 +23513,8 @@ var Default = {
   offset: 10,
   triggerType: 'hover',
   onShow: function onShow() {},
-  onHide: function onHide() {}
+  onHide: function onHide() {},
+  onToggle: function onToggle() {}
 };
 var Popover = /** @class */function () {
   function Popover(targetEl, triggerEl, options) {
@@ -23444,37 +23531,41 @@ var Popover = /** @class */function () {
     this._triggerEl = triggerEl;
     this._options = __assign(__assign({}, Default), options);
     this._popperInstance = this._createPopperInstance();
+    this._visible = false;
     this._init();
   }
   Popover.prototype._init = function () {
-    var _this = this;
     if (this._triggerEl) {
-      var triggerEvents = this._getTriggerEvents();
-      triggerEvents.showEvents.forEach(function (ev) {
-        _this._triggerEl.addEventListener(ev, function () {
-          _this.show();
-        });
-        _this._targetEl.addEventListener(ev, function () {
-          _this.show();
-        });
-      });
-      triggerEvents.hideEvents.forEach(function (ev) {
-        _this._triggerEl.addEventListener(ev, function () {
-          setTimeout(function () {
-            if (!_this._targetEl.matches(':hover')) {
-              _this.hide();
-            }
-          }, 100);
-        });
-        _this._targetEl.addEventListener(ev, function () {
-          setTimeout(function () {
-            if (!_this._triggerEl.matches(':hover')) {
-              _this.hide();
-            }
-          }, 100);
-        });
-      });
+      this._setupEventListeners();
     }
+  };
+  Popover.prototype._setupEventListeners = function () {
+    var _this = this;
+    var triggerEvents = this._getTriggerEvents();
+    triggerEvents.showEvents.forEach(function (ev) {
+      _this._triggerEl.addEventListener(ev, function () {
+        _this.show();
+      });
+      _this._targetEl.addEventListener(ev, function () {
+        _this.show();
+      });
+    });
+    triggerEvents.hideEvents.forEach(function (ev) {
+      _this._triggerEl.addEventListener(ev, function () {
+        setTimeout(function () {
+          if (!_this._targetEl.matches(':hover')) {
+            _this.hide();
+          }
+        }, 100);
+      });
+      _this._targetEl.addEventListener(ev, function () {
+        setTimeout(function () {
+          if (!_this._triggerEl.matches(':hover')) {
+            _this.hide();
+          }
+        }, 100);
+      });
+    });
   };
   Popover.prototype._createPopperInstance = function () {
     return (0, core_1.createPopper)(this._triggerEl, this._targetEl, {
@@ -23499,12 +23590,44 @@ var Popover = /** @class */function () {
           showEvents: ['click', 'focus'],
           hideEvents: ['focusout', 'blur']
         };
+      case 'none':
+        return {
+          showEvents: [],
+          hideEvents: []
+        };
       default:
         return {
           showEvents: ['mouseenter', 'focus'],
           hideEvents: ['mouseleave', 'blur']
         };
     }
+  };
+  Popover.prototype._setupClickOutsideListener = function () {
+    var _this = this;
+    this._clickOutsideEventListener = function (ev) {
+      _this._handleClickOutside(ev, _this._targetEl);
+    };
+    document.body.addEventListener('click', this._clickOutsideEventListener, true);
+  };
+  Popover.prototype._removeClickOutsideListener = function () {
+    document.body.removeEventListener('click', this._clickOutsideEventListener, true);
+  };
+  Popover.prototype._handleClickOutside = function (ev, targetEl) {
+    var clickedEl = ev.target;
+    if (clickedEl !== targetEl && !targetEl.contains(clickedEl) && !this._triggerEl.contains(clickedEl) && this.isVisible()) {
+      this.hide();
+    }
+  };
+  Popover.prototype.isVisible = function () {
+    return this._visible;
+  };
+  Popover.prototype.toggle = function () {
+    if (this.isVisible()) {
+      this.hide();
+    } else {
+      this.show();
+    }
+    this._options.onToggle(this);
   };
   Popover.prototype.show = function () {
     this._targetEl.classList.remove('opacity-0', 'invisible');
@@ -23518,8 +23641,12 @@ var Popover = /** @class */function () {
         }], false)
       });
     });
+    // handle click outside
+    this._setupClickOutsideListener();
     // Update its position
     this._popperInstance.update();
+    // set visibility to true
+    this._visible = true;
     // callback function
     this._options.onShow(this);
   };
@@ -23535,6 +23662,10 @@ var Popover = /** @class */function () {
         }], false)
       });
     });
+    // handle click outside
+    this._removeClickOutsideListener();
+    // set visibility to false
+    this._visible = false;
     // callback function
     this._options.onHide(this);
   };
@@ -23727,7 +23858,8 @@ var Default = {
   placement: 'top',
   triggerType: 'hover',
   onShow: function onShow() {},
-  onHide: function onHide() {}
+  onHide: function onHide() {},
+  onToggle: function onToggle() {}
 };
 var Tooltip = /** @class */function () {
   function Tooltip(targetEl, triggerEl, options) {
@@ -23744,23 +23876,27 @@ var Tooltip = /** @class */function () {
     this._triggerEl = triggerEl;
     this._options = __assign(__assign({}, Default), options);
     this._popperInstance = this._createPopperInstance();
+    this._visible = false;
     this._init();
   }
   Tooltip.prototype._init = function () {
-    var _this = this;
     if (this._triggerEl) {
-      var triggerEvents = this._getTriggerEvents();
-      triggerEvents.showEvents.forEach(function (ev) {
-        _this._triggerEl.addEventListener(ev, function () {
-          _this.show();
-        });
-      });
-      triggerEvents.hideEvents.forEach(function (ev) {
-        _this._triggerEl.addEventListener(ev, function () {
-          _this.hide();
-        });
-      });
+      this._setupEventListeners();
     }
+  };
+  Tooltip.prototype._setupEventListeners = function () {
+    var _this = this;
+    var triggerEvents = this._getTriggerEvents();
+    triggerEvents.showEvents.forEach(function (ev) {
+      _this._triggerEl.addEventListener(ev, function () {
+        _this.show();
+      });
+    });
+    triggerEvents.hideEvents.forEach(function (ev) {
+      _this._triggerEl.addEventListener(ev, function () {
+        _this.hide();
+      });
+    });
   };
   Tooltip.prototype._createPopperInstance = function () {
     return (0, core_1.createPopper)(this._triggerEl, this._targetEl, {
@@ -23785,11 +23921,42 @@ var Tooltip = /** @class */function () {
           showEvents: ['click', 'focus'],
           hideEvents: ['focusout', 'blur']
         };
+      case 'none':
+        return {
+          showEvents: [],
+          hideEvents: []
+        };
       default:
         return {
           showEvents: ['mouseenter', 'focus'],
           hideEvents: ['mouseleave', 'blur']
         };
+    }
+  };
+  Tooltip.prototype._setupClickOutsideListener = function () {
+    var _this = this;
+    this._clickOutsideEventListener = function (ev) {
+      _this._handleClickOutside(ev, _this._targetEl);
+    };
+    document.body.addEventListener('click', this._clickOutsideEventListener, true);
+  };
+  Tooltip.prototype._removeClickOutsideListener = function () {
+    document.body.removeEventListener('click', this._clickOutsideEventListener, true);
+  };
+  Tooltip.prototype._handleClickOutside = function (ev, targetEl) {
+    var clickedEl = ev.target;
+    if (clickedEl !== targetEl && !targetEl.contains(clickedEl) && !this._triggerEl.contains(clickedEl) && this.isVisible()) {
+      this.hide();
+    }
+  };
+  Tooltip.prototype.isVisible = function () {
+    return this._visible;
+  };
+  Tooltip.prototype.toggle = function () {
+    if (this.isVisible()) {
+      this.hide();
+    } else {
+      this.show();
     }
   };
   Tooltip.prototype.show = function () {
@@ -23804,8 +23971,12 @@ var Tooltip = /** @class */function () {
         }], false)
       });
     });
+    // handle click outside
+    this._setupClickOutsideListener();
     // Update its position
     this._popperInstance.update();
+    // set visibility
+    this._visible = true;
     // callback function
     this._options.onShow(this);
   };
@@ -23821,6 +23992,10 @@ var Tooltip = /** @class */function () {
         }], false)
       });
     });
+    // handle click outside
+    this._removeClickOutsideListener();
+    // set visibility
+    this._visible = false;
     // callback function
     this._options.onHide(this);
   };
