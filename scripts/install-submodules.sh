@@ -22,6 +22,9 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
         URL="$(git config -f .gitmodules --get "${url_key}")"
         BRANCH="$(git config -f .gitmodules --get "${branch_key}" || echo "master")"
 
+        repo=${URL#"https://github.com/"}
+        URL_WITH_TOKEN="https://${ACCESS_TOKEN}@github.com/${repo}"
+
         git -C "${REPO_PATH}" submodule add --force -b "${BRANCH}" --name "${NAME}" "${URL}" "${MODULE_PATH}" || continue
     done
 
