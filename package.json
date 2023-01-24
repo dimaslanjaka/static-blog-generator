@@ -86,7 +86,6 @@
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "git-command-helper": "^1.1.5",
     "gulp": "^4.0.2",
     "hpagent": "^1.2.0",
     "husky": "^8.0.3",
