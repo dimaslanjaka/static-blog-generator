@@ -124,10 +124,10 @@ jobs:
         if: ${{ false }}
       - run: |
           npm install
-          node -r ts-node/register remove-node-temp.ts
+          node remove-node-temp.js
         working-directory: scripts
         if: steps.install.outcome != 'success' || steps.bootstrap.outcome != 'success'
-        name: clean install with typescript
+        name: remove temp and node_modules
       - run: |
           npm install
           npx lerna exec npm install && lerna link

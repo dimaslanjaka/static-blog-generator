@@ -1,6 +1,6 @@
-import fs from 'fs-extra';
-import glob from 'glob';
-import path from 'upath';
+const path = require('upath');
+const glob = require('glob');
+const fs = require('fs');
 
 const base = path.join(__dirname, '..');
 const dirs = glob
