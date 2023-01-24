@@ -148,6 +148,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git submodule foreach "git config --global user.name 'github-actions[bot]'"
+          git submodule foreach "git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'"
           sh scripts/commit.sh "feat: update build from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
           if [ -z $(git status --porcelain) ];
           then
