@@ -3,18 +3,8 @@ name: Build Beta
 on:
   push:
     branches: [ "beta" ]
-    paths:
-      - '**/src/**'
-      - '**/build-release.yml'
-      #- '**/package-lock.json'
-      - '**/package.json'
-      - '**/yarn.lock'
-      - '**/gulpfile*'
-      - '**/.github/build-*.yml'
-      - '**/.github/test-*.yml'
-      - 'packages/git-command-helper'
-      - 'packages/hexo-post-parser'
-      - 'packages/safelinkify'
+    paths-ignore:
+      - '**/package-lock.json'
   pull_request:
     types:
       - closed
