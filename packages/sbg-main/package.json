@@ -11,15 +11,6 @@
     "dist",
     "!**/*.tsbuildinfo"
   ],
-  "scripts": {
-    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
-    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update": "run-s update:** && npx npm-check-updates -u && npm install && node postinstall.js",
-    "test": "jest --runInBand",
-    "build": "tsc --build tsconfig.build.json",
-    "clean": "rm -rf dist tmp",
-    "pack": "node packer.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
@@ -45,8 +36,6 @@
     "bluebird": "^3.7.2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "deepmerge-ts": "^4.2.2",
-    "git-command-helper": "*",
-    "safelinkify": "^1.1.12",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
