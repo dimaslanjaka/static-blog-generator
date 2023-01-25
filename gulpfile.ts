@@ -4,7 +4,9 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp from 'gulp';
 import { join, resolve as resolvePath, toUnix } from 'upath';
 import { checkPacked } from './check-packed.js';
+import { commitDist } from './gulpfile-commit';
 
+gulp.task('build-commit', commitDist);
 gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
 gulp.task('check-root', () => checkPacked(__dirname + '/dist', join(__dirname, 'tmp/packed.txt')));
 
@@ -15,7 +17,8 @@ const packages = {
   'packages/sbg-main': false,
   'packages/safelinkify': false,
   'packages/hexo-post-parser': false,
-  'packages/git-command-helper': false
+  'packages/git-command-helper': false,
+  'packages/google-news-sitemap': false
 };
 
 gulp.task('pre-install-dist', function (done) {
