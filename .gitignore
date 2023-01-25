@@ -14,6 +14,8 @@ unused.md
 *.lerna_backup
 ___*
 
+/packages/**/package-lock.json
+
 # disable dist
 # /packages/**/dist/
 /*.tgz
