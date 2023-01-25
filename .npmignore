@@ -1,1 +1,3 @@
 # keep sbg-* to be packed
+**/package-lock.json
+**/*.tgz

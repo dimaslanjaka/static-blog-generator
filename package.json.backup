@@ -30,14 +30,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "git-command-helper": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/git-command-helper?master",
-    "google-news-sitemap": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/google-news-sitemap?master",
-    "hexo-post-parser": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/hexo-post-parser?master",
-    "safelinkify": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/safelinkify?master",
-    "sbg-api": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-api?master",
-    "sbg-main": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-main?master",
-    "sbg-server": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-server?master",
-    "sbg-utility": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-utility?master"
+    "git-command-helper": "file:packages/git-command-helper",
+    "google-news-sitemap": "file:packages/google-news-sitemap",
+    "hexo-post-parser": "file:packages/hexo-post-parser",
+    "safelinkify": "file:packages/safelinkify",
+    "sbg-api": "file:packages/sbg-api",
+    "sbg-main": "file:packages/sbg-main",
+    "sbg-server": "file:packages/sbg-server",
+    "sbg-utility": "file:packages/sbg-utility"
   },
   "repository": {
     "type": "git",
