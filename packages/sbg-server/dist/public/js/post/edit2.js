@@ -25120,7 +25120,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.VERSION = void 0;
-var VERSION = "1.2.3";
+var VERSION = "1.2.4";
 exports.VERSION = VERSION;
 
 },{}],215:[function(require,module,exports){
