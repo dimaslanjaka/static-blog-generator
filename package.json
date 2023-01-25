@@ -4,6 +4,9 @@
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "main": "packages/sbg-main/dist/index.js",
   "types": "packages/sbg-main/dist/index.d.ts",
+  "bin": {
+    "sbg-cli": "packages/sbg-main/dist/cli.js"
+  },
   "files": [
     "packages",
     "packages/sbg-*/**/*",
@@ -15,7 +18,8 @@
     "!**/tmp/**",
     "!packages/**/tmp/**",
     "!test",
-    "!**/test/**"
+    "!**/test/**",
+    "!**/*.tgz"
   ],
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
