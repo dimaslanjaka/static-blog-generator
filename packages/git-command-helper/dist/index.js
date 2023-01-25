@@ -15,6 +15,9 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -27,23 +30,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ext = void 0;
-const git_1 = __importStar(require("./git"));
-const git_info_1 = __importStar(require("./git-info"));
-const spawn_1 = require("./spawn");
-const submodule_1 = __importDefault(require("./submodule"));
-exports.ext = {
-    spawn: spawn_1.spawn,
-    spawnAsync: spawn_1.spawnAsync,
-    spawnSilent: spawn_1.spawnSilent,
-    gitCommandHelper: git_1.gitCommandHelper,
-    gitHelper: git_1.gitHelper,
-    setupGit: git_1.setupGit,
-    GithubInfo: git_info_1.default,
-    getGithubBranches: git_info_1.getGithubBranches,
-    getGithubCurrentBranch: git_info_1.getGithubCurrentBranch,
-    getGithubRemote: git_info_1.getGithubRemote,
-    getGithubRepoUrl: git_info_1.getGithubRepoUrl,
-    getGithubRootDir: git_info_1.getGithubRootDir,
-    gitSubmodule: submodule_1.default
-};
+const git_1 = __importDefault(require("./git"));
+__exportStar(require("./index-exports"), exports);
+exports.ext = __importStar(require("./index-exports"));
 exports.default = git_1.default;

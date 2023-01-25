@@ -1,5 +1,3 @@
-/// <reference types="node" />
-/// <reference types="node" />
 import { Nullable } from 'hexo-post-parser';
 import { getConfig, setConfig } from 'sbg-utility';
 declare class SBG {

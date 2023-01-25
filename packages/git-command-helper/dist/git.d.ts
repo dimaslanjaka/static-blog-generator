@@ -53,7 +53,7 @@ export declare class git {
     getGithubRepoUrl: typeof import("./git-info").getGithubRepoUrl;
     constructor(dir: string);
     info(): Promise<{
-        opt: SpawnOptions;
+        root: string | void;
         remote: {
             fetch: {
                 origin: string;
