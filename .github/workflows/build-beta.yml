@@ -1,10 +1,5 @@
 name: Build Beta
 
-# automated packer.js
-# repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
-# raw     : https://raw.githubusercontent.com/dimaslanjaka/nodejs-package-types/main/.github/workflows/build-release.yml
-# update  : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/.github/workflows/build-release.yml > .github/workflows/build-release.yml
-
 on:
   push:
     branches: [ "beta" ]
@@ -16,7 +11,10 @@ on:
       - '**/yarn.lock'
       - '**/gulpfile*'
       - '**/.github/build-*.yml'
-      - '**/test-*.yml'
+      - '**/.github/test-*.yml'
+      - 'packages/git-command-helper'
+      - 'packages/hexo-post-parser'
+      - 'packages/safelinkify'
   pull_request:
     types:
       - closed
@@ -108,6 +106,7 @@ jobs:
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
+      - run: npm install
       - run: lerna bootstrap
       - run: lerna run build
       - run: lerna run pack
