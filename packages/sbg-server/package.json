@@ -55,6 +55,7 @@
     "markdown-it": "^13.0.1",
     "moment-timezone": "^0.5.40",
     "nunjucks": "^3.2.3",
+    "safelinkify": "^1.1.12",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
     "serve-favicon": "^2.5.0",
