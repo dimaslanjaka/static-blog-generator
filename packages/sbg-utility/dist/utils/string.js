@@ -61,7 +61,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.replacePath = exports.bufferToString = exports.streamToString = exports.capitalizer = exports.escapeRegex = void 0;
+exports.isValidHttpUrl = exports.slugify = exports.replacePath = exports.bufferToString = exports.streamToString = exports.capitalizer = exports.escapeRegex = void 0;
 /**
  * escape regex string
  * @param string
@@ -153,4 +153,38 @@ function replacePath(source, toReplace, replacement) {
     });
 }
 exports.replacePath = replacePath;
+/**
+ * slugify string
+ * @param str
+ * @param ext
+ * @returns
+ */
+function slugify(str, ext) {
+    return ((str
+        // lower case
+        .toLowerCase()
+        // remove special char except space, underscore, alphabetic, number
+        .replace(/[^a-zA-Z0-9\s+\-_]/g, '')
+        // replace whitespaces and underscore with single hypens
+        .replace(/[\s\-_]+/g, '-')
+        // replace multiple hypens with single hypens
+        .replace(/-+/g, '-') + (ext || '')).trim());
+}
+exports.slugify = slugify;
+/**
+ * check variable is valid http url string
+ * @param string
+ * @returns
+ */
+function isValidHttpUrl(string) {
+    var url;
+    try {
+        url = new URL(string);
+    }
+    catch (_) {
+        return false;
+    }
+    return url.protocol === 'http:' || url.protocol === 'https:';
+}
+exports.isValidHttpUrl = isValidHttpUrl;
 //# sourceMappingURL=string.js.map

@@ -1,3 +1,4 @@
+import fs from 'fs-extra';
 import { trueCasePathSync } from 'true-case-path';
 import path from 'upath';
 
@@ -11,4 +12,16 @@ export function normalizePath(...str: string[]) {
   const casePath = trueCasePathSync(join);
   return path.toUnix(casePath);
 }
+
+/**
+ * UNIX join path with auto create dirname when not exists
+ * @param path
+ * @returns
+ */
+export function joinSolve(...paths: string[]) {
+  const merge = path.join(...paths);
+  if (!fs.existsSync(path.dirname(merge))) fs.mkdirSync(path.dirname(merge), { recursive: true });
+  return merge;
+}
+
 export default normalizePath;

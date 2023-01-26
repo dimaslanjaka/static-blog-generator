@@ -24,6 +24,7 @@ var upath_1 = __importDefault(require("upath"));
 __exportStar(require("./del"), exports);
 __exportStar(require("./emptyDir"), exports);
 __exportStar(require("./getAppRootDir"), exports);
+__exportStar(require("./images"), exports);
 __exportStar(require("./normalizePath"), exports);
 __exportStar(require("./readDir"), exports);
 __exportStar(require("./writefile"), exports);

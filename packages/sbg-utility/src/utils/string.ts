@@ -76,3 +76,42 @@ export async function replacePath(source: string, toReplace: string, replacement
   const upath = await import('upath');
   return upath.toUnix(source).replace(upath.toUnix(toReplace), replacement);
 }
+
+/**
+ * slugify string
+ * @param str
+ * @param ext
+ * @returns
+ */
+export function slugify(str: string, ext?: string) {
+  return (
+    (
+      str
+        // lower case
+        .toLowerCase()
+        // remove special char except space, underscore, alphabetic, number
+        .replace(/[^a-zA-Z0-9\s+\-_]/g, '')
+        // replace whitespaces and underscore with single hypens
+        .replace(/[\s\-_]+/g, '-')
+        // replace multiple hypens with single hypens
+        .replace(/-+/g, '-') + (ext || '')
+    ).trim()
+  );
+}
+
+/**
+ * check variable is valid http url string
+ * @param string
+ * @returns
+ */
+export function isValidHttpUrl(string: string | URL) {
+  let url: URL;
+
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+
+  return url.protocol === 'http:' || url.protocol === 'https:';
+}

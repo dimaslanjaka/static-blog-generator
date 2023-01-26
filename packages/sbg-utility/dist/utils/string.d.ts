@@ -33,3 +33,16 @@ export declare function bufferToString(array: Buffer): string;
  * @returns
  */
 export declare function replacePath(source: string, toReplace: string, replacement?: string): Promise<string>;
+/**
+ * slugify string
+ * @param str
+ * @param ext
+ * @returns
+ */
+export declare function slugify(str: string, ext?: string): string;
+/**
+ * check variable is valid http url string
+ * @param string
+ * @returns
+ */
+export declare function isValidHttpUrl(string: string | URL): boolean;
