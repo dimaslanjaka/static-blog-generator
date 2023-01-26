@@ -9,10 +9,11 @@ export declare function escapeRegex(string: string, method?: '1' | '2'): string;
 /**
  * capitalize string first letter of each word which mixed with symbols
  * @param str
- * @param moreSymbols add more symbols
+ * @param moreSymbols add more symbols, default []
  * @returns
  */
-export declare function capitalizer(str: string, moreSymbols?: ConcatArray<string>): string;
+export declare function capitalize(str: string, moreSymbols?: ConcatArray<string>): string;
+export declare const capitalizer: typeof capitalize;
 /**
  * Stream to string
  * @param stream
