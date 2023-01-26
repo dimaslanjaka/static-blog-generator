@@ -21,3 +21,14 @@ export function orderKeys<T extends Record<string, any>>(obj: Record<string, any
   }
   return obj as T;
 }
+
+/**
+ * get object property by key, supress typescript error
+ * @param item
+ * @param key
+ * @returns
+ */
+export function getObjectProperty(item: Record<string, any>, key: string) {
+  if (typeof item === 'undefined' || item === null) return;
+  if (key in item) return item[key];
+}
