@@ -60,16 +60,15 @@ export function array_remove_empty<T extends any[]>(arr: T) {
  * @returns
  * @see {@link https://stackoverflow.com/a/67322087/6404439}
  * @example
- * arrayOfObjUniq({p:'x',n:'x'},{p:'23',n:'x'},{p:'x',n:'5g'}, 'p'); // [{p:'x',n:'x'},{p:'23',n:'x'}]
+ * const arrobj = [{p:'x',n:'x'},{p:'23',n:'x'},{p:'x',n:'5g'}],
+ * arrayOfObjUniq(arrobj, 'p'); // [{p:'x',n:'x'},{p:'23',n:'x'}]
  */
 export function arrayOfObjUniq<T extends any[]>(arr: T, field: string): T {
   //console.log(array);
   if (!Array.isArray(arr)) {
     throw new Error('array param must be instance of ARRAY');
   }
-  return <any>(
-    arr.filter((a, i) => arr.findIndex((s) => a[field] === s[field]) === i)
-  );
+  return <any>arr.filter((a, i) => arr.findIndex((s) => a[field] === s[field]) === i);
 }
 
 /**
@@ -82,12 +81,11 @@ export function array_shuffle<T extends any[]>(items: T): T {
 }
 
 /**
- * get object property by key, supress typescript error
- * @param item
- * @param key
+ * flattern array
+ * @param arr
  * @returns
  */
-export function getObjectProperty(item: Record<string, any>, key: string) {
-  if (typeof item === 'undefined' || item === null) return;
-  if (key in item) return item[key];
+export function array_flatten<T extends any[], N extends number = 1>(arr: T, depth?: N): FlatArray<T, N>[] {
+  if (typeof depth === 'number') return arr.flat(depth);
+  return arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) ? array_flatten(cur) : cur), []);
 }

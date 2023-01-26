@@ -1,6 +1,8 @@
 import { describe, expect, test } from '@jest/globals';
 import defaults, * as wilcards from '../src';
 
+// jest --runInBand imports.test
+
 describe('check method', () => {
   const props = [
     'chain',
@@ -13,7 +15,8 @@ describe('check method', () => {
     'envNunjucks',
     'array_random',
     'array_unique',
-    'array_remove_empty'
+    'array_remove_empty',
+    'image_base64_encode'
   ];
 
   for (let i = 0; i < props.length; i++) {
