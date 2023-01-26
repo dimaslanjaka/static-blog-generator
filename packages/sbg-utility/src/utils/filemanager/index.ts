@@ -6,6 +6,7 @@ import path from 'upath';
 export * from './del';
 export * from './emptyDir';
 export * from './getAppRootDir';
+export * from './images';
 export * from './normalizePath';
 export * from './readDir';
 export * from './writefile';
