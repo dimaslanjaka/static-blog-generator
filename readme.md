@@ -19,6 +19,7 @@ Features:
 # CLI
 ## standalone runner
 run all files (_*.standalone.js) inside `config.post_dir`
+
 ![image](https://user-images.githubusercontent.com/12471057/214767877-79641e0d-dcf6-480a-aee3-689fd584d5e8.png)
 
 ## Roadmap
