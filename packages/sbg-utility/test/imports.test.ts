@@ -16,7 +16,9 @@ describe('check method', () => {
     'array_random',
     'array_unique',
     'array_remove_empty',
-    'image_base64_encode'
+    'image_base64_encode',
+    'capitalizer',
+    'capitalize'
   ];
 
   for (let i = 0; i < props.length; i++) {
