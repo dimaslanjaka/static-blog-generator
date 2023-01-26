@@ -52,3 +52,42 @@ export function array_remove_empty<T extends any[]>(arr: T) {
     return true;
   });
 }
+
+/**
+ * unique array of object by object key
+ * @param arr
+ * @param field key name
+ * @returns
+ * @see {@link https://stackoverflow.com/a/67322087/6404439}
+ * @example
+ * arrayOfObjUniq({p:'x',n:'x'},{p:'23',n:'x'},{p:'x',n:'5g'}, 'p'); // [{p:'x',n:'x'},{p:'23',n:'x'}]
+ */
+export function arrayOfObjUniq<T extends any[]>(arr: T, field: string): T {
+  //console.log(array);
+  if (!Array.isArray(arr)) {
+    throw new Error('array param must be instance of ARRAY');
+  }
+  return <any>(
+    arr.filter((a, i) => arr.findIndex((s) => a[field] === s[field]) === i)
+  );
+}
+
+/**
+ * array shuffler
+ * @param items
+ * @returns
+ */
+export function array_shuffle<T extends any[]>(items: T): T {
+  return items.sort(() => Math.random() - 0.5);
+}
+
+/**
+ * get object property by key, supress typescript error
+ * @param item
+ * @param key
+ * @returns
+ */
+export function getObjectProperty(item: Record<string, any>, key: string) {
+  if (typeof item === 'undefined' || item === null) return;
+  if (key in item) return item[key];
+}
