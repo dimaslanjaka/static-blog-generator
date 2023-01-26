@@ -16,16 +16,14 @@ export function escapeRegex(string: string, method: '1' | '2' = '1') {
 /**
  * capitalize string first letter of each word which mixed with symbols
  * @param str
- * @param moreSymbols add more symbols
+ * @param moreSymbols add more symbols, default []
  * @returns
  */
-export function capitalizer(str: string, moreSymbols: ConcatArray<string> = []) {
+export function capitalize(str: string, moreSymbols: ConcatArray<string> = []) {
   let symbols = ['-', ' '];
   if (Array.isArray(moreSymbols)) {
     // concatenate more symbols
-    symbols = symbols.concat(moreSymbols).filter(function (x, i, a) {
-      return a.indexOf(x) === i;
-    });
+    symbols = [...new Set(symbols.concat(moreSymbols))];
   }
   symbols.forEach((symbol) => {
     str = str
@@ -35,6 +33,8 @@ export function capitalizer(str: string, moreSymbols: ConcatArray<string> = []) 
   });
   return str;
 }
+
+export const capitalizer = capitalize;
 
 /**
  * Stream to string
