@@ -5,6 +5,8 @@ export * from './debug';
 export { default as debug } from './debug';
 export * from './filemanager';
 export * as filemanager from './filemanager';
+export * from './hash';
+export * as hash from './hash';
 export * from './logger';
 export * as logger from './logger';
 export { default as noop } from './noop';
