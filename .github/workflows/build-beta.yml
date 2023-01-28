@@ -17,7 +17,9 @@ concurrency:
 
 jobs:
   utility:
-      uses: ./.github/workflows/build-utility.yml
+      uses: ./.github/workflows/build-utility.
+      secrets:
+        token: ${{ secrets.ACCESS_TOKEN }}
   build:
     needs: [utility]
     strategy:
