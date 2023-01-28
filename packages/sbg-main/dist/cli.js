@@ -17,7 +17,7 @@ yargs_1.default
 }, () => {
     yargs_1.default.showHelp();
 })
-    .command('post <key>', `operation inside ${rootColor}/${api.config.post_dir}`, (yargs) => {
+    .command('post <key>', `operation inside ${rootColor}/${api.config.post_dir}`, function (yargs) {
     yargs.positional(`copy`, {
         type: `string`,
         describe: `copy ${rootColor}/${api.config.post_dir} to ${rootColor}/${api.config.source_dir}/_posts`
@@ -26,7 +26,7 @@ yargs_1.default
         type: `string`,
         describe: `run all *.standalone.js inside ${rootColor}/${api.config.post_dir}`
     });
-}, async ({ key }) => {
+}, async function ({ key }) {
     if (key) {
         if (key === 'copy') {
             await api.copy();
@@ -37,6 +37,23 @@ yargs_1.default
     }
     else {
         yargs_1.default.showHelp();
+    }
+})
+    .command('deploy <key>', `operation inside ${rootColor}/.deploy_${api.config.deploy?.type || 'git'}`, function (yargs) {
+    yargs.positional(`seo`, {
+        type: `string`,
+        describe: `fix seo`
+    });
+    yargs.positional(`safelink`, {
+        type: `string`,
+        describe: `anonymize external links`
+    });
+}, async function ({ key }) {
+    if (key === 'seo') {
+        await api.seo();
+    }
+    else if (key === 'safelink') {
+        await api.safelink();
     }
 })
     .help('help')
