@@ -5,6 +5,7 @@ on:
     branches: [ "beta" ]
     paths-ignore:
       - '**/package-lock.json'
+      - '**/*.tgz'
   pull_request:
     types:
       - closed
