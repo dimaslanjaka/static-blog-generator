@@ -2,6 +2,7 @@
 
 import ansiColors from 'ansi-colors';
 import { Application } from 'sbg-api';
+import path from 'upath';
 import yargs from 'yargs';
 
 const api = new Application(process.cwd());
@@ -46,6 +47,27 @@ yargs
     }
   )
   .command(
+    'generate <key>',
+    `operation inside ${rootColor}/${api.config.public_dir}`,
+    function (yargs) {
+      yargs.positional(`seo`, {
+        type: `string`,
+        describe: `fix seo`
+      });
+      yargs.positional(`safelink`, {
+        type: `string`,
+        describe: `anonymize external links`
+      });
+    },
+    async function ({ key }) {
+      if (key === 'seo') {
+        await api.seo(path.join(api.config.cwd, api.config.public_dir));
+      } else if (key === 'safelink') {
+        await api.safelink(path.join(api.config.cwd, api.config.public_dir));
+      }
+    }
+  )
+  .command(
     'deploy <key>',
     `operation inside ${rootColor}/.deploy_${api.config.deploy?.type || 'git'}`,
     function (yargs) {
@@ -60,9 +82,9 @@ yargs
     },
     async function ({ key }) {
       if (key === 'seo') {
-        await api.seo();
+        await api.seo(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
       } else if (key === 'safelink') {
-        await api.safelink();
+        await api.safelink(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
       }
     }
   )
