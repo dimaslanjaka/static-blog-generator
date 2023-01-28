@@ -99,5 +99,5 @@ jobs:
 
       - run: npm install
       - run: lerna bootstrap --no-ci
-      - run: lerna run --no-bail build
+      - run: lerna exec npm run build
       - run: lerna run --no-bail pack
