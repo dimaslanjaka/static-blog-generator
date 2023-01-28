@@ -16,7 +16,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  utility:
+      uses: ./.github/workflows/build-utility.yml
   build:
+    needs: [utility]
     strategy:
       fail-fast: true
     env:
@@ -24,11 +27,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    utility:
-      uses: ./.github/workflows/build-utility.yml
-
-    build:
-      needs: [utility]
+    steps:
       - uses: actions/checkout@v3
         with:
           repository: dimaslanjaka/static-blog-generator
