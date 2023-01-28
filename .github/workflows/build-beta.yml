@@ -16,13 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  utility:
-      uses: ./.github/workflows/build-utility.yml
-      secrets:
-        token: ${{ secrets.ACCESS_TOKEN }}
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   build:
-    needs: [utility]
     strategy:
       fail-fast: true
     env:
