@@ -28,6 +28,12 @@ export declare function writefile(file: string, content: strORobj, opt: {
 export declare function writefile(file: string, content: strORobj, opt: {
     async: true;
 }): Promise<writefileResult>;
+/**
+ * async write to file recursively (auto create dirname)
+ * @param file
+ * @param content
+ * @param opt
+ */
 export declare function writefile(file: string, content: strORobj, opt: {
     async: true;
     append: boolean | undefined | null;
