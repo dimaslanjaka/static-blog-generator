@@ -3417,7 +3417,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.VERSION = void 0;
-var VERSION = "1.2.4";
+var VERSION = "1.2.5";
 exports.VERSION = VERSION;
 
 },{}],22:[function(require,module,exports){
