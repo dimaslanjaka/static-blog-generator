@@ -63,6 +63,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SBG = void 0;
+var bluebird_1 = __importDefault(require("bluebird"));
 var hexo_1 = __importDefault(require("hexo"));
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
@@ -77,7 +78,6 @@ var SBG = /** @class */ (function () {
      * @param cwd base folder
      */
     function SBG(cwd, options) {
-        var _this = this;
         this.config = (0, sbg_utility_1.getConfig)();
         this.setConfig = sbg_utility_1.setConfig;
         this.getConfig = sbg_utility_1.getConfig;
@@ -86,16 +86,6 @@ var SBG = /** @class */ (function () {
          * @returns
          */
         this.standalone = function () { return (0, sbg_utility_1.chain)([{ callback: standalone_1.default }]); };
-        /**
-         * Auto seo on public dir (_config_yml.public_dir) (run after generated)
-         * @returns
-         */
-        this.seo = function () { return (0, gulp_seo_1.taskSeo)(null, (0, upath_1.join)(_this.cwd, _this.config.public_dir)); };
-        /**
-         * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
-         * @returns
-         */
-        this.safelink = function () { return (0, gulp_safelink_1.taskSafelink)(sbg_utility_1.noop, (0, upath_1.join)(_this.cwd, (0, sbg_utility_1.getConfig)().public_dir)); };
         if (!cwd)
             cwd = process.cwd();
         (0, sbg_utility_1.fetchConfig)(cwd);
@@ -132,6 +122,21 @@ var SBG = /** @class */ (function () {
         });
     };
     /**
+     * Auto seo on public dir (_config_yml.public_dir) (run after generated)
+     * @param customPath run seo fixer on spesific folder
+     * @returns
+     */
+    SBG.prototype.seo = function (customPath) {
+        var _this = this;
+        return new bluebird_1.default(function (resolve) {
+            (0, gulp_seo_1.taskSeo)(null, customPath || (0, upath_1.join)(_this.cwd, _this.config.public_dir)).once('end', function () {
+                setTimeout(function () {
+                    resolve();
+                }, 3000);
+            });
+        });
+    };
+    /**
      * Copy all **src-post** to **source/_posts** (run before generate)
      * * see the method {@link pcopy.copyAllPosts}
      * @returns
@@ -145,6 +150,21 @@ var SBG = /** @class */ (function () {
                 // wait all handler to be closed
                 setTimeout(function () {
                     resolve(null);
+                }, 3000);
+            });
+        });
+    };
+    /**
+     * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
+     * @param customPath run anonymizer external links on spesific folder
+     * @returns
+     */
+    SBG.prototype.safelink = function (customPath) {
+        var _this = this;
+        return new bluebird_1.default(function (resolve) {
+            (0, gulp_safelink_1.taskSafelink)(null, customPath || (0, upath_1.join)(_this.cwd, _this.config.public_dir)).once('end', function () {
+                setTimeout(function () {
+                    resolve();
                 }, 3000);
             });
         });

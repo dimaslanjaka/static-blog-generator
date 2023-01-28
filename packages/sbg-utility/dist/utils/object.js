@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.orderKeys = void 0;
+exports.getObjectProperty = exports.orderKeys = void 0;
 /**
  * sort alphabetically object by key
  * @param obj
@@ -26,4 +26,17 @@ function orderKeys(obj) {
     return obj;
 }
 exports.orderKeys = orderKeys;
+/**
+ * get object property by key, supress typescript error
+ * @param item
+ * @param key
+ * @returns
+ */
+function getObjectProperty(item, key) {
+    if (typeof item === 'undefined' || item === null)
+        return;
+    if (key in item)
+        return item[key];
+}
+exports.getObjectProperty = getObjectProperty;
 //# sourceMappingURL=object.js.map

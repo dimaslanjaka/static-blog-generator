@@ -60,8 +60,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.replacePath = exports.bufferToString = exports.streamToString = exports.capitalizer = exports.escapeRegex = void 0;
+exports.isValidHttpUrl = exports.slugify = exports.replacePath = exports.bufferToString = exports.streamToString = exports.capitalizer = exports.capitalize = exports.escapeRegex = void 0;
 /**
  * escape regex string
  * @param string
@@ -80,17 +105,15 @@ exports.escapeRegex = escapeRegex;
 /**
  * capitalize string first letter of each word which mixed with symbols
  * @param str
- * @param moreSymbols add more symbols
+ * @param moreSymbols add more symbols, default []
  * @returns
  */
-function capitalizer(str, moreSymbols) {
+function capitalize(str, moreSymbols) {
     if (moreSymbols === void 0) { moreSymbols = []; }
     var symbols = ['-', ' '];
     if (Array.isArray(moreSymbols)) {
         // concatenate more symbols
-        symbols = symbols.concat(moreSymbols).filter(function (x, i, a) {
-            return a.indexOf(x) === i;
-        });
+        symbols = __spreadArray([], __read(new Set(symbols.concat(moreSymbols))), false);
     }
     symbols.forEach(function (symbol) {
         str = str
@@ -100,7 +123,8 @@ function capitalizer(str, moreSymbols) {
     });
     return str;
 }
-exports.capitalizer = capitalizer;
+exports.capitalize = capitalize;
+exports.capitalizer = capitalize;
 /**
  * Stream to string
  * @param stream
@@ -153,4 +177,38 @@ function replacePath(source, toReplace, replacement) {
     });
 }
 exports.replacePath = replacePath;
+/**
+ * slugify string
+ * @param str
+ * @param ext
+ * @returns
+ */
+function slugify(str, ext) {
+    return ((str
+        // lower case
+        .toLowerCase()
+        // remove special char except space, underscore, alphabetic, number
+        .replace(/[^a-zA-Z0-9\s+\-_]/g, '')
+        // replace whitespaces and underscore with single hypens
+        .replace(/[\s\-_]+/g, '-')
+        // replace multiple hypens with single hypens
+        .replace(/-+/g, '-') + (ext || '')).trim());
+}
+exports.slugify = slugify;
+/**
+ * check variable is valid http url string
+ * @param string
+ * @returns
+ */
+function isValidHttpUrl(string) {
+    var url;
+    try {
+        url = new URL(string);
+    }
+    catch (_) {
+        return false;
+    }
+    return url.protocol === 'http:' || url.protocol === 'https:';
+}
+exports.isValidHttpUrl = isValidHttpUrl;
 //# sourceMappingURL=string.js.map

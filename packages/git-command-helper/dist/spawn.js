@@ -11,6 +11,13 @@ const cache_stream_1 = __importDefault(require("./cache-stream"));
 const noop_1 = __importDefault(require("./noop"));
 var spawn_async_1 = require("@expo/spawn-async");
 Object.defineProperty(exports, "spawnAsync", { enumerable: true, get: function () { return __importDefault(spawn_async_1).default; } });
+/**
+ * spawn promise
+ * @param command
+ * @param args
+ * @param options
+ * @returns
+ */
 function promiseSpawn(command, args = [], options = {}) {
     if (!command)
         throw new TypeError('command is required!');
@@ -66,7 +73,17 @@ function getCache(stream, encoding) {
         return buf;
     return buf.toString(encoding);
 }
+/**
+ * spawn async
+ */
 exports.spawn = promiseSpawn;
+/**
+ * spawn async suppress errors
+ * @param command
+ * @param args
+ * @param options
+ * @returns
+ */
 const spawnSilent = async function (command, args, options) {
     try {
         return await promiseSpawn(command, args, options);

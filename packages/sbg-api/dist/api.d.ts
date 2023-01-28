@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import { Nullable } from 'hexo-post-parser';
 import { getConfig, setConfig } from 'sbg-utility';
 declare class SBG {
@@ -25,9 +26,10 @@ declare class SBG {
     standalone: () => Promise<void>;
     /**
      * Auto seo on public dir (_config_yml.public_dir) (run after generated)
+     * @param customPath run seo fixer on spesific folder
      * @returns
      */
-    seo: () => NodeJS.ReadWriteStream;
+    seo(customPath?: string | null | undefined): Bluebird<unknown>;
     /**
      * Copy all **src-post** to **source/_posts** (run before generate)
      * * see the method {@link pcopy.copyAllPosts}
@@ -36,9 +38,10 @@ declare class SBG {
     copy(): Promise<void>;
     /**
      * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
+     * @param customPath run anonymizer external links on spesific folder
      * @returns
      */
-    safelink: () => NodeJS.ReadWriteStream | import("fs").WriteStream;
+    safelink(customPath?: string | null | undefined): Bluebird<unknown>;
     /**
      * generate site with hexo
      */

@@ -28,7 +28,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.normalizePath = void 0;
+exports.joinSolve = exports.normalizePath = void 0;
+var fs_extra_1 = __importDefault(require("fs-extra"));
 var true_case_path_1 = require("true-case-path");
 var upath_1 = __importDefault(require("upath"));
 /**
@@ -46,5 +47,21 @@ function normalizePath() {
     return upath_1.default.toUnix(casePath);
 }
 exports.normalizePath = normalizePath;
+/**
+ * UNIX join path with auto create dirname when not exists
+ * @param path
+ * @returns
+ */
+function joinSolve() {
+    var paths = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        paths[_i] = arguments[_i];
+    }
+    var merge = upath_1.default.join.apply(upath_1.default, __spreadArray([], __read(paths), false));
+    if (!fs_extra_1.default.existsSync(upath_1.default.dirname(merge)))
+        fs_extra_1.default.mkdirSync(upath_1.default.dirname(merge), { recursive: true });
+    return merge;
+}
+exports.joinSolve = joinSolve;
 exports.default = normalizePath;
 //# sourceMappingURL=normalizePath.js.map

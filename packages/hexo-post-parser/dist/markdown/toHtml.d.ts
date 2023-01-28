@@ -23,7 +23,7 @@ export default function renderShowdown(str: string): any;
  * @param str
  * @returns
  */
-export declare function renderMarkdownIt(str: string): string;
+export declare function renderMarkdownIt(str: string): any;
 /**
  * Fixable render markdown mixed with html
  * * render {@link postMap.body}
@@ -32,4 +32,4 @@ export declare function renderMarkdownIt(str: string): string;
  * @param verbose dump
  * @returns
  */
-export declare function renderBodyMarkdown(parse: postMap, verbose?: boolean): string;
+export declare function renderBodyMarkdown(parse: postMap, verbose?: boolean): any;

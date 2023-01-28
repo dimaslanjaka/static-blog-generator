@@ -5,6 +5,8 @@
 /// <reference types="node" />
 import Bluebird from 'bluebird';
 import helper from './helper';
+import * as extension from './index-exports';
+import { latestCommit } from './latestCommit';
 import noop from './noop';
 import { shell } from './shell';
 import { SpawnOptions } from './spawn';
@@ -22,7 +24,7 @@ export interface GitOpt {
  * @param param0
  * @returns
  */
-export declare function setupGit({ branch, url, baseDir, email, user }: GitOpt): Promise<git>;
+export declare function setupGit({ branch, url, baseDir, email, user }: GitOpt): Promise<extension.git>;
 /**
  * GitHub Command Helper For NodeJS
  */
@@ -34,24 +36,39 @@ export declare class git {
     branch: string;
     private exist;
     cwd: string;
-    latestCommit: (path?: string, options?: Partial<import("./latestCommit").GetLatestCommitHashOptions>) => Promise<string>;
     static shell: typeof shell;
+    shell: typeof shell;
     helper: typeof helper;
     static helper: typeof helper;
     static noop: typeof noop;
+    noop: typeof noop;
+    ext: typeof extension;
+    static ext: typeof extension;
     infos: {
-        getGithubCurrentBranch: typeof import("./git-info").getGithubCurrentBranch;
-        getGithubRemote: typeof import("./git-info").getGithubRemote;
-        getGithubRepoUrl: typeof import("./git-info").getGithubRepoUrl;
-        getGithubRootDir: typeof import("./git-info").getGithubRootDir;
-        getGithubBranches: typeof import("./git-info").getGithubBranches;
+        getGithubCurrentBranch: typeof extension.getGithubCurrentBranch;
+        getGithubRemote: typeof extension.getGithubRemote;
+        getGithubRepoUrl: typeof extension.getGithubRepoUrl;
+        getGithubRootDir: typeof extension.getGithubRootDir;
+        getGithubBranches: typeof extension.getGithubBranches;
     };
-    getGithubBranches: typeof import("./git-info").getGithubBranches;
-    getGithubCurrentBranch: typeof import("./git-info").getGithubCurrentBranch;
-    getGithubRemote: typeof import("./git-info").getGithubRemote;
-    getGithubRootDir: typeof import("./git-info").getGithubRootDir;
-    getGithubRepoUrl: typeof import("./git-info").getGithubRepoUrl;
-    constructor(dir: string);
+    getGithubBranches: typeof extension.getGithubBranches;
+    getGithubCurrentBranch: typeof extension.getGithubCurrentBranch;
+    getGithubRemote: typeof extension.getGithubRemote;
+    getGithubRootDir: typeof extension.getGithubRootDir;
+    getGithubRepoUrl: typeof extension.getGithubRepoUrl;
+    /**
+     *
+     * @param gitdir
+     * @param branch
+     */
+    constructor(gitdir: string, branch?: string);
+    /**
+     * get latest commit hash
+     * @param customPath
+     * @param options
+     * @returns
+     */
+    latestCommit(customPath?: string | null, options?: Parameters<typeof latestCommit>[1]): Promise<string>;
     info(): Promise<{
         root: string | void;
         remote: {
@@ -158,6 +175,10 @@ export declare class git {
      */
     private spawnOpt;
     /**
+     * check has any file changed
+     */
+    hasChanged(): Promise<boolean>;
+    /**
      * git add
      * @param path specific path or argument -A
      * @param optionSpawn
@@ -243,5 +264,5 @@ export declare class git {
     reset(branch?: string): Bluebird<string>;
 }
 export default git;
-export declare const gitHelper: typeof git;
-export declare const gitCommandHelper: typeof git;
+export declare const gitHelper: typeof extension.git;
+export declare const gitCommandHelper: typeof extension.git;
