@@ -33,7 +33,6 @@ ___*
 /src/validator/
 /.deploy_git
 /src-posts/
-/import/
 /dist/validator
 
 # git management
