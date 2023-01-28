@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { Nullable } from 'hexo-post-parser';
 import { chain, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
@@ -57,9 +58,18 @@ class SBG {
 
   /**
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
+   * @param customPath run seo fixer on spesific folder
    * @returns
    */
-  seo = () => taskSeo(null, join(this.cwd, this.config.public_dir));
+  seo(customPath?: string | null | undefined) {
+    return new Bluebird((resolve) => {
+      taskSeo(null, customPath || join(this.cwd, this.config.public_dir)).once('end', function () {
+        setTimeout(() => {
+          resolve();
+        }, 3000);
+      });
+    });
+  }
 
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
@@ -82,9 +92,18 @@ class SBG {
 
   /**
    * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
+   * @param customPath run anonymizer external links on spesific folder
    * @returns
    */
-  safelink = () => taskSafelink(noop, join(this.cwd, getConfig().public_dir));
+  safelink(customPath?: string | null | undefined) {
+    return new Bluebird((resolve) => {
+      taskSafelink(null, customPath || join(this.cwd, this.config.public_dir)).once('end', function () {
+        setTimeout(() => {
+          resolve();
+        }, 3000);
+      });
+    });
+  }
 
   /**
    * generate site with hexo
