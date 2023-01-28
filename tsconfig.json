@@ -17,6 +17,6 @@
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["./packages/**/*", "./packages/sbg-*/*.json", "*.js", "gulpfile.ts", "scripts/docs.js"],
+  "include": ["./packages/**/*", "./packages/sbg-*/*.json", "*.js", "*.ts", "scripts/docs.js"],
   "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**"]
 }
