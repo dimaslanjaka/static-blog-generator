@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
-import git from 'git-command-helper';
 import path from 'upath';
+import git from './packages/git-command-helper';
 
 const repo = 'https://github.com/dimaslanjaka/static-blog-generator';
 const branch = 'master';
