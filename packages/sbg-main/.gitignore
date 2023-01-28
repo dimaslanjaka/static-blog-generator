@@ -1,3 +1,5 @@
 **/coverage
 **/tmp
 *.tgz
+/import/araka_id.xml
+/import/webmanajemen.com.xml
