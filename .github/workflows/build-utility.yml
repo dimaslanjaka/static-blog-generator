@@ -6,6 +6,7 @@ on:
     paths:
       - 'packages/sbg-utility/**/*'
   workflow_dispatch:
+  workflow_call:
 
 # run single job
 concurrency:
