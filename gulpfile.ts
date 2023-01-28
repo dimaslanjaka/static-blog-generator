@@ -4,7 +4,7 @@ import { spawnAsync } from 'git-command-helper/dist/spawn';
 import gulp from 'gulp';
 import { join, resolve as resolvePath, toUnix } from 'upath';
 import { checkPacked } from './check-packed.js';
-import { commitDist } from './gulpfile-commit';
+import { commitDist } from './gulpfile-dist';
 
 gulp.task('build-commit', commitDist);
 gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
