@@ -7,7 +7,7 @@ const branch = 'master';
 
 const base = path.join(__dirname, 'dist');
 
-export async function commitDist() {
+export async function commitDist(done: (...args: any[]) => any) {
   // clone when not exist
   if (!fs.existsSync(base)) {
     await git.ext.spawnAsync('git', ['clone', '-b', branch, '--single-branch', repo, base], {
@@ -25,5 +25,6 @@ export async function commitDist() {
         await distgh.push();
       }
     }
+    if (typeof done === 'function') done();
   });
 }
