@@ -42,7 +42,7 @@
     "git-command-helper": "*",
     "glob": "^8.1.0",
     "gulp": "^4.0.2",
-    "hexo": "^5.4.1",
+    "hexo": "^6.0.0",
     "hexo-post-parser": "*",
     "hexo-util": "^3.0.1",
     "minimatch": "^6.1.6",
