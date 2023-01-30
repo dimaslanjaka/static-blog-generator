@@ -34,14 +34,19 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ansi-colors": "^4.1.3",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "git-command-helper": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/git-command-helper?master",
+    "glob": "^8.1.0",
     "google-news-sitemap": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/google-news-sitemap?master",
     "hexo-post-parser": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/hexo-post-parser?master",
+    "nunjucks": "^3.2.3",
     "safelinkify": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/safelinkify?master",
     "sbg-api": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-api?master",
     "sbg-main": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-main?master",
     "sbg-server": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-server?master",
-    "sbg-utility": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-utility?master"
+    "sbg-utility": "https://gitpkg.now.sh/dimaslanjaka/static-blog-generator/packages/sbg-utility?master",
+    "upath": "^2.0.1"
   },
   "repository": {
     "type": "git",
