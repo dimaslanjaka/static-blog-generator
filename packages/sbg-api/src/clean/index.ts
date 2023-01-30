@@ -1,7 +1,7 @@
 import gulp from 'gulp';
-import cleanArchive from './archive';
+import cleanArchive from './cleanArchive';
 import { cleanDb } from './cleanDb';
-import { cleanGeneratedPosts } from './generated-post';
+import { cleanGeneratedPosts } from './cleanGeneratedPosts';
 
 gulp.task('clean:db', cleanDb);
 gulp.task('clean:post', cleanGeneratedPosts);
