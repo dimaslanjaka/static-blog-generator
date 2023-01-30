@@ -99,5 +99,9 @@ jobs:
 
       - run: npm install
       - run: lerna exec npm install
+        id: install
+        continue-on-error: true
+      - run: lerna exec npm run update
+        if: steps.install.outcome != 'success'
       - run: lerna exec npm run build
       - run: lerna exec npm run pack
