@@ -98,6 +98,6 @@ jobs:
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: npm install
-      - run: lerna bootstrap --no-ci
+      - run: lerna exec npm install
       - run: lerna exec npm run build
-      - run: lerna run --no-bail pack
+      - run: lerna exec npm run pack
