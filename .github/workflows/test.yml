@@ -105,3 +105,5 @@ jobs:
         working-directory: test
       - run: hexo generate
         working-directory: test
+      - run: sbg deploy copy
+        working-directory: test
