@@ -264,7 +264,7 @@ function hexoGenerateSitemap() {
 }
 exports.hexoGenerateSitemap = hexoGenerateSitemap;
 /**
- * is path
+ * is string matched pattern (using micromatch)
  * @param str
  * @param patterns
  * @returns
