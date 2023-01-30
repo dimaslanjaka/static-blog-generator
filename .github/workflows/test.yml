@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  cli:
     strategy:
       fail-fast: true
     env:
@@ -19,6 +19,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    name: "Test Using CLI"
     steps:
       - uses: actions/checkout@v3
         with:
