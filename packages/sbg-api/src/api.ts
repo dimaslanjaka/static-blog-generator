@@ -4,6 +4,7 @@ import { Nullable } from 'hexo-post-parser';
 import { chain, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
 import { join } from 'upath';
 import * as cleaner from './clean';
+import { deployCopy } from './deploy/copy';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import * as pcopy from './post/copy';
@@ -135,6 +136,22 @@ class SBG {
       await cleaner.cleanDb().catch(console.log);
     }
   }
+
+  public deploy = new (class {
+    constructor(public superThis: SBG) {
+      //
+    }
+    copy(ignore: string | string[] = []) {
+      const self = this.superThis;
+      return new Bluebird(function (resolve) {
+        deployCopy(self, ignore).once('end', function () {
+          setTimeout(() => {
+            resolve();
+          }, 3000);
+        });
+      });
+    }
+  })(this);
 }
 
 export default SBG;
