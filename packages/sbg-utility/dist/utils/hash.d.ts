@@ -1,5 +1,4 @@
 /// <reference types="node" />
-/// <reference types="node" />
 import crypto from 'crypto';
 import fs from 'fs-extra';
 /**
