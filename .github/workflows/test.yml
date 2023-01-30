@@ -96,7 +96,10 @@ jobs:
         working-directory: test
         id: install
         continue-on-error: true
-      - run: npm run update
+      - run: |
+          npm un static-blog-generator
+          npm i -D https://github.com/dimaslanjaka/static-blog-generator/tarball/master
+          npm run update
         if: steps.install.outcome != 'success'
         working-directory: test
       - run: sbg post standalone
