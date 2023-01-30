@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import fs from 'fs-extra';
 export * from './del';
 export * from './emptyDir';
@@ -12,7 +13,7 @@ export * from './writefile';
  * @param options
  * @returns
  */
-export declare function createWriteStream(dest: string, options?: Parameters<(typeof fs)['createWriteStream']>[1]): any;
+export declare function createWriteStream(dest: string, options?: Parameters<(typeof fs)['createWriteStream']>[1]): fs.WriteStream;
 /**
  * is non-markdown file
  * @param path
