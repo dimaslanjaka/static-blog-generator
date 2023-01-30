@@ -263,8 +263,14 @@ function hexoGenerateSitemap() {
     });
 }
 exports.hexoGenerateSitemap = hexoGenerateSitemap;
-function isMatch(path, patterns) {
-    return micromatch_1.default.isMatch(path, patterns);
+/**
+ * is path
+ * @param str
+ * @param patterns
+ * @returns
+ */
+function isMatch(str, patterns) {
+    return micromatch_1.default.isMatch(str, patterns);
 }
 gulp_1.default.task('sitemap', function () {
     return new bluebird_1.default(function (resolve) {
