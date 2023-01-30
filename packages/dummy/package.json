@@ -1,0 +1,10 @@
+{
+  "name": "dummy",
+  "description": "dummy pkg for lerna",
+  "dependencies": {
+    "sbg-api": "file:../sbg-api",
+    "sbg-main": "file:../sbg-main",
+    "sbg-server": "file:../sbg-server",
+    "sbg-utility": "file:../sbg-utility"
+  }
+}
