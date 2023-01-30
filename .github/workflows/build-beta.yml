@@ -105,7 +105,7 @@ jobs:
         if: steps.install.outcome != 'success'
       #- run: lerna bootstrap
       - run: lerna run update --scope="sbg-*"
-      - run: npm run pack
+      #- run: npm run pack
       - name: commit and push
         continue-on-error: true
         run: |
