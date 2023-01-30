@@ -1,4 +1,4 @@
-name: Build Packages
+name: Build sbg-utility
 
 on:
   push:
