@@ -40,7 +40,7 @@
     "glob": "^8.1.0",
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
-    "hexo": "^6.3.0",
+    "hexo": "^5.4.1",
     "hexo-is": "^1.0.4",
     "hexo-post-parser": "^1.2.5",
     "hexo-util": "^3.0.1",
