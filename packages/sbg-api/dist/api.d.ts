@@ -52,6 +52,10 @@ declare class SBG {
      * @see {@link cleaner.cleanArchive}
      */
     clean(opt?: 'all' | 'archive' | 'database' | 'post'): Promise<void>;
+    deploy: {
+        superThis: SBG;
+        copy(ignore?: string | string[]): Bluebird<unknown>;
+    };
 }
 export default SBG;
 export { SBG };
