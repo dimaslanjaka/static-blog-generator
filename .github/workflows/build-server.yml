@@ -4,7 +4,9 @@ on:
   push:
     branches: [ "beta" ]
     paths:
-      - 'packages/sbg-server/**/*'
+      - 'packages/sbg-server/src/**/*'
+      - 'packages/sbg-server/package.json'
+      - 'packages/sbg-server/readme.md'
   workflow_dispatch:
   workflow_call:
 
