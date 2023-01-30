@@ -67,9 +67,9 @@ const options = {
 
 depcheck(__dirname, options).then((unused) => {
   let content = '';
-  content += `install missing dependencies ${tripleTicks('bash')}${Object.keys(
-    unused.missing
-  ).join(' ')}${tripleTicks()}\n`;
+  content += `install missing dependencies ${tripleTicks('bash')}${Object.keys(unused.missing).join(
+    ' '
+  )}${tripleTicks()}\n`;
   content += '```json\n' + JSON.stringify(unused, null, 2) + '\n```\n\n';
   fs.writeFileSync(path.join(__dirname, 'unused.md'), content);
 });
