@@ -98,6 +98,11 @@ jobs:
 
       - run: npm install
         working-directory: packages/sbg-api
+        id: install
+        continue-on-error: true
+      - run: npm run update
+        if: steps.install.outcome != 'success'
+        working-directory: packages/sbg-api
       - run: npm test
         working-directory: packages/sbg-api
       - run: npm run build
