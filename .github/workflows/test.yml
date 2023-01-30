@@ -106,11 +106,11 @@ jobs:
       - run: npm update
         if: steps.update.outcome != 'success'
         continue-on-error: true
-      - run: sbg post standalone
+      - run: npx sbg post standalone
         working-directory: test
-      - run: sbg post copy
+      - run: npx sbg post copy
         working-directory: test
-      - run: hexo generate
+      - run: npx hexo generate
         working-directory: test
-      - run: sbg deploy copy
+      - run: npx sbg deploy copy
         working-directory: test
