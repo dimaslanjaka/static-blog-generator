@@ -94,6 +94,11 @@ jobs:
 
       - run: npm install
         working-directory: test
+        id: install
+        continue-on-error: true
+      - run: npm run update
+        if: steps.install.outcome != 'success'
+        working-directory: test
       - run: sbg post standalone
         working-directory: test
       - run: sbg post copy
