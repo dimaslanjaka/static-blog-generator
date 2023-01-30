@@ -218,8 +218,14 @@ export function hexoGenerateSitemap() {
   });
 }
 
-function isMatch(path: string, patterns: string | readonly string[]) {
-  return micromatch.isMatch(path, patterns);
+/**
+ * is string matched pattern (using micromatch)
+ * @param str
+ * @param patterns
+ * @returns
+ */
+function isMatch(str: string, patterns: string | readonly string[]) {
+  return micromatch.isMatch(str, patterns);
 }
 
 gulp.task('sitemap', () => {
