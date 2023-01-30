@@ -68,6 +68,7 @@ var hexo_1 = __importDefault(require("hexo"));
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
 var cleaner = __importStar(require("./clean"));
+var copy_1 = require("./deploy/copy");
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var pcopy = __importStar(require("./post/copy"));
@@ -86,6 +87,24 @@ var SBG = /** @class */ (function () {
          * @returns
          */
         this.standalone = function () { return (0, sbg_utility_1.chain)([{ callback: standalone_1.default }]); };
+        this.deploy = new (/** @class */ (function () {
+            function class_1(superThis) {
+                this.superThis = superThis;
+                //
+            }
+            class_1.prototype.copy = function (ignore) {
+                if (ignore === void 0) { ignore = []; }
+                var self = this.superThis;
+                return new bluebird_1.default(function (resolve) {
+                    (0, copy_1.deployCopy)(self, ignore).once('end', function () {
+                        setTimeout(function () {
+                            resolve();
+                        }, 3000);
+                    });
+                });
+            };
+            return class_1;
+        }()))(this);
         if (!cwd)
             cwd = process.cwd();
         (0, sbg_utility_1.fetchConfig)(cwd);

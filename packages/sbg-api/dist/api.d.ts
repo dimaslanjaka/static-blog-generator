@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import { Nullable } from 'hexo-post-parser';
 import { getConfig, setConfig } from 'sbg-utility';
 declare class SBG {
@@ -28,7 +29,7 @@ declare class SBG {
      * @param customPath run seo fixer on spesific folder
      * @returns
      */
-    seo(customPath?: string | null | undefined): any;
+    seo(customPath?: string | null | undefined): Bluebird<unknown>;
     /**
      * Copy all **src-post** to **source/_posts** (run before generate)
      * * see the method {@link pcopy.copyAllPosts}
@@ -40,7 +41,7 @@ declare class SBG {
      * @param customPath run anonymizer external links on spesific folder
      * @returns
      */
-    safelink(customPath?: string | null | undefined): any;
+    safelink(customPath?: string | null | undefined): Bluebird<unknown>;
     /**
      * generate site with hexo
      */
@@ -51,6 +52,10 @@ declare class SBG {
      * @see {@link cleaner.cleanArchive}
      */
     clean(opt?: 'all' | 'archive' | 'database' | 'post'): Promise<void>;
+    deploy: {
+        superThis: SBG;
+        copy(ignore?: string | string[]): Bluebird<unknown>;
+    };
 }
 export default SBG;
 export { SBG };

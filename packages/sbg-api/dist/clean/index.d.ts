@@ -1,4 +1,4 @@
-import cleanArchive from './archive';
+import cleanArchive from './cleanArchive';
 import { cleanDb } from './cleanDb';
-import { cleanGeneratedPosts } from './generated-post';
+import { cleanGeneratedPosts } from './cleanGeneratedPosts';
 export { cleanDb, cleanArchive, cleanGeneratedPosts };

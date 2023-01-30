@@ -36,67 +36,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cleanDb = void 0;
-var fs_extra_1 = require("fs-extra");
+exports.cleanGeneratedPosts = void 0;
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
-var util_1 = require("util");
+var cleanDb_1 = require("./cleanDb");
 /**
- * Clean Project Databases
+ * remove source/_posts
+ * @param callback
+ * @returns
  */
-function cleanDb(callback, files) {
+function cleanGeneratedPosts(callback) {
     return __awaiter(this, void 0, void 0, function () {
-        var log, config, dirs, i, dir, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    log = (0, sbg_utility_1.debug)('clean');
-                    config = (0, sbg_utility_1.getConfig)();
-                    if (typeof config.source_dir !== 'string') {
-                        (0, sbg_utility_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/errors/clean.log'), (0, util_1.inspect)(config));
-                        throw new Error('config.source_dir must be configured');
-                    }
-                    dirs = [
-                        (0, upath_1.join)(config.cwd, config.source_dir, '_posts'),
-                        (0, upath_1.join)(config.cwd, 'tmp/cache'),
-                        (0, upath_1.join)(config.cwd, 'tmp/dump'),
-                        (0, upath_1.join)(config.cwd, 'tmp/logs'),
-                        (0, upath_1.join)(config.cwd, 'db.json')
-                    ];
-                    if (Array.isArray(files))
-                        dirs = dirs.concat(files);
-                    i = 0;
-                    _b.label = 1;
-                case 1:
-                    if (!(i < dirs.length)) return [3 /*break*/, 7];
-                    dir = dirs[i];
-                    _b.label = 2;
-                case 2:
-                    _b.trys.push([2, 5, , 6]);
-                    if (!(0, fs_extra_1.existsSync)(dir)) return [3 /*break*/, 4];
-                    log('claning', dir);
-                    return [4 /*yield*/, (0, sbg_utility_1.del)(dir)];
-                case 3:
-                    _b.sent();
-                    _b.label = 4;
-                case 4: return [3 /*break*/, 6];
-                case 5:
-                    _a = _b.sent();
-                    log('cannot delete', dir);
-                    return [3 /*break*/, 6];
-                case 6:
-                    i++;
-                    return [3 /*break*/, 1];
-                case 7:
-                    /*const hexo = new hexoLib(config.cwd);
-                    await hexo.init().catch(noop);
-                    await hexo.call('clean').catch(noop);*/
-                    if (typeof callback === 'function')
-                        return [2 /*return*/, callback()];
-                    return [2 /*return*/, undefined];
-            }
+        var config;
+        return __generator(this, function (_a) {
+            config = (0, sbg_utility_1.getConfig)();
+            return [2 /*return*/, (0, cleanDb_1.cleanDb)(callback, [(0, upath_1.join)(config.cwd, config.source_dir, '_posts')])];
         });
     });
 }
-exports.cleanDb = cleanDb;
-//# sourceMappingURL=cleanDb.js.map
+exports.cleanGeneratedPosts = cleanGeneratedPosts;
+//# sourceMappingURL=cleanGeneratedPosts.js.map
