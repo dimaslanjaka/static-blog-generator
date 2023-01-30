@@ -6,7 +6,7 @@ import { join, resolve as resolvePath, toUnix } from 'upath';
 import { checkPacked } from './check-packed.js';
 import { commitDist } from './gulpfile-dist';
 
-gulp.task('build-commit', commitDist);
+gulp.task('commit-dist', commitDist);
 gulp.task('check-dist', () => checkPacked(__dirname + '/dist'));
 gulp.task('check-root', () => checkPacked(__dirname + '/dist', join(__dirname, 'tmp/packed.txt')));
 
@@ -91,11 +91,30 @@ function copyWorkspaceDist(done: gulp.TaskFunctionCallback) {
     const cwd = join(__dirname, p);
     const dest = join(dist, p);
     const pkj = join(__dirname, p, 'package.json');
-    // mkdir /dist/<package>
+    const pkl = join(__dirname, p, 'package-lock.json');
+
+    // mkdir /dist/packages/<package> when not exist
     if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
 
-    // copy /packages/<package>/package.json to /dist/<package>/
+    // copy /packages/<package>/package.json to /dist/packages/<package>/
     fs.copyFileSync(pkj, join(dest, 'package.json'));
+    // copy /packages/<package>/package-lock.json to /dist/packages/<package>/
+    fs.copyFileSync(pkl, join(dest, 'package-lock.json'));
+
+    // modify /dist/packages/<package>/package.json
+    const dpkj = join(dest, 'package.json');
+    const ppkj = JSON.parse(fs.readFileSync(dpkj).toString()) as typeof import('./package.json');
+    if (ppkj.name.startsWith('sbg-')) {
+      //console.log(ppkj.dependencies, ppkj.devDependencies);
+      const internalpkg = Object.keys(ppkj.dependencies).filter((str) => Object.keys(packages).includes(str));
+      for (let i = 0; i < internalpkg.length; i++) {
+        const pkgname = internalpkg[i];
+        ppkj.dependencies[pkgname] = 'file:../' + pkgname;
+        // console.log(ppkj.dependencies[pkgname]);
+      }
+    }
+    fs.writeFileSync(dpkj, JSON.stringify(ppkj, null, 2));
+
     console.log('copying', cwd.replace(toUnix(__dirname), ''), '->', dest.replace(toUnix(__dirname), ''));
     // copy dist files to /dist/<package>/dist
     gulp
