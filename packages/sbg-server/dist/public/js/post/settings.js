@@ -2880,7 +2880,7 @@ var AxiosHeaders = /*#__PURE__*/function (_Symbol$iterator, _Symbol$toStringTag)
   }]);
   return AxiosHeaders;
 }(Symbol.iterator, Symbol.toStringTag);
-AxiosHeaders.accessor(['Content-Type', 'Content-Length', 'Accept', 'Accept-Encoding', 'User-Agent']);
+AxiosHeaders.accessor(['Content-Type', 'Content-Length', 'Accept', 'Accept-Encoding', 'User-Agent', 'Authorization']);
 _utils["default"].freezeMethods(AxiosHeaders.prototype);
 _utils["default"].freezeMethods(AxiosHeaders);
 var _default = AxiosHeaders;
@@ -3417,7 +3417,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.VERSION = void 0;
-var VERSION = "1.2.5";
+var VERSION = "1.2.6";
 exports.VERSION = VERSION;
 
 },{}],22:[function(require,module,exports){
