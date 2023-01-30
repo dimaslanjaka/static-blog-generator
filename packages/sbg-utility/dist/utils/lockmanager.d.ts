@@ -3,7 +3,7 @@ export default class LockManager {
     file: string;
     constructor(name: string);
     lock(): import("./filemanager").writefileResult;
-    release(): any;
-    releaseAsync(): any;
-    exist(): any;
+    release(): void;
+    releaseAsync(): Promise<void>;
+    exist(): boolean;
 }

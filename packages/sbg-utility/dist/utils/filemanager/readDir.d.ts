@@ -1,4 +1,5 @@
 import Bluebird from 'bluebird';
+import fs from 'fs-extra';
 interface readDirDone {
     (err: Error, results?: string[]): any;
 }
