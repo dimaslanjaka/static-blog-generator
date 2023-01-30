@@ -16,4 +16,4 @@ export declare function parsePermalink(post: string, config: {
      * post title
      */
     title: string;
-}): any;
+}): string;

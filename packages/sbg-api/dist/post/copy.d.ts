@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
 import { getConfig } from 'sbg-utility';
@@ -12,7 +13,7 @@ export declare function copySinglePost(identifier: string, callback?: (...args: 
  * copy all posts from src-posts to source/_posts
  * @returns
  */
-export declare function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>): any;
+export declare function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>): NodeJS.ReadWriteStream;
 /**
  * pipeable function to process post
  * @param config
