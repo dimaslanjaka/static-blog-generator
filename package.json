@@ -89,6 +89,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "git-command-helper": "file:packages/git-command-helper",
     "gulp": "^4.0.2",
+    "hexo-blogger-xml": "file:packages/hexo-blogger-xml",
     "hexo-post-parser": "file:packages/hexo-post-parser",
     "hpagent": "^1.2.0",
     "husky": "^8.0.3",
