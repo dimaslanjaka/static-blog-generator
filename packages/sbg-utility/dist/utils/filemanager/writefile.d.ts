@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import fs from 'fs-extra';
 export interface writefileOpt extends fs.MakeDirectoryOptions {
     append?: boolean | undefined | null;
