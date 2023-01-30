@@ -101,14 +101,10 @@ jobs:
       - run: lerna exec npm install
         id: install
         continue-on-error: true
-      - run: lerna exec npm run update
+      - run: npm run update
         if: steps.install.outcome != 'success'
-      - run: lerna exec npm run build
-        continue-on-error: true
-      - run: lerna exec npm run pack
-      - run: git pull -X theirs
-        name: Pull before push
-        continue-on-error: true
+      - run: lerna run update --scope="sbg-*"
+      - run: npm run pack
       - name: commit and push
         continue-on-error: true
         run: |
