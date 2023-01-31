@@ -66,12 +66,19 @@ yargs_1.default
         type: `string`,
         describe: `anonymize external links`
     });
+    yargs.positional(`copy`, {
+        type: `string`,
+        describe: `copy generated files to deployment directory`
+    });
 }, async function ({ key }) {
     if (key === 'seo') {
         await api.seo(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
     }
     else if (key === 'safelink') {
         await api.safelink(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+    }
+    else if (key === 'copy') {
+        //
     }
 })
     .help('help')
