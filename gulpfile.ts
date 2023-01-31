@@ -101,20 +101,6 @@ function copyWorkspaceDist(done: gulp.TaskFunctionCallback) {
     // copy /packages/<package>/package-lock.json to /dist/packages/<package>/
     fs.copyFileSync(pkl, join(dest, 'package-lock.json'));
 
-    // modify /dist/packages/<package>/package.json
-    const dpkj = join(dest, 'package.json');
-    const ppkj = JSON.parse(fs.readFileSync(dpkj).toString()) as typeof import('./package.json');
-    if (ppkj.name.startsWith('sbg-')) {
-      //console.log(ppkj.dependencies, ppkj.devDependencies);
-      const internalpkg = Object.keys(ppkj.dependencies).filter((str) => Object.keys(packages).includes(str));
-      for (let i = 0; i < internalpkg.length; i++) {
-        const pkgname = internalpkg[i];
-        ppkj.dependencies[pkgname] = 'file:../' + pkgname;
-        // console.log(ppkj.dependencies[pkgname]);
-      }
-    }
-    fs.writeFileSync(dpkj, JSON.stringify(ppkj, null, 2));
-
     console.log('copying', cwd.replace(toUnix(__dirname), ''), '->', dest.replace(toUnix(__dirname), ''));
     // copy dist files to /dist/<package>/dist
     gulp
