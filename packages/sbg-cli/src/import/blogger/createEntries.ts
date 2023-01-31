@@ -15,12 +15,12 @@ export function createEntries(xmlFile: string) {
   // save the xml after modifications
   const xmlString = document.documentElement.outerHTML;
   const entries = document.documentElement.getElementsByTagName('entry');
-  utility.writefile(path.join(process.cwd(), `tmp/sbg-main/${path.basename(xmlFile)}-rss.xml`), xmlString);
+  utility.writefile(path.join(process.cwd(), `tmp/sbg-cli/${path.basename(xmlFile)}-rss.xml`), xmlString);
   utility.writefile(
-    path.join(process.cwd(), `tmp/sbg-main/${path.basename(xmlFile)}-inner.xml`),
+    path.join(process.cwd(), `tmp/sbg-cli/${path.basename(xmlFile)}-inner.xml`),
     document.documentElement.innerHTML
   );
-  utility.writefile(path.join(process.cwd(), `tmp/sbg-main/${path.basename(xmlFile)}-entry.xml`), entries[0].innerHTML);
+  utility.writefile(path.join(process.cwd(), `tmp/sbg-cli/${path.basename(xmlFile)}-entry.xml`), entries[0].innerHTML);
   return {
     dom,
     window: dom.window,

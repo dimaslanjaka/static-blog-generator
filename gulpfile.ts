@@ -14,7 +14,7 @@ const packages = {
   'packages/sbg-utility': false,
   'packages/sbg-api': false,
   'packages/sbg-server': false,
-  'packages/sbg-main': false,
+  'packages/sbg-cli': false,
   'packages/safelinkify': false,
   'packages/hexo-post-parser': false,
   'packages/git-command-helper': false,
