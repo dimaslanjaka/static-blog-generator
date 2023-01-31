@@ -1,29 +1,29 @@
 {
-  "/release/sbg-server-0.0.1.tgz": {
+  "/release/sbg-server-1.0.0.tgz": {
     "integrity": {
-      "sha1": "58d11abfb918f2d7a43240598a3b82486041c5a5",
-      "sha256": "7mMfF2vBgR7wMVc5G9p4JxEA1MWcJ9lYFh3tREONthc=",
-      "md5": "ffcf6bb539f674e453008e1e86015003",
-      "sha512": "UflA0WPNic2t0jyxBR95vmKVcMcp2OhQOqcSCZIjHvVFCR5y+aHWJrmAqD/vOvMl0/y99Q24aMjUHgy+qhXTpg=="
+      "sha1": "453bc01803bbb4d64fac575d304dc65e35705a2e",
+      "sha256": "cGX/kQa+hIyF3f2F60N4riqcOZSfXzallX1aCap3liE=",
+      "md5": "e2eeba621bcba9237a86d1a18e00d6d8",
+      "sha512": "vJ8sZ4cXoKcB87e6Wv4VvS8QrGEPX8SWHq0Mz9X8shQp6PAQ4fFmbzcf7NJ24E9hY3kvPxMshNJngpnvspUInA=="
     },
-    "size": "1224.36 KB"
+    "size": "1224.40 KB"
   },
   "/release/sbg-server.tgz": {
     "integrity": {
-      "sha1": "58d11abfb918f2d7a43240598a3b82486041c5a5",
-      "sha256": "7mMfF2vBgR7wMVc5G9p4JxEA1MWcJ9lYFh3tREONthc=",
-      "md5": "ffcf6bb539f674e453008e1e86015003",
-      "sha512": "UflA0WPNic2t0jyxBR95vmKVcMcp2OhQOqcSCZIjHvVFCR5y+aHWJrmAqD/vOvMl0/y99Q24aMjUHgy+qhXTpg=="
+      "sha1": "453bc01803bbb4d64fac575d304dc65e35705a2e",
+      "sha256": "cGX/kQa+hIyF3f2F60N4riqcOZSfXzallX1aCap3liE=",
+      "md5": "e2eeba621bcba9237a86d1a18e00d6d8",
+      "sha512": "vJ8sZ4cXoKcB87e6Wv4VvS8QrGEPX8SWHq0Mz9X8shQp6PAQ4fFmbzcf7NJ24E9hY3kvPxMshNJngpnvspUInA=="
     },
-    "size": "1224.36 KB"
+    "size": "1224.40 KB"
   },
   "/package-lock.json": {
     "integrity": {
-      "sha1": "e04cf31c2a35d392fa780337a90a57985d8c4c29",
-      "sha256": "GdND9mz1nMjaeJ5yXlD0XoyzZR0oHleIlt6YFIIdvPw=",
-      "md5": "52060cf0ec4e4470441ddc71da9d304b",
-      "sha512": "YAUSWSraS4uEMa3a+t3GH87fAWxOcOZmKr+KU3oyr5H57IR7c7qHGnPOlMKA+WdwpY2iQH7UCMj9R9VqspAvsw=="
+      "sha1": "efb6d0baf220291cb6ed8a36acd514513d0634e8",
+      "sha256": "O7EYV13pJ6HO1RZ0PVKA2acgRxyJS21c6V5Tn0ysOXs=",
+      "md5": "258e63b6b8c5e27d89cec696fbebc452",
+      "sha512": "/t/4XDrmLnsOFE+EJM6rHMvBcOu/c7hxldVjD3IDyombyxNQxj6LYeevXas+0ePSndM8GqpzZ5mRCfHGTgmNFQ=="
     },
-    "size": "1458.63 KB"
+    "size": "807.85 KB"
   }
 }
