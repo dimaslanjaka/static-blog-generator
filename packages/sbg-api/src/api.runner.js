@@ -1,10 +1,10 @@
-// process.cwd = () => __dirname + '/../../sbg-main/test';
+// process.cwd = () => __dirname + '/../../sbg-cli/test';
 
 require('ts-node/register');
 const { Application } = require('.');
 const path = require('upath');
 
-const root = path.resolve(__dirname + '/../../sbg-main/test');
+const root = path.resolve(__dirname + '/../../sbg-cli/test');
 
 const api = new Application(root);
 async function test() {

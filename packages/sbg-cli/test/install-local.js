@@ -11,7 +11,7 @@ const fs = require('fs');
   fs.writeFileSync(
     __dirname + '/package.json',
     JSON.stringify({
-      name: 'sbg-main-test'
+      name: 'sbg-cli-test'
     })
   );
   console.info('installing tarball');

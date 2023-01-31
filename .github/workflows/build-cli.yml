@@ -1,12 +1,12 @@
-name: Build sbg-main
+name: Build sbg-cli
 
 on:
   push:
     branches: [ "beta" ]
     paths:
-      - 'packages/sbg-main/src/**/*'
-      - 'packages/sbg-main/package.json'
-      - 'packages/sbg-main/readme.md'
+      - 'packages/sbg-cli/src/**/*'
+      - 'packages/sbg-cli/package.json'
+      - 'packages/sbg-cli/readme.md'
   workflow_dispatch:
   workflow_call:
 
@@ -97,23 +97,23 @@ jobs:
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: npm install
-        working-directory: packages/sbg-main
+        working-directory: packages/sbg-cli
         id: install
         continue-on-error: true
       - run: npm run update
         if: steps.install.outcome != 'success'
-        working-directory: packages/sbg-main
+        working-directory: packages/sbg-cli
       - run: npm test
-        working-directory: packages/sbg-main
+        working-directory: packages/sbg-cli
       - run: npm run build
-        working-directory: packages/sbg-main
+        working-directory: packages/sbg-cli
       - run: npm run pack
-        working-directory: packages/sbg-main
-      - working-directory: packages/sbg-main
+        working-directory: packages/sbg-cli
+      - working-directory: packages/sbg-cli
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Update sbg-main from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          git commit -m "Update sbg-cli from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
           git push
 

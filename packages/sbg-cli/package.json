@@ -1,5 +1,5 @@
 {
-  "name": "sbg-main",
+  "name": "sbg-cli",
   "version": "1.0.0",
   "description": "static-blog-generator CLI and main scripts",
   "main": "dist/index.js",
