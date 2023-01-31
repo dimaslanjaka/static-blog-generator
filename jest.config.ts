@@ -1,7 +1,7 @@
 import { defaults } from 'jest-config';
 import { join } from 'path';
 import sbgApiConfig from './packages/sbg-api/jest.config';
-import sbgMainConfig from './packages/sbg-main/jest.config';
+import sbgMainConfig from './packages/sbg-cli/jest.config';
 import sbgUtilityConfig from './packages/sbg-utility/jest.config';
 
 const globalIgnores: import('jest').Config = {
@@ -23,7 +23,7 @@ const config: import('jest').Config = {
   cacheDirectory: join(__dirname, 'tmp/jest'),
   rootDir: './',
   roots: [
-    '<rootDir>/packages/sbg-main',
+    '<rootDir>/packages/sbg-cli',
     '<rootDir>/packages/sbg-api',
     '<rootDir>/packages/sbg-utility',
     '<rootDir>/packages/sbg-server'
@@ -83,7 +83,7 @@ const config: import('jest').Config = {
   projects: [
     {
       displayName: 'CLI',
-      testMatch: ['<rootDir>/packages/sbg-main/test/**/*.{test,spec}.{ts,js}'],
+      testMatch: ['<rootDir>/packages/sbg-cli/test/**/*.{test,spec}.{ts,js}'],
       ...sbgMainConfig
     },
     {

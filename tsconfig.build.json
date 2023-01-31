@@ -4,6 +4,6 @@
     { "path": "packages/sbg-utility" },
     { "path": "packages/sbg-api" },
     { "path": "packages/sbg-server" },
-    { "path": "packages/sbg-main" }
+    { "path": "packages/sbg-cli" }
   ]
 }
