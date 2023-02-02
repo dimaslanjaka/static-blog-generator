@@ -4,8 +4,8 @@ on:
   push:
     branches: [ "master", "beta" ]
     paths:
-      - '**/package-lock.json'
-      - '**/yarn.lock'
+      #- '**/package-lock.json'
+      #- '**/yarn.lock'
       - '**/_config.yml'
   pull_request:
     paths:
