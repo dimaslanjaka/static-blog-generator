@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "private": true,
+  "packageManager": "yarn@3.2.0",
   "files": [
     "packages/sbg-*/dist/**/*",
     "packages/sbg-*/package.json",
