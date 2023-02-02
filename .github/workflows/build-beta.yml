@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '**/dist'
       - '**/*.tgz'
+      - '**/yarn.lock'
   pull_request:
     types:
       - closed
