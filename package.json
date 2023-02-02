@@ -2,11 +2,7 @@
   "name": "static-blog-generator-root",
   "version": "3.0.0",
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
-  "main": "packages/sbg-cli/dist/index.js",
-  "types": "packages/sbg-cli/dist/index.d.ts",
-  "bin": {
-    "sbg": "packages/sbg-cli/dist/cli.js"
-  },
+  "private": true,
   "files": [
     "packages/sbg-*/dist/**/*",
     "packages/sbg-*/package.json",
