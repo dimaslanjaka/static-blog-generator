@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="apple-touch-icon" type="image/png"
+    href="//cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+  <meta name="apple-mobile-web-app-title" content="CodePen" />
+
+  <link rel="shortcut icon" type="image/x-icon"
+    href="//cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+  <link rel="mask-icon" type="image/x-icon"
+    href="//cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+    color="#111" />
+  <title>{{ post.title }} - Simple Editor</title>
+  <link rel="canonical" href="//codepen.io/storyn26383/pen/OxgzaE" />
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/theme/monokai.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.9.0/github-markdown.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    main {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    main>* {
+      width: 50%;
+      height: 100vh;
+    }
+
+    main #editor .CodeMirror {
+      height: 100vh;
+      font-size: 16px;
+    }
+
+    main #preview {
+      overflow: auto;
+      padding: 1rem;
+    }
+
+    #default-value {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="antialiasing">
+  <main>
+    <div id="editor"></div>
+    <div class="markdown-body" id="preview"></div>
+    <div id="default-value">{{ post.rawbody|safe }}</div>
+    <script id="post-data" type="application/json">{{ post | json(2) }}</script>
+  </main>
+
+  <div class="fixed bottom-1 right-1 w-max">
+    <button type="button" id="btn-save"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 p-1">
+      <i class="fa-light fa-floppy-disk"></i>
+      <span class="sr-only">Save</span>
+    </button>
+  </div>
+
+  <!--
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/codemirror.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.31.0/mode/markdown/markdown.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.0/markdown-it.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  -->
+
+  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js"></script>-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script src="/js/post/edit2.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      // EntryPoint.run();
+    });
+  </script>
+</body>
+
+</html>
