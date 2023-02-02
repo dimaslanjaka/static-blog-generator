@@ -3,8 +3,8 @@ HexoJS GUI and Helpers - Static Blog Generator NodeJS.
 
 Static Blog Generator v3 using Gulp System.
 
-Pre-processing all source posts before rendering from hexo. 
-Useful for low-end devices to avoid memory heap errors. 
+Pre-processing all source posts before rendering from hexo.
+Useful for low-end devices to avoid memory heap errors.
 With this package you can prevent using large number of hexo plugins, because some function (runner) separated by task, so memory friendly.
 
 were curently refactoring project using monorepo. Latest working build at https://github.com/dimaslanjaka/static-blog-generator/tree/ee53887be6cbce00dcc49e25a94fdc65c770300c
@@ -24,8 +24,55 @@ run all files (_*.standalone.js) inside `config.post_dir`
 
 ![image](https://user-images.githubusercontent.com/12471057/214767877-79641e0d-dcf6-480a-aee3-689fd584d5e8.png)
 
+## Configuration
+Configuration setup for `_config.yml` that required for this package (you can change the values)
+```yaml
+public_dir: "public"
+source_dir: "source"
+post_dir: "src-posts"
+generator:
+  # enable global cache
+  cache: true
+  # transform shortcodes result to amp html
+  amp: false
+```
+
+## Copy source posts to hexo source dir
+Compiling and Copying all source posts including shortcodes etc to hexo source post directory
+
+| Source | Destination |
+| :--- | :--- |
+| ./src-posts | ./source/_posts |
+
+```bash
+npx sbg post copy
+```
+
+## Anonymize External Links
+Cloaking all external links to outbound page redirector, useful for SEO.
+
+| Source | Destination |
+| :--- | :--- |
+| ./.deploy_git | ./.deploy_git |
+
+```bash
+npx sbg deploy safelink
+```
+
+## Automatic SEO
+- adds an alt tag to an image element when none exists
+- adds an title tag to an iframe element when none exists
+
+| Source | Destination |
+| :--- | :--- |
+| ./.deploy_git | ./.deploy_git |
+
+```bash
+npx sbg deploy seo
+```
+
 ## Roadmap
 - [x] Separate with monorepo
 - [x] Test each module
 - [ ] Create single bundle tarball
-- [ ] Create CI
+- [x] Create CI
