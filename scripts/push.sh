@@ -21,7 +21,7 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
         repo=${URL#"https://github.com/"}
 
         cd "${MODULE_PATH}"
-        if [ -z $(git status --porcelain) ];
+        if [[ $(git push --dry-run 2>&1) == *"Everything up-to-date"* ]];
         then
             echo "${repo} at ${MODULE_PATH} no changes"
         else
