@@ -30,7 +30,7 @@ const copy = function () {
 gulp.task('copy', gulp.series(copy));
 
 function tsc(done) {
-  spawn(cmd('tsc'), ['--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
+  spawn('npx', ['tsc', '--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
     .then(() => done())
     .catch(done);
 }
