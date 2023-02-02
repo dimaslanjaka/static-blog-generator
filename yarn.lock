@@ -16758,8 +16758,6 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^4.9.5
     typescript-transform-paths: ^3.4.6
-  bin:
-    sbg: packages/sbg-cli/dist/cli.js
   languageName: unknown
   linkType: soft
 
@@ -17896,7 +17894,7 @@ __metadata:
 
 "typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=701156"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -17906,7 +17904,7 @@ __metadata:
 
 "typescript@patch:typescript@~3.8#~builtin<compat/typescript>":
   version: 3.8.3
-  resolution: "typescript@patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=701156"
+  resolution: "typescript@patch:typescript@npm%3A3.8.3#~builtin<compat/typescript>::version=3.8.3&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
