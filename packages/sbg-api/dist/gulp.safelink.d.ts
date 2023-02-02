@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 import gulp from 'gulp';
 /**
  * Process Safelink on Deploy Dir
@@ -5,4 +7,4 @@ import gulp from 'gulp';
  * @param cwd working directory to scan html's
  * @returns
  */
-export declare function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefined, cwd?: undefined | null | string): any;
+export declare function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefined, cwd?: undefined | null | string): NodeJS.ReadWriteStream | import("fs").WriteStream;
