@@ -1004,7 +1004,7 @@ var AxiosHeaders = /*#__PURE__*/function (_Symbol$iterator, _Symbol$toStringTag)
       header = normalizeHeader(header);
       if (header) {
         var key = _utils["default"].findKey(this, header);
-        return !!(key && (!matcher || matchHeaderValue(this, this[key], key, matcher)));
+        return !!(key && this[key] !== undefined && (!matcher || matchHeaderValue(this, this[key], key, matcher)));
       }
       return false;
     }
@@ -1667,7 +1667,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.VERSION = void 0;
-var VERSION = "1.3.0";
+var VERSION = "1.3.1";
 exports.VERSION = VERSION;
 
 },{}],20:[function(require,module,exports){
@@ -2457,7 +2457,7 @@ function toFormData(obj, formData, options) {
         key = metaTokens ? key : key.slice(0, -2);
         // eslint-disable-next-line no-param-reassign
         value = JSON.stringify(value);
-      } else if (_utils["default"].isArray(value) && isFlatArray(value) || _utils["default"].isFileList(value) || _utils["default"].endsWith(key, '[]') && (arr = _utils["default"].toArray(value))) {
+      } else if (_utils["default"].isArray(value) && isFlatArray(value) || (_utils["default"].isFileList(value) || _utils["default"].endsWith(key, '[]')) && (arr = _utils["default"].toArray(value))) {
         // eslint-disable-next-line no-param-reassign
         key = removeBrackets(key);
         arr.forEach(function each(el, index) {
