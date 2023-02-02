@@ -91,6 +91,7 @@ jobs:
             ./packages/sbg-server/src/public
             **/tmp/**
             **/node_modules/**
+            **/.yarn
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
