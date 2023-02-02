@@ -1,12 +1,6 @@
 name: Build Beta
 
 on:
-  push:
-    branches: [ "beta" ]
-    paths-ignore:
-      - '**/dist'
-      - '**/*.tgz'
-      - '**/yarn.lock'
   pull_request:
     types:
       - closed
