@@ -98,8 +98,8 @@ jobs:
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: yarn install
-      - run: lerna run build
-      - run: lerna run pack
+      - run: yarn workspaces foreach run build
+      #- run: yarn workspaces foreach run pack
       - name: commit and push
         continue-on-error: true
         run: |
