@@ -37,3 +37,4 @@ ___*
 
 # git management
 **/.git-rewrite
+**/.yarn

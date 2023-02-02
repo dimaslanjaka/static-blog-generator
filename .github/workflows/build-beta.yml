@@ -97,15 +97,9 @@ jobs:
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
-      - run: npm install
-      - run: lerna exec npm install
-        id: install
-        continue-on-error: true
-      - run: npm run update
-        if: steps.install.outcome != 'success'
-      #- run: lerna bootstrap
-      - run: lerna run update --scope="sbg-*"
-      #- run: npm run pack
+      - run: yarn install
+      - run: lerna run build
+      - run: lerna run pack
       - name: commit and push
         continue-on-error: true
         run: |

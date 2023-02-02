@@ -35,5 +35,7 @@
   },
   "emmet.syntaxProfiles": {
     "njk": "html",
-  }
+  },
+  "eslint.packageManager": "yarn",
+  "npm.packageManager": "yarn"
 }
