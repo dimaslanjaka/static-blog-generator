@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "beta" ]
     paths-ignore:
-      - '**/package-lock.json'
+      - '**/yarn.lock'
       - '**/*.tgz'
   pull_request:
     types:
@@ -71,8 +71,8 @@ jobs:
           node-version: 18.x
           token: ${{ secrets.GITHUB_TOKEN }}
           architecture: x64
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
 
       - name: Enable corepack
         run: corepack enable
@@ -89,9 +89,9 @@ jobs:
             ./packages/sbg-server/src/public
             **/tmp/**
             **/node_modules/**
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             ${{ runner.os }}-
 
       - name: Install Global Packages
