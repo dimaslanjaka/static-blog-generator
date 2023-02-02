@@ -1,0 +1,38 @@
+{
+  "name": "static-blog-generator",
+  "description": "dummy pkg for lerna",
+  "dependencies": {
+    "sbg-api": "file:../sbg-api",
+    "sbg-cli": "file:../sbg-cli",
+    "sbg-server": "file:../sbg-server",
+    "sbg-utility": "file:../sbg-utility"
+  },
+  "version": "3.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
+  "keywords": [
+    "gulp",
+    "blog",
+    "static-site-generator",
+    "hexo",
+    "static-site",
+    "blog-nodejs",
+    "hexo-admin",
+    "hexo-seo",
+    "hexo-gui",
+    "gulp-blog"
+  ],
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
+  },
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme"
+}

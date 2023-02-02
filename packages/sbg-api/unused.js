@@ -38,9 +38,10 @@ const options = {
   ],
   parsers: {
     // the target parsers
-    '**/*.ts': depcheck.parser.typescript,
-    '**/*.js': depcheck.parser.es6,
-    '**/*.jsx': depcheck.parser.jsx
+    'src/**/*.ts': depcheck.parser.typescript,
+    'src/**/*.js': depcheck.parser.es6,
+    'src/**/*.jsx': depcheck.parser.jsx,
+    'src/**/*.sass': depcheck.parser.sass
   },
   detectors: [
     // the target detectors
@@ -55,7 +56,7 @@ const options = {
   package: {
     // may specify dependencies instead of parsing package.json
     dependencies: {
-      lodash: '^4.17.15'
+      // lodash: '^4.17.15'
     },
     devDependencies: {
       eslint: '^6.6.0'
