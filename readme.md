@@ -15,6 +15,8 @@ Features:
 - Finding broken links
 - External link anonymizer using [safelinkify](https://www.npmjs.com/package/safelinkify)
 - YoastSEO Sitemap
+- Export/Import Blogger and Worpdress
+- More improvisation on future
 
 # CLI
 ## standalone runner
