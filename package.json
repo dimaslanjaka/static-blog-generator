@@ -18,21 +18,18 @@
     "!**/src/**"
   ],
   "scripts": {
-    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
-    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update:submodules": "npx lerna run update",
+    "update:submodules": "npx lerna exec \"npx npm-check-updates -u -x chalk,codemirror,highlight.js,hexo\" --concurrency=1",
     "update:ncu": "npx npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
     "update": "run-s update:**",
     "postupdate": "node postinstall.js",
-    "build": "npx lerna run build && npx gulp",
+    "build": "npx lerna run build --concurrency=1",
     "docs": "node docs.js",
-    "lint": "npx lerna run lint",
+    "lint": "npx lerna run lint --concurrency=1",
     "test": "npx jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
     "prepare": "npx husky install",
-    "clean": "gulp clean && npx lerna run clean",
-    "pack": "node packer.js && npx lerna run pack",
-    "bundle": "npx rollup --config"
+    "clean": "npx lerna run clean --concurrency=1",
+    "pack": "npx lerna run pack --concurrency=1"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
@@ -79,11 +76,12 @@
     "packages/sbg-utility",
     "packages/sbg-api",
     "packages/sbg-server",
-    "packages/sbg-main",
+    "packages/sbg-cli",
     "packages/safelinkify",
     "packages/hexo-post-parser",
     "packages/git-command-helper",
-    "packages/google-news-sitemap"
+    "packages/google-news-sitemap",
+    "packages/hexo-blogger-xml"
   ],
   "packageManager": "yarn@3.2.0",
   "engines": {
