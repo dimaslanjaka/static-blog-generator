@@ -1,6 +1,5 @@
 node_modules
 dist/*.tsbuildinfo
-.yarn
 *.log
 tmp
 temp
@@ -37,4 +36,7 @@ ___*
 
 # git management
 **/.git-rewrite
-**/.yarn
+**/.yarn/cache
+!**/.yarn/cache/.gitginore
+**/.yarn/unplugged
+**/.yarn/install-state.gz
