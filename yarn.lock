@@ -3230,7 +3230,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.49.0, @typescript-eslint/eslint-plugin@npm:^5.50.0":
+"@typescript-eslint/eslint-plugin@npm:^5.50.0":
   version: 5.50.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.50.0"
   dependencies:
@@ -3287,7 +3287,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.49.0, @typescript-eslint/parser@npm:^5.50.0":
+"@typescript-eslint/parser@npm:^5.50.0":
   version: 5.50.0
   resolution: "@typescript-eslint/parser@npm:5.50.0"
   dependencies:
@@ -4485,16 +4485,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios-cache-interceptor@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "axios-cache-interceptor@npm:1.0.0"
+"axios-cache-interceptor@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "axios-cache-interceptor@npm:1.0.1"
   dependencies:
     cache-parser: ^1.2.4
     fast-defer: ^1.1.7
     object-code: ^1.2.4
   peerDependencies:
     axios: ^1
-  checksum: 2667f89e4456b779203462296b83b3746860c468465bf6efa8cf1dfb37d17abffa6db33781e5f4a137939754cfdea2764a8ebfa926810fe239bd9d5cd18e8d13
+  checksum: f004940ee2fd2260237ba0c943acdf03811b9265041d40b57ff49435d2c7bc170902de97c2e7330f229a8dd5babbbef5c5e2ad31541cf36d5b6b5dceef23ec74
   languageName: node
   linkType: hard
 
@@ -9005,7 +9005,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@*, git-command-helper@^1.1.6, git-command-helper@workspace:packages/git-command-helper":
+"git-command-helper@*, git-command-helper@^1.1.6, git-command-helper@^1.1.7, git-command-helper@workspace:packages/git-command-helper":
   version: 0.0.0-use.local
   resolution: "git-command-helper@workspace:packages/git-command-helper"
   dependencies:
@@ -9019,7 +9019,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.50.0
     ansi-colors: ^4.1.3
     axios: ^1.3.1
-    axios-cache-interceptor: ^1.0.0
+    axios-cache-interceptor: ^1.0.1
     bluebird: ^3.7.2
     browser-sync: ^2.27.11
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
@@ -9325,7 +9325,7 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.6
+    git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
     moment: ^2.29.4
@@ -16418,7 +16418,7 @@ __metadata:
     ansi-colors: ^4.1.3
     article-parser: ^7.2.5
     axios: ^1.3.1
-    axios-cache-interceptor: ^1.0.0
+    axios-cache-interceptor: ^1.0.1
     bluebird: ^3.7.2
     bootstrap: ^5.2.3
     browser-sync: ^2.27.11
@@ -16550,7 +16550,7 @@ __metadata:
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.6
+    git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
@@ -16676,7 +16676,7 @@ __metadata:
     express: ^4.18.2
     flowbite: ^1.6.3
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.6
+    git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
     highlight.js: 11.7.0
@@ -16758,7 +16758,7 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.6
+    git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
     hexo: ^6.3.0
@@ -17580,8 +17580,8 @@ __metadata:
     "@types/jest": ^29.4.0
     "@types/node": ^18.11.18
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
-    "@typescript-eslint/eslint-plugin": ^5.49.0
-    "@typescript-eslint/parser": ^5.49.0
+    "@typescript-eslint/eslint-plugin": ^5.50.0
+    "@typescript-eslint/parser": ^5.50.0
     babel-jest: ^29.4.1
     depcheck: ^1.4.3
     eslint: ^8.33.0
