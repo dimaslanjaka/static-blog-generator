@@ -45,6 +45,9 @@ child.on('exit', function () {
   const filename = slugifyPkgName(`${packagejson.name}-${version}.tgz`);
   const tgz = join(__dirname, filename);
 
+  // delete package.tgz from yarn
+  if (fs.existsSync(join(__dirname, 'package.tgz'))) fs.rmSync(join(__dirname, 'package.tgz'));
+
   if (!fs.existsSync(tgz)) {
     const filename2 = slugifyPkgName(`${packagejson.name}-${packagejson.version}.tgz`);
     const origintgz = join(__dirname, filename2);
