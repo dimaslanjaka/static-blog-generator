@@ -7,7 +7,7 @@ import { data_to_hash_sync } from '../utils/hash';
 import Logger from '../utils/logger';
 import scheduler from '../utils/scheduler';
 
-export default function gulpDebug(filename?: string) {
+export function gulpDebug(filename?: string) {
   const caller = data_to_hash_sync(
     'md5',
     new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || ''
@@ -49,3 +49,5 @@ export function gulpLog(logname = '') {
     cb(null, file);
   });
 }
+
+export default gulpDebug;
