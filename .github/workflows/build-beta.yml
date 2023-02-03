@@ -101,7 +101,7 @@ jobs:
 
       - run: yarn install --immutable
       - run: lerna run build
-      - run: lerna run pack
+      - run: lerna exec npm run pack
       - name: commit sub projects
         continue-on-error: true
         run: |
