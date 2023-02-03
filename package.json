@@ -81,7 +81,8 @@
     "packages/hexo-post-parser",
     "packages/git-command-helper",
     "packages/google-news-sitemap",
-    "packages/hexo-blogger-xml"
+    "packages/hexo-blogger-xml",
+    "packages/static-blog-generator"
   ],
   "packageManager": "yarn@3.2.0",
   "engines": {

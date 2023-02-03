@@ -11,5 +11,5 @@
     }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
-  "references": [{ "path": "../sbg-utility" }]
+  "references": [{ "path": "../sbg-utility" }, { "path": "../git-command-helper" }]
 }
