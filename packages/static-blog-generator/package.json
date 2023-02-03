@@ -11,7 +11,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
-    "build": "npx tsc -p tsconfig.build.json"
+    "build": "npx tsc -p tsconfig.build.json",
+    "pack": ""
   },
   "repository": {
     "type": "git",
