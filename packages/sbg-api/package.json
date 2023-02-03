@@ -36,7 +36,7 @@
     "bluebird": "^3.7.2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "fs-extra": "^11.1.0",
-    "git-command-helper": "^1.1.6",
+    "git-command-helper": "^1.1.7",
     "glob": "^8.1.0",
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
