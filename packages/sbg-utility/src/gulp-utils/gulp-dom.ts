@@ -36,7 +36,7 @@ export type GulpDomCallback = (/** jsdom bind */ this: Document, /** current fil
             .pipe(gulp.dest('./public/'));
     });
  */
-export default function gulpDom(mutator: GulpDomCallback) {
+export function gulpDom(mutator: GulpDomCallback) {
   const stream = through2.obj(function (file, _enc, callback) {
     if (file.isNull()) {
       return callback(null, file);
@@ -68,3 +68,5 @@ export default function gulpDom(mutator: GulpDomCallback) {
 
   return stream;
 }
+
+export default gulpDom;
