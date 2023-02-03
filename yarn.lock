@@ -9417,7 +9417,7 @@ __metadata:
     jsdom: ^20.0.3
     plugin-error: 2.0.0
     through2: ^4.0.2
-  checksum: a90b30ecaad2db7fad70434d8125112eec7cf9a907508edbcb12d7c791882145610b7ea7e0402789ea6ef6d2830f159530bbacf2b34972a825ebaf1089ae764a
+  checksum: 39732b8b7f845604a022dc4b479b3b1bbc2aa6b163c17c5a745ea045626f724362dcc6cdaf3e8beeb11eefca116998c538bdd76bd97d191596d6b0dd33483a25
   languageName: node
   linkType: hard
 
@@ -10011,7 +10011,7 @@ __metadata:
 "highlight.js@https://github.com/highlightjs/highlight.js/tarball/11-stable":
   version: 11.3.1
   resolution: "highlight.js@https://github.com/highlightjs/highlight.js.git#commit=2a972d86589f65f4e79f67a02c3bf389a187afa0"
-  checksum: ba095da36382a83f32585b87cce9a2424c736243cd5c5a436e4dfa7426033a703bd309b5e7797d50028c7cfa2b460318c46b78b88e608f3d8c9038833c98fce5
+  checksum: 927c5f188896dbc30e5a9452f2cf52a87073555aa2f30d0974701b4bf2659bee22847ee663bdec805a52bb91200ae4b075ec218b4dbdbe06bf0d265ea4bdd1ac
   languageName: node
   linkType: hard
 
@@ -14633,7 +14633,7 @@ __metadata:
     mkdirp-no-bin: ^0.5.1
     rmdir: ^1.2.0
     upath: ^2.0.1
-  checksum: 7ca018801d296955601d9ad26dafe34c866ff10fd14195a0123b934feec4514609199e29b8b7715b4e109e614566fbdedad56976b280b08850a6b6b6a801ae64
+  checksum: c68eef57897538379df57912271d4e623d73fed000afbc4e2d9a97532767f57e337f29feda65dcb54edabe9bf395c24b9c7c71314fd8798791997bddadd34c33
   languageName: node
   linkType: hard
 
@@ -17223,7 +17223,7 @@ __metadata:
     cheerio: ^1.0.0-rc.2
     progress: ^2.0.0
     request: ^2.88.0
-  checksum: 132a31293504ce3475b746f03b2c2552ff159ac6261de49dd6a4cdeac8432829407dfc387afbff147deaa91efe592022213dc0445f6b7cf2e2dae67603378c49
+  checksum: 463645f1e6997b1a44628e28f6b0e8e63c3ed7767d16a8ba266d84f6277f00c659dbda8aa415d4dc3e5ff5ad4d2eecb47768052d3270a9ef22094676e3d82d34
   languageName: node
   linkType: hard
 
