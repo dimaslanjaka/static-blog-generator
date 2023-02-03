@@ -39,7 +39,7 @@
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
     "debug": "^4.3.4",
     "fs-extra": "^11.1.0",
-    "git-command-helper": "^1.1.6",
+    "git-command-helper": "^1.1.7",
     "glob": "^8.1.0",
     "gulp": "^4.0.2",
     "hexo": "^6.3.0",
