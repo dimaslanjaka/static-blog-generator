@@ -13,6 +13,7 @@ unused.md
 *.lerna_backup
 ___*
 **/.rollup.cache/**
+**/package.tgz
 
 /packages/**/package-lock.json
 
