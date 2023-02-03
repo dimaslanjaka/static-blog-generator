@@ -110,7 +110,7 @@ jobs:
           sh scripts/commit.sh "feat: update build from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
       - run: |
           git add -A
-          git commit -m "Update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          git commit -m "chore(dist): build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
         name: commit root project
         continue-on-error: true
       - run: sh scripts/push.sh
