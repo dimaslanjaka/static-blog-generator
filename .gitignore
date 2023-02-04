@@ -41,7 +41,3 @@ ___*
 **/.yarn/unplugged
 **/.yarn/install-state.gz
 !**/.yarn/cache/.gitginore
-!**/.yarn/cache/gulp-dom*
-!**/.yarn/cache/sitemap-crawler*https*
-!**/.yarn/cache/persistent-cache*https*
-!**/.yarn/cache/highlight.js*https*
