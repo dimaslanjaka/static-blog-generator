@@ -22,3 +22,7 @@
 	path = packages/hexo-blogger-xml
 	url = https://github.com/dimaslanjaka/hexo-blogger-xml
 	branch = monorepo
+[submodule "packages/highlight.js"]
+	path = packages/highlight.js
+	url = https://github.com/highlightjs/highlight.js
+	branch = 11-stable
