@@ -11,9 +11,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
-    "build": "npx tsc -p tsconfig.build.json",
-    "postpack": "node packer.js -yarn",
-    "update": "npx npm-check-updates -u -x sbg-api,sbg-utility,sbg-cli,sbg-server"
+    "build": "tsc -p tsconfig.build.json",
+    "pack": "node packer.js -yarn",
+    "update": "npm-check-updates -u -x sbg-api,sbg-utility,sbg-cli,sbg-server"
   },
   "repository": {
     "type": "git",
