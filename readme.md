@@ -3,9 +3,7 @@ HexoJS GUI and Helpers - Static Blog Generator NodeJS.
 
 Static Blog Generator v3 using Gulp System.
 
-Pre-processing all source posts before rendering from hexo.
-Useful for low-end devices to avoid memory heap errors.
-With this package you can prevent using large number of hexo plugins, because some function (runner) separated by task, so memory friendly.
+Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.
 
 were curently refactoring project using monorepo. Latest working build at https://github.com/dimaslanjaka/static-blog-generator/tree/ee53887be6cbce00dcc49e25a94fdc65c770300c
 

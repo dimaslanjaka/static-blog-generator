@@ -1,7 +1,7 @@
 {
   "name": "static-blog-generator-root",
   "version": "3.0.0",
-  "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
+  "description": "Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.",
   "private": true,
   "files": [
     "packages/sbg-*/dist/**/*",
@@ -87,5 +87,8 @@
   "engines": {
     "node": ">=14",
     "yarn": "3.2.0"
+  },
+  "dependencies": {
+    "highlight.js": "./packages/highlight.js"
   }
 }
