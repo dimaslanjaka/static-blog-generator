@@ -10008,6 +10008,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@file:./packages/highlight.js::locator=static-blog-generator-root%40workspace%3A.":
+  version: 11.3.1
+  resolution: "highlight.js@file:./packages/highlight.js#./packages/highlight.js::hash=0d8a52&locator=static-blog-generator-root%40workspace%3A."
+  checksum: bfce60a920be2cbf1a57bc6aaeae83e02beeb22bc732e8a22e9df96a2315d8899008264f7eef196d7ca088a3dea2300f1e54b393ba91d06df65acc661a485e46
+  languageName: node
+  linkType: hard
+
 "highlight.js@https://github.com/highlightjs/highlight.js/tarball/11-stable":
   version: 11.3.1
   resolution: "highlight.js@https://github.com/highlightjs/highlight.js.git#commit=2a972d86589f65f4e79f67a02c3bf389a187afa0"
@@ -17588,6 +17595,7 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     gulp: ^4.0.2
+    highlight.js: ./packages/highlight.js
     jest: ^29.4.1
     jest-config: ^29.4.1
     jest-html-reporters: ^3.1.1
