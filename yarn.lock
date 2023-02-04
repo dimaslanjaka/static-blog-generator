@@ -6324,17 +6324,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript":
-  version: 7.0.3
-  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn.git#commit=e48f170a12c0651ee2f770a41dd043459be336e0"
-  dependencies:
-    path-key: ^3.1.0
-    shebang-command: ^2.0.0
-    which: ^2.0.1
-  checksum: bbf7a558b8efae5b7e54a7790999908167005fe1f3a78535067d84f779ac8ce2a1a813288a7d8f19321e8e9c95285e9d42b2eccf48237f538f706865a204e383
-  languageName: node
-  linkType: hard
-
 "cross-spawn@npm:^4.0.0":
   version: 4.0.2
   resolution: "cross-spawn@npm:4.0.2"
@@ -9885,7 +9874,7 @@ __metadata:
     moment-timezone: ^0.5.40
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
+    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     prettier: ^2.8.3
     rimraf: ^4.1.2
     semver: ^7.3.8
@@ -10026,7 +10015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:11.7.0, highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0":
+"highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0":
   version: 11.7.0
   resolution: "highlight.js@npm:11.7.0"
   checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
@@ -16433,7 +16422,7 @@ __metadata:
     bluebird: ^3.7.2
     bootstrap: ^5.2.3
     browser-sync: ^2.27.11
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     crypto-browserify: ^3.12.0
     crypto-js: ^4.1.1
     ejs: ^3.1.8
@@ -16444,7 +16433,7 @@ __metadata:
     git-command-helper: "*"
     glob: ^8.1.0
     gulp: ^4.0.2
-    highlight.js: 11.7.0
+    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
     hpagent: ^1.2.0
     html-minifier-terser: ^7.1.0
     jquery: ^3.6.3
@@ -16575,7 +16564,7 @@ __metadata:
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz"
+    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     safelinkify: ^1.1.12
     sbg-utility: ^1.0.0
     sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
@@ -16722,7 +16711,7 @@ __metadata:
     git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
-    highlight.js: 11.7.0
+    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
     jest: ^29.4.1
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40

@@ -48,7 +48,7 @@
     "moment-timezone": "^0.5.40",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
     "nunjucks": "^3.2.3",
-    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/raw/improve2/release/persistent-cache.tgz",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
     "safelinkify": "^1.1.12",
     "sbg-utility": "^1.0.0",
     "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz",
