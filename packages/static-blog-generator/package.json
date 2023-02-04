@@ -2,17 +2,18 @@
   "name": "static-blog-generator",
   "description": "dummy pkg for lerna",
   "dependencies": {
-    "sbg-api": "^1.0.0",
-    "sbg-cli": "^1.0.0",
-    "sbg-server": "^1.0.0",
-    "sbg-utility": "^1.0.0"
+    "sbg-api": "workspace:^",
+    "sbg-cli": "workspace:^",
+    "sbg-server": "workspace:^",
+    "sbg-utility": "workspace:^"
   },
   "version": "3.0.0",
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
     "build": "npx tsc -p tsconfig.build.json",
-    "pack": ""
+    "postpack": "node packer.js -yarn",
+    "update": "npx npm-check-updates -u -x sbg-api,sbg-utility,sbg-cli,sbg-server"
   },
   "repository": {
     "type": "git",
