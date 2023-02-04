@@ -37,6 +37,11 @@ const colors = require('ansi-colors');
 // const persistentCache = require('persistent-cache');
 // imports ends
 
+// args
+const args = process.argv.slice(2);
+const usingYarn = args.includes('--yarn') || args.includes('-yarn');
+const pkgmanager = usingYarn ? 'yarn' : 'npm';
+
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
 console.log('cache json', cacheJSON);
@@ -153,7 +158,6 @@ const coloredScriptName = colors.grey(scriptname);
         if (/^((file|github):|(git|ssh)\+|http)/i.test(version)) {
           console.log(
             coloredScriptName,
-            'updating',
             coloredPkgname,
             isGitPkg
               ? colors.blueBright('git')
@@ -206,8 +210,13 @@ const coloredScriptName = colors.grey(scriptname);
                 'and reinstalling with argument',
                 colors.blueBright(...arg.filter((str) => str.startsWith('-')))
               );
-              await summon('npm', ['un', pkgname], { cwd: __dirname });
-              await summon('npm', ['install', ...arg], { cwd: __dirname, stdio: 'inherit' });
+              if (pkgmanager === 'npm') {
+                await summon(pkgmanager, ['un', pkgname], { cwd: __dirname });
+                await summon(pkgmanager, ['install', ...arg], { cwd: __dirname, stdio: 'inherit' });
+              } else {
+                await summon(pkgmanager, ['remove', pkgname], { cwd: __dirname });
+                await summon(pkgmanager, ['add', ...arg], { cwd: __dirname, stdio: 'inherit' });
+              }
             } else {
               //console.log(folderHash.hash, existingHash, folderHash.hash == existingHash);
               console.log(coloredScriptName, 'no changes found', coloredPkgname);
@@ -275,7 +284,7 @@ const coloredScriptName = colors.grey(scriptname);
             // npm cache clean package
             if (filterUpdates.find((str) => str.startsWith('file:'))) {
               const localPkg = filterUpdates.filter((str) => str.startsWith('file:'));
-              await summon('npm', ['cache', 'clean'].concat(...localPkg), {
+              await summon(pkgmanager, ['cache', 'clean'].concat(...localPkg), {
                 cwd: __dirname,
                 stdio: 'inherit'
               });
@@ -286,7 +295,7 @@ const coloredScriptName = colors.grey(scriptname);
               );
             }
             // npm update package
-            await summon('npm', ['update'].concat(...filterUpdates), {
+            await summon(pkgmanager, [pkgmanager == 'npm' ? 'update' : 'upgrade'].concat(...filterUpdates), {
               cwd: __dirname,
               stdio: 'inherit'
             });
