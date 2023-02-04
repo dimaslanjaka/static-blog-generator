@@ -1,6 +1,10 @@
 const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
+const { spawn } = require('child_process');
+
+const args = process.argv.slice(2);
+const usingYarn = args.includes('-yarn') || args.includes('--yarn');
 
 doUpdate(pjson.dependencies, 'production');
 
@@ -9,7 +13,7 @@ doUpdate(pjson.dependencies, 'production');
  * @param {Record<string,string>} packages
  * @param {'production'|'development'|'optional'} mode
  */
-function doUpdate(packages, mode) {
+async function doUpdate(packages, mode) {
   const pkgnames = Object.keys(packages);
   const pkg2update = [];
   for (let i = 0; i < pkgnames.length; i++) {
@@ -34,9 +38,44 @@ function doUpdate(packages, mode) {
      */
     const isLocalTarballpkg = isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
 
-    if (isLocalTarballpkg || isGitPkg || isTarballPkg) pkg2update.push(pkgname);
     if (isLocalPkg && fs.existsSync(path.join(__dirname, 'node_modules', pkgname))) {
       fs.rmSync(path.join(__dirname, 'node_modules', pkgname), { recursive: true, force: true });
     }
+    if (isLocalTarballpkg || isGitPkg || isTarballPkg || isLocalPkg) {
+      if (!usingYarn) {
+        pkg2update.push(pkgname);
+      } else {
+        pkg2update.push(`${pkgname}@${version}`);
+      }
+    }
   }
+  const pkgm = usingYarn ? 'yarn' : 'npm';
+  const pkgup = usingYarn ? 'up' : 'update';
+  let saveAs;
+  switch (mode) {
+    case 'development':
+      if (usingYarn) {
+        saveAs = '--dev';
+      } else {
+        saveAs = '-D';
+      }
+      break;
+
+    case 'optional':
+      if (usingYarn) {
+        saveAs = '--optional';
+      } else {
+        saveAs = '-O';
+      }
+      break;
+  }
+  const argsInstall = [pkgup];
+  if (typeof saveAs === 'string') argsInstall.push(saveAs);
+  argsInstall.push(...pkg2update);
+  console.log(pkgm, ...argsInstall);
+  await new Promise((resolve) => {
+    spawn(pkgm, argsInstall, { cwd: __dirname, stdio: 'inherit', shell: true }).once('exit', function () {
+      resolve(null);
+    });
+  });
 }
