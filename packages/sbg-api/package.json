@@ -16,7 +16,7 @@
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp build",
     "clean": "rm -rf dist tmp",
-    "pack": "node packer.js"
+    "pack": "node packer.js --yarn"
   },
   "repository": {
     "type": "git",

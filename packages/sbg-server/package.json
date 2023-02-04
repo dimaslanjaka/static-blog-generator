@@ -20,7 +20,7 @@
     "tw": "npx gulp compile:tailwind",
     "purge": "purgecss -c purgecss.config.js -o ./src/public/css",
     "clean": "rm -rf dist tmp src/public",
-    "pack": "node packer.js"
+    "pack": "node packer.js --yarn"
   },
   "repository": {
     "type": "git",
