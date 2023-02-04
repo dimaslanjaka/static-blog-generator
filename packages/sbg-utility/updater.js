@@ -42,15 +42,16 @@ async function doUpdate(packages, mode) {
       fs.rmSync(path.join(__dirname, 'node_modules', pkgname), { recursive: true, force: true });
     }
     if (isLocalTarballpkg || isGitPkg || isTarballPkg || isLocalPkg) {
-      if (!usingYarn) {
+      /*if (!usingYarn) {
         pkg2update.push(pkgname);
       } else {
         pkg2update.push(`${pkgname}@${version}`);
-      }
+      }*/
+      pkg2update.push(`${pkgname}@${version}`);
     }
   }
   const pkgm = usingYarn ? 'yarn' : 'npm';
-  const pkgup = usingYarn ? 'up' : 'update';
+  const pkgmArg = usingYarn ? 'add' : 'i';
   let saveAs;
   switch (mode) {
     case 'development':
@@ -69,10 +70,10 @@ async function doUpdate(packages, mode) {
       }
       break;
   }
-  const argsInstall = [pkgup];
+  const argsInstall = [pkgmArg];
   if (typeof saveAs === 'string') argsInstall.push(saveAs);
   argsInstall.push(...pkg2update);
-  console.log(pkgm, ...argsInstall);
+  // installing
   await new Promise((resolve) => {
     spawn(pkgm, argsInstall, { cwd: __dirname, stdio: 'inherit', shell: true }).once('exit', function () {
       resolve(null);
