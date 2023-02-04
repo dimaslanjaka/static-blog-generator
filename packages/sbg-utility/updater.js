@@ -33,5 +33,10 @@ function doUpdate(packages, mode) {
      * is local tarball package
      */
     const isLocalTarballpkg = isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
+
+    if (isLocalTarballpkg || isGitPkg || isTarballPkg) pkg2update.push(pkgname);
+    if (isLocalPkg && fs.existsSync(path.join(__dirname, 'node_modules', pkgname))) {
+      fs.rmSync(path.join(__dirname, 'node_modules', pkgname), { recursive: true, force: true });
+    }
   }
 }
