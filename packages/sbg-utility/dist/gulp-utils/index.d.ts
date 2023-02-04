@@ -1,2 +1,3 @@
-export { default as gulpCached } from './gulp.cache';
-export { default as gulpDebug, gulpLog } from './gulp.debug';
+export * from './gulp-dom';
+export * from './gulp.cache';
+export * from './gulp.debug';

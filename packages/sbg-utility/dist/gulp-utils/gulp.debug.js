@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpLog = void 0;
+exports.gulpLog = exports.gulpDebug = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var os_1 = require("os");
 var through2_1 = __importDefault(require("through2"));
@@ -32,7 +32,7 @@ function gulpDebug(filename) {
         cb(null, file);
     });
 }
-exports.default = gulpDebug;
+exports.gulpDebug = gulpDebug;
 /**
  * log all files
  * @returns
@@ -47,4 +47,5 @@ function gulpLog(logname) {
     });
 }
 exports.gulpLog = gulpLog;
+exports.default = gulpDebug;
 //# sourceMappingURL=gulp.debug.js.map

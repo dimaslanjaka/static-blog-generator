@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpDomPath = exports.customPath = void 0;
+exports.gulpDom = exports.gulpDomPath = exports.customPath = void 0;
 var jsdom_1 = __importDefault(require("jsdom"));
 var plugin_error_1 = __importDefault(require("plugin-error"));
 var through2_1 = __importDefault(require("through2"));
@@ -52,6 +52,15 @@ exports.gulpDomPath = path;
  * gulp-dom
  * @param mutator callback
  * @returns
+ * @example
+ * const gulp = require('gulp');
+    gulp.task('html', function() {
+        return gulp.src('./src/index.html')
+            .pipe(gulpDom(function(){
+                return this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+            }))
+            .pipe(gulp.dest('./public/'));
+    });
  */
 function gulpDom(mutator) {
     var stream = through2_1.default.obj(function (file, _enc, callback) {
@@ -81,5 +90,6 @@ function gulpDom(mutator) {
     });
     return stream;
 }
+exports.gulpDom = gulpDom;
 exports.default = gulpDom;
 //# sourceMappingURL=gulp-dom.js.map

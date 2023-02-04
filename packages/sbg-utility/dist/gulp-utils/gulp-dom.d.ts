@@ -19,5 +19,15 @@ export type GulpDomCallback = (/** jsdom bind */ this: Document, /** current fil
  * gulp-dom
  * @param mutator callback
  * @returns
+ * @example
+ * const gulp = require('gulp');
+    gulp.task('html', function() {
+        return gulp.src('./src/index.html')
+            .pipe(gulpDom(function(){
+                return this.querySelectorAll('body')[0].setAttribute('data-version', '1.0');
+            }))
+            .pipe(gulp.dest('./public/'));
+    });
  */
-export default function gulpDom(mutator: GulpDomCallback): import("stream").Transform;
+export declare function gulpDom(mutator: GulpDomCallback): import("stream").Transform;
+export default gulpDom;

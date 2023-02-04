@@ -13,15 +13,28 @@ const path = require('path');
 //// CHECK REQUIRED PACKAGES
 
 const scriptname = `[postinstall]`;
-const isAllPackagesInstalled = ['cross-spawn', 'axios', 'ansi-colors', 'glob'].map((name) => {
+const isAllPackagesInstalled = [
+  'cross-spawn',
+  'axios',
+  'ansi-colors',
+  'glob'
+].map((name) => {
   return {
     name,
     installed: isPackageInstalled(name)
   };
 });
 if (!isAllPackagesInstalled.every((o) => o.installed === true)) {
-  const names = isAllPackagesInstalled.filter((o) => o.installed === false).map((o) => o.name);
-  console.log(scriptname, 'package', names.join(', '), 'is not installed', 'skipping postinstall script');
+  const names = isAllPackagesInstalled
+    .filter((o) => o.installed === false)
+    .map((o) => o.name);
+  console.log(
+    scriptname,
+    'package',
+    names.join(', '),
+    'is not installed',
+    'skipping postinstall script'
+  );
   process.exit(0);
 }
 
@@ -65,7 +78,11 @@ const getCache = () => JSON.parse(readfile(cacheJSON, 'utf-8'));
 const saveCache = (data) => writefile(cacheJSON, JSON.stringify(data, null, 2));
 
 // @todo clear cache local packages
-const packages = [pjson.dependencies || {}, pjson.devDependencies || {}, pjson.optionalDependencies || {}];
+const packages = [
+  pjson.dependencies || {},
+  pjson.devDependencies || {},
+  pjson.optionalDependencies || {}
+];
 
 /**
  * list packages to update
@@ -103,7 +120,9 @@ const coloredScriptName = colors.grey(scriptname);
         /**
          * is remote url package
          */
-        let isTarballPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(version);
+        let isTarballPkg = /^(https?)|.(tgz|zip|tar|tar.gz)$|\/tarball\//i.test(
+          version
+        );
 
         /**
          * is github package
@@ -113,7 +132,9 @@ const coloredScriptName = colors.grey(scriptname);
         // fix conflict type package url and git
         if (/^https?:\/\/github.com\//i.test(version)) {
           // is tarball path
-          const isTarball = /\/tarball\//i.test(version) || /.(tgz|zip|tar|tar.gz)$/i.test(version);
+          const isTarball =
+            /\/tarball\//i.test(version) ||
+            /.(tgz|zip|tar|tar.gz)$/i.test(version);
           isGitPkg = isGitPkg && !isTarball;
           if (isTarballPkg) {
             // is link to github directly
@@ -123,9 +144,12 @@ const coloredScriptName = colors.grey(scriptname);
               /**
                * @type {import('./package-lock.json')['packages']['node_modules/prettier']['dependencies']}
                */
-              const lockdeps = lock.packages['node_modules/' + pkgname].dependencies;
+              const lockdeps =
+                lock.packages['node_modules/' + pkgname].dependencies;
               const { /*integrity,*/ resolved } = lockdeps;
-              isPkgGit = isPkgGit || /^git\+ssh:\/\/git@github.com\//i.test(String(resolved));
+              isPkgGit =
+                isPkgGit ||
+                /^git\+ssh:\/\/git@github.com\//i.test(String(resolved));
             } catch {
               //
             }
@@ -141,7 +165,8 @@ const coloredScriptName = colors.grey(scriptname);
         /**
          * is local tarball package
          */
-        const isLocalTarballpkg = isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
+        const isLocalTarballpkg =
+          isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
 
         // delete package from npm registry from index
         if (!isLocalPkg && !isGitPkg && !isTarballPkg) {
@@ -166,7 +191,10 @@ const coloredScriptName = colors.grey(scriptname);
               : ''
           );
           if (isLocalPkg && !isLocalTarballpkg) {
-            const arg = [version, isDevPkg ? '-D' : isOptionalPkg ? '-O' : '--save'].filter((str) => str.length > 0);
+            const arg = [
+              version,
+              isDevPkg ? '-D' : isOptionalPkg ? '-O' : '--save'
+            ].filter((str) => str.length > 0);
             /**
              * @type {Parameters<typeof folder_to_hash>[2]}
              */
@@ -191,7 +219,8 @@ const coloredScriptName = colors.grey(scriptname);
               hoption.pattern = '**/{package,package-lock}.json';
             }
             const folderHash = await folder_to_hash('sha1', version, hoption);
-            const existingHash = ((getCache().folder || {})[pkgname] || {}).hash;
+            const existingHash = ((getCache().folder || {})[pkgname] || {})
+              .hash;
             if (!existingHash || folderHash.hash !== existingHash) {
               saveCache({
                 folder: {
@@ -207,10 +236,17 @@ const coloredScriptName = colors.grey(scriptname);
                 colors.blueBright(...arg.filter((str) => str.startsWith('-')))
               );
               await summon('npm', ['un', pkgname], { cwd: __dirname });
-              await summon('npm', ['install', ...arg], { cwd: __dirname, stdio: 'inherit' });
+              await summon('npm', ['install', ...arg], {
+                cwd: __dirname,
+                stdio: 'inherit'
+              });
             } else {
               //console.log(folderHash.hash, existingHash, folderHash.hash == existingHash);
-              console.log(coloredScriptName, 'no changes found', coloredPkgname);
+              console.log(
+                coloredScriptName,
+                'no changes found',
+                coloredPkgname
+              );
             }
           } else {
             toUpdate.add(pkgname);
@@ -245,7 +281,9 @@ const coloredScriptName = colors.grey(scriptname);
 
     if (checkNodeModules()) {
       // filter duplicates package names
-      const filterUpdates = Array.from(toUpdate).filter((item, index) => Array.from(toUpdate).indexOf(item) === index);
+      const filterUpdates = Array.from(toUpdate).filter(
+        (item, index) => Array.from(toUpdate).indexOf(item) === index
+      );
 
       if (filterUpdates.length > 0) {
         // do update
@@ -274,7 +312,9 @@ const coloredScriptName = colors.grey(scriptname);
           } else {
             // npm cache clean package
             if (filterUpdates.find((str) => str.startsWith('file:'))) {
-              const localPkg = filterUpdates.filter((str) => str.startsWith('file:'));
+              const localPkg = filterUpdates.filter((str) =>
+                str.startsWith('file:')
+              );
               await summon('npm', ['cache', 'clean'].concat(...localPkg), {
                 cwd: __dirname,
                 stdio: 'inherit'
@@ -297,7 +337,10 @@ const coloredScriptName = colors.grey(scriptname);
 
           const argv = process.argv;
           // node postinstall.js --commit
-          if (fs.existsSync(path.join(__dirname, '.git')) && argv.includes('--commit')) {
+          if (
+            fs.existsSync(path.join(__dirname, '.git')) &&
+            argv.includes('--commit')
+          ) {
             await summon('git', ['add', 'package.json'], { cwd: __dirname });
             await summon('git', ['add', 'package-lock.json'], {
               cwd: __dirname
@@ -308,14 +351,29 @@ const coloredScriptName = colors.grey(scriptname);
 
             if (
               status.stdout &&
-              (status.stdout.includes('package.json') || status.stdout.includes('package-lock.json'))
+              (status.stdout.includes('package.json') ||
+                status.stdout.includes('package-lock.json'))
             ) {
-              await summon('git', ['add', 'package.json', 'package-lock.json'], {
-                cwd: __dirname
-              });
-              await summon('git', ['commit', '-m', 'Update dependencies', '-m', 'Date: ' + new Date()], {
-                cwd: __dirname
-              });
+              await summon(
+                'git',
+                ['add', 'package.json', 'package-lock.json'],
+                {
+                  cwd: __dirname
+                }
+              );
+              await summon(
+                'git',
+                [
+                  'commit',
+                  '-m',
+                  'Update dependencies',
+                  '-m',
+                  'Date: ' + new Date()
+                ],
+                {
+                  cwd: __dirname
+                }
+              );
             }
           }
         } catch (e) {
@@ -323,16 +381,25 @@ const coloredScriptName = colors.grey(scriptname);
         }
       } else {
         if (hasNotInstalled) {
-          console.log(coloredScriptName, colors.green('some packages not yet installed'));
+          console.log(
+            coloredScriptName,
+            colors.green('some packages not yet installed')
+          );
         } else {
-          console.log(coloredScriptName, 'all monorepo packages already at latest version');
+          console.log(
+            coloredScriptName,
+            'all monorepo packages already at latest version'
+          );
         }
       }
     } else {
       if (hasNotInstalled) {
         console.log(coloredScriptName, 'some packages not yet installed');
       } else {
-        console.log(coloredScriptName, 'some packages deleted from node_modules');
+        console.log(
+          coloredScriptName,
+          'some packages deleted from node_modules'
+        );
       }
     }
   } catch (e) {
@@ -351,7 +418,8 @@ function summon(cmd, args = [], opt = {}) {
   const spawnopt = Object.assign({ cwd: __dirname }, opt || {});
   // *** Return the promise
   return new Promise(function (resolve) {
-    if (typeof cmd !== 'string' || cmd.trim().length === 0) return resolve(new Error('cmd empty'));
+    if (typeof cmd !== 'string' || cmd.trim().length === 0)
+      return resolve(new Error('cmd empty'));
     let stdout = '';
     let stderr = '';
     const child = spawn(cmd, args, spawnopt);
@@ -378,7 +446,8 @@ function summon(cmd, args = [], opt = {}) {
 
     child.on('close', function (code) {
       // Should probably be 'exit', not 'close'
-      if (code !== 0) console.log('[ERROR]', cmd, ...args, 'dies with code', code);
+      if (code !== 0)
+        console.log('[ERROR]', cmd, ...args, 'dies with code', code);
       // *** Process completed
       resolve({ stdout, stderr });
     });
@@ -443,7 +512,11 @@ function data_to_hash(alogarithm = 'sha1', data, encoding = 'hex') {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
   return new Promise((resolve, reject) => {
-    let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
+    let outputLocationPath = path.join(
+      __dirname,
+      'node_modules/.cache/postinstall',
+      path.basename(url)
+    );
     // remove slashes when url ends with slash
     if (!path.basename(url).endsWith('/')) {
       outputLocationPath = outputLocationPath.replace(/\/$/, '');
@@ -467,9 +540,11 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
       writer.on('close', async () => {
         if (!error) {
           // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
-          file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
-            resolve(checksum);
-          });
+          file_to_hash(alogarithm, outputLocationPath, encoding).then(
+            (checksum) => {
+              resolve(checksum);
+            }
+          );
         }
       });
     });
@@ -483,8 +558,13 @@ async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
  */
 function isPackageInstalled(packageName) {
   try {
-    const modules = Array.from(process.moduleLoadList).filter((str) => !str.startsWith('NativeModule internal/'));
-    return modules.indexOf('NativeModule ' + packageName) >= 0 || fs.existsSync(require.resolve(packageName));
+    const modules = Array.from(process.moduleLoadList).filter(
+      (str) => !str.startsWith('NativeModule internal/')
+    );
+    return (
+      modules.indexOf('NativeModule ' + packageName) >= 0 ||
+      fs.existsSync(require.resolve(packageName))
+    );
   } catch (e) {
     return false;
   }
@@ -498,7 +578,9 @@ function checkNodeModules() {
   const exists = Array.from(toUpdate).map(
     (pkgname) =>
       fs.existsSync(path.join(__dirname, 'node_modules', pkgname)) &&
-      fs.existsSync(path.join(__dirname, 'node_modules', pkgname, 'package.json'))
+      fs.existsSync(
+        path.join(__dirname, 'node_modules', pkgname, 'package.json')
+      )
   );
   //console.log({ exists });
   return exists.every((exist) => exist === true);
@@ -528,7 +610,8 @@ function readfile(str, encoding = 'utf-8') {
  * @param {any} data
  */
 function writefile(dest, data) {
-  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (!fs.existsSync(path.dirname(dest)))
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
   if (fs.existsSync(dest)) {
     if (fs.statSync(dest).isDirectory()) throw dest + ' is directory';
   }
@@ -579,13 +662,21 @@ async function folder_to_hash(alogarithm, folder, options) {
               const statInfo = fs.statSync(fullPath);
               if (statInfo.isFile()) {
                 const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
-                const hash = await data_to_hash(alogarithm, fileInfo, options.encoding);
+                const hash = await data_to_hash(
+                  alogarithm,
+                  fileInfo,
+                  options.encoding
+                );
                 filesWithHash[fullPath] = hash;
               }
             }
             resolve({
               filesWithHash,
-              hash: await data_to_hash(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+              hash: await data_to_hash(
+                alogarithm,
+                Object.values(filesWithHash).join(''),
+                options.encoding
+              )
             });
           } else {
             reject(err);
