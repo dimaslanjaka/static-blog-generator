@@ -90,5 +90,9 @@
   "engines": {
     "node": ">=14",
     "yarn": "3.2.0"
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces",
+    "selfReferences": true
   }
 }
