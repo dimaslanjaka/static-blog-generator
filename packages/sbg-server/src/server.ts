@@ -6,21 +6,21 @@ import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
-import { sbgDebug } from 'sbg-utility';
+import { debug } from 'sbg-utility';
 import favicon from 'serve-favicon';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
 import routePost from './post';
 
-export default interface SBGServer {
+export interface SBGServer {
   config: {
     root: string;
     port: number;
   };
 }
 
-export default class SBGServer {
+export class SBGServer {
   server: Express;
   env: nunjucks.Environment;
   api: apis.Application;
@@ -31,6 +31,8 @@ export default class SBGServer {
     // get updated config
     this.config = serverConfig.get();
     // start api
+    debug('sbg-server')('cwd', this.config.root);
+    debug('sbg-server')('port', this.config.port);
     this.api = new apis.Application(this.config.root);
     // start express
     this.startExpress();
@@ -127,10 +129,12 @@ export default class SBGServer {
       console.log('Listening on http://localhost:' + this.config.port);
     });
     process.on('SIGTERM', () => {
-      sbgDebug()('SIGTERM signal received: closing HTTP server');
+      debug('sbg-server')('SIGTERM signal received: closing HTTP server');
       server.close(() => {
-        sbgDebug()('HTTP server closed');
+        debug('sbg-server')('HTTP server closed');
       });
     });
   }
 }
+
+export default SBGServer;

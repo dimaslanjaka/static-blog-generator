@@ -26,6 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SBGServer = void 0;
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
@@ -52,6 +53,7 @@ var SBGServer = /** @class */ (function () {
         // get updated config
         this.config = config_1.default.get();
         // start api
+        (0, sbg_utility_1.debug)('sbg-server')('running server', this.config.root);
         this.api = new apis.Application(this.config.root);
         // start express
         this.startExpress();
@@ -151,5 +153,6 @@ var SBGServer = /** @class */ (function () {
     };
     return SBGServer;
 }());
+exports.SBGServer = SBGServer;
 exports.default = SBGServer;
 //# sourceMappingURL=server.js.map

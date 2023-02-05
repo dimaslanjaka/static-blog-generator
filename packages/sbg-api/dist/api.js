@@ -111,6 +111,7 @@ var SBG = /** @class */ (function () {
         this.cwd = cwd;
         this.config.cwd = cwd;
         options = Object.assign(this.config, options || {}, { cwd: cwd });
+        (0, sbg_utility_1.debug)('sbg-api')('API cwd', cwd);
         this.config = (0, sbg_utility_1.setConfig)(options);
         SBG.setApi(this);
         new sbg_utility_1.scheduler();

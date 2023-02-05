@@ -1,13 +1,13 @@
 import { Express } from 'express-serve-static-core';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
-export default interface SBGServer {
+export interface SBGServer {
     config: {
         root: string;
         port: number;
     };
 }
-export default class SBGServer {
+export declare class SBGServer {
     server: Express;
     env: nunjucks.Environment;
     api: apis.Application;
@@ -24,3 +24,4 @@ export default class SBGServer {
      */
     start(): void;
 }
+export default SBGServer;
