@@ -31,19 +31,6 @@ const cmd = (commandName) => {
 };
 
 /**
- * copy font-awesome assets
- * @returns
- */
-gulp.task('copy:fa', function () {
-  return gulp
-    .src('./source/libs/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
-      cwd: __dirname
-    })
-    .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
-    .pipe(gulp.dest(path.join(__dirname, 'src/public')));
-});
-
-/**
  * copy non-javascript assets from src folder to dist
  * @returns
  */
@@ -68,7 +55,7 @@ const copyPublic = () =>
 gulp.task('copy', gulp.series(copyPublic, copyNonJS));
 
 function tsc(done) {
-  spawnAsync('npx', ['tsc', '--build', 'tsconfig.build.json'], {
+  spawnAsync(cmd('npx'), [ '--build', 'tsconfig.build.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
@@ -77,7 +64,7 @@ function tsc(done) {
     .catch(done);
 }
 
-gulp.task('build', gulp.series('copy:fa', tsc, 'copy'));
+gulp.task('build', gulp.series(tsc, 'copy'));
 
 // dev
 const pids = [];
@@ -144,6 +131,11 @@ gulp.task('compile:images', function () {
     )
     .pipe(gulp.dest('src/public/images'));
 });
+
+gulp.task(
+  'compile',
+  gulp.series('compile:css', 'compile:images', 'compile:js')
+);
 
 gulp.task('watch', function (done) {
   [
