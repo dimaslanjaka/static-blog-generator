@@ -92,7 +92,7 @@
     "yarn": "3.2.0"
   },
   "installConfig": {
-    "hoistingLimits": "workspaces",
+    "hoistingLimits": "dependencies",
     "selfReferences": true
   }
 }
