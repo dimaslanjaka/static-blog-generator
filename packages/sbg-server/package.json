@@ -11,13 +11,13 @@
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update": "run-s update:** && npx npm-check-updates -u -x chalk,codemirror && npm install && node postinstall.js",
+    "update": "run-s update:** && npm-check-updates -u -x chalk,codemirror && npm install && node postinstall.js",
     "test": "jest --runInBand",
     "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "npm run terser && npm run tw && npm run purge && npx gulp build",
-    "terser": "npx gulp compile:js",
-    "tw": "npx gulp compile:tailwind",
+    "build": "yarn terser && yarn tw && yarn purge && gulp build",
+    "terser": "gulp compile:js",
+    "tw": "gulp compile:tailwind",
     "purge": "purgecss -c purgecss.config.js -o ./src/public/css",
     "clean": "rm -rf dist tmp src/public",
     "pack": "node packer.js --yarn"
