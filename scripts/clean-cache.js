@@ -23,7 +23,7 @@ const ignore = ['**/node_modules/**/node_modules/**', '**/vendor/**', '**/script
     for (let i = 0; i < mapped.length; i++) {
       const p = mapped[i];
       console.log('deleting', p.replace(base, ''));
-      // await fs.rm(p, { recursive: true, force: true });
+      await fs.rm(p, { recursive: true, force: true });
     }
   }
 })();
