@@ -2,10 +2,6 @@ const { rollup } = require('rollup');
 const fs = require('fs-extra');
 const path = require('upath');
 const glob = require('glob');
-const gulp = require('gulp');
-const Bluebird = require('bluebird');
-const utility = require('sbg-utility');
-const babelCfg = require('./babel.config');
 const resolve = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 
@@ -27,7 +23,7 @@ const entries = scan.map((str) => {
 
 for (let i = 0; i < entries.length; i++) {
   const entry = entries[i];
-  console.log(entry);
+  //console.log(entry);
   const bundle = rollup({
     input: entry.input,
     output: {

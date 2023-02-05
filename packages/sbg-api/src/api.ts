@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import { Nullable } from 'hexo-post-parser';
-import { chain, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
+import { chain, debug, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
 import { join } from 'upath';
 import * as cleaner from './clean';
 import { deployCopy } from './deploy/copy';
@@ -26,6 +26,7 @@ class SBG {
     this.cwd = cwd;
     this.config.cwd = cwd;
     options = Object.assign(this.config, options || {}, { cwd });
+    debug('sbg-api')('cwd', cwd);
 
     this.config = setConfig(options);
     SBG.setApi(this);
