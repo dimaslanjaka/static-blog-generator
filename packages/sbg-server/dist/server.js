@@ -53,7 +53,8 @@ var SBGServer = /** @class */ (function () {
         // get updated config
         this.config = config_1.default.get();
         // start api
-        (0, sbg_utility_1.debug)('sbg-server')('running server', this.config.root);
+        (0, sbg_utility_1.debug)('sbg-server')('cwd', this.config.root);
+        (0, sbg_utility_1.debug)('sbg-server')('port', this.config.port);
         this.api = new apis.Application(this.config.root);
         // start express
         this.startExpress();
@@ -145,9 +146,9 @@ var SBGServer = /** @class */ (function () {
             console.log('Listening on http://localhost:' + _this.config.port);
         });
         process.on('SIGTERM', function () {
-            (0, sbg_utility_1.sbgDebug)()('SIGTERM signal received: closing HTTP server');
+            (0, sbg_utility_1.debug)('sbg-server')('SIGTERM signal received: closing HTTP server');
             server.close(function () {
-                (0, sbg_utility_1.sbgDebug)()('HTTP server closed');
+                (0, sbg_utility_1.debug)('sbg-server')('HTTP server closed');
             });
         });
     };
