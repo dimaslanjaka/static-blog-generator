@@ -30,6 +30,7 @@ const bundle = (done) => {
         bundleExternal: true
       })
         .transform('babelify', {
+          extends: path.join(__dirname, '../../babel.config.js'),
           global: true,
           presets: ['@babel/preset-env']
         })
