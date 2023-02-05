@@ -10630,7 +10630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@*, git-command-helper@^1.1.6, git-command-helper@^1.1.7, git-command-helper@workspace:packages/git-command-helper":
+"git-command-helper@*, git-command-helper@^1.1.6, git-command-helper@^1.1.7, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
   version: 0.0.0-use.local
   resolution: "git-command-helper@workspace:packages/git-command-helper"
   dependencies:
@@ -11536,7 +11536,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@^1.2.5, hexo-post-parser@workspace:packages/hexo-post-parser":
+"hexo-post-parser@^1.2.5, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/hexo-post-parser":
   version: 0.0.0-use.local
   resolution: "hexo-post-parser@workspace:packages/hexo-post-parser"
   dependencies:
@@ -11722,7 +11722,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0":
+"highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0, highlight.js@npm:^11.7.0":
   version: 11.7.0
   resolution: "highlight.js@npm:11.7.0"
   checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
@@ -18941,7 +18941,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@^1.1.12, safelinkify@workspace:packages/safelinkify":
+"safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
   version: 0.0.0-use.local
   resolution: "safelinkify@workspace:packages/safelinkify"
   dependencies:
@@ -19096,13 +19096,13 @@ __metadata:
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
+    git-command-helper: "workspace:^"
     glob: ^8.1.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^6.3.0
     hexo-is: ^1.0.5
-    hexo-post-parser: ^1.2.5
+    hexo-post-parser: "workspace:^"
     hexo-util: ^3.0.1
     jest: ^29.4.1
     micromatch: ^4.0.5
@@ -19111,8 +19111,8 @@ __metadata:
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    safelinkify: ^1.1.12
-    sbg-utility: ^1.0.0
+    safelinkify: "workspace:^"
+    sbg-utility: "workspace:^"
     sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
     true-case-path: ^2.2.1
     ts-jest: ^29.0.5
@@ -19259,7 +19259,7 @@ __metadata:
     git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
-    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
+    highlight.js: ^11.7.0
     jest: ^29.4.1
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40
@@ -19274,8 +19274,8 @@ __metadata:
     purgecss: ^5.0.0
     rollup: ^3.13.0
     safelinkify: ^1.1.12
-    sbg-api: ^1.0.0
-    sbg-utility: ^1.0.0
+    sbg-api: "workspace:^"
+    sbg-utility: "workspace:^"
     serve-favicon: ^2.5.0
     serve-index: ^1.9.1
     sharp: ^0.31.3

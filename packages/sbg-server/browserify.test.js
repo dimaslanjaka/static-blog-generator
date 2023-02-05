@@ -2,10 +2,6 @@ const browserify = require('browserify');
 const fs = require('fs-extra');
 const path = require('upath');
 const glob = require('glob');
-const gulp = require('gulp');
-const Bluebird = require('bluebird');
-const utility = require('sbg-utility');
-const babelCfg = require('./babel.config');
 
 const createWriteStream = (p) => {
   if (!fs.existsSync(path.dirname(p)))
