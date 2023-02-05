@@ -9,9 +9,10 @@ const ignore = ['**/node_modules/**/node_modules/**', '**/vendor/**', '**/script
 (async function () {
   for (let i = 0; i < bases.length; i++) {
     const base = bases[i];
-    const entries = await fg(['**/node_modules', '**/node_modules/**/node_modules', '**/tmp'], {
+    const entries = await fg(['**/node_modules/', '**/node_modules/**/node_modules/', '**/tmp/', 'node_modules'], {
       dot: true,
-      ignore
+      onlyDirectories: true,
+      ignore: ['**/scripts/**']
     });
     const locks = await fg(['**/yarn.lock', '**/package-lock.json'], { ignore: ['**/node_modules/**'] });
     const mapped = entries
@@ -22,7 +23,7 @@ const ignore = ['**/node_modules/**/node_modules/**', '**/vendor/**', '**/script
     for (let i = 0; i < mapped.length; i++) {
       const p = mapped[i];
       console.log('deleting', p.replace(base, ''));
-      await fs.rm(p, { recursive: true, force: true });
+      // await fs.rm(p, { recursive: true, force: true });
     }
   }
 })();
