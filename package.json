@@ -92,7 +92,15 @@
     "yarn": "3.2.0"
   },
   "installConfig": {
-    "hoistingLimits": "dependencies",
+    "hoistingLimits": "none",
     "selfReferences": true
+  },
+  "peerDependenciesMeta": {
+    "markdown-it-anchor": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   }
 }
