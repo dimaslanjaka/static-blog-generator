@@ -3910,7 +3910,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:*, @types/express@npm:^4.17.16":
+"@types/express@npm:*, @types/express@npm:^4.17.16, @types/express@npm:^4.17.17":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
   dependencies:
@@ -3972,7 +3972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/he@npm:^1.1.2":
+"@types/he@npm:^1.2.0":
   version: 1.2.0
   resolution: "@types/he@npm:1.2.0"
   checksum: 0110608efe61a8fb710c5a344485d70dab48116e9529d10a3175985ad7a118a2547ffd708349681f3ecdbcd6ae91e63c674b73ed0e4bd2c9a57ca793f538c852
@@ -4086,6 +4086,17 @@ __metadata:
     "@types/tough-cookie": "*"
     parse5: ^7.0.0
   checksum: d55402c5256ef451f93a6e3d3881f98339fe73a5ac2030588df056d6835df8367b5a857b48d27528289057e26dcdd3f502edc00cb877c79174cb3a4c7f2198c1
+  languageName: node
+  linkType: hard
+
+"@types/jsdom@npm:^21.1.0":
+  version: 21.1.0
+  resolution: "@types/jsdom@npm:21.1.0"
+  dependencies:
+    "@types/node": "*"
+    "@types/tough-cookie": "*"
+    parse5: ^7.0.0
+  checksum: 39d3c580283cb7cc3b2729738fd2cd64344e44c815d08f7b6ee7d9c973f7512eff7e7187408649c9da69b76ec81c118868e8b8787d50320f3e2f9cbbd0b000d4
   languageName: node
   linkType: hard
 
@@ -4214,7 +4225,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.11.18":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.11.18, @types/node@npm:^18.11.19":
   version: 18.11.19
   resolution: "@types/node@npm:18.11.19"
   checksum: d7cd19fcfc59cbdd3f9ba0b4072cb7adc21bd575bd8eb7d7e698975e63564aaa83f03434f32b12331f84f73d0b369d9cbe2371e359d9d7f5c3361f4987f4f7da
@@ -5777,7 +5788,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.0.0, axios@npm:^1.2.6, axios@npm:^1.3.1, axios@npm:^1.3.2":
+"axios@npm:^1.0.0, axios@npm:^1.2.6, axios@npm:^1.3.2":
   version: 1.3.2
   resolution: "axios@npm:1.3.2"
   dependencies:
@@ -8192,6 +8203,13 @@ __metadata:
   version: 4.2.2
   resolution: "deepmerge-ts@npm:4.2.2"
   checksum: 137c3650519d9b1a220db7e23a3f56304cd02e7f97b2b8392e2767251055a29318425bacdb2ab2ff175a4645f7179643acf0e038d5dafbfdbc11bdf322f79697
+  languageName: node
+  linkType: hard
+
+"deepmerge-ts@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "deepmerge-ts@npm:4.3.0"
+  checksum: d5f8a96df9a2bc7177d59544b9390ba76e50fb725f776669068ca04eef319e98ee8870cf7b7ecca9f636b711d57cea571ac61553ee01101a614c045f7a86e0be
   languageName: node
   linkType: hard
 
@@ -10639,7 +10657,7 @@ __metadata:
     "@types/hexo-util": ^0.6.5
     "@types/ini": ^1.3.31
     "@types/jest": ^29.4.0
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     ansi-colors: ^4.1.3
@@ -10649,7 +10667,7 @@ __metadata:
     browser-sync: ^2.27.11
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
-    deepmerge-ts: ^4.2.2
+    deepmerge-ts: ^4.3.0
     eslint: ^8.33.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
@@ -11004,7 +11022,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "google-news-sitemap@workspace:packages/google-news-sitemap"
   dependencies:
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     ansi-colors: ^4.1.3
@@ -11106,7 +11124,7 @@ __metadata:
     jsdom: ^20.0.3
     plugin-error: 2.0.0
     through2: ^4.0.2
-  checksum: a90b30ecaad2db7fad70434d8125112eec7cf9a907508edbcb12d7c791882145610b7ea7e0402789ea6ef6d2830f159530bbacf2b34972a825ebaf1089ae764a
+  checksum: 39732b8b7f845604a022dc4b479b3b1bbc2aa6b163c17c5a745ea045626f724362dcc6cdaf3e8beeb11eefca116998c538bdd76bd97d191596d6b0dd33483a25
   languageName: node
   linkType: hard
 
@@ -11333,15 +11351,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hexo-blogger-xml@workspace:packages/hexo-blogger-xml"
   dependencies:
-    "@types/he": ^1.1.2
+    "@types/he": ^1.2.0
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
-    "@types/jsdom": ^20.0.1
-    "@types/node": ^18.11.18
+    "@types/jsdom": ^21.1.0
+    "@types/node": ^18.11.19
     "@types/xml2js": ^0.4.11
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     ansi-colors: ^4.1.3
-    axios: ^1.3.1
+    axios: ^1.3.2
     chalk: ^4.1.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     eslint: ^8.33.0
@@ -11546,10 +11564,10 @@ __metadata:
     "@types/glob": ^8.0.1
     "@types/gulp": ^4.0.10
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
-    "@types/jsdom": ^20.0.1
+    "@types/jsdom": ^21.1.0
     "@types/lodash": ^4.14.191
     "@types/lodash.deburr": ^4.1.7
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@types/yargs": ^17.0.22
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
@@ -11718,7 +11736,7 @@ __metadata:
 "highlight.js@https://github.com/highlightjs/highlight.js/tarball/11-stable":
   version: 11.3.1
   resolution: "highlight.js@https://github.com/highlightjs/highlight.js.git#commit=2a972d86589f65f4e79f67a02c3bf389a187afa0"
-  checksum: ba095da36382a83f32585b87cce9a2424c736243cd5c5a436e4dfa7426033a703bd309b5e7797d50028c7cfa2b460318c46b78b88e608f3d8c9038833c98fce5
+  checksum: 927c5f188896dbc30e5a9452f2cf52a87073555aa2f30d0974701b4bf2659bee22847ee663bdec805a52bb91200ae4b075ec218b4dbdbe06bf0d265ea4bdd1ac
   languageName: node
   linkType: hard
 
@@ -15808,9 +15826,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.6.3":
-  version: 16.6.3
-  resolution: "npm-check-updates@npm:16.6.3"
+"npm-check-updates@npm:^16.6.4":
+  version: 16.6.4
+  resolution: "npm-check-updates@npm:16.6.4"
   dependencies:
     chalk: ^5.2.0
     cli-table: ^0.3.11
@@ -15844,7 +15862,7 @@ __metadata:
   bin:
     ncu: build/src/bin/cli.js
     npm-check-updates: build/src/bin/cli.js
-  checksum: 133645c3fa66eaaf36c91ef1e9cc0105f753c423e69f83592f4d45be24e494ddd96c4bd9e1fd0885a4b4b0237222929cc71b41b9405ac1fb27115b9627fec9df
+  checksum: 98d0130b1b8813f238fe75d6d11bd7b005c9f9728cae94ddd1194a2bf4a8d843caa423177fe97ba7be7f8ff3e2b3f350683a30193ed21f8c72e0f7b806c08d81
   languageName: node
   linkType: hard
 
@@ -17028,7 +17046,7 @@ __metadata:
     mkdirp-no-bin: ^0.5.1
     rmdir: ^1.2.0
     upath: ^2.0.1
-  checksum: 7ca018801d296955601d9ad26dafe34c866ff10fd14195a0123b934feec4514609199e29b8b7715b4e109e614566fbdedad56976b280b08850a6b6b6a801ae64
+  checksum: c68eef57897538379df57912271d4e623d73fed000afbc4e2d9a97532767f57e337f29feda65dcb54edabe9bf395c24b9c7c71314fd8798791997bddadd34c33
   languageName: node
   linkType: hard
 
@@ -18838,9 +18856,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.13.0":
-  version: 3.13.0
-  resolution: "rollup@npm:3.13.0"
+"rollup@npm:^3.14.0":
+  version: 3.14.0
+  resolution: "rollup@npm:3.14.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -18848,7 +18866,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 9de4d705a016942b6c05111cd95fa5e0b12f079edac5691b8ccbddd55bd9e606e7534d66b5e4867d8f6c69b76a5539a43d448f866295777d23d54581361868d1
+  checksum: 48f4da224753b8022529256243b74b3f6f41d9b4358ba079ac42f2a2cf07e4bd01b5d94579338194238e3c575487974ca508e144cf6195123293e7fdf82506cb
   languageName: node
   linkType: hard
 
@@ -18955,7 +18973,7 @@ __metadata:
     "@types/html-minifier-terser": ^7.0.0
     "@types/jquery": ^3.5.16
     "@types/markdown-it-attrs": ^4.1.0
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@types/prettier": ^2.7.2
     "@types/toastr": ^2.1.40
     "@types/undertaker": ^1.2.8
@@ -18995,7 +19013,7 @@ __metadata:
     moment-timezone: ^0.5.40
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     nodemon: ^2.0.20
-    npm-check-updates: ^16.6.3
+    npm-check-updates: ^16.6.4
     path-browserify: ^1.0.1
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     prettier: ^2.8.3
@@ -19090,7 +19108,7 @@ __metadata:
   dependencies:
     "@jest/globals": ^29.4.1
     "@types/micromatch": ^4.0.2
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@types/nunjucks": ^3.2.1
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
@@ -19150,7 +19168,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     xmlbuilder2: ^3.0.2
-  checksum: b1769ff5bf2db4c15a40221179c6578668c82f9626c202a135ef61f94da19c3c56d2fb52fe67dc32dfbf1cf6027be075d38514c496b58bce6707718c4146e476
+  checksum: 5c47409c51ab2a72c50240953d14b61fa6c2f774fd227fd70d18a6823e0c65eccfccaefff91d9e57c6b3892d553a72411c22b3878f5f48ed056e291e1cccad98
   languageName: node
   linkType: hard
 
@@ -19159,13 +19177,13 @@ __metadata:
   resolution: "sbg-cli@workspace:packages/sbg-cli"
   dependencies:
     "@jest/globals": ^29.4.1
-    "@types/he": ^1.1.2
-    "@types/node": ^18.11.18
+    "@types/he": ^1.2.0
+    "@types/node": ^18.11.19
     "@types/xml2js": ^0.4.11
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    deepmerge-ts: ^4.2.2
+    deepmerge-ts: ^4.3.0
     eslint: ^8.33.0
     git-command-helper: "*"
     he: ^1.2.0
@@ -19215,7 +19233,7 @@ __metadata:
     serve-index: ^1.9.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: f510e3f9a96aec16e517d211e334d463c8ee4a705477d4a5456891c0d8d0766ee953582196ec3ebb605e51efe2d670d5b48a276b356a529b10a5f0639e96ed1b
+  checksum: 06c81ea3bda0a6a526a633df2544af5c6a5984853708b92139ee0d3dcadfa4ccf686357de89f2de0298280ccb5ed0b4bbac9dd7913c9114d6ac060806a942dc1
   languageName: node
   linkType: hard
 
@@ -19232,14 +19250,14 @@ __metadata:
     "@types/cookie-parser": ^1.4.3
     "@types/cors": ^2.8.13
     "@types/debug": ^4.1.7
-    "@types/express": ^4.17.16
-    "@types/node": ^18.11.18
+    "@types/express": ^4.17.17
+    "@types/node": ^18.11.19
     "@types/serve-index": ^1.9.1
     "@typescript-eslint/eslint-plugin": ^5.50.0
     "@typescript-eslint/parser": ^5.50.0
     ansi-colors: ^4.1.3
     autoprefixer: ^10.4.13
-    axios: ^1.3.1
+    axios: ^1.3.2
     babelify: ^10.0.0
     bluebird: ^3.7.2
     browserify: ^17.0.0
@@ -19272,7 +19290,7 @@ __metadata:
     postcss-preset-env: ^8.0.1
     prettier: ^2.8.3
     purgecss: ^5.0.0
-    rollup: ^3.13.0
+    rollup: ^3.14.0
     safelinkify: ^1.1.12
     sbg-api: "workspace:^"
     sbg-utility: "workspace:^"
@@ -19298,11 +19316,11 @@ __metadata:
     "@types/debug": ^4.1.7
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@types/nunjucks": ^3.2.1
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     ansi-colors: ^4.1.3
-    axios: ^1.3.1
+    axios: ^1.3.2
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
@@ -19356,7 +19374,7 @@ __metadata:
     true-case-path: ^2.2.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: fbd7cc2246efe3ef0b621ddb6477ce56a9252d8e171f9a34ee09881aa325add9598ede79633d42ec1c2ee6220983fc7a6c479ebfff0781967b1d2032f46b880e
+  checksum: 1bd6501e4e52eb9ea422ae86229255b76d4e0882abd19072e82050ec17154afc88f94fd737a8f1beaae5a3d1f1848e5b944aa42392978a29dc99d785840405d7
   languageName: node
   linkType: hard
 
@@ -19783,7 +19801,7 @@ __metadata:
     cheerio: ^1.0.0-rc.2
     progress: ^2.0.0
     request: ^2.88.0
-  checksum: 132a31293504ce3475b746f03b2c2552ff159ac6261de49dd6a4cdeac8432829407dfc387afbff147deaa91efe592022213dc0445f6b7cf2e2dae67603378c49
+  checksum: 463645f1e6997b1a44628e28f6b0e8e63c3ed7767d16a8ba266d84f6277f00c659dbda8aa415d4dc3e5ff5ad4d2eecb47768052d3270a9ef22094676e3d82d34
   languageName: node
   linkType: hard
 
