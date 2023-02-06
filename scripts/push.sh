@@ -26,6 +26,8 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
             echo "${repo} at ${MODULE_PATH} no changes"
         else
             echo "push for ${repo} at ${MODULE_PATH} branch ${BRANCH}"
+            git config --global user.name "dimaslanjaka"
+            git config --global user.email 'dimaslanjaka@gmail.com'
             git push origin "${BRANCH}"
         fi
     done
