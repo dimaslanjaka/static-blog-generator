@@ -74,3 +74,6 @@ npx sbg deploy seo
 - [x] Test each module
 - [ ] Create single bundle tarball
 - [x] Create CI
+
+## Note
+Last stable development 513d687b4d26bbf4ea735313cb79cbcf8d04b36d
