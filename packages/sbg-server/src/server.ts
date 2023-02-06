@@ -38,6 +38,7 @@ export class SBGServer {
     // vars
     const isDev = new Error('').stack?.includes('server.runner');
     debug('sbg-server')('is-dev', isDev);
+    const api = this.api;
     // init express
     this.server = express();
     debug('sbg-server').extend('views')(path.join(__dirname, 'views'));
@@ -99,7 +100,8 @@ export class SBGServer {
     // index page
     this.server.get('/', function (_, res) {
       const data = {
-        title: 'Static Blog Generator Manager'
+        title: 'Static Blog Generator Manager',
+        config: api.config
       };
 
       res.render('index.njk', data);
