@@ -6,6 +6,11 @@ on:
     paths-ignore:
       - '**/dist/**'
       - '**/release/**'
+      - 'packages/google-news-sitemap'
+      - 'packages/hexo-post-parser'
+      - 'packages/git-command-helper'
+      - 'packages/safelinkify'
+      - 'packages/hexo-blogger-xml'
   pull_request:
     types:
       - closed
