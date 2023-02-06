@@ -38,7 +38,8 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: beta
           token: ${{ secrets.ACCESS_TOKEN }}
-      - run: sh scripts/install-submodules.sh
+          submodules: 'recursive'
+      #- run: sh scripts/install-submodules.sh
         name: clone submodules
       - name: Set env
         id: set-env
