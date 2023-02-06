@@ -1,11 +1,13 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
+import { Express } from 'express-serve-static-core';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 import { debug } from 'sbg-utility';
+import favicon from 'serve-favicon';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
@@ -19,7 +21,7 @@ export interface SBGServer {
 }
 
 export class SBGServer {
-  server: ReturnType<typeof express>;
+  server: Express;
   env: nunjucks.Environment;
   api: apis.Application;
   config: SBGServer['config'];
@@ -29,19 +31,17 @@ export class SBGServer {
     // get updated config
     this.config = serverConfig.get();
     // start api
+    debug('sbg-server')('cwd', this.config.root);
+    debug('sbg-server')('port', this.config.port);
     this.api = new apis.Application(this.config.root);
     // start express
     this.startExpress();
   }
-
-  startExpress() {
+  private startExpress() {
     // vars
     const isDev = new Error('').stack?.includes('server.runner');
-    debug('sbg-server')('is-dev', isDev);
-    const api = this.api;
     // init express
     this.server = express();
-    debug('sbg-server').extend('views')(path.join(__dirname, 'views'));
     // set views
     this.server.set('views', [path.join(__dirname, 'views')]);
     // init nunjuck environment
@@ -53,13 +53,11 @@ export class SBGServer {
     });
     setupNunjuckHelper(this.env);
     // init default middleware
-    //debug('sbg-server').extend('middleware')('enabling cors');
     this.server.use(cors());
     this.server.use(express.urlencoded({ extended: true, limit: '50mb' }));
     this.server.use(express.json({ limit: '50mb' }));
     this.server.use(cookieParser());
-    //this.server.use(favicon(__dirname + '/public/images/nodejs.webp'));
-    debug('sbg-server').extend('middleware')('redirect all trailing slashes');
+    this.server.use(favicon(__dirname + '/public/images/nodejs.webp'));
     // https://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-globally-in-express
     this.server.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
@@ -97,11 +95,10 @@ export class SBGServer {
         this.server.use(express.static(p));
       });
     // register router
-    // index page
     this.server.get('/', function (_, res) {
       const data = {
-        title: 'Static Blog Generator Manager',
-        config: api.config
+        message: 'Hello world!',
+        title: 'Nunjucks example'
       };
 
       res.render('index.njk', data);
@@ -118,7 +115,6 @@ export class SBGServer {
     this.server.use(router);
     return this.server;
   }
-
   /**
    * get the configured server
    * @returns express server instance
@@ -128,11 +124,6 @@ export class SBGServer {
    * start server
    */
   start() {
-    debug('sbg-server')('cwd', this.config.root);
-    debug('sbg-server')('port', this.config.port);
-    /*this.server.listen(this.config.port, () => {
-      console.log('Listening on http://localhost:' + this.config.port);
-    });*/
     const server = http.createServer(this.server);
     server.listen(this.config.port, () => {
       console.log('Listening on http://localhost:' + this.config.port);
