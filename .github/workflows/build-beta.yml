@@ -99,7 +99,7 @@ jobs:
       - name: Install Global Packages
         run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
-      - run: yarn install --immutable
+      - run: yarn install 
       - run: lerna run build
       - run: lerna exec npm run pack
       - name: commit sub projects
