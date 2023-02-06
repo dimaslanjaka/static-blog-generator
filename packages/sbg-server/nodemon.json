@@ -20,7 +20,8 @@
     "./src/tmp",
     "./docs",
     "./release",
-    "./src/public"
+    "./src/public",
+    "./*.runner.js"
   ],
   "delay": 3000,
   "ext": "*",

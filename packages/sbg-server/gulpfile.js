@@ -68,7 +68,7 @@ const copyPublic = () =>
 gulp.task('copy', gulp.series(copyPublic, copyNonJS));
 
 function tsc(done) {
-  spawnAsync('npx', ['tsc', '--build', 'tsconfig.build.json'], {
+  spawnAsync(cmd('tsc'), ['--build', 'tsconfig.build.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
@@ -77,7 +77,7 @@ function tsc(done) {
     .catch(done);
 }
 
-gulp.task('build', gulp.series('copy:fa', tsc, 'copy'));
+gulp.task('build', gulp.series(tsc, 'copy'));
 
 // dev
 const pids = [];
@@ -144,6 +144,11 @@ gulp.task('compile:images', function () {
     )
     .pipe(gulp.dest('src/public/images'));
 });
+
+gulp.task(
+  'compile',
+  gulp.series('compile:css', 'compile:images', 'compile:js')
+);
 
 gulp.task('watch', function (done) {
   [
