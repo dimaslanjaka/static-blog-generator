@@ -114,8 +114,6 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           sh scripts/commit.sh "feat: update build from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
       - run: |
           git add -A
@@ -123,7 +121,26 @@ jobs:
         name: commit root project
         continue-on-error: true
         shell: bash
-      - run: sh scripts/push.sh
-        name: push
+      - run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git push
+        name: push packages/git-command-helper
+        working-directory: packages/git-command-helper
+        continue-on-error: true
+        shell: bash
+      - run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git push
+        name: push packages/hexo-post-parser
+        working-directory: packages/hexo-post-parser
+        continue-on-error: true
+        shell: bash
+      - run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git push --recurse-submodules=on-demand
+        name: push root project
         continue-on-error: true
         shell: bash
