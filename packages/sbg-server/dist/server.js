@@ -35,7 +35,6 @@ var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var apis = __importStar(require("sbg-api"));
 var sbg_utility_1 = require("sbg-utility");
-var serve_favicon_1 = __importDefault(require("serve-favicon"));
 var upath_1 = __importDefault(require("upath"));
 var config_1 = __importDefault(require("./config"));
 var nunjucks_2 = __importDefault(require("./helper/nunjucks"));
@@ -53,8 +52,6 @@ var SBGServer = /** @class */ (function () {
         // get updated config
         this.config = config_1.default.get();
         // start api
-        (0, sbg_utility_1.debug)('sbg-server')('cwd', this.config.root);
-        (0, sbg_utility_1.debug)('sbg-server')('port', this.config.port);
         this.api = new apis.Application(this.config.root);
         // start express
         this.startExpress();
@@ -64,8 +61,11 @@ var SBGServer = /** @class */ (function () {
         var _a;
         // vars
         var isDev = (_a = new Error('').stack) === null || _a === void 0 ? void 0 : _a.includes('server.runner');
+        (0, sbg_utility_1.debug)('sbg-server')('is-dev', isDev);
+        var api = this.api;
         // init express
         this.server = (0, express_1.default)();
+        (0, sbg_utility_1.debug)('sbg-server').extend('views')(upath_1.default.join(__dirname, 'views'));
         // set views
         this.server.set('views', [upath_1.default.join(__dirname, 'views')]);
         // init nunjuck environment
@@ -77,11 +77,13 @@ var SBGServer = /** @class */ (function () {
         });
         (0, nunjucks_2.default)(this.env);
         // init default middleware
+        //debug('sbg-server').extend('middleware')('enabling cors');
         this.server.use((0, cors_1.default)());
         this.server.use(express_1.default.urlencoded({ extended: true, limit: '50mb' }));
         this.server.use(express_1.default.json({ limit: '50mb' }));
         this.server.use((0, cookie_parser_1.default)());
-        this.server.use((0, serve_favicon_1.default)(__dirname + '/public/images/nodejs.webp'));
+        //this.server.use(favicon(__dirname + '/public/images/nodejs.webp'));
+        (0, sbg_utility_1.debug)('sbg-server').extend('middleware')('redirect all trailing slashes');
         // https://stackoverflow.com/questions/13442377/redirect-all-trailing-slashes-globally-in-express
         this.server.use(function (req, res, next) {
             res.setHeader('Access-Control-Allow-Origin', '*');
@@ -118,10 +120,11 @@ var SBGServer = /** @class */ (function () {
             _this.server.use(express_1.default.static(p));
         });
         // register router
+        // index page
         this.server.get('/', function (_, res) {
             var data = {
-                message: 'Hello world!',
-                title: 'Nunjucks example'
+                title: 'Static Blog Generator Manager',
+                config: api.config
             };
             res.render('index.njk', data);
         });
@@ -141,6 +144,11 @@ var SBGServer = /** @class */ (function () {
      */
     SBGServer.prototype.start = function () {
         var _this = this;
+        (0, sbg_utility_1.debug)('sbg-server')('cwd', this.config.root);
+        (0, sbg_utility_1.debug)('sbg-server')('port', this.config.port);
+        /*this.server.listen(this.config.port, () => {
+          console.log('Listening on http://localhost:' + this.config.port);
+        });*/
         var server = http_1.default.createServer(this.server);
         server.listen(this.config.port, function () {
             console.log('Listening on http://localhost:' + _this.config.port);

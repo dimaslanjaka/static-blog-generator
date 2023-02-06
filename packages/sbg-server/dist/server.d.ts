@@ -1,4 +1,4 @@
-import { Express } from 'express-serve-static-core';
+import express from 'express';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 export interface SBGServer {
@@ -8,17 +8,17 @@ export interface SBGServer {
     };
 }
 export declare class SBGServer {
-    server: Express;
+    server: ReturnType<typeof express>;
     env: nunjucks.Environment;
     api: apis.Application;
     config: SBGServer['config'];
     constructor(options?: Partial<SBGServer['config']>);
-    private startExpress;
+    startExpress(): import("express-serve-static-core").Express;
     /**
      * get the configured server
      * @returns express server instance
      */
-    get: () => Express;
+    get: () => import("express-serve-static-core").Express;
     /**
      * start server
      */
