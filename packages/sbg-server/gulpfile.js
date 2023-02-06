@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const path = require('upath');
 const fs = require('fs-extra');
-const utility = require('sbg-utility');
+//const utility = require('sbg-utility');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const spawn = require('child_process').spawn;
 const kill = require('tree-kill');
