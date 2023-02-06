@@ -76,4 +76,4 @@ npx sbg deploy seo
 - [x] Create CI
 
 ## Note
-Last stable development 513d687b4d26bbf4ea735313cb79cbcf8d04b36d
+Last stable development [513d687b4d26bbf4ea735313cb79cbcf8d04b36d](https://github.com/dimaslanjaka/static-blog-generator/commit/513d687b4d26bbf4ea735313cb79cbcf8d04b36d)
