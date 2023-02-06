@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const path = require('upath');
 const fs = require('fs-extra');
-const utility = require('sbg-utility');
+//const utility = require('sbg-utility');
 const { spawnAsync } = require('git-command-helper/dist/spawn');
 const spawn = require('child_process').spawn;
 const kill = require('tree-kill');
@@ -29,19 +29,6 @@ const cmd = (commandName) => {
     ? cmdPath.replace(/\//g, '\\\\') + '.cmd'
     : cmdPath;
 };
-
-/**
- * copy font-awesome assets
- * @returns
- */
-gulp.task('copy:fa', function () {
-  return gulp
-    .src('./source/libs/fontawesome/**/*.{woff,woff2,eot,svg,otf,ttf}', {
-      cwd: __dirname
-    })
-    .pipe(utility.gutils.gulpCached({ name: 'copy-font-awesome' }))
-    .pipe(gulp.dest(path.join(__dirname, 'src/public')));
-});
 
 /**
  * copy non-javascript assets from src folder to dist
