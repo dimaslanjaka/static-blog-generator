@@ -106,14 +106,17 @@ export class SBGServer {
 
       res.render('index.njk', data);
     });
-    this.server.get('/test', function (_, res) {
-      const data = {
-        title: 'Test'
-      };
+    if (isDev) {
+      this.server.get('/test', function (_, res) {
+        const data = {
+          title: 'Test'
+        };
 
-      res.render('test.html', data);
-    });
+        res.render('test.html', data);
+      });
+    }
     const router = express.Router();
+    debug('sbg-server').extend('middleware')('register /post');
     router.use('/post', routePost(this.api));
     this.server.use(router);
     return this.server;
@@ -128,12 +131,12 @@ export class SBGServer {
    * start server
    */
   start() {
-    debug('sbg-server')('cwd', this.config.root);
-    debug('sbg-server')('port', this.config.port);
-    /*this.server.listen(this.config.port, () => {
-      console.log('Listening on http://localhost:' + this.config.port);
-    });*/
-    const server = http.createServer(this.server);
+    debug('sbg-server').extend('cwd')(this.config.root);
+    debug('sbg-server').extend('port')(this.config.port);
+    const server = http.createServer({}, this.server);
+    server.listen(this.config.port, function () {
+      console.log('server running at http://localhost:' + this.config.port);
+    });
     process.on('SIGTERM', () => {
       debug('sbg-server')('SIGTERM signal received: closing HTTP server');
       server.close(() => {
