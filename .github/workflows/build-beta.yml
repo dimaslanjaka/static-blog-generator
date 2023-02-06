@@ -21,6 +21,7 @@ jobs:
       fail-fast: true
     env:
       NODE_OPTIONS: "--max-old-space-size=8192"
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
     runs-on: ubuntu-latest
 
