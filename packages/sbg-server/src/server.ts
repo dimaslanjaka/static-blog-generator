@@ -134,9 +134,6 @@ export class SBGServer {
       console.log('Listening on http://localhost:' + this.config.port);
     });*/
     const server = http.createServer(this.server);
-    server.listen(this.config.port, () => {
-      console.log('Listening on http://localhost:' + this.config.port);
-    });
     process.on('SIGTERM', () => {
       debug('sbg-server')('SIGTERM signal received: closing HTTP server');
       server.close(() => {
