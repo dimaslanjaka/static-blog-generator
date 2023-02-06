@@ -19215,7 +19215,7 @@ __metadata:
     serve-index: ^1.9.1
     upath: ^2.0.1
     yaml: ^2.2.1
-  checksum: cd774481f4001a53552f587b3544b5f86eb6ecfd58cea4c4d8a6eece68da1d400c6f4e50ba3cb501344d715998321ad5eaf00b2b9085b7e5cd8398f770bf9475
+  checksum: f510e3f9a96aec16e517d211e334d463c8ee4a705477d4a5456891c0d8d0766ee953582196ec3ebb605e51efe2d670d5b48a276b356a529b10a5f0639e96ed1b
   languageName: node
   linkType: hard
 
