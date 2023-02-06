@@ -11,6 +11,7 @@ on:
       - 'packages/git-command-helper'
       - 'packages/safelinkify'
       - 'packages/hexo-blogger-xml'
+      - '**/test'
   pull_request:
     types:
       - closed
