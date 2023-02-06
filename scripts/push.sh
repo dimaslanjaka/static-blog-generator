@@ -27,7 +27,8 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
         else
             echo "push for ${repo} at ${MODULE_PATH} branch ${BRANCH}"
             git config --global user.name "dimaslanjaka"
-            git config --global user.email 'dimaslanjaka@gmail.com'
+            git config --global user.email "dimaslanjaka@gmail.com"
+            if [[ -v GITHUB_WORKFLOWS ]]; then echo "running in github actions"; fi
             git push origin "${BRANCH}"
         fi
     done
