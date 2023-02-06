@@ -33,8 +33,8 @@ git -C "${REPO_PATH}" config -f .gitmodules --get-regexp '^submodule\..*\.path$'
             echo "${repo} at ${MODULE_PATH} no changes"
         else
             echo "push for ${repo} at ${MODULE_PATH} branch ${BRANCH}";
-            git push origin "${BRANCH}"
+            git push origin "${BRANCH}" --recurse-submodules=on-demand
         fi
     done
 
-git push
+git push --recurse-submodules=on-demand
