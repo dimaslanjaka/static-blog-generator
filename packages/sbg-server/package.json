@@ -11,13 +11,13 @@
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update": "run-s update:** && npm-check-updates -u -x chalk,codemirror && npm install && node postinstall.js",
+    "update": "run-s update:** && npx npm-check-updates -u -x chalk,codemirror && npm install && node postinstall.js",
     "test": "jest --runInBand",
-    "dev:server": "node -r ts-node/register src/server.runner.ts",
+    "dev:server": "ts-node src/server.runner.ts",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "yarn compile && yarn tw && yarn purge && gulp build",
-    "compile": "gulp compile",
-    "tw": "gulp compile:tailwind",
+    "build": "npm run terser && npm run tw && npm run purge && npx gulp build",
+    "terser": "npx gulp compile:js",
+    "tw": "npx gulp compile:tailwind",
     "purge": "purgecss -c purgecss.config.js -o ./src/public/css",
     "clean": "rm -rf dist tmp src/public",
     "pack": "node packer.js --yarn"
@@ -58,6 +58,7 @@
     "safelinkify": "^1.1.12",
     "sbg-api": "workspace:^",
     "sbg-utility": "workspace:^",
+    "serve-favicon": "^2.5.0",
     "serve-index": "^1.9.1",
     "upath": "^2.0.1",
     "yaml": "^2.2.1"
