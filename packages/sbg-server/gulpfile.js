@@ -55,7 +55,7 @@ const copyPublic = () =>
 gulp.task('copy', gulp.series(copyPublic, copyNonJS));
 
 function tsc(done) {
-  spawnAsync(cmd('npx'), [ '--build', 'tsconfig.build.json'], {
+  spawnAsync(cmd('tsc'), ['--build', 'tsconfig.build.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
