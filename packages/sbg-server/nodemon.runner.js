@@ -1,12 +1,12 @@
-const spawn = require('cross-spawn');
+const { spawn } = require('cross-spawn');
 
 // parallel run
 
-spawn.spawn('ts-node', ['src/server.runner.ts'], {
+spawn('node', ['-r', 'ts-node/register', 'src/server.runner.ts'], {
   cwd: __dirname,
   stdio: 'inherit'
 });
-spawn.spawn('gulp', ['compile:js'], {
+spawn('gulp', ['compile'], {
   cwd: __dirname,
   stdio: 'inherit'
 });
