@@ -8,11 +8,12 @@ import { writefile } from 'sbg-utility';
 import serveIndex from 'serve-index';
 import path from 'upath';
 import yaml from 'yaml';
+import SBGServer from '../server';
 
 const log = debug('sbg').extend('server').extend('route').extend('post');
 const router = express.Router();
 
-export default function routePost(api: apis.Application) {
+export default function routePost(this: SBGServer, api: apis.Application) {
   const POST_ROOT = path.join(api.cwd, api.config.post_dir);
   log('root<post>', POST_ROOT);
 
