@@ -19,7 +19,7 @@ export interface SBGServer {
 }
 
 export class SBGServer {
-  server: ReturnType<typeof express>;
+  server: import('express').Express;
   env: nunjucks.Environment;
   api: apis.Application;
   config: SBGServer['config'];
@@ -30,8 +30,6 @@ export class SBGServer {
     this.config = serverConfig.get();
     // start api
     this.api = new apis.Application(this.config.root);
-    // start express
-    this.startExpress();
   }
 
   startExpress() {
@@ -133,7 +131,7 @@ export class SBGServer {
   start() {
     debug('sbg-server').extend('cwd')(this.config.root);
     debug('sbg-server').extend('port')(this.config.port);
-    const server = http.createServer({}, this.server);
+    const server = http.createServer(this.startExpress());
     server.listen(this.config.port, function () {
       console.log('server running at http://localhost:' + this.config.port);
     });
