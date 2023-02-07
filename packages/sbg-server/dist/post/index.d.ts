@@ -1,2 +1,3 @@
 import * as apis from 'sbg-api';
-export default function routePost(api: apis.Application): import("express-serve-static-core").Router;
+import SBGServer from '../server';
+export default function routePost(this: SBGServer, api: apis.Application): import("express-serve-static-core").Router;

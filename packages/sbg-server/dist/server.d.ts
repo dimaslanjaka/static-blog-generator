@@ -1,4 +1,6 @@
+/// <reference types="node" />
 import express from 'express';
+import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 export interface SBGServer {
@@ -14,6 +16,13 @@ export declare class SBGServer {
     config: SBGServer['config'];
     constructor(options?: Partial<SBGServer['config']>);
     startExpress(): express.Express;
+    renderData(assign: Record<string, any>): Record<string, any> & {
+        config: import("sbg-utility").ProjConf;
+        configserver: {
+            root: string;
+            port: number;
+        };
+    };
     /**
      * get the configured server
      * @returns express server instance
@@ -22,8 +31,7 @@ export declare class SBGServer {
     /**
      * start server
      */
-    start(): void;
-    start2(): void;
-    test(): void;
+    start(): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
+    start2(): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
 }
 export default SBGServer;

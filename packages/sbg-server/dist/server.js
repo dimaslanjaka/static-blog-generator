@@ -53,8 +53,6 @@ var SBGServer = /** @class */ (function () {
         this.config = config_1.default.get();
         // start api
         this.api = new apis.Application(this.config.root);
-        // start express
-        this.startExpress();
     }
     SBGServer.prototype.startExpress = function () {
         var _this = this;
@@ -62,7 +60,7 @@ var SBGServer = /** @class */ (function () {
         // vars
         var isDev = (_a = new Error('').stack) === null || _a === void 0 ? void 0 : _a.includes('server.runner');
         (0, sbg_utility_1.debug)('sbg-server')('is-dev', isDev);
-        var api = this.api;
+        var self = this;
         // init express
         this.server = (0, express_1.default)();
         (0, sbg_utility_1.debug)('sbg-server').extend('views')(upath_1.default.join(__dirname, 'views'));
@@ -122,25 +120,21 @@ var SBGServer = /** @class */ (function () {
         // register router
         // index page
         this.server.get('/', function (_, res) {
-            var data = {
-                title: 'Static Blog Generator Manager',
-                config: api.config
-            };
-            res.render('index.njk', data);
+            res.render('index.njk', self.renderData({ title: 'Static Blog Generator Manager' }));
         });
-        if (isDev) {
-            this.server.get('/test', function (_, res) {
-                var data = {
-                    title: 'Test'
-                };
-                res.render('test.html', data);
-            });
-        }
         var router = express_1.default.Router();
         (0, sbg_utility_1.debug)('sbg-server').extend('middleware')('register /post');
-        router.use('/post', (0, post_1.default)(this.api));
+        router.use('/post', post_1.default.bind(this)(this.api));
         this.server.use(router);
         return this.server;
+    };
+    SBGServer.prototype.renderData = function (assign) {
+        var api = this.api;
+        var self = this;
+        return Object.assign(assign, {
+            config: api.config,
+            configserver: self.config
+        });
     };
     /**
      * start server
@@ -148,26 +142,24 @@ var SBGServer = /** @class */ (function () {
     SBGServer.prototype.start = function () {
         (0, sbg_utility_1.debug)('sbg-server').extend('cwd')(this.config.root);
         (0, sbg_utility_1.debug)('sbg-server').extend('port')(this.config.port);
-        var server = http_1.default.createServer(this.server);
-        server.listen(this.config.port, function () {
-            console.log('server running at http://localhost:' + this.config.port);
-        });
+        var httpserver = http_1.default
+            .createServer(this.startExpress())
+            .listen(this.config.port);
         process.on('SIGTERM', function () {
-            (0, sbg_utility_1.debug)('sbg-server')('SIGTERM signal received: closing HTTP server');
-            server.close(function () {
-                (0, sbg_utility_1.debug)('sbg-server')('HTTP server closed');
+            (0, sbg_utility_1.debug)('sbg-server').extend('exit')('SIGTERM signal received: closing HTTP server');
+            httpserver.close(function () {
+                (0, sbg_utility_1.debug)('sbg-server').extend('exit')('HTTP server closed');
             });
         });
+        console.log('server listening at http://localhost:' + this.config.port);
+        return httpserver;
     };
     SBGServer.prototype.start2 = function () {
-        this.server.listen(this.config.port, function () {
-            console.log('server running at http://localhost:' + this.config.port);
-        });
-    };
-    SBGServer.prototype.test = function () {
-        http_1.default.createServer(this.startExpress()).listen(1337, function () {
-            console.log('Server ready');
-        });
+        var httpserver = http_1.default
+            .createServer(this.startExpress())
+            .listen(this.config.port);
+        console.log('server listening at http://localhost:' + this.config.port);
+        return httpserver;
     };
     return SBGServer;
 }());

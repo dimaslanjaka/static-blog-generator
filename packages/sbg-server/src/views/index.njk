@@ -4,18 +4,33 @@
 {% endblock title %}
 {% block content %}
   <!-- site information -->
-  <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Site Information</h5>
-    </a>
-    <table class="mb-3 font-normal text-gray-500 dark:text-gray-400 relative overflow-x-auto">
-      <tr>
-        <th>cwd</th>
+  <div class="rounded-lg shadow relative overflow-x-auto sm:rounded-lg p-6 mb-3 bg-white border border-gray-200 dark:bg-gray-800
+      dark:border-gray-700">
+    <h5 class="mb-2 text-2xl font-semibold tracking-tight">Site Information</h5>
+    <table class="w-full text-sm text-left ">
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th>&lt;root&gt;</th>
+        <td>{{ configserver.root }}</td>
+      </tr>
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th>port</th>
+        <td>{{ configserver.port }}</td>
+      </tr>
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th>source post directory</th>
         <td>&lt;root&gt;/{{ config.post_dir }}</td>
       </tr>
-      <tr>
-        <th>port</th>
-        <th></th>
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th>generated post directory</th>
+        <td>&lt;root&gt;/{{ config.source_dir }}/_posts</td>
+      </tr>
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th>public directory</th>
+        <td>&lt;root&gt;/{{ config.public_dir }}</td>
+      </tr>
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <th>source directory</th>
+        <td>&lt;root&gt;/{{ config.source_dir }}</td>
       </tr>
     </table>
   </div>
