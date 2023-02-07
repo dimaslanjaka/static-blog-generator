@@ -1,6 +1,6 @@
 {
   "sbg-server": {
-    "root": "d:/Repositories/static-blog-generator/test",
+    "root": "D:/Repositories/static-blog-generator/test",
     "port": 7000
   }
 }
