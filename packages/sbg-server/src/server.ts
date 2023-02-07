@@ -104,15 +104,6 @@ export class SBGServer {
 
       res.render('index.njk', data);
     });
-    if (isDev) {
-      this.server.get('/test', function (_, res) {
-        const data = {
-          title: 'Test'
-        };
-
-        res.render('test.html', data);
-      });
-    }
     const router = express.Router();
     debug('sbg-server').extend('middleware')('register /post');
     router.use('/post', routePost(this.api));
