@@ -116,22 +116,24 @@ export class SBGServer {
    * @returns express server instance
    */
   get = () => this.server;
+
   /**
    * start server
    */
   start() {
     debug('sbg-server').extend('cwd')(this.config.root);
     debug('sbg-server').extend('port')(this.config.port);
-    const server = http.createServer(this.startExpress());
-    server.listen(this.config.port, function () {
+    this.server = this.startExpress();
+    const httpserver = http.createServer(this.server);
+    httpserver.listen(this.config.port, function () {
       console.log('server running at http://localhost:' + this.config.port);
     });
-    process.on('SIGTERM', () => {
+    /*process.on('SIGTERM', () => {
       debug('sbg-server')('SIGTERM signal received: closing HTTP server');
-      server.close(() => {
+      httpserver.close(() => {
         debug('sbg-server')('HTTP server closed');
       });
-    });
+    });*/
   }
 }
 
