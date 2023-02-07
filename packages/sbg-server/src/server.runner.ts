@@ -9,7 +9,7 @@ import SBGServer from './server';
 // not for compile
 
 const _server = new SBGServer({
-  port: 7000,
+  port: 4000,
   root: path.join(__dirname, '../../../test')
 });
 _server.start2();

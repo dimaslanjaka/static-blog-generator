@@ -36,7 +36,8 @@ export class SBGServer {
     // vars
     const isDev = new Error('').stack?.includes('server.runner');
     debug('sbg-server')('is-dev', isDev);
-    const api = this.api;
+
+    const self = this;
     // init express
     this.server = express();
     debug('sbg-server').extend('views')(path.join(__dirname, 'views'));
@@ -97,18 +98,25 @@ export class SBGServer {
     // register router
     // index page
     this.server.get('/', function (_, res) {
-      const data = {
-        title: 'Static Blog Generator Manager',
-        config: api.config
-      };
-
-      res.render('index.njk', data);
+      res.render(
+        'index.njk',
+        self.renderData({ title: 'Static Blog Generator Manager' })
+      );
     });
     const router = express.Router();
     debug('sbg-server').extend('middleware')('register /post');
-    router.use('/post', routePost(this.api));
+    router.use('/post', routePost.bind(this)(this.api));
     this.server.use(router);
     return this.server;
+  }
+
+  renderData(assign: Record<string, any>) {
+    const api = this.api;
+    const self = this;
+    return Object.assign(assign, {
+      config: api.config,
+      configserver: self.config
+    });
   }
 
   /**
@@ -139,11 +147,11 @@ export class SBGServer {
   }
 
   start2() {
-    return http
+    const httpserver = http
       .createServer(this.startExpress())
-      .listen(this.config.port, function () {
-        console.log('server running at http://localhost:' + this.config.port);
-      });
+      .listen(this.config.port);
+    console.log('server listening at http://localhost:' + this.config.port);
+    return httpserver;
   }
 }
 
