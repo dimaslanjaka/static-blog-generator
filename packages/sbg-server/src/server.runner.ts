@@ -1,4 +1,4 @@
-process.env.DEBUG = 'sbg-server:*';
+process.env.DEBUG = 'sbg-server,sbg-server:*';
 
 ///
 import path from 'upath';
