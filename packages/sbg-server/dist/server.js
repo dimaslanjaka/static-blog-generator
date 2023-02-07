@@ -128,13 +128,16 @@ var SBGServer = /** @class */ (function () {
             };
             res.render('index.njk', data);
         });
-        this.server.get('/test', function (_, res) {
-            var data = {
-                title: 'Test'
-            };
-            res.render('test.html', data);
-        });
+        if (isDev) {
+            this.server.get('/test', function (_, res) {
+                var data = {
+                    title: 'Test'
+                };
+                res.render('test.html', data);
+            });
+        }
         var router = express_1.default.Router();
+        (0, sbg_utility_1.debug)('sbg-server').extend('middleware')('register /post');
         router.use('/post', (0, post_1.default)(this.api));
         this.server.use(router);
         return this.server;
@@ -143,21 +146,27 @@ var SBGServer = /** @class */ (function () {
      * start server
      */
     SBGServer.prototype.start = function () {
-        var _this = this;
-        (0, sbg_utility_1.debug)('sbg-server')('cwd', this.config.root);
-        (0, sbg_utility_1.debug)('sbg-server')('port', this.config.port);
-        /*this.server.listen(this.config.port, () => {
-          console.log('Listening on http://localhost:' + this.config.port);
-        });*/
+        (0, sbg_utility_1.debug)('sbg-server').extend('cwd')(this.config.root);
+        (0, sbg_utility_1.debug)('sbg-server').extend('port')(this.config.port);
         var server = http_1.default.createServer(this.server);
         server.listen(this.config.port, function () {
-            console.log('Listening on http://localhost:' + _this.config.port);
+            console.log('server running at http://localhost:' + this.config.port);
         });
         process.on('SIGTERM', function () {
             (0, sbg_utility_1.debug)('sbg-server')('SIGTERM signal received: closing HTTP server');
             server.close(function () {
                 (0, sbg_utility_1.debug)('sbg-server')('HTTP server closed');
             });
+        });
+    };
+    SBGServer.prototype.start2 = function () {
+        this.server.listen(this.config.port, function () {
+            console.log('server running at http://localhost:' + this.config.port);
+        });
+    };
+    SBGServer.prototype.test = function () {
+        http_1.default.createServer(this.startExpress()).listen(1337, function () {
+            console.log('Server ready');
         });
     };
     return SBGServer;
