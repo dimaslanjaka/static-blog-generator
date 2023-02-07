@@ -137,6 +137,14 @@ export class SBGServer {
     });
     return httpserver;
   }
+
+  start2() {
+    return http
+      .createServer(this.startExpress())
+      .listen(this.config.port, function () {
+        console.log('server running at http://localhost:' + this.config.port);
+      });
+  }
 }
 
 export default SBGServer;
