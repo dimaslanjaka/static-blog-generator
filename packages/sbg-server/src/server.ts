@@ -131,10 +131,9 @@ export class SBGServer {
   start() {
     debug('sbg-server').extend('cwd')(this.config.root);
     debug('sbg-server').extend('port')(this.config.port);
-    const httpserver = http.createServer(this.startExpress());
-    httpserver.listen(this.config.port, function () {
-      console.log('server running at http://localhost:' + this.config.port);
-    });
+    const httpserver = http
+      .createServer(this.startExpress())
+      .listen(this.config.port);
     process.on('SIGTERM', () => {
       debug('sbg-server').extend('exit')(
         'SIGTERM signal received: closing HTTP server'
@@ -143,6 +142,7 @@ export class SBGServer {
         debug('sbg-server').extend('exit')('HTTP server closed');
       });
     });
+    console.log('server listening at http://localhost:' + this.config.port);
     return httpserver;
   }
 
