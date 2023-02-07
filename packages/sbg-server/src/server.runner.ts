@@ -1,11 +1,15 @@
 process.env.DEBUG = 'sbg-server:*';
 
 ///
+import path from 'upath';
 import SBGServer from './server';
 ///
 
 // just test unit
 // not for compile
 
-const _server = new SBGServer();
+const _server = new SBGServer({
+  port: 7000,
+  root: path.join(__dirname, '../../../test')
+});
 _server.start();
