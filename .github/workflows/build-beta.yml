@@ -132,3 +132,15 @@ jobs:
         name: push root project
         continue-on-error: true
         shell: bash
+      - run: sbg post standalone
+        working-directory: test
+        name: test post standalone
+      - run: sbg post copy
+        working-directory: test
+        name: test post copy
+      - run: npx hexo generate
+        working-directory: test
+        name: test generate site with hexo
+      - run: npx sbg deploy copy
+        working-directory: test
+        name: test copy generated site to deployment directory

@@ -25,7 +25,7 @@
     "username": "",
     "email": "",
     "message": "{{ now('YYYY-MM-DD HH:mm:ss') }}",
-    "deployDir": "D:/Repositories/static-blog-generator/packages/sbg-server/.deploy_git",
+    "deployDir": "D:/Repositories/static-blog-generator/test/.deploy_git",
     "github": {
       "submodule": []
     }
