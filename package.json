@@ -18,17 +18,17 @@
     "!**/src/**"
   ],
   "scripts": {
-    "update:submodules": "npx lerna exec \"npx npm-check-updates -u -x chalk,codemirror,highlight.js,hexo\" --concurrency=1",
-    "update:ncu": "npx npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
+    "update:submodules": "lerna exec \"npm-check-updates -u -x chalk,codemirror,highlight.js,hexo\" --concurrency=1",
+    "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
     "update": "run-s update:**",
-    "build": "npx lerna run build --concurrency=1",
+    "build": "lerna run build --concurrency=1",
     "docs": "node docs.js",
-    "lint": "npx lerna run lint --concurrency=1",
-    "test": "npx jest --coverage --runInBand --detectOpenHandles",
+    "lint": "lerna run lint --concurrency=1",
+    "test": "jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
-    "prepare": "npx husky install",
-    "clean": "npx lerna run clean --concurrency=1",
-    "pack": "npx lerna run pack --concurrency=1"
+    "prepare": "husky install",
+    "clean": "lerna clean",
+    "pack": "lerna exec \"npm run pack --if-present\""
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
