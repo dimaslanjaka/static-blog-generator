@@ -109,7 +109,7 @@ jobs:
 
       - run: yarn install
       - run: lerna run build
-      - run: lerna exec npm run pack
+      - run: lerna exec "npm run pack --if-present"
       - run: sbg post standalone
         working-directory: test
         name: test post standalone
