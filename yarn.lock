@@ -8627,13 +8627,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge-ts@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "deepmerge-ts@npm:4.2.2"
-  checksum: 137c3650519d9b1a220db7e23a3f56304cd02e7f97b2b8392e2767251055a29318425bacdb2ab2ff175a4645f7179643acf0e038d5dafbfdbc11bdf322f79697
-  languageName: node
-  linkType: hard
-
 "deepmerge-ts@npm:^4.3.0":
   version: 4.3.0
   resolution: "deepmerge-ts@npm:4.3.0"
@@ -11149,7 +11142,6 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     fs-extra: ^11.1.0
-    git-command-helper: latest
     gulp: ^4.0.2
     hexo-util: ^3.0.1
     hpagent: ^1.2.0
@@ -11169,47 +11161,8 @@ __metadata:
     typedoc-plugin-missing-exports: ^1.0.0
     typescript: ^4.9.5
     upath: ^2.0.1
-  dependenciesMeta:
-    cross-spawn:
-      optional: true
-    git-command-helper:
-      optional: true
-    nodejs-package-types:
-      optional: true
-    persistent-cache:
-      optional: true
   languageName: unknown
   linkType: soft
-
-"git-command-helper@npm:latest":
-  version: 1.1.7
-  resolution: "git-command-helper@npm:1.1.7"
-  dependencies:
-    "@expo/spawn-async": ^1.7.0
-    bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
-    deepmerge-ts: ^4.2.2
-    fs-extra: ^11.1.0
-    git-command-helper: latest
-    hexo-util: ^3.0.1
-    ini: ^3.0.1
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    true-case-path: ^2.2.1
-    tslib: ^2.5.0
-    upath: ^2.0.1
-  dependenciesMeta:
-    cross-spawn:
-      optional: true
-    git-command-helper:
-      optional: true
-    nodejs-package-types:
-      optional: true
-    persistent-cache:
-      optional: true
-  checksum: 870403b7610798ff939aa53b7ab61107138aab888091563b81925b73a38e903fc0d88a8f0a6d0ec22a12b633a7785d39b35ba5887a2f55f8dcabcf11f9252e51
-  languageName: node
-  linkType: hard
 
 "git-raw-commits@npm:^2.0.0, git-raw-commits@npm:^2.0.8":
   version: 2.0.11
