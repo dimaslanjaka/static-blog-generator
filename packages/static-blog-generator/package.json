@@ -2,13 +2,13 @@
   "name": "static-blog-generator",
   "description": "Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.",
   "dependencies": {
-    "sbg-api": "workspace:^",
-    "sbg-cli": "workspace:^",
-    "sbg-server": "workspace:^",
-    "sbg-utility": "workspace:^"
+    "sbg-api": "*",
+    "sbg-cli": "*",
+    "sbg-server": "*",
+    "sbg-utility": "*"
   },
   "version": "3.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
