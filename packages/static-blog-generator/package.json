@@ -9,6 +9,10 @@
   },
   "version": "3.0.0",
   "main": "index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest --runInBand",
     "build": "tsc -p tsconfig.build.json",
