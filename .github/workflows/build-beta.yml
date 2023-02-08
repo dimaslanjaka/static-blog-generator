@@ -110,10 +110,10 @@ jobs:
       - run: yarn install
       - run: lerna run build
       - run: lerna exec "npm run pack --if-present"
-      - run: sbg post standalone
+      - run: npx sbg post standalone
         working-directory: test
         name: test post standalone
-      - run: sbg post copy
+      - run: npx sbg post copy
         working-directory: test
         name: test post copy
       - run: npx hexo generate
