@@ -11777,7 +11777,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-blogger-xml@workspace:^, hexo-blogger-xml@workspace:packages/hexo-blogger-xml":
+"hexo-blogger-xml@*, hexo-blogger-xml@workspace:packages/hexo-blogger-xml":
   version: 0.0.0-use.local
   resolution: "hexo-blogger-xml@workspace:packages/hexo-blogger-xml"
   dependencies:
@@ -12037,7 +12037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@^1.2.5, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/hexo-post-parser":
+"hexo-post-parser@*, hexo-post-parser@^1.2.5, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/hexo-post-parser":
   version: 0.0.0-use.local
   resolution: "hexo-post-parser@workspace:packages/hexo-post-parser"
   dependencies:
@@ -20246,7 +20246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
+"safelinkify@*, safelinkify@^1.1.12, safelinkify@workspace:packages/safelinkify":
   version: 0.0.0-use.local
   resolution: "safelinkify@workspace:packages/safelinkify"
   dependencies:
@@ -20389,7 +20389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
+"sbg-api@*, sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
   version: 0.0.0-use.local
   resolution: "sbg-api@workspace:packages/sbg-api"
   dependencies:
@@ -20401,13 +20401,13 @@ __metadata:
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     fs-extra: ^11.1.0
-    git-command-helper: "workspace:^"
+    git-command-helper: "*"
     glob: ^8.1.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^6.3.0
     hexo-is: ^1.0.5
-    hexo-post-parser: "workspace:^"
+    hexo-post-parser: "*"
     hexo-util: ^3.0.1
     jest: ^29.4.1
     micromatch: ^4.0.5
@@ -20416,8 +20416,8 @@ __metadata:
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    safelinkify: "workspace:^"
-    sbg-utility: "workspace:^"
+    safelinkify: "*"
+    sbg-utility: "*"
     sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
     true-case-path: ^2.2.1
     ts-jest: ^29.0.5
@@ -20428,7 +20428,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
+"sbg-cli@*, sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
   version: 0.0.0-use.local
   resolution: "sbg-cli@workspace:packages/sbg-cli"
   dependencies:
@@ -20441,16 +20441,16 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     deepmerge-ts: ^4.3.0
     eslint: ^8.33.0
-    git-command-helper: "workspace:^"
+    git-command-helper: "*"
     he: ^1.2.0
-    hexo-blogger-xml: "workspace:^"
+    hexo-blogger-xml: "*"
     jest: ^29.4.2
     jsdom: ^21.1.0
     npm-run-all: ^4.1.5
-    safelinkify: "workspace:^"
-    sbg-api: "workspace:^"
-    sbg-server: "workspace:^"
-    sbg-utility: "workspace:^"
+    safelinkify: "*"
+    sbg-api: "*"
+    sbg-server: "*"
+    sbg-utility: "*"
     ts-jest: ^29.0.5
     ts-node: ^10.9.1
     typescript: ^4.9.5
@@ -20461,7 +20461,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
+"sbg-server@*, sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
   version: 0.0.0-use.local
   resolution: "sbg-server@workspace:packages/sbg-server"
   dependencies:
@@ -20516,8 +20516,8 @@ __metadata:
     purgecss: ^5.0.0
     rollup: ^3.14.0
     safelinkify: ^1.1.12
-    sbg-api: "workspace:^"
-    sbg-utility: "workspace:^"
+    sbg-api: "*"
+    sbg-utility: "*"
     serve-index: ^1.9.1
     sharp: ^0.31.3
     tailwindcss: ^3.2.4
@@ -20531,7 +20531,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@^1.0.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@*, sbg-utility@^1.0.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -21416,10 +21416,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
-    sbg-api: "workspace:^"
-    sbg-cli: "workspace:^"
-    sbg-server: "workspace:^"
-    sbg-utility: "workspace:^"
+    sbg-api: "*"
+    sbg-cli: "*"
+    sbg-server: "*"
+    sbg-utility: "*"
   languageName: unknown
   linkType: soft
 
