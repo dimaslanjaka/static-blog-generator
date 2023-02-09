@@ -37,6 +37,12 @@ const colors = require('ansi-colors');
 // const persistentCache = require('persistent-cache');
 // imports ends
 
+let isYarn = fs.existsSync(path.join(__dirname, 'yarn.lock'));
+const argv = process.argv.slice('2');
+if (argv.includes('--yarn') || argv.includes('-yarn')) {
+  isYarn = true;
+}
+
 // cache file
 const cacheJSON = path.join(__dirname, 'node_modules/.cache/npm-install.json');
 console.log('cache json', cacheJSON);
@@ -220,8 +226,6 @@ const coloredScriptName = colors.grey(scriptname);
     }
 
     // do update
-
-    const isYarn = fs.existsSync(path.join(__dirname, 'yarn.lock'));
 
     /**
      * Internal update cache

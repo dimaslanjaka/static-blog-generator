@@ -10,13 +10,12 @@
   "compilerOptions": {
     "outDir": "./tmp/dist",
     "types": ["nodejs-package-types"],
-    "rootDirs": ["src", "packages"],
     "allowJs": true,
     "checkJs": false
   },
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["./packages/**/*", "./packages/sbg-*/*.json", "*.js", "*.ts", "scripts/docs.js"],
+  "include": ["./packages/**/*", "./packages/sbg-*/*.json", "*.js", "*.ts", "scripts/docs.js", "./package.json"],
   "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**"]
 }
