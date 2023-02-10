@@ -84,6 +84,10 @@ const coloredScriptName = colors.grey(scriptname);
 (async () => {
   try {
     const node_modules_dir = path.join(__dirname, 'node_modules');
+    const yarnVersion = (await summon('yarn', ['--version'])).stdout.trim();
+    if (isYarn) {
+      console.log('yarn version', yarnVersion);
+    }
 
     // skip if project not yet installed
     if (!fs.existsSync(node_modules_dir)) {
@@ -219,7 +223,7 @@ const coloredScriptName = colors.grey(scriptname);
               console.log(coloredScriptName, 'no changes found', coloredPkgname);
             }
           } else {
-            toUpdate.add(pkgname);
+            toUpdate.add(`${pkgname}@${version}`);
           }
         }
       }
@@ -255,11 +259,8 @@ const coloredScriptName = colors.grey(scriptname);
         // do update
         try {
           if (isYarn) {
-            const version = await summon('yarn', ['--version']);
-            console.log('yarn version', version);
-
-            if (typeof version.stdout === 'string') {
-              if (version.stdout.includes('3.2.4')) {
+            if (typeof yarnVersion === 'string') {
+              if (yarnVersion.includes('3.2.4')) {
                 filterUpdates.push('--check-cache');
               }
             }
@@ -271,7 +272,9 @@ const coloredScriptName = colors.grey(scriptname);
               });
             }
             // yarn upgrade package
-            await summon('yarn', ['upgrade'].concat(...filterUpdates), {
+            const yarnArgs = [yarnVersion.startsWith('3') ? 'up' : 'upgrade'].concat(...filterUpdates);
+            console.log(yarnArgs);
+            await summon('yarn', yarnArgs, {
               cwd: __dirname,
               stdio: 'inherit'
             });
