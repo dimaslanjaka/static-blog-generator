@@ -1,0 +1,12 @@
+undecided:
+  - static-blog-generator-root
+  - git-command-helper
+  - google-news-sitemap
+  - hexo-blogger-xml
+  - hexo-post-parser
+  - safelinkify
+  - sbg-api
+  - sbg-cli
+  - sbg-utility
+  - static-blog-generator
+  - hexo-site

@@ -26,6 +26,10 @@ async function main(cwd) {
   }
 }
 
+/**
+ * get and parse package.json from folder
+ * @param {string} cwd
+ */
 function parsePkgJson(cwd) {
   return JSON.parse(fs.readFileSync(path.join(cwd, 'package.json')).toString());
 }
