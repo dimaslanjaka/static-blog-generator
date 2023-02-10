@@ -12351,7 +12351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0, highlight.js@npm:^11.7.0":
+"highlight.js@npm:^11.0.1, highlight.js@npm:^11.6.0":
   version: 11.7.0
   resolution: "highlight.js@npm:11.7.0"
   checksum: 19e3fb8b56f4b361b057a8523b989dfeb6479bbd1e29cec3fac6fa5c78d09927d5fa61b7dba6631fdb57cfdca9b3084aa4da49405ceaf4a67f67beae2ed5b77d
@@ -20506,7 +20506,7 @@ __metadata:
     git-command-helper: ^1.1.7
     glob: ^8.1.0
     gulp: ^4.0.2
-    highlight.js: ^11.7.0
+    highlight.js: "https://github.com/highlightjs/highlight.js/tarball/11-stable"
     jest: ^29.4.1
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40

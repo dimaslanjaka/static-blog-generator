@@ -51,7 +51,7 @@
     "flowbite": "^1.6.3",
     "fs-extra": "^11.1.0",
     "glob": "^8.1.0",
-    "highlight.js": "^11.7.0",
+    "highlight.js": "https://github.com/highlightjs/highlight.js/tarball/11-stable",
     "markdown-it": "^13.0.1",
     "moment-timezone": "^0.5.40",
     "nunjucks": "^3.2.3",
