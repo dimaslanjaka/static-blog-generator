@@ -9,15 +9,29 @@ if (argv.includes('--yarn') || argv.includes('-yarn')) {
   usingYarn = true;
 }
 
-doUpdate(pjson.dependencies, 'production');
-doUpdate(pjson.devDependencies, 'development');
+main();
+
+async function main() {
+  await updatePkgJSON(pjson, __dirname);
+}
+
+/**
+ * update package.json
+ * @param {{ dependencies?: Record<string, string>, devDependencies?: Record<string, string>, peerDependencies?: Record<string, string>, optionalDependencies?: Record<string, string> }} pkgJSON
+ */
+async function updatePkgJSON(pkgJSON, cwd = null) {
+  if (!cwd) cwd = __dirname;
+  if (Array.isArray(pkgJSON.dependencies)) await doUpdate(pkgJSON.dependencies, 'production');
+  if (Array.isArray(pkgJSON.devDependencies)) await doUpdate(pkgJSON.devDependencies, 'development');
+}
 
 /**
  *
  * @param {Record<string,string>} packages
  * @param {'production'|'development'|'optional'|'peer'} mode
  */
-async function doUpdate(packages, mode) {
+async function doUpdate(packages, mode, cwd = null) {
+  if (!cwd) cwd = __dirname;
   if (!packages) packages = {};
   const pkgnames = Object.keys(packages);
   if (pkgnames.length === 0) {
@@ -62,7 +76,7 @@ async function doUpdate(packages, mode) {
   const installArg = usingYarn ? 'add' : 'i';
   let updateArg = 'update';
   if (usingYarn) {
-    const yarnVersion = await summon('yarn', ['-v'], { cwd: __dirname, shell: true });
+    const yarnVersion = await summon('yarn', ['-v'], { cwd, shell: true });
     if (yarnVersion instanceof Error === false) {
       console.log(yarnVersion.output.trim());
       updateArg = 'up';
@@ -103,14 +117,14 @@ async function doUpdate(packages, mode) {
   const method = 'update';
   // install method
   await new Promise((resolve) => {
-    spawn(pkgm, argsInstall, { cwd: __dirname, stdio: 'inherit', shell: true }).once('exit', function () {
+    spawn(pkgm, argsInstall, { cwd, stdio: 'inherit', shell: true }).once('exit', function () {
       resolve(null);
     });
   });
   if (method === 'update') {
     // update method
     await new Promise((resolve) => {
-      spawn(pkgm, argsUpdate, { cwd: __dirname, stdio: 'inherit', shell: true }).once('exit', function () {
+      spawn(pkgm, argsUpdate, { cwd, stdio: 'inherit', shell: true }).once('exit', function () {
         resolve(null);
       });
     });
@@ -125,7 +139,9 @@ async function doUpdate(packages, mode) {
  * @returns {Promise<Error|{ stdout:string, stderr:string, output:string }>}
  */
 function summon(cmd, args = [], opt = {}) {
-  const spawnopt = Object.assign({ cwd: __dirname }, opt || {});
+  if (!opt) opt = {};
+  if (!opt.cwd) opt.cwd = __dirname;
+  const spawnopt = Object.assign(opt);
   // *** Return the promise
   return new Promise(function (resolve) {
     if (typeof cmd !== 'string' || cmd.trim().length === 0) return resolve(new Error('cmd empty'));
