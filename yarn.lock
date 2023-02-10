@@ -12042,7 +12042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@*, hexo-post-parser@^1.2.5, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/hexo-post-parser":
+"hexo-post-parser@^1.2.5, hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/hexo-post-parser":
   version: 0.0.0-use.local
   resolution: "hexo-post-parser@workspace:packages/hexo-post-parser"
   dependencies:
@@ -20244,7 +20244,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@*, safelinkify@^1.1.12, safelinkify@workspace:packages/safelinkify":
+"safelinkify@*, safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
   version: 0.0.0-use.local
   resolution: "safelinkify@workspace:packages/safelinkify"
   dependencies:
@@ -20399,13 +20399,13 @@ __metadata:
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     fs-extra: ^11.1.0
-    git-command-helper: "*"
+    git-command-helper: "workspace:^"
     glob: ^8.1.0
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^6.3.0
     hexo-is: ^1.0.5
-    hexo-post-parser: "*"
+    hexo-post-parser: "workspace:^"
     hexo-util: ^3.0.1
     jest: ^29.4.1
     micromatch: ^4.0.5
@@ -20414,8 +20414,8 @@ __metadata:
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    safelinkify: "*"
-    sbg-utility: "*"
+    safelinkify: "workspace:^"
+    sbg-utility: "workspace:^"
     sitemap-crawler: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/sitemap-crawler/release/sitemap-crawler.tgz"
     true-case-path: ^2.2.1
     ts-jest: ^29.0.5
@@ -20446,9 +20446,9 @@ __metadata:
     jsdom: ^21.1.0
     npm-run-all: ^4.1.5
     safelinkify: "*"
-    sbg-api: "*"
-    sbg-server: "*"
-    sbg-utility: "*"
+    sbg-api: "workspace:^"
+    sbg-server: "workspace:^"
+    sbg-utility: "workspace:^"
     ts-jest: ^29.0.5
     ts-node: ^10.9.1
     typescript: ^4.9.5
@@ -20496,7 +20496,7 @@ __metadata:
     express: ^4.18.2
     flowbite: ^1.6.3
     fs-extra: ^11.1.0
-    git-command-helper: ^1.1.7
+    git-command-helper: "workspace:^"
     glob: ^8.1.0
     gulp: ^4.0.2
     highlight.js: 11.7.0
@@ -20514,8 +20514,8 @@ __metadata:
     purgecss: ^5.0.0
     rollup: ^3.14.0
     safelinkify: ^1.1.12
-    sbg-api: "*"
-    sbg-utility: "*"
+    sbg-api: "workspace:^"
+    sbg-utility: "workspace:^"
     serve-index: ^1.9.1
     sharp: ^0.31.3
     tailwindcss: ^3.2.4

@@ -51,9 +51,9 @@
     "hexo-blogger-xml": "*",
     "jsdom": "^21.1.0",
     "safelinkify": "*",
-    "sbg-api": "*",
-    "sbg-server": "*",
-    "sbg-utility": "*",
+    "sbg-api": "workspace:^",
+    "sbg-server": "workspace:^",
+    "sbg-utility": "workspace:^",
     "xml2js": "^0.4.23",
     "yargs": "^17.6.2"
   },
