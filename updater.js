@@ -1,4 +1,3 @@
-const pjson = require('./package.json');
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -9,11 +8,29 @@ if (argv.includes('--yarn') || argv.includes('-yarn')) {
   usingYarn = true;
 }
 
-main();
+async function main(cwd) {
+  if (!cwd) cwd = __dirname;
+  const pjson = parsePkgJson(cwd);
 
-async function main() {
-  await updatePkgJSON(pjson, __dirname);
+  await updatePkgJSON(pjson, cwd);
+  if (pjson['workspaces']) {
+    let workspaces = Array.isArray(pjson['workspaces']) ? pjson['workspaces'] : null;
+    if (!workspaces && Array.isArray(pjson['workspaces']['packages'])) {
+      workspaces = pjson['workspaces']['packages'];
+    }
+    workspaces = [...new Set(workspaces)];
+    for (let i = 0; i < workspaces.length; i++) {
+      const workspace = path.join(cwd, workspaces[i]);
+      await main(workspace);
+    }
+  }
 }
+
+function parsePkgJson(cwd) {
+  return JSON.parse(fs.readFileSync(path.join(cwd, 'package.json')).toString());
+}
+
+main();
 
 /**
  * update package.json
@@ -21,8 +38,8 @@ async function main() {
  */
 async function updatePkgJSON(pkgJSON, cwd = null) {
   if (!cwd) cwd = __dirname;
-  if (Array.isArray(pkgJSON.dependencies)) await doUpdate(pkgJSON.dependencies, 'production');
-  if (Array.isArray(pkgJSON.devDependencies)) await doUpdate(pkgJSON.devDependencies, 'development');
+  if (pkgJSON.dependencies) await doUpdate(pkgJSON.dependencies, 'production', cwd);
+  if (pkgJSON.devDependencies) await doUpdate(pkgJSON.devDependencies, 'development', cwd);
 }
 
 /**
@@ -33,10 +50,14 @@ async function updatePkgJSON(pkgJSON, cwd = null) {
 async function doUpdate(packages, mode, cwd = null) {
   if (!cwd) cwd = __dirname;
   if (!packages) packages = {};
+
   const pkgnames = Object.keys(packages);
   if (pkgnames.length === 0) {
     return;
   }
+
+  console.log('cwd', cwd);
+
   const pkg2update = [];
   for (let i = 0; i < pkgnames.length; i++) {
     const pkgname = pkgnames[i];
@@ -60,8 +81,8 @@ async function doUpdate(packages, mode, cwd = null) {
      */
     const isLocalTarballpkg = isLocalPkg && /.(tgz|zip|tar|tar.gz)$/i.test(version);
 
-    if (isLocalPkg && fs.existsSync(path.join(__dirname, 'node_modules', pkgname))) {
-      fs.rmSync(path.join(__dirname, 'node_modules', pkgname), { recursive: true, force: true });
+    if (isLocalPkg && fs.existsSync(path.join(cwd, 'node_modules', pkgname))) {
+      fs.rmSync(path.join(cwd, 'node_modules', pkgname), { recursive: true, force: true });
     }
     if (isLocalTarballpkg || isGitPkg || isTarballPkg || isLocalPkg) {
       /*if (!usingYarn) {
@@ -78,8 +99,11 @@ async function doUpdate(packages, mode, cwd = null) {
   if (usingYarn) {
     const yarnVersion = await summon('yarn', ['-v'], { cwd, shell: true });
     if (yarnVersion instanceof Error === false) {
-      console.log(yarnVersion.output.trim());
-      updateArg = 'up';
+      if (yarnVersion.output.startsWith('3')) {
+        updateArg = 'up';
+      } else {
+        updateArg = 'upgrade';
+      }
     }
   }
   // const updateArg = usingYarn ? 'up' : 'update';
@@ -111,20 +135,23 @@ async function doUpdate(packages, mode, cwd = null) {
   const argsUpdate = [updateArg, ...pkg2update];
   // do update
   pkg2update.forEach((pkg) => {
-    console.log(pkgm, 'updating', saveAs, pkg);
+    // console.log(pkgm, 'updating', saveAs, pkg);
+    if (pkg.includes('highli')) console.log(pkgm, 'updating', saveAs, pkg, cwd);
   });
 
   const method = 'update';
-  // install method
-  await new Promise((resolve) => {
-    spawn(pkgm, argsInstall, { cwd, stdio: 'inherit', shell: true }).once('exit', function () {
-      resolve(null);
-    });
-  });
+
   if (method === 'update') {
     // update method
     await new Promise((resolve) => {
-      spawn(pkgm, argsUpdate, { cwd, stdio: 'inherit', shell: true }).once('exit', function () {
+      spawn(pkgm, argsUpdate, { cwd, stdio: 'ignore', shell: true }).once('exit', function () {
+        resolve(null);
+      });
+    });
+  } else {
+    // install method
+    await new Promise((resolve) => {
+      spawn(pkgm, argsInstall, { cwd, stdio: 'ignore', shell: true }).once('exit', function () {
         resolve(null);
       });
     });
@@ -136,7 +163,7 @@ async function doUpdate(packages, mode, cwd = null) {
  * @param {string} cmd
  * @param {string[]} args
  * @param {Parameters<typeof spawn>[2]} opt
- * @returns {Promise<Error|{ stdout:string, stderr:string, output:string }>}
+ * @returns {Promise<{ stdout:string, stderr:string, output:string, error?: Error }>}
  */
 function summon(cmd, args = [], opt = {}) {
   if (!opt) opt = {};
@@ -173,10 +200,10 @@ function summon(cmd, args = [], opt = {}) {
       // *** Process completed
       resolve({ stdout, stderr, output });
     });
-    child.on('error', function (err) {
+    child.on('error', function (error) {
       // *** Process creation failed
-      console.log('got error', err);
-      resolve(err);
+      console.log('got error', error);
+      resolve({ stdout, stderr, output, error });
     });
   });
 }
