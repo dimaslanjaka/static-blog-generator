@@ -95,6 +95,11 @@ const config: import('jest').Config = {
       displayName: 'UTILS',
       testMatch: ['<rootDir>/packages/sbg-utility/test/**/*.{test,spec}.{ts,js}'],
       ...sbgUtilityConfig
+    },
+    {
+      displayName: 'HPP',
+      testMatch: ['<rootDir>/packages/hexo-post-parser/test/**/*.{test,spec}.{ts,js}'],
+      ...sbgUtilityConfig
     }
   ]
 };
