@@ -11123,7 +11123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@*, git-command-helper@^1.1.7, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
+"git-command-helper@^1.1.7, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
   version: 0.0.0-use.local
   resolution: "git-command-helper@workspace:packages/git-command-helper"
   dependencies:
@@ -11782,7 +11782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-blogger-xml@*, hexo-blogger-xml@workspace:packages/hexo-blogger-xml":
+"hexo-blogger-xml@workspace:^, hexo-blogger-xml@workspace:packages/hexo-blogger-xml":
   version: 0.0.0-use.local
   resolution: "hexo-blogger-xml@workspace:packages/hexo-blogger-xml"
   dependencies:
@@ -20246,7 +20246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@*, safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
+"safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
   version: 0.0.0-use.local
   resolution: "safelinkify@workspace:packages/safelinkify"
   dependencies:
@@ -20281,7 +20281,7 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     fs-extra: ^11.1.0
-    git-command-helper: "*"
+    git-command-helper: "workspace:^"
     glob: ^8.1.0
     gulp: ^4.0.2
     highlight.js: 11.7.0
@@ -20318,15 +20318,6 @@ __metadata:
     upath: ^2.0.1
     webpack: ^5.75.0
     webpack-cli: ^5.0.1
-  dependenciesMeta:
-    cross-spawn:
-      optional: true
-    git-command-helper:
-      optional: true
-    nodejs-package-types:
-      optional: true
-    persistent-cache:
-      optional: true
   languageName: unknown
   linkType: soft
 
@@ -20389,7 +20380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@*, sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
+"sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
   version: 0.0.0-use.local
   resolution: "sbg-api@workspace:packages/sbg-api"
   dependencies:
@@ -20428,7 +20419,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-cli@*, sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
+"sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
   version: 0.0.0-use.local
   resolution: "sbg-cli@workspace:packages/sbg-cli"
   dependencies:
@@ -20441,13 +20432,13 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     deepmerge-ts: ^4.3.0
     eslint: ^8.33.0
-    git-command-helper: "*"
+    git-command-helper: "workspace:^"
     he: ^1.2.0
-    hexo-blogger-xml: "*"
+    hexo-blogger-xml: "workspace:^"
     jest: ^29.4.2
     jsdom: ^21.1.0
     npm-run-all: ^4.1.5
-    safelinkify: "*"
+    safelinkify: "workspace:^"
     sbg-api: "workspace:^"
     sbg-server: "workspace:^"
     sbg-utility: "workspace:^"
@@ -20461,7 +20452,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-server@*, sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
+"sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
   version: 0.0.0-use.local
   resolution: "sbg-server@workspace:packages/sbg-server"
   dependencies:
@@ -20531,7 +20522,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@*, sbg-utility@^1.0.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@^1.0.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -21416,10 +21407,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
-    sbg-api: "*"
-    sbg-cli: "*"
-    sbg-server: "*"
-    sbg-utility: "*"
+    sbg-api: "workspace:^"
+    sbg-cli: "workspace:^"
+    sbg-server: "workspace:^"
+    sbg-utility: "workspace:^"
   languageName: unknown
   linkType: soft
 
