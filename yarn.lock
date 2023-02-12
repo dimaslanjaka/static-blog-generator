@@ -11819,7 +11819,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"hexo-browsersync@git+https://github.com/hexojs/hexo-browsersync":
+"hexo-browsersync@https://github.com/hexojs/hexo-browsersync/tarball/master":
   version: 2.0.0
   resolution: "hexo-browsersync@https://github.com/hexojs/hexo-browsersync.git#commit=3991feb273cf24fc297846df2d287b2ef9afce84"
   dependencies:
@@ -12071,7 +12071,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     front-matter: ^4.0.2
     fs-extra: ^11.1.0
-    git-command-helper: "*"
+    git-command-helper: "workspace:^"
     gulp: ^4.0.2
     jest: ^29.4.2
     jsdom: ^21.1.0
@@ -12193,7 +12193,7 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     git-command-helper: "workspace:^"
     hexo: ^6.3.0
-    hexo-browsersync: "git+https://github.com/hexojs/hexo-browsersync"
+    hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
     hexo-generator-archive: "git+https://github.com/hexojs/hexo-generator-archive"
     hexo-generator-category: "git+https://github.com/hexojs/hexo-generator-category"
     hexo-generator-index: "git+https://github.com/hexojs/hexo-generator-index"
