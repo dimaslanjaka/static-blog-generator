@@ -1,0 +1,8 @@
+undecided:
+  - static-blog-generator-root
+  - hexo-post-parser
+  - safelinkify
+  - sbg-api
+  - sbg-server
+  - sbg-utility
+  - hexo-site
