@@ -11453,7 +11453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-news-sitemap@workspace:packages/google-news-sitemap":
+"google-news-sitemap@workspace:^, google-news-sitemap@workspace:packages/google-news-sitemap":
   version: 0.0.0-use.local
   resolution: "google-news-sitemap@workspace:packages/google-news-sitemap"
   dependencies:
@@ -20380,7 +20380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@*, sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
+"sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
   version: 0.0.0-use.local
   resolution: "sbg-api@workspace:packages/sbg-api"
   dependencies:
@@ -20419,7 +20419,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-cli@*, sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
+"sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
   version: 0.0.0-use.local
   resolution: "sbg-cli@workspace:packages/sbg-cli"
   dependencies:
@@ -20452,7 +20452,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-server@*, sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
+"sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
   version: 0.0.0-use.local
   resolution: "sbg-server@workspace:packages/sbg-server"
   dependencies:
@@ -20522,7 +20522,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@*, sbg-utility@^1.0.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@^1.0.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -21407,10 +21407,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
-    sbg-api: "*"
-    sbg-cli: "*"
-    sbg-server: "*"
-    sbg-utility: "*"
+    git-command-helper: "workspace:^"
+    google-news-sitemap: "workspace:^"
+    hexo-blogger-xml: "workspace:^"
+    hexo-post-parser: "workspace:^"
+    safelinkify: "workspace:^"
+    sbg-api: "workspace:^"
+    sbg-cli: "workspace:^"
+    sbg-server: "workspace:^"
+    sbg-utility: "workspace:^"
   languageName: unknown
   linkType: soft
 
