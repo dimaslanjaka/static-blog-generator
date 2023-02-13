@@ -11123,7 +11123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@*, git-command-helper@^1.1.7, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
+"git-command-helper@^1.1.7, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
   version: 0.0.0-use.local
   resolution: "git-command-helper@workspace:packages/git-command-helper"
   dependencies:
@@ -11782,7 +11782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-blogger-xml@*, hexo-blogger-xml@workspace:packages/hexo-blogger-xml":
+"hexo-blogger-xml@workspace:^, hexo-blogger-xml@workspace:packages/hexo-blogger-xml":
   version: 0.0.0-use.local
   resolution: "hexo-blogger-xml@workspace:packages/hexo-blogger-xml"
   dependencies:
@@ -20246,7 +20246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@*, safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
+"safelinkify@^1.1.12, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
   version: 0.0.0-use.local
   resolution: "safelinkify@workspace:packages/safelinkify"
   dependencies:
@@ -20432,13 +20432,13 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     deepmerge-ts: ^4.3.0
     eslint: ^8.33.0
-    git-command-helper: "*"
+    git-command-helper: "workspace:^"
     he: ^1.2.0
-    hexo-blogger-xml: "*"
+    hexo-blogger-xml: "workspace:^"
     jest: ^29.4.2
     jsdom: ^21.1.0
     npm-run-all: ^4.1.5
-    safelinkify: "*"
+    safelinkify: "workspace:^"
     sbg-api: "workspace:^"
     sbg-server: "workspace:^"
     sbg-utility: "workspace:^"
