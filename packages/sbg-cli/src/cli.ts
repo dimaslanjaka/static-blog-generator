@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import ansiColors from 'ansi-colors';
+import { stdin as process_input, stdout as process_output } from 'node:process';
+import * as readline from 'node:readline/promises';
 import { Application } from 'sbg-api';
 import path from 'upath';
 import yargs from 'yargs';
@@ -19,6 +21,56 @@ yargs
     },
     () => {
       yargs.showHelp();
+    }
+  )
+  .command(
+    'clean [key]',
+    'clean commands',
+    function (yargs) {
+      yargs.positional(`db`, {
+        type: `string`,
+        describe: `clean ${rootColor}/tmp`
+      });
+      yargs.positional(`post`, {
+        type: `string`,
+        describe: `clean ${rootColor}/${api.config.source_dir}/_posts`
+      });
+      yargs.positional(`archive`, {
+        type: `string`,
+        describe: `clean categories, tags, archives inside ${rootColor}/.deploy_${api.config.deploy.type || 'git'}`
+      });
+      yargs.positional(`all`, {
+        type: `string`,
+        describe: `clean categories, tags, archives, generated posts, caches`
+      });
+    },
+    async function ({ key }) {
+      if (!key) {
+        const rl = readline.createInterface({ input: process_input, output: process_output });
+        const answer = await rl.question('Clean all caches? y/yes/n/no: ');
+        if (answer === 'yes' || answer === 'y') {
+          await api.clean('all');
+        } else {
+          console.log('clean aborted');
+        }
+        rl.close();
+      } else {
+        switch (key) {
+          case 'db':
+            await api.clean('database');
+            break;
+
+          case 'post':
+            await api.clean('post');
+            break;
+          case 'archive':
+            await api.clean('archive');
+            break;
+          case 'all':
+            await api.clean('all');
+            break;
+        }
+      }
     }
   )
   .command(

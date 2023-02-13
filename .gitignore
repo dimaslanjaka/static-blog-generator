@@ -39,5 +39,6 @@ ___*
 **/.git-rewrite
 **/.yarn/cache/*.zip
 **/.yarn/unplugged
+**/.yarn/versions
 **/.yarn/install-state.gz
 !**/.yarn/cache/.gitginore

@@ -11453,7 +11453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-news-sitemap@workspace:packages/google-news-sitemap":
+"google-news-sitemap@workspace:^, google-news-sitemap@workspace:packages/google-news-sitemap":
   version: 0.0.0-use.local
   resolution: "google-news-sitemap@workspace:packages/google-news-sitemap"
   dependencies:
@@ -21407,6 +21407,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
+    git-command-helper: "workspace:^"
+    google-news-sitemap: "workspace:^"
+    hexo-blogger-xml: "workspace:^"
+    hexo-post-parser: "workspace:^"
+    safelinkify: "workspace:^"
     sbg-api: "workspace:^"
     sbg-cli: "workspace:^"
     sbg-server: "workspace:^"
