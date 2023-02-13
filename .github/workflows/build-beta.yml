@@ -109,7 +109,10 @@ jobs:
 
       - run: yarn install
       - run: lerna run build
-      - run: lerna exec "npm run pack --if-present"
+      - run: lerna exec "npm run pack --if-present" --ignore=test
+      - run: npx sbg clean all
+        working-directory: test
+        name: test clean
       - run: npx sbg post standalone
         working-directory: test
         name: test post standalone
