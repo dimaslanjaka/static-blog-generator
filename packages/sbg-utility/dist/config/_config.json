@@ -1,1 +1,357 @@
-{}
+{
+  "adsense": {
+    "enable": false,
+    "pub": "ca-pub-2974518380815858",
+    "article_ads": null,
+    "field": "site",
+    "https": false,
+    "adblock": false,
+    "type": "javascript",
+    "exclude": [
+      "*.min.html",
+      "**/exclude/**/*"
+    ]
+  },
+  "analytics": {
+    "tagmanager": "GTM-NJNNXSR",
+    "GA4": "G-BG75CLNJZ1",
+    "GA3": "UA-106238155-1",
+    "cloudflare": "2157c0f3b9e74a92badffe39156166b9"
+  },
+  "archive_dir": "archives",
+  "author": "Dimas Lanjaka",
+  "author_obj": {
+    "name": "Dimas Lanjaka",
+    "link": "https://www.webmanajemen.com/",
+    "image": {
+      "url": "https://res.cloudinary.com/dimaslanjaka/image/fetch/https://imgdb.net/images/3600.jpg",
+      "width": 1944,
+      "height": 2592
+    }
+  },
+  "browsersync": {
+    "logLevel": "warn",
+    "ghostMode": {
+      "scroll": true
+    },
+    "instanceName": "customInstance",
+    "port": 3001,
+    "browser": "firefox",
+    "open": false
+  },
+  "categories": {
+    "lowercase": true,
+    "mapper": {
+      "JS": "javascript",
+      "TS": "typescript"
+    },
+    "assign": {
+      "GitHub": "Programming",
+      "JS": "programming",
+      "TS": "programming"
+    }
+  },
+  "category_dir": "categories",
+  "category_map": null,
+  "code_dir": "downloads/code",
+  "date_format": "YYYY-MM-DD",
+  "default_category": "uncategorized",
+  "default_layout": "post",
+  "default_tag": null,
+  "deploy": {
+    "type": "git",
+    "repo": "https://github.com/dimaslanjaka/dimaslanjaka.github.io.git",
+    "branch": "master",
+    "message": "Git Deployment: {{ now('YYYY-MM-DD HH:mm:ss') }}",
+    "hostname": "www.webmanajemen.com",
+    "username": "dimaslanjaka",
+    "email": "dimaslanjaka@gmail.com",
+    "deployDir": "D:/Repositories/static-blog-generator-hexo/.deploy_git",
+    "github": {
+      "ext": {
+        "GithubInfo": {}
+      },
+      "infos": {},
+      "cwd": "D:/Repositories/static-blog-generator-hexo/.deploy_git",
+      "submodule": {
+        "github": {},
+        "cwd": "D:/Repositories/static-blog-generator-hexo/.deploy_git",
+        "hasConfig": true
+      }
+    }
+  },
+  "description": "Website Management Indonesia is a blog about scripts, tips and tricks, games, software. Covering php, javascript, jquery, mysql, seo, e-commerce and others.",
+  "excerpt": {
+    "depth": 10,
+    "excerpt_excludes": [],
+    "more_excludes": [],
+    "hideWholePostExcerpts": false
+  },
+  "exclude": [
+    "**/.git*",
+    "**/.git",
+    "**/License.md",
+    "**/frontmatter.json",
+    "**/License",
+    "**/bin/**",
+    "**/backend/**",
+    "**/MIDI.js/**",
+    "**/{readme,README,changelog,CHANGELOG,license,LICENSE,License}.md",
+    "**/Test/**",
+    "**/guzzle/**",
+    "**/exclude/**",
+    "**/hexo-post-parser/**",
+    "**/node_modules/**",
+    "**/vendor/**",
+    "**/ads/**",
+    "**/tmp/**",
+    "**/hexo-theme-unit-test/**"
+  ],
+  "external_link": {
+    "enable": true,
+    "field": "site",
+    "safelink": {
+      "enable": true,
+      "exclude": [
+        "webmanajemen.com",
+        "git.webmanajemen.com",
+        "**/chimeraland/recipes.html",
+        "**/embed.html",
+        "**/tools.html",
+        "**/safelink.html",
+        "**/node_modules/**",
+        "**/vendor/**"
+      ],
+      "redirect": "https://www.webmanajemen.com/page/safelink.html?url=",
+      "type": "base64",
+      "password": "unique-password"
+    },
+    "exclude": [
+      "webmanajemen.com",
+      "web-manajemen.blogspot.com",
+      "dimaslanjaka.github.io"
+    ]
+  },
+  "feed": {
+    "icon": "/logo.png",
+    "content": true,
+    "type": [
+      "atom",
+      "rss2"
+    ],
+    "path": [
+      "atom.xml",
+      "rss.xml"
+    ]
+  },
+  "filename_case": 0,
+  "future": true,
+  "generator": {
+    "cache": true,
+    "type": "hexo",
+    "verbose": false,
+    "amp": false
+  },
+  "highlight": {
+    "enable": true,
+    "line_number": false,
+    "auto_detect": false,
+    "tab_replace": "  ",
+    "wrap": false,
+    "hljs": false
+  },
+  "i18n": {
+    "type": [
+      "page",
+      "post"
+    ],
+    "generator": []
+  },
+  "i18n_dir": ":lang",
+  "ignore": [
+    "**/.git*"
+  ],
+  "include": [
+    "assets/adblock-notify/readme.md"
+  ],
+  "index_generator": {
+    "path": "",
+    "per_page": 10,
+    "order_by": "-updated"
+  },
+  "keywords": "the legend of neverland, genshin impact, games, how to, tips and tricks, php, javascript, jquery, mysql, seo, e-commerce",
+  "language": [
+    "en",
+    "id",
+    "zh-TW",
+    "zh-CN",
+    "zh-HK",
+    "th",
+    "tl"
+  ],
+  "markdown_it_plus": {
+    "highlight": true,
+    "html": true,
+    "xhtmlOut": true,
+    "breaks": true,
+    "langPrefix": null,
+    "linkify": true,
+    "typographer": null,
+    "pre_class": "highlight",
+    "plugins": [
+      {
+        "plugin": {
+          "name": "markdown-it-attrs",
+          "enable": true,
+          "options": {
+            "leftDelimiter": "{",
+            "rightDelimiter": "}",
+            "allowedAttributes": []
+          }
+        }
+      }
+    ]
+  },
+  "marked": {
+    "prependRoot": true,
+    "postAsset": true
+  },
+  "meta_generator": true,
+  "multilingual": true,
+  "new_post_name": ":year/:month/:title.md",
+  "pagination_dir": "page",
+  "per_page": 10,
+  "permalink": ":title.html",
+  "permalink_defaults": {
+    "lang": "en"
+  },
+  "post_asset_folder": true,
+  "pretty_urls": {
+    "trailing_index": true,
+    "trailing_html": true
+  },
+  "prismjs": {
+    "enable": false,
+    "preprocess": true,
+    "line_number": true,
+    "tab_replace": ""
+  },
+  "public_dir": "public",
+  "redirect": {
+    "enable": true
+  },
+  "relative_link": false,
+  "render_drafts": false,
+  "root": "/",
+  "search": {
+    "path": "search.xml",
+    "field": "post",
+    "content": true,
+    "format": "html"
+  },
+  "seo": {
+    "html": {
+      "fix": true,
+      "exclude": [
+        "*.min.{htm,html}"
+      ]
+    },
+    "css": true,
+    "js": true,
+    "schema": false,
+    "img": {
+      "broken": false,
+      "default": "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+      "onerror": "serverside"
+    },
+    "links": {
+      "enable": true,
+      "exclude": [
+        "webmanajemen.com",
+        "web-manajemen.blogspot.com",
+        "dimaslanjaka.github.io"
+      ]
+    },
+    "sitemap": true
+  },
+  "server": {
+    "port": 4000,
+    "log": false,
+    "ip": "0.0.0.0",
+    "compress": false,
+    "cache": false,
+    "header": false,
+    "serveStatic": {
+      "dotfiles": "allow",
+      "extensions": [
+        "html",
+        "js",
+        "css",
+        "png",
+        "jpg",
+        "jpeg"
+      ]
+    }
+  },
+  "sitemap": {
+    "path": [
+      "sitemap.xml",
+      "sitemap.txt"
+    ],
+    "template_txt": "./_config_template_sitemap.txt",
+    "rel": true,
+    "tags": true,
+    "categories": true
+  },
+  "skip_render": [
+    "*.html",
+    "chimeraland/recipes.html",
+    "_posts/chimeraland/recipes.html",
+    "assets/adblock-notify/*.html",
+    "page/*.html",
+    "comment.html",
+    "source/comment.html",
+    "**/hexo-theme-unit-test/**",
+    "**/node_modules/**",
+    "yandex_*",
+    "ahrefs_*",
+    "glx_*",
+    "Midi",
+    "Midi/**/*",
+    "*.json",
+    "**/*.json",
+    "_posts/**/*.json",
+    "_posts/**/*.js",
+    "_posts/**/*.css",
+    "_posts/The Legend Of Neverland/Midi/readme.md",
+    "**/__test__/**",
+    "**/__tests__/**"
+  ],
+  "social_links": {
+    "github": "https://github.com/dimaslanjaka",
+    "youtube": "https://youtube.com/p/L3n4r0x"
+  },
+  "source_dir": "source",
+  "subtitle": "Website Management Indonesia",
+  "tag_dir": "tags",
+  "tag_map": null,
+  "tags": {
+    "lowercase": true,
+    "mapper": {
+      "JS": "javascript",
+      "TS": "javascript"
+    },
+    "assign": {
+      "JS": "programming",
+      "TS": "programming",
+      "GitHub": "Programming"
+    }
+  },
+  "theme": "next",
+  "time_format": "HH:mm:ss",
+  "timezone": "Asia/Jakarta",
+  "title": "WMI",
+  "titlecase": false,
+  "updated_option": false,
+  "url": "https://www.webmanajemen.com/"
+}
