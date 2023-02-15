@@ -1,6 +1,7 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
+import findWorkspaceRoot from 'find-yarn-workspace-root';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
@@ -81,20 +82,37 @@ export class SBGServer {
       }
     });
     // init default express static
-    [
+    const workspaceRoot = findWorkspaceRoot(process.cwd());
+    const statics = [
       path.join(__dirname, 'public'),
-      path.join(__dirname, '/../node_modules'),
+      // path.join(__dirname, '/../node_modules'),
+      // project node_modules
       path.join(this.config.root, 'node_modules'),
-      path.join(this.config.root, this.api.config.public_dir),
+      // static generated site
+      // path.join(this.config.root, this.api.config.public_dir),
+      // static source post when not yet generated at source dir
       path.join(this.config.root, this.api.config.post_dir),
+      // static source dir such as images etc
       path.join(this.config.root, this.api.config.source_dir),
-      path.join(__dirname, '/../../../node_modules')
+      // path.join(__dirname, '/../../../node_modules'),
+      // resolve workspace node_modules
+      path.join(workspaceRoot, 'node_modules')
     ]
       .filter(fs.existsSync)
-      .forEach((p) => {
-        console.log('init static', p);
-        this.server.use(express.static(p));
+      .map((p) => {
+        return path.resolve(p);
       });
+    /*.filter(function (elem, index, self) {
+        return index === self.indexOf(elem);
+      });*/
+
+    for (let i = 0; i < statics.length; i++) {
+      const p = statics[i];
+      debug('sbg-server').extend('static')(p);
+      this.server.use(express.static(p));
+      this.server.use(this.api.config.root, express.static(p));
+    }
+
     // register router
     // index page
     this.server.get('/', function (_, res) {
@@ -147,11 +165,19 @@ export class SBGServer {
   }
 
   start2() {
+    debug('sbg-server').extend('cwd')(this.config.root);
+    debug('sbg-server').extend('port')(this.config.port);
     const httpserver = http
       .createServer(this.startExpress())
       .listen(this.config.port);
     console.log('server listening at http://localhost:' + this.config.port);
     return httpserver;
+  }
+
+  __dump() {
+    debug('sbg-server').extend('cwd')(this.config.root);
+    debug('sbg-server').extend('port')(this.config.port);
+    console.log(this.startExpress());
   }
 }
 
