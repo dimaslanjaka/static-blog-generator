@@ -144,19 +144,29 @@ yargs_1.default
         type: `string`,
         describe: `anonymize external links`
     });
+    yargs.positional(`feed`, {
+        type: `string`,
+        describe: `generate feed`
+    });
+    yargs.positional(`sitemap`, {
+        type: `string`,
+        describe: `generate sitemap`
+    });
     yargs.positional(`copy`, {
         type: `string`,
         describe: `copy generated files to deployment directory`
     });
 }, async function ({ key }) {
-    if (key === 'seo') {
-        await api.seo(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
-    }
-    else if (key === 'safelink') {
-        await api.safelink(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
-    }
-    else if (key === 'copy') {
-        //
+    switch (key) {
+        case 'seo':
+            await api.seo(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+            break;
+        case 'safelink':
+            await api.safelink(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+            break;
+        case 'copy':
+            await api.deploy.copy();
+            break;
     }
 })
     .command('server', 'start server manager', function (yargs) {
