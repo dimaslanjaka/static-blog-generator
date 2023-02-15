@@ -33,7 +33,8 @@ var fs_extra_1 = __importDefault(require("fs-extra"));
 var true_case_path_1 = require("true-case-path");
 var upath_1 = __importDefault(require("upath"));
 /**
- * normalize path and make drive letter uppercase
+ * UNIX join path with true-case-path
+ * @description normalize path and make drive letter uppercase
  * @param str
  * @returns Unix Style Path
  */
@@ -57,7 +58,7 @@ function joinSolve() {
     for (var _i = 0; _i < arguments.length; _i++) {
         paths[_i] = arguments[_i];
     }
-    var merge = upath_1.default.join.apply(upath_1.default, __spreadArray([], __read(paths), false));
+    var merge = normalizePath.apply(void 0, __spreadArray([], __read(paths), false));
     if (!fs_extra_1.default.existsSync(upath_1.default.dirname(merge)))
         fs_extra_1.default.mkdirSync(upath_1.default.dirname(merge), { recursive: true });
     return merge;

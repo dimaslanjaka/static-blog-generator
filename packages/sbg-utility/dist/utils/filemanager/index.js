@@ -18,7 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isMarkdown = exports.isAsset = exports.createWriteStream = void 0;
+exports.isMarkdown = exports.isAsset = exports.createWriteStream = exports.pathJoin = exports.joinPath = void 0;
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var upath_1 = __importDefault(require("upath"));
 __exportStar(require("./del"), exports);
@@ -26,6 +26,9 @@ __exportStar(require("./emptyDir"), exports);
 __exportStar(require("./getAppRootDir"), exports);
 __exportStar(require("./images"), exports);
 __exportStar(require("./normalizePath"), exports);
+var normalizePath_1 = require("./normalizePath");
+Object.defineProperty(exports, "joinPath", { enumerable: true, get: function () { return normalizePath_1.normalizePath; } });
+Object.defineProperty(exports, "pathJoin", { enumerable: true, get: function () { return normalizePath_1.normalizePath; } });
 __exportStar(require("./readDir"), exports);
 __exportStar(require("./writefile"), exports);
 /**

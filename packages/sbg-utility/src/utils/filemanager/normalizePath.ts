@@ -3,7 +3,8 @@ import { trueCasePathSync } from 'true-case-path';
 import path from 'upath';
 
 /**
- * normalize path and make drive letter uppercase
+ * UNIX join path with true-case-path
+ * @description normalize path and make drive letter uppercase
  * @param str
  * @returns Unix Style Path
  */
@@ -19,7 +20,7 @@ export function normalizePath(...str: string[]) {
  * @returns
  */
 export function joinSolve(...paths: string[]) {
-  const merge = path.join(...paths);
+  const merge = normalizePath(...paths);
   if (!fs.existsSync(path.dirname(merge))) fs.mkdirSync(path.dirname(merge), { recursive: true });
   return merge;
 }
