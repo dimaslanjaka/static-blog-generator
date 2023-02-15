@@ -107,16 +107,23 @@ var SBGServer = /** @class */ (function () {
         var workspaceRoot = (0, find_yarn_workspace_root_1.default)(process.cwd());
         var statics = [
             upath_1.default.join(__dirname, 'public'),
-            upath_1.default.join(__dirname, '/../node_modules'),
+            // path.join(__dirname, '/../node_modules'),
+            // project node_modules
             upath_1.default.join(this.config.root, 'node_modules'),
-            upath_1.default.join(this.config.root, this.api.config.public_dir),
+            // static generated site
+            // path.join(this.config.root, this.api.config.public_dir),
+            // static source post when not yet generated at source dir
             upath_1.default.join(this.config.root, this.api.config.post_dir),
+            // static source dir such as images etc
             upath_1.default.join(this.config.root, this.api.config.source_dir),
-            upath_1.default.join(__dirname, '/../../../node_modules'),
+            // path.join(__dirname, '/../../../node_modules'),
+            // resolve workspace node_modules
             upath_1.default.join(workspaceRoot, 'node_modules')
         ]
             .filter(fs_extra_1.default.existsSync)
-            .map(upath_1.default.resolve);
+            .map(function (p) {
+            return upath_1.default.resolve(p);
+        });
         /*.filter(function (elem, index, self) {
             return index === self.indexOf(elem);
           });*/
@@ -124,6 +131,7 @@ var SBGServer = /** @class */ (function () {
             var p = statics[i];
             (0, sbg_utility_1.debug)('sbg-server').extend('static')(p);
             this.server.use(express_1.default.static(p));
+            this.server.use(this.api.config.root, express_1.default.static(p));
         }
         // register router
         // index page
