@@ -83,7 +83,7 @@ export class SBGServer {
     });
     // init default express static
     const workspaceRoot = findWorkspaceRoot(process.cwd());
-    [
+    const statics = [
       path.join(__dirname, 'public'),
       path.join(__dirname, '/../node_modules'),
       path.join(this.config.root, 'node_modules'),
@@ -94,14 +94,19 @@ export class SBGServer {
       path.join(workspaceRoot, 'node_modules')
     ]
       .filter(fs.existsSync)
-      .map(path.resolve)
-      .filter(function (elem, index, self) {
-        return index === self.indexOf(elem);
-      })
-      .forEach((p) => {
-        console.log('init static', p);
-        this.server.use(express.static(p));
+      .map((p) => {
+        return path.resolve(p);
       });
+    /*.filter(function (elem, index, self) {
+        return index === self.indexOf(elem);
+      });*/
+
+    for (let i = 0; i < statics.length; i++) {
+      const p = statics[i];
+      debug('sbg-server').extend('static')(p);
+      this.server.use(express.static(p));
+    }
+
     // register router
     // index page
     this.server.get('/', function (_, res) {
@@ -154,11 +159,19 @@ export class SBGServer {
   }
 
   start2() {
+    debug('sbg-server').extend('cwd')(this.config.root);
+    debug('sbg-server').extend('port')(this.config.port);
     const httpserver = http
       .createServer(this.startExpress())
       .listen(this.config.port);
     console.log('server listening at http://localhost:' + this.config.port);
     return httpserver;
+  }
+
+  __dump() {
+    debug('sbg-server').extend('cwd')(this.config.root);
+    debug('sbg-server').extend('port')(this.config.port);
+    console.log(this.startExpress());
   }
 }
 
