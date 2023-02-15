@@ -20,7 +20,10 @@ describe('check method', () => {
     'capitalizer',
     'capitalize',
     'data_to_hash',
-    'file_to_hash'
+    'file_to_hash',
+    'normalizePath',
+    'pathJoin',
+    'joinPath'
   ];
 
   for (let i = 0; i < props.length; i++) {
