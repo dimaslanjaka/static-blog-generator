@@ -1,5 +1,6 @@
 /**
- * normalize path and make drive letter uppercase
+ * UNIX join path with true-case-path
+ * @description normalize path and make drive letter uppercase
  * @param str
  * @returns Unix Style Path
  */
