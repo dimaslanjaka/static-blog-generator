@@ -33,5 +33,6 @@ export declare class SBGServer {
      */
     start(): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
     start2(): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
+    __dump(): void;
 }
 export default SBGServer;
