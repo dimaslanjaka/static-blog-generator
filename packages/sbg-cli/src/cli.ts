@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import Hexo from 'hexo';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline/promises';
 import SBGServer from 'sbg-server';
@@ -116,18 +117,33 @@ yargs
     function (yargs) {
       yargs.positional(`seo`, {
         type: `string`,
-        describe: `fix seo`
+        describe: `fix seo after generate site`
       });
       yargs.positional(`safelink`, {
         type: `string`,
-        describe: `anonymize external links`
+        describe: `anonymize external links after generate site`
+      });
+      yargs.positional(`hexo`, {
+        type: `string`,
+        describe: `generate site with hexo`
       });
     },
     async function ({ key }) {
-      if (key === 'seo') {
-        await api.seo(path.join(api.config.cwd, api.config.public_dir));
-      } else if (key === 'safelink') {
-        await api.safelink(path.join(api.config.cwd, api.config.public_dir));
+      const hexo = new Hexo(api.cwd);
+      switch (key) {
+        case 'seo':
+          await api.seo(path.join(api.config.cwd, api.config.public_dir));
+          break;
+
+        case 'safelink':
+          await api.safelink(path.join(api.config.cwd, api.config.public_dir));
+          break;
+
+        case 'hexo':
+          await hexo.init();
+          await hexo.load();
+          await hexo.call('generate');
+          break;
       }
     }
   )
