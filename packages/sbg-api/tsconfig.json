@@ -3,13 +3,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist",
     "paths": {
       "src": ["./src"],
-      "sbg-*": ["../packages/sbg-*"]
+      "sbg-*": ["../sbg-*/src"]
     }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
+  "exclude": ["dist"],
   "references": [{ "path": "../sbg-utility" }, { "path": "../git-command-helper" }]
 }
