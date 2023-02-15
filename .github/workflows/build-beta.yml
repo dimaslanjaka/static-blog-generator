@@ -96,10 +96,10 @@ jobs:
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
-            ./packages/sbg-server/src/public
-            #**/tmp/**
-            #**/node_modules/**
-            #**/.yarn
+          #./packages/sbg-server/src/public
+          #**/tmp/**
+          #**/node_modules/**
+          #**/.yarn
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
@@ -131,5 +131,9 @@ jobs:
           arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli")
           for i in "${arr_variable[@]}"
           do
-            echo "$i"
+            git add "packages/${i}/dist"
+            git add "packages/${i}/release"
+            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
           done
+          git push --recurse-submodules=on-demand
+        name: commit and push
