@@ -143,18 +143,32 @@ yargs
         type: `string`,
         describe: `anonymize external links`
       });
+      yargs.positional(`feed`, {
+        type: `string`,
+        describe: `generate feed`
+      });
+      yargs.positional(`sitemap`, {
+        type: `string`,
+        describe: `generate sitemap`
+      });
       yargs.positional(`copy`, {
         type: `string`,
         describe: `copy generated files to deployment directory`
       });
     },
     async function ({ key }) {
-      if (key === 'seo') {
-        await api.seo(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
-      } else if (key === 'safelink') {
-        await api.safelink(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
-      } else if (key === 'copy') {
-        //
+      switch (key) {
+        case 'seo':
+          await api.seo(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+          break;
+
+        case 'safelink':
+          await api.safelink(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+          break;
+
+        case 'copy':
+          await api.deploy.copy();
+          break;
       }
     }
   )
