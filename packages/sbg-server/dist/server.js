@@ -30,6 +30,7 @@ exports.SBGServer = void 0;
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
+var find_yarn_workspace_root_1 = __importDefault(require("find-yarn-workspace-root"));
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
@@ -103,16 +104,22 @@ var SBGServer = /** @class */ (function () {
             }
         });
         // init default express static
+        var workspaceRoot = (0, find_yarn_workspace_root_1.default)(process.cwd());
         [
-            upath_1.default.join(__dirname, 'public'),
-            upath_1.default.join(__dirname, '/../node_modules'),
-            upath_1.default.join(this.config.root, 'node_modules'),
-            upath_1.default.join(this.config.root, this.api.config.public_dir),
-            upath_1.default.join(this.config.root, this.api.config.post_dir),
-            upath_1.default.join(this.config.root, this.api.config.source_dir),
-            upath_1.default.join(__dirname, '/../../../node_modules')
+            ((upath_1.default.join(__dirname, 'public'),
+                upath_1.default.join(__dirname, '/../node_modules'),
+                upath_1.default.join(this.config.root, 'node_modules'),
+                upath_1.default.join(this.config.root, this.api.config.public_dir),
+                upath_1.default.join(this.config.root, this.api.config.post_dir),
+                upath_1.default.join(this.config.root, this.api.config.source_dir),
+                upath_1.default.join(__dirname, '/../../../node_modules')),
+                upath_1.default.join(workspaceRoot, 'node_modules'))
         ]
             .filter(fs_extra_1.default.existsSync)
+            .map(upath_1.default.resolve)
+            .filter(function (elem, index, self) {
+            return index === self.indexOf(elem);
+        })
             .forEach(function (p) {
             console.log('init static', p);
             _this.server.use(express_1.default.static(p));

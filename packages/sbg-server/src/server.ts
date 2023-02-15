@@ -84,14 +84,14 @@ export class SBGServer {
     // init default express static
     const workspaceRoot = findWorkspaceRoot(process.cwd());
     [
-      ((path.join(__dirname, 'public'),
+      path.join(__dirname, 'public'),
       path.join(__dirname, '/../node_modules'),
       path.join(this.config.root, 'node_modules'),
       path.join(this.config.root, this.api.config.public_dir),
       path.join(this.config.root, this.api.config.post_dir),
       path.join(this.config.root, this.api.config.source_dir),
-      path.join(__dirname, '/../../../node_modules')),
-      path.join(workspaceRoot, 'node_modules'))
+      path.join(__dirname, '/../../../node_modules'),
+      path.join(workspaceRoot, 'node_modules')
     ]
       .filter(fs.existsSync)
       .map(path.resolve)
