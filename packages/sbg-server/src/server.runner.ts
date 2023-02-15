@@ -12,4 +12,4 @@ const _server = new SBGServer({
   port: 4000,
   root: path.join(__dirname, '../../../test')
 });
-_server.start();
+_server.__dump();
