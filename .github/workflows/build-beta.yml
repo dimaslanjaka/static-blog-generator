@@ -2,7 +2,7 @@ name: Build Beta
 
 on:
   push:
-    branches: [ "beta" ]
+    branches: ['beta']
     paths-ignore:
       - '**/dist/**'
       - '**/release/**'
@@ -27,7 +27,7 @@ jobs:
     strategy:
       fail-fast: true
     env:
-      NODE_OPTIONS: "--max-old-space-size=8192"
+      NODE_OPTIONS: '--max-old-space-size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           submodules: 'recursive'
       #- run: sh scripts/install-submodules.sh
-        #name: clone submodules
+      #name: clone submodules
       - name: Set env
         id: set-env
         shell: bash
@@ -125,3 +125,7 @@ jobs:
       - run: npx sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: '.'
