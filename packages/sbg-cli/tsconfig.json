@@ -7,7 +7,7 @@
     "checkJs": false,
     "paths": {
       "src": ["./src"],
-      "sbg-*": ["../sbg-*"]
+      "sbg-*": ["../sbg-*/src"]
     }
   },
   "include": ["./src/**/*", "./test/**/*", "**/*.json"],
