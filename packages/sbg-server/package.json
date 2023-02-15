@@ -1,6 +1,6 @@
 {
   "name": "sbg-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "static-blog-generator server workspace",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
