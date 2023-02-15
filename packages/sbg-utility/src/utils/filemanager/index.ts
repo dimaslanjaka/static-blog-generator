@@ -8,6 +8,7 @@ export * from './emptyDir';
 export * from './getAppRootDir';
 export * from './images';
 export * from './normalizePath';
+export { normalizePath as joinPath, normalizePath as pathJoin } from './normalizePath';
 export * from './readDir';
 export * from './writefile';
 
