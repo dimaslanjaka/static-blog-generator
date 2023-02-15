@@ -30,6 +30,7 @@ exports.SBGServer = void 0;
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
+var find_yarn_workspace_root_1 = __importDefault(require("find-yarn-workspace-root"));
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
@@ -103,20 +104,35 @@ var SBGServer = /** @class */ (function () {
             }
         });
         // init default express static
-        [
+        var workspaceRoot = (0, find_yarn_workspace_root_1.default)(process.cwd());
+        var statics = [
             upath_1.default.join(__dirname, 'public'),
-            upath_1.default.join(__dirname, '/../node_modules'),
+            // path.join(__dirname, '/../node_modules'),
+            // project node_modules
             upath_1.default.join(this.config.root, 'node_modules'),
-            upath_1.default.join(this.config.root, this.api.config.public_dir),
+            // static generated site
+            // path.join(this.config.root, this.api.config.public_dir),
+            // static source post when not yet generated at source dir
             upath_1.default.join(this.config.root, this.api.config.post_dir),
+            // static source dir such as images etc
             upath_1.default.join(this.config.root, this.api.config.source_dir),
-            upath_1.default.join(__dirname, '/../../../node_modules')
+            // path.join(__dirname, '/../../../node_modules'),
+            // resolve workspace node_modules
+            upath_1.default.join(workspaceRoot, 'node_modules')
         ]
             .filter(fs_extra_1.default.existsSync)
-            .forEach(function (p) {
-            console.log('init static', p);
-            _this.server.use(express_1.default.static(p));
+            .map(function (p) {
+            return upath_1.default.resolve(p);
         });
+        /*.filter(function (elem, index, self) {
+            return index === self.indexOf(elem);
+          });*/
+        for (var i = 0; i < statics.length; i++) {
+            var p = statics[i];
+            (0, sbg_utility_1.debug)('sbg-server').extend('static')(p);
+            this.server.use(express_1.default.static(p));
+            this.server.use(this.api.config.root, express_1.default.static(p));
+        }
         // register router
         // index page
         this.server.get('/', function (_, res) {
@@ -155,11 +171,18 @@ var SBGServer = /** @class */ (function () {
         return httpserver;
     };
     SBGServer.prototype.start2 = function () {
+        (0, sbg_utility_1.debug)('sbg-server').extend('cwd')(this.config.root);
+        (0, sbg_utility_1.debug)('sbg-server').extend('port')(this.config.port);
         var httpserver = http_1.default
             .createServer(this.startExpress())
             .listen(this.config.port);
         console.log('server listening at http://localhost:' + this.config.port);
         return httpserver;
+    };
+    SBGServer.prototype.__dump = function () {
+        (0, sbg_utility_1.debug)('sbg-server').extend('cwd')(this.config.root);
+        (0, sbg_utility_1.debug)('sbg-server').extend('port')(this.config.port);
+        console.log(this.startExpress());
     };
     return SBGServer;
 }());
