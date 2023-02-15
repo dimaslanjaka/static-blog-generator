@@ -1,6 +1,7 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
+import findWorkspaceRoot from 'find-yarn-workspace-root';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
@@ -81,14 +82,16 @@ export class SBGServer {
       }
     });
     // init default express static
+    const workspaceRoot = findWorkspaceRoot(process.cwd());
+    console.log({ workspaceRoot });
     [
-      path.join(__dirname, 'public'),
+      (path.join(__dirname, 'public'),
       path.join(__dirname, '/../node_modules'),
       path.join(this.config.root, 'node_modules'),
       path.join(this.config.root, this.api.config.public_dir),
       path.join(this.config.root, this.api.config.post_dir),
       path.join(this.config.root, this.api.config.source_dir),
-      path.join(__dirname, '/../../../node_modules')
+      path.join(__dirname, '/../../../node_modules'))
     ]
       .filter(fs.existsSync)
       .forEach((p) => {
