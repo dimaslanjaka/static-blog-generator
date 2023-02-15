@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-import ansiColors from 'ansi-colors';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline/promises';
-import { Application } from 'sbg-api';
+import SBGServer from 'sbg-server';
 import path from 'upath';
 import yargs from 'yargs';
+import { getApi, rootColor } from './env';
 
-const api = new Application(process.cwd());
-const rootColor = ansiColors.bgYellowBright.black('<root>');
+const api = getApi();
 
 yargs
   .scriptName('sbg')
@@ -21,6 +20,19 @@ yargs
     },
     () => {
       yargs.showHelp();
+    }
+  )
+  .command(
+    'view',
+    'view all configurations',
+    function () {
+      console.log(rootColor, api.cwd);
+      console.log('source post dir    ', `${rootColor}/${api.config.post_dir}`);
+      console.log('source dir         ', `${rootColor}/${api.config.source_dir}`);
+      console.log('generated post dir ', `${rootColor}/${api.config.source_dir}/_posts`);
+    },
+    function () {
+      //
     }
   )
   .command(
@@ -144,6 +156,23 @@ yargs
       } else if (key === 'copy') {
         //
       }
+    }
+  )
+  .command(
+    'server',
+    'start server manager',
+    function (yargs) {
+      yargs.option('p', {
+        alias: 'port',
+        demandOption: true,
+        default: 4000,
+        describe: 'specify port, default 4000',
+        type: 'number'
+      }).argv;
+    },
+    function ({ p, port }) {
+      const serv = new SBGServer({ root: api.cwd, port: parseInt(String(p || port || 4000)) });
+      serv.start();
     }
   )
   .help('help')
