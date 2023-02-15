@@ -89,7 +89,7 @@ export class SBGServer {
       // project node_modules
       path.join(this.config.root, 'node_modules'),
       // static generated site
-      path.join(this.config.root, this.api.config.public_dir),
+      // path.join(this.config.root, this.api.config.public_dir),
       // static source post when not yet generated at source dir
       path.join(this.config.root, this.api.config.post_dir),
       // static source dir such as images etc
@@ -110,6 +110,7 @@ export class SBGServer {
       const p = statics[i];
       debug('sbg-server').extend('static')(p);
       this.server.use(express.static(p));
+      this.server.use(this.api.config.root, express.static(p));
     }
 
     // register router
