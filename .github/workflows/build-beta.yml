@@ -125,8 +125,9 @@ jobs:
       - run: npx sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: '.'
-          branch: 'beta'
+       - run: |
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli")
+          for i in "${arr_variable[@]}"
+          do
+            echo "$i"
+          done
