@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
+import fs from 'fs-extra';
 import { spawnAsync } from 'git-command-helper';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline/promises';
+import { sitemap } from 'sbg-api';
 import SBGServer from 'sbg-server';
 import path from 'upath';
 import yargs from 'yargs';
@@ -113,7 +115,7 @@ yargs
   )
   .command(
     'generate <key>',
-    `operation inside ${rootColor}/${api.config.public_dir}`,
+    `generate operation on ${rootColor}/${api.config.public_dir}`,
     function (yargs) {
       yargs.positional(`seo`, {
         type: `string`,
@@ -127,6 +129,14 @@ yargs
         type: `string`,
         describe: `generate site with hexo`
       });
+      yargs.positional(`feed`, {
+        type: `string`,
+        describe: `generate feed on ${rootColor}/${api.config.public_dir}`
+      });
+      yargs.positional(`sitemap`, {
+        type: `string`,
+        describe: `generate sitemap on ${rootColor}/${api.config.public_dir}`
+      });
     },
     async function ({ key }) {
       switch (key) {
@@ -138,9 +148,17 @@ yargs
           await api.safelink(path.join(api.config.cwd, api.config.public_dir));
           break;
 
+        case 'sitemap':
+          if (!fs.existsSync(path.join(api.config.cwd, api.config.public_dir))) {
+            console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
+            return;
+          }
+          await sitemap.hexoGenerateSitemap(api.config);
+          break;
+
         case 'hexo':
           console.log('generating site', api.cwd);
-          await spawnAsync('npx', ['hexo', 'generate'], { cwd: api.cwd, stdio: 'inherit' });
+          await spawnAsync('npx', ['hexo', 'generate'], { cwd: api.cwd, stdio: 'inherit', shell: true });
           break;
       }
     }
