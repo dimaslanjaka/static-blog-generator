@@ -27,9 +27,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const hexo_1 = __importDefault(require("hexo"));
+const fs_extra_1 = __importDefault(require("fs-extra"));
+const git_command_helper_1 = require("git-command-helper");
 const node_process_1 = require("node:process");
 const readline = __importStar(require("node:readline/promises"));
+const sbg_api_1 = require("sbg-api");
 const sbg_server_1 = __importDefault(require("sbg-server"));
 const upath_1 = __importDefault(require("upath"));
 const yargs_1 = __importDefault(require("yargs"));
@@ -119,7 +121,7 @@ yargs_1.default
         yargs_1.default.showHelp();
     }
 })
-    .command('generate <key>', `operation inside ${env_1.rootColor}/${api.config.public_dir}`, function (yargs) {
+    .command('generate <key>', `generate operation on ${env_1.rootColor}/${api.config.public_dir}`, function (yargs) {
     yargs.positional(`seo`, {
         type: `string`,
         describe: `fix seo after generate site`
@@ -132,8 +134,15 @@ yargs_1.default
         type: `string`,
         describe: `generate site with hexo`
     });
+    yargs.positional(`feed`, {
+        type: `string`,
+        describe: `generate feed on ${env_1.rootColor}/${api.config.public_dir}`
+    });
+    yargs.positional(`sitemap`, {
+        type: `string`,
+        describe: `generate sitemap on ${env_1.rootColor}/${api.config.public_dir}`
+    });
 }, async function ({ key }) {
-    const hexo = new hexo_1.default(api.cwd);
     switch (key) {
         case 'seo':
             await api.seo(upath_1.default.join(api.config.cwd, api.config.public_dir));
@@ -141,10 +150,16 @@ yargs_1.default
         case 'safelink':
             await api.safelink(upath_1.default.join(api.config.cwd, api.config.public_dir));
             break;
+        case 'sitemap':
+            if (!fs_extra_1.default.existsSync(upath_1.default.join(api.config.cwd, api.config.public_dir))) {
+                console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
+                return;
+            }
+            await sbg_api_1.sitemap.hexoGenerateSitemap(api.config);
+            break;
         case 'hexo':
-            await hexo.init();
-            await hexo.load();
-            await hexo.call('generate');
+            console.log('generating site', api.cwd);
+            await (0, git_command_helper_1.spawnAsync)('npx', ['hexo', 'generate'], { cwd: api.cwd, stdio: 'inherit', shell: true });
             break;
     }
 })
