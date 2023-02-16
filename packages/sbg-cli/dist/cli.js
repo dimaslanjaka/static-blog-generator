@@ -150,6 +150,13 @@ yargs_1.default
         case 'safelink':
             await api.safelink(upath_1.default.join(api.config.cwd, api.config.public_dir));
             break;
+        case 'feed':
+            if (!fs_extra_1.default.existsSync(upath_1.default.join(api.config.cwd, api.config.public_dir))) {
+                console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
+                return;
+            }
+            await sbg_api_1.feed.hexoGenerateFeed(undefined, api.config);
+            break;
         case 'sitemap':
             if (!fs_extra_1.default.existsSync(upath_1.default.join(api.config.cwd, api.config.public_dir))) {
                 console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);

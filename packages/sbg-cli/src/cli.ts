@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import { spawnAsync } from 'git-command-helper';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline/promises';
-import { sitemap } from 'sbg-api';
+import { feed, sitemap } from 'sbg-api';
 import SBGServer from 'sbg-server';
 import path from 'upath';
 import yargs from 'yargs';
@@ -146,6 +146,14 @@ yargs
 
         case 'safelink':
           await api.safelink(path.join(api.config.cwd, api.config.public_dir));
+          break;
+
+        case 'feed':
+          if (!fs.existsSync(path.join(api.config.cwd, api.config.public_dir))) {
+            console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
+            return;
+          }
+          await feed.hexoGenerateFeed(undefined, api.config);
           break;
 
         case 'sitemap':
