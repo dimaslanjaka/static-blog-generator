@@ -8824,7 +8824,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cuid@npm:^2.1.4, cuid@npm:^2.1.8":
+"cuid@npm:^2.1.4":
   version: 2.1.8
   resolution: "cuid@npm:2.1.8"
   checksum: 12b85b3f5150a6f0b9e4f345c8d98299d74647419151751fa1132f6702fe2b5388ceceb1c9b49bad7cab1b3ac033c7cedea8ffc034930f90005b8a4345025288
@@ -11996,7 +11996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graceful-fs@npm:4.2.10, graceful-fs@npm:^4.0.0, graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.10, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
+"graceful-fs@npm:4.2.10, graceful-fs@npm:^4.0.0, graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
   version: 4.2.10
   resolution: "graceful-fs@npm:4.2.10"
   checksum: 3f109d70ae123951905d85032ebeae3c2a5a7a997430df00ea30df0e3a6c60cf6689b109654d6fdacd28810a053348c4d14642da1d075049e6be1ba5216218da
@@ -12698,11 +12698,11 @@ __metadata:
     moment: ^2.29.4
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     prompt: ^1.3.0
-    sbg-api: "workspace:^"
-    sbg-cli: "workspace:^"
-    sbg-server: "workspace:^"
-    sbg-utility: "workspace:^"
-    static-blog-generator: "workspace:^"
+    sbg-api: "*"
+    sbg-cli: "*"
+    sbg-server: "*"
+    sbg-utility: "*"
+    static-blog-generator: "*"
     yaml: ^2.2.1
   languageName: unknown
   linkType: soft
@@ -21034,7 +21034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rfdc@npm:^1.1.4, rfdc@npm:^1.3.0":
+"rfdc@npm:^1.1.4":
   version: 1.3.0
   resolution: "rfdc@npm:1.3.0"
   checksum: fb2ba8512e43519983b4c61bd3fa77c0f410eff6bae68b08614437bc3f35f91362215f7b4a73cbda6f67330b5746ce07db5dd9850ad3edc91271ad6deea0df32
@@ -21330,7 +21330,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
+"sbg-api@*, sbg-api@workspace:^, sbg-api@workspace:packages/sbg-api":
   version: 0.0.0-use.local
   resolution: "sbg-api@workspace:packages/sbg-api"
   dependencies:
@@ -21369,7 +21369,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
+"sbg-cli@*, sbg-cli@workspace:^, sbg-cli@workspace:packages/sbg-cli":
   version: 0.0.0-use.local
   resolution: "sbg-cli@workspace:packages/sbg-cli"
   dependencies:
@@ -21396,7 +21396,6 @@ __metadata:
     ts-jest: ^29.0.5
     ts-node: ^10.9.1
     typescript: ^4.9.5
-    warehouse: ^5.0.0
     xml2js: ^0.4.23
     yargs: ^17.6.2
   bin:
@@ -21404,7 +21403,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
+"sbg-server@*, sbg-server@workspace:^, sbg-server@workspace:packages/sbg-server":
   version: 0.0.0-use.local
   resolution: "sbg-server@workspace:packages/sbg-server"
   dependencies:
@@ -21475,7 +21474,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@*, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -22356,7 +22355,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"static-blog-generator@workspace:^, static-blog-generator@workspace:packages/static-blog-generator":
+"static-blog-generator@*, static-blog-generator@workspace:packages/static-blog-generator":
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
@@ -24367,22 +24366,6 @@ __metadata:
     rfdc: ^1.1.4
     through2: ^4.0.2
   checksum: a1f6b5d13e1aa2c8f1d649176f7740f88c03f5a920a4622ca8e04af3e4ccf9d65dcb839bcc06d54e60b1a1699da1bf58f3162aece975985dbcce5f405bd84847
-  languageName: node
-  linkType: hard
-
-"warehouse@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "warehouse@npm:5.0.0"
-  dependencies:
-    bluebird: ^3.7.2
-    cuid: ^2.1.8
-    graceful-fs: ^4.2.10
-    hexo-log: ^4.0.1
-    is-plain-object: ^5.0.0
-    jsonparse: ^1.3.1
-    rfdc: ^1.3.0
-    through2: ^4.0.2
-  checksum: cac26d42168ac25d8d7d7fa6779e0b7809d4633145f1e9b395981c9dfcf18e0b7d601047cd8ce4887838ac925c04eb290c5db4095691c80578c8158c0c427601
   languageName: node
   linkType: hard
 
