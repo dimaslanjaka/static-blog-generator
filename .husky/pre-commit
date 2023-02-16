@@ -2,3 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 sh packages/sbg-utility/bin/pre-commit
+cp readme.md packages/static-blog-generator/readme.md

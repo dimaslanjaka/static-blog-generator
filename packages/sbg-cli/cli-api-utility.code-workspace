@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../sbg-api"
+		},
+		{
+			"path": "../sbg-utility"
 		}
 	],
 	"settings": {
