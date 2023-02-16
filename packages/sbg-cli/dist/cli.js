@@ -27,6 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const hexo_1 = __importDefault(require("hexo"));
 const node_process_1 = require("node:process");
 const readline = __importStar(require("node:readline/promises"));
 const sbg_server_1 = __importDefault(require("sbg-server"));
@@ -121,18 +122,30 @@ yargs_1.default
     .command('generate <key>', `operation inside ${env_1.rootColor}/${api.config.public_dir}`, function (yargs) {
     yargs.positional(`seo`, {
         type: `string`,
-        describe: `fix seo`
+        describe: `fix seo after generate site`
     });
     yargs.positional(`safelink`, {
         type: `string`,
-        describe: `anonymize external links`
+        describe: `anonymize external links after generate site`
+    });
+    yargs.positional(`hexo`, {
+        type: `string`,
+        describe: `generate site with hexo`
     });
 }, async function ({ key }) {
-    if (key === 'seo') {
-        await api.seo(upath_1.default.join(api.config.cwd, api.config.public_dir));
-    }
-    else if (key === 'safelink') {
-        await api.safelink(upath_1.default.join(api.config.cwd, api.config.public_dir));
+    const hexo = new hexo_1.default(api.cwd);
+    switch (key) {
+        case 'seo':
+            await api.seo(upath_1.default.join(api.config.cwd, api.config.public_dir));
+            break;
+        case 'safelink':
+            await api.safelink(upath_1.default.join(api.config.cwd, api.config.public_dir));
+            break;
+        case 'hexo':
+            await hexo.init();
+            await hexo.load();
+            await hexo.call('generate');
+            break;
     }
 })
     .command('deploy <key>', `operation inside ${env_1.rootColor}/.deploy_${api.config.deploy?.type || 'git'}`, function (yargs) {
