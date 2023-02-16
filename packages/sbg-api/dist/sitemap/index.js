@@ -180,9 +180,15 @@ function writeSitemap(callback) {
     (0, sbg_utility_1.writefile)(sitemapTXT, (0, sbg_utility_1.array_remove_empty)(sitemaps).join('\n'));
     cb.apply(this);
 }
-function hexoGenerateSitemap() {
+/**
+ * generate sitemap with hexo
+ * @param config
+ * @returns
+ */
+function hexoGenerateSitemap(config) {
+    if (config === void 0) { config = (0, sbg_utility_1.getConfig)(); }
     return new bluebird_1.default(function (resolve) {
-        var instance = new hexo_1.default((0, sbg_utility_1.getConfig)().cwd);
+        var instance = new hexo_1.default(config.cwd);
         instance.init().then(function () {
             instance.load().then(function () {
                 env.addFilter('formatUrl', function (str) {
@@ -224,7 +230,7 @@ function hexoGenerateSitemap() {
                     return resolve();
                 }
                 var tmplSrc = (0, upath_1.join)(__dirname, '_config_template_sitemap.xml');
-                var template = nunjucks_1.default.compile((0, fs_extra_1.readFileSync)(tmplSrc, 'utf-8'), env);
+                var template = nunjucks_1.default.compile((0, fs_extra_1.readFileSync)(tmplSrc).toString(), env);
                 var tagsCfg = sitemap.tags, catsCfg = sitemap.categories, relCfg = sitemap.rel;
                 var data = template.render({
                     config: config,
@@ -237,15 +243,15 @@ function hexoGenerateSitemap() {
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
                 //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
                 // dump
-                (0, sbg_utility_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data);
+                console.log('sitemap.xml written', (0, sbg_utility_1.writefile)((0, upath_1.join)(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data).file);
                 // write
-                var sitemapXml = (0, upath_1.join)((0, sbg_utility_1.getConfig)().cwd, config.public_dir, 'sitemap.xml');
+                var sitemapXml = (0, upath_1.join)(config.cwd, config.public_dir, 'sitemap.xml');
                 (0, sbg_utility_1.writefile)(sitemapXml, data);
                 instance.log.info('sitemap written', sitemapXml);
                 if (!relCfg)
                     return resolve();
                 var baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
-                var publicDir = (0, upath_1.join)((0, sbg_utility_1.getConfig)().cwd, config.public_dir);
+                var publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
                 gulp_1.default
                     .src('**/*.html', { cwd: publicDir, ignore: sbg_utility_1.commonIgnore })
                     .pipe((0, gulp_dom_1.default)(function () {

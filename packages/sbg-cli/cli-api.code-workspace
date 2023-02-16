@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sbg-api"
+		},
+		{
+			"path": "../sbg-utility"
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		}
+	}
+}

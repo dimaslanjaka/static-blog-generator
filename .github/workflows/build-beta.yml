@@ -2,7 +2,7 @@ name: Build Beta
 
 on:
   push:
-    branches: [ "beta" ]
+    branches: ['beta']
     paths-ignore:
       - '**/dist/**'
       - '**/release/**'
@@ -27,8 +27,9 @@ jobs:
     strategy:
       fail-fast: true
     env:
-      NODE_OPTIONS: "--max-old-space-size=8192"
+      NODE_OPTIONS: '--max-old-space-size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
     runs-on: ubuntu-latest
 
@@ -40,7 +41,7 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           submodules: 'recursive'
       #- run: sh scripts/install-submodules.sh
-        #name: clone submodules
+      #name: clone submodules
       - name: Set env
         id: set-env
         shell: bash
@@ -95,10 +96,10 @@ jobs:
             ${{ steps.set-env.outputs.cache-npm }}
             ${{ steps.set-env.outputs.cache-yarn }}
             ${{ steps.set-env.outputs.cache-yarn2 }}
-            ./packages/sbg-server/src/public
-            **/tmp/**
-            **/node_modules/**
-            **/.yarn
+          #./packages/sbg-server/src/public
+          #**/tmp/**
+          #**/node_modules/**
+          #**/.yarn
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
@@ -109,7 +110,8 @@ jobs:
 
       - run: yarn install
       - run: lerna run build
-      - run: lerna exec "npm run pack --if-present" --ignore=test
+      - run: |
+          lerna exec "npm run pack --if-present" --ignore=test
       - run: npx sbg clean all
         working-directory: test
         name: test clean
@@ -125,3 +127,15 @@ jobs:
       - run: npx sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
+      - run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator")
+          for i in "${arr_variable[@]}"
+          do
+            git add "packages/${i}/dist"
+            git add "packages/${i}/release"
+            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
+          done
+          git push --recurse-submodules=on-demand
+        name: commit and push

@@ -13,4 +13,9 @@ export interface SitemapOptions {
     rel: boolean;
     yoast: boolean;
 }
-export declare function hexoGenerateSitemap(): Bluebird<unknown>;
+/**
+ * generate sitemap with hexo
+ * @param config
+ * @returns
+ */
+export declare function hexoGenerateSitemap(config?: import("sbg-utility").ProjConf): Bluebird<unknown>;

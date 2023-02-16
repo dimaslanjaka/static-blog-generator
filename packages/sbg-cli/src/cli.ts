@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
+import fs from 'fs-extra';
+import { spawnAsync } from 'git-command-helper';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline/promises';
+import { feed, sitemap } from 'sbg-api';
 import SBGServer from 'sbg-server';
 import path from 'upath';
 import yargs from 'yargs';
@@ -112,22 +115,59 @@ yargs
   )
   .command(
     'generate <key>',
-    `operation inside ${rootColor}/${api.config.public_dir}`,
+    `generate operation on ${rootColor}/${api.config.public_dir}`,
     function (yargs) {
       yargs.positional(`seo`, {
         type: `string`,
-        describe: `fix seo`
+        describe: `fix seo after generate site`
       });
       yargs.positional(`safelink`, {
         type: `string`,
-        describe: `anonymize external links`
+        describe: `anonymize external links after generate site`
+      });
+      yargs.positional(`hexo`, {
+        type: `string`,
+        describe: `generate site with hexo`
+      });
+      yargs.positional(`feed`, {
+        type: `string`,
+        describe: `generate feed on ${rootColor}/${api.config.public_dir}`
+      });
+      yargs.positional(`sitemap`, {
+        type: `string`,
+        describe: `generate sitemap on ${rootColor}/${api.config.public_dir}`
       });
     },
     async function ({ key }) {
-      if (key === 'seo') {
-        await api.seo(path.join(api.config.cwd, api.config.public_dir));
-      } else if (key === 'safelink') {
-        await api.safelink(path.join(api.config.cwd, api.config.public_dir));
+      switch (key) {
+        case 'seo':
+          await api.seo(path.join(api.config.cwd, api.config.public_dir));
+          break;
+
+        case 'safelink':
+          await api.safelink(path.join(api.config.cwd, api.config.public_dir));
+          break;
+
+        case 'feed':
+          if (!fs.existsSync(path.join(api.config.cwd, api.config.public_dir))) {
+            console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
+            return;
+          }
+          await feed.hexoGenerateFeed(undefined, api.config);
+          break;
+
+        case 'sitemap':
+          if (!fs.existsSync(path.join(api.config.cwd, api.config.public_dir))) {
+            console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
+            return;
+          }
+          await sitemap.hexoGenerateSitemap(api.config);
+          break;
+
+        case 'hexo':
+          console.log('generating site', api.cwd);
+          await spawnAsync('npx', ['hexo', 'generate'], { cwd: api.cwd, stdio: 'inherit', shell: true });
+          break;
       }
     }
   )
@@ -143,18 +183,32 @@ yargs
         type: `string`,
         describe: `anonymize external links`
       });
+      yargs.positional(`feed`, {
+        type: `string`,
+        describe: `generate feed`
+      });
+      yargs.positional(`sitemap`, {
+        type: `string`,
+        describe: `generate sitemap`
+      });
       yargs.positional(`copy`, {
         type: `string`,
         describe: `copy generated files to deployment directory`
       });
     },
     async function ({ key }) {
-      if (key === 'seo') {
-        await api.seo(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
-      } else if (key === 'safelink') {
-        await api.safelink(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
-      } else if (key === 'copy') {
-        //
+      switch (key) {
+        case 'seo':
+          await api.seo(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+          break;
+
+        case 'safelink':
+          await api.safelink(path.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
+          break;
+
+        case 'copy':
+          await api.deploy.copy();
+          break;
       }
     }
   )
