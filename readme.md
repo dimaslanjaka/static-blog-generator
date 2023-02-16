@@ -1,4 +1,4 @@
-# Static Blog Generator v3 (under development)
+# Static Blog Generator v3
 HexoJS GUI and Helpers - Static Blog Generator NodeJS.
 
 Static Blog Generator v3 using Gulp System.
@@ -67,6 +67,24 @@ npx sbg deploy safelink
 
 ```bash
 npx sbg deploy seo
+```
+
+## Generate YoastSEO Sitemap
+| Source | Destination | Additional |
+| :--- | :--- | :--- |
+| ./public | ./public | you can change public folder by set `public_dir` at `_config.yml` |
+
+```bash
+npx sbg generate sitemap
+```
+
+## Generate RSS ATOM Feeds
+| Source | Destination | Additional |
+| :--- | :--- | :--- |
+| ./public | ./public | you can change public folder by set `public_dir` at `_config.yml` |
+
+```bash
+npx sbg generate feed
 ```
 
 ## Roadmap
