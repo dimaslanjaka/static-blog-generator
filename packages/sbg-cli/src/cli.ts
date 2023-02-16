@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import Hexo from 'hexo';
+import { spawnAsync } from 'git-command-helper';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline/promises';
 import SBGServer from 'sbg-server';
@@ -129,7 +129,6 @@ yargs
       });
     },
     async function ({ key }) {
-      const hexo = new Hexo(api.cwd);
       switch (key) {
         case 'seo':
           await api.seo(path.join(api.config.cwd, api.config.public_dir));
@@ -140,9 +139,8 @@ yargs
           break;
 
         case 'hexo':
-          await hexo.init();
-          await hexo.load();
-          await hexo.call('generate');
+          console.log('generating site', api.cwd);
+          await spawnAsync('npx', ['hexo', 'generate'], { cwd: api.cwd, stdio: 'inherit' });
           break;
       }
     }
