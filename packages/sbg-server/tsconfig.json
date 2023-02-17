@@ -7,7 +7,7 @@
     "lib": ["ES2020", "DOM", "ES6", "ES2021", "ES2021.String"],
     "allowJs": true,
     "checkJs": false,
-    "paths": { "sbg-*": ["../packages/sbg-*"], "src": ["./src"] },
+    "paths": { "sbg-*": ["../sbg-*/src"], "src": ["./src"] },
     "types": ["node"],
     "outDir": "./dist",
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
