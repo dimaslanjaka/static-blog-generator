@@ -15671,6 +15671,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsdom-global@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "jsdom-global@npm:3.0.2"
+  peerDependencies:
+    jsdom: ">=10.0.0"
+  checksum: 5c665a412c244d8cfe541da784ff6888c0ed041da3f4c03d7d4ab514215b3f50a934f89c33b543b7848765d841029978a2592dc04b2e0a8734b4bb54809e67d7
+  languageName: node
+  linkType: hard
+
 "jsdom@npm:^20.0.3":
   version: 20.0.3
   resolution: "jsdom@npm:20.0.3"
@@ -21320,7 +21329,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safelinkify@^1.1.15, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
+"safelinkify@^1.1.16, safelinkify@workspace:^, safelinkify@workspace:packages/safelinkify":
   version: 0.0.0-use.local
   resolution: "safelinkify@workspace:packages/safelinkify"
   dependencies:
@@ -21362,6 +21371,8 @@ __metadata:
     hpagent: ^1.2.0
     html-minifier-terser: ^7.1.0
     jquery: ^3.6.3
+    jsdom: ^21.1.0
+    jsdom-global: ^3.0.2
     markdown-it: ^13.0.1
     markdown-it-abbr: ^1.0.4
     markdown-it-anchor: ^8.6.7
@@ -21629,7 +21640,7 @@ __metadata:
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
-    safelinkify: ^1.1.15
+    safelinkify: ^1.1.16
     slugify: ^1.6.5
     through2: ^4.0.2
     true-case-path: ^2.2.1
