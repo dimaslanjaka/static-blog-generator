@@ -1,8 +1,7 @@
 {
   "name": "instant-indexing",
   "version": "1.0.0",
-  "private": true,
-  "description": "",
+  "description": "Easy Google Instant Indexing API. Force google to index your articles.",
   "main": "dist/index.js",
   "scripts": {
     "start": "node -r ts-node/register -r dotenv/config start.ts",
@@ -26,7 +25,10 @@
     "fs-extra": "^11.1.0",
     "google-auth-library": "^8.7.0",
     "googleapis": "^111.0.0",
+    "open": "^8.4.1",
+    "request": "^2.88.2",
     "sbg-utility": "workspace:^",
+    "server-destroy": "^1.0.1",
     "upath": "^2.0.1"
   },
   "devDependencies": {

@@ -3,15 +3,9 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "src"
   },
-  "include": [
-    "src/**/*.js",
-    "src/**/*.ts",
-    "src/**/*.json"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.json"],
+  "exclude": ["node_modules", "dist", "src/config/*.json"]
 }
