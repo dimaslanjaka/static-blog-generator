@@ -5,8 +5,10 @@
     "target": "es5",
     "downlevelIteration": true,
     "baseUrl": "./",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false
   },
-  "include": ["./src", "./src/**/*.json", "./test", "start.ts"],
+  "include": ["./src", "./src/**/*.json", "./test", "start.ts", "test"],
   "exclude": ["dist", "node_modules"]
 }
