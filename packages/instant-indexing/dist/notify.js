@@ -38,12 +38,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.notify2 = exports.notify = void 0;
 var axios_1 = __importDefault(require("axios"));
 var request_1 = __importDefault(require("request"));
 // https://developers.google.com/search/apis/indexing-api/v3/using-api
 // https://github.com/m3m3nto/giaa/blob/master/modules/indexer.js
+/**
+ * instant indexing using request
+ * @param url
+ * @param type
+ * @param tokens
+ * @returns
+ */
 function notify(url, type, tokens) {
     return new Promise(function (resolve, reject) {
         var options = {
@@ -60,7 +67,7 @@ function notify(url, type, tokens) {
                 type: type
             }
         };
-        (0, request_1["default"])(options, function (error, response, body) {
+        (0, request_1.default)(options, function (error, response, body) {
             if (error) {
                 reject(body);
             }
@@ -69,6 +76,12 @@ function notify(url, type, tokens) {
     });
 }
 exports.notify = notify;
+/**
+ * instant indexing using axios
+ * @param url
+ * @param type
+ * @param tokens
+ */
 function notify2(url, type, tokens) {
     return __awaiter(this, void 0, void 0, function () {
         var options, response;
@@ -87,7 +100,7 @@ function notify2(url, type, tokens) {
                             type: type
                         }
                     };
-                    return [4 /*yield*/, (0, axios_1["default"])(options)];
+                    return [4 /*yield*/, (0, axios_1.default)(options)];
                 case 1:
                     response = _a.sent();
                     console.log(response.data);
@@ -97,3 +110,4 @@ function notify2(url, type, tokens) {
     });
 }
 exports.notify2 = notify2;
+//# sourceMappingURL=notify.js.map

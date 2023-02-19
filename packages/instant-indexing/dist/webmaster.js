@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkIndexed = exports.submitSitemap = exports.getSiteList = void 0;
 var googleapis_1 = require("googleapis");
 var oauth2_1 = require("./oauth2");
@@ -123,3 +123,4 @@ function checkIndexed(inspectionUrl, siteUrl) {
 }
 exports.checkIndexed = checkIndexed;
 // checkIndexed('https://www.webmanajemen.com/chimeraland/materials/pure-wood-essence.html', 'sc-domain:webmanajemen.com');
+//# sourceMappingURL=webmaster.js.map
