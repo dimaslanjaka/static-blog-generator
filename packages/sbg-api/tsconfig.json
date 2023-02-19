@@ -5,12 +5,16 @@
     "target": "es5",
     "baseUrl": "./",
     "outDir": "./dist",
-    "paths": {
-      "src": ["./src"],
-      "sbg-*": ["../sbg-*/src"]
-    }
+    // "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
   "exclude": ["dist"],
-  "references": [{ "path": "../sbg-utility" }, { "path": "../git-command-helper" }]
+  "references": [
+    {
+      "path": "../sbg-utility"
+    },
+    {
+      "path": "../git-command-helper"
+    }
+  ]
 }
