@@ -1,3 +1,4 @@
+import { sitemapCrawlerAsync } from '@sbg/sitemap-crawler';
 import Bluebird from 'bluebird';
 import { readFileSync } from 'fs-extra';
 import gulp from 'gulp';
@@ -17,7 +18,6 @@ import {
   setConfig,
   writefile
 } from 'sbg-utility';
-import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { join } from 'upath';
 import { yoastSeo } from './yoast-sitemap';
 
