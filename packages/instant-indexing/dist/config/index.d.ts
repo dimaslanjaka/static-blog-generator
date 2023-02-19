@@ -1,4 +1,5 @@
 import { ClientSecretType, ServiceAccountType } from './globals';
+export * from './globals';
 /**
  * set client secret
  * @param o

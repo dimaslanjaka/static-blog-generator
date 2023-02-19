@@ -9,5 +9,5 @@
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
   },
   "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.json"],
-  "exclude": ["node_modules", "dist", "src/config/*.json"]
+  "exclude": ["node_modules", "dist", "src/config/*.json", "*.runner.ts", "*.test.ts", "test"]
 }

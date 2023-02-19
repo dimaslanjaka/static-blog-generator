@@ -2,6 +2,7 @@ import { readFileSync } from 'fs-extra';
 import { writefile } from 'sbg-utility';
 import { join } from 'upath';
 import { ClientSecretType, ServiceAccountType } from './globals';
+export * from './globals';
 
 let clientSecret: ClientSecretType;
 let clientSecretPath: string;

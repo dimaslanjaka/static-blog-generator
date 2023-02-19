@@ -24,7 +24,7 @@ import destroyer from 'server-destroy';
 import url from 'url';
 import * as projectConfig from './config';
 
-type MergedAuthClient = Auth.AuthClient & Auth.OAuth2Client;
+export type MergedAuthClient = Auth.AuthClient & Auth.OAuth2Client;
 export interface CustomAuthClient extends MergedAuthClient {
   [key: string]: any;
   credentials: Record<string, any>;
@@ -67,7 +67,7 @@ google.options({ auth: oauth2Client });
  * @param client
  * @return
  */
-function saveCredentials(client: CustomAuthClient): void {
+function saveCredentials(client: CustomAuthClient) {
   const payload = JSON.stringify(
     Object.assign(client.credentials, {
       type: 'authorized_user',

@@ -49,7 +49,7 @@ function getSiteList() {
         var client, response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, oauth2_1.jwtAuthorize)()];
+                case 0: return [4 /*yield*/, (0, oauth2_1.jwtAuthenticate)()];
                 case 1:
                     client = _a.sent();
                     googleapis_1.google.options({ auth: client });
@@ -73,7 +73,7 @@ function submitSitemap(siteUrl, feedpath) {
         var client, res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, oauth2_1.jwtAuthorize)()];
+                case 0: return [4 /*yield*/, (0, oauth2_1.jwtAuthenticate)()];
                 case 1:
                     client = _a.sent();
                     googleapis_1.google.options({ auth: client });
@@ -101,7 +101,7 @@ function checkIndexed(inspectionUrl, siteUrl) {
         var client, resInspectURL;
         return __generator(this, function (_d) {
             switch (_d.label) {
-                case 0: return [4 /*yield*/, (0, oauth2_1.jwtAuthorize)()];
+                case 0: return [4 /*yield*/, (0, oauth2_1.jwtAuthenticate)()];
                 case 1:
                     client = _d.sent();
                     googleapis_1.google.options({ auth: client });
