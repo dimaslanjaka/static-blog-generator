@@ -136,7 +136,7 @@ jobs:
       - run: |
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
-          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator")
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
           for i in "${arr_variable[@]}"
           do
             git add "packages/${i}/dist"
