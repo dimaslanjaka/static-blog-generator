@@ -1,12 +1,12 @@
 import { google } from 'googleapis';
-import { authenticate, scopes } from './oauth2';
+import { googleAuthenticate, scopes } from './oauth2';
 
 main();
 
 const webmasters = google.webmasters('v3');
 
 async function main() {
-  const auth = await authenticate(scopes);
+  const auth = await googleAuthenticate(scopes);
   google.options({ auth });
   const res = webmasters.searchanalytics.query({
     siteUrl: 'https://www.webmanajemen.com',
