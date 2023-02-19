@@ -1,0 +1,20 @@
+{
+  "/release/instant-indexing-1.0.0.tgz": {
+    "integrity": {
+      "sha1": "828fba75951b46484dcdace077190fa3a9d0316c",
+      "sha256": "and+3Nuwl8IIJ0uMeCOZpqzyjd8QWxM5VRXbgw967so=",
+      "md5": "5fa89fd37a554e4f1ebc7a8d74f0393b",
+      "sha512": "iliGykAjHDS2xw/09tbdNsqgqNffKAbxhrJCG8AdB+qrP1F+DXvFvargHUH/xx874w8VShF5AVOjJTU9IlnFNQ=="
+    },
+    "size": "75.79 KB"
+  },
+  "/release/instant-indexing.tgz": {
+    "integrity": {
+      "sha1": "828fba75951b46484dcdace077190fa3a9d0316c",
+      "sha256": "and+3Nuwl8IIJ0uMeCOZpqzyjd8QWxM5VRXbgw967so=",
+      "md5": "5fa89fd37a554e4f1ebc7a8d74f0393b",
+      "sha512": "iliGykAjHDS2xw/09tbdNsqgqNffKAbxhrJCG8AdB+qrP1F+DXvFvargHUH/xx874w8VShF5AVOjJTU9IlnFNQ=="
+    },
+    "size": "75.79 KB"
+  }
+}
