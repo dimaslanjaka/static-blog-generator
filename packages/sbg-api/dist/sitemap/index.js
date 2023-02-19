@@ -74,7 +74,6 @@ var hexo_util_1 = require("hexo-util");
 var micromatch_1 = __importDefault(require("micromatch"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var sbg_utility_1 = require("sbg-utility");
-var sitemap_crawler_1 = require("sitemap-crawler");
 var upath_1 = require("upath");
 var yoast_sitemap_1 = require("./yoast-sitemap");
 /*
@@ -98,13 +97,13 @@ function generateSitemap(url, deep) {
         var promises = [];
         if (typeof url === 'string') {
             crawled.add(url);
-            promises.push((0, sitemap_crawler_1.sitemapCrawlerAsync)(url, {
+            promises.push((0, sbg_utility_1.sitemapCrawlerAsync)(url, {
                 deep: deep
             }));
         }
         else {
             crawled.add((0, sbg_utility_1.getConfig)().url);
-            promises.push((0, sitemap_crawler_1.sitemapCrawlerAsync)((0, sbg_utility_1.getConfig)().url, {
+            promises.push((0, sbg_utility_1.sitemapCrawlerAsync)((0, sbg_utility_1.getConfig)().url, {
                 deep: deep
             }));
         }

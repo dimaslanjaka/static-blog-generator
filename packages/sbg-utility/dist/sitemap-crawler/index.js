@@ -26,22 +26,13 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var wildcards = __importStar(require("./wildcards"));
-exports.default = wildcards;
+exports.SiteMapCrawler = exports.sitemapCrawlerAsync = exports.sitemapCrawler = void 0;
+var siteMap = __importStar(require("./sitemap-crawler"));
+//module 'sitemap-crawler'
 __exportStar(require("./sitemap-crawler"), exports);
-__exportStar(require("./wildcards"), exports);
-/*
-const sbgUtils = {
-  ...utils,
-  ...config,
-  ...globals,
-  ...gutils,
-  ...utils.logger,
-  ...utils.array,
-  ...utils.string,
-  ...utils.chain
-};
-export default sbgUtils;
-*/
-//
+var sitemap_crawler_1 = require("./sitemap-crawler");
+Object.defineProperty(exports, "sitemapCrawler", { enumerable: true, get: function () { return sitemap_crawler_1.sitemapCrawler; } });
+Object.defineProperty(exports, "sitemapCrawlerAsync", { enumerable: true, get: function () { return sitemap_crawler_1.sitemapCrawlerAsync; } });
+Object.defineProperty(exports, "SiteMapCrawler", { enumerable: true, get: function () { return sitemap_crawler_1.SiteMapCrawlerCore; } });
+exports.default = siteMap.sitemapCrawler;
 //# sourceMappingURL=index.js.map
