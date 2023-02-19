@@ -14,10 +14,8 @@ import {
   getConfig,
   Logger,
   noop,
-  setConfig,
-  writefile
+  setConfig, sitemapCrawlerAsync, writefile
 } from 'sbg-utility';
-import { sitemapCrawlerAsync } from 'sitemap-crawler';
 import { join } from 'upath';
 import { yoastSeo } from './yoast-sitemap';
 

@@ -18,7 +18,7 @@
     "!**/src/**"
   ],
   "scripts": {
-    "update:submodules": "lerna exec \"npm-check-updates -u -x chalk,codemirror,highlight.js,hexo\" --concurrency=1",
+    "update:submodules": "lerna run update:ncu --no-bail --concurrency=1",
     "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
     "update": "run-s update:**",
     "build": "lerna run build --concurrency=1",
@@ -84,6 +84,7 @@
       "packages/google-news-sitemap",
       "packages/hexo-blogger-xml",
       "packages/static-blog-generator",
+      "packages/instant-indexing",
       "test"
     ]
   },

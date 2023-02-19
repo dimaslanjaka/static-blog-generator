@@ -23,7 +23,10 @@ describe('check method', () => {
     'file_to_hash',
     'normalizePath',
     'pathJoin',
-    'joinPath'
+    'joinPath',
+    'sitemapCrawler',
+    'sitemapCrawlerAsync',
+    'SiteMapCrawler'
   ];
 
   for (let i = 0; i < props.length; i++) {
