@@ -15,7 +15,7 @@
 
 import { default as axios } from 'axios';
 import fs from 'fs';
-import { google } from 'googleapis';
+import { Auth, google } from 'googleapis';
 import http from 'http';
 import opn from 'open';
 import path from 'path';
@@ -23,6 +23,12 @@ import utility from 'sbg-utility';
 import destroyer from 'server-destroy';
 import url from 'url';
 import * as projectConfig from './config';
+
+type MergedAuthClient = Auth.AuthClient & Auth.OAuth2Client;
+export interface CustomAuthClient extends MergedAuthClient {
+  [key: string]: any;
+  credentials: Record<string, any>;
+}
 
 /**
  * To use OAuth2 authentication, we need access to a a CLIENT_ID, CLIENT_SECRET, AND REDIRECT_URI.  To get these credentials for your application, visit https://console.cloud.google.com/apis/credentials.
@@ -35,7 +41,7 @@ const keys = {
   service_key: process.env.GSERVICEKEY
 };
 const TOKEN_PATH = path.join(process.cwd(), '.cache/token.json');
-const scopes = [
+export const scopes = [
   'https://www.googleapis.com/auth/user.emails.read',
   'https://www.googleapis.com/auth/userinfo.profile',
   'https://www.googleapis.com/auth/webmasters',
@@ -58,10 +64,10 @@ google.options({ auth: oauth2Client });
 /**
  * Serializes credentials to a file comptible with GoogleAUth.fromJSON.
  *
- * @param {import('googleapis').Auth.OAuth2Client | { credentials: Record<string,any> }} client
- * @return {void}
+ * @param client
+ * @return
  */
-function saveCredentials(client: import('googleapis').Auth.OAuth2Client | { credentials: Record<string, any> }): void {
+function saveCredentials(client: CustomAuthClient): void {
   const payload = JSON.stringify(
     Object.assign(client.credentials, {
       type: 'authorized_user',
@@ -94,10 +100,10 @@ export function loadSavedCredentialsIfExist() /*: import('googleapis').Auth.OAut
  * @returns
  */
 export async function refreshToken() {
-  const client = await authenticate(scopes);
+  const client = await googleAuthenticate(scopes);
   if (client['refreshAccessToken']) {
     const tokens = await client['refreshAccessToken']();
-    saveCredentials(tokens);
+    saveCredentials(tokens as any);
   }
 }
 
@@ -131,13 +137,13 @@ export function checkTokenExpired(): Promise<boolean> {
  * Open an http server to accept the oauth callback. In this simple example, the only request to our webserver is to /callback?code=<code>
  * @returns
  */
-export async function authenticate(scopes: string[], rewrite = false): Promise<import('googleapis').Auth.AuthClient> {
+export async function googleAuthenticate(scopes: string[], rewrite = false): Promise<MergedAuthClient> {
   return new Promise((resolve, reject) => {
     // authorize using local token
     if (!rewrite) {
       const client = loadSavedCredentialsIfExist();
       if (client) {
-        return resolve(client);
+        return resolve(client as MergedAuthClient);
       }
     }
 
@@ -174,23 +180,13 @@ export async function authenticate(scopes: string[], rewrite = false): Promise<i
  * @param scopes
  * @returns
  */
-export function jwtAuthenticate(scopes: string[] = global.scopes): Promise<import('googleapis').Auth.AuthClient> {
+export function jwtAuthenticate(scopes: string[] = global.scopes): Promise<MergedAuthClient> {
   if (!scopes) scopes = global.scopes;
   return new Promise((resolve, reject) => {
     projectConfig
       .getServiceAccount()
       .then((config) => {
-        /*const auth = new google.auth.GoogleAuth({
-          keyFile: config.path,
-          scopes
-        });
-        auth
-          .getClient()
-          .then((client) => {
-            resolve(client);
-          })
-          .catch(reject);*/
-        authenticate(scopes).then((authClient) => {
+        googleAuthenticate(scopes).then((authClient) => {
           const auth = new google.auth.GoogleAuth({
             keyFile: config.path,
             scopes,
@@ -200,8 +196,8 @@ export function jwtAuthenticate(scopes: string[] = global.scopes): Promise<impor
           auth
             .getClient()
             .then((client) => {
-              saveCredentials(client);
-              resolve(client);
+              saveCredentials(client as MergedAuthClient);
+              resolve(client as MergedAuthClient);
             })
             .catch(reject);
         });
@@ -221,6 +217,6 @@ export async function getPeopleInfo() {
 }
 
 if (require.main === module)
-  authenticate(scopes)
+  googleAuthenticate(scopes)
     .then((client) => saveCredentials(client))
     .catch(console.error);
