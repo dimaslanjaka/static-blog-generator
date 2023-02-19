@@ -84,6 +84,8 @@
       "packages/google-news-sitemap",
       "packages/hexo-blogger-xml",
       "packages/static-blog-generator",
+      "packages/sitemap-crawler",
+      "packages/instant-indexing",
       "test"
     ]
   },
