@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Easy Google Instant Indexing API. Force google to index your articles.",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "readme.md"
+  ],
   "scripts": {
     "start": "node -r ts-node/register -r dotenv/config start.ts",
     "build": "tsc --build tsconfig.build.json",
