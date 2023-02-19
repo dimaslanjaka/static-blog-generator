@@ -124,6 +124,12 @@ jobs:
       - run: npx hexo generate
         working-directory: test
         name: test generate site with hexo
+      - run: npx sbg generate feed
+        working-directory: test
+        name: test generate feed
+      - run: npx sbg generate sitemap
+        working-directory: test
+        name: test generate sitemap
       - run: npx sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
