@@ -89,6 +89,7 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "npm.packageManager": "npm",
-  "git.enabled": false
+  "npm.packageManager": "yarn",
+  "git.enabled": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on"
 }
