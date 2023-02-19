@@ -3,7 +3,7 @@ import Bluebird from 'bluebird';
 import cheerio from 'cheerio';
 import ProgressBar from 'progress';
 import request from 'request';
-import utility from 'sbg-utility';
+import { debug } from '../utils';
 
 type cb = (arg0: Error | null, arg1?: string[]) => void;
 
@@ -162,10 +162,10 @@ export class SiteMapCrawlerCore {
  */
 function attachProtocol(link: string) {
   if (link.startsWith('/')) {
-    utility.debug('sitemap-crawler')('start with slash', link);
+    debug('sitemap-crawler')('start with slash', link);
     return '';
   } else if (link.startsWith('#')) {
-    utility.debug('sitemap-crawler')('start with hash', link);
+    debug('sitemap-crawler')('start with hash', link);
     return '';
   }
   if (!/^https?:/i.test(link)) {
