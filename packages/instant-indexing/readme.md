@@ -2,7 +2,7 @@
 
 Instant indexing using google API
 
-env variable needed (`.env`)
+env variable needed
 ```properties
 GAPI=xxx
 GCLIENT=x-xxx.apps.googleusercontent.com
