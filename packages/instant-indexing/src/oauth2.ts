@@ -13,16 +13,16 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const http = require('http');
-const url = require('url');
-const opn = require('open');
-const destroyer = require('server-destroy');
-const utility = require('sbg-utility');
-const { google } = require('googleapis');
-const projectConfig = require('./config');
-const { default: axios } = require('axios');
+import { default as axios } from 'axios';
+import fs from 'fs';
+import { google } from 'googleapis';
+import http from 'http';
+import opn from 'open';
+import path from 'path';
+import utility from 'sbg-utility';
+import destroyer from 'server-destroy';
+import url from 'url';
+import * as projectConfig from './config';
 
 /**
  * To use OAuth2 authentication, we need access to a a CLIENT_ID, CLIENT_SECRET, AND REDIRECT_URI.  To get these credentials for your application, visit https://console.cloud.google.com/apis/credentials.
@@ -61,7 +61,7 @@ google.options({ auth: oauth2Client });
  * @param {import('googleapis').Auth.OAuth2Client | { credentials: Record<string,any> }} client
  * @return {void}
  */
-function saveCredentials(client) {
+function saveCredentials(client: import('googleapis').Auth.OAuth2Client | { credentials: Record<string, any> }): void {
   const payload = JSON.stringify(
     Object.assign(client.credentials, {
       type: 'authorized_user',
@@ -76,9 +76,9 @@ function saveCredentials(client) {
 /**
  * Reads previously authorized credentials from the save file.
  *
- * @return {import('googleapis').Auth.OAuth2Client | null}
+ * @return
  */
-function loadSavedCredentialsIfExist() {
+export function loadSavedCredentialsIfExist() /*: import('googleapis').Auth.OAuth2Client | null*/ {
   try {
     const content = fs.readFileSync(TOKEN_PATH).toString();
     const credentials = JSON.parse(content);
@@ -91,19 +91,21 @@ function loadSavedCredentialsIfExist() {
 
 /**
  * refresh access token
- * @returns {Promise<void>}
+ * @returns
  */
-async function refreshToken() {
+export async function refreshToken() {
   const client = await authenticate(scopes);
-  const tokens = await client.refreshAccessToken();
-  saveCredentials(tokens);
+  if (client['refreshAccessToken']) {
+    const tokens = await client['refreshAccessToken']();
+    saveCredentials(tokens);
+  }
 }
 
 /**
  * Check offline token is expired
  * @returns {Promise<boolean>}
  */
-function checkTokenExpired() {
+export function checkTokenExpired(): Promise<boolean> {
   return new Promise((resolve) => {
     if (!fs.existsSync(TOKEN_PATH)) return null;
     const content = fs.readFileSync(TOKEN_PATH).toString();
@@ -127,9 +129,9 @@ function checkTokenExpired() {
 
 /**
  * Open an http server to accept the oauth callback. In this simple example, the only request to our webserver is to /callback?code=<code>
- * @returns {Promise<import('googleapis').Auth.OAuth2Client>}
+ * @returns
  */
-async function authenticate(scopes, rewrite = false) {
+export async function authenticate(scopes: string[], rewrite = false): Promise<import('googleapis').Auth.AuthClient> {
   return new Promise((resolve, reject) => {
     // authorize using local token
     if (!rewrite) {
@@ -169,10 +171,10 @@ async function authenticate(scopes, rewrite = false) {
 
 /**
  * Authorize with IAM Admin Email
- * @param {string[]} scopes
- * @returns {Promise<import('googleapis').Auth.Compute>}
+ * @param scopes
+ * @returns
  */
-function jwtAuthenticate(scopes = global.scopes) {
+export function jwtAuthenticate(scopes: string[] = global.scopes): Promise<import('googleapis').Auth.AuthClient> {
   if (!scopes) scopes = global.scopes;
   return new Promise((resolve, reject) => {
     projectConfig
@@ -193,7 +195,7 @@ function jwtAuthenticate(scopes = global.scopes) {
             keyFile: config.path,
             scopes,
             authClient,
-            credentials: authClient.credentials
+            credentials: <any>authClient.credentials
           });
           auth
             .getClient()
@@ -208,27 +210,17 @@ function jwtAuthenticate(scopes = global.scopes) {
   });
 }
 
-async function _getPeopleInfo() {
+export async function getPeopleInfo() {
   // retrieve user profile
   const people = google.people('v1');
   const res = await people.people.get({
     resourceName: 'people/me',
     personFields: 'emailAddresses'
   });
-  console.log(res.data);
+  return res.data;
 }
 
 if (require.main === module)
   authenticate(scopes)
     .then((client) => saveCredentials(client))
     .catch(console.error);
-
-module.exports = {
-  authenticate,
-  jwtAuthorize: jwtAuthenticate,
-  scopes,
-  saveCredentials,
-  loadSavedCredentialsIfExist,
-  checkTokenExpired,
-  refreshToken
-};
