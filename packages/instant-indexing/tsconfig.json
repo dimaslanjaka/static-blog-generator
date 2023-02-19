@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "checkJs": false,
+    "allowJs": true
+  },
+  "include": ["src", "start.ts"],
+  "exclude": ["node_modules", "dist"]
+}
