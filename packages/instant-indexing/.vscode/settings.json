@@ -91,5 +91,9 @@
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "npm.packageManager": "yarn",
   "git.enabled": true,
-  "typescript.preferences.includePackageJsonAutoImports": "on"
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "code-runner.executorMapByGlob": {
+    "*.test.ts": "yarn test -- $fileNameWithoutExt",
+    "*.spec.ts": "yarn test -- $fileNameWithoutExt"
+  }
 }

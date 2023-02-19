@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs-extra';
+import { readFileSync } from 'fs-extra';
 import { writefile } from 'sbg-utility';
 import { join } from 'upath';
 import { ClientSecretType, ServiceAccountType } from './globals';
@@ -13,7 +13,7 @@ let clientSecretPath: string;
 export function setClientSecret(o: ClientSecretType | string) {
   if (typeof o === 'string') {
     clientSecretPath = o;
-    clientSecret = JSON.parse(readdirSync(o).toString());
+    clientSecret = JSON.parse(readFileSync(o).toString());
   } else {
     clientSecret = o;
   }
@@ -57,7 +57,7 @@ export async function getServiceAccount() {
 export function setServiceAccount(o: ServiceAccountType | string) {
   if (typeof o === 'string') {
     ServiceAccountPath = o;
-    ServiceAccount = JSON.parse(readdirSync(o).toString());
+    ServiceAccount = JSON.parse(readFileSync(o).toString());
   } else {
     ServiceAccount = o;
   }

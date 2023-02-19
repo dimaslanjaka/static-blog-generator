@@ -21,7 +21,6 @@ const opn = require('open');
 const destroyer = require('server-destroy');
 const utility = require('sbg-utility');
 const { google } = require('googleapis');
-const people = google.people('v1');
 const projectConfig = require('./config');
 const { default: axios } = require('axios');
 
@@ -44,6 +43,7 @@ const scopes = [
   'https://www.googleapis.com/auth/webmasters.readonly',
   'https://www.googleapis.com/auth/indexing'
 ];
+global.scopes = scopes;
 
 /**
  * Create a new OAuth2 client with the configured keys.
@@ -169,9 +169,11 @@ async function authenticate(scopes, rewrite = false) {
 
 /**
  * Authorize with IAM Admin Email
+ * @param {string[]} scopes
  * @returns {Promise<import('googleapis').Auth.Compute>}
  */
-function jwtAuthenticate() {
+function jwtAuthenticate(scopes = global.scopes) {
+  if (!scopes) scopes = global.scopes;
   return new Promise((resolve, reject) => {
     projectConfig
       .getServiceAccount()
@@ -208,6 +210,7 @@ function jwtAuthenticate() {
 
 async function _getPeopleInfo() {
   // retrieve user profile
+  const people = google.people('v1');
   const res = await people.people.get({
     resourceName: 'people/me',
     personFields: 'emailAddresses'
