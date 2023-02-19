@@ -2,19 +2,20 @@
 
 Instant indexing using google API
 
-env variable needed
+## env variable needed
 ```properties
-GAPI=xxx
+GAPI=xxxGOOGLE API KEY V3xxx
 GCLIENT=x-xxx.apps.googleusercontent.com
 GSECRET=xxx-xxxx-xxx
 GCALLBACK=http://localhost:4000/auth
-GSERVICEKEY=xxxxx
+GSERVICEKEY=xxxGOOGLE SERVICE KEYxxx
 GSERVICEMAIL=main-xxx@xxx-xxx.iam.gserviceaccount.com
-GSERVICEID=xxxx
+GSERVICEID=xxxGOOGLE SERVICE IDxxx
 GCLIENTPEM=base64 encoded JSON google client
 GSERVICEPEM=base64 encoded JSON google service IAM admin
 ```
 
+## Basic Usage
 ```typescript
 import { google } from 'googleapis';
 import { jwtAuthenticate } from 'instant-indexing';
@@ -33,6 +34,7 @@ jwtAuthenticate(['profile']).then((client) => {
 });
 ```
 
+## To index article
 ```typescript
 import { notify2, jwtAuthenticate } from 'instant-indexing';
 
