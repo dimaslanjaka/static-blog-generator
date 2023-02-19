@@ -2,7 +2,9 @@ import { Auth } from 'googleapis';
 export type MergedAuthClient = Auth.AuthClient & Auth.OAuth2Client;
 export interface CustomAuthClient extends MergedAuthClient {
     [key: string]: any;
-    credentials: Record<string, any>;
+    credentials: Auth.Credentials & {
+        [key: string]: any;
+    };
 }
 export declare const scopes: string[];
 /**
