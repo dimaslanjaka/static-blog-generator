@@ -11,4 +11,6 @@ GCALLBACK=http://localhost:4000/auth
 GSERVICEKEY=xxxxx
 GSERVICEMAIL=main-xxx@xxx-xxx.iam.gserviceaccount.com
 GSERVICEID=xxxx
+GCLIENTPEM=base64 encoded JSON google client
+GSERVICEPEM=base64 encoded JSON google service IAM admin
 ```
