@@ -1,0 +1,38 @@
+{
+  "/release/sitemap-crawler-1.0.0.tgz": {
+    "integrity": {
+      "sha1": "128c3aef53166f1f0c957d01baa6cd682ffbd33c",
+      "sha256": "Q9kgw+59lrq7/5PtzfrcvAQ4DsuHKKqhFSUPaED0n3c=",
+      "md5": "7ddea51d10b4e49c210e897f4ca7aa52",
+      "sha512": "t3MS2hk9Hpzz4F/qwYC7QU5UIGb+DIBwuexmZW5d4P8QB57JY4inaXLIMpE9vD/rTwlmVkorZB+zcGm/PuF1XA=="
+    },
+    "size": "7.83 KB"
+  },
+  "/release/sitemap-crawler-1.0.1.tgz": {
+    "integrity": {
+      "sha1": "47f562e9dc80f97785498564dc1672b631bd598a",
+      "sha256": "aQqe9uQ6PyR6WFO5QByLL967YnkZ+HX9WsqrHBBHeMk=",
+      "md5": "a7409b831cbfd4161caf7e5a5a206487",
+      "sha512": "VGlaNnlm2s3OWsEbl6J8LKkRAQZ+vl7D0IzMyGLZGz9ee2f2S6icVLJ2bJwm3ScDilXVMkXCe2Aryrc0GSq8/g=="
+    },
+    "size": "17.57 KB"
+  },
+  "/release/sitemap-crawler-1.0.2.tgz": {
+    "integrity": {
+      "sha1": "2699e9cc22d1ace37340333766d66d57f19afc67",
+      "sha256": "yiHlODh5XHheAcKQGNOMhsLULClCqMXTmOlgs98my24=",
+      "md5": "7cf1572f2732676f87424eb94f6c7425",
+      "sha512": "KIPVXGoTn/VZ7flfWxVwqW+QgGcoSDZj3MV24xF7fLENfIW4P8MCllIxnrWshoTW/fwlZ5bNE1NWEI1/DH0lAQ=="
+    },
+    "size": "1172.78 KB"
+  },
+  "/release/sitemap-crawler.tgz": {
+    "integrity": {
+      "sha1": "2699e9cc22d1ace37340333766d66d57f19afc67",
+      "sha256": "yiHlODh5XHheAcKQGNOMhsLULClCqMXTmOlgs98my24=",
+      "md5": "7cf1572f2732676f87424eb94f6c7425",
+      "sha512": "KIPVXGoTn/VZ7flfWxVwqW+QgGcoSDZj3MV24xF7fLENfIW4P8MCllIxnrWshoTW/fwlZ5bNE1NWEI1/DH0lAQ=="
+    },
+    "size": "1172.78 KB"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": ["./src", "./src/**/*.json", "./test", "start.ts", "test"],
+  "exclude": ["dist", "node_modules"]
+}
