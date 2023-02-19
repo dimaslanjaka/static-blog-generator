@@ -5,13 +5,15 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node -r ts-node/register -r dotenv/config start.ts",
-    "build": "tsc -p tsconfig.build.json",
-    "postbuild": "node packer.js",
+    "build": "tsc --build tsconfig.build.json",
+    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
+    "update": "run-s update:**",
+    "pack": "node packer.js --yarn",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
-    "update": "npx npm-check-updates -u"
+    "update:ncu": "npx npm-check-updates -u"
   },
   "keywords": [],
   "author": "",

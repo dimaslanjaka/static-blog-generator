@@ -1,5 +1,17 @@
-import { ServiceAccountType } from './globals';
-export declare function getApiConfig(index?: number): any;
+import { ClientSecretType, ServiceAccountType } from './globals';
+/**
+ * set client secret
+ * @param o
+ */
+export declare function setClientSecret(o: ClientSecretType | string): void;
+/**
+ * get client secret
+ * @returns
+ */
+export declare function getClientSecret(): {
+    path: string;
+    key: ClientSecretType;
+};
 /**
  * Get Service Account
  * @returns

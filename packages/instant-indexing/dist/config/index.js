@@ -35,21 +35,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-exports.__esModule = true;
-exports.setServiceAccount = exports.getServiceAccount = exports.getApiConfig = void 0;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.setServiceAccount = exports.getServiceAccount = exports.getClientSecret = exports.setClientSecret = void 0;
 var fs_extra_1 = require("fs-extra");
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
-var readDir = (0, fs_extra_1.readdirSync)(__dirname)
-    .filter(function (str) { return str.endsWith('.json'); })
-    .map(function (str) { return (0, upath_1.join)(__dirname, str); });
-function getApiConfig(index) {
-    if (index === void 0) { index = 0; }
-    return readDir
-        .map(function (path) { return Object.assign({ keyFile: path }, JSON.parse((0, fs_extra_1.readFileSync)(path, 'utf-8'))); })
-        .filter(function (o) { return 'web' in o; })[index];
+var clientSecret;
+var clientSecretPath;
+/**
+ * set client secret
+ * @param o
+ */
+function setClientSecret(o) {
+    if (typeof o === 'string') {
+        clientSecretPath = o;
+        clientSecret = JSON.parse((0, fs_extra_1.readdirSync)(o).toString());
+    }
+    else {
+        clientSecret = o;
+    }
 }
-exports.getApiConfig = getApiConfig;
+exports.setClientSecret = setClientSecret;
+/**
+ * get client secret
+ * @returns
+ */
+function getClientSecret() {
+    return {
+        path: clientSecretPath,
+        key: clientSecret
+    };
+}
+exports.getClientSecret = getClientSecret;
 var ServiceAccount;
 var ServiceAccountPath;
 /**
@@ -87,11 +104,19 @@ function setServiceAccount(o) {
     }
 }
 exports.setServiceAccount = setServiceAccount;
+// write service account from Base64 format env variable
 if (typeof process.env.GSERVICEPEM === 'string') {
-    (0, sbg_utility_1.writefile)((0, upath_1.join)(__dirname, 'service-account.json'), process.env.GSERVICEPEM);
+    var key = Buffer.from(process.env.GSERVICEPEM, 'base64').toString('ascii');
+    var saveto = (0, upath_1.join)(__dirname, 'service-account.json');
+    (0, sbg_utility_1.writefile)(saveto, key);
+    setServiceAccount(saveto);
 }
-// write client secret
+// write client secret from Base64 format env variable
 if (typeof process.env.GCLIENTPEM === 'string') {
-    (0, sbg_utility_1.writefile)((0, upath_1.join)(__dirname, 'client-secret.json'), process.env.GCLIENTPEM);
+    var saveto = (0, upath_1.join)(__dirname, 'client-secret.json');
+    var key = Buffer.from(process.env.GCLIENTPEM, 'base64').toString('ascii');
+    (0, sbg_utility_1.writefile)(saveto, key);
+    setClientSecret(saveto);
 }
 // module.exports = serviceConfig;
+//# sourceMappingURL=index.js.map

@@ -12,9 +12,11 @@ export interface ServiceAccountType {
     client_x509_cert_url: string;
 }
 export interface ClientSecretType {
+    [key: string]: any;
     web: ClientSecretWebType;
 }
 export interface ClientSecretWebType {
+    [key: string]: any;
     client_id: string;
     project_id: string;
     auth_uri: string;
