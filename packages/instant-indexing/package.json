@@ -18,7 +18,7 @@
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
     "update:ncu": "npx npm-check-updates -u",
-    "test": "node"
+    "test": "jest --setupFiles dotenv/config --runInBand"
   },
   "keywords": [],
   "author": "",
