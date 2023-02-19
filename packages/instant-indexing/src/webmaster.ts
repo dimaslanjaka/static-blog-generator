@@ -1,5 +1,5 @@
 import { google } from 'googleapis';
-import { jwtAuthorize } from './oauth2';
+import { jwtAuthenticate } from './oauth2';
 
 const searchconsole = google.searchconsole('v1');
 
@@ -8,7 +8,7 @@ const searchconsole = google.searchconsole('v1');
  * @returns
  */
 export async function getSiteList() {
-  const client = await jwtAuthorize();
+  const client = await jwtAuthenticate();
   google.options({ auth: client });
   const response = await searchconsole.sites.list({});
   return response.data;
@@ -21,7 +21,7 @@ export async function getSiteList() {
  * @returns
  */
 export async function submitSitemap(siteUrl: string, feedpath: string) {
-  const client = await jwtAuthorize();
+  const client = await jwtAuthenticate();
   google.options({ auth: client });
   const res = await searchconsole.sitemaps.submit({
     feedpath,
@@ -37,7 +37,7 @@ export async function submitSitemap(siteUrl: string, feedpath: string) {
  * @returns
  */
 export async function checkIndexed(inspectionUrl: string, siteUrl: string) {
-  const client = await jwtAuthorize();
+  const client = await jwtAuthenticate();
   google.options({ auth: client });
   const resInspectURL = await searchconsole.urlInspection.index.inspect({
     requestBody: {
