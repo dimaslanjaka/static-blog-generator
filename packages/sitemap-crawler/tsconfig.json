@@ -19,16 +19,21 @@
     "emitDecoratorMetadata": true,
     "target": "ES2015",
     "module": "CommonJS",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "rootDir": "src"
   },
   "typeAcquisition": {
     "enable": true
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.runner.ts",
+    "**/___*.ts"
   ]
 }
