@@ -1,4 +1,18 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,6 +54,7 @@ exports.setServiceAccount = exports.getServiceAccount = exports.getClientSecret 
 var fs_extra_1 = require("fs-extra");
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
+__exportStar(require("./globals"), exports);
 var clientSecret;
 var clientSecretPath;
 /**
@@ -49,7 +64,7 @@ var clientSecretPath;
 function setClientSecret(o) {
     if (typeof o === 'string') {
         clientSecretPath = o;
-        clientSecret = JSON.parse((0, fs_extra_1.readdirSync)(o).toString());
+        clientSecret = JSON.parse((0, fs_extra_1.readFileSync)(o).toString());
     }
     else {
         clientSecret = o;
@@ -97,7 +112,7 @@ exports.getServiceAccount = getServiceAccount;
 function setServiceAccount(o) {
     if (typeof o === 'string') {
         ServiceAccountPath = o;
-        ServiceAccount = JSON.parse((0, fs_extra_1.readdirSync)(o).toString());
+        ServiceAccount = JSON.parse((0, fs_extra_1.readFileSync)(o).toString());
     }
     else {
         ServiceAccount = o;

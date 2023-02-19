@@ -45,7 +45,7 @@ function main() {
         var auth, res, data;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, oauth2_1.authenticate)(oauth2_1.scopes)];
+                case 0: return [4 /*yield*/, (0, oauth2_1.googleAuthenticate)(oauth2_1.scopes)];
                 case 1:
                     auth = _a.sent();
                     googleapis_1.google.options({ auth: auth });
@@ -65,4 +65,4 @@ function main() {
         });
     });
 }
-//# sourceMappingURL=server.js.map
+//# sourceMappingURL=server.runner.js.map
