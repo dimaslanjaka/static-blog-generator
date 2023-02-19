@@ -17,5 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./config"), exports);
 __exportStar(require("./notify"), exports);
 __exportStar(require("./oauth2"), exports);
+__exportStar(require("./webmaster"), exports);
 //
 //# sourceMappingURL=index.js.map
