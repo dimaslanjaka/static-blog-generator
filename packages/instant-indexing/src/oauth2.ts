@@ -102,14 +102,15 @@ export function loadSavedCredentialsIfExist() /*: import('googleapis').Auth.OAut
 export async function refreshToken() {
   const client = await googleAuthenticate(scopes);
   if (client['refreshAccessToken']) {
-    const tokens = await client['refreshAccessToken']();
-    saveCredentials(tokens as any);
+    const { credentials } = await client['refreshAccessToken']();
+    oauth2Client.setCredentials(credentials);
+    saveCredentials(oauth2Client);
   }
 }
 
 /**
  * Check offline token is expired
- * @returns {Promise<boolean>}
+ * @returns
  */
 export function checkTokenExpired(): Promise<boolean> {
   return new Promise((resolve) => {
