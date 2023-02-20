@@ -140,9 +140,11 @@ jobs:
           arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
           for i in "${arr_variable[@]}"
           do
-            git add "packages/${i}/dist"
-            git add "packages/${i}/release"
-            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}"
+            git add "packages/${i}/dist" 2>/dev/null
+            git add "packages/${i}/release" 2>/dev/null
+            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}" 2>/dev/null
           done
-          git push --recurse-submodules=on-demand
+          # git push --recurse-submodules=on-demand
+          git push
         name: commit and push
+        shell: bash
