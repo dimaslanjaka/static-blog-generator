@@ -58,6 +58,7 @@
     "git-command-helper": "workspace:^",
     "glob": "^8.1.0",
     "highlight.js": "11.7.0",
+    "instant-indexing": "workspace:^",
     "markdown-it": "^13.0.1",
     "moment-timezone": "^0.5.40",
     "nunjucks": "^3.2.3",
