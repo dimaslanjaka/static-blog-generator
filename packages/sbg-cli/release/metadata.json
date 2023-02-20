@@ -10,12 +10,12 @@
   },
   "/release/sbg-cli.tgz": {
     "integrity": {
-      "sha1": "4ac595d424435aea9952b7473132dcd3c5403409",
-      "sha256": "F9MfvlLfu1LSMs3QlWN6N0eQ3CoclsYlDZ788ant2Fo=",
-      "md5": "d19db4f19e7342e289275862fa35caca",
-      "sha512": "tkj27de63YMoOeR9Nmt0GhAXyl+KRLUTMvWZ6bd0QMeQzKzduLd/PnxA1a1hkH4FVB5znzuGXZ4pdRyF1z2OfA=="
+      "sha1": "2d8ad55025384f1ea27cd76ba7fcd02b8215e31b",
+      "sha256": "iFH3LlfRbrkjNlKrYpYKsngqHpHGj2WgFhIcY7+HzW0=",
+      "md5": "7c43b6a4eebeb1c3142d7284f72f95ef",
+      "sha512": "kdvVOI6fp8h0aE/1bHyiKmPfnX1czTVdtqLaN7d2JyD+wek9O8axx9GiRfxg/QAp/Ty0TxwBacrpUU/e4z6deA=="
     },
-    "size": "36.72 KB"
+    "size": "8.90 KB"
   },
   "/release/sbg-cli-1.0.1.tgz": {
     "integrity": {
@@ -43,5 +43,14 @@
       "sha512": "tkj27de63YMoOeR9Nmt0GhAXyl+KRLUTMvWZ6bd0QMeQzKzduLd/PnxA1a1hkH4FVB5znzuGXZ4pdRyF1z2OfA=="
     },
     "size": "36.72 KB"
+  },
+  "/release/sbg-cli-1.0.4.tgz": {
+    "integrity": {
+      "sha1": "2d8ad55025384f1ea27cd76ba7fcd02b8215e31b",
+      "sha256": "iFH3LlfRbrkjNlKrYpYKsngqHpHGj2WgFhIcY7+HzW0=",
+      "md5": "7c43b6a4eebeb1c3142d7284f72f95ef",
+      "sha512": "kdvVOI6fp8h0aE/1bHyiKmPfnX1czTVdtqLaN7d2JyD+wek9O8axx9GiRfxg/QAp/Ty0TxwBacrpUU/e4z6deA=="
+    },
+    "size": "8.90 KB"
   }
 }
