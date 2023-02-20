@@ -1,5 +1,4 @@
-process.env.DEBUG = 'sbg-server,sbg-server:*';
-
+require('dotenv').config();
 const { pathJoin } = require('sbg-utility');
 const { SBGServer } = require('./dist/server');
 

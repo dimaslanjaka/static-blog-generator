@@ -2,3 +2,4 @@ src/public
 __*
 !__test*
 source/libs/codemirror
+.env
