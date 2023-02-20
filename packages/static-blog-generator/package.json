@@ -28,7 +28,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+    "url": "https://github.com/dimaslanjaka/static-blog-generator",
+    "directory": "packages/static-blog-generator"
   },
   "keywords": [
     "gulp",
