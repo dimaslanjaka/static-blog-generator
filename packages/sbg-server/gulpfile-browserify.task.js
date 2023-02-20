@@ -1,16 +1,10 @@
 const browserify = require('browserify');
-const fs = require('fs-extra');
 const path = require('upath');
 const glob = require('glob');
-const gulp = require('gulp');
 const Bluebird = require('bluebird');
 const utility = require('sbg-utility');
 
-const createWriteStream = (p) => {
-  if (!fs.existsSync(path.dirname(p)))
-    fs.mkdirSync(path.dirname(p), { recursive: true });
-  return fs.createWriteStream(p);
-};
+const createWriteStream = utility.createWriteStream;
 
 const src = path.join(__dirname, './source/scripts');
 const dist = path.join(__dirname, './src/public/js');
@@ -22,7 +16,7 @@ const entries = scan.map((str) => {
   };
 });
 
-const bundle = (done) => {
+const bundleJSWithBrowserify = (done) => {
   const bundler = (entry) =>
     new Bluebird((resolve) => {
       browserify(entry.input, {
@@ -52,4 +46,4 @@ const bundle = (done) => {
   return utility.chain(callbacks);
 };
 
-gulp.task('compile:js', gulp.series(bundle));
+module.exports = { bundleJSWithBrowserify };
