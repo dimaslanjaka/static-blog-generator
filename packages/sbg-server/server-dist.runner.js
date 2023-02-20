@@ -1,7 +1,7 @@
 process.env.DEBUG = 'sbg-server,sbg-server:*';
 
 const { pathJoin } = require('sbg-utility');
-const SBGServer = require('./dist/server');
+const { SBGServer } = require('./dist/server');
 
 // dev server
 // just test unit

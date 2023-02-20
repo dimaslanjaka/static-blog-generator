@@ -8,7 +8,7 @@
     "allowJs": true,
     "checkJs": false,
     // "paths": { "sbg-*": ["../sbg-*/src"], "src": ["./src"] },
-    "types": ["node"],
+    // "types": ["node"],
     "outDir": "./dist",
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
   },
