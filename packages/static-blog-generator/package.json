@@ -13,6 +13,13 @@
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^"
   },
+  "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
+    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
+  },
   "version": "3.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
