@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-sh packages/sbg-utility/bin/pre-commit
-cp readme.md packages/static-blog-generator/readme.md
+sh packages/sbg-utility/bin/pre-commit 2>/dev/null
+cp readme.md packages/static-blog-generator/readme.md 2>/dev/null
+git add packages/static-blog-generator/readme.md 2>/dev/null
