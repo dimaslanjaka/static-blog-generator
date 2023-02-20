@@ -90,8 +90,10 @@ npx sbg generate feed
 ## Roadmap
 - [x] Separate with monorepo
 - [x] Test each module
-- [ ] Create single bundle tarball
+- [x] Create single bundle tarball
 - [x] Create CI
+- [ ] Create Dashboard
+- [ ] Integrate Dashboard with google webmaster
 
 ## Note
 Last stable development [513d687b4d26bbf4ea735313cb79cbcf8d04b36d](https://github.com/dimaslanjaka/static-blog-generator/commit/513d687b4d26bbf4ea735313cb79cbcf8d04b36d)
