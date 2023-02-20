@@ -13,8 +13,8 @@ git submodule foreach "
     git update-index --refresh
     commits=\$(git diff-index HEAD)
     if [ ! -z \"\$commits\" ]; then
-        git commit -am \"$1\"
+        git commit -am \"$*\"
     fi"
 
 git add -A .
-git commit -am "$1"
+git commit -am "$*"
