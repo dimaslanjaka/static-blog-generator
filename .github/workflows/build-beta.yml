@@ -144,6 +144,7 @@ jobs:
             git add "packages/${i}/release" 2>/dev/null
             git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}" 2>/dev/null
           done
+          git submodule foreach "git add dist release"
           # git push --recurse-submodules=on-demand
           git push
         name: commit and push
