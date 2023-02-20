@@ -54,8 +54,8 @@ jobs:
           echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
           echo "CACHE_YARN2=$(yarn config get cacheFolder)" >> $GITHUB_ENV
           echo "cache-npm=$(npm config get cache)" >> $GITHUB_OUTPUT
-          echo "cache-yarn=$(yarn cache dir || echo \".yarn\")" >> $GITHUB_OUTPUT
-          echo "cache-yarn2=$(yarn config get cacheFolder || echo \".yarn\")" >> $GITHUB_OUTPUT
+        #echo "cache-yarn=$(yarn cache dir || echo \".yarn\")" >> $GITHUB_OUTPUT
+        #echo "cache-yarn2=$(yarn config get cacheFolder || echo \".yarn\")" >> $GITHUB_OUTPUT
 
       - name: Get env
         run: |
@@ -65,8 +65,8 @@ jobs:
           echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"
           echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
           echo "cache npm   : ${{ env.CACHE_NPM }}"
-          echo "cache yarn  : ${{ env.CACHE_YARN }}"
-          echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
+        #echo "cache yarn  : ${{ env.CACHE_YARN }}"
+        #echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
 
       - name: Set EOL git configs
         continue-on-error: true
@@ -94,8 +94,9 @@ jobs:
         with:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
-            ${{ steps.set-env.outputs.cache-yarn }}
-            ${{ steps.set-env.outputs.cache-yarn2 }}
+            .yarn
+          #${{ steps.set-env.outputs.cache-yarn }}
+          #${{ steps.set-env.outputs.cache-yarn2 }}
           #./packages/sbg-server/src/public
           #**/tmp/**
           #**/node_modules/**
