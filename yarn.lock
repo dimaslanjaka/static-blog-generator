@@ -2112,7 +2112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/globals@npm:^29.4.1, @jest/globals@npm:^29.4.2, @jest/globals@npm:^29.4.3":
+"@jest/globals@npm:^29.4.1, @jest/globals@npm:^29.4.3":
   version: 29.4.3
   resolution: "@jest/globals@npm:29.4.3"
   dependencies:
@@ -10446,7 +10446,7 @@ __metadata:
     "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz"
     "@types/ini": ^1.3.31
     "@types/jest": ^29.4.0
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
     ansi-colors: ^4.1.3
@@ -11166,7 +11166,7 @@ __metadata:
     "@types/he": ^1.2.0
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/jsdom": ^21.1.0
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@types/xml2js": ^0.4.11
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
@@ -11433,7 +11433,7 @@ __metadata:
     "@types/jsdom": ^21.1.0
     "@types/lodash": ^4.14.191
     "@types/lodash.deburr": ^4.1.7
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@types/yargs": ^17.0.22
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
@@ -11462,7 +11462,7 @@ __metadata:
     markdown-it-mark: ^3.0.1
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
-    minimatch: ^6.2.0
+    minimatch: ^7.0.0
     moment-timezone: ^0.5.40
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
@@ -13562,7 +13562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^29.4.1, jest@npm:^29.4.2, jest@npm:^29.4.3":
+"jest@npm:^29.4.1, jest@npm:^29.4.3":
   version: 29.4.3
   resolution: "jest@npm:29.4.3"
   dependencies:
@@ -15258,6 +15258,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "minimatch@npm:7.0.0"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: caceffe3489e022c7a8421100b3653ba4c03ebff1e704da8aa5d22c500ec679079163c214eeaf25a52840464fad67ab9a606394ef7302775c5d9d152a76b0ecc
+  languageName: node
+  linkType: hard
+
 "minimist-options@npm:4.1.0":
   version: 4.1.0
   resolution: "minimist-options@npm:4.1.0"
@@ -16073,7 +16082,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.7.4":
+"npm-check-updates@npm:^16.7.5":
   version: 16.7.5
   resolution: "npm-check-updates@npm:16.7.5"
   dependencies:
@@ -17820,7 +17829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nesting@npm:^11.0.0, postcss-nesting@npm:^11.2.0":
+"postcss-nesting@npm:^11.0.0, postcss-nesting@npm:^11.2.1":
   version: 11.2.1
   resolution: "postcss-nesting@npm:11.2.1"
   dependencies:
@@ -19379,7 +19388,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.15.0":
+"rollup@npm:^3.17.1":
   version: 3.17.1
   resolution: "rollup@npm:3.17.1"
   dependencies:
@@ -19489,7 +19498,7 @@ __metadata:
     "@types/html-minifier-terser": ^7.0.0
     "@types/jquery": ^3.5.16
     "@types/markdown-it-attrs": ^4.1.0
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@types/prettier": ^2.7.2
     "@types/toastr": ^2.1.40
     "@types/undertaker": ^1.2.8
@@ -19531,7 +19540,7 @@ __metadata:
     moment-timezone: ^0.5.40
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     nodemon: ^2.0.20
-    npm-check-updates: ^16.7.4
+    npm-check-updates: ^16.7.5
     path-browserify: ^1.0.1
     persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     prettier: ^2.8.4
@@ -19617,7 +19626,7 @@ __metadata:
   dependencies:
     "@jest/globals": ^29.4.3
     "@types/micromatch": ^4.0.2
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
@@ -19653,20 +19662,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sbg-cli@workspace:packages/sbg-cli"
   dependencies:
-    "@jest/globals": ^29.4.2
+    "@jest/globals": ^29.4.3
     "@types/he": ^1.2.0
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@types/xml2js": ^0.4.11
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     deepmerge-ts: ^4.3.0
-    eslint: ^8.33.0
+    eslint: ^8.34.0
     git-command-helper: "workspace:^"
     he: ^1.2.0
     hexo: ^6.3.0
     hexo-blogger-xml: "workspace:^"
-    jest: ^29.4.2
+    jest: ^29.4.3
     jsdom: ^21.1.0
     npm-run-all: ^4.1.5
     safelinkify: "workspace:^"
@@ -19677,7 +19686,7 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^4.9.5
     xml2js: ^0.4.23
-    yargs: ^17.6.2
+    yargs: ^17.7.0
   bin:
     sbg: dist/cli.js
   languageName: unknown
@@ -19689,7 +19698,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/preset-env": ^7.20.2
-    "@jest/globals": ^29.4.2
+    "@jest/globals": ^29.4.3
     "@popperjs/core": ^2.11.6
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -19697,7 +19706,7 @@ __metadata:
     "@types/cors": ^2.8.13
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.17
-    "@types/node": ^18.13.0
+    "@types/node": ^18.14.0
     "@types/serve-index": ^1.9.1
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
@@ -19725,7 +19734,7 @@ __metadata:
     glob: ^8.1.0
     gulp: ^4.0.2
     highlight.js: 11.7.0
-    jest: ^29.4.2
+    jest: ^29.4.3
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40
     nodemon: ^2.0.20
@@ -19733,17 +19742,17 @@ __metadata:
     nunjucks: ^3.2.3
     postcss: ^8.4.21
     postcss-import: ^15.1.0
-    postcss-nesting: ^11.2.0
+    postcss-nesting: ^11.2.1
     postcss-preset-env: ^8.0.1
     prettier: ^2.8.4
     purgecss: ^5.0.0
-    rollup: ^3.15.0
+    rollup: ^3.17.1
     safelinkify: "workspace:^"
     sbg-api: "workspace:^"
     sbg-utility: "workspace:^"
     serve-index: ^1.9.1
     sharp: ^0.31.3
-    tailwindcss: ^3.2.6
+    tailwindcss: ^3.2.7
     through2: ^4.0.2
     tree-kill: ^1.2.2
     ts-jest: ^29.0.5
@@ -19781,7 +19790,7 @@ __metadata:
     hexo-util: ^3.0.1
     jest: ^29.4.3
     jsdom: ^21.1.0
-    minimatch: ^6.2.0
+    minimatch: ^7.0.0
     node-libcurl: ^3.0.0
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
@@ -21161,7 +21170,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.6":
+"tailwindcss@npm:^3.2.7":
   version: 3.2.7
   resolution: "tailwindcss@npm:3.2.7"
   dependencies:
