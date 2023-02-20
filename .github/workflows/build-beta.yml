@@ -54,8 +54,8 @@ jobs:
           echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
           echo "CACHE_YARN2=$(yarn config get cacheFolder)" >> $GITHUB_ENV
           echo "cache-npm=$(npm config get cache)" >> $GITHUB_OUTPUT
-          echo "cache-yarn=$(yarn cache dir)" >> $GITHUB_OUTPUT
-          echo "cache-yarn2=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+          echo "cache-yarn=$(yarn cache dir || \".yarn\")" >> $GITHUB_OUTPUT
+          echo "cache-yarn2=$(yarn config get cacheFolder || \".yarn\")" >> $GITHUB_OUTPUT
 
       - name: Get env
         run: |
