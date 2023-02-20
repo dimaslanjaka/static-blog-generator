@@ -280,7 +280,18 @@ function processSinglePost(file, callback) {
                                 // label lowercase
                                 if ((_d = config.tags) === null || _d === void 0 ? void 0 : _d.lowercase) {
                                     parse.metadata[groupLabel] =
-                                        ((_e = parse.metadata[groupLabel]) === null || _e === void 0 ? void 0 : _e.map(function (str) { return str.toLowerCase(); })) || [];
+                                        ((_e = parse.metadata[groupLabel]) === null || _e === void 0 ? void 0 : _e.map(function (str) {
+                                            if (typeof str === 'string')
+                                                return str.toLowerCase();
+                                            if (Array.isArray(str)) {
+                                                return str.map(function (s) {
+                                                    if (typeof s === 'string')
+                                                        return s.toLowerCase();
+                                                    return s;
+                                                });
+                                            }
+                                            return str;
+                                        })) || [];
                                     log.extend('label').extend('lowercase')(groupLabel, parse.metadata[groupLabel]);
                                 }
                             }
