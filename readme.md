@@ -94,6 +94,7 @@ npx sbg generate feed
 - [x] Create CI
 - [ ] Create Dashboard
 - [ ] Integrate Dashboard with google webmaster
+- [ ] Fix import/export blogger and wordpress
 
 ## Note
 Previous stable development [513d687b4d26bbf4ea735313cb79cbcf8d04b36d](https://github.com/dimaslanjaka/static-blog-generator/commit/513d687b4d26bbf4ea735313cb79cbcf8d04b36d)
