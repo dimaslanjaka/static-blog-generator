@@ -90,7 +90,7 @@ npx sbg generate feed
 ## Roadmap
 - [x] Separate with monorepo
 - [x] Test each module
-- [ ] Create single bundle tarball
+- [x] Create single bundle tarball
 - [x] Create CI
 
 ## Note
