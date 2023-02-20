@@ -55,8 +55,8 @@ jobs:
           node-version: 18.x
           token: ${{ secrets.GITHUB_TOKEN }}
           architecture: x64
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
+          #cache: 'yarn'
+          #cache-dependency-path: '**/yarn.lock'
 
       - name: Enable corepack
         run: |
