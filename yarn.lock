@@ -19964,6 +19964,7 @@ __metadata:
     cors: ^2.8.5
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private"
     debug: ^4.3.4
+    dotenv: ^16.0.3
     eslint: ^8.34.0
     eslint-config-plugin: ^1.0.11
     eslint-config-prettier: ^8.6.0

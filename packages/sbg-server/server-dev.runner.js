@@ -1,5 +1,4 @@
-process.env.DEBUG = 'sbg-server,sbg-server:*';
-
+require('dotenv').config();
 require('ts-node').register({ projectSearchDir: __dirname });
 const { pathJoin } = require('sbg-utility');
 const { SBGServer } = require('./src/server');
