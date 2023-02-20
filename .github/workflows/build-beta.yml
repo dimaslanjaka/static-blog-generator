@@ -112,9 +112,13 @@ jobs:
 
       - run: yarn install
       - run: |
-          lerna run build --no-bail --ignore=test
-      - run: |
-          lerna exec "npm run pack --if-present" --ignore=test
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
+          for i in "${arr_variable[@]}"
+          do
+            yarn workspace $i build
+            yarn workspace $i run pack
+          done
+        shell: bash
       - run: npx sbg clean all
         working-directory: test
         name: test clean
