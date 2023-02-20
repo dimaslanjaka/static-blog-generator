@@ -12254,7 +12254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instant-indexing@workspace:packages/instant-indexing":
+"instant-indexing@workspace:^, instant-indexing@workspace:packages/instant-indexing":
   version: 0.0.0-use.local
   resolution: "instant-indexing@workspace:packages/instant-indexing"
   dependencies:
@@ -20642,6 +20642,7 @@ __metadata:
     google-news-sitemap: "workspace:^"
     hexo-blogger-xml: "workspace:^"
     hexo-post-parser: "workspace:^"
+    instant-indexing: "workspace:^"
     safelinkify: "workspace:^"
     sbg-api: "workspace:^"
     sbg-cli: "workspace:^"
