@@ -1,8 +1,8 @@
 process.env.DEBUG = 'sbg-server,sbg-server:*';
 
-require('ts-node/register');
+require('ts-node').register({ projectSearchDir: __dirname });
 const { pathJoin } = require('sbg-utility');
-const SBGServer = require('./src/server');
+const { SBGServer } = require('./src/server');
 
 // dev server
 // just test unit
