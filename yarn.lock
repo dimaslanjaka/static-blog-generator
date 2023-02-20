@@ -19977,6 +19977,7 @@ __metadata:
     glob: ^8.1.0
     gulp: ^4.0.2
     highlight.js: 11.7.0
+    instant-indexing: "workspace:^"
     jest: ^29.4.3
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40
