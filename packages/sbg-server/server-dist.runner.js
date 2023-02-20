@@ -1,15 +1,14 @@
 process.env.DEBUG = 'sbg-server,sbg-server:*';
 
-///
-import path from 'upath';
-import SBGServer from './server';
-///
+const { pathJoin } = require('sbg-utility');
+const SBGServer = require('./dist/server');
 
+// dev server
 // just test unit
 // not for compile
 
 const _server = new SBGServer({
   port: 4000,
-  root: path.join(__dirname, '../../../test')
+  root: pathJoin(__dirname, '../../test')
 });
 _server.start();
