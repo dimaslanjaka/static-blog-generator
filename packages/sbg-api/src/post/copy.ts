@@ -206,7 +206,16 @@ export async function processSinglePost(file: string, callback?: (parsed: hexoPo
           // label lowercase
           if (config.tags?.lowercase) {
             parse.metadata[groupLabel] =
-              (parse.metadata[groupLabel] as string[])?.map((str) => str.toLowerCase()) || [];
+              (parse.metadata[groupLabel] as any[])?.map((str) => {
+                if (typeof str === 'string') return str.toLowerCase();
+                if (Array.isArray(str)) {
+                  return str.map((s) => {
+                    if (typeof s === 'string') return s.toLowerCase();
+                    return s;
+                  });
+                }
+                return str;
+              }) || [];
             log.extend('label').extend('lowercase')(groupLabel, parse.metadata[groupLabel]);
           }
         } else if (config.generator.verbose) {
