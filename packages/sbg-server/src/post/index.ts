@@ -4,7 +4,7 @@ import { buildPost } from 'hexo-post-parser';
 import { moment } from 'hexo-post-parser/dist/dateMapper';
 import { persistentCache } from 'persistent-cache';
 import * as apis from 'sbg-api';
-import { getSourcePosts } from 'sbg-api/dist/post';
+import { getSourcePosts } from 'sbg-api';
 import { writefile } from 'sbg-utility';
 import serveIndex from 'serve-index';
 import path from 'upath';
