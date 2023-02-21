@@ -1,9 +1,6 @@
 #!/bin/bash
-sh "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit "$1"
-
-HOOK_NAME="commit-msg"
+HOOK_NAME="prepare-commit-msg"
 arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
 for i in "${arr_variable[@]}"
 do
