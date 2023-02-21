@@ -52,11 +52,29 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           api.config.cwd,
           '<root>'
         );
+        if (!item.title) item.title = `No Title - ${item.id}`;
         return item;
       })
     };
     res.render('post/index.njk', data);
   });
+  router.get(
+    '/json',
+    middleware,
+    async function (req: PostRequestMiddleware, res) {
+      const data = {
+        posts: req.post_data.map((item) => {
+          item.relative_source = item.full_source.replace(
+            api.config.cwd,
+            '<root>'
+          );
+          if (!item.title) item.title = `No Title - ${item.id}`;
+          return item;
+        })
+      };
+      res.json(data);
+    }
+  );
 
   router.get(
     '/edit/:id',
