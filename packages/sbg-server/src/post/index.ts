@@ -93,6 +93,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     }
   );
 
+  // edit post
   router.get(
     '/edit/:id',
     middleware,
