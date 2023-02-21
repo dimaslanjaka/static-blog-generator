@@ -1,4 +1,6 @@
 require('dotenv').config();
+
+process.cwd = () => __dirname + '/../../test';
 const { pathJoin } = require('sbg-utility');
 const { SBGServer } = require('./dist/server');
 
