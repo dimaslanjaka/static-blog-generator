@@ -16,7 +16,7 @@ export function parseDate(input: moment.MomentInput, pattern = 'LLL') {
   return moment(input).format(pattern);
 }
 
-export const md5 = (data: string) =>
+const md5 = (data: string) =>
   crypto.createHash('md5').update(data).digest('hex');
 
 export default function setupNunjuckHelper(env: Environment) {
