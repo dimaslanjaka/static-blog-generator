@@ -1,5 +1,5 @@
 #!/bin/bash
-. "$(dirname -- "$0")/_/husky.sh"
+sh "$(dirname -- "$0")/_/husky.sh"
 
 HOOK_NAME="pre-commit"
 arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
