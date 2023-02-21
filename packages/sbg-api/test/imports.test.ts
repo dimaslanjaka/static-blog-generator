@@ -12,8 +12,9 @@ describe('check method', () => {
       expect(wilcards[prop]).toBeDefined();
       expect(typeof wilcards[prop]).toBe('function');
     }, 10000);
+    test(`defaults.${prop} is function`, function () {
+      expect(defaults[prop]).toBeDefined();
+      expect(typeof defaults[prop]).toBe('function');
+    }, 10000);
   }
-  test(`default export is class`, function () {
-    expect(typeof defaults).toBe('function');
-  }, 10000);
 });
