@@ -54,7 +54,6 @@
     "minimatch": "^7.0.0",
     "node-libcurl": "^3.0.0",
     "nunjucks": "^3.2.3",
-    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
     "progress": "^2.0.3",
     "request": "^2.88.0",
     "safelinkify": "^1.1.17",

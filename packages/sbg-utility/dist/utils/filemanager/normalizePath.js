@@ -44,8 +44,13 @@ function normalizePath() {
         str[_i] = arguments[_i];
     }
     var join = upath_1.default.join.apply(upath_1.default, __spreadArray([], __read(str), false));
-    var casePath = (0, true_case_path_1.trueCasePathSync)(join);
-    return upath_1.default.toUnix(casePath);
+    if (fs_extra_1.default.existsSync(join)) {
+        var casePath = (0, true_case_path_1.trueCasePathSync)(join);
+        return upath_1.default.toUnix(casePath);
+    }
+    else {
+        return join;
+    }
 }
 exports.normalizePath = normalizePath;
 /**
@@ -59,8 +64,9 @@ function joinSolve() {
         paths[_i] = arguments[_i];
     }
     var merge = normalizePath.apply(void 0, __spreadArray([], __read(paths), false));
-    if (!fs_extra_1.default.existsSync(upath_1.default.dirname(merge)))
+    if (!fs_extra_1.default.existsSync(upath_1.default.dirname(merge))) {
         fs_extra_1.default.mkdirSync(upath_1.default.dirname(merge), { recursive: true });
+    }
     return merge;
 }
 exports.joinSolve = joinSolve;
