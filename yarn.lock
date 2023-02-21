@@ -11818,11 +11818,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=086da1&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=745f1a&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: ae6e5313e078197a01ec1228c57c95c9f2af36f800b6770a08f89e94c747a4071dd096070018952b694466f696e86f1ebabec460564ee5588b4714fc5a5e16d9
+  checksum: befff0193c3188237b9bdf2a69a9b2bf92a35d426321aff18136360d234a5f37adc9bff46b74791471dea2a61e72605abfa057ccf500601b07c105d12b7011d9
   languageName: node
   linkType: hard
 
@@ -12224,15 +12224,6 @@ __metadata:
   dependencies:
     ms: ^2.0.0
   checksum: 9c7a74a2827f9294c009266c82031030eae811ca87b0da3dceb8d6071b9bde22c9f3daef0469c3c533cc67a97d8a167cd9fc0389350e5f415f61a79b171ded16
-  languageName: node
-  linkType: hard
-
-"husky@npm:^8.0.3":
-  version: 8.0.3
-  resolution: "husky@npm:8.0.3"
-  bin:
-    husky: lib/bin.js
-  checksum: 837bc7e4413e58c1f2946d38fb050f5d7324c6f16b0fd66411ffce5703b294bd21429e8ba58711cd331951ee86ed529c5be4f76805959ff668a337dbfa82a1b0
   languageName: node
   linkType: hard
 
@@ -20878,7 +20869,6 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     gulp: ^4.0.2
-    husky: ^8.0.3
     jest: ^29.4.1
     jest-config: ^29.4.1
     jest-html-reporters: ^3.1.2
