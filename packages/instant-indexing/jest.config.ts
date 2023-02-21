@@ -1,5 +1,5 @@
 import fs from 'fs';
-import jsonc from 'jsonc-parser';
+import * as jsonc from 'jsonc-parser';
 
 const jparse = jsonc.parse;
 const parsed = jparse(fs.readFileSync(__dirname + '/tsconfig.json').toString(), [], {
