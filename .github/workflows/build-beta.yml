@@ -115,9 +115,7 @@ jobs:
           arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
           for i in "${arr_variable[@]}"
           do
-            yarn workspace $i build
-            yarn workspace $i run pack
-            wait
+            yarn workspace $i build && yarn workspace $i run pack
           done
         shell: bash
         name: build
