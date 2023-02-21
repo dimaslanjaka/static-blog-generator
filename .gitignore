@@ -14,6 +14,7 @@ unused.md
 ___*
 **/.rollup.cache/**
 **/package.tgz
+.env
 
 /packages/**/package-lock.json
 
