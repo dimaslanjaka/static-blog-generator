@@ -2,10 +2,9 @@ import debug from 'debug';
 import express from 'express';
 import { buildPost } from 'hexo-post-parser';
 import { moment } from 'hexo-post-parser/dist/dateMapper';
-import { persistentCache } from 'persistent-cache';
 import * as apis from 'sbg-api';
 import { getSourcePosts } from 'sbg-api';
-import { writefile } from 'sbg-utility';
+import { persistentCache, writefile } from 'sbg-utility';
 import serveIndex from 'serve-index';
 import path from 'upath';
 import yaml from 'yaml';
@@ -13,10 +12,9 @@ import SBGServer from '../server';
 
 const log = debug('sbg').extend('server').extend('route').extend('post');
 const router = express.Router();
-export const cacheRouterPost = persistentCache({
+export const cacheRouterPost = new persistentCache({
   base: path.join(process.cwd(), 'tmp'),
   name: 'sbg-server/post',
-  persist: true,
   duration: 1000 * 60 * 60 * 24 // 1 day cache
 });
 
@@ -31,27 +29,19 @@ export default function routePost(this: SBGServer, api: apis.Application) {
       Record<string, any>)[];
   }
   const middleware = async function (
-    req: PostRequestMiddleware,
+    _req: PostRequestMiddleware,
     _res: express.Response,
-    next: express.NextFunction
+    _next: express.NextFunction
   ) {
-    // get cache first
-    let posts = cacheRouterPost.getSync(
-      'posts',
-      [] as Awaited<ReturnType<typeof getSourcePosts>>
-    );
-    debug('sbg-server').extend('cache')('post cached', posts.length);
-    // fetch new cache when empty
-    if (posts.length === 0) {
-      posts = await getSourcePosts();
-      cacheRouterPost.setSync('posts', posts);
-    }
+    const posts = await getSourcePosts();
     // assign to response property
-    req.origin_post_data = posts;
-    req.post_data = posts.map((parsed) =>
+    _req.origin_post_data = posts;
+    _req.post_data = posts.map((parsed) =>
       Object.assign(parsed, parsed.metadata, { body: parsed.body })
     );
-    next(null);
+    cacheRouterPost.setSync('post_data', _req.post_data);
+    cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
+    _next(null);
   };
 
   // list all posts
@@ -90,7 +80,8 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           return item;
         })
       };
-      res.json(data);
+      console.log(data);
+      res.send('');
     }
   );
 
