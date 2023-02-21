@@ -40,6 +40,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
       'posts',
       [] as Awaited<ReturnType<typeof getSourcePosts>>
     );
+    debug('sbg-server').extend('cache')('post cached', posts.length);
     // fetch new cache when empty
     if (posts.length === 0) {
       posts = await getSourcePosts();
