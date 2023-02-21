@@ -6,4 +6,5 @@ export * as seo from './gulp.seo';
 export * as post from './post';
 export * as sitemap from './sitemap';
 
+export default globalThis;
 //
