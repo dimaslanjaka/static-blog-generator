@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "readme.md"
+    "readme.md",
+    "!**/*.tsbuildinfo"
   ],
   "scripts": {
     "start": "node -r ts-node/register -r dotenv/config start.ts",
