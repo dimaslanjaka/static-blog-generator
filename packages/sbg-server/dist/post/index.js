@@ -39,33 +39,42 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.cacheRouterPost = void 0;
 var debug_1 = __importDefault(require("debug"));
 var express_1 = __importDefault(require("express"));
 var hexo_post_parser_1 = require("hexo-post-parser");
 var dateMapper_1 = require("hexo-post-parser/dist/dateMapper");
-var post_1 = require("sbg-api/dist/post");
+var sbg_api_1 = require("sbg-api");
 var sbg_utility_1 = require("sbg-utility");
 var serve_index_1 = __importDefault(require("serve-index"));
 var upath_1 = __importDefault(require("upath"));
 var yaml_1 = __importDefault(require("yaml"));
 var log = (0, debug_1.default)('sbg').extend('server').extend('route').extend('post');
 var router = express_1.default.Router();
+exports.cacheRouterPost = new sbg_utility_1.persistentCache({
+    base: upath_1.default.join(process.cwd(), 'tmp'),
+    name: 'sbg-server/post',
+    duration: 1000 * 60 * 60 * 24 // 1 day cache
+});
 function routePost(api) {
     var POST_ROOT = upath_1.default.join(api.cwd, api.config.post_dir);
     log('root<post>', POST_ROOT);
-    var middleware = function (req, _res, next) {
+    var middleware = function (_req, _res, _next) {
         return __awaiter(this, void 0, void 0, function () {
             var posts;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, (0, post_1.getSourcePosts)()];
+                    case 0: return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)()];
                     case 1:
                         posts = _a.sent();
-                        req.origin_post_data = posts;
-                        req.post_data = posts.map(function (parsed) {
+                        // assign to response property
+                        _req.origin_post_data = posts;
+                        _req.post_data = posts.map(function (parsed) {
                             return Object.assign(parsed, parsed.metadata, { body: parsed.body });
                         });
-                        next(null);
+                        exports.cacheRouterPost.setSync('post_data', _req.post_data);
+                        exports.cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
+                        _next(null);
                         return [2 /*return*/];
                 }
             });
@@ -105,11 +114,13 @@ function routePost(api) {
                         return item;
                     })
                 };
-                res.json(data);
+                console.log(data);
+                res.send('');
                 return [2 /*return*/];
             });
         });
     });
+    // edit post
     router.get('/edit/:id', middleware, function (req, res) {
         var postid = req.params['id'];
         var findPost = req.post_data.find(function (post) { var _a; return ((_a = post.metadata) === null || _a === void 0 ? void 0 : _a.id) === postid; }) ||
