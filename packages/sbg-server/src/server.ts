@@ -1,7 +1,7 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
-import findWorkspaceRoot from 'find-yarn-workspace-root';
+// import findWorkspaceRoot from 'find-yarn-workspace-root';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
@@ -82,7 +82,7 @@ export class SBGServer {
       }
     });
     // init default express static
-    const workspaceRoot = findWorkspaceRoot(process.cwd());
+    // const workspaceRoot = findWorkspaceRoot(process.cwd());
     const statics = [
       path.join(__dirname, 'public'),
       // path.join(__dirname, '/../node_modules'),
@@ -93,10 +93,10 @@ export class SBGServer {
       // static source post when not yet generated at source dir
       path.join(this.config.root, this.api.config.post_dir),
       // static source dir such as images etc
-      path.join(this.config.root, this.api.config.source_dir),
+      path.join(this.config.root, this.api.config.source_dir)
       // path.join(__dirname, '/../../../node_modules'),
       // resolve workspace node_modules
-      path.join(workspaceRoot, 'node_modules')
+      // path.join(workspaceRoot, 'node_modules')
     ]
       .filter(fs.existsSync)
       .map((p) => {
