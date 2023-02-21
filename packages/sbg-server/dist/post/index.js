@@ -83,10 +83,29 @@ function routePost(api) {
                     // merge metadata
                     posts: req.post_data.map(function (item) {
                         item.relative_source = item.full_source.replace(api.config.cwd, '<root>');
+                        if (!item.title)
+                            item.title = "No Title - ".concat(item.id);
                         return item;
                     })
                 };
                 res.render('post/index.njk', data);
+                return [2 /*return*/];
+            });
+        });
+    });
+    router.get('/json', middleware, function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                data = {
+                    posts: req.post_data.map(function (item) {
+                        item.relative_source = item.full_source.replace(api.config.cwd, '<root>');
+                        if (!item.title)
+                            item.title = "No Title - ".concat(item.id);
+                        return item;
+                    })
+                };
+                res.json(data);
                 return [2 /*return*/];
             });
         });
