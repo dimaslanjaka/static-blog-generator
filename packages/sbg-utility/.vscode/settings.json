@@ -12,8 +12,8 @@
   },
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
-    "*.test.ts": "npm test -- $fileNameWithoutExt",
-    "*.spec.ts": "npm test -- $fileNameWithoutExt"
+    "*.test.ts": "yarn test -- $fileNameWithoutExt",
+    "*.spec.ts": "yarn test -- $fileNameWithoutExt"
   },
   "code-runner.showRunIconInEditorTitleMenu": false,
   "code-runner.showRunCommandInExplorerContextMenu": false,
