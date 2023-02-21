@@ -62,6 +62,7 @@
     "markdown-it": "^13.0.1",
     "moment-timezone": "^0.5.40",
     "nunjucks": "^3.2.3",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2",
     "safelinkify": "workspace:^",
     "sbg-api": "workspace:^",
     "sbg-utility": "workspace:^",
