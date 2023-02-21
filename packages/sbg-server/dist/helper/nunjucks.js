@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.md5 = exports.parseDate = exports.getAuthorName = void 0;
+exports.parseDate = exports.getAuthorName = void 0;
 var crypto_1 = __importDefault(require("crypto"));
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
@@ -29,11 +29,10 @@ exports.parseDate = parseDate;
 var md5 = function (data) {
     return crypto_1.default.createHash('md5').update(data).digest('hex');
 };
-exports.md5 = md5;
 function setupNunjuckHelper(env) {
     env.addGlobal('getAuthorName', getAuthorName);
     env.addGlobal('parseDate', parseDate);
-    env.addGlobal('md5', exports.md5);
+    env.addGlobal('md5', md5);
     /**
      * Returns a JSON stringified version of the value, safe for inclusion in an
      * inline <script> tag. The optional argument 'spaces' can be used for
