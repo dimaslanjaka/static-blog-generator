@@ -6,8 +6,8 @@
       <button
         id="dropdown-button"
         data-dropdown-toggle="dropdown"
-        class="disable flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100
-          border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100
+        class="disable flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900
+          bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100
           dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
         type="button">All categories
         <svg aria-hidden="true" class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@
           <li class="py-3 sm:py-4" aria-find="post">
             <div class="flex items-center space-x-4">
               <div class="flex-shrink-0">
-                <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Neil image"></div>
+                <img class="w-8 h-8 rounded-full" src="{{ post.thumbnail or post.cover or post.photos[0] or "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" }}" alt="Thumbnail - {{ post.title }}"></div>
                 <div class="flex-1 min-w-0">
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white" aria-find="title">
                     {{ post.title or "No title" |safe }}
@@ -131,6 +131,6 @@
         </ul>
       </div>
     {% endblock %}
-    {% block script %}
-     <script src="/js/post/index.js" type="text/javascript" charset="utf-8"></script>
-    {% endblock script %}
+{% block script %}
+  <script src="/js/post/index.js" type="text/javascript" charset="utf-8"></script>
+{% endblock script %}
