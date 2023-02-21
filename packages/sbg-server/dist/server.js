@@ -30,7 +30,7 @@ exports.SBGServer = void 0;
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
-var find_yarn_workspace_root_1 = __importDefault(require("find-yarn-workspace-root"));
+// import findWorkspaceRoot from 'find-yarn-workspace-root';
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
@@ -104,7 +104,7 @@ var SBGServer = /** @class */ (function () {
             }
         });
         // init default express static
-        var workspaceRoot = (0, find_yarn_workspace_root_1.default)(process.cwd());
+        // const workspaceRoot = findWorkspaceRoot(process.cwd());
         var statics = [
             upath_1.default.join(__dirname, 'public'),
             // path.join(__dirname, '/../node_modules'),
@@ -115,10 +115,10 @@ var SBGServer = /** @class */ (function () {
             // static source post when not yet generated at source dir
             upath_1.default.join(this.config.root, this.api.config.post_dir),
             // static source dir such as images etc
-            upath_1.default.join(this.config.root, this.api.config.source_dir),
+            upath_1.default.join(this.config.root, this.api.config.source_dir)
             // path.join(__dirname, '/../../../node_modules'),
             // resolve workspace node_modules
-            upath_1.default.join(workspaceRoot, 'node_modules')
+            // path.join(workspaceRoot, 'node_modules')
         ]
             .filter(fs_extra_1.default.existsSync)
             .map(function (p) {
