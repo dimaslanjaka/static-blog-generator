@@ -119,6 +119,7 @@ jobs:
             yarn workspace $i run pack
           done
         shell: bash
+        name: build
       - run: npx sbg clean all
         working-directory: test
         name: test clean
