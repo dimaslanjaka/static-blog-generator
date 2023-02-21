@@ -10,10 +10,10 @@
   },
   "/release/instant-indexing.tgz": {
     "integrity": {
-      "sha1": "a6c69e7cdc6d8e53a6d65e04e96469fb3b3c106f",
-      "sha256": "bpM0+woXa107XDJ+Gkbh6g8sJaoEiwhw76f+VJv/uk4=",
-      "md5": "b9bc8b2153a52741c76690d9fb4a57b2",
-      "sha512": "LFJWcrr4BL1sWSNgNMMmltWtJcRjkXzzNPr/pC1dCj/q7+/sGx/sfm2gjKbZMFHBVVc+psOWvqHhXPfaQm7Utg=="
+      "sha1": "0c7cfdfc5974febb5ab7e0c380ae622b2e13cfd5",
+      "sha256": "mbbW3tYGu2BXzTuqzmJAaBqhggcdUQaFqcY5aZ3fX80=",
+      "md5": "1a4ba870accc7a8d3301f3d718e3600e",
+      "sha512": "fqu/DNR2Jgwg29xuDXc6nGZXfSG/h47VwEZuaJkR4ATHaf7HVzCMhimeXSp4OQY9t2U7ueFvImeyFcUV4dB2Bw=="
     },
     "size": "76.66 KB"
   },
@@ -37,10 +37,10 @@
   },
   "/release/instant-indexing-1.0.3.tgz": {
     "integrity": {
-      "sha1": "a6c69e7cdc6d8e53a6d65e04e96469fb3b3c106f",
-      "sha256": "bpM0+woXa107XDJ+Gkbh6g8sJaoEiwhw76f+VJv/uk4=",
-      "md5": "b9bc8b2153a52741c76690d9fb4a57b2",
-      "sha512": "LFJWcrr4BL1sWSNgNMMmltWtJcRjkXzzNPr/pC1dCj/q7+/sGx/sfm2gjKbZMFHBVVc+psOWvqHhXPfaQm7Utg=="
+      "sha1": "0c7cfdfc5974febb5ab7e0c380ae622b2e13cfd5",
+      "sha256": "mbbW3tYGu2BXzTuqzmJAaBqhggcdUQaFqcY5aZ3fX80=",
+      "md5": "1a4ba870accc7a8d3301f3d718e3600e",
+      "sha512": "fqu/DNR2Jgwg29xuDXc6nGZXfSG/h47VwEZuaJkR4ATHaf7HVzCMhimeXSp4OQY9t2U7ueFvImeyFcUV4dB2Bw=="
     },
     "size": "76.66 KB"
   }
