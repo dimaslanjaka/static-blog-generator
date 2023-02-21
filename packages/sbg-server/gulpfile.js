@@ -7,8 +7,8 @@ const spawn = require('child_process').spawn;
 const kill = require('tree-kill');
 const through2 = require('through2');
 const sharp = require('sharp');
-require('./gulpfile-browserify.task');
-require('./gulpfile-tailwind.task');
+const { bundleJSRollUp } = require('./gulpfile-rollup');
+const { bundleCSS } = require('./gulpfile-tailwind.task');
 
 const cmd = (commandName) => {
   const cmdPath = [
@@ -63,7 +63,7 @@ function tsc(done) {
     .then(() => done())
     .catch(done);
 }
-
+gulp.task('tsc', tsc);
 gulp.task('build', gulp.series(tsc, 'copy'));
 
 // dev
@@ -132,6 +132,8 @@ gulp.task('compile:images', function () {
     .pipe(gulp.dest('src/public/images'));
 });
 
+gulp.task('compile:js', gulp.series(bundleJSRollUp));
+gulp.task('compile:tailwind', bundleCSS);
 gulp.task(
   'compile',
   gulp.series('compile:css', 'compile:images', 'compile:js')
