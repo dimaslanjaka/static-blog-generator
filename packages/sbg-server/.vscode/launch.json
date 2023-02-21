@@ -5,8 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "npm run dev:server",
-      "name": "server.runner.ts",
+      "command": "npm run server:dev",
+      "name": "Server Dev",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npm run server:dist",
+      "name": "Server Dist",
       "request": "launch",
       "type": "node-terminal"
     }

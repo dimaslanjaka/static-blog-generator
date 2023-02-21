@@ -6,17 +6,26 @@
     "google-news-sitemap": "workspace:^",
     "hexo-blogger-xml": "workspace:^",
     "hexo-post-parser": "workspace:^",
+    "instant-indexing": "workspace:^",
     "safelinkify": "workspace:^",
     "sbg-api": "workspace:^",
     "sbg-cli": "workspace:^",
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^"
   },
+  "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
+    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
+    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
+    "persistent-cache": "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
+  },
   "version": "3.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "!**/*.tsbuildinfo"
   ],
   "packageManager": "yarn@3.2.0",
   "scripts": {
@@ -27,7 +36,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+    "url": "https://github.com/dimaslanjaka/static-blog-generator",
+    "directory": "packages/static-blog-generator"
   },
   "keywords": [
     "gulp",
