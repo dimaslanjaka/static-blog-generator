@@ -1,5 +1,7 @@
 require('dotenv').config();
 require('ts-node').register({ projectSearchDir: __dirname });
+
+process.cwd = () => __dirname + '/../../test';
 const { pathJoin } = require('sbg-utility');
 const { SBGServer } = require('./src/server');
 
