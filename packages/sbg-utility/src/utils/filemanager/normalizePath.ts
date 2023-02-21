@@ -10,8 +10,12 @@ import path from 'upath';
  */
 export function normalizePath(...str: string[]) {
   const join = path.join(...str);
-  const casePath = trueCasePathSync(join);
-  return path.toUnix(casePath);
+  if (fs.existsSync(join)) {
+    const casePath = trueCasePathSync(join);
+    return path.toUnix(casePath);
+  } else {
+    return join;
+  }
 }
 
 /**
@@ -21,7 +25,9 @@ export function normalizePath(...str: string[]) {
  */
 export function joinSolve(...paths: string[]) {
   const merge = normalizePath(...paths);
-  if (!fs.existsSync(path.dirname(merge))) fs.mkdirSync(path.dirname(merge), { recursive: true });
+  if (!fs.existsSync(path.dirname(merge))) {
+    fs.mkdirSync(path.dirname(merge), { recursive: true });
+  }
   return merge;
 }
 
