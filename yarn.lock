@@ -19984,6 +19984,7 @@ __metadata:
     nodemon: ^2.0.20
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
+    persistent-cache: "https://github.com/dimaslanjaka/persistent-cache/tarball/improve2"
     postcss: ^8.4.21
     postcss-import: ^15.1.0
     postcss-nesting: ^11.2.1
