@@ -117,6 +117,7 @@ jobs:
           do
             yarn workspace $i build
             yarn workspace $i run pack
+            wait
           done
         shell: bash
         name: build
