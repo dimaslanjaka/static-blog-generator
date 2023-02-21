@@ -2,6 +2,7 @@ import debug from 'debug';
 import express from 'express';
 import { buildPost } from 'hexo-post-parser';
 import { moment } from 'hexo-post-parser/dist/dateMapper';
+import { persistentCache } from 'persistent-cache';
 import * as apis from 'sbg-api';
 import { getSourcePosts } from 'sbg-api/dist/post';
 import { writefile } from 'sbg-utility';
@@ -12,6 +13,12 @@ import SBGServer from '../server';
 
 const log = debug('sbg').extend('server').extend('route').extend('post');
 const router = express.Router();
+export const cacheRouterPost = persistentCache({
+  base: path.join(process.cwd(), 'tmp'),
+  name: 'sbg-server/post',
+  persist: true,
+  duration: 1000 * 60 * 60 * 24 // 1 day cache
+});
 
 export default function routePost(this: SBGServer, api: apis.Application) {
   const POST_ROOT = path.join(api.cwd, api.config.post_dir);
@@ -28,7 +35,17 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     _res: express.Response,
     next: express.NextFunction
   ) {
-    const posts = await getSourcePosts();
+    // get cache first
+    let posts = cacheRouterPost.getSync(
+      'posts',
+      [] as Awaited<ReturnType<typeof getSourcePosts>>
+    );
+    // fetch new cache when empty
+    if (posts.length === 0) {
+      posts = await getSourcePosts();
+      cacheRouterPost.setSync('posts', posts);
+    }
+    // assign to response property
     req.origin_post_data = posts;
     req.post_data = posts.map((parsed) =>
       Object.assign(parsed, parsed.metadata, { body: parsed.body })
