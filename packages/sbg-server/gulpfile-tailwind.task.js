@@ -1,7 +1,6 @@
 const path = require('upath');
 const glob = require('glob');
-const { spawn } = require('git-command-helper/dist/spawn');
-const gulp = require('gulp');
+const { spawn } = require('git-command-helper');
 
 const cdir = path.toUnix(__dirname);
 const src = path.join(cdir, './source/styles');
@@ -14,7 +13,7 @@ const entries = scan.map((str) => {
   };
 });
 
-gulp.task('compile:tailwind', async function (done) {
+async function bundleCSS(done) {
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i];
     const input = '.' + entry.input.replace(cdir, '');
@@ -33,4 +32,6 @@ gulp.task('compile:tailwind', async function (done) {
     await spawn('npx', args, { cwd: cdir });
   }
   done();
-});
+}
+
+module.exports = { bundleCSS };

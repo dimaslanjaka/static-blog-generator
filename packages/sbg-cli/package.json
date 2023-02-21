@@ -1,6 +1,6 @@
 {
   "name": "sbg-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "static-blog-generator CLI and main scripts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -58,15 +58,15 @@
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^",
     "xml2js": "^0.4.23",
-    "yargs": "^17.6.2"
+    "yargs": "^17.7.0"
   },
   "devDependencies": {
-    "@jest/globals": "^29.4.2",
+    "@jest/globals": "^29.4.3",
     "@types/he": "^1.2.0",
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.0",
     "@types/xml2js": "^0.4.11",
-    "eslint": "^8.33.0",
-    "jest": "^29.4.2",
+    "eslint": "^8.34.0",
+    "jest": "^29.4.3",
     "npm-run-all": "^4.1.5",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",

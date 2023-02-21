@@ -1,2 +1,4 @@
 @echo off
-git push
+
+git submodule foreach "git push --follow-tags"
+git push --follow-tags
