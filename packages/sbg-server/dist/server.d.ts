@@ -34,7 +34,7 @@ export declare class SBGServer {
     /**
      * start server
      */
-    start(): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
+    start(customServer?: express.Express): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
     start2(): http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>;
     __dump(): void;
 }
