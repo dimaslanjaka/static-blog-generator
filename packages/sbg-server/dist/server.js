@@ -31,15 +31,19 @@ var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
 // import findWorkspaceRoot from 'find-yarn-workspace-root';
+var express_session_1 = __importDefault(require("express-session"));
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var apis = __importStar(require("sbg-api"));
 var sbg_utility_1 = require("sbg-utility");
+var session_file_store_1 = __importDefault(require("session-file-store"));
 var upath_1 = __importDefault(require("upath"));
 var config_1 = __importDefault(require("./config"));
 var nunjucks_2 = __importDefault(require("./helper/nunjucks"));
 var post_1 = __importDefault(require("./post"));
+var FileStore = (0, session_file_store_1.default)(express_session_1.default);
+var fileStoreOptions = {};
 var SBGServer = /** @class */ (function () {
     function SBGServer(options) {
         var _this = this;
@@ -81,7 +85,12 @@ var SBGServer = /** @class */ (function () {
         });
         (0, nunjucks_2.default)(this.env);
         // init default middleware
-        //debug('sbg-server').extend('middleware')('enabling cors');
+        this.server.use((0, express_session_1.default)({
+            store: new FileStore(fileStoreOptions),
+            secret: 'sbg-server-session',
+            resave: true,
+            saveUninitialized: true
+        }));
         this.server.use((0, cors_1.default)());
         this.server.use(express_1.default.urlencoded({ extended: true, limit: '50mb' }));
         this.server.use(express_1.default.json({ limit: '50mb' }));

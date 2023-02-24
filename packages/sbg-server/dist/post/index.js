@@ -101,7 +101,7 @@ function routePost(api) {
                         hash = _a.sent();
                         current = exports.cacheRouterPost.getSync('checksum', {});
                         if (current !== hash) {
-                            req['session']['checksum'] = 'changed';
+                            // req['session']['checksum'] = 'changed';
                             exports.cacheRouterPost.setSync('checksum', hash);
                         }
                         res.json(hash);

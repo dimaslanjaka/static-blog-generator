@@ -68,6 +68,7 @@
     "sbg-api": "workspace:^",
     "sbg-utility": "workspace:^",
     "serve-index": "^1.9.1",
+    "session-file-store": "^1.5.0",
     "upath": "^2.0.1",
     "yaml": "^2.2.1"
   },
