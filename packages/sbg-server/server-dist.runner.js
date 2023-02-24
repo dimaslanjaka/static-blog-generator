@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 process.cwd = () => __dirname + '/../../test';
-const { server_runner } = require('server.runner');
+const { server_runner } = require('./server.runner');
 const { SBGServer } = require('./dist/server');
 
 // dev server
