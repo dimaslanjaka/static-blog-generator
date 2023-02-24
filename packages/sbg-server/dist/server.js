@@ -43,6 +43,7 @@ var post_1 = __importDefault(require("./post"));
 var SBGServer = /** @class */ (function () {
     function SBGServer(options) {
         var _this = this;
+        this.cache = true;
         /**
          * get the configured server
          * @returns express server instance
@@ -50,6 +51,9 @@ var SBGServer = /** @class */ (function () {
         this.get = function () { return _this.server; };
         // update config
         config_1.default.update(options || {});
+        // use cache
+        if (options.cache)
+            this.cache = options.cache;
         // get updated config
         this.config = config_1.default.get();
         // start api
@@ -57,10 +61,6 @@ var SBGServer = /** @class */ (function () {
     }
     SBGServer.prototype.startExpress = function () {
         var _this = this;
-        var _a;
-        // vars
-        var isDev = (_a = new Error('').stack) === null || _a === void 0 ? void 0 : _a.includes('server.runner');
-        (0, sbg_utility_1.debug)('sbg-server')('is-dev', isDev);
         var self = this;
         // init express
         this.server = (0, express_1.default)();
@@ -69,10 +69,15 @@ var SBGServer = /** @class */ (function () {
         this.server.set('views', [upath_1.default.join(__dirname, 'views')]);
         // init nunjuck environment
         this.env = nunjucks_1.default.configure(upath_1.default.join(__dirname, 'views'), {
-            noCache: isDev,
+            // make sure cache is false
+            noCache: !this.cache,
             autoescape: true,
             express: this.server,
-            web: { useCache: isDev, async: true }
+            web: {
+                // make sure cache is true
+                useCache: this.cache,
+                async: true
+            }
         });
         (0, nunjucks_2.default)(this.env);
         // init default middleware
@@ -88,7 +93,7 @@ var SBGServer = /** @class */ (function () {
             res.setHeader('Access-Control-Allow-Origin', '*');
             //res.header('Access-Control-Allow-Credentials', true);
             // set no cache for local development from server.runner.ts
-            if (isDev) {
+            if (_this.cache) {
                 _this.server.set('etag', false);
                 res.set('Cache-Control', 'no-store');
             }

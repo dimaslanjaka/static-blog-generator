@@ -7,6 +7,7 @@ export interface SBGServer {
     config: {
         root: string;
         port: number;
+        cache: boolean;
     };
 }
 export declare class SBGServer {
@@ -14,6 +15,7 @@ export declare class SBGServer {
     env: nunjucks.Environment;
     api: apis.Application;
     config: SBGServer['config'];
+    cache: boolean;
     constructor(options?: Partial<SBGServer['config']>);
     startExpress(): express.Express;
     renderData(assign: Record<string, any>): Record<string, any> & {
@@ -21,6 +23,7 @@ export declare class SBGServer {
         configserver: {
             root: string;
             port: number;
+            cache: boolean;
         };
     };
     /**
