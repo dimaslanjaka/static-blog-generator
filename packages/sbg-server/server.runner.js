@@ -32,7 +32,7 @@ function server_runner(SBGServer) {
     // res.setHeader('content-type', 'application/json; charset=utf-8');
     const json = jsonStringifyWithCircularRefs(req.headers);
     // res.send(json);
-    res.json(json);
+    res.json(JSON.parse(json));
   });
   _server.start(app).once('listening', function () {
     console.log('check connection');
