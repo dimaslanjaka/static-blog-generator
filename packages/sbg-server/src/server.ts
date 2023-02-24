@@ -35,7 +35,7 @@ export class SBGServer {
 
   startExpress() {
     // vars
-    const isDev = new Error('').stack?.includes('server.runner');
+    const isDev = new Error('').stack?.includes('server-dev.runner');
     debug('sbg-server')('is-dev', isDev);
 
     const self = this;
