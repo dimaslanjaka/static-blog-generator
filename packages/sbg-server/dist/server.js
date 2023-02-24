@@ -37,12 +37,12 @@ var http_1 = __importDefault(require("http"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
 var apis = __importStar(require("sbg-api"));
 var sbg_utility_1 = require("sbg-utility");
-var session_file_store_1 = __importDefault(require("session-file-store"));
 var upath_1 = __importDefault(require("upath"));
 var config_1 = __importDefault(require("./config"));
 var nunjucks_2 = __importDefault(require("./helper/nunjucks"));
+var session_file_store_1 = require("./middleware/session-file-store");
 var post_1 = __importDefault(require("./post"));
-var FileStore = (0, session_file_store_1.default)(express_session_1.default);
+var FileStore = (0, session_file_store_1.sessionFileStore)(express_session_1.default);
 var fileStoreOptions = {};
 var SBGServer = /** @class */ (function () {
     function SBGServer(options) {
@@ -169,11 +169,11 @@ var SBGServer = /** @class */ (function () {
     /**
      * start server
      */
-    SBGServer.prototype.start = function () {
+    SBGServer.prototype.start = function (customServer) {
         (0, sbg_utility_1.debug)('sbg-server').extend('cwd')(this.config.root);
         (0, sbg_utility_1.debug)('sbg-server').extend('port')(this.config.port);
         var httpserver = http_1.default
-            .createServer(this.startExpress())
+            .createServer(customServer || this.startExpress())
             .listen(this.config.port);
         process.on('SIGTERM', function () {
             (0, sbg_utility_1.debug)('sbg-server').extend('exit')('SIGTERM signal received: closing HTTP server');
