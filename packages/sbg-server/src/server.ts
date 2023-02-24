@@ -66,7 +66,7 @@ export class SBGServer {
     });
     setupNunjuckHelper(this.env);
     // init default middleware
-    fileStoreOptions.path = path.join(this.api.cwd, 'tmp/sbg-server/session');
+    fileStoreOptions.path = path.join(this.api.cwd, 'tmp/sbg-server/sessions');
     this.server.use(
       session({
         store: <any>new FileStore(<any>fileStoreOptions),

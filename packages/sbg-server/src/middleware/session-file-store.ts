@@ -29,7 +29,12 @@ export function sessionFileStore(session: typeof import('express-session')) {
       const self = this;
 
       // fallback options as empty object
-      const opt = options || {};
+      const opt = options || ({} as typeof options);
+      if (!fs.existsSync(opt.path)) {
+        fs.mkdirSync(opt.path, { recursive: true });
+      }
+
+      // call session store
       Store.call(self, opt);
       this.store = Store;
 
@@ -41,89 +46,95 @@ export function sessionFileStore(session: typeof import('express-session')) {
     /**
      * Attempts to fetch session from a session file by the given `sessionId`
      *
-     * @param  {String}   sessionId
-     * @param  {Function} callback
+     * @param sessionId
+     * @param callback
      *
      * @api public
      */
-    get(sessionId, callback) {
+    get(sessionId: string, callback: (...args: any[]) => any) {
       sessionFileHelper.get(sessionId, this.options, callback);
     }
     /**
      * Attempts to commit the given session associated with the given `sessionId` to a session file
      *
-     * @param {String}   sessionId
-     * @param {Object}   session
-     * @param {Function} callback (optional)
+     * @param sessionId
+     * @param session
+     * @param callback (optional)
      *
      * @api public
      */
-    set(sessionId, session, callback) {
+    set(sessionId: string, session, callback: (...args: any[]) => any) {
       sessionFileHelper.set(sessionId, session, this.options, callback);
     }
+
     /**
      * Touch the given session object associated with the given `sessionId`
      *
-     * @param {string} sessionId
-     * @param {object} session
-     * @param {function} callback
+     * @param sessionId
+     * @param session
+     * @param callback
      *
      * @api public
      */
-    touch(sessionId, session, callback) {
+    touch(sessionId: string, session, callback: (...args: any[]) => any) {
       sessionFileHelper.touch(sessionId, session, this.options, callback);
     }
+
     /**
      * Attempts to unlink a given session by its id
      *
-     * @param  {String}   sessionId   Files are serialized to disk by their
+     * @param    sessionId   Files are serialized to disk by their
      *                                sessionId
-     * @param  {Function} callback
+     * @param  callback
      *
      * @api public
      */
-    destroy(sessionId, callback) {
+    destroy(sessionId: string, callback: (...args: any[]) => any) {
       sessionFileHelper.destroy(sessionId, this.options, callback);
     }
+
     /**
      * Attempts to fetch number of the session files
      *
-     * @param  {Function} callback
+     * @param  callback
      *
      * @api public
      */
-    length(callback) {
+    length(callback: (...args: any[]) => any) {
       sessionFileHelper.length(this.options, callback);
     }
+
     /**
      * Attempts to clear out all of the existing session files
      *
-     * @param  {Function} callback
+     * @param  callback
      *
      * @api public
      */
-    clear(callback) {
+    clear(callback: (...args: any[]) => any) {
       sessionFileHelper.clear(this.options, callback);
     }
+
     /**
      * Attempts to find all of the session files
      *
-     * @param  {Function} callback
+     * @param  callback
      *
      * @api public
      */
-    list(callback) {
+    list(callback: (...args: any[]) => any) {
       sessionFileHelper.list(this.options, callback);
     }
+
     /**
      * Attempts to detect whether a session file is already expired or not
      *
-     * @param  {String}   sessionId
-     * @param  {Function} callback
+     * @param    sessionId
+     * @param  callback
      *
      * @api public
      */
-    expired(sessionId, callback) {
+    expired(sessionId: string, callback: (...args: any[]) => any) {
       sessionFileHelper.expired(sessionId, this.options, callback);
     }
   }
