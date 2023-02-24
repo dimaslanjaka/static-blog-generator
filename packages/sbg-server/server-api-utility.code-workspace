@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../sbg-utility"
+		},
+		{
+			"path": "../../test"
 		}
 	],
 	"settings": {
