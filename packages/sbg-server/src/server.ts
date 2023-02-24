@@ -9,7 +9,7 @@ import * as apis from 'sbg-api';
 import { debug } from 'sbg-utility';
 import path from 'upath';
 import serverConfig from './config';
-import { nunjucksEnv } from './helper/nunjucks';
+import setupNunjuckHelper from './helper/nunjucks';
 import routePost from './post';
 
 export interface SBGServer {
@@ -45,17 +45,13 @@ export class SBGServer {
     // set views
     this.server.set('views', [path.join(__dirname, 'views')]);
     // init nunjuck environment
-    this.env = nunjucksEnv(
-      path.join(__dirname, 'views'),
-      {
-        noCache: isDev,
-        autoescape: true,
-        express: this.server,
-        web: { useCache: isDev, async: true }
-      },
-      nunjucks
-    );
-
+    this.env = nunjucks.configure(path.join(__dirname, 'views'), {
+      noCache: isDev,
+      autoescape: true,
+      express: this.server,
+      web: { useCache: isDev, async: true }
+    });
+    setupNunjuckHelper(this.env);
     // init default middleware
     //debug('sbg-server').extend('middleware')('enabling cors');
     this.server.use(cors());
