@@ -72,7 +72,13 @@ export class SBGServer {
         store: <any>new FileStore(<any>fileStoreOptions),
         secret: 'sbg-server-session',
         resave: true,
-        saveUninitialized: true
+        saveUninitialized: true,
+        genid: function (_req) {
+          if (typeof process.env.SESSION_ID === 'string') {
+            return process.env.SESSION_ID;
+          }
+          return String(Math.random());
+        }
       })
     );
     this.server.use(cors());
