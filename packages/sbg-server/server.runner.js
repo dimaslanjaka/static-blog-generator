@@ -1,6 +1,6 @@
 process.cwd = () => __dirname + '/../../test';
 const { default: axios } = require('axios');
-const { pathJoin } = require('sbg-utility');
+const { pathJoin, jsonStringifyWithCircularRefs } = require('sbg-utility');
 
 // dev server
 // just test unit
@@ -29,7 +29,9 @@ function server_runner(SBGServer) {
     }
   });
   app.get('/test/headers', function (req, res) {
-    res.json(req.headers);
+    res.setHeader('Content-type', 'application/json; charset=utf-8;');
+    const json = jsonStringifyWithCircularRefs(req.headers);
+    res.send(json);
   });
   _server.start(app).once('listening', function () {
     console.log('check connection');
