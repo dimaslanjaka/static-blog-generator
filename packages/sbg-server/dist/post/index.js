@@ -64,7 +64,11 @@ function routePost(api) {
             var posts;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)()];
+                    case 0:
+                        _req.origin_post_data = exports.cacheRouterPost.getSync('origin_post_data', []);
+                        _req.post_data = exports.cacheRouterPost.getSync('origin_post_data', []);
+                        if (!(_req.origin_post_data.length === 0 && _req.post_data.length === 0)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)()];
                     case 1:
                         posts = _a.sent();
                         // assign to response property
@@ -74,12 +78,38 @@ function routePost(api) {
                         });
                         exports.cacheRouterPost.setSync('post_data', _req.post_data);
                         exports.cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
+                        _a.label = 2;
+                    case 2:
                         _next(null);
                         return [2 /*return*/];
                 }
             });
         });
     };
+    // get checksum all posts
+    router.all('/checksum', function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var hash, current;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, (0, sbg_utility_1.folder_to_hash)('sha256', upath_1.default.join(api.cwd, api.config.post_dir), {
+                            ignored: ['**/node_modules', '**/dist'],
+                            pattern: '**/*.md',
+                            encoding: 'base64'
+                        })];
+                    case 1:
+                        hash = _a.sent();
+                        current = exports.cacheRouterPost.getSync('checksum', {});
+                        if (current !== hash) {
+                            req['session']['checksum'] = 'changed';
+                            exports.cacheRouterPost.setSync('checksum', hash);
+                        }
+                        res.json(hash);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    });
     // list all posts
     router.get('/debug', express_1.default.static(POST_ROOT), (0, serve_index_1.default)(POST_ROOT, { icons: true }));
     router.get('/', middleware, function (req, res) {
@@ -102,6 +132,7 @@ function routePost(api) {
             });
         });
     });
+    // get all posts json format
     router.get('/json', middleware, function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             var _data;
@@ -115,7 +146,7 @@ function routePost(api) {
                     })
                 };
                 //console.log(data);
-                res.send('');
+                res.json(_data);
                 return [2 /*return*/];
             });
         });

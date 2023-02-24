@@ -33,11 +33,12 @@ var express_1 = __importDefault(require("express"));
 // import findWorkspaceRoot from 'find-yarn-workspace-root';
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
+var nunjucks_1 = __importDefault(require("nunjucks"));
 var apis = __importStar(require("sbg-api"));
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = __importDefault(require("upath"));
 var config_1 = __importDefault(require("./config"));
-var nunjucks_1 = require("./helper/nunjucks");
+var nunjucks_2 = __importDefault(require("./helper/nunjucks"));
 var post_1 = __importDefault(require("./post"));
 var SBGServer = /** @class */ (function () {
     function SBGServer(options) {
@@ -67,12 +68,13 @@ var SBGServer = /** @class */ (function () {
         // set views
         this.server.set('views', [upath_1.default.join(__dirname, 'views')]);
         // init nunjuck environment
-        this.env = (0, nunjucks_1.nunjucksEnv)(upath_1.default.join(__dirname, 'views'), {
+        this.env = nunjucks_1.default.configure(upath_1.default.join(__dirname, 'views'), {
             noCache: isDev,
             autoescape: true,
             express: this.server,
             web: { useCache: isDev, async: true }
         });
+        (0, nunjucks_2.default)(this.env);
         // init default middleware
         //debug('sbg-server').extend('middleware')('enabling cors');
         this.server.use((0, cors_1.default)());

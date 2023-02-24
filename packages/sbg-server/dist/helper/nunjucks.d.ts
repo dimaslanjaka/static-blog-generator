@@ -13,10 +13,10 @@ export declare function getAuthorName(obj: postAuthor): any;
  * @param options
  * @returns
  */
-export declare function nunjucksEnv(paths: string | string[] | null | undefined, options?: nunjucks.ConfigureOptions): nunjucks.Environment;
+export declare function nunjucksEnv(paths: string | string[] | null | undefined, options?: nunjucks.ConfigureOptions, context?: typeof nunjucks): nunjucks.Environment;
 export declare function parseDate(input: moment.MomentInput, pattern?: string): string;
 /**
  * initiate nunjucks custom function helper
  * @param env
  */
-export default function setupNunjuckHelper(env: Environment): void;
+export default function setupNunjuckHelper(env: Environment, context?: typeof nunjucks): void;

@@ -32,8 +32,10 @@ exports.getAuthorName = getAuthorName;
  * @param options
  * @returns
  */
-function nunjucksEnv(paths, options) {
+function nunjucksEnv(paths, options, context) {
     var isDev = /dev/i.test(String(process.env.NODE_ENV));
+    if (!context)
+        context = nunjucks_1.default;
     var defVal = {
         noCache: false,
         autoescape: false,
@@ -42,19 +44,19 @@ function nunjucksEnv(paths, options) {
     var env;
     if (paths) {
         if (typeof options === 'object') {
-            env = nunjucks_1.default.configure(paths, Object.assign(defVal, options));
+            env = context.configure(paths, Object.assign(defVal, options));
         }
         else {
-            env = nunjucks_1.default.configure(paths, defVal);
+            env = context.configure(paths, defVal);
         }
     }
     if (typeof options === 'object') {
-        env = nunjucks_1.default.configure(Object.assign(defVal, options));
+        env = context.configure(Object.assign(defVal, options));
     }
     else {
-        env = nunjucks_1.default.configure(defVal);
+        env = context.configure(defVal);
     }
-    setupNunjuckHelper(env);
+    setupNunjuckHelper(env, context);
     return env;
 }
 exports.nunjucksEnv = nunjucksEnv;
@@ -70,7 +72,9 @@ var md5 = function (data) {
  * initiate nunjucks custom function helper
  * @param env
  */
-function setupNunjuckHelper(env) {
+function setupNunjuckHelper(env, context) {
+    if (!context)
+        context = nunjucks_1.default;
     env.addGlobal('getAuthorName', getAuthorName);
     env.addGlobal('parseDate', parseDate);
     env.addGlobal('md5', md5);
@@ -91,7 +95,7 @@ function setupNunjuckHelper(env) {
             value = value.toString();
         }
         var jsonString = JSON.stringify(value, null, spaces).replace(/</g, '\\u003c');
-        return new nunjucks_1.default.runtime.SafeString(jsonString);
+        return new context.runtime.SafeString(jsonString);
     });
 }
 exports.default = setupNunjuckHelper;
