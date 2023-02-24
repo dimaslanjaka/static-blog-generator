@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.jsonStringifyWithCircularRefs = void 0;
 JSON.stringifyWithCircularRefs = (function () {
     var refs = new Map();
     var parents = [];
@@ -57,4 +60,13 @@ JSON.stringifyWithCircularRefs = (function () {
         }
     };
 })();
+/**
+ * transform any object to json. Suppress `TypeError: Converting circular structure to JSON`
+ * @param data
+ * @returns
+ */
+function jsonStringifyWithCircularRefs(data) {
+    return JSON.stringifyWithCircularRefs(data);
+}
+exports.jsonStringifyWithCircularRefs = jsonStringifyWithCircularRefs;
 //# sourceMappingURL=JSON.js.map

@@ -1,5 +1,4 @@
-
-interface JSON {
+export interface JSON {
   /**
    * @see {@link https://stackoverflow.com/a/61962964/6404439}
    * @example
@@ -68,3 +67,12 @@ JSON.stringifyWithCircularRefs = (function () {
     }
   };
 })();
+
+/**
+ * transform any object to json. Suppress `TypeError: Converting circular structure to JSON`
+ * @param data
+ * @returns
+ */
+export function jsonStringifyWithCircularRefs(data: any) {
+  return JSON.stringifyWithCircularRefs(data);
+}

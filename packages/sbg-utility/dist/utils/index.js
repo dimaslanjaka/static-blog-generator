@@ -29,7 +29,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.string = exports.stream = exports.scheduler = exports.object = exports.envNunjucks = exports.noop = exports.logger = exports.hash = exports.filemanager = exports.debug = exports.array = void 0;
+exports.string = exports.stream = exports.scheduler = exports.object = exports.envNunjucks = exports.noop = exports.logger = exports.json = exports.hash = exports.filemanager = exports.debug = exports.array = void 0;
 __exportStar(require("./array"), exports);
 exports.array = __importStar(require("./array"));
 __exportStar(require("./chain"), exports);
@@ -40,6 +40,8 @@ __exportStar(require("./filemanager"), exports);
 exports.filemanager = __importStar(require("./filemanager"));
 __exportStar(require("./hash"), exports);
 exports.hash = __importStar(require("./hash"));
+__exportStar(require("./JSON"), exports);
+exports.json = __importStar(require("./JSON"));
 __exportStar(require("./logger"), exports);
 exports.logger = __importStar(require("./logger"));
 var noop_1 = require("./noop");
@@ -55,6 +57,5 @@ __exportStar(require("./stream"), exports);
 exports.stream = __importStar(require("./stream"));
 __exportStar(require("./string"), exports);
 exports.string = __importStar(require("./string"));
-require("./JSON");
 //
 //# sourceMappingURL=index.js.map

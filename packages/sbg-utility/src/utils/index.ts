@@ -7,6 +7,8 @@ export * from './filemanager';
 export * as filemanager from './filemanager';
 export * from './hash';
 export * as hash from './hash';
+export * from './JSON';
+export * as json from './JSON';
 export * from './logger';
 export * as logger from './logger';
 export { default as noop } from './noop';
@@ -19,6 +21,5 @@ export * from './stream';
 export * as stream from './stream';
 export * from './string';
 export * as string from './string';
-import './JSON';
 
 //
