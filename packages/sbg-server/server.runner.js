@@ -29,9 +29,10 @@ function server_runner(SBGServer) {
     }
   });
   app.get('/test/headers', function (req, res) {
-    res.setHeader('Content-type', 'application/json; charset=utf-8;');
+    // res.setHeader('content-type', 'application/json; charset=utf-8');
     const json = jsonStringifyWithCircularRefs(req.headers);
-    res.send(json);
+    // res.send(json);
+    res.json(json);
   });
   _server.start(app).once('listening', function () {
     console.log('check connection');
