@@ -16,6 +16,7 @@ export interface SBGServer {
   config: {
     root: string;
     port: number;
+    cache: boolean;
   };
 }
 
@@ -24,9 +25,12 @@ export class SBGServer {
   env: nunjucks.Environment;
   api: apis.Application;
   config: SBGServer['config'];
+  cache = true;
   constructor(options?: Partial<SBGServer['config']>) {
     // update config
     serverConfig.update(options || {});
+    // use cache
+    if (options.cache) this.cache = options.cache;
     // get updated config
     this.config = serverConfig.get();
     // start api
@@ -34,10 +38,6 @@ export class SBGServer {
   }
 
   startExpress() {
-    // vars
-    const isDev = new Error('').stack?.includes('server-dev.runner');
-    debug('sbg-server')('is-dev', isDev);
-
     const self = this;
     // init express
     this.server = express();
@@ -46,10 +46,15 @@ export class SBGServer {
     this.server.set('views', [path.join(__dirname, 'views')]);
     // init nunjuck environment
     this.env = nunjucks.configure(path.join(__dirname, 'views'), {
-      noCache: isDev,
+      // make sure cache is false
+      noCache: !this.cache,
       autoescape: true,
       express: this.server,
-      web: { useCache: isDev, async: true }
+      web: {
+        // make sure cache is true
+        useCache: this.cache,
+        async: true
+      }
     });
     setupNunjuckHelper(this.env);
     // init default middleware
@@ -66,7 +71,7 @@ export class SBGServer {
       //res.header('Access-Control-Allow-Credentials', true);
 
       // set no cache for local development from server.runner.ts
-      if (isDev) {
+      if (this.cache) {
         this.server.set('etag', false);
         res.set('Cache-Control', 'no-store');
       }
