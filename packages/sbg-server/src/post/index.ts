@@ -70,7 +70,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     '/json',
     middleware,
     async function (req: PostRequestMiddleware, res) {
-      const data = {
+      const _data = {
         posts: req.post_data.map((item) => {
           item.relative_source = item.full_source.replace(
             api.config.cwd,
@@ -80,7 +80,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           return item;
         })
       };
-      console.log(data);
+      //console.log(data);
       res.send('');
     }
   );

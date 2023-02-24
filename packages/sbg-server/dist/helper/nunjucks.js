@@ -3,10 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseDate = exports.getAuthorName = void 0;
+exports.parseDate = exports.nunjucksEnv = exports.getAuthorName = void 0;
 var crypto_1 = __importDefault(require("crypto"));
 var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var nunjucks_1 = __importDefault(require("nunjucks"));
+/**
+ * get post author name
+ * @param obj
+ * @returns
+ */
 function getAuthorName(obj) {
     if (!obj)
         return 'unknown';
@@ -21,6 +26,38 @@ function getAuthorName(obj) {
     return 'unknown';
 }
 exports.getAuthorName = getAuthorName;
+/**
+ * Nunjucks environment helper
+ * @param paths
+ * @param options
+ * @returns
+ */
+function nunjucksEnv(paths, options) {
+    var isDev = /dev/i.test(String(process.env.NODE_ENV));
+    var defVal = {
+        noCache: false,
+        autoescape: false,
+        web: { useCache: isDev, async: true }
+    };
+    var env;
+    if (paths) {
+        if (typeof options === 'object') {
+            env = nunjucks_1.default.configure(paths, Object.assign(defVal, options));
+        }
+        else {
+            env = nunjucks_1.default.configure(paths, defVal);
+        }
+    }
+    if (typeof options === 'object') {
+        env = nunjucks_1.default.configure(Object.assign(defVal, options));
+    }
+    else {
+        env = nunjucks_1.default.configure(defVal);
+    }
+    setupNunjuckHelper(env);
+    return env;
+}
+exports.nunjucksEnv = nunjucksEnv;
 function parseDate(input, pattern) {
     if (pattern === void 0) { pattern = 'LLL'; }
     return (0, moment_timezone_1.default)(input).format(pattern);
@@ -29,6 +66,10 @@ exports.parseDate = parseDate;
 var md5 = function (data) {
     return crypto_1.default.createHash('md5').update(data).digest('hex');
 };
+/**
+ * initiate nunjucks custom function helper
+ * @param env
+ */
 function setupNunjuckHelper(env) {
     env.addGlobal('getAuthorName', getAuthorName);
     env.addGlobal('parseDate', parseDate);

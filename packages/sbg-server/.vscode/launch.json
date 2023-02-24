@@ -11,7 +11,7 @@
       "type": "node-terminal"
     },
     {
-      "command": "yarn server:dist",
+      "command": "yarn build && yarn server:dist",
       "name": "Server Dist",
       "request": "launch",
       "type": "node-terminal"

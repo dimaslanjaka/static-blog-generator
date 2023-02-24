@@ -104,9 +104,9 @@ function routePost(api) {
     });
     router.get('/json', middleware, function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var data;
+            var _data;
             return __generator(this, function (_a) {
-                data = {
+                _data = {
                     posts: req.post_data.map(function (item) {
                         item.relative_source = item.full_source.replace(api.config.cwd, '<root>');
                         if (!item.title)
@@ -114,7 +114,7 @@ function routePost(api) {
                         return item;
                     })
                 };
-                console.log(data);
+                //console.log(data);
                 res.send('');
                 return [2 /*return*/];
             });
