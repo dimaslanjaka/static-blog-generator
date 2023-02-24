@@ -7,6 +7,9 @@ import yaml from 'yaml';
 import * as utils from '../utils';
 import * as defaults from './defaults';
 
+const configFileJSON = join(__dirname, '_config.json');
+if (!fs.existsSync(configFileJSON)) fs.writeFileSync(configFileJSON, '{}');
+
 export interface ProjConf extends Hexo.Config {
   [key: string]: any;
   /**
@@ -69,7 +72,7 @@ export function fetchConfig(fileYML: string) {
   if (fs.existsSync(fileYML)) {
     const configYML = yaml.parse(fs.readFileSync(fileYML, 'utf-8'));
     setConfig(utils.object.orderKeys(configYML));
-    utils.filemanager.writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+    utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
   }
 }
 
