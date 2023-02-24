@@ -8,10 +8,10 @@ import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 import { debug } from 'sbg-utility';
-import sessionFileStore from 'session-file-store';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
+import { sessionFileStore } from './middleware/session-file-store';
 import routePost from './post';
 
 const FileStore = sessionFileStore(session);
@@ -65,7 +65,7 @@ export class SBGServer {
     // init default middleware
     this.server.use(
       session({
-        store: new FileStore(fileStoreOptions),
+        store: <any>new FileStore(<any>fileStoreOptions),
         secret: 'sbg-server-session',
         resave: true,
         saveUninitialized: true

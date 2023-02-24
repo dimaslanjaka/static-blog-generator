@@ -11,6 +11,9 @@ import * as sessionFileHelper from './session-file-helpers';
  */
 export function sessionFileStore(session: typeof import('express-session')) {
   const Store = session.Store;
+  type implStore = Partial<typeof Store> & {
+    options: Record<string, any>;
+  };
 
   /**
    * Initialize FileStore with the given `options`
@@ -19,7 +22,7 @@ export function sessionFileStore(session: typeof import('express-session')) {
    *
    * @api public
    */
-  class FileStore {
+  class FileStore implements implStore {
     options: ReturnType<typeof sessionFileHelper.defaults>;
     store: typeof Store;
     constructor(options: ReturnType<typeof sessionFileHelper.defaults>) {
