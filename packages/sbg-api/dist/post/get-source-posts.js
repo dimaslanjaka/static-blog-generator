@@ -9,6 +9,10 @@ var glob_1 = __importDefault(require("glob"));
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = __importDefault(require("upath"));
 var copy_1 = require("./copy");
+/**
+ * get all source posts
+ * @returns
+ */
 function getSourcePosts() {
     return new bluebird_1.default(function (resolve) {
         var config = (0, sbg_utility_1.getConfig)();
