@@ -67,7 +67,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     );
     const current = cacheRouterPost.getSync('checksum', {} as typeof hash);
     if (current !== hash) {
-      req['session']['checksum'] = 'changed';
+      // req['session']['checksum'] = 'changed';
       cacheRouterPost.setSync('checksum', hash);
     }
     res.json(hash);

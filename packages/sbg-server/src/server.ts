@@ -2,15 +2,20 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 // import findWorkspaceRoot from 'find-yarn-workspace-root';
+import session from 'express-session';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
 import * as apis from 'sbg-api';
 import { debug } from 'sbg-utility';
+import sessionFileStore from 'session-file-store';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
 import routePost from './post';
+
+const FileStore = sessionFileStore(session);
+const fileStoreOptions = {};
 
 export interface SBGServer {
   config: {
@@ -58,7 +63,14 @@ export class SBGServer {
     });
     setupNunjuckHelper(this.env);
     // init default middleware
-    //debug('sbg-server').extend('middleware')('enabling cors');
+    this.server.use(
+      session({
+        store: new FileStore(fileStoreOptions),
+        secret: 'sbg-server-session',
+        resave: true,
+        saveUninitialized: true
+      })
+    );
     this.server.use(cors());
     this.server.use(express.urlencoded({ extended: true, limit: '50mb' }));
     this.server.use(express.json({ limit: '50mb' }));
