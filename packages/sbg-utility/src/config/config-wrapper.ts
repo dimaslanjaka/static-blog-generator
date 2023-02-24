@@ -4,6 +4,7 @@ import path from 'upath';
 import { writefile } from '../utils/filemanager';
 
 const configWrapperFile = path.join(__dirname, '_config_wrapper.json');
+if (!fs.existsSync(configWrapperFile)) fs.writeFileSync(configWrapperFile, '{}');
 const configWrapper: Record<string, any> = fs.existsSync(fs.readFileSync(configWrapperFile, 'utf-8'))
   ? JSON.parse(configWrapperFile)
   : {};
