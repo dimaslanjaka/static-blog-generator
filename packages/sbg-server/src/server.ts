@@ -45,12 +45,17 @@ export class SBGServer {
     // set views
     this.server.set('views', [path.join(__dirname, 'views')]);
     // init nunjuck environment
-    this.env = nunjucksEnv(path.join(__dirname, 'views'), {
-      noCache: isDev,
-      autoescape: true,
-      express: this.server,
-      web: { useCache: isDev, async: true }
-    });
+    this.env = nunjucksEnv(
+      path.join(__dirname, 'views'),
+      {
+        noCache: isDev,
+        autoescape: true,
+        express: this.server,
+        web: { useCache: isDev, async: true }
+      },
+      nunjucks
+    );
+
     // init default middleware
     //debug('sbg-server').extend('middleware')('enabling cors');
     this.server.use(cors());
