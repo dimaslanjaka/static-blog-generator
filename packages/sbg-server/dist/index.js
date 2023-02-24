@@ -21,5 +21,6 @@ var server_1 = __importDefault(require("./server"));
 exports.default = server_1.default;
 __exportStar(require("./helper"), exports);
 __exportStar(require("./post"), exports);
+__exportStar(require("./server"), exports);
 //
 //# sourceMappingURL=index.js.map

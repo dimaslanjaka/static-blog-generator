@@ -43,7 +43,9 @@ var nunjucks_2 = __importDefault(require("./helper/nunjucks"));
 var session_file_store_1 = require("./middleware/session-file-store");
 var post_1 = __importDefault(require("./post"));
 var FileStore = (0, session_file_store_1.sessionFileStore)(express_session_1.default);
-var fileStoreOptions = {};
+var fileStoreOptions = {
+    logFn: (0, sbg_utility_1.debug)('sbg-server').extend('session')
+};
 var SBGServer = /** @class */ (function () {
     function SBGServer(options) {
         var _this = this;
@@ -85,11 +87,18 @@ var SBGServer = /** @class */ (function () {
         });
         (0, nunjucks_2.default)(this.env);
         // init default middleware
+        fileStoreOptions.path = upath_1.default.join(this.api.cwd, 'tmp/sbg-server/sessions');
         this.server.use((0, express_session_1.default)({
             store: new FileStore(fileStoreOptions),
             secret: 'sbg-server-session',
             resave: true,
-            saveUninitialized: true
+            saveUninitialized: true,
+            genid: function (_req) {
+                if (typeof process.env.SESSION_ID === 'string') {
+                    return process.env.SESSION_ID;
+                }
+                return String(Math.random());
+            }
         }));
         this.server.use((0, cors_1.default)());
         this.server.use(express_1.default.urlencoded({ extended: true, limit: '50mb' }));

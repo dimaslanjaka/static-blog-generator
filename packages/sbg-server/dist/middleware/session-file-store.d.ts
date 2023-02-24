@@ -14,74 +14,74 @@ export declare function sessionFileStore(session: typeof import('express-session
         /**
          * Attempts to fetch session from a session file by the given `sessionId`
          *
-         * @param  {String}   sessionId
-         * @param  {Function} callback
+         * @param sessionId
+         * @param callback
          *
          * @api public
          */
-        get(sessionId: any, callback: any): void;
+        get(sessionId: string, callback: (...args: any[]) => any): void;
         /**
          * Attempts to commit the given session associated with the given `sessionId` to a session file
          *
-         * @param {String}   sessionId
-         * @param {Object}   session
-         * @param {Function} callback (optional)
+         * @param sessionId
+         * @param session
+         * @param callback (optional)
          *
          * @api public
          */
-        set(sessionId: any, session: any, callback: any): void;
+        set(sessionId: string, session: any, callback: (...args: any[]) => any): void;
         /**
          * Touch the given session object associated with the given `sessionId`
          *
-         * @param {string} sessionId
-         * @param {object} session
-         * @param {function} callback
+         * @param sessionId
+         * @param session
+         * @param callback
          *
          * @api public
          */
-        touch(sessionId: any, session: any, callback: any): void;
+        touch(sessionId: string, session: any, callback: (...args: any[]) => any): void;
         /**
          * Attempts to unlink a given session by its id
          *
-         * @param  {String}   sessionId   Files are serialized to disk by their
+         * @param    sessionId   Files are serialized to disk by their
          *                                sessionId
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
-        destroy(sessionId: any, callback: any): void;
+        destroy(sessionId: string, callback: (...args: any[]) => any): void;
         /**
          * Attempts to fetch number of the session files
          *
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
-        length(callback: any): void;
+        length(callback: (...args: any[]) => any): void;
         /**
          * Attempts to clear out all of the existing session files
          *
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
-        clear(callback: any): void;
+        clear(callback: (...args: any[]) => any): void;
         /**
          * Attempts to find all of the session files
          *
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
-        list(callback: any): void;
+        list(callback: (...args: any[]) => any): void;
         /**
          * Attempts to detect whether a session file is already expired or not
          *
-         * @param  {String}   sessionId
-         * @param  {Function} callback
+         * @param    sessionId
+         * @param  callback
          *
          * @api public
          */
-        expired(sessionId: any, callback: any): void;
+        expired(sessionId: string, callback: (...args: any[]) => any): void;
     };
 };
