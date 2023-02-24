@@ -9,6 +9,10 @@ export interface ResultSourcePosts extends hexoPostParser.postMap {
   full_source: string;
 }
 
+/**
+ * get all source posts
+ * @returns
+ */
 export function getSourcePosts() {
   return new Bluebird((resolve: (arg: ResultSourcePosts[]) => any) => {
     const config = getConfig();
