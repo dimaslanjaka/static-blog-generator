@@ -27,7 +27,8 @@
     "test": "jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
     "clean": "lerna clean",
-    "pack": "lerna exec \"npm run pack --if-present\""
+    "pack": "lerna exec \"npm run pack --if-present\"",
+    "prepare": "git config core.hooksPath ./git-hooks"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
