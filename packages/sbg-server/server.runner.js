@@ -8,7 +8,7 @@ const { pathJoin } = require('sbg-utility');
 
 /**
  * server runner
- * @param {import('./src').default} SBGServer choose from dev or dist
+ * @param {typeof import('./src').SBGServer} SBGServer choose from dev or dist
  */
 function server_runner(SBGServer) {
   const _server = new SBGServer({
@@ -17,16 +17,19 @@ function server_runner(SBGServer) {
     cache: false
   });
   const app = _server.startExpress();
-  app.get('/session-test', function (req, res) {
-    if (req.session.views) {
+  app.get('/test/view', function (req, res) {
+    if (typeof req.session.views === 'number') {
       req.session.views++;
       res.setHeader('Content-Type', 'text/html');
       res.write('<p>views: ' + req.session.views + '</p>');
       res.end();
     } else {
-      req.session.views = 1;
+      req.session.views = 0;
       res.end('Welcome to the file session demo. Refresh page!');
     }
+  });
+  app.get('/test/headers', function (req, res) {
+    res.json(req.headers);
   });
   _server.start(app).once('listening', function () {
     console.log('check connection');
