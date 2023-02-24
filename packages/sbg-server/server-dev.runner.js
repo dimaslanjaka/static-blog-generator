@@ -15,7 +15,22 @@ const _server = new SBGServer({
   root: pathJoin(__dirname, '../../test'),
   cache: false
 });
-_server.start().once('listening', function () {
+const app = _server.startExpress();
+app.get('/session-test', function (req, res) {
+  if (req.session.views) {
+    req.session.views++;
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<p>views: ' + req.session.views + '</p>');
+    res.end();
+  } else {
+    req.session.views = 1;
+    res.end('Welcome to the file session demo. Refresh page!');
+  }
+});
+_server.start(app).once('listening', function () {
   console.log('check connection');
-  axios.get('http://localhost:4000/post/json');
+  axios
+    .get('http://localhost:4000/post/json')
+    .then(() => console.log('check connection success'))
+    .catch(() => console.log('check connection failed'));
 });
