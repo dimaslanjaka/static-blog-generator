@@ -4,7 +4,7 @@ import { buildPost } from 'hexo-post-parser';
 import { moment } from 'hexo-post-parser/dist/dateMapper';
 import * as apis from 'sbg-api';
 import { getSourcePosts } from 'sbg-api';
-import { persistentCache, writefile } from 'sbg-utility';
+import { folder_to_hash, persistentCache, writefile } from 'sbg-utility';
 import serveIndex from 'serve-index';
 import path from 'upath';
 import yaml from 'yaml';
@@ -33,16 +33,45 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     _res: express.Response,
     _next: express.NextFunction
   ) {
-    const posts = await getSourcePosts();
-    // assign to response property
-    _req.origin_post_data = posts;
-    _req.post_data = posts.map((parsed) =>
-      Object.assign(parsed, parsed.metadata, { body: parsed.body })
+    _req.origin_post_data = cacheRouterPost.getSync(
+      'origin_post_data',
+      [] as PostRequestMiddleware['origin_post_data']
     );
-    cacheRouterPost.setSync('post_data', _req.post_data);
-    cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
+    _req.post_data = cacheRouterPost.getSync(
+      'origin_post_data',
+      [] as PostRequestMiddleware['post_data']
+    );
+    if (_req.origin_post_data.length === 0 && _req.post_data.length === 0) {
+      const posts = await getSourcePosts();
+      // assign to response property
+      _req.origin_post_data = posts;
+      _req.post_data = posts.map((parsed) =>
+        Object.assign(parsed, parsed.metadata, { body: parsed.body })
+      );
+      cacheRouterPost.setSync('post_data', _req.post_data);
+      cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
+    }
     _next(null);
   };
+
+  // get checksum all posts
+  router.all('/checksum', async function (req, res) {
+    const hash = await folder_to_hash(
+      'sha256',
+      path.join(api.cwd, api.config.post_dir),
+      {
+        ignored: ['**/node_modules', '**/dist'],
+        pattern: '**/*.md',
+        encoding: 'base64'
+      }
+    );
+    const current = cacheRouterPost.getSync('checksum', {} as typeof hash);
+    if (current !== hash) {
+      req['session']['checksum'] = 'changed';
+      cacheRouterPost.setSync('checksum', hash);
+    }
+    res.json(hash);
+  });
 
   // list all posts
   router.get(
@@ -66,6 +95,8 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     };
     res.render('post/index.njk', data);
   });
+
+  // get all posts json format
   router.get(
     '/json',
     middleware,
@@ -81,7 +112,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
         })
       };
       //console.log(data);
-      res.send('');
+      res.json(_data);
     }
   );
 
