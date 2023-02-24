@@ -3,6 +3,11 @@ import { postAuthor } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import nunjucks, { Environment } from 'nunjucks';
 
+/**
+ * get post author name
+ * @param obj
+ * @returns
+ */
 export function getAuthorName(obj: postAuthor) {
   if (!obj) return 'unknown';
   if (typeof obj === 'string') return obj;
@@ -12,6 +17,40 @@ export function getAuthorName(obj: postAuthor) {
   return 'unknown';
 }
 
+/**
+ * Nunjucks environment helper
+ * @param paths
+ * @param options
+ * @returns
+ */
+export function nunjucksEnv(
+  paths: string | string[] | null | undefined,
+  options?: nunjucks.ConfigureOptions
+) {
+  const isDev = /dev/i.test(String(process.env.NODE_ENV));
+  const defVal: nunjucks.ConfigureOptions = {
+    noCache: false,
+    autoescape: false,
+    web: { useCache: isDev, async: true }
+  };
+  let env: nunjucks.Environment;
+  if (paths) {
+    if (typeof options === 'object') {
+      env = nunjucks.configure(paths, Object.assign(defVal, options));
+    } else {
+      env = nunjucks.configure(paths, defVal);
+    }
+  }
+  if (typeof options === 'object') {
+    env = nunjucks.configure(Object.assign(defVal, options));
+  } else {
+    env = nunjucks.configure(defVal);
+  }
+
+  setupNunjuckHelper(env);
+  return env;
+}
+
 export function parseDate(input: moment.MomentInput, pattern = 'LLL') {
   return moment(input).format(pattern);
 }
@@ -19,6 +58,10 @@ export function parseDate(input: moment.MomentInput, pattern = 'LLL') {
 const md5 = (data: string) =>
   crypto.createHash('md5').update(data).digest('hex');
 
+/**
+ * initiate nunjucks custom function helper
+ * @param env
+ */
 export default function setupNunjuckHelper(env: Environment) {
   env.addGlobal('getAuthorName', getAuthorName);
   env.addGlobal('parseDate', parseDate);
