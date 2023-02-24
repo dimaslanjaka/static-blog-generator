@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "yarn server:dev",
+      "command": "yarn build && yarn server:dev",
       "name": "Server Dev",
       "request": "launch",
       "type": "node-terminal"
