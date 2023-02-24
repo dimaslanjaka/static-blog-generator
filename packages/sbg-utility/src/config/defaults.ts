@@ -1,8 +1,7 @@
-import { existsSync, readFileSync } from 'fs-extra';
+import { readFileSync } from 'fs-extra';
 import { trueCasePathSync } from 'true-case-path';
 import { join, toUnix } from 'upath';
 import * as yaml from 'yaml';
-import { writefile } from '../utils';
 import mappedConfig from './_config.json';
 
 export type importConfig = typeof mappedConfig;
@@ -12,12 +11,6 @@ export type importConfig = typeof mappedConfig;
  * @returns
  */
 export function getDefaultConfig() {
-  if (!existsSync(join(__dirname, '_config.json'))) {
-    writefile(join(__dirname, '_config.json'), '{}');
-  }
-  if (!existsSync(join(__dirname, '_config_wrapper.json'))) {
-    writefile(join(__dirname, '_config_wrapper.json'), '{}');
-  }
   const hexoDefaultConfig = {
     // Site
     title: 'Hexo',
