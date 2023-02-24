@@ -16,7 +16,7 @@ const entries = scan.map((str) => {
 const globals = {
   jquery: '$',
   moment: 'moment',
-  'moment-timezone': 'momentTimezone',
+  'moment-timezone': 'MomentTimezone',
   flowbite: 'flowbite',
   'core-js': 'CoreJS',
   'highlight.js': 'hljs',
