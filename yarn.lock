@@ -7477,17 +7477,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie@npm:0.4.2, cookie@npm:~0.4.1":
+  version: 0.4.2
+  resolution: "cookie@npm:0.4.2"
+  checksum: a00833c998bedf8e787b4c342defe5fa419abd96b32f4464f718b91022586b8f1bafbddd499288e75c037642493c83083da426c6a9080d309e3bd90fd11baa9b
+  languageName: node
+  linkType: hard
+
 "cookie@npm:0.5.0":
   version: 0.5.0
   resolution: "cookie@npm:0.5.0"
   checksum: 1f4bd2ca5765f8c9689a7e8954183f5332139eb72b6ff783d8947032ec1fdf43109852c178e21a953a30c0dd42257828185be01b49d1eb1a67fd054ca588a180
-  languageName: node
-  linkType: hard
-
-"cookie@npm:~0.4.1":
-  version: 0.4.2
-  resolution: "cookie@npm:0.4.2"
-  checksum: a00833c998bedf8e787b4c342defe5fa419abd96b32f4464f718b91022586b8f1bafbddd499288e75c037642493c83083da426c6a9080d309e3bd90fd11baa9b
   languageName: node
   linkType: hard
 
@@ -9749,6 +9749,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"express-session@npm:^1.17.3":
+  version: 1.17.3
+  resolution: "express-session@npm:1.17.3"
+  dependencies:
+    cookie: 0.4.2
+    cookie-signature: 1.0.6
+    debug: 2.6.9
+    depd: ~2.0.0
+    on-headers: ~1.0.2
+    parseurl: ~1.3.3
+    safe-buffer: 5.2.1
+    uid-safe: ~2.1.5
+  checksum: 1021a793433cbc6a1b32c803fcb2daa1e03a8f50dd907e8745ae57994370315a5cfde5b6ef7b062d9a9a0754ff268844bda211c08240b3a0e01014dcf1073ec5
+  languageName: node
+  linkType: hard
+
 "express@npm:^4.18.2":
   version: 4.18.2
   resolution: "express@npm:4.18.2"
@@ -11818,11 +11834,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=745f1a&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=4dd671&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: befff0193c3188237b9bdf2a69a9b2bf92a35d426321aff18136360d234a5f37adc9bff46b74791471dea2a61e72605abfa057ccf500601b07c105d12b7011d9
+  checksum: 7ce4d8ab78e6fb99aa69ba309b3c3024009c02583bd20991ed398f2015b4d24eaed24c209ffc4e81d6ab13d612503ac8c2816259c40651de901c47b57c720b8b
   languageName: node
   linkType: hard
 
@@ -18795,6 +18811,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"random-bytes@npm:~1.0.0":
+  version: 1.0.0
+  resolution: "random-bytes@npm:1.0.0"
+  checksum: 09faa256394aa2ca9754aa57e92a27c452c3e97ffb266e98bebb517332e9df7168fea393159f88d884febce949ba8bec8ddb02f03342da6c6023ecc7b155e0ae
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.0.0, randombytes@npm:^2.0.1, randombytes@npm:^2.0.5, randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -19972,6 +19995,7 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
     express: ^4.18.2
+    express-session: ^1.17.3
     find-yarn-workspace-root: ^2.0.0
     flowbite: ^1.6.3
     fs-extra: ^11.1.0
@@ -22353,6 +22377,15 @@ __metadata:
   version: 0.1.0
   resolution: "uhyphen@npm:0.1.0"
   checksum: 1df304800387900f76365ff8090ee3667534a944184b9330cd96dbf4b1ad3fb0d376969f92f8b03decfc2e701f0d2eabeda7d002c909f2d125062e5e064d23ef
+  languageName: node
+  linkType: hard
+
+"uid-safe@npm:~2.1.5":
+  version: 2.1.5
+  resolution: "uid-safe@npm:2.1.5"
+  dependencies:
+    random-bytes: ~1.0.0
+  checksum: 07536043da9a026f4a2bc397543d0ace7587449afa1d9d2c4fd3ce76af8a5263a678788bcc429dff499ef29d45843cd5ee9d05434450fcfc19cc661229f703d1
   languageName: node
   linkType: hard
 
