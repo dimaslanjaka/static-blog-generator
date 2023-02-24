@@ -11,11 +11,14 @@ import { debug } from 'sbg-utility';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
+import { sessionFileStoreConfig } from './middleware/session-file-helpers';
 import { sessionFileStore } from './middleware/session-file-store';
 import routePost from './post';
 
 const FileStore = sessionFileStore(session);
-const fileStoreOptions = {};
+const fileStoreOptions: Partial<sessionFileStoreConfig> = {
+  logFn: debug('sbg-server').extend('session')
+};
 
 export interface SBGServer {
   config: {
@@ -63,6 +66,7 @@ export class SBGServer {
     });
     setupNunjuckHelper(this.env);
     // init default middleware
+    fileStoreOptions.path = path.join(this.api.cwd, 'tmp/sbg-server/session');
     this.server.use(
       session({
         store: <any>new FileStore(<any>fileStoreOptions),
