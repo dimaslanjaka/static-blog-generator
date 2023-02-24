@@ -3463,6 +3463,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/express-session@npm:^1.17.6":
+  version: 1.17.6
+  resolution: "@types/express-session@npm:1.17.6"
+  dependencies:
+    "@types/express": "*"
+  checksum: f5f2201d6b9568d8b9319735a4f6806b5ca144cee450274965aec54bc0a0331ba8bfffc1ad5addadf2e625769e13813a48cb5aea5b166fa05f474a12302dbb38
+  languageName: node
+  linkType: hard
+
 "@types/express@npm:*, @types/express@npm:^4.17.16, @types/express@npm:^4.17.17":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
@@ -3797,6 +3806,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/object-assign@npm:^4.0.30":
+  version: 4.0.30
+  resolution: "@types/object-assign@npm:4.0.30"
+  checksum: 24e0471ddcd578b7ea72d5174e9cd6b68d78b5fa00f9f48cee38713c0e2886c6c3478c53c04d0508d16deb4370eed71ed0bb1f5b9aaa406e61f07ffed5da1d3b
+  languageName: node
+  linkType: hard
+
 "@types/parse-glob@npm:*":
   version: 3.0.29
   resolution: "@types/parse-glob@npm:3.0.29"
@@ -3836,6 +3852,13 @@ __metadata:
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
   checksum: 61c2cad2499ffc8eab36e3b773945d337d848d3ac6b7b0a87c805ba814bc838ef2f262fc0f109bfd8d2e0898ff8bd80ad1025f9ff64f1f71d3d4294c9f14e5f6
+  languageName: node
+  linkType: hard
+
+"@types/retry@npm:^0.12.2":
+  version: 0.12.2
+  resolution: "@types/retry@npm:0.12.2"
+  checksum: e5675035717b39ce4f42f339657cae9637cf0c0051cf54314a6a2c44d38d91f6544be9ddc0280587789b6afd056be5d99dbe3e9f4df68c286c36321579b1bf4a
   languageName: node
   linkType: hard
 
@@ -3972,6 +3995,15 @@ __metadata:
     "@types/expect": ^1.20.4
     "@types/node": "*"
   checksum: 8e6e341860a2a024d5802517fb171ffc66bfbd91b0eefe8dd4376e08733e468781417ba861b9d32bb8207707cf554e3aeb60d08297c5e666a40520af95082e2d
+  languageName: node
+  linkType: hard
+
+"@types/write-file-atomic@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@types/write-file-atomic@npm:4.0.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: 8abd0f24442414cdd6eabe1a1c9c31f4a5d283150f33163b24d8c3bb4affb47de745a1aa0581237a2bc566e847793b4b5d626fada1aba4e2ec8d3c1c61e2c1cd
   languageName: node
   linkType: hard
 
@@ -10434,17 +10466,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^8.0.1":
-  version: 8.1.0
-  resolution: "fs-extra@npm:8.1.0"
-  dependencies:
-    graceful-fs: ^4.2.0
-    jsonfile: ^4.0.0
-    universalify: ^0.1.0
-  checksum: bf44f0e6cea59d5ce071bba4c43ca76d216f89e402dc6285c128abc0902e9b8525135aa808adad72c9d5d218e9f4bcc63962815529ff2f684ad532172a284880
-  languageName: node
-  linkType: hard
-
 "fs-minipass@npm:^2.0.0, fs-minipass@npm:^2.1.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -14156,18 +14177,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonfile@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "jsonfile@npm:4.0.0"
-  dependencies:
-    graceful-fs: ^4.1.6
-  dependenciesMeta:
-    graceful-fs:
-      optional: true
-  checksum: 6447d6224f0d31623eef9b51185af03ac328a7553efcee30fa423d98a9e276ca08db87d71e17f2310b0263fd3ffa6c2a90a6308367f661dc21580f9469897c9e
-  languageName: node
-  linkType: hard
-
 "jsonfile@npm:^6.0.1":
   version: 6.1.0
   resolution: "jsonfile@npm:6.1.0"
@@ -14324,12 +14333,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kruptein@npm:^2.0.4":
-  version: 2.2.3
-  resolution: "kruptein@npm:2.2.3"
+"kruptein@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "kruptein@npm:3.0.6"
   dependencies:
     asn1.js: ^5.4.1
-  checksum: b4f082edf184d2b54b323b059b8bb0fd26aed84743740cda8a8352a09bc7346981565dbb81ecc4d67b7c9a52f1be264be1a59b02c746ba32c6dd0439c88b7cf0
+  checksum: 65a31350fdb7b131aad717f4461d419c1ef52686b4497d9160c8d8e89a608f0966ffab7ff68ed6c8fa32dacfcdb7b77d8b5ea614a0d55151311156b09c1b4e30
   languageName: node
   linkType: hard
 
@@ -19612,6 +19621,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"retry@npm:^0.13.1":
+  version: 0.13.1
+  resolution: "retry@npm:0.13.1"
+  checksum: 47c4d5be674f7c13eee4cfe927345023972197dbbdfba5d3af7e461d13b44de1bfd663bfc80d2f601f8ef3fc8164c16dd99655a221921954a65d044a2fc1233b
+  languageName: node
+  linkType: hard
+
 "reusify@npm:^1.0.4":
   version: 1.0.4
   resolution: "reusify@npm:1.0.4"
@@ -20012,14 +20028,19 @@ __metadata:
     "@types/cors": ^2.8.13
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.17
+    "@types/express-session": ^1.17.6
     "@types/node": ^18.14.0
+    "@types/object-assign": ^4.0.30
+    "@types/retry": ^0.12.2
     "@types/serve-index": ^1.9.1
+    "@types/write-file-atomic": ^4.0.0
     "@typescript-eslint/eslint-plugin": ^5.53.0
     "@typescript-eslint/parser": ^5.53.0
     ansi-colors: ^4.1.3
     autoprefixer: ^10.4.13
     axios: ^1.3.3
     babelify: ^10.0.0
+    bagpipe: ^0.3.5
     bluebird: ^3.7.2
     browserify: ^17.0.0
     codemirror: 5.65.11
@@ -20045,23 +20066,25 @@ __metadata:
     instant-indexing: "workspace:^"
     jest: ^29.4.3
     jsonc-parser: ^3.2.0
+    kruptein: ^3.0.6
     markdown-it: ^13.0.1
     moment-timezone: ^0.5.40
     nodemon: ^2.0.20
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
+    object-assign: ^4.1.1
     postcss: ^8.4.21
     postcss-import: ^15.1.0
     postcss-nesting: ^11.2.1
     postcss-preset-env: ^8.0.1
     prettier: ^2.8.4
     purgecss: ^5.0.0
+    retry: ^0.13.1
     rollup: ^3.17.2
     safelinkify: "workspace:^"
     sbg-api: "workspace:^"
     sbg-utility: "workspace:^"
     serve-index: ^1.9.1
-    session-file-store: ^1.5.0
     sharp: ^0.31.3
     tailwindcss: ^3.2.7
     through2: ^4.0.2
@@ -20070,6 +20093,7 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^4.9.5
     upath: ^2.0.1
+    write-file-atomic: ^5.0.0
     yaml: ^2.2.1
   languageName: unknown
   linkType: soft
@@ -20317,20 +20341,6 @@ __metadata:
   version: 1.0.1
   resolution: "server-destroy@npm:1.0.1"
   checksum: cbc19d4f92d25a0a34430c6a09faccbea77d1a69563560eefe883feb67c14c3fb3a1c5af1affae0e82d537886ea0f91d317e39e46b5d6425de3acf57a3ab13e3
-  languageName: node
-  linkType: hard
-
-"session-file-store@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "session-file-store@npm:1.5.0"
-  dependencies:
-    bagpipe: ^0.3.5
-    fs-extra: ^8.0.1
-    kruptein: ^2.0.4
-    object-assign: ^4.1.1
-    retry: ^0.12.0
-    write-file-atomic: 3.0.3
-  checksum: e101f173c91c000e855035794162ccfd0eab1e9a38bf984742f562678a2531f6ef808879f337cb2f852b9256760d8532ab9d732a12786f541f08567f39a65d60
   languageName: node
   linkType: hard
 
@@ -23437,18 +23447,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"write-file-atomic@npm:3.0.3, write-file-atomic@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "write-file-atomic@npm:3.0.3"
-  dependencies:
-    imurmurhash: ^0.1.4
-    is-typedarray: ^1.0.0
-    signal-exit: ^3.0.2
-    typedarray-to-buffer: ^3.1.5
-  checksum: c55b24617cc61c3a4379f425fc62a386cc51916a9b9d993f39734d005a09d5a4bb748bc251f1304e7abd71d0a26d339996c275955f527a131b1dcded67878280
-  languageName: node
-  linkType: hard
-
 "write-file-atomic@npm:4.0.1":
   version: 4.0.1
   resolution: "write-file-atomic@npm:4.0.1"
@@ -23470,6 +23468,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"write-file-atomic@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "write-file-atomic@npm:3.0.3"
+  dependencies:
+    imurmurhash: ^0.1.4
+    is-typedarray: ^1.0.0
+    signal-exit: ^3.0.2
+    typedarray-to-buffer: ^3.1.5
+  checksum: c55b24617cc61c3a4379f425fc62a386cc51916a9b9d993f39734d005a09d5a4bb748bc251f1304e7abd71d0a26d339996c275955f527a131b1dcded67878280
+  languageName: node
+  linkType: hard
+
 "write-file-atomic@npm:^4.0.0, write-file-atomic@npm:^4.0.2":
   version: 4.0.2
   resolution: "write-file-atomic@npm:4.0.2"
@@ -23477,6 +23487,16 @@ __metadata:
     imurmurhash: ^0.1.4
     signal-exit: ^3.0.7
   checksum: 5da60bd4eeeb935eec97ead3df6e28e5917a6bd317478e4a85a5285e8480b8ed96032bbcc6ecd07b236142a24f3ca871c924ec4a6575e623ec1b11bf8c1c253c
+  languageName: node
+  linkType: hard
+
+"write-file-atomic@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "write-file-atomic@npm:5.0.0"
+  dependencies:
+    imurmurhash: ^0.1.4
+    signal-exit: ^3.0.7
+  checksum: 6ee16b195572386cb1c905f9d29808f77f4de2fd063d74a6f1ab6b566363832d8906a493b764ee715e57ab497271d5fc91642a913724960e8e845adf504a9837
   languageName: node
   linkType: hard
 
