@@ -51,6 +51,10 @@ function sessionFileStore(session) {
             var self = this;
             // fallback options as empty object
             var opt = options || {};
+            if (!fs_extra_1.default.existsSync(opt.path)) {
+                fs_extra_1.default.mkdirSync(opt.path, { recursive: true });
+            }
+            // call session store
             Store.call(self, opt);
             this.store = Store;
             self.options = sessionFileHelper.defaults(opt);
@@ -61,8 +65,8 @@ function sessionFileStore(session) {
         /**
          * Attempts to fetch session from a session file by the given `sessionId`
          *
-         * @param  {String}   sessionId
-         * @param  {Function} callback
+         * @param sessionId
+         * @param callback
          *
          * @api public
          */
@@ -72,9 +76,9 @@ function sessionFileStore(session) {
         /**
          * Attempts to commit the given session associated with the given `sessionId` to a session file
          *
-         * @param {String}   sessionId
-         * @param {Object}   session
-         * @param {Function} callback (optional)
+         * @param sessionId
+         * @param session
+         * @param callback (optional)
          *
          * @api public
          */
@@ -84,9 +88,9 @@ function sessionFileStore(session) {
         /**
          * Touch the given session object associated with the given `sessionId`
          *
-         * @param {string} sessionId
-         * @param {object} session
-         * @param {function} callback
+         * @param sessionId
+         * @param session
+         * @param callback
          *
          * @api public
          */
@@ -96,9 +100,9 @@ function sessionFileStore(session) {
         /**
          * Attempts to unlink a given session by its id
          *
-         * @param  {String}   sessionId   Files are serialized to disk by their
+         * @param    sessionId   Files are serialized to disk by their
          *                                sessionId
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
@@ -108,7 +112,7 @@ function sessionFileStore(session) {
         /**
          * Attempts to fetch number of the session files
          *
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
@@ -118,7 +122,7 @@ function sessionFileStore(session) {
         /**
          * Attempts to clear out all of the existing session files
          *
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
@@ -128,7 +132,7 @@ function sessionFileStore(session) {
         /**
          * Attempts to find all of the session files
          *
-         * @param  {Function} callback
+         * @param  callback
          *
          * @api public
          */
@@ -138,8 +142,8 @@ function sessionFileStore(session) {
         /**
          * Attempts to detect whether a session file is already expired or not
          *
-         * @param  {String}   sessionId
-         * @param  {Function} callback
+         * @param    sessionId
+         * @param  callback
          *
          * @api public
          */
