@@ -5271,7 +5271,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asn1.js@npm:^5.2.0":
+"asn1.js@npm:^5.2.0, asn1.js@npm:^5.4.1":
   version: 5.4.1
   resolution: "asn1.js@npm:5.4.1"
   dependencies:
@@ -5657,6 +5657,13 @@ __metadata:
     async-settle: ^1.0.0
     now-and-later: ^2.0.0
   checksum: e2c021e40ca4aef19fd8e8acea4acb2d4fbe6b817a7e8994b34764400afb6c62e82ab5d056c47fc7b7dee8a679caee01f638a0ed87db039249fe329b29e380d7
+  languageName: node
+  linkType: hard
+
+"bagpipe@npm:^0.3.5":
+  version: 0.3.5
+  resolution: "bagpipe@npm:0.3.5"
+  checksum: 70c58ea56a10f226d030896badcfbecb14f1979fe7c59b9d725524fcf13b24ad821fe4f66d1cca7e24107feb5f65b94a1807d69b943f97796334bb83684656ec
   languageName: node
   linkType: hard
 
@@ -10427,6 +10434,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^8.0.1":
+  version: 8.1.0
+  resolution: "fs-extra@npm:8.1.0"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^4.0.0
+    universalify: ^0.1.0
+  checksum: bf44f0e6cea59d5ce071bba4c43ca76d216f89e402dc6285c128abc0902e9b8525135aa808adad72c9d5d218e9f4bcc63962815529ff2f684ad532172a284880
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0, fs-minipass@npm:^2.1.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -11834,11 +11852,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=25fb03&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=4dd671&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: 2d6cada2e79f334119a79e3b4a29afdab7b07eb826cbf827a80298ee4c5c6ab39f777222440b5ef7add3d51184bae7f799db6f138d5c14c1f1aa0deca4cb853c
+  checksum: 7ce4d8ab78e6fb99aa69ba309b3c3024009c02583bd20991ed398f2015b4d24eaed24c209ffc4e81d6ab13d612503ac8c2816259c40651de901c47b57c720b8b
   languageName: node
   linkType: hard
 
@@ -14138,6 +14156,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonfile@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "jsonfile@npm:4.0.0"
+  dependencies:
+    graceful-fs: ^4.1.6
+  dependenciesMeta:
+    graceful-fs:
+      optional: true
+  checksum: 6447d6224f0d31623eef9b51185af03ac328a7553efcee30fa423d98a9e276ca08db87d71e17f2310b0263fd3ffa6c2a90a6308367f661dc21580f9469897c9e
+  languageName: node
+  linkType: hard
+
 "jsonfile@npm:^6.0.1":
   version: 6.1.0
   resolution: "jsonfile@npm:6.1.0"
@@ -14291,6 +14321,15 @@ __metadata:
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
+  languageName: node
+  linkType: hard
+
+"kruptein@npm:^2.0.4":
+  version: 2.2.3
+  resolution: "kruptein@npm:2.2.3"
+  dependencies:
+    asn1.js: ^5.4.1
+  checksum: b4f082edf184d2b54b323b059b8bb0fd26aed84743740cda8a8352a09bc7346981565dbb81ecc4d67b7c9a52f1be264be1a59b02c746ba32c6dd0439c88b7cf0
   languageName: node
   linkType: hard
 
@@ -20022,6 +20061,7 @@ __metadata:
     sbg-api: "workspace:^"
     sbg-utility: "workspace:^"
     serve-index: ^1.9.1
+    session-file-store: ^1.5.0
     sharp: ^0.31.3
     tailwindcss: ^3.2.7
     through2: ^4.0.2
@@ -20277,6 +20317,20 @@ __metadata:
   version: 1.0.1
   resolution: "server-destroy@npm:1.0.1"
   checksum: cbc19d4f92d25a0a34430c6a09faccbea77d1a69563560eefe883feb67c14c3fb3a1c5af1affae0e82d537886ea0f91d317e39e46b5d6425de3acf57a3ab13e3
+  languageName: node
+  linkType: hard
+
+"session-file-store@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "session-file-store@npm:1.5.0"
+  dependencies:
+    bagpipe: ^0.3.5
+    fs-extra: ^8.0.1
+    kruptein: ^2.0.4
+    object-assign: ^4.1.1
+    retry: ^0.12.0
+    write-file-atomic: 3.0.3
+  checksum: e101f173c91c000e855035794162ccfd0eab1e9a38bf984742f562678a2531f6ef808879f337cb2f852b9256760d8532ab9d732a12786f541f08567f39a65d60
   languageName: node
   linkType: hard
 
@@ -23383,6 +23437,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"write-file-atomic@npm:3.0.3, write-file-atomic@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "write-file-atomic@npm:3.0.3"
+  dependencies:
+    imurmurhash: ^0.1.4
+    is-typedarray: ^1.0.0
+    signal-exit: ^3.0.2
+    typedarray-to-buffer: ^3.1.5
+  checksum: c55b24617cc61c3a4379f425fc62a386cc51916a9b9d993f39734d005a09d5a4bb748bc251f1304e7abd71d0a26d339996c275955f527a131b1dcded67878280
+  languageName: node
+  linkType: hard
+
 "write-file-atomic@npm:4.0.1":
   version: 4.0.1
   resolution: "write-file-atomic@npm:4.0.1"
@@ -23401,18 +23467,6 @@ __metadata:
     imurmurhash: ^0.1.4
     signal-exit: ^3.0.2
   checksum: 2db81f92ae974fd87ab4a5e7932feacaca626679a7c98fcc73ad8fcea5a1950eab32fa831f79e9391ac99b562ca091ad49be37a79045bd65f595efbb8f4596ae
-  languageName: node
-  linkType: hard
-
-"write-file-atomic@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "write-file-atomic@npm:3.0.3"
-  dependencies:
-    imurmurhash: ^0.1.4
-    is-typedarray: ^1.0.0
-    signal-exit: ^3.0.2
-    typedarray-to-buffer: ^3.1.5
-  checksum: c55b24617cc61c3a4379f425fc62a386cc51916a9b9d993f39734d005a09d5a4bb748bc251f1304e7abd71d0a26d339996c275955f527a131b1dcded67878280
   languageName: node
   linkType: hard
 
