@@ -163,11 +163,11 @@ export class SBGServer {
   /**
    * start server
    */
-  start() {
+  start(customServer?: express.Express) {
     debug('sbg-server').extend('cwd')(this.config.root);
     debug('sbg-server').extend('port')(this.config.port);
     const httpserver = http
-      .createServer(this.startExpress())
+      .createServer(customServer || this.startExpress())
       .listen(this.config.port);
     process.on('SIGTERM', () => {
       debug('sbg-server').extend('exit')(
