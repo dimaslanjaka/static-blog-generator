@@ -11873,11 +11873,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=4dd671&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=25fb03&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: 7ce4d8ab78e6fb99aa69ba309b3c3024009c02583bd20991ed398f2015b4d24eaed24c209ffc4e81d6ab13d612503ac8c2816259c40651de901c47b57c720b8b
+  checksum: 2d6cada2e79f334119a79e3b4a29afdab7b07eb826cbf827a80298ee4c5c6ab39f777222440b5ef7add3d51184bae7f799db6f138d5c14c1f1aa0deca4cb853c
   languageName: node
   linkType: hard
 
