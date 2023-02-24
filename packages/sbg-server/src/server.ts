@@ -2,6 +2,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 // import findWorkspaceRoot from 'find-yarn-workspace-root';
+import dotenv from 'dotenv';
 import session from 'express-session';
 import fs from 'fs-extra';
 import http from 'http';
@@ -41,6 +42,9 @@ export class SBGServer {
     if (options.cache) this.cache = options.cache;
     // get updated config
     this.config = serverConfig.get();
+    // search .env
+    const dotenvPath = path.join(this.config.root, '.env');
+    if (fs.existsSync(dotenvPath)) dotenv.config({ path: dotenvPath });
     // start api
     this.api = new apis.Application(this.config.root);
   }
