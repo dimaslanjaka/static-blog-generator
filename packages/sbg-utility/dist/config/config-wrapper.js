@@ -24,6 +24,8 @@ var fs_extra_1 = __importDefault(require("fs-extra"));
 var upath_1 = __importDefault(require("upath"));
 var filemanager_1 = require("../utils/filemanager");
 var configWrapperFile = upath_1.default.join(__dirname, '_config_wrapper.json');
+if (!fs_extra_1.default.existsSync(configWrapperFile))
+    fs_extra_1.default.writeFileSync(configWrapperFile, '{}');
 var configWrapper = fs_extra_1.default.existsSync(fs_extra_1.default.readFileSync(configWrapperFile, 'utf-8'))
     ? JSON.parse(configWrapperFile)
     : {};

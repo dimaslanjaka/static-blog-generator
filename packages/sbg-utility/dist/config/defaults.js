@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getDefaultConfigYaml = exports.getDefaultConfig = void 0;
-var fs_1 = require("fs");
+var fs_extra_1 = require("fs-extra");
 var true_case_path_1 = require("true-case-path");
 var upath_1 = require("upath");
 var yaml = __importStar(require("yaml"));
@@ -125,7 +125,7 @@ exports.getDefaultConfig = getDefaultConfig;
  * @returns
  */
 function getDefaultConfigYaml() {
-    return (0, fs_1.readFileSync)((0, upath_1.join)(__dirname, '_config.yml'), 'utf-8');
+    return (0, fs_extra_1.readFileSync)((0, upath_1.join)(__dirname, '_config.yml'), 'utf-8');
 }
 exports.getDefaultConfigYaml = getDefaultConfigYaml;
 //# sourceMappingURL=defaults.js.map

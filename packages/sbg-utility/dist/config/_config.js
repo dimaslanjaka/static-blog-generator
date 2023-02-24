@@ -59,6 +59,9 @@ var upath_1 = require("upath");
 var yaml_1 = __importDefault(require("yaml"));
 var utils = __importStar(require("../utils"));
 var defaults = __importStar(require("./defaults"));
+var configFileJSON = (0, upath_1.join)(__dirname, '_config.json');
+if (!fs_extra_1.default.existsSync(configFileJSON))
+    fs_extra_1.default.writeFileSync(configFileJSON, '{}');
 var settledConfig = defaults.getDefaultConfig();
 function fetchConfig(fileYML) {
     if (!fileYML.endsWith('_config.yml'))
@@ -66,7 +69,7 @@ function fetchConfig(fileYML) {
     if (fs_extra_1.default.existsSync(fileYML)) {
         var configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync(fileYML, 'utf-8'));
         setConfig(utils.object.orderKeys(configYML));
-        utils.filemanager.writefile((0, upath_1.join)(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+        utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
     }
 }
 exports.fetchConfig = fetchConfig;
