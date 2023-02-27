@@ -31,6 +31,7 @@ var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
 // import findWorkspaceRoot from 'find-yarn-workspace-root';
+var dotenv_1 = __importDefault(require("dotenv"));
 var express_session_1 = __importDefault(require("express-session"));
 var fs_extra_1 = __importDefault(require("fs-extra"));
 var http_1 = __importDefault(require("http"));
@@ -62,6 +63,10 @@ var SBGServer = /** @class */ (function () {
             this.cache = options.cache;
         // get updated config
         this.config = config_1.default.get();
+        // search .env
+        var dotenvPath = upath_1.default.join(this.config.root, '.env');
+        if (fs_extra_1.default.existsSync(dotenvPath))
+            dotenv_1.default.config({ path: dotenvPath });
         // start api
         this.api = new apis.Application(this.config.root);
     }
