@@ -3550,7 +3550,7 @@ __metadata:
 
 "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo":
   version: 3.9.0
-  resolution: "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=c9c062cd458e74bb999c0f3db6bef5e3eb8cfd28"
+  resolution: "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=40360ac6ecc89d79d556d2f4063131435bc3c8a3"
   dependencies:
     "@types/bluebird": ^3.5.38
     "@types/bunyan": "*"
@@ -3562,7 +3562,7 @@ __metadata:
     minimist: ^1.2.5
     moment: ^2.19.4
     upath: ^2.0.1
-  checksum: 6803bed380202bf804fe585937344b530ec65992e875ba06f4e365d70c8bea9323300d5f7f239de13e89c1c6354ef340010b105d21db724ef01cfb4c26191924
+  checksum: 124ef2e4c46cc7fef54181e4093ecf3cf736534614af5733002dc2d2400c5e9ccb8731af222905cfebbe05e3e51d84757c249ac297c1c712d7669ba19aff1277
   languageName: node
   linkType: hard
 
@@ -3921,7 +3921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/through2@git+https://github.com/dimaslanjaka/nodejs-package-types#through2, @types/through2@https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2":
+"@types/through2@git+https://github.com/dimaslanjaka/nodejs-package-types#through2":
   version: 2.0.38
   resolution: "@types/through2@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=f36203114793dfd8d049b920b3b925b13d257660"
   dependencies:
@@ -3932,6 +3932,20 @@ __metadata:
     gulp: ^4.0.2
     upath: ^2.0.1
   checksum: 6b7c44d20951fa0660cb1bc64201e49d950f919a7af40eaff682f360c822209040d73e0aa21c2462f78b1ea6aeeea95014dc6831a0b035490ecbaa7ca76948cb
+  languageName: node
+  linkType: hard
+
+"@types/through2@https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2":
+  version: 2.0.38
+  resolution: "@types/through2@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=a751120b938ffd4007fbd424ee6acb5a84f0b8b5"
+  dependencies:
+    "@types/node": ^12.x
+    "@types/vinyl": ^2.0.6
+    cross-spawn: ^7.0.3
+    fs-extra: ^11.1.0
+    gulp: ^4.0.2
+    upath: ^2.0.1
+  checksum: d5947e99005fd7ef4846ef05ddfe0bc6122eb5f96b6ad4799769392941d1b4a660259b19b5c253e2fed94cc08fc8e2fe0cdda0c5626116527dc1b15f08573d31
   languageName: node
   linkType: hard
 
@@ -11874,11 +11888,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=b17634&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=f77060&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: 8e9c69976382c894a27e70aa6b7370c536debce90852de59df550b171600abbc0492b0c6c42bdeffc50a080f1112029c415a8cba936ecba76daf215917cc8986
+  checksum: 7a9a03845a928307cc75f7068e40a87b5d5fa0b8b91721a00b17198eec24ff0dc10370eadd833b00ea7a8d5706d91ed94fd4fded6f1f6f0b7bef1c2079a1b9e5
   languageName: node
   linkType: hard
 
