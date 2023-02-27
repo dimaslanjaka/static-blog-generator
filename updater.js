@@ -8,12 +8,17 @@ if (argv.includes('--yarn') || argv.includes('-yarn')) {
   usingYarn = true;
 }
 
+let recursive = false;
+if (argv.includes('--recursive') || argv.includes('-r')) {
+  recursive = true;
+}
+
 async function main(cwd) {
   if (!cwd) cwd = __dirname;
   const pjson = parsePkgJson(cwd);
 
   await updatePkgJSON(pjson, cwd);
-  if (pjson['workspaces']) {
+  if (pjson['workspaces'] && recursive) {
     let workspaces = Array.isArray(pjson['workspaces']) ? pjson['workspaces'] : null;
     if (!workspaces && Array.isArray(pjson['workspaces']['packages'])) {
       workspaces = pjson['workspaces']['packages'];
