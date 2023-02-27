@@ -1,11 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 HOOK_NAME="pre-commit"
 arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
+
 for i in "${arr_variable[@]}"
 do
   FILE="packages/${i}/githooks/${HOOK_NAME}"
   if [ -f "$FILE" ]; then
+    echo "running ${FILE}"
     sh "${FILE}" $@ 2>/dev/null
   fi
 done
