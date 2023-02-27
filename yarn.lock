@@ -3708,7 +3708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-it@npm:*":
+"@types/markdown-it@npm:*, @types/markdown-it@npm:^12.2.3":
   version: 12.2.3
   resolution: "@types/markdown-it@npm:12.2.3"
   dependencies:
@@ -11746,6 +11746,7 @@ __metadata:
     "@types/jsdom": ^21.1.0
     "@types/lodash": ^4.14.191
     "@types/lodash.deburr": ^4.1.7
+    "@types/markdown-it": ^12.2.3
     "@types/node": ^18.14.0
     "@types/yargs": ^17.0.22
     "@typescript-eslint/eslint-plugin": ^5.53.0
@@ -11873,11 +11874,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=25fb03&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=b17634&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: 2d6cada2e79f334119a79e3b4a29afdab7b07eb826cbf827a80298ee4c5c6ab39f777222440b5ef7add3d51184bae7f799db6f138d5c14c1f1aa0deca4cb853c
+  checksum: 8e9c69976382c894a27e70aa6b7370c536debce90852de59df550b171600abbc0492b0c6c42bdeffc50a080f1112029c415a8cba936ecba76daf215917cc8986
   languageName: node
   linkType: hard
 
@@ -19817,6 +19818,7 @@ __metadata:
     "@types/gulp": ^4.0.10
     "@types/html-minifier-terser": ^7.0.0
     "@types/jquery": ^3.5.16
+    "@types/markdown-it": ^12.2.3
     "@types/markdown-it-attrs": ^4.1.0
     "@types/node": ^18.14.0
     "@types/prettier": ^2.7.2
