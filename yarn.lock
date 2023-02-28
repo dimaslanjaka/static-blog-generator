@@ -11619,31 +11619,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderer-pug@git+https://github.com/hexojs/hexo-renderer-pug":
-  version: 3.0.0
-  resolution: "hexo-renderer-pug@https://github.com/hexojs/hexo-renderer-pug.git#commit=1f2a0209c799f096cb87b05c6abc43eeaf147a2b"
-  dependencies:
-    pug: ^3.0.2
-  checksum: 3cb433a8e0979a9326659ea35952f4def4e80f7fa5b94f583de33f951034b789adfef7168f35fdcfa50a446f11d4ec8e50257132d986298f50153898442873d6
-  languageName: node
-  linkType: hard
-
 "hexo-renderer-pug@npm:^3.0.0":
   version: 3.0.0
   resolution: "hexo-renderer-pug@npm:3.0.0"
   dependencies:
     pug: ^3.0.2
   checksum: dd3980e4f800fdbe416876da8d9e1bb36cf70bdd52cb07584f512e5cfb10b00d9c5a3e2739a607f36a13e1c370c5311f5ce5e3e0290178252d55f99fef1a1a1e
-  languageName: node
-  linkType: hard
-
-"hexo-renderer-stylus@git+https://github.com/hexojs/hexo-renderer-stylus":
-  version: 2.1.0
-  resolution: "hexo-renderer-stylus@https://github.com/hexojs/hexo-renderer-stylus.git#commit=69f9c67f9946ca3f058b3713ced4bda630be160a"
-  dependencies:
-    nib: ^1.2.0
-    stylus: ^0.59.0
-  checksum: 630ce22e3d02e08f873e8ab52de1f7670c6f4eb327b1707b5ced0b7e12e1071ac30c5f5469228820ef8bea3602fc5eb94899421e309a40f07b0470ac26af5756
   languageName: node
   linkType: hard
 
@@ -11654,6 +11635,24 @@ __metadata:
     nib: ^1.2.0
     stylus: ^0.57.0
   checksum: dbd79c0ada28cbf1fe32cf2b4cdd828352f74ae1c55d9379e73970b17cd4db6dc5168c5f53e161c1c517a0fd869dfaaaed0bf2e20ade83fc1c535c74dbaa4b75
+  languageName: node
+  linkType: hard
+
+"hexo-renderers@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "hexo-renderers@npm:1.0.2"
+  dependencies:
+    ansi-colors: ^4.1.3
+    ejs: ^3.1.8
+    fs-extra: ^11.1.0
+    lodash.toarray: ^4.4.0
+    nunjucks: ^3.2.3
+    pug: ^3.0.2
+    sass: ^1.58.3
+    sbg-utility: ^1.0.4
+    stylus: ^0.59.0
+    upath: ^2.0.1
+  checksum: e0da8e21bb8fea3a52ae171cc49a8d5ed7e2f828697af2fdf7dc983f3810090a15064507ca64de525c6fe3716c8af8cb16c94d14a605eb120c684323c3ff5fd6
   languageName: node
   linkType: hard
 
@@ -11675,11 +11674,11 @@ __metadata:
 
 "hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
   version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=f77060&locator=test%40workspace%3Atest"
+  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=b17634&locator=test%40workspace%3Atest"
   dependencies:
     hexo-renderer-pug: ^3.0.0
     hexo-renderer-stylus: ^2.1.0
-  checksum: 7a9a03845a928307cc75f7068e40a87b5d5fa0b8b91721a00b17198eec24ff0dc10370eadd833b00ea7a8d5706d91ed94fd4fded6f1f6f0b7bef1c2079a1b9e5
+  checksum: 8e9c69976382c894a27e70aa6b7370c536debce90852de59df550b171600abbc0492b0c6c42bdeffc50a080f1112029c415a8cba936ecba76daf215917cc8986
   languageName: node
   linkType: hard
 
@@ -14646,6 +14645,13 @@ __metadata:
   version: 4.4.0
   resolution: "lodash.startcase@npm:4.4.0"
   checksum: c03a4a784aca653845fe09d0ef67c902b6e49288dc45f542a4ab345a9c406a6dc194c774423fa313ee7b06283950301c1221dd2a1d8ecb2dac8dfbb9ed5606b5
+  languageName: node
+  linkType: hard
+
+"lodash.toarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.toarray@npm:4.4.0"
+  checksum: 2eebcbe75734223b2526018b1c66f7f5e3e5e21e2caffde1553e3453393a676347f2adb7ecbf08364521c188dbf280bd88053604ea159a95121d44453916c31f
   languageName: node
   linkType: hard
 
@@ -19676,7 +19682,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.29.0":
+"sass@npm:^1.29.0, sass@npm:^1.58.3":
   version: 1.58.3
   resolution: "sass@npm:1.58.3"
   dependencies:
@@ -19863,7 +19869,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@*, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@*, sbg-utility@^1.0.4, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -21440,8 +21446,7 @@ __metadata:
     hexo-generator-tag: "git+https://github.com/hexojs/hexo-generator-tag"
     hexo-post-parser: "workspace:^"
     hexo-renderer-markdown-it: "git+https://github.com/hexojs/hexo-renderer-markdown-it"
-    hexo-renderer-pug: "git+https://github.com/hexojs/hexo-renderer-pug"
-    hexo-renderer-stylus: "git+https://github.com/hexojs/hexo-renderer-stylus"
+    hexo-renderers: ^1.0.2
     hexo-server: ^3.0.0
     hexo-theme-butterfly: "file:themes/butterfly"
     hexo-util: ^3.0.1
