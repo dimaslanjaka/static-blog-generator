@@ -77,7 +77,51 @@ export declare class persistentCache implements PersistentCacheOpt {
      * @param fallback
      * @returns
      */
-    getSync<T = string>(name: string, fallback?: T): T;
+    getSync<T>(name: string, fallback?: T): T;
+    get<T>(name: string, fallback?: T): Promise<T>;
+    get<T>(name: string, fallback?: (e: Error | undefined | null, entry?: T) => any): void;
+    /**
+     * delete cache
+     * @param name cache key
+     * @param cb
+     */
+    deleteEntry(name: string, cb: {
+        (e: Error, ...args: any[]): any;
+        (err: NodeJS.ErrnoException): void;
+    }): void;
+    /**
+     * delete cache sync
+     * @param name cache key
+     * @returns
+     */
+    deleteEntrySync(name: string): void;
+    getCacheDir(): string;
+    /**
+     * remove current cache directory
+     * @param cb
+     * @returns
+     */
+    unlink(cb: {
+        (e: Error, ...args: any[]): any;
+        (e: Error, ...args: any[]): any;
+    }): void;
+    private transformFileNameToKey;
+    /**
+     * get all cache keys
+     * @param cb
+     * @returns
+     */
+    keys(cb: (e: Error, ...args: any[]) => any): any;
+    /**
+     * get cache keys sync
+     * @returns
+     */
+    keysSync(): string[];
+    /**
+     * get all values
+     * @returns
+     */
+    valuesSync(): unknown[];
     buildFilePath(name: string): string;
     buildCacheEntry(data: any): {
         cacheUntil: number;
