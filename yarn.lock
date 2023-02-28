@@ -7651,17 +7651,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "css@npm:3.0.0"
-  dependencies:
-    inherits: ^2.0.4
-    source-map: ^0.6.1
-    source-map-resolve: ^0.6.0
-  checksum: 4273ac816ddf99b99acb9c1d1a27d86d266a533cc01118369d941d8e8a78277a83cad3315e267a398c509d930fbb86504e193ea1ebc620a4a4212e06fe76e8be
-  languageName: node
-  linkType: hard
-
 "cssdb@npm:^7.4.0":
   version: 7.4.1
   resolution: "cssdb@npm:7.4.1"
@@ -11618,25 +11607,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-renderer-pug@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "hexo-renderer-pug@npm:3.0.0"
-  dependencies:
-    pug: ^3.0.2
-  checksum: dd3980e4f800fdbe416876da8d9e1bb36cf70bdd52cb07584f512e5cfb10b00d9c5a3e2739a607f36a13e1c370c5311f5ce5e3e0290178252d55f99fef1a1a1e
-  languageName: node
-  linkType: hard
-
-"hexo-renderer-stylus@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "hexo-renderer-stylus@npm:2.1.0"
-  dependencies:
-    nib: ^1.2.0
-    stylus: ^0.57.0
-  checksum: dbd79c0ada28cbf1fe32cf2b4cdd828352f74ae1c55d9379e73970b17cd4db6dc5168c5f53e161c1c517a0fd869dfaaaed0bf2e20ade83fc1c535c74dbaa4b75
-  languageName: node
-  linkType: hard
-
 "hexo-renderers@npm:^1.0.2":
   version: 1.0.2
   resolution: "hexo-renderers@npm:1.0.2"
@@ -11668,16 +11638,6 @@ __metadata:
     picocolors: ^1.0.0
     serve-static: ^1.14.1
   checksum: 0fd8e2c373bae0c882e0cfc49f7ae951a58b1532533dc2d5f50153f1a6c1ea476967a16addf8e63a56e54f6907426e7e0cec231ea6127ec27c8035324e9e3d24
-  languageName: node
-  linkType: hard
-
-"hexo-theme-butterfly@file:themes/butterfly::locator=test%40workspace%3Atest":
-  version: 4.7.0
-  resolution: "hexo-theme-butterfly@file:themes/butterfly#themes/butterfly::hash=b17634&locator=test%40workspace%3Atest"
-  dependencies:
-    hexo-renderer-pug: ^3.0.0
-    hexo-renderer-stylus: ^2.1.0
-  checksum: 8e9c69976382c894a27e70aa6b7370c536debce90852de59df550b171600abbc0492b0c6c42bdeffc50a080f1112029c415a8cba936ecba76daf215917cc8986
   languageName: node
   linkType: hard
 
@@ -15737,15 +15697,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nib@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "nib@npm:1.2.0"
-  peerDependencies:
-    stylus: "*"
-  checksum: c45c185ae2d8c92727d0e34bea8050a5fc17dc767a8259784c01708aa00ed82263c1c6f346cff699529ad20577341160c725f55571b34ed91f083a3b50484869
-  languageName: node
-  linkType: hard
-
 "nice-try@npm:^1.0.4":
   version: 1.0.5
   resolution: "nice-try@npm:1.0.5"
@@ -19651,7 +19602,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:^2.1.2, safer-buffer@npm:~2.1.0":
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.0.2, safer-buffer@npm:^2.1.0, safer-buffer@npm:~2.1.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
@@ -20492,16 +20443,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "source-map-resolve@npm:0.6.0"
-  dependencies:
-    atob: ^2.1.2
-    decode-uri-component: ^0.2.0
-  checksum: fe503b9e5dac1c54be835282fcfec10879434e7b3ee08a9774f230299c724a8d403484d9531276d1670c87390e0e4d1d3f92b14cca6e4a2445ea3016b786ecd4
-  languageName: node
-  linkType: hard
-
 "source-map-support@npm:0.5.13":
   version: 0.5.13
   resolution: "source-map-support@npm:0.5.13"
@@ -21128,22 +21069,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylus@npm:^0.57.0":
-  version: 0.57.0
-  resolution: "stylus@npm:0.57.0"
-  dependencies:
-    css: ^3.0.0
-    debug: ^4.3.2
-    glob: ^7.1.6
-    safer-buffer: ^2.1.2
-    sax: ~1.2.4
-    source-map: ^0.7.3
-  bin:
-    stylus: bin/stylus
-  checksum: ad914906755608074df4c4a495fb12e7e095d0dfb0477c2bba05d83ea99c5a53ccfe806b82bba4c4455ba97841484f72d4a4381f4e77f0f11e4856742db041db
-  languageName: node
-  linkType: hard
-
 "stylus@npm:^0.59.0":
   version: 0.59.0
   resolution: "stylus@npm:0.59.0"
@@ -21447,7 +21372,6 @@ __metadata:
     hexo-renderer-markdown-it: "git+https://github.com/hexojs/hexo-renderer-markdown-it"
     hexo-renderers: ^1.0.2
     hexo-server: ^3.0.0
-    hexo-theme-butterfly: "file:themes/butterfly"
     hexo-util: ^3.0.1
     hpagent: ^1.2.0
     js-yaml: ^4.1.0
