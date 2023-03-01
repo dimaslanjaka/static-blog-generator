@@ -15,6 +15,7 @@ export { default as noop } from './noop';
 export { default as envNunjucks } from './nunjucks-env';
 export * as object from './object';
 export * from './persistent-cache';
+export * from './promisify';
 export * from './scheduler';
 export { default as scheduler } from './scheduler';
 export * from './stream';
