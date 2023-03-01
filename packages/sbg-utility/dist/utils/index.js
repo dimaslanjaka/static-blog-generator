@@ -50,6 +50,7 @@ var nunjucks_env_1 = require("./nunjucks-env");
 Object.defineProperty(exports, "envNunjucks", { enumerable: true, get: function () { return __importDefault(nunjucks_env_1).default; } });
 exports.object = __importStar(require("./object"));
 __exportStar(require("./persistent-cache"), exports);
+__exportStar(require("./promisify"), exports);
 __exportStar(require("./scheduler"), exports);
 var scheduler_1 = require("./scheduler");
 Object.defineProperty(exports, "scheduler", { enumerable: true, get: function () { return __importDefault(scheduler_1).default; } });
