@@ -101,10 +101,16 @@ function deployConfig() {
     var _a;
     var deployDir;
     if (settledConfig.deploy_dir) {
+        // deploy_dir was set
         deployDir = settledConfig.deploy_dir;
     }
     else {
+        // fallback get from deploy.type
         deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+    }
+    // subfolder - assign deploy.folder
+    if (settledConfig.deploy.folder) {
+        deployDir = (0, upath_1.join)(deployDir, settledConfig.folder);
     }
     var github = fs_extra_1.default.existsSync(deployDir) ? new git_command_helper_1.default(deployDir) : { submodule: [] };
     return { deployDir: deployDir, github: github };
