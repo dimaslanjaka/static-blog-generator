@@ -94,13 +94,18 @@ exports.setConfig = setConfig;
  */
 function getConfig() {
     settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
-    //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
     return settledConfig;
 }
 exports.getConfig = getConfig;
 function deployConfig() {
     var _a;
-    var deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+    var deployDir;
+    if (settledConfig.deploy_dir) {
+        deployDir = settledConfig.deploy_dir;
+    }
+    else {
+        deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+    }
     var github = fs_extra_1.default.existsSync(deployDir) ? new git_command_helper_1.default(deployDir) : { submodule: [] };
     return { deployDir: deployDir, github: github };
 }

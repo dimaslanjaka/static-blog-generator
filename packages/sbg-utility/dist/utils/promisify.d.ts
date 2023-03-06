@@ -1,11 +1,20 @@
 import Bluebird from 'bluebird';
+/**
+ * easy typescript synchronous function type
+ */
 export type CallableFunctions = (...args: any[]) => any;
+/**
+ * easy typescript asynchronous function type
+ */
 export type CallablePromiseFunctions = (...args: any[]) => Promise<any>;
+/**
+ * easy typescript function type
+ */
 export type CallableMixFunctions = CallableFunctions | CallablePromiseFunctions;
-export declare function promisify<T>(func: (callback: CallableMixFunctions) => void, options?: Bluebird.PromisifyOptions): () => Bluebird<T>;
-export declare function promisify<T, A1>(func: (arg1: A1, callback: CallableMixFunctions) => void, options?: Bluebird.PromisifyOptions): (arg1: A1) => Bluebird<T>;
-export declare function promisify<T, A1, A2>(func: (arg1: A1, arg2: A2, callback: CallableMixFunctions) => void, options?: Bluebird.PromisifyOptions): (arg1: A1, arg2: A2) => Bluebird<T>;
-export declare function promisify<T, A1, A2, A3>(func: (arg1: A1, arg2: A2, arg3: A3, callback: CallableMixFunctions) => void, options?: Bluebird.PromisifyOptions): (arg1: A1, arg2: A2, arg3: A3) => Bluebird<T>;
-export declare function promisify<T, A1, A2, A3, A4>(func: (arg1: A1, arg2: A2, arg3: A3, arg4: A4, callback: CallableMixFunctions) => void, options?: Bluebird.PromisifyOptions): (arg1: A1, arg2: A2, arg3: A3, arg4: A4) => Bluebird<T>;
-export declare function promisify<T, A1, A2, A3, A4, A5>(func: (arg1: A1, arg2: A2, arg3: A3, arg4: A4, arg5: A5, callback: CallableMixFunctions) => void, options?: Bluebird.PromisifyOptions): (arg1: A1, arg2: A2, arg3: A3, arg4: A4, arg5: A5) => Bluebird<T>;
-export declare function promisify(func: (...args: any[]) => void, options?: Bluebird.PromisifyOptions): (...args: any[]) => Bluebird<any>;
+/**
+ * make any function or value to be promise
+ * @param func
+ * @param options
+ * @returns
+ */
+export declare const promisify: typeof Bluebird.promisify;

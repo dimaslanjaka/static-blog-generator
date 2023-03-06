@@ -6,13 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.promisify = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 /**
- * make any function to be promise
+ * make any function or value to be promise
  * @param func
  * @param options
  * @returns
  */
-function promisify(func, options) {
-    return bluebird_1.default.promisify(func, options);
-}
-exports.promisify = promisify;
+exports.promisify = bluebird_1.default.promisify;
 //# sourceMappingURL=promisify.js.map

@@ -8,13 +8,38 @@ export interface ProjConf extends Hexo.Config {
      */
     post_dir: string;
     /**
+     * deployment directory (can be absolute path)
+     * @example
+     * \<project\>/.deploy_git
+     * ```yaml
+     * deploy_dir: .deploy_git
+     * ```
+     * at somewhere on your pc
+     * ```yaml
+     * deploy_dir: '/usr/home/site/my username'
+     * ```
+     */
+    deploy_dir: string;
+    /**
      * Project CWD
      */
     cwd: string;
     /**
      * Deployment options
      */
-    deploy: defaults.importConfig['deploy'] & ReturnType<typeof deployConfig>;
+    deploy: defaults.importConfig['deploy'] & ReturnType<typeof deployConfig> & {
+        /**
+         * copy to subfolder of site
+         * @example
+         * deployment location at \<project\>/.deploy_git/docs
+         * ```yaml
+         * deploy_dir: .deploy_git
+         * deploy:
+         *  folder: docs
+         * ```
+         */
+        folder?: string;
+    };
     external_link: defaults.importConfig['external_link'] & boolean & {
         safelink?: import('safelinkify').SafelinkOptions;
     };
