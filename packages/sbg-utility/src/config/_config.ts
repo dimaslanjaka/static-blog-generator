@@ -17,13 +17,39 @@ export interface ProjConf extends Hexo.Config {
    */
   post_dir: string;
   /**
+   * deployment directory (can be absolute path)
+   * @example
+   * \<project\>/.deploy_git
+   * ```yaml
+   * deploy_dir: .deploy_git
+   * ```
+   * at somewhere on your pc
+   * ```yaml
+   * deploy_dir: '/usr/home/site/my username'
+   * ```
+   */
+  deploy_dir: string;
+  /**
    * Project CWD
    */
   cwd: string;
   /**
    * Deployment options
    */
-  deploy: defaults.importConfig['deploy'] & ReturnType<typeof deployConfig>;
+  deploy: defaults.importConfig['deploy'] &
+    ReturnType<typeof deployConfig> & {
+      /**
+       * copy to subfolder of site
+       * @example
+       * deployment location at \<project\>/.deploy_git/docs
+       * ```yaml
+       * deploy_dir: .deploy_git
+       * deploy:
+       *  folder: docs
+       * ```
+       */
+      folder?: string;
+    };
   external_link: defaults.importConfig['external_link'] &
     boolean & {
       safelink?: import('safelinkify').SafelinkOptions;
@@ -99,12 +125,16 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
  */
 export function getConfig() {
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
-  //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
 }
 
 export function deployConfig() {
-  const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+  let deployDir: string;
+  if (settledConfig.deploy_dir) {
+    deployDir = settledConfig.deploy_dir;
+  } else {
+    deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+  }
   const github = fs.existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
   return { deployDir, github };
 }
