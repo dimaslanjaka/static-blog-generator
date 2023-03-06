@@ -1,7 +1,5 @@
-import gulp from 'gulp';
+import fs from 'fs-extra';
 import { getConfig } from 'sbg-utility';
-import path from 'upath';
-
 export interface deployCopyOptions {
   cwd: string;
   config: ReturnType<typeof getConfig>;
@@ -12,9 +10,8 @@ export interface deployCopyOptions {
  * @param opt
  * @param ignore
  */
-export function deployCopy(opt: deployCopyOptions, ignore: string | string[] = []) {
-  const cwd = opt.cwd || process.cwd();
-  return gulp
-    .src([path.join(cwd, opt.config.public_dir, '**/*')], { cwd, ignore: ignore || [] })
-    .pipe(gulp.dest(path.join(cwd, '.deploy_' + opt.config.deploy.type)));
+export function deployCopy(opt: deployCopyOptions) {
+  let { config } = opt;
+  if (!config) config = getConfig();
+  return fs.copy(opt.config.public_dir, config.deploy.deployDir, { overwrite: true });
 }

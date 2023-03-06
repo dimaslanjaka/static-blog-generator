@@ -87,7 +87,7 @@ class SBG {
         // wait all handler to be closed
         setTimeout(() => {
           resolve(null);
-        }, 3000);
+        }, 7000);
       });
     });
   }
@@ -142,16 +142,7 @@ class SBG {
     constructor(public superThis: SBG) {
       //
     }
-    copy(ignore: string | string[] = []) {
-      const self = this.superThis;
-      return new Bluebird(function (resolve) {
-        deployCopy(self, ignore).once('end', function () {
-          setTimeout(() => {
-            resolve();
-          }, 3000);
-        });
-      });
-    }
+    copy = deployCopy;
   })(this);
 }
 
