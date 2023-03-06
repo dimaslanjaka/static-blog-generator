@@ -115,6 +115,7 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
 
   // update hexo-post-parser config
   hexoPostParser.setConfig(settledConfig);
+
   return getConfig();
 }
 
@@ -131,9 +132,15 @@ export function getConfig() {
 export function deployConfig() {
   let deployDir: string;
   if (settledConfig.deploy_dir) {
+    // deploy_dir was set
     deployDir = settledConfig.deploy_dir;
   } else {
+    // fallback get from deploy.type
     deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+  }
+  // subfolder - assign deploy.folder
+  if (settledConfig.deploy.folder) {
+    deployDir = join(deployDir, settledConfig.folder);
   }
   const github = fs.existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
   return { deployDir, github };

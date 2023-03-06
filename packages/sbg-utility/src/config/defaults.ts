@@ -30,7 +30,7 @@ export function getDefaultConfig() {
     },
     // Directory
     post_dir: 'src-posts',
-    deploy_dir: '.deploy_git',
+    // deploy_dir: '.deploy_git',
     source_dir: 'source',
     public_dir: 'public',
     tag_dir: 'tags',
