@@ -90,19 +90,9 @@ var SBG = /** @class */ (function () {
         this.deploy = new (/** @class */ (function () {
             function class_1(superThis) {
                 this.superThis = superThis;
+                this.copy = copy_1.deployCopy;
                 //
             }
-            class_1.prototype.copy = function (ignore) {
-                if (ignore === void 0) { ignore = []; }
-                var self = this.superThis;
-                return new bluebird_1.default(function (resolve) {
-                    (0, copy_1.deployCopy)(self, ignore).once('end', function () {
-                        setTimeout(function () {
-                            resolve();
-                        }, 3000);
-                    });
-                });
-            };
             return class_1;
         }()))(this);
         if (!cwd)

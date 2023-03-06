@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { getConfig } from 'sbg-utility';
 export interface deployCopyOptions {
     cwd: string;
@@ -9,4 +8,4 @@ export interface deployCopyOptions {
  * @param opt
  * @param ignore
  */
-export declare function deployCopy(opt: deployCopyOptions, ignore?: string | string[]): NodeJS.ReadWriteStream;
+export declare function deployCopy(opt: deployCopyOptions): Promise<void>;

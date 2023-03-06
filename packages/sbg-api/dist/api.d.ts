@@ -1,6 +1,7 @@
 import Bluebird from 'bluebird';
 import { Nullable } from 'hexo-post-parser';
 import { getConfig, setConfig } from 'sbg-utility';
+import { deployCopy } from './deploy/copy';
 declare class SBG {
     cwd: string;
     config: import("sbg-utility").ProjConf;
@@ -54,7 +55,7 @@ declare class SBG {
     clean(opt?: 'all' | 'archive' | 'database' | 'post'): Promise<void>;
     deploy: {
         superThis: SBG;
-        copy(ignore?: string | string[]): Bluebird<unknown>;
+        copy: typeof deployCopy;
     };
 }
 export default SBG;
