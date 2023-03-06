@@ -29,6 +29,8 @@ export function getDefaultConfig() {
       trailing_html: true
     },
     // Directory
+    post_dir: 'src-posts',
+    deploy_dir: '.deploy_git',
     source_dir: 'source',
     public_dir: 'public',
     tag_dir: 'tags',
