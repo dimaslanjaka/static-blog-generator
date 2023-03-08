@@ -10,12 +10,12 @@
   },
   "/release/sbg-utility.tgz": {
     "integrity": {
-      "sha1": "a385a1d48f1e92c8125b9876ee13f57111f03adf",
-      "sha256": "bQSU4EHh5UDSkeeV5KBCUnXYhn/6LYItvWExXIfXN0M=",
-      "md5": "c4ed16af8df38a1ee05e5815546ac1ec",
-      "sha512": "MET5OU40oKMgYU2WsBh9BA6Rpy68IY2dh9rEJnn96esf1ypaQxDX+ihwzHvvD5f2PI44ZWirZ3GVmINoXZ8txw=="
+      "sha1": "1b6891e9895a1981c24aadc96ba2246cccdd20c5",
+      "sha256": "Jjp9M3ZEOfoZYpauDONkYo8l1KXUvg2GGkGi1LaojYQ=",
+      "md5": "9a54d49ee2c3c30bcc270fca462e9a9a",
+      "sha512": "dM1wb47dxpvAvBy3w9v8y8rNKczZ9Y/jNT3jhoX7ANm3V+aK+yfyi/eC+z6BUZmaIeC92aeTUSOX6V/5hJ38Sw=="
     },
-    "size": "58.08 KB"
+    "size": "59.00 KB"
   },
   "/package-lock.json": {
     "integrity": {
@@ -79,5 +79,14 @@
       "sha512": "MET5OU40oKMgYU2WsBh9BA6Rpy68IY2dh9rEJnn96esf1ypaQxDX+ihwzHvvD5f2PI44ZWirZ3GVmINoXZ8txw=="
     },
     "size": "58.08 KB"
+  },
+  "/release/sbg-utility-1.0.8.tgz": {
+    "integrity": {
+      "sha1": "1b6891e9895a1981c24aadc96ba2246cccdd20c5",
+      "sha256": "Jjp9M3ZEOfoZYpauDONkYo8l1KXUvg2GGkGi1LaojYQ=",
+      "md5": "9a54d49ee2c3c30bcc270fca462e9a9a",
+      "sha512": "dM1wb47dxpvAvBy3w9v8y8rNKczZ9Y/jNT3jhoX7ANm3V+aK+yfyi/eC+z6BUZmaIeC92aeTUSOX6V/5hJ38Sw=="
+    },
+    "size": "59.00 KB"
   }
 }
