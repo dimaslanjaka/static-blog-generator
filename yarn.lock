@@ -17538,7 +17538,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plugin-error@npm:2.0.1":
+"plugin-error@npm:2.0.1, plugin-error@npm:^2.0.1":
   version: 2.0.1
   resolution: "plugin-error@npm:2.0.1"
   dependencies:
@@ -19853,6 +19853,7 @@ __metadata:
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.3
+    plugin-error: ^2.0.1
     progress: ^2.0.3
     request: ^2.88.0
     safelinkify: ^1.1.17
