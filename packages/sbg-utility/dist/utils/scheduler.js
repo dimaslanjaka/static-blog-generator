@@ -132,7 +132,7 @@ var functions = [];
  * scheduler.register();
  * ```
  */
-var scheduler = /** @class */ (function () {
+var scheduler = exports.scheduler = /** @class */ (function () {
     function scheduler() {
         if (!scheduler.registered)
             scheduler.register();
@@ -214,6 +214,5 @@ var scheduler = /** @class */ (function () {
     scheduler.postponeCounter = 0;
     return scheduler;
 }());
-exports.scheduler = scheduler;
 exports.default = scheduler;
 //# sourceMappingURL=scheduler.js.map

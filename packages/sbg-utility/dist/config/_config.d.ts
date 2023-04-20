@@ -75,7 +75,7 @@ export interface LabelMapper {
      */
     mapper: Record<string, string> | undefined | null;
 }
-export declare function fetchConfig(fileYML: string): void;
+export declare function fetchConfig(fileYML?: string): void;
 /**
  * Config setter
  * * useful for jest

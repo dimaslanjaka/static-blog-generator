@@ -66,6 +66,8 @@ var settledConfig = defaults.getDefaultConfig();
 function fetchConfig(fileYML) {
     if (!fileYML.endsWith('_config.yml'))
         fileYML += '/_config.yml';
+    if (!fileYML)
+        fileYML = (0, upath_1.join)(process.cwd(), '_config.yml');
     if (fs_extra_1.default.existsSync(fileYML)) {
         var configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync(fileYML, 'utf-8'));
         setConfig(utils.object.orderKeys(configYML));

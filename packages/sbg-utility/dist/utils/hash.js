@@ -106,7 +106,7 @@ exports.data_to_hash_sync = data_to_hash_sync;
 function folder_to_hash(alogarithm, folder, options) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, new Promise(function (resolve, reject) {
+            return [2 /*return*/, new Promise(function (resolvePromise, rejectPromise) {
                     options = Object.assign({ encoding: 'hex', ignored: [], pattern: '' }, options || {});
                     if (folder.startsWith('file:'))
                         folder = folder.replace('file:', '');
@@ -115,7 +115,8 @@ function folder_to_hash(alogarithm, folder, options) {
                         folder = upath_1.default.join(__dirname, folder);
                     // run only if exist
                     if (fs_extra_1.default.existsSync(folder)) {
-                        (0, glob_1.default)(options.pattern || '**/*', {
+                        glob_1.default
+                            .glob(options.pattern || '**/*', {
                             cwd: folder,
                             ignore: (options.ignored || [
                                 '**/tmp/**',
@@ -130,28 +131,25 @@ function folder_to_hash(alogarithm, folder, options) {
                             ]).concat('**/.git*/**', '**/node_modules/**'),
                             dot: true,
                             noext: true
-                        }, function (err, matches) {
-                            if (!err) {
-                                var filesWithHash = {};
-                                for (var i = 0; i < matches.length; i++) {
-                                    var item = matches[i];
-                                    var fullPath = upath_1.default.join(folder, item);
-                                    var statInfo = fs_extra_1.default.statSync(fullPath);
-                                    if (statInfo.isFile()) {
-                                        var fileInfo = "".concat(fullPath, ":").concat(statInfo.size, ":").concat(statInfo.mtimeMs);
-                                        var hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
-                                        filesWithHash[fullPath] = hash;
-                                    }
+                        })
+                            .then(function (matches) {
+                            var filesWithHash = {};
+                            for (var i = 0; i < matches.length; i++) {
+                                var item = matches[i];
+                                var fullPath = upath_1.default.join(folder, item);
+                                var statInfo = fs_extra_1.default.statSync(fullPath);
+                                if (statInfo.isFile()) {
+                                    var fileInfo = "".concat(fullPath, ":").concat(statInfo.size, ":").concat(statInfo.mtimeMs);
+                                    var hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
+                                    filesWithHash[fullPath] = hash;
                                 }
-                                resolve({
-                                    filesWithHash: filesWithHash,
-                                    hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
-                                });
                             }
-                            else {
-                                reject(err);
-                            }
-                        });
+                            resolvePromise({
+                                filesWithHash: filesWithHash,
+                                hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+                            });
+                        })
+                            .catch(rejectPromise);
                     }
                     else {
                         console.log(folder + ' not found');

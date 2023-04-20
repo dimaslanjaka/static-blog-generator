@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.emptyDir = void 0;
-var minimatch_1 = __importDefault(require("minimatch"));
+var minimatch_1 = require("minimatch");
 var readDir_1 = __importDefault(require("./readDir"));
 /**
  * empty dir with filters
@@ -21,7 +21,7 @@ function emptyDir(dir, _a) {
             for (var i = 0; i < ignore.length; i++) {
                 var pattern = ignore[i];
                 if (typeof pattern === 'string') {
-                    var match = (0, minimatch_1.default)(file, pattern, { matchBase: true, dot: true });
+                    var match = (0, minimatch_1.minimatch)(file, pattern, { matchBase: true, dot: true });
                     // console.log(file.replace(dir, ''), pattern, match);
                     // filter file if matched
                     if (match)
