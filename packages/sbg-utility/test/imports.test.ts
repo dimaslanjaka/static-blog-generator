@@ -43,6 +43,6 @@ describe('check method', () => {
   }
 
   it('JSON.stringifyWithCircularRefs is function', function () {
-    expect(JSON.stringifyWithCircularRefs).toBe('function');
+    expect(typeof JSON.stringifyWithCircularRefs === 'function').toBeTruthy();
   });
 });
