@@ -17,6 +17,7 @@
     "test": "npx jest --runInBand",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp build",
+    "build-pack": "yarn run build && yarn run pack",
     "clean": "rm -rf dist tmp",
     "pack": "node packer.js --yarn"
   },
