@@ -1,6 +1,6 @@
 {
   "name": "sbg-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "static-blog-generator CLI and main scripts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -46,7 +46,7 @@
   "dependencies": {
     "ansi-colors": "^4.1.3",
     "bluebird": "^3.7.2",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz",
     "deepmerge-ts": "^5.1.0",
     "git-command-helper": "workspace:^",
     "he": "^1.2.0",

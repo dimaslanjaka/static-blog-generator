@@ -50,7 +50,7 @@
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/tarball/private",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
