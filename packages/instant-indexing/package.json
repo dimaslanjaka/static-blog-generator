@@ -1,6 +1,6 @@
 {
   "name": "instant-indexing",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "packageManager": "yarn@3.2.0",
   "description": "Easy Google Instant Indexing API. Force google to index your articles.",
   "main": "dist/index.js",
