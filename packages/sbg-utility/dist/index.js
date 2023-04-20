@@ -28,7 +28,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var wildcards = __importStar(require("./wildcards"));
 exports.default = wildcards;
-__exportStar(require("./sitemap-crawler"), exports);
 __exportStar(require("./wildcards"), exports);
 /*
 const sbgUtils = {

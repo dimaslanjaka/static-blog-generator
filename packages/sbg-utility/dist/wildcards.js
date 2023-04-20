@@ -37,6 +37,7 @@ var utils = __importStar(require("./utils"));
 exports.utils = utils;
 __exportStar(require("./config"), exports);
 __exportStar(require("./gulp-utils"), exports);
+__exportStar(require("./sitemap-crawler"), exports);
 __exportStar(require("./utils"), exports);
 //
 //# sourceMappingURL=wildcards.js.map
