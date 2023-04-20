@@ -7,7 +7,7 @@ const crypto = require('crypto');
 // const os = require('os');
 
 // auto create tarball (tgz) on release folder
-// requred        : npm i -D https://github.com/dimaslanjaka/node-cross-spawn/tarball/private upath fs-extra
+// requred        : npm i -D https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz upath fs-extra
 // raw            : https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js
 // github         : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/packer.js
 // update         : curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js
