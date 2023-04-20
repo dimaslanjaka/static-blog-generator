@@ -26,7 +26,8 @@ describe('check method', () => {
     'joinPath',
     'sitemapCrawler',
     'sitemapCrawlerAsync',
-    'SiteMapCrawler'
+    'SiteMapCrawler',
+    'jsonStringifyWithCircularRefs'
   ];
 
   for (let i = 0; i < props.length; i++) {
