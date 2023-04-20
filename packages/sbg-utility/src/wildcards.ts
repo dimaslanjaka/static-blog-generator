@@ -5,6 +5,7 @@ import * as utils from './utils';
 
 export * from './config';
 export * from './gulp-utils';
+export * from './sitemap-crawler';
 export * from './utils';
 export { utils, config, gutils, globals };
 
