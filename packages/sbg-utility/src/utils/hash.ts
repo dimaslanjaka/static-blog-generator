@@ -86,7 +86,7 @@ export async function folder_to_hash(
     encoding: crypto.BinaryToTextEncoding;
   }
 ): Promise<{ filesWithHash: Record<string, string>; hash: string }> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolvePromise, rejectPromise) => {
     options = Object.assign(
       { encoding: 'hex' as crypto.BinaryToTextEncoding, ignored: [] as string[], pattern: '' },
       options || {}
@@ -96,9 +96,8 @@ export async function folder_to_hash(
     if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
     // run only if exist
     if (fs.existsSync(folder)) {
-      glob(
-        options.pattern || '**/*',
-        {
+      glob
+        .glob(options.pattern || '**/*', {
           cwd: folder,
           ignore: (
             options.ignored || [
@@ -115,29 +114,25 @@ export async function folder_to_hash(
           ).concat('**/.git*/**', '**/node_modules/**'),
           dot: true,
           noext: true
-        },
-        function (err, matches) {
-          if (!err) {
-            const filesWithHash = {};
-            for (let i = 0; i < matches.length; i++) {
-              const item = matches[i];
-              const fullPath = path.join(folder, item);
-              const statInfo = fs.statSync(fullPath);
-              if (statInfo.isFile()) {
-                const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
-                const hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
-                filesWithHash[fullPath] = hash;
-              }
+        })
+        .then((matches) => {
+          const filesWithHash = {};
+          for (let i = 0; i < matches.length; i++) {
+            const item = matches[i];
+            const fullPath = path.join(folder, item);
+            const statInfo = fs.statSync(fullPath);
+            if (statInfo.isFile()) {
+              const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
+              const hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
+              filesWithHash[fullPath] = hash;
             }
-            resolve({
-              filesWithHash,
-              hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
-            });
-          } else {
-            reject(err);
           }
-        }
-      );
+          resolvePromise({
+            filesWithHash,
+            hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+          });
+        })
+        .catch(rejectPromise);
     } else {
       console.log(folder + ' not found');
     }
