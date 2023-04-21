@@ -1,3 +1,4 @@
+/// <reference types="express-session" />
 import * as sessionFileHelper from './session-file-helpers';
 /**
  * https://github.com/expressjs/session#session-store-implementation

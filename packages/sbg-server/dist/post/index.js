@@ -43,7 +43,7 @@ exports.cacheRouterPost = void 0;
 var debug_1 = __importDefault(require("debug"));
 var express_1 = __importDefault(require("express"));
 var hexo_post_parser_1 = require("hexo-post-parser");
-var dateMapper_1 = require("hexo-post-parser/dist/dateMapper");
+var parseDateMapper_1 = require("hexo-post-parser/dist/parseDateMapper");
 var sbg_api_1 = require("sbg-api");
 var sbg_utility_1 = require("sbg-utility");
 var serve_index_1 = __importDefault(require("serve-index"));
@@ -189,7 +189,7 @@ function routePost(api) {
             findPost.metadata = data.metadata;
         // update post.metadata.updated with timezone on config.timezone
         if (findPost.metadata) {
-            findPost.metadata.updated = (0, dateMapper_1.moment)()
+            findPost.metadata.updated = (0, parseDateMapper_1.moment)()
                 .tz(api.config.timezone || 'UTC')
                 .format();
         }
