@@ -30,7 +30,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const git_command_helper_1 = require("git-command-helper");
 const node_process_1 = require("node:process");
-const readline = __importStar(require("node:readline/promises"));
+const readline = __importStar(require("node:readline"));
 const sbg_api_1 = require("sbg-api");
 const sbg_server_1 = __importDefault(require("sbg-server"));
 const upath_1 = __importDefault(require("upath"));
@@ -73,7 +73,12 @@ yargs_1.default
 }, async function ({ key }) {
     if (!key) {
         const rl = readline.createInterface({ input: node_process_1.stdin, output: node_process_1.stdout });
-        const answer = await rl.question('Clean all caches? y/yes/n/no: ');
+        const answer = await new Promise((resolve) => {
+            rl.question('Clean all caches? y/yes/n/no: ', (input) => {
+                rl.close();
+                resolve(input);
+            });
+        });
         if (answer === 'yes' || answer === 'y') {
             await api.clean('all');
         }
@@ -200,7 +205,10 @@ yargs_1.default
             await api.safelink(upath_1.default.join(api.config.cwd, `/.deploy_${api.config.deploy?.type || 'git'}`));
             break;
         case 'copy':
-            await api.deploy.copy();
+            await api.deploy.copy({
+                config: api.config,
+                cwd: api.cwd
+            });
             break;
     }
 })
