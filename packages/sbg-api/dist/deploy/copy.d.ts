@@ -8,4 +8,4 @@ export interface deployCopyOptions {
  * @param opt
  * @param ignore
  */
-export declare function deployCopy(opt: deployCopyOptions): Promise<void>;
+export declare function deployCopy(opt?: deployCopyOptions): Promise<void>;

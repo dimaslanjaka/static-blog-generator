@@ -17,17 +17,15 @@ function getSourcePosts() {
     return new bluebird_1.default(function (resolve) {
         var config = (0, sbg_utility_1.getConfig)();
         var sourcePostDir = upath_1.default.join(config.cwd, config.post_dir);
-        (0, glob_1.default)('**/*.md', { cwd: sourcePostDir }, function (_err, matches) {
-            if (!_err) {
-                matches = matches.map(function (p) { return upath_1.default.join(sourcePostDir, p); });
-                var results_1 = [];
-                matches.forEach(function (p) {
-                    return (0, copy_1.processSinglePost)(p, function (parsed) {
-                        results_1.push(Object.assign(parsed, { full_source: p }));
-                    });
+        glob_1.default.glob('**/*.md', { cwd: sourcePostDir }).then(function (matches) {
+            matches = matches.map(function (p) { return upath_1.default.join(sourcePostDir, p); });
+            var results = [];
+            matches.forEach(function (p) {
+                return (0, copy_1.processSinglePost)(p, function (parsed) {
+                    results.push(Object.assign(parsed, { full_source: p }));
                 });
-                resolve(results_1);
-            }
+            });
+            resolve(results);
         });
     });
 }

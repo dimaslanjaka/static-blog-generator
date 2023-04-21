@@ -160,7 +160,7 @@ var SBG = /** @class */ (function () {
                 // wait all handler to be closed
                 setTimeout(function () {
                     resolve(null);
-                }, 3000);
+                }, 7000);
             });
         });
     };
