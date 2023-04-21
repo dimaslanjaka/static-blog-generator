@@ -1,7 +1,7 @@
 import debug from 'debug';
 import express from 'express';
 import { buildPost } from 'hexo-post-parser';
-import { moment } from 'hexo-post-parser/dist/dateMapper';
+import { moment } from 'hexo-post-parser/dist/parseDateMapper';
 import * as apis from 'sbg-api';
 import { getSourcePosts } from 'sbg-api';
 import { folder_to_hash, persistentCache, writefile } from 'sbg-utility';
