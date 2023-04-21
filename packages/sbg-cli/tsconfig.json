@@ -4,11 +4,7 @@
     "outDir": "./dist",
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
     "allowJs": true,
-    "checkJs": false,
-    "paths": {
-      "src": ["./src"],
-      "sbg-*": ["../sbg-*/src"]
-    }
+    "checkJs": false
   },
   "include": ["./src/**/*", "./test/**/*", "**/*.json"],
   "exclude": ["**/dist/**"],
