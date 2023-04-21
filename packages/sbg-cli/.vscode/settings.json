@@ -23,5 +23,7 @@
   "search.exclude": {
     "**/dist/**": true,
     "**/tmp/**": true
-  }
+  },
+  "npm.packageManager": "yarn",
+  "eslint.packageManager": "yarn"
 }
