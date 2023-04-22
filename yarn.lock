@@ -1987,6 +1987,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/js@npm:8.39.0":
+  version: 8.39.0
+  resolution: "@eslint/js@npm:8.39.0"
+  checksum: 63fe36e2bfb5ff5705d1c1a8ccecd8eb2f81d9af239713489e767b0e398759c0177fcc75ad62581d02942f2776903a8496d5fae48dc2d883dff1b96fcb19e9e2
+  languageName: node
+  linkType: hard
+
 "@expo/spawn-async@npm:^1.7.2":
   version: 1.7.2
   resolution: "@expo/spawn-async@npm:1.7.2"
@@ -9598,7 +9605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:^7.1.1":
+"eslint-scope@npm:^7.1.1, eslint-scope@npm:^7.2.0":
   version: 7.2.0
   resolution: "eslint-scope@npm:7.2.0"
   dependencies:
@@ -9746,6 +9753,56 @@ __metadata:
   bin:
     eslint: bin/eslint.js
   checksum: 73b6d9b650d0434aa7c07d0a1802f099b086ee70a8d8ba7be730439a26572a5eb71def12125c82942be2ec8ee5be38a6f1b42a13e40d4b67f11a148ec9e263eb
+  languageName: node
+  linkType: hard
+
+"eslint@npm:^8.39.0":
+  version: 8.39.0
+  resolution: "eslint@npm:8.39.0"
+  dependencies:
+    "@eslint-community/eslint-utils": ^4.2.0
+    "@eslint-community/regexpp": ^4.4.0
+    "@eslint/eslintrc": ^2.0.2
+    "@eslint/js": 8.39.0
+    "@humanwhocodes/config-array": ^0.11.8
+    "@humanwhocodes/module-importer": ^1.0.1
+    "@nodelib/fs.walk": ^1.2.8
+    ajv: ^6.10.0
+    chalk: ^4.0.0
+    cross-spawn: ^7.0.2
+    debug: ^4.3.2
+    doctrine: ^3.0.0
+    escape-string-regexp: ^4.0.0
+    eslint-scope: ^7.2.0
+    eslint-visitor-keys: ^3.4.0
+    espree: ^9.5.1
+    esquery: ^1.4.2
+    esutils: ^2.0.2
+    fast-deep-equal: ^3.1.3
+    file-entry-cache: ^6.0.1
+    find-up: ^5.0.0
+    glob-parent: ^6.0.2
+    globals: ^13.19.0
+    grapheme-splitter: ^1.0.4
+    ignore: ^5.2.0
+    import-fresh: ^3.0.0
+    imurmurhash: ^0.1.4
+    is-glob: ^4.0.0
+    is-path-inside: ^3.0.3
+    js-sdsl: ^4.1.4
+    js-yaml: ^4.1.0
+    json-stable-stringify-without-jsonify: ^1.0.1
+    levn: ^0.4.1
+    lodash.merge: ^4.6.2
+    minimatch: ^3.1.2
+    natural-compare: ^1.4.0
+    optionator: ^0.9.1
+    strip-ansi: ^6.0.1
+    strip-json-comments: ^3.1.0
+    text-table: ^0.2.0
+  bin:
+    eslint: bin/eslint.js
+  checksum: d7a074ff326e7ea482500dc0427a7d4b0260460f0f812d19b46b1cca681806b67309f23da9d17cd3de8eb74dd3c14cb549c4d58b05b140564d14cc1a391122a0
   languageName: node
   linkType: hard
 
@@ -10979,7 +11036,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@*, git-command-helper@^1.1.8, git-command-helper@^1.1.9, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
+"git-command-helper@*, git-command-helper@^1.1.9, git-command-helper@workspace:^, git-command-helper@workspace:packages/git-command-helper":
   version: 0.0.0-use.local
   resolution: "git-command-helper@workspace:packages/git-command-helper"
   dependencies:
@@ -12058,22 +12115,22 @@ __metadata:
     "@types/lodash": ^4.14.194
     "@types/lodash.deburr": ^4.1.7
     "@types/markdown-it": ^12.2.3
-    "@types/node": ^18.15.11
+    "@types/node": ^18.15.13
     "@types/yargs": ^17.0.24
     "@typescript-eslint/eslint-plugin": ^5.59.0
     "@typescript-eslint/parser": ^5.59.0
     ansi-colors: ^4.1.3
-    axios: ^1.3.5
+    axios: ^1.3.6
     bluebird: ^3.7.2
     chalk: ^4.1.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
     debug: ^4.3.4
-    eslint: ^8.38.0
+    eslint: ^8.39.0
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^4.2.1
     front-matter: ^4.0.2
     fs-extra: ^11.1.1
-    git-command-helper: ^1.1.8
+    git-command-helper: ^1.1.9
     gulp: ^4.0.2
     jest: ^29.5.0
     jsdom: ^21.1.1
@@ -12092,7 +12149,7 @@ __metadata:
     npm-run-all: ^4.1.5
     prettier: ^2.8.7
     rimraf: ^5.0.0
-    sbg-utility: ^1.0.8
+    sbg-utility: ^1.0.9
     semver: ^7.5.0
     showdown: ^2.1.0
     tiny-typed-emitter: ^2.1.0
@@ -20724,7 +20781,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@*, sbg-utility@^1.0.8, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@*, sbg-utility@^1.0.8, sbg-utility@^1.0.9, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
