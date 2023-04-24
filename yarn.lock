@@ -3101,6 +3101,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/gulp-cache@npm:^0.4.5":
+  version: 0.4.5
+  resolution: "@types/gulp-cache@npm:0.4.5"
+  dependencies:
+    "@types/gulp-util": "*"
+    "@types/node": "*"
+    "@types/vinyl": "*"
+  checksum: 902330405da44d8668d85dad62b732ac1800bdccf1738658f906c6bb47eb0d580fa603849da378c0badafea68b644d43d8108376ebbcdef84f9693d1e864af1c
+  languageName: node
+  linkType: hard
+
+"@types/gulp-util@npm:*":
+  version: 3.0.37
+  resolution: "@types/gulp-util@npm:3.0.37"
+  dependencies:
+    "@types/node": "*"
+    "@types/through2": "*"
+    "@types/vinyl": "*"
+    chalk: ^2.2.0
+  checksum: 31ea44c78a6932779596748433d410db60b88ad58978012a3248a2b6f52171f09c66b702c32aa854e8ed5cc752d127a5cd745dd888470364e56f1e635b002893
+  languageName: node
+  linkType: hard
+
 "@types/gulp@npm:^4.0.10":
   version: 4.0.10
   resolution: "@types/gulp@npm:4.0.10"
@@ -3501,6 +3524,15 @@ __metadata:
     gulp: ^4.0.2
     upath: ^2.0.1
   checksum: 476bc77c1fe24af78a624ad37b219d4001b3b244603bede4b25ac71d8a6bbad3b58bc35fa729e36189942ddd1d0728f4eaf2ef5dd3bd66b33a45ce344067f2fc
+  languageName: node
+  linkType: hard
+
+"@types/through2@npm:*":
+  version: 2.0.38
+  resolution: "@types/through2@npm:2.0.38"
+  dependencies:
+    "@types/node": "*"
+  checksum: 5f8b6dbdeef84cdc4e2259234ae752fe09123021c39fc9319fa6f50a445c15451c9f643e5d3620c50e818c6f71207f978038e785b61bd87a64253ac0b06e2d73
   languageName: node
   linkType: hard
 
@@ -6024,7 +6056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
+"chalk@npm:^2.0.0, chalk@npm:^2.2.0, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -18716,6 +18748,7 @@ __metadata:
     "@jest/globals": ^29.5.0
     "@types/bluebird": ^3.5.38
     "@types/debug": ^4.1.7
+    "@types/gulp-cache": ^0.4.5
     "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/node": ^18.15.12
     "@types/nunjucks": ^3.2.2
