@@ -1,5 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
+  "ts-node": {
+    "transpileOnly": true,
+    "emit": false,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
