@@ -1,4 +1,3 @@
-import ansiColors from 'ansi-colors';
 import crypto from 'crypto';
 import fs from 'fs-extra';
 import { Nullable } from 'hexo-post-parser';
@@ -10,7 +9,6 @@ import { join, toUnix } from 'upath';
 import { getConfig } from '../config/_config';
 import { writefile } from '../utils/filemanager';
 import { data_to_hash_sync } from '../utils/hash';
-import scheduler from '../utils/scheduler';
 
 /**
  * calculate sha1sum of file
@@ -70,7 +68,7 @@ export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: strin
  */
 export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
   const caches = cacheLib(options);
-  const logname = 'gulp-' + ansiColors.grey('cached');
+  //const logname = 'gulp-' + ansiColors.grey('cached');
   const pid = process.pid;
 
   let caller: string;
@@ -141,9 +139,9 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
       }
     );
 
-    scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
+    /*scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
       console.log(logname, dumpfile)
-    );
+    );*/
 
     if (isChanged()) {
       // not cached
