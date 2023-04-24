@@ -5,15 +5,12 @@
     "target": "es5",
     "downlevelIteration": true,
     "baseUrl": "./",
-    // "paths": { "src": ["./src"] },
+    "paths": { "src": ["./src"], "test": ["./test"] },
     "outDir": "./dist",
-    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
+    "tsBuildInfoFile": "./tmp/tsconfig.tsbuildinfo",
     "esModuleInterop": true,
     "importHelpers": true
   },
   "include": ["./src/**/*", "./src/**/*.json", "./test/**/*"],
-  "references": [
-    { "path": "../hexo-post-parser" },
-    { "path": "../git-command-helper" }
-  ]
+  "references": [{ "path": "../hexo-post-parser" }, { "path": "../git-command-helper" }]
 }
