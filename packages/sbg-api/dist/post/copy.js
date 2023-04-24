@@ -110,7 +110,7 @@ function copyAllPosts(_callback, config) {
     // console.log(excludes, sourcePostDir);
     return (gulp_1.default
         .src(['**/*.*', '*.*', '**/*'], {
-        cwd: (0, upath_1.toUnix)(sourcePostDir),
+        cwd: sourcePostDir,
         ignore: excludes,
         dot: true,
         noext: true
