@@ -11,14 +11,12 @@
     "**/node_modules": true
   },
   "code-runner.executorMapByGlob": {
-    "pom.xml": "cd $dir && mvn clean package",
     "*.test.ts": "yarn test -- $fileNameWithoutExt",
     "*.spec.ts": "yarn test -- $fileNameWithoutExt"
   },
   "code-runner.showRunIconInEditorTitleMenu": false,
   "code-runner.showRunCommandInExplorerContextMenu": false,
   "code-runner.respectShebang": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "relative",
   "search.exclude": {
     "**/dist/**": true,
