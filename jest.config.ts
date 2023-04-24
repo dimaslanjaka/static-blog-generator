@@ -21,7 +21,7 @@ const config: import('jest').Config = {
   verbose: false,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  rootDir: './',
+  rootDir: __dirname,
   roots: [
     '<rootDir>/packages/sbg-cli',
     '<rootDir>/packages/sbg-api',
