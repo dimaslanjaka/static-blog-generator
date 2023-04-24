@@ -53,6 +53,8 @@ const config: import('jest').Config = {
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/test/**',
+    '!**/dist/**',
+    '!**/tmp/**',
     '!**/*.{test,spec}.{js,ts}'
   ],
 
