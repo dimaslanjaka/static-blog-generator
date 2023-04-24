@@ -7,12 +7,10 @@ import { Opt, persistentCache } from 'persistent-cache';
 import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
-import * as projectConfig from '../config';
+import { getConfig } from '../config/_config';
 import { writefile } from '../utils/filemanager';
 import { data_to_hash_sync } from '../utils/hash';
 import scheduler from '../utils/scheduler';
-
-const { getConfig } = projectConfig;
 
 /**
  * calculate sha1sum of file
