@@ -95,7 +95,7 @@ let settledConfig = defaults.getDefaultConfig() as Record<string, any>;
 
 /**
  * find `_config.yml`
- * @param fileYML
+ * @param fileYML path to file `_config.yml` or working directory
  */
 export function fetchConfig(fileYML?: string) {
   if (!fileYML.endsWith('_config.yml')) fileYML += '/_config.yml';
@@ -107,7 +107,7 @@ export function fetchConfig(fileYML?: string) {
 }
 
 // fetch _config.yml first init
-fetchConfig(join(process.cwd(), '_config.yml'));
+// fetchConfig(join(process.cwd(), '_config.yml'));
 
 /**
  * Config setter
@@ -133,6 +133,10 @@ export function getConfig() {
   return settledConfig as ProjConf;
 }
 
+/**
+ * get deployment config
+ * @returns
+ */
 export function deployConfig() {
   let deployDir: string;
   if (settledConfig.deploy_dir) {
