@@ -63,20 +63,22 @@ var configFileJSON = (0, upath_1.join)(__dirname, '_config.json');
 if (!fs_extra_1.default.existsSync(configFileJSON))
     fs_extra_1.default.writeFileSync(configFileJSON, '{}');
 var settledConfig = defaults.getDefaultConfig();
+/**
+ * find `_config.yml`
+ * @param fileYML path to file `_config.yml` or working directory
+ */
 function fetchConfig(fileYML) {
     if (!fileYML.endsWith('_config.yml'))
         fileYML += '/_config.yml';
     if (!fileYML)
         fileYML = (0, upath_1.join)(process.cwd(), '_config.yml');
-    if (fs_extra_1.default.existsSync(fileYML)) {
-        var configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync(fileYML, 'utf-8'));
-        setConfig(utils.object.orderKeys(configYML));
-        utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
-    }
+    var configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync((0, upath_1.resolve)(fileYML), 'utf-8'));
+    setConfig(utils.object.orderKeys(configYML));
+    utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
 }
 exports.fetchConfig = fetchConfig;
 // fetch _config.yml first init
-fetchConfig((0, upath_1.join)(process.cwd(), '_config.yml'));
+// fetchConfig(join(process.cwd(), '_config.yml'));
 /**
  * Config setter
  * * useful for jest
@@ -99,6 +101,10 @@ function getConfig() {
     return settledConfig;
 }
 exports.getConfig = getConfig;
+/**
+ * get deployment config
+ * @returns
+ */
 function deployConfig() {
     var _a;
     var deployDir;

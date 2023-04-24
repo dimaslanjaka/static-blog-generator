@@ -75,6 +75,10 @@ export interface LabelMapper {
      */
     mapper: Record<string, string> | undefined | null;
 }
+/**
+ * find `_config.yml`
+ * @param fileYML path to file `_config.yml` or working directory
+ */
 export declare function fetchConfig(fileYML?: string): void;
 /**
  * Config setter
@@ -88,6 +92,10 @@ export declare function setConfig(obj: Record<string, any> | ProjConf): ProjConf
  * @returns
  */
 export declare function getConfig(): ProjConf;
+/**
+ * get deployment config
+ * @returns
+ */
 export declare function deployConfig(): {
     deployDir: string;
     github: git;

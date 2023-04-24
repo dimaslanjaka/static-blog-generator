@@ -1,3 +1,5 @@
+export * from './JSON';
+export * as json from './JSON';
 export * from './array';
 export * as array from './array';
 export * from './chain';
@@ -5,10 +7,9 @@ export * from './debug';
 export { default as debug } from './debug';
 export * from './filemanager';
 export * as filemanager from './filemanager';
+export * from './findYarnRootWorkspace';
 export * from './hash';
 export * as hash from './hash';
-export * from './JSON';
-export * as json from './JSON';
 export * from './logger';
 export * as logger from './logger';
 export { default as noop } from './noop';
