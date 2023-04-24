@@ -46,7 +46,7 @@ export function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: Ret
   return (
     gulp
       .src(['**/*.*', '*.*', '**/*'], {
-        cwd: toUnix(sourcePostDir),
+        cwd: sourcePostDir,
         ignore: excludes,
         dot: true,
         noext: true
