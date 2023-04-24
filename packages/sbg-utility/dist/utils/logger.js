@@ -1,63 +1,13 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
+var tslib_1 = require("tslib");
 var fs_extra_1 = require("fs-extra");
 require("nodejs-package-types");
 var os_1 = require("os");
-var slugify_1 = __importDefault(require("slugify"));
+var slugify_1 = tslib_1.__importDefault(require("slugify"));
 var upath_1 = require("upath");
-var configs = __importStar(require("../config"));
+var configs = tslib_1.__importStar(require("../config"));
 var filemanager_1 = require("./filemanager");
 var jest_1 = require("./jest");
 var getConfig = configs.getConfig;
@@ -100,24 +50,24 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.log.apply(_log, __spreadArray([], __read(args), false));
-        this.tracer.apply(this, __spreadArray([], __read(args), false));
+        _log.log.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.info = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.info.apply(_log, __spreadArray([], __read(args), false));
-        this.tracer.apply(this, __spreadArray([], __read(args), false));
+        _log.info.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.error = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.error.apply(_log, __spreadArray([], __read(args), false));
-        this.tracer.apply(this, __spreadArray([], __read(args), false));
+        _log.error.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.tracer = function () {
         var _a;

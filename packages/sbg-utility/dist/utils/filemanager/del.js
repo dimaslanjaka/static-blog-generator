@@ -1,11 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.del = void 0;
-var bluebird_1 = __importDefault(require("bluebird"));
-var fs_extra_1 = __importDefault(require("fs-extra"));
+var tslib_1 = require("tslib");
+var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
+var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 /**
  * delete folder async
  * @param path

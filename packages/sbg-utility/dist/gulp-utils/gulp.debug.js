@@ -1,17 +1,15 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gulpLog = exports.gulpDebug = void 0;
-var ansi_colors_1 = __importDefault(require("ansi-colors"));
+var tslib_1 = require("tslib");
+var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var os_1 = require("os");
-var through2_1 = __importDefault(require("through2"));
+var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
 var filemanager_1 = require("../utils/filemanager");
 var hash_1 = require("../utils/hash");
-var logger_1 = __importDefault(require("../utils/logger"));
-var scheduler_1 = __importDefault(require("../utils/scheduler"));
+var logger_1 = tslib_1.__importDefault(require("../utils/logger"));
+var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 function gulpDebug(filename) {
     var _a;
     var caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter(function (str) { return /(dist|src)/i.test(str); })[1]) || '').slice(0, 5);

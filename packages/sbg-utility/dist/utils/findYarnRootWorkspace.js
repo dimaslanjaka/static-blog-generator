@@ -1,11 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findYarnRootWorkspace = void 0;
+var tslib_1 = require("tslib");
 var fs_1 = require("fs");
-var micromatch_1 = __importDefault(require("micromatch"));
+var micromatch_1 = tslib_1.__importDefault(require("micromatch"));
 var path_1 = require("path");
 /**
  * search yarn root workspace folder

@@ -1,39 +1,12 @@
 'use strict';
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gulpDom = exports.gulpDomPath = exports.customPath = void 0;
-var jsdom_1 = __importDefault(require("jsdom"));
-var plugin_error_1 = __importDefault(require("plugin-error"));
-var through2_1 = __importDefault(require("through2"));
-var true_case_path_1 = __importDefault(require("true-case-path"));
-var upath_1 = __importDefault(require("upath"));
+var tslib_1 = require("tslib");
+var jsdom_1 = tslib_1.__importDefault(require("jsdom"));
+var plugin_error_1 = tslib_1.__importDefault(require("plugin-error"));
+var through2_1 = tslib_1.__importDefault(require("through2"));
+var true_case_path_1 = tslib_1.__importDefault(require("true-case-path"));
+var upath_1 = tslib_1.__importDefault(require("upath"));
 var pluginName = 'gulp-dom';
 var path = {
     join: function () {
@@ -41,7 +14,7 @@ var path = {
         for (var _i = 0; _i < arguments.length; _i++) {
             str[_i] = arguments[_i];
         }
-        return upath_1.default.toUnix(true_case_path_1.default.trueCasePathSync(upath_1.default.join.apply(upath_1.default, __spreadArray([], __read(str), false))));
+        return upath_1.default.toUnix(true_case_path_1.default.trueCasePathSync(upath_1.default.join.apply(upath_1.default, tslib_1.__spreadArray([], tslib_1.__read(str), false))));
     },
     dirname: function (str) { return upath_1.default.toUnix(true_case_path_1.default.trueCasePathSync(upath_1.default.dirname(str))); },
     toUnix: function (str) { return upath_1.default.toUnix(true_case_path_1.default.trueCasePathSync(str)); }

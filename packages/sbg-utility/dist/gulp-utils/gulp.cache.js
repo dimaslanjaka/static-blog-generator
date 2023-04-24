@@ -1,44 +1,18 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gulpCached = exports.md5 = exports.getShaFile = void 0;
-var ansi_colors_1 = __importDefault(require("ansi-colors"));
-var crypto_1 = __importDefault(require("crypto"));
-var fs_extra_1 = __importDefault(require("fs-extra"));
+var tslib_1 = require("tslib");
+var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
+var crypto_1 = tslib_1.__importDefault(require("crypto"));
+var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 var os_1 = require("os");
 var persistent_cache_1 = require("persistent-cache");
-var through2_1 = __importDefault(require("through2"));
+var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
-var projectConfig = __importStar(require("../config"));
+var config_1 = require("../config");
 var filemanager_1 = require("../utils/filemanager");
 var hash_1 = require("../utils/hash");
-var scheduler_1 = __importDefault(require("../utils/scheduler"));
-var getConfig = projectConfig.getConfig;
+var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 /**
  * calculate sha1sum of file
  * @param file
@@ -60,7 +34,7 @@ exports.getShaFile = getShaFile;
 var md5 = function (data) { return crypto_1.default.createHash('md5').update(data).digest('hex'); };
 exports.md5 = md5;
 function cacheLib(options) {
-    var config = getConfig();
+    var config = (0, config_1.getConfig)();
     options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
     return (0, persistent_cache_1.persistentCache)(options);
 }

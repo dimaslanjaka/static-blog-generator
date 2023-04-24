@@ -1,14 +1,12 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sitemapCrawlerAsync = exports.sitemapCrawler = exports.SiteMapCrawlerCore = void 0;
-var async_1 = __importDefault(require("async"));
-var bluebird_1 = __importDefault(require("bluebird"));
-var cheerio_1 = __importDefault(require("cheerio"));
-var progress_1 = __importDefault(require("progress"));
-var request_1 = __importDefault(require("request"));
+var tslib_1 = require("tslib");
+var async_1 = tslib_1.__importDefault(require("async"));
+var bluebird_1 = tslib_1.__importDefault(require("bluebird"));
+var cheerio_1 = tslib_1.__importDefault(require("cheerio"));
+var progress_1 = tslib_1.__importDefault(require("progress"));
+var request_1 = tslib_1.__importDefault(require("request"));
 var utils_1 = require("../utils");
 var SiteMapCrawlerCore = /** @class */ (function () {
     function SiteMapCrawlerCore() {

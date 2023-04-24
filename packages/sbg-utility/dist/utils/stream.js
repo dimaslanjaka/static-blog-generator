@@ -1,11 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createDuplexStream = void 0;
-var fs_1 = __importDefault(require("fs"));
-var path_1 = __importDefault(require("path"));
+var tslib_1 = require("tslib");
+var fs_1 = tslib_1.__importDefault(require("fs"));
+var path_1 = tslib_1.__importDefault(require("path"));
 var stream_1 = require("stream");
 function createDuplexStream() {
     var readStream = fs_1.default.createReadStream(path_1.default.join(process.cwd(), "tmp/streams/read-".concat(process.pid, ".txt")));

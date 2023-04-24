@@ -6,14 +6,12 @@
 // GET https://translate.google.com/website?depth=1&hl=en&pto=aue,ajax,boq&rurl=translate.google.com&sl=id&sp=nmt4&tl=en&u=https://9f9f7cf85cf1.ngrok.io/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html&usg=ALkJrhgP3S6k0r9M1L0I0usu2YoSrco1KQ
 // GET https://9f9f7cf85cf1-ngrok-io.translate.goog/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html?_x_tr_sl=id&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=ajax
 // GET https://translate.google.com/translate_un?sl=id&tl=en&u=https://9f9f7cf85cf1.ngrok.io/2020/6/10/update-genshin-impact-1.6.0-1.6.1.html&usg=ALkJrhg-dpAhmINQHidHIs0byhWyENzuSA
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var fs_1 = __importDefault(require("fs"));
-var jsdom_1 = __importDefault(require("jsdom"));
+var tslib_1 = require("tslib");
+var fs_1 = tslib_1.__importDefault(require("fs"));
+var jsdom_1 = tslib_1.__importDefault(require("jsdom"));
 var node_libcurl_1 = require("node-libcurl");
-var path_1 = __importDefault(require("path"));
+var path_1 = tslib_1.__importDefault(require("path"));
 var JSDOM = jsdom_1.default.JSDOM;
 var cookieJarFile = path_1.default.join(__dirname, '/../../build/cookiejar.txt');
 var Translator = /** @class */ (function () {
