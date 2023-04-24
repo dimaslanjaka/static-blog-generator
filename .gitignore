@@ -5,8 +5,8 @@ tmp
 temp
 .cache
 .env.development
-/coverage
-/src/_config.auto*.json
+**/coverage
+**/_config.auto*.json
 /docs
 /src-old
 unused.md
