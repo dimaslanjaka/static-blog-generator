@@ -4,7 +4,7 @@
     "module": "commonjs",
     "target": "es5",
     "baseUrl": "./",
-    "outDir": "./dist",
+    "outDir": "./tmp/dist",
     // "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
