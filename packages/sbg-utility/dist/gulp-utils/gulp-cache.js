@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gulpCached = exports.md5 = exports.getShaFile = void 0;
 var tslib_1 = require("tslib");
-var ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
 var crypto_1 = tslib_1.__importDefault(require("crypto"));
 var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 var os_1 = require("os");
@@ -12,7 +11,6 @@ var upath_1 = require("upath");
 var _config_1 = require("../config/_config");
 var filemanager_1 = require("../utils/filemanager");
 var hash_1 = require("../utils/hash");
-var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 /**
  * calculate sha1sum of file
  * @param file
@@ -47,7 +45,7 @@ function gulpCached(options) {
     var _a;
     if (options === void 0) { options = {}; }
     var caches = cacheLib(options);
-    var logname = 'gulp-' + ansi_colors_1.default.grey('cached');
+    //const logname = 'gulp-' + ansiColors.grey('cached');
     var pid = process.pid;
     var caller;
     if (options.name) {
@@ -101,9 +99,9 @@ function gulpCached(options) {
         (0, filemanager_1.writefile)(dumpfile, "\"".concat(paths.source, "\" is cached ").concat(isChanged(), " with dest validation ").concat(options.dest && options.cwd ? 'true' : 'false') + os_1.EOL, {
             append: true
         });
-        scheduler_1.default.add("".concat(logname, " dump ").concat(ansi_colors_1.default.cyan(caller), " pid ").concat(ansi_colors_1.default.yellow(String(pid))), function () {
-            return console.log(logname, dumpfile);
-        });
+        /*scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
+          console.log(logname, dumpfile)
+        );*/
         if (isChanged()) {
             // not cached
             caches.setSync(cacheKey, sha1sum);
