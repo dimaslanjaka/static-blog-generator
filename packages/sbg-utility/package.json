@@ -14,7 +14,7 @@
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
     "update:ncu": "npx npm-check-updates -u -x async,progress,cheerio",
     "update": "run-s update:**",
-    "test": "npx jest --runInBand",
+    "test": "npx jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp build",
     "build-pack": "yarn run build && yarn run pack",
