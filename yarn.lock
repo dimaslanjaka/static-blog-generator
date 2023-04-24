@@ -20809,6 +20809,7 @@ __metadata:
     jest: ^29.5.0
     jsdom: ^21.1.1
     jsonc-parser: ^3.2.0
+    micromatch: ^4.0.5
     minimatch: ^9.0.0
     node-libcurl: ^3.0.0
     nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
