@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+yarn workspace sbg-utility run build
+yarn workspace sbg-api run build
+yarn workspace sbg-server run build
+yarn workspace sbg-cli run build
+yarn workspace static-blog-generator run build
+
+yarn workspace sbg-utility run pack
+yarn workspace sbg-api run pack
+yarn workspace sbg-server run pack
+yarn workspace sbg-cli run pack
+yarn workspace static-blog-generator run pack
