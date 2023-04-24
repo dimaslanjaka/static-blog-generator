@@ -9,7 +9,7 @@ var os_1 = require("os");
 var persistent_cache_1 = require("persistent-cache");
 var through2_1 = tslib_1.__importDefault(require("through2"));
 var upath_1 = require("upath");
-var config_1 = require("../config");
+var _config_1 = require("../config/_config");
 var filemanager_1 = require("../utils/filemanager");
 var hash_1 = require("../utils/hash");
 var scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
@@ -34,7 +34,7 @@ exports.getShaFile = getShaFile;
 var md5 = function (data) { return crypto_1.default.createHash('md5').update(data).digest('hex'); };
 exports.md5 = md5;
 function cacheLib(options) {
-    var config = (0, config_1.getConfig)();
+    var config = (0, _config_1.getConfig)();
     options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
     return (0, persistent_cache_1.persistentCache)(options);
 }
@@ -121,4 +121,4 @@ function gulpCached(options) {
 }
 exports.gulpCached = gulpCached;
 exports.default = gulpCached;
-//# sourceMappingURL=gulp.cache.js.map
+//# sourceMappingURL=gulp-cache.js.map
