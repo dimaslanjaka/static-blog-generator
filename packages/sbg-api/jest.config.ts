@@ -15,7 +15,8 @@ const config: Extract<NonNullable<import('jest').Config['projects']>[number], Re
       // https://kulshekhar.github.io/ts-jest/docs/getting-started/options/tsconfig
       { tsconfig: parsed.compilerOptions }
     ]
-  }
+  },
+  displayName: 'API'
 };
 
 export default config;
