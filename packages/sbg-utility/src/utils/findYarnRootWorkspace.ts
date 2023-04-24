@@ -4,7 +4,7 @@ import { dirname, join, normalize, relative } from 'path';
 
 /**
  * search yarn root workspace folder
- * @param ctx
+ * @param ctx option with property `base_dir`
  */
 function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
   const baseDir = ctx.base_dir;
@@ -54,4 +54,6 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
   return null;
 }
 
-export = findYarnRootWorkspace;
+// export = findYarnRootWorkspace;
+export { findYarnRootWorkspace };
+export default findYarnRootWorkspace;
