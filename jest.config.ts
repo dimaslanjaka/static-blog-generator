@@ -94,7 +94,7 @@ const config: import('jest').Config = {
       ...sbgApiConfig
     },
     {
-      displayName: 'UTILS',
+      displayName: 'UTILITY',
       testMatch: ['<rootDir>/packages/sbg-utility/test/**/*.{test,spec}.{ts,js}'],
       ...sbgUtilityConfig
     },
