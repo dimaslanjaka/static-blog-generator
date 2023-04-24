@@ -5,6 +5,8 @@ import defaults, * as wilcards from '../src';
 
 describe('check method', () => {
   const props = [
+    'getConfig',
+    'fetchConfig',
     'findYarnRootWorkspace',
     'chain',
     'debug',
