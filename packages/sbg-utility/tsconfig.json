@@ -7,9 +7,11 @@
     "baseUrl": "./",
     // "paths": { "src": ["./src"] },
     "outDir": "./dist",
-    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
+    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo",
+    "esModuleInterop": true,
+    "importHelpers": true
   },
-  "include": ["./src", "./src/**/*.json", "./test"],
+  "include": ["./src/**/*", "./src/**/*.json", "./test/**/*"],
   "references": [
     { "path": "../hexo-post-parser" },
     { "path": "../git-command-helper" }
