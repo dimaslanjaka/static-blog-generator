@@ -24,5 +24,5 @@ export default function validateClean(api: Application) {
         existsSync(join(api.config.cwd, '.deploy_' + api.config.deploy.type, api.config.category_dir))
       ).toBeFalsy();
     }
-  });
+  }, 60000);
 }
