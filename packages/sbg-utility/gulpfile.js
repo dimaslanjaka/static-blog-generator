@@ -36,3 +36,15 @@ function tsc(done) {
 }
 
 gulp.task('build', gulp.series(tsc, copy));
+
+function clean(done) {
+  spawn(cmd('tsc'), ['--clean', 'tsconfig.build.json'], {
+    cwd: __dirname,
+    shell: true,
+    stdio: 'inherit'
+  })
+    .then(() => done())
+    .catch(done);
+}
+
+gulp.task('clean', gulp.series(clean, tsc, copy));
