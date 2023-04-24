@@ -16,9 +16,9 @@
     "update": "run-s update:**",
     "test": "npx jest --runInBand",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "rm -rf dist && gulp build",
+    "build": "gulp build",
     "build-pack": "yarn run build && yarn run pack",
-    "clean": "rm -rf dist tmp",
+    "clean": "gulp clean",
     "pack": "node packer.js --yarn"
   },
   "repository": {
