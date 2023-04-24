@@ -37,14 +37,8 @@ function tsc(done) {
 
 gulp.task('build', gulp.series(tsc, copy));
 
-function clean(done) {
-  spawn(cmd('tsc'), ['--build', '--clean', 'tsconfig.build.json'], {
-    cwd: __dirname,
-    shell: true,
-    stdio: 'inherit'
-  })
-    .then(() => done())
-    .catch(done);
+async function clean() {
+  await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
 }
 
 gulp.task('clean', gulp.series(clean));
