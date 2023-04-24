@@ -5,6 +5,7 @@ import defaults, * as wilcards from '../src';
 
 describe('check method', () => {
   const props = [
+    'findYarnRootWorkspace',
     'chain',
     'debug',
     'createWriteStream',
