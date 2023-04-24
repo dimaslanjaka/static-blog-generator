@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
 import * as hexoPostParser from 'hexo-post-parser';
-import { join } from 'upath';
+import { join, resolve } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
 import * as defaults from './defaults';
@@ -93,14 +93,17 @@ export interface LabelMapper {
 
 let settledConfig = defaults.getDefaultConfig() as Record<string, any>;
 
+/**
+ * find `_config.yml`
+ * @param fileYML
+ */
 export function fetchConfig(fileYML?: string) {
   if (!fileYML.endsWith('_config.yml')) fileYML += '/_config.yml';
   if (!fileYML) fileYML = join(process.cwd(), '_config.yml');
-  if (fs.existsSync(fileYML)) {
-    const configYML = yaml.parse(fs.readFileSync(fileYML, 'utf-8'));
-    setConfig(utils.object.orderKeys(configYML));
-    utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
-  }
+
+  const configYML = yaml.parse(fs.readFileSync(resolve(fileYML), 'utf-8'));
+  setConfig(utils.object.orderKeys(configYML));
+  utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
 }
 
 // fetch _config.yml first init
