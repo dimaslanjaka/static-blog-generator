@@ -7,7 +7,7 @@ spawn('node', ['server-dev.runner.js'], {
   stdio: 'inherit',
   shell: true
 });
-spawn('yarn', ['run', 'prebuild'], {
+spawn('yarn', ['run', 'build'], {
   cwd: __dirname,
   shell: true,
   stdio: 'inherit'
