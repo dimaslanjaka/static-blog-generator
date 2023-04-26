@@ -7,7 +7,7 @@ import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { getConfig } from '../config/_config';
 import { writefile } from '../utils/filemanager';
-import { data_to_hash_sync } from '../utils/hash';
+import { data_to_hash_sync, md5 } from '../utils/hash';
 
 /**
  * calculate sha1sum of file
@@ -20,13 +20,6 @@ export function getShaFile(file: string) {
   const sha1sum = crypto.createHash('sha1').update(testFile).digest('hex');
   return sha1sum;
 }
-
-/**
- * MD5 hash generator
- * @param data
- * @returns
- */
-export const md5 = (data: string) => crypto.createHash('md5').update(data).digest('hex');
 
 export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
   prefix?: string;
