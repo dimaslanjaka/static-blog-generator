@@ -41,8 +41,13 @@ export default function routePost(this: SBGServer, api: apis.Application) {
       'origin_post_data',
       [] as PostRequestMiddleware['post_data']
     );
-    if (_req.origin_post_data.length === 0 && _req.post_data.length === 0) {
-      const posts = await getSourcePosts();
+    const isEmpty =
+      _req.origin_post_data.length === 0 && _req.post_data.length === 0;
+    if (isEmpty) {
+      const posts = await getSourcePosts().catch((err) => {
+        console.error(err);
+        return [];
+      });
       // assign to response property
       _req.origin_post_data = posts;
       _req.post_data = posts.map((parsed) =>
@@ -111,8 +116,9 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           return item;
         })
       };
-      //console.log(data);
-      res.json(_data);
+      console.log(_data);
+      //res.json(_data);
+      res.json({});
     }
   );
 
