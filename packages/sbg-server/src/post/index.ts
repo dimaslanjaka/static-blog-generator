@@ -36,8 +36,11 @@ export default function routePost(this: SBGServer, api: apis.Application) {
   ) {
     //_req.origin_post_data = _req.post_data = [];
 
-    const posts = await getSourcePosts().catch((err) => {
-      console.error(err);
+    const posts = await getSourcePosts({
+      cwd: api.config.cwd,
+      post_dir: api.config.post_dir
+    }).catch((err) => {
+      console.error('get post error', err.message);
       return [] as apis.ResultSourcePosts[];
     });
     // assign to response property
