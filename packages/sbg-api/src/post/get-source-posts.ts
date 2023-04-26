@@ -1,6 +1,6 @@
 import * as glob from 'glob';
 import * as hexoPostParser from 'hexo-post-parser';
-import { getConfig, persistentCache } from 'sbg-utility';
+import { getConfig } from 'sbg-utility';
 import path from 'upath';
 import { processSinglePost } from './copy';
 
@@ -21,10 +21,8 @@ export async function getSourcePosts(config?: { cwd: string; post_dir: string; c
   if (!config.cacheDirectory) config.cacheDirectory = path.join(config.cwd, 'tmp');
 
   const sourcePostDir = path.join(config.cwd, config.post_dir);
-  const cache = new persistentCache({ base: config.cacheDirectory, name: 'getSourcePosts' });
-  const cacheKey = 'source-posts';
   // get cache or empty array
-  const results = await cache.get(cacheKey, [] as ResultSourcePosts[]).catch(() => [] as ResultSourcePosts[]);
+  const results = [] as ResultSourcePosts[];
 
   if (results.length === 0) {
     const matches = await glob.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true });
@@ -37,8 +35,6 @@ export async function getSourcePosts(config?: { cwd: string; post_dir: string; c
 
     // wait all promises to be resolved
     await Promise.all(promises);
-    // apply cache
-    await cache.set(cacheKey, results);
   }
 
   return results;
