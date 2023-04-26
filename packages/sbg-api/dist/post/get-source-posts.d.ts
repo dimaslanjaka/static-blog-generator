@@ -1,12 +1,14 @@
-import Bluebird from 'bluebird';
 import * as hexoPostParser from 'hexo-post-parser';
-import { ProjConf } from 'sbg-utility';
 export interface ResultSourcePosts extends hexoPostParser.postMap {
     full_source: string;
 }
 /**
- * get all source posts
+ * get all source markdown posts (_configyml.post_dir)
  * @returns
  */
-export declare function getSourcePosts(config?: ProjConf): Bluebird<ResultSourcePosts[]>;
+export declare function getSourcePosts(config?: {
+    cwd: string;
+    post_dir: string;
+    cacheDirectory?: string;
+}): Promise<ResultSourcePosts[]>;
 export default getSourcePosts;
