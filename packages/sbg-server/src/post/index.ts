@@ -18,44 +18,33 @@ export const cacheRouterPost = new persistentCache({
   duration: 1000 * 60 * 60 * 24 // 1 day cache
 });
 
+export interface PostRequestMiddleware extends express.Request {
+  origin_post_data: apis.post.ResultSourcePosts[];
+  post_data: (apis.post.ResultSourcePosts &
+    apis.post.ResultSourcePosts['metadata'] &
+    Record<string, any>)[];
+}
+
 export default function routePost(this: SBGServer, api: apis.Application) {
   const POST_ROOT = path.join(api.cwd, api.config.post_dir);
   log('root<post>', POST_ROOT);
 
-  interface PostRequestMiddleware extends express.Request {
-    origin_post_data: apis.post.ResultSourcePosts[];
-    post_data: (apis.post.ResultSourcePosts &
-      apis.post.ResultSourcePosts['metadata'] &
-      Record<string, any>)[];
-  }
   const middleware = async function (
     _req: PostRequestMiddleware,
     _res: express.Response,
     _next: express.NextFunction
   ) {
-    _req.origin_post_data = cacheRouterPost.getSync(
-      'origin_post_data',
-      [] as PostRequestMiddleware['origin_post_data']
+    //_req.origin_post_data = _req.post_data = [];
+
+    const posts = await getSourcePosts().catch((err) => {
+      console.error(err);
+      return [] as apis.ResultSourcePosts[];
+    });
+    // assign to response property
+    _req.origin_post_data = posts;
+    _req.post_data = posts.map((parsed) =>
+      Object.assign(parsed, parsed.metadata, { body: parsed.body })
     );
-    _req.post_data = cacheRouterPost.getSync(
-      'origin_post_data',
-      [] as PostRequestMiddleware['post_data']
-    );
-    const isEmpty =
-      _req.origin_post_data.length === 0 && _req.post_data.length === 0;
-    if (isEmpty) {
-      const posts = await getSourcePosts().catch((err) => {
-        console.error(err);
-        return [];
-      });
-      // assign to response property
-      _req.origin_post_data = posts;
-      _req.post_data = posts.map((parsed) =>
-        Object.assign(parsed, parsed.metadata, { body: parsed.body })
-      );
-      cacheRouterPost.setSync('post_data', _req.post_data);
-      cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
-    }
     _next(null);
   };
 
@@ -116,9 +105,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           return item;
         })
       };
-      console.log(_data);
-      //res.json(_data);
-      res.json({});
+      res.json(_data);
     }
   );
 
