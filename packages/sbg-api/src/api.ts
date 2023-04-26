@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
-import { Nullable } from 'hexo-post-parser';
-import { chain, debug, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
+import postParser, { Nullable } from 'hexo-post-parser';
+import { ProjConf, chain, debug, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
 import { join } from 'upath';
 import * as cleaner from './clean';
 import { deployCopy } from './deploy/copy';
@@ -12,7 +12,7 @@ import standaloneRunner from './post/standalone';
 
 class SBG {
   cwd: string;
-  config = getConfig();
+  config: ProjConf;
   setConfig = setConfig;
   getConfig = getConfig;
 
@@ -22,13 +22,19 @@ class SBG {
    */
   constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = process.cwd();
+    // fetch config
     fetchConfig(cwd);
+    // apply config
+    this.config = getConfig();
+    // modify config
     this.cwd = cwd;
     this.config.cwd = cwd;
     options = Object.assign(this.config, options || {}, { cwd });
     debug('sbg-api')('cwd', cwd);
-
+    // re-apply config
     this.config = setConfig(options);
+    // apply config hexo-post-parser
+    postParser.setConfig(this.config);
     SBG.setApi(this);
     new scheduler();
   }
