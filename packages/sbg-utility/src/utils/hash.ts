@@ -1,8 +1,8 @@
 import Axios from 'axios';
 import crypto from 'crypto';
-import fs from 'fs-extra';
-import glob from 'glob';
-import path from 'upath';
+import * as fs from 'fs-extra';
+import * as glob from 'glob';
+import * as path from 'upath';
 
 /**
  * convert file to hash
