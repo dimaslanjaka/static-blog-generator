@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpCached = exports.md5 = exports.getShaFile = void 0;
+exports.gulpCached = exports.getShaFile = void 0;
 var tslib_1 = require("tslib");
 var crypto_1 = tslib_1.__importDefault(require("crypto"));
 var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
@@ -24,13 +24,6 @@ function getShaFile(file) {
     return sha1sum;
 }
 exports.getShaFile = getShaFile;
-/**
- * MD5 hash generator
- * @param data
- * @returns
- */
-var md5 = function (data) { return crypto_1.default.createHash('md5').update(data).digest('hex'); };
-exports.md5 = md5;
 function cacheLib(options) {
     var config = (0, _config_1.getConfig)();
     options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
@@ -62,7 +55,7 @@ function gulpCached(options) {
         // skip directory
         if (file.isDirectory())
             return next(null, file);
-        var cacheKey = (0, exports.md5)(file.path);
+        var cacheKey = (0, hash_1.md5)(file.path);
         var sha1sum = getShaFile(file.path);
         /**
          * Checks if file has been changed by comparing its current SHA1

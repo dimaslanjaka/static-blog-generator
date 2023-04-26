@@ -4,7 +4,6 @@ exports.projectIgnores = exports.commonIgnore = exports.deployConfig = exports.g
 var tslib_1 = require("tslib");
 var fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 var git_command_helper_1 = tslib_1.__importDefault(require("git-command-helper"));
-var hexoPostParser = tslib_1.__importStar(require("hexo-post-parser"));
 var upath_1 = require("upath");
 var yaml_1 = tslib_1.__importDefault(require("yaml"));
 var utils = tslib_1.__importStar(require("../utils"));
@@ -36,8 +35,6 @@ exports.fetchConfig = fetchConfig;
  */
 function setConfig(obj) {
     settledConfig = Object.assign(settledConfig || {}, obj);
-    // update hexo-post-parser config
-    hexoPostParser.setConfig(settledConfig);
     return getConfig();
 }
 exports.setConfig = setConfig;

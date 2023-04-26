@@ -1,12 +1,51 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.url_to_hash = exports.folder_to_hash = exports.data_to_hash_sync = exports.data_to_hash = exports.file_to_hash = void 0;
+exports.url_to_hash = exports.folder_to_hash = exports.data_to_hash_sync = exports.data_to_hash = exports.file_to_hash = exports.md5 = exports.md5FileSync = void 0;
 var tslib_1 = require("tslib");
 var axios_1 = tslib_1.__importDefault(require("axios"));
 var crypto_1 = tslib_1.__importDefault(require("crypto"));
 var fs = tslib_1.__importStar(require("fs-extra"));
 var glob = tslib_1.__importStar(require("glob"));
 var path = tslib_1.__importStar(require("upath"));
+/**
+ * MD5 file synchronously
+ * @param path
+ * @returns
+ */
+function md5FileSync(path) {
+    var fileBuffer = Buffer.from(path);
+    if (fs.existsSync(path)) {
+        if (fs.statSync(path).isFile())
+            fileBuffer = fs.readFileSync(path);
+    }
+    var hashSum = crypto_1.default.createHash('md5'); // sha256
+    hashSum.update(fileBuffer);
+    return hashSum.digest('hex');
+}
+exports.md5FileSync = md5FileSync;
+/**
+ * PHP MD5 Equivalent
+ * @param data
+ * @returns
+ */
+function md5(data) {
+    return crypto_1.default.createHash('md5').update(data).digest('hex');
+}
+exports.md5 = md5;
+function md5File(path) {
+    return new Promise(function (resolve, reject) {
+        var output = crypto_1.default.createHash('md5');
+        var input = fs.createReadStream(path);
+        input.on('error', function (err) {
+            reject(err);
+        });
+        output.once('readable', function () {
+            resolve(output.read().toString('hex'));
+        });
+        input.pipe(output);
+    });
+}
+exports.default = md5File;
 /**
  * convert file to hash
  * @param alogarithm

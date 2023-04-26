@@ -7,12 +7,6 @@ import internal from 'stream';
  * @returns
  */
 export declare function getShaFile(file: string): string;
-/**
- * MD5 hash generator
- * @param data
- * @returns
- */
-export declare const md5: (data: string) => string;
 export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
     prefix?: string;
     /**
