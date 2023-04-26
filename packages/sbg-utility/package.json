@@ -48,7 +48,6 @@
     "glob": "^10.2.1",
     "gulp": "^4.0.2",
     "hexo": "^6.3.0",
-    "hexo-post-parser": "workspace:^",
     "hexo-util": "^3.0.1",
     "jsdom": "^21.1.1",
     "jsonc-parser": "^3.2.0",
