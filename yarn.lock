@@ -18922,7 +18922,6 @@ __metadata:
     glob: ^10.2.1
     gulp: ^4.0.2
     hexo: ^6.3.0
-    hexo-post-parser: "workspace:^"
     hexo-util: ^3.0.1
     jest: ^29.5.0
     jsdom: ^21.1.1

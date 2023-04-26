@@ -1,7 +1,6 @@
 import fs from 'fs-extra';
 import git from 'git-command-helper';
 import Hexo from 'hexo';
-import * as hexoPostParser from 'hexo-post-parser';
 import { join, resolve } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
@@ -116,9 +115,6 @@ export function fetchConfig(fileYML?: string) {
  */
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign(settledConfig || {}, obj);
-
-  // update hexo-post-parser config
-  hexoPostParser.setConfig(settledConfig);
 
   return getConfig();
 }
