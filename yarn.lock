@@ -5389,6 +5389,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"binary-collections@https://github.com/dimaslanjaka/bin":
+  version: 1.0.0
+  resolution: "binary-collections@https://github.com/dimaslanjaka/bin.git#commit=274618aa4dd4b64ac8c80193342d73a706bccc96"
+  dependencies:
+    glob: ^10.2.2
+  bin:
+    clean-nodemodule: clean-nodemodule
+    clean-nodemodules: clean-nodemodules
+    dev: dev
+    empty: empty
+    git-reduce-size: git-reduce-size
+    nodekill: nodekill
+    nodekill.cmd: nodekill.cmd
+    nodekill.ps1: nodekill.ps1
+    prod: prod
+    rmpath: rmpath
+    submodule-install: submodule-install
+    submodule-remove: submodule-remove
+  checksum: 958ad0b911e2b2d9c1013849b6c88b877597e2ddd2f8421481a434c7360afd4566cc45147d03d08b5e40bd53038720e378c9519c611280e1ca17565381d9705a
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^1.0.0":
   version: 1.13.1
   resolution: "binary-extensions@npm:1.13.1"
@@ -19764,6 +19786,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.59.0
     "@typescript-eslint/parser": ^5.59.0
     babel-jest: ^29.5.0
+    binary-collections: "https://github.com/dimaslanjaka/bin"
     depcheck: ^1.4.3
     eslint: ^8.38.0
     eslint-config-prettier: ^8.8.0

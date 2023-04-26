@@ -51,6 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "babel-jest": "^29.5.0",
+    "binary-collections": "https://github.com/dimaslanjaka/bin",
     "depcheck": "^1.4.3",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
