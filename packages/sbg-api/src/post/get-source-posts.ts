@@ -1,7 +1,6 @@
-import Bluebird from 'bluebird';
-import glob from 'glob';
+import * as glob from 'glob';
 import * as hexoPostParser from 'hexo-post-parser';
-import { ProjConf, getConfig } from 'sbg-utility';
+import { getConfig, persistentCache } from 'sbg-utility';
 import path from 'upath';
 import { processSinglePost } from './copy';
 
@@ -10,24 +9,39 @@ export interface ResultSourcePosts extends hexoPostParser.postMap {
 }
 
 /**
- * get all source posts
+ * get all source markdown posts (_configyml.post_dir)
  * @returns
  */
-export function getSourcePosts(config?: ProjConf) {
-  return new Bluebird((resolve: (arg: ResultSourcePosts[]) => any) => {
-    if (!config) config = getConfig();
-    const sourcePostDir = path.join(config.cwd, config.post_dir);
-    glob.glob('**/*.md', { cwd: sourcePostDir }).then((matches) => {
-      matches = matches.map((p) => path.join(sourcePostDir, p));
-      const results: ResultSourcePosts[] = [];
-      matches.forEach((p) =>
-        processSinglePost(p, function (parsed) {
-          results.push(Object.assign(parsed, { full_source: p }));
-        })
-      );
-      resolve(results);
-    });
-  });
+export async function getSourcePosts(config?: { cwd: string; post_dir: string; cacheDirectory?: string }) {
+  if (!config) config = getConfig();
+  if (!config.cwd) throw new Error('config.cwd is required');
+  if (!config.post_dir) throw new Error('config.post_dir is required');
+
+  // default cache directory
+  if (!config.cacheDirectory) config.cacheDirectory = path.join(config.cwd, 'tmp');
+
+  const sourcePostDir = path.join(config.cwd, config.post_dir);
+  const cache = new persistentCache({ base: config.cacheDirectory, name: 'getSourcePosts' });
+  const cacheKey = 'source-posts';
+  // get cache or empty array
+  const results = await cache.get(cacheKey, [] as ResultSourcePosts[]).catch(() => [] as ResultSourcePosts[]);
+
+  if (results.length === 0) {
+    const matches = await glob.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true });
+    // matches = matches.map((p) => path.join(sourcePostDir, p));
+    const promises = matches.map((p) =>
+      processSinglePost(p, function (parsed) {
+        results.push(Object.assign(parsed, { full_source: p }));
+      })
+    );
+
+    // wait all promises to be resolved
+    await Promise.all(promises);
+    // apply cache
+    await cache.set(cacheKey, results);
+  }
+
+  return results;
 }
 
 export default getSourcePosts;
