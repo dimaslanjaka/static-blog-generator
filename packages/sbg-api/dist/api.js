@@ -65,6 +65,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SBG = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var hexo_1 = __importDefault(require("hexo"));
+var hexo_post_parser_1 = __importDefault(require("hexo-post-parser"));
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = require("upath");
 var cleaner = __importStar(require("./clean"));
@@ -79,7 +80,6 @@ var SBG = /** @class */ (function () {
      * @param cwd base folder
      */
     function SBG(cwd, options) {
-        this.config = (0, sbg_utility_1.getConfig)();
         this.setConfig = sbg_utility_1.setConfig;
         this.getConfig = sbg_utility_1.getConfig;
         /**
@@ -97,12 +97,19 @@ var SBG = /** @class */ (function () {
         }()))(this);
         if (!cwd)
             cwd = process.cwd();
+        // fetch config
         (0, sbg_utility_1.fetchConfig)(cwd);
+        // apply config
+        this.config = (0, sbg_utility_1.getConfig)();
+        // modify config
         this.cwd = cwd;
         this.config.cwd = cwd;
         options = Object.assign(this.config, options || {}, { cwd: cwd });
         (0, sbg_utility_1.debug)('sbg-api')('cwd', cwd);
+        // re-apply config
         this.config = (0, sbg_utility_1.setConfig)(options);
+        // apply config hexo-post-parser
+        hexo_post_parser_1.default.setConfig(this.config);
         SBG.setApi(this);
         new sbg_utility_1.scheduler();
     }

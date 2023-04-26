@@ -1,10 +1,10 @@
 import Bluebird from 'bluebird';
 import { Nullable } from 'hexo-post-parser';
-import { getConfig, setConfig } from 'sbg-utility';
+import { ProjConf, getConfig, setConfig } from 'sbg-utility';
 import { deployCopy } from './deploy/copy';
 declare class SBG {
     cwd: string;
-    config: import("sbg-utility").ProjConf;
+    config: ProjConf;
     setConfig: typeof setConfig;
     getConfig: typeof getConfig;
     /**

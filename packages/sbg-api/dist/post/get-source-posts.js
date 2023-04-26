@@ -63,6 +63,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSourcePosts = void 0;
+var fs_extra_1 = __importDefault(require("fs-extra"));
 var glob = __importStar(require("glob"));
 var sbg_utility_1 = require("sbg-utility");
 var upath_1 = __importDefault(require("upath"));
@@ -73,12 +74,14 @@ var copy_1 = require("./copy");
  */
 function getSourcePosts(config) {
     return __awaiter(this, void 0, void 0, function () {
-        var sourcePostDir, cache, cacheKey, results, matches, promises;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var cachePath, _a, _b, _c, sourcePostDir, results, matches, promises;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
                 case 0:
                     if (!config)
                         config = (0, sbg_utility_1.getConfig)();
+                    if (!config.cache)
+                        config.cache = true;
                     if (!config.cwd)
                         throw new Error('config.cwd is required');
                     if (!config.post_dir)
@@ -86,16 +89,25 @@ function getSourcePosts(config) {
                     // default cache directory
                     if (!config.cacheDirectory)
                         config.cacheDirectory = upath_1.default.join(config.cwd, 'tmp');
-                    sourcePostDir = upath_1.default.join(config.cwd, config.post_dir);
-                    cache = new sbg_utility_1.persistentCache({ base: config.cacheDirectory, name: 'getSourcePosts' });
-                    cacheKey = 'source-posts';
-                    return [4 /*yield*/, cache.get(cacheKey, []).catch(function () { return []; })];
+                    cachePath = upath_1.default.join(config.cacheDirectory, 'source-posts.json');
+                    _a = config.cache;
+                    if (!_a) return [3 /*break*/, 2];
+                    return [4 /*yield*/, fs_extra_1.default.exists(cachePath)];
                 case 1:
-                    results = _a.sent();
-                    if (!(results.length === 0)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, glob.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true })];
+                    _a = (_d.sent());
+                    _d.label = 2;
                 case 2:
-                    matches = _a.sent();
+                    if (!_a) return [3 /*break*/, 4];
+                    _c = (_b = JSON).parse;
+                    return [4 /*yield*/, fs_extra_1.default.readFile(cachePath, 'utf-8')];
+                case 3: return [2 /*return*/, _c.apply(_b, [_d.sent()])];
+                case 4:
+                    sourcePostDir = upath_1.default.join(config.cwd, config.post_dir);
+                    results = [];
+                    if (!(results.length === 0)) return [3 /*break*/, 7];
+                    return [4 /*yield*/, glob.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true })];
+                case 5:
+                    matches = _d.sent();
                     promises = matches.map(function (p) {
                         return (0, copy_1.processSinglePost)(p, function (parsed) {
                             results.push(Object.assign(parsed, { full_source: p }));
@@ -103,16 +115,13 @@ function getSourcePosts(config) {
                     });
                     // wait all promises to be resolved
                     return [4 /*yield*/, Promise.all(promises)];
-                case 3:
+                case 6:
                     // wait all promises to be resolved
-                    _a.sent();
-                    // apply cache
-                    return [4 /*yield*/, cache.set(cacheKey, results)];
-                case 4:
-                    // apply cache
-                    _a.sent();
-                    _a.label = 5;
-                case 5: return [2 /*return*/, results];
+                    _d.sent();
+                    // write cache
+                    (0, sbg_utility_1.writefile)(cachePath, (0, sbg_utility_1.jsonStringifyWithCircularRefs)(results));
+                    _d.label = 7;
+                case 7: return [2 /*return*/, results];
             }
         });
     });

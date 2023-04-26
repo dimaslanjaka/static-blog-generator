@@ -10,5 +10,6 @@ export declare function getSourcePosts(config?: {
     cwd: string;
     post_dir: string;
     cacheDirectory?: string;
+    cache?: boolean;
 }): Promise<ResultSourcePosts[]>;
 export default getSourcePosts;
