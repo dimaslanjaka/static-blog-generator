@@ -1,6 +1,5 @@
 import crypto from 'crypto';
 import fs from 'fs-extra';
-import { Nullable } from 'hexo-post-parser';
 import { EOL } from 'os';
 import { Opt, persistentCache } from 'persistent-cache';
 import internal from 'stream';
@@ -97,7 +96,7 @@ export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
      * file hasChanged, false if not.
      */
     const isChanged = () => {
-      const currentHash = caches.getSync(cacheKey, '' as Nullable<string>);
+      const currentHash = caches.getSync(cacheKey, '' as string | null);
       const newHash = getShaFile(file.path);
 
       // If no hash exists for file, consider file has changed
