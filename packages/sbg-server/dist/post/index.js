@@ -61,18 +61,16 @@ function routePost(api) {
     log('root<post>', POST_ROOT);
     var middleware = function (_req, _res, _next) {
         return __awaiter(this, void 0, void 0, function () {
-            var isEmpty, posts;
+            var posts;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        _req.origin_post_data = exports.cacheRouterPost.getSync('origin_post_data', []);
-                        _req.post_data = exports.cacheRouterPost.getSync('origin_post_data', []);
-                        isEmpty = _req.origin_post_data.length === 0 && _req.post_data.length === 0;
-                        if (!isEmpty) return [3 /*break*/, 2];
-                        return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)().catch(function (err) {
-                                console.error(err);
-                                return [];
-                            })];
+                    case 0: return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)({
+                            cwd: api.config.cwd,
+                            post_dir: api.config.post_dir
+                        }).catch(function (err) {
+                            console.error('get post error', err.message);
+                            return [];
+                        })];
                     case 1:
                         posts = _a.sent();
                         // assign to response property
@@ -80,10 +78,6 @@ function routePost(api) {
                         _req.post_data = posts.map(function (parsed) {
                             return Object.assign(parsed, parsed.metadata, { body: parsed.body });
                         });
-                        exports.cacheRouterPost.setSync('post_data', _req.post_data);
-                        exports.cacheRouterPost.setSync('origin_post_data', _req.origin_post_data);
-                        _a.label = 2;
-                    case 2:
                         _next(null);
                         return [2 /*return*/];
                 }
@@ -149,9 +143,7 @@ function routePost(api) {
                         return item;
                     })
                 };
-                console.log(_data);
-                //res.json(_data);
-                res.json({});
+                res.json(_data);
                 return [2 /*return*/];
             });
         });
