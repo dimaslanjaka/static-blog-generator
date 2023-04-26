@@ -30288,8 +30288,8 @@
       return i;
   }
 
-  const getFoldOptions = (ctx) => ({
-      indentAtStart: ctx.indentAtStart,
+  const getFoldOptions = (ctx, isBlock) => ({
+      indentAtStart: isBlock ? ctx.indent.length : ctx.indentAtStart,
       lineWidth: ctx.options.lineWidth,
       minContentWidth: ctx.options.minContentWidth
   });
@@ -30402,7 +30402,7 @@
       str = start ? str + json.slice(start) : json;
       return implicitKey
           ? str
-          : foldFlowLines(str, indent, FOLD_QUOTED, getFoldOptions(ctx));
+          : foldFlowLines(str, indent, FOLD_QUOTED, getFoldOptions(ctx, false));
   }
   function singleQuotedString(value, ctx) {
       if (ctx.options.singleQuote === false ||
@@ -30414,7 +30414,7 @@
       const res = "'" + value.replace(/'/g, "''").replace(/\n+/g, `$&\n${indent}`) + "'";
       return ctx.implicitKey
           ? res
-          : foldFlowLines(res, indent, FOLD_FLOW, getFoldOptions(ctx));
+          : foldFlowLines(res, indent, FOLD_FLOW, getFoldOptions(ctx, false));
   }
   function quotedString(value, ctx) {
       const { singleQuote } = ctx.options;
@@ -30512,7 +30512,7 @@
           .replace(/(?:^|\n)([\t ].*)(?:([\n\t ]*)\n(?![\n\t ]))?/g, '$1$2') // more-indented lines aren't folded
           //                ^ more-ind. ^ empty     ^ capture next empty lines only at end of indent
           .replace(/\n+/g, `$&${indent}`);
-      const body = foldFlowLines(`${start}${value}${end}`, indent, FOLD_BLOCK, getFoldOptions(ctx));
+      const body = foldFlowLines(`${start}${value}${end}`, indent, FOLD_BLOCK, getFoldOptions(ctx, true));
       return `${header}\n${indent}${body}`;
   }
   function plainString(item, ctx, onComment, onChompKeep) {
@@ -30562,7 +30562,7 @@
       }
       return implicitKey
           ? str
-          : foldFlowLines(str, indent, FOLD_FLOW, getFoldOptions(ctx));
+          : foldFlowLines(str, indent, FOLD_FLOW, getFoldOptions(ctx, false));
   }
   function stringifyString(item, ctx, onComment, onChompKeep) {
       const { implicitKey, inFlow } = ctx;
@@ -31131,7 +31131,7 @@
           }
       }
       if (comment) {
-          str += lineComment(str, commentString(comment), indent);
+          str += lineComment(str, indent, commentString(comment));
           if (onComment)
               onComment();
       }
@@ -32753,7 +32753,7 @@
           let count = 1;
           const end = error.linePos[1];
           if (end && end.line === line && end.col > col) {
-              count = Math.min(end.col - col, 80 - ci);
+              count = Math.max(1, Math.min(end.col - col, 80 - ci));
           }
           const pointer = ' '.repeat(ci) + '^'.repeat(count);
           error.message += `:\n\n${lineStr}\n${pointer}\n`;
