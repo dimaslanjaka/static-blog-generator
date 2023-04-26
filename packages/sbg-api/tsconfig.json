@@ -5,7 +5,7 @@
     "target": "es5",
     "baseUrl": "./",
     "outDir": "./tmp/dist",
-    // "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
+    "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
   "exclude": ["**/dist", "**/node_modules"],
