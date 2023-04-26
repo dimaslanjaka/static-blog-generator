@@ -1,7 +1,7 @@
 /// <reference types="node" />
 /// <reference types="node" />
 import crypto from 'crypto';
-import fs from 'fs-extra';
+import * as fs from 'fs-extra';
 /**
  * convert file to hash
  * @param alogarithm
