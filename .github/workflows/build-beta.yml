@@ -140,6 +140,8 @@ jobs:
       - run: npx sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
+      - run: git status
+        name: what changes
       - run: |
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
