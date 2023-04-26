@@ -140,8 +140,11 @@ jobs:
       - run: npx sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
-      - run: git status
+      - run: |
+          git status
+          echo "count=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
         name: what changes
+        id: changes
       - run: |
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
@@ -156,4 +159,5 @@ jobs:
           # git push --recurse-submodules=on-demand
           git push &> /dev/null
         name: commit and push
+        if: steps.changes.outputs.count > 0
         shell: bash
