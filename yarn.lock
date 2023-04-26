@@ -18747,14 +18747,14 @@ __metadata:
   dependencies:
     "@jest/globals": ^29.5.0
     "@types/micromatch": ^4.0.2
-    "@types/node": ^18.15.11
+    "@types/node": ^18.16.1
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
     fs-extra: ^11.1.1
     git-command-helper: "workspace:^"
-    glob: ^10.2.1
+    glob: ^10.2.2
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^6.3.0
@@ -18774,7 +18774,7 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^5.0.4
     upath: ^2.0.1
-    xmlbuilder2: ^3.0.2
+    xmlbuilder2: ^3.1.0
   languageName: unknown
   linkType: soft
 
@@ -22268,16 +22268,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xmlbuilder2@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "xmlbuilder2@npm:3.0.2"
+"xmlbuilder2@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "xmlbuilder2@npm:3.1.0"
   dependencies:
     "@oozcitak/dom": 1.15.10
     "@oozcitak/infra": 1.0.8
     "@oozcitak/util": 8.3.8
     "@types/node": "*"
     js-yaml: 3.14.0
-  checksum: dfc8aa94d5666517d74efbac0e36c0e4d86d44ed29f515846f30964ab9502124babd1bca6e0b5aa9468e8218b2dc4317b43519b8b1dd1594d33fda9e5a164d02
+  checksum: 040acf8ebdbfa10e7ba3f09120f8e371bffdb0b62f5e34c6dc09d4715f75e0407cfe75e104bc3f8d4d787a52325916ff31f8db8fcc2eba5d3ed5534f1e9bf341
   languageName: node
   linkType: hard
 

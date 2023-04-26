@@ -13,9 +13,10 @@ var copy_1 = require("./copy");
  * get all source posts
  * @returns
  */
-function getSourcePosts() {
+function getSourcePosts(config) {
     return new bluebird_1.default(function (resolve) {
-        var config = (0, sbg_utility_1.getConfig)();
+        if (!config)
+            config = (0, sbg_utility_1.getConfig)();
         var sourcePostDir = upath_1.default.join(config.cwd, config.post_dir);
         glob_1.default.glob('**/*.md', { cwd: sourcePostDir }).then(function (matches) {
             matches = matches.map(function (p) { return upath_1.default.join(sourcePostDir, p); });

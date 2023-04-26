@@ -61,14 +61,18 @@ function routePost(api) {
     log('root<post>', POST_ROOT);
     var middleware = function (_req, _res, _next) {
         return __awaiter(this, void 0, void 0, function () {
-            var posts;
+            var isEmpty, posts;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _req.origin_post_data = exports.cacheRouterPost.getSync('origin_post_data', []);
                         _req.post_data = exports.cacheRouterPost.getSync('origin_post_data', []);
-                        if (!(_req.origin_post_data.length === 0 && _req.post_data.length === 0)) return [3 /*break*/, 2];
-                        return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)()];
+                        isEmpty = _req.origin_post_data.length === 0 && _req.post_data.length === 0;
+                        if (!isEmpty) return [3 /*break*/, 2];
+                        return [4 /*yield*/, (0, sbg_api_1.getSourcePosts)().catch(function (err) {
+                                console.error(err);
+                                return [];
+                            })];
                     case 1:
                         posts = _a.sent();
                         // assign to response property
@@ -145,8 +149,9 @@ function routePost(api) {
                         return item;
                     })
                 };
-                //console.log(data);
-                res.json(_data);
+                console.log(_data);
+                //res.json(_data);
+                res.json({});
                 return [2 /*return*/];
             });
         });
