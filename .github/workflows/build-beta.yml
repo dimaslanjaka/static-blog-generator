@@ -142,10 +142,14 @@ jobs:
         name: test copy generated site to deployment directory
       - run: |
           git status
-          echo "count=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
+          echo "cached=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
+          echo "commits=$(git diff origin/master..HEAD --numstat | wc -l)" >> $GITHUB_OUTPUT
         name: what changes
         id: changes
-      - run: |
+      - name: commit and push
+        if: steps.changes.outputs.cached > 0 || steps.changes.outputs.commits > 0
+        shell: bash
+        run: |
           git config --global user.email "dimaslanjaka@gmail.com"
           git config --global user.name "dimaslanjaka"
           arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
@@ -158,6 +162,4 @@ jobs:
           # git submodule foreach "git add dist release"
           # git push --recurse-submodules=on-demand
           git push &> /dev/null
-        name: commit and push
-        if: steps.changes.outputs.count > 0
-        shell: bash
+        
