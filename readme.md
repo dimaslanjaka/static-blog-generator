@@ -105,7 +105,7 @@ Previous stable development [513d687b4d26bbf4ea735313cb79cbcf8d04b36d](https://g
 
 ## Troubleshooting
 
-### miss-configured/missing dependencies
+### miss-configured or missing dependencies or API usages
 add below resolutions modules to `package.json`
 ```json
 {
