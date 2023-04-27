@@ -13,6 +13,9 @@
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^"
   },
+  "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+  },
   "version": "3.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
