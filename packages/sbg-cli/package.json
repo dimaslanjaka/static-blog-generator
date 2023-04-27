@@ -1,6 +1,6 @@
 {
   "name": "sbg-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "static-blog-generator CLI and main scripts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
