@@ -103,5 +103,9 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "resolutions": {
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/master/release/hexo-renderers.tgz",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz"
   }
 }
