@@ -71,7 +71,6 @@
     "@types/bluebird": "^3.5.38",
     "@types/debug": "^4.1.7",
     "@types/gulp-cache": "^0.4.5",
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "@types/node": "^18.15.12",
     "@types/nunjucks": "^3.2.2",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
