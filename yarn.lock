@@ -18700,6 +18700,7 @@ __metadata:
     git-command-helper: "workspace:^"
     glob: ^10.2.2
     gulp: ^4.0.2
+    hexo-post-parser: "workspace:^"
     highlight.js: 11.7.0
     instant-indexing: "workspace:^"
     jest: ^29.5.0
