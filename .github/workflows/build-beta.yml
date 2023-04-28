@@ -141,11 +141,15 @@ jobs:
         working-directory: test
         name: test copy generated site to deployment directory
       - run: |
-          git status
           echo "cached=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
           echo "commits=$(git diff origin/master..HEAD --numstat | wc -l)" >> $GITHUB_OUTPUT
         name: what changes
         id: changes
+      - name: show changes
+        shell: bash
+        run: |
+          echo "total staged files ${{ steps.changes.outputs.cached }}"
+          echo "total unpushed commits ${{ steps.changes.outputs.commits }}"
       - name: commit and push
         if: steps.changes.outputs.cached > 0 || steps.changes.outputs.commits > 0
         shell: bash
