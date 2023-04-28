@@ -44,7 +44,6 @@
     "@commitlint/config-conventional": "^17.6.1",
     "@jest/globals": "^29.5.0",
     "@types/gulp": "^4.0.10",
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
