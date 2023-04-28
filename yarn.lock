@@ -2920,16 +2920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bunyan@npm:*":
-  version: 1.8.8
-  resolution: "@types/bunyan@npm:1.8.8"
-  dependencies:
-    "@types/node": "*"
-  checksum: b28966c13579b281ae75560d8c99ee4149348818cd4c4d6424afeee9fdab1039db2a0c06f1ab62fbf8c71f99dcebb70551bb45f2110d6a1fc3e3f891355b6b4b
-  languageName: node
-  linkType: hard
-
-"@types/connect@npm:*, @types/connect@npm:^3.4.35":
+"@types/connect@npm:*":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
   dependencies:
@@ -3142,26 +3133,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo":
-  version: 3.9.0
-  resolution: "@types/hexo@https://github.com/dimaslanjaka/nodejs-package-types.git#commit=361cf4301b7a989e8868eae58702f1b74d537170"
-  dependencies:
-    "@types/bluebird": ^3.5.38
-    "@types/bunyan": "*"
-    "@types/connect": ^3.4.35
-    "@types/minimist": ^1.2.2
-    "@types/node": latest
-    "@types/underscore": ^1.11.4
-    bluebird: ^3.7.2
-    hexo-util: ^3.0.1
-    minimist: ^1.2.8
-    moment: ^2.29.4
-    underscore: ^1.13.6
-    upath: ^2.0.1
-  checksum: f7d741f2536dc7e38bd10f8b34aeb936e34d3efeffa0d0e44e9016b70e12e8e2f49bf8d225b7c02d9d616277410e4f02e121a46e1eee3e599edf1480ccfce9d1
-  languageName: node
-  linkType: hard
-
 "@types/html-minifier-terser@npm:^7.0.0":
   version: 7.0.0
   resolution: "@types/html-minifier-terser@npm:7.0.0"
@@ -3349,7 +3320,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimist@npm:^1.2.0, @types/minimist@npm:^1.2.2":
+"@types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
   checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
@@ -3363,7 +3334,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.15.11, @types/node@npm:^18.15.12, @types/node@npm:^18.15.13, @types/node@npm:^18.16.1, @types/node@npm:^18.x, @types/node@npm:latest":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^18.15.11, @types/node@npm:^18.15.12, @types/node@npm:^18.15.13, @types/node@npm:^18.16.1, @types/node@npm:^18.x":
   version: 18.16.1
   resolution: "@types/node@npm:18.16.1"
   checksum: 799026b949a48993cba7c9b81b2eabfdfb34c880744cb44c1c990fbedc9e315f3634d126eb2cf9a6e0795577c01016e2326d98565bef695ada9d363fadeb6946
@@ -3525,13 +3496,6 @@ __metadata:
   version: 4.0.2
   resolution: "@types/tough-cookie@npm:4.0.2"
   checksum: e055556ffdaa39ad85ede0af192c93f93f986f4bd9e9426efdc2948e3e2632db3a4a584d4937dbf6d7620527419bc99e6182d3daf2b08685e710f2eda5291905
-  languageName: node
-  linkType: hard
-
-"@types/underscore@npm:^1.11.4":
-  version: 1.11.4
-  resolution: "@types/underscore@npm:1.11.4"
-  checksum: db9f8486bc851b732259e51f42d62aad1ae2158be5724612dc125ece5f5d61c51447f9dea28284c2a0f79cb95e788d01cb5ce97709880019213e69fab0dd1696
   languageName: node
   linkType: hard
 
@@ -4127,6 +4091,13 @@ __metadata:
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
   checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
+  languageName: node
+  linkType: hard
+
+"abbrev@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "abbrev@npm:2.0.0"
+  checksum: 0e994ad2aa6575f94670d8a2149afe94465de9cedaaaac364e7fb43a40c3691c980ff74899f682f4ca58fa96b4cbd7421a015d3a6defe43a442117d7821a2f36
   languageName: node
   linkType: hard
 
@@ -7191,7 +7162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cuid@npm:^2.1.4":
+"cuid@npm:^2.1.4, cuid@npm:^2.1.8":
   version: 2.1.8
   resolution: "cuid@npm:2.1.8"
   checksum: 12b85b3f5150a6f0b9e4f345c8d98299d74647419151751fa1132f6702fe2b5388ceceb1c9b49bad7cab1b3ac033c7cedea8ffc034930f90005b8a4345025288
@@ -10378,7 +10349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graceful-fs@npm:^4.0.0, graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
+"graceful-fs@npm:^4.0.0, graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.3, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.10, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
   version: 4.2.11
   resolution: "graceful-fs@npm:4.2.11"
   checksum: ac85f94da92d8eb6b7f5a8b20ce65e43d66761c55ce85ac96df6865308390da45a8d3f0296dd3a663de65d30ba497bd46c696cc1e248c72b13d6d567138a4fc7
@@ -10661,7 +10632,6 @@ __metadata:
   resolution: "hexo-blogger-xml@workspace:packages/hexo-blogger-xml"
   dependencies:
     "@types/he": ^1.2.0
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/jsdom": ^21.1.1
     "@types/node": ^18.15.12
     "@types/xml2js": ^0.4.11
@@ -10690,6 +10660,8 @@ __metadata:
     upath: ^2.0.1
     xml2js: ^0.5.0
     yaml: ^2.2.1
+  peerDependencies:
+    hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
   languageName: unknown
   linkType: soft
 
@@ -10782,6 +10754,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-front-matter@npm:^4.0.0":
+  version: 4.1.0
+  resolution: "hexo-front-matter@npm:4.1.0"
+  dependencies:
+    js-yaml: ^4.1.0
+  checksum: b0e61147343cebaf8dbb5152497b7074c59bf7c443f41b179dbd6c9ce889288554f6f09c2271e7aa7b2b9585104b610efa6b5f2515bacdc570d324aea474af0b
+  languageName: node
+  linkType: hard
+
 "hexo-fs@npm:^1.0.0, hexo-fs@npm:^1.0.2":
   version: 1.0.2
   resolution: "hexo-fs@npm:1.0.2"
@@ -10803,6 +10784,18 @@ __metadata:
     graceful-fs: ^4.1.11
     hexo-util: ^2.0.0
   checksum: bab67b6c14c488a6c45b71c05cc242a0b446d679efaea371c59a2660e1786cd5d01551d089ff34a86f97e78f24af51ee5240210d0a56f3de9162c9ac95a4f312
+  languageName: node
+  linkType: hard
+
+"hexo-fs@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "hexo-fs@npm:4.1.1"
+  dependencies:
+    bluebird: ^3.7.2
+    chokidar: ^3.5.3
+    graceful-fs: ^4.2.10
+    hexo-util: ^2.7.0
+  checksum: a566e28e7040fbfea529960a974251f6eeb36c5ca1dda6ce5bad61d80400304d83b79a7031328219a714fcc303b8cc97903a05c7baa84526bfb47136d014c9cb
   languageName: node
   linkType: hard
 
@@ -10857,6 +10850,15 @@ __metadata:
   dependencies:
     sprintf-js: ^1.0.3
   checksum: 92005d21193067528a7dcbe1ddfa9e0499d0675dd5b8af8e85c84dc9bb28d27c118a710c34a2e3d1317937f30e7ce3f234a429745bfba0dd72231626b80c89e3
+  languageName: node
+  linkType: hard
+
+"hexo-i18n@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "hexo-i18n@npm:2.0.0"
+  dependencies:
+    sprintf-js: ^1.1.2
+  checksum: e27e13105ba8bd37f3ec7ee7dcf59dcb549223b93bfe0f79f6bff812172e326d5a20d50fef9ca5029a6b32b8843ce7880a774fcc742f441277edd4004d646e15
   languageName: node
   linkType: hard
 
@@ -10926,7 +10928,6 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/glob": ^8.1.0
     "@types/gulp": ^4.0.10
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/jsdom": ^21.1.1
     "@types/lodash": ^4.14.194
     "@types/lodash.deburr": ^4.1.7
@@ -10977,6 +10978,8 @@ __metadata:
     upath: ^2.0.1
     yaml: ^2.2.1
     yargs: ^17.7.1
+  peerDependencies:
+    hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
   languageName: unknown
   linkType: soft
 
@@ -11166,6 +11169,40 @@ __metadata:
   bin:
     hexo: bin/hexo
   checksum: 3d090e727d8ce50b74ee72190b75086493269b5e8c89b34bdd69d1a6f84dc48dd8fab63ae0888c237f2c5ae6c57838ebd392fa9e99949af076d1a11535049e1a
+  languageName: node
+  linkType: hard
+
+"hexo@npm:^7.0.0-rc1":
+  version: 7.0.0-rc1
+  resolution: "hexo@npm:7.0.0-rc1"
+  dependencies:
+    abbrev: ^2.0.0
+    archy: ^1.0.0
+    bluebird: ^3.7.2
+    hexo-cli: ^4.3.0
+    hexo-front-matter: ^4.0.0
+    hexo-fs: ^4.1.1
+    hexo-i18n: ^2.0.0
+    hexo-log: ^4.0.1
+    hexo-util: ^3.0.1
+    js-yaml: ^4.1.0
+    js-yaml-js-types: ^1.0.0
+    micromatch: ^4.0.4
+    moize: ^6.1.0
+    moment: ^2.29.1
+    moment-timezone: ^0.5.34
+    nunjucks: ^3.2.3
+    picocolors: ^1.0.0
+    pretty-hrtime: ^1.0.3
+    resolve: ^1.22.0
+    strip-ansi: ^6.0.0
+    text-table: ^0.2.0
+    tildify: ^2.0.0
+    titlecase: ^1.1.3
+    warehouse: ^5.0.0
+  bin:
+    hexo: bin/hexo
+  checksum: 5290b0a53f3bf7b80b13e2ebf6e044bf61476cb44b67c21eb0bdee191f0d92a8bc515923805fd08bca774cf3b037d1fe2d4887c3d34df87aadce9aafd86de955
   languageName: node
   linkType: hard
 
@@ -14576,7 +14613,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.1.0, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5, minimist@npm:^1.2.6, minimist@npm:^1.2.8":
+"minimist@npm:^1.1.0, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5, minimist@npm:^1.2.6":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
   checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
@@ -18168,7 +18205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rfdc@npm:^1.1.4":
+"rfdc@npm:^1.1.4, rfdc@npm:^1.3.0":
   version: 1.3.0
   resolution: "rfdc@npm:1.3.0"
   checksum: fb2ba8512e43519983b4c61bd3fa77c0f410eff6bae68b08614437bc3f35f91362215f7b4a73cbda6f67330b5746ce07db5dd9850ad3edc91271ad6deea0df32
@@ -18650,7 +18687,6 @@ __metadata:
     "@types/bluebird": ^3.5.38
     "@types/debug": ^4.1.7
     "@types/gulp-cache": ^0.4.5
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/node": ^18.15.12
     "@types/nunjucks": ^3.2.2
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
@@ -19412,7 +19448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sprintf-js@npm:^1.0.2, sprintf-js@npm:^1.0.3":
+"sprintf-js@npm:^1.0.2, sprintf-js@npm:^1.0.3, sprintf-js@npm:^1.1.2":
   version: 1.1.2
   resolution: "sprintf-js@npm:1.1.2"
   checksum: d4bb46464632b335e5faed381bd331157e0af64915a98ede833452663bc672823db49d7531c32d58798e85236581fb7342fd0270531ffc8f914e186187bf1c90
@@ -19501,7 +19537,6 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.1
     "@jest/globals": ^29.5.0
     "@types/gulp": ^4.0.10
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/jest": ^29.5.0
     "@types/node": ^18.15.11
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
@@ -20203,14 +20238,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "test@workspace:test"
   dependencies:
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo"
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     axios: ^1.2.6
     axios-cache-interceptor: ^1.0.0
     cross-env: ^7.0.3
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
     git-command-helper: "workspace:^"
-    hexo: ^6.3.0
+    hexo: ^7.0.0-rc1
     hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
     hexo-generator-archive: "git+https://github.com/hexojs/hexo-generator-archive"
     hexo-generator-category: "git+https://github.com/hexojs/hexo-generator-category"
@@ -21014,13 +21048,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"underscore@npm:^1.13.6":
-  version: 1.13.6
-  resolution: "underscore@npm:1.13.6"
-  checksum: d5cedd14a9d0d91dd38c1ce6169e4455bb931f0aaf354108e47bd46d3f2da7464d49b2171a5cf786d61963204a42d01ea1332a903b7342ad428deaafaf70ec36
-  languageName: node
-  linkType: hard
-
 "undertaker-registry@npm:^1.0.0":
   version: 1.0.1
   resolution: "undertaker-registry@npm:1.0.1"
@@ -21580,6 +21607,22 @@ __metadata:
     rfdc: ^1.1.4
     through2: ^4.0.2
   checksum: a1f6b5d13e1aa2c8f1d649176f7740f88c03f5a920a4622ca8e04af3e4ccf9d65dcb839bcc06d54e60b1a1699da1bf58f3162aece975985dbcce5f405bd84847
+  languageName: node
+  linkType: hard
+
+"warehouse@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "warehouse@npm:5.0.0"
+  dependencies:
+    bluebird: ^3.7.2
+    cuid: ^2.1.8
+    graceful-fs: ^4.2.10
+    hexo-log: ^4.0.1
+    is-plain-object: ^5.0.0
+    jsonparse: ^1.3.1
+    rfdc: ^1.3.0
+    through2: ^4.0.2
+  checksum: cac26d42168ac25d8d7d7fa6779e0b7809d4633145f1e9b395981c9dfcf18e0b7d601047cd8ce4887838ac925c04eb290c5db4095691c80578c8158c0c427601
   languageName: node
   linkType: hard
 
