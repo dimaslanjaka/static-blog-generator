@@ -37,22 +37,22 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-typescript": "^7.21.4",
-    "@commitlint/cli": "^17.6.1",
-    "@commitlint/config-conventional": "^17.6.1",
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@jest/globals": "^29.5.0",
     "@types/gulp": "^4.0.10",
-    "@types/jest": "^29.5.0",
-    "@types/node": "^18.15.11",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.1.0",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "@typescript-eslint/eslint-plugin": "^5.59.0",
-    "@typescript-eslint/parser": "^5.59.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
     "babel-jest": "^29.5.0",
     "binary-collections": "https://github.com/dimaslanjaka/bin",
     "depcheck": "^1.4.3",
-    "eslint": "^8.38.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
@@ -62,9 +62,9 @@
     "jsonc-parser": "^3.2.0",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
     "nodemon": "^2.0.22",
-    "npm-check-updates": "^16.10.9",
+    "npm-check-updates": "^16.10.10",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "rimraf": "^5.0.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
@@ -89,8 +89,7 @@
   },
   "packageManager": "yarn@3.5.0",
   "engines": {
-    "node": ">=14",
-    "yarn": "3.2.0"
+    "node": ">=14"
   },
   "peerDependenciesMeta": {
     "markdown-it-anchor": {
@@ -101,7 +100,7 @@
     }
   },
   "resolutions": {
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/master/release/hexo-renderers.tgz",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz"
   }
 }
