@@ -18,7 +18,3 @@
 	path = packages/google-news-sitemap
 	url = https://github.com/dimaslanjaka/google-news-sitemap
 	branch = monorepo
-[submodule "packages/hexo-blogger-xml"]
-	path = packages/hexo-blogger-xml
-	url = https://github.com/dimaslanjaka/hexo-blogger-xml
-	branch = monorepo
