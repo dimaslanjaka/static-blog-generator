@@ -92,10 +92,6 @@
     "node": ">=14",
     "yarn": "3.2.0"
   },
-  "installConfig": {
-    "hoistingLimits": "none",
-    "selfReferences": true
-  },
   "peerDependenciesMeta": {
     "markdown-it-anchor": {
       "optional": true
