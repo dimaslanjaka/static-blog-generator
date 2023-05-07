@@ -72,11 +72,6 @@ jobs:
           #cache: 'yarn'
           #cache-dependency-path: '**/yarn.lock'
 
-      - name: Enable corepack
-        run: |
-          corepack enable
-          corepack prepare yarn@3.2.0 --activate
-
       - name: Set env
         id: set-env
         shell: bash
@@ -131,7 +126,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Global Packages
-        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
+        run: |
+          corepack enable
+          yarn dlx npm i -g npm
+          npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: yarn install
       - run: |
