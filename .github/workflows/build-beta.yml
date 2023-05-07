@@ -114,8 +114,7 @@ jobs:
           echo "commit url  : ${{ env.GITHUB_COMMIT_URL }}"
           echo "runner url  : ${{ env.GITHUB_RUNNER_URL }}"
           echo "cache npm   : ${{ env.CACHE_NPM }}"
-          echo "cache yarn2 : ${{ env.CACHE_YARN2 }}"
-        #echo "cache yarn  : ${{ env.CACHE_YARN }}"
+          echo "cache yarn  : ${{ env.CACHE_YARN }}"
 
       - uses: actions/cache@v3 # pat-s/always-upload-cache@v3.0.11
         id: cache
