@@ -99,6 +99,7 @@
     }
   },
   "resolutions": {
+    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz"
   }
