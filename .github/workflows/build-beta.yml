@@ -123,12 +123,9 @@ jobs:
         with:
           path: |
             ${{ steps.set-env.outputs.cache-npm }}
-            ${{ steps.set-env.outputs.cache-yarn2 }}
-          #${{ steps.set-env.outputs.cache-yarn }}
-          #./packages/sbg-server/src/public
-          #**/tmp/**
-          #**/node_modules/**
-          #**/.yarn
+            ${{ steps.set-env.outputs.cache-yarn }}
+            **/.yarn
+            ./yarn.lock
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
