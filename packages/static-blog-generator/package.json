@@ -4,7 +4,6 @@
   "dependencies": {
     "git-command-helper": "workspace:^",
     "google-news-sitemap": "workspace:^",
-    "hexo-blogger-xml": "workspace:^",
     "hexo-post-parser": "workspace:^",
     "instant-indexing": "workspace:^",
     "safelinkify": "workspace:^",
