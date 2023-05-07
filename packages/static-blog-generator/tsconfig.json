@@ -15,7 +15,6 @@
   "references": [
     { "path": "../sbg-utility" },
     { "path": "../sbg-server" },
-    { "path": "../sbg-api" },
-    { "path": "../hexo-blogger-xml" }
+    { "path": "../sbg-api" }
   ]
 }
