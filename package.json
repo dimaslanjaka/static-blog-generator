@@ -81,13 +81,12 @@
       "packages/hexo-post-parser",
       "packages/git-command-helper",
       "packages/google-news-sitemap",
-      "packages/hexo-blogger-xml",
       "packages/static-blog-generator",
       "packages/instant-indexing",
       "test"
     ]
   },
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@3.5.1",
   "engines": {
     "node": ">=14"
   },
