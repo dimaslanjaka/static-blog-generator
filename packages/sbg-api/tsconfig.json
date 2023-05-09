@@ -12,9 +12,6 @@
   "references": [
     {
       "path": "../sbg-utility"
-    },
-    {
-      "path": "../git-command-helper"
     }
   ]
 }
