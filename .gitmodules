@@ -6,11 +6,3 @@
 	path = packages/hexo-post-parser
 	url = https://github.com/dimaslanjaka/hexo-post-parser
 	branch = monorepo
-[submodule "packages/safelinkify"]
-	path = packages/safelinkify
-	url = https://github.com/dimaslanjaka/safelink
-	branch = monorepo
-[submodule "packages/google-news-sitemap"]
-	path = packages/google-news-sitemap
-	url = https://github.com/dimaslanjaka/google-news-sitemap
-	branch = monorepo
