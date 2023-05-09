@@ -2,7 +2,7 @@
   "name": "static-blog-generator",
   "description": "Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.",
   "dependencies": {
-    "git-command-helper": "workspace:^",
+    "git-command-helper": "^1.2.2",
     "google-news-sitemap": "workspace:^",
     "hexo-post-parser": "workspace:^",
     "instant-indexing": "workspace:^",
