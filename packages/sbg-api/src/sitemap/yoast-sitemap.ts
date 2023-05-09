@@ -2,7 +2,6 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync } from 'fs'
 import Hexo from 'hexo';
 import hexoIs from 'hexo-is';
 import moment from 'moment';
-import 'nodejs-package-types';
 import { dirname, join } from 'path';
 import { getConfig, scheduler, writefile } from 'sbg-utility';
 import { create as createXML } from 'xmlbuilder2';
@@ -10,8 +9,12 @@ import getCategoryTags, { getLatestFromArrayDates } from './archive';
 import yoastSeoSitemapPages from './pages';
 import yoastSeoSitemapPosts from './posts';
 
-type PageData = Hexo.PageData;
-type TemplateLocals = Hexo.TemplateLocals;
+declare global {
+  const hexo: import('hexo');
+}
+
+type PageData = Hexo['locals'];
+type TemplateLocals = Hexo['locals'];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 
 export interface sitemapItem {
