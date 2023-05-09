@@ -10749,6 +10749,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-log@https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-log.tgz":
+  version: 4.0.1
+  resolution: "hexo-log@https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-log.tgz"
+  dependencies:
+    picocolors: ^1.0.0
+  checksum: c5fffa6eca0ac41ae7c0c22d24fa8fc48a875d3cc99cadc7a80d412a65f71de3cc8b992c47e9cc5a3d4611bc0f717fe9dc89c8f8ab2f9e12656233dea3424841
+  languageName: node
+  linkType: hard
+
 "hexo-log@npm:^2.0.0":
   version: 2.0.0
   resolution: "hexo-log@npm:2.0.0"
@@ -18105,13 +18114,16 @@ __metadata:
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo.tgz"
+    hexo-asset-link: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-asset-link.tgz"
+    hexo-cli: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-cli.tgz"
+    hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-front-matter.tgz"
     hexo-is: ^1.0.5
+    hexo-log: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-log.tgz"
     hexo-post-parser: "workspace:^"
     hexo-util: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo-util.tgz"
     jest: ^29.5.0
     micromatch: ^4.0.5
     moment-timezone: ^0.5.43
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.4
     safelinkify: "workspace:^"
@@ -18121,6 +18133,7 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^5.0.4
     upath: ^2.0.1
+    warehouse: "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/warehouse.tgz"
     xmlbuilder2: ^3.1.1
   languageName: unknown
   linkType: soft
