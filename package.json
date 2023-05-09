@@ -18,16 +18,16 @@
     "!**/src/**"
   ],
   "scripts": {
-    "update:submodules": "lerna run update:ncu --no-bail --concurrency=1",
+    "update:submodules": "yarn dlx lerna run update:ncu --no-bail --concurrency=1",
     "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
     "update": "run-s update:**",
-    "build": "lerna run build --concurrency=1",
+    "build": "yarn dlx lerna run build --concurrency=1",
     "docs": "node docs.js",
-    "lint": "lerna run lint --concurrency=1",
+    "lint": "yarn dlx lerna run lint --concurrency=1",
     "test": "jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
-    "clean": "lerna clean",
-    "pack": "lerna exec \"npm run pack --if-present\""
+    "clean": "yarn dlx lerna clean",
+    "pack": "yarn dlx lerna exec \"npm run pack --if-present\""
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
