@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import git from 'git-command-helper';
-import Hexo from 'hexo';
+import { HexoConfig } from 'hexo/dist/hexo/index-d';
 import { join, resolve } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
@@ -9,7 +9,7 @@ import * as defaults from './defaults';
 const configFileJSON = join(__dirname, '_config.json');
 if (!fs.existsSync(configFileJSON)) fs.writeFileSync(configFileJSON, '{}');
 
-export interface ProjConf extends Hexo.Config {
+export interface ProjConf extends HexoConfig {
   [key: string]: any;
   /**
    * Source posts
@@ -35,7 +35,8 @@ export interface ProjConf extends Hexo.Config {
   /**
    * Deployment options
    */
-  deploy: defaults.importConfig['deploy'] &
+  deploy: HexoConfig['deploy'] &
+    defaults.importConfig['deploy'] &
     ReturnType<typeof deployConfig> & {
       /**
        * copy to subfolder of site
@@ -49,7 +50,8 @@ export interface ProjConf extends Hexo.Config {
        */
       folder?: string;
     };
-  external_link: defaults.importConfig['external_link'] &
+  external_link: HexoConfig['external_link'] &
+    defaults.importConfig['external_link'] &
     boolean & {
       safelink?: import('safelinkify').SafelinkOptions;
     };
