@@ -2,10 +2,6 @@
 	path = test
 	url = https://github.com/dimaslanjaka/site
 	branch = static-blog-generator
-[submodule "packages/git-command-helper"]
-	path = packages/git-command-helper
-	url = https://github.com/dimaslanjaka/git-command-helper
-	branch = monorepo
 [submodule "packages/hexo-post-parser"]
 	path = packages/hexo-post-parser
 	url = https://github.com/dimaslanjaka/hexo-post-parser
