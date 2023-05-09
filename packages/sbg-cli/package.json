@@ -54,7 +54,7 @@
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/9d62b2f6/releases/hexo.tgz",
     "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master",
     "jsdom": "^22.0.0",
-    "safelinkify": "workspace:^",
+    "safelinkify": "^1.1.18",
     "sbg-api": "workspace:^",
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^",

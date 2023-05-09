@@ -70,7 +70,7 @@
     "nunjucks": "^3.2.4",
     "object-assign": "^4.1.1",
     "retry": "^0.13.1",
-    "safelinkify": "workspace:^",
+    "safelinkify": "^1.1.18",
     "sbg-api": "workspace:^",
     "sbg-utility": "workspace:^",
     "serve-index": "^1.9.1",

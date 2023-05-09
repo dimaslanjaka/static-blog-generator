@@ -77,9 +77,7 @@
       "packages/sbg-api",
       "packages/sbg-server",
       "packages/sbg-cli",
-      "packages/safelinkify",
       "packages/hexo-post-parser",
-      "packages/google-news-sitemap",
       "packages/static-blog-generator",
       "packages/instant-indexing",
       "test"

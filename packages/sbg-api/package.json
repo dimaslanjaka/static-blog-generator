@@ -54,7 +54,7 @@
     "micromatch": "^4.0.5",
     "moment-timezone": "^0.5.43",
     "nunjucks": "^3.2.4",
-    "safelinkify": "workspace:^",
+    "safelinkify": "^1.1.18",
     "sbg-utility": "workspace:^",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
