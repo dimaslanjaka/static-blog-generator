@@ -1,5 +1,4 @@
 import { appendFileSync, existsSync } from 'fs-extra';
-import 'nodejs-package-types';
 import { EOL } from 'os';
 import slugify from 'slugify';
 import { basename, join, toUnix } from 'upath';
