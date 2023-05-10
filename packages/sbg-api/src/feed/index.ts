@@ -7,6 +7,7 @@ import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { commonIgnore, envNunjucks, getConfig } from 'sbg-utility';
 import { join } from 'upath';
+import { gulpOpt } from '../gulp-options';
 
 const env = envNunjucks();
 
@@ -71,7 +72,7 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
 
         const publicDir = join(config.cwd, config.public_dir);
         gulp
-          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
+          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore } as gulpOpt)
           .pipe(
             gulpDom(function () {
               // auto discovery rss
