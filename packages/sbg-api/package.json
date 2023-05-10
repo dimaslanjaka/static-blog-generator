@@ -49,7 +49,7 @@
     "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz",
     "hexo-is": "^1.0.5",
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz",
-    "hexo-post-parser": "workspace:^",
+    "hexo-post-parser": "^1.2.8",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz",
     "micromatch": "^4.0.5",
     "moment-timezone": "^0.5.43",
