@@ -12,8 +12,11 @@
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^"
   },
+  "overrides": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
+  },
   "resolutions": {
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz"
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
   },
   "version": "3.0.1",
   "main": "dist/index.js",
