@@ -19,7 +19,7 @@
     "test": "jest --runInBand",
     "build": "tsc --build tsconfig.build.json",
     "build-pack": "yarn run build && yarn run pack",
-    "clean": "rm -rf dist tmp",
+    "clean": "rm -rf dist tmp && yarn build",
     "pack": "node packer.js --yarn",
     "lint": "npx eslint --fix src/**/*"
   },
