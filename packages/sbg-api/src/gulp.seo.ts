@@ -2,6 +2,7 @@ import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
 import { commonIgnore, deployConfig, getConfig, gulpCached, Logger } from 'sbg-utility';
+import { gulpOpt } from './gulp-options';
 
 /**
  * Auto seo runner
@@ -12,7 +13,7 @@ export function taskSeo(_done: gulp.TaskFunctionCallback | null | undefined, cwd
   const ignore: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   ignore.push(...commonIgnore);
   return gulp
-    .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd, ignore })
+    .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd, ignore } as gulpOpt)
     .pipe(gulpCached({ name: 'seo' }))
     .pipe(
       gulpDom(function (path) {
