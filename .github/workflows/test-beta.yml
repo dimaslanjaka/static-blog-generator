@@ -3,9 +3,7 @@ name: Test Beta
 on:
   push:
     paths-ignore:
-      - '**/dist/**'
       - '**/release*/**'
-      - '**/test/**'
   pull_request:
     types:
       - closed
