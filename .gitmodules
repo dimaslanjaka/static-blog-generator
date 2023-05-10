@@ -2,7 +2,3 @@
 	path = test
 	url = https://github.com/dimaslanjaka/site
 	branch = static-blog-generator
-[submodule "packages/hexo-post-parser"]
-	path = packages/hexo-post-parser
-	url = https://github.com/dimaslanjaka/hexo-post-parser
-	branch = monorepo
