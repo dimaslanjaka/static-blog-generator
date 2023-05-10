@@ -140,17 +140,26 @@ jobs:
         shell: bash
         name: build
       - run: |
-          echo "cached=$(git diff --cached --numstat | wc -l)" >> $GITHUB_OUTPUT
-          echo "commits=$(git diff origin/master..HEAD --numstat | wc -l)" >> $GITHUB_OUTPUT
+          countChanges=$(git whatchanged -1 --format=oneline | wc -l)
+          echo "total changed files is $countChanges"
+          countStaged=$(git diff --cached --numstat | wc -l)
+          echo "total staged files is $countStaged"
+          countCommits=$(git diff origin/${{ steps.set-env.outputs.GITHUB_BRANCH }}..HEAD --numstat | wc -l)
+          echo "total unpushed commits is $countCommits"
+          if [ -d "releases" ]; then
+            countReleases=$(git diff --numstat -- releases | wc -l)
+          else
+            countReleases=$(git diff --numstat -- release | wc -l)
+          fi
+          echo "total releases changed is $countReleases"
+          echo "staged=$countStaged" >> $GITHUB_OUTPUT
+          echo "commits=$countCommits" >> $GITHUB_OUTPUT
+          echo "releases=$countReleases" >> $GITHUB_OUTPUT
+          git status --porcelain
         name: what changes
         id: changes
-      - name: show changes
-        shell: bash
-        run: |
-          echo "total staged files ${{ steps.changes.outputs.cached }}"
-          echo "total unpushed commits ${{ steps.changes.outputs.commits }}"
       - name: commit and push
-        if: steps.changes.outputs.cached > 0 || steps.changes.outputs.commits > 0
+        if: steps.changes.outputs.staged > 0 || steps.changes.outputs.commits > 0
         shell: bash
         run: |
           git config --global user.email "dimaslanjaka@gmail.com"
