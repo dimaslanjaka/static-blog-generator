@@ -93,7 +93,7 @@ jobs:
       - uses: actions/cache/restore@v3
         id: cache
         with:
-          path: "**/*"
+          path: '**/*'
           key: ${{ runner.os }}-${{ env.node_version }}
       - uses: actions/setup-node@v3
         with:
@@ -118,9 +118,9 @@ jobs:
           done
         shell: bash
         name: build
-      - run: "yarn workspace sbg-site-test exec \"sbg clean all\""
+      - run: 'yarn workspace sbg-site-test exec "sbg clean all"'
         name: test clean
-      - run: "yarn workspace sbg-site-test exec \"sbg post standalone\""
+      - run: 'yarn workspace sbg-site-test exec "sbg post standalone"'
         name: test post standalone
       - run: sbg post copy
         working-directory: test
