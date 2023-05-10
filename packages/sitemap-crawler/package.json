@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.38",
-    "@types/node": "^18.14.0",
+    "@types/node": "^20.1.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
