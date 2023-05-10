@@ -2,7 +2,6 @@ import crypto from 'crypto';
 import fs from 'fs-extra';
 import { EOL } from 'os';
 import { Opt, persistentCache } from 'persistent-cache';
-import internal from 'stream';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { getConfig } from '../config/_config';
@@ -51,14 +50,14 @@ function cacheLib(options: Partial<Opt> | undefined) {
   return persistentCache(options);
 }
 
-export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: string }): internal.Transform;
+export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: string }): ReturnType<typeof through2.obj>;
 
 /**
  * * [source idea](https://github.com/gulp-community/gulp-cached/blob/8e8d13cb07b17113ff94700e87f136eeaa1f1340/index.js#L35-L44)
  * @param options
  * @returns
  */
-export function gulpCached(options: gulpCachedOpt = {}): internal.Transform {
+export function gulpCached(options: gulpCachedOpt = {}): ReturnType<typeof through2.obj> {
   const caches = cacheLib(options);
   //const logname = 'gulp-' + ansiColors.grey('cached');
   const pid = process.pid;
