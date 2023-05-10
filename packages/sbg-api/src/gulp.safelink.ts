@@ -5,7 +5,7 @@ import path from 'path';
 import sf, { SafelinkOptions } from 'safelinkify';
 import { createWriteStream, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
-import { SrcOptions } from 'vinyl-fs';
+import { gulpOpt } from './gulp-options';
 
 /**
  * Process Safelink on Deploy Dir
@@ -77,7 +77,7 @@ export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefine
 
     const safelink = new sf.safelink(opt);
 
-    const gulpopt: SrcOptions = {
+    const gulpopt: gulpOpt = {
       cwd: workingDir,
       ignore: []
     };
