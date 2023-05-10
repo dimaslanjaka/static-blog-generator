@@ -1,10 +1,12 @@
 const path = require('upath');
 const glob = require('glob');
 const { spawnAsync } = require('cross-spawn');
+const fs = require('fs');
 
 const cdir = path.toUnix(__dirname);
 const src = path.join(cdir, './source/styles');
 const dist = path.join(cdir, './src/public/css');
+if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true });
 const scan = glob.sync('**/*.{css,scss,less}', { cwd: src }) || [];
 const entries = scan.map((str) => {
   return {
