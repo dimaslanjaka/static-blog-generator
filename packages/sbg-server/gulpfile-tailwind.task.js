@@ -28,10 +28,19 @@ async function bundleCSS(done) {
       '-o',
       output
     ];
-    console.log(...args);
-    await spawnAsync('npx', args, { cwd: cdir });
+    console.log(args[0], ...args.slice(1));
+    await spawnAsync(args[0], args.slice(1), {
+      cwd: cdir,
+      stdio: 'inherit',
+      shell: true
+    });
   }
-  done();
+  if (typeof done === 'function') done();
 }
 
 module.exports = { bundleCSS };
+
+if (require.main === module) {
+  // call when runned directly
+  bundleCSS();
+}
