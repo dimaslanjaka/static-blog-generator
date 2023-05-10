@@ -54,7 +54,7 @@
     "he": "^1.2.0",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz",
     "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master",
-    "jsdom": "^22.0.0",
+    "jsdom": "21.1.2",
     "safelinkify": "^1.1.18",
     "sbg-api": "workspace:^",
     "sbg-server": "workspace:^",
