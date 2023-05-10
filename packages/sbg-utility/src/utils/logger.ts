@@ -9,6 +9,10 @@ import { areWeTestingWithJest } from './jest';
 const getConfig = configs.getConfig;
 const FOLDER = join(process.cwd(), 'tmp/logs');
 
+declare global {
+  const hexo: import('hexo');
+}
+
 // disable console.log on jest
 if (areWeTestingWithJest()) {
   // const log = console.log;
@@ -43,12 +47,12 @@ export class Logger {
   }
 
   static info(...args: any[]) {
-    _log.info(...args);
+    _log.info.apply(null, args);
     this.tracer(...args);
   }
 
   static error(...args: any[]) {
-    _log.error(...args);
+    _log.error.apply(null, args);
     this.tracer(...args);
   }
 
