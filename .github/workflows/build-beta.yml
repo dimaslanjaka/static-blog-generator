@@ -118,7 +118,6 @@ jobs:
             **/.yarn
             ./yarn.lock
             **/dist
-            !**/node_modules/**
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
@@ -131,6 +130,7 @@ jobs:
           npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: yarn install
+        name: install by ${{ github.event_name }}
       - run: |
           arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
           for i in "${arr_variable[@]}"
@@ -138,7 +138,7 @@ jobs:
             yarn workspace $i build && yarn workspace $i run pack
           done
         shell: bash
-        name: build
+        name: build by ${{ github.event_name }}
       - run: |
           countChanges=$(git whatchanged -1 --format=oneline | wc -l)
           echo "total changed files is $countChanges"
