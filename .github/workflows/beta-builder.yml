@@ -126,12 +126,7 @@ jobs:
 
       - run: yarn install
         name: install by ${{ github.event_name }}
-      - run: |
-          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
-          for i in "${arr_variable[@]}"
-          do
-            yarn workspace $i build && yarn workspace $i run pack
-          done
+      - run: npm run build
         shell: bash
         name: build by ${{ github.event_name }}
       - uses: actions/upload-artifact@v3
