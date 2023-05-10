@@ -197,7 +197,7 @@ export function yoastSeo(hexo: Hexo) {
 export function yoastSitemapIndex(hexo: Hexo) {
   const sourceIndexXML = join(__dirname, 'views/sitemap.xml');
   const sitemapIndexDoc = createXML(readFileSync(sourceIndexXML).toString());
-  const sitemapIndex = <SitemapIndex>new Object(sitemapIndexDoc.end({ format: 'object' }));
+  const sitemapIndex = new Object(sitemapIndexDoc.end({ format: 'object' })) as SitemapIndex;
   sitemapIndex.sitemapindex.sitemap = [];
 
   // push post-sitemap.xml to sitemapindex
