@@ -140,25 +140,25 @@ jobs:
           done
         shell: bash
         name: build
-      - run: npx sbg clean all
+      - run: sbg clean all
         working-directory: test
         name: test clean
-      - run: npx sbg post standalone
+      - run: sbg post standalone
         working-directory: test
         name: test post standalone
-      - run: npx sbg post copy
+      - run: sbg post copy
         working-directory: test
         name: test post copy
       - run: npx hexo generate
         working-directory: test
         name: test generate site with hexo
-      - run: npx sbg generate feed
+      - run: sbg generate feed
         working-directory: test
         name: test generate feed
-      - run: npx sbg generate sitemap
+      - run: sbg generate sitemap
         working-directory: test
         name: test generate sitemap
-      - run: npx sbg deploy copy
+      - run: sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
       - run: |
@@ -187,4 +187,4 @@ jobs:
           # git submodule foreach "git add dist release"
           # git push --recurse-submodules=on-demand
           git push &> /dev/null
-        
+
