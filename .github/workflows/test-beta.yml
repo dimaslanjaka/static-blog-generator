@@ -100,11 +100,9 @@ jobs:
           done
         shell: bash
         name: build
-      - run: sbg clean all
-        working-directory: test
+      - run: "yarn workspace sbg-site-test exec \"sbg clean all\""
         name: test clean
-      - run: sbg post standalone
-        working-directory: test
+      - run: "yarn workspace sbg-site-test exec \"sbg post standalone\""
         name: test post standalone
       - run: sbg post copy
         working-directory: test
