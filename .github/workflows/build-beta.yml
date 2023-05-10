@@ -117,6 +117,8 @@ jobs:
             ${{ steps.set-env.outputs.cache-yarn }}
             **/.yarn
             ./yarn.lock
+            **/dist
+            !**/node_modules/**
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
@@ -164,3 +166,13 @@ jobs:
           # git push --recurse-submodules=on-demand
           git push &> /dev/null
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: |
+            ${{ steps.set-env.outputs.cache-npm }}
+            ${{ steps.set-env.outputs.cache-yarn }}
+            **/.yarn
+            ./yarn.lock
+            **/dist
+            !**/node_modules/**

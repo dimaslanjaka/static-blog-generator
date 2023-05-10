@@ -53,22 +53,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          token: ${{ secrets.GITHUB_TOKEN }}
-          architecture: x64
-          #cache: 'yarn'
-          #cache-dependency-path: '**/yarn.lock'
 
-      - uses: actions/cache@v3 # pat-s/always-upload-cache@v3.0.11
-        id: cache
-        name: get caches
+      - uses: actions/download-artifact@v3
         with:
-          path: |
-            **/.yarn
-            ./yarn.lock
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-            ${{ runner.os }}-
+          name: my-artifact
 
       - name: Install Global Packages
         run: |
