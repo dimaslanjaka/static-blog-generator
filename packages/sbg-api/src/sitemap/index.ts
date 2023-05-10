@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import { readFileSync } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
-import { default as hexo } from 'hexo';
+import Hexo from 'hexo';
 import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
@@ -127,7 +127,7 @@ export interface SitemapOptions {
  */
 export function hexoGenerateSitemap(config = getConfig()) {
   return new Bluebird((resolve) => {
-    const instance = new hexo(config.cwd);
+    const instance = new Hexo(config.cwd);
     instance.init().then(() => {
       instance.load().then(function () {
         env.addFilter('formatUrl', (str) => {
