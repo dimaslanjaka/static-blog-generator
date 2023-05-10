@@ -19,6 +19,7 @@ import {
   writefile
 } from 'sbg-utility';
 import { join } from 'upath';
+import { gulpOpt } from '../gulp-options';
 import { yoastSeo } from './yoast-sitemap';
 
 /*
@@ -203,7 +204,7 @@ export function hexoGenerateSitemap(config = getConfig()) {
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
         const publicDir = join(config.cwd, config.public_dir);
         gulp
-          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
+          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore } as gulpOpt)
           .pipe(
             gulpDom(function () {
               // auto discovery sitemap
