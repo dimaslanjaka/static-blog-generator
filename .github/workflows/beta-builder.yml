@@ -1,32 +1,9 @@
-name: Build Beta
+name: Builder
 
-on:
-  push:
-    branches: ['beta']
-    paths-ignore:
-      - '**/dist/**'
-      - '**/release/**'
-      - 'packages/google-news-sitemap'
-      - 'packages/hexo-post-parser'
-      - 'packages/git-command-helper'
-      - 'packages/safelinkify'
-      - 'packages/hexo-blogger-xml'
-      - '**/test/**'
-  pull_request:
-    types:
-      - closed
-  workflow_dispatch:
-  workflow_call:
-
-# run single job
-concurrency:
-  group: build-${{ github.event_name }}
-  cancel-in-progress: true
+on: [workflow_call, workflow_dispatch]
 
 jobs:
   build:
-    strategy:
-      fail-fast: true
     env:
       NODE_OPTIONS: '--max-old-space-size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
@@ -157,42 +134,6 @@ jobs:
           done
         shell: bash
         name: build by ${{ github.event_name }}
-      - run: |
-          countChanges=$(git whatchanged -1 --format=oneline | wc -l)
-          echo "total changed files is $countChanges"
-          countStaged=$(git diff --cached --numstat | wc -l)
-          echo "total staged files is $countStaged"
-          countCommits=$(git diff origin/${{ steps.set-env.outputs.GITHUB_BRANCH }}..HEAD --numstat | wc -l)
-          echo "total unpushed commits is $countCommits"
-          if [ -d "releases" ]; then
-            countReleases=$(git diff --numstat -- releases | wc -l)
-          else
-            countReleases=$(git diff --numstat -- release | wc -l)
-          fi
-          echo "total releases changed is $countReleases"
-          echo "staged=$countStaged" >> $GITHUB_OUTPUT
-          echo "commits=$countCommits" >> $GITHUB_OUTPUT
-          echo "releases=$countReleases" >> $GITHUB_OUTPUT
-          git status --porcelain
-        name: what changes
-        id: changes
-      - name: commit and push
-        if: (steps.changes.outputs.staged > 0 || steps.changes.outputs.commits > 0) && github.event_name != 'workflow_call'
-        shell: bash
-        run: |
-          git config --global user.email "dimaslanjaka@gmail.com"
-          git config --global user.name "dimaslanjaka"
-          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
-          for i in "${arr_variable[@]}"
-          do
-            git add "packages/${i}/dist" &> /dev/null
-            git add "packages/${i}/release" &> /dev/null
-            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}" &> /dev/null
-          done
-          # git submodule foreach "git add dist release"
-          # git push --recurse-submodules=on-demand
-          git push &> /dev/null
-
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
