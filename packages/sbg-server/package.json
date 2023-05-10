@@ -22,7 +22,7 @@
     "js": "rollup -c",
     "tw": "gulp compile:tailwind",
     "purge": "purgecss -c purgecss.config.js -o ./src/public/css",
-    "clean": "rm -rf dist tmp src/public",
+    "clean": "rm -rf dist tmp src/public && yarn build",
     "pack": "node packer.js --yarn",
     "build-pack": "yarn run build && yarn run pack"
   },
