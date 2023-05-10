@@ -1,5 +1,5 @@
 // const fs = require('fs-extra');
-const { spawn } = require('git-command-helper/dist/spawn');
+const { spawnAsync } = require('cross-spawn');
 const gulp = require('gulp');
 const path = require('upath');
 const fs = require('fs-extra');
@@ -30,7 +30,7 @@ const copy = function () {
 gulp.task('copy', gulp.series(copy));
 
 function tsc(done) {
-  spawn(cmd('tsc'), ['--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
+  spawnAsync(cmd('tsc'), ['--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
     .then(() => done())
     .catch(done);
 }
