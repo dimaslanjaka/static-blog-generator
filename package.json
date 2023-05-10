@@ -26,8 +26,8 @@
     "lint": "yarn workspaces run lint",
     "test": "jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
-    "clean": "yarn workspaces foreach run clean",
-    "pack": "yarn workspaces foreach run pack"
+    "clean": "yarn workspaces foreach --no-private run clean",
+    "pack": "yarn workspaces foreach --no-private run pack"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
