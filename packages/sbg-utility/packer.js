@@ -267,7 +267,6 @@ async function addReadMe() {
     // skip index tarball which ignored by .gitignore
     const checkIgnore = (await spawnAsync('git', ['status', '--porcelain', '--ignored'], { cwd: __dirname })).output
       .split(/\r?\n/)
-      .map((str) => str.trim())
       .filter((str) => str.startsWith('!!'))
       .map((str) => str.replace('!!', '').trim())
       .join('\n');
