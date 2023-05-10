@@ -111,7 +111,7 @@ jobs:
       - uses: actions/cache/restore@v3
         id: cache
         with:
-          path: "**/*"
+          path: '**/*'
           key: ${{ runner.os }}-${{ env.node_version }}
 
       - uses: actions/download-artifact@v3
@@ -153,4 +153,3 @@ jobs:
           # git submodule foreach "git add dist release"
           # git push --recurse-submodules=on-demand
           git push &> /dev/null
-

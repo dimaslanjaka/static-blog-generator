@@ -5,26 +5,26 @@
 
 version: 2
 updates:
-- package-ecosystem: "yarn"
-  #directory: "/"
-  target-branch: "beta"
-  schedule:
-    interval: "weekly"
-  ignore:
-      - dependency-name: "chalk"
-        versions: ["5.x"]
-      - dependency-name: "codemirror"
-        versions: ["6.x"]
-      - dependency-name: "glob"
-      - dependency-name: "jsdom"
-        versions: ["22.x"]
-- package-ecosystem: "github-actions"
-  target-branch: "beta"
-  #directory: "/"
-  schedule:
-    interval: "weekly"
-- package-ecosystem: "gitsubmodule"
-  target-branch: "beta"
-  schedule:
-      interval: "weekly"
-  #directory: /
+  - package-ecosystem: 'yarn'
+    #directory: "/"
+    target-branch: 'beta'
+    schedule:
+      interval: 'weekly'
+    ignore:
+      - dependency-name: 'chalk'
+        versions: ['5.x']
+      - dependency-name: 'codemirror'
+        versions: ['6.x']
+      - dependency-name: 'glob'
+      - dependency-name: 'jsdom'
+        versions: ['22.x']
+  - package-ecosystem: 'github-actions'
+    target-branch: 'beta'
+    #directory: "/"
+    schedule:
+      interval: 'weekly'
+  - package-ecosystem: 'gitsubmodule'
+    target-branch: 'beta'
+    schedule:
+      interval: 'weekly'
+    #directory: /
