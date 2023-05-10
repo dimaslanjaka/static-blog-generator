@@ -1,5 +1,6 @@
 /// <reference types="node" />
 /// <reference types="node" />
+/// <reference types="hexo/dist/hexo/router" />
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
 import { getConfig } from 'sbg-utility';

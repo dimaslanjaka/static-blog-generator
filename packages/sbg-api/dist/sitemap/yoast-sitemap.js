@@ -30,7 +30,6 @@ exports.yoastSitemapIndex = exports.yoastSeo = exports.yoastSeoSitemap = exports
 var fs_1 = require("fs");
 var hexo_is_1 = __importDefault(require("hexo-is"));
 var moment_1 = __importDefault(require("moment"));
-require("nodejs-package-types");
 var path_1 = require("path");
 var sbg_utility_1 = require("sbg-utility");
 var xmlbuilder2_1 = require("xmlbuilder2");
@@ -187,14 +186,14 @@ function yoastSitemapIndex(hexo) {
     sitemapIndex.sitemapindex.sitemap = [];
     // push post-sitemap.xml to sitemapindex
     var latestPostDate = (0, archive_1.getLatestFromArrayDates)(postUpdateDates);
-    _log.info('latest updated post', latestPostDate);
+    _log.info('latest updated post', String(latestPostDate));
     sitemapIndex.sitemapindex.sitemap.push({
         loc: hexo.config.url.toString() + '/post-sitemap.xml',
         lastmod: (0, moment_1.default)(latestPostDate).format('YYYY-MM-DDTHH:mm:ssZ')
     });
     // push page-sitemap.xml to sitemapindex
     var latestPageDate = (0, archive_1.getLatestFromArrayDates)(pageUpdateDates);
-    _log.info('latest updated page', latestPageDate);
+    _log.info('latest updated page', String(latestPageDate));
     if ((0, moment_1.default)(latestPageDate).isValid())
         sitemapIndex.sitemapindex.sitemap.push({
             loc: hexo.config.url.toString() + '/page-sitemap.xml',
@@ -222,7 +221,7 @@ function yoastSitemapIndex(hexo) {
     var latestTagDate = (0, archive_1.getLatestFromArrayDates)(tags.map(function (tag) {
         return tag.latest;
     }));
-    _log.info('latest updated tag', latestTagDate);
+    _log.info('latest updated tag', String(latestTagDate));
     sitemapIndex.sitemapindex.sitemap.push({
         loc: hexo.config.url.toString() + '/tag-sitemap.xml',
         lastmod: (0, moment_1.default)(latestTagDate).format('YYYY-MM-DDTHH:mm:ssZ')
@@ -245,7 +244,7 @@ function yoastSitemapIndex(hexo) {
     var latestCategoryDate = (0, archive_1.getLatestFromArrayDates)(categories.map(function (category) {
         return category.latest;
     }));
-    _log.info('latest updated category', latestCategoryDate);
+    _log.info('latest updated category', String(latestCategoryDate));
     sitemapIndex.sitemapindex.sitemap.push({
         loc: hexo.config.url.toString() + '/category-sitemap.xml',
         lastmod: (0, moment_1.default)(latestCategoryDate).format('YYYY-MM-DDTHH:mm:ssZ')

@@ -1,8 +1,7 @@
 import Hexo from 'hexo';
 import hexoIs from 'hexo-is';
-import 'nodejs-package-types';
-type PageData = Hexo.PageData;
-type TemplateLocals = Hexo.TemplateLocals;
+type PageData = Hexo['locals'];
+type TemplateLocals = Hexo['locals'];
 export interface sitemapItem {
     loc: string;
     lastmod: string;
