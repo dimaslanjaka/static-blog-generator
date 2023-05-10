@@ -1,6 +1,6 @@
 const path = require('upath');
 const glob = require('glob');
-const { spawn: spawnAsync } = require('cross-spawn');
+const { spawnAsync } = require('cross-spawn');
 
 const cdir = path.toUnix(__dirname);
 const src = path.join(cdir, './source/styles');
