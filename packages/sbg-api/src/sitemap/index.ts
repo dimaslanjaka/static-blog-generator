@@ -14,7 +14,9 @@ import {
   getConfig,
   Logger,
   noop,
-  setConfig, sitemapCrawlerAsync, writefile
+  setConfig,
+  sitemapCrawlerAsync,
+  writefile
 } from 'sbg-utility';
 import { join } from 'upath';
 import { yoastSeo } from './yoast-sitemap';
@@ -145,7 +147,7 @@ export function hexoGenerateSitemap(config = getConfig()) {
 
         if (!config.sitemap) return Logger.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
-        const { skip_render } = config;
+        const skip_render = config.skip_render as string[] | string;
 
         if (!sitemap.tags || !sitemap.categories) {
           return Logger.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
