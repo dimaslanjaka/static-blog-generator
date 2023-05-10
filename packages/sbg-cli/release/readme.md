@@ -1,6 +1,29 @@
-# Release `sbg-cli` Tarball
+# Release `sbg-cli` tarball
+## Releases
+| version | tarball url |
+| :--- | :--- |
+| 1.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-cli/release/sbg-cli-1.0.0.tgz |
+| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-cli/release/sbg-cli-1.0.1.tgz |
+| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-cli/release/sbg-cli-1.0.2.tgz |
+| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-cli/release/sbg-cli-1.0.3.tgz |
+| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-cli/release/sbg-cli-1.0.4.tgz |
+| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-cli/release/sbg-cli-1.0.5.tgz |
+| 1.0.6 | https://github.com/dimaslanjaka/static-blog-generator/raw/f729eff/packages/sbg-cli/release/sbg-cli-1.0.6.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/5fdf38f/packages/sbg-cli/release/sbg-cli.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz |
 
-## Get URL of `sbg-cli` Release Tarball
+use this tarball with `resolutions`:
+```json
+{
+  "resolutions": {
+    "sbg-cli": "<url of tarball>"
+  }
+}
+```
+
+## Releases
+
+    ## Get URL of `sbg-cli` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url
