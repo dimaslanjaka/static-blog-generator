@@ -1,6 +1,5 @@
-/// <reference types="node" />
 import { persistentCache } from 'persistent-cache';
-import internal from 'stream';
+import through2 from 'through2';
 /**
  * calculate sha1sum of file
  * @param file
@@ -33,5 +32,5 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
 export declare function gulpCached(options: gulpCachedOpt & {
     dest?: string;
     cwd?: string;
-}): internal.Transform;
+}): ReturnType<typeof through2.obj>;
 export default gulpCached;

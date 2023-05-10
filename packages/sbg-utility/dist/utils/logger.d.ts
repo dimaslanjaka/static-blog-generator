@@ -1,4 +1,6 @@
-import 'nodejs-package-types';
+declare global {
+    const hexo: import('hexo');
+}
 /**
  * @example
  * const console = Logger

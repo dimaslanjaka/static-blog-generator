@@ -12,7 +12,7 @@ declare class Translator {
     constructor(sourceLang?: string, toLang?: string);
     try1(url: string, callback?: (html: string) => any): this;
     try2(html: string, callback?: (html: string) => any): this;
-    extractTranslated(html: string): string;
+    extractTranslated(html: string): any;
     private capture;
     /**
      * Curl Requester

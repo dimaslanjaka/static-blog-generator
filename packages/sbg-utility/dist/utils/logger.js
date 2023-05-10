@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
 var tslib_1 = require("tslib");
 var fs_extra_1 = require("fs-extra");
-require("nodejs-package-types");
 var os_1 = require("os");
 var slugify_1 = tslib_1.__importDefault(require("slugify"));
 var upath_1 = require("upath");
@@ -58,7 +57,7 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.info.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        _log.info.apply(null, args);
         this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.error = function () {
@@ -66,7 +65,7 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        _log.error.apply(_log, tslib_1.__spreadArray([], tslib_1.__read(args), false));
+        _log.error.apply(null, args);
         this.tracer.apply(this, tslib_1.__spreadArray([], tslib_1.__read(args), false));
     };
     Logger.tracer = function () {

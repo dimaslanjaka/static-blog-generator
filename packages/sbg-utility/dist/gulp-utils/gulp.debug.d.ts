@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="hexo/dist/hexo/router" />
 export declare function gulpDebug(filename?: string): import("stream").Transform;
 /**
  * log all files

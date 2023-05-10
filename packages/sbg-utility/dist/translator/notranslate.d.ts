@@ -1,1 +1,1 @@
-export default function (html: string): string;
+export default function (html: string): any;

@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="hexo/dist/hexo/router" />
 export declare const customPath: {
     join: (...str: string[]) => string;
     dirname: (str: string) => string;

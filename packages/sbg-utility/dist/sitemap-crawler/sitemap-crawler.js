@@ -38,8 +38,8 @@ var SiteMapCrawlerCore = /** @class */ (function () {
                     return done();
                 }
                 try {
-                    var $_1 = cheerio_1.default.load(body);
-                    var hrefs_1 = $_1('[href]');
+                    var $ = cheerio_1.default.load(body);
+                    var hrefs_1 = $('[href]');
                     var filteredLinks_1 = new Set();
                     hrefs_1.each(function (i) {
                         var _a, _b;

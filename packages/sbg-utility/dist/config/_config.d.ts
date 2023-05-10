@@ -1,7 +1,7 @@
 import git from 'git-command-helper';
-import Hexo from 'hexo';
+import { HexoConfig } from 'hexo/dist/hexo/index-d';
 import * as defaults from './defaults';
-export interface ProjConf extends Hexo.Config {
+export interface ProjConf extends HexoConfig {
     [key: string]: any;
     /**
      * Source posts
@@ -27,7 +27,7 @@ export interface ProjConf extends Hexo.Config {
     /**
      * Deployment options
      */
-    deploy: defaults.importConfig['deploy'] & ReturnType<typeof deployConfig> & {
+    deploy: HexoConfig['deploy'] & defaults.importConfig['deploy'] & ReturnType<typeof deployConfig> & {
         /**
          * copy to subfolder of site
          * @example
@@ -40,7 +40,7 @@ export interface ProjConf extends Hexo.Config {
          */
         folder?: string;
     };
-    external_link: defaults.importConfig['external_link'] & boolean & {
+    external_link: HexoConfig['external_link'] & defaults.importConfig['external_link'] & boolean & {
         safelink?: import('safelinkify').SafelinkOptions;
     };
     /**
@@ -111,4 +111,4 @@ export declare const commonIgnore: string[];
 /**
  * array of config.exclude, config.ignore
  */
-export declare const projectIgnores: string[];
+export declare const projectIgnores: any[];
