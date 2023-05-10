@@ -1,26 +1,19 @@
-name: Test Beta
+name: Build Beta
 
-on:
-  push:
-    paths-ignore:
-      - '**/release*/**'
-  pull_request:
-    types:
-      - closed
-  workflow_dispatch:
+on: [workflow_dispatch, workflow_call]
+
+# run single job
+concurrency:
+  group: push
+  cancel-in-progress: true
 
 jobs:
   build:
-    uses: ./.github/workflows/build-beta.yml
-    secrets: inherit
-  test:
-    needs: build
-    strategy:
-      fail-fast: true
     env:
       NODE_OPTIONS: '--max-old-space-size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      node_version: 14.x
 
     runs-on: ubuntu-latest
 
@@ -47,6 +40,18 @@ jobs:
           bash ./bin/submodule-install
           echo "disable githooks warning"
           git config advice.ignoredHook false
+
+      - name: Set EOL git configs
+        continue-on-error: true
+        run: |
+          git config core.eol lf
+          git config core.autocrlf input
+          git checkout-index --force --all
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+
       - name: Set env
         id: set-env
         shell: bash
@@ -92,45 +97,60 @@ jobs:
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
-      - uses: actions/setup-node@v3
+      - name: Get env
+        shell: bash
+        run: |
+          echo "branch      : ${{ steps.set-env.outputs.GITHUB_BRANCH }}"
+          echo "commit msg  : ${{ github.event.head_commit.message }}"
+          echo "commit hash : ${{ steps.set-env.outputs.GITHUB_SHA_SHORT }}"
+          echo "commit url  : ${{ steps.set-env.outputs.GITHUB_COMMIT_URL }}"
+          echo "runner url  : ${{ steps.set-env.outputs.GITHUB_RUNNER_URL }}"
+          echo "cache npm   : ${{ steps.set-env.outputs.CACHE_NPM }}"
+          echo "cache yarn  : ${{ steps.set-env.outputs.CACHE_YARN }}"
+
+      - uses: actions/cache/restore@v3
+        id: cache
         with:
-          node-version: 14.x
+          path: "**/*"
+          key: ${{ runner.os }}-${{ env.node_version }}
 
       - uses: actions/download-artifact@v3
         with:
           name: my-artifact
 
-      - name: Install Global Packages
-        run: |
-          corepack enable
-          yarn dlx npm i -g npm
-          npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
-
-      - run: yarn install
       - run: |
+          countChanges=$(git whatchanged -1 --format=oneline | wc -l)
+          echo "total changed files is $countChanges"
+          countStaged=$(git diff --cached --numstat | wc -l)
+          echo "total staged files is $countStaged"
+          countCommits=$(git diff origin/${{ steps.set-env.outputs.GITHUB_BRANCH }}..HEAD --numstat | wc -l)
+          echo "total unpushed commits is $countCommits"
+          if [ -d "releases" ]; then
+            countReleases=$(git diff --numstat -- releases | wc -l)
+          else
+            countReleases=$(git diff --numstat -- release | wc -l)
+          fi
+          echo "total releases changed is $countReleases"
+          echo "staged=$countStaged" >> $GITHUB_OUTPUT
+          echo "commits=$countCommits" >> $GITHUB_OUTPUT
+          echo "releases=$countReleases" >> $GITHUB_OUTPUT
+          git status --porcelain
+        name: what changes
+        id: changes
+      - name: commit and push
+        if: steps.changes.outputs.staged > 0 || steps.changes.outputs.commits > 0
+        shell: bash
+        run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
           arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
           for i in "${arr_variable[@]}"
           do
-            yarn workspace $i build && yarn workspace $i run pack
+            git add "packages/${i}/dist" &> /dev/null
+            git add "packages/${i}/release" &> /dev/null
+            git commit -m "chore: build ${i} from ${{ env.GITHUB_COMMIT_URL }} runner ${{ env.GITHUB_RUNNER_URL }}" &> /dev/null
           done
-        shell: bash
-        name: build
-      - run: "yarn workspace sbg-site-test exec \"sbg clean all\""
-        name: test clean
-      - run: "yarn workspace sbg-site-test exec \"sbg post standalone\""
-        name: test post standalone
-      - run: sbg post copy
-        working-directory: test
-        name: test post copy
-      - run: npx hexo generate
-        working-directory: test
-        name: test generate site with hexo
-      - run: sbg generate feed
-        working-directory: test
-        name: test generate feed
-      - run: sbg generate sitemap
-        working-directory: test
-        name: test generate sitemap
-      - run: sbg deploy copy
-        working-directory: test
-        name: test copy generated site to deployment directory
+          # git submodule foreach "git add dist release"
+          # git push --recurse-submodules=on-demand
+          git push &> /dev/null
+
