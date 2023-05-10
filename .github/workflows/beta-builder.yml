@@ -130,6 +130,7 @@ jobs:
         shell: bash
         name: build by ${{ github.event_name }}
       - uses: actions/upload-artifact@v3
+        name: upload build result
         with:
           name: my-artifact
           path: |
