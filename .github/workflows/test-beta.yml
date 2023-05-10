@@ -63,17 +63,34 @@ jobs:
           echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
           echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_OUTPUT
           echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_ENV
-          echo "cache-npm=$(npm config get cache)" >> $GITHUB_OUTPUT
+          echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_OUTPUT
           YARN_CURRENT=$(yarn -v)
           YARN_BERRY=3.2.1
           if [[ "ok" == "$(echo | awk "(${YARN_CURRENT} > ${YARN_BERRY}) { print \"ok\"; }")" ]]; then
             echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_ENV
-            echo "cache-yarn=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+            echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
           else
             echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
-            echo "cache-yarn=$(yarn cache dir)" >> $GITHUB_OUTPUT
+            echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_OUTPUT
           fi
           echo "architecture=$(getconf LONG_BIT)" >> $GITHUB_ENV
+          if [ -f "package-lock.json" ]; then
+              echo "PACKAGE-MANAGER=npm" >> $GITHUB_OUTPUT
+              echo "PACKAGE-MANAGER=npm" >> $GITHUB_ENV
+          else
+              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_OUTPUT
+              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_ENV
+          fi
+          unameOut="$(uname -s)"
+          case "${unameOut}" in
+              Linux*)     machine=linux;;
+              Darwin*)    machine=mac;;
+              CYGWIN*)    machine=cygwin;;
+              MINGW*)     machine=mingw;;
+              *)          machine="unknown:${unameOut}"
+          esac
+          echo "machine=$machine" >> $GITHUB_OUTPUT
+          echo "machine=$machine" >> $GITHUB_ENV
 
       - uses: actions/setup-node@v3
         with:
