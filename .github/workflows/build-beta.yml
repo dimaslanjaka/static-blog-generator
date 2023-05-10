@@ -16,6 +16,7 @@ on:
     types:
       - closed
   workflow_dispatch:
+  workflow_call:
 
 # run single job
 concurrency:
