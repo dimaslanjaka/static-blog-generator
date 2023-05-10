@@ -7,9 +7,9 @@ version: 2
 updates:
   - package-ecosystem: 'yarn'
     #directory: "/"
-    target-branch: 'beta'
+    #target-branch: 'beta'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
     ignore:
       - dependency-name: 'chalk'
         versions: ['5.x']
@@ -19,12 +19,12 @@ updates:
       - dependency-name: 'jsdom'
         versions: ['22.x']
   - package-ecosystem: 'github-actions'
-    target-branch: 'beta'
+    #target-branch: 'beta'
     #directory: "/"
     schedule:
       interval: 'weekly'
   - package-ecosystem: 'gitsubmodule'
-    target-branch: 'beta'
+    #target-branch: 'beta'
     schedule:
       interval: 'weekly'
     #directory: /
