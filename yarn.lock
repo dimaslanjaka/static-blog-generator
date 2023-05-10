@@ -3188,7 +3188,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^20.1.1":
+"@types/node@npm:*, @types/node@npm:>=10.0.0":
   version: 20.1.1
   resolution: "@types/node@npm:20.1.1"
   checksum: 47961ee23f873c14c3f6045422ff3059f3bfb10231ef3080a7a72d7215cc8c2623fa8cedb7b246305962fa9c1e0c9e381e04b12eb3e9ec5d076025c6231ac8da
@@ -3199,6 +3199,13 @@ __metadata:
   version: 18.16.6
   resolution: "@types/node@npm:18.16.6"
   checksum: 99417418952c0b1a6ff5dd40ccf01c2cd18db6a1c54bfaaff29c700c877e2e541aa31ea33090592f3817adb2b8c0946b86c7fb57049131e7c08252d70075f09b
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.1.2":
+  version: 20.1.2
+  resolution: "@types/node@npm:20.1.2"
+  checksum: 9bb2cf0a846e60cc06c44a5622c1998d8373c8675b24d11c86845a29f32c60f5bca9627f2a2535640f902be3dbcc60f126a895abe8e10f12e1467ae3deaba56d
   languageName: node
   linkType: hard
 
@@ -9324,7 +9331,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.0.0, glob@npm:^10.2.2":
+"glob@npm:^10.0.0, glob@npm:^10.2.2, glob@npm:^10.2.3":
   version: 10.2.3
   resolution: "glob@npm:10.2.3"
   dependencies:
@@ -10764,7 +10771,7 @@ __metadata:
     "@googleapis/searchconsole": ^1.0.0
     "@jest/globals": ^29.5.0
     "@types/fs-extra": ^11.0.1
-    "@types/node": ^20.1.1
+    "@types/node": ^20.1.2
     "@types/server-destroy": ^1.0.1
     "@typescript-eslint/eslint-plugin": ^5.59.5
     "@typescript-eslint/parser": ^5.59.5
@@ -14229,7 +14236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.10.10":
+"npm-check-updates@npm:^16.10.12":
   version: 16.10.12
   resolution: "npm-check-updates@npm:16.10.12"
   dependencies:
@@ -16983,7 +16990,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^3.21.5":
+"rollup@npm:^3.21.6":
   version: 3.21.6
   resolution: "rollup@npm:3.21.6"
   dependencies:
@@ -17161,14 +17168,14 @@ __metadata:
     "@jest/globals": ^29.5.0
     "@types/gulp": ^4.0.10
     "@types/micromatch": ^4.0.2
-    "@types/node": ^20.1.1
+    "@types/node": ^20.1.2
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     fs-extra: ^11.1.1
     git-command-helper: ^1.2.2
-    glob: ^10.2.2
+    glob: ^10.2.3
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
@@ -17202,7 +17209,7 @@ __metadata:
   dependencies:
     "@jest/globals": ^29.5.0
     "@types/he": ^1.2.0
-    "@types/node": ^20.1.1
+    "@types/node": ^20.1.2
     "@types/xml2js": ^0.4.11
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
@@ -17247,7 +17254,7 @@ __metadata:
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.17
     "@types/express-session": ^1.17.7
-    "@types/node": ^20.1.1
+    "@types/node": ^20.1.2
     "@types/object-assign": ^4.0.30
     "@types/retry": ^0.12.2
     "@types/serve-index": ^1.9.1
@@ -17278,7 +17285,7 @@ __metadata:
     flowbite: ^1.6.5
     fs-extra: ^11.1.1
     git-command-helper: ^1.2.2
-    glob: ^10.2.2
+    glob: ^10.2.3
     gulp: ^4.0.2
     hexo-post-parser: ^1.2.8
     highlight.js: 11.8.0
@@ -17299,7 +17306,7 @@ __metadata:
     prettier: ^2.8.8
     purgecss: ^5.0.0
     retry: ^0.13.1
-    rollup: ^3.21.5
+    rollup: ^3.21.6
     safelinkify: ^1.1.18
     sbg-api: "workspace:^"
     sbg-utility: "workspace:^"
@@ -17366,7 +17373,7 @@ __metadata:
     "@types/debug": ^4.1.7
     "@types/fs-extra": ^11.0.1
     "@types/gulp-cache": ^0.4.5
-    "@types/node": ^20.1.1
+    "@types/node": ^20.1.2
     "@types/nunjucks": ^3.2.2
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     ansi-colors: ^4.1.3
@@ -17378,7 +17385,7 @@ __metadata:
     debug: ^4.3.4
     fs-extra: ^11.1.1
     git-command-helper: ^1.2.2
-    glob: ^10.2.2
+    glob: ^10.2.3
     gulp: ^4.0.2
     hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
     hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
@@ -18149,7 +18156,7 @@ __metadata:
     "@jest/globals": ^29.5.0
     "@types/gulp": ^4.0.10
     "@types/jest": ^29.5.1
-    "@types/node": ^20.1.1
+    "@types/node": ^20.1.2
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     "@typescript-eslint/eslint-plugin": ^5.59.5
     "@typescript-eslint/parser": ^5.59.5
@@ -18165,7 +18172,7 @@ __metadata:
     jest-html-reporters: ^3.1.4
     jsonc-parser: ^3.2.0
     nodemon: ^2.0.22
-    npm-check-updates: ^16.10.10
+    npm-check-updates: ^16.10.12
     npm-run-all: ^4.1.5
     prettier: ^2.8.8
     rimraf: ^5.0.0
