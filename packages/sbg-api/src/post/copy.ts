@@ -5,6 +5,7 @@ import * as hexoPostParser from 'hexo-post-parser';
 import { debug, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
+import { gulpOpt } from '../gulp-options';
 import { parsePermalink } from './permalink';
 
 const log = debug('post');
@@ -25,7 +26,7 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
   gulp
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
       cwd: sourcePostDir
-    })
+    } as gulpOpt)
     .pipe(gulp.dest(generatedPostDir))
     .on('end', function () {
       //Logger.log(fileList);
@@ -50,7 +51,7 @@ export function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: Ret
         ignore: excludes,
         dot: true,
         noext: true
-      })
+      } as gulpOpt)
       //.pipe(gulpLog('before'))
       .pipe(gulpCached({ name: 'post-copy' }))
       .pipe(pipeProcessPost(config))
