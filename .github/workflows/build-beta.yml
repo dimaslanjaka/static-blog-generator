@@ -130,8 +130,8 @@ jobs:
         name: get caches
         with:
           path: |
-            ${{ steps.set-env.outputs.cache-npm }}
-            ${{ steps.set-env.outputs.cache-yarn }}
+            ${{ steps.set-env.outputs.CACHE_NPM }}
+            ${{ steps.set-env.outputs.CACHE_YARN }}
             **/.yarn
             ./yarn.lock
             **/dist
