@@ -16,6 +16,8 @@ updates:
       - dependency-name: "codemirror"
         versions: ["6.x"]
       - dependency-name: "glob"
+      - dependency-name: "jsdom"
+        versions: ["22.x"]
 - package-ecosystem: "github-actions"
   target-branch: "beta"
   #directory: "/"
