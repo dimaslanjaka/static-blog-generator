@@ -179,9 +179,6 @@ jobs:
         with:
           name: my-artifact
           path: |
-            ${{ steps.set-env.outputs.cache-npm }}
-            ${{ steps.set-env.outputs.cache-yarn }}
             **/.yarn
             ./yarn.lock
-            **/dist
-            !**/node_modules/**
+            ./packages/**/dist
