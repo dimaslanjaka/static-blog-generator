@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/builder-beta.yml
+    uses: ./.github/workflows/beta-builder.yml
     secrets: inherit
   test:
     needs: build
@@ -137,3 +137,6 @@ jobs:
       - run: sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
+  push:
+    uses: ./.github/workflows/beta-push.yml
+    secrets: inherit
