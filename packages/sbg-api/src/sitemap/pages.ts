@@ -15,7 +15,7 @@ const sitemapPagesList: sitemapItem[] = [];
  * @param hexo
  */
 export default async function yoastSeoSitemapPages(hexo: Hexo) {
-  await Bluebird.all(hexo.locals.get('pages').toArray()).each(function (data) {
+  await Bluebird.all(hexo.locals.get('pages').toArray()).each(function (data: Record<string, any>) {
     const lastmod = data.updated?.format('YYYY-MM-DDTHH:mm:ssZ') || moment().format();
     pageUpdateDates.push(lastmod);
     const info = {
