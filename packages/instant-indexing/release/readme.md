@@ -1,6 +1,26 @@
-# Release `instant-indexing` Tarball
+# Release `instant-indexing` tarball
+## Releases
+| version | tarball url |
+| :--- | :--- |
+| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/instant-indexing/release/instant-indexing-1.0.1.tgz |
+| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/instant-indexing/release/instant-indexing-1.0.2.tgz |
+| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/instant-indexing/release/instant-indexing-1.0.3.tgz |
+| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/b0cfc58/packages/instant-indexing/release/instant-indexing-1.0.4.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/4573829/packages/instant-indexing/release/instant-indexing.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz |
 
-## Get URL of `instant-indexing` Release Tarball
+use this tarball with `resolutions`:
+```json
+{
+  "resolutions": {
+    "instant-indexing": "<url of tarball>"
+  }
+}
+```
+
+## Releases
+
+    ## Get URL of `instant-indexing` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url
