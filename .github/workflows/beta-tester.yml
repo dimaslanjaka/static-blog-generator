@@ -138,5 +138,6 @@ jobs:
         working-directory: test
         name: test copy generated site to deployment directory
   push:
+    needs: test
     uses: ./.github/workflows/beta-push.yml
     secrets: inherit
