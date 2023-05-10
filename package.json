@@ -18,16 +18,16 @@
     "!**/src/**"
   ],
   "scripts": {
-    "update:submodules": "yarn dlx lerna run update:ncu --no-bail --concurrency=1",
-    "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
-    "update": "run-s update:**",
-    "build": "yarn dlx lerna run build --concurrency=1",
+    "start": "yarn build && yarn workspace sbg-site-test run start",
+    "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
+    "update": "run-s \"update:**\"",
+    "build": "yarn workspaces foreach run build",
     "docs": "node docs.js",
-    "lint": "yarn dlx lerna run lint --concurrency=1",
+    "lint": "yarn workspaces run lint",
     "test": "jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
-    "clean": "yarn dlx lerna clean",
-    "pack": "yarn dlx lerna exec \"npm run pack --if-present\""
+    "clean": "yarn workspaces exec \"npm run clean --if-present\"",
+    "pack": "yarn workspaces exec \"npm run pack --if-present\""
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
