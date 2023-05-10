@@ -3001,16 +3001,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "@types/glob@npm:8.1.0"
-  dependencies:
-    "@types/minimatch": ^5.1.2
-    "@types/node": "*"
-  checksum: 9101f3a9061e40137190f70626aa0e202369b5ec4012c3fabe6f5d229cce04772db9a94fa5a0eb39655e2e4ad105c38afbb4af56a56c0996a8c7d4fc72350e3d
-  languageName: node
-  linkType: hard
-
 "@types/glob@npm:~7.2.0":
   version: 7.2.0
   resolution: "@types/glob@npm:7.2.0"
@@ -3071,40 +3061,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hexo@https://github.com/dimaslanjaka/hexo/raw/1a61a20/releases/hexo.tgz":
-  version: 7.0.0-rc1
-  resolution: "@types/hexo@https://github.com/dimaslanjaka/hexo/raw/1a61a20/releases/hexo.tgz"
-  dependencies:
-    abbrev: ^2.0.0
-    archy: ^1.0.0
-    bluebird: ^3.7.2
-    hexo-cli: ^4.3.0
-    hexo-front-matter: ^4.0.0
-    hexo-fs: ^4.1.1
-    hexo-i18n: ^2.0.0
-    hexo-log: ^4.0.1
-    hexo-util: ^3.0.1
-    js-yaml: ^4.1.0
-    js-yaml-js-types: ^1.0.0
-    micromatch: ^4.0.4
-    moize: ^6.1.0
-    moment: ^2.29.1
-    moment-timezone: ^0.5.34
-    nunjucks: ^3.2.3
-    picocolors: ^1.0.0
-    pretty-hrtime: ^1.0.3
-    resolve: ^1.22.0
-    strip-ansi: ^6.0.0
-    text-table: ^0.2.0
-    tildify: ^2.0.0
-    titlecase: ^1.1.3
-    warehouse: ^5.0.0
-  bin:
-    hexo: ./bin/hexo
-  checksum: 2746d70afbededda769dca0983c2d563072007eafdf649c6b9bb66404a9ac4a916b65fc779f784425bca672acc378423ee39eca6d70fe3819ef0a368a9f3ce99
-  languageName: node
-  linkType: hard
-
 "@types/http-cache-semantics@npm:^4.0.1":
   version: 4.0.1
   resolution: "@types/http-cache-semantics@npm:4.0.1"
@@ -3147,7 +3103,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:^21.1.0, @types/jsdom@npm:^21.1.1":
+"@types/jsdom@npm:^21.1.0":
   version: 21.1.1
   resolution: "@types/jsdom@npm:21.1.1"
   dependencies:
@@ -3181,46 +3137,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/linkify-it@npm:*":
-  version: 3.0.2
-  resolution: "@types/linkify-it@npm:3.0.2"
-  checksum: dff8f10fafb885422474e456596f12d518ec4cdd6c33cca7a08e7c86b912d301ed91cf5a7613e148c45a12600dc9ab3d85ad16d5b48dc1aaeda151a68f16b536
-  languageName: node
-  linkType: hard
-
-"@types/lodash.deburr@npm:^4.1.7":
-  version: 4.1.7
-  resolution: "@types/lodash.deburr@npm:4.1.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 995f1362473498ac2b2c1ec2da3bfd10f329dab9f11a4469a7876574f938ed391b05c1ba554a58acd53da35e0fdf0933c8c8e980beafc8f43ed4256db33e55d0
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*, @types/lodash@npm:^4.14.194":
-  version: 4.14.194
-  resolution: "@types/lodash@npm:4.14.194"
-  checksum: 113f34831c461469d91feca2dde737f88487732898b4d25e9eb23b087bb193985f864d1e1e0f3b777edc5022e460443588b6000a3b2348c966f72d17eedc35ea
-  languageName: node
-  linkType: hard
-
-"@types/markdown-it@npm:^12.2.3":
-  version: 12.2.3
-  resolution: "@types/markdown-it@npm:12.2.3"
-  dependencies:
-    "@types/linkify-it": "*"
-    "@types/mdurl": "*"
-  checksum: 868824a3e4d00718ba9cd4762cf16694762a670860f4b402e6e9f952b6841a2027488bdc55d05c2b960bf5078df21a9d041270af7e8949514645fe88fdb722ac
-  languageName: node
-  linkType: hard
-
-"@types/mdurl@npm:*":
-  version: 1.0.2
-  resolution: "@types/mdurl@npm:1.0.2"
-  checksum: 79c7e523b377f53cf1f5a240fe23d0c6cae856667692bd21bf1d064eafe5ccc40ae39a2aa0a9a51e8c94d1307228c8f6b121e847124591a9a828c3baf65e86e2
-  languageName: node
-  linkType: hard
-
 "@types/micromatch@npm:^4.0.2":
   version: 4.0.2
   resolution: "@types/micromatch@npm:4.0.2"
@@ -3244,7 +3160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimatch@npm:*, @types/minimatch@npm:^5.1.2":
+"@types/minimatch@npm:*":
   version: 5.1.2
   resolution: "@types/minimatch@npm:5.1.2"
   checksum: 0391a282860c7cb6fe262c12b99564732401bdaa5e395bee9ca323c312c1a0f45efbf34dce974682036e857db59a5c9b1da522f3d6055aeead7097264c8705a8
@@ -3495,7 +3411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/yargs@npm:^17.0.24, @types/yargs@npm:^17.0.8":
+"@types/yargs@npm:^17.0.8":
   version: 17.0.24
   resolution: "@types/yargs@npm:17.0.24"
   dependencies:
@@ -4022,13 +3938,6 @@ __metadata:
   version: 6.0.1
   resolution: "ansi-regex@npm:6.0.1"
   checksum: 1ff8b7667cded1de4fa2c9ae283e979fc87036864317da86a2e546725f96406746411d0d85e87a2d12fa5abd715d90006de7fa4fa0477c92321ad3b4c7d4e169
-  languageName: node
-  linkType: hard
-
-"ansi-sequence-parser@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "ansi-sequence-parser@npm:1.1.0"
-  checksum: 75f4d3a4c555655a698aec05b5763cbddcd16ccccdbfd178fb0aa471ab74fdf98e031b875ef26e64be6a95cf970c89238744b26de6e34af97f316d5186b1df53
   languageName: node
   linkType: hard
 
@@ -10178,41 +10087,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hexo-post-parser@workspace:^, hexo-post-parser@workspace:packages/hexo-post-parser":
-  version: 0.0.0-use.local
-  resolution: "hexo-post-parser@workspace:packages/hexo-post-parser"
+"hexo-post-parser@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "hexo-post-parser@npm:1.2.8"
   dependencies:
-    "@jest/globals": ^29.5.0
-    "@types/bluebird": ^3.5.38
-    "@types/debug": ^4.1.7
-    "@types/fs-extra": ^11.0.1
-    "@types/glob": ^8.1.0
-    "@types/gulp": ^4.0.10
-    "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/1a61a20/releases/hexo.tgz"
-    "@types/jsdom": ^21.1.1
-    "@types/lodash": ^4.14.194
-    "@types/lodash.deburr": ^4.1.7
-    "@types/markdown-it": ^12.2.3
-    "@types/node": ^20.1.1
-    "@types/yargs": ^17.0.24
-    "@typescript-eslint/eslint-plugin": ^5.59.5
-    "@typescript-eslint/parser": ^5.59.5
     ansi-colors: ^4.1.3
-    axios: ^1.4.0
-    binary-collections: ^1.0.3
+    axios: ^1.3.6
     bluebird: ^3.7.2
     chalk: ^4.1.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
-    debug: ^4.3.4
-    eslint: ^8.40.0
-    eslint-config-prettier: ^8.8.0
-    eslint-plugin-prettier: ^4.2.1
     front-matter: ^4.0.2
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
-    gulp: ^4.0.2
-    jest: ^29.5.0
-    jsdom: ^22.0.0
+    jsdom: ^21.1.1
     lodash: ^4.17.21
     lodash.deburr: ^4.1.0
     markdown-it: ^13.0.1
@@ -10223,26 +10108,17 @@ __metadata:
     markdown-it-mark: ^3.0.1
     markdown-it-sub: ^1.0.0
     markdown-it-sup: ^1.0.0
-    minimatch: ^9.0.0
     moment-timezone: ^0.5.43
-    prettier: ^2.8.8
-    rimraf: ^5.0.0
     sbg-utility: ^1.0.9
-    semver: ^7.5.0
     showdown: ^2.1.0
     tiny-typed-emitter: ^2.1.0
     true-case-path: ^2.2.1
-    ts-node: ^10.9.1
-    typedoc: ^0.24.7
-    typedoc-plugin-missing-exports: ^2.0.0
-    typescript: ^5.0.4
     upath: ^2.0.1
-    yaml: ^2.2.2
-    yargs: ^17.7.2
-  peerDependencies:
-    hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  languageName: unknown
-  linkType: soft
+    yaml: ^2.2.1
+    yargs: ^17.7.1
+  checksum: a19fa7456c36301cc2f1e1b330c388277ab6bf35719ded7260a84663186206dbf37b96750f6b9aeee607169daea359054b56f8dc7d0a1092399e4c523f20c9f3
+  languageName: node
+  linkType: hard
 
 "hexo-renderer-markdown-it@git+https://github.com/hexojs/hexo-renderer-markdown-it":
   version: 7.0.0
@@ -12286,7 +12162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^21.1.0":
+"jsdom@npm:^21.1.0, jsdom@npm:^21.1.1":
   version: 21.1.2
   resolution: "jsdom@npm:21.1.2"
   dependencies:
@@ -13037,13 +12913,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lunr@npm:^2.3.9":
-  version: 2.3.9
-  resolution: "lunr@npm:2.3.9"
-  checksum: 176719e24fcce7d3cf1baccce9dd5633cd8bdc1f41ebe6a180112e5ee99d80373fe2454f5d4624d437e5a8319698ca6837b9950566e15d2cae5f2a543a3db4b8
-  languageName: node
-  linkType: hard
-
 "magic-string@npm:^0.25.7":
   version: 0.25.9
   resolution: "magic-string@npm:0.25.9"
@@ -13300,15 +13169,6 @@ __metadata:
   bin:
     markdown-it: bin/markdown-it.js
   checksum: faf5891d389dc433bcf21d3fbff2009beb044b42b117c92f4848899780ca1a2282a209e3ff4672db4afed726a7248304ec473e6e242a7d6498af7113d31974e7
-  languageName: node
-  linkType: hard
-
-"marked@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "marked@npm:4.3.0"
-  bin:
-    marked: bin/marked.js
-  checksum: 0db6817893952c3ec710eb9ceafb8468bf5ae38cb0f92b7b083baa13d70b19774674be04db5b817681fa7c5c6a088f61300815e4dd75a59696f4716ad69f6260
   languageName: node
   linkType: hard
 
@@ -17316,7 +17176,7 @@ __metadata:
     hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz"
     hexo-is: ^1.0.5
     hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
-    hexo-post-parser: "workspace:^"
+    hexo-post-parser: ^1.2.8
     hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
     jest: ^29.5.0
     micromatch: ^4.0.5
@@ -17419,7 +17279,7 @@ __metadata:
     git-command-helper: ^1.2.2
     glob: ^10.2.2
     gulp: ^4.0.2
-    hexo-post-parser: "workspace:^"
+    hexo-post-parser: ^1.2.8
     highlight.js: 11.8.0
     instant-indexing: "workspace:^"
     jest: ^29.5.0
@@ -17775,18 +17635,6 @@ __metadata:
   version: 1.8.1
   resolution: "shell-quote@npm:1.8.1"
   checksum: 5f01201f4ef504d4c6a9d0d283fa17075f6770bfbe4c5850b074974c68062f37929ca61700d95ad2ac8822e14e8c4b990ca0e6e9272e64befd74ce5e19f0736b
-  languageName: node
-  linkType: hard
-
-"shiki@npm:^0.14.1":
-  version: 0.14.2
-  resolution: "shiki@npm:0.14.2"
-  dependencies:
-    ansi-sequence-parser: ^1.1.0
-    jsonc-parser: ^3.2.0
-    vscode-oniguruma: ^1.7.0
-    vscode-textmate: ^8.0.0
-  checksum: f2a14302b1803617e3ff1b751a5c87b4af4ad15214dc00e9215402e42940a84a0b956cf55d628f25dbf1296b18e277b8529571cd9359b971ac599a0ab11303e7
   languageName: node
   linkType: hard
 
@@ -18298,7 +18146,7 @@ __metadata:
   dependencies:
     git-command-helper: ^1.2.2
     google-news-sitemap: ^1.0.10
-    hexo-post-parser: "workspace:^"
+    hexo-post-parser: ^1.2.8
     instant-indexing: "workspace:^"
     safelinkify: ^1.1.18
     sbg-api: "workspace:^"
@@ -18872,7 +18720,7 @@ __metadata:
     hexo-generator-category: "git+https://github.com/hexojs/hexo-generator-category"
     hexo-generator-index: "git+https://github.com/hexojs/hexo-generator-index"
     hexo-generator-tag: "git+https://github.com/hexojs/hexo-generator-tag"
-    hexo-post-parser: "workspace:^"
+    hexo-post-parser: ^1.2.8
     hexo-renderer-markdown-it: "git+https://github.com/hexojs/hexo-renderer-markdown-it"
     hexo-renderers: ^1.0.8
     hexo-server: ^3.0.0
@@ -19462,31 +19310,6 @@ __metadata:
   version: 0.0.6
   resolution: "typedarray@npm:0.0.6"
   checksum: 33b39f3d0e8463985eeaeeacc3cb2e28bc3dfaf2a5ed219628c0b629d5d7b810b0eb2165f9f607c34871d5daa92ba1dc69f49051cf7d578b4cbd26c340b9d1b1
-  languageName: node
-  linkType: hard
-
-"typedoc-plugin-missing-exports@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "typedoc-plugin-missing-exports@npm:2.0.0"
-  peerDependencies:
-    typedoc: 0.24.x
-  checksum: 93981a78a83bd5c725c3342f9f2803df0b44067118b407ab06185c8f5a4e7998b1baeadba073ffb596f67048a3a692556b8ab09c617bcf039024226662a87949
-  languageName: node
-  linkType: hard
-
-"typedoc@npm:^0.24.7":
-  version: 0.24.7
-  resolution: "typedoc@npm:0.24.7"
-  dependencies:
-    lunr: ^2.3.9
-    marked: ^4.3.0
-    minimatch: ^9.0.0
-    shiki: ^0.14.1
-  peerDependencies:
-    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x
-  bin:
-    typedoc: bin/typedoc
-  checksum: 9ae433566cb02b96deb9eb2a9f5b23d1b199f5aeb61ca8c7e2653ff5d339fbfb4d526e024febab4f3278332978814aaa0885f1d5925ba21a441d93a611510ac3
   languageName: node
   linkType: hard
 
@@ -20114,20 +19937,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-oniguruma@npm:^1.7.0":
-  version: 1.7.0
-  resolution: "vscode-oniguruma@npm:1.7.0"
-  checksum: 53519d91d90593e6fb080260892e87d447e9b200c4964d766772b5053f5699066539d92100f77f1302c91e8fc5d9c772fbe40fe4c90f3d411a96d5a9b1e63f42
-  languageName: node
-  linkType: hard
-
-"vscode-textmate@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "vscode-textmate@npm:8.0.0"
-  checksum: 127780dfea89559d70b8326df6ec344cfd701312dd7f3f591a718693812b7852c30b6715e3cfc8b3200a4e2515b4c96f0843c0eacc0a3020969b5de262c2a4bb
-  languageName: node
-  linkType: hard
-
 "w3c-xmlserializer@npm:^4.0.0":
   version: 4.0.0
   resolution: "w3c-xmlserializer@npm:4.0.0"
@@ -20636,7 +20445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.0.0, yargs@npm:^17.2.1, yargs@npm:^17.3.1, yargs@npm:^17.7.2":
+"yargs@npm:^17.0.0, yargs@npm:^17.2.1, yargs@npm:^17.3.1, yargs@npm:^17.7.1, yargs@npm:^17.7.2":
   version: 17.7.2
   resolution: "yargs@npm:17.7.2"
   dependencies:

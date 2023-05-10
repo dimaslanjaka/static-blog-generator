@@ -76,7 +76,6 @@
       "packages/sbg-api",
       "packages/sbg-server",
       "packages/sbg-cli",
-      "packages/hexo-post-parser",
       "packages/static-blog-generator",
       "packages/instant-indexing",
       "test"
