@@ -1,7 +1,7 @@
-const { spawn } = require('git-command-helper');
+const { spawnAsync } = require('cross-spawn');
 
 async function bundleJSRollUp() {
-  await spawn('rollup', ['-c'], { stdio: 'inherit', cwd: __dirname });
+  await spawnAsync('rollup', ['-c'], { stdio: 'inherit', cwd: __dirname });
 }
 
 module.exports = { bundleJSRollUp };

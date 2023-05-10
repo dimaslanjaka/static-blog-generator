@@ -1,6 +1,6 @@
 const path = require('upath');
 const glob = require('glob');
-const { spawn } = require('git-command-helper');
+const { spawn: spawnAsync } = require('cross-spawn');
 
 const cdir = path.toUnix(__dirname);
 const src = path.join(cdir, './source/styles');
@@ -29,7 +29,7 @@ async function bundleCSS(done) {
       output
     ];
     console.log(...args);
-    await spawn('npx', args, { cwd: cdir });
+    await spawnAsync('npx', args, { cwd: cdir });
   }
   done();
 }
