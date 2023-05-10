@@ -17159,6 +17159,7 @@ __metadata:
   resolution: "sbg-api@workspace:packages/sbg-api"
   dependencies:
     "@jest/globals": ^29.5.0
+    "@types/gulp": ^4.0.10
     "@types/micromatch": ^4.0.2
     "@types/node": ^20.1.1
     "@types/nunjucks": ^3.2.2
@@ -17313,6 +17314,46 @@ __metadata:
     upath: ^2.0.1
     write-file-atomic: ^5.0.1
     yaml: ^2.2.2
+  languageName: unknown
+  linkType: soft
+
+"sbg-site-test@workspace:test":
+  version: 0.0.0-use.local
+  resolution: "sbg-site-test@workspace:test"
+  dependencies:
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
+    axios: ^1.2.6
+    axios-cache-interceptor: ^1.0.0
+    cross-env: ^7.0.3
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    git-command-helper: ^1.2.2
+    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
+    hexo-asset-link: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-asset-link.tgz"
+    hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
+    hexo-cli: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-cli.tgz"
+    hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz"
+    hexo-generator-archive: "git+https://github.com/hexojs/hexo-generator-archive"
+    hexo-generator-category: "git+https://github.com/hexojs/hexo-generator-category"
+    hexo-generator-index: "git+https://github.com/hexojs/hexo-generator-index"
+    hexo-generator-tag: "git+https://github.com/hexojs/hexo-generator-tag"
+    hexo-post-parser: ^1.2.8
+    hexo-renderer-markdown-it: "git+https://github.com/hexojs/hexo-renderer-markdown-it"
+    hexo-renderers: ^1.0.8
+    hexo-server: ^3.0.0
+    hexo-shortcodes: ^1.0.3
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
+    hpagent: ^1.2.0
+    js-yaml: ^4.1.0
+    moment: ^2.29.4
+    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
+    prompt: ^1.3.0
+    sbg-api: "*"
+    sbg-cli: "*"
+    sbg-server: "*"
+    sbg-utility: "*"
+    static-blog-generator: "*"
+    warehouse: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/warehouse.tgz"
+    yaml: ^2.2.1
   languageName: unknown
   linkType: soft
 
@@ -18700,46 +18741,6 @@ __metadata:
   checksum: 3b34a3d77165a2cb82b34014b3aba93b1c4637a5011807557dc2f3da826c59975a5ccad765721c4648b39817e3472789f9b0fa98fc854c5c1c7a1e632aacdc28
   languageName: node
   linkType: hard
-
-"test@workspace:test":
-  version: 0.0.0-use.local
-  resolution: "test@workspace:test"
-  dependencies:
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
-    axios: ^1.2.6
-    axios-cache-interceptor: ^1.0.0
-    cross-env: ^7.0.3
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
-    git-command-helper: ^1.2.2
-    hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
-    hexo-asset-link: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-asset-link.tgz"
-    hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
-    hexo-cli: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-cli.tgz"
-    hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz"
-    hexo-generator-archive: "git+https://github.com/hexojs/hexo-generator-archive"
-    hexo-generator-category: "git+https://github.com/hexojs/hexo-generator-category"
-    hexo-generator-index: "git+https://github.com/hexojs/hexo-generator-index"
-    hexo-generator-tag: "git+https://github.com/hexojs/hexo-generator-tag"
-    hexo-post-parser: ^1.2.8
-    hexo-renderer-markdown-it: "git+https://github.com/hexojs/hexo-renderer-markdown-it"
-    hexo-renderers: ^1.0.8
-    hexo-server: ^3.0.0
-    hexo-shortcodes: ^1.0.3
-    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
-    hpagent: ^1.2.0
-    js-yaml: ^4.1.0
-    moment: ^2.29.4
-    nodejs-package-types: "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz"
-    prompt: ^1.3.0
-    sbg-api: "*"
-    sbg-cli: "*"
-    sbg-server: "*"
-    sbg-utility: "*"
-    static-blog-generator: "*"
-    warehouse: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/warehouse.tgz"
-    yaml: ^2.2.1
-  languageName: unknown
-  linkType: soft
 
 "text-extensions@npm:^1.0.0":
   version: 1.9.0
