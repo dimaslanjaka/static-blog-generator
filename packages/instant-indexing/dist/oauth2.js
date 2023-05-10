@@ -222,16 +222,16 @@ function googleAuthenticate(scopes, rewrite) {
                     });
                     var server = http_1.default
                         .createServer(function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-                        var qs_1, tokens, e_1;
+                        var qs, tokens, e_1;
                         return __generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
                                     _a.trys.push([0, 3, , 4]);
                                     if (!(req.url.indexOf('/auth') > -1)) return [3 /*break*/, 2];
-                                    qs_1 = new url_1.default.URL(req.url, 'http://localhost:4000').searchParams;
+                                    qs = new url_1.default.URL(req.url, 'http://localhost:4000').searchParams;
                                     res.end('Authentication successful! Please return to the console.');
                                     server.destroy();
-                                    return [4 /*yield*/, oauth2Client.getToken(qs_1.get('code'))];
+                                    return [4 /*yield*/, oauth2Client.getToken(qs.get('code'))];
                                 case 1:
                                     tokens = (_a.sent()).tokens;
                                     oauth2Client.credentials = tokens; // eslint-disable-line require-atomic-updates
