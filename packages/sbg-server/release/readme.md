@@ -1,6 +1,24 @@
-# Release `sbg-server` Tarball
+# Release `sbg-server` tarball
+## Releases
+| version | tarball url |
+| :--- | :--- |
+| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-server/release/sbg-server-1.0.5.tgz |
+| 1.0.7 | https://github.com/dimaslanjaka/static-blog-generator/raw/0e4a843/packages/sbg-server/release/sbg-server-1.0.7.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/35c95aa/packages/sbg-server/release/sbg-server.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz |
 
-## Get URL of `sbg-server` Release Tarball
+use this tarball with `resolutions`:
+```json
+{
+  "resolutions": {
+    "sbg-server": "<url of tarball>"
+  }
+}
+```
+
+## Releases
+
+    ## Get URL of `sbg-server` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url
