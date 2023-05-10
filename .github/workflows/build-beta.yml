@@ -20,7 +20,7 @@ on:
 
 # run single job
 concurrency:
-  group: build
+  group: build-${{ github.event_name }}
   cancel-in-progress: true
 
 jobs:
@@ -159,7 +159,7 @@ jobs:
         name: what changes
         id: changes
       - name: commit and push
-        if: steps.changes.outputs.staged > 0 || steps.changes.outputs.commits > 0
+        if: (steps.changes.outputs.staged > 0 || steps.changes.outputs.commits > 0) && github.event_name != 'workflow_call'
         shell: bash
         run: |
           git config --global user.email "dimaslanjaka@gmail.com"
