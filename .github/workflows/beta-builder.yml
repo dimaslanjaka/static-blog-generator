@@ -132,7 +132,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         name: upload build result
         with:
-          name: my-artifact
+          name: dist-artifact
           path: |
             ./yarn.lock
             ./packages/**/dist
