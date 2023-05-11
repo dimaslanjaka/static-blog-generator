@@ -1,0 +1,28 @@
+name: Beta Tester
+
+on:
+  push:
+    paths-ignore:
+      - '**/release*/**'
+  pull_request:
+    types:
+      - closed
+  workflow_dispatch:
+
+# run single job
+concurrency:
+  group: beta-ci
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/beta-builder.yml
+    secrets: inherit
+  test:
+    needs: build
+    uses: ./.github/workflows/beta-tester.yml
+    secrets: inherit
+  push:
+    needs: test
+    uses: ./.github/workflows/beta-push.yml
+    secrets: inherit

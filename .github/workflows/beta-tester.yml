@@ -1,25 +1,9 @@
 name: Beta Tester
 
-on:
-  push:
-    paths-ignore:
-      - '**/release*/**'
-  pull_request:
-    types:
-      - closed
-  workflow_dispatch:
-
-# run single job
-concurrency:
-  group: test
-  cancel-in-progress: true
+on: [workflow_dispatch, workflow_call]
 
 jobs:
-  build:
-    uses: ./.github/workflows/beta-builder.yml
-    secrets: inherit
   test:
-    needs: build
     env:
       NODE_OPTIONS: '--max-old-space-size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
@@ -142,7 +126,3 @@ jobs:
       - run: sbg deploy copy
         working-directory: test
         name: test copy generated site to deployment directory
-  push:
-    needs: test
-    uses: ./.github/workflows/beta-push.yml
-    secrets: inherit
