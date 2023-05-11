@@ -1,4 +1,4 @@
-name: Build Beta
+name: Beta Commiter
 
 on: [workflow_dispatch, workflow_call]
 
