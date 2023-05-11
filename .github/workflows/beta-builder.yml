@@ -92,17 +92,6 @@ jobs:
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
-      - name: Get env
-        shell: bash
-        run: |
-          echo "branch      : ${{ steps.set-env.outputs.GITHUB_BRANCH }}"
-          echo "commit msg  : ${{ github.event.head_commit.message }}"
-          echo "commit hash : ${{ steps.set-env.outputs.GITHUB_SHA_SHORT }}"
-          echo "commit url  : ${{ steps.set-env.outputs.GITHUB_COMMIT_URL }}"
-          echo "runner url  : ${{ steps.set-env.outputs.GITHUB_RUNNER_URL }}"
-          echo "cache npm   : ${{ steps.set-env.outputs.CACHE_NPM }}"
-          echo "cache yarn  : ${{ steps.set-env.outputs.CACHE_YARN }}"
-
       - uses: actions/cache@v3 # pat-s/always-upload-cache@v3.0.11
         id: cache
         name: get caches
