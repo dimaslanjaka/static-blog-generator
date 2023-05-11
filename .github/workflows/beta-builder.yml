@@ -126,3 +126,5 @@ jobs:
             ./yarn.lock
             ./packages/**/dist
             ./packages/**/release*
+            !**/node_modules/**
+            !**/tmp/**
