@@ -1,4 +1,4 @@
-name: Builder
+name: Beta Builder
 
 on: [workflow_call, workflow_dispatch]
 
