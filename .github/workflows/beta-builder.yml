@@ -134,7 +134,6 @@ jobs:
         with:
           name: my-artifact
           path: |
-            **/.yarn
             ./yarn.lock
             ./packages/**/dist
             ./packages/**/release*
