@@ -52,7 +52,7 @@
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz",
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz",
-    "jsdom": "21.1.2",
+    "jsdom": "22.0.0",
     "jsonc-parser": "^3.2.0",
     "micromatch": "^4.0.5",
     "minimatch": "^9.0.0",
