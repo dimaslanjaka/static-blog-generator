@@ -120,11 +120,13 @@ jobs:
         name: build by ${{ github.event_name }}
       - uses: actions/upload-artifact@v3
         name: upload build result
+        timeout-minutes: 10
         with:
           name: dist-artifact
           path: |
             ./yarn.lock
             ./packages/**/dist
-            ./packages/**/release*
+            ./packages/**/release*/readme.md
+            ./packages/**/release*/*.tgz
             !**/node_modules/**
             !**/tmp/**
