@@ -9,6 +9,11 @@ on:
       - closed
   workflow_dispatch:
 
+# run single job
+concurrency:
+  group: test
+  cancel-in-progress: true
+
 jobs:
   build:
     uses: ./.github/workflows/beta-builder.yml
