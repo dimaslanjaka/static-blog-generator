@@ -106,7 +106,7 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: my-artifact
+          name: dist-artifact
 
       - name: Install Global Packages
         run: |
