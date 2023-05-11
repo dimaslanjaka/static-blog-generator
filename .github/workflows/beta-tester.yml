@@ -1,4 +1,4 @@
-name: Beta CI
+name: Beta Tester
 
 on: [workflow_dispatch, workflow_call]
 
