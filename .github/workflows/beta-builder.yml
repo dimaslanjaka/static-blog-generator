@@ -122,6 +122,7 @@ jobs:
         name: upload build result
         timeout-minutes: 10
         with:
+          if-no-files-found: 'warn'
           name: dist-artifact
           path: |
             ./yarn.lock
