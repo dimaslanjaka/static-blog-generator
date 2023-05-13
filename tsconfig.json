@@ -9,7 +9,6 @@
   },
   "compilerOptions": {
     "outDir": "./tmp/dist",
-    "types": ["nodejs-package-types"],
     "allowJs": true,
     "checkJs": false
   },
