@@ -115,10 +115,13 @@ jobs:
           npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
 
       - run: yarn install
-        name: install by ${{ github.event_name }}
-      - run: npm run build
+        name: installing
+      - run: yarn run build
         shell: bash
-        name: build by ${{ github.event_name }}
+        name: building
+      - run: yarn run pack
+        shell: bash
+        name: packing
       - uses: actions/upload-artifact@v3
         name: upload build result
         timeout-minutes: 10
@@ -130,5 +133,6 @@ jobs:
             ./packages/**/dist
             ./packages/**/release*/readme.md
             ./packages/**/release*/*.tgz
+            ./packages/sbg-server/src/public
             !**/node_modules/**
             !**/tmp/**
