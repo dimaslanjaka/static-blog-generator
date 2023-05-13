@@ -16,7 +16,7 @@
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update:ncu": "npx npm-check-updates -u -x jsdom",
+    "update:ncu": "npx npm-check-updates --enginesNode -u -x jsdom",
     "update": "run-s update:**",
     "test": "jest --runInBand",
     "build": "tsc --build tsconfig.build.json",

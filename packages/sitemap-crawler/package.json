@@ -9,7 +9,7 @@
     "build": "tsc",
     "postbuild": "node packer.js --yarn",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update:ncu": "npx npm-check-updates -u -x chalk",
+    "update:ncu": "npx npm-check-updates --enginesNode -u -x chalk",
     "update": "run-s update:**",
     "pack": "node packer.js --yarn"
   },

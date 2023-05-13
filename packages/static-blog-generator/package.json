@@ -31,7 +31,7 @@
     "test": "jest --runInBand",
     "build": "tsc -p tsconfig.build.json",
     "pack": "node packer.js -yarn",
-    "update": "npm-check-updates -u -x sbg-api,sbg-utility,sbg-cli,sbg-server"
+    "update": "npm-check-updates --enginesNode -u -x sbg-api,sbg-utility,sbg-cli,sbg-server"
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "start": "yarn build && yarn workspace sbg-site-test run start",
-    "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
+    "update:ncu": "npm-check-updates --enginesNode -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
     "update": "run-s \"update:**\"",
     "build": "yarn workspaces foreach --no-private run build",
     "docs": "node docs.js",
