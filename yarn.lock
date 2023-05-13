@@ -2631,9 +2631,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-commonjs@npm:^24.1.0":
-  version: 24.1.0
-  resolution: "@rollup/plugin-commonjs@npm:24.1.0"
+"@rollup/plugin-commonjs@npm:^25.0.0":
+  version: 25.0.0
+  resolution: "@rollup/plugin-commonjs@npm:25.0.0"
   dependencies:
     "@rollup/pluginutils": ^5.0.1
     commondir: ^1.0.1
@@ -2646,7 +2646,7 @@ __metadata:
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 42faafc9bc8e04d75c86bb50d693ebb9c5eee19bf9ab3c09780b872547d12ff5ea85cfec7da75f5176d0aa4b5233101f667f44b85b331450a7bb14c95180852e
+  checksum: f014f98f161ba4573e5101cf262c152bdcd8cfebf9cf4872f8bb657d20e20d8e2dc51af5339fe10772d19007e63044bd79881af0db4fe9babe9e96d0c0eeb328
   languageName: node
   linkType: hard
 
@@ -3020,14 +3020,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/gulp-cache@npm:^0.4.5":
-  version: 0.4.5
-  resolution: "@types/gulp-cache@npm:0.4.5"
+"@types/gulp-cache@npm:^0.4.6":
+  version: 0.4.6
+  resolution: "@types/gulp-cache@npm:0.4.6"
   dependencies:
     "@types/gulp-util": "*"
     "@types/node": "*"
     "@types/vinyl": "*"
-  checksum: 902330405da44d8668d85dad62b732ac1800bdccf1738658f906c6bb47eb0d580fa603849da378c0badafea68b644d43d8108376ebbcdef84f9693d1e864af1c
+  checksum: 0ed78f6062655260332b5b021305fe5fe80525a92c94c7f7ff41ff929187843a16ca6d94d71fe7dd16b23c667748619fb1c58fa7fd7a8b1620538f77076ad9a7
   languageName: node
   linkType: hard
 
@@ -3199,6 +3199,13 @@ __metadata:
   version: 18.16.7
   resolution: "@types/node@npm:18.16.7"
   checksum: dbff7d41a050557cc81aa37cb186aaf3a799b3001bc4bb1015b240398abde1f9d0ac1e943959bba7f2ab2701292ae407a9ee2fc0f735a05b28bfc97d0b2b5e91
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.1.3":
+  version: 20.1.3
+  resolution: "@types/node@npm:20.1.3"
+  checksum: abdb593f662a079715b4e9df0c706822e49814dd641fa5a6226ab73fb931cbfc9cfd5df92e09c13dbc90dbc8fce680d29cb735b88899d661481d93e09a8df2be
   languageName: node
   linkType: hard
 
@@ -9252,6 +9259,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"git-command-helper@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "git-command-helper@npm:1.2.3"
+  dependencies:
+    "@expo/spawn-async": ^1.7.2
+    binary-collections: ^1.0.3
+    bluebird: ^3.7.2
+    core-js: ^3.30.2
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/5560156be9745d682c7a5e727cffeee0b0179ab1"
+    deepmerge-ts: ^5.1.0
+    fs-extra: ^11.1.1
+    hexo-util: "https://github.com/dimaslanjaka/hexo/raw/cdff687/releases/hexo-util.tgz"
+    ini: ^4.1.0
+    lodash: ^4.17.21
+    minimatch: ^9.0.0
+    sbg-utility: ^1.0.9
+    upath: ^2.0.1
+  checksum: 5817b343ae6a66c6e858a2f54da953a6e501cdf8d7b17c2e77dbbc93e6065841b8669adf981f0910e8916e592041e769226f2fea23e8602d62b65986c3b89335
+  languageName: node
+  linkType: hard
+
 "git-embed@npm:^0.0.1":
   version: 0.0.1
   resolution: "git-embed@npm:0.0.1"
@@ -10156,6 +10184,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hexo-post-parser@npm:^1.2.9":
+  version: 1.2.9
+  resolution: "hexo-post-parser@npm:1.2.9"
+  dependencies:
+    ansi-colors: ^4.1.3
+    axios: ^1.4.0
+    bluebird: ^3.7.2
+    chalk: ^4.1.2
+    front-matter: ^4.0.2
+    fs-extra: ^11.1.1
+    glob: ^10.2.3
+    jsdom: ~21.1.2
+    lodash: ^4.17.21
+    lodash.deburr: ^4.1.0
+    markdown-it: ^13.0.1
+    markdown-it-abbr: ^1.0.4
+    markdown-it-anchor: ^8.6.7
+    markdown-it-attrs: ^4.1.6
+    markdown-it-footnote: ^3.0.3
+    markdown-it-mark: ^3.0.1
+    markdown-it-sub: ^1.0.0
+    markdown-it-sup: ^1.0.0
+    moment-timezone: ^0.5.43
+    sbg-utility: ^1.1.0
+    showdown: ^2.1.0
+    tiny-typed-emitter: ^2.1.0
+    true-case-path: ^2.2.1
+    upath: ^2.0.1
+    yaml: ^2.2.2
+    yargs: ^17.7.2
+  peerDependencies:
+    hexo: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+  checksum: c6982f3f9e34541268a194521be6ff90c4c81b0ee5ca3f3b62ed6169d0d75b138797b82715eb5db7f6890eba9453741b02da9b57bdd9f3be8ac2c2f3c4b6b7d0
+  languageName: node
+  linkType: hard
+
 "hexo-renderer-markdown-it@git+https://github.com/hexojs/hexo-renderer-markdown-it":
   version: 7.0.0
   resolution: "hexo-renderer-markdown-it@https://github.com/hexojs/hexo-renderer-markdown-it.git#commit=7fba76c7ca1fe579d58e3591a4fb9d930aa200a0"
@@ -10809,7 +10873,7 @@ __metadata:
     "@googleapis/searchconsole": ^1.0.0
     "@jest/globals": ^29.5.0
     "@types/fs-extra": ^11.0.1
-    "@types/node": ^20.1.2
+    "@types/node": ^20.1.3
     "@types/server-destroy": ^1.0.1
     "@typescript-eslint/eslint-plugin": ^5.59.5
     "@typescript-eslint/parser": ^5.59.5
@@ -10824,7 +10888,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-promise: ^6.1.1
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     google-auth-library: ^8.8.0
     googleapis: ^118.0.0
     jest: ^29.5.0
@@ -12215,7 +12279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:21.1.2, jsdom@npm:^21.1.0, jsdom@npm:^21.1.1":
+"jsdom@npm:21.1.2, jsdom@npm:^21.1.0, jsdom@npm:^21.1.1, jsdom@npm:~21.1.2":
   version: 21.1.2
   resolution: "jsdom@npm:21.1.2"
   dependencies:
@@ -17264,13 +17328,13 @@ __metadata:
     "@types/fs-extra": ^11.0.1
     "@types/gulp": ^4.0.10
     "@types/micromatch": ^4.0.2
-    "@types/node": ^20.1.2
+    "@types/node": ^20.1.3
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/5560156be9745d682c7a5e727cffeee0b0179ab1"
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     glob: ^10.2.3
     gulp: ^4.0.2
     gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
@@ -17280,7 +17344,7 @@ __metadata:
     hexo-front-matter: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-front-matter.tgz"
     hexo-is: ^1.0.5
     hexo-log: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-log.tgz"
-    hexo-post-parser: ^1.2.8
+    hexo-post-parser: ^1.2.9
     hexo-util: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo-util.tgz"
     jest: ^29.5.0
     micromatch: ^4.0.5
@@ -17306,14 +17370,14 @@ __metadata:
   dependencies:
     "@jest/globals": ^29.5.0
     "@types/he": ^1.2.0
-    "@types/node": ^20.1.2
+    "@types/node": ^20.1.3
     "@types/xml2js": ^0.4.11
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/5560156be9745d682c7a5e727cffeee0b0179ab1"
     deepmerge-ts: ^5.1.0
     eslint: ^8.40.0
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     he: ^1.2.0
     hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
     hexo-blogger-xml: "https://github.com/dimaslanjaka/hexo-blogger-xml/tarball/master"
@@ -17343,7 +17407,7 @@ __metadata:
     "@babel/preset-env": ^7.21.5
     "@jest/globals": ^29.5.0
     "@popperjs/core": ^2.11.7
-    "@rollup/plugin-commonjs": ^24.1.0
+    "@rollup/plugin-commonjs": ^25.0.0
     "@rollup/plugin-multi-entry": ^6.0.0
     "@rollup/plugin-node-resolve": ^15.0.2
     "@types/cookie-parser": ^1.4.3
@@ -17351,7 +17415,7 @@ __metadata:
     "@types/debug": ^4.1.7
     "@types/express": ^4.17.17
     "@types/express-session": ^1.17.7
-    "@types/node": ^20.1.2
+    "@types/node": ^20.1.3
     "@types/object-assign": ^4.0.30
     "@types/retry": ^0.12.2
     "@types/serve-index": ^1.9.1
@@ -17381,10 +17445,10 @@ __metadata:
     find-yarn-workspace-root: ^2.0.0
     flowbite: ^1.6.5
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     glob: ^10.2.3
     gulp: ^4.0.2
-    hexo-post-parser: ^1.2.8
+    hexo-post-parser: ^1.2.9
     highlight.js: 11.8.0
     instant-indexing: "workspace:^"
     jest: ^29.5.0
@@ -17461,7 +17525,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@*, sbg-utility@^1.0.8, sbg-utility@^1.0.9, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@*, sbg-utility@^1.0.8, sbg-utility@^1.0.9, sbg-utility@^1.1.0, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -17469,8 +17533,8 @@ __metadata:
     "@types/bluebird": ^3.5.38
     "@types/debug": ^4.1.7
     "@types/fs-extra": ^11.0.1
-    "@types/gulp-cache": ^0.4.5
-    "@types/node": ^20.1.2
+    "@types/gulp-cache": ^0.4.6
+    "@types/node": ^20.1.3
     "@types/nunjucks": ^3.2.2
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
     ansi-colors: ^4.1.3
@@ -17481,7 +17545,7 @@ __metadata:
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/5560156be9745d682c7a5e727cffeee0b0179ab1"
     debug: ^4.3.4
     fs-extra: ^11.1.1
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     glob: ^10.2.3
     gulp: ^4.0.2
     hexo: "https://github.com/dimaslanjaka/hexo/raw/deff4a14bb6b7e7f4ab364e481434c84b5a3a3f5/releases/hexo.tgz"
