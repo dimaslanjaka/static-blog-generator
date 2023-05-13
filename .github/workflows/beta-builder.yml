@@ -99,6 +99,7 @@ jobs:
           path: |
             ${{ steps.set-env.outputs.CACHE_NPM }}
             ${{ steps.set-env.outputs.CACHE_YARN }}
+            ./packages/sbg-server/src/public
             **/.yarn
             ./yarn.lock
             **/dist
