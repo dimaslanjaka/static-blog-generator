@@ -4,7 +4,7 @@ on: [workflow_dispatch, workflow_call]
 
 # run single job
 concurrency:
-  group: push
+  group: beta-push
   cancel-in-progress: true
 
 jobs:
