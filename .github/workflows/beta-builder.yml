@@ -92,7 +92,7 @@ jobs:
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3 # pat-s/always-upload-cache@v3.0.11
+      - uses: actions/cache/save@v3
         id: cache
         name: get caches
         with:
@@ -104,9 +104,6 @@ jobs:
             ./yarn.lock
             **/dist
           key: ${{ runner.os }}-${{ env.node_version }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.node_version }}
-            ${{ runner.os }}-
 
       - name: Install Global Packages
         run: |
