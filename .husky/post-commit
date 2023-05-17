@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # make cygwin bin as priority
 export PATH="node_modules/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
@@ -7,7 +7,7 @@ case `uname` in
   *CYGWIN*) (set -o igncr) 2>/dev/null && set -o igncr;; # cygwin encoding fix
 esac
 
-. "$(dirname "$0")/_/husky.sh"
+. "$(dirname -- "$0")/_/husky.sh"
 
 command -v git-lfs >/dev/null 2>&1 || { echo >&2 "\nThis repository is configured for Git LFS but 'git-lfs' was not found on your path. If you no longer wish to use Git LFS, remove this hook by deleting '.git/hooks/post-commit'.\n"; exit 2; }
 git lfs post-commit "$@"
