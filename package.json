@@ -97,6 +97,13 @@
     }
   },
   "resolutions": {
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-asset-link.tgz",
+    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-cli.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-front-matter.tgz",
+    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-log.tgz",
+    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-util.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/warehouse.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b9c848068544a2d26726a5a9b4faa7cc80/release/cross-spawn.tgz"
