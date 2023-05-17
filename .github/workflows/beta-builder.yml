@@ -116,6 +116,17 @@ jobs:
 
       - run: yarn install
         name: installing
+        continue-on-error: true
+        id: install
+        shell: bash
+      - name: clean install
+        if: steps.install.outcome == 'failure'
+        shell: bash
+        run: |
+          yarn cache clean --all
+          find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+          truncate -s 0 yarn.lock
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
       - run: yarn run build
         shell: bash
         name: building
