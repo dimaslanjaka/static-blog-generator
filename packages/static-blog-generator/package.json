@@ -2,7 +2,8 @@
   "name": "static-blog-generator",
   "description": "Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.",
   "dependencies": {
-    "git-command-helper": "^1.2.2",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz",
+    "git-command-helper": "^1.2.3",
     "google-news-sitemap": "^1.0.10",
     "hexo-post-parser": "^1.2.10",
     "instant-indexing": "workspace:^",
@@ -11,12 +12,6 @@
     "sbg-cli": "workspace:^",
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^"
-  },
-  "overrides": {
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
-  },
-  "resolutions": {
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
   },
   "version": "3.0.1",
   "main": "dist/index.js",
@@ -31,7 +26,8 @@
     "test": "jest --runInBand",
     "build": "tsc -p tsconfig.build.json",
     "pack": "node packer.js -yarn",
-    "update": "npm-check-updates --enginesNode -u -x sbg-api,sbg-utility,sbg-cli,sbg-server"
+    "update:ncu": "npm-check-updates --enginesNode -u -x sbg-api,sbg-utility,sbg-cli,sbg-server",
+    "update": "run-s \"update:**\""
   },
   "repository": {
     "type": "git",
