@@ -18315,7 +18315,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
     git-command-helper: ^1.2.3
     google-news-sitemap: ^1.0.10
     hexo-post-parser: ^1.2.10
