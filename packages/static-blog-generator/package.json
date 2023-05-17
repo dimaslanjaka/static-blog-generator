@@ -4,7 +4,7 @@
   "dependencies": {
     "git-command-helper": "^1.2.2",
     "google-news-sitemap": "^1.0.10",
-    "hexo-post-parser": "^1.2.8",
+    "hexo-post-parser": "^1.2.10",
     "instant-indexing": "workspace:^",
     "safelinkify": "^1.1.18",
     "sbg-api": "workspace:^",
