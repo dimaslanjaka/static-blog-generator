@@ -9236,7 +9236,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-command-helper@npm:*, git-command-helper@npm:^1.2.2":
+"git-command-helper@npm:*":
   version: 1.2.2
   resolution: "git-command-helper@npm:1.2.2"
   dependencies:
@@ -14175,7 +14175,7 @@ __metadata:
     through2: ^4.0.2
     true-case-path: ^2.2.1
     upath: ^2.0.1
-  checksum: 90c9bb66c9d3ae68180509a7946e944b64e3c00c8e7579c218e5cbdb8d36c8e350b9812f05e7a088334d41a392625ab38e0be23cb6fd543c3c718aa43a7f8ac1
+  checksum: 058f616c07f320a7dfa0bf36367901a7a8cfca332c802ea486712bb309f1c84cc073c29a00f1372c76b3633533f21ce5665e36ae8e1c98073319359f0bbb1d84
   languageName: node
   linkType: hard
 
@@ -17434,7 +17434,7 @@ __metadata:
     binary-collections: ^1.0.3
     cross-env: ^7.0.3
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
-    git-command-helper: ^1.2.2
+    git-command-helper: ^1.2.3
     hexo: ^7.0.0-rc1
     hexo-asset-link: ^2.2.1
     hexo-browsersync: "https://github.com/hexojs/hexo-browsersync/tarball/master"
@@ -18315,7 +18315,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
-    git-command-helper: ^1.2.2
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b/release/cross-spawn.tgz"
+    git-command-helper: ^1.2.3
     google-news-sitemap: ^1.0.10
     hexo-post-parser: ^1.2.10
     instant-indexing: "workspace:^"
