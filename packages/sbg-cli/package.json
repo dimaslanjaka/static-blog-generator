@@ -59,7 +59,7 @@
     "sbg-api": "workspace:^",
     "sbg-server": "workspace:^",
     "sbg-utility": "workspace:^",
-    "xml2js": "^0.5.0",
+    "xml2js": "^0.6.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
