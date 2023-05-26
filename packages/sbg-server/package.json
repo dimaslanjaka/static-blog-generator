@@ -101,7 +101,7 @@
     "autoprefixer": "^10.4.14",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "eslint": "^8.41.0",
     "eslint-config-plugin": "^1.0.11",
     "eslint-config-prettier": "^8.8.0",

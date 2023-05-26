@@ -43,7 +43,7 @@
     "axios": "^1.4.0",
     "bluebird": "^3.7.2",
     "cheerio": "^1.0.0-rc.12",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "debug": "^4.3.4",
     "fs-extra": "^11.1.1",
     "glob": "^10.2.6",
