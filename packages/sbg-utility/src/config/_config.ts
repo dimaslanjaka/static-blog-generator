@@ -1,5 +1,4 @@
 import fs from 'fs-extra';
-import git from 'git-command-helper';
 import { HexoConfig } from 'hexo/dist/hexo/index-d';
 import { join, resolve } from 'upath';
 import yaml from 'yaml';
@@ -148,8 +147,7 @@ export function deployConfig() {
   if (settledConfig.deploy.folder) {
     deployDir = join(deployDir, settledConfig.folder);
   }
-  const github = fs.existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
-  return { deployDir, github };
+  return { deployDir };
 }
 
 /**
