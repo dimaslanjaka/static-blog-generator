@@ -6905,13 +6905,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b9c848068544a2d26726a5a9b4faa7cc80/release/cross-spawn.tgz":
+"cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz":
   version: 7.0.4
-  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/2cf620b9c848068544a2d26726a5a9b4faa7cc80/release/cross-spawn.tgz"
+  resolution: "cross-spawn@https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
   dependencies:
     shebang-command: ^2.0.0
     which: ^3.0.1
-  checksum: cdd488304c7506dbe310e21ae5fe7a33edb484731a8d238dd49e1da4f657cc69160ea2075100836347172b4d690e650c28998f0ef327d9526f8f48603df657db
+  checksum: 9e39aeea6c6fbbff5d215793d96b984dd91ac87eb93ace7445b08e2713797a893b724a5f93256a3051386c8847acc4b1d70471e881cc4ddaad7b9d18be58ee12
   languageName: node
   linkType: hard
 
@@ -17657,7 +17657,7 @@ __metadata:
     "@types/nunjucks": ^3.2.2
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
     fs-extra: ^11.1.1
     git-command-helper: ^1.2.5
     glob: ^10.2.6
@@ -17699,7 +17699,7 @@ __metadata:
     "@types/xml2js": ^0.4.11
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
     deepmerge-ts: ^5.1.0
     eslint: ^8.41.0
     git-command-helper: ^1.2.5
@@ -17758,7 +17758,7 @@ __metadata:
     cookie-parser: ^1.4.6
     core-js: ^3.30.2
     cors: ^2.8.5
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
     debug: ^4.3.4
     dotenv: ^16.0.3
     eslint: ^8.41.0
@@ -17819,7 +17819,7 @@ __metadata:
     axios-cache-interceptor: ^1.0.0
     binary-collections: ^1.0.3
     cross-env: ^7.0.3
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
     git-command-helper: ^1.2.5
     hexo: ^7.0.0-rc1
     hexo-asset-link: ^2.2.1
@@ -17867,7 +17867,7 @@ __metadata:
     axios: ^1.4.0
     bluebird: ^3.7.2
     cheerio: ^1.0.0-rc.12
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
     debug: ^4.3.4
     fs-extra: ^11.1.1
     git-command-helper: ^1.2.5
@@ -18701,7 +18701,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "static-blog-generator@workspace:packages/static-blog-generator"
   dependencies:
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/5560156/release/cross-spawn.tgz"
+    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
     git-command-helper: ^1.2.5
     google-news-sitemap: ^1.0.10
     hexo-post-parser: ^1.2.10
