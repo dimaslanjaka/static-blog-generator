@@ -19,7 +19,7 @@ function standaloneRunner() {
         Logger.log('='.repeat(10) + ' input ' + '='.repeat(10));
         Logger.log(`node ${await sbgUtils.utils.string.replacePath(file.path, getConfig().cwd, '')}`);
         Logger.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
-        const child = spawn('node', [file.path], { stdio: 'inherit' });
+        const child = spawn.spawn('node', [file.path], { stdio: 'inherit' });
         child.on('close', () => {
           // drop file
           next();
