@@ -44,9 +44,9 @@ async function exitHandler(options?: { [key: string]: any; cleanup?: any; exit?:
       });
     }
   }
-  if (options.cleanup) chain(funcs);
-  if (options.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
-  if (options.exit) process.exit();
+  if (options?.cleanup) chain(funcs);
+  if (options?.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
+  if (options?.exit) process.exit();
 }
 
 /**
