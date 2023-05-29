@@ -41,7 +41,7 @@ export const readDir = function (dir: fs.PathLike, done: readDirDone) {
  * @returns
  */
 export const readDirAsync = function (dir: fs.PathLike) {
-  return new Bluebird((resolve: (files: string[]) => any, reject: (err: Error) => any) => {
+  return new Bluebird((resolve: (files: string[] | undefined) => any, reject: (err: Error) => any) => {
     readDir(dir, function (err, files) {
       if (err) reject(err);
       resolve(files);
