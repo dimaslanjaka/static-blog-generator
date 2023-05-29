@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import path from 'upath';
 
 interface readDirDone {
-  (err: Error, results?: string[]): any;
+  (err: Error | undefined | null, results?: string[]): any;
 }
 
 /**
@@ -18,7 +18,7 @@ export const readDir = function (dir: fs.PathLike, done: readDirDone) {
     let i = 0;
     (function next() {
       let file = list[i++];
-      if (!file) return done(null, results);
+      if (!file) return done(undefined, results);
       file = path.resolve(dir, file);
       fs.stat(file, function (err, stat) {
         if (!err && stat && stat.isDirectory()) {
