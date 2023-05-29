@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'upath';
-import { pathJoin, writefile } from './filemanager';
 import './JSON';
+import { pathJoin, writefile } from './filemanager';
 
 export interface PersistentCacheOpt {
   // [key: string]: any;
@@ -212,7 +212,10 @@ export class persistentCache implements PersistentCacheOpt {
    * @param name cache key
    * @param cb
    */
-  deleteEntry(name: string, cb: { (e: Error, ...args: any[]): any; (err: NodeJS.ErrnoException): void }) {
+  deleteEntry(
+    name: string,
+    cb: fs.NoParamCallback
+  ) {
     if (this.memory) {
       delete this.memoryCache[name];
 
