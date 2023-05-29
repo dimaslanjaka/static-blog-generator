@@ -31,7 +31,7 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
     }
   };
 
-  let previous = null;
+  let previous = 'THIS INITIATOR VALUE WILL NEVER EXECUTED';
   let current = normalize(baseDir);
   // loop searching
   do {
