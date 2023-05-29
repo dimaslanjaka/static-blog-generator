@@ -74,6 +74,7 @@
     "@types/debug": "^4.1.8",
     "@types/fs-extra": "^11.0.1",
     "@types/gulp-cache": "^0.4.6",
+    "@types/micromatch": "^4.0.2",
     "@types/node": "^20.2.5",
     "@types/nunjucks": "^3.2.2",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
