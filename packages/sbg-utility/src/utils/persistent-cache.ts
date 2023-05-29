@@ -315,12 +315,20 @@ export class persistentCache implements PersistentCacheOpt {
   }
 }
 
+type safeCbParam =
+  | null
+  | undefined
+  | {
+      (e: Error, ...args: any[]): any;
+      (...args: any[]): any;
+    };
+
 /**
  * safe callback
  * @param cb
  * @returns
  */
-export function safeCb(cb: { (e: Error, ...args: any[]): any }): (...args: any[]) => any {
+export function safeCb(cb: safeCbParam): (...args: any[]) => any {
   if (typeof cb === 'function') return cb;
 
   return function () {
