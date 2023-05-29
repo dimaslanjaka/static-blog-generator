@@ -12,7 +12,7 @@ interface readDirDone {
  * @returns
  */
 export const readDir = function (dir: fs.PathLike, done: readDirDone) {
-  let results = [];
+  let results = [] as string[];
   fs.readdir(dir, function (err, list) {
     if (err) return done(err);
     let i = 0;
