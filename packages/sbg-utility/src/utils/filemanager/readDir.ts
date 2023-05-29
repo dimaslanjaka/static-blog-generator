@@ -23,7 +23,7 @@ export const readDir = function (dir: fs.PathLike, done: readDirDone) {
       fs.stat(file, function (err, stat) {
         if (!err && stat && stat.isDirectory()) {
           readDir(file, function (err, res) {
-            if (!err) results = results.concat(res);
+            if (!err && Array.isArray(res)) results = results.concat(res);
             next();
           });
         } else {
