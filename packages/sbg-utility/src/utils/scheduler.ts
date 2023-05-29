@@ -30,7 +30,7 @@ export function bindProcessExit(key: string, fn: (...args: any[]) => any) {
  * @param options
  * @param exitCode
  */
-async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
+async function exitHandler(options?: { cleanup: any; exit: any }, exitCode: any = 0) {
   const funcs: Parameters<typeof chain>[0] = [];
   for (const key in fns) {
     if (Object.prototype.hasOwnProperty.call(fns, key)) {
@@ -54,22 +54,22 @@ async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) 
  */
 function triggerProcess() {
   // before exit
-  //process.on('beforeExit', exitHandler.bind(null, { exit: true }));
+  //process.on('beforeExit', exitHandler.bind(undefined, { exit: true }));
 
   //do something when app is closing
-  process.on('exit', exitHandler.bind(null, { cleanup: true }));
-  // process.on('disconnect', exitHandler.bind(null, { exit: true }));
+  process.on('exit', exitHandler.bind(undefined, { cleanup: true }));
+  // process.on('disconnect', exitHandler.bind(undefined, { exit: true }));
 
   //catches ctrl+c event
-  process.on('SIGINT', exitHandler.bind(null, { exit: true }));
-  //process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
+  process.on('SIGINT', exitHandler.bind(undefined, { exit: true }));
+  //process.on('SIGKILL', exitHandler.bind(undefined, { exit: true }));
 
   // catches "kill pid" (for example: nodemon restart)
-  process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
-  process.on('SIGUSR2', exitHandler.bind(null, { exit: true }));
+  process.on('SIGUSR1', exitHandler.bind(undefined, { exit: true }));
+  process.on('SIGUSR2', exitHandler.bind(undefined, { exit: true }));
 
   //catches uncaught exceptions
-  process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
+  process.on('uncaughtException', exitHandler.bind(undefined, { exit: true }));
 }
 
 ///// task queue manager
