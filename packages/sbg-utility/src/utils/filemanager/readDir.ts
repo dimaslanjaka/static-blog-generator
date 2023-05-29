@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import fs from 'fs-extra';
 import path from 'upath';
 
-interface readDirDone {
+export interface readDirDone {
   (err: Error | undefined | null, results?: string[]): any;
 }
 
