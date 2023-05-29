@@ -30,7 +30,7 @@ export function bindProcessExit(key: string, fn: (...args: any[]) => any) {
  * @param options
  * @param exitCode
  */
-async function exitHandler(options?: { cleanup: any; exit: any }, exitCode: any = 0) {
+async function exitHandler(options?: { [key: string]: any; cleanup?: any; exit?: any }, exitCode: any = 0) {
   const funcs: Parameters<typeof chain>[0] = [];
   for (const key in fns) {
     if (Object.prototype.hasOwnProperty.call(fns, key)) {
