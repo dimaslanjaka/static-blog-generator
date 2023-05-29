@@ -24,19 +24,18 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
    * @param dir
    * @returns
    */
-  const readPackageJSON = function (dir: string): Record<string, any> {
+  const readPackageJSON = function (dir: string): Record<string, any> | undefined {
     const file = join(dir, 'package.json');
     if (existsSync(file)) {
       return JSON.parse(readFileSync(file).toString());
     }
-    return null;
   };
 
   let previous = null;
   let current = normalize(baseDir);
   // loop searching
   do {
-    const manifest = readPackageJSON(current);
+    const manifest = readPackageJSON(current)!;
     const workspaces = extractWorkspaces(manifest);
 
     if (workspaces) {
