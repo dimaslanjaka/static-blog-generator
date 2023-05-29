@@ -145,7 +145,7 @@ export class persistentCache implements PersistentCacheOpt {
 
       if (entry.cacheUntil && new Date().getTime() > entry.cacheUntil) {
         // cache expired
-        return fallback;
+        return fallback as T;
       }
 
       return JSON.parse(entry.data);
@@ -155,10 +155,10 @@ export class persistentCache implements PersistentCacheOpt {
     try {
       data = JSON.parse(fs.readFileSync(this.buildFilePath(name), 'utf8'));
     } catch (e) {
-      return fallback;
+      return fallback as T;
     }
 
-    if (data.cacheUntil && new Date().getTime() > data.cacheUntil) return fallback;
+    if (data.cacheUntil && new Date().getTime() > data.cacheUntil) return fallback as T;
 
     return data.data;
   }
@@ -212,10 +212,7 @@ export class persistentCache implements PersistentCacheOpt {
    * @param name cache key
    * @param cb
    */
-  deleteEntry(
-    name: string,
-    cb: fs.NoParamCallback
-  ) {
+  deleteEntry(name: string, cb: fs.NoParamCallback) {
     if (this.memory) {
       delete this.memoryCache[name];
 
