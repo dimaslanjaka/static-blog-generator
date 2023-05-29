@@ -9,7 +9,7 @@ export interface JSON {
 
 JSON.stringifyWithCircularRefs = (function () {
   const refs = new Map();
-  const parents = [];
+  const parents = [] as any[];
   const path = ['this'];
 
   function clear() {
@@ -58,7 +58,7 @@ JSON.stringifyWithCircularRefs = (function () {
     return value;
   }
 
-  return function stringifyWithCircularRefs(obj, space = 2) {
+  return function stringifyWithCircularRefs(obj: any, space = 2) {
     try {
       parents.push(obj);
       return JSON.stringify(obj, checkCircular, space);
