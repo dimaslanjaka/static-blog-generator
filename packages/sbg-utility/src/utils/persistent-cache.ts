@@ -267,17 +267,15 @@ export class persistentCache implements PersistentCacheOpt {
    * @param cb
    * @returns
    */
-  keys(cb: (e: Error, ...args: any[]) => any) {
+  keys(cb: (e: Error | null, ...args: any[]) => any) {
     const self = this;
     cb = safeCb(cb);
 
     if (this.memory && !this.persist) return cb(null, Object.keys(this.memoryCache));
 
-    fs.readdir(this.getCacheDir(), onDirRead);
-
-    function onDirRead(err: Error, files: string[]) {
+    fs.readdir(this.getCacheDir(), function (err, files) {
       return err ? cb(err) : cb(err, files.map(self.transformFileNameToKey));
-    }
+    });
   }
 
   /**
