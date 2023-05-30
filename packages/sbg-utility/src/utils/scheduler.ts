@@ -3,6 +3,7 @@
 /* global hexo */
 
 import color from 'ansi-colors';
+import Bluebird from 'bluebird';
 import { chain } from './chain';
 
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
@@ -150,11 +151,13 @@ export class scheduler {
   /**
    * Execute all function lists
    */
-  static executeAll() {
-    Object.keys(functions).forEach((key) => {
+  static async executeAll() {
+    const keys = Object.keys(functions);
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
       if (scheduler.verbose) _log.info(logname, 'executing', key);
-      functions[key]();
-    });
+      await Bluebird.promisify(functions[key])();
+    }
   }
 }
 
