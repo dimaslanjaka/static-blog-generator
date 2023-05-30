@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'upath';
-import { pathJoin, writefile } from './filemanager';
 import './JSON';
+import { pathJoin, writefile } from './filemanager';
 
 export interface PersistentCacheOpt {
   // [key: string]: any;
@@ -145,7 +145,7 @@ export class persistentCache implements PersistentCacheOpt {
 
       if (entry.cacheUntil && new Date().getTime() > entry.cacheUntil) {
         // cache expired
-        return fallback;
+        return fallback as T;
       }
 
       return JSON.parse(entry.data);
@@ -155,10 +155,10 @@ export class persistentCache implements PersistentCacheOpt {
     try {
       data = JSON.parse(fs.readFileSync(this.buildFilePath(name), 'utf8'));
     } catch (e) {
-      return fallback;
+      return fallback as T;
     }
 
-    if (data.cacheUntil && new Date().getTime() > data.cacheUntil) return fallback;
+    if (data.cacheUntil && new Date().getTime() > data.cacheUntil) return fallback as T;
 
     return data.data;
   }
@@ -212,7 +212,7 @@ export class persistentCache implements PersistentCacheOpt {
    * @param name cache key
    * @param cb
    */
-  deleteEntry(name: string, cb: { (e: Error, ...args: any[]): any; (err: NodeJS.ErrnoException): void }) {
+  deleteEntry(name: string, cb: fs.NoParamCallback) {
     if (this.memory) {
       delete this.memoryCache[name];
 
@@ -267,17 +267,15 @@ export class persistentCache implements PersistentCacheOpt {
    * @param cb
    * @returns
    */
-  keys(cb: (e: Error, ...args: any[]) => any) {
+  keys(cb: (e: Error | null, ...args: any[]) => any) {
     const self = this;
     cb = safeCb(cb);
 
     if (this.memory && !this.persist) return cb(null, Object.keys(this.memoryCache));
 
-    fs.readdir(this.getCacheDir(), onDirRead);
-
-    function onDirRead(err: Error, files: string[]) {
+    fs.readdir(this.getCacheDir(), function (err, files) {
       return err ? cb(err) : cb(err, files.map(self.transformFileNameToKey));
-    }
+    });
   }
 
   /**
@@ -317,12 +315,20 @@ export class persistentCache implements PersistentCacheOpt {
   }
 }
 
+type safeCbParam =
+  | null
+  | undefined
+  | {
+      (e: Error, ...args: any[]): any;
+      (...args: any[]): any;
+    };
+
 /**
  * safe callback
  * @param cb
  * @returns
  */
-export function safeCb(cb: { (e: Error, ...args: any[]): any }): (...args: any[]) => any {
+export function safeCb(cb: safeCbParam): (...args: any[]) => any {
   if (typeof cb === 'function') return cb;
 
   return function () {
