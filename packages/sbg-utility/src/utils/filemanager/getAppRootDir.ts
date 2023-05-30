@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
-import { trueCasePathSync } from 'true-case-path';
 import path from 'upath';
+import { trueCasePathSync } from './case-path';
 
 export function getAppRootDir() {
   let currentDir = __dirname;
