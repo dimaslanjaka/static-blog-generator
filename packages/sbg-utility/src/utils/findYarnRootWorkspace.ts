@@ -35,7 +35,8 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
   let current = normalize(baseDir);
   // loop searching
   do {
-    const manifest = readPackageJSON(current)!;
+    const manifest = readPackageJSON(current);
+    if (!manifest) continue;
     const workspaces = extractWorkspaces(manifest);
 
     if (workspaces) {
