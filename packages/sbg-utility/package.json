@@ -63,7 +63,6 @@
     "safelinkify": "^1.1.18",
     "slugify": "^1.6.6",
     "through2": "^4.0.2",
-    "true-case-path": "^2.2.1",
     "tslib": "^2.5.2",
     "upath": "^2.0.1",
     "yaml": "^2.3.1"
