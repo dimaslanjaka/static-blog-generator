@@ -100,9 +100,11 @@ let settledConfig = defaults.getDefaultConfig() as Record<string, any>;
  * @param fileYML path to file `_config.yml` or working directory
  */
 export function fetchConfig(fileYML?: string) {
-  if (!fileYML.endsWith('_config.yml')) fileYML += '/_config.yml';
-  if (!fileYML) fileYML = join(process.cwd(), '_config.yml');
-
+  if (!fileYML) {
+    fileYML = join(process.cwd(), '_config.yml');
+  } else if (!fileYML.endsWith('_config.yml')) {
+    fileYML += '/_config.yml';
+  }
   const configYML = yaml.parse(fs.readFileSync(resolve(fileYML), 'utf-8'));
   setConfig(utils.object.orderKeys(configYML));
   utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
