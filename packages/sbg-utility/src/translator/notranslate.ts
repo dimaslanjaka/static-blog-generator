@@ -7,7 +7,7 @@ export default function (html: string) {
     if (!el.classList.contains('notranslate')) el.classList.add('notranslate');
   });
 
-  const content = dom.window.document.querySelector('body').innerHTML;
+  const content = dom.window.document.querySelector('body')?.innerHTML;
   dom.window.close();
   return content;
 }

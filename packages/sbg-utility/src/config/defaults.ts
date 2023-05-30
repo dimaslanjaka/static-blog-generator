@@ -112,6 +112,6 @@ export function getDefaultConfigYaml() {
   if (fs.existsSync(yml)) {
     return fs.readFileSync(join(__dirname, '_config.yml'), 'utf-8');
   } else {
-    return jsonStringifyWithCircularRefs(mappedConfig)
+    return jsonStringifyWithCircularRefs(mappedConfig);
   }
 }
