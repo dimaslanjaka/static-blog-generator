@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
-import { trueCasePathSync } from 'true-case-path';
 import path from 'upath';
+import { trueCasePathSync } from './case-path';
 
 /**
  * UNIX join path with true-case-path

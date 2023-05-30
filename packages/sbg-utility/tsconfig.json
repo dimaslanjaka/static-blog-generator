@@ -16,7 +16,9 @@
     "outDir": "./dist",
     "tsBuildInfoFile": "./tmp/tsconfig.tsbuildinfo",
     "esModuleInterop": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "strict": true,
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*", "./src/**/*.json", "./test/**/*"]
   //"references": [{ "path": "../hexo-post-parser" }, { "path": "../git-command-helper" }]

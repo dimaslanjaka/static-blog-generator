@@ -3,13 +3,13 @@
 import jsdom from 'jsdom';
 import PluginError from 'plugin-error';
 import through2 from 'through2';
-import truecasepath from 'true-case-path';
 import upath from 'upath';
+import { trueCasePathSync } from '../utils/filemanager/case-path';
 const pluginName = 'gulp-dom';
 const path = {
-  join: (...str: string[]) => upath.toUnix(truecasepath.trueCasePathSync(upath.join(...str))),
-  dirname: (str: string) => upath.toUnix(truecasepath.trueCasePathSync(upath.dirname(str))),
-  toUnix: (str: string) => upath.toUnix(truecasepath.trueCasePathSync(str))
+  join: (...str: string[]) => upath.toUnix(trueCasePathSync(upath.join(...str))),
+  dirname: (str: string) => upath.toUnix(trueCasePathSync(upath.dirname(str))),
+  toUnix: (str: string) => upath.toUnix(trueCasePathSync(str))
 };
 
 export const customPath = path;
