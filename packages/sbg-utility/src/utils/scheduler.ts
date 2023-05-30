@@ -74,7 +74,7 @@ function triggerProcess() {
 
 ///// task queue manager
 
-const functions: { [key: string]: () => any }[] = [];
+const functions: Record<string, (...args: any[]) => any> = {};
 
 /**
  * @example
@@ -119,7 +119,9 @@ export class scheduler {
       }, 3000);
     });
   }
+
   private static postponeCounter = 0;
+
   /**
    * Add function to postpone, the functions will be executed every 5 items added
    */
@@ -131,6 +133,7 @@ export class scheduler {
       scheduler.postponeCounter = 0;
     }
   }
+
   /**
    * Execute functon in key and delete
    * @param key
@@ -143,6 +146,7 @@ export class scheduler {
       if (scheduler.verbose) console.error(`function with key: ${key} is not function`);
     }
   }
+
   /**
    * Execute all function lists
    */
@@ -151,17 +155,6 @@ export class scheduler {
       if (scheduler.verbose) _log.info(logname, 'executing', key);
       functions[key]();
     });
-    scheduler.clearArray(functions);
-  }
-
-  /**
-   * Clear Array
-   * @param array
-   */
-  private static clearArray(array: any[]) {
-    while (array.length) {
-      array.pop();
-    }
   }
 }
 
