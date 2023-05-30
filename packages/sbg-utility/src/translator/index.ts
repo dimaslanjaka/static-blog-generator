@@ -24,10 +24,10 @@ interface CurlOpt {
 }
 
 class Translator {
-	sl: string;
-	tl: string;
-	result: string | Buffer;
-	debug: false;
+	sl?: string;
+	tl?: string;
+	result?: string | Buffer;
+	debug?: false;
 
 	constructor(sourceLang?: string, toLang?: string) {
 		this.sl = sourceLang;
