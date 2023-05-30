@@ -69,6 +69,7 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
+    "@tsconfig/node14": "^1.0.3",
     "@types/bluebird": "^3.5.38",
     "@types/debug": "^4.1.8",
     "@types/fs-extra": "^11.0.1",
