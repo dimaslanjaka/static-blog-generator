@@ -1,0 +1,6 @@
+*.zip
+src/config/*.json
+dist/config/*.json
+node_modules
+.env
+.cache

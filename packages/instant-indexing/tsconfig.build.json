@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
+  },
+  "include": ["src/**/*.js", "src/**/*.ts", "src/**/*.json"],
+  "exclude": ["node_modules", "dist", "src/config/*.json", "**/*.runner.ts", "**/*.test.ts", "test"]
+}
