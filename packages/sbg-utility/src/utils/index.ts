@@ -3,6 +3,7 @@ export * as json from './JSON';
 export * from './array';
 export * as array from './array';
 export * from './chain';
+export * from './date';
 export * from './debug';
 export * from './filemanager';
 export * as filemanager from './filemanager';
