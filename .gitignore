@@ -15,7 +15,7 @@ ___*
 **/.rollup.cache/**
 **/package.tgz
 .env
-
+.git-rewrite
 /packages/**/package-lock.json
 
 # disable dist
