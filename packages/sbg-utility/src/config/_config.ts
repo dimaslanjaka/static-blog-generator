@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import { HexoConfig } from 'hexo/dist/hexo/index-d';
+import Hexo from 'hexo';
 import { join, resolve } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
@@ -7,6 +7,8 @@ import * as defaults from './defaults';
 
 const configFileJSON = join(__dirname, '_config.json');
 if (!fs.existsSync(configFileJSON)) fs.writeFileSync(configFileJSON, '{}');
+
+export type HexoConfig = Hexo['config'];
 
 export interface ProjConf extends HexoConfig {
   [key: string]: any;
