@@ -3,7 +3,7 @@
 import fs from 'fs-extra';
 import { spawnAsync } from 'git-command-helper';
 import { stdin as process_input, stdout as process_output } from 'node:process';
-import * as readline from 'node:readline/promises';
+import * as readline from 'node:readline';
 import { feed, sitemap } from 'sbg-api';
 import SBGServer from 'sbg-server';
 import path from 'upath';
@@ -62,7 +62,12 @@ yargs
     async function ({ key }) {
       if (!key) {
         const rl = readline.createInterface({ input: process_input, output: process_output });
-        const answer = await rl.question('Clean all caches? y/yes/n/no: ');
+        const answer = await new Promise((resolve: (resultInput: string) => any) => {
+          rl.question('Clean all caches? y/yes/n/no: ', (input) => {
+            rl.close();
+            resolve(input);
+          });
+        });
         if (answer === 'yes' || answer === 'y') {
           await api.clean('all');
         } else {
@@ -207,7 +212,10 @@ yargs
           break;
 
         case 'copy':
-          await api.deploy.copy();
+          await api.deploy.copy({
+            config: api.config,
+            cwd: api.cwd
+          });
           break;
       }
     }

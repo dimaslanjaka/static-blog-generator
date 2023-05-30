@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../sbg-api"
+		},
+		{
+			"path": "../sbg-utility"
+		},
+		{
+			"path": "../../test"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.njk": "njk",
+			"*.nj": "njk",
+			"*.css": "tailwindcss"
+		},
+		"emmet.showExpandedAbbreviation": "always",
+		"emmet.includeLanguages": {
+			"ejs": "html",
+			"njk": "html",
+			"nunjucks": "html",
+			"Nunjucks": "html"
+		},
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"tailwindCSS.emmetCompletions": true,
+		"tailwindCSS.includeLanguages": {
+			"plaintext": "html"
+		},
+		"npm.packageManager": "yarn",
+		"eslint.packageManager": "yarn"
+	}
+}

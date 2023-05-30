@@ -1,0 +1,13 @@
+#!/bin/bash
+
+npx --no -- commitlint --edit "$1"
+
+HOOK_NAME="commit-msg"
+arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
+for i in "${arr_variable[@]}"
+do
+  FILE="packages/${i}/githooks/${HOOK_NAME}"
+  if [ -f "$FILE" ]; then
+    sh "${FILE}" $@ 2>/dev/null
+  fi
+done

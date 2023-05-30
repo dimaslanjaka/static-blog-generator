@@ -1,0 +1,24 @@
+import { testCwd } from './env';
+process.cwd = () => testCwd;
+//
+import { describe, expect, test } from '@jest/globals';
+import path from 'path';
+import defaults from '../src';
+
+describe('get source posts', () => {
+  const cacheDirectory = path.join(__dirname, '../tmp');
+  let posts: defaults.ResultSourcePosts[];
+
+  beforeAll(async () => {
+    posts = await defaults.getSourcePosts({
+      cwd: testCwd,
+      post_dir: 'src-posts',
+      cacheDirectory
+    });
+  }, 90000);
+
+  test('post length > 0', () => {
+    expect(Array.isArray(posts)).toBeTruthy();
+    expect(posts.length > 0).toBeTruthy();
+  });
+});

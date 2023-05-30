@@ -21,7 +21,7 @@ const config: import('jest').Config = {
   verbose: false,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
-  rootDir: './',
+  rootDir: __dirname,
   roots: [
     '<rootDir>/packages/sbg-cli',
     '<rootDir>/packages/sbg-api',
@@ -53,6 +53,8 @@ const config: import('jest').Config = {
     '!**/node_modules/**',
     '!**/vendor/**',
     '!**/test/**',
+    '!**/dist/**',
+    '!**/tmp/**',
     '!**/*.{test,spec}.{js,ts}'
   ],
 
@@ -92,7 +94,7 @@ const config: import('jest').Config = {
       ...sbgApiConfig
     },
     {
-      displayName: 'UTILS',
+      displayName: 'UTILITY',
       testMatch: ['<rootDir>/packages/sbg-utility/test/**/*.{test,spec}.{ts,js}'],
       ...sbgUtilityConfig
     },

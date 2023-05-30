@@ -1,10 +1,12 @@
 const path = require('upath');
 const glob = require('glob');
-const { spawn } = require('git-command-helper');
+const { spawnAsync } = require('cross-spawn');
+const fs = require('fs');
 
 const cdir = path.toUnix(__dirname);
 const src = path.join(cdir, './source/styles');
 const dist = path.join(cdir, './src/public/css');
+if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true });
 const scan = glob.sync('**/*.{css,scss,less}', { cwd: src }) || [];
 const entries = scan.map((str) => {
   return {
@@ -28,10 +30,19 @@ async function bundleCSS(done) {
       '-o',
       output
     ];
-    console.log(...args);
-    await spawn('npx', args, { cwd: cdir });
+    console.log(args[0], ...args.slice(1));
+    await spawnAsync(args[0], args.slice(1), {
+      cwd: cdir,
+      stdio: 'inherit',
+      shell: true
+    });
   }
-  done();
+  if (typeof done === 'function') done();
 }
 
 module.exports = { bundleCSS };
+
+if (require.main === module) {
+  // call when runned directly
+  bundleCSS();
+}

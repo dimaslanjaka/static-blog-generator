@@ -13,6 +13,17 @@ const entries = scan.map((str) => {
     output: path.join(dist, str)
   };
 });
+const globals = {
+  jquery: '$',
+  moment: 'moment',
+  'moment-timezone': 'MomentTimezone',
+  flowbite: 'flowbite',
+  'core-js': 'CoreJS',
+  'highlight.js': 'hljs',
+  axios: 'axios',
+  'markdown-it': 'MarkdownIt',
+  codemirror: 'CodeMirror'
+};
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -24,17 +35,10 @@ module.exports = {
       // dir: dist,
       file: o.output,
       format: 'umd',
-      name: path.basename(o.output)
+      name: path.basename(o.output),
+      globals
     };
   }),
-  external: [
-    'moment',
-    'moment-timezone',
-    'flowbite',
-    'core-js',
-    'highlight.js',
-    'axios',
-    'markdown-it'
-  ], // <-- suppresses the warning
+  external: Object.keys(globals), // <-- suppresses the warning
   plugins: [resolve(), commonjs(), multi()]
 };

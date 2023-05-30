@@ -1,18 +1,34 @@
 import fs from 'fs-extra';
-import git from 'git-command-helper';
 import Hexo from 'hexo';
-import * as hexoPostParser from 'hexo-post-parser';
-import { join } from 'upath';
+import { join, resolve } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
 import * as defaults from './defaults';
 
-export interface ProjConf extends Hexo.Config {
+const configFileJSON = join(__dirname, '_config.json');
+if (!fs.existsSync(configFileJSON)) fs.writeFileSync(configFileJSON, '{}');
+
+export type HexoConfig = Hexo['config'];
+
+export interface ProjConf extends HexoConfig {
   [key: string]: any;
   /**
    * Source posts
    */
   post_dir: string;
+  /**
+   * deployment directory (can be absolute path)
+   * @example
+   * \<project\>/.deploy_git
+   * ```yaml
+   * deploy_dir: .deploy_git
+   * ```
+   * at somewhere on your pc
+   * ```yaml
+   * deploy_dir: '/usr/home/site/my username'
+   * ```
+   */
+  deploy_dir: string;
   /**
    * Project CWD
    */
@@ -20,8 +36,23 @@ export interface ProjConf extends Hexo.Config {
   /**
    * Deployment options
    */
-  deploy: defaults.importConfig['deploy'] & ReturnType<typeof deployConfig>;
-  external_link: defaults.importConfig['external_link'] &
+  deploy: HexoConfig['deploy'] &
+    defaults.importConfig['deploy'] &
+    ReturnType<typeof deployConfig> & {
+      /**
+       * copy to subfolder of site
+       * @example
+       * deployment location at \<project\>/.deploy_git/docs
+       * ```yaml
+       * deploy_dir: .deploy_git
+       * deploy:
+       *  folder: docs
+       * ```
+       */
+      folder?: string;
+    };
+  external_link: HexoConfig['external_link'] &
+    defaults.importConfig['external_link'] &
     boolean & {
       safelink?: import('safelinkify').SafelinkOptions;
     };
@@ -64,17 +95,23 @@ export interface LabelMapper {
 
 let settledConfig = defaults.getDefaultConfig() as Record<string, any>;
 
-export function fetchConfig(fileYML: string) {
-  if (!fileYML.endsWith('_config.yml')) fileYML += '/_config.yml';
-  if (fs.existsSync(fileYML)) {
-    const configYML = yaml.parse(fs.readFileSync(fileYML, 'utf-8'));
-    setConfig(utils.object.orderKeys(configYML));
-    utils.filemanager.writefile(join(__dirname, '_config.json'), JSON.stringify(configYML, null, 2));
+/**
+ * find `_config.yml`
+ * @param fileYML path to file `_config.yml` or working directory
+ */
+export function fetchConfig(fileYML?: string) {
+  if (!fileYML) {
+    fileYML = join(process.cwd(), '_config.yml');
+  } else if (!fileYML.endsWith('_config.yml')) {
+    fileYML += '/_config.yml';
   }
+  const configYML = yaml.parse(fs.readFileSync(resolve(fileYML), 'utf-8'));
+  setConfig(utils.object.orderKeys(configYML));
+  utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
 }
 
 // fetch _config.yml first init
-fetchConfig(join(process.cwd(), '_config.yml'));
+// fetchConfig(join(process.cwd(), '_config.yml'));
 
 /**
  * Config setter
@@ -84,8 +121,6 @@ fetchConfig(join(process.cwd(), '_config.yml'));
 export function setConfig(obj: Record<string, any> | ProjConf) {
   settledConfig = Object.assign(settledConfig || {}, obj);
 
-  // update hexo-post-parser config
-  hexoPostParser.setConfig(settledConfig);
   return getConfig();
 }
 
@@ -96,14 +131,27 @@ export function setConfig(obj: Record<string, any> | ProjConf) {
  */
 export function getConfig() {
   settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
-  //const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   return settledConfig as ProjConf;
 }
 
+/**
+ * get deployment config
+ * @returns
+ */
 export function deployConfig() {
-  const deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
-  const github = fs.existsSync(deployDir) ? new git(deployDir) : ({ submodule: [] as git[] } as unknown as git);
-  return { deployDir, github };
+  let deployDir: string;
+  if (settledConfig.deploy_dir) {
+    // deploy_dir was set
+    deployDir = settledConfig.deploy_dir;
+  } else {
+    // fallback get from deploy.type
+    deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+  }
+  // subfolder - assign deploy.folder
+  if (settledConfig.deploy.folder) {
+    deployDir = join(deployDir, settledConfig.folder);
+  }
+  return { deployDir };
 }
 
 /**

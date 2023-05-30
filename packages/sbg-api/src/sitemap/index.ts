@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import { readFileSync } from 'fs-extra';
 import gulp from 'gulp';
 import gulpDom from 'gulp-dom';
-import { default as hexo } from 'hexo';
+import Hexo from 'hexo';
 import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
@@ -14,9 +14,12 @@ import {
   getConfig,
   Logger,
   noop,
-  setConfig, sitemapCrawlerAsync, writefile
+  setConfig,
+  sitemapCrawlerAsync,
+  writefile
 } from 'sbg-utility';
 import { join } from 'upath';
+import { gulpOpt } from '../gulp-options';
 import { yoastSeo } from './yoast-sitemap';
 
 /*
@@ -124,7 +127,7 @@ export interface SitemapOptions {
  */
 export function hexoGenerateSitemap(config = getConfig()) {
   return new Bluebird((resolve) => {
-    const instance = new hexo(config.cwd);
+    const instance = new Hexo(config.cwd);
     instance.init().then(() => {
       instance.load().then(function () {
         env.addFilter('formatUrl', (str) => {
@@ -145,7 +148,7 @@ export function hexoGenerateSitemap(config = getConfig()) {
 
         if (!config.sitemap) return Logger.log('[sitemap] config.sitemap not configured in _config.yml');
         const locals = instance.locals;
-        const { skip_render } = config;
+        const skip_render = config.skip_render as string[] | string;
 
         if (!sitemap.tags || !sitemap.categories) {
           return Logger.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
@@ -201,7 +204,7 @@ export function hexoGenerateSitemap(config = getConfig()) {
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
         const publicDir = join(config.cwd, config.public_dir);
         gulp
-          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
+          .src('**/*.html', { cwd: publicDir, ignore: commonIgnore } as gulpOpt)
           .pipe(
             gulpDom(function () {
               // auto discovery sitemap

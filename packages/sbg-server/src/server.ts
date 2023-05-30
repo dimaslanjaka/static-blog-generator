@@ -1,7 +1,9 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
-import findWorkspaceRoot from 'find-yarn-workspace-root';
+// import findWorkspaceRoot from 'find-yarn-workspace-root';
+import dotenv from 'dotenv';
+import session from 'express-session';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
@@ -10,12 +12,20 @@ import { debug } from 'sbg-utility';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
+import { sessionFileStoreConfig } from './middleware/session-file-helpers';
+import { sessionFileStore } from './middleware/session-file-store';
 import routePost from './post';
+
+const FileStore = sessionFileStore(session);
+const fileStoreOptions: Partial<sessionFileStoreConfig> = {
+  logFn: debug('sbg-server').extend('session')
+};
 
 export interface SBGServer {
   config: {
     root: string;
     port: number;
+    cache: boolean;
   };
 }
 
@@ -24,20 +34,22 @@ export class SBGServer {
   env: nunjucks.Environment;
   api: apis.Application;
   config: SBGServer['config'];
+  cache = true;
   constructor(options?: Partial<SBGServer['config']>) {
     // update config
     serverConfig.update(options || {});
+    // use cache
+    if (options.cache) this.cache = options.cache;
     // get updated config
     this.config = serverConfig.get();
+    // search .env
+    const dotenvPath = path.join(this.config.root, '.env');
+    if (fs.existsSync(dotenvPath)) dotenv.config({ path: dotenvPath });
     // start api
     this.api = new apis.Application(this.config.root);
   }
 
   startExpress() {
-    // vars
-    const isDev = new Error('').stack?.includes('server.runner');
-    debug('sbg-server')('is-dev', isDev);
-
     const self = this;
     // init express
     this.server = express();
@@ -46,14 +58,33 @@ export class SBGServer {
     this.server.set('views', [path.join(__dirname, 'views')]);
     // init nunjuck environment
     this.env = nunjucks.configure(path.join(__dirname, 'views'), {
-      noCache: isDev,
+      // make sure cache is false
+      noCache: !this.cache,
       autoescape: true,
       express: this.server,
-      web: { useCache: isDev, async: true }
+      web: {
+        // make sure cache is true
+        useCache: this.cache,
+        async: true
+      }
     });
     setupNunjuckHelper(this.env);
     // init default middleware
-    //debug('sbg-server').extend('middleware')('enabling cors');
+    fileStoreOptions.path = path.join(this.api.cwd, 'tmp/sbg-server/sessions');
+    this.server.use(
+      session({
+        store: <any>new FileStore(<any>fileStoreOptions),
+        secret: 'sbg-server-session',
+        resave: true,
+        saveUninitialized: true,
+        genid: function (_req) {
+          if (typeof process.env.SESSION_ID === 'string') {
+            return process.env.SESSION_ID;
+          }
+          return String(Math.random());
+        }
+      })
+    );
     this.server.use(cors());
     this.server.use(express.urlencoded({ extended: true, limit: '50mb' }));
     this.server.use(express.json({ limit: '50mb' }));
@@ -66,7 +97,7 @@ export class SBGServer {
       //res.header('Access-Control-Allow-Credentials', true);
 
       // set no cache for local development from server.runner.ts
-      if (isDev) {
+      if (this.cache) {
         this.server.set('etag', false);
         res.set('Cache-Control', 'no-store');
       }
@@ -82,7 +113,7 @@ export class SBGServer {
       }
     });
     // init default express static
-    const workspaceRoot = findWorkspaceRoot(process.cwd());
+    // const workspaceRoot = findWorkspaceRoot(process.cwd());
     const statics = [
       path.join(__dirname, 'public'),
       // path.join(__dirname, '/../node_modules'),
@@ -93,10 +124,10 @@ export class SBGServer {
       // static source post when not yet generated at source dir
       path.join(this.config.root, this.api.config.post_dir),
       // static source dir such as images etc
-      path.join(this.config.root, this.api.config.source_dir),
+      path.join(this.config.root, this.api.config.source_dir)
       // path.join(__dirname, '/../../../node_modules'),
       // resolve workspace node_modules
-      path.join(workspaceRoot, 'node_modules')
+      // path.join(workspaceRoot, 'node_modules')
     ]
       .filter(fs.existsSync)
       .map((p) => {
@@ -146,11 +177,11 @@ export class SBGServer {
   /**
    * start server
    */
-  start() {
+  start(customServer?: express.Express) {
     debug('sbg-server').extend('cwd')(this.config.root);
     debug('sbg-server').extend('port')(this.config.port);
     const httpserver = http
-      .createServer(this.startExpress())
+      .createServer(customServer || this.startExpress())
       .listen(this.config.port);
     process.on('SIGTERM', () => {
       debug('sbg-server').extend('exit')(
