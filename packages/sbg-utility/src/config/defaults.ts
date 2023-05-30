@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
-import { trueCasePathSync } from 'true-case-path';
 import { join, toUnix } from 'upath';
 import * as yaml from 'yaml';
 import { jsonStringifyWithCircularRefs } from '../utils';
+import { trueCasePathSync } from '../utils/filemanager/case-path';
 import mappedConfig from './_config.json';
 
 export type importConfig = typeof mappedConfig;
