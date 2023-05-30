@@ -19,10 +19,10 @@ interface CurlOpt {
 }
 
 class Translator {
-  sl: string;
-  tl: string;
-  result: string | Buffer;
-  debug: false;
+  sl?: string;
+  tl?: string;
+  result?: string | Buffer;
+  debug?: false;
 
   constructor(sourceLang?: string, toLang?: string) {
     this.sl = sourceLang;
@@ -85,14 +85,19 @@ class Translator {
     const self = this;
     let dom = new JSDOM(html);
     const contentFrame = dom.window.document.getElementById('contentframe');
-    const iframe = contentFrame.getElementsByTagName('iframe');
-    if (iframe.length > 0) {
-      const frm: HTMLIFrameElement = iframe.item(0);
+    const iframe = contentFrame?.getElementsByTagName('iframe');
+    if (iframe && iframe.length > 0) {
+      const frm: HTMLIFrameElement | null = iframe.item(0);
+      // @fixme: callback not called
+      if (!frm) return;
       this.request(frm.src, function (_status, data, _headers, _curlInstance) {
         dom = new JSDOM(data);
         const hyperlinks = dom.window.document.getElementsByTagName('a');
         if (hyperlinks.length > 0) {
-          self.request(hyperlinks.item(0).href, function (_status, data, _headers, _curlInstance) {
+          const item0 = hyperlinks.item(0);
+          // @fixme: callback not called
+          if (!item0) return;
+          self.request(item0.href, function (_status, data, _headers, _curlInstance) {
             self.result = data;
             if (typeof callback == 'function') {
               callback(String(data));
@@ -111,13 +116,14 @@ class Translator {
     const hyperlinks: HTMLCollectionOf<HTMLAnchorElement> = dom.window.document.getElementsByTagName('a');
     for (let i = 0; i < hyperlinks.length; i++) {
       const hyperlink = hyperlinks.item(i);
+      if (!hyperlink) continue;
       const href = new URL(hyperlink.href);
       const getHref = href.searchParams.get('u');
       if (getHref && getHref.length > 0) {
         hyperlink.href = getHref;
       }
     }
-    dom.window.document.getElementById('gt-nvframe').remove();
+    dom.window.document.getElementById('gt-nvframe')?.remove();
     const head = dom.window.document.head;
     const base = head.getElementsByTagName('base');
     Array.from(base).map((basehtml: HTMLBaseElement) => {

@@ -10,7 +10,7 @@ export function orderKeys<T extends Record<string, any>>(obj: Record<string, any
     else return 0;
   });
 
-  const after = {};
+  const after = {} as Record<string, any>;
   for (let i = 0; i < keys.length; i++) {
     after[keys[i]] = obj[keys[i]];
     delete obj[keys[i]];
