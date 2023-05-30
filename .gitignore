@@ -47,4 +47,5 @@ ___*
 # sbg-utility
 packages/*
 !packages/sbg-utility
-./test
+test/
+!packages/sbg-utility/test/
