@@ -48,7 +48,8 @@ export class persistentCache implements PersistentCacheOpt {
   duration: number;
   memory: boolean;
   persist: boolean;
-  memoryCache = {};
+  memoryCache = {} as Record<string, any>;
+
   constructor(options: Partial<PersistentCacheOpt> = {}) {
     this.base =
       options.base ||
