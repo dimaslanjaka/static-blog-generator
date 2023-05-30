@@ -129,7 +129,11 @@ export async function folder_to_hash(
 ): Promise<{ filesWithHash: Record<string, string>; hash: string }> {
   return new Promise((resolvePromise, rejectPromise) => {
     options = Object.assign(
-      { encoding: 'hex' as crypto.BinaryToTextEncoding, ignored: [] as string[], pattern: '' },
+      {
+        encoding: 'hex' as crypto.BinaryToTextEncoding,
+        ignored: [] as string[],
+        pattern: ''
+      },
       options || {}
     );
     if (folder.startsWith('file:')) folder = folder.replace('file:', '');
@@ -157,7 +161,7 @@ export async function folder_to_hash(
           noext: true
         })
         .then((matches) => {
-          const filesWithHash = {};
+          const filesWithHash = {} as Record<string, any>;
           for (let i = 0; i < matches.length; i++) {
             const item = matches[i];
             const fullPath = path.join(folder, item);

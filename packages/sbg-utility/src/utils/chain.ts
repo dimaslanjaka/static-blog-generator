@@ -26,8 +26,8 @@ export async function chain(
 ) {
   // NodeJS.ReadWriteStream | Promise<any>
 
-  const run = (instance: (typeof schedule)[number]) =>
-    new Promise(function (resolve) {
+  const run = function (instance: (typeof schedule)[number]) {
+    return new Promise(function (resolve) {
       const logname = ansiColors.blueBright('chain') + '.' + ansiColors.yellowBright('run');
       if (instance.opt?.before) {
         instance.opt.before();
@@ -64,6 +64,7 @@ export async function chain(
 
       resolve.bind(this)(chain.bind(this));
     });
+  };
 
   while (schedule.length > 0) {
     const instance = schedule.shift();
