@@ -1,7 +1,7 @@
 # Static Blog Generator v3
 HexoJS GUI and Helpers - Static Blog Generator NodeJS.
 
-Static Blog Generator v3 using Gulp System.
+Static Blog Generator v3 using HexoJS.
 
 Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.
 
@@ -15,6 +15,10 @@ Features:
 - YoastSEO Sitemap
 - Export/Import Blogger and Worpdress
 - More improvisation on future
+
+## Example - Using automatic deployment with github workflow (CI)
+- [www.webmanajemen.com site generator](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/a110d0ba7752b6ec9295c353ac6f1aafd22270b8/.github/workflows/build-site.yml)
+- [reusable workflow](https://github.com/dimaslanjaka/source-posts/blob/fb396eaba81bbdced9302f3e43d01b5166f0dff5/.github/workflows/build-site.yml)
 
 # CLI
 ## standalone runner
@@ -98,3 +102,31 @@ npx sbg generate feed
 
 ## Note
 Previous stable development [513d687b4d26bbf4ea735313cb79cbcf8d04b36d](https://github.com/dimaslanjaka/static-blog-generator/commit/513d687b4d26bbf4ea735313cb79cbcf8d04b36d)
+
+## Troubleshooting
+
+### miss-configured or missing dependencies or API usages
+add below resolutions modules to `package.json`
+```json
+{
+  "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/private/release/cross-spawn.tgz",
+    "safelinkify": "https://github.com/dimaslanjaka/safelink/raw/monorepo/release/safelinkify.tgz",
+    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-api/release/sbg-api.tgz",
+    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-cli/release/sbg-cli.tgz",
+    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-utility/release/sbg-utility.tgz",
+    "sitemap-crawler": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sitemap-crawler/release/sitemap-crawler.tgz",
+    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/static-blog-generator/release/static-blog-generator.tgz",
+    "hexo-blogger-xml": "https://github.com/dimaslanjaka/hexo-blogger-xml/raw/monorepo/release/hexo-blogger-xml.tgz",
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/monorepo/release/hexo-post-parser.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-asset-link.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-front-matter.tgz",
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/warehouse.tgz",
+    "hexo-theme-landscape": "https://github.com/dimaslanjaka/hexo/raw/monorepo-v7/releases/hexo-theme-landscape.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/monorepo/release/git-command-helper.tgz",
+    "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz"
+  }
+}
+```

@@ -1,7 +1,8 @@
-import { readFileSync } from 'fs';
-import { trueCasePathSync } from 'true-case-path';
+import fs from 'fs-extra';
 import { join, toUnix } from 'upath';
 import * as yaml from 'yaml';
+import { jsonStringifyWithCircularRefs } from '../utils';
+import { trueCasePathSync } from '../utils/filemanager/case-path';
 import mappedConfig from './_config.json';
 
 export type importConfig = typeof mappedConfig;
@@ -29,6 +30,8 @@ export function getDefaultConfig() {
       trailing_html: true
     },
     // Directory
+    post_dir: 'src-posts',
+    // deploy_dir: '.deploy_git',
     source_dir: 'source',
     public_dir: 'public',
     tag_dir: 'tags',
@@ -105,5 +108,10 @@ export function getDefaultConfig() {
  * @returns
  */
 export function getDefaultConfigYaml() {
-  return readFileSync(join(__dirname, '_config.yml'), 'utf-8');
+  const yml = join(__dirname, '_config.yml');
+  if (fs.existsSync(yml)) {
+    return fs.readFileSync(join(__dirname, '_config.yml'), 'utf-8');
+  } else {
+    return jsonStringifyWithCircularRefs(mappedConfig)
+  }
 }

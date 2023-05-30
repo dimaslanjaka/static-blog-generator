@@ -4,6 +4,7 @@ import path from 'upath';
 import { writefile } from '../utils/filemanager';
 
 const configWrapperFile = path.join(__dirname, '_config_wrapper.json');
+if (!fs.existsSync(configWrapperFile)) fs.writeFileSync(configWrapperFile, '{}');
 const configWrapper: Record<string, any> = fs.existsSync(fs.readFileSync(configWrapperFile, 'utf-8'))
   ? JSON.parse(configWrapperFile)
   : {};
@@ -56,9 +57,8 @@ export class createConfig<T extends Record<string, any>> extends EventEmitter {
    */
   update(value: Record<string, any>) {
     configWrapper[this.cname] = Object.assign({}, this.get(), value);
-    if (fs.access(configWrapperFile, fs.constants.W_OK)) {
-      writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
-      this.emit('update');
-    }
+    fs.accessSync(configWrapperFile, fs.constants.W_OK);
+    writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
+    this.emit('update');
   }
 }

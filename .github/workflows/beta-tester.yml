@@ -1,0 +1,123 @@
+name: Beta Tester
+
+on: [workflow_dispatch, workflow_call]
+
+jobs:
+  test:
+    env:
+      NODE_OPTIONS: '--max-old-space-size=8192'
+      YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      node_version: 14.x
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: dimaslanjaka/static-blog-generator
+          ref: beta
+          token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: 'recursive'
+      - name: update submodules
+        shell: bash
+        run: |
+          echo "init submodules"
+          git submodule init
+          git submodule foreach "git submodule init"
+          echo "sync submodules"
+          git submodule sync
+          git submodule foreach "git submodule sync"
+          echo "update submodules"
+          mkdir -p bin >/dev/null 2>&1
+          curl -L https://github.com/dimaslanjaka/bin/raw/master/bin/submodule-install > bin/submodule-install
+          rm -rf .git/modules
+          bash ./bin/submodule-install
+          echo "disable githooks warning"
+          git config advice.ignoredHook false
+      - name: Set env
+        id: set-env
+        shell: bash
+        run: |
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH
+          echo "${GITHUB_WORKSPACE}/bin" >> $GITHUB_PATH
+          echo "${GITHUB_WORKSPACE}/node_modules/.bin" >> $GITHUB_PATH
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_OUTPUT
+          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_OUTPUT
+          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
+          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_OUTPUT
+          echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_ENV
+          echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_OUTPUT
+          YARN_CURRENT=$(yarn -v)
+          YARN_BERRY=3.2.1
+          if [[ "ok" == "$(echo | awk "(${YARN_CURRENT} > ${YARN_BERRY}) { print \"ok\"; }")" ]]; then
+            echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_ENV
+            echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+          else
+            echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
+            echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_OUTPUT
+          fi
+          echo "architecture=$(getconf LONG_BIT)" >> $GITHUB_ENV
+          if [ -f "package-lock.json" ]; then
+              echo "PACKAGE-MANAGER=npm" >> $GITHUB_OUTPUT
+              echo "PACKAGE-MANAGER=npm" >> $GITHUB_ENV
+          else
+              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_OUTPUT
+              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_ENV
+          fi
+          unameOut="$(uname -s)"
+          case "${unameOut}" in
+              Linux*)     machine=linux;;
+              Darwin*)    machine=mac;;
+              CYGWIN*)    machine=cygwin;;
+              MINGW*)     machine=mingw;;
+              *)          machine="unknown:${unameOut}"
+          esac
+          echo "machine=$machine" >> $GITHUB_OUTPUT
+          echo "machine=$machine" >> $GITHUB_ENV
+      - uses: actions/cache/restore@v3
+        id: cache
+        with:
+          path: '**/*'
+          key: ${{ runner.os }}-${{ env.node_version }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: dist-artifact
+
+      - name: Install Global Packages
+        run: |
+          corepack enable
+          yarn dlx npm i -g npm
+          npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
+
+      - run: yarn install
+      - run: |
+          arr_variable=("sbg-api" "sbg-server" "sbg-utility" "sbg-cli" "static-blog-generator" "instant-indexing")
+          for i in "${arr_variable[@]}"
+          do
+            yarn workspace $i build && yarn workspace $i run pack
+          done
+        shell: bash
+        name: build
+      - run: 'yarn workspace sbg-site-test exec "sbg clean all"'
+        name: test clean
+      - run: 'yarn workspace sbg-site-test exec "sbg post standalone"'
+        name: test post standalone
+      - run: 'yarn workspace sbg-site-test exec "sbg post copy"'
+        name: test post copy
+      - run: 'yarn workspace sbg-site-test exec "hexo generate"'
+        name: test generate site with hexo
+      - run: 'yarn workspace sbg-site-test exec "sbg generate feed"'
+        name: test generate feed
+      - run: 'yarn workspace sbg-site-test exec "sbg generate sitemap"'
+        name: test generate sitemap
+      - run: 'yarn workspace sbg-site-test exec "sbg deploy copy"'
+        name: test copy generated site to deployment directory

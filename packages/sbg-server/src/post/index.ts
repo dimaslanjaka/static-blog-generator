@@ -1,10 +1,10 @@
 import debug from 'debug';
 import express from 'express';
 import { buildPost } from 'hexo-post-parser';
-import { moment } from 'hexo-post-parser/dist/dateMapper';
+import { moment } from 'hexo-post-parser/dist/parseDateMapper';
 import * as apis from 'sbg-api';
-import { getSourcePosts } from 'sbg-api/dist/post';
-import { writefile } from 'sbg-utility';
+import { getSourcePosts } from 'sbg-api';
+import { folder_to_hash, persistentCache, writefile } from 'sbg-utility';
 import serveIndex from 'serve-index';
 import path from 'upath';
 import yaml from 'yaml';
@@ -12,29 +12,63 @@ import SBGServer from '../server';
 
 const log = debug('sbg').extend('server').extend('route').extend('post');
 const router = express.Router();
+export const cacheRouterPost = new persistentCache({
+  base: path.join(process.cwd(), 'tmp'),
+  name: 'sbg-server/post',
+  duration: 1000 * 60 * 60 * 24 // 1 day cache
+});
+
+export interface PostRequestMiddleware extends express.Request {
+  origin_post_data: apis.post.ResultSourcePosts[];
+  post_data: (apis.post.ResultSourcePosts &
+    apis.post.ResultSourcePosts['metadata'] &
+    Record<string, any>)[];
+}
 
 export default function routePost(this: SBGServer, api: apis.Application) {
   const POST_ROOT = path.join(api.cwd, api.config.post_dir);
   log('root<post>', POST_ROOT);
 
-  interface PostRequestMiddleware extends express.Request {
-    origin_post_data: apis.post.ResultSourcePosts[];
-    post_data: (apis.post.ResultSourcePosts &
-      apis.post.ResultSourcePosts['metadata'] &
-      Record<string, any>)[];
-  }
   const middleware = async function (
-    req: PostRequestMiddleware,
+    _req: PostRequestMiddleware,
     _res: express.Response,
-    next: express.NextFunction
+    _next: express.NextFunction
   ) {
-    const posts = await getSourcePosts();
-    req.origin_post_data = posts;
-    req.post_data = posts.map((parsed) =>
+    //_req.origin_post_data = _req.post_data = [];
+
+    const posts = await getSourcePosts({
+      cwd: api.config.cwd,
+      post_dir: api.config.post_dir
+    }).catch((err) => {
+      console.error('get post error', err.message);
+      return [] as apis.ResultSourcePosts[];
+    });
+    // assign to response property
+    _req.origin_post_data = posts;
+    _req.post_data = posts.map((parsed) =>
       Object.assign(parsed, parsed.metadata, { body: parsed.body })
     );
-    next(null);
+    _next(null);
   };
+
+  // get checksum all posts
+  router.all('/checksum', async function (req, res) {
+    const hash = await folder_to_hash(
+      'sha256',
+      path.join(api.cwd, api.config.post_dir),
+      {
+        ignored: ['**/node_modules', '**/dist'],
+        pattern: '**/*.md',
+        encoding: 'base64'
+      }
+    );
+    const current = cacheRouterPost.getSync('checksum', {} as typeof hash);
+    if (current !== hash) {
+      // req['session']['checksum'] = 'changed';
+      cacheRouterPost.setSync('checksum', hash);
+    }
+    res.json(hash);
+  });
 
   // list all posts
   router.get(
@@ -52,12 +86,33 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           api.config.cwd,
           '<root>'
         );
+        if (!item.title) item.title = `No Title - ${item.id}`;
         return item;
       })
     };
     res.render('post/index.njk', data);
   });
 
+  // get all posts json format
+  router.get(
+    '/json',
+    middleware,
+    async function (req: PostRequestMiddleware, res) {
+      const _data = {
+        posts: req.post_data.map((item) => {
+          item.relative_source = item.full_source.replace(
+            api.config.cwd,
+            '<root>'
+          );
+          if (!item.title) item.title = `No Title - ${item.id}`;
+          return item;
+        })
+      };
+      res.json(_data);
+    }
+  );
+
+  // edit post
   router.get(
     '/edit/:id',
     middleware,

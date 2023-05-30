@@ -1,8 +1,6 @@
-import * as wildcards from './wildcards';
+import * as wildcards from './index-exports';
+export * from './index-exports';
 export default wildcards;
-
-export * from './sitemap-crawler';
-export * from './wildcards';
 
 /*
 const sbgUtils = {

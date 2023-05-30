@@ -5,9 +5,11 @@ import debuglib from 'debug';
  * @param name
  * @returns
  */
-export default function debug(name: string) {
+export function debug(name: string) {
   return debuglib(name);
 }
+
+export default debug;
 
 /**
  * debug with default name `sbg`

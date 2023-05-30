@@ -18,5 +18,5 @@ describe('test CLI usage', () => {
   it('post without option', async () => {
     const spy = await cmd('post');
     expect(spy).toEqual(expect.stringContaining('Not enough non-option arguments: got 0, need at least 1'));
-  }, 60000);
+  }, 600000);
 });

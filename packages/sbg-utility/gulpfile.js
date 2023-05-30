@@ -36,3 +36,9 @@ function tsc(done) {
 }
 
 gulp.task('build', gulp.series(tsc, copy));
+
+async function clean() {
+  await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
+}
+
+gulp.task('clean', gulp.series(clean));

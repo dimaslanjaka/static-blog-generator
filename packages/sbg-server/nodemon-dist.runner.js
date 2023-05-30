@@ -4,11 +4,26 @@ const path = require('upath');
 // parallel run
 
 spawn
-  .spawn('yarn', ['build'], {
+  .async('yarn', ['run', 'prebuild'], {
     cwd: __dirname,
-    stdio: 'inherit'
+    stdio: 'inherit',
+    shell: true
   })
-  .once('exit', function () {
+  .then(function () {
+    return spawn.async('yarn', ['run', 'build'], {
+      cwd: __dirname,
+      stdio: 'inherit',
+      shell: true
+    });
+  })
+  .then(function () {
+    return spawn.async('yarn', ['run', 'pack'], {
+      cwd: __dirname,
+      stdio: 'inherit',
+      shell: true
+    });
+  })
+  .then(function () {
     const dist = require('./dist');
     const server = new dist.default({
       port: 4000,

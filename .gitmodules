@@ -2,23 +2,3 @@
 	path = test
 	url = https://github.com/dimaslanjaka/site
 	branch = static-blog-generator
-[submodule "packages/git-command-helper"]
-	path = packages/git-command-helper
-	url = https://github.com/dimaslanjaka/git-command-helper
-	branch = monorepo
-[submodule "packages/hexo-post-parser"]
-	path = packages/hexo-post-parser
-	url = https://github.com/dimaslanjaka/hexo-post-parser
-	branch = monorepo
-[submodule "packages/safelinkify"]
-	path = packages/safelinkify
-	url = https://github.com/dimaslanjaka/safelink
-	branch = monorepo
-[submodule "packages/google-news-sitemap"]
-	path = packages/google-news-sitemap
-	url = https://github.com/dimaslanjaka/google-news-sitemap
-	branch = monorepo
-[submodule "packages/hexo-blogger-xml"]
-	path = packages/hexo-blogger-xml
-	url = https://github.com/dimaslanjaka/hexo-blogger-xml
-	branch = monorepo

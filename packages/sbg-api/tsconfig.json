@@ -4,17 +4,14 @@
     "module": "commonjs",
     "target": "es5",
     "baseUrl": "./",
-    "outDir": "./dist",
-    // "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
+    "outDir": "./tmp/dist",
+    "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
-  "exclude": ["dist"],
+  "exclude": ["**/dist", "**/node_modules"],
   "references": [
     {
       "path": "../sbg-utility"
-    },
-    {
-      "path": "../git-command-helper"
     }
   ]
 }

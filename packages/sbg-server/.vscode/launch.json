@@ -5,13 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "npm run server:dev",
+      "command": "yarn build && yarn server:dev",
       "name": "Server Dev",
       "request": "launch",
       "type": "node-terminal"
     },
     {
-      "command": "npm run server:dist",
+      "command": "yarn build && yarn server:dist",
       "name": "Server Dist",
       "request": "launch",
       "type": "node-terminal"

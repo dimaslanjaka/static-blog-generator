@@ -3,6 +3,7 @@
 /* global hexo */
 
 import color from 'ansi-colors';
+import Bluebird from 'bluebird';
 import { chain } from './chain';
 
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
@@ -30,7 +31,7 @@ export function bindProcessExit(key: string, fn: (...args: any[]) => any) {
  * @param options
  * @param exitCode
  */
-async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) {
+async function exitHandler(options?: { [key: string]: any; cleanup?: any; exit?: any }, exitCode: any = 0) {
   const funcs: Parameters<typeof chain>[0] = [];
   for (const key in fns) {
     if (Object.prototype.hasOwnProperty.call(fns, key)) {
@@ -44,9 +45,9 @@ async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) 
       });
     }
   }
-  if (options.cleanup) chain(funcs);
-  if (options.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
-  if (options.exit) process.exit();
+  if (options?.cleanup) chain(funcs);
+  if (options?.cleanup && scheduler.verbose) _log.info(logname, `clean exit(${exitCode})`);
+  if (options?.exit) process.exit();
 }
 
 /**
@@ -54,27 +55,27 @@ async function exitHandler(options: { cleanup: any; exit: any }, exitCode: any) 
  */
 function triggerProcess() {
   // before exit
-  //process.on('beforeExit', exitHandler.bind(null, { exit: true }));
+  //process.on('beforeExit', exitHandler.bind(undefined, { exit: true }));
 
   //do something when app is closing
-  process.on('exit', exitHandler.bind(null, { cleanup: true }));
-  // process.on('disconnect', exitHandler.bind(null, { exit: true }));
+  process.on('exit', exitHandler.bind(undefined, { cleanup: true }));
+  // process.on('disconnect', exitHandler.bind(undefined, { exit: true }));
 
   //catches ctrl+c event
-  process.on('SIGINT', exitHandler.bind(null, { exit: true }));
-  //process.on('SIGKILL', exitHandler.bind(null, { exit: true }));
+  process.on('SIGINT', exitHandler.bind(undefined, { exit: true }));
+  //process.on('SIGKILL', exitHandler.bind(undefined, { exit: true }));
 
   // catches "kill pid" (for example: nodemon restart)
-  process.on('SIGUSR1', exitHandler.bind(null, { exit: true }));
-  process.on('SIGUSR2', exitHandler.bind(null, { exit: true }));
+  process.on('SIGUSR1', exitHandler.bind(undefined, { exit: true }));
+  process.on('SIGUSR2', exitHandler.bind(undefined, { exit: true }));
 
   //catches uncaught exceptions
-  process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
+  process.on('uncaughtException', exitHandler.bind(undefined, { exit: true }));
 }
 
 ///// task queue manager
 
-const functions: { [key: string]: () => any }[] = [];
+const functions: Record<string, (...args: any[]) => any> = {};
 
 /**
  * @example
@@ -119,7 +120,9 @@ export class scheduler {
       }, 3000);
     });
   }
+
   private static postponeCounter = 0;
+
   /**
    * Add function to postpone, the functions will be executed every 5 items added
    */
@@ -131,6 +134,7 @@ export class scheduler {
       scheduler.postponeCounter = 0;
     }
   }
+
   /**
    * Execute functon in key and delete
    * @param key
@@ -143,24 +147,16 @@ export class scheduler {
       if (scheduler.verbose) console.error(`function with key: ${key} is not function`);
     }
   }
+
   /**
    * Execute all function lists
    */
-  static executeAll() {
-    Object.keys(functions).forEach((key) => {
+  static async executeAll() {
+    const keys = Object.keys(functions);
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
       if (scheduler.verbose) _log.info(logname, 'executing', key);
-      functions[key]();
-    });
-    scheduler.clearArray(functions);
-  }
-
-  /**
-   * Clear Array
-   * @param array
-   */
-  private static clearArray(array: any[]) {
-    while (array.length) {
-      array.pop();
+      await Bluebird.promisify(functions[key])();
     }
   }
 }

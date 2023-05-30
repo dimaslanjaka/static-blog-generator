@@ -1,10 +1,13 @@
-import { describe, expect, test } from '@jest/globals';
+import { describe, expect, it, test } from '@jest/globals';
 import defaults, * as wilcards from '../src';
 
 // jest --runInBand imports.test
 
 describe('check method', () => {
   const props = [
+    'getConfig',
+    'fetchConfig',
+    'findYarnRootWorkspace',
     'chain',
     'debug',
     'createWriteStream',
@@ -26,7 +29,8 @@ describe('check method', () => {
     'joinPath',
     'sitemapCrawler',
     'sitemapCrawlerAsync',
-    'SiteMapCrawler'
+    'SiteMapCrawler',
+    'jsonStringifyWithCircularRefs'
   ];
 
   for (let i = 0; i < props.length; i++) {
@@ -40,4 +44,8 @@ describe('check method', () => {
       expect(typeof defaults[prop]).toBe('function');
     }, 10000);
   }
+
+  it('JSON.stringifyWithCircularRefs is function', function () {
+    expect(typeof JSON.stringifyWithCircularRefs === 'function').toBeTruthy();
+  });
 });

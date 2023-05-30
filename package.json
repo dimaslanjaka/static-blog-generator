@@ -1,6 +1,6 @@
 {
   "name": "static-blog-generator-root",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Pre-processing of all source posts/articles before rendering using hexo. Useful for low-end devices to avoid memory heap errors. With this package you can prevent using a large number of hexo plugins, because some functions (runners) are separated by task, so they are memory friendly.",
   "private": true,
   "files": [
@@ -18,17 +18,17 @@
     "!**/src/**"
   ],
   "scripts": {
-    "update:submodules": "lerna run update:ncu --no-bail --concurrency=1",
-    "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo",
-    "update": "run-s update:**",
-    "build": "lerna run build --concurrency=1",
+    "start": "yarn build && yarn workspace sbg-site-test run start",
+    "update:ncu": "npm-check-updates --enginesNode -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
+    "update": "run-s \"update:**\"",
     "docs": "node docs.js",
-    "lint": "lerna run lint --concurrency=1",
+    "lint": "yarn workspaces run lint",
     "test": "jest --coverage --runInBand --detectOpenHandles",
     "test-serve": "node jest.serve.js",
-    "prepare": "husky install",
-    "clean": "lerna clean",
-    "pack": "lerna exec \"npm run pack --if-present\""
+    "build": "yarn workspaces foreach --no-private run build",
+    "clean": "yarn workspaces foreach --no-private run clean",
+    "pack": "yarn workspaces foreach --no-private run pack",
+    "prepare": "husky install"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
@@ -38,38 +38,39 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.18.6",
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
-    "@jest/globals": "^29.4.1",
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.21.5",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@jest/globals": "^29.5.0",
     "@types/gulp": "^4.0.10",
-    "@types/hexo": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/hexo",
-    "@types/hexo-util": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/hexo-util/release/types-hexo-util.tgz",
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.11.19",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.1.2",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "babel-jest": "^29.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "babel-jest": "^29.5.0",
+    "binary-collections": "https://github.com/dimaslanjaka/bin",
     "depcheck": "^1.4.3",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
-    "jest": "^29.4.1",
-    "jest-config": "^29.4.1",
-    "jest-html-reporters": "^3.1.2",
-    "lerna": "^6.4.1",
-    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz",
-    "nodemon": "^2.0.20",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-config": "^29.5.0",
+    "jest-html-reporters": "^3.1.4",
+    "jsonc-parser": "^3.2.0",
+    "lint-staged": "^13.2.2",
+    "nodemon": "^2.0.22",
+    "npm-check-updates": "^16.10.12",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.3",
-    "rimraf": "^4.1.2",
-    "ts-jest": "^29.0.5",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.4",
     "typescript-transform-paths": "^3.4.6"
   },
   "workspaces": {
@@ -78,24 +79,14 @@
       "packages/sbg-api",
       "packages/sbg-server",
       "packages/sbg-cli",
-      "packages/safelinkify",
-      "packages/hexo-post-parser",
-      "packages/git-command-helper",
-      "packages/google-news-sitemap",
-      "packages/hexo-blogger-xml",
       "packages/static-blog-generator",
       "packages/instant-indexing",
       "test"
     ]
   },
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.5.1",
   "engines": {
-    "node": ">=14",
-    "yarn": "3.2.0"
-  },
-  "installConfig": {
-    "hoistingLimits": "none",
-    "selfReferences": true
+    "node": ">=14"
   },
   "peerDependenciesMeta": {
     "markdown-it-anchor": {
@@ -104,5 +95,17 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "resolutions": {
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-asset-link.tgz",
+    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-cli.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-front-matter.tgz",
+    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-log.tgz",
+    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/hexo-util.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/f3d89dcf/releases/warehouse.tgz",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
   }
 }
