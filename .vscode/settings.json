@@ -12,8 +12,8 @@
   },
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
-    "*.test.ts": "cd packages/sbg-utility && npm test -- $fileNameWithoutExt",
-    "*.spec.ts": "cd packages/sbg-utility && npm test -- $fileNameWithoutExt"
+    "*.test.ts": "cd $workspaceRoot/packages/sbg-utility && npm test -- $fileNameWithoutExt",
+    "*.spec.ts": "cd $workspaceRoot/packages/sbg-utility && npm test -- $fileNameWithoutExt"
   },
   "code-runner.showRunIconInEditorTitleMenu": false,
   "code-runner.showRunCommandInExplorerContextMenu": false,
