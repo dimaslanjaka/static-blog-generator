@@ -7,7 +7,7 @@ import { toUnix } from 'upath';
 import { promisify as pify } from 'util';
 
 const readdir = pify(_readdir);
-const isWindows = platform() === 'win32';
+export const isWindows = platform() === 'win32';
 const delimiter = isWindows ? '\\' : '/';
 
 export const trueCasePathSync = trueCasePathNew({ sync: true });
