@@ -5,7 +5,7 @@ import { deployConfig, fetchConfig, getConfig, setConfig } from '../src';
 import findYarnRootWorkspace from '../src/utils/findYarnRootWorkspace';
 
 describe('CONFIG', function () {
-  let testCwd = '';
+  let testCwd: string | undefined = '';
   beforeAll(async function () {
     const rootWorkspace = findYarnRootWorkspace({ base_dir: resolve(__dirname, '..') });
     const listWorkspaces = await spawn
@@ -14,13 +14,13 @@ describe('CONFIG', function () {
         res.stdout
           .split(/\r?\n/gm)
           .map((str) => str.length > 10 && (JSON.parse(str.trim()) as { name: string; location: string }))
-          .filter((o) => typeof o === 'object')
           .map((o) => {
+            if (!o) return undefined;
             o.location = resolve(rootWorkspace, o.location);
             return o;
           })
       );
-    testCwd = listWorkspaces.filter((o) => o.name === 'test')[0].location;
+    testCwd = listWorkspaces.filter((o) => o?.name === 'test')[0]?.location;
   }, 70000);
 
   it('fetchConfig()', function () {

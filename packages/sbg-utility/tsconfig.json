@@ -15,7 +15,7 @@
     "baseUrl": "./",
     //"paths": { "src": ["./src"], "test": ["./test"] },
     "outDir": "./dist",
-    //"tsBuildInfoFile": "./tmp/tsconfig.tsbuildinfo",
+    // "tsBuildInfoFile": "./tmp/tsconfig.tsbuildinfo",
     "esModuleInterop": true,
     "importHelpers": true,
     "strict": true,

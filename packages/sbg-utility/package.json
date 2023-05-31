@@ -1,12 +1,11 @@
 {
   "name": "sbg-utility",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "static-blog-generator utility",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "readme.md",
     "!**/*.tsbuildinfo",
     "!**/release*/**"
   ],
