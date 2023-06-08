@@ -81,6 +81,40 @@ export function array_shuffle<T extends any[]>(items: T): T {
 }
 
 /**
+ * generate random number
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param n
+ * @returns
+ */
+export const rand = (n: number) => 0 | (Math.random() * n);
+
+/**
+ * fast shuffle array (internal)
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param t
+ */
+function swap<T extends any[]>(t: T, i: number, j: number) {
+  const q = t[i];
+  t[i] = t[j];
+  t[j] = q;
+  return t;
+}
+
+/**
+ * fast shuffle array using swap method
+ * @see {@link https://stackoverflow.com/a/65638217/6404439}
+ * @param t
+ */
+export function array_shuffle_swap<T extends any[]>(t: T) {
+  let last = t.length;
+  let n;
+  while (last > 0) {
+    n = rand(last);
+    swap(t, n, --last);
+  }
+}
+
+/**
  * flattern array
  * @param arr
  * @returns
