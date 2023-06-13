@@ -1,3 +1,5 @@
+import * as serializer from './JSON-serializer';
+
 export interface JSON {
   /**
    * @see {@link https://stackoverflow.com/a/61962964/6404439}
@@ -7,66 +9,7 @@ export interface JSON {
   stringifyWithCircularRefs: (obj: any, space?: number) => string;
 }
 
-JSON.stringifyWithCircularRefs = (function () {
-  const refs = new Map();
-  const parents = [] as any[];
-  const path = ['this'];
-
-  function clear() {
-    refs.clear();
-    parents.length = 0;
-    path.length = 1;
-  }
-
-  function updateParents(key: string, value: any) {
-    let idx = parents.length - 1;
-    let prev = parents[idx];
-    if (prev[key] === value || idx === 0) {
-      path.push(key);
-      parents.push(value);
-    } else {
-      while (idx-- >= 0) {
-        prev = parents[idx];
-        if (prev[key] === value) {
-          idx += 2;
-          parents.length = idx;
-          path.length = idx;
-          --idx;
-          parents[idx] = value;
-          path[idx] = key;
-          break;
-        }
-      }
-    }
-  }
-
-  function checkCircular(key: string, value: any) {
-    if (value != null) {
-      if (typeof value === 'object') {
-        if (key) {
-          updateParents(key, value);
-        }
-
-        const other = refs.get(value);
-        if (other) {
-          return '[Circular Reference]' + other;
-        } else {
-          refs.set(value, path.join('.'));
-        }
-      }
-    }
-    return value;
-  }
-
-  return function stringifyWithCircularRefs(obj: any, space = 2) {
-    try {
-      parents.push(obj);
-      return JSON.stringify(obj, checkCircular, space);
-    } finally {
-      clear();
-    }
-  };
-})();
+JSON.stringifyWithCircularRefs = serializer.toJSON;
 
 /**
  * transform any object to json. Suppress `TypeError: Converting circular structure to JSON`
@@ -74,5 +17,12 @@ JSON.stringifyWithCircularRefs = (function () {
  * @returns
  */
 export function jsonStringifyWithCircularRefs(data: any) {
-  return JSON.stringifyWithCircularRefs(data);
+  return serializer.toJSON(data);
+}
+
+/**
+ * parse json stringified with circular refs
+ */
+export function jsonParseWithCircularRefs(data: string) {
+  return serializer.fromJSON(data);
 }
