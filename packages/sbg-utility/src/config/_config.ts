@@ -3,6 +3,7 @@ import Hexo from 'hexo';
 import { join, resolve } from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
+import { writefile } from '../utils/filemanager';
 import * as defaults from './defaults';
 
 const configFileJSON = join(__dirname, '_config.json');
@@ -106,8 +107,8 @@ export function fetchConfig(fileYML?: string) {
     fileYML += '/_config.yml';
   }
   const configYML = yaml.parse(fs.readFileSync(resolve(fileYML), 'utf-8'));
-  setConfig(utils.object.orderKeys(configYML));
-  utils.filemanager.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
+  setConfig(utils.orderKeys(configYML));
+  writefile(configFileJSON, JSON.stringify(configYML, null, 2));
 }
 
 // fetch _config.yml first init
