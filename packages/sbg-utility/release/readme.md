@@ -2,19 +2,19 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| 1.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/002e2b3db/packages/sbg-utility/release/sbg-utility-1.0.0.tgz |
-| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/deccb5273/packages/sbg-utility/release/sbg-utility-1.0.1.tgz |
-| 1.0.10 | https://github.com/dimaslanjaka/static-blog-generator/raw/91a6ea097/packages/sbg-utility/release/sbg-utility-1.0.10.tgz |
-| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/6c71cd506/packages/sbg-utility/release/sbg-utility-1.0.2.tgz |
-| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/930fe6d80/packages/sbg-utility/release/sbg-utility-1.0.3.tgz |
-| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/1edffe314/packages/sbg-utility/release/sbg-utility-1.0.4.tgz |
-| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/6bdd876d9/packages/sbg-utility/release/sbg-utility-1.0.5.tgz |
-| 1.0.6 | https://github.com/dimaslanjaka/static-blog-generator/raw/0dfc3c25d/packages/sbg-utility/release/sbg-utility-1.0.6.tgz |
-| 1.0.8 | https://github.com/dimaslanjaka/static-blog-generator/raw/17a3e0134/packages/sbg-utility/release/sbg-utility-1.0.8.tgz |
-| 1.0.9 | https://github.com/dimaslanjaka/static-blog-generator/raw/e5eb12b49/packages/sbg-utility/release/sbg-utility-1.0.9.tgz |
-| 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/2c115959d/packages/sbg-utility/release/sbg-utility-1.1.0.tgz |
-| 1.1.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/8f5eebc72/packages/sbg-utility/release/sbg-utility-1.1.1.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/8f5eebc72/packages/sbg-utility/release/sbg-utility.tgz |
+| 1.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/b315bb19f/packages/sbg-utility/release/sbg-utility-1.0.0.tgz |
+| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/22921dc6a/packages/sbg-utility/release/sbg-utility-1.0.1.tgz |
+| 1.0.10 | https://github.com/dimaslanjaka/static-blog-generator/raw/57de1ff65/packages/sbg-utility/release/sbg-utility-1.0.10.tgz |
+| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/447c6811b/packages/sbg-utility/release/sbg-utility-1.0.2.tgz |
+| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/e89451630/packages/sbg-utility/release/sbg-utility-1.0.3.tgz |
+| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/0e06499c2/packages/sbg-utility/release/sbg-utility-1.0.4.tgz |
+| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/58758ab1a/packages/sbg-utility/release/sbg-utility-1.0.5.tgz |
+| 1.0.6 | https://github.com/dimaslanjaka/static-blog-generator/raw/83609af9d/packages/sbg-utility/release/sbg-utility-1.0.6.tgz |
+| 1.0.8 | https://github.com/dimaslanjaka/static-blog-generator/raw/a6824f4d8/packages/sbg-utility/release/sbg-utility-1.0.8.tgz |
+| 1.0.9 | https://github.com/dimaslanjaka/static-blog-generator/raw/f2501cf3a/packages/sbg-utility/release/sbg-utility-1.0.9.tgz |
+| 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/ba8bcd116/packages/sbg-utility/release/sbg-utility-1.1.0.tgz |
+| 1.1.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/fef45b370/packages/sbg-utility/release/sbg-utility-1.1.1.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/699383c9d/packages/sbg-utility/release/sbg-utility.tgz |
 | latest | https://github.com/dimaslanjaka/static-blog-generator/raw/sbg-utility/packages/sbg-utility/release/sbg-utility.tgz |
 
 use this tarball with `resolutions`:
