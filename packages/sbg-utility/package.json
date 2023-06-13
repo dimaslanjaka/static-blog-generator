@@ -45,7 +45,7 @@
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "debug": "^4.3.4",
     "fs-extra": "^11.1.1",
-    "glob": "^10.2.6",
+    "glob": "^10.2.7",
     "gulp": "^4.0.2",
     "hexo": "^7.0.0-rc1",
     "hexo-log": "^4.0.1",
