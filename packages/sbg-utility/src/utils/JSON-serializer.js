@@ -5,6 +5,24 @@
 
 const { parse: $parse, stringify: $stringify } = JSON;
 const { keys } = Object;
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+
+function sha1(data) {
+  return crypto.createHash('sha1').update(data, 'binary').digest('hex');
+}
+
+function getStack() {
+  const stack = new Error('get caller').stack
+    .split(/\r?\n/gim)
+    .filter((str) => /(dist|src)/i.test(str) && !str.includes(__filename));
+  const folder = path.join(process.cwd(), 'tmp/error/json-serializer');
+  // create folder when not exist
+  if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true });
+  const file = path.join(folder, `${sha1(stack[1])}.log`);
+  return { stack, file };
+}
 
 const Primitive = String; // it could be Number
 const primitive = 'string'; // it could be 'number'
@@ -48,15 +66,22 @@ const set = (known, input, value) => {
 /**
  * parse json string with circular references
  * @param {string} text
- * @param {(...args:any[])=>any} reviver
+ * @param {(...args:any[])=>any} [reviver]
  * @returns
  */
 const parse = (text, reviver) => {
-  const input = $parse(text, Primitives).map(primitives);
-  const value = input[0];
-  const $ = reviver || noop;
-  const tmp = typeof value === object && value ? revive(input, new Set(), value, $) : value;
-  return $.call({ '': tmp }, '', tmp);
+  try {
+    const input = $parse(text, Primitives).map(primitives);
+    const value = input[0];
+    const $ = reviver || noop;
+    const tmp = typeof value === object && value ? revive(input, new Set(), value, $) : value;
+    return $.call({ '': tmp }, '', tmp);
+  } catch (e) {
+    const { stack, file } = getStack();
+    fs.writeFileSync(file, `${stack.join('\n')}\n\n${text}`);
+    console.log('fail parse ' + file + ' ' + e.message);
+    process.exit(1);
+  }
 };
 
 /**
