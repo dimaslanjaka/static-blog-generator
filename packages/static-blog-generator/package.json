@@ -53,5 +53,10 @@
   "bugs": {
     "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
   },
-  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme"
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
+  "engines": {
+    "node": "^14",
+    "npm": "^8",
+    "hexo": ">= 3"
+  }
 }
