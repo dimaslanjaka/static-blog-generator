@@ -110,5 +110,10 @@
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/hexo-util.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/7c3a93f/releases/warehouse.tgz"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": "^8",
+    "hexo": ">= 3"
   }
 }
