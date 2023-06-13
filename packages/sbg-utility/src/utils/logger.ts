@@ -1,13 +1,12 @@
 import { appendFileSync, existsSync } from 'fs-extra';
-import { EOL } from 'os';
 import slugify from 'slugify';
 import { basename, join, toUnix } from 'upath';
 import * as configs from '../config';
 import { writefile } from './filemanager';
 import { areWeTestingWithJest } from './jest';
 
-const getConfig = configs.getConfig;
-const FOLDER = join(process.cwd(), 'tmp/logs');
+let FOLDER = join(process.cwd(), 'tmp/logs');
+let cwd = process.cwd();
 
 declare global {
   const hexo: import('hexo');
@@ -15,21 +14,28 @@ declare global {
 
 // disable console.log on jest
 if (areWeTestingWithJest()) {
-  // const log = console.log;
+  const log = console.log;
   console.log = function (...args: any[]) {
-    const config = getConfig();
-    const stack = new Error('').stack?.split(/\r?\n/gm);
+    if (typeof configs.getConfig === 'function') {
+      const cfg = configs.getConfig();
+      FOLDER = join(cfg.cwd, 'tmp/logs/');
+      cwd = cfg.cwd;
+    }
+    const stack = (new Error('').stack || '').split(/\r?\n/gm);
     let msg = (stack || [])[3] || '';
     if (msg.includes(__filename)) {
-      msg = (stack || [])[4] || '';
+      msg = (stack || [])[2] || '';
     }
-    const filename = slugify(toUnix(msg).replace(toUnix(config.cwd), ''), {
+    // log(stack[2], stack[4]);
+    const filename = slugify(toUnix(msg).replace(toUnix(cwd), ''), {
       lower: true,
       trim: true,
       replacement: '-',
       strict: true
     });
-    writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join(EOL), { append: true });
+    const header = `\n\n ${new Date()} \n\n`;
+    const write = writefile(join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
+    log(write.file);
   };
 }
 
