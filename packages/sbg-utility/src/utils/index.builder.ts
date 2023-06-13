@@ -12,7 +12,10 @@ glob.glob('**/*.{ts,js,jsx,tsx}', { ignore: ['**/*.builder.*'], cwd: __dirname, 
     .filter((file) => !file.includes('.builder') && path.extname(file) === '.ts')
     .map((file) => {
       return `export * from './${file.replace(/.(ts|js|tsx|jsx)$/, '')}';`;
-    });
+    })
+    .sort(
+      (a, b) => a.localeCompare(b) //using String.prototype.localCompare()
+    );
   // dump
   console.log(contents);
   // fix eslint
