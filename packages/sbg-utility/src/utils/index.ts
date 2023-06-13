@@ -12,6 +12,7 @@ export * from './hash';
 export * as hash from './hash';
 export * from './logger';
 export * as logger from './logger';
+export * from './noop';
 export * from './nunjucks-env';
 export * as object from './object';
 export * from './persistent-cache';
