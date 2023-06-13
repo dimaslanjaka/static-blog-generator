@@ -36,12 +36,12 @@ describe('check method', () => {
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];
     test(`wilcards.${prop} is function`, function () {
-      expect(wilcards[prop]).toBeDefined();
-      expect(typeof wilcards[prop]).toBe('function');
+      expect((wilcards as any)[prop]).toBeDefined();
+      expect(typeof (wilcards as any)[prop]).toBe('function');
     }, 10000);
     test(`defaults.${prop} is function`, function () {
-      expect(defaults[prop]).toBeDefined();
-      expect(typeof defaults[prop]).toBe('function');
+      expect((defaults as any)[prop]).toBeDefined();
+      expect(typeof (defaults as any)[prop]).toBe('function');
     }, 10000);
   }
 
