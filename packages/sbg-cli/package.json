@@ -75,7 +75,9 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
-  "directories": {
-    "test": "test"
+  "engines": {
+    "node": "^14",
+    "npm": "^8",
+    "hexo": ">= 3"
   }
 }

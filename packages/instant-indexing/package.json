@@ -81,7 +81,9 @@
     "typescript": "^5.0.4"
   },
   "types": "./dist/index.d.ts",
-  "directories": {
-    "test": "test"
+  "engines": {
+    "node": "^14",
+    "npm": "^8",
+    "hexo": ">= 3"
   }
 }

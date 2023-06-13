@@ -88,7 +88,9 @@
   },
   "packageManager": "yarn@3.6.0",
   "engines": {
-    "node": ">=14"
+    "node": ">=14",
+    "npm": "^8",
+    "hexo": ">= 3"
   },
   "peerDependenciesMeta": {
     "markdown-it-anchor": {
