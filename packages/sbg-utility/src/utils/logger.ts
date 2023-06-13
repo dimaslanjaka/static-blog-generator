@@ -14,7 +14,7 @@ declare global {
 
 // disable console.log on jest
 if (areWeTestingWithJest()) {
-  // const log = console.log;
+  const log = console.log;
   console.log = function (...args: any[]) {
     const config = configs.getConfig();
     const stack = new Error('').stack?.split(/\r?\n/gm);
@@ -28,7 +28,8 @@ if (areWeTestingWithJest()) {
       replacement: '-',
       strict: true
     });
-    writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join(EOL), { append: true });
+    const write = writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join(EOL), { append: true });
+    log(write.file);
   };
 }
 
