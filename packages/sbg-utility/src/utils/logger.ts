@@ -33,7 +33,8 @@ if (areWeTestingWithJest()) {
       replacement: '-',
       strict: true
     });
-    const write = writefile(join(FOLDER, filename + '.log'), args.join('\n\n'), { append: true });
+    const header = `\n\n ${new Date()} \n\n`;
+    const write = writefile(join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
     log(write.file);
   };
 }
