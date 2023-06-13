@@ -97,7 +97,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: ${{ env.node-version }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Enable corepack
