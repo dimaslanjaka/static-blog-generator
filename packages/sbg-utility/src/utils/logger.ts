@@ -1,5 +1,4 @@
 import { appendFileSync, existsSync } from 'fs-extra';
-import { EOL } from 'os';
 import slugify from 'slugify';
 import { basename, join, toUnix } from 'upath';
 import * as configs from '../config';
@@ -28,7 +27,7 @@ if (areWeTestingWithJest()) {
       replacement: '-',
       strict: true
     });
-    const write = writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join(EOL), { append: true });
+    const write = writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join('\n\n'), { append: true });
     log(write.file);
   };
 }
