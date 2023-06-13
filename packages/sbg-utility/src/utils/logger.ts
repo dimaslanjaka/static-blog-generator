@@ -21,11 +21,12 @@ if (areWeTestingWithJest()) {
       FOLDER = join(cfg.cwd, 'tmp/logs/');
       cwd = cfg.cwd;
     }
-    const stack = new Error('').stack?.split(/\r?\n/gm);
+    const stack = (new Error('').stack || '').split(/\r?\n/gm);
     let msg = (stack || [])[3] || '';
     if (msg.includes(__filename)) {
-      msg = (stack || [])[4] || '';
+      msg = (stack || [])[2] || '';
     }
+    // log(stack[2], stack[4]);
     const filename = slugify(toUnix(msg).replace(toUnix(cwd), ''), {
       lower: true,
       trim: true,
