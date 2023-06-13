@@ -17,7 +17,7 @@ export default function uuidv4(fromString?: string): string {
       .replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
   } else {
     const err = new Error();
-    const caller_line = err.stack.split('\n')[2];
+    const caller_line = err.stack?.split('\n')[2] || '';
     const index = caller_line.indexOf('at ');
     const dumpClean = caller_line.slice(index + 2, caller_line.length);
     return uuidv4(md5(dumpClean));
