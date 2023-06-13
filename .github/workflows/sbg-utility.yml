@@ -1,4 +1,4 @@
-name: Build Release
+name: build sbg-utility
 
 # automated packer.js
 # repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
