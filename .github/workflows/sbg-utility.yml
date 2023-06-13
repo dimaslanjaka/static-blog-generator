@@ -119,12 +119,12 @@ jobs:
             ${{ runner.os }}-${{ env.node-version }}
             ${{ runner.os }}-
 
-      - name: Install Global Packages
+      - name: install global packages
         run: npm i -g typescript ts-node gulp-cli
-      - name: Install
+      - name: install
         run: |
           touch yarn.lock
-          yarn Install --inline-builds
+          yarn install --inline-builds
         working-directory: packages/sbg-utility
       - name: build clean
         working-directory: packages/sbg-utility
