@@ -4,7 +4,7 @@ import { join, resolve } from 'path';
 import defaults, { gulpOpt } from '../src';
 
 describe('gulp cache', () => {
-  const cwd = resolve(defaults.findYarnRootWorkspace({ base_dir: join(__dirname, '..') }), 'test');
+  const cwd = resolve(String(defaults.findYarnRootWorkspace({ base_dir: join(__dirname, '..') })), 'test');
   beforeAll(() => {
     defaults.fetchConfig(cwd);
   });
