@@ -99,9 +99,6 @@ jobs:
         with:
           node-version: 14.x
           token: ${{ secrets.GITHUB_TOKEN }}
-          architecture: x64
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
       - name: Enable corepack
         run: corepack enable
