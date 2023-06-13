@@ -120,9 +120,11 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Global Packages
-        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
+        run: npm i -g typescript ts-node gulp-cli
       - name: Install
-        run: touch yarn.lock && yarn Install
+        run: |
+          touch yarn.lock
+          yarn Install --inline-builds
         working-directory: packages/sbg-utility
       - name: build clean
         working-directory: packages/sbg-utility
