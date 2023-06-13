@@ -5,7 +5,8 @@ import * as configs from '../config';
 import { writefile } from './filemanager';
 import { areWeTestingWithJest } from './jest';
 
-const FOLDER = join(process.cwd(), 'tmp/logs');
+let FOLDER = join(process.cwd(), 'tmp/logs');
+let cwd = process.cwd();
 
 declare global {
   const hexo: import('hexo');
@@ -15,19 +16,23 @@ declare global {
 if (areWeTestingWithJest()) {
   const log = console.log;
   console.log = function (...args: any[]) {
-    const config = configs.getConfig();
+    if (typeof configs.getConfig === 'function') {
+      const cfg = configs.getConfig();
+      FOLDER = join(cfg.cwd, 'tmp/logs/');
+      cwd = cfg.cwd;
+    }
     const stack = new Error('').stack?.split(/\r?\n/gm);
     let msg = (stack || [])[3] || '';
     if (msg.includes(__filename)) {
       msg = (stack || [])[4] || '';
     }
-    const filename = slugify(toUnix(msg).replace(toUnix(config.cwd), ''), {
+    const filename = slugify(toUnix(msg).replace(toUnix(cwd), ''), {
       lower: true,
       trim: true,
       replacement: '-',
       strict: true
     });
-    const write = writefile(join(config.cwd, 'tmp/logs/', filename + '.log'), args.join('\n\n'), { append: true });
+    const write = writefile(join(FOLDER, filename + '.log'), args.join('\n\n'), { append: true });
     log(write.file);
   };
 }
