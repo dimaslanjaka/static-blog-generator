@@ -17,12 +17,12 @@ JSON.stringifyWithCircularRefs = serializer.toJSON;
  * @returns
  */
 export function jsonStringifyWithCircularRefs(data: any) {
-  return serializer.toJSON(data);
+  return serializer.stringify(data);
 }
 
 /**
  * parse json stringified with circular refs
  */
 export function jsonParseWithCircularRefs(data: string) {
-  return serializer.fromJSON(data);
+  return serializer.parse(data);
 }
