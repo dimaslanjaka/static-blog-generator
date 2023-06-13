@@ -6,7 +6,6 @@ import * as configs from '../config';
 import { writefile } from './filemanager';
 import { areWeTestingWithJest } from './jest';
 
-const getConfig = configs.getConfig;
 const FOLDER = join(process.cwd(), 'tmp/logs');
 
 declare global {
@@ -17,7 +16,7 @@ declare global {
 if (areWeTestingWithJest()) {
   // const log = console.log;
   console.log = function (...args: any[]) {
-    const config = getConfig();
+    const config = configs.getConfig();
     const stack = new Error('').stack?.split(/\r?\n/gm);
     let msg = (stack || [])[3] || '';
     if (msg.includes(__filename)) {
