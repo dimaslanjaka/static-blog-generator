@@ -12,6 +12,7 @@
 		"**/*.test.js",
 		"**/*.spec.js",
 		"**/*.runner.js",
+		"**/*.builder.*",
 		"./test"
 	]
 }
