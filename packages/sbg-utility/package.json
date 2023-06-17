@@ -85,7 +85,7 @@
     "@types/progress": "^2.0.5",
     "@types/request": "^2.48.8",
     "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
-    "git-command-helper": "*",
+    "git-command-helper": "^2.0.1",
     "jest": "^29.5.0",
     "jest-config": "^29.5.0",
     "jest-mock": "^29.5.0",
