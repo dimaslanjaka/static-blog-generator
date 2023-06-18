@@ -1,6 +1,20 @@
-# Release `static-blog-generator` Tarball
+# Release `static-blog-generator` tarball
+## Releases
+| version | tarball url |
+| :--- | :--- |
 
-## Get URL of `static-blog-generator` Release Tarball
+use this tarball with `resolutions`:
+```json
+{
+  "resolutions": {
+    "static-blog-generator": "<url of tarball>"
+  }
+}
+```
+
+## Releases
+
+    ## Get URL of `static-blog-generator` Release Tarball
 - select tarball file
 ![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
 - copy raw url

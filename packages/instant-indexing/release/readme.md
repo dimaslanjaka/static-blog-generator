@@ -2,12 +2,6 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/instant-indexing/release/instant-indexing-1.0.1.tgz |
-| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/instant-indexing/release/instant-indexing-1.0.2.tgz |
-| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/instant-indexing/release/instant-indexing-1.0.3.tgz |
-| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/b0cfc58/packages/instant-indexing/release/instant-indexing-1.0.4.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/4573829/packages/instant-indexing/release/instant-indexing.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/instant-indexing/release/instant-indexing.tgz |
 
 use this tarball with `resolutions`:
 ```json
