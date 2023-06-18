@@ -1,7 +1,6 @@
 import spawn from 'cross-spawn';
 import gulp from 'gulp';
-import * as sbgUtils from 'sbg-utility';
-import { getConfig, Logger } from 'sbg-utility';
+import { getConfig, Logger, replacePath } from 'sbg-utility';
 import through2 from 'through2';
 import { join } from 'upath';
 import { gulpOpt } from '../gulp-options';
@@ -17,7 +16,7 @@ function standaloneRunner() {
     .pipe(
       through2.obj(async function (file, _enc, next) {
         Logger.log('='.repeat(10) + ' input ' + '='.repeat(10));
-        Logger.log(`node ${await sbgUtils.utils.string.replacePath(file.path, getConfig().cwd, '')}`);
+        Logger.log(`node ${await replacePath(file.path, getConfig().cwd, '')}`);
         Logger.log('='.repeat(10) + ' ouput ' + '='.repeat(10));
         const child = spawn.spawn('node', [file.path], { stdio: 'inherit' });
         child.on('close', () => {
