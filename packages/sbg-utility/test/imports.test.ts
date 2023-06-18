@@ -30,7 +30,8 @@ describe('check method', () => {
     'sitemapCrawler',
     'sitemapCrawlerAsync',
     'SiteMapCrawler',
-    'jsonStringifyWithCircularRefs'
+    'jsonStringifyWithCircularRefs',
+    'writefile'
   ];
 
   for (let i = 0; i < props.length; i++) {
@@ -45,7 +46,13 @@ describe('check method', () => {
     }, 10000);
   }
 
-  it('JSON.stringifyWithCircularRefs is function', function () {
-    expect(typeof JSON.stringifyWithCircularRefs === 'function').toBeTruthy();
+  describe('is function', function () {
+    it('JSON with circular helpers', function () {
+      expect(typeof JSON.stringifyWithCircularRefs === 'function').toBeTruthy();
+      expect(typeof defaults.jsonParseWithCircularRefs === 'function').toBeTruthy();
+    });
+    it('file manager', () => {
+      expect(typeof wilcards.writefile).toEqual('function');
+    });
   });
 });
