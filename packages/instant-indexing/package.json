@@ -73,7 +73,7 @@
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "git-command-helper": "^1.2.5",
+    "git-command-helper": "^2.0.1",
     "jest": "^29.5.0",
     "jsonc-parser": "^3.2.0",
     "prettier": "^2.8.8",

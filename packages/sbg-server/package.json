@@ -60,7 +60,7 @@
     "find-yarn-workspace-root": "^2.0.0",
     "flowbite": "^1.6.5",
     "fs-extra": "^11.1.1",
-    "git-command-helper": "^1.2.5",
+    "git-command-helper": "^2.0.1",
     "glob": "^10.2.6",
     "hexo-post-parser": "^1.2.10",
     "highlight.js": "11.8.0",

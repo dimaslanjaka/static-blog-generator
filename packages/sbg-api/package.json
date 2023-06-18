@@ -40,7 +40,7 @@
     "bluebird": "^3.7.2",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "fs-extra": "^11.1.1",
-    "git-command-helper": "^1.2.5",
+    "git-command-helper": "^2.0.1",
     "glob": "^10.2.6",
     "gulp": "^4.0.2",
     "gulp-dom": "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz",
