@@ -14,7 +14,8 @@
 | 1.0.9 | https://github.com/dimaslanjaka/static-blog-generator/raw/f2501cf3a/packages/sbg-utility/release/sbg-utility-1.0.9.tgz |
 | 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/ba8bcd116/packages/sbg-utility/release/sbg-utility-1.1.0.tgz |
 | 1.1.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/fef45b370/packages/sbg-utility/release/sbg-utility-1.1.1.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/699383c9d/packages/sbg-utility/release/sbg-utility.tgz |
+| 1.1.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/31d122d87/packages/sbg-utility/release/sbg-utility-1.1.2.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/b9d2e7bfa/packages/sbg-utility/release/sbg-utility.tgz |
 | latest | https://github.com/dimaslanjaka/static-blog-generator/raw/sbg-utility/packages/sbg-utility/release/sbg-utility.tgz |
 
 use this tarball with `resolutions`:
