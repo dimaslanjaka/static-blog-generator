@@ -7,9 +7,9 @@
   },
   "include": ["src/**/*", "src/**/*.json"],
   "exclude": ["**/*.spec.ts", "./test", "**/tmp/**", "**/node_modules/**"],
-  "references": [
+  /*"references": [
     { "path": "../sbg-api/tsconfig.build.json" },
     { "path": "../sbg-utility/tsconfig.build.json" },
     { "path": "../sbg-server/tsconfig.build.json" }
-  ]
+  ]*/
 }

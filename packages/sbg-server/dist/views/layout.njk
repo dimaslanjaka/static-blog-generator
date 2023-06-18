@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="h-full bg-gray-100">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}Express Nunjucks TailwindCSS{% endblock %}
+    </title>
+    <meta name="description" content="{% block description %}Starter project with Express Nunjucks TailwindCSS{% endblock %}">
+    <meta
+    name="viewport" content="width=device-width, initial-scale=1"> {# <link rel="manifest" href="site.webmanifest"> #}
+    <link rel="apple-touch-icon" href="/images/logo.webp">
+    <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="/css/app.css"> {% block head %}{% endblock %}
+    </head>
+    <body class="h-full">
+      <div class="min-h-full">
+        {% include "partials/nav.njk" %}
+        <header class="bg-white shadow">
+          <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900"><a href="/" title="go back" class="mr-1" id="go-back" onClick="history.go(-1); return false;"><i class="fa-light fa-angle-left"></i></a> <span>{{ section or "Dashboard" }}</span></h1>
+          </div>
+        </header>
+        <main>
+          <div
+            class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <!-- Replace with your content -->
+            {% block content %}{% endblock %}
+            <!-- /End replace -->
+          </div>
+        </main>
+      </div>
+
+      {% include "partials/toast.njk" %}
+
+      <!-- [if IE]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+      href="//browsehappy.com/" rel="nofollow noreferer">upgrade your browser</a> to improve your experience and security.</p> <![endif]
+      -->
+      <!--<script src="//cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>-->
+      <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+      {% block script %}{% endblock %}
+    </body>
+  </html>

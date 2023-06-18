@@ -12,9 +12,9 @@
   },
   "include": ["./src/**/*", "./test/**/*", "**/*.json"],
   "exclude": ["**/dist/**"],
-  "references": [
+  /*"references": [
     { "path": "../sbg-utility" },
     { "path": "../sbg-server" },
     { "path": "../sbg-api" }
-  ]
+  ]*/
 }

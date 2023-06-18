@@ -13,5 +13,5 @@
   },
   "include": ["./src/**/*", "./src/**/*.json", "./*.js"],
   "exclude": ["./src/public/**/*"],
-  "references": [{ "path": "../sbg-utility" }, { "path": "../sbg-api" }]
+  //"references": [{ "path": "../sbg-utility" }, { "path": "../sbg-api" }]
 }
