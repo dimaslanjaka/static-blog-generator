@@ -2,10 +2,6 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/61632a8/packages/sbg-server/release/sbg-server-1.0.5.tgz |
-| 1.0.7 | https://github.com/dimaslanjaka/static-blog-generator/raw/0e4a843/packages/sbg-server/release/sbg-server-1.0.7.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/35c95aa/packages/sbg-server/release/sbg-server.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/beta/packages/sbg-server/release/sbg-server.tgz |
 
 use this tarball with `resolutions`:
 ```json
