@@ -20,6 +20,7 @@
   "scripts": {
     "start": "yarn build && yarn workspace sbg-site-test run start",
     "update:ncu": "npm-check-updates --enginesNode -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
+    "update:packer": "yarn workspaces foreach run update:packer",
     "update": "run-s \"update:**\"",
     "docs": "node docs.js",
     "lint": "yarn workspaces run lint",
@@ -32,7 +33,7 @@
     "build": "run-s \"build:**\" && yarn workspaces foreach --no-private run build",
     "clean:util": "yarn workspace sbg-utility run clean",
     "clean": "run-s \"clean:**\" && yarn workspaces foreach --no-private run clean",
-    "pack": "yarn workspaces foreach --no-private run pack",
+    "pack": "yarn workspaces foreach --no-private exec \"npm run pack --if-present -- --commit\"",
     "prepare": "husky install"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
