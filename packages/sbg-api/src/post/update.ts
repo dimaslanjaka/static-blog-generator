@@ -3,11 +3,10 @@ import { readFileSync } from 'fs';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import * as sbgUtils from 'sbg-utility';
+import { Logger, writefile } from 'sbg-utility';
 import { join, toUnix } from 'upath';
 
 const processingUpdate = {};
-const fm = sbgUtils.utils.filemanager;
-const Logger = sbgUtils.utils.logger.default;
 
 /**
  * update metadata.updated post
@@ -77,13 +76,13 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     const rebuild = buildPost(rBuild);
     //writefile(join(config.cwd, 'tmp/rebuild.md'), rebuild);
     Logger.log('write to', toUnix(oriPath).replace(toUnix(config.cwd), ''), oriUp, '->', post.attributes.updated);
-    await fm.writefile(oriPath, rebuild, { async: true }); // write original post
+    await writefile(oriPath, rebuild, { async: true }); // write original post
 
     const build = buildPost(parse);
-    await fm.writefile(postPath, build, { async: true });
+    await writefile(postPath, build, { async: true });
   } else {
     Logger.log('cannot parse', postPath);
-    fm.writefile(join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
+    writefile(join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
   }
 
   const hasError = typeof (parse && parse.metadata) === 'undefined';
