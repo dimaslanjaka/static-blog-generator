@@ -1,4 +1,4 @@
-name: Build Release
+name: build sbg-utility
 
 # automated packer.js
 # repo    : https://github.com/dimaslanjaka/nodejs-package-types/blob/main/.github/workflows/build-release.yml
@@ -97,11 +97,8 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: ${{ env.node-version }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          architecture: x64
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
       - name: Enable corepack
         run: corepack enable
@@ -122,10 +119,12 @@ jobs:
             ${{ runner.os }}-${{ env.node-version }}
             ${{ runner.os }}-
 
-      - name: Install Global Packages
-        run: npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
-      - name: Install
-        run: yarn Install
+      - name: install global packages
+        run: npm i -g typescript ts-node gulp-cli
+      - name: install
+        run: |
+          touch yarn.lock
+          yarn install --inline-builds
         working-directory: packages/sbg-utility
       - name: build clean
         working-directory: packages/sbg-utility
@@ -141,7 +140,7 @@ jobs:
       - name: commit
         working-directory: packages/sbg-utility
         run: |
-          git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
-      - name: push
-        working-directory: packages/sbg-utility
-        run: git push
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git push
+          fi
