@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "composite": true,
+    //"composite": true,
     "outDir": "tmp/dist"
   },
   "plugins": [

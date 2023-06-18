@@ -8,10 +8,5 @@
     "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] }
   },
   "include": ["./src", "./src/**/*.json", "./test"],
-  "exclude": ["**/dist", "**/node_modules"],
-  "references": [
-    {
-      "path": "../sbg-utility"
-    }
-  ]
+  "exclude": ["**/dist", "**/node_modules"]
 }
