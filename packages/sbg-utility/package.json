@@ -11,9 +11,7 @@
   ],
   "packageManager": "yarn@3.2.0",
   "scripts": {
-    "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
-    "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update:ncu": "npx npm-check-updates --enginesNode -u -x async,progress,cheerio,jsdom",
+    "update:ncu": "npx npm-check-updates --enginesNode -u -x async,progress,cheerio,jsdom,deepmerge-ts",
     "update": "run-s \"update:**\"",
     "test": "yarn run clean && jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",

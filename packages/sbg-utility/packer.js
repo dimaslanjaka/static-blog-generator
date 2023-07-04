@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
-const { spawn, async: spawnAsync } = require('cross-spawn');
+const { spawn } = require('cross-spawn');
 const fs = require('fs-extra');
-const { resolve, join, dirname, toUnix, basename } = require('upath');
+const { join, dirname, toUnix } = require('upath');
 const packagejson = require('./package.json');
 const crypto = require('crypto');
 
@@ -117,9 +117,6 @@ const getPackageHashes = async function () {
 };
 
 function bundleWithYarn() {
-  // create readme
-  addReadMe();
-
   // start bundle
   let filename = 'package.tgz';
   let tgz = join(__dirname, filename);
@@ -175,9 +172,6 @@ function bundleWithNpm() {
     fs.mkdirpSync(dirname(tgzlatest));
   }
 
-  // create readme
-  addReadMe();
-
   if (fs.existsSync(tgz)) {
     fs.copySync(tgz, tgzlatest);
     fs.copySync(tgz, tgzversion);
@@ -213,144 +207,6 @@ function parseVersion(versionString) {
   };
 
   return version;
-}
-
-/**
- * create release/readme.md
- */
-async function addReadMe() {
-  // set username and email on CI
-  if (_isCI) {
-    await spawnAsync('git', ['config', '--global', 'user.name', 'dimaslanjaka'], {
-      cwd: __dirname,
-      stdio: 'inherit'
-    });
-    await spawnAsync('git', ['config', '--global', 'user.email', 'dimaslanjaka@gmail.com'], {
-      cwd: __dirname,
-      stdio: 'inherit'
-    });
-  }
-
-  /**
-   * @type {typeof import('git-command-helper')}
-   */
-  const gch = packagejson.name !== 'git-command-helper' ? require('git-command-helper') : require('./dist');
-
-  const git = new gch.default(__dirname);
-  const branch = (await git.getbranch()).filter((o) => o.active)[0].branch;
-  const gitlatest = await git.latestCommit();
-
-  const tarballs = fs
-    .readdirSync(releaseDir)
-    .filter((str) => str.endsWith('tgz'))
-    .map((str) => {
-      return {
-        absolute: resolve(releaseDir, str),
-        relative: resolve(releaseDir, str).replace(toUnix(__dirname), '')
-      };
-    })
-    .filter((o) => fs.statSync(o.absolute).isFile());
-
-  let md = `# Release \`${packagejson.name}\` tarball\n`;
-
-  md += '## Releases\n';
-  md += '| version | tarball url |\n';
-  md += '| :--- | :--- |\n';
-  for (let i = 0; i < tarballs.length; i++) {
-    const tarball = tarballs[i];
-    const relativeTarball = tarball.relative.replace(/^\/+/, '');
-    // skip file not exist
-    if (!fs.existsSync(tarball.absolute)) {
-      console.log(tarball.relative, 'not found');
-      continue;
-    }
-    // update index untracked
-    await spawnAsync('git', ['update-index', '--untracked-cache']);
-    // run `git fsck` fix long time getting git status
-    // await spawnAsync('git', ['fsck']);
-    // skip index tarball which ignored by .gitignore
-
-    if (argv['commit']) {
-      const checkIgnore = await git.isIgnored(relativeTarball, { cwd: __dirname });
-      if (checkIgnore) {
-        console.log(relativeTarball, 'ignored by .gitignore');
-        continue;
-      } else {
-        await git.add(relativeTarball);
-        const args = ['status', '-uno', '--porcelain', '--', relativeTarball, '|', 'wc', '-l'];
-        const isChanged =
-          parseInt(
-            (
-              await spawnAsync('git', args, {
-                cwd: __dirname,
-                shell: true
-              })
-            ).output.trim()
-          ) > 0;
-        if (isChanged) {
-          //  commit tarball
-          await git.commit('chore(tarball): update ' + gitlatest, '-m', { stdio: 'pipe' });
-        }
-      }
-    }
-
-    const hash = await git.latestCommit(tarball.relative.replace(/^\/+/, ''));
-    const raw = await git.getGithubRepoUrl(tarball.relative.replace(/^\/+/, ''));
-    let tarballUrl;
-    const dev = raw.rawURL;
-    const prod = raw.rawURL.replace('/raw/' + branch, '/raw/' + hash);
-    let ver = basename(tarball.relative, '.tgz').replace(`${packagejson.name}-`, '');
-    if (typeof hash === 'string') {
-      if (isNaN(parseFloat(ver))) {
-        ver = 'latest';
-        tarballUrl = dev;
-        md += `| ${ver} | ${prod} |\n`;
-      } else {
-        tarballUrl = prod;
-      }
-      md += `| ${ver} | ${tarballUrl} |\n`;
-    }
-  }
-
-  md += `
-use this tarball with \`resolutions\`:
-\`\`\`json
-{
-  "resolutions": {
-    "${packagejson.name}": "<url of tarball>"
-  }
-}
-\`\`\`
-
-## Releases
-
-    `;
-
-  fs.writeFileSync(
-    join(releaseDir, 'readme.md'),
-    md +
-      `
-
-## Get URL of \`${packagejson.name}\` Release Tarball
-- select tarball file
-![gambar](https://user-images.githubusercontent.com/12471057/203216375-8af4b5d9-00c2-40fb-8d3d-d220beaabd46.png)
-- copy raw url
-![gambar](https://user-images.githubusercontent.com/12471057/203216508-7590cbb9-a1ce-47d6-96ca-8d82149f0762.png)
-- or copy download url
-![gambar](https://user-images.githubusercontent.com/12471057/203216541-3807d2c3-5213-49f3-b93d-c626dbae3b2e.png)
-- then run installation from command line
-\`\`\`bash
-npm i https://....url-tgz
-\`\`\`
-for example
-\`\`\`bash
-npm i https://github.com/dimaslanjaka/nodejs-package-types/raw/main/release/nodejs-package-types.tgz
-\`\`\`
-
-## URL Parts Explanations
-> https://github.com/github-username/github-repo-name/raw/github-branch-name/path-to-file-with-extension
-  `.trim()
-  );
 }
 
 /**
