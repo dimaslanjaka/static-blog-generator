@@ -23,6 +23,6 @@ export function jsonStringifyWithCircularRefs(data: any) {
 /**
  * parse json stringified with circular refs
  */
-export function jsonParseWithCircularRefs(data: string) {
-  return serializer.parse(data);
+export function jsonParseWithCircularRefs<T>(data: string) {
+  return serializer.parse(data) as T;
 }
