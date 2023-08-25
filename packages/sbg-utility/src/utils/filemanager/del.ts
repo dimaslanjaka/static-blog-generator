@@ -3,21 +3,32 @@ import fs from 'fs-extra';
 
 /**
  * delete folder/file async
- * @param path
+ * @param path path of file/folder
+ * @param throws enable throwable
  * @returns
  */
-export function del(path: string) {
-  return new Bluebird((resolve) => {
+export function del(path: string, throws?: boolean) {
+  return new Bluebird((resolve: (result: void | Error) => any, reject: (why: Error) => any) => {
     const rmOpt: fs.RmOptions = { recursive: true, force: true };
     if (fs.existsSync(path)) {
-      fs.rm(path, rmOpt).then(resolve).catch(resolve);
+      if (!throws) {
+        // always success
+        fs.rm(path, rmOpt).then(resolve).catch(resolve);
+      } else {
+        fs.rm(path, rmOpt).then(resolve).catch(reject);
+      }
       /*if (statSync(path).isDirectory()) {
         rmdir(path, { maxRetries: 10 }).then(resolve).catch(resolve);
       } else {
         rm(path, rmOpt).then(resolve).catch(resolve);
       }*/
     } else {
-      resolve(new Error(path + ' not found'));
+      if (!throws) {
+        // always success
+        resolve(new Error(path + ' not found'));
+      } else {
+        reject(new Error(path + ' not found'));
+      }
     }
   });
 }
