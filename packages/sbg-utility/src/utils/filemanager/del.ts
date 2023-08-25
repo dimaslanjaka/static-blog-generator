@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import fs from 'fs-extra';
 
 /**
- * delete folder async
+ * delete folder/file async
  * @param path
  * @returns
  */
