@@ -9,7 +9,7 @@
     "!**/*.tsbuildinfo",
     "!**/release*/**"
   ],
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.6.3",
   "scripts": {
     "update:ncu": "npx npm-check-updates -u -x async,progress,cheerio,jsdom,deepmerge-ts --enginesNode",
     "update": "run-s \"update:**\"",
