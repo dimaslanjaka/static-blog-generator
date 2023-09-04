@@ -41,7 +41,8 @@ if (areWeTestingWithJest()) {
   };
 }
 
-const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);
+//const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);
+const _log = console;
 
 /**
  * @example
