@@ -39,7 +39,7 @@ const buildConfig = (config) => {
       json(),
       polyfill(),
       commonjs(),
-      resolve({ preferBuiltins: true, browser: true }),
+      resolve({ preferBuiltins: false, browser: true }),
       minified && terser(),
       ...(config.plugins || [])
     ]
@@ -61,9 +61,9 @@ const defaults = async () => {
         exports: 'default',
         banner
       }
-    }),
+    })
 
-    ...buildConfig({
+    /*...buildConfig({
       output: {
         file: `dist/esm/${outputFileName}`,
         format: 'esm',
@@ -71,7 +71,7 @@ const defaults = async () => {
         exports: 'named',
         banner
       }
-    })
+    })*/
   ];
 };
 
