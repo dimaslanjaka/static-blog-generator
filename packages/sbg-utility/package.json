@@ -15,7 +15,7 @@
     "update": "run-s \"update:**\"",
     "test": "yarn run clean && jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp build",
+    "build": "gulp build && rollup -c -m",
     "build-pack": "yarn run build && yarn run pack",
     "clean": "gulp --series clean build",
     "pack": "node packer.js --yarn"
