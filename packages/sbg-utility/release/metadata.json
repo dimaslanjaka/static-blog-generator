@@ -82,12 +82,12 @@
   },
   "/release/sbg-utility.tgz": {
     "integrity": {
-      "sha1": "d10ab986c2710e385aa9d6cad2ea2b68aa38f858",
-      "sha256": "d8pOPD9hgJaqjpF4MjhOLjaCXIgb8tlUfxsuiTtrXGM=",
-      "md5": "ef13cb5e2fbb5a1e6856e25ec55d38e9",
-      "sha512": "cB+weJthAcYne9CuSWnLm+bpEnVdWKUmcW/gbuharWc1e4f3gEihKzUDukFlcdBfhqnrGrOy6h6a1MLLI8Yl1g=="
+      "sha1": "51bfc2374a6c1d883a1799e32ef12d20063b20ff",
+      "sha256": "izieGpvp7UVbpIlZ09fLaooG8X6lP3Hfgc19h1GomEk=",
+      "md5": "035313488cf5a1854c51747f9fca7680",
+      "sha512": "NIVTz3tsaWOlvPMhyZ3nGZy0KPuTJZwl0qo+Cu1EmzBeOsFRTssUTSwxFCf0X07ImiErR+7JN63KMdMycJp2BA=="
     },
-    "size": "54.41 KB"
+    "size": "4685.04 KB"
   },
   "/release/sbg-utility-1.0.10.tgz": {
     "integrity": {
@@ -118,12 +118,12 @@
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "5ee68e1f8f4d397a77a99bfb17ad12d030157dd9",
-      "sha256": "BqXGTvjA7PAKpp02tY9S6czMlGyio56gP2lZxTbSd8I=",
-      "md5": "6eac7dd9b2d0fd5e96468f94f90238bb",
-      "sha512": "SXqo/6G9VC5FAzbN1FNV5Ga1hzrv0lnRL2i9bR9UQ3akm/JrwM2XssJJ+yWcnPECo6wuhxgOhaYc1QtHPkkZLQ=="
+      "sha1": "91807f9db8fc36abded8ab321d9dbf39980f02c2",
+      "sha256": "aylmow1cZmMRTrGP/PnCxrW/h01auQegZpbtGnZclEs=",
+      "md5": "7126fe623271b5b2533dce8ef00b876b",
+      "sha512": "lgO/oZ+cDDADi6DfgGHU1JmOyaMnkBwpvP1HIYunusqrruvcMjo5T/AUegd0sqjMBbOIY0FgnP2Gq7wD21sCRA=="
     },
-    "size": "341.21 KB"
+    "size": "354.29 KB"
   },
   "/release/sbg-utility-1.1.2.tgz": {
     "integrity": {
@@ -133,5 +133,23 @@
       "sha512": "cB+weJthAcYne9CuSWnLm+bpEnVdWKUmcW/gbuharWc1e4f3gEihKzUDukFlcdBfhqnrGrOy6h6a1MLLI8Yl1g=="
     },
     "size": "54.41 KB"
+  },
+  "/release/sbg-utility-1.1.3.tgz": {
+    "integrity": {
+      "sha1": "d374d34d8316bc2f4cf65020f89a21967d4f060b",
+      "sha256": "eJjNlIiRPzEK6BkXKvZ7oSfKpZiZ1ks5vxb7BfcvzPE=",
+      "md5": "7d9db40c485a02f563a33ef79e7ec78e",
+      "sha512": "NO0lHPrT5iy4Bn6vcveIJa4EoTiNMlyzHNQdKsttfFMW8PUan6twSRMV44SI24t3Ic9RLrISq3D8Agw0qsFJzA=="
+    },
+    "size": "54.89 KB"
+  },
+  "/release/sbg-utility-1.1.4.tgz": {
+    "integrity": {
+      "sha1": "51bfc2374a6c1d883a1799e32ef12d20063b20ff",
+      "sha256": "izieGpvp7UVbpIlZ09fLaooG8X6lP3Hfgc19h1GomEk=",
+      "md5": "035313488cf5a1854c51747f9fca7680",
+      "sha512": "NIVTz3tsaWOlvPMhyZ3nGZy0KPuTJZwl0qo+Cu1EmzBeOsFRTssUTSwxFCf0X07ImiErR+7JN63KMdMycJp2BA=="
+    },
+    "size": "4685.04 KB"
   }
 }
