@@ -1,12 +1,12 @@
 /** SCHEDULER JOB **/
 /*** Postpone executing functions ***/
-/* global hexo */
 
 import color from 'ansi-colors';
 import Bluebird from 'bluebird';
 import { chain } from './chain';
 
-const _log = typeof hexo !== 'undefined' ? hexo.log : console;
+//const _log = typeof hexo !== 'undefined' ? hexo.log : console;
+const _log = console;
 
 const logname = color.magentaBright('[scheduler]');
 
