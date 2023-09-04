@@ -38,8 +38,8 @@ const buildConfig = (config) => {
     plugins: [
       json(),
       polyfill(),
-      resolve({ preferBuiltins: true, browser: true }),
       commonjs(),
+      resolve({ preferBuiltins: true, browser: true }),
       minified && terser(),
       ...(config.plugins || [])
     ]
