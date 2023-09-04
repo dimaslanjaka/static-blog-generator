@@ -3,6 +3,7 @@
 import * as fs from 'fs-extra';
 import * as path from 'upath';
 
+export * from './copy';
 export * from './del';
 export * from './emptyDir';
 export * from './getAppRootDir';

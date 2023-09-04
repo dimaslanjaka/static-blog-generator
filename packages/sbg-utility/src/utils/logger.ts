@@ -8,9 +8,11 @@ import { areWeTestingWithJest } from './jest';
 let FOLDER = join(process.cwd(), 'tmp/logs');
 let cwd = process.cwd();
 
+/*
 declare global {
   const hexo: import('hexo');
 }
+*/
 
 // disable console.log on jest
 if (areWeTestingWithJest()) {
@@ -39,7 +41,8 @@ if (areWeTestingWithJest()) {
   };
 }
 
-const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);
+//const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);
+const _log = console;
 
 /**
  * @example
