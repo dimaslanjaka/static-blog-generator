@@ -4,7 +4,7 @@
 		"rootDir": "./src",
 		"outDir": "./dist"
 	},
-	"include": ["./src/index.ts"],
+	"include": ["./src/index.ts", "./src/index-node.ts"],
 	"exclude": [
 		"**/*.test.ts",
 		"**/*.spec.ts",
