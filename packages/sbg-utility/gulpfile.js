@@ -1,8 +1,10 @@
-// const fs = require('fs-extra');
+require('ts-node').register();
 const { spawn } = require('git-command-helper/dist/spawn');
 const gulp = require('gulp');
 const path = require('upath');
 const fs = require('fs-extra');
+const { semverIncrement, writefile } = require('./src/utils');
+const pkg = require('./package.json');
 
 const cmd = (commandName) => {
   const cmdPath = [
@@ -40,5 +42,11 @@ gulp.task('build', gulp.series(tsc, copy));
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
 }
+
+gulp.task('semver:patch', (done) => {
+  pkg.version = semverIncrement(pkg, 'patch').toString();
+  writefile(path.join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
+  done();
+});
 
 gulp.task('clean', gulp.series(clean));
