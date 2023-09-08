@@ -1,5 +1,5 @@
 {
-  // "extends": "../../tsconfig.base.json",
+  // only for VSCode
   "extends": "./tsconfig.base.json",
   "ts-node": {
     "transpileOnly": true,
@@ -13,9 +13,7 @@
     "target": "es5",
     "downlevelIteration": true,
     "baseUrl": "./",
-    //"paths": { "src": ["./src"], "test": ["./test"] },
-    "outDir": "./dist",
-    // "tsBuildInfoFile": "./tmp/tsconfig.tsbuildinfo",
+    "outDir": "./tmp/dist",
     "esModuleInterop": true,
     "importHelpers": true,
     "strict": true,
@@ -26,5 +24,4 @@
     "./src/**/*.json",
     "./test/**/*"
   ]
-  //"references": [{ "path": "../hexo-post-parser" }, { "path": "../git-command-helper" }]
 }
