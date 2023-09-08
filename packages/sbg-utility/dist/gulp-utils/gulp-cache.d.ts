@@ -1,12 +1,12 @@
-import { persistentCache } from 'persistent-cache';
 import through2 from 'through2';
+import { PersistentCacheOpt } from '../utils';
 /**
  * calculate sha1sum of file
  * @param file
  * @returns
  */
 export declare function getShaFile(file: string): string | null;
-export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
+export type gulpCachedOpt = Partial<PersistentCacheOpt> & {
     prefix?: string;
     /**
      * dest folder
