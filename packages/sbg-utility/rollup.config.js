@@ -36,10 +36,20 @@ const buildConfig = (config) => {
       file: `${config.output.file}.${minified ? 'min.js' : 'js'}`
     },
     plugins: [
+      // const json = require('@rollup/plugin-json');
       json(),
+      // const polyfill = require('rollup-plugin-polyfill-node');
       polyfill(),
+      // const resolve = require('@rollup/plugin-node-resolve');
+      resolve({
+        // To provide stubbed versions of Node built-ins with plugin rollup-plugin-polyfill-node
+        preferBuiltins: false,
+        // To instructs the plugin to use the browser module resolutions in package.json and adds 'browser' to exportConditions
+        browser: true
+      }),
+      // const commonjs = require('@rollup/plugin-commonjs');
       commonjs(),
-      resolve({ preferBuiltins: false, browser: true }),
+      // const { terser } = require('rollup-plugin-terser');
       minified && terser(),
       ...(config.plugins || [])
     ]
