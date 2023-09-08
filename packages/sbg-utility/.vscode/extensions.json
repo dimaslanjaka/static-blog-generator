@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "formulahendry.code-runner",
-    "dbaeumer.vscode-eslint",
-    "k--kato.intellij-idea-keybindings"
+    "dbaeumer.vscode-eslint"
   ]
 }
