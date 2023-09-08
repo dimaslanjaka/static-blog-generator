@@ -5,6 +5,7 @@ const tslib_1 = require("tslib");
 const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 const upath_1 = tslib_1.__importDefault(require("upath"));
 require("./JSON");
+const JSON_1 = require("./JSON");
 const filemanager_1 = require("./filemanager");
 class persistentCache {
     constructor(options = {}) {
@@ -45,7 +46,7 @@ class persistentCache {
         if (this.persist) {
             // save in file
             try {
-                (0, filemanager_1.writefile)(this.buildFilePath(key), JSON.stringifyWithCircularRefs(entry));
+                (0, filemanager_1.writefile)(this.buildFilePath(key), (0, JSON_1.jsonStringifyWithCircularRefs)(entry));
             }
             catch (e) {
                 return e;
@@ -53,7 +54,7 @@ class persistentCache {
         }
         if (this.memory) {
             // save in memory only
-            entry.data = JSON.stringifyWithCircularRefs(entry.data);
+            entry.data = (0, JSON_1.jsonStringifyWithCircularRefs)(entry.data);
             this.memoryCache[key] = entry;
         }
         return true;

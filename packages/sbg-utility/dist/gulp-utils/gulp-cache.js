@@ -5,10 +5,10 @@ const tslib_1 = require("tslib");
 const crypto_1 = tslib_1.__importDefault(require("crypto"));
 const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
 const os_1 = require("os");
-const persistent_cache_1 = require("persistent-cache");
 const through2_1 = tslib_1.__importDefault(require("through2"));
 const upath_1 = require("upath");
 const _config_1 = require("../config/_config");
+const utils_1 = require("../utils");
 const filemanager_1 = require("../utils/filemanager");
 const hash_1 = require("../utils/hash");
 /**
@@ -27,7 +27,7 @@ exports.getShaFile = getShaFile;
 function cacheLib(options) {
     const config = (0, _config_1.getConfig)();
     options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
-    return (0, persistent_cache_1.persistentCache)(options);
+    return new utils_1.persistentCache(options);
 }
 /**
  * * [source idea](https://github.com/gulp-community/gulp-cached/blob/8e8d13cb07b17113ff94700e87f136eeaa1f1340/index.js#L35-L44)
