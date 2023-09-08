@@ -2,6 +2,7 @@
 
 **1.1.5**
 
+1da17a6c9 chore(semver): convert to class constructor
 26857863d feat: add semver helper
 640bb5f82 fix global JSON prototype
 08450b418 fix: persistent-cache from local
