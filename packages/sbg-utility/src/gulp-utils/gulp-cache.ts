@@ -1,10 +1,10 @@
 import crypto from 'crypto';
 import fs from 'fs-extra';
 import { EOL } from 'os';
-import { Opt, persistentCache } from 'persistent-cache';
 import through2 from 'through2';
 import { join, toUnix } from 'upath';
 import { getConfig } from '../config/_config';
+import { PersistentCacheOpt, persistentCache } from '../utils';
 import { writefile } from '../utils/filemanager';
 import { data_to_hash_sync, md5 } from '../utils/hash';
 
@@ -20,7 +20,7 @@ export function getShaFile(file: string) {
   return sha1sum;
 }
 
-export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
+export type gulpCachedOpt = Partial<PersistentCacheOpt> & {
   prefix?: string;
   /**
    * dest folder
@@ -44,10 +44,10 @@ export type gulpCachedOpt = Parameters<typeof persistentCache>[0] & {
   deleteOnExit?: boolean;
 };
 
-function cacheLib(options: Partial<Opt> | undefined) {
+function cacheLib(options: Partial<PersistentCacheOpt> | undefined) {
   const config = getConfig();
   options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'tmp'), prefix: '' }, options);
-  return persistentCache(options);
+  return new persistentCache(options);
 }
 
 export function gulpCached(options: gulpCachedOpt & { dest?: string; cwd?: string }): ReturnType<typeof through2.obj>;
