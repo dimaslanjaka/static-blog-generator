@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from 'upath';
 import './JSON';
+import { jsonStringifyWithCircularRefs } from './JSON';
 import { pathJoin, writefile } from './filemanager';
 
 export interface PersistentCacheOpt {
@@ -98,7 +99,7 @@ export class persistentCache implements PersistentCacheOpt {
     if (this.persist) {
       // save in file
       try {
-        writefile(this.buildFilePath(key), JSON.stringifyWithCircularRefs(entry));
+        writefile(this.buildFilePath(key), jsonStringifyWithCircularRefs(entry));
       } catch (e) {
         return e;
       }
@@ -106,7 +107,7 @@ export class persistentCache implements PersistentCacheOpt {
 
     if (this.memory) {
       // save in memory only
-      entry.data = JSON.stringifyWithCircularRefs(entry.data);
+      entry.data = jsonStringifyWithCircularRefs(entry.data);
 
       this.memoryCache[key] = entry;
     }
