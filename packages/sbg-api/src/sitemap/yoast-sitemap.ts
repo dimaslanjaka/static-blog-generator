@@ -9,12 +9,6 @@ import getCategoryTags, { getLatestFromArrayDates } from './archive';
 import yoastSeoSitemapPages from './pages';
 import yoastSeoSitemapPosts from './posts';
 
-/*
-declare global {
-  const hexo: import('hexo');
-}
-*/
-
 type PageData = Hexo['locals'];
 type TemplateLocals = Hexo['locals'];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
