@@ -2,6 +2,15 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
+| 1.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/088d0b441/packages/sbg-api/release/sbg-api-1.0.0.tgz |
+| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/f423c715a/packages/sbg-api/release/sbg-api-1.0.1.tgz |
+| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/47773a7ea/packages/sbg-api/release/sbg-api-1.0.2.tgz |
+| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/e8fadc9ad/packages/sbg-api/release/sbg-api-1.0.3.tgz |
+| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/7c60bdab1/packages/sbg-api/release/sbg-api-1.0.4.tgz |
+| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/02317aed0/packages/sbg-api/release/sbg-api-1.0.5.tgz |
+| 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/3d352a6c2/packages/sbg-api/release/sbg-api-1.1.0.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/3d352a6c2/packages/sbg-api/release/sbg-api.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-api/release/sbg-api.tgz |
 
 use this tarball with `resolutions`:
 ```json
