@@ -119,8 +119,6 @@
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/warehouse.tgz"
   },
   "engines": {
-    "node": ">=14",
-    "npm": "^8",
-    "hexo": ">= 3"
+    "node": ">=14"
   }
 }
