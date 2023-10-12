@@ -155,9 +155,9 @@ class scheduler {
         }
     }
 }
-exports.scheduler = scheduler;
 scheduler.verbose = true;
 scheduler.registered = false;
 scheduler.postponeCounter = 0;
+exports.scheduler = scheduler;
 exports.default = scheduler;
 //# sourceMappingURL=scheduler.js.map
