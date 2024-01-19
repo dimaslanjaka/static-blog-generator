@@ -67,6 +67,7 @@ var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var fs_1 = __importDefault(require("fs"));
 var gulp_1 = __importDefault(require("gulp"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
+var moment_1 = __importDefault(require("moment"));
 var sbg_utility_1 = require("sbg-utility");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
@@ -186,7 +187,7 @@ exports.pipeProcessPost = pipeProcessPost;
 function processSinglePost(file, callback) {
     var _a, _b, _c, _d, _e;
     return __awaiter(this, void 0, void 0, function () {
-        var contents, config, dfile, parse, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build, e_1;
+        var contents, config, dfile, parse, createdDate, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build, e_1;
         return __generator(this, function (_f) {
             switch (_f.label) {
                 case 0:
@@ -224,6 +225,12 @@ function processSinglePost(file, callback) {
                 case 2:
                     parse = _f.sent();
                     if (parse && parse.metadata) {
+                        createdDate = (0, moment_1.default)(typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString());
+                        // if creation date greater than now
+                        if (createdDate.diff((0, moment_1.default)(Date.now())) < 0) {
+                            // otherwise return null
+                            return [2 /*return*/, null];
+                        }
                         // fix permalink
                         log.extend('permalink').extend('pattern')(config.permalink);
                         //parse.metadata.permalink = hexoPostParser.parsePermalink(parse);
