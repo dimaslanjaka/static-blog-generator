@@ -1,7 +1,7 @@
 import { testCwd } from './env';
 process.cwd = () => testCwd;
 //
-import { describe, expect, test } from '@jest/globals';
+import { beforeAll, describe, expect, test } from '@jest/globals';
 import path from 'path';
 import defaults from '../src';
 
