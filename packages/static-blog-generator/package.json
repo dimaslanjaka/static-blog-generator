@@ -7,7 +7,7 @@
     "google-news-sitemap": "^1.0.10",
     "hexo-post-parser": "^1.2.12",
     "instant-indexing": "workspace:^",
-    "safelinkify": "^1.2.1",
+    "safelinkify": "^1.2.2",
     "sbg-api": "workspace:^",
     "sbg-cli": "workspace:^",
     "sbg-server": "workspace:^",
