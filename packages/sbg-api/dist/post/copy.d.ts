@@ -21,4 +21,4 @@ export declare function copyAllPosts(_callback?: gulp.TaskFunctionCallback, conf
  * @returns
  */
 export declare function pipeProcessPost(config: ReturnType<typeof getConfig>): import("stream").Transform;
-export declare function processSinglePost(file: string, callback?: (parsed: hexoPostParser.postMap) => any): Promise<string>;
+export declare function processSinglePost(file: string, callback?: (parsed: hexoPostParser.postMap) => any): Promise<string | null>;
