@@ -16,6 +16,9 @@ updates:
       - dependency-name: 'codemirror'
         versions: ['6.x']
       - dependency-name: 'glob'
+      - dependency-name: 'prettier'
+      - dependency-name: 'eslint'
+      - dependency-name: 'eslint-plugin-prettier'
       - dependency-name: 'jsdom'
         versions: ['22.x']
   - package-ecosystem: 'github-actions'
