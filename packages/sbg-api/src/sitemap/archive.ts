@@ -51,12 +51,13 @@ function getCategoryTags(hexo: Hexo) {
  * @returns
  */
 export function getLatestFromArrayDates(arr: string[] | Date[]) {
+  const dateMap = arr.map(function (e: string | Date) {
+    return e instanceof Date ? e : moment(e).toDate();
+  });
   return new Date(
     Math.max.apply(
       null,
-      arr.map(function (e: string | Date) {
-        return e instanceof Date ? e : moment(e).toDate();
-      })
+      dateMap.map((date) => date.getTime())
     )
   );
 }
