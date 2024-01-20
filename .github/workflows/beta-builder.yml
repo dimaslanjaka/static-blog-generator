@@ -153,6 +153,15 @@ jobs:
             ./packages/sbg-server/src/public
             !**/node_modules/**
             !**/tmp/**
+      # overwrite cache key: delete previous and save current
+      - name: delete previous caches
+        if: ${{ steps.cache-restore.outputs.cache-hit }}
+        continue-on-error: true
+        run: |
+          gh extension install actions/gh-actions-cache
+          gh actions-cache delete "${{ env.cache-key }}" --confirm
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/cache/save@v3
         name: save caches
         with:
