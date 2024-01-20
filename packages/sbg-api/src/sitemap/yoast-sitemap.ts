@@ -65,7 +65,7 @@ export interface returnPageData extends PageData {
  */
 export function getPageData(data: TemplateLocals) {
   const is = hexoIs(data);
-  if (data['page']) {
+  if (data && 'page' in data) {
     const page = <returnPageData>data['page'];
     page.is = is;
     return page;
