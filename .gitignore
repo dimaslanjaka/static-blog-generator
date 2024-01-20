@@ -1,0 +1,52 @@
+**/node_modules
+**/*.tsbuildinfo
+*.log
+tmp
+temp
+.cache
+.env.development
+**/coverage
+**/_config.auto*.json
+/docs
+/src-old
+unused.md
+*.lerna_backup
+___*
+**/.rollup.cache/**
+**/package.tgz
+.env
+.git-rewrite
+/packages/**/package-lock.json
+
+# disable dist
+# /packages/**/dist/
+/*.tgz
+/dist
+# /release
+
+# branch v2
+/build
+/public
+/source
+/tests
+/src/types/_*
+/src/gulp/
+/src/validator/
+/.deploy_git
+/src-posts/
+/dist/validator
+
+# git management
+**/.git-rewrite
+**/.yarn/cache/*.zip
+**/.yarn/unplugged
+**/.yarn/versions
+**/.yarn/install-state.gz
+!**/.yarn/cache/.gitginore
+
+# sbg-api
+packages/*
+packages/sbg-api/dist
+!packages/sbg-api
+test/
+!packages/sbg-api/test/
