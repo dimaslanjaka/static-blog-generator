@@ -28,6 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+post_dir: src-posts
 skip_render:
 
 # Writing
