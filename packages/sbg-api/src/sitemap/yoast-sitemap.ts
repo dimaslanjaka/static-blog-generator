@@ -25,6 +25,7 @@ export interface sitemapObj {
   };
 }
 interface sitemapGroup {
+  [key: string]: any;
   post: sitemapObj;
   page: sitemapObj;
   tag: sitemapObj;
