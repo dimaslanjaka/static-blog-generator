@@ -1,0 +1,24 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "hexo server -p 4000",
+      "name": "server test",
+      "request": "launch",
+      "type": "node-terminal",
+      "preLaunchTask": "${defaultBuildTask}",
+      "cwd": "${workspaceFolder}/test/fixtures"
+    },
+    {
+      "command": "cross-env-shell DEBUG=post \"sbg post clean && sbg post copy\"",
+      "name": "post: clean copy",
+      "request": "launch",
+      "type": "node-terminal",
+      "preLaunchTask": "${defaultBuildTask}",
+      "cwd": "${workspaceFolder}/test/fixtures"
+    }
+  ]
+}
