@@ -144,7 +144,12 @@ jobs:
             ./yarn.lock
             ./packages/**/dist
             ./packages/**/release*/readme.md
-            ./packages/**/release*/*.tgz
+            ./packages/**/release*/sbg-utility.tgz
+            ./packages/**/release*/sbg-api.tgz
+            ./packages/**/release*/sbg-server.tgz
+            ./packages/**/release*/static-blog-generator.tgz
+            ./packages/**/release*/instant-indexing.tgz
+            ./packages/**/release*/sitemap-crawler.tgz
             ./packages/sbg-server/src/public
             !**/node_modules/**
             !**/tmp/**
