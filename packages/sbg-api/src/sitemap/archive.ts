@@ -1,4 +1,5 @@
 import Hexo from 'hexo';
+import { postMap } from 'hexo-post-parser';
 import moment from 'moment';
 
 interface objectCategoryTags {
@@ -7,6 +8,7 @@ interface objectCategoryTags {
   latest: string;
 }
 interface returnCategoryTags {
+  [key: string]: any;
   tags: objectCategoryTags[];
   categories: objectCategoryTags[];
 }
@@ -21,7 +23,7 @@ function getCategoryTags(hexo: Hexo) {
     return groupfilter;
   }
   groups.map((group) => {
-    const lastModifiedObject = locals.get(group).map((items) => {
+    const lastModifiedObject = locals.get(group).map((items: { name: string; path: string; posts: postMap[] }) => {
       if (items.posts) {
         const archives = items;
         const posts = archives.posts;
