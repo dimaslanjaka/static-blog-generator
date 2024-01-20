@@ -1,0 +1,65 @@
+{
+  "name": "sbg-site-test",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "start": "npm run server",
+    "build": "hexo generate",
+    "clean": "hexo clean && sbg clean post && sbg clean cache",
+    "deploy": "hexo deploy",
+    "server": "hexo server -p 4000",
+    "serve-static": "php -S localhost:4000 -t public/",
+    "update": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js && npx npm-check-updates --enginesNode -u -x chalk,hexo,codemirror && npm install",
+    "post-install": "node postinstall.js",
+    "test": "cd .. && npm test",
+    "post:standalone": "sbg post standalone",
+    "post:copy": "sbg post copy",
+    "manager": "sbg server"
+  },
+  "hexo": {
+    "version": "7.0.0-rc1"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "hexo": "^7.1.0",
+    "hexo-asset-link": "^2.2.1",
+    "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
+    "hexo-cli": "^4.3.1",
+    "hexo-front-matter": "^4.1.0",
+    "hexo-generator-archive": "git+https://github.com/hexojs/hexo-generator-archive",
+    "hexo-generator-category": "git+https://github.com/hexojs/hexo-generator-category",
+    "hexo-generator-index": "git+https://github.com/hexojs/hexo-generator-index",
+    "hexo-generator-tag": "git+https://github.com/hexojs/hexo-generator-tag",
+    "hexo-renderer-markdown-it": "git+https://github.com/hexojs/hexo-renderer-markdown-it",
+    "hexo-renderers": "^1.0.8",
+    "hexo-server": "^3.0.0",
+    "hexo-shortcodes": "^1.0.3",
+    "hexo-theme-landscape": "*",
+    "hexo-util": "^3.0.1",
+    "warehouse": "^5.0.0"
+  },
+  "devDependencies": {
+    "axios": "^1.2.6",
+    "axios-cache-interceptor": "^1.0.0",
+    "binary-collections": "^1.0.3",
+    "cross-env": "^7.0.3",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
+    "git-command-helper": "^1.2.5",
+    "hexo-post-parser": "^1.2.10",
+    "hpagent": "^1.2.0",
+    "js-yaml": "^4.1.0",
+    "moment": "^2.29.4",
+    "prompt": "^1.3.0",
+    "sbg-api": "*",
+    "sbg-cli": "*",
+    "sbg-server": "*",
+    "sbg-utility": "*",
+    "static-blog-generator": "*",
+    "yaml": "^2.2.1"
+  },
+  "resolutions": {
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
+  }
+}
