@@ -1,7 +1,6 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
-import gulpDom from 'gulp-dom';
-import { commonIgnore, deployConfig, getConfig, gulpCached, Logger } from 'sbg-utility';
+import { commonIgnore, deployConfig, getConfig, gulpCached, gulpDom, Logger } from 'sbg-utility';
 import { gulpOpt } from './gulp-options';
 
 /**
