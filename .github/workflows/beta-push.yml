@@ -55,7 +55,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: ${{ env.node_version }}
 
       - name: Set env
         id: set-env
