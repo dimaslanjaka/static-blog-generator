@@ -136,6 +136,7 @@ class SBG {
     } else if (opt === 'archive') {
       await cleaner.cleanArchive().catch(console.log);
     } else if (opt === 'post') {
+      debug('clean')('generated posts');
       await cleaner.cleanGeneratedPosts().catch(console.log);
     } else {
       await cleaner.cleanDb().catch(console.log);

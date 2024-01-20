@@ -13,7 +13,7 @@
       "cwd": "${workspaceFolder}/test/fixtures"
     },
     {
-      "command": "cross-env-shell DEBUG=post \"sbg post clean && sbg post copy\"",
+      "command": "cross-env-shell DEBUG=post,clean \"sbg clean post && sbg post copy\"",
       "name": "post: clean copy",
       "request": "launch",
       "type": "node-terminal",
