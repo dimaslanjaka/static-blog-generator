@@ -29651,12 +29651,19 @@
                   onError('Verbatim tags must end with a >');
               return verbatim;
           }
-          const [, handle, suffix] = source.match(/^(.*!)([^!]*)$/);
+          const [, handle, suffix] = source.match(/^(.*!)([^!]*)$/s);
           if (!suffix)
               onError(`The ${source} tag has no suffix`);
           const prefix = this.tags[handle];
-          if (prefix)
-              return prefix + decodeURIComponent(suffix);
+          if (prefix) {
+              try {
+                  return prefix + decodeURIComponent(suffix);
+              }
+              catch (error) {
+                  onError(String(error));
+                  return null;
+              }
+          }
           if (handle === '!')
               return source; // local tag
           onError(`Could not resolve tag: ${source}`);
@@ -30621,7 +30628,7 @@
   function plainString(item, ctx, onComment, onChompKeep) {
       const { type, value } = item;
       const { actualString, implicitKey, indent, indentStep, inFlow } = ctx;
-      if ((implicitKey && /[\n[\]{},]/.test(value)) ||
+      if ((implicitKey && value.includes('\n')) ||
           (inFlow && /[[\]{},]/.test(value))) {
           return quotedString(value, ctx);
       }
@@ -30970,6 +30977,8 @@
 
   function warn(logLevel, warning) {
       if (logLevel === 'debug' || logLevel === 'warn') {
+          // https://github.com/typescript-eslint/typescript-eslint/issues/7478
+          // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
           if (typeof process !== 'undefined' && process.emitWarning)
               process.emitWarning(warning);
           else
@@ -31054,7 +31063,7 @@
           return '';
       if (typeof jsKey !== 'object')
           return String(jsKey);
-      if (isNode(key) && ctx && ctx.doc) {
+      if (isNode(key) && ctx?.doc) {
           const strCtx = createStringifyContext(ctx.doc, {});
           strCtx.anchors = new Set();
           for (const node of ctx.anchors.keys())
@@ -31197,7 +31206,7 @@
                   if (iv.commentBefore)
                       reqNewline = true;
               }
-              else if (item.value == null && ik && ik.comment) {
+              else if (item.value == null && ik?.comment) {
                   comment = ik.comment;
               }
           }
@@ -31838,8 +31847,9 @@
                       key = keys[0];
                       value = it[key];
                   }
-                  else
-                      throw new TypeError(`Expected { key: value } tuple: ${it}`);
+                  else {
+                      throw new TypeError(`Expected tuple with one key, not ${keys.length} keys`);
+                  }
               }
               else {
                   key = it;
