@@ -115,7 +115,7 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
 export async function processSinglePost(
   file: string,
   callback?: (parsed: hexoPostParser.postMap) => any
-): Promise<string | null> {
+): Promise<string | undefined> {
   const contents = fs.readFileSync(file, 'utf-8');
   const config = getConfig();
   // debug file
@@ -149,14 +149,16 @@ export async function processSinglePost(
       .catch((e) => Logger.log(e));
 
     if (parse && parse.metadata) {
-      // skip scheduled post
-      const createdDate = moment(
-        typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString()
-      );
-      // if creation date greater than now
-      if (createdDate.diff(moment(Date.now())) < 0) {
-        // otherwise return null
-        return null;
+      if (parse.metadata.date) {
+        // skip scheduled post
+        const createdDate = moment(
+          typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString()
+        );
+        // if creation date greater than now
+        if (createdDate.diff(moment(Date.now())) < 0) {
+          // otherwise return null
+          return;
+        }
       }
       // fix permalink
       log.extend('permalink').extend('pattern')(config.permalink);
