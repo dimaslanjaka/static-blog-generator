@@ -51,6 +51,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
+          cache-key: ${{ runner.os }}-${{ env.node_version }}
+          cache-paths: |
+            ${{ steps.set-env.outputs.CACHE_NPM }}
+            ${{ steps.set-env.outputs.CACHE_YARN }}
+            ./packages/sbg-server/src/public
+            **/.yarn
+            ./yarn.lock
+            **/dist
 
       - name: Set env
         id: set-env
@@ -97,18 +105,11 @@ jobs:
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
-        id: cache
-        name: get caches
+      - uses: actions/cache/restore@v3
+        name: restore caches
         with:
-          path: |
-            ${{ steps.set-env.outputs.CACHE_NPM }}
-            ${{ steps.set-env.outputs.CACHE_YARN }}
-            ./packages/sbg-server/src/public
-            **/.yarn
-            ./yarn.lock
-            **/dist
-          key: ${{ runner.os }}-${{ env.node_version }}
+          path: ${{ env.cache-paths }}
+          key: ${{ env.cache-key }}
 
       - name: Install Global Packages
         run: |
@@ -149,3 +150,8 @@ jobs:
             ./packages/sbg-server/src/public
             !**/node_modules/**
             !**/tmp/**
+      - uses: actions/cache/save@v3
+        name: save caches
+        with:
+          path: ${{ env.cache-paths }}
+          key: ${{ env.cache-key }}
