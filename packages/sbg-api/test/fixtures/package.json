@@ -60,6 +60,12 @@
     "yaml": "^2.2.1"
   },
   "resolutions": {
+    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/b84405f/packages/static-blog-generator/release/static-blog-generator.tgz",
+    "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/b84405f/packages/instant-indexing/release/instant-indexing.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/b84405f/packages/sbg-utility/release/sbg-utility.tgz",
+    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/b84405f/packages/sbg-api/release/sbg-api.tgz",
+    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/b84405f/packages/sbg-cli/release/sbg-cli.tgz",
+    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/b84405f/packages/sbg-server/release/sbg-server.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
   }
 }
