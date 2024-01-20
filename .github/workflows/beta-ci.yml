@@ -4,6 +4,8 @@ on:
   push:
     paths-ignore:
       - '**/release*/**'
+      - '**/test'
+      - '**/.git*'
   pull_request:
     types:
       - closed
