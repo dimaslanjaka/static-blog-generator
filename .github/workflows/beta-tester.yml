@@ -112,7 +112,6 @@ jobs:
             yarn workspace $i build && yarn workspace $i run pack
           done
         shell: bash
-        name: build
       - run: 'yarn workspace sbg-site-test exec "sbg clean all"'
         name: test clean
       - run: 'yarn workspace sbg-site-test exec "sbg post standalone"'
