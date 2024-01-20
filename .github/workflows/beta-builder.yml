@@ -23,7 +23,7 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
-          submodules: 'recursive'
+
       - name: update submodules
         shell: bash
         run: |
