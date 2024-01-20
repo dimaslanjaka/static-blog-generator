@@ -18,7 +18,8 @@ jobs:
       cache-key: "my-cache"
       cache-paths: |
         ./packages/sbg-server/src/public
-        **/.yarn
+        **/.yarn/cache*
+        **/node_modules
         ./yarn.lock
         **/dist
 
