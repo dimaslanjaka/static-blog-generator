@@ -97,7 +97,7 @@ jobs:
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
-      - uses: actions/cache/save@v3
+      - uses: actions/cache@v3
         id: cache
         name: get caches
         with:
