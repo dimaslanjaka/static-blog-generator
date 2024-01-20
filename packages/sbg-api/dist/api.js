@@ -165,9 +165,7 @@ var SBG = /** @class */ (function () {
             var streamer = pcopy.copyAllPosts(undefined, config);
             streamer.on('end', function () {
                 // wait all handler to be closed
-                setTimeout(function () {
-                    resolve(null);
-                }, 7000);
+                setTimeout(function () { return resolve(null); }, 7000);
             });
         });
     };
@@ -243,6 +241,7 @@ var SBG = /** @class */ (function () {
                         return [3 /*break*/, 9];
                     case 5:
                         if (!(opt === 'post')) return [3 /*break*/, 7];
+                        (0, sbg_utility_1.debug)('clean')('generated posts');
                         return [4 /*yield*/, cleaner.cleanGeneratedPosts().catch(console.log)];
                     case 6:
                         _a.sent();

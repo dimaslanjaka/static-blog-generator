@@ -55,7 +55,7 @@ function initSitemap(type) {
  */
 function getPageData(data) {
     var is = (0, hexo_is_1.default)(data);
-    if (data['page']) {
+    if (data && 'page' in data) {
         var page = data['page'];
         page.is = is;
         return page;

@@ -31,7 +31,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.taskSeo = void 0;
 var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var gulp_1 = __importDefault(require("gulp"));
-var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var sbg_utility_1 = require("sbg-utility");
 /**
  * Auto seo runner
@@ -44,7 +43,7 @@ function taskSeo(_done, cwd) {
     return gulp_1.default
         .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd: cwd, ignore: ignore })
         .pipe((0, sbg_utility_1.gulpCached)({ name: 'seo' }))
-        .pipe((0, gulp_dom_1.default)(function (path) {
+        .pipe((0, sbg_utility_1.gulpDom)(function (path) {
         var _this = this;
         // fix alt images
         var images = Array.from(this.querySelectorAll('img[src]'));

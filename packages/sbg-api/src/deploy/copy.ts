@@ -11,7 +11,7 @@ export interface deployCopyOptions {
  * @param ignore
  */
 export function deployCopy(opt?: deployCopyOptions) {
-  let { config } = opt;
-  if (!config) config = getConfig();
-  return fs.copy(opt.config.public_dir, config.deploy.deployDir, { overwrite: true });
+  const defaultConf = getConfig();
+  const config = Object.assign(defaultConf, opt?.config || {});
+  return fs.copy(config.public_dir, config.deploy.deployDir, { overwrite: true });
 }

@@ -12,10 +12,9 @@ var sbg_utility_1 = require("sbg-utility");
  * @param ignore
  */
 function deployCopy(opt) {
-    var config = opt.config;
-    if (!config)
-        config = (0, sbg_utility_1.getConfig)();
-    return fs_extra_1.default.copy(opt.config.public_dir, config.deploy.deployDir, { overwrite: true });
+    var defaultConf = (0, sbg_utility_1.getConfig)();
+    var config = Object.assign(defaultConf, (opt === null || opt === void 0 ? void 0 : opt.config) || {});
+    return fs_extra_1.default.copy(config.public_dir, config.deploy.deployDir, { overwrite: true });
 }
 exports.deployCopy = deployCopy;
 //# sourceMappingURL=copy.js.map

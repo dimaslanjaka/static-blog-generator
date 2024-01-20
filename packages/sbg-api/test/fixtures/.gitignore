@@ -1,0 +1,7 @@
+source/_posts
+.deploy_git
+tmp
+node_modules
+.yarn/cache*
+.yarn/*gz
+db.json

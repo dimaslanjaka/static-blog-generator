@@ -54,21 +54,23 @@ var sitemapPostsList = [];
  */
 function yoastSeoSitemapPosts(hexo) {
     return __awaiter(this, void 0, void 0, function () {
-        var destSitemap;
+        var postArray, destSitemap;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, bluebird_1.default.all(hexo.locals.get('posts').toArray()).each(function (data) {
-                        var _a;
-                        var lastmod = ((_a = data.updated) === null || _a === void 0 ? void 0 : _a.format('YYYY-MM-DDTHH:mm:ssZ')) || (0, moment_timezone_1.default)().format();
-                        postUpdateDates.push(lastmod);
-                        var info = {
-                            loc: data.permalink,
-                            lastmod: lastmod,
-                            changefreq: 'weekly',
-                            priority: '0.8'
-                        };
-                        sitemapPostsList.push(info);
-                    })];
+                case 0:
+                    postArray = hexo.locals.get('posts').toArray();
+                    return [4 /*yield*/, bluebird_1.default.all(postArray).each(function (data) {
+                            var _a;
+                            var lastmod = ((_a = data.updated) === null || _a === void 0 ? void 0 : _a.format('YYYY-MM-DDTHH:mm:ssZ')) || (0, moment_timezone_1.default)().format();
+                            postUpdateDates.push(lastmod);
+                            var info = {
+                                loc: data.permalink,
+                                lastmod: lastmod,
+                                changefreq: 'weekly',
+                                priority: '0.8'
+                            };
+                            sitemapPostsList.push(info);
+                        })];
                 case 1:
                     _a.sent();
                     destSitemap = (0, path_1.join)(hexo.public_dir, 'post-sitemap.xml');
