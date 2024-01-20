@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: dimaslanjaka/static-blog-generator
-          ref: beta
+          ref: master
           token: ${{ secrets.ACCESS_TOKEN }}
           submodules: 'recursive'
       - name: update submodules
