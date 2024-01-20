@@ -87,13 +87,11 @@ class SBG {
   // copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
   copy(): Promise<void> {
     const config = this.config;
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve: (args: any) => any) {
       const streamer = pcopy.copyAllPosts(undefined, config);
       streamer.on('end', function () {
         // wait all handler to be closed
-        setTimeout(() => {
-          resolve(null);
-        }, 7000);
+        setTimeout(() => resolve(null), 7000);
       });
     });
   }
