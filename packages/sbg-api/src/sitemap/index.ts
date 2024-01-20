@@ -10,7 +10,9 @@ import {
   array_unique,
   commonIgnore,
   envNunjucks,
-  getConfig, gulpDom, Logger,
+  getConfig,
+  gulpDom,
+  Logger,
   noop,
   setConfig,
   sitemapCrawlerAsync,
@@ -75,12 +77,11 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
         return mapped;
       })
       .then(async (results) => {
-        sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(function (
-          a,
-          b
-        ) {
-          return a === b ? 0 : a < b ? -1 : 1;
-        });
+        sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(
+          function (a, b) {
+            return a === b ? 0 : a < b ? -1 : 1;
+          }
+        );
 
         for (let i = 0; i < deep; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {

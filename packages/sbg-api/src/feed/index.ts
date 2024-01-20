@@ -30,7 +30,7 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
 
           let posts = instance.locals.get('posts');
           posts = posts.sort('-date');
-          posts = posts.filter((post: { draft: boolean; }) => {
+          posts = posts.filter((post: { draft: boolean }) => {
             return post.draft !== true;
           });
 
