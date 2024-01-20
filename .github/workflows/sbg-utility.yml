@@ -19,6 +19,10 @@ on:
     types:
       - closed
   workflow_dispatch:
+  workflow_call:
+    secrets:
+      ACCESS_TOKEN:
+        required: true
 
 # run single job
 concurrency:
