@@ -5,7 +5,8 @@ on:
     paths-ignore:
       - '**/release*/**'
       - '**/test'
-      - '**/.git*'
+      - '**/package.json'
+      - '**/yarn.lock'
   pull_request:
     types:
       - closed
