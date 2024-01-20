@@ -9,8 +9,14 @@ import { extname, join, toUnix } from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { parsePermalink } from './permalink';
 
+/**
+ * log debug
+ *
+ * @example
+ * cross-env-shell DEBUG=* "your commands"
+ */
 const log = debug('post');
-const logerr = log.extend('error');
+const logErr = log.extend('error');
 const logLabel = log.extend('label');
 
 /**
@@ -77,17 +83,18 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
         return callback();
       }
       if (file.isNull()) {
-        logerr(file.path + ' is null');
+        logErr(file.path + ' is null');
         return callback();
       }
       if (file.isStream()) {
-        logerr(file.path + ' is stream');
+        logErr(file.path + ' is stream');
         return callback();
       }
 
       if (config) {
         // process markdown files
         if (file.extname === '.md') {
+          // log('copying ' + file.path.replace(process.cwd(), ''));
           const compile = await processSinglePost(file.path);
           if (typeof compile === 'string') {
             file.contents = Buffer.from(compile);
@@ -112,6 +119,12 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
   );
 }
 
+/**
+ * process single markdown post
+ * @param file file path
+ * @param callback
+ * @returns
+ */
 export async function processSinglePost(
   file: string,
   callback?: (parsed: hexoPostParser.postMap) => any
@@ -123,7 +136,7 @@ export async function processSinglePost(
   log('processing', dfile);
   // drop empty body
   if (contents.trim().length === 0) {
-    logerr('content empty', dfile);
+    logErr('content empty', dfile);
     return;
   }
 
@@ -154,8 +167,10 @@ export async function processSinglePost(
         const createdDate = moment(
           typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString()
         );
+        // log(createdDate, moment(Date.now()), createdDate.diff(moment(Date.now())));
         // if creation date greater than now
-        if (createdDate.diff(moment(Date.now())) < 0) {
+        if (moment(Date.now()).diff(createdDate) < 0) {
+          log('skip scheduled post ' + dfile);
           // otherwise return null
           return;
         }
@@ -250,7 +265,7 @@ export async function processSinglePost(
         return build;
       }
     } else {
-      logerr(String(parse), file);
+      logErr(String(parse), file);
     }
   } catch (e) {
     Logger.log(e);
