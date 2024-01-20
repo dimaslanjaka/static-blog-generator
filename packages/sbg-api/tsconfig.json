@@ -1,13 +1,27 @@
 {
-  "extends": "../../tsconfig.base.json",
+  // only for VSCode
+  "extends": "./tsconfig.base.json",
+  "ts-node": {
+    "transpileOnly": true,
+    "emit": false,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
+    "downlevelIteration": true,
     "baseUrl": "./",
     "outDir": "./tmp/dist",
-    "paths": { "src": ["./src"], "sbg-*": ["../sbg-*/src"] },
-    "typeRoots": ["./node_modules/@types", "./typings"]
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "strict": true,
+    "resolveJsonModule": true
   },
-  "include": ["./src", "./src/**/*.json", "./test"],
-  "exclude": ["**/dist", "**/node_modules"]
+  "include": [
+    "./src/**/*",
+    "./src/**/*.json",
+    "./test/**/*"
+  ]
 }
