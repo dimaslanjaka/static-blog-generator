@@ -16,8 +16,6 @@ jobs:
       node_version: 18.x
       cache-key: ${{ runner.os }}-${{ env.node_version }}
       cache-paths: |
-        ${{ steps.set-env.outputs.CACHE_NPM }}
-        ${{ steps.set-env.outputs.CACHE_YARN }}
         ./packages/sbg-server/src/public
         **/.yarn
         ./yarn.lock
