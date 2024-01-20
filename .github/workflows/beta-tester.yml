@@ -14,6 +14,7 @@ jobs:
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       node_version: 18.x
+      cache-key: "my-cache"
 
     runs-on: ubuntu-latest
 
@@ -88,7 +89,7 @@ jobs:
         id: cache
         with:
           path: '**/*'
-          key: ${{ runner.os }}-${{ env.node_version }}
+          key: ${{ env.cache-key }}
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node_version }}

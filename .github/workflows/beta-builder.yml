@@ -15,7 +15,7 @@ jobs:
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       node_version: 18.x
-      cache-key: ${{ runner.os }}-${{ env.node_version }}
+      cache-key: "my-cache"
       cache-paths: |
         ./packages/sbg-server/src/public
         **/.yarn
