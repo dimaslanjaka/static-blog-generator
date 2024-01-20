@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "noImplicitThis": false,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+		"declaration": true,
+		"sourceMap": true,
+    "allowJs": true,
+    "checkJs": false
+  }
+}

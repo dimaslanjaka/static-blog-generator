@@ -72,8 +72,14 @@ var sbg_utility_1 = require("sbg-utility");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
 var permalink_1 = require("./permalink");
+/**
+ * log debug
+ *
+ * @example
+ * cross-env-shell DEBUG=* "your commands"
+ */
 var log = (0, sbg_utility_1.debug)('post');
-var logerr = log.extend('error');
+var logErr = log.extend('error');
 var logLabel = log.extend('label');
 /**
  * Copy single post from src-posts folder to source/_posts
@@ -142,11 +148,11 @@ function pipeProcessPost(config) {
                             return [2 /*return*/, callback()];
                         }
                         if (file.isNull()) {
-                            logerr(file.path + ' is null');
+                            logErr(file.path + ' is null');
                             return [2 /*return*/, callback()];
                         }
                         if (file.isStream()) {
-                            logerr(file.path + ' is stream');
+                            logErr(file.path + ' is stream');
                             return [2 /*return*/, callback()];
                         }
                         if (!config) return [3 /*break*/, 4];
@@ -184,6 +190,12 @@ function pipeProcessPost(config) {
     );
 }
 exports.pipeProcessPost = pipeProcessPost;
+/**
+ * process single markdown post
+ * @param file file path
+ * @param callback
+ * @returns
+ */
 function processSinglePost(file, callback) {
     var _a, _b, _c, _d, _e;
     return __awaiter(this, void 0, void 0, function () {
@@ -197,7 +209,7 @@ function processSinglePost(file, callback) {
                     log('processing', dfile);
                     // drop empty body
                     if (contents.trim().length === 0) {
-                        logerr('content empty', dfile);
+                        logErr('content empty', dfile);
                         return [2 /*return*/];
                     }
                     _f.label = 1;
@@ -225,11 +237,15 @@ function processSinglePost(file, callback) {
                 case 2:
                     parse = _f.sent();
                     if (parse && parse.metadata) {
-                        createdDate = (0, moment_1.default)(typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString());
-                        // if creation date greater than now
-                        if (createdDate.diff((0, moment_1.default)(Date.now())) < 0) {
-                            // otherwise return null
-                            return [2 /*return*/, null];
+                        if (parse.metadata.date) {
+                            createdDate = (0, moment_1.default)(typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString());
+                            // log(createdDate, moment(Date.now()), createdDate.diff(moment(Date.now())));
+                            // if creation date greater than now
+                            if ((0, moment_1.default)(Date.now()).diff(createdDate) < 0) {
+                                log('skip scheduled post ' + dfile);
+                                // otherwise return null
+                                return [2 /*return*/];
+                            }
                         }
                         // fix permalink
                         log.extend('permalink').extend('pattern')(config.permalink);
@@ -316,7 +332,7 @@ function processSinglePost(file, callback) {
                         }
                     }
                     else {
-                        logerr(String(parse), file);
+                        logErr(String(parse), file);
                     }
                     return [3 /*break*/, 4];
                 case 3:

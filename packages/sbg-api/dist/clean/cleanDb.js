@@ -74,7 +74,7 @@ function cleanDb(callback, files) {
                 case 2:
                     _b.trys.push([2, 5, , 6]);
                     if (!(0, fs_extra_1.existsSync)(dir)) return [3 /*break*/, 4];
-                    log('claning', dir);
+                    log('cleaning', dir);
                     return [4 /*yield*/, (0, sbg_utility_1.del)(dir)];
                 case 3:
                     _b.sent();

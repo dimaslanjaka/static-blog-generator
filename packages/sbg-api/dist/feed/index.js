@@ -7,7 +7,6 @@ exports.hexoGenerateFeed = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
-var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
 var nunjucks_1 = __importDefault(require("nunjucks"));
@@ -68,7 +67,7 @@ function hexoGenerateFeed(done, config) {
                 var publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
                 gulp_1.default
                     .src('**/*.html', { cwd: publicDir, ignore: sbg_utility_1.commonIgnore })
-                    .pipe((0, gulp_dom_1.default)(function () {
+                    .pipe((0, sbg_utility_1.gulpDom)(function () {
                     // auto discovery rss
                     if (this.querySelectorAll("link[href=\"".concat(baseURL, "rss.xml\"]")).length === 0 &&
                         this.querySelectorAll("link[href=\"/rss.xml\"]").length === 0) {

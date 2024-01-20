@@ -3115,7 +3115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-commonjs@npm:^25.0.7":
+"@rollup/plugin-commonjs@npm:^25.0.5, @rollup/plugin-commonjs@npm:^25.0.7":
   version: 25.0.7
   resolution: "@rollup/plugin-commonjs@npm:25.0.7"
   dependencies:
@@ -3150,7 +3150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-json@npm:^6.1.0":
+"@rollup/plugin-json@npm:^6.0.1, @rollup/plugin-json@npm:^6.1.0":
   version: 6.1.0
   resolution: "@rollup/plugin-json@npm:6.1.0"
   dependencies:
@@ -3198,7 +3198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:^11.1.6":
+"@rollup/plugin-typescript@npm:^11.1.5, @rollup/plugin-typescript@npm:^11.1.6":
   version: 11.1.6
   resolution: "@rollup/plugin-typescript@npm:11.1.6"
   dependencies:
@@ -3476,6 +3476,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint@npm:^8":
+  version: 8.56.2
+  resolution: "@types/eslint@npm:8.56.2"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: 38e054971596f5c0413f66a62dc26b10e0a21ac46ceacb06fbf8cfb838d20820787209b17218b3916e4c23d990ff77cfdb482d655cac0e0d2b837d430fcc5db8
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:*, @types/estree@npm:^1.0.0":
   version: 1.0.1
   resolution: "@types/estree@npm:1.0.1"
@@ -3585,7 +3595,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/gulp@npm:^4, @types/gulp@npm:^4.0.11":
+"@types/gulp@npm:^4":
   version: 4.0.11
   resolution: "@types/gulp@npm:4.0.11"
   dependencies:
@@ -3690,7 +3700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdom@npm:21, @types/jsdom@npm:^21.1.0":
+"@types/jsdom@npm:21":
   version: 21.1.1
   resolution: "@types/jsdom@npm:21.1.1"
   dependencies:
@@ -3701,7 +3711,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:^7.0.12":
+"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.12":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
   checksum: 97ed0cb44d4070aecea772b7b2e2ed971e10c81ec87dd4ecc160322ffa55ff330dace1793489540e3e318d90942064bb697cc0f8989391797792d919737b3b98
@@ -5408,7 +5418,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.3.2, axios@npm:^1.4.0":
+"axios@npm:^1.4.0":
   version: 1.4.0
   resolution: "axios@npm:1.4.0"
   dependencies:
@@ -8428,6 +8438,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "eslint-config-prettier@npm:9.1.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 9229b768c879f500ee54ca05925f31b0c0bafff3d9f5521f98ff05127356de78c81deb9365c86a5ec4efa990cb72b74df8612ae15965b14136044c73e1f6a907
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.7":
   version: 0.3.7
   resolution: "eslint-import-resolver-node@npm:0.3.7"
@@ -8567,6 +8588,25 @@ __metadata:
   peerDependencies:
     eslint: ">=7.0.0"
   checksum: 77bb74747ee021cd33d6027a1e13620a910a05755e42e29b4f810ef52800ae62bd21057c5e7de66dc3b8cbc9bc8332eeea4c9e14ed889284e549278d1520fe3e
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-prettier@npm:5.0.0":
+  version: 5.0.0
+  resolution: "eslint-plugin-prettier@npm:5.0.0"
+  dependencies:
+    prettier-linter-helpers: ^1.0.0
+    synckit: ^0.8.5
+  peerDependencies:
+    "@types/eslint": ">=8.0.0"
+    eslint: ">=8.0.0"
+    prettier: ">=3.0.0"
+  peerDependenciesMeta:
+    "@types/eslint":
+      optional: true
+    eslint-config-prettier:
+      optional: true
+  checksum: 84e88744b9050f2d5ef31b94e85294dda16f3a53c2449f9d33eac8ae6264889b459bf35a68e438fb6b329c2a1d6491aac4bfa00d86317e7009de3dad0311bec6
   languageName: node
   linkType: hard
 
@@ -10498,30 +10538,6 @@ __metadata:
   bin:
     gulp: bin/gulp.js
   checksum: 42e3ca1374a82dea7f2aab775a5db2a67718d42e858438c497336a4db35def7b8c14933d7be3ec99178b78e5c49665058fde1fd0de067a8f8dd8caafcee4faa2
-  languageName: node
-  linkType: hard
-
-"gulp-dom@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz":
-  version: 1.0.4
-  resolution: "gulp-dom@https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
-  dependencies:
-    "@types/jsdom": ^21.1.0
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
-    ansi-colors: ^4.1.3
-    axios: ^1.3.2
-    cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/tarball/typescript"
-    jsdom: ^21.1.0
-    plugin-error: 2.0.1
-    true-case-path: ^2.2.1
-    upath: ^2.0.1
-  dependenciesMeta:
-    ansi-colors:
-      optional: true
-    axios:
-      optional: true
-    cross-spawn:
-      optional: true
-  checksum: 52eb3df7323ac645cf31e92c8c274862a83bab8ae0e0dfcb1ad78f9172b90a54d1ecb8f985db16fe315ccf2b81807f6c360c6521a6067bfc79f455740d0b63d9
   languageName: node
   linkType: hard
 
@@ -12725,7 +12741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:21, jsdom@npm:21.1.2, jsdom@npm:^21.1.0, jsdom@npm:^21.1.2, jsdom@npm:~21.1.2":
+"jsdom@npm:21, jsdom@npm:21.1.2, jsdom@npm:^21.1.2, jsdom@npm:~21.1.2":
   version: 21.1.2
   resolution: "jsdom@npm:21.1.2"
   dependencies:
@@ -15625,7 +15641,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plugin-error@npm:2.0.1, plugin-error@npm:^2.0.1":
+"plugin-error@npm:^2.0.1":
   version: 2.0.1
   resolution: "plugin-error@npm:2.0.1"
   dependencies:
@@ -17384,22 +17400,44 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sbg-api@workspace:packages/sbg-api"
   dependencies:
+    "@jest/environment": ^29.5.0
+    "@jest/expect": ^29.5.0
     "@jest/globals": ^29.5.0
+    "@jest/types": ^29.5.0
+    "@rollup/plugin-commonjs": ^25.0.5
+    "@rollup/plugin-json": ^6.0.1
+    "@rollup/plugin-node-resolve": ^15.2.3
+    "@rollup/plugin-typescript": ^11.1.5
+    "@tsconfig/node14": ^1.0.3
+    "@types/async": ^3.2.20
     "@types/bluebird": ^3.5.38
+    "@types/debug": ^4.1.8
+    "@types/eslint": ^8
     "@types/fs-extra": ^11.0.1
-    "@types/gulp": ^4.0.11
+    "@types/gulp": ^4
+    "@types/gulp-cache": ^0.4.6
+    "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo.tgz"
+    "@types/jsdom": 21
     "@types/micromatch": ^4.0.2
-    "@types/node": ^20.2.5
+    "@types/node": ^20.3.1
     "@types/nunjucks": ^3.2.2
+    "@types/progress": ^2.0.5
+    "@types/request": ^2.48.8
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2"
+    "@typescript-eslint/eslint-plugin": ^6.19.0
+    "@typescript-eslint/parser": ^6.19.0
     ansi-colors: ^4.1.3
     bluebird: ^3.7.2
+    cross-env: ^7.0.3
     cross-spawn: "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
+    eslint: ^8.56.0
+    eslint-config-prettier: ^9.1.0
+    eslint-plugin-prettier: 5.0.0
     front-matter: ^4.0.2
     fs-extra: ^11.2.0
     git-command-helper: ^2.0.2
     glob: ^10.3.10
     gulp: ^4.0.2
-    gulp-dom: "https://github.com/dimaslanjaka/static-blog-generator-hexo/raw/master/packages/gulp-dom/release/gulp-dom.tgz"
     hexo: ^7.1.0
     hexo-asset-link: ^2.2.1
     hexo-cli: ^4.3.1
@@ -17409,17 +17447,23 @@ __metadata:
     hexo-post-parser: ^1.2.12
     hexo-util: ^3.2.0
     jest: ^29.5.0
+    jest-config: ^29.5.0
+    jest-mock: ^29.5.0
     micromatch: ^4.0.5
     moment: ^2.30.1
     moment-timezone: ^0.5.44
     npm-run-all: ^4.1.5
     nunjucks: ^3.2.4
+    prettier: ^3.2.4
+    rollup: ^3.28.1
+    rollup-plugin-polyfill-node: ^0.12.0
+    rollup-plugin-terser: ^7.0.2
     safelinkify: ^1.2.2
-    sbg-utility: "workspace:^"
+    sbg-utility: "*"
     true-case-path: ^2.2.1
     ts-jest: ^29.1.0
     ts-node: ^10.9.1
-    typescript: ^5.3.3
+    typescript: ^5.0.4
     upath: ^2.0.1
     warehouse: ^5.0.1
     xmlbuilder2: ^3.1.1
@@ -17547,7 +17591,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"sbg-utility@^1.1.0, sbg-utility@^1.1.5, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
+"sbg-utility@*, sbg-utility@^1.1.0, sbg-utility@^1.1.5, sbg-utility@workspace:^, sbg-utility@workspace:packages/sbg-utility":
   version: 0.0.0-use.local
   resolution: "sbg-utility@workspace:packages/sbg-utility"
   dependencies:
@@ -18774,7 +18818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"synckit@npm:^0.8.6":
+"synckit@npm:^0.8.5, synckit@npm:^0.8.6":
   version: 0.8.8
   resolution: "synckit@npm:0.8.8"
   dependencies:

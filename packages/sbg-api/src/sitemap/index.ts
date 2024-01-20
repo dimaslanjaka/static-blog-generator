@@ -1,7 +1,6 @@
 import Bluebird from 'bluebird';
 import { readFileSync } from 'fs-extra';
 import gulp from 'gulp';
-import gulpDom from 'gulp-dom';
 import Hexo from 'hexo';
 import { full_url_for } from 'hexo-util';
 import micromatch from 'micromatch';
@@ -12,6 +11,7 @@ import {
   commonIgnore,
   envNunjucks,
   getConfig,
+  gulpDom,
   Logger,
   noop,
   setConfig,
@@ -57,7 +57,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
     }
     Bluebird.all(promises)
       .then((results) => {
-        const mapped = {} as ReturnType<typeof sitemapCrawlerAsync>;
+        const mapped = {} as Awaited<ReturnType<typeof sitemapCrawlerAsync>>;
         results.forEach((sitemap) => {
           for (const key in sitemap) {
             const values = sitemap[key];
@@ -77,12 +77,11 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
         return mapped;
       })
       .then(async (results) => {
-        sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(function (
-          a,
-          b
-        ) {
-          return a === b ? 0 : a < b ? -1 : 1;
-        });
+        sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(
+          function (a, b) {
+            return a === b ? 0 : a < b ? -1 : 1;
+          }
+        );
 
         for (let i = 0; i < deep; i++) {
           for (let ii = 0; ii < sitemaps.length; ii++) {

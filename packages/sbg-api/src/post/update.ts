@@ -6,7 +6,7 @@ import * as sbgUtils from 'sbg-utility';
 import { Logger, writefile } from 'sbg-utility';
 import { join, toUnix } from 'upath';
 
-const processingUpdate = {};
+const processingUpdate = {} as Record<string, any>;
 
 /**
  * update metadata.updated post

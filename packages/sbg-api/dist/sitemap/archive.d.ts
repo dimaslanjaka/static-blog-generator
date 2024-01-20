@@ -5,6 +5,7 @@ interface objectCategoryTags {
     latest: string;
 }
 interface returnCategoryTags {
+    [key: string]: any;
     tags: objectCategoryTags[];
     categories: objectCategoryTags[];
 }

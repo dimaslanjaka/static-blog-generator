@@ -68,7 +68,6 @@ exports.hexoGenerateSitemap = exports.generateSitemap = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_extra_1 = require("fs-extra");
 var gulp_1 = __importDefault(require("gulp"));
-var gulp_dom_1 = __importDefault(require("gulp-dom"));
 var hexo_1 = __importDefault(require("hexo"));
 var hexo_util_1 = require("hexo-util");
 var micromatch_1 = __importDefault(require("micromatch"));
@@ -253,7 +252,7 @@ function hexoGenerateSitemap(config) {
                 var publicDir = (0, upath_1.join)(config.cwd, config.public_dir);
                 gulp_1.default
                     .src('**/*.html', { cwd: publicDir, ignore: sbg_utility_1.commonIgnore })
-                    .pipe((0, gulp_dom_1.default)(function () {
+                    .pipe((0, sbg_utility_1.gulpDom)(function () {
                     // auto discovery sitemap
                     if (this.querySelectorAll("link[href=\"".concat(baseURL, "sitemap.xml\"]")).length === 0 &&
                         this.querySelectorAll("link[href=\"/sitemap.xml\"]").length === 0) {

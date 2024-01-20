@@ -1,11 +1,10 @@
 import Bluebird from 'bluebird';
 import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
 import gulp from 'gulp';
-import gulpDom from 'gulp-dom';
 import hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
-import { commonIgnore, envNunjucks, getConfig } from 'sbg-utility';
+import { commonIgnore, envNunjucks, getConfig, gulpDom } from 'sbg-utility';
 import { join } from 'upath';
 import { gulpOpt } from '../gulp-options';
 
@@ -31,7 +30,7 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
 
           let posts = instance.locals.get('posts');
           posts = posts.sort('-date');
-          posts = posts.filter((post) => {
+          posts = posts.filter((post: { draft: boolean }) => {
             return post.draft !== true;
           });
 
@@ -44,7 +43,7 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
           if (url.includes(':lang/')) url = url.replace('/:lang/', '/');
 
           let icon = '';
-          if (iconCfg) icon = full_url_for.call(instance, iconCfg);
+          if (iconCfg) icon = full_url_for.call(instance, iconCfg) as string;
           else if (email) icon = gravatar(email, {});
 
           const feed_url = full_url_for.call(instance, 'rss.xml');

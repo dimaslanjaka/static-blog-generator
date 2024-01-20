@@ -87,13 +87,11 @@ class SBG {
   // copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
   copy(): Promise<void> {
     const config = this.config;
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve: (args: any) => any) {
       const streamer = pcopy.copyAllPosts(undefined, config);
       streamer.on('end', function () {
         // wait all handler to be closed
-        setTimeout(() => {
-          resolve(null);
-        }, 7000);
+        setTimeout(() => resolve(null), 7000);
       });
     });
   }
@@ -138,6 +136,7 @@ class SBG {
     } else if (opt === 'archive') {
       await cleaner.cleanArchive().catch(console.log);
     } else if (opt === 'post') {
+      debug('clean')('generated posts');
       await cleaner.cleanGeneratedPosts().catch(console.log);
     } else {
       await cleaner.cleanDb().catch(console.log);

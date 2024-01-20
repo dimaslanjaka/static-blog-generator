@@ -43,9 +43,10 @@ function getCategoryTags(hexo) {
  * @returns
  */
 function getLatestFromArrayDates(arr) {
-    return new Date(Math.max.apply(null, arr.map(function (e) {
+    var dateMap = arr.map(function (e) {
         return e instanceof Date ? e : (0, moment_1.default)(e).toDate();
-    })));
+    });
+    return new Date(Math.max.apply(null, dateMap.map(function (date) { return date.getTime(); })));
 }
 exports.getLatestFromArrayDates = getLatestFromArrayDates;
 exports.default = getCategoryTags;

@@ -29,7 +29,7 @@ export async function cleanDb(callback?: gulp.TaskFunctionCallback | (() => any)
     const dir = dirs[i];
     try {
       if (existsSync(dir)) {
-        log('claning', dir);
+        log('cleaning', dir);
         await del(dir);
       }
     } catch {
