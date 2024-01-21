@@ -128,6 +128,7 @@ class SBG {
    * clean cache, auto generated posts, etc
    * @see {@link cleaner.cleanDb}
    * @see {@link cleaner.cleanArchive}
+   * @see {@link cleaner.cleanGeneratedPosts}
    */
   async clean(opt?: 'all' | 'archive' | 'database' | 'post') {
     if (opt === 'all') {
