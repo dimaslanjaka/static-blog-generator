@@ -1,5 +1,5 @@
 import { Application } from '../src';
-import { testCwd } from './env';
+import { fixturesCwd } from './env';
 
-const api = new Application(testCwd);
+const api = new Application(fixturesCwd);
 api.copy();
