@@ -2,7 +2,7 @@ import ansiColors from 'ansi-colors';
 import fs from 'fs';
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import { debug, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
@@ -164,12 +164,13 @@ export async function processSinglePost(
     if (parse && parse.metadata) {
       if (parse.metadata.date) {
         // skip scheduled post
-        const createdDate = moment(
-          typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString()
-        );
-        // log(createdDate, moment(Date.now()), createdDate.diff(moment(Date.now())));
+        const createdDate = moment(String(parse.metadata.date));
+        const today = moment(new Date());
+        const diff = today.diff(createdDate);
+        // log('today=' + today.format(), 'created=' + createdDate.format(), 'isGreater=' + String(diff));
         // if creation date greater than now
-        if (moment(new Date()).isAfter(createdDate)) {
+        // if (moment(new Date()).isAfter(createdDate)) {
+        if (diff < 0) {
           log('skip scheduled post ' + dfile);
           // otherwise return null
           return;
