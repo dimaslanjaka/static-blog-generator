@@ -166,10 +166,11 @@ export async function processSinglePost(
         // skip scheduled post
         const createdDate = moment(
           typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString()
-        );
-        // log(createdDate, moment(Date.now()), createdDate.diff(moment(Date.now())));
+        )
+          .toDate()
+          .getTime();
         // if creation date greater than now
-        if (moment(Date.now()).diff(createdDate) < 0) {
+        if (createdDate <= new Date().getTime()) {
           log('skip scheduled post ' + dfile);
           // otherwise return null
           return;
