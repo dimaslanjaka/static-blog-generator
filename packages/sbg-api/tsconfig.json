@@ -1,5 +1,4 @@
 {
-  // only for VSCode
   "extends": "./tsconfig.base.json",
   "ts-node": {
     "transpileOnly": true,
@@ -22,6 +21,7 @@
   "include": [
     "./src/**/*",
     "./src/**/*.json",
-    "./test/**/*"
+    "./test/**/*",
+    "./test/**/*.json"
   ]
 }
