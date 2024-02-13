@@ -52,7 +52,7 @@
     "jsonc-parser": "^3.2.0",
     "micromatch": "^4.0.5",
     "minimatch": "^9.0.1",
-    "node-libcurl": "^3.0.0",
+    "node-libcurl": "^4.0.0",
     "nunjucks": "^3.2.4",
     "plugin-error": "^2.0.1",
     "progress": "^2.0.3",
