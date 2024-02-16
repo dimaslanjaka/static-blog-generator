@@ -124,6 +124,3 @@ export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefine
     return wstream;
   }
 }
-
-// safelinkify the deploy folder
-gulp.task('safelink', taskSafelink);

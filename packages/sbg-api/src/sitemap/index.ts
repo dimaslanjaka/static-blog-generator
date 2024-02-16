@@ -129,7 +129,7 @@ export function hexoGenerateSitemap(config = getConfig()) {
     const instance = new Hexo(config.cwd);
     instance.init().then(() => {
       instance.load().then(function () {
-        env.addFilter('formatUrl', (str) => {
+        env.addFilter('formatUrl', (str: string | undefined) => {
           return full_url_for.call(instance, str);
         });
         const config = setConfig(instance.config);
@@ -232,11 +232,3 @@ export function hexoGenerateSitemap(config = getConfig()) {
 function isMatch(str: string, patterns: string | readonly string[]) {
   return micromatch.isMatch(str, patterns);
 }
-
-gulp.task('sitemap', () => {
-  return new Bluebird((resolve) => {
-    hexoGenerateSitemap().then(function () {
-      resolve();
-    });
-  });
-});

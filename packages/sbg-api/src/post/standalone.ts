@@ -31,6 +31,4 @@ function standaloneRunner() {
     });
 }
 
-gulp.task('post:standalone', standaloneRunner);
-
 export default standaloneRunner;

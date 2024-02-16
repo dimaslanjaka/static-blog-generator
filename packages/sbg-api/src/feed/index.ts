@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird';
 import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
-import gulp from 'gulp';
+import gulp, { TaskFunctionCallback } from 'gulp';
 import hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
@@ -15,13 +15,13 @@ const env = envNunjucks();
  * @param done
  * @param config
  */
-export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getConfig()) {
+export function hexoGenerateFeed(done?: gulp.TaskFunctionCallback, config = getConfig()) {
   const instance = new hexo(config.cwd);
 
   return new Bluebird((resolve) => {
     instance.init().then(() => {
       instance.load().then(() => {
-        env.addFilter('formatUrl', (str) => {
+        env.addFilter('formatUrl', (str: string | undefined) => {
           return full_url_for.call(instance, str);
         });
 
@@ -34,10 +34,8 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
             return post.draft !== true;
           });
 
-          // const { email, feed, url: urlCfg } = config;
           const email = config.email;
           const urlCfg = config.url;
-          // const { icon: iconCfg } = feed;
           const iconCfg = config.feed.icon;
 
           let url = urlCfg;
@@ -46,8 +44,11 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
           if (url.includes(':lang/')) url = url.replace('/:lang/', '/');
 
           let icon = '';
-          if (iconCfg) icon = full_url_for.call(instance, iconCfg) as string;
-          else if (email) icon = gravatar(email, {});
+          if (iconCfg) {
+            icon = full_url_for.call(instance, iconCfg) as string;
+          } else if (email) {
+            icon = gravatar(email, {});
+          }
 
           const feed_url = full_url_for.call(instance, 'rss.xml');
 
@@ -106,4 +107,7 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
   });
 }
 
-gulp.task('feed', hexoGenerateFeed);
+/** gulp task */
+export function gulpHexoGeneratedFeed(callback?: TaskFunctionCallback) {
+  return hexoGenerateFeed(callback);
+}
