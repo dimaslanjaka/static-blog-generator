@@ -6,7 +6,11 @@
 		"target": "ES2015",
 		"skipDefaultLibCheck": true,
 		"strict": false,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"allowJs": true,
+		"checkJs": false,
+		"resolveJsonModule": true,
+		"moduleResolution": "Node16"
 	},
 	"include": ["./src/index.ts", "./src/index-browser.ts"],
 	"exclude": [
