@@ -159,7 +159,7 @@ export async function processSinglePost(
         fix: true,
         sourceFile: file
       })
-      .catch((e) => Logger.log(e));
+      .catch((e: any) => Logger.log(e));
 
     if (parse && parse.metadata) {
       if (parse.metadata.date) {
@@ -272,5 +272,3 @@ export async function processSinglePost(
     Logger.log(e);
   }
 }
-
-gulp.task('post:copy', copyAllPosts);

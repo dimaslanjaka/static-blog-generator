@@ -1,6 +1,6 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
-import { commonIgnore, deployConfig, getConfig, gulpCached, gulpDom, Logger } from 'sbg-utility';
+import { commonIgnore, getConfig, gulpCached, gulpDom, Logger } from 'sbg-utility';
 import { gulpOpt } from './gulp-options';
 
 /**
@@ -46,8 +46,3 @@ export function taskSeo(_done: gulp.TaskFunctionCallback | null | undefined, cwd
     )
     .pipe(gulp.dest(cwd));
 }
-
-gulp.task('seo', function () {
-  const { deployDir } = deployConfig();
-  return taskSeo(null, deployDir);
-});
