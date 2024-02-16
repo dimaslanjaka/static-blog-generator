@@ -2,7 +2,7 @@
   "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "target": "ES2020",
-    "module": "commonjs",
+    "module": "CommonJS",
     "downlevelIteration": true,
     "baseUrl": "./",
     "outDir": "./dist",
@@ -17,6 +17,7 @@
 		"sourceMap": true,
     "allowJs": true,
     "checkJs": false,
-    "lib": ["DOM", "ES2020"]
+    "lib": ["DOM", "ES2020"],
+    "moduleResolution": "Node"
   }
 }
