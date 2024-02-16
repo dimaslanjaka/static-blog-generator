@@ -44,8 +44,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/preset-env": "^7.23.8",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@babel/preset-typescript": "^7.23.3",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
@@ -72,7 +72,7 @@
     "nodemon": "^3.0.3",
     "npm-check-updates": "^16.10.12",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
@@ -105,13 +105,13 @@
     }
   },
   "resolutions": {
-    "hexo": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo.tgz",
-    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo-asset-link.tgz",
-    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo-cli.tgz",
-    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo-front-matter.tgz",
-    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo-log.tgz",
-    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/hexo-util.tgz",
-    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/638a594/releases/warehouse.tgz",
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-asset-link.tgz",
+    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-cli.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-front-matter.tgz",
+    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-log.tgz",
+    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-util.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/warehouse.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
