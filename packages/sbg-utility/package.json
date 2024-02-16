@@ -73,7 +73,6 @@
     "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
-    "@tsconfig/node14": "^1.0.3",
     "@types/async": "^3.2.20",
     "@types/bluebird": "^3.5.38",
     "@types/debug": "^4.1.8",

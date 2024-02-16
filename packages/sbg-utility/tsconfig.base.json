@@ -1,21 +1,26 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 14",
+  "_version": "14.1.0",
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
     "downlevelIteration": true,
     "baseUrl": "./",
     "outDir": "./dist",
-    "esModuleInterop": true,
     "importHelpers": true,
-    "strict": true,
     "resolveJsonModule": true,
     "noImplicitThis": false,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
 		"declaration": true,
 		"sourceMap": true,
     "allowJs": true,
-    "checkJs": false
+    "checkJs": false,
+    "lib": ["ES2020", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node16"
   }
 }

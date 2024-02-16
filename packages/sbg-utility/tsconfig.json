@@ -1,5 +1,4 @@
 {
-  // only for VSCode
   "extends": "./tsconfig.base.json",
   "ts-node": {
     "transpileOnly": true,
@@ -9,7 +8,7 @@
     }
   },
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "Node16",
     "target": "es5",
     "downlevelIteration": true,
     "baseUrl": "./",
