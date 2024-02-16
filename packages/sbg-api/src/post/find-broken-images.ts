@@ -1,11 +1,13 @@
 import axios from 'axios';
 import Bluebird from 'bluebird';
+import { glob } from 'glob';
 import { TaskFunctionCallback } from 'gulp';
 import Hexo from 'hexo';
-import { color } from 'hexo-post-parser';
+import { color, parsePost } from 'hexo-post-parser';
 import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
-import { getConfig } from 'sbg-utility/dist';
+import moment from 'moment-timezone';
+import { delay, getConfig, path, writefile } from 'sbg-utility';
 
 /**
  * find broken images from html
@@ -52,4 +54,74 @@ export function hexoFindBrokenImages(done?: TaskFunctionCallback, config = getCo
       });
     });
   });
+}
+
+interface Report {
+  /** post path */
+  post: string;
+  /** array of broken image url */
+  brokenImages: string[];
+}
+
+/** parse markdown to html */
+async function toHtml(file: string, config = getConfig()) {
+  const results = [] as Report[];
+  const parse = await parsePost(file, { sourceFile: file, config });
+  if (parse && parse.body) {
+    try {
+      const html = await marked(parse.body, { async: true });
+      console.log('finding broken images on', file);
+      const result = { post: file, brokenImages: [] } as Report;
+      const brokenImages = await findBrokenImages(html);
+      if (brokenImages.length > 0) {
+        result.brokenImages = brokenImages;
+        results.push(result);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  return results;
+}
+
+export function findBrokenImagesGlob(config = getConfig()) {
+  const globStream = new glob.Glob('**/*.md', {
+    withFileTypes: false,
+    absolute: true,
+    cwd: config.cwd,
+    ignore: ['**/node_modules/**', '**/vendor/**', '**/License.md', '**/readme.md']
+  });
+
+  const files = [] as string[];
+
+  globStream.stream().on('data', (result) => {
+    files.push(result);
+    start();
+  });
+
+  let running = false;
+  async function start() {
+    // skip run when still running
+    if (running) return;
+    while (files.length > 0) {
+      // start
+      running = true;
+
+      const file = files.shift() || '';
+
+      if (file.length > 0) {
+        const reportFile = path.join(config.source_dir, 'reports/index.md');
+        const reports = await toHtml(file);
+        const metadata = ['---', 'title: Reports', 'type: page', `date: ${moment().format()}`, '---'].join('\n');
+        const body = [`## Blog Reports`, '```json', JSON.stringify(reports, null, 2), '```'].join('\n');
+        writefile(reportFile, metadata + '\n\n' + body);
+      }
+
+      // delay 3s
+      await delay(3000);
+
+      // stop
+      running = false;
+    }
+  }
 }

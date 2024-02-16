@@ -8,6 +8,7 @@ import { deployCopy } from './deploy/copy';
 import { taskSafelink } from './gulp.safelink';
 import { taskSeo } from './gulp.seo';
 import * as pcopy from './post/copy';
+import { findBrokenImagesGlob } from './post/find-broken-images';
 import standaloneRunner from './post/standalone';
 
 class SBG {
@@ -121,7 +122,7 @@ class SBG {
     await hexo.load().catch(noop);
     // hexo generate
     await hexo.call('generate').catch(noop);
-    await hexo.exit();
+    await hexo.exit(new Error());
   }
 
   /**
@@ -142,6 +143,10 @@ class SBG {
     } else {
       await cleaner.cleanDb().catch(console.log);
     }
+  }
+
+  async findBrokenImages() {
+    findBrokenImagesGlob(this.config)
   }
 
   public deploy = new (class {
