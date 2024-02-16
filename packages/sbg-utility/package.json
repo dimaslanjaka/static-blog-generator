@@ -6,8 +6,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "!**/*.tsbuildinfo",
-    "!**/release*/**"
+    "!**/*.tsbuildinfo"
   ],
   "packageManager": "yarn@3.6.3",
   "scripts": {
