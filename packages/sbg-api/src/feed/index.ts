@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
 import gulp, { TaskFunctionCallback } from 'gulp';
-import hexo from 'hexo';
+import Hexo from 'hexo';
 import { full_url_for, gravatar } from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { commonIgnore, envNunjucks, getConfig, gulpDom } from 'sbg-utility';
@@ -16,7 +16,7 @@ const env = envNunjucks();
  * @param config
  */
 export function hexoGenerateFeed(done?: gulp.TaskFunctionCallback, config = getConfig()) {
-  const instance = new hexo(config.cwd);
+  const instance = new Hexo(config.cwd);
 
   return new Bluebird((resolve) => {
     instance.init().then(() => {
