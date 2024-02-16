@@ -34,8 +34,11 @@ export function hexoGenerateFeed(done: gulp.TaskFunctionCallback, config = getCo
             return post.draft !== true;
           });
 
-          const { email, feed, url: urlCfg } = config;
-          const { icon: iconCfg } = feed;
+          // const { email, feed, url: urlCfg } = config;
+          const email = config.email;
+          const urlCfg = config.url;
+          // const { icon: iconCfg } = feed;
+          const iconCfg = config.feed.icon;
 
           let url = urlCfg;
           if (url[url.length - 1] !== '/') url += '/';
