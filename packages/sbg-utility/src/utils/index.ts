@@ -23,6 +23,7 @@ export * from './noop';
 export * from './nunjucks-env';
 export * from './object';
 export * from './persistent-cache';
+export * from './promise';
 export * from './promisify';
 export * from './scheduler';
 export * from './semver';
