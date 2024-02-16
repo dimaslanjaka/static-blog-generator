@@ -130,9 +130,12 @@ jobs:
           touch yarn.lock
           yarn install --inline-builds
         working-directory: packages/sbg-utility
-      - name: build clean
+      - name: clean
         working-directory: packages/sbg-utility
-        run: yarn run clean && yarn run build
+        run: yarn run clean
+      - name: build
+        working-directory: packages/sbg-utility
+        run: yarn run build
       - name: build pack
         working-directory: packages/sbg-utility
         run: |

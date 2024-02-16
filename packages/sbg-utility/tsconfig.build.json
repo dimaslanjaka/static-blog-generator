@@ -2,7 +2,11 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"rootDir": "./src",
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"target": "ES2015",
+		"skipDefaultLibCheck": true,
+		"strict": false,
+		"skipLibCheck": true
 	},
 	"include": ["./src/index.ts", "./src/index-browser.ts"],
 	"exclude": [
