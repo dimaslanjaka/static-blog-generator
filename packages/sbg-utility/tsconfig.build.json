@@ -9,8 +9,7 @@
 		"skipLibCheck": true,
 		"allowJs": true,
 		"checkJs": false,
-		"resolveJsonModule": true,
-		"moduleResolution": "Node16"
+		"resolveJsonModule": true
 	},
 	"include": ["./src/index.ts", "./src/index-browser.ts"],
 	"exclude": [

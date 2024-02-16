@@ -20,11 +20,11 @@
     // enable ESM default import
     "esModuleInterop": true,
     // add library
-    "lib": ["es2020", "DOM"],
+    "lib": ["ES2020", "DOM"],
     // add target module
     "target": "ES2015",
     // module resolution set
-    "moduleResolution": "Node16",
+    "moduleResolution": "Node",
     // skip typechecking node_modules/@types/
     "skipDefaultLibCheck": true,
     "skipLibCheck": true
