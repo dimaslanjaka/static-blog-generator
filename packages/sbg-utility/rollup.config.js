@@ -2,87 +2,51 @@ const resolve = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const { terser } = require('rollup-plugin-terser');
 const json = require('@rollup/plugin-json');
-//const typescript = require('@rollup/plugin-typescript');
-//const tsconfig = require('./tsconfig.build.json');
-//const tsbase = require('./tsconfig.base.json');
+const typescript = require('@rollup/plugin-typescript');
+const tsconfig = require('./tsconfig.build.json');
+const tsbase = require('./tsconfig.base.json');
 const lib = require('./package.json');
-const outputFileName = 'sbg-utility';
-const name = 'sbg-utility';
-const input = './dist/index.js';
 const polyfill = require('rollup-plugin-polyfill-node');
+const { deepmerge } = require('deepmerge-ts');
 
-/**
- *
- * @param {import('rollup').RollupOptions} config
- * @returns
- */
-const buildConfig = (config) => {
-  /*const tsOpt = Object.assign(tsbase, tsconfig, {
-    compilerOptions: {
-      module: 'esnext',
-      lib: ['es2020', 'dom'],
-      target: 'es5',
-      allowSyntheticDefaultImports: true,
-      skipLibCheck: true
-    }
-  });
-  if (tsOpt.extends) delete tsOpt.extends;*/
-  // plugins: [typescript(tsOpt)]
-  const build = ({ minified }) => ({
-    input,
-    ...config,
-    output: {
-      ...config.output,
-      file: `${config.output.file}.${minified ? 'min.js' : 'js'}`
-    },
-    plugins: [
-      // const json = require('@rollup/plugin-json');
-      json(),
-      // const polyfill = require('rollup-plugin-polyfill-node');
-      polyfill(),
-      // const resolve = require('@rollup/plugin-node-resolve');
-      resolve({
-        // To provide stubbed versions of Node built-ins with plugin rollup-plugin-polyfill-node
-        preferBuiltins: false,
-        // To instructs the plugin to use the browser module resolutions in package.json and adds 'browser' to exportConditions
-        browser: true
-      }),
-      // const commonjs = require('@rollup/plugin-commonjs');
-      commonjs(),
-      // const { terser } = require('rollup-plugin-terser');
-      minified && terser(),
-      ...(config.plugins || [])
-    ]
-  });
+const name = 'sbgUtility';
+const outputFileName = 'sbg-utility';
 
-  return [build({ minified: false }), build({ minified: true })];
+const tsOpt = deepmerge(tsbase, tsconfig, {
+  compilerOptions: {
+    declaration: false
+  }
+});
+['extends', 'display', '$schema', '_version'].forEach((pname) => {
+  if (tsOpt[pname]) delete tsOpt[pname];
+});
+
+const year = new Date().getFullYear();
+const banner = `// ${lib.name} v${lib.version} Copyright (c) ${year} ${lib.author}`;
+/** @type {import('rollup').RollupOptions} */
+const rollupConfig = {
+  input: './dist/index-browser.js',
+  output: {
+    file: `dist/browser/${outputFileName}.js`,
+    name,
+    format: 'umd',
+    exports: 'none',
+    banner
+  },
+  plugins: [
+    resolve.default({
+      // To provide stubbed versions of Node built-ins with plugin rollup-plugin-polyfill-node
+      preferBuiltins: false,
+      // To instructs the plugin to use the browser module resolutions in package.json and adds 'browser' to exportConditions
+      browser: true,
+      extensions: ['.js', '.json', '.ts']
+    }),
+    json(),
+    commonjs.default({
+      requireReturnsDefault: 'auto'
+    }),
+    polyfill()
+  ]
 };
 
-const defaults = async () => {
-  const year = new Date().getFullYear();
-  const banner = `// ${lib.name} v${lib.version} Copyright (c) ${year} ${lib.author}`;
-
-  return [
-    ...buildConfig({
-      output: {
-        file: `dist/browser/${outputFileName}`,
-        name,
-        format: 'umd',
-        exports: 'default',
-        banner
-      }
-    })
-
-    /*...buildConfig({
-      output: {
-        file: `dist/esm/${outputFileName}`,
-        format: 'esm',
-        preferConst: true,
-        exports: 'named',
-        banner
-      }
-    })*/
-  ];
-};
-
-module.exports = defaults;
+module.exports = rollupConfig;

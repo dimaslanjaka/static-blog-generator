@@ -15,8 +15,9 @@
     "update": "run-s \"update:**\"",
     "test": "yarn run clean && jest --runInBand --detectOpenHandles",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp build && rollup -c -m",
+    "build": "gulp build",
     "build-pack": "yarn run build && yarn run pack",
+    "rollup": "rollup -c -m",
     "clean": "gulp --series clean build",
     "pack": "node packer.js --yarn"
   },
@@ -42,6 +43,7 @@
     "cheerio": "^1.0.0-rc.12",
     "cross-spawn": "*",
     "debug": "^4.3.4",
+    "deepmerge-ts": "4",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10",
     "gulp": "^4.0.2",
