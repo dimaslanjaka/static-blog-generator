@@ -24,7 +24,7 @@
     // add target module
     "target": "ES2015",
     // module resolution set
-    "moduleResolution": "Node",
+    "moduleResolution": "Node16",
     // skip typechecking node_modules/@types/
     "skipDefaultLibCheck": true,
     "skipLibCheck": true

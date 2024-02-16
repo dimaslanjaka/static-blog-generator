@@ -4,7 +4,7 @@
     "transpileOnly": true,
     "emit": false,
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "Node16"
     }
   },
   "compilerOptions": {
