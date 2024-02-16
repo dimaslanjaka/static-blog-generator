@@ -128,7 +128,7 @@ jobs:
       - name: install
         run: |
           touch yarn.lock
-          yarn install --inline-builds
+          yarn install
         working-directory: packages/sbg-utility
       - name: clean
         working-directory: packages/sbg-utility
