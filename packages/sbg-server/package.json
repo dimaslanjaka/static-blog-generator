@@ -75,6 +75,7 @@
     "sbg-api": "*",
     "sbg-utility": "^1.1.6",
     "serve-index": "^1.9.1",
+    "toastr": "^2.1.4",
     "upath": "^2.0.1",
     "write-file-atomic": "^5.0.1",
     "yaml": "^2.3.4"
@@ -95,6 +96,7 @@
     "@types/object-assign": "^4.0.30",
     "@types/retry": "^0.12.2",
     "@types/serve-index": "^1.9.1",
+    "@types/toastr": "^2",
     "@types/write-file-atomic": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",

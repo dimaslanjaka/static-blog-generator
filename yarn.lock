@@ -3829,6 +3829,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jquery@npm:*":
+  version: 3.5.29
+  resolution: "@types/jquery@npm:3.5.29"
+  dependencies:
+    "@types/sizzle": "*"
+  checksum: 5e959762d6f7050b07b4387b6507a308113384566a77cfc4f8d0f54c2fb0a79f6bc8c057706c6aa4840cde56f32ad0e5814fb53c5f078c5db9e01670a1ecd535
+  languageName: node
+  linkType: hard
+
 "@types/jsdom@npm:21":
   version: 21.1.1
   resolution: "@types/jsdom@npm:21.1.1"
@@ -4103,6 +4112,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/sizzle@npm:*":
+  version: 2.3.8
+  resolution: "@types/sizzle@npm:2.3.8"
+  checksum: 2ac62443dc917f5f903cbd9afc51c7d6cc1c6569b4e1a15faf04aea5b13b486e7f208650014c3dc4fed34653eded3e00fe5abffe0e6300cbf0e8a01beebf11a6
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
@@ -4130,6 +4146,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 5f8b6dbdeef84cdc4e2259234ae752fe09123021c39fc9319fa6f50a445c15451c9f643e5d3620c50e818c6f71207f978038e785b61bd87a64253ac0b06e2d73
+  languageName: node
+  linkType: hard
+
+"@types/toastr@npm:^2":
+  version: 2.1.43
+  resolution: "@types/toastr@npm:2.1.43"
+  dependencies:
+    "@types/jquery": "*"
+  checksum: 38aabe789bf8a87aa43a95356339f410f4f68d94ec8ba861d9198edcf7ec0c14699410110ed53425bf4da418aa56184538c68feb70c305bd548fe78c0434aa2a
   languageName: node
   linkType: hard
 
@@ -13638,7 +13663,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:^3.7.1":
+"jquery@npm:>=1.12.0, jquery@npm:^3.7.1":
   version: 3.7.1
   resolution: "jquery@npm:3.7.1"
   checksum: 4370b8139d6ae82867eb6f7f21d1edccf1d1bdf41c0840920ea80d366c2cd5dbe1ceebb110ee9772aa839b04400faa1572c5c560b507c688ed7b61cea26c0e27
@@ -19121,6 +19146,7 @@ __metadata:
     "@types/object-assign": ^4.0.30
     "@types/retry": ^0.12.2
     "@types/serve-index": ^1.9.1
+    "@types/toastr": ^2
     "@types/write-file-atomic": ^4.0.0
     "@typescript-eslint/eslint-plugin": ^7.0.1
     "@typescript-eslint/parser": ^7.0.1
@@ -19177,6 +19203,7 @@ __metadata:
     sharp: ^0.32.6
     tailwindcss: ^3.4.1
     through2: ^4.0.2
+    toastr: ^2.1.4
     tree-kill: ^1.2.2
     ts-jest: ^29.1.0
     ts-node: ^10.9.1
@@ -20975,6 +21002,15 @@ __metadata:
   dependencies:
     through2: ^2.0.3
   checksum: 5834a69d68cbe0d74115373bbe219dbe60c1950021f5ec9dd4af179ffbb307bce3d45fde9dacec05a8f4f79b86734433eb9b42946ccb81d2d4d4f8828628b7e6
+  languageName: node
+  linkType: hard
+
+"toastr@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "toastr@npm:2.1.4"
+  dependencies:
+    jquery: ">=1.12.0"
+  checksum: 54e67385cfcdd88cce656c986a4894fd9484824d42549b646ce82b8780621ee1eccc0fb2ec89668dc67de4ae54de8f34a1c8b6f0f217940060d040d3fdb4491f
   languageName: node
   linkType: hard
 
