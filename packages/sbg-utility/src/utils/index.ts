@@ -13,7 +13,6 @@ export * from './filemanager/normalizePath';
 export * from './filemanager/readDir';
 export * from './filemanager/stream';
 export * from './filemanager/writefile';
-export * from './findYarnRootWorkspace';
 export * from './hash';
 export * from './index';
 export * from './isdev';
