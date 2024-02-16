@@ -1,7 +1,7 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
@@ -22,6 +22,5 @@
     "**/dist/**": true,
     "**/tmp/**": true
   },
-  "eslint.packageManager": "yarn",
   "npm.packageManager": "yarn"
 }
