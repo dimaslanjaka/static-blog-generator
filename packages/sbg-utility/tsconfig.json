@@ -1,15 +1,14 @@
 {
-  // only for VSCode
   "extends": "./tsconfig.base.json",
   "ts-node": {
     "transpileOnly": true,
     "emit": false,
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "Node16"
     }
   },
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "Node16",
     "target": "es5",
     "downlevelIteration": true,
     "baseUrl": "./",
