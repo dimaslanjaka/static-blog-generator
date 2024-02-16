@@ -21,7 +21,7 @@
     "pom.xml": "cd $dir && mvn clean package",
     "*.test.ts": "yarn test -- $fileNameWithoutExt",
     "*.spec.ts": "yarn test -- $fileNameWithoutExt",
-    "*.explicit.ts": "yarn build && cross-env-shell DEBUG=* \"node -r ts-node/register\""
+    "*.explicit.ts": "yarn build && cross-env-shell DEBUG=sbg-* \"node -r ts-node/register\""
   },
   "code-runner.showRunIconInEditorTitleMenu": false,
   "code-runner.showRunCommandInExplorerContextMenu": false,
