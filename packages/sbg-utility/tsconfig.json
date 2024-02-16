@@ -4,11 +4,11 @@
     "transpileOnly": true,
     "emit": false,
     "compilerOptions": {
-      "module": "Node16"
+      "module": "CommonJS"
     }
   },
   "compilerOptions": {
-    "module": "Node16",
+    "module": "CommonJS",
     "target": "es5",
     "downlevelIteration": true,
     "baseUrl": "./",

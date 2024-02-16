@@ -1,10 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 14",
-  "_version": "14.1.0",
   "compilerOptions": {
     "target": "es2020",
-    "module": "Node16",
+    "module": "CommonJS",
     "downlevelIteration": true,
     "baseUrl": "./",
     "outDir": "./dist",
@@ -21,6 +19,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node16"
+    "moduleResolution": "Node",
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"]
   }
 }
