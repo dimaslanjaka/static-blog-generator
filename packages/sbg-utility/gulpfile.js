@@ -6,21 +6,22 @@ const fs = require('fs-extra');
 const { semverIncrement, writefile } = require('./src/utils');
 const pkg = require('./package.json');
 
-const cmd = (commandName) => {
-  const cmdPath = [
-    __dirname,
-    process.cwd(),
-    (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
-  ]
-    .map((cwd) => {
-      const nm = path.join(cwd, 'node_modules/.bin');
-      const cmdPath = path.join(nm, commandName);
-      return cmdPath;
-    })
-    .filter(fs.existsSync)[0];
+/** resolve cmd binary */
+// const cmd = (commandName) => {
+//   const cmdPath = [
+//     __dirname,
+//     process.cwd(),
+//     (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
+//   ]
+//     .map((cwd) => {
+//       const nm = path.join(cwd, 'node_modules/.bin');
+//       const cmdPath = path.join(nm, commandName);
+//       return cmdPath;
+//     })
+//     .filter(fs.existsSync)[0];
 
-  return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
-};
+//   return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
+// };
 
 // copy non-javascript assets from src folder
 const copy = function () {
@@ -32,7 +33,7 @@ const copy = function () {
 gulp.task('copy', gulp.series(copy));
 
 function tsc(done) {
-  spawn(cmd('tsc'), ['--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
+  spawn('npx', ['tsc', '--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
     .then(() => done())
     .catch(done);
 }
