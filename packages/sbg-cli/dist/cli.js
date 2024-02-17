@@ -45,6 +45,7 @@ yargs_1.default
 }, () => {
     yargs_1.default.showHelp();
 })
+    // view all configs command
     .command('view', 'view all configurations', function () {
     console.log(env_1.rootColor, api.cwd);
     console.log('source post dir    ', `${env_1.rootColor}/${api.config.post_dir}`);
@@ -53,6 +54,7 @@ yargs_1.default
 }, function () {
     //
 })
+    // clean commands
     .command('clean [key]', 'clean commands', function (yargs) {
     yargs.positional(`db`, {
         type: `string`,
@@ -104,6 +106,7 @@ yargs_1.default
         }
     }
 })
+    // process source posts
     .command('post <key>', `operation inside ${env_1.rootColor}/${api.config.post_dir}`, function (yargs) {
     yargs.positional(`copy`, {
         type: `string`,
@@ -113,6 +116,10 @@ yargs_1.default
         type: `string`,
         describe: `run all *.standalone.js inside ${env_1.rootColor}/${api.config.post_dir}`
     });
+    yargs.positional(`images`, {
+        type: `string`,
+        describe: `finding broken images inside ${env_1.rootColor}/${api.config.post_dir}`
+    });
 }, async function ({ key }) {
     if (key) {
         if (key === 'copy') {
@@ -121,11 +128,15 @@ yargs_1.default
         else if (key === 'standalone') {
             await api.standalone();
         }
+        else if (key === 'images') {
+            await api.findBrokenImages();
+        }
     }
     else {
         yargs_1.default.showHelp();
     }
 })
+    // process generated static html
     .command('generate <key>', `generate operation on ${env_1.rootColor}/${api.config.public_dir}`, function (yargs) {
     yargs.positional(`seo`, {
         type: `string`,
@@ -175,6 +186,7 @@ yargs_1.default
             break;
     }
 })
+    // deployment
     .command('deploy <key>', `operation inside ${env_1.rootColor}/.deploy_${api.config.deploy?.type || 'git'}`, function (yargs) {
     yargs.positional(`seo`, {
         type: `string`,
