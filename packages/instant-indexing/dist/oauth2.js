@@ -308,8 +308,4 @@ function getPeopleInfo() {
     });
 }
 exports.getPeopleInfo = getPeopleInfo;
-if (require.main === module)
-    googleAuthenticate(exports.scopes)
-        .then(function (client) { return saveCredentials(client); })
-        .catch(console.error);
 //# sourceMappingURL=oauth2.js.map
