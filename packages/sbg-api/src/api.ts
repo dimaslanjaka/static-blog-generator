@@ -146,7 +146,7 @@ class SBG {
   }
 
   async findBrokenImages() {
-    findBrokenImagesGlob(this.config)
+    return findBrokenImagesGlob(this.config);
   }
 
   public deploy = new (class {
