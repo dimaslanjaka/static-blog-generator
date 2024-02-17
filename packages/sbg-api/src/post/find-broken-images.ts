@@ -7,7 +7,7 @@ import { color, parsePost } from 'hexo-post-parser';
 import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
 import moment from 'moment-timezone';
-import { delay, getConfig, path, writefile } from 'sbg-utility';
+import { getConfig, path, writefile } from 'sbg-utility';
 
 /**
  * find broken images from html
@@ -118,7 +118,7 @@ export function findBrokenImagesGlob(config = getConfig()) {
       }
 
       // delay 3s
-      await delay(3000);
+      // await delay(3000);
 
       // stop
       running = false;
