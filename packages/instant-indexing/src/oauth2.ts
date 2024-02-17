@@ -86,7 +86,7 @@ function saveCredentials(client: CustomAuthClient) {
  *
  * @return
  */
-export function loadSavedCredentialsIfExist(): import('googleapis-common/node_modules/google-auth-library/build/src/auth/googleauth').JSONClient {
+export function loadSavedCredentialsIfExist() {
   try {
     const content = fs.readFileSync(TOKEN_PATH).toString();
     const credentials = JSON.parse(content);
