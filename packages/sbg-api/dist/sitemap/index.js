@@ -276,11 +276,4 @@ exports.hexoGenerateSitemap = hexoGenerateSitemap;
 function isMatch(str, patterns) {
     return micromatch_1.default.isMatch(str, patterns);
 }
-gulp_1.default.task('sitemap', function () {
-    return new bluebird_1.default(function (resolve) {
-        hexoGenerateSitemap().then(function () {
-            resolve();
-        });
-    });
-});
 //# sourceMappingURL=index.js.map

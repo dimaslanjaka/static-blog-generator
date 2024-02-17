@@ -11,7 +11,8 @@ const hash_1 = require("../utils/hash");
 const logger_1 = tslib_1.__importDefault(require("../utils/logger"));
 const scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
 function gulpDebug(filename) {
-    const caller = (0, hash_1.data_to_hash_sync)('md5', new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || '').slice(0, 5);
+    var _a;
+    const caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1]) || '').slice(0, 5);
     const pid = process.pid;
     const logname = 'gulp-' + ansi_colors_1.default.gray('debug');
     return through2_1.default.obj(function (file, _enc, cb) {

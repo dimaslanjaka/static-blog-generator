@@ -39,12 +39,13 @@ class SiteMapCrawlerCore {
                     const hrefs = $('[href]');
                     const filteredLinks = new Set();
                     hrefs.each(function (i) {
-                        if (hrefs.eq(i).get(0)?.tagName.toLowerCase() !== 'a') {
+                        var _a, _b;
+                        if (((_a = hrefs.eq(i).get(0)) === null || _a === void 0 ? void 0 : _a.tagName.toLowerCase()) !== 'a') {
                             const href = hrefs.eq(i).attr('href');
                             if (!href || !/(\/|.html)$/gi.test(href))
                                 return;
                         }
-                        const href = self.filterLink(link, hrefs.eq(i).attr('href') || '')?.trim();
+                        const href = (_b = self.filterLink(link, hrefs.eq(i).attr('href') || '')) === null || _b === void 0 ? void 0 : _b.trim();
                         if (typeof href === 'string' && href.length > 0) {
                             const dirUrl = link.substring(0, link.lastIndexOf('/'));
                             if (/^https?:\/\//i.test(href.trim())) {
@@ -72,7 +73,7 @@ class SiteMapCrawlerCore {
                         siteMap[link] = arrayLinks;
                     }
                 }
-                catch {
+                catch (_a) {
                     console.log('sitemap-crawler', 'cannot parse', link);
                 }
                 return done();
@@ -224,7 +225,7 @@ function sitemapCrawlerAsync(link, opts) {
         const deepIterate = () => {
             return new Promise((resolveLoop) => {
                 schedule().then(() => {
-                    if (typeof opts?.deep === 'number') {
+                    if (typeof (opts === null || opts === void 0 ? void 0 : opts.deep) === 'number') {
                         if (opts.deep > 0) {
                             opts.deep = opts.deep - 1;
                             linkArr = Object.values(asyncResults).flat(1);

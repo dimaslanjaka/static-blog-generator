@@ -123,7 +123,7 @@ export declare class persistentCache implements PersistentCacheOpt {
     valuesSync(): unknown[];
     buildFilePath(name: string): string;
     buildCacheEntry(data: any): {
-        cacheUntil: number | undefined;
+        cacheUntil: number;
         data: any;
     };
 }

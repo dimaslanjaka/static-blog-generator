@@ -67,7 +67,7 @@ var ansi_colors_1 = __importDefault(require("ansi-colors"));
 var fs_1 = __importDefault(require("fs"));
 var gulp_1 = __importDefault(require("gulp"));
 var hexoPostParser = __importStar(require("hexo-post-parser"));
-var moment_1 = __importDefault(require("moment"));
+var moment_timezone_1 = __importDefault(require("moment-timezone"));
 var sbg_utility_1 = require("sbg-utility");
 var through2_1 = __importDefault(require("through2"));
 var upath_1 = require("upath");
@@ -199,7 +199,7 @@ exports.pipeProcessPost = pipeProcessPost;
 function processSinglePost(file, callback) {
     var _a, _b, _c, _d, _e;
     return __awaiter(this, void 0, void 0, function () {
-        var contents, config, dfile, parse, createdDate, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build, e_1;
+        var contents, config, dfile, parse, createdDate, today, diff, array, i, groupLabel, _loop_1, oldLabel, _loop_2, oldLabel, build, e_1;
         return __generator(this, function (_f) {
             switch (_f.label) {
                 case 0:
@@ -238,10 +238,13 @@ function processSinglePost(file, callback) {
                     parse = _f.sent();
                     if (parse && parse.metadata) {
                         if (parse.metadata.date) {
-                            createdDate = (0, moment_1.default)(typeof parse.metadata.date == 'string' ? parse.metadata.date : parse.metadata.date.toString());
-                            // log(createdDate, moment(Date.now()), createdDate.diff(moment(Date.now())));
+                            createdDate = (0, moment_timezone_1.default)(String(parse.metadata.date));
+                            today = (0, moment_timezone_1.default)(new Date());
+                            diff = today.diff(createdDate);
+                            // log('today=' + today.format(), 'created=' + createdDate.format(), 'isGreater=' + String(diff));
                             // if creation date greater than now
-                            if ((0, moment_1.default)(Date.now()).diff(createdDate) < 0) {
+                            // if (moment(new Date()).isAfter(createdDate)) {
+                            if (diff < 0) {
                                 log('skip scheduled post ' + dfile);
                                 // otherwise return null
                                 return [2 /*return*/];
@@ -345,5 +348,4 @@ function processSinglePost(file, callback) {
     });
 }
 exports.processSinglePost = processSinglePost;
-gulp_1.default.task('post:copy', copyAllPosts);
 //# sourceMappingURL=copy.js.map

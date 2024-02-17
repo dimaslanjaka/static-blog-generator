@@ -55,6 +55,7 @@ exports.getConfig = getConfig;
  * @returns
  */
 function deployConfig() {
+    var _a;
     let deployDir;
     if (settledConfig.deploy_dir) {
         // deploy_dir was set
@@ -62,7 +63,7 @@ function deployConfig() {
     }
     else {
         // fallback get from deploy.type
-        deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+        deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
     }
     // subfolder - assign deploy.folder
     if (settledConfig.deploy.folder) {

@@ -35,6 +35,7 @@ function cacheLib(options) {
  * @returns
  */
 function gulpCached(options = {}) {
+    var _a;
     const caches = cacheLib(options);
     //const logname = 'gulp-' + ansiColors.grey('cached');
     const pid = process.pid;
@@ -44,11 +45,12 @@ function gulpCached(options = {}) {
     }
     else {
         caller =
-            (0, hash_1.data_to_hash_sync)('md5', new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || '').slice(0, 5) +
+            (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1]) || '').slice(0, 5) +
                 '-' +
                 pid;
     }
     return through2_1.default.obj(function (file, _enc, next) {
+        var _a, _b;
         // skip directory
         if (file.isDirectory())
             return next(null, file);
@@ -80,8 +82,8 @@ function gulpCached(options = {}) {
             return false;
         };
         const paths = {
-            dest: (0, upath_1.toUnix)(options.dest?.replace(process.cwd(), '') || ''),
-            cwd: (0, upath_1.toUnix)(options.cwd?.replace(process.cwd(), '') || ''),
+            dest: (0, upath_1.toUnix)(((_a = options.dest) === null || _a === void 0 ? void 0 : _a.replace(process.cwd(), '')) || ''),
+            cwd: (0, upath_1.toUnix)(((_b = options.cwd) === null || _b === void 0 ? void 0 : _b.replace(process.cwd(), '')) || ''),
             source: (0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))
         };
         // dump

@@ -16,8 +16,8 @@ export declare function getDefaultConfig(): {
     };
     categories: {
         lowercase: boolean;
-        assign: null;
-        mapper: null;
+        assign: any;
+        mapper: any;
     };
     category_dir: string;
     code_dir: string;
@@ -33,11 +33,11 @@ export declare function getDefaultConfig(): {
         message: string;
         deployDir: string;
         github: {
-            submodule: never[];
+            submodule: any[];
         };
     };
     description: string;
-    exclude: null;
+    exclude: any;
     external_link: {
         enable: boolean;
         field: string;
@@ -65,14 +65,14 @@ export declare function getDefaultConfig(): {
         hljs: boolean;
     };
     i18n_dir: string;
-    ignore: null;
-    include: null;
+    ignore: any;
+    include: any;
     index_generator: {
         path: string;
         per_page: number;
         order_by: string;
     };
-    keywords: null;
+    keywords: any;
     language: string;
     markdown: {
         preset: string;
@@ -85,9 +85,9 @@ export declare function getDefaultConfig(): {
             typographer: boolean;
             quotes: string;
         };
-        enable_rules: null;
-        disable_rules: null;
-        plugins: null;
+        enable_rules: any;
+        disable_rules: any;
+        plugins: any;
         anchors: {
             level: number;
             collisionSuffix: string;
@@ -104,7 +104,7 @@ export declare function getDefaultConfig(): {
     pagination_dir: string;
     per_page: number;
     permalink: string;
-    permalink_defaults: null;
+    permalink_defaults: any;
     post_asset_folder: boolean;
     post_dir: string;
     pretty_urls: {
@@ -124,13 +124,13 @@ export declare function getDefaultConfig(): {
         tags: boolean;
         categories: boolean;
     };
-    skip_render: null;
+    skip_render: any;
     source_dir: string;
     tag_dir: string;
     tags: {
         lowercase: boolean;
-        assign: null;
-        mapper: null;
+        assign: any;
+        mapper: any;
     };
     theme: string;
     time_format: string;

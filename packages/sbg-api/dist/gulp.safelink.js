@@ -191,6 +191,4 @@ function taskSafelink(_done, cwd) {
     }
 }
 exports.taskSafelink = taskSafelink;
-// safelinkify the deploy folder
-gulp_1.default.task('safelink', taskSafelink);
 //# sourceMappingURL=gulp.safelink.js.map

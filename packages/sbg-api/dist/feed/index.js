@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.hexoGenerateFeed = void 0;
+exports.gulpHexoGeneratedFeed = exports.hexoGenerateFeed = void 0;
 var bluebird_1 = __importDefault(require("bluebird"));
 var fs_1 = require("fs");
 var gulp_1 = __importDefault(require("gulp"));
@@ -34,8 +34,9 @@ function hexoGenerateFeed(done, config) {
                     posts = posts.filter(function (post) {
                         return post.draft !== true;
                     });
-                    var email = config.email, feed = config.feed, urlCfg = config.url;
-                    var iconCfg = feed.icon;
+                    var email = config.email;
+                    var urlCfg = config.url;
+                    var iconCfg = config.feed.icon;
                     var url = urlCfg;
                     if (url[url.length - 1] !== '/')
                         url += '/';
@@ -43,10 +44,12 @@ function hexoGenerateFeed(done, config) {
                     if (url.includes(':lang/'))
                         url = url.replace('/:lang/', '/');
                     var icon = '';
-                    if (iconCfg)
+                    if (iconCfg) {
                         icon = hexo_util_1.full_url_for.call(instance, iconCfg);
-                    else if (email)
+                    }
+                    else if (email) {
                         icon = (0, hexo_util_1.gravatar)(email, {});
+                    }
                     var feed_url = hexo_util_1.full_url_for.call(instance, 'rss.xml');
                     var data = template.render({
                         config: config,
@@ -92,5 +95,9 @@ function hexoGenerateFeed(done, config) {
     });
 }
 exports.hexoGenerateFeed = hexoGenerateFeed;
-gulp_1.default.task('feed', hexoGenerateFeed);
+/** gulp task */
+function gulpHexoGeneratedFeed(callback) {
+    return hexoGenerateFeed(callback);
+}
+exports.gulpHexoGeneratedFeed = gulpHexoGeneratedFeed;
 //# sourceMappingURL=index.js.map

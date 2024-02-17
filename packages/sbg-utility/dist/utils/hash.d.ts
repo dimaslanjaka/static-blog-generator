@@ -30,7 +30,7 @@ export declare function file_to_hash(alogarithm: 'sha1' | 'sha256' | 'sha384' | 
  * @param encoding
  * @returns
  */
-export declare function data_to_hash(alogarithm: "md5" | "sha1" | "sha256" | "sha384" | "sha512" | undefined, data: crypto.BinaryLike, encoding?: import('crypto').BinaryToTextEncoding): Promise<string>;
+export declare function data_to_hash(alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5', data: crypto.BinaryLike, encoding?: import('crypto').BinaryToTextEncoding): Promise<string>;
 /**
  * convert data to hash (sync)
  * @param alogarithm
@@ -38,7 +38,7 @@ export declare function data_to_hash(alogarithm: "md5" | "sha1" | "sha256" | "sh
  * @param encoding
  * @returns
  */
-export declare function data_to_hash_sync(alogarithm: "md5" | "sha1" | "sha256" | "sha384" | "sha512" | undefined, data: crypto.BinaryLike, encoding?: import('crypto').BinaryToTextEncoding): string;
+export declare function data_to_hash_sync(alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5', data: crypto.BinaryLike, encoding?: import('crypto').BinaryToTextEncoding): string;
 /**
  * get hashes from folder
  * @param alogarithm
@@ -70,4 +70,4 @@ export declare function folder_to_hash(alogarithm: 'sha1' | 'sha256' | 'sha384' 
  * @param encoding
  * @returns
  */
-export declare function url_to_hash(alogarithm: "md5" | "sha1" | "sha256" | "sha384" | "sha512" | undefined, url: string, encoding?: crypto.BinaryToTextEncoding): Promise<unknown>;
+export declare function url_to_hash(alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5', url: string, encoding?: crypto.BinaryToTextEncoding): Promise<unknown>;

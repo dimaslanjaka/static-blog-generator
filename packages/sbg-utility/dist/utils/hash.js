@@ -99,59 +99,61 @@ exports.data_to_hash_sync = data_to_hash_sync;
  * @param options
  * @returns
  */
-async function folder_to_hash(alogarithm, folder, options) {
-    return new Promise((resolvePromise, rejectPromise) => {
-        options = Object.assign({
-            encoding: 'hex',
-            ignored: [],
-            pattern: ''
-        }, options || {});
-        if (folder.startsWith('file:'))
-            folder = folder.replace('file:', '');
-        // fix non exist
-        if (!fs.existsSync(folder))
-            folder = path.join(__dirname, folder);
-        // run only if exist
-        if (fs.existsSync(folder)) {
-            glob
-                .glob(options.pattern || '**/*', {
-                cwd: folder,
-                ignore: (options.ignored || [
-                    '**/tmp/**',
-                    '**/build/**',
-                    '**/.cache/**',
-                    '**/dist/**',
-                    '**/.vscode/**',
-                    '**/coverage/**',
-                    '**/release/**',
-                    '**/bin/**',
-                    '**/*.json'
-                ]).concat('**/.git*/**', '**/node_modules/**'),
-                dot: true,
-                noext: true
-            })
-                .then((matches) => {
-                const filesWithHash = {};
-                for (let i = 0; i < matches.length; i++) {
-                    const item = matches[i];
-                    const fullPath = path.join(folder, item);
-                    const statInfo = fs.statSync(fullPath);
-                    if (statInfo.isFile()) {
-                        const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
-                        const hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
-                        filesWithHash[fullPath] = hash;
+function folder_to_hash(alogarithm, folder, options) {
+    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        return new Promise((resolvePromise, rejectPromise) => {
+            options = Object.assign({
+                encoding: 'hex',
+                ignored: [],
+                pattern: ''
+            }, options || {});
+            if (folder.startsWith('file:'))
+                folder = folder.replace('file:', '');
+            // fix non exist
+            if (!fs.existsSync(folder))
+                folder = path.join(__dirname, folder);
+            // run only if exist
+            if (fs.existsSync(folder)) {
+                glob
+                    .glob(options.pattern || '**/*', {
+                    cwd: folder,
+                    ignore: (options.ignored || [
+                        '**/tmp/**',
+                        '**/build/**',
+                        '**/.cache/**',
+                        '**/dist/**',
+                        '**/.vscode/**',
+                        '**/coverage/**',
+                        '**/release/**',
+                        '**/bin/**',
+                        '**/*.json'
+                    ]).concat('**/.git*/**', '**/node_modules/**'),
+                    dot: true,
+                    noext: true
+                })
+                    .then((matches) => {
+                    const filesWithHash = {};
+                    for (let i = 0; i < matches.length; i++) {
+                        const item = matches[i];
+                        const fullPath = path.join(folder, item);
+                        const statInfo = fs.statSync(fullPath);
+                        if (statInfo.isFile()) {
+                            const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
+                            const hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
+                            filesWithHash[fullPath] = hash;
+                        }
                     }
-                }
-                resolvePromise({
-                    filesWithHash,
-                    hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
-                });
-            })
-                .catch(rejectPromise);
-        }
-        else {
-            console.log(folder + ' not found');
-        }
+                    resolvePromise({
+                        filesWithHash,
+                        hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
+                    });
+                })
+                    .catch(rejectPromise);
+            }
+            else {
+                console.log(folder + ' not found');
+            }
+        });
     });
 }
 exports.folder_to_hash = folder_to_hash;
@@ -162,36 +164,38 @@ exports.folder_to_hash = folder_to_hash;
  * @param encoding
  * @returns
  */
-async function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
-    return new Promise((resolve, reject) => {
-        let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
-        // remove slashes when url ends with slash
-        if (!path.basename(url).endsWith('/')) {
-            outputLocationPath = outputLocationPath.replace(/\/$/, '');
-        }
-        // add extension when dot not exist
-        if (!path.basename(url).includes('.')) {
-            outputLocationPath += '.tgz';
-        }
-        if (!fs.existsSync(path.dirname(outputLocationPath))) {
-            fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
-        }
-        const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
-        (0, axios_1.default)(url, { responseType: 'stream' }).then((response) => {
-            response.data.pipe(writer);
-            let error;
-            writer.on('error', (err) => {
-                error = err;
-                writer.close();
-                reject(err);
-            });
-            writer.on('close', async () => {
-                if (!error) {
-                    // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
-                    file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
-                        resolve(checksum);
-                    });
-                }
+function url_to_hash(alogarithm = 'sha1', url, encoding = 'hex') {
+    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        return new Promise((resolve, reject) => {
+            let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
+            // remove slashes when url ends with slash
+            if (!path.basename(url).endsWith('/')) {
+                outputLocationPath = outputLocationPath.replace(/\/$/, '');
+            }
+            // add extension when dot not exist
+            if (!path.basename(url).includes('.')) {
+                outputLocationPath += '.tgz';
+            }
+            if (!fs.existsSync(path.dirname(outputLocationPath))) {
+                fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
+            }
+            const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
+            (0, axios_1.default)(url, { responseType: 'stream' }).then((response) => {
+                response.data.pipe(writer);
+                let error;
+                writer.on('error', (err) => {
+                    error = err;
+                    writer.close();
+                    reject(err);
+                });
+                writer.on('close', () => tslib_1.__awaiter(this, void 0, void 0, function* () {
+                    if (!error) {
+                        // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
+                        file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
+                            resolve(checksum);
+                        });
+                    }
+                }));
             });
         });
     });
