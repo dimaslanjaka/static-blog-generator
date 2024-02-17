@@ -47,6 +47,7 @@ var FileStore = (0, session_file_store_1.sessionFileStore)(express_session_1.def
 var fileStoreOptions = {
     logFn: (0, sbg_utility_1.debug)('sbg-server').extend('session')
 };
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 var SBGServer = /** @class */ (function () {
     function SBGServer(options) {
         var _this = this;
