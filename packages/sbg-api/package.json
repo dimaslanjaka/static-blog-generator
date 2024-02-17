@@ -120,7 +120,9 @@
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-util.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/warehouse.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/8c9f16e/release/hexo-post-parser.tgz"
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/8c9f16e/release/hexo-post-parser.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-utility/release/sbg-utility.tgz"
   },
   "packageManager": "yarn@3.8.0"
 }
