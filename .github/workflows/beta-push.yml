@@ -124,6 +124,14 @@ jobs:
         with:
           name: dist-artifact
 
+      - name: commit
+        run: |
+          git add **dist
+          git add **release*
+          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+            git commit -m "chore: released from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+          fi
+
       - run: |
           countChanges=$(git whatchanged -1 --format=oneline | wc -l)
           echo "total changed files is $countChanges"
