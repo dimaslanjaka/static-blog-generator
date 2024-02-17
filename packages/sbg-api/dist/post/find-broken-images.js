@@ -143,11 +143,11 @@ exports.hexoFindBrokenImages = hexoFindBrokenImages;
 function toHtml(file, config) {
     if (config === void 0) { config = (0, sbg_utility_1.getConfig)(); }
     return __awaiter(this, void 0, void 0, function () {
-        var results, parse, html, result, brokenImages, e_1;
+        var result, parse, html, brokenImages, e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    results = [];
+                    result = { post: file, brokenImages: [] };
                     return [4 /*yield*/, (0, hexo_post_parser_1.parsePost)(file, { sourceFile: file, config: config })];
                 case 1:
                     parse = _a.sent();
@@ -159,20 +159,18 @@ function toHtml(file, config) {
                 case 3:
                     html = _a.sent();
                     console.log('finding broken images on', file);
-                    result = { post: file, brokenImages: [] };
                     return [4 /*yield*/, findBrokenImages(html)];
                 case 4:
                     brokenImages = _a.sent();
                     if (brokenImages.length > 0) {
                         result.brokenImages = brokenImages;
-                        results.push(result);
                     }
                     return [3 /*break*/, 6];
                 case 5:
                     e_1 = _a.sent();
                     console.error(e_1);
                     return [3 /*break*/, 6];
-                case 6: return [2 /*return*/, results];
+                case 6: return [2 /*return*/, result];
             }
         });
     });
@@ -185,50 +183,53 @@ function findBrokenImagesGlob(config) {
         cwd: config.cwd,
         ignore: ['**/node_modules/**', '**/vendor/**', '**/License.md', '**/readme.md']
     });
-    var files = [];
-    globStream.stream().on('data', function (result) {
-        files.push(result);
-        start();
-    });
-    var running = false;
-    function start() {
-        return __awaiter(this, void 0, void 0, function () {
-            var file, reportFile, reports, metadata, body;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        // skip run when still running
-                        if (running)
-                            return [2 /*return*/];
-                        _a.label = 1;
-                    case 1:
-                        if (!(files.length > 0)) return [3 /*break*/, 5];
-                        // start
-                        running = true;
-                        file = files.shift() || '';
-                        if (!(file.length > 0)) return [3 /*break*/, 3];
-                        reportFile = sbg_utility_1.path.join(config.source_dir, 'reports/index.md');
-                        return [4 /*yield*/, toHtml(file)];
-                    case 2:
-                        reports = _a.sent();
-                        metadata = ['---', 'title: Reports', 'type: page', "date: ".concat((0, moment_timezone_1.default)().format()), '---'].join('\n');
-                        body = ["## Blog Reports", '```json', JSON.stringify(reports, null, 2), '```'].join('\n');
-                        (0, sbg_utility_1.writefile)(reportFile, metadata + '\n\n' + body);
-                        _a.label = 3;
-                    case 3: 
-                    // delay 3s
-                    return [4 /*yield*/, (0, sbg_utility_1.delay)(3000)];
-                    case 4:
-                        // delay 3s
-                        _a.sent();
-                        // stop
-                        running = false;
-                        return [3 /*break*/, 1];
-                    case 5: return [2 /*return*/];
-                }
-            });
+    return new bluebird_1.default(function (resolve) {
+        var files = [];
+        globStream.stream().on('data', function (result) {
+            files.push(result);
+            start();
         });
-    }
+        var running = false;
+        function start() {
+            return __awaiter(this, void 0, void 0, function () {
+                var reportFile, reports, file, report, metadata, body;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            // skip run when still running
+                            if (running)
+                                return [2 /*return*/];
+                            reportFile = sbg_utility_1.path.join(config.source_dir, 'reports/index.md');
+                            reports = [];
+                            _a.label = 1;
+                        case 1:
+                            if (!(files.length > 0)) return [3 /*break*/, 4];
+                            // start
+                            running = true;
+                            file = files.shift() || '';
+                            if (!(file.length > 0)) return [3 /*break*/, 3];
+                            return [4 /*yield*/, toHtml(file)];
+                        case 2:
+                            report = _a.sent();
+                            reports.push(report);
+                            _a.label = 3;
+                        case 3:
+                            // delay 3s
+                            // await delay(3000);
+                            // stop
+                            running = false;
+                            return [3 /*break*/, 1];
+                        case 4:
+                            metadata = ['---', 'title: Reports', 'type: page', "date: ".concat((0, moment_timezone_1.default)().format()), '---'].join('\n');
+                            body = ["## Blog Reports", '```json', JSON.stringify(reports, null, 2), '```'].join('\n');
+                            (0, sbg_utility_1.writefile)(reportFile, metadata + '\n\n' + body);
+                            resolve();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        }
+    });
 }
 exports.findBrokenImagesGlob = findBrokenImagesGlob;
 //# sourceMappingURL=find-broken-images.js.map
