@@ -65,23 +65,21 @@ interface Report {
 
 /** parse markdown to html */
 async function toHtml(file: string, config = getConfig()) {
-  const results = [] as Report[];
+  const result = { post: file, brokenImages: [] } as Report;
   const parse = await parsePost(file, { sourceFile: file, config });
   if (parse && parse.body) {
     try {
       const html = await marked(parse.body, { async: true });
       console.log('finding broken images on', file);
-      const result = { post: file, brokenImages: [] } as Report;
       const brokenImages = await findBrokenImages(html);
       if (brokenImages.length > 0) {
         result.brokenImages = brokenImages;
-        results.push(result);
       }
     } catch (e) {
       console.error(e);
     }
   }
-  return results;
+  return result;
 }
 
 export function findBrokenImagesGlob(config = getConfig()) {
@@ -92,36 +90,44 @@ export function findBrokenImagesGlob(config = getConfig()) {
     ignore: ['**/node_modules/**', '**/vendor/**', '**/License.md', '**/readme.md']
   });
 
-  const files = [] as string[];
+  return new Bluebird((resolve) => {
+    const files = [] as string[];
 
-  globStream.stream().on('data', (result) => {
-    files.push(result);
-    start();
-  });
+    globStream.stream().on('data', (result) => {
+      files.push(result);
+      start();
+    });
 
-  let running = false;
-  async function start() {
-    // skip run when still running
-    if (running) return;
-    while (files.length > 0) {
-      // start
-      running = true;
+    let running = false;
+    async function start() {
+      // skip run when still running
+      if (running) return;
+      const reportFile = path.join(config.source_dir, 'reports/index.md');
+      const reports = [] as Report[];
+      while (files.length > 0) {
+        // start
+        running = true;
 
-      const file = files.shift() || '';
+        const file = files.shift() || '';
 
-      if (file.length > 0) {
-        const reportFile = path.join(config.source_dir, 'reports/index.md');
-        const reports = await toHtml(file);
-        const metadata = ['---', 'title: Reports', 'type: page', `date: ${moment().format()}`, '---'].join('\n');
-        const body = [`## Blog Reports`, '```json', JSON.stringify(reports, null, 2), '```'].join('\n');
-        writefile(reportFile, metadata + '\n\n' + body);
+        if (file.length > 0) {
+          const report = await toHtml(file);
+          reports.push(report);
+        }
+
+        // delay 3s
+        // await delay(3000);
+
+        // stop
+        running = false;
       }
 
-      // delay 3s
-      // await delay(3000);
+      const metadata = ['---', 'title: Reports', 'type: page', `date: ${moment().format()}`, '---'].join('\n');
+      const body = [`## Blog Reports`, '```json', JSON.stringify(reports, null, 2), '```'].join('\n');
 
-      // stop
-      running = false;
+      writefile(reportFile, metadata + '\n\n' + body);
+
+      resolve();
     }
-  }
+  });
 }
