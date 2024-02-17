@@ -108,6 +108,10 @@ yargs
         type: `string`,
         describe: `run all *.standalone.js inside ${rootColor}/${api.config.post_dir}`
       });
+      yargs.positional(`images`, {
+        type: `string`,
+        describe: `finding broken images inside ${rootColor}/${api.config.post_dir}`
+      });
     },
     async function ({ key }) {
       if (key) {
@@ -115,6 +119,8 @@ yargs
           await api.copy();
         } else if (key === 'standalone') {
           await api.standalone();
+        } else if (key === 'images') {
+          await api.findBrokenImages();
         }
       } else {
         yargs.showHelp();
