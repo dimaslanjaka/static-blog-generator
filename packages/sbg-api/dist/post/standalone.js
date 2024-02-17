@@ -80,6 +80,5 @@ function standaloneRunner() {
         sbg_utility_1.Logger.log('\n[standalone] stopped');
     });
 }
-gulp_1.default.task('post:standalone', standaloneRunner);
 exports.default = standaloneRunner;
 //# sourceMappingURL=standalone.js.map

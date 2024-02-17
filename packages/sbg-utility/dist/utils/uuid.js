@@ -11,6 +11,7 @@ const hash_1 = require("./hash");
  * for (let index = 0; index < 5; index++) console.log(uuidv4()); // <- will printted same id
  */
 function uuidv4(fromString) {
+    var _a;
     let original = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'; // length 8-4-4-4-12
     if (typeof fromString === 'string') {
         const hash = (0, hash_1.md5)(fromString);
@@ -20,7 +21,7 @@ function uuidv4(fromString) {
     }
     else {
         const err = new Error();
-        const caller_line = err.stack?.split('\n')[2] || '';
+        const caller_line = ((_a = err.stack) === null || _a === void 0 ? void 0 : _a.split('\n')[2]) || '';
         const index = caller_line.indexOf('at ');
         const dumpClean = caller_line.slice(index + 2, caller_line.length);
         return uuidv4((0, hash_1.md5)(dumpClean));

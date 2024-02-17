@@ -14,7 +14,7 @@ function emptyDir(dir, { ignore }) {
         if (err)
             throw err;
         // const filterFn = (pattern: string) => minimatch.filter(pattern, { matchBase: true });
-        const filter = fileList?.filter((file) => {
+        const filter = (fileList === null || fileList === void 0 ? void 0 : fileList.filter((file) => {
             for (let i = 0; i < ignore.length; i++) {
                 const pattern = ignore[i];
                 if (typeof pattern === 'string') {
@@ -31,7 +31,7 @@ function emptyDir(dir, { ignore }) {
                 }
             }
             return true;
-        }) || [];
+        })) || [];
         return filter;
     });
 }

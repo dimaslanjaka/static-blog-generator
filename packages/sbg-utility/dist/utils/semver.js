@@ -1,4 +1,3 @@
-"use strict";
 /**
  * parse version string
  */

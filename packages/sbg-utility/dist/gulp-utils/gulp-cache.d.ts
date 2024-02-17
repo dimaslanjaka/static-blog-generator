@@ -5,7 +5,7 @@ import { PersistentCacheOpt } from '../utils';
  * @param file
  * @returns
  */
-export declare function getShaFile(file: string): string | null;
+export declare function getShaFile(file: string): string;
 export type gulpCachedOpt = Partial<PersistentCacheOpt> & {
     prefix?: string;
     /**

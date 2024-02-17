@@ -10,12 +10,12 @@
   },
   "/release/sbg-server.tgz": {
     "integrity": {
-      "sha1": "4876a732fab91ecb34a1aeb3d9dc4b651bf8d5af",
-      "sha256": "pnLMsLUADNPJsgITiqXGpiwRG7wSsOxztiz22H3pICI=",
-      "md5": "988b471c5d8d059b896b703090ead904",
-      "sha512": "aOXrgxNK7wgUH/BypUSaO4K8wqNr36lG4vV0HMRndJA7kLECZY7JsfTB/uf0+wNJpVzzUe3I+UBbjShChHSZpA=="
+      "sha1": "a5068faf1606985417d73b937b1c070a38364f31",
+      "sha256": "7TseXrN21FGQIH+N2baXEpJ8fyDXgYYFzmRwSXLt1do=",
+      "md5": "74ba70bb99a78e58687aac34a731f8c1",
+      "sha512": "SrWTmqsxvn2pWwXGJuaS4W93E3Wvv0ultYthSzcglUb8O9Qh4qTTFwur52jpzI3Ok7r9bbOx2ctuvYvyyCQCiQ=="
     },
-    "size": "1942.78 KB"
+    "size": "1943.41 KB"
   },
   "/package-lock.json": {
     "integrity": {
@@ -91,11 +91,11 @@
   },
   "/release/sbg-server-1.1.0.tgz": {
     "integrity": {
-      "sha1": "4876a732fab91ecb34a1aeb3d9dc4b651bf8d5af",
-      "sha256": "pnLMsLUADNPJsgITiqXGpiwRG7wSsOxztiz22H3pICI=",
-      "md5": "988b471c5d8d059b896b703090ead904",
-      "sha512": "aOXrgxNK7wgUH/BypUSaO4K8wqNr36lG4vV0HMRndJA7kLECZY7JsfTB/uf0+wNJpVzzUe3I+UBbjShChHSZpA=="
+      "sha1": "a5068faf1606985417d73b937b1c070a38364f31",
+      "sha256": "7TseXrN21FGQIH+N2baXEpJ8fyDXgYYFzmRwSXLt1do=",
+      "md5": "74ba70bb99a78e58687aac34a731f8c1",
+      "sha512": "SrWTmqsxvn2pWwXGJuaS4W93E3Wvv0ultYthSzcglUb8O9Qh4qTTFwur52jpzI3Ok7r9bbOx2ctuvYvyyCQCiQ=="
     },
-    "size": "1942.78 KB"
+    "size": "1943.41 KB"
   }
 }

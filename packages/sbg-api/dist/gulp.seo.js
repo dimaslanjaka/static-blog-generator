@@ -73,8 +73,4 @@ function taskSeo(_done, cwd) {
         .pipe(gulp_1.default.dest(cwd));
 }
 exports.taskSeo = taskSeo;
-gulp_1.default.task('seo', function () {
-    var deployDir = (0, sbg_utility_1.deployConfig)().deployDir;
-    return taskSeo(null, deployDir);
-});
 //# sourceMappingURL=gulp.seo.js.map

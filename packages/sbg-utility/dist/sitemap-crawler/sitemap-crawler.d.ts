@@ -16,7 +16,7 @@ export interface Opt {
 }
 export declare class SiteMapCrawlerCore {
     static start(links: string[], core_opt: Opt, isCounting: boolean, callback: cb): void;
-    static filterLink(parent: string, href: string): string | null;
+    static filterLink(parent: string, href: string): string;
 }
 export declare const sitemapCrawler: (link: string | string[], opts?: Opt, callback?: cb) => void;
 /**

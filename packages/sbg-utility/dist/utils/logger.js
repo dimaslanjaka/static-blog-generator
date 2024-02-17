@@ -62,12 +62,14 @@ class Logger {
         this.tracer(...args);
     }
     static tracer(...args) {
+        var _a;
         const error = new Error();
-        const split = error.stack?.split(/\r?\n/gm).map((str) => {
+        const split = (_a = error.stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gm).map((str) => {
+            var _a;
             const split2 = str.trim().split(' ');
             return {
                 name: split2[1],
-                path: split2[2]?.replace(/\\+/gm, '/').replace(/^\(/, '').replace(/\)$/, '')
+                path: (_a = split2[2]) === null || _a === void 0 ? void 0 : _a.replace(/\\+/gm, '/').replace(/^\(/, '').replace(/\)$/, '')
                 //trace: error.stack
             };
         });
@@ -92,7 +94,7 @@ class Logger {
                         try {
                             o = JSON.stringify(o, null, 2);
                         }
-                        catch {
+                        catch (_a) {
                             //
                         }
                     }

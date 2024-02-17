@@ -73,6 +73,7 @@ var copy_1 = require("./deploy/copy");
 var gulp_safelink_1 = require("./gulp.safelink");
 var gulp_seo_1 = require("./gulp.seo");
 var pcopy = __importStar(require("./post/copy"));
+var find_broken_images_1 = require("./post/find-broken-images");
 var standalone_1 = __importDefault(require("./post/standalone"));
 var SBG = /** @class */ (function () {
     /**
@@ -207,7 +208,7 @@ var SBG = /** @class */ (function () {
                     case 3:
                         // hexo generate
                         _a.sent();
-                        return [4 /*yield*/, hexo.exit()];
+                        return [4 /*yield*/, hexo.exit(new Error())];
                     case 4:
                         _a.sent();
                         return [2 /*return*/];
@@ -219,6 +220,7 @@ var SBG = /** @class */ (function () {
      * clean cache, auto generated posts, etc
      * @see {@link cleaner.cleanDb}
      * @see {@link cleaner.cleanArchive}
+     * @see {@link cleaner.cleanGeneratedPosts}
      */
     SBG.prototype.clean = function (opt) {
         return __awaiter(this, void 0, void 0, function () {
@@ -252,6 +254,14 @@ var SBG = /** @class */ (function () {
                         _a.label = 9;
                     case 9: return [2 /*return*/];
                 }
+            });
+        });
+    };
+    SBG.prototype.findBrokenImages = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                (0, find_broken_images_1.findBrokenImagesGlob)(this.config);
+                return [2 /*return*/];
             });
         });
     };

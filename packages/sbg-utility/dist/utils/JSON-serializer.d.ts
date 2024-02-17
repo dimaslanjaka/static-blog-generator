@@ -4,7 +4,7 @@
  * @param {(...args:any[])=>any} [reviver]
  * @returns
  */
-export function parse(text: string, reviver?: ((...args: any[]) => any) | undefined): any;
+export function parse(text: string, reviver?: (...args: any[]) => any): any;
 /**
  * json stringify object with circular references
  * @param {any} value
@@ -12,7 +12,7 @@ export function parse(text: string, reviver?: ((...args: any[]) => any) | undefi
  * @param {string|number} [space]
  * @returns
  */
-export function stringify(value: any, replacer?: ((this: any, key: string, value: any) => any) | undefined, space?: string | number | undefined): string;
+export function stringify(value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string;
 /**
  * stringify circular object into JSON
  * @param {any} any

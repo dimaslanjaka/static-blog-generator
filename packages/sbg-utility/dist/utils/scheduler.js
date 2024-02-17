@@ -31,27 +31,29 @@ exports.bindProcessExit = bindProcessExit;
  * @param options
  * @param exitCode
  */
-async function exitHandler(options, exitCode = 0) {
-    const funcs = [];
-    for (const key in fns) {
-        if (Object.prototype.hasOwnProperty.call(fns, key)) {
-            funcs.push({
-                callback: fns[key],
-                opt: {
-                    before: () => {
-                        if (scheduler.verbose)
-                            _log.info(logname, `executing function key: ${key}`);
+function exitHandler(options, exitCode = 0) {
+    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const funcs = [];
+        for (const key in fns) {
+            if (Object.prototype.hasOwnProperty.call(fns, key)) {
+                funcs.push({
+                    callback: fns[key],
+                    opt: {
+                        before: () => {
+                            if (scheduler.verbose)
+                                _log.info(logname, `executing function key: ${key}`);
+                        }
                     }
-                }
-            });
+                });
+            }
         }
-    }
-    if (options?.cleanup)
-        (0, chain_1.chain)(funcs);
-    if (options?.cleanup && scheduler.verbose)
-        _log.info(logname, `clean exit(${exitCode})`);
-    if (options?.exit)
-        process.exit();
+        if (options === null || options === void 0 ? void 0 : options.cleanup)
+            (0, chain_1.chain)(funcs);
+        if ((options === null || options === void 0 ? void 0 : options.cleanup) && scheduler.verbose)
+            _log.info(logname, `clean exit(${exitCode})`);
+        if (options === null || options === void 0 ? void 0 : options.exit)
+            process.exit();
+    });
 }
 /**
  * Trigger Process Bindings
@@ -145,14 +147,16 @@ class scheduler {
     /**
      * Execute all function lists
      */
-    static async executeAll() {
-        const keys = Object.keys(functions);
-        for (let i = 0; i < keys.length; i++) {
-            const key = keys[i];
-            if (scheduler.verbose)
-                _log.info(logname, 'executing', key);
-            await bluebird_1.default.promisify(functions[key])();
-        }
+    static executeAll() {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            const keys = Object.keys(functions);
+            for (let i = 0; i < keys.length; i++) {
+                const key = keys[i];
+                if (scheduler.verbose)
+                    _log.info(logname, 'executing', key);
+                yield bluebird_1.default.promisify(functions[key])();
+            }
+        });
     }
 }
 scheduler.verbose = true;

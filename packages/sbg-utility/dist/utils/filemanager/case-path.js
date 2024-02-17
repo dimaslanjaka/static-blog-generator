@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.trueCasePath = exports.trueCasePathSync = exports.isWindows = void 0;
+const tslib_1 = require("tslib");
 const fs_extra_1 = require("fs-extra");
 const os_1 = require("os");
 const path_1 = require("path");
@@ -36,7 +37,7 @@ function trueCasePathNew(opt) {
                     return match.toUpperCase();
                 });
             }
-            if (callbackOpt?.unix) {
+            if (callbackOpt === null || callbackOpt === void 0 ? void 0 : callbackOpt.unix) {
                 return (0, upath_1.toUnix)(result);
             }
             else {
@@ -45,12 +46,12 @@ function trueCasePathNew(opt) {
         }
         else {
             if (typeof basePath === 'string') {
-                if (opt?.debug)
+                if (opt === null || opt === void 0 ? void 0 : opt.debug)
                     console.error('failed convert case-path of', { basePath, filePath });
                 return (0, path_1.join)(basePath, filePath);
             }
             else {
-                if (opt?.debug)
+                if (opt === null || opt === void 0 ? void 0 : opt.debug)
                     console.error('failed convert case-path of', { filePath });
                 return filePath;
             }
@@ -73,6 +74,7 @@ function matchCaseInsensitive(fileOrDirectory, directoryContents, filePath) {
 }
 function _trueCasePath({ sync }) {
     return (filePath, basePath) => {
+        var _a;
         if (!(0, fs_extra_1.existsSync)(filePath))
             return basePath ? (0, path_1.join)(basePath, filePath) : filePath;
         if (basePath) {
@@ -88,7 +90,7 @@ function _trueCasePath({ sync }) {
                 throw new Error('[true-case-path]: filePath must be relative when used with basePath');
             }
             basePath = exports.isWindows
-                ? segments.shift()?.toUpperCase() // drive letter
+                ? (_a = segments.shift()) === null || _a === void 0 ? void 0 : _a.toUpperCase() // drive letter
                 : '';
         }
         else if (!basePath) {
@@ -100,9 +102,13 @@ function _trueCasePath({ sync }) {
 function iterateSync(basePath, filePath, segments) {
     return segments.reduce((realPath, fileOrDirectory) => realPath + delimiter + matchCaseInsensitive(fileOrDirectory, (0, fs_extra_1.readdirSync)(realPath + delimiter), filePath), basePath);
 }
-async function iterateAsync(basePath, filePath, segments) {
-    return await segments.reduce(async (realPathPromise, fileOrDirectory) => (await realPathPromise) +
-        delimiter +
-        matchCaseInsensitive(fileOrDirectory, await readdir((await realPathPromise) + delimiter), filePath), basePath);
+function iterateAsync(basePath, filePath, segments) {
+    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        return yield segments.reduce((realPathPromise, fileOrDirectory) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+            return (yield realPathPromise) +
+                delimiter +
+                matchCaseInsensitive(fileOrDirectory, yield readdir((yield realPathPromise) + delimiter), filePath);
+        }), basePath);
+    });
 }
 //# sourceMappingURL=case-path.js.map

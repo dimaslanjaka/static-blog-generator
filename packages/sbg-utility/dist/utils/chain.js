@@ -9,55 +9,64 @@ const logger_1 = tslib_1.__importDefault(require("./logger"));
  * Chainable function runner
  * @param schedule array of function objects
  */
-async function chain(schedule) {
-    // NodeJS.ReadWriteStream | Promise<any>
-    const run = function (instance) {
-        return new Promise(function (resolve) {
-            const logname = ansi_colors_1.default.blueBright('chain') + '.' + ansi_colors_1.default.yellowBright('run');
-            if (instance.opt?.before) {
-                instance.opt.before();
-            }
-            const obj = instance.callback.call && instance.callback.call(null);
-            if (isReadableStream(obj) && obj instanceof stream_1.default.Stream) {
-                // Logger.log('readable stream');
-                return obj.once('end', async function () {
-                    if (instance.opt?.after) {
-                        await instance.opt.after();
-                        return resolve(this);
-                    }
-                    else {
-                        return resolve(this);
-                    }
-                });
-            }
-            else if (obj instanceof stream_1.default.Writable) {
-                logger_1.default.log('writable stream');
-            }
-            else if (isPromise(obj)) {
-                //Logger.log('promises');
-                return obj.then(async function () {
-                    if (instance.opt?.after) {
-                        await instance.opt.after();
-                        return resolve(this);
-                    }
-                    else {
-                        return resolve(this);
-                    }
-                });
-            }
-            else {
-                if (typeof instance.callback !== 'function') {
-                    logger_1.default.log(logname, 'cannot determine method instances');
+function chain(schedule) {
+    return tslib_1.__awaiter(this, void 0, void 0, function* () {
+        // NodeJS.ReadWriteStream | Promise<any>
+        const run = function (instance) {
+            return new Promise(function (resolve) {
+                var _a;
+                const logname = ansi_colors_1.default.blueBright('chain') + '.' + ansi_colors_1.default.yellowBright('run');
+                if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.before) {
+                    instance.opt.before();
                 }
-            }
-            resolve.bind(this)(chain.bind(this));
-        });
-    };
-    while (schedule.length > 0) {
-        const instance = schedule.shift();
-        if (typeof instance !== 'undefined')
-            await run(instance);
-    }
+                const obj = instance.callback.call && instance.callback.call(null);
+                if (isReadableStream(obj) && obj instanceof stream_1.default.Stream) {
+                    // Logger.log('readable stream');
+                    return obj.once('end', function () {
+                        var _a;
+                        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+                            if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.after) {
+                                yield instance.opt.after();
+                                return resolve(this);
+                            }
+                            else {
+                                return resolve(this);
+                            }
+                        });
+                    });
+                }
+                else if (obj instanceof stream_1.default.Writable) {
+                    logger_1.default.log('writable stream');
+                }
+                else if (isPromise(obj)) {
+                    //Logger.log('promises');
+                    return obj.then(function () {
+                        var _a;
+                        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+                            if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.after) {
+                                yield instance.opt.after();
+                                return resolve(this);
+                            }
+                            else {
+                                return resolve(this);
+                            }
+                        });
+                    });
+                }
+                else {
+                    if (typeof instance.callback !== 'function') {
+                        logger_1.default.log(logname, 'cannot determine method instances');
+                    }
+                }
+                resolve.bind(this)(chain.bind(this));
+            });
+        };
+        while (schedule.length > 0) {
+            const instance = schedule.shift();
+            if (typeof instance !== 'undefined')
+                yield run(instance);
+        }
+    });
 }
 exports.chain = chain;
 /**

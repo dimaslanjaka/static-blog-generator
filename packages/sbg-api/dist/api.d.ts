@@ -51,8 +51,10 @@ declare class SBG {
      * clean cache, auto generated posts, etc
      * @see {@link cleaner.cleanDb}
      * @see {@link cleaner.cleanArchive}
+     * @see {@link cleaner.cleanGeneratedPosts}
      */
     clean(opt?: 'all' | 'archive' | 'database' | 'post'): Promise<void>;
+    findBrokenImages(): Promise<void>;
     deploy: {
         superThis: SBG;
         copy: typeof deployCopy;
