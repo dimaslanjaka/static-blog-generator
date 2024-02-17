@@ -3,3 +3,5 @@ __*
 !__test*
 source/libs/codemirror
 .env
+yarn.lock
+.yarn
