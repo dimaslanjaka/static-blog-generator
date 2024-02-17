@@ -21,6 +21,7 @@ const fileStoreOptions: Partial<sessionFileStoreConfig> = {
   logFn: debug('sbg-server').extend('session')
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export interface SBGServer {
   config: {
     root: string;
@@ -29,6 +30,7 @@ export interface SBGServer {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class SBGServer {
   server: import('express').Express;
   env: nunjucks.Environment;
