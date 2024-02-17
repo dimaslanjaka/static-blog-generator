@@ -54,7 +54,7 @@ declare class SBG {
      * @see {@link cleaner.cleanGeneratedPosts}
      */
     clean(opt?: 'all' | 'archive' | 'database' | 'post'): Promise<void>;
-    findBrokenImages(): Promise<void>;
+    findBrokenImages(): Promise<unknown>;
     deploy: {
         superThis: SBG;
         copy: typeof deployCopy;

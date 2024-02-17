@@ -260,8 +260,7 @@ var SBG = /** @class */ (function () {
     SBG.prototype.findBrokenImages = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                (0, find_broken_images_1.findBrokenImagesGlob)(this.config);
-                return [2 /*return*/];
+                return [2 /*return*/, (0, find_broken_images_1.findBrokenImagesGlob)(this.config)];
             });
         });
     };

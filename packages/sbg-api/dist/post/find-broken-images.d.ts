@@ -7,4 +7,4 @@ import { TaskFunctionCallback } from 'gulp';
  */
 export default function findBrokenImages(html: string, config?: import("sbg-utility").ProjConf): Promise<string[]>;
 export declare function hexoFindBrokenImages(done?: TaskFunctionCallback, config?: import("sbg-utility").ProjConf): Bluebird<unknown>;
-export declare function findBrokenImagesGlob(config?: import("sbg-utility").ProjConf): void;
+export declare function findBrokenImagesGlob(config?: import("sbg-utility").ProjConf): Bluebird<unknown>;
