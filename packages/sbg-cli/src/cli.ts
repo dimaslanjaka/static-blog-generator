@@ -25,6 +25,7 @@ yargs
       yargs.showHelp();
     }
   )
+  // view all configs command
   .command(
     'view',
     'view all configurations',
@@ -38,6 +39,7 @@ yargs
       //
     }
   )
+  // clean commands
   .command(
     'clean [key]',
     'clean commands',
@@ -93,6 +95,7 @@ yargs
       }
     }
   )
+  // process source posts
   .command(
     'post <key>',
     `operation inside ${rootColor}/${api.config.post_dir}`,
@@ -118,6 +121,7 @@ yargs
       }
     }
   )
+  // process generated static html
   .command(
     'generate <key>',
     `generate operation on ${rootColor}/${api.config.public_dir}`,
@@ -176,6 +180,7 @@ yargs
       }
     }
   )
+  // deployment
   .command(
     'deploy <key>',
     `operation inside ${rootColor}/.deploy_${api.config.deploy?.type || 'git'}`,
