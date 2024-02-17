@@ -17,7 +17,7 @@ Features:
 - More improvisation on future
 
 ## Example - Using automatic deployment with github workflow (CI)
-- [www.webmanajemen.com site generator](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/a110d0ba7752b6ec9295c353ac6f1aafd22270b8/.github/workflows/build-site.yml)
+- [www.webmanajemen.com site generator](https://github.com/dimaslanjaka/static-blog-generator-hexo/blob/c655ab8e98553a80c29048e4a29c5c017dc7d2b3/.github/workflows/build-site.yml)
 - [reusable workflow](https://github.com/dimaslanjaka/source-posts/blob/fb396eaba81bbdced9302f3e43d01b5166f0dff5/.github/workflows/build-site.yml)
 
 # CLI
@@ -101,4 +101,5 @@ npx sbg generate feed
 - [ ] Fix import/export blogger and wordpress
 
 ## Note
+
 Previous stable development [513d687b4d26bbf4ea735313cb79cbcf8d04b36d](https://github.com/dimaslanjaka/static-blog-generator/commit/513d687b4d26bbf4ea735313cb79cbcf8d04b36d)
