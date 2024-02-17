@@ -86,7 +86,7 @@ function saveCredentials(client: CustomAuthClient) {
  *
  * @return
  */
-export function loadSavedCredentialsIfExist() /*: import('googleapis').Auth.OAuth2Client | null*/ {
+export function loadSavedCredentialsIfExist(): import('googleapis-common/node_modules/google-auth-library/build/src/auth/googleauth').JSONClient {
   try {
     const content = fs.readFileSync(TOKEN_PATH).toString();
     const credentials = JSON.parse(content);
@@ -219,7 +219,4 @@ export async function getPeopleInfo() {
   return res.data;
 }
 
-if (require.main === module)
-  googleAuthenticate(scopes)
-    .then((client) => saveCredentials(client))
-    .catch(console.error);
+
