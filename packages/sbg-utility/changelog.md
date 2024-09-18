@@ -8,3 +8,7 @@
 08450b418 fix: persistent-cache from local
 fce7ce63d chore: using local json util
 41e5ec43c chore: split exports - split stream filemanager - split index for node and browser
+
+**1.1.8**
+
+- drop `node-libcurl`

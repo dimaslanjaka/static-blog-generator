@@ -17,7 +17,7 @@ ___*
 .env
 .git-rewrite
 /packages/**/package-lock.json
-.nx
+.nx/
 
 # disable dist
 # /packages/**/dist/
