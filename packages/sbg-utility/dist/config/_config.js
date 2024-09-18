@@ -80,24 +80,24 @@ exports.deployConfig = deployConfig;
  * excludes.push(...commonIgnore);
  */
 exports.commonIgnore = [
-    '**/yandex_*.html',
+    '**/yandex_*.html', // skip yandex verification file
     // '**/comments.html',
     // '**/disqus-comments.html',
     // '**/comment.html', // skip comment.html
-    '**/favicon.html',
-    '**/404.html',
-    '**/node_modules/**',
-    '**/tmp/**',
-    '**/build/**',
-    '**/.cache/**',
-    '**/.vscode/**',
-    '**/.frontmatter/**',
-    '**/pinterest-*.html',
-    '**/_*.standalone.{js,ts}',
-    '**/desktop.ini',
-    '**/node_modules/**',
-    '**/.frontmatter/**',
-    '**/.git*/**',
+    '**/favicon.html', // skip favicon
+    '**/404.html', // skip 404
+    '**/node_modules/**', // skip node_modules
+    '**/tmp/**', // skip tmp
+    '**/build/**', // skip build
+    '**/.cache/**', // skip common cache folder
+    '**/.vscode/**', // skip vscode configuration folder
+    '**/.frontmatter/**', // skip frontmatter vscode extension
+    '**/pinterest-*.html', // skip pinterest verification file
+    '**/_*.standalone.{js,ts}', // skip _filename.standalone.js
+    '**/desktop.ini', // windows desktop.ini
+    '**/node_modules/**', // node_modules
+    '**/.frontmatter/**', // vscode frontmatter plugin
+    '**/.git*/**', // any git configs
     '**/.*' // skip dots
 ];
 /**
