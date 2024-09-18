@@ -20,7 +20,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node"]
+    "typeRoots": ["./node_modules/@types"]
   }
 }
