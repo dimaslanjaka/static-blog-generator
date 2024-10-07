@@ -99,13 +99,13 @@
     "typescript": "5.3.3"
   },
   "resolutions": {
-    "hexo": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/hexo.tgz",
-    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/hexo-asset-link.tgz",
-    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/hexo-cli.tgz",
-    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/hexo-front-matter.tgz",
-    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/hexo-log.tgz",
-    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/hexo-util.tgz",
-    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/6c026b7/releases/warehouse.tgz"
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-asset-link.tgz",
+    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-cli.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-front-matter.tgz",
+    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-log.tgz",
+    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-util.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz"
   },
   "engines": {
     "node": "^16"
