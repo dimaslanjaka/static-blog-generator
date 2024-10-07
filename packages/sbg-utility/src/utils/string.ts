@@ -100,8 +100,8 @@ export function slugify(str: string, ext?: string) {
 }
 
 /**
- * check variable is valid http url string
- * @param string
+ * check variable is valid http(s) url string
+ * @param string string url to validate
  * @returns
  */
 export function isValidHttpUrl(string: string | URL) {
