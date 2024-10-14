@@ -5,6 +5,7 @@ import { Application, processSinglePost } from '../src';
 import { fixturesCwd } from './env';
 
 // cross-env-shell DEBUG:post
+process.env.DEBUG = "sbg-*,post:*,post"
 
 // tell working directory to fixtures folder
 process.cwd = () => fixturesCwd;
