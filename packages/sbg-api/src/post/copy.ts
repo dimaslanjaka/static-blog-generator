@@ -7,6 +7,7 @@ import { debug, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
 import { extname, join, toUnix } from 'upath';
 import { gulpOpt } from '../gulp-options';
+import { forceGc } from '../utils/gc';
 import { parsePermalink } from './permalink';
 
 /**
@@ -99,12 +100,14 @@ export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
           if (typeof compile === 'string') {
             file.contents = Buffer.from(compile);
             this.push(file);
+            forceGc();
             callback();
           } else {
             callback();
           }
         } else {
           this.push(file);
+          forceGc();
           callback();
         }
       } else {
