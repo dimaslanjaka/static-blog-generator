@@ -1,4 +1,4 @@
-import spawn from 'cross-spawn';
+import * as spawn from 'cross-spawn';
 import gulp from 'gulp';
 import { getConfig, Logger, replacePath } from 'sbg-utility';
 import through2 from 'through2';
