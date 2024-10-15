@@ -1,12 +1,10 @@
-'use strict';
-
-var moment$1 = require('moment-timezone');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
+import moment$1 from 'moment-timezone';
+import { debug, getConfig, normalizePath } from 'sbg-utility';
+import path from 'upath';
 
 const moment = (input) => {
-    moment$1.tz.setDefault(sbgUtils.getConfig().timezone || 'UTC');
-    return moment$1(input).tz(sbgUtils.getConfig().timezone || 'UTC');
+    moment$1.tz.setDefault(getConfig().timezone || 'UTC');
+    return moment$1(input).tz(getConfig().timezone || 'UTC');
 };
 /**
  * transform permalink format in `_config.yml`
@@ -15,13 +13,13 @@ const moment = (input) => {
 function parsePermalink(post, config) {
     if (!post)
         throw new Error('parameter post is ' + typeof post);
-    sbgUtils.debug('permalink').extend('source')(post);
-    const siteConfig = sbgUtils.getConfig();
+    debug('permalink').extend('source')(post);
+    const siteConfig = getConfig();
     let pattern = config.permalink_pattern || siteConfig.permalink;
     const date = config.date;
-    let cleanPathname = sbgUtils.normalizePath(post).replace(/.md$/, '');
+    let cleanPathname = normalizePath(post).replace(/.md$/, '');
     const toReplace = [
-        sbgUtils.normalizePath(siteConfig.cwd),
+        normalizePath(siteConfig.cwd),
         siteConfig.source_dir + '/_posts/',
         `${siteConfig.post_dir || 'src-posts'}/`,
         '_posts/'
@@ -65,8 +63,8 @@ function parsePermalink(post, config) {
     // replace %20 to space
     const newPattern = pattern.replace(/%20/g, ' ');
     const result = newPattern.replace(/\/{2,10}/g, '/').replace(config.url, '');
-    sbgUtils.debug('permalink').extend('result')(result);
+    debug('permalink').extend('result')(result);
     return result;
 }
 
-exports.parsePermalink = parsePermalink;
+export { parsePermalink };

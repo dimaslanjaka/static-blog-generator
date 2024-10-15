@@ -1,5 +1,3 @@
-'use strict';
-
 var proxyFromEnv = {};
 
-exports.__exports = proxyFromEnv;
+export { proxyFromEnv as __exports };

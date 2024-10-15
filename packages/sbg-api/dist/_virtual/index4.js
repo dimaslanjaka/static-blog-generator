@@ -1,5 +1,3 @@
-'use strict';
-
 var followRedirects = {exports: {}};
 
-exports.__module = followRedirects;
+export { followRedirects as __module };

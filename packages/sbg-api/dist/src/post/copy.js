@@ -1,35 +1,14 @@
-'use strict';
-
-var ansiColors = require('ansi-colors');
-var fs = require('fs-extra');
-var glob = require('glob');
-var gulp = require('gulp');
-var hexoPostParser = require('hexo-post-parser');
-var moment = require('moment-timezone');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var path$1 = require('../utils/path.js');
-var copyUtils = require('./copy-utils.js');
-var permalink = require('./permalink.js');
-
-function _interopNamespaceDefault(e) {
-    var n = Object.create(null);
-    if (e) {
-        Object.keys(e).forEach(function (k) {
-            if (k !== 'default') {
-                var d = Object.getOwnPropertyDescriptor(e, k);
-                Object.defineProperty(n, k, d.get ? d : {
-                    enumerable: true,
-                    get: function () { return e[k]; }
-                });
-            }
-        });
-    }
-    n.default = e;
-    return Object.freeze(n);
-}
-
-var hexoPostParser__namespace = /*#__PURE__*/_interopNamespaceDefault(hexoPostParser);
+import ansiColors from 'ansi-colors';
+import fs from 'fs-extra';
+import { globSync } from 'glob';
+import gulp from 'gulp';
+import * as hexoPostParser from 'hexo-post-parser';
+import moment from 'moment-timezone';
+import { debug, getConfig, normalizePath, noop, Logger } from 'sbg-utility';
+import path from 'upath';
+import { removeCwd } from '../utils/path.js';
+import { processFiles } from './copy-utils.js';
+import { parsePermalink } from './permalink.js';
 
 /**
  * log debug
@@ -37,7 +16,7 @@ var hexoPostParser__namespace = /*#__PURE__*/_interopNamespaceDefault(hexoPostPa
  * @example
  * cross-env-shell DEBUG=* "your commands"
  */
-const log = sbgUtils.debug('post');
+const log = debug('post');
 const logErr = log.extend('error');
 const logLabel = log.extend('label');
 /**
@@ -47,7 +26,7 @@ const logLabel = log.extend('label');
  */
 function copySinglePost(identifier, callback) {
     identifier = identifier.replace(path.extname(identifier), '');
-    const config = sbgUtils.getConfig();
+    const config = getConfig();
     const sourcePostDir = path.join(config.cwd, config.post_dir);
     const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
     ///const fileList = [];
@@ -92,26 +71,26 @@ function copySinglePost(identifier, callback) {
  */
 function copyAllPosts(config) {
     if (!config)
-        config = sbgUtils.getConfig();
+        config = getConfig();
     const excludes = config.exclude || [];
     const sourcePostDir = path.join(config.cwd, config.post_dir);
     const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
-    const posts = glob.globSync(['**/*.*', '*.*', '**/*'], {
+    const posts = globSync(['**/*.*', '*.*', '**/*'], {
         cwd: sourcePostDir,
         ignore: excludes,
         dot: true,
         noext: true,
         absolute: true
-    }).map((s) => sbgUtils.normalizePath(s));
-    return copyUtils.processFiles(posts, async function (filePath, content) {
+    }).map((s) => normalizePath(s));
+    return processFiles(posts, async function (filePath, content) {
         const compile = await processSinglePost({ content, file: filePath }).catch(() => null);
         if (typeof compile === 'string') {
-            const fileWithoutCwd = path$1.removeCwd(filePath).replace(/[/\\]src-posts[/\\]/, '');
+            const fileWithoutCwd = removeCwd(filePath).replace(/[/\\]src-posts[/\\]/, '');
             const dest = path.join(generatedPostDir, fileWithoutCwd);
             fs.ensureDirSync(path.dirname(dest));
             fs.writeFileSync(dest, compile);
         }
-    }, sbgUtils.noop);
+    }, noop);
 }
 // /**
 //  * pipeable function to process post
@@ -174,9 +153,9 @@ function copyAllPosts(config) {
 async function processSinglePost(options, callback) {
     const { content, file } = options;
     const contents = content || fs.readFileSync(file, 'utf-8');
-    const config = sbgUtils.getConfig();
+    const config = getConfig();
     // debug file
-    const dfile = ansiColors.yellowBright(sbgUtils.normalizePath(options.file.replace(config.cwd, '')));
+    const dfile = ansiColors.yellowBright(normalizePath(options.file.replace(config.cwd, '')));
     log('processing', dfile);
     // drop empty body
     if (contents.trim().length === 0) {
@@ -184,7 +163,7 @@ async function processSinglePost(options, callback) {
         return;
     }
     try {
-        const parse = await hexoPostParser__namespace
+        const parse = await hexoPostParser
             .parsePost(contents, {
             shortcodes: {
                 youtube: true,
@@ -202,7 +181,7 @@ async function processSinglePost(options, callback) {
             fix: true,
             sourceFile: file
         })
-            .catch((e) => sbgUtils.Logger.log(e));
+            .catch((e) => Logger.log(e));
         if (parse && parse.metadata) {
             if (parse.metadata.date) {
                 // skip scheduled post
@@ -222,10 +201,10 @@ async function processSinglePost(options, callback) {
             log.extend('permalink').extend('pattern')(config.permalink);
             //parse.metadata.permalink = hexoPostParser.parsePermalink(parse);
             if (!parse.metadata.permalink) {
-                parse.metadata.permalink = permalink.parsePermalink(file, {
+                parse.metadata.permalink = parsePermalink(file, {
                     title: parse.metadata.title,
                     date: String(parse.metadata.date || new Date()),
-                    permalink_pattern: sbgUtils.getConfig().permalink
+                    permalink_pattern: getConfig().permalink
                 });
             }
             if (parse.metadata.permalink?.startsWith('/')) {
@@ -261,7 +240,7 @@ async function processSinglePost(options, callback) {
                             if (index !== -1) {
                                 parse.metadata[groupLabel][index] = config[groupLabel].mapper[oldLabel];
                                 if (config.generator.verbose) {
-                                    sbgUtils.Logger.log(ansiColors.redBright(parse.metadata[groupLabel][index]), '~>', ansiColors.greenBright(config[groupLabel].mapper[oldLabel]));
+                                    Logger.log(ansiColors.redBright(parse.metadata[groupLabel][index]), '~>', ansiColors.greenBright(config[groupLabel].mapper[oldLabel]));
                                 }
                             }
                         }
@@ -285,14 +264,14 @@ async function processSinglePost(options, callback) {
                     }
                 }
                 else if (config.generator.verbose) {
-                    sbgUtils.Logger.log(groupLabel, 'not found');
+                    Logger.log(groupLabel, 'not found');
                 }
                 // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
             }
             if (typeof callback === 'function') {
                 callback(parse);
             }
-            const build = hexoPostParser__namespace.buildPost(parse);
+            const build = hexoPostParser.buildPost(parse);
             if (typeof build === 'string') {
                 return build;
             }
@@ -302,10 +281,8 @@ async function processSinglePost(options, callback) {
         }
     }
     catch (e) {
-        sbgUtils.Logger.log(e);
+        Logger.log(e);
     }
 }
 
-exports.copyAllPosts = copyAllPosts;
-exports.copySinglePost = copySinglePost;
-exports.processSinglePost = processSinglePost;
+export { copyAllPosts, copySinglePost, processSinglePost };

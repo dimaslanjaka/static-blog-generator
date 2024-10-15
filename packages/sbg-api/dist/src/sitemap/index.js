@@ -1,15 +1,13 @@
-'use strict';
-
-var Bluebird = require('bluebird');
-var fs = require('fs-extra');
-var gulp = require('gulp');
-var Hexo = require('hexo');
-var hutil = require('hexo-util');
-var micromatch = require('micromatch');
-var nunjucks = require('nunjucks');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var yoastSitemap = require('./yoast-sitemap.js');
+import Bluebird from 'bluebird';
+import fs from 'fs-extra';
+import gulp from 'gulp';
+import Hexo from 'hexo';
+import hutil from 'hexo-util';
+import micromatch from 'micromatch';
+import nunjucks from 'nunjucks';
+import { envNunjucks, sitemapCrawlerAsync, getConfig, array_unique, writefile, array_remove_empty, Logger, setConfig, commonIgnore, gulpDom, noop } from 'sbg-utility';
+import path from 'upath';
+import { yoastSeo } from './yoast-sitemap.js';
 
 /*
 // read existing sitemap.txt
@@ -18,7 +16,7 @@ let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapT
 */
 let sitemaps = [];
 const crawled = new Set();
-const env = sbgUtils.envNunjucks();
+const env = envNunjucks();
 /**
  * Sitemap Generator
  * @param url url to crawl
@@ -30,13 +28,13 @@ function generateSitemap(url, deep = 0) {
         const promises = [];
         if (typeof url === 'string') {
             crawled.add(url);
-            promises.push(sbgUtils.sitemapCrawlerAsync(url, {
+            promises.push(sitemapCrawlerAsync(url, {
                 deep
             }));
         }
         else {
-            crawled.add(sbgUtils.getConfig().url);
-            promises.push(sbgUtils.sitemapCrawlerAsync(sbgUtils.getConfig().url, {
+            crawled.add(getConfig().url);
+            promises.push(sitemapCrawlerAsync(getConfig().url, {
                 deep
             }));
         }
@@ -50,18 +48,18 @@ function generateSitemap(url, deep = 0) {
                         mapped[key] = values;
                     }
                     else {
-                        mapped[key] = sbgUtils.array_unique(values.concat(mapped[key]));
+                        mapped[key] = array_unique(values.concat(mapped[key]));
                     }
                 }
             });
             // dump
-            const saveto = path.join(sbgUtils.getConfig().cwd, 'tmp/dump/sitemap/sitemap.json');
-            sbgUtils.writefile(saveto, JSON.stringify(mapped, null, 2));
+            const saveto = path.join(getConfig().cwd, 'tmp/dump/sitemap/sitemap.json');
+            writefile(saveto, JSON.stringify(mapped, null, 2));
             // return
             return mapped;
         })
             .then(async (results) => {
-            sitemaps = sbgUtils.array_unique(sbgUtils.array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(function (a, b) {
+            sitemaps = array_unique(array_remove_empty(Object.values(results).flat(1).concat(sitemaps))).sort(function (a, b) {
                 return a === b ? 0 : a < b ? -1 : 1;
             });
             for (let i = 0; i < deep; i++) {
@@ -70,7 +68,7 @@ function generateSitemap(url, deep = 0) {
                     if (crawled.has(url) || /.(js|ts|css|scss|txt|pdf|png|jpe?g|gif|webp)$/gi.test(url))
                         continue;
                     crawled.add(url);
-                    sbgUtils.Logger.log('[depth]', ii, url);
+                    Logger.log('[depth]', ii, url);
                     await generateSitemap(url, deep).then(() => writeSitemap());
                 }
             }
@@ -83,11 +81,11 @@ function generateSitemap(url, deep = 0) {
  * @param callback
  */
 function writeSitemap(callback) {
-    let cb = sbgUtils.noop;
+    let cb = noop;
     if (callback)
         cb = () => callback(sitemaps);
-    const sitemapTXT = path.join(sbgUtils.getConfig().cwd, sbgUtils.getConfig().public_dir || 'public', 'sitemap.txt');
-    sbgUtils.writefile(sitemapTXT, sbgUtils.array_remove_empty(sitemaps).join('\n'));
+    const sitemapTXT = path.join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
+    writefile(sitemapTXT, array_remove_empty(sitemaps).join('\n'));
     cb.apply(this);
 }
 /**
@@ -95,7 +93,7 @@ function writeSitemap(callback) {
  * @param config
  * @returns
  */
-function hexoGenerateSitemap(config = sbgUtils.getConfig()) {
+function hexoGenerateSitemap(config = getConfig()) {
     return new Bluebird((resolve) => {
         const instance = new Hexo(config.cwd);
         instance.init().then(() => {
@@ -103,20 +101,20 @@ function hexoGenerateSitemap(config = sbgUtils.getConfig()) {
                 env.addFilter('formatUrl', (str) => {
                     return hutil.full_url_for.call(instance, str);
                 });
-                const config = sbgUtils.setConfig(instance.config);
+                const config = setConfig(instance.config);
                 // assign default config
                 const sitemap = Object.assign({ rel: false, tags: false, categories: false, path: ['sitemap.txt', 'sitemap.xml'] }, config.sitemap);
                 // Build Yoast SEO sitemap
                 // when config.yoast defined
                 if (sitemap.yoast) {
-                    return yoastSitemap.yoastSeo(instance);
+                    return yoastSeo(instance);
                 }
                 if (!config.sitemap)
-                    return sbgUtils.Logger.log('[sitemap] config.sitemap not configured in _config.yml');
+                    return Logger.log('[sitemap] config.sitemap not configured in _config.yml');
                 const locals = instance.locals;
                 const skip_render = config.skip_render;
                 if (!sitemap.tags || !sitemap.categories) {
-                    return sbgUtils.Logger.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
+                    return Logger.log('[sitemap] config.sitemap.tags or config.sitemap.categories not configured in _config.yml');
                 }
                 const skipRenderList = ['**/*.js', '**/*.css', '**/.git*'];
                 if (Array.isArray(skip_render)) {
@@ -153,18 +151,18 @@ function hexoGenerateSitemap(config = sbgUtils.getConfig()) {
                 data = data.replace(/^\s*[\r\n]/gm, '\n');
                 //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
                 // dump
-                console.log('sitemap.xml written', sbgUtils.writefile(path.join(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data).file);
+                console.log('sitemap.xml written', writefile(path.join(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data).file);
                 // write
                 const sitemapXml = path.join(config.cwd, config.public_dir, 'sitemap.xml');
-                sbgUtils.writefile(sitemapXml, data);
+                writefile(sitemapXml, data);
                 instance.log.info('sitemap written', sitemapXml);
                 if (!relCfg)
                     return resolve();
                 const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
                 const publicDir = path.join(config.cwd, config.public_dir);
                 gulp
-                    .src('**/*.html', { cwd: publicDir, ignore: sbgUtils.commonIgnore })
-                    .pipe(sbgUtils.gulpDom(function () {
+                    .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
+                    .pipe(gulpDom(function () {
                     // auto discovery sitemap
                     if (this.querySelectorAll(`link[href="${baseURL}sitemap.xml"]`).length === 0 &&
                         this.querySelectorAll(`link[href="/sitemap.xml"]`).length === 0) {
@@ -188,5 +186,4 @@ function isMatch(str, patterns) {
     return micromatch.isMatch(str, patterns);
 }
 
-exports.generateSitemap = generateSitemap;
-exports.hexoGenerateSitemap = hexoGenerateSitemap;
+export { generateSitemap, hexoGenerateSitemap };

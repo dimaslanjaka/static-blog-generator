@@ -1,13 +1,11 @@
-'use strict';
-
-var path = require('path');
-var sbgUtils = require('sbg-utility');
+import path from 'path';
+import { getConfig, normalizePath } from 'sbg-utility';
 
 function removeCwd(...paths) {
-    const config = sbgUtils.getConfig();
-    return sbgUtils.normalizePath(path.normalize(path.join(...paths)))
-        .replace(sbgUtils.normalizePath(path.normalize(process.cwd())), '')
-        .replace(sbgUtils.normalizePath(path.normalize(config.cwd)), '');
+    const config = getConfig();
+    return normalizePath(path.normalize(path.join(...paths)))
+        .replace(normalizePath(path.normalize(process.cwd())), '')
+        .replace(normalizePath(path.normalize(config.cwd)), '');
 }
 
-exports.removeCwd = removeCwd;
+export { removeCwd };

@@ -1,21 +1,19 @@
-'use strict';
-
-var ansiColors = require('ansi-colors');
-var gulp = require('gulp');
-var sbgUtils = require('sbg-utility');
+import ansiColors from 'ansi-colors';
+import gulp from 'gulp';
+import { getConfig, commonIgnore, gulpCached, gulpDom, Logger } from 'sbg-utility';
 
 /**
  * Auto seo runner
  * @param cwd working directory to scan html's
  */
 function taskSeo(_done, cwd) {
-    const config = sbgUtils.getConfig();
+    const config = getConfig();
     const ignore = Array.isArray(config.exclude) ? config.exclude : [];
-    ignore.push(...sbgUtils.commonIgnore);
+    ignore.push(...commonIgnore);
     return gulp
         .src(['**/*.{htm,html}', '*.{html,htm}'], { cwd, ignore })
-        .pipe(sbgUtils.gulpCached({ name: 'seo' }))
-        .pipe(sbgUtils.gulpDom(function (path) {
+        .pipe(gulpCached({ name: 'seo' }))
+        .pipe(gulpDom(function (path) {
         // fix alt images
         const images = Array.from(this.querySelectorAll('img[src]'));
         images.forEach((el) => {
@@ -38,10 +36,10 @@ function taskSeo(_done, cwd) {
         // count H1
         const h1 = this.querySelectorAll('h1');
         if (h1.length > 1) {
-            sbgUtils.Logger.log(ansiColors.yellowBright('[WARN]'), `H1 (${h1.length}) ${path}`);
+            Logger.log(ansiColors.yellowBright('[WARN]'), `H1 (${h1.length}) ${path}`);
         }
     }))
         .pipe(gulp.dest(cwd));
 }
 
-exports.taskSeo = taskSeo;
+export { taskSeo };

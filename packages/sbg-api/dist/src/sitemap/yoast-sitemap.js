@@ -1,14 +1,12 @@
-'use strict';
-
-var fs = require('fs-extra');
-var hexoIs = require('hexo-is');
-var moment = require('moment');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var xmlbuilder2 = require('xmlbuilder2');
-var archive = require('./archive.js');
-var pages = require('./pages.js');
-var posts = require('./posts.js');
+import fs from 'fs-extra';
+import hexoIs from 'hexo-is';
+import moment from 'moment';
+import { getConfig, scheduler, writefile } from 'sbg-utility';
+import path from 'upath';
+import { create } from 'xmlbuilder2';
+import getCategoryTags, { getLatestFromArrayDates } from './archive.js';
+import yoastSeoSitemapPages from './pages.js';
+import yoastSeoSitemapPosts from './posts.js';
 
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 const sitemapGroup = {};
@@ -17,7 +15,7 @@ function initSitemap(type) {
         const sourceXML = path.join(__dirname, 'views/' + type + '-sitemap.xml');
         if (!fs.existsSync(sourceXML))
             throw 'Source ' + sourceXML + ' Not Found';
-        const doc = xmlbuilder2.create(fs.readFileSync(sourceXML).toString());
+        const doc = create(fs.readFileSync(sourceXML).toString());
         sitemapGroup[type] = new Object(doc.end({ format: 'object' }));
         sitemapGroup[type].urlset.url = [];
     }
@@ -60,7 +58,7 @@ const pageUpdateDates = [];
 // const cache = new CacheFile("sitemap");
 let turnError = false;
 function yoastSeoSitemap(data) {
-    const HSconfig = sbgUtils.getConfig();
+    const HSconfig = getConfig();
     if (!HSconfig.sitemap) {
         if (!turnError) {
             turnError = true;
@@ -70,7 +68,7 @@ function yoastSeoSitemap(data) {
     }
     // set category and tag information of posts
     if (!categoryTagsInfo) {
-        categoryTagsInfo = archive.default(hexo);
+        categoryTagsInfo = getCategoryTags(hexo);
     }
     // cast locals
     const locals = hexo.locals;
@@ -107,7 +105,7 @@ function yoastSeoSitemap(data) {
             });
         }
         if (isPagePost) {
-            sbgUtils.scheduler.add('writeSitemap', () => {
+            scheduler.add('writeSitemap', () => {
                 // copy xsl
                 const destXSL = path.join(hexo.public_dir, 'sitemap.xsl');
                 if (!fs.existsSync(path.dirname(destXSL)))
@@ -121,10 +119,10 @@ function yoastSeoSitemap(data) {
                     _log.error('XSL sitemap not found');
                 }
                 const destPostSitemap = path.join(hexo.public_dir, 'post-sitemap.xml');
-                sbgUtils.writefile(destPostSitemap, xmlbuilder2.create(sitemapGroup['post']).end({ prettyPrint: true }));
+                writefile(destPostSitemap, create(sitemapGroup['post']).end({ prettyPrint: true }));
                 _log.info('post sitemap saved', destPostSitemap);
                 const destPageSitemap = path.join(hexo.public_dir, 'page-sitemap.xml');
-                sbgUtils.writefile(destPageSitemap, xmlbuilder2.create(sitemapGroup['page']).end({ prettyPrint: true }));
+                writefile(destPageSitemap, create(sitemapGroup['page']).end({ prettyPrint: true }));
                 _log.info('page sitemap saved', destPageSitemap);
                 yoastSitemapIndex(hexo);
             });
@@ -142,8 +140,8 @@ function yoastSeo(hexo) {
     if (emptySite)
         return;
     // yoastSitemapIndex(hexo);
-    pages.default(hexo);
-    posts.default(hexo);
+    yoastSeoSitemapPages(hexo);
+    yoastSeoSitemapPosts(hexo);
 }
 /**
  * generate yoast
@@ -152,18 +150,18 @@ function yoastSeo(hexo) {
  */
 function yoastSitemapIndex(hexo) {
     const sourceIndexXML = path.join(__dirname, 'views/sitemap.xml');
-    const sitemapIndexDoc = xmlbuilder2.create(fs.readFileSync(sourceIndexXML).toString());
+    const sitemapIndexDoc = create(fs.readFileSync(sourceIndexXML).toString());
     const sitemapIndex = new Object(sitemapIndexDoc.end({ format: 'object' }));
     sitemapIndex.sitemapindex.sitemap = [];
     // push post-sitemap.xml to sitemapindex
-    const latestPostDate = archive.getLatestFromArrayDates(postUpdateDates);
+    const latestPostDate = getLatestFromArrayDates(postUpdateDates);
     _log.info('latest updated post', String(latestPostDate));
     sitemapIndex.sitemapindex.sitemap.push({
         loc: hexo.config.url.toString() + '/post-sitemap.xml',
         lastmod: moment(latestPostDate).format('YYYY-MM-DDTHH:mm:ssZ')
     });
     // push page-sitemap.xml to sitemapindex
-    const latestPageDate = archive.getLatestFromArrayDates(pageUpdateDates);
+    const latestPageDate = getLatestFromArrayDates(pageUpdateDates);
     _log.info('latest updated page', String(latestPageDate));
     if (moment(latestPageDate).isValid())
         sitemapIndex.sitemapindex.sitemap.push({
@@ -172,7 +170,7 @@ function yoastSitemapIndex(hexo) {
         });
     // set category and tag information of posts
     if (!categoryTagsInfo) {
-        categoryTagsInfo = archive.default(hexo);
+        categoryTagsInfo = getCategoryTags(hexo);
     }
     // build tag-sitemap.xml
     const tags = categoryTagsInfo.tags;
@@ -186,10 +184,10 @@ function yoastSitemapIndex(hexo) {
         });
     });
     const destTagSitemap = path.join(hexo.public_dir, 'tag-sitemap.xml');
-    sbgUtils.writefile(destTagSitemap, xmlbuilder2.create(sitemapGroup['tag']).end({ prettyPrint: true }));
+    writefile(destTagSitemap, create(sitemapGroup['tag']).end({ prettyPrint: true }));
     _log.info('tag sitemap saved', destTagSitemap);
     // push tag-sitemap.xml to sitemapindex
-    const latestTagDate = archive.getLatestFromArrayDates(tags.map((tag) => {
+    const latestTagDate = getLatestFromArrayDates(tags.map((tag) => {
         return tag.latest;
     }));
     _log.info('latest updated tag', String(latestTagDate));
@@ -209,10 +207,10 @@ function yoastSitemapIndex(hexo) {
         });
     });
     const destCategorySitemap = path.join(hexo.public_dir, 'category-sitemap.xml');
-    sbgUtils.writefile(destCategorySitemap, xmlbuilder2.create(sitemapGroup['category']).end({ prettyPrint: true }));
+    writefile(destCategorySitemap, create(sitemapGroup['category']).end({ prettyPrint: true }));
     _log.info('category sitemap saved', destCategorySitemap);
     // push category-sitemap.xml to sitemapindex
-    const latestCategoryDate = archive.getLatestFromArrayDates(categories.map((category) => {
+    const latestCategoryDate = getLatestFromArrayDates(categories.map((category) => {
         return category.latest;
     }));
     _log.info('latest updated category', String(latestCategoryDate));
@@ -221,11 +219,8 @@ function yoastSitemapIndex(hexo) {
         lastmod: moment(latestCategoryDate).format('YYYY-MM-DDTHH:mm:ssZ')
     });
     const destIndexSitemap = path.join(hexo.public_dir, 'sitemap.xml');
-    sbgUtils.writefile(destIndexSitemap, xmlbuilder2.create(sitemapIndex).end({ prettyPrint: true }));
+    writefile(destIndexSitemap, create(sitemapIndex).end({ prettyPrint: true }));
     _log.info('index sitemap saved', destIndexSitemap);
 }
 
-exports.getPageData = getPageData;
-exports.yoastSeo = yoastSeo;
-exports.yoastSeoSitemap = yoastSeoSitemap;
-exports.yoastSitemapIndex = yoastSitemapIndex;
+export { getPageData, yoastSeo, yoastSeoSitemap, yoastSitemapIndex };

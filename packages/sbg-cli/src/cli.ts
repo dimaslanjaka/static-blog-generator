@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 
 import fs from 'fs-extra';
 import { spawnAsync } from 'git-command-helper';
@@ -7,11 +8,12 @@ import * as readline from 'node:readline';
 import { feed, sitemap } from 'sbg-api';
 import SBGServer from 'sbg-server';
 import path from 'upath';
-import yargs from 'yargs';
+import YARGS from 'yargs';
 import { getApi, rootColor } from './env';
 
 const api = getApi();
 
+const yargs = YARGS(process.argv.slice(2));
 yargs
   .scriptName('sbg')
   .usage('usage: sbg <command>')

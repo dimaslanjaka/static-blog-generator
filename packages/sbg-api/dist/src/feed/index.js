@@ -1,21 +1,19 @@
-'use strict';
+import Bluebird from 'bluebird';
+import fs from 'fs-extra';
+import gulp from 'gulp';
+import Hexo from 'hexo';
+import hutil from 'hexo-util';
+import nunjucks from 'nunjucks';
+import { envNunjucks, commonIgnore, gulpDom, getConfig } from 'sbg-utility';
+import path from 'upath';
 
-var Bluebird = require('bluebird');
-var fs = require('fs-extra');
-var gulp = require('gulp');
-var Hexo = require('hexo');
-var hutil = require('hexo-util');
-var nunjucks = require('nunjucks');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-
-const env = sbgUtils.envNunjucks();
+const env = envNunjucks();
 /**
  * generate feed with hexo
  * @param done
  * @param config
  */
-function hexoGenerateFeed(done, config = sbgUtils.getConfig()) {
+function hexoGenerateFeed(done, config = getConfig()) {
     const instance = new Hexo(config.cwd);
     return new Bluebird((resolve) => {
         instance.init().then(() => {
@@ -65,8 +63,8 @@ function hexoGenerateFeed(done, config = sbgUtils.getConfig()) {
                 const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
                 const publicDir = path.join(config.cwd, config.public_dir);
                 gulp
-                    .src('**/*.html', { cwd: publicDir, ignore: sbgUtils.commonIgnore })
-                    .pipe(sbgUtils.gulpDom(function () {
+                    .src('**/*.html', { cwd: publicDir, ignore: commonIgnore })
+                    .pipe(gulpDom(function () {
                     // auto discovery rss
                     if (this.querySelectorAll(`link[href="${baseURL}rss.xml"]`).length === 0 &&
                         this.querySelectorAll(`link[href="/rss.xml"]`).length === 0) {
@@ -95,5 +93,4 @@ function gulpHexoGeneratedFeed(callback) {
     return hexoGenerateFeed(callback);
 }
 
-exports.gulpHexoGeneratedFeed = gulpHexoGeneratedFeed;
-exports.hexoGenerateFeed = hexoGenerateFeed;
+export { gulpHexoGeneratedFeed, hexoGenerateFeed };

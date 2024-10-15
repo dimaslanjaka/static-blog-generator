@@ -1,11 +1,7 @@
-'use strict';
+import { getDefaultExportFromCjs } from './_commonjsHelpers.js';
+import { __require as requireForm_data } from '../node_modules/form-data/lib/form_data.js';
 
-Object.defineProperty(exports, '__esModule', { value: true });
+var form_dataExports = requireForm_data();
+var FormData = /*@__PURE__*/getDefaultExportFromCjs(form_dataExports);
 
-var _commonjsHelpers = require('./_commonjsHelpers.js');
-var form_data = require('../node_modules/form-data/lib/form_data.js');
-
-var form_dataExports = form_data.__require();
-var FormData = /*@__PURE__*/_commonjsHelpers.getDefaultExportFromCjs(form_dataExports);
-
-exports.default = FormData;
+export { FormData as default };

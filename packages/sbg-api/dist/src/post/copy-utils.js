@@ -1,8 +1,6 @@
-'use strict';
-
-var fs = require('fs-extra');
-var index = require('../../node_modules/p-limit/index.js');
-var sbgUtils = require('sbg-utility');
+import fs from 'fs-extra';
+import pLimit from '../../node_modules/p-limit/index.js';
+import { debug, normalizePath } from 'sbg-utility';
 
 /**
  * log debug
@@ -10,11 +8,11 @@ var sbgUtils = require('sbg-utility');
  * @example
  * cross-env-shell DEBUG=* "your commands"
  */
-const log = sbgUtils.debug('post');
+const log = debug('post');
 const logErr = log.extend('error');
 function processFile(filePath, onComplete, onError) {
     const chunks = []; // Array to store chunks
-    filePath = sbgUtils.normalizePath(filePath);
+    filePath = normalizePath(filePath);
     const readStream = fs.createReadStream(filePath, { encoding: 'utf-8' });
     readStream.on('data', (chunk) => {
         // Store each chunk of data
@@ -41,10 +39,10 @@ function processFile(filePath, onComplete, onError) {
         });
     });
 }
-const limit = index.default(10); // Limit concurrency to 10 tasks
+const limit = pLimit(10); // Limit concurrency to 10 tasks
 async function processFiles(filePaths, onComplete, onError) {
     const promises = filePaths
-        .map((s) => sbgUtils.normalizePath(s))
+        .map((s) => normalizePath(s))
         .map((filePath) => limit(() => new Promise((resolve) => {
         processFile(filePath, (content) => {
             Promise.resolve(onComplete(filePath, content)).then(() => {
@@ -59,5 +57,4 @@ async function processFiles(filePaths, onComplete, onError) {
     await Promise.all(promises);
 }
 
-exports.processFile = processFile;
-exports.processFiles = processFiles;
+export { processFile, processFiles };

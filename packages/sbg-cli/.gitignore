@@ -2,3 +2,5 @@
 **/tmp
 /import/araka_id.xml
 /import/webmanajemen.com.xml
+.yarn*
+yarn.lock

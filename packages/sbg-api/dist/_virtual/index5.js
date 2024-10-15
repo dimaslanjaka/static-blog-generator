@@ -1,5 +1,3 @@
-'use strict';
-
 var src = {exports: {}};
 
-exports.__module = src;
+export { src as __module };

@@ -1,8 +1,6 @@
-'use strict';
-
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var cleanDb = require('./cleanDb.js');
+import { getConfig } from 'sbg-utility';
+import path from 'upath';
+import { cleanDb } from './cleanDb.js';
 
 /**
  * remove source/_posts
@@ -10,8 +8,8 @@ var cleanDb = require('./cleanDb.js');
  * @returns
  */
 async function cleanGeneratedPosts(callback) {
-    const config = sbgUtils.getConfig();
-    return cleanDb.cleanDb(callback, [path.join(config.cwd, config.source_dir, '_posts')]);
+    const config = getConfig();
+    return cleanDb(callback, [path.join(config.cwd, config.source_dir, '_posts')]);
 }
 
-exports.cleanGeneratedPosts = cleanGeneratedPosts;
+export { cleanGeneratedPosts };

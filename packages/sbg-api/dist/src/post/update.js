@@ -1,30 +1,10 @@
-'use strict';
-
-var frontMatter = require('front-matter');
-var fs = require('fs-extra');
-var hexoPostParser = require('hexo-post-parser');
-var moment = require('moment-timezone');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-
-function _interopNamespaceDefault(e) {
-    var n = Object.create(null);
-    if (e) {
-        Object.keys(e).forEach(function (k) {
-            if (k !== 'default') {
-                var d = Object.getOwnPropertyDescriptor(e, k);
-                Object.defineProperty(n, k, d.get ? d : {
-                    enumerable: true,
-                    get: function () { return e[k]; }
-                });
-            }
-        });
-    }
-    n.default = e;
-    return Object.freeze(n);
-}
-
-var sbgUtils__namespace = /*#__PURE__*/_interopNamespaceDefault(sbgUtils);
+import frontMatter from 'front-matter';
+import fs from 'fs-extra';
+import { parsePost, buildPost } from 'hexo-post-parser';
+import moment from 'moment-timezone';
+import * as sbgUtils from 'sbg-utility';
+import { Logger, writefile } from 'sbg-utility';
+import path from 'upath';
 
 const processingUpdate = {};
 /**
@@ -37,8 +17,8 @@ async function updatePost(postPath, callback) {
         return false;
     // add to index
     processingUpdate[postPath] = true;
-    const config = sbgUtils__namespace.config.getConfig();
-    const parse = await hexoPostParser.parsePost(postPath, {
+    const config = sbgUtils.config.getConfig();
+    const parse = await parsePost(postPath, {
         shortcodes: {
             youtube: true,
             css: true,
@@ -86,16 +66,16 @@ async function updatePost(postPath, callback) {
             config: config
         };
         // update original source post after process ends
-        const rebuild = hexoPostParser.buildPost(rBuild);
+        const rebuild = buildPost(rBuild);
         //writefile(path.join(config.cwd, 'tmp/rebuild.md'), rebuild);
-        sbgUtils.Logger.log('write to', sbgUtils__namespace.normalizePath(oriPath).replace(sbgUtils__namespace.normalizePath(config.cwd), ''), oriUp, '->', post.attributes.updated);
-        await sbgUtils.writefile(oriPath, rebuild, { async: true }); // write original post
-        const build = hexoPostParser.buildPost(parse);
-        await sbgUtils.writefile(postPath, build, { async: true });
+        Logger.log('write to', sbgUtils.normalizePath(oriPath).replace(sbgUtils.normalizePath(config.cwd), ''), oriUp, '->', post.attributes.updated);
+        await writefile(oriPath, rebuild, { async: true }); // write original post
+        const build = buildPost(parse);
+        await writefile(postPath, build, { async: true });
     }
     else {
-        sbgUtils.Logger.log('cannot parse', postPath);
-        sbgUtils.writefile(path.join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
+        Logger.log('cannot parse', postPath);
+        writefile(path.join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
     }
     const hasError = typeof (parse && parse.metadata) === 'undefined';
     if (typeof callback === 'function')
@@ -105,4 +85,4 @@ async function updatePost(postPath, callback) {
     return hasError;
 }
 
-exports.updatePost = updatePost;
+export { updatePost };

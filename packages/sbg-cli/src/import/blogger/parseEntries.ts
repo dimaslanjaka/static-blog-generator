@@ -1,10 +1,16 @@
+import fs from 'fs-extra';
 import he from 'he';
+import jsonc from 'jsonc-parser';
 import { slugify, writefile } from 'sbg-utility';
 import path from 'upath';
+import { fileURLToPath } from 'url';
 import xml2js from 'xml2js';
 import { entriesDir } from './config';
 import { createEntries } from './createEntries';
-import excludeTitleArr from './excludeTitle.json';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const excludeTitleArr: string[] = jsonc.parse(fs.readFileSync(path.join(__dirname, 'excludeTitle.json')).toString());
 
 export async function parseEntries(c: ReturnType<typeof createEntries>) {
   const feeds = c.document.documentElement.getElementsByTagName('entry');
@@ -25,7 +31,7 @@ export async function parseEntries(c: ReturnType<typeof createEntries>) {
 
     // write post with decoded entities
     let obj = {
-      entry: { content: '', id: [] }
+      entry: { content: '', id: [] as string[] }
     };
     //let decodedContent = he.decode(content);
     await new Promise((resolve, reject) => {

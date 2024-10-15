@@ -1,5 +1,3 @@
-'use strict';
-
 class classX {
     constructor() {
         this.y = 0;

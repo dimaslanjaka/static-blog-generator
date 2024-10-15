@@ -1,7 +1,5 @@
-'use strict';
+import { __require as requireProxyFromEnv } from '../node_modules/proxy-from-env/index.js';
 
-var index = require('../node_modules/proxy-from-env/index.js');
+var proxyFromEnvExports = requireProxyFromEnv();
 
-var proxyFromEnvExports = index.__require();
-
-exports.proxyFromEnvExports = proxyFromEnvExports;
+export { proxyFromEnvExports as p };

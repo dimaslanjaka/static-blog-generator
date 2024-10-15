@@ -1,7 +1,5 @@
-'use strict';
-
-var fs = require('fs-extra');
-var sbgUtils = require('sbg-utility');
+import fs from 'fs-extra';
+import { getConfig } from 'sbg-utility';
 
 /**
  * copy generated site to deployment directory
@@ -9,9 +7,9 @@ var sbgUtils = require('sbg-utility');
  * @param ignore
  */
 function deployCopy(opt) {
-    const defaultConf = sbgUtils.getConfig();
+    const defaultConf = getConfig();
     const config = Object.assign(defaultConf, opt?.config || {});
     return fs.copy(config.public_dir, config.deploy.deployDir, { overwrite: true });
 }
 
-exports.deployCopy = deployCopy;
+export { deployCopy };

@@ -1,5 +1,3 @@
-'use strict';
-
 var mimeTypes = {};
 
-exports.__exports = mimeTypes;
+export { mimeTypes as __exports };

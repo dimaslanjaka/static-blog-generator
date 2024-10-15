@@ -36,7 +36,7 @@ const _partials = {
   output: [
     {
       dir: 'dist',
-      format: 'cjs',
+      format: 'esm',
       sourcemap: false,
       preserveModules: true,
       exports: 'named',

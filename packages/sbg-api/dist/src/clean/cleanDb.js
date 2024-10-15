@@ -1,18 +1,16 @@
-'use strict';
-
-var fs = require('fs-extra');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var require$$1 = require('util');
+import fs from 'fs-extra';
+import { debug, getConfig, writefile, del } from 'sbg-utility';
+import path from 'upath';
+import { inspect } from 'util';
 
 /**
  * Clean Project Databases
  */
 async function cleanDb(callback, files) {
-    const log = sbgUtils.debug('clean');
-    const config = sbgUtils.getConfig();
+    const log = debug('clean');
+    const config = getConfig();
     if (typeof config.source_dir !== 'string') {
-        sbgUtils.writefile(path.join(config.cwd, 'tmp/errors/clean.log'), require$$1.inspect(config));
+        writefile(path.join(config.cwd, 'tmp/errors/clean.log'), inspect(config));
         throw new Error('config.source_dir must be configured');
     }
     // const publicDir = join(config.cwd, config.public_dir);
@@ -30,7 +28,7 @@ async function cleanDb(callback, files) {
         try {
             if (fs.existsSync(dir)) {
                 log('cleaning', dir);
-                await sbgUtils.del(dir);
+                await del(dir);
             }
         }
         catch {
@@ -45,4 +43,4 @@ async function cleanDb(callback, files) {
     return undefined;
 }
 
-exports.cleanDb = cleanDb;
+export { cleanDb };

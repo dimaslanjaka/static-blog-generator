@@ -1,12 +1,10 @@
-'use strict';
-
-var ansiColors = require('ansi-colors');
-var fs = require('fs-extra');
-var gulp = require('gulp');
-var sf = require('safelinkify');
-var sbgUtils = require('sbg-utility');
-var through2 = require('through2');
-var path = require('upath');
+import ansiColors from 'ansi-colors';
+import fs from 'fs-extra';
+import gulp from 'gulp';
+import sf from 'safelinkify';
+import { getConfig, Logger, gulpCached, createWriteStream } from 'sbg-utility';
+import through2 from 'through2';
+import path from 'upath';
 
 /**
  * Process Safelink on Deploy Dir
@@ -15,22 +13,22 @@ var path = require('upath');
  * @returns
  */
 function taskSafelink(_done, cwd) {
-    const config = sbgUtils.getConfig();
+    const config = getConfig();
     const workingDir = typeof cwd === 'string' ? cwd : config.deploy.deployDir;
     const logname = ansiColors.greenBright('safelink');
     // skip process safelink
     let hasError = false;
     if (!config.external_link.safelink) {
         hasError = true;
-        sbgUtils.Logger.log(logname, 'config safelink', ansiColors.red('not configured'));
+        Logger.log(logname, 'config safelink', ansiColors.red('not configured'));
     }
     if (!config.external_link.safelink.redirect) {
         hasError = true;
-        sbgUtils.Logger.log(logname, 'safelink redirector', ansiColors.red('not configured'));
+        Logger.log(logname, 'safelink redirector', ansiColors.red('not configured'));
     }
     if (!config.external_link.safelink.enable) {
         hasError = true;
-        sbgUtils.Logger.log(logname, ansiColors.red('disabled'));
+        Logger.log(logname, ansiColors.red('disabled'));
     }
     if (fs.existsSync(workingDir) && !hasError) {
         const defaultConfigSafelink = {
@@ -91,7 +89,7 @@ function taskSafelink(_done, cwd) {
         }
         return gulp
             .src(['**/*.{html,htm}'], gulpopt)
-            .pipe(sbgUtils.gulpCached({ name: 'safelink' }))
+            .pipe(gulpCached({ name: 'safelink' }))
             .pipe(through2.obj(async (file, _enc, next) => {
             // drops
             if (file.isNull() || file.isDirectory() || !file || file.isStream())
@@ -107,16 +105,16 @@ function taskSafelink(_done, cwd) {
                     return next(null, file);
                 }
             }
-            sbgUtils.Logger.log('cannot parse', file.path);
+            Logger.log('cannot parse', file.path);
             // drop fails
             next();
         }))
             .pipe(gulp.dest(workingDir));
     }
     else {
-        const wstream = sbgUtils.createWriteStream(path.join(config.cwd, 'tmp/errors/safelink.log'));
+        const wstream = createWriteStream(path.join(config.cwd, 'tmp/errors/safelink.log'));
         return wstream;
     }
 }
 
-exports.taskSafelink = taskSafelink;
+export { taskSafelink };

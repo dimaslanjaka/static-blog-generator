@@ -1,5 +1,3 @@
-'use strict';
-
 var node = {exports: {}};
 
-exports.__module = node;
+export { node as __module };

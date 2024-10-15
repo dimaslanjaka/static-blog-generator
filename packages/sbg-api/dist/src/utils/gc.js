@@ -1,5 +1,3 @@
-'use strict';
-
 let logged = false;
 function forceGc() {
     if (typeof global.gc === 'function') {
@@ -13,4 +11,4 @@ function forceGc() {
     }
 }
 
-exports.forceGc = forceGc;
+export { forceGc };

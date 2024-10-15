@@ -1,31 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var fs = require('fs-extra');
-var glob = require('glob');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var copy = require('./copy.js');
-
-function _interopNamespaceDefault(e) {
-    var n = Object.create(null);
-    if (e) {
-        Object.keys(e).forEach(function (k) {
-            if (k !== 'default') {
-                var d = Object.getOwnPropertyDescriptor(e, k);
-                Object.defineProperty(n, k, d.get ? d : {
-                    enumerable: true,
-                    get: function () { return e[k]; }
-                });
-            }
-        });
-    }
-    n.default = e;
-    return Object.freeze(n);
-}
-
-var glob__namespace = /*#__PURE__*/_interopNamespaceDefault(glob);
+import fs from 'fs-extra';
+import * as glob from 'glob';
+import { getConfig, writefile, jsonStringifyWithCircularRefs } from 'sbg-utility';
+import path from 'upath';
+import { processSinglePost } from './copy.js';
 
 /**
  * get all source markdown posts (_configyml.post_dir)
@@ -33,7 +10,7 @@ var glob__namespace = /*#__PURE__*/_interopNamespaceDefault(glob);
  */
 async function getSourcePosts(config) {
     if (!config)
-        config = sbgUtils.getConfig();
+        config = getConfig();
     if (!config.cache)
         config.cache = true;
     if (!config.cwd)
@@ -51,18 +28,17 @@ async function getSourcePosts(config) {
     // get cache or empty array
     const results = [];
     if (results.length === 0) {
-        const matches = await glob__namespace.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true });
+        const matches = await glob.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true });
         // matches = matches.map((p) => path.join(sourcePostDir, p));
-        const promises = matches.map((p) => copy.processSinglePost({ file: p, content: null }, function (parsed) {
+        const promises = matches.map((p) => processSinglePost({ file: p, content: null }, function (parsed) {
             results.push(Object.assign(parsed, { full_source: p }));
         }));
         // wait all promises to be resolved
         await Promise.all(promises);
         // write cache
-        sbgUtils.writefile(cachePath, sbgUtils.jsonStringifyWithCircularRefs(results));
+        writefile(cachePath, jsonStringifyWithCircularRefs(results));
     }
     return results;
 }
 
-exports.default = getSourcePosts;
-exports.getSourcePosts = getSourcePosts;
+export { getSourcePosts as default, getSourcePosts };

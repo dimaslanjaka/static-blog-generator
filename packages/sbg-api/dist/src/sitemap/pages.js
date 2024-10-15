@@ -1,12 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var Bluebird = require('bluebird');
-var moment = require('moment-timezone');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var xmlbuilder2 = require('xmlbuilder2');
+import Bluebird from 'bluebird';
+import moment from 'moment-timezone';
+import { writefile } from 'sbg-utility';
+import path from 'upath';
+import { create } from 'xmlbuilder2';
 
 const pageUpdateDates = [];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
@@ -29,7 +25,7 @@ async function yoastSeoSitemapPages(hexo) {
         sitemapPagesList.push(info);
     });
     const destSitemap = path.join(hexo.public_dir, 'page-sitemap.xml');
-    sbgUtils.writefile(destSitemap, xmlbuilder2.create({
+    writefile(destSitemap, create({
         urlset: {
             url: sitemapPagesList
         }
@@ -44,5 +40,4 @@ function getAllpageUpdateDates() {
     return pageUpdateDates;
 }
 
-exports.default = yoastSeoSitemapPages;
-exports.getAllpageUpdateDates = getAllpageUpdateDates;
+export { yoastSeoSitemapPages as default, getAllpageUpdateDates };

@@ -1,18 +1,14 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var ansiColors = require('ansi-colors');
-var Bluebird = require('bluebird');
-var fs = require('fs-extra');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
+import ansiColors from 'ansi-colors';
+import Bluebird from 'bluebird';
+import fs from 'fs-extra';
+import { getConfig, writefile, Logger, del } from 'sbg-utility';
+import path from 'upath';
 
 /**
  * clean old archives (categories, tags, pagination) from deployment directory
  */
 async function cleanArchive(callback) {
-    const config = sbgUtils.getConfig();
+    const config = getConfig();
     const logname = 'clean:' + ansiColors.grey('archives');
     // clean archives, tags, categories
     const archives = path.join(config.deploy.deployDir, config.archive_dir);
@@ -38,13 +34,13 @@ async function cleanArchive(callback) {
     const promises = [];
     // dump to file
     const dumpfile = path.join(config.cwd, 'tmp/dump/clean.txt');
-    sbgUtils.writefile(dumpfile, folders.join('\n'));
-    sbgUtils.Logger.log(logname, 'list deleted files', dumpfile);
+    writefile(dumpfile, folders.join('\n'));
+    Logger.log(logname, 'list deleted files', dumpfile);
     for (let i = 0; i < folders.length; i++) {
         const pathStr = folders[i];
         try {
             if (fs.existsSync(pathStr))
-                promises.push(sbgUtils.del(pathStr));
+                promises.push(del(pathStr));
         }
         catch {
             //s
@@ -61,4 +57,4 @@ async function cleanArchive(callback) {
     await Bluebird.all(promises).then(finishNow).catch(finishNow);
 }
 
-exports.default = cleanArchive;
+export { cleanArchive as default };

@@ -1,21 +1,17 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var Bluebird = require('bluebird');
-var Hexo = require('hexo');
-var hexoPostParser = require('hexo-post-parser');
-var sbgUtils = require('sbg-utility');
-var path = require('upath');
-var cleanArchive = require('./clean/cleanArchive.js');
-var cleanDb = require('./clean/cleanDb.js');
-var cleanGeneratedPosts = require('./clean/cleanGeneratedPosts.js');
-var copy = require('./deploy/copy.js');
-var gulp_safelink = require('./gulp.safelink.js');
-var gulp_seo = require('./gulp.seo.js');
-var copy$1 = require('./post/copy.js');
-var findBrokenImages = require('./post/find-broken-images.js');
-var standalone = require('./post/standalone.js');
+import Bluebird from 'bluebird';
+import Hexo from 'hexo';
+import hexoPostParser__default from 'hexo-post-parser';
+import { setConfig, getConfig, chain, normalizePath, fetchConfig, debug, scheduler, noop } from 'sbg-utility';
+import path from 'upath';
+import cleanArchive from './clean/cleanArchive.js';
+import { cleanDb } from './clean/cleanDb.js';
+import { cleanGeneratedPosts } from './clean/cleanGeneratedPosts.js';
+import { deployCopy } from './deploy/copy.js';
+import { taskSafelink } from './gulp.safelink.js';
+import { taskSeo } from './gulp.seo.js';
+import { copyAllPosts } from './post/copy.js';
+import { findBrokenImagesGlob } from './post/find-broken-images.js';
+import standaloneRunner from './post/standalone.js';
 
 class SBG {
     /**
@@ -23,37 +19,37 @@ class SBG {
      * @param cwd base folder
      */
     constructor(cwd, options) {
-        this.setConfig = sbgUtils.setConfig;
-        this.getConfig = sbgUtils.getConfig;
+        this.setConfig = setConfig;
+        this.getConfig = getConfig;
         /**
          * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
          * @returns
          */
-        this.standalone = () => sbgUtils.chain([{ callback: standalone.default }]);
+        this.standalone = () => chain([{ callback: standaloneRunner }]);
         this.deploy = new (class {
             constructor(superThis) {
                 this.superThis = superThis;
-                this.copy = copy.deployCopy;
+                this.copy = deployCopy;
                 //
             }
         })(this);
         if (!cwd)
-            cwd = sbgUtils.normalizePath(process.cwd());
+            cwd = normalizePath(process.cwd());
         // fetch config
-        sbgUtils.fetchConfig(cwd);
+        fetchConfig(cwd);
         // apply config
-        this.config = sbgUtils.getConfig();
+        this.config = getConfig();
         // modify config
         this.cwd = cwd;
         this.config.cwd = cwd;
         options = Object.assign(this.config, options || {}, { cwd });
-        sbgUtils.debug('sbg-api')('cwd', cwd);
+        debug('sbg-api')('cwd', cwd);
         // re-apply config
-        this.config = sbgUtils.setConfig(options);
+        this.config = setConfig(options);
         // apply config hexo-post-parser
-        hexoPostParser.setConfig(this.config);
+        hexoPostParser__default.setConfig(this.config);
         SBG.setApi(this);
-        new sbgUtils.scheduler();
+        new scheduler();
     }
     static setApi(api) {
         this.currentApI = api;
@@ -67,9 +63,9 @@ class SBG {
      */
     async core() {
         // apply current config
-        sbgUtils.setConfig(this.config);
+        setConfig(this.config);
         // recall index
-        return await Promise.resolve().then(function () { return require('./index.js'); });
+        return await import('./index.js');
     }
     /**
      * Auto seo on public dir (_config_yml.public_dir) (run after generated)
@@ -78,7 +74,7 @@ class SBG {
      */
     seo(customPath) {
         return new Bluebird((resolve) => {
-            gulp_seo.taskSeo(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
+            taskSeo(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
                 setTimeout(() => {
                     resolve();
                 }, 3000);
@@ -100,7 +96,7 @@ class SBG {
         //   //   setTimeout(() => resolve(null), 7000);
         //   // });
         // });
-        return copy$1.copyAllPosts(config);
+        return copyAllPosts(config);
     }
     /**
      * Anonymize external links on public dir (_config_yml.public_dir) (run after generated)
@@ -109,7 +105,7 @@ class SBG {
      */
     safelink(customPath) {
         return new Bluebird((resolve) => {
-            gulp_safelink.taskSafelink(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
+            taskSafelink(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
                 setTimeout(() => {
                     resolve();
                 }, 3000);
@@ -122,10 +118,10 @@ class SBG {
     async generate() {
         const hexo = new Hexo(this.cwd);
         // hexo init
-        await hexo.init().catch(sbgUtils.noop);
-        await hexo.load().catch(sbgUtils.noop);
+        await hexo.init().catch(noop);
+        await hexo.load().catch(noop);
         // hexo generate
-        await hexo.call('generate').catch(sbgUtils.noop);
+        await hexo.call('generate').catch(noop);
         await hexo.exit(new Error());
     }
     /**
@@ -136,24 +132,23 @@ class SBG {
      */
     async clean(opt) {
         if (opt === 'all') {
-            await cleanDb.cleanDb().catch(console.log);
-            await cleanArchive.default().catch(console.log);
+            await cleanDb().catch(console.log);
+            await cleanArchive().catch(console.log);
         }
         else if (opt === 'archive') {
-            await cleanArchive.default().catch(console.log);
+            await cleanArchive().catch(console.log);
         }
         else if (opt === 'post') {
-            sbgUtils.debug('clean')('generated posts');
-            await cleanGeneratedPosts.cleanGeneratedPosts().catch(console.log);
+            debug('clean')('generated posts');
+            await cleanGeneratedPosts().catch(console.log);
         }
         else {
-            await cleanDb.cleanDb().catch(console.log);
+            await cleanDb().catch(console.log);
         }
     }
     async findBrokenImages() {
-        return findBrokenImages.findBrokenImagesGlob(this.config);
+        return findBrokenImagesGlob(this.config);
     }
 }
 
-exports.SBG = SBG;
-exports.default = SBG;
+export { SBG, SBG as default };

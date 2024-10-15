@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var moment = require('moment');
+import moment from 'moment';
 
 function getCategoryTags(hexo) {
     const groups = ['categories', 'tags'];
@@ -47,5 +43,4 @@ function getLatestFromArrayDates(arr) {
     return new Date(Math.max.apply(null, dateMap.map((date) => date.getTime())));
 }
 
-exports.default = getCategoryTags;
-exports.getLatestFromArrayDates = getLatestFromArrayDates;
+export { getCategoryTags as default, getLatestFromArrayDates };

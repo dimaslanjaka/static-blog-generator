@@ -1,11 +1,7 @@
-'use strict';
+import { getDefaultExportFromCjs } from './_commonjsHelpers.js';
+import { __require as requireFollowRedirects } from '../node_modules/follow-redirects/index.js';
 
-Object.defineProperty(exports, '__esModule', { value: true });
+var followRedirectsExports = requireFollowRedirects();
+var followRedirects = /*@__PURE__*/getDefaultExportFromCjs(followRedirectsExports);
 
-var _commonjsHelpers = require('./_commonjsHelpers.js');
-var index = require('../node_modules/follow-redirects/index.js');
-
-var followRedirectsExports = index.__require();
-var followRedirects = /*@__PURE__*/_commonjsHelpers.getDefaultExportFromCjs(followRedirectsExports);
-
-exports.default = followRedirects;
+export { followRedirects as default };
