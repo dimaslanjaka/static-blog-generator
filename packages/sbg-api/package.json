@@ -7,11 +7,21 @@
     ".": {
       "require": {
         "default": "./dist/index.cjs",
-        "types": "./dist/src/index.d.ts"
+        "types": "./dist/index.d.ts"
       },
       "import": {
         "default": "./dist/index.mjs",
-        "types": "./dist/src/index.d.mts"
+        "types": "./dist/index.d.mts"
+      }
+    },
+    "./*": {
+      "import": {
+        "default": "./dist/src/**/*.mjs",
+        "types": "./dist/src/**/*.d.mts"
+      },
+      "require": {
+        "default": "./dist/src/**/*.cjs",
+        "types": "./dist/src/**/*.d.ts"
       }
     }
   },
