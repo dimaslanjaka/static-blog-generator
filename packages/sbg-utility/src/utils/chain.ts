@@ -26,8 +26,8 @@ export async function chain(
 ) {
   // NodeJS.ReadWriteStream | Promise<any>
 
-  const run = function (instance: (typeof schedule)[number]) {
-    return new Promise(function (resolve) {
+  const run = function (this: any, instance: (typeof schedule)[number]) {
+    return new Promise((resolve) => {
       const logname = ansiColors.blueBright('chain') + '.' + ansiColors.yellowBright('run');
       if (instance.opt?.before) {
         instance.opt.before();
@@ -36,7 +36,7 @@ export async function chain(
 
       if (isReadableStream(obj) && obj instanceof stream.Stream) {
         // Logger.log('readable stream');
-        return obj.once('end', async function () {
+        return obj.once('end', async () => {
           if (instance.opt?.after) {
             await instance.opt.after();
             return resolve(this);
@@ -48,7 +48,7 @@ export async function chain(
         Logger.log('writable stream');
       } else if (isPromise(obj)) {
         //Logger.log('promises');
-        return obj.then(async function () {
+        return obj.then(async () => {
           if (instance.opt?.after) {
             await instance.opt.after();
             return resolve(this);

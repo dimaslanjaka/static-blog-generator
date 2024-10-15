@@ -1,10 +1,17 @@
 import fs from 'fs-extra';
-import { join, toUnix } from 'upath';
+import url from 'node:url';
+import path from 'upath';
 import * as yaml from 'yaml';
-import { jsonStringifyWithCircularRefs } from '../utils';
+import { jsonStringifyWithCircularRefs, normalizePath } from '../utils';
 import { trueCasePathSync } from '../utils/filemanager/case-path';
-import mappedConfig from './_config.json';
+// import mappedConfig from './_config.json' assert { type: 'json' };
 
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const mappedConfig: typeof import('./_config.json') = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '_config.json'), 'utf-8')
+);
 export type importConfig = typeof mappedConfig;
 
 /**
@@ -97,7 +104,7 @@ export function getDefaultConfig() {
     meta_generator: true
   };
   const sbgDefaultConfig = {
-    cwd: toUnix(trueCasePathSync(process.cwd()))
+    cwd: normalizePath(trueCasePathSync(process.cwd()))
   };
   const configYML = yaml.parse(getDefaultConfigYaml());
   return Object.assign(hexoDefaultConfig, sbgDefaultConfig, configYML) as importConfig;
@@ -108,9 +115,9 @@ export function getDefaultConfig() {
  * @returns
  */
 export function getDefaultConfigYaml() {
-  const yml = join(__dirname, '_config.yml');
+  const yml = path.join(__dirname, '_config.yml');
   if (fs.existsSync(yml)) {
-    return fs.readFileSync(join(__dirname, '_config.yml'), 'utf-8');
+    return fs.readFileSync(path.join(__dirname, '_config.yml'), 'utf-8');
   } else {
     return jsonStringifyWithCircularRefs(mappedConfig);
   }

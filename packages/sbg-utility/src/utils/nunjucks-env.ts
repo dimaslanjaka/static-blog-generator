@@ -1,4 +1,4 @@
-import { encodeURL } from 'hexo-util';
+import hutil from 'hexo-util';
 import nunjucks from 'nunjucks';
 
 export function envNunjucks(
@@ -7,7 +7,7 @@ export function envNunjucks(
 ) {
   const env = new nunjucks.Environment(loader, opts);
   env.addFilter('uriencode', (str: string) => {
-    return encodeURL(str);
+    return hutil.encodeURL(str);
   });
   env.addFilter('noControlChars', (str: string) => {
     return str.replace(/[\x00-\x1F\x7F]/g, ''); // eslint-disable-line no-control-regex

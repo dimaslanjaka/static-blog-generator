@@ -2,14 +2,14 @@
  * parse version string
  */
 class semver {
-  result;
+  result: { [s: string]: any } | ArrayLike<any> = {};
 
   /**
-   * @param {{ version: string }|string} opt
+   * @param opt
    * @returns
    */
-  constructor(opt) {
-    let version;
+  constructor(opt: string | { version: string }) {
+    let version: string;
     if (typeof opt === 'string') {
       version = opt;
     } else {
@@ -18,11 +18,12 @@ class semver {
     const rg =
       /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/gm;
     const parse = rg.exec(version);
-    this.result = {
-      major: parse[1],
-      minor: parse[2],
-      patch: parse[3]
-    };
+    if (parse)
+      this.result = {
+        major: parse[1],
+        minor: parse[2],
+        patch: parse[3]
+      };
   }
   toString() {
     return Object.values(this.result).join('.');
@@ -31,10 +32,10 @@ class semver {
 
 /**
  * increment version range
- * @param {ConstructorParameters<typeof semver>[0]} opt
- * @param {keyof ReturnType<semver['getResult']>} by
+ * @param opt
+ * @param by
  */
-function semverIncrement(opt, by) {
+function semverIncrement(opt: { version: string } | string, by: string | number) {
   const core = new semver(opt);
   const parse = core.result;
   parse[by] = String(parseInt(parse[by]) + 1);
@@ -59,4 +60,4 @@ function semverIncrement(opt, by) {
   return core;
 }
 
-module.exports = { semver, semverIncrement };
+export { semver, semverIncrement };

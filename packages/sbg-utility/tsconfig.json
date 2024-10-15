@@ -1,26 +1,35 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "@tsconfig/node16/tsconfig.json",
   "ts-node": {
-    "transpileOnly": true,
-    "emit": false,
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
     "compilerOptions": {
-      "module": "CommonJS"
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true
     }
   },
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "es5",
+    /* Basic Options */
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ES2019", "ES2020", "DOM", "ES6", "ESNext"],
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
     "downlevelIteration": true,
-    "baseUrl": "./",
-    "outDir": "./tmp/dist",
-    "esModuleInterop": true,
-    "importHelpers": true,
+    "noImplicitAny": false,
+    /* Strict Type-Checking Options */
     "strict": true,
-    "resolveJsonModule": true
+    /* Module Resolution Options */
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": [
-    "./src/**/*",
-    "./src/**/*.json",
-    "./test/**/*"
-  ]
+  "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**"]
 }

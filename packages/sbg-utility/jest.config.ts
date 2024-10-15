@@ -1,28 +1,29 @@
-import { existsSync, mkdirSync, readFileSync } from 'fs';
+import fs from 'fs';
 import { defaults } from 'jest-config';
-import * as jsonc from 'jsonc-parser';
-import { join } from 'path';
-import type { JestConfigWithTsJest } from 'ts-jest';
+import path from 'path';
+import { type JestConfigWithTsJest } from 'ts-jest';
 
-const tsconfigBase: typeof import('./tsconfig.base.json') = jsonc.parse(
-  readFileSync(join(__dirname, 'tsconfig.base.json'), 'utf-8')
-);
-const tsconfigJest: typeof import('./tsconfig.base.json') = jsonc.parse(
-  readFileSync(join(__dirname, 'tsconfig.jest.json'), 'utf-8')
-);
-const tsconfig = Object.assign(tsconfigBase.compilerOptions, tsconfigJest.compilerOptions);
+// const __filename = url.fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 /**
  * @see {@link https://jestjs.io/docs/configuration}
  * * how to run single test {@link https://stackoverflow.com/questions/28725955/how-do-i-test-a-single-file-using-jest}
  */
-const config: JestConfigWithTsJest = {
+const withCoverage: JestConfigWithTsJest = {
+  globals: {
+    __DEV__: true
+  },
   preset: 'ts-jest',
   testEnvironment: 'node',
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1'
+  },
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'mts'],
   verbose: false,
   cache: true,
-  cacheDirectory: join(__dirname, 'tmp/jest'),
+  cacheDirectory: path.join(__dirname, 'tmp/jest'),
   collectCoverageFrom: [
     'src/*.{js,ts}',
     '!**/node_modules/**',
@@ -34,24 +35,26 @@ const config: JestConfigWithTsJest = {
   ],
   roots: [`<rootDir>/test`],
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/'],
-  // testPathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/', '**/*.builder.ts'],
+  // testPathIgnorePatterns: ['**/*.builder.*', '**/*.runner.*', '**/*.explicit.*'],
   testMatch: [
     `**/__tests__/**/*.+(ts|tsx|js)`,
     `**/?(*.)+(spec|test).+(ts|tsx|js)`,
     `**/test/*.test.ts`,
     '!**/.deploy_git/**'
   ],
-
   transform: {
-    '^.+\\.(ts|tsx)$': [
+    '^.+\\.(js|jsx)?$': 'babel-jest',
+    '^.+\\.(ts|tsx)?$': [
       'ts-jest',
-      // required due to custom location of tsconfig.json configuration file
-      // https://kulshekhar.github.io/ts-jest/docs/getting-started/options/tsconfig
-      { tsconfig }
+      {
+        babelConfig: true,
+        useESM: true,
+        tsconfig: path.resolve(__dirname, 'tsconfig.jest.json')
+      }
     ]
   },
 
-  detectLeaks: true,
+  // detectLeaks: true,
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
@@ -81,6 +84,10 @@ const config: JestConfigWithTsJest = {
   // ],
 };
 
-if (!existsSync(<string>config.cacheDirectory)) mkdirSync(<string>config.cacheDirectory, { recursive: true });
+[withCoverage.cacheDirectory]
+  .filter((s) => typeof s === 'string')
+  .forEach((s) => {
+    if (!fs.existsSync(s)) fs.mkdirSync(s, { recursive: true });
+  });
 
-export default config;
+export default withCoverage;

@@ -1,6 +1,6 @@
 import async from 'async';
 import Bluebird from 'bluebird';
-import cheerio from 'cheerio';
+import { load } from 'cheerio';
 import ProgressBar from 'progress';
 import request from 'request';
 import { debug } from '../utils';
@@ -57,7 +57,7 @@ export class SiteMapCrawlerCore {
           }
 
           try {
-            const $ = cheerio.load(body);
+            const $ = load(body);
             const hrefs = $('[href]');
             const filteredLinks = new Set<string>();
 
