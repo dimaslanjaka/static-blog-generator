@@ -1,26 +1,206 @@
 {
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin:${workspaceFolder}/vendor/bin",
+    "NUITKA_CACHE_DIR": "${workspaceFolder}\\tmp\\nuitka-cache",
+    "ESLINT_USE_FLAT_CONFIG": "true",
+    "DEBUG_PKG": "1"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin;${workspaceFolder}\\vendor\\bin",
+    "NUITKA_CACHE_DIR": "${workspaceFolder}\\tmp\\nuitka-cache",
+    "ESLINT_USE_FLAT_CONFIG": "true",
+    "DEBUG_PKG": "1"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Cygwin": {
+      "path": "C:\\cygwin64\\bin\\bash.exe",
+      "args": [
+        "--login",
+        "-i"
+      ],
+      "env": {
+        "CHERE_INVOKING": "1"
+      }
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "files.autoSave": "onWindowChange",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
+  "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "code-runner.clearPreviousOutput": true,
+  "code-runner.ignoreSelection": true,
   "code-runner.runInTerminal": true,
   "code-runner.saveAllFilesBeforeRun": true,
-  "files.exclude": {
-    "**/node_modules": true
-  },
   "code-runner.executorMapByGlob": {
-    "*.test.ts": "yarn test -- $fileNameWithoutExt",
-    "*.spec.ts": "yarn test -- $fileNameWithoutExt"
+    "pom.xml": "cd $dir && mvn clean package",
+    "*.{test,spec}.{ts,js,cjs,mjs}": "yarn test -- $fileNameWithoutExt",
+    "*.{explicit,runner}.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
+    "*.{explicit,runner}.{mjs,cjs,js}": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",
+    "electron-*.ts": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
+    "*.py": "python -u",
+    "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
+    "*.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config"
   },
-  "code-runner.showRunIconInEditorTitleMenu": false,
-  "code-runner.showRunCommandInExplorerContextMenu": false,
   "code-runner.respectShebang": true,
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "search.exclude": {
-    "**/dist/**": true,
-    "**/tmp/**": true
+  "debug.terminal.clearBeforeReusing": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "npm.packageManager": "yarn"
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
+  },
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
+  },
+  "[njk]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.fixAll": "never"
+    }
+  },
+  "autopep8.args": [
+    "--ignore",
+    "E401,E402,E211,E501"
+  ],
+  "intelephense.maxMemory": 1028,
+  "intelephense.rename.exclude": [
+    "**/vendor/**",
+    "**/node_modules/**",
+    "**/tmp/**",
+    "**/dist/**",
+    "**/.cache/**"
+  ],
+  "intelephense.references.exclude": [
+    "**/vendor/**",
+    "**/node_modules/**",
+    "**/tmp/**",
+    "**/dist/**",
+    "**/.cache/**"
+  ],
+  "intelephense.trace.server": "messages",
+  "intelephense.completion.maxItems": 100,
+  "intelephense.diagnostics.run": "onSave",
+  "intelephense.files.exclude": [
+    "**/.DS_Store/**",
+    "**/.cache/**",
+    "**/.git/**",
+    "**/.hg/**",
+    "**/.history/**",
+    "**/.idea/**",
+    "**/.svn/**",
+    "**/.yarn/**",
+    "**/CVS/**",
+    "**/Thumbs.db",
+    "**/assets/**/*",
+    "**/bower_components/**",
+    "**/config/**/*",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/tmp/**",
+    "**/.venv/**",
+    "**/venv/**",
+    "**/assets/**",
+    "**/*.sqlite"
+  ],
+  "intelephense.files.associations": [
+    "*.php",
+    "*.phtml"
+  ],
+  "intelephense.telemetry.enabled": true,
+  "eslint.debug": true,
+  "eslint.useFlatConfig": true,
+  "python.createEnvironment.contentButton": "show",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "files.watcherExclude": {
+    "**/.cache/**": true,
+    "**/.idea/**": true,
+    "**/.venv/**": true,
+    "**/venv/**": true,
+    "**/.yarn/**": true,
+    "**/profiles/**": true,
+    "**/tmp/**": true,
+    "**/databases/**": true,
+    "**/node_modules/**": true,
+    "src/database.sqlite*": true
+  },
+  "intelephense.environment.documentRoot": "${workspaceFolder}",
+  "intelephense.environment.includePaths": [
+    "${workspaceFolder}/src",
+    "${workspaceFolder}/vendor"
+  ],
+  "files.exclude": {
+    "*.php": true,
+    "**/.cache/**": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.idea/**": true,
+    "**/.svn": true,
+    "**/.venv": true,
+    "**/.yarn": true,
+    "**/CVS": true,
+    "**/node_modules": true,
+    "**/Thumbs.db": true,
+    "**/tmp": true,
+    "**/vendor": true,
+    "**/venv": true,
+    "backups": true,
+    "data/engine": true,
+    "data/fingerprints": true,
+    "data/profiles": true,
+    "data/run": true
+  },
+  "files.readonlyInclude": {
+    "**/*.sqlite*": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": false,
+  "editor.formatOnType": false
 }

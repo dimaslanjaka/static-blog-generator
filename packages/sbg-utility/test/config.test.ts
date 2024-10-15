@@ -1,22 +1,26 @@
-import { beforeAll, describe, it } from '@jest/globals';
-import spawn from 'cross-spawn';
-import { resolve } from 'upath';
+import { beforeAll, describe, expect, it } from '@jest/globals';
+import * as spawn from 'cross-spawn';
+import url from 'node:url';
+import path from 'upath';
 import { deployConfig, fetchConfig, getConfig, setConfig } from '../src';
 import findYarnRootWorkspace from '../src/utils/findYarnRootWorkspace';
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('CONFIG', function () {
   let testCwd: string | undefined = '';
   beforeAll(async function () {
-    const rootWorkspace = findYarnRootWorkspace({ base_dir: resolve(__dirname, '..') });
+    const rootWorkspace = findYarnRootWorkspace({ base_dir: path.resolve(__dirname, '..') });
     const listWorkspaces = await spawn
-      .async('yarn', 'workspaces list --json'.split(' '), { cwd: resolve(__dirname, '..'), shell: true })
+      .async('yarn', 'workspaces list --json'.split(' '), { cwd: path.resolve(__dirname, '..'), shell: true })
       .then((res) =>
         res.stdout
           .split(/\r?\n/gm)
           .map((str) => str.length > 10 && (JSON.parse(str.trim()) as { name: string; location: string }))
           .map((o) => {
             if (!o) return undefined;
-            o.location = resolve(rootWorkspace, o.location);
+            o.location = path.resolve(rootWorkspace, o.location);
             return o;
           })
       );

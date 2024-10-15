@@ -1,27 +1,29 @@
-require('ts-node').register();
-const { spawn } = require('git-command-helper/dist/spawn');
-const gulp = require('gulp');
-const path = require('upath');
-const fs = require('fs-extra');
-const { semverIncrement, writefile } = require('./src/utils');
-const pkg = require('./package.json');
+import fs from 'fs-extra'; // CommonJS module
+import gitCommandHelper from 'git-command-helper'; // CommonJS module
+import gulp from 'gulp'; // ES module
+import through2 from 'through2';
+import path from 'upath'; // CommonJS module
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /** resolve cmd binary */
-// const cmd = (commandName) => {
-//   const cmdPath = [
-//     __dirname,
-//     process.cwd(),
-//     (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
-//   ]
-//     .map((cwd) => {
-//       const nm = path.join(cwd, 'node_modules/.bin');
-//       const cmdPath = path.join(nm, commandName);
-//       return cmdPath;
-//     })
-//     .filter(fs.existsSync)[0];
+const cmd = (commandName) => {
+  const cmdPath = [
+    __dirname,
+    process.cwd(),
+    (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
+  ]
+    .map((cwd) => {
+      const nm = path.join(cwd, 'node_modules/.bin');
+      const cmdPath = path.join(nm, commandName);
+      return cmdPath;
+    })
+    .filter(fs.existsSync)[0];
 
-//   return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
-// };
+  return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
+};
 
 // copy non-javascript assets from src folder
 const copy = function () {
@@ -32,22 +34,49 @@ const copy = function () {
 
 gulp.task('copy', gulp.series(copy));
 
-function tsc(done) {
-  spawn('npx', ['tsc', '--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' })
-    .then(() => done())
-    .catch(done);
+function copyDeclarations() {
+  return gulp
+    .src('dist/**/*.d.ts') // Adjust the path as needed
+    .pipe(
+      through2.obj(function (file, _, cb) {
+        if (file.isBuffer()) {
+          const newFileName = file.path.replace(/\.d\.ts$/, '.d.mts');
+
+          // Create a new file stream with the same content but different extension
+          fs.writeFile(newFileName, file.contents, (err) => {
+            if (err) {
+              cb(new Error(`Failed to write file ${newFileName}: ${err.message}`));
+            } else {
+              // console.log(`Copied: ${file.path} to ${newFileName}`);
+              cb(null, file); // Pass the original file to the next stream
+            }
+          });
+        } else {
+          cb(null, file); // Pass the original file to the next stream
+        }
+      })
+    );
 }
 
-gulp.task('build', gulp.series(tsc, copy));
+async function tsc() {
+  await gitCommandHelper.spawnAsync(cmd('rollup'), ['-c'], {
+    cwd: __dirname,
+    shell: true,
+    stdio: 'inherit'
+  });
+  await gitCommandHelper.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
+    cwd: __dirname,
+    shell: true,
+    stdio: 'inherit'
+  });
+}
+
+gulp.task('build', gulp.series(tsc, copy, copyDeclarations));
 
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
 }
 
-gulp.task('semver:patch', (done) => {
-  pkg.version = semverIncrement(pkg, 'patch').toString();
-  writefile(path.join(__dirname, 'package.json'), JSON.stringify(pkg, null, 2) + '\n');
-  done();
-});
-
 gulp.task('clean', gulp.series(clean));
+
+gulp.task('default', gulp.series('build'));

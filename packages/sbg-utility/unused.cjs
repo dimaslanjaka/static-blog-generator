@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
 const depcheck = require('depcheck');
 const fs = require('fs-extra');
 const path = require('upath');

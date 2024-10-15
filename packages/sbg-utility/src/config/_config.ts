@@ -1,12 +1,16 @@
 import fs from 'fs-extra';
 import Hexo from 'hexo';
-import { join, resolve } from 'upath';
+import url from 'node:url';
+import path from 'upath';
 import yaml from 'yaml';
 import * as utils from '../utils';
 import { writefile } from '../utils/filemanager';
-import * as defaults from './defaults';
+import * as defaults from './default-config';
 
-const configFileJSON = join(__dirname, '_config.json');
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const configFileJSON = path.join(__dirname, '_config.json');
 if (!fs.existsSync(configFileJSON)) fs.writeFileSync(configFileJSON, '{}');
 
 export type HexoConfig = Hexo['config'];
@@ -102,11 +106,11 @@ let settledConfig = defaults.getDefaultConfig() as Record<string, any>;
  */
 export function fetchConfig(fileYML?: string) {
   if (!fileYML) {
-    fileYML = join(process.cwd(), '_config.yml');
+    fileYML = path.join(process.cwd(), '_config.yml');
   } else if (!fileYML.endsWith('_config.yml')) {
     fileYML += '/_config.yml';
   }
-  const configYML = yaml.parse(fs.readFileSync(resolve(fileYML), 'utf-8'));
+  const configYML = yaml.parse(fs.readFileSync(path.resolve(fileYML), 'utf-8'));
   setConfig(utils.orderKeys(configYML));
   writefile(configFileJSON, JSON.stringify(configYML, null, 2));
 }
@@ -146,11 +150,11 @@ export function deployConfig() {
     deployDir = settledConfig.deploy_dir;
   } else {
     // fallback get from deploy.type
-    deployDir = join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+    deployDir = path.join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
   }
   // subfolder - assign deploy.folder
   if (settledConfig.deploy.folder) {
-    deployDir = join(deployDir, settledConfig.folder);
+    deployDir = path.join(deployDir, settledConfig.folder);
   }
   return { deployDir };
 }

@@ -1,7 +1,7 @@
 import ansiColors from 'ansi-colors';
 import { EOL } from 'os';
 import through2 from 'through2';
-import { join, toUnix } from 'upath';
+import path from 'upath';
 import { writefile } from '../utils/filemanager';
 import { data_to_hash_sync } from '../utils/hash';
 import Logger from '../utils/logger';
@@ -19,8 +19,8 @@ export function gulpDebug(filename?: string) {
     // Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
 
     // dump
-    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-debug', filename || `${caller}-${pid}.log`);
-    writefile(dumpfile, `${toUnix(file.path.replace(process.cwd(), ''))}` + EOL, {
+    const dumpfile = path.join(process.cwd(), 'tmp/dump/gulp-debug', filename || `${caller}-${pid}.log`);
+    writefile(dumpfile, `${path.toUnix(file.path.replace(process.cwd(), ''))}` + EOL, {
       append: true
     });
 
@@ -42,7 +42,7 @@ export function gulpLog(logname = '') {
     Logger.log(
       ansiColors.yellowBright('gulp-log'),
       logname,
-      toUnix(file.path.replace(process.cwd(), '')),
+      path.toUnix(file.path.replace(process.cwd(), '')),
       String(file.contents).length
     );
     if (typeof this.push === 'function') this.push(file);

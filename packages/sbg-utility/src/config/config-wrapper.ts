@@ -1,7 +1,11 @@
 import EventEmitter from 'events';
 import fs from 'fs-extra';
+import url from 'node:url';
 import path from 'upath';
 import { writefile } from '../utils/filemanager';
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const configWrapperFile = path.join(__dirname, '_config_wrapper.json');
 if (!fs.existsSync(configWrapperFile)) fs.writeFileSync(configWrapperFile, '{}');
@@ -23,6 +27,7 @@ export declare interface createConfig<T extends Record<string, any>> {
 /**
  * Create/Update config wrapper
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class createConfig<T extends Record<string, any>> extends EventEmitter {
   cname: string;
   /**

@@ -2,10 +2,10 @@ import crypto from 'crypto';
 import fs from 'fs-extra';
 import { EOL } from 'os';
 import through2 from 'through2';
-import { join, toUnix } from 'upath';
+import path from 'upath';
 import { getConfig } from '../config/_config';
 import { PersistentCacheOpt, persistentCache } from '../utils';
-import { writefile } from '../utils/filemanager';
+import { normalizePath, removeCwd, writefile } from '../utils/filemanager';
 import { data_to_hash_sync, md5 } from '../utils/hash';
 
 /**
@@ -46,7 +46,7 @@ export type gulpCachedOpt = Partial<PersistentCacheOpt> & {
 
 function cacheLib(options: Partial<PersistentCacheOpt> | undefined) {
   const config = getConfig();
-  options = Object.assign({ name: 'gulp-cached', base: join(config.cwd, 'tmp'), prefix: '' }, options);
+  options = Object.assign({ name: 'gulp-cached', base: path.join(config.cwd, 'tmp'), prefix: '' }, options);
   return new persistentCache(options);
 }
 
@@ -104,7 +104,7 @@ export function gulpCached(options: gulpCachedOpt = {}): ReturnType<typeof throu
 
       // check destination when cache exist
       if (options.dest && options.cwd) {
-        const destPath = join(toUnix(options.dest), toUnix(file.path).replace(toUnix(options.cwd), ''));
+        const destPath = path.join(normalizePath(options.dest), removeCwd(file.path, options.cwd));
         return fs.existsSync(destPath);
       }
 
@@ -113,13 +113,13 @@ export function gulpCached(options: gulpCachedOpt = {}): ReturnType<typeof throu
     };
 
     const paths = {
-      dest: toUnix(options.dest?.replace(process.cwd(), '') || ''),
-      cwd: toUnix(options.cwd?.replace(process.cwd(), '') || ''),
-      source: toUnix(file.path.replace(process.cwd(), ''))
+      dest: normalizePath(options.dest?.replace(process.cwd(), '') || ''),
+      cwd: normalizePath(options.cwd?.replace(process.cwd(), '') || ''),
+      source: normalizePath(file.path.replace(process.cwd(), ''))
     };
 
     // dump
-    const dumpfile = join(process.cwd(), 'tmp/dump/gulp-cached', `${caller}.log`);
+    const dumpfile = path.join(process.cwd(), 'tmp/dump/gulp-cached', `${caller}.log`);
     writefile(
       dumpfile,
       `"${paths.source}" is cached ${isChanged()} with dest validation ${

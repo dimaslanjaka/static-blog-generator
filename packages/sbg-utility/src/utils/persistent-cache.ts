@@ -156,7 +156,7 @@ export class persistentCache implements PersistentCacheOpt {
     let data: ReturnType<typeof JSON.parse>;
     try {
       data = JSON.parse(fs.readFileSync(this.buildFilePath(name), 'utf8'));
-    } catch (e) {
+    } catch (_e) {
       return fallback as T;
     }
 

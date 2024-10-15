@@ -1,13 +1,17 @@
 import { spawnSync } from 'child_process';
 import fs from 'fs-extra';
 import * as glob from 'glob';
+import url from 'node:url';
 import path from 'path';
 
 // index.ts exports builder
 // this only for development and excluded from build config
 
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // create export
-glob.glob('**/*.{ts,js,jsx,tsx}', { ignore: ['**/*.builder.*'], cwd: __dirname, posix: true }).then((files) => {
+glob.glob('**/*.{ts,js,jsx,tsx,cjs,mjs}', { ignore: ['**/*.builder.*'], cwd: __dirname, posix: true }).then((files) => {
   const contents = files
     .filter((file) => !file.includes('.builder'))
     .map((file) => {

@@ -1,11 +1,11 @@
-import { appendFileSync, existsSync } from 'fs-extra';
+import fs from 'fs-extra';
 import slugify from 'slugify';
-import { basename, join, toUnix } from 'upath';
+import upath from 'upath';
 import * as configs from '../config';
 import { writefile } from './filemanager';
 import { areWeTestingWithJest } from './jest';
 
-let FOLDER = join(process.cwd(), 'tmp/logs');
+let FOLDER = upath.join(process.cwd(), 'tmp/logs');
 let cwd = process.cwd();
 
 /*
@@ -20,7 +20,7 @@ if (areWeTestingWithJest()) {
   console.log = function (...args: any[]) {
     if (typeof configs.getConfig === 'function') {
       const cfg = configs.getConfig();
-      FOLDER = join(cfg.cwd, 'tmp/logs/');
+      FOLDER = upath.join(cfg.cwd, 'tmp/logs/');
       cwd = cfg.cwd;
     }
     const stack = (new Error('').stack || '').split(/\r?\n/gm);
@@ -29,14 +29,14 @@ if (areWeTestingWithJest()) {
       msg = (stack || [])[2] || '';
     }
     // log(stack[2], stack[4]);
-    const filename = slugify(toUnix(msg).replace(toUnix(cwd), ''), {
+    const filename = slugify(upath.toUnix(msg).replace(upath.toUnix(cwd), ''), {
       lower: true,
       trim: true,
       replacement: '-',
       strict: true
     });
     const header = `\n\n ${new Date()} \n\n`;
-    const write = writefile(join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
+    const write = writefile(upath.join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
     log(write.file);
   };
 }
@@ -85,16 +85,18 @@ export class Logger {
       // anonymous caller
       if (typeof split[0].path === 'undefined' && split[1].path.includes('anonymous')) {
         const id = split[1].name;
-        const path = split[0].name;
-        const base = basename(
-          path.split(':')[0].length === 1 ? path.split(':')[0] + ':' + path.split(':')[1] : path.split(':')[0]
+        const filePath = split[0].name;
+        const base = upath.basename(
+          filePath.split(':')[0].length === 1
+            ? filePath.split(':')[0] + ':' + filePath.split(':')[1]
+            : filePath.split(':')[0]
         );
 
-        logfile = join(FOLDER, slugify(id, { trim: true }) + '-' + slugify(base, { trim: true }) + '.log');
-        if (!existsSync(logfile)) {
+        logfile = upath.join(FOLDER, slugify(id, { trim: true }) + '-' + slugify(base, { trim: true }) + '.log');
+        if (!fs.existsSync(logfile)) {
           writefile(logfile, '');
         }
-        templ = `${'='.repeat(20)}\nfile: ${path}\ndate: ${new Date()}\n${'='.repeat(20)}\n\n`;
+        templ = `${'='.repeat(20)}\nfile: ${filePath}\ndate: ${new Date()}\n${'='.repeat(20)}\n\n`;
         args.forEach((o) => {
           if (o === null) o = 'null';
           if (typeof o === 'object') {
@@ -106,7 +108,7 @@ export class Logger {
           }
           templ += String(o) + '\n\n';
         });
-        appendFileSync(logfile, templ);
+        fs.appendFileSync(logfile, templ);
       }
       // Logger.log(split);
     }

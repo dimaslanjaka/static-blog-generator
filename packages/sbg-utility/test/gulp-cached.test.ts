@@ -1,19 +1,25 @@
 import { beforeAll, describe, test } from '@jest/globals';
 import gulp from 'gulp';
-import { join, resolve } from 'path';
+import url from 'node:url';
+import path from 'path';
 import defaults, { gulpOpt } from '../src';
+import { fetchConfig } from '../src/config/_config';
+import findYarnRootWorkspace from '../src/utils/findYarnRootWorkspace';
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('gulp cache', () => {
-  const cwd = resolve(String(defaults.findYarnRootWorkspace({ base_dir: join(__dirname, '..') })), 'test');
+  const cwd = path.resolve(String(findYarnRootWorkspace({ base_dir: path.join(__dirname, '..') })), 'test');
   beforeAll(() => {
-    defaults.fetchConfig(cwd);
+    fetchConfig(cwd);
   });
 
   test('gulpCached()', (done) => {
     gulp
-      .src('**/*', { cwd: join(__dirname, '/../src') } as gulpOpt)
+      .src('**/*', { cwd: path.join(__dirname, '/../src') } as gulpOpt)
       .pipe(defaults.gulpCached({ name: 'test', verbose: true }))
-      .pipe(gulp.dest(join(__dirname, '/../tmp/dest')))
+      .pipe(gulp.dest(path.join(__dirname, '/../tmp/dest')))
       .once('end', () => done());
   }, 70000);
 });

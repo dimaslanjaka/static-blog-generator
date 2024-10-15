@@ -1,6 +1,10 @@
 import { beforeAll, describe, expect, jest, test } from '@jest/globals';
 import path from 'upath';
+import { fileURLToPath } from 'url';
 import * as utility from '../src';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class Circular {
   firstName = '';
@@ -21,9 +25,14 @@ class Circular {
     this.lastName = parts[1];
   }
 
-  constructor(author?: string | undefined, title?: string | undefined) {
+  constructor(author?: string | undefined, title?: string | undefined, loop = false) {
     this.lastName = author || '1';
     this.firstName = title || '2';
+    if (loop) {
+      for (let index = 0; index < 100; index++) {
+        this.inner.push(new Circular(undefined, undefined, false));
+      }
+    }
   }
 }
 

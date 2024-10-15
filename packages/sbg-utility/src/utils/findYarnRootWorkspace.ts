@@ -1,6 +1,6 @@
-import { existsSync, readFileSync } from 'fs';
+import fs from 'fs';
 import micromatch from 'micromatch';
-import { dirname, join, normalize, relative } from 'path';
+import path from 'path';
 
 /**
  * search yarn root workspace folder
@@ -25,14 +25,14 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
    * @returns
    */
   const readPackageJSON = function (dir: string): Record<string, any> | undefined {
-    const file = join(dir, 'package.json');
-    if (existsSync(file)) {
-      return JSON.parse(readFileSync(file).toString());
+    const file = path.join(dir, 'package.json');
+    if (fs.existsSync(file)) {
+      return JSON.parse(fs.readFileSync(file).toString());
     }
   };
 
   let previous = 'THIS INITIATOR VALUE WILL NEVER EXECUTED';
-  let current = normalize(baseDir);
+  let current = path.normalize(baseDir);
   // loop searching
   do {
     const manifest = readPackageJSON(current);
@@ -40,7 +40,7 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
     const workspaces = extractWorkspaces(manifest);
 
     if (workspaces) {
-      const relativePath = relative(current, baseDir);
+      const relativePath = path.relative(current, baseDir);
       if (relativePath === '' || micromatch([relativePath], workspaces).length > 0) {
         return current;
       }
@@ -48,7 +48,7 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
     }
 
     previous = current;
-    current = dirname(current);
+    current = path.dirname(current);
   } while (current !== previous);
 
   return null;

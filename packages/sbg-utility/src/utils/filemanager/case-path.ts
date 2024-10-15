@@ -1,17 +1,14 @@
 'use strict';
 
-import { readdir as _readdir, existsSync, readdirSync } from 'fs-extra';
+import fs from 'fs-extra';
 import { platform } from 'os';
-import { isAbsolute, join, normalize } from 'path';
-import { toUnix } from 'upath';
+import path from 'path';
+import upath from 'upath';
 import { promisify as pify } from 'util';
 
-const readdir = pify(_readdir);
+const readdir = pify(fs.readdir);
 export const isWindows = platform() === 'win32';
 const delimiter = isWindows ? '\\' : '/';
-
-export const trueCasePathSync = trueCasePathNew({ sync: true });
-export const trueCasePath = trueCasePathNew({ sync: false });
 
 interface trueCasePathNewOpt {
   /** synchronous */
@@ -26,41 +23,57 @@ interface trueCasePathNewCallbackOpt {
 function trueCasePathNew(opt?: trueCasePathNewOpt) {
   const defaults = { sync: false };
   const trueCase = _trueCasePath(Object.assign(defaults, opt || {}));
+
   return (filePath: string, basePath?: string | trueCasePathNewCallbackOpt, cbOpt?: trueCasePathNewCallbackOpt) => {
     if (filePath.length > 3) {
       let result: string;
       let bPath: string | undefined = undefined;
       let callbackOpt: trueCasePathNewCallbackOpt = Object.assign({ unix: false }, cbOpt || {});
+
       if (typeof basePath === 'string') {
         bPath = basePath;
       } else if (typeof basePath === 'object') {
         callbackOpt = Object.assign({ unix: false }, basePath || {});
       }
+
+      // Join basePath if provided
       let fPath = filePath;
-      if (typeof bPath === 'string') fPath = join(bPath, filePath);
-      if (existsSync(fPath)) {
+      if (typeof bPath === 'string') fPath = path.join(bPath, filePath);
+
+      // Normalize the path before any checks
+      fPath = path.normalize(fPath);
+
+      // Check if the file exists
+      if (fs.existsSync(fPath)) {
         result = trueCase(filePath, bPath);
       } else {
-        result = fPath.trim().replace(/^[a-zA-Z]:/g, function (match) {
-          return match.toUpperCase();
+        // Only capitalize the drive letter, don't touch the rest of the path
+        result = fPath.replace(/^([a-zA-Z]):/, (match, driveLetter) => {
+          return driveLetter.toUpperCase() + ':';
         });
       }
+
+      // Handle Unix conversion if requested
       if (callbackOpt?.unix) {
-        return toUnix(result);
+        return upath.toUnix(result);
       } else {
         return result;
       }
     } else {
+      // Error handling for invalid paths
       if (typeof basePath === 'string') {
-        if (opt?.debug) console.error('failed convert case-path of', { basePath, filePath });
-        return join(basePath, filePath);
+        if (opt?.debug) console.error('Failed to convert case-path of', { basePath, filePath });
+        return path.join(basePath, filePath);
       } else {
-        if (opt?.debug) console.error('failed convert case-path of', { filePath });
+        if (opt?.debug) console.error('Failed to convert case-path of', { filePath });
         return filePath;
       }
     }
   };
 }
+
+export const trueCasePathSync = trueCasePathNew({ sync: true });
+export const trueCasePath = trueCasePathNew({ sync: false });
 
 function getRelevantFilePathSegments(filePath: string) {
   return filePath.split(delimiter).filter((s) => s !== '');
@@ -80,16 +93,16 @@ function matchCaseInsensitive(fileOrDirectory: string, directoryContents: string
 
 function _trueCasePath({ sync }: { sync: boolean }) {
   return (filePath: string, basePath?: string) => {
-    if (!existsSync(filePath)) return basePath ? join(basePath, filePath) : filePath;
+    if (!fs.existsSync(filePath)) return basePath ? path.join(basePath, filePath) : filePath;
     if (basePath) {
-      if (!isAbsolute(basePath)) {
+      if (!path.isAbsolute(basePath)) {
         throw new Error(`[true-case-path]: basePath argument must be absolute. Received "${basePath}"`);
       }
-      basePath = normalize(basePath);
+      basePath = path.normalize(basePath);
     }
-    filePath = normalize(filePath);
+    filePath = path.normalize(filePath);
     const segments = getRelevantFilePathSegments(filePath);
-    if (isAbsolute(filePath)) {
+    if (path.isAbsolute(filePath)) {
       if (basePath) {
         throw new Error('[true-case-path]: filePath must be relative when used with basePath');
       }
@@ -106,7 +119,7 @@ function _trueCasePath({ sync }: { sync: boolean }) {
 function iterateSync(basePath: string | undefined, filePath: string, segments: any[]) {
   return segments.reduce(
     (realPath, fileOrDirectory) =>
-      realPath + delimiter + matchCaseInsensitive(fileOrDirectory, readdirSync(realPath + delimiter), filePath),
+      realPath + delimiter + matchCaseInsensitive(fileOrDirectory, fs.readdirSync(realPath + delimiter), filePath),
     basePath
   );
 }
