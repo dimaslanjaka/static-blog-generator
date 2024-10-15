@@ -20,7 +20,7 @@
     "format:write": "prettier --write .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
-    "update:ncu": "npx npm-check-updates --enginesNode -u",
+    "update:ncu": "npx npm-check-updates -u",
     "test": "jest --setupFiles dotenv/config --runInBand",
     "clean": "rm -rf dist && npm run build"
   },

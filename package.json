@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "start": "yarn build && yarn workspace sbg-site-test run start",
-    "update:ncu": "npm-check-updates --enginesNode -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
+    "update:ncu": "npm-check-updates -u -x chalk,codemirror,highlight.js,hexo && yarn workspaces foreach run update:ncu",
     "update:packer": "yarn workspaces foreach run update:packer",
     "update": "run-s \"update:**\"",
     "docs": "node docs.js",
@@ -105,15 +105,15 @@
     }
   },
   "resolutions": {
-    "hexo": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo.tgz",
-    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-asset-link.tgz",
-    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-cli.tgz",
-    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-front-matter.tgz",
-    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-log.tgz",
-    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/hexo-util.tgz",
-    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/6fdd635/releases/warehouse.tgz",
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/pre-release/release/hexo-renderers.tgz",
-    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/pre-release/release/hexo-shortcodes.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz"
+    "hexo": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo.tgz",
+    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-asset-link.tgz",
+    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-cli.tgz",
+    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-front-matter.tgz",
+    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-log.tgz",
+    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-util.tgz",
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz",
+    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz",
+    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz"
   }
 }

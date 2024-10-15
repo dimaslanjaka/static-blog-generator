@@ -28,7 +28,7 @@
     "pack": "node packer.js -yarn",
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.js",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
-    "update:ncu": "npm-check-updates --enginesNode -u -x sbg-api,sbg-utility,sbg-cli,sbg-server",
+    "update:ncu": "npm-check-updates -u -x sbg-api,sbg-utility,sbg-cli,sbg-server",
     "update": "run-s \"update:**\""
   },
   "repository": {
@@ -55,8 +55,6 @@
   },
   "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "engines": {
-    "node": "^16",
-    "npm": "^8",
-    "hexo": ">= 3"
+    "node": ">=16"
   }
 }
