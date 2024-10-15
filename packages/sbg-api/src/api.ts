@@ -1,8 +1,8 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import postParser, { Nullable } from 'hexo-post-parser';
-import { ProjConf, chain, debug, fetchConfig, getConfig, noop, scheduler, setConfig } from 'sbg-utility';
-import { join } from 'upath';
+import { ProjConf, chain, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
+import path from 'upath';
 import * as cleaner from './clean';
 import { deployCopy } from './deploy/copy';
 import { taskSafelink } from './gulp.safelink';
@@ -21,8 +21,8 @@ class SBG {
    * Static blog generator
    * @param cwd base folder
    */
-  constructor(cwd: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
-    if (!cwd) cwd = process.cwd();
+  constructor(cwd?: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
+    if (!cwd) cwd = normalizePath(process.cwd());
     // fetch config
     fetchConfig(cwd);
     // apply config
@@ -72,7 +72,7 @@ class SBG {
    */
   seo(customPath?: string | null | undefined) {
     return new Bluebird((resolve) => {
-      taskSeo(null, customPath || join(this.cwd, this.config.public_dir)).once('end', function () {
+      taskSeo(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
         setTimeout(() => {
           resolve();
         }, 3000);
@@ -86,15 +86,16 @@ class SBG {
    * @returns
    */
   // copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
-  copy(): Promise<void> {
+  copy() {
     const config = this.config;
-    return new Promise(function (resolve: (args: any) => any) {
-      const streamer = pcopy.copyAllPosts(undefined, config);
-      streamer.on('end', function () {
-        // wait all handler to be closed
-        setTimeout(() => resolve(null), 7000);
-      });
-    });
+    // return new Promise(function (resolve: (args: any) => any) {
+    //   // const streamer = pcopy.copyAllPosts(undefined, config);
+    //   // streamer.on('end', function () {
+    //   //   // wait all handler to be closed
+    //   //   setTimeout(() => resolve(null), 7000);
+    //   // });
+    // });
+    return pcopy.copyAllPosts(config);
   }
 
   /**
@@ -104,7 +105,7 @@ class SBG {
    */
   safelink(customPath?: string | null | undefined) {
     return new Bluebird((resolve) => {
-      taskSafelink(null, customPath || join(this.cwd, this.config.public_dir)).once('end', function () {
+      taskSafelink(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
         setTimeout(() => {
           resolve();
         }, 3000);

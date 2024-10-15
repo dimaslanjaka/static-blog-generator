@@ -39,7 +39,7 @@ export async function getSourcePosts(config?: {
     const matches = await glob.glob('**/*.md', { cwd: sourcePostDir, realpath: true, absolute: true });
     // matches = matches.map((p) => path.join(sourcePostDir, p));
     const promises = matches.map((p) =>
-      processSinglePost(p, function (parsed) {
+      processSinglePost({ file: p, content: null }, function (parsed) {
         results.push(Object.assign(parsed, { full_source: p }));
       })
     );

@@ -1,6 +1,6 @@
 ///
-import { testCwd } from './env';
-process.cwd = () => testCwd;
+import { fixturesCwd, testCwd } from './env.mjs';
+process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 ///
 
 import { describe, expect, test } from '@jest/globals';

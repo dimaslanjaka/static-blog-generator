@@ -1,6 +1,8 @@
-import { testCwd } from './env';
-process.cwd = () => testCwd;
-//
+///
+import { fixturesCwd, testCwd } from './env.mjs';
+process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
+///
+
 import { beforeAll, describe, expect, test } from '@jest/globals';
 import path from 'path';
 import defaults from '../src';
@@ -11,7 +13,7 @@ describe('get source posts', () => {
 
   beforeAll(async () => {
     posts = await defaults.getSourcePosts({
-      cwd: testCwd,
+      cwd: process.cwd(),
       post_dir: 'src-posts',
       cacheDirectory
     });

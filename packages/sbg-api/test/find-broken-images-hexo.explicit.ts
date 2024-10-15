@@ -1,5 +1,5 @@
 ///
-import { fixturesCwd } from './env';
+import { fixturesCwd } from './env.mjs';
 process.cwd = () => fixturesCwd;
 ///
 

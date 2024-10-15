@@ -1,13 +1,14 @@
 import ansiColors from 'ansi-colors';
-import fs from 'fs';
+import fs from 'fs-extra';
+import { globSync } from 'glob';
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
 import moment from 'moment-timezone';
-import { debug, getConfig, gulpCached, Logger } from 'sbg-utility';
-import through2 from 'through2';
-import { extname, join, toUnix } from 'upath';
+import { debug, getConfig, Logger, noop, normalizePath } from 'sbg-utility';
+import path from 'upath';
 import { gulpOpt } from '../gulp-options';
-import { forceGc } from '../utils/gc';
+import { removeCwd } from '../utils/path';
+import { processFiles } from './copy-utils';
 import { parsePermalink } from './permalink';
 
 /**
@@ -26,10 +27,10 @@ const logLabel = log.extend('label');
  * @param callback
  */
 export function copySinglePost(identifier: string, callback?: (...args: any[]) => any) {
-  identifier = identifier.replace(extname(identifier), '');
+  identifier = identifier.replace(path.extname(identifier), '');
   const config = getConfig();
-  const sourcePostDir = join(config.cwd, config.post_dir);
-  const generatedPostDir = join(config.cwd, config.source_dir, '_posts');
+  const sourcePostDir = path.join(config.cwd, config.post_dir);
+  const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
   ///const fileList = [];
   gulp
     .src(['**/*' + identifier + '*/*', '**/*' + identifier + '*'], {
@@ -42,100 +43,132 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
     });
 }
 
+// /**
+//  * copy all posts from src-posts to source/_posts
+//  * @returns
+//  */
+// function _copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
+//   if (!config) config = getConfig();
+//   const excludes = config.exclude || [];
+//   const sourcePostDir = path.join(config.cwd, config.post_dir);
+//   const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
+//   // console.log(excludes, sourcePostDir);
+//   return (
+//     gulp
+//       .src(['**/*.*', '*.*', '**/*'], {
+//         cwd: sourcePostDir,
+//         ignore: excludes,
+//         dot: true,
+//         noext: true
+//       } as gulpOpt)
+//       //.pipe(gulpLog('before'))
+//       .pipe(gulpCached({ name: 'post-copy' }))
+//       .pipe(pipeProcessPost(config))
+//       .pipe(gulp.dest(generatedPostDir))
+//   );
+// }
+
 /**
  * copy all posts from src-posts to source/_posts
  * @returns
  */
-export function copyAllPosts(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
+export function copyAllPosts(config?: ReturnType<typeof getConfig>) {
   if (!config) config = getConfig();
   const excludes = config.exclude || [];
-  const sourcePostDir = join(config.cwd, config.post_dir);
-  const generatedPostDir = join(config.cwd, config.source_dir, '_posts');
-  // console.log(excludes, sourcePostDir);
-  return (
-    gulp
-      .src(['**/*.*', '*.*', '**/*'], {
-        cwd: sourcePostDir,
-        ignore: excludes,
-        dot: true,
-        noext: true
-      } as gulpOpt)
-      //.pipe(gulpLog('before'))
-      .pipe(gulpCached({ name: 'post-copy' }))
-      .pipe(pipeProcessPost(config))
-      .pipe(gulp.dest(generatedPostDir))
+  const sourcePostDir = path.join(config.cwd, config.post_dir);
+  const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
+  const posts = globSync(['**/*.*', '*.*', '**/*'], {
+    cwd: sourcePostDir,
+    ignore: excludes,
+    dot: true,
+    noext: true,
+    absolute: true
+  }).map((s) => normalizePath(s));
+  return processFiles(
+    posts,
+    async function (filePath, content) {
+      const compile = await processSinglePost({ content, file: filePath }).catch(() => null);
+      if (typeof compile === 'string') {
+        const fileWithoutCwd = removeCwd(filePath).replace(/[/\\]src-posts[/\\]/, '');
+        const dest = path.join(generatedPostDir, fileWithoutCwd);
+        fs.ensureDirSync(path.dirname(dest));
+        fs.writeFileSync(dest, content);
+      }
+    },
+    noop
   );
 }
 
-/**
- * pipeable function to process post
- * @param config
- * @returns
- */
-export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
-  const logname = 'post:' + ansiColors.blueBright('processing');
-  if (config.generator.verbose) {
-    Logger.log(logname, 'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false')));
-  }
+// /**
+//  * pipeable function to process post
+//  * @param config
+//  * @returns
+//  */
+// export function pipeProcessPost(config: ReturnType<typeof getConfig>) {
+//   const logname = 'post:' + ansiColors.blueBright('processing');
+//   if (config.generator.verbose) {
+//     Logger.log(logname, 'cache=' + (config.generator.cache ? ansiColors.green('true') : ansiColors.red('false')));
+//   }
 
-  return through2.obj(
-    async function (file, _enc, callback) {
-      if (file.isDirectory()) {
-        return callback();
-      }
-      if (file.isNull()) {
-        logErr(file.path + ' is null');
-        return callback();
-      }
-      if (file.isStream()) {
-        logErr(file.path + ' is stream');
-        return callback();
-      }
+//   return through2.obj(
+//     async function (file, _enc, callback) {
+//       if (file.isDirectory()) {
+//         return callback();
+//       }
+//       if (file.isNull()) {
+//         logErr(file.path + ' is null');
+//         return callback();
+//       }
+//       if (file.isStream()) {
+//         logErr(file.path + ' is stream');
+//         return callback();
+//       }
 
-      if (config) {
-        // process markdown files
-        if (file.extname === '.md') {
-          // log('copying ' + file.path.replace(process.cwd(), ''));
-          const compile = await processSinglePost(file.path);
-          if (typeof compile === 'string') {
-            file.contents = Buffer.from(compile);
-            this.push(file);
-            forceGc();
-            callback();
-          } else {
-            callback();
-          }
-        } else {
-          this.push(file);
-          forceGc();
-          callback();
-        }
-      } else {
-        Logger.log('options not configured');
-        callback();
-      }
-    }
-    /*function (cb) {
-      this.emit('end', 2);
-      cb();
-    }*/
-  );
-}
+//       if (config) {
+//         // process markdown files
+//         if (file.extname === '.md') {
+//           // log('copying ' + file.path.replace(process.cwd(), ''));
+//           const compile = await processSinglePost(file.path);
+//           if (typeof compile === 'string') {
+//             file.contents = Buffer.from(compile);
+//             this.push(file);
+//             forceGc();
+//             callback();
+//           } else {
+//             callback();
+//           }
+//         } else {
+//           this.push(file);
+//           forceGc();
+//           callback();
+//         }
+//       } else {
+//         Logger.log('options not configured');
+//         callback();
+//       }
+//     }
+//     /*function (cb) {
+//       this.emit('end', 2);
+//       cb();
+//     }*/
+//   );
+// }
 
 /**
  * process single markdown post
- * @param file file path
+ * @param file file path or contents
  * @param callback
  * @returns
  */
 export async function processSinglePost(
-  file: string,
+  options: { file: string; content?: string | null },
   callback?: (parsed: hexoPostParser.postMap) => any
-): Promise<string | undefined> {
-  const contents = fs.readFileSync(file, 'utf-8');
+) {
+  const { content, file } = options;
+  const contents = content || fs.readFileSync(file, 'utf-8');
   const config = getConfig();
   // debug file
-  const dfile = ansiColors.yellowBright(toUnix(file.replace(config.cwd, '')));
+  const dfile = ansiColors.yellowBright(normalizePath(options.file.replace(config.cwd, '')));
   log('processing', dfile);
   // drop empty body
   if (contents.trim().length === 0) {
@@ -145,7 +178,7 @@ export async function processSinglePost(
 
   try {
     const parse = await hexoPostParser
-      .parsePost(fs.readFileSync(file, 'utf-8'), {
+      .parsePost(contents, {
         shortcodes: {
           youtube: true,
           css: true,

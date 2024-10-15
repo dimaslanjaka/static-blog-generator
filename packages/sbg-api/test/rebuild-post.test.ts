@@ -1,16 +1,17 @@
+// tell working directory to fixtures folder
+process.cwd = () => fixturesCwd;
+const postPath = path.join(fixturesCwd, 'src-posts/future-post.md');
+//
+
 import { describe, expect, test } from '@jest/globals';
 import { buildPost, parsePost } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import { path, writefile } from 'sbg-utility';
 import { processSinglePost } from '../src';
-import { fixturesCwd } from './env';
+import { fixturesCwd } from './env.mjs';
 
 // cross-env-shell DEBUG:post
 process.env.DEBUG = 'sbg-*,post:*,post';
-
-// tell working directory to fixtures folder
-process.cwd = () => fixturesCwd;
-const postPath = path.join(fixturesCwd, 'src-posts/future-post.md');
 
 export async function rebuildPostDate(creationDate: string) {
   const date = moment(creationDate);
@@ -24,7 +25,7 @@ export async function rebuildPostDate(creationDate: string) {
   // rewrite post
   writefile(postPath, built);
   // process post
-  return processSinglePost(postPath);
+  return processSinglePost({ file: postPath });
 }
 
 describe('check method', () => {
