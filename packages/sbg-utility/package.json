@@ -3,6 +3,8 @@
   "version": "2.0.2",
   "description": "static-blog-generator utility",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": {
