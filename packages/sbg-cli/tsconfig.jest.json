@@ -1,0 +1,36 @@
+{
+  // custom schema (non-vscode environment)
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ES2019", "ES2020", "DOM", "ES6", "ESNext"],
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    /* Module Resolution Options */
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["jest"]
+  },
+  "exclude": [
+    "**/*.runner.*",
+    "**/*.explicit.*",
+    "**/*.builder.*",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/tmp/**"
+  ],
+  "include": ["./test/**/*", "./src/**/*"]
+}
