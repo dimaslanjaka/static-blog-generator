@@ -3,9 +3,18 @@
   "version": "2.0.0",
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "type": "module",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.mjs",
-  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "default": "./dist/src/index.cjs",
+        "types": "./dist/src/index.d.ts"
+      },
+      "import": {
+        "default": "./dist/src/index.mjs",
+        "types": "./dist/src/index.d.mts"
+      }
+    }
+  },
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
