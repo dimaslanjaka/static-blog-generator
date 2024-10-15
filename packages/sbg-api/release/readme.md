@@ -2,7 +2,7 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/5b40ff2dd/packages/sbg-api/release/sbg-api.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/a95a94996/packages/sbg-api/release/sbg-api.tgz |
 | latest | https://github.com/dimaslanjaka/static-blog-generator/raw/sbg-api/packages/sbg-api/release/sbg-api.tgz |
 
 use this tarball with `resolutions`:
