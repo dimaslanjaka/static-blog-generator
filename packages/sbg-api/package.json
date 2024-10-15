@@ -72,7 +72,7 @@
     "nunjucks": "^3.2.4",
     "p-limit": "^6.1.0",
     "safelinkify": "^1.2.2",
-    "sbg-utility": "^2.0.1",
+    "sbg-utility": "*",
     "through2": "^4.0.2",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",

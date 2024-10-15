@@ -11,7 +11,7 @@
     "sbg-api": "*",
     "sbg-cli": "*",
     "sbg-server": "*",
-    "sbg-utility": "^2.0.0"
+    "sbg-utility": "*"
   },
   "version": "3.0.1",
   "main": "dist/index.js",

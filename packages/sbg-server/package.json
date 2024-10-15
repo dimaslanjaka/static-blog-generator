@@ -73,7 +73,7 @@
     "retry": "^0.13.1",
     "safelinkify": "^1.2.2",
     "sbg-api": "*",
-    "sbg-utility": "^2.0.0",
+    "sbg-utility": "*",
     "serve-index": "^1.9.1",
     "toastr": "^2.1.4",
     "upath": "^2.0.1",

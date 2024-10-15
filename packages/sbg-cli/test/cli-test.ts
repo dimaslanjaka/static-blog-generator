@@ -18,6 +18,7 @@ async function _main() {
   });
   console.log('Installation finished');
   await spawnAsync('sbg', ['--help'], { cwd: testCwd, stdio: 'inherit' });
+  await spawnAsync('sbg', ['--version'], { cwd: testCwd, stdio: 'inherit' });
 }
 
 _main();
