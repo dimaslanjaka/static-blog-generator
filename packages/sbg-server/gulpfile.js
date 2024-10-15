@@ -10,24 +10,25 @@ const sharp = require('sharp');
 const { bundleJSRollUp } = require('./gulpfile-rollup');
 const { bundleCSS } = require('./gulpfile-tailwind.task');
 
+/** resolve cmd binary */
 const cmd = (commandName) => {
   const cmdPath = [
     __dirname,
     process.cwd(),
-    (process.mainModule || process.main).paths[0]
-      .split('node_modules')[0]
-      .slice(0, -1)
+    (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
   ]
     .map((cwd) => {
       const nm = path.join(cwd, 'node_modules/.bin');
-      const cmdPath = path.join(nm, commandName);
-      return cmdPath;
+      return path.join(nm, commandName);
     })
     .filter(fs.existsSync)[0];
 
-  return process.platform === 'win32'
-    ? cmdPath.replace(/\//g, '\\\\') + '.cmd'
-    : cmdPath;
+  if (!cmdPath) {
+    console.error(`Command '${commandName}' not found in node_modules/.bin`);
+    return commandName; // Return the original command name
+  }
+
+  return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
 };
 
 /**

@@ -17,12 +17,16 @@ const cmd = (commandName) => {
   ]
     .map((cwd) => {
       const nm = path.join(cwd, 'node_modules/.bin');
-      const cmdPath = path.join(nm, commandName);
-      return cmdPath;
+      return path.join(nm, commandName);
     })
     .filter(fs.existsSync)[0];
 
-  return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
+  if (!cmdPath) {
+    console.error(`Command '${commandName}' not found in node_modules/.bin`);
+    return commandName; // Return the original command name
+  }
+
+  return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
 };
 
 function copyAssets() {

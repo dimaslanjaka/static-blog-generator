@@ -107,10 +107,6 @@
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz",
-    "sbg-utility": "workspace:^",
-    "sbg-server": "workspace:^",
-    "sbg-api": "workspace:^",
-    "sbg-cli": "workspace:^"
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz"
   }
 }

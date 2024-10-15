@@ -1,0 +1,16 @@
+'use strict';
+
+let logged = false;
+function forceGc() {
+    if (typeof global.gc === 'function') {
+        global.gc();
+    }
+    else {
+        if (!logged) {
+            console.warn('Garbage collection is not exposed. Use --expose-gc');
+            logged = true;
+        }
+    }
+}
+
+exports.forceGc = forceGc;
