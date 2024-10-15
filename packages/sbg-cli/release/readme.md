@@ -10,7 +10,8 @@
 | 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/00d40659c/packages/sbg-cli/release/sbg-cli-1.0.5.tgz |
 | 1.0.6 | https://github.com/dimaslanjaka/static-blog-generator/raw/1e9fb0d20/packages/sbg-cli/release/sbg-cli-1.0.6.tgz |
 | 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/fb560e7e0/packages/sbg-cli/release/sbg-cli-1.1.0.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/fb560e7e0/packages/sbg-cli/release/sbg-cli.tgz |
+| 2.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/59a621d8c/packages/sbg-cli/release/sbg-cli-2.0.0.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/59a621d8c/packages/sbg-cli/release/sbg-cli.tgz |
 | latest | https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-cli/release/sbg-cli.tgz |
 
 use this tarball with `resolutions`:

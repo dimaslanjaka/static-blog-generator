@@ -32,7 +32,7 @@ function copyDeclarations() {
 }
 
 function copy() {
-  return gulp.src(['./src/**/*.{xml,json,xsl}'], { cwd: __dirname }).pipe(gulp.dest('./dist/src'));
+  return gulp.src(['./src/**/*.{xml,json,xsl}'], { cwd: __dirname }).pipe(gulp.dest('./dist'));
 }
 
 gulp.task('copy', gulp.series(copy, copyDeclarations));

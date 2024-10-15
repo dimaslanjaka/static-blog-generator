@@ -26,11 +26,15 @@ export const external = _.uniq(
       'hexo-util',
       'canvas',
       'jsdom',
-      'mime-db',
+      'mime-types',
       'sbg-utility',
       'through2',
       'gulp',
-      'bluebird'
+      'bluebird',
+      'upath',
+      'fs-extra',
+      'cheerio',
+      'axios'
     )
 ).filter((pkgName) => {
   return !['p-limit', 'deepmerge-ts'].includes(pkgName);
