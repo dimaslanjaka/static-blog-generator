@@ -1,0 +1,16 @@
+{
+  "name": "cjs-project",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node require.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sbg-api": "file:../.."
+  }
+}

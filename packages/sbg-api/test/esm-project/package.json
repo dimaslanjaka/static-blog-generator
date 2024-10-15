@@ -1,0 +1,16 @@
+{
+  "name": "esm-project",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node import.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sbg-api": "file:../.."
+  }
+}
