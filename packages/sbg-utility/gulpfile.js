@@ -25,14 +25,16 @@ const cmd = (commandName) => {
   return process.platform === 'win32' ? cmdPath.replace(/\//g, '\\\\') + '.cmd' : cmdPath;
 };
 
+function copyAssets() {
+  return gulp.src('./src/**/*.{json,yml,xml,xsl}', { cwd: __dirname }).pipe(gulp.dest('./dist'));
+}
+
 // copy non-javascript assets from src folder
 const copy = function () {
   return gulp
     .src(['**/*.*'], { cwd: path.join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
     .pipe(gulp.dest(path.join(__dirname, 'dist')));
 };
-
-gulp.task('copy', gulp.series(copy));
 
 function copyDeclarations() {
   return gulp
@@ -58,6 +60,8 @@ function copyDeclarations() {
     );
 }
 
+gulp.task('copy', gulp.series(copy, copyAssets, copyDeclarations));
+
 async function tsc() {
   await gitCommandHelper.spawnAsync(cmd('rollup'), ['-c'], {
     cwd: __dirname,
@@ -71,7 +75,7 @@ async function tsc() {
   });
 }
 
-gulp.task('build', gulp.series(tsc, copy, copyDeclarations));
+gulp.task('build', gulp.series(tsc, 'copy'));
 
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
