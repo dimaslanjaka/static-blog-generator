@@ -41,5 +41,7 @@
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file:///d%3A/Repositories/static-blog-generator/.github/workflows/test-beta.yml",
     "https://json.schemastore.org/dependabot-2.0.json": "file:///d%3A/Repositories/static-blog-generator/.github/dependabot.yml"
-  }
+  },
+  "git.autoStash": true,
+  "git.useCommitInputAsStashMessage": true
 }
