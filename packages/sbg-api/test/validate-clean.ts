@@ -1,9 +1,9 @@
 ///
-import { testCwd } from './env';
-process.cwd = () => testCwd;
+import { expect, test } from '@jest/globals';
+import { fixturesCwd, testCwd } from './env.mjs';
+process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 ///
 
-import { expect, test } from '@jest/globals';
 import { existsSync } from 'fs';
 import { join } from 'upath';
 import { Application } from '../src';

@@ -1,5 +1,5 @@
 ///
-import { testCwd } from './env';
+import { testCwd } from './env.mjs';
 process.cwd = () => testCwd;
 ///
 

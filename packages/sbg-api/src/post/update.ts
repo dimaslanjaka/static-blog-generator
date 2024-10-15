@@ -1,10 +1,10 @@
 import frontMatter from 'front-matter';
-import { readFileSync } from 'fs';
+import fs from 'fs-extra';
 import { buildPost, parsePost, postMap } from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import * as sbgUtils from 'sbg-utility';
 import { Logger, writefile } from 'sbg-utility';
-import { join, toUnix } from 'upath';
+import path from 'upath';
 
 const processingUpdate = {} as Record<string, any>;
 
@@ -44,7 +44,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     parse.metadata.updated = moment()
       .tz(config.timezone || 'UTC')
       .format();
-    const post = frontMatter<Record<string, any>>(readFileSync(postPath, 'utf-8'));
+    const post = frontMatter<Record<string, any>>(fs.readFileSync(postPath, 'utf-8'));
     if ('updated' in post.attributes === false) {
       post.attributes.updated = parse.metadata.updated;
     }
@@ -74,15 +74,21 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
 
     // update original source post after process ends
     const rebuild = buildPost(rBuild);
-    //writefile(join(config.cwd, 'tmp/rebuild.md'), rebuild);
-    Logger.log('write to', toUnix(oriPath).replace(toUnix(config.cwd), ''), oriUp, '->', post.attributes.updated);
+    //writefile(path.join(config.cwd, 'tmp/rebuild.md'), rebuild);
+    Logger.log(
+      'write to',
+      sbgUtils.normalizePath(oriPath).replace(sbgUtils.normalizePath(config.cwd), ''),
+      oriUp,
+      '->',
+      post.attributes.updated
+    );
     await writefile(oriPath, rebuild, { async: true }); // write original post
 
     const build = buildPost(parse);
     await writefile(postPath, build, { async: true });
   } else {
     Logger.log('cannot parse', postPath);
-    writefile(join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
+    writefile(path.join(config.cwd, 'tmp/errors', updatePost.name, 'cannot-parse.log'), postPath, { append: true });
   }
 
   const hasError = typeof (parse && parse.metadata) === 'undefined';

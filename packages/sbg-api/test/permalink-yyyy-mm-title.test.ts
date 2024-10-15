@@ -1,9 +1,9 @@
 ///
-import { testCwd } from './env';
-process.cwd = () => testCwd;
+import { describe, expect, test } from '@jest/globals';
+import { fixturesCwd, testCwd } from './env.mjs';
+process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 ///
 
-import { describe, expect, test } from '@jest/globals';
 import { parsePost } from 'hexo-post-parser';
 import moment from 'moment';
 import { join } from 'path';

@@ -1,11 +1,11 @@
 import Bluebird from 'bluebird';
-import { PathOrFileDescriptor, readFileSync, writeFileSync } from 'fs';
+import fs from 'fs-extra';
 import gulp, { TaskFunctionCallback } from 'gulp';
 import Hexo from 'hexo';
-import { full_url_for, gravatar } from 'hexo-util';
+import hutil from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { commonIgnore, envNunjucks, getConfig, gulpDom } from 'sbg-utility';
-import { join } from 'upath';
+import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 
 const env = envNunjucks();
@@ -22,11 +22,11 @@ export function hexoGenerateFeed(done?: gulp.TaskFunctionCallback, config = getC
     instance.init().then(() => {
       instance.load().then(() => {
         env.addFilter('formatUrl', (str: string | undefined) => {
-          return full_url_for.call(instance, str);
+          return hutil.full_url_for.call(instance, str);
         });
 
-        function build(tmplSrc: PathOrFileDescriptor, dest: PathOrFileDescriptor) {
-          const template = nunjucks.compile(readFileSync(tmplSrc, 'utf-8'), env);
+        function build(tmplSrc: fs.PathOrFileDescriptor, dest: fs.PathOrFileDescriptor) {
+          const template = nunjucks.compile(fs.readFileSync(tmplSrc, 'utf-8'), env);
 
           let posts = instance.locals.get('posts');
           posts = posts.sort('-date');
@@ -45,12 +45,12 @@ export function hexoGenerateFeed(done?: gulp.TaskFunctionCallback, config = getC
 
           let icon = '';
           if (iconCfg) {
-            icon = full_url_for.call(instance, iconCfg) as string;
+            icon = hutil.full_url_for.call(instance, iconCfg) as string;
           } else if (email) {
-            icon = gravatar(email, {});
+            icon = hutil.gravatar(email, {});
           }
 
-          const feed_url = full_url_for.call(instance, 'rss.xml');
+          const feed_url = hutil.full_url_for.call(instance, 'rss.xml');
 
           const data = template.render({
             config,
@@ -60,20 +60,20 @@ export function hexoGenerateFeed(done?: gulp.TaskFunctionCallback, config = getC
             feed_url
           });
 
-          writeFileSync(dest, data);
+          fs.writeFileSync(dest, data);
         }
 
-        const templateRSS = join(__dirname, '_config_template_rss.xml');
-        const destRSS = join(config.cwd, config.public_dir, 'rss.xml');
+        const templateRSS = path.join(__dirname, '_config_template_rss.xml');
+        const destRSS = path.join(config.cwd, config.public_dir, 'rss.xml');
         build(templateRSS, destRSS);
 
-        const templateATOM = join(__dirname, '_config_template_atom.xml');
-        const destATOM = join(config.cwd, config.public_dir, 'atom.xml');
+        const templateATOM = path.join(__dirname, '_config_template_atom.xml');
+        const destATOM = path.join(config.cwd, config.public_dir, 'atom.xml');
         build(templateATOM, destATOM);
 
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
 
-        const publicDir = join(config.cwd, config.public_dir);
+        const publicDir = path.join(config.cwd, config.public_dir);
         gulp
           .src('**/*.html', { cwd: publicDir, ignore: commonIgnore } as gulpOpt)
           .pipe(

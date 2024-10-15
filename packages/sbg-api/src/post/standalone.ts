@@ -1,8 +1,8 @@
-import spawn from 'cross-spawn';
+import * as spawn from 'cross-spawn';
 import gulp from 'gulp';
 import { getConfig, Logger, replacePath } from 'sbg-utility';
 import through2 from 'through2';
-import { join } from 'upath';
+import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 
 /**
@@ -12,7 +12,7 @@ import { gulpOpt } from '../gulp-options';
 function standaloneRunner() {
   Logger.log('[standalone] Running scripts...\n');
   return gulp
-    .src(join(getConfig().cwd, '**/_*.standalone.js'), { cwd: getConfig().cwd, ignore: ['**/tmp/**'] } as gulpOpt)
+    .src(path.join(getConfig().cwd, '**/_*.standalone.js'), { cwd: getConfig().cwd, ignore: ['**/tmp/**'] } as gulpOpt)
     .pipe(
       through2.obj(async function (file, _enc, next) {
         Logger.log('='.repeat(10) + ' input ' + '='.repeat(10));
@@ -25,7 +25,7 @@ function standaloneRunner() {
         });
       })
     )
-    .pipe(gulp.dest(join(getConfig().cwd, 'tmp/standalone')))
+    .pipe(gulp.dest(path.join(getConfig().cwd, 'tmp/standalone')))
     .once('end', function () {
       Logger.log('\n[standalone] stopped');
     });

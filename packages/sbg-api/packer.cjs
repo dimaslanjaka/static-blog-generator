@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 const { spawn, async: spawnAsync } = require('cross-spawn');
 const fs = require('fs-extra');
 const { resolve, join, dirname, toUnix, basename } = require('upath');
@@ -379,7 +378,7 @@ function isPackageInstalled(packageName) {
   try {
     const modules = Array.from(process.moduleLoadList).filter((str) => !str.startsWith('NativeModule internal/'));
     return modules.indexOf(`NativeModule ${packageName}`) >= 0 || fs.existsSync(require.resolve(packageName));
-  } catch (e) {
+  } catch (_e) {
     return false;
   }
 }
