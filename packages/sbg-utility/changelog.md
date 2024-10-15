@@ -1,5 +1,12 @@
 <!--  malfunction keyboard 5 6 ^ % -->
 
+**2.0.0**
+- Migrate to ESM with shim for CJS
+
+**1.1.8**
+
+- Drop `node-libcurl`
+
 **1.1.5**
 
 1da17a6c9 chore(semver): convert to class constructor
@@ -8,7 +15,3 @@
 08450b418 fix: persistent-cache from local
 fce7ce63d chore: using local json util
 41e5ec43c chore: split exports - split stream filemanager - split index for node and browser
-
-**1.1.8**
-
-- drop `node-libcurl`
