@@ -30,6 +30,9 @@ export const external = array_unique(
       'sbg-utility',
       'through2',
       'gulp',
+      'bluebird',
+      'axios',
+      'hexo-post-parser',
       'bluebird'
     )
 ).filter((pkgName) => {

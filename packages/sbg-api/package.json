@@ -6,17 +6,17 @@
   "exports": {
     ".": {
       "require": {
-        "default": "./dist/src/index.cjs",
+        "default": "./dist/index.cjs",
         "types": "./dist/src/index.d.ts"
       },
       "import": {
-        "default": "./dist/src/index.mjs",
+        "default": "./dist/index.mjs",
         "types": "./dist/src/index.d.mts"
       }
     }
   },
   "files": [
-    "dist",
+    "dist/",
     "!**/*.tsbuildinfo"
   ],
   "scripts": {
