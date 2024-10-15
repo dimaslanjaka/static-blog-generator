@@ -33,7 +33,9 @@ export const external = array_unique(
       'bluebird',
       'axios',
       'hexo-post-parser',
-      'bluebird'
+      'bluebird',
+      'upath',
+      'fs-extra'
     )
 ).filter((pkgName) => {
   return !['p-limit'].includes(pkgName);
