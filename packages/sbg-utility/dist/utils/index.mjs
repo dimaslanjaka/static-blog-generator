@@ -13,7 +13,6 @@ export { fixDriveLetter, normalizePath as joinPath, joinSolve, normalizePath, no
 export { readDir, readDirAsync } from './filemanager/readDir.mjs';
 export { createWriteStream } from './filemanager/stream.mjs';
 export { writefile } from './filemanager/writefile.mjs';
-export { findYarnRootWorkspace } from './findYarnRootWorkspace.mjs';
 export { data_to_hash, data_to_hash_sync, file_to_hash, folder_to_hash, md5, md5FileSync, url_to_hash } from './hash.mjs';
 export { isdev } from './isdev.mjs';
 export { areWeTestingWithJest } from './jest.mjs';
@@ -21,6 +20,7 @@ export { fromJSON, parse, stringify, toJSON } from './JSON-serializer.mjs';
 export { jsonParseWithCircularRefs, jsonStringifyWithCircularRefs } from './JSON.mjs';
 import './lockmanager.mjs';
 export { Logger } from './logger.mjs';
+export { cmd, findYarnRootWorkspace, resolveCommand } from './nodeWorkspaceHelper.mjs';
 export { noop } from './noop.mjs';
 export { envNunjucks } from './nunjucks-env.mjs';
 export { getObjectProperty, orderKeys } from './object.mjs';
