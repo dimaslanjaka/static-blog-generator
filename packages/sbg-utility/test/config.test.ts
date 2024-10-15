@@ -3,7 +3,7 @@ import * as spawn from 'cross-spawn';
 import url from 'node:url';
 import path from 'upath';
 import { deployConfig, fetchConfig, getConfig, setConfig } from '../src';
-import findYarnRootWorkspace from '../src/utils/findYarnRootWorkspace';
+import findYarnRootWorkspace from '../src/utils/nodeWorkspaceHelper';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

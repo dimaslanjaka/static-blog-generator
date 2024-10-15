@@ -4,7 +4,7 @@ import url from 'node:url';
 import path from 'path';
 import defaults, { gulpOpt } from '../src';
 import { fetchConfig } from '../src/config/_config';
-import findYarnRootWorkspace from '../src/utils/findYarnRootWorkspace';
+import findYarnRootWorkspace from '../src/utils/nodeWorkspaceHelper';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
