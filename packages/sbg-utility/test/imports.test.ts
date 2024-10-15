@@ -53,6 +53,8 @@ describe('check method', () => {
     });
     it('file manager', () => {
       expect(typeof wilcards.writefile).toEqual('function');
+      expect(typeof wilcards.normalizePath).toEqual('function');
+      expect(typeof wilcards.normalizePathUnix).toEqual('function');
     });
   });
 });
