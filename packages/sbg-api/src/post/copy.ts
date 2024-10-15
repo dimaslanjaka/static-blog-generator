@@ -7,6 +7,7 @@ import moment from 'moment-timezone';
 import { debug, getConfig, Logger, normalizePath } from 'sbg-utility';
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
+import { forceGc } from '../utils/gc';
 import { removeCwd } from '../utils/path';
 import { parsePermalink } from './permalink';
 
@@ -43,27 +44,31 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
 }
 
 /**
- * copy all posts from src-posts to source/_posts
- * @returns
+ * Copy all posts from src-posts to source/_posts using elimination strategy
+ *
+ * @param config Optional configuration object
+ * @returns Promise<void>
  */
-export async function copyAllPosts(config?: ReturnType<typeof getConfig>) {
+export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promise<void> {
   if (!config) config = getConfig();
   const excludes = config.exclude || [];
   const sourcePostDir = path.join(config.cwd, config.post_dir);
   const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
   const posts: string[] = globSync(['**/*.*', '*.*', '**/*'], {
     cwd: sourcePostDir,
-    ignore: excludes,
+    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}'),
     dot: true,
     noext: true,
     absolute: true
   }).map((s) => normalizePath(s));
 
   /**
-   * process markdown file
-   * @param file
+   * Process a markdown file
+   *
+   * @param file The file path to process
+   * @returns Promise<void>
    */
-  const processMarkdown = async function (file: string) {
+  const processMarkdown = async function (file: string): Promise<void> {
     const content = (await fs.readFile(file)).toString();
     const compile = await processSinglePost({ content, file }).catch(() => null);
     if (typeof compile === 'string') {
@@ -71,26 +76,31 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>) {
       const dest = path.join(generatedPostDir, fileWithoutCwd);
       await fs.ensureDir(path.dirname(dest));
       await fs.writeFile(dest, compile);
+      forceGc();
     }
   };
 
   /**
-   * copy non markdown file
-   * @param file
+   * Copy non-markdown file
+   *
+   * @param file The file path to copy
+   * @returns Promise<void>
    */
-  const processAssets = async function (file: string) {
+  const processAssets = async function (file: string): Promise<void> {
     const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
     const dest = path.join(generatedPostDir, fileWithoutCwd);
     await fs.ensureDir(path.dirname(dest));
     await fs.copy(file, dest);
   };
 
-  // Process each post sequentially
-  for (const post of posts) {
+  // Process posts one by one using posts.shift() elimination strategy
+  while (posts.length > 0) {
+    const post = posts.shift()!; // Remove the first file from the array
+
     if (post.endsWith('.md')) {
-      await processMarkdown(post); // process markdown files
+      await processMarkdown(post);
     } else {
-      await processAssets(post); // process non-markdown files
+      await processAssets(post);
     }
   }
 }
