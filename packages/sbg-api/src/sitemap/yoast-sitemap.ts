@@ -1,9 +1,9 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync } from 'fs';
+import fs from 'fs-extra';
 import Hexo from 'hexo';
 import hexoIs from 'hexo-is';
 import moment from 'moment';
-import { dirname, join } from 'path';
 import { getConfig, scheduler, writefile } from 'sbg-utility';
+import path from 'upath';
 import { create as createXML } from 'xmlbuilder2';
 import getCategoryTags, { getLatestFromArrayDates } from './archive';
 import yoastSeoSitemapPages from './pages';
@@ -45,9 +45,9 @@ interface SitemapIndexItem {
 
 function initSitemap(type: string | 'post' | 'page' | 'category' | 'tag') {
   if (!sitemapGroup[type]) {
-    const sourceXML = join(__dirname, 'views/' + type + '-sitemap.xml');
-    if (!existsSync(sourceXML)) throw 'Source ' + sourceXML + ' Not Found';
-    const doc = createXML(readFileSync(sourceXML).toString());
+    const sourceXML = path.join(__dirname, 'views/' + type + '-sitemap.xml');
+    if (!fs.existsSync(sourceXML)) throw 'Source ' + sourceXML + ' Not Found';
+    const doc = createXML(fs.readFileSync(sourceXML).toString());
     sitemapGroup[type] = <sitemapObj>new Object(doc.end({ format: 'object' }));
     sitemapGroup[type].urlset.url = [];
   }
@@ -123,7 +123,7 @@ export function yoastSeoSitemap(data: TemplateLocals) {
     if (isPagePost) {
       // if post updated not found, get source file last modified time
       if (!post.updated) {
-        const stats = statSync(post.full_source);
+        const stats = fs.statSync(post.full_source);
         post.updated = moment(stats.mtime);
       }
     }
@@ -148,21 +148,21 @@ export function yoastSeoSitemap(data: TemplateLocals) {
     if (isPagePost) {
       scheduler.add('writeSitemap', () => {
         // copy xsl
-        const destXSL = join(hexo.public_dir, 'sitemap.xsl');
-        if (!existsSync(dirname(destXSL))) mkdirSync(dirname(destXSL), { recursive: true });
-        const sourceXSL = join(__dirname, 'views/sitemap.xsl');
-        if (existsSync(sourceXSL)) {
-          copyFileSync(sourceXSL, destXSL);
+        const destXSL = path.join(hexo.public_dir, 'sitemap.xsl');
+        if (!fs.existsSync(path.dirname(destXSL))) fs.mkdirSync(path.dirname(destXSL), { recursive: true });
+        const sourceXSL = path.join(__dirname, 'views/sitemap.xsl');
+        if (fs.existsSync(sourceXSL)) {
+          fs.copyFileSync(sourceXSL, destXSL);
           _log.info('XSL sitemap copied to ' + destXSL);
         } else {
           _log.error('XSL sitemap not found');
         }
 
-        const destPostSitemap = join(hexo.public_dir, 'post-sitemap.xml');
+        const destPostSitemap = path.join(hexo.public_dir, 'post-sitemap.xml');
         writefile(destPostSitemap, createXML(sitemapGroup['post']).end({ prettyPrint: true }));
         _log.info('post sitemap saved', destPostSitemap);
 
-        const destPageSitemap = join(hexo.public_dir, 'page-sitemap.xml');
+        const destPageSitemap = path.join(hexo.public_dir, 'page-sitemap.xml');
         writefile(destPageSitemap, createXML(sitemapGroup['page']).end({ prettyPrint: true }));
         _log.info('page sitemap saved', destPageSitemap);
 
@@ -192,8 +192,8 @@ export function yoastSeo(hexo: Hexo) {
  * @param hexo
  */
 export function yoastSitemapIndex(hexo: Hexo) {
-  const sourceIndexXML = join(__dirname, 'views/sitemap.xml');
-  const sitemapIndexDoc = createXML(readFileSync(sourceIndexXML).toString());
+  const sourceIndexXML = path.join(__dirname, 'views/sitemap.xml');
+  const sitemapIndexDoc = createXML(fs.readFileSync(sourceIndexXML).toString());
   const sitemapIndex = new Object(sitemapIndexDoc.end({ format: 'object' })) as SitemapIndex;
   sitemapIndex.sitemapindex.sitemap = [];
 
@@ -230,7 +230,7 @@ export function yoastSitemapIndex(hexo: Hexo) {
       priority: '0.2'
     });
   });
-  const destTagSitemap = join(hexo.public_dir, 'tag-sitemap.xml');
+  const destTagSitemap = path.join(hexo.public_dir, 'tag-sitemap.xml');
   writefile(destTagSitemap, createXML(sitemapGroup['tag']).end({ prettyPrint: true }));
   _log.info('tag sitemap saved', destTagSitemap);
 
@@ -257,7 +257,7 @@ export function yoastSitemapIndex(hexo: Hexo) {
       priority: '0.2'
     });
   });
-  const destCategorySitemap = join(hexo.public_dir, 'category-sitemap.xml');
+  const destCategorySitemap = path.join(hexo.public_dir, 'category-sitemap.xml');
   writefile(destCategorySitemap, createXML(sitemapGroup['category']).end({ prettyPrint: true }));
   _log.info('category sitemap saved', destCategorySitemap);
 
@@ -273,7 +273,7 @@ export function yoastSitemapIndex(hexo: Hexo) {
     lastmod: moment(latestCategoryDate).format('YYYY-MM-DDTHH:mm:ssZ')
   });
 
-  const destIndexSitemap = join(hexo.public_dir, 'sitemap.xml');
+  const destIndexSitemap = path.join(hexo.public_dir, 'sitemap.xml');
   writefile(destIndexSitemap, createXML(sitemapIndex).end({ prettyPrint: true }));
   _log.info('index sitemap saved', destIndexSitemap);
 }

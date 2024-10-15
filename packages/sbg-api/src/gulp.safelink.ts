@@ -1,10 +1,10 @@
 import ansiColors from 'ansi-colors';
-import { existsSync } from 'fs';
+import fs from 'fs-extra';
 import gulp from 'gulp';
-import path from 'path';
 import sf, { SafelinkOptions } from 'safelinkify';
 import { createWriteStream, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
+import path from 'upath';
 import { gulpOpt } from './gulp-options';
 
 /**
@@ -33,7 +33,7 @@ export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefine
     Logger.log(logname, ansiColors.red('disabled'));
   }
 
-  if (existsSync(workingDir) && !hasError) {
+  if (fs.existsSync(workingDir) && !hasError) {
     const defaultConfigSafelink: SafelinkOptions & Record<string, any> = {
       enable: false,
       exclude: [] as string[],

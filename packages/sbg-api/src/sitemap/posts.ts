@@ -1,8 +1,8 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import moment from 'moment-timezone';
-import { join } from 'path';
 import { writefile } from 'sbg-utility';
+import path from 'upath';
 import { create as createXML } from 'xmlbuilder2';
 import { sitemapItem } from './yoast-sitemap';
 
@@ -28,7 +28,7 @@ export default async function yoastSeoSitemapPosts(hexo: Hexo) {
     sitemapPostsList.push(info);
   });
 
-  const destSitemap = join(hexo.public_dir, 'post-sitemap.xml');
+  const destSitemap = path.join(hexo.public_dir, 'post-sitemap.xml');
   writefile(
     destSitemap,
     createXML({

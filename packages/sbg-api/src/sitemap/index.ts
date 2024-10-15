@@ -1,8 +1,8 @@
 import Bluebird from 'bluebird';
-import { readFileSync } from 'fs-extra';
+import fs from 'fs-extra';
 import gulp from 'gulp';
 import Hexo from 'hexo';
-import { full_url_for } from 'hexo-util';
+import hutil from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
 import {
@@ -18,13 +18,13 @@ import {
   sitemapCrawlerAsync,
   writefile
 } from 'sbg-utility';
-import { join } from 'upath';
+import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { yoastSeo } from './yoast-sitemap';
 
 /*
 // read existing sitemap.txt
-const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
+const sitemapTXT = path.join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
 let sitemaps = existsSync(sitemapTXT) ? array_remove_empty(readFileSync(sitemapTXT, 'utf-8').split(/\r?\n/gm)) : [];
 */
 let sitemaps = [] as string[];
@@ -70,7 +70,7 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
         });
 
         // dump
-        const saveto = join(getConfig().cwd, 'tmp/dump/sitemap/sitemap.json');
+        const saveto = path.join(getConfig().cwd, 'tmp/dump/sitemap/sitemap.json');
         writefile(saveto, JSON.stringify(mapped, null, 2));
 
         // return
@@ -103,10 +103,10 @@ export function generateSitemap(url?: string | null | undefined, deep = 0) {
  * write the sitemap
  * @param callback
  */
-function writeSitemap(callback?: (...args: any[]) => any) {
+function writeSitemap(this: any, callback?: (...args: any[]) => any) {
   let cb = noop;
   if (callback) cb = () => callback(sitemaps);
-  const sitemapTXT = join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
+  const sitemapTXT = path.join(getConfig().cwd, getConfig().public_dir || 'public', 'sitemap.txt');
   writefile(sitemapTXT, array_remove_empty(sitemaps).join('\n'));
   cb.apply(this);
 }
@@ -130,7 +130,7 @@ export function hexoGenerateSitemap(config = getConfig()) {
     instance.init().then(() => {
       instance.load().then(function () {
         env.addFilter('formatUrl', (str: string | undefined) => {
-          return full_url_for.call(instance, str);
+          return hutil.full_url_for.call(instance, str);
         });
         const config = setConfig(instance.config);
         // assign default config
@@ -175,8 +175,8 @@ export function hexoGenerateSitemap(config = getConfig()) {
           return resolve();
         }
 
-        const tmplSrc = join(__dirname, '_config_template_sitemap.xml');
-        const template = nunjucks.compile(readFileSync(tmplSrc).toString(), env);
+        const tmplSrc = path.join(__dirname, '_config_template_sitemap.xml');
+        const template = nunjucks.compile(fs.readFileSync(tmplSrc).toString(), env);
         const { tags: tagsCfg, categories: catsCfg, rel: relCfg } = sitemap;
         let data = template.render({
           config,
@@ -192,16 +192,16 @@ export function hexoGenerateSitemap(config = getConfig()) {
         //data = prettier.format(data, { parser: 'xml', plugins: [xmlplugin], endOfLine: 'lf' });
 
         // dump
-        console.log('sitemap.xml written', writefile(join(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data).file);
+        console.log('sitemap.xml written', writefile(path.join(config.cwd, 'tmp/dump/sitemap/sitemap.xml'), data).file);
 
         // write
-        const sitemapXml = join(config.cwd, config.public_dir, 'sitemap.xml');
+        const sitemapXml = path.join(config.cwd, config.public_dir, 'sitemap.xml');
         writefile(sitemapXml, data);
         instance.log.info('sitemap written', sitemapXml);
 
         if (!relCfg) return resolve();
         const baseURL = config.url.endsWith('/') ? config.url : config.url + '/';
-        const publicDir = join(config.cwd, config.public_dir);
+        const publicDir = path.join(config.cwd, config.public_dir);
         gulp
           .src('**/*.html', { cwd: publicDir, ignore: commonIgnore } as gulpOpt)
           .pipe(

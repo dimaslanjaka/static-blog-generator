@@ -1,9 +1,9 @@
 ///
+import { describe, expect, test } from '@jest/globals';
 import { fixturesCwd, testCwd } from './env.mjs';
 process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 ///
 
-import { describe, expect, test } from '@jest/globals';
 import { Application } from '../src';
 import validateCopy from './validate-copy';
 

@@ -38,23 +38,21 @@ export default [
     'plugin:@typescript-eslint/recommended', // Additional TypeScript rules
     'plugin:prettier/recommended' // Integrate Prettier for code formatting
   ),
-
   {
     linterOptions: {
       reportUnusedDisableDirectives: true // Report unused ESLint disable comments
     },
-
     languageOptions: {
       globals: {
         ...globals.browser, // Browser global variables
         ...globals.amd, // AMD module globals
         ...globals.node, // Node.js global variables
+        ...globals.jest, // Jest Environment
         $: 'readonly', // jQuery object
         jQuery: 'readonly', // jQuery object
         adsbygoogle: 'writable', // Google Ads
         hexo: 'readonly' // Hexo static site generator object
       },
-
       parser: tsParser, // Use TypeScript parser
       ecmaVersion: 2020, // Specify ECMAScript version 2020
       sourceType: 'module' // Enable ES6 modules

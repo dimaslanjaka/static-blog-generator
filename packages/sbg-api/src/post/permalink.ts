@@ -1,14 +1,11 @@
-import momentlib, { tz } from 'moment-timezone';
-import { debug, getConfig } from 'sbg-utility';
-import { trueCasePathSync } from 'true-case-path';
-import * as path from 'upath';
+import momentlib from 'moment-timezone';
+import { debug, getConfig, normalizePath } from 'sbg-utility';
+import path from 'upath';
 
 const moment = (input: momentlib.MomentInput) => {
-  tz.setDefault(getConfig().timezone || 'UTC');
+  momentlib.tz.setDefault(getConfig().timezone || 'UTC');
   return momentlib(input).tz(getConfig().timezone || 'UTC');
 };
-
-const normalizePath = (str: string) => path.toUnix(trueCasePathSync(str));
 
 /**
  * transform permalink format in `_config.yml`

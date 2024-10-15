@@ -1,22 +1,36 @@
 {
   // custom schema (non-vscode environment)
   "$schema": "https://json.schemastore.org/tsconfig",
-  // extends other typescript config file
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    // make dump output to temp folder
-    "outDir": "tmp/jest",
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-    /* Language and Environment */
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-
-    /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-
-    /* Type Checking */
-    "strict": false /* Enable all strict type-checking */,
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ES2019", "ES2020", "DOM", "ES6", "ESNext"],
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    /* Module Resolution Options */
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["jest"]
+  },
+  "exclude": [
+    "**/*.runner.*",
+    "**/*.explicit.*",
+    "**/*.builder.*",
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/tmp/**"
+  ],
+  "include": ["./test/**/*", "./src/**/*"]
 }

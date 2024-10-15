@@ -1,9 +1,9 @@
 import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
-import { existsSync, readdir } from 'fs-extra';
+import fs from 'fs-extra';
 import gulp from 'gulp';
 import { del, getConfig, Logger, writefile } from 'sbg-utility';
-import { join } from 'upath';
+import path from 'upath';
 
 /**
  * clean old archives (categories, tags, pagination) from deployment directory
@@ -13,37 +13,39 @@ export default async function cleanArchive(callback?: gulp.TaskFunctionCallback 
   const logname = 'clean:' + ansiColors.grey('archives');
 
   // clean archives, tags, categories
-  const archives = join(config.deploy.deployDir, config.archive_dir);
-  const categories = join(config.deploy.deployDir, config.category_dir);
-  const tags = join(config.deploy.deployDir, config.tag_dir);
-  const folders = [archives, tags, categories].filter((str) => existsSync(str));
+  const archives = path.join(config.deploy.deployDir, config.archive_dir);
+  const categories = path.join(config.deploy.deployDir, config.category_dir);
+  const tags = path.join(config.deploy.deployDir, config.tag_dir);
+  const folders = [archives, tags, categories].filter((str) => fs.existsSync(str));
 
   // push language folder to be deleted from deploy dir
   if (Array.isArray(config.language)) {
-    const langDir = config.language.map((path) => join(config.deploy.deployDir, path));
+    const langDir = config.language.map((path) => path.join(config.deploy.deployDir, path));
     folders.push(...langDir);
   } else if (typeof config.language === 'string' && String(config.language).trim().length > 0) {
-    folders.push(join(config.deploy.deployDir, String(config.language)));
+    folders.push(path.join(config.deploy.deployDir, String(config.language)));
   }
 
   // delete pagination
-  const pagesDir = join(config.deploy.deployDir, 'page');
-  if (existsSync(pagesDir)) {
-    const pages = (await readdir(pagesDir)).filter((str) => /^\d+$/.test(str)).map((str) => join(pagesDir, str));
+  const pagesDir = path.join(config.deploy.deployDir, 'page');
+  if (fs.existsSync(pagesDir)) {
+    const pages = (await fs.readdir(pagesDir))
+      .filter((str) => /^\d+$/.test(str))
+      .map((str) => path.join(pagesDir, str));
     folders.push(...pages);
   }
 
   const promises: Promise<any>[] = [];
 
   // dump to file
-  const dumpfile = join(config.cwd, 'tmp/dump/clean.txt');
+  const dumpfile = path.join(config.cwd, 'tmp/dump/clean.txt');
   writefile(dumpfile, folders.join('\n'));
   Logger.log(logname, 'list deleted files', dumpfile);
 
   for (let i = 0; i < folders.length; i++) {
     const pathStr = folders[i];
     try {
-      if (existsSync(pathStr)) promises.push(del(pathStr));
+      if (fs.existsSync(pathStr)) promises.push(del(pathStr));
     } catch {
       //s
     }
