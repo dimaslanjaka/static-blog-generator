@@ -48,9 +48,10 @@ const plugins = [
 const _partials = {
   input: inputs,
   output: [
+    // bundle js as ESM by default
     {
       dir: 'dist',
-      format: 'cjs',
+      format: 'esm',
       sourcemap: false,
       preserveModules: true,
       exports: 'named',
@@ -58,6 +59,7 @@ const _partials = {
         hexo: 'hexo'
       }
     },
+    // bundle CJS
     {
       dir: 'dist',
       format: 'cjs',
@@ -69,6 +71,7 @@ const _partials = {
         hexo: 'hexo'
       }
     },
+    // bundle mjs as ESM
     {
       dir: 'dist',
       format: 'esm',
