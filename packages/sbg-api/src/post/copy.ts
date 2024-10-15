@@ -92,7 +92,7 @@ export function copyAllPosts(config?: ReturnType<typeof getConfig>) {
         const fileWithoutCwd = removeCwd(filePath).replace(/[/\\]src-posts[/\\]/, '');
         const dest = path.join(generatedPostDir, fileWithoutCwd);
         fs.ensureDirSync(path.dirname(dest));
-        fs.writeFileSync(dest, content);
+        fs.writeFileSync(dest, compile);
       }
     },
     noop
