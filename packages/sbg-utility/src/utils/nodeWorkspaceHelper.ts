@@ -6,7 +6,7 @@ import path from 'path';
  * search yarn root workspace folder
  * @param ctx option with property `base_dir`
  */
-function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
+export function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
   const baseDir = ctx.base_dir;
 
   /**
@@ -54,6 +54,39 @@ function findYarnRootWorkspace(ctx: { base_dir: string }): string | null {
   return null;
 }
 
-// export = findYarnRootWorkspace;
-export { findYarnRootWorkspace };
+/**
+ * Resolve the path of a command binary from node_modules/.bin.
+ *
+ * @param commandName - The name of the command to resolve.
+ * @returns The resolved command path or the original command name if not found.
+ */
+export function resolveCommand(commandName: string) {
+  const dirs: any[] = [__dirname, process.cwd()];
+  if (typeof process === 'object') {
+    if ('mainModule' in process) dirs.push((process as any).mainModule?.paths[0].split('node_modules')[0].slice(0, -1));
+    if ('main' in process) dirs.push((process as any).main?.paths[0].split('node_modules')[0].slice(0, -1));
+  }
+  try {
+    dirs.push(findYarnRootWorkspace({ base_dir: process.cwd() }));
+  } catch (_) {
+    //
+  }
+  const cmdPath = dirs
+    .filter((str) => typeof str === 'string' && str.length > 0)
+    .map((cwd) => {
+      const nm = path.join(cwd, 'node_modules/.bin');
+      return path.join(nm, commandName);
+    })
+    .filter(fs.existsSync)[0];
+
+  if (!cmdPath) {
+    console.error(`Command '${commandName}' not found in node_modules/.bin`);
+    return commandName; // Return the original command name
+  }
+
+  return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
+}
+
+export const cmd = resolveCommand;
+
 export default findYarnRootWorkspace;

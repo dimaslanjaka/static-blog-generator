@@ -1,6 +1,6 @@
 {
   "name": "sbg-utility",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "static-blog-generator utility",
   "type": "module",
   "main": "dist/index.js",
@@ -25,7 +25,7 @@
   "scripts": {
     "update:ncu": "npx npm-check-updates -u -x async,progress,cheerio,jsdom,deepmerge-ts",
     "update": "run-s \"update:**\"",
-    "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest --runInBand --detectOpenHandles",
+    "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp build",
     "build-pack": "yarn run build && yarn run pack",
