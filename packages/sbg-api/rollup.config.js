@@ -34,6 +34,7 @@ const plugins = [
 const _partials = {
   input: inputs,
   output: [
+    // bundle .js as ESM
     {
       dir: 'dist',
       format: 'esm',
@@ -44,6 +45,7 @@ const _partials = {
         hexo: 'hexo'
       }
     },
+    // bundle .cjs as CommonJS
     {
       dir: 'dist',
       format: 'cjs',
@@ -55,6 +57,7 @@ const _partials = {
         hexo: 'hexo'
       }
     },
+    // build .mjs as ESM
     {
       dir: 'dist',
       format: 'esm',
