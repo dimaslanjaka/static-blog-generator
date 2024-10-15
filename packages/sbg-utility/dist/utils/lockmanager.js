@@ -1,39 +1,46 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
-const os_1 = tslib_1.__importDefault(require("os"));
-const path_1 = tslib_1.__importDefault(require("path"));
-const filemanager_1 = require("./filemanager");
-const scheduler_1 = tslib_1.__importDefault(require("./scheduler"));
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var fs = require('fs-extra');
+var os = require('os');
+var path = require('path');
+require('bluebird');
+require('minimatch');
+require('upath');
+require('./filemanager/case-path.js');
+var writefile = require('./filemanager/writefile.js');
+var scheduler = require('./scheduler.js');
+
 const locks = [];
 class LockManager {
+    folder = path.join(process.cwd(), 'tmp/cache/lock');
+    file;
     constructor(name) {
-        this.folder = path_1.default.join(process.cwd(), 'tmp/cache/lock');
-        this.file = path_1.default.join(this.folder, name, os_1.default.platform() + '-index.lock');
+        this.file = path.join(this.folder, name, os.platform() + '-index.lock');
         locks.push(this);
     }
     lock() {
-        return (0, filemanager_1.writefile)(this.file, '');
+        return writefile.writefile(this.file, '');
     }
     release() {
-        console.log(path_1.default.dirname(this.file), 'released');
-        if (!fs_extra_1.default.existsSync(this.file))
+        console.log(path.dirname(this.file), 'released');
+        if (!fs.existsSync(this.file))
             return;
-        return fs_extra_1.default.rmSync(this.file, { recursive: true });
+        return fs.rmSync(this.file, { recursive: true });
     }
     releaseAsync() {
-        console.log(path_1.default.dirname(this.file), 'released');
-        if (!fs_extra_1.default.existsSync(this.file))
+        console.log(path.dirname(this.file), 'released');
+        if (!fs.existsSync(this.file))
             return Promise.resolve();
-        return fs_extra_1.default.rm(this.file, { recursive: true });
+        return fs.rm(this.file, { recursive: true });
     }
     exist() {
-        return fs_extra_1.default.existsSync(this.file);
+        return fs.existsSync(this.file);
     }
 }
-exports.default = LockManager;
-scheduler_1.default.add('clean locks', () => {
+scheduler.scheduler.add('clean locks', () => {
     locks.forEach((lock) => lock.release());
 });
-//# sourceMappingURL=lockmanager.js.map
+
+exports.default = LockManager;

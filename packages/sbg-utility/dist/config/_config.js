@@ -1,33 +1,55 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.projectIgnores = exports.commonIgnore = exports.deployConfig = exports.getConfig = exports.setConfig = exports.fetchConfig = void 0;
-const tslib_1 = require("tslib");
-const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
-const upath_1 = require("upath");
-const yaml_1 = tslib_1.__importDefault(require("yaml"));
-const utils = tslib_1.__importStar(require("../utils"));
-const filemanager_1 = require("../utils/filemanager");
-const defaults = tslib_1.__importStar(require("./defaults"));
-const configFileJSON = (0, upath_1.join)(__dirname, '_config.json');
-if (!fs_extra_1.default.existsSync(configFileJSON))
-    fs_extra_1.default.writeFileSync(configFileJSON, '{}');
-let settledConfig = defaults.getDefaultConfig();
+'use strict';
+
+var fs = require('fs-extra');
+var url = require('node:url');
+var path = require('upath');
+var yaml = require('yaml');
+require('ansi-colors');
+require('stream');
+require('../utils/logger.js');
+require('debug');
+require('../utils/filemanager/case-path.js');
+require('path');
+require('bluebird');
+require('minimatch');
+var writefile = require('../utils/filemanager/writefile.js');
+require('fs');
+require('micromatch');
+require('axios');
+require('crypto');
+require('glob');
+require('../utils/JSON-serializer.js');
+require('../utils/JSON.js');
+require('../utils/lockmanager.js');
+require('hexo-util');
+require('nunjucks');
+var object = require('../utils/object.js');
+require('../utils/promisify.js');
+require('../utils/scheduler.js');
+var defaultConfig = require('./default-config.js');
+
+var _documentCurrentScript = typeof document !== 'undefined' ? document.currentScript : null;
+const __filename$1 = url.fileURLToPath((typeof document === 'undefined' ? require('u' + 'rl').pathToFileURL(__filename).href : (_documentCurrentScript && _documentCurrentScript.tagName.toUpperCase() === 'SCRIPT' && _documentCurrentScript.src || new URL('config/_config.js', document.baseURI).href)));
+const __dirname$1 = path.dirname(__filename$1);
+const configFileJSON = path.join(__dirname$1, '_config.json');
+if (!fs.existsSync(configFileJSON))
+    fs.writeFileSync(configFileJSON, '{}');
+let settledConfig = defaultConfig.getDefaultConfig();
 /**
  * find `_config.yml`
  * @param fileYML path to file `_config.yml` or working directory
  */
 function fetchConfig(fileYML) {
     if (!fileYML) {
-        fileYML = (0, upath_1.join)(process.cwd(), '_config.yml');
+        fileYML = path.join(process.cwd(), '_config.yml');
     }
     else if (!fileYML.endsWith('_config.yml')) {
         fileYML += '/_config.yml';
     }
-    const configYML = yaml_1.default.parse(fs_extra_1.default.readFileSync((0, upath_1.resolve)(fileYML), 'utf-8'));
-    setConfig(utils.orderKeys(configYML));
-    (0, filemanager_1.writefile)(configFileJSON, JSON.stringify(configYML, null, 2));
+    const configYML = yaml.parse(fs.readFileSync(path.resolve(fileYML), 'utf-8'));
+    setConfig(object.orderKeys(configYML));
+    writefile.writefile(configFileJSON, JSON.stringify(configYML, null, 2));
 }
-exports.fetchConfig = fetchConfig;
 // fetch _config.yml first init
 // fetchConfig(join(process.cwd(), '_config.yml'));
 /**
@@ -39,7 +61,6 @@ function setConfig(obj) {
     settledConfig = Object.assign(settledConfig || {}, obj);
     return getConfig();
 }
-exports.setConfig = setConfig;
 /**
  * Config getter
  * * useful for jest
@@ -49,13 +70,11 @@ function getConfig() {
     settledConfig.deploy = Object.assign(settledConfig.deploy || {}, deployConfig());
     return settledConfig;
 }
-exports.getConfig = getConfig;
 /**
  * get deployment config
  * @returns
  */
 function deployConfig() {
-    var _a;
     let deployDir;
     if (settledConfig.deploy_dir) {
         // deploy_dir was set
@@ -63,15 +82,14 @@ function deployConfig() {
     }
     else {
         // fallback get from deploy.type
-        deployDir = (0, upath_1.join)(settledConfig.cwd, '.deploy_' + ((_a = settledConfig.deploy) === null || _a === void 0 ? void 0 : _a.type) || 'git');
+        deployDir = path.join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
     }
     // subfolder - assign deploy.folder
     if (settledConfig.deploy.folder) {
-        deployDir = (0, upath_1.join)(deployDir, settledConfig.folder);
+        deployDir = path.join(deployDir, settledConfig.folder);
     }
     return { deployDir };
 }
-exports.deployConfig = deployConfig;
 /**
  * common ignore files
  * @example
@@ -79,7 +97,7 @@ exports.deployConfig = deployConfig;
  * const excludes = Array.isArray(config.exclude) ? config.exclude : [];
  * excludes.push(...commonIgnore);
  */
-exports.commonIgnore = [
+const commonIgnore = [
     '**/yandex_*.html', // skip yandex verification file
     // '**/comments.html',
     // '**/disqus-comments.html',
@@ -103,5 +121,11 @@ exports.commonIgnore = [
 /**
  * array of config.exclude, config.ignore
  */
-exports.projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
-//# sourceMappingURL=_config.js.map
+const projectIgnores = [...(getConfig().skip_render || []), ...(getConfig().ignore || [])];
+
+exports.commonIgnore = commonIgnore;
+exports.deployConfig = deployConfig;
+exports.fetchConfig = fetchConfig;
+exports.getConfig = getConfig;
+exports.projectIgnores = projectIgnores;
+exports.setConfig = setConfig;

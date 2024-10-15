@@ -1,7 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.makeid = void 0;
-const hash_1 = require("./hash");
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var hash = require('./hash.js');
+
 /**
  * Persistent UUID V4 Generator based on inputted string
  * @param fromString `null`: based on caller function name, line, and path
@@ -11,20 +13,19 @@ const hash_1 = require("./hash");
  * for (let index = 0; index < 5; index++) console.log(uuidv4()); // <- will printted same id
  */
 function uuidv4(fromString) {
-    var _a;
     let original = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'; // length 8-4-4-4-12
     if (typeof fromString === 'string') {
-        const hash = (0, hash_1.md5)(fromString);
+        const hash$1 = hash.md5(fromString);
         original = original
-            .replace(/^xxxxxxxx-xxxx/, hash.slice(0, 8) + '-' + hash.slice(9, 13))
-            .replace(/xxx-xxxxxxxxxxxx$/, hash.slice(14, 17) + '-' + hash.slice(18, 30));
+            .replace(/^xxxxxxxx-xxxx/, hash$1.slice(0, 8) + '-' + hash$1.slice(9, 13))
+            .replace(/xxx-xxxxxxxxxxxx$/, hash$1.slice(14, 17) + '-' + hash$1.slice(18, 30));
     }
     else {
         const err = new Error();
-        const caller_line = ((_a = err.stack) === null || _a === void 0 ? void 0 : _a.split('\n')[2]) || '';
+        const caller_line = err.stack?.split('\n')[2] || '';
         const index = caller_line.indexOf('at ');
         const dumpClean = caller_line.slice(index + 2, caller_line.length);
-        return uuidv4((0, hash_1.md5)(dumpClean));
+        return uuidv4(hash.md5(dumpClean));
     }
     return original.replace(/[xy]/g, function (c) {
         if (typeof fromString !== 'string') {
@@ -42,7 +43,6 @@ function uuidv4(fromString) {
         }
     });
 }
-exports.default = uuidv4;
 /**
  * generate random id
  * @param n
@@ -58,5 +58,6 @@ const makeid = (n = 36, prefix = '') => {
         text += charset.charAt(Math.floor(Math.random() * charset.length));
     return text;
 };
+
+exports.default = uuidv4;
 exports.makeid = makeid;
-//# sourceMappingURL=uuid.js.map

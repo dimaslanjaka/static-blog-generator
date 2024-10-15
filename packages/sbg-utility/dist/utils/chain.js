@@ -1,74 +1,63 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.chain = void 0;
-const tslib_1 = require("tslib");
-const ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
-const stream_1 = tslib_1.__importDefault(require("stream"));
-const logger_1 = tslib_1.__importDefault(require("./logger"));
+'use strict';
+
+var ansiColors = require('ansi-colors');
+var stream = require('stream');
+var logger = require('./logger.js');
+
 /**
  * Chainable function runner
  * @param schedule array of function objects
  */
-function chain(schedule) {
-    return tslib_1.__awaiter(this, void 0, void 0, function* () {
-        // NodeJS.ReadWriteStream | Promise<any>
-        const run = function (instance) {
-            return new Promise(function (resolve) {
-                var _a;
-                const logname = ansi_colors_1.default.blueBright('chain') + '.' + ansi_colors_1.default.yellowBright('run');
-                if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.before) {
-                    instance.opt.before();
-                }
-                const obj = instance.callback.call && instance.callback.call(null);
-                if (isReadableStream(obj) && obj instanceof stream_1.default.Stream) {
-                    // Logger.log('readable stream');
-                    return obj.once('end', function () {
-                        var _a;
-                        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-                            if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.after) {
-                                yield instance.opt.after();
-                                return resolve(this);
-                            }
-                            else {
-                                return resolve(this);
-                            }
-                        });
-                    });
-                }
-                else if (obj instanceof stream_1.default.Writable) {
-                    logger_1.default.log('writable stream');
-                }
-                else if (isPromise(obj)) {
-                    //Logger.log('promises');
-                    return obj.then(function () {
-                        var _a;
-                        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-                            if ((_a = instance.opt) === null || _a === void 0 ? void 0 : _a.after) {
-                                yield instance.opt.after();
-                                return resolve(this);
-                            }
-                            else {
-                                return resolve(this);
-                            }
-                        });
-                    });
-                }
-                else {
-                    if (typeof instance.callback !== 'function') {
-                        logger_1.default.log(logname, 'cannot determine method instances');
+async function chain(schedule) {
+    // NodeJS.ReadWriteStream | Promise<any>
+    const run = function (instance) {
+        return new Promise((resolve) => {
+            const logname = ansiColors.blueBright('chain') + '.' + ansiColors.yellowBright('run');
+            if (instance.opt?.before) {
+                instance.opt.before();
+            }
+            const obj = instance.callback.call && instance.callback.call(null);
+            if (isReadableStream(obj) && obj instanceof stream.Stream) {
+                // Logger.log('readable stream');
+                return obj.once('end', async () => {
+                    if (instance.opt?.after) {
+                        await instance.opt.after();
+                        return resolve(this);
                     }
+                    else {
+                        return resolve(this);
+                    }
+                });
+            }
+            else if (obj instanceof stream.Writable) {
+                logger.Logger.log('writable stream');
+            }
+            else if (isPromise(obj)) {
+                //Logger.log('promises');
+                return obj.then(async () => {
+                    if (instance.opt?.after) {
+                        await instance.opt.after();
+                        return resolve(this);
+                    }
+                    else {
+                        return resolve(this);
+                    }
+                });
+            }
+            else {
+                if (typeof instance.callback !== 'function') {
+                    logger.Logger.log(logname, 'cannot determine method instances');
                 }
-                resolve.bind(this)(chain.bind(this));
-            });
-        };
-        while (schedule.length > 0) {
-            const instance = schedule.shift();
-            if (typeof instance !== 'undefined')
-                yield run(instance);
-        }
-    });
+            }
+            resolve.bind(this)(chain.bind(this));
+        });
+    };
+    while (schedule.length > 0) {
+        const instance = schedule.shift();
+        if (typeof instance !== 'undefined')
+            await run(instance);
+    }
 }
-exports.chain = chain;
 /**
  * check object is Promises
  * @param p
@@ -93,6 +82,7 @@ function isPromise(p) {
  * @returns
  */
 function isReadableStream(obj) {
-    return obj instanceof stream_1.default.Stream && typeof (obj._read === 'function') && typeof (obj._readableState === 'object');
+    return obj instanceof stream.Stream && typeof (obj._read === 'function') && typeof (obj._readableState === 'object');
 }
-//# sourceMappingURL=chain.js.map
+
+exports.chain = chain;

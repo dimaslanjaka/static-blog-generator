@@ -1,15 +1,16 @@
-"use strict";
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var ansiColors = require('ansi-colors');
+var Bluebird = require('bluebird');
+var chain = require('./chain.js');
+
 /** SCHEDULER JOB **/
 /*** Postpone executing functions ***/
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.scheduler = exports.bindProcessExit = void 0;
-const tslib_1 = require("tslib");
-const ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
-const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
-const chain_1 = require("./chain");
 //const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 const _log = console;
-const logname = ansi_colors_1.default.magentaBright('[scheduler]');
+const logname = ansiColors.magentaBright('[scheduler]');
 const fns = {};
 let triggered;
 /**
@@ -25,35 +26,32 @@ function bindProcessExit(key, fn) {
         triggerProcess();
     }
 }
-exports.bindProcessExit = bindProcessExit;
 /**
  * Handler function on process exit
  * @param options
  * @param exitCode
  */
-function exitHandler(options, exitCode = 0) {
-    return tslib_1.__awaiter(this, void 0, void 0, function* () {
-        const funcs = [];
-        for (const key in fns) {
-            if (Object.prototype.hasOwnProperty.call(fns, key)) {
-                funcs.push({
-                    callback: fns[key],
-                    opt: {
-                        before: () => {
-                            if (scheduler.verbose)
-                                _log.info(logname, `executing function key: ${key}`);
-                        }
+async function exitHandler(options, exitCode = 0) {
+    const funcs = [];
+    for (const key in fns) {
+        if (Object.prototype.hasOwnProperty.call(fns, key)) {
+            funcs.push({
+                callback: fns[key],
+                opt: {
+                    before: () => {
+                        if (scheduler.verbose)
+                            _log.info(logname, `executing function key: ${key}`);
                     }
-                });
-            }
+                }
+            });
         }
-        if (options === null || options === void 0 ? void 0 : options.cleanup)
-            (0, chain_1.chain)(funcs);
-        if ((options === null || options === void 0 ? void 0 : options.cleanup) && scheduler.verbose)
-            _log.info(logname, `clean exit(${exitCode})`);
-        if (options === null || options === void 0 ? void 0 : options.exit)
-            process.exit();
-    });
+    }
+    if (options?.cleanup)
+        chain.chain(funcs);
+    if (options?.cleanup && scheduler.verbose)
+        _log.info(logname, `clean exit(${exitCode})`);
+    if (options?.exit)
+        process.exit();
 }
 /**
  * Trigger Process Bindings
@@ -89,10 +87,12 @@ const functions = {};
  * ```
  */
 class scheduler {
+    static verbose = true;
     constructor() {
         if (!scheduler.registered)
             scheduler.register();
     }
+    static registered = false;
     /**
      * Register scheduler to process system
      */
@@ -118,6 +118,7 @@ class scheduler {
             }, 3000);
         });
     }
+    static postponeCounter = 0;
     /**
      * Add function to postpone, the functions will be executed every 5 items added
      */
@@ -147,21 +148,17 @@ class scheduler {
     /**
      * Execute all function lists
      */
-    static executeAll() {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const keys = Object.keys(functions);
-            for (let i = 0; i < keys.length; i++) {
-                const key = keys[i];
-                if (scheduler.verbose)
-                    _log.info(logname, 'executing', key);
-                yield bluebird_1.default.promisify(functions[key])();
-            }
-        });
+    static async executeAll() {
+        const keys = Object.keys(functions);
+        for (let i = 0; i < keys.length; i++) {
+            const key = keys[i];
+            if (scheduler.verbose)
+                _log.info(logname, 'executing', key);
+            await Bluebird.promisify(functions[key])();
+        }
     }
 }
-exports.scheduler = scheduler;
-scheduler.verbose = true;
-scheduler.registered = false;
-scheduler.postponeCounter = 0;
+
+exports.bindProcessExit = bindProcessExit;
 exports.default = scheduler;
-//# sourceMappingURL=scheduler.js.map
+exports.scheduler = scheduler;

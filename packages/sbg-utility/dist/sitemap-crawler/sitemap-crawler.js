@@ -1,24 +1,45 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.sitemapCrawlerAsync = exports.sitemapCrawler = exports.SiteMapCrawlerCore = void 0;
-const tslib_1 = require("tslib");
-const async_1 = tslib_1.__importDefault(require("async"));
-const bluebird_1 = tslib_1.__importDefault(require("bluebird"));
-const cheerio_1 = tslib_1.__importDefault(require("cheerio"));
-const progress_1 = tslib_1.__importDefault(require("progress"));
-const request_1 = tslib_1.__importDefault(require("request"));
-const utils_1 = require("../utils");
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var async = require('async');
+var Bluebird = require('bluebird');
+var cheerio = require('cheerio');
+var ProgressBar = require('progress');
+var request = require('request');
+require('ansi-colors');
+require('stream');
+require('../utils/logger.js');
+var debug = require('../utils/debug.js');
+require('../utils/filemanager/case-path.js');
+require('fs-extra');
+require('path');
+require('minimatch');
+require('upath');
+require('fs');
+require('micromatch');
+require('axios');
+require('crypto');
+require('glob');
+require('../utils/JSON-serializer.js');
+require('../utils/JSON.js');
+require('../utils/lockmanager.js');
+require('hexo-util');
+require('nunjucks');
+require('../utils/promisify.js');
+require('../utils/scheduler.js');
+
 class SiteMapCrawlerCore {
     static start(links, core_opt, isCounting, callback) {
         const { isProgress, isLog } = core_opt;
         const siteMap = {};
         let bar;
         if (isProgress) {
-            bar = new progress_1.default('siteMap-crawling [:bar] :percent', {
+            bar = new ProgressBar('siteMap-crawling [:bar] :percent', {
                 total: links.length
             });
         }
-        async_1.default.each(links, (link, callback) => {
+        async.each(links, (link, callback) => {
             const done = () => {
                 if (isProgress) {
                     bar.tick();
@@ -26,7 +47,7 @@ class SiteMapCrawlerCore {
                 callback();
             };
             const self = this;
-            (0, request_1.default)(link, (err, res, body) => {
+            request(link, (err, res, body) => {
                 if (err) {
                     if (isLog) {
                         const { errno, code, syscall, host } = err;
@@ -35,17 +56,16 @@ class SiteMapCrawlerCore {
                     return done();
                 }
                 try {
-                    const $ = cheerio_1.default.load(body);
+                    const $ = cheerio.load(body);
                     const hrefs = $('[href]');
                     const filteredLinks = new Set();
                     hrefs.each(function (i) {
-                        var _a, _b;
-                        if (((_a = hrefs.eq(i).get(0)) === null || _a === void 0 ? void 0 : _a.tagName.toLowerCase()) !== 'a') {
+                        if (hrefs.eq(i).get(0)?.tagName.toLowerCase() !== 'a') {
                             const href = hrefs.eq(i).attr('href');
                             if (!href || !/(\/|.html)$/gi.test(href))
                                 return;
                         }
-                        const href = (_b = self.filterLink(link, hrefs.eq(i).attr('href') || '')) === null || _b === void 0 ? void 0 : _b.trim();
+                        const href = self.filterLink(link, hrefs.eq(i).attr('href') || '')?.trim();
                         if (typeof href === 'string' && href.length > 0) {
                             const dirUrl = link.substring(0, link.lastIndexOf('/'));
                             if (/^https?:\/\//i.test(href.trim())) {
@@ -73,7 +93,7 @@ class SiteMapCrawlerCore {
                         siteMap[link] = arrayLinks;
                     }
                 }
-                catch (_a) {
+                catch {
                     console.log('sitemap-crawler', 'cannot parse', link);
                 }
                 return done();
@@ -125,7 +145,6 @@ class SiteMapCrawlerCore {
         return null;
     }
 }
-exports.SiteMapCrawlerCore = SiteMapCrawlerCore;
 /**
  * add protocol
  * @param link
@@ -133,11 +152,11 @@ exports.SiteMapCrawlerCore = SiteMapCrawlerCore;
  */
 function attachProtocol(link) {
     if (link.startsWith('/')) {
-        (0, utils_1.debug)('sitemap-crawler')('start with slash', link);
+        debug.debug('sitemap-crawler')('start with slash', link);
         return '';
     }
     else if (link.startsWith('#')) {
-        (0, utils_1.debug)('sitemap-crawler')('start with hash', link);
+        debug.debug('sitemap-crawler')('start with hash', link);
         return '';
     }
     if (!/^https?:/i.test(link)) {
@@ -170,7 +189,6 @@ const sitemapCrawler = (link, opts, callback) => {
         isLog
     }, isCounting, callback || noop);
 };
-exports.sitemapCrawler = sitemapCrawler;
 const asyncResults = {};
 /**
  * Sitemap Crawler Asynchronous
@@ -179,13 +197,13 @@ const asyncResults = {};
  * @returns
  */
 function sitemapCrawlerAsync(link, opts) {
-    return new bluebird_1.default((resolve) => {
+    return new Bluebird((resolve) => {
         // assign with default option
         opts = Object.assign({ deep: 0, isLog: false, keepQuery: false, isProgress: false }, opts || {});
         // crawler
         const crawl = (url) => {
-            return new bluebird_1.default((resolveCrawl) => {
-                (0, exports.sitemapCrawler)(url, opts, function (e, links) {
+            return new Bluebird((resolveCrawl) => {
+                sitemapCrawler(url, opts, function (e, links) {
                     if (!e) {
                         const key = new URL(url).origin;
                         // append to asyncResult
@@ -201,7 +219,7 @@ function sitemapCrawlerAsync(link, opts) {
         let linkArr = [];
         const crawled = [];
         const schedule = () => {
-            return new bluebird_1.default((resolveSchedule) => {
+            return new Bluebird((resolveSchedule) => {
                 const url = linkArr.shift();
                 if (crawled.includes(url))
                     return resolveSchedule();
@@ -225,7 +243,7 @@ function sitemapCrawlerAsync(link, opts) {
         const deepIterate = () => {
             return new Promise((resolveLoop) => {
                 schedule().then(() => {
-                    if (typeof (opts === null || opts === void 0 ? void 0 : opts.deep) === 'number') {
+                    if (typeof opts?.deep === 'number') {
                         if (opts.deep > 0) {
                             opts.deep = opts.deep - 1;
                             linkArr = Object.values(asyncResults).flat(1);
@@ -249,8 +267,6 @@ function sitemapCrawlerAsync(link, opts) {
         });
     });
 }
-exports.sitemapCrawlerAsync = sitemapCrawlerAsync;
-exports.default = exports.sitemapCrawler;
 function noop() {
     //
 }
@@ -282,4 +298,8 @@ function fixUrl(links) {
         return a === b ? 0 : a < b ? -1 : 1;
     }));
 }
-//# sourceMappingURL=sitemap-crawler.js.map
+
+exports.SiteMapCrawlerCore = SiteMapCrawlerCore;
+exports.default = sitemapCrawler;
+exports.sitemapCrawler = sitemapCrawler;
+exports.sitemapCrawlerAsync = sitemapCrawlerAsync;

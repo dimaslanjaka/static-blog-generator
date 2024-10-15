@@ -1,21 +1,30 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.createConfig = void 0;
-const tslib_1 = require("tslib");
-const events_1 = tslib_1.__importDefault(require("events"));
-const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
-const upath_1 = tslib_1.__importDefault(require("upath"));
-const filemanager_1 = require("../utils/filemanager");
-const configWrapperFile = upath_1.default.join(__dirname, '_config_wrapper.json');
-if (!fs_extra_1.default.existsSync(configWrapperFile))
-    fs_extra_1.default.writeFileSync(configWrapperFile, '{}');
-const configWrapper = fs_extra_1.default.existsSync(fs_extra_1.default.readFileSync(configWrapperFile, 'utf-8'))
+'use strict';
+
+var EventEmitter = require('events');
+var fs = require('fs-extra');
+var url = require('node:url');
+var path = require('upath');
+require('path');
+require('bluebird');
+require('minimatch');
+require('../utils/filemanager/case-path.js');
+var writefile = require('../utils/filemanager/writefile.js');
+
+var _documentCurrentScript = typeof document !== 'undefined' ? document.currentScript : null;
+const __filename$1 = url.fileURLToPath((typeof document === 'undefined' ? require('u' + 'rl').pathToFileURL(__filename).href : (_documentCurrentScript && _documentCurrentScript.tagName.toUpperCase() === 'SCRIPT' && _documentCurrentScript.src || new URL('config/config-wrapper.js', document.baseURI).href)));
+const __dirname$1 = path.dirname(__filename$1);
+const configWrapperFile = path.join(__dirname$1, '_config_wrapper.json');
+if (!fs.existsSync(configWrapperFile))
+    fs.writeFileSync(configWrapperFile, '{}');
+const configWrapper = fs.existsSync(fs.readFileSync(configWrapperFile, 'utf-8'))
     ? JSON.parse(configWrapperFile)
     : {};
 /**
  * Create/Update config wrapper
  */
-class createConfig extends events_1.default {
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
+class createConfig extends EventEmitter {
+    cname;
     /**
      * Create/Update config wrapper
      * @param name config name
@@ -50,10 +59,10 @@ class createConfig extends events_1.default {
      */
     update(value) {
         configWrapper[this.cname] = Object.assign({}, this.get(), value);
-        fs_extra_1.default.accessSync(configWrapperFile, fs_extra_1.default.constants.W_OK);
-        (0, filemanager_1.writefile)(configWrapperFile, JSON.stringify(configWrapper, null, 2));
+        fs.accessSync(configWrapperFile, fs.constants.W_OK);
+        writefile.writefile(configWrapperFile, JSON.stringify(configWrapper, null, 2));
         this.emit('update');
     }
 }
+
 exports.createConfig = createConfig;
-//# sourceMappingURL=config-wrapper.js.map

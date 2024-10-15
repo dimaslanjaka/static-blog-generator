@@ -1,33 +1,51 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpCached = exports.getShaFile = void 0;
-const tslib_1 = require("tslib");
-const crypto_1 = tslib_1.__importDefault(require("crypto"));
-const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
-const os_1 = require("os");
-const through2_1 = tslib_1.__importDefault(require("through2"));
-const upath_1 = require("upath");
-const _config_1 = require("../config/_config");
-const utils_1 = require("../utils");
-const filemanager_1 = require("../utils/filemanager");
-const hash_1 = require("../utils/hash");
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var crypto = require('crypto');
+var fs = require('fs-extra');
+var os = require('os');
+var through2 = require('through2');
+var path = require('upath');
+var _config = require('../config/_config.js');
+require('ansi-colors');
+require('stream');
+require('../utils/logger.js');
+require('debug');
+require('../utils/filemanager/case-path.js');
+require('path');
+require('bluebird');
+require('minimatch');
+var normalizePath = require('../utils/filemanager/normalizePath.js');
+var writefile = require('../utils/filemanager/writefile.js');
+require('fs');
+require('micromatch');
+var hash = require('../utils/hash.js');
+require('../utils/JSON-serializer.js');
+require('../utils/JSON.js');
+require('../utils/lockmanager.js');
+require('hexo-util');
+require('nunjucks');
+var persistentCache = require('../utils/persistent-cache.js');
+require('../utils/promisify.js');
+require('../utils/scheduler.js');
+
 /**
  * calculate sha1sum of file
  * @param file
  * @returns
  */
 function getShaFile(file) {
-    if (fs_extra_1.default.statSync(file).isDirectory())
+    if (fs.statSync(file).isDirectory())
         return null;
-    const testFile = fs_extra_1.default.readFileSync(file);
-    const sha1sum = crypto_1.default.createHash('sha1').update(testFile).digest('hex');
+    const testFile = fs.readFileSync(file);
+    const sha1sum = crypto.createHash('sha1').update(testFile).digest('hex');
     return sha1sum;
 }
-exports.getShaFile = getShaFile;
 function cacheLib(options) {
-    const config = (0, _config_1.getConfig)();
-    options = Object.assign({ name: 'gulp-cached', base: (0, upath_1.join)(config.cwd, 'tmp'), prefix: '' }, options);
-    return new utils_1.persistentCache(options);
+    const config = _config.getConfig();
+    options = Object.assign({ name: 'gulp-cached', base: path.join(config.cwd, 'tmp'), prefix: '' }, options);
+    return new persistentCache.persistentCache(options);
 }
 /**
  * * [source idea](https://github.com/gulp-community/gulp-cached/blob/8e8d13cb07b17113ff94700e87f136eeaa1f1340/index.js#L35-L44)
@@ -35,7 +53,6 @@ function cacheLib(options) {
  * @returns
  */
 function gulpCached(options = {}) {
-    var _a;
     const caches = cacheLib(options);
     //const logname = 'gulp-' + ansiColors.grey('cached');
     const pid = process.pid;
@@ -45,16 +62,15 @@ function gulpCached(options = {}) {
     }
     else {
         caller =
-            (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1]) || '').slice(0, 5) +
+            hash.data_to_hash_sync('md5', new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || '').slice(0, 5) +
                 '-' +
                 pid;
     }
-    return through2_1.default.obj(function (file, _enc, next) {
-        var _a, _b;
+    return through2.obj(function (file, _enc, next) {
         // skip directory
         if (file.isDirectory())
             return next(null, file);
-        const cacheKey = (0, hash_1.md5)(file.path);
+        const cacheKey = hash.md5(file.path);
         const sha1sum = getShaFile(file.path);
         /**
          * Checks if file has been changed by comparing its current SHA1
@@ -75,20 +91,20 @@ function gulpCached(options = {}) {
             }
             // check destination when cache exist
             if (options.dest && options.cwd) {
-                const destPath = (0, upath_1.join)((0, upath_1.toUnix)(options.dest), (0, upath_1.toUnix)(file.path).replace((0, upath_1.toUnix)(options.cwd), ''));
-                return fs_extra_1.default.existsSync(destPath);
+                const destPath = path.join(normalizePath.normalizePath(options.dest), normalizePath.removeCwd(file.path, options.cwd));
+                return fs.existsSync(destPath);
             }
             // File has not changed, leave cache as-
             return false;
         };
         const paths = {
-            dest: (0, upath_1.toUnix)(((_a = options.dest) === null || _a === void 0 ? void 0 : _a.replace(process.cwd(), '')) || ''),
-            cwd: (0, upath_1.toUnix)(((_b = options.cwd) === null || _b === void 0 ? void 0 : _b.replace(process.cwd(), '')) || ''),
-            source: (0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))
+            dest: normalizePath.normalizePath(options.dest?.replace(process.cwd(), '') || ''),
+            cwd: normalizePath.normalizePath(options.cwd?.replace(process.cwd(), '') || ''),
+            source: normalizePath.normalizePath(file.path.replace(process.cwd(), ''))
         };
         // dump
-        const dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-cached', `${caller}.log`);
-        (0, filemanager_1.writefile)(dumpfile, `"${paths.source}" is cached ${isChanged()} with dest validation ${options.dest && options.cwd ? 'true' : 'false'}` + os_1.EOL, {
+        const dumpfile = path.join(process.cwd(), 'tmp/dump/gulp-cached', `${caller}.log`);
+        writefile.writefile(dumpfile, `"${paths.source}" is cached ${isChanged()} with dest validation ${options.dest && options.cwd ? 'true' : 'false'}` + os.EOL, {
             append: true
         });
         /*scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
@@ -109,6 +125,7 @@ function gulpCached(options = {}) {
         }
     });
 }
-exports.gulpCached = gulpCached;
+
 exports.default = gulpCached;
-//# sourceMappingURL=gulp-cache.js.map
+exports.getShaFile = getShaFile;
+exports.gulpCached = gulpCached;

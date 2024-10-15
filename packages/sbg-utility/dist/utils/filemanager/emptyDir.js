@@ -1,24 +1,23 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.emptyDir = void 0;
-const tslib_1 = require("tslib");
-const minimatch_1 = require("minimatch");
-const readDir_1 = tslib_1.__importDefault(require("./readDir"));
+'use strict';
+
+var minimatch = require('minimatch');
+var readDir = require('./readDir.js');
+
 /**
  * empty dir with filters
  * @param dir
  * @param param1
  */
 function emptyDir(dir, { ignore }) {
-    (0, readDir_1.default)(dir, function (err, fileList) {
+    readDir.readDir(dir, function (err, fileList) {
         if (err)
             throw err;
         // const filterFn = (pattern: string) => minimatch.filter(pattern, { matchBase: true });
-        const filter = (fileList === null || fileList === void 0 ? void 0 : fileList.filter((file) => {
+        const filter = fileList?.filter((file) => {
             for (let i = 0; i < ignore.length; i++) {
                 const pattern = ignore[i];
                 if (typeof pattern === 'string') {
-                    const match = (0, minimatch_1.minimatch)(file, pattern, { matchBase: true, dot: true });
+                    const match = minimatch.minimatch(file, pattern, { matchBase: true, dot: true });
                     // console.log(file.replace(dir, ''), pattern, match);
                     // filter file if matched
                     if (match)
@@ -31,11 +30,11 @@ function emptyDir(dir, { ignore }) {
                 }
             }
             return true;
-        })) || [];
+        }) || [];
         return filter;
     });
 }
-exports.emptyDir = emptyDir;
 //const _ex = path.join(__dirname, '../..');
 //emptyDir(_ex, { ignore: ['**/config/**'] });
-//# sourceMappingURL=emptyDir.js.map
+
+exports.emptyDir = emptyDir;

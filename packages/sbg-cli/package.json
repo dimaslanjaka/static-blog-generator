@@ -58,7 +58,7 @@
     "safelinkify": "^1.2.2",
     "sbg-api": "*",
     "sbg-server": "*",
-    "sbg-utility": "^1.1.6",
+    "sbg-utility": "^2.0.0",
     "xml2js": "^0.6.2",
     "yargs": "^17.7.2"
   },

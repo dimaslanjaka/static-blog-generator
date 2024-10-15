@@ -81,20 +81,13 @@
   },
   "workspaces": {
     "packages": [
-      "packages/sbg-utility",
-      "packages/sbg-api",
-      "packages/sbg-server",
-      "packages/sbg-cli",
-      "packages/static-blog-generator",
-      "packages/instant-indexing",
+      "packages/*",
       "test"
     ]
   },
   "packageManager": "yarn@4.5.0",
   "engines": {
-    "node": ">=14",
-    "npm": "^8",
-    "hexo": ">= 3"
+    "node": ">=16"
   },
   "peerDependenciesMeta": {
     "markdown-it-anchor": {
@@ -114,6 +107,10 @@
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/3f727de/release/hexo-renderers.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz"
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz",
+    "sbg-utility": "workspace:^",
+    "sbg-server": "workspace:^",
+    "sbg-api": "workspace:^",
+    "sbg-cli": "workspace:^"
   }
 }

@@ -54,7 +54,7 @@
     "googleapis-common": "^7.0.1",
     "open": "^9.1.0",
     "request": "^2.88.2",
-    "sbg-utility": "^1.1.6",
+    "sbg-utility": "^2.0.0",
     "server-destroy": "^1.0.1",
     "upath": "^2.0.1"
   },

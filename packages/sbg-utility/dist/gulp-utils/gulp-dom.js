@@ -1,20 +1,21 @@
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpDom = exports.gulpDomPath = exports.customPath = void 0;
-const tslib_1 = require("tslib");
-const jsdom_1 = tslib_1.__importDefault(require("jsdom"));
-const plugin_error_1 = tslib_1.__importDefault(require("plugin-error"));
-const through2_1 = tslib_1.__importDefault(require("through2"));
-const upath_1 = tslib_1.__importDefault(require("upath"));
-const case_path_1 = require("../utils/filemanager/case-path");
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var jsdom = require('jsdom');
+var PluginError = require('plugin-error');
+var through2 = require('through2');
+var path$1 = require('upath');
+var casePath = require('../utils/filemanager/case-path.js');
+
 const pluginName = 'gulp-dom';
 const path = {
-    join: (...str) => upath_1.default.toUnix((0, case_path_1.trueCasePathSync)(upath_1.default.join(...str))),
-    dirname: (str) => upath_1.default.toUnix((0, case_path_1.trueCasePathSync)(upath_1.default.dirname(str))),
-    toUnix: (str) => upath_1.default.toUnix((0, case_path_1.trueCasePathSync)(str))
+    join: (...str) => path$1.toUnix(casePath.trueCasePathSync(path$1.join(...str))),
+    dirname: (str) => path$1.toUnix(casePath.trueCasePathSync(path$1.dirname(str))),
+    toUnix: (str) => path$1.toUnix(casePath.trueCasePathSync(str))
 };
-exports.customPath = path;
-exports.gulpDomPath = path;
+const customPath = path;
+const gulpDomPath = path;
 /**
  * gulp-dom
  * @param mutator callback
@@ -30,16 +31,16 @@ exports.gulpDomPath = path;
     });
  */
 function gulpDom(mutator) {
-    const stream = through2_1.default.obj(function (file, _enc, callback) {
+    const stream = through2.obj(function (file, _enc, callback) {
         if (file.isNull()) {
             return callback(null, file);
         }
         if (file.isStream()) {
-            return stream.emit('error', new plugin_error_1.default(pluginName, 'Streaming not supported'));
+            return stream.emit('error', new PluginError(pluginName, 'Streaming not supported'));
         }
         if (file.isBuffer()) {
             try {
-                const dom = new jsdom_1.default.JSDOM(file.contents.toString('utf8'));
+                const dom = new jsdom.JSDOM(file.contents.toString('utf8'));
                 const mutated = mutator.call(dom.window.document, file.path);
                 file.contents = Buffer.from(typeof mutated === 'string' ? mutated : dom.serialize());
                 callback(null, file);
@@ -57,6 +58,8 @@ function gulpDom(mutator) {
     });
     return stream;
 }
-exports.gulpDom = gulpDom;
+
+exports.customPath = customPath;
 exports.default = gulpDom;
-//# sourceMappingURL=gulp-dom.js.map
+exports.gulpDom = gulpDom;
+exports.gulpDomPath = gulpDomPath;

@@ -58,7 +58,7 @@
     "moment-timezone": "^0.5.45",
     "nunjucks": "^3.2.4",
     "safelinkify": "^1.2.2",
-    "sbg-utility": "^1.1.6",
+    "sbg-utility": "^2.0.0",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
     "warehouse": "^5.0.1",

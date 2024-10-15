@@ -1,19 +1,26 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.safeCb = exports.persistentCache = void 0;
-const tslib_1 = require("tslib");
-const fs_extra_1 = tslib_1.__importDefault(require("fs-extra"));
-const upath_1 = tslib_1.__importDefault(require("upath"));
-require("./JSON");
-const JSON_1 = require("./JSON");
-const filemanager_1 = require("./filemanager");
+'use strict';
+
+var fs = require('fs-extra');
+var path = require('upath');
+var JSON$1 = require('./JSON.js');
+require('path');
+require('bluebird');
+require('minimatch');
+require('./filemanager/case-path.js');
+var normalizePath = require('./filemanager/normalizePath.js');
+var writefile = require('./filemanager/writefile.js');
+
 class persistentCache {
+    base;
+    name;
+    duration;
+    memory;
+    persist;
+    memoryCache = {};
     constructor(options = {}) {
-        this.memoryCache = {};
-        this.setSync = this.putSync;
         this.base =
             options.base ||
-                (0, filemanager_1.pathJoin)((require.main ? upath_1.default.dirname(require.main.filename) : undefined) || process.cwd(), 'tmp');
+                normalizePath.normalizePath((require.main ? path.dirname(require.main.filename) : undefined) || process.cwd(), 'tmp');
         this.name = options.name || 'cache';
         this.persist = typeof options.persist == 'boolean' ? options.persist : true;
         this.memory = typeof options.memory == 'boolean' ? options.memory : true;
@@ -46,7 +53,7 @@ class persistentCache {
         if (this.persist) {
             // save in file
             try {
-                (0, filemanager_1.writefile)(this.buildFilePath(key), (0, JSON_1.jsonStringifyWithCircularRefs)(entry));
+                writefile.writefile(this.buildFilePath(key), JSON$1.jsonStringifyWithCircularRefs(entry));
             }
             catch (e) {
                 return e;
@@ -54,11 +61,12 @@ class persistentCache {
         }
         if (this.memory) {
             // save in memory only
-            entry.data = (0, JSON_1.jsonStringifyWithCircularRefs)(entry.data);
+            entry.data = JSON$1.jsonStringifyWithCircularRefs(entry.data);
             this.memoryCache[key] = entry;
         }
         return true;
     }
+    setSync = this.putSync;
     /**
      * add cache async
      * @param key
@@ -94,9 +102,9 @@ class persistentCache {
         }
         let data;
         try {
-            data = JSON.parse(fs_extra_1.default.readFileSync(this.buildFilePath(name), 'utf8'));
+            data = JSON.parse(fs.readFileSync(this.buildFilePath(name), 'utf8'));
         }
-        catch (e) {
+        catch (_e) {
             return fallback;
         }
         if (data.cacheUntil && new Date().getTime() > data.cacheUntil)
@@ -123,7 +131,7 @@ class persistentCache {
                 }
                 return safeCb(fallback)(null, entry);
             }
-            fs_extra_1.default.readFile(this.buildFilePath(name), 'utf8', function (err, content) {
+            fs.readFile(this.buildFilePath(name), 'utf8', function (err, content) {
                 if (err != null) {
                     return safeCb(fallback)(null, undefined);
                 }
@@ -152,7 +160,7 @@ class persistentCache {
             if (!this.persist)
                 safeCb(cb)(null);
         }
-        fs_extra_1.default.unlink(this.buildFilePath(name), cb);
+        fs.unlink(this.buildFilePath(name), cb);
     }
     /**
      * delete cache sync
@@ -165,10 +173,10 @@ class persistentCache {
             if (!this.persist)
                 return;
         }
-        fs_extra_1.default.unlinkSync(this.buildFilePath(name));
+        fs.unlinkSync(this.buildFilePath(name));
     }
     getCacheDir() {
-        return upath_1.default.normalize(this.base + '/' + (this.name || 'cache'));
+        return path.normalize(this.base + '/' + (this.name || 'cache'));
     }
     /**
      * remove current cache directory
@@ -178,10 +186,10 @@ class persistentCache {
     unlink(cb) {
         if (this.persist) {
             if (typeof cb !== 'function') {
-                return fs_extra_1.default.rmSync(this.getCacheDir(), { recursive: true, force: true });
+                return fs.rmSync(this.getCacheDir(), { recursive: true, force: true });
             }
             else {
-                return fs_extra_1.default.rm(this.getCacheDir(), { recursive: true, force: true }, safeCb(cb));
+                return fs.rm(this.getCacheDir(), { recursive: true, force: true }, safeCb(cb));
             }
         }
         safeCb(cb)(null);
@@ -199,7 +207,7 @@ class persistentCache {
         cb = safeCb(cb);
         if (this.memory && !this.persist)
             return cb(null, Object.keys(this.memoryCache));
-        fs_extra_1.default.readdir(this.getCacheDir(), function (err, files) {
+        fs.readdir(this.getCacheDir(), function (err, files) {
             return err ? cb(err) : cb(err, files.map(self.transformFileNameToKey));
         });
     }
@@ -211,8 +219,8 @@ class persistentCache {
         const self = this;
         if (this.memory && !this.persist)
             return Object.keys(this.memoryCache);
-        if (fs_extra_1.default.existsSync(this.getCacheDir())) {
-            return fs_extra_1.default.readdirSync(this.getCacheDir()).map(self.transformFileNameToKey);
+        if (fs.existsSync(this.getCacheDir())) {
+            return fs.readdirSync(this.getCacheDir()).map(self.transformFileNameToKey);
         }
         else {
             return [];
@@ -228,7 +236,7 @@ class persistentCache {
         });
     }
     buildFilePath(name) {
-        return upath_1.default.normalize(this.getCacheDir() + '/' + name + '.json');
+        return path.normalize(this.getCacheDir() + '/' + name + '.json');
     }
     buildCacheEntry(data) {
         const cacheInfinitely = !(typeof this.duration === 'number');
@@ -238,7 +246,6 @@ class persistentCache {
         };
     }
 }
-exports.persistentCache = persistentCache;
 /**
  * safe callback
  * @param cb
@@ -251,5 +258,6 @@ function safeCb(cb) {
         //
     };
 }
+
+exports.persistentCache = persistentCache;
 exports.safeCb = safeCb;
-//# sourceMappingURL=persistent-cache.js.map

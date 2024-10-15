@@ -1,14 +1,21 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Logger = void 0;
-const tslib_1 = require("tslib");
-const fs_extra_1 = require("fs-extra");
-const slugify_1 = tslib_1.__importDefault(require("slugify"));
-const upath_1 = require("upath");
-const configs = tslib_1.__importStar(require("../config"));
-const filemanager_1 = require("./filemanager");
-const jest_1 = require("./jest");
-let FOLDER = (0, upath_1.join)(process.cwd(), 'tmp/logs');
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var fs = require('fs-extra');
+var slugify = require('slugify');
+var path = require('upath');
+var _config = require('../config/_config.js');
+require('../config/config-wrapper.js');
+require('../config/default-config.js');
+require('path');
+require('bluebird');
+require('minimatch');
+require('./filemanager/case-path.js');
+var writefile = require('./filemanager/writefile.js');
+var jest = require('./jest.js');
+
+let FOLDER = path.join(process.cwd(), 'tmp/logs');
 let cwd = process.cwd();
 /*
 declare global {
@@ -16,12 +23,12 @@ declare global {
 }
 */
 // disable console.log on jest
-if ((0, jest_1.areWeTestingWithJest)()) {
+if (jest.areWeTestingWithJest()) {
     const log = console.log;
     console.log = function (...args) {
-        if (typeof configs.getConfig === 'function') {
-            const cfg = configs.getConfig();
-            FOLDER = (0, upath_1.join)(cfg.cwd, 'tmp/logs/');
+        if (typeof _config.getConfig === 'function') {
+            const cfg = _config.getConfig();
+            FOLDER = path.join(cfg.cwd, 'tmp/logs/');
             cwd = cfg.cwd;
         }
         const stack = (new Error('').stack || '').split(/\r?\n/gm);
@@ -30,14 +37,14 @@ if ((0, jest_1.areWeTestingWithJest)()) {
             msg = (stack || [])[2] || '';
         }
         // log(stack[2], stack[4]);
-        const filename = (0, slugify_1.default)((0, upath_1.toUnix)(msg).replace((0, upath_1.toUnix)(cwd), ''), {
+        const filename = slugify(path.toUnix(msg).replace(path.toUnix(cwd), ''), {
             lower: true,
             trim: true,
             replacement: '-',
             strict: true
         });
         const header = `\n\n ${new Date()} \n\n`;
-        const write = (0, filemanager_1.writefile)((0, upath_1.join)(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
+        const write = writefile.writefile(path.join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
         log(write.file);
     };
 }
@@ -62,14 +69,12 @@ class Logger {
         this.tracer(...args);
     }
     static tracer(...args) {
-        var _a;
         const error = new Error();
-        const split = (_a = error.stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gm).map((str) => {
-            var _a;
+        const split = error.stack?.split(/\r?\n/gm).map((str) => {
             const split2 = str.trim().split(' ');
             return {
                 name: split2[1],
-                path: (_a = split2[2]) === null || _a === void 0 ? void 0 : _a.replace(/\\+/gm, '/').replace(/^\(/, '').replace(/\)$/, '')
+                path: split2[2]?.replace(/\\+/gm, '/').replace(/^\(/, '').replace(/\)$/, '')
                 //trace: error.stack
             };
         });
@@ -80,13 +85,15 @@ class Logger {
             // anonymous caller
             if (typeof split[0].path === 'undefined' && split[1].path.includes('anonymous')) {
                 const id = split[1].name;
-                const path = split[0].name;
-                const base = (0, upath_1.basename)(path.split(':')[0].length === 1 ? path.split(':')[0] + ':' + path.split(':')[1] : path.split(':')[0]);
-                logfile = (0, upath_1.join)(FOLDER, (0, slugify_1.default)(id, { trim: true }) + '-' + (0, slugify_1.default)(base, { trim: true }) + '.log');
-                if (!(0, fs_extra_1.existsSync)(logfile)) {
-                    (0, filemanager_1.writefile)(logfile, '');
+                const filePath = split[0].name;
+                const base = path.basename(filePath.split(':')[0].length === 1
+                    ? filePath.split(':')[0] + ':' + filePath.split(':')[1]
+                    : filePath.split(':')[0]);
+                logfile = path.join(FOLDER, slugify(id, { trim: true }) + '-' + slugify(base, { trim: true }) + '.log');
+                if (!fs.existsSync(logfile)) {
+                    writefile.writefile(logfile, '');
                 }
-                templ = `${'='.repeat(20)}\nfile: ${path}\ndate: ${new Date()}\n${'='.repeat(20)}\n\n`;
+                templ = `${'='.repeat(20)}\nfile: ${filePath}\ndate: ${new Date()}\n${'='.repeat(20)}\n\n`;
                 args.forEach((o) => {
                     if (o === null)
                         o = 'null';
@@ -94,18 +101,18 @@ class Logger {
                         try {
                             o = JSON.stringify(o, null, 2);
                         }
-                        catch (_a) {
+                        catch {
                             //
                         }
                     }
                     templ += String(o) + '\n\n';
                 });
-                (0, fs_extra_1.appendFileSync)(logfile, templ);
+                fs.appendFileSync(logfile, templ);
             }
             // Logger.log(split);
         }
     }
 }
+
 exports.Logger = Logger;
 exports.default = Logger;
-//# sourceMappingURL=logger.js.map

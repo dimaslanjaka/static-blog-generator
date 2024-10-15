@@ -1,46 +1,51 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.gulpLog = exports.gulpDebug = void 0;
-const tslib_1 = require("tslib");
-const ansi_colors_1 = tslib_1.__importDefault(require("ansi-colors"));
-const os_1 = require("os");
-const through2_1 = tslib_1.__importDefault(require("through2"));
-const upath_1 = require("upath");
-const filemanager_1 = require("../utils/filemanager");
-const hash_1 = require("../utils/hash");
-const logger_1 = tslib_1.__importDefault(require("../utils/logger"));
-const scheduler_1 = tslib_1.__importDefault(require("../utils/scheduler"));
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var ansiColors = require('ansi-colors');
+var os = require('os');
+var through2 = require('through2');
+var path = require('upath');
+require('fs-extra');
+require('path');
+require('bluebird');
+require('minimatch');
+require('../utils/filemanager/case-path.js');
+var writefile = require('../utils/filemanager/writefile.js');
+var hash = require('../utils/hash.js');
+var logger = require('../utils/logger.js');
+var scheduler = require('../utils/scheduler.js');
+
 function gulpDebug(filename) {
-    var _a;
-    const caller = (0, hash_1.data_to_hash_sync)('md5', ((_a = new Error('get caller').stack) === null || _a === void 0 ? void 0 : _a.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1]) || '').slice(0, 5);
+    const caller = hash.data_to_hash_sync('md5', new Error('get caller').stack?.split(/\r?\n/gim).filter((str) => /(dist|src)/i.test(str))[1] || '').slice(0, 5);
     const pid = process.pid;
-    const logname = 'gulp-' + ansi_colors_1.default.gray('debug');
-    return through2_1.default.obj(function (file, _enc, cb) {
+    const logname = 'gulp-' + ansiColors.gray('debug');
+    return through2.obj(function (file, _enc, cb) {
         // Logger.log(ansiColors.yellowBright('gulp-debug'), process.pid, toUnix(file.path.replace(process.cwd(), '')));
         // dump
-        const dumpfile = (0, upath_1.join)(process.cwd(), 'tmp/dump/gulp-debug', filename || `${caller}-${pid}.log`);
-        (0, filemanager_1.writefile)(dumpfile, `${(0, upath_1.toUnix)(file.path.replace(process.cwd(), ''))}` + os_1.EOL, {
+        const dumpfile = path.join(process.cwd(), 'tmp/dump/gulp-debug', filename || `${caller}-${pid}.log`);
+        writefile.writefile(dumpfile, `${path.toUnix(file.path.replace(process.cwd(), ''))}` + os.EOL, {
             append: true
         });
-        scheduler_1.default.add(`${logname} dump ${ansi_colors_1.default.cyan(caller)} pid ${ansi_colors_1.default.yellow(String(pid))}`, () => console.log(logname, dumpfile));
+        scheduler.scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () => console.log(logname, dumpfile));
         if (typeof this.push === 'function')
             this.push(file);
         cb(null, file);
     });
 }
-exports.gulpDebug = gulpDebug;
 /**
  * log all files
  * @returns
  */
 function gulpLog(logname = '') {
-    return through2_1.default.obj(function (file, _enc, cb) {
-        logger_1.default.log(ansi_colors_1.default.yellowBright('gulp-log'), logname, (0, upath_1.toUnix)(file.path.replace(process.cwd(), '')), String(file.contents).length);
+    return through2.obj(function (file, _enc, cb) {
+        logger.Logger.log(ansiColors.yellowBright('gulp-log'), logname, path.toUnix(file.path.replace(process.cwd(), '')), String(file.contents).length);
         if (typeof this.push === 'function')
             this.push(file);
         cb(null, file);
     });
 }
-exports.gulpLog = gulpLog;
+
 exports.default = gulpDebug;
-//# sourceMappingURL=gulp.debug.js.map
+exports.gulpDebug = gulpDebug;
+exports.gulpLog = gulpLog;
