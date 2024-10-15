@@ -2,6 +2,5 @@ yarn.lock
 tmp
 db.json
 .yarn*
-release/sbg-api-*.tgz
 /frontmatter.json
 /.frontmatter

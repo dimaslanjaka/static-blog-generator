@@ -2,6 +2,16 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
+| 1.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/f2f2873b9/packages/sbg-cli/release/sbg-cli-1.0.0.tgz |
+| 1.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/5c462de76/packages/sbg-cli/release/sbg-cli-1.0.1.tgz |
+| 1.0.2 | https://github.com/dimaslanjaka/static-blog-generator/raw/429439212/packages/sbg-cli/release/sbg-cli-1.0.2.tgz |
+| 1.0.3 | https://github.com/dimaslanjaka/static-blog-generator/raw/8f1db1735/packages/sbg-cli/release/sbg-cli-1.0.3.tgz |
+| 1.0.4 | https://github.com/dimaslanjaka/static-blog-generator/raw/dd6c89df4/packages/sbg-cli/release/sbg-cli-1.0.4.tgz |
+| 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/00d40659c/packages/sbg-cli/release/sbg-cli-1.0.5.tgz |
+| 1.0.6 | https://github.com/dimaslanjaka/static-blog-generator/raw/1e9fb0d20/packages/sbg-cli/release/sbg-cli-1.0.6.tgz |
+| 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/fb560e7e0/packages/sbg-cli/release/sbg-cli-1.1.0.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/fb560e7e0/packages/sbg-cli/release/sbg-cli.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-cli/release/sbg-cli.tgz |
 
 use this tarball with `resolutions`:
 ```json

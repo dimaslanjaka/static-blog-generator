@@ -3,4 +3,3 @@ node_modules/
 yarn.lock
 tmp/
 .yarn*
-release/sbg-utility-*.tgz
