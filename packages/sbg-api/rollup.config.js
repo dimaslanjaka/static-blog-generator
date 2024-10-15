@@ -24,7 +24,13 @@ const plugins = [
     tsconfig: false,
     compilerOptions: tsconfig.compilerOptions,
     include: ['./src/**/*'],
-    exclude: tsconfig.exclude
+    exclude: tsconfig.exclude,
+    resolveJsonModule: true,
+    allowSyntheticDefaultImports: true,
+    esModuleInterop: true,
+    allowJs: true,
+    checkJs: false,
+    downlevelIteration: true
   }) // Compile TypeScript files
 ];
 
@@ -74,4 +80,42 @@ const _partials = {
   external // External dependencies package name to exclude from bundle
 };
 
-export default _partials;
+/**
+ * @type {import('rollup').RollupOptions}
+ */
+const _onefile = {
+  input: 'src/index.ts',
+  output: [
+    // bundle .js as ESM
+    {
+      file: 'dist/index.js',
+      format: 'esm',
+      sourcemap: false,
+      globals: {
+        hexo: 'hexo'
+      }
+    },
+    // bundle .cjs as CommonJS
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      sourcemap: false,
+      globals: {
+        hexo: 'hexo'
+      }
+    },
+    // build .mjs as ESM
+    {
+      file: 'dist/index.mjs',
+      format: 'esm',
+      sourcemap: false,
+      globals: {
+        hexo: 'hexo'
+      }
+    }
+  ],
+  plugins,
+  external // External dependencies package name to exclude from bundle
+};
+
+export default [_onefile, _partials];
