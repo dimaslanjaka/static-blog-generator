@@ -29,6 +29,9 @@
     "dist/",
     "!**/*.tsbuildinfo"
   ],
+  "workspaces": [
+    "test/fixtures"
+  ],
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.cjs",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.cjs",

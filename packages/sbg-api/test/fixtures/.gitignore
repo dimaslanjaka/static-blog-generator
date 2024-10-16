@@ -6,3 +6,4 @@ node_modules
 .yarn/*gz
 db.json
 source/reports*
+source-posts/
