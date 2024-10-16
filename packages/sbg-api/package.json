@@ -160,5 +160,6 @@
     "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/c955d99/release/hexo-post-parser.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/43b9229/packages/sbg-utility/release/sbg-utility.tgz"
-  }
+  },
+  "packageManager": "yarn@4.5.0"
 }
