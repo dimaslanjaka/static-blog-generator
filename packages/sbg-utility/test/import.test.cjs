@@ -1,9 +1,9 @@
 const { describe, expect, it, test } = require('@jest/globals');
 const defaults = require('../dist/index.cjs').default;
-const wilcards = require('../dist/index.cjs');
+const wildcards = require('../dist/index.cjs');
 
 /**
- * Tests for the methods in the wilcards and defaults modules.
+ * Tests for the methods in the wildcards and defaults modules.
  */
 describe('check method', () => {
   const props = [
@@ -40,11 +40,11 @@ describe('check method', () => {
     const prop = props[i];
 
     /**
-     * Tests if the method in the wilcards module is a function.
+     * Tests if the method in the wildcards module is a function.
      */
-    test(`wilcards.${prop} is function`, function () {
-      expect(wilcards[prop]).toBeDefined();
-      expect(typeof wilcards[prop]).toBe('function');
+    test(`wildcards.${prop} is function`, function () {
+      expect(wildcards[prop]).toBeDefined();
+      expect(typeof wildcards[prop]).toBe('function');
     }, 10000);
 
     /**
@@ -66,12 +66,13 @@ describe('check method', () => {
     });
 
     /**
-     * Tests file manager methods in the wilcards module.
+     * Tests file manager methods in the wildcards module.
      */
     it('file manager', () => {
-      expect(typeof wilcards.writefile).toEqual('function');
-      expect(typeof wilcards.normalizePath).toEqual('function');
-      expect(typeof wilcards.normalizePathUnix).toEqual('function');
+      expect(typeof wildcards.writefile).toEqual('function');
+      expect(typeof wildcards.normalizePath).toEqual('function');
+      expect(typeof wildcards.normalizePathUnix).toEqual('function');
+      expect(typeof wildcards.resolveCommand).toEqual('function');
     });
   });
 });
