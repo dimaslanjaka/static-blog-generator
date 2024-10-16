@@ -1,13 +1,10 @@
 #!/usr/bin/env sh
 
-# make cygwin bin as priority
-export PATH="node_modules/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH";
+ROOT_GIT=$(git rev-parse --show-toplevel)
 
-case `uname` in
-  *CYGWIN*) (set -o igncr) 2>/dev/null && set -o igncr;; # cygwin encoding fix
-esac
+cp "${ROOT_GIT}/readme.md" "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
 
-. "$(dirname -- "$0")/_/husky.sh"
+git add "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
 
 npx lint-staged
 

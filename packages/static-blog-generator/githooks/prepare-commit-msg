@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-ROOT_GIT=$(git rev-parse --show-toplevel)
-
-cp "${ROOT_GIT}/readme.md" "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
-
-git add "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
