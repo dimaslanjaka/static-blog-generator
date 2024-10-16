@@ -1,13 +1,15 @@
 // cross-env-shell DEBUG:post
 process.env.DEBUG = 'sbg-*,post:*,post';
 
-import { fixturesCwd, testCwd } from './env.mjs';
+const { fixturesCwd, testCwd } = require('./env.cjs');
 
 // tell working directory to fixtures folder
-process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
+process.cwd = function () {
+  return typeof testCwd === 'string' ? testCwd : fixturesCwd;
+};
 
 // start import application
-import { Application } from '../src';
+const { Application } = require('../dist/index.cjs');
 
 const api = new Application(fixturesCwd);
 api.clean('post').then(() => {

@@ -7,7 +7,6 @@ import moment from 'moment-timezone';
 import { debug, getConfig, Logger, normalizePath } from 'sbg-utility';
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
-import { forceGc } from '../utils/gc';
 import { removeCwd } from '../utils/path';
 import { parsePermalink } from './permalink';
 
@@ -69,14 +68,16 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
    * @returns Promise<void>
    */
   const processMarkdown = async function (file: string): Promise<void> {
-    const content = (await fs.readFile(file)).toString();
-    const compile = await processSinglePost({ content, file }).catch(() => null);
+    const content = await fs.readFile(file, 'utf8'); // Read file content
+    const compile = await processSinglePost({ content, file }).catch(() => null); // Process content
+
     if (typeof compile === 'string') {
       const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
-      const dest = path.join(generatedPostDir, fileWithoutCwd);
-      await fs.ensureDir(path.dirname(dest));
-      await fs.writeFile(dest, compile);
-      forceGc();
+      const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
+      await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
+
+      // Write the compiled markdown directly to the destination file
+      await fs.writeFile(dest, compile, 'utf8');
     }
   };
 
@@ -88,10 +89,14 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
    */
   const processAssets = async function (file: string): Promise<void> {
     const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
-    const dest = path.join(generatedPostDir, fileWithoutCwd);
-    await fs.ensureDir(path.dirname(dest));
+    const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
+    await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
+
+    // Copy the file to the destination
     await fs.copy(file, dest);
   };
+
+  console.log('Processing', posts.length, 'post(s)');
 
   // Process posts one by one using posts.shift() elimination strategy
   while (posts.length > 0) {
@@ -102,6 +107,11 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
     } else {
       await processAssets(post);
     }
+  }
+
+  // Trigger garbage collection if possible
+  if (global.gc) {
+    global.gc();
   }
 }
 
