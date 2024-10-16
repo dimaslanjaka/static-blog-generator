@@ -3,7 +3,7 @@ import Bluebird from 'bluebird';
 import { load } from 'cheerio';
 import ProgressBar from 'progress';
 import request from 'request';
-import { debug } from '../utils';
+import { debug } from '../utils/debug';
 
 type cb = (arg0: Error | null, arg1?: string[]) => void;
 
