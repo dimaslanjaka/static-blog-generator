@@ -6,13 +6,21 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc",
+    "build": "tsc && gulp",
     "postbuild": "node packer.js --yarn",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.js",
     "update:ncu": "npx npm-check-updates -u -x chalk",
     "update": "run-s \"update:**\"",
-    "pack": "node packer.js --yarn"
+    "pack": "node packer.js --yarn && yarn workspace sitemap-crawler run pack"
   },
+  "files": [
+    "dist/",
+    "sitemap-crawler-shadow/package.json",
+    "sitemap-crawler-shadow/dist"
+  ],
+  "workspaces": [
+    "./sitemap-crawler-shadow"
+  ],
   "keywords": [
     "sitemap",
     "crawler",
@@ -47,6 +55,7 @@
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.38",
+    "@types/gulp": "^4.0.17",
     "@types/node": "^20.1.4",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
@@ -55,6 +64,8 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "git-command-helper": "^1.2.2",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.4",
@@ -63,8 +74,6 @@
     "typescript": "^4.9.5"
   },
   "engines": {
-    "node": "^14",
-    "npm": "^8",
-    "hexo": ">= 3"
+    "node": ">=14"
   }
 }

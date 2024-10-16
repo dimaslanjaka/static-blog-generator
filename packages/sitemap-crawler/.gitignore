@@ -64,3 +64,5 @@ typings/
 
 # test file
 test.json
+
+**/dist

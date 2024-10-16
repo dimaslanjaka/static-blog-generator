@@ -1,0 +1,14 @@
+{
+  "name": "sitemap-crawler",
+  "version": "2.0.0",
+  "description": "Generate sitemap just from any link.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "yarn workspace @sbg/sitemap-crawler run build",
+    "pack": "node packer.js --yarn"
+  },
+  "files": [
+    "dist/"
+  ]
+}
