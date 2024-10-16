@@ -1,6 +1,10 @@
 import fs from 'fs';
 import micromatch from 'micromatch';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * search yarn root workspace folder
@@ -55,22 +59,35 @@ export function findYarnRootWorkspace(ctx: { base_dir: string }): string | null 
 }
 
 /**
- * Resolve the path of a command binary from node_modules/.bin.
+ * Resolves the path of a command binary from `node_modules/.bin`.
+ *
+ * This function searches for the specified command in various directories, including
+ * the current working directory, the module directory, and optionally, user-defined
+ * search directories. If the command is not found, it returns the original command name.
  *
  * @param commandName - The name of the command to resolve.
- * @returns The resolved command path or the original command name if not found.
+ * @param options - Optional parameters for command resolution.
+ * @param options.searchDir - A custom directory or an array of directories to search for
+ *   the command. If provided, these directories will be included in the search.
+ * @returns The resolved command path if found; otherwise, returns the original command name.
  */
-export function resolveCommand(commandName: string) {
+export function resolveCommand(commandName: string, options?: { searchDir: string | string[] }) {
   const dirs: any[] = [__dirname, process.cwd()];
   if (typeof process === 'object') {
     if ('mainModule' in process) dirs.push((process as any).mainModule?.paths[0].split('node_modules')[0].slice(0, -1));
     if ('main' in process) dirs.push((process as any).main?.paths[0].split('node_modules')[0].slice(0, -1));
   }
-  try {
-    dirs.push(findYarnRootWorkspace({ base_dir: process.cwd() }));
-  } catch (_) {
-    //
+  if (options && options.searchDir) {
+    if (!Array.isArray(options.searchDir)) {
+      options.searchDir = [options.searchDir];
+    }
+    dirs.push(...options.searchDir);
   }
+  // try {
+  //   dirs.push(findYarnRootWorkspace({ base_dir: process.cwd() }));
+  // } catch (_) {
+  //   //
+  // }
   const cmdPath = dirs
     .filter((str) => typeof str === 'string' && str.length > 0)
     .map((cwd) => {

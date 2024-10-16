@@ -1,5 +1,5 @@
 import { describe, expect, it, test } from '@jest/globals';
-import defaults, * as wilcards from '../src';
+import defaults, * as wildcards from '../src';
 
 // jest --runInBand imports.test
 
@@ -36,9 +36,9 @@ describe('check method', () => {
 
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];
-    test(`wilcards.${prop} is function`, function () {
-      expect((wilcards as any)[prop]).toBeDefined();
-      expect(typeof (wilcards as any)[prop]).toBe('function');
+    test(`wildcards.${prop} is function`, function () {
+      expect((wildcards as any)[prop]).toBeDefined();
+      expect(typeof (wildcards as any)[prop]).toBe('function');
     }, 10000);
     test(`defaults.${prop} is function`, function () {
       expect((defaults as any)[prop]).toBeDefined();
@@ -52,9 +52,9 @@ describe('check method', () => {
       expect(typeof defaults.jsonParseWithCircularRefs === 'function').toBeTruthy();
     });
     it('file manager', () => {
-      expect(typeof wilcards.writefile).toEqual('function');
-      expect(typeof wilcards.normalizePath).toEqual('function');
-      expect(typeof wilcards.normalizePathUnix).toEqual('function');
+      expect(typeof wildcards.writefile).toEqual('function');
+      expect(typeof wildcards.normalizePath).toEqual('function');
+      expect(typeof wildcards.normalizePathUnix).toEqual('function');
     });
   });
 });
