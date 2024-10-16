@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "formulahendry.code-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
   ]
 }

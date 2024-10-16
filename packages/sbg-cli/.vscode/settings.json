@@ -53,7 +53,8 @@
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
     "*.{test,spec}.{ts,js,cjs,mjs}": "yarn test -- $fileNameWithoutExt",
-    "*.{explicit,runner}.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
+    "*.runner.ts": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
+    "*.explicit.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
     "*.{explicit,runner}.{mjs,cjs,js}": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",
     "electron-*.ts": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     "*.py": "python -u",

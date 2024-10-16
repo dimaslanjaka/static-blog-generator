@@ -34,7 +34,8 @@ export const external = _.uniq(
       'upath',
       'fs-extra',
       'cheerio',
-      'axios'
+      'axios',
+      'minimatch'
     )
 ).filter((pkgName) => {
   return !['p-limit', 'deepmerge-ts'].includes(pkgName);

@@ -34,7 +34,7 @@
     "clean:util": "yarn workspace sbg-utility run clean",
     "clean": "run-s \"clean:**\" && yarn workspaces foreach --worktree --no-private run clean",
     "pack": "yarn workspaces foreach --no-private exec \"npm run pack --if-present -- --commit\"",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
   "license": "MIT",
@@ -111,6 +111,11 @@
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/f70a1c0/release/hexo-shortcodes.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz",
     "sbg-api": "workspace:^",
-    "sbg-server": "workspace:^"
+    "sbg-server": "workspace:^",
+    "sbg-utility": "workspace:^",
+    "sbg-cli": "workspace:^",
+    "sitemap-crawler": "workspace:^",
+    "@sbg/sitemap-crawler": "workspace:^",
+    "instant-indexing": "workspace:^"
   }
 }

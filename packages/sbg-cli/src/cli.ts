@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
+import { spawnAsync } from 'cross-spawn';
 import fs from 'fs-extra';
-import { spawnAsync } from 'git-command-helper';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline';
 import { feed, sitemap } from 'sbg-api';

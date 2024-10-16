@@ -37,8 +37,7 @@ const plugins = [
     include: ['./src/**/*'],
     exclude: tsconfig.exclude,
     resolveJsonModule: true,
-    sourceMap: false,
-    inlineSourceMap: false
+    resolvePackageJsonImports: true
   }) // Compile TypeScript files
 ];
 

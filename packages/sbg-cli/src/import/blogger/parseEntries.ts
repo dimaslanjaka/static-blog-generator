@@ -1,4 +1,4 @@
-import fs from 'fs-extra';
+import fs from 'fs';
 import he from 'he';
 import jsonc from 'jsonc-parser';
 import { slugify, writefile } from 'sbg-utility';
@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import xml2js from 'xml2js';
 import { entriesDir } from './config';
 import { createEntries } from './createEntries';
+// import excludeTitleArr from './excludeTitle.json'; // assert { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
