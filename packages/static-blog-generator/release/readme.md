@@ -2,6 +2,10 @@
 ## Releases
 | version | tarball url |
 | :--- | :--- |
+| 3.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/93d6dab95/packages/static-blog-generator/release/static-blog-generator-3.0.0.tgz |
+| 3.0.1 | https://github.com/dimaslanjaka/static-blog-generator/raw/fb560e7e0/packages/static-blog-generator/release/static-blog-generator-3.0.1.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/fb560e7e0/packages/static-blog-generator/release/static-blog-generator.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/static-blog-generator/release/static-blog-generator.tgz |
 
 use this tarball with `resolutions`:
 ```json
