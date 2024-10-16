@@ -1,5 +1,11 @@
 <!--  malfunction keyboard 5 6 ^ % -->
 
+**2.0.3**
+- fix(replacePath): src\utils\string.ts
+
+**2.0.2**
+- fix: Logger
+
 **2.0.0**
 - Migrate to ESM with shim for CJS
 

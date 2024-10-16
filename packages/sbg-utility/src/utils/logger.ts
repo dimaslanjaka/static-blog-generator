@@ -8,12 +8,6 @@ import { areWeTestingWithJest } from './jest';
 let FOLDER = upath.join(process.cwd(), 'tmp/logs');
 let cwd = process.cwd();
 
-/*
-declare global {
-  const hexo: import('hexo');
-}
-*/
-
 // disable console.log on jest
 if (areWeTestingWithJest()) {
   const log = console.log;
