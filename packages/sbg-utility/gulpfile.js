@@ -1,5 +1,5 @@
+import crossSpawn from 'cross-spawn'; // CommonJS module
 import fs from 'fs-extra'; // CommonJS module
-import gitCommandHelper from 'git-command-helper'; // CommonJS module
 import gulp from 'gulp'; // ES module
 import through2 from 'through2';
 import path from 'upath'; // CommonJS module
@@ -67,12 +67,12 @@ function copyDeclarations() {
 gulp.task('copy', gulp.series(copy, copyAssets, copyDeclarations));
 
 async function tsc() {
-  await gitCommandHelper.spawnAsync(cmd('rollup'), ['-c'], {
+  await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
   });
-  await gitCommandHelper.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
+  await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
