@@ -1,6 +1,8 @@
 // https://raw.githubusercontent.com/dimaslanjaka/chimeraland/master/src/utils/string.ts
 // https://github.com/dimaslanjaka/chimeraland/tree/master/src/utils
 
+import { normalizePath } from './filemanager';
+
 /**
  * escape regex string
  * @param string
@@ -73,8 +75,7 @@ export function bufferToString(array: Buffer) {
  * @returns
  */
 export async function replacePath(source: string, toReplace: string, replacement = '') {
-  const upath = await import('upath');
-  return upath.toUnix(source).replace(upath.toUnix(toReplace), replacement);
+  return normalizePath(source).replace(normalizePath(toReplace), replacement);
 }
 
 /**
