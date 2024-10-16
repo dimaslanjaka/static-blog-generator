@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import postParser, { Nullable } from 'hexo-post-parser';
-import { ProjConf, chain, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
+import { ProjConf, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
 import path from 'upath';
 import * as cleaner from './clean';
 import { deployCopy } from './deploy/copy';
@@ -63,7 +63,10 @@ class SBG {
    * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
    * @returns
    */
-  standalone = () => chain([{ callback: standaloneRunner }]);
+  // standalone = () => chain([{ callback: standaloneRunner }]);
+  standalone() {
+    return standaloneRunner(this.config);
+  }
 
   /**
    * Auto seo on public dir (_config_yml.public_dir) (run after generated)
