@@ -29,6 +29,9 @@
     "dist/",
     "!**/*.tsbuildinfo"
   ],
+  "workspaces": [
+    "test/fixtures"
+  ],
   "scripts": {
     "update:postinstall": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/postinstall.js > postinstall.cjs",
     "update:packer": "curl -L https://github.com/dimaslanjaka/nodejs-package-types/raw/main/packer.js > packer.cjs",
@@ -82,7 +85,7 @@
     "nunjucks": "^3.2.4",
     "p-limit": "^6.1.0",
     "safelinkify": "^1.2.2",
-    "sbg-utility": "*",
+    "sbg-utility": "^2.0.3",
     "through2": "^4.0.2",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
@@ -108,9 +111,8 @@
     "@types/babel__core": "^7",
     "@types/babel__preset-env": "^7",
     "@types/bluebird": "^3.5.42",
-    "@types/debug": "^4.1.12",
     "@types/eslint": "^9",
-    "@types/fs-extra": "^11.0.4",
+    "@types/fs-extra": "^11",
     "@types/gulp": "^4.0.17",
     "@types/gulp-cache": "^0.4.9",
     "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo.tgz",
@@ -154,8 +156,7 @@
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-util.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/c955d99/release/hexo-post-parser.tgz",
-    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/43b9229/packages/sbg-utility/release/sbg-utility.tgz"
-  }
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/5800a18/packages/sbg-utility/release/sbg-utility.tgz"
+  },
+  "packageManager": "yarn@4.5.0"
 }

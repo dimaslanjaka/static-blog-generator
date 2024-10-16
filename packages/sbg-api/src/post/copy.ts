@@ -4,11 +4,10 @@ import { globSync } from 'glob';
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
 import moment from 'moment-timezone';
-import { debug, getConfig, Logger, noop, normalizePath } from 'sbg-utility';
+import { debug, getConfig, Logger, normalizePath } from 'sbg-utility';
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { removeCwd } from '../utils/path';
-import { processFiles } from './copy-utils';
 import { parsePermalink } from './permalink';
 
 /**
@@ -43,6 +42,110 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
     });
 }
 
+/**
+ * Copy all posts from src-posts to source/_posts using elimination strategy
+ *
+ * @param config Optional configuration object
+ * @returns Promise<void>
+ */
+export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promise<void> {
+  if (!config) config = getConfig();
+  const excludes = config.exclude || [];
+  const sourcePostDir = path.join(config.cwd, config.post_dir);
+  const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
+  const posts: string[] = globSync(['**/*.*', '*.*', '**/*'], {
+    cwd: sourcePostDir,
+    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}'),
+    dot: true,
+    noext: true,
+    absolute: true
+  }).map((s) => normalizePath(s));
+
+  /**
+   * Process a markdown file
+   *
+   * @param file The file path to process
+   * @returns Promise<void>
+   */
+  const processMarkdown = async function (file: string): Promise<void> {
+    const content = await fs.readFile(file, 'utf8'); // Read file content
+    const compile = await processSinglePost({ content, file }).catch(() => null); // Process content
+
+    if (typeof compile === 'string') {
+      const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
+      const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
+      await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
+
+      // Write the compiled markdown directly to the destination file
+      await fs.writeFile(dest, compile, 'utf8');
+    }
+  };
+
+  /**
+   * Copy non-markdown file
+   *
+   * @param file The file path to copy
+   * @returns Promise<void>
+   */
+  const processAssets = async function (file: string): Promise<void> {
+    const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
+    const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
+    await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
+
+    // Copy the file to the destination
+    await fs.copy(file, dest);
+  };
+
+  console.log('Processing', posts.length, 'post(s)');
+
+  // Process posts one by one using posts.shift() elimination strategy
+  while (posts.length > 0) {
+    const post = posts.shift()!; // Remove the first file from the array
+
+    if (post.endsWith('.md')) {
+      await processMarkdown(post);
+    } else {
+      await processAssets(post);
+    }
+  }
+
+  // Trigger garbage collection if possible
+  if (global.gc) {
+    global.gc();
+  }
+}
+
+// /**
+//  * copy all posts from src-posts to source/_posts
+//  * @returns
+//  */
+// export function copyAllPosts(config?: ReturnType<typeof getConfig>) {
+//   if (!config) config = getConfig();
+//   const excludes = config.exclude || [];
+//   const sourcePostDir = path.join(config.cwd, config.post_dir);
+//   const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
+//   const posts = globSync(['**/*.*', '*.*', '**/*'], {
+//     cwd: sourcePostDir,
+//     ignore: excludes,
+//     dot: true,
+//     noext: true,
+//     absolute: true
+//   }).map((s) => normalizePath(s));
+//   return processFiles(
+//     posts,
+//     async function (filePath, content) {
+//       const compile = await processSinglePost({ content, file: filePath }).catch(() => null);
+//       if (typeof compile === 'string') {
+//         const fileWithoutCwd = removeCwd(filePath).replace(/[/\\]src-posts[/\\]/, '');
+//         const dest = path.join(generatedPostDir, fileWithoutCwd);
+//         fs.ensureDirSync(path.dirname(dest));
+//         fs.writeFileSync(dest, compile);
+//       }
+//     },
+//     noop
+//   );
+// }
+
 // /**
 //  * copy all posts from src-posts to source/_posts
 //  * @returns
@@ -67,37 +170,6 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
 //       .pipe(gulp.dest(generatedPostDir))
 //   );
 // }
-
-/**
- * copy all posts from src-posts to source/_posts
- * @returns
- */
-export function copyAllPosts(config?: ReturnType<typeof getConfig>) {
-  if (!config) config = getConfig();
-  const excludes = config.exclude || [];
-  const sourcePostDir = path.join(config.cwd, config.post_dir);
-  const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
-  const posts = globSync(['**/*.*', '*.*', '**/*'], {
-    cwd: sourcePostDir,
-    ignore: excludes,
-    dot: true,
-    noext: true,
-    absolute: true
-  }).map((s) => normalizePath(s));
-  return processFiles(
-    posts,
-    async function (filePath, content) {
-      const compile = await processSinglePost({ content, file: filePath }).catch(() => null);
-      if (typeof compile === 'string') {
-        const fileWithoutCwd = removeCwd(filePath).replace(/[/\\]src-posts[/\\]/, '');
-        const dest = path.join(generatedPostDir, fileWithoutCwd);
-        fs.ensureDirSync(path.dirname(dest));
-        fs.writeFileSync(dest, compile);
-      }
-    },
-    noop
-  );
-}
 
 // /**
 //  * pipeable function to process post
