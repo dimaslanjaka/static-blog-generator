@@ -55,7 +55,7 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
   const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
   const posts: string[] = globSync(['**/*.*', '*.*', '**/*'], {
     cwd: sourcePostDir,
-    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}'),
+    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}', '**/node_modules/**'),
     dot: true,
     noext: true,
     absolute: true
@@ -100,18 +100,29 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
 
   // Process posts one by one using posts.shift() elimination strategy
   while (posts.length > 0) {
-    const post = posts.shift()!; // Remove the first file from the array
-
+    const post = posts.shift()!;
+    // skip directory and undefined
+    if (
+      typeof post !== 'string' ||
+      (
+        await fs.stat(post).catch(() => {
+          return {
+            isDirectory: () => true
+          };
+        })
+      ).isDirectory()
+    )
+      continue;
     if (post.endsWith('.md')) {
       await processMarkdown(post);
     } else {
       await processAssets(post);
     }
-  }
 
-  // Trigger garbage collection if possible
-  if (global.gc) {
-    global.gc();
+    // Trigger garbage collection if possible
+    if (global.gc) {
+      global.gc();
+    }
   }
 }
 

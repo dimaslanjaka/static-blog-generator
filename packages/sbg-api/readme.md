@@ -1,13 +1,6 @@
 # static-blog-generator API
 
-Core api to bootstrap HexoJS workspace
-
-## TSConfig
-
-- `tsconfig.base.json` base configuration
-- `tsconfig.json` only for VSCode
-- `tsconfig.build.json` for build dist
-- `tsconfig.jest.json` for jest
+Core api to bootstrap HexoJS workspace. [See test for usages](https://github.com/dimaslanjaka/static-blog-generator/tree/sbg-api/packages/sbg-api/test)
 
 ## Changelog
 
