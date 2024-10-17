@@ -1,6 +1,5 @@
 import ansiColors from 'ansi-colors';
 import fs from 'fs-extra';
-import { globSync } from 'glob';
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
 import moment from 'moment-timezone';
@@ -8,6 +7,7 @@ import { debug, escapeRegex, getConfig, Logger, normalizePath } from 'sbg-utilit
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { removeCwd } from '../utils/path';
+import { getSourcePosts } from './copy-utils';
 import { parsePermalink } from './permalink';
 
 /**
@@ -50,16 +50,8 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
  */
 export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promise<void> {
   if (!config) config = getConfig();
-  const excludes = config.exclude || [];
-  const sourcePostDir = path.join(config.cwd, config.post_dir);
   const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
-  const posts: string[] = globSync(['**/*.*', '*.*', '**/*'], {
-    cwd: sourcePostDir,
-    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}', '**/node_modules/**', '**/temp/**', '**/tmp/**'),
-    dot: true,
-    noext: true,
-    absolute: true
-  }).map((s) => normalizePath(s));
+  const posts = getSourcePosts(config);
 
   /**
    * Process a markdown file

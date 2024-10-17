@@ -1,6 +1,8 @@
 import fs from 'fs-extra';
+import { globSync } from 'glob';
 import pLimit from 'p-limit';
-import { debug, normalizePath } from 'sbg-utility';
+import { debug, getConfig, normalizePath } from 'sbg-utility';
+import path from 'upath';
 
 /**
  * log debug
@@ -79,4 +81,16 @@ export async function processFiles(
       )
     );
   await Promise.all(promises);
+}
+
+export function getSourcePosts(config: ReturnType<typeof getConfig>) {
+  const excludes = config.exclude || [];
+  const sourcePostDir = path.join(config.cwd, config.post_dir);
+  return globSync(['**/*.*', '*.*', '**/*'], {
+    cwd: sourcePostDir,
+    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}', '**/node_modules/**', '**/temp/**', '**/tmp/**'),
+    dot: true,
+    noext: true,
+    absolute: true
+  }).map((s) => normalizePath(s));
 }
