@@ -4,7 +4,7 @@ import { globSync } from 'glob';
 import gulp from 'gulp';
 import * as hexoPostParser from 'hexo-post-parser';
 import moment from 'moment-timezone';
-import { debug, getConfig, Logger, normalizePath } from 'sbg-utility';
+import { debug, escapeRegex, getConfig, Logger, normalizePath } from 'sbg-utility';
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { removeCwd } from '../utils/path';
@@ -72,10 +72,12 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
     const compile = await processSinglePost({ content, file }).catch(() => null); // Process content
 
     if (typeof compile === 'string') {
-      const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
+      const { post_dir = 'src-posts' } = config;
+      const regex = new RegExp(`[\\/\\\\]${escapeRegex(post_dir)}[\\/\\\\]`);
+      const fileWithoutCwd = removeCwd(file).replace(regex, '');
       const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
-      await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
-
+      // Ensure the destination directory exists
+      await fs.ensureDir(path.dirname(dest));
       // Write the compiled markdown directly to the destination file
       await fs.writeFile(dest, compile, 'utf8');
     }
