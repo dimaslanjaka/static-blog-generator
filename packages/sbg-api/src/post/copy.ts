@@ -55,7 +55,7 @@ export async function copyAllPosts(config?: ReturnType<typeof getConfig>): Promi
   const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
   const posts: string[] = globSync(['**/*.*', '*.*', '**/*'], {
     cwd: sourcePostDir,
-    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}', '**/node_modules/**'),
+    ignore: excludes.concat('**/*.standalone.{cjs,js,mjs,ts}', '**/node_modules/**', '**/temp/**', '**/tmp/**'),
     dot: true,
     noext: true,
     absolute: true
