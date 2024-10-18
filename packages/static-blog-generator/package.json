@@ -72,7 +72,7 @@
     "fs-extra": "^11.2.0",
     "git-command-helper": "^2.0.2",
     "google-news-sitemap": "^1.0.10",
-    "hexo-post-parser": "^1.2.14",
+    "hexo-post-parser": "^2.0.2",
     "instant-indexing": "*",
     "safelinkify": "^1.2.2",
     "sbg-api": "*",
