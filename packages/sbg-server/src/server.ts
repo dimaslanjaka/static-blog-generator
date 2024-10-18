@@ -1,22 +1,20 @@
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import express from 'express';
-// import findWorkspaceRoot from 'find-yarn-workspace-root';
 import dotenv from 'dotenv';
+import express from 'express';
 import session from 'express-session';
 import fs from 'fs-extra';
 import http from 'http';
 import nunjucks from 'nunjucks';
-import * as apis from 'sbg-api';
+import apis from 'sbg-api';
 import { debug } from 'sbg-utility';
 import path from 'upath';
 import serverConfig from './config';
 import setupNunjuckHelper from './helper/nunjucks';
 import { sessionFileStoreConfig } from './middleware/session-file-helpers';
-import { sessionFileStore } from './middleware/session-file-store';
+import { FileStore } from './middleware/session-file-store';
 import routePost from './post';
 
-const FileStore = sessionFileStore(session);
 const fileStoreOptions: Partial<sessionFileStoreConfig> = {
   logFn: debug('sbg-server').extend('session')
 };
@@ -32,7 +30,7 @@ export interface SBGServer {
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class SBGServer {
-  server: import('express').Express;
+  server: express.Express;
   env: nunjucks.Environment;
   api: apis.Application;
   config: SBGServer['config'];
@@ -75,7 +73,7 @@ export class SBGServer {
     fileStoreOptions.path = path.join(this.api.cwd, 'tmp/sbg-server/sessions');
     this.server.use(
       session({
-        store: <any>new FileStore(<any>fileStoreOptions),
+        store: new FileStore(<any>fileStoreOptions),
         secret: 'sbg-server-session',
         resave: true,
         saveUninitialized: true,

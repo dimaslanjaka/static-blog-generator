@@ -4,7 +4,6 @@
     "dbaeumer.vscode-eslint",
     "formulahendry.auto-rename-tag",
     "esbenp.prettier-vscode",
-    "eseom.nunjucks-template",
-    "bradlc.vscode-tailwindcss"
+    "eseom.nunjucks-template"
   ]
 }

@@ -1,7 +1,5 @@
 const gulp = require('gulp');
 const path = require('upath');
-const fs = require('fs-extra');
-//const utility = require('sbg-utility');
 const { spawnAsync } = require('cross-spawn');
 const spawn = require('child_process').spawn;
 const kill = require('tree-kill');
@@ -9,13 +7,16 @@ const through2 = require('through2');
 const sharp = require('sharp');
 const { bundleJSRollUp } = require('./gulpfile-rollup');
 const { bundleCSS } = require('./gulpfile-tailwind.task');
+const fs = require('fs-extra');
 
 /** resolve cmd binary */
 const cmd = (commandName) => {
   const cmdPath = [
     __dirname,
     process.cwd(),
-    (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
+    (process.mainModule || process.main).paths[0]
+      .split('node_modules')[0]
+      .slice(0, -1)
   ]
     .map((cwd) => {
       const nm = path.join(cwd, 'node_modules/.bin');
@@ -56,7 +57,7 @@ const copyPublic = () =>
 gulp.task('copy', gulp.series(copyPublic, copyNonJS));
 
 function tsc(done) {
-  spawnAsync('npx', ['tsc', '--build', 'tsconfig.build.json'], {
+  spawnAsync(cmd('tsc'), ['--build', 'tsconfig.build.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'

@@ -166,7 +166,7 @@ export function reap(
         destroyIfExpired,
         sessionId(options, file),
         options,
-        function (err) {
+        function (err: any) {
           if (err) {
             errors.push(err);
           }

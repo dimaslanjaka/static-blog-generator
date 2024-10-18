@@ -1,9 +1,18 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "Node",
     "rootDir": "./src",
-    "outDir": "./dist",
-    "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
+    "outDir": "./tmp/dist",
+    "declaration": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*.*", "./src/**/*.json"],
   "exclude": [
