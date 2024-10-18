@@ -41,6 +41,7 @@
       "./node_modules/nodejs-package-types/typings"
     ]
   },
+  "include": ["./src/**/*.*", "./src/**/*.json", "./src/globals.d.ts"],
   "exclude": [
     "**/dist/**",
     "**/node_modules/**",

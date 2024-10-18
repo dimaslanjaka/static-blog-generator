@@ -8,6 +8,7 @@ import { folder_to_hash, persistentCache, writefile } from 'sbg-utility';
 import serveIndex from 'serve-index';
 import path from 'upath';
 import yaml from 'yaml';
+import { expressMiddlewareHandler } from '../helper/express';
 import SBGServer from '../server';
 
 const log = debug('sbg').extend('server').extend('route').extend('post');
@@ -76,28 +77,32 @@ export default function routePost(this: SBGServer, api: apis.Application) {
     express.static(POST_ROOT),
     serveIndex(POST_ROOT, { icons: true })
   );
-  router.get('/', middleware, async function (req: PostRequestMiddleware, res) {
-    const data = {
-      title: 'Post List',
-      section: 'Post',
-      // merge metadata
-      posts: req.post_data.map((item) => {
-        item.relative_source = item.full_source.replace(
-          api.config.cwd,
-          '<root>'
-        );
-        if (!item.title) item.title = `No Title - ${item.id}`;
-        return item;
-      })
-    };
-    res.render('post/index.njk', data);
-  });
+  router.get(
+    '/',
+    expressMiddlewareHandler(middleware),
+    expressMiddlewareHandler(async function (req: PostRequestMiddleware, res) {
+      const data = {
+        title: 'Post List',
+        section: 'Post',
+        // merge metadata
+        posts: req.post_data.map((item) => {
+          item.relative_source = item.full_source.replace(
+            api.config.cwd,
+            '<root>'
+          );
+          if (!item.title) item.title = `No Title - ${item.id}`;
+          return item;
+        })
+      };
+      res.render('post/index.njk', data);
+    })
+  );
 
   // get all posts json format
   router.get(
     '/json',
-    middleware,
-    async function (req: PostRequestMiddleware, res) {
+    expressMiddlewareHandler(middleware),
+    expressMiddlewareHandler(async function (req: PostRequestMiddleware, res) {
       const _data = {
         posts: req.post_data.map((item) => {
           item.relative_source = item.full_source.replace(
@@ -109,14 +114,14 @@ export default function routePost(this: SBGServer, api: apis.Application) {
         })
       };
       res.json(_data);
-    }
+    })
   );
 
   // edit post
   router.get(
     '/edit/:id',
-    middleware,
-    function (req: PostRequestMiddleware, res) {
+    expressMiddlewareHandler(middleware),
+    expressMiddlewareHandler(function (req: PostRequestMiddleware, res) {
       const postid = req.params['id'];
       const findPost =
         req.post_data.find((post) => post.metadata?.id === postid) ||
@@ -130,52 +135,56 @@ export default function routePost(this: SBGServer, api: apis.Application) {
         });
       }
       res.render('post/edit2.html', { post: findPost });
-    }
+    })
   );
 
   // post saver
-  router.post('/save', middleware, function (req: PostRequestMiddleware, res) {
-    const data = req.body;
-    const postid = data['id'];
-    const findPost =
-      req.origin_post_data.find((post) => post.metadata?.id === postid) ||
-      new Error(postid + ' not found');
-    // show errors
-    if (findPost instanceof Error) {
-      return res.json({
-        error: true,
-        message: findPost.message,
-        stack: findPost.stack?.split('\n')
-      });
-    }
-    // assign new post body
-    if (data.body) findPost.body = data.body;
-    // assign new post metadata
-    if (data.metadata) findPost.metadata = data.metadata;
-    // update post.metadata.updated with timezone on config.timezone
-    if (findPost.metadata) {
-      findPost.metadata.updated = moment()
-        .tz(api.config.timezone || 'UTC')
-        .format();
-    }
-    // rebuild post to markdown
-    const build = buildPost(findPost);
-    if (typeof build === 'string') {
-      [
-        path.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
-        findPost.full_source
-      ].forEach((f) => writefile(f, build));
-      res.json({ error: false, message: postid + ' saved successfully' });
-    } else {
-      res.json({ error: true, message: 'fail to build post ' + postid });
-    }
-  });
+  router.post(
+    '/save',
+    expressMiddlewareHandler(middleware),
+    expressMiddlewareHandler(function (req: PostRequestMiddleware, res) {
+      const data = req.body;
+      const postid = data['id'];
+      const findPost =
+        req.origin_post_data.find((post) => post.metadata?.id === postid) ||
+        new Error(postid + ' not found');
+      // show errors
+      if (findPost instanceof Error) {
+        return res.json({
+          error: true,
+          message: findPost.message,
+          stack: findPost.stack?.split('\n')
+        });
+      }
+      // assign new post body
+      if (data.body) findPost.body = data.body;
+      // assign new post metadata
+      if (data.metadata) findPost.metadata = data.metadata;
+      // update post.metadata.updated with timezone on config.timezone
+      if (findPost.metadata) {
+        findPost.metadata.updated = moment()
+          .tz(api.config.timezone || 'UTC')
+          .format();
+      }
+      // rebuild post to markdown
+      const build = buildPost(findPost);
+      if (typeof build === 'string') {
+        [
+          path.join(api.config.cwd, 'tmp/post-save', postid + '.md'),
+          findPost.full_source
+        ].forEach((f) => writefile(f, build));
+        res.json({ error: false, message: postid + ' saved successfully' });
+      } else {
+        res.json({ error: true, message: 'fail to build post ' + postid });
+      }
+    })
+  );
 
   // post metadata settings
   router.get(
     '/settings/:id',
-    middleware,
-    function (req: PostRequestMiddleware, res) {
+    expressMiddlewareHandler(middleware),
+    expressMiddlewareHandler(function (req: PostRequestMiddleware, res) {
       const postid = req.params['id'];
       const findPost =
         req.post_data.find((post) => post.metadata?.id === postid) ||
@@ -204,7 +213,7 @@ export default function routePost(this: SBGServer, api: apis.Application) {
         section: 'Post settings',
         title: 'Post settings'
       });
-    }
+    })
   );
 
   return router;
