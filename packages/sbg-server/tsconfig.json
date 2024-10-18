@@ -43,9 +43,7 @@
     ]
   },
   "include": [
-    "./src/**/*.*",
-    "./src/**/*.json",
-    "./src/globals.d.ts"
+    "./src/**/*.*"
   ],
   "exclude": [
     "**/dist/**",

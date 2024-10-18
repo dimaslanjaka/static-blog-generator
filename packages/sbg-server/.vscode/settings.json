@@ -67,7 +67,5 @@
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.includeLanguages": {
     "plaintext": "html"
-  },
-  "npm.packageManager": "yarn",
-  "eslint.packageManager": "yarn"
+  }
 }

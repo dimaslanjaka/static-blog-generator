@@ -138,7 +138,10 @@ const _onefile = {
 const declaration = {
   input: './tmp/dist/index.d.ts',
   output: [{ file: 'dist/index.d.ts', format: 'es' }],
-  plugins: [resolve({ preferBuiltins: true }), dts()]
+  plugins: [
+    resolve({ preferBuiltins: true }),
+    dts({ tsconfig: './tsconfig.build.json' })
+  ]
 };
 
 module.exports = [umd, declaration];
