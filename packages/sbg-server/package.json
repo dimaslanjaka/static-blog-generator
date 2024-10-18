@@ -4,6 +4,7 @@
   "description": "static-blog-generator server workspace",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
   "files": [
     "dist/",
     "!**/*.tsbuildinfo"

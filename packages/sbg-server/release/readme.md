@@ -5,7 +5,8 @@
 | 1.0.5 | https://github.com/dimaslanjaka/static-blog-generator/raw/05f17a80e/packages/sbg-server/release/sbg-server-1.0.5.tgz |
 | 1.0.7 | https://github.com/dimaslanjaka/static-blog-generator/raw/f07e0fc17/packages/sbg-server/release/sbg-server-1.0.7.tgz |
 | 1.1.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/09fe38901/packages/sbg-server/release/sbg-server-1.1.0.tgz |
-| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/09fe38901/packages/sbg-server/release/sbg-server.tgz |
+| 2.0.0 | https://github.com/dimaslanjaka/static-blog-generator/raw/db11d2691/packages/sbg-server/release/sbg-server-2.0.0.tgz |
+| latest | https://github.com/dimaslanjaka/static-blog-generator/raw/db11d2691/packages/sbg-server/release/sbg-server.tgz |
 | latest | https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-server/release/sbg-server.tgz |
 
 use this tarball with `resolutions`:

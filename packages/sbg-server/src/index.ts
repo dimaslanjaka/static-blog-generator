@@ -1,8 +1,8 @@
 import SBGServer from './server';
 
 export default SBGServer;
-export * from './helper';
-export * from './post';
+export * from './helper/index';
+export * from './post/index';
 export * from './server';
 
 //

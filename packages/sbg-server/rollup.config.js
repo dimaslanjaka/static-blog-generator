@@ -115,7 +115,7 @@ const _onefile = {
     commonjs(), // Convert CommonJS modules to ES6
     typescript({
       tsconfig: './tsconfig.json',
-      include: ['./src/**/*'],
+      include: ['./src/**/*', './src/**/*.*', './src/*.*', './src/*'],
       exclude: [
         '**/dist/**',
         '**/tmp/**',
@@ -126,7 +126,13 @@ const _onefile = {
         '**/*.specs.*'
       ],
       resolveJsonModule: true,
-      resolvePackageJsonImports: true
+      resolvePackageJsonImports: true,
+      esModuleInterop: true,
+      module: 'ESNext',
+      moduleResolution: 'bundler',
+      compilerOptions: {
+        outDir: './dist'
+      }
     }) // Compile TypeScript files
   ],
   external // External dependencies package name to exclude from bundle
@@ -144,4 +150,4 @@ const declaration = {
   ]
 };
 
-module.exports = [umd, declaration];
+module.exports = [declaration, _onefile, umd];
