@@ -48,6 +48,6 @@
     "cross-env": "^7.0.3",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "git-command-helper": "^2.0.2",
-    "sbg-api": "workspace:^"
+    "sbg-api": "*"
   }
 }

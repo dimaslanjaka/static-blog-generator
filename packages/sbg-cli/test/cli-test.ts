@@ -11,14 +11,15 @@ const testCwd = path.resolve(__dirname, '../../../test');
 console.log('Working directory', testCwd);
 
 async function _main() {
-  console.log('Installing...');
-  await spawnAsync('yarn', ['add', 'sbg-api@workspace:^', 'sbg-utility@workspace:^', 'sbg-cli@workspace:^'], {
-    cwd: testCwd,
-    stdio: 'inherit'
-  });
-  console.log('Installation finished');
+  // console.log('Installing...');
+  // await spawnAsync('yarn', ['add', 'sbg-api@workspace:^', 'sbg-utility@workspace:^', 'sbg-cli@workspace:^'], {
+  //   cwd: testCwd,
+  //   stdio: 'inherit'
+  // });
+  // console.log('Installation finished');
   await spawnAsync('sbg', ['--help'], { cwd: testCwd, stdio: 'inherit' });
   await spawnAsync('sbg', ['--version'], { cwd: testCwd, stdio: 'inherit' });
+  await spawnAsync('sbg', ['post', 'copy'], { cwd: testCwd, stdio: 'inherit' });
 }
 
 _main();

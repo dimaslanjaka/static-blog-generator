@@ -166,7 +166,6 @@
     "**/venv/**": true,
     "**/.yarn/**": true,
     "**/profiles/**": true,
-    "**/tmp/**": true,
     "**/databases/**": true,
     "**/node_modules/**": true,
     "src/database.sqlite*": true
@@ -189,7 +188,6 @@
     "**/CVS": true,
     "**/node_modules": true,
     "**/Thumbs.db": true,
-    "**/tmp": true,
     "**/vendor": true,
     "**/venv": true,
     "backups": true,
