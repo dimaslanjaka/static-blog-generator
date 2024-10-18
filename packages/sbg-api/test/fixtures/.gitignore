@@ -7,3 +7,4 @@ node_modules
 db.json
 source/reports*
 source-posts/
+_config.yml

@@ -18,10 +18,10 @@
     "post:copy": "sbg post copy",
     "manager": "sbg server",
     "init-source-post": "node init-source-posts.cjs",
-    "postinstall": "cp _config.base.yml _config.yml"
+    "postinstall": "node postinstall.cjs"
   },
   "hexo": {
-    "version": "7.0.0-rc2"
+    "version": "7.3.0"
   },
   "engines": {
     "node": ">=8"

@@ -4,3 +4,4 @@ db.json
 .yarn*
 /frontmatter.json
 /.frontmatter
+/packages
