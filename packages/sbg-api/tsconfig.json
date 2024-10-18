@@ -26,6 +26,7 @@
     "noImplicitAny": false,
     /* Strict Type-Checking Options */
     "strict": true,
+    "strictNullChecks": false,
     /* Module Resolution Options */
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Bundler",

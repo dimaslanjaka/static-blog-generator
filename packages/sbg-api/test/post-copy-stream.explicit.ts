@@ -1,5 +1,5 @@
 // cross-env-shell DEBUG:post
-process.env.DEBUG = 'sbg-*,post:*,post,clean,clean:*';
+process.env.DEBUG = 'sbg-*,post:*,post';
 
 import { fixturesCwd, testCwd } from './env.mjs';
 
@@ -10,7 +10,4 @@ process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 import { Application } from '../src';
 
 const api = new Application(fixturesCwd);
-api.clean('post').then(() => {
-  api.copy('async');
-});
-// api.copy('async');
+api.copyStream();

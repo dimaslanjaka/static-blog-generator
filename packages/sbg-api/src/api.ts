@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
 import postParser, { Nullable } from 'hexo-post-parser';
-import { ProjConf, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
+import { ProjConf, chain, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
 import path from 'upath';
 import * as cleaner from './clean';
 import { deployCopy } from './deploy/copy';
@@ -83,22 +83,19 @@ class SBG {
     });
   }
 
+  copyStream = () => chain([{ callback: () => pcopy.streamCopy(undefined, this.config) }]);
+  copyAsync() {
+    return pcopy.promiseCopy(this.config);
+  }
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
-   * * see the method {@link pcopy.copyAllPosts}
+   * * see the method {@link pcopy.promiseCopy}
+   * @param mode choice `stream` or `async`
    * @returns
    */
-  // copy = () => chain([{ callback: () => pcopy.copyAllPosts(undefined, this.config) }]);
-  copy() {
-    const config = this.config;
-    // return new Promise(function (resolve: (args: any) => any) {
-    //   // const streamer = pcopy.copyAllPosts(undefined, config);
-    //   // streamer.on('end', function () {
-    //   //   // wait all handler to be closed
-    //   //   setTimeout(() => resolve(null), 7000);
-    //   // });
-    // });
-    return pcopy.copyAllPosts(config);
+  copy(mode: 'stream' | 'async' = 'stream') {
+    if (mode === 'stream') return this.copyStream();
+    return this.copyAsync();
   }
 
   /**
