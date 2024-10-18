@@ -31,7 +31,7 @@
     "update:ncu": "npx npm-check-updates -u -x jsdom",
     "update": "run-s \"update:**\"",
     "test": "jest --runInBand",
-    "build": "rollup -c && tsc --build tsconfig.docs.json && gulp",
+    "build": "tsc --build tsconfig.build.json && rollup -c && gulp",
     "build-pack": "yarn run build && yarn run pack",
     "clean": "rm -rf dist tmp && yarn build",
     "pack": "node packer.cjs --yarn",
@@ -111,6 +111,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
     "rollup": "^4.24.0",
+    "rollup-plugin-dts": "^6.1.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"

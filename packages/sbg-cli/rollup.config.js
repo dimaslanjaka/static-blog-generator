@@ -6,6 +6,7 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import url from 'node:url';
 import path from 'path';
+import { dts } from 'rollup-plugin-dts';
 import { external, tsconfig } from './rollup.utils.js';
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -84,7 +85,7 @@ const _partials = {
     }
   ],
   plugins,
-  external // External dependencies package name to exclude from bundle
+  external: external.filter((pkgName) => !['sbg-server', 'sbg-utility', 'sbg-api'].includes(pkgName))
 };
 
 /**
@@ -128,4 +129,13 @@ const _onefile = {
   external // External dependencies package name to exclude from bundle
 };
 
-export default [_partials];
+/**
+ * @type {import('rollup').RollupOptions}
+ */
+const declaration = {
+  input: './tmp/dist/index.d.ts',
+  output: [{ file: 'dist/index.d.ts', format: 'es' }],
+  plugins: [dts()]
+};
+
+export default [_onefile, declaration];
