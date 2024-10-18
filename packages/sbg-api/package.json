@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "description": "Pre-processing all source posts before rendering from hexo. Useful for low-end devices to prevent using large number of hexo plugins.",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "require": {
@@ -87,7 +90,7 @@
     "nunjucks": "^3.2.4",
     "p-limit": "^6.1.0",
     "safelinkify": "^1.2.2",
-    "sbg-utility": "^2.0.3",
+    "sbg-utility": "*",
     "through2": "^4.0.2",
     "true-case-path": "^2.2.1",
     "upath": "^2.0.1",
