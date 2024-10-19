@@ -73,7 +73,7 @@
     "fs-extra": "^11.2.0",
     "git-command-helper": "^2.0.2",
     "glob": "^10.3.10",
-    "hexo-post-parser": "^2.0.2",
+    "hexo-post-parser": "^3.0.0",
     "highlight.js": "11.9.0",
     "instant-indexing": "*",
     "kruptein": "^3.0.6",
