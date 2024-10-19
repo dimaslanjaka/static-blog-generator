@@ -60,7 +60,8 @@ function copyDeclarations() {
 }
 
 async function buildDist() {
-  spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], { cwd: __dirname, shell: true, stdio: 'inherit' });
+  await spawnAsync(cmd('tsc'), ['--build', 'tsconfig.build.json'], { cwd: __dirname, shell: true, stdio: 'inherit' });
+  await spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], { cwd: __dirname, shell: true, stdio: 'inherit' });
   await spawnAsync(cmd('rollup'), ['-c'], { cwd: __dirname, shell: true, stdio: 'inherit' });
 }
 

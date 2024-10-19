@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "Node",
+    "rootDir": "./src",
+    "outDir": "./tmp/dist",
+    "declaration": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    "./src/**/*.*",
+    "./src/**/*.json"
+  ],
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.runner.ts",
+    "**/*.test.js",
+    "**/*.spec.js",
+    "**/*.runner.js",
+    "./src/public/**/*"
+  ]
+}

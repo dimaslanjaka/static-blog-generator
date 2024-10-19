@@ -189,7 +189,6 @@
     "**/CVS": true,
     "**/node_modules": true,
     "**/Thumbs.db": true,
-    "**/tmp": true,
     "**/vendor": true,
     "**/venv": true,
     "backups": true,
