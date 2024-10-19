@@ -152,6 +152,6 @@
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac/release/cross-spawn.tgz"
   },
   "engines": {
-    "node": "^16"
+    "node": ">=16"
   }
 }
