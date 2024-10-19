@@ -1,9 +1,14 @@
 import fs from 'fs-extra';
+import path from 'path';
 import slugify from 'slugify';
 import upath from 'upath';
+import { fileURLToPath } from 'url';
 import * as configs from '../config';
 import { writefile } from './filemanager';
 import { areWeTestingWithJest } from './jest';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let FOLDER = upath.join(process.cwd(), 'tmp/logs');
 let cwd = process.cwd();

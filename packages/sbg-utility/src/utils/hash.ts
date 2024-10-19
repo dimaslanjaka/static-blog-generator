@@ -3,6 +3,10 @@ import crypto from 'crypto';
 import * as fs from 'fs-extra';
 import * as glob from 'glob';
 import * as path from 'upath';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * MD5 file synchronously

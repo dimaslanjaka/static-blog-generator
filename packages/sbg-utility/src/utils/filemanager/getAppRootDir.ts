@@ -1,6 +1,10 @@
 import fs from 'fs-extra';
 import path from 'upath';
+import { fileURLToPath } from 'url';
 import { trueCasePathSync } from './case-path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export function getAppRootDir() {
   let currentDir = __dirname;
