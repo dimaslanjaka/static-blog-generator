@@ -25,7 +25,7 @@ const plugins = [
     tsconfig: false,
     compilerOptions: tsconfig.compilerOptions,
     include: ['./src/**/*'],
-    exclude: tsconfig.exclude,
+    exclude: tsconfig.exclude.concat('**/*.test.*', '**/*.builder.*'),
     resolveJsonModule: true,
     allowSyntheticDefaultImports: true,
     esModuleInterop: true,

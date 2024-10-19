@@ -6,5 +6,11 @@
     "emitDeclarationOnly": true,
     "tsBuildInfoFile": "tmp/x.info"
   },
-  "include": ["./src/**/*"]
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "**/*.test.*",
+    "**/*.builder.*"
+  ]
 }

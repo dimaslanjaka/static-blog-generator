@@ -23,6 +23,7 @@
     "**/*.test.ts",
     "**/*.spec.ts",
     "**/*.runner.ts",
+    "**/*.builder.ts",
     "**/*.test.js",
     "**/*.spec.js",
     "**/*.runner.js",

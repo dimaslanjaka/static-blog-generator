@@ -10,11 +10,11 @@
     ".": {
       "require": {
         "default": "./dist/index.cjs",
-        "types": "./dist/src/index.d.ts"
+        "types": "./dist/index.d.ts"
       },
       "import": {
         "default": "./dist/index.mjs",
-        "types": "./dist/src/index.d.mts"
+        "types": "./dist/index.d.mts"
       }
     },
     "./*": {
@@ -162,7 +162,7 @@
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-util.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/5800a18/packages/sbg-utility/release/sbg-utility.tgz"
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/d3ac897/packages/sbg-utility/release/sbg-utility.tgz"
   },
   "packageManager": "yarn@4.5.0"
 }
