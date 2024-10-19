@@ -1,7 +1,7 @@
 // cross-env-shell DEBUG:post
 process.env.DEBUG = 'sbg-*,post:*,post,clean,clean:*';
 
-const { fixturesCwd, testCwd } = require('./env.cjs');
+import { fixturesCwd, testCwd } from './env.mjs';
 
 // tell working directory to fixtures folder
 process.cwd = function () {
@@ -9,7 +9,7 @@ process.cwd = function () {
 };
 
 // start import application
-const { Application } = require('../dist/index.cjs');
+import { Application } from '../dist/index.mjs';
 
 const api = new Application(fixturesCwd);
 api

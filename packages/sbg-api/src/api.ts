@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
-import postParser, { Nullable } from 'hexo-post-parser';
+import * as postParser from 'hexo-post-parser';
 import { ProjConf, chain, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
 import path from 'upath';
 import * as cleaner from './clean';
@@ -21,7 +21,7 @@ class SBG {
    * Static blog generator
    * @param cwd base folder
    */
-  constructor(cwd?: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
+  constructor(cwd?: postParser.Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = normalizePath(process.cwd());
     // fetch config
     fetchConfig(cwd);

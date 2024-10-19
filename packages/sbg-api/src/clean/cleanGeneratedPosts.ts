@@ -12,6 +12,6 @@ export async function cleanGeneratedPosts(callback?: gulp.TaskFunctionCallback |
   const config = getConfig();
   return cleanDb(callback, [
     path.join(config.cwd, config.source_dir, '_posts'),
-    path.join(config.cwd, 'tmp', 'hexo-post-parser')
+    path.join(config.cwd, 'tmp/hexo-post-parser')
   ]);
 }

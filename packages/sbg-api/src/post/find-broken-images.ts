@@ -1,9 +1,10 @@
+import ansiColors from 'ansi-colors';
 import axios from 'axios';
 import Bluebird from 'bluebird';
 import { glob } from 'glob';
 import { TaskFunctionCallback } from 'gulp';
 import Hexo from 'hexo';
-import { color, parsePost } from 'hexo-post-parser';
+import * as hpp from 'hexo-post-parser';
 import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
 import moment from 'moment-timezone';
@@ -28,7 +29,7 @@ export default async function findBrokenImages(html: string, config = getConfig(
       imgUrl = config.url + '/' + img.src;
     }
     await axios.get(imgUrl, { maxRedirects: 3 }).catch((e) => {
-      console.error(color.default.redBright('broken image'), img.src, e.message);
+      console.error(ansiColors.redBright('broken image'), img.src, e.message);
       results.push(img.src);
     });
   }
@@ -66,7 +67,7 @@ interface Report {
 /** parse markdown to html */
 async function toHtml(file: string, config = getConfig()) {
   const result = { post: file, brokenImages: [] } as Report;
-  const parse = await parsePost(file, { sourceFile: file, config });
+  const parse = await hpp.parsePost(file, { sourceFile: file, config });
   if (parse && parse.body) {
     try {
       const html = await marked(parse.body, { async: true });

@@ -43,6 +43,7 @@
     "update": "run-s \"update:**\"",
     "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest",
     "lint": "eslint \"src/**/*.ts\" --fix",
+    "prebuild": "node src/index.builder.mjs",
     "build": "gulp build",
     "build-pack": "yarn run build && yarn run pack",
     "clean": "rm -rf dist tmp && yarn build",
@@ -81,7 +82,7 @@
     "hexo-front-matter": "^4.2.1",
     "hexo-is": "^1.0.5",
     "hexo-log": "^4.1.0",
-    "hexo-post-parser": "^2.0.2",
+    "hexo-post-parser": "^3.0.0",
     "hexo-util": "^3.3.0",
     "marked": "^14.1.3",
     "micromatch": "^4.0.8",
@@ -162,7 +163,8 @@
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-log.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/hexo-util.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/fc1f9b7/releases/warehouse.tgz",
-    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/d3ac897/packages/sbg-utility/release/sbg-utility.tgz"
+    "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/d3ac897/packages/sbg-utility/release/sbg-utility.tgz",
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/5319e01/release/hexo-post-parser.tgz"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.1"
 }
