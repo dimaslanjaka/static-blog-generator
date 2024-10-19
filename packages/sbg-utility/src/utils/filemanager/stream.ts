@@ -1,5 +1,5 @@
-import * as fs from 'fs-extra';
-import * as path from 'upath';
+import fs from 'fs-extra';
+import path from 'upath';
 
 /**
  * create writestream (auto create dirname)

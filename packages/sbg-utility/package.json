@@ -1,6 +1,6 @@
 {
   "name": "sbg-utility",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "description": "static-blog-generator utility",
   "type": "module",
   "main": "./dist/index.js",
@@ -9,7 +9,7 @@
     ".": {
       "require": {
         "default": "./dist/index.cjs",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.cts"
       },
       "import": {
         "default": "./dist/index.mjs",
