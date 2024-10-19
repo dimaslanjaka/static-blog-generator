@@ -35,23 +35,28 @@ const copyAssets = function () {
 
 gulp.task('copy', gulp.series(copyAssets));
 
+/**
+ * Copies TypeScript declaration files from `.d.ts` to `.d.mts` and `.d.cts` extensions.
+ *
+ * @returns {NodeJS.ReadWriteStream} A Gulp stream that processes the declaration files.
+ */
 function copyDeclarations() {
   return gulp
     .src('dist/**/*.d.ts') // Adjust the path as needed
     .pipe(
       through2.obj(function (file, _, cb) {
         if (file.isBuffer()) {
-          const newFileName = file.path.replace(/\.d\.ts$/, '.d.mts');
+          const mtsFileName = file.path.replace(/\.d\.ts$/, '.d.mts');
+          const ctsFileName = file.path.replace(/\.d\.ts$/, '.d.cts');
 
-          // Create a new file stream with the same content but different extension
-          fs.writeFile(newFileName, file.contents, (err) => {
-            if (err) {
-              cb(new Error(`Failed to write file ${newFileName}: ${err.message}`));
-            } else {
-              // console.log(`Copied: ${file.path} to ${newFileName}`);
-              cb(null, file); // Pass the original file to the next stream
-            }
-          });
+          try {
+            // Write .d.mts and .d.cts files synchronously
+            fs.writeFileSync(mtsFileName, file.contents);
+            fs.writeFileSync(ctsFileName, file.contents);
+            cb(null, file); // Pass the original file to the next stream
+          } catch (err) {
+            cb(new Error(`Failed to write files: ${err.message}`));
+          }
         } else {
           cb(null, file); // Pass the original file to the next stream
         }
