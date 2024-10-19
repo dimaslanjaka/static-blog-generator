@@ -4,9 +4,9 @@
 /* https://github.com/WebReflection/flatted/blob/main/cjs/index.js */
 
 import * as crypto from 'crypto';
-import * as fs from 'fs';
+import fs from 'fs-extra';
 import url from 'node:url';
-import * as path from 'path';
+import path from 'path';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const { parse: $parse, stringify: $stringify } = JSON;
