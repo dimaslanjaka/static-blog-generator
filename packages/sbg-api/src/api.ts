@@ -48,16 +48,16 @@ class SBG {
     return this.currentApI;
   }
 
-  /**
-   * get index packages
-   * @returns
-   */
-  async core() {
-    // apply current config
-    setConfig(this.config);
-    // recall index
-    return await import('./index');
-  }
+  // /**
+  //  * get index packages
+  //  * @returns
+  //  */
+  // async core() {
+  //   // apply current config
+  //   setConfig(this.config);
+  //   // recall index
+  //   return await import('./index');
+  // }
 
   /**
    * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
@@ -159,4 +159,4 @@ class SBG {
 }
 
 export default SBG;
-export { SBG };
+export { SBG as Application };
