@@ -1,6 +1,6 @@
 import frontMatter from 'front-matter';
 import fs from 'fs-extra';
-import { buildPost, parsePost, postMap } from 'hexo-post-parser';
+import * as hpp from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import * as sbgUtils from 'sbg-utility';
 import { Logger, writefile } from 'sbg-utility';
@@ -19,7 +19,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
   processingUpdate[postPath] = true;
 
   const config = sbgUtils.config.getConfig();
-  const parse = await parsePost(postPath, {
+  const parse = await hpp.parsePost(postPath, {
     shortcodes: {
       youtube: true,
       css: true,
@@ -64,7 +64,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     }
 
     // prepare rebuild post
-    const rBuild: postMap = {
+    const rBuild: hpp.postMap = {
       metadata: <any>post.attributes,
       body: post.body,
       rawbody: post.body,
@@ -73,7 +73,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     };
 
     // update original source post after process ends
-    const rebuild = buildPost(rBuild);
+    const rebuild = hpp.buildPost(rBuild);
     //writefile(path.join(config.cwd, 'tmp/rebuild.md'), rebuild);
     Logger.log(
       'write to',
@@ -84,7 +84,7 @@ export async function updatePost(postPath: string, callback?: (result: boolean, 
     );
     await writefile(oriPath, rebuild, { async: true }); // write original post
 
-    const build = buildPost(parse);
+    const build = hpp.buildPost(parse);
     await writefile(postPath, build, { async: true });
   } else {
     Logger.log('cannot parse', postPath);

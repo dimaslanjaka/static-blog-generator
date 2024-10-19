@@ -5,7 +5,7 @@ process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 
 import { describe, expect, test } from '@jest/globals';
 import { parsePost } from 'hexo-post-parser';
-import { join } from 'upath';
+import path from 'upath';
 import { Application } from '../src';
 import validateClean from './validate-clean';
 import validateCopy from './validate-copy';
@@ -34,7 +34,7 @@ describe('test copy post with label mapper', function () {
   });
   describe('validate mapped', function () {
     test('label lowercase', async () => {
-      const postAssign = join(api.config.cwd, 'source/_posts/label-uppercase.md');
+      const postAssign = path.join(api.config.cwd, 'source/_posts/label-uppercase.md');
       const parsePostAssign = await parsePost(postAssign, {
         config: <any>api.getConfig()
       });
@@ -47,7 +47,7 @@ describe('test copy post with label mapper', function () {
       }
     });
     test('label assign (add label based on config.tags|categories.assign key)', async () => {
-      const postAssign = join(api.config.cwd, 'source/_posts/label-assigner.md');
+      const postAssign = path.join(api.config.cwd, 'source/_posts/label-assigner.md');
       const parsePostAssign = await parsePost(postAssign, {
         config: <any>api.getConfig()
       });
@@ -60,7 +60,7 @@ describe('test copy post with label mapper', function () {
       }
     });
     test('label mapper (label replacer)', async () => {
-      const postAssign = join(api.config.cwd, 'source/_posts/label-mapper.md');
+      const postAssign = path.join(api.config.cwd, 'source/_posts/label-mapper.md');
       const parsePostAssign = await parsePost(postAssign, {
         config: <any>api.getConfig()
       });

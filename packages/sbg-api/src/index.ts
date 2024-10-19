@@ -1,4 +1,3 @@
 export * from './index-exports';
-
-import * as exporter from './index-exports';
-export default exporter;
+import * as lib from './index-exports';
+export default lib;

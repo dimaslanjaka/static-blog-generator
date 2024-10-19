@@ -1,6 +1,6 @@
 import Bluebird from 'bluebird';
 import Hexo from 'hexo';
-import postParser, { Nullable } from 'hexo-post-parser';
+import * as postParser from 'hexo-post-parser';
 import { ProjConf, chain, debug, fetchConfig, getConfig, noop, normalizePath, scheduler, setConfig } from 'sbg-utility';
 import path from 'upath';
 import * as cleaner from './clean';
@@ -21,7 +21,7 @@ class SBG {
    * Static blog generator
    * @param cwd base folder
    */
-  constructor(cwd?: Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
+  constructor(cwd?: postParser.Nullable<string>, options?: Parameters<typeof setConfig>[0]) {
     if (!cwd) cwd = normalizePath(process.cwd());
     // fetch config
     fetchConfig(cwd);
@@ -48,16 +48,16 @@ class SBG {
     return this.currentApI;
   }
 
-  /**
-   * get index packages
-   * @returns
-   */
-  async core() {
-    // apply current config
-    setConfig(this.config);
-    // recall index
-    return await import('./index');
-  }
+  // /**
+  //  * get index packages
+  //  * @returns
+  //  */
+  // async core() {
+  //   // apply current config
+  //   setConfig(this.config);
+  //   // recall index
+  //   return await import('./index');
+  // }
 
   /**
    * run files ends with `standalone.js` inside source posts {@link standaloneRunner}
@@ -159,4 +159,4 @@ class SBG {
 }
 
 export default SBG;
-export { SBG };
+export { SBG as Application };

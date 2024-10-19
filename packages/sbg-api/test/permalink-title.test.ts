@@ -6,7 +6,7 @@ process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 
 import { parsePost } from 'hexo-post-parser';
 import moment from 'moment';
-import { join } from 'path';
+import { normalizePathUnix } from 'sbg-utility';
 import { Application } from '../src';
 import validateClean from './validate-clean';
 import validateCopy from './validate-copy';
@@ -40,12 +40,15 @@ describe('permalink', function () {
     describe('validate', function () {
       test('post with custom permalink', () =>
         validatePermalink(
-          join(api.config.cwd, '/source/_posts/with-permalink.md'),
+          normalizePathUnix(api.config.cwd, '/source/_posts/with-permalink.md'),
           moment().format('YYYY/MM/') + 'with-permalink.html'
         ));
 
       test('post without permalink', () =>
-        validatePermalink(join(api.config.cwd, '/source/_posts/without-permalink.md'), 'without-permalink.html'));
+        validatePermalink(
+          normalizePathUnix(api.config.cwd, '/source/_posts/without-permalink.md'),
+          'without-permalink.html'
+        ));
     });
   });
 });

@@ -1,6 +1,6 @@
 import ansiColors from 'ansi-colors';
 import fs from 'fs-extra';
-import hpp from 'hexo-post-parser';
+import * as hpp from 'hexo-post-parser';
 import moment from 'moment-timezone';
 import pLimit from 'p-limit';
 import {

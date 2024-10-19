@@ -11,7 +11,7 @@ describe('copy test', function () {
   const api = new Application(process.cwd());
 
   test('validate cwd', function () {
-    expect(api.config.cwd).toEqual(expect.stringMatching(/test$/));
+    expect(api.config.cwd).toEqual(process.cwd());
   });
 
   describe('run copy', () => {

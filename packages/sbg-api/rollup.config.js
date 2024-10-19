@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import * as glob from 'glob';
 import path from 'path';
+import { dts } from 'rollup-plugin-dts';
 import { fileURLToPath } from 'url';
 import { external, tsconfig } from './rollup.utils.js';
 
@@ -24,7 +25,7 @@ const plugins = [
     tsconfig: false,
     compilerOptions: tsconfig.compilerOptions,
     include: ['./src/**/*'],
-    exclude: tsconfig.exclude,
+    exclude: tsconfig.exclude.concat('**/*.test.*', '**/*.builder.*'),
     resolveJsonModule: true,
     allowSyntheticDefaultImports: true,
     esModuleInterop: true,
@@ -93,7 +94,8 @@ const _onefile = {
       sourcemap: false,
       globals: {
         hexo: 'hexo'
-      }
+      },
+      exports: 'named'
     },
     // bundle .cjs as CommonJS
     {
@@ -102,7 +104,8 @@ const _onefile = {
       sourcemap: false,
       globals: {
         hexo: 'hexo'
-      }
+      },
+      exports: 'named'
     },
     // build .mjs as ESM
     {
@@ -111,11 +114,21 @@ const _onefile = {
       sourcemap: false,
       globals: {
         hexo: 'hexo'
-      }
+      },
+      exports: 'named'
     }
   ],
   plugins,
   external // External dependencies package name to exclude from bundle
 };
 
-export default [_onefile, _partials];
+/**
+ * @type {import('rollup').RollupOptions}
+ */
+const declaration = {
+  input: './tmp/dist/index.d.ts',
+  output: [{ file: './dist/index.d.ts', format: 'es' }],
+  plugins: [resolve({ preferBuiltins: true }), dts()]
+};
+
+export default [declaration, _onefile, _partials];

@@ -12,9 +12,4 @@ process.cwd = function () {
 const { Application } = require('../dist/index.cjs');
 
 const api = new Application(fixturesCwd);
-api
-  .clean('post')
-  .then(() => {
-    return api.copy();
-  })
-  .catch(console.error);
+api.clean('post');
