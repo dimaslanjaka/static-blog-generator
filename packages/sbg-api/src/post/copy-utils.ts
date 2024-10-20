@@ -13,6 +13,7 @@ import {
   normalizePath
 } from 'sbg-utility';
 import path from 'upath';
+import { parseDynamicArray } from '../utils/array';
 import { parsePermalink } from './permalink';
 
 /**
@@ -212,6 +213,26 @@ export async function parseMarkdownPost(
           // label assign
           if (config[groupLabel]?.assign) {
             for (const oldLabel in config[groupLabel].assign) {
+              if (typeof parseResult.metadata[groupLabel].findIndex !== 'function') {
+                if (typeof parseResult.metadata[groupLabel] === 'string') {
+                  try {
+                    const arr = parseDynamicArray(parseResult.metadata[groupLabel]);
+                    parseResult.metadata[groupLabel] = arr;
+                  } catch (e: any) {
+                    console.log(
+                      parseResult.metadata[groupLabel],
+                      `findIndex not found for ${groupLabel} type ${typeof parseResult.metadata[groupLabel]} (${e.message})`
+                    );
+                    continue;
+                  }
+                } else {
+                  console.log(
+                    parseResult.metadata[groupLabel],
+                    `findIndex not found for ${groupLabel} type ${typeof parseResult.metadata[groupLabel]}`
+                  );
+                  continue;
+                }
+              }
               const index = parseResult.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
               if (index !== -1) {
