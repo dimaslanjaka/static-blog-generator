@@ -20,7 +20,7 @@ export default async function cleanArchive(callback?: gulp.TaskFunctionCallback 
 
   // push language folder to be deleted from deploy dir
   if (Array.isArray(config.language)) {
-    const langDir = config.language.map((path) => path.join(config.deploy.deployDir, path));
+    const langDir = config.language.map((file) => path.join(config.deploy.deployDir, file));
     folders.push(...langDir);
   } else if (typeof config.language === 'string' && String(config.language).trim().length > 0) {
     folders.push(path.join(config.deploy.deployDir, String(config.language)));
