@@ -71,3 +71,13 @@ async function buildDist() {
 }
 
 gulp.task('build', gulp.series(buildDist, copyAssets, copyDeclarations));
+
+gulp.task('pack', async function () {
+  await spawnAsync(cmd('yarn'), ['run', 'pack'], { cwd: __dirname, shell: true, stdio: 'inherit' });
+});
+
+gulp.task('build-pack', gulp.series('build', 'pack'));
+
+gulp.task('watch', function () {
+  gulp.watch('./src/**/*.ts', { cwd: __dirname, ignored: ['**/index*'] }, gulp.series('build', 'pack'));
+});
