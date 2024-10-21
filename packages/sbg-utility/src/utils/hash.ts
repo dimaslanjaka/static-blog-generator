@@ -11,9 +11,9 @@ const __dirname = path.dirname(__filename);
 /**
  * MD5 file synchronously
  * @param path
- * @returns
  */
-export function md5FileSync(path: string) {
+export function md5FileSync(path?: string) {
+  if (!path || path.length === 0) return undefined;
   let fileBuffer = Buffer.from(path);
   if (fs.existsSync(path)) {
     if (fs.statSync(path).isFile()) fileBuffer = fs.readFileSync(path);
@@ -26,13 +26,18 @@ export function md5FileSync(path: string) {
 /**
  * PHP MD5 Equivalent
  * @param data
- * @returns
  */
-export function md5(data: string) {
+export function md5(data?: string) {
+  if (!data || data.length === 0) return undefined;
   return crypto.createHash('md5').update(data).digest('hex');
 }
 
-export default function md5File(path: string) {
+/**
+ * MD5 file asynchronously
+ * @param path
+ */
+export default function md5File(path?: string) {
+  if (!path || path.length === 0) return undefined;
   return new Promise((resolve, reject) => {
     const output = crypto.createHash('md5');
     const input = fs.createReadStream(path);
