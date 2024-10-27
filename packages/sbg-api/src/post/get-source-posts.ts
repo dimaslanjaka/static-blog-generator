@@ -9,7 +9,8 @@ export const globalPostIgnore = [
   '**/tmp/**',
   '**/.deploy_*/**',
   '**/*.lock',
-  '**/package-lock.json'
+  '**/package-lock.json',
+  '**/.git/**'
 ];
 
 export const markdownExtPattern = '{md,markdown,mdown,mkdn,mkd,mdtxt,mdtext,text}';
