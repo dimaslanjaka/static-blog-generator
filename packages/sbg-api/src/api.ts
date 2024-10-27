@@ -84,9 +84,11 @@ class SBG {
   }
 
   copyStream = () => chain([{ callback: () => pcopy.streamCopy(undefined, this.config) }]);
-  copyAsync() {
-    return pcopy.promiseCopy(this.config);
+  async copyAsync() {
+    await pcopy.promiseCopy(this.config);
+    await pcopy.promiseCopyAssets(this.config);
   }
+
   /**
    * Copy all **src-post** to **source/_posts** (run before generate)
    * * see the method {@link pcopy.promiseCopy}

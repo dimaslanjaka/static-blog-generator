@@ -1,12 +1,13 @@
 import ansiColors from 'ansi-colors';
+import debug from 'debug';
 import fs from 'fs-extra';
 import gulp from 'gulp';
-import { debug, escapeRegex, getConfig, gulpCached, md5 } from 'sbg-utility';
+import { getConfig, gulpCached, md5 } from 'sbg-utility';
 import through2 from 'through2';
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { forceGc } from '../utils/gc';
-import { removeCwd } from '../utils/path';
+import { removeCwd, replaceCopyDestination } from '../utils/path';
 import { parseMarkdownPost } from './copy-utils';
 import getSourcePosts, { getSourceAssets } from './get-source-posts';
 
@@ -49,9 +50,7 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
  */
 export async function promiseCopy(config?: ReturnType<typeof getConfig>): Promise<void> {
   if (!config) config = getConfig();
-  const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
   const posts = await getSourcePosts(config);
-  const assets = await getSourceAssets(config);
 
   /**
    * Process a markdown file
@@ -71,31 +70,13 @@ export async function promiseCopy(config?: ReturnType<typeof getConfig>): Promis
     const compile = await parseMarkdownPost({ content, file }, config).catch(() => null); // Process content
 
     if (typeof compile === 'string') {
-      const { post_dir = 'src-posts' } = config;
-      const regex = new RegExp(`[\\/\\\\]${escapeRegex(post_dir)}[\\/\\\\]`);
-      const fileWithoutCwd = removeCwd(file).replace(regex, '');
-      const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
+      const dest = replaceCopyDestination(config, file);
       // Ensure the destination directory exists
       await fs.ensureDir(path.dirname(dest));
       // Write the compiled markdown directly to the destination file
       await fs.writeFile(dest, compile, 'utf-8');
       await fs.writeFile(cachePath, compile);
     }
-  };
-
-  /**
-   * Copy non-markdown file
-   *
-   * @param file The file path to copy
-   * @returns Promise<void>
-   */
-  const processAssets = async function (file: string): Promise<void> {
-    const fileWithoutCwd = removeCwd(file).replace(/[/\\]src-posts[/\\]/, '');
-    const dest = path.join(generatedPostDir, fileWithoutCwd); // Generate destination path
-    await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
-
-    // Copy the file to the destination
-    await fs.copy(file, dest);
   };
 
   log('Processing', posts.length, 'post(s)');
@@ -120,13 +101,28 @@ export async function promiseCopy(config?: ReturnType<typeof getConfig>): Promis
       console.error(error);
     }
   }
+}
 
-  while (assets.length > 0) {
-    const file = assets.shift();
-    if (file) {
-      await processAssets(file);
-    }
-  }
+export async function promiseCopyAssets(config?: ReturnType<typeof getConfig>) {
+  if (!config) config = getConfig();
+  const assets = await getSourceAssets(config);
+  log('Processing', assets.length, 'asset(s)');
+
+  /**
+   * Copy non-markdown file
+   *
+   * @param file The file path to copy
+   * @returns Promise<void>
+   */
+  const processAssets = async function (file: string): Promise<void> {
+    const dest = replaceCopyDestination(config, file);
+    await fs.ensureDir(path.dirname(dest)); // Ensure the destination directory exists
+    log.extend('assets')(`copying ${removeCwd(file)} -> ${removeCwd(dest)}`);
+    // Copy the file to the destination
+    await fs.copy(file, dest, { overwrite: true });
+  };
+
+  assets.forEach(processAssets);
 }
 
 /**
