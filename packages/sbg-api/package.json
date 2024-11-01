@@ -78,6 +78,7 @@
     "git-command-helper": "^2.0.2",
     "glob": "^11.0.0",
     "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
     "hexo": "^7.3.0",
     "hexo-asset-link": "^2.2.3",
     "hexo-cli": "^4.3.2",
