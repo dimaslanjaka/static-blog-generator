@@ -1,6 +1,5 @@
-const { describe, expect, it, test } = require('@jest/globals');
-const defaults = require('../dist/index.cjs').default;
-const wildcards = require('../dist/index.cjs');
+import { describe, expect, it, test } from '@jest/globals';
+import defaults, * as wildcards from '../dist/index.mjs';
 
 /**
  * Tests for the methods in the wildcards and defaults modules.

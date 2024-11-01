@@ -62,7 +62,7 @@ const config: JestConfigWithTsJest = {
     ]
   },
   // detectLeaks: true,
-  detectOpenHandles: true,
+  // detectOpenHandles: true,
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',

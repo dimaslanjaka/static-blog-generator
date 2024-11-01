@@ -31,7 +31,9 @@ describe('check method', () => {
     'sitemapCrawlerAsync',
     'SiteMapCrawler',
     'jsonStringifyWithCircularRefs',
-    'writefile'
+    'writefile',
+    'normalizePath',
+    'normalizePathUnix'
   ];
 
   for (let i = 0; i < props.length; i++) {
