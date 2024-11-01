@@ -3,42 +3,42 @@ import path from 'path';
 import slugify from 'slugify';
 import upath from 'upath';
 import { fileURLToPath } from 'url';
-import * as configs from '../config';
 import { writefile } from './filemanager';
-import { areWeTestingWithJest } from './jest';
+// import { areWeTestingWithJest } from './jest';
+// import * as configs from '../config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-let FOLDER = upath.join(process.cwd(), 'tmp/logs');
-let cwd = process.cwd();
+const FOLDER = upath.join(process.cwd(), 'tmp/logs');
+// let cwd = process.cwd();
 
 // disable console.log on jest
-if (areWeTestingWithJest()) {
-  const log = console.log;
-  console.log = function (...args: any[]) {
-    if (typeof configs.getConfig === 'function') {
-      const cfg = configs.getConfig();
-      FOLDER = upath.join(cfg.cwd, 'tmp/logs/');
-      cwd = cfg.cwd;
-    }
-    const stack = (new Error('').stack || '').split(/\r?\n/gm);
-    let msg = (stack || [])[3] || '';
-    if (msg.includes(__filename)) {
-      msg = (stack || [])[2] || '';
-    }
-    // log(stack[2], stack[4]);
-    const filename = slugify(upath.toUnix(msg).replace(upath.toUnix(cwd), ''), {
-      lower: true,
-      trim: true,
-      replacement: '-',
-      strict: true
-    });
-    const header = `\n\n ${new Date()} \n\n`;
-    const write = writefile(upath.join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
-    log(write.file);
-  };
-}
+// if (areWeTestingWithJest()) {
+//   const log = console.log;
+//   console.log = function (...args: any[]) {
+//     if (typeof configs.getConfig === 'function') {
+//       const cfg = configs.getConfig();
+//       FOLDER = upath.join(cfg.cwd, 'tmp/logs/');
+//       cwd = cfg.cwd;
+//     }
+//     const stack = (new Error('').stack || '').split(/\r?\n/gm);
+//     let msg = (stack || [])[3] || '';
+//     if (msg.includes(__filename)) {
+//       msg = (stack || [])[2] || '';
+//     }
+//     // log(stack[2], stack[4]);
+//     const filename = slugify(upath.toUnix(msg).replace(upath.toUnix(cwd), ''), {
+//       lower: true,
+//       trim: true,
+//       replacement: '-',
+//       strict: true
+//     });
+//     const header = `\n\n ${new Date()} \n\n`;
+//     const write = writefile(upath.join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
+//     log(write.file);
+//   };
+// }
 
 //const _log = typeof hexo === 'undefined' ? console : Object.assign({ log: console.log }, hexo.log);
 const _log = console;
