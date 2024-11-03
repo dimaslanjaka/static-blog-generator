@@ -1,7 +1,6 @@
 import crossSpawn from 'cross-spawn'; // CommonJS module
 import fs from 'fs-extra'; // CommonJS module
 import gulp from 'gulp'; // ES module
-import through2 from 'through2';
 import path from 'upath'; // CommonJS module
 import { fileURLToPath } from 'url';
 
@@ -30,73 +29,25 @@ const cmd = (commandName) => {
 };
 
 function copyAssets() {
-  return gulp.src('./src/**/*.{json,yml,xml,xsl}', { cwd: __dirname }).pipe(gulp.dest('./dist/src'));
+  return gulp.src('./src/**/*.{json,yml,xml,xsl}', { cwd: __dirname }).pipe(gulp.dest('./dist'));
 }
 
 // copy non-javascript assets from src folder
 const copy = function () {
   return gulp
     .src(['**/*.*'], { cwd: path.join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(path.join(__dirname, 'dist/src')));
+    .pipe(gulp.dest(path.join(__dirname, 'dist')));
 };
 
-/**
- * Copies TypeScript declaration files from `.d.ts` to `.d.mts` and `.d.cts` extensions.
- *
- * @returns {NodeJS.ReadWriteStream} A Gulp stream that processes the declaration files.
- */
-function copyDeclarations() {
-  return gulp
-    .src('dist/**/*.d.ts') // Adjust the path as needed
-    .pipe(
-      through2.obj(function (file, _, cb) {
-        if (file.isBuffer()) {
-          const mtsFileName = file.path.replace(/\.d\.ts$/, '.d.mts');
-          const ctsFileName = file.path.replace(/\.d\.ts$/, '.d.cts');
-
-          try {
-            // Write .d.mts and .d.cts files synchronously
-            fs.writeFileSync(mtsFileName, file.contents);
-            fs.writeFileSync(ctsFileName, file.contents);
-            cb(null, file); // Pass the original file to the next stream
-          } catch (err) {
-            cb(new Error(`Failed to write files: ${err.message}`));
-          }
-        } else {
-          cb(null, file); // Pass the original file to the next stream
-        }
-      })
-    );
-}
-
-async function moveFiles() {
-  const srcDir = path.join(__dirname, 'dist/src');
-  const destDir = path.join(__dirname, 'dist');
-  try {
-    const files = await fs.readdir(srcDir);
-
-    await Promise.all(
-      files.map(async (file) => {
-        const srcPath = path.join(srcDir, file);
-        const destPath = path.join(destDir, file);
-        await fs.move(srcPath, destPath, { overwrite: true });
-        console.log(`Moved file ${file} to ${destDir}`);
-      })
-    );
-  } catch (err) {
-    console.error(`Error moving files: ${err}`);
-  }
-}
-
-gulp.task('copy', gulp.series(copy, copyAssets, copyDeclarations, moveFiles));
+gulp.task('copy', gulp.series(copy, copyAssets));
 
 async function tsc() {
-  await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
+  await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
   });
-  await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
+  await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'

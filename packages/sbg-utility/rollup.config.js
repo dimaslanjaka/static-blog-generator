@@ -7,6 +7,7 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import url from 'node:url';
 import path from 'path';
+import { dts } from 'rollup-plugin-dts';
 import polyfill from 'rollup-plugin-polyfill-node';
 import { external, tsconfig } from './rollup.utils.js';
 
@@ -119,4 +120,43 @@ const _browser = {
   ]
 };
 
-export default [_partials];
+/** @type {import('rollup').RollupOptions} */
+const _oneFile = {
+  input: './src/index.ts',
+  output: [
+    {
+      file: 'dist/index.js',
+      format: 'esm',
+      exports: 'named',
+      inlineDynamicImports: true
+    },
+    {
+      file: 'dist/index.mjs',
+      format: 'esm',
+      exports: 'named',
+      inlineDynamicImports: true
+    },
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      exports: 'named',
+      inlineDynamicImports: true
+    }
+  ],
+  plugins,
+  external
+};
+
+/** @type {import('rollup').RollupOptions} */
+const _declarations = {
+  input: './tmp/dist/index-exports.d.ts',
+  output: [
+    { file: 'dist/index.d.ts', format: 'es', exports: 'named', inlineDynamicImports: true },
+    { file: 'dist/index.d.cts', format: 'es', exports: 'named', inlineDynamicImports: true },
+    { file: 'dist/index.d.mts', format: 'es', exports: 'named', inlineDynamicImports: true }
+  ],
+  plugins: [resolve({ preferBuiltins: true }), json(), dts({ tsconfig: 'tsconfig.docs.json' })],
+  external
+};
+
+export default [_oneFile, _declarations];
