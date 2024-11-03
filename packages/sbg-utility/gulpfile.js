@@ -32,7 +32,7 @@ const cmd = (commandName) => {
 // copy non-javascript assets from src folder
 const copy = async function () {
   // path.join(__dirname, 'dist')
-  const files = await glob.glob(['./src/**/*.*'], { ignore: ['**/*.{ts,js,json,cjs,mjs}'], absolute: true });
+  const files = await glob.glob(['./src/**/*.*'], { ignore: ['**/*.{ts,js,cjs,mjs}'], absolute: true });
 
   for (let i = 0; i < files.length; i++) {
     const src = files[i];
