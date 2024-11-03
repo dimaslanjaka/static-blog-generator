@@ -11,7 +11,7 @@ const config: JestConfigWithTsJest = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'mts'],
-  verbose: false,
+  verbose: true,
   cache: true,
   cacheDirectory: join(__dirname, 'tmp/jest'),
   collectCoverageFrom: [
