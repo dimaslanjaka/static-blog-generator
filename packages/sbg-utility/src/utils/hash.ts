@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import crypto from 'crypto';
+import cryptolib from 'crypto';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import path from 'upath';
@@ -18,7 +18,7 @@ export function md5FileSync(path?: string) {
   if (fs.existsSync(path)) {
     if (fs.statSync(path).isFile()) fileBuffer = fs.readFileSync(path);
   }
-  const hashSum = crypto.createHash('md5'); // sha256
+  const hashSum = cryptolib.createHash('md5'); // sha256
   hashSum.update(fileBuffer);
   return hashSum.digest('hex');
 }
@@ -29,7 +29,7 @@ export function md5FileSync(path?: string) {
  */
 export function md5(data?: string) {
   if (!data || data.length === 0) return undefined;
-  return crypto.createHash('md5').update(data).digest('hex');
+  return cryptolib.createHash('md5').update(data).digest('hex');
 }
 
 /**
@@ -39,7 +39,7 @@ export function md5(data?: string) {
 export default function md5File(path?: string) {
   if (!path || path.length === 0) return undefined;
   return new Promise((resolve, reject) => {
-    const output = crypto.createHash('md5');
+    const output = cryptolib.createHash('md5');
     const input = fs.createReadStream(path);
 
     input.on('error', (err) => {
@@ -67,7 +67,7 @@ export function file_to_hash(
   encoding: import('crypto').BinaryToTextEncoding = 'hex'
 ): Promise<string> {
   return new Promise((resolve, reject) => {
-    const hash = crypto.createHash(alogarithm);
+    const hash = cryptolib.createHash(alogarithm);
     const rs = fs.createReadStream(path);
     rs.on('error', reject);
     rs.on('data', (chunk) => hash.update(chunk));
@@ -84,7 +84,7 @@ export function file_to_hash(
  */
 export function data_to_hash(
   alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
-  data: crypto.BinaryLike,
+  data: cryptolib.BinaryLike,
   encoding: import('crypto').BinaryToTextEncoding = 'hex'
 ): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -105,10 +105,10 @@ export function data_to_hash(
  */
 export function data_to_hash_sync(
   alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
-  data: crypto.BinaryLike,
+  data: cryptolib.BinaryLike,
   encoding: import('crypto').BinaryToTextEncoding = 'hex'
 ) {
-  return crypto.createHash(alogarithm).update(data).digest(encoding);
+  return cryptolib.createHash(alogarithm).update(data).digest(encoding);
 }
 
 /**
@@ -133,13 +133,13 @@ export async function folder_to_hash(
     /**
      * encoding type
      */
-    encoding: crypto.BinaryToTextEncoding;
+    encoding: cryptolib.BinaryToTextEncoding;
   }
 ): Promise<{ filesWithHash: Record<string, string>; hash: string }> {
   return new Promise((resolvePromise, rejectPromise) => {
     options = Object.assign(
       {
-        encoding: 'hex' as crypto.BinaryToTextEncoding,
+        encoding: 'hex' as cryptolib.BinaryToTextEncoding,
         ignored: [] as string[],
         pattern: ''
       },
@@ -203,7 +203,7 @@ export async function folder_to_hash(
 export async function url_to_hash(
   alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
   url: string,
-  encoding: crypto.BinaryToTextEncoding = 'hex'
+  encoding: cryptolib.BinaryToTextEncoding = 'hex'
 ) {
   return new Promise((resolve, reject) => {
     let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
