@@ -33,7 +33,7 @@ export const external = _.uniq(
       'bluebird'
     )
 ).filter((pkgName) => {
-  return !['p-limit', 'deepmerge-ts', 'hexo-is', 'markdown-it'].includes(pkgName);
+  return !['p-limit', 'deepmerge-ts', 'hexo-is', 'markdown-it', 'is-stream'].includes(pkgName);
 });
 
 export { tsconfig };
