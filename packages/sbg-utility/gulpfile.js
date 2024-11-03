@@ -1,7 +1,8 @@
 import crossSpawn from 'cross-spawn'; // CommonJS module
 import fs from 'fs-extra'; // CommonJS module
+import * as glob from 'glob';
 import gulp from 'gulp'; // ES module
-import path from 'upath'; // CommonJS module
+import path from 'path'; // CommonJS module
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -28,18 +29,20 @@ const cmd = (commandName) => {
   return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
 };
 
-function copyAssets() {
-  return gulp.src('./src/**/*.{json,yml,xml,xsl}', { cwd: __dirname }).pipe(gulp.dest('./dist'));
-}
-
 // copy non-javascript assets from src folder
-const copy = function () {
-  return gulp
-    .src(['**/*.*'], { cwd: path.join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(path.join(__dirname, 'dist')));
+const copy = async function () {
+  // path.join(__dirname, 'dist')
+  const files = await glob.glob(['./src/**/*.*'], { ignore: ['**/*.{ts,js,json,cjs,mjs}'], absolute: true });
+
+  for (let i = 0; i < files.length; i++) {
+    const src = files[i];
+    const dest = path.join(__dirname, 'dist', path.basename(src));
+    fs.copySync(src, dest, { overwrite: true });
+    console.log('Copied', src.replace(__dirname, ''), '->', dest.replace(__dirname, ''));
+  }
 };
 
-gulp.task('copy', gulp.series(copy, copyAssets));
+gulp.task('copy', copy);
 
 async function tsc() {
   await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {

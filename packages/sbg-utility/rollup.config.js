@@ -54,7 +54,7 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      exports: 'named',
+
       globals: {
         hexo: 'hexo'
       }
@@ -65,7 +65,7 @@ const _partials = {
       format: 'cjs',
       sourcemap: false,
       preserveModules: true,
-      exports: 'named',
+
       entryFileNames: '[name].cjs',
       globals: {
         hexo: 'hexo'
@@ -77,7 +77,7 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      exports: 'named',
+
       entryFileNames: '[name].mjs',
       globals: {
         hexo: 'hexo'
@@ -127,19 +127,16 @@ const _oneFile = {
     {
       file: 'dist/index.js',
       format: 'esm',
-      exports: 'named',
       inlineDynamicImports: true
     },
     {
       file: 'dist/index.mjs',
       format: 'esm',
-      exports: 'named',
       inlineDynamicImports: true
     },
     {
       file: 'dist/index.cjs',
       format: 'cjs',
-      exports: 'named',
       inlineDynamicImports: true
     }
   ],
@@ -151,9 +148,9 @@ const _oneFile = {
 const _declarations = {
   input: './tmp/dist/index-exports.d.ts',
   output: [
-    { file: 'dist/index.d.ts', format: 'es', exports: 'named', inlineDynamicImports: true },
-    { file: 'dist/index.d.cts', format: 'es', exports: 'named', inlineDynamicImports: true },
-    { file: 'dist/index.d.mts', format: 'es', exports: 'named', inlineDynamicImports: true }
+    { file: 'dist/index.d.ts', format: 'es', inlineDynamicImports: true },
+    { file: 'dist/index.d.cts', format: 'es', inlineDynamicImports: true },
+    { file: 'dist/index.d.mts', format: 'es', inlineDynamicImports: true }
   ],
   plugins: [resolve({ preferBuiltins: true }), json(), dts({ tsconfig: 'tsconfig.docs.json' })],
   external
