@@ -1,15 +1,16 @@
 import ansiColors from 'ansi-colors';
 import debug from 'debug';
 import fs from 'fs-extra';
+import * as glob from 'glob';
 import gulp from 'gulp';
-import { getConfig, gulpCached, md5 } from 'sbg-utility';
+import { getConfig, gulpCached, md5, normalizePathUnix } from 'sbg-utility';
 import through2 from 'through2';
 import path from 'upath';
 import { gulpOpt } from '../gulp-options';
 import { forceGc } from '../utils/gc';
 import { removeCwd, replaceCopyDestination } from '../utils/path';
 import { parseMarkdownPost } from './copy-utils';
-import getSourcePosts, { getSourceAssets } from './get-source-posts';
+import getSourcePosts, { getSourceAssets, markdownExtPattern } from './get-source-posts';
 
 /**
  * log debug
@@ -132,19 +133,45 @@ export async function promiseCopyAssets(config?: ReturnType<typeof getConfig>) {
 export function streamCopy(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
   if (!config) config = getConfig();
   const excludes = config.exclude || [];
-  const sourcePostDir = path.join(config.cwd, config.post_dir);
-  const generatedPostDir = path.join(config.cwd, config.source_dir, '_posts');
+  const sourcePostDir = normalizePathUnix(config.cwd, config.post_dir);
+  const generatedPostDir = normalizePathUnix(config.cwd, config.source_dir, '_posts');
   // console.log(excludes, sourcePostDir);
-  return gulp
-    .src(['**/*.*', '*.*', '**/*'], {
+  // return gulp
+  //   .src(['**/*.*', '*.*', '**/*'], {
+  //     cwd: sourcePostDir,
+  //     ignore: excludes,
+  //     dot: true,
+  //     noext: true
+  //   } as gulpOpt)
+  //   .pipe(gulpCached({ name: 'post-copy', cwd: config.cwd }))
+  //   .pipe(pipeProcessPost(config))
+  //   .pipe(gulp.dest(generatedPostDir));
+  const posts = () =>
+    gulp
+      .src(['**/*.{md,json,html}', '**/*.' + markdownExtPattern], {
+        cwd: sourcePostDir,
+        ignore: excludes,
+        dot: true,
+        noext: true
+      })
+      .pipe(gulpCached({ name: 'post-copy', cwd: config.cwd }))
+      .pipe(pipeProcessPost(config))
+      .pipe(gulp.dest(generatedPostDir));
+  const assets = async () => {
+    const results = await glob.glob(['**/*.*', '*.*', '**/*'], {
       cwd: sourcePostDir,
-      ignore: excludes,
+      ignore: excludes.concat('**/*.{md,html,json}', '**/*.' + markdownExtPattern),
       dot: true,
-      noext: true
-    } as gulpOpt)
-    .pipe(gulpCached({ name: 'post-copy', cwd: config.cwd }))
-    .pipe(pipeProcessPost(config))
-    .pipe(gulp.dest(generatedPostDir));
+      noext: true,
+      absolute: true
+    });
+    for (let i = 0; i < results.length; i++) {
+      const src = normalizePathUnix(results[i]);
+      const dest = normalizePathUnix(generatedPostDir, src.replace(sourcePostDir, ''));
+      fs.copySync(src, dest, { overwrite: true });
+    }
+  };
+  return gulp.series(posts, assets)(_callback);
 }
 
 /**

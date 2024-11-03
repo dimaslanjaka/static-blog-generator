@@ -10,12 +10,12 @@
   },
   "/release/sbg-api.tgz": {
     "integrity": {
-      "sha1": "44fbf1584c70cb8d9149e5db5fd3030712057301",
-      "sha256": "SxavWEroQypc8FFKZf00gCdl+g/bkCWmrpvnsEztNW4=",
-      "md5": "d84179dcd74165b03dcf6930a899d5c0",
-      "sha512": "12NNTnCi2uKJ26W5Y9wwUPjdEt4qvHuJ4CN8/QFNKiSFix1Tq8bHKDxPHvSjg1/WvZx1rTNrQnrAnwgmlQSm+w=="
+      "sha1": "7e7a15f1ba2f53749897fd8fe7e9255e5b875c6b",
+      "sha256": "dCL8A3n2peA9UK4IlHBQ4jhEH84J3j4a+TX5yEY72wQ=",
+      "md5": "20f1600d65589de58ba57d0b79f95560",
+      "sha512": "4GIPb/oa2jm8Sh1vCwJJfWyZ0fJR4MT88V0VEApkEjhCgdK6XGJJ7G3weQZS4D7IseJneBh7kFwYxlp+gUP+mQ=="
     },
-    "size": "92.23 KB"
+    "size": "93.41 KB"
   },
   "/package-lock.json": {
     "integrity": {
@@ -91,20 +91,20 @@
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "22299b52e43d9b2bf79b61f2fbeed7b43d2009dd",
-      "sha256": "5t4ha7oXgdmFRiAjnCXxdYIoZDch/lzEfTDQ/C+TJ1o=",
-      "md5": "482a947ee4972535d9a255757be95cf5",
-      "sha512": "0fsMs1QRxCoZjKdvbv8hK2vXEOipFVnamQ0JRVQZyBb2gjRCyuWRQ/TwEVviFDYEbVszxQ90SvYhL5wc3wLHFw=="
+      "sha1": "517ac1edf2f9d87e1b87f080709400e958ba6113",
+      "sha256": "YHYn6FtyMKVJT/G6omHzff6P4pecKirmsYFAw6VZmH0=",
+      "md5": "8c73a51dc7449a3273efdf1a0215396e",
+      "sha512": "GBp8VZQclJaoZaxtm7p1PUt8vRwiRFNq4bXwscVQCsfv9980ew3I116k4NR2i3MikwJpm69YwO0GjmuJJv0vDA=="
     },
-    "size": "611.11 KB"
+    "size": "604.01 KB"
   },
   "/release/sbg-api-2.0.0.tgz": {
     "integrity": {
-      "sha1": "44fbf1584c70cb8d9149e5db5fd3030712057301",
-      "sha256": "SxavWEroQypc8FFKZf00gCdl+g/bkCWmrpvnsEztNW4=",
-      "md5": "d84179dcd74165b03dcf6930a899d5c0",
-      "sha512": "12NNTnCi2uKJ26W5Y9wwUPjdEt4qvHuJ4CN8/QFNKiSFix1Tq8bHKDxPHvSjg1/WvZx1rTNrQnrAnwgmlQSm+w=="
+      "sha1": "7e7a15f1ba2f53749897fd8fe7e9255e5b875c6b",
+      "sha256": "dCL8A3n2peA9UK4IlHBQ4jhEH84J3j4a+TX5yEY72wQ=",
+      "md5": "20f1600d65589de58ba57d0b79f95560",
+      "sha512": "4GIPb/oa2jm8Sh1vCwJJfWyZ0fJR4MT88V0VEApkEjhCgdK6XGJJ7G3weQZS4D7IseJneBh7kFwYxlp+gUP+mQ=="
     },
-    "size": "92.23 KB"
+    "size": "93.41 KB"
   }
 }

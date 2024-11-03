@@ -1,4 +1,3 @@
-// const fs = require('fs-extra');
 const { spawnAsync } = require('cross-spawn');
 const gulp = require('gulp');
 const path = require('upath');

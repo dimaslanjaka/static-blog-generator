@@ -12,4 +12,7 @@ process.cwd = function () {
 const { Application, promiseCopyAssets } = require('../dist/index.cjs');
 
 const api = new Application(fixturesCwd);
-promiseCopyAssets(api.config);
+
+api.clean('post').then(() => {
+  return promiseCopyAssets(api.config);
+});

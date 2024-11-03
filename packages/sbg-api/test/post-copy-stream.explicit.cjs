@@ -1,5 +1,5 @@
 // cross-env-shell DEBUG:post
-process.env.DEBUG = 'sbg-*,post:*,post,clean,clean:*';
+// process.env.DEBUG = 'sbg-*,post:*,post,clean,clean:*';
 
 const { fixturesCwd, testCwd } = require('./env.cjs');
 
@@ -12,4 +12,8 @@ process.cwd = function () {
 const { Application } = require('../dist/index.cjs');
 
 const api = new Application(fixturesCwd);
-api.copyStream();
+if (!api.config.exclude) api.config.exclude = [];
+// api.config.exclude = [...api.config.exclude, '**/node_modules/**', '**/tmp/**', '**/.git/**'];
+api.clean('post').then(() => {
+  return api.copyStream();
+});
