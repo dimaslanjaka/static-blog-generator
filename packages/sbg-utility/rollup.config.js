@@ -35,7 +35,7 @@ const plugins = [
   commonjs(), // Convert CommonJS modules to ES6
   typescript({
     tsconfig: false,
-    compilerOptions: tsconfig.compilerOptions,
+    compilerOptions: { ...tsconfig.compilerOptions },
     include: ['./src/**/*'],
     exclude: tsconfig.exclude
   }) // Compile TypeScript files

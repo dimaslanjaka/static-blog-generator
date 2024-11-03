@@ -30,14 +30,14 @@ const cmd = (commandName) => {
 };
 
 function copyAssets() {
-  return gulp.src('./src/**/*.{json,yml,xml,xsl}', { cwd: __dirname }).pipe(gulp.dest('./dist'));
+  return gulp.src('./src/**/*.{json,yml,xml,xsl}', { cwd: __dirname }).pipe(gulp.dest('./dist/src'));
 }
 
 // copy non-javascript assets from src folder
 const copy = function () {
   return gulp
     .src(['**/*.*'], { cwd: path.join(__dirname, 'src'), ignore: ['**/*.{ts,js,json}'] })
-    .pipe(gulp.dest(path.join(__dirname, 'dist')));
+    .pipe(gulp.dest(path.join(__dirname, 'dist/src')));
 };
 
 /**
@@ -69,7 +69,26 @@ function copyDeclarations() {
     );
 }
 
-gulp.task('copy', gulp.series(copy, copyAssets, copyDeclarations));
+async function moveFiles() {
+  const srcDir = path.join(__dirname, 'dist/src');
+  const destDir = path.join(__dirname, 'dist');
+  try {
+    const files = await fs.readdir(srcDir);
+
+    await Promise.all(
+      files.map(async (file) => {
+        const srcPath = path.join(srcDir, file);
+        const destPath = path.join(destDir, file);
+        await fs.move(srcPath, destPath, { overwrite: true });
+        console.log(`Moved file ${file} to ${destDir}`);
+      })
+    );
+  } catch (err) {
+    console.error(`Error moving files: ${err}`);
+  }
+}
+
+gulp.task('copy', gulp.series(copy, copyAssets, copyDeclarations, moveFiles));
 
 async function tsc() {
   await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
