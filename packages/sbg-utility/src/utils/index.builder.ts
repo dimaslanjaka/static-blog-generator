@@ -1,31 +1,69 @@
-import { spawnSync } from 'child_process';
+import { ESLint } from 'eslint';
 import fs from 'fs-extra';
-import * as glob from 'glob';
-import url from 'node:url';
+import { glob } from 'glob';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { normalizePathUnix } from './filemanager';
 
 // index.ts exports builder
 // this only for development and excluded from build config
 
-const __filename = url.fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // create export
-glob.glob('**/*.{ts,js,jsx,tsx,cjs,mjs}', { ignore: ['**/*.builder.*'], cwd: __dirname, posix: true }).then((files) => {
-  const contents = files
-    .filter((file) => !file.includes('.builder'))
-    .map((file) => {
-      return `export * from './${file.replace(/.(ts|js|tsx|jsx)$/, '')}';`;
+glob('**/*.{ts,js,jsx,tsx,cjs,mjs}', {
+  ignore: ['**/*.builder.*', '**/*.test.*', '**/*.spec*.*', '**/*.runner.*', '**/_*test'],
+  cwd: __dirname,
+  absolute: true
+}).then(async (files) => {
+  const map = files
+    .map((f) => normalizePathUnix(f))
+    .filter((file) => {
+      const isFile = fs.statSync(file).isFile();
+      const currentIndex = normalizePathUnix(__dirname, 'index.ts');
+      const currentIndexExports = normalizePathUnix(__dirname, 'index-exports.ts');
+      return isFile && file !== currentIndex && file !== currentIndexExports;
     })
-    .sort(
-      (a, b) => a.localeCompare(b) //using String.prototype.localCompare()
-    );
-  // dump
-  console.log(contents);
-  // fix eslint
-  contents.push('', '//', '');
+    .map((file) => normalizePathUnix(file).replace(normalizePathUnix(__dirname), ''))
+    .map((file) => {
+      const fileId =
+        '_' +
+        normalizePathUnix(file)
+          .replace(normalizePathUnix(__dirname), '')
+          .replace(/.(ts|js|tsx|jsx|cjs)$/, '');
+      const importName = fileId
+        .replace(/[^a-zA-Z0-9\s]/g, '') // Remove non-alphanumeric characters
+        .split(' ') // Split by spaces
+        .filter(Boolean) // Remove empty strings
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+        .join(' '); // Join the words back into a string
+      return {
+        file,
+        name: importName,
+        import: `import * as ${importName} from '.${file.replace(/.(ts|js|tsx|jsx|cjs)$/, '')}';`,
+        export: `export * from '.${file.replace(/.(ts|js|tsx|jsx|cjs)$/, '')}';`
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-  fs.writeFileSync(path.join(__dirname, 'index.ts'), contents.join('\n'));
+  fs.writeFileSync(path.join(__dirname, 'index-exports.ts'), map.map((o) => o.export).join('\n'));
 
-  spawnSync('eslint', ['--fix', 'src/**/*.ts'], { cwd: path.join(__dirname, '../..') });
+  fs.writeFileSync(
+    path.join(__dirname, 'index.ts'),
+    [`export * from './index-exports'`, `import * as lib from './index-exports'`, 'export default lib'].join('\n')
+  );
+
+  const lint = new ESLint({ fix: true });
+  // Lint the specified TypeScript file.
+  const results = await lint.lintFiles(['src/**/*.ts']);
+
+  // Apply the fixes to the file.
+  await ESLint.outputFixes(results);
+
+  // Format and display the results.
+  const formatter = await lint.loadFormatter('stylish');
+  const resultText = formatter.format(results);
+
+  console.log(resultText);
 });
