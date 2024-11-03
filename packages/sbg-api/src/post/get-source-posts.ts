@@ -1,6 +1,7 @@
 import Bluebird from 'bluebird';
+import fs from 'fs-extra';
 import * as glob from 'glob';
-import { fs, getConfig } from 'sbg-utility';
+import { getConfig } from 'sbg-utility';
 import path from 'upath';
 
 export const globalPostIgnore = [
