@@ -1,5 +1,5 @@
 import momentlib from 'moment-timezone';
-import { debug, getConfig, normalizePath } from 'sbg-utility';
+import { debug, getConfig, normalizePathUnix } from 'sbg-utility';
 import path from 'upath';
 
 const moment = (input: momentlib.MomentInput) => {
@@ -35,9 +35,9 @@ export function parsePermalink(
   const siteConfig = getConfig();
   let pattern = config.permalink_pattern || siteConfig.permalink;
   const date = config.date;
-  let cleanPathname = normalizePath(post).replace(/.md$/, '');
+  let cleanPathname = normalizePathUnix(post).replace(/.md$/, '');
   const toReplace = [
-    normalizePath(siteConfig.cwd),
+    normalizePathUnix(siteConfig.cwd),
     siteConfig.source_dir + '/_posts/',
     `${siteConfig.post_dir || 'src-posts'}/`,
     '_posts/'

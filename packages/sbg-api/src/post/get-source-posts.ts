@@ -1,3 +1,5 @@
+import Bluebird from 'bluebird';
+import fs from 'fs-extra';
 import * as glob from 'glob';
 import { getConfig } from 'sbg-utility';
 import path from 'upath';
@@ -9,7 +11,8 @@ export const globalPostIgnore = [
   '**/tmp/**',
   '**/.deploy_*/**',
   '**/*.lock',
-  '**/package-lock.json'
+  '**/package-lock.json',
+  '**/.git/**'
 ];
 
 export const markdownExtPattern = '{md,markdown,mdown,mkdn,mkd,mdtxt,mdtext,text}';
@@ -53,20 +56,22 @@ export default getSourcePosts;
  * get post assets (not markdown)
  * @param config
  */
-export async function getSourceAssets(config: ReturnType<typeof getConfig>) {
+export function getSourceAssets(config: ReturnType<typeof getConfig>) {
   const excludes = config.exclude || [];
   const sourcePostDir = path.join(config.cwd, config.post_dir);
-  return await glob.glob([`**/*`, `*`, `**/*`], {
-    ignore: excludes.concat(
-      ...globalPostIgnore,
-      `**/*.${markdownExtPattern}`,
-      `*.${markdownExtPattern}`,
-      `**/*.${markdownExtPattern}`
-    ),
-    cwd: sourcePostDir,
-    realpath: true,
-    absolute: true,
-    dot: true,
-    noext: true
-  });
+  return Bluebird.all(
+    glob.glob([`**/*`, `*`, `**/*`], {
+      ignore: excludes.concat(
+        ...globalPostIgnore,
+        `**/*.${markdownExtPattern}`,
+        `*.${markdownExtPattern}`,
+        `**/*.${markdownExtPattern}`
+      ),
+      cwd: sourcePostDir,
+      realpath: true,
+      absolute: true,
+      dot: true,
+      noext: true
+    })
+  ).filter((file) => fs.statSync(file).isFile());
 }

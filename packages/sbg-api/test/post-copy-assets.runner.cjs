@@ -1,5 +1,5 @@
 // cross-env-shell DEBUG:post
-// process.env.DEBUG = 'sbg-*,post:*,post,clean,clean:*';
+process.env.DEBUG = 'post:assets,post:assets:*,assets:*,assets';
 
 const { fixturesCwd, testCwd } = require('./env.cjs');
 
@@ -9,11 +9,10 @@ process.cwd = function () {
 };
 
 // start import application
-const { Application } = require('../dist/index.cjs');
+const { Application, promiseCopyAssets } = require('../dist/index.cjs');
 
 const api = new Application(fixturesCwd);
-if (!api.config.exclude) api.config.exclude = [];
-// api.config.exclude = [...api.config.exclude, '**/node_modules/**', '**/tmp/**', '**/.git/**'];
+
 api.clean('post').then(() => {
-  return api.copyStream();
+  return promiseCopyAssets(api.config);
 });

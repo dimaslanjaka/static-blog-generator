@@ -8,7 +8,8 @@ import * as hpp from 'hexo-post-parser';
 import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
 import moment from 'moment-timezone';
-import { getConfig, path, writefile } from 'sbg-utility';
+import { getConfig, writefile } from 'sbg-utility';
+import path from 'upath';
 
 /**
  * find broken images from html

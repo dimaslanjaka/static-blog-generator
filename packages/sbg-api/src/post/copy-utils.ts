@@ -13,6 +13,7 @@ import {
   normalizePath
 } from 'sbg-utility';
 import path from 'upath';
+import { parseDynamicArray } from '../utils/array';
 import { parsePermalink } from './permalink';
 
 /**
@@ -196,13 +197,42 @@ export async function parseMarkdownPost(
         delete parseResult.metadata.uuid;
       }
       // process tags and categories
+      if (parseResult.metadata['category'] && !parseResult.metadata['categories']) {
+        parseResult.metadata['categories'] = parseResult.metadata['category'];
+        delete parseResult.metadata['category'];
+      }
+      if (parseResult.metadata['tag'] && !parseResult.metadata['tags']) {
+        parseResult.metadata['tags'] = parseResult.metadata['tag'];
+        delete parseResult.metadata['tag'];
+      }
       const array = ['tags', 'categories'];
       for (let i = 0; i < array.length; i++) {
         const groupLabel = array[i];
+        if (!parseResult.metadata[groupLabel]) parseResult.metadata[groupLabel] = [];
         if (parseResult.metadata[groupLabel]) {
           // label assign
           if (config[groupLabel]?.assign) {
             for (const oldLabel in config[groupLabel].assign) {
+              if (typeof parseResult.metadata[groupLabel].findIndex !== 'function') {
+                if (typeof parseResult.metadata[groupLabel] === 'string') {
+                  try {
+                    const arr = parseDynamicArray(parseResult.metadata[groupLabel]);
+                    parseResult.metadata[groupLabel] = arr;
+                  } catch (e: any) {
+                    console.log(
+                      parseResult.metadata[groupLabel],
+                      `findIndex not found for ${groupLabel} type ${typeof parseResult.metadata[groupLabel]} (${e.message})`
+                    );
+                    continue;
+                  }
+                } else {
+                  console.log(
+                    parseResult.metadata[groupLabel],
+                    `findIndex not found for ${groupLabel} type ${typeof parseResult.metadata[groupLabel]}`
+                  );
+                  continue;
+                }
+              }
               const index = parseResult.metadata[groupLabel].findIndex((str: string) => str == oldLabel);
 
               if (index !== -1) {

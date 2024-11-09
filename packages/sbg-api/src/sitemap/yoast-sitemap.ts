@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import Hexo from 'hexo';
 import hexoIs from 'hexo-is';
+import { HexoLocalsData } from 'hexo/dist/hexo/locals-d';
 import moment from 'moment';
 import { getConfig, scheduler, writefile } from 'sbg-utility';
 import path from 'upath';
@@ -9,8 +10,8 @@ import getCategoryTags, { getLatestFromArrayDates } from './archive';
 import yoastSeoSitemapPages from './pages';
 import yoastSeoSitemapPosts from './posts';
 
-type PageData = Hexo['locals'];
-type TemplateLocals = Hexo['locals'];
+type PageData = Hexo['locals'] & HexoLocalsData;
+type TemplateLocals = Hexo & HexoLocalsData & Hexo['locals'];
 const _log = typeof hexo !== 'undefined' ? hexo.log : console;
 
 export interface sitemapItem {
