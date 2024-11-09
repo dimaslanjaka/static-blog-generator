@@ -1,24 +1,43 @@
 import ansiColors from 'ansi-colors';
-import stream from 'stream';
+import { isReadableStream, isStream, isWritableStream } from 'is-stream';
 import Logger from './logger';
 
 /**
- * Chainable function runner
- * @param schedule array of function objects
+ * Chainable function runner.
+ *
+ * @param schedule - An array of function objects, each containing a callback and optional `opt` properties for before and after functions.
+ * @example
+ * ```ts
+ * chain([
+ *   {
+ *     callback: () => 'stream process eg: gulp',
+ *     opt: {
+ *       before: () => 'run before callback called',
+ *       after: () => 'run after callback called'
+ *     }
+ *   },
+ *   {
+ *     callback: () => 'promise process'
+ *   },
+ *   {
+ *     callback: () => 'synchronous function'
+ *   }
+ * ]);
+ * ```
  */
 export async function chain(
   schedule: {
     /**
-     * function to call inside chains
+     * Function to call inside chains.
      */
     callback: (...args: any[]) => any;
     opt?: {
       /**
-       * run before callback called
+       * Function to run before the callback is called.
        */
       before?: (...args: any[]) => any;
       /**
-       * run after callback called
+       * Function to run after the callback is called.
        */
       after?: (...args: any[]) => any;
     };
@@ -33,9 +52,16 @@ export async function chain(
         instance.opt.before();
       }
       const obj = instance.callback.call && instance.callback.call(null);
+      // Logger.log(
+      //   `is readable stream ${isReadableStream(obj)}`,
+      //   `is writable stream ${isWritableStream(obj)}`,
+      //   `is promise ${isPromise(obj)}`,
+      //   `is stream ${isStream(obj)}`,
+      //   { keys: Object.keys(obj) }
+      // );
 
-      if (isReadableStream(obj) && obj instanceof stream.Stream) {
-        // Logger.log('readable stream');
+      if (isReadableStream(obj)) {
+        Logger.log('readable stream');
         return obj.once('end', async () => {
           if (instance.opt?.after) {
             await instance.opt.after();
@@ -44,8 +70,26 @@ export async function chain(
             return resolve(this);
           }
         });
-      } else if (obj instanceof stream.Writable) {
+      } else if (isWritableStream(obj)) {
         Logger.log('writable stream');
+        return obj.once('finish', async () => {
+          if (instance.opt?.after) {
+            await instance.opt.after();
+            return resolve(this);
+          } else {
+            return resolve(this);
+          }
+        });
+      } else if (isStream(obj)) {
+        // gulp instance / readwrite stream
+        return obj.once('end', async () => {
+          if (instance.opt?.after) {
+            await instance.opt.after();
+            return resolve(this);
+          } else {
+            return resolve(this);
+          }
+        });
       } else if (isPromise(obj)) {
         //Logger.log('promises');
         return obj.then(async () => {
@@ -91,13 +135,4 @@ function isPromise(p: { constructor: any }) {
     // my own experiment
     (p && String(Function.prototype.toString.call(p.constructor)).startsWith('function Promise('))
   );
-}
-
-/**
- * check object is readable stream
- * @param obj
- * @returns
- */
-function isReadableStream(obj: { _read: string; _readableState: string }) {
-  return obj instanceof stream.Stream && typeof (obj._read === 'function') && typeof (obj._readableState === 'object');
 }

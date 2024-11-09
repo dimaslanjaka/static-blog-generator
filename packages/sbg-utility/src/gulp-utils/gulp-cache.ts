@@ -79,7 +79,7 @@ export function gulpCached(options: gulpCachedOpt = {}): ReturnType<typeof throu
     // skip directory
     if (file.isDirectory()) return next(null, file);
 
-    const cacheKey = md5(file.path);
+    const cacheKey = md5(file.path)!;
     const sha1sum = getShaFile(file.path);
 
     /**

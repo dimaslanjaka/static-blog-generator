@@ -46,6 +46,7 @@ export default [
 
     languageOptions: {
       globals: {
+        ...globals.jest,
         ...globals.browser, // Browser global variables
         ...globals.amd, // AMD module globals
         ...globals.node, // Node.js global variables

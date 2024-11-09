@@ -1,10 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
+    "module": "ESNext",
+    "target": "ESNext",
+    "outDir": "./tmp/dist",
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "tsBuildInfoFile": "tmp/x.info"
+    "tsBuildInfoFile": "tmp/x.info",
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*"]
 }

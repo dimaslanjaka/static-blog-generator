@@ -52,7 +52,8 @@
   "code-runner.saveAllFilesBeforeRun": true,
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
-    "*.{test,spec}.{ts,js,cjs,mjs}": "yarn test -- $fileNameWithoutExt",
+    "*.{test,spec}.ts": "yarn test -- $fileNameWithoutExt",
+    "*.{test,spec}.{js,cjs,mjs}": "npm run build && yarn test -- $fileNameWithoutExt",
     "*.{explicit}.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
     "*.{explicit,runner}.{mjs,cjs,js}": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",
     "*.runner.ts": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
@@ -189,7 +190,6 @@
     "**/CVS": true,
     "**/node_modules": true,
     "**/Thumbs.db": true,
-    "**/tmp": true,
     "**/vendor": true,
     "**/venv": true,
     "backups": true,

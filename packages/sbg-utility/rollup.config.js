@@ -7,6 +7,7 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import url from 'node:url';
 import path from 'path';
+import { dts } from 'rollup-plugin-dts';
 import polyfill from 'rollup-plugin-polyfill-node';
 import { external, tsconfig } from './rollup.utils.js';
 
@@ -18,7 +19,6 @@ const __dirname = path.dirname(__filename);
  */
 const { author, version, name: _name } = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf-8'));
 const name = 'sbgUtility';
-const outputFileName = 'sbg-utility';
 
 const year = new Date().getFullYear();
 const banner = `// ${_name} v${version} Copyright (c) ${year} ${author}`;
@@ -26,9 +26,9 @@ const banner = `// ${_name} v${version} Copyright (c) ${year} ${author}`;
 /**
  * @type {import('rollup').RollupOptions['input']}
  */
-const inputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
+const nodeInputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
   posix: true,
-  ignore: tsconfig.exclude.concat('*.runner.*', '*.explicit.*', '*.test.*', '*.builder.*', '*.spec.*')
+  ignore: tsconfig.exclude.concat('*.runner.*', '*.explicit.*', '*.test.*', '*.builder.*', '*.spec.*', '*browser*')
 });
 
 const plugins = [
@@ -36,7 +36,7 @@ const plugins = [
   commonjs(), // Convert CommonJS modules to ES6
   typescript({
     tsconfig: false,
-    compilerOptions: tsconfig.compilerOptions,
+    compilerOptions: { ...tsconfig.compilerOptions },
     include: ['./src/**/*'],
     exclude: tsconfig.exclude
   }) // Compile TypeScript files
@@ -46,7 +46,7 @@ const plugins = [
  * @type {import('rollup').RollupOptions}
  */
 const _partials = {
-  input: inputs,
+  input: nodeInputs,
   output: [
     // bundle js as ESM by default
     {
@@ -54,7 +54,7 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      exports: 'named',
+
       globals: {
         hexo: 'hexo'
       }
@@ -65,7 +65,7 @@ const _partials = {
       format: 'cjs',
       sourcemap: false,
       preserveModules: true,
-      exports: 'named',
+
       entryFileNames: '[name].cjs',
       globals: {
         hexo: 'hexo'
@@ -77,7 +77,7 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      exports: 'named',
+
       entryFileNames: '[name].mjs',
       globals: {
         hexo: 'hexo'
@@ -90,9 +90,9 @@ const _partials = {
 
 /** @type {import('rollup').RollupOptions} */
 const _browser = {
-  input: './src/index.ts',
+  input: './src/index-browser.ts',
   output: {
-    file: `dist/browser/${outputFileName}.js`,
+    file: `dist/index-browser.js`,
     name,
     format: 'umd',
     exports: 'none',
@@ -120,39 +120,40 @@ const _browser = {
   ]
 };
 
+/** @type {import('rollup').RollupOptions} */
 const _oneFile = {
   input: './src/index.ts',
   output: [
     {
-      file: 'dist/index.cjs',
-      format: 'cjs',
-      sourcemap: false,
-      exports: 'named',
-      globals: {
-        hexo: 'hexo'
-      }
-    },
-    {
       file: 'dist/index.js',
-      format: 'cjs',
-      sourcemap: false,
-      exports: 'named',
-      globals: {
-        hexo: 'hexo'
-      }
+      format: 'esm',
+      inlineDynamicImports: true
     },
     {
       file: 'dist/index.mjs',
       format: 'esm',
-      sourcemap: false,
-      exports: 'named',
-      globals: {
-        hexo: 'hexo'
-      }
+      inlineDynamicImports: true
+    },
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      inlineDynamicImports: true
     }
   ],
   plugins,
   external
 };
 
-export default [_partials];
+/** @type {import('rollup').RollupOptions} */
+const _declarations = {
+  input: './tmp/dist/index-exports.d.ts',
+  output: [
+    { file: 'dist/index.d.ts', format: 'es', inlineDynamicImports: true },
+    { file: 'dist/index.d.cts', format: 'es', inlineDynamicImports: true },
+    { file: 'dist/index.d.mts', format: 'es', inlineDynamicImports: true }
+  ],
+  plugins: [resolve({ preferBuiltins: true }), json(), dts({ tsconfig: 'tsconfig.docs.json' })],
+  external
+};
+
+export default [_oneFile, _declarations];
