@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import { getConfig } from 'sbg-utility';
+
 export interface deployCopyOptions {
   cwd: string;
   config: ReturnType<typeof getConfig>;

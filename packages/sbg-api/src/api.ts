@@ -153,10 +153,17 @@ class SBG {
   }
 
   public deploy = new (class {
+    config: ProjConf;
+    cwd: string;
+
     constructor(public superThis: SBG) {
-      //
+      this.config = superThis.config;
+      this.cwd = superThis.cwd;
     }
-    copy = deployCopy;
+
+    copy() {
+      deployCopy({ config: this.config, cwd: this.cwd });
+    }
   })(this);
 }
 
