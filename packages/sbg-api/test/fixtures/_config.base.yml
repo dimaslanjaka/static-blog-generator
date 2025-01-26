@@ -121,6 +121,28 @@ browsersync:
     scroll: true
   instanceName: 'uniqueString'
 
+# https://github.com/dimaslanjaka/hexo-renderers
+renderers:
+  engines: ['ejs', 'stylus', 'nunjucks', 'marked']
+  generator:
+    # enable generate <domain>/meta.json
+    - meta
+    # enable generate related posts
+    - related-posts
+  fix:
+    # Fix html
+    # - fix invalid post asset folder path
+    # - escape invalid html tags into html entities
+    html: false
+    # Toggle cache
+    cache: false
+  # when _config_yml.renderers.fix.html is true
+  # this plugin transforming unknown tags into html entities
+  # add custom html tag names to avoid from transformation
+  # reference src\markdown-it\renderer.ts
+  # reference src\markdown-it\html-tags.js
+  html_tags: ['customtag', 'custom-html-tag']
+
 sitemap:
   path:
     - sitemap.xml
