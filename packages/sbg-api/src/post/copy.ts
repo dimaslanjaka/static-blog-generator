@@ -22,7 +22,7 @@ const log = debug('post');
 const logErr = log.extend('error');
 
 /**
- * Copy single post from src-posts folder to source/_posts
+ * Copy single post from config.post_dir folder to source/_posts
  * @param identifier
  * @param callback
  */
@@ -44,7 +44,7 @@ export function copySinglePost(identifier: string, callback?: (...args: any[]) =
 }
 
 /**
- * Copy all posts from src-posts to source/_posts using elimination strategy
+ * Copy all posts from config.post_dir to source/_posts using elimination strategy
  *
  * @param config Optional configuration object
  * @returns Promise<void>
@@ -127,7 +127,7 @@ export async function promiseCopyAssets(config?: ReturnType<typeof getConfig>) {
 }
 
 /**
- * copy all posts from src-posts to source/_posts
+ * copy all posts from config.post_dir to source/_posts
  * @returns
  */
 export function streamCopy(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
