@@ -36,7 +36,7 @@ default_layout: post
 titlecase: false # Transform title into titlecase
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # Enable assets inside folder _posts
 relative_link: false
 future: true
 highlight:
