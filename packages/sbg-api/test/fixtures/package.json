@@ -12,7 +12,8 @@
     "update:ncu": "npx npm-check-updates -u",
     "test": "cd .. && npm test",
     "post:standalone": "sbg post standalone",
-    "post:copy": "sbg post copy",
+    "post:copy": "npx sbg post copy",
+    "post:clean": "npx sbg post clean",
     "manager": "sbg server",
     "init-source-post": "node init-source-posts.cjs",
     "postinstall": "node postinstall.cjs"
@@ -45,6 +46,7 @@
     "cross-env": "^7.0.3",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "git-command-helper": "^2.0.2",
-    "sbg-api": "workspace:^"
+    "sbg-api": "workspace:^",
+    "static-blog-generator": "*"
   }
 }
