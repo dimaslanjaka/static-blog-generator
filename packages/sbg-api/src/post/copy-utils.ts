@@ -5,6 +5,7 @@ import moment from 'moment-timezone';
 import pLimit from 'p-limit';
 import {
   debug,
+  fixDriveLetter,
   getConfig,
   jsonParseWithCircularRefs,
   jsonStringifyWithCircularRefs,
@@ -286,6 +287,39 @@ export async function parseMarkdownPost(
         }
 
         // Logger.log(groupLabel + '-' + ansiColors.greenBright('assign'), parse.metadata[groupLabel]);
+      }
+
+      /**
+       * Fixes file paths by removing the drive letter prefix and handling URLs.
+       * If the path is a valid URL, it returns it unchanged. Otherwise, it processes
+       * the file path by removing the drive letter (from both the root and sub-paths).
+       *
+       * @param {string | undefined} filePath - The file path to fix.
+       * @returns {string | undefined} - The fixed file path, or the original URL if it's a valid URL.
+       */
+      const fixPaths = (filePath: string | undefined): string | undefined => {
+        if (!filePath) return filePath;
+
+        // Check if the filePath is a valid URL (using URL constructor)
+        try {
+          new URL(filePath);
+          // If it's a valid URL, return it unchanged
+          return filePath;
+        } catch (_) {
+          // If it's not a valid URL, process it as a file path
+          const fullPath = fixDriveLetter(config.cwd);
+          const cleanedPath = filePath
+            .replace(fullPath + '/', '')
+            .replace(fullPath, '')
+            .replace(config.root, '');
+          return cleanedPath;
+        }
+      };
+
+      if (parseResult?.metadata && config.post_asset_folder) {
+        parseResult.metadata.photos = parseResult.metadata.photos?.map(fixPaths);
+        parseResult.metadata.cover = fixPaths(parseResult.metadata.cover);
+        parseResult.metadata.thumbnail = fixPaths(parseResult.metadata.thumbnail);
       }
 
       const build = hpp.buildPost(parseResult);

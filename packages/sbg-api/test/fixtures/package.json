@@ -5,8 +5,9 @@
   "files": [
     "src-posts/"
   ],
+  "type": "commonjs",
   "scripts": {
-    "start": "npm run server",
+    "start": "hexo clean && hexo server",
     "build": "hexo generate",
     "clean": "hexo clean && sbg clean post && sbg clean cache",
     "deploy": "hexo deploy",
@@ -16,6 +17,7 @@
     "test": "cd .. && npm test",
     "post:standalone": "sbg post standalone",
     "post:copy": "sbg post copy",
+    "post:clean": "sbg post clean",
     "manager": "sbg server",
     "init-source-post": "node init-source-posts.cjs",
     "postinstall": "node postinstall.cjs"
@@ -48,6 +50,7 @@
     "cross-env": "^7.0.3",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
     "git-command-helper": "^2.0.2",
-    "sbg-api": "*"
+    "sbg-api": "workspace:^",
+    "static-blog-generator": "*"
   }
 }

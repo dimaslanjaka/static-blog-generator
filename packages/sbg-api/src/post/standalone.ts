@@ -32,7 +32,7 @@ async function standalone(config: ReturnType<typeof getConfig>) {
 }
 
 /**
- * run all _*.standalone.js inside src-posts (_config_yml.post_dir)
+ * run all _*.standalone.js inside config.post_dir
  * @returns
  */
 async function standaloneRunner(config: ReturnType<typeof getConfig>) {
