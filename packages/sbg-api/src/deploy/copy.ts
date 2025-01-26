@@ -37,7 +37,8 @@ export async function deployCopy(opt?: deployCopyOptions) {
   console.log(`Copying images ${ansiColors.cyan(sourcePostDir)} -> ${ansiColors.cyan(deploy_dir)}`);
   await gulpCopyAsync(['**/*.{jpg,png,jpeg,bmp,svg,webp,gif,ico,tiff,tif,heif,heic,raw,apng,jfif}'], deploy_dir, {
     ignore,
-    cwd: sourcePostDir
+    cwd: sourcePostDir,
+    encoding: false
   });
 
   // Copy generated post assets into deployment directory
@@ -45,6 +46,7 @@ export async function deployCopy(opt?: deployCopyOptions) {
   console.log(`Copying images ${ansiColors.cyan(generatedPostDir)} -> ${ansiColors.cyan(deploy_dir)}`);
   await gulpCopyAsync(['**/*.{jpg,png,jpeg,bmp,svg,webp,gif,ico,tiff,tif,heif,heic,raw,apng,jfif}'], deploy_dir, {
     ignore,
-    cwd: generatedPostDir
+    cwd: generatedPostDir,
+    encoding: false
   });
 }
