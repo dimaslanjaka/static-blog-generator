@@ -10,12 +10,12 @@
   },
   "/release/sbg-api.tgz": {
     "integrity": {
-      "sha1": "129e5a2e8575d9942444a8203c2aafafa23ba0c9",
-      "sha256": "O8cWLIYkheuVFwr/vD6AZpFWbT/l+lqR4FgaHFxeN6Q=",
-      "md5": "a36aad386553cc7c513b0ba402f84d1a",
-      "sha512": "nwk8osHrbTeG7H4+WCfz72CY/YiISjxFZeBK5kLmujXX8x73G/fl+TX+Y5HRIk44JecLABN5d5juBug85i9rdQ=="
+      "sha1": "70ba3e78593d4d7e9d40338ab4db28b6015f7506",
+      "sha256": "US+TqFDiiNf1nggFTglPsX8I0LFAn+FslSyQK/NQgQw=",
+      "md5": "cbbd7a9f763c758c05325166c9f13d3d",
+      "sha512": "I8hMsRrUNABDjkfN/lyj8DaKwkx2X9XTkLrCkTuSvlmTrmedeqCFcmTbr9L+ZR1a6KscQoZPdixD5Eh+Y/k/Dw=="
     },
-    "size": "95.07 KB"
+    "size": "96.29 KB"
   },
   "/package-lock.json": {
     "integrity": {
@@ -91,20 +91,20 @@
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "4a5b703d4bf5fc3308eab5c8cc10a403e5c59b9a",
-      "sha256": "bYKY4ttPcH6OJxF8fQUXcaPtElHfFRhGAzQ0XE9Y5m0=",
-      "md5": "f0e33ac4dd33cc3d4929689dc2ca3dce",
-      "sha512": "eqtQiMe0pQ3ImzJ+aaD/WkR1uoddz4R78ghorT7feN/trR2u14szfZP9BX05D51dx3hop8pBlytxsQpUg/dA9g=="
+      "sha1": "11cc690d2369650953ba7680b371488b123db5b6",
+      "sha256": "veoAV/OHOYmOiQ+DYBLKbMyVT5mRSSAKYjSvyWq1I/8=",
+      "md5": "a6fa1fe74914f7d0996882ed9951b0fe",
+      "sha512": "T8hYKz1oNHfBVsCHkBB4lzO3w5mQXz8apNTWNTp1A9SvdPIuMwsauEoCtESEn8T96p9c7AbPl6j4zsVz3LUJ9g=="
     },
-    "size": "604.01 KB"
+    "size": "652.31 KB"
   },
   "/release/sbg-api-2.0.0.tgz": {
     "integrity": {
-      "sha1": "129e5a2e8575d9942444a8203c2aafafa23ba0c9",
-      "sha256": "O8cWLIYkheuVFwr/vD6AZpFWbT/l+lqR4FgaHFxeN6Q=",
-      "md5": "a36aad386553cc7c513b0ba402f84d1a",
-      "sha512": "nwk8osHrbTeG7H4+WCfz72CY/YiISjxFZeBK5kLmujXX8x73G/fl+TX+Y5HRIk44JecLABN5d5juBug85i9rdQ=="
+      "sha1": "70ba3e78593d4d7e9d40338ab4db28b6015f7506",
+      "sha256": "US+TqFDiiNf1nggFTglPsX8I0LFAn+FslSyQK/NQgQw=",
+      "md5": "cbbd7a9f763c758c05325166c9f13d3d",
+      "sha512": "I8hMsRrUNABDjkfN/lyj8DaKwkx2X9XTkLrCkTuSvlmTrmedeqCFcmTbr9L+ZR1a6KscQoZPdixD5Eh+Y/k/Dw=="
     },
-    "size": "95.07 KB"
+    "size": "96.29 KB"
   }
 }
