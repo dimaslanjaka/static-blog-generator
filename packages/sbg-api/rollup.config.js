@@ -15,7 +15,15 @@ const __dirname = path.dirname(__filename);
  */
 const inputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
   posix: true,
-  ignore: tsconfig.exclude.concat('*.runner.*', '*.explicit.*', '*.test.*', '*.spec.*')
+  // ignore non-production files
+  ignore: tsconfig.exclude.concat(
+    '**/*.runner.*',
+    '**/*.explicit.*',
+    '**/*.test.*',
+    '**/*.spec.*',
+    '**/*.builder.*',
+    '**/*.d.ts'
+  )
 });
 
 const plugins = [
