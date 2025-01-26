@@ -24,8 +24,12 @@ export async function deployCopy(opt?: deployCopyOptions) {
   // Copy post assets into deploy directory
   const sourcePostDir = normalizePathUnix(config.cwd, config.post_dir);
   // const generatedPostDir = normalizePathUnix(config.cwd, config.source_dir, '_posts');
-  await gulpCopyAsync(['**/*.{jpg,png,jpeg,bmp,svg,webp,gif,ico}'], config.deploy.deployDir, {
-    ignore,
-    cwd: sourcePostDir
-  });
+  await gulpCopyAsync(
+    ['**/*.{jpg,png,jpeg,bmp,svg,webp,gif,ico,tiff,tif,heif,heic,raw,apng,jfif}'],
+    config.deploy.deployDir,
+    {
+      ignore,
+      cwd: sourcePostDir
+    }
+  );
 }
