@@ -2,8 +2,9 @@
   "name": "sbg-api-test",
   "version": "2.0.0",
   "private": true,
+  "type": "commonjs",
   "scripts": {
-    "start": "npm run server",
+    "start": "hexo clean && hexo server",
     "build": "hexo generate",
     "clean": "hexo clean && sbg clean post && sbg clean cache",
     "deploy": "hexo deploy",

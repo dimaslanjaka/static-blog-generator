@@ -143,6 +143,10 @@ renderers:
   # reference src\markdown-it\html-tags.js
   html_tags: ['customtag', 'custom-html-tag']
 
+marked:
+  prependRoot: true
+  postAsset: true
+
 sitemap:
   path:
     - sitemap.xml
