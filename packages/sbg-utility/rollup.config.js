@@ -28,7 +28,15 @@ const banner = `// ${_name} v${version} Copyright (c) ${year} ${author}`;
  */
 const nodeInputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
   posix: true,
-  ignore: tsconfig.exclude.concat('*.runner.*', '*.explicit.*', '*.test.*', '*.builder.*', '*.spec.*', '*browser*')
+  ignore: tsconfig.exclude.concat(
+    '**/*.runner.*',
+    '**/*.explicit.*',
+    '**/*.test.*',
+    '**/*.builder.*',
+    '**/*.runner.*',
+    '**/*.spec.*',
+    '*browser*'
+  )
 });
 
 const plugins = [
