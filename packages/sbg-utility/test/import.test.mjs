@@ -33,6 +33,7 @@ describe('check method', () => {
     'SiteMapCrawler',
     'jsonStringifyWithCircularRefs',
     'writefile',
+    'readfile',
     'normalizePath',
     'normalizePathUnix'
   ];
