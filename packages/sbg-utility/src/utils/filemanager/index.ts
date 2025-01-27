@@ -8,6 +8,7 @@ export * from './images';
 export * from './normalizePath';
 export { normalizePath as joinPath, normalizePath as pathJoin } from './normalizePath';
 export * from './readDir';
+export * from './readfile';
 export * from './stream';
 export * from './writefile';
 

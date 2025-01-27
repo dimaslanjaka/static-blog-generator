@@ -11,6 +11,7 @@ export * from './filemanager/images';
 export * from './filemanager/index';
 export * from './filemanager/normalizePath';
 export * from './filemanager/readDir';
+export * from './filemanager/readfile';
 export * from './filemanager/stream';
 export * from './filemanager/writefile';
 export * from './hash';
