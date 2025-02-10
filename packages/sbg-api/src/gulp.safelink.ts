@@ -5,7 +5,7 @@ import sf, { SafelinkOptions } from 'safelinkify';
 import { createWriteStream, getConfig, gulpCached, Logger } from 'sbg-utility';
 import through2 from 'through2';
 import path from 'upath';
-import { gulpOpt } from './gulp-options';
+import { gulpOpt, NodeCallback } from './gulp-options';
 
 /**
  * Process Safelink on Deploy Dir
@@ -13,7 +13,7 @@ import { gulpOpt } from './gulp-options';
  * @param cwd working directory to scan html's
  * @returns
  */
-export function taskSafelink(_done?: gulp.TaskFunctionCallback | null | undefined, cwd?: undefined | null | string) {
+export function taskSafelink(_done?: NodeCallback, cwd?: string) {
   const config = getConfig();
   const workingDir = typeof cwd === 'string' ? cwd : config.deploy.deployDir;
   const logname = ansiColors.greenBright('safelink');

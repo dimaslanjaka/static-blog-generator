@@ -333,7 +333,9 @@ export async function parseMarkdownPost(
       };
 
       if (parseResult?.metadata && config.post_asset_folder) {
-        parseResult.metadata.photos = parseResult.metadata.photos?.map(fixPaths);
+        parseResult.metadata.photos = parseResult.metadata.photos
+          ?.map(fixPaths)
+          .filter((p): p is string => p !== undefined);
         parseResult.metadata.cover = fixPaths(parseResult.metadata.cover);
         parseResult.metadata.thumbnail = fixPaths(parseResult.metadata.thumbnail);
       }

@@ -1,14 +1,14 @@
 import ansiColors from 'ansi-colors';
 import Bluebird from 'bluebird';
 import fs from 'fs-extra';
-import gulp from 'gulp';
 import { del, getConfig, Logger, writefile } from 'sbg-utility';
 import path from 'upath';
+import { NodeCallback } from '../gulp-options';
 
 /**
  * clean old archives (categories, tags, pagination) from deployment directory
  */
-export default async function cleanArchive(callback?: gulp.TaskFunctionCallback | (() => any)) {
+export default async function cleanArchive(callback?: NodeCallback) {
   const config = getConfig();
   const logname = 'clean:' + ansiColors.grey('archives');
 

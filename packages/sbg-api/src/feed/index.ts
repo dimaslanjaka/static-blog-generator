@@ -6,7 +6,7 @@ import hutil from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { commonIgnore, envNunjucks, getConfig, gulpDom } from 'sbg-utility';
 import path from 'upath';
-import { gulpOpt } from '../gulp-options';
+import { gulpOpt, NodeCallback } from '../gulp-options';
 
 const env = envNunjucks();
 
@@ -15,7 +15,7 @@ const env = envNunjucks();
  * @param done
  * @param config
  */
-export function hexoGenerateFeed(done?: gulp.TaskFunctionCallback, config = getConfig()) {
+export function hexoGenerateFeed(done?: NodeCallback, config = getConfig()) {
   const instance = new Hexo(config.cwd);
 
   return new Bluebird((resolve) => {

@@ -6,7 +6,7 @@ import gulp from 'gulp';
 import { getConfig, gulpCached, md5, normalizePathUnix } from 'sbg-utility';
 import through2 from 'through2';
 import path from 'upath';
-import { gulpOpt } from '../gulp-options';
+import { gulpOpt, NodeCallback } from '../gulp-options';
 import { forceGc } from '../utils/gc';
 import { removeCwd, replaceCopyDestination } from '../utils/path';
 import { parseMarkdownPost } from './copy-utils';
@@ -130,7 +130,7 @@ export async function promiseCopyAssets(config?: ReturnType<typeof getConfig>) {
  * copy all posts from config.post_dir to source/_posts
  * @returns
  */
-export function streamCopy(_callback?: gulp.TaskFunctionCallback, config?: ReturnType<typeof getConfig>) {
+export function streamCopy(_callback?: NodeCallback, config?: ReturnType<typeof getConfig>) {
   if (!config) config = getConfig();
   const excludes = config.exclude || [];
   const sourcePostDir = normalizePathUnix(config.cwd, config.post_dir);
@@ -171,7 +171,9 @@ export function streamCopy(_callback?: gulp.TaskFunctionCallback, config?: Retur
       fs.copySync(src, dest, { overwrite: true });
     }
   };
-  return gulp.series(posts, assets)(_callback);
+
+  const seriesTask = gulp.series(posts, assets) as unknown as NodeCallback;
+  return typeof _callback === 'function' ? seriesTask(_callback as any) : seriesTask();
 }
 
 /**

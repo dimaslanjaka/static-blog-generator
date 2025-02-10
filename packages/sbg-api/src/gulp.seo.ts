@@ -1,13 +1,13 @@
 import ansiColors from 'ansi-colors';
 import gulp from 'gulp';
 import { commonIgnore, getConfig, gulpCached, gulpDom, Logger } from 'sbg-utility';
-import { gulpOpt } from './gulp-options';
+import { gulpOpt, NodeCallback } from './gulp-options';
 
 /**
  * Auto seo runner
  * @param cwd working directory to scan html's
  */
-export function taskSeo(_done: gulp.TaskFunctionCallback | null | undefined, cwd: string) {
+export function taskSeo(_done: NodeCallback, cwd: string) {
   const config = getConfig();
   const ignore: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   ignore.push(...commonIgnore);
