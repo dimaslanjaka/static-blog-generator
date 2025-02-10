@@ -27,6 +27,13 @@ const log = debug('post');
 const logErr = log.extend('error');
 const logLabel = log.extend('label');
 
+/**
+ * Reads a file asynchronously and processes its contents.
+ *
+ * @param filePath - The path to the file.
+ * @param onComplete - Callback function when processing is complete.
+ * @param onError - Callback function for handling errors.
+ */
 export function processFile(
   filePath: string,
   onComplete: (content: string) => void | Promise<void>,
@@ -67,6 +74,13 @@ export function processFile(
 
 const limit = pLimit(10); // Limit concurrency to 10 tasks
 
+/**
+ * Processes multiple files concurrently with a limit.
+ *
+ * @param filePaths - List of file paths.
+ * @param onComplete - Callback for successful processing.
+ * @param onError - Callback for errors.
+ */
 export async function processFiles(
   filePaths: string[],
   onComplete: (filePath: string, content: string) => void | Promise<void>,
@@ -98,10 +112,12 @@ export async function processFiles(
 }
 
 /**
- * process single markdown post
- * @param file file path or contents
- * @param callback
- * @returns front-matter markdown content
+ * Parses a single Markdown post.
+ *
+ * @param options - Contains file path or content.
+ * @param config - Configuration object.
+ * @param callback - Optional function for parsed data.
+ * @returns Processed front-matter Markdown content or undefined.
  */
 export async function parseMarkdownPost(
   options: { file?: string | null; content?: string | null },
