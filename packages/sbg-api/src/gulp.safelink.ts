@@ -13,7 +13,7 @@ import { gulpOpt, NodeCallback } from './gulp-options';
  * @param cwd working directory to scan html's
  * @returns
  */
-export function taskSafelink(_done?: NodeCallback, cwd?: string) {
+export function taskSafelink(_done?: NodeCallback, cwd?: string): NodeJS.EventEmitter {
   const config = getConfig();
   const workingDir = typeof cwd === 'string' ? cwd : config.deploy.deployDir;
   const logname = ansiColors.greenBright('safelink');

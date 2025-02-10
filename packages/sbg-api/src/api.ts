@@ -107,7 +107,8 @@ class SBG {
    */
   safelink(customPath?: string | null | undefined) {
     return new Bluebird((resolve) => {
-      taskSafelink(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
+      const task = taskSafelink(null, customPath || path.join(this.cwd, this.config.public_dir));
+      task.once('end', function () {
         setTimeout(() => {
           resolve();
         }, 3000);
