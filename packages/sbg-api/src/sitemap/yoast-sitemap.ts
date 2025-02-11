@@ -121,7 +121,7 @@ export function yoastSeoSitemap(data: TemplateLocals) {
   const post = getPageData(data);
   if (post) {
     const isPagePost = post.is.post || post.is.page;
-    if (isPagePost) {
+    if (isPagePost && post.full_source) {
       // if post updated not found, get source file last modified time
       if (!post.updated) {
         const stats = fs.statSync(post.full_source);

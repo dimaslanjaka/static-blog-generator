@@ -13,6 +13,6 @@ export default function validateCopy(api: Application) {
     api.copy().then(() => done());
   }, 600000);
   test('validate total markdown', function () {
-    expect(fs.readdirSync(path.join(api.config.cwd, api.config.source_dir, '_posts')).length).toBeGreaterThan(8);
+    expect(fs.readdirSync(path.join(api.config.cwd, api.config.source_dir, '_posts')).length > 0).toBeGreaterThan(8);
   }, 600000);
 }

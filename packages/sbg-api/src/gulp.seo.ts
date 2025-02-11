@@ -7,7 +7,7 @@ import { gulpOpt, NodeCallback } from './gulp-options';
  * Auto seo runner
  * @param cwd working directory to scan html's
  */
-export function taskSeo(_done: NodeCallback, cwd: string) {
+export function taskSeo(_done?: NodeCallback, cwd?: string) {
   const config = getConfig();
   const ignore: string[] = Array.isArray(config.exclude) ? config.exclude : [];
   ignore.push(...commonIgnore);
@@ -21,7 +21,7 @@ export function taskSeo(_done: NodeCallback, cwd: string) {
         images.forEach((el) => {
           const alt = el.getAttribute('alt');
           if (!alt || alt.length === 0) {
-            const title = this.title + ' - ' + el.getAttribute('src') || 'No Alt';
+            const title = this.title + ' - ' + (el.getAttribute('src') || 'No Alt');
             el.setAttribute('alt', title);
           }
         });
@@ -31,7 +31,7 @@ export function taskSeo(_done: NodeCallback, cwd: string) {
         iframes.forEach((el) => {
           const alt = el.getAttribute('title');
           if (!alt || alt.length === 0) {
-            const title = this.title + ' - ' + el.getAttribute('src') || 'No Title';
+            const title = this.title + ' - ' + (el.getAttribute('src') || 'No Title');
             el.setAttribute('title', title);
           }
         });
@@ -44,5 +44,5 @@ export function taskSeo(_done: NodeCallback, cwd: string) {
         }
       })
     )
-    .pipe(gulp.dest(cwd));
+    .pipe(gulp.dest(cwd ?? process.cwd()));
 }

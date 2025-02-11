@@ -52,7 +52,8 @@
   "code-runner.saveAllFilesBeforeRun": true,
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
-    "*.{test,spec}.{ts,js,cjs,mjs}": "yarn test -- $fileNameWithoutExt",
+    "*.{test,spec}.{ts,js,mjs}": "yarn test -- $fileNameWithoutExt",
+    "*.{test,spec}.cjs": "yarn build && yarn test -- $fileNameWithoutExt",
     "*.runner.ts": "yarn build && node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
     "*.explicit.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
     "*.{explicit,runner}.{mjs,cjs,js}": "yarn build && node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",

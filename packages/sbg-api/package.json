@@ -186,8 +186,7 @@
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-server/release/sbg-server.tgz",
     "sbg-utility": "https://github.com/dimaslanjaka/static-blog-generator/raw/840f63d269216f134b84414cf300499703090071/packages/sbg-utility/release/sbg-utility.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/static-blog-generator/release/static-blog-generator.tgz",
-    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/dbaa1ddec68e59196ee7202ef0af1fae2362eda3/releases/warehouse.tgz",
-    "undertaker": "https://github.com/dimaslanjaka/undertaker.git#431b0a7c6f68cbf5073919857cf942ba72ae8820"
+    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/dbaa1ddec68e59196ee7202ef0af1fae2362eda3/releases/warehouse.tgz"
   },
   "packageManager": "yarn@4.5.1"
 }

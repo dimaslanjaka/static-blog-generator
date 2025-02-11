@@ -1,5 +1,5 @@
 ///
-import { describe, expect, test } from '@jest/globals';
+import { describe, expect, jest, test } from '@jest/globals';
 import { fixturesCwd, testCwd } from './env.mjs';
 process.cwd = () => (typeof testCwd === 'string' ? testCwd : fixturesCwd);
 ///
@@ -11,7 +11,17 @@ import { Application } from '../src';
 import validateClean from './validate-clean';
 import validateCopy from './validate-copy';
 
+// avoid jest error "trying import after jest env has been torn down"
+jest.useFakeTimers();
+
 describe('permalink', function () {
+  /**
+   * Validates that the parsed permalink of a post matches the expected value.
+   *
+   * @param postPath - The path to the markdown post file.
+   * @param expected - The expected permalink value.
+   * @returns A promise that resolves when the validation is complete.
+   */
   async function validatePermalink(postPath: string, expected: string) {
     const parse = await parsePost(postPath);
     expect(parse.metadata).not.toBeUndefined();

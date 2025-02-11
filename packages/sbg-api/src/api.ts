@@ -10,6 +10,7 @@ import { taskSeo } from './gulp.seo';
 import * as pcopy from './post/copy';
 import { findBrokenImagesGlob } from './post/find-broken-images';
 import standaloneRunner from './post/standalone';
+import { Nullable } from './types/globals';
 
 class SBG {
   cwd: string;
@@ -75,7 +76,7 @@ class SBG {
    */
   seo(customPath?: string | null | undefined) {
     return new Bluebird((resolve) => {
-      taskSeo(null, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
+      taskSeo(undefined, customPath || path.join(this.cwd, this.config.public_dir)).once('end', function () {
         setTimeout(() => {
           resolve();
         }, 3000);
@@ -105,9 +106,9 @@ class SBG {
    * @param customPath run anonymizer external links on spesific folder
    * @returns
    */
-  safelink(customPath?: string | null | undefined) {
+  safelink(customPath?: Nullable<string>) {
     return new Bluebird((resolve) => {
-      const task = taskSafelink(null, customPath || path.join(this.cwd, this.config.public_dir));
+      const task = taskSafelink(undefined, customPath || path.join(this.cwd, this.config.public_dir));
       task.once('end', function () {
         setTimeout(() => {
           resolve();
