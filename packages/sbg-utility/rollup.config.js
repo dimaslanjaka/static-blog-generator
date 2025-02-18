@@ -62,7 +62,6 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-
       globals: {
         hexo: 'hexo'
       }
@@ -135,17 +134,20 @@ const _oneFile = {
     {
       file: 'dist/index.js',
       format: 'esm',
-      inlineDynamicImports: true
+      inlineDynamicImports: true,
+      exports: 'named'
     },
     {
       file: 'dist/index.mjs',
       format: 'esm',
-      inlineDynamicImports: true
+      inlineDynamicImports: true,
+      exports: 'named'
     },
     {
       file: 'dist/index.cjs',
       format: 'cjs',
-      inlineDynamicImports: true
+      inlineDynamicImports: true,
+      exports: 'named'
     }
   ],
   plugins,
