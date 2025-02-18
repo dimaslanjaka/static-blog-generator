@@ -3,6 +3,9 @@ import defaults, * as wildcards from '../src';
 
 // jest --runInBand imports.test
 
+// avoid jest error **trying to `import` a file after the Jest environment has been torn down**
+jest.useFakeTimers();
+
 describe('check method', () => {
   const props = [
     'getConfig',
