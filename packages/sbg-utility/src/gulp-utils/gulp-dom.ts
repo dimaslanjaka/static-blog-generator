@@ -4,6 +4,7 @@ import jsdom from 'jsdom';
 import PluginError from 'plugin-error';
 import through2 from 'through2';
 import upath from 'upath';
+import { Logger } from '../utils';
 import { trueCasePathSync } from '../utils/filemanager/case-path';
 const pluginName = 'gulp-dom';
 const path = {
@@ -57,9 +58,9 @@ export function gulpDom(mutator: GulpDomCallback) {
         dom.window.close();
       } catch (e) {
         if (e instanceof Error) {
-          console.log(e.message);
+          Logger.log(e.message);
         }
-        console.log(pluginName, 'drop file', file.path);
+        Logger.log(pluginName, 'drop file', file.path);
         // drop file
         callback();
       }

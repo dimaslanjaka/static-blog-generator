@@ -2,6 +2,7 @@ import fs from 'fs-extra';
 import os from 'os';
 import path from 'path';
 import { writefile } from './filemanager';
+import Logger from './logger';
 import scheduler from './scheduler';
 
 const locks: LockManager[] = [];
@@ -19,13 +20,13 @@ export default class LockManager {
   }
 
   release() {
-    console.log(path.dirname(this.file), 'released');
+    Logger.log(path.dirname(this.file), 'released');
     if (!fs.existsSync(this.file)) return;
     return fs.rmSync(this.file, { recursive: true });
   }
 
   releaseAsync() {
-    console.log(path.dirname(this.file), 'released');
+    Logger.log(path.dirname(this.file), 'released');
     if (!fs.existsSync(this.file)) return Promise.resolve();
     return fs.rm(this.file, { recursive: true });
   }

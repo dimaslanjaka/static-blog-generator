@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import Logger from '../logger';
 
 /**
  * Reads a file and returns its content as a string. If the file does not exist, returns null.
@@ -20,7 +21,7 @@ function readfile(filePath: string, useAsync: boolean): string | null | Promise<
         }
         return await fs.readFile(filePath, 'utf-8');
       } catch (error) {
-        console.error(`Error reading file at ${filePath}:`, error);
+        Logger.error(`Error reading file at ${filePath}:`, error);
         return null;
       }
     })();
@@ -31,7 +32,7 @@ function readfile(filePath: string, useAsync: boolean): string | null | Promise<
       }
       return fs.readFileSync(filePath, 'utf-8');
     } catch (error) {
-      console.error(`Error reading file at ${filePath}:`, error);
+      Logger.error(`Error reading file at ${filePath}:`, error);
       return null;
     }
   }

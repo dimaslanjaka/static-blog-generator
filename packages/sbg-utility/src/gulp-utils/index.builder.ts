@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { Logger } from '../utils';
 
 // index.ts exports builder
 // this only for development and excluded from build config
@@ -21,7 +22,7 @@ glob.glob('**/*.{ts,js,jsx,tsx}', { ignore: ['**/*.builder.*'], cwd: __dirname, 
       (a, b) => a.localeCompare(b) //using String.prototype.localCompare()
     );
   // dump
-  console.log(contents);
+  Logger.log(contents);
   // fix eslint
   contents.push('', '//', '');
 

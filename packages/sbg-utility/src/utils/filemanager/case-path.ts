@@ -5,6 +5,7 @@ import { platform } from 'os';
 import path from 'path';
 import upath from 'upath';
 import { promisify as pify } from 'util';
+import Logger from '../logger';
 
 const readdir = pify(fs.readdir);
 export const isWindows = platform() === 'win32';
@@ -62,10 +63,10 @@ function trueCasePathNew(opt?: trueCasePathNewOpt) {
     } else {
       // Error handling for invalid paths
       if (typeof basePath === 'string') {
-        if (opt?.debug) console.error('Failed to convert case-path of', { basePath, filePath });
+        if (opt?.debug) Logger.error('Failed to convert case-path of', { basePath, filePath });
         return path.join(basePath, filePath);
       } else {
-        if (opt?.debug) console.error('Failed to convert case-path of', { filePath });
+        if (opt?.debug) Logger.error('Failed to convert case-path of', { filePath });
         return filePath;
       }
     }
