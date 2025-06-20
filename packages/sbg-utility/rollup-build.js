@@ -166,18 +166,16 @@ export async function compileDeclarations() {
       continue;
     }
 
-    let newExt = '';
-    if (originalFile.endsWith('.ts') || originalFile.endsWith('.mjs')) {
-      newExt = '.d.mts';
-    } else if (originalFile.endsWith('.cjs') || originalFile.endsWith('.js')) {
-      newExt = '.d.cts';
-    }
+    const mts = file.replace(/\.d\.ts$/, '.d.mts');
+    await fs.copyFile(file, mts);
+    await logResult(`${colors.green('✔ Copied')} ${colors.gray(file)} ${colors.cyan('→')} ${colors.magenta(mts)}`);
 
-    if (newExt) {
-      const newFile = file.replace(/\.d\.ts$/, newExt);
-      await fs.rename(file, newFile);
-      await logResult(colors.green(`✔ Renamed ${file} → ${newFile}`));
-    }
+    const cts = file.replace(/\.d\.ts$/, '.d.cts');
+    await fs.copyFile(file, cts);
+    await logResult(`${colors.green('✔ Copied')} ${colors.gray(file)} ${colors.cyan('→')} ${colors.magenta(cts)}`);
+
+    await fs.rm(file, { force: true });
+    await logResult(`${colors.green('✔ Removed')} ${colors.gray(file)}`);
   }
 }
 
