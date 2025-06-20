@@ -33,7 +33,7 @@
     "build": "run-s \"build:**\" && yarn workspaces foreach --worktree --no-private run build",
     "clean:util": "yarn workspace sbg-utility run clean",
     "clean": "run-s \"clean:**\" && yarn workspaces foreach --worktree --no-private run clean",
-    "pack": "yarn workspaces foreach --no-private exec \"npm run pack --if-present -- --commit\"",
+    "pack": "yarn workspaces foreach --all --no-private exec \"npm run pack --if-present -- --commit\"",
     "prepare": "husky"
   },
   "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://webmanajemen.com)",
