@@ -45,6 +45,12 @@ const getPlugins = () => [
   })
 ];
 
+/**
+ * Compile a single file to ESM (.mjs) format using Rollup.
+ *
+ * @param {string} inputFile - The input file path.
+ * @param {string} outputFile - The output file path (.mjs).
+ */
 export async function compileESM(inputFile, outputFile) {
   try {
     logResult(`${colors.cyan('📦 [ESM]')} ${colors.gray(inputFile)} ${colors.cyan('→')} ${colors.magenta(outputFile)}`);
@@ -72,6 +78,12 @@ export async function compileESM(inputFile, outputFile) {
   }
 }
 
+/**
+ * Compile a single file to CJS (.cjs) format using Rollup.
+ *
+ * @param {string} inputFile - The input file path.
+ * @param {string} outputFile - The output file path (.cjs).
+ */
 export async function compileCJS(inputFile, outputFile) {
   try {
     logResult(`${colors.cyan('📦 [CJS]')} ${colors.gray(inputFile)} ${colors.cyan('→')} ${colors.magenta(outputFile)}`);
@@ -179,12 +191,22 @@ export async function compileDeclarations() {
   }
 }
 
+/**
+ * Compile a file to both ESM (.mjs) and CJS (.cjs).
+ *
+ * @param {string} inputFile - The input file path.
+ * @param {string} outputBase - The output base path (without extension).
+ */
 export async function compileBoth(inputFile, outputBase) {
   await compileESM(inputFile, outputBase + '.mjs');
   await compileCJS(inputFile, outputBase + '.cjs');
 }
 
-export async function buildAll() {
+/**
+ * Compile all source files (excluding test files, etc.) to ESM and CJS.
+ * Output files are written to `dist/`.
+ */
+export async function compilePartial() {
   const inputFiles = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
     posix: true,
     ignore: tsconfig.exclude.concat(
@@ -203,8 +225,17 @@ export async function buildAll() {
     const outputBase = path.join('dist', path.relative('src', inputFile)).replace(/\.[^.]+$/, '');
     await compileBoth(inputFile, outputBase);
   }
+}
 
-  // Also explicitly compile chain.ts if needed
+/**
+ * Complete build: compiles all files to both ESM and CJS,
+ * emits declarations, and renames them appropriately.
+ */
+export async function buildAll() {
+  // Compile all source files to both ESM and CJS formats
+  await compilePartial();
+
+  // Also explicitly compile custom files if needed
   await compileBoth('src/utils/chain.ts', 'dist/utils/chain');
 
   // Emit all declarations after compiling
