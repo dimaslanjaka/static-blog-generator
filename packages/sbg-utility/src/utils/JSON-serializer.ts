@@ -7,6 +7,7 @@ import * as crypto from 'crypto';
 import fs from 'fs-extra';
 import url from 'node:url';
 import path from 'path';
+import Logger from './logger';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const { parse: $parse, stringify: $stringify } = JSON;
@@ -99,7 +100,7 @@ const parse = (text: string, reviver?: (...args: any[]) => any): any => {
   } catch (e) {
     const { stack, file } = getStack();
     fs.writeFileSync(file, `${stack.join('\n')}\n\n${text}`);
-    console.log('fail parse ' + file + ' ' + (e as Error).message);
+    Logger.log('fail parse ' + file + ' ' + (e as Error).message);
     process.exit(1);
   }
 };

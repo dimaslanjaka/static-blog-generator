@@ -1,16 +1,18 @@
 import fs from 'fs-extra';
+import Logger from '../logger';
 
 /**
  * Reads a file and returns its content as a string. If the file does not exist, returns null.
  * Supports synchronous and asynchronous modes based on the `useAsync` parameter.
  *
  * @param filePath - The path to the file to read.
- * @param useAsync - Whether to use asynchronous mode.
+ * @param useAsync - Whether to use asynchronous mode. Defaults to `false`.
  * @returns The file content as a string or null if the file does not exist.
  */
+function readfile(filePath: string): string | null;
 function readfile(filePath: string, useAsync: false): string | null;
 function readfile(filePath: string, useAsync: true): Promise<string | null>;
-function readfile(filePath: string, useAsync: boolean): string | null | Promise<string | null> {
+function readfile(filePath: string, useAsync: boolean = false): string | null | Promise<string | null> {
   if (useAsync) {
     return (async () => {
       try {
@@ -20,7 +22,7 @@ function readfile(filePath: string, useAsync: boolean): string | null | Promise<
         }
         return await fs.readFile(filePath, 'utf-8');
       } catch (error) {
-        console.error(`Error reading file at ${filePath}:`, error);
+        Logger.error(`Error reading file at ${filePath}:`, error);
         return null;
       }
     })();
@@ -31,7 +33,7 @@ function readfile(filePath: string, useAsync: boolean): string | null | Promise<
       }
       return fs.readFileSync(filePath, 'utf-8');
     } catch (error) {
-      console.error(`Error reading file at ${filePath}:`, error);
+      Logger.error(`Error reading file at ${filePath}:`, error);
       return null;
     }
   }

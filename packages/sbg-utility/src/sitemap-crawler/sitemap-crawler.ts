@@ -3,6 +3,7 @@ import Bluebird from 'bluebird';
 import { load } from 'cheerio';
 import ProgressBar from 'progress';
 import request from 'request';
+import { Logger } from '../utils';
 import { debug } from '../utils/debug';
 
 type cb = (arg0: Error | null, arg1?: string[]) => void;
@@ -51,7 +52,7 @@ export class SiteMapCrawlerCore {
           if (err) {
             if (isLog) {
               const { errno, code, syscall, host } = err;
-              console.log(`\nError: ${errno} ${code} ${syscall}, ${host}`);
+              Logger.log(`\nError: ${errno} ${code} ${syscall}, ${host}`);
             }
             return done();
           }
@@ -94,7 +95,7 @@ export class SiteMapCrawlerCore {
               siteMap[link] = arrayLinks;
             }
           } catch {
-            console.log('sitemap-crawler', 'cannot parse', link);
+            Logger.log('sitemap-crawler', 'cannot parse', link);
           }
           return done();
         });
@@ -231,7 +232,7 @@ export function sitemapCrawlerAsync(link: string | string[], opts?: Opt) {
             // append to asyncResult
             asyncResults[key] = fixUrl(links || []).concat(asyncResults[key] || []);
           } else {
-            console.log('err', e);
+            Logger.log('err', e);
           }
           resolveCrawl(asyncResults);
         });

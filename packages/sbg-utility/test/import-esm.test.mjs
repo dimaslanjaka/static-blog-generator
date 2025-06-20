@@ -1,6 +1,8 @@
-const { describe, expect, it, test } = require('@jest/globals');
-const defaults = require('../dist/index.cjs').default;
-const wildcards = require('../dist/index.cjs');
+import { describe, expect, it, jest, test } from '@jest/globals';
+import defaults, * as wildcards from '../dist/index.mjs';
+
+// avoid jest error **trying to `import` a file after the Jest environment has been torn down**
+jest.useFakeTimers();
 
 /**
  * Tests for the methods in the wildcards and defaults modules.

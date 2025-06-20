@@ -25,7 +25,7 @@ export function gulpDebug(filename?: string) {
     });
 
     scheduler.add(`${logname} dump ${ansiColors.cyan(caller)} pid ${ansiColors.yellow(String(pid))}`, () =>
-      console.log(logname, dumpfile)
+      Logger.log(logname, dumpfile)
     );
 
     if (typeof this.push === 'function') this.push(file);

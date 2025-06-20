@@ -2,6 +2,7 @@ import fs from 'fs';
 import micromatch from 'micromatch';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import Logger from './logger';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -97,7 +98,7 @@ export function resolveCommand(commandName: string, options?: { searchDir: strin
     .filter(fs.existsSync)[0];
 
   if (!cmdPath) {
-    console.error(`Command '${commandName}' not found in node_modules/.bin`);
+    Logger.error(`Command '${commandName}' not found in node_modules/.bin`);
     return commandName; // Return the original command name
   }
 
