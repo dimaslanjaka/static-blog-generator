@@ -53,7 +53,7 @@
     "axios": "^1.10.0",
     "bluebird": "^3.7.2",
     "cheerio": "^1.1.0",
-    "cross-spawn": "*",
+    "cross-spawn": "^7.0.6",
     "debug": "^4.4.1",
     "deepmerge-ts": "^7.1.5",
     "fs-extra": "^11.3.0",
@@ -161,7 +161,7 @@
     "markdown-it": "https://github.com/dimaslanjaka/markdown-it/raw/17ccc825cbb3e4c6d59edada5f6d93f27075d752/release/markdown-it.tgz",
     "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/a2e797bc27975cba20ef4c87547841e6341bfcf4/release/nodejs-package-types.tgz",
     "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/95400dd87106542a640092fa2073ee7d5c9b83e6/packages/sbg-api/release/sbg-api.tgz",
-    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/170514e6d1a3d863f70980491e84b9619e42c3ca/packages/sbg-cli/release/sbg-cli.tgz",
+    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/0a813e09e200228041a9e632ed170b14de7da64a/packages/sbg-cli/release/sbg-cli.tgz",
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/sbg-server/release/sbg-server.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/master/packages/static-blog-generator/release/static-blog-generator.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/warehouse.tgz"
