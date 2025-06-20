@@ -158,6 +158,11 @@ jobs:
           npm run pack -- --commit
           npm run pack
 
+      - name: 🛠️ Configure Git user
+        run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
         run: git add .
