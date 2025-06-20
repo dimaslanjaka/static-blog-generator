@@ -1,8 +1,8 @@
-import crossSpawn from 'cross-spawn'; // CommonJS module
-import fs from 'fs-extra'; // CommonJS module
+import crossSpawn from 'cross-spawn';
+import fs from 'fs-extra';
 import * as glob from 'glob';
-import gulp from 'gulp'; // ES module
-import path from 'path'; // CommonJS module
+import gulp from 'gulp';
+import path from 'node:path';
 import { fileURLToPath } from 'url';
 import { buildAll, compileCJS, compileDeclarations, compileESM } from './rollup-build.js';
 
