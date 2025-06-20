@@ -1,6 +1,11 @@
-import { fs, jsonParseWithCircularRefs, jsonStringifyWithCircularRefs, path, writefile } from '../src';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+import { fs, jsonParseWithCircularRefs, jsonStringifyWithCircularRefs, writefile } from '../src/index.js';
 
-const file = path.join(__dirname, 'fixtures/circular.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const file = join(__dirname, 'fixtures/circular.json');
 const json = JSON.parse(fs.readFileSync(file, 'utf-8')) as Record<string, any>;
 
 const circular = {
@@ -9,7 +14,7 @@ const circular = {
 };
 
 /** save location */
-const saveto = path.join(__dirname, '../tmp/circular.json');
+const saveto = join(__dirname, '../tmp/circular.json');
 
 const save = writefile(saveto, jsonStringifyWithCircularRefs(circular));
 

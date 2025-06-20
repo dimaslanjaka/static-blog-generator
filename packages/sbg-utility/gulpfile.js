@@ -4,6 +4,7 @@ import * as glob from 'glob';
 import gulp from 'gulp'; // ES module
 import path from 'path'; // CommonJS module
 import { fileURLToPath } from 'url';
+import { buildAll, compileCJS, compileDeclarations, compileESM } from './rollup-build.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,8 +32,11 @@ const cmd = (commandName) => {
 
 // copy non-javascript assets from src folder
 const copy = async function () {
-  // path.join(__dirname, 'dist')
-  const files = await glob.glob(['./src/**/*.*'], { ignore: ['**/*.{ts,js,cjs,mjs}'], absolute: true });
+  // Copy for one file build. see rollup _oneFile
+  const files = await glob.glob(['./src/**/*.*'], {
+    ignore: ['**/*.{ts,js,cjs,mjs}', '**/*.{ts,js,cjs,mjs}.txt'],
+    absolute: true
+  });
 
   for (let i = 0; i < files.length; i++) {
     const src = files[i];
@@ -40,9 +44,22 @@ const copy = async function () {
     fs.copySync(src, dest, { overwrite: true });
     console.log('Copied', src.replace(__dirname, ''), '->', dest.replace(__dirname, ''));
   }
+
+  // Copy for partial build. See rollup _partial
+  await new Promise((resolve) => {
+    gulp
+      .src(['./src/**/*.*'], { ignore: ['**/*.{ts,js,cjs,mjs}', '**/*.{ts,js,cjs,mjs}.txt'] })
+      .pipe(gulp.dest('dist'))
+      .once('end', resolve);
+  });
 };
 
 gulp.task('copy', copy);
+
+// tsc --build tsconfig.build.json
+// tsc --build tsconfig.docs.json
+// tsc --build tsconfig.json
+// rollup -c
 
 async function tsc() {
   await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
@@ -50,14 +67,19 @@ async function tsc() {
     shell: true,
     stdio: 'inherit'
   });
-  await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
-    cwd: __dirname,
-    shell: true,
-    stdio: 'inherit'
-  });
+  // await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
+  //   cwd: __dirname,
+  //   shell: true,
+  //   stdio: 'inherit'
+  // });
 }
 
-gulp.task('build', gulp.series(tsc, 'copy'));
+gulp.task('tsc', tsc);
+gulp.task('rollup', gulp.series(buildAll));
+gulp.task('rollup-dts', gulp.series(compileDeclarations));
+gulp.task('rollup-esm', gulp.series(compileESM));
+gulp.task('rollup-cjs', gulp.series(compileCJS));
+gulp.task('build', gulp.series('tsc', 'copy', 'rollup'));
 
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });

@@ -33,13 +33,12 @@ const nodeInputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
     '**/*.explicit.*',
     '**/*.test.*',
     '**/*.builder.*',
-    '**/*.runner.*',
     '**/*.spec.*',
     '*browser*'
   )
 });
 
-const plugins = [
+const basePlugins = [
   resolve({ preferBuiltins: true }), // Resolve node_modules packages
   commonjs(), // Convert CommonJS modules to ES6
   typescript({
@@ -62,9 +61,8 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      globals: {
-        hexo: 'hexo'
-      }
+      preserveModulesRoot: 'src',
+      globals: { hexo: 'hexo' }
     },
     // bundle CJS
     {
@@ -72,11 +70,9 @@ const _partials = {
       format: 'cjs',
       sourcemap: false,
       preserveModules: true,
-
+      preserveModulesRoot: 'src',
       entryFileNames: '[name].cjs',
-      globals: {
-        hexo: 'hexo'
-      }
+      globals: { hexo: 'hexo' }
     },
     // bundle mjs as ESM
     {
@@ -84,14 +80,12 @@ const _partials = {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-
+      preserveModulesRoot: 'src',
       entryFileNames: '[name].mjs',
-      globals: {
-        hexo: 'hexo'
-      }
+      globals: { hexo: 'hexo' }
     }
   ],
-  plugins,
+  plugins: basePlugins,
   external // External dependencies package name to exclude from bundle
 };
 
@@ -99,7 +93,7 @@ const _partials = {
 const _browser = {
   input: './src/index-browser.ts',
   output: {
-    file: `dist/index-browser.js`,
+    file: 'dist/index-browser.js',
     name,
     format: 'umd',
     exports: 'none',
@@ -150,12 +144,12 @@ const _oneFile = {
       exports: 'named'
     }
   ],
-  plugins,
+  plugins: basePlugins,
   external
 };
 
 /** @type {import('rollup').RollupOptions} */
-const _declarations = {
+const _oneFileDeclaration = {
   input: './tmp/dist/index-exports.d.ts',
   output: [
     { file: 'dist/index.d.ts', format: 'es', inlineDynamicImports: true },
@@ -166,4 +160,4 @@ const _declarations = {
   external
 };
 
-export default [_oneFile, _declarations];
+export default [_partials, _oneFileDeclaration];

@@ -30,7 +30,7 @@ if (tsOpt.extends) delete tsOpt.extends;
 const buildConfig = (config) => {
   const build = ({ minified, input }) => {
     /** @type {import('rollup').RollupOptions} */
-    const overrideConfig =  {
+    const overrideConfig = {
       input,
       ...config,
       output: {
@@ -59,7 +59,7 @@ const buildConfig = (config) => {
         minified && terser(),
         ...(config.plugins || [])
       ]
-    }
+    };
     return overrideConfig;
   };
 

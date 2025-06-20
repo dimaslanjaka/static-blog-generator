@@ -46,7 +46,7 @@ export default [
 
     languageOptions: {
       globals: {
-        ...globals.jest,
+        ...globals.jest, // Jest testing framework globals
         ...globals.browser, // Browser global variables
         ...globals.amd, // AMD module globals
         ...globals.node, // Node.js global variables
@@ -80,6 +80,9 @@ export default [
           ]
         })
       ],
+
+      // This rule disallows empty blocks, which can lead to confusion or bugs
+      'no-empty': 'off',
 
       // TypeScript-specific rules
       '@typescript-eslint/explicit-function-return-type': 'off', // Disable enforcing return type on functions
