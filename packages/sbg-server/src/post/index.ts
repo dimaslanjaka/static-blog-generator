@@ -134,6 +134,8 @@ export default function routePost(this: SBGServer, api: apis.Application) {
           stack: findPost.stack
         });
       }
+      const DOMPurify = require('dompurify');
+      findPost.rawbody = DOMPurify.sanitize(findPost.rawbody);
       res.render('post/edit2.html', { post: findPost });
     })
   );
