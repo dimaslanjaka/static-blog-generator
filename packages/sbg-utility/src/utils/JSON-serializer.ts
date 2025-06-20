@@ -117,10 +117,12 @@ const stringify = (
   replacer?: ((this: any, key: string, value: any) => any) | string[],
   space?: string | number
 ): string => {
-  const $ =
-    replacer && typeof replacer === 'object'
+  const isCallable = typeof replacer === 'function';
+  const $ = isCallable
+    ? replacer
+    : typeof replacer === 'object'
       ? (k: string, v: any) => (k === '' || replacer.indexOf(k) !== -1 ? v : void 0)
-      : replacer || noop;
+      : noop;
   const known = new Map<any, any>();
   const input: any[] = [];
   const output: string[] = [];
