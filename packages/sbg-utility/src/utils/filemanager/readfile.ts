@@ -6,12 +6,13 @@ import Logger from '../logger';
  * Supports synchronous and asynchronous modes based on the `useAsync` parameter.
  *
  * @param filePath - The path to the file to read.
- * @param useAsync - Whether to use asynchronous mode.
+ * @param useAsync - Whether to use asynchronous mode. Defaults to `false`.
  * @returns The file content as a string or null if the file does not exist.
  */
+function readfile(filePath: string): string | null;
 function readfile(filePath: string, useAsync: false): string | null;
 function readfile(filePath: string, useAsync: true): Promise<string | null>;
-function readfile(filePath: string, useAsync: boolean): string | null | Promise<string | null> {
+function readfile(filePath: string, useAsync: boolean = false): string | null | Promise<string | null> {
   if (useAsync) {
     return (async () => {
       try {
