@@ -5,7 +5,7 @@
     "target": "ESNext",
     "outDir": "./tmp/dist",
     "declaration": true,
-    "tsBuildInfoFile": "tmp/x.info",
+    "tsBuildInfoFile": "tmp/docs.info",
     "resolveJsonModule": true
   },
   "include": ["./src/**/*"]
