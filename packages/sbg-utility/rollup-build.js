@@ -186,8 +186,9 @@ export async function compileDeclarations() {
     await fs.copyFile(file, cts);
     await logResult(`${colors.green('✔ Copied')} ${colors.gray(file)} ${colors.cyan('→')} ${colors.magenta(cts)}`);
 
-    await fs.rm(file, { force: true });
-    await logResult(`${colors.green('✔ Removed')} ${colors.gray(file)}`);
+    // delete the original .d.ts file
+    // await fs.rm(file, { force: true });
+    // await logResult(`${colors.green('✔ Removed')} ${colors.gray(file)}`);
   }
 }
 
