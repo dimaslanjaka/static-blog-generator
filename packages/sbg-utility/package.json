@@ -4,7 +4,7 @@
   "description": "static-blog-generator utility",
   "type": "module",
   "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": {
