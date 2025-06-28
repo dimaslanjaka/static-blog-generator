@@ -9,8 +9,7 @@ import { buildAll, compileCJS, compileDeclarations, compileESM } from './rollup-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/** resolve cmd binary */
-const cmd = (commandName) => {
+function get_binary_path(commandName) {
   const cmdPath = [
     __dirname,
     process.cwd(),
@@ -28,7 +27,7 @@ const cmd = (commandName) => {
   }
 
   return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
-};
+}
 
 // copy non-javascript assets from src folder
 const copy = async function () {
@@ -62,12 +61,12 @@ gulp.task('copy', copy);
 // rollup -c
 
 async function tsc() {
-  await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
+  await crossSpawn.spawnAsync(get_binary_path('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
   });
-  // await crossSpawn.spawnAsync(cmd('rollup'), ['-c'], {
+  // await crossSpawn.spawnAsync(get_binary_path('yarn'), ['run', 'rollup'], {
   //   cwd: __dirname,
   //   shell: true,
   //   stdio: 'inherit'
