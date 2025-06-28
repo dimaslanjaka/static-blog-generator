@@ -55,32 +55,23 @@ const basePlugins = [
 const _partials = {
   input: nodeInputs,
   output: [
-    // bundle js as ESM by default
-    {
-      dir: 'dist',
-      format: 'esm',
-      sourcemap: false,
-      preserveModules: true,
-      preserveModulesRoot: 'src',
-      globals: { hexo: 'hexo' }
-    },
     // bundle CJS
     {
-      dir: 'dist',
+      dir: 'dist/partials',
       format: 'cjs',
       sourcemap: false,
       preserveModules: true,
-      preserveModulesRoot: 'src',
+      // preserveModulesRoot: 'src',
       entryFileNames: '[name].cjs',
       globals: { hexo: 'hexo' }
     },
     // bundle mjs as ESM
     {
-      dir: 'dist',
+      dir: 'dist/partials',
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      preserveModulesRoot: 'src',
+      // preserveModulesRoot: 'src',
       entryFileNames: '[name].mjs',
       globals: { hexo: 'hexo' }
     }
@@ -125,12 +116,6 @@ const _browser = {
 const _oneFile = {
   input: './src/index.ts',
   output: [
-    {
-      file: 'dist/index.js',
-      format: 'esm',
-      inlineDynamicImports: true,
-      exports: 'named'
-    },
     {
       file: 'dist/index.mjs',
       format: 'esm',
