@@ -27,6 +27,23 @@ if (isDirect) {
   } catch (_) {}
 }
 
+/**
+ * @returns {string[]} Array of input files to be compiled.
+ */
+export function getInputFiles() {
+  return glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
+    posix: true,
+    ignore: tsconfig.exclude.concat(
+      '**/*.runner.*',
+      '**/*.explicit.*',
+      '**/*.test.*',
+      '**/*.builder.*',
+      '**/*.spec.*',
+      '*browser*'
+    )
+  });
+}
+
 const logResult = async (...args) => {
   console.log(...args);
   const plain = args.map((r) => stripAnsi(String(r))).join('\n');
@@ -208,17 +225,7 @@ export async function compileBoth(inputFile, outputBase) {
  * Output files are written to `dist/`.
  */
 export async function compilePartial() {
-  const inputFiles = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
-    posix: true,
-    ignore: tsconfig.exclude.concat(
-      '**/*.runner.*',
-      '**/*.explicit.*',
-      '**/*.test.*',
-      '**/*.builder.*',
-      '**/*.spec.*',
-      '*browser*'
-    )
-  });
+  const inputFiles = getInputFiles();
 
   logResult(colors.yellow(`${inputFiles.length} input files found:`) + '\n' + inputFiles.join('\n') + '\n');
 
