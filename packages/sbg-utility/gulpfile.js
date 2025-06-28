@@ -4,7 +4,7 @@ import * as glob from 'glob';
 import gulp from 'gulp';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
-import { buildAll, compileCJS, compileDeclarations, compileESM } from './rollup-build.js';
+import { buildAll, compileCJS, compileDeclarations, compileESM, getInputFiles } from './rollup-build.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -76,8 +76,26 @@ async function tsc() {
 gulp.task('tsc', tsc);
 gulp.task('rollup', gulp.series(buildAll));
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
-gulp.task('rollup-esm', gulp.series(compileESM));
-gulp.task('rollup-cjs', gulp.series(compileCJS));
+gulp.task(
+  'rollup-esm',
+  gulp.series(async function () {
+    const inputFiles = getInputFiles();
+    for (const inputFile of inputFiles) {
+      const outputBase = path.join('dist', path.relative('src', inputFile)).replace(/\.[^.]+$/, '');
+      await compileESM(inputFile, outputBase + '.mjs');
+    }
+  })
+);
+gulp.task(
+  'rollup-cjs',
+  gulp.series(async function () {
+    const inputFiles = getInputFiles();
+    for (const inputFile of inputFiles) {
+      const outputBase = path.join('dist', path.relative('src', inputFile)).replace(/\.[^.]+$/, '');
+      await compileCJS(inputFile, outputBase + '.cjs');
+    }
+  })
+);
 gulp.task('build', gulp.series('tsc', 'copy', 'rollup'));
 
 async function clean() {
