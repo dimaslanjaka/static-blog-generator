@@ -5,10 +5,10 @@ import typescript from '@rollup/plugin-typescript';
 import colors from 'ansi-colors';
 import fs from 'fs/promises';
 import * as glob from 'glob';
-import path from 'path';
 import { rollup } from 'rollup';
 import stripAnsi from 'strip-ansi';
 import ts from 'typescript';
+import path from 'upath';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { external, tsconfig } from './rollup.utils.js';
 
@@ -21,10 +21,15 @@ const isDirect = import.meta.url === pathToFileURL(process.argv[1]).href;
 await fs.mkdir(path.dirname(logPath), { recursive: true });
 await fs.writeFile(logPath, '');
 if (isDirect) {
+  const distPath = path.join(__dirname, 'dist');
   try {
-    await fs.access(path.join(__dirname, 'dist'));
-    await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
-  } catch (_) {}
+    await fs.access(distPath);
+    await fs.rm(distPath, { recursive: true, force: true });
+    await fs.writeFile(logPath, colors.yellow('🗑️ Old dist folder removed.\n'), { flag: 'w' });
+  } catch {
+    // dist folder does not exist, nothing to remove
+    await fs.writeFile(logPath, colors.yellow('ℹ️ No dist folder to remove.\n'), { flag: 'w' });
+  }
 }
 
 /**
@@ -44,23 +49,25 @@ export function getInputFiles() {
   });
 }
 
-const logResult = async (...args) => {
+async function logResult(...args) {
   console.log(...args);
   const plain = args.map((r) => stripAnsi(String(r))).join('\n');
   await fs.appendFile(logPath, plain + '\n');
-};
+}
 
-const getPlugins = () => [
-  resolve({ preferBuiltins: true }),
-  json(),
-  commonjs(),
-  typescript({
-    tsconfig: false,
-    compilerOptions: { ...tsconfig.compilerOptions },
-    include: ['./src/**/*'],
-    exclude: tsconfig.exclude
-  })
-];
+function getPlugins() {
+  return [
+    resolve({ preferBuiltins: true }),
+    json(),
+    commonjs(),
+    typescript({
+      tsconfig: false,
+      compilerOptions: { ...tsconfig.compilerOptions },
+      include: ['./src/**/*'],
+      exclude: tsconfig.exclude
+    })
+  ];
+}
 
 /**
  * Compile a single file to ESM (.mjs) format using Rollup.
@@ -80,11 +87,18 @@ export async function compileESM(inputFile, outputFile) {
 
     await fs.mkdir(path.dirname(outputFile), { recursive: true });
 
-    await bundle.write({
+    const result = await bundle.write({
       file: outputFile,
       format: 'esm',
       sourcemap: false
     });
+    if (result && result.output) {
+      for (const out of result.output) {
+        if (out.fileName) {
+          await logResult(`${colors.gray('  →')} ${colors.magenta(path.resolve(out.fileName))}`);
+        }
+      }
+    }
 
     await bundle.close();
 
@@ -224,7 +238,7 @@ export async function compileBoth(inputFile, outputBase) {
  * Compile all source files (excluding test files, etc.) to ESM and CJS.
  * Output files are written to `dist/`.
  */
-export async function compilePartial() {
+export async function compileAllToOneFile() {
   const inputFiles = getInputFiles();
 
   logResult(colors.yellow(`${inputFiles.length} input files found:`) + '\n' + inputFiles.join('\n') + '\n');
@@ -241,7 +255,7 @@ export async function compilePartial() {
  */
 export async function buildAll() {
   // Compile all source files to both ESM and CJS formats
-  await compilePartial();
+  await compileAllToOneFile();
 
   // Also explicitly compile custom files if needed
   await compileBoth('src/utils/chain.ts', 'dist/utils/chain');
