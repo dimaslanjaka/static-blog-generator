@@ -153,16 +153,16 @@ const stringify = (
 
 /**
  * Converts an object with circular references to JSON.
- * @param any - The object to convert.
+ * @param anyData - The object to convert.
  * @returns The JSON representation of the object.
  */
-const toJSON = (any: any): any => $parse(stringify(any));
+const toJSON = (anyData: any): any => $parse(stringify(anyData));
 export { toJSON };
 
 /**
  * Parses a circular object from JSON.
- * @param any - The JSON string to parse.
+ * @param anyData - The JSON string to parse.
  * @returns The parsed object.
  */
-const fromJSON = (any: string): any => parse($stringify(any));
+const fromJSON = (anyData: string): any => parse($stringify(anyData));
 export { fromJSON, parse, stringify };
