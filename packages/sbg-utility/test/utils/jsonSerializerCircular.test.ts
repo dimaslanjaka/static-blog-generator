@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it, jest, test } from '@jest/globals';
 import path from 'upath';
 import { fileURLToPath } from 'url';
-import * as utility from '../src';
-import { jsonStringifyWithCircularRefs } from '../src';
+import * as utility from '../../src';
+import { jsonStringifyWithCircularRefs } from '../../src';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
