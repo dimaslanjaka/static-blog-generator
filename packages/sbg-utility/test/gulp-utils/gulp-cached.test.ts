@@ -4,61 +4,56 @@ import gulp from 'gulp';
 import url from 'node:url';
 import path from 'path';
 import { fetchConfig as fetchConfigDist } from '../../dist/config/_config';
-import defaultsDist, { gulpOpt as gulpOptDist } from '../../dist/index';
+import defaultsDist from '../../dist/index';
 import { fetchConfig as fetchConfigSrc } from '../../src/config/_config';
-import defaultsSrc, { gulpOpt as gulpOptSrc } from '../../src/index';
+import defaultsSrc from '../../src/index';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-describe('gulp cache (src)', () => {
-  const projectRoot = path.resolve(__dirname, '../../');
-  const destDir = path.join(projectRoot, 'tmp/dest-src');
-  const cwd = path.join(projectRoot, 'test');
-  process.cwd = () => cwd;
+function runGulpCacheTest(
+  label: string,
+  opts: {
+    fetchConfig: (cwd: string) => void;
+    defaults: { gulpCached: (options: { name: string; verbose: boolean }) => NodeJS.ReadWriteStream };
+    destDir: string;
+  }
+) {
+  describe(label, () => {
+    const projectRoot = path.resolve(__dirname, '../../');
+    const cwd = path.join(projectRoot, 'test');
+    process.cwd = () => cwd;
 
-  beforeAll(() => {
-    fetchConfigSrc(cwd);
-  });
+    beforeAll(() => {
+      opts.fetchConfig(cwd);
+    });
 
-  test('gulpCached() with src', (done) => {
-    gulp
-      .src('**/*', { cwd: path.join(projectRoot, 'src') } as gulpOptSrc)
-      .pipe(defaultsSrc.gulpCached({ name: 'test', verbose: true }))
-      .pipe(gulp.dest(destDir))
-      .once('end', () => {
-        fs.readdir(destDir, (err: NodeJS.ErrnoException | null, files: string[]) => {
-          expect(err).toBeNull();
-          expect(Array.isArray(files)).toBe(true);
-          expect(files.length).toBeGreaterThan(0);
-          done();
+    test('gulpCached() works', (done) => {
+      gulp
+        .src('**/*', { cwd: path.join(projectRoot, 'src') })
+        .pipe(opts.defaults.gulpCached({ name: 'test', verbose: true }))
+        .pipe(gulp.dest(opts.destDir))
+        .once('end', () => {
+          fs.readdir(opts.destDir, (err: NodeJS.ErrnoException | null, files: string[]) => {
+            expect(err).toBeNull();
+            expect(Array.isArray(files)).toBe(true);
+            expect(files.length).toBeGreaterThan(0);
+            done();
+          });
         });
-      });
-  }, 70000);
+    }, 70000);
+  });
+}
+
+const projectRoot = path.resolve(__dirname, '../../');
+runGulpCacheTest('gulp cache (src)', {
+  fetchConfig: fetchConfigSrc,
+  defaults: defaultsSrc,
+  destDir: path.join(projectRoot, 'tmp/dest-src')
 });
 
-describe('gulp cache (dist)', () => {
-  const projectRoot = path.resolve(__dirname, '../../');
-  const destDir = path.join(projectRoot, 'tmp/dest-dist');
-  const cwd = path.join(projectRoot, 'test');
-  process.cwd = () => cwd;
-
-  beforeAll(() => {
-    fetchConfigDist(cwd);
-  });
-
-  test('gulpCached() with dist', (done) => {
-    gulp
-      .src('**/*', { cwd: path.join(projectRoot, 'src') } as gulpOptDist)
-      .pipe(defaultsDist.gulpCached({ name: 'test', verbose: true }))
-      .pipe(gulp.dest(destDir))
-      .once('end', () => {
-        fs.readdir(destDir, (err: NodeJS.ErrnoException | null, files: string[]) => {
-          expect(err).toBeNull();
-          expect(Array.isArray(files)).toBe(true);
-          expect(files.length).toBeGreaterThan(0);
-          done();
-        });
-      });
-  }, 70000);
+runGulpCacheTest('gulp cache (dist)', {
+  fetchConfig: fetchConfigDist,
+  defaults: defaultsDist,
+  destDir: path.join(projectRoot, 'tmp/dest-dist')
 });
