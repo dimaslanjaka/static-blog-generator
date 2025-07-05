@@ -50,7 +50,14 @@ function chunkFileNamesWithExt(ext) {
 }
 
 const input = 'tmp/dist/index.js';
-
+const plugins = [
+  nodeResolve({
+    preferBuiltins: true,
+    extensions: ['.mjs', '.js', '.json', '.node', '.cjs', '.jsx', '.ts', '.tsx']
+  }),
+  commonjs(),
+  json()
+];
 const configs = [
   // ESM build
   {
@@ -63,15 +70,7 @@ const configs = [
       preserveModules: true,
       preserveModulesRoot: 'tmp/dist'
     },
-    plugins: [
-      nodeResolve({
-        preferBuiltins: true,
-        // moduleDirectories: [path.join(__dirname, 'node_modules'), 'node_modules'],
-        extensions: ['.mjs', '.js', '.json', '.node', '.cjs', '.jsx', '.ts', '.tsx']
-      }),
-      commonjs(),
-      json()
-    ],
+    plugins,
     external
   },
   // CJS build
@@ -83,10 +82,9 @@ const configs = [
       entryFileNames: entryFileNamesWithExt('cjs'),
       chunkFileNames: chunkFileNamesWithExt('cjs'),
       preserveModules: true,
-      preserveModulesRoot: 'tmp/dist',
-      exports: 'named'
+      preserveModulesRoot: 'tmp/dist'
     },
-    plugins: [nodeResolve({ preferBuiltins: true }), commonjs(), json()],
+    plugins,
     external
   }
 ];
