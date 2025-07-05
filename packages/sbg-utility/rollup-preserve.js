@@ -12,6 +12,10 @@ import { external, tsconfig } from './rollup.utils.js';
 
 fs.writeFileSync('tmp/rollup.log', ''); // Clear previous log
 
+// Define __dirname for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // Generalized entryFileNames function for both ESM and CJS
 function entryFileNamesWithExt(ext) {
   return function ({ facadeModuleId }) {
@@ -21,7 +25,7 @@ function entryFileNamesWithExt(ext) {
     let rel = path.relative(path.resolve(__dirname, 'tmp/dist'), facadeModuleId);
     rel = rel.replace('node_modules', 'dependencies');
     rel = rel.replace(/^(?:\.{2}\/|\.\/)+/, '');
-    // Ensure the extension matches the argument ext using upath.extname
+    // Remove extension using path.extname
     rel = rel.slice(0, -path.extname(rel).length) + `.${ext}`;
 
     fs.appendFileSync('tmp/rollup.log', `Processed: ${facadeModuleId} -> ${rel}\n`);
@@ -29,9 +33,21 @@ function entryFileNamesWithExt(ext) {
   };
 }
 
-// Define __dirname for ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Generalized chunkFileNames function for both ESM and CJS
+function chunkFileNamesWithExt(ext) {
+  return function ({ name }) {
+    // For node_modules chunks, place in dependencies folder
+    if (name && name.includes('node_modules')) {
+      let rel = name.replace('node_modules', 'dependencies');
+      rel = rel.replace(/^(?:\.\/|\.\.\/)+/, '');
+      // Remove extension using path.extname
+      rel = rel.slice(0, -path.extname(rel).length);
+      return `${rel}-[hash].${ext}`;
+    }
+    // For local chunks, keep the default pattern
+    return `[name]-[hash].${ext}`;
+  };
+}
 
 const input = 'tmp/dist/index.js';
 
@@ -43,7 +59,7 @@ const configs = [
       dir: 'dist',
       format: 'esm',
       entryFileNames: entryFileNamesWithExt('mjs'),
-      chunkFileNames: '[name]-[hash].mjs',
+      chunkFileNames: chunkFileNamesWithExt('mjs'),
       preserveModules: true,
       preserveModulesRoot: 'tmp/dist'
     },
@@ -65,7 +81,7 @@ const configs = [
       dir: 'dist',
       format: 'cjs',
       entryFileNames: entryFileNamesWithExt('cjs'),
-      chunkFileNames: '[name]-[hash].cjs',
+      chunkFileNames: chunkFileNamesWithExt('cjs'),
       preserveModules: true,
       preserveModulesRoot: 'tmp/dist',
       exports: 'named'
