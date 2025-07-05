@@ -36,7 +36,7 @@ export function md5(data?: string) {
  * MD5 file asynchronously
  * @param path
  */
-export default function md5File(path?: string) {
+export function md5File(path?: string) {
   if (!path || path.length === 0) return undefined;
   return new Promise((resolve, reject) => {
     const output = cryptolib.createHash('md5');
