@@ -4,6 +4,7 @@ import * as glob from 'glob';
 import gulp from 'gulp';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
+import YAML from 'yaml';
 import { compileDeclarations } from './rollup-build.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -89,3 +90,19 @@ async function clean() {
 gulp.task('clean', gulp.series(clean));
 
 gulp.task('default', gulp.series('build'));
+
+gulp.task('populate-config', async function () {
+  const configYmlPath = path.join(__dirname, 'test', '_config.yml');
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+
+  if (!fs.existsSync(configYmlPath)) {
+    console.error('YAML config not found at', configYmlPath);
+    return;
+  }
+
+  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
+  const configObj = YAML.parse(ymlContent);
+  fs.ensureDirSync(path.dirname(configJsonPath));
+  fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
+  console.log('Created _config.json at', configJsonPath);
+});
