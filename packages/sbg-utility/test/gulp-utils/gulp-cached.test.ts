@@ -3,8 +3,8 @@ import fs from 'fs';
 import gulp from 'gulp';
 import url from 'node:url';
 import path from 'path';
-import { fetchConfig as fetchConfigDist } from '../../dist/config/_config';
-import defaultsDist from '../../dist/index';
+import { fetchConfig as fetchConfigDist } from '../../dist/config/_config.mjs';
+import defaultsDist from '../../dist/index.mjs';
 import { fetchConfig as fetchConfigSrc } from '../../src/config/_config';
 import defaultsSrc from '../../src/index';
 

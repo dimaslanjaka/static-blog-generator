@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import gulp from 'gulp';
 import url from 'node:url';
 import path from 'path';
-import { chain as chainDist } from '../../dist/utils/chain';
+import { chain as chainDist } from '../../dist/utils/chain.mjs';
 import { chain as chainSrc } from '../../src/utils/chain';
 
 /**

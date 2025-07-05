@@ -17,7 +17,7 @@ import {
   getConfig as distGetConfig,
   projectIgnores as distProjectIgnores,
   setConfig as distSetConfig
-} from '../../dist/config/_config';
+} from '../../dist/config/_config.mjs';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

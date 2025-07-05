@@ -16,7 +16,7 @@ import {
   array_shuffle_swap as array_shuffle_swap_dist,
   array_unique as array_unique_dist,
   arrayOfObjUniq as arrayOfObjUniq_dist
-} from '../../dist/utils/array';
+} from '../../dist/utils/array.mjs';
 
 describe.each([
   [
