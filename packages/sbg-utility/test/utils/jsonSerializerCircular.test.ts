@@ -2,7 +2,9 @@ import { beforeAll, describe, expect, it, test } from '@jest/globals';
 import * as fs from 'fs';
 import path from 'upath';
 import { fileURLToPath } from 'url';
-import { jsonParseWithCircularRefs, jsonStringifyWithCircularRefs, writefile } from '../../src';
+import { writefile } from '../../src/utils/filemanager/writefile';
+import { jsonParseWithCircularRefs, jsonStringifyWithCircularRefs } from '../../src/utils/JSON';
+import { fromJSON, parse, stringify, toJSON } from '../../src/utils/JSON-serializer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,6 +62,32 @@ function createTestObj() {
 }
 
 describe('JSON circular structure', () => {
+  describe('flatted compatibility (JSON-serializer)', () => {
+    it('should stringify and parse circular object', () => {
+      const obj: Record<string, any> = { name: 'circular', circular: createTestObj() };
+      obj.self = obj;
+      const str = stringify(obj);
+      const parsed = parse(str);
+      expect(parsed.name).toBe('circular');
+      expect(parsed.self).toBe(parsed);
+    });
+
+    it('should toJSON and fromJSON circular object', () => {
+      const obj: Record<string, any> = { foo: 'bar' };
+      obj.loop = obj;
+      const jsonObj = toJSON(obj);
+      // The flatted format is an array: [ { foo: '1', loop: '0' }, 'bar' ]
+      expect(Array.isArray(jsonObj)).toBe(true);
+      expect(jsonObj[0].foo).toBe('1');
+      expect(jsonObj[0].loop).toBe('0');
+      expect(jsonObj[1]).toBe('bar');
+      // Now test fromJSON, which expects an object (not a string)
+      const back = fromJSON(jsonObj);
+      expect(back.foo).toBe('bar');
+      expect(back.loop).toBe(back);
+    });
+  });
+
   describe('basic circular structure behavior', () => {
     const obj = {} as Record<string, any>;
     obj.self = obj;
