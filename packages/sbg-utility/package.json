@@ -29,7 +29,7 @@
     "build": "gulp build",
     "build-pack": "yarn run build && yarn run pack",
     "rollup": "node --max-old-space-size=4096 ./node_modules/rollup/dist/bin/rollup -c -m",
-    "clean": "rimraf tmp dist && gulp --series build",
+    "clean": "rimraf tmp dist",
     "prepack": "node package-switch.cjs production",
     "pack": "node packer.cjs --yarn"
   },
