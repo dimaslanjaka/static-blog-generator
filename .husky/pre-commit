@@ -1,12 +1,17 @@
 #!/usr/bin/env sh
 
+set -e
+
 ROOT_GIT=$(git rev-parse --show-toplevel)
 
-cp "${ROOT_GIT}/readme.md" "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
-
-git add "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
+STATIC_BLOG_README="${ROOT_GIT}/packages/static-blog-generator/readme.md"
+if [ -f "$STATIC_BLOG_README" ]; then
+  cp "${ROOT_GIT}/readme.md" "$STATIC_BLOG_README" 2>/dev/null
+  git add "$STATIC_BLOG_README" 2>/dev/null
+fi
 
 npx lint-staged
 
 command -v git-lfs >/dev/null 2>&1 || { echo >&2 "\nThis repository is configured for Git LFS but 'git-lfs' was not found on your path. If you no longer wish to use Git LFS, remove this hook by deleting '.git/hooks/pre-push'.\n"; exit 2; }
-git lfs pre-commit "$@"
+git lfs pre-commit "$@" || true
+
