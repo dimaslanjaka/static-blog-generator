@@ -54,23 +54,26 @@ async function exitHandler(options?: { [key: string]: any; cleanup?: any; exit?:
  * Trigger Process Bindings
  */
 function triggerProcess() {
-  // before exit
-  //process.on('beforeExit', exitHandler.bind(undefined, { exit: true }));
+  // Ensure we don't add duplicate listeners
+  if (process.listenerCount('exit') === 0) {
+    process.on('exit', exitHandler.bind(undefined, { cleanup: true }));
+  }
 
-  //do something when app is closing
-  process.on('exit', exitHandler.bind(undefined, { cleanup: true }));
-  // process.on('disconnect', exitHandler.bind(undefined, { exit: true }));
+  if (process.listenerCount('SIGINT') === 0) {
+    process.on('SIGINT', exitHandler.bind(undefined, { exit: true }));
+  }
 
-  //catches ctrl+c event
-  process.on('SIGINT', exitHandler.bind(undefined, { exit: true }));
-  //process.on('SIGKILL', exitHandler.bind(undefined, { exit: true }));
+  if (process.listenerCount('SIGUSR1') === 0) {
+    process.on('SIGUSR1', exitHandler.bind(undefined, { exit: true }));
+  }
 
-  // catches "kill pid" (for example: nodemon restart)
-  process.on('SIGUSR1', exitHandler.bind(undefined, { exit: true }));
-  process.on('SIGUSR2', exitHandler.bind(undefined, { exit: true }));
+  if (process.listenerCount('SIGUSR2') === 0) {
+    process.on('SIGUSR2', exitHandler.bind(undefined, { exit: true }));
+  }
 
-  //catches uncaught exceptions
-  process.on('uncaughtException', exitHandler.bind(undefined, { exit: true }));
+  if (process.listenerCount('uncaughtException') === 0) {
+    process.on('uncaughtException', exitHandler.bind(undefined, { exit: true }));
+  }
 }
 
 ///// task queue manager
@@ -102,9 +105,7 @@ export class scheduler {
   static register(): void {
     if (scheduler.registered) return;
     scheduler.registered = true;
-    bindProcessExit('scheduler_on_exit', function () {
-      scheduler.executeAll();
-    });
+    bindProcessExit('scheduler_on_exit', () => scheduler.executeAll());
   }
   /**
    * Add function with key to list
@@ -113,12 +114,8 @@ export class scheduler {
    */
   static add(key: string, value: () => any): void {
     functions[key] = value;
-    const self = this;
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(self.register());
-      }, 3000);
-    });
+    // Register immediately instead of using an unhandled timeout
+    scheduler.register();
   }
 
   private static postponeCounter = 0;
@@ -158,6 +155,29 @@ export class scheduler {
       if (scheduler.verbose) _log.info(logname, 'executing', key);
       await Bluebird.promisify(functions[key])();
     }
+  }
+
+  /**
+   * Clean up all event listeners and scheduled functions to prevent open handles
+   */
+  static cleanup(): void {
+    // Clear all scheduled functions
+    Object.keys(functions).forEach((key) => delete functions[key]);
+
+    // Remove process event listeners
+    process.removeAllListeners('exit');
+    process.removeAllListeners('SIGINT');
+    process.removeAllListeners('SIGUSR1');
+    process.removeAllListeners('SIGUSR2');
+    process.removeAllListeners('uncaughtException');
+
+    // Reset state
+    scheduler.registered = false;
+    scheduler.postponeCounter = 0;
+    triggered = false;
+
+    // Clear exit handler functions
+    Object.keys(fns).forEach((key) => delete fns[key]);
   }
 }
 
