@@ -2,15 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import upath from 'upath';
 import { trueCasePathSync } from './case-path';
-
-export function fixDriveLetter(filePath: string) {
-  // Handle Windows-style paths with lowercase drive letters
-  if (/^[a-z]:/.test(filePath)) {
-    // Ensure first letter is uppercase
-    return filePath.charAt(0).toUpperCase() + filePath.slice(1);
-  }
-  return filePath;
-}
+import { fixDriveLetter } from './driveLetterUtils';
 
 /**
  * UNIX join path with true-case-path
