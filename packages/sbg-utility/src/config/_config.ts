@@ -144,18 +144,18 @@ export function getConfig() {
  * @returns
  */
 export function deployConfig() {
-  let deployDir: string;
-  if (settledConfig.deploy_dir) {
-    // deploy_dir was set
-    deployDir = settledConfig.deploy_dir;
-  } else {
+  let deployDir: string | undefined = settledConfig.deploy_dir;
+  if (!deployDir) {
     // fallback get from deploy.type
-    deployDir = path.join(settledConfig.cwd, '.deploy_' + settledConfig.deploy?.type || 'git');
+    const deployType = settledConfig.deploy?.type || 'git';
+    deployDir = path.join(settledConfig.cwd || process.cwd(), `.deploy_${deployType}`);
   }
   // subfolder - assign deploy.folder
-  if (settledConfig.deploy.folder) {
-    deployDir = path.join(deployDir, settledConfig.folder);
+  if (settledConfig.deploy?.folder) {
+    deployDir = path.join(deployDir, settledConfig.deploy.folder);
   }
+  // Also set deploy_dir on config for consistency
+  settledConfig.deploy_dir = deployDir;
   return { deployDir };
 }
 
