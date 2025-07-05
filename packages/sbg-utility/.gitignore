@@ -3,3 +3,4 @@ node_modules/
 yarn.lock
 tmp/
 .yarn*
+src/config/_config.json
