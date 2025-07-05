@@ -118,12 +118,12 @@
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "85139e9d1fe9095e5b228f37d446f1f8a45986fc",
-      "sha256": "DGCHQZWLWkjauxS3h35S0OMNxvUOuiI63wrlJp21oXA=",
-      "md5": "72efd894c09d3ceaf8161e1c87e96dd5",
-      "sha512": "2izr9y/KlcnLMMi9+3uLalNoH8/Iqs7HNneSJn2+tmrUOha5D4fVgSBj4HMvPK7r/S+qJ7w0jLO4l8n45XGgvA=="
+      "sha1": "d6d826872be23e9bbd7d1f25a4e282d90f59da9a",
+      "sha256": "vbKMPVugGfSoZU0DwCBTEr9j/QQzPmJczbOJ1tfIYOs=",
+      "md5": "2b9edffcc8e5dca0788a8f053dbcd299",
+      "sha512": "e+uOG2Dvg58srVfoIfVPF83PPv2O4/wYZLhgza7yqz+NLLGLzMOxw0JDCqtEzVRffC6EB5INGU8iPxegaKnbLg=="
     },
-    "size": "465.56 KB"
+    "size": "464.97 KB"
   },
   "/release/sbg-utility-1.1.2.tgz": {
     "integrity": {
