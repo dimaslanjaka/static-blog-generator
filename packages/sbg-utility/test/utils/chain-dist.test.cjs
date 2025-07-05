@@ -1,5 +1,4 @@
-// const { describe, expect, test, beforeEach } = require('@jest/globals');
-const { chain } = require('../dist/index.cjs');
+const { chain } = require('../../dist/index.cjs');
 const gulp = require('gulp');
 const path = require('path');
 const fs = require('fs-extra');
@@ -7,8 +6,8 @@ const fs = require('fs-extra');
 // Sleep function for the mock
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const cwd = path.join(__dirname, 'fixtures');
-const dest = path.join(__dirname, 'tmp');
+const cwd = path.join(__dirname, '../fixtures');
+const dest = path.join(__dirname, '../../tmp/chain-dist-test');
 
 jest.setTimeout(60000);
 
