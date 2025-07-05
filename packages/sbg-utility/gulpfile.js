@@ -4,7 +4,7 @@ import * as glob from 'glob';
 import gulp from 'gulp';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
-import { buildAll, compileCJS, compileDeclarations, compileESM, getInputFiles } from './rollup-build.js';
+import { compileDeclarations } from './rollup-build.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -66,37 +66,21 @@ async function tsc() {
     shell: true,
     stdio: 'inherit'
   });
-  // await crossSpawn.spawnAsync(get_binary_path('yarn'), ['run', 'rollup'], {
-  //   cwd: __dirname,
-  //   shell: true,
-  //   stdio: 'inherit'
-  // });
 }
 
 gulp.task('tsc', tsc);
-gulp.task('rollup', gulp.series(buildAll));
+gulp.task(
+  'rollup',
+  gulp.series(async function () {
+    await crossSpawn.spawnAsync(get_binary_path('node'), ['rollup-preserve.js'], {
+      cwd: __dirname,
+      shell: true,
+      stdio: 'inherit'
+    });
+  })
+);
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
-gulp.task(
-  'rollup-esm',
-  gulp.series(async function () {
-    const inputFiles = getInputFiles();
-    for (const inputFile of inputFiles) {
-      const outputBase = path.join('dist', path.relative('src', inputFile)).replace(/\.[^.]+$/, '');
-      await compileESM(inputFile, outputBase + '.mjs');
-    }
-  })
-);
-gulp.task(
-  'rollup-cjs',
-  gulp.series(async function () {
-    const inputFiles = getInputFiles();
-    for (const inputFile of inputFiles) {
-      const outputBase = path.join('dist', path.relative('src', inputFile)).replace(/\.[^.]+$/, '');
-      await compileCJS(inputFile, outputBase + '.cjs');
-    }
-  })
-);
-gulp.task('build', gulp.series('tsc', 'copy', 'rollup'));
+gulp.task('build', gulp.series('tsc', 'copy', 'rollup', 'rollup-dts'));
 
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
