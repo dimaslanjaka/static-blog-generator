@@ -15,8 +15,8 @@ const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const cwd = path.join(__dirname, 'fixtures');
-const dest = path.join(__dirname, 'tmp');
+const cwd = path.join(__dirname, '../fixtures');
+const dest = path.join(__dirname, '../../tmp');
 
 jest.setTimeout(60000);
 
