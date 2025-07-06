@@ -1,6 +1,6 @@
-import { existsSync, mkdirSync } from 'fs';
+import fs from 'fs';
 import { defaults } from 'jest-config';
-import path, { join } from 'path';
+import path from 'path';
 import type { JestConfigWithTsJest } from 'ts-jest';
 
 /**
@@ -13,7 +13,7 @@ const config: JestConfigWithTsJest = {
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'mts'],
   verbose: true,
   cache: true,
-  cacheDirectory: join(__dirname, 'tmp/jest'),
+  cacheDirectory: path.join(__dirname, 'tmp/jest'),
   collectCoverageFrom: [
     'src/*.{js,ts}',
     '!**/node_modules/**',
@@ -69,6 +69,13 @@ const config: JestConfigWithTsJest = {
   coverageProvider: 'v8'
 };
 
-if (!existsSync(<string>config.cacheDirectory)) mkdirSync(<string>config.cacheDirectory, { recursive: true });
+// Ensure the 'tmp' directory exists before using it for Jest cache
+const tmpDir = path.join(__dirname, 'tmp');
+if (!fs.existsSync(tmpDir)) {
+  fs.mkdirSync(tmpDir, { recursive: true });
+}
+if (!fs.existsSync(<string>config.cacheDirectory)) {
+  fs.mkdirSync(<string>config.cacheDirectory, { recursive: true });
+}
 
 export default config;
