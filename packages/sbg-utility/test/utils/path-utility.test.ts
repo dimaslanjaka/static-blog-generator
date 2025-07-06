@@ -1,8 +1,12 @@
 import { describe, expect, it } from '@jest/globals';
 import path from 'path';
 import url from 'url';
-import { isWindows, trueCasePathSync } from '../src/utils/filemanager/case-path';
-import { normalizePath, normalizePathUnix } from '../src/utils/filemanager/normalizePath';
+import {
+  isWindows,
+  normalizePath,
+  normalizePathUnix,
+  trueCasePathSync
+} from '../../src/utils/filemanager/path-utility';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
