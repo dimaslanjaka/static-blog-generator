@@ -3,7 +3,7 @@ import url from 'node:url';
 import path from 'upath';
 import * as yaml from 'yaml';
 import { jsonStringifyWithCircularRefs } from '../utils/JSON';
-import { normalizePath } from '../utils/filemanager/normalizePath';
+import { normalizePath } from '../utils/filemanager/path-utility';
 // import mappedConfig from './_config.json' assert { type: 'json' };
 
 const __filename = url.fileURLToPath(import.meta.url);

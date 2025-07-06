@@ -2,14 +2,13 @@ export * from './array';
 export * from './chain';
 export * from './date';
 export * from './debug';
-export * from './filemanager/case-path';
 export * from './filemanager/copy';
 export * from './filemanager/del';
 export * from './filemanager/emptyDir';
 export * from './filemanager/getAppRootDir';
 export * from './filemanager/images';
 export * from './filemanager/index';
-export * from './filemanager/normalizePath';
+export * from './filemanager/path-utility';
 export * from './filemanager/readDir';
 export * from './filemanager/readfile';
 export * from './filemanager/stream';
@@ -33,3 +32,5 @@ export * from './semver';
 export * from './stream';
 export * from './string';
 export * from './uuid';
+
+// satisfy ESLint
