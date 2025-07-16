@@ -7,7 +7,7 @@ import * as glob from 'glob';
 import { rollup } from 'rollup';
 import ts from 'typescript';
 import path from 'upath';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { external, tsconfig } from './rollup.utils.js';
 
 fs.writeFileSync('tmp/rollup.log', ''); // Clear previous log
@@ -182,7 +182,11 @@ export async function compileDeclarations() {
   }
 }
 
-build().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isDirect = import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isDirect) {
+  // This block is executed when running this file directly via "node ..."
+  build().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
