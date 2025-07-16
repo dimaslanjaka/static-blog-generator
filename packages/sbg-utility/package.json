@@ -134,24 +134,6 @@
       "require": "./dist/utils/logger.cjs",
       "import": "./dist/utils/logger.mjs"
     },
-    "./dist/utils/JSON.mjs": {
-      "types": "./dist/utils/JSON.d.mts",
-      "import": "./dist/utils/JSON.mjs"
-    },
-    "./dist/utils/JSON": {
-      "types": "./dist/utils/JSON.d.ts",
-      "require": "./dist/utils/JSON.cjs",
-      "import": "./dist/utils/JSON.mjs"
-    },
-    "./dist/utils/JSON-serializer.mjs": {
-      "types": "./dist/utils/JSON-serializer.d.mts",
-      "import": "./dist/utils/JSON-serializer.mjs"
-    },
-    "./dist/utils/JSON-serializer": {
-      "types": "./dist/utils/JSON-serializer.d.ts",
-      "require": "./dist/utils/JSON-serializer.cjs",
-      "import": "./dist/utils/JSON-serializer.mjs"
-    },
     "./dist/utils/jest.mjs": {
       "types": "./dist/utils/jest.d.mts",
       "import": "./dist/utils/jest.mjs"
@@ -232,6 +214,24 @@
       "types": "./dist/utils/array.d.ts",
       "require": "./dist/utils/array.cjs",
       "import": "./dist/utils/array.mjs"
+    },
+    "./dist/utils/JSON.mjs": {
+      "types": "./dist/utils/JSON.d.mts",
+      "import": "./dist/utils/JSON.mjs"
+    },
+    "./dist/utils/JSON": {
+      "types": "./dist/utils/JSON.d.ts",
+      "require": "./dist/utils/JSON.cjs",
+      "import": "./dist/utils/JSON.mjs"
+    },
+    "./dist/utils/JSON-serializer.mjs": {
+      "types": "./dist/utils/JSON-serializer.d.mts",
+      "import": "./dist/utils/JSON-serializer.mjs"
+    },
+    "./dist/utils/JSON-serializer": {
+      "types": "./dist/utils/JSON-serializer.d.ts",
+      "require": "./dist/utils/JSON-serializer.cjs",
+      "import": "./dist/utils/JSON-serializer.mjs"
     },
     "./dist/utils/filemanager/writefile.mjs": {
       "types": "./dist/utils/filemanager/writefile.d.mts",
@@ -393,14 +393,6 @@
       "types": "./dist/utils/logger.d.cts",
       "require": "./dist/utils/logger.cjs"
     },
-    "./dist/utils/JSON.cjs": {
-      "types": "./dist/utils/JSON.d.cts",
-      "require": "./dist/utils/JSON.cjs"
-    },
-    "./dist/utils/JSON-serializer.cjs": {
-      "types": "./dist/utils/JSON-serializer.d.cts",
-      "require": "./dist/utils/JSON-serializer.cjs"
-    },
     "./dist/utils/jest.cjs": {
       "types": "./dist/utils/jest.d.cts",
       "require": "./dist/utils/jest.cjs"
@@ -436,6 +428,14 @@
     "./dist/utils/array.cjs": {
       "types": "./dist/utils/array.d.cts",
       "require": "./dist/utils/array.cjs"
+    },
+    "./dist/utils/JSON.cjs": {
+      "types": "./dist/utils/JSON.d.cts",
+      "require": "./dist/utils/JSON.cjs"
+    },
+    "./dist/utils/JSON-serializer.cjs": {
+      "types": "./dist/utils/JSON-serializer.d.cts",
+      "require": "./dist/utils/JSON-serializer.cjs"
     },
     "./dist/utils/filemanager/writefile.cjs": {
       "types": "./dist/utils/filemanager/writefile.d.cts",
