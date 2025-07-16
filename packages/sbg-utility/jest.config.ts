@@ -28,7 +28,8 @@ const config: JestConfigWithTsJest = {
   testMatch: [
     '**/__tests__/**/*.+(ts|tsx|[cm]js)',
     '**/?(*.)+(spec|test).+(ts|tsx|[cm]js)',
-    '**/test/*.test.ts',
+    '**/test/*.test.{js,ts,cjs,mjs}',
+    '**/test/*.spec.{js,ts,cjs,mjs}',
     '!**/.deploy_git/**'
   ],
   extensionsToTreatAsEsm: ['.ts'],
