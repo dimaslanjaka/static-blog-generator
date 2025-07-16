@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'url';
 import YAML from 'yaml';
 import { compileDeclarations } from './rollup-build.js';
+import { generateExports } from './src/utils/generate-exports.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,7 +82,38 @@ gulp.task(
   })
 );
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
-gulp.task('build', gulp.series('tsc', 'copy', 'rollup', 'rollup-dts'));
+
+function generateExportsTask() {
+  generateExports({
+    pkgPath: path.join(process.cwd(), 'package.json'),
+    useDefaultFolders: true,
+    useDefaultExport: true,
+    exportsValues: {
+      '.': {
+        require: {
+          default: './dist/index.cjs',
+          types: './dist/index.d.cts'
+        },
+        import: {
+          default: './dist/index.mjs',
+          types: './dist/index.d.mts'
+        }
+      },
+      './package.json': './package.json'
+    },
+    folders: [
+      { dir: `${process.cwd()}/dist/utils`, prefix: './dist/utils/' },
+      { dir: `${process.cwd()}/dist/sitemap-crawler`, prefix: './dist/sitemap-crawler/' },
+      { dir: `${process.cwd()}/dist/gulp-utils`, prefix: './dist/gulp-utils/' }
+    ].map((folder) => ({
+      dir: path.resolve(folder.dir),
+      prefix: folder.prefix
+    }))
+  });
+  return Promise.resolve();
+}
+gulp.task('generate-exports', gulp.series(generateExportsTask));
+gulp.task('build', gulp.series('tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports'));
 
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
