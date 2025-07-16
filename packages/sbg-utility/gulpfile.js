@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
 import YAML from 'yaml';
-import { compileDeclarations } from './rollup-build.js';
+import { compileDeclarations } from './rollup-preserve.js';
 import { generateExports } from './src/utils/generate-exports.js';
 
 const __filename = fileURLToPath(import.meta.url);
