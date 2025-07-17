@@ -10,6 +10,7 @@ import path from 'upath';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { chunkFileNamesWithExt, entryFileNamesWithExt, external, tsconfig } from './rollup.utils.js';
 
+fs.mkdirSync('tmp/dist', { recursive: true });
 fs.writeFileSync('tmp/rollup.log', ''); // Clear previous log
 
 // Define __dirname for ESM
