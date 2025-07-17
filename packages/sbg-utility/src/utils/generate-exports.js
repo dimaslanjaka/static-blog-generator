@@ -96,7 +96,14 @@ export function generateExports({
     });
   }
 
-  pkg.exports = useDefaultExport ? { ...defaultExport, ...exportsObj, ...exportValues } : { ...exportsObj };
+  const unsortedExports = useDefaultExport ? { ...defaultExport, ...exportsObj, ...exportValues } : { ...exportsObj };
+  // Sort keys in exports
+  pkg.exports = Object.keys(unsortedExports)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = unsortedExports[key];
+      return acc;
+    }, {});
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
   console.log(`package.json "exports" field at "${pkgPath}" updated successfully.`);
 }
