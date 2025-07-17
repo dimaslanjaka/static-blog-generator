@@ -4,10 +4,9 @@
 /* https://github.com/WebReflection/flatted/blob/main/cjs/index.js */
 
 import * as crypto from 'crypto';
-import fs from 'fs-extra';
-import url from 'node:url';
-import path from 'path';
-import Logger from './logger';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as url from 'url';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const { parse: $parse, stringify: $stringify } = JSON;
@@ -100,7 +99,7 @@ const parse = (text: string, reviver?: (...args: any[]) => any): any => {
   } catch (e) {
     const { stack, file } = getStack();
     fs.writeFileSync(file, `${stack.join('\n')}\n\n${text}`);
-    Logger.log('fail parse ' + file + ' ' + (e as Error).message);
+    console.log('fail parse ' + file + ' ' + (e as Error).message);
     process.exit(1);
   }
 };
