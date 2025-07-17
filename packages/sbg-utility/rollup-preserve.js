@@ -8,46 +8,13 @@ import { rollup } from 'rollup';
 import ts from 'typescript';
 import path from 'upath';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { external, tsconfig } from './rollup.utils.js';
+import { chunkFileNamesWithExt, entryFileNamesWithExt, external, tsconfig } from './rollup.utils.js';
 
 fs.writeFileSync('tmp/rollup.log', ''); // Clear previous log
 
 // Define __dirname for ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Generalized entryFileNames function for both ESM and CJS
-function entryFileNamesWithExt(ext) {
-  return function ({ facadeModuleId }) {
-    if (!facadeModuleId.includes('node_modules')) {
-      return `[name].${ext}`;
-    }
-    let rel = path.relative(path.resolve(__dirname, 'tmp/dist'), facadeModuleId);
-    rel = rel.replace('node_modules', 'dependencies');
-    rel = rel.replace(/^(?:\.{2}\/|\.\/)+/, '');
-    // Remove extension using path.extname
-    rel = rel.slice(0, -path.extname(rel).length) + `.${ext}`;
-
-    fs.appendFileSync('tmp/rollup.log', `Processed: ${facadeModuleId} -> ${rel}\n`);
-    return rel;
-  };
-}
-
-// Generalized chunkFileNames function for both ESM and CJS
-function chunkFileNamesWithExt(ext) {
-  return function ({ name }) {
-    // For node_modules chunks, place in dependencies folder
-    if (name && name.includes('node_modules')) {
-      let rel = name.replace('node_modules', 'dependencies');
-      rel = rel.replace(/^(?:\.\/|\.\.\/)+/, '');
-      // Remove extension using path.extname
-      rel = rel.slice(0, -path.extname(rel).length);
-      return `${rel}-[hash].${ext}`;
-    }
-    // For local chunks, keep the default pattern
-    return `[name]-[hash].${ext}`;
-  };
-}
 
 const input = 'tmp/dist/index.js';
 const plugins = [
