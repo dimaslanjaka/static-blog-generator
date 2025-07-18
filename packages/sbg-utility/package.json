@@ -91,6 +91,19 @@
       "require": "./dist/utils/JSON-serializer.cjs",
       "import": "./dist/utils/JSON-serializer.mjs"
     },
+    "./dist/utils/JSON-serializer-browser": {
+      "types": "./dist/utils/JSON-serializer-browser.d.ts",
+      "require": "./dist/utils/JSON-serializer-browser.cjs",
+      "import": "./dist/utils/JSON-serializer-browser.mjs"
+    },
+    "./dist/utils/JSON-serializer-browser.cjs": {
+      "types": "./dist/utils/JSON-serializer-browser.d.cts",
+      "require": "./dist/utils/JSON-serializer-browser.cjs"
+    },
+    "./dist/utils/JSON-serializer-browser.mjs": {
+      "types": "./dist/utils/JSON-serializer-browser.d.mts",
+      "import": "./dist/utils/JSON-serializer-browser.mjs"
+    },
     "./dist/utils/JSON-serializer.cjs": {
       "types": "./dist/utils/JSON-serializer.d.cts",
       "require": "./dist/utils/JSON-serializer.cjs"
@@ -314,6 +327,19 @@
     "./dist/utils/filemanager/writefile.mjs": {
       "types": "./dist/utils/filemanager/writefile.d.mts",
       "import": "./dist/utils/filemanager/writefile.mjs"
+    },
+    "./dist/utils/generate-exports": {
+      "types": "./dist/utils/generate-exports.d.ts",
+      "require": "./dist/utils/generate-exports.cjs",
+      "import": "./dist/utils/generate-exports.mjs"
+    },
+    "./dist/utils/generate-exports.cjs": {
+      "types": "./dist/utils/generate-exports.d.cts",
+      "require": "./dist/utils/generate-exports.cjs"
+    },
+    "./dist/utils/generate-exports.mjs": {
+      "types": "./dist/utils/generate-exports.d.mts",
+      "import": "./dist/utils/generate-exports.mjs"
     },
     "./dist/utils/hash": {
       "types": "./dist/utils/hash.d.ts",
@@ -693,9 +719,9 @@
     "hexo-generator-redirect": "https://github.com/dimaslanjaka/hexo-generator-redirect/raw/a2e390c496954e7883218b9b82a09972c7507c10/release/hexo-generator-redirect.tgz",
     "hexo-is": "https://github.com/dimaslanjaka/hexo-is/raw/9fd9da881b70f79405b799e1dea61e3e4657c077/release/hexo-is.tgz",
     "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo-log.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/65f1dab05012fe5ab106197f2052d8ff8451884c/release/hexo-post-parser.tgz",
+    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/1fd5dc629349e028c7ce574b176db5970e0327eb/release/hexo-post-parser.tgz",
     "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/873a4ec83b59502368eaa8ddf564a7b3a2d7397b/release/hexo-renderers.tgz",
-    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/raw/b174efe13db35d38a917e179c5f7f800898e8dc4/release/hexo-seo.tgz",
+    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/raw/a2d57ceaaf3761854674fbaff7b883bb178b6917/release/hexo-seo.tgz",
     "hexo-server": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo-server.tgz",
     "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/2ed1250d701369b8235a02b9af834bbfc62644a0/release/hexo-shortcodes.tgz",
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo-util.tgz",

@@ -4,6 +4,7 @@ export * from './date';
 export * from './debug';
 export * from './filemanager/copy';
 export * from './filemanager/del';
+export * from './filemanager/driveLetterUtils';
 export * from './filemanager/emptyDir';
 export * from './filemanager/getAppRootDir';
 export * from './filemanager/images';
@@ -13,11 +14,13 @@ export * from './filemanager/readDir';
 export * from './filemanager/readfile';
 export * from './filemanager/stream';
 export * from './filemanager/writefile';
+export * from './generate-exports';
 export * from './hash';
 export * from './isdev';
 export * from './jest';
 export * from './JSON';
 export * from './JSON-serializer';
+export * from './JSON-serializer-browser';
 export * from './lockmanager';
 export * from './logger';
 export * from './nodeWorkspaceHelper';
@@ -32,5 +35,3 @@ export * from './semver';
 export * from './stream';
 export * from './string';
 export * from './uuid';
-
-// satisfy ESLint
