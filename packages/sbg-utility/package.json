@@ -712,7 +712,7 @@
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/4f05d01c559d3429ba20b93502dedd11b757702c/release/git-command-helper.tgz",
     "hexo": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo.tgz",
-    "hexo-adsense": "https://github.com/dimaslanjaka/hexo-adsense/raw/f1bc48e54bd804e0afae0088e622905b052bc91a/release/hexo-adsense.tgz",
+    "hexo-adsense": "https://github.com/dimaslanjaka/hexo-adsense/raw/ce50a4817ae40e164379596af14c86c7a0082652/release/hexo-adsense.tgz",
     "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo-asset-link.tgz",
     "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo-cli.tgz",
     "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo-front-matter.tgz",
