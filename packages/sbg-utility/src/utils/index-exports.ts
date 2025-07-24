@@ -2,6 +2,7 @@ export * from './array';
 export * from './chain';
 export * from './date';
 export * from './debug';
+export * from './environment';
 export * from './filemanager/copy';
 export * from './filemanager/del';
 export * from './filemanager/driveLetterUtils';
@@ -16,7 +17,6 @@ export * from './filemanager/stream';
 export * from './filemanager/writefile';
 export * from './generate-exports';
 export * from './hash';
-export * from './isdev';
 export * from './jest';
 export * from './JSON';
 export * from './JSON-serializer';
@@ -35,3 +35,5 @@ export * from './semver';
 export * from './stream';
 export * from './string';
 export * from './uuid';
+
+//
