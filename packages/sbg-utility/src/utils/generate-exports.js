@@ -7,50 +7,20 @@ import { fileURLToPath } from 'url';
  * Generates the "exports" field for a package.json file based on built files in dist folders.
  *
  * @param {Object} [options] Options for export generation.
- * @param {string} [options.pkgPath=path.join(process.cwd(), 'package.json')] Path to the package.json file to update.
- * @param {Object} [options.exportValues={}] Additional export entries to merge into the exports field.
- * @param {boolean} [options.useDefaultExport=true] Whether to include the default export entries.
- * @param {Array<{dir: string, prefix: string}>} [options.folders=[]] Additional folders to scan for exports. Each folder should have a `dir` (absolute path) and a `prefix` (export path prefix).
- * @param {boolean} [options.useDefaultFolders=true] Whether to include the default dist folders (utils, sitemap-crawler, gulp-utils).
+ * @param {string} [options.pkgPath] Path to the package.json file to update. Defaults to process cwd package.json.
+ * @param {Object} [options.exportValues] Additional export entries to merge into the exports field.
+ * @param {Array<{dir: string, prefix: string}>} [options.folders] Folders to scan for exports. Each folder should have a `dir` (absolute path) and a `prefix` (export path prefix). No default folders are used.
  * @returns {void}
  */
 export function generateExports({
   pkgPath = path.join(process.cwd(), 'package.json'),
   exportValues = {},
-  useDefaultExport = true,
-  folders = [],
-  useDefaultFolders = true
+  folders = []
 } = {}) {
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-
-  const defaultExport = {
-    '.': {
-      require: {
-        default: './dist/index.cjs',
-        types: './dist/index.d.cts'
-      },
-      import: {
-        default: './dist/index.mjs',
-        types: './dist/index.d.mts'
-      }
-    },
-    './package.json': './package.json'
-  };
-  const defaultFolders = [
-    { dir: `${process.cwd()}/dist/utils`, prefix: './dist/utils/' },
-    { dir: `${process.cwd()}/dist/sitemap-crawler`, prefix: './dist/sitemap-crawler/' },
-    { dir: `${process.cwd()}/dist/gulp-utils`, prefix: './dist/gulp-utils/' }
-  ].map((folder) => ({
-    dir: path.resolve(folder.dir),
-    prefix: folder.prefix
-  }));
-
   const exportsObj = {};
 
-  // Collect files from multiple folders
-  const allFolders = useDefaultFolders ? [...defaultFolders, ...folders] : folders;
-
-  for (const folder of allFolders) {
+  for (const folder of folders) {
     if (!fs.existsSync(folder.dir)) continue;
     // Use glob to find all .mjs, .cjs, .d.ts, .d.mts, .d.cts files
     const patterns = ['**/*.mjs', '**/*.cjs', '**/*.d.ts', '**/*.d.mts', '**/*.d.cts'];
@@ -96,8 +66,7 @@ export function generateExports({
     });
   }
 
-  const unsortedExports = useDefaultExport ? { ...defaultExport, ...exportsObj, ...exportValues } : { ...exportsObj };
-  // Sort keys in exports
+  const unsortedExports = { ...exportsObj, ...exportValues };
   pkg.exports = Object.keys(unsortedExports)
     .sort()
     .reduce((acc, key) => {

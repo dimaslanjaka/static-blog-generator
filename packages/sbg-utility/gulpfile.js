@@ -86,9 +86,7 @@ gulp.task('rollup-dts', gulp.series(compileDeclarations));
 function generateExportsTask() {
   generateExports({
     pkgPath: path.join(process.cwd(), 'package.json'),
-    useDefaultFolders: true,
-    useDefaultExport: true,
-    exportsValues: {
+    exportValues: {
       '.': {
         require: {
           default: './dist/index.cjs',
