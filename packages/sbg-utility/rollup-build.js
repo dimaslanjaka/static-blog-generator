@@ -10,7 +10,7 @@ import stripAnsi from 'strip-ansi';
 import ts from 'typescript';
 import path from 'upath';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { external, tsconfig } from './rollup.utils.js';
+import { externalPackages, tsconfig } from './rollup.utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,7 +82,7 @@ export async function compileESM(inputFile, outputFile) {
     const bundle = await rollup({
       input: inputFile,
       plugins: getPlugins(),
-      external
+      external: externalPackages
     });
 
     await fs.mkdir(path.dirname(outputFile), { recursive: true });
@@ -122,7 +122,7 @@ export async function compileCJS(inputFile, outputFile) {
     const bundle = await rollup({
       input: inputFile,
       plugins: getPlugins(),
-      external
+      external: externalPackages
     });
 
     await fs.mkdir(path.dirname(outputFile), { recursive: true });

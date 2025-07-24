@@ -8,7 +8,7 @@ import { rollup } from 'rollup';
 import ts from 'typescript';
 import path from 'upath';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { chunkFileNamesWithExt, entryFileNamesWithExt, external, tsconfig } from './rollup.utils.js';
+import { chunkFileNamesWithExt, entryFileNamesWithExt, externalPackages, tsconfig } from './rollup.utils.js';
 
 fs.mkdirSync('tmp/dist', { recursive: true });
 fs.writeFileSync('tmp/rollup.log', ''); // Clear previous log
@@ -39,7 +39,7 @@ const configs = [
       preserveModulesRoot: 'tmp/dist'
     },
     plugins,
-    external
+    external: externalPackages
   },
   // CJS build
   {
@@ -53,7 +53,7 @@ const configs = [
       preserveModulesRoot: 'tmp/dist'
     },
     plugins,
-    external
+    external: externalPackages
   }
 ];
 
