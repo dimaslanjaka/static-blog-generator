@@ -104,7 +104,46 @@ export function generateExports({
       acc[key] = unsortedExports[key];
       return acc;
     }, {});
-  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+  // Reorder pkg fields to match typical package.json order
+  const pkgOrder = [
+    'name',
+    'version',
+    'description',
+    'keywords',
+    'homepage',
+    'bugs',
+    'license',
+    'author',
+    'contributors',
+    'funding',
+    'main',
+    'module',
+    'types',
+    'exports',
+    'files',
+    'bin',
+    'directories',
+    'repository',
+    'scripts',
+    'config',
+    'dependencies',
+    'devDependencies',
+    'peerDependencies',
+    'optionalDependencies',
+    'engines',
+    'os',
+    'cpu',
+    'private',
+    'publishConfig'
+  ];
+  const orderedPkg = {};
+  for (const key of pkgOrder) {
+    if (key in pkg) orderedPkg[key] = pkg[key];
+  }
+  for (const key of Object.keys(pkg)) {
+    if (!(key in orderedPkg)) orderedPkg[key] = pkg[key];
+  }
+  fs.writeFileSync(pkgPath, JSON.stringify(orderedPkg, null, 2) + '\n');
   console.log(`package.json "exports" field at "${pkgPath}" updated successfully.`);
 }
 
