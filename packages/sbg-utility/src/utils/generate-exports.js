@@ -104,7 +104,7 @@ export function generateExports({
       acc[key] = unsortedExports[key];
       return acc;
     }, {});
-  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
   console.log(`package.json "exports" field at "${pkgPath}" updated successfully.`);
 }
 
