@@ -12,9 +12,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function get_binary_path(commandName) {
-  if (commandName === 'node') {
-    return process.execPath; // Use the current Node.js executable path
-  }
   const cmdPath = [
     __dirname,
     process.cwd(),
@@ -77,7 +74,7 @@ gulp.task('tsc', tsc);
 gulp.task(
   'rollup',
   gulp.series(async function () {
-    await crossSpawn.spawnAsync(get_binary_path('node'), ['rollup-preserve.js'], {
+    await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-preserve.js')], {
       cwd: __dirname,
       shell: true,
       stdio: 'inherit'
