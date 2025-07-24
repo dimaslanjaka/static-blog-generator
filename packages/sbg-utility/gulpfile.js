@@ -12,6 +12,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function get_binary_path(commandName) {
+  if (commandName === 'node') {
+    return process.execPath; // Use the current Node.js executable path
+  }
   const cmdPath = [
     __dirname,
     process.cwd(),
