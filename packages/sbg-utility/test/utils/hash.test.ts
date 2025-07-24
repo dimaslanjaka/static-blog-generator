@@ -72,6 +72,54 @@ function runHashTests(hash: typeof hashSrc | typeof hashDist, label: string) {
       expect(Object.keys(result.filesWithHash)).toContain(testFile);
     });
   });
+
+  describe('getChecksum', () => {
+    const testDir = path.join(tmpDir, 'tmp_checksum_test');
+    const fileA = path.join(testDir, 'a.txt');
+    const fileB = path.join(testDir, 'b.txt');
+
+    beforeAll(() => {
+      fs.ensureDirSync(testDir);
+      fs.writeFileSync(fileA, 'hello world');
+      fs.writeFileSync(fileB, 'goodbye world');
+    });
+
+    afterAll(() => {
+      fs.removeSync(testDir);
+    });
+
+    it('should return a checksum for a single file', () => {
+      const checksum = hash.getChecksum(fileA);
+      expect(typeof checksum).toBe('string');
+      expect(checksum.length).toBe(64); // SHA-256 hex length
+    });
+
+    it('should return a checksum for multiple files', () => {
+      const checksum = hash.getChecksum(fileA, fileB);
+      expect(typeof checksum).toBe('string');
+      expect(checksum.length).toBe(64);
+      expect(checksum).not.toBe(hash.getChecksum(fileA));
+    });
+
+    it('should return a checksum for a directory', () => {
+      const checksum = hash.getChecksum(testDir);
+      expect(typeof checksum).toBe('string');
+      expect(checksum.length).toBe(64);
+    });
+
+    it('should return the same checksum for the same files in any order', () => {
+      const checksum1 = hash.getChecksum(fileA, fileB);
+      const checksum2 = hash.getChecksum(fileB, fileA);
+      expect(checksum1).toBe(checksum2);
+    });
+
+    it('should return different checksums if file contents change', () => {
+      const original = hash.getChecksum(fileA);
+      fs.writeFileSync(fileA, 'changed content');
+      const changed = hash.getChecksum(fileA);
+      expect(original).not.toBe(changed);
+    });
+  });
 }
 
 runHashTests(hashSrc, 'hash utils (src)');

@@ -238,3 +238,38 @@ export async function url_to_hash(
     });
   });
 }
+
+/**
+ * Calculate a checksum for the given target paths.
+ * This checksum is used to determine if the source files have changed
+ * and whether a build is necessary.
+ *
+ * @param targetPaths - An array of file or directory paths to include in the checksum.
+ * @returns A SHA-256 hash of the contents of the specified files and directories.
+ */
+export function getChecksum(...targetPaths: string[]): string {
+  const hash = cryptolib.createHash('sha256');
+  const addFile = (file: string) => {
+    hash.update(file);
+    hash.update(fs.readFileSync(file));
+  };
+  let files: string[] = [];
+  for (const pattern of targetPaths) {
+    if (fs.existsSync(pattern)) {
+      const stat = fs.statSync(pattern);
+      if (stat.isFile()) {
+        files.push(path.resolve(pattern));
+      } else if (stat.isDirectory()) {
+        // Recursively add all files in the directory
+        const dirFiles = glob.sync('**/*', { cwd: pattern, nodir: true, absolute: true, dot: true });
+        files.push(...dirFiles);
+      }
+    } else {
+      const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
+      files.push(...matches);
+    }
+  }
+  files = Array.from(new Set(files)).sort();
+  files.forEach(addFile);
+  return hash.digest('hex');
+}
