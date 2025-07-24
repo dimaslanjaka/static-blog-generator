@@ -402,19 +402,6 @@
       "types": "./dist/utils/index.d.mts",
       "import": "./dist/utils/index.mjs"
     },
-    "./dist/utils/isdev": {
-      "types": "./dist/utils/isdev.d.ts",
-      "require": "./dist/utils/isdev.cjs",
-      "import": "./dist/utils/isdev.mjs"
-    },
-    "./dist/utils/isdev.cjs": {
-      "types": "./dist/utils/isdev.d.cts",
-      "require": "./dist/utils/isdev.cjs"
-    },
-    "./dist/utils/isdev.mjs": {
-      "types": "./dist/utils/isdev.d.mts",
-      "import": "./dist/utils/isdev.mjs"
-    },
     "./dist/utils/jest": {
       "types": "./dist/utils/jest.d.ts",
       "require": "./dist/utils/jest.cjs",
