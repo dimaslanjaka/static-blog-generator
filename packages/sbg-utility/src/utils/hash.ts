@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import cryptolib from 'crypto';
+import CryptoJS from 'crypto-js';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import path from 'upath';
@@ -12,231 +12,224 @@ const __dirname = path.dirname(__filename);
  * MD5 file synchronously
  * @param path
  */
-export function md5FileSync(path?: string) {
+export function md5FileSync(path?: string): string | undefined {
   if (!path || path.length === 0) return undefined;
-  let fileBuffer = Buffer.from(path);
-  if (fs.existsSync(path)) {
-    if (fs.statSync(path).isFile()) fileBuffer = fs.readFileSync(path);
+  if (fs.existsSync(path) && fs.statSync(path).isFile()) {
+    const fileBuffer = fs.readFileSync(path);
+    return CryptoJS.MD5(CryptoJS.lib.WordArray.create(fileBuffer)).toString(CryptoJS.enc.Hex);
   }
-  const hashSum = cryptolib.createHash('md5'); // sha256
-  hashSum.update(fileBuffer);
-  return hashSum.digest('hex');
+  return undefined;
 }
 
 /**
  * PHP MD5 Equivalent
  * @param data
  */
-export function md5(data?: string) {
+export function md5(data?: string): string | undefined {
   if (!data || data.length === 0) return undefined;
-  return cryptolib.createHash('md5').update(data).digest('hex');
+  return CryptoJS.MD5(data).toString(CryptoJS.enc.Hex);
 }
 
 /**
  * MD5 file asynchronously
  * @param path
  */
-export function md5File(path?: string) {
+export async function md5File(path?: string): Promise<string | undefined> {
   if (!path || path.length === 0) return undefined;
-  return new Promise((resolve, reject) => {
-    const output = cryptolib.createHash('md5');
-    const input = fs.createReadStream(path);
-
-    input.on('error', (err) => {
-      reject(err);
-    });
-
-    output.once('readable', () => {
-      resolve(output.read().toString('hex'));
-    });
-
-    input.pipe(output);
-  });
+  if (fs.existsSync(path) && fs.statSync(path).isFile()) {
+    const fileBuffer = await fs.readFile(path);
+    return CryptoJS.MD5(CryptoJS.lib.WordArray.create(fileBuffer)).toString(CryptoJS.enc.Hex);
+  }
+  return undefined;
 }
 
 /**
  * convert file to hash
- * @param alogarithm
+ * @param algorithm
  * @param path
  * @param encoding
  * @returns
  */
-export function file_to_hash(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5',
+export async function file_to_hash(
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5',
   path: fs.PathLike,
-  encoding: import('crypto').BinaryToTextEncoding = 'hex'
+  encoding: 'hex' | 'base64' = 'hex'
 ): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const hash = cryptolib.createHash(alogarithm);
-    const rs = fs.createReadStream(path);
-    rs.on('error', reject);
-    rs.on('data', (chunk) => hash.update(chunk));
-    rs.on('end', () => resolve(hash.digest(encoding)));
-  });
+  if (!fs.existsSync(path)) throw new Error('File not found');
+  const fileBuffer = await fs.readFile(path);
+  let hash: CryptoJS.lib.WordArray;
+  switch (algorithm) {
+    case 'md5':
+      hash = CryptoJS.MD5(CryptoJS.lib.WordArray.create(fileBuffer));
+      break;
+    case 'sha1':
+      hash = CryptoJS.SHA1(CryptoJS.lib.WordArray.create(fileBuffer));
+      break;
+    case 'sha256':
+      hash = CryptoJS.SHA256(CryptoJS.lib.WordArray.create(fileBuffer));
+      break;
+    case 'sha384':
+      hash = CryptoJS.SHA384(CryptoJS.lib.WordArray.create(fileBuffer));
+      break;
+    case 'sha512':
+      hash = CryptoJS.SHA512(CryptoJS.lib.WordArray.create(fileBuffer));
+      break;
+    default:
+      throw new Error('Unsupported algorithm');
+  }
+  return hash.toString(encoding === 'base64' ? CryptoJS.enc.Base64 : CryptoJS.enc.Hex);
 }
 
 /**
  * convert data to hash (async)
- * @param alogarithm
+ * @param algorithm
  * @param data
  * @param encoding
  * @returns
  */
-export function data_to_hash(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
-  data: cryptolib.BinaryLike,
-  encoding: import('crypto').BinaryToTextEncoding = 'hex'
+export async function data_to_hash(
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  data: string | Buffer,
+  encoding: 'hex' | 'base64' = 'hex'
 ): Promise<string> {
-  return new Promise((resolve, reject) => {
-    try {
-      resolve(data_to_hash_sync(alogarithm, data, encoding));
-    } catch (e) {
-      reject(e);
-    }
-  });
+  return data_to_hash_sync(algorithm, data, encoding);
 }
 
 /**
  * convert data to hash (sync)
- * @param alogarithm
+ * @param algorithm
  * @param data
  * @param encoding
  * @returns
  */
 export function data_to_hash_sync(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
-  data: cryptolib.BinaryLike,
-  encoding: import('crypto').BinaryToTextEncoding = 'hex'
-) {
-  return cryptolib.createHash(alogarithm).update(data).digest(encoding);
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  data: string | Buffer,
+  encoding: 'hex' | 'base64' = 'hex'
+): string {
+  let hash: CryptoJS.lib.WordArray;
+  const wordArray = typeof data === 'string' ? CryptoJS.enc.Utf8.parse(data) : CryptoJS.lib.WordArray.create(data);
+  switch (algorithm) {
+    case 'md5':
+      hash = CryptoJS.MD5(wordArray);
+      break;
+    case 'sha1':
+      hash = CryptoJS.SHA1(wordArray);
+      break;
+    case 'sha256':
+      hash = CryptoJS.SHA256(wordArray);
+      break;
+    case 'sha384':
+      hash = CryptoJS.SHA384(wordArray);
+      break;
+    case 'sha512':
+      hash = CryptoJS.SHA512(wordArray);
+      break;
+    default:
+      throw new Error('Unsupported algorithm');
+  }
+  return hash.toString(encoding === 'base64' ? CryptoJS.enc.Base64 : CryptoJS.enc.Hex);
 }
 
 /**
  * get hashes from folder
- * @param alogarithm
+ * @param algorithm
  * @param folder
  * @param options
  * @returns
  */
 export async function folder_to_hash(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5',
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5',
   folder: string,
   options: {
-    /**
-     * override pattern to search files
-     */
     pattern: string;
-    /**
-     * ignore files by patterns from search
-     */
     ignored: string[];
-    /**
-     * encoding type
-     */
-    encoding: cryptolib.BinaryToTextEncoding;
+    encoding: 'hex' | 'base64';
   }
 ): Promise<{ filesWithHash: Record<string, string>; hash: string }> {
-  return new Promise((resolvePromise, rejectPromise) => {
-    options = Object.assign(
-      {
-        encoding: 'hex' as cryptolib.BinaryToTextEncoding,
-        ignored: [] as string[],
-        pattern: ''
-      },
-      options || {}
-    );
-    if (folder.startsWith('file:')) folder = folder.replace('file:', '');
-    // fix non exist
-    if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
-    // run only if exist
-    if (fs.existsSync(folder)) {
-      glob
-        .glob(options.pattern || '**/*', {
-          cwd: folder,
-          ignore: (
-            options.ignored || [
-              '**/tmp/**',
-              '**/build/**',
-              '**/.cache/**',
-              '**/dist/**',
-              '**/.vscode/**',
-              '**/coverage/**',
-              '**/release/**',
-              '**/bin/**',
-              '**/*.json'
-            ]
-          ).concat('**/.git*/**', '**/node_modules/**'),
-          dot: true,
-          noext: true
-        })
-        .then((matches) => {
-          const filesWithHash = {} as Record<string, any>;
-          for (let i = 0; i < matches.length; i++) {
-            const item = matches[i];
-            const fullPath = path.join(folder, item);
-            const statInfo = fs.statSync(fullPath);
-            if (statInfo.isFile()) {
-              const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
-              const hash = data_to_hash_sync(alogarithm, fileInfo, options.encoding);
-              filesWithHash[fullPath] = hash;
-            }
-          }
-          resolvePromise({
-            filesWithHash,
-            hash: data_to_hash_sync(alogarithm, Object.values(filesWithHash).join(''), options.encoding)
-          });
-        })
-        .catch(rejectPromise);
-    } else {
-      console.log(folder + ' not found');
+  options = Object.assign(
+    {
+      encoding: 'hex' as 'hex' | 'base64',
+      ignored: [] as string[],
+      pattern: ''
+    },
+    options || {}
+  );
+  if (folder.startsWith('file:')) folder = folder.replace('file:', '');
+  if (!fs.existsSync(folder)) folder = path.join(__dirname, folder);
+  if (fs.existsSync(folder)) {
+    const matches = await glob.glob(options.pattern || '**/*', {
+      cwd: folder,
+      ignore: (
+        options.ignored || [
+          '**/tmp/**',
+          '**/build/**',
+          '**/.cache/**',
+          '**/dist/**',
+          '**/.vscode/**',
+          '**/coverage/**',
+          '**/release/**',
+          '**/bin/**',
+          '**/*.json'
+        ]
+      ).concat('**/.git*/**', '**/node_modules/**'),
+      dot: true,
+      noext: true
+    });
+    const filesWithHash: Record<string, string> = {};
+    for (const item of matches) {
+      const fullPath = path.join(folder, item);
+      const statInfo = fs.statSync(fullPath);
+      if (statInfo.isFile()) {
+        const fileInfo = `${fullPath}:${statInfo.size}:${statInfo.mtimeMs}`;
+        filesWithHash[fullPath] = data_to_hash_sync(algorithm, fileInfo, options.encoding);
+      }
     }
-  });
+    return {
+      filesWithHash,
+      hash: data_to_hash_sync(algorithm, Object.values(filesWithHash).join(''), options.encoding)
+    };
+  } else {
+    console.log(folder + ' not found');
+    return { filesWithHash: {}, hash: '' };
+  }
 }
 
 /**
  * convert data to hash
- * @param alogarithm
+ * @param algorithm
  * @param url
  * @param encoding
  * @returns
  */
 export async function url_to_hash(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
   url: string,
-  encoding: cryptolib.BinaryToTextEncoding = 'hex'
-) {
-  return new Promise((resolve, reject) => {
-    let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
-    // remove slashes when url ends with slash
-    if (!path.basename(url).endsWith('/')) {
-      outputLocationPath = outputLocationPath.replace(/\/$/, '');
-    }
-    // add extension when dot not exist
-    if (!path.basename(url).includes('.')) {
-      outputLocationPath += '.tgz';
-    }
-    if (!fs.existsSync(path.dirname(outputLocationPath))) {
-      fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
-    }
-    const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
-    Axios(url, { responseType: 'stream' }).then((response) => {
-      response.data.pipe(writer);
-      let error: Error | undefined;
-      writer.on('error', (err) => {
-        error = err;
-        writer.close();
-        reject(err);
-      });
-      writer.on('close', async () => {
-        if (!error) {
-          // console.log('package downloaded', outputLocationPath.replace(__dirname, ''));
-          file_to_hash(alogarithm, outputLocationPath, encoding).then((checksum) => {
-            resolve(checksum);
-          });
-        }
-      });
+  encoding: 'hex' | 'base64' = 'hex'
+): Promise<string> {
+  let outputLocationPath = path.join(__dirname, 'node_modules/.cache/postinstall', path.basename(url));
+  if (!path.basename(url).endsWith('/')) {
+    outputLocationPath = outputLocationPath.replace(/\/$/, '');
+  }
+  if (!path.basename(url).includes('.')) {
+    outputLocationPath += '.tgz';
+  }
+  if (!fs.existsSync(path.dirname(outputLocationPath))) {
+    fs.mkdirSync(path.dirname(outputLocationPath), { recursive: true });
+  }
+  const writer = fs.createWriteStream(outputLocationPath, { flags: 'w' });
+  const response = await Axios(url, { responseType: 'stream' });
+  await new Promise<void>((resolve, reject) => {
+    response.data.pipe(writer);
+    writer.on('error', (err) => {
+      writer.close();
+      reject(err);
+    });
+    writer.on('close', () => {
+      resolve();
     });
   });
+  return file_to_hash(algorithm, outputLocationPath, encoding);
 }
 
 /**
@@ -248,11 +241,6 @@ export async function url_to_hash(
  * @returns A SHA-256 hash of the contents of the specified files and directories.
  */
 export function getChecksum(...targetPaths: string[]): string {
-  const hash = cryptolib.createHash('sha256');
-  const addFile = (file: string) => {
-    hash.update(file);
-    hash.update(fs.readFileSync(file));
-  };
   let files: string[] = [];
   for (const pattern of targetPaths) {
     if (fs.existsSync(pattern)) {
@@ -260,7 +248,6 @@ export function getChecksum(...targetPaths: string[]): string {
       if (stat.isFile()) {
         files.push(path.resolve(pattern));
       } else if (stat.isDirectory()) {
-        // Recursively add all files in the directory
         const dirFiles = glob.sync('**/*', { cwd: pattern, nodir: true, absolute: true, dot: true });
         files.push(...dirFiles);
       }
@@ -270,6 +257,10 @@ export function getChecksum(...targetPaths: string[]): string {
     }
   }
   files = Array.from(new Set(files)).sort();
-  files.forEach(addFile);
-  return hash.digest('hex');
+  let checksumData = '';
+  for (const file of files) {
+    checksumData += file;
+    checksumData += fs.readFileSync(file).toString('utf8');
+  }
+  return CryptoJS.SHA256(CryptoJS.enc.Utf8.parse(checksumData)).toString(CryptoJS.enc.Hex);
 }
