@@ -2,7 +2,16 @@
   "name": "sbg-utility",
   "version": "2.0.8",
   "description": "static-blog-generator utility",
-  "type": "module",
+  "keywords": [
+    "static-blog-generator",
+    "utility"
+  ],
+  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
+  },
+  "license": "MIT",
+  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.cts",
   "exports": {
@@ -171,6 +180,19 @@
     "./dist/utils/debug.mjs": {
       "types": "./dist/utils/debug.d.mts",
       "import": "./dist/utils/debug.mjs"
+    },
+    "./dist/utils/environment": {
+      "types": "./dist/utils/environment.d.ts",
+      "require": "./dist/utils/environment.cjs",
+      "import": "./dist/utils/environment.mjs"
+    },
+    "./dist/utils/environment.cjs": {
+      "types": "./dist/utils/environment.d.cts",
+      "require": "./dist/utils/environment.cjs"
+    },
+    "./dist/utils/environment.mjs": {
+      "types": "./dist/utils/environment.d.mts",
+      "import": "./dist/utils/environment.mjs"
     },
     "./dist/utils/filemanager/copy": {
       "types": "./dist/utils/filemanager/copy.d.ts",
@@ -581,6 +603,10 @@
     "dist/**/*",
     "dist/node_modules/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
   "scripts": {
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
@@ -593,20 +619,6 @@
     "clean": "rimraf dist",
     "pack": "node packer.cjs --yarn"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
-  },
-  "keywords": [
-    "static-blog-generator",
-    "utility"
-  ],
-  "author": "Dimas Lanjaka <dimaslanjaka@gmail.com> (https://www.webmanajemen.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dimaslanjaka/static-blog-generator/issues"
-  },
-  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
   "dependencies": {
     "ansi-colors": "^4.1.3",
     "async": "^3.2.6",
@@ -707,6 +719,10 @@
     "ts-node": "^10.9.2",
     "typescript": "5.8.3"
   },
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
   "resolutions": {
     "@types/git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/6a57aa46df02c8969ca56d79d46fb5ce2dc2b7c1/release/git-command-helper.tgz",
     "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/hexo.tgz",
@@ -735,9 +751,6 @@
     "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/4a6d2c0b2a7653402ccb87229fa2f074986e9ede/packages/sbg-server/release/sbg-server.tgz",
     "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/4a6d2c0b2a7653402ccb87229fa2f074986e9ede/packages/static-blog-generator/release/static-blog-generator.tgz",
     "warehouse": "https://github.com/dimaslanjaka/hexo/raw/62efb19b69dcb3b771e0d607eb77f573d97c2a77/releases/warehouse.tgz"
-  },
-  "engines": {
-    "node": ">=16"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [
