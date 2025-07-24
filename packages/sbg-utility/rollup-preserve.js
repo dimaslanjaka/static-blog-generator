@@ -1,3 +1,4 @@
+import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -24,7 +25,23 @@ const plugins = [
     extensions: ['.mjs', '.js', '.json', '.node', '.cjs', '.jsx', '.ts', '.tsx']
   }),
   commonjs(),
-  json()
+  json(),
+  babel({
+    babelHelpers: 'bundled',
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    exclude: 'node_modules/**',
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          targets: {
+            node: '12'
+          },
+          modules: false
+        }
+      ]
+    ]
+  })
 ];
 const configs = [
   // ESM build

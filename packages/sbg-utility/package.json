@@ -656,6 +656,7 @@
     "@jest/globals": "^30.0.4",
     "@jest/types": "^30.0.1",
     "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
@@ -707,7 +708,7 @@
     "typescript": "5.8.3"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=12"
   },
   "type": "module",
   "resolutions": {
