@@ -158,14 +158,29 @@ jobs:
           npm run pack -- --commit
           npm run pack
 
+      - name: 🛠️ Configure Git user
+        run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
-        run: git add .
+        run: |
+          git add -A
 
-      - name: 📤 Commit and Push Changes
+      # --- original commit step backup ---
+      # - name: 📤 Commit and Push Changes
+      #   working-directory: packages/sbg-utility
+      #   run: |
+      #     if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+      #       git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+      #       git push
+      #     fi
+
+      - name: 📤 Commit and Push Changes (only sbg-utility)
         working-directory: packages/sbg-utility
         run: |
-          if [ $(git status --porcelain | wc -l) -gt "0" ]; then
+          if [ $(git status --porcelain -- . | wc -l) -gt "0" ]; then
             git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
             git push
           fi
