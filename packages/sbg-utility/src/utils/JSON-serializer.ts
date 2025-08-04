@@ -84,13 +84,19 @@ const set = (known: Map<any, any>, input: any[], value: any): string => {
 };
 
 /**
- * Parses a JSON string with support for circular references.
+ * Parses a JSON string with support for circular references, or falls back to standard JSON for normal arrays/objects.
  * @param text - The JSON string to parse.
  * @param reviver - Optional function to transform the parsed values.
  * @returns The parsed object.
  */
-const parse = (text: string, reviver?: (...args: any[]) => any): any => {
+const parse = (text: string, reviver?: (...args: any[]) => any): unknown => {
   try {
+    const raw = $parse(text);
+    // If not an array or not in the special format, just return as normal JSON
+    if (!Array.isArray(raw) || raw.length === 0 || typeof raw[0] !== 'object') {
+      return raw;
+    }
+    // Otherwise, treat as circular-refs format
     const input = $parse(text, Primitives).map(primitives);
     const value = input[0];
     const $ = reviver || noop;
