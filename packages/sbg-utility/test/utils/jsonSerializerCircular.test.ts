@@ -134,4 +134,18 @@ describe('JSON circular structure', () => {
       expect(parsed.json[0]._id).toBe('64b26da5221da4b10c86314a');
     });
   });
+
+  describe('jsonParseWithCircularRefs', () => {
+    test('should parse normal array', () => {
+      const circularArray = ['1101320001160001', '1101320001100001', '1101320001100003'];
+      const str = jsonStringifyWithCircularRefs(circularArray);
+      const parsed = jsonParseWithCircularRefs(str) as (typeof circularArray)[];
+      expect(parsed.length).toBe(3);
+      expect(Array.isArray(parsed)).toBe(true);
+      expect(parsed).toEqual(circularArray);
+      expect(parsed[0]).toBe('1101320001160001');
+      expect(parsed[1]).toBe('1101320001100001');
+      expect(parsed[2]).toBe('1101320001100003');
+    });
+  });
 });
