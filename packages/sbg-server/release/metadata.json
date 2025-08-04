@@ -1,0 +1,110 @@
+{
+  "/release/sbg-server-1.0.0.tgz": {
+    "integrity": {
+      "sha1": "cfcc60ae1fddeb7e27b453b4893bc9a98261a37e",
+      "sha256": "pQ/S9Wdotm7DK3ZPpCxdLMwj8HZlizB4BblhtgSmxbk=",
+      "md5": "90e4da6f3214fb2b1c247075e2bade7d",
+      "sha512": "K41pBimXb2RK18NSN2r23OraLnyOj0La/DYBuyslg0FbveX+5ouwwgl1gg7cL05agHNN/d4zZi4l7MdNr+6neg=="
+    },
+    "size": "1254.77 KB"
+  },
+  "/release/sbg-server.tgz": {
+    "integrity": {
+      "sha1": "208308f8cfc16ac73e652f3c0e788328eda678c9",
+      "sha256": "3H/zwKfnKspU6PbTut8muUdsf6/XnVkLGeTb8Ztuqw8=",
+      "md5": "fe60299c95828cac9eaa28e9f7304ecd",
+      "sha512": "q41n1J7Xl/kHgvzwhyh1V09uydA0hCCxOoG30x6+tuTugRG5h4bN/14uuUZpzNCtf9AQ9tpCVtJRc9ckXtsbMA=="
+    },
+    "size": "2075.60 KB"
+  },
+  "/package-lock.json": {
+    "integrity": {
+      "sha1": "efb6d0baf220291cb6ed8a36acd514513d0634e8",
+      "sha256": "O7EYV13pJ6HO1RZ0PVKA2acgRxyJS21c6V5Tn0ysOXs=",
+      "md5": "258e63b6b8c5e27d89cec696fbebc452",
+      "sha512": "/t/4XDrmLnsOFE+EJM6rHMvBcOu/c7hxldVjD3IDyombyxNQxj6LYeevXas+0ePSndM8GqpzZ5mRCfHGTgmNFQ=="
+    },
+    "size": "807.85 KB"
+  },
+  "/release/sbg-server-1.0.1.tgz": {
+    "integrity": {
+      "sha1": "931b3ccebed546a7717c0c39694598e92ab1e1c7",
+      "sha256": "yfhs4ucdhJbPErXmVSuHXHsvRUUIWDjbJbijUCh6bhw=",
+      "md5": "7b994c86be9f79788df03e6bb3824689",
+      "sha512": "Q/sbxLaR38xI01K9t4/FWX1KuVU7ZsaMbkdfnU0ZxN4wLUHC5WmeZIwtD/BcbgCbGwCX0Pi0w04zGYYRGdM/8Q=="
+    },
+    "size": "1254.76 KB"
+  },
+  "/release/sbg-server-1.0.2.tgz": {
+    "integrity": {
+      "sha1": "d4dbd746a6c065bc9b43a13c8e66308a58739876",
+      "sha256": "H1/E1Vm3gZRvBkv6uPkzH/DDHd/zYof9MPARPwmA40M=",
+      "md5": "06bd539eee591fd4353a4061f8e9b838",
+      "sha512": "8EoU61/MR6eipyw4HX5b8FDFli4a1NlHelh8o6rBbo3HOAu69rMXRIWPad56D7fwZgBsXNVBg++C7HwL+tiI6A=="
+    },
+    "size": "1254.77 KB"
+  },
+  "/release/sbg-server-1.0.3.tgz": {
+    "integrity": {
+      "sha1": "1dfeeaeda1d5dcf2dfd07e312ed69891a59e0943",
+      "sha256": "UOt9ekR0D/zb+/2n6HS/hzIXlAI8gzoYG3lr7pqzrM0=",
+      "md5": "ccc856c49a9757a27bdbe27138220315",
+      "sha512": "lLUeACuztgZQ2gCRTPLaDBLcLd6s1x3ElyIu8xV5R4TQaV5imEiyHCzSoKfX2eIM+TZb7CYJo9+cW0kvtvAyEw=="
+    },
+    "size": "1262.72 KB"
+  },
+  "/release/sbg-server-1.0.4.tgz": {
+    "integrity": {
+      "sha1": "5a3a7119fdefdd5503726085e8d485eed1d48455",
+      "sha256": "ngWTEG4yHMU6M7iSqL0ro2IFCrtPaHKTz5uAdcy3+Ho=",
+      "md5": "9eb6047935f746e7dea55358aa3cea05",
+      "sha512": "Pd9WoiKg8/WxM/VkXxDA6p6OcyNIA6NB7NLuyrJ24dWTXrc6wg6DMYbcENKeFLmCes6/qXUHwmm+PZG7ZAlLBA=="
+    },
+    "size": "1262.72 KB"
+  },
+  "/release/sbg-server-1.0.5.tgz": {
+    "integrity": {
+      "sha1": "878bdcf660292ff4271de522cbb6fc8e32b9099a",
+      "sha256": "ZptiRFkvcDcc9pBC99iOxeBAU9u+EvE+d+Zdj+3eV1w=",
+      "md5": "016bee2eb591f67f61a6464df25c7f12",
+      "sha512": "Pzksj1rM6HkzyHh1Fh47+VJ7aO9aOdN/EfwGuTS58lSCEWQLBZxMVD8sKTrMopoRUKM3vy96GfsRAzxsXzygXg=="
+    },
+    "size": "1924.86 KB"
+  },
+  "/release/sbg-server-1.0.6.tgz": {
+    "integrity": {
+      "sha1": "56f97497a69a7acdbe1c57c34132c4b635b2630f",
+      "sha256": "TaOIERLx1Mj2Baz3CghPaTN8R5z6mi9xG3KvmUBZw6Y=",
+      "md5": "41e0971fd3d180229e9ef4012ba83bda",
+      "sha512": "/TrvnU10W++iNBYQc0p1c/9nVwZlCftGUbW0AoCQg1qatGv1j3X7IW5l1sSWG1NTSkDnV9AscbNn0DgXa3TTbA=="
+    },
+    "size": "1935.84 KB"
+  },
+  "/release/sbg-server-1.0.7.tgz": {
+    "integrity": {
+      "sha1": "3fdfb369df12e3fb72fbbe49128e7e43542d13ea",
+      "sha256": "1YvS1H75xGqkQ0nlKoGsjcUlbdKTVH5EBR99qVbm8cY=",
+      "md5": "707c2b70302797fecde344438afcbd87",
+      "sha512": "/nTdO2qIvrNwNIg/Gln7/CJ4RDWX5/PlN/ZrZMk0UW1xWvSRjXbMhdOeaGGzBXoujkSMJku1GrKYwbj4IaEIfw=="
+    },
+    "size": "1937.52 KB"
+  },
+  "/release/sbg-server-1.1.0.tgz": {
+    "integrity": {
+      "sha1": "d39a4c968a4bf72652ab09724bdc2aa9a9a6f0cc",
+      "sha256": "JIgsOfnYRjRW4HMCNuPOmCGLvm8bLI/M9ZErxjtiHZA=",
+      "md5": "3b57308d41af8c6a3c5fa77c1865a01b",
+      "sha512": "d72fCxuRk6csXpe9OH1TfX3QbiO4eza+prTyCgGpmR0GA5Ztu8hlKI/xuNUtiHHfUh8If/0kNLVdzxKBbmuhcw=="
+    },
+    "size": "1976.43 KB"
+  },
+  "/release/sbg-server-2.0.0.tgz": {
+    "integrity": {
+      "sha1": "208308f8cfc16ac73e652f3c0e788328eda678c9",
+      "sha256": "3H/zwKfnKspU6PbTut8muUdsf6/XnVkLGeTb8Ztuqw8=",
+      "md5": "fe60299c95828cac9eaa28e9f7304ecd",
+      "sha512": "q41n1J7Xl/kHgvzwhyh1V09uydA0hCCxOoG30x6+tuTugRG5h4bN/14uuUZpzNCtf9AQ9tpCVtJRc9ckXtsbMA=="
+    },
+    "size": "2075.60 KB"
+  }
+}

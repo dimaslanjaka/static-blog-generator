@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json.schemastore.org/nodemon",
+  "exec": "node nodemon.runner.js",
+  "watch": [
+    "./src/**/*.{njk,html,ts,js}",
+    "./source/**/*.{njk,html,ts,js}",
+    "./tsconfig.json",
+    "./package.json",
+    "./*.js"
+  ],
+  "ignore": [
+    "*.test.js",
+    ".vscode",
+    ".gitignore",
+    "**/dist",
+    "**/test",
+    "**/tests",
+    "**/tmp",
+    "**/temp",
+    "./src/tmp",
+    "./docs",
+    "./release",
+    "./src/public",
+    "./*.runner.js"
+  ],
+  "delay": 3000,
+  "ext": "*",
+  "verbose": false
+}

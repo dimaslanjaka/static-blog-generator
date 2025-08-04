@@ -1,0 +1,56 @@
+{
+  "name": "sbg-api-test",
+  "version": "2.0.0",
+  "private": true,
+  "files": [
+    "src-posts/"
+  ],
+  "type": "commonjs",
+  "scripts": {
+    "start": "hexo clean && hexo server",
+    "build": "hexo generate",
+    "clean": "hexo clean && sbg clean post && sbg clean cache",
+    "deploy": "hexo deploy",
+    "server": "hexo server -p 4000",
+    "serve-static": "php -S localhost:4000 -t public/",
+    "update:ncu": "npx npm-check-updates -u",
+    "test": "cd .. && npm test",
+    "post:standalone": "sbg post standalone",
+    "post:copy": "sbg post copy",
+    "post:clean": "sbg post clean",
+    "manager": "sbg server",
+    "init-source-post": "node init-source-posts.cjs",
+    "postinstall": "node postinstall.cjs"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "hexo": "^7.3.0",
+    "hexo-asset-link": "^2.2.3",
+    "hexo-browsersync": "https://github.com/hexojs/hexo-browsersync/tarball/master",
+    "hexo-cli": "^4.3.2",
+    "hexo-front-matter": "^4.2.1",
+    "hexo-generator-archive": "git+https://github.com/hexojs/hexo-generator-archive",
+    "hexo-generator-category": "git+https://github.com/hexojs/hexo-generator-category",
+    "hexo-generator-index": "git+https://github.com/hexojs/hexo-generator-index",
+    "hexo-generator-tag": "git+https://github.com/hexojs/hexo-generator-tag",
+    "hexo-renderers": "^3.0.0",
+    "hexo-server": "^3.0.0",
+    "hexo-shortcodes": "^1.2.3",
+    "hexo-theme-landscape": "*",
+    "hexo-util": "^3.3.0",
+    "warehouse": "^5.0.1"
+  },
+  "devDependencies": {
+    "binary-collections": "^2.0.6",
+    "cross-env": "^7.0.3",
+    "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/bf2d8bb/release/cross-spawn.tgz",
+    "git-command-helper": "^2.0.2",
+    "sbg-api": "workspace:^",
+    "static-blog-generator": "*"
+  }
+}

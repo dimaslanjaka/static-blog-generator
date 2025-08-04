@@ -1,0 +1,11 @@
+source/_posts
+.deploy_git
+tmp
+node_modules
+.yarn/cache*
+.yarn/*gz
+db.json
+source/reports*
+source-posts/
+_config.yml
+public/

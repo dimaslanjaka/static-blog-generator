@@ -1,0 +1,51 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'flowbite';
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/monokai.css';
+@import url("https://rawcdn.githack.com/dimaslanjaka/Web-Manajemen/cb8d4c9a99c2950886ab182ddbf69149bce3ce02/fontawesome-pro/web/css/all.css");
+
+.mobile-menu {
+  left: -200%;
+  transition: 0.5s;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu ul li ul {
+  display: none;
+}
+
+.mobile-menu ul li:hover ul {
+  display: block;
+}
+
+#search-dropdown-submit {
+  width: 50px;
+  height: 100%;
+  padding-left: 5px;
+}
+
+/* toast */
+.toast-message {
+  width: -moz-available;
+}
+[data-dismiss-target] {
+  padding: 5px;
+}
+
+/* disable element */
+.disable {
+  /* Note: pointer-events not supported by IE10 and under */
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Disable scrolling on child elements */
+.disable div,
+.disable textarea {
+  overflow: hidden;
+}

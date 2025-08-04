@@ -1,0 +1,34 @@
+name: Beta CI
+
+on:
+  push:
+    paths-ignore:
+      - '**/release*/**'
+      - '**/test'
+      - '**/package.json'
+      - '**/yarn.lock'
+  pull_request:
+    types:
+      - closed
+  workflow_dispatch:
+
+# run single job
+concurrency:
+  group: beta-ci
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/beta-builder.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  test:
+    needs: build
+    uses: ./.github/workflows/beta-tester.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  push:
+    needs: test
+    uses: ./.github/workflows/beta-push.yml
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

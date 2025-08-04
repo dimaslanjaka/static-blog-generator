@@ -1,0 +1,71 @@
+{
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"
+  },
+  "files.associations": {
+    "*.njk": "njk",
+    "*.nj": "njk",
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.includeLanguages": {
+    "ejs": "html",
+    "njk": "html",
+    "nunjucks": "html",
+    "Nunjucks": "html"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "php",
+    "javascript",
+    "njk",
+    "nunjucks"
+  ],
+  "eslint.codeActionsOnSave.mode": "all",
+  "editor.formatOnSave": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveAllFilesBeforeRun": true,
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package",
+    "*.test.ts": "yarn test -- $fileNameWithoutExt",
+    "*.spec.ts": "yarn test -- $fileNameWithoutExt"
+  },
+  "code-runner.showRunIconInEditorTitleMenu": false,
+  "code-runner.showRunCommandInExplorerContextMenu": false,
+  "code-runner.respectShebang": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "search.exclude": {
+    "**/dist/**": true,
+    "**/tmp/**": true,
+    "src/public/**": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true,
+    "**/dist/**": true,
+    "**/tmp/**": true
+  },
+  "tailwindCSS.codeActions": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  }
+}

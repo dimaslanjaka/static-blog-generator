@@ -1,0 +1,53 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true
+    }
+  },
+  "compilerOptions": {
+    /* Basic Options */
+    "module": "commonjs",
+    "target": "es5",
+    "moduleResolution": "Node",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "ES6",
+      "ES2021",
+      "ES2021.String"
+    ],
+    "outDir": "./tmp/dist",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "strictNullChecks": false,
+    /* Module Resolution Options */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types",
+      "./node_modules/nodejs-package-types/typings"
+    ]
+  },
+  "include": [
+    "./src/**/*.*"
+  ],
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/tmp/**"
+  ]
+}

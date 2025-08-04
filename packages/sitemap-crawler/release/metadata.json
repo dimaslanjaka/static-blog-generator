@@ -1,0 +1,20 @@
+{
+  "/release/sbg-sitemap-crawler-1.0.0.tgz": {
+    "integrity": {
+      "sha1": "88ff0f8b2976376105f09fc1bf8bd4417c1bedfc",
+      "sha256": "FKS/ELj47z3tduYp24+EWLQ3RDVXr1G97ONb9vhCpsE=",
+      "md5": "ad79f14ca08a746e3438731a440b7533",
+      "sha512": "LnCiVuuk04lV/n8eNXPL8p4ag43OmyHXDUqIrGlAPM7J0YX2EuPTHHWZ6ZJCC16Aw/Z6jJXZwOqiixXyiTx0PA=="
+    },
+    "size": "5.48 KB"
+  },
+  "/release/sbg-sitemap-crawler.tgz": {
+    "integrity": {
+      "sha1": "88ff0f8b2976376105f09fc1bf8bd4417c1bedfc",
+      "sha256": "FKS/ELj47z3tduYp24+EWLQ3RDVXr1G97ONb9vhCpsE=",
+      "md5": "ad79f14ca08a746e3438731a440b7533",
+      "sha512": "LnCiVuuk04lV/n8eNXPL8p4ag43OmyHXDUqIrGlAPM7J0YX2EuPTHHWZ6ZJCC16Aw/Z6jJXZwOqiixXyiTx0PA=="
+    },
+    "size": "5.48 KB"
+  }
+}

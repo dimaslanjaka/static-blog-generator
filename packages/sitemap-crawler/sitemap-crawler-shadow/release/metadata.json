@@ -1,0 +1,20 @@
+{
+  "/release/sitemap-crawler-2.0.0.tgz": {
+    "integrity": {
+      "sha1": "f29dec726d635c0da96783ea08a0d37d831afb03",
+      "sha256": "le/nB3UZWAvlPgaxMvr9FxWo6LTerUtuhFDEjB8ttHs=",
+      "md5": "a7d600b235e166f6763b1fdfa2d802d5",
+      "sha512": "xlBAg1nBr1n4yw9bdRBglOzql37yfecP7A5dkoFqpzItXB6ff3L1ElDJgsYAUXDgORtwpz+cOXvvhfQNvq685Q=="
+    },
+    "size": "3.42 KB"
+  },
+  "/release/sitemap-crawler.tgz": {
+    "integrity": {
+      "sha1": "f29dec726d635c0da96783ea08a0d37d831afb03",
+      "sha256": "le/nB3UZWAvlPgaxMvr9FxWo6LTerUtuhFDEjB8ttHs=",
+      "md5": "a7d600b235e166f6763b1fdfa2d802d5",
+      "sha512": "xlBAg1nBr1n4yw9bdRBglOzql37yfecP7A5dkoFqpzItXB6ff3L1ElDJgsYAUXDgORtwpz+cOXvvhfQNvq685Q=="
+    },
+    "size": "3.42 KB"
+  }
+}

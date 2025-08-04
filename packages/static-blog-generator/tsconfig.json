@@ -1,0 +1,38 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true
+    }
+  },
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2019", "ES2020", "DOM", "ES6"],
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    /* Module Resolution Options */
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "paths": {
+      "src": ["./src"],
+      "sbg-*": ["../sbg-*"]
+    }
+  },
+  "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**"]
+}

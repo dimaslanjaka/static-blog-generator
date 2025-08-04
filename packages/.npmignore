@@ -1,0 +1,8 @@
+**/src/**
+**/tmp/**
+**/node_modules/**
+**/test/**
+**/jest.config.ts
+**/*.runner.*
+**/*.spec.*
+**/*.test.*

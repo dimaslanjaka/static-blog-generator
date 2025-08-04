@@ -1,0 +1,76 @@
+name: Docs Build
+
+# Only trigger, when the build workflow succeeded
+on:
+  workflow_run:
+    workflows: ["Dev Tests"]
+    types:
+      - completed
+
+# cancel previous workflows, run only one workflow
+concurrency:
+  group: docs-${{ github.event.push.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: szenius/set-timezone@v1.1
+      with:
+        timezoneLinux: "Asia/Jakarta"
+        timezoneMacos: "Asia/Jakarta"
+        timezoneWindows: "Western Indonesia Time"
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        token: "${{ secrets.GITHUB_TOKEN }}"
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    # https://stackoverflow.com/a/61699863/6404439
+    # ${{ steps.vars.outputs.branch }}
+    # ${{ steps.vars.outputs.hash }}
+    - name: Declare some variables
+      id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=hash::$(git rev-parse --short HEAD)"
+        echo "::set-output name=yarn::$(yarn cache dir)"
+        echo "::set-output name=npm::$(npm config get cache)"
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ${{ steps.vars.outputs.npm }}
+          ./tmp
+          ./node_modules
+          ./.deploy_*
+          ./src
+        key: ${{ runner.os }}-${{ hashFiles('.guid') }}
+    - name: Resolve git user
+      continue-on-error: true
+      run: |
+        cdir="$PWD"
+        git checkout dev
+        git config user.email "dimaslanjaka@gmail.com"
+        git config user.name "dimaslanjaka"
+        git fetch --all
+        git pull --all
+        git submodule update -i -r
+        git submodule foreach git submodule update -i -r
+
+    - run: npm i -g gulp-cli typescript npm ts-node npm yarn
+    - name: Run Production Update
+      run: |
+        echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
+        npm run update
+    - run: gulp sbg:docs --nocache --verbose --dev
+    - run: gulp generate --nocache --verbose --dev
+    - working-directory: .deploy_git
+      run: |
+        git add -A
+        git commit -m "update from ${{ steps.vars.outputs.hash }}"
+        git push

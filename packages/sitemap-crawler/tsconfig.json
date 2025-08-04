@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2017",
+      "ES2019",
+      "DOM"
+    ],
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "ES2015",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "rootDir": "src"
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.runner.ts",
+    "**/___*.ts"
+  ]
+}
