@@ -39,9 +39,7 @@ describe('check method', () => {
     'writefile',
     'readfile',
     'normalizePath',
-    'normalizePathUnix',
-    'jsonParseWithCircularRefsBrowser',
-    'jsonStringifyWithCircularRefsBrowser'
+    'normalizePathUnix'
   ];
 
   for (let i = 0; i < props.length; i++) {

@@ -17,7 +17,10 @@
       "icon": "terminal-powershell"
     },
     "Command Prompt": {
-      "path": ["${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe"],
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
       "args": [],
       "icon": "terminal-cmd"
     },
@@ -26,7 +29,10 @@
     },
     "Cygwin": {
       "path": "C:\\cygwin64\\bin\\bash.exe",
-      "args": ["--login", "-i"],
+      "args": [
+        "--login",
+        "-i"
+      ],
       "env": {
         "CHERE_INVOKING": "1"
       }
@@ -47,10 +53,10 @@
   "code-runner.executorMapByGlob": {
     "pom.xml": "cd $dir && mvn clean package",
     "*.{test,spec}.ts": "yarn test -- $fileNameWithoutExt",
-    "*.{test,spec}.{js,cjs,mjs}": "yarn test -- $fileNameWithoutExt",
+    "*.{test,spec}.{js,cjs,mjs}": "npm run build && yarn test -- $fileNameWithoutExt",
     "*.{explicit}.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
-    "*.{explicit,runner}.{mjs,cjs,js}": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",
-    "*.runner.ts": "cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
+    "*.{explicit,runner}.{mjs,cjs,js}": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node -r dotenv/config",
+    "*.runner.ts": "yarn build && cross-env-shell DEBUG=sbg-* node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config",
     "electron-*.ts": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     "*.py": "python -u",
     "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
@@ -101,10 +107,25 @@
       "source.fixAll": "never"
     }
   },
-  "autopep8.args": ["--ignore", "E401,E402,E211,E501"],
+  "autopep8.args": [
+    "--ignore",
+    "E401,E402,E211,E501"
+  ],
   "intelephense.maxMemory": 1028,
-  "intelephense.rename.exclude": ["**/vendor/**", "**/node_modules/**", "**/tmp/**", "**/dist/**", "**/.cache/**"],
-  "intelephense.references.exclude": ["**/vendor/**", "**/node_modules/**", "**/tmp/**", "**/dist/**", "**/.cache/**"],
+  "intelephense.rename.exclude": [
+    "**/vendor/**",
+    "**/node_modules/**",
+    "**/tmp/**",
+    "**/dist/**",
+    "**/.cache/**"
+  ],
+  "intelephense.references.exclude": [
+    "**/vendor/**",
+    "**/node_modules/**",
+    "**/tmp/**",
+    "**/dist/**",
+    "**/.cache/**"
+  ],
   "intelephense.trace.server": "messages",
   "intelephense.completion.maxItems": 100,
   "intelephense.diagnostics.run": "onSave",
@@ -130,7 +151,10 @@
     "**/assets/**",
     "**/*.sqlite"
   ],
-  "intelephense.files.associations": ["*.php", "*.phtml"],
+  "intelephense.files.associations": [
+    "*.php",
+    "*.phtml"
+  ],
   "intelephense.telemetry.enabled": true,
   "eslint.debug": true,
   "eslint.useFlatConfig": true,
@@ -149,7 +173,10 @@
     "src/database.sqlite*": true
   },
   "intelephense.environment.documentRoot": "${workspaceFolder}",
-  "intelephense.environment.includePaths": ["${workspaceFolder}/src", "${workspaceFolder}/vendor"],
+  "intelephense.environment.includePaths": [
+    "${workspaceFolder}/src",
+    "${workspaceFolder}/vendor"
+  ],
   "files.exclude": {
     "*.php": true,
     "**/.cache/**": true,
@@ -176,6 +203,5 @@
   },
   "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": false,
-  "editor.formatOnType": false,
-  "git.autoStash": true
+  "editor.formatOnType": false
 }

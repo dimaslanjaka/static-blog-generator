@@ -2,8 +2,8 @@ import fs from 'fs-extra';
 import url from 'node:url';
 import path from 'upath';
 import * as yaml from 'yaml';
-import { jsonStringifyWithCircularRefs } from '../utils/JSON';
-import { normalizePath } from '../utils/filemanager/path-utility';
+import { jsonStringifyWithCircularRefs, normalizePath } from '../utils';
+import { trueCasePathSync } from '../utils/filemanager/case-path';
 // import mappedConfig from './_config.json' assert { type: 'json' };
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -104,8 +104,7 @@ export function getDefaultConfig() {
     meta_generator: true
   };
   const sbgDefaultConfig = {
-    // cwd: normalizePath(trueCasePathSync(process.cwd()))
-    cwd: normalizePath(process.cwd())
+    cwd: normalizePath(trueCasePathSync(process.cwd()))
   };
   const configYML = yaml.parse(getDefaultConfigYaml());
   return Object.assign(hexoDefaultConfig, sbgDefaultConfig, configYML) as importConfig;

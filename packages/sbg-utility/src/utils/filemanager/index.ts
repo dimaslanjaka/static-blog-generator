@@ -5,8 +5,8 @@ export * from './del';
 export * from './emptyDir';
 export * from './getAppRootDir';
 export * from './images';
-export * from './path-utility';
-export { normalizePath as joinPath, normalizePath as pathJoin } from './path-utility';
+export * from './normalizePath';
+export { normalizePath as joinPath, normalizePath as pathJoin } from './normalizePath';
 export * from './readDir';
 export * from './readfile';
 export * from './stream';
@@ -14,15 +14,14 @@ export * from './writefile';
 
 /**
  * is non-markdown file
- * @param assetPath
+ * @param path
  * @returns
  */
-export const isAsset = (assetPath: any) =>
-  /.(js|css|scss|njk|ejs|png|jpe?g|gif|svg|webp|json|html|txt)$/.test(String(assetPath));
+export const isAsset = (path: any) => /.(js|css|scss|njk|ejs|png|jpe?g|gif|svg|webp|json|html|txt)$/.test(String(path));
 
 /**
  * is markdown file
- * @param markdownPath
+ * @param path
  * @returns
  */
-export const isMarkdown = (markdownPath: any) => /.(md)$/i.test(String(markdownPath));
+export const isMarkdown = (path: any) => /.(md)$/i.test(String(path));
