@@ -1,6 +1,6 @@
 import async from 'async';
 import Bluebird from 'bluebird';
-import { load } from 'cheerio';
+import { parse } from 'node-html-parser';
 import ProgressBar from 'progress';
 import request from 'request';
 import { Logger } from '../utils';
@@ -58,16 +58,17 @@ export class SiteMapCrawlerCore {
           }
 
           try {
-            const $ = load(body);
-            const hrefs = $('[href]');
+            const root = parse(body);
+            const hrefElements = root.querySelectorAll('[href]');
             const filteredLinks = new Set<string>();
 
-            hrefs.each(function (i) {
-              if (hrefs.eq(i).get(0)?.tagName.toLowerCase() !== 'a') {
-                const href = hrefs.eq(i).attr('href');
+            hrefElements.forEach((element) => {
+              if (element.tagName.toLowerCase() !== 'a') {
+                const href = element.getAttribute('href');
                 if (!href || !/(\/|.html)$/gi.test(href)) return;
               }
-              const href = self.filterLink(link, hrefs.eq(i).attr('href') || '')?.trim();
+              const hrefAttr = element.getAttribute('href') || '';
+              const href = self.filterLink(link, hrefAttr)?.trim();
 
               if (typeof href === 'string' && href.length > 0) {
                 const dirUrl = link.substring(0, link.lastIndexOf('/'));
