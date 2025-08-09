@@ -4,9 +4,10 @@
 /* https://github.com/WebReflection/flatted/blob/main/cjs/index.js */
 
 import * as crypto from 'crypto';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as url from 'url';
+import fs from 'fs-extra';
+import url from 'node:url';
+import path from 'path';
+import Logger from './logger';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const { parse: $parse, stringify: $stringify } = JSON;
@@ -84,19 +85,13 @@ const set = (known: Map<any, any>, input: any[], value: any): string => {
 };
 
 /**
- * Parses a JSON string with support for circular references, or falls back to standard JSON for normal arrays/objects.
+ * Parses a JSON string with support for circular references.
  * @param text - The JSON string to parse.
  * @param reviver - Optional function to transform the parsed values.
  * @returns The parsed object.
  */
-const parse = (text: string, reviver?: (...args: any[]) => any): unknown => {
+const parse = (text: string, reviver?: (...args: any[]) => any): any => {
   try {
-    const raw = $parse(text);
-    // If not an array or not in the special format, just return as normal JSON
-    if (!Array.isArray(raw) || raw.length === 0 || typeof raw[0] !== 'object') {
-      return raw;
-    }
-    // Otherwise, treat as circular-refs format
     const input = $parse(text, Primitives).map(primitives);
     const value = input[0];
     const $ = reviver || noop;
@@ -105,7 +100,7 @@ const parse = (text: string, reviver?: (...args: any[]) => any): unknown => {
   } catch (e) {
     const { stack, file } = getStack();
     fs.writeFileSync(file, `${stack.join('\n')}\n\n${text}`);
-    console.log('fail parse ' + file + ' ' + (e as Error).message);
+    Logger.log('fail parse ' + file + ' ' + (e as Error).message);
     process.exit(1);
   }
 };
@@ -158,16 +153,16 @@ const stringify = (
 
 /**
  * Converts an object with circular references to JSON.
- * @param anyData - The object to convert.
+ * @param any - The object to convert.
  * @returns The JSON representation of the object.
  */
-const toJSON = (anyData: any): any => $parse(stringify(anyData));
+const toJSON = (any: any): any => $parse(stringify(any));
 export { toJSON };
 
 /**
  * Parses a circular object from JSON.
- * @param anyData - The JSON string to parse.
+ * @param any - The JSON string to parse.
  * @returns The parsed object.
  */
-const fromJSON = (anyData: string): any => parse($stringify(anyData));
+const fromJSON = (any: string): any => parse($stringify(any));
 export { fromJSON, parse, stringify };

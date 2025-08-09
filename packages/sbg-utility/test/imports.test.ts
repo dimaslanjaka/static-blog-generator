@@ -1,4 +1,4 @@
-import { describe, expect, it, jest, test } from '@jest/globals';
+import { describe, expect, it, test } from '@jest/globals';
 import defaults, * as wildcards from '../src';
 
 // jest --runInBand imports.test

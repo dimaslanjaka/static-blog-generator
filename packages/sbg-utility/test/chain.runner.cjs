@@ -1,9 +1,9 @@
-const { chain } = require('../../dist/index.cjs');
+const { chain } = require('../dist/index.cjs');
 const gulp = require('gulp');
 const path = require('path');
 
-const cwd = path.join(process.cwd(), 'test/fixtures');
-const dest = path.join(process.cwd(), 'tmp/fixtures');
+const cwd = path.join(__dirname, 'fixtures');
+const dest = path.join(__dirname, 'tmp');
 const gulpProcess = () =>
   gulp
     .src('**/*.*', { cwd })

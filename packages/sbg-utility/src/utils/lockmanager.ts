@@ -6,7 +6,6 @@ import Logger from './logger';
 import scheduler from './scheduler';
 
 const locks: LockManager[] = [];
-let schedulerInitialized = false;
 
 export default class LockManager {
   folder = path.join(process.cwd(), 'tmp/cache/lock');
@@ -14,15 +13,6 @@ export default class LockManager {
   constructor(name: string) {
     this.file = path.join(this.folder, name, os.platform() + '-index.lock');
     locks.push(this);
-
-    // Register scheduler only once
-    if (!schedulerInitialized) {
-      schedulerInitialized = true;
-      scheduler.register();
-      scheduler.add('clean locks', () => {
-        locks.forEach((lock) => lock.release());
-      });
-    }
   }
 
   lock() {
@@ -45,3 +35,7 @@ export default class LockManager {
     return fs.existsSync(this.file);
   }
 }
+
+scheduler.add('clean locks', () => {
+  locks.forEach((lock) => lock.release());
+});
