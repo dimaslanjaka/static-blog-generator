@@ -129,6 +129,19 @@
       "types": "./dist/utils/JSON.d.mts",
       "import": "./dist/utils/JSON.mjs"
     },
+    "./dist/utils/_punycode": {
+      "types": "./dist/utils/_punycode.d.ts",
+      "require": "./dist/utils/_punycode.cjs",
+      "import": "./dist/utils/_punycode.mjs"
+    },
+    "./dist/utils/_punycode.cjs": {
+      "types": "./dist/utils/_punycode.d.cts",
+      "require": "./dist/utils/_punycode.cjs"
+    },
+    "./dist/utils/_punycode.mjs": {
+      "types": "./dist/utils/_punycode.d.mts",
+      "import": "./dist/utils/_punycode.mjs"
+    },
     "./dist/utils/array": {
       "types": "./dist/utils/array.d.ts",
       "require": "./dist/utils/array.cjs",
