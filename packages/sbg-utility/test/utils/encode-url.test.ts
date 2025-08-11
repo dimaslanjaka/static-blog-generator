@@ -1,4 +1,4 @@
-import { encodeURL } from '../../src/utils/encode-url';
+import encodeURL from '../../src/utils/encode-url';
 
 describe('encodeURL', () => {
   it('regular', () => {

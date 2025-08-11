@@ -1,4 +1,4 @@
-import { decodeURL } from '../../src/utils/decode-url';
+import decodeURL from '../../src/utils/decode-url';
 
 describe('decodeURL', () => {
   it('regular', () => {
