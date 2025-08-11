@@ -100,29 +100,29 @@
   },
   "/release/sbg-utility.tgz": {
     "integrity": {
-      "sha1": "86fe0e36b08d9af1c587091529766bc64ee9c304",
-      "sha256": "AQVRao3pynvi1djDEsoIodqtpfAWXIsrjOqJNAZVB5g=",
-      "md5": "6320f2a31ab8c7f5468d58a5ce2935ad",
-      "sha512": "vDvEFKuTq7E383NUXNcNPlNIa0MYnydXAtiZLcjhntxCQm5zUoX6hXsi24kSSv0RjdIemSbqkwJivnwNw4GSrg=="
+      "sha1": "dce8f6ccf03b1fb845a1f9facd19cee10d1445c7",
+      "sha256": "xCMmLyDuw4MaMeaK/VBOkkgA7u00MjzBvofb8ySlfoU=",
+      "md5": "449d226c745b0b34bdb870a21f321672",
+      "sha512": "uy7UqJ+AVRlQoAjXBgu5cKmSL8enyabcmyYdwl2rjw7GBTS5G0w0vGreypw6rlvDnCqUFh1D59PHYDBdsH3tQA=="
     },
-    "size": "67.41 KB"
+    "size": "67.42 KB"
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "65e5626988be064210ac50eb6f73c36e5e45a1b9",
-      "sha256": "+Ek2sdSmbIg3IHP5AuGkPAw/Oo5Y4jCkM9FFL81hpxs=",
-      "md5": "da3e1ded369da8b169e938e4180f6a3e",
-      "sha512": "8lhF7QSEQ4rPJzWc94KmA4zYJcojPuUbg0S+7f3MKjiFOqJWjORRLoS9A9zQYvcN03XF3Zki/P3gPov5qXcVMA=="
+      "sha1": "78ab2e58d85f9a18e9b16e4cc7d662fc3f53676a",
+      "sha256": "OHSzuyjqvCXTYTowC5U2x5cV5wmu4wcrYihyGlZm5vc=",
+      "md5": "31ab2f31e8ae1ece08c9fa4838c4d56f",
+      "sha512": "SZAoj0WJtlrbHymN/yAfO5o3/VVzGaUl3MHm6gQAQ8WxxEbxl1AK9gq3wEko90FhyPd6YHc7auLrwPNRenhMKA=="
     },
-    "size": "489.07 KB"
+    "size": "489.08 KB"
   },
   "/release/sbg-utility-2.0.9.tgz": {
     "integrity": {
-      "sha1": "86fe0e36b08d9af1c587091529766bc64ee9c304",
-      "sha256": "AQVRao3pynvi1djDEsoIodqtpfAWXIsrjOqJNAZVB5g=",
-      "md5": "6320f2a31ab8c7f5468d58a5ce2935ad",
-      "sha512": "vDvEFKuTq7E383NUXNcNPlNIa0MYnydXAtiZLcjhntxCQm5zUoX6hXsi24kSSv0RjdIemSbqkwJivnwNw4GSrg=="
+      "sha1": "dce8f6ccf03b1fb845a1f9facd19cee10d1445c7",
+      "sha256": "xCMmLyDuw4MaMeaK/VBOkkgA7u00MjzBvofb8ySlfoU=",
+      "md5": "449d226c745b0b34bdb870a21f321672",
+      "sha512": "uy7UqJ+AVRlQoAjXBgu5cKmSL8enyabcmyYdwl2rjw7GBTS5G0w0vGreypw6rlvDnCqUFh1D59PHYDBdsH3tQA=="
     },
-    "size": "67.41 KB"
+    "size": "67.42 KB"
   }
 }
