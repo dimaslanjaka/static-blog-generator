@@ -1,5 +1,6 @@
 import { describe, expect, it, jest, test } from '@jest/globals';
 import defaults, * as wildcards from '../src';
+import * as shared from './import-shared.cjs';
 
 // jest --runInBand imports.test
 
@@ -7,38 +8,7 @@ import defaults, * as wildcards from '../src';
 jest.useFakeTimers();
 
 describe('check method', () => {
-  const props = [
-    'getConfig',
-    'fetchConfig',
-    'findYarnRootWorkspace',
-    'chain',
-    'debug',
-    'createWriteStream',
-    'debug',
-    'Logger',
-    'scheduler',
-    'noop',
-    'envNunjucks',
-    'array_random',
-    'array_unique',
-    'array_remove_empty',
-    'image_base64_encode',
-    'capitalizer',
-    'capitalize',
-    'data_to_hash',
-    'file_to_hash',
-    'normalizePath',
-    'pathJoin',
-    'joinPath',
-    'sitemapCrawler',
-    'sitemapCrawlerAsync',
-    'SiteMapCrawler',
-    'jsonStringifyWithCircularRefs',
-    'writefile',
-    'readfile',
-    'normalizePath',
-    'normalizePathUnix'
-  ];
+  const props = shared.properties;
 
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];

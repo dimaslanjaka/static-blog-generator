@@ -1,6 +1,7 @@
 const { describe, expect, it, test } = require('@jest/globals');
 const defaults = require('../dist/index.cjs').default;
 const wildcards = require('../dist/index.cjs');
+const shared = require('./import-shared.cjs');
 
 // avoid jest error **trying to `import` a file after the Jest environment has been torn down**
 jest.useFakeTimers();
@@ -9,40 +10,7 @@ jest.useFakeTimers();
  * Tests for the methods in the wildcards and defaults modules.
  */
 describe('check method', () => {
-  const props = [
-    'getConfig',
-    'fetchConfig',
-    'findYarnRootWorkspace',
-    'chain',
-    'debug',
-    'createWriteStream',
-    'debug',
-    'Logger',
-    'scheduler',
-    'noop',
-    'envNunjucks',
-    'array_random',
-    'array_unique',
-    'array_remove_empty',
-    'image_base64_encode',
-    'capitalizer',
-    'capitalize',
-    'data_to_hash',
-    'file_to_hash',
-    'normalizePath',
-    'pathJoin',
-    'joinPath',
-    'sitemapCrawler',
-    'sitemapCrawlerAsync',
-    'SiteMapCrawler',
-    'jsonStringifyWithCircularRefs',
-    'writefile',
-    'readfile',
-    'normalizePath',
-    'normalizePathUnix',
-    'jsonParseWithCircularRefsBrowser',
-    'jsonStringifyWithCircularRefsBrowser'
-  ];
+  const props = shared.properties;
 
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];

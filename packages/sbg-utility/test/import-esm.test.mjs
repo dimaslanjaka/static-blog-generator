@@ -1,5 +1,6 @@
 import { describe, expect, it, jest, test } from '@jest/globals';
 import defaults, * as wildcards from '../dist/index.mjs';
+import * as shared from './import-shared.cjs';
 
 // avoid jest error **trying to `import` a file after the Jest environment has been torn down**
 jest.useFakeTimers();
@@ -8,38 +9,7 @@ jest.useFakeTimers();
  * Tests for the methods in the wildcards and defaults modules.
  */
 describe('check method', () => {
-  const props = [
-    'getConfig',
-    'fetchConfig',
-    'findYarnRootWorkspace',
-    'chain',
-    'debug',
-    'createWriteStream',
-    'debug',
-    'Logger',
-    'scheduler',
-    'noop',
-    'envNunjucks',
-    'array_random',
-    'array_unique',
-    'array_remove_empty',
-    'image_base64_encode',
-    'capitalizer',
-    'capitalize',
-    'data_to_hash',
-    'file_to_hash',
-    'normalizePath',
-    'pathJoin',
-    'joinPath',
-    'sitemapCrawler',
-    'sitemapCrawlerAsync',
-    'SiteMapCrawler',
-    'jsonStringifyWithCircularRefs',
-    'writefile',
-    'readfile',
-    'normalizePath',
-    'normalizePathUnix'
-  ];
+  const props = shared.properties;
 
   for (let i = 0; i < props.length; i++) {
     const prop = props[i];
