@@ -269,6 +269,8 @@ function deepMerge<T = any, S = any>(
   return deepClone(source) as T & S;
 }
 
+export const deepmerge = deepMerge; // For ESM compatibility
+
 // For ESM compatibility
 export default deepMerge;
 // For CommonJS compatibility
@@ -276,4 +278,5 @@ if (typeof module !== 'undefined' && typeof module.exports === 'object' && modul
   module.exports = deepMerge;
   // For ESM compatibility
   module.exports.default = deepMerge;
+  module.exports.deepmerge = deepMerge;
 }
