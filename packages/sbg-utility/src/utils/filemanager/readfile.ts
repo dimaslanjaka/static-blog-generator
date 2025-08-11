@@ -39,5 +39,5 @@ function readfile(filePath: string, useAsync: boolean = false): string | null | 
   }
 }
 
-export { readfile };
+export { readfile, readfile as readFile };
 export default readfile;

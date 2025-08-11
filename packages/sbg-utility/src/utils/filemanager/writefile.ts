@@ -81,3 +81,5 @@ export function writefile(file: string, content: strORobj, opt: writefileOpt = {
   if (opt.async) return Promise.resolve(result);
   return result;
 }
+
+export { writefile as writeFile };
