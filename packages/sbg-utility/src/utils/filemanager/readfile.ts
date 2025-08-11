@@ -40,3 +40,4 @@ function readfile(filePath: string, useAsync: boolean = false): string | null | 
 }
 
 export { readfile };
+export default readfile;
