@@ -4,6 +4,8 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import path from 'upath';
 import { fileURLToPath } from 'url';
+import getChecksum from './hash/getChecksum';
+export { getChecksum };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -230,37 +232,4 @@ export async function url_to_hash(
     });
   });
   return file_to_hash(algorithm, outputLocationPath, encoding);
-}
-
-/**
- * Calculate a checksum for the given target paths.
- * This checksum is used to determine if the source files have changed
- * and whether a build is necessary.
- *
- * @param targetPaths - An array of file or directory paths to include in the checksum.
- * @returns A SHA-256 hash of the contents of the specified files and directories.
- */
-export function getChecksum(...targetPaths: string[]): string {
-  let files: string[] = [];
-  for (const pattern of targetPaths) {
-    if (fs.existsSync(pattern)) {
-      const stat = fs.statSync(pattern);
-      if (stat.isFile()) {
-        files.push(path.resolve(pattern));
-      } else if (stat.isDirectory()) {
-        const dirFiles = glob.sync('**/*', { cwd: pattern, nodir: true, absolute: true, dot: true });
-        files.push(...dirFiles);
-      }
-    } else {
-      const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
-      files.push(...matches);
-    }
-  }
-  files = Array.from(new Set(files)).sort();
-  let checksumData = '';
-  for (const file of files) {
-    checksumData += file;
-    checksumData += fs.readFileSync(file).toString('utf8');
-  }
-  return CryptoJS.SHA256(CryptoJS.enc.Utf8.parse(checksumData)).toString(CryptoJS.enc.Hex);
 }
