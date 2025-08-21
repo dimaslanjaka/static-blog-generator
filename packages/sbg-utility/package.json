@@ -1,6 +1,6 @@
 {
   "name": "sbg-utility",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "static-blog-generator utility",
   "keywords": [
     "static-blog-generator",
@@ -193,6 +193,32 @@
     "./dist/utils/debug.mjs": {
       "types": "./dist/utils/debug.d.mts",
       "import": "./dist/utils/debug.mjs"
+    },
+    "./dist/utils/decode-url": {
+      "types": "./dist/utils/decode-url.d.ts",
+      "require": "./dist/utils/decode-url.cjs",
+      "import": "./dist/utils/decode-url.mjs"
+    },
+    "./dist/utils/decode-url.cjs": {
+      "types": "./dist/utils/decode-url.d.cts",
+      "require": "./dist/utils/decode-url.cjs"
+    },
+    "./dist/utils/decode-url.mjs": {
+      "types": "./dist/utils/decode-url.d.mts",
+      "import": "./dist/utils/decode-url.mjs"
+    },
+    "./dist/utils/deepMerge": {
+      "types": "./dist/utils/deepMerge.d.ts",
+      "require": "./dist/utils/deepMerge.cjs",
+      "import": "./dist/utils/deepMerge.mjs"
+    },
+    "./dist/utils/deepMerge.cjs": {
+      "types": "./dist/utils/deepMerge.d.cts",
+      "require": "./dist/utils/deepMerge.cjs"
+    },
+    "./dist/utils/deepMerge.mjs": {
+      "types": "./dist/utils/deepMerge.d.mts",
+      "import": "./dist/utils/deepMerge.mjs"
     },
     "./dist/utils/encode-url": {
       "types": "./dist/utils/encode-url.d.ts",
@@ -401,6 +427,19 @@
     "./dist/utils/hash.mjs": {
       "types": "./dist/utils/hash.d.mts",
       "import": "./dist/utils/hash.mjs"
+    },
+    "./dist/utils/hash/getChecksum": {
+      "types": "./dist/utils/hash/getChecksum.d.ts",
+      "require": "./dist/utils/hash/getChecksum.cjs",
+      "import": "./dist/utils/hash/getChecksum.mjs"
+    },
+    "./dist/utils/hash/getChecksum.cjs": {
+      "types": "./dist/utils/hash/getChecksum.d.cts",
+      "require": "./dist/utils/hash/getChecksum.cjs"
+    },
+    "./dist/utils/hash/getChecksum.mjs": {
+      "types": "./dist/utils/hash/getChecksum.d.mts",
+      "import": "./dist/utils/hash/getChecksum.mjs"
     },
     "./dist/utils/index": {
       "types": "./dist/utils/index.d.ts",
