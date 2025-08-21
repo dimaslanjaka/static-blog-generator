@@ -177,5 +177,7 @@
   "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": false,
   "editor.formatOnType": false,
-  "git.autoStash": true
+  "git.autoStash": true,
+  "eslint.probe": ["javascript", "typescript", "json", "jsonc", "markdown"],
+  "eslint.validate": ["javascript", "typescript", "json", "jsonc", "markdown"]
 }
