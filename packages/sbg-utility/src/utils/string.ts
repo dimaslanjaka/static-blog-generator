@@ -116,3 +116,57 @@ export function isValidHttpUrl(string: string | URL) {
 
   return url.protocol === 'http:' || url.protocol === 'https:';
 }
+
+export interface CleanStringOptions {
+  /** Collapse multiple whitespaces into one. Default: true */
+  collapseWhitespace?: boolean;
+  /** Keep zero-width characters (if false, removes them). Default: false */
+  keepZeroWidth?: boolean;
+  /** Convert string to lowercase. Default: false */
+  toLowerCase?: boolean;
+  /** Remove zero-width characters (\u200B-\u200D, \uFEFF). Default: false */
+  removeZeroWidth?: boolean;
+  /** Keep only letters, numbers, and spaces. Default: false */
+  keepAlphaNumSpace?: boolean;
+}
+
+/**
+ * Cleans a string with configurable options.
+ *
+ * @param str - The input string to clean.
+ * @param options - Cleaning options.
+ * @returns The cleaned string.
+ *
+ * @remarks
+ * - If `removeZeroWidth` is true, removes zero-width characters (\u200B-\u200D, \uFEFF).
+ * - If `keepAlphaNumSpace` is true, keeps only letters, numbers, and spaces.
+ * - If `collapseWhitespace` is true, collapses multiple whitespaces into one.
+ * - If `toLowerCase` is true, converts string to lowercase.
+ * - If `keepZeroWidth` is false, removes zero-width characters.
+ */
+export function cleanString(str: string, options: CleanStringOptions = {}): string {
+  const defaultOptions: Required<CleanStringOptions> = {
+    collapseWhitespace: true,
+    keepZeroWidth: false,
+    toLowerCase: false,
+    removeZeroWidth: false,
+    keepAlphaNumSpace: false
+  };
+  options = { ...defaultOptions, ...options };
+  if (options.removeZeroWidth) {
+    str = str.replace(/[\u200B-\u200D\uFEFF]/g, '');
+  }
+  if (options.keepAlphaNumSpace) {
+    str = str.replace(/[^\p{L}\p{N}\s]/gu, '');
+  }
+  if (options.collapseWhitespace) {
+    str = str.replace(/\s+/g, ' ');
+  }
+  if (options.toLowerCase) {
+    str = str.toLowerCase();
+  }
+  if (!options.keepZeroWidth) {
+    str = str.replace(/[\u200B-\u200D\uFEFF]/g, '');
+  }
+  return str.trim();
+}
