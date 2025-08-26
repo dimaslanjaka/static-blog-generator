@@ -129,6 +129,32 @@
       "types": "./dist/utils/JSON.d.mts",
       "import": "./dist/utils/JSON.mjs"
     },
+    "./dist/utils/LocalStorageSharedPreferences": {
+      "types": "./dist/utils/LocalStorageSharedPreferences.d.ts",
+      "require": "./dist/utils/LocalStorageSharedPreferences.cjs",
+      "import": "./dist/utils/LocalStorageSharedPreferences.mjs"
+    },
+    "./dist/utils/LocalStorageSharedPreferences.cjs": {
+      "types": "./dist/utils/LocalStorageSharedPreferences.d.cts",
+      "require": "./dist/utils/LocalStorageSharedPreferences.cjs"
+    },
+    "./dist/utils/LocalStorageSharedPreferences.mjs": {
+      "types": "./dist/utils/LocalStorageSharedPreferences.d.mts",
+      "import": "./dist/utils/LocalStorageSharedPreferences.mjs"
+    },
+    "./dist/utils/MemorySharedPreferences": {
+      "types": "./dist/utils/MemorySharedPreferences.d.ts",
+      "require": "./dist/utils/MemorySharedPreferences.cjs",
+      "import": "./dist/utils/MemorySharedPreferences.mjs"
+    },
+    "./dist/utils/MemorySharedPreferences.cjs": {
+      "types": "./dist/utils/MemorySharedPreferences.d.cts",
+      "require": "./dist/utils/MemorySharedPreferences.cjs"
+    },
+    "./dist/utils/MemorySharedPreferences.mjs": {
+      "types": "./dist/utils/MemorySharedPreferences.d.mts",
+      "import": "./dist/utils/MemorySharedPreferences.mjs"
+    },
     "./dist/utils/_punycode": {
       "types": "./dist/utils/_punycode.d.ts",
       "require": "./dist/utils/_punycode.cjs",
