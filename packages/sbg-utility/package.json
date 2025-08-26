@@ -693,7 +693,7 @@
     "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest --runInBand --detectOpenHandles --forceExit",
     "test:coverage": "npm test -- --coverage",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp --series populate-config build",
+    "build": "node index-builder.mjs && gulp --series populate-config build",
     "rollup": "node --max-old-space-size=4096 ./node_modules/rollup/dist/bin/rollup -c -m",
     "clean": "rimraf dist",
     "pack": "node packer.cjs --yarn"
