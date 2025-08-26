@@ -67,7 +67,7 @@ describe('JSON circular structure', () => {
       const obj: Record<string, any> = { name: 'circular', circular: createTestObj() };
       obj.self = obj;
       const str = stringify(obj);
-      const parsed = parse(str);
+      const parsed = parse(str) as typeof obj;
       expect(parsed.name).toBe('circular');
       expect(parsed.self).toBe(parsed);
     });
