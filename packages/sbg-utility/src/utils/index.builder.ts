@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { glob } from 'glob';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { normalizePathUnix } from './filemanager';
+import { normalizePathUnix } from './filemanager/index.js';
 
 // index.ts exports builder
 // this only for development and excluded from build config
