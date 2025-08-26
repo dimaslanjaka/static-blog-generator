@@ -155,6 +155,19 @@
       "types": "./dist/utils/MemorySharedPreferences.d.mts",
       "import": "./dist/utils/MemorySharedPreferences.mjs"
     },
+    "./dist/utils/SharedPreferences": {
+      "types": "./dist/utils/SharedPreferences.d.ts",
+      "require": "./dist/utils/SharedPreferences.cjs",
+      "import": "./dist/utils/SharedPreferences.mjs"
+    },
+    "./dist/utils/SharedPreferences.cjs": {
+      "types": "./dist/utils/SharedPreferences.d.cts",
+      "require": "./dist/utils/SharedPreferences.cjs"
+    },
+    "./dist/utils/SharedPreferences.mjs": {
+      "types": "./dist/utils/SharedPreferences.d.mts",
+      "import": "./dist/utils/SharedPreferences.mjs"
+    },
     "./dist/utils/_punycode": {
       "types": "./dist/utils/_punycode.d.ts",
       "require": "./dist/utils/_punycode.cjs",
