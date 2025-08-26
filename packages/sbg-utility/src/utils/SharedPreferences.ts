@@ -1,10 +1,10 @@
 import BasePreferences from './BasePreferences.js';
-import { LocalStorageSharedPreferences } from './LocalStorageSharedPreferences.js';
+import LocalStorageSharedPreferences from './LocalStorageSharedPreferences.js';
 import MemorySharedPreferences from './MemorySharedPreferences.js';
 
 export type SharedPreferencesOptions = { namespace: string; type: 'localStorage' | 'memory' };
 
-export default class SharedPreferences implements BasePreferences {
+export class SharedPreferences implements BasePreferences {
   store!: BasePreferences;
   constructor(options?: Partial<SharedPreferencesOptions>) {
     const defaults: SharedPreferencesOptions = { namespace: 'default', type: 'localStorage' };
@@ -50,3 +50,5 @@ export default class SharedPreferences implements BasePreferences {
     this.store.clear();
   }
 }
+
+export default SharedPreferences;

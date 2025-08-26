@@ -115,3 +115,5 @@ export class LocalStorageSharedPreferences implements BasePreferences {
     }
   }
 }
+
+export default LocalStorageSharedPreferences;
