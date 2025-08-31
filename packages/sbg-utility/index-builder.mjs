@@ -12,5 +12,9 @@ const commands = files.map((file) => {
 });
 for (const command of commands) {
   console.log(`Executing: ${command}`);
-  execSync(command, { stdio: 'inherit' });
+  try {
+    execSync(command, { stdio: 'inherit' });
+  } catch (error) {
+    console.error(error.message);
+  }
 }
