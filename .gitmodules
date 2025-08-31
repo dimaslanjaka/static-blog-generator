@@ -1,4 +1,0 @@
-[submodule "packages/sbg-utility/packages/unicode-symbols"]
-	path = packages/sbg-utility/packages/unicode-symbols
-	url = https://github.com/bevry/unicode-symbols
-	branch = main

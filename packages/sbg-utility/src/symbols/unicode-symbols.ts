@@ -1,8 +1,10 @@
 import Axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
-import * as unicodeSymbols from '../../packages/unicode-symbols/source/index.js';
+import * as unicodeSymbols from 'unicode-symbols';
 import { capitalize } from '../utils/string.js';
 import { greekLetters } from './greek-letters.js';
+
+// import * as unicodeSymbols from '../../packages/unicode-symbols/source/index.js';
 
 export interface UnicodeSymbol {
   codePoint: string;
