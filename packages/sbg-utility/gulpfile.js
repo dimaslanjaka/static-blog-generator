@@ -110,16 +110,11 @@ function generateExportsTask() {
   });
   return Promise.resolve();
 }
-gulp.task('generate-exports', gulp.series(generateExportsTask));
-gulp.task('build', gulp.series('tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports'));
-
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
 }
 
 gulp.task('clean', gulp.series(clean));
-
-gulp.task('default', gulp.series('build'));
 
 gulp.task('populate-config', async function () {
   const configYmlPath = path.join(__dirname, 'test', '_config.yml');
@@ -136,3 +131,47 @@ gulp.task('populate-config', async function () {
   fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
   console.log('Created _config.json at', configJsonPath);
 });
+
+// index-builder task: runs all src/**/*.builder.{ts,cjs,mjs} files as in index-builder.mjs
+gulp.task('index-builder', async function () {
+  const files = glob.sync('src/**/*.builder.{ts,cjs,mjs}', { nodir: true });
+  for (const file of files) {
+    const ext = path.extname(file);
+    let command, args;
+    if (ext === '.ts') {
+      command = 'node';
+      args = [
+        '--no-warnings',
+        '--experimental-specifier-resolution=node',
+        '--loader',
+        'ts-node/esm',
+        '-r',
+        'dotenv/config',
+        file
+      ];
+    } else {
+      command = 'node';
+      args = ['--no-warnings', '--experimental-specifier-resolution=node', '-r', 'dotenv/config', file];
+    }
+    console.log(`Executing: ${command} ${args.join(' ')}`);
+    try {
+      await new Promise((resolve, reject) => {
+        const proc = crossSpawn(command, args, { stdio: 'inherit', shell: true });
+        proc.on('close', (code) => {
+          if (code !== 0) reject(new Error(`Process exited with code ${code}`));
+          else resolve();
+        });
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+gulp.task('generate-exports', gulp.series(generateExportsTask));
+gulp.task(
+  'build',
+  gulp.series('populate-config', 'index-builder', 'tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports')
+);
+
+gulp.task('default', gulp.series('build'));
