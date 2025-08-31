@@ -2,6 +2,7 @@ import Axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
 import * as unicodeSymbols from '../../packages/unicode-symbols/source/index.js';
 import { capitalize } from '../utils/string.js';
+import { greekLetters } from './greek-letters.js';
 
 export interface UnicodeSymbol {
   codePoint: string;
@@ -52,8 +53,7 @@ export async function fetchUnicodeData() {
 /** Alias map for alternate symbol names */
 const aliasMap: Record<string, string> = {
   check: 'tick',
-  omega: 'ω', // Lowercase omega: \u03C9
-  OMEGA: 'Ω' // Uppercase Omega: \u03A9
+  ...greekLetters
 };
 
 /**
