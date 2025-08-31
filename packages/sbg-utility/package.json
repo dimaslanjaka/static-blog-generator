@@ -715,6 +715,7 @@
     "ansi-colors": "^4.1.3",
     "async": "^3.2.6",
     "axios": "^1.11.0",
+    "axios-cache-interceptor": "^1.8.2",
     "bluebird": "^3.7.2",
     "cross-spawn": "^7.0.6",
     "crypto-js": "^4.2.0",
@@ -732,6 +733,7 @@
     "jsdom": "^26.1.0",
     "jsonc-parser": "^3.3.1",
     "lodash": "^4.17.21",
+    "log-symbols": "^7.0.1",
     "micromatch": "^4.0.8",
     "minimatch": "^10.0.3",
     "moment": "^2.30.1",
@@ -854,5 +856,8 @@
     "*.{json,yml,yaml}": [
       "prettier --write"
     ]
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
