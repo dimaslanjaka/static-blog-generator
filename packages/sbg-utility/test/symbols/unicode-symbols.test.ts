@@ -1,36 +1,53 @@
-import { getUnicodeSymbolByName, getUnicodeSymbolByNameAsync } from '../../src/symbols/unicode-symbols.js';
+import {
+  getUnicodeSymbol,
+  getUnicodeSymbolByName,
+  getUnicodeSymbolByNameAsync
+} from '../../src/symbols/unicode-symbols.js';
+
+describe('getUnicodeSymbol', () => {
+  it('should return the correct symbol for a real Unicode name', async () => {
+    expect(await getUnicodeSymbol('GREEK CAPITAL LETTER OMEGA')).toBe('Ω');
+  });
+
+  it('should return the correct symbol for a local alias', async () => {
+    expect(await getUnicodeSymbol('check')).toBe('✔');
+  });
+
+  it('should return undefined for an unknown name', async () => {
+    expect(await getUnicodeSymbol('not-a-real-symbol')).toBeUndefined();
+  });
+
+  it('should return the correct symbol with search keyword', async () => {
+    expect(await getUnicodeSymbol('OMEGA')).toBe('Ω');
+    expect(await getUnicodeSymbol('omega')).toBe('ω');
+  });
+});
 
 describe('getUnicodeSymbolByNameAsync', () => {
   it('should return the correct symbol for a real Unicode name', async () => {
     // Example: 'GREEK CAPITAL LETTER OMEGA' should return 'Ω'
-    const symbol = await getUnicodeSymbolByNameAsync('GREEK CAPITAL LETTER OMEGA');
-    expect(symbol).toBe('Ω');
+    expect(await getUnicodeSymbolByNameAsync('GREEK CAPITAL LETTER OMEGA')).toBe('Ω');
   });
 
   it('should return the correct symbol for a local alias', async () => {
     // Should fallback to local alias if not found in UnicodeData
-    const symbol = await getUnicodeSymbolByNameAsync('check');
-    expect(symbol).toBe('✔');
+    expect(await getUnicodeSymbolByNameAsync('check')).toBe('✔');
   });
 
   it('should return undefined for an unknown name', async () => {
-    const symbol = await getUnicodeSymbolByNameAsync('not-a-real-symbol');
-    expect(symbol).toBeUndefined();
+    expect(await getUnicodeSymbolByNameAsync('not-a-real-symbol')).toBeUndefined();
   });
 });
 
-describe('getUnicodeSymbol', () => {
+describe('getUnicodeSymbolByName', () => {
   it('should return the correct symbol for a known name', () => {
     // Use 'tick' which is defined in the unicode-symbols package
-    const symbol = getUnicodeSymbolByName('tick');
-    expect(symbol).toBe('✔');
+    expect(getUnicodeSymbolByName('tick')).toBe('✔');
     // Also test the alias 'check'
-    const checkSymbol = getUnicodeSymbolByName('check');
-    expect(checkSymbol).toBe('✔');
+    expect(getUnicodeSymbolByName('check')).toBe('✔');
   });
 
   it('should return undefined for an unknown name', () => {
-    const symbol = getUnicodeSymbolByName('not-a-real-symbol');
-    expect(symbol).toBeUndefined();
+    expect(getUnicodeSymbolByName('not-a-real-symbol')).toBeUndefined();
   });
 });

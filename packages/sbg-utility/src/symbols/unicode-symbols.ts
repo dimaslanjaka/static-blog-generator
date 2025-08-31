@@ -1,6 +1,14 @@
 import Axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
 import * as unicodeSymbols from '../../packages/unicode-symbols/source/index.js';
+import { capitalize } from '../utils/string.js';
+
+export interface UnicodeSymbol {
+  codePoint: string;
+  char: string;
+  category: string;
+  name: string;
+}
 
 export async function fetchUnicodeData() {
   const instance = Axios.create();
@@ -13,7 +21,7 @@ export async function fetchUnicodeData() {
     const response = await axios.get(url);
     const data = response.data as string;
 
-    const unicodeMap = {};
+    const unicodeMap = {} as Record<string, UnicodeSymbol>;
 
     data.split('\n').forEach((line) => {
       if (!line || line.startsWith('#')) return; // skip empty or comments
@@ -45,7 +53,7 @@ export async function fetchUnicodeData() {
 const aliasMap: Record<string, string> = {
   check: 'tick',
   omega: 'ω', // Lowercase omega: \u03C9
-  Omega: 'Ω' // Uppercase Omega: \u03A9
+  OMEGA: 'Ω' // Uppercase Omega: \u03A9
 };
 
 /**
@@ -99,4 +107,35 @@ export async function getUnicodeSymbolByNameAsync(name: string): Promise<string 
   result = entry ? entry.char : undefined;
   if (!result) return getUnicodeSymbolByName(name);
   return result;
+}
+
+export async function getUnicodeSymbol(name: string): Promise<string | undefined> {
+  let symbol =
+    getUnicodeSymbolByName(name) ||
+    getUnicodeSymbolByName(capitalize(name)) ||
+    getUnicodeSymbolByName(name.toUpperCase()) ||
+    getUnicodeSymbolByName(name.toLowerCase());
+
+  if (!symbol) {
+    symbol = await getUnicodeSymbolByNameAsync(name);
+    if (!symbol) {
+      // Try search by keyword with priority for standard Omega
+      const data = await fetchUnicodeData();
+      if (data) {
+        const upperName = name.toUpperCase();
+        if (upperName === 'OMEGA' && data['GREEK CAPITAL LETTER OMEGA']) {
+          return data['GREEK CAPITAL LETTER OMEGA'].char;
+        }
+        if (name === 'omega' && data['GREEK SMALL LETTER OMEGA']) {
+          return data['GREEK SMALL LETTER OMEGA'].char;
+        }
+        const entries = Object.entries(data);
+        const regex = new RegExp(name, 'i');
+        const found = entries.find(([key, value]) => regex.test(key) || regex.test(value.name));
+        symbol = found ? found[1].char : undefined;
+      }
+    }
+  }
+
+  return symbol;
 }
