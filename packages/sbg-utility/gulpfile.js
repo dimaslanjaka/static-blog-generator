@@ -88,14 +88,10 @@ function generateExportsTask() {
     pkgPath: path.join(process.cwd(), 'package.json'),
     exportValues: {
       '.': {
-        require: {
-          default: './dist/index.cjs',
-          types: './dist/index.d.cts'
-        },
-        import: {
-          default: './dist/index.mjs',
-          types: './dist/index.d.mts'
-        }
+        require: './dist/index.cjs',
+        import: './dist/index.mjs',
+        types: './dist/index.d.mts'
+        // types: './dist/index.d.cts'
       },
       './package.json': './package.json'
     },
