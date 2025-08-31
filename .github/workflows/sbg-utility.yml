@@ -43,6 +43,7 @@ jobs:
           repository: dimaslanjaka/static-blog-generator
           ref: sbg-utility
           token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: true
 
       - name: ⚙️ Initialize Environment Variables
         id: set-env
