@@ -1,10 +1,32 @@
 /**
- * pick random items from array
- * @param items
- * @returns
+ * pick random item from array, optional predicate to filter candidates
+ * @param items array to pick from
+ * @param predicate optional function to filter items; should return true for allowed items
+ * @returns a random item that satisfies predicate or undefined if none
  */
-export function array_random<T extends any[]>(items: T): T[number] {
-  return items[Math.floor(Math.random() * items.length)];
+/**
+ * pick random item from array, optional predicate to filter candidates
+ * @param items array to pick from
+ * @param predicate optional function to filter items; should return true for allowed items
+ * @returns a random item that satisfies predicate or undefined if none (only when predicate is provided)
+ */
+export function array_random<T extends any[]>(items: T): T[number];
+export function array_random<T extends any[]>(items: T, predicate: (item: T[number]) => boolean): T[number] | undefined;
+export function array_random<T extends any[]>(
+  items: T,
+  predicate?: (item: T[number]) => boolean
+): T[number] | undefined {
+  if (!Array.isArray(items)) throw new Error('array param must be instance of ARRAY');
+
+  // no predicate: must return a value (non-undefined) -> throw on empty array
+  if (typeof predicate !== 'function') {
+    if (items.length === 0) throw new Error('items must be a non-empty array when no predicate is provided');
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
+  const candidates = items.filter((it) => predicate(it));
+  if (candidates.length === 0) return undefined as any;
+  return candidates[Math.floor(Math.random() * candidates.length)];
 }
 
 /**

@@ -55,6 +55,19 @@ describe.each([
         const result = array_random(arr);
         expect(arr.includes(result)).toBe(true);
       });
+
+      it('returns a random item that matches the predicate', () => {
+        const arr = [1, 2, 3, 4, 5];
+        const result = array_random(arr, (n) => (n as number) % 2 === 0);
+        // predicate matches [2,4]
+        expect([2, 4]).toContain(result as number);
+      });
+
+      it('returns undefined when predicate matches no items', () => {
+        const arr = [1, 3, 5];
+        const result = array_random(arr, (n) => (n as number) % 2 === 0);
+        expect(result).toBeUndefined();
+      });
     });
 
     describe('array_unique', () => {
