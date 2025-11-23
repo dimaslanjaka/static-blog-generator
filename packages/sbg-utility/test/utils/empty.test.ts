@@ -1,5 +1,5 @@
 import { describe, expect } from '@jest/globals';
-import isEmpty from '../../src/utils/empty';
+import isEmpty, { isNotEmpty } from '../../src/utils/empty';
 
 describe('isEmpty', () => {
   describe('null and undefined', () => {
@@ -77,6 +77,102 @@ describe('isEmpty', () => {
 
     it('returns false for boolean true', () => {
       expect(isEmpty(true)).toBe(false);
+    });
+  });
+
+  describe('allowWhitespace option', () => {
+    it('returns false for whitespace string when allowWhitespace is false', () => {
+      expect(isEmpty('   ', { allowWhitespace: false })).toBe(false);
+    });
+
+    it('returns true for whitespace string when allowWhitespace is true', () => {
+      expect(isEmpty('   ', { allowWhitespace: true })).toBe(true);
+    });
+
+    it('returns true for empty string when allowWhitespace is true', () => {
+      expect(isEmpty('', { allowWhitespace: true })).toBe(true);
+    });
+
+    it('returns false for non-empty string when allowWhitespace is true', () => {
+      expect(isEmpty('hello', { allowWhitespace: true })).toBe(false);
+    });
+
+    it('returns true for whitespace with tabs and newlines when allowWhitespace is true', () => {
+      expect(isEmpty('  \t\n  ', { allowWhitespace: true })).toBe(true);
+    });
+  });
+});
+
+describe('isNotEmpty', () => {
+  describe('null and undefined', () => {
+    it('returns false for null', () => {
+      expect(isNotEmpty(null)).toBe(false);
+    });
+
+    it('returns false for undefined', () => {
+      expect(isNotEmpty(undefined)).toBe(false);
+    });
+  });
+
+  describe('strings', () => {
+    it('returns false for empty string', () => {
+      expect(isNotEmpty('')).toBe(false);
+    });
+
+    it('returns true for non-empty string', () => {
+      expect(isNotEmpty('hello')).toBe(true);
+    });
+
+    it('returns true for string with whitespace', () => {
+      expect(isNotEmpty('   ')).toBe(true);
+    });
+  });
+
+  describe('arrays', () => {
+    it('returns false for empty array', () => {
+      expect(isNotEmpty([])).toBe(false);
+    });
+
+    it('returns true for non-empty array', () => {
+      expect(isNotEmpty([1, 2, 3])).toBe(true);
+    });
+  });
+
+  describe('objects', () => {
+    it('returns false for empty object', () => {
+      expect(isNotEmpty({})).toBe(false);
+    });
+
+    it('returns true for non-empty object', () => {
+      expect(isNotEmpty({ a: 1 })).toBe(true);
+    });
+  });
+
+  describe('primitives', () => {
+    it('returns true for number 0', () => {
+      expect(isNotEmpty(0)).toBe(true);
+    });
+
+    it('returns true for boolean false', () => {
+      expect(isNotEmpty(false)).toBe(true);
+    });
+  });
+
+  describe('allowWhitespace option', () => {
+    it('returns true for whitespace string when allowWhitespace is false', () => {
+      expect(isNotEmpty('   ', { allowWhitespace: false })).toBe(true);
+    });
+
+    it('returns false for whitespace string when allowWhitespace is true', () => {
+      expect(isNotEmpty('   ', { allowWhitespace: true })).toBe(false);
+    });
+
+    it('returns false for empty string when allowWhitespace is true', () => {
+      expect(isNotEmpty('', { allowWhitespace: true })).toBe(false);
+    });
+
+    it('returns true for non-empty string when allowWhitespace is true', () => {
+      expect(isNotEmpty('hello', { allowWhitespace: true })).toBe(true);
     });
   });
 });
