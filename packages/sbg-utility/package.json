@@ -254,6 +254,19 @@
       "types": "./dist/utils/deepMerge.d.mts",
       "import": "./dist/utils/deepMerge.mjs"
     },
+    "./dist/utils/empty": {
+      "types": "./dist/utils/empty.d.ts",
+      "require": "./dist/utils/empty.cjs",
+      "import": "./dist/utils/empty.mjs"
+    },
+    "./dist/utils/empty.cjs": {
+      "types": "./dist/utils/empty.d.cts",
+      "require": "./dist/utils/empty.cjs"
+    },
+    "./dist/utils/empty.mjs": {
+      "types": "./dist/utils/empty.d.mts",
+      "import": "./dist/utils/empty.mjs"
+    },
     "./dist/utils/encode-url": {
       "types": "./dist/utils/encode-url.d.ts",
       "require": "./dist/utils/encode-url.cjs",
