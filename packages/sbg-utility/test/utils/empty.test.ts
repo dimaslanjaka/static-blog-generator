@@ -44,6 +44,26 @@ describe('isEmpty', () => {
     });
   });
 
+  describe('sets', () => {
+    it('returns true for empty set', () => {
+      expect(isEmpty(new Set())).toBe(true);
+    });
+
+    it('returns false for non-empty set', () => {
+      expect(isEmpty(new Set([1]))).toBe(false);
+    });
+  });
+
+  describe('maps', () => {
+    it('returns true for empty map', () => {
+      expect(isEmpty(new Map())).toBe(true);
+    });
+
+    it('returns false for non-empty map', () => {
+      expect(isEmpty(new Map([['a', 1]]))).toBe(false);
+    });
+  });
+
   describe('objects', () => {
     it('returns true for empty object', () => {
       expect(isEmpty({})).toBe(true);
@@ -135,6 +155,26 @@ describe('isNotEmpty', () => {
 
     it('returns true for non-empty array', () => {
       expect(isNotEmpty([1, 2, 3])).toBe(true);
+    });
+  });
+
+  describe('sets', () => {
+    it('returns false for empty set', () => {
+      expect(isNotEmpty(new Set())).toBe(false);
+    });
+
+    it('returns true for non-empty set', () => {
+      expect(isNotEmpty(new Set([1]))).toBe(true);
+    });
+  });
+
+  describe('maps', () => {
+    it('returns false for empty map', () => {
+      expect(isNotEmpty(new Map())).toBe(false);
+    });
+
+    it('returns true for non-empty map', () => {
+      expect(isNotEmpty(new Map([['a', 1]]))).toBe(true);
     });
   });
 
