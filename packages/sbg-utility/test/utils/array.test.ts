@@ -56,11 +56,40 @@ describe.each([
         expect(arr.includes(result)).toBe(true);
       });
 
+      it('picks each item at least once when ensureAllPicked is enabled', () => {
+        const arr = [1, 2, 3, 4, 5];
+        const picked = new Set<number>();
+
+        for (let i = 0; i < arr.length; i++) {
+          picked.add(array_random(arr, true) as number);
+        }
+
+        expect(picked.size).toBe(arr.length);
+
+        const afterExhaust = array_random(arr, true);
+        expect(arr.includes(afterExhaust as number)).toBe(true);
+      });
+
       it('returns a random item that matches the predicate', () => {
         const arr = [1, 2, 3, 4, 5];
         const result = array_random(arr, (n) => (n as number) % 2 === 0);
         // predicate matches [2,4]
         expect([2, 4]).toContain(result as number);
+      });
+
+      it('picks each predicate candidate at least once when ensureAllPicked is enabled', () => {
+        const arr = [1, 2, 3, 4, 5, 6];
+        const predicate = (n: number) => n % 2 === 0;
+        const picked = new Set<number>();
+
+        picked.add(array_random(arr, predicate, true) as number);
+        picked.add(array_random(arr, predicate, true) as number);
+        picked.add(array_random(arr, predicate, true) as number);
+
+        expect(picked).toEqual(new Set([2, 4, 6]));
+
+        const afterExhaust = array_random(arr, predicate, true);
+        expect([2, 4, 6]).toContain(afterExhaust as number);
       });
 
       it('returns undefined when predicate matches no items', () => {

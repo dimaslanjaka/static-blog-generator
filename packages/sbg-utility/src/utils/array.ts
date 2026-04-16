@@ -2,32 +2,58 @@
  * pick random item from array, optional predicate to filter candidates
  * @param items array to pick from
  * @param predicate optional function to filter items; should return true for allowed items
- * @returns a random item that satisfies predicate or undefined if none
- */
-/**
- * pick random item from array, optional predicate to filter candidates
- * @param items array to pick from
- * @param predicate optional function to filter items; should return true for allowed items
+ * @param ensureAllPicked when true, picks unpicked candidates first; after all are picked at least once, falls back to normal random behavior
  * @returns a random item that satisfies predicate or undefined if none (only when predicate is provided)
  */
 export function array_random<T extends any[]>(items: T): T[number];
+export function array_random<T extends any[]>(items: T, ensureAllPicked: boolean): T[number];
 export function array_random<T extends any[]>(items: T, predicate: (item: T[number]) => boolean): T[number] | undefined;
 export function array_random<T extends any[]>(
   items: T,
-  predicate?: (item: T[number]) => boolean
+  predicate: (item: T[number]) => boolean,
+  ensureAllPicked: boolean
+): T[number] | undefined;
+export function array_random<T extends any[]>(
+  items: T,
+  predicateOrEnsure?: ((item: T[number]) => boolean) | boolean,
+  ensureAllPicked = false
 ): T[number] | undefined {
   if (!Array.isArray(items)) throw new Error('array param must be instance of ARRAY');
 
-  // no predicate: must return a value (non-undefined) -> throw on empty array
+  const predicate = typeof predicateOrEnsure === 'function' ? predicateOrEnsure : undefined;
+  const shouldEnsureAllPicked = typeof predicateOrEnsure === 'boolean' ? predicateOrEnsure : ensureAllPicked;
+
+  let candidateIndexes: number[];
   if (typeof predicate !== 'function') {
     if (items.length === 0) throw new Error('items must be a non-empty array when no predicate is provided');
-    return items[Math.floor(Math.random() * items.length)];
+    candidateIndexes = items.map((_, index) => index);
+  } else {
+    candidateIndexes = [];
+    for (let index = 0; index < items.length; index++) {
+      if (predicate(items[index])) candidateIndexes.push(index);
+    }
+    if (candidateIndexes.length === 0) return undefined as any;
   }
 
-  const candidates = items.filter((it) => predicate(it));
-  if (candidates.length === 0) return undefined as any;
-  return candidates[Math.floor(Math.random() * candidates.length)];
+  if (shouldEnsureAllPicked) {
+    let pickedIndexes = __array_random_picked_indexes.get(items);
+    if (!pickedIndexes) {
+      pickedIndexes = new Set<number>();
+      __array_random_picked_indexes.set(items, pickedIndexes);
+    }
+
+    const unpickedCandidateIndexes = candidateIndexes.filter((index) => !pickedIndexes.has(index));
+    if (unpickedCandidateIndexes.length > 0) {
+      const index = unpickedCandidateIndexes[Math.floor(Math.random() * unpickedCandidateIndexes.length)];
+      pickedIndexes.add(index);
+      return items[index];
+    }
+  }
+
+  return items[candidateIndexes[Math.floor(Math.random() * candidateIndexes.length)]];
 }
+
+const __array_random_picked_indexes = new WeakMap<any[], Set<number>>();
 
 /**
  * unique array
