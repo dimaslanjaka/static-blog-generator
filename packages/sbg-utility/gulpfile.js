@@ -83,6 +83,14 @@ gulp.task(
 );
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
 
+gulp.task('build-browser', async function () {
+  await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-browser.js')], {
+    cwd: __dirname,
+    shell: true,
+    stdio: 'inherit'
+  });
+});
+
 function generateExportsTask() {
   generateExports({
     pkgPath: path.join(process.cwd(), 'package.json'),
