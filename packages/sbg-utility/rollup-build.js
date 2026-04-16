@@ -3,7 +3,7 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import colors from 'ansi-colors';
-import fs from 'fs/promises';
+import fsExtra from 'fs-extra';
 import * as glob from 'glob';
 import { rollup } from 'rollup';
 import stripAnsi from 'strip-ansi';
@@ -11,6 +11,8 @@ import ts from 'typescript';
 import path from 'upath';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { externalPackages, tsconfig } from './rollup.utils.js';
+
+const fs = fsExtra;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

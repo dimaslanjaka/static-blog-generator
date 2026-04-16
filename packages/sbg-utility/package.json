@@ -475,6 +475,19 @@
       "types": "./dist/utils/hash.d.mts",
       "import": "./dist/utils/hash.mjs"
     },
+    "./dist/utils/hash/file": {
+      "types": "./dist/utils/hash/file.d.ts",
+      "require": "./dist/utils/hash/file.cjs",
+      "import": "./dist/utils/hash/file.mjs"
+    },
+    "./dist/utils/hash/file.cjs": {
+      "types": "./dist/utils/hash/file.d.cts",
+      "require": "./dist/utils/hash/file.cjs"
+    },
+    "./dist/utils/hash/file.mjs": {
+      "types": "./dist/utils/hash/file.d.mts",
+      "import": "./dist/utils/hash/file.mjs"
+    },
     "./dist/utils/hash/getChecksum": {
       "types": "./dist/utils/hash/getChecksum.d.ts",
       "require": "./dist/utils/hash/getChecksum.cjs",
@@ -513,6 +526,19 @@
     "./dist/utils/index.mjs": {
       "types": "./dist/utils/index.d.mts",
       "import": "./dist/utils/index.mjs"
+    },
+    "./dist/utils/isClass": {
+      "types": "./dist/utils/isClass.d.ts",
+      "require": "./dist/utils/isClass.cjs",
+      "import": "./dist/utils/isClass.mjs"
+    },
+    "./dist/utils/isClass.cjs": {
+      "types": "./dist/utils/isClass.d.cts",
+      "require": "./dist/utils/isClass.cjs"
+    },
+    "./dist/utils/isClass.mjs": {
+      "types": "./dist/utils/isClass.d.mts",
+      "import": "./dist/utils/isClass.mjs"
     },
     "./dist/utils/jest": {
       "types": "./dist/utils/jest.d.ts",
@@ -711,14 +737,15 @@
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
     "pretest": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config jest.setup.ts",
-    "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest --runInBand --detectOpenHandles --forceExit",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand --detectOpenHandles --forceExit",
     "test:coverage": "npm test -- --coverage",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp --series populate-config build",
     "build-browser": "gulp --series populate-config build-browser",
     "rollup": "node --max-old-space-size=4096 ./node_modules/rollup/dist/bin/rollup -c -m",
     "clean": "rimraf dist tmp",
-    "pack": "node packer.cjs --yarn"
+    "pack": "node packer.cjs --yarn",
+    "serve": "node rollup-browser-test.js"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",
@@ -753,7 +780,7 @@
     "plugin-error": "^2.0.1",
     "progress": "^2.0.3",
     "request": "^2.88.2",
-    "rimraf": "^6.0.1",
+    "rimraf": "^6.1.3",
     "safelinkify": "^1.2.3",
     "slugify": "^1.6.6",
     "strip-ansi": "^7.1.0",
@@ -814,6 +841,7 @@
     "globals": "^16.5.0",
     "jest": "^30.0.5",
     "jest-config": "^30.0.5",
+    "jest-environment-jsdom": "^30.3.0",
     "jest-mock": "^30.0.5",
     "path-browserify": "^1.0.1",
     "prettier": "^3.6.2",

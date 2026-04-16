@@ -10,18 +10,6 @@ export function isdev(): boolean {
 }
 
 /**
- * Determines if the provided object is a class constructor.
- * @param obj The object to check.
- * Returns true if obj is a class constructor, false otherwise.
- */
-export function isClass(obj: unknown): boolean {
-  return (
-    typeof obj === 'function' &&
-    (/^class\s/.test(Function.prototype.toString.call(obj)) || Object.getOwnPropertyNames(obj.prototype).length > 1)
-  );
-}
-
-/**
  * Gets the path to a binary command in the local node_modules/.bin directory.
  * @param commandName The name of the command.
  * Returns the path to the command binary.

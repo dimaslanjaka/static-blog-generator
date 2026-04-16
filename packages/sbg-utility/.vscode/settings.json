@@ -62,7 +62,7 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "never"
     },
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "editor.defaultFormatter": "ms-python.black-formatter"
@@ -100,6 +100,10 @@
       "source.organizeImports": "never",
       "source.fixAll": "never"
     }
+  },
+  "[javascript]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.formatOnSave": false
   },
   "autopep8.args": ["--ignore", "E401,E402,E211,E501"],
   "intelephense.maxMemory": 1028,
@@ -174,10 +178,9 @@
   "files.readonlyInclude": {
     "**/*.sqlite*": true
   },
-  "typescript.tsdk": "./node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": false,
   "editor.formatOnType": false,
   "git.autoStash": true,
   "eslint.probe": ["javascript", "typescript", "json", "jsonc", "markdown"],
-  "eslint.validate": ["javascript", "typescript", "json", "jsonc", "markdown"]
+  "eslint.validate": ["javascript", "typescript", "json", "jsonc", "markdown"],
+  "eslint.format.enable": false
 }

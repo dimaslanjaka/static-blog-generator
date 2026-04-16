@@ -2,10 +2,6 @@ import CryptoJS from 'crypto-js';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import path from 'upath';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 /**
  * Calculate a checksum for the given target paths.
@@ -15,7 +11,7 @@ const __dirname = path.dirname(__filename);
  * @param targetPaths - An array of file or directory paths to include in the checksum.
  * @returns A SHA-256 hash of the contents of the specified files and directories.
  */
-function getChecksum(...targetPaths: string[]): string {
+export function getChecksum(...targetPaths: string[]): string {
   const files: string[] = [];
   for (const pattern of targetPaths) {
     if (fs.existsSync(pattern)) {

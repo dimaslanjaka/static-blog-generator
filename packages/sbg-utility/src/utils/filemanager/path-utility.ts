@@ -1,8 +1,8 @@
+import { promisify as pify } from 'util';
 import fs from 'fs-extra';
 import { platform } from 'os';
 import path from 'path';
 import upath from 'upath';
-import { promisify as pify } from 'util';
 import { fixDriveLetter } from './driveLetterUtils';
 
 const readdir = pify(fs.readdir);
@@ -145,12 +145,6 @@ export async function trueCasePath(
  * @param str Path segments
  * @returns Normalized path with correct case and drive letter
  */
-
-/**
- * Normalizes a path and applies true-case-path if the file exists.
- * @param str Path segments
- * @returns Normalized path with correct case and drive letter
- */
 export function normalizePath(...str: string[]): string {
   const join = path.join(...str);
   if (fs.existsSync(join)) {
@@ -230,4 +224,15 @@ function matchCaseInsensitive(fileOrDirectory: string, directoryContents: string
     if (caseInsensitiveRegex.test(file)) return file;
   }
   throw new Error(`[true-case-path]: Called with ${filePath}, but no matching file exists`);
+}
+
+/**
+ * Replace path unix-style
+ * @param source
+ * @param toReplace
+ * @param replacement
+ * @returns
+ */
+export async function replacePath(source: string, toReplace: string, replacement = ''): Promise<string> {
+  return normalizePath(source).replace(normalizePath(toReplace), replacement);
 }

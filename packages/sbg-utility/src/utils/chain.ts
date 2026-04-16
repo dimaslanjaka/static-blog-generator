@@ -1,6 +1,5 @@
 import ansiColors from 'ansi-colors';
 import { isReadableStream, isStream, isWritableStream } from 'is-stream';
-import Logger from './logger';
 
 /**
  * Chainable function runner.
@@ -61,7 +60,7 @@ export async function chain(
       // );
 
       if (isReadableStream(obj)) {
-        Logger.log('readable stream');
+        console.log('readable stream');
         return obj.once('end', async () => {
           if (instance.opt?.after) {
             await instance.opt.after();
@@ -71,7 +70,7 @@ export async function chain(
           }
         });
       } else if (isWritableStream(obj)) {
-        Logger.log('writable stream');
+        console.log('writable stream');
         return obj.once('finish', async () => {
           if (instance.opt?.after) {
             await instance.opt.after();
@@ -91,7 +90,7 @@ export async function chain(
           }
         });
       } else if (isPromise(obj)) {
-        //Logger.log('promises');
+        //console.log('promises');
         return obj.then(async () => {
           if (instance.opt?.after) {
             await instance.opt.after();
@@ -102,7 +101,7 @@ export async function chain(
         });
       } else {
         if (typeof instance.callback !== 'function') {
-          Logger.log(logname, 'cannot determine method instances');
+          console.log(logname, 'cannot determine method instances');
         }
       }
 
