@@ -24,6 +24,7 @@ export * from './generate-exports';
 export * from './hash';
 export * from './hash/file';
 export * from './hash/getChecksum';
+export * from './hash/index';
 export * from './isClass';
 export * from './jest';
 export * from './JSON';
