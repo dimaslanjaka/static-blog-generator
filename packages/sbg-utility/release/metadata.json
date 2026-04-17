@@ -37,12 +37,12 @@
   },
   "/release/sbg-utility-2.0.10.tgz": {
     "integrity": {
-      "sha1": "30f5309bda6a743bc6f65fb48917c646d4b7d9f3",
-      "sha256": "15vK9eSblDPSJ6YYeXM0f7wgRPYRgtW3z4WKJXk6Fwk=",
-      "md5": "b2ab4f45472bddb69b738d8d675c2fb6",
-      "sha512": "GJbYv/9hLocJ2Md1juIvNW1m6SB4RSjjD1twyFlaxjGaCnw4Y/+yKrHYj4rNn5gdlVjzMeqYqO0osFOT46f71Q=="
+      "sha1": "1b76615414bc2df49454cfc0fdb96d80903a37fe",
+      "sha256": "MyIonH3MJaXvyhWgbR67ssVP5mcGdXFgfVB73yZFtJE=",
+      "md5": "c23e404a8721e3a23245d3b3c44621d2",
+      "sha512": "lcbZauPMEkeRVPAnhuLmWM6Dd5sv5R63zLGzKXYkm/Tn9huMiS9/vRsiPDc9bMa8RdgbsoIVknRx0r0sL3H2UQ=="
     },
-    "size": "93.93 KB"
+    "size": "81.57 KB"
   },
   "/release/sbg-utility-2.0.2.tgz": {
     "integrity": {
@@ -118,19 +118,19 @@
   },
   "/release/sbg-utility.tgz": {
     "integrity": {
-      "sha1": "30f5309bda6a743bc6f65fb48917c646d4b7d9f3",
-      "sha256": "15vK9eSblDPSJ6YYeXM0f7wgRPYRgtW3z4WKJXk6Fwk=",
-      "md5": "b2ab4f45472bddb69b738d8d675c2fb6",
-      "sha512": "GJbYv/9hLocJ2Md1juIvNW1m6SB4RSjjD1twyFlaxjGaCnw4Y/+yKrHYj4rNn5gdlVjzMeqYqO0osFOT46f71Q=="
+      "sha1": "1b76615414bc2df49454cfc0fdb96d80903a37fe",
+      "sha256": "MyIonH3MJaXvyhWgbR67ssVP5mcGdXFgfVB73yZFtJE=",
+      "md5": "c23e404a8721e3a23245d3b3c44621d2",
+      "sha512": "lcbZauPMEkeRVPAnhuLmWM6Dd5sv5R63zLGzKXYkm/Tn9huMiS9/vRsiPDc9bMa8RdgbsoIVknRx0r0sL3H2UQ=="
     },
-    "size": "93.93 KB"
+    "size": "81.57 KB"
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "b085e7056b484ab1a5baea621baeed7512c56b96",
-      "sha256": "JndnGdhblq4GLeKeI3MVW2yt2Vm18YS5zGRWP8MGx9E=",
-      "md5": "f516e78621d18086cbdcfa5afd954a31",
-      "sha512": "ibk+48uDRAHisx5ERHBQ87PHLAkh7AjGEzmM9qeglHlkqqUCUN9qW2/0fPVn69mSff7iFa09YLuuEoPH2pwIXA=="
+      "sha1": "907a486c74c72d5e899a6df117c2956ccbffc324",
+      "sha256": "TVTjEc5CVYEKalmyqqVmRKcJMYPn57dxKRNPZ1Jd4z4=",
+      "md5": "ec40c8185b77370831f7d68451b5ab3e",
+      "sha512": "zVn2B1T5hloaowMwHb8B4zq1ngC73TNlEFR/K1NK+lz8rfNwsyuFqeDPiUvjo7a67lUI2ZR6yP/8CvkeGS9+gg=="
     },
     "size": "494.44 KB"
   }
