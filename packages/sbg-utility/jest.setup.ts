@@ -2,7 +2,7 @@ import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { getChecksum } from './src/utils/hash';
+import { getChecksum } from './src/utils/index';
 
 /**
  * __dirname workaround for ESM modules (Node.js standard)

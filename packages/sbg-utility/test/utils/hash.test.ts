@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
 import path from 'upath';
 import { fileURLToPath } from 'url';
-import * as hashDist from '../../dist/utils/hash.mjs';
-import * as hashSrc from '../../src/utils/hash';
+import * as hashDist from '../../dist/utils/index.mjs';
+import * as hashSrc from '../../src/utils/index';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
