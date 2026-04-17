@@ -3,10 +3,17 @@ import CryptoJS from 'crypto-js';
 /**
  * PHP MD5 Equivalent
  * @param data
+ * @param short If true, returns a shortened (8-char) version of the MD5 hash. If a number, returns that many characters.
  */
-export function md5(data?: string): string | undefined {
+export function md5(data?: string, short: boolean | number = false): string | undefined {
   if (!data || data.length === 0) return undefined;
-  return CryptoJS.MD5(data).toString(CryptoJS.enc.Hex);
+  const hash = CryptoJS.MD5(data).toString(CryptoJS.enc.Hex);
+  if (typeof short === 'number') {
+    return hash.substring(0, short);
+  } else if (short) {
+    return hash.substring(0, 8);
+  }
+  return hash;
 }
 
 /**
