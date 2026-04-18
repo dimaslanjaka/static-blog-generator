@@ -90,7 +90,8 @@
     "toastr": "^2.1.4",
     "upath": "^2.0.1",
     "write-file-atomic": "^5.0.1",
-    "yaml": "^2.3.4"
+    "yaml": "^2.3.4",
+    "dompurify": "^3.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",

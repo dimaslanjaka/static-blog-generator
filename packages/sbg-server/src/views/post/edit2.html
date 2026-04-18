@@ -60,7 +60,7 @@
   <main>
     <div id="editor"></div>
     <div class="markdown-body" id="preview"></div>
-    <div id="default-value">{{ post.rawbody|safe }}</div>
+    <div id="default-value">{{ post.rawbody }}</div>
     <script id="post-data" type="application/json">{{ post | json(2) }}</script>
   </main>
 
