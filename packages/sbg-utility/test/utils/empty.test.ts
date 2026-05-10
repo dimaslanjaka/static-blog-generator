@@ -1,4 +1,4 @@
-import { describe, expect } from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 import isEmpty, { isNotEmpty } from '../../src/utils/empty';
 
 describe('isEmpty', () => {
