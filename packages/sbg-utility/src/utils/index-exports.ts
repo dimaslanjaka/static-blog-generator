@@ -23,6 +23,7 @@ export * from './filemanager/writefile';
 export * from './generate-exports';
 export * from './hash';
 export * from './hash/file';
+export * from './hash/file-hashes';
 export * from './hash/getChecksum';
 export * from './hash/index';
 export * from './isClass';
