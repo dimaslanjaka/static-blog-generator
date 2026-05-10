@@ -82,4 +82,4 @@ export function writefile(file: string, content: strORobj, opt: writefileOpt = {
   return result;
 }
 
-export { writefile as writeFile };
+export { writefile as write_file, writefile as writeFile };
