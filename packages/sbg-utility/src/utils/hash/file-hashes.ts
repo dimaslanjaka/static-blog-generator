@@ -169,3 +169,5 @@ export function getFileTreeString(hashMap: HashMap): string {
 }
 
 export const getTree = getFileTreeString;
+export const getFileHashes = createFileHashes;
+export const getFolderTree = getFileTreeString;
