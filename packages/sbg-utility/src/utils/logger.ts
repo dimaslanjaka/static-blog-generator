@@ -85,8 +85,16 @@ export class Logger {
       let logfile: string;
       let templ: string;
 
-      // anonymous caller
-      if (typeof split[0].path === 'undefined' && split[1].path.includes('anonymous')) {
+      // Ensure split[0] and split[1] exist before accessing their properties
+      if (
+        split.length > 1 &&
+        split[0] &&
+        split[1] &&
+        typeof split[0].path === 'undefined' &&
+        typeof split[1].name === 'string' &&
+        typeof split[1].path === 'string' &&
+        split[1].path.includes('anonymous')
+      ) {
         const id = split[1].name;
         const filePath = split[0].name;
         const base = upath.basename(

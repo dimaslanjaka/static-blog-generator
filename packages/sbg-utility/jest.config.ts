@@ -27,8 +27,9 @@ const config: JestConfigWithTsJest = {
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/tmp/', '/test/'],
   testMatch: [
     '**/__tests__/**/*.+(ts|tsx|[cm]js)',
-    '**/?(*.)+(spec|test).+(ts|tsx|[cm]js)',
-    '**/test/*.test.ts',
+    '**/?(*.)+(spec|test).+(js|ts|tsx|[cm]js)',
+    '**/test/*.test.{js,ts,cjs,mjs}',
+    '**/test/*.spec.{js,ts,cjs,mjs}',
     '!**/.deploy_git/**'
   ],
   extensionsToTreatAsEsm: ['.ts'],

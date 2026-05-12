@@ -77,14 +77,100 @@ async function tsc() {
 gulp.task('tsc', tsc);
 gulp.task('rollup', gulp.series(buildAll));
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
-gulp.task('rollup-esm', gulp.series(compileESM));
-gulp.task('rollup-cjs', gulp.series(compileCJS));
-gulp.task('build', gulp.series('tsc', 'copy', 'rollup'));
 
+gulp.task('build-browser', async function () {
+  await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-browser.js')], {
+    cwd: __dirname,
+    shell: true,
+    stdio: 'inherit'
+  });
+});
+
+function generateExportsTask() {
+  generateExports({
+    pkgPath: path.join(process.cwd(), 'package.json'),
+    exportValues: {
+      '.': {
+        require: './dist/index.cjs',
+        import: './dist/index.mjs',
+        types: './dist/index.d.mts'
+        // types: './dist/index.d.cts'
+      },
+      './package.json': './package.json'
+    },
+    folders: [
+      { dir: `${process.cwd()}/dist/utils`, prefix: './dist/utils/' },
+      { dir: `${process.cwd()}/dist/sitemap-crawler`, prefix: './dist/sitemap-crawler/' },
+      { dir: `${process.cwd()}/dist/gulp-utils`, prefix: './dist/gulp-utils/' }
+    ].map((folder) => ({
+      dir: path.resolve(folder.dir),
+      prefix: folder.prefix
+    }))
+  });
+  return Promise.resolve();
+}
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
 }
 
 gulp.task('clean', gulp.series(clean));
+
+gulp.task('populate-config', async function () {
+  const configYmlPath = path.join(__dirname, 'test', '_config.yml');
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+
+  if (!fs.existsSync(configYmlPath)) {
+    console.error('YAML config not found at', configYmlPath);
+    return;
+  }
+
+  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
+  const configObj = YAML.parse(ymlContent);
+  fs.ensureDirSync(path.dirname(configJsonPath));
+  fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
+  console.log('Created _config.json at', configJsonPath);
+});
+
+// index-builder task: runs all src/**/*.builder.{ts,cjs,mjs} files as in index-builder.mjs
+gulp.task('index-builder', async function () {
+  const files = glob.sync('src/**/*.builder.{ts,cjs,mjs}', { nodir: true });
+  for (const file of files) {
+    const ext = path.extname(file);
+    let command, args;
+    if (ext === '.ts') {
+      command = 'node';
+      args = [
+        '--no-warnings',
+        '--experimental-specifier-resolution=node',
+        '--loader',
+        'ts-node/esm',
+        '-r',
+        'dotenv/config',
+        file
+      ];
+    } else {
+      command = 'node';
+      args = ['--no-warnings', '--experimental-specifier-resolution=node', '-r', 'dotenv/config', file];
+    }
+    console.log(`Executing: ${command} ${args.join(' ')}`);
+    try {
+      await new Promise((resolve, reject) => {
+        const proc = crossSpawn(command, args, { stdio: 'inherit', shell: true });
+        proc.on('close', (code) => {
+          if (code !== 0) reject(new Error(`Process exited with code ${code}`));
+          else resolve();
+        });
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+gulp.task('generate-exports', gulp.series(generateExportsTask));
+gulp.task(
+  'build',
+  gulp.series('populate-config', 'index-builder', 'tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports')
+);
 
 gulp.task('default', gulp.series('build'));
