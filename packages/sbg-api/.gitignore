@@ -6,3 +6,4 @@ tmp/
 /frontmatter.json
 /.frontmatter
 /packages
+/.vscode/sftp*
