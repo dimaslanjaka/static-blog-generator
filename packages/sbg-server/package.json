@@ -65,6 +65,7 @@
     "core-js": "^3.30.2",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
+    "dompurify": "^3.2.6",
     "dotenv": "^16.4.4",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
@@ -90,8 +91,7 @@
     "toastr": "^2.1.4",
     "upath": "^2.0.1",
     "write-file-atomic": "^5.0.1",
-    "yaml": "^2.3.4",
-    "dompurify": "^3.2.6"
+    "yaml": "^2.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
