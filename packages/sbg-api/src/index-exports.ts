@@ -21,5 +21,8 @@ export * from './sitemap/index';
 export * from './sitemap/pages';
 export * from './sitemap/posts';
 export * from './sitemap/yoast-sitemap';
+export * from './types/globals';
+export * from './utils/array';
 export * from './utils/gc';
+export * from './utils/gulp-utils';
 export * from './utils/path';
