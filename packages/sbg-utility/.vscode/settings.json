@@ -173,7 +173,8 @@
     "data/engine": true,
     "data/fingerprints": true,
     "data/profiles": true,
-    "data/run": true
+    "data/run": true,
+    "**/tmp/**": false
   },
   "files.readonlyInclude": {
     "**/*.sqlite*": true
