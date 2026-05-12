@@ -20,7 +20,7 @@ export default async function findBrokenImages(html: string, config = getConfig(
   const results = [] as string[];
   const dom = new JSDOM(html);
   const document = dom.window.document;
-  const images = Array.from(document.querySelectorAll('img'));
+  const images = Array.from(document.querySelectorAll('img')) as HTMLImageElement[];
   for (let i = 0; i < images.length; i++) {
     const img = images[i];
     let imgUrl: string;

@@ -1,13 +1,13 @@
 import fs from 'fs-extra';
-import gulp from 'gulp';
 import { debug, del, getConfig, writefile } from 'sbg-utility';
 import path from 'upath';
 import { inspect } from 'util';
+import { NodeCallback } from '../gulp-options';
 
 /**
  * Clean Project Databases
  */
-export async function cleanDb(callback?: gulp.TaskFunctionCallback | (() => any), files?: string[]) {
+export async function cleanDb(callback?: NodeCallback, files?: string[]) {
   const log = debug('clean');
   const config = getConfig();
   if (typeof config.source_dir !== 'string') {

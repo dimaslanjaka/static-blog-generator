@@ -1,10 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/src",
+    "outDir": "./tmp/docs",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "tsBuildInfoFile": "tmp/x.info"
+    "tsBuildInfoFile": "tmp/docs.info",
+    "strict": false,
+    "strictNullChecks": false
   },
   "include": [
     "./src/**/*"

@@ -22,7 +22,7 @@ processFile(
 processFiles(
   postPaths,
   function (file, content) {
-    console.log(file, content.length);
+    console.log(file, `content length ${content.length}`);
   },
   noop
 );

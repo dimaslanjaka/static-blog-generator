@@ -30,10 +30,11 @@ const plugins = [
   resolve({ preferBuiltins: true }), // Resolve node_modules packages
   commonjs(), // Convert CommonJS modules to ES6
   typescript({
-    tsconfig: false,
+    // Keep tsconfig parsing enabled so the plugin has a stable file graph on Windows.
+    tsconfig: './tsconfig.json',
     compilerOptions: tsconfig.compilerOptions,
     include: ['./src/**/*'],
-    exclude: tsconfig.exclude.concat('**/*.test.*', '**/*.builder.*'),
+    exclude: tsconfig.exclude.concat('**/*.test.*', '**/*.builder.*', '**/*.runner.ts', '**/*.direct.ts'),
     resolveJsonModule: true,
     allowSyntheticDefaultImports: true,
     esModuleInterop: true,

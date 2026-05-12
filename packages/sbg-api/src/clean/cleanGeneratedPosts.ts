@@ -1,6 +1,6 @@
-import gulp from 'gulp';
 import { getConfig } from 'sbg-utility';
 import path from 'upath';
+import { NodeCallback } from '../gulp-options';
 import { cleanDb } from './cleanDb';
 
 /**
@@ -8,7 +8,7 @@ import { cleanDb } from './cleanDb';
  * @param callback
  * @returns
  */
-export async function cleanGeneratedPosts(callback?: gulp.TaskFunctionCallback | (() => any)) {
+export async function cleanGeneratedPosts(callback?: NodeCallback) {
   const config = getConfig();
   return cleanDb(callback, [
     path.join(config.cwd, config.source_dir, '_posts'),

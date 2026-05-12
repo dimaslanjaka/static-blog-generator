@@ -1,24 +1,165 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "hexo server -p 4000",
-      "name": "server test",
+      "name": "Run Proxy Checker GUI",
+      "type": "debugpy",
       "request": "launch",
-      "type": "node-terminal",
-      "preLaunchTask": "${defaultBuildTask}",
-      "cwd": "${workspaceFolder}/test/fixtures"
+      "program": "${workspaceFolder}/python_app/proxyCheckerGui.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
     },
     {
-      "command": "cross-env-shell DEBUG=post,clean \"sbg clean post && sbg post copy\"",
-      "name": "post: clean copy",
+      "name": "Run Port Finder GUI",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/python_app/PortFinderGui.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "command": "python main.py",
+      "name": "app",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python main_proxy_manager.py",
+      "name": "proxy manager",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python profile_manager.py",
+      "name": "profile manager",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python proxyCheckerMultiThreading.main.py",
+      "name": "proxy checker",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python device_info.main.py",
+      "name": "device info",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python runner.main.py",
+      "name": "Browser runner",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python simple_gui.py",
+      "name": "DL-Traffic Simple gui",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python workingManager.py",
+      "name": "working.json editor",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Python Debugger: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "command": "python manage.py test django_backend.apps.proxy",
+      "name": "Django test proxy",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Debug index.js",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd",
+      "args": ["."],
+      "outputCapture": "std"
+    },
+    {
+      "command": "composer exec php-cs-fixer fix",
+      "name": "php-cs-fixer",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python manage.py runserver 0.0.0.0:8000",
+      "name": "django",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python manage.py runserver_plus 0.0.0.0:8000 --cert-file django_backend/certificates/localhost.crt --key-file django_backend/certificates/localhost.key",
+      "name": "django SSL",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "python manage.py run_huey --no-periodic --workers=20",
+      "name": "huey",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "\"venv/Scripts/watchmedo\" auto-restart --no-restart-on-command-exit --signal SIGTERM --patterns=\"*.py;*.html;*.js\" --recursive --debounce-interval=0.1 \"venv/Scripts/python\" src/pyside6/localserver/index.py",
+      "name": "PySide6 Local Server",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "cross-env-shell NODE_ENV=development electron -r ts-node/register node_browser/index.electron.js",
+      "name": "Electron",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "rm -rf build && npx rollup -c && cross-env-shell NODE_ENV=development electron -r ts-node/register main.js",
+      "name": "Electron Rollup",
       "request": "launch",
       "type": "node-terminal",
-      "preLaunchTask": "${defaultBuildTask}",
-      "cwd": "${workspaceFolder}/test/fixtures"
+      "cwd": "${workspaceFolder}/app"
+    },
+    {
+      "command": "cross-env-shell NODE_ENV=development node -r ts-node/register node_browser/express-server.js",
+      "name": "Express Server",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "phpunit tests/cloud_sqlite/",
+      "name": "phpunit cloud_sqlite",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "build-project && node dist/whatsapp.js",
+      "name": "WhatsApp",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Django with Huey",
+      "configurations": ["django SSL", "huey"]
+    },
+    {
+      "name": "Django Huey Browser",
+      "configurations": ["django SSL", "huey", "Browser runner"]
     }
   ]
 }
