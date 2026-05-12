@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import fs from 'fs-extra';
 import gulp, { TaskFunctionCallback } from 'gulp';
 import Hexo from 'hexo';
-import hutil from 'hexo-util';
+import * as hutil from 'hexo-util';
 import nunjucks from 'nunjucks';
 import { commonIgnore, envNunjucks, getConfig, gulpDom } from 'sbg-utility';
 import path from 'upath';

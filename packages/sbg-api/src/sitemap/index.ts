@@ -2,7 +2,7 @@ import Bluebird from 'bluebird';
 import fs from 'fs-extra';
 import gulp from 'gulp';
 import Hexo from 'hexo';
-import hutil from 'hexo-util';
+import * as hutil from 'hexo-util';
 import micromatch from 'micromatch';
 import nunjucks from 'nunjucks';
 import {
