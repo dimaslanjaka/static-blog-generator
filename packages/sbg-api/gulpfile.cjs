@@ -4,26 +4,22 @@ const path = require('upath');
 const fs = require('fs-extra');
 const through2 = require('through2');
 
-/** resolve cmd binary */
-const cmd = (commandName) => {
-  const cmdPath = [
-    __dirname,
-    process.cwd(),
-    (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
-  ]
-    .map((cwd) => {
-      const nm = path.join(cwd, 'node_modules/.bin');
-      return path.join(nm, commandName);
-    })
-    .filter(fs.existsSync)[0];
+function cmd(commandName) {
+  const baseDir = process.cwd();
+  const binBase = path.join(baseDir, 'node_modules', '.bin', commandName);
 
-  if (!cmdPath) {
-    console.error(`Command '${commandName}' not found in node_modules/.bin`);
-    return commandName; // Return the original command name
+  const isWin = process.platform === 'win32';
+
+  const candidates = isWin ? [`${binBase}.cmd`, `${binBase}.bat`, binBase] : [binBase];
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) {
+      return candidate;
+    }
   }
 
-  return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
-};
+  return commandName;
+}
 
 // copy non-javascript assets from src folder
 const copyAssets = function () {
