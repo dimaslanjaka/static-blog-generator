@@ -12,4 +12,4 @@ IF NOT EXIST "%NODE_EXE%" (
 SET "SBG_CLI=%~dp0..\src\cli.ts"
 SET "SBG_CWD=%~dp0..\..\..\test"
 
-"%NODE_EXE%" -r ts-node/register "%SBG_CLI%" %*
+"%NODE_EXE%" --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config "%SBG_CLI%" %*
