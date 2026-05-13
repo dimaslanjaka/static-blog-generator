@@ -1,13 +1,11 @@
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
 import fs from 'fs-extra';
-import * as glob from 'glob';
 import url from 'node:url';
 import path from 'path';
 import { dts } from 'rollup-plugin-dts';
-import { external, tsconfig } from './rollup.utils.js';
+import { external } from './rollup.utils.js';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,79 +18,17 @@ const { author, version, name } = JSON.parse(fs.readFileSync(path.join(__dirname
 const year = new Date().getFullYear();
 const banner = `// ${name} v${version} Copyright (c) ${year} ${author}`;
 
-/**
- * @type {import('rollup').RollupOptions['input']}
- */
-const inputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
-  posix: true,
-  ignore: tsconfig.exclude.concat('*.runner.*', '*.explicit.*', '*.test.*', '*.builder.*', '*.spec.*')
-});
-
 const plugins = [
   json(),
   resolve({ preferBuiltins: true }), // Resolve node_modules packages
-  commonjs(), // Convert CommonJS modules to ES6
-  typescript({
-    tsconfig: false,
-    compilerOptions: tsconfig.compilerOptions,
-    include: ['./src/**/*'],
-    exclude: tsconfig.exclude,
-    resolveJsonModule: true,
-    resolvePackageJsonImports: true
-  }) // Compile TypeScript files
+  commonjs() // Convert CommonJS modules to ES6
 ];
 
 /**
  * @type {import('rollup').RollupOptions}
  */
-const _partials = {
-  input: inputs,
-  output: [
-    {
-      dir: 'dist',
-      format: 'esm',
-      sourcemap: false,
-      preserveModules: true,
-      exports: 'named',
-      globals: {
-        hexo: 'hexo'
-      },
-      banner
-    },
-    {
-      dir: 'dist',
-      format: 'cjs',
-      sourcemap: false,
-      preserveModules: true,
-      exports: 'named',
-      entryFileNames: '[name].cjs',
-      globals: {
-        hexo: 'hexo'
-      },
-      banner
-    },
-    {
-      dir: 'dist',
-      format: 'esm',
-      sourcemap: false,
-      preserveModules: true,
-      exports: 'named',
-      entryFileNames: '[name].mjs',
-      globals: {
-        hexo: 'hexo'
-      },
-      banner
-    }
-  ],
-  plugins,
-  external: external.filter((pkgName) => !['sbg-server', 'sbg-utility', 'sbg-api'].includes(pkgName))
-};
-
-/**
- * @type {import('rollup').RollupOptions}
- */
 const _onefile = {
-  input: 'src/index.ts',
+  input: 'tmp/dist/index.js',
   output: [
     // bundle .js as ESM
     {
@@ -102,7 +38,8 @@ const _onefile = {
       globals: {
         hexo: 'hexo'
       },
-      inlineDynamicImports: true
+      inlineDynamicImports: true,
+      banner
     },
     // bundle .cjs as CommonJS
     {
@@ -112,7 +49,8 @@ const _onefile = {
       globals: {
         hexo: 'hexo'
       },
-      inlineDynamicImports: true
+      inlineDynamicImports: true,
+      banner
     },
     // build .mjs as ESM
     {
@@ -122,7 +60,8 @@ const _onefile = {
       globals: {
         hexo: 'hexo'
       },
-      inlineDynamicImports: true
+      inlineDynamicImports: true,
+      banner
     }
   ],
   plugins,

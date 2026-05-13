@@ -1,3 +1,4 @@
+import { spawn } from 'child_process';
 import fs from 'fs-extra';
 import gulp from 'gulp';
 import through2 from 'through2';
@@ -37,4 +38,24 @@ function copy() {
 
 gulp.task('copy', gulp.series(copy, copyDeclarations));
 
-gulp.task('default', gulp.series('copy'));
+function tsc() {
+  return new Promise((resolve, reject) => {
+    const tscProcess = spawn('tsc', ['-p', 'tsconfig.build.json'], {
+      stdio: 'inherit',
+      shell: true,
+      cwd: __dirname
+    });
+
+    tscProcess.on('close', (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`tsc process exited with code ${code}`));
+      }
+    });
+  });
+}
+
+gulp.task('tsc', tsc);
+
+gulp.task('default', gulp.series('tsc', 'copy'));
