@@ -5,7 +5,7 @@ import { spawnAsync } from 'cross-spawn';
 import fs from 'fs-extra';
 import { stdin as process_input, stdout as process_output } from 'node:process';
 import * as readline from 'node:readline';
-import { feed, sitemap } from 'sbg-api';
+import { hexoGenerateFeed, hexoGenerateSitemap } from 'sbg-api';
 import SBGServer from 'sbg-server';
 import path from 'upath';
 import YARGS from 'yargs';
@@ -170,7 +170,7 @@ yargs
             console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
             return;
           }
-          await feed.hexoGenerateFeed(undefined, api.config);
+          await hexoGenerateFeed(undefined, api.config);
           break;
 
         case 'sitemap':
@@ -178,7 +178,7 @@ yargs
             console.log(`site not yet generated, please using 'sbg generate hexo' to generate site.`);
             return;
           }
-          await sitemap.hexoGenerateSitemap(api.config);
+          await hexoGenerateSitemap(api.config);
           break;
 
         case 'hexo':
@@ -225,10 +225,10 @@ yargs
           break;
 
         case 'copy':
-          await api.deploy.copy({
+          await api.deploy.copy(/*{
             config: api.config,
             cwd: api.cwd
-          });
+          }*/);
           break;
       }
     }
