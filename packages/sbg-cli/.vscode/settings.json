@@ -65,7 +65,7 @@
     "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     "*.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config"
   },
-  "code-runner.respectShebang": true,
+  "code-runner.respectShebang": false,
   "debug.terminal.clearBeforeReusing": true,
   "[python]": {
     "editor.codeActionsOnSave": {
