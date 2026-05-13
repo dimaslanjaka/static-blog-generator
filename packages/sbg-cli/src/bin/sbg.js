@@ -13,7 +13,7 @@ const isESM = pkg.type === 'module';
 console.log('sbg cli running on', isESM ? 'ESM' : 'CJS');
 
 if (isESM) {
-  import('../dist/index.mjs').then((lib) => lib.cli());
+  import('../../dist/index.mjs').then((lib) => lib.cli());
 } else {
-  import('../dist/index.cjs').then((lib) => lib.cli());
+  import('../../dist/index.cjs').then((lib) => lib.cli());
 }
