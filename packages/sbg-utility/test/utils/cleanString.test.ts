@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { cleanString } from '../../src/utils/string';
 
 describe('cleanString', () => {

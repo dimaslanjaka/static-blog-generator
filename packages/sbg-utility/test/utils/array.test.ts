@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import {
   array_flatten as array_flatten_src,
   array_random as array_random_src,
