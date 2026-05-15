@@ -105,6 +105,19 @@
     "editor.maxTokenizationLineLength": 2500,
     "editor.formatOnSave": false
   },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ts": "never",
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "never",
+      "source.addMissingImports.ts": "never",
+      "source.fixAll.prettier": "never",
+      "source.removeUnused.ts": "never",
+      "source.removeUnusedImports": "never",
+      "source.sort.json": "never",
+      "source.sortImports": "never"
+    }
+  },
   "autopep8.args": ["--ignore", "E401,E402,E211,E501"],
   "intelephense.maxMemory": 1028,
   "intelephense.rename.exclude": ["**/vendor/**", "**/node_modules/**", "**/tmp/**", "**/dist/**", "**/.cache/**"],
