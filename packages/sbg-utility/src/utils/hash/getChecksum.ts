@@ -23,8 +23,17 @@ export function getChecksum(...targetPaths: string[]): string {
         files.push(...dirFiles);
       }
     } else {
-      const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
-      files.push(...matches);
+      // Check if the pattern is absolute path combination
+      const dirname = path.dirname(pattern);
+      const basename = path.basename(pattern);
+      if (fs.existsSync(dirname) && fs.statSync(dirname).isDirectory()) {
+        const matches = glob.sync(basename, { cwd: dirname, nodir: true, absolute: true, dot: true });
+        files.push(...matches);
+      } else {
+        // If the pattern is not an absolute path, treat it as a glob pattern
+        const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
+        files.push(...matches);
+      }
     }
   }
   const uniqueFiles = Array.from(new Set(files)).sort();
