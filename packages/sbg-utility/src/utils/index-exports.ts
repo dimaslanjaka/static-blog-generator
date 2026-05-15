@@ -18,6 +18,7 @@ export * from './filemanager/index';
 export * from './filemanager/path-utility';
 export * from './filemanager/readDir';
 export * from './filemanager/readfile';
+export * from './filemanager/sanitizeFilename';
 export * from './filemanager/stream';
 export * from './filemanager/writefile';
 export * from './generate-exports';
