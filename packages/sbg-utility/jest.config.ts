@@ -67,7 +67,8 @@ const config: JestConfigWithTsJest = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: 'coverage',
-  coverageProvider: 'v8'
+  coverageProvider: 'v8',
+  setupFiles: ['<rootDir>/jest.setup.ts']
 };
 
 // Ensure the 'tmp' directory exists before using it for Jest cache
