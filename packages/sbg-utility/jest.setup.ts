@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { getFileChanges } from './src/utils/index';
+import ansi from 'ansi-colors';
 
 /**
  * __dirname workaround for ESM modules (Node.js standard)
@@ -39,7 +40,7 @@ const changed = getFileChanges({
 
 if (changed.result) {
   console.log(
-    `🛠️ Detected changes in source files ${changed.changedFiles.map((f) => f.file).join(', ')}. Running build...`
+    `🛠️ Detected changes in source files ${changed.changedFiles.map((f) => ansi.yellow(path.relative(__dirname, f.file))).join(', ')}. Running build...`
   );
   // Run build if changed
   try {
