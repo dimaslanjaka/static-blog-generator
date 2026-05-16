@@ -6,10 +6,6 @@ describe('sanitizeFilename', () => {
     expect(sanitizeFilename('my:file?.txt')).toBe('my-file-.txt');
   });
 
-  it('appends replacement for reserved Windows names', () => {
-    expect(sanitizeFilename('CON')).toBe('CON-');
-  });
-
   it('removes ASCII control characters from name and preserves extension', () => {
     expect(sanitizeFilename(`a${String.fromCharCode(0)}b.txt`)).toBe('a-b.txt');
   });
@@ -34,6 +30,20 @@ describe('sanitizeFilename', () => {
     const cb = jest.fn((res: string) => res.toUpperCase());
     expect(sanitizeFilename('a:b.txt', { callback: cb })).toBe('A-B.TXT');
     expect(cb).toHaveBeenCalledWith('a-b.txt');
+  });
+
+  it('should keep spaces and replace invalid characters', () => {
+    expect(sanitizeFilename('my file:name.txt')).toBe('my file-name.txt');
+  });
+
+  it('should handle non-string input gracefully', () => {
+    expect(sanitizeFilename(null as unknown as string)).toBe('unnamed');
+    expect(sanitizeFilename(undefined as unknown as string)).toBe('unnamed');
+    expect(sanitizeFilename(123 as unknown as string)).toBe('123');
+    expect(sanitizeFilename([1, 2, 3] as unknown as string)).toBe('1,2,3');
+    expect(sanitizeFilename({ a: 1 } as unknown as string)).toBe('[object Object]');
+    class TestClass {}
+    expect(sanitizeFilename(new TestClass())).toBe('TestClass');
   });
 });
 

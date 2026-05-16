@@ -1,3 +1,5 @@
+import { getClassName } from '../class-utils';
+
 /**
  * Sanitizes a filename for safe cross-platform filesystem usage.
  *
@@ -29,25 +31,9 @@
  * Allows for final custom modifications or logging.
  *
  * @returns A filesystem-safe filename string.
- *
- * @example
- * sanitizeFilename("my:file?.txt");
- * // => "my-file-.txt"
- *
- * @example
- * sanitizeFilename("CON");
- * // => "CON-"
- *
- * @example
- * sanitizeFilename("invoice/2026:Q1.pdf");
- * // => "invoice-2026-Q1.pdf"
- *
- * @example
- * sanitizeFilename("data.txt", { callback: (name) => name.toUpperCase() });
- * // => "DATA.TXT"
  */
 export default function sanitizeFilename(
-  input: string,
+  input: unknown,
   options?: {
     replacement?: string;
     maxLength?: number;
@@ -58,31 +44,53 @@ export default function sanitizeFilename(
   const maxLength = options?.maxLength ?? 255;
   const callback = options?.callback;
 
-  if (!input || typeof input !== 'string') {
+  if (!input) {
     const unnamed = 'unnamed';
+
     if (typeof callback === 'function') {
       const cbResult = callback(unnamed);
+
       if (typeof cbResult === 'string') {
         return cbResult;
       }
     }
+
     return unnamed;
   }
 
-  // Remove trailing dots and spaces before extension parsing so Windows-safe
-  // cleanup does not preserve a dangling suffix.
-  const normalizedInput = input.replace(/[. ]+$/g, '');
+  // Handle class constructors and class instances
+  const className = getClassName(input);
+
+  if (className) {
+    if (typeof callback === 'function') {
+      const cbResult = callback(className);
+
+      if (typeof cbResult === 'string') {
+        return cbResult;
+      }
+    }
+
+    return className;
+  }
+
+  // Accept non-string inputs by coercing to string
+  const rawInput = typeof input === 'string' ? input : String(input);
+
+  // Remove trailing dots and spaces
+  const normalizedInput = rawInput.replace(/[. ]+$/g, '');
 
   // Split extension
   const lastDot = normalizedInput.lastIndexOf('.');
   const hasExtension = lastDot > 0;
 
   let name = hasExtension ? normalizedInput.slice(0, lastDot) : normalizedInput;
+
   let ext = hasExtension ? normalizedInput.slice(lastDot) : '';
 
   // Invalid filename chars:
   // < > : " / \ | ? * and ASCII control chars
   const ctrlRange = `${String.fromCharCode(0)}-${String.fromCharCode(31)}`;
+
   const INVALID_CHARS_REGEX = new RegExp(`[<>:"/\\\\|?*${ctrlRange}]`, 'g');
 
   // Replace invalid chars
@@ -99,36 +107,6 @@ export default function sanitizeFilename(
 
   name = name.replace(repeatedReplacementRegex, replacement);
 
-  // Reserved Windows filenames
-  const RESERVED_NAMES = new Set([
-    'CON',
-    'PRN',
-    'AUX',
-    'NUL',
-    'COM1',
-    'COM2',
-    'COM3',
-    'COM4',
-    'COM5',
-    'COM6',
-    'COM7',
-    'COM8',
-    'COM9',
-    'LPT1',
-    'LPT2',
-    'LPT3',
-    'LPT4',
-    'LPT5',
-    'LPT6',
-    'LPT7',
-    'LPT8',
-    'LPT9'
-  ]);
-
-  if (RESERVED_NAMES.has(name.toUpperCase())) {
-    name = `${name}${replacement}`;
-  }
-
   // Ensure non-empty
   if (!name) {
     name = 'unnamed';
@@ -139,14 +117,16 @@ export default function sanitizeFilename(
 
   if (totalLength > maxLength) {
     const allowedNameLength = Math.max(1, maxLength - ext.length);
+
     name = name.slice(0, allowedNameLength);
   }
 
   const result = `${name}${ext}`;
 
-  // Call callback if provided; only use its return value when it's a string
+  // Final callback hook
   if (typeof callback === 'function') {
     const cbResult = callback(result);
+
     if (typeof cbResult === 'string') {
       return cbResult;
     }
