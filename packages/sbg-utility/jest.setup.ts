@@ -2,14 +2,20 @@ import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { getChecksum } from './src/utils/index';
+import { getChecksumWithOptions } from './src/utils/index';
 
 /**
  * __dirname workaround for ESM modules (Node.js standard)
  */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const checksum = getChecksum('rollup.*', 'tsconfig.json', 'package.json', 'src/**/*.{ts,js,cjs,mjs}');
+const checksum = getChecksumWithOptions(
+  { ignorePatterns: ['*export*', '*.builder*', '*.runner*', '*.direct*'] },
+  'rollup.*',
+  'tsconfig.json',
+  'package.json',
+  'src/**/*.{ts,js,cjs,mjs}'
+);
 const tmpDir = path.resolve(__dirname, 'tmp');
 fs.mkdirSync(tmpDir, { recursive: true });
 const checksumFile = path.join(tmpDir, 'checksum.txt');
