@@ -4,10 +4,25 @@
  * Returns true if obj is a class constructor, false otherwise.
  */
 export function isClass(obj: unknown): boolean {
-  return (
-    typeof obj === 'function' &&
-    (/^class\s/.test(Function.prototype.toString.call(obj)) || Object.getOwnPropertyNames(obj.prototype).length > 1)
-  );
+  if (typeof obj !== 'function') {
+    return false;
+  }
+
+  const str = Function.prototype.toString.call(obj);
+
+  // ES6 class
+  if (/^class\s/.test(str)) {
+    return true;
+  }
+
+  // Arrow functions have no prototype
+  if (!obj.prototype) {
+    return false;
+  }
+
+  // Old constructor-style function:
+  // uses `this`
+  return /\bthis\./.test(str);
 }
 
 /**
@@ -35,4 +50,22 @@ export function getClassName(obj: unknown): string | null {
   }
 
   return null;
+}
+
+/**
+ * Gets the function name from a function.
+ * @param func The function to inspect.
+ * Returns the function name, or null if it cannot be determined.
+ */
+export function getFunctionName(func: unknown): string | null {
+  if (typeof func !== 'function') {
+    return null;
+  }
+
+  // Exclude class constructors
+  if (isClass(func)) {
+    return null;
+  }
+
+  return func.name || null;
 }
