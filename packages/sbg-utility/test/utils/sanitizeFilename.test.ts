@@ -1,4 +1,4 @@
-import { expect, describe, it } from '@jest/globals';
+import { expect, describe, it, jest } from '@jest/globals';
 import sanitizeFilename from '../../src/utils/filemanager/sanitizeFilename';
 
 describe('sanitizeFilename', () => {
@@ -28,6 +28,12 @@ describe('sanitizeFilename', () => {
 
   it('returns unnamed for empty input', () => {
     expect(sanitizeFilename('')).toBe('unnamed');
+  });
+
+  it('invokes callback and can modify result before return', () => {
+    const cb = jest.fn((res: string) => res.toUpperCase());
+    expect(sanitizeFilename('a:b.txt', { callback: cb })).toBe('A-B.TXT');
+    expect(cb).toHaveBeenCalledWith('a-b.txt');
   });
 });
 

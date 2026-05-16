@@ -8,6 +8,7 @@
  * - Trims trailing dots/spaces
  * - Preserves file extension when possible
  * - Enforces maximum filename length
+ * - Allows final modification via callback
  *
  * @param input - Original filename or path-like string to sanitize.
  *
@@ -23,6 +24,10 @@
  *
  * Defaults to `255`.
  *
+ * @param options.callback
+ * Function called with the sanitized filename before it is returned.
+ * Allows for final custom modifications or logging.
+ *
  * @returns A filesystem-safe filename string.
  *
  * @example
@@ -36,19 +41,32 @@
  * @example
  * sanitizeFilename("invoice/2026:Q1.pdf");
  * // => "invoice-2026-Q1.pdf"
+ *
+ * @example
+ * sanitizeFilename("data.txt", { callback: (name) => name.toUpperCase() });
+ * // => "DATA.TXT"
  */
 export default function sanitizeFilename(
   input: string,
   options?: {
     replacement?: string;
     maxLength?: number;
+    callback?: (result: string) => string | void;
   }
 ): string {
   const replacement = options?.replacement ?? '-';
   const maxLength = options?.maxLength ?? 255;
+  const callback = options?.callback;
 
   if (!input || typeof input !== 'string') {
-    return 'unnamed';
+    const unnamed = 'unnamed';
+    if (typeof callback === 'function') {
+      const cbResult = callback(unnamed);
+      if (typeof cbResult === 'string') {
+        return cbResult;
+      }
+    }
+    return unnamed;
   }
 
   // Remove trailing dots and spaces before extension parsing so Windows-safe
@@ -124,7 +142,17 @@ export default function sanitizeFilename(
     name = name.slice(0, allowedNameLength);
   }
 
-  return `${name}${ext}`;
+  const result = `${name}${ext}`;
+
+  // Call callback if provided; only use its return value when it's a string
+  if (typeof callback === 'function') {
+    const cbResult = callback(result);
+    if (typeof cbResult === 'string') {
+      return cbResult;
+    }
+  }
+
+  return result;
 }
 
 export { sanitizeFilename };
