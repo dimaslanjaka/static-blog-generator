@@ -14,6 +14,7 @@ export * from './filemanager/del';
 export * from './filemanager/driveLetterUtils';
 export * from './filemanager/emptyDir';
 export * from './filemanager/getAppRootDir';
+export * from './filemanager/getFileChanges';
 export * from './filemanager/images';
 export * from './filemanager/index';
 export * from './filemanager/path-utility';
