@@ -1,6 +1,7 @@
 export * from './array';
 export * from './BasePreferences';
 export * from './chain';
+export * from './class-utils';
 export * from './date';
 export * from './debug';
 export * from './decode-url';
@@ -27,7 +28,6 @@ export * from './hash/file';
 export * from './hash/file-hashes';
 export * from './hash/getChecksum';
 export * from './hash/index';
-export * from './isClass';
 export * from './jest';
 export * from './JSON';
 export * from './JSON-serializer';
