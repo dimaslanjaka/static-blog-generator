@@ -3,11 +3,19 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { getChecksumWithOptions } from './src/utils/index';
+import dotenv from 'dotenv';
 
 /**
  * __dirname workaround for ESM modules (Node.js standard)
  */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({
+  quiet: true,
+  override: true,
+  path:
+    [path.resolve(__dirname, '.env'), path.resolve(process.cwd(), '.env')].filter((p) => fs.existsSync(p))[0] ||
+    undefined
+});
 
 const checksum = getChecksumWithOptions(
   { ignorePatterns: ['*export*', '*.builder*', '*.runner*', '*.direct*'] },
