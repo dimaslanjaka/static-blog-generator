@@ -91,12 +91,12 @@
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "952b8f4446352f04e4de613e50c8ad8de1274cd1",
-      "sha256": "MS2AQz5aLx4MN03f4M8DIlLNQK2kbDz0kIIAemptd5k=",
-      "md5": "eb215c7038ed75d8409dc0eeecb8461a",
-      "sha512": "KKOfPXsF/hbLrgFRg5rzG8XvI9cSMlCmzDE1qcA0oUHGvuO1c+zziHnEGcxCUnbfQLCuhWt5RxWS5+G8uyjj2Q=="
+      "sha1": "e40421c00bb746582a4d9f7658f80b81dfcb5dcd",
+      "sha256": "ReoPNtgpWSpOQiufoiZ8RkKCcSPzXRH3HAjwbMPFjUo=",
+      "md5": "0309d1dfd6af2db88e05264db521363a",
+      "sha512": "yewfslpBFROLp0HHxbXSzoHXXr/kjnZWE+j1q+gMF0S0VN9j0qwp2FhAUkDLPHR32vSWjhxXHptRrIVhR9ryTw=="
     },
-    "size": "592.24 KB"
+    "size": "579.42 KB"
   },
   "/release/sbg-api-2.0.0.tgz": {
     "integrity": {
