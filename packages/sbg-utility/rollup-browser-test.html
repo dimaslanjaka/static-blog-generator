@@ -43,7 +43,6 @@
       "
     ></pre>
     <script type="module">
-      console.log('Debug page loaded');
       const status = document.getElementById('status');
       const libStatus = document.getElementById('libStatus');
       const buildBtn = document.getElementById('buildBtn');
@@ -51,35 +50,126 @@
       const eventUrl = '/__events';
       const moduleUrl = '/dist/browser/index.mjs';
 
+      function appendLibStatus(message) {
+        const pad = (n) => String(n).padStart(2, '0');
+        const d = new Date();
+        const now =
+          `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ` +
+          `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+        const timestampedMessage = `[${now}] ${message}`;
+        libStatus.innerHTML += (libStatus.innerHTML ? '<br>' : '') + timestampedMessage;
+      }
+
       const loadModule = () => {
         const url = moduleUrl + '?t=' + Date.now();
-        libStatus.textContent = `Loading module ${url}...`;
+        appendLibStatus(`Loading module ${url}...`);
         return import(url);
       };
 
       function escapeHTML(s) {
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       }
-
       loadModule()
         .then((lib) => {
-          let libStr;
-          try {
-            libStr = JSON.stringify(lib, null, 2);
-          } catch (err) {
-            libStr = String(lib);
-          }
-          const debugHtml = `<pre style="background:#fff;border:1px solid #ddd;padding:0.5rem;max-height:16em;overflow:auto;margin-top:0.5rem;">${escapeHTML(libStr)}</pre>`;
-          libStatus.innerHTML = `Module loaded successfully. <code>lib</code> is available in console.` + debugHtml;
-          console.log(globalThis.SBGUtility);
-          console.log(window.SBGUtility);
-          console.log(globalThis.array_shuffle);
+          // ----------------------------
+          // Safe value formatter
+          // ----------------------------
+          const formatValue = (value) => {
+            if (typeof value === 'function') {
+              return `function ${value.name || '(anonymous)'}()`;
+            }
+
+            if (typeof value === 'string') return `"${value}"`;
+            if (typeof value === 'number' || typeof value === 'boolean') return String(value);
+            if (value === null) return 'null';
+            if (value === undefined) return 'undefined';
+
+            try {
+              return JSON.stringify(value, null, 2);
+            } catch {
+              return String(value);
+            }
+          };
+
+          // ----------------------------
+          // Inline debug row
+          // ----------------------------
+          const createInlineDebug = (label, value) => {
+            return `
+        <div style="margin:2px 0;">
+          <strong>${label}</strong>:
+          <code>${escapeHTML(formatValue(value))}</code>
+        </div>
+      `;
+          };
+
+          // ----------------------------
+          // Block debug (for objects overview)
+          // ----------------------------
+          const createDebugBlock = (label, value) => {
+            return `
+        <div style="margin-top:0.5rem;font-family:monospace;">
+          <strong>${label}</strong>
+          <pre style="
+            background:#fff;
+            border:1px solid #ddd;
+            padding:0.5rem;
+            max-height:12em;
+            overflow:auto;
+          ">${escapeHTML(formatValue(value))}</pre>
+        </div>
+      `;
+          };
+
+          // ----------------------------
+          // Get library safely
+          // ----------------------------
+          const libData = window.SBGUtility || globalThis.SBGUtility || {};
+
+          // ----------------------------
+          // Inline inspector (fixed overflow + correct formatting)
+          // ----------------------------
+          const inlineDebugs = `
+      <div style="
+        background:#fff;
+        border:1px solid #ddd;
+        padding:0.5rem;
+        max-height:16em;
+        overflow:auto;
+        font-family:monospace;
+      ">
+        ${Object.entries(libData)
+          .map(([key, value]) => createInlineDebug(`SBGUtility[${key}]`, value))
+          .join('')}
+      </div>
+    `;
+
+          // ----------------------------
+          // Global inspectors (FIXED: no JSON.stringify on whole object)
+          // ----------------------------
+          const debugHtml = `
+      <div style="margin-top:0.5rem;">
+
+        ${createDebugBlock('globalThis.SBGUtility (keys)', Object.keys(globalThis.SBGUtility || {}))}
+
+        ${createDebugBlock('window.SBGUtility (keys)', Object.keys(window.SBGUtility || {}))}
+
+        <hr>
+
+        ${inlineDebugs}
+
+      </div>
+    `;
+
+          // ----------------------------
+          // Output
+          // ----------------------------
+          appendLibStatus(`Module loaded successfully. <code>lib</code> is available in console.` + debugHtml);
         })
         .catch((err) => {
           console.error('Initial module load failed:', err);
-          status.textContent = 'Initial module load failed. Check console.';
+          appendLibStatus(`Error loading module: ${err.message || String(err)}`);
         });
-
       const events = new EventSource(eventUrl);
       events.onopen = () => {
         status.textContent = 'Connected. Waiting for dist changes...';
