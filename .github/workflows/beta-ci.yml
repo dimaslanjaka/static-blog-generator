@@ -4,12 +4,7 @@ on:
   push:
     paths-ignore:
       - '**/release*/**'
-      - '**/test'
-      - '**/package.json'
-      - '**/yarn.lock'
-  pull_request:
-    types:
-      - closed
+      - '**/test*'
   workflow_dispatch:
 
 # run single job
