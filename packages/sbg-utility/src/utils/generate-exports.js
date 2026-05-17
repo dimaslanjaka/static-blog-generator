@@ -1,7 +1,6 @@
 import fs from 'fs';
 import * as glob from 'glob';
 import path from 'upath';
-import { fileURLToPath } from 'url';
 
 /**
  * Generates the "exports" field for a package.json file based on built files in dist folders.
@@ -114,8 +113,4 @@ export function generateExports({
   }
   fs.writeFileSync(pkgPath, JSON.stringify(orderedPkg, null, 2) + '\n');
   console.log(`package.json "exports" field at "${pkgPath}" updated successfully.`);
-}
-
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  generateExports({ pkgPath: path.join(process.cwd(), 'tmp/package.json') });
 }
