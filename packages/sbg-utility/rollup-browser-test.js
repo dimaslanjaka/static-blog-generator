@@ -117,6 +117,17 @@ const server = createServer(async (req, res) => {
       return;
     }
 
+    if (pathname === '/favicon.ico') {
+      const icoBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';
+      const buf = Buffer.from(icoBase64, 'base64');
+      res.writeHead(200, {
+        'Content-Type': 'image/png',
+        'Cache-Control': 'no-store'
+      });
+      res.end(buf);
+      return;
+    }
+
     if (pathname === '/__build') {
       if (req.method !== 'POST') {
         res.writeHead(405, { 'Content-Type': 'application/json; charset=utf-8' });
