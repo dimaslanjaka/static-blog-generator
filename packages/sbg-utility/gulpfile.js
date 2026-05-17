@@ -146,33 +146,59 @@ gulp.task('populate-config', async function () {
 // index-builder task: runs all src/**/*.builder.{ts,cjs,mjs} files as in index-builder.mjs
 gulp.task('index-builder', async function () {
   const files = glob.sync('src/**/*.builder.{ts,cjs,mjs}', { nodir: true });
+
   for (const file of files) {
     const ext = path.extname(file);
-    let command, args;
-    if (ext === '.ts') {
-      command = 'node';
-      args = [
-        '--no-warnings',
-        '--experimental-specifier-resolution=node',
-        '--loader',
-        'ts-node/esm',
-        '-r',
-        'dotenv/config',
-        file
-      ];
-    } else {
-      command = 'node';
-      args = ['--no-warnings', '--experimental-specifier-resolution=node', '-r', 'dotenv/config', file];
-    }
-    console.log(`Executing: ${command} ${args.join(' ')}`);
+    const baseName = path.basename(file, ext);
+
+    const env = {
+      ...process.env,
+      NODE_ENV: 'development',
+      ROLLUP_INPUT: file,
+      ROLLUP_OUTPUT: `dist/${baseName}`
+    };
+
+    console.log(`Processing: ${file}`);
+
     try {
-      await new Promise((resolve, reject) => {
-        const proc = crossSpawn(command, args, { stdio: 'inherit', shell: true });
-        proc.on('close', (code) => {
-          if (code !== 0) reject(new Error(`Process exited with code ${code}`));
-          else resolve();
+      if (ext === '.ts') {
+        // 1️⃣ RUN ROLLUP
+        await new Promise((resolve, reject) => {
+          const proc = crossSpawn('rollup', ['-c', 'rollup.executor.js'], { stdio: 'inherit', shell: true, env });
+
+          proc.on('close', (code) => {
+            if (code !== 0) reject(new Error(`Rollup failed with code ${code}`));
+            else resolve();
+          });
         });
-      });
+
+        // 2️⃣ RUN OUTPUT FILE
+        await new Promise((resolve, reject) => {
+          const proc = crossSpawn('node', ['--no-warnings', `${env.ROLLUP_OUTPUT}.mjs`], {
+            stdio: 'inherit',
+            shell: true,
+            env
+          });
+
+          proc.on('close', (code) => {
+            if (code !== 0) reject(new Error(`Node failed with code ${code}`));
+            else resolve();
+          });
+        });
+      } else {
+        await new Promise((resolve, reject) => {
+          const proc = crossSpawn(
+            'node',
+            ['--no-warnings', '--experimental-specifier-resolution=node', '-r', 'dotenv/config', file],
+            { stdio: 'inherit', shell: true, env }
+          );
+
+          proc.on('close', (code) => {
+            if (code !== 0) reject(new Error(`Process exited with code ${code}`));
+            else resolve();
+          });
+        });
+      }
     } catch (error) {
       console.error(error.message);
     }

@@ -54,19 +54,11 @@
     "electron-*.ts": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     "*.py": "python -u",
     "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
-    "*.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config"
+    // "*.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config"
+    "*.ts": "cross-env-shell ROLLUP_INPUT=$fullFileName ROLLUP_OUTPUT=dist/$fileNameWithoutExt rollup -c rollup.executor.js && node dist/$fileNameWithoutExt.mjs"
   },
   "code-runner.respectShebang": true,
   "debug.terminal.clearBeforeReusing": true,
-  "[python]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "never"
-    },
-    "editor.formatOnSave": false,
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
   "[json]": {
     "editor.quickSuggestions": {
       "strings": true
