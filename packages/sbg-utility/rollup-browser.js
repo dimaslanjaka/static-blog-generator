@@ -4,7 +4,6 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import path from 'path';
-import * as rimraf from 'rimraf';
 import { rollup } from 'rollup';
 import analyze from 'rollup-plugin-analyzer';
 import { dts } from 'rollup-plugin-dts';
@@ -57,8 +56,6 @@ async function buildPolyfill(input) {
     // Browser bundle must inline dependencies to avoid runtime globals like `path$2`.
     external: () => false
   });
-
-  rimraf.sync(path.join(__dirname, 'dist/browser'));
 
   await bundle.write({
     dir: 'dist/browser',
