@@ -27,75 +27,7 @@ const contentTypes = {
   '.webp': 'image/webp'
 };
 
-const debugHtml = `<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>sbg-utility browser debug</title>
-		<style>
-			body { font-family: Consolas, monospace; margin: 2rem; }
-			code { background: #f0f0f0; padding: 0.1rem 0.3rem; }
-      #status { color: #555; font-size: 0.9rem; }
-			#buildBtn { margin-top: 0.5rem; padding: 0.4rem 0.8rem; cursor: pointer; }
-		</style>
-	</head>
-	<body>
-		<h1>sbg-utility browser debug</h1>
-    <p>Loading <code>/index-browser.mjs</code> with live reload.</p>
-    <p id="status">Watching dist/browser for changes...</p>
-    <button id="buildBtn" type="button">Build Browser</button>
-    <script type="module">
-      const status = document.getElementById('status');
-      const buildBtn = document.getElementById('buildBtn');
-      const eventUrl = '/__events';
-      const moduleUrl = '/index-browser.mjs';
-
-      const loadModule = () => import(moduleUrl + '?t=' + Date.now());
-      loadModule().catch((err) => {
-        console.error('Initial module load failed:', err);
-        status.textContent = 'Initial module load failed. Check console.';
-      });
-
-      const events = new EventSource(eventUrl);
-      events.onopen = () => {
-        status.textContent = 'Connected. Waiting for dist changes...';
-      };
-      events.onmessage = (event) => {
-        if (event.data === 'reload') {
-          status.textContent = 'Change detected. Reloading...';
-          location.reload();
-        }
-      };
-      events.onerror = () => {
-        status.textContent = 'Live reload connection lost. Retrying...';
-      };
-
-      buildBtn.addEventListener('click', async () => {
-        buildBtn.disabled = true;
-        status.textContent = 'Running yarn build-browser...';
-        try {
-          const response = await fetch('/__build', { method: 'POST' });
-          const result = await response.json();
-          if (!response.ok || !result.ok) {
-            status.textContent = 'Build failed. Check browser console.';
-            console.error(result.output || result.error || result.message || 'Unknown build error');
-            return;
-          }
-          status.textContent = 'Build completed. Waiting for live reload...';
-          if (result.output) {
-            console.log(result.output);
-          }
-        } catch (error) {
-          status.textContent = 'Build request failed. Check browser console.';
-          console.error(error);
-        } finally {
-          buildBtn.disabled = false;
-        }
-      });
-    </script>
-	</body>
-</html>`;
+const debugHtmlPath = path.join(__dirname, 'rollup-browser-test.html');
 
 function runBuildBrowser() {
   return new Promise((resolve) => {
@@ -160,8 +92,14 @@ const server = createServer(async (req, res) => {
     const pathname = decodeURIComponent(url.pathname);
 
     if (pathname === '/' || pathname === '/debug') {
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
-      res.end(debugHtml);
+      try {
+        const html = await fs.readFile(debugHtmlPath, 'utf8');
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+        res.end(html);
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end('Could not load debug HTML: ' + (e?.message || e));
+      }
       return;
     }
 
