@@ -1,3 +1,4 @@
+import { describe, expect, it, beforeEach, afterEach } from '@jest/globals';
 import { LocalStorageSharedPreferences } from '../../src/utils/LocalStorageSharedPreferences.js';
 
 describe('LocalStorageSharedPreferences', () => {

@@ -23,13 +23,76 @@ export function getChecksum(...targetPaths: string[]): string {
         files.push(...dirFiles);
       }
     } else {
-      const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
-      files.push(...matches);
+      // Check if the pattern is absolute path combination
+      const dirname = path.dirname(pattern);
+      const basename = path.basename(pattern);
+      if (fs.existsSync(dirname) && fs.statSync(dirname).isDirectory()) {
+        const matches = glob.sync(basename, { cwd: dirname, nodir: true, absolute: true, dot: true });
+        files.push(...matches);
+      } else {
+        // If the pattern is not an absolute path, treat it as a glob pattern
+        const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
+        files.push(...matches);
+      }
     }
   }
   const uniqueFiles = Array.from(new Set(files)).sort();
   const hash = CryptoJS.algo.SHA256.create();
   for (const file of uniqueFiles) {
+    const fileBuffer = fs.readFileSync(file);
+    const chunkSize = 1024 * 1024; // 1MB
+    for (let offset = 0; offset < fileBuffer.length; offset += chunkSize) {
+      const chunk = fileBuffer.subarray(offset, Math.min(offset + chunkSize, fileBuffer.length));
+      hash.update(CryptoJS.lib.WordArray.create(chunk));
+    }
+  }
+  return hash.finalize().toString(CryptoJS.enc.Hex);
+}
+
+/**
+ * Calculate a checksum for the given target paths with options to ignore certain patterns.
+ *
+ * @param options - An object containing options for checksum calculation.
+ * @param options.ignorePatterns - An array of glob patterns or substrings to ignore when calculating the checksum.
+ * @param targetPaths - An array of file or directory paths to include in the checksum.
+ * @returns A SHA-256 hash of the contents of the specified files and directories, excluding ignored patterns.
+ */
+export function getChecksumWithOptions(options: { ignorePatterns?: string[] } = {}, ...targetPaths: string[]): string {
+  const ignorePatterns = options.ignorePatterns || [];
+  const files: string[] = [];
+  for (const pattern of targetPaths) {
+    if (fs.existsSync(pattern)) {
+      const stat = fs.statSync(pattern);
+      if (stat.isFile()) {
+        files.push(path.resolve(pattern));
+      } else if (stat.isDirectory()) {
+        const dirFiles = glob.sync('**/*', { cwd: pattern, nodir: true, absolute: true, dot: true });
+        files.push(...dirFiles);
+      }
+    } else {
+      // Check if the pattern is absolute path combination
+      const dirname = path.dirname(pattern);
+      const basename = path.basename(pattern);
+      if (fs.existsSync(dirname) && fs.statSync(dirname).isDirectory()) {
+        const matches = glob.sync(basename, { cwd: dirname, nodir: true, absolute: true, dot: true });
+        files.push(...matches);
+      } else {
+        // If the pattern is not an absolute path, treat it as a glob pattern
+        const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
+        files.push(...matches);
+      }
+    }
+  }
+  const uniqueFiles = Array.from(new Set(files)).sort();
+  const filteredFiles = uniqueFiles.filter((file) => {
+    return !ignorePatterns.some((pattern) =>
+      glob.hasMagic(pattern)
+        ? glob.sync(pattern, { cwd: process.cwd(), nodir: true, absolute: true, dot: true }).includes(file)
+        : file.includes(pattern)
+    );
+  });
+  const hash = CryptoJS.algo.SHA256.create();
+  for (const file of filteredFiles.sort()) {
     const fileBuffer = fs.readFileSync(file);
     const chunkSize = 1024 * 1024; // 1MB
     for (let offset = 0; offset < fileBuffer.length; offset += chunkSize) {

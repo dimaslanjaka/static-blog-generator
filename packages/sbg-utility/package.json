@@ -193,6 +193,19 @@
       "types": "./dist/utils/chain.d.mts",
       "import": "./dist/utils/chain.mjs"
     },
+    "./dist/utils/class-utils": {
+      "types": "./dist/utils/class-utils.d.ts",
+      "require": "./dist/utils/class-utils.cjs",
+      "import": "./dist/utils/class-utils.mjs"
+    },
+    "./dist/utils/class-utils.cjs": {
+      "types": "./dist/utils/class-utils.d.cts",
+      "require": "./dist/utils/class-utils.cjs"
+    },
+    "./dist/utils/class-utils.mjs": {
+      "types": "./dist/utils/class-utils.d.mts",
+      "import": "./dist/utils/class-utils.mjs"
+    },
     "./dist/utils/date": {
       "types": "./dist/utils/date.d.ts",
       "require": "./dist/utils/date.cjs",
@@ -349,6 +362,19 @@
       "types": "./dist/utils/filemanager/getAppRootDir.d.mts",
       "import": "./dist/utils/filemanager/getAppRootDir.mjs"
     },
+    "./dist/utils/filemanager/getFileChanges": {
+      "types": "./dist/utils/filemanager/getFileChanges.d.ts",
+      "require": "./dist/utils/filemanager/getFileChanges.cjs",
+      "import": "./dist/utils/filemanager/getFileChanges.mjs"
+    },
+    "./dist/utils/filemanager/getFileChanges.cjs": {
+      "types": "./dist/utils/filemanager/getFileChanges.d.cts",
+      "require": "./dist/utils/filemanager/getFileChanges.cjs"
+    },
+    "./dist/utils/filemanager/getFileChanges.mjs": {
+      "types": "./dist/utils/filemanager/getFileChanges.d.mts",
+      "import": "./dist/utils/filemanager/getFileChanges.mjs"
+    },
     "./dist/utils/filemanager/images": {
       "types": "./dist/utils/filemanager/images.d.ts",
       "require": "./dist/utils/filemanager/images.cjs",
@@ -414,6 +440,19 @@
       "types": "./dist/utils/filemanager/readfile.d.mts",
       "import": "./dist/utils/filemanager/readfile.mjs"
     },
+    "./dist/utils/filemanager/sanitizeFilename": {
+      "types": "./dist/utils/filemanager/sanitizeFilename.d.ts",
+      "require": "./dist/utils/filemanager/sanitizeFilename.cjs",
+      "import": "./dist/utils/filemanager/sanitizeFilename.mjs"
+    },
+    "./dist/utils/filemanager/sanitizeFilename.cjs": {
+      "types": "./dist/utils/filemanager/sanitizeFilename.d.cts",
+      "require": "./dist/utils/filemanager/sanitizeFilename.cjs"
+    },
+    "./dist/utils/filemanager/sanitizeFilename.mjs": {
+      "types": "./dist/utils/filemanager/sanitizeFilename.d.mts",
+      "import": "./dist/utils/filemanager/sanitizeFilename.mjs"
+    },
     "./dist/utils/filemanager/stream": {
       "types": "./dist/utils/filemanager/stream.d.ts",
       "require": "./dist/utils/filemanager/stream.cjs",
@@ -470,6 +509,19 @@
       "types": "./dist/utils/hash/file.d.ts",
       "require": "./dist/utils/hash/file.cjs",
       "import": "./dist/utils/hash/file.mjs"
+    },
+    "./dist/utils/hash/file-hashes": {
+      "types": "./dist/utils/hash/file-hashes.d.ts",
+      "require": "./dist/utils/hash/file-hashes.cjs",
+      "import": "./dist/utils/hash/file-hashes.mjs"
+    },
+    "./dist/utils/hash/file-hashes.cjs": {
+      "types": "./dist/utils/hash/file-hashes.d.cts",
+      "require": "./dist/utils/hash/file-hashes.cjs"
+    },
+    "./dist/utils/hash/file-hashes.mjs": {
+      "types": "./dist/utils/hash/file-hashes.d.mts",
+      "import": "./dist/utils/hash/file-hashes.mjs"
     },
     "./dist/utils/hash/file.cjs": {
       "types": "./dist/utils/hash/file.d.cts",
@@ -742,7 +794,7 @@
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand --detectOpenHandles --forceExit",
     "test:coverage": "npm test -- --coverage",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp --series populate-config build",
+    "build": "gulp --series build",
     "build-browser": "gulp --series populate-config build-browser",
     "rollup": "node --max-old-space-size=4096 ./node_modules/rollup/dist/bin/rollup -c -m",
     "clean": "rimraf dist tmp",
@@ -799,7 +851,7 @@
     "@eslint/js": "^9.33.0",
     "@jest/environment": "^30.0.5",
     "@jest/expect": "^30.0.5",
-    "@jest/globals": "^30.2.0",
+    "@jest/globals": "^30.4.1",
     "@jest/types": "^30.0.5",
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-babel": "^6.0.4",
@@ -821,6 +873,7 @@
     "@types/jsdom": "21",
     "@types/lodash": "^4",
     "@types/micromatch": "^4.0.9",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^24.2.1",
     "@types/node-localstorage": "^1.3.3",
     "@types/nunjucks": "^3.2.6",
@@ -845,42 +898,25 @@
     "jest-mock": "^30.0.5",
     "path-browserify": "^1.0.1",
     "prettier": "^3.6.2",
+    "resolve-typescript-plugin": "^2.0.1",
     "rollup": "^4.46.2",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-polyfill-node": "^0.13.0",
     "ts-jest": "^29.4.1",
+    "ts-loader": "^9.5.7",
     "ts-node": "^10.9.2",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2"
   },
   "resolutions": {
-    "@types/git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/95832a5230359ec8a57d67d49d2e8f6a7305401e/release/git-command-helper.tgz",
-    "@types/hexo": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo.tgz",
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/e11581a8f3adba3aa1b79be265347658d0aad69b/releases/bin.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/9433c012a0234208110c37a72edf5d4280a09d02/releases/bin.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz",
-    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/95832a5230359ec8a57d67d49d2e8f6a7305401e/release/git-command-helper.tgz",
-    "hexo": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo.tgz",
-    "hexo-adsense": "https://github.com/dimaslanjaka/hexo-adsense/raw/2208f2391cd06046f7548bfe7b87a6e442c66345/release/hexo-adsense.tgz",
-    "hexo-asset-link": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-asset-link.tgz",
-    "hexo-cli": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-cli.tgz",
-    "hexo-front-matter": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-front-matter.tgz",
-    "hexo-generator-redirect": "https://github.com/dimaslanjaka/hexo-generator-redirect/raw/a2e390c496954e7883218b9b82a09972c7507c10/release/hexo-generator-redirect.tgz",
-    "hexo-is": "https://github.com/dimaslanjaka/hexo-is/raw/52cbd2efd2c134fae5033ea0bf6f3fd8160abd6e/release/hexo-is.tgz",
-    "hexo-log": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-log.tgz",
-    "hexo-post-parser": "https://github.com/dimaslanjaka/hexo-post-parser/raw/f7b82f38fe28e4d42a504971eadd27e517e26f13/release/hexo-post-parser.tgz",
-    "hexo-renderers": "https://github.com/dimaslanjaka/hexo-renderers/raw/b1bcde457c2c60a73f567e00bbf5157b919cec45/release/hexo-renderers.tgz",
-    "hexo-seo": "https://github.com/dimaslanjaka/hexo-seo/raw/21e024b84538853c8b8521140530694d92d64b74/release/hexo-seo.tgz",
-    "hexo-server": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-server.tgz",
-    "hexo-shortcodes": "https://github.com/dimaslanjaka/hexo-shortcodes/raw/2ed1250d701369b8235a02b9af834bbfc62644a0/release/hexo-shortcodes.tgz",
-    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/hexo-util.tgz",
+    "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/cb096c1f021d88679cbfd3cf55a426aed64f1b94/release/git-command-helper.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/f221d11cdc32fa7dd001e5236f8c3f30387e62d2/packages/instant-indexing/release/instant-indexing.tgz",
     "markdown-it": "https://github.com/dimaslanjaka/markdown-it/raw/7f4f9d5ec08ebcfde42affb517ea7c8e6a305534/release/markdown-it.tgz",
-    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/5f18f2e8c4d8230f71f3f327ac14756d7eeae9ce/release/nodejs-package-types.tgz",
-    "sbg-api": "https://github.com/dimaslanjaka/static-blog-generator/raw/95400dd87106542a640092fa2073ee7d5c9b83e6/packages/sbg-api/release/sbg-api.tgz",
-    "sbg-cli": "https://github.com/dimaslanjaka/static-blog-generator/raw/8c0f903cb1643add882c32d7a2180d2b99e1154f/packages/sbg-cli/release/sbg-cli.tgz",
-    "sbg-server": "https://github.com/dimaslanjaka/static-blog-generator/raw/8c0f903cb1643add882c32d7a2180d2b99e1154f/packages/sbg-server/release/sbg-server.tgz",
-    "static-blog-generator": "https://github.com/dimaslanjaka/static-blog-generator/raw/8c0f903cb1643add882c32d7a2180d2b99e1154f/packages/static-blog-generator/release/static-blog-generator.tgz",
-    "warehouse": "https://github.com/dimaslanjaka/hexo/raw/b5bd2de2fa426736c835be191c1d2a761673d2a0/releases/warehouse.tgz"
+    "nodejs-package-types": "https://github.com/dimaslanjaka/nodejs-package-types/raw/5f18f2e8c4d8230f71f3f327ac14756d7eeae9ce/release/nodejs-package-types.tgz"
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [

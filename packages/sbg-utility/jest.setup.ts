@@ -1,48 +1,55 @@
 import { execSync } from 'child_process';
+import dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { getChecksum } from './src/utils/index';
+import { getFileChanges } from './src/utils/index';
+import ansi from 'ansi-colors';
 
 /**
  * __dirname workaround for ESM modules (Node.js standard)
  */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({
+  quiet: true,
+  override: true,
+  path:
+    [path.resolve(__dirname, '.env'), path.resolve(process.cwd(), '.env')].filter((p) => fs.existsSync(p))[0] ||
+    undefined
+});
 
-const checksum = getChecksum('rollup.*', 'tsconfig.json', 'package.json', 'src/**/*.{ts,js,cjs,mjs}');
-const tmpDir = path.resolve(__dirname, 'tmp');
-fs.mkdirSync(tmpDir, { recursive: true });
-const checksumFile = path.join(tmpDir, 'checksum.txt');
+const changed = getFileChanges({
+  ignorePatterns: [
+    '*export*',
+    '*.builder*',
+    '*.runner*',
+    '*.direct*',
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/tmp/**',
+    '**/coverage/**',
+    '**/.git/**',
+    '**/index.*',
+    '**/test*/**',
+    '**/*.test.*',
+    '**/__tests__/**'
+  ],
+  patterns: ['rollup.*', 'tsconfig*.json', 'src/**/*.{ts,js,cjs,mjs}'],
+  cwd: __dirname
+});
 
-// Ensure tmp directory exists
-if (!fs.existsSync(tmpDir)) {
-  fs.mkdirSync(tmpDir);
-}
-
-// Read previous checksum if exists
-let previousChecksum = '';
-if (fs.existsSync(checksumFile)) {
-  previousChecksum = fs.readFileSync(checksumFile, 'utf8');
-}
-
-// Check if checksum changed
-const isChecksumChanged: boolean = previousChecksum !== checksum;
-
-if (isChecksumChanged) {
-  // Run build if checksum changed
+if (changed.result) {
+  console.log(
+    `🛠️ Detected changes in source files ${changed.changedFiles.map((f) => ansi.yellow(path.relative(__dirname, f.file))).join(', ')}. Running build...`
+  );
+  // Run build if changed
   try {
-    execSync('npm run build', { stdio: 'inherit', cwd: __dirname });
+    execSync('npm run build', { stdio: 'ignore', cwd: __dirname });
     console.log('🛠️ Build completed.');
   } catch (error) {
     console.error('❌ Build failed:', error);
     process.exit(1);
   }
+} else {
+  console.log('✅ No relevant source files changed. Skipping build.');
 }
-
-// Write checksum at process exit if changed
-process.on('exit', () => {
-  if (isChecksumChanged) {
-    fs.writeFileSync(checksumFile, checksum);
-    console.log('✅ Checksum updated.');
-  }
-});
