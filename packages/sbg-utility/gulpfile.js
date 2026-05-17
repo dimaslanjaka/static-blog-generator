@@ -4,7 +4,7 @@ import * as glob from 'glob';
 import gulp from 'gulp';
 import path from 'node:path';
 import { fileURLToPath } from 'url';
-import { buildAll, compileCJS, compileDeclarations, compileESM } from './rollup-build.js';
+import { buildAll, compileDeclarations } from './rollup-build.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -62,7 +62,14 @@ gulp.task('copy', copy);
 // rollup -c
 
 async function tsc() {
-  await crossSpawn.spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], {
+  // write dummy src/config/_config.json if it doesn't exist to prevent tsc errors
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+  if (!fs.existsSync(configJsonPath)) {
+    fs.ensureDirSync(path.dirname(configJsonPath));
+    fs.writeFileSync(configJsonPath, '{}');
+    console.log('Created dummy _config.json at', configJsonPath);
+  }
+  await crossSpawn.spawnAsync(get_binary_path('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'

@@ -2,14 +2,15 @@ import fs from 'fs-extra';
 import url from 'node:url';
 import path from 'upath';
 import * as yaml from 'yaml';
-import { jsonStringifyWithCircularRefs, normalizePath } from '../utils';
-import { trueCasePathSync } from '../utils/filemanager/case-path';
+import { jsonStringifyWithCircularRefs } from '../utils/JSON';
+import { normalizePath } from '../utils/filemanager/path-utility';
+import { HexoConfig } from './_config';
 // import mappedConfig from './_config.json' assert { type: 'json' };
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const mappedConfig: typeof import('./_config.json') = JSON.parse(
+const mappedConfig: HexoConfig & Record<string, any> = JSON.parse(
   fs.readFileSync(path.join(__dirname, '_config.json'), 'utf-8')
 );
 export type importConfig = typeof mappedConfig;
