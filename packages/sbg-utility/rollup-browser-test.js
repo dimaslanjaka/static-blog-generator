@@ -71,13 +71,36 @@ function scheduleReloadBroadcast() {
   reloadTimer = setTimeout(broadcastReload, 120);
 }
 
-try {
-  fsWatch(rootDir, { recursive: true }, () => {
-    scheduleReloadBroadcast();
-  });
-} catch (error) {
-  console.warn('Live reload watcher not available:', error?.message || error);
+function startWatch(targetPath, label, recursive = false) {
+  try {
+    const watcher = fsWatch(targetPath, { recursive }, (changeType, filename) => {
+      const changedPath = recursive && filename ? path.join(label, filename) : label;
+      console.log(`File change detected: ${changeType} ${changedPath}`);
+      scheduleReloadBroadcast();
+    });
+
+    watcher.on('error', (error) => {
+      console.warn(`Live reload watcher error for ${label}:`, error?.message || error);
+    });
+
+    return watcher;
+  } catch (error) {
+    console.warn(`Live reload watcher not available for ${label}:`, error?.message || error);
+    return null;
+  }
 }
+
+const watchers = [
+  startWatch(path.dirname(rootDir), 'dist', true),
+  startWatch(debugHtmlPath, 'rollup-browser-test.html'),
+  startWatch(path.join(__dirname, 'package.json'), 'package.json')
+].filter(Boolean);
+
+process.on('exit', () => {
+  for (const watcher of watchers) {
+    watcher.close();
+  }
+});
 
 function safeJoin(base, requestPath) {
   const normalized = path.normalize(requestPath).replace(/^([/\\])+/, '');
