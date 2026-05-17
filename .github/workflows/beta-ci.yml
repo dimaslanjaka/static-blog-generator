@@ -2,6 +2,11 @@ name: Beta CI
 
 on:
   push:
+    branches-ignore:
+      - sbg-utility
+      - sbg-api
+      - sbg-server
+      - sbg-cli
     paths-ignore:
       - '**/release*/**'
       - '**/test*'
