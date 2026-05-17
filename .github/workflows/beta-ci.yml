@@ -16,14 +16,14 @@ jobs:
   build:
     uses: ./.github/workflows/beta-builder.yml
     secrets:
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
   test:
     needs: build
     uses: ./.github/workflows/beta-tester.yml
     secrets:
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
   push:
     needs: test
     uses: ./.github/workflows/beta-push.yml
     secrets:
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}

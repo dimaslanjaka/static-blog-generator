@@ -13,9 +13,9 @@ jobs:
     env:
       NODE_OPTIONS: '--max-old-space-size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
       node_version: 18.x
-      cache-key: "my-cache"
+      cache-key: 'my-cache'
       cache-paths: |
         ./packages/sbg-server/src/public
         **/.yarn/cache*
@@ -28,7 +28,7 @@ jobs:
         with:
           repository: dimaslanjaka/static-blog-generator
           ref: master
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: update submodules
         shell: bash
