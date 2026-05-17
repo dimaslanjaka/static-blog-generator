@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.base.json",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    },
+    "transpileOnly": true,
+    "require": ["typescript-transform-paths/register"]
+  },
+  "compilerOptions": {
+    "outDir": "./tmp/dist",
+    "allowJs": true,
+    "checkJs": false
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "include": ["./packages/**/*", "./packages/sbg-*/*.json", "*.js", "*.ts", "scripts/docs.js", "./package.json"],
+  "exclude": ["**/dist/**", "**/node_modules/**", "**/tmp/**"]
+}
