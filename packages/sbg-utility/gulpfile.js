@@ -45,6 +45,11 @@ async function populateConfig() {
   fs.ensureDirSync(path.dirname(configJsonPath));
   fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
   console.log('Created _config.json at', configJsonPath);
+  // Also write a copy into dist so builder scripts that run from dist can read it
+  const distConfigPath = path.join(__dirname, 'dist', '_config.json');
+  fs.ensureDirSync(path.dirname(distConfigPath));
+  fs.writeFileSync(distConfigPath, JSON.stringify(configObj, null, 2));
+  console.log('Created _config.json at', distConfigPath);
 }
 
 // copy non-javascript assets from src folder
@@ -105,6 +110,11 @@ gulp.task(
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
 
 gulp.task('build-browser', async function () {
+  // Ensure config is populated before building browser bundle
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+  if (!fs.existsSync(configJsonPath)) {
+    await populateConfig();
+  }
   await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-browser.js')], {
     cwd: __dirname,
     shell: true,
@@ -122,7 +132,13 @@ function generateExportsTask() {
         types: './dist/index.d.mts'
         // types: './dist/index.d.cts'
       },
-      './package.json': './package.json'
+      './package.json': './package.json',
+      './browser': {
+        require: './dist/browser/index.cjs',
+        import: './dist/browser/index.mjs',
+        types: './dist/browser/index.d.ts'
+        // types: './dist/browser/index.d.cts'
+      }
     },
     folders: [
       { dir: `${process.cwd()}/dist/utils`, prefix: './dist/utils/' },
@@ -211,4 +227,4 @@ gulp.task(
   gulp.series('populate-config', 'index-builder', 'tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports')
 );
 
-gulp.task('default', gulp.series('build'));
+gulp.task('default', gulp.series('build', 'build-browser'));

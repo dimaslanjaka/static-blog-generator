@@ -20,6 +20,11 @@
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.mts"
     },
+    "./browser": {
+      "require": "./dist/browser/index.cjs",
+      "import": "./dist/browser/index.mjs",
+      "types": "./dist/browser/index.d.ts"
+    },
     "./dist/gulp-utils/gulp-cache": {
       "types": "./dist/gulp-utils/gulp-cache.d.ts",
       "require": "./dist/gulp-utils/gulp-cache.cjs",
@@ -578,19 +583,6 @@
     "./dist/utils/index.mjs": {
       "types": "./dist/utils/index.d.mts",
       "import": "./dist/utils/index.mjs"
-    },
-    "./dist/utils/isClass": {
-      "types": "./dist/utils/isClass.d.ts",
-      "require": "./dist/utils/isClass.cjs",
-      "import": "./dist/utils/isClass.mjs"
-    },
-    "./dist/utils/isClass.cjs": {
-      "types": "./dist/utils/isClass.d.cts",
-      "require": "./dist/utils/isClass.cjs"
-    },
-    "./dist/utils/isClass.mjs": {
-      "types": "./dist/utils/isClass.d.mts",
-      "import": "./dist/utils/isClass.mjs"
     },
     "./dist/utils/jest": {
       "types": "./dist/utils/jest.d.ts",

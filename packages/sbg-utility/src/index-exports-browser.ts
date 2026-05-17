@@ -9,15 +9,15 @@ export * from './utils/deepMerge';
 export * from './utils/empty';
 export * from './utils/class-utils';
 export * from './utils/JSON-serializer-browser';
-export * from './utils/LocalStorageSharedPreferences';
+// export * from './utils/LocalStorageSharedPreferences';
 export * from './utils/MemorySharedPreferences';
 export * from './utils/noop';
 export * from './utils/object';
 export * from './utils/promise';
 export * from './utils/semver';
 export * from './utils/string';
-export * from './utils/uuid';
-export * from './utils/chain';
+// export * from './utils/uuid';
+// export * from './utils/chain';
 
 // Node-only or uncertain exports remain commented:
 // export * from './utils/jest';

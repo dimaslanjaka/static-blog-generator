@@ -26,7 +26,7 @@
   </head>
   <body>
     <h1>sbg-utility browser debug</h1>
-    <p>Loading <code>/index-browser.mjs</code> with live reload.</p>
+    <p>Loading <code>/dist/browser/index.mjs</code> with live reload.</p>
     <p id="libStatus"></p>
     <p id="status">Watching dist/browser for changes...</p>
     <button id="buildBtn" type="button">Build Browser</button>
@@ -49,7 +49,7 @@
       const buildBtn = document.getElementById('buildBtn');
       const buildResult = document.getElementById('buildResult');
       const eventUrl = '/__events';
-      const moduleUrl = '/dist/browser/index-browser.mjs';
+      const moduleUrl = '/dist/browser/index.mjs';
 
       const loadModule = () => {
         const url = moduleUrl + '?t=' + Date.now();

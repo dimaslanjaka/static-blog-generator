@@ -211,5 +211,5 @@ const server = createServer(async (req, res) => {
 server.listen(port, host, () => {
   console.log(`Debug server running at http://${host}:${port}`);
   console.log(`Serving files from ${rootDir}`);
-  console.log('Open /debug (or /) to load dist/browser/index-browser.mjs');
+  console.log('Open /debug (or /) to load dist/browser/index.mjs');
 });
