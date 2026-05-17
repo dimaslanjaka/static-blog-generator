@@ -135,11 +135,14 @@ jobs:
       - run: yarn run pack
         shell: bash
         name: packing
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v7
         name: upload build result
         timeout-minutes: 10
         with:
           if-no-files-found: 'warn'
+          compression-level: 0
+          overwrite: true
+          include-hidden-files: true
           name: dist-artifact
           path: |
             ./yarn.lock

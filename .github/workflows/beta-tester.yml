@@ -94,7 +94,7 @@ jobs:
         with:
           node-version: ${{ env.node_version }}
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v8
         with:
           name: dist-artifact
 
