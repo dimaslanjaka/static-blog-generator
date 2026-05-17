@@ -1,4 +1,0 @@
-[submodule "packages/sbg-utility/packages/hexo-util"]
-	path = packages/sbg-utility/packages/hexo-util
-	url = https://github.com/dimaslanjaka/hexo-util.git
-	branch = monorepo
