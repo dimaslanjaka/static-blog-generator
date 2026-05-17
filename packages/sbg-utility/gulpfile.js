@@ -63,6 +63,13 @@ gulp.task('copy', copy);
 // rollup -c
 
 async function tsc() {
+  // write dummy src/config/_config.json if it doesn't exist to prevent tsc errors
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+  if (!fs.existsSync(configJsonPath)) {
+    fs.ensureDirSync(path.dirname(configJsonPath));
+    fs.writeFileSync(configJsonPath, '{}');
+    console.log('Created dummy _config.json at', configJsonPath);
+  }
   await crossSpawn.spawnAsync(get_binary_path('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
     shell: true,
