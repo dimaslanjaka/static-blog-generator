@@ -780,6 +780,10 @@
     "dist/**/*",
     "dist/node_modules/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
   "scripts": {
     "prepublish": "npm run clean && npm run build",
     "update:ncu": "npx npm-check-updates -u",
@@ -794,10 +798,6 @@
     "clean": "rimraf dist tmp",
     "pack": "node packer.cjs --yarn",
     "serve": "node rollup-browser-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",

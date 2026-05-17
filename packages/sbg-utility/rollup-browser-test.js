@@ -109,6 +109,19 @@ function safeJoin(base, requestPath) {
   return resolved;
 }
 
+function resolveRequestPath(pathname) {
+  const distBrowserPrefix = '/dist/browser/';
+  if (pathname.startsWith(distBrowserPrefix)) {
+    return pathname.slice(distBrowserPrefix.length - 1);
+  }
+
+  if (pathname === '/dist/browser') {
+    return '/';
+  }
+
+  return pathname;
+}
+
 const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url || '/', `http://${req.headers.host || `${host}:${port}`}`);
@@ -173,7 +186,7 @@ const server = createServer(async (req, res) => {
       return;
     }
 
-    const filePath = safeJoin(rootDir, pathname);
+    const filePath = safeJoin(rootDir, resolveRequestPath(pathname));
     if (!filePath) {
       res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.end('Invalid path');

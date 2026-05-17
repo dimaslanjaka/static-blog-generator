@@ -1,34 +1,84 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>sbg-utility browser debug</title>
-		<style>
-			body { font-family: Consolas, monospace; margin: 2rem; }
-			code { background: #f0f0f0; padding: 0.1rem 0.3rem; }
-      #status { color: #555; font-size: 0.9rem; }
-			#buildBtn { margin-top: 0.5rem; padding: 0.4rem 0.8rem; cursor: pointer; }
-		</style>
-	</head>
-	<body>
-		<h1>sbg-utility browser debug</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sbg-utility browser debug</title>
+    <style>
+      body {
+        font-family: Consolas, monospace;
+        margin: 2rem;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1rem 0.3rem;
+      }
+      #status {
+        color: #555;
+        font-size: 0.9rem;
+      }
+      #buildBtn {
+        margin-top: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>sbg-utility browser debug</h1>
     <p>Loading <code>/index-browser.mjs</code> with live reload.</p>
+    <p id="libStatus"></p>
     <p id="status">Watching dist/browser for changes...</p>
     <button id="buildBtn" type="button">Build Browser</button>
-    <pre id="buildResult" style="background:#f8f8f8;border:1px solid #ddd;padding:0.5rem;max-height:16em;overflow:auto;display:none;margin-top:1em;"></pre>
+    <pre
+      id="buildResult"
+      style="
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        max-height: 16em;
+        overflow: auto;
+        display: none;
+        margin-top: 1em;
+      "
+    ></pre>
     <script type="module">
+      console.log('Debug page loaded');
       const status = document.getElementById('status');
+      const libStatus = document.getElementById('libStatus');
       const buildBtn = document.getElementById('buildBtn');
       const buildResult = document.getElementById('buildResult');
       const eventUrl = '/__events';
-      const moduleUrl = '/index-browser.mjs';
+      const moduleUrl = '/dist/browser/index-browser.mjs';
 
-      const loadModule = () => import(moduleUrl + '?t=' + Date.now());
-      loadModule().catch((err) => {
-        console.error('Initial module load failed:', err);
-        status.textContent = 'Initial module load failed. Check console.';
-      });
+      const loadModule = () => {
+        const url = moduleUrl + '?t=' + Date.now();
+        libStatus.textContent = `Loading module ${url}...`;
+        return import(url);
+      };
+
+      function escapeHTML(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      loadModule()
+        .then((lib) => {
+          let libStr;
+          try {
+            libStr = JSON.stringify(lib, null, 2);
+          } catch (err) {
+            libStr = String(lib);
+          }
+          const debugHtml = `<pre style="background:#fff;border:1px solid #ddd;padding:0.5rem;max-height:16em;overflow:auto;margin-top:0.5rem;">${escapeHTML(libStr)}</pre>`;
+          libStatus.innerHTML = `Module loaded successfully. <code>lib</code> is available in console.` + debugHtml;
+          console.log(globalThis.SBGUtility);
+          console.log(window.SBGUtility);
+          console.log(globalThis.array_shuffle);
+        })
+        .catch((err) => {
+          console.error('Initial module load failed:', err);
+          status.textContent = 'Initial module load failed. Check console.';
+        });
 
       const events = new EventSource(eventUrl);
       events.onopen = () => {
@@ -55,7 +105,9 @@
           if (!response.ok || !result.ok) {
             status.textContent = 'Build failed.';
             buildResult.style.display = 'block';
-            buildResult.textContent = (result.output || result.error || result.message || 'Unknown build error').slice(-10000);
+            buildResult.textContent = (result.output || result.error || result.message || 'Unknown build error').slice(
+              -10000
+            );
             return;
           }
           status.textContent = 'Build completed. Waiting for live reload...';
@@ -70,5 +122,5 @@
         }
       });
     </script>
-	</body>
+  </body>
 </html>
