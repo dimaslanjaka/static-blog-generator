@@ -771,22 +771,6 @@
     "dist/"
   ],
   "scripts": {
-    "update:ncu": "npx npm-check-updates -u",
-    "update": "run-s \"update:**\"",
-    "test": "cross-env-shell NODE_OPTIONS=\"--experimental-vm-modules\" jest",
-    "lint": "eslint \"src/**/*.ts\" --fix",
-    "build": "gulp build",
-    "build-pack": "yarn run build && yarn run pack",
-    "rollup": "rollup -c -m",
-    "clean": "rimraf tmp dist && gulp --series build",
-    "prepack": "node package-switch.cjs production",
-    "pack": "node packer.cjs --yarn"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
-  },
-  "scripts": {
     "prepublish": "npm run clean && npm run build",
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
@@ -801,7 +785,10 @@
     "pack": "node packer.cjs --yarn",
     "serve": "node rollup-browser-test.js"
   },
-  "homepage": "https://github.com/dimaslanjaka/static-blog-generator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
   "dependencies": {
     "ansi-colors": "^4.1.3",
     "async": "^3.2.6",
