@@ -31,6 +31,22 @@ function get_binary_path(commandName) {
   return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
 }
 
+async function populateConfig() {
+  const configYmlPath = path.join(__dirname, 'test', '_config.yml');
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+
+  if (!fs.existsSync(configYmlPath)) {
+    console.error('YAML config not found at', configYmlPath);
+    return;
+  }
+
+  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
+  const configObj = YAML.parse(ymlContent);
+  fs.ensureDirSync(path.dirname(configJsonPath));
+  fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
+  console.log('Created _config.json at', configJsonPath);
+}
+
 // copy non-javascript assets from src folder
 const copy = async function () {
   // Copy for one file build. see rollup _oneFile
@@ -63,12 +79,10 @@ gulp.task('copy', copy);
 // rollup -c
 
 async function tsc() {
-  // write dummy src/config/_config.json if it doesn't exist to prevent tsc errors
+  // populate config if not exists
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
   if (!fs.existsSync(configJsonPath)) {
-    fs.ensureDirSync(path.dirname(configJsonPath));
-    fs.writeFileSync(configJsonPath, '{}');
-    console.log('Created dummy _config.json at', configJsonPath);
+    await populateConfig();
   }
   await crossSpawn.spawnAsync(get_binary_path('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
@@ -127,21 +141,7 @@ async function clean() {
 
 gulp.task('clean', gulp.series(clean));
 
-gulp.task('populate-config', async function () {
-  const configYmlPath = path.join(__dirname, 'test', '_config.yml');
-  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
-
-  if (!fs.existsSync(configYmlPath)) {
-    console.error('YAML config not found at', configYmlPath);
-    return;
-  }
-
-  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
-  const configObj = YAML.parse(ymlContent);
-  fs.ensureDirSync(path.dirname(configJsonPath));
-  fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
-  console.log('Created _config.json at', configJsonPath);
-});
+gulp.task('populate-config', populateConfig);
 
 // index-builder task: runs all src/**/*.builder.{ts,cjs,mjs} files as in index-builder.mjs
 gulp.task('index-builder', async function () {
