@@ -4,8 +4,11 @@ set -e
 
 ROOT_GIT=$(git rev-parse --show-toplevel)
 
-cp "${ROOT_GIT}/readme.md" "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
-git add "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null
+# Copy root readme into static-blog-generator package when present
+if [ -f "${ROOT_GIT}/readme.md" ]; then
+    cp "${ROOT_GIT}/readme.md" "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null || true
+    git add "${ROOT_GIT}/packages/static-blog-generator/readme.md" 2>/dev/null || true
+fi
 
 npx lint-staged
 
