@@ -20,6 +20,11 @@
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.mts"
     },
+    "./browser": {
+      "require": "./dist/browser/index.cjs",
+      "import": "./dist/browser/index.mjs",
+      "types": "./dist/browser/index.d.ts"
+    },
     "./dist/gulp-utils/gulp-cache": {
       "types": "./dist/gulp-utils/gulp-cache.d.ts",
       "require": "./dist/gulp-utils/gulp-cache.cjs",
@@ -579,19 +584,6 @@
       "types": "./dist/utils/index.d.mts",
       "import": "./dist/utils/index.mjs"
     },
-    "./dist/utils/isClass": {
-      "types": "./dist/utils/isClass.d.ts",
-      "require": "./dist/utils/isClass.cjs",
-      "import": "./dist/utils/isClass.mjs"
-    },
-    "./dist/utils/isClass.cjs": {
-      "types": "./dist/utils/isClass.d.cts",
-      "require": "./dist/utils/isClass.cjs"
-    },
-    "./dist/utils/isClass.mjs": {
-      "types": "./dist/utils/isClass.d.mts",
-      "import": "./dist/utils/isClass.mjs"
-    },
     "./dist/utils/jest": {
       "types": "./dist/utils/jest.d.ts",
       "require": "./dist/utils/jest.cjs",
@@ -780,6 +772,10 @@
     "dist/**/*",
     "dist/node_modules/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
+  },
   "scripts": {
     "prepublish": "npm run clean && npm run build",
     "update:ncu": "npx npm-check-updates -u",
@@ -789,15 +785,11 @@
     "test:coverage": "npm test -- --coverage",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "build": "gulp --series build",
-    "build-browser": "gulp --series populate-config build-browser",
+    "build-browser": "gulp --series build-browser",
     "rollup": "node --max-old-space-size=4096 ./node_modules/rollup/dist/bin/rollup -c -m",
     "clean": "rimraf dist tmp",
     "pack": "node packer.cjs --yarn",
     "serve": "node rollup-browser-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",
@@ -827,7 +819,6 @@
     "moment": "^2.30.1",
     "moment-timezone": "^0.6.0",
     "node-html-parser": "^7.0.1",
-    "node-localstorage": "^3.0.5",
     "nunjucks": "^3.2.4",
     "plugin-error": "^2.0.1",
     "progress": "^2.0.3",
@@ -842,9 +833,9 @@
     "yaml": "^2.8.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/preset-env": "^7.28.0",
-    "@babel/preset-typescript": "^7.27.1",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
+    "@babel/preset-typescript": "^7.28.5",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.33.0",
     "@jest/environment": "^30.0.5",
@@ -852,7 +843,7 @@
     "@jest/globals": "^30.4.1",
     "@jest/types": "^30.0.5",
     "@rollup/plugin-alias": "^5.1.1",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-commonjs": "^29.0.2",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
@@ -874,7 +865,6 @@
     "@types/micromatch": "^4.0.9",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.2.1",
-    "@types/node-localstorage": "^1.3.3",
     "@types/nunjucks": "^3.2.6",
     "@types/path-browserify": "^1",
     "@types/progress": "^2.0.7",
@@ -916,8 +906,8 @@
   },
   "type": "module",
   "resolutions": {
-    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/1c3a8b79c7525184a007effaca22c9996275433e/releases/hexo-util.tgz",
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/9433c012a0234208110c37a72edf5d4280a09d02/releases/bin.tgz",
+    "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/65bbfe29d65b55320eb61bd263f16e1519c6c1b0/releases/hexo-util.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/b5b48ab996bf0bb759f06cd9c12335adb3f1982a/releases/bin.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/cb096c1f021d88679cbfd3cf55a426aed64f1b94/release/git-command-helper.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/f221d11cdc32fa7dd001e5236f8c3f30387e62d2/packages/instant-indexing/release/instant-indexing.tgz",

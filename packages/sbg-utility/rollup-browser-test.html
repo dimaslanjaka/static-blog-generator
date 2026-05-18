@@ -1,74 +1,239 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>sbg-utility browser debug</title>
-		<style>
-			body { font-family: Consolas, monospace; margin: 2rem; }
-			code { background: #f0f0f0; padding: 0.1rem 0.3rem; }
-      #status { color: #555; font-size: 0.9rem; }
-			#buildBtn { margin-top: 0.5rem; padding: 0.4rem 0.8rem; cursor: pointer; }
-		</style>
-	</head>
-	<body>
-		<h1>sbg-utility browser debug</h1>
-    <p>Loading <code>/index-browser.mjs</code> with live reload.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sbg-utility browser debug</title>
+    <style>
+      body {
+        font-family: Consolas, monospace;
+        margin: 2rem;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1rem 0.3rem;
+      }
+      #status {
+        color: #555;
+        font-size: 0.9rem;
+      }
+      #buildBtn {
+        margin-top: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>sbg-utility browser debug</h1>
+    <p>Loading <code>/dist/browser/index.mjs</code> with live reload.</p>
+    <p id="libStatus"></p>
     <p id="status">Watching dist/browser for changes...</p>
-    <button id="buildBtn" type="button">Build Browser</button>
-    <pre id="buildResult" style="background:#f8f8f8;border:1px solid #ddd;padding:0.5rem;max-height:16em;overflow:auto;display:none;margin-top:1em;"></pre>
+    <p id="buildLogStatus">Build log</p>
+    <button id="buildBtn" type="button" disabled="true">Build Browser</button>
+    <pre
+      id="buildResult"
+      style="
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        max-height: 16em;
+        overflow: auto;
+        display: block;
+        white-space: pre-wrap;
+        margin-top: 1em;
+      "
+    ></pre>
     <script type="module">
       const status = document.getElementById('status');
+      const libStatus = document.getElementById('libStatus');
+      const buildLogStatus = document.getElementById('buildLogStatus');
       const buildBtn = document.getElementById('buildBtn');
       const buildResult = document.getElementById('buildResult');
       const eventUrl = '/__events';
-      const moduleUrl = '/index-browser.mjs';
+      const buildLogUrl = '/__build-log';
+      const moduleUrl = '/dist/browser/index.mjs';
 
-      const loadModule = () => import(moduleUrl + '?t=' + Date.now());
-      loadModule().catch((err) => {
-        console.error('Initial module load failed:', err);
-        status.textContent = 'Initial module load failed. Check console.';
-      });
+      // Enable build button if we're in development mode (detected by hostname or presence of live reload)
+      const isLocalhost = location.hostname === 'localhost' || location.hostname.startsWith('127.') || location.hostname === '::1';
+      if (isLocalhost) {
+        buildBtn.disabled = false;
+      }
 
-      const events = new EventSource(eventUrl);
-      events.onopen = () => {
-        status.textContent = 'Connected. Waiting for dist changes...';
+      function appendLibStatus(message) {
+        const pad = (n) => String(n).padStart(2, '0');
+        const d = new Date();
+        const now =
+          `${pad(d.getDate())}/${pad(d.getMonth() + 1)}/${d.getFullYear()} ` +
+          `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+        const timestampedMessage = `[${now}] ${message}`;
+        libStatus.innerHTML += (libStatus.innerHTML ? '<br>' : '') + timestampedMessage;
+      }
+
+      const loadModule = () => {
+        const url = moduleUrl + '?t=' + Date.now();
+        appendLibStatus(`Loading module ${url}...`);
+        return import(url);
       };
-      events.onmessage = (event) => {
-        if (event.data === 'reload') {
-          status.textContent = 'Change detected. Reloading...';
-          location.reload();
+
+      function escapeHTML(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      async function refreshBuildLog() {
+        try {
+          const response = await fetch(buildLogUrl + '?t=' + Date.now());
+          const data = await response.json();
+          buildLogStatus.textContent = data.building ? 'Build log (current build)' : 'Build log (latest build)';
+          buildResult.textContent = data.output || 'No build output yet.';
+        } catch (error) {
+          buildLogStatus.textContent = 'Build log unavailable';
+          buildResult.textContent = (error && error.message) || String(error);
         }
-      };
-      events.onerror = () => {
-        status.textContent = 'Live reload connection lost. Retrying...';
-      };
+      }
+
+      refreshBuildLog();
+      loadModule()
+        .then((lib) => {
+          // ----------------------------
+          // Safe value formatter
+          // ----------------------------
+          const formatValue = (value) => {
+            if (typeof value === 'function') {
+              return `function ${value.name || '(anonymous)'}()`;
+            }
+
+            if (typeof value === 'string') return `"${value}"`;
+            if (typeof value === 'number' || typeof value === 'boolean') return String(value);
+            if (value === null) return 'null';
+            if (value === undefined) return 'undefined';
+
+            try {
+              return JSON.stringify(value, null, 2);
+            } catch {
+              return String(value);
+            }
+          };
+
+          // ----------------------------
+          // Inline debug row
+          // ----------------------------
+          const createInlineDebug = (label, value) => {
+            return `
+        <div style="margin:2px 0;">
+          <strong>${label}</strong>:
+          <code>${escapeHTML(formatValue(value))}</code>
+        </div>
+      `;
+          };
+
+          // ----------------------------
+          // Block debug (for objects overview)
+          // ----------------------------
+          const createDebugBlock = (label, value) => {
+            return `
+        <div style="margin-top:0.5rem;font-family:monospace;">
+          <strong>${label}</strong>
+          <pre style="
+            background:#fff;
+            border:1px solid #ddd;
+            padding:0.5rem;
+            max-height:12em;
+            overflow:auto;
+          ">${escapeHTML(formatValue(value))}</pre>
+        </div>
+      `;
+          };
+
+          // ----------------------------
+          // Get library safely
+          // ----------------------------
+          const libData = window.SBGUtility || globalThis.SBGUtility || {};
+
+          // ----------------------------
+          // Inline inspector (fixed overflow + correct formatting)
+          // ----------------------------
+          const inlineDebugs = `
+      <div style="
+        background:#fff;
+        border:1px solid #ddd;
+        padding:0.5rem;
+        max-height:16em;
+        overflow:auto;
+        font-family:monospace;
+      ">
+        ${Object.entries(libData)
+          .map(([key, value]) => createInlineDebug(`SBGUtility[${key}]`, value))
+          .join('')}
+      </div>
+    `;
+
+          // ----------------------------
+          // Global inspectors (FIXED: no JSON.stringify on whole object)
+          // ----------------------------
+          const debugHtml = `
+      <div style="margin-top:0.5rem;">
+
+        ${createDebugBlock('globalThis.SBGUtility (keys)', Object.keys(globalThis.SBGUtility || {}))}
+
+        ${createDebugBlock('window.SBGUtility (keys)', Object.keys(window.SBGUtility || {}))}
+
+        <hr>
+
+        ${inlineDebugs}
+
+      </div>
+    `;
+
+          // ----------------------------
+          // Output
+          // ----------------------------
+          appendLibStatus(`Module loaded successfully. <code>lib</code> is available in console.` + debugHtml);
+        })
+        .catch((err) => {
+          console.error('Initial module load failed:', err);
+          appendLibStatus(`Error loading module: ${err.message || String(err)}`);
+        });
+
+      if (isLocalhost) {
+        const events = new EventSource(eventUrl);
+        events.onopen = () => {
+          status.textContent = 'Connected. Waiting for dist changes...';
+        };
+        events.addEventListener('build-log', () => {
+          refreshBuildLog();
+        });
+        events.onmessage = (event) => {
+          if (event.data === 'reload') {
+            status.textContent = 'Change detected. Reloading...';
+            location.reload();
+          }
+        };
+        events.onerror = () => {
+          status.textContent = 'Live reload connection lost. Retrying...';
+        };
+      }
 
       buildBtn.addEventListener('click', async () => {
         buildBtn.disabled = true;
         status.textContent = 'Running yarn build-browser...';
-        buildResult.style.display = 'none';
-        buildResult.textContent = '';
         try {
           const response = await fetch('/__build', { method: 'POST' });
           const result = await response.json();
           if (!response.ok || !result.ok) {
             status.textContent = 'Build failed.';
-            buildResult.style.display = 'block';
-            buildResult.textContent = (result.output || result.error || result.message || 'Unknown build error').slice(-10000);
+            await refreshBuildLog();
             return;
           }
           status.textContent = 'Build completed. Waiting for live reload...';
-          buildResult.style.display = 'block';
-          buildResult.textContent = (result.output || '').slice(-10000);
+          await refreshBuildLog();
         } catch (error) {
           status.textContent = 'Build request failed.';
-          buildResult.style.display = 'block';
-          buildResult.textContent = (error && error.message) || String(error);
+          await refreshBuildLog();
         } finally {
           buildBtn.disabled = false;
         }
       });
     </script>
-	</body>
+  </body>
 </html>

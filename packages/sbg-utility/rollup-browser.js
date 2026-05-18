@@ -4,12 +4,12 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import path from 'path';
-import * as rimraf from 'rimraf';
 import { rollup } from 'rollup';
 import analyze from 'rollup-plugin-analyzer';
+import { dts } from 'rollup-plugin-dts';
 import polyfillNode from 'rollup-plugin-polyfill-node';
 import { fileURLToPath } from 'url';
-import { chunkFileNamesWithExt, entryFileNamesWithExt } from './rollup.utils.js';
+import { chunkFileNamesWithExt } from './rollup.utils.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -57,19 +57,43 @@ async function buildPolyfill(input) {
     external: () => false
   });
 
-  rimraf.sync(path.join(__dirname, 'dist/browser'));
+  await bundle.write({
+    dir: 'dist/browser',
+    format: 'iife',
+    // entryFileNames: entryFileNamesWithExt('mjs'),
+    entryFileNames: 'index.mjs',
+    chunkFileNames: chunkFileNamesWithExt('mjs')
+  });
 
   await bundle.write({
     dir: 'dist/browser',
     format: 'iife',
-    entryFileNames: entryFileNamesWithExt('mjs'),
+    // entryFileNames: entryFileNamesWithExt('mjs'),
+    entryFileNames: 'index.cjs',
     chunkFileNames: chunkFileNamesWithExt('mjs')
   });
   await bundle.close();
 }
 
+async function buildTypes(input) {
+  const bundle = await rollup({
+    input,
+    plugins: [dts()],
+    // Keep third-party types external and generate only package declaration surface.
+    external: [/^node:/, /^[a-zA-Z0-9@][^:]*$/]
+  });
+
+  await bundle.write({
+    file: 'dist/browser/index.d.ts',
+    format: 'es'
+  });
+  await bundle.close();
+}
+
 async function build() {
-  await buildPolyfill(path.join(__dirname, 'src/index-browser.ts'));
+  const browserEntry = path.join(__dirname, 'src/index-browser.ts');
+  await buildPolyfill(browserEntry);
+  await buildTypes(browserEntry);
 }
 
 build().catch((err) => {

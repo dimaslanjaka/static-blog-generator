@@ -30,6 +30,27 @@ const cmd = (commandName) => {
   return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
 };
 
+async function populateConfig() {
+  const configYmlPath = path.join(__dirname, 'test', '_config.yml');
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+
+  if (!fs.existsSync(configYmlPath)) {
+    console.error('YAML config not found at', configYmlPath);
+    return;
+  }
+
+  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
+  const configObj = YAML.parse(ymlContent);
+  fs.ensureDirSync(path.dirname(configJsonPath));
+  fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
+  console.log('Created _config.json at', configJsonPath);
+  // Also write a copy into dist so builder scripts that run from dist can read it
+  const distConfigPath = path.join(__dirname, 'dist', '_config.json');
+  fs.ensureDirSync(path.dirname(distConfigPath));
+  fs.writeFileSync(distConfigPath, JSON.stringify(configObj, null, 2));
+  console.log('Created _config.json at', distConfigPath);
+}
+
 // copy non-javascript assets from src folder
 const copy = async function () {
   // Copy for one file build. see rollup _oneFile
@@ -62,12 +83,10 @@ gulp.task('copy', copy);
 // rollup -c
 
 async function tsc() {
-  // write dummy src/config/_config.json if it doesn't exist to prevent tsc errors
+  // populate config if not exists
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
   if (!fs.existsSync(configJsonPath)) {
-    fs.ensureDirSync(path.dirname(configJsonPath));
-    fs.writeFileSync(configJsonPath, '{}');
-    console.log('Created dummy _config.json at', configJsonPath);
+    await populateConfig();
   }
   await crossSpawn.spawnAsync(get_binary_path('tsc'), ['--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
@@ -86,6 +105,11 @@ gulp.task('rollup', gulp.series(buildAll));
 gulp.task('rollup-dts', gulp.series(compileDeclarations));
 
 gulp.task('build-browser', async function () {
+  // Ensure config is populated before building browser bundle
+  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+  if (!fs.existsSync(configJsonPath)) {
+    await populateConfig();
+  }
   await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-browser.js')], {
     cwd: __dirname,
     shell: true,
@@ -103,7 +127,13 @@ function generateExportsTask() {
         types: './dist/index.d.mts'
         // types: './dist/index.d.cts'
       },
-      './package.json': './package.json'
+      './package.json': './package.json',
+      './browser': {
+        require: './dist/browser/index.cjs',
+        import: './dist/browser/index.mjs',
+        types: './dist/browser/index.d.ts'
+        // types: './dist/browser/index.d.cts'
+      }
     },
     folders: [
       { dir: `${process.cwd()}/dist/utils`, prefix: './dist/utils/' },
@@ -122,52 +152,64 @@ async function clean() {
 
 gulp.task('clean', gulp.series(clean));
 
-gulp.task('populate-config', async function () {
-  const configYmlPath = path.join(__dirname, 'test', '_config.yml');
-  const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
-
-  if (!fs.existsSync(configYmlPath)) {
-    console.error('YAML config not found at', configYmlPath);
-    return;
-  }
-
-  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
-  const configObj = YAML.parse(ymlContent);
-  fs.ensureDirSync(path.dirname(configJsonPath));
-  fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
-  console.log('Created _config.json at', configJsonPath);
-});
+gulp.task('populate-config', populateConfig);
 
 // index-builder task: runs all src/**/*.builder.{ts,cjs,mjs} files as in index-builder.mjs
 gulp.task('index-builder', async function () {
   const files = glob.sync('src/**/*.builder.{ts,cjs,mjs}', { nodir: true });
+
   for (const file of files) {
     const ext = path.extname(file);
-    let command, args;
-    if (ext === '.ts') {
-      command = 'node';
-      args = [
-        '--no-warnings',
-        '--experimental-specifier-resolution=node',
-        '--loader',
-        'ts-node/esm',
-        '-r',
-        'dotenv/config',
-        file
-      ];
-    } else {
-      command = 'node';
-      args = ['--no-warnings', '--experimental-specifier-resolution=node', '-r', 'dotenv/config', file];
-    }
-    console.log(`Executing: ${command} ${args.join(' ')}`);
+    const baseName = path.basename(file, ext);
+
+    const env = {
+      ...process.env,
+      NODE_ENV: 'development',
+      ROLLUP_INPUT: file,
+      ROLLUP_OUTPUT: `dist/${baseName}`
+    };
+
+    console.log(`Processing: ${file}`);
+
     try {
-      await new Promise((resolve, reject) => {
-        const proc = crossSpawn(command, args, { stdio: 'inherit', shell: true });
-        proc.on('close', (code) => {
-          if (code !== 0) reject(new Error(`Process exited with code ${code}`));
-          else resolve();
+      if (ext === '.ts') {
+        // 1️⃣ RUN ROLLUP
+        await new Promise((resolve, reject) => {
+          const proc = crossSpawn('rollup', ['-c', 'rollup.executor.js'], { stdio: 'inherit', shell: true, env });
+
+          proc.on('close', (code) => {
+            if (code !== 0) reject(new Error(`Rollup failed with code ${code}`));
+            else resolve();
+          });
         });
-      });
+
+        // 2️⃣ RUN OUTPUT FILE
+        await new Promise((resolve, reject) => {
+          const proc = crossSpawn('node', ['--no-warnings', `${env.ROLLUP_OUTPUT}.mjs`], {
+            stdio: 'inherit',
+            shell: true,
+            env
+          });
+
+          proc.on('close', (code) => {
+            if (code !== 0) reject(new Error(`Node failed with code ${code}`));
+            else resolve();
+          });
+        });
+      } else {
+        await new Promise((resolve, reject) => {
+          const proc = crossSpawn(
+            'node',
+            ['--no-warnings', '--experimental-specifier-resolution=node', '-r', 'dotenv/config', file],
+            { stdio: 'inherit', shell: true, env }
+          );
+
+          proc.on('close', (code) => {
+            if (code !== 0) reject(new Error(`Process exited with code ${code}`));
+            else resolve();
+          });
+        });
+      }
     } catch (error) {
       console.error(error.message);
     }
@@ -180,4 +222,4 @@ gulp.task(
   gulp.series('populate-config', 'index-builder', 'tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports')
 );
 
-gulp.task('default', gulp.series('build'));
+gulp.task('default', gulp.series('build', 'build-browser'));

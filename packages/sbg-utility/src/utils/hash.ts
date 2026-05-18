@@ -18,36 +18,51 @@ export function md5(data?: string, short: boolean | number = false): string | un
 
 /**
  * convert data to hash (async)
- * @param alogarithm
+ * @param algorithm
  * @param data
  * @param encoding
  * @returns
  */
-export function data_to_hash(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
-  data: cryptolib.BinaryLike,
-  encoding: import('crypto').BinaryToTextEncoding = 'hex'
+export async function data_to_hash(
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  data: string | Buffer,
+  encoding: 'hex' | 'base64' = 'hex'
 ): Promise<string> {
-  return new Promise((resolve, reject) => {
-    try {
-      resolve(data_to_hash_sync(alogarithm, data, encoding));
-    } catch (e) {
-      reject(e);
-    }
-  });
+  return data_to_hash_sync(algorithm, data, encoding);
 }
 
 /**
  * convert data to hash (sync)
- * @param alogarithm
+ * @param algorithm
  * @param data
  * @param encoding
  * @returns
  */
 export function data_to_hash_sync(
-  alogarithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
-  data: cryptolib.BinaryLike,
-  encoding: import('crypto').BinaryToTextEncoding = 'hex'
-) {
-  return cryptolib.createHash(alogarithm).update(data).digest(encoding);
+  algorithm: 'sha1' | 'sha256' | 'sha384' | 'sha512' | 'md5' = 'sha1',
+  data: string | Buffer,
+  encoding: 'hex' | 'base64' = 'hex'
+): string {
+  let hash: CryptoJS.lib.WordArray;
+  const wordArray = typeof data === 'string' ? CryptoJS.enc.Utf8.parse(data) : CryptoJS.lib.WordArray.create(data);
+  switch (algorithm) {
+    case 'md5':
+      hash = CryptoJS.MD5(wordArray);
+      break;
+    case 'sha1':
+      hash = CryptoJS.SHA1(wordArray);
+      break;
+    case 'sha256':
+      hash = CryptoJS.SHA256(wordArray);
+      break;
+    case 'sha384':
+      hash = CryptoJS.SHA384(wordArray);
+      break;
+    case 'sha512':
+      hash = CryptoJS.SHA512(wordArray);
+      break;
+    default:
+      throw new Error('Unsupported algorithm');
+  }
+  return hash.toString(encoding === 'base64' ? CryptoJS.enc.Base64 : CryptoJS.enc.Hex);
 }

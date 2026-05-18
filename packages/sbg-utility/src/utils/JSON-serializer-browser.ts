@@ -3,39 +3,8 @@
 /*! (c) 2020 Andrea Giammarchi */
 /* https://github.com/WebReflection/flatted/blob/main/cjs/index.js */
 
-import * as crypto from 'crypto';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as url from 'url';
-
-const __filename = url.fileURLToPath(import.meta.url);
 const { parse: $parse, stringify: $stringify } = JSON;
 const { keys } = Object;
-
-/**
- * Generates an SHA-1 hash from the provided data.
- * @param data - The input data to hash.
- * @returns The SHA-1 hash of the data.
- */
-function sha1(data: string | Buffer): string {
-  return crypto.createHash('sha1').update(data.toString(), 'binary').digest('hex');
-}
-
-/**
- * Retrieves the current stack trace and creates an error log file.
- * @returns An object containing the stack trace and the file path.
- */
-function getStack(): { stack: string[]; file: string } {
-  const stack =
-    new Error('get caller').stack
-      ?.split(/\r?\n/gim)
-      .filter((str) => /(dist|src)/i.test(str) && !str.includes(__filename)) ?? [];
-  const folder = path.join(process.cwd(), 'tmp/error/json-serializer');
-  // Create folder if it does not exist
-  if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true });
-  const file = path.join(folder, `${sha1(stack[1])}.log`);
-  return { stack, file };
-}
 
 const Primitive = String; // It could be Number
 const primitive = 'string'; // It could be 'number'
@@ -84,30 +53,17 @@ const set = (known: Map<any, any>, input: any[], value: any): string => {
 };
 
 /**
- * Parses a JSON string with support for circular references, or falls back to standard JSON for normal arrays/objects.
+ * Parses a JSON string with support for circular references.
  * @param text - The JSON string to parse.
  * @param reviver - Optional function to transform the parsed values.
  * @returns The parsed object.
  */
-const parse = (text: string, reviver?: (...args: any[]) => any): unknown => {
-  try {
-    const raw = $parse(text);
-    // If not an array or not in the special format, just return as normal JSON
-    if (!Array.isArray(raw) || raw.length === 0 || typeof raw[0] !== 'object') {
-      return raw;
-    }
-    // Otherwise, treat as circular-refs format
-    const input = $parse(text, Primitives).map(primitives);
-    const value = input[0];
-    const $ = reviver || noop;
-    const tmp = typeof value === object && value ? revive(input, new Set(), value, $) : value;
-    return $.call({ '': tmp }, '', tmp);
-  } catch (e) {
-    const { stack, file } = getStack();
-    fs.writeFileSync(file, `${stack.join('\n')}\n\n${text}`);
-    console.log('fail parse ' + file + ' ' + (e as Error).message);
-    process.exit(1);
-  }
+const parse = (text: string, reviver?: (...args: any[]) => any): any => {
+  const input = $parse(text, Primitives).map(primitives);
+  const value = input[0];
+  const $ = reviver || noop;
+  const tmp = typeof value === object && value ? revive(input, new Set(), value, $) : value;
+  return $.call({ '': tmp }, '', tmp);
 };
 
 /**
@@ -161,13 +117,39 @@ const stringify = (
  * @param anyData - The object to convert.
  * @returns The JSON representation of the object.
  */
-const toJSON = (anyData: any): any => $parse(stringify(anyData));
-export { toJSON };
+const toJSONBrowser = (anyData: any): any => $parse(stringify(anyData));
+export { toJSONBrowser };
 
 /**
  * Parses a circular object from JSON.
  * @param anyData - The JSON string to parse.
  * @returns The parsed object.
  */
-const fromJSON = (anyData: string): any => parse($stringify(anyData));
-export { fromJSON, parse, stringify };
+const fromJSONBrowser = (anyData: string): any => parse($stringify(anyData));
+export { fromJSONBrowser, parse as parseBrowser, stringify as stringifyBrowser };
+
+/**
+ * transform any object to json. Suppress `TypeError: Converting circular structure to JSON`
+ * @param data
+ * @returns
+ */
+/**
+ * Transforms any object to JSON, suppressing `TypeError: Converting circular structure to JSON` (Browser version)
+ * @param data - The object to stringify
+ * @returns The JSON string representation
+ */
+export function jsonStringifyWithCircularRefsBrowser(data: unknown): string {
+  return stringify(data);
+}
+
+/**
+ * parse json stringified with circular refs
+ */
+/**
+ * Parses JSON stringified with circular refs (Browser version)
+ * @param data - The JSON string to parse
+ * @returns The parsed object
+ */
+export function jsonParseWithCircularRefsBrowser<T>(data: string): T {
+  return parse(data) as T;
+}

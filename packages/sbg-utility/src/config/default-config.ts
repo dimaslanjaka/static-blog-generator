@@ -105,7 +105,8 @@ export function getDefaultConfig() {
     meta_generator: true
   };
   const sbgDefaultConfig = {
-    cwd: normalizePath(trueCasePathSync(process.cwd()))
+    // cwd: normalizePath(trueCasePathSync(process.cwd()))
+    cwd: normalizePath(process.cwd())
   };
   const configYML = yaml.parse(getDefaultConfigYaml());
   return Object.assign(hexoDefaultConfig, sbgDefaultConfig, configYML) as importConfig;

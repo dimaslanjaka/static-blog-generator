@@ -5,7 +5,7 @@ import PluginError from 'plugin-error';
 import through2 from 'through2';
 import upath from 'upath';
 import { Logger } from '../utils';
-import { trueCasePathSync } from '../utils/filemanager/case-path';
+import { trueCasePathSync } from '../utils/filemanager/path-utility';
 const pluginName = 'gulp-dom';
 const path = {
   join: (...str: string[]) => upath.toUnix(trueCasePathSync(upath.join(...str))),
