@@ -11,6 +11,8 @@ const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || '127.0.0.1';
 const sseClients = new Set();
 let reloadTimer;
+let reloadsSuppressed = false;
+let pendingReload = false;
 let isBuilding = false;
 
 const contentTypes = {
@@ -67,6 +69,11 @@ function broadcastReload() {
 }
 
 function scheduleReloadBroadcast() {
+  if (reloadsSuppressed) {
+    pendingReload = true;
+    return;
+  }
+
   clearTimeout(reloadTimer);
   reloadTimer = setTimeout(broadcastReload, 120);
 }
@@ -91,7 +98,7 @@ function startWatch(targetPath, label, recursive = false) {
 }
 
 const watchers = [
-  startWatch(path.dirname(rootDir), 'dist', true),
+  startWatch(path.dirname(rootDir), 'dist/browser', true),
   startWatch(debugHtmlPath, 'rollup-browser-test.html'),
   startWatch(path.join(__dirname, 'package.json'), 'package.json')
 ].filter(Boolean);
@@ -178,8 +185,20 @@ const server = createServer(async (req, res) => {
       }
 
       isBuilding = true;
-      const result = await runBuildBrowser();
-      isBuilding = false;
+      reloadsSuppressed = true;
+
+      let result;
+      try {
+        result = await runBuildBrowser();
+      } finally {
+        isBuilding = false;
+        reloadsSuppressed = false;
+
+        if (pendingReload) {
+          pendingReload = false;
+          scheduleReloadBroadcast();
+        }
+      }
 
       res.writeHead(result.ok ? 200 : 500, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify(result));

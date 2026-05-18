@@ -29,7 +29,7 @@
     <p>Loading <code>/dist/browser/index.mjs</code> with live reload.</p>
     <p id="libStatus"></p>
     <p id="status">Watching dist/browser for changes...</p>
-    <button id="buildBtn" type="button">Build Browser</button>
+    <button id="buildBtn" type="button" disabled="true">Build Browser</button>
     <pre
       id="buildResult"
       style="
@@ -49,6 +49,12 @@
       const buildResult = document.getElementById('buildResult');
       const eventUrl = '/__events';
       const moduleUrl = '/dist/browser/index.mjs';
+
+      // Enable build button if we're in development mode (detected by hostname or presence of live reload)
+      const isLocalhost = location.hostname === 'localhost' || location.hostname.startsWith('127.') || location.hostname === '::1';
+      if (isLocalhost) {
+        buildBtn.disabled = false;
+      }
 
       function appendLibStatus(message) {
         const pad = (n) => String(n).padStart(2, '0');
@@ -170,19 +176,22 @@
           console.error('Initial module load failed:', err);
           appendLibStatus(`Error loading module: ${err.message || String(err)}`);
         });
-      const events = new EventSource(eventUrl);
-      events.onopen = () => {
-        status.textContent = 'Connected. Waiting for dist changes...';
-      };
-      events.onmessage = (event) => {
-        if (event.data === 'reload') {
-          status.textContent = 'Change detected. Reloading...';
-          location.reload();
-        }
-      };
-      events.onerror = () => {
-        status.textContent = 'Live reload connection lost. Retrying...';
-      };
+
+      if (isLocalhost) {
+        const events = new EventSource(eventUrl);
+        events.onopen = () => {
+          status.textContent = 'Connected. Waiting for dist changes...';
+        };
+        events.onmessage = (event) => {
+          if (event.data === 'reload') {
+            status.textContent = 'Change detected. Reloading...';
+            location.reload();
+          }
+        };
+        events.onerror = () => {
+          status.textContent = 'Live reload connection lost. Retrying...';
+        };
+      }
 
       buildBtn.addEventListener('click', async () => {
         buildBtn.disabled = true;
