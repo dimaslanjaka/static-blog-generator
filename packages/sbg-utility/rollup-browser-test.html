@@ -29,6 +29,7 @@
     <p>Loading <code>/dist/browser/index.mjs</code> with live reload.</p>
     <p id="libStatus"></p>
     <p id="status">Watching dist/browser for changes...</p>
+    <p id="buildLogStatus">Build log</p>
     <button id="buildBtn" type="button" disabled="true">Build Browser</button>
     <pre
       id="buildResult"
@@ -38,16 +39,19 @@
         padding: 0.5rem;
         max-height: 16em;
         overflow: auto;
-        display: none;
+        display: block;
+        white-space: pre-wrap;
         margin-top: 1em;
       "
     ></pre>
     <script type="module">
       const status = document.getElementById('status');
       const libStatus = document.getElementById('libStatus');
+      const buildLogStatus = document.getElementById('buildLogStatus');
       const buildBtn = document.getElementById('buildBtn');
       const buildResult = document.getElementById('buildResult');
       const eventUrl = '/__events';
+      const buildLogUrl = '/__build-log';
       const moduleUrl = '/dist/browser/index.mjs';
 
       // Enable build button if we're in development mode (detected by hostname or presence of live reload)
@@ -75,6 +79,20 @@
       function escapeHTML(s) {
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       }
+
+      async function refreshBuildLog() {
+        try {
+          const response = await fetch(buildLogUrl + '?t=' + Date.now());
+          const data = await response.json();
+          buildLogStatus.textContent = data.building ? 'Build log (current build)' : 'Build log (latest build)';
+          buildResult.textContent = data.output || 'No build output yet.';
+        } catch (error) {
+          buildLogStatus.textContent = 'Build log unavailable';
+          buildResult.textContent = (error && error.message) || String(error);
+        }
+      }
+
+      refreshBuildLog();
       loadModule()
         .then((lib) => {
           // ----------------------------
@@ -182,6 +200,9 @@
         events.onopen = () => {
           status.textContent = 'Connected. Waiting for dist changes...';
         };
+        events.addEventListener('build-log', () => {
+          refreshBuildLog();
+        });
         events.onmessage = (event) => {
           if (event.data === 'reload') {
             status.textContent = 'Change detected. Reloading...';
@@ -196,26 +217,19 @@
       buildBtn.addEventListener('click', async () => {
         buildBtn.disabled = true;
         status.textContent = 'Running yarn build-browser...';
-        buildResult.style.display = 'none';
-        buildResult.textContent = '';
         try {
           const response = await fetch('/__build', { method: 'POST' });
           const result = await response.json();
           if (!response.ok || !result.ok) {
             status.textContent = 'Build failed.';
-            buildResult.style.display = 'block';
-            buildResult.textContent = (result.output || result.error || result.message || 'Unknown build error').slice(
-              -10000
-            );
+            await refreshBuildLog();
             return;
           }
           status.textContent = 'Build completed. Waiting for live reload...';
-          buildResult.style.display = 'block';
-          buildResult.textContent = (result.output || '').slice(-10000);
+          await refreshBuildLog();
         } catch (error) {
           status.textContent = 'Build request failed.';
-          buildResult.style.display = 'block';
-          buildResult.textContent = (error && error.message) || String(error);
+          await refreshBuildLog();
         } finally {
           buildBtn.disabled = false;
         }

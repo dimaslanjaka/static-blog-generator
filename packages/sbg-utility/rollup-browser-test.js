@@ -11,9 +11,13 @@ const port = Number(process.env.PORT || 4173);
 const host = process.env.HOST || '127.0.0.1';
 const sseClients = new Set();
 let reloadTimer;
+let buildLogBroadcastTimer;
 let reloadsSuppressed = false;
 let pendingReload = false;
 let isBuilding = false;
+const buildLogPath = path.join(__dirname, 'tmp', 'rollup-browser-test.log');
+let buildLogText = '';
+let lastBuildResult = { ok: false, code: null, startedAt: null, finishedAt: null };
 
 const contentTypes = {
   '.html': 'text/html; charset=utf-8',
@@ -31,8 +35,67 @@ const contentTypes = {
 
 const debugHtmlPath = path.join(__dirname, 'rollup-browser-test.html');
 
+function initializeBuildLog() {
+  fs.ensureDirSync(path.dirname(buildLogPath));
+
+  if (fs.existsSync(buildLogPath)) {
+    buildLogText = fs.readFileSync(buildLogPath, 'utf8');
+    return;
+  }
+
+  fs.writeFileSync(buildLogPath, '');
+}
+
+initializeBuildLog();
+
+function resetBuildLog() {
+  buildLogText = '';
+  fs.writeFileSync(buildLogPath, buildLogText);
+  scheduleBuildLogBroadcast();
+}
+
+function appendBuildLog(text) {
+  buildLogText += text;
+  fs.writeFileSync(buildLogPath, buildLogText);
+  scheduleBuildLogBroadcast();
+}
+
+function appendBuildLogLine(text = '') {
+  appendBuildLog(`${text}\n`);
+}
+
+function broadcastSseEvent(eventName, data = 'update') {
+  const payload = String(data).replace(/\r?\n/g, '\n');
+
+  for (const res of sseClients) {
+    res.write(`event: ${eventName}\n`);
+    for (const line of payload.split('\n')) {
+      res.write(`data: ${line}\n`);
+    }
+    res.write('\n');
+  }
+}
+
+function scheduleBuildLogBroadcast() {
+  clearTimeout(buildLogBroadcastTimer);
+  buildLogBroadcastTimer = setTimeout(() => broadcastSseEvent('build-log'), 100);
+}
+
+function getBuildLogSnapshot() {
+  return {
+    ok: true,
+    building: isBuilding,
+    output: buildLogText,
+    logPath: buildLogPath,
+    lastBuildResult
+  };
+}
+
 function runBuildBrowser() {
   return new Promise((resolve) => {
+    resetBuildLog();
+    appendBuildLogLine(`===== build-browser started ${new Date().toISOString()} =====`);
+
     const child = spawn('yarn', ['build-browser'], {
       cwd: __dirname,
       shell: true
@@ -40,10 +103,9 @@ function runBuildBrowser() {
 
     let output = '';
     const appendOutput = (chunk) => {
-      output += chunk;
-      if (output.length > 120000) {
-        output = output.slice(-120000);
-      }
+      const text = String(chunk);
+      output += text;
+      appendBuildLog(text);
     };
 
     child.stdout?.on('data', (data) => {
@@ -54,18 +116,19 @@ function runBuildBrowser() {
     });
 
     child.on('error', (error) => {
-      resolve({ ok: false, code: -1, error: error.message, output });
+      appendBuildLogLine(`===== build-browser failed ${new Date().toISOString()} =====`);
+      resolve({ ok: false, code: -1, error: error.message, output, logPath: buildLogPath });
     });
     child.on('close', (code) => {
-      resolve({ ok: code === 0, code, output });
+      const ok = code === 0;
+      appendBuildLogLine(`===== build-browser finished ${new Date().toISOString()} code=${code} ok=${ok} =====`);
+      resolve({ ok, code, output, logPath: buildLogPath });
     });
   });
 }
 
 function broadcastReload() {
-  for (const res of sseClients) {
-    res.write('data: reload\\n\\n');
-  }
+  broadcastSseEvent('reload');
 }
 
 function scheduleReloadBroadcast() {
@@ -160,6 +223,19 @@ const server = createServer(async (req, res) => {
       return;
     }
 
+    if (pathname === '/__build-log') {
+      if (req.method !== 'GET') {
+        res.writeHead(405, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, message: 'Method not allowed' }));
+        return;
+      }
+
+      const snapshot = getBuildLogSnapshot();
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      res.end(JSON.stringify(snapshot));
+      return;
+    }
+
     if (pathname === '/favicon.ico') {
       const icoBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';
       const buf = Buffer.from(icoBase64, 'base64');
@@ -186,6 +262,8 @@ const server = createServer(async (req, res) => {
 
       isBuilding = true;
       reloadsSuppressed = true;
+      lastBuildResult = { ok: false, code: null, startedAt: new Date().toISOString(), finishedAt: null };
+      scheduleBuildLogBroadcast();
 
       let result;
       try {
@@ -193,6 +271,13 @@ const server = createServer(async (req, res) => {
       } finally {
         isBuilding = false;
         reloadsSuppressed = false;
+        lastBuildResult = {
+          ok: Boolean(result && result.ok),
+          code: result && typeof result.code !== 'undefined' ? result.code : null,
+          startedAt: lastBuildResult.startedAt,
+          finishedAt: new Date().toISOString()
+        };
+        scheduleBuildLogBroadcast();
 
         if (pendingReload) {
           pendingReload = false;
