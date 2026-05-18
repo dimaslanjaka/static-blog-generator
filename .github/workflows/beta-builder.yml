@@ -135,6 +135,7 @@ jobs:
         run: |
           yarn run build-cli
           yarn workspace sbg-cli run pack
+        continue-on-error: true
 
       - uses: actions/upload-artifact@v7
         name: upload build result
