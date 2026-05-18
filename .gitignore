@@ -16,7 +16,8 @@ ___*
 **/package.tgz
 .env
 .git-rewrite
-/packages/**/package-lock.json
+**/package-lock.json
+**/yarn.lock
 .nx/
 
 # disable dist
