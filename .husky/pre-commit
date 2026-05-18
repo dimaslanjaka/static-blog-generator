@@ -10,7 +10,7 @@ fi
 
 # Keep ESLint and Prettier version in sync across all packages
 # This is necessary to prevent linting errors due to version mismatches
-yarn up @eslint/eslintrc@^3.3.5 @eslint/js@9 eslint@9 @typescript-eslint/eslint-plugin@^8.59.3 @typescript-eslint/parser@^8.59.3 typescript-eslint@^8.59.3 eslint-config-prettier@^10.1.8 eslint-plugin-prettier@^5.5.5 prettier@^3.8.3 jsonc-parser@^3.3.1
+python .yarn-install.py --up @eslint/eslintrc@^3.3.5 @eslint/js@9 eslint@9 @typescript-eslint/eslint-plugin@^8.59.3 @typescript-eslint/parser@^8.59.3 typescript-eslint@^8.59.3 eslint-config-prettier@^10.1.8 eslint-plugin-prettier@^5.5.5 prettier@^3.8.3 jsonc-parser@^3.3.1
 
 npx lint-staged
 

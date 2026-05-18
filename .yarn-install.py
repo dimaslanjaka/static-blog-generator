@@ -3,6 +3,7 @@ import os
 import sys
 import shutil
 from shutil import which
+import argparse
 
 
 def run(cmd):
@@ -37,6 +38,10 @@ def empty_file(path):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--up", nargs=argparse.REMAINDER, help="Run yarn up with packages")
+    args = parser.parse_args()
+
     branch = get_branch_name()
     safe_branch = safe_branch_name(branch)
 
@@ -58,22 +63,24 @@ def main():
     else:
         print("No branch lock found.")
 
-        # NEW BEHAVIOR:
-        # If no branch lock but yarn.lock exists, reset it
         if yarn_lock_exists:
             print("Existing yarn.lock found but no branch lock -> resetting yarn.lock")
             empty_file(yarn_lock)
 
-    # Step 2: run install
-    print("Running yarn install...")
-    subprocess.run([yarn_path, "install"], check=True)
+    # Step 2: run yarn command
+    if args.up:
+        print(f"Running yarn up {' '.join(args.up)} ...")
+        subprocess.run([yarn_path, "up", *args.up], check=True)
+    else:
+        print("Running yarn install...")
+        subprocess.run([yarn_path, "install"], check=True)
 
     # Step 3: save updated lock back to branch snapshot
     if os.path.exists(yarn_lock):
         print(f"Saving updated lock: {yarn_lock} -> {branch_lock}")
         copy_file(yarn_lock, branch_lock)
     else:
-        print("Warning: yarn.lock not found after install")
+        print("Warning: yarn.lock not found after install/up")
 
 
 if __name__ == "__main__":
