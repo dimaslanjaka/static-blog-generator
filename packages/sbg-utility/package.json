@@ -129,6 +129,19 @@
       "types": "./dist/utils/JSON.d.mts",
       "import": "./dist/utils/JSON.mjs"
     },
+    "./dist/utils/LocalStorage": {
+      "types": "./dist/utils/LocalStorage.d.ts",
+      "require": "./dist/utils/LocalStorage.cjs",
+      "import": "./dist/utils/LocalStorage.mjs"
+    },
+    "./dist/utils/LocalStorage.cjs": {
+      "types": "./dist/utils/LocalStorage.d.cts",
+      "require": "./dist/utils/LocalStorage.cjs"
+    },
+    "./dist/utils/LocalStorage.mjs": {
+      "types": "./dist/utils/LocalStorage.d.mts",
+      "import": "./dist/utils/LocalStorage.mjs"
+    },
     "./dist/utils/LocalStorageSharedPreferences": {
       "types": "./dist/utils/LocalStorageSharedPreferences.d.ts",
       "require": "./dist/utils/LocalStorageSharedPreferences.cjs",
