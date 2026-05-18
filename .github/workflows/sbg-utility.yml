@@ -33,6 +33,17 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       node-version: 20.x
       YARN_CHECKSUM_BEHAVIOR: update
+      CACHE_PATHS: |
+        **/.cache
+        **/.yarn
+        **/releases
+        **/release*
+        **/tmp
+        **/dist
+        **/node_modules
+        ~/.npm
+        ~/.cache/yarn
+        **/yarn.lock
 
     runs-on: ubuntu-latest
 
@@ -111,20 +122,14 @@ jobs:
       - name: 🚀 Enable Corepack for Yarn
         run: corepack enable
 
-      - name: 📦 Restore Project Cache
-        uses: pat-s/always-upload-cache@v3.0.11
-        id: cache
+      - name: 📦 Restore Build Cache
+        uses: actions/cache/restore@v4
+        id: cache-restore
         with:
-          path: |
-            **/.yarn
-            **/release*
-            **/yarn.lock
-            **/node_modules
-            **/tmp
-            **/dist
-          key: ${{ runner.os }}-${{ env.node-version }}
+          path: ${{ env.CACHE_PATHS }}
+          key: ${{ runner.os }}-${{ env.node-version }}-${{ hashFiles('**/*.ts', '**/*.js', '**/*.cjs', '**/*.mjs', '**/yarn.lock', '**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.node-version }}
+            ${{ runner.os }}-${{ env.node-version }}-
             ${{ runner.os }}-
 
       - name: 🌍 Install Global Dev Dependencies
@@ -185,3 +190,10 @@ jobs:
               -m "workflow run: ${{ env.GITHUB_RUNNER_URL }}"
             git push
           fi
+
+      - name: 💾 Save Build Cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: ${{ env.CACHE_PATHS }}
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
