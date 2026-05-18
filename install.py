@@ -31,6 +31,11 @@ def copy_file(src, dst):
         shutil.copyfile(src, dst)
 
 
+def empty_file(path):
+    print(f"Emptying file: {path}")
+    open(path, "w").close()
+
+
 def main():
     branch = get_branch_name()
     safe_branch = safe_branch_name(branch)
@@ -43,12 +48,21 @@ def main():
         print("Error: Yarn not found in PATH.")
         sys.exit(1)
 
+    branch_lock_exists = os.path.exists(branch_lock)
+    yarn_lock_exists = os.path.exists(yarn_lock)
+
     # Step 1: restore branch lock if it exists
-    if os.path.exists(branch_lock):
+    if branch_lock_exists:
         print(f"Restoring branch lock: {branch_lock} -> {yarn_lock}")
         copy_file(branch_lock, yarn_lock)
     else:
-        print("No branch lock found, using existing yarn.lock (if any)")
+        print("No branch lock found.")
+
+        # NEW BEHAVIOR:
+        # If no branch lock but yarn.lock exists, reset it
+        if yarn_lock_exists:
+            print("Existing yarn.lock found but no branch lock -> resetting yarn.lock")
+            empty_file(yarn_lock)
 
     # Step 2: run install
     print("Running yarn install...")
