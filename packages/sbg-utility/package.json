@@ -777,6 +777,7 @@
     "url": "git+https://github.com/dimaslanjaka/static-blog-generator.git"
   },
   "scripts": {
+    "prebuild": "gulp populate-config",
     "prepublish": "npm run clean && npm run build",
     "update:ncu": "npx npm-check-updates -u",
     "update": "run-s \"update:**\"",
