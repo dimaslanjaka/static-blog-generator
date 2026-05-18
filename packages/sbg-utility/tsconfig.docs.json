@@ -3,8 +3,11 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
+    "rootDir": "./src",
     "outDir": "./tmp/dist",
     "declaration": true,
+    "noEmit": false,
+    "emitDeclarationOnly": false,
     "tsBuildInfoFile": "tmp/docs.info",
     "resolveJsonModule": true
   },
