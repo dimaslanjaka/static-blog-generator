@@ -108,7 +108,7 @@ jobs:
           echo "cache npm   : ${{ steps.set-env.outputs.CACHE_NPM }}"
           echo "cache yarn  : ${{ steps.set-env.outputs.CACHE_YARN }}"
 
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         id: cache
         with:
           path: '**/*'
