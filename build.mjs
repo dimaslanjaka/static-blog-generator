@@ -1,18 +1,18 @@
-import { spawn } from "child_process";
-import minimist from "minimist";
+import { spawn } from 'child_process';
+import minimist from 'minimist';
 
 /**
  * Correct Windows-safe Yarn runner
  */
-function yarn(args, stdio = "inherit") {
-  if (process.platform === "win32") {
-    return spawn("cmd.exe", ["/c", "yarn", ...args], {
-      stdio,
+function yarn(args, stdio = 'inherit') {
+  if (process.platform === 'win32') {
+    return spawn('cmd.exe', ['/c', 'yarn', ...args], {
+      stdio
     });
   }
 
-  return spawn("yarn", args, {
-    stdio,
+  return spawn('yarn', args, {
+    stdio
   });
 }
 
@@ -21,15 +21,15 @@ function yarn(args, stdio = "inherit") {
  */
 function workspaceExists(name) {
   return new Promise((resolve, reject) => {
-    const child = yarn(["workspaces", "list", "--json"], ["ignore", "pipe", "inherit"]);
+    const child = yarn(['workspaces', 'list', '--json'], ['ignore', 'pipe', 'inherit']);
 
-    let buffer = "";
+    let buffer = '';
     let found = false;
 
-    child.stdout.on("data", (chunk) => {
+    child.stdout.on('data', (chunk) => {
       buffer += chunk.toString();
 
-      let lines = buffer.split("\n");
+      let lines = buffer.split('\n');
 
       // keep last incomplete line in buffer
       buffer = lines.pop();
@@ -52,11 +52,11 @@ function workspaceExists(name) {
       }
     });
 
-    child.on("close", () => {
+    child.on('close', () => {
       resolve(found);
     });
 
-    child.on("error", (err) => {
+    child.on('error', (err) => {
       reject(new Error(`Yarn failed: ${err.message}`));
     });
   });
@@ -69,11 +69,11 @@ function runYarn(args) {
   return new Promise((resolve, reject) => {
     const child = yarn(args);
 
-    child.on("error", (err) => {
+    child.on('error', (err) => {
       reject(new Error(`Yarn spawn failed: ${err.message}`));
     });
 
-    child.on("close", (code) => {
+    child.on('close', (code) => {
       if (code !== 0) {
         reject(new Error(`Yarn failed with exit code ${code}`));
       } else {
@@ -87,9 +87,9 @@ function runYarn(args) {
  * CLI
  */
 const args = minimist(process.argv.slice(2), {
-  boolean: ["help", "build", "clean"],
-  string: ["workspace"],
-  alias: { h: "help", b: "build", c: "clean" },
+  boolean: ['help', 'build', 'clean'],
+  string: ['workspace'],
+  alias: { h: 'help', b: 'build', c: 'clean' }
 });
 
 const workspaceName = args._[0] || args.workspace;
@@ -118,20 +118,20 @@ async function main() {
   }
 
   if (args.clean) {
-    await runYarn(["workspace", workspaceName, "run", "clean"]);
+    await runYarn(['workspace', workspaceName, 'run', 'clean']);
     return;
   }
 
   if (args.build) {
-    await runYarn(["workspace", workspaceName, "run", "build"]);
+    await runYarn(['workspace', workspaceName, 'run', 'build']);
     return;
   }
 
-  console.error("No action specified.");
+  console.error('No action specified.');
   process.exit(1);
 }
 
 main().catch((err) => {
-  console.error("Error:", err.message);
+  console.error('Error:', err.message);
   process.exit(1);
 });

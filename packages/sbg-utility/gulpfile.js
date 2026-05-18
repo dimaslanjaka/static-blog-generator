@@ -33,19 +33,25 @@ const cmd = (commandName) => {
 async function populateConfig() {
   const configYmlPath = path.join(__dirname, 'test', '_config.yml');
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
+  const distConfigPath = path.join(__dirname, 'dist', '_config.json');
 
-  if (!fs.existsSync(configYmlPath)) {
+  let configObj;
+
+  if (fs.existsSync(configYmlPath)) {
+    const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
+    configObj = YAML.parse(ymlContent);
+  } else if (fs.existsSync(configJsonPath)) {
+    console.warn('YAML config not found at', configYmlPath, '- using existing JSON config');
+    configObj = JSON.parse(fs.readFileSync(configJsonPath, 'utf8'));
+  } else {
     console.error('YAML config not found at', configYmlPath);
     return;
   }
 
-  const ymlContent = fs.readFileSync(configYmlPath, 'utf8');
-  const configObj = YAML.parse(ymlContent);
   fs.ensureDirSync(path.dirname(configJsonPath));
   fs.writeFileSync(configJsonPath, JSON.stringify(configObj, null, 2));
   console.log('Created _config.json at', configJsonPath);
   // Also write a copy into dist so builder scripts that run from dist can read it
-  const distConfigPath = path.join(__dirname, 'dist', '_config.json');
   fs.ensureDirSync(path.dirname(distConfigPath));
   fs.writeFileSync(distConfigPath, JSON.stringify(configObj, null, 2));
   console.log('Created _config.json at', distConfigPath);
@@ -88,7 +94,7 @@ async function tsc() {
   if (!fs.existsSync(configJsonPath)) {
     await populateConfig();
   }
-  await crossSpawn.spawnAsync(get_binary_path('tsc'), ['--build', 'tsconfig.docs.json'], {
+  await crossSpawn.spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.docs.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'

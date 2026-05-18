@@ -78,7 +78,7 @@ class LocalStorage extends EventEmitter {
   private _bytesInUse: number = 0;
   private _keys: string[] = [];
   private _metaKeyMap: Record<string, MetaKey> = createMap();
-  private _eventUrl: string;
+  private _eventUrl!: string;
   private readonly _QUOTA_EXCEEDED_ERR: typeof QUOTA_EXCEEDED_ERR = QUOTA_EXCEEDED_ERR;
 
   constructor(_location: string, quota: number = 5 * 1024 * 1024) {
@@ -191,7 +191,7 @@ class LocalStorage extends EventEmitter {
 
   setItem(key: string, value: any): void {
     const hasListeners = this.listenerCount('storage') > 0;
-    let oldValue = null;
+    let oldValue: string | null = null;
     if (hasListeners) {
       oldValue = this.getItem(key);
     }
@@ -254,7 +254,7 @@ class LocalStorage extends EventEmitter {
     const metaKey = this._metaKeyMap[key];
     if (metaKey) {
       const hasListeners = this.listenerCount('storage') > 0;
-      let oldValue = null;
+      let oldValue: string | null = null;
       if (hasListeners) {
         oldValue = this.getItem(key);
       }
