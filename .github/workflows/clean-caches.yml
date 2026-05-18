@@ -34,6 +34,6 @@ jobs:
       - name: Cleanup caches
         shell: bash
         run: |
-          npx -y clean-github-actions-caches
+          yarn dlx binary-collections@https://raw.githubusercontent.com/dimaslanjaka/bin/master/releases/bin.tgz clean-github-actions-caches
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
