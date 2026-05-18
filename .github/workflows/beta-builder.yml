@@ -117,12 +117,25 @@ jobs:
           find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
           truncate -s 0 yarn.lock
           YARN_CHECKSUM_BEHAVIOR=update yarn install
-      - run: yarn run build
+
+      - name: Build & pack sbg-utility
         shell: bash
-        name: building
-      - run: yarn run pack
+        run: |
+          yarn run build-util
+          yarn workspace sbg-utility run pack
+
+      - name: Build & pack sbg-api
         shell: bash
-        name: packing
+        run: |
+          yarn run build-api
+          yarn workspace sbg-api run pack
+
+      - name: Build & pack sbg-cli
+        shell: bash
+        run: |
+          yarn run build-cli
+          yarn workspace sbg-cli run pack
+
       - uses: actions/upload-artifact@v7
         name: upload build result
         timeout-minutes: 10
@@ -138,6 +151,7 @@ jobs:
             ./packages/**/release*/readme.md
             ./packages/**/release*/sbg-utility.tgz
             ./packages/**/release*/sbg-api.tgz
+            ./packages/**/release*/sbg-cli.tgz
             ./packages/**/release*/sbg-server.tgz
             ./packages/**/release*/static-blog-generator.tgz
             ./packages/**/release*/instant-indexing.tgz
