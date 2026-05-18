@@ -3,21 +3,24 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
-import fs from 'fs-extra';
 import * as glob from 'glob';
 import url from 'node:url';
 import path from 'path';
 import { dts } from 'rollup-plugin-dts';
 import polyfill from 'rollup-plugin-polyfill-node';
-import { external, tsconfig } from './rollup.utils.js';
+import {
+  chunkFileNamesWithExt,
+  entryFileNamesWithExt,
+  externalPackagesFilter,
+  packageJson,
+  tsconfig
+} from './rollup.utils.js';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/**
- * @type {import('./package.json')}
- */
-const { author, version, name: _name } = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf-8'));
+const { author, version, name: _name } = packageJson;
+
 const name = 'sbgUtility';
 
 const year = new Date().getFullYear();
@@ -55,38 +58,31 @@ const basePlugins = [
 const _partials = {
   input: nodeInputs,
   output: [
-    // bundle js as ESM by default
-    {
-      dir: 'dist',
-      format: 'esm',
-      sourcemap: false,
-      preserveModules: true,
-      preserveModulesRoot: 'src',
-      globals: { hexo: 'hexo' }
-    },
     // bundle CJS
     {
-      dir: 'dist',
+      dir: 'dist/partials',
       format: 'cjs',
       sourcemap: false,
       preserveModules: true,
-      preserveModulesRoot: 'src',
-      entryFileNames: '[name].cjs',
+      // preserveModulesRoot: 'src',
+      entryFileNames: entryFileNamesWithExt('cjs'),
+      chunkFileNames: chunkFileNamesWithExt('cjs'),
       globals: { hexo: 'hexo' }
     },
     // bundle mjs as ESM
     {
-      dir: 'dist',
+      dir: 'dist/partials',
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
-      preserveModulesRoot: 'src',
-      entryFileNames: '[name].mjs',
+      // preserveModulesRoot: 'src',
+      entryFileNames: entryFileNamesWithExt('mjs'),
+      chunkFileNames: chunkFileNamesWithExt('mjs'),
       globals: { hexo: 'hexo' }
     }
   ],
   plugins: basePlugins,
-  external // External dependencies package name to exclude from bundle
+  external: externalPackagesFilter // External dependencies package name to exclude from bundle
 };
 
 /** @type {import('rollup').RollupOptions} */
@@ -126,12 +122,6 @@ const _oneFile = {
   input: './src/index.ts',
   output: [
     {
-      file: 'dist/index.js',
-      format: 'esm',
-      inlineDynamicImports: true,
-      exports: 'named'
-    },
-    {
       file: 'dist/index.mjs',
       format: 'esm',
       inlineDynamicImports: true,
@@ -145,7 +135,7 @@ const _oneFile = {
     }
   ],
   plugins: basePlugins,
-  external
+  external: externalPackagesFilter
 };
 
 /** @type {import('rollup').RollupOptions} */
@@ -157,7 +147,7 @@ const _oneFileDeclaration = {
     { file: 'dist/index.d.mts', format: 'es', inlineDynamicImports: true }
   ],
   plugins: [resolve({ preferBuiltins: true }), json(), dts({ tsconfig: 'tsconfig.docs.json' })],
-  external
+  external: externalPackagesFilter
 };
 
 export default [_partials, _oneFileDeclaration];
