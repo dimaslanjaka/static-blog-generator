@@ -27,14 +27,25 @@ concurrency:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
+
     env:
       NODE_OPTIONS: '--max_old_space_size=8192'
       YARN_ENABLE_IMMUTABLE_INSTALLS: false
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
       node-version: 20.x
       YARN_CHECKSUM_BEHAVIOR: update
 
-    runs-on: ubuntu-latest
+      CACHE_PATHS: |
+        **/.cache
+        **/.yarn
+        **/releases
+        **/release*
+        **/tmp
+        **/dist
+        ~/.npm
+        ~/.cache/yarn
+        packages/sbg-api/node_modules
 
     steps:
       - name: ⬇️ Checkout Repository (sbg-api)
@@ -42,8 +53,9 @@ jobs:
         with:
           repository: dimaslanjaka/static-blog-generator
           ref: sbg-api
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
           submodules: true
+          fetch-depth: 0
 
       - name: ⚙️ Initialize Environment Variables
         id: set-env
@@ -52,18 +64,30 @@ jobs:
           echo "${HOME}/.local/bin" >> $GITHUB_PATH
           echo "${GITHUB_WORKSPACE}/bin" >> $GITHUB_PATH
           echo "${GITHUB_WORKSPACE}/node_modules/.bin" >> $GITHUB_PATH
+          echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+          echo "${{ github.workspace }}/vendor/bin" >> $GITHUB_PATH
+          echo "${{ github.workspace }}/.venv/bin" >> $GITHUB_PATH
+          echo "${{ github.workspace }}/venv/bin" >> $GITHUB_PATH
+          echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
+
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_OUTPUT
+
           echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           echo "GITHUB_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
-          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_ENV
-          echo "GITHUB_COMMIT_URL=https://github.com/${{github.repository}}/commit/$(echo $GITHUB_SHA)" >> $GITHUB_OUTPUT
-          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_ENV
-          echo "GITHUB_RUNNER_URL=https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}" >> $GITHUB_OUTPUT
+
+          echo "GITHUB_COMMIT_URL=https://github.com/${{ github.repository }}/commit/${GITHUB_SHA}" >> $GITHUB_ENV
+          echo "GITHUB_COMMIT_URL=https://github.com/${{ github.repository }}/commit/${GITHUB_SHA}" >> $GITHUB_OUTPUT
+
+          echo "GITHUB_RUNNER_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
+          echo "GITHUB_RUNNER_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_OUTPUT
+
           echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_ENV
           echo "CACHE_NPM=$(npm config get cache)" >> $GITHUB_OUTPUT
+
           YARN_CURRENT=$(yarn -v)
           YARN_BERRY=3.2.1
+
           if [[ "ok" == "$(echo | awk "(${YARN_CURRENT} > ${YARN_BERRY}) { print \"ok\"; }")" ]]; then
             echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_ENV
             echo "CACHE_YARN=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
@@ -71,22 +95,27 @@ jobs:
             echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_ENV
             echo "CACHE_YARN=$(yarn cache dir)" >> $GITHUB_OUTPUT
           fi
+
           echo "architecture=$(getconf LONG_BIT)" >> $GITHUB_ENV
+
           if [ -f "package-lock.json" ]; then
-              echo "PACKAGE-MANAGER=npm" >> $GITHUB_OUTPUT
-              echo "PACKAGE-MANAGER=npm" >> $GITHUB_ENV
+            echo "PACKAGE-MANAGER=npm" >> $GITHUB_OUTPUT
+            echo "PACKAGE-MANAGER=npm" >> $GITHUB_ENV
           else
-              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_OUTPUT
-              echo "PACKAGE-MANAGER=yarn" >> $GITHUB_ENV
+            echo "PACKAGE-MANAGER=yarn" >> $GITHUB_OUTPUT
+            echo "PACKAGE-MANAGER=yarn" >> $GITHUB_ENV
           fi
+
           unameOut="$(uname -s)"
+
           case "${unameOut}" in
-              Linux*)     machine=linux;;
-              Darwin*)    machine=mac;;
-              CYGWIN*)    machine=cygwin;;
-              MINGW*)     machine=mingw;;
-              *)          machine="unknown:${unameOut}"
+            Linux*) machine=linux ;;
+            Darwin*) machine=mac ;;
+            CYGWIN*) machine=cygwin ;;
+            MINGW*) machine=mingw ;;
+            *) machine="unknown:${unameOut}" ;;
           esac
+
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
@@ -98,7 +127,7 @@ jobs:
           git checkout-index --force --all
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node-version }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -106,29 +135,25 @@ jobs:
       - name: 🚀 Enable Corepack for Yarn
         run: corepack enable
 
-      - name: 📦 Restore Project Cache
-        uses: pat-s/always-upload-cache@v3.0.11
-        id: cache
+      - name: 📦 Restore Build Cache
+        uses: actions/cache/restore@v4
+        id: cache-restore
         with:
-          path: |
-            **/.yarn
-            **/release*
-            **/yarn.lock
-            **/node_modules
-            **/tmp
-            **/dist
-          key: ${{ runner.os }}-${{ env.node-version }}
+          path: ${{ env.CACHE_PATHS }}
+          key: ${{ runner.os }}-${{ env.node-version }}-${{ hashFiles('**/*.ts', '**/*.js', '**/*.cjs', '**/*.mjs', '**/yarn.lock', '**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.node-version }}
+            ${{ runner.os }}-${{ env.node-version }}-
             ${{ runner.os }}-
 
       - name: 🌍 Install Global Dev Dependencies
         run: npm i -g typescript ts-node gulp-cli
 
       - name: 🔧 Set Yarn configuration
+        working-directory: packages/sbg-api
         run: |
           YARN_CURRENT=$(yarn -v)
           YARN_BERRY=3.2.1
+
           if [[ "ok" == "$(echo | awk "(${YARN_CURRENT} > ${YARN_BERRY}) { print \"ok\"; }")" ]]; then
             yarn config set enableImmutableInstalls false
             yarn config set enableInlineBuilds true
@@ -137,13 +162,12 @@ jobs:
             yarn set version 4.9.2
             yarn config set cacheFolder "${GITHUB_WORKSPACE}/packages/sbg-api/.yarn/caches"
           fi
-        working-directory: packages/sbg-api
 
       - name: 📥 Install Dependencies (sbg-api)
-        run: |
-          touch yarn.lock
-          yarn install
         working-directory: packages/sbg-api
+        run: |
+          [ -f yarn.lock ] || touch yarn.lock
+          yarn install
 
       - name: 🧽 Clean Previous Builds
         working-directory: packages/sbg-api
@@ -159,15 +183,31 @@ jobs:
           npm run pack -- --commit
           npm run pack
 
+      - name: 🛠️ Configure Git user
+        run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
+
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-api
-        run: |
-          git add release
+        run: git add release
 
       - name: 📤 Commit and Push Changes
         working-directory: packages/sbg-api
         run: |
           if [ $(git status --porcelain -- release | wc -l) -gt "0" ]; then
-            git commit -m "chore: update build from ${{ env.GITHUB_COMMIT_URL }}" -m "commit hash: ${{ env.GITHUB_SHA_SHORT }}" -m "commit url: ${{ env.GITHUB_COMMIT_URL }}" -m "runner: ${{ env.GITHUB_RUNNER_URL }}"
+            git commit \
+              -m "build(release): update generated release artifacts" \
+              -m "source commit: ${{ env.GITHUB_SHA_SHORT }}" \
+              -m "source url: ${{ env.GITHUB_COMMIT_URL }}" \
+              -m "workflow run: ${{ env.GITHUB_RUNNER_URL }}"
+
             git push
           fi
+
+      - name: 💾 Save Build Cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: ${{ env.CACHE_PATHS }}
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
