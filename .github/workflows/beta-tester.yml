@@ -92,12 +92,6 @@ jobs:
         with:
           name: dist-artifact
 
-      - name: Install Global Packages
-        run: |
-          corepack enable
-          yarn dlx npm i -g npm
-          npm i -g typescript ts-node gulp-cli hexo-cli webpack-cli npm-run-all depcheck lerna husky
-
       - run: yarn install
       - name: build packages
         run: |
