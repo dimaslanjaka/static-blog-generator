@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cwd="$(pwd)"
+
+# Shuffle a-z and remove matching node_modules entries
+for letter in $(printf "%s\n" {a..z} | shuf); do
+  rm -rf "${cwd}/node_modules/${letter}"*
+  echo "Removed: node_modules/${letter}*"
+  rm -rf "${cwd}/node_modules/@types/${letter}"*
+  echo "Removed: node_modules/@types/${letter}*"
+  rm -rf "${cwd}/node_modules/@${letter}"*
+  echo "Removed: node_modules/@${letter}*"
+done
+
+echo "Done cleaning node_modules."
