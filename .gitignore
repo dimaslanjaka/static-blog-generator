@@ -44,7 +44,7 @@ ___*
 **/.yarn/versions
 **/.yarn/install-state.gz
 !**/.yarn/cache/.gitginore
-yarn.lock
+yarn*.lock
 package-lock.json
 
 **/dist/**
