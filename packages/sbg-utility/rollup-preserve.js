@@ -8,7 +8,7 @@ import * as glob from 'glob';
 import { rollup } from 'rollup';
 import ts from 'typescript';
 import path from 'upath';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { fileURLToPath } from 'url';
 import { chunkFileNamesWithExt, entryFileNamesWithExt, externalPackages, tsconfig } from './rollup.utils.js';
 
 fs.mkdirSync('tmp/dist', { recursive: true });
@@ -74,7 +74,7 @@ const configs = [
   }
 ];
 
-async function build() {
+export async function build() {
   for (const config of configs) {
     const bundle = await rollup(config);
     const outputs = Array.isArray(config.output) ? config.output : [config.output];
@@ -164,13 +164,4 @@ export async function compileDeclarations() {
   emitFor(ts.ModuleKind.NodeNext, 'cjs', '.d.cts');
 
   console.log('\n' + colors.green('✔ Declaration emit complete (module-specific).'));
-}
-
-const isDirect = import.meta.url === pathToFileURL(process.argv[1]).href;
-if (isDirect) {
-  // This block is executed when running this file directly via "node ..."
-  build().catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
 }
