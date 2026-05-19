@@ -127,16 +127,8 @@ export async function compileDeclarations() {
       module: moduleKind
     };
 
-    // Ensure module resolution matches Node's ESM when using NodeNext
-    if (moduleKind === ts.ModuleKind.NodeNext) {
-      options.moduleResolution = ts.ModuleResolutionKind.NodeNext;
-    }
-
-    // If not emitting NodeNext, avoid leaving moduleResolution set to NodeNext
-    // (parsed.options may have carried NodeNext from tsconfig). That combination is invalid.
-    if (moduleKind !== ts.ModuleKind.NodeNext && options.moduleResolution === ts.ModuleResolutionKind.NodeNext) {
-      delete options.moduleResolution;
-    }
+    // Declaration emit needs NodeNext so files that use import.meta remain valid.
+    options.moduleResolution = ts.ModuleResolutionKind.NodeNext;
 
     const program = ts.createProgram(rootNames, options);
     const emitResult = program.emit();
@@ -165,11 +157,11 @@ export async function compileDeclarations() {
     }
   }
 
-  // Emit ESM declarations (.d.mts) using ES2020 module mode (supports import.meta without requiring Node ESM import extensions)
-  emitFor(ts.ModuleKind.ES2020, 'esm', '.d.mts');
+  // Emit ESM declarations (.d.mts).
+  emitFor(ts.ModuleKind.NodeNext, 'esm', '.d.mts');
 
-  // Emit CJS declarations (.d.cts)
-  emitFor(ts.ModuleKind.CommonJS, 'cjs', '.d.cts');
+  // Emit CJS declarations (.d.cts).
+  emitFor(ts.ModuleKind.NodeNext, 'cjs', '.d.cts');
 
   console.log('\n' + colors.green('✔ Declaration emit complete (module-specific).'));
 }
