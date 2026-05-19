@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import { PassThrough } from 'stream';
+import fs from 'fs-extra';
+import path from 'upath';
+import { PassThrough } from 'node:stream';
 import Logger from './logger.js';
 
 export function createDuplexStream() {
