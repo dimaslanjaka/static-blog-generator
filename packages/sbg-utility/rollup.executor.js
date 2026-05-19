@@ -8,8 +8,22 @@ import * as glob from 'glob';
 import path from 'upath';
 import pkgJson from './package.json' with { type: 'json' };
 
-const INPUT_RAW = process.env.ROLLUP_INPUT || 'src/**/*';
-const OUTPUT_BASE = (process.env.ROLLUP_OUTPUT || 'dist/index').replace(/\.(cjs|mjs|js)$/, '');
+const INPUT_RAW = process.env.ROLLUP_INPUT;
+if (!INPUT_RAW) {
+  console.error(color.red('Error: ROLLUP_INPUT environment variable is not set.'));
+  process.exit(1);
+}
+
+if (!process.env.ROLLUP_OUTPUT) {
+  // get dirname and basename without extension
+  const dir = path.dirname(INPUT_RAW);
+  const ext = path.extname(INPUT_RAW);
+  const baseName = path.basename(INPUT_RAW, ext);
+  process.env.ROLLUP_OUTPUT = path.join(dir, baseName + '.cjs');
+  console.log(`Set ROLLUP_OUTPUT to: ${process.env.ROLLUP_OUTPUT}`);
+}
+
+const OUTPUT_BASE = process.env.ROLLUP_OUTPUT.replace(/\.(cjs|mjs|js)$/, '');
 
 console.log(`Input: ${color.cyan(INPUT_RAW)}`);
 console.log(`Output: ${color.cyan(OUTPUT_BASE)}.mjs and ${color.cyan(OUTPUT_BASE)}.cjs`);
