@@ -714,6 +714,19 @@
       "types": "./dist/utils/promisify.d.mts",
       "import": "./dist/utils/promisify.mjs"
     },
+    "./dist/utils/removeAnsi": {
+      "types": "./dist/utils/removeAnsi.d.ts",
+      "require": "./dist/utils/removeAnsi.cjs",
+      "import": "./dist/utils/removeAnsi.mjs"
+    },
+    "./dist/utils/removeAnsi.cjs": {
+      "types": "./dist/utils/removeAnsi.d.cts",
+      "require": "./dist/utils/removeAnsi.cjs"
+    },
+    "./dist/utils/removeAnsi.mjs": {
+      "types": "./dist/utils/removeAnsi.d.mts",
+      "import": "./dist/utils/removeAnsi.mjs"
+    },
     "./dist/utils/scheduler": {
       "types": "./dist/utils/scheduler.d.ts",
       "require": "./dist/utils/scheduler.cjs",
@@ -921,7 +934,7 @@
   "type": "module",
   "resolutions": {
     "hexo-util": "https://github.com/dimaslanjaka/hexo/raw/65bbfe29d65b55320eb61bd263f16e1519c6c1b0/releases/hexo-util.tgz",
-    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/b5b48ab996bf0bb759f06cd9c12335adb3f1982a/releases/bin.tgz",
+    "binary-collections": "https://github.com/dimaslanjaka/bin/raw/7bbd8208470241858130e882e0030addd32e7ab1/releases/bin.tgz",
     "cross-spawn": "https://github.com/dimaslanjaka/node-cross-spawn/raw/80999ac7a7031a81e11ddb5fab0f8ba433041c98/release/cross-spawn.tgz",
     "git-command-helper": "https://github.com/dimaslanjaka/git-command-helper/raw/cb096c1f021d88679cbfd3cf55a426aed64f1b94/release/git-command-helper.tgz",
     "instant-indexing": "https://github.com/dimaslanjaka/static-blog-generator/raw/f221d11cdc32fa7dd001e5236f8c3f30387e62d2/packages/instant-indexing/release/instant-indexing.tgz",

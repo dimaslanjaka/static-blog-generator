@@ -151,39 +151,25 @@ gulp.task('index-builder', async function () {
 
   for (const file of files) {
     const ext = path.extname(file);
-    const baseName = path.basename(file, ext);
+    const outputPath = path.resolve(__dirname, file.replace(ext, '.cjs'));
 
     const env = {
       ...process.env,
       NODE_ENV: 'development',
       ROLLUP_INPUT: file,
-      ROLLUP_OUTPUT: `dist/${baseName}`
+      ROLLUP_OUTPUT: outputPath
     };
 
     console.log(`Processing: ${file}`);
 
     try {
       if (ext === '.ts') {
-        // 1️⃣ RUN ROLLUP
+        // Use run-ts for .ts files to ensure they are compiled before execution
         await new Promise((resolve, reject) => {
-          const proc = crossSpawn('rollup', ['-c', 'rollup.executor.js'], { stdio: 'inherit', shell: true, env });
+          const proc = crossSpawn('run-ts', [file], { stdio: 'inherit', shell: true, env });
 
           proc.on('close', (code) => {
             if (code !== 0) reject(new Error(`Rollup failed with code ${code}`));
-            else resolve();
-          });
-        });
-
-        // 2️⃣ RUN OUTPUT FILE
-        await new Promise((resolve, reject) => {
-          const proc = crossSpawn('node', ['--no-warnings', `${env.ROLLUP_OUTPUT}.mjs`], {
-            stdio: 'inherit',
-            shell: true,
-            env
-          });
-
-          proc.on('close', (code) => {
-            if (code !== 0) reject(new Error(`Node failed with code ${code}`));
             else resolve();
           });
         });
