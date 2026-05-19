@@ -1,5 +1,5 @@
 // Pollyfill globalThis in Node.js
-import './pollyfill/global-file';
+import './pollyfill/global-file.js';
 
 // Importing necessary modules
 import fs from 'fs-extra';

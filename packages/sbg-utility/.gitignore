@@ -1,6 +1,8 @@
-dist/config/_*.json
-node_modules/
-yarn.lock
-tmp/
+**/dist/**
+**/node_modules/**
+**/yarn.lock
+**/tmp/**
 .yarn*
-src/config/_config.json
+**/_config.json
+**/_config_wrapper.json
+!src/config/_config_wrapper.json

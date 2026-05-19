@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export ROLLUP_INPUT=$1
+export ROLLUP_OUTPUT=$2
+
+# echo "Running Rollup with input: $ROLLUP_INPUT and output: $ROLLUP_OUTPUT"
+# echo "Current directory: $(pwd)"
+# echo "Script directory: $SCRIPT_DIR"
+
+node "$SCRIPT_DIR/run-ts.cjs" "$ROLLUP_INPUT" "$ROLLUP_OUTPUT"

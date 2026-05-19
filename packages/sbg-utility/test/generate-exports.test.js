@@ -39,26 +39,13 @@ describe('generateExports', () => {
   });
 
   beforeEach(() => {
-    generateExports({ pkgPath: testPkgPath, useDefaultFolders: true, useDefaultExport: true });
+    generateExports({
+      pkgPath: testPkgPath,
+      folders: [{ dir: distUtils, prefix: './dist/utils/' }]
+    });
   });
 
   it('should generate correct export for dummy.mjs with types', () => {
-    const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
-    expect(pkg.exports['./dist/utils/dummy.mjs']).toEqual({
-      import: './dist/utils/dummy.mjs',
-      types: './dist/utils/dummy.d.ts'
-    });
-  });
-
-  it('should generate correct export for dummy.cjs with types', () => {
-    const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
-    expect(pkg.exports['./dist/utils/dummy.cjs']).toEqual({
-      require: './dist/utils/dummy.cjs',
-      types: './dist/utils/dummy.d.ts'
-    });
-  });
-
-  it('should generate correct export for dummy subpath with types', () => {
     const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
     expect(pkg.exports['./dist/utils/dummy']).toEqual({
       import: './dist/utils/dummy.mjs',
@@ -67,20 +54,14 @@ describe('generateExports', () => {
     });
   });
 
-  it('should generate correct export for dummy2.mjs with types', () => {
+  it('should not generate raw dummy.mjs export', () => {
     const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
-    expect(pkg.exports['./dist/utils/dummy2.mjs']).toEqual({
-      import: './dist/utils/dummy2.mjs',
-      types: './dist/utils/dummy2.d.mts'
-    });
+    expect(pkg.exports['./dist/utils/dummy.mjs']).toBeUndefined();
   });
 
-  it('should generate correct export for dummy2.cjs with types', () => {
+  it('should not generate raw dummy.cjs export', () => {
     const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
-    expect(pkg.exports['./dist/utils/dummy2.cjs']).toEqual({
-      require: './dist/utils/dummy2.cjs',
-      types: './dist/utils/dummy2.d.cts'
-    });
+    expect(pkg.exports['./dist/utils/dummy.cjs']).toBeUndefined();
   });
 
   it('should generate correct export for dummy2 subpath with types', () => {
@@ -88,7 +69,17 @@ describe('generateExports', () => {
     expect(pkg.exports['./dist/utils/dummy2']).toEqual({
       import: './dist/utils/dummy2.mjs',
       require: './dist/utils/dummy2.cjs',
-      types: './dist/utils/dummy2.d.ts'
+      types: './dist/utils/dummy2.d.cts'
     });
+  });
+
+  it('should not generate raw dummy2.mjs export', () => {
+    const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
+    expect(pkg.exports['./dist/utils/dummy2.mjs']).toBeUndefined();
+  });
+
+  it('should not generate raw dummy2.cjs export', () => {
+    const pkg = JSON.parse(fs.readFileSync(testPkgPath, 'utf8'));
+    expect(pkg.exports['./dist/utils/dummy2.cjs']).toBeUndefined();
   });
 });

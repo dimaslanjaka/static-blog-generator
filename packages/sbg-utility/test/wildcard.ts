@@ -1,4 +1,4 @@
-import * as wildcards from '../src';
+import * as wildcards from '../src/index.js';
 
 const keys = 'chain, debug, getChecksum, folder_to_hash, md5File, md5FileSync, url_to_hash'
   .split(',')

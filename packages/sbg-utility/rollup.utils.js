@@ -23,14 +23,15 @@ const pkg = jsonc.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'u
  * Packages that should be bundled (not externalized)
  * @type {string[]}
  */
-const bundledPackages = [
+export const bundledPackages = [
   'p-limit',
   'deepmerge-ts',
   'hexo-is',
   'is-stream',
   'markdown-it',
   'node-cache',
-  'is-file-stream'
+  'is-file-stream',
+  'strip-ansi'
 ];
 
 /**

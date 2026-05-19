@@ -3,9 +3,9 @@ import Hexo from 'hexo';
 import url from 'node:url';
 import path from 'upath';
 import yaml from 'yaml';
-import * as utils from '../utils';
-import { writefile } from '../utils/filemanager';
-import * as defaults from './default-config';
+import * as utils from '../utils/index.js';
+import { writefile } from '../utils/filemanager/index.js';
+import * as defaults from './default-config.js';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

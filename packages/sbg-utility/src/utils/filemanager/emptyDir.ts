@@ -1,5 +1,5 @@
 import { minimatch } from 'minimatch';
-import readDir from './readDir';
+import readDir from './readDir.js';
 
 interface emptyDirOpt {
   ignore: (string | RegExp)[];

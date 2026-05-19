@@ -55,7 +55,7 @@
     "*.py": "python -u",
     "*.electron.js": "cross-env-shell NODE_ENV=development electron -r ts-node/register",
     // "*.ts": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm -r dotenv/config"
-    "*.ts": "cross-env-shell ROLLUP_INPUT=$fullFileName ROLLUP_OUTPUT=dist/$fileNameWithoutExt rollup -c rollup.executor.js && node dist/$fileNameWithoutExt.mjs"
+    "*.ts": "run-ts $fullFileName"
   },
   "code-runner.respectShebang": true,
   "debug.terminal.clearBeforeReusing": true,

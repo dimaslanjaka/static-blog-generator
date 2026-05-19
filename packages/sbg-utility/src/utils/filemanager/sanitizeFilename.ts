@@ -1,4 +1,4 @@
-import { getClassName } from '../class-utils';
+import { getClassName } from '../class-utils.js';
 
 /**
  * Sanitizes a filename for safe cross-platform filesystem usage.

@@ -34,7 +34,7 @@ async function buildPolyfill(input) {
   if (input.endsWith('.ts')) {
     plugins.push(
       typescript({
-        tsconfig: path.join(__dirname, 'tsconfig.build.json'),
+        tsconfig: path.join(__dirname, 'tsconfig.browser.json'),
         sourceMap: false,
         declaration: false,
         emitDeclarationOnly: false,

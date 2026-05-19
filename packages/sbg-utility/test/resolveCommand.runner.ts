@@ -1,4 +1,4 @@
-import { resolveCommand } from '../src';
+import { resolveCommand } from '../src/index.js';
 
 // Start measuring time
 const start = process.hrtime();

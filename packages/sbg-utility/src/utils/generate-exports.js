@@ -24,45 +24,55 @@ export function generateExports({
     // Use glob to find all .mjs, .cjs, .d.ts, .d.mts, .d.cts files
     const patterns = ['**/*.mjs', '**/*.cjs', '**/*.d.ts', '**/*.d.mts', '**/*.d.cts'];
     const files = patterns
-      .flatMap((pattern) => glob.sync(pattern, { cwd: folder.dir, nodir: true }))
+      .flatMap((pattern) =>
+        glob.sync(pattern, {
+          cwd: folder.dir,
+          nodir: true,
+          ignore: ['**/node_modules/**', '**/dist/**', '**/*.{builder,spec,test,runner}.*']
+        })
+      )
       .map((file) => path.join(folder.prefix, file));
 
-    files.forEach((file) => {
-      if (file.endsWith('.d.ts') || file.endsWith('.d.mts') || file.endsWith('.d.cts')) return;
+    const moduleMap = new Map();
 
+    files.forEach((file) => {
       const withoutExt = file.replace(/\.(mjs|cjs|d\.ts|d\.mts|d\.cts)$/, '');
-      const entry = {};
-      if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.d.ts`))) {
-        entry.types = `./${withoutExt}.d.ts`;
-      }
+      const record = moduleMap.get(withoutExt) ?? {};
+
       if (file.endsWith('.mjs')) {
-        entry.import = `./${file}`;
+        record.import = `./${file}`;
+      } else if (file.endsWith('.cjs')) {
+        record.require = `./${file}`;
+      } else if (file.endsWith('.d.ts')) {
+        record.types = `./${file}`;
+      } else if (file.endsWith('.d.mts')) {
+        record.types = `./${file}`;
+      } else if (file.endsWith('.d.cts')) {
+        record.types = `./${file}`;
+      }
+
+      moduleMap.set(withoutExt, record);
+    });
+
+    for (const [withoutExt, record] of moduleMap.entries()) {
+      const entry = {};
+
+      if (record.import) entry.import = record.import;
+      if (record.require) entry.require = record.require;
+      if (record.types) entry.types = record.types;
+
+      if (!entry.types) {
         if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.d.mts`))) {
           entry.types = `./${withoutExt}.d.mts`;
-        }
-      } else if (file.endsWith('.cjs')) {
-        entry.require = `./${file}`;
-        if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.d.cts`))) {
+        } else if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.d.cts`))) {
           entry.types = `./${withoutExt}.d.cts`;
+        } else if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.d.ts`))) {
+          entry.types = `./${withoutExt}.d.ts`;
         }
       }
-      exportsObj[`./${file}`] = entry;
-      exportsObj[`./${withoutExt}`] = {
-        ...entry,
-        ...(entry.import ? { import: entry.import } : {}),
-        ...(entry.require ? { require: entry.require } : {}),
-        ...(entry.types ? { types: entry.types } : {})
-      };
-      if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.d.ts`))) {
-        exportsObj[`./${withoutExt}`].types = `./${withoutExt}.d.ts`;
-      }
-      if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.mjs`))) {
-        exportsObj[`./${withoutExt}`].import = `./${withoutExt}.mjs`;
-      }
-      if (fs.existsSync(path.join(process.cwd(), `${withoutExt}.cjs`))) {
-        exportsObj[`./${withoutExt}`].require = `./${withoutExt}.cjs`;
-      }
-    });
+
+      exportsObj[`./${withoutExt}`] = entry;
+    }
   }
 
   const unsortedExports = { ...exportsObj, ...exportValues };
@@ -87,7 +97,6 @@ export function generateExports({
     'main',
     'module',
     'types',
-    'exports',
     'files',
     'bin',
     'directories',
@@ -102,7 +111,8 @@ export function generateExports({
     'os',
     'cpu',
     'private',
-    'publishConfig'
+    'publishConfig',
+    'exports'
   ];
   const orderedPkg = {};
   for (const key of pkgOrder) {

@@ -1,106 +1,271 @@
-import CryptoJS from 'crypto-js';
+import crypto from 'crypto';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import path from 'upath';
 
-/**
- * Calculate a checksum for the given target paths.
- * This checksum is used to determine if the source files have changed
- * and whether a build is necessary.
- *
- * @param targetPaths - An array of file or directory paths to include in the checksum.
- * @returns A SHA-256 hash of the contents of the specified files and directories.
- */
-export function getChecksum(...targetPaths: string[]): string {
+export interface ChecksumOptions {
+  ignorePatterns?: string[];
+
+  /**
+   * remove whitespaces for text files
+   * default: true
+   */
+  removeWhitespace?: boolean;
+
+  /**
+   * normalize CRLF/LF
+   * default: true
+   */
+  normalizeLineEndings?: boolean;
+
+  /**
+   * include file path in checksum
+   * default: true
+   */
+  includeFilePath?: boolean;
+}
+
+const TEXT_EXTENSIONS = new Set([
+  '.js',
+  '.cjs',
+  '.mjs',
+  '.ts',
+  '.cts',
+  '.mts',
+  '.jsx',
+  '.tsx',
+  '.json',
+  '.jsonc',
+  '.yaml',
+  '.yml',
+  '.md',
+  '.txt',
+  '.py',
+  '.php',
+  '.java',
+  '.kt',
+  '.go',
+  '.rs',
+  '.css',
+  '.scss',
+  '.sass',
+  '.less',
+  '.html',
+  '.htm',
+  '.xml',
+  '.svg',
+  '.sh',
+  '.bash',
+  '.zsh',
+  '.bat',
+  '.cmd',
+  '.ps1',
+  '.ini',
+  '.env',
+  '.toml',
+  '.lock',
+  '.sql'
+]);
+
+const ARCHIVE_EXTENSIONS = new Set(['.zip', '.rar', '.7z', '.tar', '.gz', '.tgz', '.bz2', '.xz']);
+
+function normalizePath(file: string): string {
+  return path.normalizeSafe(file).replace(/\\/g, '/').toLowerCase();
+}
+
+function collectFiles(targetPaths: string[]): string[] {
   const files: string[] = [];
-  for (const pattern of targetPaths) {
-    if (fs.existsSync(pattern)) {
-      const stat = fs.statSync(pattern);
+
+  for (const target of targetPaths) {
+    if (fs.existsSync(target)) {
+      const stat = fs.statSync(target);
+
+      /**
+       * single file
+       */
       if (stat.isFile()) {
-        files.push(path.resolve(pattern));
-      } else if (stat.isDirectory()) {
-        const dirFiles = glob.sync('**/*', { cwd: pattern, nodir: true, absolute: true, dot: true });
+        files.push(path.resolve(target));
+        continue;
+      }
+
+      /**
+       * directory
+       */
+      if (stat.isDirectory()) {
+        const dirFiles = glob.sync('**/*', {
+          cwd: target,
+          nodir: true,
+          absolute: true,
+          dot: true
+        });
+
         files.push(...dirFiles);
-      }
-    } else {
-      // Check if the pattern is absolute path combination
-      const dirname = path.dirname(pattern);
-      const basename = path.basename(pattern);
-      if (fs.existsSync(dirname) && fs.statSync(dirname).isDirectory()) {
-        const matches = glob.sync(basename, { cwd: dirname, nodir: true, absolute: true, dot: true });
-        files.push(...matches);
-      } else {
-        // If the pattern is not an absolute path, treat it as a glob pattern
-        const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
-        files.push(...matches);
+
+        continue;
       }
     }
+
+    /**
+     * glob pattern
+     */
+    const matches = glob.sync(target, {
+      nodir: true,
+      absolute: true,
+      dot: true
+    });
+
+    files.push(...matches);
   }
-  const uniqueFiles = Array.from(new Set(files)).sort();
-  const hash = CryptoJS.algo.SHA256.create();
-  for (const file of uniqueFiles) {
-    const fileBuffer = fs.readFileSync(file);
-    const chunkSize = 1024 * 1024; // 1MB
-    for (let offset = 0; offset < fileBuffer.length; offset += chunkSize) {
-      const chunk = fileBuffer.subarray(offset, Math.min(offset + chunkSize, fileBuffer.length));
-      hash.update(CryptoJS.lib.WordArray.create(chunk));
-    }
+
+  /**
+   * normalize + dedupe + stable sort
+   */
+  return Array.from(new Set(files.map((file) => normalizePath(path.resolve(file))))).sort((a, b) => a.localeCompare(b));
+}
+
+function filterFiles(files: string[], ignorePatterns: string[] = []): string[] {
+  return files.filter((file) => {
+    return !ignorePatterns.some((pattern) => {
+      /**
+       * glob ignore
+       */
+      if (glob.hasMagic(pattern)) {
+        return glob
+          .sync(pattern, {
+            nodir: true,
+            absolute: true,
+            dot: true
+          })
+          .map((x) => normalizePath(path.resolve(x)))
+          .includes(file);
+      }
+
+      /**
+       * substring ignore
+       */
+      return file.includes(normalizePath(pattern));
+    });
+  });
+}
+
+function isTextFile(file: string): boolean {
+  return TEXT_EXTENSIONS.has(path.extname(file).toLowerCase());
+}
+
+function isArchiveFile(file: string): boolean {
+  return ARCHIVE_EXTENSIONS.has(path.extname(file).toLowerCase());
+}
+
+function normalizeTextContent(
+  content: string,
+  options: Required<Pick<ChecksumOptions, 'removeWhitespace' | 'normalizeLineEndings'>>
+): string {
+  let output = content;
+
+  /**
+   * normalize line endings
+   */
+  if (options.normalizeLineEndings) {
+    output = output.replace(/\r\n/g, '\n');
   }
-  return hash.finalize().toString(CryptoJS.enc.Hex);
+
+  /**
+   * remove all whitespaces
+   */
+  if (options.removeWhitespace) {
+    output = output.replace(/\s+/g, '');
+  }
+
+  return output;
+}
+
+async function updateHashFromStream(hash: crypto.Hash, file: string): Promise<void> {
+  await new Promise<void>((resolve, reject) => {
+    const stream = fs.createReadStream(file);
+
+    stream.on('data', (chunk) => {
+      hash.update(chunk);
+    });
+
+    stream.on('end', () => {
+      resolve();
+    });
+
+    stream.on('error', reject);
+  });
+}
+
+async function updateFileHash(hash: crypto.Hash, file: string, options: Required<ChecksumOptions>): Promise<void> {
+  /**
+   * include normalized path
+   */
+  if (options.includeFilePath) {
+    hash.update(file);
+  }
+
+  /**
+   * text/code files
+   */
+  if (isTextFile(file)) {
+    const text = await fs.readFile(file, 'utf8');
+
+    const normalized = normalizeTextContent(text, {
+      removeWhitespace: options.removeWhitespace,
+      normalizeLineEndings: options.normalizeLineEndings
+    });
+
+    hash.update(normalized);
+
+    return;
+  }
+
+  /**
+   * archives/binaries
+   *
+   * raw binary hash
+   */
+  if (isArchiveFile(file)) {
+    await updateHashFromStream(hash, file);
+    return;
+  }
+
+  /**
+   * other binaries
+   */
+  await updateHashFromStream(hash, file);
 }
 
 /**
- * Calculate a checksum for the given target paths with options to ignore certain patterns.
+ * CONTENT checksum
  *
- * @param options - An object containing options for checksum calculation.
- * @param options.ignorePatterns - An array of glob patterns or substrings to ignore when calculating the checksum.
- * @param targetPaths - An array of file or directory paths to include in the checksum.
- * @returns A SHA-256 hash of the contents of the specified files and directories, excluding ignored patterns.
+ * text files:
+ * - normalize line endings
+ * - optionally remove whitespaces
+ *
+ * binary/archive:
+ * - raw bytes checksum
  */
-export function getChecksumWithOptions(options: { ignorePatterns?: string[] } = {}, ...targetPaths: string[]): string {
-  const ignorePatterns = options.ignorePatterns || [];
-  const files: string[] = [];
-  for (const pattern of targetPaths) {
-    if (fs.existsSync(pattern)) {
-      const stat = fs.statSync(pattern);
-      if (stat.isFile()) {
-        files.push(path.resolve(pattern));
-      } else if (stat.isDirectory()) {
-        const dirFiles = glob.sync('**/*', { cwd: pattern, nodir: true, absolute: true, dot: true });
-        files.push(...dirFiles);
-      }
-    } else {
-      // Check if the pattern is absolute path combination
-      const dirname = path.dirname(pattern);
-      const basename = path.basename(pattern);
-      if (fs.existsSync(dirname) && fs.statSync(dirname).isDirectory()) {
-        const matches = glob.sync(basename, { cwd: dirname, nodir: true, absolute: true, dot: true });
-        files.push(...matches);
-      } else {
-        // If the pattern is not an absolute path, treat it as a glob pattern
-        const matches = glob.sync(pattern, { nodir: true, absolute: true, dot: true });
-        files.push(...matches);
-      }
-    }
+export async function getChecksum(...targetPaths: string[]): Promise<string> {
+  return getChecksumWithOptions({}, ...targetPaths);
+}
+
+export async function getChecksumWithOptions(options: ChecksumOptions = {}, ...targetPaths: string[]): Promise<string> {
+  const resolvedOptions: Required<ChecksumOptions> = {
+    ignorePatterns: options.ignorePatterns ?? [],
+    removeWhitespace: options.removeWhitespace ?? true,
+    normalizeLineEndings: options.normalizeLineEndings ?? true,
+    includeFilePath: options.includeFilePath ?? true
+  };
+
+  const files = filterFiles(collectFiles(targetPaths), resolvedOptions.ignorePatterns);
+
+  const hash = crypto.createHash('sha256');
+
+  for (const file of files) {
+    await updateFileHash(hash, file, resolvedOptions);
   }
-  const uniqueFiles = Array.from(new Set(files)).sort();
-  const filteredFiles = uniqueFiles.filter((file) => {
-    return !ignorePatterns.some((pattern) =>
-      glob.hasMagic(pattern)
-        ? glob.sync(pattern, { cwd: process.cwd(), nodir: true, absolute: true, dot: true }).includes(file)
-        : file.includes(pattern)
-    );
-  });
-  const hash = CryptoJS.algo.SHA256.create();
-  for (const file of filteredFiles.sort()) {
-    const fileBuffer = fs.readFileSync(file);
-    const chunkSize = 1024 * 1024; // 1MB
-    for (let offset = 0; offset < fileBuffer.length; offset += chunkSize) {
-      const chunk = fileBuffer.subarray(offset, Math.min(offset + chunkSize, fileBuffer.length));
-      hash.update(CryptoJS.lib.WordArray.create(chunk));
-    }
-  }
-  return hash.finalize().toString(CryptoJS.enc.Hex);
+
+  return hash.digest('hex');
 }
 
 export default getChecksum;

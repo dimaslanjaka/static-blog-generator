@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": false,
+    "removeComments": true
+  },
+  "include": ["src/**/*"]
+}

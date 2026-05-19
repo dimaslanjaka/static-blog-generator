@@ -1,4 +1,4 @@
-import * as serializer from './JSON-serializer';
+import * as serializer from './JSON-serializer.js';
 
 declare global {
   interface JSON {

@@ -3,9 +3,11 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import gulp from 'gulp';
 import path from 'node:path';
+import { rollup } from 'rollup';
+import dts from 'rollup-plugin-dts';
 import { fileURLToPath } from 'url';
 import YAML from 'yaml';
-import { compileDeclarations } from './rollup-preserve.js';
+import { build, compileDeclarations } from './rollup-preserve.js';
 import { generateExports } from './src/utils/generate-exports.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -64,8 +66,8 @@ const copy = async function () {
 
 gulp.task('copy', copy);
 
-// tsc --build tsconfig.build.json
-// tsc --build tsconfig.docs.json
+// tsc --build tsconfig.browser.json
+// tsc --build tsconfig.node.json
 // tsc --build tsconfig.json
 // rollup -c
 
@@ -75,7 +77,7 @@ async function tsc() {
   if (!fs.existsSync(configJsonPath)) {
     await populateConfig();
   }
-  await crossSpawn.spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.docs.json'], {
+  await crossSpawn.spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.node.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'
@@ -83,18 +85,32 @@ async function tsc() {
 }
 
 gulp.task('tsc', tsc);
-gulp.task(
-  'rollup',
-  gulp.series(async function () {
-    await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-preserve.js')], {
-      cwd: __dirname,
-      shell: true,
-      stdio: 'inherit'
-    });
-  })
-);
-gulp.task('rollup-dts', gulp.series(compileDeclarations));
+gulp.task('rollup', build);
 
+async function buildIndexDts() {
+  const bundle = await rollup({
+    input: 'src/index.ts',
+    plugins: [dts()]
+  });
+
+  await bundle.write({
+    file: 'dist/index.d.ts',
+    format: 'es'
+  });
+
+  await bundle.write({
+    file: 'dist/index.d.cts',
+    format: 'es'
+  });
+
+  await bundle.write({
+    file: 'dist/index.d.mts',
+    format: 'es'
+  });
+}
+
+gulp.task('dts', gulp.series(compileDeclarations, buildIndexDts));
+gulp.task('rollup-dts', gulp.series('dts'));
 gulp.task('build-browser', async function () {
   // Ensure config is populated before building browser bundle
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
@@ -116,14 +132,12 @@ function generateExportsTask() {
         require: './dist/index.cjs',
         import: './dist/index.mjs',
         types: './dist/index.d.mts'
-        // types: './dist/index.d.cts'
       },
       './package.json': './package.json',
       './browser': {
         require: './dist/browser/index.cjs',
         import: './dist/browser/index.mjs',
         types: './dist/browser/index.d.ts'
-        // types: './dist/browser/index.d.cts'
       }
     },
     folders: [
@@ -137,8 +151,11 @@ function generateExportsTask() {
   });
   return Promise.resolve();
 }
+gulp.task('generate-exports', generateExportsTask);
+
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
+  await fs.rm(path.join(__dirname, 'tmp'), { recursive: true, force: true });
 }
 
 gulp.task('clean', gulp.series(clean));
@@ -151,39 +168,25 @@ gulp.task('index-builder', async function () {
 
   for (const file of files) {
     const ext = path.extname(file);
-    const baseName = path.basename(file, ext);
+    const outputPath = path.resolve(__dirname, file.replace(ext, '.cjs'));
 
     const env = {
       ...process.env,
       NODE_ENV: 'development',
       ROLLUP_INPUT: file,
-      ROLLUP_OUTPUT: `dist/${baseName}`
+      ROLLUP_OUTPUT: outputPath
     };
 
     console.log(`Processing: ${file}`);
 
     try {
       if (ext === '.ts') {
-        // 1️⃣ RUN ROLLUP
+        // Use run-ts for .ts files to ensure they are compiled before execution
         await new Promise((resolve, reject) => {
-          const proc = crossSpawn('rollup', ['-c', 'rollup.executor.js'], { stdio: 'inherit', shell: true, env });
+          const proc = crossSpawn('run-ts', [file], { stdio: 'inherit', shell: true, env });
 
           proc.on('close', (code) => {
             if (code !== 0) reject(new Error(`Rollup failed with code ${code}`));
-            else resolve();
-          });
-        });
-
-        // 2️⃣ RUN OUTPUT FILE
-        await new Promise((resolve, reject) => {
-          const proc = crossSpawn('node', ['--no-warnings', `${env.ROLLUP_OUTPUT}.mjs`], {
-            stdio: 'inherit',
-            shell: true,
-            env
-          });
-
-          proc.on('close', (code) => {
-            if (code !== 0) reject(new Error(`Node failed with code ${code}`));
             else resolve();
           });
         });

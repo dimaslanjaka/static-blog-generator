@@ -3,9 +3,9 @@ import path from 'path';
 import slugify from 'slugify';
 import upath from 'upath';
 import { fileURLToPath } from 'url';
-import * as configs from '../config';
-import { writefile } from './filemanager';
-import { areWeTestingWithJest } from './jest';
+import * as configs from '../config/index.js';
+import { writefile } from './filemanager/index.js';
+import { areWeTestingWithJest } from './jest.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -38,7 +38,7 @@ export function disableConsoleLogForJest(): void {
         strict: true
       });
       const header = `\n\n ${new Date()} \n\n`;
-      const write = writefile(upath.join(FOLDER, filename + '.log'), header + args.join('\n\n'), { append: true });
+      const write = writefile(upath.join(FOLDER, filename + './log'), header + args.join('\n\n'), { append: true });
       log(write.file);
     };
   }
@@ -103,7 +103,7 @@ export class Logger {
             : filePath.split(':')[0]
         );
 
-        logfile = upath.join(FOLDER, slugify(id, { trim: true }) + '-' + slugify(base, { trim: true }) + '.log');
+        logfile = upath.join(FOLDER, slugify(id, { trim: true }) + '-' + slugify(base, { trim: true }) + './log');
         if (!fs.existsSync(logfile)) {
           writefile(logfile, '');
         }

@@ -11,7 +11,7 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "NodeNext",
     "lib": ["ES2019", "ES2020", "DOM", "ES6", "ESNext"],
     "outDir": "./tmp/dist",
     "rootDir": ".",
@@ -23,7 +23,7 @@
     "strict": true,
     /* Module Resolution Options */
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,

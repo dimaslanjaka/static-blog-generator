@@ -1,4 +1,4 @@
-import { md5 } from './hash';
+import { md5 } from './hash.js';
 
 /**
  * Persistent UUID V4 Generator based on inputted string

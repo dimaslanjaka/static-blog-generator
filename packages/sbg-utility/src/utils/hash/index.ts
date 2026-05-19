@@ -1,2 +1,2 @@
-export * from './file';
-export * from './getChecksum';
+export * from './file.js';
+export * from './getChecksum.js';

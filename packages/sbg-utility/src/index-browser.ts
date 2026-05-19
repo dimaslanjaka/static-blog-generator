@@ -1,5 +1,5 @@
-import * as wildcards from './index-exports-browser';
-export * from './index-exports-browser';
+import * as wildcards from './index-exports-browser.js';
+export * from './index-exports-browser.js';
 export default wildcards;
 
 globalThis.SBGUtility = globalThis.SBGUtility || {};

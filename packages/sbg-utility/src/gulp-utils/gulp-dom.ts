@@ -4,8 +4,8 @@ import jsdom from 'jsdom';
 import PluginError from 'plugin-error';
 import through2 from 'through2';
 import upath from 'upath';
-import { Logger } from '../utils';
-import { trueCasePathSync } from '../utils/filemanager/path-utility';
+import Logger from '../utils/logger.js';
+import { trueCasePathSync } from '../utils/filemanager/path-utility.js';
 const pluginName = 'gulp-dom';
 const path = {
   join: (...str: string[]) => upath.toUnix(trueCasePathSync(upath.join(...str))),
