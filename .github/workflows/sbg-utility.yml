@@ -43,7 +43,7 @@ jobs:
         **/dist
         ~/.npm
         ~/.cache/yarn
-        **/node_modules
+        packages/**/node_modules
 
     steps:
       - name: ⬇️ Checkout Repository (sbg-utility)
@@ -138,8 +138,9 @@ jobs:
         id: cache-restore
         with:
           path: ${{ env.CACHE_PATHS }}
-          key: ${{ runner.os }}-${{ env.node-version }}-${{ hashFiles('**/*.ts', '**/*.js', '**/*.cjs', '**/*.mjs', '**/yarn.lock', '**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ github.ref_name }}-${{ env.node-version }}-${{ hashFiles('**/*.ts', '**/*.js', '**/*.cjs', '**/*.mjs', '**/yarn.lock', '**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-${{ github.ref_name }}-${{ env.node-version }}-
             ${{ runner.os }}-${{ env.node-version }}-
             ${{ runner.os }}-
 
@@ -180,11 +181,6 @@ jobs:
         run: |
           npm run pack -- --commit
           npm run pack
-
-      - name: 🛠️ Configure Git user
-        run: |
-          git config --global user.email "dimaslanjaka@gmail.com"
-          git config --global user.name "dimaslanjaka"
 
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
