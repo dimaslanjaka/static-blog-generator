@@ -1,7 +1,7 @@
-export * from './gulp-cache';
-export * from './gulp-dom';
-export * from './gulp-options';
-export * from './gulp.debug';
-export * from './index';
+export * from './gulp-cache.js';
+export * from './gulp-dom.js';
+export * from './gulp-options.js';
+export * from './gulp.debug.js';
+export * from './index.js';
 
 //

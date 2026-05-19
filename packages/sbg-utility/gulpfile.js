@@ -135,8 +135,11 @@ function generateExportsTask() {
   });
   return Promise.resolve();
 }
+gulp.task('generate-exports', generateExportsTask);
+
 async function clean() {
   await fs.rm(path.join(__dirname, 'dist'), { recursive: true, force: true });
+  await fs.rm(path.join(__dirname, 'tmp'), { recursive: true, force: true });
 }
 
 gulp.task('clean', gulp.series(clean));

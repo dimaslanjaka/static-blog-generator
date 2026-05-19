@@ -1,16 +1,16 @@
 // filemanager
 
-export * from './copy';
-export * from './del';
-export * from './emptyDir';
-export * from './getAppRootDir';
-export * from './images';
-export * from './path-utility';
-export { normalizePath as joinPath, normalizePath as pathJoin } from './path-utility';
-export * from './readDir';
-export * from './readfile';
-export * from './stream';
-export * from './writefile';
+export * from './copy.js';
+export * from './del.js';
+export * from './emptyDir.js';
+export * from './getAppRootDir.js';
+export * from './images.js';
+export * from './path-utility.js';
+export { normalizePath as joinPath, normalizePath as pathJoin } from './path-utility.js';
+export * from './readDir.js';
+export * from './readfile.js';
+export * from './stream.js';
+export * from './writefile.js';
 
 /**
  * is non-markdown file

@@ -41,8 +41,8 @@ glob('**/*.{ts,js,jsx,tsx,cjs,mjs}', {
       return {
         file,
         name: importName,
-        import: `import * as ${importName} from '.${file.replace(/.(ts|js|tsx|jsx|cjs)$/, '')}';`,
-        export: `export * from '.${file.replace(/.(ts|js|tsx|jsx|cjs)$/, '')}';`
+        import: `import * as ${importName} from '.${file.replace(/.(ts|js|tsx|jsx|cjs)$/, '')}.js';`,
+        export: `export * from '.${file.replace(/.(ts|js|tsx|jsx|cjs)$/, '')}.js';`
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -51,7 +51,7 @@ glob('**/*.{ts,js,jsx,tsx,cjs,mjs}', {
 
   fs.writeFileSync(
     path.join(__dirname, 'index.ts'),
-    [`export * from './index-exports'`, `import * as lib from './index-exports'`, 'export default lib'].join('\n')
+    [`export * from "./index-exports.js"`, `import * as lib from "./index-exports.js"`, 'export default lib'].join('\n')
   );
 
   const lint = new ESLint({ fix: true });

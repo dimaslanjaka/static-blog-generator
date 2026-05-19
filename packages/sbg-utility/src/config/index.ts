@@ -1,8 +1,8 @@
-export * from './_config';
-export * as main from './_config';
-export * from './config-wrapper';
-export * as wrapper from './config-wrapper';
-export * from './default-config';
-export * as defaults from './default-config';
+export * from './_config.js';
+export * as main from './_config.js';
+export * from './config-wrapper.js';
+export * as wrapper from './config-wrapper.js';
+export * from './default-config.js';
+export * as defaults from './default-config.js';
 
 //
