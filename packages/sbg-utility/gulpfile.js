@@ -93,8 +93,8 @@ gulp.task(
     });
   })
 );
-gulp.task('rollup-dts', gulp.series(compileDeclarations));
-
+gulp.task('rollup-dts', compileDeclarations);
+gulp.task('dts', compileDeclarations);
 gulp.task('build-browser', async function () {
   // Ensure config is populated before building browser bundle
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
