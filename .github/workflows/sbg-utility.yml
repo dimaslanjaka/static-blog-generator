@@ -35,17 +35,15 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
       node-version: 20.x
       YARN_CHECKSUM_BEHAVIOR: update
-
       CACHE_PATHS: |
         **/.cache
         **/.yarn
-        **/releases
         **/release*
         **/tmp
         **/dist
         ~/.npm
         ~/.cache/yarn
-        packages/sbg-utility/node_modules
+        **/node_modules
 
     steps:
       - name: ⬇️ Checkout Repository (sbg-utility)
