@@ -1,13 +1,9 @@
 import * as fs from 'fs';
 import * as glob from 'glob';
 import * as path from 'path';
-import { fileURLToPath } from 'url';
-import { getChecksum, md5, writefile } from '..';
-
-/**
- * __dirname workaround for ESM modules (Node.js standard)
- */
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { md5 } from '../hash.js';
+import { getChecksum } from '../hash/getChecksum.js';
+import { writefile } from '../filemanager/writefile.js';
 
 interface FileEntry {
   file: string;
@@ -17,9 +13,11 @@ interface FileEntry {
 interface GetFileChangesOptions {
   /** Glob patterns to match files */
   patterns?: string | string[];
+
   /** Glob patterns to ignore */
   ignorePatterns?: string | string[];
-  /** Current working directory for the search */
+
+  /** Current working directory */
   cwd?: string;
 }
 
@@ -29,79 +27,129 @@ interface GetFileChangesResult {
   result: boolean;
 }
 
+/**
+ * Normalize paths so cache is stable across:
+ * - Windows/Linux/macOS
+ * - different cwd styles
+ * - slash direction
+ * - casing inconsistencies
+ */
+function normalizeFilePath(file: string): string {
+  return path.posix.normalize(file.replace(/\\/g, '/'));
+}
+
 export function getFileChanges(options: GetFileChangesOptions = {}): GetFileChangesResult {
-  // Destructure options with defaults matching the original hardcoded values
   const {
     patterns = 'src/**/*.{ts,js,cjs,mjs}',
-    ignorePatterns = ['**/export*', '**/*.builder*', '**/*.runner*', '**/*.direct*'],
+    ignorePatterns = ['**/*export*', '**/*.builder*', '**/*.runner*', '**/*.direct*'],
     cwd = process.cwd()
   } = options;
 
-  // Resolve the cache path relative to the provided cwd (or process.cwd)
-  const cacheFile = path.join(
-    cwd,
-    'tmp/sbg-utility/getFileChanges',
-    md5(patterns + JSON.stringify(ignorePatterns) + cwd) + '.json'
+  /**
+   * Stable cache filename
+   */
+  const cacheKey = md5(
+    JSON.stringify({
+      patterns,
+      ignorePatterns,
+      cwd: normalizeFilePath(path.resolve(cwd))
+    })
   );
 
-  // Find files based on patterns and options
-  const files = glob.sync(patterns, {
-    nodir: true,
-    absolute: true,
-    dot: true,
-    ignore: ignorePatterns,
-    cwd: cwd
-  });
+  const cacheFile = path.join(cwd, 'tmp', 'sbg-utility', 'getFileChanges', `${cacheKey}.json`);
+
+  /**
+   * IMPORTANT:
+   * Use relative paths instead of absolute paths.
+   * Absolute paths frequently change across environments.
+   */
+  const files = glob
+    .sync(patterns, {
+      cwd,
+      nodir: true,
+      dot: true,
+      ignore: ignorePatterns,
+      absolute: false
+    })
+    .map(normalizeFilePath)
+    .sort();
 
   const allFiles: FileEntry[] = [];
   const changedFiles: FileEntry[] = [];
 
-  // Load previous cache
+  /**
+   * Load previous cache
+   */
   let previousData: FileEntry[] = [];
+
   if (fs.existsSync(cacheFile)) {
     try {
       const content = fs.readFileSync(cacheFile, 'utf8');
-      previousData = JSON.parse(content);
-    } catch (e) {
-      console.warn('Failed to parse cache file, ignoring.', e);
+
+      const parsed = JSON.parse(content);
+
+      if (Array.isArray(parsed)) {
+        previousData = parsed;
+      }
+    } catch (err) {
+      console.warn('Failed to read cache file:', err);
     }
   }
 
-  // Optimization: Create a Map for O(1) lookups of previous hashes
-  const previousMap = new Map(previousData.map((entry) => [entry.file, entry.hash]));
+  /**
+   * O(1) lookup map
+   */
+  const previousMap = new Map<string, string>();
 
-  for (const file of files) {
-    const currentHash = getChecksum(file);
-    const previousHash = previousMap.get(file);
+  for (const entry of previousData) {
+    previousMap.set(normalizeFilePath(entry.file), entry.hash);
+  }
 
-    // If file is new or hash has changed
+  /**
+   * Detect changes
+   */
+  for (const relativeFile of files) {
+    const absoluteFile = path.join(cwd, relativeFile);
+
+    /**
+     * IMPORTANT:
+     * getChecksum should hash FILE CONTENT ONLY.
+     */
+    const currentHash = getChecksum(absoluteFile);
+
+    const previousHash = previousMap.get(relativeFile);
+
+    const entry: FileEntry = {
+      file: relativeFile,
+      hash: currentHash
+    };
+
+    allFiles.push(entry);
+
     if (!previousHash || previousHash !== currentHash) {
-      changedFiles.push({ file, hash: currentHash });
+      changedFiles.push(entry);
     }
-
-    allFiles.push({ file, hash: currentHash });
   }
 
-  const result = { allFiles, changedFiles, result: changedFiles.length > 0 || !fs.existsSync(cacheFile) };
+  const result: GetFileChangesResult = {
+    allFiles,
+    changedFiles,
+    result: changedFiles.length > 0 || !fs.existsSync(cacheFile)
+  };
 
-  // Ensure cache directory exists before writing
-  const cacheDir = path.dirname(cacheFile);
-  if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir, { recursive: true });
-  }
+  /**
+   * Ensure cache directory exists
+   */
+  fs.mkdirSync(path.dirname(cacheFile), {
+    recursive: true
+  });
 
-  writefile(cacheFile, JSON.stringify(allFiles));
+  /**
+   * Write stable cache
+   */
+  writefile(cacheFile, JSON.stringify(allFiles, null, 2));
+
   return result;
 }
 
 export default getFileChanges;
-
-// Example Usage:
-// const changes = getFileChanges({
-//   patterns: 'src/**/*.ts',
-//   ignorePatterns: ['**/*.test.ts'],
-//   cwd: process.cwd()
-// });
-
-// console.log('Changed files:', changes.changedFiles);
-// console.log('Any changes detected:', changes.result);
