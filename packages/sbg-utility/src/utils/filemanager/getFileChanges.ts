@@ -1,9 +1,9 @@
-import * as fs from 'fs';
+import fs from 'fs-extra';
 import * as glob from 'glob';
-import * as path from 'path';
+import path from 'upath';
+import { fileURLToPath } from 'url';
 import { md5 } from '../hash.js';
 import { getChecksum } from '../hash/getChecksum.js';
-import { writefile } from '../filemanager/writefile.js';
 
 interface FileEntry {
   file: string;
@@ -27,6 +27,8 @@ interface GetFileChangesResult {
   result: boolean;
 }
 
+const __filename = fileURLToPath(import.meta.url);
+
 /**
  * Normalize paths so cache is stable across:
  * - Windows/Linux/macOS
@@ -35,10 +37,11 @@ interface GetFileChangesResult {
  * - casing inconsistencies
  */
 function normalizeFilePath(file: string): string {
-  return path.posix.normalize(file.replace(/\\/g, '/'));
+  // upath ensures consistent unix-style separators across platforms
+  return path.toUnix(path.normalize(file));
 }
 
-export function getFileChanges(options: GetFileChangesOptions = {}): GetFileChangesResult {
+export async function getFileChanges(options: GetFileChangesOptions = {}): Promise<GetFileChangesResult> {
   const {
     patterns = 'src/**/*.{ts,js,cjs,mjs}',
     ignorePatterns = ['**/*export*', '**/*.builder*', '**/*.runner*', '**/*.direct*'],
@@ -72,6 +75,7 @@ export function getFileChanges(options: GetFileChangesOptions = {}): GetFileChan
       absolute: false
     })
     .map(normalizeFilePath)
+    .filter((file) => normalizeFilePath(path.resolve(cwd, file)) !== normalizeFilePath(path.resolve(__filename)))
     .sort();
 
   const allFiles: FileEntry[] = [];
@@ -115,7 +119,7 @@ export function getFileChanges(options: GetFileChangesOptions = {}): GetFileChan
      * IMPORTANT:
      * getChecksum should hash FILE CONTENT ONLY.
      */
-    const currentHash = getChecksum(absoluteFile);
+    const currentHash = await getChecksum(absoluteFile);
 
     const previousHash = previousMap.get(relativeFile);
 
@@ -147,7 +151,7 @@ export function getFileChanges(options: GetFileChangesOptions = {}): GetFileChan
   /**
    * Write stable cache
    */
-  writefile(cacheFile, JSON.stringify(allFiles, null, 2));
+  fs.writeFileSync(cacheFile, JSON.stringify(allFiles, null, 2));
 
   return result;
 }
