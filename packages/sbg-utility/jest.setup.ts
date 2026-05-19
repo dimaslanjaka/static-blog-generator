@@ -18,13 +18,13 @@ dotenv.config({
     undefined
 });
 
-async function main() {
+export default async function main() {
   const changed = await getFileChanges({
     ignorePatterns: [
-      '*export*',
-      '*.builder*',
-      '*.runner*',
-      '*.direct*',
+      '**/*export*',
+      '**/*.builder*',
+      '**/*.runner*',
+      '**/*.direct*',
       '**/node_modules/**',
       '**/dist/**',
       '**/tmp/**',
@@ -55,4 +55,5 @@ async function main() {
     console.log('✅\tNo relevant source files changed. Skipping build.');
   }
 }
+
 main();
