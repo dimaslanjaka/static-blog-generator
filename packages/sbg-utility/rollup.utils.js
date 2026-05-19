@@ -31,7 +31,8 @@ export const bundledPackages = [
   'markdown-it',
   'node-cache',
   'is-file-stream',
-  'strip-ansi'
+  'strip-ansi',
+  'ansi-regex'
 ];
 
 /**
