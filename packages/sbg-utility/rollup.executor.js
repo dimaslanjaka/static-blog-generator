@@ -6,7 +6,7 @@ import color from 'ansi-colors';
 import fs from 'fs';
 import * as glob from 'glob';
 import path from 'upath';
-import pkgJson from './package.json' with { type: 'json' };
+import { bundledPackages, externalPackages } from './rollup.utils.js';
 
 const INPUT_RAW = process.env.ROLLUP_INPUT;
 if (!INPUT_RAW) {
@@ -27,14 +27,6 @@ const OUTPUT_BASE = process.env.ROLLUP_OUTPUT.replace(/\.(cjs|mjs|js)$/, '');
 
 console.log(`Input: ${color.cyan(INPUT_RAW)}`);
 console.log(`Output: ${color.cyan(OUTPUT_BASE)}.mjs and ${color.cyan(OUTPUT_BASE)}.cjs`);
-
-const { dependencies = {}, devDependencies = {} } = pkgJson;
-
-const bundledPackages = ['p-limit', 'deepmerge-ts', 'hexo-is', 'is-stream', 'markdown-it', 'node-cache'];
-
-const externalPackages = [...Object.keys(dependencies), ...Object.keys(devDependencies)].filter(
-  (pkg) => !bundledPackages.includes(pkg)
-);
 
 /* ----------------------------
    INPUT NORMALIZATION (FIXED)
