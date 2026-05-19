@@ -24,7 +24,13 @@ export function generateExports({
     // Use glob to find all .mjs, .cjs, .d.ts, .d.mts, .d.cts files
     const patterns = ['**/*.mjs', '**/*.cjs', '**/*.d.ts', '**/*.d.mts', '**/*.d.cts'];
     const files = patterns
-      .flatMap((pattern) => glob.sync(pattern, { cwd: folder.dir, nodir: true }))
+      .flatMap((pattern) =>
+        glob.sync(pattern, {
+          cwd: folder.dir,
+          nodir: true,
+          ignore: ['**/node_modules/**', '**/dist/**', '**/*.{builder,spec,test,runner}.*']
+        })
+      )
       .map((file) => path.join(folder.prefix, file));
 
     const moduleMap = new Map();
