@@ -64,7 +64,9 @@ async function buildDist() {
   await spawnAsync(cmd('tsc'), ['--build', 'tsconfig.docs.json'], { cwd: __dirname, shell: true, stdio: 'inherit' });
   await spawnAsync(cmd('rollup'), ['-c'], { cwd: __dirname, shell: true, stdio: 'inherit' });
 }
-
+gulp.task('build-dist', buildDist);
+gulp.task('copy-assets', copyAssets);
+gulp.task('copy-declarations', copyDeclarations);
 gulp.task('build', gulp.series(buildDist, copyAssets, copyDeclarations));
 
 gulp.task('pack', async function () {
