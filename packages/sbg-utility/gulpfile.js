@@ -3,6 +3,8 @@ import fs from 'fs-extra';
 import * as glob from 'glob';
 import gulp from 'gulp';
 import path from 'node:path';
+import { rollup } from 'rollup';
+import dts from 'rollup-plugin-dts';
 import { fileURLToPath } from 'url';
 import YAML from 'yaml';
 import { compileDeclarations } from './rollup-preserve.js';
@@ -93,8 +95,31 @@ gulp.task(
     });
   })
 );
-gulp.task('rollup-dts', compileDeclarations);
-gulp.task('dts', compileDeclarations);
+
+async function buildIndexDts() {
+  const bundle = await rollup({
+    input: 'src/index.ts',
+    plugins: [dts()]
+  });
+
+  await bundle.write({
+    file: 'dist/index.d.ts',
+    format: 'es'
+  });
+
+  await bundle.write({
+    file: 'dist/index.d.cts',
+    format: 'es'
+  });
+
+  await bundle.write({
+    file: 'dist/index.d.mts',
+    format: 'es'
+  });
+}
+
+gulp.task('dts', gulp.series(compileDeclarations, buildIndexDts));
+gulp.task('rollup-dts', gulp.series('dts'));
 gulp.task('build-browser', async function () {
   // Ensure config is populated before building browser bundle
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
