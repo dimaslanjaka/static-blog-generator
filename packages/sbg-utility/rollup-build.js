@@ -45,6 +45,7 @@ export function getInputFiles() {
       '**/*.explicit.*',
       '**/*.test.*',
       '**/*.builder.*',
+      '**/*.runner.*',
       '**/*.spec.*',
       '*browser*'
     )

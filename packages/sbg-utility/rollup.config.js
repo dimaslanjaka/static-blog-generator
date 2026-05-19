@@ -36,6 +36,7 @@ const nodeInputs = glob.globSync('src/**/*.{ts,js,cjs,mjs}', {
     '**/*.explicit.*',
     '**/*.test.*',
     '**/*.builder.*',
+    '**/*.runner.*',
     '**/*.spec.*',
     '*browser*'
   )

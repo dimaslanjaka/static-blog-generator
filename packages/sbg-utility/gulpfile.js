@@ -116,14 +116,12 @@ function generateExportsTask() {
         require: './dist/index.cjs',
         import: './dist/index.mjs',
         types: './dist/index.d.mts'
-        // types: './dist/index.d.cts'
       },
       './package.json': './package.json',
       './browser': {
         require: './dist/browser/index.cjs',
         import: './dist/browser/index.mjs',
         types: './dist/browser/index.d.ts'
-        // types: './dist/browser/index.d.cts'
       }
     },
     folders: [
