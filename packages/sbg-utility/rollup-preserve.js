@@ -94,77 +94,84 @@ export async function compileDeclarations() {
 
   console.log(colors.cyan(`📄 Emitting declarations for all modules...`));
 
-  const configPath = ts.findConfigFile('./', ts.sys.fileExists, 'tsconfig.json');
+  // Prefer a dedicated declaration tsconfig if present
+  const configPath =
+    ts.findConfigFile('./', ts.sys.fileExists, 'tsconfig.dts.json') ||
+    ts.findConfigFile('./', ts.sys.fileExists, 'tsconfig.json');
   if (!configPath) throw new Error('tsconfig.json not found');
 
   const parsed = ts.getParsedCommandLineOfConfigFile(configPath, {}, ts.sys);
   if (!parsed) throw new Error('Failed to parse tsconfig');
 
-  const compilerOptions = {
+  const compilerBase = {
     ...parsed.options,
-    outDir,
     emitDeclarationOnly: true,
     declaration: true,
     declarationMap: false,
     noEmitOnError: false,
     rootDir: 'src',
-    target: ts.ScriptTarget.ESNext
+    target: ts.ScriptTarget.ESNext,
+    allowJs: true
   };
 
   const rootNames = glob.sync('src/**/*.{ts,js}', {
-    ignore: ['**/*.spec.*', '**/*.test.*', '**/__mocks__/**'].concat(tsconfig.exclude)
+    ignore: ['**/*.spec.*', '**/*.test.*', '**/__mocks__/**', '**/*builder*'].concat(tsconfig.exclude)
   });
 
-  const program = ts.createProgram(rootNames, compilerOptions);
-  const emitResult = program.emit();
+  // Helper to emit declarations for a given module kind and copy to module-specific extension
+  function emitFor(moduleKind, subdir, outExt) {
+    const out = path.resolve(outDir, subdir);
+    const options = {
+      ...compilerBase,
+      outDir: out,
+      module: moduleKind
+    };
 
-  const diagnostics = ts.getPreEmitDiagnostics(program).concat(emitResult.diagnostics);
-  if (diagnostics.length) {
-    for (const d of diagnostics) {
-      const msg = ts.flattenDiagnosticMessageText(d.messageText, '\n');
-      const loc = d.file ? `${d.file.fileName}:${d.start}` : '';
-      console.log(colors.yellow(`[TS] ${loc} ${msg}`));
+    // Ensure module resolution matches Node's ESM when using NodeNext
+    if (moduleKind === ts.ModuleKind.NodeNext) {
+      options.moduleResolution = ts.ModuleResolutionKind.NodeNext;
     }
-  } else {
-    console.log(colors.green('✔ All declarations emitted.'));
+
+    // If not emitting NodeNext, avoid leaving moduleResolution set to NodeNext
+    // (parsed.options may have carried NodeNext from tsconfig). That combination is invalid.
+    if (moduleKind !== ts.ModuleKind.NodeNext && options.moduleResolution === ts.ModuleResolutionKind.NodeNext) {
+      delete options.moduleResolution;
+    }
+
+    const program = ts.createProgram(rootNames, options);
+    const emitResult = program.emit();
+
+    const diagnostics = ts.getPreEmitDiagnostics(program).concat(emitResult.diagnostics);
+    if (diagnostics.length) {
+      for (const d of diagnostics) {
+        const msg = ts.flattenDiagnosticMessageText(d.messageText, '\n');
+        const loc = d.file ? `${d.file.fileName}:${d.start}` : '';
+        process.stdout.write(`\n[TS] ${path.relative(process.cwd(), loc)} ${msg}`);
+      }
+    } else {
+      process.stdout.write(colors.green(`\n✔ All declarations emitted (${subdir}).`));
+    }
+
+    // Copy and rename emitted .d.ts -> .d.mts or .d.cts into final dist locations
+    const emitted = glob.sync(path.join(out, '**/*.d.ts'));
+    for (const f of emitted) {
+      const rel = path.relative(out, f).replace(/\.d\.ts$/, '');
+      const finalDest = path.resolve(outDir, rel + outExt);
+      fs.mkdirSync(path.dirname(finalDest), { recursive: true });
+      fs.copyFileSync(f, finalDest);
+      process.stdout.write(
+        `\r${colors.green('✔ Copied')} ${colors.gray(path.relative(process.cwd(), f))} ${colors.cyan('→')} ${colors.magenta(path.relative(process.cwd(), finalDest))} ${'\t'.repeat(7)}`
+      );
+    }
   }
 
-  // 🔁 Rename d.ts → d.mts or d.cts based on original extension
-  const dtsFiles = glob.sync('dist/**/*.d.ts');
+  // Emit ESM declarations (.d.mts) using ES2020 module mode (supports import.meta without requiring Node ESM import extensions)
+  emitFor(ts.ModuleKind.ES2020, 'esm', '.d.mts');
 
-  for (const file of dtsFiles) {
-    // Get the relative path to the base filename (e.g., dist/foo/bar.d.ts -> foo/bar)
-    const relative = path.relative('dist', file).replace(/\.d\.ts$/, '');
+  // Emit CJS declarations (.d.cts)
+  emitFor(ts.ModuleKind.CommonJS, 'cjs', '.d.cts');
 
-    // Try to find the original file with one of the known extensions
-    const sourceExts = ['.ts', '.js', '.mjs', '.cjs'];
-    let originalFile = null;
-    for (const ext of sourceExts) {
-      const candidate = path.resolve('src', relative + ext);
-      try {
-        fs.accessSync(candidate);
-        originalFile = candidate;
-        break;
-      } catch {}
-    }
-
-    if (!originalFile) {
-      console.log(colors.red(`⚠️ Cannot find original source for ${file}`));
-      continue;
-    }
-
-    const mts = file.replace(/\.d\.ts$/, '.d.mts');
-    fs.copyFileSync(file, mts);
-    console.log(`${colors.green('✔ Copied')} ${colors.gray(file)} ${colors.cyan('→')} ${colors.magenta(mts)}`);
-
-    const cts = file.replace(/\.d\.ts$/, '.d.cts');
-    fs.copyFileSync(file, cts);
-    console.log(`${colors.green('✔ Copied')} ${colors.gray(file)} ${colors.cyan('→')} ${colors.magenta(cts)}`);
-
-    // delete the original .d.ts file
-    // fs.rmSync(file, { force: true });
-    // console.log(`${colors.green('✔ Removed')} ${colors.gray(file)}`);
-  }
+  console.log('\n' + colors.green('✔ Declaration emit complete (module-specific).'));
 }
 
 const isDirect = import.meta.url === pathToFileURL(process.argv[1]).href;
