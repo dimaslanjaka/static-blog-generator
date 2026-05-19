@@ -45,10 +45,8 @@ ___*
 **/.yarn/versions
 **/.yarn/install-state.gz
 !**/.yarn/cache/.gitginore
+yarn*.lock
+package-lock.json
 
-# sbg-api
-packages/*
-packages/sbg-api/dist
-!packages/sbg-api
-test/
-!packages/sbg-api/test/
+**/dist/**
+.frontmatter/
