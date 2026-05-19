@@ -11,26 +11,6 @@ import { generateExports } from './src/utils/generate-exports.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-function get_binary_path(commandName) {
-  const cmdPath = [
-    __dirname,
-    process.cwd(),
-    (process.mainModule || process.main).paths[0].split('node_modules')[0].slice(0, -1)
-  ]
-    .map((cwd) => {
-      const nm = path.join(cwd, 'node_modules/.bin');
-      return path.join(nm, commandName);
-    })
-    .filter(fs.existsSync)[0];
-
-  if (!cmdPath) {
-    console.error(`Command '${commandName}' not found in node_modules/.bin`);
-    return commandName; // Return the original command name
-  }
-
-  return process.platform === 'win32' ? `${cmdPath}.cmd` : cmdPath;
-}
-
 async function populateConfig() {
   const configYmlPath = path.join(__dirname, 'test', '_config.yml');
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
