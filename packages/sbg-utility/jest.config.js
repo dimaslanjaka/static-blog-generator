@@ -16,6 +16,7 @@ const config = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'mts'],
+  extensionsToTreatAsEsm: ['.ts', '.mts'],
   verbose: true,
   cache: true,
   cacheDirectory: path.join(__dirname, 'tmp/jest'),
@@ -42,8 +43,6 @@ const config = {
     '**/test/*.spec.{js,ts,cjs,mjs}',
     '!**/.deploy_git/**'
   ],
-
-  extensionsToTreatAsEsm: ['.ts'],
 
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1'
@@ -91,7 +90,7 @@ const config = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
-  setupFiles: ['<rootDir>/jest.setup.ts']
+  globalSetup: '<rootDir>/jest.setup.ts'
 };
 
 // Ensure the 'tmp' directory exists before using it for Jest cache
