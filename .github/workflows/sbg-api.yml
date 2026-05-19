@@ -35,17 +35,15 @@ jobs:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
       node-version: 20.x
       YARN_CHECKSUM_BEHAVIOR: update
-
       CACHE_PATHS: |
         **/.cache
         **/.yarn
-        **/releases
         **/release*
         **/tmp
         **/dist
         ~/.npm
         ~/.cache/yarn
-        packages/sbg-api/node_modules
+        packages/**/node_modules
 
     steps:
       - name: ⬇️ Checkout Repository (sbg-api)
@@ -140,8 +138,9 @@ jobs:
         id: cache-restore
         with:
           path: ${{ env.CACHE_PATHS }}
-          key: ${{ runner.os }}-${{ env.node-version }}-${{ hashFiles('**/*.ts', '**/*.js', '**/*.cjs', '**/*.mjs', '**/yarn.lock', '**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ github.ref_name }}-${{ env.node-version }}-${{ hashFiles('**/*.ts', '**/*.js', '**/*.cjs', '**/*.mjs', '**/yarn.lock', '**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-${{ github.ref_name }}-${{ env.node-version }}-
             ${{ runner.os }}-${{ env.node-version }}-
             ${{ runner.os }}-
 
