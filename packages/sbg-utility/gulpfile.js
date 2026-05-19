@@ -109,8 +109,7 @@ async function buildIndexDts() {
   });
 }
 
-gulp.task('idts', gulp.series(compileDeclarations, buildIndexDts));
-gulp.task('dts', gulp.series(compileDeclarations));
+gulp.task('dts', gulp.series(compileDeclarations, buildIndexDts));
 gulp.task('rollup-dts', gulp.series('dts'));
 gulp.task('build-browser', async function () {
   // Ensure config is populated before building browser bundle
