@@ -233,7 +233,7 @@ export async function url_to_hash(
     outputLocationPath = outputLocationPath.replace(/\/$/, '');
   }
   if (!path.basename(url).includes('.')) {
-    outputLocationPath += '.tgz';
+    outputLocationPath += './tgz';
   }
 
   if (!fs.existsSync(path.dirname(outputLocationPath))) {

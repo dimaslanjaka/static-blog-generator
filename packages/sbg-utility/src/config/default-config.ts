@@ -2,9 +2,9 @@ import fs from 'fs-extra';
 import url from 'node:url';
 import path from 'upath';
 import * as yaml from 'yaml';
-import { jsonStringifyWithCircularRefs } from '../utils/JSON';
-import { normalizePath } from '../utils/filemanager/path-utility';
-import { HexoConfig } from './_config';
+import { jsonStringifyWithCircularRefs } from '../utils/JSON.js';
+import { normalizePath } from '../utils/filemanager/path-utility.js';
+import { HexoConfig } from './_config.js';
 // import mappedConfig from './_config.json' assert { type: 'json' };
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -40,7 +40,7 @@ export function getDefaultConfig() {
     },
     // Directory
     post_dir: 'src-posts',
-    // deploy_dir: '.deploy_git',
+    // deploy_dir: './deploy_git',
     source_dir: 'source',
     public_dir: 'public',
     tag_dir: 'tags',

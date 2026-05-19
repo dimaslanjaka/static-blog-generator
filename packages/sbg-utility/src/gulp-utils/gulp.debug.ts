@@ -2,10 +2,10 @@ import ansiColors from 'ansi-colors';
 import { EOL } from 'os';
 import through2 from 'through2';
 import path from 'upath';
-import { writefile } from '../utils/filemanager';
-import { data_to_hash_sync } from '../utils/hash';
-import Logger from '../utils/logger';
-import scheduler from '../utils/scheduler';
+import { writefile } from '../utils/filemanager/index.js';
+import { data_to_hash_sync } from '../utils/hash.js';
+import Logger from '../utils/logger.js';
+import scheduler from '../utils/scheduler.js';
 
 export function gulpDebug(filename?: string) {
   const caller = data_to_hash_sync(

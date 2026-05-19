@@ -30,7 +30,7 @@ export function get_binary_path(commandName: string, resolveNodeAbsolutePath = f
   }
 
   // Search for command in Python venv bin/Scripts
-  const venvDirs = [path.join(process.cwd(), 'venv'), path.join(process.cwd(), '.venv')];
+  const venvDirs = [path.join(process.cwd(), 'venv'), path.join(process.cwd(), './venv')];
   for (const venv of venvDirs) {
     const binName = process.platform === 'win32' ? `Scripts/${commandName}.exe` : `bin/${commandName}`;
     const venvCmd = path.join(venv, binName);

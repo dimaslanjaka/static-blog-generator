@@ -3,7 +3,7 @@
 import { describe, expect, it } from '@jest/globals';
 import url from 'node:url';
 import path from 'path';
-import findYarnRootWorkspace from '../src/utils/nodeWorkspaceHelper';
+import findYarnRootWorkspace from '../src/utils/nodeWorkspaceHelper.js';
 
 // npx c8 --reporter=lcovonly mocha --timeout=7000000 test/find-yarn-root-workspace.test.js
 

@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
 import path from 'upath';
-import './JSON';
-import { jsonStringifyWithCircularRefs } from './JSON';
-import { pathJoin, writefile } from './filemanager';
+import './JSON.js';
+import { jsonStringifyWithCircularRefs } from './JSON.js';
+import { pathJoin, writefile } from './filemanager/index.js';
 
 export interface PersistentCacheOpt {
   // [key: string]: any;
@@ -305,7 +305,7 @@ export class persistentCache implements PersistentCacheOpt {
   }
 
   buildFilePath(name: string) {
-    return path.normalize(this.getCacheDir() + '/' + name + '.json');
+    return path.normalize(this.getCacheDir() + '/' + name + './json');
   }
 
   buildCacheEntry(data: any) {

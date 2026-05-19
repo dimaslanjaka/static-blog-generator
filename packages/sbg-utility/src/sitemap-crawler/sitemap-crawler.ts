@@ -3,8 +3,8 @@ import Bluebird from 'bluebird';
 import { parse } from 'node-html-parser';
 import ProgressBar from 'progress';
 import request from 'request';
-import { Logger } from '../utils';
-import { debug } from '../utils/debug';
+import Logger from '../utils/logger.js';
+import { debug } from '../utils/debug.js';
 
 type cb = (arg0: Error | null, arg1?: string[]) => void;
 

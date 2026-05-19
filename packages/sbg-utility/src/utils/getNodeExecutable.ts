@@ -28,7 +28,7 @@ function getNodeExecutable(commandName: string): string {
   const searchPaths = [currentDir, process.cwd(), rootPath].filter((value): value is string => Boolean(value));
 
   const executablePath = searchPaths
-    .map((cwd) => path.join(cwd, 'node_modules', '.bin', commandName))
+    .map((cwd) => path.join(cwd, 'node_modules', './bin', commandName))
     .find((candidate) => {
       const fullPath = process.platform === 'win32' ? `${candidate}.cmd` : candidate;
 

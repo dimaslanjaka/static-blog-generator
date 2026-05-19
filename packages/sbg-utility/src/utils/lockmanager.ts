@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import os from 'os';
 import path from 'path';
-import { writefile } from './filemanager';
-import Logger from './logger';
-import scheduler from './scheduler';
+import { writefile } from './filemanager/index.js';
+import Logger from './logger.js';
+import scheduler from './scheduler.js';
 
 const locks: LockManager[] = [];
 let schedulerInitialized = false;

@@ -1,5 +1,5 @@
 import { describe, expect, it, jest, test } from '@jest/globals';
-import defaults, * as wildcards from '../src';
+import defaults, * as wildcards from '../src/index.js';
 import * as shared from './import-shared.cjs';
 
 // jest --runInBand imports.test

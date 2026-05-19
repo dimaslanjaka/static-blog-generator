@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { platform } from 'os';
 import path from 'path';
 import upath from 'upath';
-import { fixDriveLetter } from './driveLetterUtils';
+import { fixDriveLetter } from './driveLetterUtils.js';
 
 const readdir = pify(fs.readdir);
 export const isWindows = platform() === 'win32';

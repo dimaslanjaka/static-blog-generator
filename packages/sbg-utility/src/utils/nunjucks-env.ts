@@ -1,5 +1,5 @@
 import nunjucks from 'nunjucks';
-import { encodeURL } from './encode-url';
+import { encodeURL } from './encode-url.js';
 
 export function envNunjucks(
   loader?: nunjucks.ILoader | nunjucks.ILoader[] | null | undefined,

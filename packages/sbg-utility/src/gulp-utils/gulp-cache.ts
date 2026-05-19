@@ -3,10 +3,10 @@ import fs from 'fs-extra';
 import { EOL } from 'os';
 import through2 from 'through2';
 import path from 'upath';
-import { getConfig } from '../config/_config';
-import { PersistentCacheOpt, persistentCache } from '../utils';
-import { normalizePath, removeCwd, writefile } from '../utils/filemanager';
-import { data_to_hash_sync, md5 } from '../utils/hash';
+import { getConfig } from '../config/_config.js';
+import { PersistentCacheOpt, persistentCache } from '../utils/index.js';
+import { normalizePath, removeCwd, writefile } from '../utils/filemanager/index.js';
+import { data_to_hash_sync, md5 } from '../utils/hash.js';
 
 /**
  * calculate sha1sum of file

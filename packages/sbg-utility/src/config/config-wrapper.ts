@@ -2,7 +2,7 @@ import EventEmitter from 'events';
 import fs from 'fs-extra';
 import url from 'node:url';
 import path from 'upath';
-import { writefile } from '../utils/filemanager';
+import { writefile } from '../utils/filemanager/index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

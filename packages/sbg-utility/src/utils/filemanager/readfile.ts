@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import Logger from '../logger';
+import Logger from '../logger.js';
 
 /**
  * Reads a file and returns its content as a string. If the file does not exist, returns null.
