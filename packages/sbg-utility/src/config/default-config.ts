@@ -10,9 +10,10 @@ import { HexoConfig } from './_config';
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const mappedConfig: HexoConfig & Record<string, any> = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '_config.json'), 'utf-8')
-);
+const configJsonPath = path.join(__dirname, '_config.json');
+const mappedConfig: HexoConfig & Record<string, any> = fs.existsSync(configJsonPath)
+  ? JSON.parse(fs.readFileSync(configJsonPath, 'utf-8'))
+  : {};
 export type importConfig = typeof mappedConfig;
 
 /**
