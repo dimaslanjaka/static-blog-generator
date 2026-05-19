@@ -7,7 +7,7 @@ import { rollup } from 'rollup';
 import dts from 'rollup-plugin-dts';
 import { fileURLToPath } from 'url';
 import YAML from 'yaml';
-import { compileDeclarations } from './rollup-preserve.js';
+import { build, compileDeclarations } from './rollup-preserve.js';
 import { generateExports } from './src/utils/generate-exports.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -85,16 +85,7 @@ async function tsc() {
 }
 
 gulp.task('tsc', tsc);
-gulp.task(
-  'rollup',
-  gulp.series(async function () {
-    await crossSpawn.spawnAsync('node', [path.join(__dirname, 'rollup-preserve.js')], {
-      cwd: __dirname,
-      shell: true,
-      stdio: 'inherit'
-    });
-  })
-);
+gulp.task('rollup', build);
 
 async function buildIndexDts() {
   const bundle = await rollup({
@@ -118,7 +109,8 @@ async function buildIndexDts() {
   });
 }
 
-gulp.task('dts', gulp.series(compileDeclarations, buildIndexDts));
+gulp.task('idts', gulp.series(compileDeclarations, buildIndexDts));
+gulp.task('dts', gulp.series(compileDeclarations));
 gulp.task('rollup-dts', gulp.series('dts'));
 gulp.task('build-browser', async function () {
   // Ensure config is populated before building browser bundle
