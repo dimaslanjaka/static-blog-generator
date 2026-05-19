@@ -64,8 +64,8 @@ const copy = async function () {
 
 gulp.task('copy', copy);
 
-// tsc --build tsconfig.build.json
-// tsc --build tsconfig.docs.json
+// tsc --build tsconfig.browser.json
+// tsc --build tsconfig.node.json
 // tsc --build tsconfig.json
 // rollup -c
 
@@ -75,7 +75,7 @@ async function tsc() {
   if (!fs.existsSync(configJsonPath)) {
     await populateConfig();
   }
-  await crossSpawn.spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.docs.json'], {
+  await crossSpawn.spawnAsync('yarn', ['exec', 'tsc', '--build', 'tsconfig.node.json'], {
     cwd: __dirname,
     shell: true,
     stdio: 'inherit'

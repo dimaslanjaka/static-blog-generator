@@ -147,7 +147,7 @@ const _oneFileDeclaration = {
     { file: 'dist/index.d.cts', format: 'es', inlineDynamicImports: true },
     { file: 'dist/index.d.mts', format: 'es', inlineDynamicImports: true }
   ],
-  plugins: [resolve({ preferBuiltins: true }), json(), dts({ tsconfig: 'tsconfig.docs.json' })],
+  plugins: [resolve({ preferBuiltins: true }), json(), dts({ tsconfig: 'tsconfig.node.json' })],
   external: externalPackagesFilter
 };
 
