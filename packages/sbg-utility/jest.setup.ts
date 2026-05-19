@@ -40,16 +40,16 @@ const changed = getFileChanges({
 
 if (changed.result) {
   console.log(
-    `🛠️ Detected changes in source files ${changed.changedFiles.map((f) => ansi.yellow(path.relative(__dirname, f.file))).join(', ')}. Running build...`
+    `🛠️\tDetected changes in source files ${changed.changedFiles.map((f) => ansi.yellow(path.relative(__dirname, f.file))).join(', ')}. Running build...`
   );
   // Run build if changed
   try {
     execSync('npm run build', { stdio: 'ignore', cwd: __dirname });
-    console.log('🛠️ Build completed.');
+    console.log('🛠️\tBuild completed.');
   } catch (error) {
-    console.error('❌ Build failed:', error);
+    console.error('❌\tBuild failed:', error);
     process.exit(1);
   }
 } else {
-  console.log('✅ No relevant source files changed. Skipping build.');
+  console.log('✅\tNo relevant source files changed. Skipping build.');
 }
