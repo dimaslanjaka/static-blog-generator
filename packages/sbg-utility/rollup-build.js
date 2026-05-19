@@ -268,17 +268,13 @@ export async function buildAll() {
 }
 
 // Entry point
-if (isDirect) {
-  // await buildAll().catch((err) => {
-  //   console.error(colors.red('Build failed:\n'), err);
-  //   process.exit(1);
-  // });
+export default async function build() {
+  await buildAll().catch((err) => {
+    console.error(colors.red('Build failed:\n'), err);
+    process.exit(1);
+  });
   // Uncomment for single-file debug
   // await compileBoth('src/utils/chain.ts', 'dist/utils/chain').catch((err) => {
-  //   console.error(colors.red('Build failed:\n'), err);
-  //   process.exit(1);
-  // });
-  // emitAllDeclarations().catch((err) => {
   //   console.error(colors.red('Build failed:\n'), err);
   //   process.exit(1);
   // });
