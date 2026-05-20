@@ -12,9 +12,6 @@ on:
       - '**/package.json'
       - '**/yarn.lock'
       - '**/gulpfile*'
-  pull_request:
-    types:
-      - closed
   workflow_dispatch:
   workflow_call:
     secrets:
