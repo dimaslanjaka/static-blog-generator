@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { EventEmitter } from 'events';
 import { sync as writeSync } from 'write-file-atomic';
+import { Nullable } from '../globals.js';
 
 const KEY_FOR_EMPTY_STRING = '---.EMPTY_STRING.---'; // Chose something that no one is likely to ever use
 
@@ -189,13 +190,13 @@ class LocalStorage extends EventEmitter {
     this.length = _keys.length;
   }
 
-  setItem(key: string | number, value: any): void {
+  setItem(key: Nullable<string | number>, value: any): void {
     const hasListeners = this.listenerCount('storage') > 0;
     let oldValue: string | null = null;
     if (hasListeners) {
       oldValue = this.getItem(String(key));
     }
-    key = _escapeKey(key);
+    key = _escapeKey(String(key));
     const encodedKey = encodeURIComponent(key)
       .replace(/[!'()]/g, escape)
       .replace(/\*/g, '%2A');
@@ -228,8 +229,8 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  getItem(key: string): string | null {
-    key = _escapeKey(key);
+  getItem(key: Nullable<string | number>): string | null {
+    key = _escapeKey(String(key));
     const metaKey = this._metaKeyMap[key];
     if (metaKey) {
       const filename = path.join(this._location, metaKey.key);
@@ -249,8 +250,8 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  removeItem(key: string | number): void {
-    key = _escapeKey(key);
+  removeItem(key: Nullable<string | number>): void {
+    key = _escapeKey(String(key));
     const metaKey = this._metaKeyMap[key];
     if (metaKey) {
       const hasListeners = this.listenerCount('storage') > 0;
