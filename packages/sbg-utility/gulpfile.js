@@ -202,6 +202,8 @@ gulp.task('index-builder', async function () {
             if (code !== 0) reject(new Error(`Process exited with code ${code}`));
             else resolve();
           });
+        }).catch((error) => {
+          console.error(`Error processing ${file}:`, error);
         });
       }
     } catch (error) {
