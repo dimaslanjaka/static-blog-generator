@@ -21,8 +21,8 @@ function _rm(target: string): void {
   }
 }
 
-function _escapeKey(key: string): string {
-  if (key === '') {
+function _escapeKey(key: string | number): string {
+  if (String(key) === '') {
     return KEY_FOR_EMPTY_STRING;
   } else {
     return `${key}`;
@@ -189,11 +189,11 @@ class LocalStorage extends EventEmitter {
     this.length = _keys.length;
   }
 
-  setItem(key: string, value: any): void {
+  setItem(key: string | number, value: any): void {
     const hasListeners = this.listenerCount('storage') > 0;
     let oldValue: string | null = null;
     if (hasListeners) {
-      oldValue = this.getItem(key);
+      oldValue = this.getItem(String(key));
     }
     key = _escapeKey(key);
     const encodedKey = encodeURIComponent(key)
@@ -249,7 +249,7 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  removeItem(key: string): void {
+  removeItem(key: string | number): void {
     key = _escapeKey(key);
     const metaKey = this._metaKeyMap[key];
     if (metaKey) {
