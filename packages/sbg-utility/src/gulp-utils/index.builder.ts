@@ -10,15 +10,16 @@ import Logger from '../utils/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const indexFile = path.join(__dirname, 'index.ts');
 
 // create export
 glob
-  .glob('**/*.{ts,js,jsx,tsx}', { ignore: ['**/*.runner.*', '**/*.builder.*'], cwd: __dirname, posix: true })
+  .glob('**/*.{ts,js,jsx,tsx,cjs,mjs}', { ignore: ['**/*.runner.*', '**/*.builder.*'], cwd: __dirname, posix: true })
   .then((files) => {
     const contents = files
       .filter((file) => !file.includes('./builder'))
       .map((file) => {
-        const base = file.replace(/\.(ts|js|tsx|jsx)$/, '');
+        const base = file.replace(/\.(ts|js|tsx|jsx|cjs|mjs)$/, '');
         return `export * from './${base}.js';`;
       })
       .sort(
@@ -29,7 +30,7 @@ glob
     // fix eslint
     contents.push('', '//', '');
 
-    fs.writeFileSync(path.join(__dirname, 'index.ts'), contents.join('\n'));
+    fs.writeFileSync(indexFile, contents.join('\n'));
 
-    spawnSync('eslint', ['--fix', 'src/**/*.ts'], { cwd: path.join(__dirname, '../..') });
+    spawnSync('eslint', ['--fix', '**/*.ts'], { cwd: __dirname });
   });
