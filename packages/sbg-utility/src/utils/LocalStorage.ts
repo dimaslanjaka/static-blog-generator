@@ -171,7 +171,7 @@ class LocalStorage extends EventEmitter {
     }
   }
 
-  private _sync(): void {
+  _sync(): void {
     this._bytesInUse = 0;
     this.length = 0;
     const _keys = fs.readdirSync(this._location);
