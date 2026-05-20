@@ -189,6 +189,8 @@ jobs:
       - name: 📤 Commit and Push Changes (only sbg-utility)
         working-directory: packages/sbg-utility
         run: |
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
           if [ $(git status --porcelain -- release | wc -l) -gt "0" ]; then
             git commit \
               -m "build(release): update generated release artifacts" \
