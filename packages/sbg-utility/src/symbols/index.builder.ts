@@ -11,6 +11,24 @@ import Logger from '../utils/logger.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const indexFile = path.join(__dirname, 'index.ts');
+const indexContent = `export * from './index-exports.js';
+import * as lib from './index-exports.js';
+export default lib;
+`;
+const indexExportsFile = path.join(__dirname, 'index-exports.ts');
+
+function getExportExtension(file: string): string {
+  if (file.endsWith('.ts.js')) {
+    return '.js';
+  }
+
+  const sourceExtension: string = path.extname(file);
+  if (sourceExtension === '.ts' || sourceExtension === '.tsx' || sourceExtension === '.jsx') {
+    return '.js';
+  }
+
+  return sourceExtension || '.js';
+}
 
 // create export
 glob
@@ -20,7 +38,7 @@ glob
       .filter((file) => !file.includes('./builder'))
       .map((file) => {
         const base = file.replace(/\.(ts|js|tsx|jsx|cjs|mjs)$/, '');
-        return `export * from './${base}.js';`;
+        return `export * from './${base}${getExportExtension(file)}';`;
       })
       .sort(
         (a, b) => a.localeCompare(b) //using String.prototype.localCompare()
@@ -30,7 +48,8 @@ glob
     // fix eslint
     contents.push('', '//', '');
 
-    fs.writeFileSync(indexFile, contents.join('\n'));
+    fs.writeFileSync(indexExportsFile, contents.join('\n'));
+    fs.writeFileSync(indexFile, indexContent);
 
     spawnSync('eslint', ['--fix', '**/*.ts'], { cwd: __dirname });
   });
