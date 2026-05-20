@@ -1,4 +1,4 @@
-import crossSpawn from 'cross-spawn';
+import * as crossSpawn from 'cross-spawn';
 import fs from 'fs-extra';
 import * as glob from 'glob';
 import gulp from 'gulp';
