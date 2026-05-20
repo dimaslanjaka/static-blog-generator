@@ -82,7 +82,7 @@ class LocalStorage extends EventEmitter {
   private _eventUrl!: string;
   private readonly _QUOTA_EXCEEDED_ERR: typeof QUOTA_EXCEEDED_ERR = QUOTA_EXCEEDED_ERR;
 
-  constructor(_location: string, quota: number = 5 * 1024 * 1024) {
+  constructor(_location: string = './tmp/sbgUtilityLocalStorage', quota: number = 5 * 1024 * 1024) {
     super();
     this._location = path.resolve(_location);
     this._quota = quota;
