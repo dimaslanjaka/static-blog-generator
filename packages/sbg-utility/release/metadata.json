@@ -127,10 +127,10 @@
   },
   "/yarn.lock": {
     "integrity": {
-      "sha1": "d3db6a2a1d7d4c2608c21ffbf9aba265281ea570",
-      "sha256": "dr8JUoR3awEZdUY4ZBg7+S/0bAhnYr1houUgFR6j2Ic=",
-      "md5": "1afde0e2e61f61d0a05b1bd7c683edf4",
-      "sha512": "HFwpkpHu4B7ADluG1MapjyLwvKCGlJZJOSZSLFXDOt263pbGSBsMThbVEqlLLwfoZSINBciwFFIhSX/xLU+9Jw=="
+      "sha1": "3346c9e46c263938e84ad891bf0199ee2c5b29c5",
+      "sha256": "+UBuoWAfI79s4jde9nAyW52ladfHF2ZKMNjbHK3JhBc=",
+      "md5": "36baf2d12e07b1da2638f9ad4ff9bc39",
+      "sha512": "1/yABLvurBvQVaGYX/huVQW6tXbBqBgj5vQi1YEL7xZQEfx8+HxSbUfIFsEEPiDKZs/JFGwIBfmTH90/cr+voA=="
     },
     "size": "512.64 KB"
   }
