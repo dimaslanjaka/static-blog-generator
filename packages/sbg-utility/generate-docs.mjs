@@ -149,6 +149,8 @@ for (const file of sourceFiles) {
     } else {
       md += `Returns \`${returnTypeStr}\`\n\n`;
     }
+
+    md += `---\n\n`;
   }
 
   if (anyExported) {
