@@ -114,12 +114,14 @@ jobs:
           echo "machine=$machine" >> $GITHUB_OUTPUT
           echo "machine=$machine" >> $GITHUB_ENV
 
-      - name: 🧹 Set Git Line Endings (EOL)
+      - name: 🧹 Fix GitHub Config
         continue-on-error: true
         run: |
           git config core.eol lf
           git config core.autocrlf input
           git checkout-index --force --all
+          git config --global user.email "dimaslanjaka@gmail.com"
+          git config --global user.name "dimaslanjaka"
 
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
@@ -189,8 +191,6 @@ jobs:
       - name: 📤 Commit and Push Changes (only sbg-utility)
         working-directory: packages/sbg-utility
         run: |
-          git config --global user.email "dimaslanjaka@gmail.com"
-          git config --global user.name "dimaslanjaka"
           if [ $(git status --porcelain -- release | wc -l) -gt "0" ]; then
             git commit \
               -m "build(release): update generated release artifacts" \
