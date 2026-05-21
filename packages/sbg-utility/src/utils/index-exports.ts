@@ -2,7 +2,7 @@ export * from './_punycode.js';
 export * from './array.js';
 export * from './BasePreferences.js';
 export * from './chain.js';
-export * from './checkFileChanges.cjs';
+export * from './checkFileChanges.mjs';
 export * from './class-utils.js';
 export * from './date.js';
 export * from './debug.js';
