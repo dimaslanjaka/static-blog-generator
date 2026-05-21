@@ -16,78 +16,108 @@
       }
     }
   </script>
-  <style>a{color:#2563eb;text-decoration:none;transition:color .2s ease,box-shadow .2s ease}.dark a{color:#60a5fa}a:hover{color:#1d4ed8;text-decoration:underline}.dark a:hover{color:#93bbfd}a:active{color:#1e40af}.dark a:active{color:#bfdbfe}a:visited{color:#7c3aed}.dark a:visited{color:#a78bfa}a:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:2px}.prose a{font-weight:500;text-underline-offset:3px}.prose a:hover{text-decoration-thickness:2px}.prose pre{border-radius:.5rem}.prose img{border-radius:.5rem}.prose hr{border:none;height:1px;background:linear-gradient(90deg, transparent, #cbd5e1, transparent);margin:2.5rem 0}.dark .prose hr{background:linear-gradient(90deg, transparent, #475569, transparent)}#theme-toggle{position:fixed;bottom:1.25rem;right:1.25rem;z-index:50;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;border-radius:9999px;border:1px solid #e2e8f0;background:#fff;color:#0f172a;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.1);transition:background .2s,border-color .2s}#theme-toggle:hover{background:#f1f5f9}.dark #theme-toggle{background:#1e293b;border-color:#334155;color:#f1f5f9}.dark #theme-toggle:hover{background:#334155}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f5f9}.dark ::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}.dark ::-webkit-scrollbar-thumb{background:#475569}</style>
+  <style>a{color:#2563eb;text-decoration:none;transition:color .2s ease,box-shadow .2s ease}.dark a{color:#60a5fa}a:hover{color:#1d4ed8;text-decoration:underline}.dark a:hover{color:#93bbfd}a:active{color:#1e40af}.dark a:active{color:#bfdbfe}a:visited{color:#7c3aed}.dark a:visited{color:#a78bfa}a:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:2px}.prose a{font-weight:500;text-underline-offset:3px}.prose a:hover{text-decoration-thickness:2px}.prose pre{border-radius:.5rem}.prose img{border-radius:.5rem}.prose hr{border:none;height:1px;background:linear-gradient(90deg, transparent, #cbd5e1, transparent);margin:2.5rem 0}.dark .prose hr{background:linear-gradient(90deg, transparent, #475569, transparent)}#mobile-menu{overscroll-behavior:contain}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f5f9}.dark ::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}.dark ::-webkit-scrollbar-thumb{background:#475569}</style>
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
 
-  <!-- Dark mode toggle -->
-  <button id="theme-toggle" aria-label="Toggle dark mode" type="button">
-    <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75 9.75 9.75 0 018.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25 9.75 9.75 0 0012.75 21a9.753 9.753 0 009.002-5.998z" />
-    </svg>
-    <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-    </svg>
-  </button>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        <!-- Brand -->
+        <a href="/packages/sbg-utility/" class="text-lg font-semibold tracking-tight text-gray-900 dark:text-gray-100 hover:no-underline">sbg-utility</a>
 
-  <main class="max-w-4xl mx-auto px-6 py-10">
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-1">
+        </div>
+
+        <!-- Right side: theme toggle + mobile hamburger -->
+        <div class="flex items-center gap-2">
+          <!-- Dark mode toggle -->
+          <button id="theme-toggle" aria-label="Toggle dark mode" type="button" class="relative inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75 9.75 9.75 0 018.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25 9.75 9.75 0 0012.75 21a9.753 9.753 0 009.002-5.998z" />
+            </svg>
+            <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+            </svg>
+          </button>
+
+          <!-- Mobile hamburger -->
+          <button id="nav-hamburger" aria-label="Open menu" type="button" class="md:hidden relative inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <div class="px-4 py-3 space-y-3 max-h-80 overflow-y-auto">
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 pt-20 pb-10">
     <article class="prose prose-slate dark:prose-invert max-w-none">
       <h1>API Documentation Index</h1>
 <br>
 <p>This index links to all generated API documentation pages.</p>
 <br>
 <ul>
-<li><a href="./config/_config.html">API Documentation for src/config/_config.ts</a> — Source: src/config/_config.ts</li>
-<li><a href="./config/default-config.html">API Documentation for src/config/default-config.ts</a> — Source: src/config/default-config.ts</li>
-<li><a href="./gulp-utils/gulp-cache.html">API Documentation for src/gulp-utils/gulp-cache.ts</a> — Source: src/gulp-utils/gulp-cache.ts</li>
-<li><a href="./gulp-utils/gulp-dom.html">API Documentation for src/gulp-utils/gulp-dom.ts</a> — Source: src/gulp-utils/gulp-dom.ts</li>
-<li><a href="./gulp-utils/gulp.debug.html">API Documentation for src/gulp-utils/gulp.debug.ts</a> — Source: src/gulp-utils/gulp.debug.ts</li>
-<li><a href="./sitemap-crawler/sitemap-crawler.html">API Documentation for src/sitemap-crawler/sitemap-crawler.ts</a> — Source: src/sitemap-crawler/sitemap-crawler.ts</li>
-<li><a href="./stub/debug.html">API Documentation for src/stub/debug.cjs</a> — Source: src/stub/debug.cjs</li>
-<li><a href="./stub/url.html">API Documentation for src/stub/url.cjs</a> — Source: src/stub/url.cjs</li>
-<li><a href="./symbols/unicode-symbols.html">API Documentation for src/symbols/unicode-symbols.ts</a> — Source: src/symbols/unicode-symbols.ts</li>
-<li><a href="./utils/array.html">API Documentation for src/utils/array.ts</a> — Source: src/utils/array.ts</li>
-<li><a href="./utils/chain.html">API Documentation for src/utils/chain.ts</a> — Source: src/utils/chain.ts</li>
-<li><a href="./utils/checkFileChanges.html">API Documentation for src/utils/checkFileChanges.mjs</a> — Source: src/utils/checkFileChanges.mjs</li>
-<li><a href="./utils/class-utils.html">API Documentation for src/utils/class-utils.ts</a> — Source: src/utils/class-utils.ts</li>
-<li><a href="./utils/debug.html">API Documentation for src/utils/debug.ts</a> — Source: src/utils/debug.ts</li>
-<li><a href="./utils/deepMerge.html">API Documentation for src/utils/deepMerge.ts</a> — Source: src/utils/deepMerge.ts</li>
-<li><a href="./utils/empty.html">API Documentation for src/utils/empty.ts</a> — Source: src/utils/empty.ts</li>
-<li><a href="./utils/environment.html">API Documentation for src/utils/environment.ts</a> — Source: src/utils/environment.ts</li>
-<li><a href="./utils/filemanager/copy.html">API Documentation for src/utils/filemanager/copy.ts</a> — Source: src/utils/filemanager/copy.ts</li>
-<li><a href="./utils/filemanager/del.html">API Documentation for src/utils/filemanager/del.ts</a> — Source: src/utils/filemanager/del.ts</li>
-<li><a href="./utils/filemanager/driveLetterUtils.html">API Documentation for src/utils/filemanager/driveLetterUtils.ts</a> — Source: src/utils/filemanager/driveLetterUtils.ts</li>
-<li><a href="./utils/filemanager/emptyDir.html">API Documentation for src/utils/filemanager/emptyDir.ts</a> — Source: src/utils/filemanager/emptyDir.ts</li>
-<li><a href="./utils/filemanager/getAppRootDir.html">API Documentation for src/utils/filemanager/getAppRootDir.ts</a> — Source: src/utils/filemanager/getAppRootDir.ts</li>
-<li><a href="./utils/filemanager/getFileChanges.html">API Documentation for src/utils/filemanager/getFileChanges.ts</a> — Source: src/utils/filemanager/getFileChanges.ts</li>
-<li><a href="./utils/filemanager/images.html">API Documentation for src/utils/filemanager/images.ts</a> — Source: src/utils/filemanager/images.ts</li>
-<li><a href="./utils/filemanager/path-utility.html">API Documentation for src/utils/filemanager/path-utility.ts</a> — Source: src/utils/filemanager/path-utility.ts</li>
-<li><a href="./utils/filemanager/readfile.html">API Documentation for src/utils/filemanager/readfile.ts</a> — Source: src/utils/filemanager/readfile.ts</li>
-<li><a href="./utils/filemanager/sanitizeFilename.html">API Documentation for src/utils/filemanager/sanitizeFilename.ts</a> — Source: src/utils/filemanager/sanitizeFilename.ts</li>
-<li><a href="./utils/filemanager/stream.html">API Documentation for src/utils/filemanager/stream.ts</a> — Source: src/utils/filemanager/stream.ts</li>
-<li><a href="./utils/filemanager/writefile.html">API Documentation for src/utils/filemanager/writefile.ts</a> — Source: src/utils/filemanager/writefile.ts</li>
-<li><a href="./utils/generate-exports.html">API Documentation for src/utils/generate-exports.js</a> — Source: src/utils/generate-exports.js</li>
-<li><a href="./utils/getNodeExecutable.html">API Documentation for src/utils/getNodeExecutable.ts</a> — Source: src/utils/getNodeExecutable.ts</li>
-<li><a href="./utils/hash.html">API Documentation for src/utils/hash.ts</a> — Source: src/utils/hash.ts</li>
-<li><a href="./utils/hash/file-hashes.html">API Documentation for src/utils/hash/file-hashes.ts</a> — Source: src/utils/hash/file-hashes.ts</li>
-<li><a href="./utils/hash/file.html">API Documentation for src/utils/hash/file.ts</a> — Source: src/utils/hash/file.ts</li>
-<li><a href="./utils/hash/getChecksum.html">API Documentation for src/utils/hash/getChecksum.ts</a> — Source: src/utils/hash/getChecksum.ts</li>
-<li><a href="./utils/jest.html">API Documentation for src/utils/jest.ts</a> — Source: src/utils/jest.ts</li>
-<li><a href="./utils/JSON-serializer-browser.html">API Documentation for src/utils/JSON-serializer-browser.ts</a> — Source: src/utils/JSON-serializer-browser.ts</li>
-<li><a href="./utils/JSON.html">API Documentation for src/utils/JSON.ts</a> — Source: src/utils/JSON.ts</li>
-<li><a href="./utils/logger.html">API Documentation for src/utils/logger.ts</a> — Source: src/utils/logger.ts</li>
-<li><a href="./utils/nodeWorkspaceHelper.html">API Documentation for src/utils/nodeWorkspaceHelper.ts</a> — Source: src/utils/nodeWorkspaceHelper.ts</li>
-<li><a href="./utils/noop.html">API Documentation for src/utils/noop.ts</a> — Source: src/utils/noop.ts</li>
-<li><a href="./utils/nunjucks-env.html">API Documentation for src/utils/nunjucks-env.ts</a> — Source: src/utils/nunjucks-env.ts</li>
-<li><a href="./utils/object.html">API Documentation for src/utils/object.ts</a> — Source: src/utils/object.ts</li>
-<li><a href="./utils/persistent-cache.html">API Documentation for src/utils/persistent-cache.ts</a> — Source: src/utils/persistent-cache.ts</li>
-<li><a href="./utils/removeAnsi.html">API Documentation for src/utils/removeAnsi.ts</a> — Source: src/utils/removeAnsi.ts</li>
-<li><a href="./utils/scheduler.html">API Documentation for src/utils/scheduler.ts</a> — Source: src/utils/scheduler.ts</li>
-<li><a href="./utils/semver.html">API Documentation for src/utils/semver.ts</a> — Source: src/utils/semver.ts</li>
-<li><a href="./utils/stream.html">API Documentation for src/utils/stream.ts</a> — Source: src/utils/stream.ts</li>
-<li><a href="./utils/string.html">API Documentation for src/utils/string.ts</a> — Source: src/utils/string.ts</li>
-<li><a href="./utils/uuid.html">API Documentation for src/utils/uuid.ts</a> — Source: src/utils/uuid.ts</li>
+<li><a href="./config/_config.html">src/config/_config.ts</a> — Source: src/config/_config.ts</li>
+<li><a href="./config/default-config.html">src/config/default-config.ts</a> — Source: src/config/default-config.ts</li>
+<li><a href="./gulp-utils/gulp-cache.html">src/gulp-utils/gulp-cache.ts</a> — Source: src/gulp-utils/gulp-cache.ts</li>
+<li><a href="./gulp-utils/gulp-dom.html">src/gulp-utils/gulp-dom.ts</a> — Source: src/gulp-utils/gulp-dom.ts</li>
+<li><a href="./gulp-utils/gulp.debug.html">src/gulp-utils/gulp.debug.ts</a> — Source: src/gulp-utils/gulp.debug.ts</li>
+<li><a href="./sitemap-crawler/sitemap-crawler.html">src/sitemap-crawler/sitemap-crawler.ts</a> — Source: src/sitemap-crawler/sitemap-crawler.ts</li>
+<li><a href="./stub/debug.html">src/stub/debug.cjs</a> — Source: src/stub/debug.cjs</li>
+<li><a href="./stub/url.html">src/stub/url.cjs</a> — Source: src/stub/url.cjs</li>
+<li><a href="./symbols/unicode-symbols.html">src/symbols/unicode-symbols.ts</a> — Source: src/symbols/unicode-symbols.ts</li>
+<li><a href="./utils/array.html">src/utils/array.ts</a> — Source: src/utils/array.ts</li>
+<li><a href="./utils/chain.html">src/utils/chain.ts</a> — Source: src/utils/chain.ts</li>
+<li><a href="./utils/checkFileChanges.html">src/utils/checkFileChanges.mjs</a> — Source: src/utils/checkFileChanges.mjs</li>
+<li><a href="./utils/class-utils.html">src/utils/class-utils.ts</a> — Source: src/utils/class-utils.ts</li>
+<li><a href="./utils/debug.html">src/utils/debug.ts</a> — Source: src/utils/debug.ts</li>
+<li><a href="./utils/deepMerge.html">src/utils/deepMerge.ts</a> — Source: src/utils/deepMerge.ts</li>
+<li><a href="./utils/empty.html">src/utils/empty.ts</a> — Source: src/utils/empty.ts</li>
+<li><a href="./utils/environment.html">src/utils/environment.ts</a> — Source: src/utils/environment.ts</li>
+<li><a href="./utils/filemanager/copy.html">src/utils/filemanager/copy.ts</a> — Source: src/utils/filemanager/copy.ts</li>
+<li><a href="./utils/filemanager/del.html">src/utils/filemanager/del.ts</a> — Source: src/utils/filemanager/del.ts</li>
+<li><a href="./utils/filemanager/driveLetterUtils.html">src/utils/filemanager/driveLetterUtils.ts</a> — Source: src/utils/filemanager/driveLetterUtils.ts</li>
+<li><a href="./utils/filemanager/emptyDir.html">src/utils/filemanager/emptyDir.ts</a> — Source: src/utils/filemanager/emptyDir.ts</li>
+<li><a href="./utils/filemanager/getAppRootDir.html">src/utils/filemanager/getAppRootDir.ts</a> — Source: src/utils/filemanager/getAppRootDir.ts</li>
+<li><a href="./utils/filemanager/getFileChanges.html">src/utils/filemanager/getFileChanges.ts</a> — Source: src/utils/filemanager/getFileChanges.ts</li>
+<li><a href="./utils/filemanager/images.html">src/utils/filemanager/images.ts</a> — Source: src/utils/filemanager/images.ts</li>
+<li><a href="./utils/filemanager/path-utility.html">src/utils/filemanager/path-utility.ts</a> — Source: src/utils/filemanager/path-utility.ts</li>
+<li><a href="./utils/filemanager/readfile.html">src/utils/filemanager/readfile.ts</a> — Source: src/utils/filemanager/readfile.ts</li>
+<li><a href="./utils/filemanager/sanitizeFilename.html">src/utils/filemanager/sanitizeFilename.ts</a> — Source: src/utils/filemanager/sanitizeFilename.ts</li>
+<li><a href="./utils/filemanager/stream.html">src/utils/filemanager/stream.ts</a> — Source: src/utils/filemanager/stream.ts</li>
+<li><a href="./utils/filemanager/writefile.html">src/utils/filemanager/writefile.ts</a> — Source: src/utils/filemanager/writefile.ts</li>
+<li><a href="./utils/generate-exports.html">src/utils/generate-exports.js</a> — Source: src/utils/generate-exports.js</li>
+<li><a href="./utils/getNodeExecutable.html">src/utils/getNodeExecutable.ts</a> — Source: src/utils/getNodeExecutable.ts</li>
+<li><a href="./utils/hash.html">src/utils/hash.ts</a> — Source: src/utils/hash.ts</li>
+<li><a href="./utils/hash/file-hashes.html">src/utils/hash/file-hashes.ts</a> — Source: src/utils/hash/file-hashes.ts</li>
+<li><a href="./utils/hash/file.html">src/utils/hash/file.ts</a> — Source: src/utils/hash/file.ts</li>
+<li><a href="./utils/hash/getChecksum.html">src/utils/hash/getChecksum.ts</a> — Source: src/utils/hash/getChecksum.ts</li>
+<li><a href="./utils/jest.html">src/utils/jest.ts</a> — Source: src/utils/jest.ts</li>
+<li><a href="./utils/JSON-serializer-browser.html">src/utils/JSON-serializer-browser.ts</a> — Source: src/utils/JSON-serializer-browser.ts</li>
+<li><a href="./utils/JSON.html">src/utils/JSON.ts</a> — Source: src/utils/JSON.ts</li>
+<li><a href="./utils/logger.html">src/utils/logger.ts</a> — Source: src/utils/logger.ts</li>
+<li><a href="./utils/nodeWorkspaceHelper.html">src/utils/nodeWorkspaceHelper.ts</a> — Source: src/utils/nodeWorkspaceHelper.ts</li>
+<li><a href="./utils/noop.html">src/utils/noop.ts</a> — Source: src/utils/noop.ts</li>
+<li><a href="./utils/nunjucks-env.html">src/utils/nunjucks-env.ts</a> — Source: src/utils/nunjucks-env.ts</li>
+<li><a href="./utils/object.html">src/utils/object.ts</a> — Source: src/utils/object.ts</li>
+<li><a href="./utils/persistent-cache.html">src/utils/persistent-cache.ts</a> — Source: src/utils/persistent-cache.ts</li>
+<li><a href="./utils/removeAnsi.html">src/utils/removeAnsi.ts</a> — Source: src/utils/removeAnsi.ts</li>
+<li><a href="./utils/scheduler.html">src/utils/scheduler.ts</a> — Source: src/utils/scheduler.ts</li>
+<li><a href="./utils/semver.html">src/utils/semver.ts</a> — Source: src/utils/semver.ts</li>
+<li><a href="./utils/stream.html">src/utils/stream.ts</a> — Source: src/utils/stream.ts</li>
+<li><a href="./utils/string.html">src/utils/string.ts</a> — Source: src/utils/string.ts</li>
+<li><a href="./utils/uuid.html">src/utils/uuid.ts</a> — Source: src/utils/uuid.ts</li>
 </ul>
 
     </article>
@@ -126,6 +156,21 @@
       toggle.addEventListener('click', function() {
         setTheme(!html.classList.contains('dark'));
       });
+
+      // Mobile hamburger menu
+      const hamburger = document.getElementById('nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
     })();
   </script>
 </body>

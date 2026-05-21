@@ -16,22 +16,52 @@
       }
     }
   </script>
-  <style>a{color:#2563eb;text-decoration:none;transition:color .2s ease,box-shadow .2s ease}.dark a{color:#60a5fa}a:hover{color:#1d4ed8;text-decoration:underline}.dark a:hover{color:#93bbfd}a:active{color:#1e40af}.dark a:active{color:#bfdbfe}a:visited{color:#7c3aed}.dark a:visited{color:#a78bfa}a:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:2px}.prose a{font-weight:500;text-underline-offset:3px}.prose a:hover{text-decoration-thickness:2px}.prose pre{border-radius:.5rem}.prose img{border-radius:.5rem}.prose hr{border:none;height:1px;background:linear-gradient(90deg, transparent, #cbd5e1, transparent);margin:2.5rem 0}.dark .prose hr{background:linear-gradient(90deg, transparent, #475569, transparent)}#theme-toggle{position:fixed;bottom:1.25rem;right:1.25rem;z-index:50;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;border-radius:9999px;border:1px solid #e2e8f0;background:#fff;color:#0f172a;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.1);transition:background .2s,border-color .2s}#theme-toggle:hover{background:#f1f5f9}.dark #theme-toggle{background:#1e293b;border-color:#334155;color:#f1f5f9}.dark #theme-toggle:hover{background:#334155}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f5f9}.dark ::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}.dark ::-webkit-scrollbar-thumb{background:#475569}</style>
+  <style>a{color:#2563eb;text-decoration:none;transition:color .2s ease,box-shadow .2s ease}.dark a{color:#60a5fa}a:hover{color:#1d4ed8;text-decoration:underline}.dark a:hover{color:#93bbfd}a:active{color:#1e40af}.dark a:active{color:#bfdbfe}a:visited{color:#7c3aed}.dark a:visited{color:#a78bfa}a:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:2px}.prose a{font-weight:500;text-underline-offset:3px}.prose a:hover{text-decoration-thickness:2px}.prose pre{border-radius:.5rem}.prose img{border-radius:.5rem}.prose hr{border:none;height:1px;background:linear-gradient(90deg, transparent, #cbd5e1, transparent);margin:2.5rem 0}.dark .prose hr{background:linear-gradient(90deg, transparent, #475569, transparent)}#mobile-menu{overscroll-behavior:contain}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f5f9}.dark ::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}.dark ::-webkit-scrollbar-thumb{background:#475569}</style>
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
 
-  <!-- Dark mode toggle -->
-  <button id="theme-toggle" aria-label="Toggle dark mode" type="button">
-    <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75 9.75 9.75 0 018.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25 9.75 9.75 0 0012.75 21a9.753 9.753 0 009.002-5.998z" />
-    </svg>
-    <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-    </svg>
-  </button>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        <!-- Brand -->
+        <a href="/packages/sbg-utility/" class="text-lg font-semibold tracking-tight text-gray-900 dark:text-gray-100 hover:no-underline">sbg-utility</a>
 
-  <main class="max-w-4xl mx-auto px-6 py-10">
+        <!-- Desktop nav links -->
+        <div class="hidden md:flex items-center gap-1">
+        </div>
+
+        <!-- Right side: theme toggle + mobile hamburger -->
+        <div class="flex items-center gap-2">
+          <!-- Dark mode toggle -->
+          <button id="theme-toggle" aria-label="Toggle dark mode" type="button" class="relative inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75 9.75 9.75 0 018.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25 9.75 9.75 0 0012.75 21a9.753 9.753 0 009.002-5.998z" />
+            </svg>
+            <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+            </svg>
+          </button>
+
+          <!-- Mobile hamburger -->
+          <button id="nav-hamburger" aria-label="Open menu" type="button" class="md:hidden relative inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <div class="px-4 py-3 space-y-3 max-h-80 overflow-y-auto">
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-6 pt-20 pb-10">
     <article class="prose prose-slate dark:prose-invert max-w-none">
       <h1>API Documentation for src/utils/filemanager/images.ts</h1>
 <br>
@@ -85,6 +115,21 @@
       toggle.addEventListener('click', function() {
         setTheme(!html.classList.contains('dark'));
       });
+
+      // Mobile hamburger menu
+      const hamburger = document.getElementById('nav-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
     })();
   </script>
 </body>
