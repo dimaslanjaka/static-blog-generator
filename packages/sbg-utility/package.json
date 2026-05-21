@@ -36,7 +36,8 @@
     "clean": "gulp clean",
     "pack": "node packer.cjs --yarn",
     "serve": "node rollup-browser-test.js",
-    "docs": "node generate-docs.mjs"
+    "docs": "node generate-docs.mjs",
+    "pages": "node generate-pages.mjs"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",
