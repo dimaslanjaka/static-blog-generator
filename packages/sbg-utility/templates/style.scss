@@ -64,35 +64,9 @@ a:focus-visible {
   background: linear-gradient(90deg, transparent, #475569, transparent);
 }
 
-/* ── Dark mode toggle button ── */
-#theme-toggle {
-  position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  z-index: 50;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 9999px;
-  border: 1px solid #e2e8f0;
-  background: #ffffff;
-  color: #0f172a;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: background 0.2s, border-color 0.2s;
-}
-#theme-toggle:hover {
-  background: #f1f5f9;
-}
-.dark #theme-toggle {
-  background: #1e293b;
-  border-color: #334155;
-  color: #f1f5f9;
-}
-.dark #theme-toggle:hover {
-  background: #334155;
+/* ── Navbar ── */
+#mobile-menu {
+  overscroll-behavior: contain;
 }
 
 /* ── Scrollbar styling (dark-friendly) ── */

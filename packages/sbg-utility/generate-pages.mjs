@@ -140,7 +140,8 @@ async function main() {
     const html = nunjucks.render('layout.njk', {
       title: file,
       content: fixedHtmlBody,
-      style: `<style>${styleCss}</style>`
+      style: `<style>${styleCss}</style>`,
+      baseUrl: '/packages/sbg-utility/'
     });
 
     const outFile = path.join(OUT_DIR, file.replace(/\.md$/, '.html'));
@@ -148,7 +149,7 @@ async function main() {
     fs.ensureDirSync(path.dirname(outFile));
     fs.writeFileSync(outFile, html);
 
-    console.log('generated:', outFile);
+    console.log('generated:', path.relative(__dirname, outFile));
   }
 
   console.log('Build complete');
