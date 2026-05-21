@@ -35,7 +35,8 @@
     "rollup": "node --max-old-space-size=4096 ./node_modules/rollup/dist/bin/rollup -c -m",
     "clean": "gulp clean",
     "pack": "node packer.cjs --yarn",
-    "serve": "node rollup-browser-test.js"
+    "serve": "node rollup-browser-test.js",
+    "docs": "node generate-docs.mjs"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",

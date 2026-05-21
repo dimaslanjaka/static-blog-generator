@@ -175,13 +175,15 @@ jobs:
 
       - name: 📦 Package Build Artifacts
         working-directory: packages/sbg-utility
-        run: |
-          npm run pack -- --commit
-          npm run pack
+        run: yarn run pack
+
+      - name: 📚 Generate Documentation
+        working-directory: packages/sbg-utility
+        run: yarn run docs
 
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
-        run: git add release
+        run: git add release docs
 
       - name: 📤 Commit and Push Changes (only sbg-utility)
         working-directory: packages/sbg-utility
