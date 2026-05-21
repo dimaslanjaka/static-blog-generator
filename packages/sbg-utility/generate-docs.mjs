@@ -169,7 +169,7 @@ if (generated.length > 0) {
   // sort by title for stable output
   generated.sort((a, b) => a.title.localeCompare(b.title));
   for (const g of generated) {
-    indexMd += `- [${g.title}](${g.link}) — Source: ${g.source}\n`;
+    indexMd += `- [${g.title.replace('API Documentation for ', '')}](${g.link}) — Source: ${g.source}\n`;
   }
   fs.writeFileSync(path.join(docsDir, 'index.md'), indexMd);
 }
