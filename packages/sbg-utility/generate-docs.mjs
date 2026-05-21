@@ -35,6 +35,33 @@ for (const file of sourceFiles) {
     }
   }
 
+  function normalizeImportPaths(text) {
+    if (!text) return text;
+    return text.replace(/import\("([^"]+)"\)/g, (m, p1) => {
+      try {
+        // If the specifier looks like a relative or absolute path, normalize to relative.
+        // Otherwise (plain module names like "stream" or "lodash"), leave as-is.
+        if (
+          !p1.startsWith('.') &&
+          !p1.startsWith('/') &&
+          !/^[A-Za-z]:\\/.test(p1) &&
+          !p1.startsWith('file:') &&
+          !p1.startsWith('node:')
+        ) {
+          return `import("${p1}")`;
+        }
+
+        const abs = path.isAbsolute(p1) ? p1 : path.resolve(process.cwd(), p1);
+        let rel = path.relative(process.cwd(), abs);
+        if (!rel.startsWith('.') && !rel.startsWith('/')) rel = './' + rel;
+        rel = rel.replace(/\\/g, '/');
+        return `import("${rel}")`;
+      } catch {
+        return m;
+      }
+    });
+  }
+
   for (const fn of file.getFunctions()) {
     console.log(`Processing ${relativePath} -> ${fn.getName()}`);
     if (!fn.isExported()) {
@@ -101,7 +128,7 @@ for (const file of sourceFiles) {
 
     for (const param of fn.getParameters()) {
       const pname = param.getName();
-      const ptype = param.getType().getText();
+      const ptype = normalizeImportPaths(param.getType().getText());
       const pdesc = paramDocs.get(pname);
       md += `- \`${pname}\`: \`${ptype}\``;
       if (pdesc) md += ` — ${pdesc}`;
@@ -111,7 +138,7 @@ for (const file of sourceFiles) {
     md += '\n';
 
     md += `### Returns\n\n`;
-    md += `\`${fn.getReturnType().getText()}\`\n\n`;
+    md += `\`${normalizeImportPaths(fn.getReturnType().getText())}\`\n\n`;
   }
 
   if (anyExported) {
