@@ -1,7 +1,7 @@
-const fs = require('fs-extra');
-const path = require('upath');
-const crypto = require('crypto');
-const { glob } = require('glob');
+import crypto from 'crypto';
+import fs from 'fs-extra';
+import { globSync } from 'glob';
+import path from 'upath';
 
 /**
  * Generate hash from file contents
@@ -35,7 +35,7 @@ function resolveFiles(patterns) {
   const files = new Set();
 
   for (const pattern of patterns) {
-    for (const file of glob.sync(pattern, {
+    for (const file of globSync(pattern, {
       nodir: true,
       absolute: true
     })) {
@@ -55,7 +55,7 @@ function resolveFiles(patterns) {
  * @param {(files: string[]) => any|Promise<any>} options.callback
  * @returns {Promise<boolean>}
  */
-async function checkFileChanges({ patterns, cacheFile = 'tmp/file-change-cache', callback }) {
+export async function checkFileChanges({ patterns, cacheFile = 'tmp/file-change-cache', callback }) {
   if (!Array.isArray(patterns) || patterns.length === 0) {
     throw new TypeError('patterns must be non-empty array');
   }
@@ -88,7 +88,6 @@ async function checkFileChanges({ patterns, cacheFile = 'tmp/file-change-cache',
   return true;
 }
 
-module.exports = {
+export default {
   checkFileChanges
 };
-module.exports.default = module.exports;

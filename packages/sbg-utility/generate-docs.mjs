@@ -1,8 +1,10 @@
+import dotenv from 'dotenv';
 import fs from 'fs-extra';
 import { Project } from 'ts-morph';
 import path from 'upath';
 import { fileURLToPath } from 'url';
 
+dotenv.config({ override: true, quiet: true });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const docsDir = path.join(__dirname, 'docs');
@@ -35,6 +37,33 @@ for (const file of sourceFiles) {
     }
   }
 
+  function normalizeImportPaths(text) {
+    if (!text) return text;
+    return text.replace(/import\("([^"]+)"\)/g, (m, p1) => {
+      try {
+        // If the specifier looks like a relative or absolute path, normalize to relative.
+        // Otherwise (plain module names like "stream" or "lodash"), leave as-is.
+        if (
+          !p1.startsWith('.') &&
+          !p1.startsWith('/') &&
+          !/^[A-Za-z]:\\/.test(p1) &&
+          !p1.startsWith('file:') &&
+          !p1.startsWith('node:')
+        ) {
+          return `import("${p1}")`;
+        }
+
+        const abs = path.isAbsolute(p1) ? p1 : path.resolve(process.cwd(), p1);
+        let rel = path.relative(process.cwd(), abs);
+        if (!rel.startsWith('.') && !rel.startsWith('/')) rel = './' + rel;
+        rel = rel.replace(/\\/g, '/');
+        return `import("${rel}")`;
+      } catch {
+        return m;
+      }
+    });
+  }
+
   for (const fn of file.getFunctions()) {
     console.log(`Processing ${relativePath} -> ${fn.getName()}`);
     if (!fn.isExported()) {
@@ -52,8 +81,9 @@ for (const file of sourceFiles) {
       md += docs[0].getDescription() + '\n\n';
     }
 
-    // collect @param descriptions and process selected tags (@example, @deprecated, @see)
+    // collect @param and @returns descriptions and process selected tags (@example, @deprecated, @see)
     const paramDocs = new Map();
+    let returnDoc = null;
     const tags = docs.flatMap((d) => d.getTags());
     for (const tag of tags) {
       const tname = tag.getTagName();
@@ -70,6 +100,8 @@ for (const file of sourceFiles) {
           }
         }
         if (pname) paramDocs.set(pname, formatTagComment(pcomment));
+      } else if (tname === 'returns' || tname === 'return') {
+        returnDoc = formatTagComment(rawComment);
       }
     }
 
@@ -101,7 +133,7 @@ for (const file of sourceFiles) {
 
     for (const param of fn.getParameters()) {
       const pname = param.getName();
-      const ptype = param.getType().getText();
+      const ptype = normalizeImportPaths(param.getType().getText());
       const pdesc = paramDocs.get(pname);
       md += `- \`${pname}\`: \`${ptype}\``;
       if (pdesc) md += ` — ${pdesc}`;
@@ -110,8 +142,15 @@ for (const file of sourceFiles) {
 
     md += '\n';
 
-    md += `### Returns\n\n`;
-    md += `\`${fn.getReturnType().getText()}\`\n\n`;
+    const returnTypeStr = normalizeImportPaths(fn.getReturnType().getText());
+    if (returnDoc) {
+      md += `### Returns\n\n`;
+      md += `\`${returnTypeStr}\` — ${returnDoc}\n\n`;
+    } else {
+      md += `Returns \`${returnTypeStr}\`\n\n`;
+    }
+
+    md += `---\n\n`;
   }
 
   if (anyExported) {
@@ -123,14 +162,21 @@ for (const file of sourceFiles) {
   }
 }
 
-// write an index (readme.md) into docs with links to all generated docs
+// write an index (index.md) into docs with links to all generated docs
 if (generated.length > 0) {
   let indexMd = '# API Documentation Index\n\n';
   indexMd += 'This index links to all generated API documentation pages.\n\n';
   // sort by title for stable output
   generated.sort((a, b) => a.title.localeCompare(b.title));
   for (const g of generated) {
-    indexMd += `- [${g.title}](${g.link}) — Source: ${g.source}\n`;
+    indexMd += `- [${g.title.replace('API Documentation for ', '')}](${g.link}) — Source: ${g.source}\n`;
   }
-  fs.writeFileSync(path.join(docsDir, 'readme.md'), indexMd);
+  fs.writeFileSync(path.join(docsDir, 'index.md'), indexMd);
 }
+
+// Copy rollup-browser-test.html,dist/browser/* to docs
+fs.copySync(
+  path.join(__dirname, 'rollup-browser-test.html'),
+  path.join(docsDir, 'browser', 'rollup-browser-test.html')
+);
+fs.copySync(path.join(__dirname, 'dist/browser'), path.join(docsDir, 'browser/dist'));

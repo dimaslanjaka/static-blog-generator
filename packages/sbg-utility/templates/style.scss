@@ -1,0 +1,88 @@
+/* ── Hyperlink base ── */
+a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease, box-shadow 0.2s ease;
+}
+.dark a {
+  color: #60a5fa;
+}
+
+a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+.dark a:hover {
+  color: #93bbfd;
+}
+
+a:active {
+  color: #1e40af;
+}
+.dark a:active {
+  color: #bfdbfe;
+}
+
+a:visited {
+  color: #7c3aed;
+}
+.dark a:visited {
+  color: #a78bfa;
+}
+
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* prose link overrides so tailwind typography doesn't fight us */
+.prose a {
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ── Article / prose tweaks ── */
+.prose pre {
+  border-radius: 0.5rem;
+}
+.prose img {
+  border-radius: 0.5rem;
+}
+
+/* ── Horizontal rule (divider) ── */
+.prose hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+  margin: 2.5rem 0;
+}
+.dark .prose hr {
+  background: linear-gradient(90deg, transparent, #475569, transparent);
+}
+
+/* ── Navbar ── */
+#mobile-menu {
+  overscroll-behavior: contain;
+}
+
+/* ── Scrollbar styling (dark-friendly) ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}

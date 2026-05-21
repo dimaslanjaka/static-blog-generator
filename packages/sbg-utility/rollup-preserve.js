@@ -164,4 +164,19 @@ export async function compileDeclarations() {
   emitFor(ts.ModuleKind.NodeNext, 'cjs', '.d.cts');
 
   console.log('\n' + colors.green('✔ Declaration emit complete (module-specific).'));
+
+  // Clean up temporary declaration output folders created during emit
+  try {
+    const esmDir = path.resolve(outDir, 'esm');
+    const cjsDir = path.resolve(outDir, 'cjs');
+
+    fs.rmSync(esmDir, { recursive: true, force: true });
+    process.stdout.write(colors.green(`\n✔ Removed temporary ${path.relative(process.cwd(), esmDir)}`));
+
+    fs.rmSync(cjsDir, { recursive: true, force: true });
+    process.stdout.write(colors.green(`\n✔ Removed temporary ${path.relative(process.cwd(), cjsDir)}`));
+    process.stdout.write(colors.green(`\n✔ All done!\n`));
+  } catch (err) {
+    process.stdout.write(colors.yellow(`\n⚠️ Failed to remove temporary declaration dirs: ${err.message}`));
+  }
 }

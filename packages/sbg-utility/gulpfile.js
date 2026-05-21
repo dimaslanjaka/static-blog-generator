@@ -52,7 +52,7 @@ const copy = async function () {
     const src = files[i];
     const dest = path.join(__dirname, 'dist', path.basename(src));
     fs.copySync(src, dest, { overwrite: true });
-    console.log('Copied', src.replace(__dirname, ''), '->', dest.replace(__dirname, ''));
+    console.log('Copied', path.relative(__dirname, src), '->', path.relative(__dirname, dest));
   }
 
   // Copy for partial build. See rollup _partial
@@ -110,8 +110,7 @@ async function buildIndexDts() {
 }
 
 gulp.task('dts', gulp.series(compileDeclarations, buildIndexDts));
-gulp.task('rollup-dts', gulp.series('dts'));
-gulp.task('build-browser', async function () {
+async function buildBrowser() {
   // Ensure config is populated before building browser bundle
   const configJsonPath = path.join(__dirname, 'src', 'config', '_config.json');
   if (!fs.existsSync(configJsonPath)) {
@@ -122,7 +121,21 @@ gulp.task('build-browser', async function () {
     shell: true,
     stdio: 'inherit'
   });
-});
+  // Copy dist/browser/**/*.d.ts files to dist/browser/**/*.d.mts and dist/browser/**/*.d.cts
+  const dtsFiles = await glob.glob('dist/browser/**/*.d.ts', { absolute: true });
+  for (const dtsFile of dtsFiles) {
+    const relativePath = path.relative(path.join(__dirname, 'dist'), dtsFile);
+    const destMts = path.join(__dirname, 'dist', relativePath.replace(/\.d\.ts$/, '.d.mts'));
+    const destCts = path.join(__dirname, 'dist', relativePath.replace(/\.d\.ts$/, '.d.cts'));
+    fs.copySync(dtsFile, destMts, { overwrite: true });
+    fs.copySync(dtsFile, destCts, { overwrite: true });
+    process.stdout.write(
+      `\rCopied\n  ${path.relative(__dirname, dtsFile)} -> ${path.relative(__dirname, destMts)}\n  ${path.relative(__dirname, dtsFile)} -> ${path.relative(__dirname, destCts)}  `
+    );
+  }
+  console.log('\nBrowser build complete.');
+}
+gulp.task('build-browser', buildBrowser);
 
 function generateExportsTask() {
   generateExports({
@@ -213,9 +226,6 @@ gulp.task('index-builder', async function () {
 });
 
 gulp.task('generate-exports', gulp.series(generateExportsTask));
-gulp.task(
-  'build',
-  gulp.series('populate-config', 'index-builder', 'tsc', 'copy', 'rollup', 'rollup-dts', 'generate-exports')
-);
+gulp.task('build', gulp.series('populate-config', 'index-builder', 'tsc', 'copy', 'rollup', 'dts', 'generate-exports'));
 
 gulp.task('default', gulp.series('build', 'build-browser'));
