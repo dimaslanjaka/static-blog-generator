@@ -6,6 +6,7 @@ import { marked } from 'marked';
 import minimist from 'minimist';
 import { fileURLToPath } from 'node:url';
 import nunjucks from 'nunjucks';
+import * as sass from 'sass';
 import path from 'upath';
 
 dotenv.config({ override: true, quiet: true });
@@ -117,6 +118,10 @@ async function main() {
 
   if (!files.length) return;
 
+  const stylePath = path.join(TEMPLATE_DIR, 'style.scss');
+  const compiled = sass.compile(stylePath, { style: 'compressed' });
+  const styleCss = compiled.css;
+
   for (const file of files) {
     const fullPath = path.join(DOCS_DIR, file);
     const md = fs.readFileSync(fullPath, 'utf8');
@@ -134,7 +139,8 @@ async function main() {
 
     const html = nunjucks.render('layout.njk', {
       title: file,
-      content: fixedHtmlBody
+      content: fixedHtmlBody,
+      style: `<style>${styleCss}</style>`
     });
 
     const outFile = path.join(OUT_DIR, file.replace(/\.md$/, '.html'));
