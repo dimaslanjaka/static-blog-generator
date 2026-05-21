@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>utils/jest.md</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-  <!-- Tailwind (CDN) and Flowbite -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -16,12 +16,127 @@
       }
     }
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+  <style>
+    /* ── Hyperlink base ── */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .dark a {
+      color: #60a5fa;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+    .dark a:hover {
+      color: #93bbfd;
+    }
+
+    a:active {
+      color: #1e40af;
+    }
+    .dark a:active {
+      color: #bfdbfe;
+    }
+
+    a:visited {
+      color: #7c3aed;
+    }
+    .dark a:visited {
+      color: #a78bfa;
+    }
+
+    a:focus-visible {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* prose link overrides so tailwind typography doesn't fight us */
+    .prose a {
+      font-weight: 500;
+      text-underline-offset: 3px;
+    }
+    .prose a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* ── Article / prose tweaks ── */
+    .prose pre {
+      border-radius: 0.5rem;
+    }
+    .prose img {
+      border-radius: 0.5rem;
+    }
+
+    /* ── Dark mode toggle button ── */
+    #theme-toggle {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 9999px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #0f172a;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    #theme-toggle:hover {
+      background: #f1f5f9;
+    }
+    .dark #theme-toggle {
+      background: #1e293b;
+      border-color: #334155;
+      color: #f1f5f9;
+    }
+    .dark #theme-toggle:hover {
+      background: #334155;
+    }
+
+    /* ── Scrollbar styling (dark-friendly) ── */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #475569;
+    }
+  </style>
 </head>
 
-<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
+
+  <!-- Dark mode toggle -->
+  <button id="theme-toggle" aria-label="Toggle dark mode" type="button">
+    <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75 9.75 9.75 0 018.25 6c0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25 9.75 9.75 0 0012.75 21a9.753 9.753 0 009.002-5.998z" />
+    </svg>
+    <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  </button>
+
   <main class="max-w-4xl mx-auto px-6 py-10">
-    <article class="prose prose-slate dark:prose-invert">
+    <article class="prose prose-slate dark:prose-invert max-w-none">
       <h1>API Documentation for src/utils/jest.ts</h1>
 <br>
 <h2>areWeTestingWithJest</h2>
@@ -34,14 +149,45 @@
 <br>
 <h3>Parameters</h3>
 <br>
-<h3>Returns</h3>
-<br>
-<p><code>boolean</code></p>
+<p>Returns <code>boolean</code></p>
 
     </article>
   </main>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script>if(window.hljs && hljs.highlightAll) hljs.highlightAll();</script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-  </body>
+  <script>
+    (function() {
+      const toggle = document.getElementById('theme-toggle');
+      const html   = document.documentElement;
+      const iconLight = document.getElementById('theme-icon-light');
+      const iconDark  = document.getElementById('theme-icon-dark');
+
+      function setTheme(dark) {
+        if (dark) {
+          html.classList.add('dark');
+          iconLight.classList.add('hidden');
+          iconDark.classList.remove('hidden');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          html.classList.remove('dark');
+          iconLight.classList.remove('hidden');
+          iconDark.classList.add('hidden');
+          localStorage.setItem('theme', 'light');
+        }
+      }
+
+      // Restore saved preference or respect OS
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        setTheme(true);
+      }
+
+      toggle.addEventListener('click', function() {
+        setTheme(!html.classList.contains('dark'));
+      });
+    })();
+  </script>
+</body>
 </html>
