@@ -4,11 +4,17 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-     {
+    {
       "command": "yarn run build",
       "name": "build",
       "request": "launch",
       "type": "node-terminal"
-     }
+    },
+    {
+      "command": "node ${workspaceFolder}/generate-pages.mjs --server",
+      "name": "Run generate-pages",
+      "request": "launch",
+      "type": "node-terminal"
+    }
   ]
 }

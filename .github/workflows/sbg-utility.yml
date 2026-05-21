@@ -179,7 +179,8 @@ jobs:
 
       - name: 📚 Generate Documentation
         working-directory: packages/sbg-utility
-        run: yarn run docs
+        run: |
+          node generate-docs.mjs --commit --message="docs: update generated documentation from commit ${{ env.GITHUB_SHA_SHORT }} (${{ env.GITHUB_COMMIT_URL }}) workflow run: ${{ env.GITHUB_RUNNER_URL }})"
 
       - name: ➕ Git Add Changes
         working-directory: packages/sbg-utility
