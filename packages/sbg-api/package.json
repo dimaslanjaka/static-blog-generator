@@ -131,7 +131,7 @@
     "@types/nunjucks": "^3.2.6",
     "@types/progress": "^2.0.7",
     "@types/request": "^2.48.12",
-    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/tarball/through2",
+    "@types/through2": "https://github.com/dimaslanjaka/nodejs-package-types/raw/through2/release/types-through2.tgz",
     "@typescript-eslint/eslint-plugin": "8.59.3",
     "@typescript-eslint/parser": "8.59.3",
     "babel-jest": "^29.7.0",
